@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(BackupPolicy input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BackupType != input.BackupType || (this.BackupType != null && !this.BackupType.Equals(input.BackupType))) return false;
+            if (this.SaveDays != input.SaveDays || (this.SaveDays != null && !this.SaveDays.Equals(input.SaveDays))) return false;
+            if (this.PeriodicalBackupPlan != input.PeriodicalBackupPlan || (this.PeriodicalBackupPlan != null && !this.PeriodicalBackupPlan.Equals(input.PeriodicalBackupPlan))) return false;
 
-            return 
-                (
-                    this.BackupType == input.BackupType ||
-                    (this.BackupType != null &&
-                    this.BackupType.Equals(input.BackupType))
-                ) && 
-                (
-                    this.SaveDays == input.SaveDays ||
-                    (this.SaveDays != null &&
-                    this.SaveDays.Equals(input.SaveDays))
-                ) && 
-                (
-                    this.PeriodicalBackupPlan == input.PeriodicalBackupPlan ||
-                    (this.PeriodicalBackupPlan != null &&
-                    this.PeriodicalBackupPlan.Equals(input.PeriodicalBackupPlan))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BackupType != null)
-                    hashCode = hashCode * 59 + this.BackupType.GetHashCode();
-                if (this.SaveDays != null)
-                    hashCode = hashCode * 59 + this.SaveDays.GetHashCode();
-                if (this.PeriodicalBackupPlan != null)
-                    hashCode = hashCode * 59 + this.PeriodicalBackupPlan.GetHashCode();
+                var hashCode = 41;
+                if (this.BackupType != null) hashCode = hashCode * 59 + this.BackupType.GetHashCode();
+                if (this.SaveDays != null) hashCode = hashCode * 59 + this.SaveDays.GetHashCode();
+                if (this.PeriodicalBackupPlan != null) hashCode = hashCode * 59 + this.PeriodicalBackupPlan.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public bool Equals(FlowGraphResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Edges != input.Edges || (this.Edges != null && input.Edges != null && !this.Edges.SequenceEqual(input.Edges))) return false;
+            if (this.Vertices != input.Vertices || (this.Vertices != null && input.Vertices != null && !this.Vertices.SequenceEqual(input.Vertices))) return false;
 
-            return 
-                (
-                    this.Edges == input.Edges ||
-                    this.Edges != null &&
-                    input.Edges != null &&
-                    this.Edges.SequenceEqual(input.Edges)
-                ) && 
-                (
-                    this.Vertices == input.Vertices ||
-                    this.Vertices != null &&
-                    input.Vertices != null &&
-                    this.Vertices.SequenceEqual(input.Vertices)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Edges != null)
-                    hashCode = hashCode * 59 + this.Edges.GetHashCode();
-                if (this.Vertices != null)
-                    hashCode = hashCode * 59 + this.Vertices.GetHashCode();
+                var hashCode = 41;
+                if (this.Edges != null) hashCode = hashCode * 59 + this.Edges.GetHashCode();
+                if (this.Vertices != null) hashCode = hashCode * 59 + this.Vertices.GetHashCode();
                 return hashCode;
             }
         }

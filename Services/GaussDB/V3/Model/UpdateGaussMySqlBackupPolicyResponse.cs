@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(UpdateGaussMySqlBackupPolicyResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.InstanceName != input.InstanceName || (this.InstanceName != null && !this.InstanceName.Equals(input.InstanceName))) return false;
 
-            return 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.InstanceName == input.InstanceName ||
-                    (this.InstanceName != null &&
-                    this.InstanceName.Equals(input.InstanceName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.InstanceName != null)
-                    hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
+                var hashCode = 41;
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.InstanceName != null) hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
                 return hashCode;
             }
         }

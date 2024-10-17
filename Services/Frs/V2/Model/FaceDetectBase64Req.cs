@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public bool Equals(FaceDetectBase64Req input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ImageBase64 != input.ImageBase64 || (this.ImageBase64 != null && !this.ImageBase64.Equals(input.ImageBase64))) return false;
+            if (this.Attributes != input.Attributes || (this.Attributes != null && !this.Attributes.Equals(input.Attributes))) return false;
 
-            return 
-                (
-                    this.ImageBase64 == input.ImageBase64 ||
-                    (this.ImageBase64 != null &&
-                    this.ImageBase64.Equals(input.ImageBase64))
-                ) && 
-                (
-                    this.Attributes == input.Attributes ||
-                    (this.Attributes != null &&
-                    this.Attributes.Equals(input.Attributes))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ImageBase64 != null)
-                    hashCode = hashCode * 59 + this.ImageBase64.GetHashCode();
-                if (this.Attributes != null)
-                    hashCode = hashCode * 59 + this.Attributes.GetHashCode();
+                var hashCode = 41;
+                if (this.ImageBase64 != null) hashCode = hashCode * 59 + this.ImageBase64.GetHashCode();
+                if (this.Attributes != null) hashCode = hashCode * 59 + this.Attributes.GetHashCode();
                 return hashCode;
             }
         }

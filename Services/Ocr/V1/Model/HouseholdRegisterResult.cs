@@ -70,32 +70,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(HouseholdRegisterResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Location != input.Location || (this.Location != null && input.Location != null && !this.Location.SequenceEqual(input.Location))) return false;
+            if (this.Content != input.Content || (this.Content != null && !this.Content.Equals(input.Content))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && input.Confidence != null && !this.Confidence.SequenceEqual(input.Confidence))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Location == input.Location ||
-                    this.Location != null &&
-                    input.Location != null &&
-                    this.Location.SequenceEqual(input.Location)
-                ) && 
-                (
-                    this.Content == input.Content ||
-                    (this.Content != null &&
-                    this.Content.Equals(input.Content))
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    this.Confidence != null &&
-                    input.Confidence != null &&
-                    this.Confidence.SequenceEqual(input.Confidence)
-                );
+            return true;
         }
 
         /// <summary>
@@ -105,15 +86,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Location != null)
-                    hashCode = hashCode * 59 + this.Location.GetHashCode();
-                if (this.Content != null)
-                    hashCode = hashCode * 59 + this.Content.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                var hashCode = 41;
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Location != null) hashCode = hashCode * 59 + this.Location.GetHashCode();
+                if (this.Content != null) hashCode = hashCode * 59 + this.Content.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
                 return hashCode;
             }
         }

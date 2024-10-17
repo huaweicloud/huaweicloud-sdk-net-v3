@@ -82,35 +82,14 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ShowGaussMySqlFlavorsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.XLanguage != input.XLanguage || (this.XLanguage != null && !this.XLanguage.Equals(input.XLanguage))) return false;
+            if (this.DatabaseName != input.DatabaseName || (this.DatabaseName != null && !this.DatabaseName.Equals(input.DatabaseName))) return false;
+            if (this.VersionName != input.VersionName || (this.VersionName != null && !this.VersionName.Equals(input.VersionName))) return false;
+            if (this.AvailabilityZoneMode != input.AvailabilityZoneMode || (this.AvailabilityZoneMode != null && !this.AvailabilityZoneMode.Equals(input.AvailabilityZoneMode))) return false;
+            if (this.SpecCode != input.SpecCode || (this.SpecCode != null && !this.SpecCode.Equals(input.SpecCode))) return false;
 
-            return 
-                (
-                    this.XLanguage == input.XLanguage ||
-                    (this.XLanguage != null &&
-                    this.XLanguage.Equals(input.XLanguage))
-                ) && 
-                (
-                    this.DatabaseName == input.DatabaseName ||
-                    (this.DatabaseName != null &&
-                    this.DatabaseName.Equals(input.DatabaseName))
-                ) && 
-                (
-                    this.VersionName == input.VersionName ||
-                    (this.VersionName != null &&
-                    this.VersionName.Equals(input.VersionName))
-                ) && 
-                (
-                    this.AvailabilityZoneMode == input.AvailabilityZoneMode ||
-                    (this.AvailabilityZoneMode != null &&
-                    this.AvailabilityZoneMode.Equals(input.AvailabilityZoneMode))
-                ) && 
-                (
-                    this.SpecCode == input.SpecCode ||
-                    (this.SpecCode != null &&
-                    this.SpecCode.Equals(input.SpecCode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -120,17 +99,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.XLanguage != null)
-                    hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
-                if (this.DatabaseName != null)
-                    hashCode = hashCode * 59 + this.DatabaseName.GetHashCode();
-                if (this.VersionName != null)
-                    hashCode = hashCode * 59 + this.VersionName.GetHashCode();
-                if (this.AvailabilityZoneMode != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZoneMode.GetHashCode();
-                if (this.SpecCode != null)
-                    hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
+                var hashCode = 41;
+                if (this.XLanguage != null) hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                if (this.DatabaseName != null) hashCode = hashCode * 59 + this.DatabaseName.GetHashCode();
+                if (this.VersionName != null) hashCode = hashCode * 59 + this.VersionName.GetHashCode();
+                if (this.AvailabilityZoneMode != null) hashCode = hashCode * 59 + this.AvailabilityZoneMode.GetHashCode();
+                if (this.SpecCode != null) hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
                 return hashCode;
             }
         }

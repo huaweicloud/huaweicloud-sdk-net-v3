@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         public bool Equals(UpdateEndpointWhiteRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Whitelist != input.Whitelist || (this.Whitelist != null && input.Whitelist != null && !this.Whitelist.SequenceEqual(input.Whitelist))) return false;
+            if (this.EnableWhitelist != input.EnableWhitelist || (this.EnableWhitelist != null && !this.EnableWhitelist.Equals(input.EnableWhitelist))) return false;
 
-            return 
-                (
-                    this.Whitelist == input.Whitelist ||
-                    this.Whitelist != null &&
-                    input.Whitelist != null &&
-                    this.Whitelist.SequenceEqual(input.Whitelist)
-                ) && 
-                (
-                    this.EnableWhitelist == input.EnableWhitelist ||
-                    (this.EnableWhitelist != null &&
-                    this.EnableWhitelist.Equals(input.EnableWhitelist))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Whitelist != null)
-                    hashCode = hashCode * 59 + this.Whitelist.GetHashCode();
-                if (this.EnableWhitelist != null)
-                    hashCode = hashCode * 59 + this.EnableWhitelist.GetHashCode();
+                var hashCode = 41;
+                if (this.Whitelist != null) hashCode = hashCode * 59 + this.Whitelist.GetHashCode();
+                if (this.EnableWhitelist != null) hashCode = hashCode * 59 + this.EnableWhitelist.GetHashCode();
                 return hashCode;
             }
         }

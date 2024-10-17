@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.PanguLargeModels.V2.Model
         /// </summary>
         public bool Equals(TextChoice input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Index != input.Index || (this.Index != null && !this.Index.Equals(input.Index))) return false;
+            if (this.Text != input.Text || (this.Text != null && !this.Text.Equals(input.Text))) return false;
 
-            return 
-                (
-                    this.Index == input.Index ||
-                    (this.Index != null &&
-                    this.Index.Equals(input.Index))
-                ) && 
-                (
-                    this.Text == input.Text ||
-                    (this.Text != null &&
-                    this.Text.Equals(input.Text))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.PanguLargeModels.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Index != null)
-                    hashCode = hashCode * 59 + this.Index.GetHashCode();
-                if (this.Text != null)
-                    hashCode = hashCode * 59 + this.Text.GetHashCode();
+                var hashCode = 41;
+                if (this.Index != null) hashCode = hashCode * 59 + this.Index.GetHashCode();
+                if (this.Text != null) hashCode = hashCode * 59 + this.Text.GetHashCode();
                 return hashCode;
             }
         }

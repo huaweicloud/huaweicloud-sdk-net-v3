@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(KeystoneValidateTokenRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.XSubjectToken != input.XSubjectToken || (this.XSubjectToken != null && !this.XSubjectToken.Equals(input.XSubjectToken))) return false;
+            if (this.Nocatalog != input.Nocatalog || (this.Nocatalog != null && !this.Nocatalog.Equals(input.Nocatalog))) return false;
 
-            return 
-                (
-                    this.XSubjectToken == input.XSubjectToken ||
-                    (this.XSubjectToken != null &&
-                    this.XSubjectToken.Equals(input.XSubjectToken))
-                ) && 
-                (
-                    this.Nocatalog == input.Nocatalog ||
-                    (this.Nocatalog != null &&
-                    this.Nocatalog.Equals(input.Nocatalog))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.XSubjectToken != null)
-                    hashCode = hashCode * 59 + this.XSubjectToken.GetHashCode();
-                if (this.Nocatalog != null)
-                    hashCode = hashCode * 59 + this.Nocatalog.GetHashCode();
+                var hashCode = 41;
+                if (this.XSubjectToken != null) hashCode = hashCode * 59 + this.XSubjectToken.GetHashCode();
+                if (this.Nocatalog != null) hashCode = hashCode * 59 + this.Nocatalog.GetHashCode();
                 return hashCode;
             }
         }

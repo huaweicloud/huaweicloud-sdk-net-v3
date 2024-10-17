@@ -339,55 +339,18 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(KeywordsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LogStreamId != input.LogStreamId || (this.LogStreamId != null && !this.LogStreamId.Equals(input.LogStreamId))) return false;
+            if (this.LogStreamName != input.LogStreamName || (this.LogStreamName != null && !this.LogStreamName.Equals(input.LogStreamName))) return false;
+            if (this.LogGroupId != input.LogGroupId || (this.LogGroupId != null && !this.LogGroupId.Equals(input.LogGroupId))) return false;
+            if (this.LogGroupName != input.LogGroupName || (this.LogGroupName != null && !this.LogGroupName.Equals(input.LogGroupName))) return false;
+            if (this.Keywords != input.Keywords || (this.Keywords != null && !this.Keywords.Equals(input.Keywords))) return false;
+            if (this.Condition != input.Condition) return false;
+            if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;
+            if (this.SearchTimeRange != input.SearchTimeRange || (this.SearchTimeRange != null && !this.SearchTimeRange.Equals(input.SearchTimeRange))) return false;
+            if (this.SearchTimeRangeUnit != input.SearchTimeRangeUnit) return false;
 
-            return 
-                (
-                    this.LogStreamId == input.LogStreamId ||
-                    (this.LogStreamId != null &&
-                    this.LogStreamId.Equals(input.LogStreamId))
-                ) && 
-                (
-                    this.LogStreamName == input.LogStreamName ||
-                    (this.LogStreamName != null &&
-                    this.LogStreamName.Equals(input.LogStreamName))
-                ) && 
-                (
-                    this.LogGroupId == input.LogGroupId ||
-                    (this.LogGroupId != null &&
-                    this.LogGroupId.Equals(input.LogGroupId))
-                ) && 
-                (
-                    this.LogGroupName == input.LogGroupName ||
-                    (this.LogGroupName != null &&
-                    this.LogGroupName.Equals(input.LogGroupName))
-                ) && 
-                (
-                    this.Keywords == input.Keywords ||
-                    (this.Keywords != null &&
-                    this.Keywords.Equals(input.Keywords))
-                ) && 
-                (
-                    this.Condition == input.Condition ||
-                    (this.Condition != null &&
-                    this.Condition.Equals(input.Condition))
-                ) && 
-                (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                ) && 
-                (
-                    this.SearchTimeRange == input.SearchTimeRange ||
-                    (this.SearchTimeRange != null &&
-                    this.SearchTimeRange.Equals(input.SearchTimeRange))
-                ) && 
-                (
-                    this.SearchTimeRangeUnit == input.SearchTimeRangeUnit ||
-                    (this.SearchTimeRangeUnit != null &&
-                    this.SearchTimeRangeUnit.Equals(input.SearchTimeRangeUnit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -397,25 +360,16 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LogStreamId != null)
-                    hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
-                if (this.LogStreamName != null)
-                    hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
-                if (this.LogGroupId != null)
-                    hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
-                if (this.LogGroupName != null)
-                    hashCode = hashCode * 59 + this.LogGroupName.GetHashCode();
-                if (this.Keywords != null)
-                    hashCode = hashCode * 59 + this.Keywords.GetHashCode();
-                if (this.Condition != null)
-                    hashCode = hashCode * 59 + this.Condition.GetHashCode();
-                if (this.Number != null)
-                    hashCode = hashCode * 59 + this.Number.GetHashCode();
-                if (this.SearchTimeRange != null)
-                    hashCode = hashCode * 59 + this.SearchTimeRange.GetHashCode();
-                if (this.SearchTimeRangeUnit != null)
-                    hashCode = hashCode * 59 + this.SearchTimeRangeUnit.GetHashCode();
+                var hashCode = 41;
+                if (this.LogStreamId != null) hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
+                if (this.LogStreamName != null) hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
+                if (this.LogGroupId != null) hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
+                if (this.LogGroupName != null) hashCode = hashCode * 59 + this.LogGroupName.GetHashCode();
+                if (this.Keywords != null) hashCode = hashCode * 59 + this.Keywords.GetHashCode();
+                hashCode = hashCode * 59 + this.Condition.GetHashCode();
+                if (this.Number != null) hashCode = hashCode * 59 + this.Number.GetHashCode();
+                if (this.SearchTimeRange != null) hashCode = hashCode * 59 + this.SearchTimeRange.GetHashCode();
+                hashCode = hashCode * 59 + this.SearchTimeRangeUnit.GetHashCode();
                 return hashCode;
             }
         }

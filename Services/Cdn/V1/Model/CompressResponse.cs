@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(CompressResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CompressSwitch != input.CompressSwitch || (this.CompressSwitch != null && !this.CompressSwitch.Equals(input.CompressSwitch))) return false;
+            if (this.CompressRules != input.CompressRules || (this.CompressRules != null && input.CompressRules != null && !this.CompressRules.SequenceEqual(input.CompressRules))) return false;
 
-            return 
-                (
-                    this.CompressSwitch == input.CompressSwitch ||
-                    (this.CompressSwitch != null &&
-                    this.CompressSwitch.Equals(input.CompressSwitch))
-                ) && 
-                (
-                    this.CompressRules == input.CompressRules ||
-                    this.CompressRules != null &&
-                    input.CompressRules != null &&
-                    this.CompressRules.SequenceEqual(input.CompressRules)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CompressSwitch != null)
-                    hashCode = hashCode * 59 + this.CompressSwitch.GetHashCode();
-                if (this.CompressRules != null)
-                    hashCode = hashCode * 59 + this.CompressRules.GetHashCode();
+                var hashCode = 41;
+                if (this.CompressSwitch != null) hashCode = hashCode * 59 + this.CompressSwitch.GetHashCode();
+                if (this.CompressRules != null) hashCode = hashCode * 59 + this.CompressRules.GetHashCode();
                 return hashCode;
             }
         }

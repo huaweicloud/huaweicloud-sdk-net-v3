@@ -202,111 +202,29 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(ListCloudServersRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.InRecycleBin != input.InRecycleBin || (this.InRecycleBin != null && !this.InRecycleBin.Equals(input.InRecycleBin))) return false;
+            if (this.SpodId != input.SpodId || (this.SpodId != null && !this.SpodId.Equals(input.SpodId))) return false;
+            if (this.FlavorName != input.FlavorName || (this.FlavorName != null && !this.FlavorName.Equals(input.FlavorName))) return false;
+            if (this.ImageId != input.ImageId || (this.ImageId != null && !this.ImageId.Equals(input.ImageId))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && !this.Metadata.Equals(input.Metadata))) return false;
+            if (this.MetadataKey != input.MetadataKey || (this.MetadataKey != null && !this.MetadataKey.Equals(input.MetadataKey))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && !this.Tags.Equals(input.Tags))) return false;
+            if (this.NotTags != input.NotTags || (this.NotTags != null && !this.NotTags.Equals(input.NotTags))) return false;
+            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
+            if (this.AvailabilityZoneEq != input.AvailabilityZoneEq || (this.AvailabilityZoneEq != null && !this.AvailabilityZoneEq.Equals(input.AvailabilityZoneEq))) return false;
+            if (this.ChargingMode != input.ChargingMode || (this.ChargingMode != null && !this.ChargingMode.Equals(input.ChargingMode))) return false;
+            if (this.KeyName != input.KeyName || (this.KeyName != null && !this.KeyName.Equals(input.KeyName))) return false;
+            if (this.LaunchedSince != input.LaunchedSince || (this.LaunchedSince != null && !this.LaunchedSince.Equals(input.LaunchedSince))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.ExpectFields != input.ExpectFields || (this.ExpectFields != null && input.ExpectFields != null && !this.ExpectFields.SequenceEqual(input.ExpectFields))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.InRecycleBin == input.InRecycleBin ||
-                    (this.InRecycleBin != null &&
-                    this.InRecycleBin.Equals(input.InRecycleBin))
-                ) && 
-                (
-                    this.SpodId == input.SpodId ||
-                    (this.SpodId != null &&
-                    this.SpodId.Equals(input.SpodId))
-                ) && 
-                (
-                    this.FlavorName == input.FlavorName ||
-                    (this.FlavorName != null &&
-                    this.FlavorName.Equals(input.FlavorName))
-                ) && 
-                (
-                    this.ImageId == input.ImageId ||
-                    (this.ImageId != null &&
-                    this.ImageId.Equals(input.ImageId))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    (this.Metadata != null &&
-                    this.Metadata.Equals(input.Metadata))
-                ) && 
-                (
-                    this.MetadataKey == input.MetadataKey ||
-                    (this.MetadataKey != null &&
-                    this.MetadataKey.Equals(input.MetadataKey))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    (this.Tags != null &&
-                    this.Tags.Equals(input.Tags))
-                ) && 
-                (
-                    this.NotTags == input.NotTags ||
-                    (this.NotTags != null &&
-                    this.NotTags.Equals(input.NotTags))
-                ) && 
-                (
-                    this.AvailabilityZone == input.AvailabilityZone ||
-                    (this.AvailabilityZone != null &&
-                    this.AvailabilityZone.Equals(input.AvailabilityZone))
-                ) && 
-                (
-                    this.AvailabilityZoneEq == input.AvailabilityZoneEq ||
-                    (this.AvailabilityZoneEq != null &&
-                    this.AvailabilityZoneEq.Equals(input.AvailabilityZoneEq))
-                ) && 
-                (
-                    this.ChargingMode == input.ChargingMode ||
-                    (this.ChargingMode != null &&
-                    this.ChargingMode.Equals(input.ChargingMode))
-                ) && 
-                (
-                    this.KeyName == input.KeyName ||
-                    (this.KeyName != null &&
-                    this.KeyName.Equals(input.KeyName))
-                ) && 
-                (
-                    this.LaunchedSince == input.LaunchedSince ||
-                    (this.LaunchedSince != null &&
-                    this.LaunchedSince.Equals(input.LaunchedSince))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.ExpectFields == input.ExpectFields ||
-                    this.ExpectFields != null &&
-                    input.ExpectFields != null &&
-                    this.ExpectFields.SequenceEqual(input.ExpectFields)
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                );
+            return true;
         }
 
         /// <summary>
@@ -316,47 +234,27 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.InRecycleBin != null)
-                    hashCode = hashCode * 59 + this.InRecycleBin.GetHashCode();
-                if (this.SpodId != null)
-                    hashCode = hashCode * 59 + this.SpodId.GetHashCode();
-                if (this.FlavorName != null)
-                    hashCode = hashCode * 59 + this.FlavorName.GetHashCode();
-                if (this.ImageId != null)
-                    hashCode = hashCode * 59 + this.ImageId.GetHashCode();
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
-                if (this.MetadataKey != null)
-                    hashCode = hashCode * 59 + this.MetadataKey.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.NotTags != null)
-                    hashCode = hashCode * 59 + this.NotTags.GetHashCode();
-                if (this.AvailabilityZone != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
-                if (this.AvailabilityZoneEq != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZoneEq.GetHashCode();
-                if (this.ChargingMode != null)
-                    hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
-                if (this.KeyName != null)
-                    hashCode = hashCode * 59 + this.KeyName.GetHashCode();
-                if (this.LaunchedSince != null)
-                    hashCode = hashCode * 59 + this.LaunchedSince.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.ExpectFields != null)
-                    hashCode = hashCode * 59 + this.ExpectFields.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.InRecycleBin != null) hashCode = hashCode * 59 + this.InRecycleBin.GetHashCode();
+                if (this.SpodId != null) hashCode = hashCode * 59 + this.SpodId.GetHashCode();
+                if (this.FlavorName != null) hashCode = hashCode * 59 + this.FlavorName.GetHashCode();
+                if (this.ImageId != null) hashCode = hashCode * 59 + this.ImageId.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                if (this.MetadataKey != null) hashCode = hashCode * 59 + this.MetadataKey.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.NotTags != null) hashCode = hashCode * 59 + this.NotTags.GetHashCode();
+                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
+                if (this.AvailabilityZoneEq != null) hashCode = hashCode * 59 + this.AvailabilityZoneEq.GetHashCode();
+                if (this.ChargingMode != null) hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
+                if (this.KeyName != null) hashCode = hashCode * 59 + this.KeyName.GetHashCode();
+                if (this.LaunchedSince != null) hashCode = hashCode * 59 + this.LaunchedSince.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.ExpectFields != null) hashCode = hashCode * 59 + this.ExpectFields.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 return hashCode;
             }
         }

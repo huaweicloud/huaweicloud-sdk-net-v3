@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(CompressRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CompressSwitch != input.CompressSwitch || (this.CompressSwitch != null && !this.CompressSwitch.Equals(input.CompressSwitch))) return false;
 
-            return 
-                (
-                    this.CompressSwitch == input.CompressSwitch ||
-                    (this.CompressSwitch != null &&
-                    this.CompressSwitch.Equals(input.CompressSwitch))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CompressSwitch != null)
-                    hashCode = hashCode * 59 + this.CompressSwitch.GetHashCode();
+                var hashCode = 41;
+                if (this.CompressSwitch != null) hashCode = hashCode * 59 + this.CompressSwitch.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ReinstallRuntimeConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DockerBaseSize != input.DockerBaseSize || (this.DockerBaseSize != null && !this.DockerBaseSize.Equals(input.DockerBaseSize))) return false;
+            if (this.Runtime != input.Runtime || (this.Runtime != null && !this.Runtime.Equals(input.Runtime))) return false;
 
-            return 
-                (
-                    this.DockerBaseSize == input.DockerBaseSize ||
-                    (this.DockerBaseSize != null &&
-                    this.DockerBaseSize.Equals(input.DockerBaseSize))
-                ) && 
-                (
-                    this.Runtime == input.Runtime ||
-                    (this.Runtime != null &&
-                    this.Runtime.Equals(input.Runtime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DockerBaseSize != null)
-                    hashCode = hashCode * 59 + this.DockerBaseSize.GetHashCode();
-                if (this.Runtime != null)
-                    hashCode = hashCode * 59 + this.Runtime.GetHashCode();
+                var hashCode = 41;
+                if (this.DockerBaseSize != null) hashCode = hashCode * 59 + this.DockerBaseSize.GetHashCode();
+                if (this.Runtime != null) hashCode = hashCode * 59 + this.Runtime.GetHashCode();
                 return hashCode;
             }
         }

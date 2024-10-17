@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// </summary>
         public bool Equals(Resource input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResourceDetail != input.ResourceDetail || (this.ResourceDetail != null && !this.ResourceDetail.Equals(input.ResourceDetail))) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
+            if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
+            if (this.ResourceTag != input.ResourceTag || (this.ResourceTag != null && input.ResourceTag != null && !this.ResourceTag.SequenceEqual(input.ResourceTag))) return false;
 
-            return 
-                (
-                    this.ResourceDetail == input.ResourceDetail ||
-                    (this.ResourceDetail != null &&
-                    this.ResourceDetail.Equals(input.ResourceDetail))
-                ) && 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
-                ) && 
-                (
-                    this.ResourceName == input.ResourceName ||
-                    (this.ResourceName != null &&
-                    this.ResourceName.Equals(input.ResourceName))
-                ) && 
-                (
-                    this.ResourceTag == input.ResourceTag ||
-                    this.ResourceTag != null &&
-                    input.ResourceTag != null &&
-                    this.ResourceTag.SequenceEqual(input.ResourceTag)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResourceDetail != null)
-                    hashCode = hashCode * 59 + this.ResourceDetail.GetHashCode();
-                if (this.ResourceId != null)
-                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
-                if (this.ResourceName != null)
-                    hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
-                if (this.ResourceTag != null)
-                    hashCode = hashCode * 59 + this.ResourceTag.GetHashCode();
+                var hashCode = 41;
+                if (this.ResourceDetail != null) hashCode = hashCode * 59 + this.ResourceDetail.GetHashCode();
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
+                if (this.ResourceTag != null) hashCode = hashCode * 59 + this.ResourceTag.GetHashCode();
                 return hashCode;
             }
         }

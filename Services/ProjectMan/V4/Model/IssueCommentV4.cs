@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(IssueCommentV4 input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Comment != input.Comment || (this.Comment != null && !this.Comment.Equals(input.Comment))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.CreatedTime != input.CreatedTime || (this.CreatedTime != null && !this.CreatedTime.Equals(input.CreatedTime))) return false;
+            if (this.Timestamp != input.Timestamp || (this.Timestamp != null && !this.Timestamp.Equals(input.Timestamp))) return false;
+            if (this.User != input.User || (this.User != null && !this.User.Equals(input.User))) return false;
 
-            return 
-                (
-                    this.Comment == input.Comment ||
-                    (this.Comment != null &&
-                    this.Comment.Equals(input.Comment))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.CreatedTime == input.CreatedTime ||
-                    (this.CreatedTime != null &&
-                    this.CreatedTime.Equals(input.CreatedTime))
-                ) && 
-                (
-                    this.Timestamp == input.Timestamp ||
-                    (this.Timestamp != null &&
-                    this.Timestamp.Equals(input.Timestamp))
-                ) && 
-                (
-                    this.User == input.User ||
-                    (this.User != null &&
-                    this.User.Equals(input.User))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Comment != null)
-                    hashCode = hashCode * 59 + this.Comment.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.CreatedTime != null)
-                    hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
-                if (this.Timestamp != null)
-                    hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
-                if (this.User != null)
-                    hashCode = hashCode * 59 + this.User.GetHashCode();
+                var hashCode = 41;
+                if (this.Comment != null) hashCode = hashCode * 59 + this.Comment.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.CreatedTime != null) hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
+                if (this.Timestamp != null) hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
+                if (this.User != null) hashCode = hashCode * 59 + this.User.GetHashCode();
                 return hashCode;
             }
         }

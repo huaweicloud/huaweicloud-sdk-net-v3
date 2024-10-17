@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(BackupReplicateReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Replicate != input.Replicate || (this.Replicate != null && !this.Replicate.Equals(input.Replicate))) return false;
 
-            return 
-                (
-                    this.Replicate == input.Replicate ||
-                    (this.Replicate != null &&
-                    this.Replicate.Equals(input.Replicate))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Replicate != null)
-                    hashCode = hashCode * 59 + this.Replicate.GetHashCode();
+                var hashCode = 41;
+                if (this.Replicate != null) hashCode = hashCode * 59 + this.Replicate.GetHashCode();
                 return hashCode;
             }
         }

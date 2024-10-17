@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(PostgreSQLHistoryDatabase input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.TotalTables != input.TotalTables || (this.TotalTables != null && !this.TotalTables.Equals(input.TotalTables))) return false;
+            if (this.Schemas != input.Schemas || (this.Schemas != null && input.Schemas != null && !this.Schemas.SequenceEqual(input.Schemas))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.TotalTables == input.TotalTables ||
-                    (this.TotalTables != null &&
-                    this.TotalTables.Equals(input.TotalTables))
-                ) && 
-                (
-                    this.Schemas == input.Schemas ||
-                    this.Schemas != null &&
-                    input.Schemas != null &&
-                    this.Schemas.SequenceEqual(input.Schemas)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.TotalTables != null)
-                    hashCode = hashCode * 59 + this.TotalTables.GetHashCode();
-                if (this.Schemas != null)
-                    hashCode = hashCode * 59 + this.Schemas.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.TotalTables != null) hashCode = hashCode * 59 + this.TotalTables.GetHashCode();
+                if (this.Schemas != null) hashCode = hashCode * 59 + this.Schemas.GetHashCode();
                 return hashCode;
             }
         }

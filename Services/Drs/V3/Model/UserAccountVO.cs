@@ -105,57 +105,18 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(UserAccountVO input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Account != input.Account || (this.Account != null && !this.Account.Equals(input.Account))) return false;
+            if (this.Comment != input.Comment || (this.Comment != null && !this.Comment.Equals(input.Comment))) return false;
+            if (this.IsTransfer != input.IsTransfer || (this.IsTransfer != null && !this.IsTransfer.Equals(input.IsTransfer))) return false;
+            if (this.Privileges != input.Privileges || (this.Privileges != null && input.Privileges != null && !this.Privileges.SequenceEqual(input.Privileges))) return false;
+            if (this.Password != input.Password || (this.Password != null && !this.Password.Equals(input.Password))) return false;
+            if (this.IsSetPassword != input.IsSetPassword || (this.IsSetPassword != null && !this.IsSetPassword.Equals(input.IsSetPassword))) return false;
+            if (this.Roles != input.Roles || (this.Roles != null && input.Roles != null && !this.Roles.SequenceEqual(input.Roles))) return false;
+            if (this.Selected != input.Selected || (this.Selected != null && !this.Selected.Equals(input.Selected))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Account == input.Account ||
-                    (this.Account != null &&
-                    this.Account.Equals(input.Account))
-                ) && 
-                (
-                    this.Comment == input.Comment ||
-                    (this.Comment != null &&
-                    this.Comment.Equals(input.Comment))
-                ) && 
-                (
-                    this.IsTransfer == input.IsTransfer ||
-                    (this.IsTransfer != null &&
-                    this.IsTransfer.Equals(input.IsTransfer))
-                ) && 
-                (
-                    this.Privileges == input.Privileges ||
-                    this.Privileges != null &&
-                    input.Privileges != null &&
-                    this.Privileges.SequenceEqual(input.Privileges)
-                ) && 
-                (
-                    this.Password == input.Password ||
-                    (this.Password != null &&
-                    this.Password.Equals(input.Password))
-                ) && 
-                (
-                    this.IsSetPassword == input.IsSetPassword ||
-                    (this.IsSetPassword != null &&
-                    this.IsSetPassword.Equals(input.IsSetPassword))
-                ) && 
-                (
-                    this.Roles == input.Roles ||
-                    this.Roles != null &&
-                    input.Roles != null &&
-                    this.Roles.SequenceEqual(input.Roles)
-                ) && 
-                (
-                    this.Selected == input.Selected ||
-                    (this.Selected != null &&
-                    this.Selected.Equals(input.Selected))
-                );
+            return true;
         }
 
         /// <summary>
@@ -165,25 +126,16 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Account != null)
-                    hashCode = hashCode * 59 + this.Account.GetHashCode();
-                if (this.Comment != null)
-                    hashCode = hashCode * 59 + this.Comment.GetHashCode();
-                if (this.IsTransfer != null)
-                    hashCode = hashCode * 59 + this.IsTransfer.GetHashCode();
-                if (this.Privileges != null)
-                    hashCode = hashCode * 59 + this.Privileges.GetHashCode();
-                if (this.Password != null)
-                    hashCode = hashCode * 59 + this.Password.GetHashCode();
-                if (this.IsSetPassword != null)
-                    hashCode = hashCode * 59 + this.IsSetPassword.GetHashCode();
-                if (this.Roles != null)
-                    hashCode = hashCode * 59 + this.Roles.GetHashCode();
-                if (this.Selected != null)
-                    hashCode = hashCode * 59 + this.Selected.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Account != null) hashCode = hashCode * 59 + this.Account.GetHashCode();
+                if (this.Comment != null) hashCode = hashCode * 59 + this.Comment.GetHashCode();
+                if (this.IsTransfer != null) hashCode = hashCode * 59 + this.IsTransfer.GetHashCode();
+                if (this.Privileges != null) hashCode = hashCode * 59 + this.Privileges.GetHashCode();
+                if (this.Password != null) hashCode = hashCode * 59 + this.Password.GetHashCode();
+                if (this.IsSetPassword != null) hashCode = hashCode * 59 + this.IsSetPassword.GetHashCode();
+                if (this.Roles != null) hashCode = hashCode * 59 + this.Roles.GetHashCode();
+                if (this.Selected != null) hashCode = hashCode * 59 + this.Selected.GetHashCode();
                 return hashCode;
             }
         }

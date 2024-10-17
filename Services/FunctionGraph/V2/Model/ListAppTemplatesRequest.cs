@@ -82,35 +82,14 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(ListAppTemplatesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.Maxitems != input.Maxitems || (this.Maxitems != null && !this.Maxitems.Equals(input.Maxitems))) return false;
+            if (this.Runtime != input.Runtime || (this.Runtime != null && !this.Runtime.Equals(input.Runtime))) return false;
+            if (this.Category != input.Category || (this.Category != null && !this.Category.Equals(input.Category))) return false;
+            if (this.XLanguage != input.XLanguage || (this.XLanguage != null && !this.XLanguage.Equals(input.XLanguage))) return false;
 
-            return 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.Maxitems == input.Maxitems ||
-                    (this.Maxitems != null &&
-                    this.Maxitems.Equals(input.Maxitems))
-                ) && 
-                (
-                    this.Runtime == input.Runtime ||
-                    (this.Runtime != null &&
-                    this.Runtime.Equals(input.Runtime))
-                ) && 
-                (
-                    this.Category == input.Category ||
-                    (this.Category != null &&
-                    this.Category.Equals(input.Category))
-                ) && 
-                (
-                    this.XLanguage == input.XLanguage ||
-                    (this.XLanguage != null &&
-                    this.XLanguage.Equals(input.XLanguage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -120,17 +99,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Maxitems != null)
-                    hashCode = hashCode * 59 + this.Maxitems.GetHashCode();
-                if (this.Runtime != null)
-                    hashCode = hashCode * 59 + this.Runtime.GetHashCode();
-                if (this.Category != null)
-                    hashCode = hashCode * 59 + this.Category.GetHashCode();
-                if (this.XLanguage != null)
-                    hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                var hashCode = 41;
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Maxitems != null) hashCode = hashCode * 59 + this.Maxitems.GetHashCode();
+                if (this.Runtime != null) hashCode = hashCode * 59 + this.Runtime.GetHashCode();
+                if (this.Category != null) hashCode = hashCode * 59 + this.Category.GetHashCode();
+                if (this.XLanguage != null) hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
                 return hashCode;
             }
         }

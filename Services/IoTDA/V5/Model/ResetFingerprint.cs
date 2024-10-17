@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ResetFingerprint input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Fingerprint != input.Fingerprint || (this.Fingerprint != null && !this.Fingerprint.Equals(input.Fingerprint))) return false;
+            if (this.ForceDisconnect != input.ForceDisconnect || (this.ForceDisconnect != null && !this.ForceDisconnect.Equals(input.ForceDisconnect))) return false;
+            if (this.FingerprintType != input.FingerprintType || (this.FingerprintType != null && !this.FingerprintType.Equals(input.FingerprintType))) return false;
 
-            return 
-                (
-                    this.Fingerprint == input.Fingerprint ||
-                    (this.Fingerprint != null &&
-                    this.Fingerprint.Equals(input.Fingerprint))
-                ) && 
-                (
-                    this.ForceDisconnect == input.ForceDisconnect ||
-                    (this.ForceDisconnect != null &&
-                    this.ForceDisconnect.Equals(input.ForceDisconnect))
-                ) && 
-                (
-                    this.FingerprintType == input.FingerprintType ||
-                    (this.FingerprintType != null &&
-                    this.FingerprintType.Equals(input.FingerprintType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Fingerprint != null)
-                    hashCode = hashCode * 59 + this.Fingerprint.GetHashCode();
-                if (this.ForceDisconnect != null)
-                    hashCode = hashCode * 59 + this.ForceDisconnect.GetHashCode();
-                if (this.FingerprintType != null)
-                    hashCode = hashCode * 59 + this.FingerprintType.GetHashCode();
+                var hashCode = 41;
+                if (this.Fingerprint != null) hashCode = hashCode * 59 + this.Fingerprint.GetHashCode();
+                if (this.ForceDisconnect != null) hashCode = hashCode * 59 + this.ForceDisconnect.GetHashCode();
+                if (this.FingerprintType != null) hashCode = hashCode * 59 + this.FingerprintType.GetHashCode();
                 return hashCode;
             }
         }

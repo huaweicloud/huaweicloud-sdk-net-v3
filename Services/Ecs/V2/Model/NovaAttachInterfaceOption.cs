@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(NovaAttachInterfaceOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FixedIps != input.FixedIps || (this.FixedIps != null && input.FixedIps != null && !this.FixedIps.SequenceEqual(input.FixedIps))) return false;
+            if (this.NetId != input.NetId || (this.NetId != null && !this.NetId.Equals(input.NetId))) return false;
+            if (this.PortId != input.PortId || (this.PortId != null && !this.PortId.Equals(input.PortId))) return false;
 
-            return 
-                (
-                    this.FixedIps == input.FixedIps ||
-                    this.FixedIps != null &&
-                    input.FixedIps != null &&
-                    this.FixedIps.SequenceEqual(input.FixedIps)
-                ) && 
-                (
-                    this.NetId == input.NetId ||
-                    (this.NetId != null &&
-                    this.NetId.Equals(input.NetId))
-                ) && 
-                (
-                    this.PortId == input.PortId ||
-                    (this.PortId != null &&
-                    this.PortId.Equals(input.PortId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FixedIps != null)
-                    hashCode = hashCode * 59 + this.FixedIps.GetHashCode();
-                if (this.NetId != null)
-                    hashCode = hashCode * 59 + this.NetId.GetHashCode();
-                if (this.PortId != null)
-                    hashCode = hashCode * 59 + this.PortId.GetHashCode();
+                var hashCode = 41;
+                if (this.FixedIps != null) hashCode = hashCode * 59 + this.FixedIps.GetHashCode();
+                if (this.NetId != null) hashCode = hashCode * 59 + this.NetId.GetHashCode();
+                if (this.PortId != null) hashCode = hashCode * 59 + this.PortId.GetHashCode();
                 return hashCode;
             }
         }

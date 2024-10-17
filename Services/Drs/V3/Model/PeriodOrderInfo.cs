@@ -291,25 +291,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(PeriodOrderInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PeriodType != input.PeriodType) return false;
+            if (this.PeriodNum != input.PeriodNum || (this.PeriodNum != null && !this.PeriodNum.Equals(input.PeriodNum))) return false;
+            if (this.IsAutoRenew != input.IsAutoRenew) return false;
 
-            return 
-                (
-                    this.PeriodType == input.PeriodType ||
-                    (this.PeriodType != null &&
-                    this.PeriodType.Equals(input.PeriodType))
-                ) && 
-                (
-                    this.PeriodNum == input.PeriodNum ||
-                    (this.PeriodNum != null &&
-                    this.PeriodNum.Equals(input.PeriodNum))
-                ) && 
-                (
-                    this.IsAutoRenew == input.IsAutoRenew ||
-                    (this.IsAutoRenew != null &&
-                    this.IsAutoRenew.Equals(input.IsAutoRenew))
-                );
+            return true;
         }
 
         /// <summary>
@@ -319,13 +306,10 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PeriodType != null)
-                    hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
-                if (this.PeriodNum != null)
-                    hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
-                if (this.IsAutoRenew != null)
-                    hashCode = hashCode * 59 + this.IsAutoRenew.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
+                if (this.PeriodNum != null) hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
+                hashCode = hashCode * 59 + this.IsAutoRenew.GetHashCode();
                 return hashCode;
             }
         }

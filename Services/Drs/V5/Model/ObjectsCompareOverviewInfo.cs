@@ -436,30 +436,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ObjectsCompareOverviewInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type) return false;
+            if (this.SourceCount != input.SourceCount || (this.SourceCount != null && !this.SourceCount.Equals(input.SourceCount))) return false;
+            if (this.TargetCount != input.TargetCount || (this.TargetCount != null && !this.TargetCount.Equals(input.TargetCount))) return false;
+            if (this.Status != input.Status) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.SourceCount == input.SourceCount ||
-                    (this.SourceCount != null &&
-                    this.SourceCount.Equals(input.SourceCount))
-                ) && 
-                (
-                    this.TargetCount == input.TargetCount ||
-                    (this.TargetCount != null &&
-                    this.TargetCount.Equals(input.TargetCount))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
+            return true;
         }
 
         /// <summary>
@@ -469,15 +452,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.SourceCount != null)
-                    hashCode = hashCode * 59 + this.SourceCount.GetHashCode();
-                if (this.TargetCount != null)
-                    hashCode = hashCode * 59 + this.TargetCount.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.SourceCount != null) hashCode = hashCode * 59 + this.SourceCount.GetHashCode();
+                if (this.TargetCount != null) hashCode = hashCode * 59 + this.TargetCount.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

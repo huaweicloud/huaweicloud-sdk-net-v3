@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(NodeOwnerReference input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NodepoolName != input.NodepoolName || (this.NodepoolName != null && !this.NodepoolName.Equals(input.NodepoolName))) return false;
+            if (this.NodepoolID != input.NodepoolID || (this.NodepoolID != null && !this.NodepoolID.Equals(input.NodepoolID))) return false;
 
-            return 
-                (
-                    this.NodepoolName == input.NodepoolName ||
-                    (this.NodepoolName != null &&
-                    this.NodepoolName.Equals(input.NodepoolName))
-                ) && 
-                (
-                    this.NodepoolID == input.NodepoolID ||
-                    (this.NodepoolID != null &&
-                    this.NodepoolID.Equals(input.NodepoolID))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NodepoolName != null)
-                    hashCode = hashCode * 59 + this.NodepoolName.GetHashCode();
-                if (this.NodepoolID != null)
-                    hashCode = hashCode * 59 + this.NodepoolID.GetHashCode();
+                var hashCode = 41;
+                if (this.NodepoolName != null) hashCode = hashCode * 59 + this.NodepoolName.GetHashCode();
+                if (this.NodepoolID != null) hashCode = hashCode * 59 + this.NodepoolID.GetHashCode();
                 return hashCode;
             }
         }

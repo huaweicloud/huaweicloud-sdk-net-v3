@@ -163,15 +163,10 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(Follow302StatusRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Follow302Status != input.Follow302Status) return false;
 
-            return 
-                (
-                    this.Follow302Status == input.Follow302Status ||
-                    (this.Follow302Status != null &&
-                    this.Follow302Status.Equals(input.Follow302Status))
-                );
+            return true;
         }
 
         /// <summary>
@@ -181,9 +176,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Follow302Status != null)
-                    hashCode = hashCode * 59 + this.Follow302Status.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Follow302Status.GetHashCode();
                 return hashCode;
             }
         }

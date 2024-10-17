@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(BatchResetServersPasswordRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NewPassword != input.NewPassword || (this.NewPassword != null && !this.NewPassword.Equals(input.NewPassword))) return false;
+            if (this.DryRun != input.DryRun || (this.DryRun != null && !this.DryRun.Equals(input.DryRun))) return false;
+            if (this.Servers != input.Servers || (this.Servers != null && input.Servers != null && !this.Servers.SequenceEqual(input.Servers))) return false;
 
-            return 
-                (
-                    this.NewPassword == input.NewPassword ||
-                    (this.NewPassword != null &&
-                    this.NewPassword.Equals(input.NewPassword))
-                ) && 
-                (
-                    this.DryRun == input.DryRun ||
-                    (this.DryRun != null &&
-                    this.DryRun.Equals(input.DryRun))
-                ) && 
-                (
-                    this.Servers == input.Servers ||
-                    this.Servers != null &&
-                    input.Servers != null &&
-                    this.Servers.SequenceEqual(input.Servers)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NewPassword != null)
-                    hashCode = hashCode * 59 + this.NewPassword.GetHashCode();
-                if (this.DryRun != null)
-                    hashCode = hashCode * 59 + this.DryRun.GetHashCode();
-                if (this.Servers != null)
-                    hashCode = hashCode * 59 + this.Servers.GetHashCode();
+                var hashCode = 41;
+                if (this.NewPassword != null) hashCode = hashCode * 59 + this.NewPassword.GetHashCode();
+                if (this.DryRun != null) hashCode = hashCode * 59 + this.DryRun.GetHashCode();
+                if (this.Servers != null) hashCode = hashCode * 59 + this.Servers.GetHashCode();
                 return hashCode;
             }
         }

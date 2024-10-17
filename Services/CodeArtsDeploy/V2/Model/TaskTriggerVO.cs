@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(TaskTriggerVO input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TriggerSource != input.TriggerSource || (this.TriggerSource != null && !this.TriggerSource.Equals(input.TriggerSource))) return false;
+            if (this.ArtifactSourceSystem != input.ArtifactSourceSystem || (this.ArtifactSourceSystem != null && !this.ArtifactSourceSystem.Equals(input.ArtifactSourceSystem))) return false;
+            if (this.ArtifactType != input.ArtifactType || (this.ArtifactType != null && !this.ArtifactType.Equals(input.ArtifactType))) return false;
 
-            return 
-                (
-                    this.TriggerSource == input.TriggerSource ||
-                    (this.TriggerSource != null &&
-                    this.TriggerSource.Equals(input.TriggerSource))
-                ) && 
-                (
-                    this.ArtifactSourceSystem == input.ArtifactSourceSystem ||
-                    (this.ArtifactSourceSystem != null &&
-                    this.ArtifactSourceSystem.Equals(input.ArtifactSourceSystem))
-                ) && 
-                (
-                    this.ArtifactType == input.ArtifactType ||
-                    (this.ArtifactType != null &&
-                    this.ArtifactType.Equals(input.ArtifactType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TriggerSource != null)
-                    hashCode = hashCode * 59 + this.TriggerSource.GetHashCode();
-                if (this.ArtifactSourceSystem != null)
-                    hashCode = hashCode * 59 + this.ArtifactSourceSystem.GetHashCode();
-                if (this.ArtifactType != null)
-                    hashCode = hashCode * 59 + this.ArtifactType.GetHashCode();
+                var hashCode = 41;
+                if (this.TriggerSource != null) hashCode = hashCode * 59 + this.TriggerSource.GetHashCode();
+                if (this.ArtifactSourceSystem != null) hashCode = hashCode * 59 + this.ArtifactSourceSystem.GetHashCode();
+                if (this.ArtifactType != null) hashCode = hashCode * 59 + this.ArtifactType.GetHashCode();
                 return hashCode;
             }
         }

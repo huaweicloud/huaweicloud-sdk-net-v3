@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(HandwritingRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Image != input.Image || (this.Image != null && !this.Image.Equals(input.Image))) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.QuickMode != input.QuickMode || (this.QuickMode != null && !this.QuickMode.Equals(input.QuickMode))) return false;
+            if (this.CharSet != input.CharSet || (this.CharSet != null && !this.CharSet.Equals(input.CharSet))) return false;
+            if (this.DetectDirection != input.DetectDirection || (this.DetectDirection != null && !this.DetectDirection.Equals(input.DetectDirection))) return false;
 
-            return 
-                (
-                    this.Image == input.Image ||
-                    (this.Image != null &&
-                    this.Image.Equals(input.Image))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.QuickMode == input.QuickMode ||
-                    (this.QuickMode != null &&
-                    this.QuickMode.Equals(input.QuickMode))
-                ) && 
-                (
-                    this.CharSet == input.CharSet ||
-                    (this.CharSet != null &&
-                    this.CharSet.Equals(input.CharSet))
-                ) && 
-                (
-                    this.DetectDirection == input.DetectDirection ||
-                    (this.DetectDirection != null &&
-                    this.DetectDirection.Equals(input.DetectDirection))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Image != null)
-                    hashCode = hashCode * 59 + this.Image.GetHashCode();
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.QuickMode != null)
-                    hashCode = hashCode * 59 + this.QuickMode.GetHashCode();
-                if (this.CharSet != null)
-                    hashCode = hashCode * 59 + this.CharSet.GetHashCode();
-                if (this.DetectDirection != null)
-                    hashCode = hashCode * 59 + this.DetectDirection.GetHashCode();
+                var hashCode = 41;
+                if (this.Image != null) hashCode = hashCode * 59 + this.Image.GetHashCode();
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.QuickMode != null) hashCode = hashCode * 59 + this.QuickMode.GetHashCode();
+                if (this.CharSet != null) hashCode = hashCode * 59 + this.CharSet.GetHashCode();
+                if (this.DetectDirection != null) hashCode = hashCode * 59 + this.DetectDirection.GetHashCode();
                 return hashCode;
             }
         }

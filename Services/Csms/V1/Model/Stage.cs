@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         /// </summary>
         public bool Equals(Stage input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.SecretName != input.SecretName || (this.SecretName != null && !this.SecretName.Equals(input.SecretName))) return false;
+            if (this.VersionId != input.VersionId || (this.VersionId != null && !this.VersionId.Equals(input.VersionId))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.SecretName == input.SecretName ||
-                    (this.SecretName != null &&
-                    this.SecretName.Equals(input.SecretName))
-                ) && 
-                (
-                    this.VersionId == input.VersionId ||
-                    (this.VersionId != null &&
-                    this.VersionId.Equals(input.VersionId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.SecretName != null)
-                    hashCode = hashCode * 59 + this.SecretName.GetHashCode();
-                if (this.VersionId != null)
-                    hashCode = hashCode * 59 + this.VersionId.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.SecretName != null) hashCode = hashCode * 59 + this.SecretName.GetHashCode();
+                if (this.VersionId != null) hashCode = hashCode * 59 + this.VersionId.GetHashCode();
                 return hashCode;
             }
         }

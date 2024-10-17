@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         /// </summary>
         public bool Equals(ImageMediaTaggingInstance input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BoundingBox != input.BoundingBox || (this.BoundingBox != null && !this.BoundingBox.Equals(input.BoundingBox))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
 
-            return 
-                (
-                    this.BoundingBox == input.BoundingBox ||
-                    (this.BoundingBox != null &&
-                    this.BoundingBox.Equals(input.BoundingBox))
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BoundingBox != null)
-                    hashCode = hashCode * 59 + this.BoundingBox.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                var hashCode = 41;
+                if (this.BoundingBox != null) hashCode = hashCode * 59 + this.BoundingBox.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
                 return hashCode;
             }
         }

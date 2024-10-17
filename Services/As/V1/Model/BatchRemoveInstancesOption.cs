@@ -406,31 +406,13 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(BatchRemoveInstancesOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstancesId != input.InstancesId || (this.InstancesId != null && input.InstancesId != null && !this.InstancesId.SequenceEqual(input.InstancesId))) return false;
+            if (this.InstanceDelete != input.InstanceDelete) return false;
+            if (this.Action != input.Action) return false;
+            if (this.InstanceAppend != input.InstanceAppend) return false;
 
-            return 
-                (
-                    this.InstancesId == input.InstancesId ||
-                    this.InstancesId != null &&
-                    input.InstancesId != null &&
-                    this.InstancesId.SequenceEqual(input.InstancesId)
-                ) && 
-                (
-                    this.InstanceDelete == input.InstanceDelete ||
-                    (this.InstanceDelete != null &&
-                    this.InstanceDelete.Equals(input.InstanceDelete))
-                ) && 
-                (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                ) && 
-                (
-                    this.InstanceAppend == input.InstanceAppend ||
-                    (this.InstanceAppend != null &&
-                    this.InstanceAppend.Equals(input.InstanceAppend))
-                );
+            return true;
         }
 
         /// <summary>
@@ -440,15 +422,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstancesId != null)
-                    hashCode = hashCode * 59 + this.InstancesId.GetHashCode();
-                if (this.InstanceDelete != null)
-                    hashCode = hashCode * 59 + this.InstanceDelete.GetHashCode();
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
-                if (this.InstanceAppend != null)
-                    hashCode = hashCode * 59 + this.InstanceAppend.GetHashCode();
+                var hashCode = 41;
+                if (this.InstancesId != null) hashCode = hashCode * 59 + this.InstancesId.GetHashCode();
+                hashCode = hashCode * 59 + this.InstanceDelete.GetHashCode();
+                hashCode = hashCode * 59 + this.Action.GetHashCode();
+                hashCode = hashCode * 59 + this.InstanceAppend.GetHashCode();
                 return hashCode;
             }
         }

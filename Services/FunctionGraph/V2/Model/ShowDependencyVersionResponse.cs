@@ -392,80 +392,23 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(ShowDependencyVersionResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Owner != input.Owner || (this.Owner != null && !this.Owner.Equals(input.Owner))) return false;
+            if (this.Link != input.Link || (this.Link != null && !this.Link.Equals(input.Link))) return false;
+            if (this.Runtime != input.Runtime) return false;
+            if (this.Etag != input.Etag || (this.Etag != null && !this.Etag.Equals(input.Etag))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.FileName != input.FileName || (this.FileName != null && !this.FileName.Equals(input.FileName))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.LastModified != input.LastModified || (this.LastModified != null && !this.LastModified.Equals(input.LastModified))) return false;
+            if (this.DepId != input.DepId || (this.DepId != null && !this.DepId.Equals(input.DepId))) return false;
+            if (this.DownloadLink != input.DownloadLink || (this.DownloadLink != null && !this.DownloadLink.Equals(input.DownloadLink))) return false;
+            if (this.IsShared != input.IsShared || (this.IsShared != null && !this.IsShared.Equals(input.IsShared))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Owner == input.Owner ||
-                    (this.Owner != null &&
-                    this.Owner.Equals(input.Owner))
-                ) && 
-                (
-                    this.Link == input.Link ||
-                    (this.Link != null &&
-                    this.Link.Equals(input.Link))
-                ) && 
-                (
-                    this.Runtime == input.Runtime ||
-                    (this.Runtime != null &&
-                    this.Runtime.Equals(input.Runtime))
-                ) && 
-                (
-                    this.Etag == input.Etag ||
-                    (this.Etag != null &&
-                    this.Etag.Equals(input.Etag))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.FileName == input.FileName ||
-                    (this.FileName != null &&
-                    this.FileName.Equals(input.FileName))
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.LastModified == input.LastModified ||
-                    (this.LastModified != null &&
-                    this.LastModified.Equals(input.LastModified))
-                ) && 
-                (
-                    this.DepId == input.DepId ||
-                    (this.DepId != null &&
-                    this.DepId.Equals(input.DepId))
-                ) && 
-                (
-                    this.DownloadLink == input.DownloadLink ||
-                    (this.DownloadLink != null &&
-                    this.DownloadLink.Equals(input.DownloadLink))
-                ) && 
-                (
-                    this.IsShared == input.IsShared ||
-                    (this.IsShared != null &&
-                    this.IsShared.Equals(input.IsShared))
-                );
+            return true;
         }
 
         /// <summary>
@@ -475,35 +418,21 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Owner != null)
-                    hashCode = hashCode * 59 + this.Owner.GetHashCode();
-                if (this.Link != null)
-                    hashCode = hashCode * 59 + this.Link.GetHashCode();
-                if (this.Runtime != null)
-                    hashCode = hashCode * 59 + this.Runtime.GetHashCode();
-                if (this.Etag != null)
-                    hashCode = hashCode * 59 + this.Etag.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.FileName != null)
-                    hashCode = hashCode * 59 + this.FileName.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.LastModified != null)
-                    hashCode = hashCode * 59 + this.LastModified.GetHashCode();
-                if (this.DepId != null)
-                    hashCode = hashCode * 59 + this.DepId.GetHashCode();
-                if (this.DownloadLink != null)
-                    hashCode = hashCode * 59 + this.DownloadLink.GetHashCode();
-                if (this.IsShared != null)
-                    hashCode = hashCode * 59 + this.IsShared.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Owner != null) hashCode = hashCode * 59 + this.Owner.GetHashCode();
+                if (this.Link != null) hashCode = hashCode * 59 + this.Link.GetHashCode();
+                hashCode = hashCode * 59 + this.Runtime.GetHashCode();
+                if (this.Etag != null) hashCode = hashCode * 59 + this.Etag.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.FileName != null) hashCode = hashCode * 59 + this.FileName.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.LastModified != null) hashCode = hashCode * 59 + this.LastModified.GetHashCode();
+                if (this.DepId != null) hashCode = hashCode * 59 + this.DepId.GetHashCode();
+                if (this.DownloadLink != null) hashCode = hashCode * 59 + this.DownloadLink.GetHashCode();
+                if (this.IsShared != null) hashCode = hashCode * 59 + this.IsShared.GetHashCode();
                 return hashCode;
             }
         }

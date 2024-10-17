@@ -98,51 +98,17 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(DmsKafkaForwarding input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RegionName != input.RegionName || (this.RegionName != null && !this.RegionName.Equals(input.RegionName))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.Addresses != input.Addresses || (this.Addresses != null && input.Addresses != null && !this.Addresses.SequenceEqual(input.Addresses))) return false;
+            if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;
+            if (this.Username != input.Username || (this.Username != null && !this.Username.Equals(input.Username))) return false;
+            if (this.Password != input.Password || (this.Password != null && !this.Password.Equals(input.Password))) return false;
+            if (this.Mechanism != input.Mechanism || (this.Mechanism != null && !this.Mechanism.Equals(input.Mechanism))) return false;
+            if (this.SecurityProtocol != input.SecurityProtocol || (this.SecurityProtocol != null && !this.SecurityProtocol.Equals(input.SecurityProtocol))) return false;
 
-            return 
-                (
-                    this.RegionName == input.RegionName ||
-                    (this.RegionName != null &&
-                    this.RegionName.Equals(input.RegionName))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Addresses == input.Addresses ||
-                    this.Addresses != null &&
-                    input.Addresses != null &&
-                    this.Addresses.SequenceEqual(input.Addresses)
-                ) && 
-                (
-                    this.Topic == input.Topic ||
-                    (this.Topic != null &&
-                    this.Topic.Equals(input.Topic))
-                ) && 
-                (
-                    this.Username == input.Username ||
-                    (this.Username != null &&
-                    this.Username.Equals(input.Username))
-                ) && 
-                (
-                    this.Password == input.Password ||
-                    (this.Password != null &&
-                    this.Password.Equals(input.Password))
-                ) && 
-                (
-                    this.Mechanism == input.Mechanism ||
-                    (this.Mechanism != null &&
-                    this.Mechanism.Equals(input.Mechanism))
-                ) && 
-                (
-                    this.SecurityProtocol == input.SecurityProtocol ||
-                    (this.SecurityProtocol != null &&
-                    this.SecurityProtocol.Equals(input.SecurityProtocol))
-                );
+            return true;
         }
 
         /// <summary>
@@ -152,23 +118,15 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RegionName != null)
-                    hashCode = hashCode * 59 + this.RegionName.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.Addresses != null)
-                    hashCode = hashCode * 59 + this.Addresses.GetHashCode();
-                if (this.Topic != null)
-                    hashCode = hashCode * 59 + this.Topic.GetHashCode();
-                if (this.Username != null)
-                    hashCode = hashCode * 59 + this.Username.GetHashCode();
-                if (this.Password != null)
-                    hashCode = hashCode * 59 + this.Password.GetHashCode();
-                if (this.Mechanism != null)
-                    hashCode = hashCode * 59 + this.Mechanism.GetHashCode();
-                if (this.SecurityProtocol != null)
-                    hashCode = hashCode * 59 + this.SecurityProtocol.GetHashCode();
+                var hashCode = 41;
+                if (this.RegionName != null) hashCode = hashCode * 59 + this.RegionName.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.Addresses != null) hashCode = hashCode * 59 + this.Addresses.GetHashCode();
+                if (this.Topic != null) hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.Username != null) hashCode = hashCode * 59 + this.Username.GetHashCode();
+                if (this.Password != null) hashCode = hashCode * 59 + this.Password.GetHashCode();
+                if (this.Mechanism != null) hashCode = hashCode * 59 + this.Mechanism.GetHashCode();
+                if (this.SecurityProtocol != null) hashCode = hashCode * 59 + this.SecurityProtocol.GetHashCode();
                 return hashCode;
             }
         }

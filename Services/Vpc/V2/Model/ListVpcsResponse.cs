@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(ListVpcsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Vpcs != input.Vpcs || (this.Vpcs != null && input.Vpcs != null && !this.Vpcs.SequenceEqual(input.Vpcs))) return false;
 
-            return 
-                (
-                    this.Vpcs == input.Vpcs ||
-                    this.Vpcs != null &&
-                    input.Vpcs != null &&
-                    this.Vpcs.SequenceEqual(input.Vpcs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Vpcs != null)
-                    hashCode = hashCode * 59 + this.Vpcs.GetHashCode();
+                var hashCode = 41;
+                if (this.Vpcs != null) hashCode = hashCode * 59 + this.Vpcs.GetHashCode();
                 return hashCode;
             }
         }

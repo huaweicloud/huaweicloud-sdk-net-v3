@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(DeletePromInstanceRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PromId != input.PromId || (this.PromId != null && !this.PromId.Equals(input.PromId))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
-            return 
-                (
-                    this.PromId == input.PromId ||
-                    (this.PromId != null &&
-                    this.PromId.Equals(input.PromId))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PromId != null)
-                    hashCode = hashCode * 59 + this.PromId.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                var hashCode = 41;
+                if (this.PromId != null) hashCode = hashCode * 59 + this.PromId.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

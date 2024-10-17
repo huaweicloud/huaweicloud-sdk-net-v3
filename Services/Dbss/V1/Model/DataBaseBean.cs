@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         public bool Equals(DataBaseBean input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Database != input.Database || (this.Database != null && !this.Database.Equals(input.Database))) return false;
 
-            return 
-                (
-                    this.Database == input.Database ||
-                    (this.Database != null &&
-                    this.Database.Equals(input.Database))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Database != null)
-                    hashCode = hashCode * 59 + this.Database.GetHashCode();
+                var hashCode = 41;
+                if (this.Database != null) hashCode = hashCode * 59 + this.Database.GetHashCode();
                 return hashCode;
             }
         }

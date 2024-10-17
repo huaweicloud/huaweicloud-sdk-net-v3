@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ReinstallServerConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UserTags != input.UserTags || (this.UserTags != null && input.UserTags != null && !this.UserTags.SequenceEqual(input.UserTags))) return false;
+            if (this.RootVolume != input.RootVolume || (this.RootVolume != null && !this.RootVolume.Equals(input.RootVolume))) return false;
 
-            return 
-                (
-                    this.UserTags == input.UserTags ||
-                    this.UserTags != null &&
-                    input.UserTags != null &&
-                    this.UserTags.SequenceEqual(input.UserTags)
-                ) && 
-                (
-                    this.RootVolume == input.RootVolume ||
-                    (this.RootVolume != null &&
-                    this.RootVolume.Equals(input.RootVolume))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UserTags != null)
-                    hashCode = hashCode * 59 + this.UserTags.GetHashCode();
-                if (this.RootVolume != null)
-                    hashCode = hashCode * 59 + this.RootVolume.GetHashCode();
+                var hashCode = 41;
+                if (this.UserTags != null) hashCode = hashCode * 59 + this.UserTags.GetHashCode();
+                if (this.RootVolume != null) hashCode = hashCode * 59 + this.RootVolume.GetHashCode();
                 return hashCode;
             }
         }

@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(Events input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Annotations != input.Annotations || (this.Annotations != null && !this.Annotations.Equals(input.Annotations))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && !this.Metadata.Equals(input.Metadata))) return false;
+            if (this.ArrivesAt != input.ArrivesAt || (this.ArrivesAt != null && !this.ArrivesAt.Equals(input.ArrivesAt))) return false;
+            if (this.EndsAt != input.EndsAt || (this.EndsAt != null && !this.EndsAt.Equals(input.EndsAt))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.StartsAt != input.StartsAt || (this.StartsAt != null && !this.StartsAt.Equals(input.StartsAt))) return false;
+            if (this.Timeout != input.Timeout || (this.Timeout != null && !this.Timeout.Equals(input.Timeout))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
 
-            return 
-                (
-                    this.Annotations == input.Annotations ||
-                    (this.Annotations != null &&
-                    this.Annotations.Equals(input.Annotations))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    (this.Metadata != null &&
-                    this.Metadata.Equals(input.Metadata))
-                ) && 
-                (
-                    this.ArrivesAt == input.ArrivesAt ||
-                    (this.ArrivesAt != null &&
-                    this.ArrivesAt.Equals(input.ArrivesAt))
-                ) && 
-                (
-                    this.EndsAt == input.EndsAt ||
-                    (this.EndsAt != null &&
-                    this.EndsAt.Equals(input.EndsAt))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.StartsAt == input.StartsAt ||
-                    (this.StartsAt != null &&
-                    this.StartsAt.Equals(input.StartsAt))
-                ) && 
-                (
-                    this.Timeout == input.Timeout ||
-                    (this.Timeout != null &&
-                    this.Timeout.Equals(input.Timeout))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Annotations != null)
-                    hashCode = hashCode * 59 + this.Annotations.GetHashCode();
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
-                if (this.ArrivesAt != null)
-                    hashCode = hashCode * 59 + this.ArrivesAt.GetHashCode();
-                if (this.EndsAt != null)
-                    hashCode = hashCode * 59 + this.EndsAt.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.StartsAt != null)
-                    hashCode = hashCode * 59 + this.StartsAt.GetHashCode();
-                if (this.Timeout != null)
-                    hashCode = hashCode * 59 + this.Timeout.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                var hashCode = 41;
+                if (this.Annotations != null) hashCode = hashCode * 59 + this.Annotations.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                if (this.ArrivesAt != null) hashCode = hashCode * 59 + this.ArrivesAt.GetHashCode();
+                if (this.EndsAt != null) hashCode = hashCode * 59 + this.EndsAt.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.StartsAt != null) hashCode = hashCode * 59 + this.StartsAt.GetHashCode();
+                if (this.Timeout != null) hashCode = hashCode * 59 + this.Timeout.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

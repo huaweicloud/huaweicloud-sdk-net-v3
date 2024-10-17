@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(UploadAttachmentsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.IssueId != input.IssueId || (this.IssueId != null && !this.IssueId.Equals(input.IssueId))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.DiskFilename != input.DiskFilename || (this.DiskFilename != null && !this.DiskFilename.Equals(input.DiskFilename))) return false;
+            if (this.FileName != input.FileName || (this.FileName != null && !this.FileName.Equals(input.FileName))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.IssueId == input.IssueId ||
-                    (this.IssueId != null &&
-                    this.IssueId.Equals(input.IssueId))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.DiskFilename == input.DiskFilename ||
-                    (this.DiskFilename != null &&
-                    this.DiskFilename.Equals(input.DiskFilename))
-                ) && 
-                (
-                    this.FileName == input.FileName ||
-                    (this.FileName != null &&
-                    this.FileName.Equals(input.FileName))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.IssueId != null)
-                    hashCode = hashCode * 59 + this.IssueId.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.DiskFilename != null)
-                    hashCode = hashCode * 59 + this.DiskFilename.GetHashCode();
-                if (this.FileName != null)
-                    hashCode = hashCode * 59 + this.FileName.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.IssueId != null) hashCode = hashCode * 59 + this.IssueId.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.DiskFilename != null) hashCode = hashCode * 59 + this.DiskFilename.GetHashCode();
+                if (this.FileName != null) hashCode = hashCode * 59 + this.FileName.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
                 return hashCode;
             }
         }

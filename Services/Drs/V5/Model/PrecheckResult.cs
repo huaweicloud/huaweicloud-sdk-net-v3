@@ -225,56 +225,18 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(PrecheckResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Item != input.Item || (this.Item != null && !this.Item.Equals(input.Item))) return false;
+            if (this.Result != input.Result) return false;
+            if (this.FailedReason != input.FailedReason || (this.FailedReason != null && !this.FailedReason.Equals(input.FailedReason))) return false;
+            if (this.Data != input.Data || (this.Data != null && !this.Data.Equals(input.Data))) return false;
+            if (this.RawErrorMsg != input.RawErrorMsg || (this.RawErrorMsg != null && !this.RawErrorMsg.Equals(input.RawErrorMsg))) return false;
+            if (this.Group != input.Group || (this.Group != null && !this.Group.Equals(input.Group))) return false;
+            if (this.IsSupportSkip != input.IsSupportSkip || (this.IsSupportSkip != null && !this.IsSupportSkip.Equals(input.IsSupportSkip))) return false;
+            if (this.IsSkipped != input.IsSkipped || (this.IsSkipped != null && !this.IsSkipped.Equals(input.IsSkipped))) return false;
+            if (this.FailedSubJobs != input.FailedSubJobs || (this.FailedSubJobs != null && input.FailedSubJobs != null && !this.FailedSubJobs.SequenceEqual(input.FailedSubJobs))) return false;
 
-            return 
-                (
-                    this.Item == input.Item ||
-                    (this.Item != null &&
-                    this.Item.Equals(input.Item))
-                ) && 
-                (
-                    this.Result == input.Result ||
-                    (this.Result != null &&
-                    this.Result.Equals(input.Result))
-                ) && 
-                (
-                    this.FailedReason == input.FailedReason ||
-                    (this.FailedReason != null &&
-                    this.FailedReason.Equals(input.FailedReason))
-                ) && 
-                (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
-                ) && 
-                (
-                    this.RawErrorMsg == input.RawErrorMsg ||
-                    (this.RawErrorMsg != null &&
-                    this.RawErrorMsg.Equals(input.RawErrorMsg))
-                ) && 
-                (
-                    this.Group == input.Group ||
-                    (this.Group != null &&
-                    this.Group.Equals(input.Group))
-                ) && 
-                (
-                    this.IsSupportSkip == input.IsSupportSkip ||
-                    (this.IsSupportSkip != null &&
-                    this.IsSupportSkip.Equals(input.IsSupportSkip))
-                ) && 
-                (
-                    this.IsSkipped == input.IsSkipped ||
-                    (this.IsSkipped != null &&
-                    this.IsSkipped.Equals(input.IsSkipped))
-                ) && 
-                (
-                    this.FailedSubJobs == input.FailedSubJobs ||
-                    this.FailedSubJobs != null &&
-                    input.FailedSubJobs != null &&
-                    this.FailedSubJobs.SequenceEqual(input.FailedSubJobs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -284,25 +246,16 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Item != null)
-                    hashCode = hashCode * 59 + this.Item.GetHashCode();
-                if (this.Result != null)
-                    hashCode = hashCode * 59 + this.Result.GetHashCode();
-                if (this.FailedReason != null)
-                    hashCode = hashCode * 59 + this.FailedReason.GetHashCode();
-                if (this.Data != null)
-                    hashCode = hashCode * 59 + this.Data.GetHashCode();
-                if (this.RawErrorMsg != null)
-                    hashCode = hashCode * 59 + this.RawErrorMsg.GetHashCode();
-                if (this.Group != null)
-                    hashCode = hashCode * 59 + this.Group.GetHashCode();
-                if (this.IsSupportSkip != null)
-                    hashCode = hashCode * 59 + this.IsSupportSkip.GetHashCode();
-                if (this.IsSkipped != null)
-                    hashCode = hashCode * 59 + this.IsSkipped.GetHashCode();
-                if (this.FailedSubJobs != null)
-                    hashCode = hashCode * 59 + this.FailedSubJobs.GetHashCode();
+                var hashCode = 41;
+                if (this.Item != null) hashCode = hashCode * 59 + this.Item.GetHashCode();
+                hashCode = hashCode * 59 + this.Result.GetHashCode();
+                if (this.FailedReason != null) hashCode = hashCode * 59 + this.FailedReason.GetHashCode();
+                if (this.Data != null) hashCode = hashCode * 59 + this.Data.GetHashCode();
+                if (this.RawErrorMsg != null) hashCode = hashCode * 59 + this.RawErrorMsg.GetHashCode();
+                if (this.Group != null) hashCode = hashCode * 59 + this.Group.GetHashCode();
+                if (this.IsSupportSkip != null) hashCode = hashCode * 59 + this.IsSupportSkip.GetHashCode();
+                if (this.IsSkipped != null) hashCode = hashCode * 59 + this.IsSkipped.GetHashCode();
+                if (this.FailedSubJobs != null) hashCode = hashCode * 59 + this.FailedSubJobs.GetHashCode();
                 return hashCode;
             }
         }

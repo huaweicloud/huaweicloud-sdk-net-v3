@@ -119,65 +119,20 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(UpdateUserOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AccessMode != input.AccessMode || (this.AccessMode != null && !this.AccessMode.Equals(input.AccessMode))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Password != input.Password || (this.Password != null && !this.Password.Equals(input.Password))) return false;
+            if (this.Email != input.Email || (this.Email != null && !this.Email.Equals(input.Email))) return false;
+            if (this.Areacode != input.Areacode || (this.Areacode != null && !this.Areacode.Equals(input.Areacode))) return false;
+            if (this.Phone != input.Phone || (this.Phone != null && !this.Phone.Equals(input.Phone))) return false;
+            if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
+            if (this.PwdStatus != input.PwdStatus || (this.PwdStatus != null && !this.PwdStatus.Equals(input.PwdStatus))) return false;
+            if (this.XuserType != input.XuserType || (this.XuserType != null && !this.XuserType.Equals(input.XuserType))) return false;
+            if (this.XuserId != input.XuserId || (this.XuserId != null && !this.XuserId.Equals(input.XuserId))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
 
-            return 
-                (
-                    this.AccessMode == input.AccessMode ||
-                    (this.AccessMode != null &&
-                    this.AccessMode.Equals(input.AccessMode))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Password == input.Password ||
-                    (this.Password != null &&
-                    this.Password.Equals(input.Password))
-                ) && 
-                (
-                    this.Email == input.Email ||
-                    (this.Email != null &&
-                    this.Email.Equals(input.Email))
-                ) && 
-                (
-                    this.Areacode == input.Areacode ||
-                    (this.Areacode != null &&
-                    this.Areacode.Equals(input.Areacode))
-                ) && 
-                (
-                    this.Phone == input.Phone ||
-                    (this.Phone != null &&
-                    this.Phone.Equals(input.Phone))
-                ) && 
-                (
-                    this.Enabled == input.Enabled ||
-                    (this.Enabled != null &&
-                    this.Enabled.Equals(input.Enabled))
-                ) && 
-                (
-                    this.PwdStatus == input.PwdStatus ||
-                    (this.PwdStatus != null &&
-                    this.PwdStatus.Equals(input.PwdStatus))
-                ) && 
-                (
-                    this.XuserType == input.XuserType ||
-                    (this.XuserType != null &&
-                    this.XuserType.Equals(input.XuserType))
-                ) && 
-                (
-                    this.XuserId == input.XuserId ||
-                    (this.XuserId != null &&
-                    this.XuserId.Equals(input.XuserId))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,29 +142,18 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AccessMode != null)
-                    hashCode = hashCode * 59 + this.AccessMode.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Password != null)
-                    hashCode = hashCode * 59 + this.Password.GetHashCode();
-                if (this.Email != null)
-                    hashCode = hashCode * 59 + this.Email.GetHashCode();
-                if (this.Areacode != null)
-                    hashCode = hashCode * 59 + this.Areacode.GetHashCode();
-                if (this.Phone != null)
-                    hashCode = hashCode * 59 + this.Phone.GetHashCode();
-                if (this.Enabled != null)
-                    hashCode = hashCode * 59 + this.Enabled.GetHashCode();
-                if (this.PwdStatus != null)
-                    hashCode = hashCode * 59 + this.PwdStatus.GetHashCode();
-                if (this.XuserType != null)
-                    hashCode = hashCode * 59 + this.XuserType.GetHashCode();
-                if (this.XuserId != null)
-                    hashCode = hashCode * 59 + this.XuserId.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                var hashCode = 41;
+                if (this.AccessMode != null) hashCode = hashCode * 59 + this.AccessMode.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Password != null) hashCode = hashCode * 59 + this.Password.GetHashCode();
+                if (this.Email != null) hashCode = hashCode * 59 + this.Email.GetHashCode();
+                if (this.Areacode != null) hashCode = hashCode * 59 + this.Areacode.GetHashCode();
+                if (this.Phone != null) hashCode = hashCode * 59 + this.Phone.GetHashCode();
+                if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
+                if (this.PwdStatus != null) hashCode = hashCode * 59 + this.PwdStatus.GetHashCode();
+                if (this.XuserType != null) hashCode = hashCode * 59 + this.XuserType.GetHashCode();
+                if (this.XuserId != null) hashCode = hashCode * 59 + this.XuserId.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

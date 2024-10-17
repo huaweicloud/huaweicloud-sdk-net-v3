@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(ReplaceDefinerInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.ReplaceDefiner != input.ReplaceDefiner || (this.ReplaceDefiner != null && !this.ReplaceDefiner.Equals(input.ReplaceDefiner))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.ReplaceDefiner == input.ReplaceDefiner ||
-                    (this.ReplaceDefiner != null &&
-                    this.ReplaceDefiner.Equals(input.ReplaceDefiner))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.ReplaceDefiner != null)
-                    hashCode = hashCode * 59 + this.ReplaceDefiner.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.ReplaceDefiner != null) hashCode = hashCode * 59 + this.ReplaceDefiner.GetHashCode();
                 return hashCode;
             }
         }

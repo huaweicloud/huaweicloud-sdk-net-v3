@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ScaleGroupStatusExistingNodeCount input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PostPaid != input.PostPaid || (this.PostPaid != null && !this.PostPaid.Equals(input.PostPaid))) return false;
+            if (this.PrePaid != input.PrePaid || (this.PrePaid != null && !this.PrePaid.Equals(input.PrePaid))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
-            return 
-                (
-                    this.PostPaid == input.PostPaid ||
-                    (this.PostPaid != null &&
-                    this.PostPaid.Equals(input.PostPaid))
-                ) && 
-                (
-                    this.PrePaid == input.PrePaid ||
-                    (this.PrePaid != null &&
-                    this.PrePaid.Equals(input.PrePaid))
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PostPaid != null)
-                    hashCode = hashCode * 59 + this.PostPaid.GetHashCode();
-                if (this.PrePaid != null)
-                    hashCode = hashCode * 59 + this.PrePaid.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                var hashCode = 41;
+                if (this.PostPaid != null) hashCode = hashCode * 59 + this.PostPaid.GetHashCode();
+                if (this.PrePaid != null) hashCode = hashCode * 59 + this.PrePaid.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

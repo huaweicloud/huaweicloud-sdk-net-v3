@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(DeleteDatabaseUserRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.DbName != input.DbName || (this.DbName != null && !this.DbName.Equals(input.DbName))) return false;
 
-            return 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.DbName == input.DbName ||
-                    (this.DbName != null &&
-                    this.DbName.Equals(input.DbName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UserName != null)
-                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.DbName != null)
-                    hashCode = hashCode * 59 + this.DbName.GetHashCode();
+                var hashCode = 41;
+                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.DbName != null) hashCode = hashCode * 59 + this.DbName.GetHashCode();
                 return hashCode;
             }
         }

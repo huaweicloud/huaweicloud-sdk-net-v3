@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(DeleteAccessConfigRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AccessConfigIdList != input.AccessConfigIdList || (this.AccessConfigIdList != null && input.AccessConfigIdList != null && !this.AccessConfigIdList.SequenceEqual(input.AccessConfigIdList))) return false;
 
-            return 
-                (
-                    this.AccessConfigIdList == input.AccessConfigIdList ||
-                    this.AccessConfigIdList != null &&
-                    input.AccessConfigIdList != null &&
-                    this.AccessConfigIdList.SequenceEqual(input.AccessConfigIdList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AccessConfigIdList != null)
-                    hashCode = hashCode * 59 + this.AccessConfigIdList.GetHashCode();
+                var hashCode = 41;
+                if (this.AccessConfigIdList != null) hashCode = hashCode * 59 + this.AccessConfigIdList.GetHashCode();
                 return hashCode;
             }
         }

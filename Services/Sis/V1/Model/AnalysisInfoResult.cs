@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         /// </summary>
         public bool Equals(AnalysisInfoResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Role != input.Role || (this.Role != null && !this.Role.Equals(input.Role))) return false;
+            if (this.Emotion != input.Emotion || (this.Emotion != null && !this.Emotion.Equals(input.Emotion))) return false;
+            if (this.Speed != input.Speed || (this.Speed != null && !this.Speed.Equals(input.Speed))) return false;
 
-            return 
-                (
-                    this.Role == input.Role ||
-                    (this.Role != null &&
-                    this.Role.Equals(input.Role))
-                ) && 
-                (
-                    this.Emotion == input.Emotion ||
-                    (this.Emotion != null &&
-                    this.Emotion.Equals(input.Emotion))
-                ) && 
-                (
-                    this.Speed == input.Speed ||
-                    (this.Speed != null &&
-                    this.Speed.Equals(input.Speed))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Role != null)
-                    hashCode = hashCode * 59 + this.Role.GetHashCode();
-                if (this.Emotion != null)
-                    hashCode = hashCode * 59 + this.Emotion.GetHashCode();
-                if (this.Speed != null)
-                    hashCode = hashCode * 59 + this.Speed.GetHashCode();
+                var hashCode = 41;
+                if (this.Role != null) hashCode = hashCode * 59 + this.Role.GetHashCode();
+                if (this.Emotion != null) hashCode = hashCode * 59 + this.Emotion.GetHashCode();
+                if (this.Speed != null) hashCode = hashCode * 59 + this.Speed.GetHashCode();
                 return hashCode;
             }
         }

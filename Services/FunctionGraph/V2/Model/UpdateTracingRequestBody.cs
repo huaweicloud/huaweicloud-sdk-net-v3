@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(UpdateTracingRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TracingAk != input.TracingAk || (this.TracingAk != null && !this.TracingAk.Equals(input.TracingAk))) return false;
+            if (this.TracingSk != input.TracingSk || (this.TracingSk != null && !this.TracingSk.Equals(input.TracingSk))) return false;
 
-            return 
-                (
-                    this.TracingAk == input.TracingAk ||
-                    (this.TracingAk != null &&
-                    this.TracingAk.Equals(input.TracingAk))
-                ) && 
-                (
-                    this.TracingSk == input.TracingSk ||
-                    (this.TracingSk != null &&
-                    this.TracingSk.Equals(input.TracingSk))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TracingAk != null)
-                    hashCode = hashCode * 59 + this.TracingAk.GetHashCode();
-                if (this.TracingSk != null)
-                    hashCode = hashCode * 59 + this.TracingSk.GetHashCode();
+                var hashCode = 41;
+                if (this.TracingAk != null) hashCode = hashCode * 59 + this.TracingAk.GetHashCode();
+                if (this.TracingSk != null) hashCode = hashCode * 59 + this.TracingSk.GetHashCode();
                 return hashCode;
             }
         }

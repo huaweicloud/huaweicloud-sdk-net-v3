@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(ListTrustedServicesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TrustedServices != input.TrustedServices || (this.TrustedServices != null && input.TrustedServices != null && !this.TrustedServices.SequenceEqual(input.TrustedServices))) return false;
+            if (this.PageInfo != input.PageInfo || (this.PageInfo != null && !this.PageInfo.Equals(input.PageInfo))) return false;
 
-            return 
-                (
-                    this.TrustedServices == input.TrustedServices ||
-                    this.TrustedServices != null &&
-                    input.TrustedServices != null &&
-                    this.TrustedServices.SequenceEqual(input.TrustedServices)
-                ) && 
-                (
-                    this.PageInfo == input.PageInfo ||
-                    (this.PageInfo != null &&
-                    this.PageInfo.Equals(input.PageInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TrustedServices != null)
-                    hashCode = hashCode * 59 + this.TrustedServices.GetHashCode();
-                if (this.PageInfo != null)
-                    hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.TrustedServices != null) hashCode = hashCode * 59 + this.TrustedServices.GetHashCode();
+                if (this.PageInfo != null) hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
                 return hashCode;
             }
         }

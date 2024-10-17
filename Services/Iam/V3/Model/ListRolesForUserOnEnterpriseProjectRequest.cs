@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(ListRolesForUserOnEnterpriseProjectRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.UserId != input.UserId || (this.UserId != null && !this.UserId.Equals(input.UserId))) return false;
 
-            return 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                var hashCode = 41;
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.UserId != null) hashCode = hashCode * 59 + this.UserId.GetHashCode();
                 return hashCode;
             }
         }

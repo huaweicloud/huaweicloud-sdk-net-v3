@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(CheckWhetherHostGroupCanBeCreatedResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CanCreated != input.CanCreated || (this.CanCreated != null && !this.CanCreated.Equals(input.CanCreated))) return false;
 
-            return 
-                (
-                    this.CanCreated == input.CanCreated ||
-                    (this.CanCreated != null &&
-                    this.CanCreated.Equals(input.CanCreated))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CanCreated != null)
-                    hashCode = hashCode * 59 + this.CanCreated.GetHashCode();
+                var hashCode = 41;
+                if (this.CanCreated != null) hashCode = hashCode * 59 + this.CanCreated.GetHashCode();
                 return hashCode;
             }
         }

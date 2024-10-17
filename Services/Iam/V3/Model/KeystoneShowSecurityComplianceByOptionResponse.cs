@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(KeystoneShowSecurityComplianceByOptionResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Config != input.Config || (this.Config != null && !this.Config.Equals(input.Config))) return false;
 
-            return 
-                (
-                    this.Config == input.Config ||
-                    (this.Config != null &&
-                    this.Config.Equals(input.Config))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Config != null)
-                    hashCode = hashCode * 59 + this.Config.GetHashCode();
+                var hashCode = 41;
+                if (this.Config != null) hashCode = hashCode * 59 + this.Config.GetHashCode();
                 return hashCode;
             }
         }

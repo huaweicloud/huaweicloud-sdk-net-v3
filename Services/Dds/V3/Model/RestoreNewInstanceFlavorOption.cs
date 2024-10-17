@@ -202,30 +202,13 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(RestoreNewInstanceFlavorOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type) return false;
+            if (this.Num != input.Num || (this.Num != null && !this.Num.Equals(input.Num))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.SpecCode != input.SpecCode || (this.SpecCode != null && !this.SpecCode.Equals(input.SpecCode))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Num == input.Num ||
-                    (this.Num != null &&
-                    this.Num.Equals(input.Num))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.SpecCode == input.SpecCode ||
-                    (this.SpecCode != null &&
-                    this.SpecCode.Equals(input.SpecCode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -235,15 +218,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Num != null)
-                    hashCode = hashCode * 59 + this.Num.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.SpecCode != null)
-                    hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Num != null) hashCode = hashCode * 59 + this.Num.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.SpecCode != null) hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
                 return hashCode;
             }
         }

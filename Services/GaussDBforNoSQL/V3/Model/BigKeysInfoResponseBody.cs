@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(BigKeysInfoResponseBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DbId != input.DbId || (this.DbId != null && !this.DbId.Equals(input.DbId))) return false;
+            if (this.KeyType != input.KeyType || (this.KeyType != null && !this.KeyType.Equals(input.KeyType))) return false;
+            if (this.KeyName != input.KeyName || (this.KeyName != null && !this.KeyName.Equals(input.KeyName))) return false;
+            if (this.KeySize != input.KeySize || (this.KeySize != null && !this.KeySize.Equals(input.KeySize))) return false;
 
-            return 
-                (
-                    this.DbId == input.DbId ||
-                    (this.DbId != null &&
-                    this.DbId.Equals(input.DbId))
-                ) && 
-                (
-                    this.KeyType == input.KeyType ||
-                    (this.KeyType != null &&
-                    this.KeyType.Equals(input.KeyType))
-                ) && 
-                (
-                    this.KeyName == input.KeyName ||
-                    (this.KeyName != null &&
-                    this.KeyName.Equals(input.KeyName))
-                ) && 
-                (
-                    this.KeySize == input.KeySize ||
-                    (this.KeySize != null &&
-                    this.KeySize.Equals(input.KeySize))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DbId != null)
-                    hashCode = hashCode * 59 + this.DbId.GetHashCode();
-                if (this.KeyType != null)
-                    hashCode = hashCode * 59 + this.KeyType.GetHashCode();
-                if (this.KeyName != null)
-                    hashCode = hashCode * 59 + this.KeyName.GetHashCode();
-                if (this.KeySize != null)
-                    hashCode = hashCode * 59 + this.KeySize.GetHashCode();
+                var hashCode = 41;
+                if (this.DbId != null) hashCode = hashCode * 59 + this.DbId.GetHashCode();
+                if (this.KeyType != null) hashCode = hashCode * 59 + this.KeyType.GetHashCode();
+                if (this.KeyName != null) hashCode = hashCode * 59 + this.KeyName.GetHashCode();
+                if (this.KeySize != null) hashCode = hashCode * 59 + this.KeySize.GetHashCode();
                 return hashCode;
             }
         }

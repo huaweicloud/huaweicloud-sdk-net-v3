@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(AccessAreaFilter input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.ContentType != input.ContentType || (this.ContentType != null && !this.ContentType.Equals(input.ContentType))) return false;
+            if (this.ContentValue != input.ContentValue || (this.ContentValue != null && !this.ContentValue.Equals(input.ContentValue))) return false;
+            if (this.Area != input.Area || (this.Area != null && !this.Area.Equals(input.Area))) return false;
+            if (this.ExceptionIp != input.ExceptionIp || (this.ExceptionIp != null && !this.ExceptionIp.Equals(input.ExceptionIp))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.ContentType == input.ContentType ||
-                    (this.ContentType != null &&
-                    this.ContentType.Equals(input.ContentType))
-                ) && 
-                (
-                    this.ContentValue == input.ContentValue ||
-                    (this.ContentValue != null &&
-                    this.ContentValue.Equals(input.ContentValue))
-                ) && 
-                (
-                    this.Area == input.Area ||
-                    (this.Area != null &&
-                    this.Area.Equals(input.Area))
-                ) && 
-                (
-                    this.ExceptionIp == input.ExceptionIp ||
-                    (this.ExceptionIp != null &&
-                    this.ExceptionIp.Equals(input.ExceptionIp))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.ContentType != null)
-                    hashCode = hashCode * 59 + this.ContentType.GetHashCode();
-                if (this.ContentValue != null)
-                    hashCode = hashCode * 59 + this.ContentValue.GetHashCode();
-                if (this.Area != null)
-                    hashCode = hashCode * 59 + this.Area.GetHashCode();
-                if (this.ExceptionIp != null)
-                    hashCode = hashCode * 59 + this.ExceptionIp.GetHashCode();
+                var hashCode = 41;
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.ContentType != null) hashCode = hashCode * 59 + this.ContentType.GetHashCode();
+                if (this.ContentValue != null) hashCode = hashCode * 59 + this.ContentValue.GetHashCode();
+                if (this.Area != null) hashCode = hashCode * 59 + this.Area.GetHashCode();
+                if (this.ExceptionIp != null) hashCode = hashCode * 59 + this.ExceptionIp.GetHashCode();
                 return hashCode;
             }
         }

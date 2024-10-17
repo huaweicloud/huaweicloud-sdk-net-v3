@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(StopJobActionInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.IsForceStop != input.IsForceStop || (this.IsForceStop != null && !this.IsForceStop.Equals(input.IsForceStop))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.IsForceStop == input.IsForceStop ||
-                    (this.IsForceStop != null &&
-                    this.IsForceStop.Equals(input.IsForceStop))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.IsForceStop != null)
-                    hashCode = hashCode * 59 + this.IsForceStop.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.IsForceStop != null) hashCode = hashCode * 59 + this.IsForceStop.GetHashCode();
                 return hashCode;
             }
         }

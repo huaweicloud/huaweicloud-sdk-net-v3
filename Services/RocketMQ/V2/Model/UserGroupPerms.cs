@@ -170,20 +170,11 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(UserGroupPerms input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Perm != input.Perm) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Perm == input.Perm ||
-                    (this.Perm != null &&
-                    this.Perm.Equals(input.Perm))
-                );
+            return true;
         }
 
         /// <summary>
@@ -193,11 +184,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Perm != null)
-                    hashCode = hashCode * 59 + this.Perm.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = hashCode * 59 + this.Perm.GetHashCode();
                 return hashCode;
             }
         }

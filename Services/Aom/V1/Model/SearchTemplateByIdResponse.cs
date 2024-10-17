@@ -189,119 +189,30 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         /// </summary>
         public bool Equals(SearchTemplateByIdResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ApproveInfo != input.ApproveInfo || (this.ApproveInfo != null && !this.ApproveInfo.Equals(input.ApproveInfo))) return false;
+            if (this.CreateBy != input.CreateBy || (this.CreateBy != null && !this.CreateBy.Equals(input.CreateBy))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.IsCollect != input.IsCollect || (this.IsCollect != null && !this.IsCollect.Equals(input.IsCollect))) return false;
+            if (this.IsPublish != input.IsPublish || (this.IsPublish != null && !this.IsPublish.Equals(input.IsPublish))) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.JobVersion != input.JobVersion || (this.JobVersion != null && !this.JobVersion.Equals(input.JobVersion))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.NeedSynchronize != input.NeedSynchronize || (this.NeedSynchronize != null && !this.NeedSynchronize.Equals(input.NeedSynchronize))) return false;
+            if (this.Nodes != input.Nodes || (this.Nodes != null && input.Nodes != null && !this.Nodes.SequenceEqual(input.Nodes))) return false;
+            if (this.Parameters != input.Parameters || (this.Parameters != null && input.Parameters != null && !this.Parameters.SequenceEqual(input.Parameters))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.Quote != input.Quote || (this.Quote != null && input.Quote != null && !this.Quote.SequenceEqual(input.Quote))) return false;
+            if (this.RateControl != input.RateControl || (this.RateControl != null && !this.RateControl.Equals(input.RateControl))) return false;
+            if (this.ShareType != input.ShareType || (this.ShareType != null && !this.ShareType.Equals(input.ShareType))) return false;
+            if (this.Steps != input.Steps || (this.Steps != null && input.Steps != null && !this.Steps.SequenceEqual(input.Steps))) return false;
+            if (this.UpdateBy != input.UpdateBy || (this.UpdateBy != null && !this.UpdateBy.Equals(input.UpdateBy))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
 
-            return 
-                (
-                    this.ApproveInfo == input.ApproveInfo ||
-                    (this.ApproveInfo != null &&
-                    this.ApproveInfo.Equals(input.ApproveInfo))
-                ) && 
-                (
-                    this.CreateBy == input.CreateBy ||
-                    (this.CreateBy != null &&
-                    this.CreateBy.Equals(input.CreateBy))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.IsCollect == input.IsCollect ||
-                    (this.IsCollect != null &&
-                    this.IsCollect.Equals(input.IsCollect))
-                ) && 
-                (
-                    this.IsPublish == input.IsPublish ||
-                    (this.IsPublish != null &&
-                    this.IsPublish.Equals(input.IsPublish))
-                ) && 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.JobVersion == input.JobVersion ||
-                    (this.JobVersion != null &&
-                    this.JobVersion.Equals(input.JobVersion))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.NeedSynchronize == input.NeedSynchronize ||
-                    (this.NeedSynchronize != null &&
-                    this.NeedSynchronize.Equals(input.NeedSynchronize))
-                ) && 
-                (
-                    this.Nodes == input.Nodes ||
-                    this.Nodes != null &&
-                    input.Nodes != null &&
-                    this.Nodes.SequenceEqual(input.Nodes)
-                ) && 
-                (
-                    this.Parameters == input.Parameters ||
-                    this.Parameters != null &&
-                    input.Parameters != null &&
-                    this.Parameters.SequenceEqual(input.Parameters)
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Quote == input.Quote ||
-                    this.Quote != null &&
-                    input.Quote != null &&
-                    this.Quote.SequenceEqual(input.Quote)
-                ) && 
-                (
-                    this.RateControl == input.RateControl ||
-                    (this.RateControl != null &&
-                    this.RateControl.Equals(input.RateControl))
-                ) && 
-                (
-                    this.ShareType == input.ShareType ||
-                    (this.ShareType != null &&
-                    this.ShareType.Equals(input.ShareType))
-                ) && 
-                (
-                    this.Steps == input.Steps ||
-                    this.Steps != null &&
-                    input.Steps != null &&
-                    this.Steps.SequenceEqual(input.Steps)
-                ) && 
-                (
-                    this.UpdateBy == input.UpdateBy ||
-                    (this.UpdateBy != null &&
-                    this.UpdateBy.Equals(input.UpdateBy))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                );
+            return true;
         }
 
         /// <summary>
@@ -311,49 +222,28 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ApproveInfo != null)
-                    hashCode = hashCode * 59 + this.ApproveInfo.GetHashCode();
-                if (this.CreateBy != null)
-                    hashCode = hashCode * 59 + this.CreateBy.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.IsCollect != null)
-                    hashCode = hashCode * 59 + this.IsCollect.GetHashCode();
-                if (this.IsPublish != null)
-                    hashCode = hashCode * 59 + this.IsPublish.GetHashCode();
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.JobVersion != null)
-                    hashCode = hashCode * 59 + this.JobVersion.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.NeedSynchronize != null)
-                    hashCode = hashCode * 59 + this.NeedSynchronize.GetHashCode();
-                if (this.Nodes != null)
-                    hashCode = hashCode * 59 + this.Nodes.GetHashCode();
-                if (this.Parameters != null)
-                    hashCode = hashCode * 59 + this.Parameters.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.Quote != null)
-                    hashCode = hashCode * 59 + this.Quote.GetHashCode();
-                if (this.RateControl != null)
-                    hashCode = hashCode * 59 + this.RateControl.GetHashCode();
-                if (this.ShareType != null)
-                    hashCode = hashCode * 59 + this.ShareType.GetHashCode();
-                if (this.Steps != null)
-                    hashCode = hashCode * 59 + this.Steps.GetHashCode();
-                if (this.UpdateBy != null)
-                    hashCode = hashCode * 59 + this.UpdateBy.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                var hashCode = 41;
+                if (this.ApproveInfo != null) hashCode = hashCode * 59 + this.ApproveInfo.GetHashCode();
+                if (this.CreateBy != null) hashCode = hashCode * 59 + this.CreateBy.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.IsCollect != null) hashCode = hashCode * 59 + this.IsCollect.GetHashCode();
+                if (this.IsPublish != null) hashCode = hashCode * 59 + this.IsPublish.GetHashCode();
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.JobVersion != null) hashCode = hashCode * 59 + this.JobVersion.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.NeedSynchronize != null) hashCode = hashCode * 59 + this.NeedSynchronize.GetHashCode();
+                if (this.Nodes != null) hashCode = hashCode * 59 + this.Nodes.GetHashCode();
+                if (this.Parameters != null) hashCode = hashCode * 59 + this.Parameters.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.Quote != null) hashCode = hashCode * 59 + this.Quote.GetHashCode();
+                if (this.RateControl != null) hashCode = hashCode * 59 + this.RateControl.GetHashCode();
+                if (this.ShareType != null) hashCode = hashCode * 59 + this.ShareType.GetHashCode();
+                if (this.Steps != null) hashCode = hashCode * 59 + this.Steps.GetHashCode();
+                if (this.UpdateBy != null) hashCode = hashCode * 59 + this.UpdateBy.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
                 return hashCode;
             }
         }

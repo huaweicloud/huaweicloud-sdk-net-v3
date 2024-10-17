@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// </summary>
         public bool Equals(ImageBatchSyncReqImageTextConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BlackGlossaryNames != input.BlackGlossaryNames || (this.BlackGlossaryNames != null && input.BlackGlossaryNames != null && !this.BlackGlossaryNames.SequenceEqual(input.BlackGlossaryNames))) return false;
+            if (this.WhiteGlossaryNames != input.WhiteGlossaryNames || (this.WhiteGlossaryNames != null && input.WhiteGlossaryNames != null && !this.WhiteGlossaryNames.SequenceEqual(input.WhiteGlossaryNames))) return false;
 
-            return 
-                (
-                    this.BlackGlossaryNames == input.BlackGlossaryNames ||
-                    this.BlackGlossaryNames != null &&
-                    input.BlackGlossaryNames != null &&
-                    this.BlackGlossaryNames.SequenceEqual(input.BlackGlossaryNames)
-                ) && 
-                (
-                    this.WhiteGlossaryNames == input.WhiteGlossaryNames ||
-                    this.WhiteGlossaryNames != null &&
-                    input.WhiteGlossaryNames != null &&
-                    this.WhiteGlossaryNames.SequenceEqual(input.WhiteGlossaryNames)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BlackGlossaryNames != null)
-                    hashCode = hashCode * 59 + this.BlackGlossaryNames.GetHashCode();
-                if (this.WhiteGlossaryNames != null)
-                    hashCode = hashCode * 59 + this.WhiteGlossaryNames.GetHashCode();
+                var hashCode = 41;
+                if (this.BlackGlossaryNames != null) hashCode = hashCode * 59 + this.BlackGlossaryNames.GetHashCode();
+                if (this.WhiteGlossaryNames != null) hashCode = hashCode * 59 + this.WhiteGlossaryNames.GetHashCode();
                 return hashCode;
             }
         }

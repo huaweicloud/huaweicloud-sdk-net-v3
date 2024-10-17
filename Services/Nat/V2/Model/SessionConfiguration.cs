@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// </summary>
         public bool Equals(SessionConfiguration input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TcpSessionExpireTime != input.TcpSessionExpireTime || (this.TcpSessionExpireTime != null && !this.TcpSessionExpireTime.Equals(input.TcpSessionExpireTime))) return false;
+            if (this.UdpSessionExpireTime != input.UdpSessionExpireTime || (this.UdpSessionExpireTime != null && !this.UdpSessionExpireTime.Equals(input.UdpSessionExpireTime))) return false;
+            if (this.IcmpSessionExpireTime != input.IcmpSessionExpireTime || (this.IcmpSessionExpireTime != null && !this.IcmpSessionExpireTime.Equals(input.IcmpSessionExpireTime))) return false;
+            if (this.TcpTimeWaitTime != input.TcpTimeWaitTime || (this.TcpTimeWaitTime != null && !this.TcpTimeWaitTime.Equals(input.TcpTimeWaitTime))) return false;
 
-            return 
-                (
-                    this.TcpSessionExpireTime == input.TcpSessionExpireTime ||
-                    (this.TcpSessionExpireTime != null &&
-                    this.TcpSessionExpireTime.Equals(input.TcpSessionExpireTime))
-                ) && 
-                (
-                    this.UdpSessionExpireTime == input.UdpSessionExpireTime ||
-                    (this.UdpSessionExpireTime != null &&
-                    this.UdpSessionExpireTime.Equals(input.UdpSessionExpireTime))
-                ) && 
-                (
-                    this.IcmpSessionExpireTime == input.IcmpSessionExpireTime ||
-                    (this.IcmpSessionExpireTime != null &&
-                    this.IcmpSessionExpireTime.Equals(input.IcmpSessionExpireTime))
-                ) && 
-                (
-                    this.TcpTimeWaitTime == input.TcpTimeWaitTime ||
-                    (this.TcpTimeWaitTime != null &&
-                    this.TcpTimeWaitTime.Equals(input.TcpTimeWaitTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TcpSessionExpireTime != null)
-                    hashCode = hashCode * 59 + this.TcpSessionExpireTime.GetHashCode();
-                if (this.UdpSessionExpireTime != null)
-                    hashCode = hashCode * 59 + this.UdpSessionExpireTime.GetHashCode();
-                if (this.IcmpSessionExpireTime != null)
-                    hashCode = hashCode * 59 + this.IcmpSessionExpireTime.GetHashCode();
-                if (this.TcpTimeWaitTime != null)
-                    hashCode = hashCode * 59 + this.TcpTimeWaitTime.GetHashCode();
+                var hashCode = 41;
+                if (this.TcpSessionExpireTime != null) hashCode = hashCode * 59 + this.TcpSessionExpireTime.GetHashCode();
+                if (this.UdpSessionExpireTime != null) hashCode = hashCode * 59 + this.UdpSessionExpireTime.GetHashCode();
+                if (this.IcmpSessionExpireTime != null) hashCode = hashCode * 59 + this.IcmpSessionExpireTime.GetHashCode();
+                if (this.TcpTimeWaitTime != null) hashCode = hashCode * 59 + this.TcpTimeWaitTime.GetHashCode();
                 return hashCode;
             }
         }

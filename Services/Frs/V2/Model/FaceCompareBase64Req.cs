@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public bool Equals(FaceCompareBase64Req input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Image2Base64 != input.Image2Base64 || (this.Image2Base64 != null && !this.Image2Base64.Equals(input.Image2Base64))) return false;
+            if (this.Image1Base64 != input.Image1Base64 || (this.Image1Base64 != null && !this.Image1Base64.Equals(input.Image1Base64))) return false;
 
-            return 
-                (
-                    this.Image2Base64 == input.Image2Base64 ||
-                    (this.Image2Base64 != null &&
-                    this.Image2Base64.Equals(input.Image2Base64))
-                ) && 
-                (
-                    this.Image1Base64 == input.Image1Base64 ||
-                    (this.Image1Base64 != null &&
-                    this.Image1Base64.Equals(input.Image1Base64))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Image2Base64 != null)
-                    hashCode = hashCode * 59 + this.Image2Base64.GetHashCode();
-                if (this.Image1Base64 != null)
-                    hashCode = hashCode * 59 + this.Image1Base64.GetHashCode();
+                var hashCode = 41;
+                if (this.Image2Base64 != null) hashCode = hashCode * 59 + this.Image2Base64.GetHashCode();
+                if (this.Image1Base64 != null) hashCode = hashCode * 59 + this.Image1Base64.GetHashCode();
                 return hashCode;
             }
         }

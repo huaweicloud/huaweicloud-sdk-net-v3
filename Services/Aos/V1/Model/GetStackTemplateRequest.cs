@@ -82,37 +82,14 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(GetStackTemplateRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClientRequestId != input.ClientRequestId || (this.ClientRequestId != null && !this.ClientRequestId.Equals(input.ClientRequestId))) return false;
+            if (this.StackName != input.StackName || (this.StackName != null && !this.StackName.Equals(input.StackName))) return false;
+            if (this.StackId != input.StackId || (this.StackId != null && !this.StackId.Equals(input.StackId))) return false;
+            if (this.AccessControlSourceIps != input.AccessControlSourceIps || (this.AccessControlSourceIps != null && input.AccessControlSourceIps != null && !this.AccessControlSourceIps.SequenceEqual(input.AccessControlSourceIps))) return false;
+            if (this.AccessControlSourceVpcIds != input.AccessControlSourceVpcIds || (this.AccessControlSourceVpcIds != null && input.AccessControlSourceVpcIds != null && !this.AccessControlSourceVpcIds.SequenceEqual(input.AccessControlSourceVpcIds))) return false;
 
-            return 
-                (
-                    this.ClientRequestId == input.ClientRequestId ||
-                    (this.ClientRequestId != null &&
-                    this.ClientRequestId.Equals(input.ClientRequestId))
-                ) && 
-                (
-                    this.StackName == input.StackName ||
-                    (this.StackName != null &&
-                    this.StackName.Equals(input.StackName))
-                ) && 
-                (
-                    this.StackId == input.StackId ||
-                    (this.StackId != null &&
-                    this.StackId.Equals(input.StackId))
-                ) && 
-                (
-                    this.AccessControlSourceIps == input.AccessControlSourceIps ||
-                    this.AccessControlSourceIps != null &&
-                    input.AccessControlSourceIps != null &&
-                    this.AccessControlSourceIps.SequenceEqual(input.AccessControlSourceIps)
-                ) && 
-                (
-                    this.AccessControlSourceVpcIds == input.AccessControlSourceVpcIds ||
-                    this.AccessControlSourceVpcIds != null &&
-                    input.AccessControlSourceVpcIds != null &&
-                    this.AccessControlSourceVpcIds.SequenceEqual(input.AccessControlSourceVpcIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -122,17 +99,12 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClientRequestId != null)
-                    hashCode = hashCode * 59 + this.ClientRequestId.GetHashCode();
-                if (this.StackName != null)
-                    hashCode = hashCode * 59 + this.StackName.GetHashCode();
-                if (this.StackId != null)
-                    hashCode = hashCode * 59 + this.StackId.GetHashCode();
-                if (this.AccessControlSourceIps != null)
-                    hashCode = hashCode * 59 + this.AccessControlSourceIps.GetHashCode();
-                if (this.AccessControlSourceVpcIds != null)
-                    hashCode = hashCode * 59 + this.AccessControlSourceVpcIds.GetHashCode();
+                var hashCode = 41;
+                if (this.ClientRequestId != null) hashCode = hashCode * 59 + this.ClientRequestId.GetHashCode();
+                if (this.StackName != null) hashCode = hashCode * 59 + this.StackName.GetHashCode();
+                if (this.StackId != null) hashCode = hashCode * 59 + this.StackId.GetHashCode();
+                if (this.AccessControlSourceIps != null) hashCode = hashCode * 59 + this.AccessControlSourceIps.GetHashCode();
+                if (this.AccessControlSourceVpcIds != null) hashCode = hashCode * 59 + this.AccessControlSourceVpcIds.GetHashCode();
                 return hashCode;
             }
         }

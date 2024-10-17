@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public bool Equals(ShowOutputInfoResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Error != input.Error || (this.Error != null && !this.Error.Equals(input.Error))) return false;
+            if (this.Result != input.Result || (this.Result != null && !this.Result.Equals(input.Result))) return false;
 
-            return 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Error == input.Error ||
-                    (this.Error != null &&
-                    this.Error.Equals(input.Error))
-                ) && 
-                (
-                    this.Result == input.Result ||
-                    (this.Result != null &&
-                    this.Result.Equals(input.Result))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Error != null)
-                    hashCode = hashCode * 59 + this.Error.GetHashCode();
-                if (this.Result != null)
-                    hashCode = hashCode * 59 + this.Result.GetHashCode();
+                var hashCode = 41;
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Error != null) hashCode = hashCode * 59 + this.Error.GetHashCode();
+                if (this.Result != null) hashCode = hashCode * 59 + this.Result.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         /// </summary>
         public bool Equals(ListTemplateVarilableDetailsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Results != input.Results || (this.Results != null && input.Results != null && !this.Results.SequenceEqual(input.Results))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
-            return 
-                (
-                    this.Results == input.Results ||
-                    this.Results != null &&
-                    input.Results != null &&
-                    this.Results.SequenceEqual(input.Results)
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Results != null)
-                    hashCode = hashCode * 59 + this.Results.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                var hashCode = 41;
+                if (this.Results != null) hashCode = hashCode * 59 + this.Results.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

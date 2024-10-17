@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// </summary>
         public bool Equals(DownlinkVpc input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
+            if (this.VirsubnetId != input.VirsubnetId || (this.VirsubnetId != null && !this.VirsubnetId.Equals(input.VirsubnetId))) return false;
 
-            return 
-                (
-                    this.VpcId == input.VpcId ||
-                    (this.VpcId != null &&
-                    this.VpcId.Equals(input.VpcId))
-                ) && 
-                (
-                    this.VirsubnetId == input.VirsubnetId ||
-                    (this.VirsubnetId != null &&
-                    this.VirsubnetId.Equals(input.VirsubnetId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.VirsubnetId != null)
-                    hashCode = hashCode * 59 + this.VirsubnetId.GetHashCode();
+                var hashCode = 41;
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.VirsubnetId != null) hashCode = hashCode * 59 + this.VirsubnetId.GetHashCode();
                 return hashCode;
             }
         }

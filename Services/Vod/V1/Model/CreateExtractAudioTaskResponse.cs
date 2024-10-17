@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(CreateExtractAudioTaskResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
+            if (this.AudioAssetId != input.AudioAssetId || (this.AudioAssetId != null && !this.AudioAssetId.Equals(input.AudioAssetId))) return false;
 
-            return 
-                (
-                    this.AssetId == input.AssetId ||
-                    (this.AssetId != null &&
-                    this.AssetId.Equals(input.AssetId))
-                ) && 
-                (
-                    this.AudioAssetId == input.AudioAssetId ||
-                    (this.AudioAssetId != null &&
-                    this.AudioAssetId.Equals(input.AudioAssetId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AssetId != null)
-                    hashCode = hashCode * 59 + this.AssetId.GetHashCode();
-                if (this.AudioAssetId != null)
-                    hashCode = hashCode * 59 + this.AudioAssetId.GetHashCode();
+                var hashCode = 41;
+                if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                if (this.AudioAssetId != null) hashCode = hashCode * 59 + this.AudioAssetId.GetHashCode();
                 return hashCode;
             }
         }

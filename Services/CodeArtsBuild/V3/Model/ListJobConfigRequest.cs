@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public bool Equals(ListJobConfigRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.GetAllParams != input.GetAllParams || (this.GetAllParams != null && !this.GetAllParams.Equals(input.GetAllParams))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.GetAllParams == input.GetAllParams ||
-                    (this.GetAllParams != null &&
-                    this.GetAllParams.Equals(input.GetAllParams))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.GetAllParams != null)
-                    hashCode = hashCode * 59 + this.GetAllParams.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.GetAllParams != null) hashCode = hashCode * 59 + this.GetAllParams.GetHashCode();
                 return hashCode;
             }
         }

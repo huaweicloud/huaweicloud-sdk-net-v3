@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(DelegatedAdministratorReqBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ServicePrincipal != input.ServicePrincipal || (this.ServicePrincipal != null && !this.ServicePrincipal.Equals(input.ServicePrincipal))) return false;
+            if (this.AccountId != input.AccountId || (this.AccountId != null && !this.AccountId.Equals(input.AccountId))) return false;
 
-            return 
-                (
-                    this.ServicePrincipal == input.ServicePrincipal ||
-                    (this.ServicePrincipal != null &&
-                    this.ServicePrincipal.Equals(input.ServicePrincipal))
-                ) && 
-                (
-                    this.AccountId == input.AccountId ||
-                    (this.AccountId != null &&
-                    this.AccountId.Equals(input.AccountId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ServicePrincipal != null)
-                    hashCode = hashCode * 59 + this.ServicePrincipal.GetHashCode();
-                if (this.AccountId != null)
-                    hashCode = hashCode * 59 + this.AccountId.GetHashCode();
+                var hashCode = 41;
+                if (this.ServicePrincipal != null) hashCode = hashCode * 59 + this.ServicePrincipal.GetHashCode();
+                if (this.AccountId != null) hashCode = hashCode * 59 + this.AccountId.GetHashCode();
                 return hashCode;
             }
         }

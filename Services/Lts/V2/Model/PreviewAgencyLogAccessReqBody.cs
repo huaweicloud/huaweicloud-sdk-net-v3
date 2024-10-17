@@ -248,80 +248,23 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(PreviewAgencyLogAccessReqBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AgencyAccessType != input.AgencyAccessType) return false;
+            if (this.AgencyLogAccess != input.AgencyLogAccess || (this.AgencyLogAccess != null && !this.AgencyLogAccess.Equals(input.AgencyLogAccess))) return false;
+            if (this.LogAgencyStreamName != input.LogAgencyStreamName || (this.LogAgencyStreamName != null && !this.LogAgencyStreamName.Equals(input.LogAgencyStreamName))) return false;
+            if (this.LogAgencyStreamId != input.LogAgencyStreamId || (this.LogAgencyStreamId != null && !this.LogAgencyStreamId.Equals(input.LogAgencyStreamId))) return false;
+            if (this.LogAgencyGroupName != input.LogAgencyGroupName || (this.LogAgencyGroupName != null && !this.LogAgencyGroupName.Equals(input.LogAgencyGroupName))) return false;
+            if (this.LogAgencyGroupId != input.LogAgencyGroupId || (this.LogAgencyGroupId != null && !this.LogAgencyGroupId.Equals(input.LogAgencyGroupId))) return false;
+            if (this.LogBeAgencystreamName != input.LogBeAgencystreamName || (this.LogBeAgencystreamName != null && !this.LogBeAgencystreamName.Equals(input.LogBeAgencystreamName))) return false;
+            if (this.LogBeAgencystreamId != input.LogBeAgencystreamId || (this.LogBeAgencystreamId != null && !this.LogBeAgencystreamId.Equals(input.LogBeAgencystreamId))) return false;
+            if (this.LogBeAgencygroupName != input.LogBeAgencygroupName || (this.LogBeAgencygroupName != null && !this.LogBeAgencygroupName.Equals(input.LogBeAgencygroupName))) return false;
+            if (this.LogBeAgencygroupId != input.LogBeAgencygroupId || (this.LogBeAgencygroupId != null && !this.LogBeAgencygroupId.Equals(input.LogBeAgencygroupId))) return false;
+            if (this.BeAgencyProjectId != input.BeAgencyProjectId || (this.BeAgencyProjectId != null && !this.BeAgencyProjectId.Equals(input.BeAgencyProjectId))) return false;
+            if (this.AgencyProjectId != input.AgencyProjectId || (this.AgencyProjectId != null && !this.AgencyProjectId.Equals(input.AgencyProjectId))) return false;
+            if (this.AgencyDomainName != input.AgencyDomainName || (this.AgencyDomainName != null && !this.AgencyDomainName.Equals(input.AgencyDomainName))) return false;
+            if (this.AgencyName != input.AgencyName || (this.AgencyName != null && !this.AgencyName.Equals(input.AgencyName))) return false;
 
-            return 
-                (
-                    this.AgencyAccessType == input.AgencyAccessType ||
-                    (this.AgencyAccessType != null &&
-                    this.AgencyAccessType.Equals(input.AgencyAccessType))
-                ) && 
-                (
-                    this.AgencyLogAccess == input.AgencyLogAccess ||
-                    (this.AgencyLogAccess != null &&
-                    this.AgencyLogAccess.Equals(input.AgencyLogAccess))
-                ) && 
-                (
-                    this.LogAgencyStreamName == input.LogAgencyStreamName ||
-                    (this.LogAgencyStreamName != null &&
-                    this.LogAgencyStreamName.Equals(input.LogAgencyStreamName))
-                ) && 
-                (
-                    this.LogAgencyStreamId == input.LogAgencyStreamId ||
-                    (this.LogAgencyStreamId != null &&
-                    this.LogAgencyStreamId.Equals(input.LogAgencyStreamId))
-                ) && 
-                (
-                    this.LogAgencyGroupName == input.LogAgencyGroupName ||
-                    (this.LogAgencyGroupName != null &&
-                    this.LogAgencyGroupName.Equals(input.LogAgencyGroupName))
-                ) && 
-                (
-                    this.LogAgencyGroupId == input.LogAgencyGroupId ||
-                    (this.LogAgencyGroupId != null &&
-                    this.LogAgencyGroupId.Equals(input.LogAgencyGroupId))
-                ) && 
-                (
-                    this.LogBeAgencystreamName == input.LogBeAgencystreamName ||
-                    (this.LogBeAgencystreamName != null &&
-                    this.LogBeAgencystreamName.Equals(input.LogBeAgencystreamName))
-                ) && 
-                (
-                    this.LogBeAgencystreamId == input.LogBeAgencystreamId ||
-                    (this.LogBeAgencystreamId != null &&
-                    this.LogBeAgencystreamId.Equals(input.LogBeAgencystreamId))
-                ) && 
-                (
-                    this.LogBeAgencygroupName == input.LogBeAgencygroupName ||
-                    (this.LogBeAgencygroupName != null &&
-                    this.LogBeAgencygroupName.Equals(input.LogBeAgencygroupName))
-                ) && 
-                (
-                    this.LogBeAgencygroupId == input.LogBeAgencygroupId ||
-                    (this.LogBeAgencygroupId != null &&
-                    this.LogBeAgencygroupId.Equals(input.LogBeAgencygroupId))
-                ) && 
-                (
-                    this.BeAgencyProjectId == input.BeAgencyProjectId ||
-                    (this.BeAgencyProjectId != null &&
-                    this.BeAgencyProjectId.Equals(input.BeAgencyProjectId))
-                ) && 
-                (
-                    this.AgencyProjectId == input.AgencyProjectId ||
-                    (this.AgencyProjectId != null &&
-                    this.AgencyProjectId.Equals(input.AgencyProjectId))
-                ) && 
-                (
-                    this.AgencyDomainName == input.AgencyDomainName ||
-                    (this.AgencyDomainName != null &&
-                    this.AgencyDomainName.Equals(input.AgencyDomainName))
-                ) && 
-                (
-                    this.AgencyName == input.AgencyName ||
-                    (this.AgencyName != null &&
-                    this.AgencyName.Equals(input.AgencyName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -331,35 +274,21 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AgencyAccessType != null)
-                    hashCode = hashCode * 59 + this.AgencyAccessType.GetHashCode();
-                if (this.AgencyLogAccess != null)
-                    hashCode = hashCode * 59 + this.AgencyLogAccess.GetHashCode();
-                if (this.LogAgencyStreamName != null)
-                    hashCode = hashCode * 59 + this.LogAgencyStreamName.GetHashCode();
-                if (this.LogAgencyStreamId != null)
-                    hashCode = hashCode * 59 + this.LogAgencyStreamId.GetHashCode();
-                if (this.LogAgencyGroupName != null)
-                    hashCode = hashCode * 59 + this.LogAgencyGroupName.GetHashCode();
-                if (this.LogAgencyGroupId != null)
-                    hashCode = hashCode * 59 + this.LogAgencyGroupId.GetHashCode();
-                if (this.LogBeAgencystreamName != null)
-                    hashCode = hashCode * 59 + this.LogBeAgencystreamName.GetHashCode();
-                if (this.LogBeAgencystreamId != null)
-                    hashCode = hashCode * 59 + this.LogBeAgencystreamId.GetHashCode();
-                if (this.LogBeAgencygroupName != null)
-                    hashCode = hashCode * 59 + this.LogBeAgencygroupName.GetHashCode();
-                if (this.LogBeAgencygroupId != null)
-                    hashCode = hashCode * 59 + this.LogBeAgencygroupId.GetHashCode();
-                if (this.BeAgencyProjectId != null)
-                    hashCode = hashCode * 59 + this.BeAgencyProjectId.GetHashCode();
-                if (this.AgencyProjectId != null)
-                    hashCode = hashCode * 59 + this.AgencyProjectId.GetHashCode();
-                if (this.AgencyDomainName != null)
-                    hashCode = hashCode * 59 + this.AgencyDomainName.GetHashCode();
-                if (this.AgencyName != null)
-                    hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.AgencyAccessType.GetHashCode();
+                if (this.AgencyLogAccess != null) hashCode = hashCode * 59 + this.AgencyLogAccess.GetHashCode();
+                if (this.LogAgencyStreamName != null) hashCode = hashCode * 59 + this.LogAgencyStreamName.GetHashCode();
+                if (this.LogAgencyStreamId != null) hashCode = hashCode * 59 + this.LogAgencyStreamId.GetHashCode();
+                if (this.LogAgencyGroupName != null) hashCode = hashCode * 59 + this.LogAgencyGroupName.GetHashCode();
+                if (this.LogAgencyGroupId != null) hashCode = hashCode * 59 + this.LogAgencyGroupId.GetHashCode();
+                if (this.LogBeAgencystreamName != null) hashCode = hashCode * 59 + this.LogBeAgencystreamName.GetHashCode();
+                if (this.LogBeAgencystreamId != null) hashCode = hashCode * 59 + this.LogBeAgencystreamId.GetHashCode();
+                if (this.LogBeAgencygroupName != null) hashCode = hashCode * 59 + this.LogBeAgencygroupName.GetHashCode();
+                if (this.LogBeAgencygroupId != null) hashCode = hashCode * 59 + this.LogBeAgencygroupId.GetHashCode();
+                if (this.BeAgencyProjectId != null) hashCode = hashCode * 59 + this.BeAgencyProjectId.GetHashCode();
+                if (this.AgencyProjectId != null) hashCode = hashCode * 59 + this.AgencyProjectId.GetHashCode();
+                if (this.AgencyDomainName != null) hashCode = hashCode * 59 + this.AgencyDomainName.GetHashCode();
+                if (this.AgencyName != null) hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
                 return hashCode;
             }
         }

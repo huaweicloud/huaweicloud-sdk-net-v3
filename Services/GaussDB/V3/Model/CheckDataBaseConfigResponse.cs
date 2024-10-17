@@ -77,37 +77,14 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(CheckDataBaseConfigResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceDatabaseName != input.SourceDatabaseName || (this.SourceDatabaseName != null && !this.SourceDatabaseName.Equals(input.SourceDatabaseName))) return false;
+            if (this.SourceDbConfigCheckResults != input.SourceDbConfigCheckResults || (this.SourceDbConfigCheckResults != null && input.SourceDbConfigCheckResults != null && !this.SourceDbConfigCheckResults.SequenceEqual(input.SourceDbConfigCheckResults))) return false;
+            if (this.TargetDatabaseName != input.TargetDatabaseName || (this.TargetDatabaseName != null && !this.TargetDatabaseName.Equals(input.TargetDatabaseName))) return false;
+            if (this.TargetDbConfigCheckResults != input.TargetDbConfigCheckResults || (this.TargetDbConfigCheckResults != null && input.TargetDbConfigCheckResults != null && !this.TargetDbConfigCheckResults.SequenceEqual(input.TargetDbConfigCheckResults))) return false;
+            if (this.TaskName != input.TaskName || (this.TaskName != null && !this.TaskName.Equals(input.TaskName))) return false;
 
-            return 
-                (
-                    this.SourceDatabaseName == input.SourceDatabaseName ||
-                    (this.SourceDatabaseName != null &&
-                    this.SourceDatabaseName.Equals(input.SourceDatabaseName))
-                ) && 
-                (
-                    this.SourceDbConfigCheckResults == input.SourceDbConfigCheckResults ||
-                    this.SourceDbConfigCheckResults != null &&
-                    input.SourceDbConfigCheckResults != null &&
-                    this.SourceDbConfigCheckResults.SequenceEqual(input.SourceDbConfigCheckResults)
-                ) && 
-                (
-                    this.TargetDatabaseName == input.TargetDatabaseName ||
-                    (this.TargetDatabaseName != null &&
-                    this.TargetDatabaseName.Equals(input.TargetDatabaseName))
-                ) && 
-                (
-                    this.TargetDbConfigCheckResults == input.TargetDbConfigCheckResults ||
-                    this.TargetDbConfigCheckResults != null &&
-                    input.TargetDbConfigCheckResults != null &&
-                    this.TargetDbConfigCheckResults.SequenceEqual(input.TargetDbConfigCheckResults)
-                ) && 
-                (
-                    this.TaskName == input.TaskName ||
-                    (this.TaskName != null &&
-                    this.TaskName.Equals(input.TaskName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -117,17 +94,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceDatabaseName != null)
-                    hashCode = hashCode * 59 + this.SourceDatabaseName.GetHashCode();
-                if (this.SourceDbConfigCheckResults != null)
-                    hashCode = hashCode * 59 + this.SourceDbConfigCheckResults.GetHashCode();
-                if (this.TargetDatabaseName != null)
-                    hashCode = hashCode * 59 + this.TargetDatabaseName.GetHashCode();
-                if (this.TargetDbConfigCheckResults != null)
-                    hashCode = hashCode * 59 + this.TargetDbConfigCheckResults.GetHashCode();
-                if (this.TaskName != null)
-                    hashCode = hashCode * 59 + this.TaskName.GetHashCode();
+                var hashCode = 41;
+                if (this.SourceDatabaseName != null) hashCode = hashCode * 59 + this.SourceDatabaseName.GetHashCode();
+                if (this.SourceDbConfigCheckResults != null) hashCode = hashCode * 59 + this.SourceDbConfigCheckResults.GetHashCode();
+                if (this.TargetDatabaseName != null) hashCode = hashCode * 59 + this.TargetDatabaseName.GetHashCode();
+                if (this.TargetDbConfigCheckResults != null) hashCode = hashCode * 59 + this.TargetDbConfigCheckResults.GetHashCode();
+                if (this.TaskName != null) hashCode = hashCode * 59 + this.TaskName.GetHashCode();
                 return hashCode;
             }
         }

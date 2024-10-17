@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(ContentCompareResultDiffs input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceDbName != input.SourceDbName || (this.SourceDbName != null && !this.SourceDbName.Equals(input.SourceDbName))) return false;
+            if (this.SourceTableName != input.SourceTableName || (this.SourceTableName != null && !this.SourceTableName.Equals(input.SourceTableName))) return false;
+            if (this.ContentCompareDiff != input.ContentCompareDiff || (this.ContentCompareDiff != null && input.ContentCompareDiff != null && !this.ContentCompareDiff.SequenceEqual(input.ContentCompareDiff))) return false;
+            if (this.ContentCompareDiffCount != input.ContentCompareDiffCount || (this.ContentCompareDiffCount != null && !this.ContentCompareDiffCount.Equals(input.ContentCompareDiffCount))) return false;
 
-            return 
-                (
-                    this.SourceDbName == input.SourceDbName ||
-                    (this.SourceDbName != null &&
-                    this.SourceDbName.Equals(input.SourceDbName))
-                ) && 
-                (
-                    this.SourceTableName == input.SourceTableName ||
-                    (this.SourceTableName != null &&
-                    this.SourceTableName.Equals(input.SourceTableName))
-                ) && 
-                (
-                    this.ContentCompareDiff == input.ContentCompareDiff ||
-                    this.ContentCompareDiff != null &&
-                    input.ContentCompareDiff != null &&
-                    this.ContentCompareDiff.SequenceEqual(input.ContentCompareDiff)
-                ) && 
-                (
-                    this.ContentCompareDiffCount == input.ContentCompareDiffCount ||
-                    (this.ContentCompareDiffCount != null &&
-                    this.ContentCompareDiffCount.Equals(input.ContentCompareDiffCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceDbName != null)
-                    hashCode = hashCode * 59 + this.SourceDbName.GetHashCode();
-                if (this.SourceTableName != null)
-                    hashCode = hashCode * 59 + this.SourceTableName.GetHashCode();
-                if (this.ContentCompareDiff != null)
-                    hashCode = hashCode * 59 + this.ContentCompareDiff.GetHashCode();
-                if (this.ContentCompareDiffCount != null)
-                    hashCode = hashCode * 59 + this.ContentCompareDiffCount.GetHashCode();
+                var hashCode = 41;
+                if (this.SourceDbName != null) hashCode = hashCode * 59 + this.SourceDbName.GetHashCode();
+                if (this.SourceTableName != null) hashCode = hashCode * 59 + this.SourceTableName.GetHashCode();
+                if (this.ContentCompareDiff != null) hashCode = hashCode * 59 + this.ContentCompareDiff.GetHashCode();
+                if (this.ContentCompareDiffCount != null) hashCode = hashCode * 59 + this.ContentCompareDiffCount.GetHashCode();
                 return hashCode;
             }
         }

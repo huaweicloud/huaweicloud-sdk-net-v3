@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         /// </summary>
         public bool Equals(ExerciseCodeResource input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.PolymericResourceId != input.PolymericResourceId || (this.PolymericResourceId != null && !this.PolymericResourceId.Equals(input.PolymericResourceId))) return false;
+            if (this.Content != input.Content || (this.Content != null && !this.Content.Equals(input.Content))) return false;
+            if (this.CodeAnswer != input.CodeAnswer || (this.CodeAnswer != null && !this.CodeAnswer.Equals(input.CodeAnswer))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.PolymericResourceId == input.PolymericResourceId ||
-                    (this.PolymericResourceId != null &&
-                    this.PolymericResourceId.Equals(input.PolymericResourceId))
-                ) && 
-                (
-                    this.Content == input.Content ||
-                    (this.Content != null &&
-                    this.Content.Equals(input.Content))
-                ) && 
-                (
-                    this.CodeAnswer == input.CodeAnswer ||
-                    (this.CodeAnswer != null &&
-                    this.CodeAnswer.Equals(input.CodeAnswer))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.PolymericResourceId != null)
-                    hashCode = hashCode * 59 + this.PolymericResourceId.GetHashCode();
-                if (this.Content != null)
-                    hashCode = hashCode * 59 + this.Content.GetHashCode();
-                if (this.CodeAnswer != null)
-                    hashCode = hashCode * 59 + this.CodeAnswer.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.PolymericResourceId != null) hashCode = hashCode * 59 + this.PolymericResourceId.GetHashCode();
+                if (this.Content != null) hashCode = hashCode * 59 + this.Content.GetHashCode();
+                if (this.CodeAnswer != null) hashCode = hashCode * 59 + this.CodeAnswer.GetHashCode();
                 return hashCode;
             }
         }

@@ -217,46 +217,16 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(DedicatedResource input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
+            if (this.EngineName != input.EngineName || (this.EngineName != null && !this.EngineName.Equals(input.EngineName))) return false;
+            if (this.Architecture != input.Architecture || (this.Architecture != null && !this.Architecture.Equals(input.Architecture))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.Capacity != input.Capacity || (this.Capacity != null && !this.Capacity.Equals(input.Capacity))) return false;
+            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && input.AvailabilityZone != null && !this.AvailabilityZone.SequenceEqual(input.AvailabilityZone))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.ResourceName == input.ResourceName ||
-                    (this.ResourceName != null &&
-                    this.ResourceName.Equals(input.ResourceName))
-                ) && 
-                (
-                    this.EngineName == input.EngineName ||
-                    (this.EngineName != null &&
-                    this.EngineName.Equals(input.EngineName))
-                ) && 
-                (
-                    this.Architecture == input.Architecture ||
-                    (this.Architecture != null &&
-                    this.Architecture.Equals(input.Architecture))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Capacity == input.Capacity ||
-                    (this.Capacity != null &&
-                    this.Capacity.Equals(input.Capacity))
-                ) && 
-                (
-                    this.AvailabilityZone == input.AvailabilityZone ||
-                    this.AvailabilityZone != null &&
-                    input.AvailabilityZone != null &&
-                    this.AvailabilityZone.SequenceEqual(input.AvailabilityZone)
-                );
+            return true;
         }
 
         /// <summary>
@@ -266,21 +236,14 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.ResourceName != null)
-                    hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
-                if (this.EngineName != null)
-                    hashCode = hashCode * 59 + this.EngineName.GetHashCode();
-                if (this.Architecture != null)
-                    hashCode = hashCode * 59 + this.Architecture.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Capacity != null)
-                    hashCode = hashCode * 59 + this.Capacity.GetHashCode();
-                if (this.AvailabilityZone != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
+                if (this.EngineName != null) hashCode = hashCode * 59 + this.EngineName.GetHashCode();
+                if (this.Architecture != null) hashCode = hashCode * 59 + this.Architecture.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Capacity != null) hashCode = hashCode * 59 + this.Capacity.GetHashCode();
+                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
                 return hashCode;
             }
         }

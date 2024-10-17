@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         public bool Equals(EndpointService input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Owner != input.Owner || (this.Owner != null && !this.Owner.Equals(input.Owner))) return false;
+            if (this.ServiceName != input.ServiceName || (this.ServiceName != null && !this.ServiceName.Equals(input.ServiceName))) return false;
+            if (this.ServiceType != input.ServiceType || (this.ServiceType != null && !this.ServiceType.Equals(input.ServiceType))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.IsCharge != input.IsCharge || (this.IsCharge != null && !this.IsCharge.Equals(input.IsCharge))) return false;
+            if (this.EnablePolicy != input.EnablePolicy || (this.EnablePolicy != null && !this.EnablePolicy.Equals(input.EnablePolicy))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Owner == input.Owner ||
-                    (this.Owner != null &&
-                    this.Owner.Equals(input.Owner))
-                ) && 
-                (
-                    this.ServiceName == input.ServiceName ||
-                    (this.ServiceName != null &&
-                    this.ServiceName.Equals(input.ServiceName))
-                ) && 
-                (
-                    this.ServiceType == input.ServiceType ||
-                    (this.ServiceType != null &&
-                    this.ServiceType.Equals(input.ServiceType))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.IsCharge == input.IsCharge ||
-                    (this.IsCharge != null &&
-                    this.IsCharge.Equals(input.IsCharge))
-                ) && 
-                (
-                    this.EnablePolicy == input.EnablePolicy ||
-                    (this.EnablePolicy != null &&
-                    this.EnablePolicy.Equals(input.EnablePolicy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Owner != null)
-                    hashCode = hashCode * 59 + this.Owner.GetHashCode();
-                if (this.ServiceName != null)
-                    hashCode = hashCode * 59 + this.ServiceName.GetHashCode();
-                if (this.ServiceType != null)
-                    hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.IsCharge != null)
-                    hashCode = hashCode * 59 + this.IsCharge.GetHashCode();
-                if (this.EnablePolicy != null)
-                    hashCode = hashCode * 59 + this.EnablePolicy.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Owner != null) hashCode = hashCode * 59 + this.Owner.GetHashCode();
+                if (this.ServiceName != null) hashCode = hashCode * 59 + this.ServiceName.GetHashCode();
+                if (this.ServiceType != null) hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.IsCharge != null) hashCode = hashCode * 59 + this.IsCharge.GetHashCode();
+                if (this.EnablePolicy != null) hashCode = hashCode * 59 + this.EnablePolicy.GetHashCode();
                 return hashCode;
             }
         }

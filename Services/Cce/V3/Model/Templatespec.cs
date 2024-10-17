@@ -91,47 +91,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(Templatespec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Require != input.Require || (this.Require != null && !this.Require.Equals(input.Require))) return false;
+            if (this.Labels != input.Labels || (this.Labels != null && input.Labels != null && !this.Labels.SequenceEqual(input.Labels))) return false;
+            if (this.LogoURL != input.LogoURL || (this.LogoURL != null && !this.LogoURL.Equals(input.LogoURL))) return false;
+            if (this.ReadmeURL != input.ReadmeURL || (this.ReadmeURL != null && !this.ReadmeURL.Equals(input.ReadmeURL))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Versions != input.Versions || (this.Versions != null && input.Versions != null && !this.Versions.SequenceEqual(input.Versions))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Require == input.Require ||
-                    (this.Require != null &&
-                    this.Require.Equals(input.Require))
-                ) && 
-                (
-                    this.Labels == input.Labels ||
-                    this.Labels != null &&
-                    input.Labels != null &&
-                    this.Labels.SequenceEqual(input.Labels)
-                ) && 
-                (
-                    this.LogoURL == input.LogoURL ||
-                    (this.LogoURL != null &&
-                    this.LogoURL.Equals(input.LogoURL))
-                ) && 
-                (
-                    this.ReadmeURL == input.ReadmeURL ||
-                    (this.ReadmeURL != null &&
-                    this.ReadmeURL.Equals(input.ReadmeURL))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Versions == input.Versions ||
-                    this.Versions != null &&
-                    input.Versions != null &&
-                    this.Versions.SequenceEqual(input.Versions)
-                );
+            return true;
         }
 
         /// <summary>
@@ -141,21 +110,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Require != null)
-                    hashCode = hashCode * 59 + this.Require.GetHashCode();
-                if (this.Labels != null)
-                    hashCode = hashCode * 59 + this.Labels.GetHashCode();
-                if (this.LogoURL != null)
-                    hashCode = hashCode * 59 + this.LogoURL.GetHashCode();
-                if (this.ReadmeURL != null)
-                    hashCode = hashCode * 59 + this.ReadmeURL.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Versions != null)
-                    hashCode = hashCode * 59 + this.Versions.GetHashCode();
+                var hashCode = 41;
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Require != null) hashCode = hashCode * 59 + this.Require.GetHashCode();
+                if (this.Labels != null) hashCode = hashCode * 59 + this.Labels.GetHashCode();
+                if (this.LogoURL != null) hashCode = hashCode * 59 + this.LogoURL.GetHashCode();
+                if (this.ReadmeURL != null) hashCode = hashCode * 59 + this.ReadmeURL.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Versions != null) hashCode = hashCode * 59 + this.Versions.GetHashCode();
                 return hashCode;
             }
         }

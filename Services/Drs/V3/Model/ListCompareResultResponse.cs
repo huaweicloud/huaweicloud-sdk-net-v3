@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(ListCompareResultResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.ObjectLevelCompareResults != input.ObjectLevelCompareResults || (this.ObjectLevelCompareResults != null && !this.ObjectLevelCompareResults.Equals(input.ObjectLevelCompareResults))) return false;
+            if (this.LineCompareResults != input.LineCompareResults || (this.LineCompareResults != null && !this.LineCompareResults.Equals(input.LineCompareResults))) return false;
+            if (this.ContentCompareResults != input.ContentCompareResults || (this.ContentCompareResults != null && !this.ContentCompareResults.Equals(input.ContentCompareResults))) return false;
+            if (this.CompareTaskListResults != input.CompareTaskListResults || (this.CompareTaskListResults != null && !this.CompareTaskListResults.Equals(input.CompareTaskListResults))) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
+            if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.ObjectLevelCompareResults == input.ObjectLevelCompareResults ||
-                    (this.ObjectLevelCompareResults != null &&
-                    this.ObjectLevelCompareResults.Equals(input.ObjectLevelCompareResults))
-                ) && 
-                (
-                    this.LineCompareResults == input.LineCompareResults ||
-                    (this.LineCompareResults != null &&
-                    this.LineCompareResults.Equals(input.LineCompareResults))
-                ) && 
-                (
-                    this.ContentCompareResults == input.ContentCompareResults ||
-                    (this.ContentCompareResults != null &&
-                    this.ContentCompareResults.Equals(input.ContentCompareResults))
-                ) && 
-                (
-                    this.CompareTaskListResults == input.CompareTaskListResults ||
-                    (this.CompareTaskListResults != null &&
-                    this.CompareTaskListResults.Equals(input.CompareTaskListResults))
-                ) && 
-                (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
-                ) && 
-                (
-                    this.ErrorMsg == input.ErrorMsg ||
-                    (this.ErrorMsg != null &&
-                    this.ErrorMsg.Equals(input.ErrorMsg))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.ObjectLevelCompareResults != null)
-                    hashCode = hashCode * 59 + this.ObjectLevelCompareResults.GetHashCode();
-                if (this.LineCompareResults != null)
-                    hashCode = hashCode * 59 + this.LineCompareResults.GetHashCode();
-                if (this.ContentCompareResults != null)
-                    hashCode = hashCode * 59 + this.ContentCompareResults.GetHashCode();
-                if (this.CompareTaskListResults != null)
-                    hashCode = hashCode * 59 + this.CompareTaskListResults.GetHashCode();
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.ErrorMsg != null)
-                    hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.ObjectLevelCompareResults != null) hashCode = hashCode * 59 + this.ObjectLevelCompareResults.GetHashCode();
+                if (this.LineCompareResults != null) hashCode = hashCode * 59 + this.LineCompareResults.GetHashCode();
+                if (this.ContentCompareResults != null) hashCode = hashCode * 59 + this.ContentCompareResults.GetHashCode();
+                if (this.CompareTaskListResults != null) hashCode = hashCode * 59 + this.CompareTaskListResults.GetHashCode();
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
                 return hashCode;
             }
         }

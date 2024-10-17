@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ModifyDnsNameRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DnsName != input.DnsName || (this.DnsName != null && !this.DnsName.Equals(input.DnsName))) return false;
 
-            return 
-                (
-                    this.DnsName == input.DnsName ||
-                    (this.DnsName != null &&
-                    this.DnsName.Equals(input.DnsName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DnsName != null)
-                    hashCode = hashCode * 59 + this.DnsName.GetHashCode();
+                var hashCode = 41;
+                if (this.DnsName != null) hashCode = hashCode * 59 + this.DnsName.GetHashCode();
                 return hashCode;
             }
         }

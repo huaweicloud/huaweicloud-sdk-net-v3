@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(VarsBodyPrimitiveTypeHolder input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VarsBody != input.VarsBody || (this.VarsBody != null && !this.VarsBody.Equals(input.VarsBody))) return false;
 
-            return 
-                (
-                    this.VarsBody == input.VarsBody ||
-                    (this.VarsBody != null &&
-                    this.VarsBody.Equals(input.VarsBody))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VarsBody != null)
-                    hashCode = hashCode * 59 + this.VarsBody.GetHashCode();
+                var hashCode = 41;
+                if (this.VarsBody != null) hashCode = hashCode * 59 + this.VarsBody.GetHashCode();
                 return hashCode;
             }
         }

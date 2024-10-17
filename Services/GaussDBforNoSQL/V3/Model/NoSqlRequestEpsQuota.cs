@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(NoSqlRequestEpsQuota input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.Quota != input.Quota || (this.Quota != null && !this.Quota.Equals(input.Quota))) return false;
 
-            return 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.Quota == input.Quota ||
-                    (this.Quota != null &&
-                    this.Quota.Equals(input.Quota))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.Quota != null)
-                    hashCode = hashCode * 59 + this.Quota.GetHashCode();
+                var hashCode = 41;
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Quota != null) hashCode = hashCode * 59 + this.Quota.GetHashCode();
                 return hashCode;
             }
         }

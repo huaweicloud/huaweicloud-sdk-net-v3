@@ -63,27 +63,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ListEngineProductsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Engine != input.Engine || (this.Engine != null && !this.Engine.Equals(input.Engine))) return false;
+            if (this.Versions != input.Versions || (this.Versions != null && input.Versions != null && !this.Versions.SequenceEqual(input.Versions))) return false;
+            if (this.Products != input.Products || (this.Products != null && input.Products != null && !this.Products.SequenceEqual(input.Products))) return false;
 
-            return 
-                (
-                    this.Engine == input.Engine ||
-                    (this.Engine != null &&
-                    this.Engine.Equals(input.Engine))
-                ) && 
-                (
-                    this.Versions == input.Versions ||
-                    this.Versions != null &&
-                    input.Versions != null &&
-                    this.Versions.SequenceEqual(input.Versions)
-                ) && 
-                (
-                    this.Products == input.Products ||
-                    this.Products != null &&
-                    input.Products != null &&
-                    this.Products.SequenceEqual(input.Products)
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +78,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Engine != null)
-                    hashCode = hashCode * 59 + this.Engine.GetHashCode();
-                if (this.Versions != null)
-                    hashCode = hashCode * 59 + this.Versions.GetHashCode();
-                if (this.Products != null)
-                    hashCode = hashCode * 59 + this.Products.GetHashCode();
+                var hashCode = 41;
+                if (this.Engine != null) hashCode = hashCode * 59 + this.Engine.GetHashCode();
+                if (this.Versions != null) hashCode = hashCode * 59 + this.Versions.GetHashCode();
+                if (this.Products != null) hashCode = hashCode * 59 + this.Products.GetHashCode();
                 return hashCode;
             }
         }

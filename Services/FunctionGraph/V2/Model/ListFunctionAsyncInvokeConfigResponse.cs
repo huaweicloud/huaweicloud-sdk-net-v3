@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(ListFunctionAsyncInvokeConfigResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AsyncInvokeConfigs != input.AsyncInvokeConfigs || (this.AsyncInvokeConfigs != null && input.AsyncInvokeConfigs != null && !this.AsyncInvokeConfigs.SequenceEqual(input.AsyncInvokeConfigs))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.PageInfo != input.PageInfo || (this.PageInfo != null && !this.PageInfo.Equals(input.PageInfo))) return false;
 
-            return 
-                (
-                    this.AsyncInvokeConfigs == input.AsyncInvokeConfigs ||
-                    this.AsyncInvokeConfigs != null &&
-                    input.AsyncInvokeConfigs != null &&
-                    this.AsyncInvokeConfigs.SequenceEqual(input.AsyncInvokeConfigs)
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.PageInfo == input.PageInfo ||
-                    (this.PageInfo != null &&
-                    this.PageInfo.Equals(input.PageInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AsyncInvokeConfigs != null)
-                    hashCode = hashCode * 59 + this.AsyncInvokeConfigs.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.PageInfo != null)
-                    hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.AsyncInvokeConfigs != null) hashCode = hashCode * 59 + this.AsyncInvokeConfigs.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.PageInfo != null) hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(DownloadBackupFilesReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Expiration != input.Expiration || (this.Expiration != null && !this.Expiration.Equals(input.Expiration))) return false;
 
-            return 
-                (
-                    this.Expiration == input.Expiration ||
-                    (this.Expiration != null &&
-                    this.Expiration.Equals(input.Expiration))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Expiration != null)
-                    hashCode = hashCode * 59 + this.Expiration.GetHashCode();
+                var hashCode = 41;
+                if (this.Expiration != null) hashCode = hashCode * 59 + this.Expiration.GetHashCode();
                 return hashCode;
             }
         }

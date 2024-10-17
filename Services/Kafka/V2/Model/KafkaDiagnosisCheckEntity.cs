@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(KafkaDiagnosisCheckEntity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Reason != input.Reason || (this.Reason != null && !this.Reason.Equals(input.Reason))) return false;
+            if (this.Success != input.Success || (this.Success != null && !this.Success.Equals(input.Success))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Reason == input.Reason ||
-                    (this.Reason != null &&
-                    this.Reason.Equals(input.Reason))
-                ) && 
-                (
-                    this.Success == input.Success ||
-                    (this.Success != null &&
-                    this.Success.Equals(input.Success))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Reason != null)
-                    hashCode = hashCode * 59 + this.Reason.GetHashCode();
-                if (this.Success != null)
-                    hashCode = hashCode * 59 + this.Success.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Reason != null) hashCode = hashCode * 59 + this.Reason.GetHashCode();
+                if (this.Success != null) hashCode = hashCode * 59 + this.Success.GetHashCode();
                 return hashCode;
             }
         }

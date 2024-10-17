@@ -133,76 +133,22 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(Proxy input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PoolId != input.PoolId || (this.PoolId != null && !this.PoolId.Equals(input.PoolId))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Address != input.Address || (this.Address != null && !this.Address.Equals(input.Address))) return false;
+            if (this.ElbVip != input.ElbVip || (this.ElbVip != null && !this.ElbVip.Equals(input.ElbVip))) return false;
+            if (this.Eip != input.Eip || (this.Eip != null && !this.Eip.Equals(input.Eip))) return false;
+            if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
+            if (this.PoolStatus != input.PoolStatus || (this.PoolStatus != null && !this.PoolStatus.Equals(input.PoolStatus))) return false;
+            if (this.DelayThresholdInKilobytes != input.DelayThresholdInKilobytes || (this.DelayThresholdInKilobytes != null && !this.DelayThresholdInKilobytes.Equals(input.DelayThresholdInKilobytes))) return false;
+            if (this.Cpu != input.Cpu || (this.Cpu != null && !this.Cpu.Equals(input.Cpu))) return false;
+            if (this.Mem != input.Mem || (this.Mem != null && !this.Mem.Equals(input.Mem))) return false;
+            if (this.NodeNum != input.NodeNum || (this.NodeNum != null && !this.NodeNum.Equals(input.NodeNum))) return false;
+            if (this.Nodes != input.Nodes || (this.Nodes != null && input.Nodes != null && !this.Nodes.SequenceEqual(input.Nodes))) return false;
+            if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
 
-            return 
-                (
-                    this.PoolId == input.PoolId ||
-                    (this.PoolId != null &&
-                    this.PoolId.Equals(input.PoolId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
-                ) && 
-                (
-                    this.ElbVip == input.ElbVip ||
-                    (this.ElbVip != null &&
-                    this.ElbVip.Equals(input.ElbVip))
-                ) && 
-                (
-                    this.Eip == input.Eip ||
-                    (this.Eip != null &&
-                    this.Eip.Equals(input.Eip))
-                ) && 
-                (
-                    this.Port == input.Port ||
-                    (this.Port != null &&
-                    this.Port.Equals(input.Port))
-                ) && 
-                (
-                    this.PoolStatus == input.PoolStatus ||
-                    (this.PoolStatus != null &&
-                    this.PoolStatus.Equals(input.PoolStatus))
-                ) && 
-                (
-                    this.DelayThresholdInKilobytes == input.DelayThresholdInKilobytes ||
-                    (this.DelayThresholdInKilobytes != null &&
-                    this.DelayThresholdInKilobytes.Equals(input.DelayThresholdInKilobytes))
-                ) && 
-                (
-                    this.Cpu == input.Cpu ||
-                    (this.Cpu != null &&
-                    this.Cpu.Equals(input.Cpu))
-                ) && 
-                (
-                    this.Mem == input.Mem ||
-                    (this.Mem != null &&
-                    this.Mem.Equals(input.Mem))
-                ) && 
-                (
-                    this.NodeNum == input.NodeNum ||
-                    (this.NodeNum != null &&
-                    this.NodeNum.Equals(input.NodeNum))
-                ) && 
-                (
-                    this.Nodes == input.Nodes ||
-                    this.Nodes != null &&
-                    input.Nodes != null &&
-                    this.Nodes.SequenceEqual(input.Nodes)
-                ) && 
-                (
-                    this.Mode == input.Mode ||
-                    (this.Mode != null &&
-                    this.Mode.Equals(input.Mode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -212,33 +158,20 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PoolId != null)
-                    hashCode = hashCode * 59 + this.PoolId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Address != null)
-                    hashCode = hashCode * 59 + this.Address.GetHashCode();
-                if (this.ElbVip != null)
-                    hashCode = hashCode * 59 + this.ElbVip.GetHashCode();
-                if (this.Eip != null)
-                    hashCode = hashCode * 59 + this.Eip.GetHashCode();
-                if (this.Port != null)
-                    hashCode = hashCode * 59 + this.Port.GetHashCode();
-                if (this.PoolStatus != null)
-                    hashCode = hashCode * 59 + this.PoolStatus.GetHashCode();
-                if (this.DelayThresholdInKilobytes != null)
-                    hashCode = hashCode * 59 + this.DelayThresholdInKilobytes.GetHashCode();
-                if (this.Cpu != null)
-                    hashCode = hashCode * 59 + this.Cpu.GetHashCode();
-                if (this.Mem != null)
-                    hashCode = hashCode * 59 + this.Mem.GetHashCode();
-                if (this.NodeNum != null)
-                    hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
-                if (this.Nodes != null)
-                    hashCode = hashCode * 59 + this.Nodes.GetHashCode();
-                if (this.Mode != null)
-                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                var hashCode = 41;
+                if (this.PoolId != null) hashCode = hashCode * 59 + this.PoolId.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Address != null) hashCode = hashCode * 59 + this.Address.GetHashCode();
+                if (this.ElbVip != null) hashCode = hashCode * 59 + this.ElbVip.GetHashCode();
+                if (this.Eip != null) hashCode = hashCode * 59 + this.Eip.GetHashCode();
+                if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
+                if (this.PoolStatus != null) hashCode = hashCode * 59 + this.PoolStatus.GetHashCode();
+                if (this.DelayThresholdInKilobytes != null) hashCode = hashCode * 59 + this.DelayThresholdInKilobytes.GetHashCode();
+                if (this.Cpu != null) hashCode = hashCode * 59 + this.Cpu.GetHashCode();
+                if (this.Mem != null) hashCode = hashCode * 59 + this.Mem.GetHashCode();
+                if (this.NodeNum != null) hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
+                if (this.Nodes != null) hashCode = hashCode * 59 + this.Nodes.GetHashCode();
+                if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 return hashCode;
             }
         }

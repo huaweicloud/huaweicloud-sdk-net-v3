@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// </summary>
         public bool Equals(Curve input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.In != input.In || (this.In != null && !this.In.Equals(input.In))) return false;
+            if (this.Out != input.Out || (this.Out != null && !this.Out.Equals(input.Out))) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
 
-            return 
-                (
-                    this.In == input.In ||
-                    (this.In != null &&
-                    this.In.Equals(input.In))
-                ) && 
-                (
-                    this.Out == input.Out ||
-                    (this.Out != null &&
-                    this.Out.Equals(input.Out))
-                ) && 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.In != null)
-                    hashCode = hashCode * 59 + this.In.GetHashCode();
-                if (this.Out != null)
-                    hashCode = hashCode * 59 + this.Out.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
+                var hashCode = 41;
+                if (this.In != null) hashCode = hashCode * 59 + this.In.GetHashCode();
+                if (this.Out != null) hashCode = hashCode * 59 + this.Out.GetHashCode();
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
                 return hashCode;
             }
         }

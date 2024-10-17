@@ -184,30 +184,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(ApigTriggerFuncInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FunctionUrn != input.FunctionUrn || (this.FunctionUrn != null && !this.FunctionUrn.Equals(input.FunctionUrn))) return false;
+            if (this.InvocationType != input.InvocationType) return false;
+            if (this.Timeout != input.Timeout || (this.Timeout != null && !this.Timeout.Equals(input.Timeout))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
 
-            return 
-                (
-                    this.FunctionUrn == input.FunctionUrn ||
-                    (this.FunctionUrn != null &&
-                    this.FunctionUrn.Equals(input.FunctionUrn))
-                ) && 
-                (
-                    this.InvocationType == input.InvocationType ||
-                    (this.InvocationType != null &&
-                    this.InvocationType.Equals(input.InvocationType))
-                ) && 
-                (
-                    this.Timeout == input.Timeout ||
-                    (this.Timeout != null &&
-                    this.Timeout.Equals(input.Timeout))
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                );
+            return true;
         }
 
         /// <summary>
@@ -217,15 +200,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FunctionUrn != null)
-                    hashCode = hashCode * 59 + this.FunctionUrn.GetHashCode();
-                if (this.InvocationType != null)
-                    hashCode = hashCode * 59 + this.InvocationType.GetHashCode();
-                if (this.Timeout != null)
-                    hashCode = hashCode * 59 + this.Timeout.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                var hashCode = 41;
+                if (this.FunctionUrn != null) hashCode = hashCode * 59 + this.FunctionUrn.GetHashCode();
+                hashCode = hashCode * 59 + this.InvocationType.GetHashCode();
+                if (this.Timeout != null) hashCode = hashCode * 59 + this.Timeout.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
                 return hashCode;
             }
         }

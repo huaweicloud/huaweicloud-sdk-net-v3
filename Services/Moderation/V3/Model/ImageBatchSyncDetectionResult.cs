@@ -91,46 +91,16 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// </summary>
         public bool Equals(ImageBatchSyncDetectionResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Suggestion != input.Suggestion || (this.Suggestion != null && !this.Suggestion.Equals(input.Suggestion))) return false;
+            if (this.Category != input.Category || (this.Category != null && !this.Category.Equals(input.Category))) return false;
+            if (this.Details != input.Details || (this.Details != null && input.Details != null && !this.Details.SequenceEqual(input.Details))) return false;
+            if (this.OcrText != input.OcrText || (this.OcrText != null && !this.OcrText.Equals(input.OcrText))) return false;
+            if (this.DataId != input.DataId || (this.DataId != null && !this.DataId.Equals(input.DataId))) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
+            if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
 
-            return 
-                (
-                    this.Suggestion == input.Suggestion ||
-                    (this.Suggestion != null &&
-                    this.Suggestion.Equals(input.Suggestion))
-                ) && 
-                (
-                    this.Category == input.Category ||
-                    (this.Category != null &&
-                    this.Category.Equals(input.Category))
-                ) && 
-                (
-                    this.Details == input.Details ||
-                    this.Details != null &&
-                    input.Details != null &&
-                    this.Details.SequenceEqual(input.Details)
-                ) && 
-                (
-                    this.OcrText == input.OcrText ||
-                    (this.OcrText != null &&
-                    this.OcrText.Equals(input.OcrText))
-                ) && 
-                (
-                    this.DataId == input.DataId ||
-                    (this.DataId != null &&
-                    this.DataId.Equals(input.DataId))
-                ) && 
-                (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
-                ) && 
-                (
-                    this.ErrorMsg == input.ErrorMsg ||
-                    (this.ErrorMsg != null &&
-                    this.ErrorMsg.Equals(input.ErrorMsg))
-                );
+            return true;
         }
 
         /// <summary>
@@ -140,21 +110,14 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Suggestion != null)
-                    hashCode = hashCode * 59 + this.Suggestion.GetHashCode();
-                if (this.Category != null)
-                    hashCode = hashCode * 59 + this.Category.GetHashCode();
-                if (this.Details != null)
-                    hashCode = hashCode * 59 + this.Details.GetHashCode();
-                if (this.OcrText != null)
-                    hashCode = hashCode * 59 + this.OcrText.GetHashCode();
-                if (this.DataId != null)
-                    hashCode = hashCode * 59 + this.DataId.GetHashCode();
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.ErrorMsg != null)
-                    hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
+                var hashCode = 41;
+                if (this.Suggestion != null) hashCode = hashCode * 59 + this.Suggestion.GetHashCode();
+                if (this.Category != null) hashCode = hashCode * 59 + this.Category.GetHashCode();
+                if (this.Details != null) hashCode = hashCode * 59 + this.Details.GetHashCode();
+                if (this.OcrText != null) hashCode = hashCode * 59 + this.OcrText.GetHashCode();
+                if (this.DataId != null) hashCode = hashCode * 59 + this.DataId.GetHashCode();
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
                 return hashCode;
             }
         }

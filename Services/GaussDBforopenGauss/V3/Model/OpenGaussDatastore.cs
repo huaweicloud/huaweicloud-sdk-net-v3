@@ -170,20 +170,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(OpenGaussDatastore input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                );
+            return true;
         }
 
         /// <summary>
@@ -193,11 +184,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
                 return hashCode;
             }
         }

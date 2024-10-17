@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(ListTemplateGroupCollectionResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TemplateGroupCollectionList != input.TemplateGroupCollectionList || (this.TemplateGroupCollectionList != null && input.TemplateGroupCollectionList != null && !this.TemplateGroupCollectionList.SequenceEqual(input.TemplateGroupCollectionList))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
-            return 
-                (
-                    this.TemplateGroupCollectionList == input.TemplateGroupCollectionList ||
-                    this.TemplateGroupCollectionList != null &&
-                    input.TemplateGroupCollectionList != null &&
-                    this.TemplateGroupCollectionList.SequenceEqual(input.TemplateGroupCollectionList)
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TemplateGroupCollectionList != null)
-                    hashCode = hashCode * 59 + this.TemplateGroupCollectionList.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                var hashCode = 41;
+                if (this.TemplateGroupCollectionList != null) hashCode = hashCode * 59 + this.TemplateGroupCollectionList.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

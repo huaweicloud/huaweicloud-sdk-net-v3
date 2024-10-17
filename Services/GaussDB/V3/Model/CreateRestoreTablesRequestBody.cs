@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(CreateRestoreTablesRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RestoreTime != input.RestoreTime || (this.RestoreTime != null && !this.RestoreTime.Equals(input.RestoreTime))) return false;
+            if (this.LastTableInfo != input.LastTableInfo || (this.LastTableInfo != null && !this.LastTableInfo.Equals(input.LastTableInfo))) return false;
+            if (this.RestoreTables != input.RestoreTables || (this.RestoreTables != null && input.RestoreTables != null && !this.RestoreTables.SequenceEqual(input.RestoreTables))) return false;
 
-            return 
-                (
-                    this.RestoreTime == input.RestoreTime ||
-                    (this.RestoreTime != null &&
-                    this.RestoreTime.Equals(input.RestoreTime))
-                ) && 
-                (
-                    this.LastTableInfo == input.LastTableInfo ||
-                    (this.LastTableInfo != null &&
-                    this.LastTableInfo.Equals(input.LastTableInfo))
-                ) && 
-                (
-                    this.RestoreTables == input.RestoreTables ||
-                    this.RestoreTables != null &&
-                    input.RestoreTables != null &&
-                    this.RestoreTables.SequenceEqual(input.RestoreTables)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RestoreTime != null)
-                    hashCode = hashCode * 59 + this.RestoreTime.GetHashCode();
-                if (this.LastTableInfo != null)
-                    hashCode = hashCode * 59 + this.LastTableInfo.GetHashCode();
-                if (this.RestoreTables != null)
-                    hashCode = hashCode * 59 + this.RestoreTables.GetHashCode();
+                var hashCode = 41;
+                if (this.RestoreTime != null) hashCode = hashCode * 59 + this.RestoreTime.GetHashCode();
+                if (this.LastTableInfo != null) hashCode = hashCode * 59 + this.LastTableInfo.GetHashCode();
+                if (this.RestoreTables != null) hashCode = hashCode * 59 + this.RestoreTables.GetHashCode();
                 return hashCode;
             }
         }

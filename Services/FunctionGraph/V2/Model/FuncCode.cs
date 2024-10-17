@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(FuncCode input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.File != input.File || (this.File != null && !this.File.Equals(input.File))) return false;
+            if (this.Link != input.Link || (this.Link != null && !this.Link.Equals(input.Link))) return false;
 
-            return 
-                (
-                    this.File == input.File ||
-                    (this.File != null &&
-                    this.File.Equals(input.File))
-                ) && 
-                (
-                    this.Link == input.Link ||
-                    (this.Link != null &&
-                    this.Link.Equals(input.Link))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.File != null)
-                    hashCode = hashCode * 59 + this.File.GetHashCode();
-                if (this.Link != null)
-                    hashCode = hashCode * 59 + this.Link.GetHashCode();
+                var hashCode = 41;
+                if (this.File != null) hashCode = hashCode * 59 + this.File.GetHashCode();
+                if (this.Link != null) hashCode = hashCode * 59 + this.Link.GetHashCode();
                 return hashCode;
             }
         }

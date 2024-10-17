@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ListFlavorsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Flavors != input.Flavors || (this.Flavors != null && input.Flavors != null && !this.Flavors.SequenceEqual(input.Flavors))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
-            return 
-                (
-                    this.Flavors == input.Flavors ||
-                    this.Flavors != null &&
-                    input.Flavors != null &&
-                    this.Flavors.SequenceEqual(input.Flavors)
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Flavors != null)
-                    hashCode = hashCode * 59 + this.Flavors.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                var hashCode = 41;
+                if (this.Flavors != null) hashCode = hashCode * 59 + this.Flavors.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

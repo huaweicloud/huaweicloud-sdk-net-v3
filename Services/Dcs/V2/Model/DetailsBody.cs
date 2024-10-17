@@ -224,141 +224,35 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(DetailsBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OldCapacity != input.OldCapacity || (this.OldCapacity != null && !this.OldCapacity.Equals(input.OldCapacity))) return false;
+            if (this.NewCapacity != input.NewCapacity || (this.NewCapacity != null && !this.NewCapacity.Equals(input.NewCapacity))) return false;
+            if (this.EnablePublicIp != input.EnablePublicIp || (this.EnablePublicIp != null && !this.EnablePublicIp.Equals(input.EnablePublicIp))) return false;
+            if (this.PublicIpId != input.PublicIpId || (this.PublicIpId != null && !this.PublicIpId.Equals(input.PublicIpId))) return false;
+            if (this.PublicIpAddress != input.PublicIpAddress || (this.PublicIpAddress != null && !this.PublicIpAddress.Equals(input.PublicIpAddress))) return false;
+            if (this.EnableSsl != input.EnableSsl || (this.EnableSsl != null && !this.EnableSsl.Equals(input.EnableSsl))) return false;
+            if (this.OldCacheMode != input.OldCacheMode || (this.OldCacheMode != null && !this.OldCacheMode.Equals(input.OldCacheMode))) return false;
+            if (this.NewCacheMode != input.NewCacheMode || (this.NewCacheMode != null && !this.NewCacheMode.Equals(input.NewCacheMode))) return false;
+            if (this.OldResourceSpecCode != input.OldResourceSpecCode || (this.OldResourceSpecCode != null && !this.OldResourceSpecCode.Equals(input.OldResourceSpecCode))) return false;
+            if (this.NewResourceSpecCode != input.NewResourceSpecCode || (this.NewResourceSpecCode != null && !this.NewResourceSpecCode.Equals(input.NewResourceSpecCode))) return false;
+            if (this.OldReplicaNum != input.OldReplicaNum || (this.OldReplicaNum != null && !this.OldReplicaNum.Equals(input.OldReplicaNum))) return false;
+            if (this.NewReplicaNum != input.NewReplicaNum || (this.NewReplicaNum != null && !this.NewReplicaNum.Equals(input.NewReplicaNum))) return false;
+            if (this.OldCacheType != input.OldCacheType || (this.OldCacheType != null && !this.OldCacheType.Equals(input.OldCacheType))) return false;
+            if (this.NewCacheType != input.NewCacheType || (this.NewCacheType != null && !this.NewCacheType.Equals(input.NewCacheType))) return false;
+            if (this.ReplicaIp != input.ReplicaIp || (this.ReplicaIp != null && !this.ReplicaIp.Equals(input.ReplicaIp))) return false;
+            if (this.ReplicaAz != input.ReplicaAz || (this.ReplicaAz != null && !this.ReplicaAz.Equals(input.ReplicaAz))) return false;
+            if (this.GroupName != input.GroupName || (this.GroupName != null && !this.GroupName.Equals(input.GroupName))) return false;
+            if (this.OldPort != input.OldPort || (this.OldPort != null && !this.OldPort.Equals(input.OldPort))) return false;
+            if (this.NewPort != input.NewPort || (this.NewPort != null && !this.NewPort.Equals(input.NewPort))) return false;
+            if (this.IsOnlyAdjustCharging != input.IsOnlyAdjustCharging || (this.IsOnlyAdjustCharging != null && !this.IsOnlyAdjustCharging.Equals(input.IsOnlyAdjustCharging))) return false;
+            if (this.AccountName != input.AccountName || (this.AccountName != null && !this.AccountName.Equals(input.AccountName))) return false;
+            if (this.SourceIp != input.SourceIp || (this.SourceIp != null && !this.SourceIp.Equals(input.SourceIp))) return false;
+            if (this.TargetIp != input.TargetIp || (this.TargetIp != null && !this.TargetIp.Equals(input.TargetIp))) return false;
+            if (this.NodeName != input.NodeName || (this.NodeName != null && !this.NodeName.Equals(input.NodeName))) return false;
+            if (this.RenameCommands != input.RenameCommands || (this.RenameCommands != null && input.RenameCommands != null && !this.RenameCommands.SequenceEqual(input.RenameCommands))) return false;
+            if (this.UpdatedConfigLength != input.UpdatedConfigLength || (this.UpdatedConfigLength != null && !this.UpdatedConfigLength.Equals(input.UpdatedConfigLength))) return false;
 
-            return 
-                (
-                    this.OldCapacity == input.OldCapacity ||
-                    (this.OldCapacity != null &&
-                    this.OldCapacity.Equals(input.OldCapacity))
-                ) && 
-                (
-                    this.NewCapacity == input.NewCapacity ||
-                    (this.NewCapacity != null &&
-                    this.NewCapacity.Equals(input.NewCapacity))
-                ) && 
-                (
-                    this.EnablePublicIp == input.EnablePublicIp ||
-                    (this.EnablePublicIp != null &&
-                    this.EnablePublicIp.Equals(input.EnablePublicIp))
-                ) && 
-                (
-                    this.PublicIpId == input.PublicIpId ||
-                    (this.PublicIpId != null &&
-                    this.PublicIpId.Equals(input.PublicIpId))
-                ) && 
-                (
-                    this.PublicIpAddress == input.PublicIpAddress ||
-                    (this.PublicIpAddress != null &&
-                    this.PublicIpAddress.Equals(input.PublicIpAddress))
-                ) && 
-                (
-                    this.EnableSsl == input.EnableSsl ||
-                    (this.EnableSsl != null &&
-                    this.EnableSsl.Equals(input.EnableSsl))
-                ) && 
-                (
-                    this.OldCacheMode == input.OldCacheMode ||
-                    (this.OldCacheMode != null &&
-                    this.OldCacheMode.Equals(input.OldCacheMode))
-                ) && 
-                (
-                    this.NewCacheMode == input.NewCacheMode ||
-                    (this.NewCacheMode != null &&
-                    this.NewCacheMode.Equals(input.NewCacheMode))
-                ) && 
-                (
-                    this.OldResourceSpecCode == input.OldResourceSpecCode ||
-                    (this.OldResourceSpecCode != null &&
-                    this.OldResourceSpecCode.Equals(input.OldResourceSpecCode))
-                ) && 
-                (
-                    this.NewResourceSpecCode == input.NewResourceSpecCode ||
-                    (this.NewResourceSpecCode != null &&
-                    this.NewResourceSpecCode.Equals(input.NewResourceSpecCode))
-                ) && 
-                (
-                    this.OldReplicaNum == input.OldReplicaNum ||
-                    (this.OldReplicaNum != null &&
-                    this.OldReplicaNum.Equals(input.OldReplicaNum))
-                ) && 
-                (
-                    this.NewReplicaNum == input.NewReplicaNum ||
-                    (this.NewReplicaNum != null &&
-                    this.NewReplicaNum.Equals(input.NewReplicaNum))
-                ) && 
-                (
-                    this.OldCacheType == input.OldCacheType ||
-                    (this.OldCacheType != null &&
-                    this.OldCacheType.Equals(input.OldCacheType))
-                ) && 
-                (
-                    this.NewCacheType == input.NewCacheType ||
-                    (this.NewCacheType != null &&
-                    this.NewCacheType.Equals(input.NewCacheType))
-                ) && 
-                (
-                    this.ReplicaIp == input.ReplicaIp ||
-                    (this.ReplicaIp != null &&
-                    this.ReplicaIp.Equals(input.ReplicaIp))
-                ) && 
-                (
-                    this.ReplicaAz == input.ReplicaAz ||
-                    (this.ReplicaAz != null &&
-                    this.ReplicaAz.Equals(input.ReplicaAz))
-                ) && 
-                (
-                    this.GroupName == input.GroupName ||
-                    (this.GroupName != null &&
-                    this.GroupName.Equals(input.GroupName))
-                ) && 
-                (
-                    this.OldPort == input.OldPort ||
-                    (this.OldPort != null &&
-                    this.OldPort.Equals(input.OldPort))
-                ) && 
-                (
-                    this.NewPort == input.NewPort ||
-                    (this.NewPort != null &&
-                    this.NewPort.Equals(input.NewPort))
-                ) && 
-                (
-                    this.IsOnlyAdjustCharging == input.IsOnlyAdjustCharging ||
-                    (this.IsOnlyAdjustCharging != null &&
-                    this.IsOnlyAdjustCharging.Equals(input.IsOnlyAdjustCharging))
-                ) && 
-                (
-                    this.AccountName == input.AccountName ||
-                    (this.AccountName != null &&
-                    this.AccountName.Equals(input.AccountName))
-                ) && 
-                (
-                    this.SourceIp == input.SourceIp ||
-                    (this.SourceIp != null &&
-                    this.SourceIp.Equals(input.SourceIp))
-                ) && 
-                (
-                    this.TargetIp == input.TargetIp ||
-                    (this.TargetIp != null &&
-                    this.TargetIp.Equals(input.TargetIp))
-                ) && 
-                (
-                    this.NodeName == input.NodeName ||
-                    (this.NodeName != null &&
-                    this.NodeName.Equals(input.NodeName))
-                ) && 
-                (
-                    this.RenameCommands == input.RenameCommands ||
-                    this.RenameCommands != null &&
-                    input.RenameCommands != null &&
-                    this.RenameCommands.SequenceEqual(input.RenameCommands)
-                ) && 
-                (
-                    this.UpdatedConfigLength == input.UpdatedConfigLength ||
-                    (this.UpdatedConfigLength != null &&
-                    this.UpdatedConfigLength.Equals(input.UpdatedConfigLength))
-                );
+            return true;
         }
 
         /// <summary>
@@ -368,59 +262,33 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OldCapacity != null)
-                    hashCode = hashCode * 59 + this.OldCapacity.GetHashCode();
-                if (this.NewCapacity != null)
-                    hashCode = hashCode * 59 + this.NewCapacity.GetHashCode();
-                if (this.EnablePublicIp != null)
-                    hashCode = hashCode * 59 + this.EnablePublicIp.GetHashCode();
-                if (this.PublicIpId != null)
-                    hashCode = hashCode * 59 + this.PublicIpId.GetHashCode();
-                if (this.PublicIpAddress != null)
-                    hashCode = hashCode * 59 + this.PublicIpAddress.GetHashCode();
-                if (this.EnableSsl != null)
-                    hashCode = hashCode * 59 + this.EnableSsl.GetHashCode();
-                if (this.OldCacheMode != null)
-                    hashCode = hashCode * 59 + this.OldCacheMode.GetHashCode();
-                if (this.NewCacheMode != null)
-                    hashCode = hashCode * 59 + this.NewCacheMode.GetHashCode();
-                if (this.OldResourceSpecCode != null)
-                    hashCode = hashCode * 59 + this.OldResourceSpecCode.GetHashCode();
-                if (this.NewResourceSpecCode != null)
-                    hashCode = hashCode * 59 + this.NewResourceSpecCode.GetHashCode();
-                if (this.OldReplicaNum != null)
-                    hashCode = hashCode * 59 + this.OldReplicaNum.GetHashCode();
-                if (this.NewReplicaNum != null)
-                    hashCode = hashCode * 59 + this.NewReplicaNum.GetHashCode();
-                if (this.OldCacheType != null)
-                    hashCode = hashCode * 59 + this.OldCacheType.GetHashCode();
-                if (this.NewCacheType != null)
-                    hashCode = hashCode * 59 + this.NewCacheType.GetHashCode();
-                if (this.ReplicaIp != null)
-                    hashCode = hashCode * 59 + this.ReplicaIp.GetHashCode();
-                if (this.ReplicaAz != null)
-                    hashCode = hashCode * 59 + this.ReplicaAz.GetHashCode();
-                if (this.GroupName != null)
-                    hashCode = hashCode * 59 + this.GroupName.GetHashCode();
-                if (this.OldPort != null)
-                    hashCode = hashCode * 59 + this.OldPort.GetHashCode();
-                if (this.NewPort != null)
-                    hashCode = hashCode * 59 + this.NewPort.GetHashCode();
-                if (this.IsOnlyAdjustCharging != null)
-                    hashCode = hashCode * 59 + this.IsOnlyAdjustCharging.GetHashCode();
-                if (this.AccountName != null)
-                    hashCode = hashCode * 59 + this.AccountName.GetHashCode();
-                if (this.SourceIp != null)
-                    hashCode = hashCode * 59 + this.SourceIp.GetHashCode();
-                if (this.TargetIp != null)
-                    hashCode = hashCode * 59 + this.TargetIp.GetHashCode();
-                if (this.NodeName != null)
-                    hashCode = hashCode * 59 + this.NodeName.GetHashCode();
-                if (this.RenameCommands != null)
-                    hashCode = hashCode * 59 + this.RenameCommands.GetHashCode();
-                if (this.UpdatedConfigLength != null)
-                    hashCode = hashCode * 59 + this.UpdatedConfigLength.GetHashCode();
+                var hashCode = 41;
+                if (this.OldCapacity != null) hashCode = hashCode * 59 + this.OldCapacity.GetHashCode();
+                if (this.NewCapacity != null) hashCode = hashCode * 59 + this.NewCapacity.GetHashCode();
+                if (this.EnablePublicIp != null) hashCode = hashCode * 59 + this.EnablePublicIp.GetHashCode();
+                if (this.PublicIpId != null) hashCode = hashCode * 59 + this.PublicIpId.GetHashCode();
+                if (this.PublicIpAddress != null) hashCode = hashCode * 59 + this.PublicIpAddress.GetHashCode();
+                if (this.EnableSsl != null) hashCode = hashCode * 59 + this.EnableSsl.GetHashCode();
+                if (this.OldCacheMode != null) hashCode = hashCode * 59 + this.OldCacheMode.GetHashCode();
+                if (this.NewCacheMode != null) hashCode = hashCode * 59 + this.NewCacheMode.GetHashCode();
+                if (this.OldResourceSpecCode != null) hashCode = hashCode * 59 + this.OldResourceSpecCode.GetHashCode();
+                if (this.NewResourceSpecCode != null) hashCode = hashCode * 59 + this.NewResourceSpecCode.GetHashCode();
+                if (this.OldReplicaNum != null) hashCode = hashCode * 59 + this.OldReplicaNum.GetHashCode();
+                if (this.NewReplicaNum != null) hashCode = hashCode * 59 + this.NewReplicaNum.GetHashCode();
+                if (this.OldCacheType != null) hashCode = hashCode * 59 + this.OldCacheType.GetHashCode();
+                if (this.NewCacheType != null) hashCode = hashCode * 59 + this.NewCacheType.GetHashCode();
+                if (this.ReplicaIp != null) hashCode = hashCode * 59 + this.ReplicaIp.GetHashCode();
+                if (this.ReplicaAz != null) hashCode = hashCode * 59 + this.ReplicaAz.GetHashCode();
+                if (this.GroupName != null) hashCode = hashCode * 59 + this.GroupName.GetHashCode();
+                if (this.OldPort != null) hashCode = hashCode * 59 + this.OldPort.GetHashCode();
+                if (this.NewPort != null) hashCode = hashCode * 59 + this.NewPort.GetHashCode();
+                if (this.IsOnlyAdjustCharging != null) hashCode = hashCode * 59 + this.IsOnlyAdjustCharging.GetHashCode();
+                if (this.AccountName != null) hashCode = hashCode * 59 + this.AccountName.GetHashCode();
+                if (this.SourceIp != null) hashCode = hashCode * 59 + this.SourceIp.GetHashCode();
+                if (this.TargetIp != null) hashCode = hashCode * 59 + this.TargetIp.GetHashCode();
+                if (this.NodeName != null) hashCode = hashCode * 59 + this.NodeName.GetHashCode();
+                if (this.RenameCommands != null) hashCode = hashCode * 59 + this.RenameCommands.GetHashCode();
+                if (this.UpdatedConfigLength != null) hashCode = hashCode * 59 + this.UpdatedConfigLength.GetHashCode();
                 return hashCode;
             }
         }

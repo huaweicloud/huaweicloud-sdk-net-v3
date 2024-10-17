@@ -178,107 +178,26 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(ListL7PoliciesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.PageReverse != input.PageReverse || (this.PageReverse != null && !this.PageReverse.Equals(input.PageReverse))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && input.EnterpriseProjectId != null && !this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId))) return false;
+            if (this.Id != input.Id || (this.Id != null && input.Id != null && !this.Id.SequenceEqual(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && input.Name != null && !this.Name.SequenceEqual(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && input.Description != null && !this.Description.SequenceEqual(input.Description))) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.ListenerId != input.ListenerId || (this.ListenerId != null && input.ListenerId != null && !this.ListenerId.SequenceEqual(input.ListenerId))) return false;
+            if (this.Position != input.Position || (this.Position != null && input.Position != null && !this.Position.SequenceEqual(input.Position))) return false;
+            if (this.Action != input.Action || (this.Action != null && input.Action != null && !this.Action.SequenceEqual(input.Action))) return false;
+            if (this.RedirectUrl != input.RedirectUrl || (this.RedirectUrl != null && input.RedirectUrl != null && !this.RedirectUrl.SequenceEqual(input.RedirectUrl))) return false;
+            if (this.RedirectPoolId != input.RedirectPoolId || (this.RedirectPoolId != null && input.RedirectPoolId != null && !this.RedirectPoolId.SequenceEqual(input.RedirectPoolId))) return false;
+            if (this.RedirectListenerId != input.RedirectListenerId || (this.RedirectListenerId != null && input.RedirectListenerId != null && !this.RedirectListenerId.SequenceEqual(input.RedirectListenerId))) return false;
+            if (this.ProvisioningStatus != input.ProvisioningStatus || (this.ProvisioningStatus != null && input.ProvisioningStatus != null && !this.ProvisioningStatus.SequenceEqual(input.ProvisioningStatus))) return false;
+            if (this.DisplayAllRules != input.DisplayAllRules || (this.DisplayAllRules != null && !this.DisplayAllRules.Equals(input.DisplayAllRules))) return false;
+            if (this.Priority != input.Priority || (this.Priority != null && input.Priority != null && !this.Priority.SequenceEqual(input.Priority))) return false;
 
-            return 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.PageReverse == input.PageReverse ||
-                    (this.PageReverse != null &&
-                    this.PageReverse.Equals(input.PageReverse))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    this.EnterpriseProjectId != null &&
-                    input.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    this.Id != null &&
-                    input.Id != null &&
-                    this.Id.SequenceEqual(input.Id)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    this.Name != null &&
-                    input.Name != null &&
-                    this.Name.SequenceEqual(input.Name)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    this.Description != null &&
-                    input.Description != null &&
-                    this.Description.SequenceEqual(input.Description)
-                ) && 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.ListenerId == input.ListenerId ||
-                    this.ListenerId != null &&
-                    input.ListenerId != null &&
-                    this.ListenerId.SequenceEqual(input.ListenerId)
-                ) && 
-                (
-                    this.Position == input.Position ||
-                    this.Position != null &&
-                    input.Position != null &&
-                    this.Position.SequenceEqual(input.Position)
-                ) && 
-                (
-                    this.Action == input.Action ||
-                    this.Action != null &&
-                    input.Action != null &&
-                    this.Action.SequenceEqual(input.Action)
-                ) && 
-                (
-                    this.RedirectUrl == input.RedirectUrl ||
-                    this.RedirectUrl != null &&
-                    input.RedirectUrl != null &&
-                    this.RedirectUrl.SequenceEqual(input.RedirectUrl)
-                ) && 
-                (
-                    this.RedirectPoolId == input.RedirectPoolId ||
-                    this.RedirectPoolId != null &&
-                    input.RedirectPoolId != null &&
-                    this.RedirectPoolId.SequenceEqual(input.RedirectPoolId)
-                ) && 
-                (
-                    this.RedirectListenerId == input.RedirectListenerId ||
-                    this.RedirectListenerId != null &&
-                    input.RedirectListenerId != null &&
-                    this.RedirectListenerId.SequenceEqual(input.RedirectListenerId)
-                ) && 
-                (
-                    this.ProvisioningStatus == input.ProvisioningStatus ||
-                    this.ProvisioningStatus != null &&
-                    input.ProvisioningStatus != null &&
-                    this.ProvisioningStatus.SequenceEqual(input.ProvisioningStatus)
-                ) && 
-                (
-                    this.DisplayAllRules == input.DisplayAllRules ||
-                    (this.DisplayAllRules != null &&
-                    this.DisplayAllRules.Equals(input.DisplayAllRules))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    this.Priority != null &&
-                    input.Priority != null &&
-                    this.Priority.SequenceEqual(input.Priority)
-                );
+            return true;
         }
 
         /// <summary>
@@ -288,41 +207,24 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.PageReverse != null)
-                    hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.ListenerId != null)
-                    hashCode = hashCode * 59 + this.ListenerId.GetHashCode();
-                if (this.Position != null)
-                    hashCode = hashCode * 59 + this.Position.GetHashCode();
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
-                if (this.RedirectUrl != null)
-                    hashCode = hashCode * 59 + this.RedirectUrl.GetHashCode();
-                if (this.RedirectPoolId != null)
-                    hashCode = hashCode * 59 + this.RedirectPoolId.GetHashCode();
-                if (this.RedirectListenerId != null)
-                    hashCode = hashCode * 59 + this.RedirectListenerId.GetHashCode();
-                if (this.ProvisioningStatus != null)
-                    hashCode = hashCode * 59 + this.ProvisioningStatus.GetHashCode();
-                if (this.DisplayAllRules != null)
-                    hashCode = hashCode * 59 + this.DisplayAllRules.GetHashCode();
-                if (this.Priority != null)
-                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                var hashCode = 41;
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.PageReverse != null) hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.ListenerId != null) hashCode = hashCode * 59 + this.ListenerId.GetHashCode();
+                if (this.Position != null) hashCode = hashCode * 59 + this.Position.GetHashCode();
+                if (this.Action != null) hashCode = hashCode * 59 + this.Action.GetHashCode();
+                if (this.RedirectUrl != null) hashCode = hashCode * 59 + this.RedirectUrl.GetHashCode();
+                if (this.RedirectPoolId != null) hashCode = hashCode * 59 + this.RedirectPoolId.GetHashCode();
+                if (this.RedirectListenerId != null) hashCode = hashCode * 59 + this.RedirectListenerId.GetHashCode();
+                if (this.ProvisioningStatus != null) hashCode = hashCode * 59 + this.ProvisioningStatus.GetHashCode();
+                if (this.DisplayAllRules != null) hashCode = hashCode * 59 + this.DisplayAllRules.GetHashCode();
+                if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 return hashCode;
             }
         }

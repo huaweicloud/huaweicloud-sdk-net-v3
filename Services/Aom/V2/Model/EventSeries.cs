@@ -182,21 +182,11 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(EventSeries input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EventSeverity != input.EventSeverity) return false;
+            if (this.Values != input.Values || (this.Values != null && input.Values != null && !this.Values.SequenceEqual(input.Values))) return false;
 
-            return 
-                (
-                    this.EventSeverity == input.EventSeverity ||
-                    (this.EventSeverity != null &&
-                    this.EventSeverity.Equals(input.EventSeverity))
-                ) && 
-                (
-                    this.Values == input.Values ||
-                    this.Values != null &&
-                    input.Values != null &&
-                    this.Values.SequenceEqual(input.Values)
-                );
+            return true;
         }
 
         /// <summary>
@@ -206,11 +196,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EventSeverity != null)
-                    hashCode = hashCode * 59 + this.EventSeverity.GetHashCode();
-                if (this.Values != null)
-                    hashCode = hashCode * 59 + this.Values.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.EventSeverity.GetHashCode();
+                if (this.Values != null) hashCode = hashCode * 59 + this.Values.GetHashCode();
                 return hashCode;
             }
         }

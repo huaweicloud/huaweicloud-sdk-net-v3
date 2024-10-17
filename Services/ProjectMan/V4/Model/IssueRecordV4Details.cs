@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(IssueRecordV4Details input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Property != input.Property || (this.Property != null && !this.Property.Equals(input.Property))) return false;
+            if (this.OldValue != input.OldValue || (this.OldValue != null && !this.OldValue.Equals(input.OldValue))) return false;
+            if (this.NewValue != input.NewValue || (this.NewValue != null && !this.NewValue.Equals(input.NewValue))) return false;
+            if (this.Operation != input.Operation || (this.Operation != null && !this.Operation.Equals(input.Operation))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
 
-            return 
-                (
-                    this.Property == input.Property ||
-                    (this.Property != null &&
-                    this.Property.Equals(input.Property))
-                ) && 
-                (
-                    this.OldValue == input.OldValue ||
-                    (this.OldValue != null &&
-                    this.OldValue.Equals(input.OldValue))
-                ) && 
-                (
-                    this.NewValue == input.NewValue ||
-                    (this.NewValue != null &&
-                    this.NewValue.Equals(input.NewValue))
-                ) && 
-                (
-                    this.Operation == input.Operation ||
-                    (this.Operation != null &&
-                    this.Operation.Equals(input.Operation))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Property != null)
-                    hashCode = hashCode * 59 + this.Property.GetHashCode();
-                if (this.OldValue != null)
-                    hashCode = hashCode * 59 + this.OldValue.GetHashCode();
-                if (this.NewValue != null)
-                    hashCode = hashCode * 59 + this.NewValue.GetHashCode();
-                if (this.Operation != null)
-                    hashCode = hashCode * 59 + this.Operation.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                var hashCode = 41;
+                if (this.Property != null) hashCode = hashCode * 59 + this.Property.GetHashCode();
+                if (this.OldValue != null) hashCode = hashCode * 59 + this.OldValue.GetHashCode();
+                if (this.NewValue != null) hashCode = hashCode * 59 + this.NewValue.GetHashCode();
+                if (this.Operation != null) hashCode = hashCode * 59 + this.Operation.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 return hashCode;
             }
         }

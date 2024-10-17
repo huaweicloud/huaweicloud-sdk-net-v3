@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ChangeInstanceStatusBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Instances != input.Instances || (this.Instances != null && input.Instances != null && !this.Instances.SequenceEqual(input.Instances))) return false;
+            if (this.Action != input.Action || (this.Action != null && !this.Action.Equals(input.Action))) return false;
 
-            return 
-                (
-                    this.Instances == input.Instances ||
-                    this.Instances != null &&
-                    input.Instances != null &&
-                    this.Instances.SequenceEqual(input.Instances)
-                ) && 
-                (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Instances != null)
-                    hashCode = hashCode * 59 + this.Instances.GetHashCode();
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
+                var hashCode = 41;
+                if (this.Instances != null) hashCode = hashCode * 59 + this.Instances.GetHashCode();
+                if (this.Action != null) hashCode = hashCode * 59 + this.Action.GetHashCode();
                 return hashCode;
             }
         }

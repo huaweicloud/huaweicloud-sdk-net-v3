@@ -346,62 +346,19 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(OperationState input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ActionMode != input.ActionMode) return false;
+            if (this.Actions != input.Actions || (this.Actions != null && input.Actions != null && !this.Actions.SequenceEqual(input.Actions))) return false;
+            if (this.OnErrors != input.OnErrors || (this.OnErrors != null && input.OnErrors != null && !this.OnErrors.SequenceEqual(input.OnErrors))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Type != input.Type) return false;
+            if (this.End != input.End || (this.End != null && !this.End.Equals(input.End))) return false;
+            if (this.Transition != input.Transition || (this.Transition != null && !this.Transition.Equals(input.Transition))) return false;
+            if (this.StateDataFilter != input.StateDataFilter || (this.StateDataFilter != null && !this.StateDataFilter.Equals(input.StateDataFilter))) return false;
+            if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
 
-            return 
-                (
-                    this.ActionMode == input.ActionMode ||
-                    (this.ActionMode != null &&
-                    this.ActionMode.Equals(input.ActionMode))
-                ) && 
-                (
-                    this.Actions == input.Actions ||
-                    this.Actions != null &&
-                    input.Actions != null &&
-                    this.Actions.SequenceEqual(input.Actions)
-                ) && 
-                (
-                    this.OnErrors == input.OnErrors ||
-                    this.OnErrors != null &&
-                    input.OnErrors != null &&
-                    this.OnErrors.SequenceEqual(input.OnErrors)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.End == input.End ||
-                    (this.End != null &&
-                    this.End.Equals(input.End))
-                ) && 
-                (
-                    this.Transition == input.Transition ||
-                    (this.Transition != null &&
-                    this.Transition.Equals(input.Transition))
-                ) && 
-                (
-                    this.StateDataFilter == input.StateDataFilter ||
-                    (this.StateDataFilter != null &&
-                    this.StateDataFilter.Equals(input.StateDataFilter))
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
-                );
+            return true;
         }
 
         /// <summary>
@@ -411,27 +368,17 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ActionMode != null)
-                    hashCode = hashCode * 59 + this.ActionMode.GetHashCode();
-                if (this.Actions != null)
-                    hashCode = hashCode * 59 + this.Actions.GetHashCode();
-                if (this.OnErrors != null)
-                    hashCode = hashCode * 59 + this.OnErrors.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.End != null)
-                    hashCode = hashCode * 59 + this.End.GetHashCode();
-                if (this.Transition != null)
-                    hashCode = hashCode * 59 + this.Transition.GetHashCode();
-                if (this.StateDataFilter != null)
-                    hashCode = hashCode * 59 + this.StateDataFilter.GetHashCode();
-                if (this.Duration != null)
-                    hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.ActionMode.GetHashCode();
+                if (this.Actions != null) hashCode = hashCode * 59 + this.Actions.GetHashCode();
+                if (this.OnErrors != null) hashCode = hashCode * 59 + this.OnErrors.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.End != null) hashCode = hashCode * 59 + this.End.GetHashCode();
+                if (this.Transition != null) hashCode = hashCode * 59 + this.Transition.GetHashCode();
+                if (this.StateDataFilter != null) hashCode = hashCode * 59 + this.StateDataFilter.GetHashCode();
+                if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
                 return hashCode;
             }
         }

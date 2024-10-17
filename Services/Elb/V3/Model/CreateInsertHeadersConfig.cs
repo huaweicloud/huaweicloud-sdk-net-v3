@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(CreateInsertHeadersConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Configs != input.Configs || (this.Configs != null && input.Configs != null && !this.Configs.SequenceEqual(input.Configs))) return false;
 
-            return 
-                (
-                    this.Configs == input.Configs ||
-                    this.Configs != null &&
-                    input.Configs != null &&
-                    this.Configs.SequenceEqual(input.Configs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Configs != null)
-                    hashCode = hashCode * 59 + this.Configs.GetHashCode();
+                var hashCode = 41;
+                if (this.Configs != null) hashCode = hashCode * 59 + this.Configs.GetHashCode();
                 return hashCode;
             }
         }

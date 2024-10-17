@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(RestoreToExistingInstanceRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Source != input.Source || (this.Source != null && !this.Source.Equals(input.Source))) return false;
+            if (this.Target != input.Target || (this.Target != null && !this.Target.Equals(input.Target))) return false;
 
-            return 
-                (
-                    this.Source == input.Source ||
-                    (this.Source != null &&
-                    this.Source.Equals(input.Source))
-                ) && 
-                (
-                    this.Target == input.Target ||
-                    (this.Target != null &&
-                    this.Target.Equals(input.Target))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Source != null)
-                    hashCode = hashCode * 59 + this.Source.GetHashCode();
-                if (this.Target != null)
-                    hashCode = hashCode * 59 + this.Target.GetHashCode();
+                var hashCode = 41;
+                if (this.Source != null) hashCode = hashCode * 59 + this.Source.GetHashCode();
+                if (this.Target != null) hashCode = hashCode * 59 + this.Target.GetHashCode();
                 return hashCode;
             }
         }

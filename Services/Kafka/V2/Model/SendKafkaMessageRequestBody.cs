@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(SendKafkaMessageRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
+            if (this.PropertyList != input.PropertyList || (this.PropertyList != null && input.PropertyList != null && !this.PropertyList.SequenceEqual(input.PropertyList))) return false;
 
-            return 
-                (
-                    this.Topic == input.Topic ||
-                    (this.Topic != null &&
-                    this.Topic.Equals(input.Topic))
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
-                ) && 
-                (
-                    this.PropertyList == input.PropertyList ||
-                    this.PropertyList != null &&
-                    input.PropertyList != null &&
-                    this.PropertyList.SequenceEqual(input.PropertyList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Topic != null)
-                    hashCode = hashCode * 59 + this.Topic.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
-                if (this.PropertyList != null)
-                    hashCode = hashCode * 59 + this.PropertyList.GetHashCode();
+                var hashCode = 41;
+                if (this.Topic != null) hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.PropertyList != null) hashCode = hashCode * 59 + this.PropertyList.GetHashCode();
                 return hashCode;
             }
         }

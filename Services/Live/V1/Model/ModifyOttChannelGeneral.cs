@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(ModifyOttChannelGeneral input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
+            if (this.AppName != input.AppName || (this.AppName != null && !this.AppName.Equals(input.AppName))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
 
-            return 
-                (
-                    this.Domain == input.Domain ||
-                    (this.Domain != null &&
-                    this.Domain.Equals(input.Domain))
-                ) && 
-                (
-                    this.AppName == input.AppName ||
-                    (this.AppName != null &&
-                    this.AppName.Equals(input.AppName))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Domain != null)
-                    hashCode = hashCode * 59 + this.Domain.GetHashCode();
-                if (this.AppName != null)
-                    hashCode = hashCode * 59 + this.AppName.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                var hashCode = 41;
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                if (this.AppName != null) hashCode = hashCode * 59 + this.AppName.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 return hashCode;
             }
         }

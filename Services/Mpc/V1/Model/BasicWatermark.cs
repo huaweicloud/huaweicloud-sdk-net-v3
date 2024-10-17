@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(BasicWatermark input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Dx != input.Dx || (this.Dx != null && !this.Dx.Equals(input.Dx))) return false;
+            if (this.Dy != input.Dy || (this.Dy != null && !this.Dy.Equals(input.Dy))) return false;
+            if (this.Referpos != input.Referpos || (this.Referpos != null && !this.Referpos.Equals(input.Referpos))) return false;
+            if (this.TimelineStart != input.TimelineStart || (this.TimelineStart != null && !this.TimelineStart.Equals(input.TimelineStart))) return false;
+            if (this.TimelineDuration != input.TimelineDuration || (this.TimelineDuration != null && !this.TimelineDuration.Equals(input.TimelineDuration))) return false;
 
-            return 
-                (
-                    this.Dx == input.Dx ||
-                    (this.Dx != null &&
-                    this.Dx.Equals(input.Dx))
-                ) && 
-                (
-                    this.Dy == input.Dy ||
-                    (this.Dy != null &&
-                    this.Dy.Equals(input.Dy))
-                ) && 
-                (
-                    this.Referpos == input.Referpos ||
-                    (this.Referpos != null &&
-                    this.Referpos.Equals(input.Referpos))
-                ) && 
-                (
-                    this.TimelineStart == input.TimelineStart ||
-                    (this.TimelineStart != null &&
-                    this.TimelineStart.Equals(input.TimelineStart))
-                ) && 
-                (
-                    this.TimelineDuration == input.TimelineDuration ||
-                    (this.TimelineDuration != null &&
-                    this.TimelineDuration.Equals(input.TimelineDuration))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Dx != null)
-                    hashCode = hashCode * 59 + this.Dx.GetHashCode();
-                if (this.Dy != null)
-                    hashCode = hashCode * 59 + this.Dy.GetHashCode();
-                if (this.Referpos != null)
-                    hashCode = hashCode * 59 + this.Referpos.GetHashCode();
-                if (this.TimelineStart != null)
-                    hashCode = hashCode * 59 + this.TimelineStart.GetHashCode();
-                if (this.TimelineDuration != null)
-                    hashCode = hashCode * 59 + this.TimelineDuration.GetHashCode();
+                var hashCode = 41;
+                if (this.Dx != null) hashCode = hashCode * 59 + this.Dx.GetHashCode();
+                if (this.Dy != null) hashCode = hashCode * 59 + this.Dy.GetHashCode();
+                if (this.Referpos != null) hashCode = hashCode * 59 + this.Referpos.GetHashCode();
+                if (this.TimelineStart != null) hashCode = hashCode * 59 + this.TimelineStart.GetHashCode();
+                if (this.TimelineDuration != null) hashCode = hashCode * 59 + this.TimelineDuration.GetHashCode();
                 return hashCode;
             }
         }

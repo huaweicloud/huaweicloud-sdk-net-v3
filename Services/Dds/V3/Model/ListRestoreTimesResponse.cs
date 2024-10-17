@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(ListRestoreTimesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RestoreTime != input.RestoreTime || (this.RestoreTime != null && input.RestoreTime != null && !this.RestoreTime.SequenceEqual(input.RestoreTime))) return false;
 
-            return 
-                (
-                    this.RestoreTime == input.RestoreTime ||
-                    this.RestoreTime != null &&
-                    input.RestoreTime != null &&
-                    this.RestoreTime.SequenceEqual(input.RestoreTime)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RestoreTime != null)
-                    hashCode = hashCode * 59 + this.RestoreTime.GetHashCode();
+                var hashCode = 41;
+                if (this.RestoreTime != null) hashCode = hashCode * 59 + this.RestoreTime.GetHashCode();
                 return hashCode;
             }
         }

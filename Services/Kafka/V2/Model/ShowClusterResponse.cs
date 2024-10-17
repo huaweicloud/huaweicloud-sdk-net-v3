@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ShowClusterResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Cluster != input.Cluster || (this.Cluster != null && !this.Cluster.Equals(input.Cluster))) return false;
 
-            return 
-                (
-                    this.Cluster == input.Cluster ||
-                    (this.Cluster != null &&
-                    this.Cluster.Equals(input.Cluster))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Cluster != null)
-                    hashCode = hashCode * 59 + this.Cluster.GetHashCode();
+                var hashCode = 41;
+                if (this.Cluster != null) hashCode = hashCode * 59 + this.Cluster.GetHashCode();
                 return hashCode;
             }
         }

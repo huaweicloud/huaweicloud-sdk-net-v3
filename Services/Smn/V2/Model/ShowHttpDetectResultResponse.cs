@@ -183,25 +183,12 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public bool Equals(ShowHttpDetectResultResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Detail != input.Detail || (this.Detail != null && !this.Detail.Equals(input.Detail))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
 
-            return 
-                (
-                    this.Detail == input.Detail ||
-                    (this.Detail != null &&
-                    this.Detail.Equals(input.Detail))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.RequestId == input.RequestId ||
-                    (this.RequestId != null &&
-                    this.RequestId.Equals(input.RequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -211,13 +198,10 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Detail != null)
-                    hashCode = hashCode * 59 + this.Detail.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.RequestId != null)
-                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.Detail != null) hashCode = hashCode * 59 + this.Detail.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 return hashCode;
             }
         }

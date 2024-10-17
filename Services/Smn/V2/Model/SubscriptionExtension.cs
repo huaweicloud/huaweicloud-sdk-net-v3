@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public bool Equals(SubscriptionExtension input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClientId != input.ClientId || (this.ClientId != null && !this.ClientId.Equals(input.ClientId))) return false;
+            if (this.ClientSecret != input.ClientSecret || (this.ClientSecret != null && !this.ClientSecret.Equals(input.ClientSecret))) return false;
+            if (this.Keyword != input.Keyword || (this.Keyword != null && !this.Keyword.Equals(input.Keyword))) return false;
+            if (this.SignSecret != input.SignSecret || (this.SignSecret != null && !this.SignSecret.Equals(input.SignSecret))) return false;
 
-            return 
-                (
-                    this.ClientId == input.ClientId ||
-                    (this.ClientId != null &&
-                    this.ClientId.Equals(input.ClientId))
-                ) && 
-                (
-                    this.ClientSecret == input.ClientSecret ||
-                    (this.ClientSecret != null &&
-                    this.ClientSecret.Equals(input.ClientSecret))
-                ) && 
-                (
-                    this.Keyword == input.Keyword ||
-                    (this.Keyword != null &&
-                    this.Keyword.Equals(input.Keyword))
-                ) && 
-                (
-                    this.SignSecret == input.SignSecret ||
-                    (this.SignSecret != null &&
-                    this.SignSecret.Equals(input.SignSecret))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClientId != null)
-                    hashCode = hashCode * 59 + this.ClientId.GetHashCode();
-                if (this.ClientSecret != null)
-                    hashCode = hashCode * 59 + this.ClientSecret.GetHashCode();
-                if (this.Keyword != null)
-                    hashCode = hashCode * 59 + this.Keyword.GetHashCode();
-                if (this.SignSecret != null)
-                    hashCode = hashCode * 59 + this.SignSecret.GetHashCode();
+                var hashCode = 41;
+                if (this.ClientId != null) hashCode = hashCode * 59 + this.ClientId.GetHashCode();
+                if (this.ClientSecret != null) hashCode = hashCode * 59 + this.ClientSecret.GetHashCode();
+                if (this.Keyword != null) hashCode = hashCode * 59 + this.Keyword.GetHashCode();
+                if (this.SignSecret != null) hashCode = hashCode * 59 + this.SignSecret.GetHashCode();
                 return hashCode;
             }
         }

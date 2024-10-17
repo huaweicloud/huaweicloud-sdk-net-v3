@@ -184,30 +184,13 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(CreateAclAccountRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AccountName != input.AccountName || (this.AccountName != null && !this.AccountName.Equals(input.AccountName))) return false;
+            if (this.AccountRole != input.AccountRole) return false;
+            if (this.AccountPassword != input.AccountPassword || (this.AccountPassword != null && !this.AccountPassword.Equals(input.AccountPassword))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
 
-            return 
-                (
-                    this.AccountName == input.AccountName ||
-                    (this.AccountName != null &&
-                    this.AccountName.Equals(input.AccountName))
-                ) && 
-                (
-                    this.AccountRole == input.AccountRole ||
-                    (this.AccountRole != null &&
-                    this.AccountRole.Equals(input.AccountRole))
-                ) && 
-                (
-                    this.AccountPassword == input.AccountPassword ||
-                    (this.AccountPassword != null &&
-                    this.AccountPassword.Equals(input.AccountPassword))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                );
+            return true;
         }
 
         /// <summary>
@@ -217,15 +200,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AccountName != null)
-                    hashCode = hashCode * 59 + this.AccountName.GetHashCode();
-                if (this.AccountRole != null)
-                    hashCode = hashCode * 59 + this.AccountRole.GetHashCode();
-                if (this.AccountPassword != null)
-                    hashCode = hashCode * 59 + this.AccountPassword.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                var hashCode = 41;
+                if (this.AccountName != null) hashCode = hashCode * 59 + this.AccountName.GetHashCode();
+                hashCode = hashCode * 59 + this.AccountRole.GetHashCode();
+                if (this.AccountPassword != null) hashCode = hashCode * 59 + this.AccountPassword.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

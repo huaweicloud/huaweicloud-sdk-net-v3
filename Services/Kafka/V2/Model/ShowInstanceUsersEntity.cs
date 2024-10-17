@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ShowInstanceUsersEntity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.UserDesc != input.UserDesc || (this.UserDesc != null && !this.UserDesc.Equals(input.UserDesc))) return false;
+            if (this.Role != input.Role || (this.Role != null && !this.Role.Equals(input.Role))) return false;
+            if (this.DefaultApp != input.DefaultApp || (this.DefaultApp != null && !this.DefaultApp.Equals(input.DefaultApp))) return false;
+            if (this.CreatedTime != input.CreatedTime || (this.CreatedTime != null && !this.CreatedTime.Equals(input.CreatedTime))) return false;
 
-            return 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.UserDesc == input.UserDesc ||
-                    (this.UserDesc != null &&
-                    this.UserDesc.Equals(input.UserDesc))
-                ) && 
-                (
-                    this.Role == input.Role ||
-                    (this.Role != null &&
-                    this.Role.Equals(input.Role))
-                ) && 
-                (
-                    this.DefaultApp == input.DefaultApp ||
-                    (this.DefaultApp != null &&
-                    this.DefaultApp.Equals(input.DefaultApp))
-                ) && 
-                (
-                    this.CreatedTime == input.CreatedTime ||
-                    (this.CreatedTime != null &&
-                    this.CreatedTime.Equals(input.CreatedTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UserName != null)
-                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.UserDesc != null)
-                    hashCode = hashCode * 59 + this.UserDesc.GetHashCode();
-                if (this.Role != null)
-                    hashCode = hashCode * 59 + this.Role.GetHashCode();
-                if (this.DefaultApp != null)
-                    hashCode = hashCode * 59 + this.DefaultApp.GetHashCode();
-                if (this.CreatedTime != null)
-                    hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
+                var hashCode = 41;
+                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.UserDesc != null) hashCode = hashCode * 59 + this.UserDesc.GetHashCode();
+                if (this.Role != null) hashCode = hashCode * 59 + this.Role.GetHashCode();
+                if (this.DefaultApp != null) hashCode = hashCode * 59 + this.DefaultApp.GetHashCode();
+                if (this.CreatedTime != null) hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
                 return hashCode;
             }
         }

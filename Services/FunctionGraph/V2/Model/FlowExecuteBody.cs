@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(FlowExecuteBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Headers != input.Headers || (this.Headers != null && !this.Headers.Equals(input.Headers))) return false;
+            if (this.Input != input.Input || (this.Input != null && !this.Input.Equals(input.Input))) return false;
 
-            return 
-                (
-                    this.Headers == input.Headers ||
-                    (this.Headers != null &&
-                    this.Headers.Equals(input.Headers))
-                ) && 
-                (
-                    this.Input == input.Input ||
-                    (this.Input != null &&
-                    this.Input.Equals(input.Input))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Headers != null)
-                    hashCode = hashCode * 59 + this.Headers.GetHashCode();
-                if (this.Input != null)
-                    hashCode = hashCode * 59 + this.Input.GetHashCode();
+                var hashCode = 41;
+                if (this.Headers != null) hashCode = hashCode * 59 + this.Headers.GetHashCode();
+                if (this.Input != null) hashCode = hashCode * 59 + this.Input.GetHashCode();
                 return hashCode;
             }
         }

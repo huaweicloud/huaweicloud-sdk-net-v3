@@ -177,26 +177,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(BatchUpdatePermissionLevelRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.PermissionLevel != input.PermissionLevel) return false;
+            if (this.ApplicationIds != input.ApplicationIds || (this.ApplicationIds != null && input.ApplicationIds != null && !this.ApplicationIds.SequenceEqual(input.ApplicationIds))) return false;
 
-            return 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.PermissionLevel == input.PermissionLevel ||
-                    (this.PermissionLevel != null &&
-                    this.PermissionLevel.Equals(input.PermissionLevel))
-                ) && 
-                (
-                    this.ApplicationIds == input.ApplicationIds ||
-                    this.ApplicationIds != null &&
-                    input.ApplicationIds != null &&
-                    this.ApplicationIds.SequenceEqual(input.ApplicationIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -206,13 +192,10 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.PermissionLevel != null)
-                    hashCode = hashCode * 59 + this.PermissionLevel.GetHashCode();
-                if (this.ApplicationIds != null)
-                    hashCode = hashCode * 59 + this.ApplicationIds.GetHashCode();
+                var hashCode = 41;
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                hashCode = hashCode * 59 + this.PermissionLevel.GetHashCode();
+                if (this.ApplicationIds != null) hashCode = hashCode * 59 + this.ApplicationIds.GetHashCode();
                 return hashCode;
             }
         }

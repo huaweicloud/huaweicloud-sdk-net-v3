@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(RestoreInstanceFromCollectionRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RestoreCollections != input.RestoreCollections || (this.RestoreCollections != null && input.RestoreCollections != null && !this.RestoreCollections.SequenceEqual(input.RestoreCollections))) return false;
 
-            return 
-                (
-                    this.RestoreCollections == input.RestoreCollections ||
-                    this.RestoreCollections != null &&
-                    input.RestoreCollections != null &&
-                    this.RestoreCollections.SequenceEqual(input.RestoreCollections)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RestoreCollections != null)
-                    hashCode = hashCode * 59 + this.RestoreCollections.GetHashCode();
+                var hashCode = 41;
+                if (this.RestoreCollections != null) hashCode = hashCode * 59 + this.RestoreCollections.GetHashCode();
                 return hashCode;
             }
         }

@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(BackupSync input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BackupId != input.BackupId || (this.BackupId != null && !this.BackupId.Equals(input.BackupId))) return false;
+            if (this.BackupName != input.BackupName || (this.BackupName != null && !this.BackupName.Equals(input.BackupName))) return false;
+            if (this.BucketName != input.BucketName || (this.BucketName != null && !this.BucketName.Equals(input.BucketName))) return false;
+            if (this.ImagePath != input.ImagePath || (this.ImagePath != null && !this.ImagePath.Equals(input.ImagePath))) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
+            if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
+            if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
 
-            return 
-                (
-                    this.BackupId == input.BackupId ||
-                    (this.BackupId != null &&
-                    this.BackupId.Equals(input.BackupId))
-                ) && 
-                (
-                    this.BackupName == input.BackupName ||
-                    (this.BackupName != null &&
-                    this.BackupName.Equals(input.BackupName))
-                ) && 
-                (
-                    this.BucketName == input.BucketName ||
-                    (this.BucketName != null &&
-                    this.BucketName.Equals(input.BucketName))
-                ) && 
-                (
-                    this.ImagePath == input.ImagePath ||
-                    (this.ImagePath != null &&
-                    this.ImagePath.Equals(input.ImagePath))
-                ) && 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
-                ) && 
-                (
-                    this.ResourceName == input.ResourceName ||
-                    (this.ResourceName != null &&
-                    this.ResourceName.Equals(input.ResourceName))
-                ) && 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BackupId != null)
-                    hashCode = hashCode * 59 + this.BackupId.GetHashCode();
-                if (this.BackupName != null)
-                    hashCode = hashCode * 59 + this.BackupName.GetHashCode();
-                if (this.BucketName != null)
-                    hashCode = hashCode * 59 + this.BucketName.GetHashCode();
-                if (this.ImagePath != null)
-                    hashCode = hashCode * 59 + this.ImagePath.GetHashCode();
-                if (this.ResourceId != null)
-                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
-                if (this.ResourceName != null)
-                    hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                var hashCode = 41;
+                if (this.BackupId != null) hashCode = hashCode * 59 + this.BackupId.GetHashCode();
+                if (this.BackupName != null) hashCode = hashCode * 59 + this.BackupName.GetHashCode();
+                if (this.BucketName != null) hashCode = hashCode * 59 + this.BucketName.GetHashCode();
+                if (this.ImagePath != null) hashCode = hashCode * 59 + this.ImagePath.GetHashCode();
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
+                if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 return hashCode;
             }
         }

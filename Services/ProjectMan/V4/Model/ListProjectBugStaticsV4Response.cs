@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ListProjectBugStaticsV4Response input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BugStatistics != input.BugStatistics || (this.BugStatistics != null && input.BugStatistics != null && !this.BugStatistics.SequenceEqual(input.BugStatistics))) return false;
 
-            return 
-                (
-                    this.BugStatistics == input.BugStatistics ||
-                    this.BugStatistics != null &&
-                    input.BugStatistics != null &&
-                    this.BugStatistics.SequenceEqual(input.BugStatistics)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BugStatistics != null)
-                    hashCode = hashCode * 59 + this.BugStatistics.GetHashCode();
+                var hashCode = 41;
+                if (this.BugStatistics != null) hashCode = hashCode * 59 + this.BugStatistics.GetHashCode();
                 return hashCode;
             }
         }

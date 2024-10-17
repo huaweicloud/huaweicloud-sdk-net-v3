@@ -70,32 +70,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(GeneralTextWordsBlockList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Words != input.Words || (this.Words != null && !this.Words.Equals(input.Words))) return false;
+            if (this.Location != input.Location || (this.Location != null && input.Location != null && !this.Location.SequenceEqual(input.Location))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
+            if (this.CharList != input.CharList || (this.CharList != null && input.CharList != null && !this.CharList.SequenceEqual(input.CharList))) return false;
 
-            return 
-                (
-                    this.Words == input.Words ||
-                    (this.Words != null &&
-                    this.Words.Equals(input.Words))
-                ) && 
-                (
-                    this.Location == input.Location ||
-                    this.Location != null &&
-                    input.Location != null &&
-                    this.Location.SequenceEqual(input.Location)
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                ) && 
-                (
-                    this.CharList == input.CharList ||
-                    this.CharList != null &&
-                    input.CharList != null &&
-                    this.CharList.SequenceEqual(input.CharList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -105,15 +86,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Words != null)
-                    hashCode = hashCode * 59 + this.Words.GetHashCode();
-                if (this.Location != null)
-                    hashCode = hashCode * 59 + this.Location.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
-                if (this.CharList != null)
-                    hashCode = hashCode * 59 + this.CharList.GetHashCode();
+                var hashCode = 41;
+                if (this.Words != null) hashCode = hashCode * 59 + this.Words.GetHashCode();
+                if (this.Location != null) hashCode = hashCode * 59 + this.Location.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                if (this.CharList != null) hashCode = hashCode * 59 + this.CharList.GetHashCode();
                 return hashCode;
             }
         }

@@ -190,32 +190,13 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(DeleteTranscodeProductResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.DeletedProducts != input.DeletedProducts || (this.DeletedProducts != null && input.DeletedProducts != null && !this.DeletedProducts.SequenceEqual(input.DeletedProducts))) return false;
+            if (this.FailedProducts != input.FailedProducts || (this.FailedProducts != null && input.FailedProducts != null && !this.FailedProducts.SequenceEqual(input.FailedProducts))) return false;
 
-            return 
-                (
-                    this.AssetId == input.AssetId ||
-                    (this.AssetId != null &&
-                    this.AssetId.Equals(input.AssetId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.DeletedProducts == input.DeletedProducts ||
-                    this.DeletedProducts != null &&
-                    input.DeletedProducts != null &&
-                    this.DeletedProducts.SequenceEqual(input.DeletedProducts)
-                ) && 
-                (
-                    this.FailedProducts == input.FailedProducts ||
-                    this.FailedProducts != null &&
-                    input.FailedProducts != null &&
-                    this.FailedProducts.SequenceEqual(input.FailedProducts)
-                );
+            return true;
         }
 
         /// <summary>
@@ -225,15 +206,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AssetId != null)
-                    hashCode = hashCode * 59 + this.AssetId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.DeletedProducts != null)
-                    hashCode = hashCode * 59 + this.DeletedProducts.GetHashCode();
-                if (this.FailedProducts != null)
-                    hashCode = hashCode * 59 + this.FailedProducts.GetHashCode();
+                var hashCode = 41;
+                if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.DeletedProducts != null) hashCode = hashCode * 59 + this.DeletedProducts.GetHashCode();
+                if (this.FailedProducts != null) hashCode = hashCode * 59 + this.FailedProducts.GetHashCode();
                 return hashCode;
             }
         }

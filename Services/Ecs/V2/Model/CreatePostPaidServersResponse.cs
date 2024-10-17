@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(CreatePostPaidServersResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.ServerIds != input.ServerIds || (this.ServerIds != null && input.ServerIds != null && !this.ServerIds.SequenceEqual(input.ServerIds))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.ServerIds == input.ServerIds ||
-                    this.ServerIds != null &&
-                    input.ServerIds != null &&
-                    this.ServerIds.SequenceEqual(input.ServerIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.ServerIds != null)
-                    hashCode = hashCode * 59 + this.ServerIds.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.ServerIds != null) hashCode = hashCode * 59 + this.ServerIds.GetHashCode();
                 return hashCode;
             }
         }

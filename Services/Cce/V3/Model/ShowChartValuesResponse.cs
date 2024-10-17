@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ShowChartValuesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Values != input.Values || (this.Values != null && !this.Values.Equals(input.Values))) return false;
 
-            return 
-                (
-                    this.Values == input.Values ||
-                    (this.Values != null &&
-                    this.Values.Equals(input.Values))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Values != null)
-                    hashCode = hashCode * 59 + this.Values.GetHashCode();
+                var hashCode = 41;
+                if (this.Values != null) hashCode = hashCode * 59 + this.Values.GetHashCode();
                 return hashCode;
             }
         }

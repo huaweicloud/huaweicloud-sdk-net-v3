@@ -169,15 +169,10 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(OutputPolicy input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this._OutputPolicy != input._OutputPolicy) return false;
 
-            return 
-                (
-                    this._OutputPolicy == input._OutputPolicy ||
-                    (this._OutputPolicy != null &&
-                    this._OutputPolicy.Equals(input._OutputPolicy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,9 +182,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this._OutputPolicy != null)
-                    hashCode = hashCode * 59 + this._OutputPolicy.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this._OutputPolicy.GetHashCode();
                 return hashCode;
             }
         }

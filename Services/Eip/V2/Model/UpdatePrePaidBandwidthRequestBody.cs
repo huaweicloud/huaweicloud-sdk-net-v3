@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// </summary>
         public bool Equals(UpdatePrePaidBandwidthRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Bandwidth != input.Bandwidth || (this.Bandwidth != null && !this.Bandwidth.Equals(input.Bandwidth))) return false;
+            if (this.ExtendParam != input.ExtendParam || (this.ExtendParam != null && !this.ExtendParam.Equals(input.ExtendParam))) return false;
 
-            return 
-                (
-                    this.Bandwidth == input.Bandwidth ||
-                    (this.Bandwidth != null &&
-                    this.Bandwidth.Equals(input.Bandwidth))
-                ) && 
-                (
-                    this.ExtendParam == input.ExtendParam ||
-                    (this.ExtendParam != null &&
-                    this.ExtendParam.Equals(input.ExtendParam))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Bandwidth != null)
-                    hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
-                if (this.ExtendParam != null)
-                    hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
+                var hashCode = 41;
+                if (this.Bandwidth != null) hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
+                if (this.ExtendParam != null) hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
                 return hashCode;
             }
         }

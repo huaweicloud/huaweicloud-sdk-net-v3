@@ -126,70 +126,21 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public bool Equals(Attributes input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Gender != input.Gender || (this.Gender != null && !this.Gender.Equals(input.Gender))) return false;
+            if (this.Dress != input.Dress || (this.Dress != null && !this.Dress.Equals(input.Dress))) return false;
+            if (this.Glass != input.Glass || (this.Glass != null && !this.Glass.Equals(input.Glass))) return false;
+            if (this.Hat != input.Hat || (this.Hat != null && !this.Hat.Equals(input.Hat))) return false;
+            if (this.Age != input.Age || (this.Age != null && !this.Age.Equals(input.Age))) return false;
+            if (this.Mask != input.Mask || (this.Mask != null && !this.Mask.Equals(input.Mask))) return false;
+            if (this.Beard != input.Beard || (this.Beard != null && !this.Beard.Equals(input.Beard))) return false;
+            if (this.Phototype != input.Phototype || (this.Phototype != null && !this.Phototype.Equals(input.Phototype))) return false;
+            if (this.Quality != input.Quality || (this.Quality != null && !this.Quality.Equals(input.Quality))) return false;
+            if (this.Hair != input.Hair || (this.Hair != null && !this.Hair.Equals(input.Hair))) return false;
+            if (this.Expression != input.Expression || (this.Expression != null && !this.Expression.Equals(input.Expression))) return false;
+            if (this.FaceAngle != input.FaceAngle || (this.FaceAngle != null && !this.FaceAngle.Equals(input.FaceAngle))) return false;
 
-            return 
-                (
-                    this.Gender == input.Gender ||
-                    (this.Gender != null &&
-                    this.Gender.Equals(input.Gender))
-                ) && 
-                (
-                    this.Dress == input.Dress ||
-                    (this.Dress != null &&
-                    this.Dress.Equals(input.Dress))
-                ) && 
-                (
-                    this.Glass == input.Glass ||
-                    (this.Glass != null &&
-                    this.Glass.Equals(input.Glass))
-                ) && 
-                (
-                    this.Hat == input.Hat ||
-                    (this.Hat != null &&
-                    this.Hat.Equals(input.Hat))
-                ) && 
-                (
-                    this.Age == input.Age ||
-                    (this.Age != null &&
-                    this.Age.Equals(input.Age))
-                ) && 
-                (
-                    this.Mask == input.Mask ||
-                    (this.Mask != null &&
-                    this.Mask.Equals(input.Mask))
-                ) && 
-                (
-                    this.Beard == input.Beard ||
-                    (this.Beard != null &&
-                    this.Beard.Equals(input.Beard))
-                ) && 
-                (
-                    this.Phototype == input.Phototype ||
-                    (this.Phototype != null &&
-                    this.Phototype.Equals(input.Phototype))
-                ) && 
-                (
-                    this.Quality == input.Quality ||
-                    (this.Quality != null &&
-                    this.Quality.Equals(input.Quality))
-                ) && 
-                (
-                    this.Hair == input.Hair ||
-                    (this.Hair != null &&
-                    this.Hair.Equals(input.Hair))
-                ) && 
-                (
-                    this.Expression == input.Expression ||
-                    (this.Expression != null &&
-                    this.Expression.Equals(input.Expression))
-                ) && 
-                (
-                    this.FaceAngle == input.FaceAngle ||
-                    (this.FaceAngle != null &&
-                    this.FaceAngle.Equals(input.FaceAngle))
-                );
+            return true;
         }
 
         /// <summary>
@@ -199,31 +150,19 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Gender != null)
-                    hashCode = hashCode * 59 + this.Gender.GetHashCode();
-                if (this.Dress != null)
-                    hashCode = hashCode * 59 + this.Dress.GetHashCode();
-                if (this.Glass != null)
-                    hashCode = hashCode * 59 + this.Glass.GetHashCode();
-                if (this.Hat != null)
-                    hashCode = hashCode * 59 + this.Hat.GetHashCode();
-                if (this.Age != null)
-                    hashCode = hashCode * 59 + this.Age.GetHashCode();
-                if (this.Mask != null)
-                    hashCode = hashCode * 59 + this.Mask.GetHashCode();
-                if (this.Beard != null)
-                    hashCode = hashCode * 59 + this.Beard.GetHashCode();
-                if (this.Phototype != null)
-                    hashCode = hashCode * 59 + this.Phototype.GetHashCode();
-                if (this.Quality != null)
-                    hashCode = hashCode * 59 + this.Quality.GetHashCode();
-                if (this.Hair != null)
-                    hashCode = hashCode * 59 + this.Hair.GetHashCode();
-                if (this.Expression != null)
-                    hashCode = hashCode * 59 + this.Expression.GetHashCode();
-                if (this.FaceAngle != null)
-                    hashCode = hashCode * 59 + this.FaceAngle.GetHashCode();
+                var hashCode = 41;
+                if (this.Gender != null) hashCode = hashCode * 59 + this.Gender.GetHashCode();
+                if (this.Dress != null) hashCode = hashCode * 59 + this.Dress.GetHashCode();
+                if (this.Glass != null) hashCode = hashCode * 59 + this.Glass.GetHashCode();
+                if (this.Hat != null) hashCode = hashCode * 59 + this.Hat.GetHashCode();
+                if (this.Age != null) hashCode = hashCode * 59 + this.Age.GetHashCode();
+                if (this.Mask != null) hashCode = hashCode * 59 + this.Mask.GetHashCode();
+                if (this.Beard != null) hashCode = hashCode * 59 + this.Beard.GetHashCode();
+                if (this.Phototype != null) hashCode = hashCode * 59 + this.Phototype.GetHashCode();
+                if (this.Quality != null) hashCode = hashCode * 59 + this.Quality.GetHashCode();
+                if (this.Hair != null) hashCode = hashCode * 59 + this.Hair.GetHashCode();
+                if (this.Expression != null) hashCode = hashCode * 59 + this.Expression.GetHashCode();
+                if (this.FaceAngle != null) hashCode = hashCode * 59 + this.FaceAngle.GetHashCode();
                 return hashCode;
             }
         }

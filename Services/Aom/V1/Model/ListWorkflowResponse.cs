@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         /// </summary>
         public bool Equals(ListWorkflowResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Elements != input.Elements || (this.Elements != null && input.Elements != null && !this.Elements.SequenceEqual(input.Elements))) return false;
+            if (this.TotalElements != input.TotalElements || (this.TotalElements != null && !this.TotalElements.Equals(input.TotalElements))) return false;
 
-            return 
-                (
-                    this.Elements == input.Elements ||
-                    this.Elements != null &&
-                    input.Elements != null &&
-                    this.Elements.SequenceEqual(input.Elements)
-                ) && 
-                (
-                    this.TotalElements == input.TotalElements ||
-                    (this.TotalElements != null &&
-                    this.TotalElements.Equals(input.TotalElements))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Elements != null)
-                    hashCode = hashCode * 59 + this.Elements.GetHashCode();
-                if (this.TotalElements != null)
-                    hashCode = hashCode * 59 + this.TotalElements.GetHashCode();
+                var hashCode = 41;
+                if (this.Elements != null) hashCode = hashCode * 59 + this.Elements.GetHashCode();
+                if (this.TotalElements != null) hashCode = hashCode * 59 + this.TotalElements.GetHashCode();
                 return hashCode;
             }
         }

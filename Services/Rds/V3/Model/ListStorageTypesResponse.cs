@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ListStorageTypesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StorageType != input.StorageType || (this.StorageType != null && input.StorageType != null && !this.StorageType.SequenceEqual(input.StorageType))) return false;
+            if (this.DsspoolInfo != input.DsspoolInfo || (this.DsspoolInfo != null && input.DsspoolInfo != null && !this.DsspoolInfo.SequenceEqual(input.DsspoolInfo))) return false;
 
-            return 
-                (
-                    this.StorageType == input.StorageType ||
-                    this.StorageType != null &&
-                    input.StorageType != null &&
-                    this.StorageType.SequenceEqual(input.StorageType)
-                ) && 
-                (
-                    this.DsspoolInfo == input.DsspoolInfo ||
-                    this.DsspoolInfo != null &&
-                    input.DsspoolInfo != null &&
-                    this.DsspoolInfo.SequenceEqual(input.DsspoolInfo)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StorageType != null)
-                    hashCode = hashCode * 59 + this.StorageType.GetHashCode();
-                if (this.DsspoolInfo != null)
-                    hashCode = hashCode * 59 + this.DsspoolInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.StorageType != null) hashCode = hashCode * 59 + this.StorageType.GetHashCode();
+                if (this.DsspoolInfo != null) hashCode = hashCode * 59 + this.DsspoolInfo.GetHashCode();
                 return hashCode;
             }
         }

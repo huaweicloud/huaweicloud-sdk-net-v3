@@ -649,173 +649,40 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(JobDetailResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
+            if (this.MasterJobId != input.MasterJobId || (this.MasterJobId != null && !this.MasterJobId.Equals(input.MasterJobId))) return false;
+            if (this.BaseInfo != input.BaseInfo || (this.BaseInfo != null && !this.BaseInfo.Equals(input.BaseInfo))) return false;
+            if (this.SourceEndpoint != input.SourceEndpoint || (this.SourceEndpoint != null && input.SourceEndpoint != null && !this.SourceEndpoint.SequenceEqual(input.SourceEndpoint))) return false;
+            if (this.TargetEndpoint != input.TargetEndpoint || (this.TargetEndpoint != null && input.TargetEndpoint != null && !this.TargetEndpoint.SequenceEqual(input.TargetEndpoint))) return false;
+            if (this.AlarmNotify != input.AlarmNotify || (this.AlarmNotify != null && !this.AlarmNotify.Equals(input.AlarmNotify))) return false;
+            if (this.SpeedLimit != input.SpeedLimit || (this.SpeedLimit != null && input.SpeedLimit != null && !this.SpeedLimit.SequenceEqual(input.SpeedLimit))) return false;
+            if (this.UserMigration != input.UserMigration || (this.UserMigration != null && !this.UserMigration.Equals(input.UserMigration))) return false;
+            if (this.PolicyConfig != input.PolicyConfig || (this.PolicyConfig != null && !this.PolicyConfig.Equals(input.PolicyConfig))) return false;
+            if (this.DbParam != input.DbParam || (this.DbParam != null && !this.DbParam.Equals(input.DbParam))) return false;
+            if (this.TuningParams != input.TuningParams || (this.TuningParams != null && !this.TuningParams.Equals(input.TuningParams))) return false;
+            if (this.PeriodOrder != input.PeriodOrder || (this.PeriodOrder != null && !this.PeriodOrder.Equals(input.PeriodOrder))) return false;
+            if (this.NodeInfo != input.NodeInfo || (this.NodeInfo != null && !this.NodeInfo.Equals(input.NodeInfo))) return false;
+            if (this.Logs != input.Logs || (this.Logs != null && input.Logs != null && !this.Logs.SequenceEqual(input.Logs))) return false;
+            if (this.NetworkResults != input.NetworkResults || (this.NetworkResults != null && input.NetworkResults != null && !this.NetworkResults.SequenceEqual(input.NetworkResults))) return false;
+            if (this.PrecheckResult != input.PrecheckResult || (this.PrecheckResult != null && !this.PrecheckResult.Equals(input.PrecheckResult))) return false;
+            if (this.ProgressInfo != input.ProgressInfo || (this.ProgressInfo != null && !this.ProgressInfo.Equals(input.ProgressInfo))) return false;
+            if (this.MigrationObjectProgressInfo != input.MigrationObjectProgressInfo || (this.MigrationObjectProgressInfo != null && !this.MigrationObjectProgressInfo.Equals(input.MigrationObjectProgressInfo))) return false;
+            if (this.Metrics != input.Metrics || (this.Metrics != null && !this.Metrics.Equals(input.Metrics))) return false;
+            if (this.CompareResult != input.CompareResult || (this.CompareResult != null && !this.CompareResult.Equals(input.CompareResult))) return false;
+            if (this.SupportImportFileResp != input.SupportImportFileResp || (this.SupportImportFileResp != null && !this.SupportImportFileResp.Equals(input.SupportImportFileResp))) return false;
+            if (this.InstanceFeatures != input.InstanceFeatures || (this.InstanceFeatures != null && input.InstanceFeatures != null && !this.InstanceFeatures.SequenceEqual(input.InstanceFeatures))) return false;
+            if (this.TaskVersion != input.TaskVersion || (this.TaskVersion != null && !this.TaskVersion.Equals(input.TaskVersion))) return false;
+            if (this.ConnectionManagement != input.ConnectionManagement || (this.ConnectionManagement != null && !this.ConnectionManagement.Equals(input.ConnectionManagement))) return false;
+            if (this.PublicIpList != input.PublicIpList || (this.PublicIpList != null && input.PublicIpList != null && !this.PublicIpList.SequenceEqual(input.PublicIpList))) return false;
+            if (this.BindPublicIpState != input.BindPublicIpState || (this.BindPublicIpState != null && !this.BindPublicIpState.Equals(input.BindPublicIpState))) return false;
+            if (this.Children != input.Children || (this.Children != null && input.Children != null && !this.Children.SequenceEqual(input.Children))) return false;
+            if (this.IsWritable != input.IsWritable) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.TotalCount == input.TotalCount ||
-                    (this.TotalCount != null &&
-                    this.TotalCount.Equals(input.TotalCount))
-                ) && 
-                (
-                    this.MasterJobId == input.MasterJobId ||
-                    (this.MasterJobId != null &&
-                    this.MasterJobId.Equals(input.MasterJobId))
-                ) && 
-                (
-                    this.BaseInfo == input.BaseInfo ||
-                    (this.BaseInfo != null &&
-                    this.BaseInfo.Equals(input.BaseInfo))
-                ) && 
-                (
-                    this.SourceEndpoint == input.SourceEndpoint ||
-                    this.SourceEndpoint != null &&
-                    input.SourceEndpoint != null &&
-                    this.SourceEndpoint.SequenceEqual(input.SourceEndpoint)
-                ) && 
-                (
-                    this.TargetEndpoint == input.TargetEndpoint ||
-                    this.TargetEndpoint != null &&
-                    input.TargetEndpoint != null &&
-                    this.TargetEndpoint.SequenceEqual(input.TargetEndpoint)
-                ) && 
-                (
-                    this.AlarmNotify == input.AlarmNotify ||
-                    (this.AlarmNotify != null &&
-                    this.AlarmNotify.Equals(input.AlarmNotify))
-                ) && 
-                (
-                    this.SpeedLimit == input.SpeedLimit ||
-                    this.SpeedLimit != null &&
-                    input.SpeedLimit != null &&
-                    this.SpeedLimit.SequenceEqual(input.SpeedLimit)
-                ) && 
-                (
-                    this.UserMigration == input.UserMigration ||
-                    (this.UserMigration != null &&
-                    this.UserMigration.Equals(input.UserMigration))
-                ) && 
-                (
-                    this.PolicyConfig == input.PolicyConfig ||
-                    (this.PolicyConfig != null &&
-                    this.PolicyConfig.Equals(input.PolicyConfig))
-                ) && 
-                (
-                    this.DbParam == input.DbParam ||
-                    (this.DbParam != null &&
-                    this.DbParam.Equals(input.DbParam))
-                ) && 
-                (
-                    this.TuningParams == input.TuningParams ||
-                    (this.TuningParams != null &&
-                    this.TuningParams.Equals(input.TuningParams))
-                ) && 
-                (
-                    this.PeriodOrder == input.PeriodOrder ||
-                    (this.PeriodOrder != null &&
-                    this.PeriodOrder.Equals(input.PeriodOrder))
-                ) && 
-                (
-                    this.NodeInfo == input.NodeInfo ||
-                    (this.NodeInfo != null &&
-                    this.NodeInfo.Equals(input.NodeInfo))
-                ) && 
-                (
-                    this.Logs == input.Logs ||
-                    this.Logs != null &&
-                    input.Logs != null &&
-                    this.Logs.SequenceEqual(input.Logs)
-                ) && 
-                (
-                    this.NetworkResults == input.NetworkResults ||
-                    this.NetworkResults != null &&
-                    input.NetworkResults != null &&
-                    this.NetworkResults.SequenceEqual(input.NetworkResults)
-                ) && 
-                (
-                    this.PrecheckResult == input.PrecheckResult ||
-                    (this.PrecheckResult != null &&
-                    this.PrecheckResult.Equals(input.PrecheckResult))
-                ) && 
-                (
-                    this.ProgressInfo == input.ProgressInfo ||
-                    (this.ProgressInfo != null &&
-                    this.ProgressInfo.Equals(input.ProgressInfo))
-                ) && 
-                (
-                    this.MigrationObjectProgressInfo == input.MigrationObjectProgressInfo ||
-                    (this.MigrationObjectProgressInfo != null &&
-                    this.MigrationObjectProgressInfo.Equals(input.MigrationObjectProgressInfo))
-                ) && 
-                (
-                    this.Metrics == input.Metrics ||
-                    (this.Metrics != null &&
-                    this.Metrics.Equals(input.Metrics))
-                ) && 
-                (
-                    this.CompareResult == input.CompareResult ||
-                    (this.CompareResult != null &&
-                    this.CompareResult.Equals(input.CompareResult))
-                ) && 
-                (
-                    this.SupportImportFileResp == input.SupportImportFileResp ||
-                    (this.SupportImportFileResp != null &&
-                    this.SupportImportFileResp.Equals(input.SupportImportFileResp))
-                ) && 
-                (
-                    this.InstanceFeatures == input.InstanceFeatures ||
-                    this.InstanceFeatures != null &&
-                    input.InstanceFeatures != null &&
-                    this.InstanceFeatures.SequenceEqual(input.InstanceFeatures)
-                ) && 
-                (
-                    this.TaskVersion == input.TaskVersion ||
-                    (this.TaskVersion != null &&
-                    this.TaskVersion.Equals(input.TaskVersion))
-                ) && 
-                (
-                    this.ConnectionManagement == input.ConnectionManagement ||
-                    (this.ConnectionManagement != null &&
-                    this.ConnectionManagement.Equals(input.ConnectionManagement))
-                ) && 
-                (
-                    this.PublicIpList == input.PublicIpList ||
-                    this.PublicIpList != null &&
-                    input.PublicIpList != null &&
-                    this.PublicIpList.SequenceEqual(input.PublicIpList)
-                ) && 
-                (
-                    this.BindPublicIpState == input.BindPublicIpState ||
-                    (this.BindPublicIpState != null &&
-                    this.BindPublicIpState.Equals(input.BindPublicIpState))
-                ) && 
-                (
-                    this.Children == input.Children ||
-                    this.Children != null &&
-                    input.Children != null &&
-                    this.Children.SequenceEqual(input.Children)
-                ) && 
-                (
-                    this.IsWritable == input.IsWritable ||
-                    (this.IsWritable != null &&
-                    this.IsWritable.Equals(input.IsWritable))
-                );
+            return true;
         }
 
         /// <summary>
@@ -825,69 +692,38 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.TotalCount != null)
-                    hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
-                if (this.MasterJobId != null)
-                    hashCode = hashCode * 59 + this.MasterJobId.GetHashCode();
-                if (this.BaseInfo != null)
-                    hashCode = hashCode * 59 + this.BaseInfo.GetHashCode();
-                if (this.SourceEndpoint != null)
-                    hashCode = hashCode * 59 + this.SourceEndpoint.GetHashCode();
-                if (this.TargetEndpoint != null)
-                    hashCode = hashCode * 59 + this.TargetEndpoint.GetHashCode();
-                if (this.AlarmNotify != null)
-                    hashCode = hashCode * 59 + this.AlarmNotify.GetHashCode();
-                if (this.SpeedLimit != null)
-                    hashCode = hashCode * 59 + this.SpeedLimit.GetHashCode();
-                if (this.UserMigration != null)
-                    hashCode = hashCode * 59 + this.UserMigration.GetHashCode();
-                if (this.PolicyConfig != null)
-                    hashCode = hashCode * 59 + this.PolicyConfig.GetHashCode();
-                if (this.DbParam != null)
-                    hashCode = hashCode * 59 + this.DbParam.GetHashCode();
-                if (this.TuningParams != null)
-                    hashCode = hashCode * 59 + this.TuningParams.GetHashCode();
-                if (this.PeriodOrder != null)
-                    hashCode = hashCode * 59 + this.PeriodOrder.GetHashCode();
-                if (this.NodeInfo != null)
-                    hashCode = hashCode * 59 + this.NodeInfo.GetHashCode();
-                if (this.Logs != null)
-                    hashCode = hashCode * 59 + this.Logs.GetHashCode();
-                if (this.NetworkResults != null)
-                    hashCode = hashCode * 59 + this.NetworkResults.GetHashCode();
-                if (this.PrecheckResult != null)
-                    hashCode = hashCode * 59 + this.PrecheckResult.GetHashCode();
-                if (this.ProgressInfo != null)
-                    hashCode = hashCode * 59 + this.ProgressInfo.GetHashCode();
-                if (this.MigrationObjectProgressInfo != null)
-                    hashCode = hashCode * 59 + this.MigrationObjectProgressInfo.GetHashCode();
-                if (this.Metrics != null)
-                    hashCode = hashCode * 59 + this.Metrics.GetHashCode();
-                if (this.CompareResult != null)
-                    hashCode = hashCode * 59 + this.CompareResult.GetHashCode();
-                if (this.SupportImportFileResp != null)
-                    hashCode = hashCode * 59 + this.SupportImportFileResp.GetHashCode();
-                if (this.InstanceFeatures != null)
-                    hashCode = hashCode * 59 + this.InstanceFeatures.GetHashCode();
-                if (this.TaskVersion != null)
-                    hashCode = hashCode * 59 + this.TaskVersion.GetHashCode();
-                if (this.ConnectionManagement != null)
-                    hashCode = hashCode * 59 + this.ConnectionManagement.GetHashCode();
-                if (this.PublicIpList != null)
-                    hashCode = hashCode * 59 + this.PublicIpList.GetHashCode();
-                if (this.BindPublicIpState != null)
-                    hashCode = hashCode * 59 + this.BindPublicIpState.GetHashCode();
-                if (this.Children != null)
-                    hashCode = hashCode * 59 + this.Children.GetHashCode();
-                if (this.IsWritable != null)
-                    hashCode = hashCode * 59 + this.IsWritable.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
+                if (this.MasterJobId != null) hashCode = hashCode * 59 + this.MasterJobId.GetHashCode();
+                if (this.BaseInfo != null) hashCode = hashCode * 59 + this.BaseInfo.GetHashCode();
+                if (this.SourceEndpoint != null) hashCode = hashCode * 59 + this.SourceEndpoint.GetHashCode();
+                if (this.TargetEndpoint != null) hashCode = hashCode * 59 + this.TargetEndpoint.GetHashCode();
+                if (this.AlarmNotify != null) hashCode = hashCode * 59 + this.AlarmNotify.GetHashCode();
+                if (this.SpeedLimit != null) hashCode = hashCode * 59 + this.SpeedLimit.GetHashCode();
+                if (this.UserMigration != null) hashCode = hashCode * 59 + this.UserMigration.GetHashCode();
+                if (this.PolicyConfig != null) hashCode = hashCode * 59 + this.PolicyConfig.GetHashCode();
+                if (this.DbParam != null) hashCode = hashCode * 59 + this.DbParam.GetHashCode();
+                if (this.TuningParams != null) hashCode = hashCode * 59 + this.TuningParams.GetHashCode();
+                if (this.PeriodOrder != null) hashCode = hashCode * 59 + this.PeriodOrder.GetHashCode();
+                if (this.NodeInfo != null) hashCode = hashCode * 59 + this.NodeInfo.GetHashCode();
+                if (this.Logs != null) hashCode = hashCode * 59 + this.Logs.GetHashCode();
+                if (this.NetworkResults != null) hashCode = hashCode * 59 + this.NetworkResults.GetHashCode();
+                if (this.PrecheckResult != null) hashCode = hashCode * 59 + this.PrecheckResult.GetHashCode();
+                if (this.ProgressInfo != null) hashCode = hashCode * 59 + this.ProgressInfo.GetHashCode();
+                if (this.MigrationObjectProgressInfo != null) hashCode = hashCode * 59 + this.MigrationObjectProgressInfo.GetHashCode();
+                if (this.Metrics != null) hashCode = hashCode * 59 + this.Metrics.GetHashCode();
+                if (this.CompareResult != null) hashCode = hashCode * 59 + this.CompareResult.GetHashCode();
+                if (this.SupportImportFileResp != null) hashCode = hashCode * 59 + this.SupportImportFileResp.GetHashCode();
+                if (this.InstanceFeatures != null) hashCode = hashCode * 59 + this.InstanceFeatures.GetHashCode();
+                if (this.TaskVersion != null) hashCode = hashCode * 59 + this.TaskVersion.GetHashCode();
+                if (this.ConnectionManagement != null) hashCode = hashCode * 59 + this.ConnectionManagement.GetHashCode();
+                if (this.PublicIpList != null) hashCode = hashCode * 59 + this.PublicIpList.GetHashCode();
+                if (this.BindPublicIpState != null) hashCode = hashCode * 59 + this.BindPublicIpState.GetHashCode();
+                if (this.Children != null) hashCode = hashCode * 59 + this.Children.GetHashCode();
+                hashCode = hashCode * 59 + this.IsWritable.GetHashCode();
                 return hashCode;
             }
         }

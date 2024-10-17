@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         /// </summary>
         public bool Equals(UpdateAlertConfigRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DisplayName != input.DisplayName || (this.DisplayName != null && !this.DisplayName.Equals(input.DisplayName))) return false;
+            if (this.TopicUrn != input.TopicUrn || (this.TopicUrn != null && !this.TopicUrn.Equals(input.TopicUrn))) return false;
+            if (this.WarnConfig != input.WarnConfig || (this.WarnConfig != null && !this.WarnConfig.Equals(input.WarnConfig))) return false;
 
-            return 
-                (
-                    this.DisplayName == input.DisplayName ||
-                    (this.DisplayName != null &&
-                    this.DisplayName.Equals(input.DisplayName))
-                ) && 
-                (
-                    this.TopicUrn == input.TopicUrn ||
-                    (this.TopicUrn != null &&
-                    this.TopicUrn.Equals(input.TopicUrn))
-                ) && 
-                (
-                    this.WarnConfig == input.WarnConfig ||
-                    (this.WarnConfig != null &&
-                    this.WarnConfig.Equals(input.WarnConfig))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DisplayName != null)
-                    hashCode = hashCode * 59 + this.DisplayName.GetHashCode();
-                if (this.TopicUrn != null)
-                    hashCode = hashCode * 59 + this.TopicUrn.GetHashCode();
-                if (this.WarnConfig != null)
-                    hashCode = hashCode * 59 + this.WarnConfig.GetHashCode();
+                var hashCode = 41;
+                if (this.DisplayName != null) hashCode = hashCode * 59 + this.DisplayName.GetHashCode();
+                if (this.TopicUrn != null) hashCode = hashCode * 59 + this.TopicUrn.GetHashCode();
+                if (this.WarnConfig != null) hashCode = hashCode * 59 + this.WarnConfig.GetHashCode();
                 return hashCode;
             }
         }

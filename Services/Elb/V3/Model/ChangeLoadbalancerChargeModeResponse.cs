@@ -70,32 +70,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(ChangeLoadbalancerChargeModeResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EipIdList != input.EipIdList || (this.EipIdList != null && input.EipIdList != null && !this.EipIdList.SequenceEqual(input.EipIdList))) return false;
+            if (this.LoadbalancerIdList != input.LoadbalancerIdList || (this.LoadbalancerIdList != null && input.LoadbalancerIdList != null && !this.LoadbalancerIdList.SequenceEqual(input.LoadbalancerIdList))) return false;
+            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
 
-            return 
-                (
-                    this.EipIdList == input.EipIdList ||
-                    this.EipIdList != null &&
-                    input.EipIdList != null &&
-                    this.EipIdList.SequenceEqual(input.EipIdList)
-                ) && 
-                (
-                    this.LoadbalancerIdList == input.LoadbalancerIdList ||
-                    this.LoadbalancerIdList != null &&
-                    input.LoadbalancerIdList != null &&
-                    this.LoadbalancerIdList.SequenceEqual(input.LoadbalancerIdList)
-                ) && 
-                (
-                    this.OrderId == input.OrderId ||
-                    (this.OrderId != null &&
-                    this.OrderId.Equals(input.OrderId))
-                ) && 
-                (
-                    this.RequestId == input.RequestId ||
-                    (this.RequestId != null &&
-                    this.RequestId.Equals(input.RequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -105,15 +86,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EipIdList != null)
-                    hashCode = hashCode * 59 + this.EipIdList.GetHashCode();
-                if (this.LoadbalancerIdList != null)
-                    hashCode = hashCode * 59 + this.LoadbalancerIdList.GetHashCode();
-                if (this.OrderId != null)
-                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
-                if (this.RequestId != null)
-                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.EipIdList != null) hashCode = hashCode * 59 + this.EipIdList.GetHashCode();
+                if (this.LoadbalancerIdList != null) hashCode = hashCode * 59 + this.LoadbalancerIdList.GetHashCode();
+                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 return hashCode;
             }
         }

@@ -224,140 +224,35 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(MetricRequest3Dividend input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OnTime != input.OnTime || (this.OnTime != null && !this.OnTime.Equals(input.OnTime))) return false;
+            if (this.CustomField16 != input.CustomField16 || (this.CustomField16 != null && !this.CustomField16.Equals(input.CustomField16))) return false;
+            if (this.CustomField17 != input.CustomField17 || (this.CustomField17 != null && !this.CustomField17.Equals(input.CustomField17))) return false;
+            if (this.CustomField18 != input.CustomField18 || (this.CustomField18 != null && !this.CustomField18.Equals(input.CustomField18))) return false;
+            if (this.CustomField19 != input.CustomField19 || (this.CustomField19 != null && !this.CustomField19.Equals(input.CustomField19))) return false;
+            if (this.CustomField20 != input.CustomField20 || (this.CustomField20 != null && !this.CustomField20.Equals(input.CustomField20))) return false;
+            if (this.CustomField21 != input.CustomField21 || (this.CustomField21 != null && !this.CustomField21.Equals(input.CustomField21))) return false;
+            if (this.CustomField22 != input.CustomField22 || (this.CustomField22 != null && !this.CustomField22.Equals(input.CustomField22))) return false;
+            if (this.CustomField23 != input.CustomField23 || (this.CustomField23 != null && !this.CustomField23.Equals(input.CustomField23))) return false;
+            if (this.CustomField24 != input.CustomField24 || (this.CustomField24 != null && !this.CustomField24.Equals(input.CustomField24))) return false;
+            if (this.CustomField25 != input.CustomField25 || (this.CustomField25 != null && !this.CustomField25.Equals(input.CustomField25))) return false;
+            if (this.CustomField26 != input.CustomField26 || (this.CustomField26 != null && !this.CustomField26.Equals(input.CustomField26))) return false;
+            if (this.CustomField27 != input.CustomField27 || (this.CustomField27 != null && !this.CustomField27.Equals(input.CustomField27))) return false;
+            if (this.CustomField28 != input.CustomField28 || (this.CustomField28 != null && !this.CustomField28.Equals(input.CustomField28))) return false;
+            if (this.CustomField29 != input.CustomField29 || (this.CustomField29 != null && !this.CustomField29.Equals(input.CustomField29))) return false;
+            if (this.CustomField30 != input.CustomField30 || (this.CustomField30 != null && !this.CustomField30.Equals(input.CustomField30))) return false;
+            if (this.CustomField31 != input.CustomField31 || (this.CustomField31 != null && !this.CustomField31.Equals(input.CustomField31))) return false;
+            if (this.CustomField32 != input.CustomField32 || (this.CustomField32 != null && !this.CustomField32.Equals(input.CustomField32))) return false;
+            if (this.CustomField33 != input.CustomField33 || (this.CustomField33 != null && !this.CustomField33.Equals(input.CustomField33))) return false;
+            if (this.CustomField34 != input.CustomField34 || (this.CustomField34 != null && !this.CustomField34.Equals(input.CustomField34))) return false;
+            if (this.CustomField35 != input.CustomField35 || (this.CustomField35 != null && !this.CustomField35.Equals(input.CustomField35))) return false;
+            if (this.CustomField36 != input.CustomField36 || (this.CustomField36 != null && !this.CustomField36.Equals(input.CustomField36))) return false;
+            if (this.CustomField37 != input.CustomField37 || (this.CustomField37 != null && !this.CustomField37.Equals(input.CustomField37))) return false;
+            if (this.CustomField38 != input.CustomField38 || (this.CustomField38 != null && !this.CustomField38.Equals(input.CustomField38))) return false;
+            if (this.CustomField39 != input.CustomField39 || (this.CustomField39 != null && !this.CustomField39.Equals(input.CustomField39))) return false;
+            if (this.CustomField40 != input.CustomField40 || (this.CustomField40 != null && !this.CustomField40.Equals(input.CustomField40))) return false;
 
-            return 
-                (
-                    this.OnTime == input.OnTime ||
-                    (this.OnTime != null &&
-                    this.OnTime.Equals(input.OnTime))
-                ) && 
-                (
-                    this.CustomField16 == input.CustomField16 ||
-                    (this.CustomField16 != null &&
-                    this.CustomField16.Equals(input.CustomField16))
-                ) && 
-                (
-                    this.CustomField17 == input.CustomField17 ||
-                    (this.CustomField17 != null &&
-                    this.CustomField17.Equals(input.CustomField17))
-                ) && 
-                (
-                    this.CustomField18 == input.CustomField18 ||
-                    (this.CustomField18 != null &&
-                    this.CustomField18.Equals(input.CustomField18))
-                ) && 
-                (
-                    this.CustomField19 == input.CustomField19 ||
-                    (this.CustomField19 != null &&
-                    this.CustomField19.Equals(input.CustomField19))
-                ) && 
-                (
-                    this.CustomField20 == input.CustomField20 ||
-                    (this.CustomField20 != null &&
-                    this.CustomField20.Equals(input.CustomField20))
-                ) && 
-                (
-                    this.CustomField21 == input.CustomField21 ||
-                    (this.CustomField21 != null &&
-                    this.CustomField21.Equals(input.CustomField21))
-                ) && 
-                (
-                    this.CustomField22 == input.CustomField22 ||
-                    (this.CustomField22 != null &&
-                    this.CustomField22.Equals(input.CustomField22))
-                ) && 
-                (
-                    this.CustomField23 == input.CustomField23 ||
-                    (this.CustomField23 != null &&
-                    this.CustomField23.Equals(input.CustomField23))
-                ) && 
-                (
-                    this.CustomField24 == input.CustomField24 ||
-                    (this.CustomField24 != null &&
-                    this.CustomField24.Equals(input.CustomField24))
-                ) && 
-                (
-                    this.CustomField25 == input.CustomField25 ||
-                    (this.CustomField25 != null &&
-                    this.CustomField25.Equals(input.CustomField25))
-                ) && 
-                (
-                    this.CustomField26 == input.CustomField26 ||
-                    (this.CustomField26 != null &&
-                    this.CustomField26.Equals(input.CustomField26))
-                ) && 
-                (
-                    this.CustomField27 == input.CustomField27 ||
-                    (this.CustomField27 != null &&
-                    this.CustomField27.Equals(input.CustomField27))
-                ) && 
-                (
-                    this.CustomField28 == input.CustomField28 ||
-                    (this.CustomField28 != null &&
-                    this.CustomField28.Equals(input.CustomField28))
-                ) && 
-                (
-                    this.CustomField29 == input.CustomField29 ||
-                    (this.CustomField29 != null &&
-                    this.CustomField29.Equals(input.CustomField29))
-                ) && 
-                (
-                    this.CustomField30 == input.CustomField30 ||
-                    (this.CustomField30 != null &&
-                    this.CustomField30.Equals(input.CustomField30))
-                ) && 
-                (
-                    this.CustomField31 == input.CustomField31 ||
-                    (this.CustomField31 != null &&
-                    this.CustomField31.Equals(input.CustomField31))
-                ) && 
-                (
-                    this.CustomField32 == input.CustomField32 ||
-                    (this.CustomField32 != null &&
-                    this.CustomField32.Equals(input.CustomField32))
-                ) && 
-                (
-                    this.CustomField33 == input.CustomField33 ||
-                    (this.CustomField33 != null &&
-                    this.CustomField33.Equals(input.CustomField33))
-                ) && 
-                (
-                    this.CustomField34 == input.CustomField34 ||
-                    (this.CustomField34 != null &&
-                    this.CustomField34.Equals(input.CustomField34))
-                ) && 
-                (
-                    this.CustomField35 == input.CustomField35 ||
-                    (this.CustomField35 != null &&
-                    this.CustomField35.Equals(input.CustomField35))
-                ) && 
-                (
-                    this.CustomField36 == input.CustomField36 ||
-                    (this.CustomField36 != null &&
-                    this.CustomField36.Equals(input.CustomField36))
-                ) && 
-                (
-                    this.CustomField37 == input.CustomField37 ||
-                    (this.CustomField37 != null &&
-                    this.CustomField37.Equals(input.CustomField37))
-                ) && 
-                (
-                    this.CustomField38 == input.CustomField38 ||
-                    (this.CustomField38 != null &&
-                    this.CustomField38.Equals(input.CustomField38))
-                ) && 
-                (
-                    this.CustomField39 == input.CustomField39 ||
-                    (this.CustomField39 != null &&
-                    this.CustomField39.Equals(input.CustomField39))
-                ) && 
-                (
-                    this.CustomField40 == input.CustomField40 ||
-                    (this.CustomField40 != null &&
-                    this.CustomField40.Equals(input.CustomField40))
-                );
+            return true;
         }
 
         /// <summary>
@@ -367,59 +262,33 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OnTime != null)
-                    hashCode = hashCode * 59 + this.OnTime.GetHashCode();
-                if (this.CustomField16 != null)
-                    hashCode = hashCode * 59 + this.CustomField16.GetHashCode();
-                if (this.CustomField17 != null)
-                    hashCode = hashCode * 59 + this.CustomField17.GetHashCode();
-                if (this.CustomField18 != null)
-                    hashCode = hashCode * 59 + this.CustomField18.GetHashCode();
-                if (this.CustomField19 != null)
-                    hashCode = hashCode * 59 + this.CustomField19.GetHashCode();
-                if (this.CustomField20 != null)
-                    hashCode = hashCode * 59 + this.CustomField20.GetHashCode();
-                if (this.CustomField21 != null)
-                    hashCode = hashCode * 59 + this.CustomField21.GetHashCode();
-                if (this.CustomField22 != null)
-                    hashCode = hashCode * 59 + this.CustomField22.GetHashCode();
-                if (this.CustomField23 != null)
-                    hashCode = hashCode * 59 + this.CustomField23.GetHashCode();
-                if (this.CustomField24 != null)
-                    hashCode = hashCode * 59 + this.CustomField24.GetHashCode();
-                if (this.CustomField25 != null)
-                    hashCode = hashCode * 59 + this.CustomField25.GetHashCode();
-                if (this.CustomField26 != null)
-                    hashCode = hashCode * 59 + this.CustomField26.GetHashCode();
-                if (this.CustomField27 != null)
-                    hashCode = hashCode * 59 + this.CustomField27.GetHashCode();
-                if (this.CustomField28 != null)
-                    hashCode = hashCode * 59 + this.CustomField28.GetHashCode();
-                if (this.CustomField29 != null)
-                    hashCode = hashCode * 59 + this.CustomField29.GetHashCode();
-                if (this.CustomField30 != null)
-                    hashCode = hashCode * 59 + this.CustomField30.GetHashCode();
-                if (this.CustomField31 != null)
-                    hashCode = hashCode * 59 + this.CustomField31.GetHashCode();
-                if (this.CustomField32 != null)
-                    hashCode = hashCode * 59 + this.CustomField32.GetHashCode();
-                if (this.CustomField33 != null)
-                    hashCode = hashCode * 59 + this.CustomField33.GetHashCode();
-                if (this.CustomField34 != null)
-                    hashCode = hashCode * 59 + this.CustomField34.GetHashCode();
-                if (this.CustomField35 != null)
-                    hashCode = hashCode * 59 + this.CustomField35.GetHashCode();
-                if (this.CustomField36 != null)
-                    hashCode = hashCode * 59 + this.CustomField36.GetHashCode();
-                if (this.CustomField37 != null)
-                    hashCode = hashCode * 59 + this.CustomField37.GetHashCode();
-                if (this.CustomField38 != null)
-                    hashCode = hashCode * 59 + this.CustomField38.GetHashCode();
-                if (this.CustomField39 != null)
-                    hashCode = hashCode * 59 + this.CustomField39.GetHashCode();
-                if (this.CustomField40 != null)
-                    hashCode = hashCode * 59 + this.CustomField40.GetHashCode();
+                var hashCode = 41;
+                if (this.OnTime != null) hashCode = hashCode * 59 + this.OnTime.GetHashCode();
+                if (this.CustomField16 != null) hashCode = hashCode * 59 + this.CustomField16.GetHashCode();
+                if (this.CustomField17 != null) hashCode = hashCode * 59 + this.CustomField17.GetHashCode();
+                if (this.CustomField18 != null) hashCode = hashCode * 59 + this.CustomField18.GetHashCode();
+                if (this.CustomField19 != null) hashCode = hashCode * 59 + this.CustomField19.GetHashCode();
+                if (this.CustomField20 != null) hashCode = hashCode * 59 + this.CustomField20.GetHashCode();
+                if (this.CustomField21 != null) hashCode = hashCode * 59 + this.CustomField21.GetHashCode();
+                if (this.CustomField22 != null) hashCode = hashCode * 59 + this.CustomField22.GetHashCode();
+                if (this.CustomField23 != null) hashCode = hashCode * 59 + this.CustomField23.GetHashCode();
+                if (this.CustomField24 != null) hashCode = hashCode * 59 + this.CustomField24.GetHashCode();
+                if (this.CustomField25 != null) hashCode = hashCode * 59 + this.CustomField25.GetHashCode();
+                if (this.CustomField26 != null) hashCode = hashCode * 59 + this.CustomField26.GetHashCode();
+                if (this.CustomField27 != null) hashCode = hashCode * 59 + this.CustomField27.GetHashCode();
+                if (this.CustomField28 != null) hashCode = hashCode * 59 + this.CustomField28.GetHashCode();
+                if (this.CustomField29 != null) hashCode = hashCode * 59 + this.CustomField29.GetHashCode();
+                if (this.CustomField30 != null) hashCode = hashCode * 59 + this.CustomField30.GetHashCode();
+                if (this.CustomField31 != null) hashCode = hashCode * 59 + this.CustomField31.GetHashCode();
+                if (this.CustomField32 != null) hashCode = hashCode * 59 + this.CustomField32.GetHashCode();
+                if (this.CustomField33 != null) hashCode = hashCode * 59 + this.CustomField33.GetHashCode();
+                if (this.CustomField34 != null) hashCode = hashCode * 59 + this.CustomField34.GetHashCode();
+                if (this.CustomField35 != null) hashCode = hashCode * 59 + this.CustomField35.GetHashCode();
+                if (this.CustomField36 != null) hashCode = hashCode * 59 + this.CustomField36.GetHashCode();
+                if (this.CustomField37 != null) hashCode = hashCode * 59 + this.CustomField37.GetHashCode();
+                if (this.CustomField38 != null) hashCode = hashCode * 59 + this.CustomField38.GetHashCode();
+                if (this.CustomField39 != null) hashCode = hashCode * 59 + this.CustomField39.GetHashCode();
+                if (this.CustomField40 != null) hashCode = hashCode * 59 + this.CustomField40.GetHashCode();
                 return hashCode;
             }
         }

@@ -126,73 +126,21 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         public bool Equals(JobEntities input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ImageId != input.ImageId || (this.ImageId != null && !this.ImageId.Equals(input.ImageId))) return false;
+            if (this.CurrentTask != input.CurrentTask || (this.CurrentTask != null && !this.CurrentTask.Equals(input.CurrentTask))) return false;
+            if (this.ImageName != input.ImageName || (this.ImageName != null && !this.ImageName.Equals(input.ImageName))) return false;
+            if (this.AdditionErrorCode != input.AdditionErrorCode || (this.AdditionErrorCode != null && !this.AdditionErrorCode.Equals(input.AdditionErrorCode))) return false;
+            if (this.AdditionErrorMsg != input.AdditionErrorMsg || (this.AdditionErrorMsg != null && !this.AdditionErrorMsg.Equals(input.AdditionErrorMsg))) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
+            if (this.Error != input.Error || (this.Error != null && !this.Error.Equals(input.Error))) return false;
+            if (this.AlarmCode != input.AlarmCode || (this.AlarmCode != null && !this.AlarmCode.Equals(input.AlarmCode))) return false;
+            if (this.ProcessPercent != input.ProcessPercent || (this.ProcessPercent != null && !this.ProcessPercent.Equals(input.ProcessPercent))) return false;
+            if (this.Results != input.Results || (this.Results != null && input.Results != null && !this.Results.SequenceEqual(input.Results))) return false;
+            if (this.SubJobsResult != input.SubJobsResult || (this.SubJobsResult != null && input.SubJobsResult != null && !this.SubJobsResult.SequenceEqual(input.SubJobsResult))) return false;
+            if (this.SubJobsList != input.SubJobsList || (this.SubJobsList != null && input.SubJobsList != null && !this.SubJobsList.SequenceEqual(input.SubJobsList))) return false;
 
-            return 
-                (
-                    this.ImageId == input.ImageId ||
-                    (this.ImageId != null &&
-                    this.ImageId.Equals(input.ImageId))
-                ) && 
-                (
-                    this.CurrentTask == input.CurrentTask ||
-                    (this.CurrentTask != null &&
-                    this.CurrentTask.Equals(input.CurrentTask))
-                ) && 
-                (
-                    this.ImageName == input.ImageName ||
-                    (this.ImageName != null &&
-                    this.ImageName.Equals(input.ImageName))
-                ) && 
-                (
-                    this.AdditionErrorCode == input.AdditionErrorCode ||
-                    (this.AdditionErrorCode != null &&
-                    this.AdditionErrorCode.Equals(input.AdditionErrorCode))
-                ) && 
-                (
-                    this.AdditionErrorMsg == input.AdditionErrorMsg ||
-                    (this.AdditionErrorMsg != null &&
-                    this.AdditionErrorMsg.Equals(input.AdditionErrorMsg))
-                ) && 
-                (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
-                ) && 
-                (
-                    this.Error == input.Error ||
-                    (this.Error != null &&
-                    this.Error.Equals(input.Error))
-                ) && 
-                (
-                    this.AlarmCode == input.AlarmCode ||
-                    (this.AlarmCode != null &&
-                    this.AlarmCode.Equals(input.AlarmCode))
-                ) && 
-                (
-                    this.ProcessPercent == input.ProcessPercent ||
-                    (this.ProcessPercent != null &&
-                    this.ProcessPercent.Equals(input.ProcessPercent))
-                ) && 
-                (
-                    this.Results == input.Results ||
-                    this.Results != null &&
-                    input.Results != null &&
-                    this.Results.SequenceEqual(input.Results)
-                ) && 
-                (
-                    this.SubJobsResult == input.SubJobsResult ||
-                    this.SubJobsResult != null &&
-                    input.SubJobsResult != null &&
-                    this.SubJobsResult.SequenceEqual(input.SubJobsResult)
-                ) && 
-                (
-                    this.SubJobsList == input.SubJobsList ||
-                    this.SubJobsList != null &&
-                    input.SubJobsList != null &&
-                    this.SubJobsList.SequenceEqual(input.SubJobsList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -202,31 +150,19 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ImageId != null)
-                    hashCode = hashCode * 59 + this.ImageId.GetHashCode();
-                if (this.CurrentTask != null)
-                    hashCode = hashCode * 59 + this.CurrentTask.GetHashCode();
-                if (this.ImageName != null)
-                    hashCode = hashCode * 59 + this.ImageName.GetHashCode();
-                if (this.AdditionErrorCode != null)
-                    hashCode = hashCode * 59 + this.AdditionErrorCode.GetHashCode();
-                if (this.AdditionErrorMsg != null)
-                    hashCode = hashCode * 59 + this.AdditionErrorMsg.GetHashCode();
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.Error != null)
-                    hashCode = hashCode * 59 + this.Error.GetHashCode();
-                if (this.AlarmCode != null)
-                    hashCode = hashCode * 59 + this.AlarmCode.GetHashCode();
-                if (this.ProcessPercent != null)
-                    hashCode = hashCode * 59 + this.ProcessPercent.GetHashCode();
-                if (this.Results != null)
-                    hashCode = hashCode * 59 + this.Results.GetHashCode();
-                if (this.SubJobsResult != null)
-                    hashCode = hashCode * 59 + this.SubJobsResult.GetHashCode();
-                if (this.SubJobsList != null)
-                    hashCode = hashCode * 59 + this.SubJobsList.GetHashCode();
+                var hashCode = 41;
+                if (this.ImageId != null) hashCode = hashCode * 59 + this.ImageId.GetHashCode();
+                if (this.CurrentTask != null) hashCode = hashCode * 59 + this.CurrentTask.GetHashCode();
+                if (this.ImageName != null) hashCode = hashCode * 59 + this.ImageName.GetHashCode();
+                if (this.AdditionErrorCode != null) hashCode = hashCode * 59 + this.AdditionErrorCode.GetHashCode();
+                if (this.AdditionErrorMsg != null) hashCode = hashCode * 59 + this.AdditionErrorMsg.GetHashCode();
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.Error != null) hashCode = hashCode * 59 + this.Error.GetHashCode();
+                if (this.AlarmCode != null) hashCode = hashCode * 59 + this.AlarmCode.GetHashCode();
+                if (this.ProcessPercent != null) hashCode = hashCode * 59 + this.ProcessPercent.GetHashCode();
+                if (this.Results != null) hashCode = hashCode * 59 + this.Results.GetHashCode();
+                if (this.SubJobsResult != null) hashCode = hashCode * 59 + this.SubJobsResult.GetHashCode();
+                if (this.SubJobsList != null) hashCode = hashCode * 59 + this.SubJobsList.GetHashCode();
                 return hashCode;
             }
         }

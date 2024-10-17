@@ -91,46 +91,16 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(VariableResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Default != input.Default || (this.Default != null && !this.Default.Equals(input.Default))) return false;
+            if (this.Sensitive != input.Sensitive || (this.Sensitive != null && !this.Sensitive.Equals(input.Sensitive))) return false;
+            if (this.Nullable != input.Nullable || (this.Nullable != null && !this.Nullable.Equals(input.Nullable))) return false;
+            if (this.Validations != input.Validations || (this.Validations != null && input.Validations != null && !this.Validations.SequenceEqual(input.Validations))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Default == input.Default ||
-                    (this.Default != null &&
-                    this.Default.Equals(input.Default))
-                ) && 
-                (
-                    this.Sensitive == input.Sensitive ||
-                    (this.Sensitive != null &&
-                    this.Sensitive.Equals(input.Sensitive))
-                ) && 
-                (
-                    this.Nullable == input.Nullable ||
-                    (this.Nullable != null &&
-                    this.Nullable.Equals(input.Nullable))
-                ) && 
-                (
-                    this.Validations == input.Validations ||
-                    this.Validations != null &&
-                    input.Validations != null &&
-                    this.Validations.SequenceEqual(input.Validations)
-                );
+            return true;
         }
 
         /// <summary>
@@ -140,21 +110,14 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Default != null)
-                    hashCode = hashCode * 59 + this.Default.GetHashCode();
-                if (this.Sensitive != null)
-                    hashCode = hashCode * 59 + this.Sensitive.GetHashCode();
-                if (this.Nullable != null)
-                    hashCode = hashCode * 59 + this.Nullable.GetHashCode();
-                if (this.Validations != null)
-                    hashCode = hashCode * 59 + this.Validations.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Default != null) hashCode = hashCode * 59 + this.Default.GetHashCode();
+                if (this.Sensitive != null) hashCode = hashCode * 59 + this.Sensitive.GetHashCode();
+                if (this.Nullable != null) hashCode = hashCode * 59 + this.Nullable.GetHashCode();
+                if (this.Validations != null) hashCode = hashCode * 59 + this.Validations.GetHashCode();
                 return hashCode;
             }
         }

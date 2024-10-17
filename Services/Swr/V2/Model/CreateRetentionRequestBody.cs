@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public bool Equals(CreateRetentionRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Algorithm != input.Algorithm || (this.Algorithm != null && !this.Algorithm.Equals(input.Algorithm))) return false;
+            if (this.Rules != input.Rules || (this.Rules != null && input.Rules != null && !this.Rules.SequenceEqual(input.Rules))) return false;
 
-            return 
-                (
-                    this.Algorithm == input.Algorithm ||
-                    (this.Algorithm != null &&
-                    this.Algorithm.Equals(input.Algorithm))
-                ) && 
-                (
-                    this.Rules == input.Rules ||
-                    this.Rules != null &&
-                    input.Rules != null &&
-                    this.Rules.SequenceEqual(input.Rules)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Algorithm != null)
-                    hashCode = hashCode * 59 + this.Algorithm.GetHashCode();
-                if (this.Rules != null)
-                    hashCode = hashCode * 59 + this.Rules.GetHashCode();
+                var hashCode = 41;
+                if (this.Algorithm != null) hashCode = hashCode * 59 + this.Algorithm.GetHashCode();
+                if (this.Rules != null) hashCode = hashCode * 59 + this.Rules.GetHashCode();
                 return hashCode;
             }
         }

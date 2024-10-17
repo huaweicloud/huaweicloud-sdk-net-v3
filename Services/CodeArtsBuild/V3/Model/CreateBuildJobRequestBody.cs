@@ -112,63 +112,19 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public bool Equals(CreateBuildJobRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Arch != input.Arch || (this.Arch != null && !this.Arch.Equals(input.Arch))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.JobName != input.JobName || (this.JobName != null && !this.JobName.Equals(input.JobName))) return false;
+            if (this.AutoUpdateSubModule != input.AutoUpdateSubModule || (this.AutoUpdateSubModule != null && !this.AutoUpdateSubModule.Equals(input.AutoUpdateSubModule))) return false;
+            if (this.Flavor != input.Flavor || (this.Flavor != null && !this.Flavor.Equals(input.Flavor))) return false;
+            if (this.Parameters != input.Parameters || (this.Parameters != null && input.Parameters != null && !this.Parameters.SequenceEqual(input.Parameters))) return false;
+            if (this.Scms != input.Scms || (this.Scms != null && input.Scms != null && !this.Scms.SequenceEqual(input.Scms))) return false;
+            if (this.Steps != input.Steps || (this.Steps != null && input.Steps != null && !this.Steps.SequenceEqual(input.Steps))) return false;
+            if (this.HostType != input.HostType || (this.HostType != null && !this.HostType.Equals(input.HostType))) return false;
+            if (this.BuildConfigType != input.BuildConfigType || (this.BuildConfigType != null && !this.BuildConfigType.Equals(input.BuildConfigType))) return false;
 
-            return 
-                (
-                    this.Arch == input.Arch ||
-                    (this.Arch != null &&
-                    this.Arch.Equals(input.Arch))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.JobName == input.JobName ||
-                    (this.JobName != null &&
-                    this.JobName.Equals(input.JobName))
-                ) && 
-                (
-                    this.AutoUpdateSubModule == input.AutoUpdateSubModule ||
-                    (this.AutoUpdateSubModule != null &&
-                    this.AutoUpdateSubModule.Equals(input.AutoUpdateSubModule))
-                ) && 
-                (
-                    this.Flavor == input.Flavor ||
-                    (this.Flavor != null &&
-                    this.Flavor.Equals(input.Flavor))
-                ) && 
-                (
-                    this.Parameters == input.Parameters ||
-                    this.Parameters != null &&
-                    input.Parameters != null &&
-                    this.Parameters.SequenceEqual(input.Parameters)
-                ) && 
-                (
-                    this.Scms == input.Scms ||
-                    this.Scms != null &&
-                    input.Scms != null &&
-                    this.Scms.SequenceEqual(input.Scms)
-                ) && 
-                (
-                    this.Steps == input.Steps ||
-                    this.Steps != null &&
-                    input.Steps != null &&
-                    this.Steps.SequenceEqual(input.Steps)
-                ) && 
-                (
-                    this.HostType == input.HostType ||
-                    (this.HostType != null &&
-                    this.HostType.Equals(input.HostType))
-                ) && 
-                (
-                    this.BuildConfigType == input.BuildConfigType ||
-                    (this.BuildConfigType != null &&
-                    this.BuildConfigType.Equals(input.BuildConfigType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -178,27 +134,17 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Arch != null)
-                    hashCode = hashCode * 59 + this.Arch.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.JobName != null)
-                    hashCode = hashCode * 59 + this.JobName.GetHashCode();
-                if (this.AutoUpdateSubModule != null)
-                    hashCode = hashCode * 59 + this.AutoUpdateSubModule.GetHashCode();
-                if (this.Flavor != null)
-                    hashCode = hashCode * 59 + this.Flavor.GetHashCode();
-                if (this.Parameters != null)
-                    hashCode = hashCode * 59 + this.Parameters.GetHashCode();
-                if (this.Scms != null)
-                    hashCode = hashCode * 59 + this.Scms.GetHashCode();
-                if (this.Steps != null)
-                    hashCode = hashCode * 59 + this.Steps.GetHashCode();
-                if (this.HostType != null)
-                    hashCode = hashCode * 59 + this.HostType.GetHashCode();
-                if (this.BuildConfigType != null)
-                    hashCode = hashCode * 59 + this.BuildConfigType.GetHashCode();
+                var hashCode = 41;
+                if (this.Arch != null) hashCode = hashCode * 59 + this.Arch.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.JobName != null) hashCode = hashCode * 59 + this.JobName.GetHashCode();
+                if (this.AutoUpdateSubModule != null) hashCode = hashCode * 59 + this.AutoUpdateSubModule.GetHashCode();
+                if (this.Flavor != null) hashCode = hashCode * 59 + this.Flavor.GetHashCode();
+                if (this.Parameters != null) hashCode = hashCode * 59 + this.Parameters.GetHashCode();
+                if (this.Scms != null) hashCode = hashCode * 59 + this.Scms.GetHashCode();
+                if (this.Steps != null) hashCode = hashCode * 59 + this.Steps.GetHashCode();
+                if (this.HostType != null) hashCode = hashCode * 59 + this.HostType.GetHashCode();
+                if (this.BuildConfigType != null) hashCode = hashCode * 59 + this.BuildConfigType.GetHashCode();
                 return hashCode;
             }
         }

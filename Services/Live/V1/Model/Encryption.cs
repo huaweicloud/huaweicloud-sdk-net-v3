@@ -439,46 +439,16 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(Encryption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KeyRotationIntervalSeconds != input.KeyRotationIntervalSeconds || (this.KeyRotationIntervalSeconds != null && !this.KeyRotationIntervalSeconds.Equals(input.KeyRotationIntervalSeconds))) return false;
+            if (this.EncryptionMethod != input.EncryptionMethod) return false;
+            if (this.Level != input.Level) return false;
+            if (this.DrmContentId != input.DrmContentId || (this.DrmContentId != null && !this.DrmContentId.Equals(input.DrmContentId))) return false;
+            if (this.SystemIds != input.SystemIds || (this.SystemIds != null && input.SystemIds != null && !this.SystemIds.SequenceEqual(input.SystemIds))) return false;
+            if (this.AuthInfo != input.AuthInfo || (this.AuthInfo != null && !this.AuthInfo.Equals(input.AuthInfo))) return false;
+            if (this.KmUrl != input.KmUrl || (this.KmUrl != null && !this.KmUrl.Equals(input.KmUrl))) return false;
 
-            return 
-                (
-                    this.KeyRotationIntervalSeconds == input.KeyRotationIntervalSeconds ||
-                    (this.KeyRotationIntervalSeconds != null &&
-                    this.KeyRotationIntervalSeconds.Equals(input.KeyRotationIntervalSeconds))
-                ) && 
-                (
-                    this.EncryptionMethod == input.EncryptionMethod ||
-                    (this.EncryptionMethod != null &&
-                    this.EncryptionMethod.Equals(input.EncryptionMethod))
-                ) && 
-                (
-                    this.Level == input.Level ||
-                    (this.Level != null &&
-                    this.Level.Equals(input.Level))
-                ) && 
-                (
-                    this.DrmContentId == input.DrmContentId ||
-                    (this.DrmContentId != null &&
-                    this.DrmContentId.Equals(input.DrmContentId))
-                ) && 
-                (
-                    this.SystemIds == input.SystemIds ||
-                    this.SystemIds != null &&
-                    input.SystemIds != null &&
-                    this.SystemIds.SequenceEqual(input.SystemIds)
-                ) && 
-                (
-                    this.AuthInfo == input.AuthInfo ||
-                    (this.AuthInfo != null &&
-                    this.AuthInfo.Equals(input.AuthInfo))
-                ) && 
-                (
-                    this.KmUrl == input.KmUrl ||
-                    (this.KmUrl != null &&
-                    this.KmUrl.Equals(input.KmUrl))
-                );
+            return true;
         }
 
         /// <summary>
@@ -488,21 +458,14 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KeyRotationIntervalSeconds != null)
-                    hashCode = hashCode * 59 + this.KeyRotationIntervalSeconds.GetHashCode();
-                if (this.EncryptionMethod != null)
-                    hashCode = hashCode * 59 + this.EncryptionMethod.GetHashCode();
-                if (this.Level != null)
-                    hashCode = hashCode * 59 + this.Level.GetHashCode();
-                if (this.DrmContentId != null)
-                    hashCode = hashCode * 59 + this.DrmContentId.GetHashCode();
-                if (this.SystemIds != null)
-                    hashCode = hashCode * 59 + this.SystemIds.GetHashCode();
-                if (this.AuthInfo != null)
-                    hashCode = hashCode * 59 + this.AuthInfo.GetHashCode();
-                if (this.KmUrl != null)
-                    hashCode = hashCode * 59 + this.KmUrl.GetHashCode();
+                var hashCode = 41;
+                if (this.KeyRotationIntervalSeconds != null) hashCode = hashCode * 59 + this.KeyRotationIntervalSeconds.GetHashCode();
+                hashCode = hashCode * 59 + this.EncryptionMethod.GetHashCode();
+                hashCode = hashCode * 59 + this.Level.GetHashCode();
+                if (this.DrmContentId != null) hashCode = hashCode * 59 + this.DrmContentId.GetHashCode();
+                hashCode = hashCode * 59 + this.SystemIds.GetHashCode();
+                if (this.AuthInfo != null) hashCode = hashCode * 59 + this.AuthInfo.GetHashCode();
+                if (this.KmUrl != null) hashCode = hashCode * 59 + this.KmUrl.GetHashCode();
                 return hashCode;
             }
         }

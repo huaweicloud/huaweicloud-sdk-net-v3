@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// </summary>
         public bool Equals(ShowEventDataResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Datapoints != input.Datapoints || (this.Datapoints != null && input.Datapoints != null && !this.Datapoints.SequenceEqual(input.Datapoints))) return false;
 
-            return 
-                (
-                    this.Datapoints == input.Datapoints ||
-                    this.Datapoints != null &&
-                    input.Datapoints != null &&
-                    this.Datapoints.SequenceEqual(input.Datapoints)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Datapoints != null)
-                    hashCode = hashCode * 59 + this.Datapoints.GetHashCode();
+                var hashCode = 41;
+                if (this.Datapoints != null) hashCode = hashCode * 59 + this.Datapoints.GetHashCode();
                 return hashCode;
             }
         }

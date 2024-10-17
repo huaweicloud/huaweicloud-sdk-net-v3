@@ -170,20 +170,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(PauseInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.PauseMode != input.PauseMode) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.PauseMode == input.PauseMode ||
-                    (this.PauseMode != null &&
-                    this.PauseMode.Equals(input.PauseMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -193,11 +184,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.PauseMode != null)
-                    hashCode = hashCode * 59 + this.PauseMode.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                hashCode = hashCode * 59 + this.PauseMode.GetHashCode();
                 return hashCode;
             }
         }

@@ -370,50 +370,17 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(ListScalingActivityV2LogsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ScalingGroupId != input.ScalingGroupId || (this.ScalingGroupId != null && !this.ScalingGroupId.Equals(input.ScalingGroupId))) return false;
+            if (this.LogId != input.LogId || (this.LogId != null && !this.LogId.Equals(input.LogId))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.StartNumber != input.StartNumber || (this.StartNumber != null && !this.StartNumber.Equals(input.StartNumber))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Type != input.Type) return false;
+            if (this.Status != input.Status) return false;
 
-            return 
-                (
-                    this.ScalingGroupId == input.ScalingGroupId ||
-                    (this.ScalingGroupId != null &&
-                    this.ScalingGroupId.Equals(input.ScalingGroupId))
-                ) && 
-                (
-                    this.LogId == input.LogId ||
-                    (this.LogId != null &&
-                    this.LogId.Equals(input.LogId))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.StartNumber == input.StartNumber ||
-                    (this.StartNumber != null &&
-                    this.StartNumber.Equals(input.StartNumber))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
+            return true;
         }
 
         /// <summary>
@@ -423,23 +390,15 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ScalingGroupId != null)
-                    hashCode = hashCode * 59 + this.ScalingGroupId.GetHashCode();
-                if (this.LogId != null)
-                    hashCode = hashCode * 59 + this.LogId.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.StartNumber != null)
-                    hashCode = hashCode * 59 + this.StartNumber.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                var hashCode = 41;
+                if (this.ScalingGroupId != null) hashCode = hashCode * 59 + this.ScalingGroupId.GetHashCode();
+                if (this.LogId != null) hashCode = hashCode * 59 + this.LogId.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.StartNumber != null) hashCode = hashCode * 59 + this.StartNumber.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

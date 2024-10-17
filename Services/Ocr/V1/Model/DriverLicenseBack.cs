@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(DriverLicenseBack input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.IssuingAuthority != input.IssuingAuthority || (this.IssuingAuthority != null && !this.IssuingAuthority.Equals(input.IssuingAuthority))) return false;
+            if (this.Address != input.Address || (this.Address != null && !this.Address.Equals(input.Address))) return false;
+            if (this.FileNumber != input.FileNumber || (this.FileNumber != null && !this.FileNumber.Equals(input.FileNumber))) return false;
+            if (this.Record != input.Record || (this.Record != null && !this.Record.Equals(input.Record))) return false;
+            if (this.TextLocation != input.TextLocation || (this.TextLocation != null && !this.TextLocation.Equals(input.TextLocation))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.IssuingAuthority == input.IssuingAuthority ||
-                    (this.IssuingAuthority != null &&
-                    this.IssuingAuthority.Equals(input.IssuingAuthority))
-                ) && 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
-                ) && 
-                (
-                    this.FileNumber == input.FileNumber ||
-                    (this.FileNumber != null &&
-                    this.FileNumber.Equals(input.FileNumber))
-                ) && 
-                (
-                    this.Record == input.Record ||
-                    (this.Record != null &&
-                    this.Record.Equals(input.Record))
-                ) && 
-                (
-                    this.TextLocation == input.TextLocation ||
-                    (this.TextLocation != null &&
-                    this.TextLocation.Equals(input.TextLocation))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Number != null)
-                    hashCode = hashCode * 59 + this.Number.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.IssuingAuthority != null)
-                    hashCode = hashCode * 59 + this.IssuingAuthority.GetHashCode();
-                if (this.Address != null)
-                    hashCode = hashCode * 59 + this.Address.GetHashCode();
-                if (this.FileNumber != null)
-                    hashCode = hashCode * 59 + this.FileNumber.GetHashCode();
-                if (this.Record != null)
-                    hashCode = hashCode * 59 + this.Record.GetHashCode();
-                if (this.TextLocation != null)
-                    hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
+                var hashCode = 41;
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Number != null) hashCode = hashCode * 59 + this.Number.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.IssuingAuthority != null) hashCode = hashCode * 59 + this.IssuingAuthority.GetHashCode();
+                if (this.Address != null) hashCode = hashCode * 59 + this.Address.GetHashCode();
+                if (this.FileNumber != null) hashCode = hashCode * 59 + this.FileNumber.GetHashCode();
+                if (this.Record != null) hashCode = hashCode * 59 + this.Record.GetHashCode();
+                if (this.TextLocation != null) hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
                 return hashCode;
             }
         }

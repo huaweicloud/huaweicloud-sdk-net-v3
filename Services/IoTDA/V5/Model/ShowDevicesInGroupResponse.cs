@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ShowDevicesInGroupResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Devices != input.Devices || (this.Devices != null && input.Devices != null && !this.Devices.SequenceEqual(input.Devices))) return false;
+            if (this.Page != input.Page || (this.Page != null && !this.Page.Equals(input.Page))) return false;
 
-            return 
-                (
-                    this.Devices == input.Devices ||
-                    this.Devices != null &&
-                    input.Devices != null &&
-                    this.Devices.SequenceEqual(input.Devices)
-                ) && 
-                (
-                    this.Page == input.Page ||
-                    (this.Page != null &&
-                    this.Page.Equals(input.Page))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Devices != null)
-                    hashCode = hashCode * 59 + this.Devices.GetHashCode();
-                if (this.Page != null)
-                    hashCode = hashCode * 59 + this.Page.GetHashCode();
+                var hashCode = 41;
+                if (this.Devices != null) hashCode = hashCode * 59 + this.Devices.GetHashCode();
+                if (this.Page != null) hashCode = hashCode * 59 + this.Page.GetHashCode();
                 return hashCode;
             }
         }

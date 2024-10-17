@@ -66,25 +66,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(UpdateProjectDomainRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
-            return 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +81,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                var hashCode = 41;
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

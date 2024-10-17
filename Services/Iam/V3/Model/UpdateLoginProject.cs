@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(UpdateLoginProject input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
+            if (this.VerificationMethod != input.VerificationMethod || (this.VerificationMethod != null && !this.VerificationMethod.Equals(input.VerificationMethod))) return false;
 
-            return 
-                (
-                    this.Enabled == input.Enabled ||
-                    (this.Enabled != null &&
-                    this.Enabled.Equals(input.Enabled))
-                ) && 
-                (
-                    this.VerificationMethod == input.VerificationMethod ||
-                    (this.VerificationMethod != null &&
-                    this.VerificationMethod.Equals(input.VerificationMethod))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Enabled != null)
-                    hashCode = hashCode * 59 + this.Enabled.GetHashCode();
-                if (this.VerificationMethod != null)
-                    hashCode = hashCode * 59 + this.VerificationMethod.GetHashCode();
+                var hashCode = 41;
+                if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
+                if (this.VerificationMethod != null) hashCode = hashCode * 59 + this.VerificationMethod.GetHashCode();
                 return hashCode;
             }
         }

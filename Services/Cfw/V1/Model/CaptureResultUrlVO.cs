@@ -77,36 +77,14 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(CaptureResultUrlVO input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Captcha != input.Captcha || (this.Captcha != null && !this.Captcha.Equals(input.Captcha))) return false;
+            if (this.Expires != input.Expires || (this.Expires != null && !this.Expires.Equals(input.Expires))) return false;
+            if (this.FileList != input.FileList || (this.FileList != null && input.FileList != null && !this.FileList.SequenceEqual(input.FileList))) return false;
+            if (this.RequestHeader != input.RequestHeader || (this.RequestHeader != null && !this.RequestHeader.Equals(input.RequestHeader))) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
 
-            return 
-                (
-                    this.Captcha == input.Captcha ||
-                    (this.Captcha != null &&
-                    this.Captcha.Equals(input.Captcha))
-                ) && 
-                (
-                    this.Expires == input.Expires ||
-                    (this.Expires != null &&
-                    this.Expires.Equals(input.Expires))
-                ) && 
-                (
-                    this.FileList == input.FileList ||
-                    this.FileList != null &&
-                    input.FileList != null &&
-                    this.FileList.SequenceEqual(input.FileList)
-                ) && 
-                (
-                    this.RequestHeader == input.RequestHeader ||
-                    (this.RequestHeader != null &&
-                    this.RequestHeader.Equals(input.RequestHeader))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                );
+            return true;
         }
 
         /// <summary>
@@ -116,17 +94,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Captcha != null)
-                    hashCode = hashCode * 59 + this.Captcha.GetHashCode();
-                if (this.Expires != null)
-                    hashCode = hashCode * 59 + this.Expires.GetHashCode();
-                if (this.FileList != null)
-                    hashCode = hashCode * 59 + this.FileList.GetHashCode();
-                if (this.RequestHeader != null)
-                    hashCode = hashCode * 59 + this.RequestHeader.GetHashCode();
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
+                var hashCode = 41;
+                if (this.Captcha != null) hashCode = hashCode * 59 + this.Captcha.GetHashCode();
+                if (this.Expires != null) hashCode = hashCode * 59 + this.Expires.GetHashCode();
+                if (this.FileList != null) hashCode = hashCode * 59 + this.FileList.GetHashCode();
+                if (this.RequestHeader != null) hashCode = hashCode * 59 + this.RequestHeader.GetHashCode();
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
                 return hashCode;
             }
         }

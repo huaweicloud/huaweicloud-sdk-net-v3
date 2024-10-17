@@ -164,20 +164,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ResourceCheck input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Action != input.Action) return false;
+            if (this.Resource != input.Resource || (this.Resource != null && !this.Resource.Equals(input.Resource))) return false;
 
-            return 
-                (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                ) && 
-                (
-                    this.Resource == input.Resource ||
-                    (this.Resource != null &&
-                    this.Resource.Equals(input.Resource))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,11 +178,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
-                if (this.Resource != null)
-                    hashCode = hashCode * 59 + this.Resource.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Action.GetHashCode();
+                if (this.Resource != null) hashCode = hashCode * 59 + this.Resource.GetHashCode();
                 return hashCode;
             }
         }

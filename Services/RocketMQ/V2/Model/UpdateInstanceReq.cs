@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(UpdateInstanceReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.SecurityGroupId != input.SecurityGroupId || (this.SecurityGroupId != null && !this.SecurityGroupId.Equals(input.SecurityGroupId))) return false;
+            if (this.EnableAcl != input.EnableAcl || (this.EnableAcl != null && !this.EnableAcl.Equals(input.EnableAcl))) return false;
+            if (this.EnablePublicip != input.EnablePublicip || (this.EnablePublicip != null && !this.EnablePublicip.Equals(input.EnablePublicip))) return false;
+            if (this.PublicipId != input.PublicipId || (this.PublicipId != null && !this.PublicipId.Equals(input.PublicipId))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.SecurityGroupId == input.SecurityGroupId ||
-                    (this.SecurityGroupId != null &&
-                    this.SecurityGroupId.Equals(input.SecurityGroupId))
-                ) && 
-                (
-                    this.EnableAcl == input.EnableAcl ||
-                    (this.EnableAcl != null &&
-                    this.EnableAcl.Equals(input.EnableAcl))
-                ) && 
-                (
-                    this.EnablePublicip == input.EnablePublicip ||
-                    (this.EnablePublicip != null &&
-                    this.EnablePublicip.Equals(input.EnablePublicip))
-                ) && 
-                (
-                    this.PublicipId == input.PublicipId ||
-                    (this.PublicipId != null &&
-                    this.PublicipId.Equals(input.PublicipId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.SecurityGroupId != null)
-                    hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
-                if (this.EnableAcl != null)
-                    hashCode = hashCode * 59 + this.EnableAcl.GetHashCode();
-                if (this.EnablePublicip != null)
-                    hashCode = hashCode * 59 + this.EnablePublicip.GetHashCode();
-                if (this.PublicipId != null)
-                    hashCode = hashCode * 59 + this.PublicipId.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.SecurityGroupId != null) hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
+                if (this.EnableAcl != null) hashCode = hashCode * 59 + this.EnableAcl.GetHashCode();
+                if (this.EnablePublicip != null) hashCode = hashCode * 59 + this.EnablePublicip.GetHashCode();
+                if (this.PublicipId != null) hashCode = hashCode * 59 + this.PublicipId.GetHashCode();
                 return hashCode;
             }
         }

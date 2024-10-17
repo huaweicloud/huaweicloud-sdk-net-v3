@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ShowProvisioningTemplateResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TemplateId != input.TemplateId || (this.TemplateId != null && !this.TemplateId.Equals(input.TemplateId))) return false;
+            if (this.TemplateName != input.TemplateName || (this.TemplateName != null && !this.TemplateName.Equals(input.TemplateName))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.TemplateBody != input.TemplateBody || (this.TemplateBody != null && !this.TemplateBody.Equals(input.TemplateBody))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
 
-            return 
-                (
-                    this.TemplateId == input.TemplateId ||
-                    (this.TemplateId != null &&
-                    this.TemplateId.Equals(input.TemplateId))
-                ) && 
-                (
-                    this.TemplateName == input.TemplateName ||
-                    (this.TemplateName != null &&
-                    this.TemplateName.Equals(input.TemplateName))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.TemplateBody == input.TemplateBody ||
-                    (this.TemplateBody != null &&
-                    this.TemplateBody.Equals(input.TemplateBody))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TemplateId != null)
-                    hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
-                if (this.TemplateName != null)
-                    hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.TemplateBody != null)
-                    hashCode = hashCode * 59 + this.TemplateBody.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                var hashCode = 41;
+                if (this.TemplateId != null) hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
+                if (this.TemplateName != null) hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.TemplateBody != null) hashCode = hashCode * 59 + this.TemplateBody.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 return hashCode;
             }
         }

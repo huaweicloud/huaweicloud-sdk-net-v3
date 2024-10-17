@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(UpdateTdeStatusRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RotateDay != input.RotateDay || (this.RotateDay != null && !this.RotateDay.Equals(input.RotateDay))) return false;
+            if (this.SecretId != input.SecretId || (this.SecretId != null && !this.SecretId.Equals(input.SecretId))) return false;
+            if (this.SecretName != input.SecretName || (this.SecretName != null && !this.SecretName.Equals(input.SecretName))) return false;
+            if (this.SecretVersion != input.SecretVersion || (this.SecretVersion != null && !this.SecretVersion.Equals(input.SecretVersion))) return false;
 
-            return 
-                (
-                    this.RotateDay == input.RotateDay ||
-                    (this.RotateDay != null &&
-                    this.RotateDay.Equals(input.RotateDay))
-                ) && 
-                (
-                    this.SecretId == input.SecretId ||
-                    (this.SecretId != null &&
-                    this.SecretId.Equals(input.SecretId))
-                ) && 
-                (
-                    this.SecretName == input.SecretName ||
-                    (this.SecretName != null &&
-                    this.SecretName.Equals(input.SecretName))
-                ) && 
-                (
-                    this.SecretVersion == input.SecretVersion ||
-                    (this.SecretVersion != null &&
-                    this.SecretVersion.Equals(input.SecretVersion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RotateDay != null)
-                    hashCode = hashCode * 59 + this.RotateDay.GetHashCode();
-                if (this.SecretId != null)
-                    hashCode = hashCode * 59 + this.SecretId.GetHashCode();
-                if (this.SecretName != null)
-                    hashCode = hashCode * 59 + this.SecretName.GetHashCode();
-                if (this.SecretVersion != null)
-                    hashCode = hashCode * 59 + this.SecretVersion.GetHashCode();
+                var hashCode = 41;
+                if (this.RotateDay != null) hashCode = hashCode * 59 + this.RotateDay.GetHashCode();
+                if (this.SecretId != null) hashCode = hashCode * 59 + this.SecretId.GetHashCode();
+                if (this.SecretName != null) hashCode = hashCode * 59 + this.SecretName.GetHashCode();
+                if (this.SecretVersion != null) hashCode = hashCode * 59 + this.SecretVersion.GetHashCode();
                 return hashCode;
             }
         }

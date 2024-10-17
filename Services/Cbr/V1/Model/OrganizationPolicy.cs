@@ -233,65 +233,20 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(OrganizationPolicy input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.OperationType != input.OperationType) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.PolicyName != input.PolicyName || (this.PolicyName != null && !this.PolicyName.Equals(input.PolicyName))) return false;
+            if (this.PolicyEnabled != input.PolicyEnabled || (this.PolicyEnabled != null && !this.PolicyEnabled.Equals(input.PolicyEnabled))) return false;
+            if (this.PolicyOperationDefinition != input.PolicyOperationDefinition || (this.PolicyOperationDefinition != null && !this.PolicyOperationDefinition.Equals(input.PolicyOperationDefinition))) return false;
+            if (this.PolicyTrigger != input.PolicyTrigger || (this.PolicyTrigger != null && !this.PolicyTrigger.Equals(input.PolicyTrigger))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.OperationType == input.OperationType ||
-                    (this.OperationType != null &&
-                    this.OperationType.Equals(input.OperationType))
-                ) && 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
-                    this.PolicyName == input.PolicyName ||
-                    (this.PolicyName != null &&
-                    this.PolicyName.Equals(input.PolicyName))
-                ) && 
-                (
-                    this.PolicyEnabled == input.PolicyEnabled ||
-                    (this.PolicyEnabled != null &&
-                    this.PolicyEnabled.Equals(input.PolicyEnabled))
-                ) && 
-                (
-                    this.PolicyOperationDefinition == input.PolicyOperationDefinition ||
-                    (this.PolicyOperationDefinition != null &&
-                    this.PolicyOperationDefinition.Equals(input.PolicyOperationDefinition))
-                ) && 
-                (
-                    this.PolicyTrigger == input.PolicyTrigger ||
-                    (this.PolicyTrigger != null &&
-                    this.PolicyTrigger.Equals(input.PolicyTrigger))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.DomainName == input.DomainName ||
-                    (this.DomainName != null &&
-                    this.DomainName.Equals(input.DomainName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -301,29 +256,18 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.OperationType != null)
-                    hashCode = hashCode * 59 + this.OperationType.GetHashCode();
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.PolicyName != null)
-                    hashCode = hashCode * 59 + this.PolicyName.GetHashCode();
-                if (this.PolicyEnabled != null)
-                    hashCode = hashCode * 59 + this.PolicyEnabled.GetHashCode();
-                if (this.PolicyOperationDefinition != null)
-                    hashCode = hashCode * 59 + this.PolicyOperationDefinition.GetHashCode();
-                if (this.PolicyTrigger != null)
-                    hashCode = hashCode * 59 + this.PolicyTrigger.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.DomainName != null)
-                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                hashCode = hashCode * 59 + this.OperationType.GetHashCode();
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.PolicyName != null) hashCode = hashCode * 59 + this.PolicyName.GetHashCode();
+                if (this.PolicyEnabled != null) hashCode = hashCode * 59 + this.PolicyEnabled.GetHashCode();
+                if (this.PolicyOperationDefinition != null) hashCode = hashCode * 59 + this.PolicyOperationDefinition.GetHashCode();
+                if (this.PolicyTrigger != null) hashCode = hashCode * 59 + this.PolicyTrigger.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
                 return hashCode;
             }
         }

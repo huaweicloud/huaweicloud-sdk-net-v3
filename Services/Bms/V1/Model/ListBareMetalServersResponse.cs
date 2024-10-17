@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(ListBareMetalServersResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Servers != input.Servers || (this.Servers != null && input.Servers != null && !this.Servers.SequenceEqual(input.Servers))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
 
-            return 
-                (
-                    this.Servers == input.Servers ||
-                    this.Servers != null &&
-                    input.Servers != null &&
-                    this.Servers.SequenceEqual(input.Servers)
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Servers != null)
-                    hashCode = hashCode * 59 + this.Servers.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
+                var hashCode = 41;
+                if (this.Servers != null) hashCode = hashCode * 59 + this.Servers.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
                 return hashCode;
             }
         }

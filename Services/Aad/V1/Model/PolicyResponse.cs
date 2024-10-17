@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         /// </summary>
         public bool Equals(PolicyResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.PackageId != input.PackageId || (this.PackageId != null && !this.PackageId.Equals(input.PackageId))) return false;
+            if (this.PackageName != input.PackageName || (this.PackageName != null && !this.PackageName.Equals(input.PackageName))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
+            if (this.CleanThreshold != input.CleanThreshold || (this.CleanThreshold != null && !this.CleanThreshold.Equals(input.CleanThreshold))) return false;
+            if (this.NumProtectedIp != input.NumProtectedIp || (this.NumProtectedIp != null && !this.NumProtectedIp.Equals(input.NumProtectedIp))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.PackageId == input.PackageId ||
-                    (this.PackageId != null &&
-                    this.PackageId.Equals(input.PackageId))
-                ) && 
-                (
-                    this.PackageName == input.PackageName ||
-                    (this.PackageName != null &&
-                    this.PackageName.Equals(input.PackageName))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.CleanThreshold == input.CleanThreshold ||
-                    (this.CleanThreshold != null &&
-                    this.CleanThreshold.Equals(input.CleanThreshold))
-                ) && 
-                (
-                    this.NumProtectedIp == input.NumProtectedIp ||
-                    (this.NumProtectedIp != null &&
-                    this.NumProtectedIp.Equals(input.NumProtectedIp))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.PackageId != null)
-                    hashCode = hashCode * 59 + this.PackageId.GetHashCode();
-                if (this.PackageName != null)
-                    hashCode = hashCode * 59 + this.PackageName.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.CleanThreshold != null)
-                    hashCode = hashCode * 59 + this.CleanThreshold.GetHashCode();
-                if (this.NumProtectedIp != null)
-                    hashCode = hashCode * 59 + this.NumProtectedIp.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.PackageId != null) hashCode = hashCode * 59 + this.PackageId.GetHashCode();
+                if (this.PackageName != null) hashCode = hashCode * 59 + this.PackageName.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
+                if (this.CleanThreshold != null) hashCode = hashCode * 59 + this.CleanThreshold.GetHashCode();
+                if (this.NumProtectedIp != null) hashCode = hashCode * 59 + this.NumProtectedIp.GetHashCode();
                 return hashCode;
             }
         }

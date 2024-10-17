@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         /// </summary>
         public bool Equals(HttpCode input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Code != input.Code || (this.Code != null && !this.Code.Equals(input.Code))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.Proportion != input.Proportion || (this.Proportion != null && !this.Proportion.Equals(input.Proportion))) return false;
 
-            return 
-                (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.Proportion == input.Proportion ||
-                    (this.Proportion != null &&
-                    this.Proportion.Equals(input.Proportion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Code != null)
-                    hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.Proportion != null)
-                    hashCode = hashCode * 59 + this.Proportion.GetHashCode();
+                var hashCode = 41;
+                if (this.Code != null) hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.Proportion != null) hashCode = hashCode * 59 + this.Proportion.GetHashCode();
                 return hashCode;
             }
         }

@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(ModifyTemplateGroupCollection input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.CollectionId != input.CollectionId || (this.CollectionId != null && !this.CollectionId.Equals(input.CollectionId))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.TemplateGroupList != input.TemplateGroupList || (this.TemplateGroupList != null && input.TemplateGroupList != null && !this.TemplateGroupList.SequenceEqual(input.TemplateGroupList))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.CollectionId == input.CollectionId ||
-                    (this.CollectionId != null &&
-                    this.CollectionId.Equals(input.CollectionId))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.TemplateGroupList == input.TemplateGroupList ||
-                    this.TemplateGroupList != null &&
-                    input.TemplateGroupList != null &&
-                    this.TemplateGroupList.SequenceEqual(input.TemplateGroupList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.CollectionId != null)
-                    hashCode = hashCode * 59 + this.CollectionId.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.TemplateGroupList != null)
-                    hashCode = hashCode * 59 + this.TemplateGroupList.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.CollectionId != null) hashCode = hashCode * 59 + this.CollectionId.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.TemplateGroupList != null) hashCode = hashCode * 59 + this.TemplateGroupList.GetHashCode();
                 return hashCode;
             }
         }

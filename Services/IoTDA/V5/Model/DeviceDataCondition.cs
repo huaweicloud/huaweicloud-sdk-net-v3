@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(DeviceDataCondition input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DeviceId != input.DeviceId || (this.DeviceId != null && !this.DeviceId.Equals(input.DeviceId))) return false;
+            if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
+            if (this.Filters != input.Filters || (this.Filters != null && input.Filters != null && !this.Filters.SequenceEqual(input.Filters))) return false;
 
-            return 
-                (
-                    this.DeviceId == input.DeviceId ||
-                    (this.DeviceId != null &&
-                    this.DeviceId.Equals(input.DeviceId))
-                ) && 
-                (
-                    this.ProductId == input.ProductId ||
-                    (this.ProductId != null &&
-                    this.ProductId.Equals(input.ProductId))
-                ) && 
-                (
-                    this.Filters == input.Filters ||
-                    this.Filters != null &&
-                    input.Filters != null &&
-                    this.Filters.SequenceEqual(input.Filters)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DeviceId != null)
-                    hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
-                if (this.ProductId != null)
-                    hashCode = hashCode * 59 + this.ProductId.GetHashCode();
-                if (this.Filters != null)
-                    hashCode = hashCode * 59 + this.Filters.GetHashCode();
+                var hashCode = 41;
+                if (this.DeviceId != null) hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
+                if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
+                if (this.Filters != null) hashCode = hashCode * 59 + this.Filters.GetHashCode();
                 return hashCode;
             }
         }

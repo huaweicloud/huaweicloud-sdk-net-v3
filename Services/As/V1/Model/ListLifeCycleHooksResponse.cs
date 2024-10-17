@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(ListLifeCycleHooksResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LifecycleHooks != input.LifecycleHooks || (this.LifecycleHooks != null && input.LifecycleHooks != null && !this.LifecycleHooks.SequenceEqual(input.LifecycleHooks))) return false;
 
-            return 
-                (
-                    this.LifecycleHooks == input.LifecycleHooks ||
-                    this.LifecycleHooks != null &&
-                    input.LifecycleHooks != null &&
-                    this.LifecycleHooks.SequenceEqual(input.LifecycleHooks)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LifecycleHooks != null)
-                    hashCode = hashCode * 59 + this.LifecycleHooks.GetHashCode();
+                var hashCode = 41;
+                if (this.LifecycleHooks != null) hashCode = hashCode * 59 + this.LifecycleHooks.GetHashCode();
                 return hashCode;
             }
         }

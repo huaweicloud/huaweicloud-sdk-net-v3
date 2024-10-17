@@ -66,25 +66,12 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         /// </summary>
         public bool Equals(ListClassroomsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.QueryType != input.QueryType || (this.QueryType != null && !this.QueryType.Equals(input.QueryType))) return false;
 
-            return 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.QueryType == input.QueryType ||
-                    (this.QueryType != null &&
-                    this.QueryType.Equals(input.QueryType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +81,10 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.QueryType != null)
-                    hashCode = hashCode * 59 + this.QueryType.GetHashCode();
+                var hashCode = 41;
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.QueryType != null) hashCode = hashCode * 59 + this.QueryType.GetHashCode();
                 return hashCode;
             }
         }

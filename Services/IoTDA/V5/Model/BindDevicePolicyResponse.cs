@@ -70,32 +70,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(BindDevicePolicyResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PolicyId != input.PolicyId || (this.PolicyId != null && !this.PolicyId.Equals(input.PolicyId))) return false;
+            if (this.TargetType != input.TargetType || (this.TargetType != null && !this.TargetType.Equals(input.TargetType))) return false;
+            if (this.SuccessTargets != input.SuccessTargets || (this.SuccessTargets != null && input.SuccessTargets != null && !this.SuccessTargets.SequenceEqual(input.SuccessTargets))) return false;
+            if (this.FailureTargets != input.FailureTargets || (this.FailureTargets != null && input.FailureTargets != null && !this.FailureTargets.SequenceEqual(input.FailureTargets))) return false;
 
-            return 
-                (
-                    this.PolicyId == input.PolicyId ||
-                    (this.PolicyId != null &&
-                    this.PolicyId.Equals(input.PolicyId))
-                ) && 
-                (
-                    this.TargetType == input.TargetType ||
-                    (this.TargetType != null &&
-                    this.TargetType.Equals(input.TargetType))
-                ) && 
-                (
-                    this.SuccessTargets == input.SuccessTargets ||
-                    this.SuccessTargets != null &&
-                    input.SuccessTargets != null &&
-                    this.SuccessTargets.SequenceEqual(input.SuccessTargets)
-                ) && 
-                (
-                    this.FailureTargets == input.FailureTargets ||
-                    this.FailureTargets != null &&
-                    input.FailureTargets != null &&
-                    this.FailureTargets.SequenceEqual(input.FailureTargets)
-                );
+            return true;
         }
 
         /// <summary>
@@ -105,15 +86,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PolicyId != null)
-                    hashCode = hashCode * 59 + this.PolicyId.GetHashCode();
-                if (this.TargetType != null)
-                    hashCode = hashCode * 59 + this.TargetType.GetHashCode();
-                if (this.SuccessTargets != null)
-                    hashCode = hashCode * 59 + this.SuccessTargets.GetHashCode();
-                if (this.FailureTargets != null)
-                    hashCode = hashCode * 59 + this.FailureTargets.GetHashCode();
+                var hashCode = 41;
+                if (this.PolicyId != null) hashCode = hashCode * 59 + this.PolicyId.GetHashCode();
+                if (this.TargetType != null) hashCode = hashCode * 59 + this.TargetType.GetHashCode();
+                if (this.SuccessTargets != null) hashCode = hashCode * 59 + this.SuccessTargets.GetHashCode();
+                if (this.FailureTargets != null) hashCode = hashCode * 59 + this.FailureTargets.GetHashCode();
                 return hashCode;
             }
         }

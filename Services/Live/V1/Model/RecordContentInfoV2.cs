@@ -360,70 +360,21 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(RecordContentInfoV2 input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PublishDomain != input.PublishDomain || (this.PublishDomain != null && !this.PublishDomain.Equals(input.PublishDomain))) return false;
+            if (this.FileName != input.FileName || (this.FileName != null && !this.FileName.Equals(input.FileName))) return false;
+            if (this.App != input.App || (this.App != null && !this.App.Equals(input.App))) return false;
+            if (this.Stream != input.Stream || (this.Stream != null && !this.Stream.Equals(input.Stream))) return false;
+            if (this.RecordFormat != input.RecordFormat) return false;
+            if (this.RecordType != input.RecordType) return false;
+            if (this.ObsAddr != input.ObsAddr || (this.ObsAddr != null && !this.ObsAddr.Equals(input.ObsAddr))) return false;
+            if (this.VodInfo != input.VodInfo || (this.VodInfo != null && !this.VodInfo.Equals(input.VodInfo))) return false;
+            if (this.DownloadUrl != input.DownloadUrl || (this.DownloadUrl != null && !this.DownloadUrl.Equals(input.DownloadUrl))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
 
-            return 
-                (
-                    this.PublishDomain == input.PublishDomain ||
-                    (this.PublishDomain != null &&
-                    this.PublishDomain.Equals(input.PublishDomain))
-                ) && 
-                (
-                    this.FileName == input.FileName ||
-                    (this.FileName != null &&
-                    this.FileName.Equals(input.FileName))
-                ) && 
-                (
-                    this.App == input.App ||
-                    (this.App != null &&
-                    this.App.Equals(input.App))
-                ) && 
-                (
-                    this.Stream == input.Stream ||
-                    (this.Stream != null &&
-                    this.Stream.Equals(input.Stream))
-                ) && 
-                (
-                    this.RecordFormat == input.RecordFormat ||
-                    (this.RecordFormat != null &&
-                    this.RecordFormat.Equals(input.RecordFormat))
-                ) && 
-                (
-                    this.RecordType == input.RecordType ||
-                    (this.RecordType != null &&
-                    this.RecordType.Equals(input.RecordType))
-                ) && 
-                (
-                    this.ObsAddr == input.ObsAddr ||
-                    (this.ObsAddr != null &&
-                    this.ObsAddr.Equals(input.ObsAddr))
-                ) && 
-                (
-                    this.VodInfo == input.VodInfo ||
-                    (this.VodInfo != null &&
-                    this.VodInfo.Equals(input.VodInfo))
-                ) && 
-                (
-                    this.DownloadUrl == input.DownloadUrl ||
-                    (this.DownloadUrl != null &&
-                    this.DownloadUrl.Equals(input.DownloadUrl))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
-                );
+            return true;
         }
 
         /// <summary>
@@ -433,31 +384,19 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PublishDomain != null)
-                    hashCode = hashCode * 59 + this.PublishDomain.GetHashCode();
-                if (this.FileName != null)
-                    hashCode = hashCode * 59 + this.FileName.GetHashCode();
-                if (this.App != null)
-                    hashCode = hashCode * 59 + this.App.GetHashCode();
-                if (this.Stream != null)
-                    hashCode = hashCode * 59 + this.Stream.GetHashCode();
-                if (this.RecordFormat != null)
-                    hashCode = hashCode * 59 + this.RecordFormat.GetHashCode();
-                if (this.RecordType != null)
-                    hashCode = hashCode * 59 + this.RecordType.GetHashCode();
-                if (this.ObsAddr != null)
-                    hashCode = hashCode * 59 + this.ObsAddr.GetHashCode();
-                if (this.VodInfo != null)
-                    hashCode = hashCode * 59 + this.VodInfo.GetHashCode();
-                if (this.DownloadUrl != null)
-                    hashCode = hashCode * 59 + this.DownloadUrl.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Duration != null)
-                    hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                var hashCode = 41;
+                if (this.PublishDomain != null) hashCode = hashCode * 59 + this.PublishDomain.GetHashCode();
+                if (this.FileName != null) hashCode = hashCode * 59 + this.FileName.GetHashCode();
+                if (this.App != null) hashCode = hashCode * 59 + this.App.GetHashCode();
+                if (this.Stream != null) hashCode = hashCode * 59 + this.Stream.GetHashCode();
+                hashCode = hashCode * 59 + this.RecordFormat.GetHashCode();
+                hashCode = hashCode * 59 + this.RecordType.GetHashCode();
+                if (this.ObsAddr != null) hashCode = hashCode * 59 + this.ObsAddr.GetHashCode();
+                if (this.VodInfo != null) hashCode = hashCode * 59 + this.VodInfo.GetHashCode();
+                if (this.DownloadUrl != null) hashCode = hashCode * 59 + this.DownloadUrl.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
                 return hashCode;
             }
         }

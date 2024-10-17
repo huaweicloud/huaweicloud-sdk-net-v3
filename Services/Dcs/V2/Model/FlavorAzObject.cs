@@ -70,32 +70,13 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(FlavorAzObject input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Capacity != input.Capacity || (this.Capacity != null && !this.Capacity.Equals(input.Capacity))) return false;
+            if (this.Unit != input.Unit || (this.Unit != null && !this.Unit.Equals(input.Unit))) return false;
+            if (this.AvailableZones != input.AvailableZones || (this.AvailableZones != null && input.AvailableZones != null && !this.AvailableZones.SequenceEqual(input.AvailableZones))) return false;
+            if (this.AzCodes != input.AzCodes || (this.AzCodes != null && input.AzCodes != null && !this.AzCodes.SequenceEqual(input.AzCodes))) return false;
 
-            return 
-                (
-                    this.Capacity == input.Capacity ||
-                    (this.Capacity != null &&
-                    this.Capacity.Equals(input.Capacity))
-                ) && 
-                (
-                    this.Unit == input.Unit ||
-                    (this.Unit != null &&
-                    this.Unit.Equals(input.Unit))
-                ) && 
-                (
-                    this.AvailableZones == input.AvailableZones ||
-                    this.AvailableZones != null &&
-                    input.AvailableZones != null &&
-                    this.AvailableZones.SequenceEqual(input.AvailableZones)
-                ) && 
-                (
-                    this.AzCodes == input.AzCodes ||
-                    this.AzCodes != null &&
-                    input.AzCodes != null &&
-                    this.AzCodes.SequenceEqual(input.AzCodes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -105,15 +86,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Capacity != null)
-                    hashCode = hashCode * 59 + this.Capacity.GetHashCode();
-                if (this.Unit != null)
-                    hashCode = hashCode * 59 + this.Unit.GetHashCode();
-                if (this.AvailableZones != null)
-                    hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
-                if (this.AzCodes != null)
-                    hashCode = hashCode * 59 + this.AzCodes.GetHashCode();
+                var hashCode = 41;
+                if (this.Capacity != null) hashCode = hashCode * 59 + this.Capacity.GetHashCode();
+                if (this.Unit != null) hashCode = hashCode * 59 + this.Unit.GetHashCode();
+                if (this.AvailableZones != null) hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
+                if (this.AzCodes != null) hashCode = hashCode * 59 + this.AzCodes.GetHashCode();
                 return hashCode;
             }
         }

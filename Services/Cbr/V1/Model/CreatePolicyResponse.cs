@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(CreatePolicyResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Policy != input.Policy || (this.Policy != null && !this.Policy.Equals(input.Policy))) return false;
 
-            return 
-                (
-                    this.Policy == input.Policy ||
-                    (this.Policy != null &&
-                    this.Policy.Equals(input.Policy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Policy != null)
-                    hashCode = hashCode * 59 + this.Policy.GetHashCode();
+                var hashCode = 41;
+                if (this.Policy != null) hashCode = hashCode * 59 + this.Policy.GetHashCode();
                 return hashCode;
             }
         }

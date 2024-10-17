@@ -82,36 +82,14 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(ConsumerGroupHeartBeatRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
+            if (this.StreamId != input.StreamId || (this.StreamId != null && !this.StreamId.Equals(input.StreamId))) return false;
+            if (this.ConsumerGroupName != input.ConsumerGroupName || (this.ConsumerGroupName != null && !this.ConsumerGroupName.Equals(input.ConsumerGroupName))) return false;
+            if (this.ConsumerName != input.ConsumerName || (this.ConsumerName != null && !this.ConsumerName.Equals(input.ConsumerName))) return false;
+            if (this.Body != input.Body || (this.Body != null && input.Body != null && !this.Body.SequenceEqual(input.Body))) return false;
 
-            return 
-                (
-                    this.GroupId == input.GroupId ||
-                    (this.GroupId != null &&
-                    this.GroupId.Equals(input.GroupId))
-                ) && 
-                (
-                    this.StreamId == input.StreamId ||
-                    (this.StreamId != null &&
-                    this.StreamId.Equals(input.StreamId))
-                ) && 
-                (
-                    this.ConsumerGroupName == input.ConsumerGroupName ||
-                    (this.ConsumerGroupName != null &&
-                    this.ConsumerGroupName.Equals(input.ConsumerGroupName))
-                ) && 
-                (
-                    this.ConsumerName == input.ConsumerName ||
-                    (this.ConsumerName != null &&
-                    this.ConsumerName.Equals(input.ConsumerName))
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    this.Body != null &&
-                    input.Body != null &&
-                    this.Body.SequenceEqual(input.Body)
-                );
+            return true;
         }
 
         /// <summary>
@@ -121,17 +99,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.GroupId != null)
-                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
-                if (this.StreamId != null)
-                    hashCode = hashCode * 59 + this.StreamId.GetHashCode();
-                if (this.ConsumerGroupName != null)
-                    hashCode = hashCode * 59 + this.ConsumerGroupName.GetHashCode();
-                if (this.ConsumerName != null)
-                    hashCode = hashCode * 59 + this.ConsumerName.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                var hashCode = 41;
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.StreamId != null) hashCode = hashCode * 59 + this.StreamId.GetHashCode();
+                if (this.ConsumerGroupName != null) hashCode = hashCode * 59 + this.ConsumerGroupName.GetHashCode();
+                if (this.ConsumerName != null) hashCode = hashCode * 59 + this.ConsumerName.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

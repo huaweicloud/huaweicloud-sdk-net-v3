@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ComputeFlavorGroup input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.GroupType != input.GroupType || (this.GroupType != null && !this.GroupType.Equals(input.GroupType))) return false;
+            if (this.ComputeFlavors != input.ComputeFlavors || (this.ComputeFlavors != null && !this.ComputeFlavors.Equals(input.ComputeFlavors))) return false;
 
-            return 
-                (
-                    this.GroupType == input.GroupType ||
-                    (this.GroupType != null &&
-                    this.GroupType.Equals(input.GroupType))
-                ) && 
-                (
-                    this.ComputeFlavors == input.ComputeFlavors ||
-                    (this.ComputeFlavors != null &&
-                    this.ComputeFlavors.Equals(input.ComputeFlavors))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.GroupType != null)
-                    hashCode = hashCode * 59 + this.GroupType.GetHashCode();
-                if (this.ComputeFlavors != null)
-                    hashCode = hashCode * 59 + this.ComputeFlavors.GetHashCode();
+                var hashCode = 41;
+                if (this.GroupType != null) hashCode = hashCode * 59 + this.GroupType.GetHashCode();
+                if (this.ComputeFlavors != null) hashCode = hashCode * 59 + this.ComputeFlavors.GetHashCode();
                 return hashCode;
             }
         }

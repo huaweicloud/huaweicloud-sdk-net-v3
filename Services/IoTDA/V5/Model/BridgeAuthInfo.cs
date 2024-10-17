@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(BridgeAuthInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AuthType != input.AuthType || (this.AuthType != null && !this.AuthType.Equals(input.AuthType))) return false;
+            if (this.Secret != input.Secret || (this.Secret != null && !this.Secret.Equals(input.Secret))) return false;
 
-            return 
-                (
-                    this.AuthType == input.AuthType ||
-                    (this.AuthType != null &&
-                    this.AuthType.Equals(input.AuthType))
-                ) && 
-                (
-                    this.Secret == input.Secret ||
-                    (this.Secret != null &&
-                    this.Secret.Equals(input.Secret))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AuthType != null)
-                    hashCode = hashCode * 59 + this.AuthType.GetHashCode();
-                if (this.Secret != null)
-                    hashCode = hashCode * 59 + this.Secret.GetHashCode();
+                var hashCode = 41;
+                if (this.AuthType != null) hashCode = hashCode * 59 + this.AuthType.GetHashCode();
+                if (this.Secret != null) hashCode = hashCode * 59 + this.Secret.GetHashCode();
                 return hashCode;
             }
         }

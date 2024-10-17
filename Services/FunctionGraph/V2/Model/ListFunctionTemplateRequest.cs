@@ -90,40 +90,15 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(ListFunctionTemplateRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.Maxitems != input.Maxitems || (this.Maxitems != null && !this.Maxitems.Equals(input.Maxitems))) return false;
+            if (this.Ispublic != input.Ispublic || (this.Ispublic != null && !this.Ispublic.Equals(input.Ispublic))) return false;
+            if (this.Runtime != input.Runtime || (this.Runtime != null && !this.Runtime.Equals(input.Runtime))) return false;
+            if (this.Scene != input.Scene || (this.Scene != null && !this.Scene.Equals(input.Scene))) return false;
+            if (this.Service != input.Service || (this.Service != null && !this.Service.Equals(input.Service))) return false;
 
-            return 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.Maxitems == input.Maxitems ||
-                    (this.Maxitems != null &&
-                    this.Maxitems.Equals(input.Maxitems))
-                ) && 
-                (
-                    this.Ispublic == input.Ispublic ||
-                    (this.Ispublic != null &&
-                    this.Ispublic.Equals(input.Ispublic))
-                ) && 
-                (
-                    this.Runtime == input.Runtime ||
-                    (this.Runtime != null &&
-                    this.Runtime.Equals(input.Runtime))
-                ) && 
-                (
-                    this.Scene == input.Scene ||
-                    (this.Scene != null &&
-                    this.Scene.Equals(input.Scene))
-                ) && 
-                (
-                    this.Service == input.Service ||
-                    (this.Service != null &&
-                    this.Service.Equals(input.Service))
-                );
+            return true;
         }
 
         /// <summary>
@@ -133,19 +108,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Maxitems != null)
-                    hashCode = hashCode * 59 + this.Maxitems.GetHashCode();
-                if (this.Ispublic != null)
-                    hashCode = hashCode * 59 + this.Ispublic.GetHashCode();
-                if (this.Runtime != null)
-                    hashCode = hashCode * 59 + this.Runtime.GetHashCode();
-                if (this.Scene != null)
-                    hashCode = hashCode * 59 + this.Scene.GetHashCode();
-                if (this.Service != null)
-                    hashCode = hashCode * 59 + this.Service.GetHashCode();
+                var hashCode = 41;
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Maxitems != null) hashCode = hashCode * 59 + this.Maxitems.GetHashCode();
+                if (this.Ispublic != null) hashCode = hashCode * 59 + this.Ispublic.GetHashCode();
+                if (this.Runtime != null) hashCode = hashCode * 59 + this.Runtime.GetHashCode();
+                if (this.Scene != null) hashCode = hashCode * 59 + this.Scene.GetHashCode();
+                if (this.Service != null) hashCode = hashCode * 59 + this.Service.GetHashCode();
                 return hashCode;
             }
         }

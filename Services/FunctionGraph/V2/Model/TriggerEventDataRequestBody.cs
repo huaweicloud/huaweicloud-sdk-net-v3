@@ -1496,293 +1496,65 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(TriggerEventDataRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.ScheduleType != input.ScheduleType) return false;
+            if (this.Schedule != input.Schedule || (this.Schedule != null && !this.Schedule.Equals(input.Schedule))) return false;
+            if (this.UserEvent != input.UserEvent || (this.UserEvent != null && !this.UserEvent.Equals(input.UserEvent))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Path != input.Path || (this.Path != null && !this.Path.Equals(input.Path))) return false;
+            if (this.Protocol != input.Protocol) return false;
+            if (this.ReqMethod != input.ReqMethod) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
+            if (this.GroupName != input.GroupName || (this.GroupName != null && !this.GroupName.Equals(input.GroupName))) return false;
+            if (this.MatchMode != input.MatchMode) return false;
+            if (this.EnvName != input.EnvName || (this.EnvName != null && !this.EnvName.Equals(input.EnvName))) return false;
+            if (this.EnvId != input.EnvId || (this.EnvId != null && !this.EnvId.Equals(input.EnvId))) return false;
+            if (this.Auth != input.Auth) return false;
+            if (this.FuncInfo != input.FuncInfo || (this.FuncInfo != null && !this.FuncInfo.Equals(input.FuncInfo))) return false;
+            if (this.SlDomain != input.SlDomain || (this.SlDomain != null && !this.SlDomain.Equals(input.SlDomain))) return false;
+            if (this.BackendType != input.BackendType) return false;
+            if (this.Operations != input.Operations || (this.Operations != null && input.Operations != null && !this.Operations.SequenceEqual(input.Operations))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.CollectionName != input.CollectionName || (this.CollectionName != null && !this.CollectionName.Equals(input.CollectionName))) return false;
+            if (this.DbName != input.DbName || (this.DbName != null && !this.DbName.Equals(input.DbName))) return false;
+            if (this.DbPassword != input.DbPassword || (this.DbPassword != null && !this.DbPassword.Equals(input.DbPassword))) return false;
+            if (this.BatchSize != input.BatchSize || (this.BatchSize != null && !this.BatchSize.Equals(input.BatchSize))) return false;
+            if (this.QueueId != input.QueueId || (this.QueueId != null && !this.QueueId.Equals(input.QueueId))) return false;
+            if (this.ConsumerGroupId != input.ConsumerGroupId || (this.ConsumerGroupId != null && !this.ConsumerGroupId.Equals(input.ConsumerGroupId))) return false;
+            if (this.PollingInterval != input.PollingInterval || (this.PollingInterval != null && !this.PollingInterval.Equals(input.PollingInterval))) return false;
+            if (this.StreamName != input.StreamName || (this.StreamName != null && !this.StreamName.Equals(input.StreamName))) return false;
+            if (this.SharditeratorType != input.SharditeratorType) return false;
+            if (this.PollingUnit != input.PollingUnit) return false;
+            if (this.MaxFetchBytes != input.MaxFetchBytes || (this.MaxFetchBytes != null && !this.MaxFetchBytes.Equals(input.MaxFetchBytes))) return false;
+            if (this.IsSerial != input.IsSerial) return false;
+            if (this.LogGroupId != input.LogGroupId || (this.LogGroupId != null && !this.LogGroupId.Equals(input.LogGroupId))) return false;
+            if (this.LogTopicId != input.LogTopicId || (this.LogTopicId != null && !this.LogTopicId.Equals(input.LogTopicId))) return false;
+            if (this.Bucket != input.Bucket || (this.Bucket != null && !this.Bucket.Equals(input.Bucket))) return false;
+            if (this.Prefix != input.Prefix || (this.Prefix != null && !this.Prefix.Equals(input.Prefix))) return false;
+            if (this.Suffix != input.Suffix || (this.Suffix != null && !this.Suffix.Equals(input.Suffix))) return false;
+            if (this.Events != input.Events || (this.Events != null && input.Events != null && !this.Events.SequenceEqual(input.Events))) return false;
+            if (this.TopicUrn != input.TopicUrn || (this.TopicUrn != null && !this.TopicUrn.Equals(input.TopicUrn))) return false;
+            if (this.TopicIds != input.TopicIds || (this.TopicIds != null && input.TopicIds != null && !this.TopicIds.SequenceEqual(input.TopicIds))) return false;
+            if (this.KafkaUser != input.KafkaUser || (this.KafkaUser != null && !this.KafkaUser.Equals(input.KafkaUser))) return false;
+            if (this.KafkaPassword != input.KafkaPassword || (this.KafkaPassword != null && !this.KafkaPassword.Equals(input.KafkaPassword))) return false;
+            if (this.KafkaConnectAddress != input.KafkaConnectAddress || (this.KafkaConnectAddress != null && !this.KafkaConnectAddress.Equals(input.KafkaConnectAddress))) return false;
+            if (this.KafkaSslEnable != input.KafkaSslEnable || (this.KafkaSslEnable != null && !this.KafkaSslEnable.Equals(input.KafkaSslEnable))) return false;
+            if (this.AccessPassword != input.AccessPassword || (this.AccessPassword != null && !this.AccessPassword.Equals(input.AccessPassword))) return false;
+            if (this.AccessUser != input.AccessUser || (this.AccessUser != null && !this.AccessUser.Equals(input.AccessUser))) return false;
+            if (this.ConnectAddress != input.ConnectAddress || (this.ConnectAddress != null && !this.ConnectAddress.Equals(input.ConnectAddress))) return false;
+            if (this.ExchangeName != input.ExchangeName || (this.ExchangeName != null && !this.ExchangeName.Equals(input.ExchangeName))) return false;
+            if (this.Vhost != input.Vhost || (this.Vhost != null && !this.Vhost.Equals(input.Vhost))) return false;
+            if (this.SslEnable != input.SslEnable || (this.SslEnable != null && !this.SslEnable.Equals(input.SslEnable))) return false;
+            if (this.KeyEncode != input.KeyEncode || (this.KeyEncode != null && !this.KeyEncode.Equals(input.KeyEncode))) return false;
+            if (this.Agency != input.Agency || (this.Agency != null && !this.Agency.Equals(input.Agency))) return false;
+            if (this.ChannelName != input.ChannelName || (this.ChannelName != null && !this.ChannelName.Equals(input.ChannelName))) return false;
+            if (this.SourceName != input.SourceName || (this.SourceName != null && !this.SourceName.Equals(input.SourceName))) return false;
+            if (this.CreatedTime != input.CreatedTime || (this.CreatedTime != null && !this.CreatedTime.Equals(input.CreatedTime))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.TriggerName != input.TriggerName || (this.TriggerName != null && !this.TriggerName.Equals(input.TriggerName))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ScheduleType == input.ScheduleType ||
-                    (this.ScheduleType != null &&
-                    this.ScheduleType.Equals(input.ScheduleType))
-                ) && 
-                (
-                    this.Schedule == input.Schedule ||
-                    (this.Schedule != null &&
-                    this.Schedule.Equals(input.Schedule))
-                ) && 
-                (
-                    this.UserEvent == input.UserEvent ||
-                    (this.UserEvent != null &&
-                    this.UserEvent.Equals(input.UserEvent))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Path == input.Path ||
-                    (this.Path != null &&
-                    this.Path.Equals(input.Path))
-                ) && 
-                (
-                    this.Protocol == input.Protocol ||
-                    (this.Protocol != null &&
-                    this.Protocol.Equals(input.Protocol))
-                ) && 
-                (
-                    this.ReqMethod == input.ReqMethod ||
-                    (this.ReqMethod != null &&
-                    this.ReqMethod.Equals(input.ReqMethod))
-                ) && 
-                (
-                    this.GroupId == input.GroupId ||
-                    (this.GroupId != null &&
-                    this.GroupId.Equals(input.GroupId))
-                ) && 
-                (
-                    this.GroupName == input.GroupName ||
-                    (this.GroupName != null &&
-                    this.GroupName.Equals(input.GroupName))
-                ) && 
-                (
-                    this.MatchMode == input.MatchMode ||
-                    (this.MatchMode != null &&
-                    this.MatchMode.Equals(input.MatchMode))
-                ) && 
-                (
-                    this.EnvName == input.EnvName ||
-                    (this.EnvName != null &&
-                    this.EnvName.Equals(input.EnvName))
-                ) && 
-                (
-                    this.EnvId == input.EnvId ||
-                    (this.EnvId != null &&
-                    this.EnvId.Equals(input.EnvId))
-                ) && 
-                (
-                    this.Auth == input.Auth ||
-                    (this.Auth != null &&
-                    this.Auth.Equals(input.Auth))
-                ) && 
-                (
-                    this.FuncInfo == input.FuncInfo ||
-                    (this.FuncInfo != null &&
-                    this.FuncInfo.Equals(input.FuncInfo))
-                ) && 
-                (
-                    this.SlDomain == input.SlDomain ||
-                    (this.SlDomain != null &&
-                    this.SlDomain.Equals(input.SlDomain))
-                ) && 
-                (
-                    this.BackendType == input.BackendType ||
-                    (this.BackendType != null &&
-                    this.BackendType.Equals(input.BackendType))
-                ) && 
-                (
-                    this.Operations == input.Operations ||
-                    this.Operations != null &&
-                    input.Operations != null &&
-                    this.Operations.SequenceEqual(input.Operations)
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.CollectionName == input.CollectionName ||
-                    (this.CollectionName != null &&
-                    this.CollectionName.Equals(input.CollectionName))
-                ) && 
-                (
-                    this.DbName == input.DbName ||
-                    (this.DbName != null &&
-                    this.DbName.Equals(input.DbName))
-                ) && 
-                (
-                    this.DbPassword == input.DbPassword ||
-                    (this.DbPassword != null &&
-                    this.DbPassword.Equals(input.DbPassword))
-                ) && 
-                (
-                    this.BatchSize == input.BatchSize ||
-                    (this.BatchSize != null &&
-                    this.BatchSize.Equals(input.BatchSize))
-                ) && 
-                (
-                    this.QueueId == input.QueueId ||
-                    (this.QueueId != null &&
-                    this.QueueId.Equals(input.QueueId))
-                ) && 
-                (
-                    this.ConsumerGroupId == input.ConsumerGroupId ||
-                    (this.ConsumerGroupId != null &&
-                    this.ConsumerGroupId.Equals(input.ConsumerGroupId))
-                ) && 
-                (
-                    this.PollingInterval == input.PollingInterval ||
-                    (this.PollingInterval != null &&
-                    this.PollingInterval.Equals(input.PollingInterval))
-                ) && 
-                (
-                    this.StreamName == input.StreamName ||
-                    (this.StreamName != null &&
-                    this.StreamName.Equals(input.StreamName))
-                ) && 
-                (
-                    this.SharditeratorType == input.SharditeratorType ||
-                    (this.SharditeratorType != null &&
-                    this.SharditeratorType.Equals(input.SharditeratorType))
-                ) && 
-                (
-                    this.PollingUnit == input.PollingUnit ||
-                    (this.PollingUnit != null &&
-                    this.PollingUnit.Equals(input.PollingUnit))
-                ) && 
-                (
-                    this.MaxFetchBytes == input.MaxFetchBytes ||
-                    (this.MaxFetchBytes != null &&
-                    this.MaxFetchBytes.Equals(input.MaxFetchBytes))
-                ) && 
-                (
-                    this.IsSerial == input.IsSerial ||
-                    (this.IsSerial != null &&
-                    this.IsSerial.Equals(input.IsSerial))
-                ) && 
-                (
-                    this.LogGroupId == input.LogGroupId ||
-                    (this.LogGroupId != null &&
-                    this.LogGroupId.Equals(input.LogGroupId))
-                ) && 
-                (
-                    this.LogTopicId == input.LogTopicId ||
-                    (this.LogTopicId != null &&
-                    this.LogTopicId.Equals(input.LogTopicId))
-                ) && 
-                (
-                    this.Bucket == input.Bucket ||
-                    (this.Bucket != null &&
-                    this.Bucket.Equals(input.Bucket))
-                ) && 
-                (
-                    this.Prefix == input.Prefix ||
-                    (this.Prefix != null &&
-                    this.Prefix.Equals(input.Prefix))
-                ) && 
-                (
-                    this.Suffix == input.Suffix ||
-                    (this.Suffix != null &&
-                    this.Suffix.Equals(input.Suffix))
-                ) && 
-                (
-                    this.Events == input.Events ||
-                    this.Events != null &&
-                    input.Events != null &&
-                    this.Events.SequenceEqual(input.Events)
-                ) && 
-                (
-                    this.TopicUrn == input.TopicUrn ||
-                    (this.TopicUrn != null &&
-                    this.TopicUrn.Equals(input.TopicUrn))
-                ) && 
-                (
-                    this.TopicIds == input.TopicIds ||
-                    this.TopicIds != null &&
-                    input.TopicIds != null &&
-                    this.TopicIds.SequenceEqual(input.TopicIds)
-                ) && 
-                (
-                    this.KafkaUser == input.KafkaUser ||
-                    (this.KafkaUser != null &&
-                    this.KafkaUser.Equals(input.KafkaUser))
-                ) && 
-                (
-                    this.KafkaPassword == input.KafkaPassword ||
-                    (this.KafkaPassword != null &&
-                    this.KafkaPassword.Equals(input.KafkaPassword))
-                ) && 
-                (
-                    this.KafkaConnectAddress == input.KafkaConnectAddress ||
-                    (this.KafkaConnectAddress != null &&
-                    this.KafkaConnectAddress.Equals(input.KafkaConnectAddress))
-                ) && 
-                (
-                    this.KafkaSslEnable == input.KafkaSslEnable ||
-                    (this.KafkaSslEnable != null &&
-                    this.KafkaSslEnable.Equals(input.KafkaSslEnable))
-                ) && 
-                (
-                    this.AccessPassword == input.AccessPassword ||
-                    (this.AccessPassword != null &&
-                    this.AccessPassword.Equals(input.AccessPassword))
-                ) && 
-                (
-                    this.AccessUser == input.AccessUser ||
-                    (this.AccessUser != null &&
-                    this.AccessUser.Equals(input.AccessUser))
-                ) && 
-                (
-                    this.ConnectAddress == input.ConnectAddress ||
-                    (this.ConnectAddress != null &&
-                    this.ConnectAddress.Equals(input.ConnectAddress))
-                ) && 
-                (
-                    this.ExchangeName == input.ExchangeName ||
-                    (this.ExchangeName != null &&
-                    this.ExchangeName.Equals(input.ExchangeName))
-                ) && 
-                (
-                    this.Vhost == input.Vhost ||
-                    (this.Vhost != null &&
-                    this.Vhost.Equals(input.Vhost))
-                ) && 
-                (
-                    this.SslEnable == input.SslEnable ||
-                    (this.SslEnable != null &&
-                    this.SslEnable.Equals(input.SslEnable))
-                ) && 
-                (
-                    this.KeyEncode == input.KeyEncode ||
-                    (this.KeyEncode != null &&
-                    this.KeyEncode.Equals(input.KeyEncode))
-                ) && 
-                (
-                    this.Agency == input.Agency ||
-                    (this.Agency != null &&
-                    this.Agency.Equals(input.Agency))
-                ) && 
-                (
-                    this.ChannelName == input.ChannelName ||
-                    (this.ChannelName != null &&
-                    this.ChannelName.Equals(input.ChannelName))
-                ) && 
-                (
-                    this.SourceName == input.SourceName ||
-                    (this.SourceName != null &&
-                    this.SourceName.Equals(input.SourceName))
-                ) && 
-                (
-                    this.CreatedTime == input.CreatedTime ||
-                    (this.CreatedTime != null &&
-                    this.CreatedTime.Equals(input.CreatedTime))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.TriggerName == input.TriggerName ||
-                    (this.TriggerName != null &&
-                    this.TriggerName.Equals(input.TriggerName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -1792,119 +1564,63 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.ScheduleType != null)
-                    hashCode = hashCode * 59 + this.ScheduleType.GetHashCode();
-                if (this.Schedule != null)
-                    hashCode = hashCode * 59 + this.Schedule.GetHashCode();
-                if (this.UserEvent != null)
-                    hashCode = hashCode * 59 + this.UserEvent.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Path != null)
-                    hashCode = hashCode * 59 + this.Path.GetHashCode();
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
-                if (this.ReqMethod != null)
-                    hashCode = hashCode * 59 + this.ReqMethod.GetHashCode();
-                if (this.GroupId != null)
-                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
-                if (this.GroupName != null)
-                    hashCode = hashCode * 59 + this.GroupName.GetHashCode();
-                if (this.MatchMode != null)
-                    hashCode = hashCode * 59 + this.MatchMode.GetHashCode();
-                if (this.EnvName != null)
-                    hashCode = hashCode * 59 + this.EnvName.GetHashCode();
-                if (this.EnvId != null)
-                    hashCode = hashCode * 59 + this.EnvId.GetHashCode();
-                if (this.Auth != null)
-                    hashCode = hashCode * 59 + this.Auth.GetHashCode();
-                if (this.FuncInfo != null)
-                    hashCode = hashCode * 59 + this.FuncInfo.GetHashCode();
-                if (this.SlDomain != null)
-                    hashCode = hashCode * 59 + this.SlDomain.GetHashCode();
-                if (this.BackendType != null)
-                    hashCode = hashCode * 59 + this.BackendType.GetHashCode();
-                if (this.Operations != null)
-                    hashCode = hashCode * 59 + this.Operations.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.CollectionName != null)
-                    hashCode = hashCode * 59 + this.CollectionName.GetHashCode();
-                if (this.DbName != null)
-                    hashCode = hashCode * 59 + this.DbName.GetHashCode();
-                if (this.DbPassword != null)
-                    hashCode = hashCode * 59 + this.DbPassword.GetHashCode();
-                if (this.BatchSize != null)
-                    hashCode = hashCode * 59 + this.BatchSize.GetHashCode();
-                if (this.QueueId != null)
-                    hashCode = hashCode * 59 + this.QueueId.GetHashCode();
-                if (this.ConsumerGroupId != null)
-                    hashCode = hashCode * 59 + this.ConsumerGroupId.GetHashCode();
-                if (this.PollingInterval != null)
-                    hashCode = hashCode * 59 + this.PollingInterval.GetHashCode();
-                if (this.StreamName != null)
-                    hashCode = hashCode * 59 + this.StreamName.GetHashCode();
-                if (this.SharditeratorType != null)
-                    hashCode = hashCode * 59 + this.SharditeratorType.GetHashCode();
-                if (this.PollingUnit != null)
-                    hashCode = hashCode * 59 + this.PollingUnit.GetHashCode();
-                if (this.MaxFetchBytes != null)
-                    hashCode = hashCode * 59 + this.MaxFetchBytes.GetHashCode();
-                if (this.IsSerial != null)
-                    hashCode = hashCode * 59 + this.IsSerial.GetHashCode();
-                if (this.LogGroupId != null)
-                    hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
-                if (this.LogTopicId != null)
-                    hashCode = hashCode * 59 + this.LogTopicId.GetHashCode();
-                if (this.Bucket != null)
-                    hashCode = hashCode * 59 + this.Bucket.GetHashCode();
-                if (this.Prefix != null)
-                    hashCode = hashCode * 59 + this.Prefix.GetHashCode();
-                if (this.Suffix != null)
-                    hashCode = hashCode * 59 + this.Suffix.GetHashCode();
-                if (this.Events != null)
-                    hashCode = hashCode * 59 + this.Events.GetHashCode();
-                if (this.TopicUrn != null)
-                    hashCode = hashCode * 59 + this.TopicUrn.GetHashCode();
-                if (this.TopicIds != null)
-                    hashCode = hashCode * 59 + this.TopicIds.GetHashCode();
-                if (this.KafkaUser != null)
-                    hashCode = hashCode * 59 + this.KafkaUser.GetHashCode();
-                if (this.KafkaPassword != null)
-                    hashCode = hashCode * 59 + this.KafkaPassword.GetHashCode();
-                if (this.KafkaConnectAddress != null)
-                    hashCode = hashCode * 59 + this.KafkaConnectAddress.GetHashCode();
-                if (this.KafkaSslEnable != null)
-                    hashCode = hashCode * 59 + this.KafkaSslEnable.GetHashCode();
-                if (this.AccessPassword != null)
-                    hashCode = hashCode * 59 + this.AccessPassword.GetHashCode();
-                if (this.AccessUser != null)
-                    hashCode = hashCode * 59 + this.AccessUser.GetHashCode();
-                if (this.ConnectAddress != null)
-                    hashCode = hashCode * 59 + this.ConnectAddress.GetHashCode();
-                if (this.ExchangeName != null)
-                    hashCode = hashCode * 59 + this.ExchangeName.GetHashCode();
-                if (this.Vhost != null)
-                    hashCode = hashCode * 59 + this.Vhost.GetHashCode();
-                if (this.SslEnable != null)
-                    hashCode = hashCode * 59 + this.SslEnable.GetHashCode();
-                if (this.KeyEncode != null)
-                    hashCode = hashCode * 59 + this.KeyEncode.GetHashCode();
-                if (this.Agency != null)
-                    hashCode = hashCode * 59 + this.Agency.GetHashCode();
-                if (this.ChannelName != null)
-                    hashCode = hashCode * 59 + this.ChannelName.GetHashCode();
-                if (this.SourceName != null)
-                    hashCode = hashCode * 59 + this.SourceName.GetHashCode();
-                if (this.CreatedTime != null)
-                    hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.TriggerName != null)
-                    hashCode = hashCode * 59 + this.TriggerName.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = hashCode * 59 + this.ScheduleType.GetHashCode();
+                if (this.Schedule != null) hashCode = hashCode * 59 + this.Schedule.GetHashCode();
+                if (this.UserEvent != null) hashCode = hashCode * 59 + this.UserEvent.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Path != null) hashCode = hashCode * 59 + this.Path.GetHashCode();
+                hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                hashCode = hashCode * 59 + this.ReqMethod.GetHashCode();
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.GroupName != null) hashCode = hashCode * 59 + this.GroupName.GetHashCode();
+                hashCode = hashCode * 59 + this.MatchMode.GetHashCode();
+                if (this.EnvName != null) hashCode = hashCode * 59 + this.EnvName.GetHashCode();
+                if (this.EnvId != null) hashCode = hashCode * 59 + this.EnvId.GetHashCode();
+                hashCode = hashCode * 59 + this.Auth.GetHashCode();
+                if (this.FuncInfo != null) hashCode = hashCode * 59 + this.FuncInfo.GetHashCode();
+                if (this.SlDomain != null) hashCode = hashCode * 59 + this.SlDomain.GetHashCode();
+                hashCode = hashCode * 59 + this.BackendType.GetHashCode();
+                if (this.Operations != null) hashCode = hashCode * 59 + this.Operations.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.CollectionName != null) hashCode = hashCode * 59 + this.CollectionName.GetHashCode();
+                if (this.DbName != null) hashCode = hashCode * 59 + this.DbName.GetHashCode();
+                if (this.DbPassword != null) hashCode = hashCode * 59 + this.DbPassword.GetHashCode();
+                if (this.BatchSize != null) hashCode = hashCode * 59 + this.BatchSize.GetHashCode();
+                if (this.QueueId != null) hashCode = hashCode * 59 + this.QueueId.GetHashCode();
+                if (this.ConsumerGroupId != null) hashCode = hashCode * 59 + this.ConsumerGroupId.GetHashCode();
+                if (this.PollingInterval != null) hashCode = hashCode * 59 + this.PollingInterval.GetHashCode();
+                if (this.StreamName != null) hashCode = hashCode * 59 + this.StreamName.GetHashCode();
+                hashCode = hashCode * 59 + this.SharditeratorType.GetHashCode();
+                hashCode = hashCode * 59 + this.PollingUnit.GetHashCode();
+                if (this.MaxFetchBytes != null) hashCode = hashCode * 59 + this.MaxFetchBytes.GetHashCode();
+                hashCode = hashCode * 59 + this.IsSerial.GetHashCode();
+                if (this.LogGroupId != null) hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
+                if (this.LogTopicId != null) hashCode = hashCode * 59 + this.LogTopicId.GetHashCode();
+                if (this.Bucket != null) hashCode = hashCode * 59 + this.Bucket.GetHashCode();
+                if (this.Prefix != null) hashCode = hashCode * 59 + this.Prefix.GetHashCode();
+                if (this.Suffix != null) hashCode = hashCode * 59 + this.Suffix.GetHashCode();
+                if (this.Events != null) hashCode = hashCode * 59 + this.Events.GetHashCode();
+                if (this.TopicUrn != null) hashCode = hashCode * 59 + this.TopicUrn.GetHashCode();
+                if (this.TopicIds != null) hashCode = hashCode * 59 + this.TopicIds.GetHashCode();
+                if (this.KafkaUser != null) hashCode = hashCode * 59 + this.KafkaUser.GetHashCode();
+                if (this.KafkaPassword != null) hashCode = hashCode * 59 + this.KafkaPassword.GetHashCode();
+                if (this.KafkaConnectAddress != null) hashCode = hashCode * 59 + this.KafkaConnectAddress.GetHashCode();
+                if (this.KafkaSslEnable != null) hashCode = hashCode * 59 + this.KafkaSslEnable.GetHashCode();
+                if (this.AccessPassword != null) hashCode = hashCode * 59 + this.AccessPassword.GetHashCode();
+                if (this.AccessUser != null) hashCode = hashCode * 59 + this.AccessUser.GetHashCode();
+                if (this.ConnectAddress != null) hashCode = hashCode * 59 + this.ConnectAddress.GetHashCode();
+                if (this.ExchangeName != null) hashCode = hashCode * 59 + this.ExchangeName.GetHashCode();
+                if (this.Vhost != null) hashCode = hashCode * 59 + this.Vhost.GetHashCode();
+                if (this.SslEnable != null) hashCode = hashCode * 59 + this.SslEnable.GetHashCode();
+                if (this.KeyEncode != null) hashCode = hashCode * 59 + this.KeyEncode.GetHashCode();
+                if (this.Agency != null) hashCode = hashCode * 59 + this.Agency.GetHashCode();
+                if (this.ChannelName != null) hashCode = hashCode * 59 + this.ChannelName.GetHashCode();
+                if (this.SourceName != null) hashCode = hashCode * 59 + this.SourceName.GetHashCode();
+                if (this.CreatedTime != null) hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.TriggerName != null) hashCode = hashCode * 59 + this.TriggerName.GetHashCode();
                 return hashCode;
             }
         }

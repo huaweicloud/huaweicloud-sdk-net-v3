@@ -476,51 +476,17 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(UploadAssetReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
+            if (this.VideoMd5 != input.VideoMd5 || (this.VideoMd5 != null && !this.VideoMd5.Equals(input.VideoMd5))) return false;
+            if (this.VideoName != input.VideoName || (this.VideoName != null && !this.VideoName.Equals(input.VideoName))) return false;
+            if (this.VideoType != input.VideoType) return false;
+            if (this.CoverId != input.CoverId || (this.CoverId != null && !this.CoverId.Equals(input.CoverId))) return false;
+            if (this.CoverType != input.CoverType) return false;
+            if (this.CoverMd5 != input.CoverMd5 || (this.CoverMd5 != null && !this.CoverMd5.Equals(input.CoverMd5))) return false;
+            if (this.Subtitles != input.Subtitles || (this.Subtitles != null && input.Subtitles != null && !this.Subtitles.SequenceEqual(input.Subtitles))) return false;
 
-            return 
-                (
-                    this.AssetId == input.AssetId ||
-                    (this.AssetId != null &&
-                    this.AssetId.Equals(input.AssetId))
-                ) && 
-                (
-                    this.VideoMd5 == input.VideoMd5 ||
-                    (this.VideoMd5 != null &&
-                    this.VideoMd5.Equals(input.VideoMd5))
-                ) && 
-                (
-                    this.VideoName == input.VideoName ||
-                    (this.VideoName != null &&
-                    this.VideoName.Equals(input.VideoName))
-                ) && 
-                (
-                    this.VideoType == input.VideoType ||
-                    (this.VideoType != null &&
-                    this.VideoType.Equals(input.VideoType))
-                ) && 
-                (
-                    this.CoverId == input.CoverId ||
-                    (this.CoverId != null &&
-                    this.CoverId.Equals(input.CoverId))
-                ) && 
-                (
-                    this.CoverType == input.CoverType ||
-                    (this.CoverType != null &&
-                    this.CoverType.Equals(input.CoverType))
-                ) && 
-                (
-                    this.CoverMd5 == input.CoverMd5 ||
-                    (this.CoverMd5 != null &&
-                    this.CoverMd5.Equals(input.CoverMd5))
-                ) && 
-                (
-                    this.Subtitles == input.Subtitles ||
-                    this.Subtitles != null &&
-                    input.Subtitles != null &&
-                    this.Subtitles.SequenceEqual(input.Subtitles)
-                );
+            return true;
         }
 
         /// <summary>
@@ -530,23 +496,15 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AssetId != null)
-                    hashCode = hashCode * 59 + this.AssetId.GetHashCode();
-                if (this.VideoMd5 != null)
-                    hashCode = hashCode * 59 + this.VideoMd5.GetHashCode();
-                if (this.VideoName != null)
-                    hashCode = hashCode * 59 + this.VideoName.GetHashCode();
-                if (this.VideoType != null)
-                    hashCode = hashCode * 59 + this.VideoType.GetHashCode();
-                if (this.CoverId != null)
-                    hashCode = hashCode * 59 + this.CoverId.GetHashCode();
-                if (this.CoverType != null)
-                    hashCode = hashCode * 59 + this.CoverType.GetHashCode();
-                if (this.CoverMd5 != null)
-                    hashCode = hashCode * 59 + this.CoverMd5.GetHashCode();
-                if (this.Subtitles != null)
-                    hashCode = hashCode * 59 + this.Subtitles.GetHashCode();
+                var hashCode = 41;
+                if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                if (this.VideoMd5 != null) hashCode = hashCode * 59 + this.VideoMd5.GetHashCode();
+                if (this.VideoName != null) hashCode = hashCode * 59 + this.VideoName.GetHashCode();
+                hashCode = hashCode * 59 + this.VideoType.GetHashCode();
+                if (this.CoverId != null) hashCode = hashCode * 59 + this.CoverId.GetHashCode();
+                hashCode = hashCode * 59 + this.CoverType.GetHashCode();
+                if (this.CoverMd5 != null) hashCode = hashCode * 59 + this.CoverMd5.GetHashCode();
+                if (this.Subtitles != null) hashCode = hashCode * 59 + this.Subtitles.GetHashCode();
                 return hashCode;
             }
         }

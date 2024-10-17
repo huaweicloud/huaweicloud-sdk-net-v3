@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         /// </summary>
         public bool Equals(BatchCreateInstanceIpRuleResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SuccessNum != input.SuccessNum || (this.SuccessNum != null && !this.SuccessNum.Equals(input.SuccessNum))) return false;
 
-            return 
-                (
-                    this.SuccessNum == input.SuccessNum ||
-                    (this.SuccessNum != null &&
-                    this.SuccessNum.Equals(input.SuccessNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SuccessNum != null)
-                    hashCode = hashCode * 59 + this.SuccessNum.GetHashCode();
+                var hashCode = 41;
+                if (this.SuccessNum != null) hashCode = hashCode * 59 + this.SuccessNum.GetHashCode();
                 return hashCode;
             }
         }

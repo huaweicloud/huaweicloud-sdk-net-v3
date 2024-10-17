@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(BatchRestoreDatabaseResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RestoreResult != input.RestoreResult || (this.RestoreResult != null && input.RestoreResult != null && !this.RestoreResult.SequenceEqual(input.RestoreResult))) return false;
 
-            return 
-                (
-                    this.RestoreResult == input.RestoreResult ||
-                    this.RestoreResult != null &&
-                    input.RestoreResult != null &&
-                    this.RestoreResult.SequenceEqual(input.RestoreResult)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RestoreResult != null)
-                    hashCode = hashCode * 59 + this.RestoreResult.GetHashCode();
+                var hashCode = 41;
+                if (this.RestoreResult != null) hashCode = hashCode * 59 + this.RestoreResult.GetHashCode();
                 return hashCode;
             }
         }

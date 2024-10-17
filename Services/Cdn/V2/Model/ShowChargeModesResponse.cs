@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(ShowChargeModesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Result != input.Result || (this.Result != null && input.Result != null && !this.Result.SequenceEqual(input.Result))) return false;
 
-            return 
-                (
-                    this.Result == input.Result ||
-                    this.Result != null &&
-                    input.Result != null &&
-                    this.Result.SequenceEqual(input.Result)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Result != null)
-                    hashCode = hashCode * 59 + this.Result.GetHashCode();
+                var hashCode = 41;
+                if (this.Result != null) hashCode = hashCode * 59 + this.Result.GetHashCode();
                 return hashCode;
             }
         }

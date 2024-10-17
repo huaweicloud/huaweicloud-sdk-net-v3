@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(UpdateTemplateMetadataRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TemplateId != input.TemplateId || (this.TemplateId != null && !this.TemplateId.Equals(input.TemplateId))) return false;
+            if (this.TemplateDescription != input.TemplateDescription || (this.TemplateDescription != null && !this.TemplateDescription.Equals(input.TemplateDescription))) return false;
 
-            return 
-                (
-                    this.TemplateId == input.TemplateId ||
-                    (this.TemplateId != null &&
-                    this.TemplateId.Equals(input.TemplateId))
-                ) && 
-                (
-                    this.TemplateDescription == input.TemplateDescription ||
-                    (this.TemplateDescription != null &&
-                    this.TemplateDescription.Equals(input.TemplateDescription))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TemplateId != null)
-                    hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
-                if (this.TemplateDescription != null)
-                    hashCode = hashCode * 59 + this.TemplateDescription.GetHashCode();
+                var hashCode = 41;
+                if (this.TemplateId != null) hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
+                if (this.TemplateDescription != null) hashCode = hashCode * 59 + this.TemplateDescription.GetHashCode();
                 return hashCode;
             }
         }

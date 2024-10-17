@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(HttpQueryCfwAttackLogsResponseDTOData input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Records != input.Records || (this.Records != null && input.Records != null && !this.Records.SequenceEqual(input.Records))) return false;
 
-            return 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Records == input.Records ||
-                    this.Records != null &&
-                    input.Records != null &&
-                    this.Records.SequenceEqual(input.Records)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Records != null)
-                    hashCode = hashCode * 59 + this.Records.GetHashCode();
+                var hashCode = 41;
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Records != null) hashCode = hashCode * 59 + this.Records.GetHashCode();
                 return hashCode;
             }
         }

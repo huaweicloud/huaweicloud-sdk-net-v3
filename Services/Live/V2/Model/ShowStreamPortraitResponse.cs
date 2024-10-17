@@ -57,21 +57,11 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         /// </summary>
         public bool Equals(ShowStreamPortraitResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StreamPortraits != input.StreamPortraits || (this.StreamPortraits != null && input.StreamPortraits != null && !this.StreamPortraits.SequenceEqual(input.StreamPortraits))) return false;
+            if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
-            return 
-                (
-                    this.StreamPortraits == input.StreamPortraits ||
-                    this.StreamPortraits != null &&
-                    input.StreamPortraits != null &&
-                    this.StreamPortraits.SequenceEqual(input.StreamPortraits)
-                ) && 
-                (
-                    this.XRequestId == input.XRequestId ||
-                    (this.XRequestId != null &&
-                    this.XRequestId.Equals(input.XRequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +71,9 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StreamPortraits != null)
-                    hashCode = hashCode * 59 + this.StreamPortraits.GetHashCode();
-                if (this.XRequestId != null)
-                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.StreamPortraits != null) hashCode = hashCode * 59 + this.StreamPortraits.GetHashCode();
+                if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

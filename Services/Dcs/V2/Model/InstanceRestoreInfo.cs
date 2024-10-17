@@ -245,65 +245,20 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(InstanceRestoreInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BackupId != input.BackupId || (this.BackupId != null && !this.BackupId.Equals(input.BackupId))) return false;
+            if (this.RestoreId != input.RestoreId || (this.RestoreId != null && !this.RestoreId.Equals(input.RestoreId))) return false;
+            if (this.BackupName != input.BackupName || (this.BackupName != null && !this.BackupName.Equals(input.BackupName))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.RestoreRemark != input.RestoreRemark || (this.RestoreRemark != null && !this.RestoreRemark.Equals(input.RestoreRemark))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.Progress != input.Progress || (this.Progress != null && !this.Progress.Equals(input.Progress))) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
+            if (this.RestoreName != input.RestoreName || (this.RestoreName != null && !this.RestoreName.Equals(input.RestoreName))) return false;
+            if (this.BackupRemark != input.BackupRemark || (this.BackupRemark != null && !this.BackupRemark.Equals(input.BackupRemark))) return false;
+            if (this.Status != input.Status) return false;
 
-            return 
-                (
-                    this.BackupId == input.BackupId ||
-                    (this.BackupId != null &&
-                    this.BackupId.Equals(input.BackupId))
-                ) && 
-                (
-                    this.RestoreId == input.RestoreId ||
-                    (this.RestoreId != null &&
-                    this.RestoreId.Equals(input.RestoreId))
-                ) && 
-                (
-                    this.BackupName == input.BackupName ||
-                    (this.BackupName != null &&
-                    this.BackupName.Equals(input.BackupName))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.RestoreRemark == input.RestoreRemark ||
-                    (this.RestoreRemark != null &&
-                    this.RestoreRemark.Equals(input.RestoreRemark))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.Progress == input.Progress ||
-                    (this.Progress != null &&
-                    this.Progress.Equals(input.Progress))
-                ) && 
-                (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
-                ) && 
-                (
-                    this.RestoreName == input.RestoreName ||
-                    (this.RestoreName != null &&
-                    this.RestoreName.Equals(input.RestoreName))
-                ) && 
-                (
-                    this.BackupRemark == input.BackupRemark ||
-                    (this.BackupRemark != null &&
-                    this.BackupRemark.Equals(input.BackupRemark))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
+            return true;
         }
 
         /// <summary>
@@ -313,29 +268,18 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BackupId != null)
-                    hashCode = hashCode * 59 + this.BackupId.GetHashCode();
-                if (this.RestoreId != null)
-                    hashCode = hashCode * 59 + this.RestoreId.GetHashCode();
-                if (this.BackupName != null)
-                    hashCode = hashCode * 59 + this.BackupName.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.RestoreRemark != null)
-                    hashCode = hashCode * 59 + this.RestoreRemark.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.Progress != null)
-                    hashCode = hashCode * 59 + this.Progress.GetHashCode();
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.RestoreName != null)
-                    hashCode = hashCode * 59 + this.RestoreName.GetHashCode();
-                if (this.BackupRemark != null)
-                    hashCode = hashCode * 59 + this.BackupRemark.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                var hashCode = 41;
+                if (this.BackupId != null) hashCode = hashCode * 59 + this.BackupId.GetHashCode();
+                if (this.RestoreId != null) hashCode = hashCode * 59 + this.RestoreId.GetHashCode();
+                if (this.BackupName != null) hashCode = hashCode * 59 + this.BackupName.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.RestoreRemark != null) hashCode = hashCode * 59 + this.RestoreRemark.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.Progress != null) hashCode = hashCode * 59 + this.Progress.GetHashCode();
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.RestoreName != null) hashCode = hashCode * 59 + this.RestoreName.GetHashCode();
+                if (this.BackupRemark != null) hashCode = hashCode * 59 + this.BackupRemark.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         /// </summary>
         public bool Equals(Node input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ParentNode != input.ParentNode || (this.ParentNode != null && !this.ParentNode.Equals(input.ParentNode))) return false;
+            if (this.Category != input.Category || (this.Category != null && !this.Category.Equals(input.Category))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.IgnoreError != input.IgnoreError || (this.IgnoreError != null && !this.IgnoreError.Equals(input.IgnoreError))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && !this.Metadata.Equals(input.Metadata))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.TaskName != input.TaskName || (this.TaskName != null && !this.TaskName.Equals(input.TaskName))) return false;
 
-            return 
-                (
-                    this.ParentNode == input.ParentNode ||
-                    (this.ParentNode != null &&
-                    this.ParentNode.Equals(input.ParentNode))
-                ) && 
-                (
-                    this.Category == input.Category ||
-                    (this.Category != null &&
-                    this.Category.Equals(input.Category))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.IgnoreError == input.IgnoreError ||
-                    (this.IgnoreError != null &&
-                    this.IgnoreError.Equals(input.IgnoreError))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    (this.Metadata != null &&
-                    this.Metadata.Equals(input.Metadata))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.TaskName == input.TaskName ||
-                    (this.TaskName != null &&
-                    this.TaskName.Equals(input.TaskName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ParentNode != null)
-                    hashCode = hashCode * 59 + this.ParentNode.GetHashCode();
-                if (this.Category != null)
-                    hashCode = hashCode * 59 + this.Category.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.IgnoreError != null)
-                    hashCode = hashCode * 59 + this.IgnoreError.GetHashCode();
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.TaskName != null)
-                    hashCode = hashCode * 59 + this.TaskName.GetHashCode();
+                var hashCode = 41;
+                if (this.ParentNode != null) hashCode = hashCode * 59 + this.ParentNode.GetHashCode();
+                if (this.Category != null) hashCode = hashCode * 59 + this.Category.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.IgnoreError != null) hashCode = hashCode * 59 + this.IgnoreError.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.TaskName != null) hashCode = hashCode * 59 + this.TaskName.GetHashCode();
                 return hashCode;
             }
         }

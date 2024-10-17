@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         /// </summary>
         public bool Equals(ShowNewTaskStatusResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TaskStatus != input.TaskStatus || (this.TaskStatus != null && !this.TaskStatus.Equals(input.TaskStatus))) return false;
+            if (this.TaskMsg != input.TaskMsg || (this.TaskMsg != null && !this.TaskMsg.Equals(input.TaskMsg))) return false;
 
-            return 
-                (
-                    this.TaskStatus == input.TaskStatus ||
-                    (this.TaskStatus != null &&
-                    this.TaskStatus.Equals(input.TaskStatus))
-                ) && 
-                (
-                    this.TaskMsg == input.TaskMsg ||
-                    (this.TaskMsg != null &&
-                    this.TaskMsg.Equals(input.TaskMsg))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TaskStatus != null)
-                    hashCode = hashCode * 59 + this.TaskStatus.GetHashCode();
-                if (this.TaskMsg != null)
-                    hashCode = hashCode * 59 + this.TaskMsg.GetHashCode();
+                var hashCode = 41;
+                if (this.TaskStatus != null) hashCode = hashCode * 59 + this.TaskStatus.GetHashCode();
+                if (this.TaskMsg != null) hashCode = hashCode * 59 + this.TaskMsg.GetHashCode();
                 return hashCode;
             }
         }

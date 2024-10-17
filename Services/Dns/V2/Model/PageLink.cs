@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public bool Equals(PageLink input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Self != input.Self || (this.Self != null && !this.Self.Equals(input.Self))) return false;
+            if (this.Next != input.Next || (this.Next != null && !this.Next.Equals(input.Next))) return false;
 
-            return 
-                (
-                    this.Self == input.Self ||
-                    (this.Self != null &&
-                    this.Self.Equals(input.Self))
-                ) && 
-                (
-                    this.Next == input.Next ||
-                    (this.Next != null &&
-                    this.Next.Equals(input.Next))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Self != null)
-                    hashCode = hashCode * 59 + this.Self.GetHashCode();
-                if (this.Next != null)
-                    hashCode = hashCode * 59 + this.Next.GetHashCode();
+                var hashCode = 41;
+                if (this.Self != null) hashCode = hashCode * 59 + this.Self.GetHashCode();
+                if (this.Next != null) hashCode = hashCode * 59 + this.Next.GetHashCode();
                 return hashCode;
             }
         }

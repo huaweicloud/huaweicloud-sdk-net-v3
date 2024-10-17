@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(NodeEIPSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Iptype != input.Iptype || (this.Iptype != null && !this.Iptype.Equals(input.Iptype))) return false;
+            if (this.Bandwidth != input.Bandwidth || (this.Bandwidth != null && !this.Bandwidth.Equals(input.Bandwidth))) return false;
 
-            return 
-                (
-                    this.Iptype == input.Iptype ||
-                    (this.Iptype != null &&
-                    this.Iptype.Equals(input.Iptype))
-                ) && 
-                (
-                    this.Bandwidth == input.Bandwidth ||
-                    (this.Bandwidth != null &&
-                    this.Bandwidth.Equals(input.Bandwidth))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Iptype != null)
-                    hashCode = hashCode * 59 + this.Iptype.GetHashCode();
-                if (this.Bandwidth != null)
-                    hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
+                var hashCode = 41;
+                if (this.Iptype != null) hashCode = hashCode * 59 + this.Iptype.GetHashCode();
+                if (this.Bandwidth != null) hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(IdcardBackVerificationResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ValidDate != input.ValidDate || (this.ValidDate != null && !this.ValidDate.Equals(input.ValidDate))) return false;
+            if (this.ValidValidityPeriod != input.ValidValidityPeriod || (this.ValidValidityPeriod != null && !this.ValidValidityPeriod.Equals(input.ValidValidityPeriod))) return false;
 
-            return 
-                (
-                    this.ValidDate == input.ValidDate ||
-                    (this.ValidDate != null &&
-                    this.ValidDate.Equals(input.ValidDate))
-                ) && 
-                (
-                    this.ValidValidityPeriod == input.ValidValidityPeriod ||
-                    (this.ValidValidityPeriod != null &&
-                    this.ValidValidityPeriod.Equals(input.ValidValidityPeriod))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ValidDate != null)
-                    hashCode = hashCode * 59 + this.ValidDate.GetHashCode();
-                if (this.ValidValidityPeriod != null)
-                    hashCode = hashCode * 59 + this.ValidValidityPeriod.GetHashCode();
+                var hashCode = 41;
+                if (this.ValidDate != null) hashCode = hashCode * 59 + this.ValidDate.GetHashCode();
+                if (this.ValidValidityPeriod != null) hashCode = hashCode * 59 + this.ValidValidityPeriod.GetHashCode();
                 return hashCode;
             }
         }

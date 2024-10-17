@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(SetAuditlogPolicyRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KeepDays != input.KeepDays || (this.KeepDays != null && !this.KeepDays.Equals(input.KeepDays))) return false;
+            if (this.ReserveAuditlogs != input.ReserveAuditlogs || (this.ReserveAuditlogs != null && !this.ReserveAuditlogs.Equals(input.ReserveAuditlogs))) return false;
+            if (this.AuditScope != input.AuditScope || (this.AuditScope != null && !this.AuditScope.Equals(input.AuditScope))) return false;
+            if (this.AuditTypes != input.AuditTypes || (this.AuditTypes != null && input.AuditTypes != null && !this.AuditTypes.SequenceEqual(input.AuditTypes))) return false;
 
-            return 
-                (
-                    this.KeepDays == input.KeepDays ||
-                    (this.KeepDays != null &&
-                    this.KeepDays.Equals(input.KeepDays))
-                ) && 
-                (
-                    this.ReserveAuditlogs == input.ReserveAuditlogs ||
-                    (this.ReserveAuditlogs != null &&
-                    this.ReserveAuditlogs.Equals(input.ReserveAuditlogs))
-                ) && 
-                (
-                    this.AuditScope == input.AuditScope ||
-                    (this.AuditScope != null &&
-                    this.AuditScope.Equals(input.AuditScope))
-                ) && 
-                (
-                    this.AuditTypes == input.AuditTypes ||
-                    this.AuditTypes != null &&
-                    input.AuditTypes != null &&
-                    this.AuditTypes.SequenceEqual(input.AuditTypes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KeepDays != null)
-                    hashCode = hashCode * 59 + this.KeepDays.GetHashCode();
-                if (this.ReserveAuditlogs != null)
-                    hashCode = hashCode * 59 + this.ReserveAuditlogs.GetHashCode();
-                if (this.AuditScope != null)
-                    hashCode = hashCode * 59 + this.AuditScope.GetHashCode();
-                if (this.AuditTypes != null)
-                    hashCode = hashCode * 59 + this.AuditTypes.GetHashCode();
+                var hashCode = 41;
+                if (this.KeepDays != null) hashCode = hashCode * 59 + this.KeepDays.GetHashCode();
+                if (this.ReserveAuditlogs != null) hashCode = hashCode * 59 + this.ReserveAuditlogs.GetHashCode();
+                if (this.AuditScope != null) hashCode = hashCode * 59 + this.AuditScope.GetHashCode();
+                if (this.AuditTypes != null) hashCode = hashCode * 59 + this.AuditTypes.GetHashCode();
                 return hashCode;
             }
         }

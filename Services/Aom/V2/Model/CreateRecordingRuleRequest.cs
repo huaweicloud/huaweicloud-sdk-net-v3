@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(CreateRecordingRuleRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PrometheusInstance != input.PrometheusInstance || (this.PrometheusInstance != null && !this.PrometheusInstance.Equals(input.PrometheusInstance))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
-            return 
-                (
-                    this.PrometheusInstance == input.PrometheusInstance ||
-                    (this.PrometheusInstance != null &&
-                    this.PrometheusInstance.Equals(input.PrometheusInstance))
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PrometheusInstance != null)
-                    hashCode = hashCode * 59 + this.PrometheusInstance.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                var hashCode = 41;
+                if (this.PrometheusInstance != null) hashCode = hashCode * 59 + this.PrometheusInstance.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

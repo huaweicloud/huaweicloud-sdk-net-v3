@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ShowBackupRestoreTimeResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RestoreTimes != input.RestoreTimes || (this.RestoreTimes != null && input.RestoreTimes != null && !this.RestoreTimes.SequenceEqual(input.RestoreTimes))) return false;
 
-            return 
-                (
-                    this.RestoreTimes == input.RestoreTimes ||
-                    this.RestoreTimes != null &&
-                    input.RestoreTimes != null &&
-                    this.RestoreTimes.SequenceEqual(input.RestoreTimes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RestoreTimes != null)
-                    hashCode = hashCode * 59 + this.RestoreTimes.GetHashCode();
+                var hashCode = 41;
+                if (this.RestoreTimes != null) hashCode = hashCode * 59 + this.RestoreTimes.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(CreateVolumeResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
+            if (this.VolumeIds != input.VolumeIds || (this.VolumeIds != null && input.VolumeIds != null && !this.VolumeIds.SequenceEqual(input.VolumeIds))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.OrderId == input.OrderId ||
-                    (this.OrderId != null &&
-                    this.OrderId.Equals(input.OrderId))
-                ) && 
-                (
-                    this.VolumeIds == input.VolumeIds ||
-                    this.VolumeIds != null &&
-                    input.VolumeIds != null &&
-                    this.VolumeIds.SequenceEqual(input.VolumeIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.OrderId != null)
-                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
-                if (this.VolumeIds != null)
-                    hashCode = hashCode * 59 + this.VolumeIds.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.VolumeIds != null) hashCode = hashCode * 59 + this.VolumeIds.GetHashCode();
                 return hashCode;
             }
         }

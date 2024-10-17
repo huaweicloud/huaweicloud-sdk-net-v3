@@ -389,96 +389,26 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(CreateAssetByFileUploadReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Title != input.Title || (this.Title != null && !this.Title.Equals(input.Title))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.VideoName != input.VideoName || (this.VideoName != null && !this.VideoName.Equals(input.VideoName))) return false;
+            if (this.VideoType != input.VideoType || (this.VideoType != null && !this.VideoType.Equals(input.VideoType))) return false;
+            if (this.CategoryId != input.CategoryId || (this.CategoryId != null && !this.CategoryId.Equals(input.CategoryId))) return false;
+            if (this.VideoMd5 != input.VideoMd5 || (this.VideoMd5 != null && !this.VideoMd5.Equals(input.VideoMd5))) return false;
+            if (this.CoverType != input.CoverType) return false;
+            if (this.CoverMd5 != input.CoverMd5 || (this.CoverMd5 != null && !this.CoverMd5.Equals(input.CoverMd5))) return false;
+            if (this.Subtitles != input.Subtitles || (this.Subtitles != null && input.Subtitles != null && !this.Subtitles.SequenceEqual(input.Subtitles))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && !this.Tags.Equals(input.Tags))) return false;
+            if (this.AutoPublish != input.AutoPublish) return false;
+            if (this.TemplateGroupName != input.TemplateGroupName || (this.TemplateGroupName != null && !this.TemplateGroupName.Equals(input.TemplateGroupName))) return false;
+            if (this.AutoEncrypt != input.AutoEncrypt || (this.AutoEncrypt != null && !this.AutoEncrypt.Equals(input.AutoEncrypt))) return false;
+            if (this.AutoPreheat != input.AutoPreheat || (this.AutoPreheat != null && !this.AutoPreheat.Equals(input.AutoPreheat))) return false;
+            if (this.Thumbnail != input.Thumbnail || (this.Thumbnail != null && !this.Thumbnail.Equals(input.Thumbnail))) return false;
+            if (this.Review != input.Review || (this.Review != null && !this.Review.Equals(input.Review))) return false;
+            if (this.WorkflowName != input.WorkflowName || (this.WorkflowName != null && !this.WorkflowName.Equals(input.WorkflowName))) return false;
 
-            return 
-                (
-                    this.Title == input.Title ||
-                    (this.Title != null &&
-                    this.Title.Equals(input.Title))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.VideoName == input.VideoName ||
-                    (this.VideoName != null &&
-                    this.VideoName.Equals(input.VideoName))
-                ) && 
-                (
-                    this.VideoType == input.VideoType ||
-                    (this.VideoType != null &&
-                    this.VideoType.Equals(input.VideoType))
-                ) && 
-                (
-                    this.CategoryId == input.CategoryId ||
-                    (this.CategoryId != null &&
-                    this.CategoryId.Equals(input.CategoryId))
-                ) && 
-                (
-                    this.VideoMd5 == input.VideoMd5 ||
-                    (this.VideoMd5 != null &&
-                    this.VideoMd5.Equals(input.VideoMd5))
-                ) && 
-                (
-                    this.CoverType == input.CoverType ||
-                    (this.CoverType != null &&
-                    this.CoverType.Equals(input.CoverType))
-                ) && 
-                (
-                    this.CoverMd5 == input.CoverMd5 ||
-                    (this.CoverMd5 != null &&
-                    this.CoverMd5.Equals(input.CoverMd5))
-                ) && 
-                (
-                    this.Subtitles == input.Subtitles ||
-                    this.Subtitles != null &&
-                    input.Subtitles != null &&
-                    this.Subtitles.SequenceEqual(input.Subtitles)
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    (this.Tags != null &&
-                    this.Tags.Equals(input.Tags))
-                ) && 
-                (
-                    this.AutoPublish == input.AutoPublish ||
-                    (this.AutoPublish != null &&
-                    this.AutoPublish.Equals(input.AutoPublish))
-                ) && 
-                (
-                    this.TemplateGroupName == input.TemplateGroupName ||
-                    (this.TemplateGroupName != null &&
-                    this.TemplateGroupName.Equals(input.TemplateGroupName))
-                ) && 
-                (
-                    this.AutoEncrypt == input.AutoEncrypt ||
-                    (this.AutoEncrypt != null &&
-                    this.AutoEncrypt.Equals(input.AutoEncrypt))
-                ) && 
-                (
-                    this.AutoPreheat == input.AutoPreheat ||
-                    (this.AutoPreheat != null &&
-                    this.AutoPreheat.Equals(input.AutoPreheat))
-                ) && 
-                (
-                    this.Thumbnail == input.Thumbnail ||
-                    (this.Thumbnail != null &&
-                    this.Thumbnail.Equals(input.Thumbnail))
-                ) && 
-                (
-                    this.Review == input.Review ||
-                    (this.Review != null &&
-                    this.Review.Equals(input.Review))
-                ) && 
-                (
-                    this.WorkflowName == input.WorkflowName ||
-                    (this.WorkflowName != null &&
-                    this.WorkflowName.Equals(input.WorkflowName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -488,41 +418,24 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Title != null)
-                    hashCode = hashCode * 59 + this.Title.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.VideoName != null)
-                    hashCode = hashCode * 59 + this.VideoName.GetHashCode();
-                if (this.VideoType != null)
-                    hashCode = hashCode * 59 + this.VideoType.GetHashCode();
-                if (this.CategoryId != null)
-                    hashCode = hashCode * 59 + this.CategoryId.GetHashCode();
-                if (this.VideoMd5 != null)
-                    hashCode = hashCode * 59 + this.VideoMd5.GetHashCode();
-                if (this.CoverType != null)
-                    hashCode = hashCode * 59 + this.CoverType.GetHashCode();
-                if (this.CoverMd5 != null)
-                    hashCode = hashCode * 59 + this.CoverMd5.GetHashCode();
-                if (this.Subtitles != null)
-                    hashCode = hashCode * 59 + this.Subtitles.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.AutoPublish != null)
-                    hashCode = hashCode * 59 + this.AutoPublish.GetHashCode();
-                if (this.TemplateGroupName != null)
-                    hashCode = hashCode * 59 + this.TemplateGroupName.GetHashCode();
-                if (this.AutoEncrypt != null)
-                    hashCode = hashCode * 59 + this.AutoEncrypt.GetHashCode();
-                if (this.AutoPreheat != null)
-                    hashCode = hashCode * 59 + this.AutoPreheat.GetHashCode();
-                if (this.Thumbnail != null)
-                    hashCode = hashCode * 59 + this.Thumbnail.GetHashCode();
-                if (this.Review != null)
-                    hashCode = hashCode * 59 + this.Review.GetHashCode();
-                if (this.WorkflowName != null)
-                    hashCode = hashCode * 59 + this.WorkflowName.GetHashCode();
+                var hashCode = 41;
+                if (this.Title != null) hashCode = hashCode * 59 + this.Title.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.VideoName != null) hashCode = hashCode * 59 + this.VideoName.GetHashCode();
+                if (this.VideoType != null) hashCode = hashCode * 59 + this.VideoType.GetHashCode();
+                if (this.CategoryId != null) hashCode = hashCode * 59 + this.CategoryId.GetHashCode();
+                if (this.VideoMd5 != null) hashCode = hashCode * 59 + this.VideoMd5.GetHashCode();
+                hashCode = hashCode * 59 + this.CoverType.GetHashCode();
+                if (this.CoverMd5 != null) hashCode = hashCode * 59 + this.CoverMd5.GetHashCode();
+                if (this.Subtitles != null) hashCode = hashCode * 59 + this.Subtitles.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                hashCode = hashCode * 59 + this.AutoPublish.GetHashCode();
+                if (this.TemplateGroupName != null) hashCode = hashCode * 59 + this.TemplateGroupName.GetHashCode();
+                if (this.AutoEncrypt != null) hashCode = hashCode * 59 + this.AutoEncrypt.GetHashCode();
+                if (this.AutoPreheat != null) hashCode = hashCode * 59 + this.AutoPreheat.GetHashCode();
+                if (this.Thumbnail != null) hashCode = hashCode * 59 + this.Thumbnail.GetHashCode();
+                if (this.Review != null) hashCode = hashCode * 59 + this.Review.GetHashCode();
+                if (this.WorkflowName != null) hashCode = hashCode * 59 + this.WorkflowName.GetHashCode();
                 return hashCode;
             }
         }

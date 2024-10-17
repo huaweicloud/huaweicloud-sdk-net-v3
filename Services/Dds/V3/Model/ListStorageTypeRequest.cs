@@ -164,15 +164,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(ListStorageTypeRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EngineName != input.EngineName) return false;
 
-            return 
-                (
-                    this.EngineName == input.EngineName ||
-                    (this.EngineName != null &&
-                    this.EngineName.Equals(input.EngineName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -182,9 +177,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EngineName != null)
-                    hashCode = hashCode * 59 + this.EngineName.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.EngineName.GetHashCode();
                 return hashCode;
             }
         }

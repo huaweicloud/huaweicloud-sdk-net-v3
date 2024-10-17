@@ -170,21 +170,11 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         /// </summary>
         public bool Equals(DataBucket input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DataBucketName != input.DataBucketName || (this.DataBucketName != null && !this.DataBucketName.Equals(input.DataBucketName))) return false;
+            if (this.DataEvent != input.DataEvent || (this.DataEvent != null && input.DataEvent != null && !this.DataEvent.SequenceEqual(input.DataEvent))) return false;
 
-            return 
-                (
-                    this.DataBucketName == input.DataBucketName ||
-                    (this.DataBucketName != null &&
-                    this.DataBucketName.Equals(input.DataBucketName))
-                ) && 
-                (
-                    this.DataEvent == input.DataEvent ||
-                    this.DataEvent != null &&
-                    input.DataEvent != null &&
-                    this.DataEvent.SequenceEqual(input.DataEvent)
-                );
+            return true;
         }
 
         /// <summary>
@@ -194,11 +184,9 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DataBucketName != null)
-                    hashCode = hashCode * 59 + this.DataBucketName.GetHashCode();
-                if (this.DataEvent != null)
-                    hashCode = hashCode * 59 + this.DataEvent.GetHashCode();
+                var hashCode = 41;
+                if (this.DataBucketName != null) hashCode = hashCode * 59 + this.DataBucketName.GetHashCode();
+                hashCode = hashCode * 59 + this.DataEvent.GetHashCode();
                 return hashCode;
             }
         }

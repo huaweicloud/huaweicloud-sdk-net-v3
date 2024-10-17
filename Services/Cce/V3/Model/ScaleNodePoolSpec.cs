@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ScaleNodePoolSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DesiredNodeCount != input.DesiredNodeCount || (this.DesiredNodeCount != null && !this.DesiredNodeCount.Equals(input.DesiredNodeCount))) return false;
+            if (this.ScaleGroups != input.ScaleGroups || (this.ScaleGroups != null && input.ScaleGroups != null && !this.ScaleGroups.SequenceEqual(input.ScaleGroups))) return false;
+            if (this.Options != input.Options || (this.Options != null && !this.Options.Equals(input.Options))) return false;
 
-            return 
-                (
-                    this.DesiredNodeCount == input.DesiredNodeCount ||
-                    (this.DesiredNodeCount != null &&
-                    this.DesiredNodeCount.Equals(input.DesiredNodeCount))
-                ) && 
-                (
-                    this.ScaleGroups == input.ScaleGroups ||
-                    this.ScaleGroups != null &&
-                    input.ScaleGroups != null &&
-                    this.ScaleGroups.SequenceEqual(input.ScaleGroups)
-                ) && 
-                (
-                    this.Options == input.Options ||
-                    (this.Options != null &&
-                    this.Options.Equals(input.Options))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DesiredNodeCount != null)
-                    hashCode = hashCode * 59 + this.DesiredNodeCount.GetHashCode();
-                if (this.ScaleGroups != null)
-                    hashCode = hashCode * 59 + this.ScaleGroups.GetHashCode();
-                if (this.Options != null)
-                    hashCode = hashCode * 59 + this.Options.GetHashCode();
+                var hashCode = 41;
+                if (this.DesiredNodeCount != null) hashCode = hashCode * 59 + this.DesiredNodeCount.GetHashCode();
+                if (this.ScaleGroups != null) hashCode = hashCode * 59 + this.ScaleGroups.GetHashCode();
+                if (this.Options != null) hashCode = hashCode * 59 + this.Options.GetHashCode();
                 return hashCode;
             }
         }

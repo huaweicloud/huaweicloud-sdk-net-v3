@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(PublicipResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Eip != input.Eip || (this.Eip != null && !this.Eip.Equals(input.Eip))) return false;
 
-            return 
-                (
-                    this.Eip == input.Eip ||
-                    (this.Eip != null &&
-                    this.Eip.Equals(input.Eip))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Eip != null)
-                    hashCode = hashCode * 59 + this.Eip.GetHashCode();
+                var hashCode = 41;
+                if (this.Eip != null) hashCode = hashCode * 59 + this.Eip.GetHashCode();
                 return hashCode;
             }
         }

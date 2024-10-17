@@ -170,20 +170,11 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(NexthopDict input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IpAddress != input.IpAddress || (this.IpAddress != null && !this.IpAddress.Equals(input.IpAddress))) return false;
+            if (this.Mode != input.Mode) return false;
 
-            return 
-                (
-                    this.IpAddress == input.IpAddress ||
-                    (this.IpAddress != null &&
-                    this.IpAddress.Equals(input.IpAddress))
-                ) && 
-                (
-                    this.Mode == input.Mode ||
-                    (this.Mode != null &&
-                    this.Mode.Equals(input.Mode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -193,11 +184,9 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IpAddress != null)
-                    hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
-                if (this.Mode != null)
-                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                var hashCode = 41;
+                if (this.IpAddress != null) hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
+                hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 return hashCode;
             }
         }

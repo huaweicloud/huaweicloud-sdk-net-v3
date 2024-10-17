@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(AvailableFlavorInfoResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SpecCode != input.SpecCode || (this.SpecCode != null && !this.SpecCode.Equals(input.SpecCode))) return false;
+            if (this.Vcpus != input.Vcpus || (this.Vcpus != null && !this.Vcpus.Equals(input.Vcpus))) return false;
+            if (this.Ram != input.Ram || (this.Ram != null && !this.Ram.Equals(input.Ram))) return false;
+            if (this.AzStatus != input.AzStatus || (this.AzStatus != null && input.AzStatus != null && !this.AzStatus.SequenceEqual(input.AzStatus))) return false;
 
-            return 
-                (
-                    this.SpecCode == input.SpecCode ||
-                    (this.SpecCode != null &&
-                    this.SpecCode.Equals(input.SpecCode))
-                ) && 
-                (
-                    this.Vcpus == input.Vcpus ||
-                    (this.Vcpus != null &&
-                    this.Vcpus.Equals(input.Vcpus))
-                ) && 
-                (
-                    this.Ram == input.Ram ||
-                    (this.Ram != null &&
-                    this.Ram.Equals(input.Ram))
-                ) && 
-                (
-                    this.AzStatus == input.AzStatus ||
-                    this.AzStatus != null &&
-                    input.AzStatus != null &&
-                    this.AzStatus.SequenceEqual(input.AzStatus)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SpecCode != null)
-                    hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
-                if (this.Vcpus != null)
-                    hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
-                if (this.Ram != null)
-                    hashCode = hashCode * 59 + this.Ram.GetHashCode();
-                if (this.AzStatus != null)
-                    hashCode = hashCode * 59 + this.AzStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.SpecCode != null) hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
+                if (this.Vcpus != null) hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
+                if (this.Ram != null) hashCode = hashCode * 59 + this.Ram.GetHashCode();
+                if (this.AzStatus != null) hashCode = hashCode * 59 + this.AzStatus.GetHashCode();
                 return hashCode;
             }
         }

@@ -163,15 +163,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(PermissionModelPrimitiveTypeHolder input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PermissionModel != input.PermissionModel) return false;
 
-            return 
-                (
-                    this.PermissionModel == input.PermissionModel ||
-                    (this.PermissionModel != null &&
-                    this.PermissionModel.Equals(input.PermissionModel))
-                );
+            return true;
         }
 
         /// <summary>
@@ -181,9 +176,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PermissionModel != null)
-                    hashCode = hashCode * 59 + this.PermissionModel.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.PermissionModel.GetHashCode();
                 return hashCode;
             }
         }

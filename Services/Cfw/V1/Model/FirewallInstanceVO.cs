@@ -126,70 +126,21 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(FirewallInstanceVO input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FwInstanceId != input.FwInstanceId || (this.FwInstanceId != null && !this.FwInstanceId.Equals(input.FwInstanceId))) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.FwInstanceName != input.FwInstanceName || (this.FwInstanceName != null && !this.FwInstanceName.Equals(input.FwInstanceName))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.HaType != input.HaType || (this.HaType != null && !this.HaType.Equals(input.HaType))) return false;
+            if (this.ChargeMode != input.ChargeMode || (this.ChargeMode != null && !this.ChargeMode.Equals(input.ChargeMode))) return false;
+            if (this.ServiceType != input.ServiceType || (this.ServiceType != null && !this.ServiceType.Equals(input.ServiceType))) return false;
+            if (this.EngineType != input.EngineType || (this.EngineType != null && !this.EngineType.Equals(input.EngineType))) return false;
+            if (this.Flavor != input.Flavor || (this.Flavor != null && !this.Flavor.Equals(input.Flavor))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && !this.Tags.Equals(input.Tags))) return false;
 
-            return 
-                (
-                    this.FwInstanceId == input.FwInstanceId ||
-                    (this.FwInstanceId != null &&
-                    this.FwInstanceId.Equals(input.FwInstanceId))
-                ) && 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.FwInstanceName == input.FwInstanceName ||
-                    (this.FwInstanceName != null &&
-                    this.FwInstanceName.Equals(input.FwInstanceName))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.HaType == input.HaType ||
-                    (this.HaType != null &&
-                    this.HaType.Equals(input.HaType))
-                ) && 
-                (
-                    this.ChargeMode == input.ChargeMode ||
-                    (this.ChargeMode != null &&
-                    this.ChargeMode.Equals(input.ChargeMode))
-                ) && 
-                (
-                    this.ServiceType == input.ServiceType ||
-                    (this.ServiceType != null &&
-                    this.ServiceType.Equals(input.ServiceType))
-                ) && 
-                (
-                    this.EngineType == input.EngineType ||
-                    (this.EngineType != null &&
-                    this.EngineType.Equals(input.EngineType))
-                ) && 
-                (
-                    this.Flavor == input.Flavor ||
-                    (this.Flavor != null &&
-                    this.Flavor.Equals(input.Flavor))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    (this.Tags != null &&
-                    this.Tags.Equals(input.Tags))
-                );
+            return true;
         }
 
         /// <summary>
@@ -199,31 +150,19 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FwInstanceId != null)
-                    hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
-                if (this.ResourceId != null)
-                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.FwInstanceName != null)
-                    hashCode = hashCode * 59 + this.FwInstanceName.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.HaType != null)
-                    hashCode = hashCode * 59 + this.HaType.GetHashCode();
-                if (this.ChargeMode != null)
-                    hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
-                if (this.ServiceType != null)
-                    hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
-                if (this.EngineType != null)
-                    hashCode = hashCode * 59 + this.EngineType.GetHashCode();
-                if (this.Flavor != null)
-                    hashCode = hashCode * 59 + this.Flavor.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                var hashCode = 41;
+                if (this.FwInstanceId != null) hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.FwInstanceName != null) hashCode = hashCode * 59 + this.FwInstanceName.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.HaType != null) hashCode = hashCode * 59 + this.HaType.GetHashCode();
+                if (this.ChargeMode != null) hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
+                if (this.ServiceType != null) hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
+                if (this.EngineType != null) hashCode = hashCode * 59 + this.EngineType.GetHashCode();
+                if (this.Flavor != null) hashCode = hashCode * 59 + this.Flavor.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

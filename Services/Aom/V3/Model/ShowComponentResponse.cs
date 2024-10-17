@@ -239,65 +239,20 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         /// </summary>
         public bool Equals(ShowComponentResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AomId != input.AomId || (this.AomId != null && !this.AomId.Equals(input.AomId))) return false;
+            if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.Creator != input.Creator || (this.Creator != null && !this.Creator.Equals(input.Creator))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.ModifiedTime != input.ModifiedTime || (this.ModifiedTime != null && !this.ModifiedTime.Equals(input.ModifiedTime))) return false;
+            if (this.Modifier != input.Modifier || (this.Modifier != null && !this.Modifier.Equals(input.Modifier))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.RegisterType != input.RegisterType) return false;
+            if (this.SubAppId != input.SubAppId || (this.SubAppId != null && !this.SubAppId.Equals(input.SubAppId))) return false;
 
-            return 
-                (
-                    this.AomId == input.AomId ||
-                    (this.AomId != null &&
-                    this.AomId.Equals(input.AomId))
-                ) && 
-                (
-                    this.AppId == input.AppId ||
-                    (this.AppId != null &&
-                    this.AppId.Equals(input.AppId))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.Creator == input.Creator ||
-                    (this.Creator != null &&
-                    this.Creator.Equals(input.Creator))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.ModifiedTime == input.ModifiedTime ||
-                    (this.ModifiedTime != null &&
-                    this.ModifiedTime.Equals(input.ModifiedTime))
-                ) && 
-                (
-                    this.Modifier == input.Modifier ||
-                    (this.Modifier != null &&
-                    this.Modifier.Equals(input.Modifier))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.RegisterType == input.RegisterType ||
-                    (this.RegisterType != null &&
-                    this.RegisterType.Equals(input.RegisterType))
-                ) && 
-                (
-                    this.SubAppId == input.SubAppId ||
-                    (this.SubAppId != null &&
-                    this.SubAppId.Equals(input.SubAppId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -307,29 +262,18 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AomId != null)
-                    hashCode = hashCode * 59 + this.AomId.GetHashCode();
-                if (this.AppId != null)
-                    hashCode = hashCode * 59 + this.AppId.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.Creator != null)
-                    hashCode = hashCode * 59 + this.Creator.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.ModifiedTime != null)
-                    hashCode = hashCode * 59 + this.ModifiedTime.GetHashCode();
-                if (this.Modifier != null)
-                    hashCode = hashCode * 59 + this.Modifier.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.RegisterType != null)
-                    hashCode = hashCode * 59 + this.RegisterType.GetHashCode();
-                if (this.SubAppId != null)
-                    hashCode = hashCode * 59 + this.SubAppId.GetHashCode();
+                var hashCode = 41;
+                if (this.AomId != null) hashCode = hashCode * 59 + this.AomId.GetHashCode();
+                if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.Creator != null) hashCode = hashCode * 59 + this.Creator.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.ModifiedTime != null) hashCode = hashCode * 59 + this.ModifiedTime.GetHashCode();
+                if (this.Modifier != null) hashCode = hashCode * 59 + this.Modifier.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = hashCode * 59 + this.RegisterType.GetHashCode();
+                if (this.SubAppId != null) hashCode = hashCode * 59 + this.SubAppId.GetHashCode();
                 return hashCode;
             }
         }

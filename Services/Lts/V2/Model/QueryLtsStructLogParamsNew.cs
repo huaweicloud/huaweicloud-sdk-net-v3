@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(QueryLtsStructLogParamsNew input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Query != input.Query || (this.Query != null && !this.Query.Equals(input.Query))) return false;
+            if (this.Format != input.Format || (this.Format != null && !this.Format.Equals(input.Format))) return false;
+            if (this.TimeRange != input.TimeRange || (this.TimeRange != null && !this.TimeRange.Equals(input.TimeRange))) return false;
+            if (this.WhetherToRows != input.WhetherToRows || (this.WhetherToRows != null && !this.WhetherToRows.Equals(input.WhetherToRows))) return false;
 
-            return 
-                (
-                    this.Query == input.Query ||
-                    (this.Query != null &&
-                    this.Query.Equals(input.Query))
-                ) && 
-                (
-                    this.Format == input.Format ||
-                    (this.Format != null &&
-                    this.Format.Equals(input.Format))
-                ) && 
-                (
-                    this.TimeRange == input.TimeRange ||
-                    (this.TimeRange != null &&
-                    this.TimeRange.Equals(input.TimeRange))
-                ) && 
-                (
-                    this.WhetherToRows == input.WhetherToRows ||
-                    (this.WhetherToRows != null &&
-                    this.WhetherToRows.Equals(input.WhetherToRows))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Query != null)
-                    hashCode = hashCode * 59 + this.Query.GetHashCode();
-                if (this.Format != null)
-                    hashCode = hashCode * 59 + this.Format.GetHashCode();
-                if (this.TimeRange != null)
-                    hashCode = hashCode * 59 + this.TimeRange.GetHashCode();
-                if (this.WhetherToRows != null)
-                    hashCode = hashCode * 59 + this.WhetherToRows.GetHashCode();
+                var hashCode = 41;
+                if (this.Query != null) hashCode = hashCode * 59 + this.Query.GetHashCode();
+                if (this.Format != null) hashCode = hashCode * 59 + this.Format.GetHashCode();
+                if (this.TimeRange != null) hashCode = hashCode * 59 + this.TimeRange.GetHashCode();
+                if (this.WhetherToRows != null) hashCode = hashCode * 59 + this.WhetherToRows.GetHashCode();
                 return hashCode;
             }
         }

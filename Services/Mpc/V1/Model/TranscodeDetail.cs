@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(TranscodeDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MultitaskInfo != input.MultitaskInfo || (this.MultitaskInfo != null && input.MultitaskInfo != null && !this.MultitaskInfo.SequenceEqual(input.MultitaskInfo))) return false;
+            if (this.InputFile != input.InputFile || (this.InputFile != null && !this.InputFile.Equals(input.InputFile))) return false;
 
-            return 
-                (
-                    this.MultitaskInfo == input.MultitaskInfo ||
-                    this.MultitaskInfo != null &&
-                    input.MultitaskInfo != null &&
-                    this.MultitaskInfo.SequenceEqual(input.MultitaskInfo)
-                ) && 
-                (
-                    this.InputFile == input.InputFile ||
-                    (this.InputFile != null &&
-                    this.InputFile.Equals(input.InputFile))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MultitaskInfo != null)
-                    hashCode = hashCode * 59 + this.MultitaskInfo.GetHashCode();
-                if (this.InputFile != null)
-                    hashCode = hashCode * 59 + this.InputFile.GetHashCode();
+                var hashCode = 41;
+                if (this.MultitaskInfo != null) hashCode = hashCode * 59 + this.MultitaskInfo.GetHashCode();
+                if (this.InputFile != null) hashCode = hashCode * 59 + this.InputFile.GetHashCode();
                 return hashCode;
             }
         }

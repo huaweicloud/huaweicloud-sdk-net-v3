@@ -199,47 +199,16 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(DatabaseObject input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SyncType != input.SyncType) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.All != input.All || (this.All != null && !this.All.Equals(input.All))) return false;
+            if (this.Schemas != input.Schemas || (this.Schemas != null && input.Schemas != null && !this.Schemas.SequenceEqual(input.Schemas))) return false;
+            if (this.Tables != input.Tables || (this.Tables != null && input.Tables != null && !this.Tables.SequenceEqual(input.Tables))) return false;
+            if (this.TotalTableNum != input.TotalTableNum || (this.TotalTableNum != null && !this.TotalTableNum.Equals(input.TotalTableNum))) return false;
+            if (this.IsSynchronized != input.IsSynchronized || (this.IsSynchronized != null && !this.IsSynchronized.Equals(input.IsSynchronized))) return false;
 
-            return 
-                (
-                    this.SyncType == input.SyncType ||
-                    (this.SyncType != null &&
-                    this.SyncType.Equals(input.SyncType))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.All == input.All ||
-                    (this.All != null &&
-                    this.All.Equals(input.All))
-                ) && 
-                (
-                    this.Schemas == input.Schemas ||
-                    this.Schemas != null &&
-                    input.Schemas != null &&
-                    this.Schemas.SequenceEqual(input.Schemas)
-                ) && 
-                (
-                    this.Tables == input.Tables ||
-                    this.Tables != null &&
-                    input.Tables != null &&
-                    this.Tables.SequenceEqual(input.Tables)
-                ) && 
-                (
-                    this.TotalTableNum == input.TotalTableNum ||
-                    (this.TotalTableNum != null &&
-                    this.TotalTableNum.Equals(input.TotalTableNum))
-                ) && 
-                (
-                    this.IsSynchronized == input.IsSynchronized ||
-                    (this.IsSynchronized != null &&
-                    this.IsSynchronized.Equals(input.IsSynchronized))
-                );
+            return true;
         }
 
         /// <summary>
@@ -249,21 +218,14 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SyncType != null)
-                    hashCode = hashCode * 59 + this.SyncType.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.All != null)
-                    hashCode = hashCode * 59 + this.All.GetHashCode();
-                if (this.Schemas != null)
-                    hashCode = hashCode * 59 + this.Schemas.GetHashCode();
-                if (this.Tables != null)
-                    hashCode = hashCode * 59 + this.Tables.GetHashCode();
-                if (this.TotalTableNum != null)
-                    hashCode = hashCode * 59 + this.TotalTableNum.GetHashCode();
-                if (this.IsSynchronized != null)
-                    hashCode = hashCode * 59 + this.IsSynchronized.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.SyncType.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.All != null) hashCode = hashCode * 59 + this.All.GetHashCode();
+                if (this.Schemas != null) hashCode = hashCode * 59 + this.Schemas.GetHashCode();
+                if (this.Tables != null) hashCode = hashCode * 59 + this.Tables.GetHashCode();
+                if (this.TotalTableNum != null) hashCode = hashCode * 59 + this.TotalTableNum.GetHashCode();
+                if (this.IsSynchronized != null) hashCode = hashCode * 59 + this.IsSynchronized.GetHashCode();
                 return hashCode;
             }
         }

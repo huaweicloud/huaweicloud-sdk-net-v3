@@ -90,42 +90,15 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(ShowTemplateVersionContentRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClientRequestId != input.ClientRequestId || (this.ClientRequestId != null && !this.ClientRequestId.Equals(input.ClientRequestId))) return false;
+            if (this.TemplateName != input.TemplateName || (this.TemplateName != null && !this.TemplateName.Equals(input.TemplateName))) return false;
+            if (this.VersionId != input.VersionId || (this.VersionId != null && !this.VersionId.Equals(input.VersionId))) return false;
+            if (this.TemplateId != input.TemplateId || (this.TemplateId != null && !this.TemplateId.Equals(input.TemplateId))) return false;
+            if (this.AccessControlSourceVpcIds != input.AccessControlSourceVpcIds || (this.AccessControlSourceVpcIds != null && input.AccessControlSourceVpcIds != null && !this.AccessControlSourceVpcIds.SequenceEqual(input.AccessControlSourceVpcIds))) return false;
+            if (this.AccessControlSourceIps != input.AccessControlSourceIps || (this.AccessControlSourceIps != null && input.AccessControlSourceIps != null && !this.AccessControlSourceIps.SequenceEqual(input.AccessControlSourceIps))) return false;
 
-            return 
-                (
-                    this.ClientRequestId == input.ClientRequestId ||
-                    (this.ClientRequestId != null &&
-                    this.ClientRequestId.Equals(input.ClientRequestId))
-                ) && 
-                (
-                    this.TemplateName == input.TemplateName ||
-                    (this.TemplateName != null &&
-                    this.TemplateName.Equals(input.TemplateName))
-                ) && 
-                (
-                    this.VersionId == input.VersionId ||
-                    (this.VersionId != null &&
-                    this.VersionId.Equals(input.VersionId))
-                ) && 
-                (
-                    this.TemplateId == input.TemplateId ||
-                    (this.TemplateId != null &&
-                    this.TemplateId.Equals(input.TemplateId))
-                ) && 
-                (
-                    this.AccessControlSourceVpcIds == input.AccessControlSourceVpcIds ||
-                    this.AccessControlSourceVpcIds != null &&
-                    input.AccessControlSourceVpcIds != null &&
-                    this.AccessControlSourceVpcIds.SequenceEqual(input.AccessControlSourceVpcIds)
-                ) && 
-                (
-                    this.AccessControlSourceIps == input.AccessControlSourceIps ||
-                    this.AccessControlSourceIps != null &&
-                    input.AccessControlSourceIps != null &&
-                    this.AccessControlSourceIps.SequenceEqual(input.AccessControlSourceIps)
-                );
+            return true;
         }
 
         /// <summary>
@@ -135,19 +108,13 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClientRequestId != null)
-                    hashCode = hashCode * 59 + this.ClientRequestId.GetHashCode();
-                if (this.TemplateName != null)
-                    hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
-                if (this.VersionId != null)
-                    hashCode = hashCode * 59 + this.VersionId.GetHashCode();
-                if (this.TemplateId != null)
-                    hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
-                if (this.AccessControlSourceVpcIds != null)
-                    hashCode = hashCode * 59 + this.AccessControlSourceVpcIds.GetHashCode();
-                if (this.AccessControlSourceIps != null)
-                    hashCode = hashCode * 59 + this.AccessControlSourceIps.GetHashCode();
+                var hashCode = 41;
+                if (this.ClientRequestId != null) hashCode = hashCode * 59 + this.ClientRequestId.GetHashCode();
+                if (this.TemplateName != null) hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
+                if (this.VersionId != null) hashCode = hashCode * 59 + this.VersionId.GetHashCode();
+                if (this.TemplateId != null) hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
+                if (this.AccessControlSourceVpcIds != null) hashCode = hashCode * 59 + this.AccessControlSourceVpcIds.GetHashCode();
+                if (this.AccessControlSourceIps != null) hashCode = hashCode * 59 + this.AccessControlSourceIps.GetHashCode();
                 return hashCode;
             }
         }

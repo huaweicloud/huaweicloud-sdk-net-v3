@@ -122,60 +122,19 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(NeutronListSubnetsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Cidr != input.Cidr || (this.Cidr != null && !this.Cidr.Equals(input.Cidr))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.EnableDhcp != input.EnableDhcp || (this.EnableDhcp != null && !this.EnableDhcp.Equals(input.EnableDhcp))) return false;
+            if (this.NetworkId != input.NetworkId || (this.NetworkId != null && !this.NetworkId.Equals(input.NetworkId))) return false;
+            if (this.IpVersion != input.IpVersion || (this.IpVersion != null && !this.IpVersion.Equals(input.IpVersion))) return false;
+            if (this.GatewayIp != input.GatewayIp || (this.GatewayIp != null && !this.GatewayIp.Equals(input.GatewayIp))) return false;
+            if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
 
-            return 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Cidr == input.Cidr ||
-                    (this.Cidr != null &&
-                    this.Cidr.Equals(input.Cidr))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.EnableDhcp == input.EnableDhcp ||
-                    (this.EnableDhcp != null &&
-                    this.EnableDhcp.Equals(input.EnableDhcp))
-                ) && 
-                (
-                    this.NetworkId == input.NetworkId ||
-                    (this.NetworkId != null &&
-                    this.NetworkId.Equals(input.NetworkId))
-                ) && 
-                (
-                    this.IpVersion == input.IpVersion ||
-                    (this.IpVersion != null &&
-                    this.IpVersion.Equals(input.IpVersion))
-                ) && 
-                (
-                    this.GatewayIp == input.GatewayIp ||
-                    (this.GatewayIp != null &&
-                    this.GatewayIp.Equals(input.GatewayIp))
-                ) && 
-                (
-                    this.TenantId == input.TenantId ||
-                    (this.TenantId != null &&
-                    this.TenantId.Equals(input.TenantId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -185,27 +144,17 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Cidr != null)
-                    hashCode = hashCode * 59 + this.Cidr.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.EnableDhcp != null)
-                    hashCode = hashCode * 59 + this.EnableDhcp.GetHashCode();
-                if (this.NetworkId != null)
-                    hashCode = hashCode * 59 + this.NetworkId.GetHashCode();
-                if (this.IpVersion != null)
-                    hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
-                if (this.GatewayIp != null)
-                    hashCode = hashCode * 59 + this.GatewayIp.GetHashCode();
-                if (this.TenantId != null)
-                    hashCode = hashCode * 59 + this.TenantId.GetHashCode();
+                var hashCode = 41;
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Cidr != null) hashCode = hashCode * 59 + this.Cidr.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.EnableDhcp != null) hashCode = hashCode * 59 + this.EnableDhcp.GetHashCode();
+                if (this.NetworkId != null) hashCode = hashCode * 59 + this.NetworkId.GetHashCode();
+                if (this.IpVersion != null) hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
+                if (this.GatewayIp != null) hashCode = hashCode * 59 + this.GatewayIp.GetHashCode();
+                if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
                 return hashCode;
             }
         }

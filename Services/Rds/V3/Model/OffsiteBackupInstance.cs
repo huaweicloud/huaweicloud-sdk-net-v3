@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(OffsiteBackupInstance input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.SourceRegion != input.SourceRegion || (this.SourceRegion != null && !this.SourceRegion.Equals(input.SourceRegion))) return false;
+            if (this.SourceProjectId != input.SourceProjectId || (this.SourceProjectId != null && !this.SourceProjectId.Equals(input.SourceProjectId))) return false;
+            if (this.Datastore != input.Datastore || (this.Datastore != null && !this.Datastore.Equals(input.Datastore))) return false;
+            if (this.DestinationRegion != input.DestinationRegion || (this.DestinationRegion != null && !this.DestinationRegion.Equals(input.DestinationRegion))) return false;
+            if (this.DestinationProjectId != input.DestinationProjectId || (this.DestinationProjectId != null && !this.DestinationProjectId.Equals(input.DestinationProjectId))) return false;
+            if (this.KeepDays != input.KeepDays || (this.KeepDays != null && !this.KeepDays.Equals(input.KeepDays))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.SourceRegion == input.SourceRegion ||
-                    (this.SourceRegion != null &&
-                    this.SourceRegion.Equals(input.SourceRegion))
-                ) && 
-                (
-                    this.SourceProjectId == input.SourceProjectId ||
-                    (this.SourceProjectId != null &&
-                    this.SourceProjectId.Equals(input.SourceProjectId))
-                ) && 
-                (
-                    this.Datastore == input.Datastore ||
-                    (this.Datastore != null &&
-                    this.Datastore.Equals(input.Datastore))
-                ) && 
-                (
-                    this.DestinationRegion == input.DestinationRegion ||
-                    (this.DestinationRegion != null &&
-                    this.DestinationRegion.Equals(input.DestinationRegion))
-                ) && 
-                (
-                    this.DestinationProjectId == input.DestinationProjectId ||
-                    (this.DestinationProjectId != null &&
-                    this.DestinationProjectId.Equals(input.DestinationProjectId))
-                ) && 
-                (
-                    this.KeepDays == input.KeepDays ||
-                    (this.KeepDays != null &&
-                    this.KeepDays.Equals(input.KeepDays))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.SourceRegion != null)
-                    hashCode = hashCode * 59 + this.SourceRegion.GetHashCode();
-                if (this.SourceProjectId != null)
-                    hashCode = hashCode * 59 + this.SourceProjectId.GetHashCode();
-                if (this.Datastore != null)
-                    hashCode = hashCode * 59 + this.Datastore.GetHashCode();
-                if (this.DestinationRegion != null)
-                    hashCode = hashCode * 59 + this.DestinationRegion.GetHashCode();
-                if (this.DestinationProjectId != null)
-                    hashCode = hashCode * 59 + this.DestinationProjectId.GetHashCode();
-                if (this.KeepDays != null)
-                    hashCode = hashCode * 59 + this.KeepDays.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.SourceRegion != null) hashCode = hashCode * 59 + this.SourceRegion.GetHashCode();
+                if (this.SourceProjectId != null) hashCode = hashCode * 59 + this.SourceProjectId.GetHashCode();
+                if (this.Datastore != null) hashCode = hashCode * 59 + this.Datastore.GetHashCode();
+                if (this.DestinationRegion != null) hashCode = hashCode * 59 + this.DestinationRegion.GetHashCode();
+                if (this.DestinationProjectId != null) hashCode = hashCode * 59 + this.DestinationProjectId.GetHashCode();
+                if (this.KeepDays != null) hashCode = hashCode * 59 + this.KeepDays.GetHashCode();
                 return hashCode;
             }
         }

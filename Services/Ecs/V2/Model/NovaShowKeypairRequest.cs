@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(NovaShowKeypairRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KeypairName != input.KeypairName || (this.KeypairName != null && !this.KeypairName.Equals(input.KeypairName))) return false;
+            if (this.OpenStackAPIVersion != input.OpenStackAPIVersion || (this.OpenStackAPIVersion != null && !this.OpenStackAPIVersion.Equals(input.OpenStackAPIVersion))) return false;
 
-            return 
-                (
-                    this.KeypairName == input.KeypairName ||
-                    (this.KeypairName != null &&
-                    this.KeypairName.Equals(input.KeypairName))
-                ) && 
-                (
-                    this.OpenStackAPIVersion == input.OpenStackAPIVersion ||
-                    (this.OpenStackAPIVersion != null &&
-                    this.OpenStackAPIVersion.Equals(input.OpenStackAPIVersion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KeypairName != null)
-                    hashCode = hashCode * 59 + this.KeypairName.GetHashCode();
-                if (this.OpenStackAPIVersion != null)
-                    hashCode = hashCode * 59 + this.OpenStackAPIVersion.GetHashCode();
+                var hashCode = 41;
+                if (this.KeypairName != null) hashCode = hashCode * 59 + this.KeypairName.GetHashCode();
+                if (this.OpenStackAPIVersion != null) hashCode = hashCode * 59 + this.OpenStackAPIVersion.GetHashCode();
                 return hashCode;
             }
         }

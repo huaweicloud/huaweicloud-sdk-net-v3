@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// </summary>
         public bool Equals(SegmentResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Segment != input.Segment || (this.Segment != null && !this.Segment.Equals(input.Segment))) return false;
+            if (this.GlossaryName != input.GlossaryName || (this.GlossaryName != null && !this.GlossaryName.Equals(input.GlossaryName))) return false;
+            if (this.Position != input.Position || (this.Position != null && input.Position != null && !this.Position.SequenceEqual(input.Position))) return false;
 
-            return 
-                (
-                    this.Segment == input.Segment ||
-                    (this.Segment != null &&
-                    this.Segment.Equals(input.Segment))
-                ) && 
-                (
-                    this.GlossaryName == input.GlossaryName ||
-                    (this.GlossaryName != null &&
-                    this.GlossaryName.Equals(input.GlossaryName))
-                ) && 
-                (
-                    this.Position == input.Position ||
-                    this.Position != null &&
-                    input.Position != null &&
-                    this.Position.SequenceEqual(input.Position)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Segment != null)
-                    hashCode = hashCode * 59 + this.Segment.GetHashCode();
-                if (this.GlossaryName != null)
-                    hashCode = hashCode * 59 + this.GlossaryName.GetHashCode();
-                if (this.Position != null)
-                    hashCode = hashCode * 59 + this.Position.GetHashCode();
+                var hashCode = 41;
+                if (this.Segment != null) hashCode = hashCode * 59 + this.Segment.GetHashCode();
+                if (this.GlossaryName != null) hashCode = hashCode * 59 + this.GlossaryName.GetHashCode();
+                if (this.Position != null) hashCode = hashCode * 59 + this.Position.GetHashCode();
                 return hashCode;
             }
         }

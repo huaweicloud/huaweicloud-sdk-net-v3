@@ -98,48 +98,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(ListFlavorsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.PageReverse != input.PageReverse || (this.PageReverse != null && !this.PageReverse.Equals(input.PageReverse))) return false;
+            if (this.Id != input.Id || (this.Id != null && input.Id != null && !this.Id.SequenceEqual(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && input.Name != null && !this.Name.SequenceEqual(input.Name))) return false;
+            if (this.Type != input.Type || (this.Type != null && input.Type != null && !this.Type.SequenceEqual(input.Type))) return false;
+            if (this.Shared != input.Shared || (this.Shared != null && !this.Shared.Equals(input.Shared))) return false;
 
-            return 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.PageReverse == input.PageReverse ||
-                    (this.PageReverse != null &&
-                    this.PageReverse.Equals(input.PageReverse))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    this.Id != null &&
-                    input.Id != null &&
-                    this.Id.SequenceEqual(input.Id)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    this.Name != null &&
-                    input.Name != null &&
-                    this.Name.SequenceEqual(input.Name)
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    this.Type != null &&
-                    input.Type != null &&
-                    this.Type.SequenceEqual(input.Type)
-                ) && 
-                (
-                    this.Shared == input.Shared ||
-                    (this.Shared != null &&
-                    this.Shared.Equals(input.Shared))
-                );
+            return true;
         }
 
         /// <summary>
@@ -149,21 +117,14 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.PageReverse != null)
-                    hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Shared != null)
-                    hashCode = hashCode * 59 + this.Shared.GetHashCode();
+                var hashCode = 41;
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.PageReverse != null) hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Shared != null) hashCode = hashCode * 59 + this.Shared.GetHashCode();
                 return hashCode;
             }
         }

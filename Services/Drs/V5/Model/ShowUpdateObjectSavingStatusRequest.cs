@@ -180,25 +180,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ShowUpdateObjectSavingStatusRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.XLanguage != input.XLanguage) return false;
+            if (this.QueryId != input.QueryId || (this.QueryId != null && !this.QueryId.Equals(input.QueryId))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.XLanguage == input.XLanguage ||
-                    (this.XLanguage != null &&
-                    this.XLanguage.Equals(input.XLanguage))
-                ) && 
-                (
-                    this.QueryId == input.QueryId ||
-                    (this.QueryId != null &&
-                    this.QueryId.Equals(input.QueryId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -208,13 +195,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.XLanguage != null)
-                    hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
-                if (this.QueryId != null)
-                    hashCode = hashCode * 59 + this.QueryId.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                if (this.QueryId != null) hashCode = hashCode * 59 + this.QueryId.GetHashCode();
                 return hashCode;
             }
         }

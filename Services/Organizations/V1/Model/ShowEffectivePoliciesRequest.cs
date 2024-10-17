@@ -174,25 +174,12 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(ShowEffectivePoliciesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.XSecurityToken != input.XSecurityToken || (this.XSecurityToken != null && !this.XSecurityToken.Equals(input.XSecurityToken))) return false;
+            if (this.EntityId != input.EntityId || (this.EntityId != null && !this.EntityId.Equals(input.EntityId))) return false;
+            if (this.PolicyType != input.PolicyType) return false;
 
-            return 
-                (
-                    this.XSecurityToken == input.XSecurityToken ||
-                    (this.XSecurityToken != null &&
-                    this.XSecurityToken.Equals(input.XSecurityToken))
-                ) && 
-                (
-                    this.EntityId == input.EntityId ||
-                    (this.EntityId != null &&
-                    this.EntityId.Equals(input.EntityId))
-                ) && 
-                (
-                    this.PolicyType == input.PolicyType ||
-                    (this.PolicyType != null &&
-                    this.PolicyType.Equals(input.PolicyType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -202,13 +189,10 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.XSecurityToken != null)
-                    hashCode = hashCode * 59 + this.XSecurityToken.GetHashCode();
-                if (this.EntityId != null)
-                    hashCode = hashCode * 59 + this.EntityId.GetHashCode();
-                if (this.PolicyType != null)
-                    hashCode = hashCode * 59 + this.PolicyType.GetHashCode();
+                var hashCode = 41;
+                if (this.XSecurityToken != null) hashCode = hashCode * 59 + this.XSecurityToken.GetHashCode();
+                if (this.EntityId != null) hashCode = hashCode * 59 + this.EntityId.GetHashCode();
+                hashCode = hashCode * 59 + this.PolicyType.GetHashCode();
                 return hashCode;
             }
         }

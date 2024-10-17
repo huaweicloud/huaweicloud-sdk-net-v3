@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(UpdateCloudServiceCustomPolicyRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RoleId != input.RoleId || (this.RoleId != null && !this.RoleId.Equals(input.RoleId))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
-            return 
-                (
-                    this.RoleId == input.RoleId ||
-                    (this.RoleId != null &&
-                    this.RoleId.Equals(input.RoleId))
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RoleId != null)
-                    hashCode = hashCode * 59 + this.RoleId.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                var hashCode = 41;
+                if (this.RoleId != null) hashCode = hashCode * 59 + this.RoleId.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

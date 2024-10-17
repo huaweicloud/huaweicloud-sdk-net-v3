@@ -64,26 +64,12 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         /// </summary>
         public bool Equals(ListHistoryStreamsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HistoryStreamList != input.HistoryStreamList || (this.HistoryStreamList != null && input.HistoryStreamList != null && !this.HistoryStreamList.SequenceEqual(input.HistoryStreamList))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
-            return 
-                (
-                    this.HistoryStreamList == input.HistoryStreamList ||
-                    this.HistoryStreamList != null &&
-                    input.HistoryStreamList != null &&
-                    this.HistoryStreamList.SequenceEqual(input.HistoryStreamList)
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.XRequestId == input.XRequestId ||
-                    (this.XRequestId != null &&
-                    this.XRequestId.Equals(input.XRequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +79,10 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HistoryStreamList != null)
-                    hashCode = hashCode * 59 + this.HistoryStreamList.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.XRequestId != null)
-                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.HistoryStreamList != null) hashCode = hashCode * 59 + this.HistoryStreamList.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         /// </summary>
         public bool Equals(AddDataRestInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ImageInfo != input.ImageInfo || (this.ImageInfo != null && !this.ImageInfo.Equals(input.ImageInfo))) return false;
 
-            return 
-                (
-                    this.ImageInfo == input.ImageInfo ||
-                    (this.ImageInfo != null &&
-                    this.ImageInfo.Equals(input.ImageInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ImageInfo != null)
-                    hashCode = hashCode * 59 + this.ImageInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.ImageInfo != null) hashCode = hashCode * 59 + this.ImageInfo.GetHashCode();
                 return hashCode;
             }
         }

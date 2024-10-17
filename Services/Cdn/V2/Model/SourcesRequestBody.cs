@@ -172,6 +172,18 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         [JsonProperty("enable_obs_web_hosting", NullValueHandling = NullValueHandling.Ignore)]
         public int? EnableObsWebHosting { get; set; }
 
+        /// <summary>
+        /// HTTP端口，默认80,端口取值取值范围1-65535。
+        /// </summary>
+        [JsonProperty("http_port", NullValueHandling = NullValueHandling.Ignore)]
+        public int? HttpPort { get; set; }
+
+        /// <summary>
+        /// HTTPS端口，默认443,端口取值取值范围1-65535。
+        /// </summary>
+        [JsonProperty("https_port", NullValueHandling = NullValueHandling.Ignore)]
+        public int? HttpsPort { get; set; }
+
 
 
         /// <summary>
@@ -187,6 +199,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
             sb.Append("  obsBucketType: ").Append(ObsBucketType).Append("\n");
             sb.Append("  activeStandby: ").Append(ActiveStandby).Append("\n");
             sb.Append("  enableObsWebHosting: ").Append(EnableObsWebHosting).Append("\n");
+            sb.Append("  httpPort: ").Append(HttpPort).Append("\n");
+            sb.Append("  httpsPort: ").Append(HttpsPort).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -204,40 +218,17 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(SourcesRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.IpOrDomain != input.IpOrDomain || (this.IpOrDomain != null && !this.IpOrDomain.Equals(input.IpOrDomain))) return false;
+            if (this.OriginType != input.OriginType) return false;
+            if (this.ObsBucketType != input.ObsBucketType || (this.ObsBucketType != null && !this.ObsBucketType.Equals(input.ObsBucketType))) return false;
+            if (this.ActiveStandby != input.ActiveStandby || (this.ActiveStandby != null && !this.ActiveStandby.Equals(input.ActiveStandby))) return false;
+            if (this.EnableObsWebHosting != input.EnableObsWebHosting || (this.EnableObsWebHosting != null && !this.EnableObsWebHosting.Equals(input.EnableObsWebHosting))) return false;
+            if (this.HttpPort != input.HttpPort || (this.HttpPort != null && !this.HttpPort.Equals(input.HttpPort))) return false;
+            if (this.HttpsPort != input.HttpsPort || (this.HttpsPort != null && !this.HttpsPort.Equals(input.HttpsPort))) return false;
 
-            return 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
-                    this.IpOrDomain == input.IpOrDomain ||
-                    (this.IpOrDomain != null &&
-                    this.IpOrDomain.Equals(input.IpOrDomain))
-                ) && 
-                (
-                    this.OriginType == input.OriginType ||
-                    (this.OriginType != null &&
-                    this.OriginType.Equals(input.OriginType))
-                ) && 
-                (
-                    this.ObsBucketType == input.ObsBucketType ||
-                    (this.ObsBucketType != null &&
-                    this.ObsBucketType.Equals(input.ObsBucketType))
-                ) && 
-                (
-                    this.ActiveStandby == input.ActiveStandby ||
-                    (this.ActiveStandby != null &&
-                    this.ActiveStandby.Equals(input.ActiveStandby))
-                ) && 
-                (
-                    this.EnableObsWebHosting == input.EnableObsWebHosting ||
-                    (this.EnableObsWebHosting != null &&
-                    this.EnableObsWebHosting.Equals(input.EnableObsWebHosting))
-                );
+            return true;
         }
 
         /// <summary>
@@ -247,19 +238,15 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.IpOrDomain != null)
-                    hashCode = hashCode * 59 + this.IpOrDomain.GetHashCode();
-                if (this.OriginType != null)
-                    hashCode = hashCode * 59 + this.OriginType.GetHashCode();
-                if (this.ObsBucketType != null)
-                    hashCode = hashCode * 59 + this.ObsBucketType.GetHashCode();
-                if (this.ActiveStandby != null)
-                    hashCode = hashCode * 59 + this.ActiveStandby.GetHashCode();
-                if (this.EnableObsWebHosting != null)
-                    hashCode = hashCode * 59 + this.EnableObsWebHosting.GetHashCode();
+                var hashCode = 41;
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.IpOrDomain != null) hashCode = hashCode * 59 + this.IpOrDomain.GetHashCode();
+                hashCode = hashCode * 59 + this.OriginType.GetHashCode();
+                if (this.ObsBucketType != null) hashCode = hashCode * 59 + this.ObsBucketType.GetHashCode();
+                if (this.ActiveStandby != null) hashCode = hashCode * 59 + this.ActiveStandby.GetHashCode();
+                if (this.EnableObsWebHosting != null) hashCode = hashCode * 59 + this.EnableObsWebHosting.GetHashCode();
+                if (this.HttpPort != null) hashCode = hashCode * 59 + this.HttpPort.GetHashCode();
+                if (this.HttpsPort != null) hashCode = hashCode * 59 + this.HttpsPort.GetHashCode();
                 return hashCode;
             }
         }

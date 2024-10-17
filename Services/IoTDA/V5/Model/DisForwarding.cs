@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(DisForwarding input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RegionName != input.RegionName || (this.RegionName != null && !this.RegionName.Equals(input.RegionName))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.StreamName != input.StreamName || (this.StreamName != null && !this.StreamName.Equals(input.StreamName))) return false;
+            if (this.StreamId != input.StreamId || (this.StreamId != null && !this.StreamId.Equals(input.StreamId))) return false;
 
-            return 
-                (
-                    this.RegionName == input.RegionName ||
-                    (this.RegionName != null &&
-                    this.RegionName.Equals(input.RegionName))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.StreamName == input.StreamName ||
-                    (this.StreamName != null &&
-                    this.StreamName.Equals(input.StreamName))
-                ) && 
-                (
-                    this.StreamId == input.StreamId ||
-                    (this.StreamId != null &&
-                    this.StreamId.Equals(input.StreamId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RegionName != null)
-                    hashCode = hashCode * 59 + this.RegionName.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.StreamName != null)
-                    hashCode = hashCode * 59 + this.StreamName.GetHashCode();
-                if (this.StreamId != null)
-                    hashCode = hashCode * 59 + this.StreamId.GetHashCode();
+                var hashCode = 41;
+                if (this.RegionName != null) hashCode = hashCode * 59 + this.RegionName.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.StreamName != null) hashCode = hashCode * 59 + this.StreamName.GetHashCode();
+                if (this.StreamId != null) hashCode = hashCode * 59 + this.StreamId.GetHashCode();
                 return hashCode;
             }
         }

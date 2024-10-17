@@ -77,37 +77,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ReinstallK8sOptionsConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Labels != input.Labels || (this.Labels != null && input.Labels != null && !this.Labels.SequenceEqual(input.Labels))) return false;
+            if (this.Taints != input.Taints || (this.Taints != null && input.Taints != null && !this.Taints.SequenceEqual(input.Taints))) return false;
+            if (this.MaxPods != input.MaxPods || (this.MaxPods != null && !this.MaxPods.Equals(input.MaxPods))) return false;
+            if (this.NicMultiqueue != input.NicMultiqueue || (this.NicMultiqueue != null && !this.NicMultiqueue.Equals(input.NicMultiqueue))) return false;
+            if (this.NicThreshold != input.NicThreshold || (this.NicThreshold != null && !this.NicThreshold.Equals(input.NicThreshold))) return false;
 
-            return 
-                (
-                    this.Labels == input.Labels ||
-                    this.Labels != null &&
-                    input.Labels != null &&
-                    this.Labels.SequenceEqual(input.Labels)
-                ) && 
-                (
-                    this.Taints == input.Taints ||
-                    this.Taints != null &&
-                    input.Taints != null &&
-                    this.Taints.SequenceEqual(input.Taints)
-                ) && 
-                (
-                    this.MaxPods == input.MaxPods ||
-                    (this.MaxPods != null &&
-                    this.MaxPods.Equals(input.MaxPods))
-                ) && 
-                (
-                    this.NicMultiqueue == input.NicMultiqueue ||
-                    (this.NicMultiqueue != null &&
-                    this.NicMultiqueue.Equals(input.NicMultiqueue))
-                ) && 
-                (
-                    this.NicThreshold == input.NicThreshold ||
-                    (this.NicThreshold != null &&
-                    this.NicThreshold.Equals(input.NicThreshold))
-                );
+            return true;
         }
 
         /// <summary>
@@ -117,17 +94,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Labels != null)
-                    hashCode = hashCode * 59 + this.Labels.GetHashCode();
-                if (this.Taints != null)
-                    hashCode = hashCode * 59 + this.Taints.GetHashCode();
-                if (this.MaxPods != null)
-                    hashCode = hashCode * 59 + this.MaxPods.GetHashCode();
-                if (this.NicMultiqueue != null)
-                    hashCode = hashCode * 59 + this.NicMultiqueue.GetHashCode();
-                if (this.NicThreshold != null)
-                    hashCode = hashCode * 59 + this.NicThreshold.GetHashCode();
+                var hashCode = 41;
+                if (this.Labels != null) hashCode = hashCode * 59 + this.Labels.GetHashCode();
+                if (this.Taints != null) hashCode = hashCode * 59 + this.Taints.GetHashCode();
+                if (this.MaxPods != null) hashCode = hashCode * 59 + this.MaxPods.GetHashCode();
+                if (this.NicMultiqueue != null) hashCode = hashCode * 59 + this.NicMultiqueue.GetHashCode();
+                if (this.NicThreshold != null) hashCode = hashCode * 59 + this.NicThreshold.GetHashCode();
                 return hashCode;
             }
         }

@@ -227,35 +227,14 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(VideoTemplateInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Quality != input.Quality) return false;
+            if (this.Width != input.Width || (this.Width != null && !this.Width.Equals(input.Width))) return false;
+            if (this.Height != input.Height || (this.Height != null && !this.Height.Equals(input.Height))) return false;
+            if (this.Bitrate != input.Bitrate || (this.Bitrate != null && !this.Bitrate.Equals(input.Bitrate))) return false;
+            if (this.FrameRate != input.FrameRate || (this.FrameRate != null && !this.FrameRate.Equals(input.FrameRate))) return false;
 
-            return 
-                (
-                    this.Quality == input.Quality ||
-                    (this.Quality != null &&
-                    this.Quality.Equals(input.Quality))
-                ) && 
-                (
-                    this.Width == input.Width ||
-                    (this.Width != null &&
-                    this.Width.Equals(input.Width))
-                ) && 
-                (
-                    this.Height == input.Height ||
-                    (this.Height != null &&
-                    this.Height.Equals(input.Height))
-                ) && 
-                (
-                    this.Bitrate == input.Bitrate ||
-                    (this.Bitrate != null &&
-                    this.Bitrate.Equals(input.Bitrate))
-                ) && 
-                (
-                    this.FrameRate == input.FrameRate ||
-                    (this.FrameRate != null &&
-                    this.FrameRate.Equals(input.FrameRate))
-                );
+            return true;
         }
 
         /// <summary>
@@ -265,17 +244,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Quality != null)
-                    hashCode = hashCode * 59 + this.Quality.GetHashCode();
-                if (this.Width != null)
-                    hashCode = hashCode * 59 + this.Width.GetHashCode();
-                if (this.Height != null)
-                    hashCode = hashCode * 59 + this.Height.GetHashCode();
-                if (this.Bitrate != null)
-                    hashCode = hashCode * 59 + this.Bitrate.GetHashCode();
-                if (this.FrameRate != null)
-                    hashCode = hashCode * 59 + this.FrameRate.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Quality.GetHashCode();
+                if (this.Width != null) hashCode = hashCode * 59 + this.Width.GetHashCode();
+                if (this.Height != null) hashCode = hashCode * 59 + this.Height.GetHashCode();
+                if (this.Bitrate != null) hashCode = hashCode * 59 + this.Bitrate.GetHashCode();
+                if (this.FrameRate != null) hashCode = hashCode * 59 + this.FrameRate.GetHashCode();
                 return hashCode;
             }
         }

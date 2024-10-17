@@ -371,66 +371,20 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(ExecutionPlanItem input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
+            if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
+            if (this.Index != input.Index || (this.Index != null && !this.Index.Equals(input.Index))) return false;
+            if (this.Action != input.Action) return false;
+            if (this.ActionReason != input.ActionReason || (this.ActionReason != null && !this.ActionReason.Equals(input.ActionReason))) return false;
+            if (this.ProviderName != input.ProviderName || (this.ProviderName != null && !this.ProviderName.Equals(input.ProviderName))) return false;
+            if (this.Mode != input.Mode) return false;
+            if (this.Drifted != input.Drifted || (this.Drifted != null && !this.Drifted.Equals(input.Drifted))) return false;
+            if (this.Imported != input.Imported || (this.Imported != null && !this.Imported.Equals(input.Imported))) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
+            if (this.Attributes != input.Attributes || (this.Attributes != null && input.Attributes != null && !this.Attributes.SequenceEqual(input.Attributes))) return false;
 
-            return 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.ResourceName == input.ResourceName ||
-                    (this.ResourceName != null &&
-                    this.ResourceName.Equals(input.ResourceName))
-                ) && 
-                (
-                    this.Index == input.Index ||
-                    (this.Index != null &&
-                    this.Index.Equals(input.Index))
-                ) && 
-                (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                ) && 
-                (
-                    this.ActionReason == input.ActionReason ||
-                    (this.ActionReason != null &&
-                    this.ActionReason.Equals(input.ActionReason))
-                ) && 
-                (
-                    this.ProviderName == input.ProviderName ||
-                    (this.ProviderName != null &&
-                    this.ProviderName.Equals(input.ProviderName))
-                ) && 
-                (
-                    this.Mode == input.Mode ||
-                    (this.Mode != null &&
-                    this.Mode.Equals(input.Mode))
-                ) && 
-                (
-                    this.Drifted == input.Drifted ||
-                    (this.Drifted != null &&
-                    this.Drifted.Equals(input.Drifted))
-                ) && 
-                (
-                    this.Imported == input.Imported ||
-                    (this.Imported != null &&
-                    this.Imported.Equals(input.Imported))
-                ) && 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
-                ) && 
-                (
-                    this.Attributes == input.Attributes ||
-                    this.Attributes != null &&
-                    input.Attributes != null &&
-                    this.Attributes.SequenceEqual(input.Attributes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -440,29 +394,18 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
-                if (this.ResourceName != null)
-                    hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
-                if (this.Index != null)
-                    hashCode = hashCode * 59 + this.Index.GetHashCode();
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
-                if (this.ActionReason != null)
-                    hashCode = hashCode * 59 + this.ActionReason.GetHashCode();
-                if (this.ProviderName != null)
-                    hashCode = hashCode * 59 + this.ProviderName.GetHashCode();
-                if (this.Mode != null)
-                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
-                if (this.Drifted != null)
-                    hashCode = hashCode * 59 + this.Drifted.GetHashCode();
-                if (this.Imported != null)
-                    hashCode = hashCode * 59 + this.Imported.GetHashCode();
-                if (this.ResourceId != null)
-                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
-                if (this.Attributes != null)
-                    hashCode = hashCode * 59 + this.Attributes.GetHashCode();
+                var hashCode = 41;
+                if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
+                if (this.Index != null) hashCode = hashCode * 59 + this.Index.GetHashCode();
+                hashCode = hashCode * 59 + this.Action.GetHashCode();
+                if (this.ActionReason != null) hashCode = hashCode * 59 + this.ActionReason.GetHashCode();
+                if (this.ProviderName != null) hashCode = hashCode * 59 + this.ProviderName.GetHashCode();
+                hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                if (this.Drifted != null) hashCode = hashCode * 59 + this.Drifted.GetHashCode();
+                if (this.Imported != null) hashCode = hashCode * 59 + this.Imported.GetHashCode();
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.Attributes != null) hashCode = hashCode * 59 + this.Attributes.GetHashCode();
                 return hashCode;
             }
         }

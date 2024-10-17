@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(BackupReplicateReqBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.DestinationProjectId != input.DestinationProjectId || (this.DestinationProjectId != null && !this.DestinationProjectId.Equals(input.DestinationProjectId))) return false;
+            if (this.DestinationRegion != input.DestinationRegion || (this.DestinationRegion != null && !this.DestinationRegion.Equals(input.DestinationRegion))) return false;
+            if (this.DestinationVaultId != input.DestinationVaultId || (this.DestinationVaultId != null && !this.DestinationVaultId.Equals(input.DestinationVaultId))) return false;
+            if (this.EnableAcceleration != input.EnableAcceleration || (this.EnableAcceleration != null && !this.EnableAcceleration.Equals(input.EnableAcceleration))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
 
-            return 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.DestinationProjectId == input.DestinationProjectId ||
-                    (this.DestinationProjectId != null &&
-                    this.DestinationProjectId.Equals(input.DestinationProjectId))
-                ) && 
-                (
-                    this.DestinationRegion == input.DestinationRegion ||
-                    (this.DestinationRegion != null &&
-                    this.DestinationRegion.Equals(input.DestinationRegion))
-                ) && 
-                (
-                    this.DestinationVaultId == input.DestinationVaultId ||
-                    (this.DestinationVaultId != null &&
-                    this.DestinationVaultId.Equals(input.DestinationVaultId))
-                ) && 
-                (
-                    this.EnableAcceleration == input.EnableAcceleration ||
-                    (this.EnableAcceleration != null &&
-                    this.EnableAcceleration.Equals(input.EnableAcceleration))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.DestinationProjectId != null)
-                    hashCode = hashCode * 59 + this.DestinationProjectId.GetHashCode();
-                if (this.DestinationRegion != null)
-                    hashCode = hashCode * 59 + this.DestinationRegion.GetHashCode();
-                if (this.DestinationVaultId != null)
-                    hashCode = hashCode * 59 + this.DestinationVaultId.GetHashCode();
-                if (this.EnableAcceleration != null)
-                    hashCode = hashCode * 59 + this.EnableAcceleration.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                var hashCode = 41;
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.DestinationProjectId != null) hashCode = hashCode * 59 + this.DestinationProjectId.GetHashCode();
+                if (this.DestinationRegion != null) hashCode = hashCode * 59 + this.DestinationRegion.GetHashCode();
+                if (this.DestinationVaultId != null) hashCode = hashCode * 59 + this.DestinationVaultId.GetHashCode();
+                if (this.EnableAcceleration != null) hashCode = hashCode * 59 + this.EnableAcceleration.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 return hashCode;
             }
         }

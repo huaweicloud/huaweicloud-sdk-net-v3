@@ -98,51 +98,17 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(Rule input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.ConditionGroup != input.ConditionGroup || (this.ConditionGroup != null && !this.ConditionGroup.Equals(input.ConditionGroup))) return false;
+            if (this.Actions != input.Actions || (this.Actions != null && input.Actions != null && !this.Actions.SequenceEqual(input.Actions))) return false;
+            if (this.RuleType != input.RuleType || (this.RuleType != null && !this.RuleType.Equals(input.RuleType))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
+            if (this.DeviceSide != input.DeviceSide || (this.DeviceSide != null && !this.DeviceSide.Equals(input.DeviceSide))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.ConditionGroup == input.ConditionGroup ||
-                    (this.ConditionGroup != null &&
-                    this.ConditionGroup.Equals(input.ConditionGroup))
-                ) && 
-                (
-                    this.Actions == input.Actions ||
-                    this.Actions != null &&
-                    input.Actions != null &&
-                    this.Actions.SequenceEqual(input.Actions)
-                ) && 
-                (
-                    this.RuleType == input.RuleType ||
-                    (this.RuleType != null &&
-                    this.RuleType.Equals(input.RuleType))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.AppId == input.AppId ||
-                    (this.AppId != null &&
-                    this.AppId.Equals(input.AppId))
-                ) && 
-                (
-                    this.DeviceSide == input.DeviceSide ||
-                    (this.DeviceSide != null &&
-                    this.DeviceSide.Equals(input.DeviceSide))
-                );
+            return true;
         }
 
         /// <summary>
@@ -152,23 +118,15 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.ConditionGroup != null)
-                    hashCode = hashCode * 59 + this.ConditionGroup.GetHashCode();
-                if (this.Actions != null)
-                    hashCode = hashCode * 59 + this.Actions.GetHashCode();
-                if (this.RuleType != null)
-                    hashCode = hashCode * 59 + this.RuleType.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.AppId != null)
-                    hashCode = hashCode * 59 + this.AppId.GetHashCode();
-                if (this.DeviceSide != null)
-                    hashCode = hashCode * 59 + this.DeviceSide.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.ConditionGroup != null) hashCode = hashCode * 59 + this.ConditionGroup.GetHashCode();
+                if (this.Actions != null) hashCode = hashCode * 59 + this.Actions.GetHashCode();
+                if (this.RuleType != null) hashCode = hashCode * 59 + this.RuleType.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
+                if (this.DeviceSide != null) hashCode = hashCode * 59 + this.DeviceSide.GetHashCode();
                 return hashCode;
             }
         }

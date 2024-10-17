@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ListFlavorInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Vcpu != input.Vcpu || (this.Vcpu != null && !this.Vcpu.Equals(input.Vcpu))) return false;
+            if (this.Mem != input.Mem || (this.Mem != null && !this.Mem.Equals(input.Mem))) return false;
 
-            return 
-                (
-                    this.Vcpu == input.Vcpu ||
-                    (this.Vcpu != null &&
-                    this.Vcpu.Equals(input.Vcpu))
-                ) && 
-                (
-                    this.Mem == input.Mem ||
-                    (this.Mem != null &&
-                    this.Mem.Equals(input.Mem))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Vcpu != null)
-                    hashCode = hashCode * 59 + this.Vcpu.GetHashCode();
-                if (this.Mem != null)
-                    hashCode = hashCode * 59 + this.Mem.GetHashCode();
+                var hashCode = 41;
+                if (this.Vcpu != null) hashCode = hashCode * 59 + this.Vcpu.GetHashCode();
+                if (this.Mem != null) hashCode = hashCode * 59 + this.Mem.GetHashCode();
                 return hashCode;
             }
         }

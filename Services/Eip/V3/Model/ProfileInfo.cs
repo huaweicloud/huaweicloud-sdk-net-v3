@@ -466,60 +466,19 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(ProfileInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LocalNetworkPort != input.LocalNetworkPort || (this.LocalNetworkPort != null && !this.LocalNetworkPort.Equals(input.LocalNetworkPort))) return false;
+            if (this.Standalone != input.Standalone || (this.Standalone != null && !this.Standalone.Equals(input.Standalone))) return false;
+            if (this.NotifyStatus != input.NotifyStatus) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.FakeNetworkType != input.FakeNetworkType || (this.FakeNetworkType != null && !this.FakeNetworkType.Equals(input.FakeNetworkType))) return false;
+            if (this.CreateSource != input.CreateSource) return false;
+            if (this.EcsId != input.EcsId || (this.EcsId != null && !this.EcsId.Equals(input.EcsId))) return false;
+            if (this.LockStatus != input.LockStatus || (this.LockStatus != null && !this.LockStatus.Equals(input.LockStatus))) return false;
+            if (this.FreezedStatus != input.FreezedStatus) return false;
+            if (this.BandwithInfo != input.BandwithInfo || (this.BandwithInfo != null && !this.BandwithInfo.Equals(input.BandwithInfo))) return false;
 
-            return 
-                (
-                    this.LocalNetworkPort == input.LocalNetworkPort ||
-                    (this.LocalNetworkPort != null &&
-                    this.LocalNetworkPort.Equals(input.LocalNetworkPort))
-                ) && 
-                (
-                    this.Standalone == input.Standalone ||
-                    (this.Standalone != null &&
-                    this.Standalone.Equals(input.Standalone))
-                ) && 
-                (
-                    this.NotifyStatus == input.NotifyStatus ||
-                    (this.NotifyStatus != null &&
-                    this.NotifyStatus.Equals(input.NotifyStatus))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.FakeNetworkType == input.FakeNetworkType ||
-                    (this.FakeNetworkType != null &&
-                    this.FakeNetworkType.Equals(input.FakeNetworkType))
-                ) && 
-                (
-                    this.CreateSource == input.CreateSource ||
-                    (this.CreateSource != null &&
-                    this.CreateSource.Equals(input.CreateSource))
-                ) && 
-                (
-                    this.EcsId == input.EcsId ||
-                    (this.EcsId != null &&
-                    this.EcsId.Equals(input.EcsId))
-                ) && 
-                (
-                    this.LockStatus == input.LockStatus ||
-                    (this.LockStatus != null &&
-                    this.LockStatus.Equals(input.LockStatus))
-                ) && 
-                (
-                    this.FreezedStatus == input.FreezedStatus ||
-                    (this.FreezedStatus != null &&
-                    this.FreezedStatus.Equals(input.FreezedStatus))
-                ) && 
-                (
-                    this.BandwithInfo == input.BandwithInfo ||
-                    (this.BandwithInfo != null &&
-                    this.BandwithInfo.Equals(input.BandwithInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -529,27 +488,17 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LocalNetworkPort != null)
-                    hashCode = hashCode * 59 + this.LocalNetworkPort.GetHashCode();
-                if (this.Standalone != null)
-                    hashCode = hashCode * 59 + this.Standalone.GetHashCode();
-                if (this.NotifyStatus != null)
-                    hashCode = hashCode * 59 + this.NotifyStatus.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.FakeNetworkType != null)
-                    hashCode = hashCode * 59 + this.FakeNetworkType.GetHashCode();
-                if (this.CreateSource != null)
-                    hashCode = hashCode * 59 + this.CreateSource.GetHashCode();
-                if (this.EcsId != null)
-                    hashCode = hashCode * 59 + this.EcsId.GetHashCode();
-                if (this.LockStatus != null)
-                    hashCode = hashCode * 59 + this.LockStatus.GetHashCode();
-                if (this.FreezedStatus != null)
-                    hashCode = hashCode * 59 + this.FreezedStatus.GetHashCode();
-                if (this.BandwithInfo != null)
-                    hashCode = hashCode * 59 + this.BandwithInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.LocalNetworkPort != null) hashCode = hashCode * 59 + this.LocalNetworkPort.GetHashCode();
+                if (this.Standalone != null) hashCode = hashCode * 59 + this.Standalone.GetHashCode();
+                hashCode = hashCode * 59 + this.NotifyStatus.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.FakeNetworkType != null) hashCode = hashCode * 59 + this.FakeNetworkType.GetHashCode();
+                hashCode = hashCode * 59 + this.CreateSource.GetHashCode();
+                if (this.EcsId != null) hashCode = hashCode * 59 + this.EcsId.GetHashCode();
+                if (this.LockStatus != null) hashCode = hashCode * 59 + this.LockStatus.GetHashCode();
+                hashCode = hashCode * 59 + this.FreezedStatus.GetHashCode();
+                if (this.BandwithInfo != null) hashCode = hashCode * 59 + this.BandwithInfo.GetHashCode();
                 return hashCode;
             }
         }

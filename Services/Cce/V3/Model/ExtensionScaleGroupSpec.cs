@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ExtensionScaleGroupSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Flavor != input.Flavor || (this.Flavor != null && !this.Flavor.Equals(input.Flavor))) return false;
+            if (this.Az != input.Az || (this.Az != null && !this.Az.Equals(input.Az))) return false;
+            if (this.CapacityReservationSpecification != input.CapacityReservationSpecification || (this.CapacityReservationSpecification != null && !this.CapacityReservationSpecification.Equals(input.CapacityReservationSpecification))) return false;
+            if (this.Autoscaling != input.Autoscaling || (this.Autoscaling != null && !this.Autoscaling.Equals(input.Autoscaling))) return false;
 
-            return 
-                (
-                    this.Flavor == input.Flavor ||
-                    (this.Flavor != null &&
-                    this.Flavor.Equals(input.Flavor))
-                ) && 
-                (
-                    this.Az == input.Az ||
-                    (this.Az != null &&
-                    this.Az.Equals(input.Az))
-                ) && 
-                (
-                    this.CapacityReservationSpecification == input.CapacityReservationSpecification ||
-                    (this.CapacityReservationSpecification != null &&
-                    this.CapacityReservationSpecification.Equals(input.CapacityReservationSpecification))
-                ) && 
-                (
-                    this.Autoscaling == input.Autoscaling ||
-                    (this.Autoscaling != null &&
-                    this.Autoscaling.Equals(input.Autoscaling))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Flavor != null)
-                    hashCode = hashCode * 59 + this.Flavor.GetHashCode();
-                if (this.Az != null)
-                    hashCode = hashCode * 59 + this.Az.GetHashCode();
-                if (this.CapacityReservationSpecification != null)
-                    hashCode = hashCode * 59 + this.CapacityReservationSpecification.GetHashCode();
-                if (this.Autoscaling != null)
-                    hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
+                var hashCode = 41;
+                if (this.Flavor != null) hashCode = hashCode * 59 + this.Flavor.GetHashCode();
+                if (this.Az != null) hashCode = hashCode * 59 + this.Az.GetHashCode();
+                if (this.CapacityReservationSpecification != null) hashCode = hashCode * 59 + this.CapacityReservationSpecification.GetHashCode();
+                if (this.Autoscaling != null) hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
                 return hashCode;
             }
         }

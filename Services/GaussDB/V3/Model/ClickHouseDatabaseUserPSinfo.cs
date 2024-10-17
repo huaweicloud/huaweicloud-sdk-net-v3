@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ClickHouseDatabaseUserPSinfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.Databases != input.Databases || (this.Databases != null && input.Databases != null && !this.Databases.SequenceEqual(input.Databases))) return false;
+            if (this.Dml != input.Dml || (this.Dml != null && !this.Dml.Equals(input.Dml))) return false;
 
-            return 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.Databases == input.Databases ||
-                    this.Databases != null &&
-                    input.Databases != null &&
-                    this.Databases.SequenceEqual(input.Databases)
-                ) && 
-                (
-                    this.Dml == input.Dml ||
-                    (this.Dml != null &&
-                    this.Dml.Equals(input.Dml))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UserName != null)
-                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.Databases != null)
-                    hashCode = hashCode * 59 + this.Databases.GetHashCode();
-                if (this.Dml != null)
-                    hashCode = hashCode * 59 + this.Dml.GetHashCode();
+                var hashCode = 41;
+                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.Databases != null) hashCode = hashCode * 59 + this.Databases.GetHashCode();
+                if (this.Dml != null) hashCode = hashCode * 59 + this.Dml.GetHashCode();
                 return hashCode;
             }
         }

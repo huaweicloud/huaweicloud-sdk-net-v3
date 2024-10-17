@@ -285,25 +285,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(BackupEncryptRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type) return false;
+            if (this.KmsKeyId != input.KmsKeyId || (this.KmsKeyId != null && !this.KmsKeyId.Equals(input.KmsKeyId))) return false;
+            if (this.EncryptionStatus != input.EncryptionStatus) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.KmsKeyId == input.KmsKeyId ||
-                    (this.KmsKeyId != null &&
-                    this.KmsKeyId.Equals(input.KmsKeyId))
-                ) && 
-                (
-                    this.EncryptionStatus == input.EncryptionStatus ||
-                    (this.EncryptionStatus != null &&
-                    this.EncryptionStatus.Equals(input.EncryptionStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -313,13 +300,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.KmsKeyId != null)
-                    hashCode = hashCode * 59 + this.KmsKeyId.GetHashCode();
-                if (this.EncryptionStatus != null)
-                    hashCode = hashCode * 59 + this.EncryptionStatus.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.KmsKeyId != null) hashCode = hashCode * 59 + this.KmsKeyId.GetHashCode();
+                hashCode = hashCode * 59 + this.EncryptionStatus.GetHashCode();
                 return hashCode;
             }
         }

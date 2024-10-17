@@ -35,13 +35,13 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string AzType { get; set; }
 
         /// <summary>
-        /// 可用区别名
+        /// 可用区中文别名
         /// </summary>
         [JsonProperty("alias", NullValueHandling = NullValueHandling.Ignore)]
         public string Alias { get; set; }
 
         /// <summary>
-        /// 可用区别名英文
+        /// 可用区英文别名
         /// </summary>
         [JsonProperty("alias_us", NullValueHandling = NullValueHandling.Ignore)]
         public string AliasUs { get; set; }
@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         public bool Equals(AzInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ZoneName != input.ZoneName || (this.ZoneName != null && !this.ZoneName.Equals(input.ZoneName))) return false;
+            if (this.ZoneNumber != input.ZoneNumber || (this.ZoneNumber != null && !this.ZoneNumber.Equals(input.ZoneNumber))) return false;
+            if (this.AzType != input.AzType || (this.AzType != null && !this.AzType.Equals(input.AzType))) return false;
+            if (this.Alias != input.Alias || (this.Alias != null && !this.Alias.Equals(input.Alias))) return false;
+            if (this.AliasUs != input.AliasUs || (this.AliasUs != null && !this.AliasUs.Equals(input.AliasUs))) return false;
 
-            return 
-                (
-                    this.ZoneName == input.ZoneName ||
-                    (this.ZoneName != null &&
-                    this.ZoneName.Equals(input.ZoneName))
-                ) && 
-                (
-                    this.ZoneNumber == input.ZoneNumber ||
-                    (this.ZoneNumber != null &&
-                    this.ZoneNumber.Equals(input.ZoneNumber))
-                ) && 
-                (
-                    this.AzType == input.AzType ||
-                    (this.AzType != null &&
-                    this.AzType.Equals(input.AzType))
-                ) && 
-                (
-                    this.Alias == input.Alias ||
-                    (this.Alias != null &&
-                    this.Alias.Equals(input.Alias))
-                ) && 
-                (
-                    this.AliasUs == input.AliasUs ||
-                    (this.AliasUs != null &&
-                    this.AliasUs.Equals(input.AliasUs))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ZoneName != null)
-                    hashCode = hashCode * 59 + this.ZoneName.GetHashCode();
-                if (this.ZoneNumber != null)
-                    hashCode = hashCode * 59 + this.ZoneNumber.GetHashCode();
-                if (this.AzType != null)
-                    hashCode = hashCode * 59 + this.AzType.GetHashCode();
-                if (this.Alias != null)
-                    hashCode = hashCode * 59 + this.Alias.GetHashCode();
-                if (this.AliasUs != null)
-                    hashCode = hashCode * 59 + this.AliasUs.GetHashCode();
+                var hashCode = 41;
+                if (this.ZoneName != null) hashCode = hashCode * 59 + this.ZoneName.GetHashCode();
+                if (this.ZoneNumber != null) hashCode = hashCode * 59 + this.ZoneNumber.GetHashCode();
+                if (this.AzType != null) hashCode = hashCode * 59 + this.AzType.GetHashCode();
+                if (this.Alias != null) hashCode = hashCode * 59 + this.Alias.GetHashCode();
+                if (this.AliasUs != null) hashCode = hashCode * 59 + this.AliasUs.GetHashCode();
                 return hashCode;
             }
         }

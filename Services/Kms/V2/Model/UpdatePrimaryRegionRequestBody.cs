@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         /// </summary>
         public bool Equals(UpdatePrimaryRegionRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KeyId != input.KeyId || (this.KeyId != null && !this.KeyId.Equals(input.KeyId))) return false;
+            if (this.PrimaryRegion != input.PrimaryRegion || (this.PrimaryRegion != null && !this.PrimaryRegion.Equals(input.PrimaryRegion))) return false;
 
-            return 
-                (
-                    this.KeyId == input.KeyId ||
-                    (this.KeyId != null &&
-                    this.KeyId.Equals(input.KeyId))
-                ) && 
-                (
-                    this.PrimaryRegion == input.PrimaryRegion ||
-                    (this.PrimaryRegion != null &&
-                    this.PrimaryRegion.Equals(input.PrimaryRegion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KeyId != null)
-                    hashCode = hashCode * 59 + this.KeyId.GetHashCode();
-                if (this.PrimaryRegion != null)
-                    hashCode = hashCode * 59 + this.PrimaryRegion.GetHashCode();
+                var hashCode = 41;
+                if (this.KeyId != null) hashCode = hashCode * 59 + this.KeyId.GetHashCode();
+                if (this.PrimaryRegion != null) hashCode = hashCode * 59 + this.PrimaryRegion.GetHashCode();
                 return hashCode;
             }
         }

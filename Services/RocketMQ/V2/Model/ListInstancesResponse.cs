@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(ListInstancesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Instances != input.Instances || (this.Instances != null && input.Instances != null && !this.Instances.SequenceEqual(input.Instances))) return false;
+            if (this.InstanceNum != input.InstanceNum || (this.InstanceNum != null && !this.InstanceNum.Equals(input.InstanceNum))) return false;
 
-            return 
-                (
-                    this.Instances == input.Instances ||
-                    this.Instances != null &&
-                    input.Instances != null &&
-                    this.Instances.SequenceEqual(input.Instances)
-                ) && 
-                (
-                    this.InstanceNum == input.InstanceNum ||
-                    (this.InstanceNum != null &&
-                    this.InstanceNum.Equals(input.InstanceNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Instances != null)
-                    hashCode = hashCode * 59 + this.Instances.GetHashCode();
-                if (this.InstanceNum != null)
-                    hashCode = hashCode * 59 + this.InstanceNum.GetHashCode();
+                var hashCode = 41;
+                if (this.Instances != null) hashCode = hashCode * 59 + this.Instances.GetHashCode();
+                if (this.InstanceNum != null) hashCode = hashCode * 59 + this.InstanceNum.GetHashCode();
                 return hashCode;
             }
         }

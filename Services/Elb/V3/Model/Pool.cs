@@ -338,143 +338,35 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(Pool input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.HealthmonitorId != input.HealthmonitorId || (this.HealthmonitorId != null && !this.HealthmonitorId.Equals(input.HealthmonitorId))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.LbAlgorithm != input.LbAlgorithm || (this.LbAlgorithm != null && !this.LbAlgorithm.Equals(input.LbAlgorithm))) return false;
+            if (this.Listeners != input.Listeners || (this.Listeners != null && input.Listeners != null && !this.Listeners.SequenceEqual(input.Listeners))) return false;
+            if (this.Loadbalancers != input.Loadbalancers || (this.Loadbalancers != null && input.Loadbalancers != null && !this.Loadbalancers.SequenceEqual(input.Loadbalancers))) return false;
+            if (this.Members != input.Members || (this.Members != null && input.Members != null && !this.Members.SequenceEqual(input.Members))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.Protocol != input.Protocol || (this.Protocol != null && !this.Protocol.Equals(input.Protocol))) return false;
+            if (this.SessionPersistence != input.SessionPersistence || (this.SessionPersistence != null && !this.SessionPersistence.Equals(input.SessionPersistence))) return false;
+            if (this.IpVersion != input.IpVersion || (this.IpVersion != null && !this.IpVersion.Equals(input.IpVersion))) return false;
+            if (this.SlowStart != input.SlowStart || (this.SlowStart != null && !this.SlowStart.Equals(input.SlowStart))) return false;
+            if (this.MemberDeletionProtectionEnable != input.MemberDeletionProtectionEnable || (this.MemberDeletionProtectionEnable != null && !this.MemberDeletionProtectionEnable.Equals(input.MemberDeletionProtectionEnable))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.ProtectionStatus != input.ProtectionStatus) return false;
+            if (this.ProtectionReason != input.ProtectionReason || (this.ProtectionReason != null && !this.ProtectionReason.Equals(input.ProtectionReason))) return false;
+            if (this.AnyPortEnable != input.AnyPortEnable || (this.AnyPortEnable != null && !this.AnyPortEnable.Equals(input.AnyPortEnable))) return false;
+            if (this.ConnectionDrain != input.ConnectionDrain || (this.ConnectionDrain != null && !this.ConnectionDrain.Equals(input.ConnectionDrain))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.PoolHealth != input.PoolHealth || (this.PoolHealth != null && !this.PoolHealth.Equals(input.PoolHealth))) return false;
+            if (this.PublicBorderGroup != input.PublicBorderGroup || (this.PublicBorderGroup != null && !this.PublicBorderGroup.Equals(input.PublicBorderGroup))) return false;
 
-            return 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.HealthmonitorId == input.HealthmonitorId ||
-                    (this.HealthmonitorId != null &&
-                    this.HealthmonitorId.Equals(input.HealthmonitorId))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.LbAlgorithm == input.LbAlgorithm ||
-                    (this.LbAlgorithm != null &&
-                    this.LbAlgorithm.Equals(input.LbAlgorithm))
-                ) && 
-                (
-                    this.Listeners == input.Listeners ||
-                    this.Listeners != null &&
-                    input.Listeners != null &&
-                    this.Listeners.SequenceEqual(input.Listeners)
-                ) && 
-                (
-                    this.Loadbalancers == input.Loadbalancers ||
-                    this.Loadbalancers != null &&
-                    input.Loadbalancers != null &&
-                    this.Loadbalancers.SequenceEqual(input.Loadbalancers)
-                ) && 
-                (
-                    this.Members == input.Members ||
-                    this.Members != null &&
-                    input.Members != null &&
-                    this.Members.SequenceEqual(input.Members)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Protocol == input.Protocol ||
-                    (this.Protocol != null &&
-                    this.Protocol.Equals(input.Protocol))
-                ) && 
-                (
-                    this.SessionPersistence == input.SessionPersistence ||
-                    (this.SessionPersistence != null &&
-                    this.SessionPersistence.Equals(input.SessionPersistence))
-                ) && 
-                (
-                    this.IpVersion == input.IpVersion ||
-                    (this.IpVersion != null &&
-                    this.IpVersion.Equals(input.IpVersion))
-                ) && 
-                (
-                    this.SlowStart == input.SlowStart ||
-                    (this.SlowStart != null &&
-                    this.SlowStart.Equals(input.SlowStart))
-                ) && 
-                (
-                    this.MemberDeletionProtectionEnable == input.MemberDeletionProtectionEnable ||
-                    (this.MemberDeletionProtectionEnable != null &&
-                    this.MemberDeletionProtectionEnable.Equals(input.MemberDeletionProtectionEnable))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.VpcId == input.VpcId ||
-                    (this.VpcId != null &&
-                    this.VpcId.Equals(input.VpcId))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.ProtectionStatus == input.ProtectionStatus ||
-                    (this.ProtectionStatus != null &&
-                    this.ProtectionStatus.Equals(input.ProtectionStatus))
-                ) && 
-                (
-                    this.ProtectionReason == input.ProtectionReason ||
-                    (this.ProtectionReason != null &&
-                    this.ProtectionReason.Equals(input.ProtectionReason))
-                ) && 
-                (
-                    this.AnyPortEnable == input.AnyPortEnable ||
-                    (this.AnyPortEnable != null &&
-                    this.AnyPortEnable.Equals(input.AnyPortEnable))
-                ) && 
-                (
-                    this.ConnectionDrain == input.ConnectionDrain ||
-                    (this.ConnectionDrain != null &&
-                    this.ConnectionDrain.Equals(input.ConnectionDrain))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.PoolHealth == input.PoolHealth ||
-                    (this.PoolHealth != null &&
-                    this.PoolHealth.Equals(input.PoolHealth))
-                ) && 
-                (
-                    this.PublicBorderGroup == input.PublicBorderGroup ||
-                    (this.PublicBorderGroup != null &&
-                    this.PublicBorderGroup.Equals(input.PublicBorderGroup))
-                );
+            return true;
         }
 
         /// <summary>
@@ -484,59 +376,33 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.HealthmonitorId != null)
-                    hashCode = hashCode * 59 + this.HealthmonitorId.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.LbAlgorithm != null)
-                    hashCode = hashCode * 59 + this.LbAlgorithm.GetHashCode();
-                if (this.Listeners != null)
-                    hashCode = hashCode * 59 + this.Listeners.GetHashCode();
-                if (this.Loadbalancers != null)
-                    hashCode = hashCode * 59 + this.Loadbalancers.GetHashCode();
-                if (this.Members != null)
-                    hashCode = hashCode * 59 + this.Members.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
-                if (this.SessionPersistence != null)
-                    hashCode = hashCode * 59 + this.SessionPersistence.GetHashCode();
-                if (this.IpVersion != null)
-                    hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
-                if (this.SlowStart != null)
-                    hashCode = hashCode * 59 + this.SlowStart.GetHashCode();
-                if (this.MemberDeletionProtectionEnable != null)
-                    hashCode = hashCode * 59 + this.MemberDeletionProtectionEnable.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.ProtectionStatus != null)
-                    hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
-                if (this.ProtectionReason != null)
-                    hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
-                if (this.AnyPortEnable != null)
-                    hashCode = hashCode * 59 + this.AnyPortEnable.GetHashCode();
-                if (this.ConnectionDrain != null)
-                    hashCode = hashCode * 59 + this.ConnectionDrain.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.PoolHealth != null)
-                    hashCode = hashCode * 59 + this.PoolHealth.GetHashCode();
-                if (this.PublicBorderGroup != null)
-                    hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                var hashCode = 41;
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.HealthmonitorId != null) hashCode = hashCode * 59 + this.HealthmonitorId.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.LbAlgorithm != null) hashCode = hashCode * 59 + this.LbAlgorithm.GetHashCode();
+                if (this.Listeners != null) hashCode = hashCode * 59 + this.Listeners.GetHashCode();
+                if (this.Loadbalancers != null) hashCode = hashCode * 59 + this.Loadbalancers.GetHashCode();
+                if (this.Members != null) hashCode = hashCode * 59 + this.Members.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.SessionPersistence != null) hashCode = hashCode * 59 + this.SessionPersistence.GetHashCode();
+                if (this.IpVersion != null) hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
+                if (this.SlowStart != null) hashCode = hashCode * 59 + this.SlowStart.GetHashCode();
+                if (this.MemberDeletionProtectionEnable != null) hashCode = hashCode * 59 + this.MemberDeletionProtectionEnable.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
+                if (this.ProtectionReason != null) hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
+                if (this.AnyPortEnable != null) hashCode = hashCode * 59 + this.AnyPortEnable.GetHashCode();
+                if (this.ConnectionDrain != null) hashCode = hashCode * 59 + this.ConnectionDrain.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.PoolHealth != null) hashCode = hashCode * 59 + this.PoolHealth.GetHashCode();
+                if (this.PublicBorderGroup != null) hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(CreateTemplateGroupCollectionResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.GroupCollectionId != input.GroupCollectionId || (this.GroupCollectionId != null && !this.GroupCollectionId.Equals(input.GroupCollectionId))) return false;
 
-            return 
-                (
-                    this.GroupCollectionId == input.GroupCollectionId ||
-                    (this.GroupCollectionId != null &&
-                    this.GroupCollectionId.Equals(input.GroupCollectionId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.GroupCollectionId != null)
-                    hashCode = hashCode * 59 + this.GroupCollectionId.GetHashCode();
+                var hashCode = 41;
+                if (this.GroupCollectionId != null) hashCode = hashCode * 59 + this.GroupCollectionId.GetHashCode();
                 return hashCode;
             }
         }

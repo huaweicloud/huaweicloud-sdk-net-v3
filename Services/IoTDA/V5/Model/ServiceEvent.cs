@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ServiceEvent input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EventType != input.EventType || (this.EventType != null && !this.EventType.Equals(input.EventType))) return false;
+            if (this.Paras != input.Paras || (this.Paras != null && input.Paras != null && !this.Paras.SequenceEqual(input.Paras))) return false;
 
-            return 
-                (
-                    this.EventType == input.EventType ||
-                    (this.EventType != null &&
-                    this.EventType.Equals(input.EventType))
-                ) && 
-                (
-                    this.Paras == input.Paras ||
-                    this.Paras != null &&
-                    input.Paras != null &&
-                    this.Paras.SequenceEqual(input.Paras)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EventType != null)
-                    hashCode = hashCode * 59 + this.EventType.GetHashCode();
-                if (this.Paras != null)
-                    hashCode = hashCode * 59 + this.Paras.GetHashCode();
+                var hashCode = 41;
+                if (this.EventType != null) hashCode = hashCode * 59 + this.EventType.GetHashCode();
+                if (this.Paras != null) hashCode = hashCode * 59 + this.Paras.GetHashCode();
                 return hashCode;
             }
         }

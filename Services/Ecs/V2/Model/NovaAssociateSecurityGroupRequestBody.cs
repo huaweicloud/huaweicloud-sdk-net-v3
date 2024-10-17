@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(NovaAssociateSecurityGroupRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AddSecurityGroup != input.AddSecurityGroup || (this.AddSecurityGroup != null && !this.AddSecurityGroup.Equals(input.AddSecurityGroup))) return false;
 
-            return 
-                (
-                    this.AddSecurityGroup == input.AddSecurityGroup ||
-                    (this.AddSecurityGroup != null &&
-                    this.AddSecurityGroup.Equals(input.AddSecurityGroup))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AddSecurityGroup != null)
-                    hashCode = hashCode * 59 + this.AddSecurityGroup.GetHashCode();
+                var hashCode = 41;
+                if (this.AddSecurityGroup != null) hashCode = hashCode * 59 + this.AddSecurityGroup.GetHashCode();
                 return hashCode;
             }
         }

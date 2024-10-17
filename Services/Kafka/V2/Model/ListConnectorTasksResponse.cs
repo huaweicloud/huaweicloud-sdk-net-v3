@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ListConnectorTasksResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Tasks != input.Tasks || (this.Tasks != null && input.Tasks != null && !this.Tasks.SequenceEqual(input.Tasks))) return false;
+            if (this.TotalNumber != input.TotalNumber || (this.TotalNumber != null && !this.TotalNumber.Equals(input.TotalNumber))) return false;
+            if (this.MaxTasks != input.MaxTasks || (this.MaxTasks != null && !this.MaxTasks.Equals(input.MaxTasks))) return false;
+            if (this.QuotaTasks != input.QuotaTasks || (this.QuotaTasks != null && !this.QuotaTasks.Equals(input.QuotaTasks))) return false;
 
-            return 
-                (
-                    this.Tasks == input.Tasks ||
-                    this.Tasks != null &&
-                    input.Tasks != null &&
-                    this.Tasks.SequenceEqual(input.Tasks)
-                ) && 
-                (
-                    this.TotalNumber == input.TotalNumber ||
-                    (this.TotalNumber != null &&
-                    this.TotalNumber.Equals(input.TotalNumber))
-                ) && 
-                (
-                    this.MaxTasks == input.MaxTasks ||
-                    (this.MaxTasks != null &&
-                    this.MaxTasks.Equals(input.MaxTasks))
-                ) && 
-                (
-                    this.QuotaTasks == input.QuotaTasks ||
-                    (this.QuotaTasks != null &&
-                    this.QuotaTasks.Equals(input.QuotaTasks))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Tasks != null)
-                    hashCode = hashCode * 59 + this.Tasks.GetHashCode();
-                if (this.TotalNumber != null)
-                    hashCode = hashCode * 59 + this.TotalNumber.GetHashCode();
-                if (this.MaxTasks != null)
-                    hashCode = hashCode * 59 + this.MaxTasks.GetHashCode();
-                if (this.QuotaTasks != null)
-                    hashCode = hashCode * 59 + this.QuotaTasks.GetHashCode();
+                var hashCode = 41;
+                if (this.Tasks != null) hashCode = hashCode * 59 + this.Tasks.GetHashCode();
+                if (this.TotalNumber != null) hashCode = hashCode * 59 + this.TotalNumber.GetHashCode();
+                if (this.MaxTasks != null) hashCode = hashCode * 59 + this.MaxTasks.GetHashCode();
+                if (this.QuotaTasks != null) hashCode = hashCode * 59 + this.QuotaTasks.GetHashCode();
                 return hashCode;
             }
         }

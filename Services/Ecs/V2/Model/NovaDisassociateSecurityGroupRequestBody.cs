@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(NovaDisassociateSecurityGroupRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RemoveSecurityGroup != input.RemoveSecurityGroup || (this.RemoveSecurityGroup != null && !this.RemoveSecurityGroup.Equals(input.RemoveSecurityGroup))) return false;
 
-            return 
-                (
-                    this.RemoveSecurityGroup == input.RemoveSecurityGroup ||
-                    (this.RemoveSecurityGroup != null &&
-                    this.RemoveSecurityGroup.Equals(input.RemoveSecurityGroup))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RemoveSecurityGroup != null)
-                    hashCode = hashCode * 59 + this.RemoveSecurityGroup.GetHashCode();
+                var hashCode = 41;
+                if (this.RemoveSecurityGroup != null) hashCode = hashCode * 59 + this.RemoveSecurityGroup.GetHashCode();
                 return hashCode;
             }
         }

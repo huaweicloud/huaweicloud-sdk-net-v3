@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(Entities input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SubJobsTotal != input.SubJobsTotal || (this.SubJobsTotal != null && !this.SubJobsTotal.Equals(input.SubJobsTotal))) return false;
+            if (this.SubJobs != input.SubJobs || (this.SubJobs != null && input.SubJobs != null && !this.SubJobs.SequenceEqual(input.SubJobs))) return false;
 
-            return 
-                (
-                    this.SubJobsTotal == input.SubJobsTotal ||
-                    (this.SubJobsTotal != null &&
-                    this.SubJobsTotal.Equals(input.SubJobsTotal))
-                ) && 
-                (
-                    this.SubJobs == input.SubJobs ||
-                    this.SubJobs != null &&
-                    input.SubJobs != null &&
-                    this.SubJobs.SequenceEqual(input.SubJobs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SubJobsTotal != null)
-                    hashCode = hashCode * 59 + this.SubJobsTotal.GetHashCode();
-                if (this.SubJobs != null)
-                    hashCode = hashCode * 59 + this.SubJobs.GetHashCode();
+                var hashCode = 41;
+                if (this.SubJobsTotal != null) hashCode = hashCode * 59 + this.SubJobsTotal.GetHashCode();
+                if (this.SubJobs != null) hashCode = hashCode * 59 + this.SubJobs.GetHashCode();
                 return hashCode;
             }
         }

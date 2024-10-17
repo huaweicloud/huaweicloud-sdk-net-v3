@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(KillOpRule input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.OperationTypes != input.OperationTypes || (this.OperationTypes != null && !this.OperationTypes.Equals(input.OperationTypes))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Namespaces != input.Namespaces || (this.Namespaces != null && !this.Namespaces.Equals(input.Namespaces))) return false;
+            if (this.ClientIps != input.ClientIps || (this.ClientIps != null && !this.ClientIps.Equals(input.ClientIps))) return false;
+            if (this.PlanSummary != input.PlanSummary || (this.PlanSummary != null && !this.PlanSummary.Equals(input.PlanSummary))) return false;
+            if (this.MaxConcurrency != input.MaxConcurrency || (this.MaxConcurrency != null && !this.MaxConcurrency.Equals(input.MaxConcurrency))) return false;
+            if (this.SecsRunning != input.SecsRunning || (this.SecsRunning != null && !this.SecsRunning.Equals(input.SecsRunning))) return false;
+            if (this.NodeType != input.NodeType || (this.NodeType != null && !this.NodeType.Equals(input.NodeType))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.OperationTypes == input.OperationTypes ||
-                    (this.OperationTypes != null &&
-                    this.OperationTypes.Equals(input.OperationTypes))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Namespaces == input.Namespaces ||
-                    (this.Namespaces != null &&
-                    this.Namespaces.Equals(input.Namespaces))
-                ) && 
-                (
-                    this.ClientIps == input.ClientIps ||
-                    (this.ClientIps != null &&
-                    this.ClientIps.Equals(input.ClientIps))
-                ) && 
-                (
-                    this.PlanSummary == input.PlanSummary ||
-                    (this.PlanSummary != null &&
-                    this.PlanSummary.Equals(input.PlanSummary))
-                ) && 
-                (
-                    this.MaxConcurrency == input.MaxConcurrency ||
-                    (this.MaxConcurrency != null &&
-                    this.MaxConcurrency.Equals(input.MaxConcurrency))
-                ) && 
-                (
-                    this.SecsRunning == input.SecsRunning ||
-                    (this.SecsRunning != null &&
-                    this.SecsRunning.Equals(input.SecsRunning))
-                ) && 
-                (
-                    this.NodeType == input.NodeType ||
-                    (this.NodeType != null &&
-                    this.NodeType.Equals(input.NodeType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.OperationTypes != null)
-                    hashCode = hashCode * 59 + this.OperationTypes.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Namespaces != null)
-                    hashCode = hashCode * 59 + this.Namespaces.GetHashCode();
-                if (this.ClientIps != null)
-                    hashCode = hashCode * 59 + this.ClientIps.GetHashCode();
-                if (this.PlanSummary != null)
-                    hashCode = hashCode * 59 + this.PlanSummary.GetHashCode();
-                if (this.MaxConcurrency != null)
-                    hashCode = hashCode * 59 + this.MaxConcurrency.GetHashCode();
-                if (this.SecsRunning != null)
-                    hashCode = hashCode * 59 + this.SecsRunning.GetHashCode();
-                if (this.NodeType != null)
-                    hashCode = hashCode * 59 + this.NodeType.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.OperationTypes != null) hashCode = hashCode * 59 + this.OperationTypes.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Namespaces != null) hashCode = hashCode * 59 + this.Namespaces.GetHashCode();
+                if (this.ClientIps != null) hashCode = hashCode * 59 + this.ClientIps.GetHashCode();
+                if (this.PlanSummary != null) hashCode = hashCode * 59 + this.PlanSummary.GetHashCode();
+                if (this.MaxConcurrency != null) hashCode = hashCode * 59 + this.MaxConcurrency.GetHashCode();
+                if (this.SecsRunning != null) hashCode = hashCode * 59 + this.SecsRunning.GetHashCode();
+                if (this.NodeType != null) hashCode = hashCode * 59 + this.NodeType.GetHashCode();
                 return hashCode;
             }
         }

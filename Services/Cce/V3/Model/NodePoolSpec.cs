@@ -218,53 +218,17 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(NodePoolSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type) return false;
+            if (this.NodeTemplate != input.NodeTemplate || (this.NodeTemplate != null && !this.NodeTemplate.Equals(input.NodeTemplate))) return false;
+            if (this.InitialNodeCount != input.InitialNodeCount || (this.InitialNodeCount != null && !this.InitialNodeCount.Equals(input.InitialNodeCount))) return false;
+            if (this.Autoscaling != input.Autoscaling || (this.Autoscaling != null && !this.Autoscaling.Equals(input.Autoscaling))) return false;
+            if (this.NodeManagement != input.NodeManagement || (this.NodeManagement != null && !this.NodeManagement.Equals(input.NodeManagement))) return false;
+            if (this.PodSecurityGroups != input.PodSecurityGroups || (this.PodSecurityGroups != null && input.PodSecurityGroups != null && !this.PodSecurityGroups.SequenceEqual(input.PodSecurityGroups))) return false;
+            if (this.ExtensionScaleGroups != input.ExtensionScaleGroups || (this.ExtensionScaleGroups != null && input.ExtensionScaleGroups != null && !this.ExtensionScaleGroups.SequenceEqual(input.ExtensionScaleGroups))) return false;
+            if (this.CustomSecurityGroups != input.CustomSecurityGroups || (this.CustomSecurityGroups != null && input.CustomSecurityGroups != null && !this.CustomSecurityGroups.SequenceEqual(input.CustomSecurityGroups))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.NodeTemplate == input.NodeTemplate ||
-                    (this.NodeTemplate != null &&
-                    this.NodeTemplate.Equals(input.NodeTemplate))
-                ) && 
-                (
-                    this.InitialNodeCount == input.InitialNodeCount ||
-                    (this.InitialNodeCount != null &&
-                    this.InitialNodeCount.Equals(input.InitialNodeCount))
-                ) && 
-                (
-                    this.Autoscaling == input.Autoscaling ||
-                    (this.Autoscaling != null &&
-                    this.Autoscaling.Equals(input.Autoscaling))
-                ) && 
-                (
-                    this.NodeManagement == input.NodeManagement ||
-                    (this.NodeManagement != null &&
-                    this.NodeManagement.Equals(input.NodeManagement))
-                ) && 
-                (
-                    this.PodSecurityGroups == input.PodSecurityGroups ||
-                    this.PodSecurityGroups != null &&
-                    input.PodSecurityGroups != null &&
-                    this.PodSecurityGroups.SequenceEqual(input.PodSecurityGroups)
-                ) && 
-                (
-                    this.ExtensionScaleGroups == input.ExtensionScaleGroups ||
-                    this.ExtensionScaleGroups != null &&
-                    input.ExtensionScaleGroups != null &&
-                    this.ExtensionScaleGroups.SequenceEqual(input.ExtensionScaleGroups)
-                ) && 
-                (
-                    this.CustomSecurityGroups == input.CustomSecurityGroups ||
-                    this.CustomSecurityGroups != null &&
-                    input.CustomSecurityGroups != null &&
-                    this.CustomSecurityGroups.SequenceEqual(input.CustomSecurityGroups)
-                );
+            return true;
         }
 
         /// <summary>
@@ -274,23 +238,15 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.NodeTemplate != null)
-                    hashCode = hashCode * 59 + this.NodeTemplate.GetHashCode();
-                if (this.InitialNodeCount != null)
-                    hashCode = hashCode * 59 + this.InitialNodeCount.GetHashCode();
-                if (this.Autoscaling != null)
-                    hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
-                if (this.NodeManagement != null)
-                    hashCode = hashCode * 59 + this.NodeManagement.GetHashCode();
-                if (this.PodSecurityGroups != null)
-                    hashCode = hashCode * 59 + this.PodSecurityGroups.GetHashCode();
-                if (this.ExtensionScaleGroups != null)
-                    hashCode = hashCode * 59 + this.ExtensionScaleGroups.GetHashCode();
-                if (this.CustomSecurityGroups != null)
-                    hashCode = hashCode * 59 + this.CustomSecurityGroups.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.NodeTemplate != null) hashCode = hashCode * 59 + this.NodeTemplate.GetHashCode();
+                if (this.InitialNodeCount != null) hashCode = hashCode * 59 + this.InitialNodeCount.GetHashCode();
+                if (this.Autoscaling != null) hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
+                if (this.NodeManagement != null) hashCode = hashCode * 59 + this.NodeManagement.GetHashCode();
+                if (this.PodSecurityGroups != null) hashCode = hashCode * 59 + this.PodSecurityGroups.GetHashCode();
+                if (this.ExtensionScaleGroups != null) hashCode = hashCode * 59 + this.ExtensionScaleGroups.GetHashCode();
+                if (this.CustomSecurityGroups != null) hashCode = hashCode * 59 + this.CustomSecurityGroups.GetHashCode();
                 return hashCode;
             }
         }

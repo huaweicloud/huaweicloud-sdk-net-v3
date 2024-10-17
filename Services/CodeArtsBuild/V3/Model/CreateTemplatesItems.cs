@@ -175,106 +175,28 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public bool Equals(CreateTemplatesItems input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Favourite != input.Favourite || (this.Favourite != null && !this.Favourite.Equals(input.Favourite))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Uuid != input.Uuid || (this.Uuid != null && !this.Uuid.Equals(input.Uuid))) return false;
+            if (this.Template != input.Template || (this.Template != null && !this.Template.Equals(input.Template))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Public != input.Public || (this.Public != null && !this.Public.Equals(input.Public))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.Weight != input.Weight || (this.Weight != null && !this.Weight.Equals(input.Weight))) return false;
+            if (this.UserId != input.UserId || (this.UserId != null && !this.UserId.Equals(input.UserId))) return false;
+            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
+            if (this.Scope != input.Scope || (this.Scope != null && !this.Scope.Equals(input.Scope))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.ToolType != input.ToolType || (this.ToolType != null && !this.ToolType.Equals(input.ToolType))) return false;
+            if (this.IntlDescription != input.IntlDescription || (this.IntlDescription != null && !this.IntlDescription.Equals(input.IntlDescription))) return false;
+            if (this.Parameters != input.Parameters || (this.Parameters != null && input.Parameters != null && !this.Parameters.SequenceEqual(input.Parameters))) return false;
+            if (this.I18n != input.I18n || (this.I18n != null && !this.I18n.Equals(input.I18n))) return false;
 
-            return 
-                (
-                    this.Favourite == input.Favourite ||
-                    (this.Favourite != null &&
-                    this.Favourite.Equals(input.Favourite))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Uuid == input.Uuid ||
-                    (this.Uuid != null &&
-                    this.Uuid.Equals(input.Uuid))
-                ) && 
-                (
-                    this.Template == input.Template ||
-                    (this.Template != null &&
-                    this.Template.Equals(input.Template))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Public == input.Public ||
-                    (this.Public != null &&
-                    this.Public.Equals(input.Public))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
-                    this.Weight == input.Weight ||
-                    (this.Weight != null &&
-                    this.Weight.Equals(input.Weight))
-                ) && 
-                (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
-                ) && 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.DomainName == input.DomainName ||
-                    (this.DomainName != null &&
-                    this.DomainName.Equals(input.DomainName))
-                ) && 
-                (
-                    this.Scope == input.Scope ||
-                    (this.Scope != null &&
-                    this.Scope.Equals(input.Scope))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.ToolType == input.ToolType ||
-                    (this.ToolType != null &&
-                    this.ToolType.Equals(input.ToolType))
-                ) && 
-                (
-                    this.IntlDescription == input.IntlDescription ||
-                    (this.IntlDescription != null &&
-                    this.IntlDescription.Equals(input.IntlDescription))
-                ) && 
-                (
-                    this.Parameters == input.Parameters ||
-                    this.Parameters != null &&
-                    input.Parameters != null &&
-                    this.Parameters.SequenceEqual(input.Parameters)
-                ) && 
-                (
-                    this.I18n == input.I18n ||
-                    (this.I18n != null &&
-                    this.I18n.Equals(input.I18n))
-                );
+            return true;
         }
 
         /// <summary>
@@ -284,45 +206,26 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Favourite != null)
-                    hashCode = hashCode * 59 + this.Favourite.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Uuid != null)
-                    hashCode = hashCode * 59 + this.Uuid.GetHashCode();
-                if (this.Template != null)
-                    hashCode = hashCode * 59 + this.Template.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Public != null)
-                    hashCode = hashCode * 59 + this.Public.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.Weight != null)
-                    hashCode = hashCode * 59 + this.Weight.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.UserName != null)
-                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.DomainName != null)
-                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.Scope != null)
-                    hashCode = hashCode * 59 + this.Scope.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.ToolType != null)
-                    hashCode = hashCode * 59 + this.ToolType.GetHashCode();
-                if (this.IntlDescription != null)
-                    hashCode = hashCode * 59 + this.IntlDescription.GetHashCode();
-                if (this.Parameters != null)
-                    hashCode = hashCode * 59 + this.Parameters.GetHashCode();
-                if (this.I18n != null)
-                    hashCode = hashCode * 59 + this.I18n.GetHashCode();
+                var hashCode = 41;
+                if (this.Favourite != null) hashCode = hashCode * 59 + this.Favourite.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Uuid != null) hashCode = hashCode * 59 + this.Uuid.GetHashCode();
+                if (this.Template != null) hashCode = hashCode * 59 + this.Template.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Public != null) hashCode = hashCode * 59 + this.Public.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.Weight != null) hashCode = hashCode * 59 + this.Weight.GetHashCode();
+                if (this.UserId != null) hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.Scope != null) hashCode = hashCode * 59 + this.Scope.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.ToolType != null) hashCode = hashCode * 59 + this.ToolType.GetHashCode();
+                if (this.IntlDescription != null) hashCode = hashCode * 59 + this.IntlDescription.GetHashCode();
+                if (this.Parameters != null) hashCode = hashCode * 59 + this.Parameters.GetHashCode();
+                if (this.I18n != null) hashCode = hashCode * 59 + this.I18n.GetHashCode();
                 return hashCode;
             }
         }

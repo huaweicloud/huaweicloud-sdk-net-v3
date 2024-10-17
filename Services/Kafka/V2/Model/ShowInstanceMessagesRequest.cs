@@ -130,65 +130,20 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ShowInstanceMessagesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;
+            if (this.Asc != input.Asc || (this.Asc != null && !this.Asc.Equals(input.Asc))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Download != input.Download || (this.Download != null && !this.Download.Equals(input.Download))) return false;
+            if (this.MessageOffset != input.MessageOffset || (this.MessageOffset != null && !this.MessageOffset.Equals(input.MessageOffset))) return false;
+            if (this.Partition != input.Partition || (this.Partition != null && !this.Partition.Equals(input.Partition))) return false;
+            if (this.Keyword != input.Keyword || (this.Keyword != null && !this.Keyword.Equals(input.Keyword))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.Topic == input.Topic ||
-                    (this.Topic != null &&
-                    this.Topic.Equals(input.Topic))
-                ) && 
-                (
-                    this.Asc == input.Asc ||
-                    (this.Asc != null &&
-                    this.Asc.Equals(input.Asc))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Download == input.Download ||
-                    (this.Download != null &&
-                    this.Download.Equals(input.Download))
-                ) && 
-                (
-                    this.MessageOffset == input.MessageOffset ||
-                    (this.MessageOffset != null &&
-                    this.MessageOffset.Equals(input.MessageOffset))
-                ) && 
-                (
-                    this.Partition == input.Partition ||
-                    (this.Partition != null &&
-                    this.Partition.Equals(input.Partition))
-                ) && 
-                (
-                    this.Keyword == input.Keyword ||
-                    (this.Keyword != null &&
-                    this.Keyword.Equals(input.Keyword))
-                );
+            return true;
         }
 
         /// <summary>
@@ -198,29 +153,18 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.Topic != null)
-                    hashCode = hashCode * 59 + this.Topic.GetHashCode();
-                if (this.Asc != null)
-                    hashCode = hashCode * 59 + this.Asc.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Download != null)
-                    hashCode = hashCode * 59 + this.Download.GetHashCode();
-                if (this.MessageOffset != null)
-                    hashCode = hashCode * 59 + this.MessageOffset.GetHashCode();
-                if (this.Partition != null)
-                    hashCode = hashCode * 59 + this.Partition.GetHashCode();
-                if (this.Keyword != null)
-                    hashCode = hashCode * 59 + this.Keyword.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.Topic != null) hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.Asc != null) hashCode = hashCode * 59 + this.Asc.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Download != null) hashCode = hashCode * 59 + this.Download.GetHashCode();
+                if (this.MessageOffset != null) hashCode = hashCode * 59 + this.MessageOffset.GetHashCode();
+                if (this.Partition != null) hashCode = hashCode * 59 + this.Partition.GetHashCode();
+                if (this.Keyword != null) hashCode = hashCode * 59 + this.Keyword.GetHashCode();
                 return hashCode;
             }
         }

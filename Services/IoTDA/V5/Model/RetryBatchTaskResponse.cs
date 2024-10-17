@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(RetryBatchTaskResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Targets != input.Targets || (this.Targets != null && input.Targets != null && !this.Targets.SequenceEqual(input.Targets))) return false;
 
-            return 
-                (
-                    this.Targets == input.Targets ||
-                    this.Targets != null &&
-                    input.Targets != null &&
-                    this.Targets.SequenceEqual(input.Targets)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Targets != null)
-                    hashCode = hashCode * 59 + this.Targets.GetHashCode();
+                var hashCode = 41;
+                if (this.Targets != null) hashCode = hashCode * 59 + this.Targets.GetHashCode();
                 return hashCode;
             }
         }

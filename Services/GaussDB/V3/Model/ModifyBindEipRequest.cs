@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ModifyBindEipRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PublicIp != input.PublicIp || (this.PublicIp != null && !this.PublicIp.Equals(input.PublicIp))) return false;
+            if (this.PublicIpId != input.PublicIpId || (this.PublicIpId != null && !this.PublicIpId.Equals(input.PublicIpId))) return false;
 
-            return 
-                (
-                    this.PublicIp == input.PublicIp ||
-                    (this.PublicIp != null &&
-                    this.PublicIp.Equals(input.PublicIp))
-                ) && 
-                (
-                    this.PublicIpId == input.PublicIpId ||
-                    (this.PublicIpId != null &&
-                    this.PublicIpId.Equals(input.PublicIpId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PublicIp != null)
-                    hashCode = hashCode * 59 + this.PublicIp.GetHashCode();
-                if (this.PublicIpId != null)
-                    hashCode = hashCode * 59 + this.PublicIpId.GetHashCode();
+                var hashCode = 41;
+                if (this.PublicIp != null) hashCode = hashCode * 59 + this.PublicIp.GetHashCode();
+                if (this.PublicIpId != null) hashCode = hashCode * 59 + this.PublicIpId.GetHashCode();
                 return hashCode;
             }
         }

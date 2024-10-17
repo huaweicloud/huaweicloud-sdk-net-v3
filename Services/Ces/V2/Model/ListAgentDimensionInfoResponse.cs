@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(ListAgentDimensionInfoResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Dimensions != input.Dimensions || (this.Dimensions != null && input.Dimensions != null && !this.Dimensions.SequenceEqual(input.Dimensions))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
 
-            return 
-                (
-                    this.Dimensions == input.Dimensions ||
-                    this.Dimensions != null &&
-                    input.Dimensions != null &&
-                    this.Dimensions.SequenceEqual(input.Dimensions)
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Dimensions != null)
-                    hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
+                var hashCode = 41;
+                if (this.Dimensions != null) hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
                 return hashCode;
             }
         }

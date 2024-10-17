@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ApplyConfigurationResponseApplyResults input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.InstanceName != input.InstanceName || (this.InstanceName != null && !this.InstanceName.Equals(input.InstanceName))) return false;
+            if (this.RestartRequired != input.RestartRequired || (this.RestartRequired != null && !this.RestartRequired.Equals(input.RestartRequired))) return false;
+            if (this.Success != input.Success || (this.Success != null && !this.Success.Equals(input.Success))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.InstanceName == input.InstanceName ||
-                    (this.InstanceName != null &&
-                    this.InstanceName.Equals(input.InstanceName))
-                ) && 
-                (
-                    this.RestartRequired == input.RestartRequired ||
-                    (this.RestartRequired != null &&
-                    this.RestartRequired.Equals(input.RestartRequired))
-                ) && 
-                (
-                    this.Success == input.Success ||
-                    (this.Success != null &&
-                    this.Success.Equals(input.Success))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.InstanceName != null)
-                    hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
-                if (this.RestartRequired != null)
-                    hashCode = hashCode * 59 + this.RestartRequired.GetHashCode();
-                if (this.Success != null)
-                    hashCode = hashCode * 59 + this.Success.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.InstanceName != null) hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
+                if (this.RestartRequired != null) hashCode = hashCode * 59 + this.RestartRequired.GetHashCode();
+                if (this.Success != null) hashCode = hashCode * 59 + this.Success.GetHashCode();
                 return hashCode;
             }
         }

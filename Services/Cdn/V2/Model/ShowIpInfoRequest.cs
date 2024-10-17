@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(ShowIpInfoRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.Ips != input.Ips || (this.Ips != null && !this.Ips.Equals(input.Ips))) return false;
 
-            return 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.Ips == input.Ips ||
-                    (this.Ips != null &&
-                    this.Ips.Equals(input.Ips))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.Ips != null)
-                    hashCode = hashCode * 59 + this.Ips.GetHashCode();
+                var hashCode = 41;
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Ips != null) hashCode = hashCode * 59 + this.Ips.GetHashCode();
                 return hashCode;
             }
         }

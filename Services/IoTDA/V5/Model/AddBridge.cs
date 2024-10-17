@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(AddBridge input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BridgeName != input.BridgeName || (this.BridgeName != null && !this.BridgeName.Equals(input.BridgeName))) return false;
+            if (this.BridgeId != input.BridgeId || (this.BridgeId != null && !this.BridgeId.Equals(input.BridgeId))) return false;
 
-            return 
-                (
-                    this.BridgeName == input.BridgeName ||
-                    (this.BridgeName != null &&
-                    this.BridgeName.Equals(input.BridgeName))
-                ) && 
-                (
-                    this.BridgeId == input.BridgeId ||
-                    (this.BridgeId != null &&
-                    this.BridgeId.Equals(input.BridgeId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BridgeName != null)
-                    hashCode = hashCode * 59 + this.BridgeName.GetHashCode();
-                if (this.BridgeId != null)
-                    hashCode = hashCode * 59 + this.BridgeId.GetHashCode();
+                var hashCode = 41;
+                if (this.BridgeName != null) hashCode = hashCode * 59 + this.BridgeName.GetHashCode();
+                if (this.BridgeId != null) hashCode = hashCode * 59 + this.BridgeId.GetHashCode();
                 return hashCode;
             }
         }

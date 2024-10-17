@@ -195,25 +195,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(EnvironmentPermissionV2Body input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RoleId != input.RoleId || (this.RoleId != null && !this.RoleId.Equals(input.RoleId))) return false;
+            if (this.PermissionName != input.PermissionName) return false;
+            if (this.PermissionValue != input.PermissionValue || (this.PermissionValue != null && !this.PermissionValue.Equals(input.PermissionValue))) return false;
 
-            return 
-                (
-                    this.RoleId == input.RoleId ||
-                    (this.RoleId != null &&
-                    this.RoleId.Equals(input.RoleId))
-                ) && 
-                (
-                    this.PermissionName == input.PermissionName ||
-                    (this.PermissionName != null &&
-                    this.PermissionName.Equals(input.PermissionName))
-                ) && 
-                (
-                    this.PermissionValue == input.PermissionValue ||
-                    (this.PermissionValue != null &&
-                    this.PermissionValue.Equals(input.PermissionValue))
-                );
+            return true;
         }
 
         /// <summary>
@@ -223,13 +210,10 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RoleId != null)
-                    hashCode = hashCode * 59 + this.RoleId.GetHashCode();
-                if (this.PermissionName != null)
-                    hashCode = hashCode * 59 + this.PermissionName.GetHashCode();
-                if (this.PermissionValue != null)
-                    hashCode = hashCode * 59 + this.PermissionValue.GetHashCode();
+                var hashCode = 41;
+                if (this.RoleId != null) hashCode = hashCode * 59 + this.RoleId.GetHashCode();
+                hashCode = hashCode * 59 + this.PermissionName.GetHashCode();
+                if (this.PermissionValue != null) hashCode = hashCode * 59 + this.PermissionValue.GetHashCode();
                 return hashCode;
             }
         }

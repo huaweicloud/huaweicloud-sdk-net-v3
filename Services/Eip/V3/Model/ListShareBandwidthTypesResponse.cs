@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(ListShareBandwidthTypesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ShareBandwidthTypes != input.ShareBandwidthTypes || (this.ShareBandwidthTypes != null && input.ShareBandwidthTypes != null && !this.ShareBandwidthTypes.SequenceEqual(input.ShareBandwidthTypes))) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
+            if (this.PageInfo != input.PageInfo || (this.PageInfo != null && !this.PageInfo.Equals(input.PageInfo))) return false;
 
-            return 
-                (
-                    this.ShareBandwidthTypes == input.ShareBandwidthTypes ||
-                    this.ShareBandwidthTypes != null &&
-                    input.ShareBandwidthTypes != null &&
-                    this.ShareBandwidthTypes.SequenceEqual(input.ShareBandwidthTypes)
-                ) && 
-                (
-                    this.RequestId == input.RequestId ||
-                    (this.RequestId != null &&
-                    this.RequestId.Equals(input.RequestId))
-                ) && 
-                (
-                    this.PageInfo == input.PageInfo ||
-                    (this.PageInfo != null &&
-                    this.PageInfo.Equals(input.PageInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ShareBandwidthTypes != null)
-                    hashCode = hashCode * 59 + this.ShareBandwidthTypes.GetHashCode();
-                if (this.RequestId != null)
-                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
-                if (this.PageInfo != null)
-                    hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.ShareBandwidthTypes != null) hashCode = hashCode * 59 + this.ShareBandwidthTypes.GetHashCode();
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                if (this.PageInfo != null) hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
                 return hashCode;
             }
         }

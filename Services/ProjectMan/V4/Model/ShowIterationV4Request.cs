@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ShowIterationV4Request input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IterationId != input.IterationId || (this.IterationId != null && !this.IterationId.Equals(input.IterationId))) return false;
 
-            return 
-                (
-                    this.IterationId == input.IterationId ||
-                    (this.IterationId != null &&
-                    this.IterationId.Equals(input.IterationId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IterationId != null)
-                    hashCode = hashCode * 59 + this.IterationId.GetHashCode();
+                var hashCode = 41;
+                if (this.IterationId != null) hashCode = hashCode * 59 + this.IterationId.GetHashCode();
                 return hashCode;
             }
         }

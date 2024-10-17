@@ -66,25 +66,12 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public bool Equals(SearchFaceByFileRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FaceSetName != input.FaceSetName || (this.FaceSetName != null && !this.FaceSetName.Equals(input.FaceSetName))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
-            return 
-                (
-                    this.FaceSetName == input.FaceSetName ||
-                    (this.FaceSetName != null &&
-                    this.FaceSetName.Equals(input.FaceSetName))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +81,10 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FaceSetName != null)
-                    hashCode = hashCode * 59 + this.FaceSetName.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                var hashCode = 41;
+                if (this.FaceSetName != null) hashCode = hashCode * 59 + this.FaceSetName.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

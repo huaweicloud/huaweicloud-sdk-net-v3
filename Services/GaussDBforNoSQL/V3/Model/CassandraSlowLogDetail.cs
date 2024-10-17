@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(CassandraSlowLogDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NodeName != input.NodeName || (this.NodeName != null && !this.NodeName.Equals(input.NodeName))) return false;
+            if (this.NodeId != input.NodeId || (this.NodeId != null && !this.NodeId.Equals(input.NodeId))) return false;
+            if (this.WholeMessage != input.WholeMessage || (this.WholeMessage != null && !this.WholeMessage.Equals(input.WholeMessage))) return false;
+            if (this.OperateType != input.OperateType || (this.OperateType != null && !this.OperateType.Equals(input.OperateType))) return false;
+            if (this.CostTime != input.CostTime || (this.CostTime != null && !this.CostTime.Equals(input.CostTime))) return false;
+            if (this.Keyspace != input.Keyspace || (this.Keyspace != null && !this.Keyspace.Equals(input.Keyspace))) return false;
+            if (this.Table != input.Table || (this.Table != null && !this.Table.Equals(input.Table))) return false;
+            if (this.LogTime != input.LogTime || (this.LogTime != null && !this.LogTime.Equals(input.LogTime))) return false;
+            if (this.LineNum != input.LineNum || (this.LineNum != null && !this.LineNum.Equals(input.LineNum))) return false;
 
-            return 
-                (
-                    this.NodeName == input.NodeName ||
-                    (this.NodeName != null &&
-                    this.NodeName.Equals(input.NodeName))
-                ) && 
-                (
-                    this.NodeId == input.NodeId ||
-                    (this.NodeId != null &&
-                    this.NodeId.Equals(input.NodeId))
-                ) && 
-                (
-                    this.WholeMessage == input.WholeMessage ||
-                    (this.WholeMessage != null &&
-                    this.WholeMessage.Equals(input.WholeMessage))
-                ) && 
-                (
-                    this.OperateType == input.OperateType ||
-                    (this.OperateType != null &&
-                    this.OperateType.Equals(input.OperateType))
-                ) && 
-                (
-                    this.CostTime == input.CostTime ||
-                    (this.CostTime != null &&
-                    this.CostTime.Equals(input.CostTime))
-                ) && 
-                (
-                    this.Keyspace == input.Keyspace ||
-                    (this.Keyspace != null &&
-                    this.Keyspace.Equals(input.Keyspace))
-                ) && 
-                (
-                    this.Table == input.Table ||
-                    (this.Table != null &&
-                    this.Table.Equals(input.Table))
-                ) && 
-                (
-                    this.LogTime == input.LogTime ||
-                    (this.LogTime != null &&
-                    this.LogTime.Equals(input.LogTime))
-                ) && 
-                (
-                    this.LineNum == input.LineNum ||
-                    (this.LineNum != null &&
-                    this.LineNum.Equals(input.LineNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NodeName != null)
-                    hashCode = hashCode * 59 + this.NodeName.GetHashCode();
-                if (this.NodeId != null)
-                    hashCode = hashCode * 59 + this.NodeId.GetHashCode();
-                if (this.WholeMessage != null)
-                    hashCode = hashCode * 59 + this.WholeMessage.GetHashCode();
-                if (this.OperateType != null)
-                    hashCode = hashCode * 59 + this.OperateType.GetHashCode();
-                if (this.CostTime != null)
-                    hashCode = hashCode * 59 + this.CostTime.GetHashCode();
-                if (this.Keyspace != null)
-                    hashCode = hashCode * 59 + this.Keyspace.GetHashCode();
-                if (this.Table != null)
-                    hashCode = hashCode * 59 + this.Table.GetHashCode();
-                if (this.LogTime != null)
-                    hashCode = hashCode * 59 + this.LogTime.GetHashCode();
-                if (this.LineNum != null)
-                    hashCode = hashCode * 59 + this.LineNum.GetHashCode();
+                var hashCode = 41;
+                if (this.NodeName != null) hashCode = hashCode * 59 + this.NodeName.GetHashCode();
+                if (this.NodeId != null) hashCode = hashCode * 59 + this.NodeId.GetHashCode();
+                if (this.WholeMessage != null) hashCode = hashCode * 59 + this.WholeMessage.GetHashCode();
+                if (this.OperateType != null) hashCode = hashCode * 59 + this.OperateType.GetHashCode();
+                if (this.CostTime != null) hashCode = hashCode * 59 + this.CostTime.GetHashCode();
+                if (this.Keyspace != null) hashCode = hashCode * 59 + this.Keyspace.GetHashCode();
+                if (this.Table != null) hashCode = hashCode * 59 + this.Table.GetHashCode();
+                if (this.LogTime != null) hashCode = hashCode * 59 + this.LogTime.GetHashCode();
+                if (this.LineNum != null) hashCode = hashCode * 59 + this.LineNum.GetHashCode();
                 return hashCode;
             }
         }

@@ -91,46 +91,16 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         /// </summary>
         public bool Equals(CollectTranscriberJobResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.FinishTime != input.FinishTime || (this.FinishTime != null && !this.FinishTime.Equals(input.FinishTime))) return false;
+            if (this.Segments != input.Segments || (this.Segments != null && input.Segments != null && !this.Segments.SequenceEqual(input.Segments))) return false;
+            if (this.AudioDuration != input.AudioDuration || (this.AudioDuration != null && !this.AudioDuration.Equals(input.AudioDuration))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.FinishTime == input.FinishTime ||
-                    (this.FinishTime != null &&
-                    this.FinishTime.Equals(input.FinishTime))
-                ) && 
-                (
-                    this.Segments == input.Segments ||
-                    this.Segments != null &&
-                    input.Segments != null &&
-                    this.Segments.SequenceEqual(input.Segments)
-                ) && 
-                (
-                    this.AudioDuration == input.AudioDuration ||
-                    (this.AudioDuration != null &&
-                    this.AudioDuration.Equals(input.AudioDuration))
-                );
+            return true;
         }
 
         /// <summary>
@@ -140,21 +110,14 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.FinishTime != null)
-                    hashCode = hashCode * 59 + this.FinishTime.GetHashCode();
-                if (this.Segments != null)
-                    hashCode = hashCode * 59 + this.Segments.GetHashCode();
-                if (this.AudioDuration != null)
-                    hashCode = hashCode * 59 + this.AudioDuration.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.FinishTime != null) hashCode = hashCode * 59 + this.FinishTime.GetHashCode();
+                if (this.Segments != null) hashCode = hashCode * 59 + this.Segments.GetHashCode();
+                if (this.AudioDuration != null) hashCode = hashCode * 59 + this.AudioDuration.GetHashCode();
                 return hashCode;
             }
         }

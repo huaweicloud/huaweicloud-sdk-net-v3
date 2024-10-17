@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(ProtectableAgentStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Code != input.Code || (this.Code != null && !this.Code.Equals(input.Code))) return false;
+            if (this.Installed != input.Installed || (this.Installed != null && !this.Installed.Equals(input.Installed))) return false;
+            if (this.IsOld != input.IsOld || (this.IsOld != null && !this.IsOld.Equals(input.IsOld))) return false;
+            if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
 
-            return 
-                (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
-                ) && 
-                (
-                    this.Installed == input.Installed ||
-                    (this.Installed != null &&
-                    this.Installed.Equals(input.Installed))
-                ) && 
-                (
-                    this.IsOld == input.IsOld ||
-                    (this.IsOld != null &&
-                    this.IsOld.Equals(input.IsOld))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Code != null)
-                    hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.Installed != null)
-                    hashCode = hashCode * 59 + this.Installed.GetHashCode();
-                if (this.IsOld != null)
-                    hashCode = hashCode * 59 + this.IsOld.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.ResourceId != null)
-                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                var hashCode = 41;
+                if (this.Code != null) hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Installed != null) hashCode = hashCode * 59 + this.Installed.GetHashCode();
+                if (this.IsOld != null) hashCode = hashCode * 59 + this.IsOld.GetHashCode();
+                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
                 return hashCode;
             }
         }

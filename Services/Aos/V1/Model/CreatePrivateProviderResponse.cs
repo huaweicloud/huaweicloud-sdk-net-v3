@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(CreatePrivateProviderResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProviderId != input.ProviderId || (this.ProviderId != null && !this.ProviderId.Equals(input.ProviderId))) return false;
+            if (this.ProviderSource != input.ProviderSource || (this.ProviderSource != null && !this.ProviderSource.Equals(input.ProviderSource))) return false;
 
-            return 
-                (
-                    this.ProviderId == input.ProviderId ||
-                    (this.ProviderId != null &&
-                    this.ProviderId.Equals(input.ProviderId))
-                ) && 
-                (
-                    this.ProviderSource == input.ProviderSource ||
-                    (this.ProviderSource != null &&
-                    this.ProviderSource.Equals(input.ProviderSource))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProviderId != null)
-                    hashCode = hashCode * 59 + this.ProviderId.GetHashCode();
-                if (this.ProviderSource != null)
-                    hashCode = hashCode * 59 + this.ProviderSource.GetHashCode();
+                var hashCode = 41;
+                if (this.ProviderId != null) hashCode = hashCode * 59 + this.ProviderId.GetHashCode();
+                if (this.ProviderSource != null) hashCode = hashCode * 59 + this.ProviderSource.GetHashCode();
                 return hashCode;
             }
         }

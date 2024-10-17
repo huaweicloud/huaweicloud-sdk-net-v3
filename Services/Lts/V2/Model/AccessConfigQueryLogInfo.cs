@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(AccessConfigQueryLogInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LogGroupId != input.LogGroupId || (this.LogGroupId != null && !this.LogGroupId.Equals(input.LogGroupId))) return false;
+            if (this.LogStreamId != input.LogStreamId || (this.LogStreamId != null && !this.LogStreamId.Equals(input.LogStreamId))) return false;
+            if (this.LogGroupName != input.LogGroupName || (this.LogGroupName != null && !this.LogGroupName.Equals(input.LogGroupName))) return false;
+            if (this.LogStreamName != input.LogStreamName || (this.LogStreamName != null && !this.LogStreamName.Equals(input.LogStreamName))) return false;
 
-            return 
-                (
-                    this.LogGroupId == input.LogGroupId ||
-                    (this.LogGroupId != null &&
-                    this.LogGroupId.Equals(input.LogGroupId))
-                ) && 
-                (
-                    this.LogStreamId == input.LogStreamId ||
-                    (this.LogStreamId != null &&
-                    this.LogStreamId.Equals(input.LogStreamId))
-                ) && 
-                (
-                    this.LogGroupName == input.LogGroupName ||
-                    (this.LogGroupName != null &&
-                    this.LogGroupName.Equals(input.LogGroupName))
-                ) && 
-                (
-                    this.LogStreamName == input.LogStreamName ||
-                    (this.LogStreamName != null &&
-                    this.LogStreamName.Equals(input.LogStreamName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LogGroupId != null)
-                    hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
-                if (this.LogStreamId != null)
-                    hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
-                if (this.LogGroupName != null)
-                    hashCode = hashCode * 59 + this.LogGroupName.GetHashCode();
-                if (this.LogStreamName != null)
-                    hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
+                var hashCode = 41;
+                if (this.LogGroupId != null) hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
+                if (this.LogStreamId != null) hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
+                if (this.LogGroupName != null) hashCode = hashCode * 59 + this.LogGroupName.GetHashCode();
+                if (this.LogStreamName != null) hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
                 return hashCode;
             }
         }

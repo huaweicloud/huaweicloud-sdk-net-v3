@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(ListUserResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Users != input.Users || (this.Users != null && input.Users != null && !this.Users.SequenceEqual(input.Users))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
-            return 
-                (
-                    this.Users == input.Users ||
-                    this.Users != null &&
-                    input.Users != null &&
-                    this.Users.SequenceEqual(input.Users)
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Users != null)
-                    hashCode = hashCode * 59 + this.Users.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                var hashCode = 41;
+                if (this.Users != null) hashCode = hashCode * 59 + this.Users.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

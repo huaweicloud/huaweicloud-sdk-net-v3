@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(VpcConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VpcName != input.VpcName || (this.VpcName != null && !this.VpcName.Equals(input.VpcName))) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
 
-            return 
-                (
-                    this.VpcName == input.VpcName ||
-                    (this.VpcName != null &&
-                    this.VpcName.Equals(input.VpcName))
-                ) && 
-                (
-                    this.VpcId == input.VpcId ||
-                    (this.VpcId != null &&
-                    this.VpcId.Equals(input.VpcId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VpcName != null)
-                    hashCode = hashCode * 59 + this.VpcName.GetHashCode();
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                var hashCode = 41;
+                if (this.VpcName != null) hashCode = hashCode * 59 + this.VpcName.GetHashCode();
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
                 return hashCode;
             }
         }

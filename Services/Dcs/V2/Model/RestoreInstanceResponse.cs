@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(RestoreInstanceResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RestoreId != input.RestoreId || (this.RestoreId != null && !this.RestoreId.Equals(input.RestoreId))) return false;
 
-            return 
-                (
-                    this.RestoreId == input.RestoreId ||
-                    (this.RestoreId != null &&
-                    this.RestoreId.Equals(input.RestoreId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RestoreId != null)
-                    hashCode = hashCode * 59 + this.RestoreId.GetHashCode();
+                var hashCode = 41;
+                if (this.RestoreId != null) hashCode = hashCode * 59 + this.RestoreId.GetHashCode();
                 return hashCode;
             }
         }

@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         /// </summary>
         public bool Equals(ExecutionResultList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NodeId != input.NodeId || (this.NodeId != null && !this.NodeId.Equals(input.NodeId))) return false;
+            if (this.BeginTime != input.BeginTime || (this.BeginTime != null && !this.BeginTime.Equals(input.BeginTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.FunctionExecutionId != input.FunctionExecutionId || (this.FunctionExecutionId != null && !this.FunctionExecutionId.Equals(input.FunctionExecutionId))) return false;
+            if (this.Output != input.Output || (this.Output != null && !this.Output.Equals(input.Output))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
 
-            return 
-                (
-                    this.NodeId == input.NodeId ||
-                    (this.NodeId != null &&
-                    this.NodeId.Equals(input.NodeId))
-                ) && 
-                (
-                    this.BeginTime == input.BeginTime ||
-                    (this.BeginTime != null &&
-                    this.BeginTime.Equals(input.BeginTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.FunctionExecutionId == input.FunctionExecutionId ||
-                    (this.FunctionExecutionId != null &&
-                    this.FunctionExecutionId.Equals(input.FunctionExecutionId))
-                ) && 
-                (
-                    this.Output == input.Output ||
-                    (this.Output != null &&
-                    this.Output.Equals(input.Output))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NodeId != null)
-                    hashCode = hashCode * 59 + this.NodeId.GetHashCode();
-                if (this.BeginTime != null)
-                    hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.FunctionExecutionId != null)
-                    hashCode = hashCode * 59 + this.FunctionExecutionId.GetHashCode();
-                if (this.Output != null)
-                    hashCode = hashCode * 59 + this.Output.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                var hashCode = 41;
+                if (this.NodeId != null) hashCode = hashCode * 59 + this.NodeId.GetHashCode();
+                if (this.BeginTime != null) hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.FunctionExecutionId != null) hashCode = hashCode * 59 + this.FunctionExecutionId.GetHashCode();
+                if (this.Output != null) hashCode = hashCode * 59 + this.Output.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

@@ -184,30 +184,13 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(BandwidthInfoResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BandwidthName != input.BandwidthName || (this.BandwidthName != null && !this.BandwidthName.Equals(input.BandwidthName))) return false;
+            if (this.BandwidthNumber != input.BandwidthNumber || (this.BandwidthNumber != null && !this.BandwidthNumber.Equals(input.BandwidthNumber))) return false;
+            if (this.BandwidthType != input.BandwidthType) return false;
+            if (this.BandwidthId != input.BandwidthId || (this.BandwidthId != null && !this.BandwidthId.Equals(input.BandwidthId))) return false;
 
-            return 
-                (
-                    this.BandwidthName == input.BandwidthName ||
-                    (this.BandwidthName != null &&
-                    this.BandwidthName.Equals(input.BandwidthName))
-                ) && 
-                (
-                    this.BandwidthNumber == input.BandwidthNumber ||
-                    (this.BandwidthNumber != null &&
-                    this.BandwidthNumber.Equals(input.BandwidthNumber))
-                ) && 
-                (
-                    this.BandwidthType == input.BandwidthType ||
-                    (this.BandwidthType != null &&
-                    this.BandwidthType.Equals(input.BandwidthType))
-                ) && 
-                (
-                    this.BandwidthId == input.BandwidthId ||
-                    (this.BandwidthId != null &&
-                    this.BandwidthId.Equals(input.BandwidthId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -217,15 +200,11 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BandwidthName != null)
-                    hashCode = hashCode * 59 + this.BandwidthName.GetHashCode();
-                if (this.BandwidthNumber != null)
-                    hashCode = hashCode * 59 + this.BandwidthNumber.GetHashCode();
-                if (this.BandwidthType != null)
-                    hashCode = hashCode * 59 + this.BandwidthType.GetHashCode();
-                if (this.BandwidthId != null)
-                    hashCode = hashCode * 59 + this.BandwidthId.GetHashCode();
+                var hashCode = 41;
+                if (this.BandwidthName != null) hashCode = hashCode * 59 + this.BandwidthName.GetHashCode();
+                if (this.BandwidthNumber != null) hashCode = hashCode * 59 + this.BandwidthNumber.GetHashCode();
+                hashCode = hashCode * 59 + this.BandwidthType.GetHashCode();
+                if (this.BandwidthId != null) hashCode = hashCode * 59 + this.BandwidthId.GetHashCode();
                 return hashCode;
             }
         }

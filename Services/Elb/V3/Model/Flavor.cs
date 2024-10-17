@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(Flavor input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Info != input.Info || (this.Info != null && !this.Info.Equals(input.Info))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Shared != input.Shared || (this.Shared != null && !this.Shared.Equals(input.Shared))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.FlavorSoldOut != input.FlavorSoldOut || (this.FlavorSoldOut != null && !this.FlavorSoldOut.Equals(input.FlavorSoldOut))) return false;
+            if (this.PublicBorderGroup != input.PublicBorderGroup || (this.PublicBorderGroup != null && !this.PublicBorderGroup.Equals(input.PublicBorderGroup))) return false;
+            if (this.Category != input.Category || (this.Category != null && !this.Category.Equals(input.Category))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Info == input.Info ||
-                    (this.Info != null &&
-                    this.Info.Equals(input.Info))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Shared == input.Shared ||
-                    (this.Shared != null &&
-                    this.Shared.Equals(input.Shared))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.FlavorSoldOut == input.FlavorSoldOut ||
-                    (this.FlavorSoldOut != null &&
-                    this.FlavorSoldOut.Equals(input.FlavorSoldOut))
-                ) && 
-                (
-                    this.PublicBorderGroup == input.PublicBorderGroup ||
-                    (this.PublicBorderGroup != null &&
-                    this.PublicBorderGroup.Equals(input.PublicBorderGroup))
-                ) && 
-                (
-                    this.Category == input.Category ||
-                    (this.Category != null &&
-                    this.Category.Equals(input.Category))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Info != null)
-                    hashCode = hashCode * 59 + this.Info.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Shared != null)
-                    hashCode = hashCode * 59 + this.Shared.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.FlavorSoldOut != null)
-                    hashCode = hashCode * 59 + this.FlavorSoldOut.GetHashCode();
-                if (this.PublicBorderGroup != null)
-                    hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
-                if (this.Category != null)
-                    hashCode = hashCode * 59 + this.Category.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Info != null) hashCode = hashCode * 59 + this.Info.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Shared != null) hashCode = hashCode * 59 + this.Shared.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.FlavorSoldOut != null) hashCode = hashCode * 59 + this.FlavorSoldOut.GetHashCode();
+                if (this.PublicBorderGroup != null) hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                if (this.Category != null) hashCode = hashCode * 59 + this.Category.GetHashCode();
                 return hashCode;
             }
         }

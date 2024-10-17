@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// </summary>
         public bool Equals(ListCertificatesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Certificates != input.Certificates || (this.Certificates != null && input.Certificates != null && !this.Certificates.SequenceEqual(input.Certificates))) return false;
+            if (this.InstanceNum != input.InstanceNum || (this.InstanceNum != null && !this.InstanceNum.Equals(input.InstanceNum))) return false;
 
-            return 
-                (
-                    this.Certificates == input.Certificates ||
-                    this.Certificates != null &&
-                    input.Certificates != null &&
-                    this.Certificates.SequenceEqual(input.Certificates)
-                ) && 
-                (
-                    this.InstanceNum == input.InstanceNum ||
-                    (this.InstanceNum != null &&
-                    this.InstanceNum.Equals(input.InstanceNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Certificates != null)
-                    hashCode = hashCode * 59 + this.Certificates.GetHashCode();
-                if (this.InstanceNum != null)
-                    hashCode = hashCode * 59 + this.InstanceNum.GetHashCode();
+                var hashCode = 41;
+                if (this.Certificates != null) hashCode = hashCode * 59 + this.Certificates.GetHashCode();
+                if (this.InstanceNum != null) hashCode = hashCode * 59 + this.InstanceNum.GetHashCode();
                 return hashCode;
             }
         }

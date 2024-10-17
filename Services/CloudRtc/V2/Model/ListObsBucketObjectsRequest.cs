@@ -326,30 +326,13 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         /// </summary>
         public bool Equals(ListObsBucketObjectsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Bucket != input.Bucket || (this.Bucket != null && !this.Bucket.Equals(input.Bucket))) return false;
+            if (this.Prefix != input.Prefix || (this.Prefix != null && !this.Prefix.Equals(input.Prefix))) return false;
+            if (this.Type != input.Type) return false;
+            if (this.Location != input.Location) return false;
 
-            return 
-                (
-                    this.Bucket == input.Bucket ||
-                    (this.Bucket != null &&
-                    this.Bucket.Equals(input.Bucket))
-                ) && 
-                (
-                    this.Prefix == input.Prefix ||
-                    (this.Prefix != null &&
-                    this.Prefix.Equals(input.Prefix))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Location == input.Location ||
-                    (this.Location != null &&
-                    this.Location.Equals(input.Location))
-                );
+            return true;
         }
 
         /// <summary>
@@ -359,15 +342,11 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Bucket != null)
-                    hashCode = hashCode * 59 + this.Bucket.GetHashCode();
-                if (this.Prefix != null)
-                    hashCode = hashCode * 59 + this.Prefix.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Location != null)
-                    hashCode = hashCode * 59 + this.Location.GetHashCode();
+                var hashCode = 41;
+                if (this.Bucket != null) hashCode = hashCode * 59 + this.Bucket.GetHashCode();
+                if (this.Prefix != null) hashCode = hashCode * 59 + this.Prefix.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                hashCode = hashCode * 59 + this.Location.GetHashCode();
                 return hashCode;
             }
         }

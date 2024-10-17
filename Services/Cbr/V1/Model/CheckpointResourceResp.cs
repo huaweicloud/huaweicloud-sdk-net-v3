@@ -230,50 +230,17 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(CheckpointResourceResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ExtraInfo != input.ExtraInfo || (this.ExtraInfo != null && !this.ExtraInfo.Equals(input.ExtraInfo))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.ProtectStatus != input.ProtectStatus) return false;
+            if (this.ResourceSize != input.ResourceSize || (this.ResourceSize != null && !this.ResourceSize.Equals(input.ResourceSize))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.BackupSize != input.BackupSize || (this.BackupSize != null && !this.BackupSize.Equals(input.BackupSize))) return false;
+            if (this.BackupCount != input.BackupCount || (this.BackupCount != null && !this.BackupCount.Equals(input.BackupCount))) return false;
 
-            return 
-                (
-                    this.ExtraInfo == input.ExtraInfo ||
-                    (this.ExtraInfo != null &&
-                    this.ExtraInfo.Equals(input.ExtraInfo))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ProtectStatus == input.ProtectStatus ||
-                    (this.ProtectStatus != null &&
-                    this.ProtectStatus.Equals(input.ProtectStatus))
-                ) && 
-                (
-                    this.ResourceSize == input.ResourceSize ||
-                    (this.ResourceSize != null &&
-                    this.ResourceSize.Equals(input.ResourceSize))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.BackupSize == input.BackupSize ||
-                    (this.BackupSize != null &&
-                    this.BackupSize.Equals(input.BackupSize))
-                ) && 
-                (
-                    this.BackupCount == input.BackupCount ||
-                    (this.BackupCount != null &&
-                    this.BackupCount.Equals(input.BackupCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -283,23 +250,15 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ExtraInfo != null)
-                    hashCode = hashCode * 59 + this.ExtraInfo.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.ProtectStatus != null)
-                    hashCode = hashCode * 59 + this.ProtectStatus.GetHashCode();
-                if (this.ResourceSize != null)
-                    hashCode = hashCode * 59 + this.ResourceSize.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.BackupSize != null)
-                    hashCode = hashCode * 59 + this.BackupSize.GetHashCode();
-                if (this.BackupCount != null)
-                    hashCode = hashCode * 59 + this.BackupCount.GetHashCode();
+                var hashCode = 41;
+                if (this.ExtraInfo != null) hashCode = hashCode * 59 + this.ExtraInfo.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = hashCode * 59 + this.ProtectStatus.GetHashCode();
+                if (this.ResourceSize != null) hashCode = hashCode * 59 + this.ResourceSize.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.BackupSize != null) hashCode = hashCode * 59 + this.BackupSize.GetHashCode();
+                if (this.BackupCount != null) hashCode = hashCode * 59 + this.BackupCount.GetHashCode();
                 return hashCode;
             }
         }

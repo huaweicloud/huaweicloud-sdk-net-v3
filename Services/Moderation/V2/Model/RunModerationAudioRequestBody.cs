@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         /// </summary>
         public bool Equals(RunModerationAudioRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Data != input.Data || (this.Data != null && !this.Data.Equals(input.Data))) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.Config != input.Config || (this.Config != null && !this.Config.Equals(input.Config))) return false;
+            if (this.Categories != input.Categories || (this.Categories != null && input.Categories != null && !this.Categories.SequenceEqual(input.Categories))) return false;
 
-            return 
-                (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.Config == input.Config ||
-                    (this.Config != null &&
-                    this.Config.Equals(input.Config))
-                ) && 
-                (
-                    this.Categories == input.Categories ||
-                    this.Categories != null &&
-                    input.Categories != null &&
-                    this.Categories.SequenceEqual(input.Categories)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Data != null)
-                    hashCode = hashCode * 59 + this.Data.GetHashCode();
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.Config != null)
-                    hashCode = hashCode * 59 + this.Config.GetHashCode();
-                if (this.Categories != null)
-                    hashCode = hashCode * 59 + this.Categories.GetHashCode();
+                var hashCode = 41;
+                if (this.Data != null) hashCode = hashCode * 59 + this.Data.GetHashCode();
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.Config != null) hashCode = hashCode * 59 + this.Config.GetHashCode();
+                if (this.Categories != null) hashCode = hashCode * 59 + this.Categories.GetHashCode();
                 return hashCode;
             }
         }

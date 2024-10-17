@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         public bool Equals(CopyImageCrossRegionRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AgencyName != input.AgencyName || (this.AgencyName != null && !this.AgencyName.Equals(input.AgencyName))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.ProjectName != input.ProjectName || (this.ProjectName != null && !this.ProjectName.Equals(input.ProjectName))) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
+            if (this.VaultId != input.VaultId || (this.VaultId != null && !this.VaultId.Equals(input.VaultId))) return false;
 
-            return 
-                (
-                    this.AgencyName == input.AgencyName ||
-                    (this.AgencyName != null &&
-                    this.AgencyName.Equals(input.AgencyName))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ProjectName == input.ProjectName ||
-                    (this.ProjectName != null &&
-                    this.ProjectName.Equals(input.ProjectName))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.VaultId == input.VaultId ||
-                    (this.VaultId != null &&
-                    this.VaultId.Equals(input.VaultId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AgencyName != null)
-                    hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.ProjectName != null)
-                    hashCode = hashCode * 59 + this.ProjectName.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.VaultId != null)
-                    hashCode = hashCode * 59 + this.VaultId.GetHashCode();
+                var hashCode = 41;
+                if (this.AgencyName != null) hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.ProjectName != null) hashCode = hashCode * 59 + this.ProjectName.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
+                if (this.VaultId != null) hashCode = hashCode * 59 + this.VaultId.GetHashCode();
                 return hashCode;
             }
         }

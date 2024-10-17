@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// </summary>
         public bool Equals(BatchModifyBandwidthResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SuccessResources != input.SuccessResources || (this.SuccessResources != null && input.SuccessResources != null && !this.SuccessResources.SequenceEqual(input.SuccessResources))) return false;
+            if (this.FailureResources != input.FailureResources || (this.FailureResources != null && input.FailureResources != null && !this.FailureResources.SequenceEqual(input.FailureResources))) return false;
 
-            return 
-                (
-                    this.SuccessResources == input.SuccessResources ||
-                    this.SuccessResources != null &&
-                    input.SuccessResources != null &&
-                    this.SuccessResources.SequenceEqual(input.SuccessResources)
-                ) && 
-                (
-                    this.FailureResources == input.FailureResources ||
-                    this.FailureResources != null &&
-                    input.FailureResources != null &&
-                    this.FailureResources.SequenceEqual(input.FailureResources)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SuccessResources != null)
-                    hashCode = hashCode * 59 + this.SuccessResources.GetHashCode();
-                if (this.FailureResources != null)
-                    hashCode = hashCode * 59 + this.FailureResources.GetHashCode();
+                var hashCode = 41;
+                if (this.SuccessResources != null) hashCode = hashCode * 59 + this.SuccessResources.GetHashCode();
+                if (this.FailureResources != null) hashCode = hashCode * 59 + this.FailureResources.GetHashCode();
                 return hashCode;
             }
         }

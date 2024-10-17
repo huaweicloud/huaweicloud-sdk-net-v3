@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ListProjectDemandStaticV4Response input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DemandStatistics != input.DemandStatistics || (this.DemandStatistics != null && input.DemandStatistics != null && !this.DemandStatistics.SequenceEqual(input.DemandStatistics))) return false;
 
-            return 
-                (
-                    this.DemandStatistics == input.DemandStatistics ||
-                    this.DemandStatistics != null &&
-                    input.DemandStatistics != null &&
-                    this.DemandStatistics.SequenceEqual(input.DemandStatistics)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DemandStatistics != null)
-                    hashCode = hashCode * 59 + this.DemandStatistics.GetHashCode();
+                var hashCode = 41;
+                if (this.DemandStatistics != null) hashCode = hashCode * 59 + this.DemandStatistics.GetHashCode();
                 return hashCode;
             }
         }

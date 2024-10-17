@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(RegisterDmsKafkaInstanceRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.KafkaName != input.KafkaName || (this.KafkaName != null && !this.KafkaName.Equals(input.KafkaName))) return false;
+            if (this.ConnectInfo != input.ConnectInfo || (this.ConnectInfo != null && !this.ConnectInfo.Equals(input.ConnectInfo))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.KafkaName == input.KafkaName ||
-                    (this.KafkaName != null &&
-                    this.KafkaName.Equals(input.KafkaName))
-                ) && 
-                (
-                    this.ConnectInfo == input.ConnectInfo ||
-                    (this.ConnectInfo != null &&
-                    this.ConnectInfo.Equals(input.ConnectInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.KafkaName != null)
-                    hashCode = hashCode * 59 + this.KafkaName.GetHashCode();
-                if (this.ConnectInfo != null)
-                    hashCode = hashCode * 59 + this.ConnectInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.KafkaName != null) hashCode = hashCode * 59 + this.KafkaName.GetHashCode();
+                if (this.ConnectInfo != null) hashCode = hashCode * 59 + this.ConnectInfo.GetHashCode();
                 return hashCode;
             }
         }

@@ -126,71 +126,21 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ShowSupportObjectTypeResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IsFullTransSupportObject != input.IsFullTransSupportObject || (this.IsFullTransSupportObject != null && !this.IsFullTransSupportObject.Equals(input.IsFullTransSupportObject))) return false;
+            if (this.IsIncreTransSupportObject != input.IsIncreTransSupportObject || (this.IsIncreTransSupportObject != null && !this.IsIncreTransSupportObject.Equals(input.IsIncreTransSupportObject))) return false;
+            if (this.IsFullIncreTransSupportObject != input.IsFullIncreTransSupportObject || (this.IsFullIncreTransSupportObject != null && !this.IsFullIncreTransSupportObject.Equals(input.IsFullIncreTransSupportObject))) return false;
+            if (this.SupportObjectImportEngine != input.SupportObjectImportEngine || (this.SupportObjectImportEngine != null && input.SupportObjectImportEngine != null && !this.SupportObjectImportEngine.SequenceEqual(input.SupportObjectImportEngine))) return false;
+            if (this.IsSupportColumnMapping != input.IsSupportColumnMapping || (this.IsSupportColumnMapping != null && !this.IsSupportColumnMapping.Equals(input.IsSupportColumnMapping))) return false;
+            if (this.IsDatabaseSupportSearch != input.IsDatabaseSupportSearch || (this.IsDatabaseSupportSearch != null && !this.IsDatabaseSupportSearch.Equals(input.IsDatabaseSupportSearch))) return false;
+            if (this.IsSchemaSupportSearch != input.IsSchemaSupportSearch || (this.IsSchemaSupportSearch != null && !this.IsSchemaSupportSearch.Equals(input.IsSchemaSupportSearch))) return false;
+            if (this.IsTableSupportSearch != input.IsTableSupportSearch || (this.IsTableSupportSearch != null && !this.IsTableSupportSearch.Equals(input.IsTableSupportSearch))) return false;
+            if (this.FileSize != input.FileSize || (this.FileSize != null && !this.FileSize.Equals(input.FileSize))) return false;
+            if (this.PreviousSelect != input.PreviousSelect || (this.PreviousSelect != null && !this.PreviousSelect.Equals(input.PreviousSelect))) return false;
+            if (this.ImportLevel != input.ImportLevel || (this.ImportLevel != null && !this.ImportLevel.Equals(input.ImportLevel))) return false;
+            if (this.IsImportCloumn != input.IsImportCloumn || (this.IsImportCloumn != null && !this.IsImportCloumn.Equals(input.IsImportCloumn))) return false;
 
-            return 
-                (
-                    this.IsFullTransSupportObject == input.IsFullTransSupportObject ||
-                    (this.IsFullTransSupportObject != null &&
-                    this.IsFullTransSupportObject.Equals(input.IsFullTransSupportObject))
-                ) && 
-                (
-                    this.IsIncreTransSupportObject == input.IsIncreTransSupportObject ||
-                    (this.IsIncreTransSupportObject != null &&
-                    this.IsIncreTransSupportObject.Equals(input.IsIncreTransSupportObject))
-                ) && 
-                (
-                    this.IsFullIncreTransSupportObject == input.IsFullIncreTransSupportObject ||
-                    (this.IsFullIncreTransSupportObject != null &&
-                    this.IsFullIncreTransSupportObject.Equals(input.IsFullIncreTransSupportObject))
-                ) && 
-                (
-                    this.SupportObjectImportEngine == input.SupportObjectImportEngine ||
-                    this.SupportObjectImportEngine != null &&
-                    input.SupportObjectImportEngine != null &&
-                    this.SupportObjectImportEngine.SequenceEqual(input.SupportObjectImportEngine)
-                ) && 
-                (
-                    this.IsSupportColumnMapping == input.IsSupportColumnMapping ||
-                    (this.IsSupportColumnMapping != null &&
-                    this.IsSupportColumnMapping.Equals(input.IsSupportColumnMapping))
-                ) && 
-                (
-                    this.IsDatabaseSupportSearch == input.IsDatabaseSupportSearch ||
-                    (this.IsDatabaseSupportSearch != null &&
-                    this.IsDatabaseSupportSearch.Equals(input.IsDatabaseSupportSearch))
-                ) && 
-                (
-                    this.IsSchemaSupportSearch == input.IsSchemaSupportSearch ||
-                    (this.IsSchemaSupportSearch != null &&
-                    this.IsSchemaSupportSearch.Equals(input.IsSchemaSupportSearch))
-                ) && 
-                (
-                    this.IsTableSupportSearch == input.IsTableSupportSearch ||
-                    (this.IsTableSupportSearch != null &&
-                    this.IsTableSupportSearch.Equals(input.IsTableSupportSearch))
-                ) && 
-                (
-                    this.FileSize == input.FileSize ||
-                    (this.FileSize != null &&
-                    this.FileSize.Equals(input.FileSize))
-                ) && 
-                (
-                    this.PreviousSelect == input.PreviousSelect ||
-                    (this.PreviousSelect != null &&
-                    this.PreviousSelect.Equals(input.PreviousSelect))
-                ) && 
-                (
-                    this.ImportLevel == input.ImportLevel ||
-                    (this.ImportLevel != null &&
-                    this.ImportLevel.Equals(input.ImportLevel))
-                ) && 
-                (
-                    this.IsImportCloumn == input.IsImportCloumn ||
-                    (this.IsImportCloumn != null &&
-                    this.IsImportCloumn.Equals(input.IsImportCloumn))
-                );
+            return true;
         }
 
         /// <summary>
@@ -200,31 +150,19 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IsFullTransSupportObject != null)
-                    hashCode = hashCode * 59 + this.IsFullTransSupportObject.GetHashCode();
-                if (this.IsIncreTransSupportObject != null)
-                    hashCode = hashCode * 59 + this.IsIncreTransSupportObject.GetHashCode();
-                if (this.IsFullIncreTransSupportObject != null)
-                    hashCode = hashCode * 59 + this.IsFullIncreTransSupportObject.GetHashCode();
-                if (this.SupportObjectImportEngine != null)
-                    hashCode = hashCode * 59 + this.SupportObjectImportEngine.GetHashCode();
-                if (this.IsSupportColumnMapping != null)
-                    hashCode = hashCode * 59 + this.IsSupportColumnMapping.GetHashCode();
-                if (this.IsDatabaseSupportSearch != null)
-                    hashCode = hashCode * 59 + this.IsDatabaseSupportSearch.GetHashCode();
-                if (this.IsSchemaSupportSearch != null)
-                    hashCode = hashCode * 59 + this.IsSchemaSupportSearch.GetHashCode();
-                if (this.IsTableSupportSearch != null)
-                    hashCode = hashCode * 59 + this.IsTableSupportSearch.GetHashCode();
-                if (this.FileSize != null)
-                    hashCode = hashCode * 59 + this.FileSize.GetHashCode();
-                if (this.PreviousSelect != null)
-                    hashCode = hashCode * 59 + this.PreviousSelect.GetHashCode();
-                if (this.ImportLevel != null)
-                    hashCode = hashCode * 59 + this.ImportLevel.GetHashCode();
-                if (this.IsImportCloumn != null)
-                    hashCode = hashCode * 59 + this.IsImportCloumn.GetHashCode();
+                var hashCode = 41;
+                if (this.IsFullTransSupportObject != null) hashCode = hashCode * 59 + this.IsFullTransSupportObject.GetHashCode();
+                if (this.IsIncreTransSupportObject != null) hashCode = hashCode * 59 + this.IsIncreTransSupportObject.GetHashCode();
+                if (this.IsFullIncreTransSupportObject != null) hashCode = hashCode * 59 + this.IsFullIncreTransSupportObject.GetHashCode();
+                if (this.SupportObjectImportEngine != null) hashCode = hashCode * 59 + this.SupportObjectImportEngine.GetHashCode();
+                if (this.IsSupportColumnMapping != null) hashCode = hashCode * 59 + this.IsSupportColumnMapping.GetHashCode();
+                if (this.IsDatabaseSupportSearch != null) hashCode = hashCode * 59 + this.IsDatabaseSupportSearch.GetHashCode();
+                if (this.IsSchemaSupportSearch != null) hashCode = hashCode * 59 + this.IsSchemaSupportSearch.GetHashCode();
+                if (this.IsTableSupportSearch != null) hashCode = hashCode * 59 + this.IsTableSupportSearch.GetHashCode();
+                if (this.FileSize != null) hashCode = hashCode * 59 + this.FileSize.GetHashCode();
+                if (this.PreviousSelect != null) hashCode = hashCode * 59 + this.PreviousSelect.GetHashCode();
+                if (this.ImportLevel != null) hashCode = hashCode * 59 + this.ImportLevel.GetHashCode();
+                if (this.IsImportCloumn != null) hashCode = hashCode * 59 + this.IsImportCloumn.GetHashCode();
                 return hashCode;
             }
         }

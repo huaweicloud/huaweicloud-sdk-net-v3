@@ -98,51 +98,17 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ResizeInstanceReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NewSpecCode != input.NewSpecCode || (this.NewSpecCode != null && !this.NewSpecCode.Equals(input.NewSpecCode))) return false;
+            if (this.NewStorageSpace != input.NewStorageSpace || (this.NewStorageSpace != null && !this.NewStorageSpace.Equals(input.NewStorageSpace))) return false;
+            if (this.OperType != input.OperType || (this.OperType != null && !this.OperType.Equals(input.OperType))) return false;
+            if (this.NewBrokerNum != input.NewBrokerNum || (this.NewBrokerNum != null && !this.NewBrokerNum.Equals(input.NewBrokerNum))) return false;
+            if (this.NewProductId != input.NewProductId || (this.NewProductId != null && !this.NewProductId.Equals(input.NewProductId))) return false;
+            if (this.PublicipId != input.PublicipId || (this.PublicipId != null && !this.PublicipId.Equals(input.PublicipId))) return false;
+            if (this.TenantIps != input.TenantIps || (this.TenantIps != null && input.TenantIps != null && !this.TenantIps.SequenceEqual(input.TenantIps))) return false;
+            if (this.SecondTenantSubnetId != input.SecondTenantSubnetId || (this.SecondTenantSubnetId != null && !this.SecondTenantSubnetId.Equals(input.SecondTenantSubnetId))) return false;
 
-            return 
-                (
-                    this.NewSpecCode == input.NewSpecCode ||
-                    (this.NewSpecCode != null &&
-                    this.NewSpecCode.Equals(input.NewSpecCode))
-                ) && 
-                (
-                    this.NewStorageSpace == input.NewStorageSpace ||
-                    (this.NewStorageSpace != null &&
-                    this.NewStorageSpace.Equals(input.NewStorageSpace))
-                ) && 
-                (
-                    this.OperType == input.OperType ||
-                    (this.OperType != null &&
-                    this.OperType.Equals(input.OperType))
-                ) && 
-                (
-                    this.NewBrokerNum == input.NewBrokerNum ||
-                    (this.NewBrokerNum != null &&
-                    this.NewBrokerNum.Equals(input.NewBrokerNum))
-                ) && 
-                (
-                    this.NewProductId == input.NewProductId ||
-                    (this.NewProductId != null &&
-                    this.NewProductId.Equals(input.NewProductId))
-                ) && 
-                (
-                    this.PublicipId == input.PublicipId ||
-                    (this.PublicipId != null &&
-                    this.PublicipId.Equals(input.PublicipId))
-                ) && 
-                (
-                    this.TenantIps == input.TenantIps ||
-                    this.TenantIps != null &&
-                    input.TenantIps != null &&
-                    this.TenantIps.SequenceEqual(input.TenantIps)
-                ) && 
-                (
-                    this.SecondTenantSubnetId == input.SecondTenantSubnetId ||
-                    (this.SecondTenantSubnetId != null &&
-                    this.SecondTenantSubnetId.Equals(input.SecondTenantSubnetId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -152,23 +118,15 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NewSpecCode != null)
-                    hashCode = hashCode * 59 + this.NewSpecCode.GetHashCode();
-                if (this.NewStorageSpace != null)
-                    hashCode = hashCode * 59 + this.NewStorageSpace.GetHashCode();
-                if (this.OperType != null)
-                    hashCode = hashCode * 59 + this.OperType.GetHashCode();
-                if (this.NewBrokerNum != null)
-                    hashCode = hashCode * 59 + this.NewBrokerNum.GetHashCode();
-                if (this.NewProductId != null)
-                    hashCode = hashCode * 59 + this.NewProductId.GetHashCode();
-                if (this.PublicipId != null)
-                    hashCode = hashCode * 59 + this.PublicipId.GetHashCode();
-                if (this.TenantIps != null)
-                    hashCode = hashCode * 59 + this.TenantIps.GetHashCode();
-                if (this.SecondTenantSubnetId != null)
-                    hashCode = hashCode * 59 + this.SecondTenantSubnetId.GetHashCode();
+                var hashCode = 41;
+                if (this.NewSpecCode != null) hashCode = hashCode * 59 + this.NewSpecCode.GetHashCode();
+                if (this.NewStorageSpace != null) hashCode = hashCode * 59 + this.NewStorageSpace.GetHashCode();
+                if (this.OperType != null) hashCode = hashCode * 59 + this.OperType.GetHashCode();
+                if (this.NewBrokerNum != null) hashCode = hashCode * 59 + this.NewBrokerNum.GetHashCode();
+                if (this.NewProductId != null) hashCode = hashCode * 59 + this.NewProductId.GetHashCode();
+                if (this.PublicipId != null) hashCode = hashCode * 59 + this.PublicipId.GetHashCode();
+                if (this.TenantIps != null) hashCode = hashCode * 59 + this.TenantIps.GetHashCode();
+                if (this.SecondTenantSubnetId != null) hashCode = hashCode * 59 + this.SecondTenantSubnetId.GetHashCode();
                 return hashCode;
             }
         }

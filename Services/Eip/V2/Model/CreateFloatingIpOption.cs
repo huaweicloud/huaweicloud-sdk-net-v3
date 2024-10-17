@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// </summary>
         public bool Equals(CreateFloatingIpOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FloatingIpAddress != input.FloatingIpAddress || (this.FloatingIpAddress != null && !this.FloatingIpAddress.Equals(input.FloatingIpAddress))) return false;
+            if (this.FloatingNetworkId != input.FloatingNetworkId || (this.FloatingNetworkId != null && !this.FloatingNetworkId.Equals(input.FloatingNetworkId))) return false;
+            if (this.PortId != input.PortId || (this.PortId != null && !this.PortId.Equals(input.PortId))) return false;
+            if (this.FixedIpAddress != input.FixedIpAddress || (this.FixedIpAddress != null && !this.FixedIpAddress.Equals(input.FixedIpAddress))) return false;
 
-            return 
-                (
-                    this.FloatingIpAddress == input.FloatingIpAddress ||
-                    (this.FloatingIpAddress != null &&
-                    this.FloatingIpAddress.Equals(input.FloatingIpAddress))
-                ) && 
-                (
-                    this.FloatingNetworkId == input.FloatingNetworkId ||
-                    (this.FloatingNetworkId != null &&
-                    this.FloatingNetworkId.Equals(input.FloatingNetworkId))
-                ) && 
-                (
-                    this.PortId == input.PortId ||
-                    (this.PortId != null &&
-                    this.PortId.Equals(input.PortId))
-                ) && 
-                (
-                    this.FixedIpAddress == input.FixedIpAddress ||
-                    (this.FixedIpAddress != null &&
-                    this.FixedIpAddress.Equals(input.FixedIpAddress))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FloatingIpAddress != null)
-                    hashCode = hashCode * 59 + this.FloatingIpAddress.GetHashCode();
-                if (this.FloatingNetworkId != null)
-                    hashCode = hashCode * 59 + this.FloatingNetworkId.GetHashCode();
-                if (this.PortId != null)
-                    hashCode = hashCode * 59 + this.PortId.GetHashCode();
-                if (this.FixedIpAddress != null)
-                    hashCode = hashCode * 59 + this.FixedIpAddress.GetHashCode();
+                var hashCode = 41;
+                if (this.FloatingIpAddress != null) hashCode = hashCode * 59 + this.FloatingIpAddress.GetHashCode();
+                if (this.FloatingNetworkId != null) hashCode = hashCode * 59 + this.FloatingNetworkId.GetHashCode();
+                if (this.PortId != null) hashCode = hashCode * 59 + this.PortId.GetHashCode();
+                if (this.FixedIpAddress != null) hashCode = hashCode * 59 + this.FixedIpAddress.GetHashCode();
                 return hashCode;
             }
         }

@@ -130,65 +130,20 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(ListHarvestTaskRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AccessControlAllowInternal != input.AccessControlAllowInternal || (this.AccessControlAllowInternal != null && !this.AccessControlAllowInternal.Equals(input.AccessControlAllowInternal))) return false;
+            if (this.AccessControlAllowExternal != input.AccessControlAllowExternal || (this.AccessControlAllowExternal != null && !this.AccessControlAllowExternal.Equals(input.AccessControlAllowExternal))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
+            if (this.AppName != input.AppName || (this.AppName != null && !this.AppName.Equals(input.AppName))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.EventName != input.EventName || (this.EventName != null && !this.EventName.Equals(input.EventName))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
 
-            return 
-                (
-                    this.AccessControlAllowInternal == input.AccessControlAllowInternal ||
-                    (this.AccessControlAllowInternal != null &&
-                    this.AccessControlAllowInternal.Equals(input.AccessControlAllowInternal))
-                ) && 
-                (
-                    this.AccessControlAllowExternal == input.AccessControlAllowExternal ||
-                    (this.AccessControlAllowExternal != null &&
-                    this.AccessControlAllowExternal.Equals(input.AccessControlAllowExternal))
-                ) && 
-                (
-                    this.Domain == input.Domain ||
-                    (this.Domain != null &&
-                    this.Domain.Equals(input.Domain))
-                ) && 
-                (
-                    this.AppName == input.AppName ||
-                    (this.AppName != null &&
-                    this.AppName.Equals(input.AppName))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.EventName == input.EventName ||
-                    (this.EventName != null &&
-                    this.EventName.Equals(input.EventName))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                );
+            return true;
         }
 
         /// <summary>
@@ -198,29 +153,18 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AccessControlAllowInternal != null)
-                    hashCode = hashCode * 59 + this.AccessControlAllowInternal.GetHashCode();
-                if (this.AccessControlAllowExternal != null)
-                    hashCode = hashCode * 59 + this.AccessControlAllowExternal.GetHashCode();
-                if (this.Domain != null)
-                    hashCode = hashCode * 59 + this.Domain.GetHashCode();
-                if (this.AppName != null)
-                    hashCode = hashCode * 59 + this.AppName.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.EventName != null)
-                    hashCode = hashCode * 59 + this.EventName.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                var hashCode = 41;
+                if (this.AccessControlAllowInternal != null) hashCode = hashCode * 59 + this.AccessControlAllowInternal.GetHashCode();
+                if (this.AccessControlAllowExternal != null) hashCode = hashCode * 59 + this.AccessControlAllowExternal.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                if (this.AppName != null) hashCode = hashCode * 59 + this.AppName.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.EventName != null) hashCode = hashCode * 59 + this.EventName.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// </summary>
         public bool Equals(NeutronListFloatingIpsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Floatingips != input.Floatingips || (this.Floatingips != null && input.Floatingips != null && !this.Floatingips.SequenceEqual(input.Floatingips))) return false;
+            if (this.FloatingipsLinks != input.FloatingipsLinks || (this.FloatingipsLinks != null && input.FloatingipsLinks != null && !this.FloatingipsLinks.SequenceEqual(input.FloatingipsLinks))) return false;
 
-            return 
-                (
-                    this.Floatingips == input.Floatingips ||
-                    this.Floatingips != null &&
-                    input.Floatingips != null &&
-                    this.Floatingips.SequenceEqual(input.Floatingips)
-                ) && 
-                (
-                    this.FloatingipsLinks == input.FloatingipsLinks ||
-                    this.FloatingipsLinks != null &&
-                    input.FloatingipsLinks != null &&
-                    this.FloatingipsLinks.SequenceEqual(input.FloatingipsLinks)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Floatingips != null)
-                    hashCode = hashCode * 59 + this.Floatingips.GetHashCode();
-                if (this.FloatingipsLinks != null)
-                    hashCode = hashCode * 59 + this.FloatingipsLinks.GetHashCode();
+                var hashCode = 41;
+                if (this.Floatingips != null) hashCode = hashCode * 59 + this.Floatingips.GetHashCode();
+                if (this.FloatingipsLinks != null) hashCode = hashCode * 59 + this.FloatingipsLinks.GetHashCode();
                 return hashCode;
             }
         }

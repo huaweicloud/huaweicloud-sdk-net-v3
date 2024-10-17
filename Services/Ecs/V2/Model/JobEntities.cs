@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(JobEntities input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ServerId != input.ServerId || (this.ServerId != null && !this.ServerId.Equals(input.ServerId))) return false;
+            if (this.NicId != input.NicId || (this.NicId != null && !this.NicId.Equals(input.NicId))) return false;
+            if (this.SubJobs != input.SubJobs || (this.SubJobs != null && input.SubJobs != null && !this.SubJobs.SequenceEqual(input.SubJobs))) return false;
+            if (this.SubJobsTotal != input.SubJobsTotal || (this.SubJobsTotal != null && !this.SubJobsTotal.Equals(input.SubJobsTotal))) return false;
 
-            return 
-                (
-                    this.ServerId == input.ServerId ||
-                    (this.ServerId != null &&
-                    this.ServerId.Equals(input.ServerId))
-                ) && 
-                (
-                    this.NicId == input.NicId ||
-                    (this.NicId != null &&
-                    this.NicId.Equals(input.NicId))
-                ) && 
-                (
-                    this.SubJobs == input.SubJobs ||
-                    this.SubJobs != null &&
-                    input.SubJobs != null &&
-                    this.SubJobs.SequenceEqual(input.SubJobs)
-                ) && 
-                (
-                    this.SubJobsTotal == input.SubJobsTotal ||
-                    (this.SubJobsTotal != null &&
-                    this.SubJobsTotal.Equals(input.SubJobsTotal))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ServerId != null)
-                    hashCode = hashCode * 59 + this.ServerId.GetHashCode();
-                if (this.NicId != null)
-                    hashCode = hashCode * 59 + this.NicId.GetHashCode();
-                if (this.SubJobs != null)
-                    hashCode = hashCode * 59 + this.SubJobs.GetHashCode();
-                if (this.SubJobsTotal != null)
-                    hashCode = hashCode * 59 + this.SubJobsTotal.GetHashCode();
+                var hashCode = 41;
+                if (this.ServerId != null) hashCode = hashCode * 59 + this.ServerId.GetHashCode();
+                if (this.NicId != null) hashCode = hashCode * 59 + this.NicId.GetHashCode();
+                if (this.SubJobs != null) hashCode = hashCode * 59 + this.SubJobs.GetHashCode();
+                if (this.SubJobsTotal != null) hashCode = hashCode * 59 + this.SubJobsTotal.GetHashCode();
                 return hashCode;
             }
         }

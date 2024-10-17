@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(CaptureTaskDto input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Destination != input.Destination || (this.Destination != null && !this.Destination.Equals(input.Destination))) return false;
+            if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
+            if (this.MaxPackets != input.MaxPackets || (this.MaxPackets != null && !this.MaxPackets.Equals(input.MaxPackets))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Service != input.Service || (this.Service != null && !this.Service.Equals(input.Service))) return false;
+            if (this.Source != input.Source || (this.Source != null && !this.Source.Equals(input.Source))) return false;
 
-            return 
-                (
-                    this.Destination == input.Destination ||
-                    (this.Destination != null &&
-                    this.Destination.Equals(input.Destination))
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
-                ) && 
-                (
-                    this.MaxPackets == input.MaxPackets ||
-                    (this.MaxPackets != null &&
-                    this.MaxPackets.Equals(input.MaxPackets))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Service == input.Service ||
-                    (this.Service != null &&
-                    this.Service.Equals(input.Service))
-                ) && 
-                (
-                    this.Source == input.Source ||
-                    (this.Source != null &&
-                    this.Source.Equals(input.Source))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Destination != null)
-                    hashCode = hashCode * 59 + this.Destination.GetHashCode();
-                if (this.Duration != null)
-                    hashCode = hashCode * 59 + this.Duration.GetHashCode();
-                if (this.MaxPackets != null)
-                    hashCode = hashCode * 59 + this.MaxPackets.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Service != null)
-                    hashCode = hashCode * 59 + this.Service.GetHashCode();
-                if (this.Source != null)
-                    hashCode = hashCode * 59 + this.Source.GetHashCode();
+                var hashCode = 41;
+                if (this.Destination != null) hashCode = hashCode * 59 + this.Destination.GetHashCode();
+                if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                if (this.MaxPackets != null) hashCode = hashCode * 59 + this.MaxPackets.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Service != null) hashCode = hashCode * 59 + this.Service.GetHashCode();
+                if (this.Source != null) hashCode = hashCode * 59 + this.Source.GetHashCode();
                 return hashCode;
             }
         }

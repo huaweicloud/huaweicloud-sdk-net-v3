@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         /// </summary>
         public bool Equals(DeleteSecretForScheduleRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RecoveryWindowInDays != input.RecoveryWindowInDays || (this.RecoveryWindowInDays != null && !this.RecoveryWindowInDays.Equals(input.RecoveryWindowInDays))) return false;
 
-            return 
-                (
-                    this.RecoveryWindowInDays == input.RecoveryWindowInDays ||
-                    (this.RecoveryWindowInDays != null &&
-                    this.RecoveryWindowInDays.Equals(input.RecoveryWindowInDays))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RecoveryWindowInDays != null)
-                    hashCode = hashCode * 59 + this.RecoveryWindowInDays.GetHashCode();
+                var hashCode = 41;
+                if (this.RecoveryWindowInDays != null) hashCode = hashCode * 59 + this.RecoveryWindowInDays.GetHashCode();
                 return hashCode;
             }
         }

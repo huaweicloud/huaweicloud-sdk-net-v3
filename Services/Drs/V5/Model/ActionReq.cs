@@ -267,25 +267,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ActionReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.ActionName != input.ActionName) return false;
+            if (this.ActionParams != input.ActionParams || (this.ActionParams != null && !this.ActionParams.Equals(input.ActionParams))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.ActionName == input.ActionName ||
-                    (this.ActionName != null &&
-                    this.ActionName.Equals(input.ActionName))
-                ) && 
-                (
-                    this.ActionParams == input.ActionParams ||
-                    (this.ActionParams != null &&
-                    this.ActionParams.Equals(input.ActionParams))
-                );
+            return true;
         }
 
         /// <summary>
@@ -295,13 +282,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.ActionName != null)
-                    hashCode = hashCode * 59 + this.ActionName.GetHashCode();
-                if (this.ActionParams != null)
-                    hashCode = hashCode * 59 + this.ActionParams.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                hashCode = hashCode * 59 + this.ActionName.GetHashCode();
+                if (this.ActionParams != null) hashCode = hashCode * 59 + this.ActionParams.GetHashCode();
                 return hashCode;
             }
         }

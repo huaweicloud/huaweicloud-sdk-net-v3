@@ -77,36 +77,14 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(PartitionReassignRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Reassignments != input.Reassignments || (this.Reassignments != null && input.Reassignments != null && !this.Reassignments.SequenceEqual(input.Reassignments))) return false;
+            if (this.Throttle != input.Throttle || (this.Throttle != null && !this.Throttle.Equals(input.Throttle))) return false;
+            if (this.IsSchedule != input.IsSchedule || (this.IsSchedule != null && !this.IsSchedule.Equals(input.IsSchedule))) return false;
+            if (this.ExecuteAt != input.ExecuteAt || (this.ExecuteAt != null && !this.ExecuteAt.Equals(input.ExecuteAt))) return false;
+            if (this.TimeEstimate != input.TimeEstimate || (this.TimeEstimate != null && !this.TimeEstimate.Equals(input.TimeEstimate))) return false;
 
-            return 
-                (
-                    this.Reassignments == input.Reassignments ||
-                    this.Reassignments != null &&
-                    input.Reassignments != null &&
-                    this.Reassignments.SequenceEqual(input.Reassignments)
-                ) && 
-                (
-                    this.Throttle == input.Throttle ||
-                    (this.Throttle != null &&
-                    this.Throttle.Equals(input.Throttle))
-                ) && 
-                (
-                    this.IsSchedule == input.IsSchedule ||
-                    (this.IsSchedule != null &&
-                    this.IsSchedule.Equals(input.IsSchedule))
-                ) && 
-                (
-                    this.ExecuteAt == input.ExecuteAt ||
-                    (this.ExecuteAt != null &&
-                    this.ExecuteAt.Equals(input.ExecuteAt))
-                ) && 
-                (
-                    this.TimeEstimate == input.TimeEstimate ||
-                    (this.TimeEstimate != null &&
-                    this.TimeEstimate.Equals(input.TimeEstimate))
-                );
+            return true;
         }
 
         /// <summary>
@@ -116,17 +94,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Reassignments != null)
-                    hashCode = hashCode * 59 + this.Reassignments.GetHashCode();
-                if (this.Throttle != null)
-                    hashCode = hashCode * 59 + this.Throttle.GetHashCode();
-                if (this.IsSchedule != null)
-                    hashCode = hashCode * 59 + this.IsSchedule.GetHashCode();
-                if (this.ExecuteAt != null)
-                    hashCode = hashCode * 59 + this.ExecuteAt.GetHashCode();
-                if (this.TimeEstimate != null)
-                    hashCode = hashCode * 59 + this.TimeEstimate.GetHashCode();
+                var hashCode = 41;
+                if (this.Reassignments != null) hashCode = hashCode * 59 + this.Reassignments.GetHashCode();
+                if (this.Throttle != null) hashCode = hashCode * 59 + this.Throttle.GetHashCode();
+                if (this.IsSchedule != null) hashCode = hashCode * 59 + this.IsSchedule.GetHashCode();
+                if (this.ExecuteAt != null) hashCode = hashCode * 59 + this.ExecuteAt.GetHashCode();
+                if (this.TimeEstimate != null) hashCode = hashCode * 59 + this.TimeEstimate.GetHashCode();
                 return hashCode;
             }
         }

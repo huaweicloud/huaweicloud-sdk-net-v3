@@ -437,35 +437,14 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(ObjectCompareResultOverview input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ObjectType != input.ObjectType) return false;
+            if (this.ObjectCompareResult != input.ObjectCompareResult) return false;
+            if (this.TargetCount != input.TargetCount || (this.TargetCount != null && !this.TargetCount.Equals(input.TargetCount))) return false;
+            if (this.SourceCount != input.SourceCount || (this.SourceCount != null && !this.SourceCount.Equals(input.SourceCount))) return false;
+            if (this.DiffCount != input.DiffCount || (this.DiffCount != null && !this.DiffCount.Equals(input.DiffCount))) return false;
 
-            return 
-                (
-                    this.ObjectType == input.ObjectType ||
-                    (this.ObjectType != null &&
-                    this.ObjectType.Equals(input.ObjectType))
-                ) && 
-                (
-                    this.ObjectCompareResult == input.ObjectCompareResult ||
-                    (this.ObjectCompareResult != null &&
-                    this.ObjectCompareResult.Equals(input.ObjectCompareResult))
-                ) && 
-                (
-                    this.TargetCount == input.TargetCount ||
-                    (this.TargetCount != null &&
-                    this.TargetCount.Equals(input.TargetCount))
-                ) && 
-                (
-                    this.SourceCount == input.SourceCount ||
-                    (this.SourceCount != null &&
-                    this.SourceCount.Equals(input.SourceCount))
-                ) && 
-                (
-                    this.DiffCount == input.DiffCount ||
-                    (this.DiffCount != null &&
-                    this.DiffCount.Equals(input.DiffCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -475,17 +454,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ObjectType != null)
-                    hashCode = hashCode * 59 + this.ObjectType.GetHashCode();
-                if (this.ObjectCompareResult != null)
-                    hashCode = hashCode * 59 + this.ObjectCompareResult.GetHashCode();
-                if (this.TargetCount != null)
-                    hashCode = hashCode * 59 + this.TargetCount.GetHashCode();
-                if (this.SourceCount != null)
-                    hashCode = hashCode * 59 + this.SourceCount.GetHashCode();
-                if (this.DiffCount != null)
-                    hashCode = hashCode * 59 + this.DiffCount.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.ObjectType.GetHashCode();
+                hashCode = hashCode * 59 + this.ObjectCompareResult.GetHashCode();
+                if (this.TargetCount != null) hashCode = hashCode * 59 + this.TargetCount.GetHashCode();
+                if (this.SourceCount != null) hashCode = hashCode * 59 + this.SourceCount.GetHashCode();
+                if (this.DiffCount != null) hashCode = hashCode * 59 + this.DiffCount.GetHashCode();
                 return hashCode;
             }
         }

@@ -140,81 +140,23 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(MasterSlaveMember input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.SubnetCidrId != input.SubnetCidrId || (this.SubnetCidrId != null && !this.SubnetCidrId.Equals(input.SubnetCidrId))) return false;
+            if (this.ProtocolPort != input.ProtocolPort || (this.ProtocolPort != null && !this.ProtocolPort.Equals(input.ProtocolPort))) return false;
+            if (this.Address != input.Address || (this.Address != null && !this.Address.Equals(input.Address))) return false;
+            if (this.IpVersion != input.IpVersion || (this.IpVersion != null && !this.IpVersion.Equals(input.IpVersion))) return false;
+            if (this.DeviceOwner != input.DeviceOwner || (this.DeviceOwner != null && !this.DeviceOwner.Equals(input.DeviceOwner))) return false;
+            if (this.DeviceId != input.DeviceId || (this.DeviceId != null && !this.DeviceId.Equals(input.DeviceId))) return false;
+            if (this.OperatingStatus != input.OperatingStatus || (this.OperatingStatus != null && !this.OperatingStatus.Equals(input.OperatingStatus))) return false;
+            if (this.MemberType != input.MemberType || (this.MemberType != null && !this.MemberType.Equals(input.MemberType))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.Role != input.Role || (this.Role != null && !this.Role.Equals(input.Role))) return false;
+            if (this.Status != input.Status || (this.Status != null && input.Status != null && !this.Status.SequenceEqual(input.Status))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.SubnetCidrId == input.SubnetCidrId ||
-                    (this.SubnetCidrId != null &&
-                    this.SubnetCidrId.Equals(input.SubnetCidrId))
-                ) && 
-                (
-                    this.ProtocolPort == input.ProtocolPort ||
-                    (this.ProtocolPort != null &&
-                    this.ProtocolPort.Equals(input.ProtocolPort))
-                ) && 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
-                ) && 
-                (
-                    this.IpVersion == input.IpVersion ||
-                    (this.IpVersion != null &&
-                    this.IpVersion.Equals(input.IpVersion))
-                ) && 
-                (
-                    this.DeviceOwner == input.DeviceOwner ||
-                    (this.DeviceOwner != null &&
-                    this.DeviceOwner.Equals(input.DeviceOwner))
-                ) && 
-                (
-                    this.DeviceId == input.DeviceId ||
-                    (this.DeviceId != null &&
-                    this.DeviceId.Equals(input.DeviceId))
-                ) && 
-                (
-                    this.OperatingStatus == input.OperatingStatus ||
-                    (this.OperatingStatus != null &&
-                    this.OperatingStatus.Equals(input.OperatingStatus))
-                ) && 
-                (
-                    this.MemberType == input.MemberType ||
-                    (this.MemberType != null &&
-                    this.MemberType.Equals(input.MemberType))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.Role == input.Role ||
-                    (this.Role != null &&
-                    this.Role.Equals(input.Role))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    this.Status != null &&
-                    input.Status != null &&
-                    this.Status.SequenceEqual(input.Status)
-                );
+            return true;
         }
 
         /// <summary>
@@ -224,35 +166,21 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.SubnetCidrId != null)
-                    hashCode = hashCode * 59 + this.SubnetCidrId.GetHashCode();
-                if (this.ProtocolPort != null)
-                    hashCode = hashCode * 59 + this.ProtocolPort.GetHashCode();
-                if (this.Address != null)
-                    hashCode = hashCode * 59 + this.Address.GetHashCode();
-                if (this.IpVersion != null)
-                    hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
-                if (this.DeviceOwner != null)
-                    hashCode = hashCode * 59 + this.DeviceOwner.GetHashCode();
-                if (this.DeviceId != null)
-                    hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
-                if (this.OperatingStatus != null)
-                    hashCode = hashCode * 59 + this.OperatingStatus.GetHashCode();
-                if (this.MemberType != null)
-                    hashCode = hashCode * 59 + this.MemberType.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.Role != null)
-                    hashCode = hashCode * 59 + this.Role.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.SubnetCidrId != null) hashCode = hashCode * 59 + this.SubnetCidrId.GetHashCode();
+                if (this.ProtocolPort != null) hashCode = hashCode * 59 + this.ProtocolPort.GetHashCode();
+                if (this.Address != null) hashCode = hashCode * 59 + this.Address.GetHashCode();
+                if (this.IpVersion != null) hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
+                if (this.DeviceOwner != null) hashCode = hashCode * 59 + this.DeviceOwner.GetHashCode();
+                if (this.DeviceId != null) hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
+                if (this.OperatingStatus != null) hashCode = hashCode * 59 + this.OperatingStatus.GetHashCode();
+                if (this.MemberType != null) hashCode = hashCode * 59 + this.MemberType.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.Role != null) hashCode = hashCode * 59 + this.Role.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(CommitRecordDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RepositoryId != input.RepositoryId || (this.RepositoryId != null && !this.RepositoryId.Equals(input.RepositoryId))) return false;
+            if (this.BranchName != input.BranchName || (this.BranchName != null && !this.BranchName.Equals(input.BranchName))) return false;
+            if (this.CommitId != input.CommitId || (this.CommitId != null && !this.CommitId.Equals(input.CommitId))) return false;
+            if (this.CommitShortId != input.CommitShortId || (this.CommitShortId != null && !this.CommitShortId.Equals(input.CommitShortId))) return false;
+            if (this.CommitMsg != input.CommitMsg || (this.CommitMsg != null && !this.CommitMsg.Equals(input.CommitMsg))) return false;
+            if (this.CommitUrl != input.CommitUrl || (this.CommitUrl != null && !this.CommitUrl.Equals(input.CommitUrl))) return false;
+            if (this.User != input.User || (this.User != null && !this.User.Equals(input.User))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.CreateDate != input.CreateDate || (this.CreateDate != null && !this.CreateDate.Equals(input.CreateDate))) return false;
+            if (this.UpdateDate != input.UpdateDate || (this.UpdateDate != null && !this.UpdateDate.Equals(input.UpdateDate))) return false;
 
-            return 
-                (
-                    this.RepositoryId == input.RepositoryId ||
-                    (this.RepositoryId != null &&
-                    this.RepositoryId.Equals(input.RepositoryId))
-                ) && 
-                (
-                    this.BranchName == input.BranchName ||
-                    (this.BranchName != null &&
-                    this.BranchName.Equals(input.BranchName))
-                ) && 
-                (
-                    this.CommitId == input.CommitId ||
-                    (this.CommitId != null &&
-                    this.CommitId.Equals(input.CommitId))
-                ) && 
-                (
-                    this.CommitShortId == input.CommitShortId ||
-                    (this.CommitShortId != null &&
-                    this.CommitShortId.Equals(input.CommitShortId))
-                ) && 
-                (
-                    this.CommitMsg == input.CommitMsg ||
-                    (this.CommitMsg != null &&
-                    this.CommitMsg.Equals(input.CommitMsg))
-                ) && 
-                (
-                    this.CommitUrl == input.CommitUrl ||
-                    (this.CommitUrl != null &&
-                    this.CommitUrl.Equals(input.CommitUrl))
-                ) && 
-                (
-                    this.User == input.User ||
-                    (this.User != null &&
-                    this.User.Equals(input.User))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.CreateDate == input.CreateDate ||
-                    (this.CreateDate != null &&
-                    this.CreateDate.Equals(input.CreateDate))
-                ) && 
-                (
-                    this.UpdateDate == input.UpdateDate ||
-                    (this.UpdateDate != null &&
-                    this.UpdateDate.Equals(input.UpdateDate))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RepositoryId != null)
-                    hashCode = hashCode * 59 + this.RepositoryId.GetHashCode();
-                if (this.BranchName != null)
-                    hashCode = hashCode * 59 + this.BranchName.GetHashCode();
-                if (this.CommitId != null)
-                    hashCode = hashCode * 59 + this.CommitId.GetHashCode();
-                if (this.CommitShortId != null)
-                    hashCode = hashCode * 59 + this.CommitShortId.GetHashCode();
-                if (this.CommitMsg != null)
-                    hashCode = hashCode * 59 + this.CommitMsg.GetHashCode();
-                if (this.CommitUrl != null)
-                    hashCode = hashCode * 59 + this.CommitUrl.GetHashCode();
-                if (this.User != null)
-                    hashCode = hashCode * 59 + this.User.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.CreateDate != null)
-                    hashCode = hashCode * 59 + this.CreateDate.GetHashCode();
-                if (this.UpdateDate != null)
-                    hashCode = hashCode * 59 + this.UpdateDate.GetHashCode();
+                var hashCode = 41;
+                if (this.RepositoryId != null) hashCode = hashCode * 59 + this.RepositoryId.GetHashCode();
+                if (this.BranchName != null) hashCode = hashCode * 59 + this.BranchName.GetHashCode();
+                if (this.CommitId != null) hashCode = hashCode * 59 + this.CommitId.GetHashCode();
+                if (this.CommitShortId != null) hashCode = hashCode * 59 + this.CommitShortId.GetHashCode();
+                if (this.CommitMsg != null) hashCode = hashCode * 59 + this.CommitMsg.GetHashCode();
+                if (this.CommitUrl != null) hashCode = hashCode * 59 + this.CommitUrl.GetHashCode();
+                if (this.User != null) hashCode = hashCode * 59 + this.User.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.CreateDate != null) hashCode = hashCode * 59 + this.CreateDate.GetHashCode();
+                if (this.UpdateDate != null) hashCode = hashCode * 59 + this.UpdateDate.GetHashCode();
                 return hashCode;
             }
         }

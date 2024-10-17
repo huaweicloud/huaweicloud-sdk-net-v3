@@ -321,27 +321,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(AccessConfigWindowsLogInfoUpdate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Categorys != input.Categorys || (this.Categorys != null && input.Categorys != null && !this.Categorys.SequenceEqual(input.Categorys))) return false;
+            if (this.TimeOffset != input.TimeOffset || (this.TimeOffset != null && !this.TimeOffset.Equals(input.TimeOffset))) return false;
+            if (this.EventLevel != input.EventLevel || (this.EventLevel != null && input.EventLevel != null && !this.EventLevel.SequenceEqual(input.EventLevel))) return false;
 
-            return 
-                (
-                    this.Categorys == input.Categorys ||
-                    this.Categorys != null &&
-                    input.Categorys != null &&
-                    this.Categorys.SequenceEqual(input.Categorys)
-                ) && 
-                (
-                    this.TimeOffset == input.TimeOffset ||
-                    (this.TimeOffset != null &&
-                    this.TimeOffset.Equals(input.TimeOffset))
-                ) && 
-                (
-                    this.EventLevel == input.EventLevel ||
-                    this.EventLevel != null &&
-                    input.EventLevel != null &&
-                    this.EventLevel.SequenceEqual(input.EventLevel)
-                );
+            return true;
         }
 
         /// <summary>
@@ -351,13 +336,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Categorys != null)
-                    hashCode = hashCode * 59 + this.Categorys.GetHashCode();
-                if (this.TimeOffset != null)
-                    hashCode = hashCode * 59 + this.TimeOffset.GetHashCode();
-                if (this.EventLevel != null)
-                    hashCode = hashCode * 59 + this.EventLevel.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Categorys.GetHashCode();
+                if (this.TimeOffset != null) hashCode = hashCode * 59 + this.TimeOffset.GetHashCode();
+                hashCode = hashCode * 59 + this.EventLevel.GetHashCode();
                 return hashCode;
             }
         }

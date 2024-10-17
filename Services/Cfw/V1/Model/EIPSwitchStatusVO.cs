@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(EIPSwitchStatusVO input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ObjectId != input.ObjectId || (this.ObjectId != null && !this.ObjectId.Equals(input.ObjectId))) return false;
+            if (this.FailEipIdList != input.FailEipIdList || (this.FailEipIdList != null && input.FailEipIdList != null && !this.FailEipIdList.SequenceEqual(input.FailEipIdList))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
 
-            return 
-                (
-                    this.ObjectId == input.ObjectId ||
-                    (this.ObjectId != null &&
-                    this.ObjectId.Equals(input.ObjectId))
-                ) && 
-                (
-                    this.FailEipIdList == input.FailEipIdList ||
-                    this.FailEipIdList != null &&
-                    input.FailEipIdList != null &&
-                    this.FailEipIdList.SequenceEqual(input.FailEipIdList)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ObjectId != null)
-                    hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
-                if (this.FailEipIdList != null)
-                    hashCode = hashCode * 59 + this.FailEipIdList.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                var hashCode = 41;
+                if (this.ObjectId != null) hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
+                if (this.FailEipIdList != null) hashCode = hashCode * 59 + this.FailEipIdList.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 return hashCode;
             }
         }

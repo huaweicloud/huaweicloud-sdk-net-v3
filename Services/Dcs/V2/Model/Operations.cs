@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(Operations input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Operation != input.Operation || (this.Operation != null && !this.Operation.Equals(input.Operation))) return false;
+            if (this.IsSupport != input.IsSupport || (this.IsSupport != null && !this.IsSupport.Equals(input.IsSupport))) return false;
+            if (this.CauseId != input.CauseId || (this.CauseId != null && !this.CauseId.Equals(input.CauseId))) return false;
 
-            return 
-                (
-                    this.Operation == input.Operation ||
-                    (this.Operation != null &&
-                    this.Operation.Equals(input.Operation))
-                ) && 
-                (
-                    this.IsSupport == input.IsSupport ||
-                    (this.IsSupport != null &&
-                    this.IsSupport.Equals(input.IsSupport))
-                ) && 
-                (
-                    this.CauseId == input.CauseId ||
-                    (this.CauseId != null &&
-                    this.CauseId.Equals(input.CauseId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Operation != null)
-                    hashCode = hashCode * 59 + this.Operation.GetHashCode();
-                if (this.IsSupport != null)
-                    hashCode = hashCode * 59 + this.IsSupport.GetHashCode();
-                if (this.CauseId != null)
-                    hashCode = hashCode * 59 + this.CauseId.GetHashCode();
+                var hashCode = 41;
+                if (this.Operation != null) hashCode = hashCode * 59 + this.Operation.GetHashCode();
+                if (this.IsSupport != null) hashCode = hashCode * 59 + this.IsSupport.GetHashCode();
+                if (this.CauseId != null) hashCode = hashCode * 59 + this.CauseId.GetHashCode();
                 return hashCode;
             }
         }

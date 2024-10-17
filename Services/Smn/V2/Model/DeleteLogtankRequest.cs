@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public bool Equals(DeleteLogtankRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TopicUrn != input.TopicUrn || (this.TopicUrn != null && !this.TopicUrn.Equals(input.TopicUrn))) return false;
+            if (this.LogtankId != input.LogtankId || (this.LogtankId != null && !this.LogtankId.Equals(input.LogtankId))) return false;
 
-            return 
-                (
-                    this.TopicUrn == input.TopicUrn ||
-                    (this.TopicUrn != null &&
-                    this.TopicUrn.Equals(input.TopicUrn))
-                ) && 
-                (
-                    this.LogtankId == input.LogtankId ||
-                    (this.LogtankId != null &&
-                    this.LogtankId.Equals(input.LogtankId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TopicUrn != null)
-                    hashCode = hashCode * 59 + this.TopicUrn.GetHashCode();
-                if (this.LogtankId != null)
-                    hashCode = hashCode * 59 + this.LogtankId.GetHashCode();
+                var hashCode = 41;
+                if (this.TopicUrn != null) hashCode = hashCode * 59 + this.TopicUrn.GetHashCode();
+                if (this.LogtankId != null) hashCode = hashCode * 59 + this.LogtankId.GetHashCode();
                 return hashCode;
             }
         }

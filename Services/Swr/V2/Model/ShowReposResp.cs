@@ -168,101 +168,27 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public bool Equals(ShowReposResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Category != input.Category || (this.Category != null && !this.Category.Equals(input.Category))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.IsPublic != input.IsPublic || (this.IsPublic != null && !this.IsPublic.Equals(input.IsPublic))) return false;
+            if (this.NumImages != input.NumImages || (this.NumImages != null && !this.NumImages.Equals(input.NumImages))) return false;
+            if (this.NumDownload != input.NumDownload || (this.NumDownload != null && !this.NumDownload.Equals(input.NumDownload))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.Logo != input.Logo || (this.Logo != null && !this.Logo.Equals(input.Logo))) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.Path != input.Path || (this.Path != null && !this.Path.Equals(input.Path))) return false;
+            if (this.InternalPath != input.InternalPath || (this.InternalPath != null && !this.InternalPath.Equals(input.InternalPath))) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
+            if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.TotalRange != input.TotalRange || (this.TotalRange != null && !this.TotalRange.Equals(input.TotalRange))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Category == input.Category ||
-                    (this.Category != null &&
-                    this.Category.Equals(input.Category))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.IsPublic == input.IsPublic ||
-                    (this.IsPublic != null &&
-                    this.IsPublic.Equals(input.IsPublic))
-                ) && 
-                (
-                    this.NumImages == input.NumImages ||
-                    (this.NumImages != null &&
-                    this.NumImages.Equals(input.NumImages))
-                ) && 
-                (
-                    this.NumDownload == input.NumDownload ||
-                    (this.NumDownload != null &&
-                    this.NumDownload.Equals(input.NumDownload))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.Logo == input.Logo ||
-                    (this.Logo != null &&
-                    this.Logo.Equals(input.Logo))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.Path == input.Path ||
-                    (this.Path != null &&
-                    this.Path.Equals(input.Path))
-                ) && 
-                (
-                    this.InternalPath == input.InternalPath ||
-                    (this.InternalPath != null &&
-                    this.InternalPath.Equals(input.InternalPath))
-                ) && 
-                (
-                    this.DomainName == input.DomainName ||
-                    (this.DomainName != null &&
-                    this.DomainName.Equals(input.DomainName))
-                ) && 
-                (
-                    this.Namespace == input.Namespace ||
-                    (this.Namespace != null &&
-                    this.Namespace.Equals(input.Namespace))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.TotalRange == input.TotalRange ||
-                    (this.TotalRange != null &&
-                    this.TotalRange.Equals(input.TotalRange))
-                );
+            return true;
         }
 
         /// <summary>
@@ -272,43 +198,25 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Category != null)
-                    hashCode = hashCode * 59 + this.Category.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.IsPublic != null)
-                    hashCode = hashCode * 59 + this.IsPublic.GetHashCode();
-                if (this.NumImages != null)
-                    hashCode = hashCode * 59 + this.NumImages.GetHashCode();
-                if (this.NumDownload != null)
-                    hashCode = hashCode * 59 + this.NumDownload.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.Logo != null)
-                    hashCode = hashCode * 59 + this.Logo.GetHashCode();
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.Path != null)
-                    hashCode = hashCode * 59 + this.Path.GetHashCode();
-                if (this.InternalPath != null)
-                    hashCode = hashCode * 59 + this.InternalPath.GetHashCode();
-                if (this.DomainName != null)
-                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.Namespace != null)
-                    hashCode = hashCode * 59 + this.Namespace.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.TotalRange != null)
-                    hashCode = hashCode * 59 + this.TotalRange.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Category != null) hashCode = hashCode * 59 + this.Category.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.IsPublic != null) hashCode = hashCode * 59 + this.IsPublic.GetHashCode();
+                if (this.NumImages != null) hashCode = hashCode * 59 + this.NumImages.GetHashCode();
+                if (this.NumDownload != null) hashCode = hashCode * 59 + this.NumDownload.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.Logo != null) hashCode = hashCode * 59 + this.Logo.GetHashCode();
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.Path != null) hashCode = hashCode * 59 + this.Path.GetHashCode();
+                if (this.InternalPath != null) hashCode = hashCode * 59 + this.InternalPath.GetHashCode();
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.TotalRange != null) hashCode = hashCode * 59 + this.TotalRange.GetHashCode();
                 return hashCode;
             }
         }

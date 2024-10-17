@@ -48,15 +48,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(UpgradeWorkFlowUpdateRequestBodyStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Phase != input.Phase) return false;
 
-            return 
-                (
-                    this.Phase == input.Phase ||
-                    (this.Phase != null &&
-                    this.Phase.Equals(input.Phase))
-                );
+            return true;
         }
 
         /// <summary>
@@ -66,9 +61,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Phase != null)
-                    hashCode = hashCode * 59 + this.Phase.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Phase.GetHashCode();
                 return hashCode;
             }
         }

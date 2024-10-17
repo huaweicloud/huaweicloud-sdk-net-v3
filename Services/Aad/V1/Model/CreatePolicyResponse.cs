@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         /// </summary>
         public bool Equals(CreatePolicyResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.PackageId != input.PackageId || (this.PackageId != null && !this.PackageId.Equals(input.PackageId))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.CleanThreshold != input.CleanThreshold || (this.CleanThreshold != null && !this.CleanThreshold.Equals(input.CleanThreshold))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.PackageId == input.PackageId ||
-                    (this.PackageId != null &&
-                    this.PackageId.Equals(input.PackageId))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.CleanThreshold == input.CleanThreshold ||
-                    (this.CleanThreshold != null &&
-                    this.CleanThreshold.Equals(input.CleanThreshold))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.PackageId != null)
-                    hashCode = hashCode * 59 + this.PackageId.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.CleanThreshold != null)
-                    hashCode = hashCode * 59 + this.CleanThreshold.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.PackageId != null) hashCode = hashCode * 59 + this.PackageId.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.CleanThreshold != null) hashCode = hashCode * 59 + this.CleanThreshold.GetHashCode();
                 return hashCode;
             }
         }

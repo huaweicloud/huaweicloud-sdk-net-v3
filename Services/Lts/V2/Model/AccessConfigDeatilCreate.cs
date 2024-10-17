@@ -295,116 +295,28 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(AccessConfigDeatilCreate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Paths != input.Paths || (this.Paths != null && input.Paths != null && !this.Paths.SequenceEqual(input.Paths))) return false;
+            if (this.BlackPaths != input.BlackPaths || (this.BlackPaths != null && input.BlackPaths != null && !this.BlackPaths.SequenceEqual(input.BlackPaths))) return false;
+            if (this.Format != input.Format || (this.Format != null && !this.Format.Equals(input.Format))) return false;
+            if (this.WindowsLogInfo != input.WindowsLogInfo || (this.WindowsLogInfo != null && !this.WindowsLogInfo.Equals(input.WindowsLogInfo))) return false;
+            if (this.Stdout != input.Stdout || (this.Stdout != null && !this.Stdout.Equals(input.Stdout))) return false;
+            if (this.Stderr != input.Stderr || (this.Stderr != null && !this.Stderr.Equals(input.Stderr))) return false;
+            if (this.PathType != input.PathType) return false;
+            if (this.NamespaceRegex != input.NamespaceRegex || (this.NamespaceRegex != null && !this.NamespaceRegex.Equals(input.NamespaceRegex))) return false;
+            if (this.PodNameRegex != input.PodNameRegex || (this.PodNameRegex != null && !this.PodNameRegex.Equals(input.PodNameRegex))) return false;
+            if (this.ContainerNameRegex != input.ContainerNameRegex || (this.ContainerNameRegex != null && !this.ContainerNameRegex.Equals(input.ContainerNameRegex))) return false;
+            if (this.IncludeLabels != input.IncludeLabels || (this.IncludeLabels != null && input.IncludeLabels != null && !this.IncludeLabels.SequenceEqual(input.IncludeLabels))) return false;
+            if (this.ExcludeLabels != input.ExcludeLabels || (this.ExcludeLabels != null && input.ExcludeLabels != null && !this.ExcludeLabels.SequenceEqual(input.ExcludeLabels))) return false;
+            if (this.IncludeEnvs != input.IncludeEnvs || (this.IncludeEnvs != null && input.IncludeEnvs != null && !this.IncludeEnvs.SequenceEqual(input.IncludeEnvs))) return false;
+            if (this.ExcludeEnvs != input.ExcludeEnvs || (this.ExcludeEnvs != null && input.ExcludeEnvs != null && !this.ExcludeEnvs.SequenceEqual(input.ExcludeEnvs))) return false;
+            if (this.LogLabels != input.LogLabels || (this.LogLabels != null && input.LogLabels != null && !this.LogLabels.SequenceEqual(input.LogLabels))) return false;
+            if (this.LogEnvs != input.LogEnvs || (this.LogEnvs != null && input.LogEnvs != null && !this.LogEnvs.SequenceEqual(input.LogEnvs))) return false;
+            if (this.IncludeK8sLabels != input.IncludeK8sLabels || (this.IncludeK8sLabels != null && input.IncludeK8sLabels != null && !this.IncludeK8sLabels.SequenceEqual(input.IncludeK8sLabels))) return false;
+            if (this.ExcludeK8sLabels != input.ExcludeK8sLabels || (this.ExcludeK8sLabels != null && input.ExcludeK8sLabels != null && !this.ExcludeK8sLabels.SequenceEqual(input.ExcludeK8sLabels))) return false;
+            if (this.LogK8s != input.LogK8s || (this.LogK8s != null && input.LogK8s != null && !this.LogK8s.SequenceEqual(input.LogK8s))) return false;
 
-            return 
-                (
-                    this.Paths == input.Paths ||
-                    this.Paths != null &&
-                    input.Paths != null &&
-                    this.Paths.SequenceEqual(input.Paths)
-                ) && 
-                (
-                    this.BlackPaths == input.BlackPaths ||
-                    this.BlackPaths != null &&
-                    input.BlackPaths != null &&
-                    this.BlackPaths.SequenceEqual(input.BlackPaths)
-                ) && 
-                (
-                    this.Format == input.Format ||
-                    (this.Format != null &&
-                    this.Format.Equals(input.Format))
-                ) && 
-                (
-                    this.WindowsLogInfo == input.WindowsLogInfo ||
-                    (this.WindowsLogInfo != null &&
-                    this.WindowsLogInfo.Equals(input.WindowsLogInfo))
-                ) && 
-                (
-                    this.Stdout == input.Stdout ||
-                    (this.Stdout != null &&
-                    this.Stdout.Equals(input.Stdout))
-                ) && 
-                (
-                    this.Stderr == input.Stderr ||
-                    (this.Stderr != null &&
-                    this.Stderr.Equals(input.Stderr))
-                ) && 
-                (
-                    this.PathType == input.PathType ||
-                    (this.PathType != null &&
-                    this.PathType.Equals(input.PathType))
-                ) && 
-                (
-                    this.NamespaceRegex == input.NamespaceRegex ||
-                    (this.NamespaceRegex != null &&
-                    this.NamespaceRegex.Equals(input.NamespaceRegex))
-                ) && 
-                (
-                    this.PodNameRegex == input.PodNameRegex ||
-                    (this.PodNameRegex != null &&
-                    this.PodNameRegex.Equals(input.PodNameRegex))
-                ) && 
-                (
-                    this.ContainerNameRegex == input.ContainerNameRegex ||
-                    (this.ContainerNameRegex != null &&
-                    this.ContainerNameRegex.Equals(input.ContainerNameRegex))
-                ) && 
-                (
-                    this.IncludeLabels == input.IncludeLabels ||
-                    this.IncludeLabels != null &&
-                    input.IncludeLabels != null &&
-                    this.IncludeLabels.SequenceEqual(input.IncludeLabels)
-                ) && 
-                (
-                    this.ExcludeLabels == input.ExcludeLabels ||
-                    this.ExcludeLabels != null &&
-                    input.ExcludeLabels != null &&
-                    this.ExcludeLabels.SequenceEqual(input.ExcludeLabels)
-                ) && 
-                (
-                    this.IncludeEnvs == input.IncludeEnvs ||
-                    this.IncludeEnvs != null &&
-                    input.IncludeEnvs != null &&
-                    this.IncludeEnvs.SequenceEqual(input.IncludeEnvs)
-                ) && 
-                (
-                    this.ExcludeEnvs == input.ExcludeEnvs ||
-                    this.ExcludeEnvs != null &&
-                    input.ExcludeEnvs != null &&
-                    this.ExcludeEnvs.SequenceEqual(input.ExcludeEnvs)
-                ) && 
-                (
-                    this.LogLabels == input.LogLabels ||
-                    this.LogLabels != null &&
-                    input.LogLabels != null &&
-                    this.LogLabels.SequenceEqual(input.LogLabels)
-                ) && 
-                (
-                    this.LogEnvs == input.LogEnvs ||
-                    this.LogEnvs != null &&
-                    input.LogEnvs != null &&
-                    this.LogEnvs.SequenceEqual(input.LogEnvs)
-                ) && 
-                (
-                    this.IncludeK8sLabels == input.IncludeK8sLabels ||
-                    this.IncludeK8sLabels != null &&
-                    input.IncludeK8sLabels != null &&
-                    this.IncludeK8sLabels.SequenceEqual(input.IncludeK8sLabels)
-                ) && 
-                (
-                    this.ExcludeK8sLabels == input.ExcludeK8sLabels ||
-                    this.ExcludeK8sLabels != null &&
-                    input.ExcludeK8sLabels != null &&
-                    this.ExcludeK8sLabels.SequenceEqual(input.ExcludeK8sLabels)
-                ) && 
-                (
-                    this.LogK8s == input.LogK8s ||
-                    this.LogK8s != null &&
-                    input.LogK8s != null &&
-                    this.LogK8s.SequenceEqual(input.LogK8s)
-                );
+            return true;
         }
 
         /// <summary>
@@ -414,45 +326,26 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Paths != null)
-                    hashCode = hashCode * 59 + this.Paths.GetHashCode();
-                if (this.BlackPaths != null)
-                    hashCode = hashCode * 59 + this.BlackPaths.GetHashCode();
-                if (this.Format != null)
-                    hashCode = hashCode * 59 + this.Format.GetHashCode();
-                if (this.WindowsLogInfo != null)
-                    hashCode = hashCode * 59 + this.WindowsLogInfo.GetHashCode();
-                if (this.Stdout != null)
-                    hashCode = hashCode * 59 + this.Stdout.GetHashCode();
-                if (this.Stderr != null)
-                    hashCode = hashCode * 59 + this.Stderr.GetHashCode();
-                if (this.PathType != null)
-                    hashCode = hashCode * 59 + this.PathType.GetHashCode();
-                if (this.NamespaceRegex != null)
-                    hashCode = hashCode * 59 + this.NamespaceRegex.GetHashCode();
-                if (this.PodNameRegex != null)
-                    hashCode = hashCode * 59 + this.PodNameRegex.GetHashCode();
-                if (this.ContainerNameRegex != null)
-                    hashCode = hashCode * 59 + this.ContainerNameRegex.GetHashCode();
-                if (this.IncludeLabels != null)
-                    hashCode = hashCode * 59 + this.IncludeLabels.GetHashCode();
-                if (this.ExcludeLabels != null)
-                    hashCode = hashCode * 59 + this.ExcludeLabels.GetHashCode();
-                if (this.IncludeEnvs != null)
-                    hashCode = hashCode * 59 + this.IncludeEnvs.GetHashCode();
-                if (this.ExcludeEnvs != null)
-                    hashCode = hashCode * 59 + this.ExcludeEnvs.GetHashCode();
-                if (this.LogLabels != null)
-                    hashCode = hashCode * 59 + this.LogLabels.GetHashCode();
-                if (this.LogEnvs != null)
-                    hashCode = hashCode * 59 + this.LogEnvs.GetHashCode();
-                if (this.IncludeK8sLabels != null)
-                    hashCode = hashCode * 59 + this.IncludeK8sLabels.GetHashCode();
-                if (this.ExcludeK8sLabels != null)
-                    hashCode = hashCode * 59 + this.ExcludeK8sLabels.GetHashCode();
-                if (this.LogK8s != null)
-                    hashCode = hashCode * 59 + this.LogK8s.GetHashCode();
+                var hashCode = 41;
+                if (this.Paths != null) hashCode = hashCode * 59 + this.Paths.GetHashCode();
+                if (this.BlackPaths != null) hashCode = hashCode * 59 + this.BlackPaths.GetHashCode();
+                if (this.Format != null) hashCode = hashCode * 59 + this.Format.GetHashCode();
+                if (this.WindowsLogInfo != null) hashCode = hashCode * 59 + this.WindowsLogInfo.GetHashCode();
+                if (this.Stdout != null) hashCode = hashCode * 59 + this.Stdout.GetHashCode();
+                if (this.Stderr != null) hashCode = hashCode * 59 + this.Stderr.GetHashCode();
+                hashCode = hashCode * 59 + this.PathType.GetHashCode();
+                if (this.NamespaceRegex != null) hashCode = hashCode * 59 + this.NamespaceRegex.GetHashCode();
+                if (this.PodNameRegex != null) hashCode = hashCode * 59 + this.PodNameRegex.GetHashCode();
+                if (this.ContainerNameRegex != null) hashCode = hashCode * 59 + this.ContainerNameRegex.GetHashCode();
+                if (this.IncludeLabels != null) hashCode = hashCode * 59 + this.IncludeLabels.GetHashCode();
+                if (this.ExcludeLabels != null) hashCode = hashCode * 59 + this.ExcludeLabels.GetHashCode();
+                if (this.IncludeEnvs != null) hashCode = hashCode * 59 + this.IncludeEnvs.GetHashCode();
+                if (this.ExcludeEnvs != null) hashCode = hashCode * 59 + this.ExcludeEnvs.GetHashCode();
+                if (this.LogLabels != null) hashCode = hashCode * 59 + this.LogLabels.GetHashCode();
+                if (this.LogEnvs != null) hashCode = hashCode * 59 + this.LogEnvs.GetHashCode();
+                if (this.IncludeK8sLabels != null) hashCode = hashCode * 59 + this.IncludeK8sLabels.GetHashCode();
+                if (this.ExcludeK8sLabels != null) hashCode = hashCode * 59 + this.ExcludeK8sLabels.GetHashCode();
+                if (this.LogK8s != null) hashCode = hashCode * 59 + this.LogK8s.GetHashCode();
                 return hashCode;
             }
         }

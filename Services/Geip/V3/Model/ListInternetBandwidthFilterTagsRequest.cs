@@ -66,27 +66,12 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// </summary>
         public bool Equals(ListInternetBandwidthFilterTagsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && input.Limit != null && !this.Limit.SequenceEqual(input.Limit))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && input.Offset != null && !this.Offset.SequenceEqual(input.Offset))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
-            return 
-                (
-                    this.Limit == input.Limit ||
-                    this.Limit != null &&
-                    input.Limit != null &&
-                    this.Limit.SequenceEqual(input.Limit)
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    this.Offset != null &&
-                    input.Offset != null &&
-                    this.Offset.SequenceEqual(input.Offset)
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
-                );
+            return true;
         }
 
         /// <summary>
@@ -96,13 +81,10 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                var hashCode = 41;
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

@@ -161,95 +161,26 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         /// </summary>
         public bool Equals(ShowClassroomDetailResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Announcement != input.Announcement || (this.Announcement != null && !this.Announcement.Equals(input.Announcement))) return false;
+            if (this.AnnouncementTime != input.AnnouncementTime || (this.AnnouncementTime != null && !this.AnnouncementTime.Equals(input.AnnouncementTime))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.Teacher != input.Teacher || (this.Teacher != null && !this.Teacher.Equals(input.Teacher))) return false;
+            if (this.Credit != input.Credit || (this.Credit != null && !this.Credit.Equals(input.Credit))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.Role != input.Role || (this.Role != null && !this.Role.Equals(input.Role))) return false;
+            if (this.School != input.School || (this.School != null && !this.School.Equals(input.School))) return false;
+            if (this.ContentCount != input.ContentCount || (this.ContentCount != null && !this.ContentCount.Equals(input.ContentCount))) return false;
+            if (this.CoursewareCount != input.CoursewareCount || (this.CoursewareCount != null && !this.CoursewareCount.Equals(input.CoursewareCount))) return false;
+            if (this.JobCount != input.JobCount || (this.JobCount != null && !this.JobCount.Equals(input.JobCount))) return false;
+            if (this.MemberCount != input.MemberCount || (this.MemberCount != null && !this.MemberCount.Equals(input.MemberCount))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Announcement == input.Announcement ||
-                    (this.Announcement != null &&
-                    this.Announcement.Equals(input.Announcement))
-                ) && 
-                (
-                    this.AnnouncementTime == input.AnnouncementTime ||
-                    (this.AnnouncementTime != null &&
-                    this.AnnouncementTime.Equals(input.AnnouncementTime))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.Teacher == input.Teacher ||
-                    (this.Teacher != null &&
-                    this.Teacher.Equals(input.Teacher))
-                ) && 
-                (
-                    this.Credit == input.Credit ||
-                    (this.Credit != null &&
-                    this.Credit.Equals(input.Credit))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.Role == input.Role ||
-                    (this.Role != null &&
-                    this.Role.Equals(input.Role))
-                ) && 
-                (
-                    this.School == input.School ||
-                    (this.School != null &&
-                    this.School.Equals(input.School))
-                ) && 
-                (
-                    this.ContentCount == input.ContentCount ||
-                    (this.ContentCount != null &&
-                    this.ContentCount.Equals(input.ContentCount))
-                ) && 
-                (
-                    this.CoursewareCount == input.CoursewareCount ||
-                    (this.CoursewareCount != null &&
-                    this.CoursewareCount.Equals(input.CoursewareCount))
-                ) && 
-                (
-                    this.JobCount == input.JobCount ||
-                    (this.JobCount != null &&
-                    this.JobCount.Equals(input.JobCount))
-                ) && 
-                (
-                    this.MemberCount == input.MemberCount ||
-                    (this.MemberCount != null &&
-                    this.MemberCount.Equals(input.MemberCount))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
+            return true;
         }
 
         /// <summary>
@@ -259,41 +190,24 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Announcement != null)
-                    hashCode = hashCode * 59 + this.Announcement.GetHashCode();
-                if (this.AnnouncementTime != null)
-                    hashCode = hashCode * 59 + this.AnnouncementTime.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.Teacher != null)
-                    hashCode = hashCode * 59 + this.Teacher.GetHashCode();
-                if (this.Credit != null)
-                    hashCode = hashCode * 59 + this.Credit.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Role != null)
-                    hashCode = hashCode * 59 + this.Role.GetHashCode();
-                if (this.School != null)
-                    hashCode = hashCode * 59 + this.School.GetHashCode();
-                if (this.ContentCount != null)
-                    hashCode = hashCode * 59 + this.ContentCount.GetHashCode();
-                if (this.CoursewareCount != null)
-                    hashCode = hashCode * 59 + this.CoursewareCount.GetHashCode();
-                if (this.JobCount != null)
-                    hashCode = hashCode * 59 + this.JobCount.GetHashCode();
-                if (this.MemberCount != null)
-                    hashCode = hashCode * 59 + this.MemberCount.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Announcement != null) hashCode = hashCode * 59 + this.Announcement.GetHashCode();
+                if (this.AnnouncementTime != null) hashCode = hashCode * 59 + this.AnnouncementTime.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.Teacher != null) hashCode = hashCode * 59 + this.Teacher.GetHashCode();
+                if (this.Credit != null) hashCode = hashCode * 59 + this.Credit.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.Role != null) hashCode = hashCode * 59 + this.Role.GetHashCode();
+                if (this.School != null) hashCode = hashCode * 59 + this.School.GetHashCode();
+                if (this.ContentCount != null) hashCode = hashCode * 59 + this.ContentCount.GetHashCode();
+                if (this.CoursewareCount != null) hashCode = hashCode * 59 + this.CoursewareCount.GetHashCode();
+                if (this.JobCount != null) hashCode = hashCode * 59 + this.JobCount.GetHashCode();
+                if (this.MemberCount != null) hashCode = hashCode * 59 + this.MemberCount.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

@@ -91,46 +91,16 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(DbConfigCheckRequestV3 input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceInstanceId != input.SourceInstanceId || (this.SourceInstanceId != null && !this.SourceInstanceId.Equals(input.SourceInstanceId))) return false;
+            if (this.SourceNodeId != input.SourceNodeId || (this.SourceNodeId != null && !this.SourceNodeId.Equals(input.SourceNodeId))) return false;
+            if (this.SourceDatabaseName != input.SourceDatabaseName || (this.SourceDatabaseName != null && !this.SourceDatabaseName.Equals(input.SourceDatabaseName))) return false;
+            if (this.TargetDatabaseName != input.TargetDatabaseName || (this.TargetDatabaseName != null && !this.TargetDatabaseName.Equals(input.TargetDatabaseName))) return false;
+            if (this.TaskName != input.TaskName || (this.TaskName != null && !this.TaskName.Equals(input.TaskName))) return false;
+            if (this.DbConfigs != input.DbConfigs || (this.DbConfigs != null && input.DbConfigs != null && !this.DbConfigs.SequenceEqual(input.DbConfigs))) return false;
+            if (this.TableReplConfig != input.TableReplConfig || (this.TableReplConfig != null && !this.TableReplConfig.Equals(input.TableReplConfig))) return false;
 
-            return 
-                (
-                    this.SourceInstanceId == input.SourceInstanceId ||
-                    (this.SourceInstanceId != null &&
-                    this.SourceInstanceId.Equals(input.SourceInstanceId))
-                ) && 
-                (
-                    this.SourceNodeId == input.SourceNodeId ||
-                    (this.SourceNodeId != null &&
-                    this.SourceNodeId.Equals(input.SourceNodeId))
-                ) && 
-                (
-                    this.SourceDatabaseName == input.SourceDatabaseName ||
-                    (this.SourceDatabaseName != null &&
-                    this.SourceDatabaseName.Equals(input.SourceDatabaseName))
-                ) && 
-                (
-                    this.TargetDatabaseName == input.TargetDatabaseName ||
-                    (this.TargetDatabaseName != null &&
-                    this.TargetDatabaseName.Equals(input.TargetDatabaseName))
-                ) && 
-                (
-                    this.TaskName == input.TaskName ||
-                    (this.TaskName != null &&
-                    this.TaskName.Equals(input.TaskName))
-                ) && 
-                (
-                    this.DbConfigs == input.DbConfigs ||
-                    this.DbConfigs != null &&
-                    input.DbConfigs != null &&
-                    this.DbConfigs.SequenceEqual(input.DbConfigs)
-                ) && 
-                (
-                    this.TableReplConfig == input.TableReplConfig ||
-                    (this.TableReplConfig != null &&
-                    this.TableReplConfig.Equals(input.TableReplConfig))
-                );
+            return true;
         }
 
         /// <summary>
@@ -140,21 +110,14 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceInstanceId != null)
-                    hashCode = hashCode * 59 + this.SourceInstanceId.GetHashCode();
-                if (this.SourceNodeId != null)
-                    hashCode = hashCode * 59 + this.SourceNodeId.GetHashCode();
-                if (this.SourceDatabaseName != null)
-                    hashCode = hashCode * 59 + this.SourceDatabaseName.GetHashCode();
-                if (this.TargetDatabaseName != null)
-                    hashCode = hashCode * 59 + this.TargetDatabaseName.GetHashCode();
-                if (this.TaskName != null)
-                    hashCode = hashCode * 59 + this.TaskName.GetHashCode();
-                if (this.DbConfigs != null)
-                    hashCode = hashCode * 59 + this.DbConfigs.GetHashCode();
-                if (this.TableReplConfig != null)
-                    hashCode = hashCode * 59 + this.TableReplConfig.GetHashCode();
+                var hashCode = 41;
+                if (this.SourceInstanceId != null) hashCode = hashCode * 59 + this.SourceInstanceId.GetHashCode();
+                if (this.SourceNodeId != null) hashCode = hashCode * 59 + this.SourceNodeId.GetHashCode();
+                if (this.SourceDatabaseName != null) hashCode = hashCode * 59 + this.SourceDatabaseName.GetHashCode();
+                if (this.TargetDatabaseName != null) hashCode = hashCode * 59 + this.TargetDatabaseName.GetHashCode();
+                if (this.TaskName != null) hashCode = hashCode * 59 + this.TaskName.GetHashCode();
+                if (this.DbConfigs != null) hashCode = hashCode * 59 + this.DbConfigs.GetHashCode();
+                if (this.TableReplConfig != null) hashCode = hashCode * 59 + this.TableReplConfig.GetHashCode();
                 return hashCode;
             }
         }

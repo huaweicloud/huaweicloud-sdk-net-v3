@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public bool Equals(ShowJobSuccessRatioResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SuccessCount != input.SuccessCount || (this.SuccessCount != null && !this.SuccessCount.Equals(input.SuccessCount))) return false;
+            if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
+            if (this.SuccessRatio != input.SuccessRatio || (this.SuccessRatio != null && !this.SuccessRatio.Equals(input.SuccessRatio))) return false;
 
-            return 
-                (
-                    this.SuccessCount == input.SuccessCount ||
-                    (this.SuccessCount != null &&
-                    this.SuccessCount.Equals(input.SuccessCount))
-                ) && 
-                (
-                    this.TotalCount == input.TotalCount ||
-                    (this.TotalCount != null &&
-                    this.TotalCount.Equals(input.TotalCount))
-                ) && 
-                (
-                    this.SuccessRatio == input.SuccessRatio ||
-                    (this.SuccessRatio != null &&
-                    this.SuccessRatio.Equals(input.SuccessRatio))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SuccessCount != null)
-                    hashCode = hashCode * 59 + this.SuccessCount.GetHashCode();
-                if (this.TotalCount != null)
-                    hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
-                if (this.SuccessRatio != null)
-                    hashCode = hashCode * 59 + this.SuccessRatio.GetHashCode();
+                var hashCode = 41;
+                if (this.SuccessCount != null) hashCode = hashCode * 59 + this.SuccessCount.GetHashCode();
+                if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
+                if (this.SuccessRatio != null) hashCode = hashCode * 59 + this.SuccessRatio.GetHashCode();
                 return hashCode;
             }
         }

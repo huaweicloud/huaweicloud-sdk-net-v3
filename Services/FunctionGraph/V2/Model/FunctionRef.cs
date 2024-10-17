@@ -171,25 +171,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(FunctionRef input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RefName != input.RefName || (this.RefName != null && !this.RefName.Equals(input.RefName))) return false;
+            if (this.InvokeMode != input.InvokeMode) return false;
+            if (this.Arguments != input.Arguments || (this.Arguments != null && !this.Arguments.Equals(input.Arguments))) return false;
 
-            return 
-                (
-                    this.RefName == input.RefName ||
-                    (this.RefName != null &&
-                    this.RefName.Equals(input.RefName))
-                ) && 
-                (
-                    this.InvokeMode == input.InvokeMode ||
-                    (this.InvokeMode != null &&
-                    this.InvokeMode.Equals(input.InvokeMode))
-                ) && 
-                (
-                    this.Arguments == input.Arguments ||
-                    (this.Arguments != null &&
-                    this.Arguments.Equals(input.Arguments))
-                );
+            return true;
         }
 
         /// <summary>
@@ -199,13 +186,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RefName != null)
-                    hashCode = hashCode * 59 + this.RefName.GetHashCode();
-                if (this.InvokeMode != null)
-                    hashCode = hashCode * 59 + this.InvokeMode.GetHashCode();
-                if (this.Arguments != null)
-                    hashCode = hashCode * 59 + this.Arguments.GetHashCode();
+                var hashCode = 41;
+                if (this.RefName != null) hashCode = hashCode * 59 + this.RefName.GetHashCode();
+                hashCode = hashCode * 59 + this.InvokeMode.GetHashCode();
+                if (this.Arguments != null) hashCode = hashCode * 59 + this.Arguments.GetHashCode();
                 return hashCode;
             }
         }

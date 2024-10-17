@@ -77,36 +77,14 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         /// </summary>
         public bool Equals(UpdateSecretRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KmsKeyId != input.KmsKeyId || (this.KmsKeyId != null && !this.KmsKeyId.Equals(input.KmsKeyId))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.AutoRotation != input.AutoRotation || (this.AutoRotation != null && !this.AutoRotation.Equals(input.AutoRotation))) return false;
+            if (this.RotationPeriod != input.RotationPeriod || (this.RotationPeriod != null && !this.RotationPeriod.Equals(input.RotationPeriod))) return false;
+            if (this.EventSubscriptions != input.EventSubscriptions || (this.EventSubscriptions != null && input.EventSubscriptions != null && !this.EventSubscriptions.SequenceEqual(input.EventSubscriptions))) return false;
 
-            return 
-                (
-                    this.KmsKeyId == input.KmsKeyId ||
-                    (this.KmsKeyId != null &&
-                    this.KmsKeyId.Equals(input.KmsKeyId))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.AutoRotation == input.AutoRotation ||
-                    (this.AutoRotation != null &&
-                    this.AutoRotation.Equals(input.AutoRotation))
-                ) && 
-                (
-                    this.RotationPeriod == input.RotationPeriod ||
-                    (this.RotationPeriod != null &&
-                    this.RotationPeriod.Equals(input.RotationPeriod))
-                ) && 
-                (
-                    this.EventSubscriptions == input.EventSubscriptions ||
-                    this.EventSubscriptions != null &&
-                    input.EventSubscriptions != null &&
-                    this.EventSubscriptions.SequenceEqual(input.EventSubscriptions)
-                );
+            return true;
         }
 
         /// <summary>
@@ -116,17 +94,12 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KmsKeyId != null)
-                    hashCode = hashCode * 59 + this.KmsKeyId.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.AutoRotation != null)
-                    hashCode = hashCode * 59 + this.AutoRotation.GetHashCode();
-                if (this.RotationPeriod != null)
-                    hashCode = hashCode * 59 + this.RotationPeriod.GetHashCode();
-                if (this.EventSubscriptions != null)
-                    hashCode = hashCode * 59 + this.EventSubscriptions.GetHashCode();
+                var hashCode = 41;
+                if (this.KmsKeyId != null) hashCode = hashCode * 59 + this.KmsKeyId.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.AutoRotation != null) hashCode = hashCode * 59 + this.AutoRotation.GetHashCode();
+                if (this.RotationPeriod != null) hashCode = hashCode * 59 + this.RotationPeriod.GetHashCode();
+                if (this.EventSubscriptions != null) hashCode = hashCode * 59 + this.EventSubscriptions.GetHashCode();
                 return hashCode;
             }
         }

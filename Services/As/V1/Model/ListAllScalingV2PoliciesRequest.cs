@@ -598,65 +598,20 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(ListAllScalingV2PoliciesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ScalingResourceId != input.ScalingResourceId || (this.ScalingResourceId != null && !this.ScalingResourceId.Equals(input.ScalingResourceId))) return false;
+            if (this.ScalingResourceType != input.ScalingResourceType) return false;
+            if (this.ScalingPolicyName != input.ScalingPolicyName || (this.ScalingPolicyName != null && !this.ScalingPolicyName.Equals(input.ScalingPolicyName))) return false;
+            if (this.ScalingPolicyType != input.ScalingPolicyType) return false;
+            if (this.ScalingPolicyId != input.ScalingPolicyId || (this.ScalingPolicyId != null && !this.ScalingPolicyId.Equals(input.ScalingPolicyId))) return false;
+            if (this.StartNumber != input.StartNumber || (this.StartNumber != null && !this.StartNumber.Equals(input.StartNumber))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.SortBy != input.SortBy) return false;
+            if (this.Order != input.Order) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.AlarmId != input.AlarmId || (this.AlarmId != null && !this.AlarmId.Equals(input.AlarmId))) return false;
 
-            return 
-                (
-                    this.ScalingResourceId == input.ScalingResourceId ||
-                    (this.ScalingResourceId != null &&
-                    this.ScalingResourceId.Equals(input.ScalingResourceId))
-                ) && 
-                (
-                    this.ScalingResourceType == input.ScalingResourceType ||
-                    (this.ScalingResourceType != null &&
-                    this.ScalingResourceType.Equals(input.ScalingResourceType))
-                ) && 
-                (
-                    this.ScalingPolicyName == input.ScalingPolicyName ||
-                    (this.ScalingPolicyName != null &&
-                    this.ScalingPolicyName.Equals(input.ScalingPolicyName))
-                ) && 
-                (
-                    this.ScalingPolicyType == input.ScalingPolicyType ||
-                    (this.ScalingPolicyType != null &&
-                    this.ScalingPolicyType.Equals(input.ScalingPolicyType))
-                ) && 
-                (
-                    this.ScalingPolicyId == input.ScalingPolicyId ||
-                    (this.ScalingPolicyId != null &&
-                    this.ScalingPolicyId.Equals(input.ScalingPolicyId))
-                ) && 
-                (
-                    this.StartNumber == input.StartNumber ||
-                    (this.StartNumber != null &&
-                    this.StartNumber.Equals(input.StartNumber))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.SortBy == input.SortBy ||
-                    (this.SortBy != null &&
-                    this.SortBy.Equals(input.SortBy))
-                ) && 
-                (
-                    this.Order == input.Order ||
-                    (this.Order != null &&
-                    this.Order.Equals(input.Order))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.AlarmId == input.AlarmId ||
-                    (this.AlarmId != null &&
-                    this.AlarmId.Equals(input.AlarmId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -666,29 +621,18 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ScalingResourceId != null)
-                    hashCode = hashCode * 59 + this.ScalingResourceId.GetHashCode();
-                if (this.ScalingResourceType != null)
-                    hashCode = hashCode * 59 + this.ScalingResourceType.GetHashCode();
-                if (this.ScalingPolicyName != null)
-                    hashCode = hashCode * 59 + this.ScalingPolicyName.GetHashCode();
-                if (this.ScalingPolicyType != null)
-                    hashCode = hashCode * 59 + this.ScalingPolicyType.GetHashCode();
-                if (this.ScalingPolicyId != null)
-                    hashCode = hashCode * 59 + this.ScalingPolicyId.GetHashCode();
-                if (this.StartNumber != null)
-                    hashCode = hashCode * 59 + this.StartNumber.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.SortBy != null)
-                    hashCode = hashCode * 59 + this.SortBy.GetHashCode();
-                if (this.Order != null)
-                    hashCode = hashCode * 59 + this.Order.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.AlarmId != null)
-                    hashCode = hashCode * 59 + this.AlarmId.GetHashCode();
+                var hashCode = 41;
+                if (this.ScalingResourceId != null) hashCode = hashCode * 59 + this.ScalingResourceId.GetHashCode();
+                hashCode = hashCode * 59 + this.ScalingResourceType.GetHashCode();
+                if (this.ScalingPolicyName != null) hashCode = hashCode * 59 + this.ScalingPolicyName.GetHashCode();
+                hashCode = hashCode * 59 + this.ScalingPolicyType.GetHashCode();
+                if (this.ScalingPolicyId != null) hashCode = hashCode * 59 + this.ScalingPolicyId.GetHashCode();
+                if (this.StartNumber != null) hashCode = hashCode * 59 + this.StartNumber.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                hashCode = hashCode * 59 + this.SortBy.GetHashCode();
+                hashCode = hashCode * 59 + this.Order.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.AlarmId != null) hashCode = hashCode * 59 + this.AlarmId.GetHashCode();
                 return hashCode;
             }
         }

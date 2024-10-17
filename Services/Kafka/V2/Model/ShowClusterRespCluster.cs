@@ -98,51 +98,17 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ShowClusterRespCluster input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Controller != input.Controller || (this.Controller != null && !this.Controller.Equals(input.Controller))) return false;
+            if (this.Brokers != input.Brokers || (this.Brokers != null && input.Brokers != null && !this.Brokers.SequenceEqual(input.Brokers))) return false;
+            if (this.TopicsCount != input.TopicsCount || (this.TopicsCount != null && !this.TopicsCount.Equals(input.TopicsCount))) return false;
+            if (this.PartitionsCount != input.PartitionsCount || (this.PartitionsCount != null && !this.PartitionsCount.Equals(input.PartitionsCount))) return false;
+            if (this.OnlinePartitionsCount != input.OnlinePartitionsCount || (this.OnlinePartitionsCount != null && !this.OnlinePartitionsCount.Equals(input.OnlinePartitionsCount))) return false;
+            if (this.ReplicasCount != input.ReplicasCount || (this.ReplicasCount != null && !this.ReplicasCount.Equals(input.ReplicasCount))) return false;
+            if (this.IsrReplicasCount != input.IsrReplicasCount || (this.IsrReplicasCount != null && !this.IsrReplicasCount.Equals(input.IsrReplicasCount))) return false;
+            if (this.ConsumersCount != input.ConsumersCount || (this.ConsumersCount != null && !this.ConsumersCount.Equals(input.ConsumersCount))) return false;
 
-            return 
-                (
-                    this.Controller == input.Controller ||
-                    (this.Controller != null &&
-                    this.Controller.Equals(input.Controller))
-                ) && 
-                (
-                    this.Brokers == input.Brokers ||
-                    this.Brokers != null &&
-                    input.Brokers != null &&
-                    this.Brokers.SequenceEqual(input.Brokers)
-                ) && 
-                (
-                    this.TopicsCount == input.TopicsCount ||
-                    (this.TopicsCount != null &&
-                    this.TopicsCount.Equals(input.TopicsCount))
-                ) && 
-                (
-                    this.PartitionsCount == input.PartitionsCount ||
-                    (this.PartitionsCount != null &&
-                    this.PartitionsCount.Equals(input.PartitionsCount))
-                ) && 
-                (
-                    this.OnlinePartitionsCount == input.OnlinePartitionsCount ||
-                    (this.OnlinePartitionsCount != null &&
-                    this.OnlinePartitionsCount.Equals(input.OnlinePartitionsCount))
-                ) && 
-                (
-                    this.ReplicasCount == input.ReplicasCount ||
-                    (this.ReplicasCount != null &&
-                    this.ReplicasCount.Equals(input.ReplicasCount))
-                ) && 
-                (
-                    this.IsrReplicasCount == input.IsrReplicasCount ||
-                    (this.IsrReplicasCount != null &&
-                    this.IsrReplicasCount.Equals(input.IsrReplicasCount))
-                ) && 
-                (
-                    this.ConsumersCount == input.ConsumersCount ||
-                    (this.ConsumersCount != null &&
-                    this.ConsumersCount.Equals(input.ConsumersCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -152,23 +118,15 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Controller != null)
-                    hashCode = hashCode * 59 + this.Controller.GetHashCode();
-                if (this.Brokers != null)
-                    hashCode = hashCode * 59 + this.Brokers.GetHashCode();
-                if (this.TopicsCount != null)
-                    hashCode = hashCode * 59 + this.TopicsCount.GetHashCode();
-                if (this.PartitionsCount != null)
-                    hashCode = hashCode * 59 + this.PartitionsCount.GetHashCode();
-                if (this.OnlinePartitionsCount != null)
-                    hashCode = hashCode * 59 + this.OnlinePartitionsCount.GetHashCode();
-                if (this.ReplicasCount != null)
-                    hashCode = hashCode * 59 + this.ReplicasCount.GetHashCode();
-                if (this.IsrReplicasCount != null)
-                    hashCode = hashCode * 59 + this.IsrReplicasCount.GetHashCode();
-                if (this.ConsumersCount != null)
-                    hashCode = hashCode * 59 + this.ConsumersCount.GetHashCode();
+                var hashCode = 41;
+                if (this.Controller != null) hashCode = hashCode * 59 + this.Controller.GetHashCode();
+                if (this.Brokers != null) hashCode = hashCode * 59 + this.Brokers.GetHashCode();
+                if (this.TopicsCount != null) hashCode = hashCode * 59 + this.TopicsCount.GetHashCode();
+                if (this.PartitionsCount != null) hashCode = hashCode * 59 + this.PartitionsCount.GetHashCode();
+                if (this.OnlinePartitionsCount != null) hashCode = hashCode * 59 + this.OnlinePartitionsCount.GetHashCode();
+                if (this.ReplicasCount != null) hashCode = hashCode * 59 + this.ReplicasCount.GetHashCode();
+                if (this.IsrReplicasCount != null) hashCode = hashCode * 59 + this.IsrReplicasCount.GetHashCode();
+                if (this.ConsumersCount != null) hashCode = hashCode * 59 + this.ConsumersCount.GetHashCode();
                 return hashCode;
             }
         }

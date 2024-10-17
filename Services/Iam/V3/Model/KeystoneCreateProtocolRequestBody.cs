@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(KeystoneCreateProtocolRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Protocol != input.Protocol || (this.Protocol != null && !this.Protocol.Equals(input.Protocol))) return false;
 
-            return 
-                (
-                    this.Protocol == input.Protocol ||
-                    (this.Protocol != null &&
-                    this.Protocol.Equals(input.Protocol))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                var hashCode = 41;
+                if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
                 return hashCode;
             }
         }

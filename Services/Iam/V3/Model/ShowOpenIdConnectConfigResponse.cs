@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(ShowOpenIdConnectConfigResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OpenidConnectConfig != input.OpenidConnectConfig || (this.OpenidConnectConfig != null && !this.OpenidConnectConfig.Equals(input.OpenidConnectConfig))) return false;
 
-            return 
-                (
-                    this.OpenidConnectConfig == input.OpenidConnectConfig ||
-                    (this.OpenidConnectConfig != null &&
-                    this.OpenidConnectConfig.Equals(input.OpenidConnectConfig))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OpenidConnectConfig != null)
-                    hashCode = hashCode * 59 + this.OpenidConnectConfig.GetHashCode();
+                var hashCode = 41;
+                if (this.OpenidConnectConfig != null) hashCode = hashCode * 59 + this.OpenidConnectConfig.GetHashCode();
                 return hashCode;
             }
         }

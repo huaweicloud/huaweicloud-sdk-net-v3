@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(LineStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StartPoint != input.StartPoint || (this.StartPoint != null && !this.StartPoint.Equals(input.StartPoint))) return false;
+            if (this.EndPoint != input.EndPoint || (this.EndPoint != null && !this.EndPoint.Equals(input.EndPoint))) return false;
+            if (this.Critical != input.Critical || (this.Critical != null && !this.Critical.Equals(input.Critical))) return false;
 
-            return 
-                (
-                    this.StartPoint == input.StartPoint ||
-                    (this.StartPoint != null &&
-                    this.StartPoint.Equals(input.StartPoint))
-                ) && 
-                (
-                    this.EndPoint == input.EndPoint ||
-                    (this.EndPoint != null &&
-                    this.EndPoint.Equals(input.EndPoint))
-                ) && 
-                (
-                    this.Critical == input.Critical ||
-                    (this.Critical != null &&
-                    this.Critical.Equals(input.Critical))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StartPoint != null)
-                    hashCode = hashCode * 59 + this.StartPoint.GetHashCode();
-                if (this.EndPoint != null)
-                    hashCode = hashCode * 59 + this.EndPoint.GetHashCode();
-                if (this.Critical != null)
-                    hashCode = hashCode * 59 + this.Critical.GetHashCode();
+                var hashCode = 41;
+                if (this.StartPoint != null) hashCode = hashCode * 59 + this.StartPoint.GetHashCode();
+                if (this.EndPoint != null) hashCode = hashCode * 59 + this.EndPoint.GetHashCode();
+                if (this.Critical != null) hashCode = hashCode * 59 + this.Critical.GetHashCode();
                 return hashCode;
             }
         }

@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         /// </summary>
         public bool Equals(ExerciseCaseResource input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.PolymericResourceId != input.PolymericResourceId || (this.PolymericResourceId != null && !this.PolymericResourceId.Equals(input.PolymericResourceId))) return false;
+            if (this.InputFile != input.InputFile || (this.InputFile != null && !this.InputFile.Equals(input.InputFile))) return false;
+            if (this.OutputFile != input.OutputFile || (this.OutputFile != null && !this.OutputFile.Equals(input.OutputFile))) return false;
+            if (this.Index != input.Index || (this.Index != null && !this.Index.Equals(input.Index))) return false;
+            if (this.InputType != input.InputType || (this.InputType != null && !this.InputType.Equals(input.InputType))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.PolymericResourceId == input.PolymericResourceId ||
-                    (this.PolymericResourceId != null &&
-                    this.PolymericResourceId.Equals(input.PolymericResourceId))
-                ) && 
-                (
-                    this.InputFile == input.InputFile ||
-                    (this.InputFile != null &&
-                    this.InputFile.Equals(input.InputFile))
-                ) && 
-                (
-                    this.OutputFile == input.OutputFile ||
-                    (this.OutputFile != null &&
-                    this.OutputFile.Equals(input.OutputFile))
-                ) && 
-                (
-                    this.Index == input.Index ||
-                    (this.Index != null &&
-                    this.Index.Equals(input.Index))
-                ) && 
-                (
-                    this.InputType == input.InputType ||
-                    (this.InputType != null &&
-                    this.InputType.Equals(input.InputType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.PolymericResourceId != null)
-                    hashCode = hashCode * 59 + this.PolymericResourceId.GetHashCode();
-                if (this.InputFile != null)
-                    hashCode = hashCode * 59 + this.InputFile.GetHashCode();
-                if (this.OutputFile != null)
-                    hashCode = hashCode * 59 + this.OutputFile.GetHashCode();
-                if (this.Index != null)
-                    hashCode = hashCode * 59 + this.Index.GetHashCode();
-                if (this.InputType != null)
-                    hashCode = hashCode * 59 + this.InputType.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.PolymericResourceId != null) hashCode = hashCode * 59 + this.PolymericResourceId.GetHashCode();
+                if (this.InputFile != null) hashCode = hashCode * 59 + this.InputFile.GetHashCode();
+                if (this.OutputFile != null) hashCode = hashCode * 59 + this.OutputFile.GetHashCode();
+                if (this.Index != null) hashCode = hashCode * 59 + this.Index.GetHashCode();
+                if (this.InputType != null) hashCode = hashCode * 59 + this.InputType.GetHashCode();
                 return hashCode;
             }
         }

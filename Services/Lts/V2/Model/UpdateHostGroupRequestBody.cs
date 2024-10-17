@@ -70,32 +70,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(UpdateHostGroupRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HostGroupId != input.HostGroupId || (this.HostGroupId != null && !this.HostGroupId.Equals(input.HostGroupId))) return false;
+            if (this.HostGroupName != input.HostGroupName || (this.HostGroupName != null && !this.HostGroupName.Equals(input.HostGroupName))) return false;
+            if (this.HostIdList != input.HostIdList || (this.HostIdList != null && input.HostIdList != null && !this.HostIdList.SequenceEqual(input.HostIdList))) return false;
+            if (this.HostGroupTag != input.HostGroupTag || (this.HostGroupTag != null && input.HostGroupTag != null && !this.HostGroupTag.SequenceEqual(input.HostGroupTag))) return false;
 
-            return 
-                (
-                    this.HostGroupId == input.HostGroupId ||
-                    (this.HostGroupId != null &&
-                    this.HostGroupId.Equals(input.HostGroupId))
-                ) && 
-                (
-                    this.HostGroupName == input.HostGroupName ||
-                    (this.HostGroupName != null &&
-                    this.HostGroupName.Equals(input.HostGroupName))
-                ) && 
-                (
-                    this.HostIdList == input.HostIdList ||
-                    this.HostIdList != null &&
-                    input.HostIdList != null &&
-                    this.HostIdList.SequenceEqual(input.HostIdList)
-                ) && 
-                (
-                    this.HostGroupTag == input.HostGroupTag ||
-                    this.HostGroupTag != null &&
-                    input.HostGroupTag != null &&
-                    this.HostGroupTag.SequenceEqual(input.HostGroupTag)
-                );
+            return true;
         }
 
         /// <summary>
@@ -105,15 +86,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HostGroupId != null)
-                    hashCode = hashCode * 59 + this.HostGroupId.GetHashCode();
-                if (this.HostGroupName != null)
-                    hashCode = hashCode * 59 + this.HostGroupName.GetHashCode();
-                if (this.HostIdList != null)
-                    hashCode = hashCode * 59 + this.HostIdList.GetHashCode();
-                if (this.HostGroupTag != null)
-                    hashCode = hashCode * 59 + this.HostGroupTag.GetHashCode();
+                var hashCode = 41;
+                if (this.HostGroupId != null) hashCode = hashCode * 59 + this.HostGroupId.GetHashCode();
+                if (this.HostGroupName != null) hashCode = hashCode * 59 + this.HostGroupName.GetHashCode();
+                if (this.HostIdList != null) hashCode = hashCode * 59 + this.HostIdList.GetHashCode();
+                if (this.HostGroupTag != null) hashCode = hashCode * 59 + this.HostGroupTag.GetHashCode();
                 return hashCode;
             }
         }

@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public bool Equals(ApplicationEndpoint input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.EndpointUrn != input.EndpointUrn || (this.EndpointUrn != null && !this.EndpointUrn.Equals(input.EndpointUrn))) return false;
+            if (this.UserData != input.UserData || (this.UserData != null && !this.UserData.Equals(input.UserData))) return false;
+            if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
+            if (this.Token != input.Token || (this.Token != null && !this.Token.Equals(input.Token))) return false;
 
-            return 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.EndpointUrn == input.EndpointUrn ||
-                    (this.EndpointUrn != null &&
-                    this.EndpointUrn.Equals(input.EndpointUrn))
-                ) && 
-                (
-                    this.UserData == input.UserData ||
-                    (this.UserData != null &&
-                    this.UserData.Equals(input.UserData))
-                ) && 
-                (
-                    this.Enabled == input.Enabled ||
-                    (this.Enabled != null &&
-                    this.Enabled.Equals(input.Enabled))
-                ) && 
-                (
-                    this.Token == input.Token ||
-                    (this.Token != null &&
-                    this.Token.Equals(input.Token))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.EndpointUrn != null)
-                    hashCode = hashCode * 59 + this.EndpointUrn.GetHashCode();
-                if (this.UserData != null)
-                    hashCode = hashCode * 59 + this.UserData.GetHashCode();
-                if (this.Enabled != null)
-                    hashCode = hashCode * 59 + this.Enabled.GetHashCode();
-                if (this.Token != null)
-                    hashCode = hashCode * 59 + this.Token.GetHashCode();
+                var hashCode = 41;
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.EndpointUrn != null) hashCode = hashCode * 59 + this.EndpointUrn.GetHashCode();
+                if (this.UserData != null) hashCode = hashCode * 59 + this.UserData.GetHashCode();
+                if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
+                if (this.Token != null) hashCode = hashCode * 59 + this.Token.GetHashCode();
                 return hashCode;
             }
         }

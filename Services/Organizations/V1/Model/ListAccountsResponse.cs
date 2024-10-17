@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(ListAccountsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Accounts != input.Accounts || (this.Accounts != null && input.Accounts != null && !this.Accounts.SequenceEqual(input.Accounts))) return false;
+            if (this.PageInfo != input.PageInfo || (this.PageInfo != null && !this.PageInfo.Equals(input.PageInfo))) return false;
 
-            return 
-                (
-                    this.Accounts == input.Accounts ||
-                    this.Accounts != null &&
-                    input.Accounts != null &&
-                    this.Accounts.SequenceEqual(input.Accounts)
-                ) && 
-                (
-                    this.PageInfo == input.PageInfo ||
-                    (this.PageInfo != null &&
-                    this.PageInfo.Equals(input.PageInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Accounts != null)
-                    hashCode = hashCode * 59 + this.Accounts.GetHashCode();
-                if (this.PageInfo != null)
-                    hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.Accounts != null) hashCode = hashCode * 59 + this.Accounts.GetHashCode();
+                if (this.PageInfo != null) hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
                 return hashCode;
             }
         }

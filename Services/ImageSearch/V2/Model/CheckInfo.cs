@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         /// </summary>
         public bool Equals(CheckInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TotalNum != input.TotalNum || (this.TotalNum != null && !this.TotalNum.Equals(input.TotalNum))) return false;
+            if (this.ReturnNum != input.ReturnNum || (this.ReturnNum != null && !this.ReturnNum.Equals(input.ReturnNum))) return false;
+            if (this.LastItem != input.LastItem || (this.LastItem != null && !this.LastItem.Equals(input.LastItem))) return false;
 
-            return 
-                (
-                    this.TotalNum == input.TotalNum ||
-                    (this.TotalNum != null &&
-                    this.TotalNum.Equals(input.TotalNum))
-                ) && 
-                (
-                    this.ReturnNum == input.ReturnNum ||
-                    (this.ReturnNum != null &&
-                    this.ReturnNum.Equals(input.ReturnNum))
-                ) && 
-                (
-                    this.LastItem == input.LastItem ||
-                    (this.LastItem != null &&
-                    this.LastItem.Equals(input.LastItem))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TotalNum != null)
-                    hashCode = hashCode * 59 + this.TotalNum.GetHashCode();
-                if (this.ReturnNum != null)
-                    hashCode = hashCode * 59 + this.ReturnNum.GetHashCode();
-                if (this.LastItem != null)
-                    hashCode = hashCode * 59 + this.LastItem.GetHashCode();
+                var hashCode = 41;
+                if (this.TotalNum != null) hashCode = hashCode * 59 + this.TotalNum.GetHashCode();
+                if (this.ReturnNum != null) hashCode = hashCode * 59 + this.ReturnNum.GetHashCode();
+                if (this.LastItem != null) hashCode = hashCode * 59 + this.LastItem.GetHashCode();
                 return hashCode;
             }
         }

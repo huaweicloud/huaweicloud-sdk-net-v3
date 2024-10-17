@@ -161,96 +161,26 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(CertificateInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.Certificate != input.Certificate || (this.Certificate != null && !this.Certificate.Equals(input.Certificate))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.PrivateKey != input.PrivateKey || (this.PrivateKey != null && !this.PrivateKey.Equals(input.PrivateKey))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.ExpireTime != input.ExpireTime || (this.ExpireTime != null && !this.ExpireTime.Equals(input.ExpireTime))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.EncCertificate != input.EncCertificate || (this.EncCertificate != null && !this.EncCertificate.Equals(input.EncCertificate))) return false;
+            if (this.EncPrivateKey != input.EncPrivateKey || (this.EncPrivateKey != null && !this.EncPrivateKey.Equals(input.EncPrivateKey))) return false;
+            if (this.CommonName != input.CommonName || (this.CommonName != null && !this.CommonName.Equals(input.CommonName))) return false;
+            if (this.Fingerprint != input.Fingerprint || (this.Fingerprint != null && !this.Fingerprint.Equals(input.Fingerprint))) return false;
+            if (this.SubjectAlternativeNames != input.SubjectAlternativeNames || (this.SubjectAlternativeNames != null && input.SubjectAlternativeNames != null && !this.SubjectAlternativeNames.SequenceEqual(input.SubjectAlternativeNames))) return false;
 
-            return 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.Certificate == input.Certificate ||
-                    (this.Certificate != null &&
-                    this.Certificate.Equals(input.Certificate))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Domain == input.Domain ||
-                    (this.Domain != null &&
-                    this.Domain.Equals(input.Domain))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.PrivateKey == input.PrivateKey ||
-                    (this.PrivateKey != null &&
-                    this.PrivateKey.Equals(input.PrivateKey))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.ExpireTime == input.ExpireTime ||
-                    (this.ExpireTime != null &&
-                    this.ExpireTime.Equals(input.ExpireTime))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.EncCertificate == input.EncCertificate ||
-                    (this.EncCertificate != null &&
-                    this.EncCertificate.Equals(input.EncCertificate))
-                ) && 
-                (
-                    this.EncPrivateKey == input.EncPrivateKey ||
-                    (this.EncPrivateKey != null &&
-                    this.EncPrivateKey.Equals(input.EncPrivateKey))
-                ) && 
-                (
-                    this.CommonName == input.CommonName ||
-                    (this.CommonName != null &&
-                    this.CommonName.Equals(input.CommonName))
-                ) && 
-                (
-                    this.Fingerprint == input.Fingerprint ||
-                    (this.Fingerprint != null &&
-                    this.Fingerprint.Equals(input.Fingerprint))
-                ) && 
-                (
-                    this.SubjectAlternativeNames == input.SubjectAlternativeNames ||
-                    this.SubjectAlternativeNames != null &&
-                    input.SubjectAlternativeNames != null &&
-                    this.SubjectAlternativeNames.SequenceEqual(input.SubjectAlternativeNames)
-                );
+            return true;
         }
 
         /// <summary>
@@ -260,41 +190,24 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.Certificate != null)
-                    hashCode = hashCode * 59 + this.Certificate.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Domain != null)
-                    hashCode = hashCode * 59 + this.Domain.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.PrivateKey != null)
-                    hashCode = hashCode * 59 + this.PrivateKey.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.ExpireTime != null)
-                    hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.EncCertificate != null)
-                    hashCode = hashCode * 59 + this.EncCertificate.GetHashCode();
-                if (this.EncPrivateKey != null)
-                    hashCode = hashCode * 59 + this.EncPrivateKey.GetHashCode();
-                if (this.CommonName != null)
-                    hashCode = hashCode * 59 + this.CommonName.GetHashCode();
-                if (this.Fingerprint != null)
-                    hashCode = hashCode * 59 + this.Fingerprint.GetHashCode();
-                if (this.SubjectAlternativeNames != null)
-                    hashCode = hashCode * 59 + this.SubjectAlternativeNames.GetHashCode();
+                var hashCode = 41;
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.Certificate != null) hashCode = hashCode * 59 + this.Certificate.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.PrivateKey != null) hashCode = hashCode * 59 + this.PrivateKey.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.ExpireTime != null) hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.EncCertificate != null) hashCode = hashCode * 59 + this.EncCertificate.GetHashCode();
+                if (this.EncPrivateKey != null) hashCode = hashCode * 59 + this.EncPrivateKey.GetHashCode();
+                if (this.CommonName != null) hashCode = hashCode * 59 + this.CommonName.GetHashCode();
+                if (this.Fingerprint != null) hashCode = hashCode * 59 + this.Fingerprint.GetHashCode();
+                if (this.SubjectAlternativeNames != null) hashCode = hashCode * 59 + this.SubjectAlternativeNames.GetHashCode();
                 return hashCode;
             }
         }

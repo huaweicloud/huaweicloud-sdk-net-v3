@@ -82,35 +82,14 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(ListAccountsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.XSecurityToken != input.XSecurityToken || (this.XSecurityToken != null && !this.XSecurityToken.Equals(input.XSecurityToken))) return false;
+            if (this.ParentId != input.ParentId || (this.ParentId != null && !this.ParentId.Equals(input.ParentId))) return false;
+            if (this.WithRegisterContactInfo != input.WithRegisterContactInfo || (this.WithRegisterContactInfo != null && !this.WithRegisterContactInfo.Equals(input.WithRegisterContactInfo))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
 
-            return 
-                (
-                    this.XSecurityToken == input.XSecurityToken ||
-                    (this.XSecurityToken != null &&
-                    this.XSecurityToken.Equals(input.XSecurityToken))
-                ) && 
-                (
-                    this.ParentId == input.ParentId ||
-                    (this.ParentId != null &&
-                    this.ParentId.Equals(input.ParentId))
-                ) && 
-                (
-                    this.WithRegisterContactInfo == input.WithRegisterContactInfo ||
-                    (this.WithRegisterContactInfo != null &&
-                    this.WithRegisterContactInfo.Equals(input.WithRegisterContactInfo))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                );
+            return true;
         }
 
         /// <summary>
@@ -120,17 +99,12 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.XSecurityToken != null)
-                    hashCode = hashCode * 59 + this.XSecurityToken.GetHashCode();
-                if (this.ParentId != null)
-                    hashCode = hashCode * 59 + this.ParentId.GetHashCode();
-                if (this.WithRegisterContactInfo != null)
-                    hashCode = hashCode * 59 + this.WithRegisterContactInfo.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                var hashCode = 41;
+                if (this.XSecurityToken != null) hashCode = hashCode * 59 + this.XSecurityToken.GetHashCode();
+                if (this.ParentId != null) hashCode = hashCode * 59 + this.ParentId.GetHashCode();
+                if (this.WithRegisterContactInfo != null) hashCode = hashCode * 59 + this.WithRegisterContactInfo.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 return hashCode;
             }
         }

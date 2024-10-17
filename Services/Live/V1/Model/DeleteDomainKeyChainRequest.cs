@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(DeleteDomainKeyChainRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
 
-            return 
-                (
-                    this.Domain == input.Domain ||
-                    (this.Domain != null &&
-                    this.Domain.Equals(input.Domain))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Domain != null)
-                    hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                var hashCode = 41;
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
                 return hashCode;
             }
         }

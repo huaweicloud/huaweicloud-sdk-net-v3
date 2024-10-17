@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public bool Equals(ListAvailableZonesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RegionId != input.RegionId || (this.RegionId != null && !this.RegionId.Equals(input.RegionId))) return false;
+            if (this.AvailableZones != input.AvailableZones || (this.AvailableZones != null && input.AvailableZones != null && !this.AvailableZones.SequenceEqual(input.AvailableZones))) return false;
 
-            return 
-                (
-                    this.RegionId == input.RegionId ||
-                    (this.RegionId != null &&
-                    this.RegionId.Equals(input.RegionId))
-                ) && 
-                (
-                    this.AvailableZones == input.AvailableZones ||
-                    this.AvailableZones != null &&
-                    input.AvailableZones != null &&
-                    this.AvailableZones.SequenceEqual(input.AvailableZones)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RegionId != null)
-                    hashCode = hashCode * 59 + this.RegionId.GetHashCode();
-                if (this.AvailableZones != null)
-                    hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
+                var hashCode = 41;
+                if (this.RegionId != null) hashCode = hashCode * 59 + this.RegionId.GetHashCode();
+                if (this.AvailableZones != null) hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
                 return hashCode;
             }
         }

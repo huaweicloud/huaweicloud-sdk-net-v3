@@ -197,38 +197,14 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         /// </summary>
         public bool Equals(TaskSumbitReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Urls != input.Urls || (this.Urls != null && input.Urls != null && !this.Urls.SequenceEqual(input.Urls))) return false;
+            if (this.Categories != input.Categories || (this.Categories != null && input.Categories != null && !this.Categories.SequenceEqual(input.Categories))) return false;
+            if (this.ModerationRule != input.ModerationRule || (this.ModerationRule != null && !this.ModerationRule.Equals(input.ModerationRule))) return false;
+            if (this.AdCategories != input.AdCategories || (this.AdCategories != null && input.AdCategories != null && !this.AdCategories.SequenceEqual(input.AdCategories))) return false;
+            if (this.ShowOcrText != input.ShowOcrText || (this.ShowOcrText != null && !this.ShowOcrText.Equals(input.ShowOcrText))) return false;
 
-            return 
-                (
-                    this.Urls == input.Urls ||
-                    this.Urls != null &&
-                    input.Urls != null &&
-                    this.Urls.SequenceEqual(input.Urls)
-                ) && 
-                (
-                    this.Categories == input.Categories ||
-                    this.Categories != null &&
-                    input.Categories != null &&
-                    this.Categories.SequenceEqual(input.Categories)
-                ) && 
-                (
-                    this.ModerationRule == input.ModerationRule ||
-                    (this.ModerationRule != null &&
-                    this.ModerationRule.Equals(input.ModerationRule))
-                ) && 
-                (
-                    this.AdCategories == input.AdCategories ||
-                    this.AdCategories != null &&
-                    input.AdCategories != null &&
-                    this.AdCategories.SequenceEqual(input.AdCategories)
-                ) && 
-                (
-                    this.ShowOcrText == input.ShowOcrText ||
-                    (this.ShowOcrText != null &&
-                    this.ShowOcrText.Equals(input.ShowOcrText))
-                );
+            return true;
         }
 
         /// <summary>
@@ -238,17 +214,12 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Urls != null)
-                    hashCode = hashCode * 59 + this.Urls.GetHashCode();
-                if (this.Categories != null)
-                    hashCode = hashCode * 59 + this.Categories.GetHashCode();
-                if (this.ModerationRule != null)
-                    hashCode = hashCode * 59 + this.ModerationRule.GetHashCode();
-                if (this.AdCategories != null)
-                    hashCode = hashCode * 59 + this.AdCategories.GetHashCode();
-                if (this.ShowOcrText != null)
-                    hashCode = hashCode * 59 + this.ShowOcrText.GetHashCode();
+                var hashCode = 41;
+                if (this.Urls != null) hashCode = hashCode * 59 + this.Urls.GetHashCode();
+                hashCode = hashCode * 59 + this.Categories.GetHashCode();
+                if (this.ModerationRule != null) hashCode = hashCode * 59 + this.ModerationRule.GetHashCode();
+                if (this.AdCategories != null) hashCode = hashCode * 59 + this.AdCategories.GetHashCode();
+                if (this.ShowOcrText != null) hashCode = hashCode * 59 + this.ShowOcrText.GetHashCode();
                 return hashCode;
             }
         }

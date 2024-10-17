@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(EnterpriseIdItem input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EnterpriseId != input.EnterpriseId || (this.EnterpriseId != null && !this.EnterpriseId.Equals(input.EnterpriseId))) return false;
 
-            return 
-                (
-                    this.EnterpriseId == input.EnterpriseId ||
-                    (this.EnterpriseId != null &&
-                    this.EnterpriseId.Equals(input.EnterpriseId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EnterpriseId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseId.GetHashCode();
+                var hashCode = 41;
+                if (this.EnterpriseId != null) hashCode = hashCode * 59 + this.EnterpriseId.GetHashCode();
                 return hashCode;
             }
         }

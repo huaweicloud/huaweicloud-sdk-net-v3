@@ -191,35 +191,14 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(ShowTenantDict input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.ChargeMode != input.ChargeMode) return false;
+            if (this.MinSize != input.MinSize || (this.MinSize != null && !this.MinSize.Equals(input.MinSize))) return false;
+            if (this.MaxSize != input.MaxSize || (this.MaxSize != null && !this.MaxSize.Equals(input.MaxSize))) return false;
+            if (this.ExtLimit != input.ExtLimit || (this.ExtLimit != null && !this.ExtLimit.Equals(input.ExtLimit))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.ChargeMode == input.ChargeMode ||
-                    (this.ChargeMode != null &&
-                    this.ChargeMode.Equals(input.ChargeMode))
-                ) && 
-                (
-                    this.MinSize == input.MinSize ||
-                    (this.MinSize != null &&
-                    this.MinSize.Equals(input.MinSize))
-                ) && 
-                (
-                    this.MaxSize == input.MaxSize ||
-                    (this.MaxSize != null &&
-                    this.MaxSize.Equals(input.MaxSize))
-                ) && 
-                (
-                    this.ExtLimit == input.ExtLimit ||
-                    (this.ExtLimit != null &&
-                    this.ExtLimit.Equals(input.ExtLimit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -229,17 +208,12 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.ChargeMode != null)
-                    hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
-                if (this.MinSize != null)
-                    hashCode = hashCode * 59 + this.MinSize.GetHashCode();
-                if (this.MaxSize != null)
-                    hashCode = hashCode * 59 + this.MaxSize.GetHashCode();
-                if (this.ExtLimit != null)
-                    hashCode = hashCode * 59 + this.ExtLimit.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
+                if (this.MinSize != null) hashCode = hashCode * 59 + this.MinSize.GetHashCode();
+                if (this.MaxSize != null) hashCode = hashCode * 59 + this.MaxSize.GetHashCode();
+                if (this.ExtLimit != null) hashCode = hashCode * 59 + this.ExtLimit.GetHashCode();
                 return hashCode;
             }
         }

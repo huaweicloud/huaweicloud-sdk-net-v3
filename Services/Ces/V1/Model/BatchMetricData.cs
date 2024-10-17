@@ -77,37 +77,14 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// </summary>
         public bool Equals(BatchMetricData input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Unit != input.Unit || (this.Unit != null && !this.Unit.Equals(input.Unit))) return false;
+            if (this.Datapoints != input.Datapoints || (this.Datapoints != null && input.Datapoints != null && !this.Datapoints.SequenceEqual(input.Datapoints))) return false;
+            if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
+            if (this.MetricName != input.MetricName || (this.MetricName != null && !this.MetricName.Equals(input.MetricName))) return false;
+            if (this.Dimensions != input.Dimensions || (this.Dimensions != null && input.Dimensions != null && !this.Dimensions.SequenceEqual(input.Dimensions))) return false;
 
-            return 
-                (
-                    this.Unit == input.Unit ||
-                    (this.Unit != null &&
-                    this.Unit.Equals(input.Unit))
-                ) && 
-                (
-                    this.Datapoints == input.Datapoints ||
-                    this.Datapoints != null &&
-                    input.Datapoints != null &&
-                    this.Datapoints.SequenceEqual(input.Datapoints)
-                ) && 
-                (
-                    this.Namespace == input.Namespace ||
-                    (this.Namespace != null &&
-                    this.Namespace.Equals(input.Namespace))
-                ) && 
-                (
-                    this.MetricName == input.MetricName ||
-                    (this.MetricName != null &&
-                    this.MetricName.Equals(input.MetricName))
-                ) && 
-                (
-                    this.Dimensions == input.Dimensions ||
-                    this.Dimensions != null &&
-                    input.Dimensions != null &&
-                    this.Dimensions.SequenceEqual(input.Dimensions)
-                );
+            return true;
         }
 
         /// <summary>
@@ -117,17 +94,12 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Unit != null)
-                    hashCode = hashCode * 59 + this.Unit.GetHashCode();
-                if (this.Datapoints != null)
-                    hashCode = hashCode * 59 + this.Datapoints.GetHashCode();
-                if (this.Namespace != null)
-                    hashCode = hashCode * 59 + this.Namespace.GetHashCode();
-                if (this.MetricName != null)
-                    hashCode = hashCode * 59 + this.MetricName.GetHashCode();
-                if (this.Dimensions != null)
-                    hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
+                var hashCode = 41;
+                if (this.Unit != null) hashCode = hashCode * 59 + this.Unit.GetHashCode();
+                if (this.Datapoints != null) hashCode = hashCode * 59 + this.Datapoints.GetHashCode();
+                if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.MetricName != null) hashCode = hashCode * 59 + this.MetricName.GetHashCode();
+                if (this.Dimensions != null) hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
                 return hashCode;
             }
         }

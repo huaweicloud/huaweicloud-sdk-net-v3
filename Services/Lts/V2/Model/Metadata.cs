@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(Metadata input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EventType != input.EventType || (this.EventType != null && !this.EventType.Equals(input.EventType))) return false;
+            if (this.EventId != input.EventId || (this.EventId != null && !this.EventId.Equals(input.EventId))) return false;
+            if (this.EventSeverity != input.EventSeverity || (this.EventSeverity != null && !this.EventSeverity.Equals(input.EventSeverity))) return false;
+            if (this.EventName != input.EventName || (this.EventName != null && !this.EventName.Equals(input.EventName))) return false;
+            if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
+            if (this.ResourceProvider != input.ResourceProvider || (this.ResourceProvider != null && !this.ResourceProvider.Equals(input.ResourceProvider))) return false;
+            if (this.LtsAlarmType != input.LtsAlarmType || (this.LtsAlarmType != null && !this.LtsAlarmType.Equals(input.LtsAlarmType))) return false;
 
-            return 
-                (
-                    this.EventType == input.EventType ||
-                    (this.EventType != null &&
-                    this.EventType.Equals(input.EventType))
-                ) && 
-                (
-                    this.EventId == input.EventId ||
-                    (this.EventId != null &&
-                    this.EventId.Equals(input.EventId))
-                ) && 
-                (
-                    this.EventSeverity == input.EventSeverity ||
-                    (this.EventSeverity != null &&
-                    this.EventSeverity.Equals(input.EventSeverity))
-                ) && 
-                (
-                    this.EventName == input.EventName ||
-                    (this.EventName != null &&
-                    this.EventName.Equals(input.EventName))
-                ) && 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
-                ) && 
-                (
-                    this.ResourceProvider == input.ResourceProvider ||
-                    (this.ResourceProvider != null &&
-                    this.ResourceProvider.Equals(input.ResourceProvider))
-                ) && 
-                (
-                    this.LtsAlarmType == input.LtsAlarmType ||
-                    (this.LtsAlarmType != null &&
-                    this.LtsAlarmType.Equals(input.LtsAlarmType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EventType != null)
-                    hashCode = hashCode * 59 + this.EventType.GetHashCode();
-                if (this.EventId != null)
-                    hashCode = hashCode * 59 + this.EventId.GetHashCode();
-                if (this.EventSeverity != null)
-                    hashCode = hashCode * 59 + this.EventSeverity.GetHashCode();
-                if (this.EventName != null)
-                    hashCode = hashCode * 59 + this.EventName.GetHashCode();
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
-                if (this.ResourceId != null)
-                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
-                if (this.ResourceProvider != null)
-                    hashCode = hashCode * 59 + this.ResourceProvider.GetHashCode();
-                if (this.LtsAlarmType != null)
-                    hashCode = hashCode * 59 + this.LtsAlarmType.GetHashCode();
+                var hashCode = 41;
+                if (this.EventType != null) hashCode = hashCode * 59 + this.EventType.GetHashCode();
+                if (this.EventId != null) hashCode = hashCode * 59 + this.EventId.GetHashCode();
+                if (this.EventSeverity != null) hashCode = hashCode * 59 + this.EventSeverity.GetHashCode();
+                if (this.EventName != null) hashCode = hashCode * 59 + this.EventName.GetHashCode();
+                if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.ResourceProvider != null) hashCode = hashCode * 59 + this.ResourceProvider.GetHashCode();
+                if (this.LtsAlarmType != null) hashCode = hashCode * 59 + this.LtsAlarmType.GetHashCode();
                 return hashCode;
             }
         }

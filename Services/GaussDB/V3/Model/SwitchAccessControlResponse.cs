@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(SwitchAccessControlResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OpenAccessControl != input.OpenAccessControl || (this.OpenAccessControl != null && !this.OpenAccessControl.Equals(input.OpenAccessControl))) return false;
 
-            return 
-                (
-                    this.OpenAccessControl == input.OpenAccessControl ||
-                    (this.OpenAccessControl != null &&
-                    this.OpenAccessControl.Equals(input.OpenAccessControl))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OpenAccessControl != null)
-                    hashCode = hashCode * 59 + this.OpenAccessControl.GetHashCode();
+                var hashCode = 41;
+                if (this.OpenAccessControl != null) hashCode = hashCode * 59 + this.OpenAccessControl.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(Resulits input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Timestamp != input.Timestamp || (this.Timestamp != null && !this.Timestamp.Equals(input.Timestamp))) return false;
+            if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
 
-            return 
-                (
-                    this.Timestamp == input.Timestamp ||
-                    (this.Timestamp != null &&
-                    this.Timestamp.Equals(input.Timestamp))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Timestamp != null)
-                    hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
+                var hashCode = 41;
+                if (this.Timestamp != null) hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
+                if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
                 return hashCode;
             }
         }

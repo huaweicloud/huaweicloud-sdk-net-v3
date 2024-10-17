@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public bool Equals(BatchDeleteRecordSetWithLineRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RecordsetIds != input.RecordsetIds || (this.RecordsetIds != null && input.RecordsetIds != null && !this.RecordsetIds.SequenceEqual(input.RecordsetIds))) return false;
 
-            return 
-                (
-                    this.RecordsetIds == input.RecordsetIds ||
-                    this.RecordsetIds != null &&
-                    input.RecordsetIds != null &&
-                    this.RecordsetIds.SequenceEqual(input.RecordsetIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RecordsetIds != null)
-                    hashCode = hashCode * 59 + this.RecordsetIds.GetHashCode();
+                var hashCode = 41;
+                if (this.RecordsetIds != null) hashCode = hashCode * 59 + this.RecordsetIds.GetHashCode();
                 return hashCode;
             }
         }

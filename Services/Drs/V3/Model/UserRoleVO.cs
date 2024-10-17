@@ -84,41 +84,15 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(UserRoleVO input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Role != input.Role || (this.Role != null && !this.Role.Equals(input.Role))) return false;
+            if (this.Comment != input.Comment || (this.Comment != null && !this.Comment.Equals(input.Comment))) return false;
+            if (this.IsTransfer != input.IsTransfer || (this.IsTransfer != null && !this.IsTransfer.Equals(input.IsTransfer))) return false;
+            if (this.Privileges != input.Privileges || (this.Privileges != null && !this.Privileges.Equals(input.Privileges))) return false;
+            if (this.InheritsRoles != input.InheritsRoles || (this.InheritsRoles != null && input.InheritsRoles != null && !this.InheritsRoles.SequenceEqual(input.InheritsRoles))) return false;
+            if (this.Selected != input.Selected || (this.Selected != null && !this.Selected.Equals(input.Selected))) return false;
 
-            return 
-                (
-                    this.Role == input.Role ||
-                    (this.Role != null &&
-                    this.Role.Equals(input.Role))
-                ) && 
-                (
-                    this.Comment == input.Comment ||
-                    (this.Comment != null &&
-                    this.Comment.Equals(input.Comment))
-                ) && 
-                (
-                    this.IsTransfer == input.IsTransfer ||
-                    (this.IsTransfer != null &&
-                    this.IsTransfer.Equals(input.IsTransfer))
-                ) && 
-                (
-                    this.Privileges == input.Privileges ||
-                    (this.Privileges != null &&
-                    this.Privileges.Equals(input.Privileges))
-                ) && 
-                (
-                    this.InheritsRoles == input.InheritsRoles ||
-                    this.InheritsRoles != null &&
-                    input.InheritsRoles != null &&
-                    this.InheritsRoles.SequenceEqual(input.InheritsRoles)
-                ) && 
-                (
-                    this.Selected == input.Selected ||
-                    (this.Selected != null &&
-                    this.Selected.Equals(input.Selected))
-                );
+            return true;
         }
 
         /// <summary>
@@ -128,19 +102,13 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Role != null)
-                    hashCode = hashCode * 59 + this.Role.GetHashCode();
-                if (this.Comment != null)
-                    hashCode = hashCode * 59 + this.Comment.GetHashCode();
-                if (this.IsTransfer != null)
-                    hashCode = hashCode * 59 + this.IsTransfer.GetHashCode();
-                if (this.Privileges != null)
-                    hashCode = hashCode * 59 + this.Privileges.GetHashCode();
-                if (this.InheritsRoles != null)
-                    hashCode = hashCode * 59 + this.InheritsRoles.GetHashCode();
-                if (this.Selected != null)
-                    hashCode = hashCode * 59 + this.Selected.GetHashCode();
+                var hashCode = 41;
+                if (this.Role != null) hashCode = hashCode * 59 + this.Role.GetHashCode();
+                if (this.Comment != null) hashCode = hashCode * 59 + this.Comment.GetHashCode();
+                if (this.IsTransfer != null) hashCode = hashCode * 59 + this.IsTransfer.GetHashCode();
+                if (this.Privileges != null) hashCode = hashCode * 59 + this.Privileges.GetHashCode();
+                if (this.InheritsRoles != null) hashCode = hashCode * 59 + this.InheritsRoles.GetHashCode();
+                if (this.Selected != null) hashCode = hashCode * 59 + this.Selected.GetHashCode();
                 return hashCode;
             }
         }

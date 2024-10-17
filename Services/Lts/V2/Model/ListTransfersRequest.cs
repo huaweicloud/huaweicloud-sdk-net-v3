@@ -202,35 +202,14 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(ListTransfersRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LogTransferType != input.LogTransferType) return false;
+            if (this.LogGroupName != input.LogGroupName || (this.LogGroupName != null && !this.LogGroupName.Equals(input.LogGroupName))) return false;
+            if (this.LogStreamName != input.LogStreamName || (this.LogStreamName != null && !this.LogStreamName.Equals(input.LogStreamName))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
-            return 
-                (
-                    this.LogTransferType == input.LogTransferType ||
-                    (this.LogTransferType != null &&
-                    this.LogTransferType.Equals(input.LogTransferType))
-                ) && 
-                (
-                    this.LogGroupName == input.LogGroupName ||
-                    (this.LogGroupName != null &&
-                    this.LogGroupName.Equals(input.LogGroupName))
-                ) && 
-                (
-                    this.LogStreamName == input.LogStreamName ||
-                    (this.LogStreamName != null &&
-                    this.LogStreamName.Equals(input.LogStreamName))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -240,17 +219,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LogTransferType != null)
-                    hashCode = hashCode * 59 + this.LogTransferType.GetHashCode();
-                if (this.LogGroupName != null)
-                    hashCode = hashCode * 59 + this.LogGroupName.GetHashCode();
-                if (this.LogStreamName != null)
-                    hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.LogTransferType.GetHashCode();
+                if (this.LogGroupName != null) hashCode = hashCode * 59 + this.LogGroupName.GetHashCode();
+                if (this.LogStreamName != null) hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;
             }
         }

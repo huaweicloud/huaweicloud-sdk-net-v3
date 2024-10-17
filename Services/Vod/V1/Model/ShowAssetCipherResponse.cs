@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(ShowAssetCipherResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
+            if (this.Edk != input.Edk || (this.Edk != null && !this.Edk.Equals(input.Edk))) return false;
+            if (this.Dk != input.Dk || (this.Dk != null && !this.Dk.Equals(input.Dk))) return false;
 
-            return 
-                (
-                    this.AssetId == input.AssetId ||
-                    (this.AssetId != null &&
-                    this.AssetId.Equals(input.AssetId))
-                ) && 
-                (
-                    this.Edk == input.Edk ||
-                    (this.Edk != null &&
-                    this.Edk.Equals(input.Edk))
-                ) && 
-                (
-                    this.Dk == input.Dk ||
-                    (this.Dk != null &&
-                    this.Dk.Equals(input.Dk))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AssetId != null)
-                    hashCode = hashCode * 59 + this.AssetId.GetHashCode();
-                if (this.Edk != null)
-                    hashCode = hashCode * 59 + this.Edk.GetHashCode();
-                if (this.Dk != null)
-                    hashCode = hashCode * 59 + this.Dk.GetHashCode();
+                var hashCode = 41;
+                if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                if (this.Edk != null) hashCode = hashCode * 59 + this.Edk.GetHashCode();
+                if (this.Dk != null) hashCode = hashCode * 59 + this.Dk.GetHashCode();
                 return hashCode;
             }
         }

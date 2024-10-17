@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         /// </summary>
         public bool Equals(Result input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Text != input.Text || (this.Text != null && !this.Text.Equals(input.Text))) return false;
+            if (this.Score != input.Score || (this.Score != null && !this.Score.Equals(input.Score))) return false;
+            if (this.WordInfo != input.WordInfo || (this.WordInfo != null && input.WordInfo != null && !this.WordInfo.SequenceEqual(input.WordInfo))) return false;
 
-            return 
-                (
-                    this.Text == input.Text ||
-                    (this.Text != null &&
-                    this.Text.Equals(input.Text))
-                ) && 
-                (
-                    this.Score == input.Score ||
-                    (this.Score != null &&
-                    this.Score.Equals(input.Score))
-                ) && 
-                (
-                    this.WordInfo == input.WordInfo ||
-                    this.WordInfo != null &&
-                    input.WordInfo != null &&
-                    this.WordInfo.SequenceEqual(input.WordInfo)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Text != null)
-                    hashCode = hashCode * 59 + this.Text.GetHashCode();
-                if (this.Score != null)
-                    hashCode = hashCode * 59 + this.Score.GetHashCode();
-                if (this.WordInfo != null)
-                    hashCode = hashCode * 59 + this.WordInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.Text != null) hashCode = hashCode * 59 + this.Text.GetHashCode();
+                if (this.Score != null) hashCode = hashCode * 59 + this.Score.GetHashCode();
+                if (this.WordInfo != null) hashCode = hashCode * 59 + this.WordInfo.GetHashCode();
                 return hashCode;
             }
         }

@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         /// </summary>
         public bool Equals(TaskParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ParamName != input.ParamName || (this.ParamName != null && !this.ParamName.Equals(input.ParamName))) return false;
+            if (this.ParamType != input.ParamType || (this.ParamType != null && !this.ParamType.Equals(input.ParamType))) return false;
+            if (this.ParamGroup != input.ParamGroup || (this.ParamGroup != null && !this.ParamGroup.Equals(input.ParamGroup))) return false;
+            if (this.DefaultValue != input.DefaultValue || (this.DefaultValue != null && !this.DefaultValue.Equals(input.DefaultValue))) return false;
 
-            return 
-                (
-                    this.ParamName == input.ParamName ||
-                    (this.ParamName != null &&
-                    this.ParamName.Equals(input.ParamName))
-                ) && 
-                (
-                    this.ParamType == input.ParamType ||
-                    (this.ParamType != null &&
-                    this.ParamType.Equals(input.ParamType))
-                ) && 
-                (
-                    this.ParamGroup == input.ParamGroup ||
-                    (this.ParamGroup != null &&
-                    this.ParamGroup.Equals(input.ParamGroup))
-                ) && 
-                (
-                    this.DefaultValue == input.DefaultValue ||
-                    (this.DefaultValue != null &&
-                    this.DefaultValue.Equals(input.DefaultValue))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ParamName != null)
-                    hashCode = hashCode * 59 + this.ParamName.GetHashCode();
-                if (this.ParamType != null)
-                    hashCode = hashCode * 59 + this.ParamType.GetHashCode();
-                if (this.ParamGroup != null)
-                    hashCode = hashCode * 59 + this.ParamGroup.GetHashCode();
-                if (this.DefaultValue != null)
-                    hashCode = hashCode * 59 + this.DefaultValue.GetHashCode();
+                var hashCode = 41;
+                if (this.ParamName != null) hashCode = hashCode * 59 + this.ParamName.GetHashCode();
+                if (this.ParamType != null) hashCode = hashCode * 59 + this.ParamType.GetHashCode();
+                if (this.ParamGroup != null) hashCode = hashCode * 59 + this.ParamGroup.GetHashCode();
+                if (this.DefaultValue != null) hashCode = hashCode * 59 + this.DefaultValue.GetHashCode();
                 return hashCode;
             }
         }

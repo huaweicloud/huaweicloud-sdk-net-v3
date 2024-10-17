@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(DefaultRootDb input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DbName != input.DbName || (this.DbName != null && !this.DbName.Equals(input.DbName))) return false;
+            if (this.DbEncoding != input.DbEncoding || (this.DbEncoding != null && !this.DbEncoding.Equals(input.DbEncoding))) return false;
 
-            return 
-                (
-                    this.DbName == input.DbName ||
-                    (this.DbName != null &&
-                    this.DbName.Equals(input.DbName))
-                ) && 
-                (
-                    this.DbEncoding == input.DbEncoding ||
-                    (this.DbEncoding != null &&
-                    this.DbEncoding.Equals(input.DbEncoding))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DbName != null)
-                    hashCode = hashCode * 59 + this.DbName.GetHashCode();
-                if (this.DbEncoding != null)
-                    hashCode = hashCode * 59 + this.DbEncoding.GetHashCode();
+                var hashCode = 41;
+                if (this.DbName != null) hashCode = hashCode * 59 + this.DbName.GetHashCode();
+                if (this.DbEncoding != null) hashCode = hashCode * 59 + this.DbEncoding.GetHashCode();
                 return hashCode;
             }
         }

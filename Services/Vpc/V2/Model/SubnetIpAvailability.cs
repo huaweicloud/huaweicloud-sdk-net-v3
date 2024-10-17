@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(SubnetIpAvailability input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UsedIps != input.UsedIps || (this.UsedIps != null && !this.UsedIps.Equals(input.UsedIps))) return false;
+            if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
+            if (this.SubnetName != input.SubnetName || (this.SubnetName != null && !this.SubnetName.Equals(input.SubnetName))) return false;
+            if (this.IpVersion != input.IpVersion || (this.IpVersion != null && !this.IpVersion.Equals(input.IpVersion))) return false;
+            if (this.Cidr != input.Cidr || (this.Cidr != null && !this.Cidr.Equals(input.Cidr))) return false;
+            if (this.TotalIps != input.TotalIps || (this.TotalIps != null && !this.TotalIps.Equals(input.TotalIps))) return false;
 
-            return 
-                (
-                    this.UsedIps == input.UsedIps ||
-                    (this.UsedIps != null &&
-                    this.UsedIps.Equals(input.UsedIps))
-                ) && 
-                (
-                    this.SubnetId == input.SubnetId ||
-                    (this.SubnetId != null &&
-                    this.SubnetId.Equals(input.SubnetId))
-                ) && 
-                (
-                    this.SubnetName == input.SubnetName ||
-                    (this.SubnetName != null &&
-                    this.SubnetName.Equals(input.SubnetName))
-                ) && 
-                (
-                    this.IpVersion == input.IpVersion ||
-                    (this.IpVersion != null &&
-                    this.IpVersion.Equals(input.IpVersion))
-                ) && 
-                (
-                    this.Cidr == input.Cidr ||
-                    (this.Cidr != null &&
-                    this.Cidr.Equals(input.Cidr))
-                ) && 
-                (
-                    this.TotalIps == input.TotalIps ||
-                    (this.TotalIps != null &&
-                    this.TotalIps.Equals(input.TotalIps))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UsedIps != null)
-                    hashCode = hashCode * 59 + this.UsedIps.GetHashCode();
-                if (this.SubnetId != null)
-                    hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
-                if (this.SubnetName != null)
-                    hashCode = hashCode * 59 + this.SubnetName.GetHashCode();
-                if (this.IpVersion != null)
-                    hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
-                if (this.Cidr != null)
-                    hashCode = hashCode * 59 + this.Cidr.GetHashCode();
-                if (this.TotalIps != null)
-                    hashCode = hashCode * 59 + this.TotalIps.GetHashCode();
+                var hashCode = 41;
+                if (this.UsedIps != null) hashCode = hashCode * 59 + this.UsedIps.GetHashCode();
+                if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
+                if (this.SubnetName != null) hashCode = hashCode * 59 + this.SubnetName.GetHashCode();
+                if (this.IpVersion != null) hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
+                if (this.Cidr != null) hashCode = hashCode * 59 + this.Cidr.GetHashCode();
+                if (this.TotalIps != null) hashCode = hashCode * 59 + this.TotalIps.GetHashCode();
                 return hashCode;
             }
         }

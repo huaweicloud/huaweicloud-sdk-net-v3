@@ -154,90 +154,25 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(TransportationLicenseResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OwnerName != input.OwnerName || (this.OwnerName != null && !this.OwnerName.Equals(input.OwnerName))) return false;
+            if (this.LicenseNumber != input.LicenseNumber || (this.LicenseNumber != null && !this.LicenseNumber.Equals(input.LicenseNumber))) return false;
+            if (this.VehicleNumber != input.VehicleNumber || (this.VehicleNumber != null && !this.VehicleNumber.Equals(input.VehicleNumber))) return false;
+            if (this.VehicleType != input.VehicleType || (this.VehicleType != null && !this.VehicleType.Equals(input.VehicleType))) return false;
+            if (this.MaximumCapacity != input.MaximumCapacity || (this.MaximumCapacity != null && !this.MaximumCapacity.Equals(input.MaximumCapacity))) return false;
+            if (this.VehicleSize != input.VehicleSize || (this.VehicleSize != null && !this.VehicleSize.Equals(input.VehicleSize))) return false;
+            if (this.IssuingAuthority != input.IssuingAuthority || (this.IssuingAuthority != null && !this.IssuingAuthority.Equals(input.IssuingAuthority))) return false;
+            if (this.IssueDate != input.IssueDate || (this.IssueDate != null && !this.IssueDate.Equals(input.IssueDate))) return false;
+            if (this.OwnerAddress != input.OwnerAddress || (this.OwnerAddress != null && !this.OwnerAddress.Equals(input.OwnerAddress))) return false;
+            if (this.EconomicType != input.EconomicType || (this.EconomicType != null && !this.EconomicType.Equals(input.EconomicType))) return false;
+            if (this.BusinessCertificate != input.BusinessCertificate || (this.BusinessCertificate != null && !this.BusinessCertificate.Equals(input.BusinessCertificate))) return false;
+            if (this.BusinessScope != input.BusinessScope || (this.BusinessScope != null && !this.BusinessScope.Equals(input.BusinessScope))) return false;
+            if (this.ExpiryDate != input.ExpiryDate || (this.ExpiryDate != null && !this.ExpiryDate.Equals(input.ExpiryDate))) return false;
+            if (this.ReviewExpiryDate != input.ReviewExpiryDate || (this.ReviewExpiryDate != null && !this.ReviewExpiryDate.Equals(input.ReviewExpiryDate))) return false;
+            if (this.AssessedTechnicalLevel != input.AssessedTechnicalLevel || (this.AssessedTechnicalLevel != null && !this.AssessedTechnicalLevel.Equals(input.AssessedTechnicalLevel))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
 
-            return 
-                (
-                    this.OwnerName == input.OwnerName ||
-                    (this.OwnerName != null &&
-                    this.OwnerName.Equals(input.OwnerName))
-                ) && 
-                (
-                    this.LicenseNumber == input.LicenseNumber ||
-                    (this.LicenseNumber != null &&
-                    this.LicenseNumber.Equals(input.LicenseNumber))
-                ) && 
-                (
-                    this.VehicleNumber == input.VehicleNumber ||
-                    (this.VehicleNumber != null &&
-                    this.VehicleNumber.Equals(input.VehicleNumber))
-                ) && 
-                (
-                    this.VehicleType == input.VehicleType ||
-                    (this.VehicleType != null &&
-                    this.VehicleType.Equals(input.VehicleType))
-                ) && 
-                (
-                    this.MaximumCapacity == input.MaximumCapacity ||
-                    (this.MaximumCapacity != null &&
-                    this.MaximumCapacity.Equals(input.MaximumCapacity))
-                ) && 
-                (
-                    this.VehicleSize == input.VehicleSize ||
-                    (this.VehicleSize != null &&
-                    this.VehicleSize.Equals(input.VehicleSize))
-                ) && 
-                (
-                    this.IssuingAuthority == input.IssuingAuthority ||
-                    (this.IssuingAuthority != null &&
-                    this.IssuingAuthority.Equals(input.IssuingAuthority))
-                ) && 
-                (
-                    this.IssueDate == input.IssueDate ||
-                    (this.IssueDate != null &&
-                    this.IssueDate.Equals(input.IssueDate))
-                ) && 
-                (
-                    this.OwnerAddress == input.OwnerAddress ||
-                    (this.OwnerAddress != null &&
-                    this.OwnerAddress.Equals(input.OwnerAddress))
-                ) && 
-                (
-                    this.EconomicType == input.EconomicType ||
-                    (this.EconomicType != null &&
-                    this.EconomicType.Equals(input.EconomicType))
-                ) && 
-                (
-                    this.BusinessCertificate == input.BusinessCertificate ||
-                    (this.BusinessCertificate != null &&
-                    this.BusinessCertificate.Equals(input.BusinessCertificate))
-                ) && 
-                (
-                    this.BusinessScope == input.BusinessScope ||
-                    (this.BusinessScope != null &&
-                    this.BusinessScope.Equals(input.BusinessScope))
-                ) && 
-                (
-                    this.ExpiryDate == input.ExpiryDate ||
-                    (this.ExpiryDate != null &&
-                    this.ExpiryDate.Equals(input.ExpiryDate))
-                ) && 
-                (
-                    this.ReviewExpiryDate == input.ReviewExpiryDate ||
-                    (this.ReviewExpiryDate != null &&
-                    this.ReviewExpiryDate.Equals(input.ReviewExpiryDate))
-                ) && 
-                (
-                    this.AssessedTechnicalLevel == input.AssessedTechnicalLevel ||
-                    (this.AssessedTechnicalLevel != null &&
-                    this.AssessedTechnicalLevel.Equals(input.AssessedTechnicalLevel))
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                );
+            return true;
         }
 
         /// <summary>
@@ -247,39 +182,23 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OwnerName != null)
-                    hashCode = hashCode * 59 + this.OwnerName.GetHashCode();
-                if (this.LicenseNumber != null)
-                    hashCode = hashCode * 59 + this.LicenseNumber.GetHashCode();
-                if (this.VehicleNumber != null)
-                    hashCode = hashCode * 59 + this.VehicleNumber.GetHashCode();
-                if (this.VehicleType != null)
-                    hashCode = hashCode * 59 + this.VehicleType.GetHashCode();
-                if (this.MaximumCapacity != null)
-                    hashCode = hashCode * 59 + this.MaximumCapacity.GetHashCode();
-                if (this.VehicleSize != null)
-                    hashCode = hashCode * 59 + this.VehicleSize.GetHashCode();
-                if (this.IssuingAuthority != null)
-                    hashCode = hashCode * 59 + this.IssuingAuthority.GetHashCode();
-                if (this.IssueDate != null)
-                    hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
-                if (this.OwnerAddress != null)
-                    hashCode = hashCode * 59 + this.OwnerAddress.GetHashCode();
-                if (this.EconomicType != null)
-                    hashCode = hashCode * 59 + this.EconomicType.GetHashCode();
-                if (this.BusinessCertificate != null)
-                    hashCode = hashCode * 59 + this.BusinessCertificate.GetHashCode();
-                if (this.BusinessScope != null)
-                    hashCode = hashCode * 59 + this.BusinessScope.GetHashCode();
-                if (this.ExpiryDate != null)
-                    hashCode = hashCode * 59 + this.ExpiryDate.GetHashCode();
-                if (this.ReviewExpiryDate != null)
-                    hashCode = hashCode * 59 + this.ReviewExpiryDate.GetHashCode();
-                if (this.AssessedTechnicalLevel != null)
-                    hashCode = hashCode * 59 + this.AssessedTechnicalLevel.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                var hashCode = 41;
+                if (this.OwnerName != null) hashCode = hashCode * 59 + this.OwnerName.GetHashCode();
+                if (this.LicenseNumber != null) hashCode = hashCode * 59 + this.LicenseNumber.GetHashCode();
+                if (this.VehicleNumber != null) hashCode = hashCode * 59 + this.VehicleNumber.GetHashCode();
+                if (this.VehicleType != null) hashCode = hashCode * 59 + this.VehicleType.GetHashCode();
+                if (this.MaximumCapacity != null) hashCode = hashCode * 59 + this.MaximumCapacity.GetHashCode();
+                if (this.VehicleSize != null) hashCode = hashCode * 59 + this.VehicleSize.GetHashCode();
+                if (this.IssuingAuthority != null) hashCode = hashCode * 59 + this.IssuingAuthority.GetHashCode();
+                if (this.IssueDate != null) hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
+                if (this.OwnerAddress != null) hashCode = hashCode * 59 + this.OwnerAddress.GetHashCode();
+                if (this.EconomicType != null) hashCode = hashCode * 59 + this.EconomicType.GetHashCode();
+                if (this.BusinessCertificate != null) hashCode = hashCode * 59 + this.BusinessCertificate.GetHashCode();
+                if (this.BusinessScope != null) hashCode = hashCode * 59 + this.BusinessScope.GetHashCode();
+                if (this.ExpiryDate != null) hashCode = hashCode * 59 + this.ExpiryDate.GetHashCode();
+                if (this.ReviewExpiryDate != null) hashCode = hashCode * 59 + this.ReviewExpiryDate.GetHashCode();
+                if (this.AssessedTechnicalLevel != null) hashCode = hashCode * 59 + this.AssessedTechnicalLevel.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
                 return hashCode;
             }
         }

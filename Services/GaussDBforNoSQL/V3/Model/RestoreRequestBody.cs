@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(RestoreRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BackupId != input.BackupId || (this.BackupId != null && !this.BackupId.Equals(input.BackupId))) return false;
+            if (this.Password != input.Password || (this.Password != null && !this.Password.Equals(input.Password))) return false;
 
-            return 
-                (
-                    this.BackupId == input.BackupId ||
-                    (this.BackupId != null &&
-                    this.BackupId.Equals(input.BackupId))
-                ) && 
-                (
-                    this.Password == input.Password ||
-                    (this.Password != null &&
-                    this.Password.Equals(input.Password))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BackupId != null)
-                    hashCode = hashCode * 59 + this.BackupId.GetHashCode();
-                if (this.Password != null)
-                    hashCode = hashCode * 59 + this.Password.GetHashCode();
+                var hashCode = 41;
+                if (this.BackupId != null) hashCode = hashCode * 59 + this.BackupId.GetHashCode();
+                if (this.Password != null) hashCode = hashCode * 59 + this.Password.GetHashCode();
                 return hashCode;
             }
         }

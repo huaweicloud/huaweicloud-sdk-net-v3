@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(UploadMetaDataByUrlReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UploadMetadatas != input.UploadMetadatas || (this.UploadMetadatas != null && input.UploadMetadatas != null && !this.UploadMetadatas.SequenceEqual(input.UploadMetadatas))) return false;
 
-            return 
-                (
-                    this.UploadMetadatas == input.UploadMetadatas ||
-                    this.UploadMetadatas != null &&
-                    input.UploadMetadatas != null &&
-                    this.UploadMetadatas.SequenceEqual(input.UploadMetadatas)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UploadMetadatas != null)
-                    hashCode = hashCode * 59 + this.UploadMetadatas.GetHashCode();
+                var hashCode = 41;
+                if (this.UploadMetadatas != null) hashCode = hashCode * 59 + this.UploadMetadatas.GetHashCode();
                 return hashCode;
             }
         }

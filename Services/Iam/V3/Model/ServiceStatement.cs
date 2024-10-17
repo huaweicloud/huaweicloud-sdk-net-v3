@@ -184,33 +184,13 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(ServiceStatement input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Action != input.Action || (this.Action != null && input.Action != null && !this.Action.SequenceEqual(input.Action))) return false;
+            if (this.Effect != input.Effect) return false;
+            if (this.Condition != input.Condition || (this.Condition != null && input.Condition != null && !this.Condition.SequenceEqual(input.Condition))) return false;
+            if (this.Resource != input.Resource || (this.Resource != null && input.Resource != null && !this.Resource.SequenceEqual(input.Resource))) return false;
 
-            return 
-                (
-                    this.Action == input.Action ||
-                    this.Action != null &&
-                    input.Action != null &&
-                    this.Action.SequenceEqual(input.Action)
-                ) && 
-                (
-                    this.Effect == input.Effect ||
-                    (this.Effect != null &&
-                    this.Effect.Equals(input.Effect))
-                ) && 
-                (
-                    this.Condition == input.Condition ||
-                    this.Condition != null &&
-                    input.Condition != null &&
-                    this.Condition.SequenceEqual(input.Condition)
-                ) && 
-                (
-                    this.Resource == input.Resource ||
-                    this.Resource != null &&
-                    input.Resource != null &&
-                    this.Resource.SequenceEqual(input.Resource)
-                );
+            return true;
         }
 
         /// <summary>
@@ -220,15 +200,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
-                if (this.Effect != null)
-                    hashCode = hashCode * 59 + this.Effect.GetHashCode();
-                if (this.Condition != null)
-                    hashCode = hashCode * 59 + this.Condition.GetHashCode();
-                if (this.Resource != null)
-                    hashCode = hashCode * 59 + this.Resource.GetHashCode();
+                var hashCode = 41;
+                if (this.Action != null) hashCode = hashCode * 59 + this.Action.GetHashCode();
+                hashCode = hashCode * 59 + this.Effect.GetHashCode();
+                if (this.Condition != null) hashCode = hashCode * 59 + this.Condition.GetHashCode();
+                if (this.Resource != null) hashCode = hashCode * 59 + this.Resource.GetHashCode();
                 return hashCode;
             }
         }

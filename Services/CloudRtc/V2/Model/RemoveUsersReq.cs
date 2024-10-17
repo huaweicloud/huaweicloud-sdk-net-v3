@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         /// </summary>
         public bool Equals(RemoveUsersReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UserIds != input.UserIds || (this.UserIds != null && input.UserIds != null && !this.UserIds.SequenceEqual(input.UserIds))) return false;
 
-            return 
-                (
-                    this.UserIds == input.UserIds ||
-                    this.UserIds != null &&
-                    input.UserIds != null &&
-                    this.UserIds.SequenceEqual(input.UserIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UserIds != null)
-                    hashCode = hashCode * 59 + this.UserIds.GetHashCode();
+                var hashCode = 41;
+                if (this.UserIds != null) hashCode = hashCode * 59 + this.UserIds.GetHashCode();
                 return hashCode;
             }
         }

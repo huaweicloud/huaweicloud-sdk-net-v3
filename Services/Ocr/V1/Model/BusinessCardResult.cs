@@ -126,81 +126,21 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(BusinessCardResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && input.Name != null && !this.Name.SequenceEqual(input.Name))) return false;
+            if (this.Title != input.Title || (this.Title != null && input.Title != null && !this.Title.SequenceEqual(input.Title))) return false;
+            if (this.Company != input.Company || (this.Company != null && input.Company != null && !this.Company.SequenceEqual(input.Company))) return false;
+            if (this.Department != input.Department || (this.Department != null && input.Department != null && !this.Department.SequenceEqual(input.Department))) return false;
+            if (this.Phone != input.Phone || (this.Phone != null && input.Phone != null && !this.Phone.SequenceEqual(input.Phone))) return false;
+            if (this.Address != input.Address || (this.Address != null && input.Address != null && !this.Address.SequenceEqual(input.Address))) return false;
+            if (this.Email != input.Email || (this.Email != null && input.Email != null && !this.Email.SequenceEqual(input.Email))) return false;
+            if (this.Fax != input.Fax || (this.Fax != null && input.Fax != null && !this.Fax.SequenceEqual(input.Fax))) return false;
+            if (this.Postcode != input.Postcode || (this.Postcode != null && input.Postcode != null && !this.Postcode.SequenceEqual(input.Postcode))) return false;
+            if (this.Website != input.Website || (this.Website != null && input.Website != null && !this.Website.SequenceEqual(input.Website))) return false;
+            if (this.ExtraInfoList != input.ExtraInfoList || (this.ExtraInfoList != null && input.ExtraInfoList != null && !this.ExtraInfoList.SequenceEqual(input.ExtraInfoList))) return false;
+            if (this.AdjustedImage != input.AdjustedImage || (this.AdjustedImage != null && !this.AdjustedImage.Equals(input.AdjustedImage))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    this.Name != null &&
-                    input.Name != null &&
-                    this.Name.SequenceEqual(input.Name)
-                ) && 
-                (
-                    this.Title == input.Title ||
-                    this.Title != null &&
-                    input.Title != null &&
-                    this.Title.SequenceEqual(input.Title)
-                ) && 
-                (
-                    this.Company == input.Company ||
-                    this.Company != null &&
-                    input.Company != null &&
-                    this.Company.SequenceEqual(input.Company)
-                ) && 
-                (
-                    this.Department == input.Department ||
-                    this.Department != null &&
-                    input.Department != null &&
-                    this.Department.SequenceEqual(input.Department)
-                ) && 
-                (
-                    this.Phone == input.Phone ||
-                    this.Phone != null &&
-                    input.Phone != null &&
-                    this.Phone.SequenceEqual(input.Phone)
-                ) && 
-                (
-                    this.Address == input.Address ||
-                    this.Address != null &&
-                    input.Address != null &&
-                    this.Address.SequenceEqual(input.Address)
-                ) && 
-                (
-                    this.Email == input.Email ||
-                    this.Email != null &&
-                    input.Email != null &&
-                    this.Email.SequenceEqual(input.Email)
-                ) && 
-                (
-                    this.Fax == input.Fax ||
-                    this.Fax != null &&
-                    input.Fax != null &&
-                    this.Fax.SequenceEqual(input.Fax)
-                ) && 
-                (
-                    this.Postcode == input.Postcode ||
-                    this.Postcode != null &&
-                    input.Postcode != null &&
-                    this.Postcode.SequenceEqual(input.Postcode)
-                ) && 
-                (
-                    this.Website == input.Website ||
-                    this.Website != null &&
-                    input.Website != null &&
-                    this.Website.SequenceEqual(input.Website)
-                ) && 
-                (
-                    this.ExtraInfoList == input.ExtraInfoList ||
-                    this.ExtraInfoList != null &&
-                    input.ExtraInfoList != null &&
-                    this.ExtraInfoList.SequenceEqual(input.ExtraInfoList)
-                ) && 
-                (
-                    this.AdjustedImage == input.AdjustedImage ||
-                    (this.AdjustedImage != null &&
-                    this.AdjustedImage.Equals(input.AdjustedImage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -210,31 +150,19 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Title != null)
-                    hashCode = hashCode * 59 + this.Title.GetHashCode();
-                if (this.Company != null)
-                    hashCode = hashCode * 59 + this.Company.GetHashCode();
-                if (this.Department != null)
-                    hashCode = hashCode * 59 + this.Department.GetHashCode();
-                if (this.Phone != null)
-                    hashCode = hashCode * 59 + this.Phone.GetHashCode();
-                if (this.Address != null)
-                    hashCode = hashCode * 59 + this.Address.GetHashCode();
-                if (this.Email != null)
-                    hashCode = hashCode * 59 + this.Email.GetHashCode();
-                if (this.Fax != null)
-                    hashCode = hashCode * 59 + this.Fax.GetHashCode();
-                if (this.Postcode != null)
-                    hashCode = hashCode * 59 + this.Postcode.GetHashCode();
-                if (this.Website != null)
-                    hashCode = hashCode * 59 + this.Website.GetHashCode();
-                if (this.ExtraInfoList != null)
-                    hashCode = hashCode * 59 + this.ExtraInfoList.GetHashCode();
-                if (this.AdjustedImage != null)
-                    hashCode = hashCode * 59 + this.AdjustedImage.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Title != null) hashCode = hashCode * 59 + this.Title.GetHashCode();
+                if (this.Company != null) hashCode = hashCode * 59 + this.Company.GetHashCode();
+                if (this.Department != null) hashCode = hashCode * 59 + this.Department.GetHashCode();
+                if (this.Phone != null) hashCode = hashCode * 59 + this.Phone.GetHashCode();
+                if (this.Address != null) hashCode = hashCode * 59 + this.Address.GetHashCode();
+                if (this.Email != null) hashCode = hashCode * 59 + this.Email.GetHashCode();
+                if (this.Fax != null) hashCode = hashCode * 59 + this.Fax.GetHashCode();
+                if (this.Postcode != null) hashCode = hashCode * 59 + this.Postcode.GetHashCode();
+                if (this.Website != null) hashCode = hashCode * 59 + this.Website.GetHashCode();
+                if (this.ExtraInfoList != null) hashCode = hashCode * 59 + this.ExtraInfoList.GetHashCode();
+                if (this.AdjustedImage != null) hashCode = hashCode * 59 + this.AdjustedImage.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(SpeedLimitInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Begin != input.Begin || (this.Begin != null && !this.Begin.Equals(input.Begin))) return false;
+            if (this.End != input.End || (this.End != null && !this.End.Equals(input.End))) return false;
+            if (this.Speed != input.Speed || (this.Speed != null && !this.Speed.Equals(input.Speed))) return false;
 
-            return 
-                (
-                    this.Begin == input.Begin ||
-                    (this.Begin != null &&
-                    this.Begin.Equals(input.Begin))
-                ) && 
-                (
-                    this.End == input.End ||
-                    (this.End != null &&
-                    this.End.Equals(input.End))
-                ) && 
-                (
-                    this.Speed == input.Speed ||
-                    (this.Speed != null &&
-                    this.Speed.Equals(input.Speed))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Begin != null)
-                    hashCode = hashCode * 59 + this.Begin.GetHashCode();
-                if (this.End != null)
-                    hashCode = hashCode * 59 + this.End.GetHashCode();
-                if (this.Speed != null)
-                    hashCode = hashCode * 59 + this.Speed.GetHashCode();
+                var hashCode = 41;
+                if (this.Begin != null) hashCode = hashCode * 59 + this.Begin.GetHashCode();
+                if (this.End != null) hashCode = hashCode * 59 + this.End.GetHashCode();
+                if (this.Speed != null) hashCode = hashCode * 59 + this.Speed.GetHashCode();
                 return hashCode;
             }
         }

@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(OsReinstall input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Adminpass != input.Adminpass || (this.Adminpass != null && !this.Adminpass.Equals(input.Adminpass))) return false;
+            if (this.Keyname != input.Keyname || (this.Keyname != null && !this.Keyname.Equals(input.Keyname))) return false;
+            if (this.Userid != input.Userid || (this.Userid != null && !this.Userid.Equals(input.Userid))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && !this.Metadata.Equals(input.Metadata))) return false;
 
-            return 
-                (
-                    this.Adminpass == input.Adminpass ||
-                    (this.Adminpass != null &&
-                    this.Adminpass.Equals(input.Adminpass))
-                ) && 
-                (
-                    this.Keyname == input.Keyname ||
-                    (this.Keyname != null &&
-                    this.Keyname.Equals(input.Keyname))
-                ) && 
-                (
-                    this.Userid == input.Userid ||
-                    (this.Userid != null &&
-                    this.Userid.Equals(input.Userid))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    (this.Metadata != null &&
-                    this.Metadata.Equals(input.Metadata))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Adminpass != null)
-                    hashCode = hashCode * 59 + this.Adminpass.GetHashCode();
-                if (this.Keyname != null)
-                    hashCode = hashCode * 59 + this.Keyname.GetHashCode();
-                if (this.Userid != null)
-                    hashCode = hashCode * 59 + this.Userid.GetHashCode();
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                var hashCode = 41;
+                if (this.Adminpass != null) hashCode = hashCode * 59 + this.Adminpass.GetHashCode();
+                if (this.Keyname != null) hashCode = hashCode * 59 + this.Keyname.GetHashCode();
+                if (this.Userid != null) hashCode = hashCode * 59 + this.Userid.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
                 return hashCode;
             }
         }

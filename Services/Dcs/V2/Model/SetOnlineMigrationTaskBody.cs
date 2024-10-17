@@ -305,35 +305,14 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(SetOnlineMigrationTaskBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MigrationMethod != input.MigrationMethod) return false;
+            if (this.ResumeMode != input.ResumeMode) return false;
+            if (this.BandwidthLimitMb != input.BandwidthLimitMb || (this.BandwidthLimitMb != null && !this.BandwidthLimitMb.Equals(input.BandwidthLimitMb))) return false;
+            if (this.SourceInstance != input.SourceInstance || (this.SourceInstance != null && !this.SourceInstance.Equals(input.SourceInstance))) return false;
+            if (this.TargetInstance != input.TargetInstance || (this.TargetInstance != null && !this.TargetInstance.Equals(input.TargetInstance))) return false;
 
-            return 
-                (
-                    this.MigrationMethod == input.MigrationMethod ||
-                    (this.MigrationMethod != null &&
-                    this.MigrationMethod.Equals(input.MigrationMethod))
-                ) && 
-                (
-                    this.ResumeMode == input.ResumeMode ||
-                    (this.ResumeMode != null &&
-                    this.ResumeMode.Equals(input.ResumeMode))
-                ) && 
-                (
-                    this.BandwidthLimitMb == input.BandwidthLimitMb ||
-                    (this.BandwidthLimitMb != null &&
-                    this.BandwidthLimitMb.Equals(input.BandwidthLimitMb))
-                ) && 
-                (
-                    this.SourceInstance == input.SourceInstance ||
-                    (this.SourceInstance != null &&
-                    this.SourceInstance.Equals(input.SourceInstance))
-                ) && 
-                (
-                    this.TargetInstance == input.TargetInstance ||
-                    (this.TargetInstance != null &&
-                    this.TargetInstance.Equals(input.TargetInstance))
-                );
+            return true;
         }
 
         /// <summary>
@@ -343,17 +322,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MigrationMethod != null)
-                    hashCode = hashCode * 59 + this.MigrationMethod.GetHashCode();
-                if (this.ResumeMode != null)
-                    hashCode = hashCode * 59 + this.ResumeMode.GetHashCode();
-                if (this.BandwidthLimitMb != null)
-                    hashCode = hashCode * 59 + this.BandwidthLimitMb.GetHashCode();
-                if (this.SourceInstance != null)
-                    hashCode = hashCode * 59 + this.SourceInstance.GetHashCode();
-                if (this.TargetInstance != null)
-                    hashCode = hashCode * 59 + this.TargetInstance.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.MigrationMethod.GetHashCode();
+                hashCode = hashCode * 59 + this.ResumeMode.GetHashCode();
+                if (this.BandwidthLimitMb != null) hashCode = hashCode * 59 + this.BandwidthLimitMb.GetHashCode();
+                if (this.SourceInstance != null) hashCode = hashCode * 59 + this.SourceInstance.GetHashCode();
+                if (this.TargetInstance != null) hashCode = hashCode * 59 + this.TargetInstance.GetHashCode();
                 return hashCode;
             }
         }

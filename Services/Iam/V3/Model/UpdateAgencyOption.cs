@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(UpdateAgencyOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TrustDomainId != input.TrustDomainId || (this.TrustDomainId != null && !this.TrustDomainId.Equals(input.TrustDomainId))) return false;
+            if (this.TrustDomainName != input.TrustDomainName || (this.TrustDomainName != null && !this.TrustDomainName.Equals(input.TrustDomainName))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
 
-            return 
-                (
-                    this.TrustDomainId == input.TrustDomainId ||
-                    (this.TrustDomainId != null &&
-                    this.TrustDomainId.Equals(input.TrustDomainId))
-                ) && 
-                (
-                    this.TrustDomainName == input.TrustDomainName ||
-                    (this.TrustDomainName != null &&
-                    this.TrustDomainName.Equals(input.TrustDomainName))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TrustDomainId != null)
-                    hashCode = hashCode * 59 + this.TrustDomainId.GetHashCode();
-                if (this.TrustDomainName != null)
-                    hashCode = hashCode * 59 + this.TrustDomainName.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Duration != null)
-                    hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                var hashCode = 41;
+                if (this.TrustDomainId != null) hashCode = hashCode * 59 + this.TrustDomainId.GetHashCode();
+                if (this.TrustDomainName != null) hashCode = hashCode * 59 + this.TrustDomainName.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
                 return hashCode;
             }
         }

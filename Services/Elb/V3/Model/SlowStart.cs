@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(SlowStart input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Enable != input.Enable || (this.Enable != null && !this.Enable.Equals(input.Enable))) return false;
+            if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
 
-            return 
-                (
-                    this.Enable == input.Enable ||
-                    (this.Enable != null &&
-                    this.Enable.Equals(input.Enable))
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Enable != null)
-                    hashCode = hashCode * 59 + this.Enable.GetHashCode();
-                if (this.Duration != null)
-                    hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                var hashCode = 41;
+                if (this.Enable != null) hashCode = hashCode * 59 + this.Enable.GetHashCode();
+                if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
                 return hashCode;
             }
         }

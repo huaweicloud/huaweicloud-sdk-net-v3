@@ -66,25 +66,12 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         /// </summary>
         public bool Equals(ShowEnvByNameRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EnvironmentName != input.EnvironmentName || (this.EnvironmentName != null && !this.EnvironmentName.Equals(input.EnvironmentName))) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
+            if (this.ComponentId != input.ComponentId || (this.ComponentId != null && !this.ComponentId.Equals(input.ComponentId))) return false;
 
-            return 
-                (
-                    this.EnvironmentName == input.EnvironmentName ||
-                    (this.EnvironmentName != null &&
-                    this.EnvironmentName.Equals(input.EnvironmentName))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.ComponentId == input.ComponentId ||
-                    (this.ComponentId != null &&
-                    this.ComponentId.Equals(input.ComponentId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +81,10 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EnvironmentName != null)
-                    hashCode = hashCode * 59 + this.EnvironmentName.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.ComponentId != null)
-                    hashCode = hashCode * 59 + this.ComponentId.GetHashCode();
+                var hashCode = 41;
+                if (this.EnvironmentName != null) hashCode = hashCode * 59 + this.EnvironmentName.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
+                if (this.ComponentId != null) hashCode = hashCode * 59 + this.ComponentId.GetHashCode();
                 return hashCode;
             }
         }

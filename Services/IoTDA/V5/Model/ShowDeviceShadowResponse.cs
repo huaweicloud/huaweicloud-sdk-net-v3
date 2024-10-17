@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ShowDeviceShadowResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DeviceId != input.DeviceId || (this.DeviceId != null && !this.DeviceId.Equals(input.DeviceId))) return false;
+            if (this.Shadow != input.Shadow || (this.Shadow != null && input.Shadow != null && !this.Shadow.SequenceEqual(input.Shadow))) return false;
 
-            return 
-                (
-                    this.DeviceId == input.DeviceId ||
-                    (this.DeviceId != null &&
-                    this.DeviceId.Equals(input.DeviceId))
-                ) && 
-                (
-                    this.Shadow == input.Shadow ||
-                    this.Shadow != null &&
-                    input.Shadow != null &&
-                    this.Shadow.SequenceEqual(input.Shadow)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DeviceId != null)
-                    hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
-                if (this.Shadow != null)
-                    hashCode = hashCode * 59 + this.Shadow.GetHashCode();
+                var hashCode = 41;
+                if (this.DeviceId != null) hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
+                if (this.Shadow != null) hashCode = hashCode * 59 + this.Shadow.GetHashCode();
                 return hashCode;
             }
         }

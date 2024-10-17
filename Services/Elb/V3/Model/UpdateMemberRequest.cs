@@ -66,25 +66,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(UpdateMemberRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MemberId != input.MemberId || (this.MemberId != null && !this.MemberId.Equals(input.MemberId))) return false;
+            if (this.PoolId != input.PoolId || (this.PoolId != null && !this.PoolId.Equals(input.PoolId))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
-            return 
-                (
-                    this.MemberId == input.MemberId ||
-                    (this.MemberId != null &&
-                    this.MemberId.Equals(input.MemberId))
-                ) && 
-                (
-                    this.PoolId == input.PoolId ||
-                    (this.PoolId != null &&
-                    this.PoolId.Equals(input.PoolId))
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +81,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MemberId != null)
-                    hashCode = hashCode * 59 + this.MemberId.GetHashCode();
-                if (this.PoolId != null)
-                    hashCode = hashCode * 59 + this.PoolId.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                var hashCode = 41;
+                if (this.MemberId != null) hashCode = hashCode * 59 + this.MemberId.GetHashCode();
+                if (this.PoolId != null) hashCode = hashCode * 59 + this.PoolId.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

@@ -1018,197 +1018,41 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// </summary>
         public bool Equals(ListGlobalEipsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.PageReverse != input.PageReverse || (this.PageReverse != null && !this.PageReverse.Equals(input.PageReverse))) return false;
+            if (this.Fields != input.Fields || (this.Fields != null && input.Fields != null && !this.Fields.SequenceEqual(input.Fields))) return false;
+            if (this.SortKey != input.SortKey || (this.SortKey != null && input.SortKey != null && !this.SortKey.SequenceEqual(input.SortKey))) return false;
+            if (this.SortDir != input.SortDir || (this.SortDir != null && input.SortDir != null && !this.SortDir.SequenceEqual(input.SortDir))) return false;
+            if (this.Id != input.Id || (this.Id != null && input.Id != null && !this.Id.SequenceEqual(input.Id))) return false;
+            if (this.InternetBandwidthId != input.InternetBandwidthId || (this.InternetBandwidthId != null && input.InternetBandwidthId != null && !this.InternetBandwidthId.SequenceEqual(input.InternetBandwidthId))) return false;
+            if (this.Name != input.Name || (this.Name != null && input.Name != null && !this.Name.SequenceEqual(input.Name))) return false;
+            if (this.NameLike != input.NameLike || (this.NameLike != null && !this.NameLike.Equals(input.NameLike))) return false;
+            if (this.AccessSite != input.AccessSite || (this.AccessSite != null && input.AccessSite != null && !this.AccessSite.SequenceEqual(input.AccessSite))) return false;
+            if (this.GeipPoolName != input.GeipPoolName || (this.GeipPoolName != null && input.GeipPoolName != null && !this.GeipPoolName.SequenceEqual(input.GeipPoolName))) return false;
+            if (this.Isp != input.Isp || (this.Isp != null && input.Isp != null && !this.Isp.SequenceEqual(input.Isp))) return false;
+            if (this.IpVersion != input.IpVersion || (this.IpVersion != null && input.IpVersion != null && !this.IpVersion.SequenceEqual(input.IpVersion))) return false;
+            if (this.IpAddress != input.IpAddress || (this.IpAddress != null && input.IpAddress != null && !this.IpAddress.SequenceEqual(input.IpAddress))) return false;
+            if (this.Ipv6Address != input.Ipv6Address || (this.Ipv6Address != null && input.Ipv6Address != null && !this.Ipv6Address.SequenceEqual(input.Ipv6Address))) return false;
+            if (this.Freezen != input.Freezen || (this.Freezen != null && input.Freezen != null && !this.Freezen.SequenceEqual(input.Freezen))) return false;
+            if (this.Polluted != input.Polluted || (this.Polluted != null && input.Polluted != null && !this.Polluted.SequenceEqual(input.Polluted))) return false;
+            if (this.InternetBandwidthIsNull != input.InternetBandwidthIsNull || (this.InternetBandwidthIsNull != null && input.InternetBandwidthIsNull != null && !this.InternetBandwidthIsNull.SequenceEqual(input.InternetBandwidthIsNull))) return false;
+            if (this.GcbBandwidthIsNull != input.GcbBandwidthIsNull || (this.GcbBandwidthIsNull != null && input.GcbBandwidthIsNull != null && !this.GcbBandwidthIsNull.SequenceEqual(input.GcbBandwidthIsNull))) return false;
+            if (this.Status != input.Status || (this.Status != null && input.Status != null && !this.Status.SequenceEqual(input.Status))) return false;
+            if (this.AssociateInstanceInfoRegion != input.AssociateInstanceInfoRegion || (this.AssociateInstanceInfoRegion != null && input.AssociateInstanceInfoRegion != null && !this.AssociateInstanceInfoRegion.SequenceEqual(input.AssociateInstanceInfoRegion))) return false;
+            if (this.AssociateInstanceInfoInstanceType != input.AssociateInstanceInfoInstanceType || (this.AssociateInstanceInfoInstanceType != null && input.AssociateInstanceInfoInstanceType != null && !this.AssociateInstanceInfoInstanceType.SequenceEqual(input.AssociateInstanceInfoInstanceType))) return false;
+            if (this.AssociateInstanceInfoPublicBorderGroup != input.AssociateInstanceInfoPublicBorderGroup || (this.AssociateInstanceInfoPublicBorderGroup != null && input.AssociateInstanceInfoPublicBorderGroup != null && !this.AssociateInstanceInfoPublicBorderGroup.SequenceEqual(input.AssociateInstanceInfoPublicBorderGroup))) return false;
+            if (this.AssociateInstanceInfoInstanceSite != input.AssociateInstanceInfoInstanceSite || (this.AssociateInstanceInfoInstanceSite != null && input.AssociateInstanceInfoInstanceSite != null && !this.AssociateInstanceInfoInstanceSite.SequenceEqual(input.AssociateInstanceInfoInstanceSite))) return false;
+            if (this.AssociateInstanceInfoInstanceId != input.AssociateInstanceInfoInstanceId || (this.AssociateInstanceInfoInstanceId != null && input.AssociateInstanceInfoInstanceId != null && !this.AssociateInstanceInfoInstanceId.SequenceEqual(input.AssociateInstanceInfoInstanceId))) return false;
+            if (this.AssociateInstanceInfoProjectId != input.AssociateInstanceInfoProjectId || (this.AssociateInstanceInfoProjectId != null && input.AssociateInstanceInfoProjectId != null && !this.AssociateInstanceInfoProjectId.SequenceEqual(input.AssociateInstanceInfoProjectId))) return false;
+            if (this.AssociateInstanceInfoServiceId != input.AssociateInstanceInfoServiceId || (this.AssociateInstanceInfoServiceId != null && input.AssociateInstanceInfoServiceId != null && !this.AssociateInstanceInfoServiceId.SequenceEqual(input.AssociateInstanceInfoServiceId))) return false;
+            if (this.AssociateInstanceInfoServiceType != input.AssociateInstanceInfoServiceType || (this.AssociateInstanceInfoServiceType != null && input.AssociateInstanceInfoServiceType != null && !this.AssociateInstanceInfoServiceType.SequenceEqual(input.AssociateInstanceInfoServiceType))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && input.EnterpriseProjectId != null && !this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
 
-            return 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.PageReverse == input.PageReverse ||
-                    (this.PageReverse != null &&
-                    this.PageReverse.Equals(input.PageReverse))
-                ) && 
-                (
-                    this.Fields == input.Fields ||
-                    this.Fields != null &&
-                    input.Fields != null &&
-                    this.Fields.SequenceEqual(input.Fields)
-                ) && 
-                (
-                    this.SortKey == input.SortKey ||
-                    this.SortKey != null &&
-                    input.SortKey != null &&
-                    this.SortKey.SequenceEqual(input.SortKey)
-                ) && 
-                (
-                    this.SortDir == input.SortDir ||
-                    this.SortDir != null &&
-                    input.SortDir != null &&
-                    this.SortDir.SequenceEqual(input.SortDir)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    this.Id != null &&
-                    input.Id != null &&
-                    this.Id.SequenceEqual(input.Id)
-                ) && 
-                (
-                    this.InternetBandwidthId == input.InternetBandwidthId ||
-                    this.InternetBandwidthId != null &&
-                    input.InternetBandwidthId != null &&
-                    this.InternetBandwidthId.SequenceEqual(input.InternetBandwidthId)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    this.Name != null &&
-                    input.Name != null &&
-                    this.Name.SequenceEqual(input.Name)
-                ) && 
-                (
-                    this.NameLike == input.NameLike ||
-                    (this.NameLike != null &&
-                    this.NameLike.Equals(input.NameLike))
-                ) && 
-                (
-                    this.AccessSite == input.AccessSite ||
-                    this.AccessSite != null &&
-                    input.AccessSite != null &&
-                    this.AccessSite.SequenceEqual(input.AccessSite)
-                ) && 
-                (
-                    this.GeipPoolName == input.GeipPoolName ||
-                    this.GeipPoolName != null &&
-                    input.GeipPoolName != null &&
-                    this.GeipPoolName.SequenceEqual(input.GeipPoolName)
-                ) && 
-                (
-                    this.Isp == input.Isp ||
-                    this.Isp != null &&
-                    input.Isp != null &&
-                    this.Isp.SequenceEqual(input.Isp)
-                ) && 
-                (
-                    this.IpVersion == input.IpVersion ||
-                    this.IpVersion != null &&
-                    input.IpVersion != null &&
-                    this.IpVersion.SequenceEqual(input.IpVersion)
-                ) && 
-                (
-                    this.IpAddress == input.IpAddress ||
-                    this.IpAddress != null &&
-                    input.IpAddress != null &&
-                    this.IpAddress.SequenceEqual(input.IpAddress)
-                ) && 
-                (
-                    this.Ipv6Address == input.Ipv6Address ||
-                    this.Ipv6Address != null &&
-                    input.Ipv6Address != null &&
-                    this.Ipv6Address.SequenceEqual(input.Ipv6Address)
-                ) && 
-                (
-                    this.Freezen == input.Freezen ||
-                    this.Freezen != null &&
-                    input.Freezen != null &&
-                    this.Freezen.SequenceEqual(input.Freezen)
-                ) && 
-                (
-                    this.Polluted == input.Polluted ||
-                    this.Polluted != null &&
-                    input.Polluted != null &&
-                    this.Polluted.SequenceEqual(input.Polluted)
-                ) && 
-                (
-                    this.InternetBandwidthIsNull == input.InternetBandwidthIsNull ||
-                    this.InternetBandwidthIsNull != null &&
-                    input.InternetBandwidthIsNull != null &&
-                    this.InternetBandwidthIsNull.SequenceEqual(input.InternetBandwidthIsNull)
-                ) && 
-                (
-                    this.GcbBandwidthIsNull == input.GcbBandwidthIsNull ||
-                    this.GcbBandwidthIsNull != null &&
-                    input.GcbBandwidthIsNull != null &&
-                    this.GcbBandwidthIsNull.SequenceEqual(input.GcbBandwidthIsNull)
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    this.Status != null &&
-                    input.Status != null &&
-                    this.Status.SequenceEqual(input.Status)
-                ) && 
-                (
-                    this.AssociateInstanceInfoRegion == input.AssociateInstanceInfoRegion ||
-                    this.AssociateInstanceInfoRegion != null &&
-                    input.AssociateInstanceInfoRegion != null &&
-                    this.AssociateInstanceInfoRegion.SequenceEqual(input.AssociateInstanceInfoRegion)
-                ) && 
-                (
-                    this.AssociateInstanceInfoInstanceType == input.AssociateInstanceInfoInstanceType ||
-                    this.AssociateInstanceInfoInstanceType != null &&
-                    input.AssociateInstanceInfoInstanceType != null &&
-                    this.AssociateInstanceInfoInstanceType.SequenceEqual(input.AssociateInstanceInfoInstanceType)
-                ) && 
-                (
-                    this.AssociateInstanceInfoPublicBorderGroup == input.AssociateInstanceInfoPublicBorderGroup ||
-                    this.AssociateInstanceInfoPublicBorderGroup != null &&
-                    input.AssociateInstanceInfoPublicBorderGroup != null &&
-                    this.AssociateInstanceInfoPublicBorderGroup.SequenceEqual(input.AssociateInstanceInfoPublicBorderGroup)
-                ) && 
-                (
-                    this.AssociateInstanceInfoInstanceSite == input.AssociateInstanceInfoInstanceSite ||
-                    this.AssociateInstanceInfoInstanceSite != null &&
-                    input.AssociateInstanceInfoInstanceSite != null &&
-                    this.AssociateInstanceInfoInstanceSite.SequenceEqual(input.AssociateInstanceInfoInstanceSite)
-                ) && 
-                (
-                    this.AssociateInstanceInfoInstanceId == input.AssociateInstanceInfoInstanceId ||
-                    this.AssociateInstanceInfoInstanceId != null &&
-                    input.AssociateInstanceInfoInstanceId != null &&
-                    this.AssociateInstanceInfoInstanceId.SequenceEqual(input.AssociateInstanceInfoInstanceId)
-                ) && 
-                (
-                    this.AssociateInstanceInfoProjectId == input.AssociateInstanceInfoProjectId ||
-                    this.AssociateInstanceInfoProjectId != null &&
-                    input.AssociateInstanceInfoProjectId != null &&
-                    this.AssociateInstanceInfoProjectId.SequenceEqual(input.AssociateInstanceInfoProjectId)
-                ) && 
-                (
-                    this.AssociateInstanceInfoServiceId == input.AssociateInstanceInfoServiceId ||
-                    this.AssociateInstanceInfoServiceId != null &&
-                    input.AssociateInstanceInfoServiceId != null &&
-                    this.AssociateInstanceInfoServiceId.SequenceEqual(input.AssociateInstanceInfoServiceId)
-                ) && 
-                (
-                    this.AssociateInstanceInfoServiceType == input.AssociateInstanceInfoServiceType ||
-                    this.AssociateInstanceInfoServiceType != null &&
-                    input.AssociateInstanceInfoServiceType != null &&
-                    this.AssociateInstanceInfoServiceType.SequenceEqual(input.AssociateInstanceInfoServiceType)
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    this.EnterpriseProjectId != null &&
-                    input.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId)
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                );
+            return true;
         }
 
         /// <summary>
@@ -1218,71 +1062,39 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.PageReverse != null)
-                    hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
-                if (this.Fields != null)
-                    hashCode = hashCode * 59 + this.Fields.GetHashCode();
-                if (this.SortKey != null)
-                    hashCode = hashCode * 59 + this.SortKey.GetHashCode();
-                if (this.SortDir != null)
-                    hashCode = hashCode * 59 + this.SortDir.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.InternetBandwidthId != null)
-                    hashCode = hashCode * 59 + this.InternetBandwidthId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.NameLike != null)
-                    hashCode = hashCode * 59 + this.NameLike.GetHashCode();
-                if (this.AccessSite != null)
-                    hashCode = hashCode * 59 + this.AccessSite.GetHashCode();
-                if (this.GeipPoolName != null)
-                    hashCode = hashCode * 59 + this.GeipPoolName.GetHashCode();
-                if (this.Isp != null)
-                    hashCode = hashCode * 59 + this.Isp.GetHashCode();
-                if (this.IpVersion != null)
-                    hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
-                if (this.IpAddress != null)
-                    hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
-                if (this.Ipv6Address != null)
-                    hashCode = hashCode * 59 + this.Ipv6Address.GetHashCode();
-                if (this.Freezen != null)
-                    hashCode = hashCode * 59 + this.Freezen.GetHashCode();
-                if (this.Polluted != null)
-                    hashCode = hashCode * 59 + this.Polluted.GetHashCode();
-                if (this.InternetBandwidthIsNull != null)
-                    hashCode = hashCode * 59 + this.InternetBandwidthIsNull.GetHashCode();
-                if (this.GcbBandwidthIsNull != null)
-                    hashCode = hashCode * 59 + this.GcbBandwidthIsNull.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.AssociateInstanceInfoRegion != null)
-                    hashCode = hashCode * 59 + this.AssociateInstanceInfoRegion.GetHashCode();
-                if (this.AssociateInstanceInfoInstanceType != null)
-                    hashCode = hashCode * 59 + this.AssociateInstanceInfoInstanceType.GetHashCode();
-                if (this.AssociateInstanceInfoPublicBorderGroup != null)
-                    hashCode = hashCode * 59 + this.AssociateInstanceInfoPublicBorderGroup.GetHashCode();
-                if (this.AssociateInstanceInfoInstanceSite != null)
-                    hashCode = hashCode * 59 + this.AssociateInstanceInfoInstanceSite.GetHashCode();
-                if (this.AssociateInstanceInfoInstanceId != null)
-                    hashCode = hashCode * 59 + this.AssociateInstanceInfoInstanceId.GetHashCode();
-                if (this.AssociateInstanceInfoProjectId != null)
-                    hashCode = hashCode * 59 + this.AssociateInstanceInfoProjectId.GetHashCode();
-                if (this.AssociateInstanceInfoServiceId != null)
-                    hashCode = hashCode * 59 + this.AssociateInstanceInfoServiceId.GetHashCode();
-                if (this.AssociateInstanceInfoServiceType != null)
-                    hashCode = hashCode * 59 + this.AssociateInstanceInfoServiceType.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                var hashCode = 41;
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.PageReverse != null) hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
+                hashCode = hashCode * 59 + this.Fields.GetHashCode();
+                hashCode = hashCode * 59 + this.SortKey.GetHashCode();
+                hashCode = hashCode * 59 + this.SortDir.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.InternetBandwidthId != null) hashCode = hashCode * 59 + this.InternetBandwidthId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.NameLike != null) hashCode = hashCode * 59 + this.NameLike.GetHashCode();
+                if (this.AccessSite != null) hashCode = hashCode * 59 + this.AccessSite.GetHashCode();
+                if (this.GeipPoolName != null) hashCode = hashCode * 59 + this.GeipPoolName.GetHashCode();
+                if (this.Isp != null) hashCode = hashCode * 59 + this.Isp.GetHashCode();
+                hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
+                if (this.IpAddress != null) hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
+                if (this.Ipv6Address != null) hashCode = hashCode * 59 + this.Ipv6Address.GetHashCode();
+                if (this.Freezen != null) hashCode = hashCode * 59 + this.Freezen.GetHashCode();
+                if (this.Polluted != null) hashCode = hashCode * 59 + this.Polluted.GetHashCode();
+                if (this.InternetBandwidthIsNull != null) hashCode = hashCode * 59 + this.InternetBandwidthIsNull.GetHashCode();
+                if (this.GcbBandwidthIsNull != null) hashCode = hashCode * 59 + this.GcbBandwidthIsNull.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.AssociateInstanceInfoRegion != null) hashCode = hashCode * 59 + this.AssociateInstanceInfoRegion.GetHashCode();
+                if (this.AssociateInstanceInfoInstanceType != null) hashCode = hashCode * 59 + this.AssociateInstanceInfoInstanceType.GetHashCode();
+                if (this.AssociateInstanceInfoPublicBorderGroup != null) hashCode = hashCode * 59 + this.AssociateInstanceInfoPublicBorderGroup.GetHashCode();
+                if (this.AssociateInstanceInfoInstanceSite != null) hashCode = hashCode * 59 + this.AssociateInstanceInfoInstanceSite.GetHashCode();
+                if (this.AssociateInstanceInfoInstanceId != null) hashCode = hashCode * 59 + this.AssociateInstanceInfoInstanceId.GetHashCode();
+                if (this.AssociateInstanceInfoProjectId != null) hashCode = hashCode * 59 + this.AssociateInstanceInfoProjectId.GetHashCode();
+                if (this.AssociateInstanceInfoServiceId != null) hashCode = hashCode * 59 + this.AssociateInstanceInfoServiceId.GetHashCode();
+                if (this.AssociateInstanceInfoServiceType != null) hashCode = hashCode * 59 + this.AssociateInstanceInfoServiceType.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

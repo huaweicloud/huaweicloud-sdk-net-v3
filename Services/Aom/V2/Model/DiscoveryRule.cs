@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(DiscoveryRule input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CheckContent != input.CheckContent || (this.CheckContent != null && input.CheckContent != null && !this.CheckContent.SequenceEqual(input.CheckContent))) return false;
+            if (this.CheckMode != input.CheckMode || (this.CheckMode != null && !this.CheckMode.Equals(input.CheckMode))) return false;
+            if (this.CheckType != input.CheckType || (this.CheckType != null && !this.CheckType.Equals(input.CheckType))) return false;
 
-            return 
-                (
-                    this.CheckContent == input.CheckContent ||
-                    this.CheckContent != null &&
-                    input.CheckContent != null &&
-                    this.CheckContent.SequenceEqual(input.CheckContent)
-                ) && 
-                (
-                    this.CheckMode == input.CheckMode ||
-                    (this.CheckMode != null &&
-                    this.CheckMode.Equals(input.CheckMode))
-                ) && 
-                (
-                    this.CheckType == input.CheckType ||
-                    (this.CheckType != null &&
-                    this.CheckType.Equals(input.CheckType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CheckContent != null)
-                    hashCode = hashCode * 59 + this.CheckContent.GetHashCode();
-                if (this.CheckMode != null)
-                    hashCode = hashCode * 59 + this.CheckMode.GetHashCode();
-                if (this.CheckType != null)
-                    hashCode = hashCode * 59 + this.CheckType.GetHashCode();
+                var hashCode = 41;
+                if (this.CheckContent != null) hashCode = hashCode * 59 + this.CheckContent.GetHashCode();
+                if (this.CheckMode != null) hashCode = hashCode * 59 + this.CheckMode.GetHashCode();
+                if (this.CheckType != null) hashCode = hashCode * 59 + this.CheckType.GetHashCode();
                 return hashCode;
             }
         }

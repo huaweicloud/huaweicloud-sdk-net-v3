@@ -63,27 +63,12 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public bool Equals(OutPutInfoResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PackageInfo != input.PackageInfo || (this.PackageInfo != null && !this.PackageInfo.Equals(input.PackageInfo))) return false;
+            if (this.PackageInfos != input.PackageInfos || (this.PackageInfos != null && input.PackageInfos != null && !this.PackageInfos.SequenceEqual(input.PackageInfos))) return false;
+            if (this.ImageInfos != input.ImageInfos || (this.ImageInfos != null && input.ImageInfos != null && !this.ImageInfos.SequenceEqual(input.ImageInfos))) return false;
 
-            return 
-                (
-                    this.PackageInfo == input.PackageInfo ||
-                    (this.PackageInfo != null &&
-                    this.PackageInfo.Equals(input.PackageInfo))
-                ) && 
-                (
-                    this.PackageInfos == input.PackageInfos ||
-                    this.PackageInfos != null &&
-                    input.PackageInfos != null &&
-                    this.PackageInfos.SequenceEqual(input.PackageInfos)
-                ) && 
-                (
-                    this.ImageInfos == input.ImageInfos ||
-                    this.ImageInfos != null &&
-                    input.ImageInfos != null &&
-                    this.ImageInfos.SequenceEqual(input.ImageInfos)
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +78,10 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PackageInfo != null)
-                    hashCode = hashCode * 59 + this.PackageInfo.GetHashCode();
-                if (this.PackageInfos != null)
-                    hashCode = hashCode * 59 + this.PackageInfos.GetHashCode();
-                if (this.ImageInfos != null)
-                    hashCode = hashCode * 59 + this.ImageInfos.GetHashCode();
+                var hashCode = 41;
+                if (this.PackageInfo != null) hashCode = hashCode * 59 + this.PackageInfo.GetHashCode();
+                if (this.PackageInfos != null) hashCode = hashCode * 59 + this.PackageInfos.GetHashCode();
+                if (this.ImageInfos != null) hashCode = hashCode * 59 + this.ImageInfos.GetHashCode();
                 return hashCode;
             }
         }

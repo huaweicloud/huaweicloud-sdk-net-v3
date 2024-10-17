@@ -191,35 +191,14 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(PublicipInfoResponseBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PublicipAddress != input.PublicipAddress || (this.PublicipAddress != null && !this.PublicipAddress.Equals(input.PublicipAddress))) return false;
+            if (this.PublicipId != input.PublicipId || (this.PublicipId != null && !this.PublicipId.Equals(input.PublicipId))) return false;
+            if (this.PublicipType != input.PublicipType || (this.PublicipType != null && !this.PublicipType.Equals(input.PublicipType))) return false;
+            if (this.Publicipv6Address != input.Publicipv6Address || (this.Publicipv6Address != null && !this.Publicipv6Address.Equals(input.Publicipv6Address))) return false;
+            if (this.IpVersion != input.IpVersion) return false;
 
-            return 
-                (
-                    this.PublicipAddress == input.PublicipAddress ||
-                    (this.PublicipAddress != null &&
-                    this.PublicipAddress.Equals(input.PublicipAddress))
-                ) && 
-                (
-                    this.PublicipId == input.PublicipId ||
-                    (this.PublicipId != null &&
-                    this.PublicipId.Equals(input.PublicipId))
-                ) && 
-                (
-                    this.PublicipType == input.PublicipType ||
-                    (this.PublicipType != null &&
-                    this.PublicipType.Equals(input.PublicipType))
-                ) && 
-                (
-                    this.Publicipv6Address == input.Publicipv6Address ||
-                    (this.Publicipv6Address != null &&
-                    this.Publicipv6Address.Equals(input.Publicipv6Address))
-                ) && 
-                (
-                    this.IpVersion == input.IpVersion ||
-                    (this.IpVersion != null &&
-                    this.IpVersion.Equals(input.IpVersion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -229,17 +208,12 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PublicipAddress != null)
-                    hashCode = hashCode * 59 + this.PublicipAddress.GetHashCode();
-                if (this.PublicipId != null)
-                    hashCode = hashCode * 59 + this.PublicipId.GetHashCode();
-                if (this.PublicipType != null)
-                    hashCode = hashCode * 59 + this.PublicipType.GetHashCode();
-                if (this.Publicipv6Address != null)
-                    hashCode = hashCode * 59 + this.Publicipv6Address.GetHashCode();
-                if (this.IpVersion != null)
-                    hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
+                var hashCode = 41;
+                if (this.PublicipAddress != null) hashCode = hashCode * 59 + this.PublicipAddress.GetHashCode();
+                if (this.PublicipId != null) hashCode = hashCode * 59 + this.PublicipId.GetHashCode();
+                if (this.PublicipType != null) hashCode = hashCode * 59 + this.PublicipType.GetHashCode();
+                if (this.Publicipv6Address != null) hashCode = hashCode * 59 + this.Publicipv6Address.GetHashCode();
+                hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
                 return hashCode;
             }
         }

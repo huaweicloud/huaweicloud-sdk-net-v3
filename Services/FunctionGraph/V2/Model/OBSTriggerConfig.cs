@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(OBSTriggerConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Bucket != input.Bucket || (this.Bucket != null && !this.Bucket.Equals(input.Bucket))) return false;
+            if (this.Events != input.Events || (this.Events != null && input.Events != null && !this.Events.SequenceEqual(input.Events))) return false;
+            if (this.Prefix != input.Prefix || (this.Prefix != null && !this.Prefix.Equals(input.Prefix))) return false;
+            if (this.Suffix != input.Suffix || (this.Suffix != null && !this.Suffix.Equals(input.Suffix))) return false;
 
-            return 
-                (
-                    this.Bucket == input.Bucket ||
-                    (this.Bucket != null &&
-                    this.Bucket.Equals(input.Bucket))
-                ) && 
-                (
-                    this.Events == input.Events ||
-                    this.Events != null &&
-                    input.Events != null &&
-                    this.Events.SequenceEqual(input.Events)
-                ) && 
-                (
-                    this.Prefix == input.Prefix ||
-                    (this.Prefix != null &&
-                    this.Prefix.Equals(input.Prefix))
-                ) && 
-                (
-                    this.Suffix == input.Suffix ||
-                    (this.Suffix != null &&
-                    this.Suffix.Equals(input.Suffix))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Bucket != null)
-                    hashCode = hashCode * 59 + this.Bucket.GetHashCode();
-                if (this.Events != null)
-                    hashCode = hashCode * 59 + this.Events.GetHashCode();
-                if (this.Prefix != null)
-                    hashCode = hashCode * 59 + this.Prefix.GetHashCode();
-                if (this.Suffix != null)
-                    hashCode = hashCode * 59 + this.Suffix.GetHashCode();
+                var hashCode = 41;
+                if (this.Bucket != null) hashCode = hashCode * 59 + this.Bucket.GetHashCode();
+                if (this.Events != null) hashCode = hashCode * 59 + this.Events.GetHashCode();
+                if (this.Prefix != null) hashCode = hashCode * 59 + this.Prefix.GetHashCode();
+                if (this.Suffix != null) hashCode = hashCode * 59 + this.Suffix.GetHashCode();
                 return hashCode;
             }
         }

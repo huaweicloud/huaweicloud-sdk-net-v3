@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(DeleteSqlFilterRuleReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SqlFilterRules != input.SqlFilterRules || (this.SqlFilterRules != null && input.SqlFilterRules != null && !this.SqlFilterRules.SequenceEqual(input.SqlFilterRules))) return false;
 
-            return 
-                (
-                    this.SqlFilterRules == input.SqlFilterRules ||
-                    this.SqlFilterRules != null &&
-                    input.SqlFilterRules != null &&
-                    this.SqlFilterRules.SequenceEqual(input.SqlFilterRules)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SqlFilterRules != null)
-                    hashCode = hashCode * 59 + this.SqlFilterRules.GetHashCode();
+                var hashCode = 41;
+                if (this.SqlFilterRules != null) hashCode = hashCode * 59 + this.SqlFilterRules.GetHashCode();
                 return hashCode;
             }
         }

@@ -454,60 +454,19 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         /// </summary>
         public bool Equals(MixLayoutPane input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.UserId != input.UserId || (this.UserId != null && !this.UserId.Equals(input.UserId))) return false;
+            if (this.VideoType != input.VideoType) return false;
+            if (this.X != input.X || (this.X != null && !this.X.Equals(input.X))) return false;
+            if (this.Y != input.Y || (this.Y != null && !this.Y.Equals(input.Y))) return false;
+            if (this.Width != input.Width || (this.Width != null && !this.Width.Equals(input.Width))) return false;
+            if (this.Height != input.Height || (this.Height != null && !this.Height.Equals(input.Height))) return false;
+            if (this.Zorder != input.Zorder || (this.Zorder != null && !this.Zorder.Equals(input.Zorder))) return false;
+            if (this.CropMode != input.CropMode) return false;
+            if (this.FillingPolicy != input.FillingPolicy) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
-                ) && 
-                (
-                    this.VideoType == input.VideoType ||
-                    (this.VideoType != null &&
-                    this.VideoType.Equals(input.VideoType))
-                ) && 
-                (
-                    this.X == input.X ||
-                    (this.X != null &&
-                    this.X.Equals(input.X))
-                ) && 
-                (
-                    this.Y == input.Y ||
-                    (this.Y != null &&
-                    this.Y.Equals(input.Y))
-                ) && 
-                (
-                    this.Width == input.Width ||
-                    (this.Width != null &&
-                    this.Width.Equals(input.Width))
-                ) && 
-                (
-                    this.Height == input.Height ||
-                    (this.Height != null &&
-                    this.Height.Equals(input.Height))
-                ) && 
-                (
-                    this.Zorder == input.Zorder ||
-                    (this.Zorder != null &&
-                    this.Zorder.Equals(input.Zorder))
-                ) && 
-                (
-                    this.CropMode == input.CropMode ||
-                    (this.CropMode != null &&
-                    this.CropMode.Equals(input.CropMode))
-                ) && 
-                (
-                    this.FillingPolicy == input.FillingPolicy ||
-                    (this.FillingPolicy != null &&
-                    this.FillingPolicy.Equals(input.FillingPolicy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -517,27 +476,17 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.VideoType != null)
-                    hashCode = hashCode * 59 + this.VideoType.GetHashCode();
-                if (this.X != null)
-                    hashCode = hashCode * 59 + this.X.GetHashCode();
-                if (this.Y != null)
-                    hashCode = hashCode * 59 + this.Y.GetHashCode();
-                if (this.Width != null)
-                    hashCode = hashCode * 59 + this.Width.GetHashCode();
-                if (this.Height != null)
-                    hashCode = hashCode * 59 + this.Height.GetHashCode();
-                if (this.Zorder != null)
-                    hashCode = hashCode * 59 + this.Zorder.GetHashCode();
-                if (this.CropMode != null)
-                    hashCode = hashCode * 59 + this.CropMode.GetHashCode();
-                if (this.FillingPolicy != null)
-                    hashCode = hashCode * 59 + this.FillingPolicy.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.UserId != null) hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                hashCode = hashCode * 59 + this.VideoType.GetHashCode();
+                if (this.X != null) hashCode = hashCode * 59 + this.X.GetHashCode();
+                if (this.Y != null) hashCode = hashCode * 59 + this.Y.GetHashCode();
+                if (this.Width != null) hashCode = hashCode * 59 + this.Width.GetHashCode();
+                if (this.Height != null) hashCode = hashCode * 59 + this.Height.GetHashCode();
+                if (this.Zorder != null) hashCode = hashCode * 59 + this.Zorder.GetHashCode();
+                hashCode = hashCode * 59 + this.CropMode.GetHashCode();
+                hashCode = hashCode * 59 + this.FillingPolicy.GetHashCode();
                 return hashCode;
             }
         }

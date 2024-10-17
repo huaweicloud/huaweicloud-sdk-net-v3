@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(UpgradeInfoStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Phase != input.Phase || (this.Phase != null && !this.Phase.Equals(input.Phase))) return false;
+            if (this.Progress != input.Progress || (this.Progress != null && !this.Progress.Equals(input.Progress))) return false;
+            if (this.CompletionTime != input.CompletionTime || (this.CompletionTime != null && !this.CompletionTime.Equals(input.CompletionTime))) return false;
 
-            return 
-                (
-                    this.Phase == input.Phase ||
-                    (this.Phase != null &&
-                    this.Phase.Equals(input.Phase))
-                ) && 
-                (
-                    this.Progress == input.Progress ||
-                    (this.Progress != null &&
-                    this.Progress.Equals(input.Progress))
-                ) && 
-                (
-                    this.CompletionTime == input.CompletionTime ||
-                    (this.CompletionTime != null &&
-                    this.CompletionTime.Equals(input.CompletionTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Phase != null)
-                    hashCode = hashCode * 59 + this.Phase.GetHashCode();
-                if (this.Progress != null)
-                    hashCode = hashCode * 59 + this.Progress.GetHashCode();
-                if (this.CompletionTime != null)
-                    hashCode = hashCode * 59 + this.CompletionTime.GetHashCode();
+                var hashCode = 41;
+                if (this.Phase != null) hashCode = hashCode * 59 + this.Phase.GetHashCode();
+                if (this.Progress != null) hashCode = hashCode * 59 + this.Progress.GetHashCode();
+                if (this.CompletionTime != null) hashCode = hashCode * 59 + this.CompletionTime.GetHashCode();
                 return hashCode;
             }
         }

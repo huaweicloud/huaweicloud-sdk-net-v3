@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ListUpgradeHistoriesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
+            if (this.UpgradeReports != input.UpgradeReports || (this.UpgradeReports != null && input.UpgradeReports != null && !this.UpgradeReports.SequenceEqual(input.UpgradeReports))) return false;
 
-            return 
-                (
-                    this.TotalCount == input.TotalCount ||
-                    (this.TotalCount != null &&
-                    this.TotalCount.Equals(input.TotalCount))
-                ) && 
-                (
-                    this.UpgradeReports == input.UpgradeReports ||
-                    this.UpgradeReports != null &&
-                    input.UpgradeReports != null &&
-                    this.UpgradeReports.SequenceEqual(input.UpgradeReports)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TotalCount != null)
-                    hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
-                if (this.UpgradeReports != null)
-                    hashCode = hashCode * 59 + this.UpgradeReports.GetHashCode();
+                var hashCode = 41;
+                if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
+                if (this.UpgradeReports != null) hashCode = hashCode * 59 + this.UpgradeReports.GetHashCode();
                 return hashCode;
             }
         }

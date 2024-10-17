@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(OnError input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Error != input.Error || (this.Error != null && !this.Error.Equals(input.Error))) return false;
+            if (this.Transition != input.Transition || (this.Transition != null && !this.Transition.Equals(input.Transition))) return false;
+            if (this.RetryRef != input.RetryRef || (this.RetryRef != null && !this.RetryRef.Equals(input.RetryRef))) return false;
 
-            return 
-                (
-                    this.Error == input.Error ||
-                    (this.Error != null &&
-                    this.Error.Equals(input.Error))
-                ) && 
-                (
-                    this.Transition == input.Transition ||
-                    (this.Transition != null &&
-                    this.Transition.Equals(input.Transition))
-                ) && 
-                (
-                    this.RetryRef == input.RetryRef ||
-                    (this.RetryRef != null &&
-                    this.RetryRef.Equals(input.RetryRef))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Error != null)
-                    hashCode = hashCode * 59 + this.Error.GetHashCode();
-                if (this.Transition != null)
-                    hashCode = hashCode * 59 + this.Transition.GetHashCode();
-                if (this.RetryRef != null)
-                    hashCode = hashCode * 59 + this.RetryRef.GetHashCode();
+                var hashCode = 41;
+                if (this.Error != null) hashCode = hashCode * 59 + this.Error.GetHashCode();
+                if (this.Transition != null) hashCode = hashCode * 59 + this.Transition.GetHashCode();
+                if (this.RetryRef != null) hashCode = hashCode * 59 + this.RetryRef.GetHashCode();
                 return hashCode;
             }
         }

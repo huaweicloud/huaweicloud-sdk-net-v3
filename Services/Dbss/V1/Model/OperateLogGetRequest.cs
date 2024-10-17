@@ -15,6 +15,248 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     /// </summary>
     public class OperateLogGetRequest 
     {
+        /// <summary>
+        /// 动作名称 - CREATE - DELETE - DOWNLOAD - UPDATE
+        /// </summary>
+        /// <value>动作名称 - CREATE - DELETE - DOWNLOAD - UPDATE</value>
+        [JsonConverter(typeof(EnumClassConverter<ActionEnum>))]
+        public class ActionEnum
+        {
+            /// <summary>
+            /// Enum CREATE for value: CREATE
+            /// </summary>
+            public static readonly ActionEnum CREATE = new ActionEnum("CREATE");
+
+            /// <summary>
+            /// Enum DELETE for value: DELETE
+            /// </summary>
+            public static readonly ActionEnum DELETE = new ActionEnum("DELETE");
+
+            /// <summary>
+            /// Enum DOWNLOAD for value: DOWNLOAD
+            /// </summary>
+            public static readonly ActionEnum DOWNLOAD = new ActionEnum("DOWNLOAD");
+
+            /// <summary>
+            /// Enum UPDATE for value: UPDATE
+            /// </summary>
+            public static readonly ActionEnum UPDATE = new ActionEnum("UPDATE");
+
+            private static readonly Dictionary<string, ActionEnum> StaticFields =
+            new Dictionary<string, ActionEnum>()
+            {
+                { "CREATE", CREATE },
+                { "DELETE", DELETE },
+                { "DOWNLOAD", DOWNLOAD },
+                { "UPDATE", UPDATE },
+            };
+
+            private string _value;
+
+            public ActionEnum()
+            {
+
+            }
+
+            public ActionEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ActionEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ActionEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ActionEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ActionEnum a, ActionEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ActionEnum a, ActionEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
+        /// <summary>
+        /// 执行结果 - success - fail
+        /// </summary>
+        /// <value>执行结果 - success - fail</value>
+        [JsonConverter(typeof(EnumClassConverter<ResultEnum>))]
+        public class ResultEnum
+        {
+            /// <summary>
+            /// Enum SUCCESS for value: success
+            /// </summary>
+            public static readonly ResultEnum SUCCESS = new ResultEnum("success");
+
+            /// <summary>
+            /// Enum FAIL for value: fail
+            /// </summary>
+            public static readonly ResultEnum FAIL = new ResultEnum("fail");
+
+            private static readonly Dictionary<string, ResultEnum> StaticFields =
+            new Dictionary<string, ResultEnum>()
+            {
+                { "success", SUCCESS },
+                { "fail", FAIL },
+            };
+
+            private string _value;
+
+            public ResultEnum()
+            {
+
+            }
+
+            public ResultEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ResultEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ResultEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ResultEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ResultEnum a, ResultEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ResultEnum a, ResultEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
         /// 
@@ -23,23 +265,21 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public TimeRangeBean Time { get; set; }
 
         /// <summary>
-        /// 筛选角色用户获取操作日志
+        /// 操作日志用户名
         /// </summary>
         [JsonProperty("user_name", NullValueHandling = NullValueHandling.Ignore)]
         public string UserName { get; set; }
 
         /// <summary>
-        /// 筛选操作对象名称获取操作日志
+        /// 动作名称 - CREATE - DELETE - DOWNLOAD - UPDATE
         /// </summary>
-        [JsonProperty("operate_name", NullValueHandling = NullValueHandling.Ignore)]
-        public string OperateName { get; set; }
-
+        [JsonProperty("action", NullValueHandling = NullValueHandling.Ignore)]
+        public ActionEnum Action { get; set; }
         /// <summary>
-        /// 根据执行结果获取操作日志 [success, fail]
+        /// 执行结果 - success - fail
         /// </summary>
         [JsonProperty("result", NullValueHandling = NullValueHandling.Ignore)]
-        public string Result { get; set; }
-
+        public ResultEnum Result { get; set; }
         /// <summary>
         /// 页数
         /// </summary>
@@ -63,7 +303,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             sb.Append("class OperateLogGetRequest {\n");
             sb.Append("  time: ").Append(Time).Append("\n");
             sb.Append("  userName: ").Append(UserName).Append("\n");
-            sb.Append("  operateName: ").Append(OperateName).Append("\n");
+            sb.Append("  action: ").Append(Action).Append("\n");
             sb.Append("  result: ").Append(Result).Append("\n");
             sb.Append("  page: ").Append(Page).Append("\n");
             sb.Append("  size: ").Append(Size).Append("\n");
@@ -84,40 +324,15 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         public bool Equals(OperateLogGetRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
+            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.Action != input.Action) return false;
+            if (this.Result != input.Result) return false;
+            if (this.Page != input.Page || (this.Page != null && !this.Page.Equals(input.Page))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
 
-            return 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                ) && 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.OperateName == input.OperateName ||
-                    (this.OperateName != null &&
-                    this.OperateName.Equals(input.OperateName))
-                ) && 
-                (
-                    this.Result == input.Result ||
-                    (this.Result != null &&
-                    this.Result.Equals(input.Result))
-                ) && 
-                (
-                    this.Page == input.Page ||
-                    (this.Page != null &&
-                    this.Page.Equals(input.Page))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +342,13 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.UserName != null)
-                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.OperateName != null)
-                    hashCode = hashCode * 59 + this.OperateName.GetHashCode();
-                if (this.Result != null)
-                    hashCode = hashCode * 59 + this.Result.GetHashCode();
-                if (this.Page != null)
-                    hashCode = hashCode * 59 + this.Page.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
+                var hashCode = 41;
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
+                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                hashCode = hashCode * 59 + this.Action.GetHashCode();
+                hashCode = hashCode * 59 + this.Result.GetHashCode();
+                if (this.Page != null) hashCode = hashCode * 59 + this.Page.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
                 return hashCode;
             }
         }

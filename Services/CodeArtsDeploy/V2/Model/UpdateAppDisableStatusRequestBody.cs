@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(UpdateAppDisableStatusRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IsDisable != input.IsDisable || (this.IsDisable != null && !this.IsDisable.Equals(input.IsDisable))) return false;
 
-            return 
-                (
-                    this.IsDisable == input.IsDisable ||
-                    (this.IsDisable != null &&
-                    this.IsDisable.Equals(input.IsDisable))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IsDisable != null)
-                    hashCode = hashCode * 59 + this.IsDisable.GetHashCode();
+                var hashCode = 41;
+                if (this.IsDisable != null) hashCode = hashCode * 59 + this.IsDisable.GetHashCode();
                 return hashCode;
             }
         }

@@ -147,86 +147,24 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         /// </summary>
         public bool Equals(ScriptVersion input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Content != input.Content || (this.Content != null && !this.Content.Equals(input.Content))) return false;
+            if (this.CreateBy != input.CreateBy || (this.CreateBy != null && !this.CreateBy.Equals(input.CreateBy))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.JobReferenceNumber != input.JobReferenceNumber || (this.JobReferenceNumber != null && !this.JobReferenceNumber.Equals(input.JobReferenceNumber))) return false;
+            if (this.ScriptId != input.ScriptId || (this.ScriptId != null && !this.ScriptId.Equals(input.ScriptId))) return false;
+            if (this.ScriptLanguage != input.ScriptLanguage || (this.ScriptLanguage != null && !this.ScriptLanguage.Equals(input.ScriptLanguage))) return false;
+            if (this.StatusDesc != input.StatusDesc || (this.StatusDesc != null && !this.StatusDesc.Equals(input.StatusDesc))) return false;
+            if (this.UpdateBy != input.UpdateBy || (this.UpdateBy != null && !this.UpdateBy.Equals(input.UpdateBy))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.VersionId != input.VersionId || (this.VersionId != null && !this.VersionId.Equals(input.VersionId))) return false;
+            if (this.VersionNumber != input.VersionNumber || (this.VersionNumber != null && !this.VersionNumber.Equals(input.VersionNumber))) return false;
+            if (this.JobReferenceName != input.JobReferenceName || (this.JobReferenceName != null && input.JobReferenceName != null && !this.JobReferenceName.SequenceEqual(input.JobReferenceName))) return false;
 
-            return 
-                (
-                    this.Content == input.Content ||
-                    (this.Content != null &&
-                    this.Content.Equals(input.Content))
-                ) && 
-                (
-                    this.CreateBy == input.CreateBy ||
-                    (this.CreateBy != null &&
-                    this.CreateBy.Equals(input.CreateBy))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.JobReferenceNumber == input.JobReferenceNumber ||
-                    (this.JobReferenceNumber != null &&
-                    this.JobReferenceNumber.Equals(input.JobReferenceNumber))
-                ) && 
-                (
-                    this.ScriptId == input.ScriptId ||
-                    (this.ScriptId != null &&
-                    this.ScriptId.Equals(input.ScriptId))
-                ) && 
-                (
-                    this.ScriptLanguage == input.ScriptLanguage ||
-                    (this.ScriptLanguage != null &&
-                    this.ScriptLanguage.Equals(input.ScriptLanguage))
-                ) && 
-                (
-                    this.StatusDesc == input.StatusDesc ||
-                    (this.StatusDesc != null &&
-                    this.StatusDesc.Equals(input.StatusDesc))
-                ) && 
-                (
-                    this.UpdateBy == input.UpdateBy ||
-                    (this.UpdateBy != null &&
-                    this.UpdateBy.Equals(input.UpdateBy))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.VersionId == input.VersionId ||
-                    (this.VersionId != null &&
-                    this.VersionId.Equals(input.VersionId))
-                ) && 
-                (
-                    this.VersionNumber == input.VersionNumber ||
-                    (this.VersionNumber != null &&
-                    this.VersionNumber.Equals(input.VersionNumber))
-                ) && 
-                (
-                    this.JobReferenceName == input.JobReferenceName ||
-                    this.JobReferenceName != null &&
-                    input.JobReferenceName != null &&
-                    this.JobReferenceName.SequenceEqual(input.JobReferenceName)
-                );
+            return true;
         }
 
         /// <summary>
@@ -236,37 +174,22 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Content != null)
-                    hashCode = hashCode * 59 + this.Content.GetHashCode();
-                if (this.CreateBy != null)
-                    hashCode = hashCode * 59 + this.CreateBy.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.JobReferenceNumber != null)
-                    hashCode = hashCode * 59 + this.JobReferenceNumber.GetHashCode();
-                if (this.ScriptId != null)
-                    hashCode = hashCode * 59 + this.ScriptId.GetHashCode();
-                if (this.ScriptLanguage != null)
-                    hashCode = hashCode * 59 + this.ScriptLanguage.GetHashCode();
-                if (this.StatusDesc != null)
-                    hashCode = hashCode * 59 + this.StatusDesc.GetHashCode();
-                if (this.UpdateBy != null)
-                    hashCode = hashCode * 59 + this.UpdateBy.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.VersionId != null)
-                    hashCode = hashCode * 59 + this.VersionId.GetHashCode();
-                if (this.VersionNumber != null)
-                    hashCode = hashCode * 59 + this.VersionNumber.GetHashCode();
-                if (this.JobReferenceName != null)
-                    hashCode = hashCode * 59 + this.JobReferenceName.GetHashCode();
+                var hashCode = 41;
+                if (this.Content != null) hashCode = hashCode * 59 + this.Content.GetHashCode();
+                if (this.CreateBy != null) hashCode = hashCode * 59 + this.CreateBy.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.JobReferenceNumber != null) hashCode = hashCode * 59 + this.JobReferenceNumber.GetHashCode();
+                if (this.ScriptId != null) hashCode = hashCode * 59 + this.ScriptId.GetHashCode();
+                if (this.ScriptLanguage != null) hashCode = hashCode * 59 + this.ScriptLanguage.GetHashCode();
+                if (this.StatusDesc != null) hashCode = hashCode * 59 + this.StatusDesc.GetHashCode();
+                if (this.UpdateBy != null) hashCode = hashCode * 59 + this.UpdateBy.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.VersionId != null) hashCode = hashCode * 59 + this.VersionId.GetHashCode();
+                if (this.VersionNumber != null) hashCode = hashCode * 59 + this.VersionNumber.GetHashCode();
+                if (this.JobReferenceName != null) hashCode = hashCode * 59 + this.JobReferenceName.GetHashCode();
                 return hashCode;
             }
         }

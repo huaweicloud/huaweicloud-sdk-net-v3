@@ -325,45 +325,16 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(InstancesResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceName != input.InstanceName || (this.InstanceName != null && !this.InstanceName.Equals(input.InstanceName))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.VolumeType != input.VolumeType || (this.VolumeType != null && !this.VolumeType.Equals(input.VolumeType))) return false;
+            if (this.DataVolumeSize != input.DataVolumeSize || (this.DataVolumeSize != null && !this.DataVolumeSize.Equals(input.DataVolumeSize))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.Mode != input.Mode) return false;
+            if (this.InstanceMode != input.InstanceMode) return false;
 
-            return 
-                (
-                    this.InstanceName == input.InstanceName ||
-                    (this.InstanceName != null &&
-                    this.InstanceName.Equals(input.InstanceName))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.VolumeType == input.VolumeType ||
-                    (this.VolumeType != null &&
-                    this.VolumeType.Equals(input.VolumeType))
-                ) && 
-                (
-                    this.DataVolumeSize == input.DataVolumeSize ||
-                    (this.DataVolumeSize != null &&
-                    this.DataVolumeSize.Equals(input.DataVolumeSize))
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.Mode == input.Mode ||
-                    (this.Mode != null &&
-                    this.Mode.Equals(input.Mode))
-                ) && 
-                (
-                    this.InstanceMode == input.InstanceMode ||
-                    (this.InstanceMode != null &&
-                    this.InstanceMode.Equals(input.InstanceMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -373,21 +344,14 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceName != null)
-                    hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.VolumeType != null)
-                    hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
-                if (this.DataVolumeSize != null)
-                    hashCode = hashCode * 59 + this.DataVolumeSize.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.Mode != null)
-                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
-                if (this.InstanceMode != null)
-                    hashCode = hashCode * 59 + this.InstanceMode.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceName != null) hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.VolumeType != null) hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
+                if (this.DataVolumeSize != null) hashCode = hashCode * 59 + this.DataVolumeSize.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                hashCode = hashCode * 59 + this.InstanceMode.GetHashCode();
                 return hashCode;
             }
         }

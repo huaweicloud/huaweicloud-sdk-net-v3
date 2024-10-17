@@ -77,37 +77,14 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ListProductsRespIo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IoType != input.IoType || (this.IoType != null && !this.IoType.Equals(input.IoType))) return false;
+            if (this.StorageSpecCode != input.StorageSpecCode || (this.StorageSpecCode != null && !this.StorageSpecCode.Equals(input.StorageSpecCode))) return false;
+            if (this.AvailableZones != input.AvailableZones || (this.AvailableZones != null && input.AvailableZones != null && !this.AvailableZones.SequenceEqual(input.AvailableZones))) return false;
+            if (this.UnavailableZones != input.UnavailableZones || (this.UnavailableZones != null && input.UnavailableZones != null && !this.UnavailableZones.SequenceEqual(input.UnavailableZones))) return false;
+            if (this.VolumeType != input.VolumeType || (this.VolumeType != null && !this.VolumeType.Equals(input.VolumeType))) return false;
 
-            return 
-                (
-                    this.IoType == input.IoType ||
-                    (this.IoType != null &&
-                    this.IoType.Equals(input.IoType))
-                ) && 
-                (
-                    this.StorageSpecCode == input.StorageSpecCode ||
-                    (this.StorageSpecCode != null &&
-                    this.StorageSpecCode.Equals(input.StorageSpecCode))
-                ) && 
-                (
-                    this.AvailableZones == input.AvailableZones ||
-                    this.AvailableZones != null &&
-                    input.AvailableZones != null &&
-                    this.AvailableZones.SequenceEqual(input.AvailableZones)
-                ) && 
-                (
-                    this.UnavailableZones == input.UnavailableZones ||
-                    this.UnavailableZones != null &&
-                    input.UnavailableZones != null &&
-                    this.UnavailableZones.SequenceEqual(input.UnavailableZones)
-                ) && 
-                (
-                    this.VolumeType == input.VolumeType ||
-                    (this.VolumeType != null &&
-                    this.VolumeType.Equals(input.VolumeType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -117,17 +94,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IoType != null)
-                    hashCode = hashCode * 59 + this.IoType.GetHashCode();
-                if (this.StorageSpecCode != null)
-                    hashCode = hashCode * 59 + this.StorageSpecCode.GetHashCode();
-                if (this.AvailableZones != null)
-                    hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
-                if (this.UnavailableZones != null)
-                    hashCode = hashCode * 59 + this.UnavailableZones.GetHashCode();
-                if (this.VolumeType != null)
-                    hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
+                var hashCode = 41;
+                if (this.IoType != null) hashCode = hashCode * 59 + this.IoType.GetHashCode();
+                if (this.StorageSpecCode != null) hashCode = hashCode * 59 + this.StorageSpecCode.GetHashCode();
+                if (this.AvailableZones != null) hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
+                if (this.UnavailableZones != null) hashCode = hashCode * 59 + this.UnavailableZones.GetHashCode();
+                if (this.VolumeType != null) hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
                 return hashCode;
             }
         }

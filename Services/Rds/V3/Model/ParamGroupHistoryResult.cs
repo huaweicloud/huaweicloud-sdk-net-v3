@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ParamGroupHistoryResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ParameterName != input.ParameterName || (this.ParameterName != null && !this.ParameterName.Equals(input.ParameterName))) return false;
+            if (this.OldValue != input.OldValue || (this.OldValue != null && !this.OldValue.Equals(input.OldValue))) return false;
+            if (this.NewValue != input.NewValue || (this.NewValue != null && !this.NewValue.Equals(input.NewValue))) return false;
+            if (this.UpdateResult != input.UpdateResult || (this.UpdateResult != null && !this.UpdateResult.Equals(input.UpdateResult))) return false;
+            if (this.Applied != input.Applied || (this.Applied != null && !this.Applied.Equals(input.Applied))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.ApplyTime != input.ApplyTime || (this.ApplyTime != null && !this.ApplyTime.Equals(input.ApplyTime))) return false;
 
-            return 
-                (
-                    this.ParameterName == input.ParameterName ||
-                    (this.ParameterName != null &&
-                    this.ParameterName.Equals(input.ParameterName))
-                ) && 
-                (
-                    this.OldValue == input.OldValue ||
-                    (this.OldValue != null &&
-                    this.OldValue.Equals(input.OldValue))
-                ) && 
-                (
-                    this.NewValue == input.NewValue ||
-                    (this.NewValue != null &&
-                    this.NewValue.Equals(input.NewValue))
-                ) && 
-                (
-                    this.UpdateResult == input.UpdateResult ||
-                    (this.UpdateResult != null &&
-                    this.UpdateResult.Equals(input.UpdateResult))
-                ) && 
-                (
-                    this.Applied == input.Applied ||
-                    (this.Applied != null &&
-                    this.Applied.Equals(input.Applied))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.ApplyTime == input.ApplyTime ||
-                    (this.ApplyTime != null &&
-                    this.ApplyTime.Equals(input.ApplyTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ParameterName != null)
-                    hashCode = hashCode * 59 + this.ParameterName.GetHashCode();
-                if (this.OldValue != null)
-                    hashCode = hashCode * 59 + this.OldValue.GetHashCode();
-                if (this.NewValue != null)
-                    hashCode = hashCode * 59 + this.NewValue.GetHashCode();
-                if (this.UpdateResult != null)
-                    hashCode = hashCode * 59 + this.UpdateResult.GetHashCode();
-                if (this.Applied != null)
-                    hashCode = hashCode * 59 + this.Applied.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.ApplyTime != null)
-                    hashCode = hashCode * 59 + this.ApplyTime.GetHashCode();
+                var hashCode = 41;
+                if (this.ParameterName != null) hashCode = hashCode * 59 + this.ParameterName.GetHashCode();
+                if (this.OldValue != null) hashCode = hashCode * 59 + this.OldValue.GetHashCode();
+                if (this.NewValue != null) hashCode = hashCode * 59 + this.NewValue.GetHashCode();
+                if (this.UpdateResult != null) hashCode = hashCode * 59 + this.UpdateResult.GetHashCode();
+                if (this.Applied != null) hashCode = hashCode * 59 + this.Applied.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.ApplyTime != null) hashCode = hashCode * 59 + this.ApplyTime.GetHashCode();
                 return hashCode;
             }
         }

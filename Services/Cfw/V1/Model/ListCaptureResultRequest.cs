@@ -82,36 +82,14 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(ListCaptureResultRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FwInstanceId != input.FwInstanceId || (this.FwInstanceId != null && !this.FwInstanceId.Equals(input.FwInstanceId))) return false;
+            if (this.TaskId != input.TaskId || (this.TaskId != null && !this.TaskId.Equals(input.TaskId))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && input.Ip != null && !this.Ip.SequenceEqual(input.Ip))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
-            return 
-                (
-                    this.FwInstanceId == input.FwInstanceId ||
-                    (this.FwInstanceId != null &&
-                    this.FwInstanceId.Equals(input.FwInstanceId))
-                ) && 
-                (
-                    this.TaskId == input.TaskId ||
-                    (this.TaskId != null &&
-                    this.TaskId.Equals(input.TaskId))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Ip == input.Ip ||
-                    this.Ip != null &&
-                    input.Ip != null &&
-                    this.Ip.SequenceEqual(input.Ip)
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -121,17 +99,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FwInstanceId != null)
-                    hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
-                if (this.TaskId != null)
-                    hashCode = hashCode * 59 + this.TaskId.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                var hashCode = 41;
+                if (this.FwInstanceId != null) hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
+                if (this.TaskId != null) hashCode = hashCode * 59 + this.TaskId.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

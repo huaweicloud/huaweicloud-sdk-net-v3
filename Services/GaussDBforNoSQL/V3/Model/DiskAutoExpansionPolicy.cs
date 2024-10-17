@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(DiskAutoExpansionPolicy input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Threshold != input.Threshold || (this.Threshold != null && !this.Threshold.Equals(input.Threshold))) return false;
+            if (this.Step != input.Step || (this.Step != null && !this.Step.Equals(input.Step))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
 
-            return 
-                (
-                    this.Threshold == input.Threshold ||
-                    (this.Threshold != null &&
-                    this.Threshold.Equals(input.Threshold))
-                ) && 
-                (
-                    this.Step == input.Step ||
-                    (this.Step != null &&
-                    this.Step.Equals(input.Step))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Threshold != null)
-                    hashCode = hashCode * 59 + this.Threshold.GetHashCode();
-                if (this.Step != null)
-                    hashCode = hashCode * 59 + this.Step.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
+                var hashCode = 41;
+                if (this.Threshold != null) hashCode = hashCode * 59 + this.Threshold.GetHashCode();
+                if (this.Step != null) hashCode = hashCode * 59 + this.Step.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
                 return hashCode;
             }
         }

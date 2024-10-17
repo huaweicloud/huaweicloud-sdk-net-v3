@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(FixedIp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IpAddress != input.IpAddress || (this.IpAddress != null && !this.IpAddress.Equals(input.IpAddress))) return false;
+            if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
 
-            return 
-                (
-                    this.IpAddress == input.IpAddress ||
-                    (this.IpAddress != null &&
-                    this.IpAddress.Equals(input.IpAddress))
-                ) && 
-                (
-                    this.SubnetId == input.SubnetId ||
-                    (this.SubnetId != null &&
-                    this.SubnetId.Equals(input.SubnetId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IpAddress != null)
-                    hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
-                if (this.SubnetId != null)
-                    hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
+                var hashCode = 41;
+                if (this.IpAddress != null) hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
+                if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
                 return hashCode;
             }
         }

@@ -678,104 +678,27 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(AlarmRuleParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ActionEnabled != input.ActionEnabled || (this.ActionEnabled != null && !this.ActionEnabled.Equals(input.ActionEnabled))) return false;
+            if (this.AlarmActions != input.AlarmActions || (this.AlarmActions != null && input.AlarmActions != null && !this.AlarmActions.SequenceEqual(input.AlarmActions))) return false;
+            if (this.AlarmAdvice != input.AlarmAdvice || (this.AlarmAdvice != null && !this.AlarmAdvice.Equals(input.AlarmAdvice))) return false;
+            if (this.AlarmDescription != input.AlarmDescription || (this.AlarmDescription != null && !this.AlarmDescription.Equals(input.AlarmDescription))) return false;
+            if (this.AlarmLevel != input.AlarmLevel) return false;
+            if (this.AlarmRuleName != input.AlarmRuleName || (this.AlarmRuleName != null && !this.AlarmRuleName.Equals(input.AlarmRuleName))) return false;
+            if (this.ComparisonOperator != input.ComparisonOperator) return false;
+            if (this.Dimensions != input.Dimensions || (this.Dimensions != null && input.Dimensions != null && !this.Dimensions.SequenceEqual(input.Dimensions))) return false;
+            if (this.EvaluationPeriods != input.EvaluationPeriods || (this.EvaluationPeriods != null && !this.EvaluationPeriods.Equals(input.EvaluationPeriods))) return false;
+            if (this.IsTurnOn != input.IsTurnOn || (this.IsTurnOn != null && !this.IsTurnOn.Equals(input.IsTurnOn))) return false;
+            if (this.InsufficientDataActions != input.InsufficientDataActions || (this.InsufficientDataActions != null && input.InsufficientDataActions != null && !this.InsufficientDataActions.SequenceEqual(input.InsufficientDataActions))) return false;
+            if (this.MetricName != input.MetricName || (this.MetricName != null && !this.MetricName.Equals(input.MetricName))) return false;
+            if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
+            if (this.OkActions != input.OkActions || (this.OkActions != null && input.OkActions != null && !this.OkActions.SequenceEqual(input.OkActions))) return false;
+            if (this.Period != input.Period) return false;
+            if (this.Statistic != input.Statistic) return false;
+            if (this.Threshold != input.Threshold || (this.Threshold != null && !this.Threshold.Equals(input.Threshold))) return false;
+            if (this.Unit != input.Unit || (this.Unit != null && !this.Unit.Equals(input.Unit))) return false;
 
-            return 
-                (
-                    this.ActionEnabled == input.ActionEnabled ||
-                    (this.ActionEnabled != null &&
-                    this.ActionEnabled.Equals(input.ActionEnabled))
-                ) && 
-                (
-                    this.AlarmActions == input.AlarmActions ||
-                    this.AlarmActions != null &&
-                    input.AlarmActions != null &&
-                    this.AlarmActions.SequenceEqual(input.AlarmActions)
-                ) && 
-                (
-                    this.AlarmAdvice == input.AlarmAdvice ||
-                    (this.AlarmAdvice != null &&
-                    this.AlarmAdvice.Equals(input.AlarmAdvice))
-                ) && 
-                (
-                    this.AlarmDescription == input.AlarmDescription ||
-                    (this.AlarmDescription != null &&
-                    this.AlarmDescription.Equals(input.AlarmDescription))
-                ) && 
-                (
-                    this.AlarmLevel == input.AlarmLevel ||
-                    (this.AlarmLevel != null &&
-                    this.AlarmLevel.Equals(input.AlarmLevel))
-                ) && 
-                (
-                    this.AlarmRuleName == input.AlarmRuleName ||
-                    (this.AlarmRuleName != null &&
-                    this.AlarmRuleName.Equals(input.AlarmRuleName))
-                ) && 
-                (
-                    this.ComparisonOperator == input.ComparisonOperator ||
-                    (this.ComparisonOperator != null &&
-                    this.ComparisonOperator.Equals(input.ComparisonOperator))
-                ) && 
-                (
-                    this.Dimensions == input.Dimensions ||
-                    this.Dimensions != null &&
-                    input.Dimensions != null &&
-                    this.Dimensions.SequenceEqual(input.Dimensions)
-                ) && 
-                (
-                    this.EvaluationPeriods == input.EvaluationPeriods ||
-                    (this.EvaluationPeriods != null &&
-                    this.EvaluationPeriods.Equals(input.EvaluationPeriods))
-                ) && 
-                (
-                    this.IsTurnOn == input.IsTurnOn ||
-                    (this.IsTurnOn != null &&
-                    this.IsTurnOn.Equals(input.IsTurnOn))
-                ) && 
-                (
-                    this.InsufficientDataActions == input.InsufficientDataActions ||
-                    this.InsufficientDataActions != null &&
-                    input.InsufficientDataActions != null &&
-                    this.InsufficientDataActions.SequenceEqual(input.InsufficientDataActions)
-                ) && 
-                (
-                    this.MetricName == input.MetricName ||
-                    (this.MetricName != null &&
-                    this.MetricName.Equals(input.MetricName))
-                ) && 
-                (
-                    this.Namespace == input.Namespace ||
-                    (this.Namespace != null &&
-                    this.Namespace.Equals(input.Namespace))
-                ) && 
-                (
-                    this.OkActions == input.OkActions ||
-                    this.OkActions != null &&
-                    input.OkActions != null &&
-                    this.OkActions.SequenceEqual(input.OkActions)
-                ) && 
-                (
-                    this.Period == input.Period ||
-                    (this.Period != null &&
-                    this.Period.Equals(input.Period))
-                ) && 
-                (
-                    this.Statistic == input.Statistic ||
-                    (this.Statistic != null &&
-                    this.Statistic.Equals(input.Statistic))
-                ) && 
-                (
-                    this.Threshold == input.Threshold ||
-                    (this.Threshold != null &&
-                    this.Threshold.Equals(input.Threshold))
-                ) && 
-                (
-                    this.Unit == input.Unit ||
-                    (this.Unit != null &&
-                    this.Unit.Equals(input.Unit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -785,43 +708,25 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ActionEnabled != null)
-                    hashCode = hashCode * 59 + this.ActionEnabled.GetHashCode();
-                if (this.AlarmActions != null)
-                    hashCode = hashCode * 59 + this.AlarmActions.GetHashCode();
-                if (this.AlarmAdvice != null)
-                    hashCode = hashCode * 59 + this.AlarmAdvice.GetHashCode();
-                if (this.AlarmDescription != null)
-                    hashCode = hashCode * 59 + this.AlarmDescription.GetHashCode();
-                if (this.AlarmLevel != null)
-                    hashCode = hashCode * 59 + this.AlarmLevel.GetHashCode();
-                if (this.AlarmRuleName != null)
-                    hashCode = hashCode * 59 + this.AlarmRuleName.GetHashCode();
-                if (this.ComparisonOperator != null)
-                    hashCode = hashCode * 59 + this.ComparisonOperator.GetHashCode();
-                if (this.Dimensions != null)
-                    hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
-                if (this.EvaluationPeriods != null)
-                    hashCode = hashCode * 59 + this.EvaluationPeriods.GetHashCode();
-                if (this.IsTurnOn != null)
-                    hashCode = hashCode * 59 + this.IsTurnOn.GetHashCode();
-                if (this.InsufficientDataActions != null)
-                    hashCode = hashCode * 59 + this.InsufficientDataActions.GetHashCode();
-                if (this.MetricName != null)
-                    hashCode = hashCode * 59 + this.MetricName.GetHashCode();
-                if (this.Namespace != null)
-                    hashCode = hashCode * 59 + this.Namespace.GetHashCode();
-                if (this.OkActions != null)
-                    hashCode = hashCode * 59 + this.OkActions.GetHashCode();
-                if (this.Period != null)
-                    hashCode = hashCode * 59 + this.Period.GetHashCode();
-                if (this.Statistic != null)
-                    hashCode = hashCode * 59 + this.Statistic.GetHashCode();
-                if (this.Threshold != null)
-                    hashCode = hashCode * 59 + this.Threshold.GetHashCode();
-                if (this.Unit != null)
-                    hashCode = hashCode * 59 + this.Unit.GetHashCode();
+                var hashCode = 41;
+                if (this.ActionEnabled != null) hashCode = hashCode * 59 + this.ActionEnabled.GetHashCode();
+                if (this.AlarmActions != null) hashCode = hashCode * 59 + this.AlarmActions.GetHashCode();
+                if (this.AlarmAdvice != null) hashCode = hashCode * 59 + this.AlarmAdvice.GetHashCode();
+                if (this.AlarmDescription != null) hashCode = hashCode * 59 + this.AlarmDescription.GetHashCode();
+                hashCode = hashCode * 59 + this.AlarmLevel.GetHashCode();
+                if (this.AlarmRuleName != null) hashCode = hashCode * 59 + this.AlarmRuleName.GetHashCode();
+                hashCode = hashCode * 59 + this.ComparisonOperator.GetHashCode();
+                if (this.Dimensions != null) hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
+                if (this.EvaluationPeriods != null) hashCode = hashCode * 59 + this.EvaluationPeriods.GetHashCode();
+                if (this.IsTurnOn != null) hashCode = hashCode * 59 + this.IsTurnOn.GetHashCode();
+                if (this.InsufficientDataActions != null) hashCode = hashCode * 59 + this.InsufficientDataActions.GetHashCode();
+                if (this.MetricName != null) hashCode = hashCode * 59 + this.MetricName.GetHashCode();
+                if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.OkActions != null) hashCode = hashCode * 59 + this.OkActions.GetHashCode();
+                hashCode = hashCode * 59 + this.Period.GetHashCode();
+                hashCode = hashCode * 59 + this.Statistic.GetHashCode();
+                if (this.Threshold != null) hashCode = hashCode * 59 + this.Threshold.GetHashCode();
+                if (this.Unit != null) hashCode = hashCode * 59 + this.Unit.GetHashCode();
                 return hashCode;
             }
         }

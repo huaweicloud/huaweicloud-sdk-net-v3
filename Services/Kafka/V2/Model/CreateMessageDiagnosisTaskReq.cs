@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(CreateMessageDiagnosisTaskReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.GroupName != input.GroupName || (this.GroupName != null && !this.GroupName.Equals(input.GroupName))) return false;
+            if (this.TopicName != input.TopicName || (this.TopicName != null && !this.TopicName.Equals(input.TopicName))) return false;
 
-            return 
-                (
-                    this.GroupName == input.GroupName ||
-                    (this.GroupName != null &&
-                    this.GroupName.Equals(input.GroupName))
-                ) && 
-                (
-                    this.TopicName == input.TopicName ||
-                    (this.TopicName != null &&
-                    this.TopicName.Equals(input.TopicName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.GroupName != null)
-                    hashCode = hashCode * 59 + this.GroupName.GetHashCode();
-                if (this.TopicName != null)
-                    hashCode = hashCode * 59 + this.TopicName.GetHashCode();
+                var hashCode = 41;
+                if (this.GroupName != null) hashCode = hashCode * 59 + this.GroupName.GetHashCode();
+                if (this.TopicName != null) hashCode = hashCode * 59 + this.TopicName.GetHashCode();
                 return hashCode;
             }
         }

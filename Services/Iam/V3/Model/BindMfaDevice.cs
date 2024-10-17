@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(BindMfaDevice input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UserId != input.UserId || (this.UserId != null && !this.UserId.Equals(input.UserId))) return false;
+            if (this.SerialNumber != input.SerialNumber || (this.SerialNumber != null && !this.SerialNumber.Equals(input.SerialNumber))) return false;
+            if (this.AuthenticationCodeFirst != input.AuthenticationCodeFirst || (this.AuthenticationCodeFirst != null && !this.AuthenticationCodeFirst.Equals(input.AuthenticationCodeFirst))) return false;
+            if (this.AuthenticationCodeSecond != input.AuthenticationCodeSecond || (this.AuthenticationCodeSecond != null && !this.AuthenticationCodeSecond.Equals(input.AuthenticationCodeSecond))) return false;
 
-            return 
-                (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
-                ) && 
-                (
-                    this.SerialNumber == input.SerialNumber ||
-                    (this.SerialNumber != null &&
-                    this.SerialNumber.Equals(input.SerialNumber))
-                ) && 
-                (
-                    this.AuthenticationCodeFirst == input.AuthenticationCodeFirst ||
-                    (this.AuthenticationCodeFirst != null &&
-                    this.AuthenticationCodeFirst.Equals(input.AuthenticationCodeFirst))
-                ) && 
-                (
-                    this.AuthenticationCodeSecond == input.AuthenticationCodeSecond ||
-                    (this.AuthenticationCodeSecond != null &&
-                    this.AuthenticationCodeSecond.Equals(input.AuthenticationCodeSecond))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.SerialNumber != null)
-                    hashCode = hashCode * 59 + this.SerialNumber.GetHashCode();
-                if (this.AuthenticationCodeFirst != null)
-                    hashCode = hashCode * 59 + this.AuthenticationCodeFirst.GetHashCode();
-                if (this.AuthenticationCodeSecond != null)
-                    hashCode = hashCode * 59 + this.AuthenticationCodeSecond.GetHashCode();
+                var hashCode = 41;
+                if (this.UserId != null) hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                if (this.SerialNumber != null) hashCode = hashCode * 59 + this.SerialNumber.GetHashCode();
+                if (this.AuthenticationCodeFirst != null) hashCode = hashCode * 59 + this.AuthenticationCodeFirst.GetHashCode();
+                if (this.AuthenticationCodeSecond != null) hashCode = hashCode * 59 + this.AuthenticationCodeSecond.GetHashCode();
                 return hashCode;
             }
         }

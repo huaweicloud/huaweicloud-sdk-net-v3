@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(ListHarvestTaskResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.HarvestTasks != input.HarvestTasks || (this.HarvestTasks != null && input.HarvestTasks != null && !this.HarvestTasks.SequenceEqual(input.HarvestTasks))) return false;
 
-            return 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.HarvestTasks == input.HarvestTasks ||
-                    this.HarvestTasks != null &&
-                    input.HarvestTasks != null &&
-                    this.HarvestTasks.SequenceEqual(input.HarvestTasks)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.HarvestTasks != null)
-                    hashCode = hashCode * 59 + this.HarvestTasks.GetHashCode();
+                var hashCode = 41;
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.HarvestTasks != null) hashCode = hashCode * 59 + this.HarvestTasks.GetHashCode();
                 return hashCode;
             }
         }

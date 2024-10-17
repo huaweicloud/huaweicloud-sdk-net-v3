@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(ApplyConfigurationRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EntityIds != input.EntityIds || (this.EntityIds != null && input.EntityIds != null && !this.EntityIds.SequenceEqual(input.EntityIds))) return false;
 
-            return 
-                (
-                    this.EntityIds == input.EntityIds ||
-                    this.EntityIds != null &&
-                    input.EntityIds != null &&
-                    this.EntityIds.SequenceEqual(input.EntityIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EntityIds != null)
-                    hashCode = hashCode * 59 + this.EntityIds.GetHashCode();
+                var hashCode = 41;
+                if (this.EntityIds != null) hashCode = hashCode * 59 + this.EntityIds.GetHashCode();
                 return hashCode;
             }
         }

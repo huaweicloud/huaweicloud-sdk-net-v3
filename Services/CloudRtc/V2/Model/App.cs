@@ -232,60 +232,19 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         /// </summary>
         public bool Equals(App input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AppName != input.AppName || (this.AppName != null && !this.AppName.Equals(input.AppName))) return false;
+            if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
+            if (this.State != input.State || (this.State != null && !this.State.Equals(input.State))) return false;
+            if (this.Scope != input.Scope) return false;
+            if (this.TenantName != input.TenantName || (this.TenantName != null && !this.TenantName.Equals(input.TenantName))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.Authentication != input.Authentication || (this.Authentication != null && !this.Authentication.Equals(input.Authentication))) return false;
+            if (this.Callbacks != input.Callbacks || (this.Callbacks != null && !this.Callbacks.Equals(input.Callbacks))) return false;
+            if (this.AutoRecordMode != input.AutoRecordMode || (this.AutoRecordMode != null && !this.AutoRecordMode.Equals(input.AutoRecordMode))) return false;
 
-            return 
-                (
-                    this.AppName == input.AppName ||
-                    (this.AppName != null &&
-                    this.AppName.Equals(input.AppName))
-                ) && 
-                (
-                    this.AppId == input.AppId ||
-                    (this.AppId != null &&
-                    this.AppId.Equals(input.AppId))
-                ) && 
-                (
-                    this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
-                ) && 
-                (
-                    this.Scope == input.Scope ||
-                    (this.Scope != null &&
-                    this.Scope.Equals(input.Scope))
-                ) && 
-                (
-                    this.TenantName == input.TenantName ||
-                    (this.TenantName != null &&
-                    this.TenantName.Equals(input.TenantName))
-                ) && 
-                (
-                    this.Domain == input.Domain ||
-                    (this.Domain != null &&
-                    this.Domain.Equals(input.Domain))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.Authentication == input.Authentication ||
-                    (this.Authentication != null &&
-                    this.Authentication.Equals(input.Authentication))
-                ) && 
-                (
-                    this.Callbacks == input.Callbacks ||
-                    (this.Callbacks != null &&
-                    this.Callbacks.Equals(input.Callbacks))
-                ) && 
-                (
-                    this.AutoRecordMode == input.AutoRecordMode ||
-                    (this.AutoRecordMode != null &&
-                    this.AutoRecordMode.Equals(input.AutoRecordMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -295,27 +254,17 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AppName != null)
-                    hashCode = hashCode * 59 + this.AppName.GetHashCode();
-                if (this.AppId != null)
-                    hashCode = hashCode * 59 + this.AppId.GetHashCode();
-                if (this.State != null)
-                    hashCode = hashCode * 59 + this.State.GetHashCode();
-                if (this.Scope != null)
-                    hashCode = hashCode * 59 + this.Scope.GetHashCode();
-                if (this.TenantName != null)
-                    hashCode = hashCode * 59 + this.TenantName.GetHashCode();
-                if (this.Domain != null)
-                    hashCode = hashCode * 59 + this.Domain.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.Authentication != null)
-                    hashCode = hashCode * 59 + this.Authentication.GetHashCode();
-                if (this.Callbacks != null)
-                    hashCode = hashCode * 59 + this.Callbacks.GetHashCode();
-                if (this.AutoRecordMode != null)
-                    hashCode = hashCode * 59 + this.AutoRecordMode.GetHashCode();
+                var hashCode = 41;
+                if (this.AppName != null) hashCode = hashCode * 59 + this.AppName.GetHashCode();
+                if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
+                if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();
+                hashCode = hashCode * 59 + this.Scope.GetHashCode();
+                if (this.TenantName != null) hashCode = hashCode * 59 + this.TenantName.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.Authentication != null) hashCode = hashCode * 59 + this.Authentication.GetHashCode();
+                if (this.Callbacks != null) hashCode = hashCode * 59 + this.Callbacks.GetHashCode();
+                if (this.AutoRecordMode != null) hashCode = hashCode * 59 + this.AutoRecordMode.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(ShowNetworkIpAvailabilitiesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NetworkIpAvailability != input.NetworkIpAvailability || (this.NetworkIpAvailability != null && !this.NetworkIpAvailability.Equals(input.NetworkIpAvailability))) return false;
 
-            return 
-                (
-                    this.NetworkIpAvailability == input.NetworkIpAvailability ||
-                    (this.NetworkIpAvailability != null &&
-                    this.NetworkIpAvailability.Equals(input.NetworkIpAvailability))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NetworkIpAvailability != null)
-                    hashCode = hashCode * 59 + this.NetworkIpAvailability.GetHashCode();
+                var hashCode = 41;
+                if (this.NetworkIpAvailability != null) hashCode = hashCode * 59 + this.NetworkIpAvailability.GetHashCode();
                 return hashCode;
             }
         }

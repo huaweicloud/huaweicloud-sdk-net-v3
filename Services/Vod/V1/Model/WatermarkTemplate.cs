@@ -147,85 +147,24 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(WatermarkTemplate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Dx != input.Dx || (this.Dx != null && !this.Dx.Equals(input.Dx))) return false;
+            if (this.Dy != input.Dy || (this.Dy != null && !this.Dy.Equals(input.Dy))) return false;
+            if (this.Position != input.Position || (this.Position != null && !this.Position.Equals(input.Position))) return false;
+            if (this.Width != input.Width || (this.Width != null && !this.Width.Equals(input.Width))) return false;
+            if (this.Height != input.Height || (this.Height != null && !this.Height.Equals(input.Height))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.ImageUrl != input.ImageUrl || (this.ImageUrl != null && !this.ImageUrl.Equals(input.ImageUrl))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.WatermarkType != input.WatermarkType || (this.WatermarkType != null && !this.WatermarkType.Equals(input.WatermarkType))) return false;
+            if (this.ImageProcess != input.ImageProcess || (this.ImageProcess != null && !this.ImageProcess.Equals(input.ImageProcess))) return false;
+            if (this.TimelineStart != input.TimelineStart || (this.TimelineStart != null && !this.TimelineStart.Equals(input.TimelineStart))) return false;
+            if (this.TimelineDuration != input.TimelineDuration || (this.TimelineDuration != null && !this.TimelineDuration.Equals(input.TimelineDuration))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Dx == input.Dx ||
-                    (this.Dx != null &&
-                    this.Dx.Equals(input.Dx))
-                ) && 
-                (
-                    this.Dy == input.Dy ||
-                    (this.Dy != null &&
-                    this.Dy.Equals(input.Dy))
-                ) && 
-                (
-                    this.Position == input.Position ||
-                    (this.Position != null &&
-                    this.Position.Equals(input.Position))
-                ) && 
-                (
-                    this.Width == input.Width ||
-                    (this.Width != null &&
-                    this.Width.Equals(input.Width))
-                ) && 
-                (
-                    this.Height == input.Height ||
-                    (this.Height != null &&
-                    this.Height.Equals(input.Height))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.ImageUrl == input.ImageUrl ||
-                    (this.ImageUrl != null &&
-                    this.ImageUrl.Equals(input.ImageUrl))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.WatermarkType == input.WatermarkType ||
-                    (this.WatermarkType != null &&
-                    this.WatermarkType.Equals(input.WatermarkType))
-                ) && 
-                (
-                    this.ImageProcess == input.ImageProcess ||
-                    (this.ImageProcess != null &&
-                    this.ImageProcess.Equals(input.ImageProcess))
-                ) && 
-                (
-                    this.TimelineStart == input.TimelineStart ||
-                    (this.TimelineStart != null &&
-                    this.TimelineStart.Equals(input.TimelineStart))
-                ) && 
-                (
-                    this.TimelineDuration == input.TimelineDuration ||
-                    (this.TimelineDuration != null &&
-                    this.TimelineDuration.Equals(input.TimelineDuration))
-                );
+            return true;
         }
 
         /// <summary>
@@ -235,37 +174,22 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Dx != null)
-                    hashCode = hashCode * 59 + this.Dx.GetHashCode();
-                if (this.Dy != null)
-                    hashCode = hashCode * 59 + this.Dy.GetHashCode();
-                if (this.Position != null)
-                    hashCode = hashCode * 59 + this.Position.GetHashCode();
-                if (this.Width != null)
-                    hashCode = hashCode * 59 + this.Width.GetHashCode();
-                if (this.Height != null)
-                    hashCode = hashCode * 59 + this.Height.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.ImageUrl != null)
-                    hashCode = hashCode * 59 + this.ImageUrl.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.WatermarkType != null)
-                    hashCode = hashCode * 59 + this.WatermarkType.GetHashCode();
-                if (this.ImageProcess != null)
-                    hashCode = hashCode * 59 + this.ImageProcess.GetHashCode();
-                if (this.TimelineStart != null)
-                    hashCode = hashCode * 59 + this.TimelineStart.GetHashCode();
-                if (this.TimelineDuration != null)
-                    hashCode = hashCode * 59 + this.TimelineDuration.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Dx != null) hashCode = hashCode * 59 + this.Dx.GetHashCode();
+                if (this.Dy != null) hashCode = hashCode * 59 + this.Dy.GetHashCode();
+                if (this.Position != null) hashCode = hashCode * 59 + this.Position.GetHashCode();
+                if (this.Width != null) hashCode = hashCode * 59 + this.Width.GetHashCode();
+                if (this.Height != null) hashCode = hashCode * 59 + this.Height.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.ImageUrl != null) hashCode = hashCode * 59 + this.ImageUrl.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.WatermarkType != null) hashCode = hashCode * 59 + this.WatermarkType.GetHashCode();
+                if (this.ImageProcess != null) hashCode = hashCode * 59 + this.ImageProcess.GetHashCode();
+                if (this.TimelineStart != null) hashCode = hashCode * 59 + this.TimelineStart.GetHashCode();
+                if (this.TimelineDuration != null) hashCode = hashCode * 59 + this.TimelineDuration.GetHashCode();
                 return hashCode;
             }
         }

@@ -84,42 +84,15 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// </summary>
         public bool Equals(ListenersInStatusResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Pools != input.Pools || (this.Pools != null && input.Pools != null && !this.Pools.SequenceEqual(input.Pools))) return false;
+            if (this.L7policies != input.L7policies || (this.L7policies != null && input.L7policies != null && !this.L7policies.SequenceEqual(input.L7policies))) return false;
+            if (this.OperatingStatus != input.OperatingStatus || (this.OperatingStatus != null && !this.OperatingStatus.Equals(input.OperatingStatus))) return false;
+            if (this.ProvisioningStatus != input.ProvisioningStatus || (this.ProvisioningStatus != null && !this.ProvisioningStatus.Equals(input.ProvisioningStatus))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Pools == input.Pools ||
-                    this.Pools != null &&
-                    input.Pools != null &&
-                    this.Pools.SequenceEqual(input.Pools)
-                ) && 
-                (
-                    this.L7policies == input.L7policies ||
-                    this.L7policies != null &&
-                    input.L7policies != null &&
-                    this.L7policies.SequenceEqual(input.L7policies)
-                ) && 
-                (
-                    this.OperatingStatus == input.OperatingStatus ||
-                    (this.OperatingStatus != null &&
-                    this.OperatingStatus.Equals(input.OperatingStatus))
-                ) && 
-                (
-                    this.ProvisioningStatus == input.ProvisioningStatus ||
-                    (this.ProvisioningStatus != null &&
-                    this.ProvisioningStatus.Equals(input.ProvisioningStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -129,19 +102,13 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Pools != null)
-                    hashCode = hashCode * 59 + this.Pools.GetHashCode();
-                if (this.L7policies != null)
-                    hashCode = hashCode * 59 + this.L7policies.GetHashCode();
-                if (this.OperatingStatus != null)
-                    hashCode = hashCode * 59 + this.OperatingStatus.GetHashCode();
-                if (this.ProvisioningStatus != null)
-                    hashCode = hashCode * 59 + this.ProvisioningStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Pools != null) hashCode = hashCode * 59 + this.Pools.GetHashCode();
+                if (this.L7policies != null) hashCode = hashCode * 59 + this.L7policies.GetHashCode();
+                if (this.OperatingStatus != null) hashCode = hashCode * 59 + this.OperatingStatus.GetHashCode();
+                if (this.ProvisioningStatus != null) hashCode = hashCode * 59 + this.ProvisioningStatus.GetHashCode();
                 return hashCode;
             }
         }

@@ -106,55 +106,17 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(ListLogtanksRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.PageReverse != input.PageReverse || (this.PageReverse != null && !this.PageReverse.Equals(input.PageReverse))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && input.EnterpriseProjectId != null && !this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId))) return false;
+            if (this.Id != input.Id || (this.Id != null && input.Id != null && !this.Id.SequenceEqual(input.Id))) return false;
+            if (this.LoadbalancerId != input.LoadbalancerId || (this.LoadbalancerId != null && input.LoadbalancerId != null && !this.LoadbalancerId.SequenceEqual(input.LoadbalancerId))) return false;
+            if (this.LogGroupId != input.LogGroupId || (this.LogGroupId != null && input.LogGroupId != null && !this.LogGroupId.SequenceEqual(input.LogGroupId))) return false;
+            if (this.LogTopicId != input.LogTopicId || (this.LogTopicId != null && input.LogTopicId != null && !this.LogTopicId.SequenceEqual(input.LogTopicId))) return false;
 
-            return 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.PageReverse == input.PageReverse ||
-                    (this.PageReverse != null &&
-                    this.PageReverse.Equals(input.PageReverse))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    this.EnterpriseProjectId != null &&
-                    input.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    this.Id != null &&
-                    input.Id != null &&
-                    this.Id.SequenceEqual(input.Id)
-                ) && 
-                (
-                    this.LoadbalancerId == input.LoadbalancerId ||
-                    this.LoadbalancerId != null &&
-                    input.LoadbalancerId != null &&
-                    this.LoadbalancerId.SequenceEqual(input.LoadbalancerId)
-                ) && 
-                (
-                    this.LogGroupId == input.LogGroupId ||
-                    this.LogGroupId != null &&
-                    input.LogGroupId != null &&
-                    this.LogGroupId.SequenceEqual(input.LogGroupId)
-                ) && 
-                (
-                    this.LogTopicId == input.LogTopicId ||
-                    this.LogTopicId != null &&
-                    input.LogTopicId != null &&
-                    this.LogTopicId.SequenceEqual(input.LogTopicId)
-                );
+            return true;
         }
 
         /// <summary>
@@ -164,23 +126,15 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.PageReverse != null)
-                    hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.LoadbalancerId != null)
-                    hashCode = hashCode * 59 + this.LoadbalancerId.GetHashCode();
-                if (this.LogGroupId != null)
-                    hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
-                if (this.LogTopicId != null)
-                    hashCode = hashCode * 59 + this.LogTopicId.GetHashCode();
+                var hashCode = 41;
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.PageReverse != null) hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.LoadbalancerId != null) hashCode = hashCode * 59 + this.LoadbalancerId.GetHashCode();
+                if (this.LogGroupId != null) hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
+                if (this.LogTopicId != null) hashCode = hashCode * 59 + this.LogTopicId.GetHashCode();
                 return hashCode;
             }
         }

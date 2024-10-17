@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(DiskusageTopicEntity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.TopicName != input.TopicName || (this.TopicName != null && !this.TopicName.Equals(input.TopicName))) return false;
+            if (this.TopicPartition != input.TopicPartition || (this.TopicPartition != null && !this.TopicPartition.Equals(input.TopicPartition))) return false;
+            if (this.Percentage != input.Percentage || (this.Percentage != null && !this.Percentage.Equals(input.Percentage))) return false;
 
-            return 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.TopicName == input.TopicName ||
-                    (this.TopicName != null &&
-                    this.TopicName.Equals(input.TopicName))
-                ) && 
-                (
-                    this.TopicPartition == input.TopicPartition ||
-                    (this.TopicPartition != null &&
-                    this.TopicPartition.Equals(input.TopicPartition))
-                ) && 
-                (
-                    this.Percentage == input.Percentage ||
-                    (this.Percentage != null &&
-                    this.Percentage.Equals(input.Percentage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.TopicName != null)
-                    hashCode = hashCode * 59 + this.TopicName.GetHashCode();
-                if (this.TopicPartition != null)
-                    hashCode = hashCode * 59 + this.TopicPartition.GetHashCode();
-                if (this.Percentage != null)
-                    hashCode = hashCode * 59 + this.Percentage.GetHashCode();
+                var hashCode = 41;
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.TopicName != null) hashCode = hashCode * 59 + this.TopicName.GetHashCode();
+                if (this.TopicPartition != null) hashCode = hashCode * 59 + this.TopicPartition.GetHashCode();
+                if (this.Percentage != null) hashCode = hashCode * 59 + this.Percentage.GetHashCode();
                 return hashCode;
             }
         }

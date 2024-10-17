@@ -298,31 +298,13 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(RefreshTaskRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type) return false;
+            if (this.Mode != input.Mode) return false;
+            if (this.ZhUrlEncode != input.ZhUrlEncode || (this.ZhUrlEncode != null && !this.ZhUrlEncode.Equals(input.ZhUrlEncode))) return false;
+            if (this.Urls != input.Urls || (this.Urls != null && input.Urls != null && !this.Urls.SequenceEqual(input.Urls))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Mode == input.Mode ||
-                    (this.Mode != null &&
-                    this.Mode.Equals(input.Mode))
-                ) && 
-                (
-                    this.ZhUrlEncode == input.ZhUrlEncode ||
-                    (this.ZhUrlEncode != null &&
-                    this.ZhUrlEncode.Equals(input.ZhUrlEncode))
-                ) && 
-                (
-                    this.Urls == input.Urls ||
-                    this.Urls != null &&
-                    input.Urls != null &&
-                    this.Urls.SequenceEqual(input.Urls)
-                );
+            return true;
         }
 
         /// <summary>
@@ -332,15 +314,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Mode != null)
-                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
-                if (this.ZhUrlEncode != null)
-                    hashCode = hashCode * 59 + this.ZhUrlEncode.GetHashCode();
-                if (this.Urls != null)
-                    hashCode = hashCode * 59 + this.Urls.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                if (this.ZhUrlEncode != null) hashCode = hashCode * 59 + this.ZhUrlEncode.GetHashCode();
+                if (this.Urls != null) hashCode = hashCode * 59 + this.Urls.GetHashCode();
                 return hashCode;
             }
         }

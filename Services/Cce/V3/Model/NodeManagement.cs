@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(NodeManagement input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ServerGroupReference != input.ServerGroupReference || (this.ServerGroupReference != null && !this.ServerGroupReference.Equals(input.ServerGroupReference))) return false;
 
-            return 
-                (
-                    this.ServerGroupReference == input.ServerGroupReference ||
-                    (this.ServerGroupReference != null &&
-                    this.ServerGroupReference.Equals(input.ServerGroupReference))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ServerGroupReference != null)
-                    hashCode = hashCode * 59 + this.ServerGroupReference.GetHashCode();
+                var hashCode = 41;
+                if (this.ServerGroupReference != null) hashCode = hashCode * 59 + this.ServerGroupReference.GetHashCode();
                 return hashCode;
             }
         }

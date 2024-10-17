@@ -91,52 +91,16 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public bool Equals(ShowCesHierarchyResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Dimensions != input.Dimensions || (this.Dimensions != null && input.Dimensions != null && !this.Dimensions.SequenceEqual(input.Dimensions))) return false;
+            if (this.InstanceIds != input.InstanceIds || (this.InstanceIds != null && input.InstanceIds != null && !this.InstanceIds.SequenceEqual(input.InstanceIds))) return false;
+            if (this.Nodes != input.Nodes || (this.Nodes != null && input.Nodes != null && !this.Nodes.SequenceEqual(input.Nodes))) return false;
+            if (this.Queues != input.Queues || (this.Queues != null && input.Queues != null && !this.Queues.SequenceEqual(input.Queues))) return false;
+            if (this.Vhosts != input.Vhosts || (this.Vhosts != null && input.Vhosts != null && !this.Vhosts.SequenceEqual(input.Vhosts))) return false;
+            if (this.Exchanges != input.Exchanges || (this.Exchanges != null && input.Exchanges != null && !this.Exchanges.SequenceEqual(input.Exchanges))) return false;
+            if (this.Groups != input.Groups || (this.Groups != null && input.Groups != null && !this.Groups.SequenceEqual(input.Groups))) return false;
 
-            return 
-                (
-                    this.Dimensions == input.Dimensions ||
-                    this.Dimensions != null &&
-                    input.Dimensions != null &&
-                    this.Dimensions.SequenceEqual(input.Dimensions)
-                ) && 
-                (
-                    this.InstanceIds == input.InstanceIds ||
-                    this.InstanceIds != null &&
-                    input.InstanceIds != null &&
-                    this.InstanceIds.SequenceEqual(input.InstanceIds)
-                ) && 
-                (
-                    this.Nodes == input.Nodes ||
-                    this.Nodes != null &&
-                    input.Nodes != null &&
-                    this.Nodes.SequenceEqual(input.Nodes)
-                ) && 
-                (
-                    this.Queues == input.Queues ||
-                    this.Queues != null &&
-                    input.Queues != null &&
-                    this.Queues.SequenceEqual(input.Queues)
-                ) && 
-                (
-                    this.Vhosts == input.Vhosts ||
-                    this.Vhosts != null &&
-                    input.Vhosts != null &&
-                    this.Vhosts.SequenceEqual(input.Vhosts)
-                ) && 
-                (
-                    this.Exchanges == input.Exchanges ||
-                    this.Exchanges != null &&
-                    input.Exchanges != null &&
-                    this.Exchanges.SequenceEqual(input.Exchanges)
-                ) && 
-                (
-                    this.Groups == input.Groups ||
-                    this.Groups != null &&
-                    input.Groups != null &&
-                    this.Groups.SequenceEqual(input.Groups)
-                );
+            return true;
         }
 
         /// <summary>
@@ -146,21 +110,14 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Dimensions != null)
-                    hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
-                if (this.InstanceIds != null)
-                    hashCode = hashCode * 59 + this.InstanceIds.GetHashCode();
-                if (this.Nodes != null)
-                    hashCode = hashCode * 59 + this.Nodes.GetHashCode();
-                if (this.Queues != null)
-                    hashCode = hashCode * 59 + this.Queues.GetHashCode();
-                if (this.Vhosts != null)
-                    hashCode = hashCode * 59 + this.Vhosts.GetHashCode();
-                if (this.Exchanges != null)
-                    hashCode = hashCode * 59 + this.Exchanges.GetHashCode();
-                if (this.Groups != null)
-                    hashCode = hashCode * 59 + this.Groups.GetHashCode();
+                var hashCode = 41;
+                if (this.Dimensions != null) hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
+                if (this.InstanceIds != null) hashCode = hashCode * 59 + this.InstanceIds.GetHashCode();
+                if (this.Nodes != null) hashCode = hashCode * 59 + this.Nodes.GetHashCode();
+                if (this.Queues != null) hashCode = hashCode * 59 + this.Queues.GetHashCode();
+                if (this.Vhosts != null) hashCode = hashCode * 59 + this.Vhosts.GetHashCode();
+                if (this.Exchanges != null) hashCode = hashCode * 59 + this.Exchanges.GetHashCode();
+                if (this.Groups != null) hashCode = hashCode * 59 + this.Groups.GetHashCode();
                 return hashCode;
             }
         }

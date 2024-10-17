@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ShowInstanceSslDetailResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
+            if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
+            if (this.SslExpiredAt != input.SslExpiredAt || (this.SslExpiredAt != null && !this.SslExpiredAt.Equals(input.SslExpiredAt))) return false;
+            if (this.SslValidated != input.SslValidated || (this.SslValidated != null && !this.SslValidated.Equals(input.SslValidated))) return false;
 
-            return 
-                (
-                    this.Enabled == input.Enabled ||
-                    (this.Enabled != null &&
-                    this.Enabled.Equals(input.Enabled))
-                ) && 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                ) && 
-                (
-                    this.Port == input.Port ||
-                    (this.Port != null &&
-                    this.Port.Equals(input.Port))
-                ) && 
-                (
-                    this.DomainName == input.DomainName ||
-                    (this.DomainName != null &&
-                    this.DomainName.Equals(input.DomainName))
-                ) && 
-                (
-                    this.SslExpiredAt == input.SslExpiredAt ||
-                    (this.SslExpiredAt != null &&
-                    this.SslExpiredAt.Equals(input.SslExpiredAt))
-                ) && 
-                (
-                    this.SslValidated == input.SslValidated ||
-                    (this.SslValidated != null &&
-                    this.SslValidated.Equals(input.SslValidated))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Enabled != null)
-                    hashCode = hashCode * 59 + this.Enabled.GetHashCode();
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.Port != null)
-                    hashCode = hashCode * 59 + this.Port.GetHashCode();
-                if (this.DomainName != null)
-                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.SslExpiredAt != null)
-                    hashCode = hashCode * 59 + this.SslExpiredAt.GetHashCode();
-                if (this.SslValidated != null)
-                    hashCode = hashCode * 59 + this.SslValidated.GetHashCode();
+                var hashCode = 41;
+                if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.SslExpiredAt != null) hashCode = hashCode * 59 + this.SslExpiredAt.GetHashCode();
+                if (this.SslValidated != null) hashCode = hashCode * 59 + this.SslValidated.GetHashCode();
                 return hashCode;
             }
         }

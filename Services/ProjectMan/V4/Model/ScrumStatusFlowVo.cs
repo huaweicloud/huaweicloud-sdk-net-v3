@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ScrumStatusFlowVo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.StatusId != input.StatusId || (this.StatusId != null && !this.StatusId.Equals(input.StatusId))) return false;
+            if (this.DirectTo != input.DirectTo || (this.DirectTo != null && input.DirectTo != null && !this.DirectTo.SequenceEqual(input.DirectTo))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.StatusId == input.StatusId ||
-                    (this.StatusId != null &&
-                    this.StatusId.Equals(input.StatusId))
-                ) && 
-                (
-                    this.DirectTo == input.DirectTo ||
-                    this.DirectTo != null &&
-                    input.DirectTo != null &&
-                    this.DirectTo.SequenceEqual(input.DirectTo)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.StatusId != null)
-                    hashCode = hashCode * 59 + this.StatusId.GetHashCode();
-                if (this.DirectTo != null)
-                    hashCode = hashCode * 59 + this.DirectTo.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.StatusId != null) hashCode = hashCode * 59 + this.StatusId.GetHashCode();
+                if (this.DirectTo != null) hashCode = hashCode * 59 + this.DirectTo.GetHashCode();
                 return hashCode;
             }
         }

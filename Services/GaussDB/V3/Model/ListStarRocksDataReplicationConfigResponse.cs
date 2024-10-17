@@ -105,56 +105,18 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ListStarRocksDataReplicationConfigResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceInstanceId != input.SourceInstanceId || (this.SourceInstanceId != null && !this.SourceInstanceId.Equals(input.SourceInstanceId))) return false;
+            if (this.SourceNodeId != input.SourceNodeId || (this.SourceNodeId != null && !this.SourceNodeId.Equals(input.SourceNodeId))) return false;
+            if (this.DatabaseInfo != input.DatabaseInfo || (this.DatabaseInfo != null && !this.DatabaseInfo.Equals(input.DatabaseInfo))) return false;
+            if (this.TableInfos != input.TableInfos || (this.TableInfos != null && input.TableInfos != null && !this.TableInfos.SequenceEqual(input.TableInfos))) return false;
+            if (this.TableReplConfig != input.TableReplConfig || (this.TableReplConfig != null && !this.TableReplConfig.Equals(input.TableReplConfig))) return false;
+            if (this.NewTableReplConfig != input.NewTableReplConfig || (this.NewTableReplConfig != null && !this.NewTableReplConfig.Equals(input.NewTableReplConfig))) return false;
+            if (this.TargetDatabaseName != input.TargetDatabaseName || (this.TargetDatabaseName != null && !this.TargetDatabaseName.Equals(input.TargetDatabaseName))) return false;
+            if (this.IsTablesChange != input.IsTablesChange || (this.IsTablesChange != null && !this.IsTablesChange.Equals(input.IsTablesChange))) return false;
+            if (this.LastErrorOfAlterTable != input.LastErrorOfAlterTable || (this.LastErrorOfAlterTable != null && !this.LastErrorOfAlterTable.Equals(input.LastErrorOfAlterTable))) return false;
 
-            return 
-                (
-                    this.SourceInstanceId == input.SourceInstanceId ||
-                    (this.SourceInstanceId != null &&
-                    this.SourceInstanceId.Equals(input.SourceInstanceId))
-                ) && 
-                (
-                    this.SourceNodeId == input.SourceNodeId ||
-                    (this.SourceNodeId != null &&
-                    this.SourceNodeId.Equals(input.SourceNodeId))
-                ) && 
-                (
-                    this.DatabaseInfo == input.DatabaseInfo ||
-                    (this.DatabaseInfo != null &&
-                    this.DatabaseInfo.Equals(input.DatabaseInfo))
-                ) && 
-                (
-                    this.TableInfos == input.TableInfos ||
-                    this.TableInfos != null &&
-                    input.TableInfos != null &&
-                    this.TableInfos.SequenceEqual(input.TableInfos)
-                ) && 
-                (
-                    this.TableReplConfig == input.TableReplConfig ||
-                    (this.TableReplConfig != null &&
-                    this.TableReplConfig.Equals(input.TableReplConfig))
-                ) && 
-                (
-                    this.NewTableReplConfig == input.NewTableReplConfig ||
-                    (this.NewTableReplConfig != null &&
-                    this.NewTableReplConfig.Equals(input.NewTableReplConfig))
-                ) && 
-                (
-                    this.TargetDatabaseName == input.TargetDatabaseName ||
-                    (this.TargetDatabaseName != null &&
-                    this.TargetDatabaseName.Equals(input.TargetDatabaseName))
-                ) && 
-                (
-                    this.IsTablesChange == input.IsTablesChange ||
-                    (this.IsTablesChange != null &&
-                    this.IsTablesChange.Equals(input.IsTablesChange))
-                ) && 
-                (
-                    this.LastErrorOfAlterTable == input.LastErrorOfAlterTable ||
-                    (this.LastErrorOfAlterTable != null &&
-                    this.LastErrorOfAlterTable.Equals(input.LastErrorOfAlterTable))
-                );
+            return true;
         }
 
         /// <summary>
@@ -164,25 +126,16 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceInstanceId != null)
-                    hashCode = hashCode * 59 + this.SourceInstanceId.GetHashCode();
-                if (this.SourceNodeId != null)
-                    hashCode = hashCode * 59 + this.SourceNodeId.GetHashCode();
-                if (this.DatabaseInfo != null)
-                    hashCode = hashCode * 59 + this.DatabaseInfo.GetHashCode();
-                if (this.TableInfos != null)
-                    hashCode = hashCode * 59 + this.TableInfos.GetHashCode();
-                if (this.TableReplConfig != null)
-                    hashCode = hashCode * 59 + this.TableReplConfig.GetHashCode();
-                if (this.NewTableReplConfig != null)
-                    hashCode = hashCode * 59 + this.NewTableReplConfig.GetHashCode();
-                if (this.TargetDatabaseName != null)
-                    hashCode = hashCode * 59 + this.TargetDatabaseName.GetHashCode();
-                if (this.IsTablesChange != null)
-                    hashCode = hashCode * 59 + this.IsTablesChange.GetHashCode();
-                if (this.LastErrorOfAlterTable != null)
-                    hashCode = hashCode * 59 + this.LastErrorOfAlterTable.GetHashCode();
+                var hashCode = 41;
+                if (this.SourceInstanceId != null) hashCode = hashCode * 59 + this.SourceInstanceId.GetHashCode();
+                if (this.SourceNodeId != null) hashCode = hashCode * 59 + this.SourceNodeId.GetHashCode();
+                if (this.DatabaseInfo != null) hashCode = hashCode * 59 + this.DatabaseInfo.GetHashCode();
+                if (this.TableInfos != null) hashCode = hashCode * 59 + this.TableInfos.GetHashCode();
+                if (this.TableReplConfig != null) hashCode = hashCode * 59 + this.TableReplConfig.GetHashCode();
+                if (this.NewTableReplConfig != null) hashCode = hashCode * 59 + this.NewTableReplConfig.GetHashCode();
+                if (this.TargetDatabaseName != null) hashCode = hashCode * 59 + this.TargetDatabaseName.GetHashCode();
+                if (this.IsTablesChange != null) hashCode = hashCode * 59 + this.IsTablesChange.GetHashCode();
+                if (this.LastErrorOfAlterTable != null) hashCode = hashCode * 59 + this.LastErrorOfAlterTable.GetHashCode();
                 return hashCode;
             }
         }

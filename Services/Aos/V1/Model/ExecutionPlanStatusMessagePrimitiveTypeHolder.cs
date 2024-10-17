@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(ExecutionPlanStatusMessagePrimitiveTypeHolder input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StatusMessage != input.StatusMessage || (this.StatusMessage != null && !this.StatusMessage.Equals(input.StatusMessage))) return false;
 
-            return 
-                (
-                    this.StatusMessage == input.StatusMessage ||
-                    (this.StatusMessage != null &&
-                    this.StatusMessage.Equals(input.StatusMessage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StatusMessage != null)
-                    hashCode = hashCode * 59 + this.StatusMessage.GetHashCode();
+                var hashCode = 41;
+                if (this.StatusMessage != null) hashCode = hashCode * 59 + this.StatusMessage.GetHashCode();
                 return hashCode;
             }
         }

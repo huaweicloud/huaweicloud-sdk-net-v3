@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(QuerySessionResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Active != input.Active || (this.Active != null && !this.Active.Equals(input.Active))) return false;
+            if (this.Operation != input.Operation || (this.Operation != null && !this.Operation.Equals(input.Operation))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.CostTime != input.CostTime || (this.CostTime != null && !this.CostTime.Equals(input.CostTime))) return false;
+            if (this.PlanSummary != input.PlanSummary || (this.PlanSummary != null && !this.PlanSummary.Equals(input.PlanSummary))) return false;
+            if (this.Host != input.Host || (this.Host != null && !this.Host.Equals(input.Host))) return false;
+            if (this.Client != input.Client || (this.Client != null && !this.Client.Equals(input.Client))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Active == input.Active ||
-                    (this.Active != null &&
-                    this.Active.Equals(input.Active))
-                ) && 
-                (
-                    this.Operation == input.Operation ||
-                    (this.Operation != null &&
-                    this.Operation.Equals(input.Operation))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.CostTime == input.CostTime ||
-                    (this.CostTime != null &&
-                    this.CostTime.Equals(input.CostTime))
-                ) && 
-                (
-                    this.PlanSummary == input.PlanSummary ||
-                    (this.PlanSummary != null &&
-                    this.PlanSummary.Equals(input.PlanSummary))
-                ) && 
-                (
-                    this.Host == input.Host ||
-                    (this.Host != null &&
-                    this.Host.Equals(input.Host))
-                ) && 
-                (
-                    this.Client == input.Client ||
-                    (this.Client != null &&
-                    this.Client.Equals(input.Client))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Namespace == input.Namespace ||
-                    (this.Namespace != null &&
-                    this.Namespace.Equals(input.Namespace))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Active != null)
-                    hashCode = hashCode * 59 + this.Active.GetHashCode();
-                if (this.Operation != null)
-                    hashCode = hashCode * 59 + this.Operation.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.CostTime != null)
-                    hashCode = hashCode * 59 + this.CostTime.GetHashCode();
-                if (this.PlanSummary != null)
-                    hashCode = hashCode * 59 + this.PlanSummary.GetHashCode();
-                if (this.Host != null)
-                    hashCode = hashCode * 59 + this.Host.GetHashCode();
-                if (this.Client != null)
-                    hashCode = hashCode * 59 + this.Client.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Namespace != null)
-                    hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Active != null) hashCode = hashCode * 59 + this.Active.GetHashCode();
+                if (this.Operation != null) hashCode = hashCode * 59 + this.Operation.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.CostTime != null) hashCode = hashCode * 59 + this.CostTime.GetHashCode();
+                if (this.PlanSummary != null) hashCode = hashCode * 59 + this.PlanSummary.GetHashCode();
+                if (this.Host != null) hashCode = hashCode * 59 + this.Host.GetHashCode();
+                if (this.Client != null) hashCode = hashCode * 59 + this.Client.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
                 return hashCode;
             }
         }

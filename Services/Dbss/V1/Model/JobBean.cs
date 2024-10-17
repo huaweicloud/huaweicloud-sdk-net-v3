@@ -17,13 +17,13 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     {
 
         /// <summary>
-        /// 任务ID,异步查询标识
+        /// 任务ID。
         /// </summary>
         [JsonProperty("job_id", NullValueHandling = NullValueHandling.Ignore)]
         public string JobId { get; set; }
 
         /// <summary>
-        /// 状态
+        /// 任务状态 - SUCCESS - RUNNING - FAIL - INIT - READY
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
@@ -47,6 +47,12 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string ServerName { get; set; }
 
         /// <summary>
+        /// 资源ID
+        /// </summary>
+        [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string ResourceId { get; set; }
+
+        /// <summary>
         /// 开始时间
         /// </summary>
         [JsonProperty("begin_time", NullValueHandling = NullValueHandling.Ignore)]
@@ -59,7 +65,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public long? EndTime { get; set; }
 
         /// <summary>
-        /// 计费模式
+        /// 计费模式 - Period:包周期计费 - Demand:按需计费
         /// </summary>
         [JsonProperty("charge_mode", NullValueHandling = NullValueHandling.Ignore)]
         public string ChargeMode { get; set; }
@@ -77,13 +83,13 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string FailReason { get; set; }
 
         /// <summary>
-        /// 双机实例HA共用的id
+        /// 防护实例ID,该字段已废弃
         /// </summary>
         [JsonProperty("ha_id", NullValueHandling = NullValueHandling.Ignore)]
         public string HaId { get; set; }
 
         /// <summary>
-        /// HA别名
+        /// 防护实例名称，该字段已废弃
         /// </summary>
         [JsonProperty("ha_name", NullValueHandling = NullValueHandling.Ignore)]
         public string HaName { get; set; }
@@ -102,6 +108,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             sb.Append("  jobType: ").Append(JobType).Append("\n");
             sb.Append("  serverId: ").Append(ServerId).Append("\n");
             sb.Append("  serverName: ").Append(ServerName).Append("\n");
+            sb.Append("  resourceId: ").Append(ResourceId).Append("\n");
             sb.Append("  beginTime: ").Append(BeginTime).Append("\n");
             sb.Append("  endTime: ").Append(EndTime).Append("\n");
             sb.Append("  chargeMode: ").Append(ChargeMode).Append("\n");
@@ -126,70 +133,22 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         public bool Equals(JobBean input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.JobType != input.JobType || (this.JobType != null && !this.JobType.Equals(input.JobType))) return false;
+            if (this.ServerId != input.ServerId || (this.ServerId != null && !this.ServerId.Equals(input.ServerId))) return false;
+            if (this.ServerName != input.ServerName || (this.ServerName != null && !this.ServerName.Equals(input.ServerName))) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
+            if (this.BeginTime != input.BeginTime || (this.BeginTime != null && !this.BeginTime.Equals(input.BeginTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.ChargeMode != input.ChargeMode || (this.ChargeMode != null && !this.ChargeMode.Equals(input.ChargeMode))) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
+            if (this.FailReason != input.FailReason || (this.FailReason != null && !this.FailReason.Equals(input.FailReason))) return false;
+            if (this.HaId != input.HaId || (this.HaId != null && !this.HaId.Equals(input.HaId))) return false;
+            if (this.HaName != input.HaName || (this.HaName != null && !this.HaName.Equals(input.HaName))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.JobType == input.JobType ||
-                    (this.JobType != null &&
-                    this.JobType.Equals(input.JobType))
-                ) && 
-                (
-                    this.ServerId == input.ServerId ||
-                    (this.ServerId != null &&
-                    this.ServerId.Equals(input.ServerId))
-                ) && 
-                (
-                    this.ServerName == input.ServerName ||
-                    (this.ServerName != null &&
-                    this.ServerName.Equals(input.ServerName))
-                ) && 
-                (
-                    this.BeginTime == input.BeginTime ||
-                    (this.BeginTime != null &&
-                    this.BeginTime.Equals(input.BeginTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.ChargeMode == input.ChargeMode ||
-                    (this.ChargeMode != null &&
-                    this.ChargeMode.Equals(input.ChargeMode))
-                ) && 
-                (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
-                ) && 
-                (
-                    this.FailReason == input.FailReason ||
-                    (this.FailReason != null &&
-                    this.FailReason.Equals(input.FailReason))
-                ) && 
-                (
-                    this.HaId == input.HaId ||
-                    (this.HaId != null &&
-                    this.HaId.Equals(input.HaId))
-                ) && 
-                (
-                    this.HaName == input.HaName ||
-                    (this.HaName != null &&
-                    this.HaName.Equals(input.HaName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -199,31 +158,20 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.JobType != null)
-                    hashCode = hashCode * 59 + this.JobType.GetHashCode();
-                if (this.ServerId != null)
-                    hashCode = hashCode * 59 + this.ServerId.GetHashCode();
-                if (this.ServerName != null)
-                    hashCode = hashCode * 59 + this.ServerName.GetHashCode();
-                if (this.BeginTime != null)
-                    hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.ChargeMode != null)
-                    hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.FailReason != null)
-                    hashCode = hashCode * 59 + this.FailReason.GetHashCode();
-                if (this.HaId != null)
-                    hashCode = hashCode * 59 + this.HaId.GetHashCode();
-                if (this.HaName != null)
-                    hashCode = hashCode * 59 + this.HaName.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.JobType != null) hashCode = hashCode * 59 + this.JobType.GetHashCode();
+                if (this.ServerId != null) hashCode = hashCode * 59 + this.ServerId.GetHashCode();
+                if (this.ServerName != null) hashCode = hashCode * 59 + this.ServerName.GetHashCode();
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.BeginTime != null) hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.ChargeMode != null) hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.FailReason != null) hashCode = hashCode * 59 + this.FailReason.GetHashCode();
+                if (this.HaId != null) hashCode = hashCode * 59 + this.HaId.GetHashCode();
+                if (this.HaName != null) hashCode = hashCode * 59 + this.HaName.GetHashCode();
                 return hashCode;
             }
         }

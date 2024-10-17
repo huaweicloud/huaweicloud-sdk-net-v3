@@ -98,52 +98,17 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(TopnRequstBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.IsDesc != input.IsDesc || (this.IsDesc != null && !this.IsDesc.Equals(input.IsDesc))) return false;
+            if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
+            if (this.SortBy != input.SortBy || (this.SortBy != null && !this.SortBy.Equals(input.SortBy))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.Topn != input.Topn || (this.Topn != null && !this.Topn.Equals(input.Topn))) return false;
+            if (this.Filter != input.Filter || (this.Filter != null && input.Filter != null && !this.Filter.SequenceEqual(input.Filter))) return false;
+            if (this.SearchList != input.SearchList || (this.SearchList != null && input.SearchList != null && !this.SearchList.SequenceEqual(input.SearchList))) return false;
 
-            return 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.IsDesc == input.IsDesc ||
-                    (this.IsDesc != null &&
-                    this.IsDesc.Equals(input.IsDesc))
-                ) && 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.SortBy == input.SortBy ||
-                    (this.SortBy != null &&
-                    this.SortBy.Equals(input.SortBy))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.Topn == input.Topn ||
-                    (this.Topn != null &&
-                    this.Topn.Equals(input.Topn))
-                ) && 
-                (
-                    this.Filter == input.Filter ||
-                    this.Filter != null &&
-                    input.Filter != null &&
-                    this.Filter.SequenceEqual(input.Filter)
-                ) && 
-                (
-                    this.SearchList == input.SearchList ||
-                    this.SearchList != null &&
-                    input.SearchList != null &&
-                    this.SearchList.SequenceEqual(input.SearchList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -153,23 +118,15 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.IsDesc != null)
-                    hashCode = hashCode * 59 + this.IsDesc.GetHashCode();
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
-                if (this.SortBy != null)
-                    hashCode = hashCode * 59 + this.SortBy.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.Topn != null)
-                    hashCode = hashCode * 59 + this.Topn.GetHashCode();
-                if (this.Filter != null)
-                    hashCode = hashCode * 59 + this.Filter.GetHashCode();
-                if (this.SearchList != null)
-                    hashCode = hashCode * 59 + this.SearchList.GetHashCode();
+                var hashCode = 41;
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.IsDesc != null) hashCode = hashCode * 59 + this.IsDesc.GetHashCode();
+                if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.SortBy != null) hashCode = hashCode * 59 + this.SortBy.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.Topn != null) hashCode = hashCode * 59 + this.Topn.GetHashCode();
+                if (this.Filter != null) hashCode = hashCode * 59 + this.Filter.GetHashCode();
+                if (this.SearchList != null) hashCode = hashCode * 59 + this.SearchList.GetHashCode();
                 return hashCode;
             }
         }

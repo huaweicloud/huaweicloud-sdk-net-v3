@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         /// </summary>
         public bool Equals(TenantBasic input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CustomerId != input.CustomerId || (this.CustomerId != null && !this.CustomerId.Equals(input.CustomerId))) return false;
+            if (this.CustomerName != input.CustomerName || (this.CustomerName != null && !this.CustomerName.Equals(input.CustomerName))) return false;
+            if (this.EnterpriseName != input.EnterpriseName || (this.EnterpriseName != null && !this.EnterpriseName.Equals(input.EnterpriseName))) return false;
 
-            return 
-                (
-                    this.CustomerId == input.CustomerId ||
-                    (this.CustomerId != null &&
-                    this.CustomerId.Equals(input.CustomerId))
-                ) && 
-                (
-                    this.CustomerName == input.CustomerName ||
-                    (this.CustomerName != null &&
-                    this.CustomerName.Equals(input.CustomerName))
-                ) && 
-                (
-                    this.EnterpriseName == input.EnterpriseName ||
-                    (this.EnterpriseName != null &&
-                    this.EnterpriseName.Equals(input.EnterpriseName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CustomerId != null)
-                    hashCode = hashCode * 59 + this.CustomerId.GetHashCode();
-                if (this.CustomerName != null)
-                    hashCode = hashCode * 59 + this.CustomerName.GetHashCode();
-                if (this.EnterpriseName != null)
-                    hashCode = hashCode * 59 + this.EnterpriseName.GetHashCode();
+                var hashCode = 41;
+                if (this.CustomerId != null) hashCode = hashCode * 59 + this.CustomerId.GetHashCode();
+                if (this.CustomerName != null) hashCode = hashCode * 59 + this.CustomerName.GetHashCode();
+                if (this.EnterpriseName != null) hashCode = hashCode * 59 + this.EnterpriseName.GetHashCode();
                 return hashCode;
             }
         }

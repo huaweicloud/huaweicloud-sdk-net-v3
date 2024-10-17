@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(NeutronCreateNetworkResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Network != input.Network || (this.Network != null && !this.Network.Equals(input.Network))) return false;
 
-            return 
-                (
-                    this.Network == input.Network ||
-                    (this.Network != null &&
-                    this.Network.Equals(input.Network))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Network != null)
-                    hashCode = hashCode * 59 + this.Network.GetHashCode();
+                var hashCode = 41;
+                if (this.Network != null) hashCode = hashCode * 59 + this.Network.GetHashCode();
                 return hashCode;
             }
         }

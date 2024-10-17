@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(ListStreamForbiddenResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.Blocks != input.Blocks || (this.Blocks != null && input.Blocks != null && !this.Blocks.SequenceEqual(input.Blocks))) return false;
 
-            return 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.Blocks == input.Blocks ||
-                    this.Blocks != null &&
-                    input.Blocks != null &&
-                    this.Blocks.SequenceEqual(input.Blocks)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.Blocks != null)
-                    hashCode = hashCode * 59 + this.Blocks.GetHashCode();
+                var hashCode = 41;
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.Blocks != null) hashCode = hashCode * 59 + this.Blocks.GetHashCode();
                 return hashCode;
             }
         }

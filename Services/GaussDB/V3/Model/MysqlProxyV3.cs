@@ -217,136 +217,34 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(MysqlProxyV3 input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PoolId != input.PoolId || (this.PoolId != null && !this.PoolId.Equals(input.PoolId))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Address != input.Address || (this.Address != null && !this.Address.Equals(input.Address))) return false;
+            if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
+            if (this.PoolStatus != input.PoolStatus || (this.PoolStatus != null && !this.PoolStatus.Equals(input.PoolStatus))) return false;
+            if (this.DelayThresholdInSeconds != input.DelayThresholdInSeconds || (this.DelayThresholdInSeconds != null && !this.DelayThresholdInSeconds.Equals(input.DelayThresholdInSeconds))) return false;
+            if (this.ElbVip != input.ElbVip || (this.ElbVip != null && !this.ElbVip.Equals(input.ElbVip))) return false;
+            if (this.Eip != input.Eip || (this.Eip != null && !this.Eip.Equals(input.Eip))) return false;
+            if (this.Vcpus != input.Vcpus || (this.Vcpus != null && !this.Vcpus.Equals(input.Vcpus))) return false;
+            if (this.Ram != input.Ram || (this.Ram != null && !this.Ram.Equals(input.Ram))) return false;
+            if (this.NodeNum != input.NodeNum || (this.NodeNum != null && !this.NodeNum.Equals(input.NodeNum))) return false;
+            if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
+            if (this.Nodes != input.Nodes || (this.Nodes != null && input.Nodes != null && !this.Nodes.SequenceEqual(input.Nodes))) return false;
+            if (this.FlavorRef != input.FlavorRef || (this.FlavorRef != null && !this.FlavorRef.Equals(input.FlavorRef))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.TransactionSplit != input.TransactionSplit || (this.TransactionSplit != null && !this.TransactionSplit.Equals(input.TransactionSplit))) return false;
+            if (this.ConnectionPoolType != input.ConnectionPoolType || (this.ConnectionPoolType != null && !this.ConnectionPoolType.Equals(input.ConnectionPoolType))) return false;
+            if (this.SwitchConnectionPoolTypeEnabled != input.SwitchConnectionPoolTypeEnabled || (this.SwitchConnectionPoolTypeEnabled != null && !this.SwitchConnectionPoolTypeEnabled.Equals(input.SwitchConnectionPoolTypeEnabled))) return false;
+            if (this.RouteMode != input.RouteMode || (this.RouteMode != null && !this.RouteMode.Equals(input.RouteMode))) return false;
+            if (this.BalanceRouteModeEnabled != input.BalanceRouteModeEnabled || (this.BalanceRouteModeEnabled != null && !this.BalanceRouteModeEnabled.Equals(input.BalanceRouteModeEnabled))) return false;
+            if (this.ConsistenceMode != input.ConsistenceMode || (this.ConsistenceMode != null && !this.ConsistenceMode.Equals(input.ConsistenceMode))) return false;
+            if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
+            if (this.SslOption != input.SslOption || (this.SslOption != null && !this.SslOption.Equals(input.SslOption))) return false;
+            if (this.NewNodeAutoAddStatus != input.NewNodeAutoAddStatus || (this.NewNodeAutoAddStatus != null && !this.NewNodeAutoAddStatus.Equals(input.NewNodeAutoAddStatus))) return false;
+            if (this.NewNodeWeight != input.NewNodeWeight || (this.NewNodeWeight != null && !this.NewNodeWeight.Equals(input.NewNodeWeight))) return false;
 
-            return 
-                (
-                    this.PoolId == input.PoolId ||
-                    (this.PoolId != null &&
-                    this.PoolId.Equals(input.PoolId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
-                ) && 
-                (
-                    this.Port == input.Port ||
-                    (this.Port != null &&
-                    this.Port.Equals(input.Port))
-                ) && 
-                (
-                    this.PoolStatus == input.PoolStatus ||
-                    (this.PoolStatus != null &&
-                    this.PoolStatus.Equals(input.PoolStatus))
-                ) && 
-                (
-                    this.DelayThresholdInSeconds == input.DelayThresholdInSeconds ||
-                    (this.DelayThresholdInSeconds != null &&
-                    this.DelayThresholdInSeconds.Equals(input.DelayThresholdInSeconds))
-                ) && 
-                (
-                    this.ElbVip == input.ElbVip ||
-                    (this.ElbVip != null &&
-                    this.ElbVip.Equals(input.ElbVip))
-                ) && 
-                (
-                    this.Eip == input.Eip ||
-                    (this.Eip != null &&
-                    this.Eip.Equals(input.Eip))
-                ) && 
-                (
-                    this.Vcpus == input.Vcpus ||
-                    (this.Vcpus != null &&
-                    this.Vcpus.Equals(input.Vcpus))
-                ) && 
-                (
-                    this.Ram == input.Ram ||
-                    (this.Ram != null &&
-                    this.Ram.Equals(input.Ram))
-                ) && 
-                (
-                    this.NodeNum == input.NodeNum ||
-                    (this.NodeNum != null &&
-                    this.NodeNum.Equals(input.NodeNum))
-                ) && 
-                (
-                    this.Mode == input.Mode ||
-                    (this.Mode != null &&
-                    this.Mode.Equals(input.Mode))
-                ) && 
-                (
-                    this.Nodes == input.Nodes ||
-                    this.Nodes != null &&
-                    input.Nodes != null &&
-                    this.Nodes.SequenceEqual(input.Nodes)
-                ) && 
-                (
-                    this.FlavorRef == input.FlavorRef ||
-                    (this.FlavorRef != null &&
-                    this.FlavorRef.Equals(input.FlavorRef))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.TransactionSplit == input.TransactionSplit ||
-                    (this.TransactionSplit != null &&
-                    this.TransactionSplit.Equals(input.TransactionSplit))
-                ) && 
-                (
-                    this.ConnectionPoolType == input.ConnectionPoolType ||
-                    (this.ConnectionPoolType != null &&
-                    this.ConnectionPoolType.Equals(input.ConnectionPoolType))
-                ) && 
-                (
-                    this.SwitchConnectionPoolTypeEnabled == input.SwitchConnectionPoolTypeEnabled ||
-                    (this.SwitchConnectionPoolTypeEnabled != null &&
-                    this.SwitchConnectionPoolTypeEnabled.Equals(input.SwitchConnectionPoolTypeEnabled))
-                ) && 
-                (
-                    this.RouteMode == input.RouteMode ||
-                    (this.RouteMode != null &&
-                    this.RouteMode.Equals(input.RouteMode))
-                ) && 
-                (
-                    this.BalanceRouteModeEnabled == input.BalanceRouteModeEnabled ||
-                    (this.BalanceRouteModeEnabled != null &&
-                    this.BalanceRouteModeEnabled.Equals(input.BalanceRouteModeEnabled))
-                ) && 
-                (
-                    this.ConsistenceMode == input.ConsistenceMode ||
-                    (this.ConsistenceMode != null &&
-                    this.ConsistenceMode.Equals(input.ConsistenceMode))
-                ) && 
-                (
-                    this.SubnetId == input.SubnetId ||
-                    (this.SubnetId != null &&
-                    this.SubnetId.Equals(input.SubnetId))
-                ) && 
-                (
-                    this.SslOption == input.SslOption ||
-                    (this.SslOption != null &&
-                    this.SslOption.Equals(input.SslOption))
-                ) && 
-                (
-                    this.NewNodeAutoAddStatus == input.NewNodeAutoAddStatus ||
-                    (this.NewNodeAutoAddStatus != null &&
-                    this.NewNodeAutoAddStatus.Equals(input.NewNodeAutoAddStatus))
-                ) && 
-                (
-                    this.NewNodeWeight == input.NewNodeWeight ||
-                    (this.NewNodeWeight != null &&
-                    this.NewNodeWeight.Equals(input.NewNodeWeight))
-                );
+            return true;
         }
 
         /// <summary>
@@ -356,57 +254,32 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PoolId != null)
-                    hashCode = hashCode * 59 + this.PoolId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Address != null)
-                    hashCode = hashCode * 59 + this.Address.GetHashCode();
-                if (this.Port != null)
-                    hashCode = hashCode * 59 + this.Port.GetHashCode();
-                if (this.PoolStatus != null)
-                    hashCode = hashCode * 59 + this.PoolStatus.GetHashCode();
-                if (this.DelayThresholdInSeconds != null)
-                    hashCode = hashCode * 59 + this.DelayThresholdInSeconds.GetHashCode();
-                if (this.ElbVip != null)
-                    hashCode = hashCode * 59 + this.ElbVip.GetHashCode();
-                if (this.Eip != null)
-                    hashCode = hashCode * 59 + this.Eip.GetHashCode();
-                if (this.Vcpus != null)
-                    hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
-                if (this.Ram != null)
-                    hashCode = hashCode * 59 + this.Ram.GetHashCode();
-                if (this.NodeNum != null)
-                    hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
-                if (this.Mode != null)
-                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
-                if (this.Nodes != null)
-                    hashCode = hashCode * 59 + this.Nodes.GetHashCode();
-                if (this.FlavorRef != null)
-                    hashCode = hashCode * 59 + this.FlavorRef.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.TransactionSplit != null)
-                    hashCode = hashCode * 59 + this.TransactionSplit.GetHashCode();
-                if (this.ConnectionPoolType != null)
-                    hashCode = hashCode * 59 + this.ConnectionPoolType.GetHashCode();
-                if (this.SwitchConnectionPoolTypeEnabled != null)
-                    hashCode = hashCode * 59 + this.SwitchConnectionPoolTypeEnabled.GetHashCode();
-                if (this.RouteMode != null)
-                    hashCode = hashCode * 59 + this.RouteMode.GetHashCode();
-                if (this.BalanceRouteModeEnabled != null)
-                    hashCode = hashCode * 59 + this.BalanceRouteModeEnabled.GetHashCode();
-                if (this.ConsistenceMode != null)
-                    hashCode = hashCode * 59 + this.ConsistenceMode.GetHashCode();
-                if (this.SubnetId != null)
-                    hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
-                if (this.SslOption != null)
-                    hashCode = hashCode * 59 + this.SslOption.GetHashCode();
-                if (this.NewNodeAutoAddStatus != null)
-                    hashCode = hashCode * 59 + this.NewNodeAutoAddStatus.GetHashCode();
-                if (this.NewNodeWeight != null)
-                    hashCode = hashCode * 59 + this.NewNodeWeight.GetHashCode();
+                var hashCode = 41;
+                if (this.PoolId != null) hashCode = hashCode * 59 + this.PoolId.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Address != null) hashCode = hashCode * 59 + this.Address.GetHashCode();
+                if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
+                if (this.PoolStatus != null) hashCode = hashCode * 59 + this.PoolStatus.GetHashCode();
+                if (this.DelayThresholdInSeconds != null) hashCode = hashCode * 59 + this.DelayThresholdInSeconds.GetHashCode();
+                if (this.ElbVip != null) hashCode = hashCode * 59 + this.ElbVip.GetHashCode();
+                if (this.Eip != null) hashCode = hashCode * 59 + this.Eip.GetHashCode();
+                if (this.Vcpus != null) hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
+                if (this.Ram != null) hashCode = hashCode * 59 + this.Ram.GetHashCode();
+                if (this.NodeNum != null) hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
+                if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                if (this.Nodes != null) hashCode = hashCode * 59 + this.Nodes.GetHashCode();
+                if (this.FlavorRef != null) hashCode = hashCode * 59 + this.FlavorRef.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.TransactionSplit != null) hashCode = hashCode * 59 + this.TransactionSplit.GetHashCode();
+                if (this.ConnectionPoolType != null) hashCode = hashCode * 59 + this.ConnectionPoolType.GetHashCode();
+                if (this.SwitchConnectionPoolTypeEnabled != null) hashCode = hashCode * 59 + this.SwitchConnectionPoolTypeEnabled.GetHashCode();
+                if (this.RouteMode != null) hashCode = hashCode * 59 + this.RouteMode.GetHashCode();
+                if (this.BalanceRouteModeEnabled != null) hashCode = hashCode * 59 + this.BalanceRouteModeEnabled.GetHashCode();
+                if (this.ConsistenceMode != null) hashCode = hashCode * 59 + this.ConsistenceMode.GetHashCode();
+                if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
+                if (this.SslOption != null) hashCode = hashCode * 59 + this.SslOption.GetHashCode();
+                if (this.NewNodeAutoAddStatus != null) hashCode = hashCode * 59 + this.NewNodeAutoAddStatus.GetHashCode();
+                if (this.NewNodeWeight != null) hashCode = hashCode * 59 + this.NewNodeWeight.GetHashCode();
                 return hashCode;
             }
         }

@@ -291,26 +291,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(TableReplConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ReplType != input.ReplType) return false;
+            if (this.ReplScope != input.ReplScope) return false;
+            if (this.Tables != input.Tables || (this.Tables != null && input.Tables != null && !this.Tables.SequenceEqual(input.Tables))) return false;
 
-            return 
-                (
-                    this.ReplType == input.ReplType ||
-                    (this.ReplType != null &&
-                    this.ReplType.Equals(input.ReplType))
-                ) && 
-                (
-                    this.ReplScope == input.ReplScope ||
-                    (this.ReplScope != null &&
-                    this.ReplScope.Equals(input.ReplScope))
-                ) && 
-                (
-                    this.Tables == input.Tables ||
-                    this.Tables != null &&
-                    input.Tables != null &&
-                    this.Tables.SequenceEqual(input.Tables)
-                );
+            return true;
         }
 
         /// <summary>
@@ -320,13 +306,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ReplType != null)
-                    hashCode = hashCode * 59 + this.ReplType.GetHashCode();
-                if (this.ReplScope != null)
-                    hashCode = hashCode * 59 + this.ReplScope.GetHashCode();
-                if (this.Tables != null)
-                    hashCode = hashCode * 59 + this.Tables.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.ReplType.GetHashCode();
+                hashCode = hashCode * 59 + this.ReplScope.GetHashCode();
+                if (this.Tables != null) hashCode = hashCode * 59 + this.Tables.GetHashCode();
                 return hashCode;
             }
         }

@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(PrecheckSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClusterID != input.ClusterID || (this.ClusterID != null && !this.ClusterID.Equals(input.ClusterID))) return false;
+            if (this.ClusterVersion != input.ClusterVersion || (this.ClusterVersion != null && !this.ClusterVersion.Equals(input.ClusterVersion))) return false;
+            if (this.TargetVersion != input.TargetVersion || (this.TargetVersion != null && !this.TargetVersion.Equals(input.TargetVersion))) return false;
+            if (this.SkippedCheckItemList != input.SkippedCheckItemList || (this.SkippedCheckItemList != null && input.SkippedCheckItemList != null && !this.SkippedCheckItemList.SequenceEqual(input.SkippedCheckItemList))) return false;
 
-            return 
-                (
-                    this.ClusterID == input.ClusterID ||
-                    (this.ClusterID != null &&
-                    this.ClusterID.Equals(input.ClusterID))
-                ) && 
-                (
-                    this.ClusterVersion == input.ClusterVersion ||
-                    (this.ClusterVersion != null &&
-                    this.ClusterVersion.Equals(input.ClusterVersion))
-                ) && 
-                (
-                    this.TargetVersion == input.TargetVersion ||
-                    (this.TargetVersion != null &&
-                    this.TargetVersion.Equals(input.TargetVersion))
-                ) && 
-                (
-                    this.SkippedCheckItemList == input.SkippedCheckItemList ||
-                    this.SkippedCheckItemList != null &&
-                    input.SkippedCheckItemList != null &&
-                    this.SkippedCheckItemList.SequenceEqual(input.SkippedCheckItemList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClusterID != null)
-                    hashCode = hashCode * 59 + this.ClusterID.GetHashCode();
-                if (this.ClusterVersion != null)
-                    hashCode = hashCode * 59 + this.ClusterVersion.GetHashCode();
-                if (this.TargetVersion != null)
-                    hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
-                if (this.SkippedCheckItemList != null)
-                    hashCode = hashCode * 59 + this.SkippedCheckItemList.GetHashCode();
+                var hashCode = 41;
+                if (this.ClusterID != null) hashCode = hashCode * 59 + this.ClusterID.GetHashCode();
+                if (this.ClusterVersion != null) hashCode = hashCode * 59 + this.ClusterVersion.GetHashCode();
+                if (this.TargetVersion != null) hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
+                if (this.SkippedCheckItemList != null) hashCode = hashCode * 59 + this.SkippedCheckItemList.GetHashCode();
                 return hashCode;
             }
         }

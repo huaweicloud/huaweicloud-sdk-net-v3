@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public bool Equals(ShowPtrRecordSetRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
+            if (this.FloatingipId != input.FloatingipId || (this.FloatingipId != null && !this.FloatingipId.Equals(input.FloatingipId))) return false;
 
-            return 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.FloatingipId == input.FloatingipId ||
-                    (this.FloatingipId != null &&
-                    this.FloatingipId.Equals(input.FloatingipId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.FloatingipId != null)
-                    hashCode = hashCode * 59 + this.FloatingipId.GetHashCode();
+                var hashCode = 41;
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
+                if (this.FloatingipId != null) hashCode = hashCode * 59 + this.FloatingipId.GetHashCode();
                 return hashCode;
             }
         }

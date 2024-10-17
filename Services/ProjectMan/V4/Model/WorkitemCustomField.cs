@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(WorkitemCustomField input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FieldId != input.FieldId || (this.FieldId != null && !this.FieldId.Equals(input.FieldId))) return false;
+            if (this.FieldName != input.FieldName || (this.FieldName != null && !this.FieldName.Equals(input.FieldName))) return false;
+            if (this.FieldType != input.FieldType || (this.FieldType != null && !this.FieldType.Equals(input.FieldType))) return false;
+            if (this.FieldOptionSource != input.FieldOptionSource || (this.FieldOptionSource != null && !this.FieldOptionSource.Equals(input.FieldOptionSource))) return false;
+            if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
 
-            return 
-                (
-                    this.FieldId == input.FieldId ||
-                    (this.FieldId != null &&
-                    this.FieldId.Equals(input.FieldId))
-                ) && 
-                (
-                    this.FieldName == input.FieldName ||
-                    (this.FieldName != null &&
-                    this.FieldName.Equals(input.FieldName))
-                ) && 
-                (
-                    this.FieldType == input.FieldType ||
-                    (this.FieldType != null &&
-                    this.FieldType.Equals(input.FieldType))
-                ) && 
-                (
-                    this.FieldOptionSource == input.FieldOptionSource ||
-                    (this.FieldOptionSource != null &&
-                    this.FieldOptionSource.Equals(input.FieldOptionSource))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FieldId != null)
-                    hashCode = hashCode * 59 + this.FieldId.GetHashCode();
-                if (this.FieldName != null)
-                    hashCode = hashCode * 59 + this.FieldName.GetHashCode();
-                if (this.FieldType != null)
-                    hashCode = hashCode * 59 + this.FieldType.GetHashCode();
-                if (this.FieldOptionSource != null)
-                    hashCode = hashCode * 59 + this.FieldOptionSource.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
+                var hashCode = 41;
+                if (this.FieldId != null) hashCode = hashCode * 59 + this.FieldId.GetHashCode();
+                if (this.FieldName != null) hashCode = hashCode * 59 + this.FieldName.GetHashCode();
+                if (this.FieldType != null) hashCode = hashCode * 59 + this.FieldType.GetHashCode();
+                if (this.FieldOptionSource != null) hashCode = hashCode * 59 + this.FieldOptionSource.GetHashCode();
+                if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
                 return hashCode;
             }
         }

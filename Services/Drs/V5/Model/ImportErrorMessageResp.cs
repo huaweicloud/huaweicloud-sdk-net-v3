@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ImportErrorMessageResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SheetName != input.SheetName || (this.SheetName != null && !this.SheetName.Equals(input.SheetName))) return false;
+            if (this.RowRum != input.RowRum || (this.RowRum != null && !this.RowRum.Equals(input.RowRum))) return false;
+            if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
+            if (this.ErrorMessage != input.ErrorMessage || (this.ErrorMessage != null && !this.ErrorMessage.Equals(input.ErrorMessage))) return false;
 
-            return 
-                (
-                    this.SheetName == input.SheetName ||
-                    (this.SheetName != null &&
-                    this.SheetName.Equals(input.SheetName))
-                ) && 
-                (
-                    this.RowRum == input.RowRum ||
-                    (this.RowRum != null &&
-                    this.RowRum.Equals(input.RowRum))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                ) && 
-                (
-                    this.ErrorMessage == input.ErrorMessage ||
-                    (this.ErrorMessage != null &&
-                    this.ErrorMessage.Equals(input.ErrorMessage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SheetName != null)
-                    hashCode = hashCode * 59 + this.SheetName.GetHashCode();
-                if (this.RowRum != null)
-                    hashCode = hashCode * 59 + this.RowRum.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
-                if (this.ErrorMessage != null)
-                    hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
+                var hashCode = 41;
+                if (this.SheetName != null) hashCode = hashCode * 59 + this.SheetName.GetHashCode();
+                if (this.RowRum != null) hashCode = hashCode * 59 + this.RowRum.GetHashCode();
+                if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.ErrorMessage != null) hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
                 return hashCode;
             }
         }

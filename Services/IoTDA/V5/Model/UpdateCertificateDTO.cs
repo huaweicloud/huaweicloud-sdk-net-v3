@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(UpdateCertificateDTO input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProvisionEnable != input.ProvisionEnable || (this.ProvisionEnable != null && !this.ProvisionEnable.Equals(input.ProvisionEnable))) return false;
+            if (this.TemplateId != input.TemplateId || (this.TemplateId != null && !this.TemplateId.Equals(input.TemplateId))) return false;
 
-            return 
-                (
-                    this.ProvisionEnable == input.ProvisionEnable ||
-                    (this.ProvisionEnable != null &&
-                    this.ProvisionEnable.Equals(input.ProvisionEnable))
-                ) && 
-                (
-                    this.TemplateId == input.TemplateId ||
-                    (this.TemplateId != null &&
-                    this.TemplateId.Equals(input.TemplateId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProvisionEnable != null)
-                    hashCode = hashCode * 59 + this.ProvisionEnable.GetHashCode();
-                if (this.TemplateId != null)
-                    hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
+                var hashCode = 41;
+                if (this.ProvisionEnable != null) hashCode = hashCode * 59 + this.ProvisionEnable.GetHashCode();
+                if (this.TemplateId != null) hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
                 return hashCode;
             }
         }

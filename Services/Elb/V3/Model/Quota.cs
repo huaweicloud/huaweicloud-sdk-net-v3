@@ -154,90 +154,25 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(Quota input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.Loadbalancer != input.Loadbalancer || (this.Loadbalancer != null && !this.Loadbalancer.Equals(input.Loadbalancer))) return false;
+            if (this.Certificate != input.Certificate || (this.Certificate != null && !this.Certificate.Equals(input.Certificate))) return false;
+            if (this.Listener != input.Listener || (this.Listener != null && !this.Listener.Equals(input.Listener))) return false;
+            if (this.L7policy != input.L7policy || (this.L7policy != null && !this.L7policy.Equals(input.L7policy))) return false;
+            if (this.ConditionPerPolicy != input.ConditionPerPolicy || (this.ConditionPerPolicy != null && !this.ConditionPerPolicy.Equals(input.ConditionPerPolicy))) return false;
+            if (this.Pool != input.Pool || (this.Pool != null && !this.Pool.Equals(input.Pool))) return false;
+            if (this.Healthmonitor != input.Healthmonitor || (this.Healthmonitor != null && !this.Healthmonitor.Equals(input.Healthmonitor))) return false;
+            if (this.Member != input.Member || (this.Member != null && !this.Member.Equals(input.Member))) return false;
+            if (this.MembersPerPool != input.MembersPerPool || (this.MembersPerPool != null && !this.MembersPerPool.Equals(input.MembersPerPool))) return false;
+            if (this.ListenersPerPool != input.ListenersPerPool || (this.ListenersPerPool != null && !this.ListenersPerPool.Equals(input.ListenersPerPool))) return false;
+            if (this.Ipgroup != input.Ipgroup || (this.Ipgroup != null && !this.Ipgroup.Equals(input.Ipgroup))) return false;
+            if (this.IpgroupBindings != input.IpgroupBindings || (this.IpgroupBindings != null && !this.IpgroupBindings.Equals(input.IpgroupBindings))) return false;
+            if (this.IpgroupMaxLength != input.IpgroupMaxLength || (this.IpgroupMaxLength != null && !this.IpgroupMaxLength.Equals(input.IpgroupMaxLength))) return false;
+            if (this.SecurityPolicy != input.SecurityPolicy || (this.SecurityPolicy != null && !this.SecurityPolicy.Equals(input.SecurityPolicy))) return false;
+            if (this.ListenersPerLoadbalancer != input.ListenersPerLoadbalancer || (this.ListenersPerLoadbalancer != null && !this.ListenersPerLoadbalancer.Equals(input.ListenersPerLoadbalancer))) return false;
 
-            return 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Loadbalancer == input.Loadbalancer ||
-                    (this.Loadbalancer != null &&
-                    this.Loadbalancer.Equals(input.Loadbalancer))
-                ) && 
-                (
-                    this.Certificate == input.Certificate ||
-                    (this.Certificate != null &&
-                    this.Certificate.Equals(input.Certificate))
-                ) && 
-                (
-                    this.Listener == input.Listener ||
-                    (this.Listener != null &&
-                    this.Listener.Equals(input.Listener))
-                ) && 
-                (
-                    this.L7policy == input.L7policy ||
-                    (this.L7policy != null &&
-                    this.L7policy.Equals(input.L7policy))
-                ) && 
-                (
-                    this.ConditionPerPolicy == input.ConditionPerPolicy ||
-                    (this.ConditionPerPolicy != null &&
-                    this.ConditionPerPolicy.Equals(input.ConditionPerPolicy))
-                ) && 
-                (
-                    this.Pool == input.Pool ||
-                    (this.Pool != null &&
-                    this.Pool.Equals(input.Pool))
-                ) && 
-                (
-                    this.Healthmonitor == input.Healthmonitor ||
-                    (this.Healthmonitor != null &&
-                    this.Healthmonitor.Equals(input.Healthmonitor))
-                ) && 
-                (
-                    this.Member == input.Member ||
-                    (this.Member != null &&
-                    this.Member.Equals(input.Member))
-                ) && 
-                (
-                    this.MembersPerPool == input.MembersPerPool ||
-                    (this.MembersPerPool != null &&
-                    this.MembersPerPool.Equals(input.MembersPerPool))
-                ) && 
-                (
-                    this.ListenersPerPool == input.ListenersPerPool ||
-                    (this.ListenersPerPool != null &&
-                    this.ListenersPerPool.Equals(input.ListenersPerPool))
-                ) && 
-                (
-                    this.Ipgroup == input.Ipgroup ||
-                    (this.Ipgroup != null &&
-                    this.Ipgroup.Equals(input.Ipgroup))
-                ) && 
-                (
-                    this.IpgroupBindings == input.IpgroupBindings ||
-                    (this.IpgroupBindings != null &&
-                    this.IpgroupBindings.Equals(input.IpgroupBindings))
-                ) && 
-                (
-                    this.IpgroupMaxLength == input.IpgroupMaxLength ||
-                    (this.IpgroupMaxLength != null &&
-                    this.IpgroupMaxLength.Equals(input.IpgroupMaxLength))
-                ) && 
-                (
-                    this.SecurityPolicy == input.SecurityPolicy ||
-                    (this.SecurityPolicy != null &&
-                    this.SecurityPolicy.Equals(input.SecurityPolicy))
-                ) && 
-                (
-                    this.ListenersPerLoadbalancer == input.ListenersPerLoadbalancer ||
-                    (this.ListenersPerLoadbalancer != null &&
-                    this.ListenersPerLoadbalancer.Equals(input.ListenersPerLoadbalancer))
-                );
+            return true;
         }
 
         /// <summary>
@@ -247,39 +182,23 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.Loadbalancer != null)
-                    hashCode = hashCode * 59 + this.Loadbalancer.GetHashCode();
-                if (this.Certificate != null)
-                    hashCode = hashCode * 59 + this.Certificate.GetHashCode();
-                if (this.Listener != null)
-                    hashCode = hashCode * 59 + this.Listener.GetHashCode();
-                if (this.L7policy != null)
-                    hashCode = hashCode * 59 + this.L7policy.GetHashCode();
-                if (this.ConditionPerPolicy != null)
-                    hashCode = hashCode * 59 + this.ConditionPerPolicy.GetHashCode();
-                if (this.Pool != null)
-                    hashCode = hashCode * 59 + this.Pool.GetHashCode();
-                if (this.Healthmonitor != null)
-                    hashCode = hashCode * 59 + this.Healthmonitor.GetHashCode();
-                if (this.Member != null)
-                    hashCode = hashCode * 59 + this.Member.GetHashCode();
-                if (this.MembersPerPool != null)
-                    hashCode = hashCode * 59 + this.MembersPerPool.GetHashCode();
-                if (this.ListenersPerPool != null)
-                    hashCode = hashCode * 59 + this.ListenersPerPool.GetHashCode();
-                if (this.Ipgroup != null)
-                    hashCode = hashCode * 59 + this.Ipgroup.GetHashCode();
-                if (this.IpgroupBindings != null)
-                    hashCode = hashCode * 59 + this.IpgroupBindings.GetHashCode();
-                if (this.IpgroupMaxLength != null)
-                    hashCode = hashCode * 59 + this.IpgroupMaxLength.GetHashCode();
-                if (this.SecurityPolicy != null)
-                    hashCode = hashCode * 59 + this.SecurityPolicy.GetHashCode();
-                if (this.ListenersPerLoadbalancer != null)
-                    hashCode = hashCode * 59 + this.ListenersPerLoadbalancer.GetHashCode();
+                var hashCode = 41;
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.Loadbalancer != null) hashCode = hashCode * 59 + this.Loadbalancer.GetHashCode();
+                if (this.Certificate != null) hashCode = hashCode * 59 + this.Certificate.GetHashCode();
+                if (this.Listener != null) hashCode = hashCode * 59 + this.Listener.GetHashCode();
+                if (this.L7policy != null) hashCode = hashCode * 59 + this.L7policy.GetHashCode();
+                if (this.ConditionPerPolicy != null) hashCode = hashCode * 59 + this.ConditionPerPolicy.GetHashCode();
+                if (this.Pool != null) hashCode = hashCode * 59 + this.Pool.GetHashCode();
+                if (this.Healthmonitor != null) hashCode = hashCode * 59 + this.Healthmonitor.GetHashCode();
+                if (this.Member != null) hashCode = hashCode * 59 + this.Member.GetHashCode();
+                if (this.MembersPerPool != null) hashCode = hashCode * 59 + this.MembersPerPool.GetHashCode();
+                if (this.ListenersPerPool != null) hashCode = hashCode * 59 + this.ListenersPerPool.GetHashCode();
+                if (this.Ipgroup != null) hashCode = hashCode * 59 + this.Ipgroup.GetHashCode();
+                if (this.IpgroupBindings != null) hashCode = hashCode * 59 + this.IpgroupBindings.GetHashCode();
+                if (this.IpgroupMaxLength != null) hashCode = hashCode * 59 + this.IpgroupMaxLength.GetHashCode();
+                if (this.SecurityPolicy != null) hashCode = hashCode * 59 + this.SecurityPolicy.GetHashCode();
+                if (this.ListenersPerLoadbalancer != null) hashCode = hashCode * 59 + this.ListenersPerLoadbalancer.GetHashCode();
                 return hashCode;
             }
         }

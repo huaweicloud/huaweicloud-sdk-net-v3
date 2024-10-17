@@ -212,51 +212,17 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(InstanceReplicationListInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ReplicationRole != input.ReplicationRole || (this.ReplicationRole != null && !this.ReplicationRole.Equals(input.ReplicationRole))) return false;
+            if (this.ReplicationIp != input.ReplicationIp || (this.ReplicationIp != null && !this.ReplicationIp.Equals(input.ReplicationIp))) return false;
+            if (this.IsReplication != input.IsReplication || (this.IsReplication != null && !this.IsReplication.Equals(input.IsReplication))) return false;
+            if (this.ReplicationId != input.ReplicationId || (this.ReplicationId != null && !this.ReplicationId.Equals(input.ReplicationId))) return false;
+            if (this.NodeId != input.NodeId || (this.NodeId != null && !this.NodeId.Equals(input.NodeId))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.AzCode != input.AzCode || (this.AzCode != null && !this.AzCode.Equals(input.AzCode))) return false;
+            if (this.Dimensions != input.Dimensions || (this.Dimensions != null && input.Dimensions != null && !this.Dimensions.SequenceEqual(input.Dimensions))) return false;
 
-            return 
-                (
-                    this.ReplicationRole == input.ReplicationRole ||
-                    (this.ReplicationRole != null &&
-                    this.ReplicationRole.Equals(input.ReplicationRole))
-                ) && 
-                (
-                    this.ReplicationIp == input.ReplicationIp ||
-                    (this.ReplicationIp != null &&
-                    this.ReplicationIp.Equals(input.ReplicationIp))
-                ) && 
-                (
-                    this.IsReplication == input.IsReplication ||
-                    (this.IsReplication != null &&
-                    this.IsReplication.Equals(input.IsReplication))
-                ) && 
-                (
-                    this.ReplicationId == input.ReplicationId ||
-                    (this.ReplicationId != null &&
-                    this.ReplicationId.Equals(input.ReplicationId))
-                ) && 
-                (
-                    this.NodeId == input.NodeId ||
-                    (this.NodeId != null &&
-                    this.NodeId.Equals(input.NodeId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.AzCode == input.AzCode ||
-                    (this.AzCode != null &&
-                    this.AzCode.Equals(input.AzCode))
-                ) && 
-                (
-                    this.Dimensions == input.Dimensions ||
-                    this.Dimensions != null &&
-                    input.Dimensions != null &&
-                    this.Dimensions.SequenceEqual(input.Dimensions)
-                );
+            return true;
         }
 
         /// <summary>
@@ -266,23 +232,15 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ReplicationRole != null)
-                    hashCode = hashCode * 59 + this.ReplicationRole.GetHashCode();
-                if (this.ReplicationIp != null)
-                    hashCode = hashCode * 59 + this.ReplicationIp.GetHashCode();
-                if (this.IsReplication != null)
-                    hashCode = hashCode * 59 + this.IsReplication.GetHashCode();
-                if (this.ReplicationId != null)
-                    hashCode = hashCode * 59 + this.ReplicationId.GetHashCode();
-                if (this.NodeId != null)
-                    hashCode = hashCode * 59 + this.NodeId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.AzCode != null)
-                    hashCode = hashCode * 59 + this.AzCode.GetHashCode();
-                if (this.Dimensions != null)
-                    hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
+                var hashCode = 41;
+                if (this.ReplicationRole != null) hashCode = hashCode * 59 + this.ReplicationRole.GetHashCode();
+                if (this.ReplicationIp != null) hashCode = hashCode * 59 + this.ReplicationIp.GetHashCode();
+                if (this.IsReplication != null) hashCode = hashCode * 59 + this.IsReplication.GetHashCode();
+                if (this.ReplicationId != null) hashCode = hashCode * 59 + this.ReplicationId.GetHashCode();
+                if (this.NodeId != null) hashCode = hashCode * 59 + this.NodeId.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.AzCode != null) hashCode = hashCode * 59 + this.AzCode.GetHashCode();
+                if (this.Dimensions != null) hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
                 return hashCode;
             }
         }

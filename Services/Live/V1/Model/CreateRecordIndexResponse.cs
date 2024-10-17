@@ -254,75 +254,22 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(CreateRecordIndexResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IndexUrl != input.IndexUrl || (this.IndexUrl != null && !this.IndexUrl.Equals(input.IndexUrl))) return false;
+            if (this.PublishDomain != input.PublishDomain || (this.PublishDomain != null && !this.PublishDomain.Equals(input.PublishDomain))) return false;
+            if (this.App != input.App || (this.App != null && !this.App.Equals(input.App))) return false;
+            if (this.Stream != input.Stream || (this.Stream != null && !this.Stream.Equals(input.Stream))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
+            if (this.Width != input.Width || (this.Width != null && !this.Width.Equals(input.Width))) return false;
+            if (this.Height != input.Height || (this.Height != null && !this.Height.Equals(input.Height))) return false;
+            if (this.Location != input.Location) return false;
+            if (this.Bucket != input.Bucket || (this.Bucket != null && !this.Bucket.Equals(input.Bucket))) return false;
+            if (this.Object != input.Object || (this.Object != null && !this.Object.Equals(input.Object))) return false;
+            if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
-            return 
-                (
-                    this.IndexUrl == input.IndexUrl ||
-                    (this.IndexUrl != null &&
-                    this.IndexUrl.Equals(input.IndexUrl))
-                ) && 
-                (
-                    this.PublishDomain == input.PublishDomain ||
-                    (this.PublishDomain != null &&
-                    this.PublishDomain.Equals(input.PublishDomain))
-                ) && 
-                (
-                    this.App == input.App ||
-                    (this.App != null &&
-                    this.App.Equals(input.App))
-                ) && 
-                (
-                    this.Stream == input.Stream ||
-                    (this.Stream != null &&
-                    this.Stream.Equals(input.Stream))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
-                ) && 
-                (
-                    this.Width == input.Width ||
-                    (this.Width != null &&
-                    this.Width.Equals(input.Width))
-                ) && 
-                (
-                    this.Height == input.Height ||
-                    (this.Height != null &&
-                    this.Height.Equals(input.Height))
-                ) && 
-                (
-                    this.Location == input.Location ||
-                    (this.Location != null &&
-                    this.Location.Equals(input.Location))
-                ) && 
-                (
-                    this.Bucket == input.Bucket ||
-                    (this.Bucket != null &&
-                    this.Bucket.Equals(input.Bucket))
-                ) && 
-                (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
-                ) && 
-                (
-                    this.XRequestId == input.XRequestId ||
-                    (this.XRequestId != null &&
-                    this.XRequestId.Equals(input.XRequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -332,33 +279,20 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IndexUrl != null)
-                    hashCode = hashCode * 59 + this.IndexUrl.GetHashCode();
-                if (this.PublishDomain != null)
-                    hashCode = hashCode * 59 + this.PublishDomain.GetHashCode();
-                if (this.App != null)
-                    hashCode = hashCode * 59 + this.App.GetHashCode();
-                if (this.Stream != null)
-                    hashCode = hashCode * 59 + this.Stream.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Duration != null)
-                    hashCode = hashCode * 59 + this.Duration.GetHashCode();
-                if (this.Width != null)
-                    hashCode = hashCode * 59 + this.Width.GetHashCode();
-                if (this.Height != null)
-                    hashCode = hashCode * 59 + this.Height.GetHashCode();
-                if (this.Location != null)
-                    hashCode = hashCode * 59 + this.Location.GetHashCode();
-                if (this.Bucket != null)
-                    hashCode = hashCode * 59 + this.Bucket.GetHashCode();
-                if (this.Object != null)
-                    hashCode = hashCode * 59 + this.Object.GetHashCode();
-                if (this.XRequestId != null)
-                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.IndexUrl != null) hashCode = hashCode * 59 + this.IndexUrl.GetHashCode();
+                if (this.PublishDomain != null) hashCode = hashCode * 59 + this.PublishDomain.GetHashCode();
+                if (this.App != null) hashCode = hashCode * 59 + this.App.GetHashCode();
+                if (this.Stream != null) hashCode = hashCode * 59 + this.Stream.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                if (this.Width != null) hashCode = hashCode * 59 + this.Width.GetHashCode();
+                if (this.Height != null) hashCode = hashCode * 59 + this.Height.GetHashCode();
+                hashCode = hashCode * 59 + this.Location.GetHashCode();
+                if (this.Bucket != null) hashCode = hashCode * 59 + this.Bucket.GetHashCode();
+                if (this.Object != null) hashCode = hashCode * 59 + this.Object.GetHashCode();
+                if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(ShowPrivateipRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PrivateipId != input.PrivateipId || (this.PrivateipId != null && !this.PrivateipId.Equals(input.PrivateipId))) return false;
 
-            return 
-                (
-                    this.PrivateipId == input.PrivateipId ||
-                    (this.PrivateipId != null &&
-                    this.PrivateipId.Equals(input.PrivateipId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PrivateipId != null)
-                    hashCode = hashCode * 59 + this.PrivateipId.GetHashCode();
+                var hashCode = 41;
+                if (this.PrivateipId != null) hashCode = hashCode * 59 + this.PrivateipId.GetHashCode();
                 return hashCode;
             }
         }

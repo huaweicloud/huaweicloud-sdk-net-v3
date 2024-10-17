@@ -114,55 +114,18 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(ShowMembersDetailRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BackupId != input.BackupId || (this.BackupId != null && !this.BackupId.Equals(input.BackupId))) return false;
+            if (this.DestProjectId != input.DestProjectId || (this.DestProjectId != null && !this.DestProjectId.Equals(input.DestProjectId))) return false;
+            if (this.ImageId != input.ImageId || (this.ImageId != null && !this.ImageId.Equals(input.ImageId))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.VaultId != input.VaultId || (this.VaultId != null && !this.VaultId.Equals(input.VaultId))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Sort != input.Sort || (this.Sort != null && !this.Sort.Equals(input.Sort))) return false;
 
-            return 
-                (
-                    this.BackupId == input.BackupId ||
-                    (this.BackupId != null &&
-                    this.BackupId.Equals(input.BackupId))
-                ) && 
-                (
-                    this.DestProjectId == input.DestProjectId ||
-                    (this.DestProjectId != null &&
-                    this.DestProjectId.Equals(input.DestProjectId))
-                ) && 
-                (
-                    this.ImageId == input.ImageId ||
-                    (this.ImageId != null &&
-                    this.ImageId.Equals(input.ImageId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.VaultId == input.VaultId ||
-                    (this.VaultId != null &&
-                    this.VaultId.Equals(input.VaultId))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Sort == input.Sort ||
-                    (this.Sort != null &&
-                    this.Sort.Equals(input.Sort))
-                );
+            return true;
         }
 
         /// <summary>
@@ -172,25 +135,16 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BackupId != null)
-                    hashCode = hashCode * 59 + this.BackupId.GetHashCode();
-                if (this.DestProjectId != null)
-                    hashCode = hashCode * 59 + this.DestProjectId.GetHashCode();
-                if (this.ImageId != null)
-                    hashCode = hashCode * 59 + this.ImageId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.VaultId != null)
-                    hashCode = hashCode * 59 + this.VaultId.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Sort != null)
-                    hashCode = hashCode * 59 + this.Sort.GetHashCode();
+                var hashCode = 41;
+                if (this.BackupId != null) hashCode = hashCode * 59 + this.BackupId.GetHashCode();
+                if (this.DestProjectId != null) hashCode = hashCode * 59 + this.DestProjectId.GetHashCode();
+                if (this.ImageId != null) hashCode = hashCode * 59 + this.ImageId.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.VaultId != null) hashCode = hashCode * 59 + this.VaultId.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Sort != null) hashCode = hashCode * 59 + this.Sort.GetHashCode();
                 return hashCode;
             }
         }

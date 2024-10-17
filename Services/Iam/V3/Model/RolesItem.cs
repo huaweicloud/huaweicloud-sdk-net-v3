@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(RolesItem input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Catalog != input.Catalog || (this.Catalog != null && !this.Catalog.Equals(input.Catalog))) return false;
+            if (this.DisplayName != input.DisplayName || (this.DisplayName != null && !this.DisplayName.Equals(input.DisplayName))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.DescriptionCn != input.DescriptionCn || (this.DescriptionCn != null && !this.DescriptionCn.Equals(input.DescriptionCn))) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.Flag != input.Flag || (this.Flag != null && !this.Flag.Equals(input.Flag))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Policy != input.Policy || (this.Policy != null && !this.Policy.Equals(input.Policy))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
 
-            return 
-                (
-                    this.Catalog == input.Catalog ||
-                    (this.Catalog != null &&
-                    this.Catalog.Equals(input.Catalog))
-                ) && 
-                (
-                    this.DisplayName == input.DisplayName ||
-                    (this.DisplayName != null &&
-                    this.DisplayName.Equals(input.DisplayName))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.DescriptionCn == input.DescriptionCn ||
-                    (this.DescriptionCn != null &&
-                    this.DescriptionCn.Equals(input.DescriptionCn))
-                ) && 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
-                    this.Flag == input.Flag ||
-                    (this.Flag != null &&
-                    this.Flag.Equals(input.Flag))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Policy == input.Policy ||
-                    (this.Policy != null &&
-                    this.Policy.Equals(input.Policy))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Catalog != null)
-                    hashCode = hashCode * 59 + this.Catalog.GetHashCode();
-                if (this.DisplayName != null)
-                    hashCode = hashCode * 59 + this.DisplayName.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.DescriptionCn != null)
-                    hashCode = hashCode * 59 + this.DescriptionCn.GetHashCode();
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.Flag != null)
-                    hashCode = hashCode * 59 + this.Flag.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Policy != null)
-                    hashCode = hashCode * 59 + this.Policy.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                var hashCode = 41;
+                if (this.Catalog != null) hashCode = hashCode * 59 + this.Catalog.GetHashCode();
+                if (this.DisplayName != null) hashCode = hashCode * 59 + this.DisplayName.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.DescriptionCn != null) hashCode = hashCode * 59 + this.DescriptionCn.GetHashCode();
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.Flag != null) hashCode = hashCode * 59 + this.Flag.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Policy != null) hashCode = hashCode * 59 + this.Policy.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

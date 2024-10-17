@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(LoginWebCliResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClientId != input.ClientId || (this.ClientId != null && !this.ClientId.Equals(input.ClientId))) return false;
+            if (this.Databases != input.Databases || (this.Databases != null && !this.Databases.Equals(input.Databases))) return false;
 
-            return 
-                (
-                    this.ClientId == input.ClientId ||
-                    (this.ClientId != null &&
-                    this.ClientId.Equals(input.ClientId))
-                ) && 
-                (
-                    this.Databases == input.Databases ||
-                    (this.Databases != null &&
-                    this.Databases.Equals(input.Databases))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClientId != null)
-                    hashCode = hashCode * 59 + this.ClientId.GetHashCode();
-                if (this.Databases != null)
-                    hashCode = hashCode * 59 + this.Databases.GetHashCode();
+                var hashCode = 41;
+                if (this.ClientId != null) hashCode = hashCode * 59 + this.ClientId.GetHashCode();
+                if (this.Databases != null) hashCode = hashCode * 59 + this.Databases.GetHashCode();
                 return hashCode;
             }
         }

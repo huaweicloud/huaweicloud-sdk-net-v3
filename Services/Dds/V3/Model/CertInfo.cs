@@ -170,20 +170,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(CertInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Category != input.Category) return false;
+            if (this.DownloadLink != input.DownloadLink || (this.DownloadLink != null && !this.DownloadLink.Equals(input.DownloadLink))) return false;
 
-            return 
-                (
-                    this.Category == input.Category ||
-                    (this.Category != null &&
-                    this.Category.Equals(input.Category))
-                ) && 
-                (
-                    this.DownloadLink == input.DownloadLink ||
-                    (this.DownloadLink != null &&
-                    this.DownloadLink.Equals(input.DownloadLink))
-                );
+            return true;
         }
 
         /// <summary>
@@ -193,11 +184,9 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Category != null)
-                    hashCode = hashCode * 59 + this.Category.GetHashCode();
-                if (this.DownloadLink != null)
-                    hashCode = hashCode * 59 + this.DownloadLink.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Category.GetHashCode();
+                if (this.DownloadLink != null) hashCode = hashCode * 59 + this.DownloadLink.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(MarketModelPrepaidInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ExpiredTime != input.ExpiredTime || (this.ExpiredTime != null && !this.ExpiredTime.Equals(input.ExpiredTime))) return false;
 
-            return 
-                (
-                    this.ExpiredTime == input.ExpiredTime ||
-                    (this.ExpiredTime != null &&
-                    this.ExpiredTime.Equals(input.ExpiredTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ExpiredTime != null)
-                    hashCode = hashCode * 59 + this.ExpiredTime.GetHashCode();
+                var hashCode = 41;
+                if (this.ExpiredTime != null) hashCode = hashCode * 59 + this.ExpiredTime.GetHashCode();
                 return hashCode;
             }
         }

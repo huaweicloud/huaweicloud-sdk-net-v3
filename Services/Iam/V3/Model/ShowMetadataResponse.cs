@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(ShowMetadataResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.IdpId != input.IdpId || (this.IdpId != null && !this.IdpId.Equals(input.IdpId))) return false;
+            if (this.EntityId != input.EntityId || (this.EntityId != null && !this.EntityId.Equals(input.EntityId))) return false;
+            if (this.ProtocolId != input.ProtocolId || (this.ProtocolId != null && !this.ProtocolId.Equals(input.ProtocolId))) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.XaccountType != input.XaccountType || (this.XaccountType != null && !this.XaccountType.Equals(input.XaccountType))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.Data != input.Data || (this.Data != null && !this.Data.Equals(input.Data))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.IdpId == input.IdpId ||
-                    (this.IdpId != null &&
-                    this.IdpId.Equals(input.IdpId))
-                ) && 
-                (
-                    this.EntityId == input.EntityId ||
-                    (this.EntityId != null &&
-                    this.EntityId.Equals(input.EntityId))
-                ) && 
-                (
-                    this.ProtocolId == input.ProtocolId ||
-                    (this.ProtocolId != null &&
-                    this.ProtocolId.Equals(input.ProtocolId))
-                ) && 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
-                    this.XaccountType == input.XaccountType ||
-                    (this.XaccountType != null &&
-                    this.XaccountType.Equals(input.XaccountType))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.IdpId != null)
-                    hashCode = hashCode * 59 + this.IdpId.GetHashCode();
-                if (this.EntityId != null)
-                    hashCode = hashCode * 59 + this.EntityId.GetHashCode();
-                if (this.ProtocolId != null)
-                    hashCode = hashCode * 59 + this.ProtocolId.GetHashCode();
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.XaccountType != null)
-                    hashCode = hashCode * 59 + this.XaccountType.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.Data != null)
-                    hashCode = hashCode * 59 + this.Data.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.IdpId != null) hashCode = hashCode * 59 + this.IdpId.GetHashCode();
+                if (this.EntityId != null) hashCode = hashCode * 59 + this.EntityId.GetHashCode();
+                if (this.ProtocolId != null) hashCode = hashCode * 59 + this.ProtocolId.GetHashCode();
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.XaccountType != null) hashCode = hashCode * 59 + this.XaccountType.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.Data != null) hashCode = hashCode * 59 + this.Data.GetHashCode();
                 return hashCode;
             }
         }

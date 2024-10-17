@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         public bool Equals(RuleRiskInfoBeanSchemas input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Schema != input.Schema || (this.Schema != null && !this.Schema.Equals(input.Schema))) return false;
+            if (this.Table != input.Table || (this.Table != null && !this.Table.Equals(input.Table))) return false;
+            if (this.Column != input.Column || (this.Column != null && !this.Column.Equals(input.Column))) return false;
 
-            return 
-                (
-                    this.Schema == input.Schema ||
-                    (this.Schema != null &&
-                    this.Schema.Equals(input.Schema))
-                ) && 
-                (
-                    this.Table == input.Table ||
-                    (this.Table != null &&
-                    this.Table.Equals(input.Table))
-                ) && 
-                (
-                    this.Column == input.Column ||
-                    (this.Column != null &&
-                    this.Column.Equals(input.Column))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Schema != null)
-                    hashCode = hashCode * 59 + this.Schema.GetHashCode();
-                if (this.Table != null)
-                    hashCode = hashCode * 59 + this.Table.GetHashCode();
-                if (this.Column != null)
-                    hashCode = hashCode * 59 + this.Column.GetHashCode();
+                var hashCode = 41;
+                if (this.Schema != null) hashCode = hashCode * 59 + this.Schema.GetHashCode();
+                if (this.Table != null) hashCode = hashCode * 59 + this.Table.GetHashCode();
+                if (this.Column != null) hashCode = hashCode * 59 + this.Column.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(ServerNicsReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
+            if (this.IpAddress != input.IpAddress || (this.IpAddress != null && !this.IpAddress.Equals(input.IpAddress))) return false;
+            if (this.SecurityGroups != input.SecurityGroups || (this.SecurityGroups != null && input.SecurityGroups != null && !this.SecurityGroups.SequenceEqual(input.SecurityGroups))) return false;
 
-            return 
-                (
-                    this.SubnetId == input.SubnetId ||
-                    (this.SubnetId != null &&
-                    this.SubnetId.Equals(input.SubnetId))
-                ) && 
-                (
-                    this.IpAddress == input.IpAddress ||
-                    (this.IpAddress != null &&
-                    this.IpAddress.Equals(input.IpAddress))
-                ) && 
-                (
-                    this.SecurityGroups == input.SecurityGroups ||
-                    this.SecurityGroups != null &&
-                    input.SecurityGroups != null &&
-                    this.SecurityGroups.SequenceEqual(input.SecurityGroups)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SubnetId != null)
-                    hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
-                if (this.IpAddress != null)
-                    hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
-                if (this.SecurityGroups != null)
-                    hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
+                var hashCode = 41;
+                if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
+                if (this.IpAddress != null) hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
+                if (this.SecurityGroups != null) hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
                 return hashCode;
             }
         }

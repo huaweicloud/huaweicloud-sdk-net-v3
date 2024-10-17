@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public bool Equals(ListApplicationEndpointsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
+            if (this.NextPageFlag != input.NextPageFlag || (this.NextPageFlag != null && !this.NextPageFlag.Equals(input.NextPageFlag))) return false;
+            if (this.Endpoints != input.Endpoints || (this.Endpoints != null && input.Endpoints != null && !this.Endpoints.SequenceEqual(input.Endpoints))) return false;
 
-            return 
-                (
-                    this.RequestId == input.RequestId ||
-                    (this.RequestId != null &&
-                    this.RequestId.Equals(input.RequestId))
-                ) && 
-                (
-                    this.NextPageFlag == input.NextPageFlag ||
-                    (this.NextPageFlag != null &&
-                    this.NextPageFlag.Equals(input.NextPageFlag))
-                ) && 
-                (
-                    this.Endpoints == input.Endpoints ||
-                    this.Endpoints != null &&
-                    input.Endpoints != null &&
-                    this.Endpoints.SequenceEqual(input.Endpoints)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RequestId != null)
-                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
-                if (this.NextPageFlag != null)
-                    hashCode = hashCode * 59 + this.NextPageFlag.GetHashCode();
-                if (this.Endpoints != null)
-                    hashCode = hashCode * 59 + this.Endpoints.GetHashCode();
+                var hashCode = 41;
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                if (this.NextPageFlag != null) hashCode = hashCode * 59 + this.NextPageFlag.GetHashCode();
+                if (this.Endpoints != null) hashCode = hashCode * 59 + this.Endpoints.GetHashCode();
                 return hashCode;
             }
         }

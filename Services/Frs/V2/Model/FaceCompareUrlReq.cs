@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public bool Equals(FaceCompareUrlReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Image1Url != input.Image1Url || (this.Image1Url != null && !this.Image1Url.Equals(input.Image1Url))) return false;
+            if (this.Image2Url != input.Image2Url || (this.Image2Url != null && !this.Image2Url.Equals(input.Image2Url))) return false;
 
-            return 
-                (
-                    this.Image1Url == input.Image1Url ||
-                    (this.Image1Url != null &&
-                    this.Image1Url.Equals(input.Image1Url))
-                ) && 
-                (
-                    this.Image2Url == input.Image2Url ||
-                    (this.Image2Url != null &&
-                    this.Image2Url.Equals(input.Image2Url))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Image1Url != null)
-                    hashCode = hashCode * 59 + this.Image1Url.GetHashCode();
-                if (this.Image2Url != null)
-                    hashCode = hashCode * 59 + this.Image2Url.GetHashCode();
+                var hashCode = 41;
+                if (this.Image1Url != null) hashCode = hashCode * 59 + this.Image1Url.GetHashCode();
+                if (this.Image2Url != null) hashCode = hashCode * 59 + this.Image2Url.GetHashCode();
                 return hashCode;
             }
         }

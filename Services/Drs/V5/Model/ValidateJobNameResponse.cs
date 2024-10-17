@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ValidateJobNameResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IsValid != input.IsValid || (this.IsValid != null && !this.IsValid.Equals(input.IsValid))) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
+            if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
 
-            return 
-                (
-                    this.IsValid == input.IsValid ||
-                    (this.IsValid != null &&
-                    this.IsValid.Equals(input.IsValid))
-                ) && 
-                (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
-                ) && 
-                (
-                    this.ErrorMsg == input.ErrorMsg ||
-                    (this.ErrorMsg != null &&
-                    this.ErrorMsg.Equals(input.ErrorMsg))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IsValid != null)
-                    hashCode = hashCode * 59 + this.IsValid.GetHashCode();
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.ErrorMsg != null)
-                    hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
+                var hashCode = 41;
+                if (this.IsValid != null) hashCode = hashCode * 59 + this.IsValid.GetHashCode();
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
                 return hashCode;
             }
         }

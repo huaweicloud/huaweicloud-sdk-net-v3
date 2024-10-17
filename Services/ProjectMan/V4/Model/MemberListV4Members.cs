@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(MemberListV4Members input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
+            if (this.UserId != input.UserId || (this.UserId != null && !this.UserId.Equals(input.UserId))) return false;
+            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.UserNumId != input.UserNumId || (this.UserNumId != null && !this.UserNumId.Equals(input.UserNumId))) return false;
+            if (this.RoleId != input.RoleId || (this.RoleId != null && !this.RoleId.Equals(input.RoleId))) return false;
+            if (this.NickName != input.NickName || (this.NickName != null && !this.NickName.Equals(input.NickName))) return false;
+            if (this.RoleName != input.RoleName || (this.RoleName != null && !this.RoleName.Equals(input.RoleName))) return false;
+            if (this.UserType != input.UserType || (this.UserType != null && !this.UserType.Equals(input.UserType))) return false;
+            if (this.Forbidden != input.Forbidden || (this.Forbidden != null && !this.Forbidden.Equals(input.Forbidden))) return false;
 
-            return 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
-                    this.DomainName == input.DomainName ||
-                    (this.DomainName != null &&
-                    this.DomainName.Equals(input.DomainName))
-                ) && 
-                (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
-                ) && 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.UserNumId == input.UserNumId ||
-                    (this.UserNumId != null &&
-                    this.UserNumId.Equals(input.UserNumId))
-                ) && 
-                (
-                    this.RoleId == input.RoleId ||
-                    (this.RoleId != null &&
-                    this.RoleId.Equals(input.RoleId))
-                ) && 
-                (
-                    this.NickName == input.NickName ||
-                    (this.NickName != null &&
-                    this.NickName.Equals(input.NickName))
-                ) && 
-                (
-                    this.RoleName == input.RoleName ||
-                    (this.RoleName != null &&
-                    this.RoleName.Equals(input.RoleName))
-                ) && 
-                (
-                    this.UserType == input.UserType ||
-                    (this.UserType != null &&
-                    this.UserType.Equals(input.UserType))
-                ) && 
-                (
-                    this.Forbidden == input.Forbidden ||
-                    (this.Forbidden != null &&
-                    this.Forbidden.Equals(input.Forbidden))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.DomainName != null)
-                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.UserName != null)
-                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.UserNumId != null)
-                    hashCode = hashCode * 59 + this.UserNumId.GetHashCode();
-                if (this.RoleId != null)
-                    hashCode = hashCode * 59 + this.RoleId.GetHashCode();
-                if (this.NickName != null)
-                    hashCode = hashCode * 59 + this.NickName.GetHashCode();
-                if (this.RoleName != null)
-                    hashCode = hashCode * 59 + this.RoleName.GetHashCode();
-                if (this.UserType != null)
-                    hashCode = hashCode * 59 + this.UserType.GetHashCode();
-                if (this.Forbidden != null)
-                    hashCode = hashCode * 59 + this.Forbidden.GetHashCode();
+                var hashCode = 41;
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.UserId != null) hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.UserNumId != null) hashCode = hashCode * 59 + this.UserNumId.GetHashCode();
+                if (this.RoleId != null) hashCode = hashCode * 59 + this.RoleId.GetHashCode();
+                if (this.NickName != null) hashCode = hashCode * 59 + this.NickName.GetHashCode();
+                if (this.RoleName != null) hashCode = hashCode * 59 + this.RoleName.GetHashCode();
+                if (this.UserType != null) hashCode = hashCode * 59 + this.UserType.GetHashCode();
+                if (this.Forbidden != null) hashCode = hashCode * 59 + this.Forbidden.GetHashCode();
                 return hashCode;
             }
         }

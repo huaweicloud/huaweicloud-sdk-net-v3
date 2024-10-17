@@ -63,27 +63,12 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         /// </summary>
         public bool Equals(AreaDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Area != input.Area || (this.Area != null && !this.Area.Equals(input.Area))) return false;
+            if (this.Summary != input.Summary || (this.Summary != null && input.Summary != null && !this.Summary.SequenceEqual(input.Summary))) return false;
+            if (this.Detail != input.Detail || (this.Detail != null && input.Detail != null && !this.Detail.SequenceEqual(input.Detail))) return false;
 
-            return 
-                (
-                    this.Area == input.Area ||
-                    (this.Area != null &&
-                    this.Area.Equals(input.Area))
-                ) && 
-                (
-                    this.Summary == input.Summary ||
-                    this.Summary != null &&
-                    input.Summary != null &&
-                    this.Summary.SequenceEqual(input.Summary)
-                ) && 
-                (
-                    this.Detail == input.Detail ||
-                    this.Detail != null &&
-                    input.Detail != null &&
-                    this.Detail.SequenceEqual(input.Detail)
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +78,10 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Area != null)
-                    hashCode = hashCode * 59 + this.Area.GetHashCode();
-                if (this.Summary != null)
-                    hashCode = hashCode * 59 + this.Summary.GetHashCode();
-                if (this.Detail != null)
-                    hashCode = hashCode * 59 + this.Detail.GetHashCode();
+                var hashCode = 41;
+                if (this.Area != null) hashCode = hashCode * 59 + this.Area.GetHashCode();
+                if (this.Summary != null) hashCode = hashCode * 59 + this.Summary.GetHashCode();
+                if (this.Detail != null) hashCode = hashCode * 59 + this.Detail.GetHashCode();
                 return hashCode;
             }
         }

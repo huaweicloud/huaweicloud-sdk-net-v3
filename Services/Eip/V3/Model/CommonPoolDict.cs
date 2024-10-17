@@ -91,46 +91,16 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(CommonPoolDict input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Used != input.Used || (this.Used != null && !this.Used.Equals(input.Used))) return false;
+            if (this.PublicBorderGroup != input.PublicBorderGroup || (this.PublicBorderGroup != null && !this.PublicBorderGroup.Equals(input.PublicBorderGroup))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.AllowShareBandwidthTypes != input.AllowShareBandwidthTypes || (this.AllowShareBandwidthTypes != null && input.AllowShareBandwidthTypes != null && !this.AllowShareBandwidthTypes.SequenceEqual(input.AllowShareBandwidthTypes))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Used == input.Used ||
-                    (this.Used != null &&
-                    this.Used.Equals(input.Used))
-                ) && 
-                (
-                    this.PublicBorderGroup == input.PublicBorderGroup ||
-                    (this.PublicBorderGroup != null &&
-                    this.PublicBorderGroup.Equals(input.PublicBorderGroup))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.AllowShareBandwidthTypes == input.AllowShareBandwidthTypes ||
-                    this.AllowShareBandwidthTypes != null &&
-                    input.AllowShareBandwidthTypes != null &&
-                    this.AllowShareBandwidthTypes.SequenceEqual(input.AllowShareBandwidthTypes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -140,21 +110,14 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Used != null)
-                    hashCode = hashCode * 59 + this.Used.GetHashCode();
-                if (this.PublicBorderGroup != null)
-                    hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.AllowShareBandwidthTypes != null)
-                    hashCode = hashCode * 59 + this.AllowShareBandwidthTypes.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Used != null) hashCode = hashCode * 59 + this.Used.GetHashCode();
+                if (this.PublicBorderGroup != null) hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.AllowShareBandwidthTypes != null) hashCode = hashCode * 59 + this.AllowShareBandwidthTypes.GetHashCode();
                 return hashCode;
             }
         }

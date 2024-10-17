@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public bool Equals(ListSubscriptionsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
+            if (this.SubscriptionCount != input.SubscriptionCount || (this.SubscriptionCount != null && !this.SubscriptionCount.Equals(input.SubscriptionCount))) return false;
+            if (this.Subscriptions != input.Subscriptions || (this.Subscriptions != null && input.Subscriptions != null && !this.Subscriptions.SequenceEqual(input.Subscriptions))) return false;
 
-            return 
-                (
-                    this.RequestId == input.RequestId ||
-                    (this.RequestId != null &&
-                    this.RequestId.Equals(input.RequestId))
-                ) && 
-                (
-                    this.SubscriptionCount == input.SubscriptionCount ||
-                    (this.SubscriptionCount != null &&
-                    this.SubscriptionCount.Equals(input.SubscriptionCount))
-                ) && 
-                (
-                    this.Subscriptions == input.Subscriptions ||
-                    this.Subscriptions != null &&
-                    input.Subscriptions != null &&
-                    this.Subscriptions.SequenceEqual(input.Subscriptions)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RequestId != null)
-                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
-                if (this.SubscriptionCount != null)
-                    hashCode = hashCode * 59 + this.SubscriptionCount.GetHashCode();
-                if (this.Subscriptions != null)
-                    hashCode = hashCode * 59 + this.Subscriptions.GetHashCode();
+                var hashCode = 41;
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                if (this.SubscriptionCount != null) hashCode = hashCode * 59 + this.SubscriptionCount.GetHashCode();
+                if (this.Subscriptions != null) hashCode = hashCode * 59 + this.Subscriptions.GetHashCode();
                 return hashCode;
             }
         }

@@ -258,72 +258,21 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(LtsStructTemplateInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DemoFields != input.DemoFields || (this.DemoFields != null && input.DemoFields != null && !this.DemoFields.SequenceEqual(input.DemoFields))) return false;
+            if (this.TagFields != input.TagFields || (this.TagFields != null && input.TagFields != null && !this.TagFields.SequenceEqual(input.TagFields))) return false;
+            if (this.Content != input.Content || (this.Content != null && !this.Content.Equals(input.Content))) return false;
+            if (this.LogGroupId != input.LogGroupId || (this.LogGroupId != null && !this.LogGroupId.Equals(input.LogGroupId))) return false;
+            if (this.ParseType != input.ParseType) return false;
+            if (this.LogStreamId != input.LogStreamId || (this.LogStreamId != null && !this.LogStreamId.Equals(input.LogStreamId))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.RegexRules != input.RegexRules || (this.RegexRules != null && !this.RegexRules.Equals(input.RegexRules))) return false;
+            if (this.Layers != input.Layers || (this.Layers != null && !this.Layers.Equals(input.Layers))) return false;
+            if (this.Tokenizer != input.Tokenizer || (this.Tokenizer != null && !this.Tokenizer.Equals(input.Tokenizer))) return false;
+            if (this.LogFormat != input.LogFormat || (this.LogFormat != null && !this.LogFormat.Equals(input.LogFormat))) return false;
+            if (this.Rule != input.Rule || (this.Rule != null && !this.Rule.Equals(input.Rule))) return false;
 
-            return 
-                (
-                    this.DemoFields == input.DemoFields ||
-                    this.DemoFields != null &&
-                    input.DemoFields != null &&
-                    this.DemoFields.SequenceEqual(input.DemoFields)
-                ) && 
-                (
-                    this.TagFields == input.TagFields ||
-                    this.TagFields != null &&
-                    input.TagFields != null &&
-                    this.TagFields.SequenceEqual(input.TagFields)
-                ) && 
-                (
-                    this.Content == input.Content ||
-                    (this.Content != null &&
-                    this.Content.Equals(input.Content))
-                ) && 
-                (
-                    this.LogGroupId == input.LogGroupId ||
-                    (this.LogGroupId != null &&
-                    this.LogGroupId.Equals(input.LogGroupId))
-                ) && 
-                (
-                    this.ParseType == input.ParseType ||
-                    (this.ParseType != null &&
-                    this.ParseType.Equals(input.ParseType))
-                ) && 
-                (
-                    this.LogStreamId == input.LogStreamId ||
-                    (this.LogStreamId != null &&
-                    this.LogStreamId.Equals(input.LogStreamId))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.RegexRules == input.RegexRules ||
-                    (this.RegexRules != null &&
-                    this.RegexRules.Equals(input.RegexRules))
-                ) && 
-                (
-                    this.Layers == input.Layers ||
-                    (this.Layers != null &&
-                    this.Layers.Equals(input.Layers))
-                ) && 
-                (
-                    this.Tokenizer == input.Tokenizer ||
-                    (this.Tokenizer != null &&
-                    this.Tokenizer.Equals(input.Tokenizer))
-                ) && 
-                (
-                    this.LogFormat == input.LogFormat ||
-                    (this.LogFormat != null &&
-                    this.LogFormat.Equals(input.LogFormat))
-                ) && 
-                (
-                    this.Rule == input.Rule ||
-                    (this.Rule != null &&
-                    this.Rule.Equals(input.Rule))
-                );
+            return true;
         }
 
         /// <summary>
@@ -333,31 +282,19 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DemoFields != null)
-                    hashCode = hashCode * 59 + this.DemoFields.GetHashCode();
-                if (this.TagFields != null)
-                    hashCode = hashCode * 59 + this.TagFields.GetHashCode();
-                if (this.Content != null)
-                    hashCode = hashCode * 59 + this.Content.GetHashCode();
-                if (this.LogGroupId != null)
-                    hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
-                if (this.ParseType != null)
-                    hashCode = hashCode * 59 + this.ParseType.GetHashCode();
-                if (this.LogStreamId != null)
-                    hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.RegexRules != null)
-                    hashCode = hashCode * 59 + this.RegexRules.GetHashCode();
-                if (this.Layers != null)
-                    hashCode = hashCode * 59 + this.Layers.GetHashCode();
-                if (this.Tokenizer != null)
-                    hashCode = hashCode * 59 + this.Tokenizer.GetHashCode();
-                if (this.LogFormat != null)
-                    hashCode = hashCode * 59 + this.LogFormat.GetHashCode();
-                if (this.Rule != null)
-                    hashCode = hashCode * 59 + this.Rule.GetHashCode();
+                var hashCode = 41;
+                if (this.DemoFields != null) hashCode = hashCode * 59 + this.DemoFields.GetHashCode();
+                if (this.TagFields != null) hashCode = hashCode * 59 + this.TagFields.GetHashCode();
+                if (this.Content != null) hashCode = hashCode * 59 + this.Content.GetHashCode();
+                if (this.LogGroupId != null) hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
+                hashCode = hashCode * 59 + this.ParseType.GetHashCode();
+                if (this.LogStreamId != null) hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.RegexRules != null) hashCode = hashCode * 59 + this.RegexRules.GetHashCode();
+                if (this.Layers != null) hashCode = hashCode * 59 + this.Layers.GetHashCode();
+                if (this.Tokenizer != null) hashCode = hashCode * 59 + this.Tokenizer.GetHashCode();
+                if (this.LogFormat != null) hashCode = hashCode * 59 + this.LogFormat.GetHashCode();
+                if (this.Rule != null) hashCode = hashCode * 59 + this.Rule.GetHashCode();
                 return hashCode;
             }
         }

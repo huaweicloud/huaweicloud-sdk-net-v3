@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(UpdateDesired input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ServiceId != input.ServiceId || (this.ServiceId != null && !this.ServiceId.Equals(input.ServiceId))) return false;
+            if (this.Desired != input.Desired || (this.Desired != null && !this.Desired.Equals(input.Desired))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
 
-            return 
-                (
-                    this.ServiceId == input.ServiceId ||
-                    (this.ServiceId != null &&
-                    this.ServiceId.Equals(input.ServiceId))
-                ) && 
-                (
-                    this.Desired == input.Desired ||
-                    (this.Desired != null &&
-                    this.Desired.Equals(input.Desired))
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ServiceId != null)
-                    hashCode = hashCode * 59 + this.ServiceId.GetHashCode();
-                if (this.Desired != null)
-                    hashCode = hashCode * 59 + this.Desired.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                var hashCode = 41;
+                if (this.ServiceId != null) hashCode = hashCode * 59 + this.ServiceId.GetHashCode();
+                if (this.Desired != null) hashCode = hashCode * 59 + this.Desired.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
                 return hashCode;
             }
         }

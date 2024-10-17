@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ShowSqlFilterControlResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SwitchStatus != input.SwitchStatus || (this.SwitchStatus != null && !this.SwitchStatus.Equals(input.SwitchStatus))) return false;
 
-            return 
-                (
-                    this.SwitchStatus == input.SwitchStatus ||
-                    (this.SwitchStatus != null &&
-                    this.SwitchStatus.Equals(input.SwitchStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SwitchStatus != null)
-                    hashCode = hashCode * 59 + this.SwitchStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.SwitchStatus != null) hashCode = hashCode * 59 + this.SwitchStatus.GetHashCode();
                 return hashCode;
             }
         }

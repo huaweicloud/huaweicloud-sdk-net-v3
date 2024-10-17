@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(ShowExecutionParamsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TaskId != input.TaskId || (this.TaskId != null && !this.TaskId.Equals(input.TaskId))) return false;
+            if (this.RecordId != input.RecordId || (this.RecordId != null && !this.RecordId.Equals(input.RecordId))) return false;
 
-            return 
-                (
-                    this.TaskId == input.TaskId ||
-                    (this.TaskId != null &&
-                    this.TaskId.Equals(input.TaskId))
-                ) && 
-                (
-                    this.RecordId == input.RecordId ||
-                    (this.RecordId != null &&
-                    this.RecordId.Equals(input.RecordId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TaskId != null)
-                    hashCode = hashCode * 59 + this.TaskId.GetHashCode();
-                if (this.RecordId != null)
-                    hashCode = hashCode * 59 + this.RecordId.GetHashCode();
+                var hashCode = 41;
+                if (this.TaskId != null) hashCode = hashCode * 59 + this.TaskId.GetHashCode();
+                if (this.RecordId != null) hashCode = hashCode * 59 + this.RecordId.GetHashCode();
                 return hashCode;
             }
         }

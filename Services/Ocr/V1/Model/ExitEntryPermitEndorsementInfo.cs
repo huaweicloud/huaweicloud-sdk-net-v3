@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(ExitEntryPermitEndorsementInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EndorsementType != input.EndorsementType || (this.EndorsementType != null && !this.EndorsementType.Equals(input.EndorsementType))) return false;
+            if (this.ValidRoundTrips != input.ValidRoundTrips || (this.ValidRoundTrips != null && !this.ValidRoundTrips.Equals(input.ValidRoundTrips))) return false;
+            if (this.EndorsementValidPeriod != input.EndorsementValidPeriod || (this.EndorsementValidPeriod != null && !this.EndorsementValidPeriod.Equals(input.EndorsementValidPeriod))) return false;
+            if (this.Remark != input.Remark || (this.Remark != null && !this.Remark.Equals(input.Remark))) return false;
+            if (this.IssueInfo != input.IssueInfo || (this.IssueInfo != null && !this.IssueInfo.Equals(input.IssueInfo))) return false;
 
-            return 
-                (
-                    this.EndorsementType == input.EndorsementType ||
-                    (this.EndorsementType != null &&
-                    this.EndorsementType.Equals(input.EndorsementType))
-                ) && 
-                (
-                    this.ValidRoundTrips == input.ValidRoundTrips ||
-                    (this.ValidRoundTrips != null &&
-                    this.ValidRoundTrips.Equals(input.ValidRoundTrips))
-                ) && 
-                (
-                    this.EndorsementValidPeriod == input.EndorsementValidPeriod ||
-                    (this.EndorsementValidPeriod != null &&
-                    this.EndorsementValidPeriod.Equals(input.EndorsementValidPeriod))
-                ) && 
-                (
-                    this.Remark == input.Remark ||
-                    (this.Remark != null &&
-                    this.Remark.Equals(input.Remark))
-                ) && 
-                (
-                    this.IssueInfo == input.IssueInfo ||
-                    (this.IssueInfo != null &&
-                    this.IssueInfo.Equals(input.IssueInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EndorsementType != null)
-                    hashCode = hashCode * 59 + this.EndorsementType.GetHashCode();
-                if (this.ValidRoundTrips != null)
-                    hashCode = hashCode * 59 + this.ValidRoundTrips.GetHashCode();
-                if (this.EndorsementValidPeriod != null)
-                    hashCode = hashCode * 59 + this.EndorsementValidPeriod.GetHashCode();
-                if (this.Remark != null)
-                    hashCode = hashCode * 59 + this.Remark.GetHashCode();
-                if (this.IssueInfo != null)
-                    hashCode = hashCode * 59 + this.IssueInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.EndorsementType != null) hashCode = hashCode * 59 + this.EndorsementType.GetHashCode();
+                if (this.ValidRoundTrips != null) hashCode = hashCode * 59 + this.ValidRoundTrips.GetHashCode();
+                if (this.EndorsementValidPeriod != null) hashCode = hashCode * 59 + this.EndorsementValidPeriod.GetHashCode();
+                if (this.Remark != null) hashCode = hashCode * 59 + this.Remark.GetHashCode();
+                if (this.IssueInfo != null) hashCode = hashCode * 59 + this.IssueInfo.GetHashCode();
                 return hashCode;
             }
         }

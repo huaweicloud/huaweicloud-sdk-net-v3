@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(SupportFastRestoreList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.IsSupportFastTableRestore != input.IsSupportFastTableRestore || (this.IsSupportFastTableRestore != null && !this.IsSupportFastTableRestore.Equals(input.IsSupportFastTableRestore))) return false;
+            if (this.IsSupportFastDatabaseRestore != input.IsSupportFastDatabaseRestore || (this.IsSupportFastDatabaseRestore != null && !this.IsSupportFastDatabaseRestore.Equals(input.IsSupportFastDatabaseRestore))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.IsSupportFastTableRestore == input.IsSupportFastTableRestore ||
-                    (this.IsSupportFastTableRestore != null &&
-                    this.IsSupportFastTableRestore.Equals(input.IsSupportFastTableRestore))
-                ) && 
-                (
-                    this.IsSupportFastDatabaseRestore == input.IsSupportFastDatabaseRestore ||
-                    (this.IsSupportFastDatabaseRestore != null &&
-                    this.IsSupportFastDatabaseRestore.Equals(input.IsSupportFastDatabaseRestore))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.IsSupportFastTableRestore != null)
-                    hashCode = hashCode * 59 + this.IsSupportFastTableRestore.GetHashCode();
-                if (this.IsSupportFastDatabaseRestore != null)
-                    hashCode = hashCode * 59 + this.IsSupportFastDatabaseRestore.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.IsSupportFastTableRestore != null) hashCode = hashCode * 59 + this.IsSupportFastTableRestore.GetHashCode();
+                if (this.IsSupportFastDatabaseRestore != null) hashCode = hashCode * 59 + this.IsSupportFastDatabaseRestore.GetHashCode();
                 return hashCode;
             }
         }

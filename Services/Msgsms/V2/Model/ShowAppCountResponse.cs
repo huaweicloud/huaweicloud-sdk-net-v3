@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         /// </summary>
         public bool Equals(ShowAppCountResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.Used != input.Used || (this.Used != null && !this.Used.Equals(input.Used))) return false;
 
-            return 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.Used == input.Used ||
-                    (this.Used != null &&
-                    this.Used.Equals(input.Used))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.Used != null)
-                    hashCode = hashCode * 59 + this.Used.GetHashCode();
+                var hashCode = 41;
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.Used != null) hashCode = hashCode * 59 + this.Used.GetHashCode();
                 return hashCode;
             }
         }

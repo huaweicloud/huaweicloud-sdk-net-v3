@@ -231,55 +231,18 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(Flavor input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Version != input.Version) return false;
+            if (this.EipCount != input.EipCount || (this.EipCount != null && !this.EipCount.Equals(input.EipCount))) return false;
+            if (this.VpcCount != input.VpcCount || (this.VpcCount != null && !this.VpcCount.Equals(input.VpcCount))) return false;
+            if (this.Bandwidth != input.Bandwidth || (this.Bandwidth != null && !this.Bandwidth.Equals(input.Bandwidth))) return false;
+            if (this.LogStorage != input.LogStorage || (this.LogStorage != null && !this.LogStorage.Equals(input.LogStorage))) return false;
+            if (this.DefaultBandwidth != input.DefaultBandwidth || (this.DefaultBandwidth != null && !this.DefaultBandwidth.Equals(input.DefaultBandwidth))) return false;
+            if (this.DefaultEipCount != input.DefaultEipCount || (this.DefaultEipCount != null && !this.DefaultEipCount.Equals(input.DefaultEipCount))) return false;
+            if (this.DefaultLogStorage != input.DefaultLogStorage || (this.DefaultLogStorage != null && !this.DefaultLogStorage.Equals(input.DefaultLogStorage))) return false;
+            if (this.DefaultVpcCount != input.DefaultVpcCount || (this.DefaultVpcCount != null && !this.DefaultVpcCount.Equals(input.DefaultVpcCount))) return false;
 
-            return 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.EipCount == input.EipCount ||
-                    (this.EipCount != null &&
-                    this.EipCount.Equals(input.EipCount))
-                ) && 
-                (
-                    this.VpcCount == input.VpcCount ||
-                    (this.VpcCount != null &&
-                    this.VpcCount.Equals(input.VpcCount))
-                ) && 
-                (
-                    this.Bandwidth == input.Bandwidth ||
-                    (this.Bandwidth != null &&
-                    this.Bandwidth.Equals(input.Bandwidth))
-                ) && 
-                (
-                    this.LogStorage == input.LogStorage ||
-                    (this.LogStorage != null &&
-                    this.LogStorage.Equals(input.LogStorage))
-                ) && 
-                (
-                    this.DefaultBandwidth == input.DefaultBandwidth ||
-                    (this.DefaultBandwidth != null &&
-                    this.DefaultBandwidth.Equals(input.DefaultBandwidth))
-                ) && 
-                (
-                    this.DefaultEipCount == input.DefaultEipCount ||
-                    (this.DefaultEipCount != null &&
-                    this.DefaultEipCount.Equals(input.DefaultEipCount))
-                ) && 
-                (
-                    this.DefaultLogStorage == input.DefaultLogStorage ||
-                    (this.DefaultLogStorage != null &&
-                    this.DefaultLogStorage.Equals(input.DefaultLogStorage))
-                ) && 
-                (
-                    this.DefaultVpcCount == input.DefaultVpcCount ||
-                    (this.DefaultVpcCount != null &&
-                    this.DefaultVpcCount.Equals(input.DefaultVpcCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -289,25 +252,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.EipCount != null)
-                    hashCode = hashCode * 59 + this.EipCount.GetHashCode();
-                if (this.VpcCount != null)
-                    hashCode = hashCode * 59 + this.VpcCount.GetHashCode();
-                if (this.Bandwidth != null)
-                    hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
-                if (this.LogStorage != null)
-                    hashCode = hashCode * 59 + this.LogStorage.GetHashCode();
-                if (this.DefaultBandwidth != null)
-                    hashCode = hashCode * 59 + this.DefaultBandwidth.GetHashCode();
-                if (this.DefaultEipCount != null)
-                    hashCode = hashCode * 59 + this.DefaultEipCount.GetHashCode();
-                if (this.DefaultLogStorage != null)
-                    hashCode = hashCode * 59 + this.DefaultLogStorage.GetHashCode();
-                if (this.DefaultVpcCount != null)
-                    hashCode = hashCode * 59 + this.DefaultVpcCount.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.EipCount != null) hashCode = hashCode * 59 + this.EipCount.GetHashCode();
+                if (this.VpcCount != null) hashCode = hashCode * 59 + this.VpcCount.GetHashCode();
+                if (this.Bandwidth != null) hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
+                if (this.LogStorage != null) hashCode = hashCode * 59 + this.LogStorage.GetHashCode();
+                if (this.DefaultBandwidth != null) hashCode = hashCode * 59 + this.DefaultBandwidth.GetHashCode();
+                if (this.DefaultEipCount != null) hashCode = hashCode * 59 + this.DefaultEipCount.GetHashCode();
+                if (this.DefaultLogStorage != null) hashCode = hashCode * 59 + this.DefaultLogStorage.GetHashCode();
+                if (this.DefaultVpcCount != null) hashCode = hashCode * 59 + this.DefaultVpcCount.GetHashCode();
                 return hashCode;
             }
         }

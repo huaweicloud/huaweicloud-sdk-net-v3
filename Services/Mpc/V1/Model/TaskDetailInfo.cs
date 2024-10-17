@@ -277,75 +277,22 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(TaskDetailInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TaskId != input.TaskId || (this.TaskId != null && !this.TaskId.Equals(input.TaskId))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.Progress != input.Progress || (this.Progress != null && !this.Progress.Equals(input.Progress))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.Input != input.Input || (this.Input != null && !this.Input.Equals(input.Input))) return false;
+            if (this.Output != input.Output || (this.Output != null && !this.Output.Equals(input.Output))) return false;
+            if (this.UserData != input.UserData || (this.UserData != null && !this.UserData.Equals(input.UserData))) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.MediaDetail != input.MediaDetail || (this.MediaDetail != null && !this.MediaDetail.Equals(input.MediaDetail))) return false;
+            if (this.XcodeError != input.XcodeError || (this.XcodeError != null && !this.XcodeError.Equals(input.XcodeError))) return false;
 
-            return 
-                (
-                    this.TaskId == input.TaskId ||
-                    (this.TaskId != null &&
-                    this.TaskId.Equals(input.TaskId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Progress == input.Progress ||
-                    (this.Progress != null &&
-                    this.Progress.Equals(input.Progress))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.Input == input.Input ||
-                    (this.Input != null &&
-                    this.Input.Equals(input.Input))
-                ) && 
-                (
-                    this.Output == input.Output ||
-                    (this.Output != null &&
-                    this.Output.Equals(input.Output))
-                ) && 
-                (
-                    this.UserData == input.UserData ||
-                    (this.UserData != null &&
-                    this.UserData.Equals(input.UserData))
-                ) && 
-                (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.MediaDetail == input.MediaDetail ||
-                    (this.MediaDetail != null &&
-                    this.MediaDetail.Equals(input.MediaDetail))
-                ) && 
-                (
-                    this.XcodeError == input.XcodeError ||
-                    (this.XcodeError != null &&
-                    this.XcodeError.Equals(input.XcodeError))
-                );
+            return true;
         }
 
         /// <summary>
@@ -355,33 +302,20 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TaskId != null)
-                    hashCode = hashCode * 59 + this.TaskId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Progress != null)
-                    hashCode = hashCode * 59 + this.Progress.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Input != null)
-                    hashCode = hashCode * 59 + this.Input.GetHashCode();
-                if (this.Output != null)
-                    hashCode = hashCode * 59 + this.Output.GetHashCode();
-                if (this.UserData != null)
-                    hashCode = hashCode * 59 + this.UserData.GetHashCode();
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.MediaDetail != null)
-                    hashCode = hashCode * 59 + this.MediaDetail.GetHashCode();
-                if (this.XcodeError != null)
-                    hashCode = hashCode * 59 + this.XcodeError.GetHashCode();
+                var hashCode = 41;
+                if (this.TaskId != null) hashCode = hashCode * 59 + this.TaskId.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Progress != null) hashCode = hashCode * 59 + this.Progress.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.Input != null) hashCode = hashCode * 59 + this.Input.GetHashCode();
+                if (this.Output != null) hashCode = hashCode * 59 + this.Output.GetHashCode();
+                if (this.UserData != null) hashCode = hashCode * 59 + this.UserData.GetHashCode();
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.MediaDetail != null) hashCode = hashCode * 59 + this.MediaDetail.GetHashCode();
+                if (this.XcodeError != null) hashCode = hashCode * 59 + this.XcodeError.GetHashCode();
                 return hashCode;
             }
         }

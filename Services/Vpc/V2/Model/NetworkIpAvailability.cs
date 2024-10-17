@@ -84,41 +84,15 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(NetworkIpAvailability input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NetworkId != input.NetworkId || (this.NetworkId != null && !this.NetworkId.Equals(input.NetworkId))) return false;
+            if (this.NetworkName != input.NetworkName || (this.NetworkName != null && !this.NetworkName.Equals(input.NetworkName))) return false;
+            if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
+            if (this.TotalIps != input.TotalIps || (this.TotalIps != null && !this.TotalIps.Equals(input.TotalIps))) return false;
+            if (this.UsedIps != input.UsedIps || (this.UsedIps != null && !this.UsedIps.Equals(input.UsedIps))) return false;
+            if (this.SubnetIpAvailability != input.SubnetIpAvailability || (this.SubnetIpAvailability != null && input.SubnetIpAvailability != null && !this.SubnetIpAvailability.SequenceEqual(input.SubnetIpAvailability))) return false;
 
-            return 
-                (
-                    this.NetworkId == input.NetworkId ||
-                    (this.NetworkId != null &&
-                    this.NetworkId.Equals(input.NetworkId))
-                ) && 
-                (
-                    this.NetworkName == input.NetworkName ||
-                    (this.NetworkName != null &&
-                    this.NetworkName.Equals(input.NetworkName))
-                ) && 
-                (
-                    this.TenantId == input.TenantId ||
-                    (this.TenantId != null &&
-                    this.TenantId.Equals(input.TenantId))
-                ) && 
-                (
-                    this.TotalIps == input.TotalIps ||
-                    (this.TotalIps != null &&
-                    this.TotalIps.Equals(input.TotalIps))
-                ) && 
-                (
-                    this.UsedIps == input.UsedIps ||
-                    (this.UsedIps != null &&
-                    this.UsedIps.Equals(input.UsedIps))
-                ) && 
-                (
-                    this.SubnetIpAvailability == input.SubnetIpAvailability ||
-                    this.SubnetIpAvailability != null &&
-                    input.SubnetIpAvailability != null &&
-                    this.SubnetIpAvailability.SequenceEqual(input.SubnetIpAvailability)
-                );
+            return true;
         }
 
         /// <summary>
@@ -128,19 +102,13 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NetworkId != null)
-                    hashCode = hashCode * 59 + this.NetworkId.GetHashCode();
-                if (this.NetworkName != null)
-                    hashCode = hashCode * 59 + this.NetworkName.GetHashCode();
-                if (this.TenantId != null)
-                    hashCode = hashCode * 59 + this.TenantId.GetHashCode();
-                if (this.TotalIps != null)
-                    hashCode = hashCode * 59 + this.TotalIps.GetHashCode();
-                if (this.UsedIps != null)
-                    hashCode = hashCode * 59 + this.UsedIps.GetHashCode();
-                if (this.SubnetIpAvailability != null)
-                    hashCode = hashCode * 59 + this.SubnetIpAvailability.GetHashCode();
+                var hashCode = 41;
+                if (this.NetworkId != null) hashCode = hashCode * 59 + this.NetworkId.GetHashCode();
+                if (this.NetworkName != null) hashCode = hashCode * 59 + this.NetworkName.GetHashCode();
+                if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
+                if (this.TotalIps != null) hashCode = hashCode * 59 + this.TotalIps.GetHashCode();
+                if (this.UsedIps != null) hashCode = hashCode * 59 + this.UsedIps.GetHashCode();
+                if (this.SubnetIpAvailability != null) hashCode = hashCode * 59 + this.SubnetIpAvailability.GetHashCode();
                 return hashCode;
             }
         }

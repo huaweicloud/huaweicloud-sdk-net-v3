@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         /// </summary>
         public bool Equals(ExtentionRespDataByNameAndId input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VerificationResult != input.VerificationResult || (this.VerificationResult != null && !this.VerificationResult.Equals(input.VerificationResult))) return false;
+            if (this.VerificationMessage != input.VerificationMessage || (this.VerificationMessage != null && !this.VerificationMessage.Equals(input.VerificationMessage))) return false;
+            if (this.VerificationCode != input.VerificationCode || (this.VerificationCode != null && !this.VerificationCode.Equals(input.VerificationCode))) return false;
 
-            return 
-                (
-                    this.VerificationResult == input.VerificationResult ||
-                    (this.VerificationResult != null &&
-                    this.VerificationResult.Equals(input.VerificationResult))
-                ) && 
-                (
-                    this.VerificationMessage == input.VerificationMessage ||
-                    (this.VerificationMessage != null &&
-                    this.VerificationMessage.Equals(input.VerificationMessage))
-                ) && 
-                (
-                    this.VerificationCode == input.VerificationCode ||
-                    (this.VerificationCode != null &&
-                    this.VerificationCode.Equals(input.VerificationCode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VerificationResult != null)
-                    hashCode = hashCode * 59 + this.VerificationResult.GetHashCode();
-                if (this.VerificationMessage != null)
-                    hashCode = hashCode * 59 + this.VerificationMessage.GetHashCode();
-                if (this.VerificationCode != null)
-                    hashCode = hashCode * 59 + this.VerificationCode.GetHashCode();
+                var hashCode = 41;
+                if (this.VerificationResult != null) hashCode = hashCode * 59 + this.VerificationResult.GetHashCode();
+                if (this.VerificationMessage != null) hashCode = hashCode * 59 + this.VerificationMessage.GetHashCode();
+                if (this.VerificationCode != null) hashCode = hashCode * 59 + this.VerificationCode.GetHashCode();
                 return hashCode;
             }
         }

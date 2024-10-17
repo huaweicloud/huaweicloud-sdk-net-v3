@@ -98,45 +98,16 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ListProjectsV4Request input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Search != input.Search || (this.Search != null && !this.Search.Equals(input.Search))) return false;
+            if (this.ProjectType != input.ProjectType || (this.ProjectType != null && !this.ProjectType.Equals(input.ProjectType))) return false;
+            if (this.Sort != input.Sort || (this.Sort != null && !this.Sort.Equals(input.Sort))) return false;
+            if (this.Archive != input.Archive || (this.Archive != null && !this.Archive.Equals(input.Archive))) return false;
+            if (this.QueryType != input.QueryType || (this.QueryType != null && !this.QueryType.Equals(input.QueryType))) return false;
 
-            return 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Search == input.Search ||
-                    (this.Search != null &&
-                    this.Search.Equals(input.Search))
-                ) && 
-                (
-                    this.ProjectType == input.ProjectType ||
-                    (this.ProjectType != null &&
-                    this.ProjectType.Equals(input.ProjectType))
-                ) && 
-                (
-                    this.Sort == input.Sort ||
-                    (this.Sort != null &&
-                    this.Sort.Equals(input.Sort))
-                ) && 
-                (
-                    this.Archive == input.Archive ||
-                    (this.Archive != null &&
-                    this.Archive.Equals(input.Archive))
-                ) && 
-                (
-                    this.QueryType == input.QueryType ||
-                    (this.QueryType != null &&
-                    this.QueryType.Equals(input.QueryType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -146,21 +117,14 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Search != null)
-                    hashCode = hashCode * 59 + this.Search.GetHashCode();
-                if (this.ProjectType != null)
-                    hashCode = hashCode * 59 + this.ProjectType.GetHashCode();
-                if (this.Sort != null)
-                    hashCode = hashCode * 59 + this.Sort.GetHashCode();
-                if (this.Archive != null)
-                    hashCode = hashCode * 59 + this.Archive.GetHashCode();
-                if (this.QueryType != null)
-                    hashCode = hashCode * 59 + this.QueryType.GetHashCode();
+                var hashCode = 41;
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Search != null) hashCode = hashCode * 59 + this.Search.GetHashCode();
+                if (this.ProjectType != null) hashCode = hashCode * 59 + this.ProjectType.GetHashCode();
+                if (this.Sort != null) hashCode = hashCode * 59 + this.Sort.GetHashCode();
+                if (this.Archive != null) hashCode = hashCode * 59 + this.Archive.GetHashCode();
+                if (this.QueryType != null) hashCode = hashCode * 59 + this.QueryType.GetHashCode();
                 return hashCode;
             }
         }

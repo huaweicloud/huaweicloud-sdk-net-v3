@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(Annotations input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
+            if (this.LogInfo != input.LogInfo || (this.LogInfo != null && !this.LogInfo.Equals(input.LogInfo))) return false;
+            if (this.CurrentValue != input.CurrentValue || (this.CurrentValue != null && !this.CurrentValue.Equals(input.CurrentValue))) return false;
+            if (this.OldAnnotations != input.OldAnnotations || (this.OldAnnotations != null && !this.OldAnnotations.Equals(input.OldAnnotations))) return false;
 
-            return 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.LogInfo == input.LogInfo ||
-                    (this.LogInfo != null &&
-                    this.LogInfo.Equals(input.LogInfo))
-                ) && 
-                (
-                    this.CurrentValue == input.CurrentValue ||
-                    (this.CurrentValue != null &&
-                    this.CurrentValue.Equals(input.CurrentValue))
-                ) && 
-                (
-                    this.OldAnnotations == input.OldAnnotations ||
-                    (this.OldAnnotations != null &&
-                    this.OldAnnotations.Equals(input.OldAnnotations))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.LogInfo != null)
-                    hashCode = hashCode * 59 + this.LogInfo.GetHashCode();
-                if (this.CurrentValue != null)
-                    hashCode = hashCode * 59 + this.CurrentValue.GetHashCode();
-                if (this.OldAnnotations != null)
-                    hashCode = hashCode * 59 + this.OldAnnotations.GetHashCode();
+                var hashCode = 41;
+                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.LogInfo != null) hashCode = hashCode * 59 + this.LogInfo.GetHashCode();
+                if (this.CurrentValue != null) hashCode = hashCode * 59 + this.CurrentValue.GetHashCode();
+                if (this.OldAnnotations != null) hashCode = hashCode * 59 + this.OldAnnotations.GetHashCode();
                 return hashCode;
             }
         }

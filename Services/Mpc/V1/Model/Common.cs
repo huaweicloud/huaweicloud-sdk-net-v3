@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(Common input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Pvc != input.Pvc || (this.Pvc != null && !this.Pvc.Equals(input.Pvc))) return false;
+            if (this.HlsInterval != input.HlsInterval || (this.HlsInterval != null && !this.HlsInterval.Equals(input.HlsInterval))) return false;
+            if (this.DashInterval != input.DashInterval || (this.DashInterval != null && !this.DashInterval.Equals(input.DashInterval))) return false;
+            if (this.PackType != input.PackType || (this.PackType != null && !this.PackType.Equals(input.PackType))) return false;
 
-            return 
-                (
-                    this.Pvc == input.Pvc ||
-                    (this.Pvc != null &&
-                    this.Pvc.Equals(input.Pvc))
-                ) && 
-                (
-                    this.HlsInterval == input.HlsInterval ||
-                    (this.HlsInterval != null &&
-                    this.HlsInterval.Equals(input.HlsInterval))
-                ) && 
-                (
-                    this.DashInterval == input.DashInterval ||
-                    (this.DashInterval != null &&
-                    this.DashInterval.Equals(input.DashInterval))
-                ) && 
-                (
-                    this.PackType == input.PackType ||
-                    (this.PackType != null &&
-                    this.PackType.Equals(input.PackType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Pvc != null)
-                    hashCode = hashCode * 59 + this.Pvc.GetHashCode();
-                if (this.HlsInterval != null)
-                    hashCode = hashCode * 59 + this.HlsInterval.GetHashCode();
-                if (this.DashInterval != null)
-                    hashCode = hashCode * 59 + this.DashInterval.GetHashCode();
-                if (this.PackType != null)
-                    hashCode = hashCode * 59 + this.PackType.GetHashCode();
+                var hashCode = 41;
+                if (this.Pvc != null) hashCode = hashCode * 59 + this.Pvc.GetHashCode();
+                if (this.HlsInterval != null) hashCode = hashCode * 59 + this.HlsInterval.GetHashCode();
+                if (this.DashInterval != null) hashCode = hashCode * 59 + this.DashInterval.GetHashCode();
+                if (this.PackType != null) hashCode = hashCode * 59 + this.PackType.GetHashCode();
                 return hashCode;
             }
         }

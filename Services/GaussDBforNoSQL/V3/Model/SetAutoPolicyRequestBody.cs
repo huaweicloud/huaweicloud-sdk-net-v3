@@ -63,27 +63,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(SetAutoPolicyRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceIds != input.InstanceIds || (this.InstanceIds != null && input.InstanceIds != null && !this.InstanceIds.SequenceEqual(input.InstanceIds))) return false;
+            if (this.SwitchOption != input.SwitchOption || (this.SwitchOption != null && !this.SwitchOption.Equals(input.SwitchOption))) return false;
+            if (this.Policy != input.Policy || (this.Policy != null && input.Policy != null && !this.Policy.SequenceEqual(input.Policy))) return false;
 
-            return 
-                (
-                    this.InstanceIds == input.InstanceIds ||
-                    this.InstanceIds != null &&
-                    input.InstanceIds != null &&
-                    this.InstanceIds.SequenceEqual(input.InstanceIds)
-                ) && 
-                (
-                    this.SwitchOption == input.SwitchOption ||
-                    (this.SwitchOption != null &&
-                    this.SwitchOption.Equals(input.SwitchOption))
-                ) && 
-                (
-                    this.Policy == input.Policy ||
-                    this.Policy != null &&
-                    input.Policy != null &&
-                    this.Policy.SequenceEqual(input.Policy)
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +78,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceIds != null)
-                    hashCode = hashCode * 59 + this.InstanceIds.GetHashCode();
-                if (this.SwitchOption != null)
-                    hashCode = hashCode * 59 + this.SwitchOption.GetHashCode();
-                if (this.Policy != null)
-                    hashCode = hashCode * 59 + this.Policy.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceIds != null) hashCode = hashCode * 59 + this.InstanceIds.GetHashCode();
+                if (this.SwitchOption != null) hashCode = hashCode * 59 + this.SwitchOption.GetHashCode();
+                if (this.Policy != null) hashCode = hashCode * 59 + this.Policy.GetHashCode();
                 return hashCode;
             }
         }

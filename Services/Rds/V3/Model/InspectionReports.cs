@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(InspectionReports input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.CheckTime != input.CheckTime || (this.CheckTime != null && !this.CheckTime.Equals(input.CheckTime))) return false;
+            if (this.ExpirationTime != input.ExpirationTime || (this.ExpirationTime != null && !this.ExpirationTime.Equals(input.ExpirationTime))) return false;
+            if (this.TargetVersion != input.TargetVersion || (this.TargetVersion != null && !this.TargetVersion.Equals(input.TargetVersion))) return false;
+            if (this.Result != input.Result || (this.Result != null && !this.Result.Equals(input.Result))) return false;
+            if (this.Detail != input.Detail || (this.Detail != null && !this.Detail.Equals(input.Detail))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.CheckTime == input.CheckTime ||
-                    (this.CheckTime != null &&
-                    this.CheckTime.Equals(input.CheckTime))
-                ) && 
-                (
-                    this.ExpirationTime == input.ExpirationTime ||
-                    (this.ExpirationTime != null &&
-                    this.ExpirationTime.Equals(input.ExpirationTime))
-                ) && 
-                (
-                    this.TargetVersion == input.TargetVersion ||
-                    (this.TargetVersion != null &&
-                    this.TargetVersion.Equals(input.TargetVersion))
-                ) && 
-                (
-                    this.Result == input.Result ||
-                    (this.Result != null &&
-                    this.Result.Equals(input.Result))
-                ) && 
-                (
-                    this.Detail == input.Detail ||
-                    (this.Detail != null &&
-                    this.Detail.Equals(input.Detail))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.CheckTime != null)
-                    hashCode = hashCode * 59 + this.CheckTime.GetHashCode();
-                if (this.ExpirationTime != null)
-                    hashCode = hashCode * 59 + this.ExpirationTime.GetHashCode();
-                if (this.TargetVersion != null)
-                    hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
-                if (this.Result != null)
-                    hashCode = hashCode * 59 + this.Result.GetHashCode();
-                if (this.Detail != null)
-                    hashCode = hashCode * 59 + this.Detail.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.CheckTime != null) hashCode = hashCode * 59 + this.CheckTime.GetHashCode();
+                if (this.ExpirationTime != null) hashCode = hashCode * 59 + this.ExpirationTime.GetHashCode();
+                if (this.TargetVersion != null) hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
+                if (this.Result != null) hashCode = hashCode * 59 + this.Result.GetHashCode();
+                if (this.Detail != null) hashCode = hashCode * 59 + this.Detail.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         /// </summary>
         public bool Equals(UpdateVersionRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ExpireTime != input.ExpireTime || (this.ExpireTime != null && !this.ExpireTime.Equals(input.ExpireTime))) return false;
 
-            return 
-                (
-                    this.ExpireTime == input.ExpireTime ||
-                    (this.ExpireTime != null &&
-                    this.ExpireTime.Equals(input.ExpireTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ExpireTime != null)
-                    hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
+                var hashCode = 41;
+                if (this.ExpireTime != null) hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
                 return hashCode;
             }
         }

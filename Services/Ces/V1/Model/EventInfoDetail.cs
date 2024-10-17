@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// </summary>
         public bool Equals(EventInfoDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EventName != input.EventName || (this.EventName != null && !this.EventName.Equals(input.EventName))) return false;
+            if (this.EventSource != input.EventSource || (this.EventSource != null && !this.EventSource.Equals(input.EventSource))) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
+            if (this.Detail != input.Detail || (this.Detail != null && !this.Detail.Equals(input.Detail))) return false;
+            if (this.EventId != input.EventId || (this.EventId != null && !this.EventId.Equals(input.EventId))) return false;
 
-            return 
-                (
-                    this.EventName == input.EventName ||
-                    (this.EventName != null &&
-                    this.EventName.Equals(input.EventName))
-                ) && 
-                (
-                    this.EventSource == input.EventSource ||
-                    (this.EventSource != null &&
-                    this.EventSource.Equals(input.EventSource))
-                ) && 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                ) && 
-                (
-                    this.Detail == input.Detail ||
-                    (this.Detail != null &&
-                    this.Detail.Equals(input.Detail))
-                ) && 
-                (
-                    this.EventId == input.EventId ||
-                    (this.EventId != null &&
-                    this.EventId.Equals(input.EventId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EventName != null)
-                    hashCode = hashCode * 59 + this.EventName.GetHashCode();
-                if (this.EventSource != null)
-                    hashCode = hashCode * 59 + this.EventSource.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.Detail != null)
-                    hashCode = hashCode * 59 + this.Detail.GetHashCode();
-                if (this.EventId != null)
-                    hashCode = hashCode * 59 + this.EventId.GetHashCode();
+                var hashCode = 41;
+                if (this.EventName != null) hashCode = hashCode * 59 + this.EventName.GetHashCode();
+                if (this.EventSource != null) hashCode = hashCode * 59 + this.EventSource.GetHashCode();
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
+                if (this.Detail != null) hashCode = hashCode * 59 + this.Detail.GetHashCode();
+                if (this.EventId != null) hashCode = hashCode * 59 + this.EventId.GetHashCode();
                 return hashCode;
             }
         }

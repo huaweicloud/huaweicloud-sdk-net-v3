@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(GetQuerySearchCriteriasBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Criteria != input.Criteria || (this.Criteria != null && !this.Criteria.Equals(input.Criteria))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.SearchType != input.SearchType || (this.SearchType != null && !this.SearchType.Equals(input.SearchType))) return false;
 
-            return 
-                (
-                    this.Criteria == input.Criteria ||
-                    (this.Criteria != null &&
-                    this.Criteria.Equals(input.Criteria))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.SearchType == input.SearchType ||
-                    (this.SearchType != null &&
-                    this.SearchType.Equals(input.SearchType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Criteria != null)
-                    hashCode = hashCode * 59 + this.Criteria.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.SearchType != null)
-                    hashCode = hashCode * 59 + this.SearchType.GetHashCode();
+                var hashCode = 41;
+                if (this.Criteria != null) hashCode = hashCode * 59 + this.Criteria.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.SearchType != null) hashCode = hashCode * 59 + this.SearchType.GetHashCode();
                 return hashCode;
             }
         }

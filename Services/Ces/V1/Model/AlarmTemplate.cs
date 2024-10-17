@@ -84,41 +84,15 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// </summary>
         public bool Equals(AlarmTemplate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TemplateName != input.TemplateName || (this.TemplateName != null && !this.TemplateName.Equals(input.TemplateName))) return false;
+            if (this.TemplateDescription != input.TemplateDescription || (this.TemplateDescription != null && !this.TemplateDescription.Equals(input.TemplateDescription))) return false;
+            if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
+            if (this.DimensionName != input.DimensionName || (this.DimensionName != null && !this.DimensionName.Equals(input.DimensionName))) return false;
+            if (this.TemplateItems != input.TemplateItems || (this.TemplateItems != null && input.TemplateItems != null && !this.TemplateItems.SequenceEqual(input.TemplateItems))) return false;
+            if (this.TemplateId != input.TemplateId || (this.TemplateId != null && !this.TemplateId.Equals(input.TemplateId))) return false;
 
-            return 
-                (
-                    this.TemplateName == input.TemplateName ||
-                    (this.TemplateName != null &&
-                    this.TemplateName.Equals(input.TemplateName))
-                ) && 
-                (
-                    this.TemplateDescription == input.TemplateDescription ||
-                    (this.TemplateDescription != null &&
-                    this.TemplateDescription.Equals(input.TemplateDescription))
-                ) && 
-                (
-                    this.Namespace == input.Namespace ||
-                    (this.Namespace != null &&
-                    this.Namespace.Equals(input.Namespace))
-                ) && 
-                (
-                    this.DimensionName == input.DimensionName ||
-                    (this.DimensionName != null &&
-                    this.DimensionName.Equals(input.DimensionName))
-                ) && 
-                (
-                    this.TemplateItems == input.TemplateItems ||
-                    this.TemplateItems != null &&
-                    input.TemplateItems != null &&
-                    this.TemplateItems.SequenceEqual(input.TemplateItems)
-                ) && 
-                (
-                    this.TemplateId == input.TemplateId ||
-                    (this.TemplateId != null &&
-                    this.TemplateId.Equals(input.TemplateId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -128,19 +102,13 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TemplateName != null)
-                    hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
-                if (this.TemplateDescription != null)
-                    hashCode = hashCode * 59 + this.TemplateDescription.GetHashCode();
-                if (this.Namespace != null)
-                    hashCode = hashCode * 59 + this.Namespace.GetHashCode();
-                if (this.DimensionName != null)
-                    hashCode = hashCode * 59 + this.DimensionName.GetHashCode();
-                if (this.TemplateItems != null)
-                    hashCode = hashCode * 59 + this.TemplateItems.GetHashCode();
-                if (this.TemplateId != null)
-                    hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
+                var hashCode = 41;
+                if (this.TemplateName != null) hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
+                if (this.TemplateDescription != null) hashCode = hashCode * 59 + this.TemplateDescription.GetHashCode();
+                if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.DimensionName != null) hashCode = hashCode * 59 + this.DimensionName.GetHashCode();
+                if (this.TemplateItems != null) hashCode = hashCode * 59 + this.TemplateItems.GetHashCode();
+                if (this.TemplateId != null) hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
                 return hashCode;
             }
         }

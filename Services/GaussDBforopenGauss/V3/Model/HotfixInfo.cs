@@ -184,30 +184,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(HotfixInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.CommonPatch != input.CommonPatch) return false;
+            if (this.BackupSensitive != input.BackupSensitive || (this.BackupSensitive != null && !this.BackupSensitive.Equals(input.BackupSensitive))) return false;
+            if (this.Descripition != input.Descripition || (this.Descripition != null && !this.Descripition.Equals(input.Descripition))) return false;
 
-            return 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.CommonPatch == input.CommonPatch ||
-                    (this.CommonPatch != null &&
-                    this.CommonPatch.Equals(input.CommonPatch))
-                ) && 
-                (
-                    this.BackupSensitive == input.BackupSensitive ||
-                    (this.BackupSensitive != null &&
-                    this.BackupSensitive.Equals(input.BackupSensitive))
-                ) && 
-                (
-                    this.Descripition == input.Descripition ||
-                    (this.Descripition != null &&
-                    this.Descripition.Equals(input.Descripition))
-                );
+            return true;
         }
 
         /// <summary>
@@ -217,15 +200,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.CommonPatch != null)
-                    hashCode = hashCode * 59 + this.CommonPatch.GetHashCode();
-                if (this.BackupSensitive != null)
-                    hashCode = hashCode * 59 + this.BackupSensitive.GetHashCode();
-                if (this.Descripition != null)
-                    hashCode = hashCode * 59 + this.Descripition.GetHashCode();
+                var hashCode = 41;
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                hashCode = hashCode * 59 + this.CommonPatch.GetHashCode();
+                if (this.BackupSensitive != null) hashCode = hashCode * 59 + this.BackupSensitive.GetHashCode();
+                if (this.Descripition != null) hashCode = hashCode * 59 + this.Descripition.GetHashCode();
                 return hashCode;
             }
         }

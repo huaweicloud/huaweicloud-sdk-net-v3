@@ -90,40 +90,15 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         /// </summary>
         public bool Equals(ListRecordRulesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Authorization != input.Authorization || (this.Authorization != null && !this.Authorization.Equals(input.Authorization))) return false;
+            if (this.XSdkDate != input.XSdkDate || (this.XSdkDate != null && !this.XSdkDate.Equals(input.XSdkDate))) return false;
+            if (this.XProjectId != input.XProjectId || (this.XProjectId != null && !this.XProjectId.Equals(input.XProjectId))) return false;
+            if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
-            return 
-                (
-                    this.Authorization == input.Authorization ||
-                    (this.Authorization != null &&
-                    this.Authorization.Equals(input.Authorization))
-                ) && 
-                (
-                    this.XSdkDate == input.XSdkDate ||
-                    (this.XSdkDate != null &&
-                    this.XSdkDate.Equals(input.XSdkDate))
-                ) && 
-                (
-                    this.XProjectId == input.XProjectId ||
-                    (this.XProjectId != null &&
-                    this.XProjectId.Equals(input.XProjectId))
-                ) && 
-                (
-                    this.AppId == input.AppId ||
-                    (this.AppId != null &&
-                    this.AppId.Equals(input.AppId))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -133,19 +108,13 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Authorization != null)
-                    hashCode = hashCode * 59 + this.Authorization.GetHashCode();
-                if (this.XSdkDate != null)
-                    hashCode = hashCode * 59 + this.XSdkDate.GetHashCode();
-                if (this.XProjectId != null)
-                    hashCode = hashCode * 59 + this.XProjectId.GetHashCode();
-                if (this.AppId != null)
-                    hashCode = hashCode * 59 + this.AppId.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                var hashCode = 41;
+                if (this.Authorization != null) hashCode = hashCode * 59 + this.Authorization.GetHashCode();
+                if (this.XSdkDate != null) hashCode = hashCode * 59 + this.XSdkDate.GetHashCode();
+                if (this.XProjectId != null) hashCode = hashCode * 59 + this.XProjectId.GetHashCode();
+                if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;
             }
         }

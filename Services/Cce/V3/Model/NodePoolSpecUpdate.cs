@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(NodePoolSpecUpdate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NodeTemplate != input.NodeTemplate || (this.NodeTemplate != null && !this.NodeTemplate.Equals(input.NodeTemplate))) return false;
+            if (this.InitialNodeCount != input.InitialNodeCount || (this.InitialNodeCount != null && !this.InitialNodeCount.Equals(input.InitialNodeCount))) return false;
+            if (this.Autoscaling != input.Autoscaling || (this.Autoscaling != null && !this.Autoscaling.Equals(input.Autoscaling))) return false;
+            if (this.ExtensionScaleGroups != input.ExtensionScaleGroups || (this.ExtensionScaleGroups != null && input.ExtensionScaleGroups != null && !this.ExtensionScaleGroups.SequenceEqual(input.ExtensionScaleGroups))) return false;
 
-            return 
-                (
-                    this.NodeTemplate == input.NodeTemplate ||
-                    (this.NodeTemplate != null &&
-                    this.NodeTemplate.Equals(input.NodeTemplate))
-                ) && 
-                (
-                    this.InitialNodeCount == input.InitialNodeCount ||
-                    (this.InitialNodeCount != null &&
-                    this.InitialNodeCount.Equals(input.InitialNodeCount))
-                ) && 
-                (
-                    this.Autoscaling == input.Autoscaling ||
-                    (this.Autoscaling != null &&
-                    this.Autoscaling.Equals(input.Autoscaling))
-                ) && 
-                (
-                    this.ExtensionScaleGroups == input.ExtensionScaleGroups ||
-                    this.ExtensionScaleGroups != null &&
-                    input.ExtensionScaleGroups != null &&
-                    this.ExtensionScaleGroups.SequenceEqual(input.ExtensionScaleGroups)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NodeTemplate != null)
-                    hashCode = hashCode * 59 + this.NodeTemplate.GetHashCode();
-                if (this.InitialNodeCount != null)
-                    hashCode = hashCode * 59 + this.InitialNodeCount.GetHashCode();
-                if (this.Autoscaling != null)
-                    hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
-                if (this.ExtensionScaleGroups != null)
-                    hashCode = hashCode * 59 + this.ExtensionScaleGroups.GetHashCode();
+                var hashCode = 41;
+                if (this.NodeTemplate != null) hashCode = hashCode * 59 + this.NodeTemplate.GetHashCode();
+                if (this.InitialNodeCount != null) hashCode = hashCode * 59 + this.InitialNodeCount.GetHashCode();
+                if (this.Autoscaling != null) hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
+                if (this.ExtensionScaleGroups != null) hashCode = hashCode * 59 + this.ExtensionScaleGroups.GetHashCode();
                 return hashCode;
             }
         }

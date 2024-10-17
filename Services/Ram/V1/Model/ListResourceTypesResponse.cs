@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         /// </summary>
         public bool Equals(ListResourceTypesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResourceTypes != input.ResourceTypes || (this.ResourceTypes != null && input.ResourceTypes != null && !this.ResourceTypes.SequenceEqual(input.ResourceTypes))) return false;
+            if (this.PageInfo != input.PageInfo || (this.PageInfo != null && !this.PageInfo.Equals(input.PageInfo))) return false;
 
-            return 
-                (
-                    this.ResourceTypes == input.ResourceTypes ||
-                    this.ResourceTypes != null &&
-                    input.ResourceTypes != null &&
-                    this.ResourceTypes.SequenceEqual(input.ResourceTypes)
-                ) && 
-                (
-                    this.PageInfo == input.PageInfo ||
-                    (this.PageInfo != null &&
-                    this.PageInfo.Equals(input.PageInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResourceTypes != null)
-                    hashCode = hashCode * 59 + this.ResourceTypes.GetHashCode();
-                if (this.PageInfo != null)
-                    hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.ResourceTypes != null) hashCode = hashCode * 59 + this.ResourceTypes.GetHashCode();
+                if (this.PageInfo != null) hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
                 return hashCode;
             }
         }

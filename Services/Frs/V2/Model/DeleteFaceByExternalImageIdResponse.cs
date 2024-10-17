@@ -71,30 +71,13 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public bool Equals(DeleteFaceByExternalImageIdResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FaceNumber != input.FaceNumber || (this.FaceNumber != null && !this.FaceNumber.Equals(input.FaceNumber))) return false;
+            if (this.FaceSetId != input.FaceSetId || (this.FaceSetId != null && !this.FaceSetId.Equals(input.FaceSetId))) return false;
+            if (this.FaceSetName != input.FaceSetName || (this.FaceSetName != null && !this.FaceSetName.Equals(input.FaceSetName))) return false;
+            if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
-            return 
-                (
-                    this.FaceNumber == input.FaceNumber ||
-                    (this.FaceNumber != null &&
-                    this.FaceNumber.Equals(input.FaceNumber))
-                ) && 
-                (
-                    this.FaceSetId == input.FaceSetId ||
-                    (this.FaceSetId != null &&
-                    this.FaceSetId.Equals(input.FaceSetId))
-                ) && 
-                (
-                    this.FaceSetName == input.FaceSetName ||
-                    (this.FaceSetName != null &&
-                    this.FaceSetName.Equals(input.FaceSetName))
-                ) && 
-                (
-                    this.XRequestId == input.XRequestId ||
-                    (this.XRequestId != null &&
-                    this.XRequestId.Equals(input.XRequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +87,11 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FaceNumber != null)
-                    hashCode = hashCode * 59 + this.FaceNumber.GetHashCode();
-                if (this.FaceSetId != null)
-                    hashCode = hashCode * 59 + this.FaceSetId.GetHashCode();
-                if (this.FaceSetName != null)
-                    hashCode = hashCode * 59 + this.FaceSetName.GetHashCode();
-                if (this.XRequestId != null)
-                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.FaceNumber != null) hashCode = hashCode * 59 + this.FaceNumber.GetHashCode();
+                if (this.FaceSetId != null) hashCode = hashCode * 59 + this.FaceSetId.GetHashCode();
+                if (this.FaceSetName != null) hashCode = hashCode * 59 + this.FaceSetName.GetHashCode();
+                if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

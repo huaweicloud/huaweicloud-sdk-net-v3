@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public bool Equals(ListPublicZonesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Links != input.Links || (this.Links != null && !this.Links.Equals(input.Links))) return false;
+            if (this.Zones != input.Zones || (this.Zones != null && input.Zones != null && !this.Zones.SequenceEqual(input.Zones))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && !this.Metadata.Equals(input.Metadata))) return false;
 
-            return 
-                (
-                    this.Links == input.Links ||
-                    (this.Links != null &&
-                    this.Links.Equals(input.Links))
-                ) && 
-                (
-                    this.Zones == input.Zones ||
-                    this.Zones != null &&
-                    input.Zones != null &&
-                    this.Zones.SequenceEqual(input.Zones)
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    (this.Metadata != null &&
-                    this.Metadata.Equals(input.Metadata))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Links != null)
-                    hashCode = hashCode * 59 + this.Links.GetHashCode();
-                if (this.Zones != null)
-                    hashCode = hashCode * 59 + this.Zones.GetHashCode();
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                var hashCode = 41;
+                if (this.Links != null) hashCode = hashCode * 59 + this.Links.GetHashCode();
+                if (this.Zones != null) hashCode = hashCode * 59 + this.Zones.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
                 return hashCode;
             }
         }

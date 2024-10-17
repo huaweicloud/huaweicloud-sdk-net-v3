@@ -250,61 +250,19 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(ThumbTask input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TaskId != input.TaskId || (this.TaskId != null && !this.TaskId.Equals(input.TaskId))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.Input != input.Input || (this.Input != null && !this.Input.Equals(input.Input))) return false;
+            if (this.Output != input.Output || (this.Output != null && !this.Output.Equals(input.Output))) return false;
+            if (this.OutputFileName != input.OutputFileName || (this.OutputFileName != null && !this.OutputFileName.Equals(input.OutputFileName))) return false;
+            if (this.UserData != input.UserData || (this.UserData != null && !this.UserData.Equals(input.UserData))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.ThumbnailInfo != input.ThumbnailInfo || (this.ThumbnailInfo != null && input.ThumbnailInfo != null && !this.ThumbnailInfo.SequenceEqual(input.ThumbnailInfo))) return false;
 
-            return 
-                (
-                    this.TaskId == input.TaskId ||
-                    (this.TaskId != null &&
-                    this.TaskId.Equals(input.TaskId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.Input == input.Input ||
-                    (this.Input != null &&
-                    this.Input.Equals(input.Input))
-                ) && 
-                (
-                    this.Output == input.Output ||
-                    (this.Output != null &&
-                    this.Output.Equals(input.Output))
-                ) && 
-                (
-                    this.OutputFileName == input.OutputFileName ||
-                    (this.OutputFileName != null &&
-                    this.OutputFileName.Equals(input.OutputFileName))
-                ) && 
-                (
-                    this.UserData == input.UserData ||
-                    (this.UserData != null &&
-                    this.UserData.Equals(input.UserData))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.ThumbnailInfo == input.ThumbnailInfo ||
-                    this.ThumbnailInfo != null &&
-                    input.ThumbnailInfo != null &&
-                    this.ThumbnailInfo.SequenceEqual(input.ThumbnailInfo)
-                );
+            return true;
         }
 
         /// <summary>
@@ -314,27 +272,17 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TaskId != null)
-                    hashCode = hashCode * 59 + this.TaskId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Input != null)
-                    hashCode = hashCode * 59 + this.Input.GetHashCode();
-                if (this.Output != null)
-                    hashCode = hashCode * 59 + this.Output.GetHashCode();
-                if (this.OutputFileName != null)
-                    hashCode = hashCode * 59 + this.OutputFileName.GetHashCode();
-                if (this.UserData != null)
-                    hashCode = hashCode * 59 + this.UserData.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.ThumbnailInfo != null)
-                    hashCode = hashCode * 59 + this.ThumbnailInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.TaskId != null) hashCode = hashCode * 59 + this.TaskId.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.Input != null) hashCode = hashCode * 59 + this.Input.GetHashCode();
+                if (this.Output != null) hashCode = hashCode * 59 + this.Output.GetHashCode();
+                if (this.OutputFileName != null) hashCode = hashCode * 59 + this.OutputFileName.GetHashCode();
+                if (this.UserData != null) hashCode = hashCode * 59 + this.UserData.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.ThumbnailInfo != null) hashCode = hashCode * 59 + this.ThumbnailInfo.GetHashCode();
                 return hashCode;
             }
         }

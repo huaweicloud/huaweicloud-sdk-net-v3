@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         /// </summary>
         public bool Equals(AssociatePermissionReqBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Replace != input.Replace || (this.Replace != null && !this.Replace.Equals(input.Replace))) return false;
+            if (this.PermissionId != input.PermissionId || (this.PermissionId != null && !this.PermissionId.Equals(input.PermissionId))) return false;
 
-            return 
-                (
-                    this.Replace == input.Replace ||
-                    (this.Replace != null &&
-                    this.Replace.Equals(input.Replace))
-                ) && 
-                (
-                    this.PermissionId == input.PermissionId ||
-                    (this.PermissionId != null &&
-                    this.PermissionId.Equals(input.PermissionId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Replace != null)
-                    hashCode = hashCode * 59 + this.Replace.GetHashCode();
-                if (this.PermissionId != null)
-                    hashCode = hashCode * 59 + this.PermissionId.GetHashCode();
+                var hashCode = 41;
+                if (this.Replace != null) hashCode = hashCode * 59 + this.Replace.GetHashCode();
+                if (this.PermissionId != null) hashCode = hashCode * 59 + this.PermissionId.GetHashCode();
                 return hashCode;
             }
         }

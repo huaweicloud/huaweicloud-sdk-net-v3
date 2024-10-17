@@ -163,15 +163,10 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(RangeStatusRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RangeStatus != input.RangeStatus) return false;
 
-            return 
-                (
-                    this.RangeStatus == input.RangeStatus ||
-                    (this.RangeStatus != null &&
-                    this.RangeStatus.Equals(input.RangeStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -181,9 +176,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RangeStatus != null)
-                    hashCode = hashCode * 59 + this.RangeStatus.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.RangeStatus.GetHashCode();
                 return hashCode;
             }
         }

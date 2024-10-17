@@ -177,25 +177,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(BatchDeleteDashboardRespInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DashboardId != input.DashboardId || (this.DashboardId != null && !this.DashboardId.Equals(input.DashboardId))) return false;
+            if (this.RetStatus != input.RetStatus) return false;
+            if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
 
-            return 
-                (
-                    this.DashboardId == input.DashboardId ||
-                    (this.DashboardId != null &&
-                    this.DashboardId.Equals(input.DashboardId))
-                ) && 
-                (
-                    this.RetStatus == input.RetStatus ||
-                    (this.RetStatus != null &&
-                    this.RetStatus.Equals(input.RetStatus))
-                ) && 
-                (
-                    this.ErrorMsg == input.ErrorMsg ||
-                    (this.ErrorMsg != null &&
-                    this.ErrorMsg.Equals(input.ErrorMsg))
-                );
+            return true;
         }
 
         /// <summary>
@@ -205,13 +192,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DashboardId != null)
-                    hashCode = hashCode * 59 + this.DashboardId.GetHashCode();
-                if (this.RetStatus != null)
-                    hashCode = hashCode * 59 + this.RetStatus.GetHashCode();
-                if (this.ErrorMsg != null)
-                    hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
+                var hashCode = 41;
+                if (this.DashboardId != null) hashCode = hashCode * 59 + this.DashboardId.GetHashCode();
+                hashCode = hashCode * 59 + this.RetStatus.GetHashCode();
+                if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
                 return hashCode;
             }
         }

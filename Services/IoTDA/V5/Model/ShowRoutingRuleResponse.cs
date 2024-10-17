@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ShowRoutingRuleResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RuleId != input.RuleId || (this.RuleId != null && !this.RuleId.Equals(input.RuleId))) return false;
+            if (this.RuleName != input.RuleName || (this.RuleName != null && !this.RuleName.Equals(input.RuleName))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Subject != input.Subject || (this.Subject != null && !this.Subject.Equals(input.Subject))) return false;
+            if (this.AppType != input.AppType || (this.AppType != null && !this.AppType.Equals(input.AppType))) return false;
+            if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
+            if (this.Select != input.Select || (this.Select != null && !this.Select.Equals(input.Select))) return false;
+            if (this.Where != input.Where || (this.Where != null && !this.Where.Equals(input.Where))) return false;
+            if (this.Active != input.Active || (this.Active != null && !this.Active.Equals(input.Active))) return false;
 
-            return 
-                (
-                    this.RuleId == input.RuleId ||
-                    (this.RuleId != null &&
-                    this.RuleId.Equals(input.RuleId))
-                ) && 
-                (
-                    this.RuleName == input.RuleName ||
-                    (this.RuleName != null &&
-                    this.RuleName.Equals(input.RuleName))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Subject == input.Subject ||
-                    (this.Subject != null &&
-                    this.Subject.Equals(input.Subject))
-                ) && 
-                (
-                    this.AppType == input.AppType ||
-                    (this.AppType != null &&
-                    this.AppType.Equals(input.AppType))
-                ) && 
-                (
-                    this.AppId == input.AppId ||
-                    (this.AppId != null &&
-                    this.AppId.Equals(input.AppId))
-                ) && 
-                (
-                    this.Select == input.Select ||
-                    (this.Select != null &&
-                    this.Select.Equals(input.Select))
-                ) && 
-                (
-                    this.Where == input.Where ||
-                    (this.Where != null &&
-                    this.Where.Equals(input.Where))
-                ) && 
-                (
-                    this.Active == input.Active ||
-                    (this.Active != null &&
-                    this.Active.Equals(input.Active))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RuleId != null)
-                    hashCode = hashCode * 59 + this.RuleId.GetHashCode();
-                if (this.RuleName != null)
-                    hashCode = hashCode * 59 + this.RuleName.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Subject != null)
-                    hashCode = hashCode * 59 + this.Subject.GetHashCode();
-                if (this.AppType != null)
-                    hashCode = hashCode * 59 + this.AppType.GetHashCode();
-                if (this.AppId != null)
-                    hashCode = hashCode * 59 + this.AppId.GetHashCode();
-                if (this.Select != null)
-                    hashCode = hashCode * 59 + this.Select.GetHashCode();
-                if (this.Where != null)
-                    hashCode = hashCode * 59 + this.Where.GetHashCode();
-                if (this.Active != null)
-                    hashCode = hashCode * 59 + this.Active.GetHashCode();
+                var hashCode = 41;
+                if (this.RuleId != null) hashCode = hashCode * 59 + this.RuleId.GetHashCode();
+                if (this.RuleName != null) hashCode = hashCode * 59 + this.RuleName.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Subject != null) hashCode = hashCode * 59 + this.Subject.GetHashCode();
+                if (this.AppType != null) hashCode = hashCode * 59 + this.AppType.GetHashCode();
+                if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
+                if (this.Select != null) hashCode = hashCode * 59 + this.Select.GetHashCode();
+                if (this.Where != null) hashCode = hashCode * 59 + this.Where.GetHashCode();
+                if (this.Active != null) hashCode = hashCode * 59 + this.Active.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(UpdateDeviceProxy input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProxyName != input.ProxyName || (this.ProxyName != null && !this.ProxyName.Equals(input.ProxyName))) return false;
+            if (this.ProxyDevices != input.ProxyDevices || (this.ProxyDevices != null && input.ProxyDevices != null && !this.ProxyDevices.SequenceEqual(input.ProxyDevices))) return false;
+            if (this.EffectiveTimeRange != input.EffectiveTimeRange || (this.EffectiveTimeRange != null && !this.EffectiveTimeRange.Equals(input.EffectiveTimeRange))) return false;
 
-            return 
-                (
-                    this.ProxyName == input.ProxyName ||
-                    (this.ProxyName != null &&
-                    this.ProxyName.Equals(input.ProxyName))
-                ) && 
-                (
-                    this.ProxyDevices == input.ProxyDevices ||
-                    this.ProxyDevices != null &&
-                    input.ProxyDevices != null &&
-                    this.ProxyDevices.SequenceEqual(input.ProxyDevices)
-                ) && 
-                (
-                    this.EffectiveTimeRange == input.EffectiveTimeRange ||
-                    (this.EffectiveTimeRange != null &&
-                    this.EffectiveTimeRange.Equals(input.EffectiveTimeRange))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProxyName != null)
-                    hashCode = hashCode * 59 + this.ProxyName.GetHashCode();
-                if (this.ProxyDevices != null)
-                    hashCode = hashCode * 59 + this.ProxyDevices.GetHashCode();
-                if (this.EffectiveTimeRange != null)
-                    hashCode = hashCode * 59 + this.EffectiveTimeRange.GetHashCode();
+                var hashCode = 41;
+                if (this.ProxyName != null) hashCode = hashCode * 59 + this.ProxyName.GetHashCode();
+                if (this.ProxyDevices != null) hashCode = hashCode * 59 + this.ProxyDevices.GetHashCode();
+                if (this.EffectiveTimeRange != null) hashCode = hashCode * 59 + this.EffectiveTimeRange.GetHashCode();
                 return hashCode;
             }
         }

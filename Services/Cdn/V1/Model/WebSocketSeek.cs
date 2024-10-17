@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(WebSocketSeek input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Timeout != input.Timeout || (this.Timeout != null && !this.Timeout.Equals(input.Timeout))) return false;
 
-            return 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Timeout == input.Timeout ||
-                    (this.Timeout != null &&
-                    this.Timeout.Equals(input.Timeout))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Timeout != null)
-                    hashCode = hashCode * 59 + this.Timeout.GetHashCode();
+                var hashCode = 41;
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Timeout != null) hashCode = hashCode * 59 + this.Timeout.GetHashCode();
                 return hashCode;
             }
         }

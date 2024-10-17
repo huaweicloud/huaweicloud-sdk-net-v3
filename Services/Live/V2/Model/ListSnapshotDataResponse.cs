@@ -64,26 +64,12 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         /// </summary>
         public bool Equals(ListSnapshotDataResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SnapshotList != input.SnapshotList || (this.SnapshotList != null && input.SnapshotList != null && !this.SnapshotList.SequenceEqual(input.SnapshotList))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
-            return 
-                (
-                    this.SnapshotList == input.SnapshotList ||
-                    this.SnapshotList != null &&
-                    input.SnapshotList != null &&
-                    this.SnapshotList.SequenceEqual(input.SnapshotList)
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.XRequestId == input.XRequestId ||
-                    (this.XRequestId != null &&
-                    this.XRequestId.Equals(input.XRequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +79,10 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SnapshotList != null)
-                    hashCode = hashCode * 59 + this.SnapshotList.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.XRequestId != null)
-                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.SnapshotList != null) hashCode = hashCode * 59 + this.SnapshotList.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

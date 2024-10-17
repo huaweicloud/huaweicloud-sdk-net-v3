@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         /// </summary>
         public bool Equals(SearchScriptsRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.IsDefault != input.IsDefault || (this.IsDefault != null && !this.IsDefault.Equals(input.IsDefault))) return false;
+            if (this.CreateBy != input.CreateBy || (this.CreateBy != null && !this.CreateBy.Equals(input.CreateBy))) return false;
+            if (this.ScriptId != input.ScriptId || (this.ScriptId != null && !this.ScriptId.Equals(input.ScriptId))) return false;
+            if (this.PageNum != input.PageNum || (this.PageNum != null && !this.PageNum.Equals(input.PageNum))) return false;
+            if (this.PageSize != input.PageSize || (this.PageSize != null && !this.PageSize.Equals(input.PageSize))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.OrderByColumn != input.OrderByColumn || (this.OrderByColumn != null && !this.OrderByColumn.Equals(input.OrderByColumn))) return false;
+            if (this.SortOrder != input.SortOrder || (this.SortOrder != null && !this.SortOrder.Equals(input.SortOrder))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.IsDefault == input.IsDefault ||
-                    (this.IsDefault != null &&
-                    this.IsDefault.Equals(input.IsDefault))
-                ) && 
-                (
-                    this.CreateBy == input.CreateBy ||
-                    (this.CreateBy != null &&
-                    this.CreateBy.Equals(input.CreateBy))
-                ) && 
-                (
-                    this.ScriptId == input.ScriptId ||
-                    (this.ScriptId != null &&
-                    this.ScriptId.Equals(input.ScriptId))
-                ) && 
-                (
-                    this.PageNum == input.PageNum ||
-                    (this.PageNum != null &&
-                    this.PageNum.Equals(input.PageNum))
-                ) && 
-                (
-                    this.PageSize == input.PageSize ||
-                    (this.PageSize != null &&
-                    this.PageSize.Equals(input.PageSize))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.OrderByColumn == input.OrderByColumn ||
-                    (this.OrderByColumn != null &&
-                    this.OrderByColumn.Equals(input.OrderByColumn))
-                ) && 
-                (
-                    this.SortOrder == input.SortOrder ||
-                    (this.SortOrder != null &&
-                    this.SortOrder.Equals(input.SortOrder))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.IsDefault != null)
-                    hashCode = hashCode * 59 + this.IsDefault.GetHashCode();
-                if (this.CreateBy != null)
-                    hashCode = hashCode * 59 + this.CreateBy.GetHashCode();
-                if (this.ScriptId != null)
-                    hashCode = hashCode * 59 + this.ScriptId.GetHashCode();
-                if (this.PageNum != null)
-                    hashCode = hashCode * 59 + this.PageNum.GetHashCode();
-                if (this.PageSize != null)
-                    hashCode = hashCode * 59 + this.PageSize.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.OrderByColumn != null)
-                    hashCode = hashCode * 59 + this.OrderByColumn.GetHashCode();
-                if (this.SortOrder != null)
-                    hashCode = hashCode * 59 + this.SortOrder.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.IsDefault != null) hashCode = hashCode * 59 + this.IsDefault.GetHashCode();
+                if (this.CreateBy != null) hashCode = hashCode * 59 + this.CreateBy.GetHashCode();
+                if (this.ScriptId != null) hashCode = hashCode * 59 + this.ScriptId.GetHashCode();
+                if (this.PageNum != null) hashCode = hashCode * 59 + this.PageNum.GetHashCode();
+                if (this.PageSize != null) hashCode = hashCode * 59 + this.PageSize.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.OrderByColumn != null) hashCode = hashCode * 59 + this.OrderByColumn.GetHashCode();
+                if (this.SortOrder != null) hashCode = hashCode * 59 + this.SortOrder.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

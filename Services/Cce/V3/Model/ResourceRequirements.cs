@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ResourceRequirements input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Limits != input.Limits || (this.Limits != null && input.Limits != null && !this.Limits.SequenceEqual(input.Limits))) return false;
+            if (this.Requests != input.Requests || (this.Requests != null && input.Requests != null && !this.Requests.SequenceEqual(input.Requests))) return false;
 
-            return 
-                (
-                    this.Limits == input.Limits ||
-                    this.Limits != null &&
-                    input.Limits != null &&
-                    this.Limits.SequenceEqual(input.Limits)
-                ) && 
-                (
-                    this.Requests == input.Requests ||
-                    this.Requests != null &&
-                    input.Requests != null &&
-                    this.Requests.SequenceEqual(input.Requests)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Limits != null)
-                    hashCode = hashCode * 59 + this.Limits.GetHashCode();
-                if (this.Requests != null)
-                    hashCode = hashCode * 59 + this.Requests.GetHashCode();
+                var hashCode = 41;
+                if (this.Limits != null) hashCode = hashCode * 59 + this.Limits.GetHashCode();
+                if (this.Requests != null) hashCode = hashCode * 59 + this.Requests.GetHashCode();
                 return hashCode;
             }
         }

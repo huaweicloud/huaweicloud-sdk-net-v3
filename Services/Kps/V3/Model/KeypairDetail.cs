@@ -382,90 +382,25 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         /// </summary>
         public bool Equals(KeypairDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Type != input.Type) return false;
+            if (this.Scope != input.Scope) return false;
+            if (this.PublicKey != input.PublicKey || (this.PublicKey != null && !this.PublicKey.Equals(input.PublicKey))) return false;
+            if (this.Fingerprint != input.Fingerprint || (this.Fingerprint != null && !this.Fingerprint.Equals(input.Fingerprint))) return false;
+            if (this.IsKeyProtection != input.IsKeyProtection || (this.IsKeyProtection != null && !this.IsKeyProtection.Equals(input.IsKeyProtection))) return false;
+            if (this.Deleted != input.Deleted || (this.Deleted != null && !this.Deleted.Equals(input.Deleted))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.UserId != input.UserId || (this.UserId != null && !this.UserId.Equals(input.UserId))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.DeleteTime != input.DeleteTime || (this.DeleteTime != null && !this.DeleteTime.Equals(input.DeleteTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.FrozenState != input.FrozenState || (this.FrozenState != null && !this.FrozenState.Equals(input.FrozenState))) return false;
+            if (this.KeyId != input.KeyId || (this.KeyId != null && !this.KeyId.Equals(input.KeyId))) return false;
+            if (this.Algorithm != input.Algorithm || (this.Algorithm != null && !this.Algorithm.Equals(input.Algorithm))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Scope == input.Scope ||
-                    (this.Scope != null &&
-                    this.Scope.Equals(input.Scope))
-                ) && 
-                (
-                    this.PublicKey == input.PublicKey ||
-                    (this.PublicKey != null &&
-                    this.PublicKey.Equals(input.PublicKey))
-                ) && 
-                (
-                    this.Fingerprint == input.Fingerprint ||
-                    (this.Fingerprint != null &&
-                    this.Fingerprint.Equals(input.Fingerprint))
-                ) && 
-                (
-                    this.IsKeyProtection == input.IsKeyProtection ||
-                    (this.IsKeyProtection != null &&
-                    this.IsKeyProtection.Equals(input.IsKeyProtection))
-                ) && 
-                (
-                    this.Deleted == input.Deleted ||
-                    (this.Deleted != null &&
-                    this.Deleted.Equals(input.Deleted))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.DeleteTime == input.DeleteTime ||
-                    (this.DeleteTime != null &&
-                    this.DeleteTime.Equals(input.DeleteTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.FrozenState == input.FrozenState ||
-                    (this.FrozenState != null &&
-                    this.FrozenState.Equals(input.FrozenState))
-                ) && 
-                (
-                    this.KeyId == input.KeyId ||
-                    (this.KeyId != null &&
-                    this.KeyId.Equals(input.KeyId))
-                ) && 
-                (
-                    this.Algorithm == input.Algorithm ||
-                    (this.Algorithm != null &&
-                    this.Algorithm.Equals(input.Algorithm))
-                );
+            return true;
         }
 
         /// <summary>
@@ -475,39 +410,23 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Scope != null)
-                    hashCode = hashCode * 59 + this.Scope.GetHashCode();
-                if (this.PublicKey != null)
-                    hashCode = hashCode * 59 + this.PublicKey.GetHashCode();
-                if (this.Fingerprint != null)
-                    hashCode = hashCode * 59 + this.Fingerprint.GetHashCode();
-                if (this.IsKeyProtection != null)
-                    hashCode = hashCode * 59 + this.IsKeyProtection.GetHashCode();
-                if (this.Deleted != null)
-                    hashCode = hashCode * 59 + this.Deleted.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.DeleteTime != null)
-                    hashCode = hashCode * 59 + this.DeleteTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.FrozenState != null)
-                    hashCode = hashCode * 59 + this.FrozenState.GetHashCode();
-                if (this.KeyId != null)
-                    hashCode = hashCode * 59 + this.KeyId.GetHashCode();
-                if (this.Algorithm != null)
-                    hashCode = hashCode * 59 + this.Algorithm.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                hashCode = hashCode * 59 + this.Scope.GetHashCode();
+                if (this.PublicKey != null) hashCode = hashCode * 59 + this.PublicKey.GetHashCode();
+                if (this.Fingerprint != null) hashCode = hashCode * 59 + this.Fingerprint.GetHashCode();
+                if (this.IsKeyProtection != null) hashCode = hashCode * 59 + this.IsKeyProtection.GetHashCode();
+                if (this.Deleted != null) hashCode = hashCode * 59 + this.Deleted.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.UserId != null) hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.DeleteTime != null) hashCode = hashCode * 59 + this.DeleteTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.FrozenState != null) hashCode = hashCode * 59 + this.FrozenState.GetHashCode();
+                if (this.KeyId != null) hashCode = hashCode * 59 + this.KeyId.GetHashCode();
+                if (this.Algorithm != null) hashCode = hashCode * 59 + this.Algorithm.GetHashCode();
                 return hashCode;
             }
         }

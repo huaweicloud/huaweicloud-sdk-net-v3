@@ -105,56 +105,18 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(AppRules input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.Enable != input.Enable || (this.Enable != null && !this.Enable.Equals(input.Enable))) return false;
+            if (this.EventName != input.EventName || (this.EventName != null && !this.EventName.Equals(input.EventName))) return false;
+            if (this.Hostid != input.Hostid || (this.Hostid != null && input.Hostid != null && !this.Hostid.SequenceEqual(input.Hostid))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Projectid != input.Projectid || (this.Projectid != null && !this.Projectid.Equals(input.Projectid))) return false;
+            if (this.Spec != input.Spec || (this.Spec != null && !this.Spec.Equals(input.Spec))) return false;
+            if (this.Desc != input.Desc || (this.Desc != null && !this.Desc.Equals(input.Desc))) return false;
 
-            return 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.Enable == input.Enable ||
-                    (this.Enable != null &&
-                    this.Enable.Equals(input.Enable))
-                ) && 
-                (
-                    this.EventName == input.EventName ||
-                    (this.EventName != null &&
-                    this.EventName.Equals(input.EventName))
-                ) && 
-                (
-                    this.Hostid == input.Hostid ||
-                    this.Hostid != null &&
-                    input.Hostid != null &&
-                    this.Hostid.SequenceEqual(input.Hostid)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Projectid == input.Projectid ||
-                    (this.Projectid != null &&
-                    this.Projectid.Equals(input.Projectid))
-                ) && 
-                (
-                    this.Spec == input.Spec ||
-                    (this.Spec != null &&
-                    this.Spec.Equals(input.Spec))
-                ) && 
-                (
-                    this.Desc == input.Desc ||
-                    (this.Desc != null &&
-                    this.Desc.Equals(input.Desc))
-                );
+            return true;
         }
 
         /// <summary>
@@ -164,25 +126,16 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.Enable != null)
-                    hashCode = hashCode * 59 + this.Enable.GetHashCode();
-                if (this.EventName != null)
-                    hashCode = hashCode * 59 + this.EventName.GetHashCode();
-                if (this.Hostid != null)
-                    hashCode = hashCode * 59 + this.Hostid.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Projectid != null)
-                    hashCode = hashCode * 59 + this.Projectid.GetHashCode();
-                if (this.Spec != null)
-                    hashCode = hashCode * 59 + this.Spec.GetHashCode();
-                if (this.Desc != null)
-                    hashCode = hashCode * 59 + this.Desc.GetHashCode();
+                var hashCode = 41;
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.Enable != null) hashCode = hashCode * 59 + this.Enable.GetHashCode();
+                if (this.EventName != null) hashCode = hashCode * 59 + this.EventName.GetHashCode();
+                if (this.Hostid != null) hashCode = hashCode * 59 + this.Hostid.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Projectid != null) hashCode = hashCode * 59 + this.Projectid.GetHashCode();
+                if (this.Spec != null) hashCode = hashCode * 59 + this.Spec.GetHashCode();
+                if (this.Desc != null) hashCode = hashCode * 59 + this.Desc.GetHashCode();
                 return hashCode;
             }
         }

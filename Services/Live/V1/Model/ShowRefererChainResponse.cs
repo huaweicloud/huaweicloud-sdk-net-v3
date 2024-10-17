@@ -419,36 +419,14 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(ShowRefererChainResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
+            if (this.GuardSwitch != input.GuardSwitch) return false;
+            if (this.RefererConfigEmpty != input.RefererConfigEmpty) return false;
+            if (this.RefererWhiteList != input.RefererWhiteList) return false;
+            if (this.RefererAuthList != input.RefererAuthList || (this.RefererAuthList != null && input.RefererAuthList != null && !this.RefererAuthList.SequenceEqual(input.RefererAuthList))) return false;
 
-            return 
-                (
-                    this.Domain == input.Domain ||
-                    (this.Domain != null &&
-                    this.Domain.Equals(input.Domain))
-                ) && 
-                (
-                    this.GuardSwitch == input.GuardSwitch ||
-                    (this.GuardSwitch != null &&
-                    this.GuardSwitch.Equals(input.GuardSwitch))
-                ) && 
-                (
-                    this.RefererConfigEmpty == input.RefererConfigEmpty ||
-                    (this.RefererConfigEmpty != null &&
-                    this.RefererConfigEmpty.Equals(input.RefererConfigEmpty))
-                ) && 
-                (
-                    this.RefererWhiteList == input.RefererWhiteList ||
-                    (this.RefererWhiteList != null &&
-                    this.RefererWhiteList.Equals(input.RefererWhiteList))
-                ) && 
-                (
-                    this.RefererAuthList == input.RefererAuthList ||
-                    this.RefererAuthList != null &&
-                    input.RefererAuthList != null &&
-                    this.RefererAuthList.SequenceEqual(input.RefererAuthList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -458,17 +436,12 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Domain != null)
-                    hashCode = hashCode * 59 + this.Domain.GetHashCode();
-                if (this.GuardSwitch != null)
-                    hashCode = hashCode * 59 + this.GuardSwitch.GetHashCode();
-                if (this.RefererConfigEmpty != null)
-                    hashCode = hashCode * 59 + this.RefererConfigEmpty.GetHashCode();
-                if (this.RefererWhiteList != null)
-                    hashCode = hashCode * 59 + this.RefererWhiteList.GetHashCode();
-                if (this.RefererAuthList != null)
-                    hashCode = hashCode * 59 + this.RefererAuthList.GetHashCode();
+                var hashCode = 41;
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                hashCode = hashCode * 59 + this.GuardSwitch.GetHashCode();
+                hashCode = hashCode * 59 + this.RefererConfigEmpty.GetHashCode();
+                hashCode = hashCode * 59 + this.RefererWhiteList.GetHashCode();
+                if (this.RefererAuthList != null) hashCode = hashCode * 59 + this.RefererAuthList.GetHashCode();
                 return hashCode;
             }
         }

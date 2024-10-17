@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         /// </summary>
         public bool Equals(UploadSignatureFileResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FileId != input.FileId || (this.FileId != null && !this.FileId.Equals(input.FileId))) return false;
 
-            return 
-                (
-                    this.FileId == input.FileId ||
-                    (this.FileId != null &&
-                    this.FileId.Equals(input.FileId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FileId != null)
-                    hashCode = hashCode * 59 + this.FileId.GetHashCode();
+                var hashCode = 41;
+                if (this.FileId != null) hashCode = hashCode * 59 + this.FileId.GetHashCode();
                 return hashCode;
             }
         }

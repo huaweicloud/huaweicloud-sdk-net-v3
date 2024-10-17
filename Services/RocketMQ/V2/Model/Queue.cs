@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(Queue input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Lag != input.Lag || (this.Lag != null && !this.Lag.Equals(input.Lag))) return false;
+            if (this.BrokerOffset != input.BrokerOffset || (this.BrokerOffset != null && !this.BrokerOffset.Equals(input.BrokerOffset))) return false;
+            if (this.ConsumerOffset != input.ConsumerOffset || (this.ConsumerOffset != null && !this.ConsumerOffset.Equals(input.ConsumerOffset))) return false;
+            if (this.LastMessageTime != input.LastMessageTime || (this.LastMessageTime != null && !this.LastMessageTime.Equals(input.LastMessageTime))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Lag == input.Lag ||
-                    (this.Lag != null &&
-                    this.Lag.Equals(input.Lag))
-                ) && 
-                (
-                    this.BrokerOffset == input.BrokerOffset ||
-                    (this.BrokerOffset != null &&
-                    this.BrokerOffset.Equals(input.BrokerOffset))
-                ) && 
-                (
-                    this.ConsumerOffset == input.ConsumerOffset ||
-                    (this.ConsumerOffset != null &&
-                    this.ConsumerOffset.Equals(input.ConsumerOffset))
-                ) && 
-                (
-                    this.LastMessageTime == input.LastMessageTime ||
-                    (this.LastMessageTime != null &&
-                    this.LastMessageTime.Equals(input.LastMessageTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Lag != null)
-                    hashCode = hashCode * 59 + this.Lag.GetHashCode();
-                if (this.BrokerOffset != null)
-                    hashCode = hashCode * 59 + this.BrokerOffset.GetHashCode();
-                if (this.ConsumerOffset != null)
-                    hashCode = hashCode * 59 + this.ConsumerOffset.GetHashCode();
-                if (this.LastMessageTime != null)
-                    hashCode = hashCode * 59 + this.LastMessageTime.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Lag != null) hashCode = hashCode * 59 + this.Lag.GetHashCode();
+                if (this.BrokerOffset != null) hashCode = hashCode * 59 + this.BrokerOffset.GetHashCode();
+                if (this.ConsumerOffset != null) hashCode = hashCode * 59 + this.ConsumerOffset.GetHashCode();
+                if (this.LastMessageTime != null) hashCode = hashCode * 59 + this.LastMessageTime.GetHashCode();
                 return hashCode;
             }
         }

@@ -176,21 +176,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(ShowMigrateStatusResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Status != input.Status) return false;
+            if (this.ProjectStatus != input.ProjectStatus || (this.ProjectStatus != null && input.ProjectStatus != null && !this.ProjectStatus.SequenceEqual(input.ProjectStatus))) return false;
 
-            return 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.ProjectStatus == input.ProjectStatus ||
-                    this.ProjectStatus != null &&
-                    input.ProjectStatus != null &&
-                    this.ProjectStatus.SequenceEqual(input.ProjectStatus)
-                );
+            return true;
         }
 
         /// <summary>
@@ -200,11 +190,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.ProjectStatus != null)
-                    hashCode = hashCode * 59 + this.ProjectStatus.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.ProjectStatus != null) hashCode = hashCode * 59 + this.ProjectStatus.GetHashCode();
                 return hashCode;
             }
         }

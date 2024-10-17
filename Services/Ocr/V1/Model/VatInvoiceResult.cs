@@ -420,284 +420,63 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(VatInvoiceResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Title != input.Title || (this.Title != null && !this.Title.Equals(input.Title))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.InvoiceTag != input.InvoiceTag || (this.InvoiceTag != null && !this.InvoiceTag.Equals(input.InvoiceTag))) return false;
+            if (this.SumAmount != input.SumAmount || (this.SumAmount != null && !this.SumAmount.Equals(input.SumAmount))) return false;
+            if (this.SumTax != input.SumTax || (this.SumTax != null && !this.SumTax.Equals(input.SumTax))) return false;
+            if (this.SerialNumber != input.SerialNumber || (this.SerialNumber != null && !this.SerialNumber.Equals(input.SerialNumber))) return false;
+            if (this.Attribution != input.Attribution || (this.Attribution != null && !this.Attribution.Equals(input.Attribution))) return false;
+            if (this.SupervisionSeal != input.SupervisionSeal || (this.SupervisionSeal != null && input.SupervisionSeal != null && !this.SupervisionSeal.SequenceEqual(input.SupervisionSeal))) return false;
+            if (this.Code != input.Code || (this.Code != null && !this.Code.Equals(input.Code))) return false;
+            if (this.PrintCode != input.PrintCode || (this.PrintCode != null && !this.PrintCode.Equals(input.PrintCode))) return false;
+            if (this.MachineNumber != input.MachineNumber || (this.MachineNumber != null && !this.MachineNumber.Equals(input.MachineNumber))) return false;
+            if (this.PrintNumber != input.PrintNumber || (this.PrintNumber != null && !this.PrintNumber.Equals(input.PrintNumber))) return false;
+            if (this.CheckCode != input.CheckCode || (this.CheckCode != null && !this.CheckCode.Equals(input.CheckCode))) return false;
+            if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;
+            if (this.IssueDate != input.IssueDate || (this.IssueDate != null && !this.IssueDate.Equals(input.IssueDate))) return false;
+            if (this.EncryptionBlock != input.EncryptionBlock || (this.EncryptionBlock != null && !this.EncryptionBlock.Equals(input.EncryptionBlock))) return false;
+            if (this.BuyerName != input.BuyerName || (this.BuyerName != null && !this.BuyerName.Equals(input.BuyerName))) return false;
+            if (this.BuyerId != input.BuyerId || (this.BuyerId != null && !this.BuyerId.Equals(input.BuyerId))) return false;
+            if (this.BuyerAddress != input.BuyerAddress || (this.BuyerAddress != null && !this.BuyerAddress.Equals(input.BuyerAddress))) return false;
+            if (this.BuyerBank != input.BuyerBank || (this.BuyerBank != null && !this.BuyerBank.Equals(input.BuyerBank))) return false;
+            if (this.SellerName != input.SellerName || (this.SellerName != null && !this.SellerName.Equals(input.SellerName))) return false;
+            if (this.SellerId != input.SellerId || (this.SellerId != null && !this.SellerId.Equals(input.SellerId))) return false;
+            if (this.SellerAddress != input.SellerAddress || (this.SellerAddress != null && !this.SellerAddress.Equals(input.SellerAddress))) return false;
+            if (this.SellerBank != input.SellerBank || (this.SellerBank != null && !this.SellerBank.Equals(input.SellerBank))) return false;
+            if (this.SubtotalAmount != input.SubtotalAmount || (this.SubtotalAmount != null && !this.SubtotalAmount.Equals(input.SubtotalAmount))) return false;
+            if (this.SubtotalTax != input.SubtotalTax || (this.SubtotalTax != null && !this.SubtotalTax.Equals(input.SubtotalTax))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.TotalInWords != input.TotalInWords || (this.TotalInWords != null && !this.TotalInWords.Equals(input.TotalInWords))) return false;
+            if (this.Remarks != input.Remarks || (this.Remarks != null && !this.Remarks.Equals(input.Remarks))) return false;
+            if (this.Receiver != input.Receiver || (this.Receiver != null && !this.Receiver.Equals(input.Receiver))) return false;
+            if (this.Reviewer != input.Reviewer || (this.Reviewer != null && !this.Reviewer.Equals(input.Reviewer))) return false;
+            if (this.Issuer != input.Issuer || (this.Issuer != null && !this.Issuer.Equals(input.Issuer))) return false;
+            if (this.SellerSeal != input.SellerSeal || (this.SellerSeal != null && input.SellerSeal != null && !this.SellerSeal.SequenceEqual(input.SellerSeal))) return false;
+            if (this.ItemList != input.ItemList || (this.ItemList != null && input.ItemList != null && !this.ItemList.SequenceEqual(input.ItemList))) return false;
+            if (this.Province != input.Province || (this.Province != null && !this.Province.Equals(input.Province))) return false;
+            if (this.City != input.City || (this.City != null && !this.City.Equals(input.City))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
+            if (this.TextLocation != input.TextLocation || (this.TextLocation != null && !this.TextLocation.Equals(input.TextLocation))) return false;
+            if (this.BelongBuyerName != input.BelongBuyerName || (this.BelongBuyerName != null && !this.BelongBuyerName.Equals(input.BelongBuyerName))) return false;
+            if (this.BelongSellerName != input.BelongSellerName || (this.BelongSellerName != null && !this.BelongSellerName.Equals(input.BelongSellerName))) return false;
+            if (this.BelongVatCode != input.BelongVatCode || (this.BelongVatCode != null && !this.BelongVatCode.Equals(input.BelongVatCode))) return false;
+            if (this.BelongNumber != input.BelongNumber || (this.BelongNumber != null && !this.BelongNumber.Equals(input.BelongNumber))) return false;
+            if (this.BelongPages != input.BelongPages || (this.BelongPages != null && !this.BelongPages.Equals(input.BelongPages))) return false;
+            if (this.BelongCurrentPage != input.BelongCurrentPage || (this.BelongCurrentPage != null && !this.BelongCurrentPage.Equals(input.BelongCurrentPage))) return false;
+            if (this.BelongRemarks != input.BelongRemarks || (this.BelongRemarks != null && !this.BelongRemarks.Equals(input.BelongRemarks))) return false;
+            if (this.BelongIssueDate != input.BelongIssueDate || (this.BelongIssueDate != null && !this.BelongIssueDate.Equals(input.BelongIssueDate))) return false;
+            if (this.SalesMark != input.SalesMark || (this.SalesMark != null && !this.SalesMark.Equals(input.SalesMark))) return false;
+            if (this.BelongSumAmount != input.BelongSumAmount || (this.BelongSumAmount != null && !this.BelongSumAmount.Equals(input.BelongSumAmount))) return false;
+            if (this.BelongSumTax != input.BelongSumTax || (this.BelongSumTax != null && !this.BelongSumTax.Equals(input.BelongSumTax))) return false;
+            if (this.BelongSubtotalAmount != input.BelongSubtotalAmount || (this.BelongSubtotalAmount != null && !this.BelongSubtotalAmount.Equals(input.BelongSubtotalAmount))) return false;
+            if (this.BelongSubtotalTax != input.BelongSubtotalTax || (this.BelongSubtotalTax != null && !this.BelongSubtotalTax.Equals(input.BelongSubtotalTax))) return false;
+            if (this.BelongDiscountAmount != input.BelongDiscountAmount || (this.BelongDiscountAmount != null && !this.BelongDiscountAmount.Equals(input.BelongDiscountAmount))) return false;
+            if (this.BelongDiscountTax != input.BelongDiscountTax || (this.BelongDiscountTax != null && !this.BelongDiscountTax.Equals(input.BelongDiscountTax))) return false;
+            if (this.BelongItemList != input.BelongItemList || (this.BelongItemList != null && input.BelongItemList != null && !this.BelongItemList.SequenceEqual(input.BelongItemList))) return false;
 
-            return 
-                (
-                    this.Title == input.Title ||
-                    (this.Title != null &&
-                    this.Title.Equals(input.Title))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.InvoiceTag == input.InvoiceTag ||
-                    (this.InvoiceTag != null &&
-                    this.InvoiceTag.Equals(input.InvoiceTag))
-                ) && 
-                (
-                    this.SumAmount == input.SumAmount ||
-                    (this.SumAmount != null &&
-                    this.SumAmount.Equals(input.SumAmount))
-                ) && 
-                (
-                    this.SumTax == input.SumTax ||
-                    (this.SumTax != null &&
-                    this.SumTax.Equals(input.SumTax))
-                ) && 
-                (
-                    this.SerialNumber == input.SerialNumber ||
-                    (this.SerialNumber != null &&
-                    this.SerialNumber.Equals(input.SerialNumber))
-                ) && 
-                (
-                    this.Attribution == input.Attribution ||
-                    (this.Attribution != null &&
-                    this.Attribution.Equals(input.Attribution))
-                ) && 
-                (
-                    this.SupervisionSeal == input.SupervisionSeal ||
-                    this.SupervisionSeal != null &&
-                    input.SupervisionSeal != null &&
-                    this.SupervisionSeal.SequenceEqual(input.SupervisionSeal)
-                ) && 
-                (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
-                ) && 
-                (
-                    this.PrintCode == input.PrintCode ||
-                    (this.PrintCode != null &&
-                    this.PrintCode.Equals(input.PrintCode))
-                ) && 
-                (
-                    this.MachineNumber == input.MachineNumber ||
-                    (this.MachineNumber != null &&
-                    this.MachineNumber.Equals(input.MachineNumber))
-                ) && 
-                (
-                    this.PrintNumber == input.PrintNumber ||
-                    (this.PrintNumber != null &&
-                    this.PrintNumber.Equals(input.PrintNumber))
-                ) && 
-                (
-                    this.CheckCode == input.CheckCode ||
-                    (this.CheckCode != null &&
-                    this.CheckCode.Equals(input.CheckCode))
-                ) && 
-                (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                ) && 
-                (
-                    this.IssueDate == input.IssueDate ||
-                    (this.IssueDate != null &&
-                    this.IssueDate.Equals(input.IssueDate))
-                ) && 
-                (
-                    this.EncryptionBlock == input.EncryptionBlock ||
-                    (this.EncryptionBlock != null &&
-                    this.EncryptionBlock.Equals(input.EncryptionBlock))
-                ) && 
-                (
-                    this.BuyerName == input.BuyerName ||
-                    (this.BuyerName != null &&
-                    this.BuyerName.Equals(input.BuyerName))
-                ) && 
-                (
-                    this.BuyerId == input.BuyerId ||
-                    (this.BuyerId != null &&
-                    this.BuyerId.Equals(input.BuyerId))
-                ) && 
-                (
-                    this.BuyerAddress == input.BuyerAddress ||
-                    (this.BuyerAddress != null &&
-                    this.BuyerAddress.Equals(input.BuyerAddress))
-                ) && 
-                (
-                    this.BuyerBank == input.BuyerBank ||
-                    (this.BuyerBank != null &&
-                    this.BuyerBank.Equals(input.BuyerBank))
-                ) && 
-                (
-                    this.SellerName == input.SellerName ||
-                    (this.SellerName != null &&
-                    this.SellerName.Equals(input.SellerName))
-                ) && 
-                (
-                    this.SellerId == input.SellerId ||
-                    (this.SellerId != null &&
-                    this.SellerId.Equals(input.SellerId))
-                ) && 
-                (
-                    this.SellerAddress == input.SellerAddress ||
-                    (this.SellerAddress != null &&
-                    this.SellerAddress.Equals(input.SellerAddress))
-                ) && 
-                (
-                    this.SellerBank == input.SellerBank ||
-                    (this.SellerBank != null &&
-                    this.SellerBank.Equals(input.SellerBank))
-                ) && 
-                (
-                    this.SubtotalAmount == input.SubtotalAmount ||
-                    (this.SubtotalAmount != null &&
-                    this.SubtotalAmount.Equals(input.SubtotalAmount))
-                ) && 
-                (
-                    this.SubtotalTax == input.SubtotalTax ||
-                    (this.SubtotalTax != null &&
-                    this.SubtotalTax.Equals(input.SubtotalTax))
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.TotalInWords == input.TotalInWords ||
-                    (this.TotalInWords != null &&
-                    this.TotalInWords.Equals(input.TotalInWords))
-                ) && 
-                (
-                    this.Remarks == input.Remarks ||
-                    (this.Remarks != null &&
-                    this.Remarks.Equals(input.Remarks))
-                ) && 
-                (
-                    this.Receiver == input.Receiver ||
-                    (this.Receiver != null &&
-                    this.Receiver.Equals(input.Receiver))
-                ) && 
-                (
-                    this.Reviewer == input.Reviewer ||
-                    (this.Reviewer != null &&
-                    this.Reviewer.Equals(input.Reviewer))
-                ) && 
-                (
-                    this.Issuer == input.Issuer ||
-                    (this.Issuer != null &&
-                    this.Issuer.Equals(input.Issuer))
-                ) && 
-                (
-                    this.SellerSeal == input.SellerSeal ||
-                    this.SellerSeal != null &&
-                    input.SellerSeal != null &&
-                    this.SellerSeal.SequenceEqual(input.SellerSeal)
-                ) && 
-                (
-                    this.ItemList == input.ItemList ||
-                    this.ItemList != null &&
-                    input.ItemList != null &&
-                    this.ItemList.SequenceEqual(input.ItemList)
-                ) && 
-                (
-                    this.Province == input.Province ||
-                    (this.Province != null &&
-                    this.Province.Equals(input.Province))
-                ) && 
-                (
-                    this.City == input.City ||
-                    (this.City != null &&
-                    this.City.Equals(input.City))
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                ) && 
-                (
-                    this.TextLocation == input.TextLocation ||
-                    (this.TextLocation != null &&
-                    this.TextLocation.Equals(input.TextLocation))
-                ) && 
-                (
-                    this.BelongBuyerName == input.BelongBuyerName ||
-                    (this.BelongBuyerName != null &&
-                    this.BelongBuyerName.Equals(input.BelongBuyerName))
-                ) && 
-                (
-                    this.BelongSellerName == input.BelongSellerName ||
-                    (this.BelongSellerName != null &&
-                    this.BelongSellerName.Equals(input.BelongSellerName))
-                ) && 
-                (
-                    this.BelongVatCode == input.BelongVatCode ||
-                    (this.BelongVatCode != null &&
-                    this.BelongVatCode.Equals(input.BelongVatCode))
-                ) && 
-                (
-                    this.BelongNumber == input.BelongNumber ||
-                    (this.BelongNumber != null &&
-                    this.BelongNumber.Equals(input.BelongNumber))
-                ) && 
-                (
-                    this.BelongPages == input.BelongPages ||
-                    (this.BelongPages != null &&
-                    this.BelongPages.Equals(input.BelongPages))
-                ) && 
-                (
-                    this.BelongCurrentPage == input.BelongCurrentPage ||
-                    (this.BelongCurrentPage != null &&
-                    this.BelongCurrentPage.Equals(input.BelongCurrentPage))
-                ) && 
-                (
-                    this.BelongRemarks == input.BelongRemarks ||
-                    (this.BelongRemarks != null &&
-                    this.BelongRemarks.Equals(input.BelongRemarks))
-                ) && 
-                (
-                    this.BelongIssueDate == input.BelongIssueDate ||
-                    (this.BelongIssueDate != null &&
-                    this.BelongIssueDate.Equals(input.BelongIssueDate))
-                ) && 
-                (
-                    this.SalesMark == input.SalesMark ||
-                    (this.SalesMark != null &&
-                    this.SalesMark.Equals(input.SalesMark))
-                ) && 
-                (
-                    this.BelongSumAmount == input.BelongSumAmount ||
-                    (this.BelongSumAmount != null &&
-                    this.BelongSumAmount.Equals(input.BelongSumAmount))
-                ) && 
-                (
-                    this.BelongSumTax == input.BelongSumTax ||
-                    (this.BelongSumTax != null &&
-                    this.BelongSumTax.Equals(input.BelongSumTax))
-                ) && 
-                (
-                    this.BelongSubtotalAmount == input.BelongSubtotalAmount ||
-                    (this.BelongSubtotalAmount != null &&
-                    this.BelongSubtotalAmount.Equals(input.BelongSubtotalAmount))
-                ) && 
-                (
-                    this.BelongSubtotalTax == input.BelongSubtotalTax ||
-                    (this.BelongSubtotalTax != null &&
-                    this.BelongSubtotalTax.Equals(input.BelongSubtotalTax))
-                ) && 
-                (
-                    this.BelongDiscountAmount == input.BelongDiscountAmount ||
-                    (this.BelongDiscountAmount != null &&
-                    this.BelongDiscountAmount.Equals(input.BelongDiscountAmount))
-                ) && 
-                (
-                    this.BelongDiscountTax == input.BelongDiscountTax ||
-                    (this.BelongDiscountTax != null &&
-                    this.BelongDiscountTax.Equals(input.BelongDiscountTax))
-                ) && 
-                (
-                    this.BelongItemList == input.BelongItemList ||
-                    this.BelongItemList != null &&
-                    input.BelongItemList != null &&
-                    this.BelongItemList.SequenceEqual(input.BelongItemList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -707,115 +486,61 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Title != null)
-                    hashCode = hashCode * 59 + this.Title.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.InvoiceTag != null)
-                    hashCode = hashCode * 59 + this.InvoiceTag.GetHashCode();
-                if (this.SumAmount != null)
-                    hashCode = hashCode * 59 + this.SumAmount.GetHashCode();
-                if (this.SumTax != null)
-                    hashCode = hashCode * 59 + this.SumTax.GetHashCode();
-                if (this.SerialNumber != null)
-                    hashCode = hashCode * 59 + this.SerialNumber.GetHashCode();
-                if (this.Attribution != null)
-                    hashCode = hashCode * 59 + this.Attribution.GetHashCode();
-                if (this.SupervisionSeal != null)
-                    hashCode = hashCode * 59 + this.SupervisionSeal.GetHashCode();
-                if (this.Code != null)
-                    hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.PrintCode != null)
-                    hashCode = hashCode * 59 + this.PrintCode.GetHashCode();
-                if (this.MachineNumber != null)
-                    hashCode = hashCode * 59 + this.MachineNumber.GetHashCode();
-                if (this.PrintNumber != null)
-                    hashCode = hashCode * 59 + this.PrintNumber.GetHashCode();
-                if (this.CheckCode != null)
-                    hashCode = hashCode * 59 + this.CheckCode.GetHashCode();
-                if (this.Number != null)
-                    hashCode = hashCode * 59 + this.Number.GetHashCode();
-                if (this.IssueDate != null)
-                    hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
-                if (this.EncryptionBlock != null)
-                    hashCode = hashCode * 59 + this.EncryptionBlock.GetHashCode();
-                if (this.BuyerName != null)
-                    hashCode = hashCode * 59 + this.BuyerName.GetHashCode();
-                if (this.BuyerId != null)
-                    hashCode = hashCode * 59 + this.BuyerId.GetHashCode();
-                if (this.BuyerAddress != null)
-                    hashCode = hashCode * 59 + this.BuyerAddress.GetHashCode();
-                if (this.BuyerBank != null)
-                    hashCode = hashCode * 59 + this.BuyerBank.GetHashCode();
-                if (this.SellerName != null)
-                    hashCode = hashCode * 59 + this.SellerName.GetHashCode();
-                if (this.SellerId != null)
-                    hashCode = hashCode * 59 + this.SellerId.GetHashCode();
-                if (this.SellerAddress != null)
-                    hashCode = hashCode * 59 + this.SellerAddress.GetHashCode();
-                if (this.SellerBank != null)
-                    hashCode = hashCode * 59 + this.SellerBank.GetHashCode();
-                if (this.SubtotalAmount != null)
-                    hashCode = hashCode * 59 + this.SubtotalAmount.GetHashCode();
-                if (this.SubtotalTax != null)
-                    hashCode = hashCode * 59 + this.SubtotalTax.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.TotalInWords != null)
-                    hashCode = hashCode * 59 + this.TotalInWords.GetHashCode();
-                if (this.Remarks != null)
-                    hashCode = hashCode * 59 + this.Remarks.GetHashCode();
-                if (this.Receiver != null)
-                    hashCode = hashCode * 59 + this.Receiver.GetHashCode();
-                if (this.Reviewer != null)
-                    hashCode = hashCode * 59 + this.Reviewer.GetHashCode();
-                if (this.Issuer != null)
-                    hashCode = hashCode * 59 + this.Issuer.GetHashCode();
-                if (this.SellerSeal != null)
-                    hashCode = hashCode * 59 + this.SellerSeal.GetHashCode();
-                if (this.ItemList != null)
-                    hashCode = hashCode * 59 + this.ItemList.GetHashCode();
-                if (this.Province != null)
-                    hashCode = hashCode * 59 + this.Province.GetHashCode();
-                if (this.City != null)
-                    hashCode = hashCode * 59 + this.City.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
-                if (this.TextLocation != null)
-                    hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
-                if (this.BelongBuyerName != null)
-                    hashCode = hashCode * 59 + this.BelongBuyerName.GetHashCode();
-                if (this.BelongSellerName != null)
-                    hashCode = hashCode * 59 + this.BelongSellerName.GetHashCode();
-                if (this.BelongVatCode != null)
-                    hashCode = hashCode * 59 + this.BelongVatCode.GetHashCode();
-                if (this.BelongNumber != null)
-                    hashCode = hashCode * 59 + this.BelongNumber.GetHashCode();
-                if (this.BelongPages != null)
-                    hashCode = hashCode * 59 + this.BelongPages.GetHashCode();
-                if (this.BelongCurrentPage != null)
-                    hashCode = hashCode * 59 + this.BelongCurrentPage.GetHashCode();
-                if (this.BelongRemarks != null)
-                    hashCode = hashCode * 59 + this.BelongRemarks.GetHashCode();
-                if (this.BelongIssueDate != null)
-                    hashCode = hashCode * 59 + this.BelongIssueDate.GetHashCode();
-                if (this.SalesMark != null)
-                    hashCode = hashCode * 59 + this.SalesMark.GetHashCode();
-                if (this.BelongSumAmount != null)
-                    hashCode = hashCode * 59 + this.BelongSumAmount.GetHashCode();
-                if (this.BelongSumTax != null)
-                    hashCode = hashCode * 59 + this.BelongSumTax.GetHashCode();
-                if (this.BelongSubtotalAmount != null)
-                    hashCode = hashCode * 59 + this.BelongSubtotalAmount.GetHashCode();
-                if (this.BelongSubtotalTax != null)
-                    hashCode = hashCode * 59 + this.BelongSubtotalTax.GetHashCode();
-                if (this.BelongDiscountAmount != null)
-                    hashCode = hashCode * 59 + this.BelongDiscountAmount.GetHashCode();
-                if (this.BelongDiscountTax != null)
-                    hashCode = hashCode * 59 + this.BelongDiscountTax.GetHashCode();
-                if (this.BelongItemList != null)
-                    hashCode = hashCode * 59 + this.BelongItemList.GetHashCode();
+                var hashCode = 41;
+                if (this.Title != null) hashCode = hashCode * 59 + this.Title.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.InvoiceTag != null) hashCode = hashCode * 59 + this.InvoiceTag.GetHashCode();
+                if (this.SumAmount != null) hashCode = hashCode * 59 + this.SumAmount.GetHashCode();
+                if (this.SumTax != null) hashCode = hashCode * 59 + this.SumTax.GetHashCode();
+                if (this.SerialNumber != null) hashCode = hashCode * 59 + this.SerialNumber.GetHashCode();
+                if (this.Attribution != null) hashCode = hashCode * 59 + this.Attribution.GetHashCode();
+                if (this.SupervisionSeal != null) hashCode = hashCode * 59 + this.SupervisionSeal.GetHashCode();
+                if (this.Code != null) hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.PrintCode != null) hashCode = hashCode * 59 + this.PrintCode.GetHashCode();
+                if (this.MachineNumber != null) hashCode = hashCode * 59 + this.MachineNumber.GetHashCode();
+                if (this.PrintNumber != null) hashCode = hashCode * 59 + this.PrintNumber.GetHashCode();
+                if (this.CheckCode != null) hashCode = hashCode * 59 + this.CheckCode.GetHashCode();
+                if (this.Number != null) hashCode = hashCode * 59 + this.Number.GetHashCode();
+                if (this.IssueDate != null) hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
+                if (this.EncryptionBlock != null) hashCode = hashCode * 59 + this.EncryptionBlock.GetHashCode();
+                if (this.BuyerName != null) hashCode = hashCode * 59 + this.BuyerName.GetHashCode();
+                if (this.BuyerId != null) hashCode = hashCode * 59 + this.BuyerId.GetHashCode();
+                if (this.BuyerAddress != null) hashCode = hashCode * 59 + this.BuyerAddress.GetHashCode();
+                if (this.BuyerBank != null) hashCode = hashCode * 59 + this.BuyerBank.GetHashCode();
+                if (this.SellerName != null) hashCode = hashCode * 59 + this.SellerName.GetHashCode();
+                if (this.SellerId != null) hashCode = hashCode * 59 + this.SellerId.GetHashCode();
+                if (this.SellerAddress != null) hashCode = hashCode * 59 + this.SellerAddress.GetHashCode();
+                if (this.SellerBank != null) hashCode = hashCode * 59 + this.SellerBank.GetHashCode();
+                if (this.SubtotalAmount != null) hashCode = hashCode * 59 + this.SubtotalAmount.GetHashCode();
+                if (this.SubtotalTax != null) hashCode = hashCode * 59 + this.SubtotalTax.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.TotalInWords != null) hashCode = hashCode * 59 + this.TotalInWords.GetHashCode();
+                if (this.Remarks != null) hashCode = hashCode * 59 + this.Remarks.GetHashCode();
+                if (this.Receiver != null) hashCode = hashCode * 59 + this.Receiver.GetHashCode();
+                if (this.Reviewer != null) hashCode = hashCode * 59 + this.Reviewer.GetHashCode();
+                if (this.Issuer != null) hashCode = hashCode * 59 + this.Issuer.GetHashCode();
+                if (this.SellerSeal != null) hashCode = hashCode * 59 + this.SellerSeal.GetHashCode();
+                if (this.ItemList != null) hashCode = hashCode * 59 + this.ItemList.GetHashCode();
+                if (this.Province != null) hashCode = hashCode * 59 + this.Province.GetHashCode();
+                if (this.City != null) hashCode = hashCode * 59 + this.City.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                if (this.TextLocation != null) hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
+                if (this.BelongBuyerName != null) hashCode = hashCode * 59 + this.BelongBuyerName.GetHashCode();
+                if (this.BelongSellerName != null) hashCode = hashCode * 59 + this.BelongSellerName.GetHashCode();
+                if (this.BelongVatCode != null) hashCode = hashCode * 59 + this.BelongVatCode.GetHashCode();
+                if (this.BelongNumber != null) hashCode = hashCode * 59 + this.BelongNumber.GetHashCode();
+                if (this.BelongPages != null) hashCode = hashCode * 59 + this.BelongPages.GetHashCode();
+                if (this.BelongCurrentPage != null) hashCode = hashCode * 59 + this.BelongCurrentPage.GetHashCode();
+                if (this.BelongRemarks != null) hashCode = hashCode * 59 + this.BelongRemarks.GetHashCode();
+                if (this.BelongIssueDate != null) hashCode = hashCode * 59 + this.BelongIssueDate.GetHashCode();
+                if (this.SalesMark != null) hashCode = hashCode * 59 + this.SalesMark.GetHashCode();
+                if (this.BelongSumAmount != null) hashCode = hashCode * 59 + this.BelongSumAmount.GetHashCode();
+                if (this.BelongSumTax != null) hashCode = hashCode * 59 + this.BelongSumTax.GetHashCode();
+                if (this.BelongSubtotalAmount != null) hashCode = hashCode * 59 + this.BelongSubtotalAmount.GetHashCode();
+                if (this.BelongSubtotalTax != null) hashCode = hashCode * 59 + this.BelongSubtotalTax.GetHashCode();
+                if (this.BelongDiscountAmount != null) hashCode = hashCode * 59 + this.BelongDiscountAmount.GetHashCode();
+                if (this.BelongDiscountTax != null) hashCode = hashCode * 59 + this.BelongDiscountTax.GetHashCode();
+                if (this.BelongItemList != null) hashCode = hashCode * 59 + this.BelongItemList.GetHashCode();
                 return hashCode;
             }
         }

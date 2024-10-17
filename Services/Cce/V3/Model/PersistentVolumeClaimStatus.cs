@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(PersistentVolumeClaimStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AccessModes != input.AccessModes || (this.AccessModes != null && input.AccessModes != null && !this.AccessModes.SequenceEqual(input.AccessModes))) return false;
+            if (this.Capacity != input.Capacity || (this.Capacity != null && !this.Capacity.Equals(input.Capacity))) return false;
+            if (this.Phase != input.Phase || (this.Phase != null && !this.Phase.Equals(input.Phase))) return false;
 
-            return 
-                (
-                    this.AccessModes == input.AccessModes ||
-                    this.AccessModes != null &&
-                    input.AccessModes != null &&
-                    this.AccessModes.SequenceEqual(input.AccessModes)
-                ) && 
-                (
-                    this.Capacity == input.Capacity ||
-                    (this.Capacity != null &&
-                    this.Capacity.Equals(input.Capacity))
-                ) && 
-                (
-                    this.Phase == input.Phase ||
-                    (this.Phase != null &&
-                    this.Phase.Equals(input.Phase))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AccessModes != null)
-                    hashCode = hashCode * 59 + this.AccessModes.GetHashCode();
-                if (this.Capacity != null)
-                    hashCode = hashCode * 59 + this.Capacity.GetHashCode();
-                if (this.Phase != null)
-                    hashCode = hashCode * 59 + this.Phase.GetHashCode();
+                var hashCode = 41;
+                if (this.AccessModes != null) hashCode = hashCode * 59 + this.AccessModes.GetHashCode();
+                if (this.Capacity != null) hashCode = hashCode * 59 + this.Capacity.GetHashCode();
+                if (this.Phase != null) hashCode = hashCode * 59 + this.Phase.GetHashCode();
                 return hashCode;
             }
         }

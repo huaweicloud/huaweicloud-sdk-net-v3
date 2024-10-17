@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ExtensionRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DatabaseName != input.DatabaseName || (this.DatabaseName != null && !this.DatabaseName.Equals(input.DatabaseName))) return false;
+            if (this.ExtensionName != input.ExtensionName || (this.ExtensionName != null && !this.ExtensionName.Equals(input.ExtensionName))) return false;
 
-            return 
-                (
-                    this.DatabaseName == input.DatabaseName ||
-                    (this.DatabaseName != null &&
-                    this.DatabaseName.Equals(input.DatabaseName))
-                ) && 
-                (
-                    this.ExtensionName == input.ExtensionName ||
-                    (this.ExtensionName != null &&
-                    this.ExtensionName.Equals(input.ExtensionName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DatabaseName != null)
-                    hashCode = hashCode * 59 + this.DatabaseName.GetHashCode();
-                if (this.ExtensionName != null)
-                    hashCode = hashCode * 59 + this.ExtensionName.GetHashCode();
+                var hashCode = 41;
+                if (this.DatabaseName != null) hashCode = hashCode * 59 + this.DatabaseName.GetHashCode();
+                if (this.ExtensionName != null) hashCode = hashCode * 59 + this.ExtensionName.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(ShowServerBlockDeviceResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VolumeAttachment != input.VolumeAttachment || (this.VolumeAttachment != null && !this.VolumeAttachment.Equals(input.VolumeAttachment))) return false;
 
-            return 
-                (
-                    this.VolumeAttachment == input.VolumeAttachment ||
-                    (this.VolumeAttachment != null &&
-                    this.VolumeAttachment.Equals(input.VolumeAttachment))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VolumeAttachment != null)
-                    hashCode = hashCode * 59 + this.VolumeAttachment.GetHashCode();
+                var hashCode = 41;
+                if (this.VolumeAttachment != null) hashCode = hashCode * 59 + this.VolumeAttachment.GetHashCode();
                 return hashCode;
             }
         }

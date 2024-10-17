@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(GroupInfoSimple input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
+            if (this.State != input.State || (this.State != null && !this.State.Equals(input.State))) return false;
+            if (this.CoordinatorId != input.CoordinatorId || (this.CoordinatorId != null && !this.CoordinatorId.Equals(input.CoordinatorId))) return false;
+            if (this.GroupDesc != input.GroupDesc || (this.GroupDesc != null && !this.GroupDesc.Equals(input.GroupDesc))) return false;
+            if (this.Lag != input.Lag || (this.Lag != null && !this.Lag.Equals(input.Lag))) return false;
 
-            return 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.GroupId == input.GroupId ||
-                    (this.GroupId != null &&
-                    this.GroupId.Equals(input.GroupId))
-                ) && 
-                (
-                    this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
-                ) && 
-                (
-                    this.CoordinatorId == input.CoordinatorId ||
-                    (this.CoordinatorId != null &&
-                    this.CoordinatorId.Equals(input.CoordinatorId))
-                ) && 
-                (
-                    this.GroupDesc == input.GroupDesc ||
-                    (this.GroupDesc != null &&
-                    this.GroupDesc.Equals(input.GroupDesc))
-                ) && 
-                (
-                    this.Lag == input.Lag ||
-                    (this.Lag != null &&
-                    this.Lag.Equals(input.Lag))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.GroupId != null)
-                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
-                if (this.State != null)
-                    hashCode = hashCode * 59 + this.State.GetHashCode();
-                if (this.CoordinatorId != null)
-                    hashCode = hashCode * 59 + this.CoordinatorId.GetHashCode();
-                if (this.GroupDesc != null)
-                    hashCode = hashCode * 59 + this.GroupDesc.GetHashCode();
-                if (this.Lag != null)
-                    hashCode = hashCode * 59 + this.Lag.GetHashCode();
+                var hashCode = 41;
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();
+                if (this.CoordinatorId != null) hashCode = hashCode * 59 + this.CoordinatorId.GetHashCode();
+                if (this.GroupDesc != null) hashCode = hashCode * 59 + this.GroupDesc.GetHashCode();
+                if (this.Lag != null) hashCode = hashCode * 59 + this.Lag.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(RenameHighRiskCommandsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Commands != input.Commands || (this.Commands != null && input.Commands != null && !this.Commands.SequenceEqual(input.Commands))) return false;
 
-            return 
-                (
-                    this.Commands == input.Commands ||
-                    this.Commands != null &&
-                    input.Commands != null &&
-                    this.Commands.SequenceEqual(input.Commands)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Commands != null)
-                    hashCode = hashCode * 59 + this.Commands.GetHashCode();
+                var hashCode = 41;
+                if (this.Commands != null) hashCode = hashCode * 59 + this.Commands.GetHashCode();
                 return hashCode;
             }
         }

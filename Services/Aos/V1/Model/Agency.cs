@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(Agency input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProviderName != input.ProviderName || (this.ProviderName != null && !this.ProviderName.Equals(input.ProviderName))) return false;
+            if (this.AgencyName != input.AgencyName || (this.AgencyName != null && !this.AgencyName.Equals(input.AgencyName))) return false;
+            if (this.AgencyUrn != input.AgencyUrn || (this.AgencyUrn != null && !this.AgencyUrn.Equals(input.AgencyUrn))) return false;
 
-            return 
-                (
-                    this.ProviderName == input.ProviderName ||
-                    (this.ProviderName != null &&
-                    this.ProviderName.Equals(input.ProviderName))
-                ) && 
-                (
-                    this.AgencyName == input.AgencyName ||
-                    (this.AgencyName != null &&
-                    this.AgencyName.Equals(input.AgencyName))
-                ) && 
-                (
-                    this.AgencyUrn == input.AgencyUrn ||
-                    (this.AgencyUrn != null &&
-                    this.AgencyUrn.Equals(input.AgencyUrn))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProviderName != null)
-                    hashCode = hashCode * 59 + this.ProviderName.GetHashCode();
-                if (this.AgencyName != null)
-                    hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
-                if (this.AgencyUrn != null)
-                    hashCode = hashCode * 59 + this.AgencyUrn.GetHashCode();
+                var hashCode = 41;
+                if (this.ProviderName != null) hashCode = hashCode * 59 + this.ProviderName.GetHashCode();
+                if (this.AgencyName != null) hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
+                if (this.AgencyUrn != null) hashCode = hashCode * 59 + this.AgencyUrn.GetHashCode();
                 return hashCode;
             }
         }

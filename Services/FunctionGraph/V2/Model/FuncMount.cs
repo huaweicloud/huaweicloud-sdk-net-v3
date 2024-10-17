@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(FuncMount input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MountType != input.MountType || (this.MountType != null && !this.MountType.Equals(input.MountType))) return false;
+            if (this.MountResource != input.MountResource || (this.MountResource != null && !this.MountResource.Equals(input.MountResource))) return false;
+            if (this.MountSharePath != input.MountSharePath || (this.MountSharePath != null && !this.MountSharePath.Equals(input.MountSharePath))) return false;
+            if (this.LocalMountPath != input.LocalMountPath || (this.LocalMountPath != null && !this.LocalMountPath.Equals(input.LocalMountPath))) return false;
 
-            return 
-                (
-                    this.MountType == input.MountType ||
-                    (this.MountType != null &&
-                    this.MountType.Equals(input.MountType))
-                ) && 
-                (
-                    this.MountResource == input.MountResource ||
-                    (this.MountResource != null &&
-                    this.MountResource.Equals(input.MountResource))
-                ) && 
-                (
-                    this.MountSharePath == input.MountSharePath ||
-                    (this.MountSharePath != null &&
-                    this.MountSharePath.Equals(input.MountSharePath))
-                ) && 
-                (
-                    this.LocalMountPath == input.LocalMountPath ||
-                    (this.LocalMountPath != null &&
-                    this.LocalMountPath.Equals(input.LocalMountPath))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MountType != null)
-                    hashCode = hashCode * 59 + this.MountType.GetHashCode();
-                if (this.MountResource != null)
-                    hashCode = hashCode * 59 + this.MountResource.GetHashCode();
-                if (this.MountSharePath != null)
-                    hashCode = hashCode * 59 + this.MountSharePath.GetHashCode();
-                if (this.LocalMountPath != null)
-                    hashCode = hashCode * 59 + this.LocalMountPath.GetHashCode();
+                var hashCode = 41;
+                if (this.MountType != null) hashCode = hashCode * 59 + this.MountType.GetHashCode();
+                if (this.MountResource != null) hashCode = hashCode * 59 + this.MountResource.GetHashCode();
+                if (this.MountSharePath != null) hashCode = hashCode * 59 + this.MountSharePath.GetHashCode();
+                if (this.LocalMountPath != null) hashCode = hashCode * 59 + this.LocalMountPath.GetHashCode();
                 return hashCode;
             }
         }

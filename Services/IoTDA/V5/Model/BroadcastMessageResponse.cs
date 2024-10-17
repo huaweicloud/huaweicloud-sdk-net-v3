@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(BroadcastMessageResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
+            if (this.TopicFullName != input.TopicFullName || (this.TopicFullName != null && !this.TopicFullName.Equals(input.TopicFullName))) return false;
+            if (this.MessageId != input.MessageId || (this.MessageId != null && !this.MessageId.Equals(input.MessageId))) return false;
+            if (this.CreatedTime != input.CreatedTime || (this.CreatedTime != null && !this.CreatedTime.Equals(input.CreatedTime))) return false;
 
-            return 
-                (
-                    this.AppId == input.AppId ||
-                    (this.AppId != null &&
-                    this.AppId.Equals(input.AppId))
-                ) && 
-                (
-                    this.TopicFullName == input.TopicFullName ||
-                    (this.TopicFullName != null &&
-                    this.TopicFullName.Equals(input.TopicFullName))
-                ) && 
-                (
-                    this.MessageId == input.MessageId ||
-                    (this.MessageId != null &&
-                    this.MessageId.Equals(input.MessageId))
-                ) && 
-                (
-                    this.CreatedTime == input.CreatedTime ||
-                    (this.CreatedTime != null &&
-                    this.CreatedTime.Equals(input.CreatedTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AppId != null)
-                    hashCode = hashCode * 59 + this.AppId.GetHashCode();
-                if (this.TopicFullName != null)
-                    hashCode = hashCode * 59 + this.TopicFullName.GetHashCode();
-                if (this.MessageId != null)
-                    hashCode = hashCode * 59 + this.MessageId.GetHashCode();
-                if (this.CreatedTime != null)
-                    hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
+                var hashCode = 41;
+                if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
+                if (this.TopicFullName != null) hashCode = hashCode * 59 + this.TopicFullName.GetHashCode();
+                if (this.MessageId != null) hashCode = hashCode * 59 + this.MessageId.GetHashCode();
+                if (this.CreatedTime != null) hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
                 return hashCode;
             }
         }

@@ -77,37 +77,14 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(CreateVersionAliasRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.AdditionalVersionWeights != input.AdditionalVersionWeights || (this.AdditionalVersionWeights != null && input.AdditionalVersionWeights != null && !this.AdditionalVersionWeights.SequenceEqual(input.AdditionalVersionWeights))) return false;
+            if (this.AdditionalVersionStrategy != input.AdditionalVersionStrategy || (this.AdditionalVersionStrategy != null && input.AdditionalVersionStrategy != null && !this.AdditionalVersionStrategy.SequenceEqual(input.AdditionalVersionStrategy))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.AdditionalVersionWeights == input.AdditionalVersionWeights ||
-                    this.AdditionalVersionWeights != null &&
-                    input.AdditionalVersionWeights != null &&
-                    this.AdditionalVersionWeights.SequenceEqual(input.AdditionalVersionWeights)
-                ) && 
-                (
-                    this.AdditionalVersionStrategy == input.AdditionalVersionStrategy ||
-                    this.AdditionalVersionStrategy != null &&
-                    input.AdditionalVersionStrategy != null &&
-                    this.AdditionalVersionStrategy.SequenceEqual(input.AdditionalVersionStrategy)
-                );
+            return true;
         }
 
         /// <summary>
@@ -117,17 +94,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.AdditionalVersionWeights != null)
-                    hashCode = hashCode * 59 + this.AdditionalVersionWeights.GetHashCode();
-                if (this.AdditionalVersionStrategy != null)
-                    hashCode = hashCode * 59 + this.AdditionalVersionStrategy.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.AdditionalVersionWeights != null) hashCode = hashCode * 59 + this.AdditionalVersionWeights.GetHashCode();
+                if (this.AdditionalVersionStrategy != null) hashCode = hashCode * 59 + this.AdditionalVersionStrategy.GetHashCode();
                 return hashCode;
             }
         }

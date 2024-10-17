@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(SlowlogItem input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Command != input.Command || (this.Command != null && !this.Command.Equals(input.Command))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
+            if (this.ShardName != input.ShardName || (this.ShardName != null && !this.ShardName.Equals(input.ShardName))) return false;
+            if (this.DatabaseId != input.DatabaseId || (this.DatabaseId != null && !this.DatabaseId.Equals(input.DatabaseId))) return false;
+            if (this.Username != input.Username || (this.Username != null && !this.Username.Equals(input.Username))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Command == input.Command ||
-                    (this.Command != null &&
-                    this.Command.Equals(input.Command))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
-                ) && 
-                (
-                    this.ShardName == input.ShardName ||
-                    (this.ShardName != null &&
-                    this.ShardName.Equals(input.ShardName))
-                ) && 
-                (
-                    this.DatabaseId == input.DatabaseId ||
-                    (this.DatabaseId != null &&
-                    this.DatabaseId.Equals(input.DatabaseId))
-                ) && 
-                (
-                    this.Username == input.Username ||
-                    (this.Username != null &&
-                    this.Username.Equals(input.Username))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Command != null)
-                    hashCode = hashCode * 59 + this.Command.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.Duration != null)
-                    hashCode = hashCode * 59 + this.Duration.GetHashCode();
-                if (this.ShardName != null)
-                    hashCode = hashCode * 59 + this.ShardName.GetHashCode();
-                if (this.DatabaseId != null)
-                    hashCode = hashCode * 59 + this.DatabaseId.GetHashCode();
-                if (this.Username != null)
-                    hashCode = hashCode * 59 + this.Username.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Command != null) hashCode = hashCode * 59 + this.Command.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                if (this.ShardName != null) hashCode = hashCode * 59 + this.ShardName.GetHashCode();
+                if (this.DatabaseId != null) hashCode = hashCode * 59 + this.DatabaseId.GetHashCode();
+                if (this.Username != null) hashCode = hashCode * 59 + this.Username.GetHashCode();
                 return hashCode;
             }
         }

@@ -197,36 +197,14 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ListConfigurationsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ConfigTime != input.ConfigTime || (this.ConfigTime != null && !this.ConfigTime.Equals(input.ConfigTime))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.RedisConfig != input.RedisConfig || (this.RedisConfig != null && input.RedisConfig != null && !this.RedisConfig.SequenceEqual(input.RedisConfig))) return false;
+            if (this.ConfigStatus != input.ConfigStatus) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
 
-            return 
-                (
-                    this.ConfigTime == input.ConfigTime ||
-                    (this.ConfigTime != null &&
-                    this.ConfigTime.Equals(input.ConfigTime))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.RedisConfig == input.RedisConfig ||
-                    this.RedisConfig != null &&
-                    input.RedisConfig != null &&
-                    this.RedisConfig.SequenceEqual(input.RedisConfig)
-                ) && 
-                (
-                    this.ConfigStatus == input.ConfigStatus ||
-                    (this.ConfigStatus != null &&
-                    this.ConfigStatus.Equals(input.ConfigStatus))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
+            return true;
         }
 
         /// <summary>
@@ -236,17 +214,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ConfigTime != null)
-                    hashCode = hashCode * 59 + this.ConfigTime.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.RedisConfig != null)
-                    hashCode = hashCode * 59 + this.RedisConfig.GetHashCode();
-                if (this.ConfigStatus != null)
-                    hashCode = hashCode * 59 + this.ConfigStatus.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                var hashCode = 41;
+                if (this.ConfigTime != null) hashCode = hashCode * 59 + this.ConfigTime.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.RedisConfig != null) hashCode = hashCode * 59 + this.RedisConfig.GetHashCode();
+                hashCode = hashCode * 59 + this.ConfigStatus.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

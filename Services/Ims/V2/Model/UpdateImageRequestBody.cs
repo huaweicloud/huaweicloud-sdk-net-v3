@@ -183,25 +183,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         public bool Equals(UpdateImageRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Op != input.Op) return false;
+            if (this.Path != input.Path || (this.Path != null && !this.Path.Equals(input.Path))) return false;
+            if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
 
-            return 
-                (
-                    this.Op == input.Op ||
-                    (this.Op != null &&
-                    this.Op.Equals(input.Op))
-                ) && 
-                (
-                    this.Path == input.Path ||
-                    (this.Path != null &&
-                    this.Path.Equals(input.Path))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                );
+            return true;
         }
 
         /// <summary>
@@ -211,13 +198,10 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Op != null)
-                    hashCode = hashCode * 59 + this.Op.GetHashCode();
-                if (this.Path != null)
-                    hashCode = hashCode * 59 + this.Path.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Op.GetHashCode();
+                if (this.Path != null) hashCode = hashCode * 59 + this.Path.GetHashCode();
+                if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
                 return hashCode;
             }
         }

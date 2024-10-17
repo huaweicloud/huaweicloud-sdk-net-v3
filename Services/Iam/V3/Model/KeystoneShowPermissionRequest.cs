@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(KeystoneShowPermissionRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RoleId != input.RoleId || (this.RoleId != null && !this.RoleId.Equals(input.RoleId))) return false;
 
-            return 
-                (
-                    this.RoleId == input.RoleId ||
-                    (this.RoleId != null &&
-                    this.RoleId.Equals(input.RoleId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RoleId != null)
-                    hashCode = hashCode * 59 + this.RoleId.GetHashCode();
+                var hashCode = 41;
+                if (this.RoleId != null) hashCode = hashCode * 59 + this.RoleId.GetHashCode();
                 return hashCode;
             }
         }

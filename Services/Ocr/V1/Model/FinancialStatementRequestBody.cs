@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(FinancialStatementRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Image != input.Image || (this.Image != null && !this.Image.Equals(input.Image))) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.ReturnTextLocation != input.ReturnTextLocation || (this.ReturnTextLocation != null && !this.ReturnTextLocation.Equals(input.ReturnTextLocation))) return false;
+            if (this.ReturnConfidence != input.ReturnConfidence || (this.ReturnConfidence != null && !this.ReturnConfidence.Equals(input.ReturnConfidence))) return false;
+            if (this.ReturnExcel != input.ReturnExcel || (this.ReturnExcel != null && !this.ReturnExcel.Equals(input.ReturnExcel))) return false;
+            if (this.ReturnTableLocation != input.ReturnTableLocation || (this.ReturnTableLocation != null && !this.ReturnTableLocation.Equals(input.ReturnTableLocation))) return false;
+            if (this.ReturnImageSize != input.ReturnImageSize || (this.ReturnImageSize != null && !this.ReturnImageSize.Equals(input.ReturnImageSize))) return false;
+            if (this.ReturnRectificationMatrix != input.ReturnRectificationMatrix || (this.ReturnRectificationMatrix != null && !this.ReturnRectificationMatrix.Equals(input.ReturnRectificationMatrix))) return false;
 
-            return 
-                (
-                    this.Image == input.Image ||
-                    (this.Image != null &&
-                    this.Image.Equals(input.Image))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.ReturnTextLocation == input.ReturnTextLocation ||
-                    (this.ReturnTextLocation != null &&
-                    this.ReturnTextLocation.Equals(input.ReturnTextLocation))
-                ) && 
-                (
-                    this.ReturnConfidence == input.ReturnConfidence ||
-                    (this.ReturnConfidence != null &&
-                    this.ReturnConfidence.Equals(input.ReturnConfidence))
-                ) && 
-                (
-                    this.ReturnExcel == input.ReturnExcel ||
-                    (this.ReturnExcel != null &&
-                    this.ReturnExcel.Equals(input.ReturnExcel))
-                ) && 
-                (
-                    this.ReturnTableLocation == input.ReturnTableLocation ||
-                    (this.ReturnTableLocation != null &&
-                    this.ReturnTableLocation.Equals(input.ReturnTableLocation))
-                ) && 
-                (
-                    this.ReturnImageSize == input.ReturnImageSize ||
-                    (this.ReturnImageSize != null &&
-                    this.ReturnImageSize.Equals(input.ReturnImageSize))
-                ) && 
-                (
-                    this.ReturnRectificationMatrix == input.ReturnRectificationMatrix ||
-                    (this.ReturnRectificationMatrix != null &&
-                    this.ReturnRectificationMatrix.Equals(input.ReturnRectificationMatrix))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Image != null)
-                    hashCode = hashCode * 59 + this.Image.GetHashCode();
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.ReturnTextLocation != null)
-                    hashCode = hashCode * 59 + this.ReturnTextLocation.GetHashCode();
-                if (this.ReturnConfidence != null)
-                    hashCode = hashCode * 59 + this.ReturnConfidence.GetHashCode();
-                if (this.ReturnExcel != null)
-                    hashCode = hashCode * 59 + this.ReturnExcel.GetHashCode();
-                if (this.ReturnTableLocation != null)
-                    hashCode = hashCode * 59 + this.ReturnTableLocation.GetHashCode();
-                if (this.ReturnImageSize != null)
-                    hashCode = hashCode * 59 + this.ReturnImageSize.GetHashCode();
-                if (this.ReturnRectificationMatrix != null)
-                    hashCode = hashCode * 59 + this.ReturnRectificationMatrix.GetHashCode();
+                var hashCode = 41;
+                if (this.Image != null) hashCode = hashCode * 59 + this.Image.GetHashCode();
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.ReturnTextLocation != null) hashCode = hashCode * 59 + this.ReturnTextLocation.GetHashCode();
+                if (this.ReturnConfidence != null) hashCode = hashCode * 59 + this.ReturnConfidence.GetHashCode();
+                if (this.ReturnExcel != null) hashCode = hashCode * 59 + this.ReturnExcel.GetHashCode();
+                if (this.ReturnTableLocation != null) hashCode = hashCode * 59 + this.ReturnTableLocation.GetHashCode();
+                if (this.ReturnImageSize != null) hashCode = hashCode * 59 + this.ReturnImageSize.GetHashCode();
+                if (this.ReturnRectificationMatrix != null) hashCode = hashCode * 59 + this.ReturnRectificationMatrix.GetHashCode();
                 return hashCode;
             }
         }

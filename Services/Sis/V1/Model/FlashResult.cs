@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         /// </summary>
         public bool Equals(FlashResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ChannelId != input.ChannelId || (this.ChannelId != null && !this.ChannelId.Equals(input.ChannelId))) return false;
+            if (this.Sentences != input.Sentences || (this.Sentences != null && input.Sentences != null && !this.Sentences.SequenceEqual(input.Sentences))) return false;
 
-            return 
-                (
-                    this.ChannelId == input.ChannelId ||
-                    (this.ChannelId != null &&
-                    this.ChannelId.Equals(input.ChannelId))
-                ) && 
-                (
-                    this.Sentences == input.Sentences ||
-                    this.Sentences != null &&
-                    input.Sentences != null &&
-                    this.Sentences.SequenceEqual(input.Sentences)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ChannelId != null)
-                    hashCode = hashCode * 59 + this.ChannelId.GetHashCode();
-                if (this.Sentences != null)
-                    hashCode = hashCode * 59 + this.Sentences.GetHashCode();
+                var hashCode = 41;
+                if (this.ChannelId != null) hashCode = hashCode * 59 + this.ChannelId.GetHashCode();
+                if (this.Sentences != null) hashCode = hashCode * 59 + this.Sentences.GetHashCode();
                 return hashCode;
             }
         }

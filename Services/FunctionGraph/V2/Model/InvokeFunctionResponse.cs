@@ -78,35 +78,14 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(InvokeFunctionResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
+            if (this.Result != input.Result || (this.Result != null && !this.Result.Equals(input.Result))) return false;
+            if (this.Log != input.Log || (this.Log != null && !this.Log.Equals(input.Log))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.XCffRequestId != input.XCffRequestId || (this.XCffRequestId != null && !this.XCffRequestId.Equals(input.XCffRequestId))) return false;
 
-            return 
-                (
-                    this.RequestId == input.RequestId ||
-                    (this.RequestId != null &&
-                    this.RequestId.Equals(input.RequestId))
-                ) && 
-                (
-                    this.Result == input.Result ||
-                    (this.Result != null &&
-                    this.Result.Equals(input.Result))
-                ) && 
-                (
-                    this.Log == input.Log ||
-                    (this.Log != null &&
-                    this.Log.Equals(input.Log))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.XCffRequestId == input.XCffRequestId ||
-                    (this.XCffRequestId != null &&
-                    this.XCffRequestId.Equals(input.XCffRequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -116,17 +95,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RequestId != null)
-                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
-                if (this.Result != null)
-                    hashCode = hashCode * 59 + this.Result.GetHashCode();
-                if (this.Log != null)
-                    hashCode = hashCode * 59 + this.Log.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.XCffRequestId != null)
-                    hashCode = hashCode * 59 + this.XCffRequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                if (this.Result != null) hashCode = hashCode * 59 + this.Result.GetHashCode();
+                if (this.Log != null) hashCode = hashCode * 59 + this.Log.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.XCffRequestId != null) hashCode = hashCode * 59 + this.XCffRequestId.GetHashCode();
                 return hashCode;
             }
         }

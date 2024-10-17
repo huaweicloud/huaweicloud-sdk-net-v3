@@ -172,20 +172,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ResetConfigurationRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ConfigId != input.ConfigId || (this.ConfigId != null && !this.ConfigId.Equals(input.ConfigId))) return false;
+            if (this.XLanguage != input.XLanguage) return false;
 
-            return 
-                (
-                    this.ConfigId == input.ConfigId ||
-                    (this.ConfigId != null &&
-                    this.ConfigId.Equals(input.ConfigId))
-                ) && 
-                (
-                    this.XLanguage == input.XLanguage ||
-                    (this.XLanguage != null &&
-                    this.XLanguage.Equals(input.XLanguage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -195,11 +186,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ConfigId != null)
-                    hashCode = hashCode * 59 + this.ConfigId.GetHashCode();
-                if (this.XLanguage != null)
-                    hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                var hashCode = 41;
+                if (this.ConfigId != null) hashCode = hashCode * 59 + this.ConfigId.GetHashCode();
+                hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
                 return hashCode;
             }
         }

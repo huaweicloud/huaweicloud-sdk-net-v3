@@ -408,192 +408,45 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(TaskInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TaskId != input.TaskId || (this.TaskId != null && !this.TaskId.Equals(input.TaskId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.ProjectName != input.ProjectName || (this.ProjectName != null && !this.ProjectName.Equals(input.ProjectName))) return false;
+            if (this.DeploySystem != input.DeploySystem || (this.DeploySystem != null && !this.DeploySystem.Equals(input.DeploySystem))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.State != input.State) return false;
+            if (this.ExecutionTime != input.ExecutionTime || (this.ExecutionTime != null && !this.ExecutionTime.Equals(input.ExecutionTime))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.IsDefautPermission != input.IsDefautPermission || (this.IsDefautPermission != null && !this.IsDefautPermission.Equals(input.IsDefautPermission))) return false;
+            if (this.TemplateId != input.TemplateId || (this.TemplateId != null && !this.TemplateId.Equals(input.TemplateId))) return false;
+            if (this.Owner != input.Owner || (this.Owner != null && !this.Owner.Equals(input.Owner))) return false;
+            if (this.NickName != input.NickName || (this.NickName != null && !this.NickName.Equals(input.NickName))) return false;
+            if (this.OwnerId != input.OwnerId || (this.OwnerId != null && !this.OwnerId.Equals(input.OwnerId))) return false;
+            if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
+            if (this.TenantName != input.TenantName || (this.TenantName != null && !this.TenantName.Equals(input.TenantName))) return false;
+            if (this.SlaveClusterId != input.SlaveClusterId || (this.SlaveClusterId != null && !this.SlaveClusterId.Equals(input.SlaveClusterId))) return false;
+            if (this.IsCare != input.IsCare || (this.IsCare != null && !this.IsCare.Equals(input.IsCare))) return false;
+            if (this.CanModify != input.CanModify || (this.CanModify != null && !this.CanModify.Equals(input.CanModify))) return false;
+            if (this.CanDelete != input.CanDelete || (this.CanDelete != null && !this.CanDelete.Equals(input.CanDelete))) return false;
+            if (this.CanView != input.CanView || (this.CanView != null && !this.CanView.Equals(input.CanView))) return false;
+            if (this.CanExecute != input.CanExecute || (this.CanExecute != null && !this.CanExecute.Equals(input.CanExecute))) return false;
+            if (this.CanCopy != input.CanCopy || (this.CanCopy != null && !this.CanCopy.Equals(input.CanCopy))) return false;
+            if (this.CanManage != input.CanManage || (this.CanManage != null && !this.CanManage.Equals(input.CanManage))) return false;
+            if (this.CanDisable != input.CanDisable || (this.CanDisable != null && !this.CanDisable.Equals(input.CanDisable))) return false;
+            if (this.AppComponentList != input.AppComponentList || (this.AppComponentList != null && input.AppComponentList != null && !this.AppComponentList.SequenceEqual(input.AppComponentList))) return false;
+            if (this.RoleId != input.RoleId || (this.RoleId != null && !this.RoleId.Equals(input.RoleId))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.ReleaseId != input.ReleaseId || (this.ReleaseId != null && !this.ReleaseId.Equals(input.ReleaseId))) return false;
+            if (this.IsDisable != input.IsDisable || (this.IsDisable != null && !this.IsDisable.Equals(input.IsDisable))) return false;
+            if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
+            if (this.ExecutionState != input.ExecutionState || (this.ExecutionState != null && !this.ExecutionState.Equals(input.ExecutionState))) return false;
+            if (this.ExecutorId != input.ExecutorId || (this.ExecutorId != null && !this.ExecutorId.Equals(input.ExecutorId))) return false;
+            if (this.ExecutorNickName != input.ExecutorNickName || (this.ExecutorNickName != null && !this.ExecutorNickName.Equals(input.ExecutorNickName))) return false;
+            if (this.Steps != input.Steps || (this.Steps != null && input.Steps != null && !this.Steps.SequenceEqual(input.Steps))) return false;
 
-            return 
-                (
-                    this.TaskId == input.TaskId ||
-                    (this.TaskId != null &&
-                    this.TaskId.Equals(input.TaskId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.ProjectName == input.ProjectName ||
-                    (this.ProjectName != null &&
-                    this.ProjectName.Equals(input.ProjectName))
-                ) && 
-                (
-                    this.DeploySystem == input.DeploySystem ||
-                    (this.DeploySystem != null &&
-                    this.DeploySystem.Equals(input.DeploySystem))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
-                ) && 
-                (
-                    this.ExecutionTime == input.ExecutionTime ||
-                    (this.ExecutionTime != null &&
-                    this.ExecutionTime.Equals(input.ExecutionTime))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.IsDefautPermission == input.IsDefautPermission ||
-                    (this.IsDefautPermission != null &&
-                    this.IsDefautPermission.Equals(input.IsDefautPermission))
-                ) && 
-                (
-                    this.TemplateId == input.TemplateId ||
-                    (this.TemplateId != null &&
-                    this.TemplateId.Equals(input.TemplateId))
-                ) && 
-                (
-                    this.Owner == input.Owner ||
-                    (this.Owner != null &&
-                    this.Owner.Equals(input.Owner))
-                ) && 
-                (
-                    this.NickName == input.NickName ||
-                    (this.NickName != null &&
-                    this.NickName.Equals(input.NickName))
-                ) && 
-                (
-                    this.OwnerId == input.OwnerId ||
-                    (this.OwnerId != null &&
-                    this.OwnerId.Equals(input.OwnerId))
-                ) && 
-                (
-                    this.TenantId == input.TenantId ||
-                    (this.TenantId != null &&
-                    this.TenantId.Equals(input.TenantId))
-                ) && 
-                (
-                    this.TenantName == input.TenantName ||
-                    (this.TenantName != null &&
-                    this.TenantName.Equals(input.TenantName))
-                ) && 
-                (
-                    this.SlaveClusterId == input.SlaveClusterId ||
-                    (this.SlaveClusterId != null &&
-                    this.SlaveClusterId.Equals(input.SlaveClusterId))
-                ) && 
-                (
-                    this.IsCare == input.IsCare ||
-                    (this.IsCare != null &&
-                    this.IsCare.Equals(input.IsCare))
-                ) && 
-                (
-                    this.CanModify == input.CanModify ||
-                    (this.CanModify != null &&
-                    this.CanModify.Equals(input.CanModify))
-                ) && 
-                (
-                    this.CanDelete == input.CanDelete ||
-                    (this.CanDelete != null &&
-                    this.CanDelete.Equals(input.CanDelete))
-                ) && 
-                (
-                    this.CanView == input.CanView ||
-                    (this.CanView != null &&
-                    this.CanView.Equals(input.CanView))
-                ) && 
-                (
-                    this.CanExecute == input.CanExecute ||
-                    (this.CanExecute != null &&
-                    this.CanExecute.Equals(input.CanExecute))
-                ) && 
-                (
-                    this.CanCopy == input.CanCopy ||
-                    (this.CanCopy != null &&
-                    this.CanCopy.Equals(input.CanCopy))
-                ) && 
-                (
-                    this.CanManage == input.CanManage ||
-                    (this.CanManage != null &&
-                    this.CanManage.Equals(input.CanManage))
-                ) && 
-                (
-                    this.CanDisable == input.CanDisable ||
-                    (this.CanDisable != null &&
-                    this.CanDisable.Equals(input.CanDisable))
-                ) && 
-                (
-                    this.AppComponentList == input.AppComponentList ||
-                    this.AppComponentList != null &&
-                    input.AppComponentList != null &&
-                    this.AppComponentList.SequenceEqual(input.AppComponentList)
-                ) && 
-                (
-                    this.RoleId == input.RoleId ||
-                    (this.RoleId != null &&
-                    this.RoleId.Equals(input.RoleId))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.ReleaseId == input.ReleaseId ||
-                    (this.ReleaseId != null &&
-                    this.ReleaseId.Equals(input.ReleaseId))
-                ) && 
-                (
-                    this.IsDisable == input.IsDisable ||
-                    (this.IsDisable != null &&
-                    this.IsDisable.Equals(input.IsDisable))
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
-                ) && 
-                (
-                    this.ExecutionState == input.ExecutionState ||
-                    (this.ExecutionState != null &&
-                    this.ExecutionState.Equals(input.ExecutionState))
-                ) && 
-                (
-                    this.ExecutorId == input.ExecutorId ||
-                    (this.ExecutorId != null &&
-                    this.ExecutorId.Equals(input.ExecutorId))
-                ) && 
-                (
-                    this.ExecutorNickName == input.ExecutorNickName ||
-                    (this.ExecutorNickName != null &&
-                    this.ExecutorNickName.Equals(input.ExecutorNickName))
-                ) && 
-                (
-                    this.Steps == input.Steps ||
-                    this.Steps != null &&
-                    input.Steps != null &&
-                    this.Steps.SequenceEqual(input.Steps)
-                );
+            return true;
         }
 
         /// <summary>
@@ -603,79 +456,43 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TaskId != null)
-                    hashCode = hashCode * 59 + this.TaskId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.ProjectName != null)
-                    hashCode = hashCode * 59 + this.ProjectName.GetHashCode();
-                if (this.DeploySystem != null)
-                    hashCode = hashCode * 59 + this.DeploySystem.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.State != null)
-                    hashCode = hashCode * 59 + this.State.GetHashCode();
-                if (this.ExecutionTime != null)
-                    hashCode = hashCode * 59 + this.ExecutionTime.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.IsDefautPermission != null)
-                    hashCode = hashCode * 59 + this.IsDefautPermission.GetHashCode();
-                if (this.TemplateId != null)
-                    hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
-                if (this.Owner != null)
-                    hashCode = hashCode * 59 + this.Owner.GetHashCode();
-                if (this.NickName != null)
-                    hashCode = hashCode * 59 + this.NickName.GetHashCode();
-                if (this.OwnerId != null)
-                    hashCode = hashCode * 59 + this.OwnerId.GetHashCode();
-                if (this.TenantId != null)
-                    hashCode = hashCode * 59 + this.TenantId.GetHashCode();
-                if (this.TenantName != null)
-                    hashCode = hashCode * 59 + this.TenantName.GetHashCode();
-                if (this.SlaveClusterId != null)
-                    hashCode = hashCode * 59 + this.SlaveClusterId.GetHashCode();
-                if (this.IsCare != null)
-                    hashCode = hashCode * 59 + this.IsCare.GetHashCode();
-                if (this.CanModify != null)
-                    hashCode = hashCode * 59 + this.CanModify.GetHashCode();
-                if (this.CanDelete != null)
-                    hashCode = hashCode * 59 + this.CanDelete.GetHashCode();
-                if (this.CanView != null)
-                    hashCode = hashCode * 59 + this.CanView.GetHashCode();
-                if (this.CanExecute != null)
-                    hashCode = hashCode * 59 + this.CanExecute.GetHashCode();
-                if (this.CanCopy != null)
-                    hashCode = hashCode * 59 + this.CanCopy.GetHashCode();
-                if (this.CanManage != null)
-                    hashCode = hashCode * 59 + this.CanManage.GetHashCode();
-                if (this.CanDisable != null)
-                    hashCode = hashCode * 59 + this.CanDisable.GetHashCode();
-                if (this.AppComponentList != null)
-                    hashCode = hashCode * 59 + this.AppComponentList.GetHashCode();
-                if (this.RoleId != null)
-                    hashCode = hashCode * 59 + this.RoleId.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.ReleaseId != null)
-                    hashCode = hashCode * 59 + this.ReleaseId.GetHashCode();
-                if (this.IsDisable != null)
-                    hashCode = hashCode * 59 + this.IsDisable.GetHashCode();
-                if (this.Duration != null)
-                    hashCode = hashCode * 59 + this.Duration.GetHashCode();
-                if (this.ExecutionState != null)
-                    hashCode = hashCode * 59 + this.ExecutionState.GetHashCode();
-                if (this.ExecutorId != null)
-                    hashCode = hashCode * 59 + this.ExecutorId.GetHashCode();
-                if (this.ExecutorNickName != null)
-                    hashCode = hashCode * 59 + this.ExecutorNickName.GetHashCode();
-                if (this.Steps != null)
-                    hashCode = hashCode * 59 + this.Steps.GetHashCode();
+                var hashCode = 41;
+                if (this.TaskId != null) hashCode = hashCode * 59 + this.TaskId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.ProjectName != null) hashCode = hashCode * 59 + this.ProjectName.GetHashCode();
+                if (this.DeploySystem != null) hashCode = hashCode * 59 + this.DeploySystem.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                hashCode = hashCode * 59 + this.State.GetHashCode();
+                if (this.ExecutionTime != null) hashCode = hashCode * 59 + this.ExecutionTime.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.IsDefautPermission != null) hashCode = hashCode * 59 + this.IsDefautPermission.GetHashCode();
+                if (this.TemplateId != null) hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
+                if (this.Owner != null) hashCode = hashCode * 59 + this.Owner.GetHashCode();
+                if (this.NickName != null) hashCode = hashCode * 59 + this.NickName.GetHashCode();
+                if (this.OwnerId != null) hashCode = hashCode * 59 + this.OwnerId.GetHashCode();
+                if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
+                if (this.TenantName != null) hashCode = hashCode * 59 + this.TenantName.GetHashCode();
+                if (this.SlaveClusterId != null) hashCode = hashCode * 59 + this.SlaveClusterId.GetHashCode();
+                if (this.IsCare != null) hashCode = hashCode * 59 + this.IsCare.GetHashCode();
+                if (this.CanModify != null) hashCode = hashCode * 59 + this.CanModify.GetHashCode();
+                if (this.CanDelete != null) hashCode = hashCode * 59 + this.CanDelete.GetHashCode();
+                if (this.CanView != null) hashCode = hashCode * 59 + this.CanView.GetHashCode();
+                if (this.CanExecute != null) hashCode = hashCode * 59 + this.CanExecute.GetHashCode();
+                if (this.CanCopy != null) hashCode = hashCode * 59 + this.CanCopy.GetHashCode();
+                if (this.CanManage != null) hashCode = hashCode * 59 + this.CanManage.GetHashCode();
+                if (this.CanDisable != null) hashCode = hashCode * 59 + this.CanDisable.GetHashCode();
+                if (this.AppComponentList != null) hashCode = hashCode * 59 + this.AppComponentList.GetHashCode();
+                if (this.RoleId != null) hashCode = hashCode * 59 + this.RoleId.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.ReleaseId != null) hashCode = hashCode * 59 + this.ReleaseId.GetHashCode();
+                if (this.IsDisable != null) hashCode = hashCode * 59 + this.IsDisable.GetHashCode();
+                if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                if (this.ExecutionState != null) hashCode = hashCode * 59 + this.ExecutionState.GetHashCode();
+                if (this.ExecutorId != null) hashCode = hashCode * 59 + this.ExecutorId.GetHashCode();
+                if (this.ExecutorNickName != null) hashCode = hashCode * 59 + this.ExecutorNickName.GetHashCode();
+                if (this.Steps != null) hashCode = hashCode * 59 + this.Steps.GetHashCode();
                 return hashCode;
             }
         }

@@ -164,15 +164,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(ListDatastoreVersionsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DatastoreName != input.DatastoreName) return false;
 
-            return 
-                (
-                    this.DatastoreName == input.DatastoreName ||
-                    (this.DatastoreName != null &&
-                    this.DatastoreName.Equals(input.DatastoreName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -182,9 +177,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DatastoreName != null)
-                    hashCode = hashCode * 59 + this.DatastoreName.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.DatastoreName.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(IntegerRange input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Max != input.Max || (this.Max != null && !this.Max.Equals(input.Max))) return false;
+            if (this.Min != input.Min || (this.Min != null && !this.Min.Equals(input.Min))) return false;
+            if (this.Desire != input.Desire || (this.Desire != null && !this.Desire.Equals(input.Desire))) return false;
 
-            return 
-                (
-                    this.Max == input.Max ||
-                    (this.Max != null &&
-                    this.Max.Equals(input.Max))
-                ) && 
-                (
-                    this.Min == input.Min ||
-                    (this.Min != null &&
-                    this.Min.Equals(input.Min))
-                ) && 
-                (
-                    this.Desire == input.Desire ||
-                    (this.Desire != null &&
-                    this.Desire.Equals(input.Desire))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Max != null)
-                    hashCode = hashCode * 59 + this.Max.GetHashCode();
-                if (this.Min != null)
-                    hashCode = hashCode * 59 + this.Min.GetHashCode();
-                if (this.Desire != null)
-                    hashCode = hashCode * 59 + this.Desire.GetHashCode();
+                var hashCode = 41;
+                if (this.Max != null) hashCode = hashCode * 59 + this.Max.GetHashCode();
+                if (this.Min != null) hashCode = hashCode * 59 + this.Min.GetHashCode();
+                if (this.Desire != null) hashCode = hashCode * 59 + this.Desire.GetHashCode();
                 return hashCode;
             }
         }

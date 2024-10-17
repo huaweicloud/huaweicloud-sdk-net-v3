@@ -655,100 +655,27 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         /// </summary>
         public bool Equals(ShowIndividualStreamJobResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.StreamName != input.StreamName || (this.StreamName != null && !this.StreamName.Equals(input.StreamName))) return false;
+            if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
+            if (this.RoomId != input.RoomId || (this.RoomId != null && !this.RoomId.Equals(input.RoomId))) return false;
+            if (this.UserId != input.UserId || (this.UserId != null && !this.UserId.Equals(input.UserId))) return false;
+            if (this.IsRecordAudio != input.IsRecordAudio || (this.IsRecordAudio != null && !this.IsRecordAudio.Equals(input.IsRecordAudio))) return false;
+            if (this.VideoType != input.VideoType) return false;
+            if (this.SelectStreamType != input.SelectStreamType) return false;
+            if (this.MaxIdleTime != input.MaxIdleTime || (this.MaxIdleTime != null && !this.MaxIdleTime.Equals(input.MaxIdleTime))) return false;
+            if (this.RecordParam != input.RecordParam || (this.RecordParam != null && !this.RecordParam.Equals(input.RecordParam))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.State != input.State) return false;
+            if (this.StopReason != input.StopReason) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.StopTime != input.StopTime || (this.StopTime != null && !this.StopTime.Equals(input.StopTime))) return false;
+            if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.StreamName == input.StreamName ||
-                    (this.StreamName != null &&
-                    this.StreamName.Equals(input.StreamName))
-                ) && 
-                (
-                    this.AppId == input.AppId ||
-                    (this.AppId != null &&
-                    this.AppId.Equals(input.AppId))
-                ) && 
-                (
-                    this.RoomId == input.RoomId ||
-                    (this.RoomId != null &&
-                    this.RoomId.Equals(input.RoomId))
-                ) && 
-                (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
-                ) && 
-                (
-                    this.IsRecordAudio == input.IsRecordAudio ||
-                    (this.IsRecordAudio != null &&
-                    this.IsRecordAudio.Equals(input.IsRecordAudio))
-                ) && 
-                (
-                    this.VideoType == input.VideoType ||
-                    (this.VideoType != null &&
-                    this.VideoType.Equals(input.VideoType))
-                ) && 
-                (
-                    this.SelectStreamType == input.SelectStreamType ||
-                    (this.SelectStreamType != null &&
-                    this.SelectStreamType.Equals(input.SelectStreamType))
-                ) && 
-                (
-                    this.MaxIdleTime == input.MaxIdleTime ||
-                    (this.MaxIdleTime != null &&
-                    this.MaxIdleTime.Equals(input.MaxIdleTime))
-                ) && 
-                (
-                    this.RecordParam == input.RecordParam ||
-                    (this.RecordParam != null &&
-                    this.RecordParam.Equals(input.RecordParam))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
-                ) && 
-                (
-                    this.StopReason == input.StopReason ||
-                    (this.StopReason != null &&
-                    this.StopReason.Equals(input.StopReason))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.StopTime == input.StopTime ||
-                    (this.StopTime != null &&
-                    this.StopTime.Equals(input.StopTime))
-                ) && 
-                (
-                    this.XRequestId == input.XRequestId ||
-                    (this.XRequestId != null &&
-                    this.XRequestId.Equals(input.XRequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -758,43 +685,25 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.StreamName != null)
-                    hashCode = hashCode * 59 + this.StreamName.GetHashCode();
-                if (this.AppId != null)
-                    hashCode = hashCode * 59 + this.AppId.GetHashCode();
-                if (this.RoomId != null)
-                    hashCode = hashCode * 59 + this.RoomId.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.IsRecordAudio != null)
-                    hashCode = hashCode * 59 + this.IsRecordAudio.GetHashCode();
-                if (this.VideoType != null)
-                    hashCode = hashCode * 59 + this.VideoType.GetHashCode();
-                if (this.SelectStreamType != null)
-                    hashCode = hashCode * 59 + this.SelectStreamType.GetHashCode();
-                if (this.MaxIdleTime != null)
-                    hashCode = hashCode * 59 + this.MaxIdleTime.GetHashCode();
-                if (this.RecordParam != null)
-                    hashCode = hashCode * 59 + this.RecordParam.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.State != null)
-                    hashCode = hashCode * 59 + this.State.GetHashCode();
-                if (this.StopReason != null)
-                    hashCode = hashCode * 59 + this.StopReason.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.StopTime != null)
-                    hashCode = hashCode * 59 + this.StopTime.GetHashCode();
-                if (this.XRequestId != null)
-                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.StreamName != null) hashCode = hashCode * 59 + this.StreamName.GetHashCode();
+                if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
+                if (this.RoomId != null) hashCode = hashCode * 59 + this.RoomId.GetHashCode();
+                if (this.UserId != null) hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                if (this.IsRecordAudio != null) hashCode = hashCode * 59 + this.IsRecordAudio.GetHashCode();
+                hashCode = hashCode * 59 + this.VideoType.GetHashCode();
+                hashCode = hashCode * 59 + this.SelectStreamType.GetHashCode();
+                if (this.MaxIdleTime != null) hashCode = hashCode * 59 + this.MaxIdleTime.GetHashCode();
+                if (this.RecordParam != null) hashCode = hashCode * 59 + this.RecordParam.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                hashCode = hashCode * 59 + this.State.GetHashCode();
+                hashCode = hashCode * 59 + this.StopReason.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.StopTime != null) hashCode = hashCode * 59 + this.StopTime.GetHashCode();
+                if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

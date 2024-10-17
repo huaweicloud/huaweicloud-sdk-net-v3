@@ -350,45 +350,16 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(ListResizeFlavorsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceUuid != input.InstanceUuid || (this.InstanceUuid != null && !this.InstanceUuid.Equals(input.InstanceUuid))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.SortDir != input.SortDir) return false;
+            if (this.SortKey != input.SortKey) return false;
+            if (this.SourceFlavorId != input.SourceFlavorId || (this.SourceFlavorId != null && !this.SourceFlavorId.Equals(input.SourceFlavorId))) return false;
+            if (this.SourceFlavorName != input.SourceFlavorName || (this.SourceFlavorName != null && !this.SourceFlavorName.Equals(input.SourceFlavorName))) return false;
 
-            return 
-                (
-                    this.InstanceUuid == input.InstanceUuid ||
-                    (this.InstanceUuid != null &&
-                    this.InstanceUuid.Equals(input.InstanceUuid))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.SortDir == input.SortDir ||
-                    (this.SortDir != null &&
-                    this.SortDir.Equals(input.SortDir))
-                ) && 
-                (
-                    this.SortKey == input.SortKey ||
-                    (this.SortKey != null &&
-                    this.SortKey.Equals(input.SortKey))
-                ) && 
-                (
-                    this.SourceFlavorId == input.SourceFlavorId ||
-                    (this.SourceFlavorId != null &&
-                    this.SourceFlavorId.Equals(input.SourceFlavorId))
-                ) && 
-                (
-                    this.SourceFlavorName == input.SourceFlavorName ||
-                    (this.SourceFlavorName != null &&
-                    this.SourceFlavorName.Equals(input.SourceFlavorName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -398,21 +369,14 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceUuid != null)
-                    hashCode = hashCode * 59 + this.InstanceUuid.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.SortDir != null)
-                    hashCode = hashCode * 59 + this.SortDir.GetHashCode();
-                if (this.SortKey != null)
-                    hashCode = hashCode * 59 + this.SortKey.GetHashCode();
-                if (this.SourceFlavorId != null)
-                    hashCode = hashCode * 59 + this.SourceFlavorId.GetHashCode();
-                if (this.SourceFlavorName != null)
-                    hashCode = hashCode * 59 + this.SourceFlavorName.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceUuid != null) hashCode = hashCode * 59 + this.InstanceUuid.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                hashCode = hashCode * 59 + this.SortDir.GetHashCode();
+                hashCode = hashCode * 59 + this.SortKey.GetHashCode();
+                if (this.SourceFlavorId != null) hashCode = hashCode * 59 + this.SourceFlavorId.GetHashCode();
+                if (this.SourceFlavorName != null) hashCode = hashCode * 59 + this.SourceFlavorName.GetHashCode();
                 return hashCode;
             }
         }

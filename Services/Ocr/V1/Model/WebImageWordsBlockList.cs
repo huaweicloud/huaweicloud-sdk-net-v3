@@ -77,38 +77,14 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(WebImageWordsBlockList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Words != input.Words || (this.Words != null && !this.Words.Equals(input.Words))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
+            if (this.Location != input.Location || (this.Location != null && input.Location != null && !this.Location.SequenceEqual(input.Location))) return false;
+            if (this.FontList != input.FontList || (this.FontList != null && input.FontList != null && !this.FontList.SequenceEqual(input.FontList))) return false;
+            if (this.FontScores != input.FontScores || (this.FontScores != null && input.FontScores != null && !this.FontScores.SequenceEqual(input.FontScores))) return false;
 
-            return 
-                (
-                    this.Words == input.Words ||
-                    (this.Words != null &&
-                    this.Words.Equals(input.Words))
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                ) && 
-                (
-                    this.Location == input.Location ||
-                    this.Location != null &&
-                    input.Location != null &&
-                    this.Location.SequenceEqual(input.Location)
-                ) && 
-                (
-                    this.FontList == input.FontList ||
-                    this.FontList != null &&
-                    input.FontList != null &&
-                    this.FontList.SequenceEqual(input.FontList)
-                ) && 
-                (
-                    this.FontScores == input.FontScores ||
-                    this.FontScores != null &&
-                    input.FontScores != null &&
-                    this.FontScores.SequenceEqual(input.FontScores)
-                );
+            return true;
         }
 
         /// <summary>
@@ -118,17 +94,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Words != null)
-                    hashCode = hashCode * 59 + this.Words.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
-                if (this.Location != null)
-                    hashCode = hashCode * 59 + this.Location.GetHashCode();
-                if (this.FontList != null)
-                    hashCode = hashCode * 59 + this.FontList.GetHashCode();
-                if (this.FontScores != null)
-                    hashCode = hashCode * 59 + this.FontScores.GetHashCode();
+                var hashCode = 41;
+                if (this.Words != null) hashCode = hashCode * 59 + this.Words.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                if (this.Location != null) hashCode = hashCode * 59 + this.Location.GetHashCode();
+                if (this.FontList != null) hashCode = hashCode * 59 + this.FontList.GetHashCode();
+                if (this.FontScores != null) hashCode = hashCode * 59 + this.FontScores.GetHashCode();
                 return hashCode;
             }
         }

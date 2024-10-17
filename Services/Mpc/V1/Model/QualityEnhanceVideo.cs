@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(QualityEnhanceVideo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VideoDenoise != input.VideoDenoise || (this.VideoDenoise != null && !this.VideoDenoise.Equals(input.VideoDenoise))) return false;
+            if (this.VideoSharp != input.VideoSharp || (this.VideoSharp != null && !this.VideoSharp.Equals(input.VideoSharp))) return false;
+            if (this.VideoContrast != input.VideoContrast || (this.VideoContrast != null && !this.VideoContrast.Equals(input.VideoContrast))) return false;
+            if (this.VideoSuperresolution != input.VideoSuperresolution || (this.VideoSuperresolution != null && !this.VideoSuperresolution.Equals(input.VideoSuperresolution))) return false;
+            if (this.VideoDeblock != input.VideoDeblock || (this.VideoDeblock != null && !this.VideoDeblock.Equals(input.VideoDeblock))) return false;
+            if (this.VideoSaturation != input.VideoSaturation || (this.VideoSaturation != null && !this.VideoSaturation.Equals(input.VideoSaturation))) return false;
 
-            return 
-                (
-                    this.VideoDenoise == input.VideoDenoise ||
-                    (this.VideoDenoise != null &&
-                    this.VideoDenoise.Equals(input.VideoDenoise))
-                ) && 
-                (
-                    this.VideoSharp == input.VideoSharp ||
-                    (this.VideoSharp != null &&
-                    this.VideoSharp.Equals(input.VideoSharp))
-                ) && 
-                (
-                    this.VideoContrast == input.VideoContrast ||
-                    (this.VideoContrast != null &&
-                    this.VideoContrast.Equals(input.VideoContrast))
-                ) && 
-                (
-                    this.VideoSuperresolution == input.VideoSuperresolution ||
-                    (this.VideoSuperresolution != null &&
-                    this.VideoSuperresolution.Equals(input.VideoSuperresolution))
-                ) && 
-                (
-                    this.VideoDeblock == input.VideoDeblock ||
-                    (this.VideoDeblock != null &&
-                    this.VideoDeblock.Equals(input.VideoDeblock))
-                ) && 
-                (
-                    this.VideoSaturation == input.VideoSaturation ||
-                    (this.VideoSaturation != null &&
-                    this.VideoSaturation.Equals(input.VideoSaturation))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VideoDenoise != null)
-                    hashCode = hashCode * 59 + this.VideoDenoise.GetHashCode();
-                if (this.VideoSharp != null)
-                    hashCode = hashCode * 59 + this.VideoSharp.GetHashCode();
-                if (this.VideoContrast != null)
-                    hashCode = hashCode * 59 + this.VideoContrast.GetHashCode();
-                if (this.VideoSuperresolution != null)
-                    hashCode = hashCode * 59 + this.VideoSuperresolution.GetHashCode();
-                if (this.VideoDeblock != null)
-                    hashCode = hashCode * 59 + this.VideoDeblock.GetHashCode();
-                if (this.VideoSaturation != null)
-                    hashCode = hashCode * 59 + this.VideoSaturation.GetHashCode();
+                var hashCode = 41;
+                if (this.VideoDenoise != null) hashCode = hashCode * 59 + this.VideoDenoise.GetHashCode();
+                if (this.VideoSharp != null) hashCode = hashCode * 59 + this.VideoSharp.GetHashCode();
+                if (this.VideoContrast != null) hashCode = hashCode * 59 + this.VideoContrast.GetHashCode();
+                if (this.VideoSuperresolution != null) hashCode = hashCode * 59 + this.VideoSuperresolution.GetHashCode();
+                if (this.VideoDeblock != null) hashCode = hashCode * 59 + this.VideoDeblock.GetHashCode();
+                if (this.VideoSaturation != null) hashCode = hashCode * 59 + this.VideoSaturation.GetHashCode();
                 return hashCode;
             }
         }

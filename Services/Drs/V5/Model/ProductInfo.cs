@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ProductInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.CloudServiceType != input.CloudServiceType || (this.CloudServiceType != null && !this.CloudServiceType.Equals(input.CloudServiceType))) return false;
+            if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
+            if (this.ResourceSpecCode != input.ResourceSpecCode || (this.ResourceSpecCode != null && !this.ResourceSpecCode.Equals(input.ResourceSpecCode))) return false;
+            if (this.ResourceSize != input.ResourceSize || (this.ResourceSize != null && !this.ResourceSize.Equals(input.ResourceSize))) return false;
+            if (this.UsageFactor != input.UsageFactor || (this.UsageFactor != null && !this.UsageFactor.Equals(input.UsageFactor))) return false;
+            if (this.UsageValue != input.UsageValue || (this.UsageValue != null && !this.UsageValue.Equals(input.UsageValue))) return false;
+            if (this.UsageMeasureId != input.UsageMeasureId || (this.UsageMeasureId != null && !this.UsageMeasureId.Equals(input.UsageMeasureId))) return false;
+            if (this.ResourceSizeMeasureId != input.ResourceSizeMeasureId || (this.ResourceSizeMeasureId != null && !this.ResourceSizeMeasureId.Equals(input.ResourceSizeMeasureId))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.CloudServiceType == input.CloudServiceType ||
-                    (this.CloudServiceType != null &&
-                    this.CloudServiceType.Equals(input.CloudServiceType))
-                ) && 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.ResourceSpecCode == input.ResourceSpecCode ||
-                    (this.ResourceSpecCode != null &&
-                    this.ResourceSpecCode.Equals(input.ResourceSpecCode))
-                ) && 
-                (
-                    this.ResourceSize == input.ResourceSize ||
-                    (this.ResourceSize != null &&
-                    this.ResourceSize.Equals(input.ResourceSize))
-                ) && 
-                (
-                    this.UsageFactor == input.UsageFactor ||
-                    (this.UsageFactor != null &&
-                    this.UsageFactor.Equals(input.UsageFactor))
-                ) && 
-                (
-                    this.UsageValue == input.UsageValue ||
-                    (this.UsageValue != null &&
-                    this.UsageValue.Equals(input.UsageValue))
-                ) && 
-                (
-                    this.UsageMeasureId == input.UsageMeasureId ||
-                    (this.UsageMeasureId != null &&
-                    this.UsageMeasureId.Equals(input.UsageMeasureId))
-                ) && 
-                (
-                    this.ResourceSizeMeasureId == input.ResourceSizeMeasureId ||
-                    (this.ResourceSizeMeasureId != null &&
-                    this.ResourceSizeMeasureId.Equals(input.ResourceSizeMeasureId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.CloudServiceType != null)
-                    hashCode = hashCode * 59 + this.CloudServiceType.GetHashCode();
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
-                if (this.ResourceSpecCode != null)
-                    hashCode = hashCode * 59 + this.ResourceSpecCode.GetHashCode();
-                if (this.ResourceSize != null)
-                    hashCode = hashCode * 59 + this.ResourceSize.GetHashCode();
-                if (this.UsageFactor != null)
-                    hashCode = hashCode * 59 + this.UsageFactor.GetHashCode();
-                if (this.UsageValue != null)
-                    hashCode = hashCode * 59 + this.UsageValue.GetHashCode();
-                if (this.UsageMeasureId != null)
-                    hashCode = hashCode * 59 + this.UsageMeasureId.GetHashCode();
-                if (this.ResourceSizeMeasureId != null)
-                    hashCode = hashCode * 59 + this.ResourceSizeMeasureId.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.CloudServiceType != null) hashCode = hashCode * 59 + this.CloudServiceType.GetHashCode();
+                if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.ResourceSpecCode != null) hashCode = hashCode * 59 + this.ResourceSpecCode.GetHashCode();
+                if (this.ResourceSize != null) hashCode = hashCode * 59 + this.ResourceSize.GetHashCode();
+                if (this.UsageFactor != null) hashCode = hashCode * 59 + this.UsageFactor.GetHashCode();
+                if (this.UsageValue != null) hashCode = hashCode * 59 + this.UsageValue.GetHashCode();
+                if (this.UsageMeasureId != null) hashCode = hashCode * 59 + this.UsageMeasureId.GetHashCode();
+                if (this.ResourceSizeMeasureId != null) hashCode = hashCode * 59 + this.ResourceSizeMeasureId.GetHashCode();
                 return hashCode;
             }
         }

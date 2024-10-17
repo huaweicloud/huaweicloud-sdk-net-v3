@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ShowMessagesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Messages != input.Messages || (this.Messages != null && input.Messages != null && !this.Messages.SequenceEqual(input.Messages))) return false;
+            if (this.MessagesCount != input.MessagesCount || (this.MessagesCount != null && !this.MessagesCount.Equals(input.MessagesCount))) return false;
+            if (this.OffsetsCount != input.OffsetsCount || (this.OffsetsCount != null && !this.OffsetsCount.Equals(input.OffsetsCount))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
 
-            return 
-                (
-                    this.Messages == input.Messages ||
-                    this.Messages != null &&
-                    input.Messages != null &&
-                    this.Messages.SequenceEqual(input.Messages)
-                ) && 
-                (
-                    this.MessagesCount == input.MessagesCount ||
-                    (this.MessagesCount != null &&
-                    this.MessagesCount.Equals(input.MessagesCount))
-                ) && 
-                (
-                    this.OffsetsCount == input.OffsetsCount ||
-                    (this.OffsetsCount != null &&
-                    this.OffsetsCount.Equals(input.OffsetsCount))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Messages != null)
-                    hashCode = hashCode * 59 + this.Messages.GetHashCode();
-                if (this.MessagesCount != null)
-                    hashCode = hashCode * 59 + this.MessagesCount.GetHashCode();
-                if (this.OffsetsCount != null)
-                    hashCode = hashCode * 59 + this.OffsetsCount.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                var hashCode = 41;
+                if (this.Messages != null) hashCode = hashCode * 59 + this.Messages.GetHashCode();
+                if (this.MessagesCount != null) hashCode = hashCode * 59 + this.MessagesCount.GetHashCode();
+                if (this.OffsetsCount != null) hashCode = hashCode * 59 + this.OffsetsCount.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
                 return hashCode;
             }
         }

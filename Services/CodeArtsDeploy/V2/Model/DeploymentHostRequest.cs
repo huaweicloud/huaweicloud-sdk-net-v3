@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(DeploymentHostRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HostName != input.HostName || (this.HostName != null && !this.HostName.Equals(input.HostName))) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
+            if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
+            if (this.AsProxy != input.AsProxy || (this.AsProxy != null && !this.AsProxy.Equals(input.AsProxy))) return false;
+            if (this.ProxyHostId != input.ProxyHostId || (this.ProxyHostId != null && !this.ProxyHostId.Equals(input.ProxyHostId))) return false;
+            if (this.Authorization != input.Authorization || (this.Authorization != null && !this.Authorization.Equals(input.Authorization))) return false;
+            if (this.InstallIcagent != input.InstallIcagent || (this.InstallIcagent != null && !this.InstallIcagent.Equals(input.InstallIcagent))) return false;
+            if (this.Sync != input.Sync || (this.Sync != null && !this.Sync.Equals(input.Sync))) return false;
 
-            return 
-                (
-                    this.HostName == input.HostName ||
-                    (this.HostName != null &&
-                    this.HostName.Equals(input.HostName))
-                ) && 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                ) && 
-                (
-                    this.Port == input.Port ||
-                    (this.Port != null &&
-                    this.Port.Equals(input.Port))
-                ) && 
-                (
-                    this.AsProxy == input.AsProxy ||
-                    (this.AsProxy != null &&
-                    this.AsProxy.Equals(input.AsProxy))
-                ) && 
-                (
-                    this.ProxyHostId == input.ProxyHostId ||
-                    (this.ProxyHostId != null &&
-                    this.ProxyHostId.Equals(input.ProxyHostId))
-                ) && 
-                (
-                    this.Authorization == input.Authorization ||
-                    (this.Authorization != null &&
-                    this.Authorization.Equals(input.Authorization))
-                ) && 
-                (
-                    this.InstallIcagent == input.InstallIcagent ||
-                    (this.InstallIcagent != null &&
-                    this.InstallIcagent.Equals(input.InstallIcagent))
-                ) && 
-                (
-                    this.Sync == input.Sync ||
-                    (this.Sync != null &&
-                    this.Sync.Equals(input.Sync))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HostName != null)
-                    hashCode = hashCode * 59 + this.HostName.GetHashCode();
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.Port != null)
-                    hashCode = hashCode * 59 + this.Port.GetHashCode();
-                if (this.AsProxy != null)
-                    hashCode = hashCode * 59 + this.AsProxy.GetHashCode();
-                if (this.ProxyHostId != null)
-                    hashCode = hashCode * 59 + this.ProxyHostId.GetHashCode();
-                if (this.Authorization != null)
-                    hashCode = hashCode * 59 + this.Authorization.GetHashCode();
-                if (this.InstallIcagent != null)
-                    hashCode = hashCode * 59 + this.InstallIcagent.GetHashCode();
-                if (this.Sync != null)
-                    hashCode = hashCode * 59 + this.Sync.GetHashCode();
+                var hashCode = 41;
+                if (this.HostName != null) hashCode = hashCode * 59 + this.HostName.GetHashCode();
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
+                if (this.AsProxy != null) hashCode = hashCode * 59 + this.AsProxy.GetHashCode();
+                if (this.ProxyHostId != null) hashCode = hashCode * 59 + this.ProxyHostId.GetHashCode();
+                if (this.Authorization != null) hashCode = hashCode * 59 + this.Authorization.GetHashCode();
+                if (this.InstallIcagent != null) hashCode = hashCode * 59 + this.InstallIcagent.GetHashCode();
+                if (this.Sync != null) hashCode = hashCode * 59 + this.Sync.GetHashCode();
                 return hashCode;
             }
         }

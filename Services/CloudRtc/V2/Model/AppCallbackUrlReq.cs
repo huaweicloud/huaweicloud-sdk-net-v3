@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         /// </summary>
         public bool Equals(AppCallbackUrlReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.AuthKey != input.AuthKey || (this.AuthKey != null && !this.AuthKey.Equals(input.AuthKey))) return false;
 
-            return 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.AuthKey == input.AuthKey ||
-                    (this.AuthKey != null &&
-                    this.AuthKey.Equals(input.AuthKey))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.AuthKey != null)
-                    hashCode = hashCode * 59 + this.AuthKey.GetHashCode();
+                var hashCode = 41;
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.AuthKey != null) hashCode = hashCode * 59 + this.AuthKey.GetHashCode();
                 return hashCode;
             }
         }

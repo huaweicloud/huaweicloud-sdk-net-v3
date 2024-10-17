@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(NovaAttachInterfaceFixedIp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IpAddress != input.IpAddress || (this.IpAddress != null && !this.IpAddress.Equals(input.IpAddress))) return false;
 
-            return 
-                (
-                    this.IpAddress == input.IpAddress ||
-                    (this.IpAddress != null &&
-                    this.IpAddress.Equals(input.IpAddress))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IpAddress != null)
-                    hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
+                var hashCode = 41;
+                if (this.IpAddress != null) hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
                 return hashCode;
             }
         }

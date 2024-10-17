@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(UpdateAccountResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Account != input.Account || (this.Account != null && !this.Account.Equals(input.Account))) return false;
 
-            return 
-                (
-                    this.Account == input.Account ||
-                    (this.Account != null &&
-                    this.Account.Equals(input.Account))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Account != null)
-                    hashCode = hashCode * 59 + this.Account.GetHashCode();
+                var hashCode = 41;
+                if (this.Account != null) hashCode = hashCode * 59 + this.Account.GetHashCode();
                 return hashCode;
             }
         }

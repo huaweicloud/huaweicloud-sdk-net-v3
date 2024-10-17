@@ -192,40 +192,15 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(DomainHttpsCertInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CertificateFormat != input.CertificateFormat) return false;
+            if (this.Certificate != input.Certificate || (this.Certificate != null && !this.Certificate.Equals(input.Certificate))) return false;
+            if (this.CertificateKey != input.CertificateKey || (this.CertificateKey != null && !this.CertificateKey.Equals(input.CertificateKey))) return false;
+            if (this.ForceRedirect != input.ForceRedirect || (this.ForceRedirect != null && !this.ForceRedirect.Equals(input.ForceRedirect))) return false;
+            if (this.GmCertificate != input.GmCertificate || (this.GmCertificate != null && !this.GmCertificate.Equals(input.GmCertificate))) return false;
+            if (this.TlsCertificate != input.TlsCertificate || (this.TlsCertificate != null && !this.TlsCertificate.Equals(input.TlsCertificate))) return false;
 
-            return 
-                (
-                    this.CertificateFormat == input.CertificateFormat ||
-                    (this.CertificateFormat != null &&
-                    this.CertificateFormat.Equals(input.CertificateFormat))
-                ) && 
-                (
-                    this.Certificate == input.Certificate ||
-                    (this.Certificate != null &&
-                    this.Certificate.Equals(input.Certificate))
-                ) && 
-                (
-                    this.CertificateKey == input.CertificateKey ||
-                    (this.CertificateKey != null &&
-                    this.CertificateKey.Equals(input.CertificateKey))
-                ) && 
-                (
-                    this.ForceRedirect == input.ForceRedirect ||
-                    (this.ForceRedirect != null &&
-                    this.ForceRedirect.Equals(input.ForceRedirect))
-                ) && 
-                (
-                    this.GmCertificate == input.GmCertificate ||
-                    (this.GmCertificate != null &&
-                    this.GmCertificate.Equals(input.GmCertificate))
-                ) && 
-                (
-                    this.TlsCertificate == input.TlsCertificate ||
-                    (this.TlsCertificate != null &&
-                    this.TlsCertificate.Equals(input.TlsCertificate))
-                );
+            return true;
         }
 
         /// <summary>
@@ -235,19 +210,13 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CertificateFormat != null)
-                    hashCode = hashCode * 59 + this.CertificateFormat.GetHashCode();
-                if (this.Certificate != null)
-                    hashCode = hashCode * 59 + this.Certificate.GetHashCode();
-                if (this.CertificateKey != null)
-                    hashCode = hashCode * 59 + this.CertificateKey.GetHashCode();
-                if (this.ForceRedirect != null)
-                    hashCode = hashCode * 59 + this.ForceRedirect.GetHashCode();
-                if (this.GmCertificate != null)
-                    hashCode = hashCode * 59 + this.GmCertificate.GetHashCode();
-                if (this.TlsCertificate != null)
-                    hashCode = hashCode * 59 + this.TlsCertificate.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.CertificateFormat.GetHashCode();
+                if (this.Certificate != null) hashCode = hashCode * 59 + this.Certificate.GetHashCode();
+                if (this.CertificateKey != null) hashCode = hashCode * 59 + this.CertificateKey.GetHashCode();
+                if (this.ForceRedirect != null) hashCode = hashCode * 59 + this.ForceRedirect.GetHashCode();
+                if (this.GmCertificate != null) hashCode = hashCode * 59 + this.GmCertificate.GetHashCode();
+                if (this.TlsCertificate != null) hashCode = hashCode * 59 + this.TlsCertificate.GetHashCode();
                 return hashCode;
             }
         }

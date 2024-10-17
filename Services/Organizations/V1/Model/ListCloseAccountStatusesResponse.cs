@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(ListCloseAccountStatusesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CloseAccountStatuses != input.CloseAccountStatuses || (this.CloseAccountStatuses != null && input.CloseAccountStatuses != null && !this.CloseAccountStatuses.SequenceEqual(input.CloseAccountStatuses))) return false;
 
-            return 
-                (
-                    this.CloseAccountStatuses == input.CloseAccountStatuses ||
-                    this.CloseAccountStatuses != null &&
-                    input.CloseAccountStatuses != null &&
-                    this.CloseAccountStatuses.SequenceEqual(input.CloseAccountStatuses)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CloseAccountStatuses != null)
-                    hashCode = hashCode * 59 + this.CloseAccountStatuses.GetHashCode();
+                var hashCode = 41;
+                if (this.CloseAccountStatuses != null) hashCode = hashCode * 59 + this.CloseAccountStatuses.GetHashCode();
                 return hashCode;
             }
         }

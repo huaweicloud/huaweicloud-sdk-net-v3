@@ -16,9 +16,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     public class BatchSwitchesRequest 
     {
         /// <summary>
-        /// OFF：关闭 ON：开启
+        /// 开关状态 - OFF: 关闭 - ON: 开启
         /// </summary>
-        /// <value>OFF：关闭 ON：开启</value>
+        /// <value>开关状态 - OFF: 关闭 - ON: 开启</value>
         [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
         public class StatusEnum
         {
@@ -132,13 +132,13 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
 
 
         /// <summary>
-        /// risk id, ids 中间逗号分隔
+        /// 规则ID,多个ID中间逗号分隔。可在查询风险规则策略接口ID字段获取。
         /// </summary>
         [JsonProperty("ids", NullValueHandling = NullValueHandling.Ignore)]
         public string Ids { get; set; }
 
         /// <summary>
-        /// OFF：关闭 ON：开启
+        /// 开关状态 - OFF: 关闭 - ON: 开启
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public StatusEnum Status { get; set; }
@@ -170,20 +170,11 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         public bool Equals(BatchSwitchesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Ids != input.Ids || (this.Ids != null && !this.Ids.Equals(input.Ids))) return false;
+            if (this.Status != input.Status) return false;
 
-            return 
-                (
-                    this.Ids == input.Ids ||
-                    (this.Ids != null &&
-                    this.Ids.Equals(input.Ids))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
+            return true;
         }
 
         /// <summary>
@@ -193,11 +184,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Ids != null)
-                    hashCode = hashCode * 59 + this.Ids.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                var hashCode = 41;
+                if (this.Ids != null) hashCode = hashCode * 59 + this.Ids.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

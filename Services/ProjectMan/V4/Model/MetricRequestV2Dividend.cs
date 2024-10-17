@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(MetricRequestV2Dividend input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CustomFields != input.CustomFields || (this.CustomFields != null && input.CustomFields != null && !this.CustomFields.SequenceEqual(input.CustomFields))) return false;
 
-            return 
-                (
-                    this.CustomFields == input.CustomFields ||
-                    this.CustomFields != null &&
-                    input.CustomFields != null &&
-                    this.CustomFields.SequenceEqual(input.CustomFields)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CustomFields != null)
-                    hashCode = hashCode * 59 + this.CustomFields.GetHashCode();
+                var hashCode = 41;
+                if (this.CustomFields != null) hashCode = hashCode * 59 + this.CustomFields.GetHashCode();
                 return hashCode;
             }
         }

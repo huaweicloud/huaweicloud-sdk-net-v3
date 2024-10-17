@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(ListQueryAllSearchCriteriasResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SearchCriterias != input.SearchCriterias || (this.SearchCriterias != null && input.SearchCriterias != null && !this.SearchCriterias.SequenceEqual(input.SearchCriterias))) return false;
 
-            return 
-                (
-                    this.SearchCriterias == input.SearchCriterias ||
-                    this.SearchCriterias != null &&
-                    input.SearchCriterias != null &&
-                    this.SearchCriterias.SequenceEqual(input.SearchCriterias)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SearchCriterias != null)
-                    hashCode = hashCode * 59 + this.SearchCriterias.GetHashCode();
+                var hashCode = 41;
+                if (this.SearchCriterias != null) hashCode = hashCode * 59 + this.SearchCriterias.GetHashCode();
                 return hashCode;
             }
         }

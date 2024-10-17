@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// </summary>
         public bool Equals(ShowDomainCertificateResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
+            if (this.CertInfo != input.CertInfo || (this.CertInfo != null && !this.CertInfo.Equals(input.CertInfo))) return false;
 
-            return 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
-                    this.DomainName == input.DomainName ||
-                    (this.DomainName != null &&
-                    this.DomainName.Equals(input.DomainName))
-                ) && 
-                (
-                    this.CertInfo == input.CertInfo ||
-                    (this.CertInfo != null &&
-                    this.CertInfo.Equals(input.CertInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.DomainName != null)
-                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.CertInfo != null)
-                    hashCode = hashCode * 59 + this.CertInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.CertInfo != null) hashCode = hashCode * 59 + this.CertInfo.GetHashCode();
                 return hashCode;
             }
         }

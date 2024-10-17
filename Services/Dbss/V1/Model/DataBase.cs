@@ -29,7 +29,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// 添加的数据库类型： 枚举值：  MYSQL  ORACLE  POSTGRESQL  SQLSERVER  DAMENG  TAURUS  DWS  KINGBASE  GAUSSDBOPENGAUSS   GREENPLUM   HIGHGO   SHENTONG   GBASE8A   GBASE8S   GBASEXDM   MONGODB   DDS
+        /// 添加的数据库类型： - MYSQL - ORACLE - POSTGRESQL - SQLSERVER - DAMENG - TAURUS - DWS - KINGBASE - GAUSSDBOPENGAUSS - GREENPLUM - HIGHGO - SHENTONG - GBASE8A - GBASE8S - GBASEXDM - MONGODB - DDS
         /// </summary>
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
         public string Type { get; set; }
@@ -41,7 +41,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Version { get; set; }
 
         /// <summary>
-        /// 数据库字符集
+        /// 数据库字符集 - GBK - UTF8
         /// </summary>
         [JsonProperty("charset", NullValueHandling = NullValueHandling.Ignore)]
         public string Charset { get; set; }
@@ -65,7 +65,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string Os { get; set; }
 
         /// <summary>
-        /// 开启状态（1：开启，0：关闭）
+        /// 实例状态 - ON :开启 - OFF : 关闭
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
         public string Status { get; set; }
@@ -77,7 +77,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public string InstanceName { get; set; }
 
         /// <summary>
-        /// 数据库的运行状态 枚举值：  ACTIVE  SHUTOFF  ERROR
+        /// 数据库的运行状态 - ACTIVE - SHUTOFF - ERROR
         /// </summary>
         [JsonProperty("audit_status", NullValueHandling = NullValueHandling.Ignore)]
         public string AuditStatus { get; set; }
@@ -89,10 +89,40 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         public List<string> AgentUrl { get; set; }
 
         /// <summary>
-        /// 数据库分类，取值范围： RDS（表示RDS数据库）和 ECS（自建数据库）
+        /// 数据库分类 - RDS: 表示RDS数据库 - ECS:自建数据库
         /// </summary>
         [JsonProperty("db_classification", NullValueHandling = NullValueHandling.Ignore)]
         public string DbClassification { get; set; }
+
+        /// <summary>
+        /// rds实例审计开关状态不匹配。当数据库审计开启且rds侧日志上传开关关闭时该字段为true。
+        /// </summary>
+        [JsonProperty("rds_audit_switch_mismatch", NullValueHandling = NullValueHandling.Ignore)]
+        public bool? RdsAuditSwitchMismatch { get; set; }
+
+        /// <summary>
+        /// RDS数据库的ID。
+        /// </summary>
+        [JsonProperty("rds_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string RdsId { get; set; }
+
+        /// <summary>
+        /// RDS数据库信息。
+        /// </summary>
+        [JsonProperty("rds_obj_info", NullValueHandling = NullValueHandling.Ignore)]
+        public string RdsObjInfo { get; set; }
+
+        /// <summary>
+        /// DWS数据库信息。
+        /// </summary>
+        [JsonProperty("dws_obj_info", NullValueHandling = NullValueHandling.Ignore)]
+        public string DwsObjInfo { get; set; }
+
+        /// <summary>
+        /// 云数据库信息，该字段已废弃。
+        /// </summary>
+        [JsonProperty("clouddb_obj_info", NullValueHandling = NullValueHandling.Ignore)]
+        public string ClouddbObjInfo { get; set; }
 
 
 
@@ -116,6 +146,11 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             sb.Append("  auditStatus: ").Append(AuditStatus).Append("\n");
             sb.Append("  agentUrl: ").Append(AgentUrl).Append("\n");
             sb.Append("  dbClassification: ").Append(DbClassification).Append("\n");
+            sb.Append("  rdsAuditSwitchMismatch: ").Append(RdsAuditSwitchMismatch).Append("\n");
+            sb.Append("  rdsId: ").Append(RdsId).Append("\n");
+            sb.Append("  rdsObjInfo: ").Append(RdsObjInfo).Append("\n");
+            sb.Append("  dwsObjInfo: ").Append(DwsObjInfo).Append("\n");
+            sb.Append("  clouddbObjInfo: ").Append(ClouddbObjInfo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -133,76 +168,27 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         public bool Equals(DataBase input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.Charset != input.Charset || (this.Charset != null && !this.Charset.Equals(input.Charset))) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
+            if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
+            if (this.Os != input.Os || (this.Os != null && !this.Os.Equals(input.Os))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.InstanceName != input.InstanceName || (this.InstanceName != null && !this.InstanceName.Equals(input.InstanceName))) return false;
+            if (this.AuditStatus != input.AuditStatus || (this.AuditStatus != null && !this.AuditStatus.Equals(input.AuditStatus))) return false;
+            if (this.AgentUrl != input.AgentUrl || (this.AgentUrl != null && input.AgentUrl != null && !this.AgentUrl.SequenceEqual(input.AgentUrl))) return false;
+            if (this.DbClassification != input.DbClassification || (this.DbClassification != null && !this.DbClassification.Equals(input.DbClassification))) return false;
+            if (this.RdsAuditSwitchMismatch != input.RdsAuditSwitchMismatch || (this.RdsAuditSwitchMismatch != null && !this.RdsAuditSwitchMismatch.Equals(input.RdsAuditSwitchMismatch))) return false;
+            if (this.RdsId != input.RdsId || (this.RdsId != null && !this.RdsId.Equals(input.RdsId))) return false;
+            if (this.RdsObjInfo != input.RdsObjInfo || (this.RdsObjInfo != null && !this.RdsObjInfo.Equals(input.RdsObjInfo))) return false;
+            if (this.DwsObjInfo != input.DwsObjInfo || (this.DwsObjInfo != null && !this.DwsObjInfo.Equals(input.DwsObjInfo))) return false;
+            if (this.ClouddbObjInfo != input.ClouddbObjInfo || (this.ClouddbObjInfo != null && !this.ClouddbObjInfo.Equals(input.ClouddbObjInfo))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.Charset == input.Charset ||
-                    (this.Charset != null &&
-                    this.Charset.Equals(input.Charset))
-                ) && 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                ) && 
-                (
-                    this.Port == input.Port ||
-                    (this.Port != null &&
-                    this.Port.Equals(input.Port))
-                ) && 
-                (
-                    this.Os == input.Os ||
-                    (this.Os != null &&
-                    this.Os.Equals(input.Os))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.InstanceName == input.InstanceName ||
-                    (this.InstanceName != null &&
-                    this.InstanceName.Equals(input.InstanceName))
-                ) && 
-                (
-                    this.AuditStatus == input.AuditStatus ||
-                    (this.AuditStatus != null &&
-                    this.AuditStatus.Equals(input.AuditStatus))
-                ) && 
-                (
-                    this.AgentUrl == input.AgentUrl ||
-                    this.AgentUrl != null &&
-                    input.AgentUrl != null &&
-                    this.AgentUrl.SequenceEqual(input.AgentUrl)
-                ) && 
-                (
-                    this.DbClassification == input.DbClassification ||
-                    (this.DbClassification != null &&
-                    this.DbClassification.Equals(input.DbClassification))
-                );
+            return true;
         }
 
         /// <summary>
@@ -212,33 +198,25 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.Charset != null)
-                    hashCode = hashCode * 59 + this.Charset.GetHashCode();
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.Port != null)
-                    hashCode = hashCode * 59 + this.Port.GetHashCode();
-                if (this.Os != null)
-                    hashCode = hashCode * 59 + this.Os.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.InstanceName != null)
-                    hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
-                if (this.AuditStatus != null)
-                    hashCode = hashCode * 59 + this.AuditStatus.GetHashCode();
-                if (this.AgentUrl != null)
-                    hashCode = hashCode * 59 + this.AgentUrl.GetHashCode();
-                if (this.DbClassification != null)
-                    hashCode = hashCode * 59 + this.DbClassification.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.Charset != null) hashCode = hashCode * 59 + this.Charset.GetHashCode();
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
+                if (this.Os != null) hashCode = hashCode * 59 + this.Os.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.InstanceName != null) hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
+                if (this.AuditStatus != null) hashCode = hashCode * 59 + this.AuditStatus.GetHashCode();
+                if (this.AgentUrl != null) hashCode = hashCode * 59 + this.AgentUrl.GetHashCode();
+                if (this.DbClassification != null) hashCode = hashCode * 59 + this.DbClassification.GetHashCode();
+                if (this.RdsAuditSwitchMismatch != null) hashCode = hashCode * 59 + this.RdsAuditSwitchMismatch.GetHashCode();
+                if (this.RdsId != null) hashCode = hashCode * 59 + this.RdsId.GetHashCode();
+                if (this.RdsObjInfo != null) hashCode = hashCode * 59 + this.RdsObjInfo.GetHashCode();
+                if (this.DwsObjInfo != null) hashCode = hashCode * 59 + this.DwsObjInfo.GetHashCode();
+                if (this.ClouddbObjInfo != null) hashCode = hashCode * 59 + this.ClouddbObjInfo.GetHashCode();
                 return hashCode;
             }
         }

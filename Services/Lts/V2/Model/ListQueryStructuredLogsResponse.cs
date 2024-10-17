@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(ListQueryStructuredLogsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StructLogs != input.StructLogs || (this.StructLogs != null && input.StructLogs != null && !this.StructLogs.SequenceEqual(input.StructLogs))) return false;
 
-            return 
-                (
-                    this.StructLogs == input.StructLogs ||
-                    this.StructLogs != null &&
-                    input.StructLogs != null &&
-                    this.StructLogs.SequenceEqual(input.StructLogs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StructLogs != null)
-                    hashCode = hashCode * 59 + this.StructLogs.GetHashCode();
+                var hashCode = 41;
+                if (this.StructLogs != null) hashCode = hashCode * 59 + this.StructLogs.GetHashCode();
                 return hashCode;
             }
         }

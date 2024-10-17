@@ -562,39 +562,14 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// </summary>
         public bool Equals(ListInternetBandwidthLimitsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Fields != input.Fields || (this.Fields != null && input.Fields != null && !this.Fields.SequenceEqual(input.Fields))) return false;
+            if (this.SortKey != input.SortKey || (this.SortKey != null && input.SortKey != null && !this.SortKey.SequenceEqual(input.SortKey))) return false;
+            if (this.SortDir != input.SortDir || (this.SortDir != null && input.SortDir != null && !this.SortDir.SequenceEqual(input.SortDir))) return false;
+            if (this.ChargeMode != input.ChargeMode || (this.ChargeMode != null && input.ChargeMode != null && !this.ChargeMode.SequenceEqual(input.ChargeMode))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
 
-            return 
-                (
-                    this.Fields == input.Fields ||
-                    this.Fields != null &&
-                    input.Fields != null &&
-                    this.Fields.SequenceEqual(input.Fields)
-                ) && 
-                (
-                    this.SortKey == input.SortKey ||
-                    this.SortKey != null &&
-                    input.SortKey != null &&
-                    this.SortKey.SequenceEqual(input.SortKey)
-                ) && 
-                (
-                    this.SortDir == input.SortDir ||
-                    this.SortDir != null &&
-                    input.SortDir != null &&
-                    this.SortDir.SequenceEqual(input.SortDir)
-                ) && 
-                (
-                    this.ChargeMode == input.ChargeMode ||
-                    this.ChargeMode != null &&
-                    input.ChargeMode != null &&
-                    this.ChargeMode.SequenceEqual(input.ChargeMode)
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                );
+            return true;
         }
 
         /// <summary>
@@ -604,17 +579,12 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Fields != null)
-                    hashCode = hashCode * 59 + this.Fields.GetHashCode();
-                if (this.SortKey != null)
-                    hashCode = hashCode * 59 + this.SortKey.GetHashCode();
-                if (this.SortDir != null)
-                    hashCode = hashCode * 59 + this.SortDir.GetHashCode();
-                if (this.ChargeMode != null)
-                    hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Fields.GetHashCode();
+                hashCode = hashCode * 59 + this.SortKey.GetHashCode();
+                hashCode = hashCode * 59 + this.SortDir.GetHashCode();
+                hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

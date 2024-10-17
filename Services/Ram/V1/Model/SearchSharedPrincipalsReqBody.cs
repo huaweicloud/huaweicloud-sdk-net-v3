@@ -198,42 +198,15 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         /// </summary>
         public bool Equals(SearchSharedPrincipalsReqBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.Principals != input.Principals || (this.Principals != null && input.Principals != null && !this.Principals.SequenceEqual(input.Principals))) return false;
+            if (this.ResourceUrn != input.ResourceUrn || (this.ResourceUrn != null && !this.ResourceUrn.Equals(input.ResourceUrn))) return false;
+            if (this.ResourceOwner != input.ResourceOwner) return false;
+            if (this.ResourceShareIds != input.ResourceShareIds || (this.ResourceShareIds != null && input.ResourceShareIds != null && !this.ResourceShareIds.SequenceEqual(input.ResourceShareIds))) return false;
 
-            return 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.Principals == input.Principals ||
-                    this.Principals != null &&
-                    input.Principals != null &&
-                    this.Principals.SequenceEqual(input.Principals)
-                ) && 
-                (
-                    this.ResourceUrn == input.ResourceUrn ||
-                    (this.ResourceUrn != null &&
-                    this.ResourceUrn.Equals(input.ResourceUrn))
-                ) && 
-                (
-                    this.ResourceOwner == input.ResourceOwner ||
-                    (this.ResourceOwner != null &&
-                    this.ResourceOwner.Equals(input.ResourceOwner))
-                ) && 
-                (
-                    this.ResourceShareIds == input.ResourceShareIds ||
-                    this.ResourceShareIds != null &&
-                    input.ResourceShareIds != null &&
-                    this.ResourceShareIds.SequenceEqual(input.ResourceShareIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -243,19 +216,13 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Principals != null)
-                    hashCode = hashCode * 59 + this.Principals.GetHashCode();
-                if (this.ResourceUrn != null)
-                    hashCode = hashCode * 59 + this.ResourceUrn.GetHashCode();
-                if (this.ResourceOwner != null)
-                    hashCode = hashCode * 59 + this.ResourceOwner.GetHashCode();
-                if (this.ResourceShareIds != null)
-                    hashCode = hashCode * 59 + this.ResourceShareIds.GetHashCode();
+                var hashCode = 41;
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Principals != null) hashCode = hashCode * 59 + this.Principals.GetHashCode();
+                if (this.ResourceUrn != null) hashCode = hashCode * 59 + this.ResourceUrn.GetHashCode();
+                hashCode = hashCode * 59 + this.ResourceOwner.GetHashCode();
+                if (this.ResourceShareIds != null) hashCode = hashCode * 59 + this.ResourceShareIds.GetHashCode();
                 return hashCode;
             }
         }

@@ -170,21 +170,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(SubscriptionInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Endpoints != input.Endpoints || (this.Endpoints != null && input.Endpoints != null && !this.Endpoints.SequenceEqual(input.Endpoints))) return false;
+            if (this.Protocol != input.Protocol) return false;
 
-            return 
-                (
-                    this.Endpoints == input.Endpoints ||
-                    this.Endpoints != null &&
-                    input.Endpoints != null &&
-                    this.Endpoints.SequenceEqual(input.Endpoints)
-                ) && 
-                (
-                    this.Protocol == input.Protocol ||
-                    (this.Protocol != null &&
-                    this.Protocol.Equals(input.Protocol))
-                );
+            return true;
         }
 
         /// <summary>
@@ -194,11 +184,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Endpoints != null)
-                    hashCode = hashCode * 59 + this.Endpoints.GetHashCode();
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                var hashCode = 41;
+                if (this.Endpoints != null) hashCode = hashCode * 59 + this.Endpoints.GetHashCode();
+                hashCode = hashCode * 59 + this.Protocol.GetHashCode();
                 return hashCode;
             }
         }

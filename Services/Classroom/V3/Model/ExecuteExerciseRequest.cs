@@ -66,25 +66,12 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         /// </summary>
         public bool Equals(ExecuteExerciseRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UserToken != input.UserToken || (this.UserToken != null && !this.UserToken.Equals(input.UserToken))) return false;
+            if (this.ExerciseId != input.ExerciseId || (this.ExerciseId != null && !this.ExerciseId.Equals(input.ExerciseId))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
-            return 
-                (
-                    this.UserToken == input.UserToken ||
-                    (this.UserToken != null &&
-                    this.UserToken.Equals(input.UserToken))
-                ) && 
-                (
-                    this.ExerciseId == input.ExerciseId ||
-                    (this.ExerciseId != null &&
-                    this.ExerciseId.Equals(input.ExerciseId))
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +81,10 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UserToken != null)
-                    hashCode = hashCode * 59 + this.UserToken.GetHashCode();
-                if (this.ExerciseId != null)
-                    hashCode = hashCode * 59 + this.ExerciseId.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                var hashCode = 41;
+                if (this.UserToken != null) hashCode = hashCode * 59 + this.UserToken.GetHashCode();
+                if (this.ExerciseId != null) hashCode = hashCode * 59 + this.ExerciseId.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

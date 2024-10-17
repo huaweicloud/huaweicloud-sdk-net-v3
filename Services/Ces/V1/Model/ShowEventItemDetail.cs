@@ -351,56 +351,18 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// </summary>
         public bool Equals(ShowEventItemDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Content != input.Content || (this.Content != null && !this.Content.Equals(input.Content))) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
+            if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
+            if (this.EventState != input.EventState) return false;
+            if (this.EventLevel != input.EventLevel) return false;
+            if (this.EventUser != input.EventUser || (this.EventUser != null && !this.EventUser.Equals(input.EventUser))) return false;
+            if (this.EventType != input.EventType || (this.EventType != null && !this.EventType.Equals(input.EventType))) return false;
+            if (this.Dimensions != input.Dimensions || (this.Dimensions != null && input.Dimensions != null && !this.Dimensions.SequenceEqual(input.Dimensions))) return false;
 
-            return 
-                (
-                    this.Content == input.Content ||
-                    (this.Content != null &&
-                    this.Content.Equals(input.Content))
-                ) && 
-                (
-                    this.GroupId == input.GroupId ||
-                    (this.GroupId != null &&
-                    this.GroupId.Equals(input.GroupId))
-                ) && 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
-                ) && 
-                (
-                    this.ResourceName == input.ResourceName ||
-                    (this.ResourceName != null &&
-                    this.ResourceName.Equals(input.ResourceName))
-                ) && 
-                (
-                    this.EventState == input.EventState ||
-                    (this.EventState != null &&
-                    this.EventState.Equals(input.EventState))
-                ) && 
-                (
-                    this.EventLevel == input.EventLevel ||
-                    (this.EventLevel != null &&
-                    this.EventLevel.Equals(input.EventLevel))
-                ) && 
-                (
-                    this.EventUser == input.EventUser ||
-                    (this.EventUser != null &&
-                    this.EventUser.Equals(input.EventUser))
-                ) && 
-                (
-                    this.EventType == input.EventType ||
-                    (this.EventType != null &&
-                    this.EventType.Equals(input.EventType))
-                ) && 
-                (
-                    this.Dimensions == input.Dimensions ||
-                    this.Dimensions != null &&
-                    input.Dimensions != null &&
-                    this.Dimensions.SequenceEqual(input.Dimensions)
-                );
+            return true;
         }
 
         /// <summary>
@@ -410,25 +372,16 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Content != null)
-                    hashCode = hashCode * 59 + this.Content.GetHashCode();
-                if (this.GroupId != null)
-                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
-                if (this.ResourceId != null)
-                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
-                if (this.ResourceName != null)
-                    hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
-                if (this.EventState != null)
-                    hashCode = hashCode * 59 + this.EventState.GetHashCode();
-                if (this.EventLevel != null)
-                    hashCode = hashCode * 59 + this.EventLevel.GetHashCode();
-                if (this.EventUser != null)
-                    hashCode = hashCode * 59 + this.EventUser.GetHashCode();
-                if (this.EventType != null)
-                    hashCode = hashCode * 59 + this.EventType.GetHashCode();
-                if (this.Dimensions != null)
-                    hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
+                var hashCode = 41;
+                if (this.Content != null) hashCode = hashCode * 59 + this.Content.GetHashCode();
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
+                hashCode = hashCode * 59 + this.EventState.GetHashCode();
+                hashCode = hashCode * 59 + this.EventLevel.GetHashCode();
+                if (this.EventUser != null) hashCode = hashCode * 59 + this.EventUser.GetHashCode();
+                if (this.EventType != null) hashCode = hashCode * 59 + this.EventType.GetHashCode();
+                if (this.Dimensions != null) hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
                 return hashCode;
             }
         }

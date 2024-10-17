@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(AddIssueWorkHoursRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StartDate != input.StartDate || (this.StartDate != null && !this.StartDate.Equals(input.StartDate))) return false;
+            if (this.DueDate != input.DueDate || (this.DueDate != null && !this.DueDate.Equals(input.DueDate))) return false;
+            if (this.WorkHours != input.WorkHours || (this.WorkHours != null && !this.WorkHours.Equals(input.WorkHours))) return false;
+            if (this.WorkHoursTypeId != input.WorkHoursTypeId || (this.WorkHoursTypeId != null && !this.WorkHoursTypeId.Equals(input.WorkHoursTypeId))) return false;
 
-            return 
-                (
-                    this.StartDate == input.StartDate ||
-                    (this.StartDate != null &&
-                    this.StartDate.Equals(input.StartDate))
-                ) && 
-                (
-                    this.DueDate == input.DueDate ||
-                    (this.DueDate != null &&
-                    this.DueDate.Equals(input.DueDate))
-                ) && 
-                (
-                    this.WorkHours == input.WorkHours ||
-                    (this.WorkHours != null &&
-                    this.WorkHours.Equals(input.WorkHours))
-                ) && 
-                (
-                    this.WorkHoursTypeId == input.WorkHoursTypeId ||
-                    (this.WorkHoursTypeId != null &&
-                    this.WorkHoursTypeId.Equals(input.WorkHoursTypeId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StartDate != null)
-                    hashCode = hashCode * 59 + this.StartDate.GetHashCode();
-                if (this.DueDate != null)
-                    hashCode = hashCode * 59 + this.DueDate.GetHashCode();
-                if (this.WorkHours != null)
-                    hashCode = hashCode * 59 + this.WorkHours.GetHashCode();
-                if (this.WorkHoursTypeId != null)
-                    hashCode = hashCode * 59 + this.WorkHoursTypeId.GetHashCode();
+                var hashCode = 41;
+                if (this.StartDate != null) hashCode = hashCode * 59 + this.StartDate.GetHashCode();
+                if (this.DueDate != null) hashCode = hashCode * 59 + this.DueDate.GetHashCode();
+                if (this.WorkHours != null) hashCode = hashCode * 59 + this.WorkHours.GetHashCode();
+                if (this.WorkHoursTypeId != null) hashCode = hashCode * 59 + this.WorkHoursTypeId.GetHashCode();
                 return hashCode;
             }
         }

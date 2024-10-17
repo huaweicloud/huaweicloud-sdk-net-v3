@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         /// </summary>
         public bool Equals(Version input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VersionMetadata != input.VersionMetadata || (this.VersionMetadata != null && !this.VersionMetadata.Equals(input.VersionMetadata))) return false;
+            if (this.SecretBinary != input.SecretBinary || (this.SecretBinary != null && !this.SecretBinary.Equals(input.SecretBinary))) return false;
+            if (this.SecretString != input.SecretString || (this.SecretString != null && !this.SecretString.Equals(input.SecretString))) return false;
 
-            return 
-                (
-                    this.VersionMetadata == input.VersionMetadata ||
-                    (this.VersionMetadata != null &&
-                    this.VersionMetadata.Equals(input.VersionMetadata))
-                ) && 
-                (
-                    this.SecretBinary == input.SecretBinary ||
-                    (this.SecretBinary != null &&
-                    this.SecretBinary.Equals(input.SecretBinary))
-                ) && 
-                (
-                    this.SecretString == input.SecretString ||
-                    (this.SecretString != null &&
-                    this.SecretString.Equals(input.SecretString))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VersionMetadata != null)
-                    hashCode = hashCode * 59 + this.VersionMetadata.GetHashCode();
-                if (this.SecretBinary != null)
-                    hashCode = hashCode * 59 + this.SecretBinary.GetHashCode();
-                if (this.SecretString != null)
-                    hashCode = hashCode * 59 + this.SecretString.GetHashCode();
+                var hashCode = 41;
+                if (this.VersionMetadata != null) hashCode = hashCode * 59 + this.VersionMetadata.GetHashCode();
+                if (this.SecretBinary != null) hashCode = hashCode * 59 + this.SecretBinary.GetHashCode();
+                if (this.SecretString != null) hashCode = hashCode * 59 + this.SecretString.GetHashCode();
                 return hashCode;
             }
         }

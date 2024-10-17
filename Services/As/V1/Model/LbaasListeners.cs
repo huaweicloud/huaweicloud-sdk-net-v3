@@ -184,30 +184,13 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(LbaasListeners input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PoolId != input.PoolId || (this.PoolId != null && !this.PoolId.Equals(input.PoolId))) return false;
+            if (this.ProtocolPort != input.ProtocolPort || (this.ProtocolPort != null && !this.ProtocolPort.Equals(input.ProtocolPort))) return false;
+            if (this.Weight != input.Weight || (this.Weight != null && !this.Weight.Equals(input.Weight))) return false;
+            if (this.ProtocolVersion != input.ProtocolVersion) return false;
 
-            return 
-                (
-                    this.PoolId == input.PoolId ||
-                    (this.PoolId != null &&
-                    this.PoolId.Equals(input.PoolId))
-                ) && 
-                (
-                    this.ProtocolPort == input.ProtocolPort ||
-                    (this.ProtocolPort != null &&
-                    this.ProtocolPort.Equals(input.ProtocolPort))
-                ) && 
-                (
-                    this.Weight == input.Weight ||
-                    (this.Weight != null &&
-                    this.Weight.Equals(input.Weight))
-                ) && 
-                (
-                    this.ProtocolVersion == input.ProtocolVersion ||
-                    (this.ProtocolVersion != null &&
-                    this.ProtocolVersion.Equals(input.ProtocolVersion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -217,15 +200,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PoolId != null)
-                    hashCode = hashCode * 59 + this.PoolId.GetHashCode();
-                if (this.ProtocolPort != null)
-                    hashCode = hashCode * 59 + this.ProtocolPort.GetHashCode();
-                if (this.Weight != null)
-                    hashCode = hashCode * 59 + this.Weight.GetHashCode();
-                if (this.ProtocolVersion != null)
-                    hashCode = hashCode * 59 + this.ProtocolVersion.GetHashCode();
+                var hashCode = 41;
+                if (this.PoolId != null) hashCode = hashCode * 59 + this.PoolId.GetHashCode();
+                if (this.ProtocolPort != null) hashCode = hashCode * 59 + this.ProtocolPort.GetHashCode();
+                if (this.Weight != null) hashCode = hashCode * 59 + this.Weight.GetHashCode();
+                hashCode = hashCode * 59 + this.ProtocolVersion.GetHashCode();
                 return hashCode;
             }
         }

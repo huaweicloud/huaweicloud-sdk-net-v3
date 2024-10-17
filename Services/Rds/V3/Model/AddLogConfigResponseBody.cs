@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(AddLogConfigResponseBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LogConfigs != input.LogConfigs || (this.LogConfigs != null && input.LogConfigs != null && !this.LogConfigs.SequenceEqual(input.LogConfigs))) return false;
 
-            return 
-                (
-                    this.LogConfigs == input.LogConfigs ||
-                    this.LogConfigs != null &&
-                    input.LogConfigs != null &&
-                    this.LogConfigs.SequenceEqual(input.LogConfigs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LogConfigs != null)
-                    hashCode = hashCode * 59 + this.LogConfigs.GetHashCode();
+                var hashCode = 41;
+                if (this.LogConfigs != null) hashCode = hashCode * 59 + this.LogConfigs.GetHashCode();
                 return hashCode;
             }
         }

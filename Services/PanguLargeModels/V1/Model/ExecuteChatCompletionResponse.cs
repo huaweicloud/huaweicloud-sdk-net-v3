@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.PanguLargeModels.V1.Model
         /// </summary>
         public bool Equals(ExecuteChatCompletionResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Created != input.Created || (this.Created != null && !this.Created.Equals(input.Created))) return false;
+            if (this.Choices != input.Choices || (this.Choices != null && input.Choices != null && !this.Choices.SequenceEqual(input.Choices))) return false;
+            if (this.Usage != input.Usage || (this.Usage != null && !this.Usage.Equals(input.Usage))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Created == input.Created ||
-                    (this.Created != null &&
-                    this.Created.Equals(input.Created))
-                ) && 
-                (
-                    this.Choices == input.Choices ||
-                    this.Choices != null &&
-                    input.Choices != null &&
-                    this.Choices.SequenceEqual(input.Choices)
-                ) && 
-                (
-                    this.Usage == input.Usage ||
-                    (this.Usage != null &&
-                    this.Usage.Equals(input.Usage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.PanguLargeModels.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Created != null)
-                    hashCode = hashCode * 59 + this.Created.GetHashCode();
-                if (this.Choices != null)
-                    hashCode = hashCode * 59 + this.Choices.GetHashCode();
-                if (this.Usage != null)
-                    hashCode = hashCode * 59 + this.Usage.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Created != null) hashCode = hashCode * 59 + this.Created.GetHashCode();
+                if (this.Choices != null) hashCode = hashCode * 59 + this.Choices.GetHashCode();
+                if (this.Usage != null) hashCode = hashCode * 59 + this.Usage.GetHashCode();
                 return hashCode;
             }
         }

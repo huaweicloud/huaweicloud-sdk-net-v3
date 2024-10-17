@@ -84,41 +84,15 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(ModifyOttChannelInfoEndPointsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResultCode != input.ResultCode || (this.ResultCode != null && !this.ResultCode.Equals(input.ResultCode))) return false;
+            if (this.ResultMsg != input.ResultMsg || (this.ResultMsg != null && !this.ResultMsg.Equals(input.ResultMsg))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
+            if (this.AppName != input.AppName || (this.AppName != null && !this.AppName.Equals(input.AppName))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Sources != input.Sources || (this.Sources != null && input.Sources != null && !this.Sources.SequenceEqual(input.Sources))) return false;
 
-            return 
-                (
-                    this.ResultCode == input.ResultCode ||
-                    (this.ResultCode != null &&
-                    this.ResultCode.Equals(input.ResultCode))
-                ) && 
-                (
-                    this.ResultMsg == input.ResultMsg ||
-                    (this.ResultMsg != null &&
-                    this.ResultMsg.Equals(input.ResultMsg))
-                ) && 
-                (
-                    this.Domain == input.Domain ||
-                    (this.Domain != null &&
-                    this.Domain.Equals(input.Domain))
-                ) && 
-                (
-                    this.AppName == input.AppName ||
-                    (this.AppName != null &&
-                    this.AppName.Equals(input.AppName))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Sources == input.Sources ||
-                    this.Sources != null &&
-                    input.Sources != null &&
-                    this.Sources.SequenceEqual(input.Sources)
-                );
+            return true;
         }
 
         /// <summary>
@@ -128,19 +102,13 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResultCode != null)
-                    hashCode = hashCode * 59 + this.ResultCode.GetHashCode();
-                if (this.ResultMsg != null)
-                    hashCode = hashCode * 59 + this.ResultMsg.GetHashCode();
-                if (this.Domain != null)
-                    hashCode = hashCode * 59 + this.Domain.GetHashCode();
-                if (this.AppName != null)
-                    hashCode = hashCode * 59 + this.AppName.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Sources != null)
-                    hashCode = hashCode * 59 + this.Sources.GetHashCode();
+                var hashCode = 41;
+                if (this.ResultCode != null) hashCode = hashCode * 59 + this.ResultCode.GetHashCode();
+                if (this.ResultMsg != null) hashCode = hashCode * 59 + this.ResultMsg.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                if (this.AppName != null) hashCode = hashCode * 59 + this.AppName.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Sources != null) hashCode = hashCode * 59 + this.Sources.GetHashCode();
                 return hashCode;
             }
         }

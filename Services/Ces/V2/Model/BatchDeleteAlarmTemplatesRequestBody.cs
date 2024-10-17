@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(BatchDeleteAlarmTemplatesRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TemplateIds != input.TemplateIds || (this.TemplateIds != null && input.TemplateIds != null && !this.TemplateIds.SequenceEqual(input.TemplateIds))) return false;
+            if (this.DeleteAssociateAlarm != input.DeleteAssociateAlarm || (this.DeleteAssociateAlarm != null && !this.DeleteAssociateAlarm.Equals(input.DeleteAssociateAlarm))) return false;
 
-            return 
-                (
-                    this.TemplateIds == input.TemplateIds ||
-                    this.TemplateIds != null &&
-                    input.TemplateIds != null &&
-                    this.TemplateIds.SequenceEqual(input.TemplateIds)
-                ) && 
-                (
-                    this.DeleteAssociateAlarm == input.DeleteAssociateAlarm ||
-                    (this.DeleteAssociateAlarm != null &&
-                    this.DeleteAssociateAlarm.Equals(input.DeleteAssociateAlarm))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TemplateIds != null)
-                    hashCode = hashCode * 59 + this.TemplateIds.GetHashCode();
-                if (this.DeleteAssociateAlarm != null)
-                    hashCode = hashCode * 59 + this.DeleteAssociateAlarm.GetHashCode();
+                var hashCode = 41;
+                if (this.TemplateIds != null) hashCode = hashCode * 59 + this.TemplateIds.GetHashCode();
+                if (this.DeleteAssociateAlarm != null) hashCode = hashCode * 59 + this.DeleteAssociateAlarm.GetHashCode();
                 return hashCode;
             }
         }

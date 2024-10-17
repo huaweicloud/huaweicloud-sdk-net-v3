@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         public bool Equals(ListOsVersionsResponseBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Platform != input.Platform || (this.Platform != null && !this.Platform.Equals(input.Platform))) return false;
+            if (this.VersionList != input.VersionList || (this.VersionList != null && input.VersionList != null && !this.VersionList.SequenceEqual(input.VersionList))) return false;
 
-            return 
-                (
-                    this.Platform == input.Platform ||
-                    (this.Platform != null &&
-                    this.Platform.Equals(input.Platform))
-                ) && 
-                (
-                    this.VersionList == input.VersionList ||
-                    this.VersionList != null &&
-                    input.VersionList != null &&
-                    this.VersionList.SequenceEqual(input.VersionList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Platform != null)
-                    hashCode = hashCode * 59 + this.Platform.GetHashCode();
-                if (this.VersionList != null)
-                    hashCode = hashCode * 59 + this.VersionList.GetHashCode();
+                var hashCode = 41;
+                if (this.Platform != null) hashCode = hashCode * 59 + this.Platform.GetHashCode();
+                if (this.VersionList != null) hashCode = hashCode * 59 + this.VersionList.GetHashCode();
                 return hashCode;
             }
         }

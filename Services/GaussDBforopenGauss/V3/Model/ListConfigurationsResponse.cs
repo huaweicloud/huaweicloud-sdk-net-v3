@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ListConfigurationsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.Configurations != input.Configurations || (this.Configurations != null && input.Configurations != null && !this.Configurations.SequenceEqual(input.Configurations))) return false;
 
-            return 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.Configurations == input.Configurations ||
-                    this.Configurations != null &&
-                    input.Configurations != null &&
-                    this.Configurations.SequenceEqual(input.Configurations)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.Configurations != null)
-                    hashCode = hashCode * 59 + this.Configurations.GetHashCode();
+                var hashCode = 41;
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.Configurations != null) hashCode = hashCode * 59 + this.Configurations.GetHashCode();
                 return hashCode;
             }
         }

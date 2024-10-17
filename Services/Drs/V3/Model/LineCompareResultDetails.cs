@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(LineCompareResultDetails input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceDbName != input.SourceDbName || (this.SourceDbName != null && !this.SourceDbName.Equals(input.SourceDbName))) return false;
+            if (this.LineCompareDetail != input.LineCompareDetail || (this.LineCompareDetail != null && input.LineCompareDetail != null && !this.LineCompareDetail.SequenceEqual(input.LineCompareDetail))) return false;
+            if (this.LineCompareDetailCount != input.LineCompareDetailCount || (this.LineCompareDetailCount != null && !this.LineCompareDetailCount.Equals(input.LineCompareDetailCount))) return false;
 
-            return 
-                (
-                    this.SourceDbName == input.SourceDbName ||
-                    (this.SourceDbName != null &&
-                    this.SourceDbName.Equals(input.SourceDbName))
-                ) && 
-                (
-                    this.LineCompareDetail == input.LineCompareDetail ||
-                    this.LineCompareDetail != null &&
-                    input.LineCompareDetail != null &&
-                    this.LineCompareDetail.SequenceEqual(input.LineCompareDetail)
-                ) && 
-                (
-                    this.LineCompareDetailCount == input.LineCompareDetailCount ||
-                    (this.LineCompareDetailCount != null &&
-                    this.LineCompareDetailCount.Equals(input.LineCompareDetailCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceDbName != null)
-                    hashCode = hashCode * 59 + this.SourceDbName.GetHashCode();
-                if (this.LineCompareDetail != null)
-                    hashCode = hashCode * 59 + this.LineCompareDetail.GetHashCode();
-                if (this.LineCompareDetailCount != null)
-                    hashCode = hashCode * 59 + this.LineCompareDetailCount.GetHashCode();
+                var hashCode = 41;
+                if (this.SourceDbName != null) hashCode = hashCode * 59 + this.SourceDbName.GetHashCode();
+                if (this.LineCompareDetail != null) hashCode = hashCode * 59 + this.LineCompareDetail.GetHashCode();
+                if (this.LineCompareDetailCount != null) hashCode = hashCode * 59 + this.LineCompareDetailCount.GetHashCode();
                 return hashCode;
             }
         }

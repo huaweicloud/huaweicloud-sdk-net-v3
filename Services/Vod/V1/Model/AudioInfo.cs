@@ -321,25 +321,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(AudioInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SampleRate != input.SampleRate) return false;
+            if (this.Bitrate != input.Bitrate || (this.Bitrate != null && !this.Bitrate.Equals(input.Bitrate))) return false;
+            if (this.Channels != input.Channels) return false;
 
-            return 
-                (
-                    this.SampleRate == input.SampleRate ||
-                    (this.SampleRate != null &&
-                    this.SampleRate.Equals(input.SampleRate))
-                ) && 
-                (
-                    this.Bitrate == input.Bitrate ||
-                    (this.Bitrate != null &&
-                    this.Bitrate.Equals(input.Bitrate))
-                ) && 
-                (
-                    this.Channels == input.Channels ||
-                    (this.Channels != null &&
-                    this.Channels.Equals(input.Channels))
-                );
+            return true;
         }
 
         /// <summary>
@@ -349,13 +336,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SampleRate != null)
-                    hashCode = hashCode * 59 + this.SampleRate.GetHashCode();
-                if (this.Bitrate != null)
-                    hashCode = hashCode * 59 + this.Bitrate.GetHashCode();
-                if (this.Channels != null)
-                    hashCode = hashCode * 59 + this.Channels.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.SampleRate.GetHashCode();
+                if (this.Bitrate != null) hashCode = hashCode * 59 + this.Bitrate.GetHashCode();
+                hashCode = hashCode * 59 + this.Channels.GetHashCode();
                 return hashCode;
             }
         }

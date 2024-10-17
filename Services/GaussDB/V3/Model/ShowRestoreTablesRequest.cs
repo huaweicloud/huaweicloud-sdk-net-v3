@@ -90,40 +90,15 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ShowRestoreTablesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.XLanguage != input.XLanguage || (this.XLanguage != null && !this.XLanguage.Equals(input.XLanguage))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.RestoreTime != input.RestoreTime || (this.RestoreTime != null && !this.RestoreTime.Equals(input.RestoreTime))) return false;
+            if (this.LastTableInfo != input.LastTableInfo || (this.LastTableInfo != null && !this.LastTableInfo.Equals(input.LastTableInfo))) return false;
+            if (this.DatabaseName != input.DatabaseName || (this.DatabaseName != null && !this.DatabaseName.Equals(input.DatabaseName))) return false;
+            if (this.TableName != input.TableName || (this.TableName != null && !this.TableName.Equals(input.TableName))) return false;
 
-            return 
-                (
-                    this.XLanguage == input.XLanguage ||
-                    (this.XLanguage != null &&
-                    this.XLanguage.Equals(input.XLanguage))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.RestoreTime == input.RestoreTime ||
-                    (this.RestoreTime != null &&
-                    this.RestoreTime.Equals(input.RestoreTime))
-                ) && 
-                (
-                    this.LastTableInfo == input.LastTableInfo ||
-                    (this.LastTableInfo != null &&
-                    this.LastTableInfo.Equals(input.LastTableInfo))
-                ) && 
-                (
-                    this.DatabaseName == input.DatabaseName ||
-                    (this.DatabaseName != null &&
-                    this.DatabaseName.Equals(input.DatabaseName))
-                ) && 
-                (
-                    this.TableName == input.TableName ||
-                    (this.TableName != null &&
-                    this.TableName.Equals(input.TableName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -133,19 +108,13 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.XLanguage != null)
-                    hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.RestoreTime != null)
-                    hashCode = hashCode * 59 + this.RestoreTime.GetHashCode();
-                if (this.LastTableInfo != null)
-                    hashCode = hashCode * 59 + this.LastTableInfo.GetHashCode();
-                if (this.DatabaseName != null)
-                    hashCode = hashCode * 59 + this.DatabaseName.GetHashCode();
-                if (this.TableName != null)
-                    hashCode = hashCode * 59 + this.TableName.GetHashCode();
+                var hashCode = 41;
+                if (this.XLanguage != null) hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.RestoreTime != null) hashCode = hashCode * 59 + this.RestoreTime.GetHashCode();
+                if (this.LastTableInfo != null) hashCode = hashCode * 59 + this.LastTableInfo.GetHashCode();
+                if (this.DatabaseName != null) hashCode = hashCode * 59 + this.DatabaseName.GetHashCode();
+                if (this.TableName != null) hashCode = hashCode * 59 + this.TableName.GetHashCode();
                 return hashCode;
             }
         }

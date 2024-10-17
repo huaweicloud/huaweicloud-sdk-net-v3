@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         /// </summary>
         public bool Equals(AbnormalEventDimensionValue input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AbnormalType != input.AbnormalType || (this.AbnormalType != null && !this.AbnormalType.Equals(input.AbnormalType))) return false;
+            if (this.AbnormalTypeDesc != input.AbnormalTypeDesc || (this.AbnormalTypeDesc != null && !this.AbnormalTypeDesc.Equals(input.AbnormalTypeDesc))) return false;
+            if (this.AbnormalFactor != input.AbnormalFactor || (this.AbnormalFactor != null && !this.AbnormalFactor.Equals(input.AbnormalFactor))) return false;
+            if (this.AbnormalFactorDesc != input.AbnormalFactorDesc || (this.AbnormalFactorDesc != null && !this.AbnormalFactorDesc.Equals(input.AbnormalFactorDesc))) return false;
+            if (this.UserCount != input.UserCount || (this.UserCount != null && !this.UserCount.Equals(input.UserCount))) return false;
 
-            return 
-                (
-                    this.AbnormalType == input.AbnormalType ||
-                    (this.AbnormalType != null &&
-                    this.AbnormalType.Equals(input.AbnormalType))
-                ) && 
-                (
-                    this.AbnormalTypeDesc == input.AbnormalTypeDesc ||
-                    (this.AbnormalTypeDesc != null &&
-                    this.AbnormalTypeDesc.Equals(input.AbnormalTypeDesc))
-                ) && 
-                (
-                    this.AbnormalFactor == input.AbnormalFactor ||
-                    (this.AbnormalFactor != null &&
-                    this.AbnormalFactor.Equals(input.AbnormalFactor))
-                ) && 
-                (
-                    this.AbnormalFactorDesc == input.AbnormalFactorDesc ||
-                    (this.AbnormalFactorDesc != null &&
-                    this.AbnormalFactorDesc.Equals(input.AbnormalFactorDesc))
-                ) && 
-                (
-                    this.UserCount == input.UserCount ||
-                    (this.UserCount != null &&
-                    this.UserCount.Equals(input.UserCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AbnormalType != null)
-                    hashCode = hashCode * 59 + this.AbnormalType.GetHashCode();
-                if (this.AbnormalTypeDesc != null)
-                    hashCode = hashCode * 59 + this.AbnormalTypeDesc.GetHashCode();
-                if (this.AbnormalFactor != null)
-                    hashCode = hashCode * 59 + this.AbnormalFactor.GetHashCode();
-                if (this.AbnormalFactorDesc != null)
-                    hashCode = hashCode * 59 + this.AbnormalFactorDesc.GetHashCode();
-                if (this.UserCount != null)
-                    hashCode = hashCode * 59 + this.UserCount.GetHashCode();
+                var hashCode = 41;
+                if (this.AbnormalType != null) hashCode = hashCode * 59 + this.AbnormalType.GetHashCode();
+                if (this.AbnormalTypeDesc != null) hashCode = hashCode * 59 + this.AbnormalTypeDesc.GetHashCode();
+                if (this.AbnormalFactor != null) hashCode = hashCode * 59 + this.AbnormalFactor.GetHashCode();
+                if (this.AbnormalFactorDesc != null) hashCode = hashCode * 59 + this.AbnormalFactorDesc.GetHashCode();
+                if (this.UserCount != null) hashCode = hashCode * 59 + this.UserCount.GetHashCode();
                 return hashCode;
             }
         }

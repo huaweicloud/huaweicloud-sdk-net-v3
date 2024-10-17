@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(DownloadObject input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.DownloadLink != input.DownloadLink || (this.DownloadLink != null && !this.DownloadLink.Equals(input.DownloadLink))) return false;
+            if (this.LinkExpiredTime != input.LinkExpiredTime || (this.LinkExpiredTime != null && !this.LinkExpiredTime.Equals(input.LinkExpiredTime))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.DownloadLink == input.DownloadLink ||
-                    (this.DownloadLink != null &&
-                    this.DownloadLink.Equals(input.DownloadLink))
-                ) && 
-                (
-                    this.LinkExpiredTime == input.LinkExpiredTime ||
-                    (this.LinkExpiredTime != null &&
-                    this.LinkExpiredTime.Equals(input.LinkExpiredTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.DownloadLink != null)
-                    hashCode = hashCode * 59 + this.DownloadLink.GetHashCode();
-                if (this.LinkExpiredTime != null)
-                    hashCode = hashCode * 59 + this.LinkExpiredTime.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.DownloadLink != null) hashCode = hashCode * 59 + this.DownloadLink.GetHashCode();
+                if (this.LinkExpiredTime != null) hashCode = hashCode * 59 + this.LinkExpiredTime.GetHashCode();
                 return hashCode;
             }
         }

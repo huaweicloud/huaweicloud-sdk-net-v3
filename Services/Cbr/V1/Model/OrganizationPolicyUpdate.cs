@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(OrganizationPolicyUpdate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.PolicyName != input.PolicyName || (this.PolicyName != null && !this.PolicyName.Equals(input.PolicyName))) return false;
+            if (this.PolicyEnabled != input.PolicyEnabled || (this.PolicyEnabled != null && !this.PolicyEnabled.Equals(input.PolicyEnabled))) return false;
+            if (this.PolicyOperationDefinition != input.PolicyOperationDefinition || (this.PolicyOperationDefinition != null && !this.PolicyOperationDefinition.Equals(input.PolicyOperationDefinition))) return false;
+            if (this.PolicyTrigger != input.PolicyTrigger || (this.PolicyTrigger != null && !this.PolicyTrigger.Equals(input.PolicyTrigger))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.PolicyName == input.PolicyName ||
-                    (this.PolicyName != null &&
-                    this.PolicyName.Equals(input.PolicyName))
-                ) && 
-                (
-                    this.PolicyEnabled == input.PolicyEnabled ||
-                    (this.PolicyEnabled != null &&
-                    this.PolicyEnabled.Equals(input.PolicyEnabled))
-                ) && 
-                (
-                    this.PolicyOperationDefinition == input.PolicyOperationDefinition ||
-                    (this.PolicyOperationDefinition != null &&
-                    this.PolicyOperationDefinition.Equals(input.PolicyOperationDefinition))
-                ) && 
-                (
-                    this.PolicyTrigger == input.PolicyTrigger ||
-                    (this.PolicyTrigger != null &&
-                    this.PolicyTrigger.Equals(input.PolicyTrigger))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.PolicyName != null)
-                    hashCode = hashCode * 59 + this.PolicyName.GetHashCode();
-                if (this.PolicyEnabled != null)
-                    hashCode = hashCode * 59 + this.PolicyEnabled.GetHashCode();
-                if (this.PolicyOperationDefinition != null)
-                    hashCode = hashCode * 59 + this.PolicyOperationDefinition.GetHashCode();
-                if (this.PolicyTrigger != null)
-                    hashCode = hashCode * 59 + this.PolicyTrigger.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.PolicyName != null) hashCode = hashCode * 59 + this.PolicyName.GetHashCode();
+                if (this.PolicyEnabled != null) hashCode = hashCode * 59 + this.PolicyEnabled.GetHashCode();
+                if (this.PolicyOperationDefinition != null) hashCode = hashCode * 59 + this.PolicyOperationDefinition.GetHashCode();
+                if (this.PolicyTrigger != null) hashCode = hashCode * 59 + this.PolicyTrigger.GetHashCode();
                 return hashCode;
             }
         }

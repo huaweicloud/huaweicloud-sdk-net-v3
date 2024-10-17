@@ -170,20 +170,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(TaurusModifyInstanceMonitorRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MonitorSwitch != input.MonitorSwitch || (this.MonitorSwitch != null && !this.MonitorSwitch.Equals(input.MonitorSwitch))) return false;
+            if (this.Period != input.Period) return false;
 
-            return 
-                (
-                    this.MonitorSwitch == input.MonitorSwitch ||
-                    (this.MonitorSwitch != null &&
-                    this.MonitorSwitch.Equals(input.MonitorSwitch))
-                ) && 
-                (
-                    this.Period == input.Period ||
-                    (this.Period != null &&
-                    this.Period.Equals(input.Period))
-                );
+            return true;
         }
 
         /// <summary>
@@ -193,11 +184,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MonitorSwitch != null)
-                    hashCode = hashCode * 59 + this.MonitorSwitch.GetHashCode();
-                if (this.Period != null)
-                    hashCode = hashCode * 59 + this.Period.GetHashCode();
+                var hashCode = 41;
+                if (this.MonitorSwitch != null) hashCode = hashCode * 59 + this.MonitorSwitch.GetHashCode();
+                hashCode = hashCode * 59 + this.Period.GetHashCode();
                 return hashCode;
             }
         }

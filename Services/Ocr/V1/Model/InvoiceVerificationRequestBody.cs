@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(InvoiceVerificationRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Code != input.Code || (this.Code != null && !this.Code.Equals(input.Code))) return false;
+            if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;
+            if (this.IssueDate != input.IssueDate || (this.IssueDate != null && !this.IssueDate.Equals(input.IssueDate))) return false;
+            if (this.CheckCode != input.CheckCode || (this.CheckCode != null && !this.CheckCode.Equals(input.CheckCode))) return false;
+            if (this.SubtotalAmount != input.SubtotalAmount || (this.SubtotalAmount != null && !this.SubtotalAmount.Equals(input.SubtotalAmount))) return false;
 
-            return 
-                (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
-                ) && 
-                (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                ) && 
-                (
-                    this.IssueDate == input.IssueDate ||
-                    (this.IssueDate != null &&
-                    this.IssueDate.Equals(input.IssueDate))
-                ) && 
-                (
-                    this.CheckCode == input.CheckCode ||
-                    (this.CheckCode != null &&
-                    this.CheckCode.Equals(input.CheckCode))
-                ) && 
-                (
-                    this.SubtotalAmount == input.SubtotalAmount ||
-                    (this.SubtotalAmount != null &&
-                    this.SubtotalAmount.Equals(input.SubtotalAmount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Code != null)
-                    hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.Number != null)
-                    hashCode = hashCode * 59 + this.Number.GetHashCode();
-                if (this.IssueDate != null)
-                    hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
-                if (this.CheckCode != null)
-                    hashCode = hashCode * 59 + this.CheckCode.GetHashCode();
-                if (this.SubtotalAmount != null)
-                    hashCode = hashCode * 59 + this.SubtotalAmount.GetHashCode();
+                var hashCode = 41;
+                if (this.Code != null) hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Number != null) hashCode = hashCode * 59 + this.Number.GetHashCode();
+                if (this.IssueDate != null) hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
+                if (this.CheckCode != null) hashCode = hashCode * 59 + this.CheckCode.GetHashCode();
+                if (this.SubtotalAmount != null) hashCode = hashCode * 59 + this.SubtotalAmount.GetHashCode();
                 return hashCode;
             }
         }

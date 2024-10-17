@@ -77,36 +77,14 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(CreateSnapshotOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VolumeId != input.VolumeId || (this.VolumeId != null && !this.VolumeId.Equals(input.VolumeId))) return false;
+            if (this.Force != input.Force || (this.Force != null && !this.Force.Equals(input.Force))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && input.Metadata != null && !this.Metadata.SequenceEqual(input.Metadata))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
 
-            return 
-                (
-                    this.VolumeId == input.VolumeId ||
-                    (this.VolumeId != null &&
-                    this.VolumeId.Equals(input.VolumeId))
-                ) && 
-                (
-                    this.Force == input.Force ||
-                    (this.Force != null &&
-                    this.Force.Equals(input.Force))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    this.Metadata != null &&
-                    input.Metadata != null &&
-                    this.Metadata.SequenceEqual(input.Metadata)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                );
+            return true;
         }
 
         /// <summary>
@@ -116,17 +94,12 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VolumeId != null)
-                    hashCode = hashCode * 59 + this.VolumeId.GetHashCode();
-                if (this.Force != null)
-                    hashCode = hashCode * 59 + this.Force.GetHashCode();
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                var hashCode = 41;
+                if (this.VolumeId != null) hashCode = hashCode * 59 + this.VolumeId.GetHashCode();
+                if (this.Force != null) hashCode = hashCode * 59 + this.Force.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 return hashCode;
             }
         }

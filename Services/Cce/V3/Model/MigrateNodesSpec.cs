@@ -77,36 +77,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(MigrateNodesSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Os != input.Os || (this.Os != null && !this.Os.Equals(input.Os))) return false;
+            if (this.ExtendParam != input.ExtendParam || (this.ExtendParam != null && !this.ExtendParam.Equals(input.ExtendParam))) return false;
+            if (this.Login != input.Login || (this.Login != null && !this.Login.Equals(input.Login))) return false;
+            if (this.Runtime != input.Runtime || (this.Runtime != null && !this.Runtime.Equals(input.Runtime))) return false;
+            if (this.Nodes != input.Nodes || (this.Nodes != null && input.Nodes != null && !this.Nodes.SequenceEqual(input.Nodes))) return false;
 
-            return 
-                (
-                    this.Os == input.Os ||
-                    (this.Os != null &&
-                    this.Os.Equals(input.Os))
-                ) && 
-                (
-                    this.ExtendParam == input.ExtendParam ||
-                    (this.ExtendParam != null &&
-                    this.ExtendParam.Equals(input.ExtendParam))
-                ) && 
-                (
-                    this.Login == input.Login ||
-                    (this.Login != null &&
-                    this.Login.Equals(input.Login))
-                ) && 
-                (
-                    this.Runtime == input.Runtime ||
-                    (this.Runtime != null &&
-                    this.Runtime.Equals(input.Runtime))
-                ) && 
-                (
-                    this.Nodes == input.Nodes ||
-                    this.Nodes != null &&
-                    input.Nodes != null &&
-                    this.Nodes.SequenceEqual(input.Nodes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -116,17 +94,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Os != null)
-                    hashCode = hashCode * 59 + this.Os.GetHashCode();
-                if (this.ExtendParam != null)
-                    hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
-                if (this.Login != null)
-                    hashCode = hashCode * 59 + this.Login.GetHashCode();
-                if (this.Runtime != null)
-                    hashCode = hashCode * 59 + this.Runtime.GetHashCode();
-                if (this.Nodes != null)
-                    hashCode = hashCode * 59 + this.Nodes.GetHashCode();
+                var hashCode = 41;
+                if (this.Os != null) hashCode = hashCode * 59 + this.Os.GetHashCode();
+                if (this.ExtendParam != null) hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
+                if (this.Login != null) hashCode = hashCode * 59 + this.Login.GetHashCode();
+                if (this.Runtime != null) hashCode = hashCode * 59 + this.Runtime.GetHashCode();
+                if (this.Nodes != null) hashCode = hashCode * 59 + this.Nodes.GetHashCode();
                 return hashCode;
             }
         }

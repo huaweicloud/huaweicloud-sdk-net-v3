@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(ShowDomainPasswordPolicyResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PasswordPolicy != input.PasswordPolicy || (this.PasswordPolicy != null && !this.PasswordPolicy.Equals(input.PasswordPolicy))) return false;
 
-            return 
-                (
-                    this.PasswordPolicy == input.PasswordPolicy ||
-                    (this.PasswordPolicy != null &&
-                    this.PasswordPolicy.Equals(input.PasswordPolicy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PasswordPolicy != null)
-                    hashCode = hashCode * 59 + this.PasswordPolicy.GetHashCode();
+                var hashCode = 41;
+                if (this.PasswordPolicy != null) hashCode = hashCode * 59 + this.PasswordPolicy.GetHashCode();
                 return hashCode;
             }
         }

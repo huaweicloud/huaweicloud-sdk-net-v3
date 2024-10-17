@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(SampleDataValue input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Sample != input.Sample || (this.Sample != null && !this.Sample.Equals(input.Sample))) return false;
+            if (this.DataPoints != input.DataPoints || (this.DataPoints != null && input.DataPoints != null && !this.DataPoints.SequenceEqual(input.DataPoints))) return false;
 
-            return 
-                (
-                    this.Sample == input.Sample ||
-                    (this.Sample != null &&
-                    this.Sample.Equals(input.Sample))
-                ) && 
-                (
-                    this.DataPoints == input.DataPoints ||
-                    this.DataPoints != null &&
-                    input.DataPoints != null &&
-                    this.DataPoints.SequenceEqual(input.DataPoints)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Sample != null)
-                    hashCode = hashCode * 59 + this.Sample.GetHashCode();
-                if (this.DataPoints != null)
-                    hashCode = hashCode * 59 + this.DataPoints.GetHashCode();
+                var hashCode = 41;
+                if (this.Sample != null) hashCode = hashCode * 59 + this.Sample.GetHashCode();
+                if (this.DataPoints != null) hashCode = hashCode * 59 + this.DataPoints.GetHashCode();
                 return hashCode;
             }
         }

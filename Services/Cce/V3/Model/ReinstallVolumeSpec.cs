@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ReinstallVolumeSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ImageID != input.ImageID || (this.ImageID != null && !this.ImageID.Equals(input.ImageID))) return false;
+            if (this.CmkID != input.CmkID || (this.CmkID != null && !this.CmkID.Equals(input.CmkID))) return false;
 
-            return 
-                (
-                    this.ImageID == input.ImageID ||
-                    (this.ImageID != null &&
-                    this.ImageID.Equals(input.ImageID))
-                ) && 
-                (
-                    this.CmkID == input.CmkID ||
-                    (this.CmkID != null &&
-                    this.CmkID.Equals(input.CmkID))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ImageID != null)
-                    hashCode = hashCode * 59 + this.ImageID.GetHashCode();
-                if (this.CmkID != null)
-                    hashCode = hashCode * 59 + this.CmkID.GetHashCode();
+                var hashCode = 41;
+                if (this.ImageID != null) hashCode = hashCode * 59 + this.ImageID.GetHashCode();
+                if (this.CmkID != null) hashCode = hashCode * 59 + this.CmkID.GetHashCode();
                 return hashCode;
             }
         }

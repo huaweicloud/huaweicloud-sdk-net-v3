@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(UploadIssueImgResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ImgId != input.ImgId || (this.ImgId != null && !this.ImgId.Equals(input.ImgId))) return false;
+            if (this.ImgUrl != input.ImgUrl || (this.ImgUrl != null && !this.ImgUrl.Equals(input.ImgUrl))) return false;
 
-            return 
-                (
-                    this.ImgId == input.ImgId ||
-                    (this.ImgId != null &&
-                    this.ImgId.Equals(input.ImgId))
-                ) && 
-                (
-                    this.ImgUrl == input.ImgUrl ||
-                    (this.ImgUrl != null &&
-                    this.ImgUrl.Equals(input.ImgUrl))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ImgId != null)
-                    hashCode = hashCode * 59 + this.ImgId.GetHashCode();
-                if (this.ImgUrl != null)
-                    hashCode = hashCode * 59 + this.ImgUrl.GetHashCode();
+                var hashCode = 41;
+                if (this.ImgId != null) hashCode = hashCode * 59 + this.ImgId.GetHashCode();
+                if (this.ImgUrl != null) hashCode = hashCode * 59 + this.ImgUrl.GetHashCode();
                 return hashCode;
             }
         }

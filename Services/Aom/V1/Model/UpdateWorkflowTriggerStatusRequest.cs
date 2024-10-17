@@ -172,20 +172,11 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         /// </summary>
         public bool Equals(UpdateWorkflowTriggerStatusRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.WorkflowId != input.WorkflowId || (this.WorkflowId != null && !this.WorkflowId.Equals(input.WorkflowId))) return false;
+            if (this.Action != input.Action) return false;
 
-            return 
-                (
-                    this.WorkflowId == input.WorkflowId ||
-                    (this.WorkflowId != null &&
-                    this.WorkflowId.Equals(input.WorkflowId))
-                ) && 
-                (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                );
+            return true;
         }
 
         /// <summary>
@@ -195,11 +186,9 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.WorkflowId != null)
-                    hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
+                var hashCode = 41;
+                if (this.WorkflowId != null) hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
+                hashCode = hashCode * 59 + this.Action.GetHashCode();
                 return hashCode;
             }
         }

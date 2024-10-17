@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(SupportVersions input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClusterType != input.ClusterType || (this.ClusterType != null && !this.ClusterType.Equals(input.ClusterType))) return false;
+            if (this.ClusterVersion != input.ClusterVersion || (this.ClusterVersion != null && input.ClusterVersion != null && !this.ClusterVersion.SequenceEqual(input.ClusterVersion))) return false;
 
-            return 
-                (
-                    this.ClusterType == input.ClusterType ||
-                    (this.ClusterType != null &&
-                    this.ClusterType.Equals(input.ClusterType))
-                ) && 
-                (
-                    this.ClusterVersion == input.ClusterVersion ||
-                    this.ClusterVersion != null &&
-                    input.ClusterVersion != null &&
-                    this.ClusterVersion.SequenceEqual(input.ClusterVersion)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClusterType != null)
-                    hashCode = hashCode * 59 + this.ClusterType.GetHashCode();
-                if (this.ClusterVersion != null)
-                    hashCode = hashCode * 59 + this.ClusterVersion.GetHashCode();
+                var hashCode = 41;
+                if (this.ClusterType != null) hashCode = hashCode * 59 + this.ClusterType.GetHashCode();
+                if (this.ClusterVersion != null) hashCode = hashCode * 59 + this.ClusterVersion.GetHashCode();
                 return hashCode;
             }
         }

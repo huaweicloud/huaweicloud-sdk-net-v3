@@ -119,66 +119,20 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ClusterStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Phase != input.Phase || (this.Phase != null && !this.Phase.Equals(input.Phase))) return false;
+            if (this.JobID != input.JobID || (this.JobID != null && !this.JobID.Equals(input.JobID))) return false;
+            if (this.Reason != input.Reason || (this.Reason != null && !this.Reason.Equals(input.Reason))) return false;
+            if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
+            if (this.Endpoints != input.Endpoints || (this.Endpoints != null && input.Endpoints != null && !this.Endpoints.SequenceEqual(input.Endpoints))) return false;
+            if (this.IsLocked != input.IsLocked || (this.IsLocked != null && !this.IsLocked.Equals(input.IsLocked))) return false;
+            if (this.LockScene != input.LockScene || (this.LockScene != null && !this.LockScene.Equals(input.LockScene))) return false;
+            if (this.LockSource != input.LockSource || (this.LockSource != null && !this.LockSource.Equals(input.LockSource))) return false;
+            if (this.LockSourceId != input.LockSourceId || (this.LockSourceId != null && !this.LockSourceId.Equals(input.LockSourceId))) return false;
+            if (this.DeleteOption != input.DeleteOption || (this.DeleteOption != null && !this.DeleteOption.Equals(input.DeleteOption))) return false;
+            if (this.DeleteStatus != input.DeleteStatus || (this.DeleteStatus != null && !this.DeleteStatus.Equals(input.DeleteStatus))) return false;
 
-            return 
-                (
-                    this.Phase == input.Phase ||
-                    (this.Phase != null &&
-                    this.Phase.Equals(input.Phase))
-                ) && 
-                (
-                    this.JobID == input.JobID ||
-                    (this.JobID != null &&
-                    this.JobID.Equals(input.JobID))
-                ) && 
-                (
-                    this.Reason == input.Reason ||
-                    (this.Reason != null &&
-                    this.Reason.Equals(input.Reason))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.Endpoints == input.Endpoints ||
-                    this.Endpoints != null &&
-                    input.Endpoints != null &&
-                    this.Endpoints.SequenceEqual(input.Endpoints)
-                ) && 
-                (
-                    this.IsLocked == input.IsLocked ||
-                    (this.IsLocked != null &&
-                    this.IsLocked.Equals(input.IsLocked))
-                ) && 
-                (
-                    this.LockScene == input.LockScene ||
-                    (this.LockScene != null &&
-                    this.LockScene.Equals(input.LockScene))
-                ) && 
-                (
-                    this.LockSource == input.LockSource ||
-                    (this.LockSource != null &&
-                    this.LockSource.Equals(input.LockSource))
-                ) && 
-                (
-                    this.LockSourceId == input.LockSourceId ||
-                    (this.LockSourceId != null &&
-                    this.LockSourceId.Equals(input.LockSourceId))
-                ) && 
-                (
-                    this.DeleteOption == input.DeleteOption ||
-                    (this.DeleteOption != null &&
-                    this.DeleteOption.Equals(input.DeleteOption))
-                ) && 
-                (
-                    this.DeleteStatus == input.DeleteStatus ||
-                    (this.DeleteStatus != null &&
-                    this.DeleteStatus.Equals(input.DeleteStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -188,29 +142,18 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Phase != null)
-                    hashCode = hashCode * 59 + this.Phase.GetHashCode();
-                if (this.JobID != null)
-                    hashCode = hashCode * 59 + this.JobID.GetHashCode();
-                if (this.Reason != null)
-                    hashCode = hashCode * 59 + this.Reason.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.Endpoints != null)
-                    hashCode = hashCode * 59 + this.Endpoints.GetHashCode();
-                if (this.IsLocked != null)
-                    hashCode = hashCode * 59 + this.IsLocked.GetHashCode();
-                if (this.LockScene != null)
-                    hashCode = hashCode * 59 + this.LockScene.GetHashCode();
-                if (this.LockSource != null)
-                    hashCode = hashCode * 59 + this.LockSource.GetHashCode();
-                if (this.LockSourceId != null)
-                    hashCode = hashCode * 59 + this.LockSourceId.GetHashCode();
-                if (this.DeleteOption != null)
-                    hashCode = hashCode * 59 + this.DeleteOption.GetHashCode();
-                if (this.DeleteStatus != null)
-                    hashCode = hashCode * 59 + this.DeleteStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.Phase != null) hashCode = hashCode * 59 + this.Phase.GetHashCode();
+                if (this.JobID != null) hashCode = hashCode * 59 + this.JobID.GetHashCode();
+                if (this.Reason != null) hashCode = hashCode * 59 + this.Reason.GetHashCode();
+                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.Endpoints != null) hashCode = hashCode * 59 + this.Endpoints.GetHashCode();
+                if (this.IsLocked != null) hashCode = hashCode * 59 + this.IsLocked.GetHashCode();
+                if (this.LockScene != null) hashCode = hashCode * 59 + this.LockScene.GetHashCode();
+                if (this.LockSource != null) hashCode = hashCode * 59 + this.LockSource.GetHashCode();
+                if (this.LockSourceId != null) hashCode = hashCode * 59 + this.LockSourceId.GetHashCode();
+                if (this.DeleteOption != null) hashCode = hashCode * 59 + this.DeleteOption.GetHashCode();
+                if (this.DeleteStatus != null) hashCode = hashCode * 59 + this.DeleteStatus.GetHashCode();
                 return hashCode;
             }
         }

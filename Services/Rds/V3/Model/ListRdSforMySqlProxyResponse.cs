@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ListRdSforMySqlProxyResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProxyQueryInfoList != input.ProxyQueryInfoList || (this.ProxyQueryInfoList != null && input.ProxyQueryInfoList != null && !this.ProxyQueryInfoList.SequenceEqual(input.ProxyQueryInfoList))) return false;
+            if (this.MaxProxyNum != input.MaxProxyNum || (this.MaxProxyNum != null && !this.MaxProxyNum.Equals(input.MaxProxyNum))) return false;
+            if (this.MaxProxyNodeNum != input.MaxProxyNodeNum || (this.MaxProxyNodeNum != null && !this.MaxProxyNodeNum.Equals(input.MaxProxyNodeNum))) return false;
+            if (this.SupportBalanceRouteModeForFavoredVersion != input.SupportBalanceRouteModeForFavoredVersion || (this.SupportBalanceRouteModeForFavoredVersion != null && !this.SupportBalanceRouteModeForFavoredVersion.Equals(input.SupportBalanceRouteModeForFavoredVersion))) return false;
 
-            return 
-                (
-                    this.ProxyQueryInfoList == input.ProxyQueryInfoList ||
-                    this.ProxyQueryInfoList != null &&
-                    input.ProxyQueryInfoList != null &&
-                    this.ProxyQueryInfoList.SequenceEqual(input.ProxyQueryInfoList)
-                ) && 
-                (
-                    this.MaxProxyNum == input.MaxProxyNum ||
-                    (this.MaxProxyNum != null &&
-                    this.MaxProxyNum.Equals(input.MaxProxyNum))
-                ) && 
-                (
-                    this.MaxProxyNodeNum == input.MaxProxyNodeNum ||
-                    (this.MaxProxyNodeNum != null &&
-                    this.MaxProxyNodeNum.Equals(input.MaxProxyNodeNum))
-                ) && 
-                (
-                    this.SupportBalanceRouteModeForFavoredVersion == input.SupportBalanceRouteModeForFavoredVersion ||
-                    (this.SupportBalanceRouteModeForFavoredVersion != null &&
-                    this.SupportBalanceRouteModeForFavoredVersion.Equals(input.SupportBalanceRouteModeForFavoredVersion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProxyQueryInfoList != null)
-                    hashCode = hashCode * 59 + this.ProxyQueryInfoList.GetHashCode();
-                if (this.MaxProxyNum != null)
-                    hashCode = hashCode * 59 + this.MaxProxyNum.GetHashCode();
-                if (this.MaxProxyNodeNum != null)
-                    hashCode = hashCode * 59 + this.MaxProxyNodeNum.GetHashCode();
-                if (this.SupportBalanceRouteModeForFavoredVersion != null)
-                    hashCode = hashCode * 59 + this.SupportBalanceRouteModeForFavoredVersion.GetHashCode();
+                var hashCode = 41;
+                if (this.ProxyQueryInfoList != null) hashCode = hashCode * 59 + this.ProxyQueryInfoList.GetHashCode();
+                if (this.MaxProxyNum != null) hashCode = hashCode * 59 + this.MaxProxyNum.GetHashCode();
+                if (this.MaxProxyNodeNum != null) hashCode = hashCode * 59 + this.MaxProxyNodeNum.GetHashCode();
+                if (this.SupportBalanceRouteModeForFavoredVersion != null) hashCode = hashCode * 59 + this.SupportBalanceRouteModeForFavoredVersion.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(ChangeServerOsWithoutCloudInitRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OsChange != input.OsChange || (this.OsChange != null && !this.OsChange.Equals(input.OsChange))) return false;
 
-            return 
-                (
-                    this.OsChange == input.OsChange ||
-                    (this.OsChange != null &&
-                    this.OsChange.Equals(input.OsChange))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OsChange != null)
-                    hashCode = hashCode * 59 + this.OsChange.GetHashCode();
+                var hashCode = 41;
+                if (this.OsChange != null) hashCode = hashCode * 59 + this.OsChange.GetHashCode();
                 return hashCode;
             }
         }

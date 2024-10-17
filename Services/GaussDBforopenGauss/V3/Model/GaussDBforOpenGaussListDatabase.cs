@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(GaussDBforOpenGaussListDatabase input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Owner != input.Owner || (this.Owner != null && !this.Owner.Equals(input.Owner))) return false;
+            if (this.CharacterSet != input.CharacterSet || (this.CharacterSet != null && !this.CharacterSet.Equals(input.CharacterSet))) return false;
+            if (this.CollateSet != input.CollateSet || (this.CollateSet != null && !this.CollateSet.Equals(input.CollateSet))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.Datctype != input.Datctype || (this.Datctype != null && !this.Datctype.Equals(input.Datctype))) return false;
+            if (this.CompatibilityType != input.CompatibilityType || (this.CompatibilityType != null && !this.CompatibilityType.Equals(input.CompatibilityType))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Owner == input.Owner ||
-                    (this.Owner != null &&
-                    this.Owner.Equals(input.Owner))
-                ) && 
-                (
-                    this.CharacterSet == input.CharacterSet ||
-                    (this.CharacterSet != null &&
-                    this.CharacterSet.Equals(input.CharacterSet))
-                ) && 
-                (
-                    this.CollateSet == input.CollateSet ||
-                    (this.CollateSet != null &&
-                    this.CollateSet.Equals(input.CollateSet))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.Datctype == input.Datctype ||
-                    (this.Datctype != null &&
-                    this.Datctype.Equals(input.Datctype))
-                ) && 
-                (
-                    this.CompatibilityType == input.CompatibilityType ||
-                    (this.CompatibilityType != null &&
-                    this.CompatibilityType.Equals(input.CompatibilityType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Owner != null)
-                    hashCode = hashCode * 59 + this.Owner.GetHashCode();
-                if (this.CharacterSet != null)
-                    hashCode = hashCode * 59 + this.CharacterSet.GetHashCode();
-                if (this.CollateSet != null)
-                    hashCode = hashCode * 59 + this.CollateSet.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.Datctype != null)
-                    hashCode = hashCode * 59 + this.Datctype.GetHashCode();
-                if (this.CompatibilityType != null)
-                    hashCode = hashCode * 59 + this.CompatibilityType.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Owner != null) hashCode = hashCode * 59 + this.Owner.GetHashCode();
+                if (this.CharacterSet != null) hashCode = hashCode * 59 + this.CharacterSet.GetHashCode();
+                if (this.CollateSet != null) hashCode = hashCode * 59 + this.CollateSet.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Datctype != null) hashCode = hashCode * 59 + this.Datctype.GetHashCode();
+                if (this.CompatibilityType != null) hashCode = hashCode * 59 + this.CompatibilityType.GetHashCode();
                 return hashCode;
             }
         }

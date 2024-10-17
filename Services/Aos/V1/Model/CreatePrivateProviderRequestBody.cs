@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(CreatePrivateProviderRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProviderName != input.ProviderName || (this.ProviderName != null && !this.ProviderName.Equals(input.ProviderName))) return false;
+            if (this.ProviderDescription != input.ProviderDescription || (this.ProviderDescription != null && !this.ProviderDescription.Equals(input.ProviderDescription))) return false;
+            if (this.ProviderVersion != input.ProviderVersion || (this.ProviderVersion != null && !this.ProviderVersion.Equals(input.ProviderVersion))) return false;
+            if (this.VersionDescription != input.VersionDescription || (this.VersionDescription != null && !this.VersionDescription.Equals(input.VersionDescription))) return false;
+            if (this.FunctionGraphUrn != input.FunctionGraphUrn || (this.FunctionGraphUrn != null && !this.FunctionGraphUrn.Equals(input.FunctionGraphUrn))) return false;
 
-            return 
-                (
-                    this.ProviderName == input.ProviderName ||
-                    (this.ProviderName != null &&
-                    this.ProviderName.Equals(input.ProviderName))
-                ) && 
-                (
-                    this.ProviderDescription == input.ProviderDescription ||
-                    (this.ProviderDescription != null &&
-                    this.ProviderDescription.Equals(input.ProviderDescription))
-                ) && 
-                (
-                    this.ProviderVersion == input.ProviderVersion ||
-                    (this.ProviderVersion != null &&
-                    this.ProviderVersion.Equals(input.ProviderVersion))
-                ) && 
-                (
-                    this.VersionDescription == input.VersionDescription ||
-                    (this.VersionDescription != null &&
-                    this.VersionDescription.Equals(input.VersionDescription))
-                ) && 
-                (
-                    this.FunctionGraphUrn == input.FunctionGraphUrn ||
-                    (this.FunctionGraphUrn != null &&
-                    this.FunctionGraphUrn.Equals(input.FunctionGraphUrn))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProviderName != null)
-                    hashCode = hashCode * 59 + this.ProviderName.GetHashCode();
-                if (this.ProviderDescription != null)
-                    hashCode = hashCode * 59 + this.ProviderDescription.GetHashCode();
-                if (this.ProviderVersion != null)
-                    hashCode = hashCode * 59 + this.ProviderVersion.GetHashCode();
-                if (this.VersionDescription != null)
-                    hashCode = hashCode * 59 + this.VersionDescription.GetHashCode();
-                if (this.FunctionGraphUrn != null)
-                    hashCode = hashCode * 59 + this.FunctionGraphUrn.GetHashCode();
+                var hashCode = 41;
+                if (this.ProviderName != null) hashCode = hashCode * 59 + this.ProviderName.GetHashCode();
+                if (this.ProviderDescription != null) hashCode = hashCode * 59 + this.ProviderDescription.GetHashCode();
+                if (this.ProviderVersion != null) hashCode = hashCode * 59 + this.ProviderVersion.GetHashCode();
+                if (this.VersionDescription != null) hashCode = hashCode * 59 + this.VersionDescription.GetHashCode();
+                if (this.FunctionGraphUrn != null) hashCode = hashCode * 59 + this.FunctionGraphUrn.GetHashCode();
                 return hashCode;
             }
         }

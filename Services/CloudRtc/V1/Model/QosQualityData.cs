@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         /// </summary>
         public bool Equals(QosQualityData input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Uid != input.Uid || (this.Uid != null && !this.Uid.Equals(input.Uid))) return false;
+            if (this.Peerid != input.Peerid || (this.Peerid != null && !this.Peerid.Equals(input.Peerid))) return false;
+            if (this.Mid != input.Mid || (this.Mid != null && !this.Mid.Equals(input.Mid))) return false;
+            if (this.Data != input.Data || (this.Data != null && input.Data != null && !this.Data.SequenceEqual(input.Data))) return false;
 
-            return 
-                (
-                    this.Uid == input.Uid ||
-                    (this.Uid != null &&
-                    this.Uid.Equals(input.Uid))
-                ) && 
-                (
-                    this.Peerid == input.Peerid ||
-                    (this.Peerid != null &&
-                    this.Peerid.Equals(input.Peerid))
-                ) && 
-                (
-                    this.Mid == input.Mid ||
-                    (this.Mid != null &&
-                    this.Mid.Equals(input.Mid))
-                ) && 
-                (
-                    this.Data == input.Data ||
-                    this.Data != null &&
-                    input.Data != null &&
-                    this.Data.SequenceEqual(input.Data)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Uid != null)
-                    hashCode = hashCode * 59 + this.Uid.GetHashCode();
-                if (this.Peerid != null)
-                    hashCode = hashCode * 59 + this.Peerid.GetHashCode();
-                if (this.Mid != null)
-                    hashCode = hashCode * 59 + this.Mid.GetHashCode();
-                if (this.Data != null)
-                    hashCode = hashCode * 59 + this.Data.GetHashCode();
+                var hashCode = 41;
+                if (this.Uid != null) hashCode = hashCode * 59 + this.Uid.GetHashCode();
+                if (this.Peerid != null) hashCode = hashCode * 59 + this.Peerid.GetHashCode();
+                if (this.Mid != null) hashCode = hashCode * 59 + this.Mid.GetHashCode();
+                if (this.Data != null) hashCode = hashCode * 59 + this.Data.GetHashCode();
                 return hashCode;
             }
         }

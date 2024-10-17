@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(ShowUserLoginProtectResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LoginProtect != input.LoginProtect || (this.LoginProtect != null && !this.LoginProtect.Equals(input.LoginProtect))) return false;
 
-            return 
-                (
-                    this.LoginProtect == input.LoginProtect ||
-                    (this.LoginProtect != null &&
-                    this.LoginProtect.Equals(input.LoginProtect))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LoginProtect != null)
-                    hashCode = hashCode * 59 + this.LoginProtect.GetHashCode();
+                var hashCode = 41;
+                if (this.LoginProtect != null) hashCode = hashCode * 59 + this.LoginProtect.GetHashCode();
                 return hashCode;
             }
         }

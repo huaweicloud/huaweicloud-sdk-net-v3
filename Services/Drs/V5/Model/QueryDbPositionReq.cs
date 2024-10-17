@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(QueryDbPositionReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResetPositionTime != input.ResetPositionTime || (this.ResetPositionTime != null && !this.ResetPositionTime.Equals(input.ResetPositionTime))) return false;
 
-            return 
-                (
-                    this.ResetPositionTime == input.ResetPositionTime ||
-                    (this.ResetPositionTime != null &&
-                    this.ResetPositionTime.Equals(input.ResetPositionTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResetPositionTime != null)
-                    hashCode = hashCode * 59 + this.ResetPositionTime.GetHashCode();
+                var hashCode = 41;
+                if (this.ResetPositionTime != null) hashCode = hashCode * 59 + this.ResetPositionTime.GetHashCode();
                 return hashCode;
             }
         }

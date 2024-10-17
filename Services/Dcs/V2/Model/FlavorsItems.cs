@@ -161,99 +161,26 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(FlavorsItems input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SpecCode != input.SpecCode || (this.SpecCode != null && !this.SpecCode.Equals(input.SpecCode))) return false;
+            if (this.CloudServiceTypeCode != input.CloudServiceTypeCode || (this.CloudServiceTypeCode != null && !this.CloudServiceTypeCode.Equals(input.CloudServiceTypeCode))) return false;
+            if (this.CloudResourceTypeCode != input.CloudResourceTypeCode || (this.CloudResourceTypeCode != null && !this.CloudResourceTypeCode.Equals(input.CloudResourceTypeCode))) return false;
+            if (this.CacheMode != input.CacheMode || (this.CacheMode != null && !this.CacheMode.Equals(input.CacheMode))) return false;
+            if (this.Engine != input.Engine || (this.Engine != null && !this.Engine.Equals(input.Engine))) return false;
+            if (this.EngineVersion != input.EngineVersion || (this.EngineVersion != null && !this.EngineVersion.Equals(input.EngineVersion))) return false;
+            if (this.ProductType != input.ProductType || (this.ProductType != null && !this.ProductType.Equals(input.ProductType))) return false;
+            if (this.CpuType != input.CpuType || (this.CpuType != null && !this.CpuType.Equals(input.CpuType))) return false;
+            if (this.StorageType != input.StorageType || (this.StorageType != null && !this.StorageType.Equals(input.StorageType))) return false;
+            if (this.Capacity != input.Capacity || (this.Capacity != null && input.Capacity != null && !this.Capacity.SequenceEqual(input.Capacity))) return false;
+            if (this.BillingMode != input.BillingMode || (this.BillingMode != null && input.BillingMode != null && !this.BillingMode.SequenceEqual(input.BillingMode))) return false;
+            if (this.TenantIpCount != input.TenantIpCount || (this.TenantIpCount != null && !this.TenantIpCount.Equals(input.TenantIpCount))) return false;
+            if (this.PricingType != input.PricingType || (this.PricingType != null && !this.PricingType.Equals(input.PricingType))) return false;
+            if (this.IsDec != input.IsDec || (this.IsDec != null && !this.IsDec.Equals(input.IsDec))) return false;
+            if (this.Attrs != input.Attrs || (this.Attrs != null && input.Attrs != null && !this.Attrs.SequenceEqual(input.Attrs))) return false;
+            if (this.FlavorsAvailableZones != input.FlavorsAvailableZones || (this.FlavorsAvailableZones != null && input.FlavorsAvailableZones != null && !this.FlavorsAvailableZones.SequenceEqual(input.FlavorsAvailableZones))) return false;
+            if (this.ReplicaCount != input.ReplicaCount || (this.ReplicaCount != null && !this.ReplicaCount.Equals(input.ReplicaCount))) return false;
 
-            return 
-                (
-                    this.SpecCode == input.SpecCode ||
-                    (this.SpecCode != null &&
-                    this.SpecCode.Equals(input.SpecCode))
-                ) && 
-                (
-                    this.CloudServiceTypeCode == input.CloudServiceTypeCode ||
-                    (this.CloudServiceTypeCode != null &&
-                    this.CloudServiceTypeCode.Equals(input.CloudServiceTypeCode))
-                ) && 
-                (
-                    this.CloudResourceTypeCode == input.CloudResourceTypeCode ||
-                    (this.CloudResourceTypeCode != null &&
-                    this.CloudResourceTypeCode.Equals(input.CloudResourceTypeCode))
-                ) && 
-                (
-                    this.CacheMode == input.CacheMode ||
-                    (this.CacheMode != null &&
-                    this.CacheMode.Equals(input.CacheMode))
-                ) && 
-                (
-                    this.Engine == input.Engine ||
-                    (this.Engine != null &&
-                    this.Engine.Equals(input.Engine))
-                ) && 
-                (
-                    this.EngineVersion == input.EngineVersion ||
-                    (this.EngineVersion != null &&
-                    this.EngineVersion.Equals(input.EngineVersion))
-                ) && 
-                (
-                    this.ProductType == input.ProductType ||
-                    (this.ProductType != null &&
-                    this.ProductType.Equals(input.ProductType))
-                ) && 
-                (
-                    this.CpuType == input.CpuType ||
-                    (this.CpuType != null &&
-                    this.CpuType.Equals(input.CpuType))
-                ) && 
-                (
-                    this.StorageType == input.StorageType ||
-                    (this.StorageType != null &&
-                    this.StorageType.Equals(input.StorageType))
-                ) && 
-                (
-                    this.Capacity == input.Capacity ||
-                    this.Capacity != null &&
-                    input.Capacity != null &&
-                    this.Capacity.SequenceEqual(input.Capacity)
-                ) && 
-                (
-                    this.BillingMode == input.BillingMode ||
-                    this.BillingMode != null &&
-                    input.BillingMode != null &&
-                    this.BillingMode.SequenceEqual(input.BillingMode)
-                ) && 
-                (
-                    this.TenantIpCount == input.TenantIpCount ||
-                    (this.TenantIpCount != null &&
-                    this.TenantIpCount.Equals(input.TenantIpCount))
-                ) && 
-                (
-                    this.PricingType == input.PricingType ||
-                    (this.PricingType != null &&
-                    this.PricingType.Equals(input.PricingType))
-                ) && 
-                (
-                    this.IsDec == input.IsDec ||
-                    (this.IsDec != null &&
-                    this.IsDec.Equals(input.IsDec))
-                ) && 
-                (
-                    this.Attrs == input.Attrs ||
-                    this.Attrs != null &&
-                    input.Attrs != null &&
-                    this.Attrs.SequenceEqual(input.Attrs)
-                ) && 
-                (
-                    this.FlavorsAvailableZones == input.FlavorsAvailableZones ||
-                    this.FlavorsAvailableZones != null &&
-                    input.FlavorsAvailableZones != null &&
-                    this.FlavorsAvailableZones.SequenceEqual(input.FlavorsAvailableZones)
-                ) && 
-                (
-                    this.ReplicaCount == input.ReplicaCount ||
-                    (this.ReplicaCount != null &&
-                    this.ReplicaCount.Equals(input.ReplicaCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -263,41 +190,24 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SpecCode != null)
-                    hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
-                if (this.CloudServiceTypeCode != null)
-                    hashCode = hashCode * 59 + this.CloudServiceTypeCode.GetHashCode();
-                if (this.CloudResourceTypeCode != null)
-                    hashCode = hashCode * 59 + this.CloudResourceTypeCode.GetHashCode();
-                if (this.CacheMode != null)
-                    hashCode = hashCode * 59 + this.CacheMode.GetHashCode();
-                if (this.Engine != null)
-                    hashCode = hashCode * 59 + this.Engine.GetHashCode();
-                if (this.EngineVersion != null)
-                    hashCode = hashCode * 59 + this.EngineVersion.GetHashCode();
-                if (this.ProductType != null)
-                    hashCode = hashCode * 59 + this.ProductType.GetHashCode();
-                if (this.CpuType != null)
-                    hashCode = hashCode * 59 + this.CpuType.GetHashCode();
-                if (this.StorageType != null)
-                    hashCode = hashCode * 59 + this.StorageType.GetHashCode();
-                if (this.Capacity != null)
-                    hashCode = hashCode * 59 + this.Capacity.GetHashCode();
-                if (this.BillingMode != null)
-                    hashCode = hashCode * 59 + this.BillingMode.GetHashCode();
-                if (this.TenantIpCount != null)
-                    hashCode = hashCode * 59 + this.TenantIpCount.GetHashCode();
-                if (this.PricingType != null)
-                    hashCode = hashCode * 59 + this.PricingType.GetHashCode();
-                if (this.IsDec != null)
-                    hashCode = hashCode * 59 + this.IsDec.GetHashCode();
-                if (this.Attrs != null)
-                    hashCode = hashCode * 59 + this.Attrs.GetHashCode();
-                if (this.FlavorsAvailableZones != null)
-                    hashCode = hashCode * 59 + this.FlavorsAvailableZones.GetHashCode();
-                if (this.ReplicaCount != null)
-                    hashCode = hashCode * 59 + this.ReplicaCount.GetHashCode();
+                var hashCode = 41;
+                if (this.SpecCode != null) hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
+                if (this.CloudServiceTypeCode != null) hashCode = hashCode * 59 + this.CloudServiceTypeCode.GetHashCode();
+                if (this.CloudResourceTypeCode != null) hashCode = hashCode * 59 + this.CloudResourceTypeCode.GetHashCode();
+                if (this.CacheMode != null) hashCode = hashCode * 59 + this.CacheMode.GetHashCode();
+                if (this.Engine != null) hashCode = hashCode * 59 + this.Engine.GetHashCode();
+                if (this.EngineVersion != null) hashCode = hashCode * 59 + this.EngineVersion.GetHashCode();
+                if (this.ProductType != null) hashCode = hashCode * 59 + this.ProductType.GetHashCode();
+                if (this.CpuType != null) hashCode = hashCode * 59 + this.CpuType.GetHashCode();
+                if (this.StorageType != null) hashCode = hashCode * 59 + this.StorageType.GetHashCode();
+                if (this.Capacity != null) hashCode = hashCode * 59 + this.Capacity.GetHashCode();
+                if (this.BillingMode != null) hashCode = hashCode * 59 + this.BillingMode.GetHashCode();
+                if (this.TenantIpCount != null) hashCode = hashCode * 59 + this.TenantIpCount.GetHashCode();
+                if (this.PricingType != null) hashCode = hashCode * 59 + this.PricingType.GetHashCode();
+                if (this.IsDec != null) hashCode = hashCode * 59 + this.IsDec.GetHashCode();
+                if (this.Attrs != null) hashCode = hashCode * 59 + this.Attrs.GetHashCode();
+                if (this.FlavorsAvailableZones != null) hashCode = hashCode * 59 + this.FlavorsAvailableZones.GetHashCode();
+                if (this.ReplicaCount != null) hashCode = hashCode * 59 + this.ReplicaCount.GetHashCode();
                 return hashCode;
             }
         }

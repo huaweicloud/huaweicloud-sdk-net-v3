@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(AddVpcExtendCidrResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Vpc != input.Vpc || (this.Vpc != null && !this.Vpc.Equals(input.Vpc))) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
 
-            return 
-                (
-                    this.Vpc == input.Vpc ||
-                    (this.Vpc != null &&
-                    this.Vpc.Equals(input.Vpc))
-                ) && 
-                (
-                    this.RequestId == input.RequestId ||
-                    (this.RequestId != null &&
-                    this.RequestId.Equals(input.RequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Vpc != null)
-                    hashCode = hashCode * 59 + this.Vpc.GetHashCode();
-                if (this.RequestId != null)
-                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.Vpc != null) hashCode = hashCode * 59 + this.Vpc.GetHashCode();
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 return hashCode;
             }
         }

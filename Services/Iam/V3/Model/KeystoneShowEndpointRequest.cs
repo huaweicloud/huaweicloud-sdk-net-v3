@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(KeystoneShowEndpointRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EndpointId != input.EndpointId || (this.EndpointId != null && !this.EndpointId.Equals(input.EndpointId))) return false;
 
-            return 
-                (
-                    this.EndpointId == input.EndpointId ||
-                    (this.EndpointId != null &&
-                    this.EndpointId.Equals(input.EndpointId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EndpointId != null)
-                    hashCode = hashCode * 59 + this.EndpointId.GetHashCode();
+                var hashCode = 41;
+                if (this.EndpointId != null) hashCode = hashCode * 59 + this.EndpointId.GetHashCode();
                 return hashCode;
             }
         }

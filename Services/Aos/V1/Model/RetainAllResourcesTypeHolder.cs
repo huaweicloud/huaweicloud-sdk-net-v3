@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(RetainAllResourcesTypeHolder input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RetainAllResources != input.RetainAllResources || (this.RetainAllResources != null && !this.RetainAllResources.Equals(input.RetainAllResources))) return false;
 
-            return 
-                (
-                    this.RetainAllResources == input.RetainAllResources ||
-                    (this.RetainAllResources != null &&
-                    this.RetainAllResources.Equals(input.RetainAllResources))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RetainAllResources != null)
-                    hashCode = hashCode * 59 + this.RetainAllResources.GetHashCode();
+                var hashCode = 41;
+                if (this.RetainAllResources != null) hashCode = hashCode * 59 + this.RetainAllResources.GetHashCode();
                 return hashCode;
             }
         }

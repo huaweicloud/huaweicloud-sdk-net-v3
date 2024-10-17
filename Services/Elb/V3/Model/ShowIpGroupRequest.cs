@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(ShowIpGroupRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IpgroupId != input.IpgroupId || (this.IpgroupId != null && !this.IpgroupId.Equals(input.IpgroupId))) return false;
 
-            return 
-                (
-                    this.IpgroupId == input.IpgroupId ||
-                    (this.IpgroupId != null &&
-                    this.IpgroupId.Equals(input.IpgroupId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IpgroupId != null)
-                    hashCode = hashCode * 59 + this.IpgroupId.GetHashCode();
+                var hashCode = 41;
+                if (this.IpgroupId != null) hashCode = hashCode * 59 + this.IpgroupId.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Tms.V1.Model
         /// </summary>
         public bool Equals(ModifyPrefineTag input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NewTag != input.NewTag || (this.NewTag != null && !this.NewTag.Equals(input.NewTag))) return false;
+            if (this.OldTag != input.OldTag || (this.OldTag != null && !this.OldTag.Equals(input.OldTag))) return false;
 
-            return 
-                (
-                    this.NewTag == input.NewTag ||
-                    (this.NewTag != null &&
-                    this.NewTag.Equals(input.NewTag))
-                ) && 
-                (
-                    this.OldTag == input.OldTag ||
-                    (this.OldTag != null &&
-                    this.OldTag.Equals(input.OldTag))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Tms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NewTag != null)
-                    hashCode = hashCode * 59 + this.NewTag.GetHashCode();
-                if (this.OldTag != null)
-                    hashCode = hashCode * 59 + this.OldTag.GetHashCode();
+                var hashCode = 41;
+                if (this.NewTag != null) hashCode = hashCode * 59 + this.NewTag.GetHashCode();
+                if (this.OldTag != null) hashCode = hashCode * 59 + this.OldTag.GetHashCode();
                 return hashCode;
             }
         }

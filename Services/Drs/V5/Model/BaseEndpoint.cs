@@ -316,61 +316,19 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(BaseEndpoint input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.EndpointName != input.EndpointName) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
+            if (this.DbPort != input.DbPort || (this.DbPort != null && !this.DbPort.Equals(input.DbPort))) return false;
+            if (this.DbUser != input.DbUser || (this.DbUser != null && !this.DbUser.Equals(input.DbUser))) return false;
+            if (this.DbPassword != input.DbPassword || (this.DbPassword != null && !this.DbPassword.Equals(input.DbPassword))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.InstanceName != input.InstanceName || (this.InstanceName != null && !this.InstanceName.Equals(input.InstanceName))) return false;
+            if (this.DbName != input.DbName || (this.DbName != null && !this.DbName.Equals(input.DbName))) return false;
+            if (this.SourceSharding != input.SourceSharding || (this.SourceSharding != null && input.SourceSharding != null && !this.SourceSharding.SequenceEqual(input.SourceSharding))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.EndpointName == input.EndpointName ||
-                    (this.EndpointName != null &&
-                    this.EndpointName.Equals(input.EndpointName))
-                ) && 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                ) && 
-                (
-                    this.DbPort == input.DbPort ||
-                    (this.DbPort != null &&
-                    this.DbPort.Equals(input.DbPort))
-                ) && 
-                (
-                    this.DbUser == input.DbUser ||
-                    (this.DbUser != null &&
-                    this.DbUser.Equals(input.DbUser))
-                ) && 
-                (
-                    this.DbPassword == input.DbPassword ||
-                    (this.DbPassword != null &&
-                    this.DbPassword.Equals(input.DbPassword))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.InstanceName == input.InstanceName ||
-                    (this.InstanceName != null &&
-                    this.InstanceName.Equals(input.InstanceName))
-                ) && 
-                (
-                    this.DbName == input.DbName ||
-                    (this.DbName != null &&
-                    this.DbName.Equals(input.DbName))
-                ) && 
-                (
-                    this.SourceSharding == input.SourceSharding ||
-                    this.SourceSharding != null &&
-                    input.SourceSharding != null &&
-                    this.SourceSharding.SequenceEqual(input.SourceSharding)
-                );
+            return true;
         }
 
         /// <summary>
@@ -380,27 +338,17 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.EndpointName != null)
-                    hashCode = hashCode * 59 + this.EndpointName.GetHashCode();
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.DbPort != null)
-                    hashCode = hashCode * 59 + this.DbPort.GetHashCode();
-                if (this.DbUser != null)
-                    hashCode = hashCode * 59 + this.DbUser.GetHashCode();
-                if (this.DbPassword != null)
-                    hashCode = hashCode * 59 + this.DbPassword.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.InstanceName != null)
-                    hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
-                if (this.DbName != null)
-                    hashCode = hashCode * 59 + this.DbName.GetHashCode();
-                if (this.SourceSharding != null)
-                    hashCode = hashCode * 59 + this.SourceSharding.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                hashCode = hashCode * 59 + this.EndpointName.GetHashCode();
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.DbPort != null) hashCode = hashCode * 59 + this.DbPort.GetHashCode();
+                if (this.DbUser != null) hashCode = hashCode * 59 + this.DbUser.GetHashCode();
+                if (this.DbPassword != null) hashCode = hashCode * 59 + this.DbPassword.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.InstanceName != null) hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
+                if (this.DbName != null) hashCode = hashCode * 59 + this.DbName.GetHashCode();
+                if (this.SourceSharding != null) hashCode = hashCode * 59 + this.SourceSharding.GetHashCode();
                 return hashCode;
             }
         }

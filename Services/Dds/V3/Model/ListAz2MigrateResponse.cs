@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(ListAz2MigrateResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AzList != input.AzList || (this.AzList != null && input.AzList != null && !this.AzList.SequenceEqual(input.AzList))) return false;
 
-            return 
-                (
-                    this.AzList == input.AzList ||
-                    this.AzList != null &&
-                    input.AzList != null &&
-                    this.AzList.SequenceEqual(input.AzList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AzList != null)
-                    hashCode = hashCode * 59 + this.AzList.GetHashCode();
+                var hashCode = 41;
+                if (this.AzList != null) hashCode = hashCode * 59 + this.AzList.GetHashCode();
                 return hashCode;
             }
         }

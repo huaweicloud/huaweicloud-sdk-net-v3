@@ -279,26 +279,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(BatchDeleteInstanceReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Instances != input.Instances || (this.Instances != null && input.Instances != null && !this.Instances.SequenceEqual(input.Instances))) return false;
+            if (this.Action != input.Action) return false;
+            if (this.AllFailure != input.AllFailure) return false;
 
-            return 
-                (
-                    this.Instances == input.Instances ||
-                    this.Instances != null &&
-                    input.Instances != null &&
-                    this.Instances.SequenceEqual(input.Instances)
-                ) && 
-                (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                ) && 
-                (
-                    this.AllFailure == input.AllFailure ||
-                    (this.AllFailure != null &&
-                    this.AllFailure.Equals(input.AllFailure))
-                );
+            return true;
         }
 
         /// <summary>
@@ -308,13 +294,10 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Instances != null)
-                    hashCode = hashCode * 59 + this.Instances.GetHashCode();
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
-                if (this.AllFailure != null)
-                    hashCode = hashCode * 59 + this.AllFailure.GetHashCode();
+                var hashCode = 41;
+                if (this.Instances != null) hashCode = hashCode * 59 + this.Instances.GetHashCode();
+                hashCode = hashCode * 59 + this.Action.GetHashCode();
+                hashCode = hashCode * 59 + this.AllFailure.GetHashCode();
                 return hashCode;
             }
         }

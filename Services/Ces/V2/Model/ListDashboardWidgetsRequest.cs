@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(ListDashboardWidgetsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DashboardId != input.DashboardId || (this.DashboardId != null && !this.DashboardId.Equals(input.DashboardId))) return false;
 
-            return 
-                (
-                    this.DashboardId == input.DashboardId ||
-                    (this.DashboardId != null &&
-                    this.DashboardId.Equals(input.DashboardId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DashboardId != null)
-                    hashCode = hashCode * 59 + this.DashboardId.GetHashCode();
+                var hashCode = 41;
+                if (this.DashboardId != null) hashCode = hashCode * 59 + this.DashboardId.GetHashCode();
                 return hashCode;
             }
         }

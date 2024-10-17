@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(VariableValidationResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Condition != input.Condition || (this.Condition != null && !this.Condition.Equals(input.Condition))) return false;
+            if (this.ErrorMessage != input.ErrorMessage || (this.ErrorMessage != null && !this.ErrorMessage.Equals(input.ErrorMessage))) return false;
 
-            return 
-                (
-                    this.Condition == input.Condition ||
-                    (this.Condition != null &&
-                    this.Condition.Equals(input.Condition))
-                ) && 
-                (
-                    this.ErrorMessage == input.ErrorMessage ||
-                    (this.ErrorMessage != null &&
-                    this.ErrorMessage.Equals(input.ErrorMessage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Condition != null)
-                    hashCode = hashCode * 59 + this.Condition.GetHashCode();
-                if (this.ErrorMessage != null)
-                    hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
+                var hashCode = 41;
+                if (this.Condition != null) hashCode = hashCode * 59 + this.Condition.GetHashCode();
+                if (this.ErrorMessage != null) hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
                 return hashCode;
             }
         }

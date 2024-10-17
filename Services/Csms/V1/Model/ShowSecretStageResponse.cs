@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         /// </summary>
         public bool Equals(ShowSecretStageResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Stage != input.Stage || (this.Stage != null && !this.Stage.Equals(input.Stage))) return false;
 
-            return 
-                (
-                    this.Stage == input.Stage ||
-                    (this.Stage != null &&
-                    this.Stage.Equals(input.Stage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Stage != null)
-                    hashCode = hashCode * 59 + this.Stage.GetHashCode();
+                var hashCode = 41;
+                if (this.Stage != null) hashCode = hashCode * 59 + this.Stage.GetHashCode();
                 return hashCode;
             }
         }

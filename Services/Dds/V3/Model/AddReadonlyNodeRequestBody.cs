@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(AddReadonlyNodeRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SpecCode != input.SpecCode || (this.SpecCode != null && !this.SpecCode.Equals(input.SpecCode))) return false;
+            if (this.Num != input.Num || (this.Num != null && !this.Num.Equals(input.Num))) return false;
+            if (this.Delay != input.Delay || (this.Delay != null && !this.Delay.Equals(input.Delay))) return false;
+            if (this.IsAutoPay != input.IsAutoPay || (this.IsAutoPay != null && !this.IsAutoPay.Equals(input.IsAutoPay))) return false;
 
-            return 
-                (
-                    this.SpecCode == input.SpecCode ||
-                    (this.SpecCode != null &&
-                    this.SpecCode.Equals(input.SpecCode))
-                ) && 
-                (
-                    this.Num == input.Num ||
-                    (this.Num != null &&
-                    this.Num.Equals(input.Num))
-                ) && 
-                (
-                    this.Delay == input.Delay ||
-                    (this.Delay != null &&
-                    this.Delay.Equals(input.Delay))
-                ) && 
-                (
-                    this.IsAutoPay == input.IsAutoPay ||
-                    (this.IsAutoPay != null &&
-                    this.IsAutoPay.Equals(input.IsAutoPay))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SpecCode != null)
-                    hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
-                if (this.Num != null)
-                    hashCode = hashCode * 59 + this.Num.GetHashCode();
-                if (this.Delay != null)
-                    hashCode = hashCode * 59 + this.Delay.GetHashCode();
-                if (this.IsAutoPay != null)
-                    hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
+                var hashCode = 41;
+                if (this.SpecCode != null) hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
+                if (this.Num != null) hashCode = hashCode * 59 + this.Num.GetHashCode();
+                if (this.Delay != null) hashCode = hashCode * 59 + this.Delay.GetHashCode();
+                if (this.IsAutoPay != null) hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
                 return hashCode;
             }
         }

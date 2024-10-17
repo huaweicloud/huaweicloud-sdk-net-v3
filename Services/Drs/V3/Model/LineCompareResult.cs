@@ -84,42 +84,15 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(LineCompareResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CompareTaskId != input.CompareTaskId || (this.CompareTaskId != null && !this.CompareTaskId.Equals(input.CompareTaskId))) return false;
+            if (this.LineCompareOverview != input.LineCompareOverview || (this.LineCompareOverview != null && input.LineCompareOverview != null && !this.LineCompareOverview.SequenceEqual(input.LineCompareOverview))) return false;
+            if (this.LineCompareOverviewCount != input.LineCompareOverviewCount || (this.LineCompareOverviewCount != null && !this.LineCompareOverviewCount.Equals(input.LineCompareOverviewCount))) return false;
+            if (this.LineCompareDetails != input.LineCompareDetails || (this.LineCompareDetails != null && input.LineCompareDetails != null && !this.LineCompareDetails.SequenceEqual(input.LineCompareDetails))) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
+            if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
 
-            return 
-                (
-                    this.CompareTaskId == input.CompareTaskId ||
-                    (this.CompareTaskId != null &&
-                    this.CompareTaskId.Equals(input.CompareTaskId))
-                ) && 
-                (
-                    this.LineCompareOverview == input.LineCompareOverview ||
-                    this.LineCompareOverview != null &&
-                    input.LineCompareOverview != null &&
-                    this.LineCompareOverview.SequenceEqual(input.LineCompareOverview)
-                ) && 
-                (
-                    this.LineCompareOverviewCount == input.LineCompareOverviewCount ||
-                    (this.LineCompareOverviewCount != null &&
-                    this.LineCompareOverviewCount.Equals(input.LineCompareOverviewCount))
-                ) && 
-                (
-                    this.LineCompareDetails == input.LineCompareDetails ||
-                    this.LineCompareDetails != null &&
-                    input.LineCompareDetails != null &&
-                    this.LineCompareDetails.SequenceEqual(input.LineCompareDetails)
-                ) && 
-                (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
-                ) && 
-                (
-                    this.ErrorMsg == input.ErrorMsg ||
-                    (this.ErrorMsg != null &&
-                    this.ErrorMsg.Equals(input.ErrorMsg))
-                );
+            return true;
         }
 
         /// <summary>
@@ -129,19 +102,13 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CompareTaskId != null)
-                    hashCode = hashCode * 59 + this.CompareTaskId.GetHashCode();
-                if (this.LineCompareOverview != null)
-                    hashCode = hashCode * 59 + this.LineCompareOverview.GetHashCode();
-                if (this.LineCompareOverviewCount != null)
-                    hashCode = hashCode * 59 + this.LineCompareOverviewCount.GetHashCode();
-                if (this.LineCompareDetails != null)
-                    hashCode = hashCode * 59 + this.LineCompareDetails.GetHashCode();
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.ErrorMsg != null)
-                    hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
+                var hashCode = 41;
+                if (this.CompareTaskId != null) hashCode = hashCode * 59 + this.CompareTaskId.GetHashCode();
+                if (this.LineCompareOverview != null) hashCode = hashCode * 59 + this.LineCompareOverview.GetHashCode();
+                if (this.LineCompareOverviewCount != null) hashCode = hashCode * 59 + this.LineCompareOverviewCount.GetHashCode();
+                if (this.LineCompareDetails != null) hashCode = hashCode * 59 + this.LineCompareDetails.GetHashCode();
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
                 return hashCode;
             }
         }

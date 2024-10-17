@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(OperationPreferencesTypeHolder input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OperationPreferences != input.OperationPreferences || (this.OperationPreferences != null && !this.OperationPreferences.Equals(input.OperationPreferences))) return false;
 
-            return 
-                (
-                    this.OperationPreferences == input.OperationPreferences ||
-                    (this.OperationPreferences != null &&
-                    this.OperationPreferences.Equals(input.OperationPreferences))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OperationPreferences != null)
-                    hashCode = hashCode * 59 + this.OperationPreferences.GetHashCode();
+                var hashCode = 41;
+                if (this.OperationPreferences != null) hashCode = hashCode * 59 + this.OperationPreferences.GetHashCode();
                 return hashCode;
             }
         }

@@ -147,90 +147,24 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(RuleAddressDto input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.AddressType != input.AddressType || (this.AddressType != null && !this.AddressType.Equals(input.AddressType))) return false;
+            if (this.Address != input.Address || (this.Address != null && !this.Address.Equals(input.Address))) return false;
+            if (this.AddressSetId != input.AddressSetId || (this.AddressSetId != null && !this.AddressSetId.Equals(input.AddressSetId))) return false;
+            if (this.AddressSetName != input.AddressSetName || (this.AddressSetName != null && !this.AddressSetName.Equals(input.AddressSetName))) return false;
+            if (this.DomainAddressName != input.DomainAddressName || (this.DomainAddressName != null && !this.DomainAddressName.Equals(input.DomainAddressName))) return false;
+            if (this.RegionListJson != input.RegionListJson || (this.RegionListJson != null && !this.RegionListJson.Equals(input.RegionListJson))) return false;
+            if (this.RegionList != input.RegionList || (this.RegionList != null && input.RegionList != null && !this.RegionList.SequenceEqual(input.RegionList))) return false;
+            if (this.DomainSetId != input.DomainSetId || (this.DomainSetId != null && !this.DomainSetId.Equals(input.DomainSetId))) return false;
+            if (this.DomainSetName != input.DomainSetName || (this.DomainSetName != null && !this.DomainSetName.Equals(input.DomainSetName))) return false;
+            if (this.IpAddress != input.IpAddress || (this.IpAddress != null && input.IpAddress != null && !this.IpAddress.SequenceEqual(input.IpAddress))) return false;
+            if (this.AddressGroup != input.AddressGroup || (this.AddressGroup != null && input.AddressGroup != null && !this.AddressGroup.SequenceEqual(input.AddressGroup))) return false;
+            if (this.AddressGroupNames != input.AddressGroupNames || (this.AddressGroupNames != null && input.AddressGroupNames != null && !this.AddressGroupNames.SequenceEqual(input.AddressGroupNames))) return false;
+            if (this.AddressSetType != input.AddressSetType || (this.AddressSetType != null && !this.AddressSetType.Equals(input.AddressSetType))) return false;
+            if (this.PredefinedGroup != input.PredefinedGroup || (this.PredefinedGroup != null && input.PredefinedGroup != null && !this.PredefinedGroup.SequenceEqual(input.PredefinedGroup))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.AddressType == input.AddressType ||
-                    (this.AddressType != null &&
-                    this.AddressType.Equals(input.AddressType))
-                ) && 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
-                ) && 
-                (
-                    this.AddressSetId == input.AddressSetId ||
-                    (this.AddressSetId != null &&
-                    this.AddressSetId.Equals(input.AddressSetId))
-                ) && 
-                (
-                    this.AddressSetName == input.AddressSetName ||
-                    (this.AddressSetName != null &&
-                    this.AddressSetName.Equals(input.AddressSetName))
-                ) && 
-                (
-                    this.DomainAddressName == input.DomainAddressName ||
-                    (this.DomainAddressName != null &&
-                    this.DomainAddressName.Equals(input.DomainAddressName))
-                ) && 
-                (
-                    this.RegionListJson == input.RegionListJson ||
-                    (this.RegionListJson != null &&
-                    this.RegionListJson.Equals(input.RegionListJson))
-                ) && 
-                (
-                    this.RegionList == input.RegionList ||
-                    this.RegionList != null &&
-                    input.RegionList != null &&
-                    this.RegionList.SequenceEqual(input.RegionList)
-                ) && 
-                (
-                    this.DomainSetId == input.DomainSetId ||
-                    (this.DomainSetId != null &&
-                    this.DomainSetId.Equals(input.DomainSetId))
-                ) && 
-                (
-                    this.DomainSetName == input.DomainSetName ||
-                    (this.DomainSetName != null &&
-                    this.DomainSetName.Equals(input.DomainSetName))
-                ) && 
-                (
-                    this.IpAddress == input.IpAddress ||
-                    this.IpAddress != null &&
-                    input.IpAddress != null &&
-                    this.IpAddress.SequenceEqual(input.IpAddress)
-                ) && 
-                (
-                    this.AddressGroup == input.AddressGroup ||
-                    this.AddressGroup != null &&
-                    input.AddressGroup != null &&
-                    this.AddressGroup.SequenceEqual(input.AddressGroup)
-                ) && 
-                (
-                    this.AddressGroupNames == input.AddressGroupNames ||
-                    this.AddressGroupNames != null &&
-                    input.AddressGroupNames != null &&
-                    this.AddressGroupNames.SequenceEqual(input.AddressGroupNames)
-                ) && 
-                (
-                    this.AddressSetType == input.AddressSetType ||
-                    (this.AddressSetType != null &&
-                    this.AddressSetType.Equals(input.AddressSetType))
-                ) && 
-                (
-                    this.PredefinedGroup == input.PredefinedGroup ||
-                    this.PredefinedGroup != null &&
-                    input.PredefinedGroup != null &&
-                    this.PredefinedGroup.SequenceEqual(input.PredefinedGroup)
-                );
+            return true;
         }
 
         /// <summary>
@@ -240,37 +174,22 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.AddressType != null)
-                    hashCode = hashCode * 59 + this.AddressType.GetHashCode();
-                if (this.Address != null)
-                    hashCode = hashCode * 59 + this.Address.GetHashCode();
-                if (this.AddressSetId != null)
-                    hashCode = hashCode * 59 + this.AddressSetId.GetHashCode();
-                if (this.AddressSetName != null)
-                    hashCode = hashCode * 59 + this.AddressSetName.GetHashCode();
-                if (this.DomainAddressName != null)
-                    hashCode = hashCode * 59 + this.DomainAddressName.GetHashCode();
-                if (this.RegionListJson != null)
-                    hashCode = hashCode * 59 + this.RegionListJson.GetHashCode();
-                if (this.RegionList != null)
-                    hashCode = hashCode * 59 + this.RegionList.GetHashCode();
-                if (this.DomainSetId != null)
-                    hashCode = hashCode * 59 + this.DomainSetId.GetHashCode();
-                if (this.DomainSetName != null)
-                    hashCode = hashCode * 59 + this.DomainSetName.GetHashCode();
-                if (this.IpAddress != null)
-                    hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
-                if (this.AddressGroup != null)
-                    hashCode = hashCode * 59 + this.AddressGroup.GetHashCode();
-                if (this.AddressGroupNames != null)
-                    hashCode = hashCode * 59 + this.AddressGroupNames.GetHashCode();
-                if (this.AddressSetType != null)
-                    hashCode = hashCode * 59 + this.AddressSetType.GetHashCode();
-                if (this.PredefinedGroup != null)
-                    hashCode = hashCode * 59 + this.PredefinedGroup.GetHashCode();
+                var hashCode = 41;
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.AddressType != null) hashCode = hashCode * 59 + this.AddressType.GetHashCode();
+                if (this.Address != null) hashCode = hashCode * 59 + this.Address.GetHashCode();
+                if (this.AddressSetId != null) hashCode = hashCode * 59 + this.AddressSetId.GetHashCode();
+                if (this.AddressSetName != null) hashCode = hashCode * 59 + this.AddressSetName.GetHashCode();
+                if (this.DomainAddressName != null) hashCode = hashCode * 59 + this.DomainAddressName.GetHashCode();
+                if (this.RegionListJson != null) hashCode = hashCode * 59 + this.RegionListJson.GetHashCode();
+                if (this.RegionList != null) hashCode = hashCode * 59 + this.RegionList.GetHashCode();
+                if (this.DomainSetId != null) hashCode = hashCode * 59 + this.DomainSetId.GetHashCode();
+                if (this.DomainSetName != null) hashCode = hashCode * 59 + this.DomainSetName.GetHashCode();
+                if (this.IpAddress != null) hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
+                if (this.AddressGroup != null) hashCode = hashCode * 59 + this.AddressGroup.GetHashCode();
+                if (this.AddressGroupNames != null) hashCode = hashCode * 59 + this.AddressGroupNames.GetHashCode();
+                if (this.AddressSetType != null) hashCode = hashCode * 59 + this.AddressSetType.GetHashCode();
+                if (this.PredefinedGroup != null) hashCode = hashCode * 59 + this.PredefinedGroup.GetHashCode();
                 return hashCode;
             }
         }

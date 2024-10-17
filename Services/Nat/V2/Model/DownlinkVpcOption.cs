@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// </summary>
         public bool Equals(DownlinkVpcOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VirsubnetId != input.VirsubnetId || (this.VirsubnetId != null && !this.VirsubnetId.Equals(input.VirsubnetId))) return false;
 
-            return 
-                (
-                    this.VirsubnetId == input.VirsubnetId ||
-                    (this.VirsubnetId != null &&
-                    this.VirsubnetId.Equals(input.VirsubnetId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VirsubnetId != null)
-                    hashCode = hashCode * 59 + this.VirsubnetId.GetHashCode();
+                var hashCode = 41;
+                if (this.VirsubnetId != null) hashCode = hashCode * 59 + this.VirsubnetId.GetHashCode();
                 return hashCode;
             }
         }

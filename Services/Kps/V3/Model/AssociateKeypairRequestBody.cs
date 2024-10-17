@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         /// </summary>
         public bool Equals(AssociateKeypairRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KeypairName != input.KeypairName || (this.KeypairName != null && !this.KeypairName.Equals(input.KeypairName))) return false;
+            if (this.Server != input.Server || (this.Server != null && !this.Server.Equals(input.Server))) return false;
 
-            return 
-                (
-                    this.KeypairName == input.KeypairName ||
-                    (this.KeypairName != null &&
-                    this.KeypairName.Equals(input.KeypairName))
-                ) && 
-                (
-                    this.Server == input.Server ||
-                    (this.Server != null &&
-                    this.Server.Equals(input.Server))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KeypairName != null)
-                    hashCode = hashCode * 59 + this.KeypairName.GetHashCode();
-                if (this.Server != null)
-                    hashCode = hashCode * 59 + this.Server.GetHashCode();
+                var hashCode = 41;
+                if (this.KeypairName != null) hashCode = hashCode * 59 + this.KeypairName.GetHashCode();
+                if (this.Server != null) hashCode = hashCode * 59 + this.Server.GetHashCode();
                 return hashCode;
             }
         }

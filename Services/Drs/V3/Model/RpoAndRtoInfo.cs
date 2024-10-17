@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(RpoAndRtoInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CheckPoint != input.CheckPoint || (this.CheckPoint != null && !this.CheckPoint.Equals(input.CheckPoint))) return false;
+            if (this.Delay != input.Delay || (this.Delay != null && !this.Delay.Equals(input.Delay))) return false;
+            if (this.GtidSet != input.GtidSet || (this.GtidSet != null && !this.GtidSet.Equals(input.GtidSet))) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
 
-            return 
-                (
-                    this.CheckPoint == input.CheckPoint ||
-                    (this.CheckPoint != null &&
-                    this.CheckPoint.Equals(input.CheckPoint))
-                ) && 
-                (
-                    this.Delay == input.Delay ||
-                    (this.Delay != null &&
-                    this.Delay.Equals(input.Delay))
-                ) && 
-                (
-                    this.GtidSet == input.GtidSet ||
-                    (this.GtidSet != null &&
-                    this.GtidSet.Equals(input.GtidSet))
-                ) && 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CheckPoint != null)
-                    hashCode = hashCode * 59 + this.CheckPoint.GetHashCode();
-                if (this.Delay != null)
-                    hashCode = hashCode * 59 + this.Delay.GetHashCode();
-                if (this.GtidSet != null)
-                    hashCode = hashCode * 59 + this.GtidSet.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
+                var hashCode = 41;
+                if (this.CheckPoint != null) hashCode = hashCode * 59 + this.CheckPoint.GetHashCode();
+                if (this.Delay != null) hashCode = hashCode * 59 + this.Delay.GetHashCode();
+                if (this.GtidSet != null) hashCode = hashCode * 59 + this.GtidSet.GetHashCode();
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
                 return hashCode;
             }
         }

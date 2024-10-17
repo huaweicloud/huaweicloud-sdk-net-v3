@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(FlowCompareData input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SrcDb != input.SrcDb || (this.SrcDb != null && !this.SrcDb.Equals(input.SrcDb))) return false;
+            if (this.SrcTb != input.SrcTb || (this.SrcTb != null && !this.SrcTb.Equals(input.SrcTb))) return false;
+            if (this.DstDb != input.DstDb || (this.DstDb != null && !this.DstDb.Equals(input.DstDb))) return false;
+            if (this.DstTb != input.DstTb || (this.DstTb != null && !this.DstTb.Equals(input.DstTb))) return false;
+            if (this.Progress != input.Progress || (this.Progress != null && !this.Progress.Equals(input.Progress))) return false;
 
-            return 
-                (
-                    this.SrcDb == input.SrcDb ||
-                    (this.SrcDb != null &&
-                    this.SrcDb.Equals(input.SrcDb))
-                ) && 
-                (
-                    this.SrcTb == input.SrcTb ||
-                    (this.SrcTb != null &&
-                    this.SrcTb.Equals(input.SrcTb))
-                ) && 
-                (
-                    this.DstDb == input.DstDb ||
-                    (this.DstDb != null &&
-                    this.DstDb.Equals(input.DstDb))
-                ) && 
-                (
-                    this.DstTb == input.DstTb ||
-                    (this.DstTb != null &&
-                    this.DstTb.Equals(input.DstTb))
-                ) && 
-                (
-                    this.Progress == input.Progress ||
-                    (this.Progress != null &&
-                    this.Progress.Equals(input.Progress))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SrcDb != null)
-                    hashCode = hashCode * 59 + this.SrcDb.GetHashCode();
-                if (this.SrcTb != null)
-                    hashCode = hashCode * 59 + this.SrcTb.GetHashCode();
-                if (this.DstDb != null)
-                    hashCode = hashCode * 59 + this.DstDb.GetHashCode();
-                if (this.DstTb != null)
-                    hashCode = hashCode * 59 + this.DstTb.GetHashCode();
-                if (this.Progress != null)
-                    hashCode = hashCode * 59 + this.Progress.GetHashCode();
+                var hashCode = 41;
+                if (this.SrcDb != null) hashCode = hashCode * 59 + this.SrcDb.GetHashCode();
+                if (this.SrcTb != null) hashCode = hashCode * 59 + this.SrcTb.GetHashCode();
+                if (this.DstDb != null) hashCode = hashCode * 59 + this.DstDb.GetHashCode();
+                if (this.DstTb != null) hashCode = hashCode * 59 + this.DstTb.GetHashCode();
+                if (this.Progress != null) hashCode = hashCode * 59 + this.Progress.GetHashCode();
                 return hashCode;
             }
         }

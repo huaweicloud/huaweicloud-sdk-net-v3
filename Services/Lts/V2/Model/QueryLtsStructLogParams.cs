@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(QueryLtsStructLogParams input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.SqlExpression != input.SqlExpression || (this.SqlExpression != null && !this.SqlExpression.Equals(input.SqlExpression))) return false;
+            if (this.OriginalContent != input.OriginalContent || (this.OriginalContent != null && !this.OriginalContent.Equals(input.OriginalContent))) return false;
 
-            return 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.SqlExpression == input.SqlExpression ||
-                    (this.SqlExpression != null &&
-                    this.SqlExpression.Equals(input.SqlExpression))
-                ) && 
-                (
-                    this.OriginalContent == input.OriginalContent ||
-                    (this.OriginalContent != null &&
-                    this.OriginalContent.Equals(input.OriginalContent))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.SqlExpression != null)
-                    hashCode = hashCode * 59 + this.SqlExpression.GetHashCode();
-                if (this.OriginalContent != null)
-                    hashCode = hashCode * 59 + this.OriginalContent.GetHashCode();
+                var hashCode = 41;
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.SqlExpression != null) hashCode = hashCode * 59 + this.SqlExpression.GetHashCode();
+                if (this.OriginalContent != null) hashCode = hashCode * 59 + this.OriginalContent.GetHashCode();
                 return hashCode;
             }
         }

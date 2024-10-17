@@ -119,65 +119,20 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(ResultsTopnBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IndexTraffic != input.IndexTraffic || (this.IndexTraffic != null && !this.IndexTraffic.Equals(input.IndexTraffic))) return false;
+            if (this.Storage != input.Storage || (this.Storage != null && !this.Storage.Equals(input.Storage))) return false;
+            if (this.WriteTraffic != input.WriteTraffic || (this.WriteTraffic != null && !this.WriteTraffic.Equals(input.WriteTraffic))) return false;
+            if (this.LogGroupId != input.LogGroupId || (this.LogGroupId != null && !this.LogGroupId.Equals(input.LogGroupId))) return false;
+            if (this.LogGroupName != input.LogGroupName || (this.LogGroupName != null && !this.LogGroupName.Equals(input.LogGroupName))) return false;
+            if (this.LogStreamId != input.LogStreamId || (this.LogStreamId != null && !this.LogStreamId.Equals(input.LogStreamId))) return false;
+            if (this.LogStreamName != input.LogStreamName || (this.LogStreamName != null && !this.LogStreamName.Equals(input.LogStreamName))) return false;
+            if (this.BasicTransfer != input.BasicTransfer || (this.BasicTransfer != null && !this.BasicTransfer.Equals(input.BasicTransfer))) return false;
+            if (this.SeniorTransfer != input.SeniorTransfer || (this.SeniorTransfer != null && !this.SeniorTransfer.Equals(input.SeniorTransfer))) return false;
+            if (this.IsAgencyTransfer != input.IsAgencyTransfer || (this.IsAgencyTransfer != null && !this.IsAgencyTransfer.Equals(input.IsAgencyTransfer))) return false;
+            if (this.ColdStorage != input.ColdStorage || (this.ColdStorage != null && !this.ColdStorage.Equals(input.ColdStorage))) return false;
 
-            return 
-                (
-                    this.IndexTraffic == input.IndexTraffic ||
-                    (this.IndexTraffic != null &&
-                    this.IndexTraffic.Equals(input.IndexTraffic))
-                ) && 
-                (
-                    this.Storage == input.Storage ||
-                    (this.Storage != null &&
-                    this.Storage.Equals(input.Storage))
-                ) && 
-                (
-                    this.WriteTraffic == input.WriteTraffic ||
-                    (this.WriteTraffic != null &&
-                    this.WriteTraffic.Equals(input.WriteTraffic))
-                ) && 
-                (
-                    this.LogGroupId == input.LogGroupId ||
-                    (this.LogGroupId != null &&
-                    this.LogGroupId.Equals(input.LogGroupId))
-                ) && 
-                (
-                    this.LogGroupName == input.LogGroupName ||
-                    (this.LogGroupName != null &&
-                    this.LogGroupName.Equals(input.LogGroupName))
-                ) && 
-                (
-                    this.LogStreamId == input.LogStreamId ||
-                    (this.LogStreamId != null &&
-                    this.LogStreamId.Equals(input.LogStreamId))
-                ) && 
-                (
-                    this.LogStreamName == input.LogStreamName ||
-                    (this.LogStreamName != null &&
-                    this.LogStreamName.Equals(input.LogStreamName))
-                ) && 
-                (
-                    this.BasicTransfer == input.BasicTransfer ||
-                    (this.BasicTransfer != null &&
-                    this.BasicTransfer.Equals(input.BasicTransfer))
-                ) && 
-                (
-                    this.SeniorTransfer == input.SeniorTransfer ||
-                    (this.SeniorTransfer != null &&
-                    this.SeniorTransfer.Equals(input.SeniorTransfer))
-                ) && 
-                (
-                    this.IsAgencyTransfer == input.IsAgencyTransfer ||
-                    (this.IsAgencyTransfer != null &&
-                    this.IsAgencyTransfer.Equals(input.IsAgencyTransfer))
-                ) && 
-                (
-                    this.ColdStorage == input.ColdStorage ||
-                    (this.ColdStorage != null &&
-                    this.ColdStorage.Equals(input.ColdStorage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,29 +142,18 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IndexTraffic != null)
-                    hashCode = hashCode * 59 + this.IndexTraffic.GetHashCode();
-                if (this.Storage != null)
-                    hashCode = hashCode * 59 + this.Storage.GetHashCode();
-                if (this.WriteTraffic != null)
-                    hashCode = hashCode * 59 + this.WriteTraffic.GetHashCode();
-                if (this.LogGroupId != null)
-                    hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
-                if (this.LogGroupName != null)
-                    hashCode = hashCode * 59 + this.LogGroupName.GetHashCode();
-                if (this.LogStreamId != null)
-                    hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
-                if (this.LogStreamName != null)
-                    hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
-                if (this.BasicTransfer != null)
-                    hashCode = hashCode * 59 + this.BasicTransfer.GetHashCode();
-                if (this.SeniorTransfer != null)
-                    hashCode = hashCode * 59 + this.SeniorTransfer.GetHashCode();
-                if (this.IsAgencyTransfer != null)
-                    hashCode = hashCode * 59 + this.IsAgencyTransfer.GetHashCode();
-                if (this.ColdStorage != null)
-                    hashCode = hashCode * 59 + this.ColdStorage.GetHashCode();
+                var hashCode = 41;
+                if (this.IndexTraffic != null) hashCode = hashCode * 59 + this.IndexTraffic.GetHashCode();
+                if (this.Storage != null) hashCode = hashCode * 59 + this.Storage.GetHashCode();
+                if (this.WriteTraffic != null) hashCode = hashCode * 59 + this.WriteTraffic.GetHashCode();
+                if (this.LogGroupId != null) hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
+                if (this.LogGroupName != null) hashCode = hashCode * 59 + this.LogGroupName.GetHashCode();
+                if (this.LogStreamId != null) hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
+                if (this.LogStreamName != null) hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
+                if (this.BasicTransfer != null) hashCode = hashCode * 59 + this.BasicTransfer.GetHashCode();
+                if (this.SeniorTransfer != null) hashCode = hashCode * 59 + this.SeniorTransfer.GetHashCode();
+                if (this.IsAgencyTransfer != null) hashCode = hashCode * 59 + this.IsAgencyTransfer.GetHashCode();
+                if (this.ColdStorage != null) hashCode = hashCode * 59 + this.ColdStorage.GetHashCode();
                 return hashCode;
             }
         }

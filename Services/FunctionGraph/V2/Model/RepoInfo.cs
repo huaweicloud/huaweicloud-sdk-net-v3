@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(RepoInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HttpsUrl != input.HttpsUrl || (this.HttpsUrl != null && !this.HttpsUrl.Equals(input.HttpsUrl))) return false;
+            if (this.WebUrl != input.WebUrl || (this.WebUrl != null && !this.WebUrl.Equals(input.WebUrl))) return false;
+            if (this.RepoStatus != input.RepoStatus || (this.RepoStatus != null && !this.RepoStatus.Equals(input.RepoStatus))) return false;
+            if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
 
-            return 
-                (
-                    this.HttpsUrl == input.HttpsUrl ||
-                    (this.HttpsUrl != null &&
-                    this.HttpsUrl.Equals(input.HttpsUrl))
-                ) && 
-                (
-                    this.WebUrl == input.WebUrl ||
-                    (this.WebUrl != null &&
-                    this.WebUrl.Equals(input.WebUrl))
-                ) && 
-                (
-                    this.RepoStatus == input.RepoStatus ||
-                    (this.RepoStatus != null &&
-                    this.RepoStatus.Equals(input.RepoStatus))
-                ) && 
-                (
-                    this.ErrorMsg == input.ErrorMsg ||
-                    (this.ErrorMsg != null &&
-                    this.ErrorMsg.Equals(input.ErrorMsg))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HttpsUrl != null)
-                    hashCode = hashCode * 59 + this.HttpsUrl.GetHashCode();
-                if (this.WebUrl != null)
-                    hashCode = hashCode * 59 + this.WebUrl.GetHashCode();
-                if (this.RepoStatus != null)
-                    hashCode = hashCode * 59 + this.RepoStatus.GetHashCode();
-                if (this.ErrorMsg != null)
-                    hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                var hashCode = 41;
+                if (this.HttpsUrl != null) hashCode = hashCode * 59 + this.HttpsUrl.GetHashCode();
+                if (this.WebUrl != null) hashCode = hashCode * 59 + this.WebUrl.GetHashCode();
+                if (this.RepoStatus != null) hashCode = hashCode * 59 + this.RepoStatus.GetHashCode();
+                if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 return hashCode;
             }
         }

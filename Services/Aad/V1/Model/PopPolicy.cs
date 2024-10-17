@@ -220,63 +220,19 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         /// </summary>
         public bool Equals(PopPolicy input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BlockLocation != input.BlockLocation || (this.BlockLocation != null && input.BlockLocation != null && !this.BlockLocation.SequenceEqual(input.BlockLocation))) return false;
+            if (this.BlockProtocol != input.BlockProtocol || (this.BlockProtocol != null && input.BlockProtocol != null && !this.BlockProtocol.SequenceEqual(input.BlockProtocol))) return false;
+            if (this.BwList != input.BwList || (this.BwList != null && !this.BwList.Equals(input.BwList))) return false;
+            if (this.ConnectionProtection != input.ConnectionProtection || (this.ConnectionProtection != null && !this.ConnectionProtection.Equals(input.ConnectionProtection))) return false;
+            if (this.ConnectionProtectionList != input.ConnectionProtectionList || (this.ConnectionProtectionList != null && input.ConnectionProtectionList != null && !this.ConnectionProtectionList.SequenceEqual(input.ConnectionProtectionList))) return false;
+            if (this.FingerprintCount != input.FingerprintCount || (this.FingerprintCount != null && !this.FingerprintCount.Equals(input.FingerprintCount))) return false;
+            if (this.PortBlockCount != input.PortBlockCount || (this.PortBlockCount != null && !this.PortBlockCount.Equals(input.PortBlockCount))) return false;
+            if (this.WatermarkCount != input.WatermarkCount || (this.WatermarkCount != null && !this.WatermarkCount.Equals(input.WatermarkCount))) return false;
+            if (this.IfExistTraffic != input.IfExistTraffic || (this.IfExistTraffic != null && !this.IfExistTraffic.Equals(input.IfExistTraffic))) return false;
+            if (this.Pop != input.Pop) return false;
 
-            return 
-                (
-                    this.BlockLocation == input.BlockLocation ||
-                    this.BlockLocation != null &&
-                    input.BlockLocation != null &&
-                    this.BlockLocation.SequenceEqual(input.BlockLocation)
-                ) && 
-                (
-                    this.BlockProtocol == input.BlockProtocol ||
-                    this.BlockProtocol != null &&
-                    input.BlockProtocol != null &&
-                    this.BlockProtocol.SequenceEqual(input.BlockProtocol)
-                ) && 
-                (
-                    this.BwList == input.BwList ||
-                    (this.BwList != null &&
-                    this.BwList.Equals(input.BwList))
-                ) && 
-                (
-                    this.ConnectionProtection == input.ConnectionProtection ||
-                    (this.ConnectionProtection != null &&
-                    this.ConnectionProtection.Equals(input.ConnectionProtection))
-                ) && 
-                (
-                    this.ConnectionProtectionList == input.ConnectionProtectionList ||
-                    this.ConnectionProtectionList != null &&
-                    input.ConnectionProtectionList != null &&
-                    this.ConnectionProtectionList.SequenceEqual(input.ConnectionProtectionList)
-                ) && 
-                (
-                    this.FingerprintCount == input.FingerprintCount ||
-                    (this.FingerprintCount != null &&
-                    this.FingerprintCount.Equals(input.FingerprintCount))
-                ) && 
-                (
-                    this.PortBlockCount == input.PortBlockCount ||
-                    (this.PortBlockCount != null &&
-                    this.PortBlockCount.Equals(input.PortBlockCount))
-                ) && 
-                (
-                    this.WatermarkCount == input.WatermarkCount ||
-                    (this.WatermarkCount != null &&
-                    this.WatermarkCount.Equals(input.WatermarkCount))
-                ) && 
-                (
-                    this.IfExistTraffic == input.IfExistTraffic ||
-                    (this.IfExistTraffic != null &&
-                    this.IfExistTraffic.Equals(input.IfExistTraffic))
-                ) && 
-                (
-                    this.Pop == input.Pop ||
-                    (this.Pop != null &&
-                    this.Pop.Equals(input.Pop))
-                );
+            return true;
         }
 
         /// <summary>
@@ -286,27 +242,17 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BlockLocation != null)
-                    hashCode = hashCode * 59 + this.BlockLocation.GetHashCode();
-                if (this.BlockProtocol != null)
-                    hashCode = hashCode * 59 + this.BlockProtocol.GetHashCode();
-                if (this.BwList != null)
-                    hashCode = hashCode * 59 + this.BwList.GetHashCode();
-                if (this.ConnectionProtection != null)
-                    hashCode = hashCode * 59 + this.ConnectionProtection.GetHashCode();
-                if (this.ConnectionProtectionList != null)
-                    hashCode = hashCode * 59 + this.ConnectionProtectionList.GetHashCode();
-                if (this.FingerprintCount != null)
-                    hashCode = hashCode * 59 + this.FingerprintCount.GetHashCode();
-                if (this.PortBlockCount != null)
-                    hashCode = hashCode * 59 + this.PortBlockCount.GetHashCode();
-                if (this.WatermarkCount != null)
-                    hashCode = hashCode * 59 + this.WatermarkCount.GetHashCode();
-                if (this.IfExistTraffic != null)
-                    hashCode = hashCode * 59 + this.IfExistTraffic.GetHashCode();
-                if (this.Pop != null)
-                    hashCode = hashCode * 59 + this.Pop.GetHashCode();
+                var hashCode = 41;
+                if (this.BlockLocation != null) hashCode = hashCode * 59 + this.BlockLocation.GetHashCode();
+                if (this.BlockProtocol != null) hashCode = hashCode * 59 + this.BlockProtocol.GetHashCode();
+                if (this.BwList != null) hashCode = hashCode * 59 + this.BwList.GetHashCode();
+                if (this.ConnectionProtection != null) hashCode = hashCode * 59 + this.ConnectionProtection.GetHashCode();
+                if (this.ConnectionProtectionList != null) hashCode = hashCode * 59 + this.ConnectionProtectionList.GetHashCode();
+                if (this.FingerprintCount != null) hashCode = hashCode * 59 + this.FingerprintCount.GetHashCode();
+                if (this.PortBlockCount != null) hashCode = hashCode * 59 + this.PortBlockCount.GetHashCode();
+                if (this.WatermarkCount != null) hashCode = hashCode * 59 + this.WatermarkCount.GetHashCode();
+                if (this.IfExistTraffic != null) hashCode = hashCode * 59 + this.IfExistTraffic.GetHashCode();
+                hashCode = hashCode * 59 + this.Pop.GetHashCode();
                 return hashCode;
             }
         }

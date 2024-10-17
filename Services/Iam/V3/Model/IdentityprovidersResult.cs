@@ -84,41 +84,15 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(IdentityprovidersResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SsoType != input.SsoType || (this.SsoType != null && !this.SsoType.Equals(input.SsoType))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
+            if (this.RemoteIds != input.RemoteIds || (this.RemoteIds != null && input.RemoteIds != null && !this.RemoteIds.SequenceEqual(input.RemoteIds))) return false;
+            if (this.Links != input.Links || (this.Links != null && !this.Links.Equals(input.Links))) return false;
 
-            return 
-                (
-                    this.SsoType == input.SsoType ||
-                    (this.SsoType != null &&
-                    this.SsoType.Equals(input.SsoType))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Enabled == input.Enabled ||
-                    (this.Enabled != null &&
-                    this.Enabled.Equals(input.Enabled))
-                ) && 
-                (
-                    this.RemoteIds == input.RemoteIds ||
-                    this.RemoteIds != null &&
-                    input.RemoteIds != null &&
-                    this.RemoteIds.SequenceEqual(input.RemoteIds)
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    (this.Links != null &&
-                    this.Links.Equals(input.Links))
-                );
+            return true;
         }
 
         /// <summary>
@@ -128,19 +102,13 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SsoType != null)
-                    hashCode = hashCode * 59 + this.SsoType.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Enabled != null)
-                    hashCode = hashCode * 59 + this.Enabled.GetHashCode();
-                if (this.RemoteIds != null)
-                    hashCode = hashCode * 59 + this.RemoteIds.GetHashCode();
-                if (this.Links != null)
-                    hashCode = hashCode * 59 + this.Links.GetHashCode();
+                var hashCode = 41;
+                if (this.SsoType != null) hashCode = hashCode * 59 + this.SsoType.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
+                if (this.RemoteIds != null) hashCode = hashCode * 59 + this.RemoteIds.GetHashCode();
+                if (this.Links != null) hashCode = hashCode * 59 + this.Links.GetHashCode();
                 return hashCode;
             }
         }

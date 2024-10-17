@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(IdcardVerificationResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ValidNumber != input.ValidNumber || (this.ValidNumber != null && !this.ValidNumber.Equals(input.ValidNumber))) return false;
+            if (this.ValidBirth != input.ValidBirth || (this.ValidBirth != null && !this.ValidBirth.Equals(input.ValidBirth))) return false;
+            if (this.ValidSex != input.ValidSex || (this.ValidSex != null && !this.ValidSex.Equals(input.ValidSex))) return false;
+            if (this.ValidDate != input.ValidDate || (this.ValidDate != null && !this.ValidDate.Equals(input.ValidDate))) return false;
+            if (this.ValidValidityPeriod != input.ValidValidityPeriod || (this.ValidValidityPeriod != null && !this.ValidValidityPeriod.Equals(input.ValidValidityPeriod))) return false;
 
-            return 
-                (
-                    this.ValidNumber == input.ValidNumber ||
-                    (this.ValidNumber != null &&
-                    this.ValidNumber.Equals(input.ValidNumber))
-                ) && 
-                (
-                    this.ValidBirth == input.ValidBirth ||
-                    (this.ValidBirth != null &&
-                    this.ValidBirth.Equals(input.ValidBirth))
-                ) && 
-                (
-                    this.ValidSex == input.ValidSex ||
-                    (this.ValidSex != null &&
-                    this.ValidSex.Equals(input.ValidSex))
-                ) && 
-                (
-                    this.ValidDate == input.ValidDate ||
-                    (this.ValidDate != null &&
-                    this.ValidDate.Equals(input.ValidDate))
-                ) && 
-                (
-                    this.ValidValidityPeriod == input.ValidValidityPeriod ||
-                    (this.ValidValidityPeriod != null &&
-                    this.ValidValidityPeriod.Equals(input.ValidValidityPeriod))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ValidNumber != null)
-                    hashCode = hashCode * 59 + this.ValidNumber.GetHashCode();
-                if (this.ValidBirth != null)
-                    hashCode = hashCode * 59 + this.ValidBirth.GetHashCode();
-                if (this.ValidSex != null)
-                    hashCode = hashCode * 59 + this.ValidSex.GetHashCode();
-                if (this.ValidDate != null)
-                    hashCode = hashCode * 59 + this.ValidDate.GetHashCode();
-                if (this.ValidValidityPeriod != null)
-                    hashCode = hashCode * 59 + this.ValidValidityPeriod.GetHashCode();
+                var hashCode = 41;
+                if (this.ValidNumber != null) hashCode = hashCode * 59 + this.ValidNumber.GetHashCode();
+                if (this.ValidBirth != null) hashCode = hashCode * 59 + this.ValidBirth.GetHashCode();
+                if (this.ValidSex != null) hashCode = hashCode * 59 + this.ValidSex.GetHashCode();
+                if (this.ValidDate != null) hashCode = hashCode * 59 + this.ValidDate.GetHashCode();
+                if (this.ValidValidityPeriod != null) hashCode = hashCode * 59 + this.ValidValidityPeriod.GetHashCode();
                 return hashCode;
             }
         }

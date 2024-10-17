@@ -184,31 +184,13 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(StreamTranscodingTemplate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
+            if (this.AppName != input.AppName || (this.AppName != null && !this.AppName.Equals(input.AppName))) return false;
+            if (this.TransType != input.TransType) return false;
+            if (this.QualityInfo != input.QualityInfo || (this.QualityInfo != null && input.QualityInfo != null && !this.QualityInfo.SequenceEqual(input.QualityInfo))) return false;
 
-            return 
-                (
-                    this.Domain == input.Domain ||
-                    (this.Domain != null &&
-                    this.Domain.Equals(input.Domain))
-                ) && 
-                (
-                    this.AppName == input.AppName ||
-                    (this.AppName != null &&
-                    this.AppName.Equals(input.AppName))
-                ) && 
-                (
-                    this.TransType == input.TransType ||
-                    (this.TransType != null &&
-                    this.TransType.Equals(input.TransType))
-                ) && 
-                (
-                    this.QualityInfo == input.QualityInfo ||
-                    this.QualityInfo != null &&
-                    input.QualityInfo != null &&
-                    this.QualityInfo.SequenceEqual(input.QualityInfo)
-                );
+            return true;
         }
 
         /// <summary>
@@ -218,15 +200,11 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Domain != null)
-                    hashCode = hashCode * 59 + this.Domain.GetHashCode();
-                if (this.AppName != null)
-                    hashCode = hashCode * 59 + this.AppName.GetHashCode();
-                if (this.TransType != null)
-                    hashCode = hashCode * 59 + this.TransType.GetHashCode();
-                if (this.QualityInfo != null)
-                    hashCode = hashCode * 59 + this.QualityInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                if (this.AppName != null) hashCode = hashCode * 59 + this.AppName.GetHashCode();
+                hashCode = hashCode * 59 + this.TransType.GetHashCode();
+                if (this.QualityInfo != null) hashCode = hashCode * 59 + this.QualityInfo.GetHashCode();
                 return hashCode;
             }
         }

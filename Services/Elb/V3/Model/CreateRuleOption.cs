@@ -98,51 +98,17 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(CreateRuleOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.CompareType != input.CompareType || (this.CompareType != null && !this.CompareType.Equals(input.CompareType))) return false;
+            if (this.Key != input.Key || (this.Key != null && !this.Key.Equals(input.Key))) return false;
+            if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Invert != input.Invert || (this.Invert != null && !this.Invert.Equals(input.Invert))) return false;
+            if (this.Conditions != input.Conditions || (this.Conditions != null && input.Conditions != null && !this.Conditions.SequenceEqual(input.Conditions))) return false;
 
-            return 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.CompareType == input.CompareType ||
-                    (this.CompareType != null &&
-                    this.CompareType.Equals(input.CompareType))
-                ) && 
-                (
-                    this.Key == input.Key ||
-                    (this.Key != null &&
-                    this.Key.Equals(input.Key))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Invert == input.Invert ||
-                    (this.Invert != null &&
-                    this.Invert.Equals(input.Invert))
-                ) && 
-                (
-                    this.Conditions == input.Conditions ||
-                    this.Conditions != null &&
-                    input.Conditions != null &&
-                    this.Conditions.SequenceEqual(input.Conditions)
-                );
+            return true;
         }
 
         /// <summary>
@@ -152,23 +118,15 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.CompareType != null)
-                    hashCode = hashCode * 59 + this.CompareType.GetHashCode();
-                if (this.Key != null)
-                    hashCode = hashCode * 59 + this.Key.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Invert != null)
-                    hashCode = hashCode * 59 + this.Invert.GetHashCode();
-                if (this.Conditions != null)
-                    hashCode = hashCode * 59 + this.Conditions.GetHashCode();
+                var hashCode = 41;
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.CompareType != null) hashCode = hashCode * 59 + this.CompareType.GetHashCode();
+                if (this.Key != null) hashCode = hashCode * 59 + this.Key.GetHashCode();
+                if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Invert != null) hashCode = hashCode * 59 + this.Invert.GetHashCode();
+                if (this.Conditions != null) hashCode = hashCode * 59 + this.Conditions.GetHashCode();
                 return hashCode;
             }
         }

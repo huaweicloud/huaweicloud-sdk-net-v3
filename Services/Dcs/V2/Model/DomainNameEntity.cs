@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(DomainNameEntity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
+            if (this.IsReadonly != input.IsReadonly || (this.IsReadonly != null && !this.IsReadonly.Equals(input.IsReadonly))) return false;
 
-            return 
-                (
-                    this.DomainName == input.DomainName ||
-                    (this.DomainName != null &&
-                    this.DomainName.Equals(input.DomainName))
-                ) && 
-                (
-                    this.IsReadonly == input.IsReadonly ||
-                    (this.IsReadonly != null &&
-                    this.IsReadonly.Equals(input.IsReadonly))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DomainName != null)
-                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.IsReadonly != null)
-                    hashCode = hashCode * 59 + this.IsReadonly.GetHashCode();
+                var hashCode = 41;
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.IsReadonly != null) hashCode = hashCode * 59 + this.IsReadonly.GetHashCode();
                 return hashCode;
             }
         }

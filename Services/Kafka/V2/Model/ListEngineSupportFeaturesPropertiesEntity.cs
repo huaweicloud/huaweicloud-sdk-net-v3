@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ListEngineSupportFeaturesPropertiesEntity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MaxTask != input.MaxTask || (this.MaxTask != null && !this.MaxTask.Equals(input.MaxTask))) return false;
+            if (this.MinTask != input.MinTask || (this.MinTask != null && !this.MinTask.Equals(input.MinTask))) return false;
+            if (this.MaxNode != input.MaxNode || (this.MaxNode != null && !this.MaxNode.Equals(input.MaxNode))) return false;
+            if (this.MinNode != input.MinNode || (this.MinNode != null && !this.MinNode.Equals(input.MinNode))) return false;
 
-            return 
-                (
-                    this.MaxTask == input.MaxTask ||
-                    (this.MaxTask != null &&
-                    this.MaxTask.Equals(input.MaxTask))
-                ) && 
-                (
-                    this.MinTask == input.MinTask ||
-                    (this.MinTask != null &&
-                    this.MinTask.Equals(input.MinTask))
-                ) && 
-                (
-                    this.MaxNode == input.MaxNode ||
-                    (this.MaxNode != null &&
-                    this.MaxNode.Equals(input.MaxNode))
-                ) && 
-                (
-                    this.MinNode == input.MinNode ||
-                    (this.MinNode != null &&
-                    this.MinNode.Equals(input.MinNode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MaxTask != null)
-                    hashCode = hashCode * 59 + this.MaxTask.GetHashCode();
-                if (this.MinTask != null)
-                    hashCode = hashCode * 59 + this.MinTask.GetHashCode();
-                if (this.MaxNode != null)
-                    hashCode = hashCode * 59 + this.MaxNode.GetHashCode();
-                if (this.MinNode != null)
-                    hashCode = hashCode * 59 + this.MinNode.GetHashCode();
+                var hashCode = 41;
+                if (this.MaxTask != null) hashCode = hashCode * 59 + this.MaxTask.GetHashCode();
+                if (this.MinTask != null) hashCode = hashCode * 59 + this.MinTask.GetHashCode();
+                if (this.MaxNode != null) hashCode = hashCode * 59 + this.MaxNode.GetHashCode();
+                if (this.MinNode != null) hashCode = hashCode * 59 + this.MinNode.GetHashCode();
                 return hashCode;
             }
         }

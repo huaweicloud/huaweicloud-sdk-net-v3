@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(NovaAvailabilityZoneState input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Available != input.Available || (this.Available != null && !this.Available.Equals(input.Available))) return false;
 
-            return 
-                (
-                    this.Available == input.Available ||
-                    (this.Available != null &&
-                    this.Available.Equals(input.Available))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Available != null)
-                    hashCode = hashCode * 59 + this.Available.GetHashCode();
+                var hashCode = 41;
+                if (this.Available != null) hashCode = hashCode * 59 + this.Available.GetHashCode();
                 return hashCode;
             }
         }

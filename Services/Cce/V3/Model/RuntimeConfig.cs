@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(RuntimeConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LvType != input.LvType || (this.LvType != null && !this.LvType.Equals(input.LvType))) return false;
 
-            return 
-                (
-                    this.LvType == input.LvType ||
-                    (this.LvType != null &&
-                    this.LvType.Equals(input.LvType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LvType != null)
-                    hashCode = hashCode * 59 + this.LvType.GetHashCode();
+                var hashCode = 41;
+                if (this.LvType != null) hashCode = hashCode * 59 + this.LvType.GetHashCode();
                 return hashCode;
             }
         }

@@ -119,65 +119,20 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(MyanmarIdcardConfidence input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NrcId != input.NrcId || (this.NrcId != null && !this.NrcId.Equals(input.NrcId))) return false;
+            if (this.IssueDate != input.IssueDate || (this.IssueDate != null && !this.IssueDate.Equals(input.IssueDate))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Birth != input.Birth || (this.Birth != null && !this.Birth.Equals(input.Birth))) return false;
+            if (this.BloodlinesReligion != input.BloodlinesReligion || (this.BloodlinesReligion != null && !this.BloodlinesReligion.Equals(input.BloodlinesReligion))) return false;
+            if (this.Height != input.Height || (this.Height != null && !this.Height.Equals(input.Height))) return false;
+            if (this.BloodGroup != input.BloodGroup || (this.BloodGroup != null && !this.BloodGroup.Equals(input.BloodGroup))) return false;
+            if (this.CardId != input.CardId || (this.CardId != null && !this.CardId.Equals(input.CardId))) return false;
+            if (this.NrcIdBack != input.NrcIdBack || (this.NrcIdBack != null && !this.NrcIdBack.Equals(input.NrcIdBack))) return false;
+            if (this.Profession != input.Profession || (this.Profession != null && !this.Profession.Equals(input.Profession))) return false;
+            if (this.Address != input.Address || (this.Address != null && !this.Address.Equals(input.Address))) return false;
 
-            return 
-                (
-                    this.NrcId == input.NrcId ||
-                    (this.NrcId != null &&
-                    this.NrcId.Equals(input.NrcId))
-                ) && 
-                (
-                    this.IssueDate == input.IssueDate ||
-                    (this.IssueDate != null &&
-                    this.IssueDate.Equals(input.IssueDate))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Birth == input.Birth ||
-                    (this.Birth != null &&
-                    this.Birth.Equals(input.Birth))
-                ) && 
-                (
-                    this.BloodlinesReligion == input.BloodlinesReligion ||
-                    (this.BloodlinesReligion != null &&
-                    this.BloodlinesReligion.Equals(input.BloodlinesReligion))
-                ) && 
-                (
-                    this.Height == input.Height ||
-                    (this.Height != null &&
-                    this.Height.Equals(input.Height))
-                ) && 
-                (
-                    this.BloodGroup == input.BloodGroup ||
-                    (this.BloodGroup != null &&
-                    this.BloodGroup.Equals(input.BloodGroup))
-                ) && 
-                (
-                    this.CardId == input.CardId ||
-                    (this.CardId != null &&
-                    this.CardId.Equals(input.CardId))
-                ) && 
-                (
-                    this.NrcIdBack == input.NrcIdBack ||
-                    (this.NrcIdBack != null &&
-                    this.NrcIdBack.Equals(input.NrcIdBack))
-                ) && 
-                (
-                    this.Profession == input.Profession ||
-                    (this.Profession != null &&
-                    this.Profession.Equals(input.Profession))
-                ) && 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,29 +142,18 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NrcId != null)
-                    hashCode = hashCode * 59 + this.NrcId.GetHashCode();
-                if (this.IssueDate != null)
-                    hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Birth != null)
-                    hashCode = hashCode * 59 + this.Birth.GetHashCode();
-                if (this.BloodlinesReligion != null)
-                    hashCode = hashCode * 59 + this.BloodlinesReligion.GetHashCode();
-                if (this.Height != null)
-                    hashCode = hashCode * 59 + this.Height.GetHashCode();
-                if (this.BloodGroup != null)
-                    hashCode = hashCode * 59 + this.BloodGroup.GetHashCode();
-                if (this.CardId != null)
-                    hashCode = hashCode * 59 + this.CardId.GetHashCode();
-                if (this.NrcIdBack != null)
-                    hashCode = hashCode * 59 + this.NrcIdBack.GetHashCode();
-                if (this.Profession != null)
-                    hashCode = hashCode * 59 + this.Profession.GetHashCode();
-                if (this.Address != null)
-                    hashCode = hashCode * 59 + this.Address.GetHashCode();
+                var hashCode = 41;
+                if (this.NrcId != null) hashCode = hashCode * 59 + this.NrcId.GetHashCode();
+                if (this.IssueDate != null) hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Birth != null) hashCode = hashCode * 59 + this.Birth.GetHashCode();
+                if (this.BloodlinesReligion != null) hashCode = hashCode * 59 + this.BloodlinesReligion.GetHashCode();
+                if (this.Height != null) hashCode = hashCode * 59 + this.Height.GetHashCode();
+                if (this.BloodGroup != null) hashCode = hashCode * 59 + this.BloodGroup.GetHashCode();
+                if (this.CardId != null) hashCode = hashCode * 59 + this.CardId.GetHashCode();
+                if (this.NrcIdBack != null) hashCode = hashCode * 59 + this.NrcIdBack.GetHashCode();
+                if (this.Profession != null) hashCode = hashCode * 59 + this.Profession.GetHashCode();
+                if (this.Address != null) hashCode = hashCode * 59 + this.Address.GetHashCode();
                 return hashCode;
             }
         }

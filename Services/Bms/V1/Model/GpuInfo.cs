@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(GpuInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.MemoryMb != input.MemoryMb || (this.MemoryMb != null && !this.MemoryMb.Equals(input.MemoryMb))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.MemoryMb == input.MemoryMb ||
-                    (this.MemoryMb != null &&
-                    this.MemoryMb.Equals(input.MemoryMb))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.MemoryMb != null)
-                    hashCode = hashCode * 59 + this.MemoryMb.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.MemoryMb != null) hashCode = hashCode * 59 + this.MemoryMb.GetHashCode();
                 return hashCode;
             }
         }

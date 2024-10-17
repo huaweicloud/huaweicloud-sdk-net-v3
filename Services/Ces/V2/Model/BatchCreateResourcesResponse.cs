@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(BatchCreateResourcesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SucceedCount != input.SucceedCount || (this.SucceedCount != null && !this.SucceedCount.Equals(input.SucceedCount))) return false;
 
-            return 
-                (
-                    this.SucceedCount == input.SucceedCount ||
-                    (this.SucceedCount != null &&
-                    this.SucceedCount.Equals(input.SucceedCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SucceedCount != null)
-                    hashCode = hashCode * 59 + this.SucceedCount.GetHashCode();
+                var hashCode = 41;
+                if (this.SucceedCount != null) hashCode = hashCode * 59 + this.SucceedCount.GetHashCode();
                 return hashCode;
             }
         }

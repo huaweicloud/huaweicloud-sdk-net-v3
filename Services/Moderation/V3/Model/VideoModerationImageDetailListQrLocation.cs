@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// </summary>
         public bool Equals(VideoModerationImageDetailListQrLocation input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TopLeftX != input.TopLeftX || (this.TopLeftX != null && !this.TopLeftX.Equals(input.TopLeftX))) return false;
+            if (this.TopLeftY != input.TopLeftY || (this.TopLeftY != null && !this.TopLeftY.Equals(input.TopLeftY))) return false;
+            if (this.BottomRightX != input.BottomRightX || (this.BottomRightX != null && !this.BottomRightX.Equals(input.BottomRightX))) return false;
+            if (this.BottomRightY != input.BottomRightY || (this.BottomRightY != null && !this.BottomRightY.Equals(input.BottomRightY))) return false;
 
-            return 
-                (
-                    this.TopLeftX == input.TopLeftX ||
-                    (this.TopLeftX != null &&
-                    this.TopLeftX.Equals(input.TopLeftX))
-                ) && 
-                (
-                    this.TopLeftY == input.TopLeftY ||
-                    (this.TopLeftY != null &&
-                    this.TopLeftY.Equals(input.TopLeftY))
-                ) && 
-                (
-                    this.BottomRightX == input.BottomRightX ||
-                    (this.BottomRightX != null &&
-                    this.BottomRightX.Equals(input.BottomRightX))
-                ) && 
-                (
-                    this.BottomRightY == input.BottomRightY ||
-                    (this.BottomRightY != null &&
-                    this.BottomRightY.Equals(input.BottomRightY))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TopLeftX != null)
-                    hashCode = hashCode * 59 + this.TopLeftX.GetHashCode();
-                if (this.TopLeftY != null)
-                    hashCode = hashCode * 59 + this.TopLeftY.GetHashCode();
-                if (this.BottomRightX != null)
-                    hashCode = hashCode * 59 + this.BottomRightX.GetHashCode();
-                if (this.BottomRightY != null)
-                    hashCode = hashCode * 59 + this.BottomRightY.GetHashCode();
+                var hashCode = 41;
+                if (this.TopLeftX != null) hashCode = hashCode * 59 + this.TopLeftX.GetHashCode();
+                if (this.TopLeftY != null) hashCode = hashCode * 59 + this.TopLeftY.GetHashCode();
+                if (this.BottomRightX != null) hashCode = hashCode * 59 + this.BottomRightX.GetHashCode();
+                if (this.BottomRightY != null) hashCode = hashCode * 59 + this.BottomRightY.GetHashCode();
                 return hashCode;
             }
         }

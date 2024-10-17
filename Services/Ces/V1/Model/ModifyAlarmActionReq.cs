@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// </summary>
         public bool Equals(ModifyAlarmActionReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AlarmEnabled != input.AlarmEnabled || (this.AlarmEnabled != null && !this.AlarmEnabled.Equals(input.AlarmEnabled))) return false;
 
-            return 
-                (
-                    this.AlarmEnabled == input.AlarmEnabled ||
-                    (this.AlarmEnabled != null &&
-                    this.AlarmEnabled.Equals(input.AlarmEnabled))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AlarmEnabled != null)
-                    hashCode = hashCode * 59 + this.AlarmEnabled.GetHashCode();
+                var hashCode = 41;
+                if (this.AlarmEnabled != null) hashCode = hashCode * 59 + this.AlarmEnabled.GetHashCode();
                 return hashCode;
             }
         }

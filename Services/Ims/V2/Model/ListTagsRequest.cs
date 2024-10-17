@@ -894,85 +894,24 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         public bool Equals(ListTagsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Page != input.Page || (this.Page != null && !this.Page.Equals(input.Page))) return false;
+            if (this.Imagetype != input.Imagetype) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.MinDisk != input.MinDisk || (this.MinDisk != null && !this.MinDisk.Equals(input.MinDisk))) return false;
+            if (this.Platform != input.Platform || (this.Platform != null && !this.Platform.Equals(input.Platform))) return false;
+            if (this.OsType != input.OsType) return false;
+            if (this.MemberStatus != input.MemberStatus) return false;
+            if (this.VirtualEnvType != input.VirtualEnvType) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.Architecture != input.Architecture) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
 
-            return 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Page == input.Page ||
-                    (this.Page != null &&
-                    this.Page.Equals(input.Page))
-                ) && 
-                (
-                    this.Imagetype == input.Imagetype ||
-                    (this.Imagetype != null &&
-                    this.Imagetype.Equals(input.Imagetype))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.MinDisk == input.MinDisk ||
-                    (this.MinDisk != null &&
-                    this.MinDisk.Equals(input.MinDisk))
-                ) && 
-                (
-                    this.Platform == input.Platform ||
-                    (this.Platform != null &&
-                    this.Platform.Equals(input.Platform))
-                ) && 
-                (
-                    this.OsType == input.OsType ||
-                    (this.OsType != null &&
-                    this.OsType.Equals(input.OsType))
-                ) && 
-                (
-                    this.MemberStatus == input.MemberStatus ||
-                    (this.MemberStatus != null &&
-                    this.MemberStatus.Equals(input.MemberStatus))
-                ) && 
-                (
-                    this.VirtualEnvType == input.VirtualEnvType ||
-                    (this.VirtualEnvType != null &&
-                    this.VirtualEnvType.Equals(input.VirtualEnvType))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.Architecture == input.Architecture ||
-                    (this.Architecture != null &&
-                    this.Architecture.Equals(input.Architecture))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -982,37 +921,22 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Page != null)
-                    hashCode = hashCode * 59 + this.Page.GetHashCode();
-                if (this.Imagetype != null)
-                    hashCode = hashCode * 59 + this.Imagetype.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.MinDisk != null)
-                    hashCode = hashCode * 59 + this.MinDisk.GetHashCode();
-                if (this.Platform != null)
-                    hashCode = hashCode * 59 + this.Platform.GetHashCode();
-                if (this.OsType != null)
-                    hashCode = hashCode * 59 + this.OsType.GetHashCode();
-                if (this.MemberStatus != null)
-                    hashCode = hashCode * 59 + this.MemberStatus.GetHashCode();
-                if (this.VirtualEnvType != null)
-                    hashCode = hashCode * 59 + this.VirtualEnvType.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.Architecture != null)
-                    hashCode = hashCode * 59 + this.Architecture.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                var hashCode = 41;
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Page != null) hashCode = hashCode * 59 + this.Page.GetHashCode();
+                hashCode = hashCode * 59 + this.Imagetype.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.MinDisk != null) hashCode = hashCode * 59 + this.MinDisk.GetHashCode();
+                if (this.Platform != null) hashCode = hashCode * 59 + this.Platform.GetHashCode();
+                hashCode = hashCode * 59 + this.OsType.GetHashCode();
+                hashCode = hashCode * 59 + this.MemberStatus.GetHashCode();
+                hashCode = hashCode * 59 + this.VirtualEnvType.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                hashCode = hashCode * 59 + this.Architecture.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 return hashCode;
             }
         }

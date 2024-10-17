@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(MysqlShowProxyResponseV3 input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Proxy != input.Proxy || (this.Proxy != null && !this.Proxy.Equals(input.Proxy))) return false;
+            if (this.MasterNode != input.MasterNode || (this.MasterNode != null && !this.MasterNode.Equals(input.MasterNode))) return false;
+            if (this.ReadonlyNodes != input.ReadonlyNodes || (this.ReadonlyNodes != null && input.ReadonlyNodes != null && !this.ReadonlyNodes.SequenceEqual(input.ReadonlyNodes))) return false;
 
-            return 
-                (
-                    this.Proxy == input.Proxy ||
-                    (this.Proxy != null &&
-                    this.Proxy.Equals(input.Proxy))
-                ) && 
-                (
-                    this.MasterNode == input.MasterNode ||
-                    (this.MasterNode != null &&
-                    this.MasterNode.Equals(input.MasterNode))
-                ) && 
-                (
-                    this.ReadonlyNodes == input.ReadonlyNodes ||
-                    this.ReadonlyNodes != null &&
-                    input.ReadonlyNodes != null &&
-                    this.ReadonlyNodes.SequenceEqual(input.ReadonlyNodes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Proxy != null)
-                    hashCode = hashCode * 59 + this.Proxy.GetHashCode();
-                if (this.MasterNode != null)
-                    hashCode = hashCode * 59 + this.MasterNode.GetHashCode();
-                if (this.ReadonlyNodes != null)
-                    hashCode = hashCode * 59 + this.ReadonlyNodes.GetHashCode();
+                var hashCode = 41;
+                if (this.Proxy != null) hashCode = hashCode * 59 + this.Proxy.GetHashCode();
+                if (this.MasterNode != null) hashCode = hashCode * 59 + this.MasterNode.GetHashCode();
+                if (this.ReadonlyNodes != null) hashCode = hashCode * 59 + this.ReadonlyNodes.GetHashCode();
                 return hashCode;
             }
         }

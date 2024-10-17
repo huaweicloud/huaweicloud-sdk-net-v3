@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(AccessConfigFormatUpdate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Single != input.Single || (this.Single != null && !this.Single.Equals(input.Single))) return false;
+            if (this.Multi != input.Multi || (this.Multi != null && !this.Multi.Equals(input.Multi))) return false;
 
-            return 
-                (
-                    this.Single == input.Single ||
-                    (this.Single != null &&
-                    this.Single.Equals(input.Single))
-                ) && 
-                (
-                    this.Multi == input.Multi ||
-                    (this.Multi != null &&
-                    this.Multi.Equals(input.Multi))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Single != null)
-                    hashCode = hashCode * 59 + this.Single.GetHashCode();
-                if (this.Multi != null)
-                    hashCode = hashCode * 59 + this.Multi.GetHashCode();
+                var hashCode = 41;
+                if (this.Single != null) hashCode = hashCode * 59 + this.Single.GetHashCode();
+                if (this.Multi != null) hashCode = hashCode * 59 + this.Multi.GetHashCode();
                 return hashCode;
             }
         }

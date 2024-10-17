@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         /// </summary>
         public bool Equals(ShowSignatureFileResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FileId != input.FileId || (this.FileId != null && !this.FileId.Equals(input.FileId))) return false;
+            if (this.FileName != input.FileName || (this.FileName != null && !this.FileName.Equals(input.FileName))) return false;
+            if (this.FileRef != input.FileRef || (this.FileRef != null && !this.FileRef.Equals(input.FileRef))) return false;
+            if (this.FileSize != input.FileSize || (this.FileSize != null && !this.FileSize.Equals(input.FileSize))) return false;
+            if (this.FileType != input.FileType || (this.FileType != null && !this.FileType.Equals(input.FileType))) return false;
+            if (this.ModuleType != input.ModuleType || (this.ModuleType != null && !this.ModuleType.Equals(input.ModuleType))) return false;
+            if (this.Operator != input.Operator || (this.Operator != null && !this.Operator.Equals(input.Operator))) return false;
+            if (this.FileDesc != input.FileDesc || (this.FileDesc != null && !this.FileDesc.Equals(input.FileDesc))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
 
-            return 
-                (
-                    this.FileId == input.FileId ||
-                    (this.FileId != null &&
-                    this.FileId.Equals(input.FileId))
-                ) && 
-                (
-                    this.FileName == input.FileName ||
-                    (this.FileName != null &&
-                    this.FileName.Equals(input.FileName))
-                ) && 
-                (
-                    this.FileRef == input.FileRef ||
-                    (this.FileRef != null &&
-                    this.FileRef.Equals(input.FileRef))
-                ) && 
-                (
-                    this.FileSize == input.FileSize ||
-                    (this.FileSize != null &&
-                    this.FileSize.Equals(input.FileSize))
-                ) && 
-                (
-                    this.FileType == input.FileType ||
-                    (this.FileType != null &&
-                    this.FileType.Equals(input.FileType))
-                ) && 
-                (
-                    this.ModuleType == input.ModuleType ||
-                    (this.ModuleType != null &&
-                    this.ModuleType.Equals(input.ModuleType))
-                ) && 
-                (
-                    this.Operator == input.Operator ||
-                    (this.Operator != null &&
-                    this.Operator.Equals(input.Operator))
-                ) && 
-                (
-                    this.FileDesc == input.FileDesc ||
-                    (this.FileDesc != null &&
-                    this.FileDesc.Equals(input.FileDesc))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FileId != null)
-                    hashCode = hashCode * 59 + this.FileId.GetHashCode();
-                if (this.FileName != null)
-                    hashCode = hashCode * 59 + this.FileName.GetHashCode();
-                if (this.FileRef != null)
-                    hashCode = hashCode * 59 + this.FileRef.GetHashCode();
-                if (this.FileSize != null)
-                    hashCode = hashCode * 59 + this.FileSize.GetHashCode();
-                if (this.FileType != null)
-                    hashCode = hashCode * 59 + this.FileType.GetHashCode();
-                if (this.ModuleType != null)
-                    hashCode = hashCode * 59 + this.ModuleType.GetHashCode();
-                if (this.Operator != null)
-                    hashCode = hashCode * 59 + this.Operator.GetHashCode();
-                if (this.FileDesc != null)
-                    hashCode = hashCode * 59 + this.FileDesc.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                var hashCode = 41;
+                if (this.FileId != null) hashCode = hashCode * 59 + this.FileId.GetHashCode();
+                if (this.FileName != null) hashCode = hashCode * 59 + this.FileName.GetHashCode();
+                if (this.FileRef != null) hashCode = hashCode * 59 + this.FileRef.GetHashCode();
+                if (this.FileSize != null) hashCode = hashCode * 59 + this.FileSize.GetHashCode();
+                if (this.FileType != null) hashCode = hashCode * 59 + this.FileType.GetHashCode();
+                if (this.ModuleType != null) hashCode = hashCode * 59 + this.ModuleType.GetHashCode();
+                if (this.Operator != null) hashCode = hashCode * 59 + this.Operator.GetHashCode();
+                if (this.FileDesc != null) hashCode = hashCode * 59 + this.FileDesc.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 return hashCode;
             }
         }

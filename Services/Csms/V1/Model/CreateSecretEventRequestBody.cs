@@ -184,31 +184,13 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         /// </summary>
         public bool Equals(CreateSecretEventRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.EventTypes != input.EventTypes || (this.EventTypes != null && input.EventTypes != null && !this.EventTypes.SequenceEqual(input.EventTypes))) return false;
+            if (this.State != input.State) return false;
+            if (this.Notification != input.Notification || (this.Notification != null && !this.Notification.Equals(input.Notification))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.EventTypes == input.EventTypes ||
-                    this.EventTypes != null &&
-                    input.EventTypes != null &&
-                    this.EventTypes.SequenceEqual(input.EventTypes)
-                ) && 
-                (
-                    this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
-                ) && 
-                (
-                    this.Notification == input.Notification ||
-                    (this.Notification != null &&
-                    this.Notification.Equals(input.Notification))
-                );
+            return true;
         }
 
         /// <summary>
@@ -218,15 +200,11 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.EventTypes != null)
-                    hashCode = hashCode * 59 + this.EventTypes.GetHashCode();
-                if (this.State != null)
-                    hashCode = hashCode * 59 + this.State.GetHashCode();
-                if (this.Notification != null)
-                    hashCode = hashCode * 59 + this.Notification.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.EventTypes != null) hashCode = hashCode * 59 + this.EventTypes.GetHashCode();
+                hashCode = hashCode * 59 + this.State.GetHashCode();
+                if (this.Notification != null) hashCode = hashCode * 59 + this.Notification.GetHashCode();
                 return hashCode;
             }
         }

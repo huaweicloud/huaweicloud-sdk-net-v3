@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         /// </summary>
         public bool Equals(RealtimeScaleDimensionValue input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Dimension != input.Dimension || (this.Dimension != null && !this.Dimension.Equals(input.Dimension))) return false;
+            if (this.OnlineUsers != input.OnlineUsers || (this.OnlineUsers != null && !this.OnlineUsers.Equals(input.OnlineUsers))) return false;
 
-            return 
-                (
-                    this.Dimension == input.Dimension ||
-                    (this.Dimension != null &&
-                    this.Dimension.Equals(input.Dimension))
-                ) && 
-                (
-                    this.OnlineUsers == input.OnlineUsers ||
-                    (this.OnlineUsers != null &&
-                    this.OnlineUsers.Equals(input.OnlineUsers))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Dimension != null)
-                    hashCode = hashCode * 59 + this.Dimension.GetHashCode();
-                if (this.OnlineUsers != null)
-                    hashCode = hashCode * 59 + this.OnlineUsers.GetHashCode();
+                var hashCode = 41;
+                if (this.Dimension != null) hashCode = hashCode * 59 + this.Dimension.GetHashCode();
+                if (this.OnlineUsers != null) hashCode = hashCode * 59 + this.OnlineUsers.GetHashCode();
                 return hashCode;
             }
         }

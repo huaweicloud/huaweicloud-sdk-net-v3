@@ -189,25 +189,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(CustomizedDns input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IsSetDns != input.IsSetDns || (this.IsSetDns != null && !this.IsSetDns.Equals(input.IsSetDns))) return false;
+            if (this.SetDnsAction != input.SetDnsAction) return false;
+            if (this.DnsIp != input.DnsIp || (this.DnsIp != null && !this.DnsIp.Equals(input.DnsIp))) return false;
 
-            return 
-                (
-                    this.IsSetDns == input.IsSetDns ||
-                    (this.IsSetDns != null &&
-                    this.IsSetDns.Equals(input.IsSetDns))
-                ) && 
-                (
-                    this.SetDnsAction == input.SetDnsAction ||
-                    (this.SetDnsAction != null &&
-                    this.SetDnsAction.Equals(input.SetDnsAction))
-                ) && 
-                (
-                    this.DnsIp == input.DnsIp ||
-                    (this.DnsIp != null &&
-                    this.DnsIp.Equals(input.DnsIp))
-                );
+            return true;
         }
 
         /// <summary>
@@ -217,13 +204,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IsSetDns != null)
-                    hashCode = hashCode * 59 + this.IsSetDns.GetHashCode();
-                if (this.SetDnsAction != null)
-                    hashCode = hashCode * 59 + this.SetDnsAction.GetHashCode();
-                if (this.DnsIp != null)
-                    hashCode = hashCode * 59 + this.DnsIp.GetHashCode();
+                var hashCode = 41;
+                if (this.IsSetDns != null) hashCode = hashCode * 59 + this.IsSetDns.GetHashCode();
+                hashCode = hashCode * 59 + this.SetDnsAction.GetHashCode();
+                if (this.DnsIp != null) hashCode = hashCode * 59 + this.DnsIp.GetHashCode();
                 return hashCode;
             }
         }

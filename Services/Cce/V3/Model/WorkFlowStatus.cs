@@ -62,27 +62,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(WorkFlowStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Phase != input.Phase) return false;
+            if (this.PointStatuses != input.PointStatuses || (this.PointStatuses != null && input.PointStatuses != null && !this.PointStatuses.SequenceEqual(input.PointStatuses))) return false;
+            if (this.LineStatuses != input.LineStatuses || (this.LineStatuses != null && input.LineStatuses != null && !this.LineStatuses.SequenceEqual(input.LineStatuses))) return false;
 
-            return 
-                (
-                    this.Phase == input.Phase ||
-                    (this.Phase != null &&
-                    this.Phase.Equals(input.Phase))
-                ) && 
-                (
-                    this.PointStatuses == input.PointStatuses ||
-                    this.PointStatuses != null &&
-                    input.PointStatuses != null &&
-                    this.PointStatuses.SequenceEqual(input.PointStatuses)
-                ) && 
-                (
-                    this.LineStatuses == input.LineStatuses ||
-                    this.LineStatuses != null &&
-                    input.LineStatuses != null &&
-                    this.LineStatuses.SequenceEqual(input.LineStatuses)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +77,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Phase != null)
-                    hashCode = hashCode * 59 + this.Phase.GetHashCode();
-                if (this.PointStatuses != null)
-                    hashCode = hashCode * 59 + this.PointStatuses.GetHashCode();
-                if (this.LineStatuses != null)
-                    hashCode = hashCode * 59 + this.LineStatuses.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Phase.GetHashCode();
+                if (this.PointStatuses != null) hashCode = hashCode * 59 + this.PointStatuses.GetHashCode();
+                if (this.LineStatuses != null) hashCode = hashCode * 59 + this.LineStatuses.GetHashCode();
                 return hashCode;
             }
         }

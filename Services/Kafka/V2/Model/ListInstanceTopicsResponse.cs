@@ -84,41 +84,15 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ListInstanceTopicsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.RemainPartitions != input.RemainPartitions || (this.RemainPartitions != null && !this.RemainPartitions.Equals(input.RemainPartitions))) return false;
+            if (this.MaxPartitions != input.MaxPartitions || (this.MaxPartitions != null && !this.MaxPartitions.Equals(input.MaxPartitions))) return false;
+            if (this.TopicMaxPartitions != input.TopicMaxPartitions || (this.TopicMaxPartitions != null && !this.TopicMaxPartitions.Equals(input.TopicMaxPartitions))) return false;
+            if (this.Topics != input.Topics || (this.Topics != null && input.Topics != null && !this.Topics.SequenceEqual(input.Topics))) return false;
 
-            return 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.RemainPartitions == input.RemainPartitions ||
-                    (this.RemainPartitions != null &&
-                    this.RemainPartitions.Equals(input.RemainPartitions))
-                ) && 
-                (
-                    this.MaxPartitions == input.MaxPartitions ||
-                    (this.MaxPartitions != null &&
-                    this.MaxPartitions.Equals(input.MaxPartitions))
-                ) && 
-                (
-                    this.TopicMaxPartitions == input.TopicMaxPartitions ||
-                    (this.TopicMaxPartitions != null &&
-                    this.TopicMaxPartitions.Equals(input.TopicMaxPartitions))
-                ) && 
-                (
-                    this.Topics == input.Topics ||
-                    this.Topics != null &&
-                    input.Topics != null &&
-                    this.Topics.SequenceEqual(input.Topics)
-                );
+            return true;
         }
 
         /// <summary>
@@ -128,19 +102,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.RemainPartitions != null)
-                    hashCode = hashCode * 59 + this.RemainPartitions.GetHashCode();
-                if (this.MaxPartitions != null)
-                    hashCode = hashCode * 59 + this.MaxPartitions.GetHashCode();
-                if (this.TopicMaxPartitions != null)
-                    hashCode = hashCode * 59 + this.TopicMaxPartitions.GetHashCode();
-                if (this.Topics != null)
-                    hashCode = hashCode * 59 + this.Topics.GetHashCode();
+                var hashCode = 41;
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.RemainPartitions != null) hashCode = hashCode * 59 + this.RemainPartitions.GetHashCode();
+                if (this.MaxPartitions != null) hashCode = hashCode * 59 + this.MaxPartitions.GetHashCode();
+                if (this.TopicMaxPartitions != null) hashCode = hashCode * 59 + this.TopicMaxPartitions.GetHashCode();
+                if (this.Topics != null) hashCode = hashCode * 59 + this.Topics.GetHashCode();
                 return hashCode;
             }
         }

@@ -171,25 +171,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(BatchJobActionReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Action != input.Action) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.Property != input.Property || (this.Property != null && !this.Property.Equals(input.Property))) return false;
 
-            return 
-                (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                ) && 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.Property == input.Property ||
-                    (this.Property != null &&
-                    this.Property.Equals(input.Property))
-                );
+            return true;
         }
 
         /// <summary>
@@ -199,13 +186,10 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.Property != null)
-                    hashCode = hashCode * 59 + this.Property.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Action.GetHashCode();
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.Property != null) hashCode = hashCode * 59 + this.Property.GetHashCode();
                 return hashCode;
             }
         }

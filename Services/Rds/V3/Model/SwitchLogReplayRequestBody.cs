@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(SwitchLogReplayRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PauseLogReplay != input.PauseLogReplay || (this.PauseLogReplay != null && !this.PauseLogReplay.Equals(input.PauseLogReplay))) return false;
 
-            return 
-                (
-                    this.PauseLogReplay == input.PauseLogReplay ||
-                    (this.PauseLogReplay != null &&
-                    this.PauseLogReplay.Equals(input.PauseLogReplay))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PauseLogReplay != null)
-                    hashCode = hashCode * 59 + this.PauseLogReplay.GetHashCode();
+                var hashCode = 41;
+                if (this.PauseLogReplay != null) hashCode = hashCode * 59 + this.PauseLogReplay.GetHashCode();
                 return hashCode;
             }
         }

@@ -464,60 +464,19 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(ShowHistoryTasksRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.PageSize != input.PageSize || (this.PageSize != null && !this.PageSize.Equals(input.PageSize))) return false;
+            if (this.PageNumber != input.PageNumber || (this.PageNumber != null && !this.PageNumber.Equals(input.PageNumber))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.StartDate != input.StartDate || (this.StartDate != null && !this.StartDate.Equals(input.StartDate))) return false;
+            if (this.EndDate != input.EndDate || (this.EndDate != null && !this.EndDate.Equals(input.EndDate))) return false;
+            if (this.OrderField != input.OrderField || (this.OrderField != null && !this.OrderField.Equals(input.OrderField))) return false;
+            if (this.OrderType != input.OrderType || (this.OrderType != null && !this.OrderType.Equals(input.OrderType))) return false;
+            if (this.FileType != input.FileType) return false;
+            if (this.TaskType != input.TaskType) return false;
 
-            return 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.PageSize == input.PageSize ||
-                    (this.PageSize != null &&
-                    this.PageSize.Equals(input.PageSize))
-                ) && 
-                (
-                    this.PageNumber == input.PageNumber ||
-                    (this.PageNumber != null &&
-                    this.PageNumber.Equals(input.PageNumber))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.StartDate == input.StartDate ||
-                    (this.StartDate != null &&
-                    this.StartDate.Equals(input.StartDate))
-                ) && 
-                (
-                    this.EndDate == input.EndDate ||
-                    (this.EndDate != null &&
-                    this.EndDate.Equals(input.EndDate))
-                ) && 
-                (
-                    this.OrderField == input.OrderField ||
-                    (this.OrderField != null &&
-                    this.OrderField.Equals(input.OrderField))
-                ) && 
-                (
-                    this.OrderType == input.OrderType ||
-                    (this.OrderType != null &&
-                    this.OrderType.Equals(input.OrderType))
-                ) && 
-                (
-                    this.FileType == input.FileType ||
-                    (this.FileType != null &&
-                    this.FileType.Equals(input.FileType))
-                ) && 
-                (
-                    this.TaskType == input.TaskType ||
-                    (this.TaskType != null &&
-                    this.TaskType.Equals(input.TaskType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -527,27 +486,17 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.PageSize != null)
-                    hashCode = hashCode * 59 + this.PageSize.GetHashCode();
-                if (this.PageNumber != null)
-                    hashCode = hashCode * 59 + this.PageNumber.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.StartDate != null)
-                    hashCode = hashCode * 59 + this.StartDate.GetHashCode();
-                if (this.EndDate != null)
-                    hashCode = hashCode * 59 + this.EndDate.GetHashCode();
-                if (this.OrderField != null)
-                    hashCode = hashCode * 59 + this.OrderField.GetHashCode();
-                if (this.OrderType != null)
-                    hashCode = hashCode * 59 + this.OrderType.GetHashCode();
-                if (this.FileType != null)
-                    hashCode = hashCode * 59 + this.FileType.GetHashCode();
-                if (this.TaskType != null)
-                    hashCode = hashCode * 59 + this.TaskType.GetHashCode();
+                var hashCode = 41;
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.PageSize != null) hashCode = hashCode * 59 + this.PageSize.GetHashCode();
+                if (this.PageNumber != null) hashCode = hashCode * 59 + this.PageNumber.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.StartDate != null) hashCode = hashCode * 59 + this.StartDate.GetHashCode();
+                if (this.EndDate != null) hashCode = hashCode * 59 + this.EndDate.GetHashCode();
+                if (this.OrderField != null) hashCode = hashCode * 59 + this.OrderField.GetHashCode();
+                if (this.OrderType != null) hashCode = hashCode * 59 + this.OrderType.GetHashCode();
+                hashCode = hashCode * 59 + this.FileType.GetHashCode();
+                hashCode = hashCode * 59 + this.TaskType.GetHashCode();
                 return hashCode;
             }
         }

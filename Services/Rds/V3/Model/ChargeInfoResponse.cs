@@ -163,15 +163,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ChargeInfoResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ChargeMode != input.ChargeMode) return false;
 
-            return 
-                (
-                    this.ChargeMode == input.ChargeMode ||
-                    (this.ChargeMode != null &&
-                    this.ChargeMode.Equals(input.ChargeMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -181,9 +176,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ChargeMode != null)
-                    hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
                 return hashCode;
             }
         }

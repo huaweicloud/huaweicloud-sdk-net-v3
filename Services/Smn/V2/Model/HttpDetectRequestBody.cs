@@ -177,25 +177,12 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public bool Equals(HttpDetectRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Protocol != input.Protocol) return false;
+            if (this.Endpoint != input.Endpoint || (this.Endpoint != null && !this.Endpoint.Equals(input.Endpoint))) return false;
+            if (this.Extension != input.Extension || (this.Extension != null && !this.Extension.Equals(input.Extension))) return false;
 
-            return 
-                (
-                    this.Protocol == input.Protocol ||
-                    (this.Protocol != null &&
-                    this.Protocol.Equals(input.Protocol))
-                ) && 
-                (
-                    this.Endpoint == input.Endpoint ||
-                    (this.Endpoint != null &&
-                    this.Endpoint.Equals(input.Endpoint))
-                ) && 
-                (
-                    this.Extension == input.Extension ||
-                    (this.Extension != null &&
-                    this.Extension.Equals(input.Extension))
-                );
+            return true;
         }
 
         /// <summary>
@@ -205,13 +192,10 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
-                if (this.Endpoint != null)
-                    hashCode = hashCode * 59 + this.Endpoint.GetHashCode();
-                if (this.Extension != null)
-                    hashCode = hashCode * 59 + this.Extension.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.Endpoint != null) hashCode = hashCode * 59 + this.Endpoint.GetHashCode();
+                if (this.Extension != null) hashCode = hashCode * 59 + this.Extension.GetHashCode();
                 return hashCode;
             }
         }

@@ -259,170 +259,40 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(CloudServer input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
+            if (this.UserId != input.UserId || (this.UserId != null && !this.UserId.Equals(input.UserId))) return false;
+            if (this.MarketInfo != input.MarketInfo || (this.MarketInfo != null && !this.MarketInfo.Equals(input.MarketInfo))) return false;
+            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
+            if (this.VmState != input.VmState || (this.VmState != null && !this.VmState.Equals(input.VmState))) return false;
+            if (this.TaskState != input.TaskState || (this.TaskState != null && !this.TaskState.Equals(input.TaskState))) return false;
+            if (this.PowerState != input.PowerState || (this.PowerState != null && !this.PowerState.Equals(input.PowerState))) return false;
+            if (this.Created != input.Created || (this.Created != null && !this.Created.Equals(input.Created))) return false;
+            if (this.InRecycleBin != input.InRecycleBin || (this.InRecycleBin != null && !this.InRecycleBin.Equals(input.InRecycleBin))) return false;
+            if (this.SpodId != input.SpodId || (this.SpodId != null && !this.SpodId.Equals(input.SpodId))) return false;
+            if (this.Updated != input.Updated || (this.Updated != null && !this.Updated.Equals(input.Updated))) return false;
+            if (this.LaunchedAt != input.LaunchedAt || (this.LaunchedAt != null && !this.LaunchedAt.Equals(input.LaunchedAt))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.KeyName != input.KeyName || (this.KeyName != null && !this.KeyName.Equals(input.KeyName))) return false;
+            if (this.Locked != input.Locked || (this.Locked != null && !this.Locked.Equals(input.Locked))) return false;
+            if (this.RootDeviceName != input.RootDeviceName || (this.RootDeviceName != null && !this.RootDeviceName.Equals(input.RootDeviceName))) return false;
+            if (this.Tenancy != input.Tenancy || (this.Tenancy != null && !this.Tenancy.Equals(input.Tenancy))) return false;
+            if (this.DedicatedHostId != input.DedicatedHostId || (this.DedicatedHostId != null && !this.DedicatedHostId.Equals(input.DedicatedHostId))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && input.Metadata != null && !this.Metadata.SequenceEqual(input.Metadata))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.Addresses != input.Addresses || (this.Addresses != null && input.Addresses != null && !this.Addresses.SequenceEqual(input.Addresses))) return false;
+            if (this.SecurityGroups != input.SecurityGroups || (this.SecurityGroups != null && input.SecurityGroups != null && !this.SecurityGroups.SequenceEqual(input.SecurityGroups))) return false;
+            if (this.VolumesAttached != input.VolumesAttached || (this.VolumesAttached != null && input.VolumesAttached != null && !this.VolumesAttached.SequenceEqual(input.VolumesAttached))) return false;
+            if (this.Image != input.Image || (this.Image != null && !this.Image.Equals(input.Image))) return false;
+            if (this.Flavor != input.Flavor || (this.Flavor != null && !this.Flavor.Equals(input.Flavor))) return false;
+            if (this.Fault != input.Fault || (this.Fault != null && !this.Fault.Equals(input.Fault))) return false;
+            if (this.CpuOptions != input.CpuOptions || (this.CpuOptions != null && !this.CpuOptions.Equals(input.CpuOptions))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.TenantId == input.TenantId ||
-                    (this.TenantId != null &&
-                    this.TenantId.Equals(input.TenantId))
-                ) && 
-                (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
-                ) && 
-                (
-                    this.MarketInfo == input.MarketInfo ||
-                    (this.MarketInfo != null &&
-                    this.MarketInfo.Equals(input.MarketInfo))
-                ) && 
-                (
-                    this.AvailabilityZone == input.AvailabilityZone ||
-                    (this.AvailabilityZone != null &&
-                    this.AvailabilityZone.Equals(input.AvailabilityZone))
-                ) && 
-                (
-                    this.VmState == input.VmState ||
-                    (this.VmState != null &&
-                    this.VmState.Equals(input.VmState))
-                ) && 
-                (
-                    this.TaskState == input.TaskState ||
-                    (this.TaskState != null &&
-                    this.TaskState.Equals(input.TaskState))
-                ) && 
-                (
-                    this.PowerState == input.PowerState ||
-                    (this.PowerState != null &&
-                    this.PowerState.Equals(input.PowerState))
-                ) && 
-                (
-                    this.Created == input.Created ||
-                    (this.Created != null &&
-                    this.Created.Equals(input.Created))
-                ) && 
-                (
-                    this.InRecycleBin == input.InRecycleBin ||
-                    (this.InRecycleBin != null &&
-                    this.InRecycleBin.Equals(input.InRecycleBin))
-                ) && 
-                (
-                    this.SpodId == input.SpodId ||
-                    (this.SpodId != null &&
-                    this.SpodId.Equals(input.SpodId))
-                ) && 
-                (
-                    this.Updated == input.Updated ||
-                    (this.Updated != null &&
-                    this.Updated.Equals(input.Updated))
-                ) && 
-                (
-                    this.LaunchedAt == input.LaunchedAt ||
-                    (this.LaunchedAt != null &&
-                    this.LaunchedAt.Equals(input.LaunchedAt))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.KeyName == input.KeyName ||
-                    (this.KeyName != null &&
-                    this.KeyName.Equals(input.KeyName))
-                ) && 
-                (
-                    this.Locked == input.Locked ||
-                    (this.Locked != null &&
-                    this.Locked.Equals(input.Locked))
-                ) && 
-                (
-                    this.RootDeviceName == input.RootDeviceName ||
-                    (this.RootDeviceName != null &&
-                    this.RootDeviceName.Equals(input.RootDeviceName))
-                ) && 
-                (
-                    this.Tenancy == input.Tenancy ||
-                    (this.Tenancy != null &&
-                    this.Tenancy.Equals(input.Tenancy))
-                ) && 
-                (
-                    this.DedicatedHostId == input.DedicatedHostId ||
-                    (this.DedicatedHostId != null &&
-                    this.DedicatedHostId.Equals(input.DedicatedHostId))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    this.Metadata != null &&
-                    input.Metadata != null &&
-                    this.Metadata.SequenceEqual(input.Metadata)
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.Addresses == input.Addresses ||
-                    this.Addresses != null &&
-                    input.Addresses != null &&
-                    this.Addresses.SequenceEqual(input.Addresses)
-                ) && 
-                (
-                    this.SecurityGroups == input.SecurityGroups ||
-                    this.SecurityGroups != null &&
-                    input.SecurityGroups != null &&
-                    this.SecurityGroups.SequenceEqual(input.SecurityGroups)
-                ) && 
-                (
-                    this.VolumesAttached == input.VolumesAttached ||
-                    this.VolumesAttached != null &&
-                    input.VolumesAttached != null &&
-                    this.VolumesAttached.SequenceEqual(input.VolumesAttached)
-                ) && 
-                (
-                    this.Image == input.Image ||
-                    (this.Image != null &&
-                    this.Image.Equals(input.Image))
-                ) && 
-                (
-                    this.Flavor == input.Flavor ||
-                    (this.Flavor != null &&
-                    this.Flavor.Equals(input.Flavor))
-                ) && 
-                (
-                    this.Fault == input.Fault ||
-                    (this.Fault != null &&
-                    this.Fault.Equals(input.Fault))
-                ) && 
-                (
-                    this.CpuOptions == input.CpuOptions ||
-                    (this.CpuOptions != null &&
-                    this.CpuOptions.Equals(input.CpuOptions))
-                );
+            return true;
         }
 
         /// <summary>
@@ -432,69 +302,38 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.TenantId != null)
-                    hashCode = hashCode * 59 + this.TenantId.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.MarketInfo != null)
-                    hashCode = hashCode * 59 + this.MarketInfo.GetHashCode();
-                if (this.AvailabilityZone != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
-                if (this.VmState != null)
-                    hashCode = hashCode * 59 + this.VmState.GetHashCode();
-                if (this.TaskState != null)
-                    hashCode = hashCode * 59 + this.TaskState.GetHashCode();
-                if (this.PowerState != null)
-                    hashCode = hashCode * 59 + this.PowerState.GetHashCode();
-                if (this.Created != null)
-                    hashCode = hashCode * 59 + this.Created.GetHashCode();
-                if (this.InRecycleBin != null)
-                    hashCode = hashCode * 59 + this.InRecycleBin.GetHashCode();
-                if (this.SpodId != null)
-                    hashCode = hashCode * 59 + this.SpodId.GetHashCode();
-                if (this.Updated != null)
-                    hashCode = hashCode * 59 + this.Updated.GetHashCode();
-                if (this.LaunchedAt != null)
-                    hashCode = hashCode * 59 + this.LaunchedAt.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.KeyName != null)
-                    hashCode = hashCode * 59 + this.KeyName.GetHashCode();
-                if (this.Locked != null)
-                    hashCode = hashCode * 59 + this.Locked.GetHashCode();
-                if (this.RootDeviceName != null)
-                    hashCode = hashCode * 59 + this.RootDeviceName.GetHashCode();
-                if (this.Tenancy != null)
-                    hashCode = hashCode * 59 + this.Tenancy.GetHashCode();
-                if (this.DedicatedHostId != null)
-                    hashCode = hashCode * 59 + this.DedicatedHostId.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.Addresses != null)
-                    hashCode = hashCode * 59 + this.Addresses.GetHashCode();
-                if (this.SecurityGroups != null)
-                    hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
-                if (this.VolumesAttached != null)
-                    hashCode = hashCode * 59 + this.VolumesAttached.GetHashCode();
-                if (this.Image != null)
-                    hashCode = hashCode * 59 + this.Image.GetHashCode();
-                if (this.Flavor != null)
-                    hashCode = hashCode * 59 + this.Flavor.GetHashCode();
-                if (this.Fault != null)
-                    hashCode = hashCode * 59 + this.Fault.GetHashCode();
-                if (this.CpuOptions != null)
-                    hashCode = hashCode * 59 + this.CpuOptions.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
+                if (this.UserId != null) hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                if (this.MarketInfo != null) hashCode = hashCode * 59 + this.MarketInfo.GetHashCode();
+                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
+                if (this.VmState != null) hashCode = hashCode * 59 + this.VmState.GetHashCode();
+                if (this.TaskState != null) hashCode = hashCode * 59 + this.TaskState.GetHashCode();
+                if (this.PowerState != null) hashCode = hashCode * 59 + this.PowerState.GetHashCode();
+                if (this.Created != null) hashCode = hashCode * 59 + this.Created.GetHashCode();
+                if (this.InRecycleBin != null) hashCode = hashCode * 59 + this.InRecycleBin.GetHashCode();
+                if (this.SpodId != null) hashCode = hashCode * 59 + this.SpodId.GetHashCode();
+                if (this.Updated != null) hashCode = hashCode * 59 + this.Updated.GetHashCode();
+                if (this.LaunchedAt != null) hashCode = hashCode * 59 + this.LaunchedAt.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.KeyName != null) hashCode = hashCode * 59 + this.KeyName.GetHashCode();
+                if (this.Locked != null) hashCode = hashCode * 59 + this.Locked.GetHashCode();
+                if (this.RootDeviceName != null) hashCode = hashCode * 59 + this.RootDeviceName.GetHashCode();
+                if (this.Tenancy != null) hashCode = hashCode * 59 + this.Tenancy.GetHashCode();
+                if (this.DedicatedHostId != null) hashCode = hashCode * 59 + this.DedicatedHostId.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.Addresses != null) hashCode = hashCode * 59 + this.Addresses.GetHashCode();
+                if (this.SecurityGroups != null) hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
+                if (this.VolumesAttached != null) hashCode = hashCode * 59 + this.VolumesAttached.GetHashCode();
+                if (this.Image != null) hashCode = hashCode * 59 + this.Image.GetHashCode();
+                if (this.Flavor != null) hashCode = hashCode * 59 + this.Flavor.GetHashCode();
+                if (this.Fault != null) hashCode = hashCode * 59 + this.Fault.GetHashCode();
+                if (this.CpuOptions != null) hashCode = hashCode * 59 + this.CpuOptions.GetHashCode();
                 return hashCode;
             }
         }

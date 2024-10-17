@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         public bool Equals(ListEcsSpecificationResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Specification != input.Specification || (this.Specification != null && input.Specification != null && !this.Specification.SequenceEqual(input.Specification))) return false;
 
-            return 
-                (
-                    this.Specification == input.Specification ||
-                    this.Specification != null &&
-                    input.Specification != null &&
-                    this.Specification.SequenceEqual(input.Specification)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Specification != null)
-                    hashCode = hashCode * 59 + this.Specification.GetHashCode();
+                var hashCode = 41;
+                if (this.Specification != null) hashCode = hashCode * 59 + this.Specification.GetHashCode();
                 return hashCode;
             }
         }

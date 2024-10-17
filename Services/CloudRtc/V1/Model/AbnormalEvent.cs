@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         /// </summary>
         public bool Equals(AbnormalEvent input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
+            if (this.Uid != input.Uid || (this.Uid != null && !this.Uid.Equals(input.Uid))) return false;
+            if (this.RoomId != input.RoomId || (this.RoomId != null && !this.RoomId.Equals(input.RoomId))) return false;
+            if (this.Stage != input.Stage || (this.Stage != null && !this.Stage.Equals(input.Stage))) return false;
+            if (this.Location != input.Location || (this.Location != null && !this.Location.Equals(input.Location))) return false;
+            if (this.PeerUid != input.PeerUid || (this.PeerUid != null && !this.PeerUid.Equals(input.PeerUid))) return false;
+            if (this.AbnormalType != input.AbnormalType || (this.AbnormalType != null && !this.AbnormalType.Equals(input.AbnormalType))) return false;
+            if (this.AbnormalTypeDesc != input.AbnormalTypeDesc || (this.AbnormalTypeDesc != null && !this.AbnormalTypeDesc.Equals(input.AbnormalTypeDesc))) return false;
+            if (this.AbnormalFactor != input.AbnormalFactor || (this.AbnormalFactor != null && !this.AbnormalFactor.Equals(input.AbnormalFactor))) return false;
+            if (this.AbnormalFactorDesc != input.AbnormalFactorDesc || (this.AbnormalFactorDesc != null && !this.AbnormalFactorDesc.Equals(input.AbnormalFactorDesc))) return false;
 
-            return 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                ) && 
-                (
-                    this.Uid == input.Uid ||
-                    (this.Uid != null &&
-                    this.Uid.Equals(input.Uid))
-                ) && 
-                (
-                    this.RoomId == input.RoomId ||
-                    (this.RoomId != null &&
-                    this.RoomId.Equals(input.RoomId))
-                ) && 
-                (
-                    this.Stage == input.Stage ||
-                    (this.Stage != null &&
-                    this.Stage.Equals(input.Stage))
-                ) && 
-                (
-                    this.Location == input.Location ||
-                    (this.Location != null &&
-                    this.Location.Equals(input.Location))
-                ) && 
-                (
-                    this.PeerUid == input.PeerUid ||
-                    (this.PeerUid != null &&
-                    this.PeerUid.Equals(input.PeerUid))
-                ) && 
-                (
-                    this.AbnormalType == input.AbnormalType ||
-                    (this.AbnormalType != null &&
-                    this.AbnormalType.Equals(input.AbnormalType))
-                ) && 
-                (
-                    this.AbnormalTypeDesc == input.AbnormalTypeDesc ||
-                    (this.AbnormalTypeDesc != null &&
-                    this.AbnormalTypeDesc.Equals(input.AbnormalTypeDesc))
-                ) && 
-                (
-                    this.AbnormalFactor == input.AbnormalFactor ||
-                    (this.AbnormalFactor != null &&
-                    this.AbnormalFactor.Equals(input.AbnormalFactor))
-                ) && 
-                (
-                    this.AbnormalFactorDesc == input.AbnormalFactorDesc ||
-                    (this.AbnormalFactorDesc != null &&
-                    this.AbnormalFactorDesc.Equals(input.AbnormalFactorDesc))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.Uid != null)
-                    hashCode = hashCode * 59 + this.Uid.GetHashCode();
-                if (this.RoomId != null)
-                    hashCode = hashCode * 59 + this.RoomId.GetHashCode();
-                if (this.Stage != null)
-                    hashCode = hashCode * 59 + this.Stage.GetHashCode();
-                if (this.Location != null)
-                    hashCode = hashCode * 59 + this.Location.GetHashCode();
-                if (this.PeerUid != null)
-                    hashCode = hashCode * 59 + this.PeerUid.GetHashCode();
-                if (this.AbnormalType != null)
-                    hashCode = hashCode * 59 + this.AbnormalType.GetHashCode();
-                if (this.AbnormalTypeDesc != null)
-                    hashCode = hashCode * 59 + this.AbnormalTypeDesc.GetHashCode();
-                if (this.AbnormalFactor != null)
-                    hashCode = hashCode * 59 + this.AbnormalFactor.GetHashCode();
-                if (this.AbnormalFactorDesc != null)
-                    hashCode = hashCode * 59 + this.AbnormalFactorDesc.GetHashCode();
+                var hashCode = 41;
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
+                if (this.Uid != null) hashCode = hashCode * 59 + this.Uid.GetHashCode();
+                if (this.RoomId != null) hashCode = hashCode * 59 + this.RoomId.GetHashCode();
+                if (this.Stage != null) hashCode = hashCode * 59 + this.Stage.GetHashCode();
+                if (this.Location != null) hashCode = hashCode * 59 + this.Location.GetHashCode();
+                if (this.PeerUid != null) hashCode = hashCode * 59 + this.PeerUid.GetHashCode();
+                if (this.AbnormalType != null) hashCode = hashCode * 59 + this.AbnormalType.GetHashCode();
+                if (this.AbnormalTypeDesc != null) hashCode = hashCode * 59 + this.AbnormalTypeDesc.GetHashCode();
+                if (this.AbnormalFactor != null) hashCode = hashCode * 59 + this.AbnormalFactor.GetHashCode();
+                if (this.AbnormalFactorDesc != null) hashCode = hashCode * 59 + this.AbnormalFactorDesc.GetHashCode();
                 return hashCode;
             }
         }

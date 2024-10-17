@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// </summary>
         public bool Equals(Ips input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IpId != input.IpId || (this.IpId != null && !this.IpId.Equals(input.IpId))) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
+            if (this.Isp != input.Isp || (this.Isp != null && !this.Isp.Equals(input.Isp))) return false;
+            if (this.DataCenter != input.DataCenter || (this.DataCenter != null && !this.DataCenter.Equals(input.DataCenter))) return false;
+            if (this.ForeignSwitchStatus != input.ForeignSwitchStatus || (this.ForeignSwitchStatus != null && !this.ForeignSwitchStatus.Equals(input.ForeignSwitchStatus))) return false;
+            if (this.UdpSwitchStatus != input.UdpSwitchStatus || (this.UdpSwitchStatus != null && !this.UdpSwitchStatus.Equals(input.UdpSwitchStatus))) return false;
 
-            return 
-                (
-                    this.IpId == input.IpId ||
-                    (this.IpId != null &&
-                    this.IpId.Equals(input.IpId))
-                ) && 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                ) && 
-                (
-                    this.Isp == input.Isp ||
-                    (this.Isp != null &&
-                    this.Isp.Equals(input.Isp))
-                ) && 
-                (
-                    this.DataCenter == input.DataCenter ||
-                    (this.DataCenter != null &&
-                    this.DataCenter.Equals(input.DataCenter))
-                ) && 
-                (
-                    this.ForeignSwitchStatus == input.ForeignSwitchStatus ||
-                    (this.ForeignSwitchStatus != null &&
-                    this.ForeignSwitchStatus.Equals(input.ForeignSwitchStatus))
-                ) && 
-                (
-                    this.UdpSwitchStatus == input.UdpSwitchStatus ||
-                    (this.UdpSwitchStatus != null &&
-                    this.UdpSwitchStatus.Equals(input.UdpSwitchStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IpId != null)
-                    hashCode = hashCode * 59 + this.IpId.GetHashCode();
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.Isp != null)
-                    hashCode = hashCode * 59 + this.Isp.GetHashCode();
-                if (this.DataCenter != null)
-                    hashCode = hashCode * 59 + this.DataCenter.GetHashCode();
-                if (this.ForeignSwitchStatus != null)
-                    hashCode = hashCode * 59 + this.ForeignSwitchStatus.GetHashCode();
-                if (this.UdpSwitchStatus != null)
-                    hashCode = hashCode * 59 + this.UdpSwitchStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.IpId != null) hashCode = hashCode * 59 + this.IpId.GetHashCode();
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.Isp != null) hashCode = hashCode * 59 + this.Isp.GetHashCode();
+                if (this.DataCenter != null) hashCode = hashCode * 59 + this.DataCenter.GetHashCode();
+                if (this.ForeignSwitchStatus != null) hashCode = hashCode * 59 + this.ForeignSwitchStatus.GetHashCode();
+                if (this.UdpSwitchStatus != null) hashCode = hashCode * 59 + this.UdpSwitchStatus.GetHashCode();
                 return hashCode;
             }
         }

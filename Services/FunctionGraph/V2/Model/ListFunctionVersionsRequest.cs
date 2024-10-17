@@ -66,25 +66,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(ListFunctionVersionsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FunctionUrn != input.FunctionUrn || (this.FunctionUrn != null && !this.FunctionUrn.Equals(input.FunctionUrn))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.Maxitems != input.Maxitems || (this.Maxitems != null && !this.Maxitems.Equals(input.Maxitems))) return false;
 
-            return 
-                (
-                    this.FunctionUrn == input.FunctionUrn ||
-                    (this.FunctionUrn != null &&
-                    this.FunctionUrn.Equals(input.FunctionUrn))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.Maxitems == input.Maxitems ||
-                    (this.Maxitems != null &&
-                    this.Maxitems.Equals(input.Maxitems))
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +81,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FunctionUrn != null)
-                    hashCode = hashCode * 59 + this.FunctionUrn.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Maxitems != null)
-                    hashCode = hashCode * 59 + this.Maxitems.GetHashCode();
+                var hashCode = 41;
+                if (this.FunctionUrn != null) hashCode = hashCode * 59 + this.FunctionUrn.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Maxitems != null) hashCode = hashCode * 59 + this.Maxitems.GetHashCode();
                 return hashCode;
             }
         }

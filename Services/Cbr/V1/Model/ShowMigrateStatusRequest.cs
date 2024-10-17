@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(ShowMigrateStatusRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AllRegions != input.AllRegions || (this.AllRegions != null && !this.AllRegions.Equals(input.AllRegions))) return false;
 
-            return 
-                (
-                    this.AllRegions == input.AllRegions ||
-                    (this.AllRegions != null &&
-                    this.AllRegions.Equals(input.AllRegions))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AllRegions != null)
-                    hashCode = hashCode * 59 + this.AllRegions.GetHashCode();
+                var hashCode = 41;
+                if (this.AllRegions != null) hashCode = hashCode * 59 + this.AllRegions.GetHashCode();
                 return hashCode;
             }
         }

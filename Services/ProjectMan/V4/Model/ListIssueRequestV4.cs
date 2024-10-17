@@ -182,123 +182,29 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ListIssueRequestV4 input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AssignedIds != input.AssignedIds || (this.AssignedIds != null && input.AssignedIds != null && !this.AssignedIds.SequenceEqual(input.AssignedIds))) return false;
+            if (this.CreatorIds != input.CreatorIds || (this.CreatorIds != null && input.CreatorIds != null && !this.CreatorIds.SequenceEqual(input.CreatorIds))) return false;
+            if (this.DeveloperIds != input.DeveloperIds || (this.DeveloperIds != null && input.DeveloperIds != null && !this.DeveloperIds.SequenceEqual(input.DeveloperIds))) return false;
+            if (this.DomainIds != input.DomainIds || (this.DomainIds != null && input.DomainIds != null && !this.DomainIds.SequenceEqual(input.DomainIds))) return false;
+            if (this.DoneRatios != input.DoneRatios || (this.DoneRatios != null && input.DoneRatios != null && !this.DoneRatios.SequenceEqual(input.DoneRatios))) return false;
+            if (this.IterationIds != input.IterationIds || (this.IterationIds != null && input.IterationIds != null && !this.IterationIds.SequenceEqual(input.IterationIds))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.ModuleIds != input.ModuleIds || (this.ModuleIds != null && input.ModuleIds != null && !this.ModuleIds.SequenceEqual(input.ModuleIds))) return false;
+            if (this.PriorityIds != input.PriorityIds || (this.PriorityIds != null && input.PriorityIds != null && !this.PriorityIds.SequenceEqual(input.PriorityIds))) return false;
+            if (this.QueryType != input.QueryType || (this.QueryType != null && !this.QueryType.Equals(input.QueryType))) return false;
+            if (this.SeverityIds != input.SeverityIds || (this.SeverityIds != null && input.SeverityIds != null && !this.SeverityIds.SequenceEqual(input.SeverityIds))) return false;
+            if (this.StatusIds != input.StatusIds || (this.StatusIds != null && input.StatusIds != null && !this.StatusIds.SequenceEqual(input.StatusIds))) return false;
+            if (this.StoryPointIds != input.StoryPointIds || (this.StoryPointIds != null && input.StoryPointIds != null && !this.StoryPointIds.SequenceEqual(input.StoryPointIds))) return false;
+            if (this.TrackerIds != input.TrackerIds || (this.TrackerIds != null && input.TrackerIds != null && !this.TrackerIds.SequenceEqual(input.TrackerIds))) return false;
+            if (this.IncludeDeleted != input.IncludeDeleted || (this.IncludeDeleted != null && !this.IncludeDeleted.Equals(input.IncludeDeleted))) return false;
+            if (this.CreatedTimeInterval != input.CreatedTimeInterval || (this.CreatedTimeInterval != null && !this.CreatedTimeInterval.Equals(input.CreatedTimeInterval))) return false;
+            if (this.UpdatedTimeInterval != input.UpdatedTimeInterval || (this.UpdatedTimeInterval != null && !this.UpdatedTimeInterval.Equals(input.UpdatedTimeInterval))) return false;
+            if (this.ClosedTimeInterval != input.ClosedTimeInterval || (this.ClosedTimeInterval != null && !this.ClosedTimeInterval.Equals(input.ClosedTimeInterval))) return false;
+            if (this.CustomFields != input.CustomFields || (this.CustomFields != null && input.CustomFields != null && !this.CustomFields.SequenceEqual(input.CustomFields))) return false;
 
-            return 
-                (
-                    this.AssignedIds == input.AssignedIds ||
-                    this.AssignedIds != null &&
-                    input.AssignedIds != null &&
-                    this.AssignedIds.SequenceEqual(input.AssignedIds)
-                ) && 
-                (
-                    this.CreatorIds == input.CreatorIds ||
-                    this.CreatorIds != null &&
-                    input.CreatorIds != null &&
-                    this.CreatorIds.SequenceEqual(input.CreatorIds)
-                ) && 
-                (
-                    this.DeveloperIds == input.DeveloperIds ||
-                    this.DeveloperIds != null &&
-                    input.DeveloperIds != null &&
-                    this.DeveloperIds.SequenceEqual(input.DeveloperIds)
-                ) && 
-                (
-                    this.DomainIds == input.DomainIds ||
-                    this.DomainIds != null &&
-                    input.DomainIds != null &&
-                    this.DomainIds.SequenceEqual(input.DomainIds)
-                ) && 
-                (
-                    this.DoneRatios == input.DoneRatios ||
-                    this.DoneRatios != null &&
-                    input.DoneRatios != null &&
-                    this.DoneRatios.SequenceEqual(input.DoneRatios)
-                ) && 
-                (
-                    this.IterationIds == input.IterationIds ||
-                    this.IterationIds != null &&
-                    input.IterationIds != null &&
-                    this.IterationIds.SequenceEqual(input.IterationIds)
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.ModuleIds == input.ModuleIds ||
-                    this.ModuleIds != null &&
-                    input.ModuleIds != null &&
-                    this.ModuleIds.SequenceEqual(input.ModuleIds)
-                ) && 
-                (
-                    this.PriorityIds == input.PriorityIds ||
-                    this.PriorityIds != null &&
-                    input.PriorityIds != null &&
-                    this.PriorityIds.SequenceEqual(input.PriorityIds)
-                ) && 
-                (
-                    this.QueryType == input.QueryType ||
-                    (this.QueryType != null &&
-                    this.QueryType.Equals(input.QueryType))
-                ) && 
-                (
-                    this.SeverityIds == input.SeverityIds ||
-                    this.SeverityIds != null &&
-                    input.SeverityIds != null &&
-                    this.SeverityIds.SequenceEqual(input.SeverityIds)
-                ) && 
-                (
-                    this.StatusIds == input.StatusIds ||
-                    this.StatusIds != null &&
-                    input.StatusIds != null &&
-                    this.StatusIds.SequenceEqual(input.StatusIds)
-                ) && 
-                (
-                    this.StoryPointIds == input.StoryPointIds ||
-                    this.StoryPointIds != null &&
-                    input.StoryPointIds != null &&
-                    this.StoryPointIds.SequenceEqual(input.StoryPointIds)
-                ) && 
-                (
-                    this.TrackerIds == input.TrackerIds ||
-                    this.TrackerIds != null &&
-                    input.TrackerIds != null &&
-                    this.TrackerIds.SequenceEqual(input.TrackerIds)
-                ) && 
-                (
-                    this.IncludeDeleted == input.IncludeDeleted ||
-                    (this.IncludeDeleted != null &&
-                    this.IncludeDeleted.Equals(input.IncludeDeleted))
-                ) && 
-                (
-                    this.CreatedTimeInterval == input.CreatedTimeInterval ||
-                    (this.CreatedTimeInterval != null &&
-                    this.CreatedTimeInterval.Equals(input.CreatedTimeInterval))
-                ) && 
-                (
-                    this.UpdatedTimeInterval == input.UpdatedTimeInterval ||
-                    (this.UpdatedTimeInterval != null &&
-                    this.UpdatedTimeInterval.Equals(input.UpdatedTimeInterval))
-                ) && 
-                (
-                    this.ClosedTimeInterval == input.ClosedTimeInterval ||
-                    (this.ClosedTimeInterval != null &&
-                    this.ClosedTimeInterval.Equals(input.ClosedTimeInterval))
-                ) && 
-                (
-                    this.CustomFields == input.CustomFields ||
-                    this.CustomFields != null &&
-                    input.CustomFields != null &&
-                    this.CustomFields.SequenceEqual(input.CustomFields)
-                );
+            return true;
         }
 
         /// <summary>
@@ -308,47 +214,27 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AssignedIds != null)
-                    hashCode = hashCode * 59 + this.AssignedIds.GetHashCode();
-                if (this.CreatorIds != null)
-                    hashCode = hashCode * 59 + this.CreatorIds.GetHashCode();
-                if (this.DeveloperIds != null)
-                    hashCode = hashCode * 59 + this.DeveloperIds.GetHashCode();
-                if (this.DomainIds != null)
-                    hashCode = hashCode * 59 + this.DomainIds.GetHashCode();
-                if (this.DoneRatios != null)
-                    hashCode = hashCode * 59 + this.DoneRatios.GetHashCode();
-                if (this.IterationIds != null)
-                    hashCode = hashCode * 59 + this.IterationIds.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.ModuleIds != null)
-                    hashCode = hashCode * 59 + this.ModuleIds.GetHashCode();
-                if (this.PriorityIds != null)
-                    hashCode = hashCode * 59 + this.PriorityIds.GetHashCode();
-                if (this.QueryType != null)
-                    hashCode = hashCode * 59 + this.QueryType.GetHashCode();
-                if (this.SeverityIds != null)
-                    hashCode = hashCode * 59 + this.SeverityIds.GetHashCode();
-                if (this.StatusIds != null)
-                    hashCode = hashCode * 59 + this.StatusIds.GetHashCode();
-                if (this.StoryPointIds != null)
-                    hashCode = hashCode * 59 + this.StoryPointIds.GetHashCode();
-                if (this.TrackerIds != null)
-                    hashCode = hashCode * 59 + this.TrackerIds.GetHashCode();
-                if (this.IncludeDeleted != null)
-                    hashCode = hashCode * 59 + this.IncludeDeleted.GetHashCode();
-                if (this.CreatedTimeInterval != null)
-                    hashCode = hashCode * 59 + this.CreatedTimeInterval.GetHashCode();
-                if (this.UpdatedTimeInterval != null)
-                    hashCode = hashCode * 59 + this.UpdatedTimeInterval.GetHashCode();
-                if (this.ClosedTimeInterval != null)
-                    hashCode = hashCode * 59 + this.ClosedTimeInterval.GetHashCode();
-                if (this.CustomFields != null)
-                    hashCode = hashCode * 59 + this.CustomFields.GetHashCode();
+                var hashCode = 41;
+                if (this.AssignedIds != null) hashCode = hashCode * 59 + this.AssignedIds.GetHashCode();
+                if (this.CreatorIds != null) hashCode = hashCode * 59 + this.CreatorIds.GetHashCode();
+                if (this.DeveloperIds != null) hashCode = hashCode * 59 + this.DeveloperIds.GetHashCode();
+                if (this.DomainIds != null) hashCode = hashCode * 59 + this.DomainIds.GetHashCode();
+                if (this.DoneRatios != null) hashCode = hashCode * 59 + this.DoneRatios.GetHashCode();
+                if (this.IterationIds != null) hashCode = hashCode * 59 + this.IterationIds.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.ModuleIds != null) hashCode = hashCode * 59 + this.ModuleIds.GetHashCode();
+                if (this.PriorityIds != null) hashCode = hashCode * 59 + this.PriorityIds.GetHashCode();
+                if (this.QueryType != null) hashCode = hashCode * 59 + this.QueryType.GetHashCode();
+                if (this.SeverityIds != null) hashCode = hashCode * 59 + this.SeverityIds.GetHashCode();
+                if (this.StatusIds != null) hashCode = hashCode * 59 + this.StatusIds.GetHashCode();
+                if (this.StoryPointIds != null) hashCode = hashCode * 59 + this.StoryPointIds.GetHashCode();
+                if (this.TrackerIds != null) hashCode = hashCode * 59 + this.TrackerIds.GetHashCode();
+                if (this.IncludeDeleted != null) hashCode = hashCode * 59 + this.IncludeDeleted.GetHashCode();
+                if (this.CreatedTimeInterval != null) hashCode = hashCode * 59 + this.CreatedTimeInterval.GetHashCode();
+                if (this.UpdatedTimeInterval != null) hashCode = hashCode * 59 + this.UpdatedTimeInterval.GetHashCode();
+                if (this.ClosedTimeInterval != null) hashCode = hashCode * 59 + this.ClosedTimeInterval.GetHashCode();
+                if (this.CustomFields != null) hashCode = hashCode * 59 + this.CustomFields.GetHashCode();
                 return hashCode;
             }
         }

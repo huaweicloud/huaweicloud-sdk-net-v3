@@ -84,41 +84,15 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(SourceInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
+            if (this.DurationMs != input.DurationMs || (this.DurationMs != null && !this.DurationMs.Equals(input.DurationMs))) return false;
+            if (this.Format != input.Format || (this.Format != null && !this.Format.Equals(input.Format))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.VideoInfo != input.VideoInfo || (this.VideoInfo != null && !this.VideoInfo.Equals(input.VideoInfo))) return false;
+            if (this.AudioInfo != input.AudioInfo || (this.AudioInfo != null && input.AudioInfo != null && !this.AudioInfo.SequenceEqual(input.AudioInfo))) return false;
 
-            return 
-                (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
-                ) && 
-                (
-                    this.DurationMs == input.DurationMs ||
-                    (this.DurationMs != null &&
-                    this.DurationMs.Equals(input.DurationMs))
-                ) && 
-                (
-                    this.Format == input.Format ||
-                    (this.Format != null &&
-                    this.Format.Equals(input.Format))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.VideoInfo == input.VideoInfo ||
-                    (this.VideoInfo != null &&
-                    this.VideoInfo.Equals(input.VideoInfo))
-                ) && 
-                (
-                    this.AudioInfo == input.AudioInfo ||
-                    this.AudioInfo != null &&
-                    input.AudioInfo != null &&
-                    this.AudioInfo.SequenceEqual(input.AudioInfo)
-                );
+            return true;
         }
 
         /// <summary>
@@ -128,19 +102,13 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Duration != null)
-                    hashCode = hashCode * 59 + this.Duration.GetHashCode();
-                if (this.DurationMs != null)
-                    hashCode = hashCode * 59 + this.DurationMs.GetHashCode();
-                if (this.Format != null)
-                    hashCode = hashCode * 59 + this.Format.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.VideoInfo != null)
-                    hashCode = hashCode * 59 + this.VideoInfo.GetHashCode();
-                if (this.AudioInfo != null)
-                    hashCode = hashCode * 59 + this.AudioInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                if (this.DurationMs != null) hashCode = hashCode * 59 + this.DurationMs.GetHashCode();
+                if (this.Format != null) hashCode = hashCode * 59 + this.Format.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.VideoInfo != null) hashCode = hashCode * 59 + this.VideoInfo.GetHashCode();
+                if (this.AudioInfo != null) hashCode = hashCode * 59 + this.AudioInfo.GetHashCode();
                 return hashCode;
             }
         }

@@ -284,78 +284,22 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// </summary>
         public bool Equals(ListNatGatewaySnatRulesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.Cidr != input.Cidr || (this.Cidr != null && !this.Cidr.Equals(input.Cidr))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.FloatingIpAddress != input.FloatingIpAddress || (this.FloatingIpAddress != null && input.FloatingIpAddress != null && !this.FloatingIpAddress.SequenceEqual(input.FloatingIpAddress))) return false;
+            if (this.FloatingIpId != input.FloatingIpId || (this.FloatingIpId != null && input.FloatingIpId != null && !this.FloatingIpId.SequenceEqual(input.FloatingIpId))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.NatGatewayId != input.NatGatewayId || (this.NatGatewayId != null && input.NatGatewayId != null && !this.NatGatewayId.SequenceEqual(input.NatGatewayId))) return false;
+            if (this.NetworkId != input.NetworkId || (this.NetworkId != null && !this.NetworkId.Equals(input.NetworkId))) return false;
+            if (this.SourceType != input.SourceType || (this.SourceType != null && !this.SourceType.Equals(input.SourceType))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
 
-            return 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.Cidr == input.Cidr ||
-                    (this.Cidr != null &&
-                    this.Cidr.Equals(input.Cidr))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.FloatingIpAddress == input.FloatingIpAddress ||
-                    this.FloatingIpAddress != null &&
-                    input.FloatingIpAddress != null &&
-                    this.FloatingIpAddress.SequenceEqual(input.FloatingIpAddress)
-                ) && 
-                (
-                    this.FloatingIpId == input.FloatingIpId ||
-                    this.FloatingIpId != null &&
-                    input.FloatingIpId != null &&
-                    this.FloatingIpId.SequenceEqual(input.FloatingIpId)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.NatGatewayId == input.NatGatewayId ||
-                    this.NatGatewayId != null &&
-                    input.NatGatewayId != null &&
-                    this.NatGatewayId.SequenceEqual(input.NatGatewayId)
-                ) && 
-                (
-                    this.NetworkId == input.NetworkId ||
-                    (this.NetworkId != null &&
-                    this.NetworkId.Equals(input.NetworkId))
-                ) && 
-                (
-                    this.SourceType == input.SourceType ||
-                    (this.SourceType != null &&
-                    this.SourceType.Equals(input.SourceType))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                );
+            return true;
         }
 
         /// <summary>
@@ -365,33 +309,20 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.Cidr != null)
-                    hashCode = hashCode * 59 + this.Cidr.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.FloatingIpAddress != null)
-                    hashCode = hashCode * 59 + this.FloatingIpAddress.GetHashCode();
-                if (this.FloatingIpId != null)
-                    hashCode = hashCode * 59 + this.FloatingIpId.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.NatGatewayId != null)
-                    hashCode = hashCode * 59 + this.NatGatewayId.GetHashCode();
-                if (this.NetworkId != null)
-                    hashCode = hashCode * 59 + this.NetworkId.GetHashCode();
-                if (this.SourceType != null)
-                    hashCode = hashCode * 59 + this.SourceType.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                var hashCode = 41;
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.Cidr != null) hashCode = hashCode * 59 + this.Cidr.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.FloatingIpAddress != null) hashCode = hashCode * 59 + this.FloatingIpAddress.GetHashCode();
+                if (this.FloatingIpId != null) hashCode = hashCode * 59 + this.FloatingIpId.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.NatGatewayId != null) hashCode = hashCode * 59 + this.NatGatewayId.GetHashCode();
+                if (this.NetworkId != null) hashCode = hashCode * 59 + this.NetworkId.GetHashCode();
+                if (this.SourceType != null) hashCode = hashCode * 59 + this.SourceType.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 return hashCode;
             }
         }

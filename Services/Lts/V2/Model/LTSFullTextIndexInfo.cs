@@ -77,36 +77,14 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(LTSFullTextIndexInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Enable != input.Enable || (this.Enable != null && !this.Enable.Equals(input.Enable))) return false;
+            if (this.CaseSensitive != input.CaseSensitive || (this.CaseSensitive != null && !this.CaseSensitive.Equals(input.CaseSensitive))) return false;
+            if (this.IncludeChinese != input.IncludeChinese || (this.IncludeChinese != null && !this.IncludeChinese.Equals(input.IncludeChinese))) return false;
+            if (this.Tokenizer != input.Tokenizer || (this.Tokenizer != null && !this.Tokenizer.Equals(input.Tokenizer))) return false;
+            if (this.Ascii != input.Ascii || (this.Ascii != null && input.Ascii != null && !this.Ascii.SequenceEqual(input.Ascii))) return false;
 
-            return 
-                (
-                    this.Enable == input.Enable ||
-                    (this.Enable != null &&
-                    this.Enable.Equals(input.Enable))
-                ) && 
-                (
-                    this.CaseSensitive == input.CaseSensitive ||
-                    (this.CaseSensitive != null &&
-                    this.CaseSensitive.Equals(input.CaseSensitive))
-                ) && 
-                (
-                    this.IncludeChinese == input.IncludeChinese ||
-                    (this.IncludeChinese != null &&
-                    this.IncludeChinese.Equals(input.IncludeChinese))
-                ) && 
-                (
-                    this.Tokenizer == input.Tokenizer ||
-                    (this.Tokenizer != null &&
-                    this.Tokenizer.Equals(input.Tokenizer))
-                ) && 
-                (
-                    this.Ascii == input.Ascii ||
-                    this.Ascii != null &&
-                    input.Ascii != null &&
-                    this.Ascii.SequenceEqual(input.Ascii)
-                );
+            return true;
         }
 
         /// <summary>
@@ -116,17 +94,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Enable != null)
-                    hashCode = hashCode * 59 + this.Enable.GetHashCode();
-                if (this.CaseSensitive != null)
-                    hashCode = hashCode * 59 + this.CaseSensitive.GetHashCode();
-                if (this.IncludeChinese != null)
-                    hashCode = hashCode * 59 + this.IncludeChinese.GetHashCode();
-                if (this.Tokenizer != null)
-                    hashCode = hashCode * 59 + this.Tokenizer.GetHashCode();
-                if (this.Ascii != null)
-                    hashCode = hashCode * 59 + this.Ascii.GetHashCode();
+                var hashCode = 41;
+                if (this.Enable != null) hashCode = hashCode * 59 + this.Enable.GetHashCode();
+                if (this.CaseSensitive != null) hashCode = hashCode * 59 + this.CaseSensitive.GetHashCode();
+                if (this.IncludeChinese != null) hashCode = hashCode * 59 + this.IncludeChinese.GetHashCode();
+                if (this.Tokenizer != null) hashCode = hashCode * 59 + this.Tokenizer.GetHashCode();
+                if (this.Ascii != null) hashCode = hashCode * 59 + this.Ascii.GetHashCode();
                 return hashCode;
             }
         }

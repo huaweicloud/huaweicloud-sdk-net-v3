@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ShowDrReplicaStatusResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ReplicaState != input.ReplicaState || (this.ReplicaState != null && !this.ReplicaState.Equals(input.ReplicaState))) return false;
+            if (this.WalWriteReceiveDelayInMb != input.WalWriteReceiveDelayInMb || (this.WalWriteReceiveDelayInMb != null && !this.WalWriteReceiveDelayInMb.Equals(input.WalWriteReceiveDelayInMb))) return false;
+            if (this.WalWriteReplayDelayInMb != input.WalWriteReplayDelayInMb || (this.WalWriteReplayDelayInMb != null && !this.WalWriteReplayDelayInMb.Equals(input.WalWriteReplayDelayInMb))) return false;
+            if (this.WalReceiveReplayDelayInMs != input.WalReceiveReplayDelayInMs || (this.WalReceiveReplayDelayInMs != null && !this.WalReceiveReplayDelayInMs.Equals(input.WalReceiveReplayDelayInMs))) return false;
 
-            return 
-                (
-                    this.ReplicaState == input.ReplicaState ||
-                    (this.ReplicaState != null &&
-                    this.ReplicaState.Equals(input.ReplicaState))
-                ) && 
-                (
-                    this.WalWriteReceiveDelayInMb == input.WalWriteReceiveDelayInMb ||
-                    (this.WalWriteReceiveDelayInMb != null &&
-                    this.WalWriteReceiveDelayInMb.Equals(input.WalWriteReceiveDelayInMb))
-                ) && 
-                (
-                    this.WalWriteReplayDelayInMb == input.WalWriteReplayDelayInMb ||
-                    (this.WalWriteReplayDelayInMb != null &&
-                    this.WalWriteReplayDelayInMb.Equals(input.WalWriteReplayDelayInMb))
-                ) && 
-                (
-                    this.WalReceiveReplayDelayInMs == input.WalReceiveReplayDelayInMs ||
-                    (this.WalReceiveReplayDelayInMs != null &&
-                    this.WalReceiveReplayDelayInMs.Equals(input.WalReceiveReplayDelayInMs))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ReplicaState != null)
-                    hashCode = hashCode * 59 + this.ReplicaState.GetHashCode();
-                if (this.WalWriteReceiveDelayInMb != null)
-                    hashCode = hashCode * 59 + this.WalWriteReceiveDelayInMb.GetHashCode();
-                if (this.WalWriteReplayDelayInMb != null)
-                    hashCode = hashCode * 59 + this.WalWriteReplayDelayInMb.GetHashCode();
-                if (this.WalReceiveReplayDelayInMs != null)
-                    hashCode = hashCode * 59 + this.WalReceiveReplayDelayInMs.GetHashCode();
+                var hashCode = 41;
+                if (this.ReplicaState != null) hashCode = hashCode * 59 + this.ReplicaState.GetHashCode();
+                if (this.WalWriteReceiveDelayInMb != null) hashCode = hashCode * 59 + this.WalWriteReceiveDelayInMb.GetHashCode();
+                if (this.WalWriteReplayDelayInMb != null) hashCode = hashCode * 59 + this.WalWriteReplayDelayInMb.GetHashCode();
+                if (this.WalReceiveReplayDelayInMs != null) hashCode = hashCode * 59 + this.WalReceiveReplayDelayInMs.GetHashCode();
                 return hashCode;
             }
         }

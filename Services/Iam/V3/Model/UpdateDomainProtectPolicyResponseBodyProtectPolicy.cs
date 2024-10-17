@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(UpdateDomainProtectPolicyResponseBodyProtectPolicy input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AllowUser != input.AllowUser || (this.AllowUser != null && !this.AllowUser.Equals(input.AllowUser))) return false;
+            if (this.OperationProtection != input.OperationProtection || (this.OperationProtection != null && !this.OperationProtection.Equals(input.OperationProtection))) return false;
+            if (this.AdminCheck != input.AdminCheck || (this.AdminCheck != null && !this.AdminCheck.Equals(input.AdminCheck))) return false;
+            if (this.Scene != input.Scene || (this.Scene != null && !this.Scene.Equals(input.Scene))) return false;
 
-            return 
-                (
-                    this.AllowUser == input.AllowUser ||
-                    (this.AllowUser != null &&
-                    this.AllowUser.Equals(input.AllowUser))
-                ) && 
-                (
-                    this.OperationProtection == input.OperationProtection ||
-                    (this.OperationProtection != null &&
-                    this.OperationProtection.Equals(input.OperationProtection))
-                ) && 
-                (
-                    this.AdminCheck == input.AdminCheck ||
-                    (this.AdminCheck != null &&
-                    this.AdminCheck.Equals(input.AdminCheck))
-                ) && 
-                (
-                    this.Scene == input.Scene ||
-                    (this.Scene != null &&
-                    this.Scene.Equals(input.Scene))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AllowUser != null)
-                    hashCode = hashCode * 59 + this.AllowUser.GetHashCode();
-                if (this.OperationProtection != null)
-                    hashCode = hashCode * 59 + this.OperationProtection.GetHashCode();
-                if (this.AdminCheck != null)
-                    hashCode = hashCode * 59 + this.AdminCheck.GetHashCode();
-                if (this.Scene != null)
-                    hashCode = hashCode * 59 + this.Scene.GetHashCode();
+                var hashCode = 41;
+                if (this.AllowUser != null) hashCode = hashCode * 59 + this.AllowUser.GetHashCode();
+                if (this.OperationProtection != null) hashCode = hashCode * 59 + this.OperationProtection.GetHashCode();
+                if (this.AdminCheck != null) hashCode = hashCode * 59 + this.AdminCheck.GetHashCode();
+                if (this.Scene != null) hashCode = hashCode * 59 + this.Scene.GetHashCode();
                 return hashCode;
             }
         }

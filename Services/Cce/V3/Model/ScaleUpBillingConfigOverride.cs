@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ScaleUpBillingConfigOverride input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BillingMode != input.BillingMode || (this.BillingMode != null && !this.BillingMode.Equals(input.BillingMode))) return false;
+            if (this.ExtendParam != input.ExtendParam || (this.ExtendParam != null && !this.ExtendParam.Equals(input.ExtendParam))) return false;
 
-            return 
-                (
-                    this.BillingMode == input.BillingMode ||
-                    (this.BillingMode != null &&
-                    this.BillingMode.Equals(input.BillingMode))
-                ) && 
-                (
-                    this.ExtendParam == input.ExtendParam ||
-                    (this.ExtendParam != null &&
-                    this.ExtendParam.Equals(input.ExtendParam))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BillingMode != null)
-                    hashCode = hashCode * 59 + this.BillingMode.GetHashCode();
-                if (this.ExtendParam != null)
-                    hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
+                var hashCode = 41;
+                if (this.BillingMode != null) hashCode = hashCode * 59 + this.BillingMode.GetHashCode();
+                if (this.ExtendParam != null) hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
                 return hashCode;
             }
         }

@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(UpdateFunctionAsyncInvokeConfigRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MaxAsyncEventAgeInSeconds != input.MaxAsyncEventAgeInSeconds || (this.MaxAsyncEventAgeInSeconds != null && !this.MaxAsyncEventAgeInSeconds.Equals(input.MaxAsyncEventAgeInSeconds))) return false;
+            if (this.MaxAsyncRetryAttempts != input.MaxAsyncRetryAttempts || (this.MaxAsyncRetryAttempts != null && !this.MaxAsyncRetryAttempts.Equals(input.MaxAsyncRetryAttempts))) return false;
+            if (this.DestinationConfig != input.DestinationConfig || (this.DestinationConfig != null && !this.DestinationConfig.Equals(input.DestinationConfig))) return false;
+            if (this.EnableAsyncStatusLog != input.EnableAsyncStatusLog || (this.EnableAsyncStatusLog != null && !this.EnableAsyncStatusLog.Equals(input.EnableAsyncStatusLog))) return false;
 
-            return 
-                (
-                    this.MaxAsyncEventAgeInSeconds == input.MaxAsyncEventAgeInSeconds ||
-                    (this.MaxAsyncEventAgeInSeconds != null &&
-                    this.MaxAsyncEventAgeInSeconds.Equals(input.MaxAsyncEventAgeInSeconds))
-                ) && 
-                (
-                    this.MaxAsyncRetryAttempts == input.MaxAsyncRetryAttempts ||
-                    (this.MaxAsyncRetryAttempts != null &&
-                    this.MaxAsyncRetryAttempts.Equals(input.MaxAsyncRetryAttempts))
-                ) && 
-                (
-                    this.DestinationConfig == input.DestinationConfig ||
-                    (this.DestinationConfig != null &&
-                    this.DestinationConfig.Equals(input.DestinationConfig))
-                ) && 
-                (
-                    this.EnableAsyncStatusLog == input.EnableAsyncStatusLog ||
-                    (this.EnableAsyncStatusLog != null &&
-                    this.EnableAsyncStatusLog.Equals(input.EnableAsyncStatusLog))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MaxAsyncEventAgeInSeconds != null)
-                    hashCode = hashCode * 59 + this.MaxAsyncEventAgeInSeconds.GetHashCode();
-                if (this.MaxAsyncRetryAttempts != null)
-                    hashCode = hashCode * 59 + this.MaxAsyncRetryAttempts.GetHashCode();
-                if (this.DestinationConfig != null)
-                    hashCode = hashCode * 59 + this.DestinationConfig.GetHashCode();
-                if (this.EnableAsyncStatusLog != null)
-                    hashCode = hashCode * 59 + this.EnableAsyncStatusLog.GetHashCode();
+                var hashCode = 41;
+                if (this.MaxAsyncEventAgeInSeconds != null) hashCode = hashCode * 59 + this.MaxAsyncEventAgeInSeconds.GetHashCode();
+                if (this.MaxAsyncRetryAttempts != null) hashCode = hashCode * 59 + this.MaxAsyncRetryAttempts.GetHashCode();
+                if (this.DestinationConfig != null) hashCode = hashCode * 59 + this.DestinationConfig.GetHashCode();
+                if (this.EnableAsyncStatusLog != null) hashCode = hashCode * 59 + this.EnableAsyncStatusLog.GetHashCode();
                 return hashCode;
             }
         }

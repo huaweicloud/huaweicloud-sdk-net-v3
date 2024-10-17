@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         /// </summary>
         public bool Equals(ListWorkflowExecutionsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.WorkflowId != input.WorkflowId || (this.WorkflowId != null && !this.WorkflowId.Equals(input.WorkflowId))) return false;
+            if (this.XEnterpriseProjectId != input.XEnterpriseProjectId || (this.XEnterpriseProjectId != null && !this.XEnterpriseProjectId.Equals(input.XEnterpriseProjectId))) return false;
 
-            return 
-                (
-                    this.WorkflowId == input.WorkflowId ||
-                    (this.WorkflowId != null &&
-                    this.WorkflowId.Equals(input.WorkflowId))
-                ) && 
-                (
-                    this.XEnterpriseProjectId == input.XEnterpriseProjectId ||
-                    (this.XEnterpriseProjectId != null &&
-                    this.XEnterpriseProjectId.Equals(input.XEnterpriseProjectId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.WorkflowId != null)
-                    hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
-                if (this.XEnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.XEnterpriseProjectId.GetHashCode();
+                var hashCode = 41;
+                if (this.WorkflowId != null) hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
+                if (this.XEnterpriseProjectId != null) hashCode = hashCode * 59 + this.XEnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

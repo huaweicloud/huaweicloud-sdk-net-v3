@@ -48,15 +48,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(Point input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TaskType != input.TaskType) return false;
 
-            return 
-                (
-                    this.TaskType == input.TaskType ||
-                    (this.TaskType != null &&
-                    this.TaskType.Equals(input.TaskType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -66,9 +61,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TaskType != null)
-                    hashCode = hashCode * 59 + this.TaskType.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.TaskType.GetHashCode();
                 return hashCode;
             }
         }

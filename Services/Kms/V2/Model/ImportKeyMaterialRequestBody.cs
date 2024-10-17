@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         /// </summary>
         public bool Equals(ImportKeyMaterialRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KeyId != input.KeyId || (this.KeyId != null && !this.KeyId.Equals(input.KeyId))) return false;
+            if (this.ImportToken != input.ImportToken || (this.ImportToken != null && !this.ImportToken.Equals(input.ImportToken))) return false;
+            if (this.EncryptedKeyMaterial != input.EncryptedKeyMaterial || (this.EncryptedKeyMaterial != null && !this.EncryptedKeyMaterial.Equals(input.EncryptedKeyMaterial))) return false;
+            if (this.EncryptedPrivatekey != input.EncryptedPrivatekey || (this.EncryptedPrivatekey != null && !this.EncryptedPrivatekey.Equals(input.EncryptedPrivatekey))) return false;
+            if (this.ExpirationTime != input.ExpirationTime || (this.ExpirationTime != null && !this.ExpirationTime.Equals(input.ExpirationTime))) return false;
+            if (this.Sequence != input.Sequence || (this.Sequence != null && !this.Sequence.Equals(input.Sequence))) return false;
 
-            return 
-                (
-                    this.KeyId == input.KeyId ||
-                    (this.KeyId != null &&
-                    this.KeyId.Equals(input.KeyId))
-                ) && 
-                (
-                    this.ImportToken == input.ImportToken ||
-                    (this.ImportToken != null &&
-                    this.ImportToken.Equals(input.ImportToken))
-                ) && 
-                (
-                    this.EncryptedKeyMaterial == input.EncryptedKeyMaterial ||
-                    (this.EncryptedKeyMaterial != null &&
-                    this.EncryptedKeyMaterial.Equals(input.EncryptedKeyMaterial))
-                ) && 
-                (
-                    this.EncryptedPrivatekey == input.EncryptedPrivatekey ||
-                    (this.EncryptedPrivatekey != null &&
-                    this.EncryptedPrivatekey.Equals(input.EncryptedPrivatekey))
-                ) && 
-                (
-                    this.ExpirationTime == input.ExpirationTime ||
-                    (this.ExpirationTime != null &&
-                    this.ExpirationTime.Equals(input.ExpirationTime))
-                ) && 
-                (
-                    this.Sequence == input.Sequence ||
-                    (this.Sequence != null &&
-                    this.Sequence.Equals(input.Sequence))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KeyId != null)
-                    hashCode = hashCode * 59 + this.KeyId.GetHashCode();
-                if (this.ImportToken != null)
-                    hashCode = hashCode * 59 + this.ImportToken.GetHashCode();
-                if (this.EncryptedKeyMaterial != null)
-                    hashCode = hashCode * 59 + this.EncryptedKeyMaterial.GetHashCode();
-                if (this.EncryptedPrivatekey != null)
-                    hashCode = hashCode * 59 + this.EncryptedPrivatekey.GetHashCode();
-                if (this.ExpirationTime != null)
-                    hashCode = hashCode * 59 + this.ExpirationTime.GetHashCode();
-                if (this.Sequence != null)
-                    hashCode = hashCode * 59 + this.Sequence.GetHashCode();
+                var hashCode = 41;
+                if (this.KeyId != null) hashCode = hashCode * 59 + this.KeyId.GetHashCode();
+                if (this.ImportToken != null) hashCode = hashCode * 59 + this.ImportToken.GetHashCode();
+                if (this.EncryptedKeyMaterial != null) hashCode = hashCode * 59 + this.EncryptedKeyMaterial.GetHashCode();
+                if (this.EncryptedPrivatekey != null) hashCode = hashCode * 59 + this.EncryptedPrivatekey.GetHashCode();
+                if (this.ExpirationTime != null) hashCode = hashCode * 59 + this.ExpirationTime.GetHashCode();
+                if (this.Sequence != null) hashCode = hashCode * 59 + this.Sequence.GetHashCode();
                 return hashCode;
             }
         }

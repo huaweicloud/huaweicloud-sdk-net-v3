@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(QueryColumnInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ColumnName != input.ColumnName || (this.ColumnName != null && !this.ColumnName.Equals(input.ColumnName))) return false;
+            if (this.ColumnType != input.ColumnType || (this.ColumnType != null && !this.ColumnType.Equals(input.ColumnType))) return false;
+            if (this.PrimaryKeyOrUniqueIndex != input.PrimaryKeyOrUniqueIndex || (this.PrimaryKeyOrUniqueIndex != null && !this.PrimaryKeyOrUniqueIndex.Equals(input.PrimaryKeyOrUniqueIndex))) return false;
+            if (this.ColumnMappedName != input.ColumnMappedName || (this.ColumnMappedName != null && !this.ColumnMappedName.Equals(input.ColumnMappedName))) return false;
+            if (this.IsFiltered != input.IsFiltered || (this.IsFiltered != null && !this.IsFiltered.Equals(input.IsFiltered))) return false;
+            if (this.IsPartitionKey != input.IsPartitionKey || (this.IsPartitionKey != null && !this.IsPartitionKey.Equals(input.IsPartitionKey))) return false;
 
-            return 
-                (
-                    this.ColumnName == input.ColumnName ||
-                    (this.ColumnName != null &&
-                    this.ColumnName.Equals(input.ColumnName))
-                ) && 
-                (
-                    this.ColumnType == input.ColumnType ||
-                    (this.ColumnType != null &&
-                    this.ColumnType.Equals(input.ColumnType))
-                ) && 
-                (
-                    this.PrimaryKeyOrUniqueIndex == input.PrimaryKeyOrUniqueIndex ||
-                    (this.PrimaryKeyOrUniqueIndex != null &&
-                    this.PrimaryKeyOrUniqueIndex.Equals(input.PrimaryKeyOrUniqueIndex))
-                ) && 
-                (
-                    this.ColumnMappedName == input.ColumnMappedName ||
-                    (this.ColumnMappedName != null &&
-                    this.ColumnMappedName.Equals(input.ColumnMappedName))
-                ) && 
-                (
-                    this.IsFiltered == input.IsFiltered ||
-                    (this.IsFiltered != null &&
-                    this.IsFiltered.Equals(input.IsFiltered))
-                ) && 
-                (
-                    this.IsPartitionKey == input.IsPartitionKey ||
-                    (this.IsPartitionKey != null &&
-                    this.IsPartitionKey.Equals(input.IsPartitionKey))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ColumnName != null)
-                    hashCode = hashCode * 59 + this.ColumnName.GetHashCode();
-                if (this.ColumnType != null)
-                    hashCode = hashCode * 59 + this.ColumnType.GetHashCode();
-                if (this.PrimaryKeyOrUniqueIndex != null)
-                    hashCode = hashCode * 59 + this.PrimaryKeyOrUniqueIndex.GetHashCode();
-                if (this.ColumnMappedName != null)
-                    hashCode = hashCode * 59 + this.ColumnMappedName.GetHashCode();
-                if (this.IsFiltered != null)
-                    hashCode = hashCode * 59 + this.IsFiltered.GetHashCode();
-                if (this.IsPartitionKey != null)
-                    hashCode = hashCode * 59 + this.IsPartitionKey.GetHashCode();
+                var hashCode = 41;
+                if (this.ColumnName != null) hashCode = hashCode * 59 + this.ColumnName.GetHashCode();
+                if (this.ColumnType != null) hashCode = hashCode * 59 + this.ColumnType.GetHashCode();
+                if (this.PrimaryKeyOrUniqueIndex != null) hashCode = hashCode * 59 + this.PrimaryKeyOrUniqueIndex.GetHashCode();
+                if (this.ColumnMappedName != null) hashCode = hashCode * 59 + this.ColumnMappedName.GetHashCode();
+                if (this.IsFiltered != null) hashCode = hashCode * 59 + this.IsFiltered.GetHashCode();
+                if (this.IsPartitionKey != null) hashCode = hashCode * 59 + this.IsPartitionKey.GetHashCode();
                 return hashCode;
             }
         }

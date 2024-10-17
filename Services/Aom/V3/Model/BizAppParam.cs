@@ -191,35 +191,14 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         /// </summary>
         public bool Equals(BizAppParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.DisplayName != input.DisplayName || (this.DisplayName != null && !this.DisplayName.Equals(input.DisplayName))) return false;
+            if (this.EpsId != input.EpsId || (this.EpsId != null && !this.EpsId.Equals(input.EpsId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.RegisterType != input.RegisterType) return false;
 
-            return 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.DisplayName == input.DisplayName ||
-                    (this.DisplayName != null &&
-                    this.DisplayName.Equals(input.DisplayName))
-                ) && 
-                (
-                    this.EpsId == input.EpsId ||
-                    (this.EpsId != null &&
-                    this.EpsId.Equals(input.EpsId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.RegisterType == input.RegisterType ||
-                    (this.RegisterType != null &&
-                    this.RegisterType.Equals(input.RegisterType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -229,17 +208,12 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.DisplayName != null)
-                    hashCode = hashCode * 59 + this.DisplayName.GetHashCode();
-                if (this.EpsId != null)
-                    hashCode = hashCode * 59 + this.EpsId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.RegisterType != null)
-                    hashCode = hashCode * 59 + this.RegisterType.GetHashCode();
+                var hashCode = 41;
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.DisplayName != null) hashCode = hashCode * 59 + this.DisplayName.GetHashCode();
+                if (this.EpsId != null) hashCode = hashCode * 59 + this.EpsId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = hashCode * 59 + this.RegisterType.GetHashCode();
                 return hashCode;
             }
         }

@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ColumnObject input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SyncType != input.SyncType || (this.SyncType != null && !this.SyncType.Equals(input.SyncType))) return false;
+            if (this.PrimaryKeyForDataFiltering != input.PrimaryKeyForDataFiltering || (this.PrimaryKeyForDataFiltering != null && !this.PrimaryKeyForDataFiltering.Equals(input.PrimaryKeyForDataFiltering))) return false;
+            if (this.IndexForDataFiltering != input.IndexForDataFiltering || (this.IndexForDataFiltering != null && !this.IndexForDataFiltering.Equals(input.IndexForDataFiltering))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.PrimaryKeyForColumnFiltering != input.PrimaryKeyForColumnFiltering || (this.PrimaryKeyForColumnFiltering != null && !this.PrimaryKeyForColumnFiltering.Equals(input.PrimaryKeyForColumnFiltering))) return false;
+            if (this.Filtered != input.Filtered || (this.Filtered != null && !this.Filtered.Equals(input.Filtered))) return false;
+            if (this.Additional != input.Additional || (this.Additional != null && !this.Additional.Equals(input.Additional))) return false;
+            if (this.OperationType != input.OperationType || (this.OperationType != null && !this.OperationType.Equals(input.OperationType))) return false;
+            if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
 
-            return 
-                (
-                    this.SyncType == input.SyncType ||
-                    (this.SyncType != null &&
-                    this.SyncType.Equals(input.SyncType))
-                ) && 
-                (
-                    this.PrimaryKeyForDataFiltering == input.PrimaryKeyForDataFiltering ||
-                    (this.PrimaryKeyForDataFiltering != null &&
-                    this.PrimaryKeyForDataFiltering.Equals(input.PrimaryKeyForDataFiltering))
-                ) && 
-                (
-                    this.IndexForDataFiltering == input.IndexForDataFiltering ||
-                    (this.IndexForDataFiltering != null &&
-                    this.IndexForDataFiltering.Equals(input.IndexForDataFiltering))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.PrimaryKeyForColumnFiltering == input.PrimaryKeyForColumnFiltering ||
-                    (this.PrimaryKeyForColumnFiltering != null &&
-                    this.PrimaryKeyForColumnFiltering.Equals(input.PrimaryKeyForColumnFiltering))
-                ) && 
-                (
-                    this.Filtered == input.Filtered ||
-                    (this.Filtered != null &&
-                    this.Filtered.Equals(input.Filtered))
-                ) && 
-                (
-                    this.Additional == input.Additional ||
-                    (this.Additional != null &&
-                    this.Additional.Equals(input.Additional))
-                ) && 
-                (
-                    this.OperationType == input.OperationType ||
-                    (this.OperationType != null &&
-                    this.OperationType.Equals(input.OperationType))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SyncType != null)
-                    hashCode = hashCode * 59 + this.SyncType.GetHashCode();
-                if (this.PrimaryKeyForDataFiltering != null)
-                    hashCode = hashCode * 59 + this.PrimaryKeyForDataFiltering.GetHashCode();
-                if (this.IndexForDataFiltering != null)
-                    hashCode = hashCode * 59 + this.IndexForDataFiltering.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.PrimaryKeyForColumnFiltering != null)
-                    hashCode = hashCode * 59 + this.PrimaryKeyForColumnFiltering.GetHashCode();
-                if (this.Filtered != null)
-                    hashCode = hashCode * 59 + this.Filtered.GetHashCode();
-                if (this.Additional != null)
-                    hashCode = hashCode * 59 + this.Additional.GetHashCode();
-                if (this.OperationType != null)
-                    hashCode = hashCode * 59 + this.OperationType.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
+                var hashCode = 41;
+                if (this.SyncType != null) hashCode = hashCode * 59 + this.SyncType.GetHashCode();
+                if (this.PrimaryKeyForDataFiltering != null) hashCode = hashCode * 59 + this.PrimaryKeyForDataFiltering.GetHashCode();
+                if (this.IndexForDataFiltering != null) hashCode = hashCode * 59 + this.IndexForDataFiltering.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.PrimaryKeyForColumnFiltering != null) hashCode = hashCode * 59 + this.PrimaryKeyForColumnFiltering.GetHashCode();
+                if (this.Filtered != null) hashCode = hashCode * 59 + this.Filtered.GetHashCode();
+                if (this.Additional != null) hashCode = hashCode * 59 + this.Additional.GetHashCode();
+                if (this.OperationType != null) hashCode = hashCode * 59 + this.OperationType.GetHashCode();
+                if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
                 return hashCode;
             }
         }

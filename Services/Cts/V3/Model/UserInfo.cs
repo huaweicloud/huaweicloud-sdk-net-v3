@@ -240,71 +240,21 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         /// </summary>
         public bool Equals(UserInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
+            if (this.AccountId != input.AccountId || (this.AccountId != null && !this.AccountId.Equals(input.AccountId))) return false;
+            if (this.AccessKeyId != input.AccessKeyId || (this.AccessKeyId != null && !this.AccessKeyId.Equals(input.AccessKeyId))) return false;
+            if (this.PrincipalUrn != input.PrincipalUrn || (this.PrincipalUrn != null && !this.PrincipalUrn.Equals(input.PrincipalUrn))) return false;
+            if (this.PrincipalId != input.PrincipalId || (this.PrincipalId != null && !this.PrincipalId.Equals(input.PrincipalId))) return false;
+            if (this.PrincipalIsRootUser != input.PrincipalIsRootUser) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.InvokedBy != input.InvokedBy || (this.InvokedBy != null && input.InvokedBy != null && !this.InvokedBy.SequenceEqual(input.InvokedBy))) return false;
+            if (this.SessionContext != input.SessionContext || (this.SessionContext != null && !this.SessionContext.Equals(input.SessionContext))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.Domain == input.Domain ||
-                    (this.Domain != null &&
-                    this.Domain.Equals(input.Domain))
-                ) && 
-                (
-                    this.AccountId == input.AccountId ||
-                    (this.AccountId != null &&
-                    this.AccountId.Equals(input.AccountId))
-                ) && 
-                (
-                    this.AccessKeyId == input.AccessKeyId ||
-                    (this.AccessKeyId != null &&
-                    this.AccessKeyId.Equals(input.AccessKeyId))
-                ) && 
-                (
-                    this.PrincipalUrn == input.PrincipalUrn ||
-                    (this.PrincipalUrn != null &&
-                    this.PrincipalUrn.Equals(input.PrincipalUrn))
-                ) && 
-                (
-                    this.PrincipalId == input.PrincipalId ||
-                    (this.PrincipalId != null &&
-                    this.PrincipalId.Equals(input.PrincipalId))
-                ) && 
-                (
-                    this.PrincipalIsRootUser == input.PrincipalIsRootUser ||
-                    (this.PrincipalIsRootUser != null &&
-                    this.PrincipalIsRootUser.Equals(input.PrincipalIsRootUser))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.InvokedBy == input.InvokedBy ||
-                    this.InvokedBy != null &&
-                    input.InvokedBy != null &&
-                    this.InvokedBy.SequenceEqual(input.InvokedBy)
-                ) && 
-                (
-                    this.SessionContext == input.SessionContext ||
-                    (this.SessionContext != null &&
-                    this.SessionContext.Equals(input.SessionContext))
-                );
+            return true;
         }
 
         /// <summary>
@@ -314,31 +264,19 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.UserName != null)
-                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.Domain != null)
-                    hashCode = hashCode * 59 + this.Domain.GetHashCode();
-                if (this.AccountId != null)
-                    hashCode = hashCode * 59 + this.AccountId.GetHashCode();
-                if (this.AccessKeyId != null)
-                    hashCode = hashCode * 59 + this.AccessKeyId.GetHashCode();
-                if (this.PrincipalUrn != null)
-                    hashCode = hashCode * 59 + this.PrincipalUrn.GetHashCode();
-                if (this.PrincipalId != null)
-                    hashCode = hashCode * 59 + this.PrincipalId.GetHashCode();
-                if (this.PrincipalIsRootUser != null)
-                    hashCode = hashCode * 59 + this.PrincipalIsRootUser.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.InvokedBy != null)
-                    hashCode = hashCode * 59 + this.InvokedBy.GetHashCode();
-                if (this.SessionContext != null)
-                    hashCode = hashCode * 59 + this.SessionContext.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                if (this.AccountId != null) hashCode = hashCode * 59 + this.AccountId.GetHashCode();
+                if (this.AccessKeyId != null) hashCode = hashCode * 59 + this.AccessKeyId.GetHashCode();
+                if (this.PrincipalUrn != null) hashCode = hashCode * 59 + this.PrincipalUrn.GetHashCode();
+                if (this.PrincipalId != null) hashCode = hashCode * 59 + this.PrincipalId.GetHashCode();
+                hashCode = hashCode * 59 + this.PrincipalIsRootUser.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.InvokedBy != null) hashCode = hashCode * 59 + this.InvokedBy.GetHashCode();
+                if (this.SessionContext != null) hashCode = hashCode * 59 + this.SessionContext.GetHashCode();
                 return hashCode;
             }
         }

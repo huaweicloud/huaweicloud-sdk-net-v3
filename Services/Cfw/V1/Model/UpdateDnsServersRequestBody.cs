@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(UpdateDnsServersRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DnsServer != input.DnsServer || (this.DnsServer != null && input.DnsServer != null && !this.DnsServer.SequenceEqual(input.DnsServer))) return false;
+            if (this.HealthCheckDomainName != input.HealthCheckDomainName || (this.HealthCheckDomainName != null && !this.HealthCheckDomainName.Equals(input.HealthCheckDomainName))) return false;
 
-            return 
-                (
-                    this.DnsServer == input.DnsServer ||
-                    this.DnsServer != null &&
-                    input.DnsServer != null &&
-                    this.DnsServer.SequenceEqual(input.DnsServer)
-                ) && 
-                (
-                    this.HealthCheckDomainName == input.HealthCheckDomainName ||
-                    (this.HealthCheckDomainName != null &&
-                    this.HealthCheckDomainName.Equals(input.HealthCheckDomainName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DnsServer != null)
-                    hashCode = hashCode * 59 + this.DnsServer.GetHashCode();
-                if (this.HealthCheckDomainName != null)
-                    hashCode = hashCode * 59 + this.HealthCheckDomainName.GetHashCode();
+                var hashCode = 41;
+                if (this.DnsServer != null) hashCode = hashCode * 59 + this.DnsServer.GetHashCode();
+                if (this.HealthCheckDomainName != null) hashCode = hashCode * 59 + this.HealthCheckDomainName.GetHashCode();
                 return hashCode;
             }
         }

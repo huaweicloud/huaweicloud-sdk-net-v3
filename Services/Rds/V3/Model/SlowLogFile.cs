@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(SlowLogFile input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FileName != input.FileName || (this.FileName != null && !this.FileName.Equals(input.FileName))) return false;
+            if (this.FileSize != input.FileSize || (this.FileSize != null && !this.FileSize.Equals(input.FileSize))) return false;
 
-            return 
-                (
-                    this.FileName == input.FileName ||
-                    (this.FileName != null &&
-                    this.FileName.Equals(input.FileName))
-                ) && 
-                (
-                    this.FileSize == input.FileSize ||
-                    (this.FileSize != null &&
-                    this.FileSize.Equals(input.FileSize))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FileName != null)
-                    hashCode = hashCode * 59 + this.FileName.GetHashCode();
-                if (this.FileSize != null)
-                    hashCode = hashCode * 59 + this.FileSize.GetHashCode();
+                var hashCode = 41;
+                if (this.FileName != null) hashCode = hashCode * 59 + this.FileName.GetHashCode();
+                if (this.FileSize != null) hashCode = hashCode * 59 + this.FileSize.GetHashCode();
                 return hashCode;
             }
         }

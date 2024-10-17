@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// </summary>
         public bool Equals(DeleteNatGatewayTagRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NatGatewayId != input.NatGatewayId || (this.NatGatewayId != null && !this.NatGatewayId.Equals(input.NatGatewayId))) return false;
+            if (this.Key != input.Key || (this.Key != null && !this.Key.Equals(input.Key))) return false;
 
-            return 
-                (
-                    this.NatGatewayId == input.NatGatewayId ||
-                    (this.NatGatewayId != null &&
-                    this.NatGatewayId.Equals(input.NatGatewayId))
-                ) && 
-                (
-                    this.Key == input.Key ||
-                    (this.Key != null &&
-                    this.Key.Equals(input.Key))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NatGatewayId != null)
-                    hashCode = hashCode * 59 + this.NatGatewayId.GetHashCode();
-                if (this.Key != null)
-                    hashCode = hashCode * 59 + this.Key.GetHashCode();
+                var hashCode = 41;
+                if (this.NatGatewayId != null) hashCode = hashCode * 59 + this.NatGatewayId.GetHashCode();
+                if (this.Key != null) hashCode = hashCode * 59 + this.Key.GetHashCode();
                 return hashCode;
             }
         }

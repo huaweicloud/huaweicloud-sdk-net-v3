@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(FunctionGraphForwarding input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FuncUrn != input.FuncUrn || (this.FuncUrn != null && !this.FuncUrn.Equals(input.FuncUrn))) return false;
+            if (this.FuncName != input.FuncName || (this.FuncName != null && !this.FuncName.Equals(input.FuncName))) return false;
 
-            return 
-                (
-                    this.FuncUrn == input.FuncUrn ||
-                    (this.FuncUrn != null &&
-                    this.FuncUrn.Equals(input.FuncUrn))
-                ) && 
-                (
-                    this.FuncName == input.FuncName ||
-                    (this.FuncName != null &&
-                    this.FuncName.Equals(input.FuncName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FuncUrn != null)
-                    hashCode = hashCode * 59 + this.FuncUrn.GetHashCode();
-                if (this.FuncName != null)
-                    hashCode = hashCode * 59 + this.FuncName.GetHashCode();
+                var hashCode = 41;
+                if (this.FuncUrn != null) hashCode = hashCode * 59 + this.FuncUrn.GetHashCode();
+                if (this.FuncName != null) hashCode = hashCode * 59 + this.FuncName.GetHashCode();
                 return hashCode;
             }
         }

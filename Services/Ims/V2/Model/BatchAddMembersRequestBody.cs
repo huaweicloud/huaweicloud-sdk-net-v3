@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         public bool Equals(BatchAddMembersRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Images != input.Images || (this.Images != null && input.Images != null && !this.Images.SequenceEqual(input.Images))) return false;
+            if (this.Projects != input.Projects || (this.Projects != null && input.Projects != null && !this.Projects.SequenceEqual(input.Projects))) return false;
 
-            return 
-                (
-                    this.Images == input.Images ||
-                    this.Images != null &&
-                    input.Images != null &&
-                    this.Images.SequenceEqual(input.Images)
-                ) && 
-                (
-                    this.Projects == input.Projects ||
-                    this.Projects != null &&
-                    input.Projects != null &&
-                    this.Projects.SequenceEqual(input.Projects)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Images != null)
-                    hashCode = hashCode * 59 + this.Images.GetHashCode();
-                if (this.Projects != null)
-                    hashCode = hashCode * 59 + this.Projects.GetHashCode();
+                var hashCode = 41;
+                if (this.Images != null) hashCode = hashCode * 59 + this.Images.GetHashCode();
+                if (this.Projects != null) hashCode = hashCode * 59 + this.Projects.GetHashCode();
                 return hashCode;
             }
         }

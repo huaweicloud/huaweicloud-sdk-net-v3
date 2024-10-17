@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(BackupPolicyItem input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KeepDays != input.KeepDays || (this.KeepDays != null && !this.KeepDays.Equals(input.KeepDays))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.Period != input.Period || (this.Period != null && !this.Period.Equals(input.Period))) return false;
 
-            return 
-                (
-                    this.KeepDays == input.KeepDays ||
-                    (this.KeepDays != null &&
-                    this.KeepDays.Equals(input.KeepDays))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.Period == input.Period ||
-                    (this.Period != null &&
-                    this.Period.Equals(input.Period))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KeepDays != null)
-                    hashCode = hashCode * 59 + this.KeepDays.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.Period != null)
-                    hashCode = hashCode * 59 + this.Period.GetHashCode();
+                var hashCode = 41;
+                if (this.KeepDays != null) hashCode = hashCode * 59 + this.KeepDays.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.Period != null) hashCode = hashCode * 59 + this.Period.GetHashCode();
                 return hashCode;
             }
         }

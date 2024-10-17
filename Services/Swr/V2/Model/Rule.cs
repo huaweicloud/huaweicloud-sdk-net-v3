@@ -177,26 +177,12 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public bool Equals(Rule input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Template != input.Template) return false;
+            if (this.Params != input.Params || (this.Params != null && !this.Params.Equals(input.Params))) return false;
+            if (this.TagSelectors != input.TagSelectors || (this.TagSelectors != null && input.TagSelectors != null && !this.TagSelectors.SequenceEqual(input.TagSelectors))) return false;
 
-            return 
-                (
-                    this.Template == input.Template ||
-                    (this.Template != null &&
-                    this.Template.Equals(input.Template))
-                ) && 
-                (
-                    this.Params == input.Params ||
-                    (this.Params != null &&
-                    this.Params.Equals(input.Params))
-                ) && 
-                (
-                    this.TagSelectors == input.TagSelectors ||
-                    this.TagSelectors != null &&
-                    input.TagSelectors != null &&
-                    this.TagSelectors.SequenceEqual(input.TagSelectors)
-                );
+            return true;
         }
 
         /// <summary>
@@ -206,13 +192,10 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Template != null)
-                    hashCode = hashCode * 59 + this.Template.GetHashCode();
-                if (this.Params != null)
-                    hashCode = hashCode * 59 + this.Params.GetHashCode();
-                if (this.TagSelectors != null)
-                    hashCode = hashCode * 59 + this.TagSelectors.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Template.GetHashCode();
+                if (this.Params != null) hashCode = hashCode * 59 + this.Params.GetHashCode();
+                if (this.TagSelectors != null) hashCode = hashCode * 59 + this.TagSelectors.GetHashCode();
                 return hashCode;
             }
         }

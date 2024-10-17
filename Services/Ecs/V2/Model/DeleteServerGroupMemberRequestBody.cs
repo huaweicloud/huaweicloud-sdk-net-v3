@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(DeleteServerGroupMemberRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RemoveMember != input.RemoveMember || (this.RemoveMember != null && !this.RemoveMember.Equals(input.RemoveMember))) return false;
 
-            return 
-                (
-                    this.RemoveMember == input.RemoveMember ||
-                    (this.RemoveMember != null &&
-                    this.RemoveMember.Equals(input.RemoveMember))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RemoveMember != null)
-                    hashCode = hashCode * 59 + this.RemoveMember.GetHashCode();
+                var hashCode = 41;
+                if (this.RemoveMember != null) hashCode = hashCode * 59 + this.RemoveMember.GetHashCode();
                 return hashCode;
             }
         }

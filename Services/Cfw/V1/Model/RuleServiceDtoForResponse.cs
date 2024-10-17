@@ -119,69 +119,20 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(RuleServiceDtoForResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Protocol != input.Protocol || (this.Protocol != null && !this.Protocol.Equals(input.Protocol))) return false;
+            if (this.Protocols != input.Protocols || (this.Protocols != null && input.Protocols != null && !this.Protocols.SequenceEqual(input.Protocols))) return false;
+            if (this.SourcePort != input.SourcePort || (this.SourcePort != null && !this.SourcePort.Equals(input.SourcePort))) return false;
+            if (this.DestPort != input.DestPort || (this.DestPort != null && !this.DestPort.Equals(input.DestPort))) return false;
+            if (this.ServiceSetId != input.ServiceSetId || (this.ServiceSetId != null && !this.ServiceSetId.Equals(input.ServiceSetId))) return false;
+            if (this.ServiceSetName != input.ServiceSetName || (this.ServiceSetName != null && !this.ServiceSetName.Equals(input.ServiceSetName))) return false;
+            if (this.CustomService != input.CustomService || (this.CustomService != null && input.CustomService != null && !this.CustomService.SequenceEqual(input.CustomService))) return false;
+            if (this.ServiceGroup != input.ServiceGroup || (this.ServiceGroup != null && input.ServiceGroup != null && !this.ServiceGroup.SequenceEqual(input.ServiceGroup))) return false;
+            if (this.ServiceGroupNames != input.ServiceGroupNames || (this.ServiceGroupNames != null && input.ServiceGroupNames != null && !this.ServiceGroupNames.SequenceEqual(input.ServiceGroupNames))) return false;
+            if (this.ServiceSetType != input.ServiceSetType || (this.ServiceSetType != null && !this.ServiceSetType.Equals(input.ServiceSetType))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Protocol == input.Protocol ||
-                    (this.Protocol != null &&
-                    this.Protocol.Equals(input.Protocol))
-                ) && 
-                (
-                    this.Protocols == input.Protocols ||
-                    this.Protocols != null &&
-                    input.Protocols != null &&
-                    this.Protocols.SequenceEqual(input.Protocols)
-                ) && 
-                (
-                    this.SourcePort == input.SourcePort ||
-                    (this.SourcePort != null &&
-                    this.SourcePort.Equals(input.SourcePort))
-                ) && 
-                (
-                    this.DestPort == input.DestPort ||
-                    (this.DestPort != null &&
-                    this.DestPort.Equals(input.DestPort))
-                ) && 
-                (
-                    this.ServiceSetId == input.ServiceSetId ||
-                    (this.ServiceSetId != null &&
-                    this.ServiceSetId.Equals(input.ServiceSetId))
-                ) && 
-                (
-                    this.ServiceSetName == input.ServiceSetName ||
-                    (this.ServiceSetName != null &&
-                    this.ServiceSetName.Equals(input.ServiceSetName))
-                ) && 
-                (
-                    this.CustomService == input.CustomService ||
-                    this.CustomService != null &&
-                    input.CustomService != null &&
-                    this.CustomService.SequenceEqual(input.CustomService)
-                ) && 
-                (
-                    this.ServiceGroup == input.ServiceGroup ||
-                    this.ServiceGroup != null &&
-                    input.ServiceGroup != null &&
-                    this.ServiceGroup.SequenceEqual(input.ServiceGroup)
-                ) && 
-                (
-                    this.ServiceGroupNames == input.ServiceGroupNames ||
-                    this.ServiceGroupNames != null &&
-                    input.ServiceGroupNames != null &&
-                    this.ServiceGroupNames.SequenceEqual(input.ServiceGroupNames)
-                ) && 
-                (
-                    this.ServiceSetType == input.ServiceSetType ||
-                    (this.ServiceSetType != null &&
-                    this.ServiceSetType.Equals(input.ServiceSetType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -191,29 +142,18 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
-                if (this.Protocols != null)
-                    hashCode = hashCode * 59 + this.Protocols.GetHashCode();
-                if (this.SourcePort != null)
-                    hashCode = hashCode * 59 + this.SourcePort.GetHashCode();
-                if (this.DestPort != null)
-                    hashCode = hashCode * 59 + this.DestPort.GetHashCode();
-                if (this.ServiceSetId != null)
-                    hashCode = hashCode * 59 + this.ServiceSetId.GetHashCode();
-                if (this.ServiceSetName != null)
-                    hashCode = hashCode * 59 + this.ServiceSetName.GetHashCode();
-                if (this.CustomService != null)
-                    hashCode = hashCode * 59 + this.CustomService.GetHashCode();
-                if (this.ServiceGroup != null)
-                    hashCode = hashCode * 59 + this.ServiceGroup.GetHashCode();
-                if (this.ServiceGroupNames != null)
-                    hashCode = hashCode * 59 + this.ServiceGroupNames.GetHashCode();
-                if (this.ServiceSetType != null)
-                    hashCode = hashCode * 59 + this.ServiceSetType.GetHashCode();
+                var hashCode = 41;
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.Protocols != null) hashCode = hashCode * 59 + this.Protocols.GetHashCode();
+                if (this.SourcePort != null) hashCode = hashCode * 59 + this.SourcePort.GetHashCode();
+                if (this.DestPort != null) hashCode = hashCode * 59 + this.DestPort.GetHashCode();
+                if (this.ServiceSetId != null) hashCode = hashCode * 59 + this.ServiceSetId.GetHashCode();
+                if (this.ServiceSetName != null) hashCode = hashCode * 59 + this.ServiceSetName.GetHashCode();
+                if (this.CustomService != null) hashCode = hashCode * 59 + this.CustomService.GetHashCode();
+                if (this.ServiceGroup != null) hashCode = hashCode * 59 + this.ServiceGroup.GetHashCode();
+                if (this.ServiceGroupNames != null) hashCode = hashCode * 59 + this.ServiceGroupNames.GetHashCode();
+                if (this.ServiceSetType != null) hashCode = hashCode * 59 + this.ServiceSetType.GetHashCode();
                 return hashCode;
             }
         }

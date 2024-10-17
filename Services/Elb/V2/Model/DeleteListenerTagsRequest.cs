@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// </summary>
         public bool Equals(DeleteListenerTagsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ListenerId != input.ListenerId || (this.ListenerId != null && !this.ListenerId.Equals(input.ListenerId))) return false;
+            if (this.Key != input.Key || (this.Key != null && !this.Key.Equals(input.Key))) return false;
 
-            return 
-                (
-                    this.ListenerId == input.ListenerId ||
-                    (this.ListenerId != null &&
-                    this.ListenerId.Equals(input.ListenerId))
-                ) && 
-                (
-                    this.Key == input.Key ||
-                    (this.Key != null &&
-                    this.Key.Equals(input.Key))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ListenerId != null)
-                    hashCode = hashCode * 59 + this.ListenerId.GetHashCode();
-                if (this.Key != null)
-                    hashCode = hashCode * 59 + this.Key.GetHashCode();
+                var hashCode = 41;
+                if (this.ListenerId != null) hashCode = hashCode * 59 + this.ListenerId.GetHashCode();
+                if (this.Key != null) hashCode = hashCode * 59 + this.Key.GetHashCode();
                 return hashCode;
             }
         }

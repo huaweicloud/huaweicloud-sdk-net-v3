@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(NodeTemplateLifeCycle input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PreInstall != input.PreInstall || (this.PreInstall != null && !this.PreInstall.Equals(input.PreInstall))) return false;
+            if (this.PostInstall != input.PostInstall || (this.PostInstall != null && !this.PostInstall.Equals(input.PostInstall))) return false;
 
-            return 
-                (
-                    this.PreInstall == input.PreInstall ||
-                    (this.PreInstall != null &&
-                    this.PreInstall.Equals(input.PreInstall))
-                ) && 
-                (
-                    this.PostInstall == input.PostInstall ||
-                    (this.PostInstall != null &&
-                    this.PostInstall.Equals(input.PostInstall))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PreInstall != null)
-                    hashCode = hashCode * 59 + this.PreInstall.GetHashCode();
-                if (this.PostInstall != null)
-                    hashCode = hashCode * 59 + this.PostInstall.GetHashCode();
+                var hashCode = 41;
+                if (this.PreInstall != null) hashCode = hashCode * 59 + this.PreInstall.GetHashCode();
+                if (this.PostInstall != null) hashCode = hashCode * 59 + this.PostInstall.GetHashCode();
                 return hashCode;
             }
         }

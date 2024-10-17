@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(ListTranscodeDetailResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TaskArray != input.TaskArray || (this.TaskArray != null && input.TaskArray != null && !this.TaskArray.SequenceEqual(input.TaskArray))) return false;
 
-            return 
-                (
-                    this.TaskArray == input.TaskArray ||
-                    this.TaskArray != null &&
-                    input.TaskArray != null &&
-                    this.TaskArray.SequenceEqual(input.TaskArray)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TaskArray != null)
-                    hashCode = hashCode * 59 + this.TaskArray.GetHashCode();
+                var hashCode = 41;
+                if (this.TaskArray != null) hashCode = hashCode * 59 + this.TaskArray.GetHashCode();
                 return hashCode;
             }
         }

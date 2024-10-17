@@ -504,55 +504,18 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(ListDomainsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
+            if (this.BusinessType != input.BusinessType) return false;
+            if (this.DomainStatus != input.DomainStatus) return false;
+            if (this.ServiceArea != input.ServiceArea) return false;
+            if (this.PageSize != input.PageSize || (this.PageSize != null && !this.PageSize.Equals(input.PageSize))) return false;
+            if (this.PageNumber != input.PageNumber || (this.PageNumber != null && !this.PageNumber.Equals(input.PageNumber))) return false;
+            if (this.ShowTags != input.ShowTags || (this.ShowTags != null && !this.ShowTags.Equals(input.ShowTags))) return false;
+            if (this.ExactMatch != input.ExactMatch || (this.ExactMatch != null && !this.ExactMatch.Equals(input.ExactMatch))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
-            return 
-                (
-                    this.DomainName == input.DomainName ||
-                    (this.DomainName != null &&
-                    this.DomainName.Equals(input.DomainName))
-                ) && 
-                (
-                    this.BusinessType == input.BusinessType ||
-                    (this.BusinessType != null &&
-                    this.BusinessType.Equals(input.BusinessType))
-                ) && 
-                (
-                    this.DomainStatus == input.DomainStatus ||
-                    (this.DomainStatus != null &&
-                    this.DomainStatus.Equals(input.DomainStatus))
-                ) && 
-                (
-                    this.ServiceArea == input.ServiceArea ||
-                    (this.ServiceArea != null &&
-                    this.ServiceArea.Equals(input.ServiceArea))
-                ) && 
-                (
-                    this.PageSize == input.PageSize ||
-                    (this.PageSize != null &&
-                    this.PageSize.Equals(input.PageSize))
-                ) && 
-                (
-                    this.PageNumber == input.PageNumber ||
-                    (this.PageNumber != null &&
-                    this.PageNumber.Equals(input.PageNumber))
-                ) && 
-                (
-                    this.ShowTags == input.ShowTags ||
-                    (this.ShowTags != null &&
-                    this.ShowTags.Equals(input.ShowTags))
-                ) && 
-                (
-                    this.ExactMatch == input.ExactMatch ||
-                    (this.ExactMatch != null &&
-                    this.ExactMatch.Equals(input.ExactMatch))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -562,25 +525,16 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DomainName != null)
-                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.BusinessType != null)
-                    hashCode = hashCode * 59 + this.BusinessType.GetHashCode();
-                if (this.DomainStatus != null)
-                    hashCode = hashCode * 59 + this.DomainStatus.GetHashCode();
-                if (this.ServiceArea != null)
-                    hashCode = hashCode * 59 + this.ServiceArea.GetHashCode();
-                if (this.PageSize != null)
-                    hashCode = hashCode * 59 + this.PageSize.GetHashCode();
-                if (this.PageNumber != null)
-                    hashCode = hashCode * 59 + this.PageNumber.GetHashCode();
-                if (this.ShowTags != null)
-                    hashCode = hashCode * 59 + this.ShowTags.GetHashCode();
-                if (this.ExactMatch != null)
-                    hashCode = hashCode * 59 + this.ExactMatch.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                var hashCode = 41;
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                hashCode = hashCode * 59 + this.BusinessType.GetHashCode();
+                hashCode = hashCode * 59 + this.DomainStatus.GetHashCode();
+                hashCode = hashCode * 59 + this.ServiceArea.GetHashCode();
+                if (this.PageSize != null) hashCode = hashCode * 59 + this.PageSize.GetHashCode();
+                if (this.PageNumber != null) hashCode = hashCode * 59 + this.PageNumber.GetHashCode();
+                if (this.ShowTags != null) hashCode = hashCode * 59 + this.ShowTags.GetHashCode();
+                if (this.ExactMatch != null) hashCode = hashCode * 59 + this.ExactMatch.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

@@ -82,35 +82,14 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// </summary>
         public bool Equals(ListAlarmTemplatesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AlarmTemplateId != input.AlarmTemplateId || (this.AlarmTemplateId != null && !this.AlarmTemplateId.Equals(input.AlarmTemplateId))) return false;
+            if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
+            if (this.Dname != input.Dname || (this.Dname != null && !this.Dname.Equals(input.Dname))) return false;
+            if (this.Start != input.Start || (this.Start != null && !this.Start.Equals(input.Start))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
-            return 
-                (
-                    this.AlarmTemplateId == input.AlarmTemplateId ||
-                    (this.AlarmTemplateId != null &&
-                    this.AlarmTemplateId.Equals(input.AlarmTemplateId))
-                ) && 
-                (
-                    this.Namespace == input.Namespace ||
-                    (this.Namespace != null &&
-                    this.Namespace.Equals(input.Namespace))
-                ) && 
-                (
-                    this.Dname == input.Dname ||
-                    (this.Dname != null &&
-                    this.Dname.Equals(input.Dname))
-                ) && 
-                (
-                    this.Start == input.Start ||
-                    (this.Start != null &&
-                    this.Start.Equals(input.Start))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -120,17 +99,12 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AlarmTemplateId != null)
-                    hashCode = hashCode * 59 + this.AlarmTemplateId.GetHashCode();
-                if (this.Namespace != null)
-                    hashCode = hashCode * 59 + this.Namespace.GetHashCode();
-                if (this.Dname != null)
-                    hashCode = hashCode * 59 + this.Dname.GetHashCode();
-                if (this.Start != null)
-                    hashCode = hashCode * 59 + this.Start.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                var hashCode = 41;
+                if (this.AlarmTemplateId != null) hashCode = hashCode * 59 + this.AlarmTemplateId.GetHashCode();
+                if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.Dname != null) hashCode = hashCode * 59 + this.Dname.GetHashCode();
+                if (this.Start != null) hashCode = hashCode * 59 + this.Start.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;
             }
         }

@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(VolumeTypeExtraSpecs input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RESKEYavailabilityZones != input.RESKEYavailabilityZones || (this.RESKEYavailabilityZones != null && !this.RESKEYavailabilityZones.Equals(input.RESKEYavailabilityZones))) return false;
+            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
+            if (this.OsVendorExtendedsoldOutAvailabilityZones != input.OsVendorExtendedsoldOutAvailabilityZones || (this.OsVendorExtendedsoldOutAvailabilityZones != null && !this.OsVendorExtendedsoldOutAvailabilityZones.Equals(input.OsVendorExtendedsoldOutAvailabilityZones))) return false;
+            if (this.VolumeBackendName != input.VolumeBackendName || (this.VolumeBackendName != null && !this.VolumeBackendName.Equals(input.VolumeBackendName))) return false;
+            if (this.HWavailabilityZone != input.HWavailabilityZone || (this.HWavailabilityZone != null && !this.HWavailabilityZone.Equals(input.HWavailabilityZone))) return false;
 
-            return 
-                (
-                    this.RESKEYavailabilityZones == input.RESKEYavailabilityZones ||
-                    (this.RESKEYavailabilityZones != null &&
-                    this.RESKEYavailabilityZones.Equals(input.RESKEYavailabilityZones))
-                ) && 
-                (
-                    this.AvailabilityZone == input.AvailabilityZone ||
-                    (this.AvailabilityZone != null &&
-                    this.AvailabilityZone.Equals(input.AvailabilityZone))
-                ) && 
-                (
-                    this.OsVendorExtendedsoldOutAvailabilityZones == input.OsVendorExtendedsoldOutAvailabilityZones ||
-                    (this.OsVendorExtendedsoldOutAvailabilityZones != null &&
-                    this.OsVendorExtendedsoldOutAvailabilityZones.Equals(input.OsVendorExtendedsoldOutAvailabilityZones))
-                ) && 
-                (
-                    this.VolumeBackendName == input.VolumeBackendName ||
-                    (this.VolumeBackendName != null &&
-                    this.VolumeBackendName.Equals(input.VolumeBackendName))
-                ) && 
-                (
-                    this.HWavailabilityZone == input.HWavailabilityZone ||
-                    (this.HWavailabilityZone != null &&
-                    this.HWavailabilityZone.Equals(input.HWavailabilityZone))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RESKEYavailabilityZones != null)
-                    hashCode = hashCode * 59 + this.RESKEYavailabilityZones.GetHashCode();
-                if (this.AvailabilityZone != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
-                if (this.OsVendorExtendedsoldOutAvailabilityZones != null)
-                    hashCode = hashCode * 59 + this.OsVendorExtendedsoldOutAvailabilityZones.GetHashCode();
-                if (this.VolumeBackendName != null)
-                    hashCode = hashCode * 59 + this.VolumeBackendName.GetHashCode();
-                if (this.HWavailabilityZone != null)
-                    hashCode = hashCode * 59 + this.HWavailabilityZone.GetHashCode();
+                var hashCode = 41;
+                if (this.RESKEYavailabilityZones != null) hashCode = hashCode * 59 + this.RESKEYavailabilityZones.GetHashCode();
+                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
+                if (this.OsVendorExtendedsoldOutAvailabilityZones != null) hashCode = hashCode * 59 + this.OsVendorExtendedsoldOutAvailabilityZones.GetHashCode();
+                if (this.VolumeBackendName != null) hashCode = hashCode * 59 + this.VolumeBackendName.GetHashCode();
+                if (this.HWavailabilityZone != null) hashCode = hashCode * 59 + this.HWavailabilityZone.GetHashCode();
                 return hashCode;
             }
         }

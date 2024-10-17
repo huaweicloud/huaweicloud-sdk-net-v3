@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ListChildIssuesV4Request input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.IssueId != input.IssueId || (this.IssueId != null && !this.IssueId.Equals(input.IssueId))) return false;
 
-            return 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.IssueId == input.IssueId ||
-                    (this.IssueId != null &&
-                    this.IssueId.Equals(input.IssueId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.IssueId != null)
-                    hashCode = hashCode * 59 + this.IssueId.GetHashCode();
+                var hashCode = 41;
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.IssueId != null) hashCode = hashCode * 59 + this.IssueId.GetHashCode();
                 return hashCode;
             }
         }

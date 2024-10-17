@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(CreateKafkaUserClientQuotaTaskReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.User != input.User || (this.User != null && !this.User.Equals(input.User))) return false;
+            if (this.Client != input.Client || (this.Client != null && !this.Client.Equals(input.Client))) return false;
+            if (this.UserDefault != input.UserDefault || (this.UserDefault != null && !this.UserDefault.Equals(input.UserDefault))) return false;
+            if (this.ClientDefault != input.ClientDefault || (this.ClientDefault != null && !this.ClientDefault.Equals(input.ClientDefault))) return false;
+            if (this.ProducerByteRate != input.ProducerByteRate || (this.ProducerByteRate != null && !this.ProducerByteRate.Equals(input.ProducerByteRate))) return false;
+            if (this.ConsumerByteRate != input.ConsumerByteRate || (this.ConsumerByteRate != null && !this.ConsumerByteRate.Equals(input.ConsumerByteRate))) return false;
 
-            return 
-                (
-                    this.User == input.User ||
-                    (this.User != null &&
-                    this.User.Equals(input.User))
-                ) && 
-                (
-                    this.Client == input.Client ||
-                    (this.Client != null &&
-                    this.Client.Equals(input.Client))
-                ) && 
-                (
-                    this.UserDefault == input.UserDefault ||
-                    (this.UserDefault != null &&
-                    this.UserDefault.Equals(input.UserDefault))
-                ) && 
-                (
-                    this.ClientDefault == input.ClientDefault ||
-                    (this.ClientDefault != null &&
-                    this.ClientDefault.Equals(input.ClientDefault))
-                ) && 
-                (
-                    this.ProducerByteRate == input.ProducerByteRate ||
-                    (this.ProducerByteRate != null &&
-                    this.ProducerByteRate.Equals(input.ProducerByteRate))
-                ) && 
-                (
-                    this.ConsumerByteRate == input.ConsumerByteRate ||
-                    (this.ConsumerByteRate != null &&
-                    this.ConsumerByteRate.Equals(input.ConsumerByteRate))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.User != null)
-                    hashCode = hashCode * 59 + this.User.GetHashCode();
-                if (this.Client != null)
-                    hashCode = hashCode * 59 + this.Client.GetHashCode();
-                if (this.UserDefault != null)
-                    hashCode = hashCode * 59 + this.UserDefault.GetHashCode();
-                if (this.ClientDefault != null)
-                    hashCode = hashCode * 59 + this.ClientDefault.GetHashCode();
-                if (this.ProducerByteRate != null)
-                    hashCode = hashCode * 59 + this.ProducerByteRate.GetHashCode();
-                if (this.ConsumerByteRate != null)
-                    hashCode = hashCode * 59 + this.ConsumerByteRate.GetHashCode();
+                var hashCode = 41;
+                if (this.User != null) hashCode = hashCode * 59 + this.User.GetHashCode();
+                if (this.Client != null) hashCode = hashCode * 59 + this.Client.GetHashCode();
+                if (this.UserDefault != null) hashCode = hashCode * 59 + this.UserDefault.GetHashCode();
+                if (this.ClientDefault != null) hashCode = hashCode * 59 + this.ClientDefault.GetHashCode();
+                if (this.ProducerByteRate != null) hashCode = hashCode * 59 + this.ProducerByteRate.GetHashCode();
+                if (this.ConsumerByteRate != null) hashCode = hashCode * 59 + this.ConsumerByteRate.GetHashCode();
                 return hashCode;
             }
         }

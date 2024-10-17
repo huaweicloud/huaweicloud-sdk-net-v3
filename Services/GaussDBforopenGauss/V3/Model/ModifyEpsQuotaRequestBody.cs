@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ModifyEpsQuotaRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EpsQuotas != input.EpsQuotas || (this.EpsQuotas != null && input.EpsQuotas != null && !this.EpsQuotas.SequenceEqual(input.EpsQuotas))) return false;
 
-            return 
-                (
-                    this.EpsQuotas == input.EpsQuotas ||
-                    this.EpsQuotas != null &&
-                    input.EpsQuotas != null &&
-                    this.EpsQuotas.SequenceEqual(input.EpsQuotas)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EpsQuotas != null)
-                    hashCode = hashCode * 59 + this.EpsQuotas.GetHashCode();
+                var hashCode = 41;
+                if (this.EpsQuotas != null) hashCode = hashCode * 59 + this.EpsQuotas.GetHashCode();
                 return hashCode;
             }
         }

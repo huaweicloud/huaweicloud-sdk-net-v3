@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(NeutronShowFirewallPolicyResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FirewallPolicy != input.FirewallPolicy || (this.FirewallPolicy != null && !this.FirewallPolicy.Equals(input.FirewallPolicy))) return false;
 
-            return 
-                (
-                    this.FirewallPolicy == input.FirewallPolicy ||
-                    (this.FirewallPolicy != null &&
-                    this.FirewallPolicy.Equals(input.FirewallPolicy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FirewallPolicy != null)
-                    hashCode = hashCode * 59 + this.FirewallPolicy.GetHashCode();
+                var hashCode = 41;
+                if (this.FirewallPolicy != null) hashCode = hashCode * 59 + this.FirewallPolicy.GetHashCode();
                 return hashCode;
             }
         }

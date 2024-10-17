@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ClusterCert input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Server != input.Server || (this.Server != null && !this.Server.Equals(input.Server))) return false;
+            if (this.CertificateAuthorityData != input.CertificateAuthorityData || (this.CertificateAuthorityData != null && !this.CertificateAuthorityData.Equals(input.CertificateAuthorityData))) return false;
+            if (this.InsecureSkipTlsVerify != input.InsecureSkipTlsVerify || (this.InsecureSkipTlsVerify != null && !this.InsecureSkipTlsVerify.Equals(input.InsecureSkipTlsVerify))) return false;
 
-            return 
-                (
-                    this.Server == input.Server ||
-                    (this.Server != null &&
-                    this.Server.Equals(input.Server))
-                ) && 
-                (
-                    this.CertificateAuthorityData == input.CertificateAuthorityData ||
-                    (this.CertificateAuthorityData != null &&
-                    this.CertificateAuthorityData.Equals(input.CertificateAuthorityData))
-                ) && 
-                (
-                    this.InsecureSkipTlsVerify == input.InsecureSkipTlsVerify ||
-                    (this.InsecureSkipTlsVerify != null &&
-                    this.InsecureSkipTlsVerify.Equals(input.InsecureSkipTlsVerify))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Server != null)
-                    hashCode = hashCode * 59 + this.Server.GetHashCode();
-                if (this.CertificateAuthorityData != null)
-                    hashCode = hashCode * 59 + this.CertificateAuthorityData.GetHashCode();
-                if (this.InsecureSkipTlsVerify != null)
-                    hashCode = hashCode * 59 + this.InsecureSkipTlsVerify.GetHashCode();
+                var hashCode = 41;
+                if (this.Server != null) hashCode = hashCode * 59 + this.Server.GetHashCode();
+                if (this.CertificateAuthorityData != null) hashCode = hashCode * 59 + this.CertificateAuthorityData.GetHashCode();
+                if (this.InsecureSkipTlsVerify != null) hashCode = hashCode * 59 + this.InsecureSkipTlsVerify.GetHashCode();
                 return hashCode;
             }
         }

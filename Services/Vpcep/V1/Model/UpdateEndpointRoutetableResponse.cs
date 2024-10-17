@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         public bool Equals(UpdateEndpointRoutetableResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Routetables != input.Routetables || (this.Routetables != null && input.Routetables != null && !this.Routetables.SequenceEqual(input.Routetables))) return false;
+            if (this.Error != input.Error || (this.Error != null && input.Error != null && !this.Error.SequenceEqual(input.Error))) return false;
 
-            return 
-                (
-                    this.Routetables == input.Routetables ||
-                    this.Routetables != null &&
-                    input.Routetables != null &&
-                    this.Routetables.SequenceEqual(input.Routetables)
-                ) && 
-                (
-                    this.Error == input.Error ||
-                    this.Error != null &&
-                    input.Error != null &&
-                    this.Error.SequenceEqual(input.Error)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Routetables != null)
-                    hashCode = hashCode * 59 + this.Routetables.GetHashCode();
-                if (this.Error != null)
-                    hashCode = hashCode * 59 + this.Error.GetHashCode();
+                var hashCode = 41;
+                if (this.Routetables != null) hashCode = hashCode * 59 + this.Routetables.GetHashCode();
+                if (this.Error != null) hashCode = hashCode * 59 + this.Error.GetHashCode();
                 return hashCode;
             }
         }

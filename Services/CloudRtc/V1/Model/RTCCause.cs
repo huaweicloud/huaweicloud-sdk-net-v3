@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         /// </summary>
         public bool Equals(RTCCause input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Ts != input.Ts || (this.Ts != null && !this.Ts.Equals(input.Ts))) return false;
+            if (this.EventId != input.EventId || (this.EventId != null && !this.EventId.Equals(input.EventId))) return false;
+            if (this.PeerId != input.PeerId || (this.PeerId != null && !this.PeerId.Equals(input.PeerId))) return false;
 
-            return 
-                (
-                    this.Ts == input.Ts ||
-                    (this.Ts != null &&
-                    this.Ts.Equals(input.Ts))
-                ) && 
-                (
-                    this.EventId == input.EventId ||
-                    (this.EventId != null &&
-                    this.EventId.Equals(input.EventId))
-                ) && 
-                (
-                    this.PeerId == input.PeerId ||
-                    (this.PeerId != null &&
-                    this.PeerId.Equals(input.PeerId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Ts != null)
-                    hashCode = hashCode * 59 + this.Ts.GetHashCode();
-                if (this.EventId != null)
-                    hashCode = hashCode * 59 + this.EventId.GetHashCode();
-                if (this.PeerId != null)
-                    hashCode = hashCode * 59 + this.PeerId.GetHashCode();
+                var hashCode = 41;
+                if (this.Ts != null) hashCode = hashCode * 59 + this.Ts.GetHashCode();
+                if (this.EventId != null) hashCode = hashCode * 59 + this.EventId.GetHashCode();
+                if (this.PeerId != null) hashCode = hashCode * 59 + this.PeerId.GetHashCode();
                 return hashCode;
             }
         }

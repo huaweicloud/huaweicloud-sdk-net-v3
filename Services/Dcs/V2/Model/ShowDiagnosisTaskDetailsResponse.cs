@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ShowDiagnosisTaskDetailsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AbnormalItemSum != input.AbnormalItemSum || (this.AbnormalItemSum != null && !this.AbnormalItemSum.Equals(input.AbnormalItemSum))) return false;
+            if (this.FailedItemSum != input.FailedItemSum || (this.FailedItemSum != null && !this.FailedItemSum.Equals(input.FailedItemSum))) return false;
+            if (this.DiagnosisNodeReportList != input.DiagnosisNodeReportList || (this.DiagnosisNodeReportList != null && input.DiagnosisNodeReportList != null && !this.DiagnosisNodeReportList.SequenceEqual(input.DiagnosisNodeReportList))) return false;
 
-            return 
-                (
-                    this.AbnormalItemSum == input.AbnormalItemSum ||
-                    (this.AbnormalItemSum != null &&
-                    this.AbnormalItemSum.Equals(input.AbnormalItemSum))
-                ) && 
-                (
-                    this.FailedItemSum == input.FailedItemSum ||
-                    (this.FailedItemSum != null &&
-                    this.FailedItemSum.Equals(input.FailedItemSum))
-                ) && 
-                (
-                    this.DiagnosisNodeReportList == input.DiagnosisNodeReportList ||
-                    this.DiagnosisNodeReportList != null &&
-                    input.DiagnosisNodeReportList != null &&
-                    this.DiagnosisNodeReportList.SequenceEqual(input.DiagnosisNodeReportList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AbnormalItemSum != null)
-                    hashCode = hashCode * 59 + this.AbnormalItemSum.GetHashCode();
-                if (this.FailedItemSum != null)
-                    hashCode = hashCode * 59 + this.FailedItemSum.GetHashCode();
-                if (this.DiagnosisNodeReportList != null)
-                    hashCode = hashCode * 59 + this.DiagnosisNodeReportList.GetHashCode();
+                var hashCode = 41;
+                if (this.AbnormalItemSum != null) hashCode = hashCode * 59 + this.AbnormalItemSum.GetHashCode();
+                if (this.FailedItemSum != null) hashCode = hashCode * 59 + this.FailedItemSum.GetHashCode();
+                if (this.DiagnosisNodeReportList != null) hashCode = hashCode * 59 + this.DiagnosisNodeReportList.GetHashCode();
                 return hashCode;
             }
         }

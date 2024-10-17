@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public bool Equals(ListProductsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Hourly != input.Hourly || (this.Hourly != null && input.Hourly != null && !this.Hourly.SequenceEqual(input.Hourly))) return false;
+            if (this.Monthly != input.Monthly || (this.Monthly != null && input.Monthly != null && !this.Monthly.SequenceEqual(input.Monthly))) return false;
 
-            return 
-                (
-                    this.Hourly == input.Hourly ||
-                    this.Hourly != null &&
-                    input.Hourly != null &&
-                    this.Hourly.SequenceEqual(input.Hourly)
-                ) && 
-                (
-                    this.Monthly == input.Monthly ||
-                    this.Monthly != null &&
-                    input.Monthly != null &&
-                    this.Monthly.SequenceEqual(input.Monthly)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Hourly != null)
-                    hashCode = hashCode * 59 + this.Hourly.GetHashCode();
-                if (this.Monthly != null)
-                    hashCode = hashCode * 59 + this.Monthly.GetHashCode();
+                var hashCode = 41;
+                if (this.Hourly != null) hashCode = hashCode * 59 + this.Hourly.GetHashCode();
+                if (this.Monthly != null) hashCode = hashCode * 59 + this.Monthly.GetHashCode();
                 return hashCode;
             }
         }

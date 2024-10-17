@@ -74,30 +74,13 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public bool Equals(UpdateTriggerRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
+            if (this.Repository != input.Repository || (this.Repository != null && !this.Repository.Equals(input.Repository))) return false;
+            if (this.Trigger != input.Trigger || (this.Trigger != null && !this.Trigger.Equals(input.Trigger))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
-            return 
-                (
-                    this.Namespace == input.Namespace ||
-                    (this.Namespace != null &&
-                    this.Namespace.Equals(input.Namespace))
-                ) && 
-                (
-                    this.Repository == input.Repository ||
-                    (this.Repository != null &&
-                    this.Repository.Equals(input.Repository))
-                ) && 
-                (
-                    this.Trigger == input.Trigger ||
-                    (this.Trigger != null &&
-                    this.Trigger.Equals(input.Trigger))
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
-                );
+            return true;
         }
 
         /// <summary>
@@ -107,15 +90,11 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Namespace != null)
-                    hashCode = hashCode * 59 + this.Namespace.GetHashCode();
-                if (this.Repository != null)
-                    hashCode = hashCode * 59 + this.Repository.GetHashCode();
-                if (this.Trigger != null)
-                    hashCode = hashCode * 59 + this.Trigger.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                var hashCode = 41;
+                if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.Repository != null) hashCode = hashCode * 59 + this.Repository.GetHashCode();
+                if (this.Trigger != null) hashCode = hashCode * 59 + this.Trigger.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

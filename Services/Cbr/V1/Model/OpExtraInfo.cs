@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(OpExtraInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Backup != input.Backup || (this.Backup != null && !this.Backup.Equals(input.Backup))) return false;
+            if (this.Common != input.Common || (this.Common != null && !this.Common.Equals(input.Common))) return false;
+            if (this.Delete != input.Delete || (this.Delete != null && !this.Delete.Equals(input.Delete))) return false;
+            if (this.Sync != input.Sync || (this.Sync != null && !this.Sync.Equals(input.Sync))) return false;
+            if (this.RemoveResources != input.RemoveResources || (this.RemoveResources != null && !this.RemoveResources.Equals(input.RemoveResources))) return false;
+            if (this.Replication != input.Replication || (this.Replication != null && !this.Replication.Equals(input.Replication))) return false;
+            if (this.Resource != input.Resource || (this.Resource != null && !this.Resource.Equals(input.Resource))) return false;
+            if (this.Restore != input.Restore || (this.Restore != null && !this.Restore.Equals(input.Restore))) return false;
+            if (this.VaultDelete != input.VaultDelete || (this.VaultDelete != null && !this.VaultDelete.Equals(input.VaultDelete))) return false;
 
-            return 
-                (
-                    this.Backup == input.Backup ||
-                    (this.Backup != null &&
-                    this.Backup.Equals(input.Backup))
-                ) && 
-                (
-                    this.Common == input.Common ||
-                    (this.Common != null &&
-                    this.Common.Equals(input.Common))
-                ) && 
-                (
-                    this.Delete == input.Delete ||
-                    (this.Delete != null &&
-                    this.Delete.Equals(input.Delete))
-                ) && 
-                (
-                    this.Sync == input.Sync ||
-                    (this.Sync != null &&
-                    this.Sync.Equals(input.Sync))
-                ) && 
-                (
-                    this.RemoveResources == input.RemoveResources ||
-                    (this.RemoveResources != null &&
-                    this.RemoveResources.Equals(input.RemoveResources))
-                ) && 
-                (
-                    this.Replication == input.Replication ||
-                    (this.Replication != null &&
-                    this.Replication.Equals(input.Replication))
-                ) && 
-                (
-                    this.Resource == input.Resource ||
-                    (this.Resource != null &&
-                    this.Resource.Equals(input.Resource))
-                ) && 
-                (
-                    this.Restore == input.Restore ||
-                    (this.Restore != null &&
-                    this.Restore.Equals(input.Restore))
-                ) && 
-                (
-                    this.VaultDelete == input.VaultDelete ||
-                    (this.VaultDelete != null &&
-                    this.VaultDelete.Equals(input.VaultDelete))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Backup != null)
-                    hashCode = hashCode * 59 + this.Backup.GetHashCode();
-                if (this.Common != null)
-                    hashCode = hashCode * 59 + this.Common.GetHashCode();
-                if (this.Delete != null)
-                    hashCode = hashCode * 59 + this.Delete.GetHashCode();
-                if (this.Sync != null)
-                    hashCode = hashCode * 59 + this.Sync.GetHashCode();
-                if (this.RemoveResources != null)
-                    hashCode = hashCode * 59 + this.RemoveResources.GetHashCode();
-                if (this.Replication != null)
-                    hashCode = hashCode * 59 + this.Replication.GetHashCode();
-                if (this.Resource != null)
-                    hashCode = hashCode * 59 + this.Resource.GetHashCode();
-                if (this.Restore != null)
-                    hashCode = hashCode * 59 + this.Restore.GetHashCode();
-                if (this.VaultDelete != null)
-                    hashCode = hashCode * 59 + this.VaultDelete.GetHashCode();
+                var hashCode = 41;
+                if (this.Backup != null) hashCode = hashCode * 59 + this.Backup.GetHashCode();
+                if (this.Common != null) hashCode = hashCode * 59 + this.Common.GetHashCode();
+                if (this.Delete != null) hashCode = hashCode * 59 + this.Delete.GetHashCode();
+                if (this.Sync != null) hashCode = hashCode * 59 + this.Sync.GetHashCode();
+                if (this.RemoveResources != null) hashCode = hashCode * 59 + this.RemoveResources.GetHashCode();
+                if (this.Replication != null) hashCode = hashCode * 59 + this.Replication.GetHashCode();
+                if (this.Resource != null) hashCode = hashCode * 59 + this.Resource.GetHashCode();
+                if (this.Restore != null) hashCode = hashCode * 59 + this.Restore.GetHashCode();
+                if (this.VaultDelete != null) hashCode = hashCode * 59 + this.VaultDelete.GetHashCode();
                 return hashCode;
             }
         }

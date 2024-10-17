@@ -90,44 +90,15 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         /// </summary>
         public bool Equals(ListQueryHttpCodeRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PlayDomains != input.PlayDomains || (this.PlayDomains != null && input.PlayDomains != null && !this.PlayDomains.SequenceEqual(input.PlayDomains))) return false;
+            if (this.Code != input.Code || (this.Code != null && input.Code != null && !this.Code.SequenceEqual(input.Code))) return false;
+            if (this.Region != input.Region || (this.Region != null && input.Region != null && !this.Region.SequenceEqual(input.Region))) return false;
+            if (this.Isp != input.Isp || (this.Isp != null && input.Isp != null && !this.Isp.SequenceEqual(input.Isp))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
 
-            return 
-                (
-                    this.PlayDomains == input.PlayDomains ||
-                    this.PlayDomains != null &&
-                    input.PlayDomains != null &&
-                    this.PlayDomains.SequenceEqual(input.PlayDomains)
-                ) && 
-                (
-                    this.Code == input.Code ||
-                    this.Code != null &&
-                    input.Code != null &&
-                    this.Code.SequenceEqual(input.Code)
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    this.Region != null &&
-                    input.Region != null &&
-                    this.Region.SequenceEqual(input.Region)
-                ) && 
-                (
-                    this.Isp == input.Isp ||
-                    this.Isp != null &&
-                    input.Isp != null &&
-                    this.Isp.SequenceEqual(input.Isp)
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -137,19 +108,13 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PlayDomains != null)
-                    hashCode = hashCode * 59 + this.PlayDomains.GetHashCode();
-                if (this.Code != null)
-                    hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.Isp != null)
-                    hashCode = hashCode * 59 + this.Isp.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                var hashCode = 41;
+                if (this.PlayDomains != null) hashCode = hashCode * 59 + this.PlayDomains.GetHashCode();
+                if (this.Code != null) hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
+                if (this.Isp != null) hashCode = hashCode * 59 + this.Isp.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 return hashCode;
             }
         }

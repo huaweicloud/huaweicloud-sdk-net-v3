@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// </summary>
         public bool Equals(AddPublicipsIntoSharedBandwidthOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PublicipInfo != input.PublicipInfo || (this.PublicipInfo != null && input.PublicipInfo != null && !this.PublicipInfo.SequenceEqual(input.PublicipInfo))) return false;
 
-            return 
-                (
-                    this.PublicipInfo == input.PublicipInfo ||
-                    this.PublicipInfo != null &&
-                    input.PublicipInfo != null &&
-                    this.PublicipInfo.SequenceEqual(input.PublicipInfo)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PublicipInfo != null)
-                    hashCode = hashCode * 59 + this.PublicipInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.PublicipInfo != null) hashCode = hashCode * 59 + this.PublicipInfo.GetHashCode();
                 return hashCode;
             }
         }

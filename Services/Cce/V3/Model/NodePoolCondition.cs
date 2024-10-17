@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(NodePoolCondition input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.LastProbeTime != input.LastProbeTime || (this.LastProbeTime != null && !this.LastProbeTime.Equals(input.LastProbeTime))) return false;
+            if (this.LastTransitTime != input.LastTransitTime || (this.LastTransitTime != null && !this.LastTransitTime.Equals(input.LastTransitTime))) return false;
+            if (this.Reason != input.Reason || (this.Reason != null && !this.Reason.Equals(input.Reason))) return false;
+            if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.LastProbeTime == input.LastProbeTime ||
-                    (this.LastProbeTime != null &&
-                    this.LastProbeTime.Equals(input.LastProbeTime))
-                ) && 
-                (
-                    this.LastTransitTime == input.LastTransitTime ||
-                    (this.LastTransitTime != null &&
-                    this.LastTransitTime.Equals(input.LastTransitTime))
-                ) && 
-                (
-                    this.Reason == input.Reason ||
-                    (this.Reason != null &&
-                    this.Reason.Equals(input.Reason))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.LastProbeTime != null)
-                    hashCode = hashCode * 59 + this.LastProbeTime.GetHashCode();
-                if (this.LastTransitTime != null)
-                    hashCode = hashCode * 59 + this.LastTransitTime.GetHashCode();
-                if (this.Reason != null)
-                    hashCode = hashCode * 59 + this.Reason.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
+                var hashCode = 41;
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.LastProbeTime != null) hashCode = hashCode * 59 + this.LastProbeTime.GetHashCode();
+                if (this.LastTransitTime != null) hashCode = hashCode * 59 + this.LastTransitTime.GetHashCode();
+                if (this.Reason != null) hashCode = hashCode * 59 + this.Reason.GetHashCode();
+                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
                 return hashCode;
             }
         }

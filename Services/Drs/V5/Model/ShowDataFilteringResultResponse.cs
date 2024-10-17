@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ShowDataFilteringResultResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SuccessCount != input.SuccessCount || (this.SuccessCount != null && !this.SuccessCount.Equals(input.SuccessCount))) return false;
+            if (this.FailedCount != input.FailedCount || (this.FailedCount != null && !this.FailedCount.Equals(input.FailedCount))) return false;
+            if (this.DbObjectFilteringResult != input.DbObjectFilteringResult || (this.DbObjectFilteringResult != null && input.DbObjectFilteringResult != null && !this.DbObjectFilteringResult.SequenceEqual(input.DbObjectFilteringResult))) return false;
 
-            return 
-                (
-                    this.SuccessCount == input.SuccessCount ||
-                    (this.SuccessCount != null &&
-                    this.SuccessCount.Equals(input.SuccessCount))
-                ) && 
-                (
-                    this.FailedCount == input.FailedCount ||
-                    (this.FailedCount != null &&
-                    this.FailedCount.Equals(input.FailedCount))
-                ) && 
-                (
-                    this.DbObjectFilteringResult == input.DbObjectFilteringResult ||
-                    this.DbObjectFilteringResult != null &&
-                    input.DbObjectFilteringResult != null &&
-                    this.DbObjectFilteringResult.SequenceEqual(input.DbObjectFilteringResult)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SuccessCount != null)
-                    hashCode = hashCode * 59 + this.SuccessCount.GetHashCode();
-                if (this.FailedCount != null)
-                    hashCode = hashCode * 59 + this.FailedCount.GetHashCode();
-                if (this.DbObjectFilteringResult != null)
-                    hashCode = hashCode * 59 + this.DbObjectFilteringResult.GetHashCode();
+                var hashCode = 41;
+                if (this.SuccessCount != null) hashCode = hashCode * 59 + this.SuccessCount.GetHashCode();
+                if (this.FailedCount != null) hashCode = hashCode * 59 + this.FailedCount.GetHashCode();
+                if (this.DbObjectFilteringResult != null) hashCode = hashCode * 59 + this.DbObjectFilteringResult.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(VaultCreateParameters input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CombinedOrder != input.CombinedOrder || (this.CombinedOrder != null && !this.CombinedOrder.Equals(input.CombinedOrder))) return false;
 
-            return 
-                (
-                    this.CombinedOrder == input.CombinedOrder ||
-                    (this.CombinedOrder != null &&
-                    this.CombinedOrder.Equals(input.CombinedOrder))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CombinedOrder != null)
-                    hashCode = hashCode * 59 + this.CombinedOrder.GetHashCode();
+                var hashCode = 41;
+                if (this.CombinedOrder != null) hashCode = hashCode * 59 + this.CombinedOrder.GetHashCode();
                 return hashCode;
             }
         }

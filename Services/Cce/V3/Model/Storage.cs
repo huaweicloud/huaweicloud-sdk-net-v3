@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(Storage input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StorageSelectors != input.StorageSelectors || (this.StorageSelectors != null && input.StorageSelectors != null && !this.StorageSelectors.SequenceEqual(input.StorageSelectors))) return false;
+            if (this.StorageGroups != input.StorageGroups || (this.StorageGroups != null && input.StorageGroups != null && !this.StorageGroups.SequenceEqual(input.StorageGroups))) return false;
 
-            return 
-                (
-                    this.StorageSelectors == input.StorageSelectors ||
-                    this.StorageSelectors != null &&
-                    input.StorageSelectors != null &&
-                    this.StorageSelectors.SequenceEqual(input.StorageSelectors)
-                ) && 
-                (
-                    this.StorageGroups == input.StorageGroups ||
-                    this.StorageGroups != null &&
-                    input.StorageGroups != null &&
-                    this.StorageGroups.SequenceEqual(input.StorageGroups)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StorageSelectors != null)
-                    hashCode = hashCode * 59 + this.StorageSelectors.GetHashCode();
-                if (this.StorageGroups != null)
-                    hashCode = hashCode * 59 + this.StorageGroups.GetHashCode();
+                var hashCode = 41;
+                if (this.StorageSelectors != null) hashCode = hashCode * 59 + this.StorageSelectors.GetHashCode();
+                if (this.StorageGroups != null) hashCode = hashCode * 59 + this.StorageGroups.GetHashCode();
                 return hashCode;
             }
         }

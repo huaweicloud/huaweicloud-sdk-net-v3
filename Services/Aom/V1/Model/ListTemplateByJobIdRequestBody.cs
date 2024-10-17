@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         /// </summary>
         public bool Equals(ListTemplateByJobIdRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.PageNum != input.PageNum || (this.PageNum != null && !this.PageNum.Equals(input.PageNum))) return false;
+            if (this.PageSize != input.PageSize || (this.PageSize != null && !this.PageSize.Equals(input.PageSize))) return false;
+            if (this.OrderByColumn != input.OrderByColumn || (this.OrderByColumn != null && !this.OrderByColumn.Equals(input.OrderByColumn))) return false;
+            if (this.SortOrder != input.SortOrder || (this.SortOrder != null && !this.SortOrder.Equals(input.SortOrder))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.PageNum == input.PageNum ||
-                    (this.PageNum != null &&
-                    this.PageNum.Equals(input.PageNum))
-                ) && 
-                (
-                    this.PageSize == input.PageSize ||
-                    (this.PageSize != null &&
-                    this.PageSize.Equals(input.PageSize))
-                ) && 
-                (
-                    this.OrderByColumn == input.OrderByColumn ||
-                    (this.OrderByColumn != null &&
-                    this.OrderByColumn.Equals(input.OrderByColumn))
-                ) && 
-                (
-                    this.SortOrder == input.SortOrder ||
-                    (this.SortOrder != null &&
-                    this.SortOrder.Equals(input.SortOrder))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.PageNum != null)
-                    hashCode = hashCode * 59 + this.PageNum.GetHashCode();
-                if (this.PageSize != null)
-                    hashCode = hashCode * 59 + this.PageSize.GetHashCode();
-                if (this.OrderByColumn != null)
-                    hashCode = hashCode * 59 + this.OrderByColumn.GetHashCode();
-                if (this.SortOrder != null)
-                    hashCode = hashCode * 59 + this.SortOrder.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.PageNum != null) hashCode = hashCode * 59 + this.PageNum.GetHashCode();
+                if (this.PageSize != null) hashCode = hashCode * 59 + this.PageSize.GetHashCode();
+                if (this.OrderByColumn != null) hashCode = hashCode * 59 + this.OrderByColumn.GetHashCode();
+                if (this.SortOrder != null) hashCode = hashCode * 59 + this.SortOrder.GetHashCode();
                 return hashCode;
             }
         }

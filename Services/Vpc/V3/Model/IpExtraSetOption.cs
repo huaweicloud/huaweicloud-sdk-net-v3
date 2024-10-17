@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(IpExtraSetOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
+            if (this.Remarks != input.Remarks || (this.Remarks != null && !this.Remarks.Equals(input.Remarks))) return false;
 
-            return 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                ) && 
-                (
-                    this.Remarks == input.Remarks ||
-                    (this.Remarks != null &&
-                    this.Remarks.Equals(input.Remarks))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.Remarks != null)
-                    hashCode = hashCode * 59 + this.Remarks.GetHashCode();
+                var hashCode = 41;
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.Remarks != null) hashCode = hashCode * 59 + this.Remarks.GetHashCode();
                 return hashCode;
             }
         }

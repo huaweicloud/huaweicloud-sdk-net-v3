@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public bool Equals(UpdateNoticeRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NoticeType != input.NoticeType || (this.NoticeType != null && !this.NoticeType.Equals(input.NoticeType))) return false;
+            if (this.EnabledEventTypeNames != input.EnabledEventTypeNames || (this.EnabledEventTypeNames != null && input.EnabledEventTypeNames != null && !this.EnabledEventTypeNames.SequenceEqual(input.EnabledEventTypeNames))) return false;
+            if (this.ParamConfig != input.ParamConfig || (this.ParamConfig != null && !this.ParamConfig.Equals(input.ParamConfig))) return false;
 
-            return 
-                (
-                    this.NoticeType == input.NoticeType ||
-                    (this.NoticeType != null &&
-                    this.NoticeType.Equals(input.NoticeType))
-                ) && 
-                (
-                    this.EnabledEventTypeNames == input.EnabledEventTypeNames ||
-                    this.EnabledEventTypeNames != null &&
-                    input.EnabledEventTypeNames != null &&
-                    this.EnabledEventTypeNames.SequenceEqual(input.EnabledEventTypeNames)
-                ) && 
-                (
-                    this.ParamConfig == input.ParamConfig ||
-                    (this.ParamConfig != null &&
-                    this.ParamConfig.Equals(input.ParamConfig))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NoticeType != null)
-                    hashCode = hashCode * 59 + this.NoticeType.GetHashCode();
-                if (this.EnabledEventTypeNames != null)
-                    hashCode = hashCode * 59 + this.EnabledEventTypeNames.GetHashCode();
-                if (this.ParamConfig != null)
-                    hashCode = hashCode * 59 + this.ParamConfig.GetHashCode();
+                var hashCode = 41;
+                if (this.NoticeType != null) hashCode = hashCode * 59 + this.NoticeType.GetHashCode();
+                if (this.EnabledEventTypeNames != null) hashCode = hashCode * 59 + this.EnabledEventTypeNames.GetHashCode();
+                if (this.ParamConfig != null) hashCode = hashCode * 59 + this.ParamConfig.GetHashCode();
                 return hashCode;
             }
         }

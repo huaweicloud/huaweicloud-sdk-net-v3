@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public bool Equals(DownloadBuildLogRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RecordId != input.RecordId || (this.RecordId != null && !this.RecordId.Equals(input.RecordId))) return false;
+            if (this.LogLevel != input.LogLevel || (this.LogLevel != null && !this.LogLevel.Equals(input.LogLevel))) return false;
 
-            return 
-                (
-                    this.RecordId == input.RecordId ||
-                    (this.RecordId != null &&
-                    this.RecordId.Equals(input.RecordId))
-                ) && 
-                (
-                    this.LogLevel == input.LogLevel ||
-                    (this.LogLevel != null &&
-                    this.LogLevel.Equals(input.LogLevel))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RecordId != null)
-                    hashCode = hashCode * 59 + this.RecordId.GetHashCode();
-                if (this.LogLevel != null)
-                    hashCode = hashCode * 59 + this.LogLevel.GetHashCode();
+                var hashCode = 41;
+                if (this.RecordId != null) hashCode = hashCode * 59 + this.RecordId.GetHashCode();
+                if (this.LogLevel != null) hashCode = hashCode * 59 + this.LogLevel.GetHashCode();
                 return hashCode;
             }
         }

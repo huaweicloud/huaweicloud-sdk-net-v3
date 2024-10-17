@@ -84,41 +84,15 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(AssetInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.IsMultiTranscode != input.IsMultiTranscode || (this.IsMultiTranscode != null && !this.IsMultiTranscode.Equals(input.IsMultiTranscode))) return false;
+            if (this.BaseInfo != input.BaseInfo || (this.BaseInfo != null && !this.BaseInfo.Equals(input.BaseInfo))) return false;
+            if (this.PlayInfoArray != input.PlayInfoArray || (this.PlayInfoArray != null && input.PlayInfoArray != null && !this.PlayInfoArray.SequenceEqual(input.PlayInfoArray))) return false;
 
-            return 
-                (
-                    this.AssetId == input.AssetId ||
-                    (this.AssetId != null &&
-                    this.AssetId.Equals(input.AssetId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.IsMultiTranscode == input.IsMultiTranscode ||
-                    (this.IsMultiTranscode != null &&
-                    this.IsMultiTranscode.Equals(input.IsMultiTranscode))
-                ) && 
-                (
-                    this.BaseInfo == input.BaseInfo ||
-                    (this.BaseInfo != null &&
-                    this.BaseInfo.Equals(input.BaseInfo))
-                ) && 
-                (
-                    this.PlayInfoArray == input.PlayInfoArray ||
-                    this.PlayInfoArray != null &&
-                    input.PlayInfoArray != null &&
-                    this.PlayInfoArray.SequenceEqual(input.PlayInfoArray)
-                );
+            return true;
         }
 
         /// <summary>
@@ -128,19 +102,13 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AssetId != null)
-                    hashCode = hashCode * 59 + this.AssetId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.IsMultiTranscode != null)
-                    hashCode = hashCode * 59 + this.IsMultiTranscode.GetHashCode();
-                if (this.BaseInfo != null)
-                    hashCode = hashCode * 59 + this.BaseInfo.GetHashCode();
-                if (this.PlayInfoArray != null)
-                    hashCode = hashCode * 59 + this.PlayInfoArray.GetHashCode();
+                var hashCode = 41;
+                if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.IsMultiTranscode != null) hashCode = hashCode * 59 + this.IsMultiTranscode.GetHashCode();
+                if (this.BaseInfo != null) hashCode = hashCode * 59 + this.BaseInfo.GetHashCode();
+                if (this.PlayInfoArray != null) hashCode = hashCode * 59 + this.PlayInfoArray.GetHashCode();
                 return hashCode;
             }
         }

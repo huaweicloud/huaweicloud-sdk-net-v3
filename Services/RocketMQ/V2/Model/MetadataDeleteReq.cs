@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(MetadataDeleteReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TaskIds != input.TaskIds || (this.TaskIds != null && input.TaskIds != null && !this.TaskIds.SequenceEqual(input.TaskIds))) return false;
 
-            return 
-                (
-                    this.TaskIds == input.TaskIds ||
-                    this.TaskIds != null &&
-                    input.TaskIds != null &&
-                    this.TaskIds.SequenceEqual(input.TaskIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TaskIds != null)
-                    hashCode = hashCode * 59 + this.TaskIds.GetHashCode();
+                var hashCode = 41;
+                if (this.TaskIds != null) hashCode = hashCode * 59 + this.TaskIds.GetHashCode();
                 return hashCode;
             }
         }

@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(TaskDetailResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceInfo != input.InstanceInfo || (this.InstanceInfo != null && !this.InstanceInfo.Equals(input.InstanceInfo))) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Process != input.Process || (this.Process != null && !this.Process.Equals(input.Process))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.EndedAt != input.EndedAt || (this.EndedAt != null && !this.EndedAt.Equals(input.EndedAt))) return false;
+            if (this.FailReason != input.FailReason || (this.FailReason != null && !this.FailReason.Equals(input.FailReason))) return false;
 
-            return 
-                (
-                    this.InstanceInfo == input.InstanceInfo ||
-                    (this.InstanceInfo != null &&
-                    this.InstanceInfo.Equals(input.InstanceInfo))
-                ) && 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Process == input.Process ||
-                    (this.Process != null &&
-                    this.Process.Equals(input.Process))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.EndedAt == input.EndedAt ||
-                    (this.EndedAt != null &&
-                    this.EndedAt.Equals(input.EndedAt))
-                ) && 
-                (
-                    this.FailReason == input.FailReason ||
-                    (this.FailReason != null &&
-                    this.FailReason.Equals(input.FailReason))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceInfo != null)
-                    hashCode = hashCode * 59 + this.InstanceInfo.GetHashCode();
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Process != null)
-                    hashCode = hashCode * 59 + this.Process.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.EndedAt != null)
-                    hashCode = hashCode * 59 + this.EndedAt.GetHashCode();
-                if (this.FailReason != null)
-                    hashCode = hashCode * 59 + this.FailReason.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceInfo != null) hashCode = hashCode * 59 + this.InstanceInfo.GetHashCode();
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Process != null) hashCode = hashCode * 59 + this.Process.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.EndedAt != null) hashCode = hashCode * 59 + this.EndedAt.GetHashCode();
+                if (this.FailReason != null) hashCode = hashCode * 59 + this.FailReason.GetHashCode();
                 return hashCode;
             }
         }

@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(ListFlavorSellPoliciesResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.FlavorId != input.FlavorId || (this.FlavorId != null && !this.FlavorId.Equals(input.FlavorId))) return false;
+            if (this.SellStatus != input.SellStatus || (this.SellStatus != null && !this.SellStatus.Equals(input.SellStatus))) return false;
+            if (this.AvailabilityZoneId != input.AvailabilityZoneId || (this.AvailabilityZoneId != null && !this.AvailabilityZoneId.Equals(input.AvailabilityZoneId))) return false;
+            if (this.SellMode != input.SellMode || (this.SellMode != null && !this.SellMode.Equals(input.SellMode))) return false;
+            if (this.SpotOptions != input.SpotOptions || (this.SpotOptions != null && !this.SpotOptions.Equals(input.SpotOptions))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.FlavorId == input.FlavorId ||
-                    (this.FlavorId != null &&
-                    this.FlavorId.Equals(input.FlavorId))
-                ) && 
-                (
-                    this.SellStatus == input.SellStatus ||
-                    (this.SellStatus != null &&
-                    this.SellStatus.Equals(input.SellStatus))
-                ) && 
-                (
-                    this.AvailabilityZoneId == input.AvailabilityZoneId ||
-                    (this.AvailabilityZoneId != null &&
-                    this.AvailabilityZoneId.Equals(input.AvailabilityZoneId))
-                ) && 
-                (
-                    this.SellMode == input.SellMode ||
-                    (this.SellMode != null &&
-                    this.SellMode.Equals(input.SellMode))
-                ) && 
-                (
-                    this.SpotOptions == input.SpotOptions ||
-                    (this.SpotOptions != null &&
-                    this.SpotOptions.Equals(input.SpotOptions))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.FlavorId != null)
-                    hashCode = hashCode * 59 + this.FlavorId.GetHashCode();
-                if (this.SellStatus != null)
-                    hashCode = hashCode * 59 + this.SellStatus.GetHashCode();
-                if (this.AvailabilityZoneId != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZoneId.GetHashCode();
-                if (this.SellMode != null)
-                    hashCode = hashCode * 59 + this.SellMode.GetHashCode();
-                if (this.SpotOptions != null)
-                    hashCode = hashCode * 59 + this.SpotOptions.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.FlavorId != null) hashCode = hashCode * 59 + this.FlavorId.GetHashCode();
+                if (this.SellStatus != null) hashCode = hashCode * 59 + this.SellStatus.GetHashCode();
+                if (this.AvailabilityZoneId != null) hashCode = hashCode * 59 + this.AvailabilityZoneId.GetHashCode();
+                if (this.SellMode != null) hashCode = hashCode * 59 + this.SellMode.GetHashCode();
+                if (this.SpotOptions != null) hashCode = hashCode * 59 + this.SpotOptions.GetHashCode();
                 return hashCode;
             }
         }

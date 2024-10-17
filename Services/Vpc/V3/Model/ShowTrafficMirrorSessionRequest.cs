@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(ShowTrafficMirrorSessionRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TrafficMirrorSessionId != input.TrafficMirrorSessionId || (this.TrafficMirrorSessionId != null && !this.TrafficMirrorSessionId.Equals(input.TrafficMirrorSessionId))) return false;
 
-            return 
-                (
-                    this.TrafficMirrorSessionId == input.TrafficMirrorSessionId ||
-                    (this.TrafficMirrorSessionId != null &&
-                    this.TrafficMirrorSessionId.Equals(input.TrafficMirrorSessionId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TrafficMirrorSessionId != null)
-                    hashCode = hashCode * 59 + this.TrafficMirrorSessionId.GetHashCode();
+                var hashCode = 41;
+                if (this.TrafficMirrorSessionId != null) hashCode = hashCode * 59 + this.TrafficMirrorSessionId.GetHashCode();
                 return hashCode;
             }
         }

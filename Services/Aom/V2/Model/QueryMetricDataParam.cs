@@ -70,32 +70,13 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(QueryMetricDataParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Metrics != input.Metrics || (this.Metrics != null && input.Metrics != null && !this.Metrics.SequenceEqual(input.Metrics))) return false;
+            if (this.Period != input.Period || (this.Period != null && !this.Period.Equals(input.Period))) return false;
+            if (this.Statistics != input.Statistics || (this.Statistics != null && input.Statistics != null && !this.Statistics.SequenceEqual(input.Statistics))) return false;
+            if (this.Timerange != input.Timerange || (this.Timerange != null && !this.Timerange.Equals(input.Timerange))) return false;
 
-            return 
-                (
-                    this.Metrics == input.Metrics ||
-                    this.Metrics != null &&
-                    input.Metrics != null &&
-                    this.Metrics.SequenceEqual(input.Metrics)
-                ) && 
-                (
-                    this.Period == input.Period ||
-                    (this.Period != null &&
-                    this.Period.Equals(input.Period))
-                ) && 
-                (
-                    this.Statistics == input.Statistics ||
-                    this.Statistics != null &&
-                    input.Statistics != null &&
-                    this.Statistics.SequenceEqual(input.Statistics)
-                ) && 
-                (
-                    this.Timerange == input.Timerange ||
-                    (this.Timerange != null &&
-                    this.Timerange.Equals(input.Timerange))
-                );
+            return true;
         }
 
         /// <summary>
@@ -105,15 +86,11 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Metrics != null)
-                    hashCode = hashCode * 59 + this.Metrics.GetHashCode();
-                if (this.Period != null)
-                    hashCode = hashCode * 59 + this.Period.GetHashCode();
-                if (this.Statistics != null)
-                    hashCode = hashCode * 59 + this.Statistics.GetHashCode();
-                if (this.Timerange != null)
-                    hashCode = hashCode * 59 + this.Timerange.GetHashCode();
+                var hashCode = 41;
+                if (this.Metrics != null) hashCode = hashCode * 59 + this.Metrics.GetHashCode();
+                if (this.Period != null) hashCode = hashCode * 59 + this.Period.GetHashCode();
+                if (this.Statistics != null) hashCode = hashCode * 59 + this.Statistics.GetHashCode();
+                if (this.Timerange != null) hashCode = hashCode * 59 + this.Timerange.GetHashCode();
                 return hashCode;
             }
         }

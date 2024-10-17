@@ -91,46 +91,16 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(ItemsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
+            if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
+            if (this.Index != input.Index || (this.Index != null && !this.Index.Equals(input.Index))) return false;
+            if (this.ModuleAddress != input.ModuleAddress || (this.ModuleAddress != null && !this.ModuleAddress.Equals(input.ModuleAddress))) return false;
+            if (this.Supported != input.Supported || (this.Supported != null && !this.Supported.Equals(input.Supported))) return false;
+            if (this.UnsupportedMessage != input.UnsupportedMessage || (this.UnsupportedMessage != null && !this.UnsupportedMessage.Equals(input.UnsupportedMessage))) return false;
+            if (this.ResourcePrice != input.ResourcePrice || (this.ResourcePrice != null && input.ResourcePrice != null && !this.ResourcePrice.SequenceEqual(input.ResourcePrice))) return false;
 
-            return 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.ResourceName == input.ResourceName ||
-                    (this.ResourceName != null &&
-                    this.ResourceName.Equals(input.ResourceName))
-                ) && 
-                (
-                    this.Index == input.Index ||
-                    (this.Index != null &&
-                    this.Index.Equals(input.Index))
-                ) && 
-                (
-                    this.ModuleAddress == input.ModuleAddress ||
-                    (this.ModuleAddress != null &&
-                    this.ModuleAddress.Equals(input.ModuleAddress))
-                ) && 
-                (
-                    this.Supported == input.Supported ||
-                    (this.Supported != null &&
-                    this.Supported.Equals(input.Supported))
-                ) && 
-                (
-                    this.UnsupportedMessage == input.UnsupportedMessage ||
-                    (this.UnsupportedMessage != null &&
-                    this.UnsupportedMessage.Equals(input.UnsupportedMessage))
-                ) && 
-                (
-                    this.ResourcePrice == input.ResourcePrice ||
-                    this.ResourcePrice != null &&
-                    input.ResourcePrice != null &&
-                    this.ResourcePrice.SequenceEqual(input.ResourcePrice)
-                );
+            return true;
         }
 
         /// <summary>
@@ -140,21 +110,14 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
-                if (this.ResourceName != null)
-                    hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
-                if (this.Index != null)
-                    hashCode = hashCode * 59 + this.Index.GetHashCode();
-                if (this.ModuleAddress != null)
-                    hashCode = hashCode * 59 + this.ModuleAddress.GetHashCode();
-                if (this.Supported != null)
-                    hashCode = hashCode * 59 + this.Supported.GetHashCode();
-                if (this.UnsupportedMessage != null)
-                    hashCode = hashCode * 59 + this.UnsupportedMessage.GetHashCode();
-                if (this.ResourcePrice != null)
-                    hashCode = hashCode * 59 + this.ResourcePrice.GetHashCode();
+                var hashCode = 41;
+                if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
+                if (this.Index != null) hashCode = hashCode * 59 + this.Index.GetHashCode();
+                if (this.ModuleAddress != null) hashCode = hashCode * 59 + this.ModuleAddress.GetHashCode();
+                if (this.Supported != null) hashCode = hashCode * 59 + this.Supported.GetHashCode();
+                if (this.UnsupportedMessage != null) hashCode = hashCode * 59 + this.UnsupportedMessage.GetHashCode();
+                if (this.ResourcePrice != null) hashCode = hashCode * 59 + this.ResourcePrice.GetHashCode();
                 return hashCode;
             }
         }

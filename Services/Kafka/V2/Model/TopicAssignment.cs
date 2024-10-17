@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(TopicAssignment input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Partition != input.Partition || (this.Partition != null && !this.Partition.Equals(input.Partition))) return false;
+            if (this.PartitionBrokers != input.PartitionBrokers || (this.PartitionBrokers != null && input.PartitionBrokers != null && !this.PartitionBrokers.SequenceEqual(input.PartitionBrokers))) return false;
 
-            return 
-                (
-                    this.Partition == input.Partition ||
-                    (this.Partition != null &&
-                    this.Partition.Equals(input.Partition))
-                ) && 
-                (
-                    this.PartitionBrokers == input.PartitionBrokers ||
-                    this.PartitionBrokers != null &&
-                    input.PartitionBrokers != null &&
-                    this.PartitionBrokers.SequenceEqual(input.PartitionBrokers)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Partition != null)
-                    hashCode = hashCode * 59 + this.Partition.GetHashCode();
-                if (this.PartitionBrokers != null)
-                    hashCode = hashCode * 59 + this.PartitionBrokers.GetHashCode();
+                var hashCode = 41;
+                if (this.Partition != null) hashCode = hashCode * 59 + this.Partition.GetHashCode();
+                if (this.PartitionBrokers != null) hashCode = hashCode * 59 + this.PartitionBrokers.GetHashCode();
                 return hashCode;
             }
         }

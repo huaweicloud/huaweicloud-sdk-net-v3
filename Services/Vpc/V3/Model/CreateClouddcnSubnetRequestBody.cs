@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(CreateClouddcnSubnetRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClouddcnSubnet != input.ClouddcnSubnet || (this.ClouddcnSubnet != null && !this.ClouddcnSubnet.Equals(input.ClouddcnSubnet))) return false;
 
-            return 
-                (
-                    this.ClouddcnSubnet == input.ClouddcnSubnet ||
-                    (this.ClouddcnSubnet != null &&
-                    this.ClouddcnSubnet.Equals(input.ClouddcnSubnet))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClouddcnSubnet != null)
-                    hashCode = hashCode * 59 + this.ClouddcnSubnet.GetHashCode();
+                var hashCode = 41;
+                if (this.ClouddcnSubnet != null) hashCode = hashCode * 59 + this.ClouddcnSubnet.GetHashCode();
                 return hashCode;
             }
         }

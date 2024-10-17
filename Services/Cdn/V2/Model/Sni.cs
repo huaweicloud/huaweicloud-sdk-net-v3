@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(Sni input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.ServerName != input.ServerName || (this.ServerName != null && !this.ServerName.Equals(input.ServerName))) return false;
 
-            return 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.ServerName == input.ServerName ||
-                    (this.ServerName != null &&
-                    this.ServerName.Equals(input.ServerName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.ServerName != null)
-                    hashCode = hashCode * 59 + this.ServerName.GetHashCode();
+                var hashCode = 41;
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.ServerName != null) hashCode = hashCode * 59 + this.ServerName.GetHashCode();
                 return hashCode;
             }
         }

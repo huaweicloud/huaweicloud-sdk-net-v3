@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(RoutingRuleSubject input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Resource != input.Resource || (this.Resource != null && !this.Resource.Equals(input.Resource))) return false;
+            if (this.Event != input.Event || (this.Event != null && !this.Event.Equals(input.Event))) return false;
 
-            return 
-                (
-                    this.Resource == input.Resource ||
-                    (this.Resource != null &&
-                    this.Resource.Equals(input.Resource))
-                ) && 
-                (
-                    this.Event == input.Event ||
-                    (this.Event != null &&
-                    this.Event.Equals(input.Event))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Resource != null)
-                    hashCode = hashCode * 59 + this.Resource.GetHashCode();
-                if (this.Event != null)
-                    hashCode = hashCode * 59 + this.Event.GetHashCode();
+                var hashCode = 41;
+                if (this.Resource != null) hashCode = hashCode * 59 + this.Resource.GetHashCode();
+                if (this.Event != null) hashCode = hashCode * 59 + this.Event.GetHashCode();
                 return hashCode;
             }
         }

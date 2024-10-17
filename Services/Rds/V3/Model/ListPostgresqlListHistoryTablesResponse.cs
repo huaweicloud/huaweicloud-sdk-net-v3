@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ListPostgresqlListHistoryTablesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TableLimit != input.TableLimit || (this.TableLimit != null && !this.TableLimit.Equals(input.TableLimit))) return false;
+            if (this.Instances != input.Instances || (this.Instances != null && input.Instances != null && !this.Instances.SequenceEqual(input.Instances))) return false;
 
-            return 
-                (
-                    this.TableLimit == input.TableLimit ||
-                    (this.TableLimit != null &&
-                    this.TableLimit.Equals(input.TableLimit))
-                ) && 
-                (
-                    this.Instances == input.Instances ||
-                    this.Instances != null &&
-                    input.Instances != null &&
-                    this.Instances.SequenceEqual(input.Instances)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TableLimit != null)
-                    hashCode = hashCode * 59 + this.TableLimit.GetHashCode();
-                if (this.Instances != null)
-                    hashCode = hashCode * 59 + this.Instances.GetHashCode();
+                var hashCode = 41;
+                if (this.TableLimit != null) hashCode = hashCode * 59 + this.TableLimit.GetHashCode();
+                if (this.Instances != null) hashCode = hashCode * 59 + this.Instances.GetHashCode();
                 return hashCode;
             }
         }

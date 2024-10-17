@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ListHtapDataStoreRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EngineName != input.EngineName || (this.EngineName != null && !this.EngineName.Equals(input.EngineName))) return false;
+            if (this.XLanguage != input.XLanguage || (this.XLanguage != null && !this.XLanguage.Equals(input.XLanguage))) return false;
 
-            return 
-                (
-                    this.EngineName == input.EngineName ||
-                    (this.EngineName != null &&
-                    this.EngineName.Equals(input.EngineName))
-                ) && 
-                (
-                    this.XLanguage == input.XLanguage ||
-                    (this.XLanguage != null &&
-                    this.XLanguage.Equals(input.XLanguage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EngineName != null)
-                    hashCode = hashCode * 59 + this.EngineName.GetHashCode();
-                if (this.XLanguage != null)
-                    hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                var hashCode = 41;
+                if (this.EngineName != null) hashCode = hashCode * 59 + this.EngineName.GetHashCode();
+                if (this.XLanguage != null) hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
                 return hashCode;
             }
         }

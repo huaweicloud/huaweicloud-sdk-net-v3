@@ -119,65 +119,20 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         /// </summary>
         public bool Equals(PermissionSummary input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
+            if (this.IsResourceTypeDefault != input.IsResourceTypeDefault || (this.IsResourceTypeDefault != null && !this.IsResourceTypeDefault.Equals(input.IsResourceTypeDefault))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.PermissionUrn != input.PermissionUrn || (this.PermissionUrn != null && !this.PermissionUrn.Equals(input.PermissionUrn))) return false;
+            if (this.PermissionType != input.PermissionType || (this.PermissionType != null && !this.PermissionType.Equals(input.PermissionType))) return false;
+            if (this.DefaultVersion != input.DefaultVersion || (this.DefaultVersion != null && !this.DefaultVersion.Equals(input.DefaultVersion))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.IsResourceTypeDefault == input.IsResourceTypeDefault ||
-                    (this.IsResourceTypeDefault != null &&
-                    this.IsResourceTypeDefault.Equals(input.IsResourceTypeDefault))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.PermissionUrn == input.PermissionUrn ||
-                    (this.PermissionUrn != null &&
-                    this.PermissionUrn.Equals(input.PermissionUrn))
-                ) && 
-                (
-                    this.PermissionType == input.PermissionType ||
-                    (this.PermissionType != null &&
-                    this.PermissionType.Equals(input.PermissionType))
-                ) && 
-                (
-                    this.DefaultVersion == input.DefaultVersion ||
-                    (this.DefaultVersion != null &&
-                    this.DefaultVersion.Equals(input.DefaultVersion))
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,29 +142,18 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
-                if (this.IsResourceTypeDefault != null)
-                    hashCode = hashCode * 59 + this.IsResourceTypeDefault.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.PermissionUrn != null)
-                    hashCode = hashCode * 59 + this.PermissionUrn.GetHashCode();
-                if (this.PermissionType != null)
-                    hashCode = hashCode * 59 + this.PermissionType.GetHashCode();
-                if (this.DefaultVersion != null)
-                    hashCode = hashCode * 59 + this.DefaultVersion.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.IsResourceTypeDefault != null) hashCode = hashCode * 59 + this.IsResourceTypeDefault.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.PermissionUrn != null) hashCode = hashCode * 59 + this.PermissionUrn.GetHashCode();
+                if (this.PermissionType != null) hashCode = hashCode * 59 + this.PermissionType.GetHashCode();
+                if (this.DefaultVersion != null) hashCode = hashCode * 59 + this.DefaultVersion.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

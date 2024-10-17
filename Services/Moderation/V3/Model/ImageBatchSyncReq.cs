@@ -84,42 +84,15 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// </summary>
         public bool Equals(ImageBatchSyncReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EventType != input.EventType || (this.EventType != null && !this.EventType.Equals(input.EventType))) return false;
+            if (this.Categories != input.Categories || (this.Categories != null && input.Categories != null && !this.Categories.SequenceEqual(input.Categories))) return false;
+            if (this.ImageTextConfig != input.ImageTextConfig || (this.ImageTextConfig != null && !this.ImageTextConfig.Equals(input.ImageTextConfig))) return false;
+            if (this.Urls != input.Urls || (this.Urls != null && input.Urls != null && !this.Urls.SequenceEqual(input.Urls))) return false;
+            if (this.Language != input.Language || (this.Language != null && !this.Language.Equals(input.Language))) return false;
+            if (this.BizType != input.BizType || (this.BizType != null && !this.BizType.Equals(input.BizType))) return false;
 
-            return 
-                (
-                    this.EventType == input.EventType ||
-                    (this.EventType != null &&
-                    this.EventType.Equals(input.EventType))
-                ) && 
-                (
-                    this.Categories == input.Categories ||
-                    this.Categories != null &&
-                    input.Categories != null &&
-                    this.Categories.SequenceEqual(input.Categories)
-                ) && 
-                (
-                    this.ImageTextConfig == input.ImageTextConfig ||
-                    (this.ImageTextConfig != null &&
-                    this.ImageTextConfig.Equals(input.ImageTextConfig))
-                ) && 
-                (
-                    this.Urls == input.Urls ||
-                    this.Urls != null &&
-                    input.Urls != null &&
-                    this.Urls.SequenceEqual(input.Urls)
-                ) && 
-                (
-                    this.Language == input.Language ||
-                    (this.Language != null &&
-                    this.Language.Equals(input.Language))
-                ) && 
-                (
-                    this.BizType == input.BizType ||
-                    (this.BizType != null &&
-                    this.BizType.Equals(input.BizType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -129,19 +102,13 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EventType != null)
-                    hashCode = hashCode * 59 + this.EventType.GetHashCode();
-                if (this.Categories != null)
-                    hashCode = hashCode * 59 + this.Categories.GetHashCode();
-                if (this.ImageTextConfig != null)
-                    hashCode = hashCode * 59 + this.ImageTextConfig.GetHashCode();
-                if (this.Urls != null)
-                    hashCode = hashCode * 59 + this.Urls.GetHashCode();
-                if (this.Language != null)
-                    hashCode = hashCode * 59 + this.Language.GetHashCode();
-                if (this.BizType != null)
-                    hashCode = hashCode * 59 + this.BizType.GetHashCode();
+                var hashCode = 41;
+                if (this.EventType != null) hashCode = hashCode * 59 + this.EventType.GetHashCode();
+                if (this.Categories != null) hashCode = hashCode * 59 + this.Categories.GetHashCode();
+                if (this.ImageTextConfig != null) hashCode = hashCode * 59 + this.ImageTextConfig.GetHashCode();
+                if (this.Urls != null) hashCode = hashCode * 59 + this.Urls.GetHashCode();
+                if (this.Language != null) hashCode = hashCode * 59 + this.Language.GetHashCode();
+                if (this.BizType != null) hashCode = hashCode * 59 + this.BizType.GetHashCode();
                 return hashCode;
             }
         }

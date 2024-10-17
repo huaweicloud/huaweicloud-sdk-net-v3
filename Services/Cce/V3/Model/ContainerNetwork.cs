@@ -183,26 +183,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ContainerNetwork input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Mode != input.Mode) return false;
+            if (this.Cidr != input.Cidr || (this.Cidr != null && !this.Cidr.Equals(input.Cidr))) return false;
+            if (this.Cidrs != input.Cidrs || (this.Cidrs != null && input.Cidrs != null && !this.Cidrs.SequenceEqual(input.Cidrs))) return false;
 
-            return 
-                (
-                    this.Mode == input.Mode ||
-                    (this.Mode != null &&
-                    this.Mode.Equals(input.Mode))
-                ) && 
-                (
-                    this.Cidr == input.Cidr ||
-                    (this.Cidr != null &&
-                    this.Cidr.Equals(input.Cidr))
-                ) && 
-                (
-                    this.Cidrs == input.Cidrs ||
-                    this.Cidrs != null &&
-                    input.Cidrs != null &&
-                    this.Cidrs.SequenceEqual(input.Cidrs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -212,13 +198,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Mode != null)
-                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
-                if (this.Cidr != null)
-                    hashCode = hashCode * 59 + this.Cidr.GetHashCode();
-                if (this.Cidrs != null)
-                    hashCode = hashCode * 59 + this.Cidrs.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                if (this.Cidr != null) hashCode = hashCode * 59 + this.Cidr.GetHashCode();
+                if (this.Cidrs != null) hashCode = hashCode * 59 + this.Cidrs.GetHashCode();
                 return hashCode;
             }
         }

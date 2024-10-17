@@ -205,45 +205,16 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(IncreComponentDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.StartPoint != input.StartPoint || (this.StartPoint != null && !this.StartPoint.Equals(input.StartPoint))) return false;
+            if (this.CurrentPoint != input.CurrentPoint || (this.CurrentPoint != null && !this.CurrentPoint.Equals(input.CurrentPoint))) return false;
+            if (this.ResolutionTime != input.ResolutionTime || (this.ResolutionTime != null && !this.ResolutionTime.Equals(input.ResolutionTime))) return false;
+            if (this.Delay != input.Delay || (this.Delay != null && !this.Delay.Equals(input.Delay))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.StartPoint == input.StartPoint ||
-                    (this.StartPoint != null &&
-                    this.StartPoint.Equals(input.StartPoint))
-                ) && 
-                (
-                    this.CurrentPoint == input.CurrentPoint ||
-                    (this.CurrentPoint != null &&
-                    this.CurrentPoint.Equals(input.CurrentPoint))
-                ) && 
-                (
-                    this.ResolutionTime == input.ResolutionTime ||
-                    (this.ResolutionTime != null &&
-                    this.ResolutionTime.Equals(input.ResolutionTime))
-                ) && 
-                (
-                    this.Delay == input.Delay ||
-                    (this.Delay != null &&
-                    this.Delay.Equals(input.Delay))
-                );
+            return true;
         }
 
         /// <summary>
@@ -253,21 +224,14 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.StartPoint != null)
-                    hashCode = hashCode * 59 + this.StartPoint.GetHashCode();
-                if (this.CurrentPoint != null)
-                    hashCode = hashCode * 59 + this.CurrentPoint.GetHashCode();
-                if (this.ResolutionTime != null)
-                    hashCode = hashCode * 59 + this.ResolutionTime.GetHashCode();
-                if (this.Delay != null)
-                    hashCode = hashCode * 59 + this.Delay.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.StartPoint != null) hashCode = hashCode * 59 + this.StartPoint.GetHashCode();
+                if (this.CurrentPoint != null) hashCode = hashCode * 59 + this.CurrentPoint.GetHashCode();
+                if (this.ResolutionTime != null) hashCode = hashCode * 59 + this.ResolutionTime.GetHashCode();
+                if (this.Delay != null) hashCode = hashCode * 59 + this.Delay.GetHashCode();
                 return hashCode;
             }
         }

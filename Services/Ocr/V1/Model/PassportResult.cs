@@ -147,85 +147,24 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(PassportResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PassportType != input.PassportType || (this.PassportType != null && !this.PassportType.Equals(input.PassportType))) return false;
+            if (this.CountryCode != input.CountryCode || (this.CountryCode != null && !this.CountryCode.Equals(input.CountryCode))) return false;
+            if (this.PassportNumber != input.PassportNumber || (this.PassportNumber != null && !this.PassportNumber.Equals(input.PassportNumber))) return false;
+            if (this.Nationality != input.Nationality || (this.Nationality != null && !this.Nationality.Equals(input.Nationality))) return false;
+            if (this.Surname != input.Surname || (this.Surname != null && !this.Surname.Equals(input.Surname))) return false;
+            if (this.GivenName != input.GivenName || (this.GivenName != null && !this.GivenName.Equals(input.GivenName))) return false;
+            if (this.Sex != input.Sex || (this.Sex != null && !this.Sex.Equals(input.Sex))) return false;
+            if (this.DateOfBirth != input.DateOfBirth || (this.DateOfBirth != null && !this.DateOfBirth.Equals(input.DateOfBirth))) return false;
+            if (this.DateOfExpiry != input.DateOfExpiry || (this.DateOfExpiry != null && !this.DateOfExpiry.Equals(input.DateOfExpiry))) return false;
+            if (this.DateOfIssue != input.DateOfIssue || (this.DateOfIssue != null && !this.DateOfIssue.Equals(input.DateOfIssue))) return false;
+            if (this.PlaceOfBirth != input.PlaceOfBirth || (this.PlaceOfBirth != null && !this.PlaceOfBirth.Equals(input.PlaceOfBirth))) return false;
+            if (this.PlaceOfIssue != input.PlaceOfIssue || (this.PlaceOfIssue != null && !this.PlaceOfIssue.Equals(input.PlaceOfIssue))) return false;
+            if (this.IssuingAuthority != input.IssuingAuthority || (this.IssuingAuthority != null && !this.IssuingAuthority.Equals(input.IssuingAuthority))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
+            if (this.ExtraInfo != input.ExtraInfo || (this.ExtraInfo != null && !this.ExtraInfo.Equals(input.ExtraInfo))) return false;
 
-            return 
-                (
-                    this.PassportType == input.PassportType ||
-                    (this.PassportType != null &&
-                    this.PassportType.Equals(input.PassportType))
-                ) && 
-                (
-                    this.CountryCode == input.CountryCode ||
-                    (this.CountryCode != null &&
-                    this.CountryCode.Equals(input.CountryCode))
-                ) && 
-                (
-                    this.PassportNumber == input.PassportNumber ||
-                    (this.PassportNumber != null &&
-                    this.PassportNumber.Equals(input.PassportNumber))
-                ) && 
-                (
-                    this.Nationality == input.Nationality ||
-                    (this.Nationality != null &&
-                    this.Nationality.Equals(input.Nationality))
-                ) && 
-                (
-                    this.Surname == input.Surname ||
-                    (this.Surname != null &&
-                    this.Surname.Equals(input.Surname))
-                ) && 
-                (
-                    this.GivenName == input.GivenName ||
-                    (this.GivenName != null &&
-                    this.GivenName.Equals(input.GivenName))
-                ) && 
-                (
-                    this.Sex == input.Sex ||
-                    (this.Sex != null &&
-                    this.Sex.Equals(input.Sex))
-                ) && 
-                (
-                    this.DateOfBirth == input.DateOfBirth ||
-                    (this.DateOfBirth != null &&
-                    this.DateOfBirth.Equals(input.DateOfBirth))
-                ) && 
-                (
-                    this.DateOfExpiry == input.DateOfExpiry ||
-                    (this.DateOfExpiry != null &&
-                    this.DateOfExpiry.Equals(input.DateOfExpiry))
-                ) && 
-                (
-                    this.DateOfIssue == input.DateOfIssue ||
-                    (this.DateOfIssue != null &&
-                    this.DateOfIssue.Equals(input.DateOfIssue))
-                ) && 
-                (
-                    this.PlaceOfBirth == input.PlaceOfBirth ||
-                    (this.PlaceOfBirth != null &&
-                    this.PlaceOfBirth.Equals(input.PlaceOfBirth))
-                ) && 
-                (
-                    this.PlaceOfIssue == input.PlaceOfIssue ||
-                    (this.PlaceOfIssue != null &&
-                    this.PlaceOfIssue.Equals(input.PlaceOfIssue))
-                ) && 
-                (
-                    this.IssuingAuthority == input.IssuingAuthority ||
-                    (this.IssuingAuthority != null &&
-                    this.IssuingAuthority.Equals(input.IssuingAuthority))
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                ) && 
-                (
-                    this.ExtraInfo == input.ExtraInfo ||
-                    (this.ExtraInfo != null &&
-                    this.ExtraInfo.Equals(input.ExtraInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -235,37 +174,22 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PassportType != null)
-                    hashCode = hashCode * 59 + this.PassportType.GetHashCode();
-                if (this.CountryCode != null)
-                    hashCode = hashCode * 59 + this.CountryCode.GetHashCode();
-                if (this.PassportNumber != null)
-                    hashCode = hashCode * 59 + this.PassportNumber.GetHashCode();
-                if (this.Nationality != null)
-                    hashCode = hashCode * 59 + this.Nationality.GetHashCode();
-                if (this.Surname != null)
-                    hashCode = hashCode * 59 + this.Surname.GetHashCode();
-                if (this.GivenName != null)
-                    hashCode = hashCode * 59 + this.GivenName.GetHashCode();
-                if (this.Sex != null)
-                    hashCode = hashCode * 59 + this.Sex.GetHashCode();
-                if (this.DateOfBirth != null)
-                    hashCode = hashCode * 59 + this.DateOfBirth.GetHashCode();
-                if (this.DateOfExpiry != null)
-                    hashCode = hashCode * 59 + this.DateOfExpiry.GetHashCode();
-                if (this.DateOfIssue != null)
-                    hashCode = hashCode * 59 + this.DateOfIssue.GetHashCode();
-                if (this.PlaceOfBirth != null)
-                    hashCode = hashCode * 59 + this.PlaceOfBirth.GetHashCode();
-                if (this.PlaceOfIssue != null)
-                    hashCode = hashCode * 59 + this.PlaceOfIssue.GetHashCode();
-                if (this.IssuingAuthority != null)
-                    hashCode = hashCode * 59 + this.IssuingAuthority.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
-                if (this.ExtraInfo != null)
-                    hashCode = hashCode * 59 + this.ExtraInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.PassportType != null) hashCode = hashCode * 59 + this.PassportType.GetHashCode();
+                if (this.CountryCode != null) hashCode = hashCode * 59 + this.CountryCode.GetHashCode();
+                if (this.PassportNumber != null) hashCode = hashCode * 59 + this.PassportNumber.GetHashCode();
+                if (this.Nationality != null) hashCode = hashCode * 59 + this.Nationality.GetHashCode();
+                if (this.Surname != null) hashCode = hashCode * 59 + this.Surname.GetHashCode();
+                if (this.GivenName != null) hashCode = hashCode * 59 + this.GivenName.GetHashCode();
+                if (this.Sex != null) hashCode = hashCode * 59 + this.Sex.GetHashCode();
+                if (this.DateOfBirth != null) hashCode = hashCode * 59 + this.DateOfBirth.GetHashCode();
+                if (this.DateOfExpiry != null) hashCode = hashCode * 59 + this.DateOfExpiry.GetHashCode();
+                if (this.DateOfIssue != null) hashCode = hashCode * 59 + this.DateOfIssue.GetHashCode();
+                if (this.PlaceOfBirth != null) hashCode = hashCode * 59 + this.PlaceOfBirth.GetHashCode();
+                if (this.PlaceOfIssue != null) hashCode = hashCode * 59 + this.PlaceOfIssue.GetHashCode();
+                if (this.IssuingAuthority != null) hashCode = hashCode * 59 + this.IssuingAuthority.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                if (this.ExtraInfo != null) hashCode = hashCode * 59 + this.ExtraInfo.GetHashCode();
                 return hashCode;
             }
         }

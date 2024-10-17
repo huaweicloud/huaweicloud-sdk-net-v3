@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(Thumbnail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Tar != input.Tar || (this.Tar != null && !this.Tar.Equals(input.Tar))) return false;
+            if (this.Out != input.Out || (this.Out != null && !this.Out.Equals(input.Out))) return false;
+            if (this.Params != input.Params || (this.Params != null && !this.Params.Equals(input.Params))) return false;
 
-            return 
-                (
-                    this.Tar == input.Tar ||
-                    (this.Tar != null &&
-                    this.Tar.Equals(input.Tar))
-                ) && 
-                (
-                    this.Out == input.Out ||
-                    (this.Out != null &&
-                    this.Out.Equals(input.Out))
-                ) && 
-                (
-                    this.Params == input.Params ||
-                    (this.Params != null &&
-                    this.Params.Equals(input.Params))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Tar != null)
-                    hashCode = hashCode * 59 + this.Tar.GetHashCode();
-                if (this.Out != null)
-                    hashCode = hashCode * 59 + this.Out.GetHashCode();
-                if (this.Params != null)
-                    hashCode = hashCode * 59 + this.Params.GetHashCode();
+                var hashCode = 41;
+                if (this.Tar != null) hashCode = hashCode * 59 + this.Tar.GetHashCode();
+                if (this.Out != null) hashCode = hashCode * 59 + this.Out.GetHashCode();
+                if (this.Params != null) hashCode = hashCode * 59 + this.Params.GetHashCode();
                 return hashCode;
             }
         }

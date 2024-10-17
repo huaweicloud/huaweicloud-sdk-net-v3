@@ -184,30 +184,13 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(Notification input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EventName != input.EventName || (this.EventName != null && !this.EventName.Equals(input.EventName))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;
+            if (this.MsgType != input.MsgType || (this.MsgType != null && !this.MsgType.Equals(input.MsgType))) return false;
 
-            return 
-                (
-                    this.EventName == input.EventName ||
-                    (this.EventName != null &&
-                    this.EventName.Equals(input.EventName))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Topic == input.Topic ||
-                    (this.Topic != null &&
-                    this.Topic.Equals(input.Topic))
-                ) && 
-                (
-                    this.MsgType == input.MsgType ||
-                    (this.MsgType != null &&
-                    this.MsgType.Equals(input.MsgType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -217,15 +200,11 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EventName != null)
-                    hashCode = hashCode * 59 + this.EventName.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Topic != null)
-                    hashCode = hashCode * 59 + this.Topic.GetHashCode();
-                if (this.MsgType != null)
-                    hashCode = hashCode * 59 + this.MsgType.GetHashCode();
+                var hashCode = 41;
+                if (this.EventName != null) hashCode = hashCode * 59 + this.EventName.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Topic != null) hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.MsgType != null) hashCode = hashCode * 59 + this.MsgType.GetHashCode();
                 return hashCode;
             }
         }

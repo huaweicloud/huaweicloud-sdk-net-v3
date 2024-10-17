@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(Subscription input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Expression != input.Expression || (this.Expression != null && !this.Expression.Equals(input.Expression))) return false;
 
-            return 
-                (
-                    this.Topic == input.Topic ||
-                    (this.Topic != null &&
-                    this.Topic.Equals(input.Topic))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Expression == input.Expression ||
-                    (this.Expression != null &&
-                    this.Expression.Equals(input.Expression))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Topic != null)
-                    hashCode = hashCode * 59 + this.Topic.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Expression != null)
-                    hashCode = hashCode * 59 + this.Expression.GetHashCode();
+                var hashCode = 41;
+                if (this.Topic != null) hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Expression != null) hashCode = hashCode * 59 + this.Expression.GetHashCode();
                 return hashCode;
             }
         }

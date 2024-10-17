@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         /// </summary>
         public bool Equals(Meta input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Uuid != input.Uuid || (this.Uuid != null && !this.Uuid.Equals(input.Uuid))) return false;
 
-            return 
-                (
-                    this.Uuid == input.Uuid ||
-                    (this.Uuid != null &&
-                    this.Uuid.Equals(input.Uuid))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Uuid != null)
-                    hashCode = hashCode * 59 + this.Uuid.GetHashCode();
+                var hashCode = 41;
+                if (this.Uuid != null) hashCode = hashCode * 59 + this.Uuid.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(ListFunctionVersionsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Versions != input.Versions || (this.Versions != null && input.Versions != null && !this.Versions.SequenceEqual(input.Versions))) return false;
+            if (this.NextMarker != input.NextMarker || (this.NextMarker != null && !this.NextMarker.Equals(input.NextMarker))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
 
-            return 
-                (
-                    this.Versions == input.Versions ||
-                    this.Versions != null &&
-                    input.Versions != null &&
-                    this.Versions.SequenceEqual(input.Versions)
-                ) && 
-                (
-                    this.NextMarker == input.NextMarker ||
-                    (this.NextMarker != null &&
-                    this.NextMarker.Equals(input.NextMarker))
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Versions != null)
-                    hashCode = hashCode * 59 + this.Versions.GetHashCode();
-                if (this.NextMarker != null)
-                    hashCode = hashCode * 59 + this.NextMarker.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
+                var hashCode = 41;
+                if (this.Versions != null) hashCode = hashCode * 59 + this.Versions.GetHashCode();
+                if (this.NextMarker != null) hashCode = hashCode * 59 + this.NextMarker.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(WebImageResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.WordsBlockCount != input.WordsBlockCount || (this.WordsBlockCount != null && !this.WordsBlockCount.Equals(input.WordsBlockCount))) return false;
+            if (this.WordsBlockList != input.WordsBlockList || (this.WordsBlockList != null && input.WordsBlockList != null && !this.WordsBlockList.SequenceEqual(input.WordsBlockList))) return false;
+            if (this.ExtractedData != input.ExtractedData || (this.ExtractedData != null && !this.ExtractedData.Equals(input.ExtractedData))) return false;
 
-            return 
-                (
-                    this.WordsBlockCount == input.WordsBlockCount ||
-                    (this.WordsBlockCount != null &&
-                    this.WordsBlockCount.Equals(input.WordsBlockCount))
-                ) && 
-                (
-                    this.WordsBlockList == input.WordsBlockList ||
-                    this.WordsBlockList != null &&
-                    input.WordsBlockList != null &&
-                    this.WordsBlockList.SequenceEqual(input.WordsBlockList)
-                ) && 
-                (
-                    this.ExtractedData == input.ExtractedData ||
-                    (this.ExtractedData != null &&
-                    this.ExtractedData.Equals(input.ExtractedData))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.WordsBlockCount != null)
-                    hashCode = hashCode * 59 + this.WordsBlockCount.GetHashCode();
-                if (this.WordsBlockList != null)
-                    hashCode = hashCode * 59 + this.WordsBlockList.GetHashCode();
-                if (this.ExtractedData != null)
-                    hashCode = hashCode * 59 + this.ExtractedData.GetHashCode();
+                var hashCode = 41;
+                if (this.WordsBlockCount != null) hashCode = hashCode * 59 + this.WordsBlockCount.GetHashCode();
+                if (this.WordsBlockList != null) hashCode = hashCode * 59 + this.WordsBlockList.GetHashCode();
+                if (this.ExtractedData != null) hashCode = hashCode * 59 + this.ExtractedData.GetHashCode();
                 return hashCode;
             }
         }

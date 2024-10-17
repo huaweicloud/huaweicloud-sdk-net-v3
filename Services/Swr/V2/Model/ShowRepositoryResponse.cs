@@ -168,100 +168,27 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public bool Equals(ShowRepositoryResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.NsId != input.NsId || (this.NsId != null && !this.NsId.Equals(input.NsId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Category != input.Category || (this.Category != null && !this.Category.Equals(input.Category))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.CreatorId != input.CreatorId || (this.CreatorId != null && !this.CreatorId.Equals(input.CreatorId))) return false;
+            if (this.CreatorName != input.CreatorName || (this.CreatorName != null && !this.CreatorName.Equals(input.CreatorName))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.IsPublic != input.IsPublic || (this.IsPublic != null && !this.IsPublic.Equals(input.IsPublic))) return false;
+            if (this.NumImages != input.NumImages || (this.NumImages != null && !this.NumImages.Equals(input.NumImages))) return false;
+            if (this.NumDownload != input.NumDownload || (this.NumDownload != null && !this.NumDownload.Equals(input.NumDownload))) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.Path != input.Path || (this.Path != null && !this.Path.Equals(input.Path))) return false;
+            if (this.InternalPath != input.InternalPath || (this.InternalPath != null && !this.InternalPath.Equals(input.InternalPath))) return false;
+            if (this.Created != input.Created || (this.Created != null && !this.Created.Equals(input.Created))) return false;
+            if (this.Updated != input.Updated || (this.Updated != null && !this.Updated.Equals(input.Updated))) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.NsId == input.NsId ||
-                    (this.NsId != null &&
-                    this.NsId.Equals(input.NsId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Category == input.Category ||
-                    (this.Category != null &&
-                    this.Category.Equals(input.Category))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.CreatorId == input.CreatorId ||
-                    (this.CreatorId != null &&
-                    this.CreatorId.Equals(input.CreatorId))
-                ) && 
-                (
-                    this.CreatorName == input.CreatorName ||
-                    (this.CreatorName != null &&
-                    this.CreatorName.Equals(input.CreatorName))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.IsPublic == input.IsPublic ||
-                    (this.IsPublic != null &&
-                    this.IsPublic.Equals(input.IsPublic))
-                ) && 
-                (
-                    this.NumImages == input.NumImages ||
-                    (this.NumImages != null &&
-                    this.NumImages.Equals(input.NumImages))
-                ) && 
-                (
-                    this.NumDownload == input.NumDownload ||
-                    (this.NumDownload != null &&
-                    this.NumDownload.Equals(input.NumDownload))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.Path == input.Path ||
-                    (this.Path != null &&
-                    this.Path.Equals(input.Path))
-                ) && 
-                (
-                    this.InternalPath == input.InternalPath ||
-                    (this.InternalPath != null &&
-                    this.InternalPath.Equals(input.InternalPath))
-                ) && 
-                (
-                    this.Created == input.Created ||
-                    (this.Created != null &&
-                    this.Created.Equals(input.Created))
-                ) && 
-                (
-                    this.Updated == input.Updated ||
-                    (this.Updated != null &&
-                    this.Updated.Equals(input.Updated))
-                ) && 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    (this.Priority != null &&
-                    this.Priority.Equals(input.Priority))
-                );
+            return true;
         }
 
         /// <summary>
@@ -271,43 +198,25 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.NsId != null)
-                    hashCode = hashCode * 59 + this.NsId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Category != null)
-                    hashCode = hashCode * 59 + this.Category.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.CreatorId != null)
-                    hashCode = hashCode * 59 + this.CreatorId.GetHashCode();
-                if (this.CreatorName != null)
-                    hashCode = hashCode * 59 + this.CreatorName.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.IsPublic != null)
-                    hashCode = hashCode * 59 + this.IsPublic.GetHashCode();
-                if (this.NumImages != null)
-                    hashCode = hashCode * 59 + this.NumImages.GetHashCode();
-                if (this.NumDownload != null)
-                    hashCode = hashCode * 59 + this.NumDownload.GetHashCode();
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.Path != null)
-                    hashCode = hashCode * 59 + this.Path.GetHashCode();
-                if (this.InternalPath != null)
-                    hashCode = hashCode * 59 + this.InternalPath.GetHashCode();
-                if (this.Created != null)
-                    hashCode = hashCode * 59 + this.Created.GetHashCode();
-                if (this.Updated != null)
-                    hashCode = hashCode * 59 + this.Updated.GetHashCode();
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.Priority != null)
-                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.NsId != null) hashCode = hashCode * 59 + this.NsId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Category != null) hashCode = hashCode * 59 + this.Category.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.CreatorId != null) hashCode = hashCode * 59 + this.CreatorId.GetHashCode();
+                if (this.CreatorName != null) hashCode = hashCode * 59 + this.CreatorName.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.IsPublic != null) hashCode = hashCode * 59 + this.IsPublic.GetHashCode();
+                if (this.NumImages != null) hashCode = hashCode * 59 + this.NumImages.GetHashCode();
+                if (this.NumDownload != null) hashCode = hashCode * 59 + this.NumDownload.GetHashCode();
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.Path != null) hashCode = hashCode * 59 + this.Path.GetHashCode();
+                if (this.InternalPath != null) hashCode = hashCode * 59 + this.InternalPath.GetHashCode();
+                if (this.Created != null) hashCode = hashCode * 59 + this.Created.GetHashCode();
+                if (this.Updated != null) hashCode = hashCode * 59 + this.Updated.GetHashCode();
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 return hashCode;
             }
         }

@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(QueryQueueBase input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.QueueId != input.QueueId || (this.QueueId != null && !this.QueueId.Equals(input.QueueId))) return false;
+            if (this.QueueName != input.QueueName || (this.QueueName != null && !this.QueueName.Equals(input.QueueName))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.LastModifyTime != input.LastModifyTime || (this.LastModifyTime != null && !this.LastModifyTime.Equals(input.LastModifyTime))) return false;
 
-            return 
-                (
-                    this.QueueId == input.QueueId ||
-                    (this.QueueId != null &&
-                    this.QueueId.Equals(input.QueueId))
-                ) && 
-                (
-                    this.QueueName == input.QueueName ||
-                    (this.QueueName != null &&
-                    this.QueueName.Equals(input.QueueName))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.LastModifyTime == input.LastModifyTime ||
-                    (this.LastModifyTime != null &&
-                    this.LastModifyTime.Equals(input.LastModifyTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.QueueId != null)
-                    hashCode = hashCode * 59 + this.QueueId.GetHashCode();
-                if (this.QueueName != null)
-                    hashCode = hashCode * 59 + this.QueueName.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.LastModifyTime != null)
-                    hashCode = hashCode * 59 + this.LastModifyTime.GetHashCode();
+                var hashCode = 41;
+                if (this.QueueId != null) hashCode = hashCode * 59 + this.QueueId.GetHashCode();
+                if (this.QueueName != null) hashCode = hashCode * 59 + this.QueueName.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.LastModifyTime != null) hashCode = hashCode * 59 + this.LastModifyTime.GetHashCode();
                 return hashCode;
             }
         }

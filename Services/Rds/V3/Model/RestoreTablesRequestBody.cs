@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(RestoreTablesRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RestoreTime != input.RestoreTime || (this.RestoreTime != null && !this.RestoreTime.Equals(input.RestoreTime))) return false;
+            if (this.RestoreTables != input.RestoreTables || (this.RestoreTables != null && input.RestoreTables != null && !this.RestoreTables.SequenceEqual(input.RestoreTables))) return false;
+            if (this.IsFastRestore != input.IsFastRestore || (this.IsFastRestore != null && !this.IsFastRestore.Equals(input.IsFastRestore))) return false;
 
-            return 
-                (
-                    this.RestoreTime == input.RestoreTime ||
-                    (this.RestoreTime != null &&
-                    this.RestoreTime.Equals(input.RestoreTime))
-                ) && 
-                (
-                    this.RestoreTables == input.RestoreTables ||
-                    this.RestoreTables != null &&
-                    input.RestoreTables != null &&
-                    this.RestoreTables.SequenceEqual(input.RestoreTables)
-                ) && 
-                (
-                    this.IsFastRestore == input.IsFastRestore ||
-                    (this.IsFastRestore != null &&
-                    this.IsFastRestore.Equals(input.IsFastRestore))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RestoreTime != null)
-                    hashCode = hashCode * 59 + this.RestoreTime.GetHashCode();
-                if (this.RestoreTables != null)
-                    hashCode = hashCode * 59 + this.RestoreTables.GetHashCode();
-                if (this.IsFastRestore != null)
-                    hashCode = hashCode * 59 + this.IsFastRestore.GetHashCode();
+                var hashCode = 41;
+                if (this.RestoreTime != null) hashCode = hashCode * 59 + this.RestoreTime.GetHashCode();
+                if (this.RestoreTables != null) hashCode = hashCode * 59 + this.RestoreTables.GetHashCode();
+                if (this.IsFastRestore != null) hashCode = hashCode * 59 + this.IsFastRestore.GetHashCode();
                 return hashCode;
             }
         }

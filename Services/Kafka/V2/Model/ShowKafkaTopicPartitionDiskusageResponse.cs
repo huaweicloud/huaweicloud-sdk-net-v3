@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ShowKafkaTopicPartitionDiskusageResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BrokerList != input.BrokerList || (this.BrokerList != null && input.BrokerList != null && !this.BrokerList.SequenceEqual(input.BrokerList))) return false;
 
-            return 
-                (
-                    this.BrokerList == input.BrokerList ||
-                    this.BrokerList != null &&
-                    input.BrokerList != null &&
-                    this.BrokerList.SequenceEqual(input.BrokerList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BrokerList != null)
-                    hashCode = hashCode * 59 + this.BrokerList.GetHashCode();
+                var hashCode = 41;
+                if (this.BrokerList != null) hashCode = hashCode * 59 + this.BrokerList.GetHashCode();
                 return hashCode;
             }
         }

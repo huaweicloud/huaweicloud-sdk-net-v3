@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(InsuranceItem input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InsuranceName != input.InsuranceName || (this.InsuranceName != null && !this.InsuranceName.Equals(input.InsuranceName))) return false;
+            if (this.InsurancePeriod != input.InsurancePeriod || (this.InsurancePeriod != null && !this.InsurancePeriod.Equals(input.InsurancePeriod))) return false;
+            if (this.InsuranceAmount != input.InsuranceAmount || (this.InsuranceAmount != null && !this.InsuranceAmount.Equals(input.InsuranceAmount))) return false;
+            if (this.PaymentFrequency != input.PaymentFrequency || (this.PaymentFrequency != null && !this.PaymentFrequency.Equals(input.PaymentFrequency))) return false;
+            if (this.PaymentPeriod != input.PaymentPeriod || (this.PaymentPeriod != null && !this.PaymentPeriod.Equals(input.PaymentPeriod))) return false;
+            if (this.PaymentAmount != input.PaymentAmount || (this.PaymentAmount != null && !this.PaymentAmount.Equals(input.PaymentAmount))) return false;
 
-            return 
-                (
-                    this.InsuranceName == input.InsuranceName ||
-                    (this.InsuranceName != null &&
-                    this.InsuranceName.Equals(input.InsuranceName))
-                ) && 
-                (
-                    this.InsurancePeriod == input.InsurancePeriod ||
-                    (this.InsurancePeriod != null &&
-                    this.InsurancePeriod.Equals(input.InsurancePeriod))
-                ) && 
-                (
-                    this.InsuranceAmount == input.InsuranceAmount ||
-                    (this.InsuranceAmount != null &&
-                    this.InsuranceAmount.Equals(input.InsuranceAmount))
-                ) && 
-                (
-                    this.PaymentFrequency == input.PaymentFrequency ||
-                    (this.PaymentFrequency != null &&
-                    this.PaymentFrequency.Equals(input.PaymentFrequency))
-                ) && 
-                (
-                    this.PaymentPeriod == input.PaymentPeriod ||
-                    (this.PaymentPeriod != null &&
-                    this.PaymentPeriod.Equals(input.PaymentPeriod))
-                ) && 
-                (
-                    this.PaymentAmount == input.PaymentAmount ||
-                    (this.PaymentAmount != null &&
-                    this.PaymentAmount.Equals(input.PaymentAmount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InsuranceName != null)
-                    hashCode = hashCode * 59 + this.InsuranceName.GetHashCode();
-                if (this.InsurancePeriod != null)
-                    hashCode = hashCode * 59 + this.InsurancePeriod.GetHashCode();
-                if (this.InsuranceAmount != null)
-                    hashCode = hashCode * 59 + this.InsuranceAmount.GetHashCode();
-                if (this.PaymentFrequency != null)
-                    hashCode = hashCode * 59 + this.PaymentFrequency.GetHashCode();
-                if (this.PaymentPeriod != null)
-                    hashCode = hashCode * 59 + this.PaymentPeriod.GetHashCode();
-                if (this.PaymentAmount != null)
-                    hashCode = hashCode * 59 + this.PaymentAmount.GetHashCode();
+                var hashCode = 41;
+                if (this.InsuranceName != null) hashCode = hashCode * 59 + this.InsuranceName.GetHashCode();
+                if (this.InsurancePeriod != null) hashCode = hashCode * 59 + this.InsurancePeriod.GetHashCode();
+                if (this.InsuranceAmount != null) hashCode = hashCode * 59 + this.InsuranceAmount.GetHashCode();
+                if (this.PaymentFrequency != null) hashCode = hashCode * 59 + this.PaymentFrequency.GetHashCode();
+                if (this.PaymentPeriod != null) hashCode = hashCode * 59 + this.PaymentPeriod.GetHashCode();
+                if (this.PaymentAmount != null) hashCode = hashCode * 59 + this.PaymentAmount.GetHashCode();
                 return hashCode;
             }
         }

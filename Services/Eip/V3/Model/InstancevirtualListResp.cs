@@ -467,66 +467,20 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(InstancevirtualListResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Owner != input.Owner || (this.Owner != null && !this.Owner.Equals(input.Owner))) return false;
+            if (this.Location != input.Location || (this.Location != null && !this.Location.Equals(input.Location))) return false;
+            if (this.ForwardMode != input.ForwardMode) return false;
+            if (this.ClusterId != input.ClusterId || (this.ClusterId != null && !this.ClusterId.Equals(input.ClusterId))) return false;
+            if (this.HashMode != input.HashMode) return false;
+            if (this.Type != input.Type) return false;
+            if (this.Vni != input.Vni || (this.Vni != null && !this.Vni.Equals(input.Vni))) return false;
+            if (this.Nexthops != input.Nexthops || (this.Nexthops != null && input.Nexthops != null && !this.Nexthops.SequenceEqual(input.Nexthops))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Owner == input.Owner ||
-                    (this.Owner != null &&
-                    this.Owner.Equals(input.Owner))
-                ) && 
-                (
-                    this.Location == input.Location ||
-                    (this.Location != null &&
-                    this.Location.Equals(input.Location))
-                ) && 
-                (
-                    this.ForwardMode == input.ForwardMode ||
-                    (this.ForwardMode != null &&
-                    this.ForwardMode.Equals(input.ForwardMode))
-                ) && 
-                (
-                    this.ClusterId == input.ClusterId ||
-                    (this.ClusterId != null &&
-                    this.ClusterId.Equals(input.ClusterId))
-                ) && 
-                (
-                    this.HashMode == input.HashMode ||
-                    (this.HashMode != null &&
-                    this.HashMode.Equals(input.HashMode))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Vni == input.Vni ||
-                    (this.Vni != null &&
-                    this.Vni.Equals(input.Vni))
-                ) && 
-                (
-                    this.Nexthops == input.Nexthops ||
-                    this.Nexthops != null &&
-                    input.Nexthops != null &&
-                    this.Nexthops.SequenceEqual(input.Nexthops)
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -536,29 +490,18 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Owner != null)
-                    hashCode = hashCode * 59 + this.Owner.GetHashCode();
-                if (this.Location != null)
-                    hashCode = hashCode * 59 + this.Location.GetHashCode();
-                if (this.ForwardMode != null)
-                    hashCode = hashCode * 59 + this.ForwardMode.GetHashCode();
-                if (this.ClusterId != null)
-                    hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
-                if (this.HashMode != null)
-                    hashCode = hashCode * 59 + this.HashMode.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Vni != null)
-                    hashCode = hashCode * 59 + this.Vni.GetHashCode();
-                if (this.Nexthops != null)
-                    hashCode = hashCode * 59 + this.Nexthops.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Owner != null) hashCode = hashCode * 59 + this.Owner.GetHashCode();
+                if (this.Location != null) hashCode = hashCode * 59 + this.Location.GetHashCode();
+                hashCode = hashCode * 59 + this.ForwardMode.GetHashCode();
+                if (this.ClusterId != null) hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
+                hashCode = hashCode * 59 + this.HashMode.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Vni != null) hashCode = hashCode * 59 + this.Vni.GetHashCode();
+                if (this.Nexthops != null) hashCode = hashCode * 59 + this.Nexthops.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 return hashCode;
             }
         }

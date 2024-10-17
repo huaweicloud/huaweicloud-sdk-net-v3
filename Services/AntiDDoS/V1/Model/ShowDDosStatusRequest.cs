@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         /// </summary>
         public bool Equals(ShowDDosStatusRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FloatingIpId != input.FloatingIpId || (this.FloatingIpId != null && !this.FloatingIpId.Equals(input.FloatingIpId))) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
 
-            return 
-                (
-                    this.FloatingIpId == input.FloatingIpId ||
-                    (this.FloatingIpId != null &&
-                    this.FloatingIpId.Equals(input.FloatingIpId))
-                ) && 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FloatingIpId != null)
-                    hashCode = hashCode * 59 + this.FloatingIpId.GetHashCode();
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                var hashCode = 41;
+                if (this.FloatingIpId != null) hashCode = hashCode * 59 + this.FloatingIpId.GetHashCode();
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
                 return hashCode;
             }
         }

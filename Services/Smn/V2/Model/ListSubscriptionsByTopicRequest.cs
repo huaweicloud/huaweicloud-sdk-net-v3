@@ -74,30 +74,13 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public bool Equals(ListSubscriptionsByTopicRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TopicUrn != input.TopicUrn || (this.TopicUrn != null && !this.TopicUrn.Equals(input.TopicUrn))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.FuzzyRemark != input.FuzzyRemark || (this.FuzzyRemark != null && !this.FuzzyRemark.Equals(input.FuzzyRemark))) return false;
 
-            return 
-                (
-                    this.TopicUrn == input.TopicUrn ||
-                    (this.TopicUrn != null &&
-                    this.TopicUrn.Equals(input.TopicUrn))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.FuzzyRemark == input.FuzzyRemark ||
-                    (this.FuzzyRemark != null &&
-                    this.FuzzyRemark.Equals(input.FuzzyRemark))
-                );
+            return true;
         }
 
         /// <summary>
@@ -107,15 +90,11 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TopicUrn != null)
-                    hashCode = hashCode * 59 + this.TopicUrn.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.FuzzyRemark != null)
-                    hashCode = hashCode * 59 + this.FuzzyRemark.GetHashCode();
+                var hashCode = 41;
+                if (this.TopicUrn != null) hashCode = hashCode * 59 + this.TopicUrn.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.FuzzyRemark != null) hashCode = hashCode * 59 + this.FuzzyRemark.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(AddIssueWorkHoursResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AddedWorkHours != input.AddedWorkHours || (this.AddedWorkHours != null && input.AddedWorkHours != null && !this.AddedWorkHours.SequenceEqual(input.AddedWorkHours))) return false;
 
-            return 
-                (
-                    this.AddedWorkHours == input.AddedWorkHours ||
-                    this.AddedWorkHours != null &&
-                    input.AddedWorkHours != null &&
-                    this.AddedWorkHours.SequenceEqual(input.AddedWorkHours)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AddedWorkHours != null)
-                    hashCode = hashCode * 59 + this.AddedWorkHours.GetHashCode();
+                var hashCode = 41;
+                if (this.AddedWorkHours != null) hashCode = hashCode * 59 + this.AddedWorkHours.GetHashCode();
                 return hashCode;
             }
         }

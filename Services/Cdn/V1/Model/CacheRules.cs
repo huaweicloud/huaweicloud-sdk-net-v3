@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(CacheRules input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MatchType != input.MatchType || (this.MatchType != null && !this.MatchType.Equals(input.MatchType))) return false;
+            if (this.MatchValue != input.MatchValue || (this.MatchValue != null && !this.MatchValue.Equals(input.MatchValue))) return false;
+            if (this.Ttl != input.Ttl || (this.Ttl != null && !this.Ttl.Equals(input.Ttl))) return false;
+            if (this.TtlUnit != input.TtlUnit || (this.TtlUnit != null && !this.TtlUnit.Equals(input.TtlUnit))) return false;
+            if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
+            if (this.FollowOrigin != input.FollowOrigin || (this.FollowOrigin != null && !this.FollowOrigin.Equals(input.FollowOrigin))) return false;
+            if (this.UrlParameterType != input.UrlParameterType || (this.UrlParameterType != null && !this.UrlParameterType.Equals(input.UrlParameterType))) return false;
+            if (this.UrlParameterValue != input.UrlParameterValue || (this.UrlParameterValue != null && !this.UrlParameterValue.Equals(input.UrlParameterValue))) return false;
 
-            return 
-                (
-                    this.MatchType == input.MatchType ||
-                    (this.MatchType != null &&
-                    this.MatchType.Equals(input.MatchType))
-                ) && 
-                (
-                    this.MatchValue == input.MatchValue ||
-                    (this.MatchValue != null &&
-                    this.MatchValue.Equals(input.MatchValue))
-                ) && 
-                (
-                    this.Ttl == input.Ttl ||
-                    (this.Ttl != null &&
-                    this.Ttl.Equals(input.Ttl))
-                ) && 
-                (
-                    this.TtlUnit == input.TtlUnit ||
-                    (this.TtlUnit != null &&
-                    this.TtlUnit.Equals(input.TtlUnit))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    (this.Priority != null &&
-                    this.Priority.Equals(input.Priority))
-                ) && 
-                (
-                    this.FollowOrigin == input.FollowOrigin ||
-                    (this.FollowOrigin != null &&
-                    this.FollowOrigin.Equals(input.FollowOrigin))
-                ) && 
-                (
-                    this.UrlParameterType == input.UrlParameterType ||
-                    (this.UrlParameterType != null &&
-                    this.UrlParameterType.Equals(input.UrlParameterType))
-                ) && 
-                (
-                    this.UrlParameterValue == input.UrlParameterValue ||
-                    (this.UrlParameterValue != null &&
-                    this.UrlParameterValue.Equals(input.UrlParameterValue))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MatchType != null)
-                    hashCode = hashCode * 59 + this.MatchType.GetHashCode();
-                if (this.MatchValue != null)
-                    hashCode = hashCode * 59 + this.MatchValue.GetHashCode();
-                if (this.Ttl != null)
-                    hashCode = hashCode * 59 + this.Ttl.GetHashCode();
-                if (this.TtlUnit != null)
-                    hashCode = hashCode * 59 + this.TtlUnit.GetHashCode();
-                if (this.Priority != null)
-                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
-                if (this.FollowOrigin != null)
-                    hashCode = hashCode * 59 + this.FollowOrigin.GetHashCode();
-                if (this.UrlParameterType != null)
-                    hashCode = hashCode * 59 + this.UrlParameterType.GetHashCode();
-                if (this.UrlParameterValue != null)
-                    hashCode = hashCode * 59 + this.UrlParameterValue.GetHashCode();
+                var hashCode = 41;
+                if (this.MatchType != null) hashCode = hashCode * 59 + this.MatchType.GetHashCode();
+                if (this.MatchValue != null) hashCode = hashCode * 59 + this.MatchValue.GetHashCode();
+                if (this.Ttl != null) hashCode = hashCode * 59 + this.Ttl.GetHashCode();
+                if (this.TtlUnit != null) hashCode = hashCode * 59 + this.TtlUnit.GetHashCode();
+                if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                if (this.FollowOrigin != null) hashCode = hashCode * 59 + this.FollowOrigin.GetHashCode();
+                if (this.UrlParameterType != null) hashCode = hashCode * 59 + this.UrlParameterType.GetHashCode();
+                if (this.UrlParameterValue != null) hashCode = hashCode * 59 + this.UrlParameterValue.GetHashCode();
                 return hashCode;
             }
         }

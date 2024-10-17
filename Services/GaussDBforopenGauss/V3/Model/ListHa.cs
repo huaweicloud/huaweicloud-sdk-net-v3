@@ -170,20 +170,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ListHa input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Consistency != input.Consistency) return false;
+            if (this.ReplicationMode != input.ReplicationMode || (this.ReplicationMode != null && !this.ReplicationMode.Equals(input.ReplicationMode))) return false;
 
-            return 
-                (
-                    this.Consistency == input.Consistency ||
-                    (this.Consistency != null &&
-                    this.Consistency.Equals(input.Consistency))
-                ) && 
-                (
-                    this.ReplicationMode == input.ReplicationMode ||
-                    (this.ReplicationMode != null &&
-                    this.ReplicationMode.Equals(input.ReplicationMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -193,11 +184,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Consistency != null)
-                    hashCode = hashCode * 59 + this.Consistency.GetHashCode();
-                if (this.ReplicationMode != null)
-                    hashCode = hashCode * 59 + this.ReplicationMode.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Consistency.GetHashCode();
+                if (this.ReplicationMode != null) hashCode = hashCode * 59 + this.ReplicationMode.GetHashCode();
                 return hashCode;
             }
         }

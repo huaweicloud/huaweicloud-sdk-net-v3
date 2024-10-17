@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(EntityInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EntityId != input.EntityId || (this.EntityId != null && !this.EntityId.Equals(input.EntityId))) return false;
+            if (this.EntityName != input.EntityName || (this.EntityName != null && !this.EntityName.Equals(input.EntityName))) return false;
 
-            return 
-                (
-                    this.EntityId == input.EntityId ||
-                    (this.EntityId != null &&
-                    this.EntityId.Equals(input.EntityId))
-                ) && 
-                (
-                    this.EntityName == input.EntityName ||
-                    (this.EntityName != null &&
-                    this.EntityName.Equals(input.EntityName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EntityId != null)
-                    hashCode = hashCode * 59 + this.EntityId.GetHashCode();
-                if (this.EntityName != null)
-                    hashCode = hashCode * 59 + this.EntityName.GetHashCode();
+                var hashCode = 41;
+                if (this.EntityId != null) hashCode = hashCode * 59 + this.EntityId.GetHashCode();
+                if (this.EntityName != null) hashCode = hashCode * 59 + this.EntityName.GetHashCode();
                 return hashCode;
             }
         }

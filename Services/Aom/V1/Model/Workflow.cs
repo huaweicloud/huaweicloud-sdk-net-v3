@@ -322,219 +322,49 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         /// </summary>
         public bool Equals(Workflow input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.CreateBy != input.CreateBy || (this.CreateBy != null && !this.CreateBy.Equals(input.CreateBy))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.UpdateBy != input.UpdateBy || (this.UpdateBy != null && !this.UpdateBy.Equals(input.UpdateBy))) return false;
+            if (this.TemplateName != input.TemplateName || (this.TemplateName != null && !this.TemplateName.Equals(input.TemplateName))) return false;
+            if (this.TemplateId != input.TemplateId || (this.TemplateId != null && !this.TemplateId.Equals(input.TemplateId))) return false;
+            if (this.Input != input.Input || (this.Input != null && input.Input != null && !this.Input.SequenceEqual(input.Input))) return false;
+            if (this.LastExecutionId != input.LastExecutionId || (this.LastExecutionId != null && !this.LastExecutionId.Equals(input.LastExecutionId))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.CitationUrns != input.CitationUrns || (this.CitationUrns != null && input.CitationUrns != null && !this.CitationUrns.SequenceEqual(input.CitationUrns))) return false;
+            if (this.LastExecutionEndTime != input.LastExecutionEndTime || (this.LastExecutionEndTime != null && !this.LastExecutionEndTime.Equals(input.LastExecutionEndTime))) return false;
+            if (this.LastExecutionStartTime != input.LastExecutionStartTime || (this.LastExecutionStartTime != null && !this.LastExecutionStartTime.Equals(input.LastExecutionStartTime))) return false;
+            if (this.Quote != input.Quote || (this.Quote != null && input.Quote != null && !this.Quote.SequenceEqual(input.Quote))) return false;
+            if (this.JobName != input.JobName || (this.JobName != null && !this.JobName.Equals(input.JobName))) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.ServiceScenario != input.ServiceScenario || (this.ServiceScenario != null && !this.ServiceScenario.Equals(input.ServiceScenario))) return false;
+            if (this.ServiceName != input.ServiceName || (this.ServiceName != null && !this.ServiceName.Equals(input.ServiceName))) return false;
+            if (this.TaskType != input.TaskType || (this.TaskType != null && !this.TaskType.Equals(input.TaskType))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.WorkflowId != input.WorkflowId || (this.WorkflowId != null && !this.WorkflowId.Equals(input.WorkflowId))) return false;
+            if (this.TaskStatus != input.TaskStatus || (this.TaskStatus != null && !this.TaskStatus.Equals(input.TaskStatus))) return false;
+            if (this.Nodes != input.Nodes || (this.Nodes != null && input.Nodes != null && !this.Nodes.SequenceEqual(input.Nodes))) return false;
+            if (this.EditTime != input.EditTime || (this.EditTime != null && !this.EditTime.Equals(input.EditTime))) return false;
+            if (this.ExecutionActionRules != input.ExecutionActionRules || (this.ExecutionActionRules != null && input.ExecutionActionRules != null && !this.ExecutionActionRules.SequenceEqual(input.ExecutionActionRules))) return false;
+            if (this.ExecutionPermission != input.ExecutionPermission || (this.ExecutionPermission != null && input.ExecutionPermission != null && !this.ExecutionPermission.SequenceEqual(input.ExecutionPermission))) return false;
+            if (this.GlobalParameters != input.GlobalParameters || (this.GlobalParameters != null && input.GlobalParameters != null && !this.GlobalParameters.SequenceEqual(input.GlobalParameters))) return false;
+            if (this.IsDelete != input.IsDelete || (this.IsDelete != null && !this.IsDelete.Equals(input.IsDelete))) return false;
+            if (this.Steps != input.Steps || (this.Steps != null && input.Steps != null && !this.Steps.SequenceEqual(input.Steps))) return false;
+            if (this.Output != input.Output || (this.Output != null && !this.Output.Equals(input.Output))) return false;
+            if (this.TriggerId != input.TriggerId || (this.TriggerId != null && !this.TriggerId.Equals(input.TriggerId))) return false;
+            if (this.TriggerStatus != input.TriggerStatus || (this.TriggerStatus != null && !this.TriggerStatus.Equals(input.TriggerStatus))) return false;
+            if (this.ApproveId != input.ApproveId || (this.ApproveId != null && !this.ApproveId.Equals(input.ApproveId))) return false;
+            if (this.TemplateI18n != input.TemplateI18n || (this.TemplateI18n != null && !this.TemplateI18n.Equals(input.TemplateI18n))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.LastExecuteBy != input.LastExecuteBy || (this.LastExecuteBy != null && !this.LastExecuteBy.Equals(input.LastExecuteBy))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.CreateBy == input.CreateBy ||
-                    (this.CreateBy != null &&
-                    this.CreateBy.Equals(input.CreateBy))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.UpdateBy == input.UpdateBy ||
-                    (this.UpdateBy != null &&
-                    this.UpdateBy.Equals(input.UpdateBy))
-                ) && 
-                (
-                    this.TemplateName == input.TemplateName ||
-                    (this.TemplateName != null &&
-                    this.TemplateName.Equals(input.TemplateName))
-                ) && 
-                (
-                    this.TemplateId == input.TemplateId ||
-                    (this.TemplateId != null &&
-                    this.TemplateId.Equals(input.TemplateId))
-                ) && 
-                (
-                    this.Input == input.Input ||
-                    this.Input != null &&
-                    input.Input != null &&
-                    this.Input.SequenceEqual(input.Input)
-                ) && 
-                (
-                    this.LastExecutionId == input.LastExecutionId ||
-                    (this.LastExecutionId != null &&
-                    this.LastExecutionId.Equals(input.LastExecutionId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.CitationUrns == input.CitationUrns ||
-                    this.CitationUrns != null &&
-                    input.CitationUrns != null &&
-                    this.CitationUrns.SequenceEqual(input.CitationUrns)
-                ) && 
-                (
-                    this.LastExecutionEndTime == input.LastExecutionEndTime ||
-                    (this.LastExecutionEndTime != null &&
-                    this.LastExecutionEndTime.Equals(input.LastExecutionEndTime))
-                ) && 
-                (
-                    this.LastExecutionStartTime == input.LastExecutionStartTime ||
-                    (this.LastExecutionStartTime != null &&
-                    this.LastExecutionStartTime.Equals(input.LastExecutionStartTime))
-                ) && 
-                (
-                    this.Quote == input.Quote ||
-                    this.Quote != null &&
-                    input.Quote != null &&
-                    this.Quote.SequenceEqual(input.Quote)
-                ) && 
-                (
-                    this.JobName == input.JobName ||
-                    (this.JobName != null &&
-                    this.JobName.Equals(input.JobName))
-                ) && 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.ServiceScenario == input.ServiceScenario ||
-                    (this.ServiceScenario != null &&
-                    this.ServiceScenario.Equals(input.ServiceScenario))
-                ) && 
-                (
-                    this.ServiceName == input.ServiceName ||
-                    (this.ServiceName != null &&
-                    this.ServiceName.Equals(input.ServiceName))
-                ) && 
-                (
-                    this.TaskType == input.TaskType ||
-                    (this.TaskType != null &&
-                    this.TaskType.Equals(input.TaskType))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.WorkflowId == input.WorkflowId ||
-                    (this.WorkflowId != null &&
-                    this.WorkflowId.Equals(input.WorkflowId))
-                ) && 
-                (
-                    this.TaskStatus == input.TaskStatus ||
-                    (this.TaskStatus != null &&
-                    this.TaskStatus.Equals(input.TaskStatus))
-                ) && 
-                (
-                    this.Nodes == input.Nodes ||
-                    this.Nodes != null &&
-                    input.Nodes != null &&
-                    this.Nodes.SequenceEqual(input.Nodes)
-                ) && 
-                (
-                    this.EditTime == input.EditTime ||
-                    (this.EditTime != null &&
-                    this.EditTime.Equals(input.EditTime))
-                ) && 
-                (
-                    this.ExecutionActionRules == input.ExecutionActionRules ||
-                    this.ExecutionActionRules != null &&
-                    input.ExecutionActionRules != null &&
-                    this.ExecutionActionRules.SequenceEqual(input.ExecutionActionRules)
-                ) && 
-                (
-                    this.ExecutionPermission == input.ExecutionPermission ||
-                    this.ExecutionPermission != null &&
-                    input.ExecutionPermission != null &&
-                    this.ExecutionPermission.SequenceEqual(input.ExecutionPermission)
-                ) && 
-                (
-                    this.GlobalParameters == input.GlobalParameters ||
-                    this.GlobalParameters != null &&
-                    input.GlobalParameters != null &&
-                    this.GlobalParameters.SequenceEqual(input.GlobalParameters)
-                ) && 
-                (
-                    this.IsDelete == input.IsDelete ||
-                    (this.IsDelete != null &&
-                    this.IsDelete.Equals(input.IsDelete))
-                ) && 
-                (
-                    this.Steps == input.Steps ||
-                    this.Steps != null &&
-                    input.Steps != null &&
-                    this.Steps.SequenceEqual(input.Steps)
-                ) && 
-                (
-                    this.Output == input.Output ||
-                    (this.Output != null &&
-                    this.Output.Equals(input.Output))
-                ) && 
-                (
-                    this.TriggerId == input.TriggerId ||
-                    (this.TriggerId != null &&
-                    this.TriggerId.Equals(input.TriggerId))
-                ) && 
-                (
-                    this.TriggerStatus == input.TriggerStatus ||
-                    (this.TriggerStatus != null &&
-                    this.TriggerStatus.Equals(input.TriggerStatus))
-                ) && 
-                (
-                    this.ApproveId == input.ApproveId ||
-                    (this.ApproveId != null &&
-                    this.ApproveId.Equals(input.ApproveId))
-                ) && 
-                (
-                    this.TemplateI18n == input.TemplateI18n ||
-                    (this.TemplateI18n != null &&
-                    this.TemplateI18n.Equals(input.TemplateI18n))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.LastExecuteBy == input.LastExecuteBy ||
-                    (this.LastExecuteBy != null &&
-                    this.LastExecuteBy.Equals(input.LastExecuteBy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -544,87 +374,47 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.CreateBy != null)
-                    hashCode = hashCode * 59 + this.CreateBy.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.UpdateBy != null)
-                    hashCode = hashCode * 59 + this.UpdateBy.GetHashCode();
-                if (this.TemplateName != null)
-                    hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
-                if (this.TemplateId != null)
-                    hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
-                if (this.Input != null)
-                    hashCode = hashCode * 59 + this.Input.GetHashCode();
-                if (this.LastExecutionId != null)
-                    hashCode = hashCode * 59 + this.LastExecutionId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.CitationUrns != null)
-                    hashCode = hashCode * 59 + this.CitationUrns.GetHashCode();
-                if (this.LastExecutionEndTime != null)
-                    hashCode = hashCode * 59 + this.LastExecutionEndTime.GetHashCode();
-                if (this.LastExecutionStartTime != null)
-                    hashCode = hashCode * 59 + this.LastExecutionStartTime.GetHashCode();
-                if (this.Quote != null)
-                    hashCode = hashCode * 59 + this.Quote.GetHashCode();
-                if (this.JobName != null)
-                    hashCode = hashCode * 59 + this.JobName.GetHashCode();
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.ServiceScenario != null)
-                    hashCode = hashCode * 59 + this.ServiceScenario.GetHashCode();
-                if (this.ServiceName != null)
-                    hashCode = hashCode * 59 + this.ServiceName.GetHashCode();
-                if (this.TaskType != null)
-                    hashCode = hashCode * 59 + this.TaskType.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.WorkflowId != null)
-                    hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
-                if (this.TaskStatus != null)
-                    hashCode = hashCode * 59 + this.TaskStatus.GetHashCode();
-                if (this.Nodes != null)
-                    hashCode = hashCode * 59 + this.Nodes.GetHashCode();
-                if (this.EditTime != null)
-                    hashCode = hashCode * 59 + this.EditTime.GetHashCode();
-                if (this.ExecutionActionRules != null)
-                    hashCode = hashCode * 59 + this.ExecutionActionRules.GetHashCode();
-                if (this.ExecutionPermission != null)
-                    hashCode = hashCode * 59 + this.ExecutionPermission.GetHashCode();
-                if (this.GlobalParameters != null)
-                    hashCode = hashCode * 59 + this.GlobalParameters.GetHashCode();
-                if (this.IsDelete != null)
-                    hashCode = hashCode * 59 + this.IsDelete.GetHashCode();
-                if (this.Steps != null)
-                    hashCode = hashCode * 59 + this.Steps.GetHashCode();
-                if (this.Output != null)
-                    hashCode = hashCode * 59 + this.Output.GetHashCode();
-                if (this.TriggerId != null)
-                    hashCode = hashCode * 59 + this.TriggerId.GetHashCode();
-                if (this.TriggerStatus != null)
-                    hashCode = hashCode * 59 + this.TriggerStatus.GetHashCode();
-                if (this.ApproveId != null)
-                    hashCode = hashCode * 59 + this.ApproveId.GetHashCode();
-                if (this.TemplateI18n != null)
-                    hashCode = hashCode * 59 + this.TemplateI18n.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.LastExecuteBy != null)
-                    hashCode = hashCode * 59 + this.LastExecuteBy.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.CreateBy != null) hashCode = hashCode * 59 + this.CreateBy.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.UpdateBy != null) hashCode = hashCode * 59 + this.UpdateBy.GetHashCode();
+                if (this.TemplateName != null) hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
+                if (this.TemplateId != null) hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
+                if (this.Input != null) hashCode = hashCode * 59 + this.Input.GetHashCode();
+                if (this.LastExecutionId != null) hashCode = hashCode * 59 + this.LastExecutionId.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.CitationUrns != null) hashCode = hashCode * 59 + this.CitationUrns.GetHashCode();
+                if (this.LastExecutionEndTime != null) hashCode = hashCode * 59 + this.LastExecutionEndTime.GetHashCode();
+                if (this.LastExecutionStartTime != null) hashCode = hashCode * 59 + this.LastExecutionStartTime.GetHashCode();
+                if (this.Quote != null) hashCode = hashCode * 59 + this.Quote.GetHashCode();
+                if (this.JobName != null) hashCode = hashCode * 59 + this.JobName.GetHashCode();
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.ServiceScenario != null) hashCode = hashCode * 59 + this.ServiceScenario.GetHashCode();
+                if (this.ServiceName != null) hashCode = hashCode * 59 + this.ServiceName.GetHashCode();
+                if (this.TaskType != null) hashCode = hashCode * 59 + this.TaskType.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.WorkflowId != null) hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
+                if (this.TaskStatus != null) hashCode = hashCode * 59 + this.TaskStatus.GetHashCode();
+                if (this.Nodes != null) hashCode = hashCode * 59 + this.Nodes.GetHashCode();
+                if (this.EditTime != null) hashCode = hashCode * 59 + this.EditTime.GetHashCode();
+                if (this.ExecutionActionRules != null) hashCode = hashCode * 59 + this.ExecutionActionRules.GetHashCode();
+                if (this.ExecutionPermission != null) hashCode = hashCode * 59 + this.ExecutionPermission.GetHashCode();
+                if (this.GlobalParameters != null) hashCode = hashCode * 59 + this.GlobalParameters.GetHashCode();
+                if (this.IsDelete != null) hashCode = hashCode * 59 + this.IsDelete.GetHashCode();
+                if (this.Steps != null) hashCode = hashCode * 59 + this.Steps.GetHashCode();
+                if (this.Output != null) hashCode = hashCode * 59 + this.Output.GetHashCode();
+                if (this.TriggerId != null) hashCode = hashCode * 59 + this.TriggerId.GetHashCode();
+                if (this.TriggerStatus != null) hashCode = hashCode * 59 + this.TriggerStatus.GetHashCode();
+                if (this.ApproveId != null) hashCode = hashCode * 59 + this.ApproveId.GetHashCode();
+                if (this.TemplateI18n != null) hashCode = hashCode * 59 + this.TemplateI18n.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.LastExecuteBy != null) hashCode = hashCode * 59 + this.LastExecuteBy.GetHashCode();
                 return hashCode;
             }
         }

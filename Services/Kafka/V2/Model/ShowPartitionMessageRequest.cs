@@ -74,30 +74,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ShowPartitionMessageRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;
+            if (this.Partition != input.Partition || (this.Partition != null && !this.Partition.Equals(input.Partition))) return false;
+            if (this.MessageOffset != input.MessageOffset || (this.MessageOffset != null && !this.MessageOffset.Equals(input.MessageOffset))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.Topic == input.Topic ||
-                    (this.Topic != null &&
-                    this.Topic.Equals(input.Topic))
-                ) && 
-                (
-                    this.Partition == input.Partition ||
-                    (this.Partition != null &&
-                    this.Partition.Equals(input.Partition))
-                ) && 
-                (
-                    this.MessageOffset == input.MessageOffset ||
-                    (this.MessageOffset != null &&
-                    this.MessageOffset.Equals(input.MessageOffset))
-                );
+            return true;
         }
 
         /// <summary>
@@ -107,15 +90,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.Topic != null)
-                    hashCode = hashCode * 59 + this.Topic.GetHashCode();
-                if (this.Partition != null)
-                    hashCode = hashCode * 59 + this.Partition.GetHashCode();
-                if (this.MessageOffset != null)
-                    hashCode = hashCode * 59 + this.MessageOffset.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.Topic != null) hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.Partition != null) hashCode = hashCode * 59 + this.Partition.GetHashCode();
+                if (this.MessageOffset != null) hashCode = hashCode * 59 + this.MessageOffset.GetHashCode();
                 return hashCode;
             }
         }

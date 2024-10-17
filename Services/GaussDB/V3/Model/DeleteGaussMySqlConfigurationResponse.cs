@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(DeleteGaussMySqlConfigurationResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ConfigurationId != input.ConfigurationId || (this.ConfigurationId != null && !this.ConfigurationId.Equals(input.ConfigurationId))) return false;
+            if (this.ConfigurationName != input.ConfigurationName || (this.ConfigurationName != null && !this.ConfigurationName.Equals(input.ConfigurationName))) return false;
 
-            return 
-                (
-                    this.ConfigurationId == input.ConfigurationId ||
-                    (this.ConfigurationId != null &&
-                    this.ConfigurationId.Equals(input.ConfigurationId))
-                ) && 
-                (
-                    this.ConfigurationName == input.ConfigurationName ||
-                    (this.ConfigurationName != null &&
-                    this.ConfigurationName.Equals(input.ConfigurationName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ConfigurationId != null)
-                    hashCode = hashCode * 59 + this.ConfigurationId.GetHashCode();
-                if (this.ConfigurationName != null)
-                    hashCode = hashCode * 59 + this.ConfigurationName.GetHashCode();
+                var hashCode = 41;
+                if (this.ConfigurationId != null) hashCode = hashCode * 59 + this.ConfigurationId.GetHashCode();
+                if (this.ConfigurationName != null) hashCode = hashCode * 59 + this.ConfigurationName.GetHashCode();
                 return hashCode;
             }
         }

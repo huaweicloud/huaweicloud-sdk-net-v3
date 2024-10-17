@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public bool Equals(BatchUpdateRecordSetWithLineReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Recordsets != input.Recordsets || (this.Recordsets != null && input.Recordsets != null && !this.Recordsets.SequenceEqual(input.Recordsets))) return false;
 
-            return 
-                (
-                    this.Recordsets == input.Recordsets ||
-                    this.Recordsets != null &&
-                    input.Recordsets != null &&
-                    this.Recordsets.SequenceEqual(input.Recordsets)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Recordsets != null)
-                    hashCode = hashCode * 59 + this.Recordsets.GetHashCode();
+                var hashCode = 41;
+                if (this.Recordsets != null) hashCode = hashCode * 59 + this.Recordsets.GetHashCode();
                 return hashCode;
             }
         }

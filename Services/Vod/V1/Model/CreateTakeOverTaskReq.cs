@@ -98,51 +98,17 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(CreateTakeOverTaskReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Bucket != input.Bucket || (this.Bucket != null && !this.Bucket.Equals(input.Bucket))) return false;
+            if (this.Object != input.Object || (this.Object != null && !this.Object.Equals(input.Object))) return false;
+            if (this.Suffix != input.Suffix || (this.Suffix != null && input.Suffix != null && !this.Suffix.SequenceEqual(input.Suffix))) return false;
+            if (this.TemplateGroupName != input.TemplateGroupName || (this.TemplateGroupName != null && !this.TemplateGroupName.Equals(input.TemplateGroupName))) return false;
+            if (this.WorkflowName != input.WorkflowName || (this.WorkflowName != null && !this.WorkflowName.Equals(input.WorkflowName))) return false;
+            if (this.HostType != input.HostType || (this.HostType != null && !this.HostType.Equals(input.HostType))) return false;
+            if (this.OutputBucket != input.OutputBucket || (this.OutputBucket != null && !this.OutputBucket.Equals(input.OutputBucket))) return false;
+            if (this.OutputPath != input.OutputPath || (this.OutputPath != null && !this.OutputPath.Equals(input.OutputPath))) return false;
 
-            return 
-                (
-                    this.Bucket == input.Bucket ||
-                    (this.Bucket != null &&
-                    this.Bucket.Equals(input.Bucket))
-                ) && 
-                (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
-                ) && 
-                (
-                    this.Suffix == input.Suffix ||
-                    this.Suffix != null &&
-                    input.Suffix != null &&
-                    this.Suffix.SequenceEqual(input.Suffix)
-                ) && 
-                (
-                    this.TemplateGroupName == input.TemplateGroupName ||
-                    (this.TemplateGroupName != null &&
-                    this.TemplateGroupName.Equals(input.TemplateGroupName))
-                ) && 
-                (
-                    this.WorkflowName == input.WorkflowName ||
-                    (this.WorkflowName != null &&
-                    this.WorkflowName.Equals(input.WorkflowName))
-                ) && 
-                (
-                    this.HostType == input.HostType ||
-                    (this.HostType != null &&
-                    this.HostType.Equals(input.HostType))
-                ) && 
-                (
-                    this.OutputBucket == input.OutputBucket ||
-                    (this.OutputBucket != null &&
-                    this.OutputBucket.Equals(input.OutputBucket))
-                ) && 
-                (
-                    this.OutputPath == input.OutputPath ||
-                    (this.OutputPath != null &&
-                    this.OutputPath.Equals(input.OutputPath))
-                );
+            return true;
         }
 
         /// <summary>
@@ -152,23 +118,15 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Bucket != null)
-                    hashCode = hashCode * 59 + this.Bucket.GetHashCode();
-                if (this.Object != null)
-                    hashCode = hashCode * 59 + this.Object.GetHashCode();
-                if (this.Suffix != null)
-                    hashCode = hashCode * 59 + this.Suffix.GetHashCode();
-                if (this.TemplateGroupName != null)
-                    hashCode = hashCode * 59 + this.TemplateGroupName.GetHashCode();
-                if (this.WorkflowName != null)
-                    hashCode = hashCode * 59 + this.WorkflowName.GetHashCode();
-                if (this.HostType != null)
-                    hashCode = hashCode * 59 + this.HostType.GetHashCode();
-                if (this.OutputBucket != null)
-                    hashCode = hashCode * 59 + this.OutputBucket.GetHashCode();
-                if (this.OutputPath != null)
-                    hashCode = hashCode * 59 + this.OutputPath.GetHashCode();
+                var hashCode = 41;
+                if (this.Bucket != null) hashCode = hashCode * 59 + this.Bucket.GetHashCode();
+                if (this.Object != null) hashCode = hashCode * 59 + this.Object.GetHashCode();
+                if (this.Suffix != null) hashCode = hashCode * 59 + this.Suffix.GetHashCode();
+                if (this.TemplateGroupName != null) hashCode = hashCode * 59 + this.TemplateGroupName.GetHashCode();
+                if (this.WorkflowName != null) hashCode = hashCode * 59 + this.WorkflowName.GetHashCode();
+                if (this.HostType != null) hashCode = hashCode * 59 + this.HostType.GetHashCode();
+                if (this.OutputBucket != null) hashCode = hashCode * 59 + this.OutputBucket.GetHashCode();
+                if (this.OutputPath != null) hashCode = hashCode * 59 + this.OutputPath.GetHashCode();
                 return hashCode;
             }
         }

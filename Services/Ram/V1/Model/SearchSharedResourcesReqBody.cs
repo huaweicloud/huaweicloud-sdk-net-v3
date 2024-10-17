@@ -219,58 +219,18 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         /// </summary>
         public bool Equals(SearchSharedResourcesReqBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.Principal != input.Principal || (this.Principal != null && !this.Principal.Equals(input.Principal))) return false;
+            if (this.ResourceIds != input.ResourceIds || (this.ResourceIds != null && input.ResourceIds != null && !this.ResourceIds.SequenceEqual(input.ResourceIds))) return false;
+            if (this.ResourceUrns != input.ResourceUrns || (this.ResourceUrns != null && input.ResourceUrns != null && !this.ResourceUrns.SequenceEqual(input.ResourceUrns))) return false;
+            if (this.ResourceOwner != input.ResourceOwner) return false;
+            if (this.ResourceShareIds != input.ResourceShareIds || (this.ResourceShareIds != null && input.ResourceShareIds != null && !this.ResourceShareIds.SequenceEqual(input.ResourceShareIds))) return false;
+            if (this.ResourceRegion != input.ResourceRegion || (this.ResourceRegion != null && !this.ResourceRegion.Equals(input.ResourceRegion))) return false;
+            if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
 
-            return 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.Principal == input.Principal ||
-                    (this.Principal != null &&
-                    this.Principal.Equals(input.Principal))
-                ) && 
-                (
-                    this.ResourceIds == input.ResourceIds ||
-                    this.ResourceIds != null &&
-                    input.ResourceIds != null &&
-                    this.ResourceIds.SequenceEqual(input.ResourceIds)
-                ) && 
-                (
-                    this.ResourceUrns == input.ResourceUrns ||
-                    this.ResourceUrns != null &&
-                    input.ResourceUrns != null &&
-                    this.ResourceUrns.SequenceEqual(input.ResourceUrns)
-                ) && 
-                (
-                    this.ResourceOwner == input.ResourceOwner ||
-                    (this.ResourceOwner != null &&
-                    this.ResourceOwner.Equals(input.ResourceOwner))
-                ) && 
-                (
-                    this.ResourceShareIds == input.ResourceShareIds ||
-                    this.ResourceShareIds != null &&
-                    input.ResourceShareIds != null &&
-                    this.ResourceShareIds.SequenceEqual(input.ResourceShareIds)
-                ) && 
-                (
-                    this.ResourceRegion == input.ResourceRegion ||
-                    (this.ResourceRegion != null &&
-                    this.ResourceRegion.Equals(input.ResourceRegion))
-                ) && 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -280,25 +240,16 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Principal != null)
-                    hashCode = hashCode * 59 + this.Principal.GetHashCode();
-                if (this.ResourceIds != null)
-                    hashCode = hashCode * 59 + this.ResourceIds.GetHashCode();
-                if (this.ResourceUrns != null)
-                    hashCode = hashCode * 59 + this.ResourceUrns.GetHashCode();
-                if (this.ResourceOwner != null)
-                    hashCode = hashCode * 59 + this.ResourceOwner.GetHashCode();
-                if (this.ResourceShareIds != null)
-                    hashCode = hashCode * 59 + this.ResourceShareIds.GetHashCode();
-                if (this.ResourceRegion != null)
-                    hashCode = hashCode * 59 + this.ResourceRegion.GetHashCode();
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                var hashCode = 41;
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Principal != null) hashCode = hashCode * 59 + this.Principal.GetHashCode();
+                if (this.ResourceIds != null) hashCode = hashCode * 59 + this.ResourceIds.GetHashCode();
+                if (this.ResourceUrns != null) hashCode = hashCode * 59 + this.ResourceUrns.GetHashCode();
+                hashCode = hashCode * 59 + this.ResourceOwner.GetHashCode();
+                if (this.ResourceShareIds != null) hashCode = hashCode * 59 + this.ResourceShareIds.GetHashCode();
+                if (this.ResourceRegion != null) hashCode = hashCode * 59 + this.ResourceRegion.GetHashCode();
+                if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
                 return hashCode;
             }
         }

@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(StopWorkFlowRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.WorkflowId != input.WorkflowId || (this.WorkflowId != null && !this.WorkflowId.Equals(input.WorkflowId))) return false;
+            if (this.ExecutionId != input.ExecutionId || (this.ExecutionId != null && !this.ExecutionId.Equals(input.ExecutionId))) return false;
 
-            return 
-                (
-                    this.WorkflowId == input.WorkflowId ||
-                    (this.WorkflowId != null &&
-                    this.WorkflowId.Equals(input.WorkflowId))
-                ) && 
-                (
-                    this.ExecutionId == input.ExecutionId ||
-                    (this.ExecutionId != null &&
-                    this.ExecutionId.Equals(input.ExecutionId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.WorkflowId != null)
-                    hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
-                if (this.ExecutionId != null)
-                    hashCode = hashCode * 59 + this.ExecutionId.GetHashCode();
+                var hashCode = 41;
+                if (this.WorkflowId != null) hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
+                if (this.ExecutionId != null) hashCode = hashCode * 59 + this.ExecutionId.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(ShowFuncReservedInstanceMetricsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceNum != input.InstanceNum || (this.InstanceNum != null && input.InstanceNum != null && !this.InstanceNum.SequenceEqual(input.InstanceNum))) return false;
+            if (this.ReservedInstanceNum != input.ReservedInstanceNum || (this.ReservedInstanceNum != null && input.ReservedInstanceNum != null && !this.ReservedInstanceNum.SequenceEqual(input.ReservedInstanceNum))) return false;
 
-            return 
-                (
-                    this.InstanceNum == input.InstanceNum ||
-                    this.InstanceNum != null &&
-                    input.InstanceNum != null &&
-                    this.InstanceNum.SequenceEqual(input.InstanceNum)
-                ) && 
-                (
-                    this.ReservedInstanceNum == input.ReservedInstanceNum ||
-                    this.ReservedInstanceNum != null &&
-                    input.ReservedInstanceNum != null &&
-                    this.ReservedInstanceNum.SequenceEqual(input.ReservedInstanceNum)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceNum != null)
-                    hashCode = hashCode * 59 + this.InstanceNum.GetHashCode();
-                if (this.ReservedInstanceNum != null)
-                    hashCode = hashCode * 59 + this.ReservedInstanceNum.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceNum != null) hashCode = hashCode * 59 + this.InstanceNum.GetHashCode();
+                if (this.ReservedInstanceNum != null) hashCode = hashCode * 59 + this.ReservedInstanceNum.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public bool Equals(ListNamespacesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Namespaces != input.Namespaces || (this.Namespaces != null && input.Namespaces != null && !this.Namespaces.SequenceEqual(input.Namespaces))) return false;
 
-            return 
-                (
-                    this.Namespaces == input.Namespaces ||
-                    this.Namespaces != null &&
-                    input.Namespaces != null &&
-                    this.Namespaces.SequenceEqual(input.Namespaces)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Namespaces != null)
-                    hashCode = hashCode * 59 + this.Namespaces.GetHashCode();
+                var hashCode = 41;
+                if (this.Namespaces != null) hashCode = hashCode * 59 + this.Namespaces.GetHashCode();
                 return hashCode;
             }
         }

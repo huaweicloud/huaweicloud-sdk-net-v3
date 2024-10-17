@@ -84,41 +84,15 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(ListVersionAliasResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.LastModified != input.LastModified || (this.LastModified != null && !this.LastModified.Equals(input.LastModified))) return false;
+            if (this.AliasUrn != input.AliasUrn || (this.AliasUrn != null && !this.AliasUrn.Equals(input.AliasUrn))) return false;
+            if (this.AdditionalVersionWeights != input.AdditionalVersionWeights || (this.AdditionalVersionWeights != null && input.AdditionalVersionWeights != null && !this.AdditionalVersionWeights.SequenceEqual(input.AdditionalVersionWeights))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.LastModified == input.LastModified ||
-                    (this.LastModified != null &&
-                    this.LastModified.Equals(input.LastModified))
-                ) && 
-                (
-                    this.AliasUrn == input.AliasUrn ||
-                    (this.AliasUrn != null &&
-                    this.AliasUrn.Equals(input.AliasUrn))
-                ) && 
-                (
-                    this.AdditionalVersionWeights == input.AdditionalVersionWeights ||
-                    this.AdditionalVersionWeights != null &&
-                    input.AdditionalVersionWeights != null &&
-                    this.AdditionalVersionWeights.SequenceEqual(input.AdditionalVersionWeights)
-                );
+            return true;
         }
 
         /// <summary>
@@ -128,19 +102,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.LastModified != null)
-                    hashCode = hashCode * 59 + this.LastModified.GetHashCode();
-                if (this.AliasUrn != null)
-                    hashCode = hashCode * 59 + this.AliasUrn.GetHashCode();
-                if (this.AdditionalVersionWeights != null)
-                    hashCode = hashCode * 59 + this.AdditionalVersionWeights.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.LastModified != null) hashCode = hashCode * 59 + this.LastModified.GetHashCode();
+                if (this.AliasUrn != null) hashCode = hashCode * 59 + this.AliasUrn.GetHashCode();
+                if (this.AdditionalVersionWeights != null) hashCode = hashCode * 59 + this.AdditionalVersionWeights.GetHashCode();
                 return hashCode;
             }
         }

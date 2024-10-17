@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(ListenerMemberInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ListenerId != input.ListenerId || (this.ListenerId != null && !this.ListenerId.Equals(input.ListenerId))) return false;
+            if (this.OperatingStatus != input.OperatingStatus || (this.OperatingStatus != null && !this.OperatingStatus.Equals(input.OperatingStatus))) return false;
 
-            return 
-                (
-                    this.ListenerId == input.ListenerId ||
-                    (this.ListenerId != null &&
-                    this.ListenerId.Equals(input.ListenerId))
-                ) && 
-                (
-                    this.OperatingStatus == input.OperatingStatus ||
-                    (this.OperatingStatus != null &&
-                    this.OperatingStatus.Equals(input.OperatingStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ListenerId != null)
-                    hashCode = hashCode * 59 + this.ListenerId.GetHashCode();
-                if (this.OperatingStatus != null)
-                    hashCode = hashCode * 59 + this.OperatingStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.ListenerId != null) hashCode = hashCode * 59 + this.ListenerId.GetHashCode();
+                if (this.OperatingStatus != null) hashCode = hashCode * 59 + this.OperatingStatus.GetHashCode();
                 return hashCode;
             }
         }

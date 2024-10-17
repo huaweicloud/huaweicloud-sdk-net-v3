@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(CreateRedislogDownloadLinkResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.BackupId != input.BackupId || (this.BackupId != null && !this.BackupId.Equals(input.BackupId))) return false;
+            if (this.Link != input.Link || (this.Link != null && !this.Link.Equals(input.Link))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.BackupId == input.BackupId ||
-                    (this.BackupId != null &&
-                    this.BackupId.Equals(input.BackupId))
-                ) && 
-                (
-                    this.Link == input.Link ||
-                    (this.Link != null &&
-                    this.Link.Equals(input.Link))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.BackupId != null)
-                    hashCode = hashCode * 59 + this.BackupId.GetHashCode();
-                if (this.Link != null)
-                    hashCode = hashCode * 59 + this.Link.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.BackupId != null) hashCode = hashCode * 59 + this.BackupId.GetHashCode();
+                if (this.Link != null) hashCode = hashCode * 59 + this.Link.GetHashCode();
                 return hashCode;
             }
         }

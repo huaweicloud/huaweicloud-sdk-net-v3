@@ -133,75 +133,22 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(UploadAutopilotChartResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Values != input.Values || (this.Values != null && !this.Values.Equals(input.Values))) return false;
+            if (this.Translate != input.Translate || (this.Translate != null && !this.Translate.Equals(input.Translate))) return false;
+            if (this.Instruction != input.Instruction || (this.Instruction != null && !this.Instruction.Equals(input.Instruction))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Source != input.Source || (this.Source != null && !this.Source.Equals(input.Source))) return false;
+            if (this.IconUrl != input.IconUrl || (this.IconUrl != null && !this.IconUrl.Equals(input.IconUrl))) return false;
+            if (this.Public != input.Public || (this.Public != null && !this.Public.Equals(input.Public))) return false;
+            if (this.ChartUrl != input.ChartUrl || (this.ChartUrl != null && !this.ChartUrl.Equals(input.ChartUrl))) return false;
+            if (this.CreateAt != input.CreateAt || (this.CreateAt != null && !this.CreateAt.Equals(input.CreateAt))) return false;
+            if (this.UpdateAt != input.UpdateAt || (this.UpdateAt != null && !this.UpdateAt.Equals(input.UpdateAt))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Values == input.Values ||
-                    (this.Values != null &&
-                    this.Values.Equals(input.Values))
-                ) && 
-                (
-                    this.Translate == input.Translate ||
-                    (this.Translate != null &&
-                    this.Translate.Equals(input.Translate))
-                ) && 
-                (
-                    this.Instruction == input.Instruction ||
-                    (this.Instruction != null &&
-                    this.Instruction.Equals(input.Instruction))
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Source == input.Source ||
-                    (this.Source != null &&
-                    this.Source.Equals(input.Source))
-                ) && 
-                (
-                    this.IconUrl == input.IconUrl ||
-                    (this.IconUrl != null &&
-                    this.IconUrl.Equals(input.IconUrl))
-                ) && 
-                (
-                    this.Public == input.Public ||
-                    (this.Public != null &&
-                    this.Public.Equals(input.Public))
-                ) && 
-                (
-                    this.ChartUrl == input.ChartUrl ||
-                    (this.ChartUrl != null &&
-                    this.ChartUrl.Equals(input.ChartUrl))
-                ) && 
-                (
-                    this.CreateAt == input.CreateAt ||
-                    (this.CreateAt != null &&
-                    this.CreateAt.Equals(input.CreateAt))
-                ) && 
-                (
-                    this.UpdateAt == input.UpdateAt ||
-                    (this.UpdateAt != null &&
-                    this.UpdateAt.Equals(input.UpdateAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -211,33 +158,20 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Values != null)
-                    hashCode = hashCode * 59 + this.Values.GetHashCode();
-                if (this.Translate != null)
-                    hashCode = hashCode * 59 + this.Translate.GetHashCode();
-                if (this.Instruction != null)
-                    hashCode = hashCode * 59 + this.Instruction.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Source != null)
-                    hashCode = hashCode * 59 + this.Source.GetHashCode();
-                if (this.IconUrl != null)
-                    hashCode = hashCode * 59 + this.IconUrl.GetHashCode();
-                if (this.Public != null)
-                    hashCode = hashCode * 59 + this.Public.GetHashCode();
-                if (this.ChartUrl != null)
-                    hashCode = hashCode * 59 + this.ChartUrl.GetHashCode();
-                if (this.CreateAt != null)
-                    hashCode = hashCode * 59 + this.CreateAt.GetHashCode();
-                if (this.UpdateAt != null)
-                    hashCode = hashCode * 59 + this.UpdateAt.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Values != null) hashCode = hashCode * 59 + this.Values.GetHashCode();
+                if (this.Translate != null) hashCode = hashCode * 59 + this.Translate.GetHashCode();
+                if (this.Instruction != null) hashCode = hashCode * 59 + this.Instruction.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Source != null) hashCode = hashCode * 59 + this.Source.GetHashCode();
+                if (this.IconUrl != null) hashCode = hashCode * 59 + this.IconUrl.GetHashCode();
+                if (this.Public != null) hashCode = hashCode * 59 + this.Public.GetHashCode();
+                if (this.ChartUrl != null) hashCode = hashCode * 59 + this.ChartUrl.GetHashCode();
+                if (this.CreateAt != null) hashCode = hashCode * 59 + this.CreateAt.GetHashCode();
+                if (this.UpdateAt != null) hashCode = hashCode * 59 + this.UpdateAt.GetHashCode();
                 return hashCode;
             }
         }

@@ -484,65 +484,20 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(ListFlavorSellPoliciesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FlavorId != input.FlavorId || (this.FlavorId != null && !this.FlavorId.Equals(input.FlavorId))) return false;
+            if (this.SellStatus != input.SellStatus) return false;
+            if (this.SellMode != input.SellMode) return false;
+            if (this.AvailabilityZoneId != input.AvailabilityZoneId || (this.AvailabilityZoneId != null && !this.AvailabilityZoneId.Equals(input.AvailabilityZoneId))) return false;
+            if (this.LongestSpotDurationHoursGt != input.LongestSpotDurationHoursGt || (this.LongestSpotDurationHoursGt != null && !this.LongestSpotDurationHoursGt.Equals(input.LongestSpotDurationHoursGt))) return false;
+            if (this.LargestSpotDurationCountGt != input.LargestSpotDurationCountGt || (this.LargestSpotDurationCountGt != null && !this.LargestSpotDurationCountGt.Equals(input.LargestSpotDurationCountGt))) return false;
+            if (this.LongestSpotDurationHours != input.LongestSpotDurationHours || (this.LongestSpotDurationHours != null && !this.LongestSpotDurationHours.Equals(input.LongestSpotDurationHours))) return false;
+            if (this.LargestSpotDurationCount != input.LargestSpotDurationCount || (this.LargestSpotDurationCount != null && !this.LargestSpotDurationCount.Equals(input.LargestSpotDurationCount))) return false;
+            if (this.InterruptionPolicy != input.InterruptionPolicy) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
 
-            return 
-                (
-                    this.FlavorId == input.FlavorId ||
-                    (this.FlavorId != null &&
-                    this.FlavorId.Equals(input.FlavorId))
-                ) && 
-                (
-                    this.SellStatus == input.SellStatus ||
-                    (this.SellStatus != null &&
-                    this.SellStatus.Equals(input.SellStatus))
-                ) && 
-                (
-                    this.SellMode == input.SellMode ||
-                    (this.SellMode != null &&
-                    this.SellMode.Equals(input.SellMode))
-                ) && 
-                (
-                    this.AvailabilityZoneId == input.AvailabilityZoneId ||
-                    (this.AvailabilityZoneId != null &&
-                    this.AvailabilityZoneId.Equals(input.AvailabilityZoneId))
-                ) && 
-                (
-                    this.LongestSpotDurationHoursGt == input.LongestSpotDurationHoursGt ||
-                    (this.LongestSpotDurationHoursGt != null &&
-                    this.LongestSpotDurationHoursGt.Equals(input.LongestSpotDurationHoursGt))
-                ) && 
-                (
-                    this.LargestSpotDurationCountGt == input.LargestSpotDurationCountGt ||
-                    (this.LargestSpotDurationCountGt != null &&
-                    this.LargestSpotDurationCountGt.Equals(input.LargestSpotDurationCountGt))
-                ) && 
-                (
-                    this.LongestSpotDurationHours == input.LongestSpotDurationHours ||
-                    (this.LongestSpotDurationHours != null &&
-                    this.LongestSpotDurationHours.Equals(input.LongestSpotDurationHours))
-                ) && 
-                (
-                    this.LargestSpotDurationCount == input.LargestSpotDurationCount ||
-                    (this.LargestSpotDurationCount != null &&
-                    this.LargestSpotDurationCount.Equals(input.LargestSpotDurationCount))
-                ) && 
-                (
-                    this.InterruptionPolicy == input.InterruptionPolicy ||
-                    (this.InterruptionPolicy != null &&
-                    this.InterruptionPolicy.Equals(input.InterruptionPolicy))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                );
+            return true;
         }
 
         /// <summary>
@@ -552,29 +507,18 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FlavorId != null)
-                    hashCode = hashCode * 59 + this.FlavorId.GetHashCode();
-                if (this.SellStatus != null)
-                    hashCode = hashCode * 59 + this.SellStatus.GetHashCode();
-                if (this.SellMode != null)
-                    hashCode = hashCode * 59 + this.SellMode.GetHashCode();
-                if (this.AvailabilityZoneId != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZoneId.GetHashCode();
-                if (this.LongestSpotDurationHoursGt != null)
-                    hashCode = hashCode * 59 + this.LongestSpotDurationHoursGt.GetHashCode();
-                if (this.LargestSpotDurationCountGt != null)
-                    hashCode = hashCode * 59 + this.LargestSpotDurationCountGt.GetHashCode();
-                if (this.LongestSpotDurationHours != null)
-                    hashCode = hashCode * 59 + this.LongestSpotDurationHours.GetHashCode();
-                if (this.LargestSpotDurationCount != null)
-                    hashCode = hashCode * 59 + this.LargestSpotDurationCount.GetHashCode();
-                if (this.InterruptionPolicy != null)
-                    hashCode = hashCode * 59 + this.InterruptionPolicy.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                var hashCode = 41;
+                if (this.FlavorId != null) hashCode = hashCode * 59 + this.FlavorId.GetHashCode();
+                hashCode = hashCode * 59 + this.SellStatus.GetHashCode();
+                hashCode = hashCode * 59 + this.SellMode.GetHashCode();
+                if (this.AvailabilityZoneId != null) hashCode = hashCode * 59 + this.AvailabilityZoneId.GetHashCode();
+                if (this.LongestSpotDurationHoursGt != null) hashCode = hashCode * 59 + this.LongestSpotDurationHoursGt.GetHashCode();
+                if (this.LargestSpotDurationCountGt != null) hashCode = hashCode * 59 + this.LargestSpotDurationCountGt.GetHashCode();
+                if (this.LongestSpotDurationHours != null) hashCode = hashCode * 59 + this.LongestSpotDurationHours.GetHashCode();
+                if (this.LargestSpotDurationCount != null) hashCode = hashCode * 59 + this.LargestSpotDurationCount.GetHashCode();
+                hashCode = hashCode * 59 + this.InterruptionPolicy.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 return hashCode;
             }
         }

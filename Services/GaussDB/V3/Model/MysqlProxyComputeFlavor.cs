@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(MysqlProxyComputeFlavor input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Vcpus != input.Vcpus || (this.Vcpus != null && !this.Vcpus.Equals(input.Vcpus))) return false;
+            if (this.Ram != input.Ram || (this.Ram != null && !this.Ram.Equals(input.Ram))) return false;
+            if (this.DbType != input.DbType || (this.DbType != null && !this.DbType.Equals(input.DbType))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.SpecCode != input.SpecCode || (this.SpecCode != null && !this.SpecCode.Equals(input.SpecCode))) return false;
+            if (this.AzStatus != input.AzStatus || (this.AzStatus != null && !this.AzStatus.Equals(input.AzStatus))) return false;
 
-            return 
-                (
-                    this.Vcpus == input.Vcpus ||
-                    (this.Vcpus != null &&
-                    this.Vcpus.Equals(input.Vcpus))
-                ) && 
-                (
-                    this.Ram == input.Ram ||
-                    (this.Ram != null &&
-                    this.Ram.Equals(input.Ram))
-                ) && 
-                (
-                    this.DbType == input.DbType ||
-                    (this.DbType != null &&
-                    this.DbType.Equals(input.DbType))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.SpecCode == input.SpecCode ||
-                    (this.SpecCode != null &&
-                    this.SpecCode.Equals(input.SpecCode))
-                ) && 
-                (
-                    this.AzStatus == input.AzStatus ||
-                    (this.AzStatus != null &&
-                    this.AzStatus.Equals(input.AzStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Vcpus != null)
-                    hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
-                if (this.Ram != null)
-                    hashCode = hashCode * 59 + this.Ram.GetHashCode();
-                if (this.DbType != null)
-                    hashCode = hashCode * 59 + this.DbType.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.SpecCode != null)
-                    hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
-                if (this.AzStatus != null)
-                    hashCode = hashCode * 59 + this.AzStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.Vcpus != null) hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
+                if (this.Ram != null) hashCode = hashCode * 59 + this.Ram.GetHashCode();
+                if (this.DbType != null) hashCode = hashCode * 59 + this.DbType.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.SpecCode != null) hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
+                if (this.AzStatus != null) hashCode = hashCode * 59 + this.AzStatus.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ProxyUpdateProxyConnectionPoolTypeRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ConnectionPoolType != input.ConnectionPoolType || (this.ConnectionPoolType != null && !this.ConnectionPoolType.Equals(input.ConnectionPoolType))) return false;
 
-            return 
-                (
-                    this.ConnectionPoolType == input.ConnectionPoolType ||
-                    (this.ConnectionPoolType != null &&
-                    this.ConnectionPoolType.Equals(input.ConnectionPoolType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ConnectionPoolType != null)
-                    hashCode = hashCode * 59 + this.ConnectionPoolType.GetHashCode();
+                var hashCode = 41;
+                if (this.ConnectionPoolType != null) hashCode = hashCode * 59 + this.ConnectionPoolType.GetHashCode();
                 return hashCode;
             }
         }

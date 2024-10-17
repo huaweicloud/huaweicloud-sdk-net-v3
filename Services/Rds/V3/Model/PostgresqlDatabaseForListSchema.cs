@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(PostgresqlDatabaseForListSchema input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SchemaName != input.SchemaName || (this.SchemaName != null && !this.SchemaName.Equals(input.SchemaName))) return false;
+            if (this.Owner != input.Owner || (this.Owner != null && !this.Owner.Equals(input.Owner))) return false;
 
-            return 
-                (
-                    this.SchemaName == input.SchemaName ||
-                    (this.SchemaName != null &&
-                    this.SchemaName.Equals(input.SchemaName))
-                ) && 
-                (
-                    this.Owner == input.Owner ||
-                    (this.Owner != null &&
-                    this.Owner.Equals(input.Owner))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SchemaName != null)
-                    hashCode = hashCode * 59 + this.SchemaName.GetHashCode();
-                if (this.Owner != null)
-                    hashCode = hashCode * 59 + this.Owner.GetHashCode();
+                var hashCode = 41;
+                if (this.SchemaName != null) hashCode = hashCode * 59 + this.SchemaName.GetHashCode();
+                if (this.Owner != null) hashCode = hashCode * 59 + this.Owner.GetHashCode();
                 return hashCode;
             }
         }

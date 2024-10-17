@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(TopicBrokers input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BrokerName != input.BrokerName || (this.BrokerName != null && !this.BrokerName.Equals(input.BrokerName))) return false;
+            if (this.ReadQueueNum != input.ReadQueueNum || (this.ReadQueueNum != null && !this.ReadQueueNum.Equals(input.ReadQueueNum))) return false;
+            if (this.WriteQueueNum != input.WriteQueueNum || (this.WriteQueueNum != null && !this.WriteQueueNum.Equals(input.WriteQueueNum))) return false;
 
-            return 
-                (
-                    this.BrokerName == input.BrokerName ||
-                    (this.BrokerName != null &&
-                    this.BrokerName.Equals(input.BrokerName))
-                ) && 
-                (
-                    this.ReadQueueNum == input.ReadQueueNum ||
-                    (this.ReadQueueNum != null &&
-                    this.ReadQueueNum.Equals(input.ReadQueueNum))
-                ) && 
-                (
-                    this.WriteQueueNum == input.WriteQueueNum ||
-                    (this.WriteQueueNum != null &&
-                    this.WriteQueueNum.Equals(input.WriteQueueNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BrokerName != null)
-                    hashCode = hashCode * 59 + this.BrokerName.GetHashCode();
-                if (this.ReadQueueNum != null)
-                    hashCode = hashCode * 59 + this.ReadQueueNum.GetHashCode();
-                if (this.WriteQueueNum != null)
-                    hashCode = hashCode * 59 + this.WriteQueueNum.GetHashCode();
+                var hashCode = 41;
+                if (this.BrokerName != null) hashCode = hashCode * 59 + this.BrokerName.GetHashCode();
+                if (this.ReadQueueNum != null) hashCode = hashCode * 59 + this.ReadQueueNum.GetHashCode();
+                if (this.WriteQueueNum != null) hashCode = hashCode * 59 + this.WriteQueueNum.GetHashCode();
                 return hashCode;
             }
         }

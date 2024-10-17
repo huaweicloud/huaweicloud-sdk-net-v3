@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(RedisUserForCreation input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Password != input.Password || (this.Password != null && !this.Password.Equals(input.Password))) return false;
+            if (this.Databases != input.Databases || (this.Databases != null && input.Databases != null && !this.Databases.SequenceEqual(input.Databases))) return false;
+            if (this.Privilege != input.Privilege || (this.Privilege != null && !this.Privilege.Equals(input.Privilege))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Password == input.Password ||
-                    (this.Password != null &&
-                    this.Password.Equals(input.Password))
-                ) && 
-                (
-                    this.Databases == input.Databases ||
-                    this.Databases != null &&
-                    input.Databases != null &&
-                    this.Databases.SequenceEqual(input.Databases)
-                ) && 
-                (
-                    this.Privilege == input.Privilege ||
-                    (this.Privilege != null &&
-                    this.Privilege.Equals(input.Privilege))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Password != null)
-                    hashCode = hashCode * 59 + this.Password.GetHashCode();
-                if (this.Databases != null)
-                    hashCode = hashCode * 59 + this.Databases.GetHashCode();
-                if (this.Privilege != null)
-                    hashCode = hashCode * 59 + this.Privilege.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Password != null) hashCode = hashCode * 59 + this.Password.GetHashCode();
+                if (this.Databases != null) hashCode = hashCode * 59 + this.Databases.GetHashCode();
+                if (this.Privilege != null) hashCode = hashCode * 59 + this.Privilege.GetHashCode();
                 return hashCode;
             }
         }

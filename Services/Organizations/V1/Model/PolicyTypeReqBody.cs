@@ -170,20 +170,11 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(PolicyTypeReqBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PolicyType != input.PolicyType) return false;
+            if (this.RootId != input.RootId || (this.RootId != null && !this.RootId.Equals(input.RootId))) return false;
 
-            return 
-                (
-                    this.PolicyType == input.PolicyType ||
-                    (this.PolicyType != null &&
-                    this.PolicyType.Equals(input.PolicyType))
-                ) && 
-                (
-                    this.RootId == input.RootId ||
-                    (this.RootId != null &&
-                    this.RootId.Equals(input.RootId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -193,11 +184,9 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PolicyType != null)
-                    hashCode = hashCode * 59 + this.PolicyType.GetHashCode();
-                if (this.RootId != null)
-                    hashCode = hashCode * 59 + this.RootId.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.PolicyType.GetHashCode();
+                if (this.RootId != null) hashCode = hashCode * 59 + this.RootId.GetHashCode();
                 return hashCode;
             }
         }

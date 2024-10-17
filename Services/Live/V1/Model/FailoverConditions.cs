@@ -170,20 +170,11 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(FailoverConditions input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InputLossThresholdMsec != input.InputLossThresholdMsec || (this.InputLossThresholdMsec != null && !this.InputLossThresholdMsec.Equals(input.InputLossThresholdMsec))) return false;
+            if (this.InputPreference != input.InputPreference) return false;
 
-            return 
-                (
-                    this.InputLossThresholdMsec == input.InputLossThresholdMsec ||
-                    (this.InputLossThresholdMsec != null &&
-                    this.InputLossThresholdMsec.Equals(input.InputLossThresholdMsec))
-                ) && 
-                (
-                    this.InputPreference == input.InputPreference ||
-                    (this.InputPreference != null &&
-                    this.InputPreference.Equals(input.InputPreference))
-                );
+            return true;
         }
 
         /// <summary>
@@ -193,11 +184,9 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InputLossThresholdMsec != null)
-                    hashCode = hashCode * 59 + this.InputLossThresholdMsec.GetHashCode();
-                if (this.InputPreference != null)
-                    hashCode = hashCode * 59 + this.InputPreference.GetHashCode();
+                var hashCode = 41;
+                if (this.InputLossThresholdMsec != null) hashCode = hashCode * 59 + this.InputLossThresholdMsec.GetHashCode();
+                hashCode = hashCode * 59 + this.InputPreference.GetHashCode();
                 return hashCode;
             }
         }

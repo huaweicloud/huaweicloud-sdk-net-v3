@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(RestoreDatabaseInstance input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RestoreTime != input.RestoreTime || (this.RestoreTime != null && !this.RestoreTime.Equals(input.RestoreTime))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.IsFastRestore != input.IsFastRestore || (this.IsFastRestore != null && !this.IsFastRestore.Equals(input.IsFastRestore))) return false;
+            if (this.Databases != input.Databases || (this.Databases != null && input.Databases != null && !this.Databases.SequenceEqual(input.Databases))) return false;
 
-            return 
-                (
-                    this.RestoreTime == input.RestoreTime ||
-                    (this.RestoreTime != null &&
-                    this.RestoreTime.Equals(input.RestoreTime))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.IsFastRestore == input.IsFastRestore ||
-                    (this.IsFastRestore != null &&
-                    this.IsFastRestore.Equals(input.IsFastRestore))
-                ) && 
-                (
-                    this.Databases == input.Databases ||
-                    this.Databases != null &&
-                    input.Databases != null &&
-                    this.Databases.SequenceEqual(input.Databases)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RestoreTime != null)
-                    hashCode = hashCode * 59 + this.RestoreTime.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.IsFastRestore != null)
-                    hashCode = hashCode * 59 + this.IsFastRestore.GetHashCode();
-                if (this.Databases != null)
-                    hashCode = hashCode * 59 + this.Databases.GetHashCode();
+                var hashCode = 41;
+                if (this.RestoreTime != null) hashCode = hashCode * 59 + this.RestoreTime.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.IsFastRestore != null) hashCode = hashCode * 59 + this.IsFastRestore.GetHashCode();
+                if (this.Databases != null) hashCode = hashCode * 59 + this.Databases.GetHashCode();
                 return hashCode;
             }
         }

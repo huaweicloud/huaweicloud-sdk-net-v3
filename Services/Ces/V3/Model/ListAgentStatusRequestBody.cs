@@ -436,31 +436,13 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         /// </summary>
         public bool Equals(ListAgentStatusRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceIds != input.InstanceIds || (this.InstanceIds != null && input.InstanceIds != null && !this.InstanceIds.SequenceEqual(input.InstanceIds))) return false;
+            if (this.UniagentStatus != input.UniagentStatus) return false;
+            if (this.ExtensionName != input.ExtensionName) return false;
+            if (this.ExtensionStatus != input.ExtensionStatus) return false;
 
-            return 
-                (
-                    this.InstanceIds == input.InstanceIds ||
-                    this.InstanceIds != null &&
-                    input.InstanceIds != null &&
-                    this.InstanceIds.SequenceEqual(input.InstanceIds)
-                ) && 
-                (
-                    this.UniagentStatus == input.UniagentStatus ||
-                    (this.UniagentStatus != null &&
-                    this.UniagentStatus.Equals(input.UniagentStatus))
-                ) && 
-                (
-                    this.ExtensionName == input.ExtensionName ||
-                    (this.ExtensionName != null &&
-                    this.ExtensionName.Equals(input.ExtensionName))
-                ) && 
-                (
-                    this.ExtensionStatus == input.ExtensionStatus ||
-                    (this.ExtensionStatus != null &&
-                    this.ExtensionStatus.Equals(input.ExtensionStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -470,15 +452,11 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceIds != null)
-                    hashCode = hashCode * 59 + this.InstanceIds.GetHashCode();
-                if (this.UniagentStatus != null)
-                    hashCode = hashCode * 59 + this.UniagentStatus.GetHashCode();
-                if (this.ExtensionName != null)
-                    hashCode = hashCode * 59 + this.ExtensionName.GetHashCode();
-                if (this.ExtensionStatus != null)
-                    hashCode = hashCode * 59 + this.ExtensionStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceIds != null) hashCode = hashCode * 59 + this.InstanceIds.GetHashCode();
+                hashCode = hashCode * 59 + this.UniagentStatus.GetHashCode();
+                hashCode = hashCode * 59 + this.ExtensionName.GetHashCode();
+                hashCode = hashCode * 59 + this.ExtensionStatus.GetHashCode();
                 return hashCode;
             }
         }

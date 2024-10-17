@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(MigrateSubNetworkInterfaceRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DryRun != input.DryRun || (this.DryRun != null && !this.DryRun.Equals(input.DryRun))) return false;
+            if (this.MigrationInfo != input.MigrationInfo || (this.MigrationInfo != null && !this.MigrationInfo.Equals(input.MigrationInfo))) return false;
 
-            return 
-                (
-                    this.DryRun == input.DryRun ||
-                    (this.DryRun != null &&
-                    this.DryRun.Equals(input.DryRun))
-                ) && 
-                (
-                    this.MigrationInfo == input.MigrationInfo ||
-                    (this.MigrationInfo != null &&
-                    this.MigrationInfo.Equals(input.MigrationInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DryRun != null)
-                    hashCode = hashCode * 59 + this.DryRun.GetHashCode();
-                if (this.MigrationInfo != null)
-                    hashCode = hashCode * 59 + this.MigrationInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.DryRun != null) hashCode = hashCode * 59 + this.DryRun.GetHashCode();
+                if (this.MigrationInfo != null) hashCode = hashCode * 59 + this.MigrationInfo.GetHashCode();
                 return hashCode;
             }
         }

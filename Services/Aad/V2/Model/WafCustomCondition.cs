@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// </summary>
         public bool Equals(WafCustomCondition input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Category != input.Category || (this.Category != null && !this.Category.Equals(input.Category))) return false;
+            if (this.Index != input.Index || (this.Index != null && !this.Index.Equals(input.Index))) return false;
+            if (this.LogicOperation != input.LogicOperation || (this.LogicOperation != null && !this.LogicOperation.Equals(input.LogicOperation))) return false;
+            if (this.Contents != input.Contents || (this.Contents != null && input.Contents != null && !this.Contents.SequenceEqual(input.Contents))) return false;
 
-            return 
-                (
-                    this.Category == input.Category ||
-                    (this.Category != null &&
-                    this.Category.Equals(input.Category))
-                ) && 
-                (
-                    this.Index == input.Index ||
-                    (this.Index != null &&
-                    this.Index.Equals(input.Index))
-                ) && 
-                (
-                    this.LogicOperation == input.LogicOperation ||
-                    (this.LogicOperation != null &&
-                    this.LogicOperation.Equals(input.LogicOperation))
-                ) && 
-                (
-                    this.Contents == input.Contents ||
-                    this.Contents != null &&
-                    input.Contents != null &&
-                    this.Contents.SequenceEqual(input.Contents)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Category != null)
-                    hashCode = hashCode * 59 + this.Category.GetHashCode();
-                if (this.Index != null)
-                    hashCode = hashCode * 59 + this.Index.GetHashCode();
-                if (this.LogicOperation != null)
-                    hashCode = hashCode * 59 + this.LogicOperation.GetHashCode();
-                if (this.Contents != null)
-                    hashCode = hashCode * 59 + this.Contents.GetHashCode();
+                var hashCode = 41;
+                if (this.Category != null) hashCode = hashCode * 59 + this.Category.GetHashCode();
+                if (this.Index != null) hashCode = hashCode * 59 + this.Index.GetHashCode();
+                if (this.LogicOperation != null) hashCode = hashCode * 59 + this.LogicOperation.GetHashCode();
+                if (this.Contents != null) hashCode = hashCode * 59 + this.Contents.GetHashCode();
                 return hashCode;
             }
         }

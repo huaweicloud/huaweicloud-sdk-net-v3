@@ -1210,170 +1210,41 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         public bool Equals(GlanceListImagesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Imagetype != input.Imagetype) return false;
+            if (this.Isregistered != input.Isregistered || (this.Isregistered != null && !this.Isregistered.Equals(input.Isregistered))) return false;
+            if (this.OsBit != input.OsBit) return false;
+            if (this.OsType != input.OsType) return false;
+            if (this.Platform != input.Platform) return false;
+            if (this.SupportDiskintensive != input.SupportDiskintensive || (this.SupportDiskintensive != null && !this.SupportDiskintensive.Equals(input.SupportDiskintensive))) return false;
+            if (this.SupportHighperformance != input.SupportHighperformance || (this.SupportHighperformance != null && !this.SupportHighperformance.Equals(input.SupportHighperformance))) return false;
+            if (this.SupportKvm != input.SupportKvm || (this.SupportKvm != null && !this.SupportKvm.Equals(input.SupportKvm))) return false;
+            if (this.SupportKvmGpuType != input.SupportKvmGpuType || (this.SupportKvmGpuType != null && !this.SupportKvmGpuType.Equals(input.SupportKvmGpuType))) return false;
+            if (this.SupportKvmInfiniband != input.SupportKvmInfiniband || (this.SupportKvmInfiniband != null && !this.SupportKvmInfiniband.Equals(input.SupportKvmInfiniband))) return false;
+            if (this.SupportLargememory != input.SupportLargememory || (this.SupportLargememory != null && !this.SupportLargememory.Equals(input.SupportLargememory))) return false;
+            if (this.SupportXen != input.SupportXen || (this.SupportXen != null && !this.SupportXen.Equals(input.SupportXen))) return false;
+            if (this.SupportXenGpuType != input.SupportXenGpuType || (this.SupportXenGpuType != null && !this.SupportXenGpuType.Equals(input.SupportXenGpuType))) return false;
+            if (this.SupportXenHana != input.SupportXenHana || (this.SupportXenHana != null && !this.SupportXenHana.Equals(input.SupportXenHana))) return false;
+            if (this.ContainerFormat != input.ContainerFormat || (this.ContainerFormat != null && !this.ContainerFormat.Equals(input.ContainerFormat))) return false;
+            if (this.DiskFormat != input.DiskFormat) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.MemberStatus != input.MemberStatus || (this.MemberStatus != null && !this.MemberStatus.Equals(input.MemberStatus))) return false;
+            if (this.MinDisk != input.MinDisk || (this.MinDisk != null && !this.MinDisk.Equals(input.MinDisk))) return false;
+            if (this.MinRam != input.MinRam || (this.MinRam != null && !this.MinRam.Equals(input.MinRam))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Owner != input.Owner || (this.Owner != null && !this.Owner.Equals(input.Owner))) return false;
+            if (this.Protected != input.Protected || (this.Protected != null && !this.Protected.Equals(input.Protected))) return false;
+            if (this.SortDir != input.SortDir || (this.SortDir != null && !this.SortDir.Equals(input.SortDir))) return false;
+            if (this.SortKey != input.SortKey || (this.SortKey != null && !this.SortKey.Equals(input.SortKey))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.Tag != input.Tag || (this.Tag != null && !this.Tag.Equals(input.Tag))) return false;
+            if (this.Visibility != input.Visibility) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
 
-            return 
-                (
-                    this.Imagetype == input.Imagetype ||
-                    (this.Imagetype != null &&
-                    this.Imagetype.Equals(input.Imagetype))
-                ) && 
-                (
-                    this.Isregistered == input.Isregistered ||
-                    (this.Isregistered != null &&
-                    this.Isregistered.Equals(input.Isregistered))
-                ) && 
-                (
-                    this.OsBit == input.OsBit ||
-                    (this.OsBit != null &&
-                    this.OsBit.Equals(input.OsBit))
-                ) && 
-                (
-                    this.OsType == input.OsType ||
-                    (this.OsType != null &&
-                    this.OsType.Equals(input.OsType))
-                ) && 
-                (
-                    this.Platform == input.Platform ||
-                    (this.Platform != null &&
-                    this.Platform.Equals(input.Platform))
-                ) && 
-                (
-                    this.SupportDiskintensive == input.SupportDiskintensive ||
-                    (this.SupportDiskintensive != null &&
-                    this.SupportDiskintensive.Equals(input.SupportDiskintensive))
-                ) && 
-                (
-                    this.SupportHighperformance == input.SupportHighperformance ||
-                    (this.SupportHighperformance != null &&
-                    this.SupportHighperformance.Equals(input.SupportHighperformance))
-                ) && 
-                (
-                    this.SupportKvm == input.SupportKvm ||
-                    (this.SupportKvm != null &&
-                    this.SupportKvm.Equals(input.SupportKvm))
-                ) && 
-                (
-                    this.SupportKvmGpuType == input.SupportKvmGpuType ||
-                    (this.SupportKvmGpuType != null &&
-                    this.SupportKvmGpuType.Equals(input.SupportKvmGpuType))
-                ) && 
-                (
-                    this.SupportKvmInfiniband == input.SupportKvmInfiniband ||
-                    (this.SupportKvmInfiniband != null &&
-                    this.SupportKvmInfiniband.Equals(input.SupportKvmInfiniband))
-                ) && 
-                (
-                    this.SupportLargememory == input.SupportLargememory ||
-                    (this.SupportLargememory != null &&
-                    this.SupportLargememory.Equals(input.SupportLargememory))
-                ) && 
-                (
-                    this.SupportXen == input.SupportXen ||
-                    (this.SupportXen != null &&
-                    this.SupportXen.Equals(input.SupportXen))
-                ) && 
-                (
-                    this.SupportXenGpuType == input.SupportXenGpuType ||
-                    (this.SupportXenGpuType != null &&
-                    this.SupportXenGpuType.Equals(input.SupportXenGpuType))
-                ) && 
-                (
-                    this.SupportXenHana == input.SupportXenHana ||
-                    (this.SupportXenHana != null &&
-                    this.SupportXenHana.Equals(input.SupportXenHana))
-                ) && 
-                (
-                    this.ContainerFormat == input.ContainerFormat ||
-                    (this.ContainerFormat != null &&
-                    this.ContainerFormat.Equals(input.ContainerFormat))
-                ) && 
-                (
-                    this.DiskFormat == input.DiskFormat ||
-                    (this.DiskFormat != null &&
-                    this.DiskFormat.Equals(input.DiskFormat))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.MemberStatus == input.MemberStatus ||
-                    (this.MemberStatus != null &&
-                    this.MemberStatus.Equals(input.MemberStatus))
-                ) && 
-                (
-                    this.MinDisk == input.MinDisk ||
-                    (this.MinDisk != null &&
-                    this.MinDisk.Equals(input.MinDisk))
-                ) && 
-                (
-                    this.MinRam == input.MinRam ||
-                    (this.MinRam != null &&
-                    this.MinRam.Equals(input.MinRam))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Owner == input.Owner ||
-                    (this.Owner != null &&
-                    this.Owner.Equals(input.Owner))
-                ) && 
-                (
-                    this.Protected == input.Protected ||
-                    (this.Protected != null &&
-                    this.Protected.Equals(input.Protected))
-                ) && 
-                (
-                    this.SortDir == input.SortDir ||
-                    (this.SortDir != null &&
-                    this.SortDir.Equals(input.SortDir))
-                ) && 
-                (
-                    this.SortKey == input.SortKey ||
-                    (this.SortKey != null &&
-                    this.SortKey.Equals(input.SortKey))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Tag == input.Tag ||
-                    (this.Tag != null &&
-                    this.Tag.Equals(input.Tag))
-                ) && 
-                (
-                    this.Visibility == input.Visibility ||
-                    (this.Visibility != null &&
-                    this.Visibility.Equals(input.Visibility))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -1383,71 +1254,39 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Imagetype != null)
-                    hashCode = hashCode * 59 + this.Imagetype.GetHashCode();
-                if (this.Isregistered != null)
-                    hashCode = hashCode * 59 + this.Isregistered.GetHashCode();
-                if (this.OsBit != null)
-                    hashCode = hashCode * 59 + this.OsBit.GetHashCode();
-                if (this.OsType != null)
-                    hashCode = hashCode * 59 + this.OsType.GetHashCode();
-                if (this.Platform != null)
-                    hashCode = hashCode * 59 + this.Platform.GetHashCode();
-                if (this.SupportDiskintensive != null)
-                    hashCode = hashCode * 59 + this.SupportDiskintensive.GetHashCode();
-                if (this.SupportHighperformance != null)
-                    hashCode = hashCode * 59 + this.SupportHighperformance.GetHashCode();
-                if (this.SupportKvm != null)
-                    hashCode = hashCode * 59 + this.SupportKvm.GetHashCode();
-                if (this.SupportKvmGpuType != null)
-                    hashCode = hashCode * 59 + this.SupportKvmGpuType.GetHashCode();
-                if (this.SupportKvmInfiniband != null)
-                    hashCode = hashCode * 59 + this.SupportKvmInfiniband.GetHashCode();
-                if (this.SupportLargememory != null)
-                    hashCode = hashCode * 59 + this.SupportLargememory.GetHashCode();
-                if (this.SupportXen != null)
-                    hashCode = hashCode * 59 + this.SupportXen.GetHashCode();
-                if (this.SupportXenGpuType != null)
-                    hashCode = hashCode * 59 + this.SupportXenGpuType.GetHashCode();
-                if (this.SupportXenHana != null)
-                    hashCode = hashCode * 59 + this.SupportXenHana.GetHashCode();
-                if (this.ContainerFormat != null)
-                    hashCode = hashCode * 59 + this.ContainerFormat.GetHashCode();
-                if (this.DiskFormat != null)
-                    hashCode = hashCode * 59 + this.DiskFormat.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.MemberStatus != null)
-                    hashCode = hashCode * 59 + this.MemberStatus.GetHashCode();
-                if (this.MinDisk != null)
-                    hashCode = hashCode * 59 + this.MinDisk.GetHashCode();
-                if (this.MinRam != null)
-                    hashCode = hashCode * 59 + this.MinRam.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Owner != null)
-                    hashCode = hashCode * 59 + this.Owner.GetHashCode();
-                if (this.Protected != null)
-                    hashCode = hashCode * 59 + this.Protected.GetHashCode();
-                if (this.SortDir != null)
-                    hashCode = hashCode * 59 + this.SortDir.GetHashCode();
-                if (this.SortKey != null)
-                    hashCode = hashCode * 59 + this.SortKey.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Tag != null)
-                    hashCode = hashCode * 59 + this.Tag.GetHashCode();
-                if (this.Visibility != null)
-                    hashCode = hashCode * 59 + this.Visibility.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Imagetype.GetHashCode();
+                if (this.Isregistered != null) hashCode = hashCode * 59 + this.Isregistered.GetHashCode();
+                hashCode = hashCode * 59 + this.OsBit.GetHashCode();
+                hashCode = hashCode * 59 + this.OsType.GetHashCode();
+                hashCode = hashCode * 59 + this.Platform.GetHashCode();
+                if (this.SupportDiskintensive != null) hashCode = hashCode * 59 + this.SupportDiskintensive.GetHashCode();
+                if (this.SupportHighperformance != null) hashCode = hashCode * 59 + this.SupportHighperformance.GetHashCode();
+                if (this.SupportKvm != null) hashCode = hashCode * 59 + this.SupportKvm.GetHashCode();
+                if (this.SupportKvmGpuType != null) hashCode = hashCode * 59 + this.SupportKvmGpuType.GetHashCode();
+                if (this.SupportKvmInfiniband != null) hashCode = hashCode * 59 + this.SupportKvmInfiniband.GetHashCode();
+                if (this.SupportLargememory != null) hashCode = hashCode * 59 + this.SupportLargememory.GetHashCode();
+                if (this.SupportXen != null) hashCode = hashCode * 59 + this.SupportXen.GetHashCode();
+                if (this.SupportXenGpuType != null) hashCode = hashCode * 59 + this.SupportXenGpuType.GetHashCode();
+                if (this.SupportXenHana != null) hashCode = hashCode * 59 + this.SupportXenHana.GetHashCode();
+                if (this.ContainerFormat != null) hashCode = hashCode * 59 + this.ContainerFormat.GetHashCode();
+                hashCode = hashCode * 59 + this.DiskFormat.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.MemberStatus != null) hashCode = hashCode * 59 + this.MemberStatus.GetHashCode();
+                if (this.MinDisk != null) hashCode = hashCode * 59 + this.MinDisk.GetHashCode();
+                if (this.MinRam != null) hashCode = hashCode * 59 + this.MinRam.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Owner != null) hashCode = hashCode * 59 + this.Owner.GetHashCode();
+                if (this.Protected != null) hashCode = hashCode * 59 + this.Protected.GetHashCode();
+                if (this.SortDir != null) hashCode = hashCode * 59 + this.SortDir.GetHashCode();
+                if (this.SortKey != null) hashCode = hashCode * 59 + this.SortKey.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Tag != null) hashCode = hashCode * 59 + this.Tag.GetHashCode();
+                hashCode = hashCode * 59 + this.Visibility.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 return hashCode;
             }
         }

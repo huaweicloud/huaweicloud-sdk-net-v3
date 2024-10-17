@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(FunctionGraphUrnRequiredPrimitiveTypeHolder input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FunctionGraphUrn != input.FunctionGraphUrn || (this.FunctionGraphUrn != null && !this.FunctionGraphUrn.Equals(input.FunctionGraphUrn))) return false;
 
-            return 
-                (
-                    this.FunctionGraphUrn == input.FunctionGraphUrn ||
-                    (this.FunctionGraphUrn != null &&
-                    this.FunctionGraphUrn.Equals(input.FunctionGraphUrn))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FunctionGraphUrn != null)
-                    hashCode = hashCode * 59 + this.FunctionGraphUrn.GetHashCode();
+                var hashCode = 41;
+                if (this.FunctionGraphUrn != null) hashCode = hashCode * 59 + this.FunctionGraphUrn.GetHashCode();
                 return hashCode;
             }
         }

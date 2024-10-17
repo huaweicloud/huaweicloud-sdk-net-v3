@@ -1606,245 +1606,50 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(ListPublicipsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Fields != input.Fields || (this.Fields != null && input.Fields != null && !this.Fields.SequenceEqual(input.Fields))) return false;
+            if (this.SortKey != input.SortKey) return false;
+            if (this.SortDir != input.SortDir) return false;
+            if (this.Id != input.Id || (this.Id != null && input.Id != null && !this.Id.SequenceEqual(input.Id))) return false;
+            if (this.IpVersion != input.IpVersion || (this.IpVersion != null && input.IpVersion != null && !this.IpVersion.SequenceEqual(input.IpVersion))) return false;
+            if (this.PublicIpAddress != input.PublicIpAddress || (this.PublicIpAddress != null && input.PublicIpAddress != null && !this.PublicIpAddress.SequenceEqual(input.PublicIpAddress))) return false;
+            if (this.PublicIpAddressLike != input.PublicIpAddressLike || (this.PublicIpAddressLike != null && !this.PublicIpAddressLike.Equals(input.PublicIpAddressLike))) return false;
+            if (this.PublicIpv6Address != input.PublicIpv6Address || (this.PublicIpv6Address != null && input.PublicIpv6Address != null && !this.PublicIpv6Address.SequenceEqual(input.PublicIpv6Address))) return false;
+            if (this.PublicIpv6AddressLike != input.PublicIpv6AddressLike || (this.PublicIpv6AddressLike != null && !this.PublicIpv6AddressLike.Equals(input.PublicIpv6AddressLike))) return false;
+            if (this.Type != input.Type || (this.Type != null && input.Type != null && !this.Type.SequenceEqual(input.Type))) return false;
+            if (this.NetworkType != input.NetworkType || (this.NetworkType != null && input.NetworkType != null && !this.NetworkType.SequenceEqual(input.NetworkType))) return false;
+            if (this.PublicipPoolName != input.PublicipPoolName || (this.PublicipPoolName != null && input.PublicipPoolName != null && !this.PublicipPoolName.SequenceEqual(input.PublicipPoolName))) return false;
+            if (this.Status != input.Status || (this.Status != null && input.Status != null && !this.Status.SequenceEqual(input.Status))) return false;
+            if (this.AliasLike != input.AliasLike || (this.AliasLike != null && !this.AliasLike.Equals(input.AliasLike))) return false;
+            if (this.Alias != input.Alias || (this.Alias != null && input.Alias != null && !this.Alias.SequenceEqual(input.Alias))) return false;
+            if (this.Description != input.Description || (this.Description != null && input.Description != null && !this.Description.SequenceEqual(input.Description))) return false;
+            if (this.VnicPrivateIpAddress != input.VnicPrivateIpAddress || (this.VnicPrivateIpAddress != null && input.VnicPrivateIpAddress != null && !this.VnicPrivateIpAddress.SequenceEqual(input.VnicPrivateIpAddress))) return false;
+            if (this.VnicPrivateIpAddressLike != input.VnicPrivateIpAddressLike || (this.VnicPrivateIpAddressLike != null && !this.VnicPrivateIpAddressLike.Equals(input.VnicPrivateIpAddressLike))) return false;
+            if (this.VnicDeviceId != input.VnicDeviceId || (this.VnicDeviceId != null && input.VnicDeviceId != null && !this.VnicDeviceId.SequenceEqual(input.VnicDeviceId))) return false;
+            if (this.VnicDeviceOwner != input.VnicDeviceOwner || (this.VnicDeviceOwner != null && input.VnicDeviceOwner != null && !this.VnicDeviceOwner.SequenceEqual(input.VnicDeviceOwner))) return false;
+            if (this.VnicVpcId != input.VnicVpcId || (this.VnicVpcId != null && input.VnicVpcId != null && !this.VnicVpcId.SequenceEqual(input.VnicVpcId))) return false;
+            if (this.VnicPortId != input.VnicPortId || (this.VnicPortId != null && input.VnicPortId != null && !this.VnicPortId.SequenceEqual(input.VnicPortId))) return false;
+            if (this.VnicDeviceOwnerPrefixlike != input.VnicDeviceOwnerPrefixlike || (this.VnicDeviceOwnerPrefixlike != null && !this.VnicDeviceOwnerPrefixlike.Equals(input.VnicDeviceOwnerPrefixlike))) return false;
+            if (this.VnicInstanceType != input.VnicInstanceType || (this.VnicInstanceType != null && input.VnicInstanceType != null && !this.VnicInstanceType.SequenceEqual(input.VnicInstanceType))) return false;
+            if (this.VnicInstanceId != input.VnicInstanceId || (this.VnicInstanceId != null && input.VnicInstanceId != null && !this.VnicInstanceId.SequenceEqual(input.VnicInstanceId))) return false;
+            if (this.BandwidthId != input.BandwidthId || (this.BandwidthId != null && input.BandwidthId != null && !this.BandwidthId.SequenceEqual(input.BandwidthId))) return false;
+            if (this.BandwidthName != input.BandwidthName || (this.BandwidthName != null && input.BandwidthName != null && !this.BandwidthName.SequenceEqual(input.BandwidthName))) return false;
+            if (this.BandwidthNameLike != input.BandwidthNameLike || (this.BandwidthNameLike != null && input.BandwidthNameLike != null && !this.BandwidthNameLike.SequenceEqual(input.BandwidthNameLike))) return false;
+            if (this.BandwidthSize != input.BandwidthSize || (this.BandwidthSize != null && input.BandwidthSize != null && !this.BandwidthSize.SequenceEqual(input.BandwidthSize))) return false;
+            if (this.BandwidthShareType != input.BandwidthShareType || (this.BandwidthShareType != null && input.BandwidthShareType != null && !this.BandwidthShareType.SequenceEqual(input.BandwidthShareType))) return false;
+            if (this.BandwidthChargeMode != input.BandwidthChargeMode || (this.BandwidthChargeMode != null && input.BandwidthChargeMode != null && !this.BandwidthChargeMode.SequenceEqual(input.BandwidthChargeMode))) return false;
+            if (this.BillingInfo != input.BillingInfo || (this.BillingInfo != null && input.BillingInfo != null && !this.BillingInfo.SequenceEqual(input.BillingInfo))) return false;
+            if (this.BillingMode != input.BillingMode) return false;
+            if (this.AssociateInstanceType != input.AssociateInstanceType || (this.AssociateInstanceType != null && input.AssociateInstanceType != null && !this.AssociateInstanceType.SequenceEqual(input.AssociateInstanceType))) return false;
+            if (this.AssociateInstanceId != input.AssociateInstanceId || (this.AssociateInstanceId != null && input.AssociateInstanceId != null && !this.AssociateInstanceId.SequenceEqual(input.AssociateInstanceId))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && input.EnterpriseProjectId != null && !this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId))) return false;
+            if (this.PublicBorderGroup != input.PublicBorderGroup || (this.PublicBorderGroup != null && input.PublicBorderGroup != null && !this.PublicBorderGroup.SequenceEqual(input.PublicBorderGroup))) return false;
+            if (this.AllowShareBandwidthTypeAny != input.AllowShareBandwidthTypeAny || (this.AllowShareBandwidthTypeAny != null && input.AllowShareBandwidthTypeAny != null && !this.AllowShareBandwidthTypeAny.SequenceEqual(input.AllowShareBandwidthTypeAny))) return false;
 
-            return 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Fields == input.Fields ||
-                    this.Fields != null &&
-                    input.Fields != null &&
-                    this.Fields.SequenceEqual(input.Fields)
-                ) && 
-                (
-                    this.SortKey == input.SortKey ||
-                    (this.SortKey != null &&
-                    this.SortKey.Equals(input.SortKey))
-                ) && 
-                (
-                    this.SortDir == input.SortDir ||
-                    (this.SortDir != null &&
-                    this.SortDir.Equals(input.SortDir))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    this.Id != null &&
-                    input.Id != null &&
-                    this.Id.SequenceEqual(input.Id)
-                ) && 
-                (
-                    this.IpVersion == input.IpVersion ||
-                    this.IpVersion != null &&
-                    input.IpVersion != null &&
-                    this.IpVersion.SequenceEqual(input.IpVersion)
-                ) && 
-                (
-                    this.PublicIpAddress == input.PublicIpAddress ||
-                    this.PublicIpAddress != null &&
-                    input.PublicIpAddress != null &&
-                    this.PublicIpAddress.SequenceEqual(input.PublicIpAddress)
-                ) && 
-                (
-                    this.PublicIpAddressLike == input.PublicIpAddressLike ||
-                    (this.PublicIpAddressLike != null &&
-                    this.PublicIpAddressLike.Equals(input.PublicIpAddressLike))
-                ) && 
-                (
-                    this.PublicIpv6Address == input.PublicIpv6Address ||
-                    this.PublicIpv6Address != null &&
-                    input.PublicIpv6Address != null &&
-                    this.PublicIpv6Address.SequenceEqual(input.PublicIpv6Address)
-                ) && 
-                (
-                    this.PublicIpv6AddressLike == input.PublicIpv6AddressLike ||
-                    (this.PublicIpv6AddressLike != null &&
-                    this.PublicIpv6AddressLike.Equals(input.PublicIpv6AddressLike))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    this.Type != null &&
-                    input.Type != null &&
-                    this.Type.SequenceEqual(input.Type)
-                ) && 
-                (
-                    this.NetworkType == input.NetworkType ||
-                    this.NetworkType != null &&
-                    input.NetworkType != null &&
-                    this.NetworkType.SequenceEqual(input.NetworkType)
-                ) && 
-                (
-                    this.PublicipPoolName == input.PublicipPoolName ||
-                    this.PublicipPoolName != null &&
-                    input.PublicipPoolName != null &&
-                    this.PublicipPoolName.SequenceEqual(input.PublicipPoolName)
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    this.Status != null &&
-                    input.Status != null &&
-                    this.Status.SequenceEqual(input.Status)
-                ) && 
-                (
-                    this.AliasLike == input.AliasLike ||
-                    (this.AliasLike != null &&
-                    this.AliasLike.Equals(input.AliasLike))
-                ) && 
-                (
-                    this.Alias == input.Alias ||
-                    this.Alias != null &&
-                    input.Alias != null &&
-                    this.Alias.SequenceEqual(input.Alias)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    this.Description != null &&
-                    input.Description != null &&
-                    this.Description.SequenceEqual(input.Description)
-                ) && 
-                (
-                    this.VnicPrivateIpAddress == input.VnicPrivateIpAddress ||
-                    this.VnicPrivateIpAddress != null &&
-                    input.VnicPrivateIpAddress != null &&
-                    this.VnicPrivateIpAddress.SequenceEqual(input.VnicPrivateIpAddress)
-                ) && 
-                (
-                    this.VnicPrivateIpAddressLike == input.VnicPrivateIpAddressLike ||
-                    (this.VnicPrivateIpAddressLike != null &&
-                    this.VnicPrivateIpAddressLike.Equals(input.VnicPrivateIpAddressLike))
-                ) && 
-                (
-                    this.VnicDeviceId == input.VnicDeviceId ||
-                    this.VnicDeviceId != null &&
-                    input.VnicDeviceId != null &&
-                    this.VnicDeviceId.SequenceEqual(input.VnicDeviceId)
-                ) && 
-                (
-                    this.VnicDeviceOwner == input.VnicDeviceOwner ||
-                    this.VnicDeviceOwner != null &&
-                    input.VnicDeviceOwner != null &&
-                    this.VnicDeviceOwner.SequenceEqual(input.VnicDeviceOwner)
-                ) && 
-                (
-                    this.VnicVpcId == input.VnicVpcId ||
-                    this.VnicVpcId != null &&
-                    input.VnicVpcId != null &&
-                    this.VnicVpcId.SequenceEqual(input.VnicVpcId)
-                ) && 
-                (
-                    this.VnicPortId == input.VnicPortId ||
-                    this.VnicPortId != null &&
-                    input.VnicPortId != null &&
-                    this.VnicPortId.SequenceEqual(input.VnicPortId)
-                ) && 
-                (
-                    this.VnicDeviceOwnerPrefixlike == input.VnicDeviceOwnerPrefixlike ||
-                    (this.VnicDeviceOwnerPrefixlike != null &&
-                    this.VnicDeviceOwnerPrefixlike.Equals(input.VnicDeviceOwnerPrefixlike))
-                ) && 
-                (
-                    this.VnicInstanceType == input.VnicInstanceType ||
-                    this.VnicInstanceType != null &&
-                    input.VnicInstanceType != null &&
-                    this.VnicInstanceType.SequenceEqual(input.VnicInstanceType)
-                ) && 
-                (
-                    this.VnicInstanceId == input.VnicInstanceId ||
-                    this.VnicInstanceId != null &&
-                    input.VnicInstanceId != null &&
-                    this.VnicInstanceId.SequenceEqual(input.VnicInstanceId)
-                ) && 
-                (
-                    this.BandwidthId == input.BandwidthId ||
-                    this.BandwidthId != null &&
-                    input.BandwidthId != null &&
-                    this.BandwidthId.SequenceEqual(input.BandwidthId)
-                ) && 
-                (
-                    this.BandwidthName == input.BandwidthName ||
-                    this.BandwidthName != null &&
-                    input.BandwidthName != null &&
-                    this.BandwidthName.SequenceEqual(input.BandwidthName)
-                ) && 
-                (
-                    this.BandwidthNameLike == input.BandwidthNameLike ||
-                    this.BandwidthNameLike != null &&
-                    input.BandwidthNameLike != null &&
-                    this.BandwidthNameLike.SequenceEqual(input.BandwidthNameLike)
-                ) && 
-                (
-                    this.BandwidthSize == input.BandwidthSize ||
-                    this.BandwidthSize != null &&
-                    input.BandwidthSize != null &&
-                    this.BandwidthSize.SequenceEqual(input.BandwidthSize)
-                ) && 
-                (
-                    this.BandwidthShareType == input.BandwidthShareType ||
-                    this.BandwidthShareType != null &&
-                    input.BandwidthShareType != null &&
-                    this.BandwidthShareType.SequenceEqual(input.BandwidthShareType)
-                ) && 
-                (
-                    this.BandwidthChargeMode == input.BandwidthChargeMode ||
-                    this.BandwidthChargeMode != null &&
-                    input.BandwidthChargeMode != null &&
-                    this.BandwidthChargeMode.SequenceEqual(input.BandwidthChargeMode)
-                ) && 
-                (
-                    this.BillingInfo == input.BillingInfo ||
-                    this.BillingInfo != null &&
-                    input.BillingInfo != null &&
-                    this.BillingInfo.SequenceEqual(input.BillingInfo)
-                ) && 
-                (
-                    this.BillingMode == input.BillingMode ||
-                    (this.BillingMode != null &&
-                    this.BillingMode.Equals(input.BillingMode))
-                ) && 
-                (
-                    this.AssociateInstanceType == input.AssociateInstanceType ||
-                    this.AssociateInstanceType != null &&
-                    input.AssociateInstanceType != null &&
-                    this.AssociateInstanceType.SequenceEqual(input.AssociateInstanceType)
-                ) && 
-                (
-                    this.AssociateInstanceId == input.AssociateInstanceId ||
-                    this.AssociateInstanceId != null &&
-                    input.AssociateInstanceId != null &&
-                    this.AssociateInstanceId.SequenceEqual(input.AssociateInstanceId)
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    this.EnterpriseProjectId != null &&
-                    input.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId)
-                ) && 
-                (
-                    this.PublicBorderGroup == input.PublicBorderGroup ||
-                    this.PublicBorderGroup != null &&
-                    input.PublicBorderGroup != null &&
-                    this.PublicBorderGroup.SequenceEqual(input.PublicBorderGroup)
-                ) && 
-                (
-                    this.AllowShareBandwidthTypeAny == input.AllowShareBandwidthTypeAny ||
-                    this.AllowShareBandwidthTypeAny != null &&
-                    input.AllowShareBandwidthTypeAny != null &&
-                    this.AllowShareBandwidthTypeAny.SequenceEqual(input.AllowShareBandwidthTypeAny)
-                );
+            return true;
         }
 
         /// <summary>
@@ -1854,89 +1659,48 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Fields != null)
-                    hashCode = hashCode * 59 + this.Fields.GetHashCode();
-                if (this.SortKey != null)
-                    hashCode = hashCode * 59 + this.SortKey.GetHashCode();
-                if (this.SortDir != null)
-                    hashCode = hashCode * 59 + this.SortDir.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.IpVersion != null)
-                    hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
-                if (this.PublicIpAddress != null)
-                    hashCode = hashCode * 59 + this.PublicIpAddress.GetHashCode();
-                if (this.PublicIpAddressLike != null)
-                    hashCode = hashCode * 59 + this.PublicIpAddressLike.GetHashCode();
-                if (this.PublicIpv6Address != null)
-                    hashCode = hashCode * 59 + this.PublicIpv6Address.GetHashCode();
-                if (this.PublicIpv6AddressLike != null)
-                    hashCode = hashCode * 59 + this.PublicIpv6AddressLike.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.NetworkType != null)
-                    hashCode = hashCode * 59 + this.NetworkType.GetHashCode();
-                if (this.PublicipPoolName != null)
-                    hashCode = hashCode * 59 + this.PublicipPoolName.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.AliasLike != null)
-                    hashCode = hashCode * 59 + this.AliasLike.GetHashCode();
-                if (this.Alias != null)
-                    hashCode = hashCode * 59 + this.Alias.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.VnicPrivateIpAddress != null)
-                    hashCode = hashCode * 59 + this.VnicPrivateIpAddress.GetHashCode();
-                if (this.VnicPrivateIpAddressLike != null)
-                    hashCode = hashCode * 59 + this.VnicPrivateIpAddressLike.GetHashCode();
-                if (this.VnicDeviceId != null)
-                    hashCode = hashCode * 59 + this.VnicDeviceId.GetHashCode();
-                if (this.VnicDeviceOwner != null)
-                    hashCode = hashCode * 59 + this.VnicDeviceOwner.GetHashCode();
-                if (this.VnicVpcId != null)
-                    hashCode = hashCode * 59 + this.VnicVpcId.GetHashCode();
-                if (this.VnicPortId != null)
-                    hashCode = hashCode * 59 + this.VnicPortId.GetHashCode();
-                if (this.VnicDeviceOwnerPrefixlike != null)
-                    hashCode = hashCode * 59 + this.VnicDeviceOwnerPrefixlike.GetHashCode();
-                if (this.VnicInstanceType != null)
-                    hashCode = hashCode * 59 + this.VnicInstanceType.GetHashCode();
-                if (this.VnicInstanceId != null)
-                    hashCode = hashCode * 59 + this.VnicInstanceId.GetHashCode();
-                if (this.BandwidthId != null)
-                    hashCode = hashCode * 59 + this.BandwidthId.GetHashCode();
-                if (this.BandwidthName != null)
-                    hashCode = hashCode * 59 + this.BandwidthName.GetHashCode();
-                if (this.BandwidthNameLike != null)
-                    hashCode = hashCode * 59 + this.BandwidthNameLike.GetHashCode();
-                if (this.BandwidthSize != null)
-                    hashCode = hashCode * 59 + this.BandwidthSize.GetHashCode();
-                if (this.BandwidthShareType != null)
-                    hashCode = hashCode * 59 + this.BandwidthShareType.GetHashCode();
-                if (this.BandwidthChargeMode != null)
-                    hashCode = hashCode * 59 + this.BandwidthChargeMode.GetHashCode();
-                if (this.BillingInfo != null)
-                    hashCode = hashCode * 59 + this.BillingInfo.GetHashCode();
-                if (this.BillingMode != null)
-                    hashCode = hashCode * 59 + this.BillingMode.GetHashCode();
-                if (this.AssociateInstanceType != null)
-                    hashCode = hashCode * 59 + this.AssociateInstanceType.GetHashCode();
-                if (this.AssociateInstanceId != null)
-                    hashCode = hashCode * 59 + this.AssociateInstanceId.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.PublicBorderGroup != null)
-                    hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
-                if (this.AllowShareBandwidthTypeAny != null)
-                    hashCode = hashCode * 59 + this.AllowShareBandwidthTypeAny.GetHashCode();
+                var hashCode = 41;
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Fields != null) hashCode = hashCode * 59 + this.Fields.GetHashCode();
+                hashCode = hashCode * 59 + this.SortKey.GetHashCode();
+                hashCode = hashCode * 59 + this.SortDir.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
+                if (this.PublicIpAddress != null) hashCode = hashCode * 59 + this.PublicIpAddress.GetHashCode();
+                if (this.PublicIpAddressLike != null) hashCode = hashCode * 59 + this.PublicIpAddressLike.GetHashCode();
+                if (this.PublicIpv6Address != null) hashCode = hashCode * 59 + this.PublicIpv6Address.GetHashCode();
+                if (this.PublicIpv6AddressLike != null) hashCode = hashCode * 59 + this.PublicIpv6AddressLike.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                hashCode = hashCode * 59 + this.NetworkType.GetHashCode();
+                if (this.PublicipPoolName != null) hashCode = hashCode * 59 + this.PublicipPoolName.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.AliasLike != null) hashCode = hashCode * 59 + this.AliasLike.GetHashCode();
+                if (this.Alias != null) hashCode = hashCode * 59 + this.Alias.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.VnicPrivateIpAddress != null) hashCode = hashCode * 59 + this.VnicPrivateIpAddress.GetHashCode();
+                if (this.VnicPrivateIpAddressLike != null) hashCode = hashCode * 59 + this.VnicPrivateIpAddressLike.GetHashCode();
+                if (this.VnicDeviceId != null) hashCode = hashCode * 59 + this.VnicDeviceId.GetHashCode();
+                if (this.VnicDeviceOwner != null) hashCode = hashCode * 59 + this.VnicDeviceOwner.GetHashCode();
+                if (this.VnicVpcId != null) hashCode = hashCode * 59 + this.VnicVpcId.GetHashCode();
+                if (this.VnicPortId != null) hashCode = hashCode * 59 + this.VnicPortId.GetHashCode();
+                if (this.VnicDeviceOwnerPrefixlike != null) hashCode = hashCode * 59 + this.VnicDeviceOwnerPrefixlike.GetHashCode();
+                if (this.VnicInstanceType != null) hashCode = hashCode * 59 + this.VnicInstanceType.GetHashCode();
+                if (this.VnicInstanceId != null) hashCode = hashCode * 59 + this.VnicInstanceId.GetHashCode();
+                if (this.BandwidthId != null) hashCode = hashCode * 59 + this.BandwidthId.GetHashCode();
+                if (this.BandwidthName != null) hashCode = hashCode * 59 + this.BandwidthName.GetHashCode();
+                if (this.BandwidthNameLike != null) hashCode = hashCode * 59 + this.BandwidthNameLike.GetHashCode();
+                if (this.BandwidthSize != null) hashCode = hashCode * 59 + this.BandwidthSize.GetHashCode();
+                hashCode = hashCode * 59 + this.BandwidthShareType.GetHashCode();
+                hashCode = hashCode * 59 + this.BandwidthChargeMode.GetHashCode();
+                if (this.BillingInfo != null) hashCode = hashCode * 59 + this.BillingInfo.GetHashCode();
+                hashCode = hashCode * 59 + this.BillingMode.GetHashCode();
+                hashCode = hashCode * 59 + this.AssociateInstanceType.GetHashCode();
+                if (this.AssociateInstanceId != null) hashCode = hashCode * 59 + this.AssociateInstanceId.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.PublicBorderGroup != null) hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                if (this.AllowShareBandwidthTypeAny != null) hashCode = hashCode * 59 + this.AllowShareBandwidthTypeAny.GetHashCode();
                 return hashCode;
             }
         }

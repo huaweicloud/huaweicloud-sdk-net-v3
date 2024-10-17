@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(TopicEntityTopicOtherConfigs input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.ValidValues != input.ValidValues || (this.ValidValues != null && !this.ValidValues.Equals(input.ValidValues))) return false;
+            if (this.DefaultValue != input.DefaultValue || (this.DefaultValue != null && !this.DefaultValue.Equals(input.DefaultValue))) return false;
+            if (this.ConfigType != input.ConfigType || (this.ConfigType != null && !this.ConfigType.Equals(input.ConfigType))) return false;
+            if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
+            if (this.ValueType != input.ValueType || (this.ValueType != null && !this.ValueType.Equals(input.ValueType))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ValidValues == input.ValidValues ||
-                    (this.ValidValues != null &&
-                    this.ValidValues.Equals(input.ValidValues))
-                ) && 
-                (
-                    this.DefaultValue == input.DefaultValue ||
-                    (this.DefaultValue != null &&
-                    this.DefaultValue.Equals(input.DefaultValue))
-                ) && 
-                (
-                    this.ConfigType == input.ConfigType ||
-                    (this.ConfigType != null &&
-                    this.ConfigType.Equals(input.ConfigType))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                ) && 
-                (
-                    this.ValueType == input.ValueType ||
-                    (this.ValueType != null &&
-                    this.ValueType.Equals(input.ValueType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.ValidValues != null)
-                    hashCode = hashCode * 59 + this.ValidValues.GetHashCode();
-                if (this.DefaultValue != null)
-                    hashCode = hashCode * 59 + this.DefaultValue.GetHashCode();
-                if (this.ConfigType != null)
-                    hashCode = hashCode * 59 + this.ConfigType.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
-                if (this.ValueType != null)
-                    hashCode = hashCode * 59 + this.ValueType.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.ValidValues != null) hashCode = hashCode * 59 + this.ValidValues.GetHashCode();
+                if (this.DefaultValue != null) hashCode = hashCode * 59 + this.DefaultValue.GetHashCode();
+                if (this.ConfigType != null) hashCode = hashCode * 59 + this.ConfigType.GetHashCode();
+                if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.ValueType != null) hashCode = hashCode * 59 + this.ValueType.GetHashCode();
                 return hashCode;
             }
         }

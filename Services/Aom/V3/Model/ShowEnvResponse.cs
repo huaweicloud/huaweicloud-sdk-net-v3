@@ -267,86 +267,24 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         /// </summary>
         public bool Equals(ShowEnvResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AomId != input.AomId || (this.AomId != null && !this.AomId.Equals(input.AomId))) return false;
+            if (this.ComponentId != input.ComponentId || (this.ComponentId != null && !this.ComponentId.Equals(input.ComponentId))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.Creator != input.Creator || (this.Creator != null && !this.Creator.Equals(input.Creator))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.EnvId != input.EnvId || (this.EnvId != null && !this.EnvId.Equals(input.EnvId))) return false;
+            if (this.EnvName != input.EnvName || (this.EnvName != null && !this.EnvName.Equals(input.EnvName))) return false;
+            if (this.EnvTags != input.EnvTags || (this.EnvTags != null && input.EnvTags != null && !this.EnvTags.SequenceEqual(input.EnvTags))) return false;
+            if (this.EnvType != input.EnvType || (this.EnvType != null && !this.EnvType.Equals(input.EnvType))) return false;
+            if (this.EpsId != input.EpsId || (this.EpsId != null && !this.EpsId.Equals(input.EpsId))) return false;
+            if (this.ModifiedTime != input.ModifiedTime || (this.ModifiedTime != null && !this.ModifiedTime.Equals(input.ModifiedTime))) return false;
+            if (this.Modifier != input.Modifier || (this.Modifier != null && !this.Modifier.Equals(input.Modifier))) return false;
+            if (this.OsType != input.OsType || (this.OsType != null && !this.OsType.Equals(input.OsType))) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
+            if (this.RegisterType != input.RegisterType) return false;
 
-            return 
-                (
-                    this.AomId == input.AomId ||
-                    (this.AomId != null &&
-                    this.AomId.Equals(input.AomId))
-                ) && 
-                (
-                    this.ComponentId == input.ComponentId ||
-                    (this.ComponentId != null &&
-                    this.ComponentId.Equals(input.ComponentId))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.Creator == input.Creator ||
-                    (this.Creator != null &&
-                    this.Creator.Equals(input.Creator))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.EnvId == input.EnvId ||
-                    (this.EnvId != null &&
-                    this.EnvId.Equals(input.EnvId))
-                ) && 
-                (
-                    this.EnvName == input.EnvName ||
-                    (this.EnvName != null &&
-                    this.EnvName.Equals(input.EnvName))
-                ) && 
-                (
-                    this.EnvTags == input.EnvTags ||
-                    this.EnvTags != null &&
-                    input.EnvTags != null &&
-                    this.EnvTags.SequenceEqual(input.EnvTags)
-                ) && 
-                (
-                    this.EnvType == input.EnvType ||
-                    (this.EnvType != null &&
-                    this.EnvType.Equals(input.EnvType))
-                ) && 
-                (
-                    this.EpsId == input.EpsId ||
-                    (this.EpsId != null &&
-                    this.EpsId.Equals(input.EpsId))
-                ) && 
-                (
-                    this.ModifiedTime == input.ModifiedTime ||
-                    (this.ModifiedTime != null &&
-                    this.ModifiedTime.Equals(input.ModifiedTime))
-                ) && 
-                (
-                    this.Modifier == input.Modifier ||
-                    (this.Modifier != null &&
-                    this.Modifier.Equals(input.Modifier))
-                ) && 
-                (
-                    this.OsType == input.OsType ||
-                    (this.OsType != null &&
-                    this.OsType.Equals(input.OsType))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.RegisterType == input.RegisterType ||
-                    (this.RegisterType != null &&
-                    this.RegisterType.Equals(input.RegisterType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -356,37 +294,22 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AomId != null)
-                    hashCode = hashCode * 59 + this.AomId.GetHashCode();
-                if (this.ComponentId != null)
-                    hashCode = hashCode * 59 + this.ComponentId.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.Creator != null)
-                    hashCode = hashCode * 59 + this.Creator.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.EnvId != null)
-                    hashCode = hashCode * 59 + this.EnvId.GetHashCode();
-                if (this.EnvName != null)
-                    hashCode = hashCode * 59 + this.EnvName.GetHashCode();
-                if (this.EnvTags != null)
-                    hashCode = hashCode * 59 + this.EnvTags.GetHashCode();
-                if (this.EnvType != null)
-                    hashCode = hashCode * 59 + this.EnvType.GetHashCode();
-                if (this.EpsId != null)
-                    hashCode = hashCode * 59 + this.EpsId.GetHashCode();
-                if (this.ModifiedTime != null)
-                    hashCode = hashCode * 59 + this.ModifiedTime.GetHashCode();
-                if (this.Modifier != null)
-                    hashCode = hashCode * 59 + this.Modifier.GetHashCode();
-                if (this.OsType != null)
-                    hashCode = hashCode * 59 + this.OsType.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.RegisterType != null)
-                    hashCode = hashCode * 59 + this.RegisterType.GetHashCode();
+                var hashCode = 41;
+                if (this.AomId != null) hashCode = hashCode * 59 + this.AomId.GetHashCode();
+                if (this.ComponentId != null) hashCode = hashCode * 59 + this.ComponentId.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.Creator != null) hashCode = hashCode * 59 + this.Creator.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.EnvId != null) hashCode = hashCode * 59 + this.EnvId.GetHashCode();
+                if (this.EnvName != null) hashCode = hashCode * 59 + this.EnvName.GetHashCode();
+                if (this.EnvTags != null) hashCode = hashCode * 59 + this.EnvTags.GetHashCode();
+                if (this.EnvType != null) hashCode = hashCode * 59 + this.EnvType.GetHashCode();
+                if (this.EpsId != null) hashCode = hashCode * 59 + this.EpsId.GetHashCode();
+                if (this.ModifiedTime != null) hashCode = hashCode * 59 + this.ModifiedTime.GetHashCode();
+                if (this.Modifier != null) hashCode = hashCode * 59 + this.Modifier.GetHashCode();
+                if (this.OsType != null) hashCode = hashCode * 59 + this.OsType.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
+                hashCode = hashCode * 59 + this.RegisterType.GetHashCode();
                 return hashCode;
             }
         }

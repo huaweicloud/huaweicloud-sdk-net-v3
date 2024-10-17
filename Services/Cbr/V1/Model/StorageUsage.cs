@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(StorageUsage input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BackupCount != input.BackupCount || (this.BackupCount != null && !this.BackupCount.Equals(input.BackupCount))) return false;
+            if (this.BackupSize != input.BackupSize || (this.BackupSize != null && !this.BackupSize.Equals(input.BackupSize))) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
+            if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
+            if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
+            if (this.BackupSizeMultiaz != input.BackupSizeMultiaz || (this.BackupSizeMultiaz != null && !this.BackupSizeMultiaz.Equals(input.BackupSizeMultiaz))) return false;
 
-            return 
-                (
-                    this.BackupCount == input.BackupCount ||
-                    (this.BackupCount != null &&
-                    this.BackupCount.Equals(input.BackupCount))
-                ) && 
-                (
-                    this.BackupSize == input.BackupSize ||
-                    (this.BackupSize != null &&
-                    this.BackupSize.Equals(input.BackupSize))
-                ) && 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
-                ) && 
-                (
-                    this.ResourceName == input.ResourceName ||
-                    (this.ResourceName != null &&
-                    this.ResourceName.Equals(input.ResourceName))
-                ) && 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.BackupSizeMultiaz == input.BackupSizeMultiaz ||
-                    (this.BackupSizeMultiaz != null &&
-                    this.BackupSizeMultiaz.Equals(input.BackupSizeMultiaz))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BackupCount != null)
-                    hashCode = hashCode * 59 + this.BackupCount.GetHashCode();
-                if (this.BackupSize != null)
-                    hashCode = hashCode * 59 + this.BackupSize.GetHashCode();
-                if (this.ResourceId != null)
-                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
-                if (this.ResourceName != null)
-                    hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
-                if (this.BackupSizeMultiaz != null)
-                    hashCode = hashCode * 59 + this.BackupSizeMultiaz.GetHashCode();
+                var hashCode = 41;
+                if (this.BackupCount != null) hashCode = hashCode * 59 + this.BackupCount.GetHashCode();
+                if (this.BackupSize != null) hashCode = hashCode * 59 + this.BackupSize.GetHashCode();
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
+                if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.BackupSizeMultiaz != null) hashCode = hashCode * 59 + this.BackupSizeMultiaz.GetHashCode();
                 return hashCode;
             }
         }

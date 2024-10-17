@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(ResizeEngineInstanceReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OperType != input.OperType || (this.OperType != null && !this.OperType.Equals(input.OperType))) return false;
+            if (this.NewStorageSpace != input.NewStorageSpace || (this.NewStorageSpace != null && !this.NewStorageSpace.Equals(input.NewStorageSpace))) return false;
+            if (this.NewProductId != input.NewProductId || (this.NewProductId != null && !this.NewProductId.Equals(input.NewProductId))) return false;
+            if (this.NewBrokerNum != input.NewBrokerNum || (this.NewBrokerNum != null && !this.NewBrokerNum.Equals(input.NewBrokerNum))) return false;
+            if (this.PublicipId != input.PublicipId || (this.PublicipId != null && !this.PublicipId.Equals(input.PublicipId))) return false;
 
-            return 
-                (
-                    this.OperType == input.OperType ||
-                    (this.OperType != null &&
-                    this.OperType.Equals(input.OperType))
-                ) && 
-                (
-                    this.NewStorageSpace == input.NewStorageSpace ||
-                    (this.NewStorageSpace != null &&
-                    this.NewStorageSpace.Equals(input.NewStorageSpace))
-                ) && 
-                (
-                    this.NewProductId == input.NewProductId ||
-                    (this.NewProductId != null &&
-                    this.NewProductId.Equals(input.NewProductId))
-                ) && 
-                (
-                    this.NewBrokerNum == input.NewBrokerNum ||
-                    (this.NewBrokerNum != null &&
-                    this.NewBrokerNum.Equals(input.NewBrokerNum))
-                ) && 
-                (
-                    this.PublicipId == input.PublicipId ||
-                    (this.PublicipId != null &&
-                    this.PublicipId.Equals(input.PublicipId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OperType != null)
-                    hashCode = hashCode * 59 + this.OperType.GetHashCode();
-                if (this.NewStorageSpace != null)
-                    hashCode = hashCode * 59 + this.NewStorageSpace.GetHashCode();
-                if (this.NewProductId != null)
-                    hashCode = hashCode * 59 + this.NewProductId.GetHashCode();
-                if (this.NewBrokerNum != null)
-                    hashCode = hashCode * 59 + this.NewBrokerNum.GetHashCode();
-                if (this.PublicipId != null)
-                    hashCode = hashCode * 59 + this.PublicipId.GetHashCode();
+                var hashCode = 41;
+                if (this.OperType != null) hashCode = hashCode * 59 + this.OperType.GetHashCode();
+                if (this.NewStorageSpace != null) hashCode = hashCode * 59 + this.NewStorageSpace.GetHashCode();
+                if (this.NewProductId != null) hashCode = hashCode * 59 + this.NewProductId.GetHashCode();
+                if (this.NewBrokerNum != null) hashCode = hashCode * 59 + this.NewBrokerNum.GetHashCode();
+                if (this.PublicipId != null) hashCode = hashCode * 59 + this.PublicipId.GetHashCode();
                 return hashCode;
             }
         }

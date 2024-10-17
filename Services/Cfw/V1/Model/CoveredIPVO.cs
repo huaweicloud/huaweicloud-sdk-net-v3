@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(CoveredIPVO input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
+            if (this.CoveredIp != input.CoveredIp || (this.CoveredIp != null && !this.CoveredIp.Equals(input.CoveredIp))) return false;
 
-            return 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                ) && 
-                (
-                    this.CoveredIp == input.CoveredIp ||
-                    (this.CoveredIp != null &&
-                    this.CoveredIp.Equals(input.CoveredIp))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.CoveredIp != null)
-                    hashCode = hashCode * 59 + this.CoveredIp.GetHashCode();
+                var hashCode = 41;
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.CoveredIp != null) hashCode = hashCode * 59 + this.CoveredIp.GetHashCode();
                 return hashCode;
             }
         }

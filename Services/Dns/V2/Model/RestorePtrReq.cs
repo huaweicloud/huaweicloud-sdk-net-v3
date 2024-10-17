@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public bool Equals(RestorePtrReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Ptrdname != input.Ptrdname || (this.Ptrdname != null && !this.Ptrdname.Equals(input.Ptrdname))) return false;
 
-            return 
-                (
-                    this.Ptrdname == input.Ptrdname ||
-                    (this.Ptrdname != null &&
-                    this.Ptrdname.Equals(input.Ptrdname))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Ptrdname != null)
-                    hashCode = hashCode * 59 + this.Ptrdname.GetHashCode();
+                var hashCode = 41;
+                if (this.Ptrdname != null) hashCode = hashCode * 59 + this.Ptrdname.GetHashCode();
                 return hashCode;
             }
         }

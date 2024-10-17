@@ -130,73 +130,20 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// </summary>
         public bool Equals(ListPrivateSnatsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.PageReverse != input.PageReverse || (this.PageReverse != null && !this.PageReverse.Equals(input.PageReverse))) return false;
+            if (this.Id != input.Id || (this.Id != null && input.Id != null && !this.Id.SequenceEqual(input.Id))) return false;
+            if (this.Description != input.Description || (this.Description != null && input.Description != null && !this.Description.SequenceEqual(input.Description))) return false;
+            if (this.GatewayId != input.GatewayId || (this.GatewayId != null && input.GatewayId != null && !this.GatewayId.SequenceEqual(input.GatewayId))) return false;
+            if (this.Cidr != input.Cidr || (this.Cidr != null && input.Cidr != null && !this.Cidr.SequenceEqual(input.Cidr))) return false;
+            if (this.VirsubnetId != input.VirsubnetId || (this.VirsubnetId != null && input.VirsubnetId != null && !this.VirsubnetId.SequenceEqual(input.VirsubnetId))) return false;
+            if (this.TransitIpId != input.TransitIpId || (this.TransitIpId != null && input.TransitIpId != null && !this.TransitIpId.SequenceEqual(input.TransitIpId))) return false;
+            if (this.TransitIpAddress != input.TransitIpAddress || (this.TransitIpAddress != null && input.TransitIpAddress != null && !this.TransitIpAddress.SequenceEqual(input.TransitIpAddress))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && input.EnterpriseProjectId != null && !this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId))) return false;
 
-            return 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.PageReverse == input.PageReverse ||
-                    (this.PageReverse != null &&
-                    this.PageReverse.Equals(input.PageReverse))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    this.Id != null &&
-                    input.Id != null &&
-                    this.Id.SequenceEqual(input.Id)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    this.Description != null &&
-                    input.Description != null &&
-                    this.Description.SequenceEqual(input.Description)
-                ) && 
-                (
-                    this.GatewayId == input.GatewayId ||
-                    this.GatewayId != null &&
-                    input.GatewayId != null &&
-                    this.GatewayId.SequenceEqual(input.GatewayId)
-                ) && 
-                (
-                    this.Cidr == input.Cidr ||
-                    this.Cidr != null &&
-                    input.Cidr != null &&
-                    this.Cidr.SequenceEqual(input.Cidr)
-                ) && 
-                (
-                    this.VirsubnetId == input.VirsubnetId ||
-                    this.VirsubnetId != null &&
-                    input.VirsubnetId != null &&
-                    this.VirsubnetId.SequenceEqual(input.VirsubnetId)
-                ) && 
-                (
-                    this.TransitIpId == input.TransitIpId ||
-                    this.TransitIpId != null &&
-                    input.TransitIpId != null &&
-                    this.TransitIpId.SequenceEqual(input.TransitIpId)
-                ) && 
-                (
-                    this.TransitIpAddress == input.TransitIpAddress ||
-                    this.TransitIpAddress != null &&
-                    input.TransitIpAddress != null &&
-                    this.TransitIpAddress.SequenceEqual(input.TransitIpAddress)
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    this.EnterpriseProjectId != null &&
-                    input.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId)
-                );
+            return true;
         }
 
         /// <summary>
@@ -206,29 +153,18 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.PageReverse != null)
-                    hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.GatewayId != null)
-                    hashCode = hashCode * 59 + this.GatewayId.GetHashCode();
-                if (this.Cidr != null)
-                    hashCode = hashCode * 59 + this.Cidr.GetHashCode();
-                if (this.VirsubnetId != null)
-                    hashCode = hashCode * 59 + this.VirsubnetId.GetHashCode();
-                if (this.TransitIpId != null)
-                    hashCode = hashCode * 59 + this.TransitIpId.GetHashCode();
-                if (this.TransitIpAddress != null)
-                    hashCode = hashCode * 59 + this.TransitIpAddress.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                var hashCode = 41;
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.PageReverse != null) hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.GatewayId != null) hashCode = hashCode * 59 + this.GatewayId.GetHashCode();
+                if (this.Cidr != null) hashCode = hashCode * 59 + this.Cidr.GetHashCode();
+                if (this.VirsubnetId != null) hashCode = hashCode * 59 + this.VirsubnetId.GetHashCode();
+                if (this.TransitIpId != null) hashCode = hashCode * 59 + this.TransitIpId.GetHashCode();
+                if (this.TransitIpAddress != null) hashCode = hashCode * 59 + this.TransitIpAddress.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

@@ -119,68 +119,20 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(NeutronCreateSubnetOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Cidr != input.Cidr || (this.Cidr != null && !this.Cidr.Equals(input.Cidr))) return false;
+            if (this.NetworkId != input.NetworkId || (this.NetworkId != null && !this.NetworkId.Equals(input.NetworkId))) return false;
+            if (this.GatewayIp != input.GatewayIp || (this.GatewayIp != null && !this.GatewayIp.Equals(input.GatewayIp))) return false;
+            if (this.IpVersion != input.IpVersion || (this.IpVersion != null && !this.IpVersion.Equals(input.IpVersion))) return false;
+            if (this.AllocationPools != input.AllocationPools || (this.AllocationPools != null && input.AllocationPools != null && !this.AllocationPools.SequenceEqual(input.AllocationPools))) return false;
+            if (this.DnsNameservers != input.DnsNameservers || (this.DnsNameservers != null && input.DnsNameservers != null && !this.DnsNameservers.SequenceEqual(input.DnsNameservers))) return false;
+            if (this.HostRoutes != input.HostRoutes || (this.HostRoutes != null && input.HostRoutes != null && !this.HostRoutes.SequenceEqual(input.HostRoutes))) return false;
+            if (this.EnableDhcp != input.EnableDhcp || (this.EnableDhcp != null && !this.EnableDhcp.Equals(input.EnableDhcp))) return false;
+            if (this.Ipv6AddressMode != input.Ipv6AddressMode || (this.Ipv6AddressMode != null && !this.Ipv6AddressMode.Equals(input.Ipv6AddressMode))) return false;
+            if (this.Ipv6RaMode != input.Ipv6RaMode || (this.Ipv6RaMode != null && !this.Ipv6RaMode.Equals(input.Ipv6RaMode))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Cidr == input.Cidr ||
-                    (this.Cidr != null &&
-                    this.Cidr.Equals(input.Cidr))
-                ) && 
-                (
-                    this.NetworkId == input.NetworkId ||
-                    (this.NetworkId != null &&
-                    this.NetworkId.Equals(input.NetworkId))
-                ) && 
-                (
-                    this.GatewayIp == input.GatewayIp ||
-                    (this.GatewayIp != null &&
-                    this.GatewayIp.Equals(input.GatewayIp))
-                ) && 
-                (
-                    this.IpVersion == input.IpVersion ||
-                    (this.IpVersion != null &&
-                    this.IpVersion.Equals(input.IpVersion))
-                ) && 
-                (
-                    this.AllocationPools == input.AllocationPools ||
-                    this.AllocationPools != null &&
-                    input.AllocationPools != null &&
-                    this.AllocationPools.SequenceEqual(input.AllocationPools)
-                ) && 
-                (
-                    this.DnsNameservers == input.DnsNameservers ||
-                    this.DnsNameservers != null &&
-                    input.DnsNameservers != null &&
-                    this.DnsNameservers.SequenceEqual(input.DnsNameservers)
-                ) && 
-                (
-                    this.HostRoutes == input.HostRoutes ||
-                    this.HostRoutes != null &&
-                    input.HostRoutes != null &&
-                    this.HostRoutes.SequenceEqual(input.HostRoutes)
-                ) && 
-                (
-                    this.EnableDhcp == input.EnableDhcp ||
-                    (this.EnableDhcp != null &&
-                    this.EnableDhcp.Equals(input.EnableDhcp))
-                ) && 
-                (
-                    this.Ipv6AddressMode == input.Ipv6AddressMode ||
-                    (this.Ipv6AddressMode != null &&
-                    this.Ipv6AddressMode.Equals(input.Ipv6AddressMode))
-                ) && 
-                (
-                    this.Ipv6RaMode == input.Ipv6RaMode ||
-                    (this.Ipv6RaMode != null &&
-                    this.Ipv6RaMode.Equals(input.Ipv6RaMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -190,29 +142,18 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Cidr != null)
-                    hashCode = hashCode * 59 + this.Cidr.GetHashCode();
-                if (this.NetworkId != null)
-                    hashCode = hashCode * 59 + this.NetworkId.GetHashCode();
-                if (this.GatewayIp != null)
-                    hashCode = hashCode * 59 + this.GatewayIp.GetHashCode();
-                if (this.IpVersion != null)
-                    hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
-                if (this.AllocationPools != null)
-                    hashCode = hashCode * 59 + this.AllocationPools.GetHashCode();
-                if (this.DnsNameservers != null)
-                    hashCode = hashCode * 59 + this.DnsNameservers.GetHashCode();
-                if (this.HostRoutes != null)
-                    hashCode = hashCode * 59 + this.HostRoutes.GetHashCode();
-                if (this.EnableDhcp != null)
-                    hashCode = hashCode * 59 + this.EnableDhcp.GetHashCode();
-                if (this.Ipv6AddressMode != null)
-                    hashCode = hashCode * 59 + this.Ipv6AddressMode.GetHashCode();
-                if (this.Ipv6RaMode != null)
-                    hashCode = hashCode * 59 + this.Ipv6RaMode.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Cidr != null) hashCode = hashCode * 59 + this.Cidr.GetHashCode();
+                if (this.NetworkId != null) hashCode = hashCode * 59 + this.NetworkId.GetHashCode();
+                if (this.GatewayIp != null) hashCode = hashCode * 59 + this.GatewayIp.GetHashCode();
+                if (this.IpVersion != null) hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
+                if (this.AllocationPools != null) hashCode = hashCode * 59 + this.AllocationPools.GetHashCode();
+                if (this.DnsNameservers != null) hashCode = hashCode * 59 + this.DnsNameservers.GetHashCode();
+                if (this.HostRoutes != null) hashCode = hashCode * 59 + this.HostRoutes.GetHashCode();
+                if (this.EnableDhcp != null) hashCode = hashCode * 59 + this.EnableDhcp.GetHashCode();
+                if (this.Ipv6AddressMode != null) hashCode = hashCode * 59 + this.Ipv6AddressMode.GetHashCode();
+                if (this.Ipv6RaMode != null) hashCode = hashCode * 59 + this.Ipv6RaMode.GetHashCode();
                 return hashCode;
             }
         }

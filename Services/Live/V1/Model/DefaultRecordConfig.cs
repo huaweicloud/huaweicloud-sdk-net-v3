@@ -77,36 +77,14 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(DefaultRecordConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RecordFormat != input.RecordFormat || (this.RecordFormat != null && input.RecordFormat != null && !this.RecordFormat.SequenceEqual(input.RecordFormat))) return false;
+            if (this.ObsAddr != input.ObsAddr || (this.ObsAddr != null && !this.ObsAddr.Equals(input.ObsAddr))) return false;
+            if (this.HlsConfig != input.HlsConfig || (this.HlsConfig != null && !this.HlsConfig.Equals(input.HlsConfig))) return false;
+            if (this.FlvConfig != input.FlvConfig || (this.FlvConfig != null && !this.FlvConfig.Equals(input.FlvConfig))) return false;
+            if (this.Mp4Config != input.Mp4Config || (this.Mp4Config != null && !this.Mp4Config.Equals(input.Mp4Config))) return false;
 
-            return 
-                (
-                    this.RecordFormat == input.RecordFormat ||
-                    this.RecordFormat != null &&
-                    input.RecordFormat != null &&
-                    this.RecordFormat.SequenceEqual(input.RecordFormat)
-                ) && 
-                (
-                    this.ObsAddr == input.ObsAddr ||
-                    (this.ObsAddr != null &&
-                    this.ObsAddr.Equals(input.ObsAddr))
-                ) && 
-                (
-                    this.HlsConfig == input.HlsConfig ||
-                    (this.HlsConfig != null &&
-                    this.HlsConfig.Equals(input.HlsConfig))
-                ) && 
-                (
-                    this.FlvConfig == input.FlvConfig ||
-                    (this.FlvConfig != null &&
-                    this.FlvConfig.Equals(input.FlvConfig))
-                ) && 
-                (
-                    this.Mp4Config == input.Mp4Config ||
-                    (this.Mp4Config != null &&
-                    this.Mp4Config.Equals(input.Mp4Config))
-                );
+            return true;
         }
 
         /// <summary>
@@ -116,17 +94,12 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RecordFormat != null)
-                    hashCode = hashCode * 59 + this.RecordFormat.GetHashCode();
-                if (this.ObsAddr != null)
-                    hashCode = hashCode * 59 + this.ObsAddr.GetHashCode();
-                if (this.HlsConfig != null)
-                    hashCode = hashCode * 59 + this.HlsConfig.GetHashCode();
-                if (this.FlvConfig != null)
-                    hashCode = hashCode * 59 + this.FlvConfig.GetHashCode();
-                if (this.Mp4Config != null)
-                    hashCode = hashCode * 59 + this.Mp4Config.GetHashCode();
+                var hashCode = 41;
+                if (this.RecordFormat != null) hashCode = hashCode * 59 + this.RecordFormat.GetHashCode();
+                if (this.ObsAddr != null) hashCode = hashCode * 59 + this.ObsAddr.GetHashCode();
+                if (this.HlsConfig != null) hashCode = hashCode * 59 + this.HlsConfig.GetHashCode();
+                if (this.FlvConfig != null) hashCode = hashCode * 59 + this.FlvConfig.GetHashCode();
+                if (this.Mp4Config != null) hashCode = hashCode * 59 + this.Mp4Config.GetHashCode();
                 return hashCode;
             }
         }

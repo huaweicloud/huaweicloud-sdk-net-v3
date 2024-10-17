@@ -332,46 +332,16 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(CollectDbObjectsAsyncRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.XLanguage != input.XLanguage) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Type != input.Type) return false;
+            if (this.IsRefresh != input.IsRefresh || (this.IsRefresh != null && !this.IsRefresh.Equals(input.IsRefresh))) return false;
+            if (this.DbNames != input.DbNames || (this.DbNames != null && input.DbNames != null && !this.DbNames.SequenceEqual(input.DbNames))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.XLanguage == input.XLanguage ||
-                    (this.XLanguage != null &&
-                    this.XLanguage.Equals(input.XLanguage))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.IsRefresh == input.IsRefresh ||
-                    (this.IsRefresh != null &&
-                    this.IsRefresh.Equals(input.IsRefresh))
-                ) && 
-                (
-                    this.DbNames == input.DbNames ||
-                    this.DbNames != null &&
-                    input.DbNames != null &&
-                    this.DbNames.SequenceEqual(input.DbNames)
-                );
+            return true;
         }
 
         /// <summary>
@@ -381,21 +351,14 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.XLanguage != null)
-                    hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.IsRefresh != null)
-                    hashCode = hashCode * 59 + this.IsRefresh.GetHashCode();
-                if (this.DbNames != null)
-                    hashCode = hashCode * 59 + this.DbNames.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.IsRefresh != null) hashCode = hashCode * 59 + this.IsRefresh.GetHashCode();
+                if (this.DbNames != null) hashCode = hashCode * 59 + this.DbNames.GetHashCode();
                 return hashCode;
             }
         }

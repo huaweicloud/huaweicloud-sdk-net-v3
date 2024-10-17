@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(DbObjectInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceDbName != input.SourceDbName || (this.SourceDbName != null && !this.SourceDbName.Equals(input.SourceDbName))) return false;
+            if (this.SourceSchemaName != input.SourceSchemaName || (this.SourceSchemaName != null && !this.SourceSchemaName.Equals(input.SourceSchemaName))) return false;
+            if (this.SourceTableName != input.SourceTableName || (this.SourceTableName != null && !this.SourceTableName.Equals(input.SourceTableName))) return false;
+            if (this.TargetDbName != input.TargetDbName || (this.TargetDbName != null && !this.TargetDbName.Equals(input.TargetDbName))) return false;
+            if (this.TargetSchemaName != input.TargetSchemaName || (this.TargetSchemaName != null && !this.TargetSchemaName.Equals(input.TargetSchemaName))) return false;
+            if (this.TargetTableName != input.TargetTableName || (this.TargetTableName != null && !this.TargetTableName.Equals(input.TargetTableName))) return false;
+            if (this.HasColumnInfo != input.HasColumnInfo || (this.HasColumnInfo != null && !this.HasColumnInfo.Equals(input.HasColumnInfo))) return false;
 
-            return 
-                (
-                    this.SourceDbName == input.SourceDbName ||
-                    (this.SourceDbName != null &&
-                    this.SourceDbName.Equals(input.SourceDbName))
-                ) && 
-                (
-                    this.SourceSchemaName == input.SourceSchemaName ||
-                    (this.SourceSchemaName != null &&
-                    this.SourceSchemaName.Equals(input.SourceSchemaName))
-                ) && 
-                (
-                    this.SourceTableName == input.SourceTableName ||
-                    (this.SourceTableName != null &&
-                    this.SourceTableName.Equals(input.SourceTableName))
-                ) && 
-                (
-                    this.TargetDbName == input.TargetDbName ||
-                    (this.TargetDbName != null &&
-                    this.TargetDbName.Equals(input.TargetDbName))
-                ) && 
-                (
-                    this.TargetSchemaName == input.TargetSchemaName ||
-                    (this.TargetSchemaName != null &&
-                    this.TargetSchemaName.Equals(input.TargetSchemaName))
-                ) && 
-                (
-                    this.TargetTableName == input.TargetTableName ||
-                    (this.TargetTableName != null &&
-                    this.TargetTableName.Equals(input.TargetTableName))
-                ) && 
-                (
-                    this.HasColumnInfo == input.HasColumnInfo ||
-                    (this.HasColumnInfo != null &&
-                    this.HasColumnInfo.Equals(input.HasColumnInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceDbName != null)
-                    hashCode = hashCode * 59 + this.SourceDbName.GetHashCode();
-                if (this.SourceSchemaName != null)
-                    hashCode = hashCode * 59 + this.SourceSchemaName.GetHashCode();
-                if (this.SourceTableName != null)
-                    hashCode = hashCode * 59 + this.SourceTableName.GetHashCode();
-                if (this.TargetDbName != null)
-                    hashCode = hashCode * 59 + this.TargetDbName.GetHashCode();
-                if (this.TargetSchemaName != null)
-                    hashCode = hashCode * 59 + this.TargetSchemaName.GetHashCode();
-                if (this.TargetTableName != null)
-                    hashCode = hashCode * 59 + this.TargetTableName.GetHashCode();
-                if (this.HasColumnInfo != null)
-                    hashCode = hashCode * 59 + this.HasColumnInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.SourceDbName != null) hashCode = hashCode * 59 + this.SourceDbName.GetHashCode();
+                if (this.SourceSchemaName != null) hashCode = hashCode * 59 + this.SourceSchemaName.GetHashCode();
+                if (this.SourceTableName != null) hashCode = hashCode * 59 + this.SourceTableName.GetHashCode();
+                if (this.TargetDbName != null) hashCode = hashCode * 59 + this.TargetDbName.GetHashCode();
+                if (this.TargetSchemaName != null) hashCode = hashCode * 59 + this.TargetSchemaName.GetHashCode();
+                if (this.TargetTableName != null) hashCode = hashCode * 59 + this.TargetTableName.GetHashCode();
+                if (this.HasColumnInfo != null) hashCode = hashCode * 59 + this.HasColumnInfo.GetHashCode();
                 return hashCode;
             }
         }

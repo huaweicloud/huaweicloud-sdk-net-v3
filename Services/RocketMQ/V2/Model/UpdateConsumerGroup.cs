@@ -77,36 +77,14 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(UpdateConsumerGroup input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
+            if (this.Broadcast != input.Broadcast || (this.Broadcast != null && !this.Broadcast.Equals(input.Broadcast))) return false;
+            if (this.Brokers != input.Brokers || (this.Brokers != null && input.Brokers != null && !this.Brokers.SequenceEqual(input.Brokers))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.RetryMaxTime != input.RetryMaxTime || (this.RetryMaxTime != null && !this.RetryMaxTime.Equals(input.RetryMaxTime))) return false;
 
-            return 
-                (
-                    this.Enabled == input.Enabled ||
-                    (this.Enabled != null &&
-                    this.Enabled.Equals(input.Enabled))
-                ) && 
-                (
-                    this.Broadcast == input.Broadcast ||
-                    (this.Broadcast != null &&
-                    this.Broadcast.Equals(input.Broadcast))
-                ) && 
-                (
-                    this.Brokers == input.Brokers ||
-                    this.Brokers != null &&
-                    input.Brokers != null &&
-                    this.Brokers.SequenceEqual(input.Brokers)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.RetryMaxTime == input.RetryMaxTime ||
-                    (this.RetryMaxTime != null &&
-                    this.RetryMaxTime.Equals(input.RetryMaxTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -116,17 +94,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Enabled != null)
-                    hashCode = hashCode * 59 + this.Enabled.GetHashCode();
-                if (this.Broadcast != null)
-                    hashCode = hashCode * 59 + this.Broadcast.GetHashCode();
-                if (this.Brokers != null)
-                    hashCode = hashCode * 59 + this.Brokers.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.RetryMaxTime != null)
-                    hashCode = hashCode * 59 + this.RetryMaxTime.GetHashCode();
+                var hashCode = 41;
+                if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
+                if (this.Broadcast != null) hashCode = hashCode * 59 + this.Broadcast.GetHashCode();
+                if (this.Brokers != null) hashCode = hashCode * 59 + this.Brokers.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.RetryMaxTime != null) hashCode = hashCode * 59 + this.RetryMaxTime.GetHashCode();
                 return hashCode;
             }
         }

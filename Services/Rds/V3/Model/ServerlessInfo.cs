@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ServerlessInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MinCap != input.MinCap || (this.MinCap != null && !this.MinCap.Equals(input.MinCap))) return false;
+            if (this.MaxCap != input.MaxCap || (this.MaxCap != null && !this.MaxCap.Equals(input.MaxCap))) return false;
 
-            return 
-                (
-                    this.MinCap == input.MinCap ||
-                    (this.MinCap != null &&
-                    this.MinCap.Equals(input.MinCap))
-                ) && 
-                (
-                    this.MaxCap == input.MaxCap ||
-                    (this.MaxCap != null &&
-                    this.MaxCap.Equals(input.MaxCap))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MinCap != null)
-                    hashCode = hashCode * 59 + this.MinCap.GetHashCode();
-                if (this.MaxCap != null)
-                    hashCode = hashCode * 59 + this.MaxCap.GetHashCode();
+                var hashCode = 41;
+                if (this.MinCap != null) hashCode = hashCode * 59 + this.MinCap.GetHashCode();
+                if (this.MaxCap != null) hashCode = hashCode * 59 + this.MaxCap.GetHashCode();
                 return hashCode;
             }
         }

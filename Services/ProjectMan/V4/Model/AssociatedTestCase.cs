@@ -119,65 +119,20 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(AssociatedTestCase input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CaseId != input.CaseId || (this.CaseId != null && !this.CaseId.Equals(input.CaseId))) return false;
+            if (this.CaseNum != input.CaseNum || (this.CaseNum != null && !this.CaseNum.Equals(input.CaseNum))) return false;
+            if (this.CaseName != input.CaseName || (this.CaseName != null && !this.CaseName.Equals(input.CaseName))) return false;
+            if (this.CaseLevel != input.CaseLevel || (this.CaseLevel != null && !this.CaseLevel.Equals(input.CaseLevel))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Creator != input.Creator || (this.Creator != null && !this.Creator.Equals(input.Creator))) return false;
+            if (this.Owner != input.Owner || (this.Owner != null && !this.Owner.Equals(input.Owner))) return false;
+            if (this.Project != input.Project || (this.Project != null && !this.Project.Equals(input.Project))) return false;
+            if (this.IsBaseLine != input.IsBaseLine || (this.IsBaseLine != null && !this.IsBaseLine.Equals(input.IsBaseLine))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.CreatedTime != input.CreatedTime || (this.CreatedTime != null && !this.CreatedTime.Equals(input.CreatedTime))) return false;
 
-            return 
-                (
-                    this.CaseId == input.CaseId ||
-                    (this.CaseId != null &&
-                    this.CaseId.Equals(input.CaseId))
-                ) && 
-                (
-                    this.CaseNum == input.CaseNum ||
-                    (this.CaseNum != null &&
-                    this.CaseNum.Equals(input.CaseNum))
-                ) && 
-                (
-                    this.CaseName == input.CaseName ||
-                    (this.CaseName != null &&
-                    this.CaseName.Equals(input.CaseName))
-                ) && 
-                (
-                    this.CaseLevel == input.CaseLevel ||
-                    (this.CaseLevel != null &&
-                    this.CaseLevel.Equals(input.CaseLevel))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Creator == input.Creator ||
-                    (this.Creator != null &&
-                    this.Creator.Equals(input.Creator))
-                ) && 
-                (
-                    this.Owner == input.Owner ||
-                    (this.Owner != null &&
-                    this.Owner.Equals(input.Owner))
-                ) && 
-                (
-                    this.Project == input.Project ||
-                    (this.Project != null &&
-                    this.Project.Equals(input.Project))
-                ) && 
-                (
-                    this.IsBaseLine == input.IsBaseLine ||
-                    (this.IsBaseLine != null &&
-                    this.IsBaseLine.Equals(input.IsBaseLine))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.CreatedTime == input.CreatedTime ||
-                    (this.CreatedTime != null &&
-                    this.CreatedTime.Equals(input.CreatedTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,29 +142,18 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CaseId != null)
-                    hashCode = hashCode * 59 + this.CaseId.GetHashCode();
-                if (this.CaseNum != null)
-                    hashCode = hashCode * 59 + this.CaseNum.GetHashCode();
-                if (this.CaseName != null)
-                    hashCode = hashCode * 59 + this.CaseName.GetHashCode();
-                if (this.CaseLevel != null)
-                    hashCode = hashCode * 59 + this.CaseLevel.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Creator != null)
-                    hashCode = hashCode * 59 + this.Creator.GetHashCode();
-                if (this.Owner != null)
-                    hashCode = hashCode * 59 + this.Owner.GetHashCode();
-                if (this.Project != null)
-                    hashCode = hashCode * 59 + this.Project.GetHashCode();
-                if (this.IsBaseLine != null)
-                    hashCode = hashCode * 59 + this.IsBaseLine.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.CreatedTime != null)
-                    hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
+                var hashCode = 41;
+                if (this.CaseId != null) hashCode = hashCode * 59 + this.CaseId.GetHashCode();
+                if (this.CaseNum != null) hashCode = hashCode * 59 + this.CaseNum.GetHashCode();
+                if (this.CaseName != null) hashCode = hashCode * 59 + this.CaseName.GetHashCode();
+                if (this.CaseLevel != null) hashCode = hashCode * 59 + this.CaseLevel.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Creator != null) hashCode = hashCode * 59 + this.Creator.GetHashCode();
+                if (this.Owner != null) hashCode = hashCode * 59 + this.Owner.GetHashCode();
+                if (this.Project != null) hashCode = hashCode * 59 + this.Project.GetHashCode();
+                if (this.IsBaseLine != null) hashCode = hashCode * 59 + this.IsBaseLine.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.CreatedTime != null) hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
                 return hashCode;
             }
         }

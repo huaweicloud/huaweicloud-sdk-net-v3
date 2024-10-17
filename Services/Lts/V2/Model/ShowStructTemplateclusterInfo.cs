@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(ShowStructTemplateclusterInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClusterName != input.ClusterName || (this.ClusterName != null && !this.ClusterName.Equals(input.ClusterName))) return false;
+            if (this.KafkaBootstrapServers != input.KafkaBootstrapServers || (this.KafkaBootstrapServers != null && !this.KafkaBootstrapServers.Equals(input.KafkaBootstrapServers))) return false;
+            if (this.KafkaSslEnable != input.KafkaSslEnable || (this.KafkaSslEnable != null && !this.KafkaSslEnable.Equals(input.KafkaSslEnable))) return false;
 
-            return 
-                (
-                    this.ClusterName == input.ClusterName ||
-                    (this.ClusterName != null &&
-                    this.ClusterName.Equals(input.ClusterName))
-                ) && 
-                (
-                    this.KafkaBootstrapServers == input.KafkaBootstrapServers ||
-                    (this.KafkaBootstrapServers != null &&
-                    this.KafkaBootstrapServers.Equals(input.KafkaBootstrapServers))
-                ) && 
-                (
-                    this.KafkaSslEnable == input.KafkaSslEnable ||
-                    (this.KafkaSslEnable != null &&
-                    this.KafkaSslEnable.Equals(input.KafkaSslEnable))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClusterName != null)
-                    hashCode = hashCode * 59 + this.ClusterName.GetHashCode();
-                if (this.KafkaBootstrapServers != null)
-                    hashCode = hashCode * 59 + this.KafkaBootstrapServers.GetHashCode();
-                if (this.KafkaSslEnable != null)
-                    hashCode = hashCode * 59 + this.KafkaSslEnable.GetHashCode();
+                var hashCode = 41;
+                if (this.ClusterName != null) hashCode = hashCode * 59 + this.ClusterName.GetHashCode();
+                if (this.KafkaBootstrapServers != null) hashCode = hashCode * 59 + this.KafkaBootstrapServers.GetHashCode();
+                if (this.KafkaSslEnable != null) hashCode = hashCode * 59 + this.KafkaSslEnable.GetHashCode();
                 return hashCode;
             }
         }

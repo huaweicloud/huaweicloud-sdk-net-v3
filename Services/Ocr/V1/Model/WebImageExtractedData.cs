@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(WebImageExtractedData input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ContactInfo != input.ContactInfo || (this.ContactInfo != null && !this.ContactInfo.Equals(input.ContactInfo))) return false;
+            if (this.ImageSize != input.ImageSize || (this.ImageSize != null && !this.ImageSize.Equals(input.ImageSize))) return false;
 
-            return 
-                (
-                    this.ContactInfo == input.ContactInfo ||
-                    (this.ContactInfo != null &&
-                    this.ContactInfo.Equals(input.ContactInfo))
-                ) && 
-                (
-                    this.ImageSize == input.ImageSize ||
-                    (this.ImageSize != null &&
-                    this.ImageSize.Equals(input.ImageSize))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ContactInfo != null)
-                    hashCode = hashCode * 59 + this.ContactInfo.GetHashCode();
-                if (this.ImageSize != null)
-                    hashCode = hashCode * 59 + this.ImageSize.GetHashCode();
+                var hashCode = 41;
+                if (this.ContactInfo != null) hashCode = hashCode * 59 + this.ContactInfo.GetHashCode();
+                if (this.ImageSize != null) hashCode = hashCode * 59 + this.ImageSize.GetHashCode();
                 return hashCode;
             }
         }

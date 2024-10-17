@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         /// </summary>
         public bool Equals(SmsSignatureReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
+            if (this.ApplyDesc != input.ApplyDesc || (this.ApplyDesc != null && !this.ApplyDesc.Equals(input.ApplyDesc))) return false;
+            if (this.FileId != input.FileId || (this.FileId != null && !this.FileId.Equals(input.FileId))) return false;
+            if (this.IsInvolvedThird != input.IsInvolvedThird || (this.IsInvolvedThird != null && !this.IsInvolvedThird.Equals(input.IsInvolvedThird))) return false;
+            if (this.PowerAttorneyFileid != input.PowerAttorneyFileid || (this.PowerAttorneyFileid != null && !this.PowerAttorneyFileid.Equals(input.PowerAttorneyFileid))) return false;
+            if (this.SignatureName != input.SignatureName || (this.SignatureName != null && !this.SignatureName.Equals(input.SignatureName))) return false;
+            if (this.SignatureSource != input.SignatureSource || (this.SignatureSource != null && !this.SignatureSource.Equals(input.SignatureSource))) return false;
+            if (this.SignatureType != input.SignatureType || (this.SignatureType != null && !this.SignatureType.Equals(input.SignatureType))) return false;
+            if (this.SourceTitleContent != input.SourceTitleContent || (this.SourceTitleContent != null && !this.SourceTitleContent.Equals(input.SourceTitleContent))) return false;
 
-            return 
-                (
-                    this.AppId == input.AppId ||
-                    (this.AppId != null &&
-                    this.AppId.Equals(input.AppId))
-                ) && 
-                (
-                    this.ApplyDesc == input.ApplyDesc ||
-                    (this.ApplyDesc != null &&
-                    this.ApplyDesc.Equals(input.ApplyDesc))
-                ) && 
-                (
-                    this.FileId == input.FileId ||
-                    (this.FileId != null &&
-                    this.FileId.Equals(input.FileId))
-                ) && 
-                (
-                    this.IsInvolvedThird == input.IsInvolvedThird ||
-                    (this.IsInvolvedThird != null &&
-                    this.IsInvolvedThird.Equals(input.IsInvolvedThird))
-                ) && 
-                (
-                    this.PowerAttorneyFileid == input.PowerAttorneyFileid ||
-                    (this.PowerAttorneyFileid != null &&
-                    this.PowerAttorneyFileid.Equals(input.PowerAttorneyFileid))
-                ) && 
-                (
-                    this.SignatureName == input.SignatureName ||
-                    (this.SignatureName != null &&
-                    this.SignatureName.Equals(input.SignatureName))
-                ) && 
-                (
-                    this.SignatureSource == input.SignatureSource ||
-                    (this.SignatureSource != null &&
-                    this.SignatureSource.Equals(input.SignatureSource))
-                ) && 
-                (
-                    this.SignatureType == input.SignatureType ||
-                    (this.SignatureType != null &&
-                    this.SignatureType.Equals(input.SignatureType))
-                ) && 
-                (
-                    this.SourceTitleContent == input.SourceTitleContent ||
-                    (this.SourceTitleContent != null &&
-                    this.SourceTitleContent.Equals(input.SourceTitleContent))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AppId != null)
-                    hashCode = hashCode * 59 + this.AppId.GetHashCode();
-                if (this.ApplyDesc != null)
-                    hashCode = hashCode * 59 + this.ApplyDesc.GetHashCode();
-                if (this.FileId != null)
-                    hashCode = hashCode * 59 + this.FileId.GetHashCode();
-                if (this.IsInvolvedThird != null)
-                    hashCode = hashCode * 59 + this.IsInvolvedThird.GetHashCode();
-                if (this.PowerAttorneyFileid != null)
-                    hashCode = hashCode * 59 + this.PowerAttorneyFileid.GetHashCode();
-                if (this.SignatureName != null)
-                    hashCode = hashCode * 59 + this.SignatureName.GetHashCode();
-                if (this.SignatureSource != null)
-                    hashCode = hashCode * 59 + this.SignatureSource.GetHashCode();
-                if (this.SignatureType != null)
-                    hashCode = hashCode * 59 + this.SignatureType.GetHashCode();
-                if (this.SourceTitleContent != null)
-                    hashCode = hashCode * 59 + this.SourceTitleContent.GetHashCode();
+                var hashCode = 41;
+                if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
+                if (this.ApplyDesc != null) hashCode = hashCode * 59 + this.ApplyDesc.GetHashCode();
+                if (this.FileId != null) hashCode = hashCode * 59 + this.FileId.GetHashCode();
+                if (this.IsInvolvedThird != null) hashCode = hashCode * 59 + this.IsInvolvedThird.GetHashCode();
+                if (this.PowerAttorneyFileid != null) hashCode = hashCode * 59 + this.PowerAttorneyFileid.GetHashCode();
+                if (this.SignatureName != null) hashCode = hashCode * 59 + this.SignatureName.GetHashCode();
+                if (this.SignatureSource != null) hashCode = hashCode * 59 + this.SignatureSource.GetHashCode();
+                if (this.SignatureType != null) hashCode = hashCode * 59 + this.SignatureType.GetHashCode();
+                if (this.SourceTitleContent != null) hashCode = hashCode * 59 + this.SourceTitleContent.GetHashCode();
                 return hashCode;
             }
         }

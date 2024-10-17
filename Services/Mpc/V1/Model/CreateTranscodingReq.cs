@@ -154,94 +154,25 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(CreateTranscodingReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Input != input.Input || (this.Input != null && !this.Input.Equals(input.Input))) return false;
+            if (this.Output != input.Output || (this.Output != null && !this.Output.Equals(input.Output))) return false;
+            if (this.TransTemplateId != input.TransTemplateId || (this.TransTemplateId != null && input.TransTemplateId != null && !this.TransTemplateId.SequenceEqual(input.TransTemplateId))) return false;
+            if (this.AvParameters != input.AvParameters || (this.AvParameters != null && input.AvParameters != null && !this.AvParameters.SequenceEqual(input.AvParameters))) return false;
+            if (this.OutputFilenames != input.OutputFilenames || (this.OutputFilenames != null && input.OutputFilenames != null && !this.OutputFilenames.SequenceEqual(input.OutputFilenames))) return false;
+            if (this.UserData != input.UserData || (this.UserData != null && !this.UserData.Equals(input.UserData))) return false;
+            if (this.Watermarks != input.Watermarks || (this.Watermarks != null && input.Watermarks != null && !this.Watermarks.SequenceEqual(input.Watermarks))) return false;
+            if (this.Thumbnail != input.Thumbnail || (this.Thumbnail != null && !this.Thumbnail.Equals(input.Thumbnail))) return false;
+            if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
+            if (this.Subtitle != input.Subtitle || (this.Subtitle != null && !this.Subtitle.Equals(input.Subtitle))) return false;
+            if (this.Encryption != input.Encryption || (this.Encryption != null && !this.Encryption.Equals(input.Encryption))) return false;
+            if (this.Crop != input.Crop || (this.Crop != null && !this.Crop.Equals(input.Crop))) return false;
+            if (this.AudioTrack != input.AudioTrack || (this.AudioTrack != null && !this.AudioTrack.Equals(input.AudioTrack))) return false;
+            if (this.MultiAudio != input.MultiAudio || (this.MultiAudio != null && !this.MultiAudio.Equals(input.MultiAudio))) return false;
+            if (this.VideoProcess != input.VideoProcess || (this.VideoProcess != null && !this.VideoProcess.Equals(input.VideoProcess))) return false;
+            if (this.AudioProcess != input.AudioProcess || (this.AudioProcess != null && !this.AudioProcess.Equals(input.AudioProcess))) return false;
 
-            return 
-                (
-                    this.Input == input.Input ||
-                    (this.Input != null &&
-                    this.Input.Equals(input.Input))
-                ) && 
-                (
-                    this.Output == input.Output ||
-                    (this.Output != null &&
-                    this.Output.Equals(input.Output))
-                ) && 
-                (
-                    this.TransTemplateId == input.TransTemplateId ||
-                    this.TransTemplateId != null &&
-                    input.TransTemplateId != null &&
-                    this.TransTemplateId.SequenceEqual(input.TransTemplateId)
-                ) && 
-                (
-                    this.AvParameters == input.AvParameters ||
-                    this.AvParameters != null &&
-                    input.AvParameters != null &&
-                    this.AvParameters.SequenceEqual(input.AvParameters)
-                ) && 
-                (
-                    this.OutputFilenames == input.OutputFilenames ||
-                    this.OutputFilenames != null &&
-                    input.OutputFilenames != null &&
-                    this.OutputFilenames.SequenceEqual(input.OutputFilenames)
-                ) && 
-                (
-                    this.UserData == input.UserData ||
-                    (this.UserData != null &&
-                    this.UserData.Equals(input.UserData))
-                ) && 
-                (
-                    this.Watermarks == input.Watermarks ||
-                    this.Watermarks != null &&
-                    input.Watermarks != null &&
-                    this.Watermarks.SequenceEqual(input.Watermarks)
-                ) && 
-                (
-                    this.Thumbnail == input.Thumbnail ||
-                    (this.Thumbnail != null &&
-                    this.Thumbnail.Equals(input.Thumbnail))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    (this.Priority != null &&
-                    this.Priority.Equals(input.Priority))
-                ) && 
-                (
-                    this.Subtitle == input.Subtitle ||
-                    (this.Subtitle != null &&
-                    this.Subtitle.Equals(input.Subtitle))
-                ) && 
-                (
-                    this.Encryption == input.Encryption ||
-                    (this.Encryption != null &&
-                    this.Encryption.Equals(input.Encryption))
-                ) && 
-                (
-                    this.Crop == input.Crop ||
-                    (this.Crop != null &&
-                    this.Crop.Equals(input.Crop))
-                ) && 
-                (
-                    this.AudioTrack == input.AudioTrack ||
-                    (this.AudioTrack != null &&
-                    this.AudioTrack.Equals(input.AudioTrack))
-                ) && 
-                (
-                    this.MultiAudio == input.MultiAudio ||
-                    (this.MultiAudio != null &&
-                    this.MultiAudio.Equals(input.MultiAudio))
-                ) && 
-                (
-                    this.VideoProcess == input.VideoProcess ||
-                    (this.VideoProcess != null &&
-                    this.VideoProcess.Equals(input.VideoProcess))
-                ) && 
-                (
-                    this.AudioProcess == input.AudioProcess ||
-                    (this.AudioProcess != null &&
-                    this.AudioProcess.Equals(input.AudioProcess))
-                );
+            return true;
         }
 
         /// <summary>
@@ -251,39 +182,23 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Input != null)
-                    hashCode = hashCode * 59 + this.Input.GetHashCode();
-                if (this.Output != null)
-                    hashCode = hashCode * 59 + this.Output.GetHashCode();
-                if (this.TransTemplateId != null)
-                    hashCode = hashCode * 59 + this.TransTemplateId.GetHashCode();
-                if (this.AvParameters != null)
-                    hashCode = hashCode * 59 + this.AvParameters.GetHashCode();
-                if (this.OutputFilenames != null)
-                    hashCode = hashCode * 59 + this.OutputFilenames.GetHashCode();
-                if (this.UserData != null)
-                    hashCode = hashCode * 59 + this.UserData.GetHashCode();
-                if (this.Watermarks != null)
-                    hashCode = hashCode * 59 + this.Watermarks.GetHashCode();
-                if (this.Thumbnail != null)
-                    hashCode = hashCode * 59 + this.Thumbnail.GetHashCode();
-                if (this.Priority != null)
-                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
-                if (this.Subtitle != null)
-                    hashCode = hashCode * 59 + this.Subtitle.GetHashCode();
-                if (this.Encryption != null)
-                    hashCode = hashCode * 59 + this.Encryption.GetHashCode();
-                if (this.Crop != null)
-                    hashCode = hashCode * 59 + this.Crop.GetHashCode();
-                if (this.AudioTrack != null)
-                    hashCode = hashCode * 59 + this.AudioTrack.GetHashCode();
-                if (this.MultiAudio != null)
-                    hashCode = hashCode * 59 + this.MultiAudio.GetHashCode();
-                if (this.VideoProcess != null)
-                    hashCode = hashCode * 59 + this.VideoProcess.GetHashCode();
-                if (this.AudioProcess != null)
-                    hashCode = hashCode * 59 + this.AudioProcess.GetHashCode();
+                var hashCode = 41;
+                if (this.Input != null) hashCode = hashCode * 59 + this.Input.GetHashCode();
+                if (this.Output != null) hashCode = hashCode * 59 + this.Output.GetHashCode();
+                if (this.TransTemplateId != null) hashCode = hashCode * 59 + this.TransTemplateId.GetHashCode();
+                if (this.AvParameters != null) hashCode = hashCode * 59 + this.AvParameters.GetHashCode();
+                if (this.OutputFilenames != null) hashCode = hashCode * 59 + this.OutputFilenames.GetHashCode();
+                if (this.UserData != null) hashCode = hashCode * 59 + this.UserData.GetHashCode();
+                if (this.Watermarks != null) hashCode = hashCode * 59 + this.Watermarks.GetHashCode();
+                if (this.Thumbnail != null) hashCode = hashCode * 59 + this.Thumbnail.GetHashCode();
+                if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                if (this.Subtitle != null) hashCode = hashCode * 59 + this.Subtitle.GetHashCode();
+                if (this.Encryption != null) hashCode = hashCode * 59 + this.Encryption.GetHashCode();
+                if (this.Crop != null) hashCode = hashCode * 59 + this.Crop.GetHashCode();
+                if (this.AudioTrack != null) hashCode = hashCode * 59 + this.AudioTrack.GetHashCode();
+                if (this.MultiAudio != null) hashCode = hashCode * 59 + this.MultiAudio.GetHashCode();
+                if (this.VideoProcess != null) hashCode = hashCode * 59 + this.VideoProcess.GetHashCode();
+                if (this.AudioProcess != null) hashCode = hashCode * 59 + this.AudioProcess.GetHashCode();
                 return hashCode;
             }
         }

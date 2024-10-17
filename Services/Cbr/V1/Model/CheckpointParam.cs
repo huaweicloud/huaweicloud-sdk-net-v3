@@ -91,47 +91,16 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(CheckpointParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AutoTrigger != input.AutoTrigger || (this.AutoTrigger != null && !this.AutoTrigger.Equals(input.AutoTrigger))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Incremental != input.Incremental || (this.Incremental != null && !this.Incremental.Equals(input.Incremental))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Resources != input.Resources || (this.Resources != null && input.Resources != null && !this.Resources.SequenceEqual(input.Resources))) return false;
+            if (this.ResourceDetails != input.ResourceDetails || (this.ResourceDetails != null && input.ResourceDetails != null && !this.ResourceDetails.SequenceEqual(input.ResourceDetails))) return false;
+            if (this.PolicyId != input.PolicyId || (this.PolicyId != null && !this.PolicyId.Equals(input.PolicyId))) return false;
 
-            return 
-                (
-                    this.AutoTrigger == input.AutoTrigger ||
-                    (this.AutoTrigger != null &&
-                    this.AutoTrigger.Equals(input.AutoTrigger))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Incremental == input.Incremental ||
-                    (this.Incremental != null &&
-                    this.Incremental.Equals(input.Incremental))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Resources == input.Resources ||
-                    this.Resources != null &&
-                    input.Resources != null &&
-                    this.Resources.SequenceEqual(input.Resources)
-                ) && 
-                (
-                    this.ResourceDetails == input.ResourceDetails ||
-                    this.ResourceDetails != null &&
-                    input.ResourceDetails != null &&
-                    this.ResourceDetails.SequenceEqual(input.ResourceDetails)
-                ) && 
-                (
-                    this.PolicyId == input.PolicyId ||
-                    (this.PolicyId != null &&
-                    this.PolicyId.Equals(input.PolicyId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -141,21 +110,14 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AutoTrigger != null)
-                    hashCode = hashCode * 59 + this.AutoTrigger.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Incremental != null)
-                    hashCode = hashCode * 59 + this.Incremental.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Resources != null)
-                    hashCode = hashCode * 59 + this.Resources.GetHashCode();
-                if (this.ResourceDetails != null)
-                    hashCode = hashCode * 59 + this.ResourceDetails.GetHashCode();
-                if (this.PolicyId != null)
-                    hashCode = hashCode * 59 + this.PolicyId.GetHashCode();
+                var hashCode = 41;
+                if (this.AutoTrigger != null) hashCode = hashCode * 59 + this.AutoTrigger.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Incremental != null) hashCode = hashCode * 59 + this.Incremental.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Resources != null) hashCode = hashCode * 59 + this.Resources.GetHashCode();
+                if (this.ResourceDetails != null) hashCode = hashCode * 59 + this.ResourceDetails.GetHashCode();
+                if (this.PolicyId != null) hashCode = hashCode * 59 + this.PolicyId.GetHashCode();
                 return hashCode;
             }
         }

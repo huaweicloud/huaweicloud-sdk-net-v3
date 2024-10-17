@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(ListTrafficMirrorFilterRulesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TrafficMirrorFilterRules != input.TrafficMirrorFilterRules || (this.TrafficMirrorFilterRules != null && input.TrafficMirrorFilterRules != null && !this.TrafficMirrorFilterRules.SequenceEqual(input.TrafficMirrorFilterRules))) return false;
+            if (this.PageInfo != input.PageInfo || (this.PageInfo != null && !this.PageInfo.Equals(input.PageInfo))) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
 
-            return 
-                (
-                    this.TrafficMirrorFilterRules == input.TrafficMirrorFilterRules ||
-                    this.TrafficMirrorFilterRules != null &&
-                    input.TrafficMirrorFilterRules != null &&
-                    this.TrafficMirrorFilterRules.SequenceEqual(input.TrafficMirrorFilterRules)
-                ) && 
-                (
-                    this.PageInfo == input.PageInfo ||
-                    (this.PageInfo != null &&
-                    this.PageInfo.Equals(input.PageInfo))
-                ) && 
-                (
-                    this.RequestId == input.RequestId ||
-                    (this.RequestId != null &&
-                    this.RequestId.Equals(input.RequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TrafficMirrorFilterRules != null)
-                    hashCode = hashCode * 59 + this.TrafficMirrorFilterRules.GetHashCode();
-                if (this.PageInfo != null)
-                    hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
-                if (this.RequestId != null)
-                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.TrafficMirrorFilterRules != null) hashCode = hashCode * 59 + this.TrafficMirrorFilterRules.GetHashCode();
+                if (this.PageInfo != null) hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 return hashCode;
             }
         }

@@ -211,45 +211,16 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(InstanceHangingInfos input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LifecycleHookName != input.LifecycleHookName || (this.LifecycleHookName != null && !this.LifecycleHookName.Equals(input.LifecycleHookName))) return false;
+            if (this.LifecycleActionKey != input.LifecycleActionKey || (this.LifecycleActionKey != null && !this.LifecycleActionKey.Equals(input.LifecycleActionKey))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.ScalingGroupId != input.ScalingGroupId || (this.ScalingGroupId != null && !this.ScalingGroupId.Equals(input.ScalingGroupId))) return false;
+            if (this.LifecycleHookStatus != input.LifecycleHookStatus) return false;
+            if (this.Timeout != input.Timeout || (this.Timeout != null && !this.Timeout.Equals(input.Timeout))) return false;
+            if (this.DefaultResult != input.DefaultResult || (this.DefaultResult != null && !this.DefaultResult.Equals(input.DefaultResult))) return false;
 
-            return 
-                (
-                    this.LifecycleHookName == input.LifecycleHookName ||
-                    (this.LifecycleHookName != null &&
-                    this.LifecycleHookName.Equals(input.LifecycleHookName))
-                ) && 
-                (
-                    this.LifecycleActionKey == input.LifecycleActionKey ||
-                    (this.LifecycleActionKey != null &&
-                    this.LifecycleActionKey.Equals(input.LifecycleActionKey))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.ScalingGroupId == input.ScalingGroupId ||
-                    (this.ScalingGroupId != null &&
-                    this.ScalingGroupId.Equals(input.ScalingGroupId))
-                ) && 
-                (
-                    this.LifecycleHookStatus == input.LifecycleHookStatus ||
-                    (this.LifecycleHookStatus != null &&
-                    this.LifecycleHookStatus.Equals(input.LifecycleHookStatus))
-                ) && 
-                (
-                    this.Timeout == input.Timeout ||
-                    (this.Timeout != null &&
-                    this.Timeout.Equals(input.Timeout))
-                ) && 
-                (
-                    this.DefaultResult == input.DefaultResult ||
-                    (this.DefaultResult != null &&
-                    this.DefaultResult.Equals(input.DefaultResult))
-                );
+            return true;
         }
 
         /// <summary>
@@ -259,21 +230,14 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LifecycleHookName != null)
-                    hashCode = hashCode * 59 + this.LifecycleHookName.GetHashCode();
-                if (this.LifecycleActionKey != null)
-                    hashCode = hashCode * 59 + this.LifecycleActionKey.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.ScalingGroupId != null)
-                    hashCode = hashCode * 59 + this.ScalingGroupId.GetHashCode();
-                if (this.LifecycleHookStatus != null)
-                    hashCode = hashCode * 59 + this.LifecycleHookStatus.GetHashCode();
-                if (this.Timeout != null)
-                    hashCode = hashCode * 59 + this.Timeout.GetHashCode();
-                if (this.DefaultResult != null)
-                    hashCode = hashCode * 59 + this.DefaultResult.GetHashCode();
+                var hashCode = 41;
+                if (this.LifecycleHookName != null) hashCode = hashCode * 59 + this.LifecycleHookName.GetHashCode();
+                if (this.LifecycleActionKey != null) hashCode = hashCode * 59 + this.LifecycleActionKey.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.ScalingGroupId != null) hashCode = hashCode * 59 + this.ScalingGroupId.GetHashCode();
+                hashCode = hashCode * 59 + this.LifecycleHookStatus.GetHashCode();
+                if (this.Timeout != null) hashCode = hashCode * 59 + this.Timeout.GetHashCode();
+                if (this.DefaultResult != null) hashCode = hashCode * 59 + this.DefaultResult.GetHashCode();
                 return hashCode;
             }
         }

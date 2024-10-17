@@ -265,76 +265,22 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(GetExecutionPlanMetadataResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StackId != input.StackId || (this.StackId != null && !this.StackId.Equals(input.StackId))) return false;
+            if (this.StackName != input.StackName || (this.StackName != null && !this.StackName.Equals(input.StackName))) return false;
+            if (this.ExecutionPlanId != input.ExecutionPlanId || (this.ExecutionPlanId != null && !this.ExecutionPlanId.Equals(input.ExecutionPlanId))) return false;
+            if (this.ExecutionPlanName != input.ExecutionPlanName || (this.ExecutionPlanName != null && !this.ExecutionPlanName.Equals(input.ExecutionPlanName))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.VarsStructure != input.VarsStructure || (this.VarsStructure != null && input.VarsStructure != null && !this.VarsStructure.SequenceEqual(input.VarsStructure))) return false;
+            if (this.VarsUriContent != input.VarsUriContent || (this.VarsUriContent != null && !this.VarsUriContent.Equals(input.VarsUriContent))) return false;
+            if (this.VarsBody != input.VarsBody || (this.VarsBody != null && !this.VarsBody.Equals(input.VarsBody))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.StatusMessage != input.StatusMessage || (this.StatusMessage != null && !this.StatusMessage.Equals(input.StatusMessage))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.ApplyTime != input.ApplyTime || (this.ApplyTime != null && !this.ApplyTime.Equals(input.ApplyTime))) return false;
+            if (this.Summary != input.Summary || (this.Summary != null && !this.Summary.Equals(input.Summary))) return false;
 
-            return 
-                (
-                    this.StackId == input.StackId ||
-                    (this.StackId != null &&
-                    this.StackId.Equals(input.StackId))
-                ) && 
-                (
-                    this.StackName == input.StackName ||
-                    (this.StackName != null &&
-                    this.StackName.Equals(input.StackName))
-                ) && 
-                (
-                    this.ExecutionPlanId == input.ExecutionPlanId ||
-                    (this.ExecutionPlanId != null &&
-                    this.ExecutionPlanId.Equals(input.ExecutionPlanId))
-                ) && 
-                (
-                    this.ExecutionPlanName == input.ExecutionPlanName ||
-                    (this.ExecutionPlanName != null &&
-                    this.ExecutionPlanName.Equals(input.ExecutionPlanName))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.VarsStructure == input.VarsStructure ||
-                    this.VarsStructure != null &&
-                    input.VarsStructure != null &&
-                    this.VarsStructure.SequenceEqual(input.VarsStructure)
-                ) && 
-                (
-                    this.VarsUriContent == input.VarsUriContent ||
-                    (this.VarsUriContent != null &&
-                    this.VarsUriContent.Equals(input.VarsUriContent))
-                ) && 
-                (
-                    this.VarsBody == input.VarsBody ||
-                    (this.VarsBody != null &&
-                    this.VarsBody.Equals(input.VarsBody))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.StatusMessage == input.StatusMessage ||
-                    (this.StatusMessage != null &&
-                    this.StatusMessage.Equals(input.StatusMessage))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.ApplyTime == input.ApplyTime ||
-                    (this.ApplyTime != null &&
-                    this.ApplyTime.Equals(input.ApplyTime))
-                ) && 
-                (
-                    this.Summary == input.Summary ||
-                    (this.Summary != null &&
-                    this.Summary.Equals(input.Summary))
-                );
+            return true;
         }
 
         /// <summary>
@@ -344,33 +290,20 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StackId != null)
-                    hashCode = hashCode * 59 + this.StackId.GetHashCode();
-                if (this.StackName != null)
-                    hashCode = hashCode * 59 + this.StackName.GetHashCode();
-                if (this.ExecutionPlanId != null)
-                    hashCode = hashCode * 59 + this.ExecutionPlanId.GetHashCode();
-                if (this.ExecutionPlanName != null)
-                    hashCode = hashCode * 59 + this.ExecutionPlanName.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.VarsStructure != null)
-                    hashCode = hashCode * 59 + this.VarsStructure.GetHashCode();
-                if (this.VarsUriContent != null)
-                    hashCode = hashCode * 59 + this.VarsUriContent.GetHashCode();
-                if (this.VarsBody != null)
-                    hashCode = hashCode * 59 + this.VarsBody.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.StatusMessage != null)
-                    hashCode = hashCode * 59 + this.StatusMessage.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.ApplyTime != null)
-                    hashCode = hashCode * 59 + this.ApplyTime.GetHashCode();
-                if (this.Summary != null)
-                    hashCode = hashCode * 59 + this.Summary.GetHashCode();
+                var hashCode = 41;
+                if (this.StackId != null) hashCode = hashCode * 59 + this.StackId.GetHashCode();
+                if (this.StackName != null) hashCode = hashCode * 59 + this.StackName.GetHashCode();
+                if (this.ExecutionPlanId != null) hashCode = hashCode * 59 + this.ExecutionPlanId.GetHashCode();
+                if (this.ExecutionPlanName != null) hashCode = hashCode * 59 + this.ExecutionPlanName.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.VarsStructure != null) hashCode = hashCode * 59 + this.VarsStructure.GetHashCode();
+                if (this.VarsUriContent != null) hashCode = hashCode * 59 + this.VarsUriContent.GetHashCode();
+                if (this.VarsBody != null) hashCode = hashCode * 59 + this.VarsBody.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.StatusMessage != null) hashCode = hashCode * 59 + this.StatusMessage.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.ApplyTime != null) hashCode = hashCode * 59 + this.ApplyTime.GetHashCode();
+                if (this.Summary != null) hashCode = hashCode * 59 + this.Summary.GetHashCode();
                 return hashCode;
             }
         }

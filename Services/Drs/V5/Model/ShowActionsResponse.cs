@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ShowActionsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobAction != input.JobAction || (this.JobAction != null && !this.JobAction.Equals(input.JobAction))) return false;
 
-            return 
-                (
-                    this.JobAction == input.JobAction ||
-                    (this.JobAction != null &&
-                    this.JobAction.Equals(input.JobAction))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobAction != null)
-                    hashCode = hashCode * 59 + this.JobAction.GetHashCode();
+                var hashCode = 41;
+                if (this.JobAction != null) hashCode = hashCode * 59 + this.JobAction.GetHashCode();
                 return hashCode;
             }
         }

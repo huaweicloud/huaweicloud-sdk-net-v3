@@ -625,77 +625,22 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         /// </summary>
         public bool Equals(InvocationInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InvocationId != input.InvocationId || (this.InvocationId != null && !this.InvocationId.Equals(input.InvocationId))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.InstanceName != input.InstanceName || (this.InstanceName != null && !this.InstanceName.Equals(input.InstanceName))) return false;
+            if (this.InstanceType != input.InstanceType) return false;
+            if (this.IntranetIps != input.IntranetIps || (this.IntranetIps != null && input.IntranetIps != null && !this.IntranetIps.SequenceEqual(input.IntranetIps))) return false;
+            if (this.ElasticIps != input.ElasticIps || (this.ElasticIps != null && input.ElasticIps != null && !this.ElasticIps.SequenceEqual(input.ElasticIps))) return false;
+            if (this.InvocationType != input.InvocationType) return false;
+            if (this.InvocationStatus != input.InvocationStatus) return false;
+            if (this.InvocationTarget != input.InvocationTarget) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.CurrentVersion != input.CurrentVersion || (this.CurrentVersion != null && !this.CurrentVersion.Equals(input.CurrentVersion))) return false;
+            if (this.TargetVersion != input.TargetVersion || (this.TargetVersion != null && !this.TargetVersion.Equals(input.TargetVersion))) return false;
 
-            return 
-                (
-                    this.InvocationId == input.InvocationId ||
-                    (this.InvocationId != null &&
-                    this.InvocationId.Equals(input.InvocationId))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.InstanceName == input.InstanceName ||
-                    (this.InstanceName != null &&
-                    this.InstanceName.Equals(input.InstanceName))
-                ) && 
-                (
-                    this.InstanceType == input.InstanceType ||
-                    (this.InstanceType != null &&
-                    this.InstanceType.Equals(input.InstanceType))
-                ) && 
-                (
-                    this.IntranetIps == input.IntranetIps ||
-                    this.IntranetIps != null &&
-                    input.IntranetIps != null &&
-                    this.IntranetIps.SequenceEqual(input.IntranetIps)
-                ) && 
-                (
-                    this.ElasticIps == input.ElasticIps ||
-                    this.ElasticIps != null &&
-                    input.ElasticIps != null &&
-                    this.ElasticIps.SequenceEqual(input.ElasticIps)
-                ) && 
-                (
-                    this.InvocationType == input.InvocationType ||
-                    (this.InvocationType != null &&
-                    this.InvocationType.Equals(input.InvocationType))
-                ) && 
-                (
-                    this.InvocationStatus == input.InvocationStatus ||
-                    (this.InvocationStatus != null &&
-                    this.InvocationStatus.Equals(input.InvocationStatus))
-                ) && 
-                (
-                    this.InvocationTarget == input.InvocationTarget ||
-                    (this.InvocationTarget != null &&
-                    this.InvocationTarget.Equals(input.InvocationTarget))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.CurrentVersion == input.CurrentVersion ||
-                    (this.CurrentVersion != null &&
-                    this.CurrentVersion.Equals(input.CurrentVersion))
-                ) && 
-                (
-                    this.TargetVersion == input.TargetVersion ||
-                    (this.TargetVersion != null &&
-                    this.TargetVersion.Equals(input.TargetVersion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -705,33 +650,20 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InvocationId != null)
-                    hashCode = hashCode * 59 + this.InvocationId.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.InstanceName != null)
-                    hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
-                if (this.InstanceType != null)
-                    hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
-                if (this.IntranetIps != null)
-                    hashCode = hashCode * 59 + this.IntranetIps.GetHashCode();
-                if (this.ElasticIps != null)
-                    hashCode = hashCode * 59 + this.ElasticIps.GetHashCode();
-                if (this.InvocationType != null)
-                    hashCode = hashCode * 59 + this.InvocationType.GetHashCode();
-                if (this.InvocationStatus != null)
-                    hashCode = hashCode * 59 + this.InvocationStatus.GetHashCode();
-                if (this.InvocationTarget != null)
-                    hashCode = hashCode * 59 + this.InvocationTarget.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.CurrentVersion != null)
-                    hashCode = hashCode * 59 + this.CurrentVersion.GetHashCode();
-                if (this.TargetVersion != null)
-                    hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
+                var hashCode = 41;
+                if (this.InvocationId != null) hashCode = hashCode * 59 + this.InvocationId.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.InstanceName != null) hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
+                hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
+                if (this.IntranetIps != null) hashCode = hashCode * 59 + this.IntranetIps.GetHashCode();
+                if (this.ElasticIps != null) hashCode = hashCode * 59 + this.ElasticIps.GetHashCode();
+                hashCode = hashCode * 59 + this.InvocationType.GetHashCode();
+                hashCode = hashCode * 59 + this.InvocationStatus.GetHashCode();
+                hashCode = hashCode * 59 + this.InvocationTarget.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.CurrentVersion != null) hashCode = hashCode * 59 + this.CurrentVersion.GetHashCode();
+                if (this.TargetVersion != null) hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
                 return hashCode;
             }
         }

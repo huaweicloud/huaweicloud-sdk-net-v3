@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// </summary>
         public bool Equals(InstanceStatistics input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Unhealth != input.Unhealth || (this.Unhealth != null && !this.Unhealth.Equals(input.Unhealth))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.TypeStatistics != input.TypeStatistics || (this.TypeStatistics != null && !this.TypeStatistics.Equals(input.TypeStatistics))) return false;
 
-            return 
-                (
-                    this.Unhealth == input.Unhealth ||
-                    (this.Unhealth != null &&
-                    this.Unhealth.Equals(input.Unhealth))
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.TypeStatistics == input.TypeStatistics ||
-                    (this.TypeStatistics != null &&
-                    this.TypeStatistics.Equals(input.TypeStatistics))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Unhealth != null)
-                    hashCode = hashCode * 59 + this.Unhealth.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.TypeStatistics != null)
-                    hashCode = hashCode * 59 + this.TypeStatistics.GetHashCode();
+                var hashCode = 41;
+                if (this.Unhealth != null) hashCode = hashCode * 59 + this.Unhealth.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.TypeStatistics != null) hashCode = hashCode * 59 + this.TypeStatistics.GetHashCode();
                 return hashCode;
             }
         }

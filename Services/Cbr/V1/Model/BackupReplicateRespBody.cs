@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(BackupReplicateRespBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BackupId != input.BackupId || (this.BackupId != null && !this.BackupId.Equals(input.BackupId))) return false;
+            if (this.DestinationProjectId != input.DestinationProjectId || (this.DestinationProjectId != null && !this.DestinationProjectId.Equals(input.DestinationProjectId))) return false;
+            if (this.DestinationRegion != input.DestinationRegion || (this.DestinationRegion != null && !this.DestinationRegion.Equals(input.DestinationRegion))) return false;
+            if (this.DestinationVaultId != input.DestinationVaultId || (this.DestinationVaultId != null && !this.DestinationVaultId.Equals(input.DestinationVaultId))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.ProviderId != input.ProviderId || (this.ProviderId != null && !this.ProviderId.Equals(input.ProviderId))) return false;
+            if (this.ReplicationRecordId != input.ReplicationRecordId || (this.ReplicationRecordId != null && !this.ReplicationRecordId.Equals(input.ReplicationRecordId))) return false;
+            if (this.SourceRegion != input.SourceRegion || (this.SourceRegion != null && !this.SourceRegion.Equals(input.SourceRegion))) return false;
 
-            return 
-                (
-                    this.BackupId == input.BackupId ||
-                    (this.BackupId != null &&
-                    this.BackupId.Equals(input.BackupId))
-                ) && 
-                (
-                    this.DestinationProjectId == input.DestinationProjectId ||
-                    (this.DestinationProjectId != null &&
-                    this.DestinationProjectId.Equals(input.DestinationProjectId))
-                ) && 
-                (
-                    this.DestinationRegion == input.DestinationRegion ||
-                    (this.DestinationRegion != null &&
-                    this.DestinationRegion.Equals(input.DestinationRegion))
-                ) && 
-                (
-                    this.DestinationVaultId == input.DestinationVaultId ||
-                    (this.DestinationVaultId != null &&
-                    this.DestinationVaultId.Equals(input.DestinationVaultId))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.ProviderId == input.ProviderId ||
-                    (this.ProviderId != null &&
-                    this.ProviderId.Equals(input.ProviderId))
-                ) && 
-                (
-                    this.ReplicationRecordId == input.ReplicationRecordId ||
-                    (this.ReplicationRecordId != null &&
-                    this.ReplicationRecordId.Equals(input.ReplicationRecordId))
-                ) && 
-                (
-                    this.SourceRegion == input.SourceRegion ||
-                    (this.SourceRegion != null &&
-                    this.SourceRegion.Equals(input.SourceRegion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BackupId != null)
-                    hashCode = hashCode * 59 + this.BackupId.GetHashCode();
-                if (this.DestinationProjectId != null)
-                    hashCode = hashCode * 59 + this.DestinationProjectId.GetHashCode();
-                if (this.DestinationRegion != null)
-                    hashCode = hashCode * 59 + this.DestinationRegion.GetHashCode();
-                if (this.DestinationVaultId != null)
-                    hashCode = hashCode * 59 + this.DestinationVaultId.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.ProviderId != null)
-                    hashCode = hashCode * 59 + this.ProviderId.GetHashCode();
-                if (this.ReplicationRecordId != null)
-                    hashCode = hashCode * 59 + this.ReplicationRecordId.GetHashCode();
-                if (this.SourceRegion != null)
-                    hashCode = hashCode * 59 + this.SourceRegion.GetHashCode();
+                var hashCode = 41;
+                if (this.BackupId != null) hashCode = hashCode * 59 + this.BackupId.GetHashCode();
+                if (this.DestinationProjectId != null) hashCode = hashCode * 59 + this.DestinationProjectId.GetHashCode();
+                if (this.DestinationRegion != null) hashCode = hashCode * 59 + this.DestinationRegion.GetHashCode();
+                if (this.DestinationVaultId != null) hashCode = hashCode * 59 + this.DestinationVaultId.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.ProviderId != null) hashCode = hashCode * 59 + this.ProviderId.GetHashCode();
+                if (this.ReplicationRecordId != null) hashCode = hashCode * 59 + this.ReplicationRecordId.GetHashCode();
+                if (this.SourceRegion != null) hashCode = hashCode * 59 + this.SourceRegion.GetHashCode();
                 return hashCode;
             }
         }

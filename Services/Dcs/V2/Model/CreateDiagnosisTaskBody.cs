@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(CreateDiagnosisTaskBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BeginTime != input.BeginTime || (this.BeginTime != null && !this.BeginTime.Equals(input.BeginTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.NodeIpList != input.NodeIpList || (this.NodeIpList != null && input.NodeIpList != null && !this.NodeIpList.SequenceEqual(input.NodeIpList))) return false;
 
-            return 
-                (
-                    this.BeginTime == input.BeginTime ||
-                    (this.BeginTime != null &&
-                    this.BeginTime.Equals(input.BeginTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.NodeIpList == input.NodeIpList ||
-                    this.NodeIpList != null &&
-                    input.NodeIpList != null &&
-                    this.NodeIpList.SequenceEqual(input.NodeIpList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BeginTime != null)
-                    hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.NodeIpList != null)
-                    hashCode = hashCode * 59 + this.NodeIpList.GetHashCode();
+                var hashCode = 41;
+                if (this.BeginTime != null) hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.NodeIpList != null) hashCode = hashCode * 59 + this.NodeIpList.GetHashCode();
                 return hashCode;
             }
         }

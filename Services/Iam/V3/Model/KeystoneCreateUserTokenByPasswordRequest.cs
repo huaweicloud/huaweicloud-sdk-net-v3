@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(KeystoneCreateUserTokenByPasswordRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Nocatalog != input.Nocatalog || (this.Nocatalog != null && !this.Nocatalog.Equals(input.Nocatalog))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
-            return 
-                (
-                    this.Nocatalog == input.Nocatalog ||
-                    (this.Nocatalog != null &&
-                    this.Nocatalog.Equals(input.Nocatalog))
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Nocatalog != null)
-                    hashCode = hashCode * 59 + this.Nocatalog.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                var hashCode = 41;
+                if (this.Nocatalog != null) hashCode = hashCode * 59 + this.Nocatalog.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

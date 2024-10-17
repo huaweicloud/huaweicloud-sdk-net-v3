@@ -163,15 +163,10 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(CreateSchedulerHints input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DecBaremetal != input.DecBaremetal) return false;
 
-            return 
-                (
-                    this.DecBaremetal == input.DecBaremetal ||
-                    (this.DecBaremetal != null &&
-                    this.DecBaremetal.Equals(input.DecBaremetal))
-                );
+            return true;
         }
 
         /// <summary>
@@ -181,9 +176,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DecBaremetal != null)
-                    hashCode = hashCode * 59 + this.DecBaremetal.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.DecBaremetal.GetHashCode();
                 return hashCode;
             }
         }

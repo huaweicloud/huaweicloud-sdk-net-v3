@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ShowMeteringResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProductInfoList != input.ProductInfoList || (this.ProductInfoList != null && input.ProductInfoList != null && !this.ProductInfoList.SequenceEqual(input.ProductInfoList))) return false;
 
-            return 
-                (
-                    this.ProductInfoList == input.ProductInfoList ||
-                    this.ProductInfoList != null &&
-                    input.ProductInfoList != null &&
-                    this.ProductInfoList.SequenceEqual(input.ProductInfoList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProductInfoList != null)
-                    hashCode = hashCode * 59 + this.ProductInfoList.GetHashCode();
+                var hashCode = 41;
+                if (this.ProductInfoList != null) hashCode = hashCode * 59 + this.ProductInfoList.GetHashCode();
                 return hashCode;
             }
         }

@@ -84,43 +84,15 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// </summary>
         public bool Equals(TextDetectionReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EventType != input.EventType || (this.EventType != null && !this.EventType.Equals(input.EventType))) return false;
+            if (this.Categories != input.Categories || (this.Categories != null && input.Categories != null && !this.Categories.SequenceEqual(input.Categories))) return false;
+            if (this.GlossaryNames != input.GlossaryNames || (this.GlossaryNames != null && input.GlossaryNames != null && !this.GlossaryNames.SequenceEqual(input.GlossaryNames))) return false;
+            if (this.Data != input.Data || (this.Data != null && !this.Data.Equals(input.Data))) return false;
+            if (this.WhiteGlossaryNames != input.WhiteGlossaryNames || (this.WhiteGlossaryNames != null && input.WhiteGlossaryNames != null && !this.WhiteGlossaryNames.SequenceEqual(input.WhiteGlossaryNames))) return false;
+            if (this.BizType != input.BizType || (this.BizType != null && !this.BizType.Equals(input.BizType))) return false;
 
-            return 
-                (
-                    this.EventType == input.EventType ||
-                    (this.EventType != null &&
-                    this.EventType.Equals(input.EventType))
-                ) && 
-                (
-                    this.Categories == input.Categories ||
-                    this.Categories != null &&
-                    input.Categories != null &&
-                    this.Categories.SequenceEqual(input.Categories)
-                ) && 
-                (
-                    this.GlossaryNames == input.GlossaryNames ||
-                    this.GlossaryNames != null &&
-                    input.GlossaryNames != null &&
-                    this.GlossaryNames.SequenceEqual(input.GlossaryNames)
-                ) && 
-                (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
-                ) && 
-                (
-                    this.WhiteGlossaryNames == input.WhiteGlossaryNames ||
-                    this.WhiteGlossaryNames != null &&
-                    input.WhiteGlossaryNames != null &&
-                    this.WhiteGlossaryNames.SequenceEqual(input.WhiteGlossaryNames)
-                ) && 
-                (
-                    this.BizType == input.BizType ||
-                    (this.BizType != null &&
-                    this.BizType.Equals(input.BizType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -130,19 +102,13 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EventType != null)
-                    hashCode = hashCode * 59 + this.EventType.GetHashCode();
-                if (this.Categories != null)
-                    hashCode = hashCode * 59 + this.Categories.GetHashCode();
-                if (this.GlossaryNames != null)
-                    hashCode = hashCode * 59 + this.GlossaryNames.GetHashCode();
-                if (this.Data != null)
-                    hashCode = hashCode * 59 + this.Data.GetHashCode();
-                if (this.WhiteGlossaryNames != null)
-                    hashCode = hashCode * 59 + this.WhiteGlossaryNames.GetHashCode();
-                if (this.BizType != null)
-                    hashCode = hashCode * 59 + this.BizType.GetHashCode();
+                var hashCode = 41;
+                if (this.EventType != null) hashCode = hashCode * 59 + this.EventType.GetHashCode();
+                if (this.Categories != null) hashCode = hashCode * 59 + this.Categories.GetHashCode();
+                if (this.GlossaryNames != null) hashCode = hashCode * 59 + this.GlossaryNames.GetHashCode();
+                if (this.Data != null) hashCode = hashCode * 59 + this.Data.GetHashCode();
+                if (this.WhiteGlossaryNames != null) hashCode = hashCode * 59 + this.WhiteGlossaryNames.GetHashCode();
+                if (this.BizType != null) hashCode = hashCode * 59 + this.BizType.GetHashCode();
                 return hashCode;
             }
         }

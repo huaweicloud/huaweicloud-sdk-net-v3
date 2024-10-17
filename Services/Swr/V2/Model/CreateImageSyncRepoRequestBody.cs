@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public bool Equals(CreateImageSyncRepoRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RemoteRegionId != input.RemoteRegionId || (this.RemoteRegionId != null && !this.RemoteRegionId.Equals(input.RemoteRegionId))) return false;
+            if (this.RemoteNamespace != input.RemoteNamespace || (this.RemoteNamespace != null && !this.RemoteNamespace.Equals(input.RemoteNamespace))) return false;
+            if (this.SyncAuto != input.SyncAuto || (this.SyncAuto != null && !this.SyncAuto.Equals(input.SyncAuto))) return false;
+            if (this.Override != input.Override || (this.Override != null && !this.Override.Equals(input.Override))) return false;
 
-            return 
-                (
-                    this.RemoteRegionId == input.RemoteRegionId ||
-                    (this.RemoteRegionId != null &&
-                    this.RemoteRegionId.Equals(input.RemoteRegionId))
-                ) && 
-                (
-                    this.RemoteNamespace == input.RemoteNamespace ||
-                    (this.RemoteNamespace != null &&
-                    this.RemoteNamespace.Equals(input.RemoteNamespace))
-                ) && 
-                (
-                    this.SyncAuto == input.SyncAuto ||
-                    (this.SyncAuto != null &&
-                    this.SyncAuto.Equals(input.SyncAuto))
-                ) && 
-                (
-                    this.Override == input.Override ||
-                    (this.Override != null &&
-                    this.Override.Equals(input.Override))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RemoteRegionId != null)
-                    hashCode = hashCode * 59 + this.RemoteRegionId.GetHashCode();
-                if (this.RemoteNamespace != null)
-                    hashCode = hashCode * 59 + this.RemoteNamespace.GetHashCode();
-                if (this.SyncAuto != null)
-                    hashCode = hashCode * 59 + this.SyncAuto.GetHashCode();
-                if (this.Override != null)
-                    hashCode = hashCode * 59 + this.Override.GetHashCode();
+                var hashCode = 41;
+                if (this.RemoteRegionId != null) hashCode = hashCode * 59 + this.RemoteRegionId.GetHashCode();
+                if (this.RemoteNamespace != null) hashCode = hashCode * 59 + this.RemoteNamespace.GetHashCode();
+                if (this.SyncAuto != null) hashCode = hashCode * 59 + this.SyncAuto.GetHashCode();
+                if (this.Override != null) hashCode = hashCode * 59 + this.Override.GetHashCode();
                 return hashCode;
             }
         }

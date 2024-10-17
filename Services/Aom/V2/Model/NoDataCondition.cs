@@ -189,25 +189,12 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(NoDataCondition input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NoDataTimeframe != input.NoDataTimeframe || (this.NoDataTimeframe != null && !this.NoDataTimeframe.Equals(input.NoDataTimeframe))) return false;
+            if (this.NoDataAlertState != input.NoDataAlertState) return false;
+            if (this.NotifyNoData != input.NotifyNoData || (this.NotifyNoData != null && !this.NotifyNoData.Equals(input.NotifyNoData))) return false;
 
-            return 
-                (
-                    this.NoDataTimeframe == input.NoDataTimeframe ||
-                    (this.NoDataTimeframe != null &&
-                    this.NoDataTimeframe.Equals(input.NoDataTimeframe))
-                ) && 
-                (
-                    this.NoDataAlertState == input.NoDataAlertState ||
-                    (this.NoDataAlertState != null &&
-                    this.NoDataAlertState.Equals(input.NoDataAlertState))
-                ) && 
-                (
-                    this.NotifyNoData == input.NotifyNoData ||
-                    (this.NotifyNoData != null &&
-                    this.NotifyNoData.Equals(input.NotifyNoData))
-                );
+            return true;
         }
 
         /// <summary>
@@ -217,13 +204,10 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NoDataTimeframe != null)
-                    hashCode = hashCode * 59 + this.NoDataTimeframe.GetHashCode();
-                if (this.NoDataAlertState != null)
-                    hashCode = hashCode * 59 + this.NoDataAlertState.GetHashCode();
-                if (this.NotifyNoData != null)
-                    hashCode = hashCode * 59 + this.NotifyNoData.GetHashCode();
+                var hashCode = 41;
+                if (this.NoDataTimeframe != null) hashCode = hashCode * 59 + this.NoDataTimeframe.GetHashCode();
+                hashCode = hashCode * 59 + this.NoDataAlertState.GetHashCode();
+                if (this.NotifyNoData != null) hashCode = hashCode * 59 + this.NotifyNoData.GetHashCode();
                 return hashCode;
             }
         }

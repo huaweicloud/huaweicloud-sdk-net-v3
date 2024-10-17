@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(ShowOpLogResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OperationLog != input.OperationLog || (this.OperationLog != null && !this.OperationLog.Equals(input.OperationLog))) return false;
 
-            return 
-                (
-                    this.OperationLog == input.OperationLog ||
-                    (this.OperationLog != null &&
-                    this.OperationLog.Equals(input.OperationLog))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OperationLog != null)
-                    hashCode = hashCode * 59 + this.OperationLog.GetHashCode();
+                var hashCode = 41;
+                if (this.OperationLog != null) hashCode = hashCode * 59 + this.OperationLog.GetHashCode();
                 return hashCode;
             }
         }

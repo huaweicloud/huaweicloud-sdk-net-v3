@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(MetricDataValue input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DataPoints != input.DataPoints || (this.DataPoints != null && input.DataPoints != null && !this.DataPoints.SequenceEqual(input.DataPoints))) return false;
+            if (this.Metric != input.Metric || (this.Metric != null && !this.Metric.Equals(input.Metric))) return false;
 
-            return 
-                (
-                    this.DataPoints == input.DataPoints ||
-                    this.DataPoints != null &&
-                    input.DataPoints != null &&
-                    this.DataPoints.SequenceEqual(input.DataPoints)
-                ) && 
-                (
-                    this.Metric == input.Metric ||
-                    (this.Metric != null &&
-                    this.Metric.Equals(input.Metric))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DataPoints != null)
-                    hashCode = hashCode * 59 + this.DataPoints.GetHashCode();
-                if (this.Metric != null)
-                    hashCode = hashCode * 59 + this.Metric.GetHashCode();
+                var hashCode = 41;
+                if (this.DataPoints != null) hashCode = hashCode * 59 + this.DataPoints.GetHashCode();
+                if (this.Metric != null) hashCode = hashCode * 59 + this.Metric.GetHashCode();
                 return hashCode;
             }
         }

@@ -337,45 +337,16 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(SlowlogForLtsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.Type != input.Type) return false;
+            if (this.LineNum != input.LineNum || (this.LineNum != null && !this.LineNum.Equals(input.LineNum))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.SearchType != input.SearchType) return false;
+            if (this.Database != input.Database || (this.Database != null && !this.Database.Equals(input.Database))) return false;
 
-            return 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.LineNum == input.LineNum ||
-                    (this.LineNum != null &&
-                    this.LineNum.Equals(input.LineNum))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.SearchType == input.SearchType ||
-                    (this.SearchType != null &&
-                    this.SearchType.Equals(input.SearchType))
-                ) && 
-                (
-                    this.Database == input.Database ||
-                    (this.Database != null &&
-                    this.Database.Equals(input.Database))
-                );
+            return true;
         }
 
         /// <summary>
@@ -385,21 +356,14 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.LineNum != null)
-                    hashCode = hashCode * 59 + this.LineNum.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.SearchType != null)
-                    hashCode = hashCode * 59 + this.SearchType.GetHashCode();
-                if (this.Database != null)
-                    hashCode = hashCode * 59 + this.Database.GetHashCode();
+                var hashCode = 41;
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.LineNum != null) hashCode = hashCode * 59 + this.LineNum.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                hashCode = hashCode * 59 + this.SearchType.GetHashCode();
+                if (this.Database != null) hashCode = hashCode * 59 + this.Database.GetHashCode();
                 return hashCode;
             }
         }

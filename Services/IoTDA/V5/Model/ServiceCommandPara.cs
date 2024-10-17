@@ -112,61 +112,19 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ServiceCommandPara input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ParaName != input.ParaName || (this.ParaName != null && !this.ParaName.Equals(input.ParaName))) return false;
+            if (this.DataType != input.DataType || (this.DataType != null && !this.DataType.Equals(input.DataType))) return false;
+            if (this.Required != input.Required || (this.Required != null && !this.Required.Equals(input.Required))) return false;
+            if (this.EnumList != input.EnumList || (this.EnumList != null && input.EnumList != null && !this.EnumList.SequenceEqual(input.EnumList))) return false;
+            if (this.Min != input.Min || (this.Min != null && !this.Min.Equals(input.Min))) return false;
+            if (this.Max != input.Max || (this.Max != null && !this.Max.Equals(input.Max))) return false;
+            if (this.MaxLength != input.MaxLength || (this.MaxLength != null && !this.MaxLength.Equals(input.MaxLength))) return false;
+            if (this.Step != input.Step || (this.Step != null && !this.Step.Equals(input.Step))) return false;
+            if (this.Unit != input.Unit || (this.Unit != null && !this.Unit.Equals(input.Unit))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
 
-            return 
-                (
-                    this.ParaName == input.ParaName ||
-                    (this.ParaName != null &&
-                    this.ParaName.Equals(input.ParaName))
-                ) && 
-                (
-                    this.DataType == input.DataType ||
-                    (this.DataType != null &&
-                    this.DataType.Equals(input.DataType))
-                ) && 
-                (
-                    this.Required == input.Required ||
-                    (this.Required != null &&
-                    this.Required.Equals(input.Required))
-                ) && 
-                (
-                    this.EnumList == input.EnumList ||
-                    this.EnumList != null &&
-                    input.EnumList != null &&
-                    this.EnumList.SequenceEqual(input.EnumList)
-                ) && 
-                (
-                    this.Min == input.Min ||
-                    (this.Min != null &&
-                    this.Min.Equals(input.Min))
-                ) && 
-                (
-                    this.Max == input.Max ||
-                    (this.Max != null &&
-                    this.Max.Equals(input.Max))
-                ) && 
-                (
-                    this.MaxLength == input.MaxLength ||
-                    (this.MaxLength != null &&
-                    this.MaxLength.Equals(input.MaxLength))
-                ) && 
-                (
-                    this.Step == input.Step ||
-                    (this.Step != null &&
-                    this.Step.Equals(input.Step))
-                ) && 
-                (
-                    this.Unit == input.Unit ||
-                    (this.Unit != null &&
-                    this.Unit.Equals(input.Unit))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                );
+            return true;
         }
 
         /// <summary>
@@ -176,27 +134,17 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ParaName != null)
-                    hashCode = hashCode * 59 + this.ParaName.GetHashCode();
-                if (this.DataType != null)
-                    hashCode = hashCode * 59 + this.DataType.GetHashCode();
-                if (this.Required != null)
-                    hashCode = hashCode * 59 + this.Required.GetHashCode();
-                if (this.EnumList != null)
-                    hashCode = hashCode * 59 + this.EnumList.GetHashCode();
-                if (this.Min != null)
-                    hashCode = hashCode * 59 + this.Min.GetHashCode();
-                if (this.Max != null)
-                    hashCode = hashCode * 59 + this.Max.GetHashCode();
-                if (this.MaxLength != null)
-                    hashCode = hashCode * 59 + this.MaxLength.GetHashCode();
-                if (this.Step != null)
-                    hashCode = hashCode * 59 + this.Step.GetHashCode();
-                if (this.Unit != null)
-                    hashCode = hashCode * 59 + this.Unit.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                var hashCode = 41;
+                if (this.ParaName != null) hashCode = hashCode * 59 + this.ParaName.GetHashCode();
+                if (this.DataType != null) hashCode = hashCode * 59 + this.DataType.GetHashCode();
+                if (this.Required != null) hashCode = hashCode * 59 + this.Required.GetHashCode();
+                if (this.EnumList != null) hashCode = hashCode * 59 + this.EnumList.GetHashCode();
+                if (this.Min != null) hashCode = hashCode * 59 + this.Min.GetHashCode();
+                if (this.Max != null) hashCode = hashCode * 59 + this.Max.GetHashCode();
+                if (this.MaxLength != null) hashCode = hashCode * 59 + this.MaxLength.GetHashCode();
+                if (this.Step != null) hashCode = hashCode * 59 + this.Step.GetHashCode();
+                if (this.Unit != null) hashCode = hashCode * 59 + this.Unit.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

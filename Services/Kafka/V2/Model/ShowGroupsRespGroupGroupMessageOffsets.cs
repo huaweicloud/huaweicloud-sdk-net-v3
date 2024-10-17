@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ShowGroupsRespGroupGroupMessageOffsets input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Partition != input.Partition || (this.Partition != null && !this.Partition.Equals(input.Partition))) return false;
+            if (this.Lag != input.Lag || (this.Lag != null && !this.Lag.Equals(input.Lag))) return false;
+            if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;
+            if (this.MessageCurrentOffset != input.MessageCurrentOffset || (this.MessageCurrentOffset != null && !this.MessageCurrentOffset.Equals(input.MessageCurrentOffset))) return false;
+            if (this.MessageLogEndOffset != input.MessageLogEndOffset || (this.MessageLogEndOffset != null && !this.MessageLogEndOffset.Equals(input.MessageLogEndOffset))) return false;
 
-            return 
-                (
-                    this.Partition == input.Partition ||
-                    (this.Partition != null &&
-                    this.Partition.Equals(input.Partition))
-                ) && 
-                (
-                    this.Lag == input.Lag ||
-                    (this.Lag != null &&
-                    this.Lag.Equals(input.Lag))
-                ) && 
-                (
-                    this.Topic == input.Topic ||
-                    (this.Topic != null &&
-                    this.Topic.Equals(input.Topic))
-                ) && 
-                (
-                    this.MessageCurrentOffset == input.MessageCurrentOffset ||
-                    (this.MessageCurrentOffset != null &&
-                    this.MessageCurrentOffset.Equals(input.MessageCurrentOffset))
-                ) && 
-                (
-                    this.MessageLogEndOffset == input.MessageLogEndOffset ||
-                    (this.MessageLogEndOffset != null &&
-                    this.MessageLogEndOffset.Equals(input.MessageLogEndOffset))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Partition != null)
-                    hashCode = hashCode * 59 + this.Partition.GetHashCode();
-                if (this.Lag != null)
-                    hashCode = hashCode * 59 + this.Lag.GetHashCode();
-                if (this.Topic != null)
-                    hashCode = hashCode * 59 + this.Topic.GetHashCode();
-                if (this.MessageCurrentOffset != null)
-                    hashCode = hashCode * 59 + this.MessageCurrentOffset.GetHashCode();
-                if (this.MessageLogEndOffset != null)
-                    hashCode = hashCode * 59 + this.MessageLogEndOffset.GetHashCode();
+                var hashCode = 41;
+                if (this.Partition != null) hashCode = hashCode * 59 + this.Partition.GetHashCode();
+                if (this.Lag != null) hashCode = hashCode * 59 + this.Lag.GetHashCode();
+                if (this.Topic != null) hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.MessageCurrentOffset != null) hashCode = hashCode * 59 + this.MessageCurrentOffset.GetHashCode();
+                if (this.MessageLogEndOffset != null) hashCode = hashCode * 59 + this.MessageLogEndOffset.GetHashCode();
                 return hashCode;
             }
         }

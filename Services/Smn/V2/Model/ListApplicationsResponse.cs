@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public bool Equals(ListApplicationsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
+            if (this.ApplicationCount != input.ApplicationCount || (this.ApplicationCount != null && !this.ApplicationCount.Equals(input.ApplicationCount))) return false;
+            if (this.Applications != input.Applications || (this.Applications != null && input.Applications != null && !this.Applications.SequenceEqual(input.Applications))) return false;
 
-            return 
-                (
-                    this.RequestId == input.RequestId ||
-                    (this.RequestId != null &&
-                    this.RequestId.Equals(input.RequestId))
-                ) && 
-                (
-                    this.ApplicationCount == input.ApplicationCount ||
-                    (this.ApplicationCount != null &&
-                    this.ApplicationCount.Equals(input.ApplicationCount))
-                ) && 
-                (
-                    this.Applications == input.Applications ||
-                    this.Applications != null &&
-                    input.Applications != null &&
-                    this.Applications.SequenceEqual(input.Applications)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RequestId != null)
-                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
-                if (this.ApplicationCount != null)
-                    hashCode = hashCode * 59 + this.ApplicationCount.GetHashCode();
-                if (this.Applications != null)
-                    hashCode = hashCode * 59 + this.Applications.GetHashCode();
+                var hashCode = 41;
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                if (this.ApplicationCount != null) hashCode = hashCode * 59 + this.ApplicationCount.GetHashCode();
+                if (this.Applications != null) hashCode = hashCode * 59 + this.Applications.GetHashCode();
                 return hashCode;
             }
         }

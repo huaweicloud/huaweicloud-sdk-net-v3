@@ -90,40 +90,15 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// </summary>
         public bool Equals(ListWafBandwidthRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Domains != input.Domains || (this.Domains != null && !this.Domains.Equals(input.Domains))) return false;
+            if (this.ValueType != input.ValueType || (this.ValueType != null && !this.ValueType.Equals(input.ValueType))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.Recent != input.Recent || (this.Recent != null && !this.Recent.Equals(input.Recent))) return false;
+            if (this.OverseasType != input.OverseasType || (this.OverseasType != null && !this.OverseasType.Equals(input.OverseasType))) return false;
 
-            return 
-                (
-                    this.Domains == input.Domains ||
-                    (this.Domains != null &&
-                    this.Domains.Equals(input.Domains))
-                ) && 
-                (
-                    this.ValueType == input.ValueType ||
-                    (this.ValueType != null &&
-                    this.ValueType.Equals(input.ValueType))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.Recent == input.Recent ||
-                    (this.Recent != null &&
-                    this.Recent.Equals(input.Recent))
-                ) && 
-                (
-                    this.OverseasType == input.OverseasType ||
-                    (this.OverseasType != null &&
-                    this.OverseasType.Equals(input.OverseasType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -133,19 +108,13 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Domains != null)
-                    hashCode = hashCode * 59 + this.Domains.GetHashCode();
-                if (this.ValueType != null)
-                    hashCode = hashCode * 59 + this.ValueType.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Recent != null)
-                    hashCode = hashCode * 59 + this.Recent.GetHashCode();
-                if (this.OverseasType != null)
-                    hashCode = hashCode * 59 + this.OverseasType.GetHashCode();
+                var hashCode = 41;
+                if (this.Domains != null) hashCode = hashCode * 59 + this.Domains.GetHashCode();
+                if (this.ValueType != null) hashCode = hashCode * 59 + this.ValueType.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.Recent != null) hashCode = hashCode * 59 + this.Recent.GetHashCode();
+                if (this.OverseasType != null) hashCode = hashCode * 59 + this.OverseasType.GetHashCode();
                 return hashCode;
             }
         }

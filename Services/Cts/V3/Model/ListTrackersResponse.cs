@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         /// </summary>
         public bool Equals(ListTrackersResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Trackers != input.Trackers || (this.Trackers != null && input.Trackers != null && !this.Trackers.SequenceEqual(input.Trackers))) return false;
 
-            return 
-                (
-                    this.Trackers == input.Trackers ||
-                    this.Trackers != null &&
-                    input.Trackers != null &&
-                    this.Trackers.SequenceEqual(input.Trackers)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Trackers != null)
-                    hashCode = hashCode * 59 + this.Trackers.GetHashCode();
+                var hashCode = 41;
+                if (this.Trackers != null) hashCode = hashCode * 59 + this.Trackers.GetHashCode();
                 return hashCode;
             }
         }

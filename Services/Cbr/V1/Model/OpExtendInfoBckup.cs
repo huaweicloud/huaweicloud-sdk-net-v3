@@ -312,40 +312,15 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(OpExtendInfoBckup input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AppConsistencyErrorCode != input.AppConsistencyErrorCode || (this.AppConsistencyErrorCode != null && !this.AppConsistencyErrorCode.Equals(input.AppConsistencyErrorCode))) return false;
+            if (this.AppConsistencyErrorMessage != input.AppConsistencyErrorMessage || (this.AppConsistencyErrorMessage != null && !this.AppConsistencyErrorMessage.Equals(input.AppConsistencyErrorMessage))) return false;
+            if (this.AppConsistencyStatus != input.AppConsistencyStatus) return false;
+            if (this.BackupId != input.BackupId || (this.BackupId != null && !this.BackupId.Equals(input.BackupId))) return false;
+            if (this.BackupName != input.BackupName || (this.BackupName != null && !this.BackupName.Equals(input.BackupName))) return false;
+            if (this.Incremental != input.Incremental) return false;
 
-            return 
-                (
-                    this.AppConsistencyErrorCode == input.AppConsistencyErrorCode ||
-                    (this.AppConsistencyErrorCode != null &&
-                    this.AppConsistencyErrorCode.Equals(input.AppConsistencyErrorCode))
-                ) && 
-                (
-                    this.AppConsistencyErrorMessage == input.AppConsistencyErrorMessage ||
-                    (this.AppConsistencyErrorMessage != null &&
-                    this.AppConsistencyErrorMessage.Equals(input.AppConsistencyErrorMessage))
-                ) && 
-                (
-                    this.AppConsistencyStatus == input.AppConsistencyStatus ||
-                    (this.AppConsistencyStatus != null &&
-                    this.AppConsistencyStatus.Equals(input.AppConsistencyStatus))
-                ) && 
-                (
-                    this.BackupId == input.BackupId ||
-                    (this.BackupId != null &&
-                    this.BackupId.Equals(input.BackupId))
-                ) && 
-                (
-                    this.BackupName == input.BackupName ||
-                    (this.BackupName != null &&
-                    this.BackupName.Equals(input.BackupName))
-                ) && 
-                (
-                    this.Incremental == input.Incremental ||
-                    (this.Incremental != null &&
-                    this.Incremental.Equals(input.Incremental))
-                );
+            return true;
         }
 
         /// <summary>
@@ -355,19 +330,13 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AppConsistencyErrorCode != null)
-                    hashCode = hashCode * 59 + this.AppConsistencyErrorCode.GetHashCode();
-                if (this.AppConsistencyErrorMessage != null)
-                    hashCode = hashCode * 59 + this.AppConsistencyErrorMessage.GetHashCode();
-                if (this.AppConsistencyStatus != null)
-                    hashCode = hashCode * 59 + this.AppConsistencyStatus.GetHashCode();
-                if (this.BackupId != null)
-                    hashCode = hashCode * 59 + this.BackupId.GetHashCode();
-                if (this.BackupName != null)
-                    hashCode = hashCode * 59 + this.BackupName.GetHashCode();
-                if (this.Incremental != null)
-                    hashCode = hashCode * 59 + this.Incremental.GetHashCode();
+                var hashCode = 41;
+                if (this.AppConsistencyErrorCode != null) hashCode = hashCode * 59 + this.AppConsistencyErrorCode.GetHashCode();
+                if (this.AppConsistencyErrorMessage != null) hashCode = hashCode * 59 + this.AppConsistencyErrorMessage.GetHashCode();
+                hashCode = hashCode * 59 + this.AppConsistencyStatus.GetHashCode();
+                if (this.BackupId != null) hashCode = hashCode * 59 + this.BackupId.GetHashCode();
+                if (this.BackupName != null) hashCode = hashCode * 59 + this.BackupName.GetHashCode();
+                hashCode = hashCode * 59 + this.Incremental.GetHashCode();
                 return hashCode;
             }
         }

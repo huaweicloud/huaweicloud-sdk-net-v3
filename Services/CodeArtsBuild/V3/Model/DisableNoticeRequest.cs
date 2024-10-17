@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public bool Equals(DisableNoticeRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.NoticeType != input.NoticeType || (this.NoticeType != null && !this.NoticeType.Equals(input.NoticeType))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.NoticeType == input.NoticeType ||
-                    (this.NoticeType != null &&
-                    this.NoticeType.Equals(input.NoticeType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.NoticeType != null)
-                    hashCode = hashCode * 59 + this.NoticeType.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.NoticeType != null) hashCode = hashCode * 59 + this.NoticeType.GetHashCode();
                 return hashCode;
             }
         }

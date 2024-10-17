@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// </summary>
         public bool Equals(SubJobsInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SubJobs != input.SubJobs || (this.SubJobs != null && input.SubJobs != null && !this.SubJobs.SequenceEqual(input.SubJobs))) return false;
 
-            return 
-                (
-                    this.SubJobs == input.SubJobs ||
-                    this.SubJobs != null &&
-                    input.SubJobs != null &&
-                    this.SubJobs.SequenceEqual(input.SubJobs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SubJobs != null)
-                    hashCode = hashCode * 59 + this.SubJobs.GetHashCode();
+                var hashCode = 41;
+                if (this.SubJobs != null) hashCode = hashCode * 59 + this.SubJobs.GetHashCode();
                 return hashCode;
             }
         }

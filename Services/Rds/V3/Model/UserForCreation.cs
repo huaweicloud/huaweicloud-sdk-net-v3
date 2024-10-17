@@ -84,42 +84,15 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(UserForCreation input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Password != input.Password || (this.Password != null && !this.Password.Equals(input.Password))) return false;
+            if (this.Comment != input.Comment || (this.Comment != null && !this.Comment.Equals(input.Comment))) return false;
+            if (this.IsPrivilege != input.IsPrivilege || (this.IsPrivilege != null && !this.IsPrivilege.Equals(input.IsPrivilege))) return false;
+            if (this.Hosts != input.Hosts || (this.Hosts != null && input.Hosts != null && !this.Hosts.SequenceEqual(input.Hosts))) return false;
+            if (this.Databases != input.Databases || (this.Databases != null && input.Databases != null && !this.Databases.SequenceEqual(input.Databases))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Password == input.Password ||
-                    (this.Password != null &&
-                    this.Password.Equals(input.Password))
-                ) && 
-                (
-                    this.Comment == input.Comment ||
-                    (this.Comment != null &&
-                    this.Comment.Equals(input.Comment))
-                ) && 
-                (
-                    this.IsPrivilege == input.IsPrivilege ||
-                    (this.IsPrivilege != null &&
-                    this.IsPrivilege.Equals(input.IsPrivilege))
-                ) && 
-                (
-                    this.Hosts == input.Hosts ||
-                    this.Hosts != null &&
-                    input.Hosts != null &&
-                    this.Hosts.SequenceEqual(input.Hosts)
-                ) && 
-                (
-                    this.Databases == input.Databases ||
-                    this.Databases != null &&
-                    input.Databases != null &&
-                    this.Databases.SequenceEqual(input.Databases)
-                );
+            return true;
         }
 
         /// <summary>
@@ -129,19 +102,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Password != null)
-                    hashCode = hashCode * 59 + this.Password.GetHashCode();
-                if (this.Comment != null)
-                    hashCode = hashCode * 59 + this.Comment.GetHashCode();
-                if (this.IsPrivilege != null)
-                    hashCode = hashCode * 59 + this.IsPrivilege.GetHashCode();
-                if (this.Hosts != null)
-                    hashCode = hashCode * 59 + this.Hosts.GetHashCode();
-                if (this.Databases != null)
-                    hashCode = hashCode * 59 + this.Databases.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Password != null) hashCode = hashCode * 59 + this.Password.GetHashCode();
+                if (this.Comment != null) hashCode = hashCode * 59 + this.Comment.GetHashCode();
+                if (this.IsPrivilege != null) hashCode = hashCode * 59 + this.IsPrivilege.GetHashCode();
+                if (this.Hosts != null) hashCode = hashCode * 59 + this.Hosts.GetHashCode();
+                if (this.Databases != null) hashCode = hashCode * 59 + this.Databases.GetHashCode();
                 return hashCode;
             }
         }

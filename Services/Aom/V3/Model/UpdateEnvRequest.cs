@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         /// </summary>
         public bool Equals(UpdateEnvRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EnvironmentId != input.EnvironmentId || (this.EnvironmentId != null && !this.EnvironmentId.Equals(input.EnvironmentId))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
-            return 
-                (
-                    this.EnvironmentId == input.EnvironmentId ||
-                    (this.EnvironmentId != null &&
-                    this.EnvironmentId.Equals(input.EnvironmentId))
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EnvironmentId != null)
-                    hashCode = hashCode * 59 + this.EnvironmentId.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                var hashCode = 41;
+                if (this.EnvironmentId != null) hashCode = hashCode * 59 + this.EnvironmentId.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

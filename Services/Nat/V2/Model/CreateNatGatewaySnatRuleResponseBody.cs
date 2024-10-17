@@ -278,80 +278,23 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// </summary>
         public bool Equals(CreateNatGatewaySnatRuleResponseBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
+            if (this.NatGatewayId != input.NatGatewayId || (this.NatGatewayId != null && !this.NatGatewayId.Equals(input.NatGatewayId))) return false;
+            if (this.Cidr != input.Cidr || (this.Cidr != null && !this.Cidr.Equals(input.Cidr))) return false;
+            if (this.SourceType != input.SourceType || (this.SourceType != null && !this.SourceType.Equals(input.SourceType))) return false;
+            if (this.FloatingIpId != input.FloatingIpId || (this.FloatingIpId != null && !this.FloatingIpId.Equals(input.FloatingIpId))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.NetworkId != input.NetworkId || (this.NetworkId != null && !this.NetworkId.Equals(input.NetworkId))) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.FloatingIpAddress != input.FloatingIpAddress || (this.FloatingIpAddress != null && !this.FloatingIpAddress.Equals(input.FloatingIpAddress))) return false;
+            if (this.GlobalEipId != input.GlobalEipId || (this.GlobalEipId != null && !this.GlobalEipId.Equals(input.GlobalEipId))) return false;
+            if (this.GlobalEipAddress != input.GlobalEipAddress || (this.GlobalEipAddress != null && !this.GlobalEipAddress.Equals(input.GlobalEipAddress))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.TenantId == input.TenantId ||
-                    (this.TenantId != null &&
-                    this.TenantId.Equals(input.TenantId))
-                ) && 
-                (
-                    this.NatGatewayId == input.NatGatewayId ||
-                    (this.NatGatewayId != null &&
-                    this.NatGatewayId.Equals(input.NatGatewayId))
-                ) && 
-                (
-                    this.Cidr == input.Cidr ||
-                    (this.Cidr != null &&
-                    this.Cidr.Equals(input.Cidr))
-                ) && 
-                (
-                    this.SourceType == input.SourceType ||
-                    (this.SourceType != null &&
-                    this.SourceType.Equals(input.SourceType))
-                ) && 
-                (
-                    this.FloatingIpId == input.FloatingIpId ||
-                    (this.FloatingIpId != null &&
-                    this.FloatingIpId.Equals(input.FloatingIpId))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.NetworkId == input.NetworkId ||
-                    (this.NetworkId != null &&
-                    this.NetworkId.Equals(input.NetworkId))
-                ) && 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.FloatingIpAddress == input.FloatingIpAddress ||
-                    (this.FloatingIpAddress != null &&
-                    this.FloatingIpAddress.Equals(input.FloatingIpAddress))
-                ) && 
-                (
-                    this.GlobalEipId == input.GlobalEipId ||
-                    (this.GlobalEipId != null &&
-                    this.GlobalEipId.Equals(input.GlobalEipId))
-                ) && 
-                (
-                    this.GlobalEipAddress == input.GlobalEipAddress ||
-                    (this.GlobalEipAddress != null &&
-                    this.GlobalEipAddress.Equals(input.GlobalEipAddress))
-                );
+            return true;
         }
 
         /// <summary>
@@ -361,35 +304,21 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.TenantId != null)
-                    hashCode = hashCode * 59 + this.TenantId.GetHashCode();
-                if (this.NatGatewayId != null)
-                    hashCode = hashCode * 59 + this.NatGatewayId.GetHashCode();
-                if (this.Cidr != null)
-                    hashCode = hashCode * 59 + this.Cidr.GetHashCode();
-                if (this.SourceType != null)
-                    hashCode = hashCode * 59 + this.SourceType.GetHashCode();
-                if (this.FloatingIpId != null)
-                    hashCode = hashCode * 59 + this.FloatingIpId.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.NetworkId != null)
-                    hashCode = hashCode * 59 + this.NetworkId.GetHashCode();
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.FloatingIpAddress != null)
-                    hashCode = hashCode * 59 + this.FloatingIpAddress.GetHashCode();
-                if (this.GlobalEipId != null)
-                    hashCode = hashCode * 59 + this.GlobalEipId.GetHashCode();
-                if (this.GlobalEipAddress != null)
-                    hashCode = hashCode * 59 + this.GlobalEipAddress.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
+                if (this.NatGatewayId != null) hashCode = hashCode * 59 + this.NatGatewayId.GetHashCode();
+                if (this.Cidr != null) hashCode = hashCode * 59 + this.Cidr.GetHashCode();
+                if (this.SourceType != null) hashCode = hashCode * 59 + this.SourceType.GetHashCode();
+                if (this.FloatingIpId != null) hashCode = hashCode * 59 + this.FloatingIpId.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.NetworkId != null) hashCode = hashCode * 59 + this.NetworkId.GetHashCode();
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.FloatingIpAddress != null) hashCode = hashCode * 59 + this.FloatingIpAddress.GetHashCode();
+                if (this.GlobalEipId != null) hashCode = hashCode * 59 + this.GlobalEipId.GetHashCode();
+                if (this.GlobalEipAddress != null) hashCode = hashCode * 59 + this.GlobalEipAddress.GetHashCode();
                 return hashCode;
             }
         }

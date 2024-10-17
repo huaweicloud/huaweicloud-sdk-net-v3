@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(ListFlavorSellPoliciesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.SellPolicies != input.SellPolicies || (this.SellPolicies != null && input.SellPolicies != null && !this.SellPolicies.SequenceEqual(input.SellPolicies))) return false;
 
-            return 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.SellPolicies == input.SellPolicies ||
-                    this.SellPolicies != null &&
-                    input.SellPolicies != null &&
-                    this.SellPolicies.SequenceEqual(input.SellPolicies)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.SellPolicies != null)
-                    hashCode = hashCode * 59 + this.SellPolicies.GetHashCode();
+                var hashCode = 41;
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.SellPolicies != null) hashCode = hashCode * 59 + this.SellPolicies.GetHashCode();
                 return hashCode;
             }
         }

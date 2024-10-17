@@ -211,46 +211,16 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(InterfaceAttachments input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PortState != input.PortState) return false;
+            if (this.FixedIps != input.FixedIps || (this.FixedIps != null && input.FixedIps != null && !this.FixedIps.SequenceEqual(input.FixedIps))) return false;
+            if (this.NetId != input.NetId || (this.NetId != null && !this.NetId.Equals(input.NetId))) return false;
+            if (this.PortId != input.PortId || (this.PortId != null && !this.PortId.Equals(input.PortId))) return false;
+            if (this.MacAddr != input.MacAddr || (this.MacAddr != null && !this.MacAddr.Equals(input.MacAddr))) return false;
+            if (this.DriverMode != input.DriverMode || (this.DriverMode != null && !this.DriverMode.Equals(input.DriverMode))) return false;
+            if (this.PciAddress != input.PciAddress || (this.PciAddress != null && !this.PciAddress.Equals(input.PciAddress))) return false;
 
-            return 
-                (
-                    this.PortState == input.PortState ||
-                    (this.PortState != null &&
-                    this.PortState.Equals(input.PortState))
-                ) && 
-                (
-                    this.FixedIps == input.FixedIps ||
-                    this.FixedIps != null &&
-                    input.FixedIps != null &&
-                    this.FixedIps.SequenceEqual(input.FixedIps)
-                ) && 
-                (
-                    this.NetId == input.NetId ||
-                    (this.NetId != null &&
-                    this.NetId.Equals(input.NetId))
-                ) && 
-                (
-                    this.PortId == input.PortId ||
-                    (this.PortId != null &&
-                    this.PortId.Equals(input.PortId))
-                ) && 
-                (
-                    this.MacAddr == input.MacAddr ||
-                    (this.MacAddr != null &&
-                    this.MacAddr.Equals(input.MacAddr))
-                ) && 
-                (
-                    this.DriverMode == input.DriverMode ||
-                    (this.DriverMode != null &&
-                    this.DriverMode.Equals(input.DriverMode))
-                ) && 
-                (
-                    this.PciAddress == input.PciAddress ||
-                    (this.PciAddress != null &&
-                    this.PciAddress.Equals(input.PciAddress))
-                );
+            return true;
         }
 
         /// <summary>
@@ -260,21 +230,14 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PortState != null)
-                    hashCode = hashCode * 59 + this.PortState.GetHashCode();
-                if (this.FixedIps != null)
-                    hashCode = hashCode * 59 + this.FixedIps.GetHashCode();
-                if (this.NetId != null)
-                    hashCode = hashCode * 59 + this.NetId.GetHashCode();
-                if (this.PortId != null)
-                    hashCode = hashCode * 59 + this.PortId.GetHashCode();
-                if (this.MacAddr != null)
-                    hashCode = hashCode * 59 + this.MacAddr.GetHashCode();
-                if (this.DriverMode != null)
-                    hashCode = hashCode * 59 + this.DriverMode.GetHashCode();
-                if (this.PciAddress != null)
-                    hashCode = hashCode * 59 + this.PciAddress.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.PortState.GetHashCode();
+                if (this.FixedIps != null) hashCode = hashCode * 59 + this.FixedIps.GetHashCode();
+                if (this.NetId != null) hashCode = hashCode * 59 + this.NetId.GetHashCode();
+                if (this.PortId != null) hashCode = hashCode * 59 + this.PortId.GetHashCode();
+                if (this.MacAddr != null) hashCode = hashCode * 59 + this.MacAddr.GetHashCode();
+                if (this.DriverMode != null) hashCode = hashCode * 59 + this.DriverMode.GetHashCode();
+                if (this.PciAddress != null) hashCode = hashCode * 59 + this.PciAddress.GetHashCode();
                 return hashCode;
             }
         }

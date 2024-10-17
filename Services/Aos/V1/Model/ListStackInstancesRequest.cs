@@ -434,47 +434,16 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(ListStackInstancesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClientRequestId != input.ClientRequestId || (this.ClientRequestId != null && !this.ClientRequestId.Equals(input.ClientRequestId))) return false;
+            if (this.StackSetName != input.StackSetName || (this.StackSetName != null && !this.StackSetName.Equals(input.StackSetName))) return false;
+            if (this.StackSetId != input.StackSetId || (this.StackSetId != null && !this.StackSetId.Equals(input.StackSetId))) return false;
+            if (this.Filter != input.Filter || (this.Filter != null && !this.Filter.Equals(input.Filter))) return false;
+            if (this.SortKey != input.SortKey || (this.SortKey != null && input.SortKey != null && !this.SortKey.SequenceEqual(input.SortKey))) return false;
+            if (this.SortDir != input.SortDir || (this.SortDir != null && input.SortDir != null && !this.SortDir.SequenceEqual(input.SortDir))) return false;
+            if (this.CallIdentity != input.CallIdentity) return false;
 
-            return 
-                (
-                    this.ClientRequestId == input.ClientRequestId ||
-                    (this.ClientRequestId != null &&
-                    this.ClientRequestId.Equals(input.ClientRequestId))
-                ) && 
-                (
-                    this.StackSetName == input.StackSetName ||
-                    (this.StackSetName != null &&
-                    this.StackSetName.Equals(input.StackSetName))
-                ) && 
-                (
-                    this.StackSetId == input.StackSetId ||
-                    (this.StackSetId != null &&
-                    this.StackSetId.Equals(input.StackSetId))
-                ) && 
-                (
-                    this.Filter == input.Filter ||
-                    (this.Filter != null &&
-                    this.Filter.Equals(input.Filter))
-                ) && 
-                (
-                    this.SortKey == input.SortKey ||
-                    this.SortKey != null &&
-                    input.SortKey != null &&
-                    this.SortKey.SequenceEqual(input.SortKey)
-                ) && 
-                (
-                    this.SortDir == input.SortDir ||
-                    this.SortDir != null &&
-                    input.SortDir != null &&
-                    this.SortDir.SequenceEqual(input.SortDir)
-                ) && 
-                (
-                    this.CallIdentity == input.CallIdentity ||
-                    (this.CallIdentity != null &&
-                    this.CallIdentity.Equals(input.CallIdentity))
-                );
+            return true;
         }
 
         /// <summary>
@@ -484,21 +453,14 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClientRequestId != null)
-                    hashCode = hashCode * 59 + this.ClientRequestId.GetHashCode();
-                if (this.StackSetName != null)
-                    hashCode = hashCode * 59 + this.StackSetName.GetHashCode();
-                if (this.StackSetId != null)
-                    hashCode = hashCode * 59 + this.StackSetId.GetHashCode();
-                if (this.Filter != null)
-                    hashCode = hashCode * 59 + this.Filter.GetHashCode();
-                if (this.SortKey != null)
-                    hashCode = hashCode * 59 + this.SortKey.GetHashCode();
-                if (this.SortDir != null)
-                    hashCode = hashCode * 59 + this.SortDir.GetHashCode();
-                if (this.CallIdentity != null)
-                    hashCode = hashCode * 59 + this.CallIdentity.GetHashCode();
+                var hashCode = 41;
+                if (this.ClientRequestId != null) hashCode = hashCode * 59 + this.ClientRequestId.GetHashCode();
+                if (this.StackSetName != null) hashCode = hashCode * 59 + this.StackSetName.GetHashCode();
+                if (this.StackSetId != null) hashCode = hashCode * 59 + this.StackSetId.GetHashCode();
+                if (this.Filter != null) hashCode = hashCode * 59 + this.Filter.GetHashCode();
+                hashCode = hashCode * 59 + this.SortKey.GetHashCode();
+                hashCode = hashCode * 59 + this.SortDir.GetHashCode();
+                hashCode = hashCode * 59 + this.CallIdentity.GetHashCode();
                 return hashCode;
             }
         }

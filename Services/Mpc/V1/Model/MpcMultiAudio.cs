@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(MpcMultiAudio input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Output != input.Output || (this.Output != null && !this.Output.Equals(input.Output))) return false;
+            if (this.AudioFiles != input.AudioFiles || (this.AudioFiles != null && input.AudioFiles != null && !this.AudioFiles.SequenceEqual(input.AudioFiles))) return false;
+            if (this.OutputFilename != input.OutputFilename || (this.OutputFilename != null && !this.OutputFilename.Equals(input.OutputFilename))) return false;
 
-            return 
-                (
-                    this.Output == input.Output ||
-                    (this.Output != null &&
-                    this.Output.Equals(input.Output))
-                ) && 
-                (
-                    this.AudioFiles == input.AudioFiles ||
-                    this.AudioFiles != null &&
-                    input.AudioFiles != null &&
-                    this.AudioFiles.SequenceEqual(input.AudioFiles)
-                ) && 
-                (
-                    this.OutputFilename == input.OutputFilename ||
-                    (this.OutputFilename != null &&
-                    this.OutputFilename.Equals(input.OutputFilename))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Output != null)
-                    hashCode = hashCode * 59 + this.Output.GetHashCode();
-                if (this.AudioFiles != null)
-                    hashCode = hashCode * 59 + this.AudioFiles.GetHashCode();
-                if (this.OutputFilename != null)
-                    hashCode = hashCode * 59 + this.OutputFilename.GetHashCode();
+                var hashCode = 41;
+                if (this.Output != null) hashCode = hashCode * 59 + this.Output.GetHashCode();
+                if (this.AudioFiles != null) hashCode = hashCode * 59 + this.AudioFiles.GetHashCode();
+                if (this.OutputFilename != null) hashCode = hashCode * 59 + this.OutputFilename.GetHashCode();
                 return hashCode;
             }
         }

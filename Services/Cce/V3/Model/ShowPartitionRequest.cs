@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ShowPartitionRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClusterId != input.ClusterId || (this.ClusterId != null && !this.ClusterId.Equals(input.ClusterId))) return false;
+            if (this.PartitionName != input.PartitionName || (this.PartitionName != null && !this.PartitionName.Equals(input.PartitionName))) return false;
 
-            return 
-                (
-                    this.ClusterId == input.ClusterId ||
-                    (this.ClusterId != null &&
-                    this.ClusterId.Equals(input.ClusterId))
-                ) && 
-                (
-                    this.PartitionName == input.PartitionName ||
-                    (this.PartitionName != null &&
-                    this.PartitionName.Equals(input.PartitionName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClusterId != null)
-                    hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
-                if (this.PartitionName != null)
-                    hashCode = hashCode * 59 + this.PartitionName.GetHashCode();
+                var hashCode = 41;
+                if (this.ClusterId != null) hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
+                if (this.PartitionName != null) hashCode = hashCode * 59 + this.PartitionName.GetHashCode();
                 return hashCode;
             }
         }

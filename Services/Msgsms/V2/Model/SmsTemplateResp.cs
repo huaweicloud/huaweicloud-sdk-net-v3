@@ -252,160 +252,39 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         /// </summary>
         public bool Equals(SmsTemplateResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.CustomerId != input.CustomerId || (this.CustomerId != null && !this.CustomerId.Equals(input.CustomerId))) return false;
+            if (this.Tenant != input.Tenant || (this.Tenant != null && !this.Tenant.Equals(input.Tenant))) return false;
+            if (this.TemplateName != input.TemplateName || (this.TemplateName != null && !this.TemplateName.Equals(input.TemplateName))) return false;
+            if (this.TemplateId != input.TemplateId || (this.TemplateId != null && !this.TemplateId.Equals(input.TemplateId))) return false;
+            if (this.TemplateType != input.TemplateType || (this.TemplateType != null && !this.TemplateType.Equals(input.TemplateType))) return false;
+            if (this.AppName != input.AppName || (this.AppName != null && !this.AppName.Equals(input.AppName))) return false;
+            if (this.AppKey != input.AppKey || (this.AppKey != null && !this.AppKey.Equals(input.AppKey))) return false;
+            if (this.SignId != input.SignId || (this.SignId != null && !this.SignId.Equals(input.SignId))) return false;
+            if (this.TemplateContent != input.TemplateContent || (this.TemplateContent != null && !this.TemplateContent.Equals(input.TemplateContent))) return false;
+            if (this.HasVariable != input.HasVariable || (this.HasVariable != null && !this.HasVariable.Equals(input.HasVariable))) return false;
+            if (this.TemplateDesc != input.TemplateDesc || (this.TemplateDesc != null && !this.TemplateDesc.Equals(input.TemplateDesc))) return false;
+            if (this.ReviewDesc != input.ReviewDesc || (this.ReviewDesc != null && !this.ReviewDesc.Equals(input.ReviewDesc))) return false;
+            if (this.ReviewOrder != input.ReviewOrder || (this.ReviewOrder != null && !this.ReviewOrder.Equals(input.ReviewOrder))) return false;
+            if (this.FlowStatus != input.FlowStatus || (this.FlowStatus != null && !this.FlowStatus.Equals(input.FlowStatus))) return false;
+            if (this.UniversalTemplate != input.UniversalTemplate || (this.UniversalTemplate != null && !this.UniversalTemplate.Equals(input.UniversalTemplate))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
+            if (this.Brackets != input.Brackets || (this.Brackets != null && !this.Brackets.Equals(input.Brackets))) return false;
+            if (this.Site != input.Site || (this.Site != null && !this.Site.Equals(input.Site))) return false;
+            if (this.UrgeStatus != input.UrgeStatus || (this.UrgeStatus != null && !this.UrgeStatus.Equals(input.UrgeStatus))) return false;
+            if (this.UrgeTime != input.UrgeTime || (this.UrgeTime != null && !this.UrgeTime.Equals(input.UrgeTime))) return false;
+            if (this.UrgeDesc != input.UrgeDesc || (this.UrgeDesc != null && !this.UrgeDesc.Equals(input.UrgeDesc))) return false;
+            if (this.SendCountry1 != input.SendCountry1 || (this.SendCountry1 != null && !this.SendCountry1.Equals(input.SendCountry1))) return false;
+            if (this.SendCountry2 != input.SendCountry2 || (this.SendCountry2 != null && !this.SendCountry2.Equals(input.SendCountry2))) return false;
+            if (this.SendCountry3 != input.SendCountry3 || (this.SendCountry3 != null && !this.SendCountry3.Equals(input.SendCountry3))) return false;
+            if (this.IsSupportMultiomp != input.IsSupportMultiomp || (this.IsSupportMultiomp != null && !this.IsSupportMultiomp.Equals(input.IsSupportMultiomp))) return false;
+            if (this.CountryName != input.CountryName || (this.CountryName != null && !this.CountryName.Equals(input.CountryName))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.CustomerId == input.CustomerId ||
-                    (this.CustomerId != null &&
-                    this.CustomerId.Equals(input.CustomerId))
-                ) && 
-                (
-                    this.Tenant == input.Tenant ||
-                    (this.Tenant != null &&
-                    this.Tenant.Equals(input.Tenant))
-                ) && 
-                (
-                    this.TemplateName == input.TemplateName ||
-                    (this.TemplateName != null &&
-                    this.TemplateName.Equals(input.TemplateName))
-                ) && 
-                (
-                    this.TemplateId == input.TemplateId ||
-                    (this.TemplateId != null &&
-                    this.TemplateId.Equals(input.TemplateId))
-                ) && 
-                (
-                    this.TemplateType == input.TemplateType ||
-                    (this.TemplateType != null &&
-                    this.TemplateType.Equals(input.TemplateType))
-                ) && 
-                (
-                    this.AppName == input.AppName ||
-                    (this.AppName != null &&
-                    this.AppName.Equals(input.AppName))
-                ) && 
-                (
-                    this.AppKey == input.AppKey ||
-                    (this.AppKey != null &&
-                    this.AppKey.Equals(input.AppKey))
-                ) && 
-                (
-                    this.SignId == input.SignId ||
-                    (this.SignId != null &&
-                    this.SignId.Equals(input.SignId))
-                ) && 
-                (
-                    this.TemplateContent == input.TemplateContent ||
-                    (this.TemplateContent != null &&
-                    this.TemplateContent.Equals(input.TemplateContent))
-                ) && 
-                (
-                    this.HasVariable == input.HasVariable ||
-                    (this.HasVariable != null &&
-                    this.HasVariable.Equals(input.HasVariable))
-                ) && 
-                (
-                    this.TemplateDesc == input.TemplateDesc ||
-                    (this.TemplateDesc != null &&
-                    this.TemplateDesc.Equals(input.TemplateDesc))
-                ) && 
-                (
-                    this.ReviewDesc == input.ReviewDesc ||
-                    (this.ReviewDesc != null &&
-                    this.ReviewDesc.Equals(input.ReviewDesc))
-                ) && 
-                (
-                    this.ReviewOrder == input.ReviewOrder ||
-                    (this.ReviewOrder != null &&
-                    this.ReviewOrder.Equals(input.ReviewOrder))
-                ) && 
-                (
-                    this.FlowStatus == input.FlowStatus ||
-                    (this.FlowStatus != null &&
-                    this.FlowStatus.Equals(input.FlowStatus))
-                ) && 
-                (
-                    this.UniversalTemplate == input.UniversalTemplate ||
-                    (this.UniversalTemplate != null &&
-                    this.UniversalTemplate.Equals(input.UniversalTemplate))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.Brackets == input.Brackets ||
-                    (this.Brackets != null &&
-                    this.Brackets.Equals(input.Brackets))
-                ) && 
-                (
-                    this.Site == input.Site ||
-                    (this.Site != null &&
-                    this.Site.Equals(input.Site))
-                ) && 
-                (
-                    this.UrgeStatus == input.UrgeStatus ||
-                    (this.UrgeStatus != null &&
-                    this.UrgeStatus.Equals(input.UrgeStatus))
-                ) && 
-                (
-                    this.UrgeTime == input.UrgeTime ||
-                    (this.UrgeTime != null &&
-                    this.UrgeTime.Equals(input.UrgeTime))
-                ) && 
-                (
-                    this.UrgeDesc == input.UrgeDesc ||
-                    (this.UrgeDesc != null &&
-                    this.UrgeDesc.Equals(input.UrgeDesc))
-                ) && 
-                (
-                    this.SendCountry1 == input.SendCountry1 ||
-                    (this.SendCountry1 != null &&
-                    this.SendCountry1.Equals(input.SendCountry1))
-                ) && 
-                (
-                    this.SendCountry2 == input.SendCountry2 ||
-                    (this.SendCountry2 != null &&
-                    this.SendCountry2.Equals(input.SendCountry2))
-                ) && 
-                (
-                    this.SendCountry3 == input.SendCountry3 ||
-                    (this.SendCountry3 != null &&
-                    this.SendCountry3.Equals(input.SendCountry3))
-                ) && 
-                (
-                    this.IsSupportMultiomp == input.IsSupportMultiomp ||
-                    (this.IsSupportMultiomp != null &&
-                    this.IsSupportMultiomp.Equals(input.IsSupportMultiomp))
-                ) && 
-                (
-                    this.CountryName == input.CountryName ||
-                    (this.CountryName != null &&
-                    this.CountryName.Equals(input.CountryName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -415,67 +294,37 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.CustomerId != null)
-                    hashCode = hashCode * 59 + this.CustomerId.GetHashCode();
-                if (this.Tenant != null)
-                    hashCode = hashCode * 59 + this.Tenant.GetHashCode();
-                if (this.TemplateName != null)
-                    hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
-                if (this.TemplateId != null)
-                    hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
-                if (this.TemplateType != null)
-                    hashCode = hashCode * 59 + this.TemplateType.GetHashCode();
-                if (this.AppName != null)
-                    hashCode = hashCode * 59 + this.AppName.GetHashCode();
-                if (this.AppKey != null)
-                    hashCode = hashCode * 59 + this.AppKey.GetHashCode();
-                if (this.SignId != null)
-                    hashCode = hashCode * 59 + this.SignId.GetHashCode();
-                if (this.TemplateContent != null)
-                    hashCode = hashCode * 59 + this.TemplateContent.GetHashCode();
-                if (this.HasVariable != null)
-                    hashCode = hashCode * 59 + this.HasVariable.GetHashCode();
-                if (this.TemplateDesc != null)
-                    hashCode = hashCode * 59 + this.TemplateDesc.GetHashCode();
-                if (this.ReviewDesc != null)
-                    hashCode = hashCode * 59 + this.ReviewDesc.GetHashCode();
-                if (this.ReviewOrder != null)
-                    hashCode = hashCode * 59 + this.ReviewOrder.GetHashCode();
-                if (this.FlowStatus != null)
-                    hashCode = hashCode * 59 + this.FlowStatus.GetHashCode();
-                if (this.UniversalTemplate != null)
-                    hashCode = hashCode * 59 + this.UniversalTemplate.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.Brackets != null)
-                    hashCode = hashCode * 59 + this.Brackets.GetHashCode();
-                if (this.Site != null)
-                    hashCode = hashCode * 59 + this.Site.GetHashCode();
-                if (this.UrgeStatus != null)
-                    hashCode = hashCode * 59 + this.UrgeStatus.GetHashCode();
-                if (this.UrgeTime != null)
-                    hashCode = hashCode * 59 + this.UrgeTime.GetHashCode();
-                if (this.UrgeDesc != null)
-                    hashCode = hashCode * 59 + this.UrgeDesc.GetHashCode();
-                if (this.SendCountry1 != null)
-                    hashCode = hashCode * 59 + this.SendCountry1.GetHashCode();
-                if (this.SendCountry2 != null)
-                    hashCode = hashCode * 59 + this.SendCountry2.GetHashCode();
-                if (this.SendCountry3 != null)
-                    hashCode = hashCode * 59 + this.SendCountry3.GetHashCode();
-                if (this.IsSupportMultiomp != null)
-                    hashCode = hashCode * 59 + this.IsSupportMultiomp.GetHashCode();
-                if (this.CountryName != null)
-                    hashCode = hashCode * 59 + this.CountryName.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.CustomerId != null) hashCode = hashCode * 59 + this.CustomerId.GetHashCode();
+                if (this.Tenant != null) hashCode = hashCode * 59 + this.Tenant.GetHashCode();
+                if (this.TemplateName != null) hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
+                if (this.TemplateId != null) hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
+                if (this.TemplateType != null) hashCode = hashCode * 59 + this.TemplateType.GetHashCode();
+                if (this.AppName != null) hashCode = hashCode * 59 + this.AppName.GetHashCode();
+                if (this.AppKey != null) hashCode = hashCode * 59 + this.AppKey.GetHashCode();
+                if (this.SignId != null) hashCode = hashCode * 59 + this.SignId.GetHashCode();
+                if (this.TemplateContent != null) hashCode = hashCode * 59 + this.TemplateContent.GetHashCode();
+                if (this.HasVariable != null) hashCode = hashCode * 59 + this.HasVariable.GetHashCode();
+                if (this.TemplateDesc != null) hashCode = hashCode * 59 + this.TemplateDesc.GetHashCode();
+                if (this.ReviewDesc != null) hashCode = hashCode * 59 + this.ReviewDesc.GetHashCode();
+                if (this.ReviewOrder != null) hashCode = hashCode * 59 + this.ReviewOrder.GetHashCode();
+                if (this.FlowStatus != null) hashCode = hashCode * 59 + this.FlowStatus.GetHashCode();
+                if (this.UniversalTemplate != null) hashCode = hashCode * 59 + this.UniversalTemplate.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
+                if (this.Brackets != null) hashCode = hashCode * 59 + this.Brackets.GetHashCode();
+                if (this.Site != null) hashCode = hashCode * 59 + this.Site.GetHashCode();
+                if (this.UrgeStatus != null) hashCode = hashCode * 59 + this.UrgeStatus.GetHashCode();
+                if (this.UrgeTime != null) hashCode = hashCode * 59 + this.UrgeTime.GetHashCode();
+                if (this.UrgeDesc != null) hashCode = hashCode * 59 + this.UrgeDesc.GetHashCode();
+                if (this.SendCountry1 != null) hashCode = hashCode * 59 + this.SendCountry1.GetHashCode();
+                if (this.SendCountry2 != null) hashCode = hashCode * 59 + this.SendCountry2.GetHashCode();
+                if (this.SendCountry3 != null) hashCode = hashCode * 59 + this.SendCountry3.GetHashCode();
+                if (this.IsSupportMultiomp != null) hashCode = hashCode * 59 + this.IsSupportMultiomp.GetHashCode();
+                if (this.CountryName != null) hashCode = hashCode * 59 + this.CountryName.GetHashCode();
                 return hashCode;
             }
         }

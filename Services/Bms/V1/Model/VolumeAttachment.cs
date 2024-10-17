@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(VolumeAttachment input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VolumeId != input.VolumeId || (this.VolumeId != null && !this.VolumeId.Equals(input.VolumeId))) return false;
+            if (this.Device != input.Device || (this.Device != null && !this.Device.Equals(input.Device))) return false;
 
-            return 
-                (
-                    this.VolumeId == input.VolumeId ||
-                    (this.VolumeId != null &&
-                    this.VolumeId.Equals(input.VolumeId))
-                ) && 
-                (
-                    this.Device == input.Device ||
-                    (this.Device != null &&
-                    this.Device.Equals(input.Device))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VolumeId != null)
-                    hashCode = hashCode * 59 + this.VolumeId.GetHashCode();
-                if (this.Device != null)
-                    hashCode = hashCode * 59 + this.Device.GetHashCode();
+                var hashCode = 41;
+                if (this.VolumeId != null) hashCode = hashCode * 59 + this.VolumeId.GetHashCode();
+                if (this.Device != null) hashCode = hashCode * 59 + this.Device.GetHashCode();
                 return hashCode;
             }
         }

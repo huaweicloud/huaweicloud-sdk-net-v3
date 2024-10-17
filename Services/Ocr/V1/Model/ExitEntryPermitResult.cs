@@ -161,96 +161,26 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(ExitEntryPermitResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.NameEn != input.NameEn || (this.NameEn != null && !this.NameEn.Equals(input.NameEn))) return false;
+            if (this.Sex != input.Sex || (this.Sex != null && !this.Sex.Equals(input.Sex))) return false;
+            if (this.BirthDate != input.BirthDate || (this.BirthDate != null && !this.BirthDate.Equals(input.BirthDate))) return false;
+            if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;
+            if (this.IssuingAuthority != input.IssuingAuthority || (this.IssuingAuthority != null && !this.IssuingAuthority.Equals(input.IssuingAuthority))) return false;
+            if (this.IssuePlace != input.IssuePlace || (this.IssuePlace != null && !this.IssuePlace.Equals(input.IssuePlace))) return false;
+            if (this.ValidPeriod != input.ValidPeriod || (this.ValidPeriod != null && !this.ValidPeriod.Equals(input.ValidPeriod))) return false;
+            if (this.MachineCode != input.MachineCode || (this.MachineCode != null && !this.MachineCode.Equals(input.MachineCode))) return false;
+            if (this.PortraitImage != input.PortraitImage || (this.PortraitImage != null && !this.PortraitImage.Equals(input.PortraitImage))) return false;
+            if (this.PortraitLocation != input.PortraitLocation || (this.PortraitLocation != null && input.PortraitLocation != null && !this.PortraitLocation.SequenceEqual(input.PortraitLocation))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Side != input.Side || (this.Side != null && !this.Side.Equals(input.Side))) return false;
+            if (this.EndorsementInfoHk != input.EndorsementInfoHk || (this.EndorsementInfoHk != null && !this.EndorsementInfoHk.Equals(input.EndorsementInfoHk))) return false;
+            if (this.EndorsementInfoMo != input.EndorsementInfoMo || (this.EndorsementInfoMo != null && !this.EndorsementInfoMo.Equals(input.EndorsementInfoMo))) return false;
+            if (this.EndorsementInfoTw != input.EndorsementInfoTw || (this.EndorsementInfoTw != null && !this.EndorsementInfoTw.Equals(input.EndorsementInfoTw))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.NameEn == input.NameEn ||
-                    (this.NameEn != null &&
-                    this.NameEn.Equals(input.NameEn))
-                ) && 
-                (
-                    this.Sex == input.Sex ||
-                    (this.Sex != null &&
-                    this.Sex.Equals(input.Sex))
-                ) && 
-                (
-                    this.BirthDate == input.BirthDate ||
-                    (this.BirthDate != null &&
-                    this.BirthDate.Equals(input.BirthDate))
-                ) && 
-                (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                ) && 
-                (
-                    this.IssuingAuthority == input.IssuingAuthority ||
-                    (this.IssuingAuthority != null &&
-                    this.IssuingAuthority.Equals(input.IssuingAuthority))
-                ) && 
-                (
-                    this.IssuePlace == input.IssuePlace ||
-                    (this.IssuePlace != null &&
-                    this.IssuePlace.Equals(input.IssuePlace))
-                ) && 
-                (
-                    this.ValidPeriod == input.ValidPeriod ||
-                    (this.ValidPeriod != null &&
-                    this.ValidPeriod.Equals(input.ValidPeriod))
-                ) && 
-                (
-                    this.MachineCode == input.MachineCode ||
-                    (this.MachineCode != null &&
-                    this.MachineCode.Equals(input.MachineCode))
-                ) && 
-                (
-                    this.PortraitImage == input.PortraitImage ||
-                    (this.PortraitImage != null &&
-                    this.PortraitImage.Equals(input.PortraitImage))
-                ) && 
-                (
-                    this.PortraitLocation == input.PortraitLocation ||
-                    this.PortraitLocation != null &&
-                    input.PortraitLocation != null &&
-                    this.PortraitLocation.SequenceEqual(input.PortraitLocation)
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Side == input.Side ||
-                    (this.Side != null &&
-                    this.Side.Equals(input.Side))
-                ) && 
-                (
-                    this.EndorsementInfoHk == input.EndorsementInfoHk ||
-                    (this.EndorsementInfoHk != null &&
-                    this.EndorsementInfoHk.Equals(input.EndorsementInfoHk))
-                ) && 
-                (
-                    this.EndorsementInfoMo == input.EndorsementInfoMo ||
-                    (this.EndorsementInfoMo != null &&
-                    this.EndorsementInfoMo.Equals(input.EndorsementInfoMo))
-                ) && 
-                (
-                    this.EndorsementInfoTw == input.EndorsementInfoTw ||
-                    (this.EndorsementInfoTw != null &&
-                    this.EndorsementInfoTw.Equals(input.EndorsementInfoTw))
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                );
+            return true;
         }
 
         /// <summary>
@@ -260,41 +190,24 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.NameEn != null)
-                    hashCode = hashCode * 59 + this.NameEn.GetHashCode();
-                if (this.Sex != null)
-                    hashCode = hashCode * 59 + this.Sex.GetHashCode();
-                if (this.BirthDate != null)
-                    hashCode = hashCode * 59 + this.BirthDate.GetHashCode();
-                if (this.Number != null)
-                    hashCode = hashCode * 59 + this.Number.GetHashCode();
-                if (this.IssuingAuthority != null)
-                    hashCode = hashCode * 59 + this.IssuingAuthority.GetHashCode();
-                if (this.IssuePlace != null)
-                    hashCode = hashCode * 59 + this.IssuePlace.GetHashCode();
-                if (this.ValidPeriod != null)
-                    hashCode = hashCode * 59 + this.ValidPeriod.GetHashCode();
-                if (this.MachineCode != null)
-                    hashCode = hashCode * 59 + this.MachineCode.GetHashCode();
-                if (this.PortraitImage != null)
-                    hashCode = hashCode * 59 + this.PortraitImage.GetHashCode();
-                if (this.PortraitLocation != null)
-                    hashCode = hashCode * 59 + this.PortraitLocation.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Side != null)
-                    hashCode = hashCode * 59 + this.Side.GetHashCode();
-                if (this.EndorsementInfoHk != null)
-                    hashCode = hashCode * 59 + this.EndorsementInfoHk.GetHashCode();
-                if (this.EndorsementInfoMo != null)
-                    hashCode = hashCode * 59 + this.EndorsementInfoMo.GetHashCode();
-                if (this.EndorsementInfoTw != null)
-                    hashCode = hashCode * 59 + this.EndorsementInfoTw.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.NameEn != null) hashCode = hashCode * 59 + this.NameEn.GetHashCode();
+                if (this.Sex != null) hashCode = hashCode * 59 + this.Sex.GetHashCode();
+                if (this.BirthDate != null) hashCode = hashCode * 59 + this.BirthDate.GetHashCode();
+                if (this.Number != null) hashCode = hashCode * 59 + this.Number.GetHashCode();
+                if (this.IssuingAuthority != null) hashCode = hashCode * 59 + this.IssuingAuthority.GetHashCode();
+                if (this.IssuePlace != null) hashCode = hashCode * 59 + this.IssuePlace.GetHashCode();
+                if (this.ValidPeriod != null) hashCode = hashCode * 59 + this.ValidPeriod.GetHashCode();
+                if (this.MachineCode != null) hashCode = hashCode * 59 + this.MachineCode.GetHashCode();
+                if (this.PortraitImage != null) hashCode = hashCode * 59 + this.PortraitImage.GetHashCode();
+                if (this.PortraitLocation != null) hashCode = hashCode * 59 + this.PortraitLocation.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Side != null) hashCode = hashCode * 59 + this.Side.GetHashCode();
+                if (this.EndorsementInfoHk != null) hashCode = hashCode * 59 + this.EndorsementInfoHk.GetHashCode();
+                if (this.EndorsementInfoMo != null) hashCode = hashCode * 59 + this.EndorsementInfoMo.GetHashCode();
+                if (this.EndorsementInfoTw != null) hashCode = hashCode * 59 + this.EndorsementInfoTw.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
                 return hashCode;
             }
         }

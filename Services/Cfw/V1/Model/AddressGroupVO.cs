@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(AddressGroupVO input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AddressSetType != input.AddressSetType || (this.AddressSetType != null && !this.AddressSetType.Equals(input.AddressSetType))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.SetId != input.SetId || (this.SetId != null && !this.SetId.Equals(input.SetId))) return false;
 
-            return 
-                (
-                    this.AddressSetType == input.AddressSetType ||
-                    (this.AddressSetType != null &&
-                    this.AddressSetType.Equals(input.AddressSetType))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.SetId == input.SetId ||
-                    (this.SetId != null &&
-                    this.SetId.Equals(input.SetId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AddressSetType != null)
-                    hashCode = hashCode * 59 + this.AddressSetType.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.SetId != null)
-                    hashCode = hashCode * 59 + this.SetId.GetHashCode();
+                var hashCode = 41;
+                if (this.AddressSetType != null) hashCode = hashCode * 59 + this.AddressSetType.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.SetId != null) hashCode = hashCode * 59 + this.SetId.GetHashCode();
                 return hashCode;
             }
         }

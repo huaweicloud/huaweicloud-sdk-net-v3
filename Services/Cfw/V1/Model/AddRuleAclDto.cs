@@ -183,26 +183,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(AddRuleAclDto input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ObjectId != input.ObjectId || (this.ObjectId != null && !this.ObjectId.Equals(input.ObjectId))) return false;
+            if (this.Type != input.Type) return false;
+            if (this.Rules != input.Rules || (this.Rules != null && input.Rules != null && !this.Rules.SequenceEqual(input.Rules))) return false;
 
-            return 
-                (
-                    this.ObjectId == input.ObjectId ||
-                    (this.ObjectId != null &&
-                    this.ObjectId.Equals(input.ObjectId))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Rules == input.Rules ||
-                    this.Rules != null &&
-                    input.Rules != null &&
-                    this.Rules.SequenceEqual(input.Rules)
-                );
+            return true;
         }
 
         /// <summary>
@@ -212,13 +198,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ObjectId != null)
-                    hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Rules != null)
-                    hashCode = hashCode * 59 + this.Rules.GetHashCode();
+                var hashCode = 41;
+                if (this.ObjectId != null) hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Rules != null) hashCode = hashCode * 59 + this.Rules.GetHashCode();
                 return hashCode;
             }
         }

@@ -184,31 +184,13 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         public bool Equals(BatchUpdateMembersRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Images != input.Images || (this.Images != null && input.Images != null && !this.Images.SequenceEqual(input.Images))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.VaultId != input.VaultId || (this.VaultId != null && !this.VaultId.Equals(input.VaultId))) return false;
 
-            return 
-                (
-                    this.Images == input.Images ||
-                    this.Images != null &&
-                    input.Images != null &&
-                    this.Images.SequenceEqual(input.Images)
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.VaultId == input.VaultId ||
-                    (this.VaultId != null &&
-                    this.VaultId.Equals(input.VaultId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -218,15 +200,11 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Images != null)
-                    hashCode = hashCode * 59 + this.Images.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.VaultId != null)
-                    hashCode = hashCode * 59 + this.VaultId.GetHashCode();
+                var hashCode = 41;
+                if (this.Images != null) hashCode = hashCode * 59 + this.Images.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.VaultId != null) hashCode = hashCode * 59 + this.VaultId.GetHashCode();
                 return hashCode;
             }
         }

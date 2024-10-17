@@ -91,48 +91,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(VPCProtectsVo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.SelfTotal != input.SelfTotal || (this.SelfTotal != null && !this.SelfTotal.Equals(input.SelfTotal))) return false;
+            if (this.OtherTotal != input.OtherTotal || (this.OtherTotal != null && !this.OtherTotal.Equals(input.OtherTotal))) return false;
+            if (this.ProtectVpcs != input.ProtectVpcs || (this.ProtectVpcs != null && input.ProtectVpcs != null && !this.ProtectVpcs.SequenceEqual(input.ProtectVpcs))) return false;
+            if (this.SelfProtectVpcs != input.SelfProtectVpcs || (this.SelfProtectVpcs != null && input.SelfProtectVpcs != null && !this.SelfProtectVpcs.SequenceEqual(input.SelfProtectVpcs))) return false;
+            if (this.OtherProtectVpcs != input.OtherProtectVpcs || (this.OtherProtectVpcs != null && input.OtherProtectVpcs != null && !this.OtherProtectVpcs.SequenceEqual(input.OtherProtectVpcs))) return false;
+            if (this.TotalAssets != input.TotalAssets || (this.TotalAssets != null && !this.TotalAssets.Equals(input.TotalAssets))) return false;
 
-            return 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.SelfTotal == input.SelfTotal ||
-                    (this.SelfTotal != null &&
-                    this.SelfTotal.Equals(input.SelfTotal))
-                ) && 
-                (
-                    this.OtherTotal == input.OtherTotal ||
-                    (this.OtherTotal != null &&
-                    this.OtherTotal.Equals(input.OtherTotal))
-                ) && 
-                (
-                    this.ProtectVpcs == input.ProtectVpcs ||
-                    this.ProtectVpcs != null &&
-                    input.ProtectVpcs != null &&
-                    this.ProtectVpcs.SequenceEqual(input.ProtectVpcs)
-                ) && 
-                (
-                    this.SelfProtectVpcs == input.SelfProtectVpcs ||
-                    this.SelfProtectVpcs != null &&
-                    input.SelfProtectVpcs != null &&
-                    this.SelfProtectVpcs.SequenceEqual(input.SelfProtectVpcs)
-                ) && 
-                (
-                    this.OtherProtectVpcs == input.OtherProtectVpcs ||
-                    this.OtherProtectVpcs != null &&
-                    input.OtherProtectVpcs != null &&
-                    this.OtherProtectVpcs.SequenceEqual(input.OtherProtectVpcs)
-                ) && 
-                (
-                    this.TotalAssets == input.TotalAssets ||
-                    (this.TotalAssets != null &&
-                    this.TotalAssets.Equals(input.TotalAssets))
-                );
+            return true;
         }
 
         /// <summary>
@@ -142,21 +110,14 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.SelfTotal != null)
-                    hashCode = hashCode * 59 + this.SelfTotal.GetHashCode();
-                if (this.OtherTotal != null)
-                    hashCode = hashCode * 59 + this.OtherTotal.GetHashCode();
-                if (this.ProtectVpcs != null)
-                    hashCode = hashCode * 59 + this.ProtectVpcs.GetHashCode();
-                if (this.SelfProtectVpcs != null)
-                    hashCode = hashCode * 59 + this.SelfProtectVpcs.GetHashCode();
-                if (this.OtherProtectVpcs != null)
-                    hashCode = hashCode * 59 + this.OtherProtectVpcs.GetHashCode();
-                if (this.TotalAssets != null)
-                    hashCode = hashCode * 59 + this.TotalAssets.GetHashCode();
+                var hashCode = 41;
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.SelfTotal != null) hashCode = hashCode * 59 + this.SelfTotal.GetHashCode();
+                if (this.OtherTotal != null) hashCode = hashCode * 59 + this.OtherTotal.GetHashCode();
+                if (this.ProtectVpcs != null) hashCode = hashCode * 59 + this.ProtectVpcs.GetHashCode();
+                if (this.SelfProtectVpcs != null) hashCode = hashCode * 59 + this.SelfProtectVpcs.GetHashCode();
+                if (this.OtherProtectVpcs != null) hashCode = hashCode * 59 + this.OtherProtectVpcs.GetHashCode();
+                if (this.TotalAssets != null) hashCode = hashCode * 59 + this.TotalAssets.GetHashCode();
                 return hashCode;
             }
         }

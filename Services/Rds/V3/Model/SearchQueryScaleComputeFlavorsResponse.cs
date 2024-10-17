@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(SearchQueryScaleComputeFlavorsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ComputeFlavorGroups != input.ComputeFlavorGroups || (this.ComputeFlavorGroups != null && input.ComputeFlavorGroups != null && !this.ComputeFlavorGroups.SequenceEqual(input.ComputeFlavorGroups))) return false;
 
-            return 
-                (
-                    this.ComputeFlavorGroups == input.ComputeFlavorGroups ||
-                    this.ComputeFlavorGroups != null &&
-                    input.ComputeFlavorGroups != null &&
-                    this.ComputeFlavorGroups.SequenceEqual(input.ComputeFlavorGroups)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ComputeFlavorGroups != null)
-                    hashCode = hashCode * 59 + this.ComputeFlavorGroups.GetHashCode();
+                var hashCode = 41;
+                if (this.ComputeFlavorGroups != null) hashCode = hashCode * 59 + this.ComputeFlavorGroups.GetHashCode();
                 return hashCode;
             }
         }

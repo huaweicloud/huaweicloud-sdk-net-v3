@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(NeutronListFirewallRulesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FirewallRules != input.FirewallRules || (this.FirewallRules != null && input.FirewallRules != null && !this.FirewallRules.SequenceEqual(input.FirewallRules))) return false;
+            if (this.FirewallRulesLinks != input.FirewallRulesLinks || (this.FirewallRulesLinks != null && input.FirewallRulesLinks != null && !this.FirewallRulesLinks.SequenceEqual(input.FirewallRulesLinks))) return false;
 
-            return 
-                (
-                    this.FirewallRules == input.FirewallRules ||
-                    this.FirewallRules != null &&
-                    input.FirewallRules != null &&
-                    this.FirewallRules.SequenceEqual(input.FirewallRules)
-                ) && 
-                (
-                    this.FirewallRulesLinks == input.FirewallRulesLinks ||
-                    this.FirewallRulesLinks != null &&
-                    input.FirewallRulesLinks != null &&
-                    this.FirewallRulesLinks.SequenceEqual(input.FirewallRulesLinks)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FirewallRules != null)
-                    hashCode = hashCode * 59 + this.FirewallRules.GetHashCode();
-                if (this.FirewallRulesLinks != null)
-                    hashCode = hashCode * 59 + this.FirewallRulesLinks.GetHashCode();
+                var hashCode = 41;
+                if (this.FirewallRules != null) hashCode = hashCode * 59 + this.FirewallRules.GetHashCode();
+                if (this.FirewallRulesLinks != null) hashCode = hashCode * 59 + this.FirewallRulesLinks.GetHashCode();
                 return hashCode;
             }
         }

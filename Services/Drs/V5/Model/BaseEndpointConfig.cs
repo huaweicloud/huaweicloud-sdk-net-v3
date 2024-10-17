@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(BaseEndpointConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IsTargetReadonly != input.IsTargetReadonly || (this.IsTargetReadonly != null && !this.IsTargetReadonly.Equals(input.IsTargetReadonly))) return false;
+            if (this.NodeNum != input.NodeNum || (this.NodeNum != null && !this.NodeNum.Equals(input.NodeNum))) return false;
 
-            return 
-                (
-                    this.IsTargetReadonly == input.IsTargetReadonly ||
-                    (this.IsTargetReadonly != null &&
-                    this.IsTargetReadonly.Equals(input.IsTargetReadonly))
-                ) && 
-                (
-                    this.NodeNum == input.NodeNum ||
-                    (this.NodeNum != null &&
-                    this.NodeNum.Equals(input.NodeNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IsTargetReadonly != null)
-                    hashCode = hashCode * 59 + this.IsTargetReadonly.GetHashCode();
-                if (this.NodeNum != null)
-                    hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
+                var hashCode = 41;
+                if (this.IsTargetReadonly != null) hashCode = hashCode * 59 + this.IsTargetReadonly.GetHashCode();
+                if (this.NodeNum != null) hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
                 return hashCode;
             }
         }

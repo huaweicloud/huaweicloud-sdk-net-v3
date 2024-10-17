@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(Context input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Cluster != input.Cluster || (this.Cluster != null && !this.Cluster.Equals(input.Cluster))) return false;
+            if (this.User != input.User || (this.User != null && !this.User.Equals(input.User))) return false;
 
-            return 
-                (
-                    this.Cluster == input.Cluster ||
-                    (this.Cluster != null &&
-                    this.Cluster.Equals(input.Cluster))
-                ) && 
-                (
-                    this.User == input.User ||
-                    (this.User != null &&
-                    this.User.Equals(input.User))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Cluster != null)
-                    hashCode = hashCode * 59 + this.Cluster.GetHashCode();
-                if (this.User != null)
-                    hashCode = hashCode * 59 + this.User.GetHashCode();
+                var hashCode = 41;
+                if (this.Cluster != null) hashCode = hashCode * 59 + this.Cluster.GetHashCode();
+                if (this.User != null) hashCode = hashCode * 59 + this.User.GetHashCode();
                 return hashCode;
             }
         }

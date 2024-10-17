@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ShowBackupDownloadLinkResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Files != input.Files || (this.Files != null && input.Files != null && !this.Files.SequenceEqual(input.Files))) return false;
+            if (this.Bucket != input.Bucket || (this.Bucket != null && !this.Bucket.Equals(input.Bucket))) return false;
 
-            return 
-                (
-                    this.Files == input.Files ||
-                    this.Files != null &&
-                    input.Files != null &&
-                    this.Files.SequenceEqual(input.Files)
-                ) && 
-                (
-                    this.Bucket == input.Bucket ||
-                    (this.Bucket != null &&
-                    this.Bucket.Equals(input.Bucket))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Files != null)
-                    hashCode = hashCode * 59 + this.Files.GetHashCode();
-                if (this.Bucket != null)
-                    hashCode = hashCode * 59 + this.Bucket.GetHashCode();
+                var hashCode = 41;
+                if (this.Files != null) hashCode = hashCode * 59 + this.Files.GetHashCode();
+                if (this.Bucket != null) hashCode = hashCode * 59 + this.Bucket.GetHashCode();
                 return hashCode;
             }
         }

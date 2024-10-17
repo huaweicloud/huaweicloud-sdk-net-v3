@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(ShowTopicStatusResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MaxOffset != input.MaxOffset || (this.MaxOffset != null && !this.MaxOffset.Equals(input.MaxOffset))) return false;
+            if (this.MinOffset != input.MinOffset || (this.MinOffset != null && !this.MinOffset.Equals(input.MinOffset))) return false;
+            if (this.Brokers != input.Brokers || (this.Brokers != null && input.Brokers != null && !this.Brokers.SequenceEqual(input.Brokers))) return false;
 
-            return 
-                (
-                    this.MaxOffset == input.MaxOffset ||
-                    (this.MaxOffset != null &&
-                    this.MaxOffset.Equals(input.MaxOffset))
-                ) && 
-                (
-                    this.MinOffset == input.MinOffset ||
-                    (this.MinOffset != null &&
-                    this.MinOffset.Equals(input.MinOffset))
-                ) && 
-                (
-                    this.Brokers == input.Brokers ||
-                    this.Brokers != null &&
-                    input.Brokers != null &&
-                    this.Brokers.SequenceEqual(input.Brokers)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MaxOffset != null)
-                    hashCode = hashCode * 59 + this.MaxOffset.GetHashCode();
-                if (this.MinOffset != null)
-                    hashCode = hashCode * 59 + this.MinOffset.GetHashCode();
-                if (this.Brokers != null)
-                    hashCode = hashCode * 59 + this.Brokers.GetHashCode();
+                var hashCode = 41;
+                if (this.MaxOffset != null) hashCode = hashCode * 59 + this.MaxOffset.GetHashCode();
+                if (this.MinOffset != null) hashCode = hashCode * 59 + this.MinOffset.GetHashCode();
+                if (this.Brokers != null) hashCode = hashCode * 59 + this.Brokers.GetHashCode();
                 return hashCode;
             }
         }

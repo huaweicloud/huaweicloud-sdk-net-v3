@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(FieldModel input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FieldName != input.FieldName || (this.FieldName != null && !this.FieldName.Equals(input.FieldName))) return false;
+            if (this.IsAnalysis != input.IsAnalysis || (this.IsAnalysis != null && !this.IsAnalysis.Equals(input.IsAnalysis))) return false;
 
-            return 
-                (
-                    this.FieldName == input.FieldName ||
-                    (this.FieldName != null &&
-                    this.FieldName.Equals(input.FieldName))
-                ) && 
-                (
-                    this.IsAnalysis == input.IsAnalysis ||
-                    (this.IsAnalysis != null &&
-                    this.IsAnalysis.Equals(input.IsAnalysis))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FieldName != null)
-                    hashCode = hashCode * 59 + this.FieldName.GetHashCode();
-                if (this.IsAnalysis != null)
-                    hashCode = hashCode * 59 + this.IsAnalysis.GetHashCode();
+                var hashCode = 41;
+                if (this.FieldName != null) hashCode = hashCode * 59 + this.FieldName.GetHashCode();
+                if (this.IsAnalysis != null) hashCode = hashCode * 59 + this.IsAnalysis.GetHashCode();
                 return hashCode;
             }
         }

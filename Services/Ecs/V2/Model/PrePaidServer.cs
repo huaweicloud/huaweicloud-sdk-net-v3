@@ -210,136 +210,33 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(PrePaidServer input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AutoTerminateTime != input.AutoTerminateTime || (this.AutoTerminateTime != null && !this.AutoTerminateTime.Equals(input.AutoTerminateTime))) return false;
+            if (this.ImageRef != input.ImageRef || (this.ImageRef != null && !this.ImageRef.Equals(input.ImageRef))) return false;
+            if (this.FlavorRef != input.FlavorRef || (this.FlavorRef != null && !this.FlavorRef.Equals(input.FlavorRef))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.UserData != input.UserData || (this.UserData != null && !this.UserData.Equals(input.UserData))) return false;
+            if (this.AdminPass != input.AdminPass || (this.AdminPass != null && !this.AdminPass.Equals(input.AdminPass))) return false;
+            if (this.KeyName != input.KeyName || (this.KeyName != null && !this.KeyName.Equals(input.KeyName))) return false;
+            if (this.Vpcid != input.Vpcid || (this.Vpcid != null && !this.Vpcid.Equals(input.Vpcid))) return false;
+            if (this.Nics != input.Nics || (this.Nics != null && input.Nics != null && !this.Nics.SequenceEqual(input.Nics))) return false;
+            if (this.Publicip != input.Publicip || (this.Publicip != null && !this.Publicip.Equals(input.Publicip))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.IsAutoRename != input.IsAutoRename || (this.IsAutoRename != null && !this.IsAutoRename.Equals(input.IsAutoRename))) return false;
+            if (this.RootVolume != input.RootVolume || (this.RootVolume != null && !this.RootVolume.Equals(input.RootVolume))) return false;
+            if (this.DataVolumes != input.DataVolumes || (this.DataVolumes != null && input.DataVolumes != null && !this.DataVolumes.SequenceEqual(input.DataVolumes))) return false;
+            if (this.SecurityGroups != input.SecurityGroups || (this.SecurityGroups != null && input.SecurityGroups != null && !this.SecurityGroups.SequenceEqual(input.SecurityGroups))) return false;
+            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
+            if (this.BatchCreateInMultiAz != input.BatchCreateInMultiAz || (this.BatchCreateInMultiAz != null && !this.BatchCreateInMultiAz.Equals(input.BatchCreateInMultiAz))) return false;
+            if (this.Extendparam != input.Extendparam || (this.Extendparam != null && !this.Extendparam.Equals(input.Extendparam))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && input.Metadata != null && !this.Metadata.SequenceEqual(input.Metadata))) return false;
+            if (this.OsschedulerHints != input.OsschedulerHints || (this.OsschedulerHints != null && !this.OsschedulerHints.Equals(input.OsschedulerHints))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.ServerTags != input.ServerTags || (this.ServerTags != null && input.ServerTags != null && !this.ServerTags.SequenceEqual(input.ServerTags))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.CpuOptions != input.CpuOptions || (this.CpuOptions != null && !this.CpuOptions.Equals(input.CpuOptions))) return false;
 
-            return 
-                (
-                    this.AutoTerminateTime == input.AutoTerminateTime ||
-                    (this.AutoTerminateTime != null &&
-                    this.AutoTerminateTime.Equals(input.AutoTerminateTime))
-                ) && 
-                (
-                    this.ImageRef == input.ImageRef ||
-                    (this.ImageRef != null &&
-                    this.ImageRef.Equals(input.ImageRef))
-                ) && 
-                (
-                    this.FlavorRef == input.FlavorRef ||
-                    (this.FlavorRef != null &&
-                    this.FlavorRef.Equals(input.FlavorRef))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.UserData == input.UserData ||
-                    (this.UserData != null &&
-                    this.UserData.Equals(input.UserData))
-                ) && 
-                (
-                    this.AdminPass == input.AdminPass ||
-                    (this.AdminPass != null &&
-                    this.AdminPass.Equals(input.AdminPass))
-                ) && 
-                (
-                    this.KeyName == input.KeyName ||
-                    (this.KeyName != null &&
-                    this.KeyName.Equals(input.KeyName))
-                ) && 
-                (
-                    this.Vpcid == input.Vpcid ||
-                    (this.Vpcid != null &&
-                    this.Vpcid.Equals(input.Vpcid))
-                ) && 
-                (
-                    this.Nics == input.Nics ||
-                    this.Nics != null &&
-                    input.Nics != null &&
-                    this.Nics.SequenceEqual(input.Nics)
-                ) && 
-                (
-                    this.Publicip == input.Publicip ||
-                    (this.Publicip != null &&
-                    this.Publicip.Equals(input.Publicip))
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.IsAutoRename == input.IsAutoRename ||
-                    (this.IsAutoRename != null &&
-                    this.IsAutoRename.Equals(input.IsAutoRename))
-                ) && 
-                (
-                    this.RootVolume == input.RootVolume ||
-                    (this.RootVolume != null &&
-                    this.RootVolume.Equals(input.RootVolume))
-                ) && 
-                (
-                    this.DataVolumes == input.DataVolumes ||
-                    this.DataVolumes != null &&
-                    input.DataVolumes != null &&
-                    this.DataVolumes.SequenceEqual(input.DataVolumes)
-                ) && 
-                (
-                    this.SecurityGroups == input.SecurityGroups ||
-                    this.SecurityGroups != null &&
-                    input.SecurityGroups != null &&
-                    this.SecurityGroups.SequenceEqual(input.SecurityGroups)
-                ) && 
-                (
-                    this.AvailabilityZone == input.AvailabilityZone ||
-                    (this.AvailabilityZone != null &&
-                    this.AvailabilityZone.Equals(input.AvailabilityZone))
-                ) && 
-                (
-                    this.BatchCreateInMultiAz == input.BatchCreateInMultiAz ||
-                    (this.BatchCreateInMultiAz != null &&
-                    this.BatchCreateInMultiAz.Equals(input.BatchCreateInMultiAz))
-                ) && 
-                (
-                    this.Extendparam == input.Extendparam ||
-                    (this.Extendparam != null &&
-                    this.Extendparam.Equals(input.Extendparam))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    this.Metadata != null &&
-                    input.Metadata != null &&
-                    this.Metadata.SequenceEqual(input.Metadata)
-                ) && 
-                (
-                    this.OsschedulerHints == input.OsschedulerHints ||
-                    (this.OsschedulerHints != null &&
-                    this.OsschedulerHints.Equals(input.OsschedulerHints))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.ServerTags == input.ServerTags ||
-                    this.ServerTags != null &&
-                    input.ServerTags != null &&
-                    this.ServerTags.SequenceEqual(input.ServerTags)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.CpuOptions == input.CpuOptions ||
-                    (this.CpuOptions != null &&
-                    this.CpuOptions.Equals(input.CpuOptions))
-                );
+            return true;
         }
 
         /// <summary>
@@ -349,55 +246,31 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AutoTerminateTime != null)
-                    hashCode = hashCode * 59 + this.AutoTerminateTime.GetHashCode();
-                if (this.ImageRef != null)
-                    hashCode = hashCode * 59 + this.ImageRef.GetHashCode();
-                if (this.FlavorRef != null)
-                    hashCode = hashCode * 59 + this.FlavorRef.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.UserData != null)
-                    hashCode = hashCode * 59 + this.UserData.GetHashCode();
-                if (this.AdminPass != null)
-                    hashCode = hashCode * 59 + this.AdminPass.GetHashCode();
-                if (this.KeyName != null)
-                    hashCode = hashCode * 59 + this.KeyName.GetHashCode();
-                if (this.Vpcid != null)
-                    hashCode = hashCode * 59 + this.Vpcid.GetHashCode();
-                if (this.Nics != null)
-                    hashCode = hashCode * 59 + this.Nics.GetHashCode();
-                if (this.Publicip != null)
-                    hashCode = hashCode * 59 + this.Publicip.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.IsAutoRename != null)
-                    hashCode = hashCode * 59 + this.IsAutoRename.GetHashCode();
-                if (this.RootVolume != null)
-                    hashCode = hashCode * 59 + this.RootVolume.GetHashCode();
-                if (this.DataVolumes != null)
-                    hashCode = hashCode * 59 + this.DataVolumes.GetHashCode();
-                if (this.SecurityGroups != null)
-                    hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
-                if (this.AvailabilityZone != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
-                if (this.BatchCreateInMultiAz != null)
-                    hashCode = hashCode * 59 + this.BatchCreateInMultiAz.GetHashCode();
-                if (this.Extendparam != null)
-                    hashCode = hashCode * 59 + this.Extendparam.GetHashCode();
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
-                if (this.OsschedulerHints != null)
-                    hashCode = hashCode * 59 + this.OsschedulerHints.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.ServerTags != null)
-                    hashCode = hashCode * 59 + this.ServerTags.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.CpuOptions != null)
-                    hashCode = hashCode * 59 + this.CpuOptions.GetHashCode();
+                var hashCode = 41;
+                if (this.AutoTerminateTime != null) hashCode = hashCode * 59 + this.AutoTerminateTime.GetHashCode();
+                if (this.ImageRef != null) hashCode = hashCode * 59 + this.ImageRef.GetHashCode();
+                if (this.FlavorRef != null) hashCode = hashCode * 59 + this.FlavorRef.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.UserData != null) hashCode = hashCode * 59 + this.UserData.GetHashCode();
+                if (this.AdminPass != null) hashCode = hashCode * 59 + this.AdminPass.GetHashCode();
+                if (this.KeyName != null) hashCode = hashCode * 59 + this.KeyName.GetHashCode();
+                if (this.Vpcid != null) hashCode = hashCode * 59 + this.Vpcid.GetHashCode();
+                if (this.Nics != null) hashCode = hashCode * 59 + this.Nics.GetHashCode();
+                if (this.Publicip != null) hashCode = hashCode * 59 + this.Publicip.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.IsAutoRename != null) hashCode = hashCode * 59 + this.IsAutoRename.GetHashCode();
+                if (this.RootVolume != null) hashCode = hashCode * 59 + this.RootVolume.GetHashCode();
+                if (this.DataVolumes != null) hashCode = hashCode * 59 + this.DataVolumes.GetHashCode();
+                if (this.SecurityGroups != null) hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
+                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
+                if (this.BatchCreateInMultiAz != null) hashCode = hashCode * 59 + this.BatchCreateInMultiAz.GetHashCode();
+                if (this.Extendparam != null) hashCode = hashCode * 59 + this.Extendparam.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                if (this.OsschedulerHints != null) hashCode = hashCode * 59 + this.OsschedulerHints.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.ServerTags != null) hashCode = hashCode * 59 + this.ServerTags.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.CpuOptions != null) hashCode = hashCode * 59 + this.CpuOptions.GetHashCode();
                 return hashCode;
             }
         }

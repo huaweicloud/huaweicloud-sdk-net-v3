@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(KeystoneShowRegionResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
 
-            return 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
+                var hashCode = 41;
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
                 return hashCode;
             }
         }

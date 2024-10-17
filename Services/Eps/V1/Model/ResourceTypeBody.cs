@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Eps.V1.Model
         /// </summary>
         public bool Equals(ResourceTypeBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
+            if (this.ResourceTypeI18nDisplayName != input.ResourceTypeI18nDisplayName || (this.ResourceTypeI18nDisplayName != null && !this.ResourceTypeI18nDisplayName.Equals(input.ResourceTypeI18nDisplayName))) return false;
+            if (this.Regions != input.Regions || (this.Regions != null && input.Regions != null && !this.Regions.SequenceEqual(input.Regions))) return false;
+            if (this.Global != input.Global || (this.Global != null && !this.Global.Equals(input.Global))) return false;
 
-            return 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.ResourceTypeI18nDisplayName == input.ResourceTypeI18nDisplayName ||
-                    (this.ResourceTypeI18nDisplayName != null &&
-                    this.ResourceTypeI18nDisplayName.Equals(input.ResourceTypeI18nDisplayName))
-                ) && 
-                (
-                    this.Regions == input.Regions ||
-                    this.Regions != null &&
-                    input.Regions != null &&
-                    this.Regions.SequenceEqual(input.Regions)
-                ) && 
-                (
-                    this.Global == input.Global ||
-                    (this.Global != null &&
-                    this.Global.Equals(input.Global))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Eps.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
-                if (this.ResourceTypeI18nDisplayName != null)
-                    hashCode = hashCode * 59 + this.ResourceTypeI18nDisplayName.GetHashCode();
-                if (this.Regions != null)
-                    hashCode = hashCode * 59 + this.Regions.GetHashCode();
-                if (this.Global != null)
-                    hashCode = hashCode * 59 + this.Global.GetHashCode();
+                var hashCode = 41;
+                if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.ResourceTypeI18nDisplayName != null) hashCode = hashCode * 59 + this.ResourceTypeI18nDisplayName.GetHashCode();
+                if (this.Regions != null) hashCode = hashCode * 59 + this.Regions.GetHashCode();
+                if (this.Global != null) hashCode = hashCode * 59 + this.Global.GetHashCode();
                 return hashCode;
             }
         }

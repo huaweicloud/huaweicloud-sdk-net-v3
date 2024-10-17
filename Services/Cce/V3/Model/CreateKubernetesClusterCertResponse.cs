@@ -99,53 +99,17 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(CreateKubernetesClusterCertResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Kind != input.Kind || (this.Kind != null && !this.Kind.Equals(input.Kind))) return false;
+            if (this.ApiVersion != input.ApiVersion || (this.ApiVersion != null && !this.ApiVersion.Equals(input.ApiVersion))) return false;
+            if (this.Preferences != input.Preferences || (this.Preferences != null && !this.Preferences.Equals(input.Preferences))) return false;
+            if (this.Clusters != input.Clusters || (this.Clusters != null && input.Clusters != null && !this.Clusters.SequenceEqual(input.Clusters))) return false;
+            if (this.Users != input.Users || (this.Users != null && input.Users != null && !this.Users.SequenceEqual(input.Users))) return false;
+            if (this.Contexts != input.Contexts || (this.Contexts != null && input.Contexts != null && !this.Contexts.SequenceEqual(input.Contexts))) return false;
+            if (this.CurrentContext != input.CurrentContext || (this.CurrentContext != null && !this.CurrentContext.Equals(input.CurrentContext))) return false;
+            if (this.PortID != input.PortID || (this.PortID != null && !this.PortID.Equals(input.PortID))) return false;
 
-            return 
-                (
-                    this.Kind == input.Kind ||
-                    (this.Kind != null &&
-                    this.Kind.Equals(input.Kind))
-                ) && 
-                (
-                    this.ApiVersion == input.ApiVersion ||
-                    (this.ApiVersion != null &&
-                    this.ApiVersion.Equals(input.ApiVersion))
-                ) && 
-                (
-                    this.Preferences == input.Preferences ||
-                    (this.Preferences != null &&
-                    this.Preferences.Equals(input.Preferences))
-                ) && 
-                (
-                    this.Clusters == input.Clusters ||
-                    this.Clusters != null &&
-                    input.Clusters != null &&
-                    this.Clusters.SequenceEqual(input.Clusters)
-                ) && 
-                (
-                    this.Users == input.Users ||
-                    this.Users != null &&
-                    input.Users != null &&
-                    this.Users.SequenceEqual(input.Users)
-                ) && 
-                (
-                    this.Contexts == input.Contexts ||
-                    this.Contexts != null &&
-                    input.Contexts != null &&
-                    this.Contexts.SequenceEqual(input.Contexts)
-                ) && 
-                (
-                    this.CurrentContext == input.CurrentContext ||
-                    (this.CurrentContext != null &&
-                    this.CurrentContext.Equals(input.CurrentContext))
-                ) && 
-                (
-                    this.PortID == input.PortID ||
-                    (this.PortID != null &&
-                    this.PortID.Equals(input.PortID))
-                );
+            return true;
         }
 
         /// <summary>
@@ -155,23 +119,15 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Kind != null)
-                    hashCode = hashCode * 59 + this.Kind.GetHashCode();
-                if (this.ApiVersion != null)
-                    hashCode = hashCode * 59 + this.ApiVersion.GetHashCode();
-                if (this.Preferences != null)
-                    hashCode = hashCode * 59 + this.Preferences.GetHashCode();
-                if (this.Clusters != null)
-                    hashCode = hashCode * 59 + this.Clusters.GetHashCode();
-                if (this.Users != null)
-                    hashCode = hashCode * 59 + this.Users.GetHashCode();
-                if (this.Contexts != null)
-                    hashCode = hashCode * 59 + this.Contexts.GetHashCode();
-                if (this.CurrentContext != null)
-                    hashCode = hashCode * 59 + this.CurrentContext.GetHashCode();
-                if (this.PortID != null)
-                    hashCode = hashCode * 59 + this.PortID.GetHashCode();
+                var hashCode = 41;
+                if (this.Kind != null) hashCode = hashCode * 59 + this.Kind.GetHashCode();
+                if (this.ApiVersion != null) hashCode = hashCode * 59 + this.ApiVersion.GetHashCode();
+                if (this.Preferences != null) hashCode = hashCode * 59 + this.Preferences.GetHashCode();
+                if (this.Clusters != null) hashCode = hashCode * 59 + this.Clusters.GetHashCode();
+                if (this.Users != null) hashCode = hashCode * 59 + this.Users.GetHashCode();
+                if (this.Contexts != null) hashCode = hashCode * 59 + this.Contexts.GetHashCode();
+                if (this.CurrentContext != null) hashCode = hashCode * 59 + this.CurrentContext.GetHashCode();
+                if (this.PortID != null) hashCode = hashCode * 59 + this.PortID.GetHashCode();
                 return hashCode;
             }
         }

@@ -126,71 +126,21 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         /// </summary>
         public bool Equals(WorkflowQueryParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Search != input.Search || (this.Search != null && !this.Search.Equals(input.Search))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.Page != input.Page || (this.Page != null && !this.Page.Equals(input.Page))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.CreateBy != input.CreateBy || (this.CreateBy != null && !this.CreateBy.Equals(input.CreateBy))) return false;
+            if (this.SortField != input.SortField || (this.SortField != null && !this.SortField.Equals(input.SortField))) return false;
+            if (this.SortType != input.SortType || (this.SortType != null && !this.SortType.Equals(input.SortType))) return false;
+            if (this.SearchTimeStart != input.SearchTimeStart || (this.SearchTimeStart != null && !this.SearchTimeStart.Equals(input.SearchTimeStart))) return false;
+            if (this.SearchTimeEnd != input.SearchTimeEnd || (this.SearchTimeEnd != null && !this.SearchTimeEnd.Equals(input.SearchTimeEnd))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
 
-            return 
-                (
-                    this.Search == input.Search ||
-                    (this.Search != null &&
-                    this.Search.Equals(input.Search))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.Page == input.Page ||
-                    (this.Page != null &&
-                    this.Page.Equals(input.Page))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.CreateBy == input.CreateBy ||
-                    (this.CreateBy != null &&
-                    this.CreateBy.Equals(input.CreateBy))
-                ) && 
-                (
-                    this.SortField == input.SortField ||
-                    (this.SortField != null &&
-                    this.SortField.Equals(input.SortField))
-                ) && 
-                (
-                    this.SortType == input.SortType ||
-                    (this.SortType != null &&
-                    this.SortType.Equals(input.SortType))
-                ) && 
-                (
-                    this.SearchTimeStart == input.SearchTimeStart ||
-                    (this.SearchTimeStart != null &&
-                    this.SearchTimeStart.Equals(input.SearchTimeStart))
-                ) && 
-                (
-                    this.SearchTimeEnd == input.SearchTimeEnd ||
-                    (this.SearchTimeEnd != null &&
-                    this.SearchTimeEnd.Equals(input.SearchTimeEnd))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
+            return true;
         }
 
         /// <summary>
@@ -200,31 +150,19 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Search != null)
-                    hashCode = hashCode * 59 + this.Search.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.Page != null)
-                    hashCode = hashCode * 59 + this.Page.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.CreateBy != null)
-                    hashCode = hashCode * 59 + this.CreateBy.GetHashCode();
-                if (this.SortField != null)
-                    hashCode = hashCode * 59 + this.SortField.GetHashCode();
-                if (this.SortType != null)
-                    hashCode = hashCode * 59 + this.SortType.GetHashCode();
-                if (this.SearchTimeStart != null)
-                    hashCode = hashCode * 59 + this.SearchTimeStart.GetHashCode();
-                if (this.SearchTimeEnd != null)
-                    hashCode = hashCode * 59 + this.SearchTimeEnd.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                var hashCode = 41;
+                if (this.Search != null) hashCode = hashCode * 59 + this.Search.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.Page != null) hashCode = hashCode * 59 + this.Page.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.CreateBy != null) hashCode = hashCode * 59 + this.CreateBy.GetHashCode();
+                if (this.SortField != null) hashCode = hashCode * 59 + this.SortField.GetHashCode();
+                if (this.SortType != null) hashCode = hashCode * 59 + this.SortType.GetHashCode();
+                if (this.SearchTimeStart != null) hashCode = hashCode * 59 + this.SearchTimeStart.GetHashCode();
+                if (this.SearchTimeEnd != null) hashCode = hashCode * 59 + this.SearchTimeEnd.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

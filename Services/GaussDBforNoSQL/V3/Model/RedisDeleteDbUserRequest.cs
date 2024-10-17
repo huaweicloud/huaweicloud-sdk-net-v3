@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(RedisDeleteDbUserRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Names != input.Names || (this.Names != null && input.Names != null && !this.Names.SequenceEqual(input.Names))) return false;
 
-            return 
-                (
-                    this.Names == input.Names ||
-                    this.Names != null &&
-                    input.Names != null &&
-                    this.Names.SequenceEqual(input.Names)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Names != null)
-                    hashCode = hashCode * 59 + this.Names.GetHashCode();
+                var hashCode = 41;
+                if (this.Names != null) hashCode = hashCode * 59 + this.Names.GetHashCode();
                 return hashCode;
             }
         }

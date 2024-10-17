@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(OsFederationInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IdentityProvider != input.IdentityProvider || (this.IdentityProvider != null && !this.IdentityProvider.Equals(input.IdentityProvider))) return false;
+            if (this.Protocol != input.Protocol || (this.Protocol != null && !this.Protocol.Equals(input.Protocol))) return false;
+            if (this.Groups != input.Groups || (this.Groups != null && input.Groups != null && !this.Groups.SequenceEqual(input.Groups))) return false;
 
-            return 
-                (
-                    this.IdentityProvider == input.IdentityProvider ||
-                    (this.IdentityProvider != null &&
-                    this.IdentityProvider.Equals(input.IdentityProvider))
-                ) && 
-                (
-                    this.Protocol == input.Protocol ||
-                    (this.Protocol != null &&
-                    this.Protocol.Equals(input.Protocol))
-                ) && 
-                (
-                    this.Groups == input.Groups ||
-                    this.Groups != null &&
-                    input.Groups != null &&
-                    this.Groups.SequenceEqual(input.Groups)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IdentityProvider != null)
-                    hashCode = hashCode * 59 + this.IdentityProvider.GetHashCode();
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
-                if (this.Groups != null)
-                    hashCode = hashCode * 59 + this.Groups.GetHashCode();
+                var hashCode = 41;
+                if (this.IdentityProvider != null) hashCode = hashCode * 59 + this.IdentityProvider.GetHashCode();
+                if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.Groups != null) hashCode = hashCode * 59 + this.Groups.GetHashCode();
                 return hashCode;
             }
         }

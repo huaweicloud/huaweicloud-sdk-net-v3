@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(Addresses input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && input.VpcId != null && !this.VpcId.SequenceEqual(input.VpcId))) return false;
 
-            return 
-                (
-                    this.VpcId == input.VpcId ||
-                    this.VpcId != null &&
-                    input.VpcId != null &&
-                    this.VpcId.SequenceEqual(input.VpcId)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                var hashCode = 41;
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
                 return hashCode;
             }
         }

@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         /// </summary>
         public bool Equals(DDosStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FloatingIpId != input.FloatingIpId || (this.FloatingIpId != null && !this.FloatingIpId.Equals(input.FloatingIpId))) return false;
+            if (this.FloatingIpAddress != input.FloatingIpAddress || (this.FloatingIpAddress != null && !this.FloatingIpAddress.Equals(input.FloatingIpAddress))) return false;
+            if (this.NetworkType != input.NetworkType || (this.NetworkType != null && !this.NetworkType.Equals(input.NetworkType))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.BlackholeEndtime != input.BlackholeEndtime || (this.BlackholeEndtime != null && !this.BlackholeEndtime.Equals(input.BlackholeEndtime))) return false;
+            if (this.ProtectType != input.ProtectType || (this.ProtectType != null && !this.ProtectType.Equals(input.ProtectType))) return false;
+            if (this.TrafficThreshold != input.TrafficThreshold || (this.TrafficThreshold != null && !this.TrafficThreshold.Equals(input.TrafficThreshold))) return false;
+            if (this.HttpThreshold != input.HttpThreshold || (this.HttpThreshold != null && !this.HttpThreshold.Equals(input.HttpThreshold))) return false;
 
-            return 
-                (
-                    this.FloatingIpId == input.FloatingIpId ||
-                    (this.FloatingIpId != null &&
-                    this.FloatingIpId.Equals(input.FloatingIpId))
-                ) && 
-                (
-                    this.FloatingIpAddress == input.FloatingIpAddress ||
-                    (this.FloatingIpAddress != null &&
-                    this.FloatingIpAddress.Equals(input.FloatingIpAddress))
-                ) && 
-                (
-                    this.NetworkType == input.NetworkType ||
-                    (this.NetworkType != null &&
-                    this.NetworkType.Equals(input.NetworkType))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.BlackholeEndtime == input.BlackholeEndtime ||
-                    (this.BlackholeEndtime != null &&
-                    this.BlackholeEndtime.Equals(input.BlackholeEndtime))
-                ) && 
-                (
-                    this.ProtectType == input.ProtectType ||
-                    (this.ProtectType != null &&
-                    this.ProtectType.Equals(input.ProtectType))
-                ) && 
-                (
-                    this.TrafficThreshold == input.TrafficThreshold ||
-                    (this.TrafficThreshold != null &&
-                    this.TrafficThreshold.Equals(input.TrafficThreshold))
-                ) && 
-                (
-                    this.HttpThreshold == input.HttpThreshold ||
-                    (this.HttpThreshold != null &&
-                    this.HttpThreshold.Equals(input.HttpThreshold))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FloatingIpId != null)
-                    hashCode = hashCode * 59 + this.FloatingIpId.GetHashCode();
-                if (this.FloatingIpAddress != null)
-                    hashCode = hashCode * 59 + this.FloatingIpAddress.GetHashCode();
-                if (this.NetworkType != null)
-                    hashCode = hashCode * 59 + this.NetworkType.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.BlackholeEndtime != null)
-                    hashCode = hashCode * 59 + this.BlackholeEndtime.GetHashCode();
-                if (this.ProtectType != null)
-                    hashCode = hashCode * 59 + this.ProtectType.GetHashCode();
-                if (this.TrafficThreshold != null)
-                    hashCode = hashCode * 59 + this.TrafficThreshold.GetHashCode();
-                if (this.HttpThreshold != null)
-                    hashCode = hashCode * 59 + this.HttpThreshold.GetHashCode();
+                var hashCode = 41;
+                if (this.FloatingIpId != null) hashCode = hashCode * 59 + this.FloatingIpId.GetHashCode();
+                if (this.FloatingIpAddress != null) hashCode = hashCode * 59 + this.FloatingIpAddress.GetHashCode();
+                if (this.NetworkType != null) hashCode = hashCode * 59 + this.NetworkType.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.BlackholeEndtime != null) hashCode = hashCode * 59 + this.BlackholeEndtime.GetHashCode();
+                if (this.ProtectType != null) hashCode = hashCode * 59 + this.ProtectType.GetHashCode();
+                if (this.TrafficThreshold != null) hashCode = hashCode * 59 + this.TrafficThreshold.GetHashCode();
+                if (this.HttpThreshold != null) hashCode = hashCode * 59 + this.HttpThreshold.GetHashCode();
                 return hashCode;
             }
         }

@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(VodSampleData input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Storage != input.Storage || (this.Storage != null && !this.Storage.Equals(input.Storage))) return false;
+            if (this.StorageWarm != input.StorageWarm || (this.StorageWarm != null && !this.StorageWarm.Equals(input.StorageWarm))) return false;
+            if (this.StorageCold != input.StorageCold || (this.StorageCold != null && !this.StorageCold.Equals(input.StorageCold))) return false;
+            if (this.Transcode != input.Transcode || (this.Transcode != null && !this.Transcode.Equals(input.Transcode))) return false;
 
-            return 
-                (
-                    this.Storage == input.Storage ||
-                    (this.Storage != null &&
-                    this.Storage.Equals(input.Storage))
-                ) && 
-                (
-                    this.StorageWarm == input.StorageWarm ||
-                    (this.StorageWarm != null &&
-                    this.StorageWarm.Equals(input.StorageWarm))
-                ) && 
-                (
-                    this.StorageCold == input.StorageCold ||
-                    (this.StorageCold != null &&
-                    this.StorageCold.Equals(input.StorageCold))
-                ) && 
-                (
-                    this.Transcode == input.Transcode ||
-                    (this.Transcode != null &&
-                    this.Transcode.Equals(input.Transcode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Storage != null)
-                    hashCode = hashCode * 59 + this.Storage.GetHashCode();
-                if (this.StorageWarm != null)
-                    hashCode = hashCode * 59 + this.StorageWarm.GetHashCode();
-                if (this.StorageCold != null)
-                    hashCode = hashCode * 59 + this.StorageCold.GetHashCode();
-                if (this.Transcode != null)
-                    hashCode = hashCode * 59 + this.Transcode.GetHashCode();
+                var hashCode = 41;
+                if (this.Storage != null) hashCode = hashCode * 59 + this.Storage.GetHashCode();
+                if (this.StorageWarm != null) hashCode = hashCode * 59 + this.StorageWarm.GetHashCode();
+                if (this.StorageCold != null) hashCode = hashCode * 59 + this.StorageCold.GetHashCode();
+                if (this.Transcode != null) hashCode = hashCode * 59 + this.Transcode.GetHashCode();
                 return hashCode;
             }
         }

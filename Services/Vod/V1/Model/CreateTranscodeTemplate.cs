@@ -91,47 +91,16 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(CreateTranscodeTemplate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.IsDefault != input.IsDefault || (this.IsDefault != null && !this.IsDefault.Equals(input.IsDefault))) return false;
+            if (this.IsAutoEncrypt != input.IsAutoEncrypt || (this.IsAutoEncrypt != null && !this.IsAutoEncrypt.Equals(input.IsAutoEncrypt))) return false;
+            if (this.QualityInfoList != input.QualityInfoList || (this.QualityInfoList != null && input.QualityInfoList != null && !this.QualityInfoList.SequenceEqual(input.QualityInfoList))) return false;
+            if (this.Common != input.Common || (this.Common != null && !this.Common.Equals(input.Common))) return false;
+            if (this.WatermarkTemplateIds != input.WatermarkTemplateIds || (this.WatermarkTemplateIds != null && input.WatermarkTemplateIds != null && !this.WatermarkTemplateIds.SequenceEqual(input.WatermarkTemplateIds))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.IsDefault == input.IsDefault ||
-                    (this.IsDefault != null &&
-                    this.IsDefault.Equals(input.IsDefault))
-                ) && 
-                (
-                    this.IsAutoEncrypt == input.IsAutoEncrypt ||
-                    (this.IsAutoEncrypt != null &&
-                    this.IsAutoEncrypt.Equals(input.IsAutoEncrypt))
-                ) && 
-                (
-                    this.QualityInfoList == input.QualityInfoList ||
-                    this.QualityInfoList != null &&
-                    input.QualityInfoList != null &&
-                    this.QualityInfoList.SequenceEqual(input.QualityInfoList)
-                ) && 
-                (
-                    this.Common == input.Common ||
-                    (this.Common != null &&
-                    this.Common.Equals(input.Common))
-                ) && 
-                (
-                    this.WatermarkTemplateIds == input.WatermarkTemplateIds ||
-                    this.WatermarkTemplateIds != null &&
-                    input.WatermarkTemplateIds != null &&
-                    this.WatermarkTemplateIds.SequenceEqual(input.WatermarkTemplateIds)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                );
+            return true;
         }
 
         /// <summary>
@@ -141,21 +110,14 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.IsDefault != null)
-                    hashCode = hashCode * 59 + this.IsDefault.GetHashCode();
-                if (this.IsAutoEncrypt != null)
-                    hashCode = hashCode * 59 + this.IsAutoEncrypt.GetHashCode();
-                if (this.QualityInfoList != null)
-                    hashCode = hashCode * 59 + this.QualityInfoList.GetHashCode();
-                if (this.Common != null)
-                    hashCode = hashCode * 59 + this.Common.GetHashCode();
-                if (this.WatermarkTemplateIds != null)
-                    hashCode = hashCode * 59 + this.WatermarkTemplateIds.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.IsDefault != null) hashCode = hashCode * 59 + this.IsDefault.GetHashCode();
+                if (this.IsAutoEncrypt != null) hashCode = hashCode * 59 + this.IsAutoEncrypt.GetHashCode();
+                if (this.QualityInfoList != null) hashCode = hashCode * 59 + this.QualityInfoList.GetHashCode();
+                if (this.Common != null) hashCode = hashCode * 59 + this.Common.GetHashCode();
+                if (this.WatermarkTemplateIds != null) hashCode = hashCode * 59 + this.WatermarkTemplateIds.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(BugStatisticResponseV4 input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CriticalNum != input.CriticalNum || (this.CriticalNum != null && !this.CriticalNum.Equals(input.CriticalNum))) return false;
+            if (this.DefectIndex != input.DefectIndex || (this.DefectIndex != null && !this.DefectIndex.Equals(input.DefectIndex))) return false;
+            if (this.Module != input.Module || (this.Module != null && !this.Module.Equals(input.Module))) return false;
+            if (this.NormalNum != input.NormalNum || (this.NormalNum != null && !this.NormalNum.Equals(input.NormalNum))) return false;
+            if (this.SeriousNum != input.SeriousNum || (this.SeriousNum != null && !this.SeriousNum.Equals(input.SeriousNum))) return false;
+            if (this.TipNum != input.TipNum || (this.TipNum != null && !this.TipNum.Equals(input.TipNum))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
-            return 
-                (
-                    this.CriticalNum == input.CriticalNum ||
-                    (this.CriticalNum != null &&
-                    this.CriticalNum.Equals(input.CriticalNum))
-                ) && 
-                (
-                    this.DefectIndex == input.DefectIndex ||
-                    (this.DefectIndex != null &&
-                    this.DefectIndex.Equals(input.DefectIndex))
-                ) && 
-                (
-                    this.Module == input.Module ||
-                    (this.Module != null &&
-                    this.Module.Equals(input.Module))
-                ) && 
-                (
-                    this.NormalNum == input.NormalNum ||
-                    (this.NormalNum != null &&
-                    this.NormalNum.Equals(input.NormalNum))
-                ) && 
-                (
-                    this.SeriousNum == input.SeriousNum ||
-                    (this.SeriousNum != null &&
-                    this.SeriousNum.Equals(input.SeriousNum))
-                ) && 
-                (
-                    this.TipNum == input.TipNum ||
-                    (this.TipNum != null &&
-                    this.TipNum.Equals(input.TipNum))
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CriticalNum != null)
-                    hashCode = hashCode * 59 + this.CriticalNum.GetHashCode();
-                if (this.DefectIndex != null)
-                    hashCode = hashCode * 59 + this.DefectIndex.GetHashCode();
-                if (this.Module != null)
-                    hashCode = hashCode * 59 + this.Module.GetHashCode();
-                if (this.NormalNum != null)
-                    hashCode = hashCode * 59 + this.NormalNum.GetHashCode();
-                if (this.SeriousNum != null)
-                    hashCode = hashCode * 59 + this.SeriousNum.GetHashCode();
-                if (this.TipNum != null)
-                    hashCode = hashCode * 59 + this.TipNum.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                var hashCode = 41;
+                if (this.CriticalNum != null) hashCode = hashCode * 59 + this.CriticalNum.GetHashCode();
+                if (this.DefectIndex != null) hashCode = hashCode * 59 + this.DefectIndex.GetHashCode();
+                if (this.Module != null) hashCode = hashCode * 59 + this.Module.GetHashCode();
+                if (this.NormalNum != null) hashCode = hashCode * 59 + this.NormalNum.GetHashCode();
+                if (this.SeriousNum != null) hashCode = hashCode * 59 + this.SeriousNum.GetHashCode();
+                if (this.TipNum != null) hashCode = hashCode * 59 + this.TipNum.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

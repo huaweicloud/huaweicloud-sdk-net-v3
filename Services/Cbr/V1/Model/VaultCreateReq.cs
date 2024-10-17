@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(VaultCreateReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Vault != input.Vault || (this.Vault != null && !this.Vault.Equals(input.Vault))) return false;
 
-            return 
-                (
-                    this.Vault == input.Vault ||
-                    (this.Vault != null &&
-                    this.Vault.Equals(input.Vault))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Vault != null)
-                    hashCode = hashCode * 59 + this.Vault.GetHashCode();
+                var hashCode = 41;
+                if (this.Vault != null) hashCode = hashCode * 59 + this.Vault.GetHashCode();
                 return hashCode;
             }
         }

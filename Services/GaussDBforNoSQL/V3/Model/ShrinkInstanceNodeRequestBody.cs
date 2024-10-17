@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(ShrinkInstanceNodeRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Num != input.Num || (this.Num != null && !this.Num.Equals(input.Num))) return false;
+            if (this.NodeList != input.NodeList || (this.NodeList != null && input.NodeList != null && !this.NodeList.SequenceEqual(input.NodeList))) return false;
 
-            return 
-                (
-                    this.Num == input.Num ||
-                    (this.Num != null &&
-                    this.Num.Equals(input.Num))
-                ) && 
-                (
-                    this.NodeList == input.NodeList ||
-                    this.NodeList != null &&
-                    input.NodeList != null &&
-                    this.NodeList.SequenceEqual(input.NodeList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Num != null)
-                    hashCode = hashCode * 59 + this.Num.GetHashCode();
-                if (this.NodeList != null)
-                    hashCode = hashCode * 59 + this.NodeList.GetHashCode();
+                var hashCode = 41;
+                if (this.Num != null) hashCode = hashCode * 59 + this.Num.GetHashCode();
+                if (this.NodeList != null) hashCode = hashCode * 59 + this.NodeList.GetHashCode();
                 return hashCode;
             }
         }

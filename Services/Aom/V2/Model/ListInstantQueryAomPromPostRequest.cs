@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(ListInstantQueryAomPromPostRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Query != input.Query || (this.Query != null && !this.Query.Equals(input.Query))) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
 
-            return 
-                (
-                    this.Query == input.Query ||
-                    (this.Query != null &&
-                    this.Query.Equals(input.Query))
-                ) && 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Query != null)
-                    hashCode = hashCode * 59 + this.Query.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
+                var hashCode = 41;
+                if (this.Query != null) hashCode = hashCode * 59 + this.Query.GetHashCode();
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
                 return hashCode;
             }
         }

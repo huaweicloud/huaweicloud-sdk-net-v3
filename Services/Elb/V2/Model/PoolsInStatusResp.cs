@@ -84,41 +84,15 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// </summary>
         public bool Equals(PoolsInStatusResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Members != input.Members || (this.Members != null && input.Members != null && !this.Members.SequenceEqual(input.Members))) return false;
+            if (this.OperatingStatus != input.OperatingStatus || (this.OperatingStatus != null && !this.OperatingStatus.Equals(input.OperatingStatus))) return false;
+            if (this.ProvisioningStatus != input.ProvisioningStatus || (this.ProvisioningStatus != null && !this.ProvisioningStatus.Equals(input.ProvisioningStatus))) return false;
+            if (this.Healthmonitor != input.Healthmonitor || (this.Healthmonitor != null && !this.Healthmonitor.Equals(input.Healthmonitor))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Members == input.Members ||
-                    this.Members != null &&
-                    input.Members != null &&
-                    this.Members.SequenceEqual(input.Members)
-                ) && 
-                (
-                    this.OperatingStatus == input.OperatingStatus ||
-                    (this.OperatingStatus != null &&
-                    this.OperatingStatus.Equals(input.OperatingStatus))
-                ) && 
-                (
-                    this.ProvisioningStatus == input.ProvisioningStatus ||
-                    (this.ProvisioningStatus != null &&
-                    this.ProvisioningStatus.Equals(input.ProvisioningStatus))
-                ) && 
-                (
-                    this.Healthmonitor == input.Healthmonitor ||
-                    (this.Healthmonitor != null &&
-                    this.Healthmonitor.Equals(input.Healthmonitor))
-                );
+            return true;
         }
 
         /// <summary>
@@ -128,19 +102,13 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Members != null)
-                    hashCode = hashCode * 59 + this.Members.GetHashCode();
-                if (this.OperatingStatus != null)
-                    hashCode = hashCode * 59 + this.OperatingStatus.GetHashCode();
-                if (this.ProvisioningStatus != null)
-                    hashCode = hashCode * 59 + this.ProvisioningStatus.GetHashCode();
-                if (this.Healthmonitor != null)
-                    hashCode = hashCode * 59 + this.Healthmonitor.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Members != null) hashCode = hashCode * 59 + this.Members.GetHashCode();
+                if (this.OperatingStatus != null) hashCode = hashCode * 59 + this.OperatingStatus.GetHashCode();
+                if (this.ProvisioningStatus != null) hashCode = hashCode * 59 + this.ProvisioningStatus.GetHashCode();
+                if (this.Healthmonitor != null) hashCode = hashCode * 59 + this.Healthmonitor.GetHashCode();
                 return hashCode;
             }
         }

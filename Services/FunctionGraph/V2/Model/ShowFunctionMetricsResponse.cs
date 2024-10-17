@@ -119,76 +119,20 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(ShowFunctionMetricsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ConcurrencyNum != input.ConcurrencyNum || (this.ConcurrencyNum != null && input.ConcurrencyNum != null && !this.ConcurrencyNum.SequenceEqual(input.ConcurrencyNum))) return false;
+            if (this.Count != input.Count || (this.Count != null && input.Count != null && !this.Count.SequenceEqual(input.Count))) return false;
+            if (this.Duration != input.Duration || (this.Duration != null && input.Duration != null && !this.Duration.SequenceEqual(input.Duration))) return false;
+            if (this.FailCount != input.FailCount || (this.FailCount != null && input.FailCount != null && !this.FailCount.SequenceEqual(input.FailCount))) return false;
+            if (this.FunctionErrorCount != input.FunctionErrorCount || (this.FunctionErrorCount != null && input.FunctionErrorCount != null && !this.FunctionErrorCount.SequenceEqual(input.FunctionErrorCount))) return false;
+            if (this.SystemErrorCount != input.SystemErrorCount || (this.SystemErrorCount != null && input.SystemErrorCount != null && !this.SystemErrorCount.SequenceEqual(input.SystemErrorCount))) return false;
+            if (this.InstanceNum != input.InstanceNum || (this.InstanceNum != null && input.InstanceNum != null && !this.InstanceNum.SequenceEqual(input.InstanceNum))) return false;
+            if (this.MaxDuration != input.MaxDuration || (this.MaxDuration != null && input.MaxDuration != null && !this.MaxDuration.SequenceEqual(input.MaxDuration))) return false;
+            if (this.MinDuration != input.MinDuration || (this.MinDuration != null && input.MinDuration != null && !this.MinDuration.SequenceEqual(input.MinDuration))) return false;
+            if (this.RejectCount != input.RejectCount || (this.RejectCount != null && input.RejectCount != null && !this.RejectCount.SequenceEqual(input.RejectCount))) return false;
+            if (this.ReservedInstanceNum != input.ReservedInstanceNum || (this.ReservedInstanceNum != null && input.ReservedInstanceNum != null && !this.ReservedInstanceNum.SequenceEqual(input.ReservedInstanceNum))) return false;
 
-            return 
-                (
-                    this.ConcurrencyNum == input.ConcurrencyNum ||
-                    this.ConcurrencyNum != null &&
-                    input.ConcurrencyNum != null &&
-                    this.ConcurrencyNum.SequenceEqual(input.ConcurrencyNum)
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    this.Count != null &&
-                    input.Count != null &&
-                    this.Count.SequenceEqual(input.Count)
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    this.Duration != null &&
-                    input.Duration != null &&
-                    this.Duration.SequenceEqual(input.Duration)
-                ) && 
-                (
-                    this.FailCount == input.FailCount ||
-                    this.FailCount != null &&
-                    input.FailCount != null &&
-                    this.FailCount.SequenceEqual(input.FailCount)
-                ) && 
-                (
-                    this.FunctionErrorCount == input.FunctionErrorCount ||
-                    this.FunctionErrorCount != null &&
-                    input.FunctionErrorCount != null &&
-                    this.FunctionErrorCount.SequenceEqual(input.FunctionErrorCount)
-                ) && 
-                (
-                    this.SystemErrorCount == input.SystemErrorCount ||
-                    this.SystemErrorCount != null &&
-                    input.SystemErrorCount != null &&
-                    this.SystemErrorCount.SequenceEqual(input.SystemErrorCount)
-                ) && 
-                (
-                    this.InstanceNum == input.InstanceNum ||
-                    this.InstanceNum != null &&
-                    input.InstanceNum != null &&
-                    this.InstanceNum.SequenceEqual(input.InstanceNum)
-                ) && 
-                (
-                    this.MaxDuration == input.MaxDuration ||
-                    this.MaxDuration != null &&
-                    input.MaxDuration != null &&
-                    this.MaxDuration.SequenceEqual(input.MaxDuration)
-                ) && 
-                (
-                    this.MinDuration == input.MinDuration ||
-                    this.MinDuration != null &&
-                    input.MinDuration != null &&
-                    this.MinDuration.SequenceEqual(input.MinDuration)
-                ) && 
-                (
-                    this.RejectCount == input.RejectCount ||
-                    this.RejectCount != null &&
-                    input.RejectCount != null &&
-                    this.RejectCount.SequenceEqual(input.RejectCount)
-                ) && 
-                (
-                    this.ReservedInstanceNum == input.ReservedInstanceNum ||
-                    this.ReservedInstanceNum != null &&
-                    input.ReservedInstanceNum != null &&
-                    this.ReservedInstanceNum.SequenceEqual(input.ReservedInstanceNum)
-                );
+            return true;
         }
 
         /// <summary>
@@ -198,29 +142,18 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ConcurrencyNum != null)
-                    hashCode = hashCode * 59 + this.ConcurrencyNum.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.Duration != null)
-                    hashCode = hashCode * 59 + this.Duration.GetHashCode();
-                if (this.FailCount != null)
-                    hashCode = hashCode * 59 + this.FailCount.GetHashCode();
-                if (this.FunctionErrorCount != null)
-                    hashCode = hashCode * 59 + this.FunctionErrorCount.GetHashCode();
-                if (this.SystemErrorCount != null)
-                    hashCode = hashCode * 59 + this.SystemErrorCount.GetHashCode();
-                if (this.InstanceNum != null)
-                    hashCode = hashCode * 59 + this.InstanceNum.GetHashCode();
-                if (this.MaxDuration != null)
-                    hashCode = hashCode * 59 + this.MaxDuration.GetHashCode();
-                if (this.MinDuration != null)
-                    hashCode = hashCode * 59 + this.MinDuration.GetHashCode();
-                if (this.RejectCount != null)
-                    hashCode = hashCode * 59 + this.RejectCount.GetHashCode();
-                if (this.ReservedInstanceNum != null)
-                    hashCode = hashCode * 59 + this.ReservedInstanceNum.GetHashCode();
+                var hashCode = 41;
+                if (this.ConcurrencyNum != null) hashCode = hashCode * 59 + this.ConcurrencyNum.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                if (this.FailCount != null) hashCode = hashCode * 59 + this.FailCount.GetHashCode();
+                if (this.FunctionErrorCount != null) hashCode = hashCode * 59 + this.FunctionErrorCount.GetHashCode();
+                if (this.SystemErrorCount != null) hashCode = hashCode * 59 + this.SystemErrorCount.GetHashCode();
+                if (this.InstanceNum != null) hashCode = hashCode * 59 + this.InstanceNum.GetHashCode();
+                if (this.MaxDuration != null) hashCode = hashCode * 59 + this.MaxDuration.GetHashCode();
+                if (this.MinDuration != null) hashCode = hashCode * 59 + this.MinDuration.GetHashCode();
+                if (this.RejectCount != null) hashCode = hashCode * 59 + this.RejectCount.GetHashCode();
+                if (this.ReservedInstanceNum != null) hashCode = hashCode * 59 + this.ReservedInstanceNum.GetHashCode();
                 return hashCode;
             }
         }

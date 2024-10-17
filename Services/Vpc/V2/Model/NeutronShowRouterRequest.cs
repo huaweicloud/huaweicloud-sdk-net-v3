@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(NeutronShowRouterRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RouterId != input.RouterId || (this.RouterId != null && !this.RouterId.Equals(input.RouterId))) return false;
 
-            return 
-                (
-                    this.RouterId == input.RouterId ||
-                    (this.RouterId != null &&
-                    this.RouterId.Equals(input.RouterId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RouterId != null)
-                    hashCode = hashCode * 59 + this.RouterId.GetHashCode();
+                var hashCode = 41;
+                if (this.RouterId != null) hashCode = hashCode * 59 + this.RouterId.GetHashCode();
                 return hashCode;
             }
         }

@@ -1351,6 +1351,32 @@ namespace HuaweiCloud.SDK.Ecs.V2
         }
         
         /// <summary>
+        /// 查询云服务器规格extra_specs的详情
+        ///
+        /// 查询指定的规格的详细信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public NovaShowFlavorExtraSpecsResponse NovaShowFlavorExtraSpecs(NovaShowFlavorExtraSpecsRequest novaShowFlavorExtraSpecsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("flavor_id", novaShowFlavorExtraSpecsRequest.FlavorId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/flavors/{flavor_id}/os-extra_specs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", novaShowFlavorExtraSpecsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<NovaShowFlavorExtraSpecsResponse>(response);
+        }
+
+        public SyncInvoker<NovaShowFlavorExtraSpecsResponse> NovaShowFlavorExtraSpecsInvoker(NovaShowFlavorExtraSpecsRequest novaShowFlavorExtraSpecsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("flavor_id", novaShowFlavorExtraSpecsRequest.FlavorId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2.1/{project_id}/flavors/{flavor_id}/os-extra_specs", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", novaShowFlavorExtraSpecsRequest);
+            return new SyncInvoker<NovaShowFlavorExtraSpecsResponse>(this, "GET", request, JsonUtils.DeSerialize<NovaShowFlavorExtraSpecsResponse>);
+        }
+        
+        /// <summary>
         /// 查询SSH密钥详情
         ///
         /// 根据SSH密钥名称查询指定SSH密钥。

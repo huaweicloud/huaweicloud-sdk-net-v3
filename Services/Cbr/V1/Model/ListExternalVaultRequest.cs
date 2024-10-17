@@ -214,50 +214,17 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(ListExternalVaultRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ExternalProjectId != input.ExternalProjectId || (this.ExternalProjectId != null && !this.ExternalProjectId.Equals(input.ExternalProjectId))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.ProtectType != input.ProtectType) return false;
+            if (this.RegionId != input.RegionId || (this.RegionId != null && !this.RegionId.Equals(input.RegionId))) return false;
+            if (this.ObjcetType != input.ObjcetType || (this.ObjcetType != null && !this.ObjcetType.Equals(input.ObjcetType))) return false;
+            if (this.CloudType != input.CloudType || (this.CloudType != null && !this.CloudType.Equals(input.CloudType))) return false;
+            if (this.VaultId != input.VaultId || (this.VaultId != null && !this.VaultId.Equals(input.VaultId))) return false;
 
-            return 
-                (
-                    this.ExternalProjectId == input.ExternalProjectId ||
-                    (this.ExternalProjectId != null &&
-                    this.ExternalProjectId.Equals(input.ExternalProjectId))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.ProtectType == input.ProtectType ||
-                    (this.ProtectType != null &&
-                    this.ProtectType.Equals(input.ProtectType))
-                ) && 
-                (
-                    this.RegionId == input.RegionId ||
-                    (this.RegionId != null &&
-                    this.RegionId.Equals(input.RegionId))
-                ) && 
-                (
-                    this.ObjcetType == input.ObjcetType ||
-                    (this.ObjcetType != null &&
-                    this.ObjcetType.Equals(input.ObjcetType))
-                ) && 
-                (
-                    this.CloudType == input.CloudType ||
-                    (this.CloudType != null &&
-                    this.CloudType.Equals(input.CloudType))
-                ) && 
-                (
-                    this.VaultId == input.VaultId ||
-                    (this.VaultId != null &&
-                    this.VaultId.Equals(input.VaultId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -267,23 +234,15 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ExternalProjectId != null)
-                    hashCode = hashCode * 59 + this.ExternalProjectId.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.ProtectType != null)
-                    hashCode = hashCode * 59 + this.ProtectType.GetHashCode();
-                if (this.RegionId != null)
-                    hashCode = hashCode * 59 + this.RegionId.GetHashCode();
-                if (this.ObjcetType != null)
-                    hashCode = hashCode * 59 + this.ObjcetType.GetHashCode();
-                if (this.CloudType != null)
-                    hashCode = hashCode * 59 + this.CloudType.GetHashCode();
-                if (this.VaultId != null)
-                    hashCode = hashCode * 59 + this.VaultId.GetHashCode();
+                var hashCode = 41;
+                if (this.ExternalProjectId != null) hashCode = hashCode * 59 + this.ExternalProjectId.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                hashCode = hashCode * 59 + this.ProtectType.GetHashCode();
+                if (this.RegionId != null) hashCode = hashCode * 59 + this.RegionId.GetHashCode();
+                if (this.ObjcetType != null) hashCode = hashCode * 59 + this.ObjcetType.GetHashCode();
+                if (this.CloudType != null) hashCode = hashCode * 59 + this.CloudType.GetHashCode();
+                if (this.VaultId != null) hashCode = hashCode * 59 + this.VaultId.GetHashCode();
                 return hashCode;
             }
         }

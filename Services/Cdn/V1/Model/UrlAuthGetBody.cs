@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(UrlAuthGetBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.ExpireTime != input.ExpireTime || (this.ExpireTime != null && !this.ExpireTime.Equals(input.ExpireTime))) return false;
+            if (this.SignMethod != input.SignMethod || (this.SignMethod != null && !this.SignMethod.Equals(input.SignMethod))) return false;
+            if (this.MatchType != input.MatchType || (this.MatchType != null && !this.MatchType.Equals(input.MatchType))) return false;
+            if (this.InheritConfig != input.InheritConfig || (this.InheritConfig != null && !this.InheritConfig.Equals(input.InheritConfig))) return false;
+            if (this.Key != input.Key || (this.Key != null && !this.Key.Equals(input.Key))) return false;
+            if (this.BackupKey != input.BackupKey || (this.BackupKey != null && !this.BackupKey.Equals(input.BackupKey))) return false;
+            if (this.SignArg != input.SignArg || (this.SignArg != null && !this.SignArg.Equals(input.SignArg))) return false;
+            if (this.TimeFormat != input.TimeFormat || (this.TimeFormat != null && !this.TimeFormat.Equals(input.TimeFormat))) return false;
 
-            return 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.ExpireTime == input.ExpireTime ||
-                    (this.ExpireTime != null &&
-                    this.ExpireTime.Equals(input.ExpireTime))
-                ) && 
-                (
-                    this.SignMethod == input.SignMethod ||
-                    (this.SignMethod != null &&
-                    this.SignMethod.Equals(input.SignMethod))
-                ) && 
-                (
-                    this.MatchType == input.MatchType ||
-                    (this.MatchType != null &&
-                    this.MatchType.Equals(input.MatchType))
-                ) && 
-                (
-                    this.InheritConfig == input.InheritConfig ||
-                    (this.InheritConfig != null &&
-                    this.InheritConfig.Equals(input.InheritConfig))
-                ) && 
-                (
-                    this.Key == input.Key ||
-                    (this.Key != null &&
-                    this.Key.Equals(input.Key))
-                ) && 
-                (
-                    this.BackupKey == input.BackupKey ||
-                    (this.BackupKey != null &&
-                    this.BackupKey.Equals(input.BackupKey))
-                ) && 
-                (
-                    this.SignArg == input.SignArg ||
-                    (this.SignArg != null &&
-                    this.SignArg.Equals(input.SignArg))
-                ) && 
-                (
-                    this.TimeFormat == input.TimeFormat ||
-                    (this.TimeFormat != null &&
-                    this.TimeFormat.Equals(input.TimeFormat))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.ExpireTime != null)
-                    hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
-                if (this.SignMethod != null)
-                    hashCode = hashCode * 59 + this.SignMethod.GetHashCode();
-                if (this.MatchType != null)
-                    hashCode = hashCode * 59 + this.MatchType.GetHashCode();
-                if (this.InheritConfig != null)
-                    hashCode = hashCode * 59 + this.InheritConfig.GetHashCode();
-                if (this.Key != null)
-                    hashCode = hashCode * 59 + this.Key.GetHashCode();
-                if (this.BackupKey != null)
-                    hashCode = hashCode * 59 + this.BackupKey.GetHashCode();
-                if (this.SignArg != null)
-                    hashCode = hashCode * 59 + this.SignArg.GetHashCode();
-                if (this.TimeFormat != null)
-                    hashCode = hashCode * 59 + this.TimeFormat.GetHashCode();
+                var hashCode = 41;
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.ExpireTime != null) hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
+                if (this.SignMethod != null) hashCode = hashCode * 59 + this.SignMethod.GetHashCode();
+                if (this.MatchType != null) hashCode = hashCode * 59 + this.MatchType.GetHashCode();
+                if (this.InheritConfig != null) hashCode = hashCode * 59 + this.InheritConfig.GetHashCode();
+                if (this.Key != null) hashCode = hashCode * 59 + this.Key.GetHashCode();
+                if (this.BackupKey != null) hashCode = hashCode * 59 + this.BackupKey.GetHashCode();
+                if (this.SignArg != null) hashCode = hashCode * 59 + this.SignArg.GetHashCode();
+                if (this.TimeFormat != null) hashCode = hashCode * 59 + this.TimeFormat.GetHashCode();
                 return hashCode;
             }
         }

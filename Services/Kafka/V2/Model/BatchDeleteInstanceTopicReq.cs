@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(BatchDeleteInstanceTopicReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Topics != input.Topics || (this.Topics != null && input.Topics != null && !this.Topics.SequenceEqual(input.Topics))) return false;
 
-            return 
-                (
-                    this.Topics == input.Topics ||
-                    this.Topics != null &&
-                    input.Topics != null &&
-                    this.Topics.SequenceEqual(input.Topics)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Topics != null)
-                    hashCode = hashCode * 59 + this.Topics.GetHashCode();
+                var hashCode = 41;
+                if (this.Topics != null) hashCode = hashCode * 59 + this.Topics.GetHashCode();
                 return hashCode;
             }
         }

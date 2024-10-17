@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(BusinessCardRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Image != input.Image || (this.Image != null && !this.Image.Equals(input.Image))) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.DetectDirection != input.DetectDirection || (this.DetectDirection != null && !this.DetectDirection.Equals(input.DetectDirection))) return false;
+            if (this.ReturnAdjustedImage != input.ReturnAdjustedImage || (this.ReturnAdjustedImage != null && !this.ReturnAdjustedImage.Equals(input.ReturnAdjustedImage))) return false;
 
-            return 
-                (
-                    this.Image == input.Image ||
-                    (this.Image != null &&
-                    this.Image.Equals(input.Image))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.DetectDirection == input.DetectDirection ||
-                    (this.DetectDirection != null &&
-                    this.DetectDirection.Equals(input.DetectDirection))
-                ) && 
-                (
-                    this.ReturnAdjustedImage == input.ReturnAdjustedImage ||
-                    (this.ReturnAdjustedImage != null &&
-                    this.ReturnAdjustedImage.Equals(input.ReturnAdjustedImage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Image != null)
-                    hashCode = hashCode * 59 + this.Image.GetHashCode();
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.DetectDirection != null)
-                    hashCode = hashCode * 59 + this.DetectDirection.GetHashCode();
-                if (this.ReturnAdjustedImage != null)
-                    hashCode = hashCode * 59 + this.ReturnAdjustedImage.GetHashCode();
+                var hashCode = 41;
+                if (this.Image != null) hashCode = hashCode * 59 + this.Image.GetHashCode();
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.DetectDirection != null) hashCode = hashCode * 59 + this.DetectDirection.GetHashCode();
+                if (this.ReturnAdjustedImage != null) hashCode = hashCode * 59 + this.ReturnAdjustedImage.GetHashCode();
                 return hashCode;
             }
         }

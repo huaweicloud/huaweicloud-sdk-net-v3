@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(ShowVodRetrievalResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.Interval != input.Interval || (this.Interval != null && !this.Interval.Equals(input.Interval))) return false;
+            if (this.SampleData != input.SampleData || (this.SampleData != null && input.SampleData != null && !this.SampleData.SequenceEqual(input.SampleData))) return false;
 
-            return 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.Interval == input.Interval ||
-                    (this.Interval != null &&
-                    this.Interval.Equals(input.Interval))
-                ) && 
-                (
-                    this.SampleData == input.SampleData ||
-                    this.SampleData != null &&
-                    input.SampleData != null &&
-                    this.SampleData.SequenceEqual(input.SampleData)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.Interval != null)
-                    hashCode = hashCode * 59 + this.Interval.GetHashCode();
-                if (this.SampleData != null)
-                    hashCode = hashCode * 59 + this.SampleData.GetHashCode();
+                var hashCode = 41;
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.Interval != null) hashCode = hashCode * 59 + this.Interval.GetHashCode();
+                if (this.SampleData != null) hashCode = hashCode * 59 + this.SampleData.GetHashCode();
                 return hashCode;
             }
         }

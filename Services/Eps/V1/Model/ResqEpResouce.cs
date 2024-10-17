@@ -77,38 +77,14 @@ namespace HuaweiCloud.SDK.Eps.V1.Model
         /// </summary>
         public bool Equals(ResqEpResouce input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Projects != input.Projects || (this.Projects != null && input.Projects != null && !this.Projects.SequenceEqual(input.Projects))) return false;
+            if (this.ResourceTypes != input.ResourceTypes || (this.ResourceTypes != null && input.ResourceTypes != null && !this.ResourceTypes.SequenceEqual(input.ResourceTypes))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Matches != input.Matches || (this.Matches != null && input.Matches != null && !this.Matches.SequenceEqual(input.Matches))) return false;
 
-            return 
-                (
-                    this.Projects == input.Projects ||
-                    this.Projects != null &&
-                    input.Projects != null &&
-                    this.Projects.SequenceEqual(input.Projects)
-                ) && 
-                (
-                    this.ResourceTypes == input.ResourceTypes ||
-                    this.ResourceTypes != null &&
-                    input.ResourceTypes != null &&
-                    this.ResourceTypes.SequenceEqual(input.ResourceTypes)
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Matches == input.Matches ||
-                    this.Matches != null &&
-                    input.Matches != null &&
-                    this.Matches.SequenceEqual(input.Matches)
-                );
+            return true;
         }
 
         /// <summary>
@@ -118,17 +94,12 @@ namespace HuaweiCloud.SDK.Eps.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Projects != null)
-                    hashCode = hashCode * 59 + this.Projects.GetHashCode();
-                if (this.ResourceTypes != null)
-                    hashCode = hashCode * 59 + this.ResourceTypes.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Matches != null)
-                    hashCode = hashCode * 59 + this.Matches.GetHashCode();
+                var hashCode = 41;
+                if (this.Projects != null) hashCode = hashCode * 59 + this.Projects.GetHashCode();
+                if (this.ResourceTypes != null) hashCode = hashCode * 59 + this.ResourceTypes.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Matches != null) hashCode = hashCode * 59 + this.Matches.GetHashCode();
                 return hashCode;
             }
         }

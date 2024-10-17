@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(UnbindTagsDTO input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
+            if (this.TagKeys != input.TagKeys || (this.TagKeys != null && input.TagKeys != null && !this.TagKeys.SequenceEqual(input.TagKeys))) return false;
 
-            return 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
-                ) && 
-                (
-                    this.TagKeys == input.TagKeys ||
-                    this.TagKeys != null &&
-                    input.TagKeys != null &&
-                    this.TagKeys.SequenceEqual(input.TagKeys)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
-                if (this.ResourceId != null)
-                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
-                if (this.TagKeys != null)
-                    hashCode = hashCode * 59 + this.TagKeys.GetHashCode();
+                var hashCode = 41;
+                if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.TagKeys != null) hashCode = hashCode * 59 + this.TagKeys.GetHashCode();
                 return hashCode;
             }
         }

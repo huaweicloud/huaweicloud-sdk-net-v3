@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(StartInstanceRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NodeIds != input.NodeIds || (this.NodeIds != null && input.NodeIds != null && !this.NodeIds.SequenceEqual(input.NodeIds))) return false;
 
-            return 
-                (
-                    this.NodeIds == input.NodeIds ||
-                    this.NodeIds != null &&
-                    input.NodeIds != null &&
-                    this.NodeIds.SequenceEqual(input.NodeIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NodeIds != null)
-                    hashCode = hashCode * 59 + this.NodeIds.GetHashCode();
+                var hashCode = 41;
+                if (this.NodeIds != null) hashCode = hashCode * 59 + this.NodeIds.GetHashCode();
                 return hashCode;
             }
         }

@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(WatermarkRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Input != input.Input || (this.Input != null && !this.Input.Equals(input.Input))) return false;
+            if (this.TemplateId != input.TemplateId || (this.TemplateId != null && !this.TemplateId.Equals(input.TemplateId))) return false;
+            if (this.TextContext != input.TextContext || (this.TextContext != null && !this.TextContext.Equals(input.TextContext))) return false;
+            if (this.ImageWatermark != input.ImageWatermark || (this.ImageWatermark != null && !this.ImageWatermark.Equals(input.ImageWatermark))) return false;
+            if (this.TextWatermark != input.TextWatermark || (this.TextWatermark != null && !this.TextWatermark.Equals(input.TextWatermark))) return false;
 
-            return 
-                (
-                    this.Input == input.Input ||
-                    (this.Input != null &&
-                    this.Input.Equals(input.Input))
-                ) && 
-                (
-                    this.TemplateId == input.TemplateId ||
-                    (this.TemplateId != null &&
-                    this.TemplateId.Equals(input.TemplateId))
-                ) && 
-                (
-                    this.TextContext == input.TextContext ||
-                    (this.TextContext != null &&
-                    this.TextContext.Equals(input.TextContext))
-                ) && 
-                (
-                    this.ImageWatermark == input.ImageWatermark ||
-                    (this.ImageWatermark != null &&
-                    this.ImageWatermark.Equals(input.ImageWatermark))
-                ) && 
-                (
-                    this.TextWatermark == input.TextWatermark ||
-                    (this.TextWatermark != null &&
-                    this.TextWatermark.Equals(input.TextWatermark))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Input != null)
-                    hashCode = hashCode * 59 + this.Input.GetHashCode();
-                if (this.TemplateId != null)
-                    hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
-                if (this.TextContext != null)
-                    hashCode = hashCode * 59 + this.TextContext.GetHashCode();
-                if (this.ImageWatermark != null)
-                    hashCode = hashCode * 59 + this.ImageWatermark.GetHashCode();
-                if (this.TextWatermark != null)
-                    hashCode = hashCode * 59 + this.TextWatermark.GetHashCode();
+                var hashCode = 41;
+                if (this.Input != null) hashCode = hashCode * 59 + this.Input.GetHashCode();
+                if (this.TemplateId != null) hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
+                if (this.TextContext != null) hashCode = hashCode * 59 + this.TextContext.GetHashCode();
+                if (this.ImageWatermark != null) hashCode = hashCode * 59 + this.ImageWatermark.GetHashCode();
+                if (this.TextWatermark != null) hashCode = hashCode * 59 + this.TextWatermark.GetHashCode();
                 return hashCode;
             }
         }

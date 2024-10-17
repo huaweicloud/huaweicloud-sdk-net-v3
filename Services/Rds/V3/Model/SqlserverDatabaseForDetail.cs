@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(SqlserverDatabaseForDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.CharacterSet != input.CharacterSet || (this.CharacterSet != null && !this.CharacterSet.Equals(input.CharacterSet))) return false;
+            if (this.State != input.State || (this.State != null && !this.State.Equals(input.State))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.CharacterSet == input.CharacterSet ||
-                    (this.CharacterSet != null &&
-                    this.CharacterSet.Equals(input.CharacterSet))
-                ) && 
-                (
-                    this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.CharacterSet != null)
-                    hashCode = hashCode * 59 + this.CharacterSet.GetHashCode();
-                if (this.State != null)
-                    hashCode = hashCode * 59 + this.State.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.CharacterSet != null) hashCode = hashCode * 59 + this.CharacterSet.GetHashCode();
+                if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();
                 return hashCode;
             }
         }

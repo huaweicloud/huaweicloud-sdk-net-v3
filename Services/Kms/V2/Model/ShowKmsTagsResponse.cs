@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         /// </summary>
         public bool Equals(ShowKmsTagsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.ExistTagsNum != input.ExistTagsNum || (this.ExistTagsNum != null && !this.ExistTagsNum.Equals(input.ExistTagsNum))) return false;
 
-            return 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.ExistTagsNum == input.ExistTagsNum ||
-                    (this.ExistTagsNum != null &&
-                    this.ExistTagsNum.Equals(input.ExistTagsNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.ExistTagsNum != null)
-                    hashCode = hashCode * 59 + this.ExistTagsNum.GetHashCode();
+                var hashCode = 41;
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.ExistTagsNum != null) hashCode = hashCode * 59 + this.ExistTagsNum.GetHashCode();
                 return hashCode;
             }
         }

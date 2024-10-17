@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(NeutronListSecurityGroupsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SecurityGroups != input.SecurityGroups || (this.SecurityGroups != null && input.SecurityGroups != null && !this.SecurityGroups.SequenceEqual(input.SecurityGroups))) return false;
+            if (this.SecurityGroupsLinks != input.SecurityGroupsLinks || (this.SecurityGroupsLinks != null && input.SecurityGroupsLinks != null && !this.SecurityGroupsLinks.SequenceEqual(input.SecurityGroupsLinks))) return false;
 
-            return 
-                (
-                    this.SecurityGroups == input.SecurityGroups ||
-                    this.SecurityGroups != null &&
-                    input.SecurityGroups != null &&
-                    this.SecurityGroups.SequenceEqual(input.SecurityGroups)
-                ) && 
-                (
-                    this.SecurityGroupsLinks == input.SecurityGroupsLinks ||
-                    this.SecurityGroupsLinks != null &&
-                    input.SecurityGroupsLinks != null &&
-                    this.SecurityGroupsLinks.SequenceEqual(input.SecurityGroupsLinks)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SecurityGroups != null)
-                    hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
-                if (this.SecurityGroupsLinks != null)
-                    hashCode = hashCode * 59 + this.SecurityGroupsLinks.GetHashCode();
+                var hashCode = 41;
+                if (this.SecurityGroups != null) hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
+                if (this.SecurityGroupsLinks != null) hashCode = hashCode * 59 + this.SecurityGroupsLinks.GetHashCode();
                 return hashCode;
             }
         }

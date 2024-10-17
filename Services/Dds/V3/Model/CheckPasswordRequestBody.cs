@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(CheckPasswordRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UserPwd != input.UserPwd || (this.UserPwd != null && !this.UserPwd.Equals(input.UserPwd))) return false;
+            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.DbName != input.DbName || (this.DbName != null && !this.DbName.Equals(input.DbName))) return false;
 
-            return 
-                (
-                    this.UserPwd == input.UserPwd ||
-                    (this.UserPwd != null &&
-                    this.UserPwd.Equals(input.UserPwd))
-                ) && 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.DbName == input.DbName ||
-                    (this.DbName != null &&
-                    this.DbName.Equals(input.DbName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UserPwd != null)
-                    hashCode = hashCode * 59 + this.UserPwd.GetHashCode();
-                if (this.UserName != null)
-                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.DbName != null)
-                    hashCode = hashCode * 59 + this.DbName.GetHashCode();
+                var hashCode = 41;
+                if (this.UserPwd != null) hashCode = hashCode * 59 + this.UserPwd.GetHashCode();
+                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.DbName != null) hashCode = hashCode * 59 + this.DbName.GetHashCode();
                 return hashCode;
             }
         }

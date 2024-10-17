@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(DataIpRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NewIp != input.NewIp || (this.NewIp != null && !this.NewIp.Equals(input.NewIp))) return false;
 
-            return 
-                (
-                    this.NewIp == input.NewIp ||
-                    (this.NewIp != null &&
-                    this.NewIp.Equals(input.NewIp))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NewIp != null)
-                    hashCode = hashCode * 59 + this.NewIp.GetHashCode();
+                var hashCode = 41;
+                if (this.NewIp != null) hashCode = hashCode * 59 + this.NewIp.GetHashCode();
                 return hashCode;
             }
         }

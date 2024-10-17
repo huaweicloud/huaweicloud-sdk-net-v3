@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(IssueCompletionRateV4IssueCompletionRates input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IssueStatus != input.IssueStatus || (this.IssueStatus != null && !this.IssueStatus.Equals(input.IssueStatus))) return false;
+            if (this.TrackerId != input.TrackerId || (this.TrackerId != null && !this.TrackerId.Equals(input.TrackerId))) return false;
 
-            return 
-                (
-                    this.IssueStatus == input.IssueStatus ||
-                    (this.IssueStatus != null &&
-                    this.IssueStatus.Equals(input.IssueStatus))
-                ) && 
-                (
-                    this.TrackerId == input.TrackerId ||
-                    (this.TrackerId != null &&
-                    this.TrackerId.Equals(input.TrackerId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IssueStatus != null)
-                    hashCode = hashCode * 59 + this.IssueStatus.GetHashCode();
-                if (this.TrackerId != null)
-                    hashCode = hashCode * 59 + this.TrackerId.GetHashCode();
+                var hashCode = 41;
+                if (this.IssueStatus != null) hashCode = hashCode * 59 + this.IssueStatus.GetHashCode();
+                if (this.TrackerId != null) hashCode = hashCode * 59 + this.TrackerId.GetHashCode();
                 return hashCode;
             }
         }

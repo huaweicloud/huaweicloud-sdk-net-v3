@@ -126,70 +126,21 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public bool Equals(CreateTriggerRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Action != input.Action || (this.Action != null && !this.Action.Equals(input.Action))) return false;
+            if (this.AppType != input.AppType || (this.AppType != null && !this.AppType.Equals(input.AppType))) return false;
+            if (this.Application != input.Application || (this.Application != null && !this.Application.Equals(input.Application))) return false;
+            if (this.ClusterId != input.ClusterId || (this.ClusterId != null && !this.ClusterId.Equals(input.ClusterId))) return false;
+            if (this.ClusterName != input.ClusterName || (this.ClusterName != null && !this.ClusterName.Equals(input.ClusterName))) return false;
+            if (this.ClusterNs != input.ClusterNs || (this.ClusterNs != null && !this.ClusterNs.Equals(input.ClusterNs))) return false;
+            if (this.Condition != input.Condition || (this.Condition != null && !this.Condition.Equals(input.Condition))) return false;
+            if (this.Container != input.Container || (this.Container != null && !this.Container.Equals(input.Container))) return false;
+            if (this.Enable != input.Enable || (this.Enable != null && !this.Enable.Equals(input.Enable))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.TriggerMode != input.TriggerMode || (this.TriggerMode != null && !this.TriggerMode.Equals(input.TriggerMode))) return false;
+            if (this.TriggerType != input.TriggerType || (this.TriggerType != null && !this.TriggerType.Equals(input.TriggerType))) return false;
 
-            return 
-                (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                ) && 
-                (
-                    this.AppType == input.AppType ||
-                    (this.AppType != null &&
-                    this.AppType.Equals(input.AppType))
-                ) && 
-                (
-                    this.Application == input.Application ||
-                    (this.Application != null &&
-                    this.Application.Equals(input.Application))
-                ) && 
-                (
-                    this.ClusterId == input.ClusterId ||
-                    (this.ClusterId != null &&
-                    this.ClusterId.Equals(input.ClusterId))
-                ) && 
-                (
-                    this.ClusterName == input.ClusterName ||
-                    (this.ClusterName != null &&
-                    this.ClusterName.Equals(input.ClusterName))
-                ) && 
-                (
-                    this.ClusterNs == input.ClusterNs ||
-                    (this.ClusterNs != null &&
-                    this.ClusterNs.Equals(input.ClusterNs))
-                ) && 
-                (
-                    this.Condition == input.Condition ||
-                    (this.Condition != null &&
-                    this.Condition.Equals(input.Condition))
-                ) && 
-                (
-                    this.Container == input.Container ||
-                    (this.Container != null &&
-                    this.Container.Equals(input.Container))
-                ) && 
-                (
-                    this.Enable == input.Enable ||
-                    (this.Enable != null &&
-                    this.Enable.Equals(input.Enable))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.TriggerMode == input.TriggerMode ||
-                    (this.TriggerMode != null &&
-                    this.TriggerMode.Equals(input.TriggerMode))
-                ) && 
-                (
-                    this.TriggerType == input.TriggerType ||
-                    (this.TriggerType != null &&
-                    this.TriggerType.Equals(input.TriggerType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -199,31 +150,19 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
-                if (this.AppType != null)
-                    hashCode = hashCode * 59 + this.AppType.GetHashCode();
-                if (this.Application != null)
-                    hashCode = hashCode * 59 + this.Application.GetHashCode();
-                if (this.ClusterId != null)
-                    hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
-                if (this.ClusterName != null)
-                    hashCode = hashCode * 59 + this.ClusterName.GetHashCode();
-                if (this.ClusterNs != null)
-                    hashCode = hashCode * 59 + this.ClusterNs.GetHashCode();
-                if (this.Condition != null)
-                    hashCode = hashCode * 59 + this.Condition.GetHashCode();
-                if (this.Container != null)
-                    hashCode = hashCode * 59 + this.Container.GetHashCode();
-                if (this.Enable != null)
-                    hashCode = hashCode * 59 + this.Enable.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.TriggerMode != null)
-                    hashCode = hashCode * 59 + this.TriggerMode.GetHashCode();
-                if (this.TriggerType != null)
-                    hashCode = hashCode * 59 + this.TriggerType.GetHashCode();
+                var hashCode = 41;
+                if (this.Action != null) hashCode = hashCode * 59 + this.Action.GetHashCode();
+                if (this.AppType != null) hashCode = hashCode * 59 + this.AppType.GetHashCode();
+                if (this.Application != null) hashCode = hashCode * 59 + this.Application.GetHashCode();
+                if (this.ClusterId != null) hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
+                if (this.ClusterName != null) hashCode = hashCode * 59 + this.ClusterName.GetHashCode();
+                if (this.ClusterNs != null) hashCode = hashCode * 59 + this.ClusterNs.GetHashCode();
+                if (this.Condition != null) hashCode = hashCode * 59 + this.Condition.GetHashCode();
+                if (this.Container != null) hashCode = hashCode * 59 + this.Container.GetHashCode();
+                if (this.Enable != null) hashCode = hashCode * 59 + this.Enable.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.TriggerMode != null) hashCode = hashCode * 59 + this.TriggerMode.GetHashCode();
+                if (this.TriggerType != null) hashCode = hashCode * 59 + this.TriggerType.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(CreateVpcRouteRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Route != input.Route || (this.Route != null && !this.Route.Equals(input.Route))) return false;
 
-            return 
-                (
-                    this.Route == input.Route ||
-                    (this.Route != null &&
-                    this.Route.Equals(input.Route))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Route != null)
-                    hashCode = hashCode * 59 + this.Route.GetHashCode();
+                var hashCode = 41;
+                if (this.Route != null) hashCode = hashCode * 59 + this.Route.GetHashCode();
                 return hashCode;
             }
         }

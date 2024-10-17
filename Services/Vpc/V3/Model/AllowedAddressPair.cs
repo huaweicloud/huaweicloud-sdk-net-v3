@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(AllowedAddressPair input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IpAddress != input.IpAddress || (this.IpAddress != null && !this.IpAddress.Equals(input.IpAddress))) return false;
+            if (this.MacAddress != input.MacAddress || (this.MacAddress != null && !this.MacAddress.Equals(input.MacAddress))) return false;
 
-            return 
-                (
-                    this.IpAddress == input.IpAddress ||
-                    (this.IpAddress != null &&
-                    this.IpAddress.Equals(input.IpAddress))
-                ) && 
-                (
-                    this.MacAddress == input.MacAddress ||
-                    (this.MacAddress != null &&
-                    this.MacAddress.Equals(input.MacAddress))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IpAddress != null)
-                    hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
-                if (this.MacAddress != null)
-                    hashCode = hashCode * 59 + this.MacAddress.GetHashCode();
+                var hashCode = 41;
+                if (this.IpAddress != null) hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
+                if (this.MacAddress != null) hashCode = hashCode * 59 + this.MacAddress.GetHashCode();
                 return hashCode;
             }
         }

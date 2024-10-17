@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(FlavorSpotOptions input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LongestSpotDurationHours != input.LongestSpotDurationHours || (this.LongestSpotDurationHours != null && !this.LongestSpotDurationHours.Equals(input.LongestSpotDurationHours))) return false;
+            if (this.LargestSpotDurationCount != input.LargestSpotDurationCount || (this.LargestSpotDurationCount != null && !this.LargestSpotDurationCount.Equals(input.LargestSpotDurationCount))) return false;
+            if (this.InterruptionPolicy != input.InterruptionPolicy || (this.InterruptionPolicy != null && !this.InterruptionPolicy.Equals(input.InterruptionPolicy))) return false;
 
-            return 
-                (
-                    this.LongestSpotDurationHours == input.LongestSpotDurationHours ||
-                    (this.LongestSpotDurationHours != null &&
-                    this.LongestSpotDurationHours.Equals(input.LongestSpotDurationHours))
-                ) && 
-                (
-                    this.LargestSpotDurationCount == input.LargestSpotDurationCount ||
-                    (this.LargestSpotDurationCount != null &&
-                    this.LargestSpotDurationCount.Equals(input.LargestSpotDurationCount))
-                ) && 
-                (
-                    this.InterruptionPolicy == input.InterruptionPolicy ||
-                    (this.InterruptionPolicy != null &&
-                    this.InterruptionPolicy.Equals(input.InterruptionPolicy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LongestSpotDurationHours != null)
-                    hashCode = hashCode * 59 + this.LongestSpotDurationHours.GetHashCode();
-                if (this.LargestSpotDurationCount != null)
-                    hashCode = hashCode * 59 + this.LargestSpotDurationCount.GetHashCode();
-                if (this.InterruptionPolicy != null)
-                    hashCode = hashCode * 59 + this.InterruptionPolicy.GetHashCode();
+                var hashCode = 41;
+                if (this.LongestSpotDurationHours != null) hashCode = hashCode * 59 + this.LongestSpotDurationHours.GetHashCode();
+                if (this.LargestSpotDurationCount != null) hashCode = hashCode * 59 + this.LargestSpotDurationCount.GetHashCode();
+                if (this.InterruptionPolicy != null) hashCode = hashCode * 59 + this.InterruptionPolicy.GetHashCode();
                 return hashCode;
             }
         }

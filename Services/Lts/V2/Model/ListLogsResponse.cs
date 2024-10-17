@@ -70,32 +70,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(ListLogsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.Logs != input.Logs || (this.Logs != null && input.Logs != null && !this.Logs.SequenceEqual(input.Logs))) return false;
+            if (this.IsQueryComplete != input.IsQueryComplete || (this.IsQueryComplete != null && !this.IsQueryComplete.Equals(input.IsQueryComplete))) return false;
+            if (this.AnalysisLogs != input.AnalysisLogs || (this.AnalysisLogs != null && input.AnalysisLogs != null && !this.AnalysisLogs.SequenceEqual(input.AnalysisLogs))) return false;
 
-            return 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.Logs == input.Logs ||
-                    this.Logs != null &&
-                    input.Logs != null &&
-                    this.Logs.SequenceEqual(input.Logs)
-                ) && 
-                (
-                    this.IsQueryComplete == input.IsQueryComplete ||
-                    (this.IsQueryComplete != null &&
-                    this.IsQueryComplete.Equals(input.IsQueryComplete))
-                ) && 
-                (
-                    this.AnalysisLogs == input.AnalysisLogs ||
-                    this.AnalysisLogs != null &&
-                    input.AnalysisLogs != null &&
-                    this.AnalysisLogs.SequenceEqual(input.AnalysisLogs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -105,15 +86,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.Logs != null)
-                    hashCode = hashCode * 59 + this.Logs.GetHashCode();
-                if (this.IsQueryComplete != null)
-                    hashCode = hashCode * 59 + this.IsQueryComplete.GetHashCode();
-                if (this.AnalysisLogs != null)
-                    hashCode = hashCode * 59 + this.AnalysisLogs.GetHashCode();
+                var hashCode = 41;
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.Logs != null) hashCode = hashCode * 59 + this.Logs.GetHashCode();
+                if (this.IsQueryComplete != null) hashCode = hashCode * 59 + this.IsQueryComplete.GetHashCode();
+                if (this.AnalysisLogs != null) hashCode = hashCode * 59 + this.AnalysisLogs.GetHashCode();
                 return hashCode;
             }
         }

@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(MigrateNodeExtendParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MaxPods != input.MaxPods || (this.MaxPods != null && !this.MaxPods.Equals(input.MaxPods))) return false;
+            if (this.DockerLVMConfigOverride != input.DockerLVMConfigOverride || (this.DockerLVMConfigOverride != null && !this.DockerLVMConfigOverride.Equals(input.DockerLVMConfigOverride))) return false;
+            if (this.AlphaCcePreInstall != input.AlphaCcePreInstall || (this.AlphaCcePreInstall != null && !this.AlphaCcePreInstall.Equals(input.AlphaCcePreInstall))) return false;
+            if (this.AlphaCcePostInstall != input.AlphaCcePostInstall || (this.AlphaCcePostInstall != null && !this.AlphaCcePostInstall.Equals(input.AlphaCcePostInstall))) return false;
+            if (this.AlphaCceNodeImageID != input.AlphaCceNodeImageID || (this.AlphaCceNodeImageID != null && !this.AlphaCceNodeImageID.Equals(input.AlphaCceNodeImageID))) return false;
 
-            return 
-                (
-                    this.MaxPods == input.MaxPods ||
-                    (this.MaxPods != null &&
-                    this.MaxPods.Equals(input.MaxPods))
-                ) && 
-                (
-                    this.DockerLVMConfigOverride == input.DockerLVMConfigOverride ||
-                    (this.DockerLVMConfigOverride != null &&
-                    this.DockerLVMConfigOverride.Equals(input.DockerLVMConfigOverride))
-                ) && 
-                (
-                    this.AlphaCcePreInstall == input.AlphaCcePreInstall ||
-                    (this.AlphaCcePreInstall != null &&
-                    this.AlphaCcePreInstall.Equals(input.AlphaCcePreInstall))
-                ) && 
-                (
-                    this.AlphaCcePostInstall == input.AlphaCcePostInstall ||
-                    (this.AlphaCcePostInstall != null &&
-                    this.AlphaCcePostInstall.Equals(input.AlphaCcePostInstall))
-                ) && 
-                (
-                    this.AlphaCceNodeImageID == input.AlphaCceNodeImageID ||
-                    (this.AlphaCceNodeImageID != null &&
-                    this.AlphaCceNodeImageID.Equals(input.AlphaCceNodeImageID))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MaxPods != null)
-                    hashCode = hashCode * 59 + this.MaxPods.GetHashCode();
-                if (this.DockerLVMConfigOverride != null)
-                    hashCode = hashCode * 59 + this.DockerLVMConfigOverride.GetHashCode();
-                if (this.AlphaCcePreInstall != null)
-                    hashCode = hashCode * 59 + this.AlphaCcePreInstall.GetHashCode();
-                if (this.AlphaCcePostInstall != null)
-                    hashCode = hashCode * 59 + this.AlphaCcePostInstall.GetHashCode();
-                if (this.AlphaCceNodeImageID != null)
-                    hashCode = hashCode * 59 + this.AlphaCceNodeImageID.GetHashCode();
+                var hashCode = 41;
+                if (this.MaxPods != null) hashCode = hashCode * 59 + this.MaxPods.GetHashCode();
+                if (this.DockerLVMConfigOverride != null) hashCode = hashCode * 59 + this.DockerLVMConfigOverride.GetHashCode();
+                if (this.AlphaCcePreInstall != null) hashCode = hashCode * 59 + this.AlphaCcePreInstall.GetHashCode();
+                if (this.AlphaCcePostInstall != null) hashCode = hashCode * 59 + this.AlphaCcePostInstall.GetHashCode();
+                if (this.AlphaCceNodeImageID != null) hashCode = hashCode * 59 + this.AlphaCceNodeImageID.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(CheckCanCreateResponseBodyResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Creatable != input.Creatable || (this.Creatable != null && !this.Creatable.Equals(input.Creatable))) return false;
 
-            return 
-                (
-                    this.Creatable == input.Creatable ||
-                    (this.Creatable != null &&
-                    this.Creatable.Equals(input.Creatable))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Creatable != null)
-                    hashCode = hashCode * 59 + this.Creatable.GetHashCode();
+                var hashCode = 41;
+                if (this.Creatable != null) hashCode = hashCode * 59 + this.Creatable.GetHashCode();
                 return hashCode;
             }
         }

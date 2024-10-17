@@ -330,42 +330,15 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(CreateTopicReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Brokers != input.Brokers || (this.Brokers != null && input.Brokers != null && !this.Brokers.SequenceEqual(input.Brokers))) return false;
+            if (this.QueueNum != input.QueueNum || (this.QueueNum != null && !this.QueueNum.Equals(input.QueueNum))) return false;
+            if (this.Queues != input.Queues || (this.Queues != null && input.Queues != null && !this.Queues.SequenceEqual(input.Queues))) return false;
+            if (this.Permission != input.Permission) return false;
+            if (this.MessageType != input.MessageType) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Brokers == input.Brokers ||
-                    this.Brokers != null &&
-                    input.Brokers != null &&
-                    this.Brokers.SequenceEqual(input.Brokers)
-                ) && 
-                (
-                    this.QueueNum == input.QueueNum ||
-                    (this.QueueNum != null &&
-                    this.QueueNum.Equals(input.QueueNum))
-                ) && 
-                (
-                    this.Queues == input.Queues ||
-                    this.Queues != null &&
-                    input.Queues != null &&
-                    this.Queues.SequenceEqual(input.Queues)
-                ) && 
-                (
-                    this.Permission == input.Permission ||
-                    (this.Permission != null &&
-                    this.Permission.Equals(input.Permission))
-                ) && 
-                (
-                    this.MessageType == input.MessageType ||
-                    (this.MessageType != null &&
-                    this.MessageType.Equals(input.MessageType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -375,19 +348,13 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Brokers != null)
-                    hashCode = hashCode * 59 + this.Brokers.GetHashCode();
-                if (this.QueueNum != null)
-                    hashCode = hashCode * 59 + this.QueueNum.GetHashCode();
-                if (this.Queues != null)
-                    hashCode = hashCode * 59 + this.Queues.GetHashCode();
-                if (this.Permission != null)
-                    hashCode = hashCode * 59 + this.Permission.GetHashCode();
-                if (this.MessageType != null)
-                    hashCode = hashCode * 59 + this.MessageType.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Brokers != null) hashCode = hashCode * 59 + this.Brokers.GetHashCode();
+                if (this.QueueNum != null) hashCode = hashCode * 59 + this.QueueNum.GetHashCode();
+                if (this.Queues != null) hashCode = hashCode * 59 + this.Queues.GetHashCode();
+                hashCode = hashCode * 59 + this.Permission.GetHashCode();
+                hashCode = hashCode * 59 + this.MessageType.GetHashCode();
                 return hashCode;
             }
         }

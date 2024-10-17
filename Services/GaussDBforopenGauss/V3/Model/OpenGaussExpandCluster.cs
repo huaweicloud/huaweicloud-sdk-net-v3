@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(OpenGaussExpandCluster input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Coordinators != input.Coordinators || (this.Coordinators != null && input.Coordinators != null && !this.Coordinators.SequenceEqual(input.Coordinators))) return false;
+            if (this.Shard != input.Shard || (this.Shard != null && !this.Shard.Equals(input.Shard))) return false;
 
-            return 
-                (
-                    this.Coordinators == input.Coordinators ||
-                    this.Coordinators != null &&
-                    input.Coordinators != null &&
-                    this.Coordinators.SequenceEqual(input.Coordinators)
-                ) && 
-                (
-                    this.Shard == input.Shard ||
-                    (this.Shard != null &&
-                    this.Shard.Equals(input.Shard))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Coordinators != null)
-                    hashCode = hashCode * 59 + this.Coordinators.GetHashCode();
-                if (this.Shard != null)
-                    hashCode = hashCode * 59 + this.Shard.GetHashCode();
+                var hashCode = 41;
+                if (this.Coordinators != null) hashCode = hashCode * 59 + this.Coordinators.GetHashCode();
+                if (this.Shard != null) hashCode = hashCode * 59 + this.Shard.GetHashCode();
                 return hashCode;
             }
         }

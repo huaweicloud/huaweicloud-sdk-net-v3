@@ -70,33 +70,13 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ListMonitoredObjectsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Router != input.Router || (this.Router != null && input.Router != null && !this.Router.SequenceEqual(input.Router))) return false;
+            if (this.Children != input.Children || (this.Children != null && input.Children != null && !this.Children.SequenceEqual(input.Children))) return false;
+            if (this.Instances != input.Instances || (this.Instances != null && input.Instances != null && !this.Instances.SequenceEqual(input.Instances))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
-            return 
-                (
-                    this.Router == input.Router ||
-                    this.Router != null &&
-                    input.Router != null &&
-                    this.Router.SequenceEqual(input.Router)
-                ) && 
-                (
-                    this.Children == input.Children ||
-                    this.Children != null &&
-                    input.Children != null &&
-                    this.Children.SequenceEqual(input.Children)
-                ) && 
-                (
-                    this.Instances == input.Instances ||
-                    this.Instances != null &&
-                    input.Instances != null &&
-                    this.Instances.SequenceEqual(input.Instances)
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                );
+            return true;
         }
 
         /// <summary>
@@ -106,15 +86,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Router != null)
-                    hashCode = hashCode * 59 + this.Router.GetHashCode();
-                if (this.Children != null)
-                    hashCode = hashCode * 59 + this.Children.GetHashCode();
-                if (this.Instances != null)
-                    hashCode = hashCode * 59 + this.Instances.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                var hashCode = 41;
+                if (this.Router != null) hashCode = hashCode * 59 + this.Router.GetHashCode();
+                if (this.Children != null) hashCode = hashCode * 59 + this.Children.GetHashCode();
+                if (this.Instances != null) hashCode = hashCode * 59 + this.Instances.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

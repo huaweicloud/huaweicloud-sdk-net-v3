@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(OpenGaussUpgradeRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UpgradeType != input.UpgradeType || (this.UpgradeType != null && !this.UpgradeType.Equals(input.UpgradeType))) return false;
+            if (this.UpgradeAction != input.UpgradeAction || (this.UpgradeAction != null && !this.UpgradeAction.Equals(input.UpgradeAction))) return false;
+            if (this.TargetVersion != input.TargetVersion || (this.TargetVersion != null && !this.TargetVersion.Equals(input.TargetVersion))) return false;
+            if (this.UpgradeShardNum != input.UpgradeShardNum || (this.UpgradeShardNum != null && !this.UpgradeShardNum.Equals(input.UpgradeShardNum))) return false;
+            if (this.UpgradeAz != input.UpgradeAz || (this.UpgradeAz != null && !this.UpgradeAz.Equals(input.UpgradeAz))) return false;
 
-            return 
-                (
-                    this.UpgradeType == input.UpgradeType ||
-                    (this.UpgradeType != null &&
-                    this.UpgradeType.Equals(input.UpgradeType))
-                ) && 
-                (
-                    this.UpgradeAction == input.UpgradeAction ||
-                    (this.UpgradeAction != null &&
-                    this.UpgradeAction.Equals(input.UpgradeAction))
-                ) && 
-                (
-                    this.TargetVersion == input.TargetVersion ||
-                    (this.TargetVersion != null &&
-                    this.TargetVersion.Equals(input.TargetVersion))
-                ) && 
-                (
-                    this.UpgradeShardNum == input.UpgradeShardNum ||
-                    (this.UpgradeShardNum != null &&
-                    this.UpgradeShardNum.Equals(input.UpgradeShardNum))
-                ) && 
-                (
-                    this.UpgradeAz == input.UpgradeAz ||
-                    (this.UpgradeAz != null &&
-                    this.UpgradeAz.Equals(input.UpgradeAz))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UpgradeType != null)
-                    hashCode = hashCode * 59 + this.UpgradeType.GetHashCode();
-                if (this.UpgradeAction != null)
-                    hashCode = hashCode * 59 + this.UpgradeAction.GetHashCode();
-                if (this.TargetVersion != null)
-                    hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
-                if (this.UpgradeShardNum != null)
-                    hashCode = hashCode * 59 + this.UpgradeShardNum.GetHashCode();
-                if (this.UpgradeAz != null)
-                    hashCode = hashCode * 59 + this.UpgradeAz.GetHashCode();
+                var hashCode = 41;
+                if (this.UpgradeType != null) hashCode = hashCode * 59 + this.UpgradeType.GetHashCode();
+                if (this.UpgradeAction != null) hashCode = hashCode * 59 + this.UpgradeAction.GetHashCode();
+                if (this.TargetVersion != null) hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
+                if (this.UpgradeShardNum != null) hashCode = hashCode * 59 + this.UpgradeShardNum.GetHashCode();
+                if (this.UpgradeAz != null) hashCode = hashCode * 59 + this.UpgradeAz.GetHashCode();
                 return hashCode;
             }
         }

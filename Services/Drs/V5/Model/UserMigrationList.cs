@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(UserMigrationList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Account != input.Account || (this.Account != null && !this.Account.Equals(input.Account))) return false;
+            if (this.IsSetPassword != input.IsSetPassword || (this.IsSetPassword != null && !this.IsSetPassword.Equals(input.IsSetPassword))) return false;
+            if (this.Password != input.Password || (this.Password != null && !this.Password.Equals(input.Password))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Account == input.Account ||
-                    (this.Account != null &&
-                    this.Account.Equals(input.Account))
-                ) && 
-                (
-                    this.IsSetPassword == input.IsSetPassword ||
-                    (this.IsSetPassword != null &&
-                    this.IsSetPassword.Equals(input.IsSetPassword))
-                ) && 
-                (
-                    this.Password == input.Password ||
-                    (this.Password != null &&
-                    this.Password.Equals(input.Password))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Account != null)
-                    hashCode = hashCode * 59 + this.Account.GetHashCode();
-                if (this.IsSetPassword != null)
-                    hashCode = hashCode * 59 + this.IsSetPassword.GetHashCode();
-                if (this.Password != null)
-                    hashCode = hashCode * 59 + this.Password.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Account != null) hashCode = hashCode * 59 + this.Account.GetHashCode();
+                if (this.IsSetPassword != null) hashCode = hashCode * 59 + this.IsSetPassword.GetHashCode();
+                if (this.Password != null) hashCode = hashCode * 59 + this.Password.GetHashCode();
                 return hashCode;
             }
         }

@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(InstanceLtsConfigDetailResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LogType != input.LogType || (this.LogType != null && !this.LogType.Equals(input.LogType))) return false;
+            if (this.LtsGroupId != input.LtsGroupId || (this.LtsGroupId != null && !this.LtsGroupId.Equals(input.LtsGroupId))) return false;
+            if (this.LtsStreamId != input.LtsStreamId || (this.LtsStreamId != null && !this.LtsStreamId.Equals(input.LtsStreamId))) return false;
+            if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
 
-            return 
-                (
-                    this.LogType == input.LogType ||
-                    (this.LogType != null &&
-                    this.LogType.Equals(input.LogType))
-                ) && 
-                (
-                    this.LtsGroupId == input.LtsGroupId ||
-                    (this.LtsGroupId != null &&
-                    this.LtsGroupId.Equals(input.LtsGroupId))
-                ) && 
-                (
-                    this.LtsStreamId == input.LtsStreamId ||
-                    (this.LtsStreamId != null &&
-                    this.LtsStreamId.Equals(input.LtsStreamId))
-                ) && 
-                (
-                    this.Enabled == input.Enabled ||
-                    (this.Enabled != null &&
-                    this.Enabled.Equals(input.Enabled))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LogType != null)
-                    hashCode = hashCode * 59 + this.LogType.GetHashCode();
-                if (this.LtsGroupId != null)
-                    hashCode = hashCode * 59 + this.LtsGroupId.GetHashCode();
-                if (this.LtsStreamId != null)
-                    hashCode = hashCode * 59 + this.LtsStreamId.GetHashCode();
-                if (this.Enabled != null)
-                    hashCode = hashCode * 59 + this.Enabled.GetHashCode();
+                var hashCode = 41;
+                if (this.LogType != null) hashCode = hashCode * 59 + this.LogType.GetHashCode();
+                if (this.LtsGroupId != null) hashCode = hashCode * 59 + this.LtsGroupId.GetHashCode();
+                if (this.LtsStreamId != null) hashCode = hashCode * 59 + this.LtsStreamId.GetHashCode();
+                if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
                 return hashCode;
             }
         }

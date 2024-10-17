@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(ShowShardingBalancerResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IsOpen != input.IsOpen || (this.IsOpen != null && !this.IsOpen.Equals(input.IsOpen))) return false;
+            if (this.ActiveWindow != input.ActiveWindow || (this.ActiveWindow != null && !this.ActiveWindow.Equals(input.ActiveWindow))) return false;
 
-            return 
-                (
-                    this.IsOpen == input.IsOpen ||
-                    (this.IsOpen != null &&
-                    this.IsOpen.Equals(input.IsOpen))
-                ) && 
-                (
-                    this.ActiveWindow == input.ActiveWindow ||
-                    (this.ActiveWindow != null &&
-                    this.ActiveWindow.Equals(input.ActiveWindow))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IsOpen != null)
-                    hashCode = hashCode * 59 + this.IsOpen.GetHashCode();
-                if (this.ActiveWindow != null)
-                    hashCode = hashCode * 59 + this.ActiveWindow.GetHashCode();
+                var hashCode = 41;
+                if (this.IsOpen != null) hashCode = hashCode * 59 + this.IsOpen.GetHashCode();
+                if (this.ActiveWindow != null) hashCode = hashCode * 59 + this.ActiveWindow.GetHashCode();
                 return hashCode;
             }
         }

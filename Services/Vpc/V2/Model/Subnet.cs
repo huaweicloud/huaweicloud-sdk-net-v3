@@ -323,127 +323,32 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(Subnet input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Cidr != input.Cidr || (this.Cidr != null && !this.Cidr.Equals(input.Cidr))) return false;
+            if (this.GatewayIp != input.GatewayIp || (this.GatewayIp != null && !this.GatewayIp.Equals(input.GatewayIp))) return false;
+            if (this.Ipv6Enable != input.Ipv6Enable || (this.Ipv6Enable != null && !this.Ipv6Enable.Equals(input.Ipv6Enable))) return false;
+            if (this.CidrV6 != input.CidrV6 || (this.CidrV6 != null && !this.CidrV6.Equals(input.CidrV6))) return false;
+            if (this.GatewayIpV6 != input.GatewayIpV6 || (this.GatewayIpV6 != null && !this.GatewayIpV6.Equals(input.GatewayIpV6))) return false;
+            if (this.DhcpEnable != input.DhcpEnable || (this.DhcpEnable != null && !this.DhcpEnable.Equals(input.DhcpEnable))) return false;
+            if (this.PrimaryDns != input.PrimaryDns || (this.PrimaryDns != null && !this.PrimaryDns.Equals(input.PrimaryDns))) return false;
+            if (this.SecondaryDns != input.SecondaryDns || (this.SecondaryDns != null && !this.SecondaryDns.Equals(input.SecondaryDns))) return false;
+            if (this.DnsList != input.DnsList || (this.DnsList != null && input.DnsList != null && !this.DnsList.SequenceEqual(input.DnsList))) return false;
+            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.NeutronNetworkId != input.NeutronNetworkId || (this.NeutronNetworkId != null && !this.NeutronNetworkId.Equals(input.NeutronNetworkId))) return false;
+            if (this.NeutronSubnetId != input.NeutronSubnetId || (this.NeutronSubnetId != null && !this.NeutronSubnetId.Equals(input.NeutronSubnetId))) return false;
+            if (this.NeutronSubnetIdV6 != input.NeutronSubnetIdV6 || (this.NeutronSubnetIdV6 != null && !this.NeutronSubnetIdV6.Equals(input.NeutronSubnetIdV6))) return false;
+            if (this.ExtraDhcpOpts != input.ExtraDhcpOpts || (this.ExtraDhcpOpts != null && input.ExtraDhcpOpts != null && !this.ExtraDhcpOpts.SequenceEqual(input.ExtraDhcpOpts))) return false;
+            if (this.Scope != input.Scope || (this.Scope != null && !this.Scope.Equals(input.Scope))) return false;
+            if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Cidr == input.Cidr ||
-                    (this.Cidr != null &&
-                    this.Cidr.Equals(input.Cidr))
-                ) && 
-                (
-                    this.GatewayIp == input.GatewayIp ||
-                    (this.GatewayIp != null &&
-                    this.GatewayIp.Equals(input.GatewayIp))
-                ) && 
-                (
-                    this.Ipv6Enable == input.Ipv6Enable ||
-                    (this.Ipv6Enable != null &&
-                    this.Ipv6Enable.Equals(input.Ipv6Enable))
-                ) && 
-                (
-                    this.CidrV6 == input.CidrV6 ||
-                    (this.CidrV6 != null &&
-                    this.CidrV6.Equals(input.CidrV6))
-                ) && 
-                (
-                    this.GatewayIpV6 == input.GatewayIpV6 ||
-                    (this.GatewayIpV6 != null &&
-                    this.GatewayIpV6.Equals(input.GatewayIpV6))
-                ) && 
-                (
-                    this.DhcpEnable == input.DhcpEnable ||
-                    (this.DhcpEnable != null &&
-                    this.DhcpEnable.Equals(input.DhcpEnable))
-                ) && 
-                (
-                    this.PrimaryDns == input.PrimaryDns ||
-                    (this.PrimaryDns != null &&
-                    this.PrimaryDns.Equals(input.PrimaryDns))
-                ) && 
-                (
-                    this.SecondaryDns == input.SecondaryDns ||
-                    (this.SecondaryDns != null &&
-                    this.SecondaryDns.Equals(input.SecondaryDns))
-                ) && 
-                (
-                    this.DnsList == input.DnsList ||
-                    this.DnsList != null &&
-                    input.DnsList != null &&
-                    this.DnsList.SequenceEqual(input.DnsList)
-                ) && 
-                (
-                    this.AvailabilityZone == input.AvailabilityZone ||
-                    (this.AvailabilityZone != null &&
-                    this.AvailabilityZone.Equals(input.AvailabilityZone))
-                ) && 
-                (
-                    this.VpcId == input.VpcId ||
-                    (this.VpcId != null &&
-                    this.VpcId.Equals(input.VpcId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.NeutronNetworkId == input.NeutronNetworkId ||
-                    (this.NeutronNetworkId != null &&
-                    this.NeutronNetworkId.Equals(input.NeutronNetworkId))
-                ) && 
-                (
-                    this.NeutronSubnetId == input.NeutronSubnetId ||
-                    (this.NeutronSubnetId != null &&
-                    this.NeutronSubnetId.Equals(input.NeutronSubnetId))
-                ) && 
-                (
-                    this.NeutronSubnetIdV6 == input.NeutronSubnetIdV6 ||
-                    (this.NeutronSubnetIdV6 != null &&
-                    this.NeutronSubnetIdV6.Equals(input.NeutronSubnetIdV6))
-                ) && 
-                (
-                    this.ExtraDhcpOpts == input.ExtraDhcpOpts ||
-                    this.ExtraDhcpOpts != null &&
-                    input.ExtraDhcpOpts != null &&
-                    this.ExtraDhcpOpts.SequenceEqual(input.ExtraDhcpOpts)
-                ) && 
-                (
-                    this.Scope == input.Scope ||
-                    (this.Scope != null &&
-                    this.Scope.Equals(input.Scope))
-                ) && 
-                (
-                    this.TenantId == input.TenantId ||
-                    (this.TenantId != null &&
-                    this.TenantId.Equals(input.TenantId))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -453,53 +358,30 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Cidr != null)
-                    hashCode = hashCode * 59 + this.Cidr.GetHashCode();
-                if (this.GatewayIp != null)
-                    hashCode = hashCode * 59 + this.GatewayIp.GetHashCode();
-                if (this.Ipv6Enable != null)
-                    hashCode = hashCode * 59 + this.Ipv6Enable.GetHashCode();
-                if (this.CidrV6 != null)
-                    hashCode = hashCode * 59 + this.CidrV6.GetHashCode();
-                if (this.GatewayIpV6 != null)
-                    hashCode = hashCode * 59 + this.GatewayIpV6.GetHashCode();
-                if (this.DhcpEnable != null)
-                    hashCode = hashCode * 59 + this.DhcpEnable.GetHashCode();
-                if (this.PrimaryDns != null)
-                    hashCode = hashCode * 59 + this.PrimaryDns.GetHashCode();
-                if (this.SecondaryDns != null)
-                    hashCode = hashCode * 59 + this.SecondaryDns.GetHashCode();
-                if (this.DnsList != null)
-                    hashCode = hashCode * 59 + this.DnsList.GetHashCode();
-                if (this.AvailabilityZone != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.NeutronNetworkId != null)
-                    hashCode = hashCode * 59 + this.NeutronNetworkId.GetHashCode();
-                if (this.NeutronSubnetId != null)
-                    hashCode = hashCode * 59 + this.NeutronSubnetId.GetHashCode();
-                if (this.NeutronSubnetIdV6 != null)
-                    hashCode = hashCode * 59 + this.NeutronSubnetIdV6.GetHashCode();
-                if (this.ExtraDhcpOpts != null)
-                    hashCode = hashCode * 59 + this.ExtraDhcpOpts.GetHashCode();
-                if (this.Scope != null)
-                    hashCode = hashCode * 59 + this.Scope.GetHashCode();
-                if (this.TenantId != null)
-                    hashCode = hashCode * 59 + this.TenantId.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Cidr != null) hashCode = hashCode * 59 + this.Cidr.GetHashCode();
+                if (this.GatewayIp != null) hashCode = hashCode * 59 + this.GatewayIp.GetHashCode();
+                if (this.Ipv6Enable != null) hashCode = hashCode * 59 + this.Ipv6Enable.GetHashCode();
+                if (this.CidrV6 != null) hashCode = hashCode * 59 + this.CidrV6.GetHashCode();
+                if (this.GatewayIpV6 != null) hashCode = hashCode * 59 + this.GatewayIpV6.GetHashCode();
+                if (this.DhcpEnable != null) hashCode = hashCode * 59 + this.DhcpEnable.GetHashCode();
+                if (this.PrimaryDns != null) hashCode = hashCode * 59 + this.PrimaryDns.GetHashCode();
+                if (this.SecondaryDns != null) hashCode = hashCode * 59 + this.SecondaryDns.GetHashCode();
+                if (this.DnsList != null) hashCode = hashCode * 59 + this.DnsList.GetHashCode();
+                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.NeutronNetworkId != null) hashCode = hashCode * 59 + this.NeutronNetworkId.GetHashCode();
+                if (this.NeutronSubnetId != null) hashCode = hashCode * 59 + this.NeutronSubnetId.GetHashCode();
+                if (this.NeutronSubnetIdV6 != null) hashCode = hashCode * 59 + this.NeutronSubnetIdV6.GetHashCode();
+                if (this.ExtraDhcpOpts != null) hashCode = hashCode * 59 + this.ExtraDhcpOpts.GetHashCode();
+                if (this.Scope != null) hashCode = hashCode * 59 + this.Scope.GetHashCode();
+                if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 return hashCode;
             }
         }

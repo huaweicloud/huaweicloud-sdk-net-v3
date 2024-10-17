@@ -177,25 +177,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(PrePaidServerSchedulerHints input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Group != input.Group || (this.Group != null && !this.Group.Equals(input.Group))) return false;
+            if (this.Tenancy != input.Tenancy) return false;
+            if (this.DedicatedHostId != input.DedicatedHostId || (this.DedicatedHostId != null && !this.DedicatedHostId.Equals(input.DedicatedHostId))) return false;
 
-            return 
-                (
-                    this.Group == input.Group ||
-                    (this.Group != null &&
-                    this.Group.Equals(input.Group))
-                ) && 
-                (
-                    this.Tenancy == input.Tenancy ||
-                    (this.Tenancy != null &&
-                    this.Tenancy.Equals(input.Tenancy))
-                ) && 
-                (
-                    this.DedicatedHostId == input.DedicatedHostId ||
-                    (this.DedicatedHostId != null &&
-                    this.DedicatedHostId.Equals(input.DedicatedHostId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -205,13 +192,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Group != null)
-                    hashCode = hashCode * 59 + this.Group.GetHashCode();
-                if (this.Tenancy != null)
-                    hashCode = hashCode * 59 + this.Tenancy.GetHashCode();
-                if (this.DedicatedHostId != null)
-                    hashCode = hashCode * 59 + this.DedicatedHostId.GetHashCode();
+                var hashCode = 41;
+                if (this.Group != null) hashCode = hashCode * 59 + this.Group.GetHashCode();
+                hashCode = hashCode * 59 + this.Tenancy.GetHashCode();
+                if (this.DedicatedHostId != null) hashCode = hashCode * 59 + this.DedicatedHostId.GetHashCode();
                 return hashCode;
             }
         }

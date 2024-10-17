@@ -172,20 +172,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(ShowProtectableRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.ProtectableType != input.ProtectableType) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.ProtectableType == input.ProtectableType ||
-                    (this.ProtectableType != null &&
-                    this.ProtectableType.Equals(input.ProtectableType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -195,11 +186,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.ProtectableType != null)
-                    hashCode = hashCode * 59 + this.ProtectableType.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                hashCode = hashCode * 59 + this.ProtectableType.GetHashCode();
                 return hashCode;
             }
         }

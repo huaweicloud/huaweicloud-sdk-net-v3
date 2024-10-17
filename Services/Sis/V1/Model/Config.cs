@@ -756,40 +756,15 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         /// </summary>
         public bool Equals(Config input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AudioFormat != input.AudioFormat) return false;
+            if (this.Property != input.Property) return false;
+            if (this.AddPunc != input.AddPunc) return false;
+            if (this.VocabularyId != input.VocabularyId || (this.VocabularyId != null && !this.VocabularyId.Equals(input.VocabularyId))) return false;
+            if (this.DigitNorm != input.DigitNorm) return false;
+            if (this.NeedWordInfo != input.NeedWordInfo) return false;
 
-            return 
-                (
-                    this.AudioFormat == input.AudioFormat ||
-                    (this.AudioFormat != null &&
-                    this.AudioFormat.Equals(input.AudioFormat))
-                ) && 
-                (
-                    this.Property == input.Property ||
-                    (this.Property != null &&
-                    this.Property.Equals(input.Property))
-                ) && 
-                (
-                    this.AddPunc == input.AddPunc ||
-                    (this.AddPunc != null &&
-                    this.AddPunc.Equals(input.AddPunc))
-                ) && 
-                (
-                    this.VocabularyId == input.VocabularyId ||
-                    (this.VocabularyId != null &&
-                    this.VocabularyId.Equals(input.VocabularyId))
-                ) && 
-                (
-                    this.DigitNorm == input.DigitNorm ||
-                    (this.DigitNorm != null &&
-                    this.DigitNorm.Equals(input.DigitNorm))
-                ) && 
-                (
-                    this.NeedWordInfo == input.NeedWordInfo ||
-                    (this.NeedWordInfo != null &&
-                    this.NeedWordInfo.Equals(input.NeedWordInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -799,19 +774,13 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AudioFormat != null)
-                    hashCode = hashCode * 59 + this.AudioFormat.GetHashCode();
-                if (this.Property != null)
-                    hashCode = hashCode * 59 + this.Property.GetHashCode();
-                if (this.AddPunc != null)
-                    hashCode = hashCode * 59 + this.AddPunc.GetHashCode();
-                if (this.VocabularyId != null)
-                    hashCode = hashCode * 59 + this.VocabularyId.GetHashCode();
-                if (this.DigitNorm != null)
-                    hashCode = hashCode * 59 + this.DigitNorm.GetHashCode();
-                if (this.NeedWordInfo != null)
-                    hashCode = hashCode * 59 + this.NeedWordInfo.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.AudioFormat.GetHashCode();
+                hashCode = hashCode * 59 + this.Property.GetHashCode();
+                hashCode = hashCode * 59 + this.AddPunc.GetHashCode();
+                if (this.VocabularyId != null) hashCode = hashCode * 59 + this.VocabularyId.GetHashCode();
+                hashCode = hashCode * 59 + this.DigitNorm.GetHashCode();
+                hashCode = hashCode * 59 + this.NeedWordInfo.GetHashCode();
                 return hashCode;
             }
         }

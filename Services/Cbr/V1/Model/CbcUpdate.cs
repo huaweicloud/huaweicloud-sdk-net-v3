@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(CbcUpdate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CloudServiceConsoleURL != input.CloudServiceConsoleURL || (this.CloudServiceConsoleURL != null && !this.CloudServiceConsoleURL.Equals(input.CloudServiceConsoleURL))) return false;
+            if (this.ProductInfo != input.ProductInfo || (this.ProductInfo != null && !this.ProductInfo.Equals(input.ProductInfo))) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
+            if (this.PromotionInfo != input.PromotionInfo || (this.PromotionInfo != null && !this.PromotionInfo.Equals(input.PromotionInfo))) return false;
 
-            return 
-                (
-                    this.CloudServiceConsoleURL == input.CloudServiceConsoleURL ||
-                    (this.CloudServiceConsoleURL != null &&
-                    this.CloudServiceConsoleURL.Equals(input.CloudServiceConsoleURL))
-                ) && 
-                (
-                    this.ProductInfo == input.ProductInfo ||
-                    (this.ProductInfo != null &&
-                    this.ProductInfo.Equals(input.ProductInfo))
-                ) && 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
-                ) && 
-                (
-                    this.PromotionInfo == input.PromotionInfo ||
-                    (this.PromotionInfo != null &&
-                    this.PromotionInfo.Equals(input.PromotionInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CloudServiceConsoleURL != null)
-                    hashCode = hashCode * 59 + this.CloudServiceConsoleURL.GetHashCode();
-                if (this.ProductInfo != null)
-                    hashCode = hashCode * 59 + this.ProductInfo.GetHashCode();
-                if (this.ResourceId != null)
-                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
-                if (this.PromotionInfo != null)
-                    hashCode = hashCode * 59 + this.PromotionInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.CloudServiceConsoleURL != null) hashCode = hashCode * 59 + this.CloudServiceConsoleURL.GetHashCode();
+                if (this.ProductInfo != null) hashCode = hashCode * 59 + this.ProductInfo.GetHashCode();
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.PromotionInfo != null) hashCode = hashCode * 59 + this.PromotionInfo.GetHashCode();
                 return hashCode;
             }
         }

@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(ShowLogConvergeConfigRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MemberAccountId != input.MemberAccountId || (this.MemberAccountId != null && !this.MemberAccountId.Equals(input.MemberAccountId))) return false;
 
-            return 
-                (
-                    this.MemberAccountId == input.MemberAccountId ||
-                    (this.MemberAccountId != null &&
-                    this.MemberAccountId.Equals(input.MemberAccountId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MemberAccountId != null)
-                    hashCode = hashCode * 59 + this.MemberAccountId.GetHashCode();
+                var hashCode = 41;
+                if (this.MemberAccountId != null) hashCode = hashCode * 59 + this.MemberAccountId.GetHashCode();
                 return hashCode;
             }
         }

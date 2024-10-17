@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(UpdateMembesRoleV4RequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RoleId != input.RoleId || (this.RoleId != null && !this.RoleId.Equals(input.RoleId))) return false;
+            if (this.UserIds != input.UserIds || (this.UserIds != null && input.UserIds != null && !this.UserIds.SequenceEqual(input.UserIds))) return false;
 
-            return 
-                (
-                    this.RoleId == input.RoleId ||
-                    (this.RoleId != null &&
-                    this.RoleId.Equals(input.RoleId))
-                ) && 
-                (
-                    this.UserIds == input.UserIds ||
-                    this.UserIds != null &&
-                    input.UserIds != null &&
-                    this.UserIds.SequenceEqual(input.UserIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RoleId != null)
-                    hashCode = hashCode * 59 + this.RoleId.GetHashCode();
-                if (this.UserIds != null)
-                    hashCode = hashCode * 59 + this.UserIds.GetHashCode();
+                var hashCode = 41;
+                if (this.RoleId != null) hashCode = hashCode * 59 + this.RoleId.GetHashCode();
+                if (this.UserIds != null) hashCode = hashCode * 59 + this.UserIds.GetHashCode();
                 return hashCode;
             }
         }

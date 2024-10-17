@@ -425,35 +425,14 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(UpdateStorageModeReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
+            if (this.StorageMode != input.StorageMode) return false;
+            if (this.RestoreMode != input.RestoreMode) return false;
+            if (this.Days != input.Days || (this.Days != null && !this.Days.Equals(input.Days))) return false;
+            if (this.RestoreTier != input.RestoreTier) return false;
 
-            return 
-                (
-                    this.AssetId == input.AssetId ||
-                    (this.AssetId != null &&
-                    this.AssetId.Equals(input.AssetId))
-                ) && 
-                (
-                    this.StorageMode == input.StorageMode ||
-                    (this.StorageMode != null &&
-                    this.StorageMode.Equals(input.StorageMode))
-                ) && 
-                (
-                    this.RestoreMode == input.RestoreMode ||
-                    (this.RestoreMode != null &&
-                    this.RestoreMode.Equals(input.RestoreMode))
-                ) && 
-                (
-                    this.Days == input.Days ||
-                    (this.Days != null &&
-                    this.Days.Equals(input.Days))
-                ) && 
-                (
-                    this.RestoreTier == input.RestoreTier ||
-                    (this.RestoreTier != null &&
-                    this.RestoreTier.Equals(input.RestoreTier))
-                );
+            return true;
         }
 
         /// <summary>
@@ -463,17 +442,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AssetId != null)
-                    hashCode = hashCode * 59 + this.AssetId.GetHashCode();
-                if (this.StorageMode != null)
-                    hashCode = hashCode * 59 + this.StorageMode.GetHashCode();
-                if (this.RestoreMode != null)
-                    hashCode = hashCode * 59 + this.RestoreMode.GetHashCode();
-                if (this.Days != null)
-                    hashCode = hashCode * 59 + this.Days.GetHashCode();
-                if (this.RestoreTier != null)
-                    hashCode = hashCode * 59 + this.RestoreTier.GetHashCode();
+                var hashCode = 41;
+                if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                hashCode = hashCode * 59 + this.StorageMode.GetHashCode();
+                hashCode = hashCode * 59 + this.RestoreMode.GetHashCode();
+                if (this.Days != null) hashCode = hashCode * 59 + this.Days.GetHashCode();
+                hashCode = hashCode * 59 + this.RestoreTier.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(ConsumerShardCheckpointInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ShardId != input.ShardId || (this.ShardId != null && !this.ShardId.Equals(input.ShardId))) return false;
+            if (this.Checkpoint != input.Checkpoint || (this.Checkpoint != null && !this.Checkpoint.Equals(input.Checkpoint))) return false;
 
-            return 
-                (
-                    this.ShardId == input.ShardId ||
-                    (this.ShardId != null &&
-                    this.ShardId.Equals(input.ShardId))
-                ) && 
-                (
-                    this.Checkpoint == input.Checkpoint ||
-                    (this.Checkpoint != null &&
-                    this.Checkpoint.Equals(input.Checkpoint))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ShardId != null)
-                    hashCode = hashCode * 59 + this.ShardId.GetHashCode();
-                if (this.Checkpoint != null)
-                    hashCode = hashCode * 59 + this.Checkpoint.GetHashCode();
+                var hashCode = 41;
+                if (this.ShardId != null) hashCode = hashCode * 59 + this.ShardId.GetHashCode();
+                if (this.Checkpoint != null) hashCode = hashCode * 59 + this.Checkpoint.GetHashCode();
                 return hashCode;
             }
         }

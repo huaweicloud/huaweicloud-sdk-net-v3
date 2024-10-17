@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         public bool Equals(AcceptOrRejectEndpointResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Connections != input.Connections || (this.Connections != null && input.Connections != null && !this.Connections.SequenceEqual(input.Connections))) return false;
 
-            return 
-                (
-                    this.Connections == input.Connections ||
-                    this.Connections != null &&
-                    input.Connections != null &&
-                    this.Connections.SequenceEqual(input.Connections)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Connections != null)
-                    hashCode = hashCode * 59 + this.Connections.GetHashCode();
+                var hashCode = 41;
+                if (this.Connections != null) hashCode = hashCode * 59 + this.Connections.GetHashCode();
                 return hashCode;
             }
         }

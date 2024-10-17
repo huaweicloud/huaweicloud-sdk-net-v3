@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(HtapInstanceListInstanceState input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceStatus != input.InstanceStatus || (this.InstanceStatus != null && !this.InstanceStatus.Equals(input.InstanceStatus))) return false;
+            if (this.CreateFailErrorCode != input.CreateFailErrorCode || (this.CreateFailErrorCode != null && !this.CreateFailErrorCode.Equals(input.CreateFailErrorCode))) return false;
+            if (this.FailMessage != input.FailMessage || (this.FailMessage != null && !this.FailMessage.Equals(input.FailMessage))) return false;
+            if (this.WaitRestartForParams != input.WaitRestartForParams || (this.WaitRestartForParams != null && !this.WaitRestartForParams.Equals(input.WaitRestartForParams))) return false;
 
-            return 
-                (
-                    this.InstanceStatus == input.InstanceStatus ||
-                    (this.InstanceStatus != null &&
-                    this.InstanceStatus.Equals(input.InstanceStatus))
-                ) && 
-                (
-                    this.CreateFailErrorCode == input.CreateFailErrorCode ||
-                    (this.CreateFailErrorCode != null &&
-                    this.CreateFailErrorCode.Equals(input.CreateFailErrorCode))
-                ) && 
-                (
-                    this.FailMessage == input.FailMessage ||
-                    (this.FailMessage != null &&
-                    this.FailMessage.Equals(input.FailMessage))
-                ) && 
-                (
-                    this.WaitRestartForParams == input.WaitRestartForParams ||
-                    (this.WaitRestartForParams != null &&
-                    this.WaitRestartForParams.Equals(input.WaitRestartForParams))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceStatus != null)
-                    hashCode = hashCode * 59 + this.InstanceStatus.GetHashCode();
-                if (this.CreateFailErrorCode != null)
-                    hashCode = hashCode * 59 + this.CreateFailErrorCode.GetHashCode();
-                if (this.FailMessage != null)
-                    hashCode = hashCode * 59 + this.FailMessage.GetHashCode();
-                if (this.WaitRestartForParams != null)
-                    hashCode = hashCode * 59 + this.WaitRestartForParams.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceStatus != null) hashCode = hashCode * 59 + this.InstanceStatus.GetHashCode();
+                if (this.CreateFailErrorCode != null) hashCode = hashCode * 59 + this.CreateFailErrorCode.GetHashCode();
+                if (this.FailMessage != null) hashCode = hashCode * 59 + this.FailMessage.GetHashCode();
+                if (this.WaitRestartForParams != null) hashCode = hashCode * 59 + this.WaitRestartForParams.GetHashCode();
                 return hashCode;
             }
         }

@@ -84,41 +84,15 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ProjectModule input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ModuleId != input.ModuleId || (this.ModuleId != null && !this.ModuleId.Equals(input.ModuleId))) return false;
+            if (this.ModuleName != input.ModuleName || (this.ModuleName != null && !this.ModuleName.Equals(input.ModuleName))) return false;
+            if (this.Owner != input.Owner || (this.Owner != null && !this.Owner.Equals(input.Owner))) return false;
+            if (this.Deepth != input.Deepth || (this.Deepth != null && !this.Deepth.Equals(input.Deepth))) return false;
+            if (this.IsParent != input.IsParent || (this.IsParent != null && !this.IsParent.Equals(input.IsParent))) return false;
+            if (this.Children != input.Children || (this.Children != null && input.Children != null && !this.Children.SequenceEqual(input.Children))) return false;
 
-            return 
-                (
-                    this.ModuleId == input.ModuleId ||
-                    (this.ModuleId != null &&
-                    this.ModuleId.Equals(input.ModuleId))
-                ) && 
-                (
-                    this.ModuleName == input.ModuleName ||
-                    (this.ModuleName != null &&
-                    this.ModuleName.Equals(input.ModuleName))
-                ) && 
-                (
-                    this.Owner == input.Owner ||
-                    (this.Owner != null &&
-                    this.Owner.Equals(input.Owner))
-                ) && 
-                (
-                    this.Deepth == input.Deepth ||
-                    (this.Deepth != null &&
-                    this.Deepth.Equals(input.Deepth))
-                ) && 
-                (
-                    this.IsParent == input.IsParent ||
-                    (this.IsParent != null &&
-                    this.IsParent.Equals(input.IsParent))
-                ) && 
-                (
-                    this.Children == input.Children ||
-                    this.Children != null &&
-                    input.Children != null &&
-                    this.Children.SequenceEqual(input.Children)
-                );
+            return true;
         }
 
         /// <summary>
@@ -128,19 +102,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ModuleId != null)
-                    hashCode = hashCode * 59 + this.ModuleId.GetHashCode();
-                if (this.ModuleName != null)
-                    hashCode = hashCode * 59 + this.ModuleName.GetHashCode();
-                if (this.Owner != null)
-                    hashCode = hashCode * 59 + this.Owner.GetHashCode();
-                if (this.Deepth != null)
-                    hashCode = hashCode * 59 + this.Deepth.GetHashCode();
-                if (this.IsParent != null)
-                    hashCode = hashCode * 59 + this.IsParent.GetHashCode();
-                if (this.Children != null)
-                    hashCode = hashCode * 59 + this.Children.GetHashCode();
+                var hashCode = 41;
+                if (this.ModuleId != null) hashCode = hashCode * 59 + this.ModuleId.GetHashCode();
+                if (this.ModuleName != null) hashCode = hashCode * 59 + this.ModuleName.GetHashCode();
+                if (this.Owner != null) hashCode = hashCode * 59 + this.Owner.GetHashCode();
+                if (this.Deepth != null) hashCode = hashCode * 59 + this.Deepth.GetHashCode();
+                if (this.IsParent != null) hashCode = hashCode * 59 + this.IsParent.GetHashCode();
+                if (this.Children != null) hashCode = hashCode * 59 + this.Children.GetHashCode();
                 return hashCode;
             }
         }

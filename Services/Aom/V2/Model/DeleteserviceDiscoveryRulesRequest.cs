@@ -50,16 +50,10 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(DeleteserviceDiscoveryRulesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AppRulesIds != input.AppRulesIds || (this.AppRulesIds != null && input.AppRulesIds != null && !this.AppRulesIds.SequenceEqual(input.AppRulesIds))) return false;
 
-            return 
-                (
-                    this.AppRulesIds == input.AppRulesIds ||
-                    this.AppRulesIds != null &&
-                    input.AppRulesIds != null &&
-                    this.AppRulesIds.SequenceEqual(input.AppRulesIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -69,9 +63,8 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AppRulesIds != null)
-                    hashCode = hashCode * 59 + this.AppRulesIds.GetHashCode();
+                var hashCode = 41;
+                if (this.AppRulesIds != null) hashCode = hashCode * 59 + this.AppRulesIds.GetHashCode();
                 return hashCode;
             }
         }

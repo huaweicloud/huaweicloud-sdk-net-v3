@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// </summary>
         public bool Equals(DeleteNatGatewaySnatRuleRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NatGatewayId != input.NatGatewayId || (this.NatGatewayId != null && !this.NatGatewayId.Equals(input.NatGatewayId))) return false;
+            if (this.SnatRuleId != input.SnatRuleId || (this.SnatRuleId != null && !this.SnatRuleId.Equals(input.SnatRuleId))) return false;
 
-            return 
-                (
-                    this.NatGatewayId == input.NatGatewayId ||
-                    (this.NatGatewayId != null &&
-                    this.NatGatewayId.Equals(input.NatGatewayId))
-                ) && 
-                (
-                    this.SnatRuleId == input.SnatRuleId ||
-                    (this.SnatRuleId != null &&
-                    this.SnatRuleId.Equals(input.SnatRuleId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NatGatewayId != null)
-                    hashCode = hashCode * 59 + this.NatGatewayId.GetHashCode();
-                if (this.SnatRuleId != null)
-                    hashCode = hashCode * 59 + this.SnatRuleId.GetHashCode();
+                var hashCode = 41;
+                if (this.NatGatewayId != null) hashCode = hashCode * 59 + this.NatGatewayId.GetHashCode();
+                if (this.SnatRuleId != null) hashCode = hashCode * 59 + this.SnatRuleId.GetHashCode();
                 return hashCode;
             }
         }

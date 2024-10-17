@@ -194,120 +194,28 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(ListMasterSlavePoolsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.PageReverse != input.PageReverse || (this.PageReverse != null && !this.PageReverse.Equals(input.PageReverse))) return false;
+            if (this.Description != input.Description || (this.Description != null && input.Description != null && !this.Description.SequenceEqual(input.Description))) return false;
+            if (this.HealthmonitorId != input.HealthmonitorId || (this.HealthmonitorId != null && input.HealthmonitorId != null && !this.HealthmonitorId.SequenceEqual(input.HealthmonitorId))) return false;
+            if (this.Id != input.Id || (this.Id != null && input.Id != null && !this.Id.SequenceEqual(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && input.Name != null && !this.Name.SequenceEqual(input.Name))) return false;
+            if (this.LoadbalancerId != input.LoadbalancerId || (this.LoadbalancerId != null && input.LoadbalancerId != null && !this.LoadbalancerId.SequenceEqual(input.LoadbalancerId))) return false;
+            if (this.Protocol != input.Protocol || (this.Protocol != null && input.Protocol != null && !this.Protocol.SequenceEqual(input.Protocol))) return false;
+            if (this.LbAlgorithm != input.LbAlgorithm || (this.LbAlgorithm != null && input.LbAlgorithm != null && !this.LbAlgorithm.SequenceEqual(input.LbAlgorithm))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && input.EnterpriseProjectId != null && !this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId))) return false;
+            if (this.IpVersion != input.IpVersion || (this.IpVersion != null && input.IpVersion != null && !this.IpVersion.SequenceEqual(input.IpVersion))) return false;
+            if (this.MemberAddress != input.MemberAddress || (this.MemberAddress != null && input.MemberAddress != null && !this.MemberAddress.SequenceEqual(input.MemberAddress))) return false;
+            if (this.MemberDeviceId != input.MemberDeviceId || (this.MemberDeviceId != null && input.MemberDeviceId != null && !this.MemberDeviceId.SequenceEqual(input.MemberDeviceId))) return false;
+            if (this.ListenerId != input.ListenerId || (this.ListenerId != null && input.ListenerId != null && !this.ListenerId.SequenceEqual(input.ListenerId))) return false;
+            if (this.MemberInstanceId != input.MemberInstanceId || (this.MemberInstanceId != null && input.MemberInstanceId != null && !this.MemberInstanceId.SequenceEqual(input.MemberInstanceId))) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && input.VpcId != null && !this.VpcId.SequenceEqual(input.VpcId))) return false;
+            if (this.Type != input.Type || (this.Type != null && input.Type != null && !this.Type.SequenceEqual(input.Type))) return false;
+            if (this.ConnectionDrain != input.ConnectionDrain || (this.ConnectionDrain != null && !this.ConnectionDrain.Equals(input.ConnectionDrain))) return false;
 
-            return 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.PageReverse == input.PageReverse ||
-                    (this.PageReverse != null &&
-                    this.PageReverse.Equals(input.PageReverse))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    this.Description != null &&
-                    input.Description != null &&
-                    this.Description.SequenceEqual(input.Description)
-                ) && 
-                (
-                    this.HealthmonitorId == input.HealthmonitorId ||
-                    this.HealthmonitorId != null &&
-                    input.HealthmonitorId != null &&
-                    this.HealthmonitorId.SequenceEqual(input.HealthmonitorId)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    this.Id != null &&
-                    input.Id != null &&
-                    this.Id.SequenceEqual(input.Id)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    this.Name != null &&
-                    input.Name != null &&
-                    this.Name.SequenceEqual(input.Name)
-                ) && 
-                (
-                    this.LoadbalancerId == input.LoadbalancerId ||
-                    this.LoadbalancerId != null &&
-                    input.LoadbalancerId != null &&
-                    this.LoadbalancerId.SequenceEqual(input.LoadbalancerId)
-                ) && 
-                (
-                    this.Protocol == input.Protocol ||
-                    this.Protocol != null &&
-                    input.Protocol != null &&
-                    this.Protocol.SequenceEqual(input.Protocol)
-                ) && 
-                (
-                    this.LbAlgorithm == input.LbAlgorithm ||
-                    this.LbAlgorithm != null &&
-                    input.LbAlgorithm != null &&
-                    this.LbAlgorithm.SequenceEqual(input.LbAlgorithm)
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    this.EnterpriseProjectId != null &&
-                    input.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId)
-                ) && 
-                (
-                    this.IpVersion == input.IpVersion ||
-                    this.IpVersion != null &&
-                    input.IpVersion != null &&
-                    this.IpVersion.SequenceEqual(input.IpVersion)
-                ) && 
-                (
-                    this.MemberAddress == input.MemberAddress ||
-                    this.MemberAddress != null &&
-                    input.MemberAddress != null &&
-                    this.MemberAddress.SequenceEqual(input.MemberAddress)
-                ) && 
-                (
-                    this.MemberDeviceId == input.MemberDeviceId ||
-                    this.MemberDeviceId != null &&
-                    input.MemberDeviceId != null &&
-                    this.MemberDeviceId.SequenceEqual(input.MemberDeviceId)
-                ) && 
-                (
-                    this.ListenerId == input.ListenerId ||
-                    this.ListenerId != null &&
-                    input.ListenerId != null &&
-                    this.ListenerId.SequenceEqual(input.ListenerId)
-                ) && 
-                (
-                    this.MemberInstanceId == input.MemberInstanceId ||
-                    this.MemberInstanceId != null &&
-                    input.MemberInstanceId != null &&
-                    this.MemberInstanceId.SequenceEqual(input.MemberInstanceId)
-                ) && 
-                (
-                    this.VpcId == input.VpcId ||
-                    this.VpcId != null &&
-                    input.VpcId != null &&
-                    this.VpcId.SequenceEqual(input.VpcId)
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    this.Type != null &&
-                    input.Type != null &&
-                    this.Type.SequenceEqual(input.Type)
-                ) && 
-                (
-                    this.ConnectionDrain == input.ConnectionDrain ||
-                    (this.ConnectionDrain != null &&
-                    this.ConnectionDrain.Equals(input.ConnectionDrain))
-                );
+            return true;
         }
 
         /// <summary>
@@ -317,45 +225,26 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.PageReverse != null)
-                    hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.HealthmonitorId != null)
-                    hashCode = hashCode * 59 + this.HealthmonitorId.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.LoadbalancerId != null)
-                    hashCode = hashCode * 59 + this.LoadbalancerId.GetHashCode();
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
-                if (this.LbAlgorithm != null)
-                    hashCode = hashCode * 59 + this.LbAlgorithm.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.IpVersion != null)
-                    hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
-                if (this.MemberAddress != null)
-                    hashCode = hashCode * 59 + this.MemberAddress.GetHashCode();
-                if (this.MemberDeviceId != null)
-                    hashCode = hashCode * 59 + this.MemberDeviceId.GetHashCode();
-                if (this.ListenerId != null)
-                    hashCode = hashCode * 59 + this.ListenerId.GetHashCode();
-                if (this.MemberInstanceId != null)
-                    hashCode = hashCode * 59 + this.MemberInstanceId.GetHashCode();
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.ConnectionDrain != null)
-                    hashCode = hashCode * 59 + this.ConnectionDrain.GetHashCode();
+                var hashCode = 41;
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.PageReverse != null) hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.HealthmonitorId != null) hashCode = hashCode * 59 + this.HealthmonitorId.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.LoadbalancerId != null) hashCode = hashCode * 59 + this.LoadbalancerId.GetHashCode();
+                if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.LbAlgorithm != null) hashCode = hashCode * 59 + this.LbAlgorithm.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.IpVersion != null) hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
+                if (this.MemberAddress != null) hashCode = hashCode * 59 + this.MemberAddress.GetHashCode();
+                if (this.MemberDeviceId != null) hashCode = hashCode * 59 + this.MemberDeviceId.GetHashCode();
+                if (this.ListenerId != null) hashCode = hashCode * 59 + this.ListenerId.GetHashCode();
+                if (this.MemberInstanceId != null) hashCode = hashCode * 59 + this.MemberInstanceId.GetHashCode();
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.ConnectionDrain != null) hashCode = hashCode * 59 + this.ConnectionDrain.GetHashCode();
                 return hashCode;
             }
         }

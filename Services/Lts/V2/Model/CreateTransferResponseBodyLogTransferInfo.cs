@@ -559,45 +559,16 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(CreateTransferResponseBodyLogTransferInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LogAgencyTransfer != input.LogAgencyTransfer || (this.LogAgencyTransfer != null && !this.LogAgencyTransfer.Equals(input.LogAgencyTransfer))) return false;
+            if (this.LogCreateTime != input.LogCreateTime || (this.LogCreateTime != null && !this.LogCreateTime.Equals(input.LogCreateTime))) return false;
+            if (this.LogStorageFormat != input.LogStorageFormat) return false;
+            if (this.LogTransferDetail != input.LogTransferDetail || (this.LogTransferDetail != null && !this.LogTransferDetail.Equals(input.LogTransferDetail))) return false;
+            if (this.LogTransferMode != input.LogTransferMode) return false;
+            if (this.LogTransferStatus != input.LogTransferStatus) return false;
+            if (this.LogTransferType != input.LogTransferType) return false;
 
-            return 
-                (
-                    this.LogAgencyTransfer == input.LogAgencyTransfer ||
-                    (this.LogAgencyTransfer != null &&
-                    this.LogAgencyTransfer.Equals(input.LogAgencyTransfer))
-                ) && 
-                (
-                    this.LogCreateTime == input.LogCreateTime ||
-                    (this.LogCreateTime != null &&
-                    this.LogCreateTime.Equals(input.LogCreateTime))
-                ) && 
-                (
-                    this.LogStorageFormat == input.LogStorageFormat ||
-                    (this.LogStorageFormat != null &&
-                    this.LogStorageFormat.Equals(input.LogStorageFormat))
-                ) && 
-                (
-                    this.LogTransferDetail == input.LogTransferDetail ||
-                    (this.LogTransferDetail != null &&
-                    this.LogTransferDetail.Equals(input.LogTransferDetail))
-                ) && 
-                (
-                    this.LogTransferMode == input.LogTransferMode ||
-                    (this.LogTransferMode != null &&
-                    this.LogTransferMode.Equals(input.LogTransferMode))
-                ) && 
-                (
-                    this.LogTransferStatus == input.LogTransferStatus ||
-                    (this.LogTransferStatus != null &&
-                    this.LogTransferStatus.Equals(input.LogTransferStatus))
-                ) && 
-                (
-                    this.LogTransferType == input.LogTransferType ||
-                    (this.LogTransferType != null &&
-                    this.LogTransferType.Equals(input.LogTransferType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -607,21 +578,14 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LogAgencyTransfer != null)
-                    hashCode = hashCode * 59 + this.LogAgencyTransfer.GetHashCode();
-                if (this.LogCreateTime != null)
-                    hashCode = hashCode * 59 + this.LogCreateTime.GetHashCode();
-                if (this.LogStorageFormat != null)
-                    hashCode = hashCode * 59 + this.LogStorageFormat.GetHashCode();
-                if (this.LogTransferDetail != null)
-                    hashCode = hashCode * 59 + this.LogTransferDetail.GetHashCode();
-                if (this.LogTransferMode != null)
-                    hashCode = hashCode * 59 + this.LogTransferMode.GetHashCode();
-                if (this.LogTransferStatus != null)
-                    hashCode = hashCode * 59 + this.LogTransferStatus.GetHashCode();
-                if (this.LogTransferType != null)
-                    hashCode = hashCode * 59 + this.LogTransferType.GetHashCode();
+                var hashCode = 41;
+                if (this.LogAgencyTransfer != null) hashCode = hashCode * 59 + this.LogAgencyTransfer.GetHashCode();
+                if (this.LogCreateTime != null) hashCode = hashCode * 59 + this.LogCreateTime.GetHashCode();
+                hashCode = hashCode * 59 + this.LogStorageFormat.GetHashCode();
+                if (this.LogTransferDetail != null) hashCode = hashCode * 59 + this.LogTransferDetail.GetHashCode();
+                hashCode = hashCode * 59 + this.LogTransferMode.GetHashCode();
+                hashCode = hashCode * 59 + this.LogTransferStatus.GetHashCode();
+                hashCode = hashCode * 59 + this.LogTransferType.GetHashCode();
                 return hashCode;
             }
         }

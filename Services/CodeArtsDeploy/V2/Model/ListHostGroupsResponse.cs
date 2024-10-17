@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(ListHostGroupsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.HostGroups != input.HostGroups || (this.HostGroups != null && input.HostGroups != null && !this.HostGroups.SequenceEqual(input.HostGroups))) return false;
 
-            return 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.HostGroups == input.HostGroups ||
-                    this.HostGroups != null &&
-                    input.HostGroups != null &&
-                    this.HostGroups.SequenceEqual(input.HostGroups)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.HostGroups != null)
-                    hashCode = hashCode * 59 + this.HostGroups.GetHashCode();
+                var hashCode = 41;
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.HostGroups != null) hashCode = hashCode * 59 + this.HostGroups.GetHashCode();
                 return hashCode;
             }
         }

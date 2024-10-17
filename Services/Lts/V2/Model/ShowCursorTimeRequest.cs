@@ -74,30 +74,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(ShowCursorTimeRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
+            if (this.StreamId != input.StreamId || (this.StreamId != null && !this.StreamId.Equals(input.StreamId))) return false;
+            if (this.ShardId != input.ShardId || (this.ShardId != null && !this.ShardId.Equals(input.ShardId))) return false;
+            if (this.Cursor != input.Cursor || (this.Cursor != null && !this.Cursor.Equals(input.Cursor))) return false;
 
-            return 
-                (
-                    this.GroupId == input.GroupId ||
-                    (this.GroupId != null &&
-                    this.GroupId.Equals(input.GroupId))
-                ) && 
-                (
-                    this.StreamId == input.StreamId ||
-                    (this.StreamId != null &&
-                    this.StreamId.Equals(input.StreamId))
-                ) && 
-                (
-                    this.ShardId == input.ShardId ||
-                    (this.ShardId != null &&
-                    this.ShardId.Equals(input.ShardId))
-                ) && 
-                (
-                    this.Cursor == input.Cursor ||
-                    (this.Cursor != null &&
-                    this.Cursor.Equals(input.Cursor))
-                );
+            return true;
         }
 
         /// <summary>
@@ -107,15 +90,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.GroupId != null)
-                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
-                if (this.StreamId != null)
-                    hashCode = hashCode * 59 + this.StreamId.GetHashCode();
-                if (this.ShardId != null)
-                    hashCode = hashCode * 59 + this.ShardId.GetHashCode();
-                if (this.Cursor != null)
-                    hashCode = hashCode * 59 + this.Cursor.GetHashCode();
+                var hashCode = 41;
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.StreamId != null) hashCode = hashCode * 59 + this.StreamId.GetHashCode();
+                if (this.ShardId != null) hashCode = hashCode * 59 + this.ShardId.GetHashCode();
+                if (this.Cursor != null) hashCode = hashCode * 59 + this.Cursor.GetHashCode();
                 return hashCode;
             }
         }

@@ -126,70 +126,21 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(MyanmarDriverLicenseConfidence input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CardNumber != input.CardNumber || (this.CardNumber != null && !this.CardNumber.Equals(input.CardNumber))) return false;
+            if (this.CardNumberEn != input.CardNumberEn || (this.CardNumberEn != null && !this.CardNumberEn.Equals(input.CardNumberEn))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.NameEn != input.NameEn || (this.NameEn != null && !this.NameEn.Equals(input.NameEn))) return false;
+            if (this.NrcId != input.NrcId || (this.NrcId != null && !this.NrcId.Equals(input.NrcId))) return false;
+            if (this.NrcIdEn != input.NrcIdEn || (this.NrcIdEn != null && !this.NrcIdEn.Equals(input.NrcIdEn))) return false;
+            if (this.Birth != input.Birth || (this.Birth != null && !this.Birth.Equals(input.Birth))) return false;
+            if (this.BirthEn != input.BirthEn || (this.BirthEn != null && !this.BirthEn.Equals(input.BirthEn))) return false;
+            if (this.BloodGroup != input.BloodGroup || (this.BloodGroup != null && !this.BloodGroup.Equals(input.BloodGroup))) return false;
+            if (this.BloodGroupEn != input.BloodGroupEn || (this.BloodGroupEn != null && !this.BloodGroupEn.Equals(input.BloodGroupEn))) return false;
+            if (this.ExpiriedDate != input.ExpiriedDate || (this.ExpiriedDate != null && !this.ExpiriedDate.Equals(input.ExpiriedDate))) return false;
+            if (this.ExpiriedDateEn != input.ExpiriedDateEn || (this.ExpiriedDateEn != null && !this.ExpiriedDateEn.Equals(input.ExpiriedDateEn))) return false;
 
-            return 
-                (
-                    this.CardNumber == input.CardNumber ||
-                    (this.CardNumber != null &&
-                    this.CardNumber.Equals(input.CardNumber))
-                ) && 
-                (
-                    this.CardNumberEn == input.CardNumberEn ||
-                    (this.CardNumberEn != null &&
-                    this.CardNumberEn.Equals(input.CardNumberEn))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.NameEn == input.NameEn ||
-                    (this.NameEn != null &&
-                    this.NameEn.Equals(input.NameEn))
-                ) && 
-                (
-                    this.NrcId == input.NrcId ||
-                    (this.NrcId != null &&
-                    this.NrcId.Equals(input.NrcId))
-                ) && 
-                (
-                    this.NrcIdEn == input.NrcIdEn ||
-                    (this.NrcIdEn != null &&
-                    this.NrcIdEn.Equals(input.NrcIdEn))
-                ) && 
-                (
-                    this.Birth == input.Birth ||
-                    (this.Birth != null &&
-                    this.Birth.Equals(input.Birth))
-                ) && 
-                (
-                    this.BirthEn == input.BirthEn ||
-                    (this.BirthEn != null &&
-                    this.BirthEn.Equals(input.BirthEn))
-                ) && 
-                (
-                    this.BloodGroup == input.BloodGroup ||
-                    (this.BloodGroup != null &&
-                    this.BloodGroup.Equals(input.BloodGroup))
-                ) && 
-                (
-                    this.BloodGroupEn == input.BloodGroupEn ||
-                    (this.BloodGroupEn != null &&
-                    this.BloodGroupEn.Equals(input.BloodGroupEn))
-                ) && 
-                (
-                    this.ExpiriedDate == input.ExpiriedDate ||
-                    (this.ExpiriedDate != null &&
-                    this.ExpiriedDate.Equals(input.ExpiriedDate))
-                ) && 
-                (
-                    this.ExpiriedDateEn == input.ExpiriedDateEn ||
-                    (this.ExpiriedDateEn != null &&
-                    this.ExpiriedDateEn.Equals(input.ExpiriedDateEn))
-                );
+            return true;
         }
 
         /// <summary>
@@ -199,31 +150,19 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CardNumber != null)
-                    hashCode = hashCode * 59 + this.CardNumber.GetHashCode();
-                if (this.CardNumberEn != null)
-                    hashCode = hashCode * 59 + this.CardNumberEn.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.NameEn != null)
-                    hashCode = hashCode * 59 + this.NameEn.GetHashCode();
-                if (this.NrcId != null)
-                    hashCode = hashCode * 59 + this.NrcId.GetHashCode();
-                if (this.NrcIdEn != null)
-                    hashCode = hashCode * 59 + this.NrcIdEn.GetHashCode();
-                if (this.Birth != null)
-                    hashCode = hashCode * 59 + this.Birth.GetHashCode();
-                if (this.BirthEn != null)
-                    hashCode = hashCode * 59 + this.BirthEn.GetHashCode();
-                if (this.BloodGroup != null)
-                    hashCode = hashCode * 59 + this.BloodGroup.GetHashCode();
-                if (this.BloodGroupEn != null)
-                    hashCode = hashCode * 59 + this.BloodGroupEn.GetHashCode();
-                if (this.ExpiriedDate != null)
-                    hashCode = hashCode * 59 + this.ExpiriedDate.GetHashCode();
-                if (this.ExpiriedDateEn != null)
-                    hashCode = hashCode * 59 + this.ExpiriedDateEn.GetHashCode();
+                var hashCode = 41;
+                if (this.CardNumber != null) hashCode = hashCode * 59 + this.CardNumber.GetHashCode();
+                if (this.CardNumberEn != null) hashCode = hashCode * 59 + this.CardNumberEn.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.NameEn != null) hashCode = hashCode * 59 + this.NameEn.GetHashCode();
+                if (this.NrcId != null) hashCode = hashCode * 59 + this.NrcId.GetHashCode();
+                if (this.NrcIdEn != null) hashCode = hashCode * 59 + this.NrcIdEn.GetHashCode();
+                if (this.Birth != null) hashCode = hashCode * 59 + this.Birth.GetHashCode();
+                if (this.BirthEn != null) hashCode = hashCode * 59 + this.BirthEn.GetHashCode();
+                if (this.BloodGroup != null) hashCode = hashCode * 59 + this.BloodGroup.GetHashCode();
+                if (this.BloodGroupEn != null) hashCode = hashCode * 59 + this.BloodGroupEn.GetHashCode();
+                if (this.ExpiriedDate != null) hashCode = hashCode * 59 + this.ExpiriedDate.GetHashCode();
+                if (this.ExpiriedDateEn != null) hashCode = hashCode * 59 + this.ExpiriedDateEn.GetHashCode();
                 return hashCode;
             }
         }

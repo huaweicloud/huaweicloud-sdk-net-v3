@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         /// </summary>
         public bool Equals(DeleteSubAppRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SubAppId != input.SubAppId || (this.SubAppId != null && !this.SubAppId.Equals(input.SubAppId))) return false;
 
-            return 
-                (
-                    this.SubAppId == input.SubAppId ||
-                    (this.SubAppId != null &&
-                    this.SubAppId.Equals(input.SubAppId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SubAppId != null)
-                    hashCode = hashCode * 59 + this.SubAppId.GetHashCode();
+                var hashCode = 41;
+                if (this.SubAppId != null) hashCode = hashCode * 59 + this.SubAppId.GetHashCode();
                 return hashCode;
             }
         }

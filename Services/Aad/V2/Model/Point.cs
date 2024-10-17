@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// </summary>
         public bool Equals(Point input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.Attack != input.Attack || (this.Attack != null && !this.Attack.Equals(input.Attack))) return false;
+            if (this.Basic != input.Basic || (this.Basic != null && !this.Basic.Equals(input.Basic))) return false;
+            if (this.Cc != input.Cc || (this.Cc != null && !this.Cc.Equals(input.Cc))) return false;
+            if (this.CustomCustom != input.CustomCustom || (this.CustomCustom != null && !this.CustomCustom.Equals(input.CustomCustom))) return false;
 
-            return 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.Attack == input.Attack ||
-                    (this.Attack != null &&
-                    this.Attack.Equals(input.Attack))
-                ) && 
-                (
-                    this.Basic == input.Basic ||
-                    (this.Basic != null &&
-                    this.Basic.Equals(input.Basic))
-                ) && 
-                (
-                    this.Cc == input.Cc ||
-                    (this.Cc != null &&
-                    this.Cc.Equals(input.Cc))
-                ) && 
-                (
-                    this.CustomCustom == input.CustomCustom ||
-                    (this.CustomCustom != null &&
-                    this.CustomCustom.Equals(input.CustomCustom))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.Attack != null)
-                    hashCode = hashCode * 59 + this.Attack.GetHashCode();
-                if (this.Basic != null)
-                    hashCode = hashCode * 59 + this.Basic.GetHashCode();
-                if (this.Cc != null)
-                    hashCode = hashCode * 59 + this.Cc.GetHashCode();
-                if (this.CustomCustom != null)
-                    hashCode = hashCode * 59 + this.CustomCustom.GetHashCode();
+                var hashCode = 41;
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.Attack != null) hashCode = hashCode * 59 + this.Attack.GetHashCode();
+                if (this.Basic != null) hashCode = hashCode * 59 + this.Basic.GetHashCode();
+                if (this.Cc != null) hashCode = hashCode * 59 + this.Cc.GetHashCode();
+                if (this.CustomCustom != null) hashCode = hashCode * 59 + this.CustomCustom.GetHashCode();
                 return hashCode;
             }
         }

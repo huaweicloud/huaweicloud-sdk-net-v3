@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// </summary>
         public bool Equals(UpgradeInstanceSpecV2RequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.UpgradeData != input.UpgradeData || (this.UpgradeData != null && !this.UpgradeData.Equals(input.UpgradeData))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.UpgradeData == input.UpgradeData ||
-                    (this.UpgradeData != null &&
-                    this.UpgradeData.Equals(input.UpgradeData))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.UpgradeData != null)
-                    hashCode = hashCode * 59 + this.UpgradeData.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.UpgradeData != null) hashCode = hashCode * 59 + this.UpgradeData.GetHashCode();
                 return hashCode;
             }
         }

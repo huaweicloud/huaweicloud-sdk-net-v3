@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(NetworkControlConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DisablePublicNetwork != input.DisablePublicNetwork || (this.DisablePublicNetwork != null && !this.DisablePublicNetwork.Equals(input.DisablePublicNetwork))) return false;
+            if (this.TriggerAccessVpcs != input.TriggerAccessVpcs || (this.TriggerAccessVpcs != null && input.TriggerAccessVpcs != null && !this.TriggerAccessVpcs.SequenceEqual(input.TriggerAccessVpcs))) return false;
 
-            return 
-                (
-                    this.DisablePublicNetwork == input.DisablePublicNetwork ||
-                    (this.DisablePublicNetwork != null &&
-                    this.DisablePublicNetwork.Equals(input.DisablePublicNetwork))
-                ) && 
-                (
-                    this.TriggerAccessVpcs == input.TriggerAccessVpcs ||
-                    this.TriggerAccessVpcs != null &&
-                    input.TriggerAccessVpcs != null &&
-                    this.TriggerAccessVpcs.SequenceEqual(input.TriggerAccessVpcs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DisablePublicNetwork != null)
-                    hashCode = hashCode * 59 + this.DisablePublicNetwork.GetHashCode();
-                if (this.TriggerAccessVpcs != null)
-                    hashCode = hashCode * 59 + this.TriggerAccessVpcs.GetHashCode();
+                var hashCode = 41;
+                if (this.DisablePublicNetwork != null) hashCode = hashCode * 59 + this.DisablePublicNetwork.GetHashCode();
+                if (this.TriggerAccessVpcs != null) hashCode = hashCode * 59 + this.TriggerAccessVpcs.GetHashCode();
                 return hashCode;
             }
         }

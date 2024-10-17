@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(MysqlBackupPolicy input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.KeepDays != input.KeepDays || (this.KeepDays != null && !this.KeepDays.Equals(input.KeepDays))) return false;
+            if (this.Period != input.Period || (this.Period != null && !this.Period.Equals(input.Period))) return false;
+            if (this.RetentionNumBackupLevel1 != input.RetentionNumBackupLevel1 || (this.RetentionNumBackupLevel1 != null && !this.RetentionNumBackupLevel1.Equals(input.RetentionNumBackupLevel1))) return false;
 
-            return 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.KeepDays == input.KeepDays ||
-                    (this.KeepDays != null &&
-                    this.KeepDays.Equals(input.KeepDays))
-                ) && 
-                (
-                    this.Period == input.Period ||
-                    (this.Period != null &&
-                    this.Period.Equals(input.Period))
-                ) && 
-                (
-                    this.RetentionNumBackupLevel1 == input.RetentionNumBackupLevel1 ||
-                    (this.RetentionNumBackupLevel1 != null &&
-                    this.RetentionNumBackupLevel1.Equals(input.RetentionNumBackupLevel1))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.KeepDays != null)
-                    hashCode = hashCode * 59 + this.KeepDays.GetHashCode();
-                if (this.Period != null)
-                    hashCode = hashCode * 59 + this.Period.GetHashCode();
-                if (this.RetentionNumBackupLevel1 != null)
-                    hashCode = hashCode * 59 + this.RetentionNumBackupLevel1.GetHashCode();
+                var hashCode = 41;
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.KeepDays != null) hashCode = hashCode * 59 + this.KeepDays.GetHashCode();
+                if (this.Period != null) hashCode = hashCode * 59 + this.Period.GetHashCode();
+                if (this.RetentionNumBackupLevel1 != null) hashCode = hashCode * 59 + this.RetentionNumBackupLevel1.GetHashCode();
                 return hashCode;
             }
         }

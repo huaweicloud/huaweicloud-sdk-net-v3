@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(ConsumerCheckpointInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Checkpoint != input.Checkpoint || (this.Checkpoint != null && !this.Checkpoint.Equals(input.Checkpoint))) return false;
+            if (this.ConsumerGroupName != input.ConsumerGroupName || (this.ConsumerGroupName != null && !this.ConsumerGroupName.Equals(input.ConsumerGroupName))) return false;
+            if (this.ConsumerName != input.ConsumerName || (this.ConsumerName != null && !this.ConsumerName.Equals(input.ConsumerName))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.ShardId != input.ShardId || (this.ShardId != null && !this.ShardId.Equals(input.ShardId))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
 
-            return 
-                (
-                    this.Checkpoint == input.Checkpoint ||
-                    (this.Checkpoint != null &&
-                    this.Checkpoint.Equals(input.Checkpoint))
-                ) && 
-                (
-                    this.ConsumerGroupName == input.ConsumerGroupName ||
-                    (this.ConsumerGroupName != null &&
-                    this.ConsumerGroupName.Equals(input.ConsumerGroupName))
-                ) && 
-                (
-                    this.ConsumerName == input.ConsumerName ||
-                    (this.ConsumerName != null &&
-                    this.ConsumerName.Equals(input.ConsumerName))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.ShardId == input.ShardId ||
-                    (this.ShardId != null &&
-                    this.ShardId.Equals(input.ShardId))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Checkpoint != null)
-                    hashCode = hashCode * 59 + this.Checkpoint.GetHashCode();
-                if (this.ConsumerGroupName != null)
-                    hashCode = hashCode * 59 + this.ConsumerGroupName.GetHashCode();
-                if (this.ConsumerName != null)
-                    hashCode = hashCode * 59 + this.ConsumerName.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.ShardId != null)
-                    hashCode = hashCode * 59 + this.ShardId.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                var hashCode = 41;
+                if (this.Checkpoint != null) hashCode = hashCode * 59 + this.Checkpoint.GetHashCode();
+                if (this.ConsumerGroupName != null) hashCode = hashCode * 59 + this.ConsumerGroupName.GetHashCode();
+                if (this.ConsumerName != null) hashCode = hashCode * 59 + this.ConsumerName.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.ShardId != null) hashCode = hashCode * 59 + this.ShardId.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 return hashCode;
             }
         }

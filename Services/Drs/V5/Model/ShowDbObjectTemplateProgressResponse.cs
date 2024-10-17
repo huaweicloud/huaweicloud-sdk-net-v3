@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ShowDbObjectTemplateProgressResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SendSuccess != input.SendSuccess || (this.SendSuccess != null && !this.SendSuccess.Equals(input.SendSuccess))) return false;
+            if (this.ProcessStatus != input.ProcessStatus || (this.ProcessStatus != null && !this.ProcessStatus.Equals(input.ProcessStatus))) return false;
+            if (this.ParsedSuccessNumber != input.ParsedSuccessNumber || (this.ParsedSuccessNumber != null && !this.ParsedSuccessNumber.Equals(input.ParsedSuccessNumber))) return false;
 
-            return 
-                (
-                    this.SendSuccess == input.SendSuccess ||
-                    (this.SendSuccess != null &&
-                    this.SendSuccess.Equals(input.SendSuccess))
-                ) && 
-                (
-                    this.ProcessStatus == input.ProcessStatus ||
-                    (this.ProcessStatus != null &&
-                    this.ProcessStatus.Equals(input.ProcessStatus))
-                ) && 
-                (
-                    this.ParsedSuccessNumber == input.ParsedSuccessNumber ||
-                    (this.ParsedSuccessNumber != null &&
-                    this.ParsedSuccessNumber.Equals(input.ParsedSuccessNumber))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SendSuccess != null)
-                    hashCode = hashCode * 59 + this.SendSuccess.GetHashCode();
-                if (this.ProcessStatus != null)
-                    hashCode = hashCode * 59 + this.ProcessStatus.GetHashCode();
-                if (this.ParsedSuccessNumber != null)
-                    hashCode = hashCode * 59 + this.ParsedSuccessNumber.GetHashCode();
+                var hashCode = 41;
+                if (this.SendSuccess != null) hashCode = hashCode * 59 + this.SendSuccess.GetHashCode();
+                if (this.ProcessStatus != null) hashCode = hashCode * 59 + this.ProcessStatus.GetHashCode();
+                if (this.ParsedSuccessNumber != null) hashCode = hashCode * 59 + this.ParsedSuccessNumber.GetHashCode();
                 return hashCode;
             }
         }

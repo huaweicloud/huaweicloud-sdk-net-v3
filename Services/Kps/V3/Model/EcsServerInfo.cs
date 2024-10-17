@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         /// </summary>
         public bool Equals(EcsServerInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Auth != input.Auth || (this.Auth != null && !this.Auth.Equals(input.Auth))) return false;
+            if (this.DisablePassword != input.DisablePassword || (this.DisablePassword != null && !this.DisablePassword.Equals(input.DisablePassword))) return false;
+            if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Auth == input.Auth ||
-                    (this.Auth != null &&
-                    this.Auth.Equals(input.Auth))
-                ) && 
-                (
-                    this.DisablePassword == input.DisablePassword ||
-                    (this.DisablePassword != null &&
-                    this.DisablePassword.Equals(input.DisablePassword))
-                ) && 
-                (
-                    this.Port == input.Port ||
-                    (this.Port != null &&
-                    this.Port.Equals(input.Port))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Auth != null)
-                    hashCode = hashCode * 59 + this.Auth.GetHashCode();
-                if (this.DisablePassword != null)
-                    hashCode = hashCode * 59 + this.DisablePassword.GetHashCode();
-                if (this.Port != null)
-                    hashCode = hashCode * 59 + this.Port.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Auth != null) hashCode = hashCode * 59 + this.Auth.GetHashCode();
+                if (this.DisablePassword != null) hashCode = hashCode * 59 + this.DisablePassword.GetHashCode();
+                if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
                 return hashCode;
             }
         }

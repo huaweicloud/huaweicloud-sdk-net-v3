@@ -353,65 +353,20 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// </summary>
         public bool Equals(CreatePoolReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Protocol != input.Protocol) return false;
+            if (this.LbAlgorithm != input.LbAlgorithm || (this.LbAlgorithm != null && !this.LbAlgorithm.Equals(input.LbAlgorithm))) return false;
+            if (this.LoadbalancerId != input.LoadbalancerId || (this.LoadbalancerId != null && !this.LoadbalancerId.Equals(input.LoadbalancerId))) return false;
+            if (this.ListenerId != input.ListenerId || (this.ListenerId != null && !this.ListenerId.Equals(input.ListenerId))) return false;
+            if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.SessionPersistence != input.SessionPersistence || (this.SessionPersistence != null && !this.SessionPersistence.Equals(input.SessionPersistence))) return false;
+            if (this.ProtectionStatus != input.ProtectionStatus) return false;
+            if (this.ProtectionReason != input.ProtectionReason || (this.ProtectionReason != null && !this.ProtectionReason.Equals(input.ProtectionReason))) return false;
 
-            return 
-                (
-                    this.Protocol == input.Protocol ||
-                    (this.Protocol != null &&
-                    this.Protocol.Equals(input.Protocol))
-                ) && 
-                (
-                    this.LbAlgorithm == input.LbAlgorithm ||
-                    (this.LbAlgorithm != null &&
-                    this.LbAlgorithm.Equals(input.LbAlgorithm))
-                ) && 
-                (
-                    this.LoadbalancerId == input.LoadbalancerId ||
-                    (this.LoadbalancerId != null &&
-                    this.LoadbalancerId.Equals(input.LoadbalancerId))
-                ) && 
-                (
-                    this.ListenerId == input.ListenerId ||
-                    (this.ListenerId != null &&
-                    this.ListenerId.Equals(input.ListenerId))
-                ) && 
-                (
-                    this.TenantId == input.TenantId ||
-                    (this.TenantId != null &&
-                    this.TenantId.Equals(input.TenantId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.SessionPersistence == input.SessionPersistence ||
-                    (this.SessionPersistence != null &&
-                    this.SessionPersistence.Equals(input.SessionPersistence))
-                ) && 
-                (
-                    this.ProtectionStatus == input.ProtectionStatus ||
-                    (this.ProtectionStatus != null &&
-                    this.ProtectionStatus.Equals(input.ProtectionStatus))
-                ) && 
-                (
-                    this.ProtectionReason == input.ProtectionReason ||
-                    (this.ProtectionReason != null &&
-                    this.ProtectionReason.Equals(input.ProtectionReason))
-                );
+            return true;
         }
 
         /// <summary>
@@ -421,29 +376,18 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
-                if (this.LbAlgorithm != null)
-                    hashCode = hashCode * 59 + this.LbAlgorithm.GetHashCode();
-                if (this.LoadbalancerId != null)
-                    hashCode = hashCode * 59 + this.LoadbalancerId.GetHashCode();
-                if (this.ListenerId != null)
-                    hashCode = hashCode * 59 + this.ListenerId.GetHashCode();
-                if (this.TenantId != null)
-                    hashCode = hashCode * 59 + this.TenantId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.SessionPersistence != null)
-                    hashCode = hashCode * 59 + this.SessionPersistence.GetHashCode();
-                if (this.ProtectionStatus != null)
-                    hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
-                if (this.ProtectionReason != null)
-                    hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.LbAlgorithm != null) hashCode = hashCode * 59 + this.LbAlgorithm.GetHashCode();
+                if (this.LoadbalancerId != null) hashCode = hashCode * 59 + this.LoadbalancerId.GetHashCode();
+                if (this.ListenerId != null) hashCode = hashCode * 59 + this.ListenerId.GetHashCode();
+                if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.SessionPersistence != null) hashCode = hashCode * 59 + this.SessionPersistence.GetHashCode();
+                hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
+                if (this.ProtectionReason != null) hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(DeleteSessionRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Sessions != input.Sessions || (this.Sessions != null && input.Sessions != null && !this.Sessions.SequenceEqual(input.Sessions))) return false;
 
-            return 
-                (
-                    this.Sessions == input.Sessions ||
-                    this.Sessions != null &&
-                    input.Sessions != null &&
-                    this.Sessions.SequenceEqual(input.Sessions)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Sessions != null)
-                    hashCode = hashCode * 59 + this.Sessions.GetHashCode();
+                var hashCode = 41;
+                if (this.Sessions != null) hashCode = hashCode * 59 + this.Sessions.GetHashCode();
                 return hashCode;
             }
         }

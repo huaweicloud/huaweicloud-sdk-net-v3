@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(DeleteDashboardRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.IsDeleteCharts != input.IsDeleteCharts || (this.IsDeleteCharts != null && !this.IsDeleteCharts.Equals(input.IsDeleteCharts))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.IsDeleteCharts == input.IsDeleteCharts ||
-                    (this.IsDeleteCharts != null &&
-                    this.IsDeleteCharts.Equals(input.IsDeleteCharts))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.IsDeleteCharts != null)
-                    hashCode = hashCode * 59 + this.IsDeleteCharts.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.IsDeleteCharts != null) hashCode = hashCode * 59 + this.IsDeleteCharts.GetHashCode();
                 return hashCode;
             }
         }

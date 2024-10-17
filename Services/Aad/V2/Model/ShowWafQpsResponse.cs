@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// </summary>
         public bool Equals(ShowWafQpsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Qps != input.Qps || (this.Qps != null && !this.Qps.Equals(input.Qps))) return false;
 
-            return 
-                (
-                    this.Qps == input.Qps ||
-                    (this.Qps != null &&
-                    this.Qps.Equals(input.Qps))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Qps != null)
-                    hashCode = hashCode * 59 + this.Qps.GetHashCode();
+                var hashCode = 41;
+                if (this.Qps != null) hashCode = hashCode * 59 + this.Qps.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(ShowTenantAccessInfoResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IsOpen != input.IsOpen || (this.IsOpen != null && !this.IsOpen.Equals(input.IsOpen))) return false;
+            if (this.AgreementVersion != input.AgreementVersion || (this.AgreementVersion != null && !this.AgreementVersion.Equals(input.AgreementVersion))) return false;
 
-            return 
-                (
-                    this.IsOpen == input.IsOpen ||
-                    (this.IsOpen != null &&
-                    this.IsOpen.Equals(input.IsOpen))
-                ) && 
-                (
-                    this.AgreementVersion == input.AgreementVersion ||
-                    (this.AgreementVersion != null &&
-                    this.AgreementVersion.Equals(input.AgreementVersion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IsOpen != null)
-                    hashCode = hashCode * 59 + this.IsOpen.GetHashCode();
-                if (this.AgreementVersion != null)
-                    hashCode = hashCode * 59 + this.AgreementVersion.GetHashCode();
+                var hashCode = 41;
+                if (this.IsOpen != null) hashCode = hashCode * 59 + this.IsOpen.GetHashCode();
+                if (this.AgreementVersion != null) hashCode = hashCode * 59 + this.AgreementVersion.GetHashCode();
                 return hashCode;
             }
         }

@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(UpdateTrafficMirrorFilterRuleOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Protocol != input.Protocol || (this.Protocol != null && !this.Protocol.Equals(input.Protocol))) return false;
+            if (this.Ethertype != input.Ethertype || (this.Ethertype != null && !this.Ethertype.Equals(input.Ethertype))) return false;
+            if (this.SourceCidrBlock != input.SourceCidrBlock || (this.SourceCidrBlock != null && !this.SourceCidrBlock.Equals(input.SourceCidrBlock))) return false;
+            if (this.DestinationCidrBlock != input.DestinationCidrBlock || (this.DestinationCidrBlock != null && !this.DestinationCidrBlock.Equals(input.DestinationCidrBlock))) return false;
+            if (this.SourcePortRange != input.SourcePortRange || (this.SourcePortRange != null && !this.SourcePortRange.Equals(input.SourcePortRange))) return false;
+            if (this.DestinationPortRange != input.DestinationPortRange || (this.DestinationPortRange != null && !this.DestinationPortRange.Equals(input.DestinationPortRange))) return false;
+            if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
+            if (this.Action != input.Action || (this.Action != null && !this.Action.Equals(input.Action))) return false;
 
-            return 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Protocol == input.Protocol ||
-                    (this.Protocol != null &&
-                    this.Protocol.Equals(input.Protocol))
-                ) && 
-                (
-                    this.Ethertype == input.Ethertype ||
-                    (this.Ethertype != null &&
-                    this.Ethertype.Equals(input.Ethertype))
-                ) && 
-                (
-                    this.SourceCidrBlock == input.SourceCidrBlock ||
-                    (this.SourceCidrBlock != null &&
-                    this.SourceCidrBlock.Equals(input.SourceCidrBlock))
-                ) && 
-                (
-                    this.DestinationCidrBlock == input.DestinationCidrBlock ||
-                    (this.DestinationCidrBlock != null &&
-                    this.DestinationCidrBlock.Equals(input.DestinationCidrBlock))
-                ) && 
-                (
-                    this.SourcePortRange == input.SourcePortRange ||
-                    (this.SourcePortRange != null &&
-                    this.SourcePortRange.Equals(input.SourcePortRange))
-                ) && 
-                (
-                    this.DestinationPortRange == input.DestinationPortRange ||
-                    (this.DestinationPortRange != null &&
-                    this.DestinationPortRange.Equals(input.DestinationPortRange))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    (this.Priority != null &&
-                    this.Priority.Equals(input.Priority))
-                ) && 
-                (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
-                if (this.Ethertype != null)
-                    hashCode = hashCode * 59 + this.Ethertype.GetHashCode();
-                if (this.SourceCidrBlock != null)
-                    hashCode = hashCode * 59 + this.SourceCidrBlock.GetHashCode();
-                if (this.DestinationCidrBlock != null)
-                    hashCode = hashCode * 59 + this.DestinationCidrBlock.GetHashCode();
-                if (this.SourcePortRange != null)
-                    hashCode = hashCode * 59 + this.SourcePortRange.GetHashCode();
-                if (this.DestinationPortRange != null)
-                    hashCode = hashCode * 59 + this.DestinationPortRange.GetHashCode();
-                if (this.Priority != null)
-                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
+                var hashCode = 41;
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.Ethertype != null) hashCode = hashCode * 59 + this.Ethertype.GetHashCode();
+                if (this.SourceCidrBlock != null) hashCode = hashCode * 59 + this.SourceCidrBlock.GetHashCode();
+                if (this.DestinationCidrBlock != null) hashCode = hashCode * 59 + this.DestinationCidrBlock.GetHashCode();
+                if (this.SourcePortRange != null) hashCode = hashCode * 59 + this.SourcePortRange.GetHashCode();
+                if (this.DestinationPortRange != null) hashCode = hashCode * 59 + this.DestinationPortRange.GetHashCode();
+                if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                if (this.Action != null) hashCode = hashCode * 59 + this.Action.GetHashCode();
                 return hashCode;
             }
         }

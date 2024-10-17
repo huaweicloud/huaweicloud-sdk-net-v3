@@ -348,70 +348,21 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(OnlineInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PublishDomain != input.PublishDomain || (this.PublishDomain != null && !this.PublishDomain.Equals(input.PublishDomain))) return false;
+            if (this.App != input.App || (this.App != null && !this.App.Equals(input.App))) return false;
+            if (this.Stream != input.Stream || (this.Stream != null && !this.Stream.Equals(input.Stream))) return false;
+            if (this.VideoCodec != input.VideoCodec) return false;
+            if (this.AudioCodec != input.AudioCodec) return false;
+            if (this.VideoFrameRate != input.VideoFrameRate || (this.VideoFrameRate != null && !this.VideoFrameRate.Equals(input.VideoFrameRate))) return false;
+            if (this.AudioFrameRate != input.AudioFrameRate || (this.AudioFrameRate != null && !this.AudioFrameRate.Equals(input.AudioFrameRate))) return false;
+            if (this.VideoBitrate != input.VideoBitrate || (this.VideoBitrate != null && !this.VideoBitrate.Equals(input.VideoBitrate))) return false;
+            if (this.AudioBitrate != input.AudioBitrate || (this.AudioBitrate != null && !this.AudioBitrate.Equals(input.AudioBitrate))) return false;
+            if (this.Resolution != input.Resolution || (this.Resolution != null && !this.Resolution.Equals(input.Resolution))) return false;
+            if (this.ClientIp != input.ClientIp || (this.ClientIp != null && !this.ClientIp.Equals(input.ClientIp))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
 
-            return 
-                (
-                    this.PublishDomain == input.PublishDomain ||
-                    (this.PublishDomain != null &&
-                    this.PublishDomain.Equals(input.PublishDomain))
-                ) && 
-                (
-                    this.App == input.App ||
-                    (this.App != null &&
-                    this.App.Equals(input.App))
-                ) && 
-                (
-                    this.Stream == input.Stream ||
-                    (this.Stream != null &&
-                    this.Stream.Equals(input.Stream))
-                ) && 
-                (
-                    this.VideoCodec == input.VideoCodec ||
-                    (this.VideoCodec != null &&
-                    this.VideoCodec.Equals(input.VideoCodec))
-                ) && 
-                (
-                    this.AudioCodec == input.AudioCodec ||
-                    (this.AudioCodec != null &&
-                    this.AudioCodec.Equals(input.AudioCodec))
-                ) && 
-                (
-                    this.VideoFrameRate == input.VideoFrameRate ||
-                    (this.VideoFrameRate != null &&
-                    this.VideoFrameRate.Equals(input.VideoFrameRate))
-                ) && 
-                (
-                    this.AudioFrameRate == input.AudioFrameRate ||
-                    (this.AudioFrameRate != null &&
-                    this.AudioFrameRate.Equals(input.AudioFrameRate))
-                ) && 
-                (
-                    this.VideoBitrate == input.VideoBitrate ||
-                    (this.VideoBitrate != null &&
-                    this.VideoBitrate.Equals(input.VideoBitrate))
-                ) && 
-                (
-                    this.AudioBitrate == input.AudioBitrate ||
-                    (this.AudioBitrate != null &&
-                    this.AudioBitrate.Equals(input.AudioBitrate))
-                ) && 
-                (
-                    this.Resolution == input.Resolution ||
-                    (this.Resolution != null &&
-                    this.Resolution.Equals(input.Resolution))
-                ) && 
-                (
-                    this.ClientIp == input.ClientIp ||
-                    (this.ClientIp != null &&
-                    this.ClientIp.Equals(input.ClientIp))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -421,31 +372,19 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PublishDomain != null)
-                    hashCode = hashCode * 59 + this.PublishDomain.GetHashCode();
-                if (this.App != null)
-                    hashCode = hashCode * 59 + this.App.GetHashCode();
-                if (this.Stream != null)
-                    hashCode = hashCode * 59 + this.Stream.GetHashCode();
-                if (this.VideoCodec != null)
-                    hashCode = hashCode * 59 + this.VideoCodec.GetHashCode();
-                if (this.AudioCodec != null)
-                    hashCode = hashCode * 59 + this.AudioCodec.GetHashCode();
-                if (this.VideoFrameRate != null)
-                    hashCode = hashCode * 59 + this.VideoFrameRate.GetHashCode();
-                if (this.AudioFrameRate != null)
-                    hashCode = hashCode * 59 + this.AudioFrameRate.GetHashCode();
-                if (this.VideoBitrate != null)
-                    hashCode = hashCode * 59 + this.VideoBitrate.GetHashCode();
-                if (this.AudioBitrate != null)
-                    hashCode = hashCode * 59 + this.AudioBitrate.GetHashCode();
-                if (this.Resolution != null)
-                    hashCode = hashCode * 59 + this.Resolution.GetHashCode();
-                if (this.ClientIp != null)
-                    hashCode = hashCode * 59 + this.ClientIp.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                var hashCode = 41;
+                if (this.PublishDomain != null) hashCode = hashCode * 59 + this.PublishDomain.GetHashCode();
+                if (this.App != null) hashCode = hashCode * 59 + this.App.GetHashCode();
+                if (this.Stream != null) hashCode = hashCode * 59 + this.Stream.GetHashCode();
+                hashCode = hashCode * 59 + this.VideoCodec.GetHashCode();
+                hashCode = hashCode * 59 + this.AudioCodec.GetHashCode();
+                if (this.VideoFrameRate != null) hashCode = hashCode * 59 + this.VideoFrameRate.GetHashCode();
+                if (this.AudioFrameRate != null) hashCode = hashCode * 59 + this.AudioFrameRate.GetHashCode();
+                if (this.VideoBitrate != null) hashCode = hashCode * 59 + this.VideoBitrate.GetHashCode();
+                if (this.AudioBitrate != null) hashCode = hashCode * 59 + this.AudioBitrate.GetHashCode();
+                if (this.Resolution != null) hashCode = hashCode * 59 + this.Resolution.GetHashCode();
+                if (this.ClientIp != null) hashCode = hashCode * 59 + this.ClientIp.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 return hashCode;
             }
         }

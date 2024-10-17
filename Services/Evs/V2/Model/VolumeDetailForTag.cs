@@ -273,179 +273,42 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(VolumeDetailForTag input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Links != input.Links || (this.Links != null && input.Links != null && !this.Links.SequenceEqual(input.Links))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Attachments != input.Attachments || (this.Attachments != null && input.Attachments != null && !this.Attachments.SequenceEqual(input.Attachments))) return false;
+            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
+            if (this.OsVolHostAttrhost != input.OsVolHostAttrhost || (this.OsVolHostAttrhost != null && !this.OsVolHostAttrhost.Equals(input.OsVolHostAttrhost))) return false;
+            if (this.SourceVolid != input.SourceVolid || (this.SourceVolid != null && !this.SourceVolid.Equals(input.SourceVolid))) return false;
+            if (this.SnapshotId != input.SnapshotId || (this.SnapshotId != null && !this.SnapshotId.Equals(input.SnapshotId))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.OsVolTenantAttrtenantId != input.OsVolTenantAttrtenantId || (this.OsVolTenantAttrtenantId != null && !this.OsVolTenantAttrtenantId.Equals(input.OsVolTenantAttrtenantId))) return false;
+            if (this.VolumeImageMetadata != input.VolumeImageMetadata || (this.VolumeImageMetadata != null && input.VolumeImageMetadata != null && !this.VolumeImageMetadata.SequenceEqual(input.VolumeImageMetadata))) return false;
+            if (this.VolumeType != input.VolumeType || (this.VolumeType != null && !this.VolumeType.Equals(input.VolumeType))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.ConsistencygroupId != input.ConsistencygroupId || (this.ConsistencygroupId != null && !this.ConsistencygroupId.Equals(input.ConsistencygroupId))) return false;
+            if (this.Bootable != input.Bootable || (this.Bootable != null && !this.Bootable.Equals(input.Bootable))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && !this.Metadata.Equals(input.Metadata))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.Encrypted != input.Encrypted || (this.Encrypted != null && !this.Encrypted.Equals(input.Encrypted))) return false;
+            if (this.ReplicationStatus != input.ReplicationStatus || (this.ReplicationStatus != null && !this.ReplicationStatus.Equals(input.ReplicationStatus))) return false;
+            if (this.OsVolumeReplicationextendedStatus != input.OsVolumeReplicationextendedStatus || (this.OsVolumeReplicationextendedStatus != null && !this.OsVolumeReplicationextendedStatus.Equals(input.OsVolumeReplicationextendedStatus))) return false;
+            if (this.OsVolMigStatusAttrmigstat != input.OsVolMigStatusAttrmigstat || (this.OsVolMigStatusAttrmigstat != null && !this.OsVolMigStatusAttrmigstat.Equals(input.OsVolMigStatusAttrmigstat))) return false;
+            if (this.OsVolMigStatusAttrnameId != input.OsVolMigStatusAttrnameId || (this.OsVolMigStatusAttrnameId != null && !this.OsVolMigStatusAttrnameId.Equals(input.OsVolMigStatusAttrnameId))) return false;
+            if (this.Shareable != input.Shareable || (this.Shareable != null && !this.Shareable.Equals(input.Shareable))) return false;
+            if (this.UserId != input.UserId || (this.UserId != null && !this.UserId.Equals(input.UserId))) return false;
+            if (this.ServiceType != input.ServiceType || (this.ServiceType != null && !this.ServiceType.Equals(input.ServiceType))) return false;
+            if (this.Multiattach != input.Multiattach || (this.Multiattach != null && !this.Multiattach.Equals(input.Multiattach))) return false;
+            if (this.DedicatedStorageId != input.DedicatedStorageId || (this.DedicatedStorageId != null && !this.DedicatedStorageId.Equals(input.DedicatedStorageId))) return false;
+            if (this.DedicatedStorageName != input.DedicatedStorageName || (this.DedicatedStorageName != null && !this.DedicatedStorageName.Equals(input.DedicatedStorageName))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.Wwn != input.Wwn || (this.Wwn != null && !this.Wwn.Equals(input.Wwn))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    this.Links != null &&
-                    input.Links != null &&
-                    this.Links.SequenceEqual(input.Links)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Attachments == input.Attachments ||
-                    this.Attachments != null &&
-                    input.Attachments != null &&
-                    this.Attachments.SequenceEqual(input.Attachments)
-                ) && 
-                (
-                    this.AvailabilityZone == input.AvailabilityZone ||
-                    (this.AvailabilityZone != null &&
-                    this.AvailabilityZone.Equals(input.AvailabilityZone))
-                ) && 
-                (
-                    this.OsVolHostAttrhost == input.OsVolHostAttrhost ||
-                    (this.OsVolHostAttrhost != null &&
-                    this.OsVolHostAttrhost.Equals(input.OsVolHostAttrhost))
-                ) && 
-                (
-                    this.SourceVolid == input.SourceVolid ||
-                    (this.SourceVolid != null &&
-                    this.SourceVolid.Equals(input.SourceVolid))
-                ) && 
-                (
-                    this.SnapshotId == input.SnapshotId ||
-                    (this.SnapshotId != null &&
-                    this.SnapshotId.Equals(input.SnapshotId))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.OsVolTenantAttrtenantId == input.OsVolTenantAttrtenantId ||
-                    (this.OsVolTenantAttrtenantId != null &&
-                    this.OsVolTenantAttrtenantId.Equals(input.OsVolTenantAttrtenantId))
-                ) && 
-                (
-                    this.VolumeImageMetadata == input.VolumeImageMetadata ||
-                    this.VolumeImageMetadata != null &&
-                    input.VolumeImageMetadata != null &&
-                    this.VolumeImageMetadata.SequenceEqual(input.VolumeImageMetadata)
-                ) && 
-                (
-                    this.VolumeType == input.VolumeType ||
-                    (this.VolumeType != null &&
-                    this.VolumeType.Equals(input.VolumeType))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.ConsistencygroupId == input.ConsistencygroupId ||
-                    (this.ConsistencygroupId != null &&
-                    this.ConsistencygroupId.Equals(input.ConsistencygroupId))
-                ) && 
-                (
-                    this.Bootable == input.Bootable ||
-                    (this.Bootable != null &&
-                    this.Bootable.Equals(input.Bootable))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    (this.Metadata != null &&
-                    this.Metadata.Equals(input.Metadata))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.Encrypted == input.Encrypted ||
-                    (this.Encrypted != null &&
-                    this.Encrypted.Equals(input.Encrypted))
-                ) && 
-                (
-                    this.ReplicationStatus == input.ReplicationStatus ||
-                    (this.ReplicationStatus != null &&
-                    this.ReplicationStatus.Equals(input.ReplicationStatus))
-                ) && 
-                (
-                    this.OsVolumeReplicationextendedStatus == input.OsVolumeReplicationextendedStatus ||
-                    (this.OsVolumeReplicationextendedStatus != null &&
-                    this.OsVolumeReplicationextendedStatus.Equals(input.OsVolumeReplicationextendedStatus))
-                ) && 
-                (
-                    this.OsVolMigStatusAttrmigstat == input.OsVolMigStatusAttrmigstat ||
-                    (this.OsVolMigStatusAttrmigstat != null &&
-                    this.OsVolMigStatusAttrmigstat.Equals(input.OsVolMigStatusAttrmigstat))
-                ) && 
-                (
-                    this.OsVolMigStatusAttrnameId == input.OsVolMigStatusAttrnameId ||
-                    (this.OsVolMigStatusAttrnameId != null &&
-                    this.OsVolMigStatusAttrnameId.Equals(input.OsVolMigStatusAttrnameId))
-                ) && 
-                (
-                    this.Shareable == input.Shareable ||
-                    (this.Shareable != null &&
-                    this.Shareable.Equals(input.Shareable))
-                ) && 
-                (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
-                ) && 
-                (
-                    this.ServiceType == input.ServiceType ||
-                    (this.ServiceType != null &&
-                    this.ServiceType.Equals(input.ServiceType))
-                ) && 
-                (
-                    this.Multiattach == input.Multiattach ||
-                    (this.Multiattach != null &&
-                    this.Multiattach.Equals(input.Multiattach))
-                ) && 
-                (
-                    this.DedicatedStorageId == input.DedicatedStorageId ||
-                    (this.DedicatedStorageId != null &&
-                    this.DedicatedStorageId.Equals(input.DedicatedStorageId))
-                ) && 
-                (
-                    this.DedicatedStorageName == input.DedicatedStorageName ||
-                    (this.DedicatedStorageName != null &&
-                    this.DedicatedStorageName.Equals(input.DedicatedStorageName))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.Wwn == input.Wwn ||
-                    (this.Wwn != null &&
-                    this.Wwn.Equals(input.Wwn))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -455,73 +318,40 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Links != null)
-                    hashCode = hashCode * 59 + this.Links.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Attachments != null)
-                    hashCode = hashCode * 59 + this.Attachments.GetHashCode();
-                if (this.AvailabilityZone != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
-                if (this.OsVolHostAttrhost != null)
-                    hashCode = hashCode * 59 + this.OsVolHostAttrhost.GetHashCode();
-                if (this.SourceVolid != null)
-                    hashCode = hashCode * 59 + this.SourceVolid.GetHashCode();
-                if (this.SnapshotId != null)
-                    hashCode = hashCode * 59 + this.SnapshotId.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.OsVolTenantAttrtenantId != null)
-                    hashCode = hashCode * 59 + this.OsVolTenantAttrtenantId.GetHashCode();
-                if (this.VolumeImageMetadata != null)
-                    hashCode = hashCode * 59 + this.VolumeImageMetadata.GetHashCode();
-                if (this.VolumeType != null)
-                    hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.ConsistencygroupId != null)
-                    hashCode = hashCode * 59 + this.ConsistencygroupId.GetHashCode();
-                if (this.Bootable != null)
-                    hashCode = hashCode * 59 + this.Bootable.GetHashCode();
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.Encrypted != null)
-                    hashCode = hashCode * 59 + this.Encrypted.GetHashCode();
-                if (this.ReplicationStatus != null)
-                    hashCode = hashCode * 59 + this.ReplicationStatus.GetHashCode();
-                if (this.OsVolumeReplicationextendedStatus != null)
-                    hashCode = hashCode * 59 + this.OsVolumeReplicationextendedStatus.GetHashCode();
-                if (this.OsVolMigStatusAttrmigstat != null)
-                    hashCode = hashCode * 59 + this.OsVolMigStatusAttrmigstat.GetHashCode();
-                if (this.OsVolMigStatusAttrnameId != null)
-                    hashCode = hashCode * 59 + this.OsVolMigStatusAttrnameId.GetHashCode();
-                if (this.Shareable != null)
-                    hashCode = hashCode * 59 + this.Shareable.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.ServiceType != null)
-                    hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
-                if (this.Multiattach != null)
-                    hashCode = hashCode * 59 + this.Multiattach.GetHashCode();
-                if (this.DedicatedStorageId != null)
-                    hashCode = hashCode * 59 + this.DedicatedStorageId.GetHashCode();
-                if (this.DedicatedStorageName != null)
-                    hashCode = hashCode * 59 + this.DedicatedStorageName.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.Wwn != null)
-                    hashCode = hashCode * 59 + this.Wwn.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Links != null) hashCode = hashCode * 59 + this.Links.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Attachments != null) hashCode = hashCode * 59 + this.Attachments.GetHashCode();
+                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
+                if (this.OsVolHostAttrhost != null) hashCode = hashCode * 59 + this.OsVolHostAttrhost.GetHashCode();
+                if (this.SourceVolid != null) hashCode = hashCode * 59 + this.SourceVolid.GetHashCode();
+                if (this.SnapshotId != null) hashCode = hashCode * 59 + this.SnapshotId.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.OsVolTenantAttrtenantId != null) hashCode = hashCode * 59 + this.OsVolTenantAttrtenantId.GetHashCode();
+                if (this.VolumeImageMetadata != null) hashCode = hashCode * 59 + this.VolumeImageMetadata.GetHashCode();
+                if (this.VolumeType != null) hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.ConsistencygroupId != null) hashCode = hashCode * 59 + this.ConsistencygroupId.GetHashCode();
+                if (this.Bootable != null) hashCode = hashCode * 59 + this.Bootable.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.Encrypted != null) hashCode = hashCode * 59 + this.Encrypted.GetHashCode();
+                if (this.ReplicationStatus != null) hashCode = hashCode * 59 + this.ReplicationStatus.GetHashCode();
+                if (this.OsVolumeReplicationextendedStatus != null) hashCode = hashCode * 59 + this.OsVolumeReplicationextendedStatus.GetHashCode();
+                if (this.OsVolMigStatusAttrmigstat != null) hashCode = hashCode * 59 + this.OsVolMigStatusAttrmigstat.GetHashCode();
+                if (this.OsVolMigStatusAttrnameId != null) hashCode = hashCode * 59 + this.OsVolMigStatusAttrnameId.GetHashCode();
+                if (this.Shareable != null) hashCode = hashCode * 59 + this.Shareable.GetHashCode();
+                if (this.UserId != null) hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                if (this.ServiceType != null) hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
+                if (this.Multiattach != null) hashCode = hashCode * 59 + this.Multiattach.GetHashCode();
+                if (this.DedicatedStorageId != null) hashCode = hashCode * 59 + this.DedicatedStorageId.GetHashCode();
+                if (this.DedicatedStorageName != null) hashCode = hashCode * 59 + this.DedicatedStorageName.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.Wwn != null) hashCode = hashCode * 59 + this.Wwn.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

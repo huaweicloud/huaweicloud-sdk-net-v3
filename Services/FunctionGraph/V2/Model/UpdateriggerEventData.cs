@@ -184,30 +184,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(UpdateriggerEventData input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IsSerial != input.IsSerial || (this.IsSerial != null && !this.IsSerial.Equals(input.IsSerial))) return false;
+            if (this.MaxFetchBytes != input.MaxFetchBytes || (this.MaxFetchBytes != null && !this.MaxFetchBytes.Equals(input.MaxFetchBytes))) return false;
+            if (this.PollingInterval != input.PollingInterval || (this.PollingInterval != null && !this.PollingInterval.Equals(input.PollingInterval))) return false;
+            if (this.PollingUnit != input.PollingUnit) return false;
 
-            return 
-                (
-                    this.IsSerial == input.IsSerial ||
-                    (this.IsSerial != null &&
-                    this.IsSerial.Equals(input.IsSerial))
-                ) && 
-                (
-                    this.MaxFetchBytes == input.MaxFetchBytes ||
-                    (this.MaxFetchBytes != null &&
-                    this.MaxFetchBytes.Equals(input.MaxFetchBytes))
-                ) && 
-                (
-                    this.PollingInterval == input.PollingInterval ||
-                    (this.PollingInterval != null &&
-                    this.PollingInterval.Equals(input.PollingInterval))
-                ) && 
-                (
-                    this.PollingUnit == input.PollingUnit ||
-                    (this.PollingUnit != null &&
-                    this.PollingUnit.Equals(input.PollingUnit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -217,15 +200,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IsSerial != null)
-                    hashCode = hashCode * 59 + this.IsSerial.GetHashCode();
-                if (this.MaxFetchBytes != null)
-                    hashCode = hashCode * 59 + this.MaxFetchBytes.GetHashCode();
-                if (this.PollingInterval != null)
-                    hashCode = hashCode * 59 + this.PollingInterval.GetHashCode();
-                if (this.PollingUnit != null)
-                    hashCode = hashCode * 59 + this.PollingUnit.GetHashCode();
+                var hashCode = 41;
+                if (this.IsSerial != null) hashCode = hashCode * 59 + this.IsSerial.GetHashCode();
+                if (this.MaxFetchBytes != null) hashCode = hashCode * 59 + this.MaxFetchBytes.GetHashCode();
+                if (this.PollingInterval != null) hashCode = hashCode * 59 + this.PollingInterval.GetHashCode();
+                hashCode = hashCode * 59 + this.PollingUnit.GetHashCode();
                 return hashCode;
             }
         }

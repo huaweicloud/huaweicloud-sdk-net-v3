@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(EnvironmentPermissionDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CanDelete != input.CanDelete || (this.CanDelete != null && !this.CanDelete.Equals(input.CanDelete))) return false;
+            if (this.CanDeploy != input.CanDeploy || (this.CanDeploy != null && !this.CanDeploy.Equals(input.CanDeploy))) return false;
+            if (this.CanEdit != input.CanEdit || (this.CanEdit != null && !this.CanEdit.Equals(input.CanEdit))) return false;
+            if (this.CanManage != input.CanManage || (this.CanManage != null && !this.CanManage.Equals(input.CanManage))) return false;
+            if (this.CanView != input.CanView || (this.CanView != null && !this.CanView.Equals(input.CanView))) return false;
 
-            return 
-                (
-                    this.CanDelete == input.CanDelete ||
-                    (this.CanDelete != null &&
-                    this.CanDelete.Equals(input.CanDelete))
-                ) && 
-                (
-                    this.CanDeploy == input.CanDeploy ||
-                    (this.CanDeploy != null &&
-                    this.CanDeploy.Equals(input.CanDeploy))
-                ) && 
-                (
-                    this.CanEdit == input.CanEdit ||
-                    (this.CanEdit != null &&
-                    this.CanEdit.Equals(input.CanEdit))
-                ) && 
-                (
-                    this.CanManage == input.CanManage ||
-                    (this.CanManage != null &&
-                    this.CanManage.Equals(input.CanManage))
-                ) && 
-                (
-                    this.CanView == input.CanView ||
-                    (this.CanView != null &&
-                    this.CanView.Equals(input.CanView))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CanDelete != null)
-                    hashCode = hashCode * 59 + this.CanDelete.GetHashCode();
-                if (this.CanDeploy != null)
-                    hashCode = hashCode * 59 + this.CanDeploy.GetHashCode();
-                if (this.CanEdit != null)
-                    hashCode = hashCode * 59 + this.CanEdit.GetHashCode();
-                if (this.CanManage != null)
-                    hashCode = hashCode * 59 + this.CanManage.GetHashCode();
-                if (this.CanView != null)
-                    hashCode = hashCode * 59 + this.CanView.GetHashCode();
+                var hashCode = 41;
+                if (this.CanDelete != null) hashCode = hashCode * 59 + this.CanDelete.GetHashCode();
+                if (this.CanDeploy != null) hashCode = hashCode * 59 + this.CanDeploy.GetHashCode();
+                if (this.CanEdit != null) hashCode = hashCode * 59 + this.CanEdit.GetHashCode();
+                if (this.CanManage != null) hashCode = hashCode * 59 + this.CanManage.GetHashCode();
+                if (this.CanView != null) hashCode = hashCode * 59 + this.CanView.GetHashCode();
                 return hashCode;
             }
         }

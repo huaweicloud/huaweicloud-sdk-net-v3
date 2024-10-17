@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ShowMigrationTaskStatsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FullMigrationProgress != input.FullMigrationProgress || (this.FullMigrationProgress != null && !this.FullMigrationProgress.Equals(input.FullMigrationProgress))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.SourceDbsize != input.SourceDbsize || (this.SourceDbsize != null && !this.SourceDbsize.Equals(input.SourceDbsize))) return false;
+            if (this.TargetDbsize != input.TargetDbsize || (this.TargetDbsize != null && !this.TargetDbsize.Equals(input.TargetDbsize))) return false;
+            if (this.TargetInputKbps != input.TargetInputKbps || (this.TargetInputKbps != null && !this.TargetInputKbps.Equals(input.TargetInputKbps))) return false;
+            if (this.TargetOps != input.TargetOps || (this.TargetOps != null && !this.TargetOps.Equals(input.TargetOps))) return false;
+            if (this.IsMigrating != input.IsMigrating || (this.IsMigrating != null && !this.IsMigrating.Equals(input.IsMigrating))) return false;
 
-            return 
-                (
-                    this.FullMigrationProgress == input.FullMigrationProgress ||
-                    (this.FullMigrationProgress != null &&
-                    this.FullMigrationProgress.Equals(input.FullMigrationProgress))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.SourceDbsize == input.SourceDbsize ||
-                    (this.SourceDbsize != null &&
-                    this.SourceDbsize.Equals(input.SourceDbsize))
-                ) && 
-                (
-                    this.TargetDbsize == input.TargetDbsize ||
-                    (this.TargetDbsize != null &&
-                    this.TargetDbsize.Equals(input.TargetDbsize))
-                ) && 
-                (
-                    this.TargetInputKbps == input.TargetInputKbps ||
-                    (this.TargetInputKbps != null &&
-                    this.TargetInputKbps.Equals(input.TargetInputKbps))
-                ) && 
-                (
-                    this.TargetOps == input.TargetOps ||
-                    (this.TargetOps != null &&
-                    this.TargetOps.Equals(input.TargetOps))
-                ) && 
-                (
-                    this.IsMigrating == input.IsMigrating ||
-                    (this.IsMigrating != null &&
-                    this.IsMigrating.Equals(input.IsMigrating))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FullMigrationProgress != null)
-                    hashCode = hashCode * 59 + this.FullMigrationProgress.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.SourceDbsize != null)
-                    hashCode = hashCode * 59 + this.SourceDbsize.GetHashCode();
-                if (this.TargetDbsize != null)
-                    hashCode = hashCode * 59 + this.TargetDbsize.GetHashCode();
-                if (this.TargetInputKbps != null)
-                    hashCode = hashCode * 59 + this.TargetInputKbps.GetHashCode();
-                if (this.TargetOps != null)
-                    hashCode = hashCode * 59 + this.TargetOps.GetHashCode();
-                if (this.IsMigrating != null)
-                    hashCode = hashCode * 59 + this.IsMigrating.GetHashCode();
+                var hashCode = 41;
+                if (this.FullMigrationProgress != null) hashCode = hashCode * 59 + this.FullMigrationProgress.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.SourceDbsize != null) hashCode = hashCode * 59 + this.SourceDbsize.GetHashCode();
+                if (this.TargetDbsize != null) hashCode = hashCode * 59 + this.TargetDbsize.GetHashCode();
+                if (this.TargetInputKbps != null) hashCode = hashCode * 59 + this.TargetInputKbps.GetHashCode();
+                if (this.TargetOps != null) hashCode = hashCode * 59 + this.TargetOps.GetHashCode();
+                if (this.IsMigrating != null) hashCode = hashCode * 59 + this.IsMigrating.GetHashCode();
                 return hashCode;
             }
         }

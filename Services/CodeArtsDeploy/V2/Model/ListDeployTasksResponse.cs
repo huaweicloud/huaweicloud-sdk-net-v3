@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(ListDeployTasksResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TotalNum != input.TotalNum || (this.TotalNum != null && !this.TotalNum.Equals(input.TotalNum))) return false;
+            if (this.Result != input.Result || (this.Result != null && input.Result != null && !this.Result.SequenceEqual(input.Result))) return false;
 
-            return 
-                (
-                    this.TotalNum == input.TotalNum ||
-                    (this.TotalNum != null &&
-                    this.TotalNum.Equals(input.TotalNum))
-                ) && 
-                (
-                    this.Result == input.Result ||
-                    this.Result != null &&
-                    input.Result != null &&
-                    this.Result.SequenceEqual(input.Result)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TotalNum != null)
-                    hashCode = hashCode * 59 + this.TotalNum.GetHashCode();
-                if (this.Result != null)
-                    hashCode = hashCode * 59 + this.Result.GetHashCode();
+                var hashCode = 41;
+                if (this.TotalNum != null) hashCode = hashCode * 59 + this.TotalNum.GetHashCode();
+                if (this.Result != null) hashCode = hashCode * 59 + this.Result.GetHashCode();
                 return hashCode;
             }
         }

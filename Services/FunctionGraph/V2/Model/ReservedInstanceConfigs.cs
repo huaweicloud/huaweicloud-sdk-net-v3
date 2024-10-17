@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(ReservedInstanceConfigs input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FunctionUrn != input.FunctionUrn || (this.FunctionUrn != null && !this.FunctionUrn.Equals(input.FunctionUrn))) return false;
+            if (this.QualifierType != input.QualifierType || (this.QualifierType != null && !this.QualifierType.Equals(input.QualifierType))) return false;
+            if (this.QualifierName != input.QualifierName || (this.QualifierName != null && !this.QualifierName.Equals(input.QualifierName))) return false;
+            if (this.MinCount != input.MinCount || (this.MinCount != null && !this.MinCount.Equals(input.MinCount))) return false;
+            if (this.IdleMode != input.IdleMode || (this.IdleMode != null && !this.IdleMode.Equals(input.IdleMode))) return false;
+            if (this.TacticsConfig != input.TacticsConfig || (this.TacticsConfig != null && !this.TacticsConfig.Equals(input.TacticsConfig))) return false;
 
-            return 
-                (
-                    this.FunctionUrn == input.FunctionUrn ||
-                    (this.FunctionUrn != null &&
-                    this.FunctionUrn.Equals(input.FunctionUrn))
-                ) && 
-                (
-                    this.QualifierType == input.QualifierType ||
-                    (this.QualifierType != null &&
-                    this.QualifierType.Equals(input.QualifierType))
-                ) && 
-                (
-                    this.QualifierName == input.QualifierName ||
-                    (this.QualifierName != null &&
-                    this.QualifierName.Equals(input.QualifierName))
-                ) && 
-                (
-                    this.MinCount == input.MinCount ||
-                    (this.MinCount != null &&
-                    this.MinCount.Equals(input.MinCount))
-                ) && 
-                (
-                    this.IdleMode == input.IdleMode ||
-                    (this.IdleMode != null &&
-                    this.IdleMode.Equals(input.IdleMode))
-                ) && 
-                (
-                    this.TacticsConfig == input.TacticsConfig ||
-                    (this.TacticsConfig != null &&
-                    this.TacticsConfig.Equals(input.TacticsConfig))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FunctionUrn != null)
-                    hashCode = hashCode * 59 + this.FunctionUrn.GetHashCode();
-                if (this.QualifierType != null)
-                    hashCode = hashCode * 59 + this.QualifierType.GetHashCode();
-                if (this.QualifierName != null)
-                    hashCode = hashCode * 59 + this.QualifierName.GetHashCode();
-                if (this.MinCount != null)
-                    hashCode = hashCode * 59 + this.MinCount.GetHashCode();
-                if (this.IdleMode != null)
-                    hashCode = hashCode * 59 + this.IdleMode.GetHashCode();
-                if (this.TacticsConfig != null)
-                    hashCode = hashCode * 59 + this.TacticsConfig.GetHashCode();
+                var hashCode = 41;
+                if (this.FunctionUrn != null) hashCode = hashCode * 59 + this.FunctionUrn.GetHashCode();
+                if (this.QualifierType != null) hashCode = hashCode * 59 + this.QualifierType.GetHashCode();
+                if (this.QualifierName != null) hashCode = hashCode * 59 + this.QualifierName.GetHashCode();
+                if (this.MinCount != null) hashCode = hashCode * 59 + this.MinCount.GetHashCode();
+                if (this.IdleMode != null) hashCode = hashCode * 59 + this.IdleMode.GetHashCode();
+                if (this.TacticsConfig != null) hashCode = hashCode * 59 + this.TacticsConfig.GetHashCode();
                 return hashCode;
             }
         }

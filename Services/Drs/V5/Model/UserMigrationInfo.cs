@@ -77,37 +77,14 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(UserMigrationInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IsMigrateUser != input.IsMigrateUser || (this.IsMigrateUser != null && !this.IsMigrateUser.Equals(input.IsMigrateUser))) return false;
+            if (this.IsSetPassword != input.IsSetPassword || (this.IsSetPassword != null && !this.IsSetPassword.Equals(input.IsSetPassword))) return false;
+            if (this.Password != input.Password || (this.Password != null && !this.Password.Equals(input.Password))) return false;
+            if (this.UserList != input.UserList || (this.UserList != null && input.UserList != null && !this.UserList.SequenceEqual(input.UserList))) return false;
+            if (this.RoleList != input.RoleList || (this.RoleList != null && input.RoleList != null && !this.RoleList.SequenceEqual(input.RoleList))) return false;
 
-            return 
-                (
-                    this.IsMigrateUser == input.IsMigrateUser ||
-                    (this.IsMigrateUser != null &&
-                    this.IsMigrateUser.Equals(input.IsMigrateUser))
-                ) && 
-                (
-                    this.IsSetPassword == input.IsSetPassword ||
-                    (this.IsSetPassword != null &&
-                    this.IsSetPassword.Equals(input.IsSetPassword))
-                ) && 
-                (
-                    this.Password == input.Password ||
-                    (this.Password != null &&
-                    this.Password.Equals(input.Password))
-                ) && 
-                (
-                    this.UserList == input.UserList ||
-                    this.UserList != null &&
-                    input.UserList != null &&
-                    this.UserList.SequenceEqual(input.UserList)
-                ) && 
-                (
-                    this.RoleList == input.RoleList ||
-                    this.RoleList != null &&
-                    input.RoleList != null &&
-                    this.RoleList.SequenceEqual(input.RoleList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -117,17 +94,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IsMigrateUser != null)
-                    hashCode = hashCode * 59 + this.IsMigrateUser.GetHashCode();
-                if (this.IsSetPassword != null)
-                    hashCode = hashCode * 59 + this.IsSetPassword.GetHashCode();
-                if (this.Password != null)
-                    hashCode = hashCode * 59 + this.Password.GetHashCode();
-                if (this.UserList != null)
-                    hashCode = hashCode * 59 + this.UserList.GetHashCode();
-                if (this.RoleList != null)
-                    hashCode = hashCode * 59 + this.RoleList.GetHashCode();
+                var hashCode = 41;
+                if (this.IsMigrateUser != null) hashCode = hashCode * 59 + this.IsMigrateUser.GetHashCode();
+                if (this.IsSetPassword != null) hashCode = hashCode * 59 + this.IsSetPassword.GetHashCode();
+                if (this.Password != null) hashCode = hashCode * 59 + this.Password.GetHashCode();
+                if (this.UserList != null) hashCode = hashCode * 59 + this.UserList.GetHashCode();
+                if (this.RoleList != null) hashCode = hashCode * 59 + this.RoleList.GetHashCode();
                 return hashCode;
             }
         }

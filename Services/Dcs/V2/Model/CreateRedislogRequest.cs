@@ -200,30 +200,13 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(CreateRedislogRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.QueryTime != input.QueryTime) return false;
+            if (this.LogType != input.LogType || (this.LogType != null && !this.LogType.Equals(input.LogType))) return false;
+            if (this.ReplicationId != input.ReplicationId || (this.ReplicationId != null && !this.ReplicationId.Equals(input.ReplicationId))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.QueryTime == input.QueryTime ||
-                    (this.QueryTime != null &&
-                    this.QueryTime.Equals(input.QueryTime))
-                ) && 
-                (
-                    this.LogType == input.LogType ||
-                    (this.LogType != null &&
-                    this.LogType.Equals(input.LogType))
-                ) && 
-                (
-                    this.ReplicationId == input.ReplicationId ||
-                    (this.ReplicationId != null &&
-                    this.ReplicationId.Equals(input.ReplicationId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -233,15 +216,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.QueryTime != null)
-                    hashCode = hashCode * 59 + this.QueryTime.GetHashCode();
-                if (this.LogType != null)
-                    hashCode = hashCode * 59 + this.LogType.GetHashCode();
-                if (this.ReplicationId != null)
-                    hashCode = hashCode * 59 + this.ReplicationId.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                hashCode = hashCode * 59 + this.QueryTime.GetHashCode();
+                if (this.LogType != null) hashCode = hashCode * 59 + this.LogType.GetHashCode();
+                if (this.ReplicationId != null) hashCode = hashCode * 59 + this.ReplicationId.GetHashCode();
                 return hashCode;
             }
         }

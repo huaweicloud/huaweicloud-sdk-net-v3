@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public bool Equals(RouterWithStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.RouterId != input.RouterId || (this.RouterId != null && !this.RouterId.Equals(input.RouterId))) return false;
+            if (this.RouterRegion != input.RouterRegion || (this.RouterRegion != null && !this.RouterRegion.Equals(input.RouterRegion))) return false;
 
-            return 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.RouterId == input.RouterId ||
-                    (this.RouterId != null &&
-                    this.RouterId.Equals(input.RouterId))
-                ) && 
-                (
-                    this.RouterRegion == input.RouterRegion ||
-                    (this.RouterRegion != null &&
-                    this.RouterRegion.Equals(input.RouterRegion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.RouterId != null)
-                    hashCode = hashCode * 59 + this.RouterId.GetHashCode();
-                if (this.RouterRegion != null)
-                    hashCode = hashCode * 59 + this.RouterRegion.GetHashCode();
+                var hashCode = 41;
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.RouterId != null) hashCode = hashCode * 59 + this.RouterId.GetHashCode();
+                if (this.RouterRegion != null) hashCode = hashCode * 59 + this.RouterRegion.GetHashCode();
                 return hashCode;
             }
         }

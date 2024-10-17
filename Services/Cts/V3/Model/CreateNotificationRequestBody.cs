@@ -313,47 +313,16 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         /// </summary>
         public bool Equals(CreateNotificationRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NotificationName != input.NotificationName || (this.NotificationName != null && !this.NotificationName.Equals(input.NotificationName))) return false;
+            if (this.OperationType != input.OperationType) return false;
+            if (this.AgencyName != input.AgencyName) return false;
+            if (this.Operations != input.Operations || (this.Operations != null && input.Operations != null && !this.Operations.SequenceEqual(input.Operations))) return false;
+            if (this.NotifyUserList != input.NotifyUserList || (this.NotifyUserList != null && input.NotifyUserList != null && !this.NotifyUserList.SequenceEqual(input.NotifyUserList))) return false;
+            if (this.TopicId != input.TopicId || (this.TopicId != null && !this.TopicId.Equals(input.TopicId))) return false;
+            if (this.Filter != input.Filter || (this.Filter != null && !this.Filter.Equals(input.Filter))) return false;
 
-            return 
-                (
-                    this.NotificationName == input.NotificationName ||
-                    (this.NotificationName != null &&
-                    this.NotificationName.Equals(input.NotificationName))
-                ) && 
-                (
-                    this.OperationType == input.OperationType ||
-                    (this.OperationType != null &&
-                    this.OperationType.Equals(input.OperationType))
-                ) && 
-                (
-                    this.AgencyName == input.AgencyName ||
-                    (this.AgencyName != null &&
-                    this.AgencyName.Equals(input.AgencyName))
-                ) && 
-                (
-                    this.Operations == input.Operations ||
-                    this.Operations != null &&
-                    input.Operations != null &&
-                    this.Operations.SequenceEqual(input.Operations)
-                ) && 
-                (
-                    this.NotifyUserList == input.NotifyUserList ||
-                    this.NotifyUserList != null &&
-                    input.NotifyUserList != null &&
-                    this.NotifyUserList.SequenceEqual(input.NotifyUserList)
-                ) && 
-                (
-                    this.TopicId == input.TopicId ||
-                    (this.TopicId != null &&
-                    this.TopicId.Equals(input.TopicId))
-                ) && 
-                (
-                    this.Filter == input.Filter ||
-                    (this.Filter != null &&
-                    this.Filter.Equals(input.Filter))
-                );
+            return true;
         }
 
         /// <summary>
@@ -363,21 +332,14 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NotificationName != null)
-                    hashCode = hashCode * 59 + this.NotificationName.GetHashCode();
-                if (this.OperationType != null)
-                    hashCode = hashCode * 59 + this.OperationType.GetHashCode();
-                if (this.AgencyName != null)
-                    hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
-                if (this.Operations != null)
-                    hashCode = hashCode * 59 + this.Operations.GetHashCode();
-                if (this.NotifyUserList != null)
-                    hashCode = hashCode * 59 + this.NotifyUserList.GetHashCode();
-                if (this.TopicId != null)
-                    hashCode = hashCode * 59 + this.TopicId.GetHashCode();
-                if (this.Filter != null)
-                    hashCode = hashCode * 59 + this.Filter.GetHashCode();
+                var hashCode = 41;
+                if (this.NotificationName != null) hashCode = hashCode * 59 + this.NotificationName.GetHashCode();
+                hashCode = hashCode * 59 + this.OperationType.GetHashCode();
+                hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
+                if (this.Operations != null) hashCode = hashCode * 59 + this.Operations.GetHashCode();
+                if (this.NotifyUserList != null) hashCode = hashCode * 59 + this.NotifyUserList.GetHashCode();
+                if (this.TopicId != null) hashCode = hashCode * 59 + this.TopicId.GetHashCode();
+                if (this.Filter != null) hashCode = hashCode * 59 + this.Filter.GetHashCode();
                 return hashCode;
             }
         }

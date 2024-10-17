@@ -239,66 +239,20 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(QueryProgressResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.Progress != input.Progress || (this.Progress != null && !this.Progress.Equals(input.Progress))) return false;
+            if (this.IncreTransDelay != input.IncreTransDelay || (this.IncreTransDelay != null && !this.IncreTransDelay.Equals(input.IncreTransDelay))) return false;
+            if (this.IncreTransDelayMillis != input.IncreTransDelayMillis || (this.IncreTransDelayMillis != null && !this.IncreTransDelayMillis.Equals(input.IncreTransDelayMillis))) return false;
+            if (this.TaskMode != input.TaskMode) return false;
+            if (this.TransferStatus != input.TransferStatus || (this.TransferStatus != null && !this.TransferStatus.Equals(input.TransferStatus))) return false;
+            if (this.ProcessTime != input.ProcessTime || (this.ProcessTime != null && !this.ProcessTime.Equals(input.ProcessTime))) return false;
+            if (this.RemainingTime != input.RemainingTime || (this.RemainingTime != null && !this.RemainingTime.Equals(input.RemainingTime))) return false;
+            if (this.ProgressMap != input.ProgressMap || (this.ProgressMap != null && input.ProgressMap != null && !this.ProgressMap.SequenceEqual(input.ProgressMap))) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
+            if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.Progress == input.Progress ||
-                    (this.Progress != null &&
-                    this.Progress.Equals(input.Progress))
-                ) && 
-                (
-                    this.IncreTransDelay == input.IncreTransDelay ||
-                    (this.IncreTransDelay != null &&
-                    this.IncreTransDelay.Equals(input.IncreTransDelay))
-                ) && 
-                (
-                    this.IncreTransDelayMillis == input.IncreTransDelayMillis ||
-                    (this.IncreTransDelayMillis != null &&
-                    this.IncreTransDelayMillis.Equals(input.IncreTransDelayMillis))
-                ) && 
-                (
-                    this.TaskMode == input.TaskMode ||
-                    (this.TaskMode != null &&
-                    this.TaskMode.Equals(input.TaskMode))
-                ) && 
-                (
-                    this.TransferStatus == input.TransferStatus ||
-                    (this.TransferStatus != null &&
-                    this.TransferStatus.Equals(input.TransferStatus))
-                ) && 
-                (
-                    this.ProcessTime == input.ProcessTime ||
-                    (this.ProcessTime != null &&
-                    this.ProcessTime.Equals(input.ProcessTime))
-                ) && 
-                (
-                    this.RemainingTime == input.RemainingTime ||
-                    (this.RemainingTime != null &&
-                    this.RemainingTime.Equals(input.RemainingTime))
-                ) && 
-                (
-                    this.ProgressMap == input.ProgressMap ||
-                    this.ProgressMap != null &&
-                    input.ProgressMap != null &&
-                    this.ProgressMap.SequenceEqual(input.ProgressMap)
-                ) && 
-                (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
-                ) && 
-                (
-                    this.ErrorMsg == input.ErrorMsg ||
-                    (this.ErrorMsg != null &&
-                    this.ErrorMsg.Equals(input.ErrorMsg))
-                );
+            return true;
         }
 
         /// <summary>
@@ -308,29 +262,18 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.Progress != null)
-                    hashCode = hashCode * 59 + this.Progress.GetHashCode();
-                if (this.IncreTransDelay != null)
-                    hashCode = hashCode * 59 + this.IncreTransDelay.GetHashCode();
-                if (this.IncreTransDelayMillis != null)
-                    hashCode = hashCode * 59 + this.IncreTransDelayMillis.GetHashCode();
-                if (this.TaskMode != null)
-                    hashCode = hashCode * 59 + this.TaskMode.GetHashCode();
-                if (this.TransferStatus != null)
-                    hashCode = hashCode * 59 + this.TransferStatus.GetHashCode();
-                if (this.ProcessTime != null)
-                    hashCode = hashCode * 59 + this.ProcessTime.GetHashCode();
-                if (this.RemainingTime != null)
-                    hashCode = hashCode * 59 + this.RemainingTime.GetHashCode();
-                if (this.ProgressMap != null)
-                    hashCode = hashCode * 59 + this.ProgressMap.GetHashCode();
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.ErrorMsg != null)
-                    hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.Progress != null) hashCode = hashCode * 59 + this.Progress.GetHashCode();
+                if (this.IncreTransDelay != null) hashCode = hashCode * 59 + this.IncreTransDelay.GetHashCode();
+                if (this.IncreTransDelayMillis != null) hashCode = hashCode * 59 + this.IncreTransDelayMillis.GetHashCode();
+                hashCode = hashCode * 59 + this.TaskMode.GetHashCode();
+                if (this.TransferStatus != null) hashCode = hashCode * 59 + this.TransferStatus.GetHashCode();
+                if (this.ProcessTime != null) hashCode = hashCode * 59 + this.ProcessTime.GetHashCode();
+                if (this.RemainingTime != null) hashCode = hashCode * 59 + this.RemainingTime.GetHashCode();
+                if (this.ProgressMap != null) hashCode = hashCode * 59 + this.ProgressMap.GetHashCode();
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
                 return hashCode;
             }
         }

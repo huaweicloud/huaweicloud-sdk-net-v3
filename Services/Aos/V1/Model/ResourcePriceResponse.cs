@@ -348,40 +348,15 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(ResourcePriceResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ChargeMode != input.ChargeMode) return false;
+            if (this.SalePrice != input.SalePrice || (this.SalePrice != null && !this.SalePrice.Equals(input.SalePrice))) return false;
+            if (this.Discount != input.Discount || (this.Discount != null && !this.Discount.Equals(input.Discount))) return false;
+            if (this.OriginalPrice != input.OriginalPrice || (this.OriginalPrice != null && !this.OriginalPrice.Equals(input.OriginalPrice))) return false;
+            if (this.PeriodType != input.PeriodType) return false;
+            if (this.PeriodCount != input.PeriodCount || (this.PeriodCount != null && !this.PeriodCount.Equals(input.PeriodCount))) return false;
 
-            return 
-                (
-                    this.ChargeMode == input.ChargeMode ||
-                    (this.ChargeMode != null &&
-                    this.ChargeMode.Equals(input.ChargeMode))
-                ) && 
-                (
-                    this.SalePrice == input.SalePrice ||
-                    (this.SalePrice != null &&
-                    this.SalePrice.Equals(input.SalePrice))
-                ) && 
-                (
-                    this.Discount == input.Discount ||
-                    (this.Discount != null &&
-                    this.Discount.Equals(input.Discount))
-                ) && 
-                (
-                    this.OriginalPrice == input.OriginalPrice ||
-                    (this.OriginalPrice != null &&
-                    this.OriginalPrice.Equals(input.OriginalPrice))
-                ) && 
-                (
-                    this.PeriodType == input.PeriodType ||
-                    (this.PeriodType != null &&
-                    this.PeriodType.Equals(input.PeriodType))
-                ) && 
-                (
-                    this.PeriodCount == input.PeriodCount ||
-                    (this.PeriodCount != null &&
-                    this.PeriodCount.Equals(input.PeriodCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -391,19 +366,13 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ChargeMode != null)
-                    hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
-                if (this.SalePrice != null)
-                    hashCode = hashCode * 59 + this.SalePrice.GetHashCode();
-                if (this.Discount != null)
-                    hashCode = hashCode * 59 + this.Discount.GetHashCode();
-                if (this.OriginalPrice != null)
-                    hashCode = hashCode * 59 + this.OriginalPrice.GetHashCode();
-                if (this.PeriodType != null)
-                    hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
-                if (this.PeriodCount != null)
-                    hashCode = hashCode * 59 + this.PeriodCount.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
+                if (this.SalePrice != null) hashCode = hashCode * 59 + this.SalePrice.GetHashCode();
+                if (this.Discount != null) hashCode = hashCode * 59 + this.Discount.GetHashCode();
+                if (this.OriginalPrice != null) hashCode = hashCode * 59 + this.OriginalPrice.GetHashCode();
+                hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
+                if (this.PeriodCount != null) hashCode = hashCode * 59 + this.PeriodCount.GetHashCode();
                 return hashCode;
             }
         }

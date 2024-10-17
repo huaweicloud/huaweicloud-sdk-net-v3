@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Tms.V1.Model
         /// </summary>
         public bool Equals(ProviderResponseBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Provider != input.Provider || (this.Provider != null && !this.Provider.Equals(input.Provider))) return false;
+            if (this.ProviderI18nDisplayName != input.ProviderI18nDisplayName || (this.ProviderI18nDisplayName != null && !this.ProviderI18nDisplayName.Equals(input.ProviderI18nDisplayName))) return false;
+            if (this.ResourceTypes != input.ResourceTypes || (this.ResourceTypes != null && input.ResourceTypes != null && !this.ResourceTypes.SequenceEqual(input.ResourceTypes))) return false;
 
-            return 
-                (
-                    this.Provider == input.Provider ||
-                    (this.Provider != null &&
-                    this.Provider.Equals(input.Provider))
-                ) && 
-                (
-                    this.ProviderI18nDisplayName == input.ProviderI18nDisplayName ||
-                    (this.ProviderI18nDisplayName != null &&
-                    this.ProviderI18nDisplayName.Equals(input.ProviderI18nDisplayName))
-                ) && 
-                (
-                    this.ResourceTypes == input.ResourceTypes ||
-                    this.ResourceTypes != null &&
-                    input.ResourceTypes != null &&
-                    this.ResourceTypes.SequenceEqual(input.ResourceTypes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Tms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Provider != null)
-                    hashCode = hashCode * 59 + this.Provider.GetHashCode();
-                if (this.ProviderI18nDisplayName != null)
-                    hashCode = hashCode * 59 + this.ProviderI18nDisplayName.GetHashCode();
-                if (this.ResourceTypes != null)
-                    hashCode = hashCode * 59 + this.ResourceTypes.GetHashCode();
+                var hashCode = 41;
+                if (this.Provider != null) hashCode = hashCode * 59 + this.Provider.GetHashCode();
+                if (this.ProviderI18nDisplayName != null) hashCode = hashCode * 59 + this.ProviderI18nDisplayName.GetHashCode();
+                if (this.ResourceTypes != null) hashCode = hashCode * 59 + this.ResourceTypes.GetHashCode();
                 return hashCode;
             }
         }

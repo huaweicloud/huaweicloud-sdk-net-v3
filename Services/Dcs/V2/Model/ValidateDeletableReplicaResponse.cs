@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ValidateDeletableReplicaResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CheckResult != input.CheckResult || (this.CheckResult != null && !this.CheckResult.Equals(input.CheckResult))) return false;
+            if (this.AvailableZone != input.AvailableZone || (this.AvailableZone != null && !this.AvailableZone.Equals(input.AvailableZone))) return false;
+            if (this.ReplicationList != input.ReplicationList || (this.ReplicationList != null && input.ReplicationList != null && !this.ReplicationList.SequenceEqual(input.ReplicationList))) return false;
 
-            return 
-                (
-                    this.CheckResult == input.CheckResult ||
-                    (this.CheckResult != null &&
-                    this.CheckResult.Equals(input.CheckResult))
-                ) && 
-                (
-                    this.AvailableZone == input.AvailableZone ||
-                    (this.AvailableZone != null &&
-                    this.AvailableZone.Equals(input.AvailableZone))
-                ) && 
-                (
-                    this.ReplicationList == input.ReplicationList ||
-                    this.ReplicationList != null &&
-                    input.ReplicationList != null &&
-                    this.ReplicationList.SequenceEqual(input.ReplicationList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CheckResult != null)
-                    hashCode = hashCode * 59 + this.CheckResult.GetHashCode();
-                if (this.AvailableZone != null)
-                    hashCode = hashCode * 59 + this.AvailableZone.GetHashCode();
-                if (this.ReplicationList != null)
-                    hashCode = hashCode * 59 + this.ReplicationList.GetHashCode();
+                var hashCode = 41;
+                if (this.CheckResult != null) hashCode = hashCode * 59 + this.CheckResult.GetHashCode();
+                if (this.AvailableZone != null) hashCode = hashCode * 59 + this.AvailableZone.GetHashCode();
+                if (this.ReplicationList != null) hashCode = hashCode * 59 + this.ReplicationList.GetHashCode();
                 return hashCode;
             }
         }

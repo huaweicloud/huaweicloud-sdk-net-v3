@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(ListKeywordsAlarmRulesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KeywordsAlarmRules != input.KeywordsAlarmRules || (this.KeywordsAlarmRules != null && input.KeywordsAlarmRules != null && !this.KeywordsAlarmRules.SequenceEqual(input.KeywordsAlarmRules))) return false;
 
-            return 
-                (
-                    this.KeywordsAlarmRules == input.KeywordsAlarmRules ||
-                    this.KeywordsAlarmRules != null &&
-                    input.KeywordsAlarmRules != null &&
-                    this.KeywordsAlarmRules.SequenceEqual(input.KeywordsAlarmRules)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KeywordsAlarmRules != null)
-                    hashCode = hashCode * 59 + this.KeywordsAlarmRules.GetHashCode();
+                var hashCode = 41;
+                if (this.KeywordsAlarmRules != null) hashCode = hashCode * 59 + this.KeywordsAlarmRules.GetHashCode();
                 return hashCode;
             }
         }

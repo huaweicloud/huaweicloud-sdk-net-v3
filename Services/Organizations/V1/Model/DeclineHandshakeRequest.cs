@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(DeclineHandshakeRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.XSecurityToken != input.XSecurityToken || (this.XSecurityToken != null && !this.XSecurityToken.Equals(input.XSecurityToken))) return false;
+            if (this.HandshakeId != input.HandshakeId || (this.HandshakeId != null && !this.HandshakeId.Equals(input.HandshakeId))) return false;
 
-            return 
-                (
-                    this.XSecurityToken == input.XSecurityToken ||
-                    (this.XSecurityToken != null &&
-                    this.XSecurityToken.Equals(input.XSecurityToken))
-                ) && 
-                (
-                    this.HandshakeId == input.HandshakeId ||
-                    (this.HandshakeId != null &&
-                    this.HandshakeId.Equals(input.HandshakeId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.XSecurityToken != null)
-                    hashCode = hashCode * 59 + this.XSecurityToken.GetHashCode();
-                if (this.HandshakeId != null)
-                    hashCode = hashCode * 59 + this.HandshakeId.GetHashCode();
+                var hashCode = 41;
+                if (this.XSecurityToken != null) hashCode = hashCode * 59 + this.XSecurityToken.GetHashCode();
+                if (this.HandshakeId != null) hashCode = hashCode * 59 + this.HandshakeId.GetHashCode();
                 return hashCode;
             }
         }

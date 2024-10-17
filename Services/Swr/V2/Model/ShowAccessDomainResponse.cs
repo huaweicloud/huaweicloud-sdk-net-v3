@@ -126,70 +126,21 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public bool Equals(ShowAccessDomainResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Exist != input.Exist || (this.Exist != null && !this.Exist.Equals(input.Exist))) return false;
+            if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
+            if (this.Repository != input.Repository || (this.Repository != null && !this.Repository.Equals(input.Repository))) return false;
+            if (this.AccessDomain != input.AccessDomain || (this.AccessDomain != null && !this.AccessDomain.Equals(input.AccessDomain))) return false;
+            if (this.Permit != input.Permit || (this.Permit != null && !this.Permit.Equals(input.Permit))) return false;
+            if (this.Deadline != input.Deadline || (this.Deadline != null && !this.Deadline.Equals(input.Deadline))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.CreatorId != input.CreatorId || (this.CreatorId != null && !this.CreatorId.Equals(input.CreatorId))) return false;
+            if (this.CreatorName != input.CreatorName || (this.CreatorName != null && !this.CreatorName.Equals(input.CreatorName))) return false;
+            if (this.Created != input.Created || (this.Created != null && !this.Created.Equals(input.Created))) return false;
+            if (this.Updated != input.Updated || (this.Updated != null && !this.Updated.Equals(input.Updated))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
 
-            return 
-                (
-                    this.Exist == input.Exist ||
-                    (this.Exist != null &&
-                    this.Exist.Equals(input.Exist))
-                ) && 
-                (
-                    this.Namespace == input.Namespace ||
-                    (this.Namespace != null &&
-                    this.Namespace.Equals(input.Namespace))
-                ) && 
-                (
-                    this.Repository == input.Repository ||
-                    (this.Repository != null &&
-                    this.Repository.Equals(input.Repository))
-                ) && 
-                (
-                    this.AccessDomain == input.AccessDomain ||
-                    (this.AccessDomain != null &&
-                    this.AccessDomain.Equals(input.AccessDomain))
-                ) && 
-                (
-                    this.Permit == input.Permit ||
-                    (this.Permit != null &&
-                    this.Permit.Equals(input.Permit))
-                ) && 
-                (
-                    this.Deadline == input.Deadline ||
-                    (this.Deadline != null &&
-                    this.Deadline.Equals(input.Deadline))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.CreatorId == input.CreatorId ||
-                    (this.CreatorId != null &&
-                    this.CreatorId.Equals(input.CreatorId))
-                ) && 
-                (
-                    this.CreatorName == input.CreatorName ||
-                    (this.CreatorName != null &&
-                    this.CreatorName.Equals(input.CreatorName))
-                ) && 
-                (
-                    this.Created == input.Created ||
-                    (this.Created != null &&
-                    this.Created.Equals(input.Created))
-                ) && 
-                (
-                    this.Updated == input.Updated ||
-                    (this.Updated != null &&
-                    this.Updated.Equals(input.Updated))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
+            return true;
         }
 
         /// <summary>
@@ -199,31 +150,19 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Exist != null)
-                    hashCode = hashCode * 59 + this.Exist.GetHashCode();
-                if (this.Namespace != null)
-                    hashCode = hashCode * 59 + this.Namespace.GetHashCode();
-                if (this.Repository != null)
-                    hashCode = hashCode * 59 + this.Repository.GetHashCode();
-                if (this.AccessDomain != null)
-                    hashCode = hashCode * 59 + this.AccessDomain.GetHashCode();
-                if (this.Permit != null)
-                    hashCode = hashCode * 59 + this.Permit.GetHashCode();
-                if (this.Deadline != null)
-                    hashCode = hashCode * 59 + this.Deadline.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.CreatorId != null)
-                    hashCode = hashCode * 59 + this.CreatorId.GetHashCode();
-                if (this.CreatorName != null)
-                    hashCode = hashCode * 59 + this.CreatorName.GetHashCode();
-                if (this.Created != null)
-                    hashCode = hashCode * 59 + this.Created.GetHashCode();
-                if (this.Updated != null)
-                    hashCode = hashCode * 59 + this.Updated.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                var hashCode = 41;
+                if (this.Exist != null) hashCode = hashCode * 59 + this.Exist.GetHashCode();
+                if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.Repository != null) hashCode = hashCode * 59 + this.Repository.GetHashCode();
+                if (this.AccessDomain != null) hashCode = hashCode * 59 + this.AccessDomain.GetHashCode();
+                if (this.Permit != null) hashCode = hashCode * 59 + this.Permit.GetHashCode();
+                if (this.Deadline != null) hashCode = hashCode * 59 + this.Deadline.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.CreatorId != null) hashCode = hashCode * 59 + this.CreatorId.GetHashCode();
+                if (this.CreatorName != null) hashCode = hashCode * 59 + this.CreatorName.GetHashCode();
+                if (this.Created != null) hashCode = hashCode * 59 + this.Created.GetHashCode();
+                if (this.Updated != null) hashCode = hashCode * 59 + this.Updated.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

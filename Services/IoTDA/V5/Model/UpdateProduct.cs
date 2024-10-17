@@ -105,56 +105,18 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(UpdateProduct input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.DeviceType != input.DeviceType || (this.DeviceType != null && !this.DeviceType.Equals(input.DeviceType))) return false;
+            if (this.ProtocolType != input.ProtocolType || (this.ProtocolType != null && !this.ProtocolType.Equals(input.ProtocolType))) return false;
+            if (this.DataFormat != input.DataFormat || (this.DataFormat != null && !this.DataFormat.Equals(input.DataFormat))) return false;
+            if (this.ServiceCapabilities != input.ServiceCapabilities || (this.ServiceCapabilities != null && input.ServiceCapabilities != null && !this.ServiceCapabilities.SequenceEqual(input.ServiceCapabilities))) return false;
+            if (this.ManufacturerName != input.ManufacturerName || (this.ManufacturerName != null && !this.ManufacturerName.Equals(input.ManufacturerName))) return false;
+            if (this.Industry != input.Industry || (this.Industry != null && !this.Industry.Equals(input.Industry))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
 
-            return 
-                (
-                    this.AppId == input.AppId ||
-                    (this.AppId != null &&
-                    this.AppId.Equals(input.AppId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.DeviceType == input.DeviceType ||
-                    (this.DeviceType != null &&
-                    this.DeviceType.Equals(input.DeviceType))
-                ) && 
-                (
-                    this.ProtocolType == input.ProtocolType ||
-                    (this.ProtocolType != null &&
-                    this.ProtocolType.Equals(input.ProtocolType))
-                ) && 
-                (
-                    this.DataFormat == input.DataFormat ||
-                    (this.DataFormat != null &&
-                    this.DataFormat.Equals(input.DataFormat))
-                ) && 
-                (
-                    this.ServiceCapabilities == input.ServiceCapabilities ||
-                    this.ServiceCapabilities != null &&
-                    input.ServiceCapabilities != null &&
-                    this.ServiceCapabilities.SequenceEqual(input.ServiceCapabilities)
-                ) && 
-                (
-                    this.ManufacturerName == input.ManufacturerName ||
-                    (this.ManufacturerName != null &&
-                    this.ManufacturerName.Equals(input.ManufacturerName))
-                ) && 
-                (
-                    this.Industry == input.Industry ||
-                    (this.Industry != null &&
-                    this.Industry.Equals(input.Industry))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                );
+            return true;
         }
 
         /// <summary>
@@ -164,25 +126,16 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AppId != null)
-                    hashCode = hashCode * 59 + this.AppId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.DeviceType != null)
-                    hashCode = hashCode * 59 + this.DeviceType.GetHashCode();
-                if (this.ProtocolType != null)
-                    hashCode = hashCode * 59 + this.ProtocolType.GetHashCode();
-                if (this.DataFormat != null)
-                    hashCode = hashCode * 59 + this.DataFormat.GetHashCode();
-                if (this.ServiceCapabilities != null)
-                    hashCode = hashCode * 59 + this.ServiceCapabilities.GetHashCode();
-                if (this.ManufacturerName != null)
-                    hashCode = hashCode * 59 + this.ManufacturerName.GetHashCode();
-                if (this.Industry != null)
-                    hashCode = hashCode * 59 + this.Industry.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                var hashCode = 41;
+                if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.DeviceType != null) hashCode = hashCode * 59 + this.DeviceType.GetHashCode();
+                if (this.ProtocolType != null) hashCode = hashCode * 59 + this.ProtocolType.GetHashCode();
+                if (this.DataFormat != null) hashCode = hashCode * 59 + this.DataFormat.GetHashCode();
+                if (this.ServiceCapabilities != null) hashCode = hashCode * 59 + this.ServiceCapabilities.GetHashCode();
+                if (this.ManufacturerName != null) hashCode = hashCode * 59 + this.ManufacturerName.GetHashCode();
+                if (this.Industry != null) hashCode = hashCode * 59 + this.Industry.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

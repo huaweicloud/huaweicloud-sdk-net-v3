@@ -579,117 +579,30 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(SqlAlarmRuleRespList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SqlAlarmRuleName != input.SqlAlarmRuleName || (this.SqlAlarmRuleName != null && !this.SqlAlarmRuleName.Equals(input.SqlAlarmRuleName))) return false;
+            if (this.IsCssSql != input.IsCssSql || (this.IsCssSql != null && !this.IsCssSql.Equals(input.IsCssSql))) return false;
+            if (this.SqlAlarmRuleId != input.SqlAlarmRuleId || (this.SqlAlarmRuleId != null && !this.SqlAlarmRuleId.Equals(input.SqlAlarmRuleId))) return false;
+            if (this.SqlAlarmRuleDescription != input.SqlAlarmRuleDescription || (this.SqlAlarmRuleDescription != null && !this.SqlAlarmRuleDescription.Equals(input.SqlAlarmRuleDescription))) return false;
+            if (this.SqlRequests != input.SqlRequests || (this.SqlRequests != null && input.SqlRequests != null && !this.SqlRequests.SequenceEqual(input.SqlRequests))) return false;
+            if (this.Frequency != input.Frequency || (this.Frequency != null && !this.Frequency.Equals(input.Frequency))) return false;
+            if (this.ConditionExpression != input.ConditionExpression || (this.ConditionExpression != null && !this.ConditionExpression.Equals(input.ConditionExpression))) return false;
+            if (this.Topics != input.Topics || (this.Topics != null && input.Topics != null && !this.Topics.SequenceEqual(input.Topics))) return false;
+            if (this.SqlAlarmLevel != input.SqlAlarmLevel) return false;
+            if (this.SqlAlarmSend != input.SqlAlarmSend || (this.SqlAlarmSend != null && !this.SqlAlarmSend.Equals(input.SqlAlarmSend))) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.TemplateName != input.TemplateName || (this.TemplateName != null && !this.TemplateName.Equals(input.TemplateName))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.TriggerConditionCount != input.TriggerConditionCount || (this.TriggerConditionCount != null && !this.TriggerConditionCount.Equals(input.TriggerConditionCount))) return false;
+            if (this.TriggerConditionFrequency != input.TriggerConditionFrequency || (this.TriggerConditionFrequency != null && !this.TriggerConditionFrequency.Equals(input.TriggerConditionFrequency))) return false;
+            if (this.WhetherRecoveryPolicy != input.WhetherRecoveryPolicy || (this.WhetherRecoveryPolicy != null && !this.WhetherRecoveryPolicy.Equals(input.WhetherRecoveryPolicy))) return false;
+            if (this.RecoveryPolicy != input.RecoveryPolicy || (this.RecoveryPolicy != null && !this.RecoveryPolicy.Equals(input.RecoveryPolicy))) return false;
+            if (this.NotificationFrequency != input.NotificationFrequency) return false;
+            if (this.AlarmActionRuleName != input.AlarmActionRuleName || (this.AlarmActionRuleName != null && !this.AlarmActionRuleName.Equals(input.AlarmActionRuleName))) return false;
 
-            return 
-                (
-                    this.SqlAlarmRuleName == input.SqlAlarmRuleName ||
-                    (this.SqlAlarmRuleName != null &&
-                    this.SqlAlarmRuleName.Equals(input.SqlAlarmRuleName))
-                ) && 
-                (
-                    this.IsCssSql == input.IsCssSql ||
-                    (this.IsCssSql != null &&
-                    this.IsCssSql.Equals(input.IsCssSql))
-                ) && 
-                (
-                    this.SqlAlarmRuleId == input.SqlAlarmRuleId ||
-                    (this.SqlAlarmRuleId != null &&
-                    this.SqlAlarmRuleId.Equals(input.SqlAlarmRuleId))
-                ) && 
-                (
-                    this.SqlAlarmRuleDescription == input.SqlAlarmRuleDescription ||
-                    (this.SqlAlarmRuleDescription != null &&
-                    this.SqlAlarmRuleDescription.Equals(input.SqlAlarmRuleDescription))
-                ) && 
-                (
-                    this.SqlRequests == input.SqlRequests ||
-                    this.SqlRequests != null &&
-                    input.SqlRequests != null &&
-                    this.SqlRequests.SequenceEqual(input.SqlRequests)
-                ) && 
-                (
-                    this.Frequency == input.Frequency ||
-                    (this.Frequency != null &&
-                    this.Frequency.Equals(input.Frequency))
-                ) && 
-                (
-                    this.ConditionExpression == input.ConditionExpression ||
-                    (this.ConditionExpression != null &&
-                    this.ConditionExpression.Equals(input.ConditionExpression))
-                ) && 
-                (
-                    this.Topics == input.Topics ||
-                    this.Topics != null &&
-                    input.Topics != null &&
-                    this.Topics.SequenceEqual(input.Topics)
-                ) && 
-                (
-                    this.SqlAlarmLevel == input.SqlAlarmLevel ||
-                    (this.SqlAlarmLevel != null &&
-                    this.SqlAlarmLevel.Equals(input.SqlAlarmLevel))
-                ) && 
-                (
-                    this.SqlAlarmSend == input.SqlAlarmSend ||
-                    (this.SqlAlarmSend != null &&
-                    this.SqlAlarmSend.Equals(input.SqlAlarmSend))
-                ) && 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.TemplateName == input.TemplateName ||
-                    (this.TemplateName != null &&
-                    this.TemplateName.Equals(input.TemplateName))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.TriggerConditionCount == input.TriggerConditionCount ||
-                    (this.TriggerConditionCount != null &&
-                    this.TriggerConditionCount.Equals(input.TriggerConditionCount))
-                ) && 
-                (
-                    this.TriggerConditionFrequency == input.TriggerConditionFrequency ||
-                    (this.TriggerConditionFrequency != null &&
-                    this.TriggerConditionFrequency.Equals(input.TriggerConditionFrequency))
-                ) && 
-                (
-                    this.WhetherRecoveryPolicy == input.WhetherRecoveryPolicy ||
-                    (this.WhetherRecoveryPolicy != null &&
-                    this.WhetherRecoveryPolicy.Equals(input.WhetherRecoveryPolicy))
-                ) && 
-                (
-                    this.RecoveryPolicy == input.RecoveryPolicy ||
-                    (this.RecoveryPolicy != null &&
-                    this.RecoveryPolicy.Equals(input.RecoveryPolicy))
-                ) && 
-                (
-                    this.NotificationFrequency == input.NotificationFrequency ||
-                    (this.NotificationFrequency != null &&
-                    this.NotificationFrequency.Equals(input.NotificationFrequency))
-                ) && 
-                (
-                    this.AlarmActionRuleName == input.AlarmActionRuleName ||
-                    (this.AlarmActionRuleName != null &&
-                    this.AlarmActionRuleName.Equals(input.AlarmActionRuleName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -699,49 +612,28 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SqlAlarmRuleName != null)
-                    hashCode = hashCode * 59 + this.SqlAlarmRuleName.GetHashCode();
-                if (this.IsCssSql != null)
-                    hashCode = hashCode * 59 + this.IsCssSql.GetHashCode();
-                if (this.SqlAlarmRuleId != null)
-                    hashCode = hashCode * 59 + this.SqlAlarmRuleId.GetHashCode();
-                if (this.SqlAlarmRuleDescription != null)
-                    hashCode = hashCode * 59 + this.SqlAlarmRuleDescription.GetHashCode();
-                if (this.SqlRequests != null)
-                    hashCode = hashCode * 59 + this.SqlRequests.GetHashCode();
-                if (this.Frequency != null)
-                    hashCode = hashCode * 59 + this.Frequency.GetHashCode();
-                if (this.ConditionExpression != null)
-                    hashCode = hashCode * 59 + this.ConditionExpression.GetHashCode();
-                if (this.Topics != null)
-                    hashCode = hashCode * 59 + this.Topics.GetHashCode();
-                if (this.SqlAlarmLevel != null)
-                    hashCode = hashCode * 59 + this.SqlAlarmLevel.GetHashCode();
-                if (this.SqlAlarmSend != null)
-                    hashCode = hashCode * 59 + this.SqlAlarmSend.GetHashCode();
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.TemplateName != null)
-                    hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.TriggerConditionCount != null)
-                    hashCode = hashCode * 59 + this.TriggerConditionCount.GetHashCode();
-                if (this.TriggerConditionFrequency != null)
-                    hashCode = hashCode * 59 + this.TriggerConditionFrequency.GetHashCode();
-                if (this.WhetherRecoveryPolicy != null)
-                    hashCode = hashCode * 59 + this.WhetherRecoveryPolicy.GetHashCode();
-                if (this.RecoveryPolicy != null)
-                    hashCode = hashCode * 59 + this.RecoveryPolicy.GetHashCode();
-                if (this.NotificationFrequency != null)
-                    hashCode = hashCode * 59 + this.NotificationFrequency.GetHashCode();
-                if (this.AlarmActionRuleName != null)
-                    hashCode = hashCode * 59 + this.AlarmActionRuleName.GetHashCode();
+                var hashCode = 41;
+                if (this.SqlAlarmRuleName != null) hashCode = hashCode * 59 + this.SqlAlarmRuleName.GetHashCode();
+                if (this.IsCssSql != null) hashCode = hashCode * 59 + this.IsCssSql.GetHashCode();
+                if (this.SqlAlarmRuleId != null) hashCode = hashCode * 59 + this.SqlAlarmRuleId.GetHashCode();
+                if (this.SqlAlarmRuleDescription != null) hashCode = hashCode * 59 + this.SqlAlarmRuleDescription.GetHashCode();
+                if (this.SqlRequests != null) hashCode = hashCode * 59 + this.SqlRequests.GetHashCode();
+                if (this.Frequency != null) hashCode = hashCode * 59 + this.Frequency.GetHashCode();
+                if (this.ConditionExpression != null) hashCode = hashCode * 59 + this.ConditionExpression.GetHashCode();
+                if (this.Topics != null) hashCode = hashCode * 59 + this.Topics.GetHashCode();
+                hashCode = hashCode * 59 + this.SqlAlarmLevel.GetHashCode();
+                if (this.SqlAlarmSend != null) hashCode = hashCode * 59 + this.SqlAlarmSend.GetHashCode();
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.TemplateName != null) hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.TriggerConditionCount != null) hashCode = hashCode * 59 + this.TriggerConditionCount.GetHashCode();
+                if (this.TriggerConditionFrequency != null) hashCode = hashCode * 59 + this.TriggerConditionFrequency.GetHashCode();
+                if (this.WhetherRecoveryPolicy != null) hashCode = hashCode * 59 + this.WhetherRecoveryPolicy.GetHashCode();
+                if (this.RecoveryPolicy != null) hashCode = hashCode * 59 + this.RecoveryPolicy.GetHashCode();
+                hashCode = hashCode * 59 + this.NotificationFrequency.GetHashCode();
+                if (this.AlarmActionRuleName != null) hashCode = hashCode * 59 + this.AlarmActionRuleName.GetHashCode();
                 return hashCode;
             }
         }

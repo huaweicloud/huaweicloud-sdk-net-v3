@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(FlavorInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Connection != input.Connection || (this.Connection != null && !this.Connection.Equals(input.Connection))) return false;
+            if (this.Cps != input.Cps || (this.Cps != null && !this.Cps.Equals(input.Cps))) return false;
+            if (this.Qps != input.Qps || (this.Qps != null && !this.Qps.Equals(input.Qps))) return false;
+            if (this.Bandwidth != input.Bandwidth || (this.Bandwidth != null && !this.Bandwidth.Equals(input.Bandwidth))) return false;
+            if (this.Lcu != input.Lcu || (this.Lcu != null && !this.Lcu.Equals(input.Lcu))) return false;
+            if (this.HttpsCps != input.HttpsCps || (this.HttpsCps != null && !this.HttpsCps.Equals(input.HttpsCps))) return false;
 
-            return 
-                (
-                    this.Connection == input.Connection ||
-                    (this.Connection != null &&
-                    this.Connection.Equals(input.Connection))
-                ) && 
-                (
-                    this.Cps == input.Cps ||
-                    (this.Cps != null &&
-                    this.Cps.Equals(input.Cps))
-                ) && 
-                (
-                    this.Qps == input.Qps ||
-                    (this.Qps != null &&
-                    this.Qps.Equals(input.Qps))
-                ) && 
-                (
-                    this.Bandwidth == input.Bandwidth ||
-                    (this.Bandwidth != null &&
-                    this.Bandwidth.Equals(input.Bandwidth))
-                ) && 
-                (
-                    this.Lcu == input.Lcu ||
-                    (this.Lcu != null &&
-                    this.Lcu.Equals(input.Lcu))
-                ) && 
-                (
-                    this.HttpsCps == input.HttpsCps ||
-                    (this.HttpsCps != null &&
-                    this.HttpsCps.Equals(input.HttpsCps))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Connection != null)
-                    hashCode = hashCode * 59 + this.Connection.GetHashCode();
-                if (this.Cps != null)
-                    hashCode = hashCode * 59 + this.Cps.GetHashCode();
-                if (this.Qps != null)
-                    hashCode = hashCode * 59 + this.Qps.GetHashCode();
-                if (this.Bandwidth != null)
-                    hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
-                if (this.Lcu != null)
-                    hashCode = hashCode * 59 + this.Lcu.GetHashCode();
-                if (this.HttpsCps != null)
-                    hashCode = hashCode * 59 + this.HttpsCps.GetHashCode();
+                var hashCode = 41;
+                if (this.Connection != null) hashCode = hashCode * 59 + this.Connection.GetHashCode();
+                if (this.Cps != null) hashCode = hashCode * 59 + this.Cps.GetHashCode();
+                if (this.Qps != null) hashCode = hashCode * 59 + this.Qps.GetHashCode();
+                if (this.Bandwidth != null) hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
+                if (this.Lcu != null) hashCode = hashCode * 59 + this.Lcu.GetHashCode();
+                if (this.HttpsCps != null) hashCode = hashCode * 59 + this.HttpsCps.GetHashCode();
                 return hashCode;
             }
         }

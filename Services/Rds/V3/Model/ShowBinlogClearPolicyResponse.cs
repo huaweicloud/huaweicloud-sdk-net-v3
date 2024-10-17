@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ShowBinlogClearPolicyResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BinlogRetentionHours != input.BinlogRetentionHours || (this.BinlogRetentionHours != null && !this.BinlogRetentionHours.Equals(input.BinlogRetentionHours))) return false;
+            if (this.BinlogClearType != input.BinlogClearType || (this.BinlogClearType != null && !this.BinlogClearType.Equals(input.BinlogClearType))) return false;
 
-            return 
-                (
-                    this.BinlogRetentionHours == input.BinlogRetentionHours ||
-                    (this.BinlogRetentionHours != null &&
-                    this.BinlogRetentionHours.Equals(input.BinlogRetentionHours))
-                ) && 
-                (
-                    this.BinlogClearType == input.BinlogClearType ||
-                    (this.BinlogClearType != null &&
-                    this.BinlogClearType.Equals(input.BinlogClearType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BinlogRetentionHours != null)
-                    hashCode = hashCode * 59 + this.BinlogRetentionHours.GetHashCode();
-                if (this.BinlogClearType != null)
-                    hashCode = hashCode * 59 + this.BinlogClearType.GetHashCode();
+                var hashCode = 41;
+                if (this.BinlogRetentionHours != null) hashCode = hashCode * 59 + this.BinlogRetentionHours.GetHashCode();
+                if (this.BinlogClearType != null) hashCode = hashCode * 59 + this.BinlogClearType.GetHashCode();
                 return hashCode;
             }
         }

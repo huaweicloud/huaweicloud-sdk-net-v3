@@ -77,36 +77,14 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ComputeFlavor input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Code != input.Code || (this.Code != null && !this.Code.Equals(input.Code))) return false;
+            if (this.Vcpus != input.Vcpus || (this.Vcpus != null && !this.Vcpus.Equals(input.Vcpus))) return false;
+            if (this.Ram != input.Ram || (this.Ram != null && !this.Ram.Equals(input.Ram))) return false;
+            if (this.AzStatus != input.AzStatus || (this.AzStatus != null && input.AzStatus != null && !this.AzStatus.SequenceEqual(input.AzStatus))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
-                ) && 
-                (
-                    this.Vcpus == input.Vcpus ||
-                    (this.Vcpus != null &&
-                    this.Vcpus.Equals(input.Vcpus))
-                ) && 
-                (
-                    this.Ram == input.Ram ||
-                    (this.Ram != null &&
-                    this.Ram.Equals(input.Ram))
-                ) && 
-                (
-                    this.AzStatus == input.AzStatus ||
-                    this.AzStatus != null &&
-                    input.AzStatus != null &&
-                    this.AzStatus.SequenceEqual(input.AzStatus)
-                );
+            return true;
         }
 
         /// <summary>
@@ -116,17 +94,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Code != null)
-                    hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.Vcpus != null)
-                    hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
-                if (this.Ram != null)
-                    hashCode = hashCode * 59 + this.Ram.GetHashCode();
-                if (this.AzStatus != null)
-                    hashCode = hashCode * 59 + this.AzStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Code != null) hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Vcpus != null) hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
+                if (this.Ram != null) hashCode = hashCode * 59 + this.Ram.GetHashCode();
+                if (this.AzStatus != null) hashCode = hashCode * 59 + this.AzStatus.GetHashCode();
                 return hashCode;
             }
         }

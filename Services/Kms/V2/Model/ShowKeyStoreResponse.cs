@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         /// </summary>
         public bool Equals(ShowKeyStoreResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Keystore != input.Keystore || (this.Keystore != null && !this.Keystore.Equals(input.Keystore))) return false;
 
-            return 
-                (
-                    this.Keystore == input.Keystore ||
-                    (this.Keystore != null &&
-                    this.Keystore.Equals(input.Keystore))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Keystore != null)
-                    hashCode = hashCode * 59 + this.Keystore.GetHashCode();
+                var hashCode = 41;
+                if (this.Keystore != null) hashCode = hashCode * 59 + this.Keystore.GetHashCode();
                 return hashCode;
             }
         }

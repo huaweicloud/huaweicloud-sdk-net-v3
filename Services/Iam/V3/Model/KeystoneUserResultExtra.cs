@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(KeystoneUserResultExtra input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.PwdStatus != input.PwdStatus || (this.PwdStatus != null && !this.PwdStatus.Equals(input.PwdStatus))) return false;
+            if (this.LastProjectId != input.LastProjectId || (this.LastProjectId != null && !this.LastProjectId.Equals(input.LastProjectId))) return false;
 
-            return 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.PwdStatus == input.PwdStatus ||
-                    (this.PwdStatus != null &&
-                    this.PwdStatus.Equals(input.PwdStatus))
-                ) && 
-                (
-                    this.LastProjectId == input.LastProjectId ||
-                    (this.LastProjectId != null &&
-                    this.LastProjectId.Equals(input.LastProjectId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.PwdStatus != null)
-                    hashCode = hashCode * 59 + this.PwdStatus.GetHashCode();
-                if (this.LastProjectId != null)
-                    hashCode = hashCode * 59 + this.LastProjectId.GetHashCode();
+                var hashCode = 41;
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.PwdStatus != null) hashCode = hashCode * 59 + this.PwdStatus.GetHashCode();
+                if (this.LastProjectId != null) hashCode = hashCode * 59 + this.LastProjectId.GetHashCode();
                 return hashCode;
             }
         }

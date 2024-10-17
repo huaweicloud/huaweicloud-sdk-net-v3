@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(NodeTemplate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Os != input.Os || (this.Os != null && !this.Os.Equals(input.Os))) return false;
+            if (this.ImageID != input.ImageID || (this.ImageID != null && !this.ImageID.Equals(input.ImageID))) return false;
+            if (this.Login != input.Login || (this.Login != null && !this.Login.Equals(input.Login))) return false;
+            if (this.LifeCycle != input.LifeCycle || (this.LifeCycle != null && !this.LifeCycle.Equals(input.LifeCycle))) return false;
+            if (this.RuntimeConfig != input.RuntimeConfig || (this.RuntimeConfig != null && !this.RuntimeConfig.Equals(input.RuntimeConfig))) return false;
+            if (this.ExtendParam != input.ExtendParam || (this.ExtendParam != null && !this.ExtendParam.Equals(input.ExtendParam))) return false;
 
-            return 
-                (
-                    this.Os == input.Os ||
-                    (this.Os != null &&
-                    this.Os.Equals(input.Os))
-                ) && 
-                (
-                    this.ImageID == input.ImageID ||
-                    (this.ImageID != null &&
-                    this.ImageID.Equals(input.ImageID))
-                ) && 
-                (
-                    this.Login == input.Login ||
-                    (this.Login != null &&
-                    this.Login.Equals(input.Login))
-                ) && 
-                (
-                    this.LifeCycle == input.LifeCycle ||
-                    (this.LifeCycle != null &&
-                    this.LifeCycle.Equals(input.LifeCycle))
-                ) && 
-                (
-                    this.RuntimeConfig == input.RuntimeConfig ||
-                    (this.RuntimeConfig != null &&
-                    this.RuntimeConfig.Equals(input.RuntimeConfig))
-                ) && 
-                (
-                    this.ExtendParam == input.ExtendParam ||
-                    (this.ExtendParam != null &&
-                    this.ExtendParam.Equals(input.ExtendParam))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Os != null)
-                    hashCode = hashCode * 59 + this.Os.GetHashCode();
-                if (this.ImageID != null)
-                    hashCode = hashCode * 59 + this.ImageID.GetHashCode();
-                if (this.Login != null)
-                    hashCode = hashCode * 59 + this.Login.GetHashCode();
-                if (this.LifeCycle != null)
-                    hashCode = hashCode * 59 + this.LifeCycle.GetHashCode();
-                if (this.RuntimeConfig != null)
-                    hashCode = hashCode * 59 + this.RuntimeConfig.GetHashCode();
-                if (this.ExtendParam != null)
-                    hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
+                var hashCode = 41;
+                if (this.Os != null) hashCode = hashCode * 59 + this.Os.GetHashCode();
+                if (this.ImageID != null) hashCode = hashCode * 59 + this.ImageID.GetHashCode();
+                if (this.Login != null) hashCode = hashCode * 59 + this.Login.GetHashCode();
+                if (this.LifeCycle != null) hashCode = hashCode * 59 + this.LifeCycle.GetHashCode();
+                if (this.RuntimeConfig != null) hashCode = hashCode * 59 + this.RuntimeConfig.GetHashCode();
+                if (this.ExtendParam != null) hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
                 return hashCode;
             }
         }

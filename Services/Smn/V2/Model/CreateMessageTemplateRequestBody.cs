@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public bool Equals(CreateMessageTemplateRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MessageTemplateName != input.MessageTemplateName || (this.MessageTemplateName != null && !this.MessageTemplateName.Equals(input.MessageTemplateName))) return false;
+            if (this.Protocol != input.Protocol || (this.Protocol != null && !this.Protocol.Equals(input.Protocol))) return false;
+            if (this.Content != input.Content || (this.Content != null && !this.Content.Equals(input.Content))) return false;
 
-            return 
-                (
-                    this.MessageTemplateName == input.MessageTemplateName ||
-                    (this.MessageTemplateName != null &&
-                    this.MessageTemplateName.Equals(input.MessageTemplateName))
-                ) && 
-                (
-                    this.Protocol == input.Protocol ||
-                    (this.Protocol != null &&
-                    this.Protocol.Equals(input.Protocol))
-                ) && 
-                (
-                    this.Content == input.Content ||
-                    (this.Content != null &&
-                    this.Content.Equals(input.Content))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MessageTemplateName != null)
-                    hashCode = hashCode * 59 + this.MessageTemplateName.GetHashCode();
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
-                if (this.Content != null)
-                    hashCode = hashCode * 59 + this.Content.GetHashCode();
+                var hashCode = 41;
+                if (this.MessageTemplateName != null) hashCode = hashCode * 59 + this.MessageTemplateName.GetHashCode();
+                if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.Content != null) hashCode = hashCode * 59 + this.Content.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(Parameter input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Format != input.Format || (this.Format != null && !this.Format.Equals(input.Format))) return false;
 
-            return 
-                (
-                    this.Format == input.Format ||
-                    (this.Format != null &&
-                    this.Format.Equals(input.Format))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Format != null)
-                    hashCode = hashCode * 59 + this.Format.GetHashCode();
+                var hashCode = 41;
+                if (this.Format != null) hashCode = hashCode * 59 + this.Format.GetHashCode();
                 return hashCode;
             }
         }

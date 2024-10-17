@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(MigrationUpdateRequestEntity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResumeMode != input.ResumeMode || (this.ResumeMode != null && !this.ResumeMode.Equals(input.ResumeMode))) return false;
 
-            return 
-                (
-                    this.ResumeMode == input.ResumeMode ||
-                    (this.ResumeMode != null &&
-                    this.ResumeMode.Equals(input.ResumeMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResumeMode != null)
-                    hashCode = hashCode * 59 + this.ResumeMode.GetHashCode();
+                var hashCode = 41;
+                if (this.ResumeMode != null) hashCode = hashCode * 59 + this.ResumeMode.GetHashCode();
                 return hashCode;
             }
         }

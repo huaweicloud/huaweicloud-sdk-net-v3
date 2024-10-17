@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public bool Equals(AliasTarget input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
+            if (this.ResourceDomainName != input.ResourceDomainName || (this.ResourceDomainName != null && !this.ResourceDomainName.Equals(input.ResourceDomainName))) return false;
 
-            return 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.ResourceDomainName == input.ResourceDomainName ||
-                    (this.ResourceDomainName != null &&
-                    this.ResourceDomainName.Equals(input.ResourceDomainName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
-                if (this.ResourceDomainName != null)
-                    hashCode = hashCode * 59 + this.ResourceDomainName.GetHashCode();
+                var hashCode = 41;
+                if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.ResourceDomainName != null) hashCode = hashCode * 59 + this.ResourceDomainName.GetHashCode();
                 return hashCode;
             }
         }

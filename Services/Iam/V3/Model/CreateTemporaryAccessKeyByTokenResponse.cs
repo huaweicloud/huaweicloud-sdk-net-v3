@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(CreateTemporaryAccessKeyByTokenResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Credential != input.Credential || (this.Credential != null && !this.Credential.Equals(input.Credential))) return false;
 
-            return 
-                (
-                    this.Credential == input.Credential ||
-                    (this.Credential != null &&
-                    this.Credential.Equals(input.Credential))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Credential != null)
-                    hashCode = hashCode * 59 + this.Credential.GetHashCode();
+                var hashCode = 41;
+                if (this.Credential != null) hashCode = hashCode * 59 + this.Credential.GetHashCode();
                 return hashCode;
             }
         }

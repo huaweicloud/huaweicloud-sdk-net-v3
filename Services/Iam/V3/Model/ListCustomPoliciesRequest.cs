@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(ListCustomPoliciesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Page != input.Page || (this.Page != null && !this.Page.Equals(input.Page))) return false;
+            if (this.PerPage != input.PerPage || (this.PerPage != null && !this.PerPage.Equals(input.PerPage))) return false;
 
-            return 
-                (
-                    this.Page == input.Page ||
-                    (this.Page != null &&
-                    this.Page.Equals(input.Page))
-                ) && 
-                (
-                    this.PerPage == input.PerPage ||
-                    (this.PerPage != null &&
-                    this.PerPage.Equals(input.PerPage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Page != null)
-                    hashCode = hashCode * 59 + this.Page.GetHashCode();
-                if (this.PerPage != null)
-                    hashCode = hashCode * 59 + this.PerPage.GetHashCode();
+                var hashCode = 41;
+                if (this.Page != null) hashCode = hashCode * 59 + this.Page.GetHashCode();
+                if (this.PerPage != null) hashCode = hashCode * 59 + this.PerPage.GetHashCode();
                 return hashCode;
             }
         }

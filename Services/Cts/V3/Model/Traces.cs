@@ -323,125 +323,32 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         /// </summary>
         public bool Equals(Traces input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
+            if (this.TraceName != input.TraceName || (this.TraceName != null && !this.TraceName.Equals(input.TraceName))) return false;
+            if (this.TraceRating != input.TraceRating) return false;
+            if (this.TraceType != input.TraceType || (this.TraceType != null && !this.TraceType.Equals(input.TraceType))) return false;
+            if (this.Request != input.Request || (this.Request != null && !this.Request.Equals(input.Request))) return false;
+            if (this.Response != input.Response || (this.Response != null && !this.Response.Equals(input.Response))) return false;
+            if (this.Code != input.Code || (this.Code != null && !this.Code.Equals(input.Code))) return false;
+            if (this.ApiVersion != input.ApiVersion || (this.ApiVersion != null && !this.ApiVersion.Equals(input.ApiVersion))) return false;
+            if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
+            if (this.RecordTime != input.RecordTime || (this.RecordTime != null && !this.RecordTime.Equals(input.RecordTime))) return false;
+            if (this.TraceId != input.TraceId || (this.TraceId != null && !this.TraceId.Equals(input.TraceId))) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
+            if (this.User != input.User || (this.User != null && !this.User.Equals(input.User))) return false;
+            if (this.ServiceType != input.ServiceType || (this.ServiceType != null && !this.ServiceType.Equals(input.ServiceType))) return false;
+            if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
+            if (this.SourceIp != input.SourceIp || (this.SourceIp != null && !this.SourceIp.Equals(input.SourceIp))) return false;
+            if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
+            if (this.LocationInfo != input.LocationInfo || (this.LocationInfo != null && !this.LocationInfo.Equals(input.LocationInfo))) return false;
+            if (this.Endpoint != input.Endpoint || (this.Endpoint != null && !this.Endpoint.Equals(input.Endpoint))) return false;
+            if (this.ResourceUrl != input.ResourceUrl || (this.ResourceUrl != null && !this.ResourceUrl.Equals(input.ResourceUrl))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.ResourceAccountId != input.ResourceAccountId || (this.ResourceAccountId != null && !this.ResourceAccountId.Equals(input.ResourceAccountId))) return false;
 
-            return 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
-                ) && 
-                (
-                    this.TraceName == input.TraceName ||
-                    (this.TraceName != null &&
-                    this.TraceName.Equals(input.TraceName))
-                ) && 
-                (
-                    this.TraceRating == input.TraceRating ||
-                    (this.TraceRating != null &&
-                    this.TraceRating.Equals(input.TraceRating))
-                ) && 
-                (
-                    this.TraceType == input.TraceType ||
-                    (this.TraceType != null &&
-                    this.TraceType.Equals(input.TraceType))
-                ) && 
-                (
-                    this.Request == input.Request ||
-                    (this.Request != null &&
-                    this.Request.Equals(input.Request))
-                ) && 
-                (
-                    this.Response == input.Response ||
-                    (this.Response != null &&
-                    this.Response.Equals(input.Response))
-                ) && 
-                (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
-                ) && 
-                (
-                    this.ApiVersion == input.ApiVersion ||
-                    (this.ApiVersion != null &&
-                    this.ApiVersion.Equals(input.ApiVersion))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.RecordTime == input.RecordTime ||
-                    (this.RecordTime != null &&
-                    this.RecordTime.Equals(input.RecordTime))
-                ) && 
-                (
-                    this.TraceId == input.TraceId ||
-                    (this.TraceId != null &&
-                    this.TraceId.Equals(input.TraceId))
-                ) && 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                ) && 
-                (
-                    this.User == input.User ||
-                    (this.User != null &&
-                    this.User.Equals(input.User))
-                ) && 
-                (
-                    this.ServiceType == input.ServiceType ||
-                    (this.ServiceType != null &&
-                    this.ServiceType.Equals(input.ServiceType))
-                ) && 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.SourceIp == input.SourceIp ||
-                    (this.SourceIp != null &&
-                    this.SourceIp.Equals(input.SourceIp))
-                ) && 
-                (
-                    this.ResourceName == input.ResourceName ||
-                    (this.ResourceName != null &&
-                    this.ResourceName.Equals(input.ResourceName))
-                ) && 
-                (
-                    this.RequestId == input.RequestId ||
-                    (this.RequestId != null &&
-                    this.RequestId.Equals(input.RequestId))
-                ) && 
-                (
-                    this.LocationInfo == input.LocationInfo ||
-                    (this.LocationInfo != null &&
-                    this.LocationInfo.Equals(input.LocationInfo))
-                ) && 
-                (
-                    this.Endpoint == input.Endpoint ||
-                    (this.Endpoint != null &&
-                    this.Endpoint.Equals(input.Endpoint))
-                ) && 
-                (
-                    this.ResourceUrl == input.ResourceUrl ||
-                    (this.ResourceUrl != null &&
-                    this.ResourceUrl.Equals(input.ResourceUrl))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.ResourceAccountId == input.ResourceAccountId ||
-                    (this.ResourceAccountId != null &&
-                    this.ResourceAccountId.Equals(input.ResourceAccountId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -451,53 +358,30 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResourceId != null)
-                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
-                if (this.TraceName != null)
-                    hashCode = hashCode * 59 + this.TraceName.GetHashCode();
-                if (this.TraceRating != null)
-                    hashCode = hashCode * 59 + this.TraceRating.GetHashCode();
-                if (this.TraceType != null)
-                    hashCode = hashCode * 59 + this.TraceType.GetHashCode();
-                if (this.Request != null)
-                    hashCode = hashCode * 59 + this.Request.GetHashCode();
-                if (this.Response != null)
-                    hashCode = hashCode * 59 + this.Response.GetHashCode();
-                if (this.Code != null)
-                    hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.ApiVersion != null)
-                    hashCode = hashCode * 59 + this.ApiVersion.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.RecordTime != null)
-                    hashCode = hashCode * 59 + this.RecordTime.GetHashCode();
-                if (this.TraceId != null)
-                    hashCode = hashCode * 59 + this.TraceId.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.User != null)
-                    hashCode = hashCode * 59 + this.User.GetHashCode();
-                if (this.ServiceType != null)
-                    hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
-                if (this.SourceIp != null)
-                    hashCode = hashCode * 59 + this.SourceIp.GetHashCode();
-                if (this.ResourceName != null)
-                    hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
-                if (this.RequestId != null)
-                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
-                if (this.LocationInfo != null)
-                    hashCode = hashCode * 59 + this.LocationInfo.GetHashCode();
-                if (this.Endpoint != null)
-                    hashCode = hashCode * 59 + this.Endpoint.GetHashCode();
-                if (this.ResourceUrl != null)
-                    hashCode = hashCode * 59 + this.ResourceUrl.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.ResourceAccountId != null)
-                    hashCode = hashCode * 59 + this.ResourceAccountId.GetHashCode();
+                var hashCode = 41;
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.TraceName != null) hashCode = hashCode * 59 + this.TraceName.GetHashCode();
+                hashCode = hashCode * 59 + this.TraceRating.GetHashCode();
+                if (this.TraceType != null) hashCode = hashCode * 59 + this.TraceType.GetHashCode();
+                if (this.Request != null) hashCode = hashCode * 59 + this.Request.GetHashCode();
+                if (this.Response != null) hashCode = hashCode * 59 + this.Response.GetHashCode();
+                if (this.Code != null) hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.ApiVersion != null) hashCode = hashCode * 59 + this.ApiVersion.GetHashCode();
+                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.RecordTime != null) hashCode = hashCode * 59 + this.RecordTime.GetHashCode();
+                if (this.TraceId != null) hashCode = hashCode * 59 + this.TraceId.GetHashCode();
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
+                if (this.User != null) hashCode = hashCode * 59 + this.User.GetHashCode();
+                if (this.ServiceType != null) hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
+                if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.SourceIp != null) hashCode = hashCode * 59 + this.SourceIp.GetHashCode();
+                if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                if (this.LocationInfo != null) hashCode = hashCode * 59 + this.LocationInfo.GetHashCode();
+                if (this.Endpoint != null) hashCode = hashCode * 59 + this.Endpoint.GetHashCode();
+                if (this.ResourceUrl != null) hashCode = hashCode * 59 + this.ResourceUrl.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.ResourceAccountId != null) hashCode = hashCode * 59 + this.ResourceAccountId.GetHashCode();
                 return hashCode;
             }
         }

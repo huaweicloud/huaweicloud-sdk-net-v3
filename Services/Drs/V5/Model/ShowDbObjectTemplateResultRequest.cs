@@ -308,30 +308,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ShowDbObjectTemplateResultRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.XLanguage != input.XLanguage) return false;
+            if (this.Type != input.Type) return false;
+            if (this.FileExportObjectLevel != input.FileExportObjectLevel || (this.FileExportObjectLevel != null && !this.FileExportObjectLevel.Equals(input.FileExportObjectLevel))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.XLanguage == input.XLanguage ||
-                    (this.XLanguage != null &&
-                    this.XLanguage.Equals(input.XLanguage))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.FileExportObjectLevel == input.FileExportObjectLevel ||
-                    (this.FileExportObjectLevel != null &&
-                    this.FileExportObjectLevel.Equals(input.FileExportObjectLevel))
-                );
+            return true;
         }
 
         /// <summary>
@@ -341,15 +324,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.XLanguage != null)
-                    hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.FileExportObjectLevel != null)
-                    hashCode = hashCode * 59 + this.FileExportObjectLevel.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.FileExportObjectLevel != null) hashCode = hashCode * 59 + this.FileExportObjectLevel.GetHashCode();
                 return hashCode;
             }
         }

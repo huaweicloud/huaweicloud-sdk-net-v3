@@ -170,21 +170,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         public bool Equals(BatchAddEndpointServicePermissionsRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Permissions != input.Permissions || (this.Permissions != null && input.Permissions != null && !this.Permissions.SequenceEqual(input.Permissions))) return false;
+            if (this.PermissionType != input.PermissionType) return false;
 
-            return 
-                (
-                    this.Permissions == input.Permissions ||
-                    this.Permissions != null &&
-                    input.Permissions != null &&
-                    this.Permissions.SequenceEqual(input.Permissions)
-                ) && 
-                (
-                    this.PermissionType == input.PermissionType ||
-                    (this.PermissionType != null &&
-                    this.PermissionType.Equals(input.PermissionType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -194,11 +184,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Permissions != null)
-                    hashCode = hashCode * 59 + this.Permissions.GetHashCode();
-                if (this.PermissionType != null)
-                    hashCode = hashCode * 59 + this.PermissionType.GetHashCode();
+                var hashCode = 41;
+                if (this.Permissions != null) hashCode = hashCode * 59 + this.Permissions.GetHashCode();
+                hashCode = hashCode * 59 + this.PermissionType.GetHashCode();
                 return hashCode;
             }
         }

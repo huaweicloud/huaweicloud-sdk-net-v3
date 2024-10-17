@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public bool Equals(ListPluginsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Plugins != input.Plugins || (this.Plugins != null && input.Plugins != null && !this.Plugins.SequenceEqual(input.Plugins))) return false;
 
-            return 
-                (
-                    this.Plugins == input.Plugins ||
-                    this.Plugins != null &&
-                    input.Plugins != null &&
-                    this.Plugins.SequenceEqual(input.Plugins)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Plugins != null)
-                    hashCode = hashCode * 59 + this.Plugins.GetHashCode();
+                var hashCode = 41;
+                if (this.Plugins != null) hashCode = hashCode * 59 + this.Plugins.GetHashCode();
                 return hashCode;
             }
         }

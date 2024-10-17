@@ -66,25 +66,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(ListCriteriasRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
+            if (this.TopicId != input.TopicId || (this.TopicId != null && !this.TopicId.Equals(input.TopicId))) return false;
+            if (this.SearchType != input.SearchType || (this.SearchType != null && !this.SearchType.Equals(input.SearchType))) return false;
 
-            return 
-                (
-                    this.GroupId == input.GroupId ||
-                    (this.GroupId != null &&
-                    this.GroupId.Equals(input.GroupId))
-                ) && 
-                (
-                    this.TopicId == input.TopicId ||
-                    (this.TopicId != null &&
-                    this.TopicId.Equals(input.TopicId))
-                ) && 
-                (
-                    this.SearchType == input.SearchType ||
-                    (this.SearchType != null &&
-                    this.SearchType.Equals(input.SearchType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +81,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.GroupId != null)
-                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
-                if (this.TopicId != null)
-                    hashCode = hashCode * 59 + this.TopicId.GetHashCode();
-                if (this.SearchType != null)
-                    hashCode = hashCode * 59 + this.SearchType.GetHashCode();
+                var hashCode = 41;
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.TopicId != null) hashCode = hashCode * 59 + this.TopicId.GetHashCode();
+                if (this.SearchType != null) hashCode = hashCode * 59 + this.SearchType.GetHashCode();
                 return hashCode;
             }
         }

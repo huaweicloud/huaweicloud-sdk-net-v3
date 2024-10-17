@@ -112,66 +112,19 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public bool Equals(RabbitMQExtendProductInfoEntity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
+            if (this.EcsFlavorId != input.EcsFlavorId || (this.EcsFlavorId != null && !this.EcsFlavorId.Equals(input.EcsFlavorId))) return false;
+            if (this.ArchTypes != input.ArchTypes || (this.ArchTypes != null && input.ArchTypes != null && !this.ArchTypes.SequenceEqual(input.ArchTypes))) return false;
+            if (this.ChargingMode != input.ChargingMode || (this.ChargingMode != null && input.ChargingMode != null && !this.ChargingMode.SequenceEqual(input.ChargingMode))) return false;
+            if (this.Ios != input.Ios || (this.Ios != null && input.Ios != null && !this.Ios.SequenceEqual(input.Ios))) return false;
+            if (this.Properties != input.Properties || (this.Properties != null && !this.Properties.Equals(input.Properties))) return false;
+            if (this.AvailableZones != input.AvailableZones || (this.AvailableZones != null && input.AvailableZones != null && !this.AvailableZones.SequenceEqual(input.AvailableZones))) return false;
+            if (this.UnavailableZones != input.UnavailableZones || (this.UnavailableZones != null && input.UnavailableZones != null && !this.UnavailableZones.SequenceEqual(input.UnavailableZones))) return false;
+            if (this.SupportFeatures != input.SupportFeatures || (this.SupportFeatures != null && input.SupportFeatures != null && !this.SupportFeatures.SequenceEqual(input.SupportFeatures))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.ProductId == input.ProductId ||
-                    (this.ProductId != null &&
-                    this.ProductId.Equals(input.ProductId))
-                ) && 
-                (
-                    this.EcsFlavorId == input.EcsFlavorId ||
-                    (this.EcsFlavorId != null &&
-                    this.EcsFlavorId.Equals(input.EcsFlavorId))
-                ) && 
-                (
-                    this.ArchTypes == input.ArchTypes ||
-                    this.ArchTypes != null &&
-                    input.ArchTypes != null &&
-                    this.ArchTypes.SequenceEqual(input.ArchTypes)
-                ) && 
-                (
-                    this.ChargingMode == input.ChargingMode ||
-                    this.ChargingMode != null &&
-                    input.ChargingMode != null &&
-                    this.ChargingMode.SequenceEqual(input.ChargingMode)
-                ) && 
-                (
-                    this.Ios == input.Ios ||
-                    this.Ios != null &&
-                    input.Ios != null &&
-                    this.Ios.SequenceEqual(input.Ios)
-                ) && 
-                (
-                    this.Properties == input.Properties ||
-                    (this.Properties != null &&
-                    this.Properties.Equals(input.Properties))
-                ) && 
-                (
-                    this.AvailableZones == input.AvailableZones ||
-                    this.AvailableZones != null &&
-                    input.AvailableZones != null &&
-                    this.AvailableZones.SequenceEqual(input.AvailableZones)
-                ) && 
-                (
-                    this.UnavailableZones == input.UnavailableZones ||
-                    this.UnavailableZones != null &&
-                    input.UnavailableZones != null &&
-                    this.UnavailableZones.SequenceEqual(input.UnavailableZones)
-                ) && 
-                (
-                    this.SupportFeatures == input.SupportFeatures ||
-                    this.SupportFeatures != null &&
-                    input.SupportFeatures != null &&
-                    this.SupportFeatures.SequenceEqual(input.SupportFeatures)
-                );
+            return true;
         }
 
         /// <summary>
@@ -181,27 +134,17 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.ProductId != null)
-                    hashCode = hashCode * 59 + this.ProductId.GetHashCode();
-                if (this.EcsFlavorId != null)
-                    hashCode = hashCode * 59 + this.EcsFlavorId.GetHashCode();
-                if (this.ArchTypes != null)
-                    hashCode = hashCode * 59 + this.ArchTypes.GetHashCode();
-                if (this.ChargingMode != null)
-                    hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
-                if (this.Ios != null)
-                    hashCode = hashCode * 59 + this.Ios.GetHashCode();
-                if (this.Properties != null)
-                    hashCode = hashCode * 59 + this.Properties.GetHashCode();
-                if (this.AvailableZones != null)
-                    hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
-                if (this.UnavailableZones != null)
-                    hashCode = hashCode * 59 + this.UnavailableZones.GetHashCode();
-                if (this.SupportFeatures != null)
-                    hashCode = hashCode * 59 + this.SupportFeatures.GetHashCode();
+                var hashCode = 41;
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
+                if (this.EcsFlavorId != null) hashCode = hashCode * 59 + this.EcsFlavorId.GetHashCode();
+                if (this.ArchTypes != null) hashCode = hashCode * 59 + this.ArchTypes.GetHashCode();
+                if (this.ChargingMode != null) hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
+                if (this.Ios != null) hashCode = hashCode * 59 + this.Ios.GetHashCode();
+                if (this.Properties != null) hashCode = hashCode * 59 + this.Properties.GetHashCode();
+                if (this.AvailableZones != null) hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
+                if (this.UnavailableZones != null) hashCode = hashCode * 59 + this.UnavailableZones.GetHashCode();
+                if (this.SupportFeatures != null) hashCode = hashCode * 59 + this.SupportFeatures.GetHashCode();
                 return hashCode;
             }
         }

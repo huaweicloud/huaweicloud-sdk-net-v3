@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(BatchAssociatedIssue input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceIssueId != input.SourceIssueId || (this.SourceIssueId != null && !this.SourceIssueId.Equals(input.SourceIssueId))) return false;
+            if (this.Subject != input.Subject || (this.Subject != null && !this.Subject.Equals(input.Subject))) return false;
+            if (this.IssueId != input.IssueId || (this.IssueId != null && !this.IssueId.Equals(input.IssueId))) return false;
+            if (this.Project != input.Project || (this.Project != null && !this.Project.Equals(input.Project))) return false;
+            if (this.User != input.User || (this.User != null && !this.User.Equals(input.User))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
 
-            return 
-                (
-                    this.SourceIssueId == input.SourceIssueId ||
-                    (this.SourceIssueId != null &&
-                    this.SourceIssueId.Equals(input.SourceIssueId))
-                ) && 
-                (
-                    this.Subject == input.Subject ||
-                    (this.Subject != null &&
-                    this.Subject.Equals(input.Subject))
-                ) && 
-                (
-                    this.IssueId == input.IssueId ||
-                    (this.IssueId != null &&
-                    this.IssueId.Equals(input.IssueId))
-                ) && 
-                (
-                    this.Project == input.Project ||
-                    (this.Project != null &&
-                    this.Project.Equals(input.Project))
-                ) && 
-                (
-                    this.User == input.User ||
-                    (this.User != null &&
-                    this.User.Equals(input.User))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceIssueId != null)
-                    hashCode = hashCode * 59 + this.SourceIssueId.GetHashCode();
-                if (this.Subject != null)
-                    hashCode = hashCode * 59 + this.Subject.GetHashCode();
-                if (this.IssueId != null)
-                    hashCode = hashCode * 59 + this.IssueId.GetHashCode();
-                if (this.Project != null)
-                    hashCode = hashCode * 59 + this.Project.GetHashCode();
-                if (this.User != null)
-                    hashCode = hashCode * 59 + this.User.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                var hashCode = 41;
+                if (this.SourceIssueId != null) hashCode = hashCode * 59 + this.SourceIssueId.GetHashCode();
+                if (this.Subject != null) hashCode = hashCode * 59 + this.Subject.GetHashCode();
+                if (this.IssueId != null) hashCode = hashCode * 59 + this.IssueId.GetHashCode();
+                if (this.Project != null) hashCode = hashCode * 59 + this.Project.GetHashCode();
+                if (this.User != null) hashCode = hashCode * 59 + this.User.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

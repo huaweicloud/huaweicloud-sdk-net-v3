@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(DeleteReadonlyNodeRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NodeList != input.NodeList || (this.NodeList != null && input.NodeList != null && !this.NodeList.SequenceEqual(input.NodeList))) return false;
 
-            return 
-                (
-                    this.NodeList == input.NodeList ||
-                    this.NodeList != null &&
-                    input.NodeList != null &&
-                    this.NodeList.SequenceEqual(input.NodeList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NodeList != null)
-                    hashCode = hashCode * 59 + this.NodeList.GetHashCode();
+                var hashCode = 41;
+                if (this.NodeList != null) hashCode = hashCode * 59 + this.NodeList.GetHashCode();
                 return hashCode;
             }
         }

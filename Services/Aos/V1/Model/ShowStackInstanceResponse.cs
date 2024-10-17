@@ -264,70 +264,21 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(ShowStackInstanceResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StackSetId != input.StackSetId || (this.StackSetId != null && !this.StackSetId.Equals(input.StackSetId))) return false;
+            if (this.StackSetName != input.StackSetName || (this.StackSetName != null && !this.StackSetName.Equals(input.StackSetName))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.StatusMessage != input.StatusMessage || (this.StatusMessage != null && !this.StatusMessage.Equals(input.StatusMessage))) return false;
+            if (this.StackId != input.StackId || (this.StackId != null && !this.StackId.Equals(input.StackId))) return false;
+            if (this.StackName != input.StackName || (this.StackName != null && !this.StackName.Equals(input.StackName))) return false;
+            if (this.StackDomainId != input.StackDomainId || (this.StackDomainId != null && !this.StackDomainId.Equals(input.StackDomainId))) return false;
+            if (this.LatestStackSetOperationId != input.LatestStackSetOperationId || (this.LatestStackSetOperationId != null && !this.LatestStackSetOperationId.Equals(input.LatestStackSetOperationId))) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.VarOverrides != input.VarOverrides || (this.VarOverrides != null && !this.VarOverrides.Equals(input.VarOverrides))) return false;
 
-            return 
-                (
-                    this.StackSetId == input.StackSetId ||
-                    (this.StackSetId != null &&
-                    this.StackSetId.Equals(input.StackSetId))
-                ) && 
-                (
-                    this.StackSetName == input.StackSetName ||
-                    (this.StackSetName != null &&
-                    this.StackSetName.Equals(input.StackSetName))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.StatusMessage == input.StatusMessage ||
-                    (this.StatusMessage != null &&
-                    this.StatusMessage.Equals(input.StatusMessage))
-                ) && 
-                (
-                    this.StackId == input.StackId ||
-                    (this.StackId != null &&
-                    this.StackId.Equals(input.StackId))
-                ) && 
-                (
-                    this.StackName == input.StackName ||
-                    (this.StackName != null &&
-                    this.StackName.Equals(input.StackName))
-                ) && 
-                (
-                    this.StackDomainId == input.StackDomainId ||
-                    (this.StackDomainId != null &&
-                    this.StackDomainId.Equals(input.StackDomainId))
-                ) && 
-                (
-                    this.LatestStackSetOperationId == input.LatestStackSetOperationId ||
-                    (this.LatestStackSetOperationId != null &&
-                    this.LatestStackSetOperationId.Equals(input.LatestStackSetOperationId))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.VarOverrides == input.VarOverrides ||
-                    (this.VarOverrides != null &&
-                    this.VarOverrides.Equals(input.VarOverrides))
-                );
+            return true;
         }
 
         /// <summary>
@@ -337,31 +288,19 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StackSetId != null)
-                    hashCode = hashCode * 59 + this.StackSetId.GetHashCode();
-                if (this.StackSetName != null)
-                    hashCode = hashCode * 59 + this.StackSetName.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.StatusMessage != null)
-                    hashCode = hashCode * 59 + this.StatusMessage.GetHashCode();
-                if (this.StackId != null)
-                    hashCode = hashCode * 59 + this.StackId.GetHashCode();
-                if (this.StackName != null)
-                    hashCode = hashCode * 59 + this.StackName.GetHashCode();
-                if (this.StackDomainId != null)
-                    hashCode = hashCode * 59 + this.StackDomainId.GetHashCode();
-                if (this.LatestStackSetOperationId != null)
-                    hashCode = hashCode * 59 + this.LatestStackSetOperationId.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.VarOverrides != null)
-                    hashCode = hashCode * 59 + this.VarOverrides.GetHashCode();
+                var hashCode = 41;
+                if (this.StackSetId != null) hashCode = hashCode * 59 + this.StackSetId.GetHashCode();
+                if (this.StackSetName != null) hashCode = hashCode * 59 + this.StackSetName.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.StatusMessage != null) hashCode = hashCode * 59 + this.StatusMessage.GetHashCode();
+                if (this.StackId != null) hashCode = hashCode * 59 + this.StackId.GetHashCode();
+                if (this.StackName != null) hashCode = hashCode * 59 + this.StackName.GetHashCode();
+                if (this.StackDomainId != null) hashCode = hashCode * 59 + this.StackDomainId.GetHashCode();
+                if (this.LatestStackSetOperationId != null) hashCode = hashCode * 59 + this.LatestStackSetOperationId.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.VarOverrides != null) hashCode = hashCode * 59 + this.VarOverrides.GetHashCode();
                 return hashCode;
             }
         }

@@ -2191,316 +2191,70 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         public bool Equals(GlanceShowImageListResponseBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BackupId != input.BackupId || (this.BackupId != null && !this.BackupId.Equals(input.BackupId))) return false;
+            if (this.DataOrigin != input.DataOrigin || (this.DataOrigin != null && !this.DataOrigin.Equals(input.DataOrigin))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.ImageSize != input.ImageSize || (this.ImageSize != null && !this.ImageSize.Equals(input.ImageSize))) return false;
+            if (this.ImageSourceType != input.ImageSourceType) return false;
+            if (this.Imagetype != input.Imagetype) return false;
+            if (this.Isregistered != input.Isregistered) return false;
+            if (this.Originalimagename != input.Originalimagename || (this.Originalimagename != null && !this.Originalimagename.Equals(input.Originalimagename))) return false;
+            if (this.OsBit != input.OsBit) return false;
+            if (this.OsType != input.OsType) return false;
+            if (this.OsVersion != input.OsVersion || (this.OsVersion != null && !this.OsVersion.Equals(input.OsVersion))) return false;
+            if (this.Platform != input.Platform) return false;
+            if (this.Productcode != input.Productcode || (this.Productcode != null && !this.Productcode.Equals(input.Productcode))) return false;
+            if (this.SupportDiskintensive != input.SupportDiskintensive || (this.SupportDiskintensive != null && !this.SupportDiskintensive.Equals(input.SupportDiskintensive))) return false;
+            if (this.SupportHighperformance != input.SupportHighperformance || (this.SupportHighperformance != null && !this.SupportHighperformance.Equals(input.SupportHighperformance))) return false;
+            if (this.SupportKvm != input.SupportKvm || (this.SupportKvm != null && !this.SupportKvm.Equals(input.SupportKvm))) return false;
+            if (this.SupportKvmGpuType != input.SupportKvmGpuType || (this.SupportKvmGpuType != null && !this.SupportKvmGpuType.Equals(input.SupportKvmGpuType))) return false;
+            if (this.SupportKvmInfiniband != input.SupportKvmInfiniband || (this.SupportKvmInfiniband != null && !this.SupportKvmInfiniband.Equals(input.SupportKvmInfiniband))) return false;
+            if (this.SupportLargememory != input.SupportLargememory || (this.SupportLargememory != null && !this.SupportLargememory.Equals(input.SupportLargememory))) return false;
+            if (this.SupportXen != input.SupportXen || (this.SupportXen != null && !this.SupportXen.Equals(input.SupportXen))) return false;
+            if (this.SupportXenGpuType != input.SupportXenGpuType || (this.SupportXenGpuType != null && !this.SupportXenGpuType.Equals(input.SupportXenGpuType))) return false;
+            if (this.SupportXenHana != input.SupportXenHana || (this.SupportXenHana != null && !this.SupportXenHana.Equals(input.SupportXenHana))) return false;
+            if (this.Checksum != input.Checksum || (this.Checksum != null && !this.Checksum.Equals(input.Checksum))) return false;
+            if (this.ContainerFormat != input.ContainerFormat || (this.ContainerFormat != null && !this.ContainerFormat.Equals(input.ContainerFormat))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.DiskFormat != input.DiskFormat) return false;
+            if (this.File != input.File || (this.File != null && !this.File.Equals(input.File))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.MinDisk != input.MinDisk || (this.MinDisk != null && !this.MinDisk.Equals(input.MinDisk))) return false;
+            if (this.MinRam != input.MinRam || (this.MinRam != null && !this.MinRam.Equals(input.MinRam))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Owner != input.Owner || (this.Owner != null && !this.Owner.Equals(input.Owner))) return false;
+            if (this.Protected != input.Protected || (this.Protected != null && !this.Protected.Equals(input.Protected))) return false;
+            if (this.Schema != input.Schema || (this.Schema != null && !this.Schema.Equals(input.Schema))) return false;
+            if (this.Self != input.Self || (this.Self != null && !this.Self.Equals(input.Self))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.VirtualEnvType != input.VirtualEnvType) return false;
+            if (this.VirtualSize != input.VirtualSize || (this.VirtualSize != null && !this.VirtualSize.Equals(input.VirtualSize))) return false;
+            if (this.Visibility != input.Visibility) return false;
+            if (this.SupportFcInject != input.SupportFcInject) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.SysEnterpriseProjectId != input.SysEnterpriseProjectId || (this.SysEnterpriseProjectId != null && !this.SysEnterpriseProjectId.Equals(input.SysEnterpriseProjectId))) return false;
+            if (this.HwFirmwareType != input.HwFirmwareType) return false;
+            if (this.SupportArm != input.SupportArm) return false;
+            if (this.IsOffshelved != input.IsOffshelved) return false;
+            if (this.Lazyloading != input.Lazyloading || (this.Lazyloading != null && !this.Lazyloading.Equals(input.Lazyloading))) return false;
+            if (this.OsFeatureList != input.OsFeatureList || (this.OsFeatureList != null && !this.OsFeatureList.Equals(input.OsFeatureList))) return false;
+            if (this.RootOrigin != input.RootOrigin || (this.RootOrigin != null && !this.RootOrigin.Equals(input.RootOrigin))) return false;
+            if (this.SequenceNum != input.SequenceNum || (this.SequenceNum != null && !this.SequenceNum.Equals(input.SequenceNum))) return false;
+            if (this.SupportAgentList != input.SupportAgentList || (this.SupportAgentList != null && !this.SupportAgentList.Equals(input.SupportAgentList))) return false;
+            if (this.SystemCmkid != input.SystemCmkid || (this.SystemCmkid != null && !this.SystemCmkid.Equals(input.SystemCmkid))) return false;
+            if (this.ActiveAt != input.ActiveAt || (this.ActiveAt != null && !this.ActiveAt.Equals(input.ActiveAt))) return false;
+            if (this.HwVifMultiqueueEnabled != input.HwVifMultiqueueEnabled || (this.HwVifMultiqueueEnabled != null && !this.HwVifMultiqueueEnabled.Equals(input.HwVifMultiqueueEnabled))) return false;
+            if (this.MaxRam != input.MaxRam || (this.MaxRam != null && !this.MaxRam.Equals(input.MaxRam))) return false;
+            if (this.ImageLocation != input.ImageLocation || (this.ImageLocation != null && !this.ImageLocation.Equals(input.ImageLocation))) return false;
+            if (this.IsConfigInit != input.IsConfigInit || (this.IsConfigInit != null && !this.IsConfigInit.Equals(input.IsConfigInit))) return false;
+            if (this.AccountCode != input.AccountCode || (this.AccountCode != null && !this.AccountCode.Equals(input.AccountCode))) return false;
+            if (this.SupportAmd != input.SupportAmd || (this.SupportAmd != null && !this.SupportAmd.Equals(input.SupportAmd))) return false;
 
-            return 
-                (
-                    this.BackupId == input.BackupId ||
-                    (this.BackupId != null &&
-                    this.BackupId.Equals(input.BackupId))
-                ) && 
-                (
-                    this.DataOrigin == input.DataOrigin ||
-                    (this.DataOrigin != null &&
-                    this.DataOrigin.Equals(input.DataOrigin))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.ImageSize == input.ImageSize ||
-                    (this.ImageSize != null &&
-                    this.ImageSize.Equals(input.ImageSize))
-                ) && 
-                (
-                    this.ImageSourceType == input.ImageSourceType ||
-                    (this.ImageSourceType != null &&
-                    this.ImageSourceType.Equals(input.ImageSourceType))
-                ) && 
-                (
-                    this.Imagetype == input.Imagetype ||
-                    (this.Imagetype != null &&
-                    this.Imagetype.Equals(input.Imagetype))
-                ) && 
-                (
-                    this.Isregistered == input.Isregistered ||
-                    (this.Isregistered != null &&
-                    this.Isregistered.Equals(input.Isregistered))
-                ) && 
-                (
-                    this.Originalimagename == input.Originalimagename ||
-                    (this.Originalimagename != null &&
-                    this.Originalimagename.Equals(input.Originalimagename))
-                ) && 
-                (
-                    this.OsBit == input.OsBit ||
-                    (this.OsBit != null &&
-                    this.OsBit.Equals(input.OsBit))
-                ) && 
-                (
-                    this.OsType == input.OsType ||
-                    (this.OsType != null &&
-                    this.OsType.Equals(input.OsType))
-                ) && 
-                (
-                    this.OsVersion == input.OsVersion ||
-                    (this.OsVersion != null &&
-                    this.OsVersion.Equals(input.OsVersion))
-                ) && 
-                (
-                    this.Platform == input.Platform ||
-                    (this.Platform != null &&
-                    this.Platform.Equals(input.Platform))
-                ) && 
-                (
-                    this.Productcode == input.Productcode ||
-                    (this.Productcode != null &&
-                    this.Productcode.Equals(input.Productcode))
-                ) && 
-                (
-                    this.SupportDiskintensive == input.SupportDiskintensive ||
-                    (this.SupportDiskintensive != null &&
-                    this.SupportDiskintensive.Equals(input.SupportDiskintensive))
-                ) && 
-                (
-                    this.SupportHighperformance == input.SupportHighperformance ||
-                    (this.SupportHighperformance != null &&
-                    this.SupportHighperformance.Equals(input.SupportHighperformance))
-                ) && 
-                (
-                    this.SupportKvm == input.SupportKvm ||
-                    (this.SupportKvm != null &&
-                    this.SupportKvm.Equals(input.SupportKvm))
-                ) && 
-                (
-                    this.SupportKvmGpuType == input.SupportKvmGpuType ||
-                    (this.SupportKvmGpuType != null &&
-                    this.SupportKvmGpuType.Equals(input.SupportKvmGpuType))
-                ) && 
-                (
-                    this.SupportKvmInfiniband == input.SupportKvmInfiniband ||
-                    (this.SupportKvmInfiniband != null &&
-                    this.SupportKvmInfiniband.Equals(input.SupportKvmInfiniband))
-                ) && 
-                (
-                    this.SupportLargememory == input.SupportLargememory ||
-                    (this.SupportLargememory != null &&
-                    this.SupportLargememory.Equals(input.SupportLargememory))
-                ) && 
-                (
-                    this.SupportXen == input.SupportXen ||
-                    (this.SupportXen != null &&
-                    this.SupportXen.Equals(input.SupportXen))
-                ) && 
-                (
-                    this.SupportXenGpuType == input.SupportXenGpuType ||
-                    (this.SupportXenGpuType != null &&
-                    this.SupportXenGpuType.Equals(input.SupportXenGpuType))
-                ) && 
-                (
-                    this.SupportXenHana == input.SupportXenHana ||
-                    (this.SupportXenHana != null &&
-                    this.SupportXenHana.Equals(input.SupportXenHana))
-                ) && 
-                (
-                    this.Checksum == input.Checksum ||
-                    (this.Checksum != null &&
-                    this.Checksum.Equals(input.Checksum))
-                ) && 
-                (
-                    this.ContainerFormat == input.ContainerFormat ||
-                    (this.ContainerFormat != null &&
-                    this.ContainerFormat.Equals(input.ContainerFormat))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.DiskFormat == input.DiskFormat ||
-                    (this.DiskFormat != null &&
-                    this.DiskFormat.Equals(input.DiskFormat))
-                ) && 
-                (
-                    this.File == input.File ||
-                    (this.File != null &&
-                    this.File.Equals(input.File))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.MinDisk == input.MinDisk ||
-                    (this.MinDisk != null &&
-                    this.MinDisk.Equals(input.MinDisk))
-                ) && 
-                (
-                    this.MinRam == input.MinRam ||
-                    (this.MinRam != null &&
-                    this.MinRam.Equals(input.MinRam))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Owner == input.Owner ||
-                    (this.Owner != null &&
-                    this.Owner.Equals(input.Owner))
-                ) && 
-                (
-                    this.Protected == input.Protected ||
-                    (this.Protected != null &&
-                    this.Protected.Equals(input.Protected))
-                ) && 
-                (
-                    this.Schema == input.Schema ||
-                    (this.Schema != null &&
-                    this.Schema.Equals(input.Schema))
-                ) && 
-                (
-                    this.Self == input.Self ||
-                    (this.Self != null &&
-                    this.Self.Equals(input.Self))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.VirtualEnvType == input.VirtualEnvType ||
-                    (this.VirtualEnvType != null &&
-                    this.VirtualEnvType.Equals(input.VirtualEnvType))
-                ) && 
-                (
-                    this.VirtualSize == input.VirtualSize ||
-                    (this.VirtualSize != null &&
-                    this.VirtualSize.Equals(input.VirtualSize))
-                ) && 
-                (
-                    this.Visibility == input.Visibility ||
-                    (this.Visibility != null &&
-                    this.Visibility.Equals(input.Visibility))
-                ) && 
-                (
-                    this.SupportFcInject == input.SupportFcInject ||
-                    (this.SupportFcInject != null &&
-                    this.SupportFcInject.Equals(input.SupportFcInject))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.SysEnterpriseProjectId == input.SysEnterpriseProjectId ||
-                    (this.SysEnterpriseProjectId != null &&
-                    this.SysEnterpriseProjectId.Equals(input.SysEnterpriseProjectId))
-                ) && 
-                (
-                    this.HwFirmwareType == input.HwFirmwareType ||
-                    (this.HwFirmwareType != null &&
-                    this.HwFirmwareType.Equals(input.HwFirmwareType))
-                ) && 
-                (
-                    this.SupportArm == input.SupportArm ||
-                    (this.SupportArm != null &&
-                    this.SupportArm.Equals(input.SupportArm))
-                ) && 
-                (
-                    this.IsOffshelved == input.IsOffshelved ||
-                    (this.IsOffshelved != null &&
-                    this.IsOffshelved.Equals(input.IsOffshelved))
-                ) && 
-                (
-                    this.Lazyloading == input.Lazyloading ||
-                    (this.Lazyloading != null &&
-                    this.Lazyloading.Equals(input.Lazyloading))
-                ) && 
-                (
-                    this.OsFeatureList == input.OsFeatureList ||
-                    (this.OsFeatureList != null &&
-                    this.OsFeatureList.Equals(input.OsFeatureList))
-                ) && 
-                (
-                    this.RootOrigin == input.RootOrigin ||
-                    (this.RootOrigin != null &&
-                    this.RootOrigin.Equals(input.RootOrigin))
-                ) && 
-                (
-                    this.SequenceNum == input.SequenceNum ||
-                    (this.SequenceNum != null &&
-                    this.SequenceNum.Equals(input.SequenceNum))
-                ) && 
-                (
-                    this.SupportAgentList == input.SupportAgentList ||
-                    (this.SupportAgentList != null &&
-                    this.SupportAgentList.Equals(input.SupportAgentList))
-                ) && 
-                (
-                    this.SystemCmkid == input.SystemCmkid ||
-                    (this.SystemCmkid != null &&
-                    this.SystemCmkid.Equals(input.SystemCmkid))
-                ) && 
-                (
-                    this.ActiveAt == input.ActiveAt ||
-                    (this.ActiveAt != null &&
-                    this.ActiveAt.Equals(input.ActiveAt))
-                ) && 
-                (
-                    this.HwVifMultiqueueEnabled == input.HwVifMultiqueueEnabled ||
-                    (this.HwVifMultiqueueEnabled != null &&
-                    this.HwVifMultiqueueEnabled.Equals(input.HwVifMultiqueueEnabled))
-                ) && 
-                (
-                    this.MaxRam == input.MaxRam ||
-                    (this.MaxRam != null &&
-                    this.MaxRam.Equals(input.MaxRam))
-                ) && 
-                (
-                    this.ImageLocation == input.ImageLocation ||
-                    (this.ImageLocation != null &&
-                    this.ImageLocation.Equals(input.ImageLocation))
-                ) && 
-                (
-                    this.IsConfigInit == input.IsConfigInit ||
-                    (this.IsConfigInit != null &&
-                    this.IsConfigInit.Equals(input.IsConfigInit))
-                ) && 
-                (
-                    this.AccountCode == input.AccountCode ||
-                    (this.AccountCode != null &&
-                    this.AccountCode.Equals(input.AccountCode))
-                ) && 
-                (
-                    this.SupportAmd == input.SupportAmd ||
-                    (this.SupportAmd != null &&
-                    this.SupportAmd.Equals(input.SupportAmd))
-                );
+            return true;
         }
 
         /// <summary>
@@ -2510,129 +2264,68 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BackupId != null)
-                    hashCode = hashCode * 59 + this.BackupId.GetHashCode();
-                if (this.DataOrigin != null)
-                    hashCode = hashCode * 59 + this.DataOrigin.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.ImageSize != null)
-                    hashCode = hashCode * 59 + this.ImageSize.GetHashCode();
-                if (this.ImageSourceType != null)
-                    hashCode = hashCode * 59 + this.ImageSourceType.GetHashCode();
-                if (this.Imagetype != null)
-                    hashCode = hashCode * 59 + this.Imagetype.GetHashCode();
-                if (this.Isregistered != null)
-                    hashCode = hashCode * 59 + this.Isregistered.GetHashCode();
-                if (this.Originalimagename != null)
-                    hashCode = hashCode * 59 + this.Originalimagename.GetHashCode();
-                if (this.OsBit != null)
-                    hashCode = hashCode * 59 + this.OsBit.GetHashCode();
-                if (this.OsType != null)
-                    hashCode = hashCode * 59 + this.OsType.GetHashCode();
-                if (this.OsVersion != null)
-                    hashCode = hashCode * 59 + this.OsVersion.GetHashCode();
-                if (this.Platform != null)
-                    hashCode = hashCode * 59 + this.Platform.GetHashCode();
-                if (this.Productcode != null)
-                    hashCode = hashCode * 59 + this.Productcode.GetHashCode();
-                if (this.SupportDiskintensive != null)
-                    hashCode = hashCode * 59 + this.SupportDiskintensive.GetHashCode();
-                if (this.SupportHighperformance != null)
-                    hashCode = hashCode * 59 + this.SupportHighperformance.GetHashCode();
-                if (this.SupportKvm != null)
-                    hashCode = hashCode * 59 + this.SupportKvm.GetHashCode();
-                if (this.SupportKvmGpuType != null)
-                    hashCode = hashCode * 59 + this.SupportKvmGpuType.GetHashCode();
-                if (this.SupportKvmInfiniband != null)
-                    hashCode = hashCode * 59 + this.SupportKvmInfiniband.GetHashCode();
-                if (this.SupportLargememory != null)
-                    hashCode = hashCode * 59 + this.SupportLargememory.GetHashCode();
-                if (this.SupportXen != null)
-                    hashCode = hashCode * 59 + this.SupportXen.GetHashCode();
-                if (this.SupportXenGpuType != null)
-                    hashCode = hashCode * 59 + this.SupportXenGpuType.GetHashCode();
-                if (this.SupportXenHana != null)
-                    hashCode = hashCode * 59 + this.SupportXenHana.GetHashCode();
-                if (this.Checksum != null)
-                    hashCode = hashCode * 59 + this.Checksum.GetHashCode();
-                if (this.ContainerFormat != null)
-                    hashCode = hashCode * 59 + this.ContainerFormat.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.DiskFormat != null)
-                    hashCode = hashCode * 59 + this.DiskFormat.GetHashCode();
-                if (this.File != null)
-                    hashCode = hashCode * 59 + this.File.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.MinDisk != null)
-                    hashCode = hashCode * 59 + this.MinDisk.GetHashCode();
-                if (this.MinRam != null)
-                    hashCode = hashCode * 59 + this.MinRam.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Owner != null)
-                    hashCode = hashCode * 59 + this.Owner.GetHashCode();
-                if (this.Protected != null)
-                    hashCode = hashCode * 59 + this.Protected.GetHashCode();
-                if (this.Schema != null)
-                    hashCode = hashCode * 59 + this.Schema.GetHashCode();
-                if (this.Self != null)
-                    hashCode = hashCode * 59 + this.Self.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.VirtualEnvType != null)
-                    hashCode = hashCode * 59 + this.VirtualEnvType.GetHashCode();
-                if (this.VirtualSize != null)
-                    hashCode = hashCode * 59 + this.VirtualSize.GetHashCode();
-                if (this.Visibility != null)
-                    hashCode = hashCode * 59 + this.Visibility.GetHashCode();
-                if (this.SupportFcInject != null)
-                    hashCode = hashCode * 59 + this.SupportFcInject.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.SysEnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.SysEnterpriseProjectId.GetHashCode();
-                if (this.HwFirmwareType != null)
-                    hashCode = hashCode * 59 + this.HwFirmwareType.GetHashCode();
-                if (this.SupportArm != null)
-                    hashCode = hashCode * 59 + this.SupportArm.GetHashCode();
-                if (this.IsOffshelved != null)
-                    hashCode = hashCode * 59 + this.IsOffshelved.GetHashCode();
-                if (this.Lazyloading != null)
-                    hashCode = hashCode * 59 + this.Lazyloading.GetHashCode();
-                if (this.OsFeatureList != null)
-                    hashCode = hashCode * 59 + this.OsFeatureList.GetHashCode();
-                if (this.RootOrigin != null)
-                    hashCode = hashCode * 59 + this.RootOrigin.GetHashCode();
-                if (this.SequenceNum != null)
-                    hashCode = hashCode * 59 + this.SequenceNum.GetHashCode();
-                if (this.SupportAgentList != null)
-                    hashCode = hashCode * 59 + this.SupportAgentList.GetHashCode();
-                if (this.SystemCmkid != null)
-                    hashCode = hashCode * 59 + this.SystemCmkid.GetHashCode();
-                if (this.ActiveAt != null)
-                    hashCode = hashCode * 59 + this.ActiveAt.GetHashCode();
-                if (this.HwVifMultiqueueEnabled != null)
-                    hashCode = hashCode * 59 + this.HwVifMultiqueueEnabled.GetHashCode();
-                if (this.MaxRam != null)
-                    hashCode = hashCode * 59 + this.MaxRam.GetHashCode();
-                if (this.ImageLocation != null)
-                    hashCode = hashCode * 59 + this.ImageLocation.GetHashCode();
-                if (this.IsConfigInit != null)
-                    hashCode = hashCode * 59 + this.IsConfigInit.GetHashCode();
-                if (this.AccountCode != null)
-                    hashCode = hashCode * 59 + this.AccountCode.GetHashCode();
-                if (this.SupportAmd != null)
-                    hashCode = hashCode * 59 + this.SupportAmd.GetHashCode();
+                var hashCode = 41;
+                if (this.BackupId != null) hashCode = hashCode * 59 + this.BackupId.GetHashCode();
+                if (this.DataOrigin != null) hashCode = hashCode * 59 + this.DataOrigin.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.ImageSize != null) hashCode = hashCode * 59 + this.ImageSize.GetHashCode();
+                hashCode = hashCode * 59 + this.ImageSourceType.GetHashCode();
+                hashCode = hashCode * 59 + this.Imagetype.GetHashCode();
+                hashCode = hashCode * 59 + this.Isregistered.GetHashCode();
+                if (this.Originalimagename != null) hashCode = hashCode * 59 + this.Originalimagename.GetHashCode();
+                hashCode = hashCode * 59 + this.OsBit.GetHashCode();
+                hashCode = hashCode * 59 + this.OsType.GetHashCode();
+                if (this.OsVersion != null) hashCode = hashCode * 59 + this.OsVersion.GetHashCode();
+                hashCode = hashCode * 59 + this.Platform.GetHashCode();
+                if (this.Productcode != null) hashCode = hashCode * 59 + this.Productcode.GetHashCode();
+                if (this.SupportDiskintensive != null) hashCode = hashCode * 59 + this.SupportDiskintensive.GetHashCode();
+                if (this.SupportHighperformance != null) hashCode = hashCode * 59 + this.SupportHighperformance.GetHashCode();
+                if (this.SupportKvm != null) hashCode = hashCode * 59 + this.SupportKvm.GetHashCode();
+                if (this.SupportKvmGpuType != null) hashCode = hashCode * 59 + this.SupportKvmGpuType.GetHashCode();
+                if (this.SupportKvmInfiniband != null) hashCode = hashCode * 59 + this.SupportKvmInfiniband.GetHashCode();
+                if (this.SupportLargememory != null) hashCode = hashCode * 59 + this.SupportLargememory.GetHashCode();
+                if (this.SupportXen != null) hashCode = hashCode * 59 + this.SupportXen.GetHashCode();
+                if (this.SupportXenGpuType != null) hashCode = hashCode * 59 + this.SupportXenGpuType.GetHashCode();
+                if (this.SupportXenHana != null) hashCode = hashCode * 59 + this.SupportXenHana.GetHashCode();
+                if (this.Checksum != null) hashCode = hashCode * 59 + this.Checksum.GetHashCode();
+                if (this.ContainerFormat != null) hashCode = hashCode * 59 + this.ContainerFormat.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                hashCode = hashCode * 59 + this.DiskFormat.GetHashCode();
+                if (this.File != null) hashCode = hashCode * 59 + this.File.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.MinDisk != null) hashCode = hashCode * 59 + this.MinDisk.GetHashCode();
+                if (this.MinRam != null) hashCode = hashCode * 59 + this.MinRam.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Owner != null) hashCode = hashCode * 59 + this.Owner.GetHashCode();
+                if (this.Protected != null) hashCode = hashCode * 59 + this.Protected.GetHashCode();
+                if (this.Schema != null) hashCode = hashCode * 59 + this.Schema.GetHashCode();
+                if (this.Self != null) hashCode = hashCode * 59 + this.Self.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                hashCode = hashCode * 59 + this.VirtualEnvType.GetHashCode();
+                if (this.VirtualSize != null) hashCode = hashCode * 59 + this.VirtualSize.GetHashCode();
+                hashCode = hashCode * 59 + this.Visibility.GetHashCode();
+                hashCode = hashCode * 59 + this.SupportFcInject.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.SysEnterpriseProjectId != null) hashCode = hashCode * 59 + this.SysEnterpriseProjectId.GetHashCode();
+                hashCode = hashCode * 59 + this.HwFirmwareType.GetHashCode();
+                hashCode = hashCode * 59 + this.SupportArm.GetHashCode();
+                hashCode = hashCode * 59 + this.IsOffshelved.GetHashCode();
+                if (this.Lazyloading != null) hashCode = hashCode * 59 + this.Lazyloading.GetHashCode();
+                if (this.OsFeatureList != null) hashCode = hashCode * 59 + this.OsFeatureList.GetHashCode();
+                if (this.RootOrigin != null) hashCode = hashCode * 59 + this.RootOrigin.GetHashCode();
+                if (this.SequenceNum != null) hashCode = hashCode * 59 + this.SequenceNum.GetHashCode();
+                if (this.SupportAgentList != null) hashCode = hashCode * 59 + this.SupportAgentList.GetHashCode();
+                if (this.SystemCmkid != null) hashCode = hashCode * 59 + this.SystemCmkid.GetHashCode();
+                if (this.ActiveAt != null) hashCode = hashCode * 59 + this.ActiveAt.GetHashCode();
+                if (this.HwVifMultiqueueEnabled != null) hashCode = hashCode * 59 + this.HwVifMultiqueueEnabled.GetHashCode();
+                if (this.MaxRam != null) hashCode = hashCode * 59 + this.MaxRam.GetHashCode();
+                if (this.ImageLocation != null) hashCode = hashCode * 59 + this.ImageLocation.GetHashCode();
+                if (this.IsConfigInit != null) hashCode = hashCode * 59 + this.IsConfigInit.GetHashCode();
+                if (this.AccountCode != null) hashCode = hashCode * 59 + this.AccountCode.GetHashCode();
+                if (this.SupportAmd != null) hashCode = hashCode * 59 + this.SupportAmd.GetHashCode();
                 return hashCode;
             }
         }

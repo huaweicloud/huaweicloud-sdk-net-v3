@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(DeleteDisasterRecoveryRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TargetInstanceId != input.TargetInstanceId || (this.TargetInstanceId != null && !this.TargetInstanceId.Equals(input.TargetInstanceId))) return false;
+            if (this.TargetProjectId != input.TargetProjectId || (this.TargetProjectId != null && !this.TargetProjectId.Equals(input.TargetProjectId))) return false;
+            if (this.TargetRegion != input.TargetRegion || (this.TargetRegion != null && !this.TargetRegion.Equals(input.TargetRegion))) return false;
+            if (this.TargetIp != input.TargetIp || (this.TargetIp != null && !this.TargetIp.Equals(input.TargetIp))) return false;
+            if (this.IsMaster != input.IsMaster || (this.IsMaster != null && !this.IsMaster.Equals(input.IsMaster))) return false;
 
-            return 
-                (
-                    this.TargetInstanceId == input.TargetInstanceId ||
-                    (this.TargetInstanceId != null &&
-                    this.TargetInstanceId.Equals(input.TargetInstanceId))
-                ) && 
-                (
-                    this.TargetProjectId == input.TargetProjectId ||
-                    (this.TargetProjectId != null &&
-                    this.TargetProjectId.Equals(input.TargetProjectId))
-                ) && 
-                (
-                    this.TargetRegion == input.TargetRegion ||
-                    (this.TargetRegion != null &&
-                    this.TargetRegion.Equals(input.TargetRegion))
-                ) && 
-                (
-                    this.TargetIp == input.TargetIp ||
-                    (this.TargetIp != null &&
-                    this.TargetIp.Equals(input.TargetIp))
-                ) && 
-                (
-                    this.IsMaster == input.IsMaster ||
-                    (this.IsMaster != null &&
-                    this.IsMaster.Equals(input.IsMaster))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TargetInstanceId != null)
-                    hashCode = hashCode * 59 + this.TargetInstanceId.GetHashCode();
-                if (this.TargetProjectId != null)
-                    hashCode = hashCode * 59 + this.TargetProjectId.GetHashCode();
-                if (this.TargetRegion != null)
-                    hashCode = hashCode * 59 + this.TargetRegion.GetHashCode();
-                if (this.TargetIp != null)
-                    hashCode = hashCode * 59 + this.TargetIp.GetHashCode();
-                if (this.IsMaster != null)
-                    hashCode = hashCode * 59 + this.IsMaster.GetHashCode();
+                var hashCode = 41;
+                if (this.TargetInstanceId != null) hashCode = hashCode * 59 + this.TargetInstanceId.GetHashCode();
+                if (this.TargetProjectId != null) hashCode = hashCode * 59 + this.TargetProjectId.GetHashCode();
+                if (this.TargetRegion != null) hashCode = hashCode * 59 + this.TargetRegion.GetHashCode();
+                if (this.TargetIp != null) hashCode = hashCode * 59 + this.TargetIp.GetHashCode();
+                if (this.IsMaster != null) hashCode = hashCode * 59 + this.IsMaster.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(BatchUpdatePoliciesPriorityRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.L7policies != input.L7policies || (this.L7policies != null && input.L7policies != null && !this.L7policies.SequenceEqual(input.L7policies))) return false;
 
-            return 
-                (
-                    this.L7policies == input.L7policies ||
-                    this.L7policies != null &&
-                    input.L7policies != null &&
-                    this.L7policies.SequenceEqual(input.L7policies)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.L7policies != null)
-                    hashCode = hashCode * 59 + this.L7policies.GetHashCode();
+                var hashCode = 41;
+                if (this.L7policies != null) hashCode = hashCode * 59 + this.L7policies.GetHashCode();
                 return hashCode;
             }
         }

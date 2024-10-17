@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(GeneralTextCharList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Char != input.Char || (this.Char != null && !this.Char.Equals(input.Char))) return false;
+            if (this.CharLocation != input.CharLocation || (this.CharLocation != null && input.CharLocation != null && !this.CharLocation.SequenceEqual(input.CharLocation))) return false;
+            if (this.CharConfidence != input.CharConfidence || (this.CharConfidence != null && !this.CharConfidence.Equals(input.CharConfidence))) return false;
 
-            return 
-                (
-                    this.Char == input.Char ||
-                    (this.Char != null &&
-                    this.Char.Equals(input.Char))
-                ) && 
-                (
-                    this.CharLocation == input.CharLocation ||
-                    this.CharLocation != null &&
-                    input.CharLocation != null &&
-                    this.CharLocation.SequenceEqual(input.CharLocation)
-                ) && 
-                (
-                    this.CharConfidence == input.CharConfidence ||
-                    (this.CharConfidence != null &&
-                    this.CharConfidence.Equals(input.CharConfidence))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Char != null)
-                    hashCode = hashCode * 59 + this.Char.GetHashCode();
-                if (this.CharLocation != null)
-                    hashCode = hashCode * 59 + this.CharLocation.GetHashCode();
-                if (this.CharConfidence != null)
-                    hashCode = hashCode * 59 + this.CharConfidence.GetHashCode();
+                var hashCode = 41;
+                if (this.Char != null) hashCode = hashCode * 59 + this.Char.GetHashCode();
+                if (this.CharLocation != null) hashCode = hashCode * 59 + this.CharLocation.GetHashCode();
+                if (this.CharConfidence != null) hashCode = hashCode * 59 + this.CharConfidence.GetHashCode();
                 return hashCode;
             }
         }

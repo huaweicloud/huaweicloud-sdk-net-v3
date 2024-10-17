@@ -70,32 +70,13 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(SubtitleModifyReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
+            if (this.DefaultLanguage != input.DefaultLanguage || (this.DefaultLanguage != null && !this.DefaultLanguage.Equals(input.DefaultLanguage))) return false;
+            if (this.AddSubtitles != input.AddSubtitles || (this.AddSubtitles != null && input.AddSubtitles != null && !this.AddSubtitles.SequenceEqual(input.AddSubtitles))) return false;
+            if (this.DeleteSubtitles != input.DeleteSubtitles || (this.DeleteSubtitles != null && input.DeleteSubtitles != null && !this.DeleteSubtitles.SequenceEqual(input.DeleteSubtitles))) return false;
 
-            return 
-                (
-                    this.AssetId == input.AssetId ||
-                    (this.AssetId != null &&
-                    this.AssetId.Equals(input.AssetId))
-                ) && 
-                (
-                    this.DefaultLanguage == input.DefaultLanguage ||
-                    (this.DefaultLanguage != null &&
-                    this.DefaultLanguage.Equals(input.DefaultLanguage))
-                ) && 
-                (
-                    this.AddSubtitles == input.AddSubtitles ||
-                    this.AddSubtitles != null &&
-                    input.AddSubtitles != null &&
-                    this.AddSubtitles.SequenceEqual(input.AddSubtitles)
-                ) && 
-                (
-                    this.DeleteSubtitles == input.DeleteSubtitles ||
-                    this.DeleteSubtitles != null &&
-                    input.DeleteSubtitles != null &&
-                    this.DeleteSubtitles.SequenceEqual(input.DeleteSubtitles)
-                );
+            return true;
         }
 
         /// <summary>
@@ -105,15 +86,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AssetId != null)
-                    hashCode = hashCode * 59 + this.AssetId.GetHashCode();
-                if (this.DefaultLanguage != null)
-                    hashCode = hashCode * 59 + this.DefaultLanguage.GetHashCode();
-                if (this.AddSubtitles != null)
-                    hashCode = hashCode * 59 + this.AddSubtitles.GetHashCode();
-                if (this.DeleteSubtitles != null)
-                    hashCode = hashCode * 59 + this.DeleteSubtitles.GetHashCode();
+                var hashCode = 41;
+                if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                if (this.DefaultLanguage != null) hashCode = hashCode * 59 + this.DefaultLanguage.GetHashCode();
+                if (this.AddSubtitles != null) hashCode = hashCode * 59 + this.AddSubtitles.GetHashCode();
+                if (this.DeleteSubtitles != null) hashCode = hashCode * 59 + this.DeleteSubtitles.GetHashCode();
                 return hashCode;
             }
         }

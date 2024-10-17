@@ -91,48 +91,16 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ServiceCapability input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ServiceId != input.ServiceId || (this.ServiceId != null && !this.ServiceId.Equals(input.ServiceId))) return false;
+            if (this.ServiceType != input.ServiceType || (this.ServiceType != null && !this.ServiceType.Equals(input.ServiceType))) return false;
+            if (this.Properties != input.Properties || (this.Properties != null && input.Properties != null && !this.Properties.SequenceEqual(input.Properties))) return false;
+            if (this.Commands != input.Commands || (this.Commands != null && input.Commands != null && !this.Commands.SequenceEqual(input.Commands))) return false;
+            if (this.Events != input.Events || (this.Events != null && input.Events != null && !this.Events.SequenceEqual(input.Events))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Option != input.Option || (this.Option != null && !this.Option.Equals(input.Option))) return false;
 
-            return 
-                (
-                    this.ServiceId == input.ServiceId ||
-                    (this.ServiceId != null &&
-                    this.ServiceId.Equals(input.ServiceId))
-                ) && 
-                (
-                    this.ServiceType == input.ServiceType ||
-                    (this.ServiceType != null &&
-                    this.ServiceType.Equals(input.ServiceType))
-                ) && 
-                (
-                    this.Properties == input.Properties ||
-                    this.Properties != null &&
-                    input.Properties != null &&
-                    this.Properties.SequenceEqual(input.Properties)
-                ) && 
-                (
-                    this.Commands == input.Commands ||
-                    this.Commands != null &&
-                    input.Commands != null &&
-                    this.Commands.SequenceEqual(input.Commands)
-                ) && 
-                (
-                    this.Events == input.Events ||
-                    this.Events != null &&
-                    input.Events != null &&
-                    this.Events.SequenceEqual(input.Events)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Option == input.Option ||
-                    (this.Option != null &&
-                    this.Option.Equals(input.Option))
-                );
+            return true;
         }
 
         /// <summary>
@@ -142,21 +110,14 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ServiceId != null)
-                    hashCode = hashCode * 59 + this.ServiceId.GetHashCode();
-                if (this.ServiceType != null)
-                    hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
-                if (this.Properties != null)
-                    hashCode = hashCode * 59 + this.Properties.GetHashCode();
-                if (this.Commands != null)
-                    hashCode = hashCode * 59 + this.Commands.GetHashCode();
-                if (this.Events != null)
-                    hashCode = hashCode * 59 + this.Events.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Option != null)
-                    hashCode = hashCode * 59 + this.Option.GetHashCode();
+                var hashCode = 41;
+                if (this.ServiceId != null) hashCode = hashCode * 59 + this.ServiceId.GetHashCode();
+                if (this.ServiceType != null) hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
+                if (this.Properties != null) hashCode = hashCode * 59 + this.Properties.GetHashCode();
+                if (this.Commands != null) hashCode = hashCode * 59 + this.Commands.GetHashCode();
+                if (this.Events != null) hashCode = hashCode * 59 + this.Events.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Option != null) hashCode = hashCode * 59 + this.Option.GetHashCode();
                 return hashCode;
             }
         }

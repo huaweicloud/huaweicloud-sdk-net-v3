@@ -171,25 +171,12 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         public bool Equals(PortList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClientPort != input.ClientPort || (this.ClientPort != null && !this.ClientPort.Equals(input.ClientPort))) return false;
+            if (this.ServerPort != input.ServerPort || (this.ServerPort != null && !this.ServerPort.Equals(input.ServerPort))) return false;
+            if (this.Protocol != input.Protocol) return false;
 
-            return 
-                (
-                    this.ClientPort == input.ClientPort ||
-                    (this.ClientPort != null &&
-                    this.ClientPort.Equals(input.ClientPort))
-                ) && 
-                (
-                    this.ServerPort == input.ServerPort ||
-                    (this.ServerPort != null &&
-                    this.ServerPort.Equals(input.ServerPort))
-                ) && 
-                (
-                    this.Protocol == input.Protocol ||
-                    (this.Protocol != null &&
-                    this.Protocol.Equals(input.Protocol))
-                );
+            return true;
         }
 
         /// <summary>
@@ -199,13 +186,10 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClientPort != null)
-                    hashCode = hashCode * 59 + this.ClientPort.GetHashCode();
-                if (this.ServerPort != null)
-                    hashCode = hashCode * 59 + this.ServerPort.GetHashCode();
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                var hashCode = 41;
+                if (this.ClientPort != null) hashCode = hashCode * 59 + this.ClientPort.GetHashCode();
+                if (this.ServerPort != null) hashCode = hashCode * 59 + this.ServerPort.GetHashCode();
+                hashCode = hashCode * 59 + this.Protocol.GetHashCode();
                 return hashCode;
             }
         }

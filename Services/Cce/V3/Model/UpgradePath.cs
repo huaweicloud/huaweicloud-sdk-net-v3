@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(UpgradePath input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.PlatformVersion != input.PlatformVersion || (this.PlatformVersion != null && !this.PlatformVersion.Equals(input.PlatformVersion))) return false;
+            if (this.TargetVersions != input.TargetVersions || (this.TargetVersions != null && input.TargetVersions != null && !this.TargetVersions.SequenceEqual(input.TargetVersions))) return false;
 
-            return 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.PlatformVersion == input.PlatformVersion ||
-                    (this.PlatformVersion != null &&
-                    this.PlatformVersion.Equals(input.PlatformVersion))
-                ) && 
-                (
-                    this.TargetVersions == input.TargetVersions ||
-                    this.TargetVersions != null &&
-                    input.TargetVersions != null &&
-                    this.TargetVersions.SequenceEqual(input.TargetVersions)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.PlatformVersion != null)
-                    hashCode = hashCode * 59 + this.PlatformVersion.GetHashCode();
-                if (this.TargetVersions != null)
-                    hashCode = hashCode * 59 + this.TargetVersions.GetHashCode();
+                var hashCode = 41;
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.PlatformVersion != null) hashCode = hashCode * 59 + this.PlatformVersion.GetHashCode();
+                if (this.TargetVersions != null) hashCode = hashCode * 59 + this.TargetVersions.GetHashCode();
                 return hashCode;
             }
         }

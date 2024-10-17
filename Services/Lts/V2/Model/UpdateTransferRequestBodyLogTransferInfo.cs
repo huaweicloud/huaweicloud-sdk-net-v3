@@ -297,25 +297,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(UpdateTransferRequestBodyLogTransferInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LogStorageFormat != input.LogStorageFormat) return false;
+            if (this.LogTransferStatus != input.LogTransferStatus) return false;
+            if (this.LogTransferDetail != input.LogTransferDetail || (this.LogTransferDetail != null && !this.LogTransferDetail.Equals(input.LogTransferDetail))) return false;
 
-            return 
-                (
-                    this.LogStorageFormat == input.LogStorageFormat ||
-                    (this.LogStorageFormat != null &&
-                    this.LogStorageFormat.Equals(input.LogStorageFormat))
-                ) && 
-                (
-                    this.LogTransferStatus == input.LogTransferStatus ||
-                    (this.LogTransferStatus != null &&
-                    this.LogTransferStatus.Equals(input.LogTransferStatus))
-                ) && 
-                (
-                    this.LogTransferDetail == input.LogTransferDetail ||
-                    (this.LogTransferDetail != null &&
-                    this.LogTransferDetail.Equals(input.LogTransferDetail))
-                );
+            return true;
         }
 
         /// <summary>
@@ -325,13 +312,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LogStorageFormat != null)
-                    hashCode = hashCode * 59 + this.LogStorageFormat.GetHashCode();
-                if (this.LogTransferStatus != null)
-                    hashCode = hashCode * 59 + this.LogTransferStatus.GetHashCode();
-                if (this.LogTransferDetail != null)
-                    hashCode = hashCode * 59 + this.LogTransferDetail.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.LogStorageFormat.GetHashCode();
+                hashCode = hashCode * 59 + this.LogTransferStatus.GetHashCode();
+                if (this.LogTransferDetail != null) hashCode = hashCode * 59 + this.LogTransferDetail.GetHashCode();
                 return hashCode;
             }
         }

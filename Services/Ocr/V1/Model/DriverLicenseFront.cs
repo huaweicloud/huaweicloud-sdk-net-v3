@@ -168,101 +168,27 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(DriverLicenseFront input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Sex != input.Sex || (this.Sex != null && !this.Sex.Equals(input.Sex))) return false;
+            if (this.Nationality != input.Nationality || (this.Nationality != null && !this.Nationality.Equals(input.Nationality))) return false;
+            if (this.Address != input.Address || (this.Address != null && !this.Address.Equals(input.Address))) return false;
+            if (this.Birth != input.Birth || (this.Birth != null && !this.Birth.Equals(input.Birth))) return false;
+            if (this.IssueDate != input.IssueDate || (this.IssueDate != null && !this.IssueDate.Equals(input.IssueDate))) return false;
+            if (this.Class != input.Class || (this.Class != null && !this.Class.Equals(input.Class))) return false;
+            if (this.ValidFrom != input.ValidFrom || (this.ValidFrom != null && !this.ValidFrom.Equals(input.ValidFrom))) return false;
+            if (this.ValidTo != input.ValidTo || (this.ValidTo != null && !this.ValidTo.Equals(input.ValidTo))) return false;
+            if (this.IssuingAuthority != input.IssuingAuthority || (this.IssuingAuthority != null && !this.IssuingAuthority.Equals(input.IssuingAuthority))) return false;
+            if (this.AccumulatedScores != input.AccumulatedScores || (this.AccumulatedScores != null && !this.AccumulatedScores.Equals(input.AccumulatedScores))) return false;
+            if (this.Status != input.Status || (this.Status != null && input.Status != null && !this.Status.SequenceEqual(input.Status))) return false;
+            if (this.GenerationDate != input.GenerationDate || (this.GenerationDate != null && !this.GenerationDate.Equals(input.GenerationDate))) return false;
+            if (this.CurrentTime != input.CurrentTime || (this.CurrentTime != null && !this.CurrentTime.Equals(input.CurrentTime))) return false;
+            if (this.FileNumber != input.FileNumber || (this.FileNumber != null && !this.FileNumber.Equals(input.FileNumber))) return false;
+            if (this.TextLocation != input.TextLocation || (this.TextLocation != null && !this.TextLocation.Equals(input.TextLocation))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Sex == input.Sex ||
-                    (this.Sex != null &&
-                    this.Sex.Equals(input.Sex))
-                ) && 
-                (
-                    this.Nationality == input.Nationality ||
-                    (this.Nationality != null &&
-                    this.Nationality.Equals(input.Nationality))
-                ) && 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
-                ) && 
-                (
-                    this.Birth == input.Birth ||
-                    (this.Birth != null &&
-                    this.Birth.Equals(input.Birth))
-                ) && 
-                (
-                    this.IssueDate == input.IssueDate ||
-                    (this.IssueDate != null &&
-                    this.IssueDate.Equals(input.IssueDate))
-                ) && 
-                (
-                    this.Class == input.Class ||
-                    (this.Class != null &&
-                    this.Class.Equals(input.Class))
-                ) && 
-                (
-                    this.ValidFrom == input.ValidFrom ||
-                    (this.ValidFrom != null &&
-                    this.ValidFrom.Equals(input.ValidFrom))
-                ) && 
-                (
-                    this.ValidTo == input.ValidTo ||
-                    (this.ValidTo != null &&
-                    this.ValidTo.Equals(input.ValidTo))
-                ) && 
-                (
-                    this.IssuingAuthority == input.IssuingAuthority ||
-                    (this.IssuingAuthority != null &&
-                    this.IssuingAuthority.Equals(input.IssuingAuthority))
-                ) && 
-                (
-                    this.AccumulatedScores == input.AccumulatedScores ||
-                    (this.AccumulatedScores != null &&
-                    this.AccumulatedScores.Equals(input.AccumulatedScores))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    this.Status != null &&
-                    input.Status != null &&
-                    this.Status.SequenceEqual(input.Status)
-                ) && 
-                (
-                    this.GenerationDate == input.GenerationDate ||
-                    (this.GenerationDate != null &&
-                    this.GenerationDate.Equals(input.GenerationDate))
-                ) && 
-                (
-                    this.CurrentTime == input.CurrentTime ||
-                    (this.CurrentTime != null &&
-                    this.CurrentTime.Equals(input.CurrentTime))
-                ) && 
-                (
-                    this.FileNumber == input.FileNumber ||
-                    (this.FileNumber != null &&
-                    this.FileNumber.Equals(input.FileNumber))
-                ) && 
-                (
-                    this.TextLocation == input.TextLocation ||
-                    (this.TextLocation != null &&
-                    this.TextLocation.Equals(input.TextLocation))
-                );
+            return true;
         }
 
         /// <summary>
@@ -272,43 +198,25 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Number != null)
-                    hashCode = hashCode * 59 + this.Number.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Sex != null)
-                    hashCode = hashCode * 59 + this.Sex.GetHashCode();
-                if (this.Nationality != null)
-                    hashCode = hashCode * 59 + this.Nationality.GetHashCode();
-                if (this.Address != null)
-                    hashCode = hashCode * 59 + this.Address.GetHashCode();
-                if (this.Birth != null)
-                    hashCode = hashCode * 59 + this.Birth.GetHashCode();
-                if (this.IssueDate != null)
-                    hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
-                if (this.Class != null)
-                    hashCode = hashCode * 59 + this.Class.GetHashCode();
-                if (this.ValidFrom != null)
-                    hashCode = hashCode * 59 + this.ValidFrom.GetHashCode();
-                if (this.ValidTo != null)
-                    hashCode = hashCode * 59 + this.ValidTo.GetHashCode();
-                if (this.IssuingAuthority != null)
-                    hashCode = hashCode * 59 + this.IssuingAuthority.GetHashCode();
-                if (this.AccumulatedScores != null)
-                    hashCode = hashCode * 59 + this.AccumulatedScores.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.GenerationDate != null)
-                    hashCode = hashCode * 59 + this.GenerationDate.GetHashCode();
-                if (this.CurrentTime != null)
-                    hashCode = hashCode * 59 + this.CurrentTime.GetHashCode();
-                if (this.FileNumber != null)
-                    hashCode = hashCode * 59 + this.FileNumber.GetHashCode();
-                if (this.TextLocation != null)
-                    hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
+                var hashCode = 41;
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Number != null) hashCode = hashCode * 59 + this.Number.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Sex != null) hashCode = hashCode * 59 + this.Sex.GetHashCode();
+                if (this.Nationality != null) hashCode = hashCode * 59 + this.Nationality.GetHashCode();
+                if (this.Address != null) hashCode = hashCode * 59 + this.Address.GetHashCode();
+                if (this.Birth != null) hashCode = hashCode * 59 + this.Birth.GetHashCode();
+                if (this.IssueDate != null) hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
+                if (this.Class != null) hashCode = hashCode * 59 + this.Class.GetHashCode();
+                if (this.ValidFrom != null) hashCode = hashCode * 59 + this.ValidFrom.GetHashCode();
+                if (this.ValidTo != null) hashCode = hashCode * 59 + this.ValidTo.GetHashCode();
+                if (this.IssuingAuthority != null) hashCode = hashCode * 59 + this.IssuingAuthority.GetHashCode();
+                if (this.AccumulatedScores != null) hashCode = hashCode * 59 + this.AccumulatedScores.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.GenerationDate != null) hashCode = hashCode * 59 + this.GenerationDate.GetHashCode();
+                if (this.CurrentTime != null) hashCode = hashCode * 59 + this.CurrentTime.GetHashCode();
+                if (this.FileNumber != null) hashCode = hashCode * 59 + this.FileNumber.GetHashCode();
+                if (this.TextLocation != null) hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
                 return hashCode;
             }
         }

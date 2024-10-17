@@ -74,30 +74,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ListStatusStatisticRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.IterationId != input.IterationId || (this.IterationId != null && !this.IterationId.Equals(input.IterationId))) return false;
+            if (this.TrackerId != input.TrackerId || (this.TrackerId != null && !this.TrackerId.Equals(input.TrackerId))) return false;
+            if (this.StatusId != input.StatusId || (this.StatusId != null && !this.StatusId.Equals(input.StatusId))) return false;
 
-            return 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.IterationId == input.IterationId ||
-                    (this.IterationId != null &&
-                    this.IterationId.Equals(input.IterationId))
-                ) && 
-                (
-                    this.TrackerId == input.TrackerId ||
-                    (this.TrackerId != null &&
-                    this.TrackerId.Equals(input.TrackerId))
-                ) && 
-                (
-                    this.StatusId == input.StatusId ||
-                    (this.StatusId != null &&
-                    this.StatusId.Equals(input.StatusId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -107,15 +90,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.IterationId != null)
-                    hashCode = hashCode * 59 + this.IterationId.GetHashCode();
-                if (this.TrackerId != null)
-                    hashCode = hashCode * 59 + this.TrackerId.GetHashCode();
-                if (this.StatusId != null)
-                    hashCode = hashCode * 59 + this.StatusId.GetHashCode();
+                var hashCode = 41;
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.IterationId != null) hashCode = hashCode * 59 + this.IterationId.GetHashCode();
+                if (this.TrackerId != null) hashCode = hashCode * 59 + this.TrackerId.GetHashCode();
+                if (this.StatusId != null) hashCode = hashCode * 59 + this.StatusId.GetHashCode();
                 return hashCode;
             }
         }

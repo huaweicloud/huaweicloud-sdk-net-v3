@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ADDomainInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DomainAdminAccountName != input.DomainAdminAccountName || (this.DomainAdminAccountName != null && !this.DomainAdminAccountName.Equals(input.DomainAdminAccountName))) return false;
+            if (this.DomainAdminPwd != input.DomainAdminPwd || (this.DomainAdminPwd != null && !this.DomainAdminPwd.Equals(input.DomainAdminPwd))) return false;
 
-            return 
-                (
-                    this.DomainAdminAccountName == input.DomainAdminAccountName ||
-                    (this.DomainAdminAccountName != null &&
-                    this.DomainAdminAccountName.Equals(input.DomainAdminAccountName))
-                ) && 
-                (
-                    this.DomainAdminPwd == input.DomainAdminPwd ||
-                    (this.DomainAdminPwd != null &&
-                    this.DomainAdminPwd.Equals(input.DomainAdminPwd))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DomainAdminAccountName != null)
-                    hashCode = hashCode * 59 + this.DomainAdminAccountName.GetHashCode();
-                if (this.DomainAdminPwd != null)
-                    hashCode = hashCode * 59 + this.DomainAdminPwd.GetHashCode();
+                var hashCode = 41;
+                if (this.DomainAdminAccountName != null) hashCode = hashCode * 59 + this.DomainAdminAccountName.GetHashCode();
+                if (this.DomainAdminPwd != null) hashCode = hashCode * 59 + this.DomainAdminPwd.GetHashCode();
                 return hashCode;
             }
         }

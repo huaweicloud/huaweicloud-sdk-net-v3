@@ -119,65 +119,20 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ShowDeviceMessageResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MessageId != input.MessageId || (this.MessageId != null && !this.MessageId.Equals(input.MessageId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
+            if (this.Encoding != input.Encoding || (this.Encoding != null && !this.Encoding.Equals(input.Encoding))) return false;
+            if (this.PayloadFormat != input.PayloadFormat || (this.PayloadFormat != null && !this.PayloadFormat.Equals(input.PayloadFormat))) return false;
+            if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;
+            if (this.Properties != input.Properties || (this.Properties != null && !this.Properties.Equals(input.Properties))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.ErrorInfo != input.ErrorInfo || (this.ErrorInfo != null && !this.ErrorInfo.Equals(input.ErrorInfo))) return false;
+            if (this.CreatedTime != input.CreatedTime || (this.CreatedTime != null && !this.CreatedTime.Equals(input.CreatedTime))) return false;
+            if (this.FinishedTime != input.FinishedTime || (this.FinishedTime != null && !this.FinishedTime.Equals(input.FinishedTime))) return false;
 
-            return 
-                (
-                    this.MessageId == input.MessageId ||
-                    (this.MessageId != null &&
-                    this.MessageId.Equals(input.MessageId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.Encoding == input.Encoding ||
-                    (this.Encoding != null &&
-                    this.Encoding.Equals(input.Encoding))
-                ) && 
-                (
-                    this.PayloadFormat == input.PayloadFormat ||
-                    (this.PayloadFormat != null &&
-                    this.PayloadFormat.Equals(input.PayloadFormat))
-                ) && 
-                (
-                    this.Topic == input.Topic ||
-                    (this.Topic != null &&
-                    this.Topic.Equals(input.Topic))
-                ) && 
-                (
-                    this.Properties == input.Properties ||
-                    (this.Properties != null &&
-                    this.Properties.Equals(input.Properties))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.ErrorInfo == input.ErrorInfo ||
-                    (this.ErrorInfo != null &&
-                    this.ErrorInfo.Equals(input.ErrorInfo))
-                ) && 
-                (
-                    this.CreatedTime == input.CreatedTime ||
-                    (this.CreatedTime != null &&
-                    this.CreatedTime.Equals(input.CreatedTime))
-                ) && 
-                (
-                    this.FinishedTime == input.FinishedTime ||
-                    (this.FinishedTime != null &&
-                    this.FinishedTime.Equals(input.FinishedTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,29 +142,18 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MessageId != null)
-                    hashCode = hashCode * 59 + this.MessageId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.Encoding != null)
-                    hashCode = hashCode * 59 + this.Encoding.GetHashCode();
-                if (this.PayloadFormat != null)
-                    hashCode = hashCode * 59 + this.PayloadFormat.GetHashCode();
-                if (this.Topic != null)
-                    hashCode = hashCode * 59 + this.Topic.GetHashCode();
-                if (this.Properties != null)
-                    hashCode = hashCode * 59 + this.Properties.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.ErrorInfo != null)
-                    hashCode = hashCode * 59 + this.ErrorInfo.GetHashCode();
-                if (this.CreatedTime != null)
-                    hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
-                if (this.FinishedTime != null)
-                    hashCode = hashCode * 59 + this.FinishedTime.GetHashCode();
+                var hashCode = 41;
+                if (this.MessageId != null) hashCode = hashCode * 59 + this.MessageId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.Encoding != null) hashCode = hashCode * 59 + this.Encoding.GetHashCode();
+                if (this.PayloadFormat != null) hashCode = hashCode * 59 + this.PayloadFormat.GetHashCode();
+                if (this.Topic != null) hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.Properties != null) hashCode = hashCode * 59 + this.Properties.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.ErrorInfo != null) hashCode = hashCode * 59 + this.ErrorInfo.GetHashCode();
+                if (this.CreatedTime != null) hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
+                if (this.FinishedTime != null) hashCode = hashCode * 59 + this.FinishedTime.GetHashCode();
                 return hashCode;
             }
         }

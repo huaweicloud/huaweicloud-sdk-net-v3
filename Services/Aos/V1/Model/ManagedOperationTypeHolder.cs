@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(ManagedOperationTypeHolder input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ManagedOperation != input.ManagedOperation || (this.ManagedOperation != null && !this.ManagedOperation.Equals(input.ManagedOperation))) return false;
 
-            return 
-                (
-                    this.ManagedOperation == input.ManagedOperation ||
-                    (this.ManagedOperation != null &&
-                    this.ManagedOperation.Equals(input.ManagedOperation))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ManagedOperation != null)
-                    hashCode = hashCode * 59 + this.ManagedOperation.GetHashCode();
+                var hashCode = 41;
+                if (this.ManagedOperation != null) hashCode = hashCode * 59 + this.ManagedOperation.GetHashCode();
                 return hashCode;
             }
         }

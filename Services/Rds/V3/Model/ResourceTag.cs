@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ResourceTag input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Key != input.Key || (this.Key != null && !this.Key.Equals(input.Key))) return false;
+            if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
+            if (this.TagType != input.TagType || (this.TagType != null && !this.TagType.Equals(input.TagType))) return false;
 
-            return 
-                (
-                    this.Key == input.Key ||
-                    (this.Key != null &&
-                    this.Key.Equals(input.Key))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                ) && 
-                (
-                    this.TagType == input.TagType ||
-                    (this.TagType != null &&
-                    this.TagType.Equals(input.TagType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Key != null)
-                    hashCode = hashCode * 59 + this.Key.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
-                if (this.TagType != null)
-                    hashCode = hashCode * 59 + this.TagType.GetHashCode();
+                var hashCode = 41;
+                if (this.Key != null) hashCode = hashCode * 59 + this.Key.GetHashCode();
+                if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.TagType != null) hashCode = hashCode * 59 + this.TagType.GetHashCode();
                 return hashCode;
             }
         }

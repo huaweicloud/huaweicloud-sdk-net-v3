@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(AclAccountResetPasswordBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OldPassword != input.OldPassword || (this.OldPassword != null && !this.OldPassword.Equals(input.OldPassword))) return false;
+            if (this.NewPassword != input.NewPassword || (this.NewPassword != null && !this.NewPassword.Equals(input.NewPassword))) return false;
 
-            return 
-                (
-                    this.OldPassword == input.OldPassword ||
-                    (this.OldPassword != null &&
-                    this.OldPassword.Equals(input.OldPassword))
-                ) && 
-                (
-                    this.NewPassword == input.NewPassword ||
-                    (this.NewPassword != null &&
-                    this.NewPassword.Equals(input.NewPassword))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OldPassword != null)
-                    hashCode = hashCode * 59 + this.OldPassword.GetHashCode();
-                if (this.NewPassword != null)
-                    hashCode = hashCode * 59 + this.NewPassword.GetHashCode();
+                var hashCode = 41;
+                if (this.OldPassword != null) hashCode = hashCode * 59 + this.OldPassword.GetHashCode();
+                if (this.NewPassword != null) hashCode = hashCode * 59 + this.NewPassword.GetHashCode();
                 return hashCode;
             }
         }

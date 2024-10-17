@@ -164,21 +164,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(DeleteTagsOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.Action != input.Action) return false;
 
-            return 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                );
+            return true;
         }
 
         /// <summary>
@@ -188,11 +178,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
+                var hashCode = 41;
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                hashCode = hashCode * 59 + this.Action.GetHashCode();
                 return hashCode;
             }
         }

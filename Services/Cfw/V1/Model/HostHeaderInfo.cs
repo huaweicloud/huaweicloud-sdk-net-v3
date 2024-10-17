@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(HostHeaderInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Host != input.Host || (this.Host != null && !this.Host.Equals(input.Host))) return false;
 
-            return 
-                (
-                    this.Host == input.Host ||
-                    (this.Host != null &&
-                    this.Host.Equals(input.Host))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Host != null)
-                    hashCode = hashCode * 59 + this.Host.GetHashCode();
+                var hashCode = 41;
+                if (this.Host != null) hashCode = hashCode * 59 + this.Host.GetHashCode();
                 return hashCode;
             }
         }

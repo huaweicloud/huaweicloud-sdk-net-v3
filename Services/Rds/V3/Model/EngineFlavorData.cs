@@ -126,71 +126,21 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(EngineFlavorData input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Vcpus != input.Vcpus || (this.Vcpus != null && !this.Vcpus.Equals(input.Vcpus))) return false;
+            if (this.Ram != input.Ram || (this.Ram != null && !this.Ram.Equals(input.Ram))) return false;
+            if (this.SpecCode != input.SpecCode || (this.SpecCode != null && !this.SpecCode.Equals(input.SpecCode))) return false;
+            if (this.IsIpv6Supported != input.IsIpv6Supported || (this.IsIpv6Supported != null && !this.IsIpv6Supported.Equals(input.IsIpv6Supported))) return false;
+            if (this.TypeCode != input.TypeCode || (this.TypeCode != null && !this.TypeCode.Equals(input.TypeCode))) return false;
+            if (this.AzStatus != input.AzStatus || (this.AzStatus != null && input.AzStatus != null && !this.AzStatus.SequenceEqual(input.AzStatus))) return false;
+            if (this.GroupType != input.GroupType || (this.GroupType != null && !this.GroupType.Equals(input.GroupType))) return false;
+            if (this.MaxConnection != input.MaxConnection || (this.MaxConnection != null && !this.MaxConnection.Equals(input.MaxConnection))) return false;
+            if (this.Tps != input.Tps || (this.Tps != null && !this.Tps.Equals(input.Tps))) return false;
+            if (this.Qps != input.Qps || (this.Qps != null && !this.Qps.Equals(input.Qps))) return false;
+            if (this.MinVolumeSize != input.MinVolumeSize || (this.MinVolumeSize != null && !this.MinVolumeSize.Equals(input.MinVolumeSize))) return false;
+            if (this.MaxVolumeSize != input.MaxVolumeSize || (this.MaxVolumeSize != null && !this.MaxVolumeSize.Equals(input.MaxVolumeSize))) return false;
 
-            return 
-                (
-                    this.Vcpus == input.Vcpus ||
-                    (this.Vcpus != null &&
-                    this.Vcpus.Equals(input.Vcpus))
-                ) && 
-                (
-                    this.Ram == input.Ram ||
-                    (this.Ram != null &&
-                    this.Ram.Equals(input.Ram))
-                ) && 
-                (
-                    this.SpecCode == input.SpecCode ||
-                    (this.SpecCode != null &&
-                    this.SpecCode.Equals(input.SpecCode))
-                ) && 
-                (
-                    this.IsIpv6Supported == input.IsIpv6Supported ||
-                    (this.IsIpv6Supported != null &&
-                    this.IsIpv6Supported.Equals(input.IsIpv6Supported))
-                ) && 
-                (
-                    this.TypeCode == input.TypeCode ||
-                    (this.TypeCode != null &&
-                    this.TypeCode.Equals(input.TypeCode))
-                ) && 
-                (
-                    this.AzStatus == input.AzStatus ||
-                    this.AzStatus != null &&
-                    input.AzStatus != null &&
-                    this.AzStatus.SequenceEqual(input.AzStatus)
-                ) && 
-                (
-                    this.GroupType == input.GroupType ||
-                    (this.GroupType != null &&
-                    this.GroupType.Equals(input.GroupType))
-                ) && 
-                (
-                    this.MaxConnection == input.MaxConnection ||
-                    (this.MaxConnection != null &&
-                    this.MaxConnection.Equals(input.MaxConnection))
-                ) && 
-                (
-                    this.Tps == input.Tps ||
-                    (this.Tps != null &&
-                    this.Tps.Equals(input.Tps))
-                ) && 
-                (
-                    this.Qps == input.Qps ||
-                    (this.Qps != null &&
-                    this.Qps.Equals(input.Qps))
-                ) && 
-                (
-                    this.MinVolumeSize == input.MinVolumeSize ||
-                    (this.MinVolumeSize != null &&
-                    this.MinVolumeSize.Equals(input.MinVolumeSize))
-                ) && 
-                (
-                    this.MaxVolumeSize == input.MaxVolumeSize ||
-                    (this.MaxVolumeSize != null &&
-                    this.MaxVolumeSize.Equals(input.MaxVolumeSize))
-                );
+            return true;
         }
 
         /// <summary>
@@ -200,31 +150,19 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Vcpus != null)
-                    hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
-                if (this.Ram != null)
-                    hashCode = hashCode * 59 + this.Ram.GetHashCode();
-                if (this.SpecCode != null)
-                    hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
-                if (this.IsIpv6Supported != null)
-                    hashCode = hashCode * 59 + this.IsIpv6Supported.GetHashCode();
-                if (this.TypeCode != null)
-                    hashCode = hashCode * 59 + this.TypeCode.GetHashCode();
-                if (this.AzStatus != null)
-                    hashCode = hashCode * 59 + this.AzStatus.GetHashCode();
-                if (this.GroupType != null)
-                    hashCode = hashCode * 59 + this.GroupType.GetHashCode();
-                if (this.MaxConnection != null)
-                    hashCode = hashCode * 59 + this.MaxConnection.GetHashCode();
-                if (this.Tps != null)
-                    hashCode = hashCode * 59 + this.Tps.GetHashCode();
-                if (this.Qps != null)
-                    hashCode = hashCode * 59 + this.Qps.GetHashCode();
-                if (this.MinVolumeSize != null)
-                    hashCode = hashCode * 59 + this.MinVolumeSize.GetHashCode();
-                if (this.MaxVolumeSize != null)
-                    hashCode = hashCode * 59 + this.MaxVolumeSize.GetHashCode();
+                var hashCode = 41;
+                if (this.Vcpus != null) hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
+                if (this.Ram != null) hashCode = hashCode * 59 + this.Ram.GetHashCode();
+                if (this.SpecCode != null) hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
+                if (this.IsIpv6Supported != null) hashCode = hashCode * 59 + this.IsIpv6Supported.GetHashCode();
+                if (this.TypeCode != null) hashCode = hashCode * 59 + this.TypeCode.GetHashCode();
+                if (this.AzStatus != null) hashCode = hashCode * 59 + this.AzStatus.GetHashCode();
+                if (this.GroupType != null) hashCode = hashCode * 59 + this.GroupType.GetHashCode();
+                if (this.MaxConnection != null) hashCode = hashCode * 59 + this.MaxConnection.GetHashCode();
+                if (this.Tps != null) hashCode = hashCode * 59 + this.Tps.GetHashCode();
+                if (this.Qps != null) hashCode = hashCode * 59 + this.Qps.GetHashCode();
+                if (this.MinVolumeSize != null) hashCode = hashCode * 59 + this.MinVolumeSize.GetHashCode();
+                if (this.MaxVolumeSize != null) hashCode = hashCode * 59 + this.MaxVolumeSize.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(Single2Ha input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SingleToHa != input.SingleToHa || (this.SingleToHa != null && !this.SingleToHa.Equals(input.SingleToHa))) return false;
 
-            return 
-                (
-                    this.SingleToHa == input.SingleToHa ||
-                    (this.SingleToHa != null &&
-                    this.SingleToHa.Equals(input.SingleToHa))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SingleToHa != null)
-                    hashCode = hashCode * 59 + this.SingleToHa.GetHashCode();
+                var hashCode = 41;
+                if (this.SingleToHa != null) hashCode = hashCode * 59 + this.SingleToHa.GetHashCode();
                 return hashCode;
             }
         }

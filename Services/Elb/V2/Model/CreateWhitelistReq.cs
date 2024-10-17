@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// </summary>
         public bool Equals(CreateWhitelistReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
+            if (this.ListenerId != input.ListenerId || (this.ListenerId != null && !this.ListenerId.Equals(input.ListenerId))) return false;
+            if (this.EnableWhitelist != input.EnableWhitelist || (this.EnableWhitelist != null && !this.EnableWhitelist.Equals(input.EnableWhitelist))) return false;
+            if (this.Whitelist != input.Whitelist || (this.Whitelist != null && !this.Whitelist.Equals(input.Whitelist))) return false;
 
-            return 
-                (
-                    this.TenantId == input.TenantId ||
-                    (this.TenantId != null &&
-                    this.TenantId.Equals(input.TenantId))
-                ) && 
-                (
-                    this.ListenerId == input.ListenerId ||
-                    (this.ListenerId != null &&
-                    this.ListenerId.Equals(input.ListenerId))
-                ) && 
-                (
-                    this.EnableWhitelist == input.EnableWhitelist ||
-                    (this.EnableWhitelist != null &&
-                    this.EnableWhitelist.Equals(input.EnableWhitelist))
-                ) && 
-                (
-                    this.Whitelist == input.Whitelist ||
-                    (this.Whitelist != null &&
-                    this.Whitelist.Equals(input.Whitelist))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TenantId != null)
-                    hashCode = hashCode * 59 + this.TenantId.GetHashCode();
-                if (this.ListenerId != null)
-                    hashCode = hashCode * 59 + this.ListenerId.GetHashCode();
-                if (this.EnableWhitelist != null)
-                    hashCode = hashCode * 59 + this.EnableWhitelist.GetHashCode();
-                if (this.Whitelist != null)
-                    hashCode = hashCode * 59 + this.Whitelist.GetHashCode();
+                var hashCode = 41;
+                if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
+                if (this.ListenerId != null) hashCode = hashCode * 59 + this.ListenerId.GetHashCode();
+                if (this.EnableWhitelist != null) hashCode = hashCode * 59 + this.EnableWhitelist.GetHashCode();
+                if (this.Whitelist != null) hashCode = hashCode * 59 + this.Whitelist.GetHashCode();
                 return hashCode;
             }
         }

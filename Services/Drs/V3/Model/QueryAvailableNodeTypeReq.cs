@@ -317,35 +317,14 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(QueryAvailableNodeTypeReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EngineType != input.EngineType || (this.EngineType != null && !this.EngineType.Equals(input.EngineType))) return false;
+            if (this.DbUseType != input.DbUseType) return false;
+            if (this.JobDirection != input.JobDirection) return false;
+            if (this.NodeType != input.NodeType || (this.NodeType != null && !this.NodeType.Equals(input.NodeType))) return false;
+            if (this.MultiWrite != input.MultiWrite || (this.MultiWrite != null && !this.MultiWrite.Equals(input.MultiWrite))) return false;
 
-            return 
-                (
-                    this.EngineType == input.EngineType ||
-                    (this.EngineType != null &&
-                    this.EngineType.Equals(input.EngineType))
-                ) && 
-                (
-                    this.DbUseType == input.DbUseType ||
-                    (this.DbUseType != null &&
-                    this.DbUseType.Equals(input.DbUseType))
-                ) && 
-                (
-                    this.JobDirection == input.JobDirection ||
-                    (this.JobDirection != null &&
-                    this.JobDirection.Equals(input.JobDirection))
-                ) && 
-                (
-                    this.NodeType == input.NodeType ||
-                    (this.NodeType != null &&
-                    this.NodeType.Equals(input.NodeType))
-                ) && 
-                (
-                    this.MultiWrite == input.MultiWrite ||
-                    (this.MultiWrite != null &&
-                    this.MultiWrite.Equals(input.MultiWrite))
-                );
+            return true;
         }
 
         /// <summary>
@@ -355,17 +334,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EngineType != null)
-                    hashCode = hashCode * 59 + this.EngineType.GetHashCode();
-                if (this.DbUseType != null)
-                    hashCode = hashCode * 59 + this.DbUseType.GetHashCode();
-                if (this.JobDirection != null)
-                    hashCode = hashCode * 59 + this.JobDirection.GetHashCode();
-                if (this.NodeType != null)
-                    hashCode = hashCode * 59 + this.NodeType.GetHashCode();
-                if (this.MultiWrite != null)
-                    hashCode = hashCode * 59 + this.MultiWrite.GetHashCode();
+                var hashCode = 41;
+                if (this.EngineType != null) hashCode = hashCode * 59 + this.EngineType.GetHashCode();
+                hashCode = hashCode * 59 + this.DbUseType.GetHashCode();
+                hashCode = hashCode * 59 + this.JobDirection.GetHashCode();
+                if (this.NodeType != null) hashCode = hashCode * 59 + this.NodeType.GetHashCode();
+                if (this.MultiWrite != null) hashCode = hashCode * 59 + this.MultiWrite.GetHashCode();
                 return hashCode;
             }
         }

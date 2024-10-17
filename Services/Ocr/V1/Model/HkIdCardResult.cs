@@ -133,76 +133,22 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(HkIdCardResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.NameEn != input.NameEn || (this.NameEn != null && !this.NameEn.Equals(input.NameEn))) return false;
+            if (this.Sex != input.Sex || (this.Sex != null && !this.Sex.Equals(input.Sex))) return false;
+            if (this.BirthDate != input.BirthDate || (this.BirthDate != null && !this.BirthDate.Equals(input.BirthDate))) return false;
+            if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;
+            if (this.Symbols != input.Symbols || (this.Symbols != null && !this.Symbols.Equals(input.Symbols))) return false;
+            if (this.NameTelegraphCode != input.NameTelegraphCode || (this.NameTelegraphCode != null && !this.NameTelegraphCode.Equals(input.NameTelegraphCode))) return false;
+            if (this.Permanent != input.Permanent || (this.Permanent != null && !this.Permanent.Equals(input.Permanent))) return false;
+            if (this.InitialIssueDate != input.InitialIssueDate || (this.InitialIssueDate != null && !this.InitialIssueDate.Equals(input.InitialIssueDate))) return false;
+            if (this.IssueDate != input.IssueDate || (this.IssueDate != null && !this.IssueDate.Equals(input.IssueDate))) return false;
+            if (this.PortraitLocation != input.PortraitLocation || (this.PortraitLocation != null && input.PortraitLocation != null && !this.PortraitLocation.SequenceEqual(input.PortraitLocation))) return false;
+            if (this.PortraitImage != input.PortraitImage || (this.PortraitImage != null && !this.PortraitImage.Equals(input.PortraitImage))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.NameEn == input.NameEn ||
-                    (this.NameEn != null &&
-                    this.NameEn.Equals(input.NameEn))
-                ) && 
-                (
-                    this.Sex == input.Sex ||
-                    (this.Sex != null &&
-                    this.Sex.Equals(input.Sex))
-                ) && 
-                (
-                    this.BirthDate == input.BirthDate ||
-                    (this.BirthDate != null &&
-                    this.BirthDate.Equals(input.BirthDate))
-                ) && 
-                (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                ) && 
-                (
-                    this.Symbols == input.Symbols ||
-                    (this.Symbols != null &&
-                    this.Symbols.Equals(input.Symbols))
-                ) && 
-                (
-                    this.NameTelegraphCode == input.NameTelegraphCode ||
-                    (this.NameTelegraphCode != null &&
-                    this.NameTelegraphCode.Equals(input.NameTelegraphCode))
-                ) && 
-                (
-                    this.Permanent == input.Permanent ||
-                    (this.Permanent != null &&
-                    this.Permanent.Equals(input.Permanent))
-                ) && 
-                (
-                    this.InitialIssueDate == input.InitialIssueDate ||
-                    (this.InitialIssueDate != null &&
-                    this.InitialIssueDate.Equals(input.InitialIssueDate))
-                ) && 
-                (
-                    this.IssueDate == input.IssueDate ||
-                    (this.IssueDate != null &&
-                    this.IssueDate.Equals(input.IssueDate))
-                ) && 
-                (
-                    this.PortraitLocation == input.PortraitLocation ||
-                    this.PortraitLocation != null &&
-                    input.PortraitLocation != null &&
-                    this.PortraitLocation.SequenceEqual(input.PortraitLocation)
-                ) && 
-                (
-                    this.PortraitImage == input.PortraitImage ||
-                    (this.PortraitImage != null &&
-                    this.PortraitImage.Equals(input.PortraitImage))
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                );
+            return true;
         }
 
         /// <summary>
@@ -212,33 +158,20 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.NameEn != null)
-                    hashCode = hashCode * 59 + this.NameEn.GetHashCode();
-                if (this.Sex != null)
-                    hashCode = hashCode * 59 + this.Sex.GetHashCode();
-                if (this.BirthDate != null)
-                    hashCode = hashCode * 59 + this.BirthDate.GetHashCode();
-                if (this.Number != null)
-                    hashCode = hashCode * 59 + this.Number.GetHashCode();
-                if (this.Symbols != null)
-                    hashCode = hashCode * 59 + this.Symbols.GetHashCode();
-                if (this.NameTelegraphCode != null)
-                    hashCode = hashCode * 59 + this.NameTelegraphCode.GetHashCode();
-                if (this.Permanent != null)
-                    hashCode = hashCode * 59 + this.Permanent.GetHashCode();
-                if (this.InitialIssueDate != null)
-                    hashCode = hashCode * 59 + this.InitialIssueDate.GetHashCode();
-                if (this.IssueDate != null)
-                    hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
-                if (this.PortraitLocation != null)
-                    hashCode = hashCode * 59 + this.PortraitLocation.GetHashCode();
-                if (this.PortraitImage != null)
-                    hashCode = hashCode * 59 + this.PortraitImage.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.NameEn != null) hashCode = hashCode * 59 + this.NameEn.GetHashCode();
+                if (this.Sex != null) hashCode = hashCode * 59 + this.Sex.GetHashCode();
+                if (this.BirthDate != null) hashCode = hashCode * 59 + this.BirthDate.GetHashCode();
+                if (this.Number != null) hashCode = hashCode * 59 + this.Number.GetHashCode();
+                if (this.Symbols != null) hashCode = hashCode * 59 + this.Symbols.GetHashCode();
+                if (this.NameTelegraphCode != null) hashCode = hashCode * 59 + this.NameTelegraphCode.GetHashCode();
+                if (this.Permanent != null) hashCode = hashCode * 59 + this.Permanent.GetHashCode();
+                if (this.InitialIssueDate != null) hashCode = hashCode * 59 + this.InitialIssueDate.GetHashCode();
+                if (this.IssueDate != null) hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
+                if (this.PortraitLocation != null) hashCode = hashCode * 59 + this.PortraitLocation.GetHashCode();
+                if (this.PortraitImage != null) hashCode = hashCode * 59 + this.PortraitImage.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
                 return hashCode;
             }
         }

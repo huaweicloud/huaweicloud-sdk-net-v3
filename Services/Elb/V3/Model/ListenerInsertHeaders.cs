@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(ListenerInsertHeaders input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.XForwardedELBIP != input.XForwardedELBIP || (this.XForwardedELBIP != null && !this.XForwardedELBIP.Equals(input.XForwardedELBIP))) return false;
+            if (this.XForwardedPort != input.XForwardedPort || (this.XForwardedPort != null && !this.XForwardedPort.Equals(input.XForwardedPort))) return false;
+            if (this.XForwardedForPort != input.XForwardedForPort || (this.XForwardedForPort != null && !this.XForwardedForPort.Equals(input.XForwardedForPort))) return false;
+            if (this.XForwardedHost != input.XForwardedHost || (this.XForwardedHost != null && !this.XForwardedHost.Equals(input.XForwardedHost))) return false;
+            if (this.XForwardedProto != input.XForwardedProto || (this.XForwardedProto != null && !this.XForwardedProto.Equals(input.XForwardedProto))) return false;
+            if (this.XRealIP != input.XRealIP || (this.XRealIP != null && !this.XRealIP.Equals(input.XRealIP))) return false;
+            if (this.XForwardedELBID != input.XForwardedELBID || (this.XForwardedELBID != null && !this.XForwardedELBID.Equals(input.XForwardedELBID))) return false;
+            if (this.XForwardedTLSCertificateID != input.XForwardedTLSCertificateID || (this.XForwardedTLSCertificateID != null && !this.XForwardedTLSCertificateID.Equals(input.XForwardedTLSCertificateID))) return false;
+            if (this.XForwardedTLSProtocol != input.XForwardedTLSProtocol || (this.XForwardedTLSProtocol != null && !this.XForwardedTLSProtocol.Equals(input.XForwardedTLSProtocol))) return false;
+            if (this.XForwardedTLSCipher != input.XForwardedTLSCipher || (this.XForwardedTLSCipher != null && !this.XForwardedTLSCipher.Equals(input.XForwardedTLSCipher))) return false;
 
-            return 
-                (
-                    this.XForwardedELBIP == input.XForwardedELBIP ||
-                    (this.XForwardedELBIP != null &&
-                    this.XForwardedELBIP.Equals(input.XForwardedELBIP))
-                ) && 
-                (
-                    this.XForwardedPort == input.XForwardedPort ||
-                    (this.XForwardedPort != null &&
-                    this.XForwardedPort.Equals(input.XForwardedPort))
-                ) && 
-                (
-                    this.XForwardedForPort == input.XForwardedForPort ||
-                    (this.XForwardedForPort != null &&
-                    this.XForwardedForPort.Equals(input.XForwardedForPort))
-                ) && 
-                (
-                    this.XForwardedHost == input.XForwardedHost ||
-                    (this.XForwardedHost != null &&
-                    this.XForwardedHost.Equals(input.XForwardedHost))
-                ) && 
-                (
-                    this.XForwardedProto == input.XForwardedProto ||
-                    (this.XForwardedProto != null &&
-                    this.XForwardedProto.Equals(input.XForwardedProto))
-                ) && 
-                (
-                    this.XRealIP == input.XRealIP ||
-                    (this.XRealIP != null &&
-                    this.XRealIP.Equals(input.XRealIP))
-                ) && 
-                (
-                    this.XForwardedELBID == input.XForwardedELBID ||
-                    (this.XForwardedELBID != null &&
-                    this.XForwardedELBID.Equals(input.XForwardedELBID))
-                ) && 
-                (
-                    this.XForwardedTLSCertificateID == input.XForwardedTLSCertificateID ||
-                    (this.XForwardedTLSCertificateID != null &&
-                    this.XForwardedTLSCertificateID.Equals(input.XForwardedTLSCertificateID))
-                ) && 
-                (
-                    this.XForwardedTLSProtocol == input.XForwardedTLSProtocol ||
-                    (this.XForwardedTLSProtocol != null &&
-                    this.XForwardedTLSProtocol.Equals(input.XForwardedTLSProtocol))
-                ) && 
-                (
-                    this.XForwardedTLSCipher == input.XForwardedTLSCipher ||
-                    (this.XForwardedTLSCipher != null &&
-                    this.XForwardedTLSCipher.Equals(input.XForwardedTLSCipher))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.XForwardedELBIP != null)
-                    hashCode = hashCode * 59 + this.XForwardedELBIP.GetHashCode();
-                if (this.XForwardedPort != null)
-                    hashCode = hashCode * 59 + this.XForwardedPort.GetHashCode();
-                if (this.XForwardedForPort != null)
-                    hashCode = hashCode * 59 + this.XForwardedForPort.GetHashCode();
-                if (this.XForwardedHost != null)
-                    hashCode = hashCode * 59 + this.XForwardedHost.GetHashCode();
-                if (this.XForwardedProto != null)
-                    hashCode = hashCode * 59 + this.XForwardedProto.GetHashCode();
-                if (this.XRealIP != null)
-                    hashCode = hashCode * 59 + this.XRealIP.GetHashCode();
-                if (this.XForwardedELBID != null)
-                    hashCode = hashCode * 59 + this.XForwardedELBID.GetHashCode();
-                if (this.XForwardedTLSCertificateID != null)
-                    hashCode = hashCode * 59 + this.XForwardedTLSCertificateID.GetHashCode();
-                if (this.XForwardedTLSProtocol != null)
-                    hashCode = hashCode * 59 + this.XForwardedTLSProtocol.GetHashCode();
-                if (this.XForwardedTLSCipher != null)
-                    hashCode = hashCode * 59 + this.XForwardedTLSCipher.GetHashCode();
+                var hashCode = 41;
+                if (this.XForwardedELBIP != null) hashCode = hashCode * 59 + this.XForwardedELBIP.GetHashCode();
+                if (this.XForwardedPort != null) hashCode = hashCode * 59 + this.XForwardedPort.GetHashCode();
+                if (this.XForwardedForPort != null) hashCode = hashCode * 59 + this.XForwardedForPort.GetHashCode();
+                if (this.XForwardedHost != null) hashCode = hashCode * 59 + this.XForwardedHost.GetHashCode();
+                if (this.XForwardedProto != null) hashCode = hashCode * 59 + this.XForwardedProto.GetHashCode();
+                if (this.XRealIP != null) hashCode = hashCode * 59 + this.XRealIP.GetHashCode();
+                if (this.XForwardedELBID != null) hashCode = hashCode * 59 + this.XForwardedELBID.GetHashCode();
+                if (this.XForwardedTLSCertificateID != null) hashCode = hashCode * 59 + this.XForwardedTLSCertificateID.GetHashCode();
+                if (this.XForwardedTLSProtocol != null) hashCode = hashCode * 59 + this.XForwardedTLSProtocol.GetHashCode();
+                if (this.XForwardedTLSCipher != null) hashCode = hashCode * 59 + this.XForwardedTLSCipher.GetHashCode();
                 return hashCode;
             }
         }

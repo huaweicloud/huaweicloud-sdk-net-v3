@@ -112,61 +112,19 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(CreateLogDumpObsRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LogGroupId != input.LogGroupId || (this.LogGroupId != null && !this.LogGroupId.Equals(input.LogGroupId))) return false;
+            if (this.LogStreamIds != input.LogStreamIds || (this.LogStreamIds != null && input.LogStreamIds != null && !this.LogStreamIds.SequenceEqual(input.LogStreamIds))) return false;
+            if (this.ObsBucketName != input.ObsBucketName || (this.ObsBucketName != null && !this.ObsBucketName.Equals(input.ObsBucketName))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.StorageFormat != input.StorageFormat || (this.StorageFormat != null && !this.StorageFormat.Equals(input.StorageFormat))) return false;
+            if (this.SwitchOn != input.SwitchOn || (this.SwitchOn != null && !this.SwitchOn.Equals(input.SwitchOn))) return false;
+            if (this.PrefixName != input.PrefixName || (this.PrefixName != null && !this.PrefixName.Equals(input.PrefixName))) return false;
+            if (this.DirPrefixName != input.DirPrefixName || (this.DirPrefixName != null && !this.DirPrefixName.Equals(input.DirPrefixName))) return false;
+            if (this.Period != input.Period || (this.Period != null && !this.Period.Equals(input.Period))) return false;
+            if (this.PeriodUnit != input.PeriodUnit || (this.PeriodUnit != null && !this.PeriodUnit.Equals(input.PeriodUnit))) return false;
 
-            return 
-                (
-                    this.LogGroupId == input.LogGroupId ||
-                    (this.LogGroupId != null &&
-                    this.LogGroupId.Equals(input.LogGroupId))
-                ) && 
-                (
-                    this.LogStreamIds == input.LogStreamIds ||
-                    this.LogStreamIds != null &&
-                    input.LogStreamIds != null &&
-                    this.LogStreamIds.SequenceEqual(input.LogStreamIds)
-                ) && 
-                (
-                    this.ObsBucketName == input.ObsBucketName ||
-                    (this.ObsBucketName != null &&
-                    this.ObsBucketName.Equals(input.ObsBucketName))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.StorageFormat == input.StorageFormat ||
-                    (this.StorageFormat != null &&
-                    this.StorageFormat.Equals(input.StorageFormat))
-                ) && 
-                (
-                    this.SwitchOn == input.SwitchOn ||
-                    (this.SwitchOn != null &&
-                    this.SwitchOn.Equals(input.SwitchOn))
-                ) && 
-                (
-                    this.PrefixName == input.PrefixName ||
-                    (this.PrefixName != null &&
-                    this.PrefixName.Equals(input.PrefixName))
-                ) && 
-                (
-                    this.DirPrefixName == input.DirPrefixName ||
-                    (this.DirPrefixName != null &&
-                    this.DirPrefixName.Equals(input.DirPrefixName))
-                ) && 
-                (
-                    this.Period == input.Period ||
-                    (this.Period != null &&
-                    this.Period.Equals(input.Period))
-                ) && 
-                (
-                    this.PeriodUnit == input.PeriodUnit ||
-                    (this.PeriodUnit != null &&
-                    this.PeriodUnit.Equals(input.PeriodUnit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -176,27 +134,17 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LogGroupId != null)
-                    hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
-                if (this.LogStreamIds != null)
-                    hashCode = hashCode * 59 + this.LogStreamIds.GetHashCode();
-                if (this.ObsBucketName != null)
-                    hashCode = hashCode * 59 + this.ObsBucketName.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.StorageFormat != null)
-                    hashCode = hashCode * 59 + this.StorageFormat.GetHashCode();
-                if (this.SwitchOn != null)
-                    hashCode = hashCode * 59 + this.SwitchOn.GetHashCode();
-                if (this.PrefixName != null)
-                    hashCode = hashCode * 59 + this.PrefixName.GetHashCode();
-                if (this.DirPrefixName != null)
-                    hashCode = hashCode * 59 + this.DirPrefixName.GetHashCode();
-                if (this.Period != null)
-                    hashCode = hashCode * 59 + this.Period.GetHashCode();
-                if (this.PeriodUnit != null)
-                    hashCode = hashCode * 59 + this.PeriodUnit.GetHashCode();
+                var hashCode = 41;
+                if (this.LogGroupId != null) hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
+                if (this.LogStreamIds != null) hashCode = hashCode * 59 + this.LogStreamIds.GetHashCode();
+                if (this.ObsBucketName != null) hashCode = hashCode * 59 + this.ObsBucketName.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.StorageFormat != null) hashCode = hashCode * 59 + this.StorageFormat.GetHashCode();
+                if (this.SwitchOn != null) hashCode = hashCode * 59 + this.SwitchOn.GetHashCode();
+                if (this.PrefixName != null) hashCode = hashCode * 59 + this.PrefixName.GetHashCode();
+                if (this.DirPrefixName != null) hashCode = hashCode * 59 + this.DirPrefixName.GetHashCode();
+                if (this.Period != null) hashCode = hashCode * 59 + this.Period.GetHashCode();
+                if (this.PeriodUnit != null) hashCode = hashCode * 59 + this.PeriodUnit.GetHashCode();
                 return hashCode;
             }
         }

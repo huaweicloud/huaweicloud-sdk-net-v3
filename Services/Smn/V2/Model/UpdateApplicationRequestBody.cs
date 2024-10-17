@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public bool Equals(UpdateApplicationRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PlatformPrincipal != input.PlatformPrincipal || (this.PlatformPrincipal != null && !this.PlatformPrincipal.Equals(input.PlatformPrincipal))) return false;
+            if (this.PlatformCredential != input.PlatformCredential || (this.PlatformCredential != null && !this.PlatformCredential.Equals(input.PlatformCredential))) return false;
 
-            return 
-                (
-                    this.PlatformPrincipal == input.PlatformPrincipal ||
-                    (this.PlatformPrincipal != null &&
-                    this.PlatformPrincipal.Equals(input.PlatformPrincipal))
-                ) && 
-                (
-                    this.PlatformCredential == input.PlatformCredential ||
-                    (this.PlatformCredential != null &&
-                    this.PlatformCredential.Equals(input.PlatformCredential))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PlatformPrincipal != null)
-                    hashCode = hashCode * 59 + this.PlatformPrincipal.GetHashCode();
-                if (this.PlatformCredential != null)
-                    hashCode = hashCode * 59 + this.PlatformCredential.GetHashCode();
+                var hashCode = 41;
+                if (this.PlatformPrincipal != null) hashCode = hashCode * 59 + this.PlatformPrincipal.GetHashCode();
+                if (this.PlatformCredential != null) hashCode = hashCode * 59 + this.PlatformCredential.GetHashCode();
                 return hashCode;
             }
         }

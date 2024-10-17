@@ -105,57 +105,18 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(NovaServerFlavor input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Links != input.Links || (this.Links != null && input.Links != null && !this.Links.SequenceEqual(input.Links))) return false;
+            if (this.Vcpus != input.Vcpus || (this.Vcpus != null && !this.Vcpus.Equals(input.Vcpus))) return false;
+            if (this.Ram != input.Ram || (this.Ram != null && !this.Ram.Equals(input.Ram))) return false;
+            if (this.Disk != input.Disk || (this.Disk != null && !this.Disk.Equals(input.Disk))) return false;
+            if (this.Ephemeral != input.Ephemeral || (this.Ephemeral != null && !this.Ephemeral.Equals(input.Ephemeral))) return false;
+            if (this.Swap != input.Swap || (this.Swap != null && !this.Swap.Equals(input.Swap))) return false;
+            if (this.OriginalName != input.OriginalName || (this.OriginalName != null && !this.OriginalName.Equals(input.OriginalName))) return false;
+            if (this.ExtraSpecs != input.ExtraSpecs || (this.ExtraSpecs != null && input.ExtraSpecs != null && !this.ExtraSpecs.SequenceEqual(input.ExtraSpecs))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    this.Links != null &&
-                    input.Links != null &&
-                    this.Links.SequenceEqual(input.Links)
-                ) && 
-                (
-                    this.Vcpus == input.Vcpus ||
-                    (this.Vcpus != null &&
-                    this.Vcpus.Equals(input.Vcpus))
-                ) && 
-                (
-                    this.Ram == input.Ram ||
-                    (this.Ram != null &&
-                    this.Ram.Equals(input.Ram))
-                ) && 
-                (
-                    this.Disk == input.Disk ||
-                    (this.Disk != null &&
-                    this.Disk.Equals(input.Disk))
-                ) && 
-                (
-                    this.Ephemeral == input.Ephemeral ||
-                    (this.Ephemeral != null &&
-                    this.Ephemeral.Equals(input.Ephemeral))
-                ) && 
-                (
-                    this.Swap == input.Swap ||
-                    (this.Swap != null &&
-                    this.Swap.Equals(input.Swap))
-                ) && 
-                (
-                    this.OriginalName == input.OriginalName ||
-                    (this.OriginalName != null &&
-                    this.OriginalName.Equals(input.OriginalName))
-                ) && 
-                (
-                    this.ExtraSpecs == input.ExtraSpecs ||
-                    this.ExtraSpecs != null &&
-                    input.ExtraSpecs != null &&
-                    this.ExtraSpecs.SequenceEqual(input.ExtraSpecs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -165,25 +126,16 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Links != null)
-                    hashCode = hashCode * 59 + this.Links.GetHashCode();
-                if (this.Vcpus != null)
-                    hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
-                if (this.Ram != null)
-                    hashCode = hashCode * 59 + this.Ram.GetHashCode();
-                if (this.Disk != null)
-                    hashCode = hashCode * 59 + this.Disk.GetHashCode();
-                if (this.Ephemeral != null)
-                    hashCode = hashCode * 59 + this.Ephemeral.GetHashCode();
-                if (this.Swap != null)
-                    hashCode = hashCode * 59 + this.Swap.GetHashCode();
-                if (this.OriginalName != null)
-                    hashCode = hashCode * 59 + this.OriginalName.GetHashCode();
-                if (this.ExtraSpecs != null)
-                    hashCode = hashCode * 59 + this.ExtraSpecs.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Links != null) hashCode = hashCode * 59 + this.Links.GetHashCode();
+                if (this.Vcpus != null) hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
+                if (this.Ram != null) hashCode = hashCode * 59 + this.Ram.GetHashCode();
+                if (this.Disk != null) hashCode = hashCode * 59 + this.Disk.GetHashCode();
+                if (this.Ephemeral != null) hashCode = hashCode * 59 + this.Ephemeral.GetHashCode();
+                if (this.Swap != null) hashCode = hashCode * 59 + this.Swap.GetHashCode();
+                if (this.OriginalName != null) hashCode = hashCode * 59 + this.OriginalName.GetHashCode();
+                if (this.ExtraSpecs != null) hashCode = hashCode * 59 + this.ExtraSpecs.GetHashCode();
                 return hashCode;
             }
         }

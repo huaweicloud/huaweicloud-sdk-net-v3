@@ -112,61 +112,19 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(GeipBindingsInternalResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.GeipId != input.GeipId || (this.GeipId != null && !this.GeipId.Equals(input.GeipId))) return false;
+            if (this.GeipIpAddress != input.GeipIpAddress || (this.GeipIpAddress != null && !this.GeipIpAddress.Equals(input.GeipIpAddress))) return false;
+            if (this.PublicBorderGroup != input.PublicBorderGroup || (this.PublicBorderGroup != null && !this.PublicBorderGroup.Equals(input.PublicBorderGroup))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.InstanceType != input.InstanceType || (this.InstanceType != null && !this.InstanceType.Equals(input.InstanceType))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.Gcbandwidth != input.Gcbandwidth || (this.Gcbandwidth != null && !this.Gcbandwidth.Equals(input.Gcbandwidth))) return false;
+            if (this.Vnic != input.Vnic || (this.Vnic != null && !this.Vnic.Equals(input.Vnic))) return false;
+            if (this.VnList != input.VnList || (this.VnList != null && input.VnList != null && !this.VnList.SequenceEqual(input.VnList))) return false;
 
-            return 
-                (
-                    this.GeipId == input.GeipId ||
-                    (this.GeipId != null &&
-                    this.GeipId.Equals(input.GeipId))
-                ) && 
-                (
-                    this.GeipIpAddress == input.GeipIpAddress ||
-                    (this.GeipIpAddress != null &&
-                    this.GeipIpAddress.Equals(input.GeipIpAddress))
-                ) && 
-                (
-                    this.PublicBorderGroup == input.PublicBorderGroup ||
-                    (this.PublicBorderGroup != null &&
-                    this.PublicBorderGroup.Equals(input.PublicBorderGroup))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.InstanceType == input.InstanceType ||
-                    (this.InstanceType != null &&
-                    this.InstanceType.Equals(input.InstanceType))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.Gcbandwidth == input.Gcbandwidth ||
-                    (this.Gcbandwidth != null &&
-                    this.Gcbandwidth.Equals(input.Gcbandwidth))
-                ) && 
-                (
-                    this.Vnic == input.Vnic ||
-                    (this.Vnic != null &&
-                    this.Vnic.Equals(input.Vnic))
-                ) && 
-                (
-                    this.VnList == input.VnList ||
-                    this.VnList != null &&
-                    input.VnList != null &&
-                    this.VnList.SequenceEqual(input.VnList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -176,27 +134,17 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.GeipId != null)
-                    hashCode = hashCode * 59 + this.GeipId.GetHashCode();
-                if (this.GeipIpAddress != null)
-                    hashCode = hashCode * 59 + this.GeipIpAddress.GetHashCode();
-                if (this.PublicBorderGroup != null)
-                    hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.InstanceType != null)
-                    hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.Gcbandwidth != null)
-                    hashCode = hashCode * 59 + this.Gcbandwidth.GetHashCode();
-                if (this.Vnic != null)
-                    hashCode = hashCode * 59 + this.Vnic.GetHashCode();
-                if (this.VnList != null)
-                    hashCode = hashCode * 59 + this.VnList.GetHashCode();
+                var hashCode = 41;
+                if (this.GeipId != null) hashCode = hashCode * 59 + this.GeipId.GetHashCode();
+                if (this.GeipIpAddress != null) hashCode = hashCode * 59 + this.GeipIpAddress.GetHashCode();
+                if (this.PublicBorderGroup != null) hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.InstanceType != null) hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.Gcbandwidth != null) hashCode = hashCode * 59 + this.Gcbandwidth.GetHashCode();
+                if (this.Vnic != null) hashCode = hashCode * 59 + this.Vnic.GetHashCode();
+                if (this.VnList != null) hashCode = hashCode * 59 + this.VnList.GetHashCode();
                 return hashCode;
             }
         }

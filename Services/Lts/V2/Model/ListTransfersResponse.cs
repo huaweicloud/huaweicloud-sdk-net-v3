@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(ListTransfersResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LogTransfers != input.LogTransfers || (this.LogTransfers != null && input.LogTransfers != null && !this.LogTransfers.SequenceEqual(input.LogTransfers))) return false;
 
-            return 
-                (
-                    this.LogTransfers == input.LogTransfers ||
-                    this.LogTransfers != null &&
-                    input.LogTransfers != null &&
-                    this.LogTransfers.SequenceEqual(input.LogTransfers)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LogTransfers != null)
-                    hashCode = hashCode * 59 + this.LogTransfers.GetHashCode();
+                var hashCode = 41;
+                if (this.LogTransfers != null) hashCode = hashCode * 59 + this.LogTransfers.GetHashCode();
                 return hashCode;
             }
         }

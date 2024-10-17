@@ -77,39 +77,14 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ShowBatchUpgradeCandidateVersionsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UpgradeTypeList != input.UpgradeTypeList || (this.UpgradeTypeList != null && input.UpgradeTypeList != null && !this.UpgradeTypeList.SequenceEqual(input.UpgradeTypeList))) return false;
+            if (this.TargetVersion != input.TargetVersion || (this.TargetVersion != null && !this.TargetVersion.Equals(input.TargetVersion))) return false;
+            if (this.UpgradeCandidateVersions != input.UpgradeCandidateVersions || (this.UpgradeCandidateVersions != null && input.UpgradeCandidateVersions != null && !this.UpgradeCandidateVersions.SequenceEqual(input.UpgradeCandidateVersions))) return false;
+            if (this.HotfixUpgradeInfos != input.HotfixUpgradeInfos || (this.HotfixUpgradeInfos != null && input.HotfixUpgradeInfos != null && !this.HotfixUpgradeInfos.SequenceEqual(input.HotfixUpgradeInfos))) return false;
+            if (this.HotfixRollbackInfos != input.HotfixRollbackInfos || (this.HotfixRollbackInfos != null && input.HotfixRollbackInfos != null && !this.HotfixRollbackInfos.SequenceEqual(input.HotfixRollbackInfos))) return false;
 
-            return 
-                (
-                    this.UpgradeTypeList == input.UpgradeTypeList ||
-                    this.UpgradeTypeList != null &&
-                    input.UpgradeTypeList != null &&
-                    this.UpgradeTypeList.SequenceEqual(input.UpgradeTypeList)
-                ) && 
-                (
-                    this.TargetVersion == input.TargetVersion ||
-                    (this.TargetVersion != null &&
-                    this.TargetVersion.Equals(input.TargetVersion))
-                ) && 
-                (
-                    this.UpgradeCandidateVersions == input.UpgradeCandidateVersions ||
-                    this.UpgradeCandidateVersions != null &&
-                    input.UpgradeCandidateVersions != null &&
-                    this.UpgradeCandidateVersions.SequenceEqual(input.UpgradeCandidateVersions)
-                ) && 
-                (
-                    this.HotfixUpgradeInfos == input.HotfixUpgradeInfos ||
-                    this.HotfixUpgradeInfos != null &&
-                    input.HotfixUpgradeInfos != null &&
-                    this.HotfixUpgradeInfos.SequenceEqual(input.HotfixUpgradeInfos)
-                ) && 
-                (
-                    this.HotfixRollbackInfos == input.HotfixRollbackInfos ||
-                    this.HotfixRollbackInfos != null &&
-                    input.HotfixRollbackInfos != null &&
-                    this.HotfixRollbackInfos.SequenceEqual(input.HotfixRollbackInfos)
-                );
+            return true;
         }
 
         /// <summary>
@@ -119,17 +94,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UpgradeTypeList != null)
-                    hashCode = hashCode * 59 + this.UpgradeTypeList.GetHashCode();
-                if (this.TargetVersion != null)
-                    hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
-                if (this.UpgradeCandidateVersions != null)
-                    hashCode = hashCode * 59 + this.UpgradeCandidateVersions.GetHashCode();
-                if (this.HotfixUpgradeInfos != null)
-                    hashCode = hashCode * 59 + this.HotfixUpgradeInfos.GetHashCode();
-                if (this.HotfixRollbackInfos != null)
-                    hashCode = hashCode * 59 + this.HotfixRollbackInfos.GetHashCode();
+                var hashCode = 41;
+                if (this.UpgradeTypeList != null) hashCode = hashCode * 59 + this.UpgradeTypeList.GetHashCode();
+                if (this.TargetVersion != null) hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
+                if (this.UpgradeCandidateVersions != null) hashCode = hashCode * 59 + this.UpgradeCandidateVersions.GetHashCode();
+                if (this.HotfixUpgradeInfos != null) hashCode = hashCode * 59 + this.HotfixUpgradeInfos.GetHashCode();
+                if (this.HotfixRollbackInfos != null) hashCode = hashCode * 59 + this.HotfixRollbackInfos.GetHashCode();
                 return hashCode;
             }
         }

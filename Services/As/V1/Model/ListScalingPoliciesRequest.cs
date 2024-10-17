@@ -210,40 +210,15 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(ListScalingPoliciesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ScalingGroupId != input.ScalingGroupId || (this.ScalingGroupId != null && !this.ScalingGroupId.Equals(input.ScalingGroupId))) return false;
+            if (this.ScalingPolicyName != input.ScalingPolicyName || (this.ScalingPolicyName != null && !this.ScalingPolicyName.Equals(input.ScalingPolicyName))) return false;
+            if (this.ScalingPolicyType != input.ScalingPolicyType) return false;
+            if (this.ScalingPolicyId != input.ScalingPolicyId || (this.ScalingPolicyId != null && !this.ScalingPolicyId.Equals(input.ScalingPolicyId))) return false;
+            if (this.StartNumber != input.StartNumber || (this.StartNumber != null && !this.StartNumber.Equals(input.StartNumber))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
-            return 
-                (
-                    this.ScalingGroupId == input.ScalingGroupId ||
-                    (this.ScalingGroupId != null &&
-                    this.ScalingGroupId.Equals(input.ScalingGroupId))
-                ) && 
-                (
-                    this.ScalingPolicyName == input.ScalingPolicyName ||
-                    (this.ScalingPolicyName != null &&
-                    this.ScalingPolicyName.Equals(input.ScalingPolicyName))
-                ) && 
-                (
-                    this.ScalingPolicyType == input.ScalingPolicyType ||
-                    (this.ScalingPolicyType != null &&
-                    this.ScalingPolicyType.Equals(input.ScalingPolicyType))
-                ) && 
-                (
-                    this.ScalingPolicyId == input.ScalingPolicyId ||
-                    (this.ScalingPolicyId != null &&
-                    this.ScalingPolicyId.Equals(input.ScalingPolicyId))
-                ) && 
-                (
-                    this.StartNumber == input.StartNumber ||
-                    (this.StartNumber != null &&
-                    this.StartNumber.Equals(input.StartNumber))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -253,19 +228,13 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ScalingGroupId != null)
-                    hashCode = hashCode * 59 + this.ScalingGroupId.GetHashCode();
-                if (this.ScalingPolicyName != null)
-                    hashCode = hashCode * 59 + this.ScalingPolicyName.GetHashCode();
-                if (this.ScalingPolicyType != null)
-                    hashCode = hashCode * 59 + this.ScalingPolicyType.GetHashCode();
-                if (this.ScalingPolicyId != null)
-                    hashCode = hashCode * 59 + this.ScalingPolicyId.GetHashCode();
-                if (this.StartNumber != null)
-                    hashCode = hashCode * 59 + this.StartNumber.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                var hashCode = 41;
+                if (this.ScalingGroupId != null) hashCode = hashCode * 59 + this.ScalingGroupId.GetHashCode();
+                if (this.ScalingPolicyName != null) hashCode = hashCode * 59 + this.ScalingPolicyName.GetHashCode();
+                hashCode = hashCode * 59 + this.ScalingPolicyType.GetHashCode();
+                if (this.ScalingPolicyId != null) hashCode = hashCode * 59 + this.ScalingPolicyId.GetHashCode();
+                if (this.StartNumber != null) hashCode = hashCode * 59 + this.StartNumber.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;
             }
         }

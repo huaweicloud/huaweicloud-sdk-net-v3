@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public bool Equals(Dress input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Glass != input.Glass || (this.Glass != null && !this.Glass.Equals(input.Glass))) return false;
+            if (this.Hat != input.Hat || (this.Hat != null && !this.Hat.Equals(input.Hat))) return false;
 
-            return 
-                (
-                    this.Glass == input.Glass ||
-                    (this.Glass != null &&
-                    this.Glass.Equals(input.Glass))
-                ) && 
-                (
-                    this.Hat == input.Hat ||
-                    (this.Hat != null &&
-                    this.Hat.Equals(input.Hat))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Glass != null)
-                    hashCode = hashCode * 59 + this.Glass.GetHashCode();
-                if (this.Hat != null)
-                    hashCode = hashCode * 59 + this.Hat.GetHashCode();
+                var hashCode = 41;
+                if (this.Glass != null) hashCode = hashCode * 59 + this.Glass.GetHashCode();
+                if (this.Hat != null) hashCode = hashCode * 59 + this.Hat.GetHashCode();
                 return hashCode;
             }
         }

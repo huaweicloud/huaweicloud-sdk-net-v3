@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         /// </summary>
         public bool Equals(StandardReqDataByVideoAndNameAndId input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VerificationName != input.VerificationName || (this.VerificationName != null && !this.VerificationName.Equals(input.VerificationName))) return false;
+            if (this.VerificationId != input.VerificationId || (this.VerificationId != null && !this.VerificationId.Equals(input.VerificationId))) return false;
+            if (this.Video != input.Video || (this.Video != null && !this.Video.Equals(input.Video))) return false;
+            if (this.Actions != input.Actions || (this.Actions != null && !this.Actions.Equals(input.Actions))) return false;
+            if (this.NodThreshold != input.NodThreshold || (this.NodThreshold != null && !this.NodThreshold.Equals(input.NodThreshold))) return false;
+            if (this.Detail != input.Detail || (this.Detail != null && !this.Detail.Equals(input.Detail))) return false;
 
-            return 
-                (
-                    this.VerificationName == input.VerificationName ||
-                    (this.VerificationName != null &&
-                    this.VerificationName.Equals(input.VerificationName))
-                ) && 
-                (
-                    this.VerificationId == input.VerificationId ||
-                    (this.VerificationId != null &&
-                    this.VerificationId.Equals(input.VerificationId))
-                ) && 
-                (
-                    this.Video == input.Video ||
-                    (this.Video != null &&
-                    this.Video.Equals(input.Video))
-                ) && 
-                (
-                    this.Actions == input.Actions ||
-                    (this.Actions != null &&
-                    this.Actions.Equals(input.Actions))
-                ) && 
-                (
-                    this.NodThreshold == input.NodThreshold ||
-                    (this.NodThreshold != null &&
-                    this.NodThreshold.Equals(input.NodThreshold))
-                ) && 
-                (
-                    this.Detail == input.Detail ||
-                    (this.Detail != null &&
-                    this.Detail.Equals(input.Detail))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VerificationName != null)
-                    hashCode = hashCode * 59 + this.VerificationName.GetHashCode();
-                if (this.VerificationId != null)
-                    hashCode = hashCode * 59 + this.VerificationId.GetHashCode();
-                if (this.Video != null)
-                    hashCode = hashCode * 59 + this.Video.GetHashCode();
-                if (this.Actions != null)
-                    hashCode = hashCode * 59 + this.Actions.GetHashCode();
-                if (this.NodThreshold != null)
-                    hashCode = hashCode * 59 + this.NodThreshold.GetHashCode();
-                if (this.Detail != null)
-                    hashCode = hashCode * 59 + this.Detail.GetHashCode();
+                var hashCode = 41;
+                if (this.VerificationName != null) hashCode = hashCode * 59 + this.VerificationName.GetHashCode();
+                if (this.VerificationId != null) hashCode = hashCode * 59 + this.VerificationId.GetHashCode();
+                if (this.Video != null) hashCode = hashCode * 59 + this.Video.GetHashCode();
+                if (this.Actions != null) hashCode = hashCode * 59 + this.Actions.GetHashCode();
+                if (this.NodThreshold != null) hashCode = hashCode * 59 + this.NodThreshold.GetHashCode();
+                if (this.Detail != null) hashCode = hashCode * 59 + this.Detail.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(RolesOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RoleDbName != input.RoleDbName || (this.RoleDbName != null && !this.RoleDbName.Equals(input.RoleDbName))) return false;
+            if (this.RoleName != input.RoleName || (this.RoleName != null && !this.RoleName.Equals(input.RoleName))) return false;
 
-            return 
-                (
-                    this.RoleDbName == input.RoleDbName ||
-                    (this.RoleDbName != null &&
-                    this.RoleDbName.Equals(input.RoleDbName))
-                ) && 
-                (
-                    this.RoleName == input.RoleName ||
-                    (this.RoleName != null &&
-                    this.RoleName.Equals(input.RoleName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RoleDbName != null)
-                    hashCode = hashCode * 59 + this.RoleDbName.GetHashCode();
-                if (this.RoleName != null)
-                    hashCode = hashCode * 59 + this.RoleName.GetHashCode();
+                var hashCode = 41;
+                if (this.RoleDbName != null) hashCode = hashCode * 59 + this.RoleDbName.GetHashCode();
+                if (this.RoleName != null) hashCode = hashCode * 59 + this.RoleName.GetHashCode();
                 return hashCode;
             }
         }

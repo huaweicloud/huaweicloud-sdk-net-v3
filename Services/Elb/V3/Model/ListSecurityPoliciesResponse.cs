@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(ListSecurityPoliciesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SecurityPolicies != input.SecurityPolicies || (this.SecurityPolicies != null && input.SecurityPolicies != null && !this.SecurityPolicies.SequenceEqual(input.SecurityPolicies))) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
+            if (this.PageInfo != input.PageInfo || (this.PageInfo != null && !this.PageInfo.Equals(input.PageInfo))) return false;
 
-            return 
-                (
-                    this.SecurityPolicies == input.SecurityPolicies ||
-                    this.SecurityPolicies != null &&
-                    input.SecurityPolicies != null &&
-                    this.SecurityPolicies.SequenceEqual(input.SecurityPolicies)
-                ) && 
-                (
-                    this.RequestId == input.RequestId ||
-                    (this.RequestId != null &&
-                    this.RequestId.Equals(input.RequestId))
-                ) && 
-                (
-                    this.PageInfo == input.PageInfo ||
-                    (this.PageInfo != null &&
-                    this.PageInfo.Equals(input.PageInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SecurityPolicies != null)
-                    hashCode = hashCode * 59 + this.SecurityPolicies.GetHashCode();
-                if (this.RequestId != null)
-                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
-                if (this.PageInfo != null)
-                    hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.SecurityPolicies != null) hashCode = hashCode * 59 + this.SecurityPolicies.GetHashCode();
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                if (this.PageInfo != null) hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
                 return hashCode;
             }
         }

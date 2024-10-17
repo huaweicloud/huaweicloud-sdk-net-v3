@@ -119,65 +119,20 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(SmartDocumentRecognizerRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Data != input.Data || (this.Data != null && !this.Data.Equals(input.Data))) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.SingleOrientationMode != input.SingleOrientationMode || (this.SingleOrientationMode != null && !this.SingleOrientationMode.Equals(input.SingleOrientationMode))) return false;
+            if (this.Kv != input.Kv || (this.Kv != null && !this.Kv.Equals(input.Kv))) return false;
+            if (this.Table != input.Table || (this.Table != null && !this.Table.Equals(input.Table))) return false;
+            if (this.Layout != input.Layout || (this.Layout != null && !this.Layout.Equals(input.Layout))) return false;
+            if (this.ReturnExcel != input.ReturnExcel || (this.ReturnExcel != null && !this.ReturnExcel.Equals(input.ReturnExcel))) return false;
+            if (this.Form != input.Form || (this.Form != null && !this.Form.Equals(input.Form))) return false;
+            if (this.Formula != input.Formula || (this.Formula != null && !this.Formula.Equals(input.Formula))) return false;
+            if (this.KvMap != input.KvMap || (this.KvMap != null && !this.KvMap.Equals(input.KvMap))) return false;
+            if (this.PdfPageNumber != input.PdfPageNumber || (this.PdfPageNumber != null && !this.PdfPageNumber.Equals(input.PdfPageNumber))) return false;
 
-            return 
-                (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.SingleOrientationMode == input.SingleOrientationMode ||
-                    (this.SingleOrientationMode != null &&
-                    this.SingleOrientationMode.Equals(input.SingleOrientationMode))
-                ) && 
-                (
-                    this.Kv == input.Kv ||
-                    (this.Kv != null &&
-                    this.Kv.Equals(input.Kv))
-                ) && 
-                (
-                    this.Table == input.Table ||
-                    (this.Table != null &&
-                    this.Table.Equals(input.Table))
-                ) && 
-                (
-                    this.Layout == input.Layout ||
-                    (this.Layout != null &&
-                    this.Layout.Equals(input.Layout))
-                ) && 
-                (
-                    this.ReturnExcel == input.ReturnExcel ||
-                    (this.ReturnExcel != null &&
-                    this.ReturnExcel.Equals(input.ReturnExcel))
-                ) && 
-                (
-                    this.Form == input.Form ||
-                    (this.Form != null &&
-                    this.Form.Equals(input.Form))
-                ) && 
-                (
-                    this.Formula == input.Formula ||
-                    (this.Formula != null &&
-                    this.Formula.Equals(input.Formula))
-                ) && 
-                (
-                    this.KvMap == input.KvMap ||
-                    (this.KvMap != null &&
-                    this.KvMap.Equals(input.KvMap))
-                ) && 
-                (
-                    this.PdfPageNumber == input.PdfPageNumber ||
-                    (this.PdfPageNumber != null &&
-                    this.PdfPageNumber.Equals(input.PdfPageNumber))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,29 +142,18 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Data != null)
-                    hashCode = hashCode * 59 + this.Data.GetHashCode();
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.SingleOrientationMode != null)
-                    hashCode = hashCode * 59 + this.SingleOrientationMode.GetHashCode();
-                if (this.Kv != null)
-                    hashCode = hashCode * 59 + this.Kv.GetHashCode();
-                if (this.Table != null)
-                    hashCode = hashCode * 59 + this.Table.GetHashCode();
-                if (this.Layout != null)
-                    hashCode = hashCode * 59 + this.Layout.GetHashCode();
-                if (this.ReturnExcel != null)
-                    hashCode = hashCode * 59 + this.ReturnExcel.GetHashCode();
-                if (this.Form != null)
-                    hashCode = hashCode * 59 + this.Form.GetHashCode();
-                if (this.Formula != null)
-                    hashCode = hashCode * 59 + this.Formula.GetHashCode();
-                if (this.KvMap != null)
-                    hashCode = hashCode * 59 + this.KvMap.GetHashCode();
-                if (this.PdfPageNumber != null)
-                    hashCode = hashCode * 59 + this.PdfPageNumber.GetHashCode();
+                var hashCode = 41;
+                if (this.Data != null) hashCode = hashCode * 59 + this.Data.GetHashCode();
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.SingleOrientationMode != null) hashCode = hashCode * 59 + this.SingleOrientationMode.GetHashCode();
+                if (this.Kv != null) hashCode = hashCode * 59 + this.Kv.GetHashCode();
+                if (this.Table != null) hashCode = hashCode * 59 + this.Table.GetHashCode();
+                if (this.Layout != null) hashCode = hashCode * 59 + this.Layout.GetHashCode();
+                if (this.ReturnExcel != null) hashCode = hashCode * 59 + this.ReturnExcel.GetHashCode();
+                if (this.Form != null) hashCode = hashCode * 59 + this.Form.GetHashCode();
+                if (this.Formula != null) hashCode = hashCode * 59 + this.Formula.GetHashCode();
+                if (this.KvMap != null) hashCode = hashCode * 59 + this.KvMap.GetHashCode();
+                if (this.PdfPageNumber != null) hashCode = hashCode * 59 + this.PdfPageNumber.GetHashCode();
                 return hashCode;
             }
         }

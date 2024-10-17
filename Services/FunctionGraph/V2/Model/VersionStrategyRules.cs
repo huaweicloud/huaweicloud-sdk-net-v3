@@ -298,30 +298,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(VersionStrategyRules input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RuleType != input.RuleType) return false;
+            if (this.Param != input.Param || (this.Param != null && !this.Param.Equals(input.Param))) return false;
+            if (this.Op != input.Op) return false;
+            if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
 
-            return 
-                (
-                    this.RuleType == input.RuleType ||
-                    (this.RuleType != null &&
-                    this.RuleType.Equals(input.RuleType))
-                ) && 
-                (
-                    this.Param == input.Param ||
-                    (this.Param != null &&
-                    this.Param.Equals(input.Param))
-                ) && 
-                (
-                    this.Op == input.Op ||
-                    (this.Op != null &&
-                    this.Op.Equals(input.Op))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                );
+            return true;
         }
 
         /// <summary>
@@ -331,15 +314,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RuleType != null)
-                    hashCode = hashCode * 59 + this.RuleType.GetHashCode();
-                if (this.Param != null)
-                    hashCode = hashCode * 59 + this.Param.GetHashCode();
-                if (this.Op != null)
-                    hashCode = hashCode * 59 + this.Op.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.RuleType.GetHashCode();
+                if (this.Param != null) hashCode = hashCode * 59 + this.Param.GetHashCode();
+                hashCode = hashCode * 59 + this.Op.GetHashCode();
+                if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
                 return hashCode;
             }
         }

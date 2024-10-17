@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// </summary>
         public bool Equals(BatchListMetricDataResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Metrics != input.Metrics || (this.Metrics != null && input.Metrics != null && !this.Metrics.SequenceEqual(input.Metrics))) return false;
 
-            return 
-                (
-                    this.Metrics == input.Metrics ||
-                    this.Metrics != null &&
-                    input.Metrics != null &&
-                    this.Metrics.SequenceEqual(input.Metrics)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Metrics != null)
-                    hashCode = hashCode * 59 + this.Metrics.GetHashCode();
+                var hashCode = 41;
+                if (this.Metrics != null) hashCode = hashCode * 59 + this.Metrics.GetHashCode();
                 return hashCode;
             }
         }

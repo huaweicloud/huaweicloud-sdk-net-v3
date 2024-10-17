@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(DeleteHostGroupRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HostGroupIdList != input.HostGroupIdList || (this.HostGroupIdList != null && input.HostGroupIdList != null && !this.HostGroupIdList.SequenceEqual(input.HostGroupIdList))) return false;
 
-            return 
-                (
-                    this.HostGroupIdList == input.HostGroupIdList ||
-                    this.HostGroupIdList != null &&
-                    input.HostGroupIdList != null &&
-                    this.HostGroupIdList.SequenceEqual(input.HostGroupIdList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HostGroupIdList != null)
-                    hashCode = hashCode * 59 + this.HostGroupIdList.GetHashCode();
+                var hashCode = 41;
+                if (this.HostGroupIdList != null) hashCode = hashCode * 59 + this.HostGroupIdList.GetHashCode();
                 return hashCode;
             }
         }

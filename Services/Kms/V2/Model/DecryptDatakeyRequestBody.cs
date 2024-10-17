@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         /// </summary>
         public bool Equals(DecryptDatakeyRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KeyId != input.KeyId || (this.KeyId != null && !this.KeyId.Equals(input.KeyId))) return false;
+            if (this.CipherText != input.CipherText || (this.CipherText != null && !this.CipherText.Equals(input.CipherText))) return false;
+            if (this.DatakeyCipherLength != input.DatakeyCipherLength || (this.DatakeyCipherLength != null && !this.DatakeyCipherLength.Equals(input.DatakeyCipherLength))) return false;
+            if (this.AdditionalAuthenticatedData != input.AdditionalAuthenticatedData || (this.AdditionalAuthenticatedData != null && !this.AdditionalAuthenticatedData.Equals(input.AdditionalAuthenticatedData))) return false;
+            if (this.Sequence != input.Sequence || (this.Sequence != null && !this.Sequence.Equals(input.Sequence))) return false;
 
-            return 
-                (
-                    this.KeyId == input.KeyId ||
-                    (this.KeyId != null &&
-                    this.KeyId.Equals(input.KeyId))
-                ) && 
-                (
-                    this.CipherText == input.CipherText ||
-                    (this.CipherText != null &&
-                    this.CipherText.Equals(input.CipherText))
-                ) && 
-                (
-                    this.DatakeyCipherLength == input.DatakeyCipherLength ||
-                    (this.DatakeyCipherLength != null &&
-                    this.DatakeyCipherLength.Equals(input.DatakeyCipherLength))
-                ) && 
-                (
-                    this.AdditionalAuthenticatedData == input.AdditionalAuthenticatedData ||
-                    (this.AdditionalAuthenticatedData != null &&
-                    this.AdditionalAuthenticatedData.Equals(input.AdditionalAuthenticatedData))
-                ) && 
-                (
-                    this.Sequence == input.Sequence ||
-                    (this.Sequence != null &&
-                    this.Sequence.Equals(input.Sequence))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KeyId != null)
-                    hashCode = hashCode * 59 + this.KeyId.GetHashCode();
-                if (this.CipherText != null)
-                    hashCode = hashCode * 59 + this.CipherText.GetHashCode();
-                if (this.DatakeyCipherLength != null)
-                    hashCode = hashCode * 59 + this.DatakeyCipherLength.GetHashCode();
-                if (this.AdditionalAuthenticatedData != null)
-                    hashCode = hashCode * 59 + this.AdditionalAuthenticatedData.GetHashCode();
-                if (this.Sequence != null)
-                    hashCode = hashCode * 59 + this.Sequence.GetHashCode();
+                var hashCode = 41;
+                if (this.KeyId != null) hashCode = hashCode * 59 + this.KeyId.GetHashCode();
+                if (this.CipherText != null) hashCode = hashCode * 59 + this.CipherText.GetHashCode();
+                if (this.DatakeyCipherLength != null) hashCode = hashCode * 59 + this.DatakeyCipherLength.GetHashCode();
+                if (this.AdditionalAuthenticatedData != null) hashCode = hashCode * 59 + this.AdditionalAuthenticatedData.GetHashCode();
+                if (this.Sequence != null) hashCode = hashCode * 59 + this.Sequence.GetHashCode();
                 return hashCode;
             }
         }

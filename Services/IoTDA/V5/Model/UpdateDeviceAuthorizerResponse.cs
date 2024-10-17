@@ -126,70 +126,21 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(UpdateDeviceAuthorizerResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AuthorizerId != input.AuthorizerId || (this.AuthorizerId != null && !this.AuthorizerId.Equals(input.AuthorizerId))) return false;
+            if (this.AuthorizerName != input.AuthorizerName || (this.AuthorizerName != null && !this.AuthorizerName.Equals(input.AuthorizerName))) return false;
+            if (this.FuncName != input.FuncName || (this.FuncName != null && !this.FuncName.Equals(input.FuncName))) return false;
+            if (this.FuncUrn != input.FuncUrn || (this.FuncUrn != null && !this.FuncUrn.Equals(input.FuncUrn))) return false;
+            if (this.SigningEnable != input.SigningEnable || (this.SigningEnable != null && !this.SigningEnable.Equals(input.SigningEnable))) return false;
+            if (this.SigningToken != input.SigningToken || (this.SigningToken != null && !this.SigningToken.Equals(input.SigningToken))) return false;
+            if (this.SigningPublicKey != input.SigningPublicKey || (this.SigningPublicKey != null && !this.SigningPublicKey.Equals(input.SigningPublicKey))) return false;
+            if (this.DefaultAuthorizer != input.DefaultAuthorizer || (this.DefaultAuthorizer != null && !this.DefaultAuthorizer.Equals(input.DefaultAuthorizer))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.CacheEnable != input.CacheEnable || (this.CacheEnable != null && !this.CacheEnable.Equals(input.CacheEnable))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
 
-            return 
-                (
-                    this.AuthorizerId == input.AuthorizerId ||
-                    (this.AuthorizerId != null &&
-                    this.AuthorizerId.Equals(input.AuthorizerId))
-                ) && 
-                (
-                    this.AuthorizerName == input.AuthorizerName ||
-                    (this.AuthorizerName != null &&
-                    this.AuthorizerName.Equals(input.AuthorizerName))
-                ) && 
-                (
-                    this.FuncName == input.FuncName ||
-                    (this.FuncName != null &&
-                    this.FuncName.Equals(input.FuncName))
-                ) && 
-                (
-                    this.FuncUrn == input.FuncUrn ||
-                    (this.FuncUrn != null &&
-                    this.FuncUrn.Equals(input.FuncUrn))
-                ) && 
-                (
-                    this.SigningEnable == input.SigningEnable ||
-                    (this.SigningEnable != null &&
-                    this.SigningEnable.Equals(input.SigningEnable))
-                ) && 
-                (
-                    this.SigningToken == input.SigningToken ||
-                    (this.SigningToken != null &&
-                    this.SigningToken.Equals(input.SigningToken))
-                ) && 
-                (
-                    this.SigningPublicKey == input.SigningPublicKey ||
-                    (this.SigningPublicKey != null &&
-                    this.SigningPublicKey.Equals(input.SigningPublicKey))
-                ) && 
-                (
-                    this.DefaultAuthorizer == input.DefaultAuthorizer ||
-                    (this.DefaultAuthorizer != null &&
-                    this.DefaultAuthorizer.Equals(input.DefaultAuthorizer))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.CacheEnable == input.CacheEnable ||
-                    (this.CacheEnable != null &&
-                    this.CacheEnable.Equals(input.CacheEnable))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -199,31 +150,19 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AuthorizerId != null)
-                    hashCode = hashCode * 59 + this.AuthorizerId.GetHashCode();
-                if (this.AuthorizerName != null)
-                    hashCode = hashCode * 59 + this.AuthorizerName.GetHashCode();
-                if (this.FuncName != null)
-                    hashCode = hashCode * 59 + this.FuncName.GetHashCode();
-                if (this.FuncUrn != null)
-                    hashCode = hashCode * 59 + this.FuncUrn.GetHashCode();
-                if (this.SigningEnable != null)
-                    hashCode = hashCode * 59 + this.SigningEnable.GetHashCode();
-                if (this.SigningToken != null)
-                    hashCode = hashCode * 59 + this.SigningToken.GetHashCode();
-                if (this.SigningPublicKey != null)
-                    hashCode = hashCode * 59 + this.SigningPublicKey.GetHashCode();
-                if (this.DefaultAuthorizer != null)
-                    hashCode = hashCode * 59 + this.DefaultAuthorizer.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.CacheEnable != null)
-                    hashCode = hashCode * 59 + this.CacheEnable.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                var hashCode = 41;
+                if (this.AuthorizerId != null) hashCode = hashCode * 59 + this.AuthorizerId.GetHashCode();
+                if (this.AuthorizerName != null) hashCode = hashCode * 59 + this.AuthorizerName.GetHashCode();
+                if (this.FuncName != null) hashCode = hashCode * 59 + this.FuncName.GetHashCode();
+                if (this.FuncUrn != null) hashCode = hashCode * 59 + this.FuncUrn.GetHashCode();
+                if (this.SigningEnable != null) hashCode = hashCode * 59 + this.SigningEnable.GetHashCode();
+                if (this.SigningToken != null) hashCode = hashCode * 59 + this.SigningToken.GetHashCode();
+                if (this.SigningPublicKey != null) hashCode = hashCode * 59 + this.SigningPublicKey.GetHashCode();
+                if (this.DefaultAuthorizer != null) hashCode = hashCode * 59 + this.DefaultAuthorizer.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.CacheEnable != null) hashCode = hashCode * 59 + this.CacheEnable.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 return hashCode;
             }
         }

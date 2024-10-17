@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(ListTranscodeTemplateResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TemplateGroupList != input.TemplateGroupList || (this.TemplateGroupList != null && input.TemplateGroupList != null && !this.TemplateGroupList.SequenceEqual(input.TemplateGroupList))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
-            return 
-                (
-                    this.TemplateGroupList == input.TemplateGroupList ||
-                    this.TemplateGroupList != null &&
-                    input.TemplateGroupList != null &&
-                    this.TemplateGroupList.SequenceEqual(input.TemplateGroupList)
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TemplateGroupList != null)
-                    hashCode = hashCode * 59 + this.TemplateGroupList.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                var hashCode = 41;
+                if (this.TemplateGroupList != null) hashCode = hashCode * 59 + this.TemplateGroupList.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

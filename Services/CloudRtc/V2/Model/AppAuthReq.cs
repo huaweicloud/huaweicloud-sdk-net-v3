@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         /// </summary>
         public bool Equals(AppAuthReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Enable != input.Enable || (this.Enable != null && !this.Enable.Equals(input.Enable))) return false;
+            if (this.Expire != input.Expire || (this.Expire != null && !this.Expire.Equals(input.Expire))) return false;
 
-            return 
-                (
-                    this.Enable == input.Enable ||
-                    (this.Enable != null &&
-                    this.Enable.Equals(input.Enable))
-                ) && 
-                (
-                    this.Expire == input.Expire ||
-                    (this.Expire != null &&
-                    this.Expire.Equals(input.Expire))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Enable != null)
-                    hashCode = hashCode * 59 + this.Enable.GetHashCode();
-                if (this.Expire != null)
-                    hashCode = hashCode * 59 + this.Expire.GetHashCode();
+                var hashCode = 41;
+                if (this.Enable != null) hashCode = hashCode * 59 + this.Enable.GetHashCode();
+                if (this.Expire != null) hashCode = hashCode * 59 + this.Expire.GetHashCode();
                 return hashCode;
             }
         }

@@ -184,31 +184,13 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(CommandTimeTakenList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TotalNum != input.TotalNum || (this.TotalNum != null && !this.TotalNum.Equals(input.TotalNum))) return false;
+            if (this.TotalUsecSum != input.TotalUsecSum || (this.TotalUsecSum != null && !this.TotalUsecSum.Equals(input.TotalUsecSum))) return false;
+            if (this.Result != input.Result) return false;
+            if (this.CommandList != input.CommandList || (this.CommandList != null && input.CommandList != null && !this.CommandList.SequenceEqual(input.CommandList))) return false;
 
-            return 
-                (
-                    this.TotalNum == input.TotalNum ||
-                    (this.TotalNum != null &&
-                    this.TotalNum.Equals(input.TotalNum))
-                ) && 
-                (
-                    this.TotalUsecSum == input.TotalUsecSum ||
-                    (this.TotalUsecSum != null &&
-                    this.TotalUsecSum.Equals(input.TotalUsecSum))
-                ) && 
-                (
-                    this.Result == input.Result ||
-                    (this.Result != null &&
-                    this.Result.Equals(input.Result))
-                ) && 
-                (
-                    this.CommandList == input.CommandList ||
-                    this.CommandList != null &&
-                    input.CommandList != null &&
-                    this.CommandList.SequenceEqual(input.CommandList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -218,15 +200,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TotalNum != null)
-                    hashCode = hashCode * 59 + this.TotalNum.GetHashCode();
-                if (this.TotalUsecSum != null)
-                    hashCode = hashCode * 59 + this.TotalUsecSum.GetHashCode();
-                if (this.Result != null)
-                    hashCode = hashCode * 59 + this.Result.GetHashCode();
-                if (this.CommandList != null)
-                    hashCode = hashCode * 59 + this.CommandList.GetHashCode();
+                var hashCode = 41;
+                if (this.TotalNum != null) hashCode = hashCode * 59 + this.TotalNum.GetHashCode();
+                if (this.TotalUsecSum != null) hashCode = hashCode * 59 + this.TotalUsecSum.GetHashCode();
+                hashCode = hashCode * 59 + this.Result.GetHashCode();
+                if (this.CommandList != null) hashCode = hashCode * 59 + this.CommandList.GetHashCode();
                 return hashCode;
             }
         }

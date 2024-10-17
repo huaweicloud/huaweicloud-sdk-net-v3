@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(ShowInstanceBiactiveRegionsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RegionCodes != input.RegionCodes || (this.RegionCodes != null && input.RegionCodes != null && !this.RegionCodes.SequenceEqual(input.RegionCodes))) return false;
 
-            return 
-                (
-                    this.RegionCodes == input.RegionCodes ||
-                    this.RegionCodes != null &&
-                    input.RegionCodes != null &&
-                    this.RegionCodes.SequenceEqual(input.RegionCodes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RegionCodes != null)
-                    hashCode = hashCode * 59 + this.RegionCodes.GetHashCode();
+                var hashCode = 41;
+                if (this.RegionCodes != null) hashCode = hashCode * 59 + this.RegionCodes.GetHashCode();
                 return hashCode;
             }
         }

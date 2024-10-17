@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(PcrTestRecordConfidence input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.SamplingTime != input.SamplingTime || (this.SamplingTime != null && !this.SamplingTime.Equals(input.SamplingTime))) return false;
+            if (this.TestTime != input.TestTime || (this.TestTime != null && !this.TestTime.Equals(input.TestTime))) return false;
+            if (this.TestResult != input.TestResult || (this.TestResult != null && !this.TestResult.Equals(input.TestResult))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.SamplingTime == input.SamplingTime ||
-                    (this.SamplingTime != null &&
-                    this.SamplingTime.Equals(input.SamplingTime))
-                ) && 
-                (
-                    this.TestTime == input.TestTime ||
-                    (this.TestTime != null &&
-                    this.TestTime.Equals(input.TestTime))
-                ) && 
-                (
-                    this.TestResult == input.TestResult ||
-                    (this.TestResult != null &&
-                    this.TestResult.Equals(input.TestResult))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.SamplingTime != null)
-                    hashCode = hashCode * 59 + this.SamplingTime.GetHashCode();
-                if (this.TestTime != null)
-                    hashCode = hashCode * 59 + this.TestTime.GetHashCode();
-                if (this.TestResult != null)
-                    hashCode = hashCode * 59 + this.TestResult.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.SamplingTime != null) hashCode = hashCode * 59 + this.SamplingTime.GetHashCode();
+                if (this.TestTime != null) hashCode = hashCode * 59 + this.TestTime.GetHashCode();
+                if (this.TestResult != null) hashCode = hashCode * 59 + this.TestResult.GetHashCode();
                 return hashCode;
             }
         }

@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(DownloadSlowlogResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NodeName != input.NodeName || (this.NodeName != null && !this.NodeName.Equals(input.NodeName))) return false;
+            if (this.FileName != input.FileName || (this.FileName != null && !this.FileName.Equals(input.FileName))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.FileSize != input.FileSize || (this.FileSize != null && !this.FileSize.Equals(input.FileSize))) return false;
+            if (this.FileLink != input.FileLink || (this.FileLink != null && !this.FileLink.Equals(input.FileLink))) return false;
+            if (this.UpdateAt != input.UpdateAt || (this.UpdateAt != null && !this.UpdateAt.Equals(input.UpdateAt))) return false;
 
-            return 
-                (
-                    this.NodeName == input.NodeName ||
-                    (this.NodeName != null &&
-                    this.NodeName.Equals(input.NodeName))
-                ) && 
-                (
-                    this.FileName == input.FileName ||
-                    (this.FileName != null &&
-                    this.FileName.Equals(input.FileName))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.FileSize == input.FileSize ||
-                    (this.FileSize != null &&
-                    this.FileSize.Equals(input.FileSize))
-                ) && 
-                (
-                    this.FileLink == input.FileLink ||
-                    (this.FileLink != null &&
-                    this.FileLink.Equals(input.FileLink))
-                ) && 
-                (
-                    this.UpdateAt == input.UpdateAt ||
-                    (this.UpdateAt != null &&
-                    this.UpdateAt.Equals(input.UpdateAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NodeName != null)
-                    hashCode = hashCode * 59 + this.NodeName.GetHashCode();
-                if (this.FileName != null)
-                    hashCode = hashCode * 59 + this.FileName.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.FileSize != null)
-                    hashCode = hashCode * 59 + this.FileSize.GetHashCode();
-                if (this.FileLink != null)
-                    hashCode = hashCode * 59 + this.FileLink.GetHashCode();
-                if (this.UpdateAt != null)
-                    hashCode = hashCode * 59 + this.UpdateAt.GetHashCode();
+                var hashCode = 41;
+                if (this.NodeName != null) hashCode = hashCode * 59 + this.NodeName.GetHashCode();
+                if (this.FileName != null) hashCode = hashCode * 59 + this.FileName.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.FileSize != null) hashCode = hashCode * 59 + this.FileSize.GetHashCode();
+                if (this.FileLink != null) hashCode = hashCode * 59 + this.FileLink.GetHashCode();
+                if (this.UpdateAt != null) hashCode = hashCode * 59 + this.UpdateAt.GetHashCode();
                 return hashCode;
             }
         }

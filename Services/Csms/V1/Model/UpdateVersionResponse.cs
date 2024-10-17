@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         /// </summary>
         public bool Equals(UpdateVersionResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VersionMetadata != input.VersionMetadata || (this.VersionMetadata != null && !this.VersionMetadata.Equals(input.VersionMetadata))) return false;
 
-            return 
-                (
-                    this.VersionMetadata == input.VersionMetadata ||
-                    (this.VersionMetadata != null &&
-                    this.VersionMetadata.Equals(input.VersionMetadata))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VersionMetadata != null)
-                    hashCode = hashCode * 59 + this.VersionMetadata.GetHashCode();
+                var hashCode = 41;
+                if (this.VersionMetadata != null) hashCode = hashCode * 59 + this.VersionMetadata.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(RulesLocal input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.User != input.User || (this.User != null && !this.User.Equals(input.User))) return false;
+            if (this.Group != input.Group || (this.Group != null && !this.Group.Equals(input.Group))) return false;
+            if (this.Groups != input.Groups || (this.Groups != null && !this.Groups.Equals(input.Groups))) return false;
 
-            return 
-                (
-                    this.User == input.User ||
-                    (this.User != null &&
-                    this.User.Equals(input.User))
-                ) && 
-                (
-                    this.Group == input.Group ||
-                    (this.Group != null &&
-                    this.Group.Equals(input.Group))
-                ) && 
-                (
-                    this.Groups == input.Groups ||
-                    (this.Groups != null &&
-                    this.Groups.Equals(input.Groups))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.User != null)
-                    hashCode = hashCode * 59 + this.User.GetHashCode();
-                if (this.Group != null)
-                    hashCode = hashCode * 59 + this.Group.GetHashCode();
-                if (this.Groups != null)
-                    hashCode = hashCode * 59 + this.Groups.GetHashCode();
+                var hashCode = 41;
+                if (this.User != null) hashCode = hashCode * 59 + this.User.GetHashCode();
+                if (this.Group != null) hashCode = hashCode * 59 + this.Group.GetHashCode();
+                if (this.Groups != null) hashCode = hashCode * 59 + this.Groups.GetHashCode();
                 return hashCode;
             }
         }

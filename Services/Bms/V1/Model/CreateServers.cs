@@ -168,104 +168,27 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(CreateServers input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ImageRef != input.ImageRef || (this.ImageRef != null && !this.ImageRef.Equals(input.ImageRef))) return false;
+            if (this.FlavorRef != input.FlavorRef || (this.FlavorRef != null && !this.FlavorRef.Equals(input.FlavorRef))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && !this.Metadata.Equals(input.Metadata))) return false;
+            if (this.UserData != input.UserData || (this.UserData != null && !this.UserData.Equals(input.UserData))) return false;
+            if (this.AdminPass != input.AdminPass || (this.AdminPass != null && !this.AdminPass.Equals(input.AdminPass))) return false;
+            if (this.KeyName != input.KeyName || (this.KeyName != null && !this.KeyName.Equals(input.KeyName))) return false;
+            if (this.SecurityGroups != input.SecurityGroups || (this.SecurityGroups != null && input.SecurityGroups != null && !this.SecurityGroups.SequenceEqual(input.SecurityGroups))) return false;
+            if (this.Nics != input.Nics || (this.Nics != null && input.Nics != null && !this.Nics.SequenceEqual(input.Nics))) return false;
+            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
+            if (this.Vpcid != input.Vpcid || (this.Vpcid != null && !this.Vpcid.Equals(input.Vpcid))) return false;
+            if (this.Publicip != input.Publicip || (this.Publicip != null && !this.Publicip.Equals(input.Publicip))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.RootVolume != input.RootVolume || (this.RootVolume != null && !this.RootVolume.Equals(input.RootVolume))) return false;
+            if (this.DataVolumes != input.DataVolumes || (this.DataVolumes != null && input.DataVolumes != null && !this.DataVolumes.SequenceEqual(input.DataVolumes))) return false;
+            if (this.Extendparam != input.Extendparam || (this.Extendparam != null && !this.Extendparam.Equals(input.Extendparam))) return false;
+            if (this.SchedulerHints != input.SchedulerHints || (this.SchedulerHints != null && !this.SchedulerHints.Equals(input.SchedulerHints))) return false;
+            if (this.ServerTags != input.ServerTags || (this.ServerTags != null && input.ServerTags != null && !this.ServerTags.SequenceEqual(input.ServerTags))) return false;
 
-            return 
-                (
-                    this.ImageRef == input.ImageRef ||
-                    (this.ImageRef != null &&
-                    this.ImageRef.Equals(input.ImageRef))
-                ) && 
-                (
-                    this.FlavorRef == input.FlavorRef ||
-                    (this.FlavorRef != null &&
-                    this.FlavorRef.Equals(input.FlavorRef))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    (this.Metadata != null &&
-                    this.Metadata.Equals(input.Metadata))
-                ) && 
-                (
-                    this.UserData == input.UserData ||
-                    (this.UserData != null &&
-                    this.UserData.Equals(input.UserData))
-                ) && 
-                (
-                    this.AdminPass == input.AdminPass ||
-                    (this.AdminPass != null &&
-                    this.AdminPass.Equals(input.AdminPass))
-                ) && 
-                (
-                    this.KeyName == input.KeyName ||
-                    (this.KeyName != null &&
-                    this.KeyName.Equals(input.KeyName))
-                ) && 
-                (
-                    this.SecurityGroups == input.SecurityGroups ||
-                    this.SecurityGroups != null &&
-                    input.SecurityGroups != null &&
-                    this.SecurityGroups.SequenceEqual(input.SecurityGroups)
-                ) && 
-                (
-                    this.Nics == input.Nics ||
-                    this.Nics != null &&
-                    input.Nics != null &&
-                    this.Nics.SequenceEqual(input.Nics)
-                ) && 
-                (
-                    this.AvailabilityZone == input.AvailabilityZone ||
-                    (this.AvailabilityZone != null &&
-                    this.AvailabilityZone.Equals(input.AvailabilityZone))
-                ) && 
-                (
-                    this.Vpcid == input.Vpcid ||
-                    (this.Vpcid != null &&
-                    this.Vpcid.Equals(input.Vpcid))
-                ) && 
-                (
-                    this.Publicip == input.Publicip ||
-                    (this.Publicip != null &&
-                    this.Publicip.Equals(input.Publicip))
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.RootVolume == input.RootVolume ||
-                    (this.RootVolume != null &&
-                    this.RootVolume.Equals(input.RootVolume))
-                ) && 
-                (
-                    this.DataVolumes == input.DataVolumes ||
-                    this.DataVolumes != null &&
-                    input.DataVolumes != null &&
-                    this.DataVolumes.SequenceEqual(input.DataVolumes)
-                ) && 
-                (
-                    this.Extendparam == input.Extendparam ||
-                    (this.Extendparam != null &&
-                    this.Extendparam.Equals(input.Extendparam))
-                ) && 
-                (
-                    this.SchedulerHints == input.SchedulerHints ||
-                    (this.SchedulerHints != null &&
-                    this.SchedulerHints.Equals(input.SchedulerHints))
-                ) && 
-                (
-                    this.ServerTags == input.ServerTags ||
-                    this.ServerTags != null &&
-                    input.ServerTags != null &&
-                    this.ServerTags.SequenceEqual(input.ServerTags)
-                );
+            return true;
         }
 
         /// <summary>
@@ -275,43 +198,25 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ImageRef != null)
-                    hashCode = hashCode * 59 + this.ImageRef.GetHashCode();
-                if (this.FlavorRef != null)
-                    hashCode = hashCode * 59 + this.FlavorRef.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
-                if (this.UserData != null)
-                    hashCode = hashCode * 59 + this.UserData.GetHashCode();
-                if (this.AdminPass != null)
-                    hashCode = hashCode * 59 + this.AdminPass.GetHashCode();
-                if (this.KeyName != null)
-                    hashCode = hashCode * 59 + this.KeyName.GetHashCode();
-                if (this.SecurityGroups != null)
-                    hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
-                if (this.Nics != null)
-                    hashCode = hashCode * 59 + this.Nics.GetHashCode();
-                if (this.AvailabilityZone != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
-                if (this.Vpcid != null)
-                    hashCode = hashCode * 59 + this.Vpcid.GetHashCode();
-                if (this.Publicip != null)
-                    hashCode = hashCode * 59 + this.Publicip.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.RootVolume != null)
-                    hashCode = hashCode * 59 + this.RootVolume.GetHashCode();
-                if (this.DataVolumes != null)
-                    hashCode = hashCode * 59 + this.DataVolumes.GetHashCode();
-                if (this.Extendparam != null)
-                    hashCode = hashCode * 59 + this.Extendparam.GetHashCode();
-                if (this.SchedulerHints != null)
-                    hashCode = hashCode * 59 + this.SchedulerHints.GetHashCode();
-                if (this.ServerTags != null)
-                    hashCode = hashCode * 59 + this.ServerTags.GetHashCode();
+                var hashCode = 41;
+                if (this.ImageRef != null) hashCode = hashCode * 59 + this.ImageRef.GetHashCode();
+                if (this.FlavorRef != null) hashCode = hashCode * 59 + this.FlavorRef.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                if (this.UserData != null) hashCode = hashCode * 59 + this.UserData.GetHashCode();
+                if (this.AdminPass != null) hashCode = hashCode * 59 + this.AdminPass.GetHashCode();
+                if (this.KeyName != null) hashCode = hashCode * 59 + this.KeyName.GetHashCode();
+                if (this.SecurityGroups != null) hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
+                if (this.Nics != null) hashCode = hashCode * 59 + this.Nics.GetHashCode();
+                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
+                if (this.Vpcid != null) hashCode = hashCode * 59 + this.Vpcid.GetHashCode();
+                if (this.Publicip != null) hashCode = hashCode * 59 + this.Publicip.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.RootVolume != null) hashCode = hashCode * 59 + this.RootVolume.GetHashCode();
+                if (this.DataVolumes != null) hashCode = hashCode * 59 + this.DataVolumes.GetHashCode();
+                if (this.Extendparam != null) hashCode = hashCode * 59 + this.Extendparam.GetHashCode();
+                if (this.SchedulerHints != null) hashCode = hashCode * 59 + this.SchedulerHints.GetHashCode();
+                if (this.ServerTags != null) hashCode = hashCode * 59 + this.ServerTags.GetHashCode();
                 return hashCode;
             }
         }

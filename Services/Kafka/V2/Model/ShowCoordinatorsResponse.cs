@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ShowCoordinatorsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Coordinators != input.Coordinators || (this.Coordinators != null && input.Coordinators != null && !this.Coordinators.SequenceEqual(input.Coordinators))) return false;
 
-            return 
-                (
-                    this.Coordinators == input.Coordinators ||
-                    this.Coordinators != null &&
-                    input.Coordinators != null &&
-                    this.Coordinators.SequenceEqual(input.Coordinators)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Coordinators != null)
-                    hashCode = hashCode * 59 + this.Coordinators.GetHashCode();
+                var hashCode = 41;
+                if (this.Coordinators != null) hashCode = hashCode * 59 + this.Coordinators.GetHashCode();
                 return hashCode;
             }
         }

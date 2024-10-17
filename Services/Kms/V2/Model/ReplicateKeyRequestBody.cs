@@ -91,46 +91,16 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         /// </summary>
         public bool Equals(ReplicateKeyRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KeyId != input.KeyId || (this.KeyId != null && !this.KeyId.Equals(input.KeyId))) return false;
+            if (this.ReplicaRegion != input.ReplicaRegion || (this.ReplicaRegion != null && !this.ReplicaRegion.Equals(input.ReplicaRegion))) return false;
+            if (this.KeyAlias != input.KeyAlias || (this.KeyAlias != null && !this.KeyAlias.Equals(input.KeyAlias))) return false;
+            if (this.KeyDescription != input.KeyDescription || (this.KeyDescription != null && !this.KeyDescription.Equals(input.KeyDescription))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.ReplicaProjectId != input.ReplicaProjectId || (this.ReplicaProjectId != null && !this.ReplicaProjectId.Equals(input.ReplicaProjectId))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
 
-            return 
-                (
-                    this.KeyId == input.KeyId ||
-                    (this.KeyId != null &&
-                    this.KeyId.Equals(input.KeyId))
-                ) && 
-                (
-                    this.ReplicaRegion == input.ReplicaRegion ||
-                    (this.ReplicaRegion != null &&
-                    this.ReplicaRegion.Equals(input.ReplicaRegion))
-                ) && 
-                (
-                    this.KeyAlias == input.KeyAlias ||
-                    (this.KeyAlias != null &&
-                    this.KeyAlias.Equals(input.KeyAlias))
-                ) && 
-                (
-                    this.KeyDescription == input.KeyDescription ||
-                    (this.KeyDescription != null &&
-                    this.KeyDescription.Equals(input.KeyDescription))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.ReplicaProjectId == input.ReplicaProjectId ||
-                    (this.ReplicaProjectId != null &&
-                    this.ReplicaProjectId.Equals(input.ReplicaProjectId))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                );
+            return true;
         }
 
         /// <summary>
@@ -140,21 +110,14 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KeyId != null)
-                    hashCode = hashCode * 59 + this.KeyId.GetHashCode();
-                if (this.ReplicaRegion != null)
-                    hashCode = hashCode * 59 + this.ReplicaRegion.GetHashCode();
-                if (this.KeyAlias != null)
-                    hashCode = hashCode * 59 + this.KeyAlias.GetHashCode();
-                if (this.KeyDescription != null)
-                    hashCode = hashCode * 59 + this.KeyDescription.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.ReplicaProjectId != null)
-                    hashCode = hashCode * 59 + this.ReplicaProjectId.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                var hashCode = 41;
+                if (this.KeyId != null) hashCode = hashCode * 59 + this.KeyId.GetHashCode();
+                if (this.ReplicaRegion != null) hashCode = hashCode * 59 + this.ReplicaRegion.GetHashCode();
+                if (this.KeyAlias != null) hashCode = hashCode * 59 + this.KeyAlias.GetHashCode();
+                if (this.KeyDescription != null) hashCode = hashCode * 59 + this.KeyDescription.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.ReplicaProjectId != null) hashCode = hashCode * 59 + this.ReplicaProjectId.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(SourceInstanceBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Addrs != input.Addrs || (this.Addrs != null && !this.Addrs.Equals(input.Addrs))) return false;
+            if (this.Password != input.Password || (this.Password != null && !this.Password.Equals(input.Password))) return false;
+            if (this.TaskStatus != input.TaskStatus || (this.TaskStatus != null && !this.TaskStatus.Equals(input.TaskStatus))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
+            if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.ProxyMultiDb != input.ProxyMultiDb || (this.ProxyMultiDb != null && !this.ProxyMultiDb.Equals(input.ProxyMultiDb))) return false;
+            if (this.Db != input.Db || (this.Db != null && !this.Db.Equals(input.Db))) return false;
 
-            return 
-                (
-                    this.Addrs == input.Addrs ||
-                    (this.Addrs != null &&
-                    this.Addrs.Equals(input.Addrs))
-                ) && 
-                (
-                    this.Password == input.Password ||
-                    (this.Password != null &&
-                    this.Password.Equals(input.Password))
-                ) && 
-                (
-                    this.TaskStatus == input.TaskStatus ||
-                    (this.TaskStatus != null &&
-                    this.TaskStatus.Equals(input.TaskStatus))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                ) && 
-                (
-                    this.Port == input.Port ||
-                    (this.Port != null &&
-                    this.Port.Equals(input.Port))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ProxyMultiDb == input.ProxyMultiDb ||
-                    (this.ProxyMultiDb != null &&
-                    this.ProxyMultiDb.Equals(input.ProxyMultiDb))
-                ) && 
-                (
-                    this.Db == input.Db ||
-                    (this.Db != null &&
-                    this.Db.Equals(input.Db))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Addrs != null)
-                    hashCode = hashCode * 59 + this.Addrs.GetHashCode();
-                if (this.Password != null)
-                    hashCode = hashCode * 59 + this.Password.GetHashCode();
-                if (this.TaskStatus != null)
-                    hashCode = hashCode * 59 + this.TaskStatus.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.Port != null)
-                    hashCode = hashCode * 59 + this.Port.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.ProxyMultiDb != null)
-                    hashCode = hashCode * 59 + this.ProxyMultiDb.GetHashCode();
-                if (this.Db != null)
-                    hashCode = hashCode * 59 + this.Db.GetHashCode();
+                var hashCode = 41;
+                if (this.Addrs != null) hashCode = hashCode * 59 + this.Addrs.GetHashCode();
+                if (this.Password != null) hashCode = hashCode * 59 + this.Password.GetHashCode();
+                if (this.TaskStatus != null) hashCode = hashCode * 59 + this.TaskStatus.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.ProxyMultiDb != null) hashCode = hashCode * 59 + this.ProxyMultiDb.GetHashCode();
+                if (this.Db != null) hashCode = hashCode * 59 + this.Db.GetHashCode();
                 return hashCode;
             }
         }

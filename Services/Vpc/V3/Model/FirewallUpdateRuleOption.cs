@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(FirewallUpdateRuleOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IngressRules != input.IngressRules || (this.IngressRules != null && input.IngressRules != null && !this.IngressRules.SequenceEqual(input.IngressRules))) return false;
+            if (this.EgressRules != input.EgressRules || (this.EgressRules != null && input.EgressRules != null && !this.EgressRules.SequenceEqual(input.EgressRules))) return false;
 
-            return 
-                (
-                    this.IngressRules == input.IngressRules ||
-                    this.IngressRules != null &&
-                    input.IngressRules != null &&
-                    this.IngressRules.SequenceEqual(input.IngressRules)
-                ) && 
-                (
-                    this.EgressRules == input.EgressRules ||
-                    this.EgressRules != null &&
-                    input.EgressRules != null &&
-                    this.EgressRules.SequenceEqual(input.EgressRules)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IngressRules != null)
-                    hashCode = hashCode * 59 + this.IngressRules.GetHashCode();
-                if (this.EgressRules != null)
-                    hashCode = hashCode * 59 + this.EgressRules.GetHashCode();
+                var hashCode = 41;
+                if (this.IngressRules != null) hashCode = hashCode * 59 + this.IngressRules.GetHashCode();
+                if (this.EgressRules != null) hashCode = hashCode * 59 + this.EgressRules.GetHashCode();
                 return hashCode;
             }
         }

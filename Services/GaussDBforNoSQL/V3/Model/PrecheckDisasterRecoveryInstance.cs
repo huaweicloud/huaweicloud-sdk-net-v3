@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(PrecheckDisasterRecoveryInstance input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VpcCidr != input.VpcCidr || (this.VpcCidr != null && !this.VpcCidr.Equals(input.VpcCidr))) return false;
+            if (this.SpecCode != input.SpecCode || (this.SpecCode != null && !this.SpecCode.Equals(input.SpecCode))) return false;
+            if (this.NodeIps != input.NodeIps || (this.NodeIps != null && input.NodeIps != null && !this.NodeIps.SequenceEqual(input.NodeIps))) return false;
 
-            return 
-                (
-                    this.VpcCidr == input.VpcCidr ||
-                    (this.VpcCidr != null &&
-                    this.VpcCidr.Equals(input.VpcCidr))
-                ) && 
-                (
-                    this.SpecCode == input.SpecCode ||
-                    (this.SpecCode != null &&
-                    this.SpecCode.Equals(input.SpecCode))
-                ) && 
-                (
-                    this.NodeIps == input.NodeIps ||
-                    this.NodeIps != null &&
-                    input.NodeIps != null &&
-                    this.NodeIps.SequenceEqual(input.NodeIps)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VpcCidr != null)
-                    hashCode = hashCode * 59 + this.VpcCidr.GetHashCode();
-                if (this.SpecCode != null)
-                    hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
-                if (this.NodeIps != null)
-                    hashCode = hashCode * 59 + this.NodeIps.GetHashCode();
+                var hashCode = 41;
+                if (this.VpcCidr != null) hashCode = hashCode * 59 + this.VpcCidr.GetHashCode();
+                if (this.SpecCode != null) hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
+                if (this.NodeIps != null) hashCode = hashCode * 59 + this.NodeIps.GetHashCode();
                 return hashCode;
             }
         }

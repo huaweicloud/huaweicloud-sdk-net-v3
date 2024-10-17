@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(OpenGaussInstanceActionRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ExpandCluster != input.ExpandCluster || (this.ExpandCluster != null && !this.ExpandCluster.Equals(input.ExpandCluster))) return false;
+            if (this.EnlargeVolume != input.EnlargeVolume || (this.EnlargeVolume != null && !this.EnlargeVolume.Equals(input.EnlargeVolume))) return false;
+            if (this.IsAutoPay != input.IsAutoPay || (this.IsAutoPay != null && !this.IsAutoPay.Equals(input.IsAutoPay))) return false;
 
-            return 
-                (
-                    this.ExpandCluster == input.ExpandCluster ||
-                    (this.ExpandCluster != null &&
-                    this.ExpandCluster.Equals(input.ExpandCluster))
-                ) && 
-                (
-                    this.EnlargeVolume == input.EnlargeVolume ||
-                    (this.EnlargeVolume != null &&
-                    this.EnlargeVolume.Equals(input.EnlargeVolume))
-                ) && 
-                (
-                    this.IsAutoPay == input.IsAutoPay ||
-                    (this.IsAutoPay != null &&
-                    this.IsAutoPay.Equals(input.IsAutoPay))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ExpandCluster != null)
-                    hashCode = hashCode * 59 + this.ExpandCluster.GetHashCode();
-                if (this.EnlargeVolume != null)
-                    hashCode = hashCode * 59 + this.EnlargeVolume.GetHashCode();
-                if (this.IsAutoPay != null)
-                    hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
+                var hashCode = 41;
+                if (this.ExpandCluster != null) hashCode = hashCode * 59 + this.ExpandCluster.GetHashCode();
+                if (this.EnlargeVolume != null) hashCode = hashCode * 59 + this.EnlargeVolume.GetHashCode();
+                if (this.IsAutoPay != null) hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
                 return hashCode;
             }
         }

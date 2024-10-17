@@ -98,51 +98,17 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(SearchAutoEnlargePolicyResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SwitchOption != input.SwitchOption || (this.SwitchOption != null && !this.SwitchOption.Equals(input.SwitchOption))) return false;
+            if (this.LimitVolumeSize != input.LimitVolumeSize || (this.LimitVolumeSize != null && !this.LimitVolumeSize.Equals(input.LimitVolumeSize))) return false;
+            if (this.MinVolumeSize != input.MinVolumeSize || (this.MinVolumeSize != null && !this.MinVolumeSize.Equals(input.MinVolumeSize))) return false;
+            if (this.MaxVolumeSize != input.MaxVolumeSize || (this.MaxVolumeSize != null && !this.MaxVolumeSize.Equals(input.MaxVolumeSize))) return false;
+            if (this.TriggerAvailablePercent != input.TriggerAvailablePercent || (this.TriggerAvailablePercent != null && !this.TriggerAvailablePercent.Equals(input.TriggerAvailablePercent))) return false;
+            if (this.Percents != input.Percents || (this.Percents != null && input.Percents != null && !this.Percents.SequenceEqual(input.Percents))) return false;
+            if (this.StepSize != input.StepSize || (this.StepSize != null && !this.StepSize.Equals(input.StepSize))) return false;
+            if (this.StepPercent != input.StepPercent || (this.StepPercent != null && !this.StepPercent.Equals(input.StepPercent))) return false;
 
-            return 
-                (
-                    this.SwitchOption == input.SwitchOption ||
-                    (this.SwitchOption != null &&
-                    this.SwitchOption.Equals(input.SwitchOption))
-                ) && 
-                (
-                    this.LimitVolumeSize == input.LimitVolumeSize ||
-                    (this.LimitVolumeSize != null &&
-                    this.LimitVolumeSize.Equals(input.LimitVolumeSize))
-                ) && 
-                (
-                    this.MinVolumeSize == input.MinVolumeSize ||
-                    (this.MinVolumeSize != null &&
-                    this.MinVolumeSize.Equals(input.MinVolumeSize))
-                ) && 
-                (
-                    this.MaxVolumeSize == input.MaxVolumeSize ||
-                    (this.MaxVolumeSize != null &&
-                    this.MaxVolumeSize.Equals(input.MaxVolumeSize))
-                ) && 
-                (
-                    this.TriggerAvailablePercent == input.TriggerAvailablePercent ||
-                    (this.TriggerAvailablePercent != null &&
-                    this.TriggerAvailablePercent.Equals(input.TriggerAvailablePercent))
-                ) && 
-                (
-                    this.Percents == input.Percents ||
-                    this.Percents != null &&
-                    input.Percents != null &&
-                    this.Percents.SequenceEqual(input.Percents)
-                ) && 
-                (
-                    this.StepSize == input.StepSize ||
-                    (this.StepSize != null &&
-                    this.StepSize.Equals(input.StepSize))
-                ) && 
-                (
-                    this.StepPercent == input.StepPercent ||
-                    (this.StepPercent != null &&
-                    this.StepPercent.Equals(input.StepPercent))
-                );
+            return true;
         }
 
         /// <summary>
@@ -152,23 +118,15 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SwitchOption != null)
-                    hashCode = hashCode * 59 + this.SwitchOption.GetHashCode();
-                if (this.LimitVolumeSize != null)
-                    hashCode = hashCode * 59 + this.LimitVolumeSize.GetHashCode();
-                if (this.MinVolumeSize != null)
-                    hashCode = hashCode * 59 + this.MinVolumeSize.GetHashCode();
-                if (this.MaxVolumeSize != null)
-                    hashCode = hashCode * 59 + this.MaxVolumeSize.GetHashCode();
-                if (this.TriggerAvailablePercent != null)
-                    hashCode = hashCode * 59 + this.TriggerAvailablePercent.GetHashCode();
-                if (this.Percents != null)
-                    hashCode = hashCode * 59 + this.Percents.GetHashCode();
-                if (this.StepSize != null)
-                    hashCode = hashCode * 59 + this.StepSize.GetHashCode();
-                if (this.StepPercent != null)
-                    hashCode = hashCode * 59 + this.StepPercent.GetHashCode();
+                var hashCode = 41;
+                if (this.SwitchOption != null) hashCode = hashCode * 59 + this.SwitchOption.GetHashCode();
+                if (this.LimitVolumeSize != null) hashCode = hashCode * 59 + this.LimitVolumeSize.GetHashCode();
+                if (this.MinVolumeSize != null) hashCode = hashCode * 59 + this.MinVolumeSize.GetHashCode();
+                if (this.MaxVolumeSize != null) hashCode = hashCode * 59 + this.MaxVolumeSize.GetHashCode();
+                if (this.TriggerAvailablePercent != null) hashCode = hashCode * 59 + this.TriggerAvailablePercent.GetHashCode();
+                if (this.Percents != null) hashCode = hashCode * 59 + this.Percents.GetHashCode();
+                if (this.StepSize != null) hashCode = hashCode * 59 + this.StepSize.GetHashCode();
+                if (this.StepPercent != null) hashCode = hashCode * 59 + this.StepPercent.GetHashCode();
                 return hashCode;
             }
         }

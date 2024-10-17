@@ -105,57 +105,18 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(ConsumerGroup input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
+            if (this.Broadcast != input.Broadcast || (this.Broadcast != null && !this.Broadcast.Equals(input.Broadcast))) return false;
+            if (this.Brokers != input.Brokers || (this.Brokers != null && input.Brokers != null && !this.Brokers.SequenceEqual(input.Brokers))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.GroupDesc != input.GroupDesc || (this.GroupDesc != null && !this.GroupDesc.Equals(input.GroupDesc))) return false;
+            if (this.RetryMaxTime != input.RetryMaxTime || (this.RetryMaxTime != null && !this.RetryMaxTime.Equals(input.RetryMaxTime))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.Permissions != input.Permissions || (this.Permissions != null && input.Permissions != null && !this.Permissions.SequenceEqual(input.Permissions))) return false;
+            if (this.ConsumeOrderly != input.ConsumeOrderly || (this.ConsumeOrderly != null && !this.ConsumeOrderly.Equals(input.ConsumeOrderly))) return false;
 
-            return 
-                (
-                    this.Enabled == input.Enabled ||
-                    (this.Enabled != null &&
-                    this.Enabled.Equals(input.Enabled))
-                ) && 
-                (
-                    this.Broadcast == input.Broadcast ||
-                    (this.Broadcast != null &&
-                    this.Broadcast.Equals(input.Broadcast))
-                ) && 
-                (
-                    this.Brokers == input.Brokers ||
-                    this.Brokers != null &&
-                    input.Brokers != null &&
-                    this.Brokers.SequenceEqual(input.Brokers)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.GroupDesc == input.GroupDesc ||
-                    (this.GroupDesc != null &&
-                    this.GroupDesc.Equals(input.GroupDesc))
-                ) && 
-                (
-                    this.RetryMaxTime == input.RetryMaxTime ||
-                    (this.RetryMaxTime != null &&
-                    this.RetryMaxTime.Equals(input.RetryMaxTime))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.Permissions == input.Permissions ||
-                    this.Permissions != null &&
-                    input.Permissions != null &&
-                    this.Permissions.SequenceEqual(input.Permissions)
-                ) && 
-                (
-                    this.ConsumeOrderly == input.ConsumeOrderly ||
-                    (this.ConsumeOrderly != null &&
-                    this.ConsumeOrderly.Equals(input.ConsumeOrderly))
-                );
+            return true;
         }
 
         /// <summary>
@@ -165,25 +126,16 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Enabled != null)
-                    hashCode = hashCode * 59 + this.Enabled.GetHashCode();
-                if (this.Broadcast != null)
-                    hashCode = hashCode * 59 + this.Broadcast.GetHashCode();
-                if (this.Brokers != null)
-                    hashCode = hashCode * 59 + this.Brokers.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.GroupDesc != null)
-                    hashCode = hashCode * 59 + this.GroupDesc.GetHashCode();
-                if (this.RetryMaxTime != null)
-                    hashCode = hashCode * 59 + this.RetryMaxTime.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.Permissions != null)
-                    hashCode = hashCode * 59 + this.Permissions.GetHashCode();
-                if (this.ConsumeOrderly != null)
-                    hashCode = hashCode * 59 + this.ConsumeOrderly.GetHashCode();
+                var hashCode = 41;
+                if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
+                if (this.Broadcast != null) hashCode = hashCode * 59 + this.Broadcast.GetHashCode();
+                if (this.Brokers != null) hashCode = hashCode * 59 + this.Brokers.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.GroupDesc != null) hashCode = hashCode * 59 + this.GroupDesc.GetHashCode();
+                if (this.RetryMaxTime != null) hashCode = hashCode * 59 + this.RetryMaxTime.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.Permissions != null) hashCode = hashCode * 59 + this.Permissions.GetHashCode();
+                if (this.ConsumeOrderly != null) hashCode = hashCode * 59 + this.ConsumeOrderly.GetHashCode();
                 return hashCode;
             }
         }

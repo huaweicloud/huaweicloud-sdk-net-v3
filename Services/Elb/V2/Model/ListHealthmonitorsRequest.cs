@@ -162,85 +162,24 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// </summary>
         public bool Equals(ListHealthmonitorsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.PageReverse != input.PageReverse || (this.PageReverse != null && !this.PageReverse.Equals(input.PageReverse))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Delay != input.Delay || (this.Delay != null && !this.Delay.Equals(input.Delay))) return false;
+            if (this.MaxRetries != input.MaxRetries || (this.MaxRetries != null && !this.MaxRetries.Equals(input.MaxRetries))) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.Timeout != input.Timeout || (this.Timeout != null && !this.Timeout.Equals(input.Timeout))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.MonitorPort != input.MonitorPort || (this.MonitorPort != null && !this.MonitorPort.Equals(input.MonitorPort))) return false;
+            if (this.ExpectedCodes != input.ExpectedCodes || (this.ExpectedCodes != null && !this.ExpectedCodes.Equals(input.ExpectedCodes))) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
+            if (this.UrlPath != input.UrlPath || (this.UrlPath != null && !this.UrlPath.Equals(input.UrlPath))) return false;
+            if (this.HttpMethod != input.HttpMethod || (this.HttpMethod != null && !this.HttpMethod.Equals(input.HttpMethod))) return false;
 
-            return 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.PageReverse == input.PageReverse ||
-                    (this.PageReverse != null &&
-                    this.PageReverse.Equals(input.PageReverse))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Delay == input.Delay ||
-                    (this.Delay != null &&
-                    this.Delay.Equals(input.Delay))
-                ) && 
-                (
-                    this.MaxRetries == input.MaxRetries ||
-                    (this.MaxRetries != null &&
-                    this.MaxRetries.Equals(input.MaxRetries))
-                ) && 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.Timeout == input.Timeout ||
-                    (this.Timeout != null &&
-                    this.Timeout.Equals(input.Timeout))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.MonitorPort == input.MonitorPort ||
-                    (this.MonitorPort != null &&
-                    this.MonitorPort.Equals(input.MonitorPort))
-                ) && 
-                (
-                    this.ExpectedCodes == input.ExpectedCodes ||
-                    (this.ExpectedCodes != null &&
-                    this.ExpectedCodes.Equals(input.ExpectedCodes))
-                ) && 
-                (
-                    this.DomainName == input.DomainName ||
-                    (this.DomainName != null &&
-                    this.DomainName.Equals(input.DomainName))
-                ) && 
-                (
-                    this.UrlPath == input.UrlPath ||
-                    (this.UrlPath != null &&
-                    this.UrlPath.Equals(input.UrlPath))
-                ) && 
-                (
-                    this.HttpMethod == input.HttpMethod ||
-                    (this.HttpMethod != null &&
-                    this.HttpMethod.Equals(input.HttpMethod))
-                );
+            return true;
         }
 
         /// <summary>
@@ -250,37 +189,22 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.PageReverse != null)
-                    hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Delay != null)
-                    hashCode = hashCode * 59 + this.Delay.GetHashCode();
-                if (this.MaxRetries != null)
-                    hashCode = hashCode * 59 + this.MaxRetries.GetHashCode();
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.Timeout != null)
-                    hashCode = hashCode * 59 + this.Timeout.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.MonitorPort != null)
-                    hashCode = hashCode * 59 + this.MonitorPort.GetHashCode();
-                if (this.ExpectedCodes != null)
-                    hashCode = hashCode * 59 + this.ExpectedCodes.GetHashCode();
-                if (this.DomainName != null)
-                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.UrlPath != null)
-                    hashCode = hashCode * 59 + this.UrlPath.GetHashCode();
-                if (this.HttpMethod != null)
-                    hashCode = hashCode * 59 + this.HttpMethod.GetHashCode();
+                var hashCode = 41;
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.PageReverse != null) hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Delay != null) hashCode = hashCode * 59 + this.Delay.GetHashCode();
+                if (this.MaxRetries != null) hashCode = hashCode * 59 + this.MaxRetries.GetHashCode();
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.Timeout != null) hashCode = hashCode * 59 + this.Timeout.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.MonitorPort != null) hashCode = hashCode * 59 + this.MonitorPort.GetHashCode();
+                if (this.ExpectedCodes != null) hashCode = hashCode * 59 + this.ExpectedCodes.GetHashCode();
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.UrlPath != null) hashCode = hashCode * 59 + this.UrlPath.GetHashCode();
+                if (this.HttpMethod != null) hashCode = hashCode * 59 + this.HttpMethod.GetHashCode();
                 return hashCode;
             }
         }

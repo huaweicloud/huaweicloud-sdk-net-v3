@@ -272,20 +272,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(StarRocksCreateRequestTagsInfoSysTags input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Key != input.Key) return false;
+            if (this.Value != input.Value) return false;
 
-            return 
-                (
-                    this.Key == input.Key ||
-                    (this.Key != null &&
-                    this.Key.Equals(input.Key))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                );
+            return true;
         }
 
         /// <summary>
@@ -295,11 +286,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Key != null)
-                    hashCode = hashCode * 59 + this.Key.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Key.GetHashCode();
+                hashCode = hashCode * 59 + this.Value.GetHashCode();
                 return hashCode;
             }
         }

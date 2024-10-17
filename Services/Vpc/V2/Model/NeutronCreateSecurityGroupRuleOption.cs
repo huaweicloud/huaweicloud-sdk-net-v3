@@ -340,60 +340,19 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(NeutronCreateSecurityGroupRuleOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Direction != input.Direction) return false;
+            if (this.Ethertype != input.Ethertype) return false;
+            if (this.PortRangeMax != input.PortRangeMax || (this.PortRangeMax != null && !this.PortRangeMax.Equals(input.PortRangeMax))) return false;
+            if (this.PortRangeMin != input.PortRangeMin || (this.PortRangeMin != null && !this.PortRangeMin.Equals(input.PortRangeMin))) return false;
+            if (this.Protocol != input.Protocol || (this.Protocol != null && !this.Protocol.Equals(input.Protocol))) return false;
+            if (this.RemoteGroupId != input.RemoteGroupId || (this.RemoteGroupId != null && !this.RemoteGroupId.Equals(input.RemoteGroupId))) return false;
+            if (this.RemoteIpPrefix != input.RemoteIpPrefix || (this.RemoteIpPrefix != null && !this.RemoteIpPrefix.Equals(input.RemoteIpPrefix))) return false;
+            if (this.RemoteAddressGroupId != input.RemoteAddressGroupId || (this.RemoteAddressGroupId != null && !this.RemoteAddressGroupId.Equals(input.RemoteAddressGroupId))) return false;
+            if (this.SecurityGroupId != input.SecurityGroupId || (this.SecurityGroupId != null && !this.SecurityGroupId.Equals(input.SecurityGroupId))) return false;
 
-            return 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Direction == input.Direction ||
-                    (this.Direction != null &&
-                    this.Direction.Equals(input.Direction))
-                ) && 
-                (
-                    this.Ethertype == input.Ethertype ||
-                    (this.Ethertype != null &&
-                    this.Ethertype.Equals(input.Ethertype))
-                ) && 
-                (
-                    this.PortRangeMax == input.PortRangeMax ||
-                    (this.PortRangeMax != null &&
-                    this.PortRangeMax.Equals(input.PortRangeMax))
-                ) && 
-                (
-                    this.PortRangeMin == input.PortRangeMin ||
-                    (this.PortRangeMin != null &&
-                    this.PortRangeMin.Equals(input.PortRangeMin))
-                ) && 
-                (
-                    this.Protocol == input.Protocol ||
-                    (this.Protocol != null &&
-                    this.Protocol.Equals(input.Protocol))
-                ) && 
-                (
-                    this.RemoteGroupId == input.RemoteGroupId ||
-                    (this.RemoteGroupId != null &&
-                    this.RemoteGroupId.Equals(input.RemoteGroupId))
-                ) && 
-                (
-                    this.RemoteIpPrefix == input.RemoteIpPrefix ||
-                    (this.RemoteIpPrefix != null &&
-                    this.RemoteIpPrefix.Equals(input.RemoteIpPrefix))
-                ) && 
-                (
-                    this.RemoteAddressGroupId == input.RemoteAddressGroupId ||
-                    (this.RemoteAddressGroupId != null &&
-                    this.RemoteAddressGroupId.Equals(input.RemoteAddressGroupId))
-                ) && 
-                (
-                    this.SecurityGroupId == input.SecurityGroupId ||
-                    (this.SecurityGroupId != null &&
-                    this.SecurityGroupId.Equals(input.SecurityGroupId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -403,27 +362,17 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Direction != null)
-                    hashCode = hashCode * 59 + this.Direction.GetHashCode();
-                if (this.Ethertype != null)
-                    hashCode = hashCode * 59 + this.Ethertype.GetHashCode();
-                if (this.PortRangeMax != null)
-                    hashCode = hashCode * 59 + this.PortRangeMax.GetHashCode();
-                if (this.PortRangeMin != null)
-                    hashCode = hashCode * 59 + this.PortRangeMin.GetHashCode();
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
-                if (this.RemoteGroupId != null)
-                    hashCode = hashCode * 59 + this.RemoteGroupId.GetHashCode();
-                if (this.RemoteIpPrefix != null)
-                    hashCode = hashCode * 59 + this.RemoteIpPrefix.GetHashCode();
-                if (this.RemoteAddressGroupId != null)
-                    hashCode = hashCode * 59 + this.RemoteAddressGroupId.GetHashCode();
-                if (this.SecurityGroupId != null)
-                    hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
+                var hashCode = 41;
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                hashCode = hashCode * 59 + this.Direction.GetHashCode();
+                hashCode = hashCode * 59 + this.Ethertype.GetHashCode();
+                if (this.PortRangeMax != null) hashCode = hashCode * 59 + this.PortRangeMax.GetHashCode();
+                if (this.PortRangeMin != null) hashCode = hashCode * 59 + this.PortRangeMin.GetHashCode();
+                if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.RemoteGroupId != null) hashCode = hashCode * 59 + this.RemoteGroupId.GetHashCode();
+                if (this.RemoteIpPrefix != null) hashCode = hashCode * 59 + this.RemoteIpPrefix.GetHashCode();
+                if (this.RemoteAddressGroupId != null) hashCode = hashCode * 59 + this.RemoteAddressGroupId.GetHashCode();
+                if (this.SecurityGroupId != null) hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
                 return hashCode;
             }
         }

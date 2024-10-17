@@ -440,50 +440,17 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(CreateMigrationTaskBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TaskName != input.TaskName || (this.TaskName != null && !this.TaskName.Equals(input.TaskName))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.MigrationType != input.MigrationType) return false;
+            if (this.MigrationMethod != input.MigrationMethod) return false;
+            if (this.BackupFiles != input.BackupFiles || (this.BackupFiles != null && !this.BackupFiles.Equals(input.BackupFiles))) return false;
+            if (this.NetworkType != input.NetworkType) return false;
+            if (this.SourceInstance != input.SourceInstance || (this.SourceInstance != null && !this.SourceInstance.Equals(input.SourceInstance))) return false;
+            if (this.TargetInstance != input.TargetInstance || (this.TargetInstance != null && !this.TargetInstance.Equals(input.TargetInstance))) return false;
 
-            return 
-                (
-                    this.TaskName == input.TaskName ||
-                    (this.TaskName != null &&
-                    this.TaskName.Equals(input.TaskName))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.MigrationType == input.MigrationType ||
-                    (this.MigrationType != null &&
-                    this.MigrationType.Equals(input.MigrationType))
-                ) && 
-                (
-                    this.MigrationMethod == input.MigrationMethod ||
-                    (this.MigrationMethod != null &&
-                    this.MigrationMethod.Equals(input.MigrationMethod))
-                ) && 
-                (
-                    this.BackupFiles == input.BackupFiles ||
-                    (this.BackupFiles != null &&
-                    this.BackupFiles.Equals(input.BackupFiles))
-                ) && 
-                (
-                    this.NetworkType == input.NetworkType ||
-                    (this.NetworkType != null &&
-                    this.NetworkType.Equals(input.NetworkType))
-                ) && 
-                (
-                    this.SourceInstance == input.SourceInstance ||
-                    (this.SourceInstance != null &&
-                    this.SourceInstance.Equals(input.SourceInstance))
-                ) && 
-                (
-                    this.TargetInstance == input.TargetInstance ||
-                    (this.TargetInstance != null &&
-                    this.TargetInstance.Equals(input.TargetInstance))
-                );
+            return true;
         }
 
         /// <summary>
@@ -493,23 +460,15 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TaskName != null)
-                    hashCode = hashCode * 59 + this.TaskName.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.MigrationType != null)
-                    hashCode = hashCode * 59 + this.MigrationType.GetHashCode();
-                if (this.MigrationMethod != null)
-                    hashCode = hashCode * 59 + this.MigrationMethod.GetHashCode();
-                if (this.BackupFiles != null)
-                    hashCode = hashCode * 59 + this.BackupFiles.GetHashCode();
-                if (this.NetworkType != null)
-                    hashCode = hashCode * 59 + this.NetworkType.GetHashCode();
-                if (this.SourceInstance != null)
-                    hashCode = hashCode * 59 + this.SourceInstance.GetHashCode();
-                if (this.TargetInstance != null)
-                    hashCode = hashCode * 59 + this.TargetInstance.GetHashCode();
+                var hashCode = 41;
+                if (this.TaskName != null) hashCode = hashCode * 59 + this.TaskName.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                hashCode = hashCode * 59 + this.MigrationType.GetHashCode();
+                hashCode = hashCode * 59 + this.MigrationMethod.GetHashCode();
+                if (this.BackupFiles != null) hashCode = hashCode * 59 + this.BackupFiles.GetHashCode();
+                hashCode = hashCode * 59 + this.NetworkType.GetHashCode();
+                if (this.SourceInstance != null) hashCode = hashCode * 59 + this.SourceInstance.GetHashCode();
+                if (this.TargetInstance != null) hashCode = hashCode * 59 + this.TargetInstance.GetHashCode();
                 return hashCode;
             }
         }

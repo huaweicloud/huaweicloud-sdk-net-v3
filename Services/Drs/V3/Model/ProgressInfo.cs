@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(ProgressInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Completed != input.Completed || (this.Completed != null && !this.Completed.Equals(input.Completed))) return false;
+            if (this.RemainingTime != input.RemainingTime || (this.RemainingTime != null && !this.RemainingTime.Equals(input.RemainingTime))) return false;
 
-            return 
-                (
-                    this.Completed == input.Completed ||
-                    (this.Completed != null &&
-                    this.Completed.Equals(input.Completed))
-                ) && 
-                (
-                    this.RemainingTime == input.RemainingTime ||
-                    (this.RemainingTime != null &&
-                    this.RemainingTime.Equals(input.RemainingTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Completed != null)
-                    hashCode = hashCode * 59 + this.Completed.GetHashCode();
-                if (this.RemainingTime != null)
-                    hashCode = hashCode * 59 + this.RemainingTime.GetHashCode();
+                var hashCode = 41;
+                if (this.Completed != null) hashCode = hashCode * 59 + this.Completed.GetHashCode();
+                if (this.RemainingTime != null) hashCode = hashCode * 59 + this.RemainingTime.GetHashCode();
                 return hashCode;
             }
         }

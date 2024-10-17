@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(SmnInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SmnNotifiedContent != input.SmnNotifiedContent || (this.SmnNotifiedContent != null && !this.SmnNotifiedContent.Equals(input.SmnNotifiedContent))) return false;
+            if (this.SmnSubscriptionStatus != input.SmnSubscriptionStatus || (this.SmnSubscriptionStatus != null && !this.SmnSubscriptionStatus.Equals(input.SmnSubscriptionStatus))) return false;
+            if (this.SmnSubscriptionType != input.SmnSubscriptionType || (this.SmnSubscriptionType != null && !this.SmnSubscriptionType.Equals(input.SmnSubscriptionType))) return false;
 
-            return 
-                (
-                    this.SmnNotifiedContent == input.SmnNotifiedContent ||
-                    (this.SmnNotifiedContent != null &&
-                    this.SmnNotifiedContent.Equals(input.SmnNotifiedContent))
-                ) && 
-                (
-                    this.SmnSubscriptionStatus == input.SmnSubscriptionStatus ||
-                    (this.SmnSubscriptionStatus != null &&
-                    this.SmnSubscriptionStatus.Equals(input.SmnSubscriptionStatus))
-                ) && 
-                (
-                    this.SmnSubscriptionType == input.SmnSubscriptionType ||
-                    (this.SmnSubscriptionType != null &&
-                    this.SmnSubscriptionType.Equals(input.SmnSubscriptionType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SmnNotifiedContent != null)
-                    hashCode = hashCode * 59 + this.SmnNotifiedContent.GetHashCode();
-                if (this.SmnSubscriptionStatus != null)
-                    hashCode = hashCode * 59 + this.SmnSubscriptionStatus.GetHashCode();
-                if (this.SmnSubscriptionType != null)
-                    hashCode = hashCode * 59 + this.SmnSubscriptionType.GetHashCode();
+                var hashCode = 41;
+                if (this.SmnNotifiedContent != null) hashCode = hashCode * 59 + this.SmnNotifiedContent.GetHashCode();
+                if (this.SmnSubscriptionStatus != null) hashCode = hashCode * 59 + this.SmnSubscriptionStatus.GetHashCode();
+                if (this.SmnSubscriptionType != null) hashCode = hashCode * 59 + this.SmnSubscriptionType.GetHashCode();
                 return hashCode;
             }
         }

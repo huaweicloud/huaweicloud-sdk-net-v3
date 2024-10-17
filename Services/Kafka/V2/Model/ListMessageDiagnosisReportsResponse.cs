@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ListMessageDiagnosisReportsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ReportList != input.ReportList || (this.ReportList != null && input.ReportList != null && !this.ReportList.SequenceEqual(input.ReportList))) return false;
+            if (this.TotalNum != input.TotalNum || (this.TotalNum != null && !this.TotalNum.Equals(input.TotalNum))) return false;
 
-            return 
-                (
-                    this.ReportList == input.ReportList ||
-                    this.ReportList != null &&
-                    input.ReportList != null &&
-                    this.ReportList.SequenceEqual(input.ReportList)
-                ) && 
-                (
-                    this.TotalNum == input.TotalNum ||
-                    (this.TotalNum != null &&
-                    this.TotalNum.Equals(input.TotalNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ReportList != null)
-                    hashCode = hashCode * 59 + this.ReportList.GetHashCode();
-                if (this.TotalNum != null)
-                    hashCode = hashCode * 59 + this.TotalNum.GetHashCode();
+                var hashCode = 41;
+                if (this.ReportList != null) hashCode = hashCode * 59 + this.ReportList.GetHashCode();
+                if (this.TotalNum != null) hashCode = hashCode * 59 + this.TotalNum.GetHashCode();
                 return hashCode;
             }
         }

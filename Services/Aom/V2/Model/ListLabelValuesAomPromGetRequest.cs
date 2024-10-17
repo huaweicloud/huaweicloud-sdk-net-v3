@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(ListLabelValuesAomPromGetRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LabelName != input.LabelName || (this.LabelName != null && !this.LabelName.Equals(input.LabelName))) return false;
 
-            return 
-                (
-                    this.LabelName == input.LabelName ||
-                    (this.LabelName != null &&
-                    this.LabelName.Equals(input.LabelName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LabelName != null)
-                    hashCode = hashCode * 59 + this.LabelName.GetHashCode();
+                var hashCode = 41;
+                if (this.LabelName != null) hashCode = hashCode * 59 + this.LabelName.GetHashCode();
                 return hashCode;
             }
         }

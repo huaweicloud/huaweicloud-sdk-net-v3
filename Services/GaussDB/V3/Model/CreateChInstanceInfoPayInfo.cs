@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(CreateChInstanceInfoPayInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PayModel != input.PayModel || (this.PayModel != null && !this.PayModel.Equals(input.PayModel))) return false;
+            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
+            if (this.Period != input.Period || (this.Period != null && !this.Period.Equals(input.Period))) return false;
+            if (this.PeriodType != input.PeriodType || (this.PeriodType != null && !this.PeriodType.Equals(input.PeriodType))) return false;
+            if (this.IsAutoRenew != input.IsAutoRenew || (this.IsAutoRenew != null && !this.IsAutoRenew.Equals(input.IsAutoRenew))) return false;
 
-            return 
-                (
-                    this.PayModel == input.PayModel ||
-                    (this.PayModel != null &&
-                    this.PayModel.Equals(input.PayModel))
-                ) && 
-                (
-                    this.OrderId == input.OrderId ||
-                    (this.OrderId != null &&
-                    this.OrderId.Equals(input.OrderId))
-                ) && 
-                (
-                    this.Period == input.Period ||
-                    (this.Period != null &&
-                    this.Period.Equals(input.Period))
-                ) && 
-                (
-                    this.PeriodType == input.PeriodType ||
-                    (this.PeriodType != null &&
-                    this.PeriodType.Equals(input.PeriodType))
-                ) && 
-                (
-                    this.IsAutoRenew == input.IsAutoRenew ||
-                    (this.IsAutoRenew != null &&
-                    this.IsAutoRenew.Equals(input.IsAutoRenew))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PayModel != null)
-                    hashCode = hashCode * 59 + this.PayModel.GetHashCode();
-                if (this.OrderId != null)
-                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
-                if (this.Period != null)
-                    hashCode = hashCode * 59 + this.Period.GetHashCode();
-                if (this.PeriodType != null)
-                    hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
-                if (this.IsAutoRenew != null)
-                    hashCode = hashCode * 59 + this.IsAutoRenew.GetHashCode();
+                var hashCode = 41;
+                if (this.PayModel != null) hashCode = hashCode * 59 + this.PayModel.GetHashCode();
+                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.Period != null) hashCode = hashCode * 59 + this.Period.GetHashCode();
+                if (this.PeriodType != null) hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
+                if (this.IsAutoRenew != null) hashCode = hashCode * 59 + this.IsAutoRenew.GetHashCode();
                 return hashCode;
             }
         }

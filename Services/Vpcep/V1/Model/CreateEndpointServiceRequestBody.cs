@@ -613,77 +613,22 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         public bool Equals(CreateEndpointServiceRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PortId != input.PortId || (this.PortId != null && !this.PortId.Equals(input.PortId))) return false;
+            if (this.ServiceName != input.ServiceName || (this.ServiceName != null && !this.ServiceName.Equals(input.ServiceName))) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
+            if (this.ApprovalEnabled != input.ApprovalEnabled || (this.ApprovalEnabled != null && !this.ApprovalEnabled.Equals(input.ApprovalEnabled))) return false;
+            if (this.ServiceType != input.ServiceType) return false;
+            if (this.ServerType != input.ServerType) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
+            if (this.Ports != input.Ports || (this.Ports != null && input.Ports != null && !this.Ports.SequenceEqual(input.Ports))) return false;
+            if (this.TcpProxy != input.TcpProxy) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.IpVersion != input.IpVersion) return false;
+            if (this.SnatNetworkId != input.SnatNetworkId || (this.SnatNetworkId != null && !this.SnatNetworkId.Equals(input.SnatNetworkId))) return false;
 
-            return 
-                (
-                    this.PortId == input.PortId ||
-                    (this.PortId != null &&
-                    this.PortId.Equals(input.PortId))
-                ) && 
-                (
-                    this.ServiceName == input.ServiceName ||
-                    (this.ServiceName != null &&
-                    this.ServiceName.Equals(input.ServiceName))
-                ) && 
-                (
-                    this.VpcId == input.VpcId ||
-                    (this.VpcId != null &&
-                    this.VpcId.Equals(input.VpcId))
-                ) && 
-                (
-                    this.ApprovalEnabled == input.ApprovalEnabled ||
-                    (this.ApprovalEnabled != null &&
-                    this.ApprovalEnabled.Equals(input.ApprovalEnabled))
-                ) && 
-                (
-                    this.ServiceType == input.ServiceType ||
-                    (this.ServiceType != null &&
-                    this.ServiceType.Equals(input.ServiceType))
-                ) && 
-                (
-                    this.ServerType == input.ServerType ||
-                    (this.ServerType != null &&
-                    this.ServerType.Equals(input.ServerType))
-                ) && 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                ) && 
-                (
-                    this.Ports == input.Ports ||
-                    this.Ports != null &&
-                    input.Ports != null &&
-                    this.Ports.SequenceEqual(input.Ports)
-                ) && 
-                (
-                    this.TcpProxy == input.TcpProxy ||
-                    (this.TcpProxy != null &&
-                    this.TcpProxy.Equals(input.TcpProxy))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.IpVersion == input.IpVersion ||
-                    (this.IpVersion != null &&
-                    this.IpVersion.Equals(input.IpVersion))
-                ) && 
-                (
-                    this.SnatNetworkId == input.SnatNetworkId ||
-                    (this.SnatNetworkId != null &&
-                    this.SnatNetworkId.Equals(input.SnatNetworkId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -693,33 +638,20 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PortId != null)
-                    hashCode = hashCode * 59 + this.PortId.GetHashCode();
-                if (this.ServiceName != null)
-                    hashCode = hashCode * 59 + this.ServiceName.GetHashCode();
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.ApprovalEnabled != null)
-                    hashCode = hashCode * 59 + this.ApprovalEnabled.GetHashCode();
-                if (this.ServiceType != null)
-                    hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
-                if (this.ServerType != null)
-                    hashCode = hashCode * 59 + this.ServerType.GetHashCode();
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.Ports != null)
-                    hashCode = hashCode * 59 + this.Ports.GetHashCode();
-                if (this.TcpProxy != null)
-                    hashCode = hashCode * 59 + this.TcpProxy.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.IpVersion != null)
-                    hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
-                if (this.SnatNetworkId != null)
-                    hashCode = hashCode * 59 + this.SnatNetworkId.GetHashCode();
+                var hashCode = 41;
+                if (this.PortId != null) hashCode = hashCode * 59 + this.PortId.GetHashCode();
+                if (this.ServiceName != null) hashCode = hashCode * 59 + this.ServiceName.GetHashCode();
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.ApprovalEnabled != null) hashCode = hashCode * 59 + this.ApprovalEnabled.GetHashCode();
+                hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
+                hashCode = hashCode * 59 + this.ServerType.GetHashCode();
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.Ports != null) hashCode = hashCode * 59 + this.Ports.GetHashCode();
+                hashCode = hashCode * 59 + this.TcpProxy.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
+                if (this.SnatNetworkId != null) hashCode = hashCode * 59 + this.SnatNetworkId.GetHashCode();
                 return hashCode;
             }
         }

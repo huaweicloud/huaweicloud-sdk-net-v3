@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(ChileIdCardConfidence input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Surname != input.Surname || (this.Surname != null && !this.Surname.Equals(input.Surname))) return false;
+            if (this.GivenName != input.GivenName || (this.GivenName != null && !this.GivenName.Equals(input.GivenName))) return false;
+            if (this.Nationality != input.Nationality || (this.Nationality != null && !this.Nationality.Equals(input.Nationality))) return false;
+            if (this.Sex != input.Sex || (this.Sex != null && !this.Sex.Equals(input.Sex))) return false;
+            if (this.Birth != input.Birth || (this.Birth != null && !this.Birth.Equals(input.Birth))) return false;
+            if (this.IssueDate != input.IssueDate || (this.IssueDate != null && !this.IssueDate.Equals(input.IssueDate))) return false;
+            if (this.ExpiryDate != input.ExpiryDate || (this.ExpiryDate != null && !this.ExpiryDate.Equals(input.ExpiryDate))) return false;
+            if (this.DocumentNumber != input.DocumentNumber || (this.DocumentNumber != null && !this.DocumentNumber.Equals(input.DocumentNumber))) return false;
+            if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;
 
-            return 
-                (
-                    this.Surname == input.Surname ||
-                    (this.Surname != null &&
-                    this.Surname.Equals(input.Surname))
-                ) && 
-                (
-                    this.GivenName == input.GivenName ||
-                    (this.GivenName != null &&
-                    this.GivenName.Equals(input.GivenName))
-                ) && 
-                (
-                    this.Nationality == input.Nationality ||
-                    (this.Nationality != null &&
-                    this.Nationality.Equals(input.Nationality))
-                ) && 
-                (
-                    this.Sex == input.Sex ||
-                    (this.Sex != null &&
-                    this.Sex.Equals(input.Sex))
-                ) && 
-                (
-                    this.Birth == input.Birth ||
-                    (this.Birth != null &&
-                    this.Birth.Equals(input.Birth))
-                ) && 
-                (
-                    this.IssueDate == input.IssueDate ||
-                    (this.IssueDate != null &&
-                    this.IssueDate.Equals(input.IssueDate))
-                ) && 
-                (
-                    this.ExpiryDate == input.ExpiryDate ||
-                    (this.ExpiryDate != null &&
-                    this.ExpiryDate.Equals(input.ExpiryDate))
-                ) && 
-                (
-                    this.DocumentNumber == input.DocumentNumber ||
-                    (this.DocumentNumber != null &&
-                    this.DocumentNumber.Equals(input.DocumentNumber))
-                ) && 
-                (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Surname != null)
-                    hashCode = hashCode * 59 + this.Surname.GetHashCode();
-                if (this.GivenName != null)
-                    hashCode = hashCode * 59 + this.GivenName.GetHashCode();
-                if (this.Nationality != null)
-                    hashCode = hashCode * 59 + this.Nationality.GetHashCode();
-                if (this.Sex != null)
-                    hashCode = hashCode * 59 + this.Sex.GetHashCode();
-                if (this.Birth != null)
-                    hashCode = hashCode * 59 + this.Birth.GetHashCode();
-                if (this.IssueDate != null)
-                    hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
-                if (this.ExpiryDate != null)
-                    hashCode = hashCode * 59 + this.ExpiryDate.GetHashCode();
-                if (this.DocumentNumber != null)
-                    hashCode = hashCode * 59 + this.DocumentNumber.GetHashCode();
-                if (this.Number != null)
-                    hashCode = hashCode * 59 + this.Number.GetHashCode();
+                var hashCode = 41;
+                if (this.Surname != null) hashCode = hashCode * 59 + this.Surname.GetHashCode();
+                if (this.GivenName != null) hashCode = hashCode * 59 + this.GivenName.GetHashCode();
+                if (this.Nationality != null) hashCode = hashCode * 59 + this.Nationality.GetHashCode();
+                if (this.Sex != null) hashCode = hashCode * 59 + this.Sex.GetHashCode();
+                if (this.Birth != null) hashCode = hashCode * 59 + this.Birth.GetHashCode();
+                if (this.IssueDate != null) hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
+                if (this.ExpiryDate != null) hashCode = hashCode * 59 + this.ExpiryDate.GetHashCode();
+                if (this.DocumentNumber != null) hashCode = hashCode * 59 + this.DocumentNumber.GetHashCode();
+                if (this.Number != null) hashCode = hashCode * 59 + this.Number.GetHashCode();
                 return hashCode;
             }
         }

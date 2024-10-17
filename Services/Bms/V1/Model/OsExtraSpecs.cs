@@ -601,75 +601,22 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(OsExtraSpecs input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResourceType != input.ResourceType) return false;
+            if (this.CapabilitiescpuArch != input.CapabilitiescpuArch) return false;
+            if (this.BaremetaldiskDetail != input.BaremetaldiskDetail || (this.BaremetaldiskDetail != null && !this.BaremetaldiskDetail.Equals(input.BaremetaldiskDetail))) return false;
+            if (this.CapabilitieshypervisorType != input.CapabilitieshypervisorType || (this.CapabilitieshypervisorType != null && !this.CapabilitieshypervisorType.Equals(input.CapabilitieshypervisorType))) return false;
+            if (this.BaremetalSupportEvs != input.BaremetalSupportEvs || (this.BaremetalSupportEvs != null && !this.BaremetalSupportEvs.Equals(input.BaremetalSupportEvs))) return false;
+            if (this.BaremetalextBootType != input.BaremetalextBootType) return false;
+            if (this.CapabilitiesboardType != input.CapabilitiesboardType || (this.CapabilitiesboardType != null && !this.CapabilitiesboardType.Equals(input.CapabilitiesboardType))) return false;
+            if (this.BaremetalnetNum != input.BaremetalnetNum || (this.BaremetalnetNum != null && !this.BaremetalnetNum.Equals(input.BaremetalnetNum))) return false;
+            if (this.BaremetalnetcardDetail != input.BaremetalnetcardDetail || (this.BaremetalnetcardDetail != null && !this.BaremetalnetcardDetail.Equals(input.BaremetalnetcardDetail))) return false;
+            if (this.BaremetalcpuDetail != input.BaremetalcpuDetail || (this.BaremetalcpuDetail != null && !this.BaremetalcpuDetail.Equals(input.BaremetalcpuDetail))) return false;
+            if (this.BaremetalmemoryDetail != input.BaremetalmemoryDetail || (this.BaremetalmemoryDetail != null && !this.BaremetalmemoryDetail.Equals(input.BaremetalmemoryDetail))) return false;
+            if (this.Condoperationstatus != input.Condoperationstatus) return false;
+            if (this.Condoperationaz != input.Condoperationaz || (this.Condoperationaz != null && !this.Condoperationaz.Equals(input.Condoperationaz))) return false;
 
-            return 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.CapabilitiescpuArch == input.CapabilitiescpuArch ||
-                    (this.CapabilitiescpuArch != null &&
-                    this.CapabilitiescpuArch.Equals(input.CapabilitiescpuArch))
-                ) && 
-                (
-                    this.BaremetaldiskDetail == input.BaremetaldiskDetail ||
-                    (this.BaremetaldiskDetail != null &&
-                    this.BaremetaldiskDetail.Equals(input.BaremetaldiskDetail))
-                ) && 
-                (
-                    this.CapabilitieshypervisorType == input.CapabilitieshypervisorType ||
-                    (this.CapabilitieshypervisorType != null &&
-                    this.CapabilitieshypervisorType.Equals(input.CapabilitieshypervisorType))
-                ) && 
-                (
-                    this.BaremetalSupportEvs == input.BaremetalSupportEvs ||
-                    (this.BaremetalSupportEvs != null &&
-                    this.BaremetalSupportEvs.Equals(input.BaremetalSupportEvs))
-                ) && 
-                (
-                    this.BaremetalextBootType == input.BaremetalextBootType ||
-                    (this.BaremetalextBootType != null &&
-                    this.BaremetalextBootType.Equals(input.BaremetalextBootType))
-                ) && 
-                (
-                    this.CapabilitiesboardType == input.CapabilitiesboardType ||
-                    (this.CapabilitiesboardType != null &&
-                    this.CapabilitiesboardType.Equals(input.CapabilitiesboardType))
-                ) && 
-                (
-                    this.BaremetalnetNum == input.BaremetalnetNum ||
-                    (this.BaremetalnetNum != null &&
-                    this.BaremetalnetNum.Equals(input.BaremetalnetNum))
-                ) && 
-                (
-                    this.BaremetalnetcardDetail == input.BaremetalnetcardDetail ||
-                    (this.BaremetalnetcardDetail != null &&
-                    this.BaremetalnetcardDetail.Equals(input.BaremetalnetcardDetail))
-                ) && 
-                (
-                    this.BaremetalcpuDetail == input.BaremetalcpuDetail ||
-                    (this.BaremetalcpuDetail != null &&
-                    this.BaremetalcpuDetail.Equals(input.BaremetalcpuDetail))
-                ) && 
-                (
-                    this.BaremetalmemoryDetail == input.BaremetalmemoryDetail ||
-                    (this.BaremetalmemoryDetail != null &&
-                    this.BaremetalmemoryDetail.Equals(input.BaremetalmemoryDetail))
-                ) && 
-                (
-                    this.Condoperationstatus == input.Condoperationstatus ||
-                    (this.Condoperationstatus != null &&
-                    this.Condoperationstatus.Equals(input.Condoperationstatus))
-                ) && 
-                (
-                    this.Condoperationaz == input.Condoperationaz ||
-                    (this.Condoperationaz != null &&
-                    this.Condoperationaz.Equals(input.Condoperationaz))
-                );
+            return true;
         }
 
         /// <summary>
@@ -679,33 +626,20 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
-                if (this.CapabilitiescpuArch != null)
-                    hashCode = hashCode * 59 + this.CapabilitiescpuArch.GetHashCode();
-                if (this.BaremetaldiskDetail != null)
-                    hashCode = hashCode * 59 + this.BaremetaldiskDetail.GetHashCode();
-                if (this.CapabilitieshypervisorType != null)
-                    hashCode = hashCode * 59 + this.CapabilitieshypervisorType.GetHashCode();
-                if (this.BaremetalSupportEvs != null)
-                    hashCode = hashCode * 59 + this.BaremetalSupportEvs.GetHashCode();
-                if (this.BaremetalextBootType != null)
-                    hashCode = hashCode * 59 + this.BaremetalextBootType.GetHashCode();
-                if (this.CapabilitiesboardType != null)
-                    hashCode = hashCode * 59 + this.CapabilitiesboardType.GetHashCode();
-                if (this.BaremetalnetNum != null)
-                    hashCode = hashCode * 59 + this.BaremetalnetNum.GetHashCode();
-                if (this.BaremetalnetcardDetail != null)
-                    hashCode = hashCode * 59 + this.BaremetalnetcardDetail.GetHashCode();
-                if (this.BaremetalcpuDetail != null)
-                    hashCode = hashCode * 59 + this.BaremetalcpuDetail.GetHashCode();
-                if (this.BaremetalmemoryDetail != null)
-                    hashCode = hashCode * 59 + this.BaremetalmemoryDetail.GetHashCode();
-                if (this.Condoperationstatus != null)
-                    hashCode = hashCode * 59 + this.Condoperationstatus.GetHashCode();
-                if (this.Condoperationaz != null)
-                    hashCode = hashCode * 59 + this.Condoperationaz.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                hashCode = hashCode * 59 + this.CapabilitiescpuArch.GetHashCode();
+                if (this.BaremetaldiskDetail != null) hashCode = hashCode * 59 + this.BaremetaldiskDetail.GetHashCode();
+                if (this.CapabilitieshypervisorType != null) hashCode = hashCode * 59 + this.CapabilitieshypervisorType.GetHashCode();
+                if (this.BaremetalSupportEvs != null) hashCode = hashCode * 59 + this.BaremetalSupportEvs.GetHashCode();
+                hashCode = hashCode * 59 + this.BaremetalextBootType.GetHashCode();
+                if (this.CapabilitiesboardType != null) hashCode = hashCode * 59 + this.CapabilitiesboardType.GetHashCode();
+                if (this.BaremetalnetNum != null) hashCode = hashCode * 59 + this.BaremetalnetNum.GetHashCode();
+                if (this.BaremetalnetcardDetail != null) hashCode = hashCode * 59 + this.BaremetalnetcardDetail.GetHashCode();
+                if (this.BaremetalcpuDetail != null) hashCode = hashCode * 59 + this.BaremetalcpuDetail.GetHashCode();
+                if (this.BaremetalmemoryDetail != null) hashCode = hashCode * 59 + this.BaremetalmemoryDetail.GetHashCode();
+                hashCode = hashCode * 59 + this.Condoperationstatus.GetHashCode();
+                if (this.Condoperationaz != null) hashCode = hashCode * 59 + this.Condoperationaz.GetHashCode();
                 return hashCode;
             }
         }

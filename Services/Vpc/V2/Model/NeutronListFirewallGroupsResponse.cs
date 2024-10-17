@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(NeutronListFirewallGroupsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FirewallGroups != input.FirewallGroups || (this.FirewallGroups != null && input.FirewallGroups != null && !this.FirewallGroups.SequenceEqual(input.FirewallGroups))) return false;
+            if (this.FirewallGroupsLinks != input.FirewallGroupsLinks || (this.FirewallGroupsLinks != null && input.FirewallGroupsLinks != null && !this.FirewallGroupsLinks.SequenceEqual(input.FirewallGroupsLinks))) return false;
 
-            return 
-                (
-                    this.FirewallGroups == input.FirewallGroups ||
-                    this.FirewallGroups != null &&
-                    input.FirewallGroups != null &&
-                    this.FirewallGroups.SequenceEqual(input.FirewallGroups)
-                ) && 
-                (
-                    this.FirewallGroupsLinks == input.FirewallGroupsLinks ||
-                    this.FirewallGroupsLinks != null &&
-                    input.FirewallGroupsLinks != null &&
-                    this.FirewallGroupsLinks.SequenceEqual(input.FirewallGroupsLinks)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FirewallGroups != null)
-                    hashCode = hashCode * 59 + this.FirewallGroups.GetHashCode();
-                if (this.FirewallGroupsLinks != null)
-                    hashCode = hashCode * 59 + this.FirewallGroupsLinks.GetHashCode();
+                var hashCode = 41;
+                if (this.FirewallGroups != null) hashCode = hashCode * 59 + this.FirewallGroups.GetHashCode();
+                if (this.FirewallGroupsLinks != null) hashCode = hashCode * 59 + this.FirewallGroupsLinks.GetHashCode();
                 return hashCode;
             }
         }

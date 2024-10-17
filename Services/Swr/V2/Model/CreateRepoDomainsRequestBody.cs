@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public bool Equals(CreateRepoDomainsRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AccessDomain != input.AccessDomain || (this.AccessDomain != null && !this.AccessDomain.Equals(input.AccessDomain))) return false;
+            if (this.Permit != input.Permit || (this.Permit != null && !this.Permit.Equals(input.Permit))) return false;
+            if (this.Deadline != input.Deadline || (this.Deadline != null && !this.Deadline.Equals(input.Deadline))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
 
-            return 
-                (
-                    this.AccessDomain == input.AccessDomain ||
-                    (this.AccessDomain != null &&
-                    this.AccessDomain.Equals(input.AccessDomain))
-                ) && 
-                (
-                    this.Permit == input.Permit ||
-                    (this.Permit != null &&
-                    this.Permit.Equals(input.Permit))
-                ) && 
-                (
-                    this.Deadline == input.Deadline ||
-                    (this.Deadline != null &&
-                    this.Deadline.Equals(input.Deadline))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AccessDomain != null)
-                    hashCode = hashCode * 59 + this.AccessDomain.GetHashCode();
-                if (this.Permit != null)
-                    hashCode = hashCode * 59 + this.Permit.GetHashCode();
-                if (this.Deadline != null)
-                    hashCode = hashCode * 59 + this.Deadline.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                var hashCode = 41;
+                if (this.AccessDomain != null) hashCode = hashCode * 59 + this.AccessDomain.GetHashCode();
+                if (this.Permit != null) hashCode = hashCode * 59 + this.Permit.GetHashCode();
+                if (this.Deadline != null) hashCode = hashCode * 59 + this.Deadline.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

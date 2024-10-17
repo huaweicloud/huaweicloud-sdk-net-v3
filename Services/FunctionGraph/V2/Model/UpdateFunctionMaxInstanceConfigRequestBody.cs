@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(UpdateFunctionMaxInstanceConfigRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MaxInstanceNum != input.MaxInstanceNum || (this.MaxInstanceNum != null && !this.MaxInstanceNum.Equals(input.MaxInstanceNum))) return false;
 
-            return 
-                (
-                    this.MaxInstanceNum == input.MaxInstanceNum ||
-                    (this.MaxInstanceNum != null &&
-                    this.MaxInstanceNum.Equals(input.MaxInstanceNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MaxInstanceNum != null)
-                    hashCode = hashCode * 59 + this.MaxInstanceNum.GetHashCode();
+                var hashCode = 41;
+                if (this.MaxInstanceNum != null) hashCode = hashCode * 59 + this.MaxInstanceNum.GetHashCode();
                 return hashCode;
             }
         }

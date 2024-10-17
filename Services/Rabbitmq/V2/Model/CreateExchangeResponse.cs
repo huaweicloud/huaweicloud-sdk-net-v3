@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public bool Equals(CreateExchangeResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Durable != input.Durable || (this.Durable != null && !this.Durable.Equals(input.Durable))) return false;
+            if (this.Default != input.Default || (this.Default != null && !this.Default.Equals(input.Default))) return false;
+            if (this.Internal != input.Internal || (this.Internal != null && !this.Internal.Equals(input.Internal))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.AutoDelete != input.AutoDelete || (this.AutoDelete != null && !this.AutoDelete.Equals(input.AutoDelete))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Vhost != input.Vhost || (this.Vhost != null && !this.Vhost.Equals(input.Vhost))) return false;
 
-            return 
-                (
-                    this.Durable == input.Durable ||
-                    (this.Durable != null &&
-                    this.Durable.Equals(input.Durable))
-                ) && 
-                (
-                    this.Default == input.Default ||
-                    (this.Default != null &&
-                    this.Default.Equals(input.Default))
-                ) && 
-                (
-                    this.Internal == input.Internal ||
-                    (this.Internal != null &&
-                    this.Internal.Equals(input.Internal))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.AutoDelete == input.AutoDelete ||
-                    (this.AutoDelete != null &&
-                    this.AutoDelete.Equals(input.AutoDelete))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Vhost == input.Vhost ||
-                    (this.Vhost != null &&
-                    this.Vhost.Equals(input.Vhost))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Durable != null)
-                    hashCode = hashCode * 59 + this.Durable.GetHashCode();
-                if (this.Default != null)
-                    hashCode = hashCode * 59 + this.Default.GetHashCode();
-                if (this.Internal != null)
-                    hashCode = hashCode * 59 + this.Internal.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.AutoDelete != null)
-                    hashCode = hashCode * 59 + this.AutoDelete.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Vhost != null)
-                    hashCode = hashCode * 59 + this.Vhost.GetHashCode();
+                var hashCode = 41;
+                if (this.Durable != null) hashCode = hashCode * 59 + this.Durable.GetHashCode();
+                if (this.Default != null) hashCode = hashCode * 59 + this.Default.GetHashCode();
+                if (this.Internal != null) hashCode = hashCode * 59 + this.Internal.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.AutoDelete != null) hashCode = hashCode * 59 + this.AutoDelete.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Vhost != null) hashCode = hashCode * 59 + this.Vhost.GetHashCode();
                 return hashCode;
             }
         }

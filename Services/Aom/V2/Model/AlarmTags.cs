@@ -63,28 +63,12 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(AlarmTags input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AutoTags != input.AutoTags || (this.AutoTags != null && input.AutoTags != null && !this.AutoTags.SequenceEqual(input.AutoTags))) return false;
+            if (this.CustomTags != input.CustomTags || (this.CustomTags != null && input.CustomTags != null && !this.CustomTags.SequenceEqual(input.CustomTags))) return false;
+            if (this.CustomAnnotations != input.CustomAnnotations || (this.CustomAnnotations != null && input.CustomAnnotations != null && !this.CustomAnnotations.SequenceEqual(input.CustomAnnotations))) return false;
 
-            return 
-                (
-                    this.AutoTags == input.AutoTags ||
-                    this.AutoTags != null &&
-                    input.AutoTags != null &&
-                    this.AutoTags.SequenceEqual(input.AutoTags)
-                ) && 
-                (
-                    this.CustomTags == input.CustomTags ||
-                    this.CustomTags != null &&
-                    input.CustomTags != null &&
-                    this.CustomTags.SequenceEqual(input.CustomTags)
-                ) && 
-                (
-                    this.CustomAnnotations == input.CustomAnnotations ||
-                    this.CustomAnnotations != null &&
-                    input.CustomAnnotations != null &&
-                    this.CustomAnnotations.SequenceEqual(input.CustomAnnotations)
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +78,10 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AutoTags != null)
-                    hashCode = hashCode * 59 + this.AutoTags.GetHashCode();
-                if (this.CustomTags != null)
-                    hashCode = hashCode * 59 + this.CustomTags.GetHashCode();
-                if (this.CustomAnnotations != null)
-                    hashCode = hashCode * 59 + this.CustomAnnotations.GetHashCode();
+                var hashCode = 41;
+                if (this.AutoTags != null) hashCode = hashCode * 59 + this.AutoTags.GetHashCode();
+                if (this.CustomTags != null) hashCode = hashCode * 59 + this.CustomTags.GetHashCode();
+                if (this.CustomAnnotations != null) hashCode = hashCode * 59 + this.CustomAnnotations.GetHashCode();
                 return hashCode;
             }
         }

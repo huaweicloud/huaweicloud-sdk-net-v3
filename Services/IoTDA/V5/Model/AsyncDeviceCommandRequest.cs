@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(AsyncDeviceCommandRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ServiceId != input.ServiceId || (this.ServiceId != null && !this.ServiceId.Equals(input.ServiceId))) return false;
+            if (this.CommandName != input.CommandName || (this.CommandName != null && !this.CommandName.Equals(input.CommandName))) return false;
+            if (this.Paras != input.Paras || (this.Paras != null && !this.Paras.Equals(input.Paras))) return false;
+            if (this.ExpireTime != input.ExpireTime || (this.ExpireTime != null && !this.ExpireTime.Equals(input.ExpireTime))) return false;
+            if (this.SendStrategy != input.SendStrategy || (this.SendStrategy != null && !this.SendStrategy.Equals(input.SendStrategy))) return false;
 
-            return 
-                (
-                    this.ServiceId == input.ServiceId ||
-                    (this.ServiceId != null &&
-                    this.ServiceId.Equals(input.ServiceId))
-                ) && 
-                (
-                    this.CommandName == input.CommandName ||
-                    (this.CommandName != null &&
-                    this.CommandName.Equals(input.CommandName))
-                ) && 
-                (
-                    this.Paras == input.Paras ||
-                    (this.Paras != null &&
-                    this.Paras.Equals(input.Paras))
-                ) && 
-                (
-                    this.ExpireTime == input.ExpireTime ||
-                    (this.ExpireTime != null &&
-                    this.ExpireTime.Equals(input.ExpireTime))
-                ) && 
-                (
-                    this.SendStrategy == input.SendStrategy ||
-                    (this.SendStrategy != null &&
-                    this.SendStrategy.Equals(input.SendStrategy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ServiceId != null)
-                    hashCode = hashCode * 59 + this.ServiceId.GetHashCode();
-                if (this.CommandName != null)
-                    hashCode = hashCode * 59 + this.CommandName.GetHashCode();
-                if (this.Paras != null)
-                    hashCode = hashCode * 59 + this.Paras.GetHashCode();
-                if (this.ExpireTime != null)
-                    hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
-                if (this.SendStrategy != null)
-                    hashCode = hashCode * 59 + this.SendStrategy.GetHashCode();
+                var hashCode = 41;
+                if (this.ServiceId != null) hashCode = hashCode * 59 + this.ServiceId.GetHashCode();
+                if (this.CommandName != null) hashCode = hashCode * 59 + this.CommandName.GetHashCode();
+                if (this.Paras != null) hashCode = hashCode * 59 + this.Paras.GetHashCode();
+                if (this.ExpireTime != null) hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
+                if (this.SendStrategy != null) hashCode = hashCode * 59 + this.SendStrategy.GetHashCode();
                 return hashCode;
             }
         }

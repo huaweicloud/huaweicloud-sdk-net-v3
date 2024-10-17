@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(BlockDeviceAttachableQuantity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FreeScsi != input.FreeScsi || (this.FreeScsi != null && !this.FreeScsi.Equals(input.FreeScsi))) return false;
+            if (this.FreeBlk != input.FreeBlk || (this.FreeBlk != null && !this.FreeBlk.Equals(input.FreeBlk))) return false;
+            if (this.FreeDisk != input.FreeDisk || (this.FreeDisk != null && !this.FreeDisk.Equals(input.FreeDisk))) return false;
 
-            return 
-                (
-                    this.FreeScsi == input.FreeScsi ||
-                    (this.FreeScsi != null &&
-                    this.FreeScsi.Equals(input.FreeScsi))
-                ) && 
-                (
-                    this.FreeBlk == input.FreeBlk ||
-                    (this.FreeBlk != null &&
-                    this.FreeBlk.Equals(input.FreeBlk))
-                ) && 
-                (
-                    this.FreeDisk == input.FreeDisk ||
-                    (this.FreeDisk != null &&
-                    this.FreeDisk.Equals(input.FreeDisk))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FreeScsi != null)
-                    hashCode = hashCode * 59 + this.FreeScsi.GetHashCode();
-                if (this.FreeBlk != null)
-                    hashCode = hashCode * 59 + this.FreeBlk.GetHashCode();
-                if (this.FreeDisk != null)
-                    hashCode = hashCode * 59 + this.FreeDisk.GetHashCode();
+                var hashCode = 41;
+                if (this.FreeScsi != null) hashCode = hashCode * 59 + this.FreeScsi.GetHashCode();
+                if (this.FreeBlk != null) hashCode = hashCode * 59 + this.FreeBlk.GetHashCode();
+                if (this.FreeDisk != null) hashCode = hashCode * 59 + this.FreeDisk.GetHashCode();
                 return hashCode;
             }
         }

@@ -221,35 +221,14 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(PromInstanceRequestModel input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PromName != input.PromName || (this.PromName != null && !this.PromName.Equals(input.PromName))) return false;
+            if (this.PromType != input.PromType) return false;
+            if (this.PromVersion != input.PromVersion || (this.PromVersion != null && !this.PromVersion.Equals(input.PromVersion))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
 
-            return 
-                (
-                    this.PromName == input.PromName ||
-                    (this.PromName != null &&
-                    this.PromName.Equals(input.PromName))
-                ) && 
-                (
-                    this.PromType == input.PromType ||
-                    (this.PromType != null &&
-                    this.PromType.Equals(input.PromType))
-                ) && 
-                (
-                    this.PromVersion == input.PromVersion ||
-                    (this.PromVersion != null &&
-                    this.PromVersion.Equals(input.PromVersion))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -259,17 +238,12 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PromName != null)
-                    hashCode = hashCode * 59 + this.PromName.GetHashCode();
-                if (this.PromType != null)
-                    hashCode = hashCode * 59 + this.PromType.GetHashCode();
-                if (this.PromVersion != null)
-                    hashCode = hashCode * 59 + this.PromVersion.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                var hashCode = 41;
+                if (this.PromName != null) hashCode = hashCode * 59 + this.PromName.GetHashCode();
+                hashCode = hashCode * 59 + this.PromType.GetHashCode();
+                if (this.PromVersion != null) hashCode = hashCode * 59 + this.PromVersion.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 return hashCode;
             }
         }

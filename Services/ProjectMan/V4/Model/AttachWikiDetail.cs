@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(AttachWikiDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IssueId != input.IssueId || (this.IssueId != null && !this.IssueId.Equals(input.IssueId))) return false;
+            if (this.WikiTitle != input.WikiTitle || (this.WikiTitle != null && !this.WikiTitle.Equals(input.WikiTitle))) return false;
+            if (this.WikiAuthor != input.WikiAuthor || (this.WikiAuthor != null && !this.WikiAuthor.Equals(input.WikiAuthor))) return false;
+            if (this.Project != input.Project || (this.Project != null && !this.Project.Equals(input.Project))) return false;
+            if (this.CreatedDate != input.CreatedDate || (this.CreatedDate != null && !this.CreatedDate.Equals(input.CreatedDate))) return false;
+            if (this.WikiId != input.WikiId || (this.WikiId != null && !this.WikiId.Equals(input.WikiId))) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
 
-            return 
-                (
-                    this.IssueId == input.IssueId ||
-                    (this.IssueId != null &&
-                    this.IssueId.Equals(input.IssueId))
-                ) && 
-                (
-                    this.WikiTitle == input.WikiTitle ||
-                    (this.WikiTitle != null &&
-                    this.WikiTitle.Equals(input.WikiTitle))
-                ) && 
-                (
-                    this.WikiAuthor == input.WikiAuthor ||
-                    (this.WikiAuthor != null &&
-                    this.WikiAuthor.Equals(input.WikiAuthor))
-                ) && 
-                (
-                    this.Project == input.Project ||
-                    (this.Project != null &&
-                    this.Project.Equals(input.Project))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.WikiId == input.WikiId ||
-                    (this.WikiId != null &&
-                    this.WikiId.Equals(input.WikiId))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IssueId != null)
-                    hashCode = hashCode * 59 + this.IssueId.GetHashCode();
-                if (this.WikiTitle != null)
-                    hashCode = hashCode * 59 + this.WikiTitle.GetHashCode();
-                if (this.WikiAuthor != null)
-                    hashCode = hashCode * 59 + this.WikiAuthor.GetHashCode();
-                if (this.Project != null)
-                    hashCode = hashCode * 59 + this.Project.GetHashCode();
-                if (this.CreatedDate != null)
-                    hashCode = hashCode * 59 + this.CreatedDate.GetHashCode();
-                if (this.WikiId != null)
-                    hashCode = hashCode * 59 + this.WikiId.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
+                var hashCode = 41;
+                if (this.IssueId != null) hashCode = hashCode * 59 + this.IssueId.GetHashCode();
+                if (this.WikiTitle != null) hashCode = hashCode * 59 + this.WikiTitle.GetHashCode();
+                if (this.WikiAuthor != null) hashCode = hashCode * 59 + this.WikiAuthor.GetHashCode();
+                if (this.Project != null) hashCode = hashCode * 59 + this.Project.GetHashCode();
+                if (this.CreatedDate != null) hashCode = hashCode * 59 + this.CreatedDate.GetHashCode();
+                if (this.WikiId != null) hashCode = hashCode * 59 + this.WikiId.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
                 return hashCode;
             }
         }

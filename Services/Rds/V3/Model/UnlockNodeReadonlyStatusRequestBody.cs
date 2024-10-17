@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(UnlockNodeReadonlyStatusRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StatusPreservationTime != input.StatusPreservationTime || (this.StatusPreservationTime != null && !this.StatusPreservationTime.Equals(input.StatusPreservationTime))) return false;
 
-            return 
-                (
-                    this.StatusPreservationTime == input.StatusPreservationTime ||
-                    (this.StatusPreservationTime != null &&
-                    this.StatusPreservationTime.Equals(input.StatusPreservationTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StatusPreservationTime != null)
-                    hashCode = hashCode * 59 + this.StatusPreservationTime.GetHashCode();
+                var hashCode = 41;
+                if (this.StatusPreservationTime != null) hashCode = hashCode * 59 + this.StatusPreservationTime.GetHashCode();
                 return hashCode;
             }
         }

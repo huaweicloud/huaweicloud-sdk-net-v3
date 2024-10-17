@@ -513,85 +513,24 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(BackupRecordResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BackupId != input.BackupId || (this.BackupId != null && !this.BackupId.Equals(input.BackupId))) return false;
+            if (this.Period != input.Period || (this.Period != null && !this.Period.Equals(input.Period))) return false;
+            if (this.BackupName != input.BackupName || (this.BackupName != null && !this.BackupName.Equals(input.BackupName))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.BackupType != input.BackupType) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.Progress != input.Progress || (this.Progress != null && !this.Progress.Equals(input.Progress))) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
+            if (this.Remark != input.Remark || (this.Remark != null && !this.Remark.Equals(input.Remark))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.IsSupportRestore != input.IsSupportRestore || (this.IsSupportRestore != null && !this.IsSupportRestore.Equals(input.IsSupportRestore))) return false;
+            if (this.BackupFormat != input.BackupFormat) return false;
+            if (this.ExecutionAt != input.ExecutionAt || (this.ExecutionAt != null && !this.ExecutionAt.Equals(input.ExecutionAt))) return false;
 
-            return 
-                (
-                    this.BackupId == input.BackupId ||
-                    (this.BackupId != null &&
-                    this.BackupId.Equals(input.BackupId))
-                ) && 
-                (
-                    this.Period == input.Period ||
-                    (this.Period != null &&
-                    this.Period.Equals(input.Period))
-                ) && 
-                (
-                    this.BackupName == input.BackupName ||
-                    (this.BackupName != null &&
-                    this.BackupName.Equals(input.BackupName))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.BackupType == input.BackupType ||
-                    (this.BackupType != null &&
-                    this.BackupType.Equals(input.BackupType))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.Progress == input.Progress ||
-                    (this.Progress != null &&
-                    this.Progress.Equals(input.Progress))
-                ) && 
-                (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
-                ) && 
-                (
-                    this.Remark == input.Remark ||
-                    (this.Remark != null &&
-                    this.Remark.Equals(input.Remark))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.IsSupportRestore == input.IsSupportRestore ||
-                    (this.IsSupportRestore != null &&
-                    this.IsSupportRestore.Equals(input.IsSupportRestore))
-                ) && 
-                (
-                    this.BackupFormat == input.BackupFormat ||
-                    (this.BackupFormat != null &&
-                    this.BackupFormat.Equals(input.BackupFormat))
-                ) && 
-                (
-                    this.ExecutionAt == input.ExecutionAt ||
-                    (this.ExecutionAt != null &&
-                    this.ExecutionAt.Equals(input.ExecutionAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -601,37 +540,22 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BackupId != null)
-                    hashCode = hashCode * 59 + this.BackupId.GetHashCode();
-                if (this.Period != null)
-                    hashCode = hashCode * 59 + this.Period.GetHashCode();
-                if (this.BackupName != null)
-                    hashCode = hashCode * 59 + this.BackupName.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.BackupType != null)
-                    hashCode = hashCode * 59 + this.BackupType.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.Progress != null)
-                    hashCode = hashCode * 59 + this.Progress.GetHashCode();
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.Remark != null)
-                    hashCode = hashCode * 59 + this.Remark.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.IsSupportRestore != null)
-                    hashCode = hashCode * 59 + this.IsSupportRestore.GetHashCode();
-                if (this.BackupFormat != null)
-                    hashCode = hashCode * 59 + this.BackupFormat.GetHashCode();
-                if (this.ExecutionAt != null)
-                    hashCode = hashCode * 59 + this.ExecutionAt.GetHashCode();
+                var hashCode = 41;
+                if (this.BackupId != null) hashCode = hashCode * 59 + this.BackupId.GetHashCode();
+                if (this.Period != null) hashCode = hashCode * 59 + this.Period.GetHashCode();
+                if (this.BackupName != null) hashCode = hashCode * 59 + this.BackupName.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                hashCode = hashCode * 59 + this.BackupType.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.Progress != null) hashCode = hashCode * 59 + this.Progress.GetHashCode();
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.Remark != null) hashCode = hashCode * 59 + this.Remark.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.IsSupportRestore != null) hashCode = hashCode * 59 + this.IsSupportRestore.GetHashCode();
+                hashCode = hashCode * 59 + this.BackupFormat.GetHashCode();
+                if (this.ExecutionAt != null) hashCode = hashCode * 59 + this.ExecutionAt.GetHashCode();
                 return hashCode;
             }
         }

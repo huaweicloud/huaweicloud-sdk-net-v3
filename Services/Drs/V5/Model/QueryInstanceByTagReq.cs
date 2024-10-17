@@ -63,27 +63,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(QueryInstanceByTagReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.WithoutAnyTag != input.WithoutAnyTag || (this.WithoutAnyTag != null && !this.WithoutAnyTag.Equals(input.WithoutAnyTag))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.Matches != input.Matches || (this.Matches != null && input.Matches != null && !this.Matches.SequenceEqual(input.Matches))) return false;
 
-            return 
-                (
-                    this.WithoutAnyTag == input.WithoutAnyTag ||
-                    (this.WithoutAnyTag != null &&
-                    this.WithoutAnyTag.Equals(input.WithoutAnyTag))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.Matches == input.Matches ||
-                    this.Matches != null &&
-                    input.Matches != null &&
-                    this.Matches.SequenceEqual(input.Matches)
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +78,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.WithoutAnyTag != null)
-                    hashCode = hashCode * 59 + this.WithoutAnyTag.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.Matches != null)
-                    hashCode = hashCode * 59 + this.Matches.GetHashCode();
+                var hashCode = 41;
+                if (this.WithoutAnyTag != null) hashCode = hashCode * 59 + this.WithoutAnyTag.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.Matches != null) hashCode = hashCode * 59 + this.Matches.GetHashCode();
                 return hashCode;
             }
         }

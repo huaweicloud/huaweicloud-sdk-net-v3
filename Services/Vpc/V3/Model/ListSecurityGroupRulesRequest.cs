@@ -122,65 +122,19 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(ListSecurityGroupRulesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.Id != input.Id || (this.Id != null && input.Id != null && !this.Id.SequenceEqual(input.Id))) return false;
+            if (this.SecurityGroupId != input.SecurityGroupId || (this.SecurityGroupId != null && input.SecurityGroupId != null && !this.SecurityGroupId.SequenceEqual(input.SecurityGroupId))) return false;
+            if (this.Protocol != input.Protocol || (this.Protocol != null && input.Protocol != null && !this.Protocol.SequenceEqual(input.Protocol))) return false;
+            if (this.Description != input.Description || (this.Description != null && input.Description != null && !this.Description.SequenceEqual(input.Description))) return false;
+            if (this.RemoteGroupId != input.RemoteGroupId || (this.RemoteGroupId != null && input.RemoteGroupId != null && !this.RemoteGroupId.SequenceEqual(input.RemoteGroupId))) return false;
+            if (this.Direction != input.Direction || (this.Direction != null && !this.Direction.Equals(input.Direction))) return false;
+            if (this.Action != input.Action || (this.Action != null && !this.Action.Equals(input.Action))) return false;
+            if (this.RemoteIpPrefix != input.RemoteIpPrefix || (this.RemoteIpPrefix != null && !this.RemoteIpPrefix.Equals(input.RemoteIpPrefix))) return false;
 
-            return 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    this.Id != null &&
-                    input.Id != null &&
-                    this.Id.SequenceEqual(input.Id)
-                ) && 
-                (
-                    this.SecurityGroupId == input.SecurityGroupId ||
-                    this.SecurityGroupId != null &&
-                    input.SecurityGroupId != null &&
-                    this.SecurityGroupId.SequenceEqual(input.SecurityGroupId)
-                ) && 
-                (
-                    this.Protocol == input.Protocol ||
-                    this.Protocol != null &&
-                    input.Protocol != null &&
-                    this.Protocol.SequenceEqual(input.Protocol)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    this.Description != null &&
-                    input.Description != null &&
-                    this.Description.SequenceEqual(input.Description)
-                ) && 
-                (
-                    this.RemoteGroupId == input.RemoteGroupId ||
-                    this.RemoteGroupId != null &&
-                    input.RemoteGroupId != null &&
-                    this.RemoteGroupId.SequenceEqual(input.RemoteGroupId)
-                ) && 
-                (
-                    this.Direction == input.Direction ||
-                    (this.Direction != null &&
-                    this.Direction.Equals(input.Direction))
-                ) && 
-                (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                ) && 
-                (
-                    this.RemoteIpPrefix == input.RemoteIpPrefix ||
-                    (this.RemoteIpPrefix != null &&
-                    this.RemoteIpPrefix.Equals(input.RemoteIpPrefix))
-                );
+            return true;
         }
 
         /// <summary>
@@ -190,27 +144,17 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.SecurityGroupId != null)
-                    hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.RemoteGroupId != null)
-                    hashCode = hashCode * 59 + this.RemoteGroupId.GetHashCode();
-                if (this.Direction != null)
-                    hashCode = hashCode * 59 + this.Direction.GetHashCode();
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
-                if (this.RemoteIpPrefix != null)
-                    hashCode = hashCode * 59 + this.RemoteIpPrefix.GetHashCode();
+                var hashCode = 41;
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.SecurityGroupId != null) hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
+                if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.RemoteGroupId != null) hashCode = hashCode * 59 + this.RemoteGroupId.GetHashCode();
+                if (this.Direction != null) hashCode = hashCode * 59 + this.Direction.GetHashCode();
+                if (this.Action != null) hashCode = hashCode * 59 + this.Action.GetHashCode();
+                if (this.RemoteIpPrefix != null) hashCode = hashCode * 59 + this.RemoteIpPrefix.GetHashCode();
                 return hashCode;
             }
         }

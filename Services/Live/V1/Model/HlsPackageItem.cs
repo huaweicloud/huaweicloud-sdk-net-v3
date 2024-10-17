@@ -105,56 +105,18 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(HlsPackageItem input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.StreamSelection != input.StreamSelection || (this.StreamSelection != null && input.StreamSelection != null && !this.StreamSelection.SequenceEqual(input.StreamSelection))) return false;
+            if (this.HlsVersion != input.HlsVersion || (this.HlsVersion != null && !this.HlsVersion.Equals(input.HlsVersion))) return false;
+            if (this.SegmentDurationSeconds != input.SegmentDurationSeconds || (this.SegmentDurationSeconds != null && !this.SegmentDurationSeconds.Equals(input.SegmentDurationSeconds))) return false;
+            if (this.PlaylistWindowSeconds != input.PlaylistWindowSeconds || (this.PlaylistWindowSeconds != null && !this.PlaylistWindowSeconds.Equals(input.PlaylistWindowSeconds))) return false;
+            if (this.Encryption != input.Encryption || (this.Encryption != null && !this.Encryption.Equals(input.Encryption))) return false;
+            if (this.Ads != input.Ads || (this.Ads != null && !this.Ads.Equals(input.Ads))) return false;
+            if (this.ExtArgs != input.ExtArgs || (this.ExtArgs != null && !this.ExtArgs.Equals(input.ExtArgs))) return false;
+            if (this.RequestArgs != input.RequestArgs || (this.RequestArgs != null && !this.RequestArgs.Equals(input.RequestArgs))) return false;
 
-            return 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.StreamSelection == input.StreamSelection ||
-                    this.StreamSelection != null &&
-                    input.StreamSelection != null &&
-                    this.StreamSelection.SequenceEqual(input.StreamSelection)
-                ) && 
-                (
-                    this.HlsVersion == input.HlsVersion ||
-                    (this.HlsVersion != null &&
-                    this.HlsVersion.Equals(input.HlsVersion))
-                ) && 
-                (
-                    this.SegmentDurationSeconds == input.SegmentDurationSeconds ||
-                    (this.SegmentDurationSeconds != null &&
-                    this.SegmentDurationSeconds.Equals(input.SegmentDurationSeconds))
-                ) && 
-                (
-                    this.PlaylistWindowSeconds == input.PlaylistWindowSeconds ||
-                    (this.PlaylistWindowSeconds != null &&
-                    this.PlaylistWindowSeconds.Equals(input.PlaylistWindowSeconds))
-                ) && 
-                (
-                    this.Encryption == input.Encryption ||
-                    (this.Encryption != null &&
-                    this.Encryption.Equals(input.Encryption))
-                ) && 
-                (
-                    this.Ads == input.Ads ||
-                    (this.Ads != null &&
-                    this.Ads.Equals(input.Ads))
-                ) && 
-                (
-                    this.ExtArgs == input.ExtArgs ||
-                    (this.ExtArgs != null &&
-                    this.ExtArgs.Equals(input.ExtArgs))
-                ) && 
-                (
-                    this.RequestArgs == input.RequestArgs ||
-                    (this.RequestArgs != null &&
-                    this.RequestArgs.Equals(input.RequestArgs))
-                );
+            return true;
         }
 
         /// <summary>
@@ -164,25 +126,16 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.StreamSelection != null)
-                    hashCode = hashCode * 59 + this.StreamSelection.GetHashCode();
-                if (this.HlsVersion != null)
-                    hashCode = hashCode * 59 + this.HlsVersion.GetHashCode();
-                if (this.SegmentDurationSeconds != null)
-                    hashCode = hashCode * 59 + this.SegmentDurationSeconds.GetHashCode();
-                if (this.PlaylistWindowSeconds != null)
-                    hashCode = hashCode * 59 + this.PlaylistWindowSeconds.GetHashCode();
-                if (this.Encryption != null)
-                    hashCode = hashCode * 59 + this.Encryption.GetHashCode();
-                if (this.Ads != null)
-                    hashCode = hashCode * 59 + this.Ads.GetHashCode();
-                if (this.ExtArgs != null)
-                    hashCode = hashCode * 59 + this.ExtArgs.GetHashCode();
-                if (this.RequestArgs != null)
-                    hashCode = hashCode * 59 + this.RequestArgs.GetHashCode();
+                var hashCode = 41;
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.StreamSelection != null) hashCode = hashCode * 59 + this.StreamSelection.GetHashCode();
+                if (this.HlsVersion != null) hashCode = hashCode * 59 + this.HlsVersion.GetHashCode();
+                if (this.SegmentDurationSeconds != null) hashCode = hashCode * 59 + this.SegmentDurationSeconds.GetHashCode();
+                if (this.PlaylistWindowSeconds != null) hashCode = hashCode * 59 + this.PlaylistWindowSeconds.GetHashCode();
+                if (this.Encryption != null) hashCode = hashCode * 59 + this.Encryption.GetHashCode();
+                if (this.Ads != null) hashCode = hashCode * 59 + this.Ads.GetHashCode();
+                if (this.ExtArgs != null) hashCode = hashCode * 59 + this.ExtArgs.GetHashCode();
+                if (this.RequestArgs != null) hashCode = hashCode * 59 + this.RequestArgs.GetHashCode();
                 return hashCode;
             }
         }

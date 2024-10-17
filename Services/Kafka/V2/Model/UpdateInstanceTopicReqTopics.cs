@@ -98,52 +98,17 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(UpdateInstanceTopicReqTopics input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.RetentionTime != input.RetentionTime || (this.RetentionTime != null && !this.RetentionTime.Equals(input.RetentionTime))) return false;
+            if (this.SyncReplication != input.SyncReplication || (this.SyncReplication != null && !this.SyncReplication.Equals(input.SyncReplication))) return false;
+            if (this.SyncMessageFlush != input.SyncMessageFlush || (this.SyncMessageFlush != null && !this.SyncMessageFlush.Equals(input.SyncMessageFlush))) return false;
+            if (this.NewPartitionNumbers != input.NewPartitionNumbers || (this.NewPartitionNumbers != null && !this.NewPartitionNumbers.Equals(input.NewPartitionNumbers))) return false;
+            if (this.NewPartitionBrokers != input.NewPartitionBrokers || (this.NewPartitionBrokers != null && input.NewPartitionBrokers != null && !this.NewPartitionBrokers.SequenceEqual(input.NewPartitionBrokers))) return false;
+            if (this.TopicOtherConfigs != input.TopicOtherConfigs || (this.TopicOtherConfigs != null && input.TopicOtherConfigs != null && !this.TopicOtherConfigs.SequenceEqual(input.TopicOtherConfigs))) return false;
+            if (this.TopicDesc != input.TopicDesc || (this.TopicDesc != null && !this.TopicDesc.Equals(input.TopicDesc))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.RetentionTime == input.RetentionTime ||
-                    (this.RetentionTime != null &&
-                    this.RetentionTime.Equals(input.RetentionTime))
-                ) && 
-                (
-                    this.SyncReplication == input.SyncReplication ||
-                    (this.SyncReplication != null &&
-                    this.SyncReplication.Equals(input.SyncReplication))
-                ) && 
-                (
-                    this.SyncMessageFlush == input.SyncMessageFlush ||
-                    (this.SyncMessageFlush != null &&
-                    this.SyncMessageFlush.Equals(input.SyncMessageFlush))
-                ) && 
-                (
-                    this.NewPartitionNumbers == input.NewPartitionNumbers ||
-                    (this.NewPartitionNumbers != null &&
-                    this.NewPartitionNumbers.Equals(input.NewPartitionNumbers))
-                ) && 
-                (
-                    this.NewPartitionBrokers == input.NewPartitionBrokers ||
-                    this.NewPartitionBrokers != null &&
-                    input.NewPartitionBrokers != null &&
-                    this.NewPartitionBrokers.SequenceEqual(input.NewPartitionBrokers)
-                ) && 
-                (
-                    this.TopicOtherConfigs == input.TopicOtherConfigs ||
-                    this.TopicOtherConfigs != null &&
-                    input.TopicOtherConfigs != null &&
-                    this.TopicOtherConfigs.SequenceEqual(input.TopicOtherConfigs)
-                ) && 
-                (
-                    this.TopicDesc == input.TopicDesc ||
-                    (this.TopicDesc != null &&
-                    this.TopicDesc.Equals(input.TopicDesc))
-                );
+            return true;
         }
 
         /// <summary>
@@ -153,23 +118,15 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.RetentionTime != null)
-                    hashCode = hashCode * 59 + this.RetentionTime.GetHashCode();
-                if (this.SyncReplication != null)
-                    hashCode = hashCode * 59 + this.SyncReplication.GetHashCode();
-                if (this.SyncMessageFlush != null)
-                    hashCode = hashCode * 59 + this.SyncMessageFlush.GetHashCode();
-                if (this.NewPartitionNumbers != null)
-                    hashCode = hashCode * 59 + this.NewPartitionNumbers.GetHashCode();
-                if (this.NewPartitionBrokers != null)
-                    hashCode = hashCode * 59 + this.NewPartitionBrokers.GetHashCode();
-                if (this.TopicOtherConfigs != null)
-                    hashCode = hashCode * 59 + this.TopicOtherConfigs.GetHashCode();
-                if (this.TopicDesc != null)
-                    hashCode = hashCode * 59 + this.TopicDesc.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.RetentionTime != null) hashCode = hashCode * 59 + this.RetentionTime.GetHashCode();
+                if (this.SyncReplication != null) hashCode = hashCode * 59 + this.SyncReplication.GetHashCode();
+                if (this.SyncMessageFlush != null) hashCode = hashCode * 59 + this.SyncMessageFlush.GetHashCode();
+                if (this.NewPartitionNumbers != null) hashCode = hashCode * 59 + this.NewPartitionNumbers.GetHashCode();
+                if (this.NewPartitionBrokers != null) hashCode = hashCode * 59 + this.NewPartitionBrokers.GetHashCode();
+                if (this.TopicOtherConfigs != null) hashCode = hashCode * 59 + this.TopicOtherConfigs.GetHashCode();
+                if (this.TopicDesc != null) hashCode = hashCode * 59 + this.TopicDesc.GetHashCode();
                 return hashCode;
             }
         }

@@ -182,20 +182,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(UpgradeActionInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UpgradeAction != input.UpgradeAction) return false;
+            if (this.Enable != input.Enable || (this.Enable != null && !this.Enable.Equals(input.Enable))) return false;
 
-            return 
-                (
-                    this.UpgradeAction == input.UpgradeAction ||
-                    (this.UpgradeAction != null &&
-                    this.UpgradeAction.Equals(input.UpgradeAction))
-                ) && 
-                (
-                    this.Enable == input.Enable ||
-                    (this.Enable != null &&
-                    this.Enable.Equals(input.Enable))
-                );
+            return true;
         }
 
         /// <summary>
@@ -205,11 +196,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UpgradeAction != null)
-                    hashCode = hashCode * 59 + this.UpgradeAction.GetHashCode();
-                if (this.Enable != null)
-                    hashCode = hashCode * 59 + this.Enable.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.UpgradeAction.GetHashCode();
+                if (this.Enable != null) hashCode = hashCode * 59 + this.Enable.GetHashCode();
                 return hashCode;
             }
         }

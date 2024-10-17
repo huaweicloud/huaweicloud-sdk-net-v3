@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(CommandTimeTaken input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CallsSum != input.CallsSum || (this.CallsSum != null && !this.CallsSum.Equals(input.CallsSum))) return false;
+            if (this.UsecSum != input.UsecSum || (this.UsecSum != null && !this.UsecSum.Equals(input.UsecSum))) return false;
+            if (this.CommandName != input.CommandName || (this.CommandName != null && !this.CommandName.Equals(input.CommandName))) return false;
+            if (this.PerUsec != input.PerUsec || (this.PerUsec != null && !this.PerUsec.Equals(input.PerUsec))) return false;
+            if (this.AverageUsec != input.AverageUsec || (this.AverageUsec != null && !this.AverageUsec.Equals(input.AverageUsec))) return false;
 
-            return 
-                (
-                    this.CallsSum == input.CallsSum ||
-                    (this.CallsSum != null &&
-                    this.CallsSum.Equals(input.CallsSum))
-                ) && 
-                (
-                    this.UsecSum == input.UsecSum ||
-                    (this.UsecSum != null &&
-                    this.UsecSum.Equals(input.UsecSum))
-                ) && 
-                (
-                    this.CommandName == input.CommandName ||
-                    (this.CommandName != null &&
-                    this.CommandName.Equals(input.CommandName))
-                ) && 
-                (
-                    this.PerUsec == input.PerUsec ||
-                    (this.PerUsec != null &&
-                    this.PerUsec.Equals(input.PerUsec))
-                ) && 
-                (
-                    this.AverageUsec == input.AverageUsec ||
-                    (this.AverageUsec != null &&
-                    this.AverageUsec.Equals(input.AverageUsec))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CallsSum != null)
-                    hashCode = hashCode * 59 + this.CallsSum.GetHashCode();
-                if (this.UsecSum != null)
-                    hashCode = hashCode * 59 + this.UsecSum.GetHashCode();
-                if (this.CommandName != null)
-                    hashCode = hashCode * 59 + this.CommandName.GetHashCode();
-                if (this.PerUsec != null)
-                    hashCode = hashCode * 59 + this.PerUsec.GetHashCode();
-                if (this.AverageUsec != null)
-                    hashCode = hashCode * 59 + this.AverageUsec.GetHashCode();
+                var hashCode = 41;
+                if (this.CallsSum != null) hashCode = hashCode * 59 + this.CallsSum.GetHashCode();
+                if (this.UsecSum != null) hashCode = hashCode * 59 + this.UsecSum.GetHashCode();
+                if (this.CommandName != null) hashCode = hashCode * 59 + this.CommandName.GetHashCode();
+                if (this.PerUsec != null) hashCode = hashCode * 59 + this.PerUsec.GetHashCode();
+                if (this.AverageUsec != null) hashCode = hashCode * 59 + this.AverageUsec.GetHashCode();
                 return hashCode;
             }
         }

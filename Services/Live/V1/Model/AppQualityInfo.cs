@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(AppQualityInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AppName != input.AppName || (this.AppName != null && !this.AppName.Equals(input.AppName))) return false;
+            if (this.QualityInfo != input.QualityInfo || (this.QualityInfo != null && input.QualityInfo != null && !this.QualityInfo.SequenceEqual(input.QualityInfo))) return false;
 
-            return 
-                (
-                    this.AppName == input.AppName ||
-                    (this.AppName != null &&
-                    this.AppName.Equals(input.AppName))
-                ) && 
-                (
-                    this.QualityInfo == input.QualityInfo ||
-                    this.QualityInfo != null &&
-                    input.QualityInfo != null &&
-                    this.QualityInfo.SequenceEqual(input.QualityInfo)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AppName != null)
-                    hashCode = hashCode * 59 + this.AppName.GetHashCode();
-                if (this.QualityInfo != null)
-                    hashCode = hashCode * 59 + this.QualityInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.AppName != null) hashCode = hashCode * 59 + this.AppName.GetHashCode();
+                if (this.QualityInfo != null) hashCode = hashCode * 59 + this.QualityInfo.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public bool Equals(Nameserver input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Hostname != input.Hostname || (this.Hostname != null && !this.Hostname.Equals(input.Hostname))) return false;
+            if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
 
-            return 
-                (
-                    this.Hostname == input.Hostname ||
-                    (this.Hostname != null &&
-                    this.Hostname.Equals(input.Hostname))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    (this.Priority != null &&
-                    this.Priority.Equals(input.Priority))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Hostname != null)
-                    hashCode = hashCode * 59 + this.Hostname.GetHashCode();
-                if (this.Priority != null)
-                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                var hashCode = 41;
+                if (this.Hostname != null) hashCode = hashCode * 59 + this.Hostname.GetHashCode();
+                if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 return hashCode;
             }
         }

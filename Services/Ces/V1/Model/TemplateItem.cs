@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// </summary>
         public bool Equals(TemplateItem input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MetricName != input.MetricName || (this.MetricName != null && !this.MetricName.Equals(input.MetricName))) return false;
+            if (this.Condition != input.Condition || (this.Condition != null && !this.Condition.Equals(input.Condition))) return false;
+            if (this.AlarmLevel != input.AlarmLevel || (this.AlarmLevel != null && !this.AlarmLevel.Equals(input.AlarmLevel))) return false;
 
-            return 
-                (
-                    this.MetricName == input.MetricName ||
-                    (this.MetricName != null &&
-                    this.MetricName.Equals(input.MetricName))
-                ) && 
-                (
-                    this.Condition == input.Condition ||
-                    (this.Condition != null &&
-                    this.Condition.Equals(input.Condition))
-                ) && 
-                (
-                    this.AlarmLevel == input.AlarmLevel ||
-                    (this.AlarmLevel != null &&
-                    this.AlarmLevel.Equals(input.AlarmLevel))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MetricName != null)
-                    hashCode = hashCode * 59 + this.MetricName.GetHashCode();
-                if (this.Condition != null)
-                    hashCode = hashCode * 59 + this.Condition.GetHashCode();
-                if (this.AlarmLevel != null)
-                    hashCode = hashCode * 59 + this.AlarmLevel.GetHashCode();
+                var hashCode = 41;
+                if (this.MetricName != null) hashCode = hashCode * 59 + this.MetricName.GetHashCode();
+                if (this.Condition != null) hashCode = hashCode * 59 + this.Condition.GetHashCode();
+                if (this.AlarmLevel != null) hashCode = hashCode * 59 + this.AlarmLevel.GetHashCode();
                 return hashCode;
             }
         }

@@ -177,26 +177,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(DeleteTranscodeProductReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
+            if (this.DeleteType != input.DeleteType) return false;
+            if (this.DeleteInfos != input.DeleteInfos || (this.DeleteInfos != null && input.DeleteInfos != null && !this.DeleteInfos.SequenceEqual(input.DeleteInfos))) return false;
 
-            return 
-                (
-                    this.AssetId == input.AssetId ||
-                    (this.AssetId != null &&
-                    this.AssetId.Equals(input.AssetId))
-                ) && 
-                (
-                    this.DeleteType == input.DeleteType ||
-                    (this.DeleteType != null &&
-                    this.DeleteType.Equals(input.DeleteType))
-                ) && 
-                (
-                    this.DeleteInfos == input.DeleteInfos ||
-                    this.DeleteInfos != null &&
-                    input.DeleteInfos != null &&
-                    this.DeleteInfos.SequenceEqual(input.DeleteInfos)
-                );
+            return true;
         }
 
         /// <summary>
@@ -206,13 +192,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AssetId != null)
-                    hashCode = hashCode * 59 + this.AssetId.GetHashCode();
-                if (this.DeleteType != null)
-                    hashCode = hashCode * 59 + this.DeleteType.GetHashCode();
-                if (this.DeleteInfos != null)
-                    hashCode = hashCode * 59 + this.DeleteInfos.GetHashCode();
+                var hashCode = 41;
+                if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                hashCode = hashCode * 59 + this.DeleteType.GetHashCode();
+                if (this.DeleteInfos != null) hashCode = hashCode * 59 + this.DeleteInfos.GetHashCode();
                 return hashCode;
             }
         }

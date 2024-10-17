@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(DatabaseInfoItem input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.DataSize != input.DataSize || (this.DataSize != null && !this.DataSize.Equals(input.DataSize))) return false;
+            if (this.StorageSize != input.StorageSize || (this.StorageSize != null && !this.StorageSize.Equals(input.StorageSize))) return false;
+            if (this.CollectionNum != input.CollectionNum || (this.CollectionNum != null && !this.CollectionNum.Equals(input.CollectionNum))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.DataSize == input.DataSize ||
-                    (this.DataSize != null &&
-                    this.DataSize.Equals(input.DataSize))
-                ) && 
-                (
-                    this.StorageSize == input.StorageSize ||
-                    (this.StorageSize != null &&
-                    this.StorageSize.Equals(input.StorageSize))
-                ) && 
-                (
-                    this.CollectionNum == input.CollectionNum ||
-                    (this.CollectionNum != null &&
-                    this.CollectionNum.Equals(input.CollectionNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.DataSize != null)
-                    hashCode = hashCode * 59 + this.DataSize.GetHashCode();
-                if (this.StorageSize != null)
-                    hashCode = hashCode * 59 + this.StorageSize.GetHashCode();
-                if (this.CollectionNum != null)
-                    hashCode = hashCode * 59 + this.CollectionNum.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.DataSize != null) hashCode = hashCode * 59 + this.DataSize.GetHashCode();
+                if (this.StorageSize != null) hashCode = hashCode * 59 + this.StorageSize.GetHashCode();
+                if (this.CollectionNum != null) hashCode = hashCode * 59 + this.CollectionNum.GetHashCode();
                 return hashCode;
             }
         }

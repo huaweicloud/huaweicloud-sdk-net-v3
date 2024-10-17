@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(GaussDBforOpenGaussUserForList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Attribute != input.Attribute || (this.Attribute != null && !this.Attribute.Equals(input.Attribute))) return false;
+            if (this.Memberof != input.Memberof || (this.Memberof != null && !this.Memberof.Equals(input.Memberof))) return false;
+            if (this.LockStatus != input.LockStatus || (this.LockStatus != null && !this.LockStatus.Equals(input.LockStatus))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Attribute == input.Attribute ||
-                    (this.Attribute != null &&
-                    this.Attribute.Equals(input.Attribute))
-                ) && 
-                (
-                    this.Memberof == input.Memberof ||
-                    (this.Memberof != null &&
-                    this.Memberof.Equals(input.Memberof))
-                ) && 
-                (
-                    this.LockStatus == input.LockStatus ||
-                    (this.LockStatus != null &&
-                    this.LockStatus.Equals(input.LockStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Attribute != null)
-                    hashCode = hashCode * 59 + this.Attribute.GetHashCode();
-                if (this.Memberof != null)
-                    hashCode = hashCode * 59 + this.Memberof.GetHashCode();
-                if (this.LockStatus != null)
-                    hashCode = hashCode * 59 + this.LockStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Attribute != null) hashCode = hashCode * 59 + this.Attribute.GetHashCode();
+                if (this.Memberof != null) hashCode = hashCode * 59 + this.Memberof.GetHashCode();
+                if (this.LockStatus != null) hashCode = hashCode * 59 + this.LockStatus.GetHashCode();
                 return hashCode;
             }
         }

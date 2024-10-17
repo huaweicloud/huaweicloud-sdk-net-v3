@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ParamGroupHistoryResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ParameterName != input.ParameterName || (this.ParameterName != null && !this.ParameterName.Equals(input.ParameterName))) return false;
+            if (this.OldValue != input.OldValue || (this.OldValue != null && !this.OldValue.Equals(input.OldValue))) return false;
+            if (this.NewValue != input.NewValue || (this.NewValue != null && !this.NewValue.Equals(input.NewValue))) return false;
+            if (this.UpdateResult != input.UpdateResult || (this.UpdateResult != null && !this.UpdateResult.Equals(input.UpdateResult))) return false;
+            if (this.IsApplied != input.IsApplied || (this.IsApplied != null && !this.IsApplied.Equals(input.IsApplied))) return false;
+            if (this.Updated != input.Updated || (this.Updated != null && !this.Updated.Equals(input.Updated))) return false;
+            if (this.Applied != input.Applied || (this.Applied != null && !this.Applied.Equals(input.Applied))) return false;
 
-            return 
-                (
-                    this.ParameterName == input.ParameterName ||
-                    (this.ParameterName != null &&
-                    this.ParameterName.Equals(input.ParameterName))
-                ) && 
-                (
-                    this.OldValue == input.OldValue ||
-                    (this.OldValue != null &&
-                    this.OldValue.Equals(input.OldValue))
-                ) && 
-                (
-                    this.NewValue == input.NewValue ||
-                    (this.NewValue != null &&
-                    this.NewValue.Equals(input.NewValue))
-                ) && 
-                (
-                    this.UpdateResult == input.UpdateResult ||
-                    (this.UpdateResult != null &&
-                    this.UpdateResult.Equals(input.UpdateResult))
-                ) && 
-                (
-                    this.IsApplied == input.IsApplied ||
-                    (this.IsApplied != null &&
-                    this.IsApplied.Equals(input.IsApplied))
-                ) && 
-                (
-                    this.Updated == input.Updated ||
-                    (this.Updated != null &&
-                    this.Updated.Equals(input.Updated))
-                ) && 
-                (
-                    this.Applied == input.Applied ||
-                    (this.Applied != null &&
-                    this.Applied.Equals(input.Applied))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ParameterName != null)
-                    hashCode = hashCode * 59 + this.ParameterName.GetHashCode();
-                if (this.OldValue != null)
-                    hashCode = hashCode * 59 + this.OldValue.GetHashCode();
-                if (this.NewValue != null)
-                    hashCode = hashCode * 59 + this.NewValue.GetHashCode();
-                if (this.UpdateResult != null)
-                    hashCode = hashCode * 59 + this.UpdateResult.GetHashCode();
-                if (this.IsApplied != null)
-                    hashCode = hashCode * 59 + this.IsApplied.GetHashCode();
-                if (this.Updated != null)
-                    hashCode = hashCode * 59 + this.Updated.GetHashCode();
-                if (this.Applied != null)
-                    hashCode = hashCode * 59 + this.Applied.GetHashCode();
+                var hashCode = 41;
+                if (this.ParameterName != null) hashCode = hashCode * 59 + this.ParameterName.GetHashCode();
+                if (this.OldValue != null) hashCode = hashCode * 59 + this.OldValue.GetHashCode();
+                if (this.NewValue != null) hashCode = hashCode * 59 + this.NewValue.GetHashCode();
+                if (this.UpdateResult != null) hashCode = hashCode * 59 + this.UpdateResult.GetHashCode();
+                if (this.IsApplied != null) hashCode = hashCode * 59 + this.IsApplied.GetHashCode();
+                if (this.Updated != null) hashCode = hashCode * 59 + this.Updated.GetHashCode();
+                if (this.Applied != null) hashCode = hashCode * 59 + this.Applied.GetHashCode();
                 return hashCode;
             }
         }

@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         /// </summary>
         public bool Equals(UpStreamDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
+            if (this.Fps != input.Fps || (this.Fps != null && !this.Fps.Equals(input.Fps))) return false;
+            if (this.Rate != input.Rate || (this.Rate != null && !this.Rate.Equals(input.Rate))) return false;
+            if (this.Delay != input.Delay || (this.Delay != null && !this.Delay.Equals(input.Delay))) return false;
+            if (this.GopDuration != input.GopDuration || (this.GopDuration != null && !this.GopDuration.Equals(input.GopDuration))) return false;
+            if (this.LastVideoPts != input.LastVideoPts || (this.LastVideoPts != null && !this.LastVideoPts.Equals(input.LastVideoPts))) return false;
+            if (this.LastAudioPts != input.LastAudioPts || (this.LastAudioPts != null && !this.LastAudioPts.Equals(input.LastAudioPts))) return false;
+            if (this.LastVideoAudioPtsDiff != input.LastVideoAudioPtsDiff || (this.LastVideoAudioPtsDiff != null && !this.LastVideoAudioPtsDiff.Equals(input.LastVideoAudioPtsDiff))) return false;
 
-            return 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                ) && 
-                (
-                    this.Fps == input.Fps ||
-                    (this.Fps != null &&
-                    this.Fps.Equals(input.Fps))
-                ) && 
-                (
-                    this.Rate == input.Rate ||
-                    (this.Rate != null &&
-                    this.Rate.Equals(input.Rate))
-                ) && 
-                (
-                    this.Delay == input.Delay ||
-                    (this.Delay != null &&
-                    this.Delay.Equals(input.Delay))
-                ) && 
-                (
-                    this.GopDuration == input.GopDuration ||
-                    (this.GopDuration != null &&
-                    this.GopDuration.Equals(input.GopDuration))
-                ) && 
-                (
-                    this.LastVideoPts == input.LastVideoPts ||
-                    (this.LastVideoPts != null &&
-                    this.LastVideoPts.Equals(input.LastVideoPts))
-                ) && 
-                (
-                    this.LastAudioPts == input.LastAudioPts ||
-                    (this.LastAudioPts != null &&
-                    this.LastAudioPts.Equals(input.LastAudioPts))
-                ) && 
-                (
-                    this.LastVideoAudioPtsDiff == input.LastVideoAudioPtsDiff ||
-                    (this.LastVideoAudioPtsDiff != null &&
-                    this.LastVideoAudioPtsDiff.Equals(input.LastVideoAudioPtsDiff))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.Fps != null)
-                    hashCode = hashCode * 59 + this.Fps.GetHashCode();
-                if (this.Rate != null)
-                    hashCode = hashCode * 59 + this.Rate.GetHashCode();
-                if (this.Delay != null)
-                    hashCode = hashCode * 59 + this.Delay.GetHashCode();
-                if (this.GopDuration != null)
-                    hashCode = hashCode * 59 + this.GopDuration.GetHashCode();
-                if (this.LastVideoPts != null)
-                    hashCode = hashCode * 59 + this.LastVideoPts.GetHashCode();
-                if (this.LastAudioPts != null)
-                    hashCode = hashCode * 59 + this.LastAudioPts.GetHashCode();
-                if (this.LastVideoAudioPtsDiff != null)
-                    hashCode = hashCode * 59 + this.LastVideoAudioPtsDiff.GetHashCode();
+                var hashCode = 41;
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
+                if (this.Fps != null) hashCode = hashCode * 59 + this.Fps.GetHashCode();
+                if (this.Rate != null) hashCode = hashCode * 59 + this.Rate.GetHashCode();
+                if (this.Delay != null) hashCode = hashCode * 59 + this.Delay.GetHashCode();
+                if (this.GopDuration != null) hashCode = hashCode * 59 + this.GopDuration.GetHashCode();
+                if (this.LastVideoPts != null) hashCode = hashCode * 59 + this.LastVideoPts.GetHashCode();
+                if (this.LastAudioPts != null) hashCode = hashCode * 59 + this.LastAudioPts.GetHashCode();
+                if (this.LastVideoAudioPtsDiff != null) hashCode = hashCode * 59 + this.LastVideoAudioPtsDiff.GetHashCode();
                 return hashCode;
             }
         }

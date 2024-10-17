@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ListSlowlogResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TotalNum != input.TotalNum || (this.TotalNum != null && !this.TotalNum.Equals(input.TotalNum))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.Slowlogs != input.Slowlogs || (this.Slowlogs != null && input.Slowlogs != null && !this.Slowlogs.SequenceEqual(input.Slowlogs))) return false;
 
-            return 
-                (
-                    this.TotalNum == input.TotalNum ||
-                    (this.TotalNum != null &&
-                    this.TotalNum.Equals(input.TotalNum))
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.Slowlogs == input.Slowlogs ||
-                    this.Slowlogs != null &&
-                    input.Slowlogs != null &&
-                    this.Slowlogs.SequenceEqual(input.Slowlogs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TotalNum != null)
-                    hashCode = hashCode * 59 + this.TotalNum.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.Slowlogs != null)
-                    hashCode = hashCode * 59 + this.Slowlogs.GetHashCode();
+                var hashCode = 41;
+                if (this.TotalNum != null) hashCode = hashCode * 59 + this.TotalNum.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.Slowlogs != null) hashCode = hashCode * 59 + this.Slowlogs.GetHashCode();
                 return hashCode;
             }
         }

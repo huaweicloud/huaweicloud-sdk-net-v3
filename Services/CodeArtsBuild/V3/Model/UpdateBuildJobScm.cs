@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public bool Equals(UpdateBuildJobScm input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Branch != input.Branch || (this.Branch != null && !this.Branch.Equals(input.Branch))) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.RepoId != input.RepoId || (this.RepoId != null && !this.RepoId.Equals(input.RepoId))) return false;
+            if (this.WebUrl != input.WebUrl || (this.WebUrl != null && !this.WebUrl.Equals(input.WebUrl))) return false;
+            if (this.ScmType != input.ScmType || (this.ScmType != null && !this.ScmType.Equals(input.ScmType))) return false;
+            if (this.IsAutoBuild != input.IsAutoBuild || (this.IsAutoBuild != null && !this.IsAutoBuild.Equals(input.IsAutoBuild))) return false;
+            if (this.BuildType != input.BuildType || (this.BuildType != null && !this.BuildType.Equals(input.BuildType))) return false;
+            if (this.Depth != input.Depth || (this.Depth != null && !this.Depth.Equals(input.Depth))) return false;
+            if (this.EndPointId != input.EndPointId || (this.EndPointId != null && !this.EndPointId.Equals(input.EndPointId))) return false;
+            if (this.Source != input.Source || (this.Source != null && !this.Source.Equals(input.Source))) return false;
 
-            return 
-                (
-                    this.Branch == input.Branch ||
-                    (this.Branch != null &&
-                    this.Branch.Equals(input.Branch))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.RepoId == input.RepoId ||
-                    (this.RepoId != null &&
-                    this.RepoId.Equals(input.RepoId))
-                ) && 
-                (
-                    this.WebUrl == input.WebUrl ||
-                    (this.WebUrl != null &&
-                    this.WebUrl.Equals(input.WebUrl))
-                ) && 
-                (
-                    this.ScmType == input.ScmType ||
-                    (this.ScmType != null &&
-                    this.ScmType.Equals(input.ScmType))
-                ) && 
-                (
-                    this.IsAutoBuild == input.IsAutoBuild ||
-                    (this.IsAutoBuild != null &&
-                    this.IsAutoBuild.Equals(input.IsAutoBuild))
-                ) && 
-                (
-                    this.BuildType == input.BuildType ||
-                    (this.BuildType != null &&
-                    this.BuildType.Equals(input.BuildType))
-                ) && 
-                (
-                    this.Depth == input.Depth ||
-                    (this.Depth != null &&
-                    this.Depth.Equals(input.Depth))
-                ) && 
-                (
-                    this.EndPointId == input.EndPointId ||
-                    (this.EndPointId != null &&
-                    this.EndPointId.Equals(input.EndPointId))
-                ) && 
-                (
-                    this.Source == input.Source ||
-                    (this.Source != null &&
-                    this.Source.Equals(input.Source))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Branch != null)
-                    hashCode = hashCode * 59 + this.Branch.GetHashCode();
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.RepoId != null)
-                    hashCode = hashCode * 59 + this.RepoId.GetHashCode();
-                if (this.WebUrl != null)
-                    hashCode = hashCode * 59 + this.WebUrl.GetHashCode();
-                if (this.ScmType != null)
-                    hashCode = hashCode * 59 + this.ScmType.GetHashCode();
-                if (this.IsAutoBuild != null)
-                    hashCode = hashCode * 59 + this.IsAutoBuild.GetHashCode();
-                if (this.BuildType != null)
-                    hashCode = hashCode * 59 + this.BuildType.GetHashCode();
-                if (this.Depth != null)
-                    hashCode = hashCode * 59 + this.Depth.GetHashCode();
-                if (this.EndPointId != null)
-                    hashCode = hashCode * 59 + this.EndPointId.GetHashCode();
-                if (this.Source != null)
-                    hashCode = hashCode * 59 + this.Source.GetHashCode();
+                var hashCode = 41;
+                if (this.Branch != null) hashCode = hashCode * 59 + this.Branch.GetHashCode();
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.RepoId != null) hashCode = hashCode * 59 + this.RepoId.GetHashCode();
+                if (this.WebUrl != null) hashCode = hashCode * 59 + this.WebUrl.GetHashCode();
+                if (this.ScmType != null) hashCode = hashCode * 59 + this.ScmType.GetHashCode();
+                if (this.IsAutoBuild != null) hashCode = hashCode * 59 + this.IsAutoBuild.GetHashCode();
+                if (this.BuildType != null) hashCode = hashCode * 59 + this.BuildType.GetHashCode();
+                if (this.Depth != null) hashCode = hashCode * 59 + this.Depth.GetHashCode();
+                if (this.EndPointId != null) hashCode = hashCode * 59 + this.EndPointId.GetHashCode();
+                if (this.Source != null) hashCode = hashCode * 59 + this.Source.GetHashCode();
                 return hashCode;
             }
         }

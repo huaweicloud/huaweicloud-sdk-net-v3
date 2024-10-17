@@ -381,86 +381,24 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(ShowStackSetMetadataResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StackSetId != input.StackSetId || (this.StackSetId != null && !this.StackSetId.Equals(input.StackSetId))) return false;
+            if (this.StackSetName != input.StackSetName || (this.StackSetName != null && !this.StackSetName.Equals(input.StackSetName))) return false;
+            if (this.StackSetDescription != input.StackSetDescription || (this.StackSetDescription != null && !this.StackSetDescription.Equals(input.StackSetDescription))) return false;
+            if (this.InitialStackDescription != input.InitialStackDescription || (this.InitialStackDescription != null && !this.InitialStackDescription.Equals(input.InitialStackDescription))) return false;
+            if (this.PermissionModel != input.PermissionModel) return false;
+            if (this.AdministrationAgencyName != input.AdministrationAgencyName || (this.AdministrationAgencyName != null && !this.AdministrationAgencyName.Equals(input.AdministrationAgencyName))) return false;
+            if (this.ManagedAgencyName != input.ManagedAgencyName || (this.ManagedAgencyName != null && !this.ManagedAgencyName.Equals(input.ManagedAgencyName))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.VarsUriContent != input.VarsUriContent || (this.VarsUriContent != null && !this.VarsUriContent.Equals(input.VarsUriContent))) return false;
+            if (this.VarsBody != input.VarsBody || (this.VarsBody != null && !this.VarsBody.Equals(input.VarsBody))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.AdministrationAgencyUrn != input.AdministrationAgencyUrn || (this.AdministrationAgencyUrn != null && !this.AdministrationAgencyUrn.Equals(input.AdministrationAgencyUrn))) return false;
+            if (this.ManagedOperation != input.ManagedOperation || (this.ManagedOperation != null && !this.ManagedOperation.Equals(input.ManagedOperation))) return false;
+            if (this.OrganizationalUnitIds != input.OrganizationalUnitIds || (this.OrganizationalUnitIds != null && input.OrganizationalUnitIds != null && !this.OrganizationalUnitIds.SequenceEqual(input.OrganizationalUnitIds))) return false;
 
-            return 
-                (
-                    this.StackSetId == input.StackSetId ||
-                    (this.StackSetId != null &&
-                    this.StackSetId.Equals(input.StackSetId))
-                ) && 
-                (
-                    this.StackSetName == input.StackSetName ||
-                    (this.StackSetName != null &&
-                    this.StackSetName.Equals(input.StackSetName))
-                ) && 
-                (
-                    this.StackSetDescription == input.StackSetDescription ||
-                    (this.StackSetDescription != null &&
-                    this.StackSetDescription.Equals(input.StackSetDescription))
-                ) && 
-                (
-                    this.InitialStackDescription == input.InitialStackDescription ||
-                    (this.InitialStackDescription != null &&
-                    this.InitialStackDescription.Equals(input.InitialStackDescription))
-                ) && 
-                (
-                    this.PermissionModel == input.PermissionModel ||
-                    (this.PermissionModel != null &&
-                    this.PermissionModel.Equals(input.PermissionModel))
-                ) && 
-                (
-                    this.AdministrationAgencyName == input.AdministrationAgencyName ||
-                    (this.AdministrationAgencyName != null &&
-                    this.AdministrationAgencyName.Equals(input.AdministrationAgencyName))
-                ) && 
-                (
-                    this.ManagedAgencyName == input.ManagedAgencyName ||
-                    (this.ManagedAgencyName != null &&
-                    this.ManagedAgencyName.Equals(input.ManagedAgencyName))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.VarsUriContent == input.VarsUriContent ||
-                    (this.VarsUriContent != null &&
-                    this.VarsUriContent.Equals(input.VarsUriContent))
-                ) && 
-                (
-                    this.VarsBody == input.VarsBody ||
-                    (this.VarsBody != null &&
-                    this.VarsBody.Equals(input.VarsBody))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.AdministrationAgencyUrn == input.AdministrationAgencyUrn ||
-                    (this.AdministrationAgencyUrn != null &&
-                    this.AdministrationAgencyUrn.Equals(input.AdministrationAgencyUrn))
-                ) && 
-                (
-                    this.ManagedOperation == input.ManagedOperation ||
-                    (this.ManagedOperation != null &&
-                    this.ManagedOperation.Equals(input.ManagedOperation))
-                ) && 
-                (
-                    this.OrganizationalUnitIds == input.OrganizationalUnitIds ||
-                    this.OrganizationalUnitIds != null &&
-                    input.OrganizationalUnitIds != null &&
-                    this.OrganizationalUnitIds.SequenceEqual(input.OrganizationalUnitIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -470,37 +408,22 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StackSetId != null)
-                    hashCode = hashCode * 59 + this.StackSetId.GetHashCode();
-                if (this.StackSetName != null)
-                    hashCode = hashCode * 59 + this.StackSetName.GetHashCode();
-                if (this.StackSetDescription != null)
-                    hashCode = hashCode * 59 + this.StackSetDescription.GetHashCode();
-                if (this.InitialStackDescription != null)
-                    hashCode = hashCode * 59 + this.InitialStackDescription.GetHashCode();
-                if (this.PermissionModel != null)
-                    hashCode = hashCode * 59 + this.PermissionModel.GetHashCode();
-                if (this.AdministrationAgencyName != null)
-                    hashCode = hashCode * 59 + this.AdministrationAgencyName.GetHashCode();
-                if (this.ManagedAgencyName != null)
-                    hashCode = hashCode * 59 + this.ManagedAgencyName.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.VarsUriContent != null)
-                    hashCode = hashCode * 59 + this.VarsUriContent.GetHashCode();
-                if (this.VarsBody != null)
-                    hashCode = hashCode * 59 + this.VarsBody.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.AdministrationAgencyUrn != null)
-                    hashCode = hashCode * 59 + this.AdministrationAgencyUrn.GetHashCode();
-                if (this.ManagedOperation != null)
-                    hashCode = hashCode * 59 + this.ManagedOperation.GetHashCode();
-                if (this.OrganizationalUnitIds != null)
-                    hashCode = hashCode * 59 + this.OrganizationalUnitIds.GetHashCode();
+                var hashCode = 41;
+                if (this.StackSetId != null) hashCode = hashCode * 59 + this.StackSetId.GetHashCode();
+                if (this.StackSetName != null) hashCode = hashCode * 59 + this.StackSetName.GetHashCode();
+                if (this.StackSetDescription != null) hashCode = hashCode * 59 + this.StackSetDescription.GetHashCode();
+                if (this.InitialStackDescription != null) hashCode = hashCode * 59 + this.InitialStackDescription.GetHashCode();
+                hashCode = hashCode * 59 + this.PermissionModel.GetHashCode();
+                if (this.AdministrationAgencyName != null) hashCode = hashCode * 59 + this.AdministrationAgencyName.GetHashCode();
+                if (this.ManagedAgencyName != null) hashCode = hashCode * 59 + this.ManagedAgencyName.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.VarsUriContent != null) hashCode = hashCode * 59 + this.VarsUriContent.GetHashCode();
+                if (this.VarsBody != null) hashCode = hashCode * 59 + this.VarsBody.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.AdministrationAgencyUrn != null) hashCode = hashCode * 59 + this.AdministrationAgencyUrn.GetHashCode();
+                if (this.ManagedOperation != null) hashCode = hashCode * 59 + this.ManagedOperation.GetHashCode();
+                if (this.OrganizationalUnitIds != null) hashCode = hashCode * 59 + this.OrganizationalUnitIds.GetHashCode();
                 return hashCode;
             }
         }

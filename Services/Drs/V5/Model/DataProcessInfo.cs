@@ -226,63 +226,19 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(DataProcessInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FilterConditions != input.FilterConditions || (this.FilterConditions != null && input.FilterConditions != null && !this.FilterConditions.SequenceEqual(input.FilterConditions))) return false;
+            if (this.IsBatchProcess != input.IsBatchProcess || (this.IsBatchProcess != null && !this.IsBatchProcess.Equals(input.IsBatchProcess))) return false;
+            if (this.AddColumns != input.AddColumns || (this.AddColumns != null && input.AddColumns != null && !this.AddColumns.SequenceEqual(input.AddColumns))) return false;
+            if (this.DdlOperation != input.DdlOperation || (this.DdlOperation != null && input.DdlOperation != null && !this.DdlOperation.SequenceEqual(input.DdlOperation))) return false;
+            if (this.DmlOperation != input.DmlOperation || (this.DmlOperation != null && !this.DmlOperation.Equals(input.DmlOperation))) return false;
+            if (this.DbObjectColumnInfo != input.DbObjectColumnInfo || (this.DbObjectColumnInfo != null && !this.DbObjectColumnInfo.Equals(input.DbObjectColumnInfo))) return false;
+            if (this.DbOrTableRenameRule != input.DbOrTableRenameRule || (this.DbOrTableRenameRule != null && !this.DbOrTableRenameRule.Equals(input.DbOrTableRenameRule))) return false;
+            if (this.DbObject != input.DbObject || (this.DbObject != null && !this.DbObject.Equals(input.DbObject))) return false;
+            if (this.IsSynchronized != input.IsSynchronized || (this.IsSynchronized != null && !this.IsSynchronized.Equals(input.IsSynchronized))) return false;
+            if (this.Source != input.Source) return false;
 
-            return 
-                (
-                    this.FilterConditions == input.FilterConditions ||
-                    this.FilterConditions != null &&
-                    input.FilterConditions != null &&
-                    this.FilterConditions.SequenceEqual(input.FilterConditions)
-                ) && 
-                (
-                    this.IsBatchProcess == input.IsBatchProcess ||
-                    (this.IsBatchProcess != null &&
-                    this.IsBatchProcess.Equals(input.IsBatchProcess))
-                ) && 
-                (
-                    this.AddColumns == input.AddColumns ||
-                    this.AddColumns != null &&
-                    input.AddColumns != null &&
-                    this.AddColumns.SequenceEqual(input.AddColumns)
-                ) && 
-                (
-                    this.DdlOperation == input.DdlOperation ||
-                    this.DdlOperation != null &&
-                    input.DdlOperation != null &&
-                    this.DdlOperation.SequenceEqual(input.DdlOperation)
-                ) && 
-                (
-                    this.DmlOperation == input.DmlOperation ||
-                    (this.DmlOperation != null &&
-                    this.DmlOperation.Equals(input.DmlOperation))
-                ) && 
-                (
-                    this.DbObjectColumnInfo == input.DbObjectColumnInfo ||
-                    (this.DbObjectColumnInfo != null &&
-                    this.DbObjectColumnInfo.Equals(input.DbObjectColumnInfo))
-                ) && 
-                (
-                    this.DbOrTableRenameRule == input.DbOrTableRenameRule ||
-                    (this.DbOrTableRenameRule != null &&
-                    this.DbOrTableRenameRule.Equals(input.DbOrTableRenameRule))
-                ) && 
-                (
-                    this.DbObject == input.DbObject ||
-                    (this.DbObject != null &&
-                    this.DbObject.Equals(input.DbObject))
-                ) && 
-                (
-                    this.IsSynchronized == input.IsSynchronized ||
-                    (this.IsSynchronized != null &&
-                    this.IsSynchronized.Equals(input.IsSynchronized))
-                ) && 
-                (
-                    this.Source == input.Source ||
-                    (this.Source != null &&
-                    this.Source.Equals(input.Source))
-                );
+            return true;
         }
 
         /// <summary>
@@ -292,27 +248,17 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FilterConditions != null)
-                    hashCode = hashCode * 59 + this.FilterConditions.GetHashCode();
-                if (this.IsBatchProcess != null)
-                    hashCode = hashCode * 59 + this.IsBatchProcess.GetHashCode();
-                if (this.AddColumns != null)
-                    hashCode = hashCode * 59 + this.AddColumns.GetHashCode();
-                if (this.DdlOperation != null)
-                    hashCode = hashCode * 59 + this.DdlOperation.GetHashCode();
-                if (this.DmlOperation != null)
-                    hashCode = hashCode * 59 + this.DmlOperation.GetHashCode();
-                if (this.DbObjectColumnInfo != null)
-                    hashCode = hashCode * 59 + this.DbObjectColumnInfo.GetHashCode();
-                if (this.DbOrTableRenameRule != null)
-                    hashCode = hashCode * 59 + this.DbOrTableRenameRule.GetHashCode();
-                if (this.DbObject != null)
-                    hashCode = hashCode * 59 + this.DbObject.GetHashCode();
-                if (this.IsSynchronized != null)
-                    hashCode = hashCode * 59 + this.IsSynchronized.GetHashCode();
-                if (this.Source != null)
-                    hashCode = hashCode * 59 + this.Source.GetHashCode();
+                var hashCode = 41;
+                if (this.FilterConditions != null) hashCode = hashCode * 59 + this.FilterConditions.GetHashCode();
+                if (this.IsBatchProcess != null) hashCode = hashCode * 59 + this.IsBatchProcess.GetHashCode();
+                if (this.AddColumns != null) hashCode = hashCode * 59 + this.AddColumns.GetHashCode();
+                if (this.DdlOperation != null) hashCode = hashCode * 59 + this.DdlOperation.GetHashCode();
+                if (this.DmlOperation != null) hashCode = hashCode * 59 + this.DmlOperation.GetHashCode();
+                if (this.DbObjectColumnInfo != null) hashCode = hashCode * 59 + this.DbObjectColumnInfo.GetHashCode();
+                if (this.DbOrTableRenameRule != null) hashCode = hashCode * 59 + this.DbOrTableRenameRule.GetHashCode();
+                if (this.DbObject != null) hashCode = hashCode * 59 + this.DbObject.GetHashCode();
+                if (this.IsSynchronized != null) hashCode = hashCode * 59 + this.IsSynchronized.GetHashCode();
+                hashCode = hashCode * 59 + this.Source.GetHashCode();
                 return hashCode;
             }
         }

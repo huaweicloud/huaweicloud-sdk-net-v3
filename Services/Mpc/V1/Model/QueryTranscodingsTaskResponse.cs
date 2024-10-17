@@ -312,104 +312,27 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(QueryTranscodingsTaskResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TaskId != input.TaskId || (this.TaskId != null && !this.TaskId.Equals(input.TaskId))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.Progress != input.Progress || (this.Progress != null && !this.Progress.Equals(input.Progress))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.TransTemplateId != input.TransTemplateId || (this.TransTemplateId != null && input.TransTemplateId != null && !this.TransTemplateId.SequenceEqual(input.TransTemplateId))) return false;
+            if (this.Input != input.Input || (this.Input != null && !this.Input.Equals(input.Input))) return false;
+            if (this.Output != input.Output || (this.Output != null && !this.Output.Equals(input.Output))) return false;
+            if (this.OutputFileName != input.OutputFileName || (this.OutputFileName != null && input.OutputFileName != null && !this.OutputFileName.SequenceEqual(input.OutputFileName))) return false;
+            if (this.UserData != input.UserData || (this.UserData != null && !this.UserData.Equals(input.UserData))) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Tips != input.Tips || (this.Tips != null && !this.Tips.Equals(input.Tips))) return false;
+            if (this.TranscodeDetail != input.TranscodeDetail || (this.TranscodeDetail != null && !this.TranscodeDetail.Equals(input.TranscodeDetail))) return false;
+            if (this.ThumbnailOutput != input.ThumbnailOutput || (this.ThumbnailOutput != null && !this.ThumbnailOutput.Equals(input.ThumbnailOutput))) return false;
+            if (this.ThumbnailOutputname != input.ThumbnailOutputname || (this.ThumbnailOutputname != null && !this.ThumbnailOutputname.Equals(input.ThumbnailOutputname))) return false;
+            if (this.PicInfo != input.PicInfo || (this.PicInfo != null && input.PicInfo != null && !this.PicInfo.SequenceEqual(input.PicInfo))) return false;
+            if (this.AvParameters != input.AvParameters || (this.AvParameters != null && input.AvParameters != null && !this.AvParameters.SequenceEqual(input.AvParameters))) return false;
 
-            return 
-                (
-                    this.TaskId == input.TaskId ||
-                    (this.TaskId != null &&
-                    this.TaskId.Equals(input.TaskId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Progress == input.Progress ||
-                    (this.Progress != null &&
-                    this.Progress.Equals(input.Progress))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.TransTemplateId == input.TransTemplateId ||
-                    this.TransTemplateId != null &&
-                    input.TransTemplateId != null &&
-                    this.TransTemplateId.SequenceEqual(input.TransTemplateId)
-                ) && 
-                (
-                    this.Input == input.Input ||
-                    (this.Input != null &&
-                    this.Input.Equals(input.Input))
-                ) && 
-                (
-                    this.Output == input.Output ||
-                    (this.Output != null &&
-                    this.Output.Equals(input.Output))
-                ) && 
-                (
-                    this.OutputFileName == input.OutputFileName ||
-                    this.OutputFileName != null &&
-                    input.OutputFileName != null &&
-                    this.OutputFileName.SequenceEqual(input.OutputFileName)
-                ) && 
-                (
-                    this.UserData == input.UserData ||
-                    (this.UserData != null &&
-                    this.UserData.Equals(input.UserData))
-                ) && 
-                (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Tips == input.Tips ||
-                    (this.Tips != null &&
-                    this.Tips.Equals(input.Tips))
-                ) && 
-                (
-                    this.TranscodeDetail == input.TranscodeDetail ||
-                    (this.TranscodeDetail != null &&
-                    this.TranscodeDetail.Equals(input.TranscodeDetail))
-                ) && 
-                (
-                    this.ThumbnailOutput == input.ThumbnailOutput ||
-                    (this.ThumbnailOutput != null &&
-                    this.ThumbnailOutput.Equals(input.ThumbnailOutput))
-                ) && 
-                (
-                    this.ThumbnailOutputname == input.ThumbnailOutputname ||
-                    (this.ThumbnailOutputname != null &&
-                    this.ThumbnailOutputname.Equals(input.ThumbnailOutputname))
-                ) && 
-                (
-                    this.PicInfo == input.PicInfo ||
-                    this.PicInfo != null &&
-                    input.PicInfo != null &&
-                    this.PicInfo.SequenceEqual(input.PicInfo)
-                ) && 
-                (
-                    this.AvParameters == input.AvParameters ||
-                    this.AvParameters != null &&
-                    input.AvParameters != null &&
-                    this.AvParameters.SequenceEqual(input.AvParameters)
-                );
+            return true;
         }
 
         /// <summary>
@@ -419,43 +342,25 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TaskId != null)
-                    hashCode = hashCode * 59 + this.TaskId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Progress != null)
-                    hashCode = hashCode * 59 + this.Progress.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.TransTemplateId != null)
-                    hashCode = hashCode * 59 + this.TransTemplateId.GetHashCode();
-                if (this.Input != null)
-                    hashCode = hashCode * 59 + this.Input.GetHashCode();
-                if (this.Output != null)
-                    hashCode = hashCode * 59 + this.Output.GetHashCode();
-                if (this.OutputFileName != null)
-                    hashCode = hashCode * 59 + this.OutputFileName.GetHashCode();
-                if (this.UserData != null)
-                    hashCode = hashCode * 59 + this.UserData.GetHashCode();
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Tips != null)
-                    hashCode = hashCode * 59 + this.Tips.GetHashCode();
-                if (this.TranscodeDetail != null)
-                    hashCode = hashCode * 59 + this.TranscodeDetail.GetHashCode();
-                if (this.ThumbnailOutput != null)
-                    hashCode = hashCode * 59 + this.ThumbnailOutput.GetHashCode();
-                if (this.ThumbnailOutputname != null)
-                    hashCode = hashCode * 59 + this.ThumbnailOutputname.GetHashCode();
-                if (this.PicInfo != null)
-                    hashCode = hashCode * 59 + this.PicInfo.GetHashCode();
-                if (this.AvParameters != null)
-                    hashCode = hashCode * 59 + this.AvParameters.GetHashCode();
+                var hashCode = 41;
+                if (this.TaskId != null) hashCode = hashCode * 59 + this.TaskId.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Progress != null) hashCode = hashCode * 59 + this.Progress.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.TransTemplateId != null) hashCode = hashCode * 59 + this.TransTemplateId.GetHashCode();
+                if (this.Input != null) hashCode = hashCode * 59 + this.Input.GetHashCode();
+                if (this.Output != null) hashCode = hashCode * 59 + this.Output.GetHashCode();
+                if (this.OutputFileName != null) hashCode = hashCode * 59 + this.OutputFileName.GetHashCode();
+                if (this.UserData != null) hashCode = hashCode * 59 + this.UserData.GetHashCode();
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Tips != null) hashCode = hashCode * 59 + this.Tips.GetHashCode();
+                if (this.TranscodeDetail != null) hashCode = hashCode * 59 + this.TranscodeDetail.GetHashCode();
+                if (this.ThumbnailOutput != null) hashCode = hashCode * 59 + this.ThumbnailOutput.GetHashCode();
+                if (this.ThumbnailOutputname != null) hashCode = hashCode * 59 + this.ThumbnailOutputname.GetHashCode();
+                if (this.PicInfo != null) hashCode = hashCode * 59 + this.PicInfo.GetHashCode();
+                if (this.AvParameters != null) hashCode = hashCode * 59 + this.AvParameters.GetHashCode();
                 return hashCode;
             }
         }

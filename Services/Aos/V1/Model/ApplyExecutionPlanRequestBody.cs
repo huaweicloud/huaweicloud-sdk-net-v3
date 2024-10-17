@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(ApplyExecutionPlanRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ExecutionPlanId != input.ExecutionPlanId || (this.ExecutionPlanId != null && !this.ExecutionPlanId.Equals(input.ExecutionPlanId))) return false;
+            if (this.StackId != input.StackId || (this.StackId != null && !this.StackId.Equals(input.StackId))) return false;
 
-            return 
-                (
-                    this.ExecutionPlanId == input.ExecutionPlanId ||
-                    (this.ExecutionPlanId != null &&
-                    this.ExecutionPlanId.Equals(input.ExecutionPlanId))
-                ) && 
-                (
-                    this.StackId == input.StackId ||
-                    (this.StackId != null &&
-                    this.StackId.Equals(input.StackId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ExecutionPlanId != null)
-                    hashCode = hashCode * 59 + this.ExecutionPlanId.GetHashCode();
-                if (this.StackId != null)
-                    hashCode = hashCode * 59 + this.StackId.GetHashCode();
+                var hashCode = 41;
+                if (this.ExecutionPlanId != null) hashCode = hashCode * 59 + this.ExecutionPlanId.GetHashCode();
+                if (this.StackId != null) hashCode = hashCode * 59 + this.StackId.GetHashCode();
                 return hashCode;
             }
         }

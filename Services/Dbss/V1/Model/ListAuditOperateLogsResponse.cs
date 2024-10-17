@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         public bool Equals(ListAuditOperateLogsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TotalNum != input.TotalNum || (this.TotalNum != null && !this.TotalNum.Equals(input.TotalNum))) return false;
+            if (this.OperateLog != input.OperateLog || (this.OperateLog != null && input.OperateLog != null && !this.OperateLog.SequenceEqual(input.OperateLog))) return false;
 
-            return 
-                (
-                    this.TotalNum == input.TotalNum ||
-                    (this.TotalNum != null &&
-                    this.TotalNum.Equals(input.TotalNum))
-                ) && 
-                (
-                    this.OperateLog == input.OperateLog ||
-                    this.OperateLog != null &&
-                    input.OperateLog != null &&
-                    this.OperateLog.SequenceEqual(input.OperateLog)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TotalNum != null)
-                    hashCode = hashCode * 59 + this.TotalNum.GetHashCode();
-                if (this.OperateLog != null)
-                    hashCode = hashCode * 59 + this.OperateLog.GetHashCode();
+                var hashCode = 41;
+                if (this.TotalNum != null) hashCode = hashCode * 59 + this.TotalNum.GetHashCode();
+                if (this.OperateLog != null) hashCode = hashCode * 59 + this.OperateLog.GetHashCode();
                 return hashCode;
             }
         }

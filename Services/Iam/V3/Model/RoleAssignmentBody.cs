@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(RoleAssignmentBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.User != input.User || (this.User != null && !this.User.Equals(input.User))) return false;
+            if (this.Role != input.Role || (this.Role != null && !this.Role.Equals(input.Role))) return false;
+            if (this.Group != input.Group || (this.Group != null && !this.Group.Equals(input.Group))) return false;
+            if (this.Agency != input.Agency || (this.Agency != null && !this.Agency.Equals(input.Agency))) return false;
+            if (this.Scope != input.Scope || (this.Scope != null && !this.Scope.Equals(input.Scope))) return false;
+            if (this.IsInherited != input.IsInherited || (this.IsInherited != null && !this.IsInherited.Equals(input.IsInherited))) return false;
 
-            return 
-                (
-                    this.User == input.User ||
-                    (this.User != null &&
-                    this.User.Equals(input.User))
-                ) && 
-                (
-                    this.Role == input.Role ||
-                    (this.Role != null &&
-                    this.Role.Equals(input.Role))
-                ) && 
-                (
-                    this.Group == input.Group ||
-                    (this.Group != null &&
-                    this.Group.Equals(input.Group))
-                ) && 
-                (
-                    this.Agency == input.Agency ||
-                    (this.Agency != null &&
-                    this.Agency.Equals(input.Agency))
-                ) && 
-                (
-                    this.Scope == input.Scope ||
-                    (this.Scope != null &&
-                    this.Scope.Equals(input.Scope))
-                ) && 
-                (
-                    this.IsInherited == input.IsInherited ||
-                    (this.IsInherited != null &&
-                    this.IsInherited.Equals(input.IsInherited))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.User != null)
-                    hashCode = hashCode * 59 + this.User.GetHashCode();
-                if (this.Role != null)
-                    hashCode = hashCode * 59 + this.Role.GetHashCode();
-                if (this.Group != null)
-                    hashCode = hashCode * 59 + this.Group.GetHashCode();
-                if (this.Agency != null)
-                    hashCode = hashCode * 59 + this.Agency.GetHashCode();
-                if (this.Scope != null)
-                    hashCode = hashCode * 59 + this.Scope.GetHashCode();
-                if (this.IsInherited != null)
-                    hashCode = hashCode * 59 + this.IsInherited.GetHashCode();
+                var hashCode = 41;
+                if (this.User != null) hashCode = hashCode * 59 + this.User.GetHashCode();
+                if (this.Role != null) hashCode = hashCode * 59 + this.Role.GetHashCode();
+                if (this.Group != null) hashCode = hashCode * 59 + this.Group.GetHashCode();
+                if (this.Agency != null) hashCode = hashCode * 59 + this.Agency.GetHashCode();
+                if (this.Scope != null) hashCode = hashCode * 59 + this.Scope.GetHashCode();
+                if (this.IsInherited != null) hashCode = hashCode * 59 + this.IsInherited.GetHashCode();
                 return hashCode;
             }
         }

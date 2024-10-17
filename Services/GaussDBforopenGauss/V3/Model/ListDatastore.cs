@@ -84,41 +84,15 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ListDatastore input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.CompleteVersion != input.CompleteVersion || (this.CompleteVersion != null && !this.CompleteVersion.Equals(input.CompleteVersion))) return false;
+            if (this.HotfixVersions != input.HotfixVersions || (this.HotfixVersions != null && !this.HotfixVersions.Equals(input.HotfixVersions))) return false;
+            if (this.TargetVersion != input.TargetVersion || (this.TargetVersion != null && !this.TargetVersion.Equals(input.TargetVersion))) return false;
+            if (this.HotfixFinishedTimes != input.HotfixFinishedTimes || (this.HotfixFinishedTimes != null && input.HotfixFinishedTimes != null && !this.HotfixFinishedTimes.SequenceEqual(input.HotfixFinishedTimes))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.CompleteVersion == input.CompleteVersion ||
-                    (this.CompleteVersion != null &&
-                    this.CompleteVersion.Equals(input.CompleteVersion))
-                ) && 
-                (
-                    this.HotfixVersions == input.HotfixVersions ||
-                    (this.HotfixVersions != null &&
-                    this.HotfixVersions.Equals(input.HotfixVersions))
-                ) && 
-                (
-                    this.TargetVersion == input.TargetVersion ||
-                    (this.TargetVersion != null &&
-                    this.TargetVersion.Equals(input.TargetVersion))
-                ) && 
-                (
-                    this.HotfixFinishedTimes == input.HotfixFinishedTimes ||
-                    this.HotfixFinishedTimes != null &&
-                    input.HotfixFinishedTimes != null &&
-                    this.HotfixFinishedTimes.SequenceEqual(input.HotfixFinishedTimes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -128,19 +102,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.CompleteVersion != null)
-                    hashCode = hashCode * 59 + this.CompleteVersion.GetHashCode();
-                if (this.HotfixVersions != null)
-                    hashCode = hashCode * 59 + this.HotfixVersions.GetHashCode();
-                if (this.TargetVersion != null)
-                    hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
-                if (this.HotfixFinishedTimes != null)
-                    hashCode = hashCode * 59 + this.HotfixFinishedTimes.GetHashCode();
+                var hashCode = 41;
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.CompleteVersion != null) hashCode = hashCode * 59 + this.CompleteVersion.GetHashCode();
+                if (this.HotfixVersions != null) hashCode = hashCode * 59 + this.HotfixVersions.GetHashCode();
+                if (this.TargetVersion != null) hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
+                if (this.HotfixFinishedTimes != null) hashCode = hashCode * 59 + this.HotfixFinishedTimes.GetHashCode();
                 return hashCode;
             }
         }

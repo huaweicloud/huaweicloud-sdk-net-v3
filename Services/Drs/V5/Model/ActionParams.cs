@@ -119,66 +119,20 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ActionParams input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Endpoints != input.Endpoints || (this.Endpoints != null && input.Endpoints != null && !this.Endpoints.SequenceEqual(input.Endpoints))) return false;
+            if (this.PrecheckMode != input.PrecheckMode || (this.PrecheckMode != null && !this.PrecheckMode.Equals(input.PrecheckMode))) return false;
+            if (this.SkipPrecheckInfo != input.SkipPrecheckInfo || (this.SkipPrecheckInfo != null && !this.SkipPrecheckInfo.Equals(input.SkipPrecheckInfo))) return false;
+            if (this.PauseMode != input.PauseMode || (this.PauseMode != null && !this.PauseMode.Equals(input.PauseMode))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.CompareTaskParam != input.CompareTaskParam || (this.CompareTaskParam != null && !this.CompareTaskParam.Equals(input.CompareTaskParam))) return false;
+            if (this.IsSyncReEdit != input.IsSyncReEdit || (this.IsSyncReEdit != null && !this.IsSyncReEdit.Equals(input.IsSyncReEdit))) return false;
+            if (this.IsOnlyInitTask != input.IsOnlyInitTask || (this.IsOnlyInitTask != null && !this.IsOnlyInitTask.Equals(input.IsOnlyInitTask))) return false;
+            if (this.ForceDelete != input.ForceDelete || (this.ForceDelete != null && !this.ForceDelete.Equals(input.ForceDelete))) return false;
+            if (this.PublicIpConfig != input.PublicIpConfig || (this.PublicIpConfig != null && !this.PublicIpConfig.Equals(input.PublicIpConfig))) return false;
+            if (this.ReplayConfig != input.ReplayConfig || (this.ReplayConfig != null && !this.ReplayConfig.Equals(input.ReplayConfig))) return false;
 
-            return 
-                (
-                    this.Endpoints == input.Endpoints ||
-                    this.Endpoints != null &&
-                    input.Endpoints != null &&
-                    this.Endpoints.SequenceEqual(input.Endpoints)
-                ) && 
-                (
-                    this.PrecheckMode == input.PrecheckMode ||
-                    (this.PrecheckMode != null &&
-                    this.PrecheckMode.Equals(input.PrecheckMode))
-                ) && 
-                (
-                    this.SkipPrecheckInfo == input.SkipPrecheckInfo ||
-                    (this.SkipPrecheckInfo != null &&
-                    this.SkipPrecheckInfo.Equals(input.SkipPrecheckInfo))
-                ) && 
-                (
-                    this.PauseMode == input.PauseMode ||
-                    (this.PauseMode != null &&
-                    this.PauseMode.Equals(input.PauseMode))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.CompareTaskParam == input.CompareTaskParam ||
-                    (this.CompareTaskParam != null &&
-                    this.CompareTaskParam.Equals(input.CompareTaskParam))
-                ) && 
-                (
-                    this.IsSyncReEdit == input.IsSyncReEdit ||
-                    (this.IsSyncReEdit != null &&
-                    this.IsSyncReEdit.Equals(input.IsSyncReEdit))
-                ) && 
-                (
-                    this.IsOnlyInitTask == input.IsOnlyInitTask ||
-                    (this.IsOnlyInitTask != null &&
-                    this.IsOnlyInitTask.Equals(input.IsOnlyInitTask))
-                ) && 
-                (
-                    this.ForceDelete == input.ForceDelete ||
-                    (this.ForceDelete != null &&
-                    this.ForceDelete.Equals(input.ForceDelete))
-                ) && 
-                (
-                    this.PublicIpConfig == input.PublicIpConfig ||
-                    (this.PublicIpConfig != null &&
-                    this.PublicIpConfig.Equals(input.PublicIpConfig))
-                ) && 
-                (
-                    this.ReplayConfig == input.ReplayConfig ||
-                    (this.ReplayConfig != null &&
-                    this.ReplayConfig.Equals(input.ReplayConfig))
-                );
+            return true;
         }
 
         /// <summary>
@@ -188,29 +142,18 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Endpoints != null)
-                    hashCode = hashCode * 59 + this.Endpoints.GetHashCode();
-                if (this.PrecheckMode != null)
-                    hashCode = hashCode * 59 + this.PrecheckMode.GetHashCode();
-                if (this.SkipPrecheckInfo != null)
-                    hashCode = hashCode * 59 + this.SkipPrecheckInfo.GetHashCode();
-                if (this.PauseMode != null)
-                    hashCode = hashCode * 59 + this.PauseMode.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.CompareTaskParam != null)
-                    hashCode = hashCode * 59 + this.CompareTaskParam.GetHashCode();
-                if (this.IsSyncReEdit != null)
-                    hashCode = hashCode * 59 + this.IsSyncReEdit.GetHashCode();
-                if (this.IsOnlyInitTask != null)
-                    hashCode = hashCode * 59 + this.IsOnlyInitTask.GetHashCode();
-                if (this.ForceDelete != null)
-                    hashCode = hashCode * 59 + this.ForceDelete.GetHashCode();
-                if (this.PublicIpConfig != null)
-                    hashCode = hashCode * 59 + this.PublicIpConfig.GetHashCode();
-                if (this.ReplayConfig != null)
-                    hashCode = hashCode * 59 + this.ReplayConfig.GetHashCode();
+                var hashCode = 41;
+                if (this.Endpoints != null) hashCode = hashCode * 59 + this.Endpoints.GetHashCode();
+                if (this.PrecheckMode != null) hashCode = hashCode * 59 + this.PrecheckMode.GetHashCode();
+                if (this.SkipPrecheckInfo != null) hashCode = hashCode * 59 + this.SkipPrecheckInfo.GetHashCode();
+                if (this.PauseMode != null) hashCode = hashCode * 59 + this.PauseMode.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.CompareTaskParam != null) hashCode = hashCode * 59 + this.CompareTaskParam.GetHashCode();
+                if (this.IsSyncReEdit != null) hashCode = hashCode * 59 + this.IsSyncReEdit.GetHashCode();
+                if (this.IsOnlyInitTask != null) hashCode = hashCode * 59 + this.IsOnlyInitTask.GetHashCode();
+                if (this.ForceDelete != null) hashCode = hashCode * 59 + this.ForceDelete.GetHashCode();
+                if (this.PublicIpConfig != null) hashCode = hashCode * 59 + this.PublicIpConfig.GetHashCode();
+                if (this.ReplayConfig != null) hashCode = hashCode * 59 + this.ReplayConfig.GetHashCode();
                 return hashCode;
             }
         }

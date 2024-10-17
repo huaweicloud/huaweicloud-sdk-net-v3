@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(ThailandLicensePlateItem input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PlateNumber != input.PlateNumber || (this.PlateNumber != null && !this.PlateNumber.Equals(input.PlateNumber))) return false;
+            if (this.PlateLocation != input.PlateLocation || (this.PlateLocation != null && input.PlateLocation != null && !this.PlateLocation.SequenceEqual(input.PlateLocation))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
+            if (this.Province != input.Province || (this.Province != null && !this.Province.Equals(input.Province))) return false;
 
-            return 
-                (
-                    this.PlateNumber == input.PlateNumber ||
-                    (this.PlateNumber != null &&
-                    this.PlateNumber.Equals(input.PlateNumber))
-                ) && 
-                (
-                    this.PlateLocation == input.PlateLocation ||
-                    this.PlateLocation != null &&
-                    input.PlateLocation != null &&
-                    this.PlateLocation.SequenceEqual(input.PlateLocation)
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                ) && 
-                (
-                    this.Province == input.Province ||
-                    (this.Province != null &&
-                    this.Province.Equals(input.Province))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PlateNumber != null)
-                    hashCode = hashCode * 59 + this.PlateNumber.GetHashCode();
-                if (this.PlateLocation != null)
-                    hashCode = hashCode * 59 + this.PlateLocation.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
-                if (this.Province != null)
-                    hashCode = hashCode * 59 + this.Province.GetHashCode();
+                var hashCode = 41;
+                if (this.PlateNumber != null) hashCode = hashCode * 59 + this.PlateNumber.GetHashCode();
+                if (this.PlateLocation != null) hashCode = hashCode * 59 + this.PlateLocation.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                if (this.Province != null) hashCode = hashCode * 59 + this.Province.GetHashCode();
                 return hashCode;
             }
         }

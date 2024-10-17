@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         /// </summary>
         public bool Equals(PackageCard input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.TagName != input.TagName || (this.TagName != null && !this.TagName.Equals(input.TagName))) return false;
+            if (this.School != input.School || (this.School != null && !this.School.Equals(input.School))) return false;
+            if (this.TeacherName != input.TeacherName || (this.TeacherName != null && !this.TeacherName.Equals(input.TeacherName))) return false;
+            if (this.OrderCount != input.OrderCount || (this.OrderCount != null && !this.OrderCount.Equals(input.OrderCount))) return false;
+            if (this.ImageUrl != input.ImageUrl || (this.ImageUrl != null && !this.ImageUrl.Equals(input.ImageUrl))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.TagName == input.TagName ||
-                    (this.TagName != null &&
-                    this.TagName.Equals(input.TagName))
-                ) && 
-                (
-                    this.School == input.School ||
-                    (this.School != null &&
-                    this.School.Equals(input.School))
-                ) && 
-                (
-                    this.TeacherName == input.TeacherName ||
-                    (this.TeacherName != null &&
-                    this.TeacherName.Equals(input.TeacherName))
-                ) && 
-                (
-                    this.OrderCount == input.OrderCount ||
-                    (this.OrderCount != null &&
-                    this.OrderCount.Equals(input.OrderCount))
-                ) && 
-                (
-                    this.ImageUrl == input.ImageUrl ||
-                    (this.ImageUrl != null &&
-                    this.ImageUrl.Equals(input.ImageUrl))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.TagName != null)
-                    hashCode = hashCode * 59 + this.TagName.GetHashCode();
-                if (this.School != null)
-                    hashCode = hashCode * 59 + this.School.GetHashCode();
-                if (this.TeacherName != null)
-                    hashCode = hashCode * 59 + this.TeacherName.GetHashCode();
-                if (this.OrderCount != null)
-                    hashCode = hashCode * 59 + this.OrderCount.GetHashCode();
-                if (this.ImageUrl != null)
-                    hashCode = hashCode * 59 + this.ImageUrl.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.TagName != null) hashCode = hashCode * 59 + this.TagName.GetHashCode();
+                if (this.School != null) hashCode = hashCode * 59 + this.School.GetHashCode();
+                if (this.TeacherName != null) hashCode = hashCode * 59 + this.TeacherName.GetHashCode();
+                if (this.OrderCount != null) hashCode = hashCode * 59 + this.OrderCount.GetHashCode();
+                if (this.ImageUrl != null) hashCode = hashCode * 59 + this.ImageUrl.GetHashCode();
                 return hashCode;
             }
         }

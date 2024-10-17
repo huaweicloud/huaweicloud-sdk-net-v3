@@ -77,36 +77,14 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(EventQueryParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TimeRange != input.TimeRange || (this.TimeRange != null && !this.TimeRange.Equals(input.TimeRange))) return false;
+            if (this.Step != input.Step || (this.Step != null && !this.Step.Equals(input.Step))) return false;
+            if (this.Search != input.Search || (this.Search != null && !this.Search.Equals(input.Search))) return false;
+            if (this.Sort != input.Sort || (this.Sort != null && !this.Sort.Equals(input.Sort))) return false;
+            if (this.MetadataRelation != input.MetadataRelation || (this.MetadataRelation != null && input.MetadataRelation != null && !this.MetadataRelation.SequenceEqual(input.MetadataRelation))) return false;
 
-            return 
-                (
-                    this.TimeRange == input.TimeRange ||
-                    (this.TimeRange != null &&
-                    this.TimeRange.Equals(input.TimeRange))
-                ) && 
-                (
-                    this.Step == input.Step ||
-                    (this.Step != null &&
-                    this.Step.Equals(input.Step))
-                ) && 
-                (
-                    this.Search == input.Search ||
-                    (this.Search != null &&
-                    this.Search.Equals(input.Search))
-                ) && 
-                (
-                    this.Sort == input.Sort ||
-                    (this.Sort != null &&
-                    this.Sort.Equals(input.Sort))
-                ) && 
-                (
-                    this.MetadataRelation == input.MetadataRelation ||
-                    this.MetadataRelation != null &&
-                    input.MetadataRelation != null &&
-                    this.MetadataRelation.SequenceEqual(input.MetadataRelation)
-                );
+            return true;
         }
 
         /// <summary>
@@ -116,17 +94,12 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TimeRange != null)
-                    hashCode = hashCode * 59 + this.TimeRange.GetHashCode();
-                if (this.Step != null)
-                    hashCode = hashCode * 59 + this.Step.GetHashCode();
-                if (this.Search != null)
-                    hashCode = hashCode * 59 + this.Search.GetHashCode();
-                if (this.Sort != null)
-                    hashCode = hashCode * 59 + this.Sort.GetHashCode();
-                if (this.MetadataRelation != null)
-                    hashCode = hashCode * 59 + this.MetadataRelation.GetHashCode();
+                var hashCode = 41;
+                if (this.TimeRange != null) hashCode = hashCode * 59 + this.TimeRange.GetHashCode();
+                if (this.Step != null) hashCode = hashCode * 59 + this.Step.GetHashCode();
+                if (this.Search != null) hashCode = hashCode * 59 + this.Search.GetHashCode();
+                if (this.Sort != null) hashCode = hashCode * 59 + this.Sort.GetHashCode();
+                if (this.MetadataRelation != null) hashCode = hashCode * 59 + this.MetadataRelation.GetHashCode();
                 return hashCode;
             }
         }

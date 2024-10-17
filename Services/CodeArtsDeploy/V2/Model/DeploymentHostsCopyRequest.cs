@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(DeploymentHostsCopyRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HostUuids != input.HostUuids || (this.HostUuids != null && input.HostUuids != null && !this.HostUuids.SequenceEqual(input.HostUuids))) return false;
+            if (this.TargetGroupId != input.TargetGroupId || (this.TargetGroupId != null && !this.TargetGroupId.Equals(input.TargetGroupId))) return false;
 
-            return 
-                (
-                    this.HostUuids == input.HostUuids ||
-                    this.HostUuids != null &&
-                    input.HostUuids != null &&
-                    this.HostUuids.SequenceEqual(input.HostUuids)
-                ) && 
-                (
-                    this.TargetGroupId == input.TargetGroupId ||
-                    (this.TargetGroupId != null &&
-                    this.TargetGroupId.Equals(input.TargetGroupId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HostUuids != null)
-                    hashCode = hashCode * 59 + this.HostUuids.GetHashCode();
-                if (this.TargetGroupId != null)
-                    hashCode = hashCode * 59 + this.TargetGroupId.GetHashCode();
+                var hashCode = 41;
+                if (this.HostUuids != null) hashCode = hashCode * 59 + this.HostUuids.GetHashCode();
+                if (this.TargetGroupId != null) hashCode = hashCode * 59 + this.TargetGroupId.GetHashCode();
                 return hashCode;
             }
         }

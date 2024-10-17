@@ -175,15 +175,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(JobNodeSpecInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NodeType != input.NodeType) return false;
 
-            return 
-                (
-                    this.NodeType == input.NodeType ||
-                    (this.NodeType != null &&
-                    this.NodeType.Equals(input.NodeType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -193,9 +188,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NodeType != null)
-                    hashCode = hashCode * 59 + this.NodeType.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.NodeType.GetHashCode();
                 return hashCode;
             }
         }

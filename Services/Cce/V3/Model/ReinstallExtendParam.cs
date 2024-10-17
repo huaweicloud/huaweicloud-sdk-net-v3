@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ReinstallExtendParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AlphaCceNodeImageID != input.AlphaCceNodeImageID || (this.AlphaCceNodeImageID != null && !this.AlphaCceNodeImageID.Equals(input.AlphaCceNodeImageID))) return false;
 
-            return 
-                (
-                    this.AlphaCceNodeImageID == input.AlphaCceNodeImageID ||
-                    (this.AlphaCceNodeImageID != null &&
-                    this.AlphaCceNodeImageID.Equals(input.AlphaCceNodeImageID))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AlphaCceNodeImageID != null)
-                    hashCode = hashCode * 59 + this.AlphaCceNodeImageID.GetHashCode();
+                var hashCode = 41;
+                if (this.AlphaCceNodeImageID != null) hashCode = hashCode * 59 + this.AlphaCceNodeImageID.GetHashCode();
                 return hashCode;
             }
         }

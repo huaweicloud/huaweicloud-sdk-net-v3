@@ -84,41 +84,15 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(SmnResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SentTime != input.SentTime || (this.SentTime != null && !this.SentTime.Equals(input.SentTime))) return false;
+            if (this.SmnNotifiedHistory != input.SmnNotifiedHistory || (this.SmnNotifiedHistory != null && input.SmnNotifiedHistory != null && !this.SmnNotifiedHistory.SequenceEqual(input.SmnNotifiedHistory))) return false;
+            if (this.SmnRequestId != input.SmnRequestId || (this.SmnRequestId != null && !this.SmnRequestId.Equals(input.SmnRequestId))) return false;
+            if (this.SmnResponseBody != input.SmnResponseBody || (this.SmnResponseBody != null && !this.SmnResponseBody.Equals(input.SmnResponseBody))) return false;
+            if (this.SmnResponseCode != input.SmnResponseCode || (this.SmnResponseCode != null && !this.SmnResponseCode.Equals(input.SmnResponseCode))) return false;
+            if (this.SmnTopic != input.SmnTopic || (this.SmnTopic != null && !this.SmnTopic.Equals(input.SmnTopic))) return false;
 
-            return 
-                (
-                    this.SentTime == input.SentTime ||
-                    (this.SentTime != null &&
-                    this.SentTime.Equals(input.SentTime))
-                ) && 
-                (
-                    this.SmnNotifiedHistory == input.SmnNotifiedHistory ||
-                    this.SmnNotifiedHistory != null &&
-                    input.SmnNotifiedHistory != null &&
-                    this.SmnNotifiedHistory.SequenceEqual(input.SmnNotifiedHistory)
-                ) && 
-                (
-                    this.SmnRequestId == input.SmnRequestId ||
-                    (this.SmnRequestId != null &&
-                    this.SmnRequestId.Equals(input.SmnRequestId))
-                ) && 
-                (
-                    this.SmnResponseBody == input.SmnResponseBody ||
-                    (this.SmnResponseBody != null &&
-                    this.SmnResponseBody.Equals(input.SmnResponseBody))
-                ) && 
-                (
-                    this.SmnResponseCode == input.SmnResponseCode ||
-                    (this.SmnResponseCode != null &&
-                    this.SmnResponseCode.Equals(input.SmnResponseCode))
-                ) && 
-                (
-                    this.SmnTopic == input.SmnTopic ||
-                    (this.SmnTopic != null &&
-                    this.SmnTopic.Equals(input.SmnTopic))
-                );
+            return true;
         }
 
         /// <summary>
@@ -128,19 +102,13 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SentTime != null)
-                    hashCode = hashCode * 59 + this.SentTime.GetHashCode();
-                if (this.SmnNotifiedHistory != null)
-                    hashCode = hashCode * 59 + this.SmnNotifiedHistory.GetHashCode();
-                if (this.SmnRequestId != null)
-                    hashCode = hashCode * 59 + this.SmnRequestId.GetHashCode();
-                if (this.SmnResponseBody != null)
-                    hashCode = hashCode * 59 + this.SmnResponseBody.GetHashCode();
-                if (this.SmnResponseCode != null)
-                    hashCode = hashCode * 59 + this.SmnResponseCode.GetHashCode();
-                if (this.SmnTopic != null)
-                    hashCode = hashCode * 59 + this.SmnTopic.GetHashCode();
+                var hashCode = 41;
+                if (this.SentTime != null) hashCode = hashCode * 59 + this.SentTime.GetHashCode();
+                if (this.SmnNotifiedHistory != null) hashCode = hashCode * 59 + this.SmnNotifiedHistory.GetHashCode();
+                if (this.SmnRequestId != null) hashCode = hashCode * 59 + this.SmnRequestId.GetHashCode();
+                if (this.SmnResponseBody != null) hashCode = hashCode * 59 + this.SmnResponseBody.GetHashCode();
+                if (this.SmnResponseCode != null) hashCode = hashCode * 59 + this.SmnResponseCode.GetHashCode();
+                if (this.SmnTopic != null) hashCode = hashCode * 59 + this.SmnTopic.GetHashCode();
                 return hashCode;
             }
         }

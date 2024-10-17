@@ -232,60 +232,19 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(GetTaskDetailListRspJobs input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.Created != input.Created || (this.Created != null && !this.Created.Equals(input.Created))) return false;
+            if (this.Ended != input.Ended || (this.Ended != null && !this.Ended.Equals(input.Ended))) return false;
+            if (this.Process != input.Process || (this.Process != null && !this.Process.Equals(input.Process))) return false;
+            if (this.TaskDetail != input.TaskDetail || (this.TaskDetail != null && !this.TaskDetail.Equals(input.TaskDetail))) return false;
+            if (this.Instance != input.Instance || (this.Instance != null && !this.Instance.Equals(input.Instance))) return false;
+            if (this.Entities != input.Entities || (this.Entities != null && !this.Entities.Equals(input.Entities))) return false;
+            if (this.FailReason != input.FailReason || (this.FailReason != null && !this.FailReason.Equals(input.FailReason))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Created == input.Created ||
-                    (this.Created != null &&
-                    this.Created.Equals(input.Created))
-                ) && 
-                (
-                    this.Ended == input.Ended ||
-                    (this.Ended != null &&
-                    this.Ended.Equals(input.Ended))
-                ) && 
-                (
-                    this.Process == input.Process ||
-                    (this.Process != null &&
-                    this.Process.Equals(input.Process))
-                ) && 
-                (
-                    this.TaskDetail == input.TaskDetail ||
-                    (this.TaskDetail != null &&
-                    this.TaskDetail.Equals(input.TaskDetail))
-                ) && 
-                (
-                    this.Instance == input.Instance ||
-                    (this.Instance != null &&
-                    this.Instance.Equals(input.Instance))
-                ) && 
-                (
-                    this.Entities == input.Entities ||
-                    (this.Entities != null &&
-                    this.Entities.Equals(input.Entities))
-                ) && 
-                (
-                    this.FailReason == input.FailReason ||
-                    (this.FailReason != null &&
-                    this.FailReason.Equals(input.FailReason))
-                );
+            return true;
         }
 
         /// <summary>
@@ -295,27 +254,17 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Created != null)
-                    hashCode = hashCode * 59 + this.Created.GetHashCode();
-                if (this.Ended != null)
-                    hashCode = hashCode * 59 + this.Ended.GetHashCode();
-                if (this.Process != null)
-                    hashCode = hashCode * 59 + this.Process.GetHashCode();
-                if (this.TaskDetail != null)
-                    hashCode = hashCode * 59 + this.TaskDetail.GetHashCode();
-                if (this.Instance != null)
-                    hashCode = hashCode * 59 + this.Instance.GetHashCode();
-                if (this.Entities != null)
-                    hashCode = hashCode * 59 + this.Entities.GetHashCode();
-                if (this.FailReason != null)
-                    hashCode = hashCode * 59 + this.FailReason.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Created != null) hashCode = hashCode * 59 + this.Created.GetHashCode();
+                if (this.Ended != null) hashCode = hashCode * 59 + this.Ended.GetHashCode();
+                if (this.Process != null) hashCode = hashCode * 59 + this.Process.GetHashCode();
+                if (this.TaskDetail != null) hashCode = hashCode * 59 + this.TaskDetail.GetHashCode();
+                if (this.Instance != null) hashCode = hashCode * 59 + this.Instance.GetHashCode();
+                if (this.Entities != null) hashCode = hashCode * 59 + this.Entities.GetHashCode();
+                if (this.FailReason != null) hashCode = hashCode * 59 + this.FailReason.GetHashCode();
                 return hashCode;
             }
         }

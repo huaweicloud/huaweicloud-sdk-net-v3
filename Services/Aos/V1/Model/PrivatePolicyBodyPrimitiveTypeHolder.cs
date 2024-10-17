@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(PrivatePolicyBodyPrimitiveTypeHolder input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PolicyBody != input.PolicyBody || (this.PolicyBody != null && !this.PolicyBody.Equals(input.PolicyBody))) return false;
 
-            return 
-                (
-                    this.PolicyBody == input.PolicyBody ||
-                    (this.PolicyBody != null &&
-                    this.PolicyBody.Equals(input.PolicyBody))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PolicyBody != null)
-                    hashCode = hashCode * 59 + this.PolicyBody.GetHashCode();
+                var hashCode = 41;
+                if (this.PolicyBody != null) hashCode = hashCode * 59 + this.PolicyBody.GetHashCode();
                 return hashCode;
             }
         }

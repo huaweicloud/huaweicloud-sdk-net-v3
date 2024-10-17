@@ -172,20 +172,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(DeleteScalingGroupRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ScalingGroupId != input.ScalingGroupId || (this.ScalingGroupId != null && !this.ScalingGroupId.Equals(input.ScalingGroupId))) return false;
+            if (this.ForceDelete != input.ForceDelete) return false;
 
-            return 
-                (
-                    this.ScalingGroupId == input.ScalingGroupId ||
-                    (this.ScalingGroupId != null &&
-                    this.ScalingGroupId.Equals(input.ScalingGroupId))
-                ) && 
-                (
-                    this.ForceDelete == input.ForceDelete ||
-                    (this.ForceDelete != null &&
-                    this.ForceDelete.Equals(input.ForceDelete))
-                );
+            return true;
         }
 
         /// <summary>
@@ -195,11 +186,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ScalingGroupId != null)
-                    hashCode = hashCode * 59 + this.ScalingGroupId.GetHashCode();
-                if (this.ForceDelete != null)
-                    hashCode = hashCode * 59 + this.ForceDelete.GetHashCode();
+                var hashCode = 41;
+                if (this.ScalingGroupId != null) hashCode = hashCode * 59 + this.ScalingGroupId.GetHashCode();
+                hashCode = hashCode * 59 + this.ForceDelete.GetHashCode();
                 return hashCode;
             }
         }

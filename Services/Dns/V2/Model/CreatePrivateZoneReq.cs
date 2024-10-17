@@ -105,56 +105,18 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public bool Equals(CreatePrivateZoneReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.ZoneType != input.ZoneType || (this.ZoneType != null && !this.ZoneType.Equals(input.ZoneType))) return false;
+            if (this.Email != input.Email || (this.Email != null && !this.Email.Equals(input.Email))) return false;
+            if (this.Ttl != input.Ttl || (this.Ttl != null && !this.Ttl.Equals(input.Ttl))) return false;
+            if (this.Router != input.Router || (this.Router != null && !this.Router.Equals(input.Router))) return false;
+            if (this.ProxyPattern != input.ProxyPattern || (this.ProxyPattern != null && !this.ProxyPattern.Equals(input.ProxyPattern))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.ZoneType == input.ZoneType ||
-                    (this.ZoneType != null &&
-                    this.ZoneType.Equals(input.ZoneType))
-                ) && 
-                (
-                    this.Email == input.Email ||
-                    (this.Email != null &&
-                    this.Email.Equals(input.Email))
-                ) && 
-                (
-                    this.Ttl == input.Ttl ||
-                    (this.Ttl != null &&
-                    this.Ttl.Equals(input.Ttl))
-                ) && 
-                (
-                    this.Router == input.Router ||
-                    (this.Router != null &&
-                    this.Router.Equals(input.Router))
-                ) && 
-                (
-                    this.ProxyPattern == input.ProxyPattern ||
-                    (this.ProxyPattern != null &&
-                    this.ProxyPattern.Equals(input.ProxyPattern))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -164,25 +126,16 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.ZoneType != null)
-                    hashCode = hashCode * 59 + this.ZoneType.GetHashCode();
-                if (this.Email != null)
-                    hashCode = hashCode * 59 + this.Email.GetHashCode();
-                if (this.Ttl != null)
-                    hashCode = hashCode * 59 + this.Ttl.GetHashCode();
-                if (this.Router != null)
-                    hashCode = hashCode * 59 + this.Router.GetHashCode();
-                if (this.ProxyPattern != null)
-                    hashCode = hashCode * 59 + this.ProxyPattern.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.ZoneType != null) hashCode = hashCode * 59 + this.ZoneType.GetHashCode();
+                if (this.Email != null) hashCode = hashCode * 59 + this.Email.GetHashCode();
+                if (this.Ttl != null) hashCode = hashCode * 59 + this.Ttl.GetHashCode();
+                if (this.Router != null) hashCode = hashCode * 59 + this.Router.GetHashCode();
+                if (this.ProxyPattern != null) hashCode = hashCode * 59 + this.ProxyPattern.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

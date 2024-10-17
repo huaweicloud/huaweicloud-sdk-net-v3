@@ -285,25 +285,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(UpdateWidgetInfoProperties input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Filter != input.Filter) return false;
+            if (this.TopN != input.TopN || (this.TopN != null && !this.TopN.Equals(input.TopN))) return false;
+            if (this.Order != input.Order) return false;
 
-            return 
-                (
-                    this.Filter == input.Filter ||
-                    (this.Filter != null &&
-                    this.Filter.Equals(input.Filter))
-                ) && 
-                (
-                    this.TopN == input.TopN ||
-                    (this.TopN != null &&
-                    this.TopN.Equals(input.TopN))
-                ) && 
-                (
-                    this.Order == input.Order ||
-                    (this.Order != null &&
-                    this.Order.Equals(input.Order))
-                );
+            return true;
         }
 
         /// <summary>
@@ -313,13 +300,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Filter != null)
-                    hashCode = hashCode * 59 + this.Filter.GetHashCode();
-                if (this.TopN != null)
-                    hashCode = hashCode * 59 + this.TopN.GetHashCode();
-                if (this.Order != null)
-                    hashCode = hashCode * 59 + this.Order.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Filter.GetHashCode();
+                if (this.TopN != null) hashCode = hashCode * 59 + this.TopN.GetHashCode();
+                hashCode = hashCode * 59 + this.Order.GetHashCode();
                 return hashCode;
             }
         }

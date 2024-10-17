@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(LoginPolicyResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AccountValidityPeriod != input.AccountValidityPeriod || (this.AccountValidityPeriod != null && !this.AccountValidityPeriod.Equals(input.AccountValidityPeriod))) return false;
+            if (this.CustomInfoForLogin != input.CustomInfoForLogin || (this.CustomInfoForLogin != null && !this.CustomInfoForLogin.Equals(input.CustomInfoForLogin))) return false;
+            if (this.LockoutDuration != input.LockoutDuration || (this.LockoutDuration != null && !this.LockoutDuration.Equals(input.LockoutDuration))) return false;
+            if (this.LoginFailedTimes != input.LoginFailedTimes || (this.LoginFailedTimes != null && !this.LoginFailedTimes.Equals(input.LoginFailedTimes))) return false;
+            if (this.PeriodWithLoginFailures != input.PeriodWithLoginFailures || (this.PeriodWithLoginFailures != null && !this.PeriodWithLoginFailures.Equals(input.PeriodWithLoginFailures))) return false;
+            if (this.SessionTimeout != input.SessionTimeout || (this.SessionTimeout != null && !this.SessionTimeout.Equals(input.SessionTimeout))) return false;
+            if (this.ShowRecentLoginInfo != input.ShowRecentLoginInfo || (this.ShowRecentLoginInfo != null && !this.ShowRecentLoginInfo.Equals(input.ShowRecentLoginInfo))) return false;
 
-            return 
-                (
-                    this.AccountValidityPeriod == input.AccountValidityPeriod ||
-                    (this.AccountValidityPeriod != null &&
-                    this.AccountValidityPeriod.Equals(input.AccountValidityPeriod))
-                ) && 
-                (
-                    this.CustomInfoForLogin == input.CustomInfoForLogin ||
-                    (this.CustomInfoForLogin != null &&
-                    this.CustomInfoForLogin.Equals(input.CustomInfoForLogin))
-                ) && 
-                (
-                    this.LockoutDuration == input.LockoutDuration ||
-                    (this.LockoutDuration != null &&
-                    this.LockoutDuration.Equals(input.LockoutDuration))
-                ) && 
-                (
-                    this.LoginFailedTimes == input.LoginFailedTimes ||
-                    (this.LoginFailedTimes != null &&
-                    this.LoginFailedTimes.Equals(input.LoginFailedTimes))
-                ) && 
-                (
-                    this.PeriodWithLoginFailures == input.PeriodWithLoginFailures ||
-                    (this.PeriodWithLoginFailures != null &&
-                    this.PeriodWithLoginFailures.Equals(input.PeriodWithLoginFailures))
-                ) && 
-                (
-                    this.SessionTimeout == input.SessionTimeout ||
-                    (this.SessionTimeout != null &&
-                    this.SessionTimeout.Equals(input.SessionTimeout))
-                ) && 
-                (
-                    this.ShowRecentLoginInfo == input.ShowRecentLoginInfo ||
-                    (this.ShowRecentLoginInfo != null &&
-                    this.ShowRecentLoginInfo.Equals(input.ShowRecentLoginInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AccountValidityPeriod != null)
-                    hashCode = hashCode * 59 + this.AccountValidityPeriod.GetHashCode();
-                if (this.CustomInfoForLogin != null)
-                    hashCode = hashCode * 59 + this.CustomInfoForLogin.GetHashCode();
-                if (this.LockoutDuration != null)
-                    hashCode = hashCode * 59 + this.LockoutDuration.GetHashCode();
-                if (this.LoginFailedTimes != null)
-                    hashCode = hashCode * 59 + this.LoginFailedTimes.GetHashCode();
-                if (this.PeriodWithLoginFailures != null)
-                    hashCode = hashCode * 59 + this.PeriodWithLoginFailures.GetHashCode();
-                if (this.SessionTimeout != null)
-                    hashCode = hashCode * 59 + this.SessionTimeout.GetHashCode();
-                if (this.ShowRecentLoginInfo != null)
-                    hashCode = hashCode * 59 + this.ShowRecentLoginInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.AccountValidityPeriod != null) hashCode = hashCode * 59 + this.AccountValidityPeriod.GetHashCode();
+                if (this.CustomInfoForLogin != null) hashCode = hashCode * 59 + this.CustomInfoForLogin.GetHashCode();
+                if (this.LockoutDuration != null) hashCode = hashCode * 59 + this.LockoutDuration.GetHashCode();
+                if (this.LoginFailedTimes != null) hashCode = hashCode * 59 + this.LoginFailedTimes.GetHashCode();
+                if (this.PeriodWithLoginFailures != null) hashCode = hashCode * 59 + this.PeriodWithLoginFailures.GetHashCode();
+                if (this.SessionTimeout != null) hashCode = hashCode * 59 + this.SessionTimeout.GetHashCode();
+                if (this.ShowRecentLoginInfo != null) hashCode = hashCode * 59 + this.ShowRecentLoginInfo.GetHashCode();
                 return hashCode;
             }
         }

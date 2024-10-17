@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(VaultBatchUpdate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SmnNotify != input.SmnNotify || (this.SmnNotify != null && !this.SmnNotify.Equals(input.SmnNotify))) return false;
+            if (this.Threshold != input.Threshold || (this.Threshold != null && !this.Threshold.Equals(input.Threshold))) return false;
 
-            return 
-                (
-                    this.SmnNotify == input.SmnNotify ||
-                    (this.SmnNotify != null &&
-                    this.SmnNotify.Equals(input.SmnNotify))
-                ) && 
-                (
-                    this.Threshold == input.Threshold ||
-                    (this.Threshold != null &&
-                    this.Threshold.Equals(input.Threshold))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SmnNotify != null)
-                    hashCode = hashCode * 59 + this.SmnNotify.GetHashCode();
-                if (this.Threshold != null)
-                    hashCode = hashCode * 59 + this.Threshold.GetHashCode();
+                var hashCode = 41;
+                if (this.SmnNotify != null) hashCode = hashCode * 59 + this.SmnNotify.GetHashCode();
+                if (this.Threshold != null) hashCode = hashCode * 59 + this.Threshold.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(ListRestoreDatabasesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
+            if (this.DatabaseNames != input.DatabaseNames || (this.DatabaseNames != null && input.DatabaseNames != null && !this.DatabaseNames.SequenceEqual(input.DatabaseNames))) return false;
 
-            return 
-                (
-                    this.TotalCount == input.TotalCount ||
-                    (this.TotalCount != null &&
-                    this.TotalCount.Equals(input.TotalCount))
-                ) && 
-                (
-                    this.DatabaseNames == input.DatabaseNames ||
-                    this.DatabaseNames != null &&
-                    input.DatabaseNames != null &&
-                    this.DatabaseNames.SequenceEqual(input.DatabaseNames)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TotalCount != null)
-                    hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
-                if (this.DatabaseNames != null)
-                    hashCode = hashCode * 59 + this.DatabaseNames.GetHashCode();
+                var hashCode = 41;
+                if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
+                if (this.DatabaseNames != null) hashCode = hashCode * 59 + this.DatabaseNames.GetHashCode();
                 return hashCode;
             }
         }

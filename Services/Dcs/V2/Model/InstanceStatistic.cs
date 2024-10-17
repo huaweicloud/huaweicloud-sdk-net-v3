@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(InstanceStatistic input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InputKbps != input.InputKbps || (this.InputKbps != null && !this.InputKbps.Equals(input.InputKbps))) return false;
+            if (this.OutputKbps != input.OutputKbps || (this.OutputKbps != null && !this.OutputKbps.Equals(input.OutputKbps))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.Keys != input.Keys || (this.Keys != null && !this.Keys.Equals(input.Keys))) return false;
+            if (this.UsedMemory != input.UsedMemory || (this.UsedMemory != null && !this.UsedMemory.Equals(input.UsedMemory))) return false;
+            if (this.MaxMemory != input.MaxMemory || (this.MaxMemory != null && !this.MaxMemory.Equals(input.MaxMemory))) return false;
+            if (this.CmdGetCount != input.CmdGetCount || (this.CmdGetCount != null && !this.CmdGetCount.Equals(input.CmdGetCount))) return false;
+            if (this.CmdSetCount != input.CmdSetCount || (this.CmdSetCount != null && !this.CmdSetCount.Equals(input.CmdSetCount))) return false;
+            if (this.UsedCpu != input.UsedCpu || (this.UsedCpu != null && !this.UsedCpu.Equals(input.UsedCpu))) return false;
 
-            return 
-                (
-                    this.InputKbps == input.InputKbps ||
-                    (this.InputKbps != null &&
-                    this.InputKbps.Equals(input.InputKbps))
-                ) && 
-                (
-                    this.OutputKbps == input.OutputKbps ||
-                    (this.OutputKbps != null &&
-                    this.OutputKbps.Equals(input.OutputKbps))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.Keys == input.Keys ||
-                    (this.Keys != null &&
-                    this.Keys.Equals(input.Keys))
-                ) && 
-                (
-                    this.UsedMemory == input.UsedMemory ||
-                    (this.UsedMemory != null &&
-                    this.UsedMemory.Equals(input.UsedMemory))
-                ) && 
-                (
-                    this.MaxMemory == input.MaxMemory ||
-                    (this.MaxMemory != null &&
-                    this.MaxMemory.Equals(input.MaxMemory))
-                ) && 
-                (
-                    this.CmdGetCount == input.CmdGetCount ||
-                    (this.CmdGetCount != null &&
-                    this.CmdGetCount.Equals(input.CmdGetCount))
-                ) && 
-                (
-                    this.CmdSetCount == input.CmdSetCount ||
-                    (this.CmdSetCount != null &&
-                    this.CmdSetCount.Equals(input.CmdSetCount))
-                ) && 
-                (
-                    this.UsedCpu == input.UsedCpu ||
-                    (this.UsedCpu != null &&
-                    this.UsedCpu.Equals(input.UsedCpu))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InputKbps != null)
-                    hashCode = hashCode * 59 + this.InputKbps.GetHashCode();
-                if (this.OutputKbps != null)
-                    hashCode = hashCode * 59 + this.OutputKbps.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.Keys != null)
-                    hashCode = hashCode * 59 + this.Keys.GetHashCode();
-                if (this.UsedMemory != null)
-                    hashCode = hashCode * 59 + this.UsedMemory.GetHashCode();
-                if (this.MaxMemory != null)
-                    hashCode = hashCode * 59 + this.MaxMemory.GetHashCode();
-                if (this.CmdGetCount != null)
-                    hashCode = hashCode * 59 + this.CmdGetCount.GetHashCode();
-                if (this.CmdSetCount != null)
-                    hashCode = hashCode * 59 + this.CmdSetCount.GetHashCode();
-                if (this.UsedCpu != null)
-                    hashCode = hashCode * 59 + this.UsedCpu.GetHashCode();
+                var hashCode = 41;
+                if (this.InputKbps != null) hashCode = hashCode * 59 + this.InputKbps.GetHashCode();
+                if (this.OutputKbps != null) hashCode = hashCode * 59 + this.OutputKbps.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.Keys != null) hashCode = hashCode * 59 + this.Keys.GetHashCode();
+                if (this.UsedMemory != null) hashCode = hashCode * 59 + this.UsedMemory.GetHashCode();
+                if (this.MaxMemory != null) hashCode = hashCode * 59 + this.MaxMemory.GetHashCode();
+                if (this.CmdGetCount != null) hashCode = hashCode * 59 + this.CmdGetCount.GetHashCode();
+                if (this.CmdSetCount != null) hashCode = hashCode * 59 + this.CmdSetCount.GetHashCode();
+                if (this.UsedCpu != null) hashCode = hashCode * 59 + this.UsedCpu.GetHashCode();
                 return hashCode;
             }
         }

@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(VideoInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Width != input.Width || (this.Width != null && !this.Width.Equals(input.Width))) return false;
+            if (this.Height != input.Height || (this.Height != null && !this.Height.Equals(input.Height))) return false;
+            if (this.Bitrate != input.Bitrate || (this.Bitrate != null && !this.Bitrate.Equals(input.Bitrate))) return false;
+            if (this.BitrateBps != input.BitrateBps || (this.BitrateBps != null && !this.BitrateBps.Equals(input.BitrateBps))) return false;
+            if (this.FrameRate != input.FrameRate || (this.FrameRate != null && !this.FrameRate.Equals(input.FrameRate))) return false;
+            if (this.Codec != input.Codec || (this.Codec != null && !this.Codec.Equals(input.Codec))) return false;
 
-            return 
-                (
-                    this.Width == input.Width ||
-                    (this.Width != null &&
-                    this.Width.Equals(input.Width))
-                ) && 
-                (
-                    this.Height == input.Height ||
-                    (this.Height != null &&
-                    this.Height.Equals(input.Height))
-                ) && 
-                (
-                    this.Bitrate == input.Bitrate ||
-                    (this.Bitrate != null &&
-                    this.Bitrate.Equals(input.Bitrate))
-                ) && 
-                (
-                    this.BitrateBps == input.BitrateBps ||
-                    (this.BitrateBps != null &&
-                    this.BitrateBps.Equals(input.BitrateBps))
-                ) && 
-                (
-                    this.FrameRate == input.FrameRate ||
-                    (this.FrameRate != null &&
-                    this.FrameRate.Equals(input.FrameRate))
-                ) && 
-                (
-                    this.Codec == input.Codec ||
-                    (this.Codec != null &&
-                    this.Codec.Equals(input.Codec))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Width != null)
-                    hashCode = hashCode * 59 + this.Width.GetHashCode();
-                if (this.Height != null)
-                    hashCode = hashCode * 59 + this.Height.GetHashCode();
-                if (this.Bitrate != null)
-                    hashCode = hashCode * 59 + this.Bitrate.GetHashCode();
-                if (this.BitrateBps != null)
-                    hashCode = hashCode * 59 + this.BitrateBps.GetHashCode();
-                if (this.FrameRate != null)
-                    hashCode = hashCode * 59 + this.FrameRate.GetHashCode();
-                if (this.Codec != null)
-                    hashCode = hashCode * 59 + this.Codec.GetHashCode();
+                var hashCode = 41;
+                if (this.Width != null) hashCode = hashCode * 59 + this.Width.GetHashCode();
+                if (this.Height != null) hashCode = hashCode * 59 + this.Height.GetHashCode();
+                if (this.Bitrate != null) hashCode = hashCode * 59 + this.Bitrate.GetHashCode();
+                if (this.BitrateBps != null) hashCode = hashCode * 59 + this.BitrateBps.GetHashCode();
+                if (this.FrameRate != null) hashCode = hashCode * 59 + this.FrameRate.GetHashCode();
+                if (this.Codec != null) hashCode = hashCode * 59 + this.Codec.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,28 +63,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(RouteTableRouteAction input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Add != input.Add || (this.Add != null && input.Add != null && !this.Add.SequenceEqual(input.Add))) return false;
+            if (this.Mod != input.Mod || (this.Mod != null && input.Mod != null && !this.Mod.SequenceEqual(input.Mod))) return false;
+            if (this.Del != input.Del || (this.Del != null && input.Del != null && !this.Del.SequenceEqual(input.Del))) return false;
 
-            return 
-                (
-                    this.Add == input.Add ||
-                    this.Add != null &&
-                    input.Add != null &&
-                    this.Add.SequenceEqual(input.Add)
-                ) && 
-                (
-                    this.Mod == input.Mod ||
-                    this.Mod != null &&
-                    input.Mod != null &&
-                    this.Mod.SequenceEqual(input.Mod)
-                ) && 
-                (
-                    this.Del == input.Del ||
-                    this.Del != null &&
-                    input.Del != null &&
-                    this.Del.SequenceEqual(input.Del)
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +78,10 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Add != null)
-                    hashCode = hashCode * 59 + this.Add.GetHashCode();
-                if (this.Mod != null)
-                    hashCode = hashCode * 59 + this.Mod.GetHashCode();
-                if (this.Del != null)
-                    hashCode = hashCode * 59 + this.Del.GetHashCode();
+                var hashCode = 41;
+                if (this.Add != null) hashCode = hashCode * 59 + this.Add.GetHashCode();
+                if (this.Mod != null) hashCode = hashCode * 59 + this.Mod.GetHashCode();
+                if (this.Del != null) hashCode = hashCode * 59 + this.Del.GetHashCode();
                 return hashCode;
             }
         }

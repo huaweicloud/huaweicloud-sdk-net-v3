@@ -126,71 +126,21 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(TopicEntity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PoliciesOnly != input.PoliciesOnly || (this.PoliciesOnly != null && !this.PoliciesOnly.Equals(input.PoliciesOnly))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Replication != input.Replication || (this.Replication != null && !this.Replication.Equals(input.Replication))) return false;
+            if (this.Partition != input.Partition || (this.Partition != null && !this.Partition.Equals(input.Partition))) return false;
+            if (this.RetentionTime != input.RetentionTime || (this.RetentionTime != null && !this.RetentionTime.Equals(input.RetentionTime))) return false;
+            if (this.SyncReplication != input.SyncReplication || (this.SyncReplication != null && !this.SyncReplication.Equals(input.SyncReplication))) return false;
+            if (this.SyncMessageFlush != input.SyncMessageFlush || (this.SyncMessageFlush != null && !this.SyncMessageFlush.Equals(input.SyncMessageFlush))) return false;
+            if (this.ExternalConfigs != input.ExternalConfigs || (this.ExternalConfigs != null && !this.ExternalConfigs.Equals(input.ExternalConfigs))) return false;
+            if (this.TopicType != input.TopicType || (this.TopicType != null && !this.TopicType.Equals(input.TopicType))) return false;
+            if (this.TopicOtherConfigs != input.TopicOtherConfigs || (this.TopicOtherConfigs != null && input.TopicOtherConfigs != null && !this.TopicOtherConfigs.SequenceEqual(input.TopicOtherConfigs))) return false;
+            if (this.TopicDesc != input.TopicDesc || (this.TopicDesc != null && !this.TopicDesc.Equals(input.TopicDesc))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
 
-            return 
-                (
-                    this.PoliciesOnly == input.PoliciesOnly ||
-                    (this.PoliciesOnly != null &&
-                    this.PoliciesOnly.Equals(input.PoliciesOnly))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Replication == input.Replication ||
-                    (this.Replication != null &&
-                    this.Replication.Equals(input.Replication))
-                ) && 
-                (
-                    this.Partition == input.Partition ||
-                    (this.Partition != null &&
-                    this.Partition.Equals(input.Partition))
-                ) && 
-                (
-                    this.RetentionTime == input.RetentionTime ||
-                    (this.RetentionTime != null &&
-                    this.RetentionTime.Equals(input.RetentionTime))
-                ) && 
-                (
-                    this.SyncReplication == input.SyncReplication ||
-                    (this.SyncReplication != null &&
-                    this.SyncReplication.Equals(input.SyncReplication))
-                ) && 
-                (
-                    this.SyncMessageFlush == input.SyncMessageFlush ||
-                    (this.SyncMessageFlush != null &&
-                    this.SyncMessageFlush.Equals(input.SyncMessageFlush))
-                ) && 
-                (
-                    this.ExternalConfigs == input.ExternalConfigs ||
-                    (this.ExternalConfigs != null &&
-                    this.ExternalConfigs.Equals(input.ExternalConfigs))
-                ) && 
-                (
-                    this.TopicType == input.TopicType ||
-                    (this.TopicType != null &&
-                    this.TopicType.Equals(input.TopicType))
-                ) && 
-                (
-                    this.TopicOtherConfigs == input.TopicOtherConfigs ||
-                    this.TopicOtherConfigs != null &&
-                    input.TopicOtherConfigs != null &&
-                    this.TopicOtherConfigs.SequenceEqual(input.TopicOtherConfigs)
-                ) && 
-                (
-                    this.TopicDesc == input.TopicDesc ||
-                    (this.TopicDesc != null &&
-                    this.TopicDesc.Equals(input.TopicDesc))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -200,31 +150,19 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PoliciesOnly != null)
-                    hashCode = hashCode * 59 + this.PoliciesOnly.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Replication != null)
-                    hashCode = hashCode * 59 + this.Replication.GetHashCode();
-                if (this.Partition != null)
-                    hashCode = hashCode * 59 + this.Partition.GetHashCode();
-                if (this.RetentionTime != null)
-                    hashCode = hashCode * 59 + this.RetentionTime.GetHashCode();
-                if (this.SyncReplication != null)
-                    hashCode = hashCode * 59 + this.SyncReplication.GetHashCode();
-                if (this.SyncMessageFlush != null)
-                    hashCode = hashCode * 59 + this.SyncMessageFlush.GetHashCode();
-                if (this.ExternalConfigs != null)
-                    hashCode = hashCode * 59 + this.ExternalConfigs.GetHashCode();
-                if (this.TopicType != null)
-                    hashCode = hashCode * 59 + this.TopicType.GetHashCode();
-                if (this.TopicOtherConfigs != null)
-                    hashCode = hashCode * 59 + this.TopicOtherConfigs.GetHashCode();
-                if (this.TopicDesc != null)
-                    hashCode = hashCode * 59 + this.TopicDesc.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                var hashCode = 41;
+                if (this.PoliciesOnly != null) hashCode = hashCode * 59 + this.PoliciesOnly.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Replication != null) hashCode = hashCode * 59 + this.Replication.GetHashCode();
+                if (this.Partition != null) hashCode = hashCode * 59 + this.Partition.GetHashCode();
+                if (this.RetentionTime != null) hashCode = hashCode * 59 + this.RetentionTime.GetHashCode();
+                if (this.SyncReplication != null) hashCode = hashCode * 59 + this.SyncReplication.GetHashCode();
+                if (this.SyncMessageFlush != null) hashCode = hashCode * 59 + this.SyncMessageFlush.GetHashCode();
+                if (this.ExternalConfigs != null) hashCode = hashCode * 59 + this.ExternalConfigs.GetHashCode();
+                if (this.TopicType != null) hashCode = hashCode * 59 + this.TopicType.GetHashCode();
+                if (this.TopicOtherConfigs != null) hashCode = hashCode * 59 + this.TopicOtherConfigs.GetHashCode();
+                if (this.TopicDesc != null) hashCode = hashCode * 59 + this.TopicDesc.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 return hashCode;
             }
         }

@@ -184,31 +184,13 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(BackupFilesBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FileSource != input.FileSource) return false;
+            if (this.BucketName != input.BucketName || (this.BucketName != null && !this.BucketName.Equals(input.BucketName))) return false;
+            if (this.Files != input.Files || (this.Files != null && input.Files != null && !this.Files.SequenceEqual(input.Files))) return false;
+            if (this.BackupId != input.BackupId || (this.BackupId != null && !this.BackupId.Equals(input.BackupId))) return false;
 
-            return 
-                (
-                    this.FileSource == input.FileSource ||
-                    (this.FileSource != null &&
-                    this.FileSource.Equals(input.FileSource))
-                ) && 
-                (
-                    this.BucketName == input.BucketName ||
-                    (this.BucketName != null &&
-                    this.BucketName.Equals(input.BucketName))
-                ) && 
-                (
-                    this.Files == input.Files ||
-                    this.Files != null &&
-                    input.Files != null &&
-                    this.Files.SequenceEqual(input.Files)
-                ) && 
-                (
-                    this.BackupId == input.BackupId ||
-                    (this.BackupId != null &&
-                    this.BackupId.Equals(input.BackupId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -218,15 +200,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FileSource != null)
-                    hashCode = hashCode * 59 + this.FileSource.GetHashCode();
-                if (this.BucketName != null)
-                    hashCode = hashCode * 59 + this.BucketName.GetHashCode();
-                if (this.Files != null)
-                    hashCode = hashCode * 59 + this.Files.GetHashCode();
-                if (this.BackupId != null)
-                    hashCode = hashCode * 59 + this.BackupId.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.FileSource.GetHashCode();
+                if (this.BucketName != null) hashCode = hashCode * 59 + this.BucketName.GetHashCode();
+                if (this.Files != null) hashCode = hashCode * 59 + this.Files.GetHashCode();
+                if (this.BackupId != null) hashCode = hashCode * 59 + this.BackupId.GetHashCode();
                 return hashCode;
             }
         }

@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// </summary>
         public bool Equals(ListDDoSAttackEventRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
+            if (this.AttackFlowLow != input.AttackFlowLow || (this.AttackFlowLow != null && !this.AttackFlowLow.Equals(input.AttackFlowLow))) return false;
+            if (this.AttackFlowUp != input.AttackFlowUp || (this.AttackFlowUp != null && !this.AttackFlowUp.Equals(input.AttackFlowUp))) return false;
+            if (this.AttackStatus != input.AttackStatus || (this.AttackStatus != null && !this.AttackStatus.Equals(input.AttackStatus))) return false;
 
-            return 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                ) && 
-                (
-                    this.AttackFlowLow == input.AttackFlowLow ||
-                    (this.AttackFlowLow != null &&
-                    this.AttackFlowLow.Equals(input.AttackFlowLow))
-                ) && 
-                (
-                    this.AttackFlowUp == input.AttackFlowUp ||
-                    (this.AttackFlowUp != null &&
-                    this.AttackFlowUp.Equals(input.AttackFlowUp))
-                ) && 
-                (
-                    this.AttackStatus == input.AttackStatus ||
-                    (this.AttackStatus != null &&
-                    this.AttackStatus.Equals(input.AttackStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.AttackFlowLow != null)
-                    hashCode = hashCode * 59 + this.AttackFlowLow.GetHashCode();
-                if (this.AttackFlowUp != null)
-                    hashCode = hashCode * 59 + this.AttackFlowUp.GetHashCode();
-                if (this.AttackStatus != null)
-                    hashCode = hashCode * 59 + this.AttackStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.AttackFlowLow != null) hashCode = hashCode * 59 + this.AttackFlowLow.GetHashCode();
+                if (this.AttackFlowUp != null) hashCode = hashCode * 59 + this.AttackFlowUp.GetHashCode();
+                if (this.AttackStatus != null) hashCode = hashCode * 59 + this.AttackStatus.GetHashCode();
                 return hashCode;
             }
         }

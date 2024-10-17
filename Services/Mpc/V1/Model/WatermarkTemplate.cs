@@ -240,70 +240,21 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(WatermarkTemplate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Dx != input.Dx || (this.Dx != null && !this.Dx.Equals(input.Dx))) return false;
+            if (this.Dy != input.Dy || (this.Dy != null && !this.Dy.Equals(input.Dy))) return false;
+            if (this.Referpos != input.Referpos || (this.Referpos != null && !this.Referpos.Equals(input.Referpos))) return false;
+            if (this.TimelineStart != input.TimelineStart || (this.TimelineStart != null && !this.TimelineStart.Equals(input.TimelineStart))) return false;
+            if (this.TimelineDuration != input.TimelineDuration || (this.TimelineDuration != null && !this.TimelineDuration.Equals(input.TimelineDuration))) return false;
+            if (this.ImageProcess != input.ImageProcess || (this.ImageProcess != null && !this.ImageProcess.Equals(input.ImageProcess))) return false;
+            if (this.Width != input.Width || (this.Width != null && !this.Width.Equals(input.Width))) return false;
+            if (this.Height != input.Height || (this.Height != null && !this.Height.Equals(input.Height))) return false;
+            if (this.Base != input.Base) return false;
+            if (this.TemplateId != input.TemplateId || (this.TemplateId != null && !this.TemplateId.Equals(input.TemplateId))) return false;
+            if (this.TemplateName != input.TemplateName || (this.TemplateName != null && !this.TemplateName.Equals(input.TemplateName))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
 
-            return 
-                (
-                    this.Dx == input.Dx ||
-                    (this.Dx != null &&
-                    this.Dx.Equals(input.Dx))
-                ) && 
-                (
-                    this.Dy == input.Dy ||
-                    (this.Dy != null &&
-                    this.Dy.Equals(input.Dy))
-                ) && 
-                (
-                    this.Referpos == input.Referpos ||
-                    (this.Referpos != null &&
-                    this.Referpos.Equals(input.Referpos))
-                ) && 
-                (
-                    this.TimelineStart == input.TimelineStart ||
-                    (this.TimelineStart != null &&
-                    this.TimelineStart.Equals(input.TimelineStart))
-                ) && 
-                (
-                    this.TimelineDuration == input.TimelineDuration ||
-                    (this.TimelineDuration != null &&
-                    this.TimelineDuration.Equals(input.TimelineDuration))
-                ) && 
-                (
-                    this.ImageProcess == input.ImageProcess ||
-                    (this.ImageProcess != null &&
-                    this.ImageProcess.Equals(input.ImageProcess))
-                ) && 
-                (
-                    this.Width == input.Width ||
-                    (this.Width != null &&
-                    this.Width.Equals(input.Width))
-                ) && 
-                (
-                    this.Height == input.Height ||
-                    (this.Height != null &&
-                    this.Height.Equals(input.Height))
-                ) && 
-                (
-                    this.Base == input.Base ||
-                    (this.Base != null &&
-                    this.Base.Equals(input.Base))
-                ) && 
-                (
-                    this.TemplateId == input.TemplateId ||
-                    (this.TemplateId != null &&
-                    this.TemplateId.Equals(input.TemplateId))
-                ) && 
-                (
-                    this.TemplateName == input.TemplateName ||
-                    (this.TemplateName != null &&
-                    this.TemplateName.Equals(input.TemplateName))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                );
+            return true;
         }
 
         /// <summary>
@@ -313,31 +264,19 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Dx != null)
-                    hashCode = hashCode * 59 + this.Dx.GetHashCode();
-                if (this.Dy != null)
-                    hashCode = hashCode * 59 + this.Dy.GetHashCode();
-                if (this.Referpos != null)
-                    hashCode = hashCode * 59 + this.Referpos.GetHashCode();
-                if (this.TimelineStart != null)
-                    hashCode = hashCode * 59 + this.TimelineStart.GetHashCode();
-                if (this.TimelineDuration != null)
-                    hashCode = hashCode * 59 + this.TimelineDuration.GetHashCode();
-                if (this.ImageProcess != null)
-                    hashCode = hashCode * 59 + this.ImageProcess.GetHashCode();
-                if (this.Width != null)
-                    hashCode = hashCode * 59 + this.Width.GetHashCode();
-                if (this.Height != null)
-                    hashCode = hashCode * 59 + this.Height.GetHashCode();
-                if (this.Base != null)
-                    hashCode = hashCode * 59 + this.Base.GetHashCode();
-                if (this.TemplateId != null)
-                    hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
-                if (this.TemplateName != null)
-                    hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                var hashCode = 41;
+                if (this.Dx != null) hashCode = hashCode * 59 + this.Dx.GetHashCode();
+                if (this.Dy != null) hashCode = hashCode * 59 + this.Dy.GetHashCode();
+                if (this.Referpos != null) hashCode = hashCode * 59 + this.Referpos.GetHashCode();
+                if (this.TimelineStart != null) hashCode = hashCode * 59 + this.TimelineStart.GetHashCode();
+                if (this.TimelineDuration != null) hashCode = hashCode * 59 + this.TimelineDuration.GetHashCode();
+                if (this.ImageProcess != null) hashCode = hashCode * 59 + this.ImageProcess.GetHashCode();
+                if (this.Width != null) hashCode = hashCode * 59 + this.Width.GetHashCode();
+                if (this.Height != null) hashCode = hashCode * 59 + this.Height.GetHashCode();
+                hashCode = hashCode * 59 + this.Base.GetHashCode();
+                if (this.TemplateId != null) hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
+                if (this.TemplateName != null) hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

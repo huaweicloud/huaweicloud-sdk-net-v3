@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(ShowJobListResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TotalRecord != input.TotalRecord || (this.TotalRecord != null && !this.TotalRecord.Equals(input.TotalRecord))) return false;
+            if (this.Jobs != input.Jobs || (this.Jobs != null && input.Jobs != null && !this.Jobs.SequenceEqual(input.Jobs))) return false;
 
-            return 
-                (
-                    this.TotalRecord == input.TotalRecord ||
-                    (this.TotalRecord != null &&
-                    this.TotalRecord.Equals(input.TotalRecord))
-                ) && 
-                (
-                    this.Jobs == input.Jobs ||
-                    this.Jobs != null &&
-                    input.Jobs != null &&
-                    this.Jobs.SequenceEqual(input.Jobs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TotalRecord != null)
-                    hashCode = hashCode * 59 + this.TotalRecord.GetHashCode();
-                if (this.Jobs != null)
-                    hashCode = hashCode * 59 + this.Jobs.GetHashCode();
+                var hashCode = 41;
+                if (this.TotalRecord != null) hashCode = hashCode * 59 + this.TotalRecord.GetHashCode();
+                if (this.Jobs != null) hashCode = hashCode * 59 + this.Jobs.GetHashCode();
                 return hashCode;
             }
         }

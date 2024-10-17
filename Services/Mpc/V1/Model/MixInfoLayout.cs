@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(MixInfoLayout input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Panes != input.Panes || (this.Panes != null && input.Panes != null && !this.Panes.SequenceEqual(input.Panes))) return false;
 
-            return 
-                (
-                    this.Panes == input.Panes ||
-                    this.Panes != null &&
-                    input.Panes != null &&
-                    this.Panes.SequenceEqual(input.Panes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Panes != null)
-                    hashCode = hashCode * 59 + this.Panes.GetHashCode();
+                var hashCode = 41;
+                if (this.Panes != null) hashCode = hashCode * 59 + this.Panes.GetHashCode();
                 return hashCode;
             }
         }

@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(MetricRequest3 input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DateRange != input.DateRange || (this.DateRange != null && !this.DateRange.Equals(input.DateRange))) return false;
+            if (this.MetricType != input.MetricType || (this.MetricType != null && !this.MetricType.Equals(input.MetricType))) return false;
+            if (this.SprintId != input.SprintId || (this.SprintId != null && !this.SprintId.Equals(input.SprintId))) return false;
+            if (this.Dividend != input.Dividend || (this.Dividend != null && !this.Dividend.Equals(input.Dividend))) return false;
+            if (this.Divisor != input.Divisor || (this.Divisor != null && !this.Divisor.Equals(input.Divisor))) return false;
 
-            return 
-                (
-                    this.DateRange == input.DateRange ||
-                    (this.DateRange != null &&
-                    this.DateRange.Equals(input.DateRange))
-                ) && 
-                (
-                    this.MetricType == input.MetricType ||
-                    (this.MetricType != null &&
-                    this.MetricType.Equals(input.MetricType))
-                ) && 
-                (
-                    this.SprintId == input.SprintId ||
-                    (this.SprintId != null &&
-                    this.SprintId.Equals(input.SprintId))
-                ) && 
-                (
-                    this.Dividend == input.Dividend ||
-                    (this.Dividend != null &&
-                    this.Dividend.Equals(input.Dividend))
-                ) && 
-                (
-                    this.Divisor == input.Divisor ||
-                    (this.Divisor != null &&
-                    this.Divisor.Equals(input.Divisor))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DateRange != null)
-                    hashCode = hashCode * 59 + this.DateRange.GetHashCode();
-                if (this.MetricType != null)
-                    hashCode = hashCode * 59 + this.MetricType.GetHashCode();
-                if (this.SprintId != null)
-                    hashCode = hashCode * 59 + this.SprintId.GetHashCode();
-                if (this.Dividend != null)
-                    hashCode = hashCode * 59 + this.Dividend.GetHashCode();
-                if (this.Divisor != null)
-                    hashCode = hashCode * 59 + this.Divisor.GetHashCode();
+                var hashCode = 41;
+                if (this.DateRange != null) hashCode = hashCode * 59 + this.DateRange.GetHashCode();
+                if (this.MetricType != null) hashCode = hashCode * 59 + this.MetricType.GetHashCode();
+                if (this.SprintId != null) hashCode = hashCode * 59 + this.SprintId.GetHashCode();
+                if (this.Dividend != null) hashCode = hashCode * 59 + this.Dividend.GetHashCode();
+                if (this.Divisor != null) hashCode = hashCode * 59 + this.Divisor.GetHashCode();
                 return hashCode;
             }
         }

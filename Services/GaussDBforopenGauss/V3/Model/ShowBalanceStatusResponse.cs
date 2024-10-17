@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ShowBalanceStatusResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Balanced != input.Balanced || (this.Balanced != null && !this.Balanced.Equals(input.Balanced))) return false;
 
-            return 
-                (
-                    this.Balanced == input.Balanced ||
-                    (this.Balanced != null &&
-                    this.Balanced.Equals(input.Balanced))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Balanced != null)
-                    hashCode = hashCode * 59 + this.Balanced.GetHashCode();
+                var hashCode = 41;
+                if (this.Balanced != null) hashCode = hashCode * 59 + this.Balanced.GetHashCode();
                 return hashCode;
             }
         }

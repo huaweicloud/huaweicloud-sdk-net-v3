@@ -57,21 +57,11 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public bool Equals(ShowAllFaceSetsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FaceSetsInfo != input.FaceSetsInfo || (this.FaceSetsInfo != null && input.FaceSetsInfo != null && !this.FaceSetsInfo.SequenceEqual(input.FaceSetsInfo))) return false;
+            if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
-            return 
-                (
-                    this.FaceSetsInfo == input.FaceSetsInfo ||
-                    this.FaceSetsInfo != null &&
-                    input.FaceSetsInfo != null &&
-                    this.FaceSetsInfo.SequenceEqual(input.FaceSetsInfo)
-                ) && 
-                (
-                    this.XRequestId == input.XRequestId ||
-                    (this.XRequestId != null &&
-                    this.XRequestId.Equals(input.XRequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +71,9 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FaceSetsInfo != null)
-                    hashCode = hashCode * 59 + this.FaceSetsInfo.GetHashCode();
-                if (this.XRequestId != null)
-                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.FaceSetsInfo != null) hashCode = hashCode * 59 + this.FaceSetsInfo.GetHashCode();
+                if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

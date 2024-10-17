@@ -168,102 +168,27 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(HealthCodeResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.IdcardNumber != input.IdcardNumber || (this.IdcardNumber != null && !this.IdcardNumber.Equals(input.IdcardNumber))) return false;
+            if (this.PhoneNumber != input.PhoneNumber || (this.PhoneNumber != null && !this.PhoneNumber.Equals(input.PhoneNumber))) return false;
+            if (this.Province != input.Province || (this.Province != null && !this.Province.Equals(input.Province))) return false;
+            if (this.City != input.City || (this.City != null && !this.City.Equals(input.City))) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
+            if (this.Color != input.Color || (this.Color != null && !this.Color.Equals(input.Color))) return false;
+            if (this.VaccinationStatus != input.VaccinationStatus || (this.VaccinationStatus != null && !this.VaccinationStatus.Equals(input.VaccinationStatus))) return false;
+            if (this.TestInterval != input.TestInterval || (this.TestInterval != null && !this.TestInterval.Equals(input.TestInterval))) return false;
+            if (this.PcrTestResult != input.PcrTestResult || (this.PcrTestResult != null && !this.PcrTestResult.Equals(input.PcrTestResult))) return false;
+            if (this.PcrTestOrganization != input.PcrTestOrganization || (this.PcrTestOrganization != null && !this.PcrTestOrganization.Equals(input.PcrTestOrganization))) return false;
+            if (this.PcrTestTime != input.PcrTestTime || (this.PcrTestTime != null && !this.PcrTestTime.Equals(input.PcrTestTime))) return false;
+            if (this.PcrSamplingTime != input.PcrSamplingTime || (this.PcrSamplingTime != null && !this.PcrSamplingTime.Equals(input.PcrSamplingTime))) return false;
+            if (this.ReachedCity != input.ReachedCity || (this.ReachedCity != null && input.ReachedCity != null && !this.ReachedCity.SequenceEqual(input.ReachedCity))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
+            if (this.WordsBlockCount != input.WordsBlockCount || (this.WordsBlockCount != null && !this.WordsBlockCount.Equals(input.WordsBlockCount))) return false;
+            if (this.WordsBlockList != input.WordsBlockList || (this.WordsBlockList != null && input.WordsBlockList != null && !this.WordsBlockList.SequenceEqual(input.WordsBlockList))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.IdcardNumber == input.IdcardNumber ||
-                    (this.IdcardNumber != null &&
-                    this.IdcardNumber.Equals(input.IdcardNumber))
-                ) && 
-                (
-                    this.PhoneNumber == input.PhoneNumber ||
-                    (this.PhoneNumber != null &&
-                    this.PhoneNumber.Equals(input.PhoneNumber))
-                ) && 
-                (
-                    this.Province == input.Province ||
-                    (this.Province != null &&
-                    this.Province.Equals(input.Province))
-                ) && 
-                (
-                    this.City == input.City ||
-                    (this.City != null &&
-                    this.City.Equals(input.City))
-                ) && 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                ) && 
-                (
-                    this.Color == input.Color ||
-                    (this.Color != null &&
-                    this.Color.Equals(input.Color))
-                ) && 
-                (
-                    this.VaccinationStatus == input.VaccinationStatus ||
-                    (this.VaccinationStatus != null &&
-                    this.VaccinationStatus.Equals(input.VaccinationStatus))
-                ) && 
-                (
-                    this.TestInterval == input.TestInterval ||
-                    (this.TestInterval != null &&
-                    this.TestInterval.Equals(input.TestInterval))
-                ) && 
-                (
-                    this.PcrTestResult == input.PcrTestResult ||
-                    (this.PcrTestResult != null &&
-                    this.PcrTestResult.Equals(input.PcrTestResult))
-                ) && 
-                (
-                    this.PcrTestOrganization == input.PcrTestOrganization ||
-                    (this.PcrTestOrganization != null &&
-                    this.PcrTestOrganization.Equals(input.PcrTestOrganization))
-                ) && 
-                (
-                    this.PcrTestTime == input.PcrTestTime ||
-                    (this.PcrTestTime != null &&
-                    this.PcrTestTime.Equals(input.PcrTestTime))
-                ) && 
-                (
-                    this.PcrSamplingTime == input.PcrSamplingTime ||
-                    (this.PcrSamplingTime != null &&
-                    this.PcrSamplingTime.Equals(input.PcrSamplingTime))
-                ) && 
-                (
-                    this.ReachedCity == input.ReachedCity ||
-                    this.ReachedCity != null &&
-                    input.ReachedCity != null &&
-                    this.ReachedCity.SequenceEqual(input.ReachedCity)
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                ) && 
-                (
-                    this.WordsBlockCount == input.WordsBlockCount ||
-                    (this.WordsBlockCount != null &&
-                    this.WordsBlockCount.Equals(input.WordsBlockCount))
-                ) && 
-                (
-                    this.WordsBlockList == input.WordsBlockList ||
-                    this.WordsBlockList != null &&
-                    input.WordsBlockList != null &&
-                    this.WordsBlockList.SequenceEqual(input.WordsBlockList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -273,43 +198,25 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.IdcardNumber != null)
-                    hashCode = hashCode * 59 + this.IdcardNumber.GetHashCode();
-                if (this.PhoneNumber != null)
-                    hashCode = hashCode * 59 + this.PhoneNumber.GetHashCode();
-                if (this.Province != null)
-                    hashCode = hashCode * 59 + this.Province.GetHashCode();
-                if (this.City != null)
-                    hashCode = hashCode * 59 + this.City.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.Color != null)
-                    hashCode = hashCode * 59 + this.Color.GetHashCode();
-                if (this.VaccinationStatus != null)
-                    hashCode = hashCode * 59 + this.VaccinationStatus.GetHashCode();
-                if (this.TestInterval != null)
-                    hashCode = hashCode * 59 + this.TestInterval.GetHashCode();
-                if (this.PcrTestResult != null)
-                    hashCode = hashCode * 59 + this.PcrTestResult.GetHashCode();
-                if (this.PcrTestOrganization != null)
-                    hashCode = hashCode * 59 + this.PcrTestOrganization.GetHashCode();
-                if (this.PcrTestTime != null)
-                    hashCode = hashCode * 59 + this.PcrTestTime.GetHashCode();
-                if (this.PcrSamplingTime != null)
-                    hashCode = hashCode * 59 + this.PcrSamplingTime.GetHashCode();
-                if (this.ReachedCity != null)
-                    hashCode = hashCode * 59 + this.ReachedCity.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
-                if (this.WordsBlockCount != null)
-                    hashCode = hashCode * 59 + this.WordsBlockCount.GetHashCode();
-                if (this.WordsBlockList != null)
-                    hashCode = hashCode * 59 + this.WordsBlockList.GetHashCode();
+                var hashCode = 41;
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.IdcardNumber != null) hashCode = hashCode * 59 + this.IdcardNumber.GetHashCode();
+                if (this.PhoneNumber != null) hashCode = hashCode * 59 + this.PhoneNumber.GetHashCode();
+                if (this.Province != null) hashCode = hashCode * 59 + this.Province.GetHashCode();
+                if (this.City != null) hashCode = hashCode * 59 + this.City.GetHashCode();
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
+                if (this.Color != null) hashCode = hashCode * 59 + this.Color.GetHashCode();
+                if (this.VaccinationStatus != null) hashCode = hashCode * 59 + this.VaccinationStatus.GetHashCode();
+                if (this.TestInterval != null) hashCode = hashCode * 59 + this.TestInterval.GetHashCode();
+                if (this.PcrTestResult != null) hashCode = hashCode * 59 + this.PcrTestResult.GetHashCode();
+                if (this.PcrTestOrganization != null) hashCode = hashCode * 59 + this.PcrTestOrganization.GetHashCode();
+                if (this.PcrTestTime != null) hashCode = hashCode * 59 + this.PcrTestTime.GetHashCode();
+                if (this.PcrSamplingTime != null) hashCode = hashCode * 59 + this.PcrSamplingTime.GetHashCode();
+                if (this.ReachedCity != null) hashCode = hashCode * 59 + this.ReachedCity.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                if (this.WordsBlockCount != null) hashCode = hashCode * 59 + this.WordsBlockCount.GetHashCode();
+                if (this.WordsBlockList != null) hashCode = hashCode * 59 + this.WordsBlockList.GetHashCode();
                 return hashCode;
             }
         }

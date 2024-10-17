@@ -91,46 +91,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(Versions input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.Input != input.Input || (this.Input != null && !this.Input.Equals(input.Input))) return false;
+            if (this.Stable != input.Stable || (this.Stable != null && !this.Stable.Equals(input.Stable))) return false;
+            if (this.Translate != input.Translate || (this.Translate != null && !this.Translate.Equals(input.Translate))) return false;
+            if (this.SupportVersions != input.SupportVersions || (this.SupportVersions != null && input.SupportVersions != null && !this.SupportVersions.SequenceEqual(input.SupportVersions))) return false;
+            if (this.CreationTimestamp != input.CreationTimestamp || (this.CreationTimestamp != null && !this.CreationTimestamp.Equals(input.CreationTimestamp))) return false;
+            if (this.UpdateTimestamp != input.UpdateTimestamp || (this.UpdateTimestamp != null && !this.UpdateTimestamp.Equals(input.UpdateTimestamp))) return false;
 
-            return 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.Input == input.Input ||
-                    (this.Input != null &&
-                    this.Input.Equals(input.Input))
-                ) && 
-                (
-                    this.Stable == input.Stable ||
-                    (this.Stable != null &&
-                    this.Stable.Equals(input.Stable))
-                ) && 
-                (
-                    this.Translate == input.Translate ||
-                    (this.Translate != null &&
-                    this.Translate.Equals(input.Translate))
-                ) && 
-                (
-                    this.SupportVersions == input.SupportVersions ||
-                    this.SupportVersions != null &&
-                    input.SupportVersions != null &&
-                    this.SupportVersions.SequenceEqual(input.SupportVersions)
-                ) && 
-                (
-                    this.CreationTimestamp == input.CreationTimestamp ||
-                    (this.CreationTimestamp != null &&
-                    this.CreationTimestamp.Equals(input.CreationTimestamp))
-                ) && 
-                (
-                    this.UpdateTimestamp == input.UpdateTimestamp ||
-                    (this.UpdateTimestamp != null &&
-                    this.UpdateTimestamp.Equals(input.UpdateTimestamp))
-                );
+            return true;
         }
 
         /// <summary>
@@ -140,21 +110,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.Input != null)
-                    hashCode = hashCode * 59 + this.Input.GetHashCode();
-                if (this.Stable != null)
-                    hashCode = hashCode * 59 + this.Stable.GetHashCode();
-                if (this.Translate != null)
-                    hashCode = hashCode * 59 + this.Translate.GetHashCode();
-                if (this.SupportVersions != null)
-                    hashCode = hashCode * 59 + this.SupportVersions.GetHashCode();
-                if (this.CreationTimestamp != null)
-                    hashCode = hashCode * 59 + this.CreationTimestamp.GetHashCode();
-                if (this.UpdateTimestamp != null)
-                    hashCode = hashCode * 59 + this.UpdateTimestamp.GetHashCode();
+                var hashCode = 41;
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.Input != null) hashCode = hashCode * 59 + this.Input.GetHashCode();
+                if (this.Stable != null) hashCode = hashCode * 59 + this.Stable.GetHashCode();
+                if (this.Translate != null) hashCode = hashCode * 59 + this.Translate.GetHashCode();
+                if (this.SupportVersions != null) hashCode = hashCode * 59 + this.SupportVersions.GetHashCode();
+                if (this.CreationTimestamp != null) hashCode = hashCode * 59 + this.CreationTimestamp.GetHashCode();
+                if (this.UpdateTimestamp != null) hashCode = hashCode * 59 + this.UpdateTimestamp.GetHashCode();
                 return hashCode;
             }
         }

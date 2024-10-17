@@ -203,125 +203,32 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(SmartConnectTaskRespSourceConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RedisAddress != input.RedisAddress || (this.RedisAddress != null && !this.RedisAddress.Equals(input.RedisAddress))) return false;
+            if (this.RedisType != input.RedisType || (this.RedisType != null && !this.RedisType.Equals(input.RedisType))) return false;
+            if (this.DcsInstanceId != input.DcsInstanceId || (this.DcsInstanceId != null && !this.DcsInstanceId.Equals(input.DcsInstanceId))) return false;
+            if (this.SyncMode != input.SyncMode || (this.SyncMode != null && !this.SyncMode.Equals(input.SyncMode))) return false;
+            if (this.FullSyncWaitMs != input.FullSyncWaitMs || (this.FullSyncWaitMs != null && !this.FullSyncWaitMs.Equals(input.FullSyncWaitMs))) return false;
+            if (this.FullSyncMaxRetry != input.FullSyncMaxRetry || (this.FullSyncMaxRetry != null && !this.FullSyncMaxRetry.Equals(input.FullSyncMaxRetry))) return false;
+            if (this.Ratelimit != input.Ratelimit || (this.Ratelimit != null && !this.Ratelimit.Equals(input.Ratelimit))) return false;
+            if (this.CurrentClusterName != input.CurrentClusterName || (this.CurrentClusterName != null && !this.CurrentClusterName.Equals(input.CurrentClusterName))) return false;
+            if (this.ClusterName != input.ClusterName || (this.ClusterName != null && !this.ClusterName.Equals(input.ClusterName))) return false;
+            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.SaslMechanism != input.SaslMechanism || (this.SaslMechanism != null && !this.SaslMechanism.Equals(input.SaslMechanism))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.BootstrapServers != input.BootstrapServers || (this.BootstrapServers != null && !this.BootstrapServers.Equals(input.BootstrapServers))) return false;
+            if (this.SecurityProtocol != input.SecurityProtocol || (this.SecurityProtocol != null && !this.SecurityProtocol.Equals(input.SecurityProtocol))) return false;
+            if (this.Direction != input.Direction || (this.Direction != null && !this.Direction.Equals(input.Direction))) return false;
+            if (this.SyncConsumerOffsetsEnabled != input.SyncConsumerOffsetsEnabled || (this.SyncConsumerOffsetsEnabled != null && !this.SyncConsumerOffsetsEnabled.Equals(input.SyncConsumerOffsetsEnabled))) return false;
+            if (this.ReplicationFactor != input.ReplicationFactor || (this.ReplicationFactor != null && !this.ReplicationFactor.Equals(input.ReplicationFactor))) return false;
+            if (this.TaskNum != input.TaskNum || (this.TaskNum != null && !this.TaskNum.Equals(input.TaskNum))) return false;
+            if (this.RenameTopicEnabled != input.RenameTopicEnabled || (this.RenameTopicEnabled != null && !this.RenameTopicEnabled.Equals(input.RenameTopicEnabled))) return false;
+            if (this.ProvenanceHeaderEnabled != input.ProvenanceHeaderEnabled || (this.ProvenanceHeaderEnabled != null && !this.ProvenanceHeaderEnabled.Equals(input.ProvenanceHeaderEnabled))) return false;
+            if (this.ConsumerStrategy != input.ConsumerStrategy || (this.ConsumerStrategy != null && !this.ConsumerStrategy.Equals(input.ConsumerStrategy))) return false;
+            if (this.CompressionType != input.CompressionType || (this.CompressionType != null && !this.CompressionType.Equals(input.CompressionType))) return false;
+            if (this.TopicsMapping != input.TopicsMapping || (this.TopicsMapping != null && !this.TopicsMapping.Equals(input.TopicsMapping))) return false;
 
-            return 
-                (
-                    this.RedisAddress == input.RedisAddress ||
-                    (this.RedisAddress != null &&
-                    this.RedisAddress.Equals(input.RedisAddress))
-                ) && 
-                (
-                    this.RedisType == input.RedisType ||
-                    (this.RedisType != null &&
-                    this.RedisType.Equals(input.RedisType))
-                ) && 
-                (
-                    this.DcsInstanceId == input.DcsInstanceId ||
-                    (this.DcsInstanceId != null &&
-                    this.DcsInstanceId.Equals(input.DcsInstanceId))
-                ) && 
-                (
-                    this.SyncMode == input.SyncMode ||
-                    (this.SyncMode != null &&
-                    this.SyncMode.Equals(input.SyncMode))
-                ) && 
-                (
-                    this.FullSyncWaitMs == input.FullSyncWaitMs ||
-                    (this.FullSyncWaitMs != null &&
-                    this.FullSyncWaitMs.Equals(input.FullSyncWaitMs))
-                ) && 
-                (
-                    this.FullSyncMaxRetry == input.FullSyncMaxRetry ||
-                    (this.FullSyncMaxRetry != null &&
-                    this.FullSyncMaxRetry.Equals(input.FullSyncMaxRetry))
-                ) && 
-                (
-                    this.Ratelimit == input.Ratelimit ||
-                    (this.Ratelimit != null &&
-                    this.Ratelimit.Equals(input.Ratelimit))
-                ) && 
-                (
-                    this.CurrentClusterName == input.CurrentClusterName ||
-                    (this.CurrentClusterName != null &&
-                    this.CurrentClusterName.Equals(input.CurrentClusterName))
-                ) && 
-                (
-                    this.ClusterName == input.ClusterName ||
-                    (this.ClusterName != null &&
-                    this.ClusterName.Equals(input.ClusterName))
-                ) && 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.SaslMechanism == input.SaslMechanism ||
-                    (this.SaslMechanism != null &&
-                    this.SaslMechanism.Equals(input.SaslMechanism))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.BootstrapServers == input.BootstrapServers ||
-                    (this.BootstrapServers != null &&
-                    this.BootstrapServers.Equals(input.BootstrapServers))
-                ) && 
-                (
-                    this.SecurityProtocol == input.SecurityProtocol ||
-                    (this.SecurityProtocol != null &&
-                    this.SecurityProtocol.Equals(input.SecurityProtocol))
-                ) && 
-                (
-                    this.Direction == input.Direction ||
-                    (this.Direction != null &&
-                    this.Direction.Equals(input.Direction))
-                ) && 
-                (
-                    this.SyncConsumerOffsetsEnabled == input.SyncConsumerOffsetsEnabled ||
-                    (this.SyncConsumerOffsetsEnabled != null &&
-                    this.SyncConsumerOffsetsEnabled.Equals(input.SyncConsumerOffsetsEnabled))
-                ) && 
-                (
-                    this.ReplicationFactor == input.ReplicationFactor ||
-                    (this.ReplicationFactor != null &&
-                    this.ReplicationFactor.Equals(input.ReplicationFactor))
-                ) && 
-                (
-                    this.TaskNum == input.TaskNum ||
-                    (this.TaskNum != null &&
-                    this.TaskNum.Equals(input.TaskNum))
-                ) && 
-                (
-                    this.RenameTopicEnabled == input.RenameTopicEnabled ||
-                    (this.RenameTopicEnabled != null &&
-                    this.RenameTopicEnabled.Equals(input.RenameTopicEnabled))
-                ) && 
-                (
-                    this.ProvenanceHeaderEnabled == input.ProvenanceHeaderEnabled ||
-                    (this.ProvenanceHeaderEnabled != null &&
-                    this.ProvenanceHeaderEnabled.Equals(input.ProvenanceHeaderEnabled))
-                ) && 
-                (
-                    this.ConsumerStrategy == input.ConsumerStrategy ||
-                    (this.ConsumerStrategy != null &&
-                    this.ConsumerStrategy.Equals(input.ConsumerStrategy))
-                ) && 
-                (
-                    this.CompressionType == input.CompressionType ||
-                    (this.CompressionType != null &&
-                    this.CompressionType.Equals(input.CompressionType))
-                ) && 
-                (
-                    this.TopicsMapping == input.TopicsMapping ||
-                    (this.TopicsMapping != null &&
-                    this.TopicsMapping.Equals(input.TopicsMapping))
-                );
+            return true;
         }
 
         /// <summary>
@@ -331,53 +238,30 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RedisAddress != null)
-                    hashCode = hashCode * 59 + this.RedisAddress.GetHashCode();
-                if (this.RedisType != null)
-                    hashCode = hashCode * 59 + this.RedisType.GetHashCode();
-                if (this.DcsInstanceId != null)
-                    hashCode = hashCode * 59 + this.DcsInstanceId.GetHashCode();
-                if (this.SyncMode != null)
-                    hashCode = hashCode * 59 + this.SyncMode.GetHashCode();
-                if (this.FullSyncWaitMs != null)
-                    hashCode = hashCode * 59 + this.FullSyncWaitMs.GetHashCode();
-                if (this.FullSyncMaxRetry != null)
-                    hashCode = hashCode * 59 + this.FullSyncMaxRetry.GetHashCode();
-                if (this.Ratelimit != null)
-                    hashCode = hashCode * 59 + this.Ratelimit.GetHashCode();
-                if (this.CurrentClusterName != null)
-                    hashCode = hashCode * 59 + this.CurrentClusterName.GetHashCode();
-                if (this.ClusterName != null)
-                    hashCode = hashCode * 59 + this.ClusterName.GetHashCode();
-                if (this.UserName != null)
-                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.SaslMechanism != null)
-                    hashCode = hashCode * 59 + this.SaslMechanism.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.BootstrapServers != null)
-                    hashCode = hashCode * 59 + this.BootstrapServers.GetHashCode();
-                if (this.SecurityProtocol != null)
-                    hashCode = hashCode * 59 + this.SecurityProtocol.GetHashCode();
-                if (this.Direction != null)
-                    hashCode = hashCode * 59 + this.Direction.GetHashCode();
-                if (this.SyncConsumerOffsetsEnabled != null)
-                    hashCode = hashCode * 59 + this.SyncConsumerOffsetsEnabled.GetHashCode();
-                if (this.ReplicationFactor != null)
-                    hashCode = hashCode * 59 + this.ReplicationFactor.GetHashCode();
-                if (this.TaskNum != null)
-                    hashCode = hashCode * 59 + this.TaskNum.GetHashCode();
-                if (this.RenameTopicEnabled != null)
-                    hashCode = hashCode * 59 + this.RenameTopicEnabled.GetHashCode();
-                if (this.ProvenanceHeaderEnabled != null)
-                    hashCode = hashCode * 59 + this.ProvenanceHeaderEnabled.GetHashCode();
-                if (this.ConsumerStrategy != null)
-                    hashCode = hashCode * 59 + this.ConsumerStrategy.GetHashCode();
-                if (this.CompressionType != null)
-                    hashCode = hashCode * 59 + this.CompressionType.GetHashCode();
-                if (this.TopicsMapping != null)
-                    hashCode = hashCode * 59 + this.TopicsMapping.GetHashCode();
+                var hashCode = 41;
+                if (this.RedisAddress != null) hashCode = hashCode * 59 + this.RedisAddress.GetHashCode();
+                if (this.RedisType != null) hashCode = hashCode * 59 + this.RedisType.GetHashCode();
+                if (this.DcsInstanceId != null) hashCode = hashCode * 59 + this.DcsInstanceId.GetHashCode();
+                if (this.SyncMode != null) hashCode = hashCode * 59 + this.SyncMode.GetHashCode();
+                if (this.FullSyncWaitMs != null) hashCode = hashCode * 59 + this.FullSyncWaitMs.GetHashCode();
+                if (this.FullSyncMaxRetry != null) hashCode = hashCode * 59 + this.FullSyncMaxRetry.GetHashCode();
+                if (this.Ratelimit != null) hashCode = hashCode * 59 + this.Ratelimit.GetHashCode();
+                if (this.CurrentClusterName != null) hashCode = hashCode * 59 + this.CurrentClusterName.GetHashCode();
+                if (this.ClusterName != null) hashCode = hashCode * 59 + this.ClusterName.GetHashCode();
+                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.SaslMechanism != null) hashCode = hashCode * 59 + this.SaslMechanism.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.BootstrapServers != null) hashCode = hashCode * 59 + this.BootstrapServers.GetHashCode();
+                if (this.SecurityProtocol != null) hashCode = hashCode * 59 + this.SecurityProtocol.GetHashCode();
+                if (this.Direction != null) hashCode = hashCode * 59 + this.Direction.GetHashCode();
+                if (this.SyncConsumerOffsetsEnabled != null) hashCode = hashCode * 59 + this.SyncConsumerOffsetsEnabled.GetHashCode();
+                if (this.ReplicationFactor != null) hashCode = hashCode * 59 + this.ReplicationFactor.GetHashCode();
+                if (this.TaskNum != null) hashCode = hashCode * 59 + this.TaskNum.GetHashCode();
+                if (this.RenameTopicEnabled != null) hashCode = hashCode * 59 + this.RenameTopicEnabled.GetHashCode();
+                if (this.ProvenanceHeaderEnabled != null) hashCode = hashCode * 59 + this.ProvenanceHeaderEnabled.GetHashCode();
+                if (this.ConsumerStrategy != null) hashCode = hashCode * 59 + this.ConsumerStrategy.GetHashCode();
+                if (this.CompressionType != null) hashCode = hashCode * 59 + this.CompressionType.GetHashCode();
+                if (this.TopicsMapping != null) hashCode = hashCode * 59 + this.TopicsMapping.GetHashCode();
                 return hashCode;
             }
         }

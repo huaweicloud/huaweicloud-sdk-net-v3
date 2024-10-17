@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(PropertiesDTO input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CorrelationData != input.CorrelationData || (this.CorrelationData != null && !this.CorrelationData.Equals(input.CorrelationData))) return false;
+            if (this.ResponseTopic != input.ResponseTopic || (this.ResponseTopic != null && !this.ResponseTopic.Equals(input.ResponseTopic))) return false;
+            if (this.UserProperties != input.UserProperties || (this.UserProperties != null && input.UserProperties != null && !this.UserProperties.SequenceEqual(input.UserProperties))) return false;
 
-            return 
-                (
-                    this.CorrelationData == input.CorrelationData ||
-                    (this.CorrelationData != null &&
-                    this.CorrelationData.Equals(input.CorrelationData))
-                ) && 
-                (
-                    this.ResponseTopic == input.ResponseTopic ||
-                    (this.ResponseTopic != null &&
-                    this.ResponseTopic.Equals(input.ResponseTopic))
-                ) && 
-                (
-                    this.UserProperties == input.UserProperties ||
-                    this.UserProperties != null &&
-                    input.UserProperties != null &&
-                    this.UserProperties.SequenceEqual(input.UserProperties)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CorrelationData != null)
-                    hashCode = hashCode * 59 + this.CorrelationData.GetHashCode();
-                if (this.ResponseTopic != null)
-                    hashCode = hashCode * 59 + this.ResponseTopic.GetHashCode();
-                if (this.UserProperties != null)
-                    hashCode = hashCode * 59 + this.UserProperties.GetHashCode();
+                var hashCode = 41;
+                if (this.CorrelationData != null) hashCode = hashCode * 59 + this.CorrelationData.GetHashCode();
+                if (this.ResponseTopic != null) hashCode = hashCode * 59 + this.ResponseTopic.GetHashCode();
+                if (this.UserProperties != null) hashCode = hashCode * 59 + this.UserProperties.GetHashCode();
                 return hashCode;
             }
         }

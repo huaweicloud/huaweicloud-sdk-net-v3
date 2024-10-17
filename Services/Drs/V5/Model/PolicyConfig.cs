@@ -610,60 +610,19 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(PolicyConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FilterDdlPolicy != input.FilterDdlPolicy) return false;
+            if (this.ConflictPolicy != input.ConflictPolicy) return false;
+            if (this.IndexTrans != input.IndexTrans || (this.IndexTrans != null && !this.IndexTrans.Equals(input.IndexTrans))) return false;
+            if (this.DdlTrans != input.DdlTrans || (this.DdlTrans != null && !this.DdlTrans.Equals(input.DdlTrans))) return false;
+            if (this.DataSyncTopologyType != input.DataSyncTopologyType) return false;
+            if (this.SupportDdlInfo != input.SupportDdlInfo) return false;
+            if (this.SyncTypePolicy != input.SyncTypePolicy || (this.SyncTypePolicy != null && !this.SyncTypePolicy.Equals(input.SyncTypePolicy))) return false;
+            if (this.IncrementReadMode != input.IncrementReadMode || (this.IncrementReadMode != null && !this.IncrementReadMode.Equals(input.IncrementReadMode))) return false;
+            if (this.DmlTypes != input.DmlTypes || (this.DmlTypes != null && !this.DmlTypes.Equals(input.DmlTypes))) return false;
+            if (this.IsCreateTableWithIndex != input.IsCreateTableWithIndex || (this.IsCreateTableWithIndex != null && !this.IsCreateTableWithIndex.Equals(input.IsCreateTableWithIndex))) return false;
 
-            return 
-                (
-                    this.FilterDdlPolicy == input.FilterDdlPolicy ||
-                    (this.FilterDdlPolicy != null &&
-                    this.FilterDdlPolicy.Equals(input.FilterDdlPolicy))
-                ) && 
-                (
-                    this.ConflictPolicy == input.ConflictPolicy ||
-                    (this.ConflictPolicy != null &&
-                    this.ConflictPolicy.Equals(input.ConflictPolicy))
-                ) && 
-                (
-                    this.IndexTrans == input.IndexTrans ||
-                    (this.IndexTrans != null &&
-                    this.IndexTrans.Equals(input.IndexTrans))
-                ) && 
-                (
-                    this.DdlTrans == input.DdlTrans ||
-                    (this.DdlTrans != null &&
-                    this.DdlTrans.Equals(input.DdlTrans))
-                ) && 
-                (
-                    this.DataSyncTopologyType == input.DataSyncTopologyType ||
-                    (this.DataSyncTopologyType != null &&
-                    this.DataSyncTopologyType.Equals(input.DataSyncTopologyType))
-                ) && 
-                (
-                    this.SupportDdlInfo == input.SupportDdlInfo ||
-                    (this.SupportDdlInfo != null &&
-                    this.SupportDdlInfo.Equals(input.SupportDdlInfo))
-                ) && 
-                (
-                    this.SyncTypePolicy == input.SyncTypePolicy ||
-                    (this.SyncTypePolicy != null &&
-                    this.SyncTypePolicy.Equals(input.SyncTypePolicy))
-                ) && 
-                (
-                    this.IncrementReadMode == input.IncrementReadMode ||
-                    (this.IncrementReadMode != null &&
-                    this.IncrementReadMode.Equals(input.IncrementReadMode))
-                ) && 
-                (
-                    this.DmlTypes == input.DmlTypes ||
-                    (this.DmlTypes != null &&
-                    this.DmlTypes.Equals(input.DmlTypes))
-                ) && 
-                (
-                    this.IsCreateTableWithIndex == input.IsCreateTableWithIndex ||
-                    (this.IsCreateTableWithIndex != null &&
-                    this.IsCreateTableWithIndex.Equals(input.IsCreateTableWithIndex))
-                );
+            return true;
         }
 
         /// <summary>
@@ -673,27 +632,17 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FilterDdlPolicy != null)
-                    hashCode = hashCode * 59 + this.FilterDdlPolicy.GetHashCode();
-                if (this.ConflictPolicy != null)
-                    hashCode = hashCode * 59 + this.ConflictPolicy.GetHashCode();
-                if (this.IndexTrans != null)
-                    hashCode = hashCode * 59 + this.IndexTrans.GetHashCode();
-                if (this.DdlTrans != null)
-                    hashCode = hashCode * 59 + this.DdlTrans.GetHashCode();
-                if (this.DataSyncTopologyType != null)
-                    hashCode = hashCode * 59 + this.DataSyncTopologyType.GetHashCode();
-                if (this.SupportDdlInfo != null)
-                    hashCode = hashCode * 59 + this.SupportDdlInfo.GetHashCode();
-                if (this.SyncTypePolicy != null)
-                    hashCode = hashCode * 59 + this.SyncTypePolicy.GetHashCode();
-                if (this.IncrementReadMode != null)
-                    hashCode = hashCode * 59 + this.IncrementReadMode.GetHashCode();
-                if (this.DmlTypes != null)
-                    hashCode = hashCode * 59 + this.DmlTypes.GetHashCode();
-                if (this.IsCreateTableWithIndex != null)
-                    hashCode = hashCode * 59 + this.IsCreateTableWithIndex.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.FilterDdlPolicy.GetHashCode();
+                hashCode = hashCode * 59 + this.ConflictPolicy.GetHashCode();
+                if (this.IndexTrans != null) hashCode = hashCode * 59 + this.IndexTrans.GetHashCode();
+                if (this.DdlTrans != null) hashCode = hashCode * 59 + this.DdlTrans.GetHashCode();
+                hashCode = hashCode * 59 + this.DataSyncTopologyType.GetHashCode();
+                hashCode = hashCode * 59 + this.SupportDdlInfo.GetHashCode();
+                if (this.SyncTypePolicy != null) hashCode = hashCode * 59 + this.SyncTypePolicy.GetHashCode();
+                if (this.IncrementReadMode != null) hashCode = hashCode * 59 + this.IncrementReadMode.GetHashCode();
+                if (this.DmlTypes != null) hashCode = hashCode * 59 + this.DmlTypes.GetHashCode();
+                if (this.IsCreateTableWithIndex != null) hashCode = hashCode * 59 + this.IsCreateTableWithIndex.GetHashCode();
                 return hashCode;
             }
         }

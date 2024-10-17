@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(Template input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TemplateId != input.TemplateId || (this.TemplateId != null && !this.TemplateId.Equals(input.TemplateId))) return false;
+            if (this.TemplateName != input.TemplateName || (this.TemplateName != null && !this.TemplateName.Equals(input.TemplateName))) return false;
+            if (this.TemplateDescription != input.TemplateDescription || (this.TemplateDescription != null && !this.TemplateDescription.Equals(input.TemplateDescription))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.LatestVersionId != input.LatestVersionId || (this.LatestVersionId != null && !this.LatestVersionId.Equals(input.LatestVersionId))) return false;
+            if (this.LatestVersionDescription != input.LatestVersionDescription || (this.LatestVersionDescription != null && !this.LatestVersionDescription.Equals(input.LatestVersionDescription))) return false;
 
-            return 
-                (
-                    this.TemplateId == input.TemplateId ||
-                    (this.TemplateId != null &&
-                    this.TemplateId.Equals(input.TemplateId))
-                ) && 
-                (
-                    this.TemplateName == input.TemplateName ||
-                    (this.TemplateName != null &&
-                    this.TemplateName.Equals(input.TemplateName))
-                ) && 
-                (
-                    this.TemplateDescription == input.TemplateDescription ||
-                    (this.TemplateDescription != null &&
-                    this.TemplateDescription.Equals(input.TemplateDescription))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.LatestVersionId == input.LatestVersionId ||
-                    (this.LatestVersionId != null &&
-                    this.LatestVersionId.Equals(input.LatestVersionId))
-                ) && 
-                (
-                    this.LatestVersionDescription == input.LatestVersionDescription ||
-                    (this.LatestVersionDescription != null &&
-                    this.LatestVersionDescription.Equals(input.LatestVersionDescription))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TemplateId != null)
-                    hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
-                if (this.TemplateName != null)
-                    hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
-                if (this.TemplateDescription != null)
-                    hashCode = hashCode * 59 + this.TemplateDescription.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.LatestVersionId != null)
-                    hashCode = hashCode * 59 + this.LatestVersionId.GetHashCode();
-                if (this.LatestVersionDescription != null)
-                    hashCode = hashCode * 59 + this.LatestVersionDescription.GetHashCode();
+                var hashCode = 41;
+                if (this.TemplateId != null) hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
+                if (this.TemplateName != null) hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
+                if (this.TemplateDescription != null) hashCode = hashCode * 59 + this.TemplateDescription.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.LatestVersionId != null) hashCode = hashCode * 59 + this.LatestVersionId.GetHashCode();
+                if (this.LatestVersionDescription != null) hashCode = hashCode * 59 + this.LatestVersionDescription.GetHashCode();
                 return hashCode;
             }
         }

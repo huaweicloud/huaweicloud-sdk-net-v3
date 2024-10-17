@@ -182,111 +182,29 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(IdcardFrontResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Sex != input.Sex || (this.Sex != null && !this.Sex.Equals(input.Sex))) return false;
+            if (this.Birth != input.Birth || (this.Birth != null && !this.Birth.Equals(input.Birth))) return false;
+            if (this.Ethnicity != input.Ethnicity || (this.Ethnicity != null && !this.Ethnicity.Equals(input.Ethnicity))) return false;
+            if (this.Address != input.Address || (this.Address != null && !this.Address.Equals(input.Address))) return false;
+            if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;
+            if (this.PortraitImage != input.PortraitImage || (this.PortraitImage != null && !this.PortraitImage.Equals(input.PortraitImage))) return false;
+            if (this.AdjustedImage != input.AdjustedImage || (this.AdjustedImage != null && !this.AdjustedImage.Equals(input.AdjustedImage))) return false;
+            if (this.VerificationResult != input.VerificationResult || (this.VerificationResult != null && !this.VerificationResult.Equals(input.VerificationResult))) return false;
+            if (this.TextLocation != input.TextLocation || (this.TextLocation != null && !this.TextLocation.Equals(input.TextLocation))) return false;
+            if (this.PortraitLocation != input.PortraitLocation || (this.PortraitLocation != null && input.PortraitLocation != null && !this.PortraitLocation.SequenceEqual(input.PortraitLocation))) return false;
+            if (this.DetectReproduceResult != input.DetectReproduceResult || (this.DetectReproduceResult != null && !this.DetectReproduceResult.Equals(input.DetectReproduceResult))) return false;
+            if (this.DetectCopyResult != input.DetectCopyResult || (this.DetectCopyResult != null && !this.DetectCopyResult.Equals(input.DetectCopyResult))) return false;
+            if (this.DetectTamperingResult != input.DetectTamperingResult || (this.DetectTamperingResult != null && !this.DetectTamperingResult.Equals(input.DetectTamperingResult))) return false;
+            if (this.DetectBorderIntegrityResult != input.DetectBorderIntegrityResult || (this.DetectBorderIntegrityResult != null && !this.DetectBorderIntegrityResult.Equals(input.DetectBorderIntegrityResult))) return false;
+            if (this.DetectBlockingWithinBorderResult != input.DetectBlockingWithinBorderResult || (this.DetectBlockingWithinBorderResult != null && !this.DetectBlockingWithinBorderResult.Equals(input.DetectBlockingWithinBorderResult))) return false;
+            if (this.DetectBlurResult != input.DetectBlurResult || (this.DetectBlurResult != null && !this.DetectBlurResult.Equals(input.DetectBlurResult))) return false;
+            if (this.DetectInterimResult != input.DetectInterimResult || (this.DetectInterimResult != null && !this.DetectInterimResult.Equals(input.DetectInterimResult))) return false;
+            if (this.DetectGlareResult != input.DetectGlareResult || (this.DetectGlareResult != null && !this.DetectGlareResult.Equals(input.DetectGlareResult))) return false;
+            if (this.ScoreInfo != input.ScoreInfo || (this.ScoreInfo != null && !this.ScoreInfo.Equals(input.ScoreInfo))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Sex == input.Sex ||
-                    (this.Sex != null &&
-                    this.Sex.Equals(input.Sex))
-                ) && 
-                (
-                    this.Birth == input.Birth ||
-                    (this.Birth != null &&
-                    this.Birth.Equals(input.Birth))
-                ) && 
-                (
-                    this.Ethnicity == input.Ethnicity ||
-                    (this.Ethnicity != null &&
-                    this.Ethnicity.Equals(input.Ethnicity))
-                ) && 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
-                ) && 
-                (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                ) && 
-                (
-                    this.PortraitImage == input.PortraitImage ||
-                    (this.PortraitImage != null &&
-                    this.PortraitImage.Equals(input.PortraitImage))
-                ) && 
-                (
-                    this.AdjustedImage == input.AdjustedImage ||
-                    (this.AdjustedImage != null &&
-                    this.AdjustedImage.Equals(input.AdjustedImage))
-                ) && 
-                (
-                    this.VerificationResult == input.VerificationResult ||
-                    (this.VerificationResult != null &&
-                    this.VerificationResult.Equals(input.VerificationResult))
-                ) && 
-                (
-                    this.TextLocation == input.TextLocation ||
-                    (this.TextLocation != null &&
-                    this.TextLocation.Equals(input.TextLocation))
-                ) && 
-                (
-                    this.PortraitLocation == input.PortraitLocation ||
-                    this.PortraitLocation != null &&
-                    input.PortraitLocation != null &&
-                    this.PortraitLocation.SequenceEqual(input.PortraitLocation)
-                ) && 
-                (
-                    this.DetectReproduceResult == input.DetectReproduceResult ||
-                    (this.DetectReproduceResult != null &&
-                    this.DetectReproduceResult.Equals(input.DetectReproduceResult))
-                ) && 
-                (
-                    this.DetectCopyResult == input.DetectCopyResult ||
-                    (this.DetectCopyResult != null &&
-                    this.DetectCopyResult.Equals(input.DetectCopyResult))
-                ) && 
-                (
-                    this.DetectTamperingResult == input.DetectTamperingResult ||
-                    (this.DetectTamperingResult != null &&
-                    this.DetectTamperingResult.Equals(input.DetectTamperingResult))
-                ) && 
-                (
-                    this.DetectBorderIntegrityResult == input.DetectBorderIntegrityResult ||
-                    (this.DetectBorderIntegrityResult != null &&
-                    this.DetectBorderIntegrityResult.Equals(input.DetectBorderIntegrityResult))
-                ) && 
-                (
-                    this.DetectBlockingWithinBorderResult == input.DetectBlockingWithinBorderResult ||
-                    (this.DetectBlockingWithinBorderResult != null &&
-                    this.DetectBlockingWithinBorderResult.Equals(input.DetectBlockingWithinBorderResult))
-                ) && 
-                (
-                    this.DetectBlurResult == input.DetectBlurResult ||
-                    (this.DetectBlurResult != null &&
-                    this.DetectBlurResult.Equals(input.DetectBlurResult))
-                ) && 
-                (
-                    this.DetectInterimResult == input.DetectInterimResult ||
-                    (this.DetectInterimResult != null &&
-                    this.DetectInterimResult.Equals(input.DetectInterimResult))
-                ) && 
-                (
-                    this.DetectGlareResult == input.DetectGlareResult ||
-                    (this.DetectGlareResult != null &&
-                    this.DetectGlareResult.Equals(input.DetectGlareResult))
-                ) && 
-                (
-                    this.ScoreInfo == input.ScoreInfo ||
-                    (this.ScoreInfo != null &&
-                    this.ScoreInfo.Equals(input.ScoreInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -296,47 +214,27 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Sex != null)
-                    hashCode = hashCode * 59 + this.Sex.GetHashCode();
-                if (this.Birth != null)
-                    hashCode = hashCode * 59 + this.Birth.GetHashCode();
-                if (this.Ethnicity != null)
-                    hashCode = hashCode * 59 + this.Ethnicity.GetHashCode();
-                if (this.Address != null)
-                    hashCode = hashCode * 59 + this.Address.GetHashCode();
-                if (this.Number != null)
-                    hashCode = hashCode * 59 + this.Number.GetHashCode();
-                if (this.PortraitImage != null)
-                    hashCode = hashCode * 59 + this.PortraitImage.GetHashCode();
-                if (this.AdjustedImage != null)
-                    hashCode = hashCode * 59 + this.AdjustedImage.GetHashCode();
-                if (this.VerificationResult != null)
-                    hashCode = hashCode * 59 + this.VerificationResult.GetHashCode();
-                if (this.TextLocation != null)
-                    hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
-                if (this.PortraitLocation != null)
-                    hashCode = hashCode * 59 + this.PortraitLocation.GetHashCode();
-                if (this.DetectReproduceResult != null)
-                    hashCode = hashCode * 59 + this.DetectReproduceResult.GetHashCode();
-                if (this.DetectCopyResult != null)
-                    hashCode = hashCode * 59 + this.DetectCopyResult.GetHashCode();
-                if (this.DetectTamperingResult != null)
-                    hashCode = hashCode * 59 + this.DetectTamperingResult.GetHashCode();
-                if (this.DetectBorderIntegrityResult != null)
-                    hashCode = hashCode * 59 + this.DetectBorderIntegrityResult.GetHashCode();
-                if (this.DetectBlockingWithinBorderResult != null)
-                    hashCode = hashCode * 59 + this.DetectBlockingWithinBorderResult.GetHashCode();
-                if (this.DetectBlurResult != null)
-                    hashCode = hashCode * 59 + this.DetectBlurResult.GetHashCode();
-                if (this.DetectInterimResult != null)
-                    hashCode = hashCode * 59 + this.DetectInterimResult.GetHashCode();
-                if (this.DetectGlareResult != null)
-                    hashCode = hashCode * 59 + this.DetectGlareResult.GetHashCode();
-                if (this.ScoreInfo != null)
-                    hashCode = hashCode * 59 + this.ScoreInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Sex != null) hashCode = hashCode * 59 + this.Sex.GetHashCode();
+                if (this.Birth != null) hashCode = hashCode * 59 + this.Birth.GetHashCode();
+                if (this.Ethnicity != null) hashCode = hashCode * 59 + this.Ethnicity.GetHashCode();
+                if (this.Address != null) hashCode = hashCode * 59 + this.Address.GetHashCode();
+                if (this.Number != null) hashCode = hashCode * 59 + this.Number.GetHashCode();
+                if (this.PortraitImage != null) hashCode = hashCode * 59 + this.PortraitImage.GetHashCode();
+                if (this.AdjustedImage != null) hashCode = hashCode * 59 + this.AdjustedImage.GetHashCode();
+                if (this.VerificationResult != null) hashCode = hashCode * 59 + this.VerificationResult.GetHashCode();
+                if (this.TextLocation != null) hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
+                if (this.PortraitLocation != null) hashCode = hashCode * 59 + this.PortraitLocation.GetHashCode();
+                if (this.DetectReproduceResult != null) hashCode = hashCode * 59 + this.DetectReproduceResult.GetHashCode();
+                if (this.DetectCopyResult != null) hashCode = hashCode * 59 + this.DetectCopyResult.GetHashCode();
+                if (this.DetectTamperingResult != null) hashCode = hashCode * 59 + this.DetectTamperingResult.GetHashCode();
+                if (this.DetectBorderIntegrityResult != null) hashCode = hashCode * 59 + this.DetectBorderIntegrityResult.GetHashCode();
+                if (this.DetectBlockingWithinBorderResult != null) hashCode = hashCode * 59 + this.DetectBlockingWithinBorderResult.GetHashCode();
+                if (this.DetectBlurResult != null) hashCode = hashCode * 59 + this.DetectBlurResult.GetHashCode();
+                if (this.DetectInterimResult != null) hashCode = hashCode * 59 + this.DetectInterimResult.GetHashCode();
+                if (this.DetectGlareResult != null) hashCode = hashCode * 59 + this.DetectGlareResult.GetHashCode();
+                if (this.ScoreInfo != null) hashCode = hashCode * 59 + this.ScoreInfo.GetHashCode();
                 return hashCode;
             }
         }

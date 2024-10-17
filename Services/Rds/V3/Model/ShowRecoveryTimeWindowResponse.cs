@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ShowRecoveryTimeWindowResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RecoveryMinTime != input.RecoveryMinTime || (this.RecoveryMinTime != null && !this.RecoveryMinTime.Equals(input.RecoveryMinTime))) return false;
+            if (this.RecoveryMaxTime != input.RecoveryMaxTime || (this.RecoveryMaxTime != null && !this.RecoveryMaxTime.Equals(input.RecoveryMaxTime))) return false;
 
-            return 
-                (
-                    this.RecoveryMinTime == input.RecoveryMinTime ||
-                    (this.RecoveryMinTime != null &&
-                    this.RecoveryMinTime.Equals(input.RecoveryMinTime))
-                ) && 
-                (
-                    this.RecoveryMaxTime == input.RecoveryMaxTime ||
-                    (this.RecoveryMaxTime != null &&
-                    this.RecoveryMaxTime.Equals(input.RecoveryMaxTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RecoveryMinTime != null)
-                    hashCode = hashCode * 59 + this.RecoveryMinTime.GetHashCode();
-                if (this.RecoveryMaxTime != null)
-                    hashCode = hashCode * 59 + this.RecoveryMaxTime.GetHashCode();
+                var hashCode = 41;
+                if (this.RecoveryMinTime != null) hashCode = hashCode * 59 + this.RecoveryMinTime.GetHashCode();
+                if (this.RecoveryMaxTime != null) hashCode = hashCode * 59 + this.RecoveryMaxTime.GetHashCode();
                 return hashCode;
             }
         }

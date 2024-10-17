@@ -77,40 +77,14 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(GetAccessConfigListRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AccessConfigNameList != input.AccessConfigNameList || (this.AccessConfigNameList != null && input.AccessConfigNameList != null && !this.AccessConfigNameList.SequenceEqual(input.AccessConfigNameList))) return false;
+            if (this.HostGroupNameList != input.HostGroupNameList || (this.HostGroupNameList != null && input.HostGroupNameList != null && !this.HostGroupNameList.SequenceEqual(input.HostGroupNameList))) return false;
+            if (this.LogGroupNameList != input.LogGroupNameList || (this.LogGroupNameList != null && input.LogGroupNameList != null && !this.LogGroupNameList.SequenceEqual(input.LogGroupNameList))) return false;
+            if (this.LogStreamNameList != input.LogStreamNameList || (this.LogStreamNameList != null && input.LogStreamNameList != null && !this.LogStreamNameList.SequenceEqual(input.LogStreamNameList))) return false;
+            if (this.AccessConfigTagList != input.AccessConfigTagList || (this.AccessConfigTagList != null && input.AccessConfigTagList != null && !this.AccessConfigTagList.SequenceEqual(input.AccessConfigTagList))) return false;
 
-            return 
-                (
-                    this.AccessConfigNameList == input.AccessConfigNameList ||
-                    this.AccessConfigNameList != null &&
-                    input.AccessConfigNameList != null &&
-                    this.AccessConfigNameList.SequenceEqual(input.AccessConfigNameList)
-                ) && 
-                (
-                    this.HostGroupNameList == input.HostGroupNameList ||
-                    this.HostGroupNameList != null &&
-                    input.HostGroupNameList != null &&
-                    this.HostGroupNameList.SequenceEqual(input.HostGroupNameList)
-                ) && 
-                (
-                    this.LogGroupNameList == input.LogGroupNameList ||
-                    this.LogGroupNameList != null &&
-                    input.LogGroupNameList != null &&
-                    this.LogGroupNameList.SequenceEqual(input.LogGroupNameList)
-                ) && 
-                (
-                    this.LogStreamNameList == input.LogStreamNameList ||
-                    this.LogStreamNameList != null &&
-                    input.LogStreamNameList != null &&
-                    this.LogStreamNameList.SequenceEqual(input.LogStreamNameList)
-                ) && 
-                (
-                    this.AccessConfigTagList == input.AccessConfigTagList ||
-                    this.AccessConfigTagList != null &&
-                    input.AccessConfigTagList != null &&
-                    this.AccessConfigTagList.SequenceEqual(input.AccessConfigTagList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -120,17 +94,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AccessConfigNameList != null)
-                    hashCode = hashCode * 59 + this.AccessConfigNameList.GetHashCode();
-                if (this.HostGroupNameList != null)
-                    hashCode = hashCode * 59 + this.HostGroupNameList.GetHashCode();
-                if (this.LogGroupNameList != null)
-                    hashCode = hashCode * 59 + this.LogGroupNameList.GetHashCode();
-                if (this.LogStreamNameList != null)
-                    hashCode = hashCode * 59 + this.LogStreamNameList.GetHashCode();
-                if (this.AccessConfigTagList != null)
-                    hashCode = hashCode * 59 + this.AccessConfigTagList.GetHashCode();
+                var hashCode = 41;
+                if (this.AccessConfigNameList != null) hashCode = hashCode * 59 + this.AccessConfigNameList.GetHashCode();
+                if (this.HostGroupNameList != null) hashCode = hashCode * 59 + this.HostGroupNameList.GetHashCode();
+                if (this.LogGroupNameList != null) hashCode = hashCode * 59 + this.LogGroupNameList.GetHashCode();
+                if (this.LogStreamNameList != null) hashCode = hashCode * 59 + this.LogStreamNameList.GetHashCode();
+                if (this.AccessConfigTagList != null) hashCode = hashCode * 59 + this.AccessConfigTagList.GetHashCode();
                 return hashCode;
             }
         }

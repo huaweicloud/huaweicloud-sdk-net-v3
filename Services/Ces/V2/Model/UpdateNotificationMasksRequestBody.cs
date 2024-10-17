@@ -103,57 +103,18 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(UpdateNotificationMasksRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MaskName != input.MaskName || (this.MaskName != null && !this.MaskName.Equals(input.MaskName))) return false;
+            if (this.RelationIds != input.RelationIds || (this.RelationIds != null && input.RelationIds != null && !this.RelationIds.SequenceEqual(input.RelationIds))) return false;
+            if (this.RelationType != input.RelationType) return false;
+            if (this.Resources != input.Resources || (this.Resources != null && input.Resources != null && !this.Resources.SequenceEqual(input.Resources))) return false;
+            if (this.MaskType != input.MaskType) return false;
+            if (this.StartDate != input.StartDate || (this.StartDate != null && !this.StartDate.Equals(input.StartDate))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndDate != input.EndDate || (this.EndDate != null && !this.EndDate.Equals(input.EndDate))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
 
-            return 
-                (
-                    this.MaskName == input.MaskName ||
-                    (this.MaskName != null &&
-                    this.MaskName.Equals(input.MaskName))
-                ) && 
-                (
-                    this.RelationIds == input.RelationIds ||
-                    this.RelationIds != null &&
-                    input.RelationIds != null &&
-                    this.RelationIds.SequenceEqual(input.RelationIds)
-                ) && 
-                (
-                    this.RelationType == input.RelationType ||
-                    (this.RelationType != null &&
-                    this.RelationType.Equals(input.RelationType))
-                ) && 
-                (
-                    this.Resources == input.Resources ||
-                    this.Resources != null &&
-                    input.Resources != null &&
-                    this.Resources.SequenceEqual(input.Resources)
-                ) && 
-                (
-                    this.MaskType == input.MaskType ||
-                    (this.MaskType != null &&
-                    this.MaskType.Equals(input.MaskType))
-                ) && 
-                (
-                    this.StartDate == input.StartDate ||
-                    (this.StartDate != null &&
-                    this.StartDate.Equals(input.StartDate))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndDate == input.EndDate ||
-                    (this.EndDate != null &&
-                    this.EndDate.Equals(input.EndDate))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +124,16 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MaskName != null)
-                    hashCode = hashCode * 59 + this.MaskName.GetHashCode();
-                if (this.RelationIds != null)
-                    hashCode = hashCode * 59 + this.RelationIds.GetHashCode();
-                if (this.RelationType != null)
-                    hashCode = hashCode * 59 + this.RelationType.GetHashCode();
-                if (this.Resources != null)
-                    hashCode = hashCode * 59 + this.Resources.GetHashCode();
-                if (this.MaskType != null)
-                    hashCode = hashCode * 59 + this.MaskType.GetHashCode();
-                if (this.StartDate != null)
-                    hashCode = hashCode * 59 + this.StartDate.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndDate != null)
-                    hashCode = hashCode * 59 + this.EndDate.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                var hashCode = 41;
+                if (this.MaskName != null) hashCode = hashCode * 59 + this.MaskName.GetHashCode();
+                if (this.RelationIds != null) hashCode = hashCode * 59 + this.RelationIds.GetHashCode();
+                hashCode = hashCode * 59 + this.RelationType.GetHashCode();
+                if (this.Resources != null) hashCode = hashCode * 59 + this.Resources.GetHashCode();
+                hashCode = hashCode * 59 + this.MaskType.GetHashCode();
+                if (this.StartDate != null) hashCode = hashCode * 59 + this.StartDate.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndDate != null) hashCode = hashCode * 59 + this.EndDate.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 return hashCode;
             }
         }

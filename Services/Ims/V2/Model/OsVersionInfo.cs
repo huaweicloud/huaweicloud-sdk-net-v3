@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         public bool Equals(OsVersionInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Platform != input.Platform || (this.Platform != null && !this.Platform.Equals(input.Platform))) return false;
+            if (this.OsVersionKey != input.OsVersionKey || (this.OsVersionKey != null && !this.OsVersionKey.Equals(input.OsVersionKey))) return false;
+            if (this.OsVersion != input.OsVersion || (this.OsVersion != null && !this.OsVersion.Equals(input.OsVersion))) return false;
+            if (this.OsBit != input.OsBit || (this.OsBit != null && !this.OsBit.Equals(input.OsBit))) return false;
+            if (this.OsType != input.OsType || (this.OsType != null && !this.OsType.Equals(input.OsType))) return false;
 
-            return 
-                (
-                    this.Platform == input.Platform ||
-                    (this.Platform != null &&
-                    this.Platform.Equals(input.Platform))
-                ) && 
-                (
-                    this.OsVersionKey == input.OsVersionKey ||
-                    (this.OsVersionKey != null &&
-                    this.OsVersionKey.Equals(input.OsVersionKey))
-                ) && 
-                (
-                    this.OsVersion == input.OsVersion ||
-                    (this.OsVersion != null &&
-                    this.OsVersion.Equals(input.OsVersion))
-                ) && 
-                (
-                    this.OsBit == input.OsBit ||
-                    (this.OsBit != null &&
-                    this.OsBit.Equals(input.OsBit))
-                ) && 
-                (
-                    this.OsType == input.OsType ||
-                    (this.OsType != null &&
-                    this.OsType.Equals(input.OsType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Platform != null)
-                    hashCode = hashCode * 59 + this.Platform.GetHashCode();
-                if (this.OsVersionKey != null)
-                    hashCode = hashCode * 59 + this.OsVersionKey.GetHashCode();
-                if (this.OsVersion != null)
-                    hashCode = hashCode * 59 + this.OsVersion.GetHashCode();
-                if (this.OsBit != null)
-                    hashCode = hashCode * 59 + this.OsBit.GetHashCode();
-                if (this.OsType != null)
-                    hashCode = hashCode * 59 + this.OsType.GetHashCode();
+                var hashCode = 41;
+                if (this.Platform != null) hashCode = hashCode * 59 + this.Platform.GetHashCode();
+                if (this.OsVersionKey != null) hashCode = hashCode * 59 + this.OsVersionKey.GetHashCode();
+                if (this.OsVersion != null) hashCode = hashCode * 59 + this.OsVersion.GetHashCode();
+                if (this.OsBit != null) hashCode = hashCode * 59 + this.OsBit.GetHashCode();
+                if (this.OsType != null) hashCode = hashCode * 59 + this.OsType.GetHashCode();
                 return hashCode;
             }
         }

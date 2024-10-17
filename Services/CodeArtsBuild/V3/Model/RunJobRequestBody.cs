@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public bool Equals(RunJobRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.Parameter != input.Parameter || (this.Parameter != null && input.Parameter != null && !this.Parameter.SequenceEqual(input.Parameter))) return false;
+            if (this.Scm != input.Scm || (this.Scm != null && !this.Scm.Equals(input.Scm))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.Parameter == input.Parameter ||
-                    this.Parameter != null &&
-                    input.Parameter != null &&
-                    this.Parameter.SequenceEqual(input.Parameter)
-                ) && 
-                (
-                    this.Scm == input.Scm ||
-                    (this.Scm != null &&
-                    this.Scm.Equals(input.Scm))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.Parameter != null)
-                    hashCode = hashCode * 59 + this.Parameter.GetHashCode();
-                if (this.Scm != null)
-                    hashCode = hashCode * 59 + this.Scm.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.Parameter != null) hashCode = hashCode * 59 + this.Parameter.GetHashCode();
+                if (this.Scm != null) hashCode = hashCode * 59 + this.Scm.GetHashCode();
                 return hashCode;
             }
         }

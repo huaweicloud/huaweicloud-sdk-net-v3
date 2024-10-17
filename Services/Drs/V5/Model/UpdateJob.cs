@@ -133,78 +133,22 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(UpdateJob input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.BaseInfo != input.BaseInfo || (this.BaseInfo != null && !this.BaseInfo.Equals(input.BaseInfo))) return false;
+            if (this.SourceEndpoint != input.SourceEndpoint || (this.SourceEndpoint != null && input.SourceEndpoint != null && !this.SourceEndpoint.SequenceEqual(input.SourceEndpoint))) return false;
+            if (this.TargetEndpoint != input.TargetEndpoint || (this.TargetEndpoint != null && input.TargetEndpoint != null && !this.TargetEndpoint.SequenceEqual(input.TargetEndpoint))) return false;
+            if (this.AlarmNotify != input.AlarmNotify || (this.AlarmNotify != null && !this.AlarmNotify.Equals(input.AlarmNotify))) return false;
+            if (this.SpeedLimit != input.SpeedLimit || (this.SpeedLimit != null && input.SpeedLimit != null && !this.SpeedLimit.SequenceEqual(input.SpeedLimit))) return false;
+            if (this.UserMigration != input.UserMigration || (this.UserMigration != null && !this.UserMigration.Equals(input.UserMigration))) return false;
+            if (this.PolicyConfig != input.PolicyConfig || (this.PolicyConfig != null && !this.PolicyConfig.Equals(input.PolicyConfig))) return false;
+            if (this.DbObject != input.DbObject || (this.DbObject != null && !this.DbObject.Equals(input.DbObject))) return false;
+            if (this.DbParam != input.DbParam || (this.DbParam != null && !this.DbParam.Equals(input.DbParam))) return false;
+            if (this.TuningParams != input.TuningParams || (this.TuningParams != null && !this.TuningParams.Equals(input.TuningParams))) return false;
+            if (this.PeriodOrder != input.PeriodOrder || (this.PeriodOrder != null && !this.PeriodOrder.Equals(input.PeriodOrder))) return false;
+            if (this.NodeInfo != input.NodeInfo || (this.NodeInfo != null && !this.NodeInfo.Equals(input.NodeInfo))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.BaseInfo == input.BaseInfo ||
-                    (this.BaseInfo != null &&
-                    this.BaseInfo.Equals(input.BaseInfo))
-                ) && 
-                (
-                    this.SourceEndpoint == input.SourceEndpoint ||
-                    this.SourceEndpoint != null &&
-                    input.SourceEndpoint != null &&
-                    this.SourceEndpoint.SequenceEqual(input.SourceEndpoint)
-                ) && 
-                (
-                    this.TargetEndpoint == input.TargetEndpoint ||
-                    this.TargetEndpoint != null &&
-                    input.TargetEndpoint != null &&
-                    this.TargetEndpoint.SequenceEqual(input.TargetEndpoint)
-                ) && 
-                (
-                    this.AlarmNotify == input.AlarmNotify ||
-                    (this.AlarmNotify != null &&
-                    this.AlarmNotify.Equals(input.AlarmNotify))
-                ) && 
-                (
-                    this.SpeedLimit == input.SpeedLimit ||
-                    this.SpeedLimit != null &&
-                    input.SpeedLimit != null &&
-                    this.SpeedLimit.SequenceEqual(input.SpeedLimit)
-                ) && 
-                (
-                    this.UserMigration == input.UserMigration ||
-                    (this.UserMigration != null &&
-                    this.UserMigration.Equals(input.UserMigration))
-                ) && 
-                (
-                    this.PolicyConfig == input.PolicyConfig ||
-                    (this.PolicyConfig != null &&
-                    this.PolicyConfig.Equals(input.PolicyConfig))
-                ) && 
-                (
-                    this.DbObject == input.DbObject ||
-                    (this.DbObject != null &&
-                    this.DbObject.Equals(input.DbObject))
-                ) && 
-                (
-                    this.DbParam == input.DbParam ||
-                    (this.DbParam != null &&
-                    this.DbParam.Equals(input.DbParam))
-                ) && 
-                (
-                    this.TuningParams == input.TuningParams ||
-                    (this.TuningParams != null &&
-                    this.TuningParams.Equals(input.TuningParams))
-                ) && 
-                (
-                    this.PeriodOrder == input.PeriodOrder ||
-                    (this.PeriodOrder != null &&
-                    this.PeriodOrder.Equals(input.PeriodOrder))
-                ) && 
-                (
-                    this.NodeInfo == input.NodeInfo ||
-                    (this.NodeInfo != null &&
-                    this.NodeInfo.Equals(input.NodeInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -214,33 +158,20 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.BaseInfo != null)
-                    hashCode = hashCode * 59 + this.BaseInfo.GetHashCode();
-                if (this.SourceEndpoint != null)
-                    hashCode = hashCode * 59 + this.SourceEndpoint.GetHashCode();
-                if (this.TargetEndpoint != null)
-                    hashCode = hashCode * 59 + this.TargetEndpoint.GetHashCode();
-                if (this.AlarmNotify != null)
-                    hashCode = hashCode * 59 + this.AlarmNotify.GetHashCode();
-                if (this.SpeedLimit != null)
-                    hashCode = hashCode * 59 + this.SpeedLimit.GetHashCode();
-                if (this.UserMigration != null)
-                    hashCode = hashCode * 59 + this.UserMigration.GetHashCode();
-                if (this.PolicyConfig != null)
-                    hashCode = hashCode * 59 + this.PolicyConfig.GetHashCode();
-                if (this.DbObject != null)
-                    hashCode = hashCode * 59 + this.DbObject.GetHashCode();
-                if (this.DbParam != null)
-                    hashCode = hashCode * 59 + this.DbParam.GetHashCode();
-                if (this.TuningParams != null)
-                    hashCode = hashCode * 59 + this.TuningParams.GetHashCode();
-                if (this.PeriodOrder != null)
-                    hashCode = hashCode * 59 + this.PeriodOrder.GetHashCode();
-                if (this.NodeInfo != null)
-                    hashCode = hashCode * 59 + this.NodeInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.BaseInfo != null) hashCode = hashCode * 59 + this.BaseInfo.GetHashCode();
+                if (this.SourceEndpoint != null) hashCode = hashCode * 59 + this.SourceEndpoint.GetHashCode();
+                if (this.TargetEndpoint != null) hashCode = hashCode * 59 + this.TargetEndpoint.GetHashCode();
+                if (this.AlarmNotify != null) hashCode = hashCode * 59 + this.AlarmNotify.GetHashCode();
+                if (this.SpeedLimit != null) hashCode = hashCode * 59 + this.SpeedLimit.GetHashCode();
+                if (this.UserMigration != null) hashCode = hashCode * 59 + this.UserMigration.GetHashCode();
+                if (this.PolicyConfig != null) hashCode = hashCode * 59 + this.PolicyConfig.GetHashCode();
+                if (this.DbObject != null) hashCode = hashCode * 59 + this.DbObject.GetHashCode();
+                if (this.DbParam != null) hashCode = hashCode * 59 + this.DbParam.GetHashCode();
+                if (this.TuningParams != null) hashCode = hashCode * 59 + this.TuningParams.GetHashCode();
+                if (this.PeriodOrder != null) hashCode = hashCode * 59 + this.PeriodOrder.GetHashCode();
+                if (this.NodeInfo != null) hashCode = hashCode * 59 + this.NodeInfo.GetHashCode();
                 return hashCode;
             }
         }

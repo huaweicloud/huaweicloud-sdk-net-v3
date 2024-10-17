@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(ListPermanentAccessKeysResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Credentials != input.Credentials || (this.Credentials != null && input.Credentials != null && !this.Credentials.SequenceEqual(input.Credentials))) return false;
 
-            return 
-                (
-                    this.Credentials == input.Credentials ||
-                    this.Credentials != null &&
-                    input.Credentials != null &&
-                    this.Credentials.SequenceEqual(input.Credentials)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Credentials != null)
-                    hashCode = hashCode * 59 + this.Credentials.GetHashCode();
+                var hashCode = 41;
+                if (this.Credentials != null) hashCode = hashCode * 59 + this.Credentials.GetHashCode();
                 return hashCode;
             }
         }

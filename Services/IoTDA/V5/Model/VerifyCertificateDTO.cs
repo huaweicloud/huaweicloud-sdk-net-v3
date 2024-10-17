@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(VerifyCertificateDTO input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VerifyContent != input.VerifyContent || (this.VerifyContent != null && !this.VerifyContent.Equals(input.VerifyContent))) return false;
 
-            return 
-                (
-                    this.VerifyContent == input.VerifyContent ||
-                    (this.VerifyContent != null &&
-                    this.VerifyContent.Equals(input.VerifyContent))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VerifyContent != null)
-                    hashCode = hashCode * 59 + this.VerifyContent.GetHashCode();
+                var hashCode = 41;
+                if (this.VerifyContent != null) hashCode = hashCode * 59 + this.VerifyContent.GetHashCode();
                 return hashCode;
             }
         }

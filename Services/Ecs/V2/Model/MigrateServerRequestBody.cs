@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(MigrateServerRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Migrate != input.Migrate || (this.Migrate != null && !this.Migrate.Equals(input.Migrate))) return false;
 
-            return 
-                (
-                    this.Migrate == input.Migrate ||
-                    (this.Migrate != null &&
-                    this.Migrate.Equals(input.Migrate))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Migrate != null)
-                    hashCode = hashCode * 59 + this.Migrate.GetHashCode();
+                var hashCode = 41;
+                if (this.Migrate != null) hashCode = hashCode * 59 + this.Migrate.GetHashCode();
                 return hashCode;
             }
         }

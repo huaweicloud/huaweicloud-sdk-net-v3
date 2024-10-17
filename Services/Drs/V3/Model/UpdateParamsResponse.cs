@@ -184,30 +184,13 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(UpdateParamsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Success != input.Success || (this.Success != null && !this.Success.Equals(input.Success))) return false;
+            if (this.ShouldRestart != input.ShouldRestart) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
+            if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
 
-            return 
-                (
-                    this.Success == input.Success ||
-                    (this.Success != null &&
-                    this.Success.Equals(input.Success))
-                ) && 
-                (
-                    this.ShouldRestart == input.ShouldRestart ||
-                    (this.ShouldRestart != null &&
-                    this.ShouldRestart.Equals(input.ShouldRestart))
-                ) && 
-                (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
-                ) && 
-                (
-                    this.ErrorMsg == input.ErrorMsg ||
-                    (this.ErrorMsg != null &&
-                    this.ErrorMsg.Equals(input.ErrorMsg))
-                );
+            return true;
         }
 
         /// <summary>
@@ -217,15 +200,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Success != null)
-                    hashCode = hashCode * 59 + this.Success.GetHashCode();
-                if (this.ShouldRestart != null)
-                    hashCode = hashCode * 59 + this.ShouldRestart.GetHashCode();
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.ErrorMsg != null)
-                    hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
+                var hashCode = 41;
+                if (this.Success != null) hashCode = hashCode * 59 + this.Success.GetHashCode();
+                hashCode = hashCode * 59 + this.ShouldRestart.GetHashCode();
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
                 return hashCode;
             }
         }

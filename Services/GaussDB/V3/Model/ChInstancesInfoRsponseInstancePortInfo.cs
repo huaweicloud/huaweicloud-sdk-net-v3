@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ChInstancesInfoRsponseInstancePortInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TepPort != input.TepPort || (this.TepPort != null && !this.TepPort.Equals(input.TepPort))) return false;
+            if (this.HttpPort != input.HttpPort || (this.HttpPort != null && !this.HttpPort.Equals(input.HttpPort))) return false;
+            if (this.MysqlPort != input.MysqlPort || (this.MysqlPort != null && !this.MysqlPort.Equals(input.MysqlPort))) return false;
+            if (this.HttpsPort != input.HttpsPort || (this.HttpsPort != null && !this.HttpsPort.Equals(input.HttpsPort))) return false;
+            if (this.TepSecurePort != input.TepSecurePort || (this.TepSecurePort != null && !this.TepSecurePort.Equals(input.TepSecurePort))) return false;
 
-            return 
-                (
-                    this.TepPort == input.TepPort ||
-                    (this.TepPort != null &&
-                    this.TepPort.Equals(input.TepPort))
-                ) && 
-                (
-                    this.HttpPort == input.HttpPort ||
-                    (this.HttpPort != null &&
-                    this.HttpPort.Equals(input.HttpPort))
-                ) && 
-                (
-                    this.MysqlPort == input.MysqlPort ||
-                    (this.MysqlPort != null &&
-                    this.MysqlPort.Equals(input.MysqlPort))
-                ) && 
-                (
-                    this.HttpsPort == input.HttpsPort ||
-                    (this.HttpsPort != null &&
-                    this.HttpsPort.Equals(input.HttpsPort))
-                ) && 
-                (
-                    this.TepSecurePort == input.TepSecurePort ||
-                    (this.TepSecurePort != null &&
-                    this.TepSecurePort.Equals(input.TepSecurePort))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TepPort != null)
-                    hashCode = hashCode * 59 + this.TepPort.GetHashCode();
-                if (this.HttpPort != null)
-                    hashCode = hashCode * 59 + this.HttpPort.GetHashCode();
-                if (this.MysqlPort != null)
-                    hashCode = hashCode * 59 + this.MysqlPort.GetHashCode();
-                if (this.HttpsPort != null)
-                    hashCode = hashCode * 59 + this.HttpsPort.GetHashCode();
-                if (this.TepSecurePort != null)
-                    hashCode = hashCode * 59 + this.TepSecurePort.GetHashCode();
+                var hashCode = 41;
+                if (this.TepPort != null) hashCode = hashCode * 59 + this.TepPort.GetHashCode();
+                if (this.HttpPort != null) hashCode = hashCode * 59 + this.HttpPort.GetHashCode();
+                if (this.MysqlPort != null) hashCode = hashCode * 59 + this.MysqlPort.GetHashCode();
+                if (this.HttpsPort != null) hashCode = hashCode * 59 + this.HttpsPort.GetHashCode();
+                if (this.TepSecurePort != null) hashCode = hashCode * 59 + this.TepSecurePort.GetHashCode();
                 return hashCode;
             }
         }

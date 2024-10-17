@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(RoleAssignmentScope input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Project != input.Project || (this.Project != null && !this.Project.Equals(input.Project))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
+            if (this.EnterpriseProject != input.EnterpriseProject || (this.EnterpriseProject != null && !this.EnterpriseProject.Equals(input.EnterpriseProject))) return false;
 
-            return 
-                (
-                    this.Project == input.Project ||
-                    (this.Project != null &&
-                    this.Project.Equals(input.Project))
-                ) && 
-                (
-                    this.Domain == input.Domain ||
-                    (this.Domain != null &&
-                    this.Domain.Equals(input.Domain))
-                ) && 
-                (
-                    this.EnterpriseProject == input.EnterpriseProject ||
-                    (this.EnterpriseProject != null &&
-                    this.EnterpriseProject.Equals(input.EnterpriseProject))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Project != null)
-                    hashCode = hashCode * 59 + this.Project.GetHashCode();
-                if (this.Domain != null)
-                    hashCode = hashCode * 59 + this.Domain.GetHashCode();
-                if (this.EnterpriseProject != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProject.GetHashCode();
+                var hashCode = 41;
+                if (this.Project != null) hashCode = hashCode * 59 + this.Project.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                if (this.EnterpriseProject != null) hashCode = hashCode * 59 + this.EnterpriseProject.GetHashCode();
                 return hashCode;
             }
         }

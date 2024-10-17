@@ -252,73 +252,21 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         /// </summary>
         public bool Equals(SearchParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SearchType != input.SearchType) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.LastItem != input.LastItem || (this.LastItem != null && !this.LastItem.Equals(input.LastItem))) return false;
+            if (this.MinScore != input.MinScore || (this.MinScore != null && !this.MinScore.Equals(input.MinScore))) return false;
+            if (this.CustomTags != input.CustomTags || (this.CustomTags != null && input.CustomTags != null && !this.CustomTags.SequenceEqual(input.CustomTags))) return false;
+            if (this.CustomNumTags != input.CustomNumTags || (this.CustomNumTags != null && input.CustomNumTags != null && !this.CustomNumTags.SequenceEqual(input.CustomNumTags))) return false;
+            if (this.ImageBase64 != input.ImageBase64 || (this.ImageBase64 != null && !this.ImageBase64.Equals(input.ImageBase64))) return false;
+            if (this.ImageUrl != input.ImageUrl || (this.ImageUrl != null && !this.ImageUrl.Equals(input.ImageUrl))) return false;
+            if (this.Keywords != input.Keywords || (this.Keywords != null && input.Keywords != null && !this.Keywords.SequenceEqual(input.Keywords))) return false;
+            if (this.Text != input.Text || (this.Text != null && !this.Text.Equals(input.Text))) return false;
+            if (this.OptionalParams != input.OptionalParams || (this.OptionalParams != null && !this.OptionalParams.Equals(input.OptionalParams))) return false;
 
-            return 
-                (
-                    this.SearchType == input.SearchType ||
-                    (this.SearchType != null &&
-                    this.SearchType.Equals(input.SearchType))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.LastItem == input.LastItem ||
-                    (this.LastItem != null &&
-                    this.LastItem.Equals(input.LastItem))
-                ) && 
-                (
-                    this.MinScore == input.MinScore ||
-                    (this.MinScore != null &&
-                    this.MinScore.Equals(input.MinScore))
-                ) && 
-                (
-                    this.CustomTags == input.CustomTags ||
-                    this.CustomTags != null &&
-                    input.CustomTags != null &&
-                    this.CustomTags.SequenceEqual(input.CustomTags)
-                ) && 
-                (
-                    this.CustomNumTags == input.CustomNumTags ||
-                    this.CustomNumTags != null &&
-                    input.CustomNumTags != null &&
-                    this.CustomNumTags.SequenceEqual(input.CustomNumTags)
-                ) && 
-                (
-                    this.ImageBase64 == input.ImageBase64 ||
-                    (this.ImageBase64 != null &&
-                    this.ImageBase64.Equals(input.ImageBase64))
-                ) && 
-                (
-                    this.ImageUrl == input.ImageUrl ||
-                    (this.ImageUrl != null &&
-                    this.ImageUrl.Equals(input.ImageUrl))
-                ) && 
-                (
-                    this.Keywords == input.Keywords ||
-                    this.Keywords != null &&
-                    input.Keywords != null &&
-                    this.Keywords.SequenceEqual(input.Keywords)
-                ) && 
-                (
-                    this.Text == input.Text ||
-                    (this.Text != null &&
-                    this.Text.Equals(input.Text))
-                ) && 
-                (
-                    this.OptionalParams == input.OptionalParams ||
-                    (this.OptionalParams != null &&
-                    this.OptionalParams.Equals(input.OptionalParams))
-                );
+            return true;
         }
 
         /// <summary>
@@ -328,31 +276,19 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SearchType != null)
-                    hashCode = hashCode * 59 + this.SearchType.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.LastItem != null)
-                    hashCode = hashCode * 59 + this.LastItem.GetHashCode();
-                if (this.MinScore != null)
-                    hashCode = hashCode * 59 + this.MinScore.GetHashCode();
-                if (this.CustomTags != null)
-                    hashCode = hashCode * 59 + this.CustomTags.GetHashCode();
-                if (this.CustomNumTags != null)
-                    hashCode = hashCode * 59 + this.CustomNumTags.GetHashCode();
-                if (this.ImageBase64 != null)
-                    hashCode = hashCode * 59 + this.ImageBase64.GetHashCode();
-                if (this.ImageUrl != null)
-                    hashCode = hashCode * 59 + this.ImageUrl.GetHashCode();
-                if (this.Keywords != null)
-                    hashCode = hashCode * 59 + this.Keywords.GetHashCode();
-                if (this.Text != null)
-                    hashCode = hashCode * 59 + this.Text.GetHashCode();
-                if (this.OptionalParams != null)
-                    hashCode = hashCode * 59 + this.OptionalParams.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.SearchType.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.LastItem != null) hashCode = hashCode * 59 + this.LastItem.GetHashCode();
+                if (this.MinScore != null) hashCode = hashCode * 59 + this.MinScore.GetHashCode();
+                if (this.CustomTags != null) hashCode = hashCode * 59 + this.CustomTags.GetHashCode();
+                if (this.CustomNumTags != null) hashCode = hashCode * 59 + this.CustomNumTags.GetHashCode();
+                if (this.ImageBase64 != null) hashCode = hashCode * 59 + this.ImageBase64.GetHashCode();
+                if (this.ImageUrl != null) hashCode = hashCode * 59 + this.ImageUrl.GetHashCode();
+                if (this.Keywords != null) hashCode = hashCode * 59 + this.Keywords.GetHashCode();
+                if (this.Text != null) hashCode = hashCode * 59 + this.Text.GetHashCode();
+                if (this.OptionalParams != null) hashCode = hashCode * 59 + this.OptionalParams.GetHashCode();
                 return hashCode;
             }
         }

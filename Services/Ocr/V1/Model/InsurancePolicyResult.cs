@@ -126,73 +126,21 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(InsurancePolicyResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BankName != input.BankName || (this.BankName != null && !this.BankName.Equals(input.BankName))) return false;
+            if (this.BillNumber != input.BillNumber || (this.BillNumber != null && !this.BillNumber.Equals(input.BillNumber))) return false;
+            if (this.Company != input.Company || (this.Company != null && !this.Company.Equals(input.Company))) return false;
+            if (this.EffectiveDate != input.EffectiveDate || (this.EffectiveDate != null && !this.EffectiveDate.Equals(input.EffectiveDate))) return false;
+            if (this.ApplicantName != input.ApplicantName || (this.ApplicantName != null && !this.ApplicantName.Equals(input.ApplicantName))) return false;
+            if (this.ApplicantSex != input.ApplicantSex || (this.ApplicantSex != null && !this.ApplicantSex.Equals(input.ApplicantSex))) return false;
+            if (this.ApplicantBirthday != input.ApplicantBirthday || (this.ApplicantBirthday != null && !this.ApplicantBirthday.Equals(input.ApplicantBirthday))) return false;
+            if (this.ApplicantIdType != input.ApplicantIdType || (this.ApplicantIdType != null && !this.ApplicantIdType.Equals(input.ApplicantIdType))) return false;
+            if (this.ApplicantIdNumber != input.ApplicantIdNumber || (this.ApplicantIdNumber != null && !this.ApplicantIdNumber.Equals(input.ApplicantIdNumber))) return false;
+            if (this.InsurantList != input.InsurantList || (this.InsurantList != null && input.InsurantList != null && !this.InsurantList.SequenceEqual(input.InsurantList))) return false;
+            if (this.BeneficiaryList != input.BeneficiaryList || (this.BeneficiaryList != null && input.BeneficiaryList != null && !this.BeneficiaryList.SequenceEqual(input.BeneficiaryList))) return false;
+            if (this.InsuranceList != input.InsuranceList || (this.InsuranceList != null && input.InsuranceList != null && !this.InsuranceList.SequenceEqual(input.InsuranceList))) return false;
 
-            return 
-                (
-                    this.BankName == input.BankName ||
-                    (this.BankName != null &&
-                    this.BankName.Equals(input.BankName))
-                ) && 
-                (
-                    this.BillNumber == input.BillNumber ||
-                    (this.BillNumber != null &&
-                    this.BillNumber.Equals(input.BillNumber))
-                ) && 
-                (
-                    this.Company == input.Company ||
-                    (this.Company != null &&
-                    this.Company.Equals(input.Company))
-                ) && 
-                (
-                    this.EffectiveDate == input.EffectiveDate ||
-                    (this.EffectiveDate != null &&
-                    this.EffectiveDate.Equals(input.EffectiveDate))
-                ) && 
-                (
-                    this.ApplicantName == input.ApplicantName ||
-                    (this.ApplicantName != null &&
-                    this.ApplicantName.Equals(input.ApplicantName))
-                ) && 
-                (
-                    this.ApplicantSex == input.ApplicantSex ||
-                    (this.ApplicantSex != null &&
-                    this.ApplicantSex.Equals(input.ApplicantSex))
-                ) && 
-                (
-                    this.ApplicantBirthday == input.ApplicantBirthday ||
-                    (this.ApplicantBirthday != null &&
-                    this.ApplicantBirthday.Equals(input.ApplicantBirthday))
-                ) && 
-                (
-                    this.ApplicantIdType == input.ApplicantIdType ||
-                    (this.ApplicantIdType != null &&
-                    this.ApplicantIdType.Equals(input.ApplicantIdType))
-                ) && 
-                (
-                    this.ApplicantIdNumber == input.ApplicantIdNumber ||
-                    (this.ApplicantIdNumber != null &&
-                    this.ApplicantIdNumber.Equals(input.ApplicantIdNumber))
-                ) && 
-                (
-                    this.InsurantList == input.InsurantList ||
-                    this.InsurantList != null &&
-                    input.InsurantList != null &&
-                    this.InsurantList.SequenceEqual(input.InsurantList)
-                ) && 
-                (
-                    this.BeneficiaryList == input.BeneficiaryList ||
-                    this.BeneficiaryList != null &&
-                    input.BeneficiaryList != null &&
-                    this.BeneficiaryList.SequenceEqual(input.BeneficiaryList)
-                ) && 
-                (
-                    this.InsuranceList == input.InsuranceList ||
-                    this.InsuranceList != null &&
-                    input.InsuranceList != null &&
-                    this.InsuranceList.SequenceEqual(input.InsuranceList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -202,31 +150,19 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BankName != null)
-                    hashCode = hashCode * 59 + this.BankName.GetHashCode();
-                if (this.BillNumber != null)
-                    hashCode = hashCode * 59 + this.BillNumber.GetHashCode();
-                if (this.Company != null)
-                    hashCode = hashCode * 59 + this.Company.GetHashCode();
-                if (this.EffectiveDate != null)
-                    hashCode = hashCode * 59 + this.EffectiveDate.GetHashCode();
-                if (this.ApplicantName != null)
-                    hashCode = hashCode * 59 + this.ApplicantName.GetHashCode();
-                if (this.ApplicantSex != null)
-                    hashCode = hashCode * 59 + this.ApplicantSex.GetHashCode();
-                if (this.ApplicantBirthday != null)
-                    hashCode = hashCode * 59 + this.ApplicantBirthday.GetHashCode();
-                if (this.ApplicantIdType != null)
-                    hashCode = hashCode * 59 + this.ApplicantIdType.GetHashCode();
-                if (this.ApplicantIdNumber != null)
-                    hashCode = hashCode * 59 + this.ApplicantIdNumber.GetHashCode();
-                if (this.InsurantList != null)
-                    hashCode = hashCode * 59 + this.InsurantList.GetHashCode();
-                if (this.BeneficiaryList != null)
-                    hashCode = hashCode * 59 + this.BeneficiaryList.GetHashCode();
-                if (this.InsuranceList != null)
-                    hashCode = hashCode * 59 + this.InsuranceList.GetHashCode();
+                var hashCode = 41;
+                if (this.BankName != null) hashCode = hashCode * 59 + this.BankName.GetHashCode();
+                if (this.BillNumber != null) hashCode = hashCode * 59 + this.BillNumber.GetHashCode();
+                if (this.Company != null) hashCode = hashCode * 59 + this.Company.GetHashCode();
+                if (this.EffectiveDate != null) hashCode = hashCode * 59 + this.EffectiveDate.GetHashCode();
+                if (this.ApplicantName != null) hashCode = hashCode * 59 + this.ApplicantName.GetHashCode();
+                if (this.ApplicantSex != null) hashCode = hashCode * 59 + this.ApplicantSex.GetHashCode();
+                if (this.ApplicantBirthday != null) hashCode = hashCode * 59 + this.ApplicantBirthday.GetHashCode();
+                if (this.ApplicantIdType != null) hashCode = hashCode * 59 + this.ApplicantIdType.GetHashCode();
+                if (this.ApplicantIdNumber != null) hashCode = hashCode * 59 + this.ApplicantIdNumber.GetHashCode();
+                if (this.InsurantList != null) hashCode = hashCode * 59 + this.InsurantList.GetHashCode();
+                if (this.BeneficiaryList != null) hashCode = hashCode * 59 + this.BeneficiaryList.GetHashCode();
+                if (this.InsuranceList != null) hashCode = hashCode * 59 + this.InsuranceList.GetHashCode();
                 return hashCode;
             }
         }

@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ShowApplicationsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.DefaultApp != input.DefaultApp || (this.DefaultApp != null && !this.DefaultApp.Equals(input.DefaultApp))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.DefaultApp == input.DefaultApp ||
-                    (this.DefaultApp != null &&
-                    this.DefaultApp.Equals(input.DefaultApp))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.DefaultApp != null)
-                    hashCode = hashCode * 59 + this.DefaultApp.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.DefaultApp != null) hashCode = hashCode * 59 + this.DefaultApp.GetHashCode();
                 return hashCode;
             }
         }

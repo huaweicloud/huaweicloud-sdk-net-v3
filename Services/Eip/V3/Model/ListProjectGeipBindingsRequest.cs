@@ -242,136 +242,34 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(ListProjectGeipBindingsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Fields != input.Fields || (this.Fields != null && input.Fields != null && !this.Fields.SequenceEqual(input.Fields))) return false;
+            if (this.GeipId != input.GeipId || (this.GeipId != null && !this.GeipId.Equals(input.GeipId))) return false;
+            if (this.GeipIpAddress != input.GeipIpAddress || (this.GeipIpAddress != null && !this.GeipIpAddress.Equals(input.GeipIpAddress))) return false;
+            if (this.PublicBorderGroup != input.PublicBorderGroup || (this.PublicBorderGroup != null && !this.PublicBorderGroup.Equals(input.PublicBorderGroup))) return false;
+            if (this.InstanceType != input.InstanceType || (this.InstanceType != null && !this.InstanceType.Equals(input.InstanceType))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.InstanceVpcId != input.InstanceVpcId || (this.InstanceVpcId != null && !this.InstanceVpcId.Equals(input.InstanceVpcId))) return false;
+            if (this.GcbandwidthId != input.GcbandwidthId || (this.GcbandwidthId != null && !this.GcbandwidthId.Equals(input.GcbandwidthId))) return false;
+            if (this.GcbandwidthAdminStatus != input.GcbandwidthAdminStatus || (this.GcbandwidthAdminStatus != null && !this.GcbandwidthAdminStatus.Equals(input.GcbandwidthAdminStatus))) return false;
+            if (this.GcbandwidthSize != input.GcbandwidthSize || (this.GcbandwidthSize != null && !this.GcbandwidthSize.Equals(input.GcbandwidthSize))) return false;
+            if (this.GcbandwidthSlaLevel != input.GcbandwidthSlaLevel || (this.GcbandwidthSlaLevel != null && !this.GcbandwidthSlaLevel.Equals(input.GcbandwidthSlaLevel))) return false;
+            if (this.GcbandwidthDscp != input.GcbandwidthDscp || (this.GcbandwidthDscp != null && !this.GcbandwidthDscp.Equals(input.GcbandwidthDscp))) return false;
+            if (this.VnicPrivateIpAddress != input.VnicPrivateIpAddress || (this.VnicPrivateIpAddress != null && !this.VnicPrivateIpAddress.Equals(input.VnicPrivateIpAddress))) return false;
+            if (this.VnicVpcId != input.VnicVpcId || (this.VnicVpcId != null && !this.VnicVpcId.Equals(input.VnicVpcId))) return false;
+            if (this.VnicPortId != input.VnicPortId || (this.VnicPortId != null && !this.VnicPortId.Equals(input.VnicPortId))) return false;
+            if (this.VnicDeviceId != input.VnicDeviceId || (this.VnicDeviceId != null && !this.VnicDeviceId.Equals(input.VnicDeviceId))) return false;
+            if (this.VnicDeviceOwner != input.VnicDeviceOwner || (this.VnicDeviceOwner != null && !this.VnicDeviceOwner.Equals(input.VnicDeviceOwner))) return false;
+            if (this.VnicDeviceOwnerPrefixlike != input.VnicDeviceOwnerPrefixlike || (this.VnicDeviceOwnerPrefixlike != null && !this.VnicDeviceOwnerPrefixlike.Equals(input.VnicDeviceOwnerPrefixlike))) return false;
+            if (this.VnicInstanceType != input.VnicInstanceType || (this.VnicInstanceType != null && !this.VnicInstanceType.Equals(input.VnicInstanceType))) return false;
+            if (this.VnicInstanceId != input.VnicInstanceId || (this.VnicInstanceId != null && !this.VnicInstanceId.Equals(input.VnicInstanceId))) return false;
+            if (this.SortKey != input.SortKey || (this.SortKey != null && !this.SortKey.Equals(input.SortKey))) return false;
+            if (this.SortDir != input.SortDir || (this.SortDir != null && !this.SortDir.Equals(input.SortDir))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
 
-            return 
-                (
-                    this.Fields == input.Fields ||
-                    this.Fields != null &&
-                    input.Fields != null &&
-                    this.Fields.SequenceEqual(input.Fields)
-                ) && 
-                (
-                    this.GeipId == input.GeipId ||
-                    (this.GeipId != null &&
-                    this.GeipId.Equals(input.GeipId))
-                ) && 
-                (
-                    this.GeipIpAddress == input.GeipIpAddress ||
-                    (this.GeipIpAddress != null &&
-                    this.GeipIpAddress.Equals(input.GeipIpAddress))
-                ) && 
-                (
-                    this.PublicBorderGroup == input.PublicBorderGroup ||
-                    (this.PublicBorderGroup != null &&
-                    this.PublicBorderGroup.Equals(input.PublicBorderGroup))
-                ) && 
-                (
-                    this.InstanceType == input.InstanceType ||
-                    (this.InstanceType != null &&
-                    this.InstanceType.Equals(input.InstanceType))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.InstanceVpcId == input.InstanceVpcId ||
-                    (this.InstanceVpcId != null &&
-                    this.InstanceVpcId.Equals(input.InstanceVpcId))
-                ) && 
-                (
-                    this.GcbandwidthId == input.GcbandwidthId ||
-                    (this.GcbandwidthId != null &&
-                    this.GcbandwidthId.Equals(input.GcbandwidthId))
-                ) && 
-                (
-                    this.GcbandwidthAdminStatus == input.GcbandwidthAdminStatus ||
-                    (this.GcbandwidthAdminStatus != null &&
-                    this.GcbandwidthAdminStatus.Equals(input.GcbandwidthAdminStatus))
-                ) && 
-                (
-                    this.GcbandwidthSize == input.GcbandwidthSize ||
-                    (this.GcbandwidthSize != null &&
-                    this.GcbandwidthSize.Equals(input.GcbandwidthSize))
-                ) && 
-                (
-                    this.GcbandwidthSlaLevel == input.GcbandwidthSlaLevel ||
-                    (this.GcbandwidthSlaLevel != null &&
-                    this.GcbandwidthSlaLevel.Equals(input.GcbandwidthSlaLevel))
-                ) && 
-                (
-                    this.GcbandwidthDscp == input.GcbandwidthDscp ||
-                    (this.GcbandwidthDscp != null &&
-                    this.GcbandwidthDscp.Equals(input.GcbandwidthDscp))
-                ) && 
-                (
-                    this.VnicPrivateIpAddress == input.VnicPrivateIpAddress ||
-                    (this.VnicPrivateIpAddress != null &&
-                    this.VnicPrivateIpAddress.Equals(input.VnicPrivateIpAddress))
-                ) && 
-                (
-                    this.VnicVpcId == input.VnicVpcId ||
-                    (this.VnicVpcId != null &&
-                    this.VnicVpcId.Equals(input.VnicVpcId))
-                ) && 
-                (
-                    this.VnicPortId == input.VnicPortId ||
-                    (this.VnicPortId != null &&
-                    this.VnicPortId.Equals(input.VnicPortId))
-                ) && 
-                (
-                    this.VnicDeviceId == input.VnicDeviceId ||
-                    (this.VnicDeviceId != null &&
-                    this.VnicDeviceId.Equals(input.VnicDeviceId))
-                ) && 
-                (
-                    this.VnicDeviceOwner == input.VnicDeviceOwner ||
-                    (this.VnicDeviceOwner != null &&
-                    this.VnicDeviceOwner.Equals(input.VnicDeviceOwner))
-                ) && 
-                (
-                    this.VnicDeviceOwnerPrefixlike == input.VnicDeviceOwnerPrefixlike ||
-                    (this.VnicDeviceOwnerPrefixlike != null &&
-                    this.VnicDeviceOwnerPrefixlike.Equals(input.VnicDeviceOwnerPrefixlike))
-                ) && 
-                (
-                    this.VnicInstanceType == input.VnicInstanceType ||
-                    (this.VnicInstanceType != null &&
-                    this.VnicInstanceType.Equals(input.VnicInstanceType))
-                ) && 
-                (
-                    this.VnicInstanceId == input.VnicInstanceId ||
-                    (this.VnicInstanceId != null &&
-                    this.VnicInstanceId.Equals(input.VnicInstanceId))
-                ) && 
-                (
-                    this.SortKey == input.SortKey ||
-                    (this.SortKey != null &&
-                    this.SortKey.Equals(input.SortKey))
-                ) && 
-                (
-                    this.SortDir == input.SortDir ||
-                    (this.SortDir != null &&
-                    this.SortDir.Equals(input.SortDir))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                );
+            return true;
         }
 
         /// <summary>
@@ -381,57 +279,32 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Fields != null)
-                    hashCode = hashCode * 59 + this.Fields.GetHashCode();
-                if (this.GeipId != null)
-                    hashCode = hashCode * 59 + this.GeipId.GetHashCode();
-                if (this.GeipIpAddress != null)
-                    hashCode = hashCode * 59 + this.GeipIpAddress.GetHashCode();
-                if (this.PublicBorderGroup != null)
-                    hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
-                if (this.InstanceType != null)
-                    hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.InstanceVpcId != null)
-                    hashCode = hashCode * 59 + this.InstanceVpcId.GetHashCode();
-                if (this.GcbandwidthId != null)
-                    hashCode = hashCode * 59 + this.GcbandwidthId.GetHashCode();
-                if (this.GcbandwidthAdminStatus != null)
-                    hashCode = hashCode * 59 + this.GcbandwidthAdminStatus.GetHashCode();
-                if (this.GcbandwidthSize != null)
-                    hashCode = hashCode * 59 + this.GcbandwidthSize.GetHashCode();
-                if (this.GcbandwidthSlaLevel != null)
-                    hashCode = hashCode * 59 + this.GcbandwidthSlaLevel.GetHashCode();
-                if (this.GcbandwidthDscp != null)
-                    hashCode = hashCode * 59 + this.GcbandwidthDscp.GetHashCode();
-                if (this.VnicPrivateIpAddress != null)
-                    hashCode = hashCode * 59 + this.VnicPrivateIpAddress.GetHashCode();
-                if (this.VnicVpcId != null)
-                    hashCode = hashCode * 59 + this.VnicVpcId.GetHashCode();
-                if (this.VnicPortId != null)
-                    hashCode = hashCode * 59 + this.VnicPortId.GetHashCode();
-                if (this.VnicDeviceId != null)
-                    hashCode = hashCode * 59 + this.VnicDeviceId.GetHashCode();
-                if (this.VnicDeviceOwner != null)
-                    hashCode = hashCode * 59 + this.VnicDeviceOwner.GetHashCode();
-                if (this.VnicDeviceOwnerPrefixlike != null)
-                    hashCode = hashCode * 59 + this.VnicDeviceOwnerPrefixlike.GetHashCode();
-                if (this.VnicInstanceType != null)
-                    hashCode = hashCode * 59 + this.VnicInstanceType.GetHashCode();
-                if (this.VnicInstanceId != null)
-                    hashCode = hashCode * 59 + this.VnicInstanceId.GetHashCode();
-                if (this.SortKey != null)
-                    hashCode = hashCode * 59 + this.SortKey.GetHashCode();
-                if (this.SortDir != null)
-                    hashCode = hashCode * 59 + this.SortDir.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                var hashCode = 41;
+                if (this.Fields != null) hashCode = hashCode * 59 + this.Fields.GetHashCode();
+                if (this.GeipId != null) hashCode = hashCode * 59 + this.GeipId.GetHashCode();
+                if (this.GeipIpAddress != null) hashCode = hashCode * 59 + this.GeipIpAddress.GetHashCode();
+                if (this.PublicBorderGroup != null) hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                if (this.InstanceType != null) hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.InstanceVpcId != null) hashCode = hashCode * 59 + this.InstanceVpcId.GetHashCode();
+                if (this.GcbandwidthId != null) hashCode = hashCode * 59 + this.GcbandwidthId.GetHashCode();
+                if (this.GcbandwidthAdminStatus != null) hashCode = hashCode * 59 + this.GcbandwidthAdminStatus.GetHashCode();
+                if (this.GcbandwidthSize != null) hashCode = hashCode * 59 + this.GcbandwidthSize.GetHashCode();
+                if (this.GcbandwidthSlaLevel != null) hashCode = hashCode * 59 + this.GcbandwidthSlaLevel.GetHashCode();
+                if (this.GcbandwidthDscp != null) hashCode = hashCode * 59 + this.GcbandwidthDscp.GetHashCode();
+                if (this.VnicPrivateIpAddress != null) hashCode = hashCode * 59 + this.VnicPrivateIpAddress.GetHashCode();
+                if (this.VnicVpcId != null) hashCode = hashCode * 59 + this.VnicVpcId.GetHashCode();
+                if (this.VnicPortId != null) hashCode = hashCode * 59 + this.VnicPortId.GetHashCode();
+                if (this.VnicDeviceId != null) hashCode = hashCode * 59 + this.VnicDeviceId.GetHashCode();
+                if (this.VnicDeviceOwner != null) hashCode = hashCode * 59 + this.VnicDeviceOwner.GetHashCode();
+                if (this.VnicDeviceOwnerPrefixlike != null) hashCode = hashCode * 59 + this.VnicDeviceOwnerPrefixlike.GetHashCode();
+                if (this.VnicInstanceType != null) hashCode = hashCode * 59 + this.VnicInstanceType.GetHashCode();
+                if (this.VnicInstanceId != null) hashCode = hashCode * 59 + this.VnicInstanceId.GetHashCode();
+                if (this.SortKey != null) hashCode = hashCode * 59 + this.SortKey.GetHashCode();
+                if (this.SortDir != null) hashCode = hashCode * 59 + this.SortDir.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 return hashCode;
             }
         }

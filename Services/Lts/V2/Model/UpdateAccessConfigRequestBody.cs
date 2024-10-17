@@ -91,46 +91,16 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(UpdateAccessConfigRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AccessConfigId != input.AccessConfigId || (this.AccessConfigId != null && !this.AccessConfigId.Equals(input.AccessConfigId))) return false;
+            if (this.AccessConfigDetail != input.AccessConfigDetail || (this.AccessConfigDetail != null && !this.AccessConfigDetail.Equals(input.AccessConfigDetail))) return false;
+            if (this.HostGroupInfo != input.HostGroupInfo || (this.HostGroupInfo != null && !this.HostGroupInfo.Equals(input.HostGroupInfo))) return false;
+            if (this.AccessConfigTag != input.AccessConfigTag || (this.AccessConfigTag != null && input.AccessConfigTag != null && !this.AccessConfigTag.SequenceEqual(input.AccessConfigTag))) return false;
+            if (this.LogSplit != input.LogSplit || (this.LogSplit != null && !this.LogSplit.Equals(input.LogSplit))) return false;
+            if (this.BinaryCollect != input.BinaryCollect || (this.BinaryCollect != null && !this.BinaryCollect.Equals(input.BinaryCollect))) return false;
+            if (this.ClusterId != input.ClusterId || (this.ClusterId != null && !this.ClusterId.Equals(input.ClusterId))) return false;
 
-            return 
-                (
-                    this.AccessConfigId == input.AccessConfigId ||
-                    (this.AccessConfigId != null &&
-                    this.AccessConfigId.Equals(input.AccessConfigId))
-                ) && 
-                (
-                    this.AccessConfigDetail == input.AccessConfigDetail ||
-                    (this.AccessConfigDetail != null &&
-                    this.AccessConfigDetail.Equals(input.AccessConfigDetail))
-                ) && 
-                (
-                    this.HostGroupInfo == input.HostGroupInfo ||
-                    (this.HostGroupInfo != null &&
-                    this.HostGroupInfo.Equals(input.HostGroupInfo))
-                ) && 
-                (
-                    this.AccessConfigTag == input.AccessConfigTag ||
-                    this.AccessConfigTag != null &&
-                    input.AccessConfigTag != null &&
-                    this.AccessConfigTag.SequenceEqual(input.AccessConfigTag)
-                ) && 
-                (
-                    this.LogSplit == input.LogSplit ||
-                    (this.LogSplit != null &&
-                    this.LogSplit.Equals(input.LogSplit))
-                ) && 
-                (
-                    this.BinaryCollect == input.BinaryCollect ||
-                    (this.BinaryCollect != null &&
-                    this.BinaryCollect.Equals(input.BinaryCollect))
-                ) && 
-                (
-                    this.ClusterId == input.ClusterId ||
-                    (this.ClusterId != null &&
-                    this.ClusterId.Equals(input.ClusterId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -140,21 +110,14 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AccessConfigId != null)
-                    hashCode = hashCode * 59 + this.AccessConfigId.GetHashCode();
-                if (this.AccessConfigDetail != null)
-                    hashCode = hashCode * 59 + this.AccessConfigDetail.GetHashCode();
-                if (this.HostGroupInfo != null)
-                    hashCode = hashCode * 59 + this.HostGroupInfo.GetHashCode();
-                if (this.AccessConfigTag != null)
-                    hashCode = hashCode * 59 + this.AccessConfigTag.GetHashCode();
-                if (this.LogSplit != null)
-                    hashCode = hashCode * 59 + this.LogSplit.GetHashCode();
-                if (this.BinaryCollect != null)
-                    hashCode = hashCode * 59 + this.BinaryCollect.GetHashCode();
-                if (this.ClusterId != null)
-                    hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
+                var hashCode = 41;
+                if (this.AccessConfigId != null) hashCode = hashCode * 59 + this.AccessConfigId.GetHashCode();
+                if (this.AccessConfigDetail != null) hashCode = hashCode * 59 + this.AccessConfigDetail.GetHashCode();
+                if (this.HostGroupInfo != null) hashCode = hashCode * 59 + this.HostGroupInfo.GetHashCode();
+                if (this.AccessConfigTag != null) hashCode = hashCode * 59 + this.AccessConfigTag.GetHashCode();
+                if (this.LogSplit != null) hashCode = hashCode * 59 + this.LogSplit.GetHashCode();
+                if (this.BinaryCollect != null) hashCode = hashCode * 59 + this.BinaryCollect.GetHashCode();
+                if (this.ClusterId != null) hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
                 return hashCode;
             }
         }

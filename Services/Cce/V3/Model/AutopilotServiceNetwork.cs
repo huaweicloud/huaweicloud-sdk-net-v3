@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(AutopilotServiceNetwork input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IPv4CIDR != input.IPv4CIDR || (this.IPv4CIDR != null && !this.IPv4CIDR.Equals(input.IPv4CIDR))) return false;
 
-            return 
-                (
-                    this.IPv4CIDR == input.IPv4CIDR ||
-                    (this.IPv4CIDR != null &&
-                    this.IPv4CIDR.Equals(input.IPv4CIDR))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IPv4CIDR != null)
-                    hashCode = hashCode * 59 + this.IPv4CIDR.GetHashCode();
+                var hashCode = 41;
+                if (this.IPv4CIDR != null) hashCode = hashCode * 59 + this.IPv4CIDR.GetHashCode();
                 return hashCode;
             }
         }

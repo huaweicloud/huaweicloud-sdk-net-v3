@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(MysqlChangeSpecificationRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResizeFlavor != input.ResizeFlavor || (this.ResizeFlavor != null && !this.ResizeFlavor.Equals(input.ResizeFlavor))) return false;
+            if (this.IsAutoPay != input.IsAutoPay || (this.IsAutoPay != null && !this.IsAutoPay.Equals(input.IsAutoPay))) return false;
 
-            return 
-                (
-                    this.ResizeFlavor == input.ResizeFlavor ||
-                    (this.ResizeFlavor != null &&
-                    this.ResizeFlavor.Equals(input.ResizeFlavor))
-                ) && 
-                (
-                    this.IsAutoPay == input.IsAutoPay ||
-                    (this.IsAutoPay != null &&
-                    this.IsAutoPay.Equals(input.IsAutoPay))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResizeFlavor != null)
-                    hashCode = hashCode * 59 + this.ResizeFlavor.GetHashCode();
-                if (this.IsAutoPay != null)
-                    hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
+                var hashCode = 41;
+                if (this.ResizeFlavor != null) hashCode = hashCode * 59 + this.ResizeFlavor.GetHashCode();
+                if (this.IsAutoPay != null) hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
                 return hashCode;
             }
         }

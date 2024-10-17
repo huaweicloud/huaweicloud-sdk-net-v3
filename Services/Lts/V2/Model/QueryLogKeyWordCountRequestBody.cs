@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(QueryLogKeyWordCountRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.StepInterval != input.StepInterval || (this.StepInterval != null && !this.StepInterval.Equals(input.StepInterval))) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
+            if (this.StreamId != input.StreamId || (this.StreamId != null && !this.StreamId.Equals(input.StreamId))) return false;
+            if (this.KeyWord != input.KeyWord || (this.KeyWord != null && !this.KeyWord.Equals(input.KeyWord))) return false;
+            if (this.IsIterative != input.IsIterative || (this.IsIterative != null && !this.IsIterative.Equals(input.IsIterative))) return false;
 
-            return 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.StepInterval == input.StepInterval ||
-                    (this.StepInterval != null &&
-                    this.StepInterval.Equals(input.StepInterval))
-                ) && 
-                (
-                    this.GroupId == input.GroupId ||
-                    (this.GroupId != null &&
-                    this.GroupId.Equals(input.GroupId))
-                ) && 
-                (
-                    this.StreamId == input.StreamId ||
-                    (this.StreamId != null &&
-                    this.StreamId.Equals(input.StreamId))
-                ) && 
-                (
-                    this.KeyWord == input.KeyWord ||
-                    (this.KeyWord != null &&
-                    this.KeyWord.Equals(input.KeyWord))
-                ) && 
-                (
-                    this.IsIterative == input.IsIterative ||
-                    (this.IsIterative != null &&
-                    this.IsIterative.Equals(input.IsIterative))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.StepInterval != null)
-                    hashCode = hashCode * 59 + this.StepInterval.GetHashCode();
-                if (this.GroupId != null)
-                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
-                if (this.StreamId != null)
-                    hashCode = hashCode * 59 + this.StreamId.GetHashCode();
-                if (this.KeyWord != null)
-                    hashCode = hashCode * 59 + this.KeyWord.GetHashCode();
-                if (this.IsIterative != null)
-                    hashCode = hashCode * 59 + this.IsIterative.GetHashCode();
+                var hashCode = 41;
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.StepInterval != null) hashCode = hashCode * 59 + this.StepInterval.GetHashCode();
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.StreamId != null) hashCode = hashCode * 59 + this.StreamId.GetHashCode();
+                if (this.KeyWord != null) hashCode = hashCode * 59 + this.KeyWord.GetHashCode();
+                if (this.IsIterative != null) hashCode = hashCode * 59 + this.IsIterative.GetHashCode();
                 return hashCode;
             }
         }

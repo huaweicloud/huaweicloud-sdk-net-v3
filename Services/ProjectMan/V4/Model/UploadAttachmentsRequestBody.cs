@@ -72,15 +72,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(UploadAttachmentsRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Attachment != input.Attachment || (this.Attachment != null && !this.Attachment.Equals(input.Attachment))) return false;
 
-            return 
-                (
-                    this.Attachment == input.Attachment ||
-                    (this.Attachment != null &&
-                    this.Attachment.Equals(input.Attachment))
-                );
+            return true;
         }
 
         /// <summary>
@@ -90,9 +85,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Attachment != null)
-                    hashCode = hashCode * 59 + this.Attachment.GetHashCode();
+                var hashCode = 41;
+                if (this.Attachment != null) hashCode = hashCode * 59 + this.Attachment.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(VINResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Vin != input.Vin || (this.Vin != null && !this.Vin.Equals(input.Vin))) return false;
 
-            return 
-                (
-                    this.Vin == input.Vin ||
-                    (this.Vin != null &&
-                    this.Vin.Equals(input.Vin))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Vin != null)
-                    hashCode = hashCode * 59 + this.Vin.GetHashCode();
+                var hashCode = 41;
+                if (this.Vin != null) hashCode = hashCode * 59 + this.Vin.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(RecordingRuleRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RecordingRule != input.RecordingRule || (this.RecordingRule != null && !this.RecordingRule.Equals(input.RecordingRule))) return false;
 
-            return 
-                (
-                    this.RecordingRule == input.RecordingRule ||
-                    (this.RecordingRule != null &&
-                    this.RecordingRule.Equals(input.RecordingRule))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RecordingRule != null)
-                    hashCode = hashCode * 59 + this.RecordingRule.GetHashCode();
+                var hashCode = 41;
+                if (this.RecordingRule != null) hashCode = hashCode * 59 + this.RecordingRule.GetHashCode();
                 return hashCode;
             }
         }

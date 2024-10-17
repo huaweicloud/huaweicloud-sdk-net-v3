@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(CreateRoutingFlowControlPolicyResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PolicyId != input.PolicyId || (this.PolicyId != null && !this.PolicyId.Equals(input.PolicyId))) return false;
+            if (this.PolicyName != input.PolicyName || (this.PolicyName != null && !this.PolicyName.Equals(input.PolicyName))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Scope != input.Scope || (this.Scope != null && !this.Scope.Equals(input.Scope))) return false;
+            if (this.ScopeValue != input.ScopeValue || (this.ScopeValue != null && !this.ScopeValue.Equals(input.ScopeValue))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
-            return 
-                (
-                    this.PolicyId == input.PolicyId ||
-                    (this.PolicyId != null &&
-                    this.PolicyId.Equals(input.PolicyId))
-                ) && 
-                (
-                    this.PolicyName == input.PolicyName ||
-                    (this.PolicyName != null &&
-                    this.PolicyName.Equals(input.PolicyName))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Scope == input.Scope ||
-                    (this.Scope != null &&
-                    this.Scope.Equals(input.Scope))
-                ) && 
-                (
-                    this.ScopeValue == input.ScopeValue ||
-                    (this.ScopeValue != null &&
-                    this.ScopeValue.Equals(input.ScopeValue))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PolicyId != null)
-                    hashCode = hashCode * 59 + this.PolicyId.GetHashCode();
-                if (this.PolicyName != null)
-                    hashCode = hashCode * 59 + this.PolicyName.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Scope != null)
-                    hashCode = hashCode * 59 + this.Scope.GetHashCode();
-                if (this.ScopeValue != null)
-                    hashCode = hashCode * 59 + this.ScopeValue.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                var hashCode = 41;
+                if (this.PolicyId != null) hashCode = hashCode * 59 + this.PolicyId.GetHashCode();
+                if (this.PolicyName != null) hashCode = hashCode * 59 + this.PolicyName.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Scope != null) hashCode = hashCode * 59 + this.Scope.GetHashCode();
+                if (this.ScopeValue != null) hashCode = hashCode * 59 + this.ScopeValue.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;
             }
         }

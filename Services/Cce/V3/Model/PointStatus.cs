@@ -82,40 +82,15 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(PointStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TaskType != input.TaskType) return false;
+            if (this.TaskID != input.TaskID || (this.TaskID != null && !this.TaskID.Equals(input.TaskID))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.StartTimeStamp != input.StartTimeStamp || (this.StartTimeStamp != null && !this.StartTimeStamp.Equals(input.StartTimeStamp))) return false;
+            if (this.EndTimeStamp != input.EndTimeStamp || (this.EndTimeStamp != null && !this.EndTimeStamp.Equals(input.EndTimeStamp))) return false;
+            if (this.ExpireTimeStamp != input.ExpireTimeStamp || (this.ExpireTimeStamp != null && !this.ExpireTimeStamp.Equals(input.ExpireTimeStamp))) return false;
 
-            return 
-                (
-                    this.TaskType == input.TaskType ||
-                    (this.TaskType != null &&
-                    this.TaskType.Equals(input.TaskType))
-                ) && 
-                (
-                    this.TaskID == input.TaskID ||
-                    (this.TaskID != null &&
-                    this.TaskID.Equals(input.TaskID))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.StartTimeStamp == input.StartTimeStamp ||
-                    (this.StartTimeStamp != null &&
-                    this.StartTimeStamp.Equals(input.StartTimeStamp))
-                ) && 
-                (
-                    this.EndTimeStamp == input.EndTimeStamp ||
-                    (this.EndTimeStamp != null &&
-                    this.EndTimeStamp.Equals(input.EndTimeStamp))
-                ) && 
-                (
-                    this.ExpireTimeStamp == input.ExpireTimeStamp ||
-                    (this.ExpireTimeStamp != null &&
-                    this.ExpireTimeStamp.Equals(input.ExpireTimeStamp))
-                );
+            return true;
         }
 
         /// <summary>
@@ -125,19 +100,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TaskType != null)
-                    hashCode = hashCode * 59 + this.TaskType.GetHashCode();
-                if (this.TaskID != null)
-                    hashCode = hashCode * 59 + this.TaskID.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.StartTimeStamp != null)
-                    hashCode = hashCode * 59 + this.StartTimeStamp.GetHashCode();
-                if (this.EndTimeStamp != null)
-                    hashCode = hashCode * 59 + this.EndTimeStamp.GetHashCode();
-                if (this.ExpireTimeStamp != null)
-                    hashCode = hashCode * 59 + this.ExpireTimeStamp.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.TaskType.GetHashCode();
+                if (this.TaskID != null) hashCode = hashCode * 59 + this.TaskID.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.StartTimeStamp != null) hashCode = hashCode * 59 + this.StartTimeStamp.GetHashCode();
+                if (this.EndTimeStamp != null) hashCode = hashCode * 59 + this.EndTimeStamp.GetHashCode();
+                if (this.ExpireTimeStamp != null) hashCode = hashCode * 59 + this.ExpireTimeStamp.GetHashCode();
                 return hashCode;
             }
         }

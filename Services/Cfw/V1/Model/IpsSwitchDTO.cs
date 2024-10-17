@@ -177,25 +177,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(IpsSwitchDTO input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ObjectId != input.ObjectId || (this.ObjectId != null && !this.ObjectId.Equals(input.ObjectId))) return false;
+            if (this.IpsType != input.IpsType) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
 
-            return 
-                (
-                    this.ObjectId == input.ObjectId ||
-                    (this.ObjectId != null &&
-                    this.ObjectId.Equals(input.ObjectId))
-                ) && 
-                (
-                    this.IpsType == input.IpsType ||
-                    (this.IpsType != null &&
-                    this.IpsType.Equals(input.IpsType))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
+            return true;
         }
 
         /// <summary>
@@ -205,13 +192,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ObjectId != null)
-                    hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
-                if (this.IpsType != null)
-                    hashCode = hashCode * 59 + this.IpsType.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                var hashCode = 41;
+                if (this.ObjectId != null) hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
+                hashCode = hashCode * 59 + this.IpsType.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         /// </summary>
         public bool Equals(EnvParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ComponentId != input.ComponentId || (this.ComponentId != null && !this.ComponentId.Equals(input.ComponentId))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.EnvName != input.EnvName || (this.EnvName != null && !this.EnvName.Equals(input.EnvName))) return false;
+            if (this.EnvType != input.EnvType || (this.EnvType != null && !this.EnvType.Equals(input.EnvType))) return false;
+            if (this.OsType != input.OsType || (this.OsType != null && !this.OsType.Equals(input.OsType))) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
+            if (this.RegisterType != input.RegisterType || (this.RegisterType != null && !this.RegisterType.Equals(input.RegisterType))) return false;
 
-            return 
-                (
-                    this.ComponentId == input.ComponentId ||
-                    (this.ComponentId != null &&
-                    this.ComponentId.Equals(input.ComponentId))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.EnvName == input.EnvName ||
-                    (this.EnvName != null &&
-                    this.EnvName.Equals(input.EnvName))
-                ) && 
-                (
-                    this.EnvType == input.EnvType ||
-                    (this.EnvType != null &&
-                    this.EnvType.Equals(input.EnvType))
-                ) && 
-                (
-                    this.OsType == input.OsType ||
-                    (this.OsType != null &&
-                    this.OsType.Equals(input.OsType))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.RegisterType == input.RegisterType ||
-                    (this.RegisterType != null &&
-                    this.RegisterType.Equals(input.RegisterType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ComponentId != null)
-                    hashCode = hashCode * 59 + this.ComponentId.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.EnvName != null)
-                    hashCode = hashCode * 59 + this.EnvName.GetHashCode();
-                if (this.EnvType != null)
-                    hashCode = hashCode * 59 + this.EnvType.GetHashCode();
-                if (this.OsType != null)
-                    hashCode = hashCode * 59 + this.OsType.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.RegisterType != null)
-                    hashCode = hashCode * 59 + this.RegisterType.GetHashCode();
+                var hashCode = 41;
+                if (this.ComponentId != null) hashCode = hashCode * 59 + this.ComponentId.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.EnvName != null) hashCode = hashCode * 59 + this.EnvName.GetHashCode();
+                if (this.EnvType != null) hashCode = hashCode * 59 + this.EnvType.GetHashCode();
+                if (this.OsType != null) hashCode = hashCode * 59 + this.OsType.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
+                if (this.RegisterType != null) hashCode = hashCode * 59 + this.RegisterType.GetHashCode();
                 return hashCode;
             }
         }

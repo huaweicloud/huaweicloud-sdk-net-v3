@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(SingleUpdateJobReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Job != input.Job || (this.Job != null && !this.Job.Equals(input.Job))) return false;
 
-            return 
-                (
-                    this.Job == input.Job ||
-                    (this.Job != null &&
-                    this.Job.Equals(input.Job))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Job != null)
-                    hashCode = hashCode * 59 + this.Job.GetHashCode();
+                var hashCode = 41;
+                if (this.Job != null) hashCode = hashCode * 59 + this.Job.GetHashCode();
                 return hashCode;
             }
         }

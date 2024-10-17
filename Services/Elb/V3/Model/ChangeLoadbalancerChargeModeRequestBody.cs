@@ -171,26 +171,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(ChangeLoadbalancerChargeModeRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LoadbalancerIds != input.LoadbalancerIds || (this.LoadbalancerIds != null && input.LoadbalancerIds != null && !this.LoadbalancerIds.SequenceEqual(input.LoadbalancerIds))) return false;
+            if (this.ChargeMode != input.ChargeMode) return false;
+            if (this.PrepaidOptions != input.PrepaidOptions || (this.PrepaidOptions != null && !this.PrepaidOptions.Equals(input.PrepaidOptions))) return false;
 
-            return 
-                (
-                    this.LoadbalancerIds == input.LoadbalancerIds ||
-                    this.LoadbalancerIds != null &&
-                    input.LoadbalancerIds != null &&
-                    this.LoadbalancerIds.SequenceEqual(input.LoadbalancerIds)
-                ) && 
-                (
-                    this.ChargeMode == input.ChargeMode ||
-                    (this.ChargeMode != null &&
-                    this.ChargeMode.Equals(input.ChargeMode))
-                ) && 
-                (
-                    this.PrepaidOptions == input.PrepaidOptions ||
-                    (this.PrepaidOptions != null &&
-                    this.PrepaidOptions.Equals(input.PrepaidOptions))
-                );
+            return true;
         }
 
         /// <summary>
@@ -200,13 +186,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LoadbalancerIds != null)
-                    hashCode = hashCode * 59 + this.LoadbalancerIds.GetHashCode();
-                if (this.ChargeMode != null)
-                    hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
-                if (this.PrepaidOptions != null)
-                    hashCode = hashCode * 59 + this.PrepaidOptions.GetHashCode();
+                var hashCode = 41;
+                if (this.LoadbalancerIds != null) hashCode = hashCode * 59 + this.LoadbalancerIds.GetHashCode();
+                hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
+                if (this.PrepaidOptions != null) hashCode = hashCode * 59 + this.PrepaidOptions.GetHashCode();
                 return hashCode;
             }
         }

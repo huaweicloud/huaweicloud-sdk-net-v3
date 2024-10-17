@@ -301,195 +301,46 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(TrainTicketResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TicketId != input.TicketId || (this.TicketId != null && !this.TicketId.Equals(input.TicketId))) return false;
+            if (this.CheckPort != input.CheckPort || (this.CheckPort != null && !this.CheckPort.Equals(input.CheckPort))) return false;
+            if (this.TrainNumber != input.TrainNumber || (this.TrainNumber != null && !this.TrainNumber.Equals(input.TrainNumber))) return false;
+            if (this.DepartureStation != input.DepartureStation || (this.DepartureStation != null && !this.DepartureStation.Equals(input.DepartureStation))) return false;
+            if (this.DestinationStation != input.DestinationStation || (this.DestinationStation != null && !this.DestinationStation.Equals(input.DestinationStation))) return false;
+            if (this.DepartureStationEn != input.DepartureStationEn || (this.DepartureStationEn != null && !this.DepartureStationEn.Equals(input.DepartureStationEn))) return false;
+            if (this.DestinationStationEn != input.DestinationStationEn || (this.DestinationStationEn != null && !this.DestinationStationEn.Equals(input.DestinationStationEn))) return false;
+            if (this.DepartureTime != input.DepartureTime || (this.DepartureTime != null && !this.DepartureTime.Equals(input.DepartureTime))) return false;
+            if (this.SeatNumber != input.SeatNumber || (this.SeatNumber != null && !this.SeatNumber.Equals(input.SeatNumber))) return false;
+            if (this.TicketPrice != input.TicketPrice || (this.TicketPrice != null && !this.TicketPrice.Equals(input.TicketPrice))) return false;
+            if (this.SaleMethod != input.SaleMethod || (this.SaleMethod != null && !this.SaleMethod.Equals(input.SaleMethod))) return false;
+            if (this.SeatCategory != input.SeatCategory || (this.SeatCategory != null && !this.SeatCategory.Equals(input.SeatCategory))) return false;
+            if (this.TicketChanging != input.TicketChanging || (this.TicketChanging != null && !this.TicketChanging.Equals(input.TicketChanging))) return false;
+            if (this.IdNumber != input.IdNumber || (this.IdNumber != null && !this.IdNumber.Equals(input.IdNumber))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.LogId != input.LogId || (this.LogId != null && !this.LogId.Equals(input.LogId))) return false;
+            if (this.SaleLocation != input.SaleLocation || (this.SaleLocation != null && !this.SaleLocation.Equals(input.SaleLocation))) return false;
+            if (this.InvoiceStyle != input.InvoiceStyle || (this.InvoiceStyle != null && !this.InvoiceStyle.Equals(input.InvoiceStyle))) return false;
+            if (this.IssueDate != input.IssueDate || (this.IssueDate != null && !this.IssueDate.Equals(input.IssueDate))) return false;
+            if (this.DiscountMark != input.DiscountMark || (this.DiscountMark != null && !this.DiscountMark.Equals(input.DiscountMark))) return false;
+            if (this.SerialNumber != input.SerialNumber || (this.SerialNumber != null && !this.SerialNumber.Equals(input.SerialNumber))) return false;
+            if (this.TaxAmount != input.TaxAmount || (this.TaxAmount != null && !this.TaxAmount.Equals(input.TaxAmount))) return false;
+            if (this.TaxRate != input.TaxRate || (this.TaxRate != null && !this.TaxRate.Equals(input.TaxRate))) return false;
+            if (this.AirConditioning != input.AirConditioning || (this.AirConditioning != null && !this.AirConditioning.Equals(input.AirConditioning))) return false;
+            if (this.OriginalInvoiceNumber != input.OriginalInvoiceNumber || (this.OriginalInvoiceNumber != null && !this.OriginalInvoiceNumber.Equals(input.OriginalInvoiceNumber))) return false;
+            if (this.UnifiedSocialCreditCode != input.UnifiedSocialCreditCode || (this.UnifiedSocialCreditCode != null && !this.UnifiedSocialCreditCode.Equals(input.UnifiedSocialCreditCode))) return false;
+            if (this.BuyerName != input.BuyerName || (this.BuyerName != null && !this.BuyerName.Equals(input.BuyerName))) return false;
+            if (this.TotalAmountExcludingTax != input.TotalAmountExcludingTax || (this.TotalAmountExcludingTax != null && !this.TotalAmountExcludingTax.Equals(input.TotalAmountExcludingTax))) return false;
+            if (this.InvoiceNumber != input.InvoiceNumber || (this.InvoiceNumber != null && !this.InvoiceNumber.Equals(input.InvoiceNumber))) return false;
+            if (this.SealMark != input.SealMark || (this.SealMark != null && !this.SealMark.Equals(input.SealMark))) return false;
+            if (this.Title != input.Title || (this.Title != null && !this.Title.Equals(input.Title))) return false;
+            if (this.Area != input.Area || (this.Area != null && !this.Area.Equals(input.Area))) return false;
+            if (this.ReceiptNumber != input.ReceiptNumber || (this.ReceiptNumber != null && !this.ReceiptNumber.Equals(input.ReceiptNumber))) return false;
+            if (this.AmountInFigures != input.AmountInFigures || (this.AmountInFigures != null && !this.AmountInFigures.Equals(input.AmountInFigures))) return false;
+            if (this.AmountInWords != input.AmountInWords || (this.AmountInWords != null && !this.AmountInWords.Equals(input.AmountInWords))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
+            if (this.TextLocation != input.TextLocation || (this.TextLocation != null && !this.TextLocation.Equals(input.TextLocation))) return false;
 
-            return 
-                (
-                    this.TicketId == input.TicketId ||
-                    (this.TicketId != null &&
-                    this.TicketId.Equals(input.TicketId))
-                ) && 
-                (
-                    this.CheckPort == input.CheckPort ||
-                    (this.CheckPort != null &&
-                    this.CheckPort.Equals(input.CheckPort))
-                ) && 
-                (
-                    this.TrainNumber == input.TrainNumber ||
-                    (this.TrainNumber != null &&
-                    this.TrainNumber.Equals(input.TrainNumber))
-                ) && 
-                (
-                    this.DepartureStation == input.DepartureStation ||
-                    (this.DepartureStation != null &&
-                    this.DepartureStation.Equals(input.DepartureStation))
-                ) && 
-                (
-                    this.DestinationStation == input.DestinationStation ||
-                    (this.DestinationStation != null &&
-                    this.DestinationStation.Equals(input.DestinationStation))
-                ) && 
-                (
-                    this.DepartureStationEn == input.DepartureStationEn ||
-                    (this.DepartureStationEn != null &&
-                    this.DepartureStationEn.Equals(input.DepartureStationEn))
-                ) && 
-                (
-                    this.DestinationStationEn == input.DestinationStationEn ||
-                    (this.DestinationStationEn != null &&
-                    this.DestinationStationEn.Equals(input.DestinationStationEn))
-                ) && 
-                (
-                    this.DepartureTime == input.DepartureTime ||
-                    (this.DepartureTime != null &&
-                    this.DepartureTime.Equals(input.DepartureTime))
-                ) && 
-                (
-                    this.SeatNumber == input.SeatNumber ||
-                    (this.SeatNumber != null &&
-                    this.SeatNumber.Equals(input.SeatNumber))
-                ) && 
-                (
-                    this.TicketPrice == input.TicketPrice ||
-                    (this.TicketPrice != null &&
-                    this.TicketPrice.Equals(input.TicketPrice))
-                ) && 
-                (
-                    this.SaleMethod == input.SaleMethod ||
-                    (this.SaleMethod != null &&
-                    this.SaleMethod.Equals(input.SaleMethod))
-                ) && 
-                (
-                    this.SeatCategory == input.SeatCategory ||
-                    (this.SeatCategory != null &&
-                    this.SeatCategory.Equals(input.SeatCategory))
-                ) && 
-                (
-                    this.TicketChanging == input.TicketChanging ||
-                    (this.TicketChanging != null &&
-                    this.TicketChanging.Equals(input.TicketChanging))
-                ) && 
-                (
-                    this.IdNumber == input.IdNumber ||
-                    (this.IdNumber != null &&
-                    this.IdNumber.Equals(input.IdNumber))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.LogId == input.LogId ||
-                    (this.LogId != null &&
-                    this.LogId.Equals(input.LogId))
-                ) && 
-                (
-                    this.SaleLocation == input.SaleLocation ||
-                    (this.SaleLocation != null &&
-                    this.SaleLocation.Equals(input.SaleLocation))
-                ) && 
-                (
-                    this.InvoiceStyle == input.InvoiceStyle ||
-                    (this.InvoiceStyle != null &&
-                    this.InvoiceStyle.Equals(input.InvoiceStyle))
-                ) && 
-                (
-                    this.IssueDate == input.IssueDate ||
-                    (this.IssueDate != null &&
-                    this.IssueDate.Equals(input.IssueDate))
-                ) && 
-                (
-                    this.DiscountMark == input.DiscountMark ||
-                    (this.DiscountMark != null &&
-                    this.DiscountMark.Equals(input.DiscountMark))
-                ) && 
-                (
-                    this.SerialNumber == input.SerialNumber ||
-                    (this.SerialNumber != null &&
-                    this.SerialNumber.Equals(input.SerialNumber))
-                ) && 
-                (
-                    this.TaxAmount == input.TaxAmount ||
-                    (this.TaxAmount != null &&
-                    this.TaxAmount.Equals(input.TaxAmount))
-                ) && 
-                (
-                    this.TaxRate == input.TaxRate ||
-                    (this.TaxRate != null &&
-                    this.TaxRate.Equals(input.TaxRate))
-                ) && 
-                (
-                    this.AirConditioning == input.AirConditioning ||
-                    (this.AirConditioning != null &&
-                    this.AirConditioning.Equals(input.AirConditioning))
-                ) && 
-                (
-                    this.OriginalInvoiceNumber == input.OriginalInvoiceNumber ||
-                    (this.OriginalInvoiceNumber != null &&
-                    this.OriginalInvoiceNumber.Equals(input.OriginalInvoiceNumber))
-                ) && 
-                (
-                    this.UnifiedSocialCreditCode == input.UnifiedSocialCreditCode ||
-                    (this.UnifiedSocialCreditCode != null &&
-                    this.UnifiedSocialCreditCode.Equals(input.UnifiedSocialCreditCode))
-                ) && 
-                (
-                    this.BuyerName == input.BuyerName ||
-                    (this.BuyerName != null &&
-                    this.BuyerName.Equals(input.BuyerName))
-                ) && 
-                (
-                    this.TotalAmountExcludingTax == input.TotalAmountExcludingTax ||
-                    (this.TotalAmountExcludingTax != null &&
-                    this.TotalAmountExcludingTax.Equals(input.TotalAmountExcludingTax))
-                ) && 
-                (
-                    this.InvoiceNumber == input.InvoiceNumber ||
-                    (this.InvoiceNumber != null &&
-                    this.InvoiceNumber.Equals(input.InvoiceNumber))
-                ) && 
-                (
-                    this.SealMark == input.SealMark ||
-                    (this.SealMark != null &&
-                    this.SealMark.Equals(input.SealMark))
-                ) && 
-                (
-                    this.Title == input.Title ||
-                    (this.Title != null &&
-                    this.Title.Equals(input.Title))
-                ) && 
-                (
-                    this.Area == input.Area ||
-                    (this.Area != null &&
-                    this.Area.Equals(input.Area))
-                ) && 
-                (
-                    this.ReceiptNumber == input.ReceiptNumber ||
-                    (this.ReceiptNumber != null &&
-                    this.ReceiptNumber.Equals(input.ReceiptNumber))
-                ) && 
-                (
-                    this.AmountInFigures == input.AmountInFigures ||
-                    (this.AmountInFigures != null &&
-                    this.AmountInFigures.Equals(input.AmountInFigures))
-                ) && 
-                (
-                    this.AmountInWords == input.AmountInWords ||
-                    (this.AmountInWords != null &&
-                    this.AmountInWords.Equals(input.AmountInWords))
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                ) && 
-                (
-                    this.TextLocation == input.TextLocation ||
-                    (this.TextLocation != null &&
-                    this.TextLocation.Equals(input.TextLocation))
-                );
+            return true;
         }
 
         /// <summary>
@@ -499,81 +350,44 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TicketId != null)
-                    hashCode = hashCode * 59 + this.TicketId.GetHashCode();
-                if (this.CheckPort != null)
-                    hashCode = hashCode * 59 + this.CheckPort.GetHashCode();
-                if (this.TrainNumber != null)
-                    hashCode = hashCode * 59 + this.TrainNumber.GetHashCode();
-                if (this.DepartureStation != null)
-                    hashCode = hashCode * 59 + this.DepartureStation.GetHashCode();
-                if (this.DestinationStation != null)
-                    hashCode = hashCode * 59 + this.DestinationStation.GetHashCode();
-                if (this.DepartureStationEn != null)
-                    hashCode = hashCode * 59 + this.DepartureStationEn.GetHashCode();
-                if (this.DestinationStationEn != null)
-                    hashCode = hashCode * 59 + this.DestinationStationEn.GetHashCode();
-                if (this.DepartureTime != null)
-                    hashCode = hashCode * 59 + this.DepartureTime.GetHashCode();
-                if (this.SeatNumber != null)
-                    hashCode = hashCode * 59 + this.SeatNumber.GetHashCode();
-                if (this.TicketPrice != null)
-                    hashCode = hashCode * 59 + this.TicketPrice.GetHashCode();
-                if (this.SaleMethod != null)
-                    hashCode = hashCode * 59 + this.SaleMethod.GetHashCode();
-                if (this.SeatCategory != null)
-                    hashCode = hashCode * 59 + this.SeatCategory.GetHashCode();
-                if (this.TicketChanging != null)
-                    hashCode = hashCode * 59 + this.TicketChanging.GetHashCode();
-                if (this.IdNumber != null)
-                    hashCode = hashCode * 59 + this.IdNumber.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.LogId != null)
-                    hashCode = hashCode * 59 + this.LogId.GetHashCode();
-                if (this.SaleLocation != null)
-                    hashCode = hashCode * 59 + this.SaleLocation.GetHashCode();
-                if (this.InvoiceStyle != null)
-                    hashCode = hashCode * 59 + this.InvoiceStyle.GetHashCode();
-                if (this.IssueDate != null)
-                    hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
-                if (this.DiscountMark != null)
-                    hashCode = hashCode * 59 + this.DiscountMark.GetHashCode();
-                if (this.SerialNumber != null)
-                    hashCode = hashCode * 59 + this.SerialNumber.GetHashCode();
-                if (this.TaxAmount != null)
-                    hashCode = hashCode * 59 + this.TaxAmount.GetHashCode();
-                if (this.TaxRate != null)
-                    hashCode = hashCode * 59 + this.TaxRate.GetHashCode();
-                if (this.AirConditioning != null)
-                    hashCode = hashCode * 59 + this.AirConditioning.GetHashCode();
-                if (this.OriginalInvoiceNumber != null)
-                    hashCode = hashCode * 59 + this.OriginalInvoiceNumber.GetHashCode();
-                if (this.UnifiedSocialCreditCode != null)
-                    hashCode = hashCode * 59 + this.UnifiedSocialCreditCode.GetHashCode();
-                if (this.BuyerName != null)
-                    hashCode = hashCode * 59 + this.BuyerName.GetHashCode();
-                if (this.TotalAmountExcludingTax != null)
-                    hashCode = hashCode * 59 + this.TotalAmountExcludingTax.GetHashCode();
-                if (this.InvoiceNumber != null)
-                    hashCode = hashCode * 59 + this.InvoiceNumber.GetHashCode();
-                if (this.SealMark != null)
-                    hashCode = hashCode * 59 + this.SealMark.GetHashCode();
-                if (this.Title != null)
-                    hashCode = hashCode * 59 + this.Title.GetHashCode();
-                if (this.Area != null)
-                    hashCode = hashCode * 59 + this.Area.GetHashCode();
-                if (this.ReceiptNumber != null)
-                    hashCode = hashCode * 59 + this.ReceiptNumber.GetHashCode();
-                if (this.AmountInFigures != null)
-                    hashCode = hashCode * 59 + this.AmountInFigures.GetHashCode();
-                if (this.AmountInWords != null)
-                    hashCode = hashCode * 59 + this.AmountInWords.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
-                if (this.TextLocation != null)
-                    hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
+                var hashCode = 41;
+                if (this.TicketId != null) hashCode = hashCode * 59 + this.TicketId.GetHashCode();
+                if (this.CheckPort != null) hashCode = hashCode * 59 + this.CheckPort.GetHashCode();
+                if (this.TrainNumber != null) hashCode = hashCode * 59 + this.TrainNumber.GetHashCode();
+                if (this.DepartureStation != null) hashCode = hashCode * 59 + this.DepartureStation.GetHashCode();
+                if (this.DestinationStation != null) hashCode = hashCode * 59 + this.DestinationStation.GetHashCode();
+                if (this.DepartureStationEn != null) hashCode = hashCode * 59 + this.DepartureStationEn.GetHashCode();
+                if (this.DestinationStationEn != null) hashCode = hashCode * 59 + this.DestinationStationEn.GetHashCode();
+                if (this.DepartureTime != null) hashCode = hashCode * 59 + this.DepartureTime.GetHashCode();
+                if (this.SeatNumber != null) hashCode = hashCode * 59 + this.SeatNumber.GetHashCode();
+                if (this.TicketPrice != null) hashCode = hashCode * 59 + this.TicketPrice.GetHashCode();
+                if (this.SaleMethod != null) hashCode = hashCode * 59 + this.SaleMethod.GetHashCode();
+                if (this.SeatCategory != null) hashCode = hashCode * 59 + this.SeatCategory.GetHashCode();
+                if (this.TicketChanging != null) hashCode = hashCode * 59 + this.TicketChanging.GetHashCode();
+                if (this.IdNumber != null) hashCode = hashCode * 59 + this.IdNumber.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.LogId != null) hashCode = hashCode * 59 + this.LogId.GetHashCode();
+                if (this.SaleLocation != null) hashCode = hashCode * 59 + this.SaleLocation.GetHashCode();
+                if (this.InvoiceStyle != null) hashCode = hashCode * 59 + this.InvoiceStyle.GetHashCode();
+                if (this.IssueDate != null) hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
+                if (this.DiscountMark != null) hashCode = hashCode * 59 + this.DiscountMark.GetHashCode();
+                if (this.SerialNumber != null) hashCode = hashCode * 59 + this.SerialNumber.GetHashCode();
+                if (this.TaxAmount != null) hashCode = hashCode * 59 + this.TaxAmount.GetHashCode();
+                if (this.TaxRate != null) hashCode = hashCode * 59 + this.TaxRate.GetHashCode();
+                if (this.AirConditioning != null) hashCode = hashCode * 59 + this.AirConditioning.GetHashCode();
+                if (this.OriginalInvoiceNumber != null) hashCode = hashCode * 59 + this.OriginalInvoiceNumber.GetHashCode();
+                if (this.UnifiedSocialCreditCode != null) hashCode = hashCode * 59 + this.UnifiedSocialCreditCode.GetHashCode();
+                if (this.BuyerName != null) hashCode = hashCode * 59 + this.BuyerName.GetHashCode();
+                if (this.TotalAmountExcludingTax != null) hashCode = hashCode * 59 + this.TotalAmountExcludingTax.GetHashCode();
+                if (this.InvoiceNumber != null) hashCode = hashCode * 59 + this.InvoiceNumber.GetHashCode();
+                if (this.SealMark != null) hashCode = hashCode * 59 + this.SealMark.GetHashCode();
+                if (this.Title != null) hashCode = hashCode * 59 + this.Title.GetHashCode();
+                if (this.Area != null) hashCode = hashCode * 59 + this.Area.GetHashCode();
+                if (this.ReceiptNumber != null) hashCode = hashCode * 59 + this.ReceiptNumber.GetHashCode();
+                if (this.AmountInFigures != null) hashCode = hashCode * 59 + this.AmountInFigures.GetHashCode();
+                if (this.AmountInWords != null) hashCode = hashCode * 59 + this.AmountInWords.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                if (this.TextLocation != null) hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
                 return hashCode;
             }
         }

@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         /// </summary>
         public bool Equals(Parameter input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ParamName != input.ParamName || (this.ParamName != null && !this.ParamName.Equals(input.ParamName))) return false;
+            if (this.ParamType != input.ParamType || (this.ParamType != null && !this.ParamType.Equals(input.ParamType))) return false;
+            if (this.ParamGroup != input.ParamGroup || (this.ParamGroup != null && !this.ParamGroup.Equals(input.ParamGroup))) return false;
+            if (this.DefaultValue != input.DefaultValue || (this.DefaultValue != null && !this.DefaultValue.Equals(input.DefaultValue))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Encryption != input.Encryption || (this.Encryption != null && !this.Encryption.Equals(input.Encryption))) return false;
+            if (this.Hint != input.Hint || (this.Hint != null && !this.Hint.Equals(input.Hint))) return false;
+            if (this.QuoteParam != input.QuoteParam || (this.QuoteParam != null && !this.QuoteParam.Equals(input.QuoteParam))) return false;
+            if (this.Required != input.Required || (this.Required != null && !this.Required.Equals(input.Required))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
 
-            return 
-                (
-                    this.ParamName == input.ParamName ||
-                    (this.ParamName != null &&
-                    this.ParamName.Equals(input.ParamName))
-                ) && 
-                (
-                    this.ParamType == input.ParamType ||
-                    (this.ParamType != null &&
-                    this.ParamType.Equals(input.ParamType))
-                ) && 
-                (
-                    this.ParamGroup == input.ParamGroup ||
-                    (this.ParamGroup != null &&
-                    this.ParamGroup.Equals(input.ParamGroup))
-                ) && 
-                (
-                    this.DefaultValue == input.DefaultValue ||
-                    (this.DefaultValue != null &&
-                    this.DefaultValue.Equals(input.DefaultValue))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Encryption == input.Encryption ||
-                    (this.Encryption != null &&
-                    this.Encryption.Equals(input.Encryption))
-                ) && 
-                (
-                    this.Hint == input.Hint ||
-                    (this.Hint != null &&
-                    this.Hint.Equals(input.Hint))
-                ) && 
-                (
-                    this.QuoteParam == input.QuoteParam ||
-                    (this.QuoteParam != null &&
-                    this.QuoteParam.Equals(input.QuoteParam))
-                ) && 
-                (
-                    this.Required == input.Required ||
-                    (this.Required != null &&
-                    this.Required.Equals(input.Required))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ParamName != null)
-                    hashCode = hashCode * 59 + this.ParamName.GetHashCode();
-                if (this.ParamType != null)
-                    hashCode = hashCode * 59 + this.ParamType.GetHashCode();
-                if (this.ParamGroup != null)
-                    hashCode = hashCode * 59 + this.ParamGroup.GetHashCode();
-                if (this.DefaultValue != null)
-                    hashCode = hashCode * 59 + this.DefaultValue.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Encryption != null)
-                    hashCode = hashCode * 59 + this.Encryption.GetHashCode();
-                if (this.Hint != null)
-                    hashCode = hashCode * 59 + this.Hint.GetHashCode();
-                if (this.QuoteParam != null)
-                    hashCode = hashCode * 59 + this.QuoteParam.GetHashCode();
-                if (this.Required != null)
-                    hashCode = hashCode * 59 + this.Required.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                var hashCode = 41;
+                if (this.ParamName != null) hashCode = hashCode * 59 + this.ParamName.GetHashCode();
+                if (this.ParamType != null) hashCode = hashCode * 59 + this.ParamType.GetHashCode();
+                if (this.ParamGroup != null) hashCode = hashCode * 59 + this.ParamGroup.GetHashCode();
+                if (this.DefaultValue != null) hashCode = hashCode * 59 + this.DefaultValue.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Encryption != null) hashCode = hashCode * 59 + this.Encryption.GetHashCode();
+                if (this.Hint != null) hashCode = hashCode * 59 + this.Hint.GetHashCode();
+                if (this.QuoteParam != null) hashCode = hashCode * 59 + this.QuoteParam.GetHashCode();
+                if (this.Required != null) hashCode = hashCode * 59 + this.Required.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

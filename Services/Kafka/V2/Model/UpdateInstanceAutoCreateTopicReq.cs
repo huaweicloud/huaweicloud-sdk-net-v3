@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(UpdateInstanceAutoCreateTopicReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EnableAutoTopic != input.EnableAutoTopic || (this.EnableAutoTopic != null && !this.EnableAutoTopic.Equals(input.EnableAutoTopic))) return false;
 
-            return 
-                (
-                    this.EnableAutoTopic == input.EnableAutoTopic ||
-                    (this.EnableAutoTopic != null &&
-                    this.EnableAutoTopic.Equals(input.EnableAutoTopic))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EnableAutoTopic != null)
-                    hashCode = hashCode * 59 + this.EnableAutoTopic.GetHashCode();
+                var hashCode = 41;
+                if (this.EnableAutoTopic != null) hashCode = hashCode * 59 + this.EnableAutoTopic.GetHashCode();
                 return hashCode;
             }
         }

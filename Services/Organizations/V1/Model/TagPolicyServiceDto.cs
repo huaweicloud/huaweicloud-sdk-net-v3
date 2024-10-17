@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(TagPolicyServiceDto input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ServiceName != input.ServiceName || (this.ServiceName != null && !this.ServiceName.Equals(input.ServiceName))) return false;
+            if (this.ResourceTypes != input.ResourceTypes || (this.ResourceTypes != null && input.ResourceTypes != null && !this.ResourceTypes.SequenceEqual(input.ResourceTypes))) return false;
+            if (this.SupportAll != input.SupportAll || (this.SupportAll != null && !this.SupportAll.Equals(input.SupportAll))) return false;
 
-            return 
-                (
-                    this.ServiceName == input.ServiceName ||
-                    (this.ServiceName != null &&
-                    this.ServiceName.Equals(input.ServiceName))
-                ) && 
-                (
-                    this.ResourceTypes == input.ResourceTypes ||
-                    this.ResourceTypes != null &&
-                    input.ResourceTypes != null &&
-                    this.ResourceTypes.SequenceEqual(input.ResourceTypes)
-                ) && 
-                (
-                    this.SupportAll == input.SupportAll ||
-                    (this.SupportAll != null &&
-                    this.SupportAll.Equals(input.SupportAll))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ServiceName != null)
-                    hashCode = hashCode * 59 + this.ServiceName.GetHashCode();
-                if (this.ResourceTypes != null)
-                    hashCode = hashCode * 59 + this.ResourceTypes.GetHashCode();
-                if (this.SupportAll != null)
-                    hashCode = hashCode * 59 + this.SupportAll.GetHashCode();
+                var hashCode = 41;
+                if (this.ServiceName != null) hashCode = hashCode * 59 + this.ServiceName.GetHashCode();
+                if (this.ResourceTypes != null) hashCode = hashCode * 59 + this.ResourceTypes.GetHashCode();
+                if (this.SupportAll != null) hashCode = hashCode * 59 + this.SupportAll.GetHashCode();
                 return hashCode;
             }
         }

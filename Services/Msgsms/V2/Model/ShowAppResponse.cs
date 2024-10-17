@@ -196,120 +196,31 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         /// </summary>
         public bool Equals(ShowAppResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.CustomerId != input.CustomerId || (this.CustomerId != null && !this.CustomerId.Equals(input.CustomerId))) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
+            if (this.DeveloperAccount != input.DeveloperAccount || (this.DeveloperAccount != null && !this.DeveloperAccount.Equals(input.DeveloperAccount))) return false;
+            if (this.AppName != input.AppName || (this.AppName != null && !this.AppName.Equals(input.AppName))) return false;
+            if (this.OmpAppName != input.OmpAppName || (this.OmpAppName != null && !this.OmpAppName.Equals(input.OmpAppName))) return false;
+            if (this.AppKey != input.AppKey || (this.AppKey != null && !this.AppKey.Equals(input.AppKey))) return false;
+            if (this.UpLinkAddr != input.UpLinkAddr || (this.UpLinkAddr != null && !this.UpLinkAddr.Equals(input.UpLinkAddr))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Industry != input.Industry || (this.Industry != null && !this.Industry.Equals(input.Industry))) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
+            if (this.IntlChannelNum != input.IntlChannelNum || (this.IntlChannelNum != null && !this.IntlChannelNum.Equals(input.IntlChannelNum))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.EnterpriseProjectName != input.EnterpriseProjectName || (this.EnterpriseProjectName != null && !this.EnterpriseProjectName.Equals(input.EnterpriseProjectName))) return false;
+            if (this.IpWhiteList != input.IpWhiteList || (this.IpWhiteList != null && !this.IpWhiteList.Equals(input.IpWhiteList))) return false;
+            if (this.AppAccessAddr != input.AppAccessAddr || (this.AppAccessAddr != null && !this.AppAccessAddr.Equals(input.AppAccessAddr))) return false;
+            if (this.Protocol != input.Protocol || (this.Protocol != null && !this.Protocol.Equals(input.Protocol))) return false;
+            if (this.Platform != input.Platform || (this.Platform != null && !this.Platform.Equals(input.Platform))) return false;
+            if (this.IsSupportMultiomp != input.IsSupportMultiomp || (this.IsSupportMultiomp != null && !this.IsSupportMultiomp.Equals(input.IsSupportMultiomp))) return false;
+            if (this.Tenant != input.Tenant || (this.Tenant != null && !this.Tenant.Equals(input.Tenant))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.CustomerId == input.CustomerId ||
-                    (this.CustomerId != null &&
-                    this.CustomerId.Equals(input.CustomerId))
-                ) && 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
-                ) && 
-                (
-                    this.DeveloperAccount == input.DeveloperAccount ||
-                    (this.DeveloperAccount != null &&
-                    this.DeveloperAccount.Equals(input.DeveloperAccount))
-                ) && 
-                (
-                    this.AppName == input.AppName ||
-                    (this.AppName != null &&
-                    this.AppName.Equals(input.AppName))
-                ) && 
-                (
-                    this.OmpAppName == input.OmpAppName ||
-                    (this.OmpAppName != null &&
-                    this.OmpAppName.Equals(input.OmpAppName))
-                ) && 
-                (
-                    this.AppKey == input.AppKey ||
-                    (this.AppKey != null &&
-                    this.AppKey.Equals(input.AppKey))
-                ) && 
-                (
-                    this.UpLinkAddr == input.UpLinkAddr ||
-                    (this.UpLinkAddr != null &&
-                    this.UpLinkAddr.Equals(input.UpLinkAddr))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Industry == input.Industry ||
-                    (this.Industry != null &&
-                    this.Industry.Equals(input.Industry))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.IntlChannelNum == input.IntlChannelNum ||
-                    (this.IntlChannelNum != null &&
-                    this.IntlChannelNum.Equals(input.IntlChannelNum))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.EnterpriseProjectName == input.EnterpriseProjectName ||
-                    (this.EnterpriseProjectName != null &&
-                    this.EnterpriseProjectName.Equals(input.EnterpriseProjectName))
-                ) && 
-                (
-                    this.IpWhiteList == input.IpWhiteList ||
-                    (this.IpWhiteList != null &&
-                    this.IpWhiteList.Equals(input.IpWhiteList))
-                ) && 
-                (
-                    this.AppAccessAddr == input.AppAccessAddr ||
-                    (this.AppAccessAddr != null &&
-                    this.AppAccessAddr.Equals(input.AppAccessAddr))
-                ) && 
-                (
-                    this.Protocol == input.Protocol ||
-                    (this.Protocol != null &&
-                    this.Protocol.Equals(input.Protocol))
-                ) && 
-                (
-                    this.Platform == input.Platform ||
-                    (this.Platform != null &&
-                    this.Platform.Equals(input.Platform))
-                ) && 
-                (
-                    this.IsSupportMultiomp == input.IsSupportMultiomp ||
-                    (this.IsSupportMultiomp != null &&
-                    this.IsSupportMultiomp.Equals(input.IsSupportMultiomp))
-                ) && 
-                (
-                    this.Tenant == input.Tenant ||
-                    (this.Tenant != null &&
-                    this.Tenant.Equals(input.Tenant))
-                );
+            return true;
         }
 
         /// <summary>
@@ -319,51 +230,29 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.CustomerId != null)
-                    hashCode = hashCode * 59 + this.CustomerId.GetHashCode();
-                if (this.ResourceId != null)
-                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
-                if (this.DeveloperAccount != null)
-                    hashCode = hashCode * 59 + this.DeveloperAccount.GetHashCode();
-                if (this.AppName != null)
-                    hashCode = hashCode * 59 + this.AppName.GetHashCode();
-                if (this.OmpAppName != null)
-                    hashCode = hashCode * 59 + this.OmpAppName.GetHashCode();
-                if (this.AppKey != null)
-                    hashCode = hashCode * 59 + this.AppKey.GetHashCode();
-                if (this.UpLinkAddr != null)
-                    hashCode = hashCode * 59 + this.UpLinkAddr.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Industry != null)
-                    hashCode = hashCode * 59 + this.Industry.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.IntlChannelNum != null)
-                    hashCode = hashCode * 59 + this.IntlChannelNum.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.EnterpriseProjectName != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectName.GetHashCode();
-                if (this.IpWhiteList != null)
-                    hashCode = hashCode * 59 + this.IpWhiteList.GetHashCode();
-                if (this.AppAccessAddr != null)
-                    hashCode = hashCode * 59 + this.AppAccessAddr.GetHashCode();
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
-                if (this.Platform != null)
-                    hashCode = hashCode * 59 + this.Platform.GetHashCode();
-                if (this.IsSupportMultiomp != null)
-                    hashCode = hashCode * 59 + this.IsSupportMultiomp.GetHashCode();
-                if (this.Tenant != null)
-                    hashCode = hashCode * 59 + this.Tenant.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.CustomerId != null) hashCode = hashCode * 59 + this.CustomerId.GetHashCode();
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.DeveloperAccount != null) hashCode = hashCode * 59 + this.DeveloperAccount.GetHashCode();
+                if (this.AppName != null) hashCode = hashCode * 59 + this.AppName.GetHashCode();
+                if (this.OmpAppName != null) hashCode = hashCode * 59 + this.OmpAppName.GetHashCode();
+                if (this.AppKey != null) hashCode = hashCode * 59 + this.AppKey.GetHashCode();
+                if (this.UpLinkAddr != null) hashCode = hashCode * 59 + this.UpLinkAddr.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Industry != null) hashCode = hashCode * 59 + this.Industry.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
+                if (this.IntlChannelNum != null) hashCode = hashCode * 59 + this.IntlChannelNum.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.EnterpriseProjectName != null) hashCode = hashCode * 59 + this.EnterpriseProjectName.GetHashCode();
+                if (this.IpWhiteList != null) hashCode = hashCode * 59 + this.IpWhiteList.GetHashCode();
+                if (this.AppAccessAddr != null) hashCode = hashCode * 59 + this.AppAccessAddr.GetHashCode();
+                if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.Platform != null) hashCode = hashCode * 59 + this.Platform.GetHashCode();
+                if (this.IsSupportMultiomp != null) hashCode = hashCode * 59 + this.IsSupportMultiomp.GetHashCode();
+                if (this.Tenant != null) hashCode = hashCode * 59 + this.Tenant.GetHashCode();
                 return hashCode;
             }
         }

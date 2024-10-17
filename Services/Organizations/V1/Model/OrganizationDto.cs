@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(OrganizationDto input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Urn != input.Urn || (this.Urn != null && !this.Urn.Equals(input.Urn))) return false;
+            if (this.ManagementAccountId != input.ManagementAccountId || (this.ManagementAccountId != null && !this.ManagementAccountId.Equals(input.ManagementAccountId))) return false;
+            if (this.ManagementAccountName != input.ManagementAccountName || (this.ManagementAccountName != null && !this.ManagementAccountName.Equals(input.ManagementAccountName))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Urn == input.Urn ||
-                    (this.Urn != null &&
-                    this.Urn.Equals(input.Urn))
-                ) && 
-                (
-                    this.ManagementAccountId == input.ManagementAccountId ||
-                    (this.ManagementAccountId != null &&
-                    this.ManagementAccountId.Equals(input.ManagementAccountId))
-                ) && 
-                (
-                    this.ManagementAccountName == input.ManagementAccountName ||
-                    (this.ManagementAccountName != null &&
-                    this.ManagementAccountName.Equals(input.ManagementAccountName))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Urn != null)
-                    hashCode = hashCode * 59 + this.Urn.GetHashCode();
-                if (this.ManagementAccountId != null)
-                    hashCode = hashCode * 59 + this.ManagementAccountId.GetHashCode();
-                if (this.ManagementAccountName != null)
-                    hashCode = hashCode * 59 + this.ManagementAccountName.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Urn != null) hashCode = hashCode * 59 + this.Urn.GetHashCode();
+                if (this.ManagementAccountId != null) hashCode = hashCode * 59 + this.ManagementAccountId.GetHashCode();
+                if (this.ManagementAccountName != null) hashCode = hashCode * 59 + this.ManagementAccountName.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
                 return hashCode;
             }
         }

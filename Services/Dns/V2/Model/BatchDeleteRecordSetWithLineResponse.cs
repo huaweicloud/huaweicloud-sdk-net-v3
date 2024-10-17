@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public bool Equals(BatchDeleteRecordSetWithLineResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Links != input.Links || (this.Links != null && !this.Links.Equals(input.Links))) return false;
+            if (this.Recordsets != input.Recordsets || (this.Recordsets != null && input.Recordsets != null && !this.Recordsets.SequenceEqual(input.Recordsets))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && !this.Metadata.Equals(input.Metadata))) return false;
 
-            return 
-                (
-                    this.Links == input.Links ||
-                    (this.Links != null &&
-                    this.Links.Equals(input.Links))
-                ) && 
-                (
-                    this.Recordsets == input.Recordsets ||
-                    this.Recordsets != null &&
-                    input.Recordsets != null &&
-                    this.Recordsets.SequenceEqual(input.Recordsets)
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    (this.Metadata != null &&
-                    this.Metadata.Equals(input.Metadata))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Links != null)
-                    hashCode = hashCode * 59 + this.Links.GetHashCode();
-                if (this.Recordsets != null)
-                    hashCode = hashCode * 59 + this.Recordsets.GetHashCode();
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                var hashCode = 41;
+                if (this.Links != null) hashCode = hashCode * 59 + this.Links.GetHashCode();
+                if (this.Recordsets != null) hashCode = hashCode * 59 + this.Recordsets.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
                 return hashCode;
             }
         }

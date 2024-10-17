@@ -63,27 +63,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(FirewallInsertRuleOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IngressRules != input.IngressRules || (this.IngressRules != null && input.IngressRules != null && !this.IngressRules.SequenceEqual(input.IngressRules))) return false;
+            if (this.EgressRules != input.EgressRules || (this.EgressRules != null && input.EgressRules != null && !this.EgressRules.SequenceEqual(input.EgressRules))) return false;
+            if (this.InsertAfterRule != input.InsertAfterRule || (this.InsertAfterRule != null && !this.InsertAfterRule.Equals(input.InsertAfterRule))) return false;
 
-            return 
-                (
-                    this.IngressRules == input.IngressRules ||
-                    this.IngressRules != null &&
-                    input.IngressRules != null &&
-                    this.IngressRules.SequenceEqual(input.IngressRules)
-                ) && 
-                (
-                    this.EgressRules == input.EgressRules ||
-                    this.EgressRules != null &&
-                    input.EgressRules != null &&
-                    this.EgressRules.SequenceEqual(input.EgressRules)
-                ) && 
-                (
-                    this.InsertAfterRule == input.InsertAfterRule ||
-                    (this.InsertAfterRule != null &&
-                    this.InsertAfterRule.Equals(input.InsertAfterRule))
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +78,10 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IngressRules != null)
-                    hashCode = hashCode * 59 + this.IngressRules.GetHashCode();
-                if (this.EgressRules != null)
-                    hashCode = hashCode * 59 + this.EgressRules.GetHashCode();
-                if (this.InsertAfterRule != null)
-                    hashCode = hashCode * 59 + this.InsertAfterRule.GetHashCode();
+                var hashCode = 41;
+                if (this.IngressRules != null) hashCode = hashCode * 59 + this.IngressRules.GetHashCode();
+                if (this.EgressRules != null) hashCode = hashCode * 59 + this.EgressRules.GetHashCode();
+                if (this.InsertAfterRule != null) hashCode = hashCode * 59 + this.InsertAfterRule.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ListJobHistoryParametersResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.ParameterHistoryConfigList != input.ParameterHistoryConfigList || (this.ParameterHistoryConfigList != null && input.ParameterHistoryConfigList != null && !this.ParameterHistoryConfigList.SequenceEqual(input.ParameterHistoryConfigList))) return false;
 
-            return 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.ParameterHistoryConfigList == input.ParameterHistoryConfigList ||
-                    this.ParameterHistoryConfigList != null &&
-                    input.ParameterHistoryConfigList != null &&
-                    this.ParameterHistoryConfigList.SequenceEqual(input.ParameterHistoryConfigList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.ParameterHistoryConfigList != null)
-                    hashCode = hashCode * 59 + this.ParameterHistoryConfigList.GetHashCode();
+                var hashCode = 41;
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.ParameterHistoryConfigList != null) hashCode = hashCode * 59 + this.ParameterHistoryConfigList.GetHashCode();
                 return hashCode;
             }
         }

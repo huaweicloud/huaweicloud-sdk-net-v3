@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(UpdateCoverByThumbnailReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ThumbnailUrl != input.ThumbnailUrl || (this.ThumbnailUrl != null && !this.ThumbnailUrl.Equals(input.ThumbnailUrl))) return false;
 
-            return 
-                (
-                    this.ThumbnailUrl == input.ThumbnailUrl ||
-                    (this.ThumbnailUrl != null &&
-                    this.ThumbnailUrl.Equals(input.ThumbnailUrl))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ThumbnailUrl != null)
-                    hashCode = hashCode * 59 + this.ThumbnailUrl.GetHashCode();
+                var hashCode = 41;
+                if (this.ThumbnailUrl != null) hashCode = hashCode * 59 + this.ThumbnailUrl.GetHashCode();
                 return hashCode;
             }
         }

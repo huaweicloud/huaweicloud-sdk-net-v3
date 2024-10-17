@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(Strategy input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Trigger != input.Trigger || (this.Trigger != null && !this.Trigger.Equals(input.Trigger))) return false;
+            if (this.EventValidTime != input.EventValidTime || (this.EventValidTime != null && !this.EventValidTime.Equals(input.EventValidTime))) return false;
 
-            return 
-                (
-                    this.Trigger == input.Trigger ||
-                    (this.Trigger != null &&
-                    this.Trigger.Equals(input.Trigger))
-                ) && 
-                (
-                    this.EventValidTime == input.EventValidTime ||
-                    (this.EventValidTime != null &&
-                    this.EventValidTime.Equals(input.EventValidTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Trigger != null)
-                    hashCode = hashCode * 59 + this.Trigger.GetHashCode();
-                if (this.EventValidTime != null)
-                    hashCode = hashCode * 59 + this.EventValidTime.GetHashCode();
+                var hashCode = 41;
+                if (this.Trigger != null) hashCode = hashCode * 59 + this.Trigger.GetHashCode();
+                if (this.EventValidTime != null) hashCode = hashCode * 59 + this.EventValidTime.GetHashCode();
                 return hashCode;
             }
         }

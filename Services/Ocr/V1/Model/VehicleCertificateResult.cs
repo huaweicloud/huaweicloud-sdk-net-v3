@@ -357,235 +357,54 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(VehicleCertificateResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CertificateNumber != input.CertificateNumber || (this.CertificateNumber != null && !this.CertificateNumber.Equals(input.CertificateNumber))) return false;
+            if (this.IssueDate != input.IssueDate || (this.IssueDate != null && !this.IssueDate.Equals(input.IssueDate))) return false;
+            if (this.ManufactureName != input.ManufactureName || (this.ManufactureName != null && !this.ManufactureName.Equals(input.ManufactureName))) return false;
+            if (this.VehicleBrand != input.VehicleBrand || (this.VehicleBrand != null && !this.VehicleBrand.Equals(input.VehicleBrand))) return false;
+            if (this.VehicleName != input.VehicleName || (this.VehicleName != null && !this.VehicleName.Equals(input.VehicleName))) return false;
+            if (this.VehicleModel != input.VehicleModel || (this.VehicleModel != null && !this.VehicleModel.Equals(input.VehicleModel))) return false;
+            if (this.Vin != input.Vin || (this.Vin != null && !this.Vin.Equals(input.Vin))) return false;
+            if (this.VehicleColor != input.VehicleColor || (this.VehicleColor != null && !this.VehicleColor.Equals(input.VehicleColor))) return false;
+            if (this.ChassisModel != input.ChassisModel || (this.ChassisModel != null && !this.ChassisModel.Equals(input.ChassisModel))) return false;
+            if (this.ChassisId != input.ChassisId || (this.ChassisId != null && !this.ChassisId.Equals(input.ChassisId))) return false;
+            if (this.ChassisCertificateNumber != input.ChassisCertificateNumber || (this.ChassisCertificateNumber != null && !this.ChassisCertificateNumber.Equals(input.ChassisCertificateNumber))) return false;
+            if (this.EngineModel != input.EngineModel || (this.EngineModel != null && !this.EngineModel.Equals(input.EngineModel))) return false;
+            if (this.EngineNumber != input.EngineNumber || (this.EngineNumber != null && !this.EngineNumber.Equals(input.EngineNumber))) return false;
+            if (this.FuelType != input.FuelType || (this.FuelType != null && !this.FuelType.Equals(input.FuelType))) return false;
+            if (this.Displacement != input.Displacement || (this.Displacement != null && !this.Displacement.Equals(input.Displacement))) return false;
+            if (this.Power != input.Power || (this.Power != null && !this.Power.Equals(input.Power))) return false;
+            if (this.EmissionStandard != input.EmissionStandard || (this.EmissionStandard != null && !this.EmissionStandard.Equals(input.EmissionStandard))) return false;
+            if (this.FuelConsumption != input.FuelConsumption || (this.FuelConsumption != null && !this.FuelConsumption.Equals(input.FuelConsumption))) return false;
+            if (this.OverallDimensionLength != input.OverallDimensionLength || (this.OverallDimensionLength != null && !this.OverallDimensionLength.Equals(input.OverallDimensionLength))) return false;
+            if (this.OverallDimensionWidth != input.OverallDimensionWidth || (this.OverallDimensionWidth != null && !this.OverallDimensionWidth.Equals(input.OverallDimensionWidth))) return false;
+            if (this.OverallDimensionHeight != input.OverallDimensionHeight || (this.OverallDimensionHeight != null && !this.OverallDimensionHeight.Equals(input.OverallDimensionHeight))) return false;
+            if (this.ContainerDimensionLength != input.ContainerDimensionLength || (this.ContainerDimensionLength != null && !this.ContainerDimensionLength.Equals(input.ContainerDimensionLength))) return false;
+            if (this.ContainerDimensionWidth != input.ContainerDimensionWidth || (this.ContainerDimensionWidth != null && !this.ContainerDimensionWidth.Equals(input.ContainerDimensionWidth))) return false;
+            if (this.ContainerDimensionHeight != input.ContainerDimensionHeight || (this.ContainerDimensionHeight != null && !this.ContainerDimensionHeight.Equals(input.ContainerDimensionHeight))) return false;
+            if (this.SpringQuantity != input.SpringQuantity || (this.SpringQuantity != null && !this.SpringQuantity.Equals(input.SpringQuantity))) return false;
+            if (this.TireQuantity != input.TireQuantity || (this.TireQuantity != null && !this.TireQuantity.Equals(input.TireQuantity))) return false;
+            if (this.TireSize != input.TireSize || (this.TireSize != null && !this.TireSize.Equals(input.TireSize))) return false;
+            if (this.FrontWheelTrack != input.FrontWheelTrack || (this.FrontWheelTrack != null && !this.FrontWheelTrack.Equals(input.FrontWheelTrack))) return false;
+            if (this.RearWheelTrack != input.RearWheelTrack || (this.RearWheelTrack != null && !this.RearWheelTrack.Equals(input.RearWheelTrack))) return false;
+            if (this.Wheelbase != input.Wheelbase || (this.Wheelbase != null && !this.Wheelbase.Equals(input.Wheelbase))) return false;
+            if (this.AxleLoad != input.AxleLoad || (this.AxleLoad != null && !this.AxleLoad.Equals(input.AxleLoad))) return false;
+            if (this.AxleQuantity != input.AxleQuantity || (this.AxleQuantity != null && !this.AxleQuantity.Equals(input.AxleQuantity))) return false;
+            if (this.SteeringForm != input.SteeringForm || (this.SteeringForm != null && !this.SteeringForm.Equals(input.SteeringForm))) return false;
+            if (this.TotalWeight != input.TotalWeight || (this.TotalWeight != null && !this.TotalWeight.Equals(input.TotalWeight))) return false;
+            if (this.EquipmentWeight != input.EquipmentWeight || (this.EquipmentWeight != null && !this.EquipmentWeight.Equals(input.EquipmentWeight))) return false;
+            if (this.MaximumLadenMass != input.MaximumLadenMass || (this.MaximumLadenMass != null && !this.MaximumLadenMass.Equals(input.MaximumLadenMass))) return false;
+            if (this.MassUtilizationCoefficient != input.MassUtilizationCoefficient || (this.MassUtilizationCoefficient != null && !this.MassUtilizationCoefficient.Equals(input.MassUtilizationCoefficient))) return false;
+            if (this.TractionWeight != input.TractionWeight || (this.TractionWeight != null && !this.TractionWeight.Equals(input.TractionWeight))) return false;
+            if (this.MaximumLoadMass != input.MaximumLoadMass || (this.MaximumLoadMass != null && !this.MaximumLoadMass.Equals(input.MaximumLoadMass))) return false;
+            if (this.CabPassengerCapacity != input.CabPassengerCapacity || (this.CabPassengerCapacity != null && !this.CabPassengerCapacity.Equals(input.CabPassengerCapacity))) return false;
+            if (this.PassengerCapacity != input.PassengerCapacity || (this.PassengerCapacity != null && !this.PassengerCapacity.Equals(input.PassengerCapacity))) return false;
+            if (this.MaxDesignSpeed != input.MaxDesignSpeed || (this.MaxDesignSpeed != null && !this.MaxDesignSpeed.Equals(input.MaxDesignSpeed))) return false;
+            if (this.ManufactureDate != input.ManufactureDate || (this.ManufactureDate != null && !this.ManufactureDate.Equals(input.ManufactureDate))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
+            if (this.TextLocation != input.TextLocation || (this.TextLocation != null && !this.TextLocation.Equals(input.TextLocation))) return false;
 
-            return 
-                (
-                    this.CertificateNumber == input.CertificateNumber ||
-                    (this.CertificateNumber != null &&
-                    this.CertificateNumber.Equals(input.CertificateNumber))
-                ) && 
-                (
-                    this.IssueDate == input.IssueDate ||
-                    (this.IssueDate != null &&
-                    this.IssueDate.Equals(input.IssueDate))
-                ) && 
-                (
-                    this.ManufactureName == input.ManufactureName ||
-                    (this.ManufactureName != null &&
-                    this.ManufactureName.Equals(input.ManufactureName))
-                ) && 
-                (
-                    this.VehicleBrand == input.VehicleBrand ||
-                    (this.VehicleBrand != null &&
-                    this.VehicleBrand.Equals(input.VehicleBrand))
-                ) && 
-                (
-                    this.VehicleName == input.VehicleName ||
-                    (this.VehicleName != null &&
-                    this.VehicleName.Equals(input.VehicleName))
-                ) && 
-                (
-                    this.VehicleModel == input.VehicleModel ||
-                    (this.VehicleModel != null &&
-                    this.VehicleModel.Equals(input.VehicleModel))
-                ) && 
-                (
-                    this.Vin == input.Vin ||
-                    (this.Vin != null &&
-                    this.Vin.Equals(input.Vin))
-                ) && 
-                (
-                    this.VehicleColor == input.VehicleColor ||
-                    (this.VehicleColor != null &&
-                    this.VehicleColor.Equals(input.VehicleColor))
-                ) && 
-                (
-                    this.ChassisModel == input.ChassisModel ||
-                    (this.ChassisModel != null &&
-                    this.ChassisModel.Equals(input.ChassisModel))
-                ) && 
-                (
-                    this.ChassisId == input.ChassisId ||
-                    (this.ChassisId != null &&
-                    this.ChassisId.Equals(input.ChassisId))
-                ) && 
-                (
-                    this.ChassisCertificateNumber == input.ChassisCertificateNumber ||
-                    (this.ChassisCertificateNumber != null &&
-                    this.ChassisCertificateNumber.Equals(input.ChassisCertificateNumber))
-                ) && 
-                (
-                    this.EngineModel == input.EngineModel ||
-                    (this.EngineModel != null &&
-                    this.EngineModel.Equals(input.EngineModel))
-                ) && 
-                (
-                    this.EngineNumber == input.EngineNumber ||
-                    (this.EngineNumber != null &&
-                    this.EngineNumber.Equals(input.EngineNumber))
-                ) && 
-                (
-                    this.FuelType == input.FuelType ||
-                    (this.FuelType != null &&
-                    this.FuelType.Equals(input.FuelType))
-                ) && 
-                (
-                    this.Displacement == input.Displacement ||
-                    (this.Displacement != null &&
-                    this.Displacement.Equals(input.Displacement))
-                ) && 
-                (
-                    this.Power == input.Power ||
-                    (this.Power != null &&
-                    this.Power.Equals(input.Power))
-                ) && 
-                (
-                    this.EmissionStandard == input.EmissionStandard ||
-                    (this.EmissionStandard != null &&
-                    this.EmissionStandard.Equals(input.EmissionStandard))
-                ) && 
-                (
-                    this.FuelConsumption == input.FuelConsumption ||
-                    (this.FuelConsumption != null &&
-                    this.FuelConsumption.Equals(input.FuelConsumption))
-                ) && 
-                (
-                    this.OverallDimensionLength == input.OverallDimensionLength ||
-                    (this.OverallDimensionLength != null &&
-                    this.OverallDimensionLength.Equals(input.OverallDimensionLength))
-                ) && 
-                (
-                    this.OverallDimensionWidth == input.OverallDimensionWidth ||
-                    (this.OverallDimensionWidth != null &&
-                    this.OverallDimensionWidth.Equals(input.OverallDimensionWidth))
-                ) && 
-                (
-                    this.OverallDimensionHeight == input.OverallDimensionHeight ||
-                    (this.OverallDimensionHeight != null &&
-                    this.OverallDimensionHeight.Equals(input.OverallDimensionHeight))
-                ) && 
-                (
-                    this.ContainerDimensionLength == input.ContainerDimensionLength ||
-                    (this.ContainerDimensionLength != null &&
-                    this.ContainerDimensionLength.Equals(input.ContainerDimensionLength))
-                ) && 
-                (
-                    this.ContainerDimensionWidth == input.ContainerDimensionWidth ||
-                    (this.ContainerDimensionWidth != null &&
-                    this.ContainerDimensionWidth.Equals(input.ContainerDimensionWidth))
-                ) && 
-                (
-                    this.ContainerDimensionHeight == input.ContainerDimensionHeight ||
-                    (this.ContainerDimensionHeight != null &&
-                    this.ContainerDimensionHeight.Equals(input.ContainerDimensionHeight))
-                ) && 
-                (
-                    this.SpringQuantity == input.SpringQuantity ||
-                    (this.SpringQuantity != null &&
-                    this.SpringQuantity.Equals(input.SpringQuantity))
-                ) && 
-                (
-                    this.TireQuantity == input.TireQuantity ||
-                    (this.TireQuantity != null &&
-                    this.TireQuantity.Equals(input.TireQuantity))
-                ) && 
-                (
-                    this.TireSize == input.TireSize ||
-                    (this.TireSize != null &&
-                    this.TireSize.Equals(input.TireSize))
-                ) && 
-                (
-                    this.FrontWheelTrack == input.FrontWheelTrack ||
-                    (this.FrontWheelTrack != null &&
-                    this.FrontWheelTrack.Equals(input.FrontWheelTrack))
-                ) && 
-                (
-                    this.RearWheelTrack == input.RearWheelTrack ||
-                    (this.RearWheelTrack != null &&
-                    this.RearWheelTrack.Equals(input.RearWheelTrack))
-                ) && 
-                (
-                    this.Wheelbase == input.Wheelbase ||
-                    (this.Wheelbase != null &&
-                    this.Wheelbase.Equals(input.Wheelbase))
-                ) && 
-                (
-                    this.AxleLoad == input.AxleLoad ||
-                    (this.AxleLoad != null &&
-                    this.AxleLoad.Equals(input.AxleLoad))
-                ) && 
-                (
-                    this.AxleQuantity == input.AxleQuantity ||
-                    (this.AxleQuantity != null &&
-                    this.AxleQuantity.Equals(input.AxleQuantity))
-                ) && 
-                (
-                    this.SteeringForm == input.SteeringForm ||
-                    (this.SteeringForm != null &&
-                    this.SteeringForm.Equals(input.SteeringForm))
-                ) && 
-                (
-                    this.TotalWeight == input.TotalWeight ||
-                    (this.TotalWeight != null &&
-                    this.TotalWeight.Equals(input.TotalWeight))
-                ) && 
-                (
-                    this.EquipmentWeight == input.EquipmentWeight ||
-                    (this.EquipmentWeight != null &&
-                    this.EquipmentWeight.Equals(input.EquipmentWeight))
-                ) && 
-                (
-                    this.MaximumLadenMass == input.MaximumLadenMass ||
-                    (this.MaximumLadenMass != null &&
-                    this.MaximumLadenMass.Equals(input.MaximumLadenMass))
-                ) && 
-                (
-                    this.MassUtilizationCoefficient == input.MassUtilizationCoefficient ||
-                    (this.MassUtilizationCoefficient != null &&
-                    this.MassUtilizationCoefficient.Equals(input.MassUtilizationCoefficient))
-                ) && 
-                (
-                    this.TractionWeight == input.TractionWeight ||
-                    (this.TractionWeight != null &&
-                    this.TractionWeight.Equals(input.TractionWeight))
-                ) && 
-                (
-                    this.MaximumLoadMass == input.MaximumLoadMass ||
-                    (this.MaximumLoadMass != null &&
-                    this.MaximumLoadMass.Equals(input.MaximumLoadMass))
-                ) && 
-                (
-                    this.CabPassengerCapacity == input.CabPassengerCapacity ||
-                    (this.CabPassengerCapacity != null &&
-                    this.CabPassengerCapacity.Equals(input.CabPassengerCapacity))
-                ) && 
-                (
-                    this.PassengerCapacity == input.PassengerCapacity ||
-                    (this.PassengerCapacity != null &&
-                    this.PassengerCapacity.Equals(input.PassengerCapacity))
-                ) && 
-                (
-                    this.MaxDesignSpeed == input.MaxDesignSpeed ||
-                    (this.MaxDesignSpeed != null &&
-                    this.MaxDesignSpeed.Equals(input.MaxDesignSpeed))
-                ) && 
-                (
-                    this.ManufactureDate == input.ManufactureDate ||
-                    (this.ManufactureDate != null &&
-                    this.ManufactureDate.Equals(input.ManufactureDate))
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                ) && 
-                (
-                    this.TextLocation == input.TextLocation ||
-                    (this.TextLocation != null &&
-                    this.TextLocation.Equals(input.TextLocation))
-                );
+            return true;
         }
 
         /// <summary>
@@ -595,97 +414,52 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CertificateNumber != null)
-                    hashCode = hashCode * 59 + this.CertificateNumber.GetHashCode();
-                if (this.IssueDate != null)
-                    hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
-                if (this.ManufactureName != null)
-                    hashCode = hashCode * 59 + this.ManufactureName.GetHashCode();
-                if (this.VehicleBrand != null)
-                    hashCode = hashCode * 59 + this.VehicleBrand.GetHashCode();
-                if (this.VehicleName != null)
-                    hashCode = hashCode * 59 + this.VehicleName.GetHashCode();
-                if (this.VehicleModel != null)
-                    hashCode = hashCode * 59 + this.VehicleModel.GetHashCode();
-                if (this.Vin != null)
-                    hashCode = hashCode * 59 + this.Vin.GetHashCode();
-                if (this.VehicleColor != null)
-                    hashCode = hashCode * 59 + this.VehicleColor.GetHashCode();
-                if (this.ChassisModel != null)
-                    hashCode = hashCode * 59 + this.ChassisModel.GetHashCode();
-                if (this.ChassisId != null)
-                    hashCode = hashCode * 59 + this.ChassisId.GetHashCode();
-                if (this.ChassisCertificateNumber != null)
-                    hashCode = hashCode * 59 + this.ChassisCertificateNumber.GetHashCode();
-                if (this.EngineModel != null)
-                    hashCode = hashCode * 59 + this.EngineModel.GetHashCode();
-                if (this.EngineNumber != null)
-                    hashCode = hashCode * 59 + this.EngineNumber.GetHashCode();
-                if (this.FuelType != null)
-                    hashCode = hashCode * 59 + this.FuelType.GetHashCode();
-                if (this.Displacement != null)
-                    hashCode = hashCode * 59 + this.Displacement.GetHashCode();
-                if (this.Power != null)
-                    hashCode = hashCode * 59 + this.Power.GetHashCode();
-                if (this.EmissionStandard != null)
-                    hashCode = hashCode * 59 + this.EmissionStandard.GetHashCode();
-                if (this.FuelConsumption != null)
-                    hashCode = hashCode * 59 + this.FuelConsumption.GetHashCode();
-                if (this.OverallDimensionLength != null)
-                    hashCode = hashCode * 59 + this.OverallDimensionLength.GetHashCode();
-                if (this.OverallDimensionWidth != null)
-                    hashCode = hashCode * 59 + this.OverallDimensionWidth.GetHashCode();
-                if (this.OverallDimensionHeight != null)
-                    hashCode = hashCode * 59 + this.OverallDimensionHeight.GetHashCode();
-                if (this.ContainerDimensionLength != null)
-                    hashCode = hashCode * 59 + this.ContainerDimensionLength.GetHashCode();
-                if (this.ContainerDimensionWidth != null)
-                    hashCode = hashCode * 59 + this.ContainerDimensionWidth.GetHashCode();
-                if (this.ContainerDimensionHeight != null)
-                    hashCode = hashCode * 59 + this.ContainerDimensionHeight.GetHashCode();
-                if (this.SpringQuantity != null)
-                    hashCode = hashCode * 59 + this.SpringQuantity.GetHashCode();
-                if (this.TireQuantity != null)
-                    hashCode = hashCode * 59 + this.TireQuantity.GetHashCode();
-                if (this.TireSize != null)
-                    hashCode = hashCode * 59 + this.TireSize.GetHashCode();
-                if (this.FrontWheelTrack != null)
-                    hashCode = hashCode * 59 + this.FrontWheelTrack.GetHashCode();
-                if (this.RearWheelTrack != null)
-                    hashCode = hashCode * 59 + this.RearWheelTrack.GetHashCode();
-                if (this.Wheelbase != null)
-                    hashCode = hashCode * 59 + this.Wheelbase.GetHashCode();
-                if (this.AxleLoad != null)
-                    hashCode = hashCode * 59 + this.AxleLoad.GetHashCode();
-                if (this.AxleQuantity != null)
-                    hashCode = hashCode * 59 + this.AxleQuantity.GetHashCode();
-                if (this.SteeringForm != null)
-                    hashCode = hashCode * 59 + this.SteeringForm.GetHashCode();
-                if (this.TotalWeight != null)
-                    hashCode = hashCode * 59 + this.TotalWeight.GetHashCode();
-                if (this.EquipmentWeight != null)
-                    hashCode = hashCode * 59 + this.EquipmentWeight.GetHashCode();
-                if (this.MaximumLadenMass != null)
-                    hashCode = hashCode * 59 + this.MaximumLadenMass.GetHashCode();
-                if (this.MassUtilizationCoefficient != null)
-                    hashCode = hashCode * 59 + this.MassUtilizationCoefficient.GetHashCode();
-                if (this.TractionWeight != null)
-                    hashCode = hashCode * 59 + this.TractionWeight.GetHashCode();
-                if (this.MaximumLoadMass != null)
-                    hashCode = hashCode * 59 + this.MaximumLoadMass.GetHashCode();
-                if (this.CabPassengerCapacity != null)
-                    hashCode = hashCode * 59 + this.CabPassengerCapacity.GetHashCode();
-                if (this.PassengerCapacity != null)
-                    hashCode = hashCode * 59 + this.PassengerCapacity.GetHashCode();
-                if (this.MaxDesignSpeed != null)
-                    hashCode = hashCode * 59 + this.MaxDesignSpeed.GetHashCode();
-                if (this.ManufactureDate != null)
-                    hashCode = hashCode * 59 + this.ManufactureDate.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
-                if (this.TextLocation != null)
-                    hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
+                var hashCode = 41;
+                if (this.CertificateNumber != null) hashCode = hashCode * 59 + this.CertificateNumber.GetHashCode();
+                if (this.IssueDate != null) hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
+                if (this.ManufactureName != null) hashCode = hashCode * 59 + this.ManufactureName.GetHashCode();
+                if (this.VehicleBrand != null) hashCode = hashCode * 59 + this.VehicleBrand.GetHashCode();
+                if (this.VehicleName != null) hashCode = hashCode * 59 + this.VehicleName.GetHashCode();
+                if (this.VehicleModel != null) hashCode = hashCode * 59 + this.VehicleModel.GetHashCode();
+                if (this.Vin != null) hashCode = hashCode * 59 + this.Vin.GetHashCode();
+                if (this.VehicleColor != null) hashCode = hashCode * 59 + this.VehicleColor.GetHashCode();
+                if (this.ChassisModel != null) hashCode = hashCode * 59 + this.ChassisModel.GetHashCode();
+                if (this.ChassisId != null) hashCode = hashCode * 59 + this.ChassisId.GetHashCode();
+                if (this.ChassisCertificateNumber != null) hashCode = hashCode * 59 + this.ChassisCertificateNumber.GetHashCode();
+                if (this.EngineModel != null) hashCode = hashCode * 59 + this.EngineModel.GetHashCode();
+                if (this.EngineNumber != null) hashCode = hashCode * 59 + this.EngineNumber.GetHashCode();
+                if (this.FuelType != null) hashCode = hashCode * 59 + this.FuelType.GetHashCode();
+                if (this.Displacement != null) hashCode = hashCode * 59 + this.Displacement.GetHashCode();
+                if (this.Power != null) hashCode = hashCode * 59 + this.Power.GetHashCode();
+                if (this.EmissionStandard != null) hashCode = hashCode * 59 + this.EmissionStandard.GetHashCode();
+                if (this.FuelConsumption != null) hashCode = hashCode * 59 + this.FuelConsumption.GetHashCode();
+                if (this.OverallDimensionLength != null) hashCode = hashCode * 59 + this.OverallDimensionLength.GetHashCode();
+                if (this.OverallDimensionWidth != null) hashCode = hashCode * 59 + this.OverallDimensionWidth.GetHashCode();
+                if (this.OverallDimensionHeight != null) hashCode = hashCode * 59 + this.OverallDimensionHeight.GetHashCode();
+                if (this.ContainerDimensionLength != null) hashCode = hashCode * 59 + this.ContainerDimensionLength.GetHashCode();
+                if (this.ContainerDimensionWidth != null) hashCode = hashCode * 59 + this.ContainerDimensionWidth.GetHashCode();
+                if (this.ContainerDimensionHeight != null) hashCode = hashCode * 59 + this.ContainerDimensionHeight.GetHashCode();
+                if (this.SpringQuantity != null) hashCode = hashCode * 59 + this.SpringQuantity.GetHashCode();
+                if (this.TireQuantity != null) hashCode = hashCode * 59 + this.TireQuantity.GetHashCode();
+                if (this.TireSize != null) hashCode = hashCode * 59 + this.TireSize.GetHashCode();
+                if (this.FrontWheelTrack != null) hashCode = hashCode * 59 + this.FrontWheelTrack.GetHashCode();
+                if (this.RearWheelTrack != null) hashCode = hashCode * 59 + this.RearWheelTrack.GetHashCode();
+                if (this.Wheelbase != null) hashCode = hashCode * 59 + this.Wheelbase.GetHashCode();
+                if (this.AxleLoad != null) hashCode = hashCode * 59 + this.AxleLoad.GetHashCode();
+                if (this.AxleQuantity != null) hashCode = hashCode * 59 + this.AxleQuantity.GetHashCode();
+                if (this.SteeringForm != null) hashCode = hashCode * 59 + this.SteeringForm.GetHashCode();
+                if (this.TotalWeight != null) hashCode = hashCode * 59 + this.TotalWeight.GetHashCode();
+                if (this.EquipmentWeight != null) hashCode = hashCode * 59 + this.EquipmentWeight.GetHashCode();
+                if (this.MaximumLadenMass != null) hashCode = hashCode * 59 + this.MaximumLadenMass.GetHashCode();
+                if (this.MassUtilizationCoefficient != null) hashCode = hashCode * 59 + this.MassUtilizationCoefficient.GetHashCode();
+                if (this.TractionWeight != null) hashCode = hashCode * 59 + this.TractionWeight.GetHashCode();
+                if (this.MaximumLoadMass != null) hashCode = hashCode * 59 + this.MaximumLoadMass.GetHashCode();
+                if (this.CabPassengerCapacity != null) hashCode = hashCode * 59 + this.CabPassengerCapacity.GetHashCode();
+                if (this.PassengerCapacity != null) hashCode = hashCode * 59 + this.PassengerCapacity.GetHashCode();
+                if (this.MaxDesignSpeed != null) hashCode = hashCode * 59 + this.MaxDesignSpeed.GetHashCode();
+                if (this.ManufactureDate != null) hashCode = hashCode * 59 + this.ManufactureDate.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                if (this.TextLocation != null) hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
                 return hashCode;
             }
         }

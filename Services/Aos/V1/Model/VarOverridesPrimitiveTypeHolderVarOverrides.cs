@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
     {
 
         /// <summary>
-        /// HCL参数文件的OBS地址。HCL模板支持参数传入，即，同一个模板可以给予不同的参数而达到不同的效果。  OBS地址支持同类型Region之间进行互相访问（Region分为通用Region和专属Region，通用Region指面向公共租户提供通用云服务的Region；专属Region指只承载同一类业务或只面向特定租户提供业务服务的专用Region）  * vars_uri需要指向一个OBS的pre-signed URL地址，其他地址暂不支持  * 资源编排服务支持vars_body和vars_uri，如果以上两种方式中声名了同一个变量，将报错400  * vars_uri中的内容使用HCL的tfvars格式，用户可以将“.tfvars”中的内容保存到文件并上传到OBS中，并将OBS pre-signed URL传递给vars_uri  * 资源栈集不支持敏感数据加密，资源编排服务会直接明文使用、log、展示、存储vars_uri对应的参数文件内容
+        /// HCL参数文件的OBS地址。HCL模板支持参数传入，即，同一个模板可以给予不同的参数而达到不同的效果。  请确保OBS地址所在局点与使用RFS服务局点一致。  * vars_uri需要指向一个OBS的pre-signed URL地址，其他地址暂不支持  * 资源编排服务支持vars_body和vars_uri，如果以上两种方式中声名了同一个变量，将报错400  * vars_uri中的内容使用HCL的tfvars格式，用户可以将“.tfvars”中的内容保存到文件并上传到OBS中，并将OBS pre-signed URL传递给vars_uri  * 资源栈集不支持敏感数据加密，资源编排服务会直接明文使用、log、展示、存储vars_uri对应的参数文件内容
         /// </summary>
         [JsonProperty("vars_uri", NullValueHandling = NullValueHandling.Ignore)]
         public string VarsUri { get; set; }
@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(VarOverridesPrimitiveTypeHolderVarOverrides input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VarsUri != input.VarsUri || (this.VarsUri != null && !this.VarsUri.Equals(input.VarsUri))) return false;
+            if (this.VarsBody != input.VarsBody || (this.VarsBody != null && !this.VarsBody.Equals(input.VarsBody))) return false;
+            if (this.UseStackSetVars != input.UseStackSetVars || (this.UseStackSetVars != null && input.UseStackSetVars != null && !this.UseStackSetVars.SequenceEqual(input.UseStackSetVars))) return false;
 
-            return 
-                (
-                    this.VarsUri == input.VarsUri ||
-                    (this.VarsUri != null &&
-                    this.VarsUri.Equals(input.VarsUri))
-                ) && 
-                (
-                    this.VarsBody == input.VarsBody ||
-                    (this.VarsBody != null &&
-                    this.VarsBody.Equals(input.VarsBody))
-                ) && 
-                (
-                    this.UseStackSetVars == input.UseStackSetVars ||
-                    this.UseStackSetVars != null &&
-                    input.UseStackSetVars != null &&
-                    this.UseStackSetVars.SequenceEqual(input.UseStackSetVars)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VarsUri != null)
-                    hashCode = hashCode * 59 + this.VarsUri.GetHashCode();
-                if (this.VarsBody != null)
-                    hashCode = hashCode * 59 + this.VarsBody.GetHashCode();
-                if (this.UseStackSetVars != null)
-                    hashCode = hashCode * 59 + this.UseStackSetVars.GetHashCode();
+                var hashCode = 41;
+                if (this.VarsUri != null) hashCode = hashCode * 59 + this.VarsUri.GetHashCode();
+                if (this.VarsBody != null) hashCode = hashCode * 59 + this.VarsBody.GetHashCode();
+                if (this.UseStackSetVars != null) hashCode = hashCode * 59 + this.UseStackSetVars.GetHashCode();
                 return hashCode;
             }
         }

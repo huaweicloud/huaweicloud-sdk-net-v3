@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// </summary>
         public bool Equals(ListL7rulesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Rules != input.Rules || (this.Rules != null && input.Rules != null && !this.Rules.SequenceEqual(input.Rules))) return false;
 
-            return 
-                (
-                    this.Rules == input.Rules ||
-                    this.Rules != null &&
-                    input.Rules != null &&
-                    this.Rules.SequenceEqual(input.Rules)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Rules != null)
-                    hashCode = hashCode * 59 + this.Rules.GetHashCode();
+                var hashCode = 41;
+                if (this.Rules != null) hashCode = hashCode * 59 + this.Rules.GetHashCode();
                 return hashCode;
             }
         }

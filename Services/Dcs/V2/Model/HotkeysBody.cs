@@ -223,45 +223,16 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(HotkeysBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Type != input.Type) return false;
+            if (this.Shard != input.Shard || (this.Shard != null && !this.Shard.Equals(input.Shard))) return false;
+            if (this.Db != input.Db || (this.Db != null && !this.Db.Equals(input.Db))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.Unit != input.Unit || (this.Unit != null && !this.Unit.Equals(input.Unit))) return false;
+            if (this.Freq != input.Freq || (this.Freq != null && !this.Freq.Equals(input.Freq))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Shard == input.Shard ||
-                    (this.Shard != null &&
-                    this.Shard.Equals(input.Shard))
-                ) && 
-                (
-                    this.Db == input.Db ||
-                    (this.Db != null &&
-                    this.Db.Equals(input.Db))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.Unit == input.Unit ||
-                    (this.Unit != null &&
-                    this.Unit.Equals(input.Unit))
-                ) && 
-                (
-                    this.Freq == input.Freq ||
-                    (this.Freq != null &&
-                    this.Freq.Equals(input.Freq))
-                );
+            return true;
         }
 
         /// <summary>
@@ -271,21 +242,14 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Shard != null)
-                    hashCode = hashCode * 59 + this.Shard.GetHashCode();
-                if (this.Db != null)
-                    hashCode = hashCode * 59 + this.Db.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.Unit != null)
-                    hashCode = hashCode * 59 + this.Unit.GetHashCode();
-                if (this.Freq != null)
-                    hashCode = hashCode * 59 + this.Freq.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Shard != null) hashCode = hashCode * 59 + this.Shard.GetHashCode();
+                if (this.Db != null) hashCode = hashCode * 59 + this.Db.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Unit != null) hashCode = hashCode * 59 + this.Unit.GetHashCode();
+                if (this.Freq != null) hashCode = hashCode * 59 + this.Freq.GetHashCode();
                 return hashCode;
             }
         }

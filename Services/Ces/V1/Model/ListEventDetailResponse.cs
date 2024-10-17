@@ -198,43 +198,15 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// </summary>
         public bool Equals(ListEventDetailResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EventName != input.EventName || (this.EventName != null && !this.EventName.Equals(input.EventName))) return false;
+            if (this.EventType != input.EventType) return false;
+            if (this.EventUsers != input.EventUsers || (this.EventUsers != null && input.EventUsers != null && !this.EventUsers.SequenceEqual(input.EventUsers))) return false;
+            if (this.EventSources != input.EventSources || (this.EventSources != null && input.EventSources != null && !this.EventSources.SequenceEqual(input.EventSources))) return false;
+            if (this.EventInfo != input.EventInfo || (this.EventInfo != null && input.EventInfo != null && !this.EventInfo.SequenceEqual(input.EventInfo))) return false;
+            if (this.MetaData != input.MetaData || (this.MetaData != null && !this.MetaData.Equals(input.MetaData))) return false;
 
-            return 
-                (
-                    this.EventName == input.EventName ||
-                    (this.EventName != null &&
-                    this.EventName.Equals(input.EventName))
-                ) && 
-                (
-                    this.EventType == input.EventType ||
-                    (this.EventType != null &&
-                    this.EventType.Equals(input.EventType))
-                ) && 
-                (
-                    this.EventUsers == input.EventUsers ||
-                    this.EventUsers != null &&
-                    input.EventUsers != null &&
-                    this.EventUsers.SequenceEqual(input.EventUsers)
-                ) && 
-                (
-                    this.EventSources == input.EventSources ||
-                    this.EventSources != null &&
-                    input.EventSources != null &&
-                    this.EventSources.SequenceEqual(input.EventSources)
-                ) && 
-                (
-                    this.EventInfo == input.EventInfo ||
-                    this.EventInfo != null &&
-                    input.EventInfo != null &&
-                    this.EventInfo.SequenceEqual(input.EventInfo)
-                ) && 
-                (
-                    this.MetaData == input.MetaData ||
-                    (this.MetaData != null &&
-                    this.MetaData.Equals(input.MetaData))
-                );
+            return true;
         }
 
         /// <summary>
@@ -244,19 +216,13 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EventName != null)
-                    hashCode = hashCode * 59 + this.EventName.GetHashCode();
-                if (this.EventType != null)
-                    hashCode = hashCode * 59 + this.EventType.GetHashCode();
-                if (this.EventUsers != null)
-                    hashCode = hashCode * 59 + this.EventUsers.GetHashCode();
-                if (this.EventSources != null)
-                    hashCode = hashCode * 59 + this.EventSources.GetHashCode();
-                if (this.EventInfo != null)
-                    hashCode = hashCode * 59 + this.EventInfo.GetHashCode();
-                if (this.MetaData != null)
-                    hashCode = hashCode * 59 + this.MetaData.GetHashCode();
+                var hashCode = 41;
+                if (this.EventName != null) hashCode = hashCode * 59 + this.EventName.GetHashCode();
+                hashCode = hashCode * 59 + this.EventType.GetHashCode();
+                if (this.EventUsers != null) hashCode = hashCode * 59 + this.EventUsers.GetHashCode();
+                if (this.EventSources != null) hashCode = hashCode * 59 + this.EventSources.GetHashCode();
+                if (this.EventInfo != null) hashCode = hashCode * 59 + this.EventInfo.GetHashCode();
+                if (this.MetaData != null) hashCode = hashCode * 59 + this.MetaData.GetHashCode();
                 return hashCode;
             }
         }

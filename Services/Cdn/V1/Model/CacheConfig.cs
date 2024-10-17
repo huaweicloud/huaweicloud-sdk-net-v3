@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(CacheConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IgnoreUrlParameter != input.IgnoreUrlParameter || (this.IgnoreUrlParameter != null && !this.IgnoreUrlParameter.Equals(input.IgnoreUrlParameter))) return false;
+            if (this.FollowOrigin != input.FollowOrigin || (this.FollowOrigin != null && !this.FollowOrigin.Equals(input.FollowOrigin))) return false;
+            if (this.Compress != input.Compress || (this.Compress != null && !this.Compress.Equals(input.Compress))) return false;
+            if (this.Rules != input.Rules || (this.Rules != null && input.Rules != null && !this.Rules.SequenceEqual(input.Rules))) return false;
 
-            return 
-                (
-                    this.IgnoreUrlParameter == input.IgnoreUrlParameter ||
-                    (this.IgnoreUrlParameter != null &&
-                    this.IgnoreUrlParameter.Equals(input.IgnoreUrlParameter))
-                ) && 
-                (
-                    this.FollowOrigin == input.FollowOrigin ||
-                    (this.FollowOrigin != null &&
-                    this.FollowOrigin.Equals(input.FollowOrigin))
-                ) && 
-                (
-                    this.Compress == input.Compress ||
-                    (this.Compress != null &&
-                    this.Compress.Equals(input.Compress))
-                ) && 
-                (
-                    this.Rules == input.Rules ||
-                    this.Rules != null &&
-                    input.Rules != null &&
-                    this.Rules.SequenceEqual(input.Rules)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IgnoreUrlParameter != null)
-                    hashCode = hashCode * 59 + this.IgnoreUrlParameter.GetHashCode();
-                if (this.FollowOrigin != null)
-                    hashCode = hashCode * 59 + this.FollowOrigin.GetHashCode();
-                if (this.Compress != null)
-                    hashCode = hashCode * 59 + this.Compress.GetHashCode();
-                if (this.Rules != null)
-                    hashCode = hashCode * 59 + this.Rules.GetHashCode();
+                var hashCode = 41;
+                if (this.IgnoreUrlParameter != null) hashCode = hashCode * 59 + this.IgnoreUrlParameter.GetHashCode();
+                if (this.FollowOrigin != null) hashCode = hashCode * 59 + this.FollowOrigin.GetHashCode();
+                if (this.Compress != null) hashCode = hashCode * 59 + this.Compress.GetHashCode();
+                if (this.Rules != null) hashCode = hashCode * 59 + this.Rules.GetHashCode();
                 return hashCode;
             }
         }

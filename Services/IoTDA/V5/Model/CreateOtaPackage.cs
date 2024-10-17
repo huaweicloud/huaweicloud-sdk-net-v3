@@ -98,51 +98,17 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(CreateOtaPackage input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
+            if (this.PackageType != input.PackageType || (this.PackageType != null && !this.PackageType.Equals(input.PackageType))) return false;
+            if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.SupportSourceVersions != input.SupportSourceVersions || (this.SupportSourceVersions != null && input.SupportSourceVersions != null && !this.SupportSourceVersions.SequenceEqual(input.SupportSourceVersions))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.CustomInfo != input.CustomInfo || (this.CustomInfo != null && !this.CustomInfo.Equals(input.CustomInfo))) return false;
+            if (this.FileLocation != input.FileLocation || (this.FileLocation != null && !this.FileLocation.Equals(input.FileLocation))) return false;
 
-            return 
-                (
-                    this.AppId == input.AppId ||
-                    (this.AppId != null &&
-                    this.AppId.Equals(input.AppId))
-                ) && 
-                (
-                    this.PackageType == input.PackageType ||
-                    (this.PackageType != null &&
-                    this.PackageType.Equals(input.PackageType))
-                ) && 
-                (
-                    this.ProductId == input.ProductId ||
-                    (this.ProductId != null &&
-                    this.ProductId.Equals(input.ProductId))
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.SupportSourceVersions == input.SupportSourceVersions ||
-                    this.SupportSourceVersions != null &&
-                    input.SupportSourceVersions != null &&
-                    this.SupportSourceVersions.SequenceEqual(input.SupportSourceVersions)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.CustomInfo == input.CustomInfo ||
-                    (this.CustomInfo != null &&
-                    this.CustomInfo.Equals(input.CustomInfo))
-                ) && 
-                (
-                    this.FileLocation == input.FileLocation ||
-                    (this.FileLocation != null &&
-                    this.FileLocation.Equals(input.FileLocation))
-                );
+            return true;
         }
 
         /// <summary>
@@ -152,23 +118,15 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AppId != null)
-                    hashCode = hashCode * 59 + this.AppId.GetHashCode();
-                if (this.PackageType != null)
-                    hashCode = hashCode * 59 + this.PackageType.GetHashCode();
-                if (this.ProductId != null)
-                    hashCode = hashCode * 59 + this.ProductId.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.SupportSourceVersions != null)
-                    hashCode = hashCode * 59 + this.SupportSourceVersions.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.CustomInfo != null)
-                    hashCode = hashCode * 59 + this.CustomInfo.GetHashCode();
-                if (this.FileLocation != null)
-                    hashCode = hashCode * 59 + this.FileLocation.GetHashCode();
+                var hashCode = 41;
+                if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
+                if (this.PackageType != null) hashCode = hashCode * 59 + this.PackageType.GetHashCode();
+                if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.SupportSourceVersions != null) hashCode = hashCode * 59 + this.SupportSourceVersions.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.CustomInfo != null) hashCode = hashCode * 59 + this.CustomInfo.GetHashCode();
+                if (this.FileLocation != null) hashCode = hashCode * 59 + this.FileLocation.GetHashCode();
                 return hashCode;
             }
         }

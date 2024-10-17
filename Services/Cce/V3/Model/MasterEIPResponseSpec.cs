@@ -171,25 +171,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(MasterEIPResponseSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Action != input.Action) return false;
+            if (this.Spec != input.Spec || (this.Spec != null && !this.Spec.Equals(input.Spec))) return false;
+            if (this.ElasticIp != input.ElasticIp || (this.ElasticIp != null && !this.ElasticIp.Equals(input.ElasticIp))) return false;
 
-            return 
-                (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                ) && 
-                (
-                    this.Spec == input.Spec ||
-                    (this.Spec != null &&
-                    this.Spec.Equals(input.Spec))
-                ) && 
-                (
-                    this.ElasticIp == input.ElasticIp ||
-                    (this.ElasticIp != null &&
-                    this.ElasticIp.Equals(input.ElasticIp))
-                );
+            return true;
         }
 
         /// <summary>
@@ -199,13 +186,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
-                if (this.Spec != null)
-                    hashCode = hashCode * 59 + this.Spec.GetHashCode();
-                if (this.ElasticIp != null)
-                    hashCode = hashCode * 59 + this.ElasticIp.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Action.GetHashCode();
+                if (this.Spec != null) hashCode = hashCode * 59 + this.Spec.GetHashCode();
+                if (this.ElasticIp != null) hashCode = hashCode * 59 + this.ElasticIp.GetHashCode();
                 return hashCode;
             }
         }

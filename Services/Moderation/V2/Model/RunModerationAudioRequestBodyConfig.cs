@@ -338,20 +338,11 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         /// </summary>
         public bool Equals(RunModerationAudioRequestBodyConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Format != input.Format) return false;
+            if (this.Property != input.Property) return false;
 
-            return 
-                (
-                    this.Format == input.Format ||
-                    (this.Format != null &&
-                    this.Format.Equals(input.Format))
-                ) && 
-                (
-                    this.Property == input.Property ||
-                    (this.Property != null &&
-                    this.Property.Equals(input.Property))
-                );
+            return true;
         }
 
         /// <summary>
@@ -361,11 +352,9 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Format != null)
-                    hashCode = hashCode * 59 + this.Format.GetHashCode();
-                if (this.Property != null)
-                    hashCode = hashCode * 59 + this.Property.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Format.GetHashCode();
+                hashCode = hashCode * 59 + this.Property.GetHashCode();
                 return hashCode;
             }
         }

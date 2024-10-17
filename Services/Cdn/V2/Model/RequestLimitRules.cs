@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(RequestLimitRules input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
+            if (this.MatchType != input.MatchType || (this.MatchType != null && !this.MatchType.Equals(input.MatchType))) return false;
+            if (this.MatchValue != input.MatchValue || (this.MatchValue != null && !this.MatchValue.Equals(input.MatchValue))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.LimitRateAfter != input.LimitRateAfter || (this.LimitRateAfter != null && !this.LimitRateAfter.Equals(input.LimitRateAfter))) return false;
+            if (this.LimitRateValue != input.LimitRateValue || (this.LimitRateValue != null && !this.LimitRateValue.Equals(input.LimitRateValue))) return false;
 
-            return 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    (this.Priority != null &&
-                    this.Priority.Equals(input.Priority))
-                ) && 
-                (
-                    this.MatchType == input.MatchType ||
-                    (this.MatchType != null &&
-                    this.MatchType.Equals(input.MatchType))
-                ) && 
-                (
-                    this.MatchValue == input.MatchValue ||
-                    (this.MatchValue != null &&
-                    this.MatchValue.Equals(input.MatchValue))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.LimitRateAfter == input.LimitRateAfter ||
-                    (this.LimitRateAfter != null &&
-                    this.LimitRateAfter.Equals(input.LimitRateAfter))
-                ) && 
-                (
-                    this.LimitRateValue == input.LimitRateValue ||
-                    (this.LimitRateValue != null &&
-                    this.LimitRateValue.Equals(input.LimitRateValue))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Priority != null)
-                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
-                if (this.MatchType != null)
-                    hashCode = hashCode * 59 + this.MatchType.GetHashCode();
-                if (this.MatchValue != null)
-                    hashCode = hashCode * 59 + this.MatchValue.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.LimitRateAfter != null)
-                    hashCode = hashCode * 59 + this.LimitRateAfter.GetHashCode();
-                if (this.LimitRateValue != null)
-                    hashCode = hashCode * 59 + this.LimitRateValue.GetHashCode();
+                var hashCode = 41;
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                if (this.MatchType != null) hashCode = hashCode * 59 + this.MatchType.GetHashCode();
+                if (this.MatchValue != null) hashCode = hashCode * 59 + this.MatchValue.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.LimitRateAfter != null) hashCode = hashCode * 59 + this.LimitRateAfter.GetHashCode();
+                if (this.LimitRateValue != null) hashCode = hashCode * 59 + this.LimitRateValue.GetHashCode();
                 return hashCode;
             }
         }

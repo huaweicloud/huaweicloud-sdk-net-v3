@@ -170,20 +170,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ProxyInfoFlavorInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.GroupType != input.GroupType) return false;
+            if (this.Code != input.Code || (this.Code != null && !this.Code.Equals(input.Code))) return false;
 
-            return 
-                (
-                    this.GroupType == input.GroupType ||
-                    (this.GroupType != null &&
-                    this.GroupType.Equals(input.GroupType))
-                ) && 
-                (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
-                );
+            return true;
         }
 
         /// <summary>
@@ -193,11 +184,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.GroupType != null)
-                    hashCode = hashCode * 59 + this.GroupType.GetHashCode();
-                if (this.Code != null)
-                    hashCode = hashCode * 59 + this.Code.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.GroupType.GetHashCode();
+                if (this.Code != null) hashCode = hashCode * 59 + this.Code.GetHashCode();
                 return hashCode;
             }
         }

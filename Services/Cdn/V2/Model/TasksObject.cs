@@ -333,55 +333,18 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(TasksObject input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.TaskType != input.TaskType) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Processing != input.Processing || (this.Processing != null && !this.Processing.Equals(input.Processing))) return false;
+            if (this.Succeed != input.Succeed || (this.Succeed != null && !this.Succeed.Equals(input.Succeed))) return false;
+            if (this.Failed != input.Failed || (this.Failed != null && !this.Failed.Equals(input.Failed))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.FileType != input.FileType) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.TaskType == input.TaskType ||
-                    (this.TaskType != null &&
-                    this.TaskType.Equals(input.TaskType))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Processing == input.Processing ||
-                    (this.Processing != null &&
-                    this.Processing.Equals(input.Processing))
-                ) && 
-                (
-                    this.Succeed == input.Succeed ||
-                    (this.Succeed != null &&
-                    this.Succeed.Equals(input.Succeed))
-                ) && 
-                (
-                    this.Failed == input.Failed ||
-                    (this.Failed != null &&
-                    this.Failed.Equals(input.Failed))
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.FileType == input.FileType ||
-                    (this.FileType != null &&
-                    this.FileType.Equals(input.FileType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -391,25 +354,16 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.TaskType != null)
-                    hashCode = hashCode * 59 + this.TaskType.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Processing != null)
-                    hashCode = hashCode * 59 + this.Processing.GetHashCode();
-                if (this.Succeed != null)
-                    hashCode = hashCode * 59 + this.Succeed.GetHashCode();
-                if (this.Failed != null)
-                    hashCode = hashCode * 59 + this.Failed.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.FileType != null)
-                    hashCode = hashCode * 59 + this.FileType.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                hashCode = hashCode * 59 + this.TaskType.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Processing != null) hashCode = hashCode * 59 + this.Processing.GetHashCode();
+                if (this.Succeed != null) hashCode = hashCode * 59 + this.Succeed.GetHashCode();
+                if (this.Failed != null) hashCode = hashCode * 59 + this.Failed.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                hashCode = hashCode * 59 + this.FileType.GetHashCode();
                 return hashCode;
             }
         }

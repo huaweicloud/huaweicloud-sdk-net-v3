@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(NovaServerNetwork input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
+            if (this.Uuid != input.Uuid || (this.Uuid != null && !this.Uuid.Equals(input.Uuid))) return false;
+            if (this.FixedIp != input.FixedIp || (this.FixedIp != null && !this.FixedIp.Equals(input.FixedIp))) return false;
 
-            return 
-                (
-                    this.Port == input.Port ||
-                    (this.Port != null &&
-                    this.Port.Equals(input.Port))
-                ) && 
-                (
-                    this.Uuid == input.Uuid ||
-                    (this.Uuid != null &&
-                    this.Uuid.Equals(input.Uuid))
-                ) && 
-                (
-                    this.FixedIp == input.FixedIp ||
-                    (this.FixedIp != null &&
-                    this.FixedIp.Equals(input.FixedIp))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Port != null)
-                    hashCode = hashCode * 59 + this.Port.GetHashCode();
-                if (this.Uuid != null)
-                    hashCode = hashCode * 59 + this.Uuid.GetHashCode();
-                if (this.FixedIp != null)
-                    hashCode = hashCode * 59 + this.FixedIp.GetHashCode();
+                var hashCode = 41;
+                if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
+                if (this.Uuid != null) hashCode = hashCode * 59 + this.Uuid.GetHashCode();
+                if (this.FixedIp != null) hashCode = hashCode * 59 + this.FixedIp.GetHashCode();
                 return hashCode;
             }
         }

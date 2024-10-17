@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(CreateManualBackupRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Backup != input.Backup || (this.Backup != null && !this.Backup.Equals(input.Backup))) return false;
 
-            return 
-                (
-                    this.Backup == input.Backup ||
-                    (this.Backup != null &&
-                    this.Backup.Equals(input.Backup))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Backup != null)
-                    hashCode = hashCode * 59 + this.Backup.GetHashCode();
+                var hashCode = 41;
+                if (this.Backup != null) hashCode = hashCode * 59 + this.Backup.GetHashCode();
                 return hashCode;
             }
         }

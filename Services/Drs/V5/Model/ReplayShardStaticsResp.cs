@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ReplayShardStaticsResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.Finish != input.Finish || (this.Finish != null && !this.Finish.Equals(input.Finish))) return false;
+            if (this.Abnormal != input.Abnormal || (this.Abnormal != null && !this.Abnormal.Equals(input.Abnormal))) return false;
+            if (this.Slow != input.Slow || (this.Slow != null && !this.Slow.Equals(input.Slow))) return false;
 
-            return 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.Finish == input.Finish ||
-                    (this.Finish != null &&
-                    this.Finish.Equals(input.Finish))
-                ) && 
-                (
-                    this.Abnormal == input.Abnormal ||
-                    (this.Abnormal != null &&
-                    this.Abnormal.Equals(input.Abnormal))
-                ) && 
-                (
-                    this.Slow == input.Slow ||
-                    (this.Slow != null &&
-                    this.Slow.Equals(input.Slow))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.Finish != null)
-                    hashCode = hashCode * 59 + this.Finish.GetHashCode();
-                if (this.Abnormal != null)
-                    hashCode = hashCode * 59 + this.Abnormal.GetHashCode();
-                if (this.Slow != null)
-                    hashCode = hashCode * 59 + this.Slow.GetHashCode();
+                var hashCode = 41;
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.Finish != null) hashCode = hashCode * 59 + this.Finish.GetHashCode();
+                if (this.Abnormal != null) hashCode = hashCode * 59 + this.Abnormal.GetHashCode();
+                if (this.Slow != null) hashCode = hashCode * 59 + this.Slow.GetHashCode();
                 return hashCode;
             }
         }

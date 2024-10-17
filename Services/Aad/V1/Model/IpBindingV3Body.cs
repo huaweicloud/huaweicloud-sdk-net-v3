@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         /// </summary>
         public bool Equals(IpBindingV3Body input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IpList != input.IpList || (this.IpList != null && input.IpList != null && !this.IpList.SequenceEqual(input.IpList))) return false;
 
-            return 
-                (
-                    this.IpList == input.IpList ||
-                    this.IpList != null &&
-                    input.IpList != null &&
-                    this.IpList.SequenceEqual(input.IpList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IpList != null)
-                    hashCode = hashCode * 59 + this.IpList.GetHashCode();
+                var hashCode = 41;
+                if (this.IpList != null) hashCode = hashCode * 59 + this.IpList.GetHashCode();
                 return hashCode;
             }
         }

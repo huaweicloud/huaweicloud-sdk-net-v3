@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(SealResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SealList != input.SealList || (this.SealList != null && input.SealList != null && !this.SealList.SequenceEqual(input.SealList))) return false;
+            if (this.ErasedSealImage != input.ErasedSealImage || (this.ErasedSealImage != null && !this.ErasedSealImage.Equals(input.ErasedSealImage))) return false;
 
-            return 
-                (
-                    this.SealList == input.SealList ||
-                    this.SealList != null &&
-                    input.SealList != null &&
-                    this.SealList.SequenceEqual(input.SealList)
-                ) && 
-                (
-                    this.ErasedSealImage == input.ErasedSealImage ||
-                    (this.ErasedSealImage != null &&
-                    this.ErasedSealImage.Equals(input.ErasedSealImage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SealList != null)
-                    hashCode = hashCode * 59 + this.SealList.GetHashCode();
-                if (this.ErasedSealImage != null)
-                    hashCode = hashCode * 59 + this.ErasedSealImage.GetHashCode();
+                var hashCode = 41;
+                if (this.SealList != null) hashCode = hashCode * 59 + this.SealList.GetHashCode();
+                if (this.ErasedSealImage != null) hashCode = hashCode * 59 + this.ErasedSealImage.GetHashCode();
                 return hashCode;
             }
         }

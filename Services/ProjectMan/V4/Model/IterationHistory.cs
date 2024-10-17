@@ -84,41 +84,15 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(IterationHistory input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IterationId != input.IterationId || (this.IterationId != null && !this.IterationId.Equals(input.IterationId))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.Operator != input.Operator || (this.Operator != null && !this.Operator.Equals(input.Operator))) return false;
+            if (this.Operate != input.Operate || (this.Operate != null && !this.Operate.Equals(input.Operate))) return false;
+            if (this.OperateTime != input.OperateTime || (this.OperateTime != null && !this.OperateTime.Equals(input.OperateTime))) return false;
+            if (this.Details != input.Details || (this.Details != null && input.Details != null && !this.Details.SequenceEqual(input.Details))) return false;
 
-            return 
-                (
-                    this.IterationId == input.IterationId ||
-                    (this.IterationId != null &&
-                    this.IterationId.Equals(input.IterationId))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Operator == input.Operator ||
-                    (this.Operator != null &&
-                    this.Operator.Equals(input.Operator))
-                ) && 
-                (
-                    this.Operate == input.Operate ||
-                    (this.Operate != null &&
-                    this.Operate.Equals(input.Operate))
-                ) && 
-                (
-                    this.OperateTime == input.OperateTime ||
-                    (this.OperateTime != null &&
-                    this.OperateTime.Equals(input.OperateTime))
-                ) && 
-                (
-                    this.Details == input.Details ||
-                    this.Details != null &&
-                    input.Details != null &&
-                    this.Details.SequenceEqual(input.Details)
-                );
+            return true;
         }
 
         /// <summary>
@@ -128,19 +102,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IterationId != null)
-                    hashCode = hashCode * 59 + this.IterationId.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.Operator != null)
-                    hashCode = hashCode * 59 + this.Operator.GetHashCode();
-                if (this.Operate != null)
-                    hashCode = hashCode * 59 + this.Operate.GetHashCode();
-                if (this.OperateTime != null)
-                    hashCode = hashCode * 59 + this.OperateTime.GetHashCode();
-                if (this.Details != null)
-                    hashCode = hashCode * 59 + this.Details.GetHashCode();
+                var hashCode = 41;
+                if (this.IterationId != null) hashCode = hashCode * 59 + this.IterationId.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.Operator != null) hashCode = hashCode * 59 + this.Operator.GetHashCode();
+                if (this.Operate != null) hashCode = hashCode * 59 + this.Operate.GetHashCode();
+                if (this.OperateTime != null) hashCode = hashCode * 59 + this.OperateTime.GetHashCode();
+                if (this.Details != null) hashCode = hashCode * 59 + this.Details.GetHashCode();
                 return hashCode;
             }
         }

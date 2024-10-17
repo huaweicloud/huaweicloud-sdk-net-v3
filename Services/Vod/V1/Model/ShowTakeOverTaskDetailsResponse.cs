@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(ShowTakeOverTaskDetailsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.TaskId != input.TaskId || (this.TaskId != null && !this.TaskId.Equals(input.TaskId))) return false;
+            if (this.TaskStatus != input.TaskStatus || (this.TaskStatus != null && !this.TaskStatus.Equals(input.TaskStatus))) return false;
+            if (this.Assets != input.Assets || (this.Assets != null && input.Assets != null && !this.Assets.SequenceEqual(input.Assets))) return false;
 
-            return 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.TaskId == input.TaskId ||
-                    (this.TaskId != null &&
-                    this.TaskId.Equals(input.TaskId))
-                ) && 
-                (
-                    this.TaskStatus == input.TaskStatus ||
-                    (this.TaskStatus != null &&
-                    this.TaskStatus.Equals(input.TaskStatus))
-                ) && 
-                (
-                    this.Assets == input.Assets ||
-                    this.Assets != null &&
-                    input.Assets != null &&
-                    this.Assets.SequenceEqual(input.Assets)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.TaskId != null)
-                    hashCode = hashCode * 59 + this.TaskId.GetHashCode();
-                if (this.TaskStatus != null)
-                    hashCode = hashCode * 59 + this.TaskStatus.GetHashCode();
-                if (this.Assets != null)
-                    hashCode = hashCode * 59 + this.Assets.GetHashCode();
+                var hashCode = 41;
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.TaskId != null) hashCode = hashCode * 59 + this.TaskId.GetHashCode();
+                if (this.TaskStatus != null) hashCode = hashCode * 59 + this.TaskStatus.GetHashCode();
+                if (this.Assets != null) hashCode = hashCode * 59 + this.Assets.GetHashCode();
                 return hashCode;
             }
         }

@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public bool Equals(ConsumerDetails input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ConsumerTag != input.ConsumerTag || (this.ConsumerTag != null && !this.ConsumerTag.Equals(input.ConsumerTag))) return false;
+            if (this.ChannelDetails != input.ChannelDetails || (this.ChannelDetails != null && !this.ChannelDetails.Equals(input.ChannelDetails))) return false;
+            if (this.AckRequired != input.AckRequired || (this.AckRequired != null && !this.AckRequired.Equals(input.AckRequired))) return false;
+            if (this.PrefetchCount != input.PrefetchCount || (this.PrefetchCount != null && !this.PrefetchCount.Equals(input.PrefetchCount))) return false;
 
-            return 
-                (
-                    this.ConsumerTag == input.ConsumerTag ||
-                    (this.ConsumerTag != null &&
-                    this.ConsumerTag.Equals(input.ConsumerTag))
-                ) && 
-                (
-                    this.ChannelDetails == input.ChannelDetails ||
-                    (this.ChannelDetails != null &&
-                    this.ChannelDetails.Equals(input.ChannelDetails))
-                ) && 
-                (
-                    this.AckRequired == input.AckRequired ||
-                    (this.AckRequired != null &&
-                    this.AckRequired.Equals(input.AckRequired))
-                ) && 
-                (
-                    this.PrefetchCount == input.PrefetchCount ||
-                    (this.PrefetchCount != null &&
-                    this.PrefetchCount.Equals(input.PrefetchCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ConsumerTag != null)
-                    hashCode = hashCode * 59 + this.ConsumerTag.GetHashCode();
-                if (this.ChannelDetails != null)
-                    hashCode = hashCode * 59 + this.ChannelDetails.GetHashCode();
-                if (this.AckRequired != null)
-                    hashCode = hashCode * 59 + this.AckRequired.GetHashCode();
-                if (this.PrefetchCount != null)
-                    hashCode = hashCode * 59 + this.PrefetchCount.GetHashCode();
+                var hashCode = 41;
+                if (this.ConsumerTag != null) hashCode = hashCode * 59 + this.ConsumerTag.GetHashCode();
+                if (this.ChannelDetails != null) hashCode = hashCode * 59 + this.ChannelDetails.GetHashCode();
+                if (this.AckRequired != null) hashCode = hashCode * 59 + this.AckRequired.GetHashCode();
+                if (this.PrefetchCount != null) hashCode = hashCode * 59 + this.PrefetchCount.GetHashCode();
                 return hashCode;
             }
         }

@@ -98,51 +98,17 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(ListActiveOrHistoryAlarmsRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Step != input.Step || (this.Step != null && !this.Step.Equals(input.Step))) return false;
+            if (this.WhetherCustomField != input.WhetherCustomField || (this.WhetherCustomField != null && !this.WhetherCustomField.Equals(input.WhetherCustomField))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.TimeRange != input.TimeRange || (this.TimeRange != null && !this.TimeRange.Equals(input.TimeRange))) return false;
+            if (this.Search != input.Search || (this.Search != null && !this.Search.Equals(input.Search))) return false;
+            if (this.AlarmLevelIds != input.AlarmLevelIds || (this.AlarmLevelIds != null && input.AlarmLevelIds != null && !this.AlarmLevelIds.SequenceEqual(input.AlarmLevelIds))) return false;
+            if (this.Sort != input.Sort || (this.Sort != null && !this.Sort.Equals(input.Sort))) return false;
 
-            return 
-                (
-                    this.Step == input.Step ||
-                    (this.Step != null &&
-                    this.Step.Equals(input.Step))
-                ) && 
-                (
-                    this.WhetherCustomField == input.WhetherCustomField ||
-                    (this.WhetherCustomField != null &&
-                    this.WhetherCustomField.Equals(input.WhetherCustomField))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.TimeRange == input.TimeRange ||
-                    (this.TimeRange != null &&
-                    this.TimeRange.Equals(input.TimeRange))
-                ) && 
-                (
-                    this.Search == input.Search ||
-                    (this.Search != null &&
-                    this.Search.Equals(input.Search))
-                ) && 
-                (
-                    this.AlarmLevelIds == input.AlarmLevelIds ||
-                    this.AlarmLevelIds != null &&
-                    input.AlarmLevelIds != null &&
-                    this.AlarmLevelIds.SequenceEqual(input.AlarmLevelIds)
-                ) && 
-                (
-                    this.Sort == input.Sort ||
-                    (this.Sort != null &&
-                    this.Sort.Equals(input.Sort))
-                );
+            return true;
         }
 
         /// <summary>
@@ -152,23 +118,15 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Step != null)
-                    hashCode = hashCode * 59 + this.Step.GetHashCode();
-                if (this.WhetherCustomField != null)
-                    hashCode = hashCode * 59 + this.WhetherCustomField.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.TimeRange != null)
-                    hashCode = hashCode * 59 + this.TimeRange.GetHashCode();
-                if (this.Search != null)
-                    hashCode = hashCode * 59 + this.Search.GetHashCode();
-                if (this.AlarmLevelIds != null)
-                    hashCode = hashCode * 59 + this.AlarmLevelIds.GetHashCode();
-                if (this.Sort != null)
-                    hashCode = hashCode * 59 + this.Sort.GetHashCode();
+                var hashCode = 41;
+                if (this.Step != null) hashCode = hashCode * 59 + this.Step.GetHashCode();
+                if (this.WhetherCustomField != null) hashCode = hashCode * 59 + this.WhetherCustomField.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.TimeRange != null) hashCode = hashCode * 59 + this.TimeRange.GetHashCode();
+                if (this.Search != null) hashCode = hashCode * 59 + this.Search.GetHashCode();
+                if (this.AlarmLevelIds != null) hashCode = hashCode * 59 + this.AlarmLevelIds.GetHashCode();
+                if (this.Sort != null) hashCode = hashCode * 59 + this.Sort.GetHashCode();
                 return hashCode;
             }
         }

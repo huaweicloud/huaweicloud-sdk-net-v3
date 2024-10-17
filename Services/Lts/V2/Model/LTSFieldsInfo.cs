@@ -211,46 +211,16 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(LTSFieldsInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FieldType != input.FieldType) return false;
+            if (this.FieldName != input.FieldName || (this.FieldName != null && !this.FieldName.Equals(input.FieldName))) return false;
+            if (this.CaseSensitive != input.CaseSensitive || (this.CaseSensitive != null && !this.CaseSensitive.Equals(input.CaseSensitive))) return false;
+            if (this.IncludeChinese != input.IncludeChinese || (this.IncludeChinese != null && !this.IncludeChinese.Equals(input.IncludeChinese))) return false;
+            if (this.Tokenizer != input.Tokenizer || (this.Tokenizer != null && !this.Tokenizer.Equals(input.Tokenizer))) return false;
+            if (this.QuickAnalysis != input.QuickAnalysis || (this.QuickAnalysis != null && !this.QuickAnalysis.Equals(input.QuickAnalysis))) return false;
+            if (this.Ascii != input.Ascii || (this.Ascii != null && input.Ascii != null && !this.Ascii.SequenceEqual(input.Ascii))) return false;
 
-            return 
-                (
-                    this.FieldType == input.FieldType ||
-                    (this.FieldType != null &&
-                    this.FieldType.Equals(input.FieldType))
-                ) && 
-                (
-                    this.FieldName == input.FieldName ||
-                    (this.FieldName != null &&
-                    this.FieldName.Equals(input.FieldName))
-                ) && 
-                (
-                    this.CaseSensitive == input.CaseSensitive ||
-                    (this.CaseSensitive != null &&
-                    this.CaseSensitive.Equals(input.CaseSensitive))
-                ) && 
-                (
-                    this.IncludeChinese == input.IncludeChinese ||
-                    (this.IncludeChinese != null &&
-                    this.IncludeChinese.Equals(input.IncludeChinese))
-                ) && 
-                (
-                    this.Tokenizer == input.Tokenizer ||
-                    (this.Tokenizer != null &&
-                    this.Tokenizer.Equals(input.Tokenizer))
-                ) && 
-                (
-                    this.QuickAnalysis == input.QuickAnalysis ||
-                    (this.QuickAnalysis != null &&
-                    this.QuickAnalysis.Equals(input.QuickAnalysis))
-                ) && 
-                (
-                    this.Ascii == input.Ascii ||
-                    this.Ascii != null &&
-                    input.Ascii != null &&
-                    this.Ascii.SequenceEqual(input.Ascii)
-                );
+            return true;
         }
 
         /// <summary>
@@ -260,21 +230,14 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FieldType != null)
-                    hashCode = hashCode * 59 + this.FieldType.GetHashCode();
-                if (this.FieldName != null)
-                    hashCode = hashCode * 59 + this.FieldName.GetHashCode();
-                if (this.CaseSensitive != null)
-                    hashCode = hashCode * 59 + this.CaseSensitive.GetHashCode();
-                if (this.IncludeChinese != null)
-                    hashCode = hashCode * 59 + this.IncludeChinese.GetHashCode();
-                if (this.Tokenizer != null)
-                    hashCode = hashCode * 59 + this.Tokenizer.GetHashCode();
-                if (this.QuickAnalysis != null)
-                    hashCode = hashCode * 59 + this.QuickAnalysis.GetHashCode();
-                if (this.Ascii != null)
-                    hashCode = hashCode * 59 + this.Ascii.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.FieldType.GetHashCode();
+                if (this.FieldName != null) hashCode = hashCode * 59 + this.FieldName.GetHashCode();
+                if (this.CaseSensitive != null) hashCode = hashCode * 59 + this.CaseSensitive.GetHashCode();
+                if (this.IncludeChinese != null) hashCode = hashCode * 59 + this.IncludeChinese.GetHashCode();
+                if (this.Tokenizer != null) hashCode = hashCode * 59 + this.Tokenizer.GetHashCode();
+                if (this.QuickAnalysis != null) hashCode = hashCode * 59 + this.QuickAnalysis.GetHashCode();
+                if (this.Ascii != null) hashCode = hashCode * 59 + this.Ascii.GetHashCode();
                 return hashCode;
             }
         }

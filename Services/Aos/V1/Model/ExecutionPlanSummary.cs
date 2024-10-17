@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(ExecutionPlanSummary input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResourceAdd != input.ResourceAdd || (this.ResourceAdd != null && !this.ResourceAdd.Equals(input.ResourceAdd))) return false;
+            if (this.ResourceUpdate != input.ResourceUpdate || (this.ResourceUpdate != null && !this.ResourceUpdate.Equals(input.ResourceUpdate))) return false;
+            if (this.ResourceDelete != input.ResourceDelete || (this.ResourceDelete != null && !this.ResourceDelete.Equals(input.ResourceDelete))) return false;
+            if (this.ResourceImport != input.ResourceImport || (this.ResourceImport != null && !this.ResourceImport.Equals(input.ResourceImport))) return false;
 
-            return 
-                (
-                    this.ResourceAdd == input.ResourceAdd ||
-                    (this.ResourceAdd != null &&
-                    this.ResourceAdd.Equals(input.ResourceAdd))
-                ) && 
-                (
-                    this.ResourceUpdate == input.ResourceUpdate ||
-                    (this.ResourceUpdate != null &&
-                    this.ResourceUpdate.Equals(input.ResourceUpdate))
-                ) && 
-                (
-                    this.ResourceDelete == input.ResourceDelete ||
-                    (this.ResourceDelete != null &&
-                    this.ResourceDelete.Equals(input.ResourceDelete))
-                ) && 
-                (
-                    this.ResourceImport == input.ResourceImport ||
-                    (this.ResourceImport != null &&
-                    this.ResourceImport.Equals(input.ResourceImport))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResourceAdd != null)
-                    hashCode = hashCode * 59 + this.ResourceAdd.GetHashCode();
-                if (this.ResourceUpdate != null)
-                    hashCode = hashCode * 59 + this.ResourceUpdate.GetHashCode();
-                if (this.ResourceDelete != null)
-                    hashCode = hashCode * 59 + this.ResourceDelete.GetHashCode();
-                if (this.ResourceImport != null)
-                    hashCode = hashCode * 59 + this.ResourceImport.GetHashCode();
+                var hashCode = 41;
+                if (this.ResourceAdd != null) hashCode = hashCode * 59 + this.ResourceAdd.GetHashCode();
+                if (this.ResourceUpdate != null) hashCode = hashCode * 59 + this.ResourceUpdate.GetHashCode();
+                if (this.ResourceDelete != null) hashCode = hashCode * 59 + this.ResourceDelete.GetHashCode();
+                if (this.ResourceImport != null) hashCode = hashCode * 59 + this.ResourceImport.GetHashCode();
                 return hashCode;
             }
         }

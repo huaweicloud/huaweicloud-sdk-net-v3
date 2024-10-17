@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(BindEipRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PublicIp != input.PublicIp || (this.PublicIp != null && !this.PublicIp.Equals(input.PublicIp))) return false;
+            if (this.PublicIpId != input.PublicIpId || (this.PublicIpId != null && !this.PublicIpId.Equals(input.PublicIpId))) return false;
+            if (this.IsBind != input.IsBind || (this.IsBind != null && !this.IsBind.Equals(input.IsBind))) return false;
 
-            return 
-                (
-                    this.PublicIp == input.PublicIp ||
-                    (this.PublicIp != null &&
-                    this.PublicIp.Equals(input.PublicIp))
-                ) && 
-                (
-                    this.PublicIpId == input.PublicIpId ||
-                    (this.PublicIpId != null &&
-                    this.PublicIpId.Equals(input.PublicIpId))
-                ) && 
-                (
-                    this.IsBind == input.IsBind ||
-                    (this.IsBind != null &&
-                    this.IsBind.Equals(input.IsBind))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PublicIp != null)
-                    hashCode = hashCode * 59 + this.PublicIp.GetHashCode();
-                if (this.PublicIpId != null)
-                    hashCode = hashCode * 59 + this.PublicIpId.GetHashCode();
-                if (this.IsBind != null)
-                    hashCode = hashCode * 59 + this.IsBind.GetHashCode();
+                var hashCode = 41;
+                if (this.PublicIp != null) hashCode = hashCode * 59 + this.PublicIp.GetHashCode();
+                if (this.PublicIpId != null) hashCode = hashCode * 59 + this.PublicIpId.GetHashCode();
+                if (this.IsBind != null) hashCode = hashCode * 59 + this.IsBind.GetHashCode();
                 return hashCode;
             }
         }

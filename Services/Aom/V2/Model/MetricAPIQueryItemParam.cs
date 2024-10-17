@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(MetricAPIQueryItemParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InventoryId != input.InventoryId || (this.InventoryId != null && !this.InventoryId.Equals(input.InventoryId))) return false;
+            if (this.MetricItems != input.MetricItems || (this.MetricItems != null && input.MetricItems != null && !this.MetricItems.SequenceEqual(input.MetricItems))) return false;
 
-            return 
-                (
-                    this.InventoryId == input.InventoryId ||
-                    (this.InventoryId != null &&
-                    this.InventoryId.Equals(input.InventoryId))
-                ) && 
-                (
-                    this.MetricItems == input.MetricItems ||
-                    this.MetricItems != null &&
-                    input.MetricItems != null &&
-                    this.MetricItems.SequenceEqual(input.MetricItems)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InventoryId != null)
-                    hashCode = hashCode * 59 + this.InventoryId.GetHashCode();
-                if (this.MetricItems != null)
-                    hashCode = hashCode * 59 + this.MetricItems.GetHashCode();
+                var hashCode = 41;
+                if (this.InventoryId != null) hashCode = hashCode * 59 + this.InventoryId.GetHashCode();
+                if (this.MetricItems != null) hashCode = hashCode * 59 + this.MetricItems.GetHashCode();
                 return hashCode;
             }
         }

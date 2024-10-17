@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(ShowLoadBalancerRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LoadbalancerId != input.LoadbalancerId || (this.LoadbalancerId != null && !this.LoadbalancerId.Equals(input.LoadbalancerId))) return false;
 
-            return 
-                (
-                    this.LoadbalancerId == input.LoadbalancerId ||
-                    (this.LoadbalancerId != null &&
-                    this.LoadbalancerId.Equals(input.LoadbalancerId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LoadbalancerId != null)
-                    hashCode = hashCode * 59 + this.LoadbalancerId.GetHashCode();
+                var hashCode = 41;
+                if (this.LoadbalancerId != null) hashCode = hashCode * 59 + this.LoadbalancerId.GetHashCode();
                 return hashCode;
             }
         }

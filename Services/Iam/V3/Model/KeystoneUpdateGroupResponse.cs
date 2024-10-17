@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(KeystoneUpdateGroupResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Group != input.Group || (this.Group != null && !this.Group.Equals(input.Group))) return false;
 
-            return 
-                (
-                    this.Group == input.Group ||
-                    (this.Group != null &&
-                    this.Group.Equals(input.Group))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Group != null)
-                    hashCode = hashCode * 59 + this.Group.GetHashCode();
+                var hashCode = 41;
+                if (this.Group != null) hashCode = hashCode * 59 + this.Group.GetHashCode();
                 return hashCode;
             }
         }

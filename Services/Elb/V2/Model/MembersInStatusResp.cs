@@ -203,35 +203,14 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// </summary>
         public bool Equals(MembersInStatusResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Address != input.Address || (this.Address != null && !this.Address.Equals(input.Address))) return false;
+            if (this.ProtocolPort != input.ProtocolPort || (this.ProtocolPort != null && !this.ProtocolPort.Equals(input.ProtocolPort))) return false;
+            if (this.OperatingStatus != input.OperatingStatus) return false;
+            if (this.ProvisioningStatus != input.ProvisioningStatus || (this.ProvisioningStatus != null && !this.ProvisioningStatus.Equals(input.ProvisioningStatus))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
-                ) && 
-                (
-                    this.ProtocolPort == input.ProtocolPort ||
-                    (this.ProtocolPort != null &&
-                    this.ProtocolPort.Equals(input.ProtocolPort))
-                ) && 
-                (
-                    this.OperatingStatus == input.OperatingStatus ||
-                    (this.OperatingStatus != null &&
-                    this.OperatingStatus.Equals(input.OperatingStatus))
-                ) && 
-                (
-                    this.ProvisioningStatus == input.ProvisioningStatus ||
-                    (this.ProvisioningStatus != null &&
-                    this.ProvisioningStatus.Equals(input.ProvisioningStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -241,17 +220,12 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Address != null)
-                    hashCode = hashCode * 59 + this.Address.GetHashCode();
-                if (this.ProtocolPort != null)
-                    hashCode = hashCode * 59 + this.ProtocolPort.GetHashCode();
-                if (this.OperatingStatus != null)
-                    hashCode = hashCode * 59 + this.OperatingStatus.GetHashCode();
-                if (this.ProvisioningStatus != null)
-                    hashCode = hashCode * 59 + this.ProvisioningStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Address != null) hashCode = hashCode * 59 + this.Address.GetHashCode();
+                if (this.ProtocolPort != null) hashCode = hashCode * 59 + this.ProtocolPort.GetHashCode();
+                hashCode = hashCode * 59 + this.OperatingStatus.GetHashCode();
+                if (this.ProvisioningStatus != null) hashCode = hashCode * 59 + this.ProvisioningStatus.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(CheckMd5DuplicationResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IsDuplicated != input.IsDuplicated || (this.IsDuplicated != null && !this.IsDuplicated.Equals(input.IsDuplicated))) return false;
+            if (this.AssetIds != input.AssetIds || (this.AssetIds != null && input.AssetIds != null && !this.AssetIds.SequenceEqual(input.AssetIds))) return false;
 
-            return 
-                (
-                    this.IsDuplicated == input.IsDuplicated ||
-                    (this.IsDuplicated != null &&
-                    this.IsDuplicated.Equals(input.IsDuplicated))
-                ) && 
-                (
-                    this.AssetIds == input.AssetIds ||
-                    this.AssetIds != null &&
-                    input.AssetIds != null &&
-                    this.AssetIds.SequenceEqual(input.AssetIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IsDuplicated != null)
-                    hashCode = hashCode * 59 + this.IsDuplicated.GetHashCode();
-                if (this.AssetIds != null)
-                    hashCode = hashCode * 59 + this.AssetIds.GetHashCode();
+                var hashCode = 41;
+                if (this.IsDuplicated != null) hashCode = hashCode * 59 + this.IsDuplicated.GetHashCode();
+                if (this.AssetIds != null) hashCode = hashCode * 59 + this.AssetIds.GetHashCode();
                 return hashCode;
             }
         }

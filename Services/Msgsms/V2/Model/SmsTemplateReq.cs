@@ -119,67 +119,20 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         /// </summary>
         public bool Equals(SmsTemplateReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
+            if (this.Brackets != input.Brackets || (this.Brackets != null && !this.Brackets.Equals(input.Brackets))) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
+            if (this.SendCountry != input.SendCountry || (this.SendCountry != null && input.SendCountry != null && !this.SendCountry.SequenceEqual(input.SendCountry))) return false;
+            if (this.SignId != input.SignId || (this.SignId != null && !this.SignId.Equals(input.SignId))) return false;
+            if (this.TemplateContent != input.TemplateContent || (this.TemplateContent != null && !this.TemplateContent.Equals(input.TemplateContent))) return false;
+            if (this.TemplateDesc != input.TemplateDesc || (this.TemplateDesc != null && !this.TemplateDesc.Equals(input.TemplateDesc))) return false;
+            if (this.TemplateName != input.TemplateName || (this.TemplateName != null && !this.TemplateName.Equals(input.TemplateName))) return false;
+            if (this.TemplateType != input.TemplateType || (this.TemplateType != null && !this.TemplateType.Equals(input.TemplateType))) return false;
+            if (this.UniversalTemplate != input.UniversalTemplate || (this.UniversalTemplate != null && !this.UniversalTemplate.Equals(input.UniversalTemplate))) return false;
+            if (this.VariableAttributes != input.VariableAttributes || (this.VariableAttributes != null && input.VariableAttributes != null && !this.VariableAttributes.SequenceEqual(input.VariableAttributes))) return false;
 
-            return 
-                (
-                    this.AppId == input.AppId ||
-                    (this.AppId != null &&
-                    this.AppId.Equals(input.AppId))
-                ) && 
-                (
-                    this.Brackets == input.Brackets ||
-                    (this.Brackets != null &&
-                    this.Brackets.Equals(input.Brackets))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.SendCountry == input.SendCountry ||
-                    this.SendCountry != null &&
-                    input.SendCountry != null &&
-                    this.SendCountry.SequenceEqual(input.SendCountry)
-                ) && 
-                (
-                    this.SignId == input.SignId ||
-                    (this.SignId != null &&
-                    this.SignId.Equals(input.SignId))
-                ) && 
-                (
-                    this.TemplateContent == input.TemplateContent ||
-                    (this.TemplateContent != null &&
-                    this.TemplateContent.Equals(input.TemplateContent))
-                ) && 
-                (
-                    this.TemplateDesc == input.TemplateDesc ||
-                    (this.TemplateDesc != null &&
-                    this.TemplateDesc.Equals(input.TemplateDesc))
-                ) && 
-                (
-                    this.TemplateName == input.TemplateName ||
-                    (this.TemplateName != null &&
-                    this.TemplateName.Equals(input.TemplateName))
-                ) && 
-                (
-                    this.TemplateType == input.TemplateType ||
-                    (this.TemplateType != null &&
-                    this.TemplateType.Equals(input.TemplateType))
-                ) && 
-                (
-                    this.UniversalTemplate == input.UniversalTemplate ||
-                    (this.UniversalTemplate != null &&
-                    this.UniversalTemplate.Equals(input.UniversalTemplate))
-                ) && 
-                (
-                    this.VariableAttributes == input.VariableAttributes ||
-                    this.VariableAttributes != null &&
-                    input.VariableAttributes != null &&
-                    this.VariableAttributes.SequenceEqual(input.VariableAttributes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -189,29 +142,18 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AppId != null)
-                    hashCode = hashCode * 59 + this.AppId.GetHashCode();
-                if (this.Brackets != null)
-                    hashCode = hashCode * 59 + this.Brackets.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.SendCountry != null)
-                    hashCode = hashCode * 59 + this.SendCountry.GetHashCode();
-                if (this.SignId != null)
-                    hashCode = hashCode * 59 + this.SignId.GetHashCode();
-                if (this.TemplateContent != null)
-                    hashCode = hashCode * 59 + this.TemplateContent.GetHashCode();
-                if (this.TemplateDesc != null)
-                    hashCode = hashCode * 59 + this.TemplateDesc.GetHashCode();
-                if (this.TemplateName != null)
-                    hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
-                if (this.TemplateType != null)
-                    hashCode = hashCode * 59 + this.TemplateType.GetHashCode();
-                if (this.UniversalTemplate != null)
-                    hashCode = hashCode * 59 + this.UniversalTemplate.GetHashCode();
-                if (this.VariableAttributes != null)
-                    hashCode = hashCode * 59 + this.VariableAttributes.GetHashCode();
+                var hashCode = 41;
+                if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
+                if (this.Brackets != null) hashCode = hashCode * 59 + this.Brackets.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
+                if (this.SendCountry != null) hashCode = hashCode * 59 + this.SendCountry.GetHashCode();
+                if (this.SignId != null) hashCode = hashCode * 59 + this.SignId.GetHashCode();
+                if (this.TemplateContent != null) hashCode = hashCode * 59 + this.TemplateContent.GetHashCode();
+                if (this.TemplateDesc != null) hashCode = hashCode * 59 + this.TemplateDesc.GetHashCode();
+                if (this.TemplateName != null) hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
+                if (this.TemplateType != null) hashCode = hashCode * 59 + this.TemplateType.GetHashCode();
+                if (this.UniversalTemplate != null) hashCode = hashCode * 59 + this.UniversalTemplate.GetHashCode();
+                if (this.VariableAttributes != null) hashCode = hashCode * 59 + this.VariableAttributes.GetHashCode();
                 return hashCode;
             }
         }

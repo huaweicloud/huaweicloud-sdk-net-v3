@@ -66,25 +66,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(BatchUpdateOneClickAlarmPoliciesEnabledStateRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OneClickAlarmId != input.OneClickAlarmId || (this.OneClickAlarmId != null && !this.OneClickAlarmId.Equals(input.OneClickAlarmId))) return false;
+            if (this.AlarmId != input.AlarmId || (this.AlarmId != null && !this.AlarmId.Equals(input.AlarmId))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
-            return 
-                (
-                    this.OneClickAlarmId == input.OneClickAlarmId ||
-                    (this.OneClickAlarmId != null &&
-                    this.OneClickAlarmId.Equals(input.OneClickAlarmId))
-                ) && 
-                (
-                    this.AlarmId == input.AlarmId ||
-                    (this.AlarmId != null &&
-                    this.AlarmId.Equals(input.AlarmId))
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +81,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OneClickAlarmId != null)
-                    hashCode = hashCode * 59 + this.OneClickAlarmId.GetHashCode();
-                if (this.AlarmId != null)
-                    hashCode = hashCode * 59 + this.AlarmId.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                var hashCode = 41;
+                if (this.OneClickAlarmId != null) hashCode = hashCode * 59 + this.OneClickAlarmId.GetHashCode();
+                if (this.AlarmId != null) hashCode = hashCode * 59 + this.AlarmId.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

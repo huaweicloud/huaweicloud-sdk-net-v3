@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(WorkitemStatusRecords input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.WorkItemRecordId != input.WorkItemRecordId || (this.WorkItemRecordId != null && !this.WorkItemRecordId.Equals(input.WorkItemRecordId))) return false;
+            if (this.WorkItemId != input.WorkItemId || (this.WorkItemId != null && !this.WorkItemId.Equals(input.WorkItemId))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.WorkItemStatuses != input.WorkItemStatuses || (this.WorkItemStatuses != null && input.WorkItemStatuses != null && !this.WorkItemStatuses.SequenceEqual(input.WorkItemStatuses))) return false;
 
-            return 
-                (
-                    this.WorkItemRecordId == input.WorkItemRecordId ||
-                    (this.WorkItemRecordId != null &&
-                    this.WorkItemRecordId.Equals(input.WorkItemRecordId))
-                ) && 
-                (
-                    this.WorkItemId == input.WorkItemId ||
-                    (this.WorkItemId != null &&
-                    this.WorkItemId.Equals(input.WorkItemId))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.WorkItemStatuses == input.WorkItemStatuses ||
-                    this.WorkItemStatuses != null &&
-                    input.WorkItemStatuses != null &&
-                    this.WorkItemStatuses.SequenceEqual(input.WorkItemStatuses)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.WorkItemRecordId != null)
-                    hashCode = hashCode * 59 + this.WorkItemRecordId.GetHashCode();
-                if (this.WorkItemId != null)
-                    hashCode = hashCode * 59 + this.WorkItemId.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.WorkItemStatuses != null)
-                    hashCode = hashCode * 59 + this.WorkItemStatuses.GetHashCode();
+                var hashCode = 41;
+                if (this.WorkItemRecordId != null) hashCode = hashCode * 59 + this.WorkItemRecordId.GetHashCode();
+                if (this.WorkItemId != null) hashCode = hashCode * 59 + this.WorkItemId.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.WorkItemStatuses != null) hashCode = hashCode * 59 + this.WorkItemStatuses.GetHashCode();
                 return hashCode;
             }
         }

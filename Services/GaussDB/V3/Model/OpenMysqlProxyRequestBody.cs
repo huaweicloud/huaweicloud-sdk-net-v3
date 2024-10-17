@@ -219,56 +219,18 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(OpenMysqlProxyRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FlavorRef != input.FlavorRef || (this.FlavorRef != null && !this.FlavorRef.Equals(input.FlavorRef))) return false;
+            if (this.NodeNum != input.NodeNum || (this.NodeNum != null && !this.NodeNum.Equals(input.NodeNum))) return false;
+            if (this.ProxyName != input.ProxyName || (this.ProxyName != null && !this.ProxyName.Equals(input.ProxyName))) return false;
+            if (this.ProxyMode != input.ProxyMode) return false;
+            if (this.RouteMode != input.RouteMode || (this.RouteMode != null && !this.RouteMode.Equals(input.RouteMode))) return false;
+            if (this.NodesReadWeight != input.NodesReadWeight || (this.NodesReadWeight != null && input.NodesReadWeight != null && !this.NodesReadWeight.SequenceEqual(input.NodesReadWeight))) return false;
+            if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
+            if (this.NewNodeAutoAddStatus != input.NewNodeAutoAddStatus || (this.NewNodeAutoAddStatus != null && !this.NewNodeAutoAddStatus.Equals(input.NewNodeAutoAddStatus))) return false;
+            if (this.NewNodeWeight != input.NewNodeWeight || (this.NewNodeWeight != null && !this.NewNodeWeight.Equals(input.NewNodeWeight))) return false;
 
-            return 
-                (
-                    this.FlavorRef == input.FlavorRef ||
-                    (this.FlavorRef != null &&
-                    this.FlavorRef.Equals(input.FlavorRef))
-                ) && 
-                (
-                    this.NodeNum == input.NodeNum ||
-                    (this.NodeNum != null &&
-                    this.NodeNum.Equals(input.NodeNum))
-                ) && 
-                (
-                    this.ProxyName == input.ProxyName ||
-                    (this.ProxyName != null &&
-                    this.ProxyName.Equals(input.ProxyName))
-                ) && 
-                (
-                    this.ProxyMode == input.ProxyMode ||
-                    (this.ProxyMode != null &&
-                    this.ProxyMode.Equals(input.ProxyMode))
-                ) && 
-                (
-                    this.RouteMode == input.RouteMode ||
-                    (this.RouteMode != null &&
-                    this.RouteMode.Equals(input.RouteMode))
-                ) && 
-                (
-                    this.NodesReadWeight == input.NodesReadWeight ||
-                    this.NodesReadWeight != null &&
-                    input.NodesReadWeight != null &&
-                    this.NodesReadWeight.SequenceEqual(input.NodesReadWeight)
-                ) && 
-                (
-                    this.SubnetId == input.SubnetId ||
-                    (this.SubnetId != null &&
-                    this.SubnetId.Equals(input.SubnetId))
-                ) && 
-                (
-                    this.NewNodeAutoAddStatus == input.NewNodeAutoAddStatus ||
-                    (this.NewNodeAutoAddStatus != null &&
-                    this.NewNodeAutoAddStatus.Equals(input.NewNodeAutoAddStatus))
-                ) && 
-                (
-                    this.NewNodeWeight == input.NewNodeWeight ||
-                    (this.NewNodeWeight != null &&
-                    this.NewNodeWeight.Equals(input.NewNodeWeight))
-                );
+            return true;
         }
 
         /// <summary>
@@ -278,25 +240,16 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FlavorRef != null)
-                    hashCode = hashCode * 59 + this.FlavorRef.GetHashCode();
-                if (this.NodeNum != null)
-                    hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
-                if (this.ProxyName != null)
-                    hashCode = hashCode * 59 + this.ProxyName.GetHashCode();
-                if (this.ProxyMode != null)
-                    hashCode = hashCode * 59 + this.ProxyMode.GetHashCode();
-                if (this.RouteMode != null)
-                    hashCode = hashCode * 59 + this.RouteMode.GetHashCode();
-                if (this.NodesReadWeight != null)
-                    hashCode = hashCode * 59 + this.NodesReadWeight.GetHashCode();
-                if (this.SubnetId != null)
-                    hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
-                if (this.NewNodeAutoAddStatus != null)
-                    hashCode = hashCode * 59 + this.NewNodeAutoAddStatus.GetHashCode();
-                if (this.NewNodeWeight != null)
-                    hashCode = hashCode * 59 + this.NewNodeWeight.GetHashCode();
+                var hashCode = 41;
+                if (this.FlavorRef != null) hashCode = hashCode * 59 + this.FlavorRef.GetHashCode();
+                if (this.NodeNum != null) hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
+                if (this.ProxyName != null) hashCode = hashCode * 59 + this.ProxyName.GetHashCode();
+                hashCode = hashCode * 59 + this.ProxyMode.GetHashCode();
+                if (this.RouteMode != null) hashCode = hashCode * 59 + this.RouteMode.GetHashCode();
+                if (this.NodesReadWeight != null) hashCode = hashCode * 59 + this.NodesReadWeight.GetHashCode();
+                if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
+                if (this.NewNodeAutoAddStatus != null) hashCode = hashCode * 59 + this.NewNodeAutoAddStatus.GetHashCode();
+                if (this.NewNodeWeight != null) hashCode = hashCode * 59 + this.NewNodeWeight.GetHashCode();
                 return hashCode;
             }
         }

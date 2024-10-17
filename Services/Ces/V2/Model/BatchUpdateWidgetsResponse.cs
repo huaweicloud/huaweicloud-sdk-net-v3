@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(BatchUpdateWidgetsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Widgets != input.Widgets || (this.Widgets != null && input.Widgets != null && !this.Widgets.SequenceEqual(input.Widgets))) return false;
 
-            return 
-                (
-                    this.Widgets == input.Widgets ||
-                    this.Widgets != null &&
-                    input.Widgets != null &&
-                    this.Widgets.SequenceEqual(input.Widgets)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Widgets != null)
-                    hashCode = hashCode * 59 + this.Widgets.GetHashCode();
+                var hashCode = 41;
+                if (this.Widgets != null) hashCode = hashCode * 59 + this.Widgets.GetHashCode();
                 return hashCode;
             }
         }

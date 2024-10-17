@@ -161,95 +161,26 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public bool Equals(Job input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.JobName != input.JobName || (this.JobName != null && !this.JobName.Equals(input.JobName))) return false;
+            if (this.JobCreator != input.JobCreator || (this.JobCreator != null && !this.JobCreator.Equals(input.JobCreator))) return false;
+            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.LastBuildTime != input.LastBuildTime || (this.LastBuildTime != null && !this.LastBuildTime.Equals(input.LastBuildTime))) return false;
+            if (this.HealthScore != input.HealthScore || (this.HealthScore != null && !this.HealthScore.Equals(input.HealthScore))) return false;
+            if (this.SourceCode != input.SourceCode || (this.SourceCode != null && !this.SourceCode.Equals(input.SourceCode))) return false;
+            if (this.LastBuildStatus != input.LastBuildStatus || (this.LastBuildStatus != null && !this.LastBuildStatus.Equals(input.LastBuildStatus))) return false;
+            if (this.IsFinished != input.IsFinished || (this.IsFinished != null && !this.IsFinished.Equals(input.IsFinished))) return false;
+            if (this.Disabled != input.Disabled || (this.Disabled != null && !this.Disabled.Equals(input.Disabled))) return false;
+            if (this.Favorite != input.Favorite || (this.Favorite != null && !this.Favorite.Equals(input.Favorite))) return false;
+            if (this.IsModify != input.IsModify || (this.IsModify != null && !this.IsModify.Equals(input.IsModify))) return false;
+            if (this.IsDelete != input.IsDelete || (this.IsDelete != null && !this.IsDelete.Equals(input.IsDelete))) return false;
+            if (this.IsExecute != input.IsExecute || (this.IsExecute != null && !this.IsExecute.Equals(input.IsExecute))) return false;
+            if (this.IsCopy != input.IsCopy || (this.IsCopy != null && !this.IsCopy.Equals(input.IsCopy))) return false;
+            if (this.IsForbidden != input.IsForbidden || (this.IsForbidden != null && !this.IsForbidden.Equals(input.IsForbidden))) return false;
+            if (this.IsView != input.IsView || (this.IsView != null && !this.IsView.Equals(input.IsView))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.JobName == input.JobName ||
-                    (this.JobName != null &&
-                    this.JobName.Equals(input.JobName))
-                ) && 
-                (
-                    this.JobCreator == input.JobCreator ||
-                    (this.JobCreator != null &&
-                    this.JobCreator.Equals(input.JobCreator))
-                ) && 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.LastBuildTime == input.LastBuildTime ||
-                    (this.LastBuildTime != null &&
-                    this.LastBuildTime.Equals(input.LastBuildTime))
-                ) && 
-                (
-                    this.HealthScore == input.HealthScore ||
-                    (this.HealthScore != null &&
-                    this.HealthScore.Equals(input.HealthScore))
-                ) && 
-                (
-                    this.SourceCode == input.SourceCode ||
-                    (this.SourceCode != null &&
-                    this.SourceCode.Equals(input.SourceCode))
-                ) && 
-                (
-                    this.LastBuildStatus == input.LastBuildStatus ||
-                    (this.LastBuildStatus != null &&
-                    this.LastBuildStatus.Equals(input.LastBuildStatus))
-                ) && 
-                (
-                    this.IsFinished == input.IsFinished ||
-                    (this.IsFinished != null &&
-                    this.IsFinished.Equals(input.IsFinished))
-                ) && 
-                (
-                    this.Disabled == input.Disabled ||
-                    (this.Disabled != null &&
-                    this.Disabled.Equals(input.Disabled))
-                ) && 
-                (
-                    this.Favorite == input.Favorite ||
-                    (this.Favorite != null &&
-                    this.Favorite.Equals(input.Favorite))
-                ) && 
-                (
-                    this.IsModify == input.IsModify ||
-                    (this.IsModify != null &&
-                    this.IsModify.Equals(input.IsModify))
-                ) && 
-                (
-                    this.IsDelete == input.IsDelete ||
-                    (this.IsDelete != null &&
-                    this.IsDelete.Equals(input.IsDelete))
-                ) && 
-                (
-                    this.IsExecute == input.IsExecute ||
-                    (this.IsExecute != null &&
-                    this.IsExecute.Equals(input.IsExecute))
-                ) && 
-                (
-                    this.IsCopy == input.IsCopy ||
-                    (this.IsCopy != null &&
-                    this.IsCopy.Equals(input.IsCopy))
-                ) && 
-                (
-                    this.IsForbidden == input.IsForbidden ||
-                    (this.IsForbidden != null &&
-                    this.IsForbidden.Equals(input.IsForbidden))
-                ) && 
-                (
-                    this.IsView == input.IsView ||
-                    (this.IsView != null &&
-                    this.IsView.Equals(input.IsView))
-                );
+            return true;
         }
 
         /// <summary>
@@ -259,41 +190,24 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.JobName != null)
-                    hashCode = hashCode * 59 + this.JobName.GetHashCode();
-                if (this.JobCreator != null)
-                    hashCode = hashCode * 59 + this.JobCreator.GetHashCode();
-                if (this.UserName != null)
-                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.LastBuildTime != null)
-                    hashCode = hashCode * 59 + this.LastBuildTime.GetHashCode();
-                if (this.HealthScore != null)
-                    hashCode = hashCode * 59 + this.HealthScore.GetHashCode();
-                if (this.SourceCode != null)
-                    hashCode = hashCode * 59 + this.SourceCode.GetHashCode();
-                if (this.LastBuildStatus != null)
-                    hashCode = hashCode * 59 + this.LastBuildStatus.GetHashCode();
-                if (this.IsFinished != null)
-                    hashCode = hashCode * 59 + this.IsFinished.GetHashCode();
-                if (this.Disabled != null)
-                    hashCode = hashCode * 59 + this.Disabled.GetHashCode();
-                if (this.Favorite != null)
-                    hashCode = hashCode * 59 + this.Favorite.GetHashCode();
-                if (this.IsModify != null)
-                    hashCode = hashCode * 59 + this.IsModify.GetHashCode();
-                if (this.IsDelete != null)
-                    hashCode = hashCode * 59 + this.IsDelete.GetHashCode();
-                if (this.IsExecute != null)
-                    hashCode = hashCode * 59 + this.IsExecute.GetHashCode();
-                if (this.IsCopy != null)
-                    hashCode = hashCode * 59 + this.IsCopy.GetHashCode();
-                if (this.IsForbidden != null)
-                    hashCode = hashCode * 59 + this.IsForbidden.GetHashCode();
-                if (this.IsView != null)
-                    hashCode = hashCode * 59 + this.IsView.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.JobName != null) hashCode = hashCode * 59 + this.JobName.GetHashCode();
+                if (this.JobCreator != null) hashCode = hashCode * 59 + this.JobCreator.GetHashCode();
+                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.LastBuildTime != null) hashCode = hashCode * 59 + this.LastBuildTime.GetHashCode();
+                if (this.HealthScore != null) hashCode = hashCode * 59 + this.HealthScore.GetHashCode();
+                if (this.SourceCode != null) hashCode = hashCode * 59 + this.SourceCode.GetHashCode();
+                if (this.LastBuildStatus != null) hashCode = hashCode * 59 + this.LastBuildStatus.GetHashCode();
+                if (this.IsFinished != null) hashCode = hashCode * 59 + this.IsFinished.GetHashCode();
+                if (this.Disabled != null) hashCode = hashCode * 59 + this.Disabled.GetHashCode();
+                if (this.Favorite != null) hashCode = hashCode * 59 + this.Favorite.GetHashCode();
+                if (this.IsModify != null) hashCode = hashCode * 59 + this.IsModify.GetHashCode();
+                if (this.IsDelete != null) hashCode = hashCode * 59 + this.IsDelete.GetHashCode();
+                if (this.IsExecute != null) hashCode = hashCode * 59 + this.IsExecute.GetHashCode();
+                if (this.IsCopy != null) hashCode = hashCode * 59 + this.IsCopy.GetHashCode();
+                if (this.IsForbidden != null) hashCode = hashCode * 59 + this.IsForbidden.GetHashCode();
+                if (this.IsView != null) hashCode = hashCode * 59 + this.IsView.GetHashCode();
                 return hashCode;
             }
         }

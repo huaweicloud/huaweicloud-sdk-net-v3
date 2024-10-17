@@ -210,130 +210,33 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(HttpQueryCfwAccessControllerLogsResponseDTODataRecords input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Action != input.Action || (this.Action != null && !this.Action.Equals(input.Action))) return false;
+            if (this.RuleName != input.RuleName || (this.RuleName != null && !this.RuleName.Equals(input.RuleName))) return false;
+            if (this.RuleId != input.RuleId || (this.RuleId != null && !this.RuleId.Equals(input.RuleId))) return false;
+            if (this.HitTime != input.HitTime || (this.HitTime != null && !this.HitTime.Equals(input.HitTime))) return false;
+            if (this.SrcRegionId != input.SrcRegionId || (this.SrcRegionId != null && !this.SrcRegionId.Equals(input.SrcRegionId))) return false;
+            if (this.SrcRegionName != input.SrcRegionName || (this.SrcRegionName != null && !this.SrcRegionName.Equals(input.SrcRegionName))) return false;
+            if (this.DstRegionId != input.DstRegionId || (this.DstRegionId != null && !this.DstRegionId.Equals(input.DstRegionId))) return false;
+            if (this.DstRegionName != input.DstRegionName || (this.DstRegionName != null && !this.DstRegionName.Equals(input.DstRegionName))) return false;
+            if (this.LogId != input.LogId || (this.LogId != null && !this.LogId.Equals(input.LogId))) return false;
+            if (this.SrcIp != input.SrcIp || (this.SrcIp != null && !this.SrcIp.Equals(input.SrcIp))) return false;
+            if (this.SrcPort != input.SrcPort || (this.SrcPort != null && !this.SrcPort.Equals(input.SrcPort))) return false;
+            if (this.DstIp != input.DstIp || (this.DstIp != null && !this.DstIp.Equals(input.DstIp))) return false;
+            if (this.DstPort != input.DstPort || (this.DstPort != null && !this.DstPort.Equals(input.DstPort))) return false;
+            if (this.Protocol != input.Protocol || (this.Protocol != null && !this.Protocol.Equals(input.Protocol))) return false;
+            if (this.App != input.App || (this.App != null && !this.App.Equals(input.App))) return false;
+            if (this.DstHost != input.DstHost || (this.DstHost != null && !this.DstHost.Equals(input.DstHost))) return false;
+            if (this.SrcProvinceId != input.SrcProvinceId || (this.SrcProvinceId != null && !this.SrcProvinceId.Equals(input.SrcProvinceId))) return false;
+            if (this.SrcProvinceName != input.SrcProvinceName || (this.SrcProvinceName != null && !this.SrcProvinceName.Equals(input.SrcProvinceName))) return false;
+            if (this.SrcCityId != input.SrcCityId || (this.SrcCityId != null && !this.SrcCityId.Equals(input.SrcCityId))) return false;
+            if (this.SrcCityName != input.SrcCityName || (this.SrcCityName != null && !this.SrcCityName.Equals(input.SrcCityName))) return false;
+            if (this.DstProvinceId != input.DstProvinceId || (this.DstProvinceId != null && !this.DstProvinceId.Equals(input.DstProvinceId))) return false;
+            if (this.DstProvinceName != input.DstProvinceName || (this.DstProvinceName != null && !this.DstProvinceName.Equals(input.DstProvinceName))) return false;
+            if (this.DstCityId != input.DstCityId || (this.DstCityId != null && !this.DstCityId.Equals(input.DstCityId))) return false;
+            if (this.DstCityName != input.DstCityName || (this.DstCityName != null && !this.DstCityName.Equals(input.DstCityName))) return false;
 
-            return 
-                (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                ) && 
-                (
-                    this.RuleName == input.RuleName ||
-                    (this.RuleName != null &&
-                    this.RuleName.Equals(input.RuleName))
-                ) && 
-                (
-                    this.RuleId == input.RuleId ||
-                    (this.RuleId != null &&
-                    this.RuleId.Equals(input.RuleId))
-                ) && 
-                (
-                    this.HitTime == input.HitTime ||
-                    (this.HitTime != null &&
-                    this.HitTime.Equals(input.HitTime))
-                ) && 
-                (
-                    this.SrcRegionId == input.SrcRegionId ||
-                    (this.SrcRegionId != null &&
-                    this.SrcRegionId.Equals(input.SrcRegionId))
-                ) && 
-                (
-                    this.SrcRegionName == input.SrcRegionName ||
-                    (this.SrcRegionName != null &&
-                    this.SrcRegionName.Equals(input.SrcRegionName))
-                ) && 
-                (
-                    this.DstRegionId == input.DstRegionId ||
-                    (this.DstRegionId != null &&
-                    this.DstRegionId.Equals(input.DstRegionId))
-                ) && 
-                (
-                    this.DstRegionName == input.DstRegionName ||
-                    (this.DstRegionName != null &&
-                    this.DstRegionName.Equals(input.DstRegionName))
-                ) && 
-                (
-                    this.LogId == input.LogId ||
-                    (this.LogId != null &&
-                    this.LogId.Equals(input.LogId))
-                ) && 
-                (
-                    this.SrcIp == input.SrcIp ||
-                    (this.SrcIp != null &&
-                    this.SrcIp.Equals(input.SrcIp))
-                ) && 
-                (
-                    this.SrcPort == input.SrcPort ||
-                    (this.SrcPort != null &&
-                    this.SrcPort.Equals(input.SrcPort))
-                ) && 
-                (
-                    this.DstIp == input.DstIp ||
-                    (this.DstIp != null &&
-                    this.DstIp.Equals(input.DstIp))
-                ) && 
-                (
-                    this.DstPort == input.DstPort ||
-                    (this.DstPort != null &&
-                    this.DstPort.Equals(input.DstPort))
-                ) && 
-                (
-                    this.Protocol == input.Protocol ||
-                    (this.Protocol != null &&
-                    this.Protocol.Equals(input.Protocol))
-                ) && 
-                (
-                    this.App == input.App ||
-                    (this.App != null &&
-                    this.App.Equals(input.App))
-                ) && 
-                (
-                    this.DstHost == input.DstHost ||
-                    (this.DstHost != null &&
-                    this.DstHost.Equals(input.DstHost))
-                ) && 
-                (
-                    this.SrcProvinceId == input.SrcProvinceId ||
-                    (this.SrcProvinceId != null &&
-                    this.SrcProvinceId.Equals(input.SrcProvinceId))
-                ) && 
-                (
-                    this.SrcProvinceName == input.SrcProvinceName ||
-                    (this.SrcProvinceName != null &&
-                    this.SrcProvinceName.Equals(input.SrcProvinceName))
-                ) && 
-                (
-                    this.SrcCityId == input.SrcCityId ||
-                    (this.SrcCityId != null &&
-                    this.SrcCityId.Equals(input.SrcCityId))
-                ) && 
-                (
-                    this.SrcCityName == input.SrcCityName ||
-                    (this.SrcCityName != null &&
-                    this.SrcCityName.Equals(input.SrcCityName))
-                ) && 
-                (
-                    this.DstProvinceId == input.DstProvinceId ||
-                    (this.DstProvinceId != null &&
-                    this.DstProvinceId.Equals(input.DstProvinceId))
-                ) && 
-                (
-                    this.DstProvinceName == input.DstProvinceName ||
-                    (this.DstProvinceName != null &&
-                    this.DstProvinceName.Equals(input.DstProvinceName))
-                ) && 
-                (
-                    this.DstCityId == input.DstCityId ||
-                    (this.DstCityId != null &&
-                    this.DstCityId.Equals(input.DstCityId))
-                ) && 
-                (
-                    this.DstCityName == input.DstCityName ||
-                    (this.DstCityName != null &&
-                    this.DstCityName.Equals(input.DstCityName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -343,55 +246,31 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
-                if (this.RuleName != null)
-                    hashCode = hashCode * 59 + this.RuleName.GetHashCode();
-                if (this.RuleId != null)
-                    hashCode = hashCode * 59 + this.RuleId.GetHashCode();
-                if (this.HitTime != null)
-                    hashCode = hashCode * 59 + this.HitTime.GetHashCode();
-                if (this.SrcRegionId != null)
-                    hashCode = hashCode * 59 + this.SrcRegionId.GetHashCode();
-                if (this.SrcRegionName != null)
-                    hashCode = hashCode * 59 + this.SrcRegionName.GetHashCode();
-                if (this.DstRegionId != null)
-                    hashCode = hashCode * 59 + this.DstRegionId.GetHashCode();
-                if (this.DstRegionName != null)
-                    hashCode = hashCode * 59 + this.DstRegionName.GetHashCode();
-                if (this.LogId != null)
-                    hashCode = hashCode * 59 + this.LogId.GetHashCode();
-                if (this.SrcIp != null)
-                    hashCode = hashCode * 59 + this.SrcIp.GetHashCode();
-                if (this.SrcPort != null)
-                    hashCode = hashCode * 59 + this.SrcPort.GetHashCode();
-                if (this.DstIp != null)
-                    hashCode = hashCode * 59 + this.DstIp.GetHashCode();
-                if (this.DstPort != null)
-                    hashCode = hashCode * 59 + this.DstPort.GetHashCode();
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
-                if (this.App != null)
-                    hashCode = hashCode * 59 + this.App.GetHashCode();
-                if (this.DstHost != null)
-                    hashCode = hashCode * 59 + this.DstHost.GetHashCode();
-                if (this.SrcProvinceId != null)
-                    hashCode = hashCode * 59 + this.SrcProvinceId.GetHashCode();
-                if (this.SrcProvinceName != null)
-                    hashCode = hashCode * 59 + this.SrcProvinceName.GetHashCode();
-                if (this.SrcCityId != null)
-                    hashCode = hashCode * 59 + this.SrcCityId.GetHashCode();
-                if (this.SrcCityName != null)
-                    hashCode = hashCode * 59 + this.SrcCityName.GetHashCode();
-                if (this.DstProvinceId != null)
-                    hashCode = hashCode * 59 + this.DstProvinceId.GetHashCode();
-                if (this.DstProvinceName != null)
-                    hashCode = hashCode * 59 + this.DstProvinceName.GetHashCode();
-                if (this.DstCityId != null)
-                    hashCode = hashCode * 59 + this.DstCityId.GetHashCode();
-                if (this.DstCityName != null)
-                    hashCode = hashCode * 59 + this.DstCityName.GetHashCode();
+                var hashCode = 41;
+                if (this.Action != null) hashCode = hashCode * 59 + this.Action.GetHashCode();
+                if (this.RuleName != null) hashCode = hashCode * 59 + this.RuleName.GetHashCode();
+                if (this.RuleId != null) hashCode = hashCode * 59 + this.RuleId.GetHashCode();
+                if (this.HitTime != null) hashCode = hashCode * 59 + this.HitTime.GetHashCode();
+                if (this.SrcRegionId != null) hashCode = hashCode * 59 + this.SrcRegionId.GetHashCode();
+                if (this.SrcRegionName != null) hashCode = hashCode * 59 + this.SrcRegionName.GetHashCode();
+                if (this.DstRegionId != null) hashCode = hashCode * 59 + this.DstRegionId.GetHashCode();
+                if (this.DstRegionName != null) hashCode = hashCode * 59 + this.DstRegionName.GetHashCode();
+                if (this.LogId != null) hashCode = hashCode * 59 + this.LogId.GetHashCode();
+                if (this.SrcIp != null) hashCode = hashCode * 59 + this.SrcIp.GetHashCode();
+                if (this.SrcPort != null) hashCode = hashCode * 59 + this.SrcPort.GetHashCode();
+                if (this.DstIp != null) hashCode = hashCode * 59 + this.DstIp.GetHashCode();
+                if (this.DstPort != null) hashCode = hashCode * 59 + this.DstPort.GetHashCode();
+                if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.App != null) hashCode = hashCode * 59 + this.App.GetHashCode();
+                if (this.DstHost != null) hashCode = hashCode * 59 + this.DstHost.GetHashCode();
+                if (this.SrcProvinceId != null) hashCode = hashCode * 59 + this.SrcProvinceId.GetHashCode();
+                if (this.SrcProvinceName != null) hashCode = hashCode * 59 + this.SrcProvinceName.GetHashCode();
+                if (this.SrcCityId != null) hashCode = hashCode * 59 + this.SrcCityId.GetHashCode();
+                if (this.SrcCityName != null) hashCode = hashCode * 59 + this.SrcCityName.GetHashCode();
+                if (this.DstProvinceId != null) hashCode = hashCode * 59 + this.DstProvinceId.GetHashCode();
+                if (this.DstProvinceName != null) hashCode = hashCode * 59 + this.DstProvinceName.GetHashCode();
+                if (this.DstCityId != null) hashCode = hashCode * 59 + this.DstCityId.GetHashCode();
+                if (this.DstCityName != null) hashCode = hashCode * 59 + this.DstCityName.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         /// </summary>
         public bool Equals(AssociateResourceShareResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResourceShareAssociations != input.ResourceShareAssociations || (this.ResourceShareAssociations != null && input.ResourceShareAssociations != null && !this.ResourceShareAssociations.SequenceEqual(input.ResourceShareAssociations))) return false;
 
-            return 
-                (
-                    this.ResourceShareAssociations == input.ResourceShareAssociations ||
-                    this.ResourceShareAssociations != null &&
-                    input.ResourceShareAssociations != null &&
-                    this.ResourceShareAssociations.SequenceEqual(input.ResourceShareAssociations)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResourceShareAssociations != null)
-                    hashCode = hashCode * 59 + this.ResourceShareAssociations.GetHashCode();
+                var hashCode = 41;
+                if (this.ResourceShareAssociations != null) hashCode = hashCode * 59 + this.ResourceShareAssociations.GetHashCode();
                 return hashCode;
             }
         }

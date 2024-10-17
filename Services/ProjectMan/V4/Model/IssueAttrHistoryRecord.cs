@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(IssueAttrHistoryRecord input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FieldKey != input.FieldKey || (this.FieldKey != null && !this.FieldKey.Equals(input.FieldKey))) return false;
+            if (this.FieldName != input.FieldName || (this.FieldName != null && !this.FieldName.Equals(input.FieldName))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.IssueId != input.IssueId || (this.IssueId != null && !this.IssueId.Equals(input.IssueId))) return false;
+            if (this.NewValue != input.NewValue || (this.NewValue != null && !this.NewValue.Equals(input.NewValue))) return false;
+            if (this.OldValue != input.OldValue || (this.OldValue != null && !this.OldValue.Equals(input.OldValue))) return false;
+            if (this.OperatedTime != input.OperatedTime || (this.OperatedTime != null && !this.OperatedTime.Equals(input.OperatedTime))) return false;
+            if (this.Operation != input.Operation || (this.Operation != null && !this.Operation.Equals(input.Operation))) return false;
+            if (this.Operator != input.Operator || (this.Operator != null && !this.Operator.Equals(input.Operator))) return false;
+            if (this.Property != input.Property || (this.Property != null && !this.Property.Equals(input.Property))) return false;
 
-            return 
-                (
-                    this.FieldKey == input.FieldKey ||
-                    (this.FieldKey != null &&
-                    this.FieldKey.Equals(input.FieldKey))
-                ) && 
-                (
-                    this.FieldName == input.FieldName ||
-                    (this.FieldName != null &&
-                    this.FieldName.Equals(input.FieldName))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.IssueId == input.IssueId ||
-                    (this.IssueId != null &&
-                    this.IssueId.Equals(input.IssueId))
-                ) && 
-                (
-                    this.NewValue == input.NewValue ||
-                    (this.NewValue != null &&
-                    this.NewValue.Equals(input.NewValue))
-                ) && 
-                (
-                    this.OldValue == input.OldValue ||
-                    (this.OldValue != null &&
-                    this.OldValue.Equals(input.OldValue))
-                ) && 
-                (
-                    this.OperatedTime == input.OperatedTime ||
-                    (this.OperatedTime != null &&
-                    this.OperatedTime.Equals(input.OperatedTime))
-                ) && 
-                (
-                    this.Operation == input.Operation ||
-                    (this.Operation != null &&
-                    this.Operation.Equals(input.Operation))
-                ) && 
-                (
-                    this.Operator == input.Operator ||
-                    (this.Operator != null &&
-                    this.Operator.Equals(input.Operator))
-                ) && 
-                (
-                    this.Property == input.Property ||
-                    (this.Property != null &&
-                    this.Property.Equals(input.Property))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FieldKey != null)
-                    hashCode = hashCode * 59 + this.FieldKey.GetHashCode();
-                if (this.FieldName != null)
-                    hashCode = hashCode * 59 + this.FieldName.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.IssueId != null)
-                    hashCode = hashCode * 59 + this.IssueId.GetHashCode();
-                if (this.NewValue != null)
-                    hashCode = hashCode * 59 + this.NewValue.GetHashCode();
-                if (this.OldValue != null)
-                    hashCode = hashCode * 59 + this.OldValue.GetHashCode();
-                if (this.OperatedTime != null)
-                    hashCode = hashCode * 59 + this.OperatedTime.GetHashCode();
-                if (this.Operation != null)
-                    hashCode = hashCode * 59 + this.Operation.GetHashCode();
-                if (this.Operator != null)
-                    hashCode = hashCode * 59 + this.Operator.GetHashCode();
-                if (this.Property != null)
-                    hashCode = hashCode * 59 + this.Property.GetHashCode();
+                var hashCode = 41;
+                if (this.FieldKey != null) hashCode = hashCode * 59 + this.FieldKey.GetHashCode();
+                if (this.FieldName != null) hashCode = hashCode * 59 + this.FieldName.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.IssueId != null) hashCode = hashCode * 59 + this.IssueId.GetHashCode();
+                if (this.NewValue != null) hashCode = hashCode * 59 + this.NewValue.GetHashCode();
+                if (this.OldValue != null) hashCode = hashCode * 59 + this.OldValue.GetHashCode();
+                if (this.OperatedTime != null) hashCode = hashCode * 59 + this.OperatedTime.GetHashCode();
+                if (this.Operation != null) hashCode = hashCode * 59 + this.Operation.GetHashCode();
+                if (this.Operator != null) hashCode = hashCode * 59 + this.Operator.GetHashCode();
+                if (this.Property != null) hashCode = hashCode * 59 + this.Property.GetHashCode();
                 return hashCode;
             }
         }

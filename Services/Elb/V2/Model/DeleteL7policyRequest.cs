@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// </summary>
         public bool Equals(DeleteL7policyRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.L7policyId != input.L7policyId || (this.L7policyId != null && !this.L7policyId.Equals(input.L7policyId))) return false;
 
-            return 
-                (
-                    this.L7policyId == input.L7policyId ||
-                    (this.L7policyId != null &&
-                    this.L7policyId.Equals(input.L7policyId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.L7policyId != null)
-                    hashCode = hashCode * 59 + this.L7policyId.GetHashCode();
+                var hashCode = 41;
+                if (this.L7policyId != null) hashCode = hashCode * 59 + this.L7policyId.GetHashCode();
                 return hashCode;
             }
         }

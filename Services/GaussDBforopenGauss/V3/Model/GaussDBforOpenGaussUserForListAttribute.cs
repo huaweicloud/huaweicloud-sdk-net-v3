@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(GaussDBforOpenGaussUserForListAttribute input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Rolsuper != input.Rolsuper || (this.Rolsuper != null && !this.Rolsuper.Equals(input.Rolsuper))) return false;
+            if (this.Rolinherit != input.Rolinherit || (this.Rolinherit != null && !this.Rolinherit.Equals(input.Rolinherit))) return false;
+            if (this.Rolcreaterole != input.Rolcreaterole || (this.Rolcreaterole != null && !this.Rolcreaterole.Equals(input.Rolcreaterole))) return false;
+            if (this.Rolcreatedb != input.Rolcreatedb || (this.Rolcreatedb != null && !this.Rolcreatedb.Equals(input.Rolcreatedb))) return false;
+            if (this.Rolcanlogin != input.Rolcanlogin || (this.Rolcanlogin != null && !this.Rolcanlogin.Equals(input.Rolcanlogin))) return false;
+            if (this.Rolconnlimit != input.Rolconnlimit || (this.Rolconnlimit != null && !this.Rolconnlimit.Equals(input.Rolconnlimit))) return false;
+            if (this.Rolreplication != input.Rolreplication || (this.Rolreplication != null && !this.Rolreplication.Equals(input.Rolreplication))) return false;
+            if (this.Rolbypassrls != input.Rolbypassrls || (this.Rolbypassrls != null && !this.Rolbypassrls.Equals(input.Rolbypassrls))) return false;
+            if (this.Rolpassworddeadline != input.Rolpassworddeadline || (this.Rolpassworddeadline != null && !this.Rolpassworddeadline.Equals(input.Rolpassworddeadline))) return false;
 
-            return 
-                (
-                    this.Rolsuper == input.Rolsuper ||
-                    (this.Rolsuper != null &&
-                    this.Rolsuper.Equals(input.Rolsuper))
-                ) && 
-                (
-                    this.Rolinherit == input.Rolinherit ||
-                    (this.Rolinherit != null &&
-                    this.Rolinherit.Equals(input.Rolinherit))
-                ) && 
-                (
-                    this.Rolcreaterole == input.Rolcreaterole ||
-                    (this.Rolcreaterole != null &&
-                    this.Rolcreaterole.Equals(input.Rolcreaterole))
-                ) && 
-                (
-                    this.Rolcreatedb == input.Rolcreatedb ||
-                    (this.Rolcreatedb != null &&
-                    this.Rolcreatedb.Equals(input.Rolcreatedb))
-                ) && 
-                (
-                    this.Rolcanlogin == input.Rolcanlogin ||
-                    (this.Rolcanlogin != null &&
-                    this.Rolcanlogin.Equals(input.Rolcanlogin))
-                ) && 
-                (
-                    this.Rolconnlimit == input.Rolconnlimit ||
-                    (this.Rolconnlimit != null &&
-                    this.Rolconnlimit.Equals(input.Rolconnlimit))
-                ) && 
-                (
-                    this.Rolreplication == input.Rolreplication ||
-                    (this.Rolreplication != null &&
-                    this.Rolreplication.Equals(input.Rolreplication))
-                ) && 
-                (
-                    this.Rolbypassrls == input.Rolbypassrls ||
-                    (this.Rolbypassrls != null &&
-                    this.Rolbypassrls.Equals(input.Rolbypassrls))
-                ) && 
-                (
-                    this.Rolpassworddeadline == input.Rolpassworddeadline ||
-                    (this.Rolpassworddeadline != null &&
-                    this.Rolpassworddeadline.Equals(input.Rolpassworddeadline))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Rolsuper != null)
-                    hashCode = hashCode * 59 + this.Rolsuper.GetHashCode();
-                if (this.Rolinherit != null)
-                    hashCode = hashCode * 59 + this.Rolinherit.GetHashCode();
-                if (this.Rolcreaterole != null)
-                    hashCode = hashCode * 59 + this.Rolcreaterole.GetHashCode();
-                if (this.Rolcreatedb != null)
-                    hashCode = hashCode * 59 + this.Rolcreatedb.GetHashCode();
-                if (this.Rolcanlogin != null)
-                    hashCode = hashCode * 59 + this.Rolcanlogin.GetHashCode();
-                if (this.Rolconnlimit != null)
-                    hashCode = hashCode * 59 + this.Rolconnlimit.GetHashCode();
-                if (this.Rolreplication != null)
-                    hashCode = hashCode * 59 + this.Rolreplication.GetHashCode();
-                if (this.Rolbypassrls != null)
-                    hashCode = hashCode * 59 + this.Rolbypassrls.GetHashCode();
-                if (this.Rolpassworddeadline != null)
-                    hashCode = hashCode * 59 + this.Rolpassworddeadline.GetHashCode();
+                var hashCode = 41;
+                if (this.Rolsuper != null) hashCode = hashCode * 59 + this.Rolsuper.GetHashCode();
+                if (this.Rolinherit != null) hashCode = hashCode * 59 + this.Rolinherit.GetHashCode();
+                if (this.Rolcreaterole != null) hashCode = hashCode * 59 + this.Rolcreaterole.GetHashCode();
+                if (this.Rolcreatedb != null) hashCode = hashCode * 59 + this.Rolcreatedb.GetHashCode();
+                if (this.Rolcanlogin != null) hashCode = hashCode * 59 + this.Rolcanlogin.GetHashCode();
+                if (this.Rolconnlimit != null) hashCode = hashCode * 59 + this.Rolconnlimit.GetHashCode();
+                if (this.Rolreplication != null) hashCode = hashCode * 59 + this.Rolreplication.GetHashCode();
+                if (this.Rolbypassrls != null) hashCode = hashCode * 59 + this.Rolbypassrls.GetHashCode();
+                if (this.Rolpassworddeadline != null) hashCode = hashCode * 59 + this.Rolpassworddeadline.GetHashCode();
                 return hashCode;
             }
         }

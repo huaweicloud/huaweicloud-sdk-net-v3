@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(UpdateOrderResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
+            if (this.RetCode != input.RetCode || (this.RetCode != null && !this.RetCode.Equals(input.RetCode))) return false;
+            if (this.RetMsg != input.RetMsg || (this.RetMsg != null && !this.RetMsg.Equals(input.RetMsg))) return false;
 
-            return 
-                (
-                    this.OrderId == input.OrderId ||
-                    (this.OrderId != null &&
-                    this.OrderId.Equals(input.OrderId))
-                ) && 
-                (
-                    this.RetCode == input.RetCode ||
-                    (this.RetCode != null &&
-                    this.RetCode.Equals(input.RetCode))
-                ) && 
-                (
-                    this.RetMsg == input.RetMsg ||
-                    (this.RetMsg != null &&
-                    this.RetMsg.Equals(input.RetMsg))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OrderId != null)
-                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
-                if (this.RetCode != null)
-                    hashCode = hashCode * 59 + this.RetCode.GetHashCode();
-                if (this.RetMsg != null)
-                    hashCode = hashCode * 59 + this.RetMsg.GetHashCode();
+                var hashCode = 41;
+                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.RetCode != null) hashCode = hashCode * 59 + this.RetCode.GetHashCode();
+                if (this.RetMsg != null) hashCode = hashCode * 59 + this.RetMsg.GetHashCode();
                 return hashCode;
             }
         }

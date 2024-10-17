@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(RecyclePolicy input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RetentionPeriodInDays != input.RetentionPeriodInDays || (this.RetentionPeriodInDays != null && !this.RetentionPeriodInDays.Equals(input.RetentionPeriodInDays))) return false;
 
-            return 
-                (
-                    this.RetentionPeriodInDays == input.RetentionPeriodInDays ||
-                    (this.RetentionPeriodInDays != null &&
-                    this.RetentionPeriodInDays.Equals(input.RetentionPeriodInDays))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RetentionPeriodInDays != null)
-                    hashCode = hashCode * 59 + this.RetentionPeriodInDays.GetHashCode();
+                var hashCode = 41;
+                if (this.RetentionPeriodInDays != null) hashCode = hashCode * 59 + this.RetentionPeriodInDays.GetHashCode();
                 return hashCode;
             }
         }

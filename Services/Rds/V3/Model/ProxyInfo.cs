@@ -345,146 +345,36 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ProxyInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PoolId != input.PoolId || (this.PoolId != null && !this.PoolId.Equals(input.PoolId))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Address != input.Address || (this.Address != null && !this.Address.Equals(input.Address))) return false;
+            if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
+            if (this.DelayThresholdInSeconds != input.DelayThresholdInSeconds || (this.DelayThresholdInSeconds != null && !this.DelayThresholdInSeconds.Equals(input.DelayThresholdInSeconds))) return false;
+            if (this.Cpu != input.Cpu || (this.Cpu != null && !this.Cpu.Equals(input.Cpu))) return false;
+            if (this.Mem != input.Mem || (this.Mem != null && !this.Mem.Equals(input.Mem))) return false;
+            if (this.NodeNum != input.NodeNum || (this.NodeNum != null && !this.NodeNum.Equals(input.NodeNum))) return false;
+            if (this.Nodes != input.Nodes || (this.Nodes != null && input.Nodes != null && !this.Nodes.SequenceEqual(input.Nodes))) return false;
+            if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
+            if (this.FlavorInfo != input.FlavorInfo || (this.FlavorInfo != null && !this.FlavorInfo.Equals(input.FlavorInfo))) return false;
+            if (this.TransactionSplit != input.TransactionSplit || (this.TransactionSplit != null && !this.TransactionSplit.Equals(input.TransactionSplit))) return false;
+            if (this.ConnectionPoolType != input.ConnectionPoolType || (this.ConnectionPoolType != null && !this.ConnectionPoolType.Equals(input.ConnectionPoolType))) return false;
+            if (this.PayMode != input.PayMode || (this.PayMode != null && !this.PayMode.Equals(input.PayMode))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.ProxyMode != input.ProxyMode || (this.ProxyMode != null && !this.ProxyMode.Equals(input.ProxyMode))) return false;
+            if (this.DnsName != input.DnsName || (this.DnsName != null && !this.DnsName.Equals(input.DnsName))) return false;
+            if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
+            if (this.SecondsLevelMonitorFunStatus != input.SecondsLevelMonitorFunStatus) return false;
+            if (this.AltFlag != input.AltFlag || (this.AltFlag != null && !this.AltFlag.Equals(input.AltFlag))) return false;
+            if (this.ForceReadOnly != input.ForceReadOnly || (this.ForceReadOnly != null && !this.ForceReadOnly.Equals(input.ForceReadOnly))) return false;
+            if (this.RouteMode != input.RouteMode || (this.RouteMode != null && !this.RouteMode.Equals(input.RouteMode))) return false;
+            if (this.SslOption != input.SslOption || (this.SslOption != null && !this.SslOption.Equals(input.SslOption))) return false;
+            if (this.SupportBalanceRouteMode != input.SupportBalanceRouteMode || (this.SupportBalanceRouteMode != null && !this.SupportBalanceRouteMode.Equals(input.SupportBalanceRouteMode))) return false;
+            if (this.SupportProxySsl != input.SupportProxySsl || (this.SupportProxySsl != null && !this.SupportProxySsl.Equals(input.SupportProxySsl))) return false;
+            if (this.SupportSwitchConnectionPoolType != input.SupportSwitchConnectionPoolType || (this.SupportSwitchConnectionPoolType != null && !this.SupportSwitchConnectionPoolType.Equals(input.SupportSwitchConnectionPoolType))) return false;
+            if (this.SupportTransactionSplit != input.SupportTransactionSplit || (this.SupportTransactionSplit != null && !this.SupportTransactionSplit.Equals(input.SupportTransactionSplit))) return false;
 
-            return 
-                (
-                    this.PoolId == input.PoolId ||
-                    (this.PoolId != null &&
-                    this.PoolId.Equals(input.PoolId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
-                ) && 
-                (
-                    this.Port == input.Port ||
-                    (this.Port != null &&
-                    this.Port.Equals(input.Port))
-                ) && 
-                (
-                    this.DelayThresholdInSeconds == input.DelayThresholdInSeconds ||
-                    (this.DelayThresholdInSeconds != null &&
-                    this.DelayThresholdInSeconds.Equals(input.DelayThresholdInSeconds))
-                ) && 
-                (
-                    this.Cpu == input.Cpu ||
-                    (this.Cpu != null &&
-                    this.Cpu.Equals(input.Cpu))
-                ) && 
-                (
-                    this.Mem == input.Mem ||
-                    (this.Mem != null &&
-                    this.Mem.Equals(input.Mem))
-                ) && 
-                (
-                    this.NodeNum == input.NodeNum ||
-                    (this.NodeNum != null &&
-                    this.NodeNum.Equals(input.NodeNum))
-                ) && 
-                (
-                    this.Nodes == input.Nodes ||
-                    this.Nodes != null &&
-                    input.Nodes != null &&
-                    this.Nodes.SequenceEqual(input.Nodes)
-                ) && 
-                (
-                    this.Mode == input.Mode ||
-                    (this.Mode != null &&
-                    this.Mode.Equals(input.Mode))
-                ) && 
-                (
-                    this.FlavorInfo == input.FlavorInfo ||
-                    (this.FlavorInfo != null &&
-                    this.FlavorInfo.Equals(input.FlavorInfo))
-                ) && 
-                (
-                    this.TransactionSplit == input.TransactionSplit ||
-                    (this.TransactionSplit != null &&
-                    this.TransactionSplit.Equals(input.TransactionSplit))
-                ) && 
-                (
-                    this.ConnectionPoolType == input.ConnectionPoolType ||
-                    (this.ConnectionPoolType != null &&
-                    this.ConnectionPoolType.Equals(input.ConnectionPoolType))
-                ) && 
-                (
-                    this.PayMode == input.PayMode ||
-                    (this.PayMode != null &&
-                    this.PayMode.Equals(input.PayMode))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ProxyMode == input.ProxyMode ||
-                    (this.ProxyMode != null &&
-                    this.ProxyMode.Equals(input.ProxyMode))
-                ) && 
-                (
-                    this.DnsName == input.DnsName ||
-                    (this.DnsName != null &&
-                    this.DnsName.Equals(input.DnsName))
-                ) && 
-                (
-                    this.SubnetId == input.SubnetId ||
-                    (this.SubnetId != null &&
-                    this.SubnetId.Equals(input.SubnetId))
-                ) && 
-                (
-                    this.SecondsLevelMonitorFunStatus == input.SecondsLevelMonitorFunStatus ||
-                    (this.SecondsLevelMonitorFunStatus != null &&
-                    this.SecondsLevelMonitorFunStatus.Equals(input.SecondsLevelMonitorFunStatus))
-                ) && 
-                (
-                    this.AltFlag == input.AltFlag ||
-                    (this.AltFlag != null &&
-                    this.AltFlag.Equals(input.AltFlag))
-                ) && 
-                (
-                    this.ForceReadOnly == input.ForceReadOnly ||
-                    (this.ForceReadOnly != null &&
-                    this.ForceReadOnly.Equals(input.ForceReadOnly))
-                ) && 
-                (
-                    this.RouteMode == input.RouteMode ||
-                    (this.RouteMode != null &&
-                    this.RouteMode.Equals(input.RouteMode))
-                ) && 
-                (
-                    this.SslOption == input.SslOption ||
-                    (this.SslOption != null &&
-                    this.SslOption.Equals(input.SslOption))
-                ) && 
-                (
-                    this.SupportBalanceRouteMode == input.SupportBalanceRouteMode ||
-                    (this.SupportBalanceRouteMode != null &&
-                    this.SupportBalanceRouteMode.Equals(input.SupportBalanceRouteMode))
-                ) && 
-                (
-                    this.SupportProxySsl == input.SupportProxySsl ||
-                    (this.SupportProxySsl != null &&
-                    this.SupportProxySsl.Equals(input.SupportProxySsl))
-                ) && 
-                (
-                    this.SupportSwitchConnectionPoolType == input.SupportSwitchConnectionPoolType ||
-                    (this.SupportSwitchConnectionPoolType != null &&
-                    this.SupportSwitchConnectionPoolType.Equals(input.SupportSwitchConnectionPoolType))
-                ) && 
-                (
-                    this.SupportTransactionSplit == input.SupportTransactionSplit ||
-                    (this.SupportTransactionSplit != null &&
-                    this.SupportTransactionSplit.Equals(input.SupportTransactionSplit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -494,61 +384,34 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PoolId != null)
-                    hashCode = hashCode * 59 + this.PoolId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Address != null)
-                    hashCode = hashCode * 59 + this.Address.GetHashCode();
-                if (this.Port != null)
-                    hashCode = hashCode * 59 + this.Port.GetHashCode();
-                if (this.DelayThresholdInSeconds != null)
-                    hashCode = hashCode * 59 + this.DelayThresholdInSeconds.GetHashCode();
-                if (this.Cpu != null)
-                    hashCode = hashCode * 59 + this.Cpu.GetHashCode();
-                if (this.Mem != null)
-                    hashCode = hashCode * 59 + this.Mem.GetHashCode();
-                if (this.NodeNum != null)
-                    hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
-                if (this.Nodes != null)
-                    hashCode = hashCode * 59 + this.Nodes.GetHashCode();
-                if (this.Mode != null)
-                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
-                if (this.FlavorInfo != null)
-                    hashCode = hashCode * 59 + this.FlavorInfo.GetHashCode();
-                if (this.TransactionSplit != null)
-                    hashCode = hashCode * 59 + this.TransactionSplit.GetHashCode();
-                if (this.ConnectionPoolType != null)
-                    hashCode = hashCode * 59 + this.ConnectionPoolType.GetHashCode();
-                if (this.PayMode != null)
-                    hashCode = hashCode * 59 + this.PayMode.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.ProxyMode != null)
-                    hashCode = hashCode * 59 + this.ProxyMode.GetHashCode();
-                if (this.DnsName != null)
-                    hashCode = hashCode * 59 + this.DnsName.GetHashCode();
-                if (this.SubnetId != null)
-                    hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
-                if (this.SecondsLevelMonitorFunStatus != null)
-                    hashCode = hashCode * 59 + this.SecondsLevelMonitorFunStatus.GetHashCode();
-                if (this.AltFlag != null)
-                    hashCode = hashCode * 59 + this.AltFlag.GetHashCode();
-                if (this.ForceReadOnly != null)
-                    hashCode = hashCode * 59 + this.ForceReadOnly.GetHashCode();
-                if (this.RouteMode != null)
-                    hashCode = hashCode * 59 + this.RouteMode.GetHashCode();
-                if (this.SslOption != null)
-                    hashCode = hashCode * 59 + this.SslOption.GetHashCode();
-                if (this.SupportBalanceRouteMode != null)
-                    hashCode = hashCode * 59 + this.SupportBalanceRouteMode.GetHashCode();
-                if (this.SupportProxySsl != null)
-                    hashCode = hashCode * 59 + this.SupportProxySsl.GetHashCode();
-                if (this.SupportSwitchConnectionPoolType != null)
-                    hashCode = hashCode * 59 + this.SupportSwitchConnectionPoolType.GetHashCode();
-                if (this.SupportTransactionSplit != null)
-                    hashCode = hashCode * 59 + this.SupportTransactionSplit.GetHashCode();
+                var hashCode = 41;
+                if (this.PoolId != null) hashCode = hashCode * 59 + this.PoolId.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Address != null) hashCode = hashCode * 59 + this.Address.GetHashCode();
+                if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
+                if (this.DelayThresholdInSeconds != null) hashCode = hashCode * 59 + this.DelayThresholdInSeconds.GetHashCode();
+                if (this.Cpu != null) hashCode = hashCode * 59 + this.Cpu.GetHashCode();
+                if (this.Mem != null) hashCode = hashCode * 59 + this.Mem.GetHashCode();
+                if (this.NodeNum != null) hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
+                if (this.Nodes != null) hashCode = hashCode * 59 + this.Nodes.GetHashCode();
+                if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                if (this.FlavorInfo != null) hashCode = hashCode * 59 + this.FlavorInfo.GetHashCode();
+                if (this.TransactionSplit != null) hashCode = hashCode * 59 + this.TransactionSplit.GetHashCode();
+                if (this.ConnectionPoolType != null) hashCode = hashCode * 59 + this.ConnectionPoolType.GetHashCode();
+                if (this.PayMode != null) hashCode = hashCode * 59 + this.PayMode.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.ProxyMode != null) hashCode = hashCode * 59 + this.ProxyMode.GetHashCode();
+                if (this.DnsName != null) hashCode = hashCode * 59 + this.DnsName.GetHashCode();
+                if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
+                hashCode = hashCode * 59 + this.SecondsLevelMonitorFunStatus.GetHashCode();
+                if (this.AltFlag != null) hashCode = hashCode * 59 + this.AltFlag.GetHashCode();
+                if (this.ForceReadOnly != null) hashCode = hashCode * 59 + this.ForceReadOnly.GetHashCode();
+                if (this.RouteMode != null) hashCode = hashCode * 59 + this.RouteMode.GetHashCode();
+                if (this.SslOption != null) hashCode = hashCode * 59 + this.SslOption.GetHashCode();
+                if (this.SupportBalanceRouteMode != null) hashCode = hashCode * 59 + this.SupportBalanceRouteMode.GetHashCode();
+                if (this.SupportProxySsl != null) hashCode = hashCode * 59 + this.SupportProxySsl.GetHashCode();
+                if (this.SupportSwitchConnectionPoolType != null) hashCode = hashCode * 59 + this.SupportSwitchConnectionPoolType.GetHashCode();
+                if (this.SupportTransactionSplit != null) hashCode = hashCode * 59 + this.SupportTransactionSplit.GetHashCode();
                 return hashCode;
             }
         }

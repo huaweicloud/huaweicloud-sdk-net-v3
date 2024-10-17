@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(KeystoneListProjectsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Links != input.Links || (this.Links != null && !this.Links.Equals(input.Links))) return false;
+            if (this.Projects != input.Projects || (this.Projects != null && input.Projects != null && !this.Projects.SequenceEqual(input.Projects))) return false;
 
-            return 
-                (
-                    this.Links == input.Links ||
-                    (this.Links != null &&
-                    this.Links.Equals(input.Links))
-                ) && 
-                (
-                    this.Projects == input.Projects ||
-                    this.Projects != null &&
-                    input.Projects != null &&
-                    this.Projects.SequenceEqual(input.Projects)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Links != null)
-                    hashCode = hashCode * 59 + this.Links.GetHashCode();
-                if (this.Projects != null)
-                    hashCode = hashCode * 59 + this.Projects.GetHashCode();
+                var hashCode = 41;
+                if (this.Links != null) hashCode = hashCode * 59 + this.Links.GetHashCode();
+                if (this.Projects != null) hashCode = hashCode * 59 + this.Projects.GetHashCode();
                 return hashCode;
             }
         }

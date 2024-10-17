@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(ReinstallSeverMetadata input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SystemEncrypted != input.SystemEncrypted || (this.SystemEncrypted != null && !this.SystemEncrypted.Equals(input.SystemEncrypted))) return false;
+            if (this.SystemCmkid != input.SystemCmkid || (this.SystemCmkid != null && !this.SystemCmkid.Equals(input.SystemCmkid))) return false;
+            if (this.UserData != input.UserData || (this.UserData != null && !this.UserData.Equals(input.UserData))) return false;
+            if (this.Byol != input.Byol || (this.Byol != null && !this.Byol.Equals(input.Byol))) return false;
 
-            return 
-                (
-                    this.SystemEncrypted == input.SystemEncrypted ||
-                    (this.SystemEncrypted != null &&
-                    this.SystemEncrypted.Equals(input.SystemEncrypted))
-                ) && 
-                (
-                    this.SystemCmkid == input.SystemCmkid ||
-                    (this.SystemCmkid != null &&
-                    this.SystemCmkid.Equals(input.SystemCmkid))
-                ) && 
-                (
-                    this.UserData == input.UserData ||
-                    (this.UserData != null &&
-                    this.UserData.Equals(input.UserData))
-                ) && 
-                (
-                    this.Byol == input.Byol ||
-                    (this.Byol != null &&
-                    this.Byol.Equals(input.Byol))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SystemEncrypted != null)
-                    hashCode = hashCode * 59 + this.SystemEncrypted.GetHashCode();
-                if (this.SystemCmkid != null)
-                    hashCode = hashCode * 59 + this.SystemCmkid.GetHashCode();
-                if (this.UserData != null)
-                    hashCode = hashCode * 59 + this.UserData.GetHashCode();
-                if (this.Byol != null)
-                    hashCode = hashCode * 59 + this.Byol.GetHashCode();
+                var hashCode = 41;
+                if (this.SystemEncrypted != null) hashCode = hashCode * 59 + this.SystemEncrypted.GetHashCode();
+                if (this.SystemCmkid != null) hashCode = hashCode * 59 + this.SystemCmkid.GetHashCode();
+                if (this.UserData != null) hashCode = hashCode * 59 + this.UserData.GetHashCode();
+                if (this.Byol != null) hashCode = hashCode * 59 + this.Byol.GetHashCode();
                 return hashCode;
             }
         }

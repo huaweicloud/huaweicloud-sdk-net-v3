@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(AccountDto input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Urn != input.Urn || (this.Urn != null && !this.Urn.Equals(input.Urn))) return false;
+            if (this.JoinMethod != input.JoinMethod || (this.JoinMethod != null && !this.JoinMethod.Equals(input.JoinMethod))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.JoinedAt != input.JoinedAt || (this.JoinedAt != null && !this.JoinedAt.Equals(input.JoinedAt))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.MobilePhone != input.MobilePhone || (this.MobilePhone != null && !this.MobilePhone.Equals(input.MobilePhone))) return false;
+            if (this.IntlNumberPrefix != input.IntlNumberPrefix || (this.IntlNumberPrefix != null && !this.IntlNumberPrefix.Equals(input.IntlNumberPrefix))) return false;
+            if (this.Email != input.Email || (this.Email != null && !this.Email.Equals(input.Email))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Urn == input.Urn ||
-                    (this.Urn != null &&
-                    this.Urn.Equals(input.Urn))
-                ) && 
-                (
-                    this.JoinMethod == input.JoinMethod ||
-                    (this.JoinMethod != null &&
-                    this.JoinMethod.Equals(input.JoinMethod))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.JoinedAt == input.JoinedAt ||
-                    (this.JoinedAt != null &&
-                    this.JoinedAt.Equals(input.JoinedAt))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.MobilePhone == input.MobilePhone ||
-                    (this.MobilePhone != null &&
-                    this.MobilePhone.Equals(input.MobilePhone))
-                ) && 
-                (
-                    this.IntlNumberPrefix == input.IntlNumberPrefix ||
-                    (this.IntlNumberPrefix != null &&
-                    this.IntlNumberPrefix.Equals(input.IntlNumberPrefix))
-                ) && 
-                (
-                    this.Email == input.Email ||
-                    (this.Email != null &&
-                    this.Email.Equals(input.Email))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Urn != null)
-                    hashCode = hashCode * 59 + this.Urn.GetHashCode();
-                if (this.JoinMethod != null)
-                    hashCode = hashCode * 59 + this.JoinMethod.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.JoinedAt != null)
-                    hashCode = hashCode * 59 + this.JoinedAt.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.MobilePhone != null)
-                    hashCode = hashCode * 59 + this.MobilePhone.GetHashCode();
-                if (this.IntlNumberPrefix != null)
-                    hashCode = hashCode * 59 + this.IntlNumberPrefix.GetHashCode();
-                if (this.Email != null)
-                    hashCode = hashCode * 59 + this.Email.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Urn != null) hashCode = hashCode * 59 + this.Urn.GetHashCode();
+                if (this.JoinMethod != null) hashCode = hashCode * 59 + this.JoinMethod.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.JoinedAt != null) hashCode = hashCode * 59 + this.JoinedAt.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.MobilePhone != null) hashCode = hashCode * 59 + this.MobilePhone.GetHashCode();
+                if (this.IntlNumberPrefix != null) hashCode = hashCode * 59 + this.IntlNumberPrefix.GetHashCode();
+                if (this.Email != null) hashCode = hashCode * 59 + this.Email.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

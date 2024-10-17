@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public bool Equals(ShowUserRepositoryAuthResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.SelfAuth != input.SelfAuth || (this.SelfAuth != null && !this.SelfAuth.Equals(input.SelfAuth))) return false;
+            if (this.OthersAuths != input.OthersAuths || (this.OthersAuths != null && input.OthersAuths != null && !this.OthersAuths.SequenceEqual(input.OthersAuths))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.SelfAuth == input.SelfAuth ||
-                    (this.SelfAuth != null &&
-                    this.SelfAuth.Equals(input.SelfAuth))
-                ) && 
-                (
-                    this.OthersAuths == input.OthersAuths ||
-                    this.OthersAuths != null &&
-                    input.OthersAuths != null &&
-                    this.OthersAuths.SequenceEqual(input.OthersAuths)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.SelfAuth != null)
-                    hashCode = hashCode * 59 + this.SelfAuth.GetHashCode();
-                if (this.OthersAuths != null)
-                    hashCode = hashCode * 59 + this.OthersAuths.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.SelfAuth != null) hashCode = hashCode * 59 + this.SelfAuth.GetHashCode();
+                if (this.OthersAuths != null) hashCode = hashCode * 59 + this.OthersAuths.GetHashCode();
                 return hashCode;
             }
         }

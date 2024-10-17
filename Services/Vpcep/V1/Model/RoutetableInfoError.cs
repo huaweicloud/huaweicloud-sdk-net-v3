@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         public bool Equals(RoutetableInfoError input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BindFailed != input.BindFailed || (this.BindFailed != null && input.BindFailed != null && !this.BindFailed.SequenceEqual(input.BindFailed))) return false;
+            if (this.UnbindFailed != input.UnbindFailed || (this.UnbindFailed != null && input.UnbindFailed != null && !this.UnbindFailed.SequenceEqual(input.UnbindFailed))) return false;
 
-            return 
-                (
-                    this.BindFailed == input.BindFailed ||
-                    this.BindFailed != null &&
-                    input.BindFailed != null &&
-                    this.BindFailed.SequenceEqual(input.BindFailed)
-                ) && 
-                (
-                    this.UnbindFailed == input.UnbindFailed ||
-                    this.UnbindFailed != null &&
-                    input.UnbindFailed != null &&
-                    this.UnbindFailed.SequenceEqual(input.UnbindFailed)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BindFailed != null)
-                    hashCode = hashCode * 59 + this.BindFailed.GetHashCode();
-                if (this.UnbindFailed != null)
-                    hashCode = hashCode * 59 + this.UnbindFailed.GetHashCode();
+                var hashCode = 41;
+                if (this.BindFailed != null) hashCode = hashCode * 59 + this.BindFailed.GetHashCode();
+                if (this.UnbindFailed != null) hashCode = hashCode * 59 + this.UnbindFailed.GetHashCode();
                 return hashCode;
             }
         }

@@ -57,20 +57,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(CreateLoginTokenResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Logintoken != input.Logintoken || (this.Logintoken != null && !this.Logintoken.Equals(input.Logintoken))) return false;
+            if (this.XSubjectLoginToken != input.XSubjectLoginToken || (this.XSubjectLoginToken != null && !this.XSubjectLoginToken.Equals(input.XSubjectLoginToken))) return false;
 
-            return 
-                (
-                    this.Logintoken == input.Logintoken ||
-                    (this.Logintoken != null &&
-                    this.Logintoken.Equals(input.Logintoken))
-                ) && 
-                (
-                    this.XSubjectLoginToken == input.XSubjectLoginToken ||
-                    (this.XSubjectLoginToken != null &&
-                    this.XSubjectLoginToken.Equals(input.XSubjectLoginToken))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +71,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Logintoken != null)
-                    hashCode = hashCode * 59 + this.Logintoken.GetHashCode();
-                if (this.XSubjectLoginToken != null)
-                    hashCode = hashCode * 59 + this.XSubjectLoginToken.GetHashCode();
+                var hashCode = 41;
+                if (this.Logintoken != null) hashCode = hashCode * 59 + this.Logintoken.GetHashCode();
+                if (this.XSubjectLoginToken != null) hashCode = hashCode * 59 + this.XSubjectLoginToken.GetHashCode();
                 return hashCode;
             }
         }

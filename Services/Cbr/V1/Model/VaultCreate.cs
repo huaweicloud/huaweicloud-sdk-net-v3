@@ -261,87 +261,24 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(VaultCreate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BackupPolicyId != input.BackupPolicyId || (this.BackupPolicyId != null && !this.BackupPolicyId.Equals(input.BackupPolicyId))) return false;
+            if (this.Billing != input.Billing || (this.Billing != null && !this.Billing.Equals(input.Billing))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Resources != input.Resources || (this.Resources != null && input.Resources != null && !this.Resources.SequenceEqual(input.Resources))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.AutoBind != input.AutoBind || (this.AutoBind != null && !this.AutoBind.Equals(input.AutoBind))) return false;
+            if (this.BindRules != input.BindRules || (this.BindRules != null && !this.BindRules.Equals(input.BindRules))) return false;
+            if (this.AutoExpand != input.AutoExpand || (this.AutoExpand != null && !this.AutoExpand.Equals(input.AutoExpand))) return false;
+            if (this.Threshold != input.Threshold || (this.Threshold != null && !this.Threshold.Equals(input.Threshold))) return false;
+            if (this.SmnNotify != input.SmnNotify || (this.SmnNotify != null && !this.SmnNotify.Equals(input.SmnNotify))) return false;
+            if (this.BackupNamePrefix != input.BackupNamePrefix || (this.BackupNamePrefix != null && !this.BackupNamePrefix.Equals(input.BackupNamePrefix))) return false;
+            if (this.DemandBilling != input.DemandBilling || (this.DemandBilling != null && !this.DemandBilling.Equals(input.DemandBilling))) return false;
+            if (this.SysLockSourceService != input.SysLockSourceService) return false;
 
-            return 
-                (
-                    this.BackupPolicyId == input.BackupPolicyId ||
-                    (this.BackupPolicyId != null &&
-                    this.BackupPolicyId.Equals(input.BackupPolicyId))
-                ) && 
-                (
-                    this.Billing == input.Billing ||
-                    (this.Billing != null &&
-                    this.Billing.Equals(input.Billing))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Resources == input.Resources ||
-                    this.Resources != null &&
-                    input.Resources != null &&
-                    this.Resources.SequenceEqual(input.Resources)
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.AutoBind == input.AutoBind ||
-                    (this.AutoBind != null &&
-                    this.AutoBind.Equals(input.AutoBind))
-                ) && 
-                (
-                    this.BindRules == input.BindRules ||
-                    (this.BindRules != null &&
-                    this.BindRules.Equals(input.BindRules))
-                ) && 
-                (
-                    this.AutoExpand == input.AutoExpand ||
-                    (this.AutoExpand != null &&
-                    this.AutoExpand.Equals(input.AutoExpand))
-                ) && 
-                (
-                    this.Threshold == input.Threshold ||
-                    (this.Threshold != null &&
-                    this.Threshold.Equals(input.Threshold))
-                ) && 
-                (
-                    this.SmnNotify == input.SmnNotify ||
-                    (this.SmnNotify != null &&
-                    this.SmnNotify.Equals(input.SmnNotify))
-                ) && 
-                (
-                    this.BackupNamePrefix == input.BackupNamePrefix ||
-                    (this.BackupNamePrefix != null &&
-                    this.BackupNamePrefix.Equals(input.BackupNamePrefix))
-                ) && 
-                (
-                    this.DemandBilling == input.DemandBilling ||
-                    (this.DemandBilling != null &&
-                    this.DemandBilling.Equals(input.DemandBilling))
-                ) && 
-                (
-                    this.SysLockSourceService == input.SysLockSourceService ||
-                    (this.SysLockSourceService != null &&
-                    this.SysLockSourceService.Equals(input.SysLockSourceService))
-                );
+            return true;
         }
 
         /// <summary>
@@ -351,37 +288,22 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BackupPolicyId != null)
-                    hashCode = hashCode * 59 + this.BackupPolicyId.GetHashCode();
-                if (this.Billing != null)
-                    hashCode = hashCode * 59 + this.Billing.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Resources != null)
-                    hashCode = hashCode * 59 + this.Resources.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.AutoBind != null)
-                    hashCode = hashCode * 59 + this.AutoBind.GetHashCode();
-                if (this.BindRules != null)
-                    hashCode = hashCode * 59 + this.BindRules.GetHashCode();
-                if (this.AutoExpand != null)
-                    hashCode = hashCode * 59 + this.AutoExpand.GetHashCode();
-                if (this.Threshold != null)
-                    hashCode = hashCode * 59 + this.Threshold.GetHashCode();
-                if (this.SmnNotify != null)
-                    hashCode = hashCode * 59 + this.SmnNotify.GetHashCode();
-                if (this.BackupNamePrefix != null)
-                    hashCode = hashCode * 59 + this.BackupNamePrefix.GetHashCode();
-                if (this.DemandBilling != null)
-                    hashCode = hashCode * 59 + this.DemandBilling.GetHashCode();
-                if (this.SysLockSourceService != null)
-                    hashCode = hashCode * 59 + this.SysLockSourceService.GetHashCode();
+                var hashCode = 41;
+                if (this.BackupPolicyId != null) hashCode = hashCode * 59 + this.BackupPolicyId.GetHashCode();
+                if (this.Billing != null) hashCode = hashCode * 59 + this.Billing.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Resources != null) hashCode = hashCode * 59 + this.Resources.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.AutoBind != null) hashCode = hashCode * 59 + this.AutoBind.GetHashCode();
+                if (this.BindRules != null) hashCode = hashCode * 59 + this.BindRules.GetHashCode();
+                if (this.AutoExpand != null) hashCode = hashCode * 59 + this.AutoExpand.GetHashCode();
+                if (this.Threshold != null) hashCode = hashCode * 59 + this.Threshold.GetHashCode();
+                if (this.SmnNotify != null) hashCode = hashCode * 59 + this.SmnNotify.GetHashCode();
+                if (this.BackupNamePrefix != null) hashCode = hashCode * 59 + this.BackupNamePrefix.GetHashCode();
+                if (this.DemandBilling != null) hashCode = hashCode * 59 + this.DemandBilling.GetHashCode();
+                hashCode = hashCode * 59 + this.SysLockSourceService.GetHashCode();
                 return hashCode;
             }
         }

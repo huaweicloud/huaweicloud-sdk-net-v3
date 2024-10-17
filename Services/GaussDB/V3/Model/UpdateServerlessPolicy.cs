@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(UpdateServerlessPolicy input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MinVcpus != input.MinVcpus || (this.MinVcpus != null && !this.MinVcpus.Equals(input.MinVcpus))) return false;
+            if (this.MaxVcpus != input.MaxVcpus || (this.MaxVcpus != null && !this.MaxVcpus.Equals(input.MaxVcpus))) return false;
 
-            return 
-                (
-                    this.MinVcpus == input.MinVcpus ||
-                    (this.MinVcpus != null &&
-                    this.MinVcpus.Equals(input.MinVcpus))
-                ) && 
-                (
-                    this.MaxVcpus == input.MaxVcpus ||
-                    (this.MaxVcpus != null &&
-                    this.MaxVcpus.Equals(input.MaxVcpus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MinVcpus != null)
-                    hashCode = hashCode * 59 + this.MinVcpus.GetHashCode();
-                if (this.MaxVcpus != null)
-                    hashCode = hashCode * 59 + this.MaxVcpus.GetHashCode();
+                var hashCode = 41;
+                if (this.MinVcpus != null) hashCode = hashCode * 59 + this.MinVcpus.GetHashCode();
+                if (this.MaxVcpus != null) hashCode = hashCode * 59 + this.MaxVcpus.GetHashCode();
                 return hashCode;
             }
         }

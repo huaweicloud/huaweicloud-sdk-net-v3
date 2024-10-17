@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         /// </summary>
         public bool Equals(ListNotificationsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Notifications != input.Notifications || (this.Notifications != null && input.Notifications != null && !this.Notifications.SequenceEqual(input.Notifications))) return false;
 
-            return 
-                (
-                    this.Notifications == input.Notifications ||
-                    this.Notifications != null &&
-                    input.Notifications != null &&
-                    this.Notifications.SequenceEqual(input.Notifications)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Notifications != null)
-                    hashCode = hashCode * 59 + this.Notifications.GetHashCode();
+                var hashCode = 41;
+                if (this.Notifications != null) hashCode = hashCode * 59 + this.Notifications.GetHashCode();
                 return hashCode;
             }
         }

@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(PrecheckStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Phase != input.Phase || (this.Phase != null && !this.Phase.Equals(input.Phase))) return false;
+            if (this.ExpireTimeStamp != input.ExpireTimeStamp || (this.ExpireTimeStamp != null && !this.ExpireTimeStamp.Equals(input.ExpireTimeStamp))) return false;
+            if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
+            if (this.ClusterCheckStatus != input.ClusterCheckStatus || (this.ClusterCheckStatus != null && !this.ClusterCheckStatus.Equals(input.ClusterCheckStatus))) return false;
+            if (this.AddonCheckStatus != input.AddonCheckStatus || (this.AddonCheckStatus != null && !this.AddonCheckStatus.Equals(input.AddonCheckStatus))) return false;
+            if (this.NodeCheckStatus != input.NodeCheckStatus || (this.NodeCheckStatus != null && !this.NodeCheckStatus.Equals(input.NodeCheckStatus))) return false;
 
-            return 
-                (
-                    this.Phase == input.Phase ||
-                    (this.Phase != null &&
-                    this.Phase.Equals(input.Phase))
-                ) && 
-                (
-                    this.ExpireTimeStamp == input.ExpireTimeStamp ||
-                    (this.ExpireTimeStamp != null &&
-                    this.ExpireTimeStamp.Equals(input.ExpireTimeStamp))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.ClusterCheckStatus == input.ClusterCheckStatus ||
-                    (this.ClusterCheckStatus != null &&
-                    this.ClusterCheckStatus.Equals(input.ClusterCheckStatus))
-                ) && 
-                (
-                    this.AddonCheckStatus == input.AddonCheckStatus ||
-                    (this.AddonCheckStatus != null &&
-                    this.AddonCheckStatus.Equals(input.AddonCheckStatus))
-                ) && 
-                (
-                    this.NodeCheckStatus == input.NodeCheckStatus ||
-                    (this.NodeCheckStatus != null &&
-                    this.NodeCheckStatus.Equals(input.NodeCheckStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Phase != null)
-                    hashCode = hashCode * 59 + this.Phase.GetHashCode();
-                if (this.ExpireTimeStamp != null)
-                    hashCode = hashCode * 59 + this.ExpireTimeStamp.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.ClusterCheckStatus != null)
-                    hashCode = hashCode * 59 + this.ClusterCheckStatus.GetHashCode();
-                if (this.AddonCheckStatus != null)
-                    hashCode = hashCode * 59 + this.AddonCheckStatus.GetHashCode();
-                if (this.NodeCheckStatus != null)
-                    hashCode = hashCode * 59 + this.NodeCheckStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.Phase != null) hashCode = hashCode * 59 + this.Phase.GetHashCode();
+                if (this.ExpireTimeStamp != null) hashCode = hashCode * 59 + this.ExpireTimeStamp.GetHashCode();
+                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.ClusterCheckStatus != null) hashCode = hashCode * 59 + this.ClusterCheckStatus.GetHashCode();
+                if (this.AddonCheckStatus != null) hashCode = hashCode * 59 + this.AddonCheckStatus.GetHashCode();
+                if (this.NodeCheckStatus != null) hashCode = hashCode * 59 + this.NodeCheckStatus.GetHashCode();
                 return hashCode;
             }
         }

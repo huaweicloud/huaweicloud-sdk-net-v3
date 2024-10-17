@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Eps.V1.Model
         /// </summary>
         public bool Equals(MigrateResource input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RegionId != input.RegionId || (this.RegionId != null && !this.RegionId.Equals(input.RegionId))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
+            if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
+            if (this.Associated != input.Associated || (this.Associated != null && !this.Associated.Equals(input.Associated))) return false;
 
-            return 
-                (
-                    this.RegionId == input.RegionId ||
-                    (this.RegionId != null &&
-                    this.RegionId.Equals(input.RegionId))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
-                ) && 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.Associated == input.Associated ||
-                    (this.Associated != null &&
-                    this.Associated.Equals(input.Associated))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Eps.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RegionId != null)
-                    hashCode = hashCode * 59 + this.RegionId.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.ResourceId != null)
-                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
-                if (this.Associated != null)
-                    hashCode = hashCode * 59 + this.Associated.GetHashCode();
+                var hashCode = 41;
+                if (this.RegionId != null) hashCode = hashCode * 59 + this.RegionId.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.Associated != null) hashCode = hashCode * 59 + this.Associated.GetHashCode();
                 return hashCode;
             }
         }

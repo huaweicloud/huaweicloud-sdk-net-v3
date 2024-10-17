@@ -238,62 +238,19 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(StructTemplateModel input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.TemplateName != input.TemplateName || (this.TemplateName != null && !this.TemplateName.Equals(input.TemplateName))) return false;
+            if (this.TemplateType != input.TemplateType) return false;
+            if (this.DemoLog != input.DemoLog || (this.DemoLog != null && !this.DemoLog.Equals(input.DemoLog))) return false;
+            if (this.DemoFields != input.DemoFields || (this.DemoFields != null && input.DemoFields != null && !this.DemoFields.SequenceEqual(input.DemoFields))) return false;
+            if (this.TagFields != input.TagFields || (this.TagFields != null && input.TagFields != null && !this.TagFields.SequenceEqual(input.TagFields))) return false;
+            if (this.Rule != input.Rule || (this.Rule != null && !this.Rule.Equals(input.Rule))) return false;
+            if (this.DemoLabel != input.DemoLabel || (this.DemoLabel != null && !this.DemoLabel.Equals(input.DemoLabel))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
 
-            return 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.TemplateName == input.TemplateName ||
-                    (this.TemplateName != null &&
-                    this.TemplateName.Equals(input.TemplateName))
-                ) && 
-                (
-                    this.TemplateType == input.TemplateType ||
-                    (this.TemplateType != null &&
-                    this.TemplateType.Equals(input.TemplateType))
-                ) && 
-                (
-                    this.DemoLog == input.DemoLog ||
-                    (this.DemoLog != null &&
-                    this.DemoLog.Equals(input.DemoLog))
-                ) && 
-                (
-                    this.DemoFields == input.DemoFields ||
-                    this.DemoFields != null &&
-                    input.DemoFields != null &&
-                    this.DemoFields.SequenceEqual(input.DemoFields)
-                ) && 
-                (
-                    this.TagFields == input.TagFields ||
-                    this.TagFields != null &&
-                    input.TagFields != null &&
-                    this.TagFields.SequenceEqual(input.TagFields)
-                ) && 
-                (
-                    this.Rule == input.Rule ||
-                    (this.Rule != null &&
-                    this.Rule.Equals(input.Rule))
-                ) && 
-                (
-                    this.DemoLabel == input.DemoLabel ||
-                    (this.DemoLabel != null &&
-                    this.DemoLabel.Equals(input.DemoLabel))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                );
+            return true;
         }
 
         /// <summary>
@@ -303,27 +260,17 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.TemplateName != null)
-                    hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
-                if (this.TemplateType != null)
-                    hashCode = hashCode * 59 + this.TemplateType.GetHashCode();
-                if (this.DemoLog != null)
-                    hashCode = hashCode * 59 + this.DemoLog.GetHashCode();
-                if (this.DemoFields != null)
-                    hashCode = hashCode * 59 + this.DemoFields.GetHashCode();
-                if (this.TagFields != null)
-                    hashCode = hashCode * 59 + this.TagFields.GetHashCode();
-                if (this.Rule != null)
-                    hashCode = hashCode * 59 + this.Rule.GetHashCode();
-                if (this.DemoLabel != null)
-                    hashCode = hashCode * 59 + this.DemoLabel.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                var hashCode = 41;
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.TemplateName != null) hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
+                hashCode = hashCode * 59 + this.TemplateType.GetHashCode();
+                if (this.DemoLog != null) hashCode = hashCode * 59 + this.DemoLog.GetHashCode();
+                if (this.DemoFields != null) hashCode = hashCode * 59 + this.DemoFields.GetHashCode();
+                if (this.TagFields != null) hashCode = hashCode * 59 + this.TagFields.GetHashCode();
+                if (this.Rule != null) hashCode = hashCode * 59 + this.Rule.GetHashCode();
+                if (this.DemoLabel != null) hashCode = hashCode * 59 + this.DemoLabel.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 return hashCode;
             }
         }

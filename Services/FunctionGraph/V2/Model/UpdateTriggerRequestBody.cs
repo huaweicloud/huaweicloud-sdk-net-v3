@@ -170,21 +170,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(UpdateTriggerRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TriggerStatus != input.TriggerStatus) return false;
+            if (this.EventData != input.EventData || (this.EventData != null && input.EventData != null && !this.EventData.SequenceEqual(input.EventData))) return false;
 
-            return 
-                (
-                    this.TriggerStatus == input.TriggerStatus ||
-                    (this.TriggerStatus != null &&
-                    this.TriggerStatus.Equals(input.TriggerStatus))
-                ) && 
-                (
-                    this.EventData == input.EventData ||
-                    this.EventData != null &&
-                    input.EventData != null &&
-                    this.EventData.SequenceEqual(input.EventData)
-                );
+            return true;
         }
 
         /// <summary>
@@ -194,11 +184,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TriggerStatus != null)
-                    hashCode = hashCode * 59 + this.TriggerStatus.GetHashCode();
-                if (this.EventData != null)
-                    hashCode = hashCode * 59 + this.EventData.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.TriggerStatus.GetHashCode();
+                if (this.EventData != null) hashCode = hashCode * 59 + this.EventData.GetHashCode();
                 return hashCode;
             }
         }

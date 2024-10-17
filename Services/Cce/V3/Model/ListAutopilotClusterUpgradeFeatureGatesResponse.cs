@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ListAutopilotClusterUpgradeFeatureGatesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ApiVersion != input.ApiVersion || (this.ApiVersion != null && !this.ApiVersion.Equals(input.ApiVersion))) return false;
+            if (this.Kind != input.Kind || (this.Kind != null && !this.Kind.Equals(input.Kind))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && !this.Metadata.Equals(input.Metadata))) return false;
+            if (this.UpgradeFeatureGates != input.UpgradeFeatureGates || (this.UpgradeFeatureGates != null && input.UpgradeFeatureGates != null && !this.UpgradeFeatureGates.SequenceEqual(input.UpgradeFeatureGates))) return false;
 
-            return 
-                (
-                    this.ApiVersion == input.ApiVersion ||
-                    (this.ApiVersion != null &&
-                    this.ApiVersion.Equals(input.ApiVersion))
-                ) && 
-                (
-                    this.Kind == input.Kind ||
-                    (this.Kind != null &&
-                    this.Kind.Equals(input.Kind))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    (this.Metadata != null &&
-                    this.Metadata.Equals(input.Metadata))
-                ) && 
-                (
-                    this.UpgradeFeatureGates == input.UpgradeFeatureGates ||
-                    this.UpgradeFeatureGates != null &&
-                    input.UpgradeFeatureGates != null &&
-                    this.UpgradeFeatureGates.SequenceEqual(input.UpgradeFeatureGates)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ApiVersion != null)
-                    hashCode = hashCode * 59 + this.ApiVersion.GetHashCode();
-                if (this.Kind != null)
-                    hashCode = hashCode * 59 + this.Kind.GetHashCode();
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
-                if (this.UpgradeFeatureGates != null)
-                    hashCode = hashCode * 59 + this.UpgradeFeatureGates.GetHashCode();
+                var hashCode = 41;
+                if (this.ApiVersion != null) hashCode = hashCode * 59 + this.ApiVersion.GetHashCode();
+                if (this.Kind != null) hashCode = hashCode * 59 + this.Kind.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                if (this.UpgradeFeatureGates != null) hashCode = hashCode * 59 + this.UpgradeFeatureGates.GetHashCode();
                 return hashCode;
             }
         }

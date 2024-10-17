@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(QualityInfoList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Video != input.Video || (this.Video != null && !this.Video.Equals(input.Video))) return false;
+            if (this.Audio != input.Audio || (this.Audio != null && !this.Audio.Equals(input.Audio))) return false;
 
-            return 
-                (
-                    this.Video == input.Video ||
-                    (this.Video != null &&
-                    this.Video.Equals(input.Video))
-                ) && 
-                (
-                    this.Audio == input.Audio ||
-                    (this.Audio != null &&
-                    this.Audio.Equals(input.Audio))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Video != null)
-                    hashCode = hashCode * 59 + this.Video.GetHashCode();
-                if (this.Audio != null)
-                    hashCode = hashCode * 59 + this.Audio.GetHashCode();
+                var hashCode = 41;
+                if (this.Video != null) hashCode = hashCode * 59 + this.Video.GetHashCode();
+                if (this.Audio != null) hashCode = hashCode * 59 + this.Audio.GetHashCode();
                 return hashCode;
             }
         }

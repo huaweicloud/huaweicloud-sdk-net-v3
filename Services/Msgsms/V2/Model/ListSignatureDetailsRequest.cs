@@ -138,70 +138,21 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         /// </summary>
         public bool Equals(ListSignatureDetailsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AppName != input.AppName || (this.AppName != null && !this.AppName.Equals(input.AppName))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.SignatureId != input.SignatureId || (this.SignatureId != null && !this.SignatureId.Equals(input.SignatureId))) return false;
+            if (this.SignatureName != input.SignatureName || (this.SignatureName != null && !this.SignatureName.Equals(input.SignatureName))) return false;
+            if (this.SignatureType != input.SignatureType || (this.SignatureType != null && !this.SignatureType.Equals(input.SignatureType))) return false;
+            if (this.Site != input.Site || (this.Site != null && !this.Site.Equals(input.Site))) return false;
+            if (this.SortDir != input.SortDir || (this.SortDir != null && !this.SortDir.Equals(input.SortDir))) return false;
+            if (this.SortKey != input.SortKey || (this.SortKey != null && !this.SortKey.Equals(input.SortKey))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
 
-            return 
-                (
-                    this.AppName == input.AppName ||
-                    (this.AppName != null &&
-                    this.AppName.Equals(input.AppName))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.SignatureId == input.SignatureId ||
-                    (this.SignatureId != null &&
-                    this.SignatureId.Equals(input.SignatureId))
-                ) && 
-                (
-                    this.SignatureName == input.SignatureName ||
-                    (this.SignatureName != null &&
-                    this.SignatureName.Equals(input.SignatureName))
-                ) && 
-                (
-                    this.SignatureType == input.SignatureType ||
-                    (this.SignatureType != null &&
-                    this.SignatureType.Equals(input.SignatureType))
-                ) && 
-                (
-                    this.Site == input.Site ||
-                    (this.Site != null &&
-                    this.Site.Equals(input.Site))
-                ) && 
-                (
-                    this.SortDir == input.SortDir ||
-                    (this.SortDir != null &&
-                    this.SortDir.Equals(input.SortDir))
-                ) && 
-                (
-                    this.SortKey == input.SortKey ||
-                    (this.SortKey != null &&
-                    this.SortKey.Equals(input.SortKey))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
+            return true;
         }
 
         /// <summary>
@@ -211,31 +162,19 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AppName != null)
-                    hashCode = hashCode * 59 + this.AppName.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.SignatureId != null)
-                    hashCode = hashCode * 59 + this.SignatureId.GetHashCode();
-                if (this.SignatureName != null)
-                    hashCode = hashCode * 59 + this.SignatureName.GetHashCode();
-                if (this.SignatureType != null)
-                    hashCode = hashCode * 59 + this.SignatureType.GetHashCode();
-                if (this.Site != null)
-                    hashCode = hashCode * 59 + this.Site.GetHashCode();
-                if (this.SortDir != null)
-                    hashCode = hashCode * 59 + this.SortDir.GetHashCode();
-                if (this.SortKey != null)
-                    hashCode = hashCode * 59 + this.SortKey.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                var hashCode = 41;
+                if (this.AppName != null) hashCode = hashCode * 59 + this.AppName.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.SignatureId != null) hashCode = hashCode * 59 + this.SignatureId.GetHashCode();
+                if (this.SignatureName != null) hashCode = hashCode * 59 + this.SignatureName.GetHashCode();
+                if (this.SignatureType != null) hashCode = hashCode * 59 + this.SignatureType.GetHashCode();
+                if (this.Site != null) hashCode = hashCode * 59 + this.Site.GetHashCode();
+                if (this.SortDir != null) hashCode = hashCode * 59 + this.SortDir.GetHashCode();
+                if (this.SortKey != null) hashCode = hashCode * 59 + this.SortKey.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

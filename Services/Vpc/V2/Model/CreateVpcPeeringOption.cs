@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(CreateVpcPeeringOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.RequestVpcInfo != input.RequestVpcInfo || (this.RequestVpcInfo != null && !this.RequestVpcInfo.Equals(input.RequestVpcInfo))) return false;
+            if (this.AcceptVpcInfo != input.AcceptVpcInfo || (this.AcceptVpcInfo != null && !this.AcceptVpcInfo.Equals(input.AcceptVpcInfo))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.RequestVpcInfo == input.RequestVpcInfo ||
-                    (this.RequestVpcInfo != null &&
-                    this.RequestVpcInfo.Equals(input.RequestVpcInfo))
-                ) && 
-                (
-                    this.AcceptVpcInfo == input.AcceptVpcInfo ||
-                    (this.AcceptVpcInfo != null &&
-                    this.AcceptVpcInfo.Equals(input.AcceptVpcInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.RequestVpcInfo != null)
-                    hashCode = hashCode * 59 + this.RequestVpcInfo.GetHashCode();
-                if (this.AcceptVpcInfo != null)
-                    hashCode = hashCode * 59 + this.AcceptVpcInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.RequestVpcInfo != null) hashCode = hashCode * 59 + this.RequestVpcInfo.GetHashCode();
+                if (this.AcceptVpcInfo != null) hashCode = hashCode * 59 + this.AcceptVpcInfo.GetHashCode();
                 return hashCode;
             }
         }

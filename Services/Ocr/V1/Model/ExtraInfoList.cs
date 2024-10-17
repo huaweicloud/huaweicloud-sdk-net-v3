@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(ExtraInfoList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Item != input.Item || (this.Item != null && !this.Item.Equals(input.Item))) return false;
+            if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
+            if (this.Note != input.Note || (this.Note != null && input.Note != null && !this.Note.SequenceEqual(input.Note))) return false;
 
-            return 
-                (
-                    this.Item == input.Item ||
-                    (this.Item != null &&
-                    this.Item.Equals(input.Item))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                ) && 
-                (
-                    this.Note == input.Note ||
-                    this.Note != null &&
-                    input.Note != null &&
-                    this.Note.SequenceEqual(input.Note)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Item != null)
-                    hashCode = hashCode * 59 + this.Item.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
-                if (this.Note != null)
-                    hashCode = hashCode * 59 + this.Note.GetHashCode();
+                var hashCode = 41;
+                if (this.Item != null) hashCode = hashCode * 59 + this.Item.GetHashCode();
+                if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.Note != null) hashCode = hashCode * 59 + this.Note.GetHashCode();
                 return hashCode;
             }
         }

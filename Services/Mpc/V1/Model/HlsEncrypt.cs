@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(HlsEncrypt input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Key != input.Key || (this.Key != null && !this.Key.Equals(input.Key))) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.Iv != input.Iv || (this.Iv != null && !this.Iv.Equals(input.Iv))) return false;
+            if (this.Algorithm != input.Algorithm || (this.Algorithm != null && !this.Algorithm.Equals(input.Algorithm))) return false;
 
-            return 
-                (
-                    this.Key == input.Key ||
-                    (this.Key != null &&
-                    this.Key.Equals(input.Key))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.Iv == input.Iv ||
-                    (this.Iv != null &&
-                    this.Iv.Equals(input.Iv))
-                ) && 
-                (
-                    this.Algorithm == input.Algorithm ||
-                    (this.Algorithm != null &&
-                    this.Algorithm.Equals(input.Algorithm))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Key != null)
-                    hashCode = hashCode * 59 + this.Key.GetHashCode();
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.Iv != null)
-                    hashCode = hashCode * 59 + this.Iv.GetHashCode();
-                if (this.Algorithm != null)
-                    hashCode = hashCode * 59 + this.Algorithm.GetHashCode();
+                var hashCode = 41;
+                if (this.Key != null) hashCode = hashCode * 59 + this.Key.GetHashCode();
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.Iv != null) hashCode = hashCode * 59 + this.Iv.GetHashCode();
+                if (this.Algorithm != null) hashCode = hashCode * 59 + this.Algorithm.GetHashCode();
                 return hashCode;
             }
         }

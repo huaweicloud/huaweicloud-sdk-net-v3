@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(OpExtendInfoRestore input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BackupId != input.BackupId || (this.BackupId != null && !this.BackupId.Equals(input.BackupId))) return false;
+            if (this.BackupName != input.BackupName || (this.BackupName != null && !this.BackupName.Equals(input.BackupName))) return false;
+            if (this.TargetResourceId != input.TargetResourceId || (this.TargetResourceId != null && !this.TargetResourceId.Equals(input.TargetResourceId))) return false;
+            if (this.TargetResourceName != input.TargetResourceName || (this.TargetResourceName != null && !this.TargetResourceName.Equals(input.TargetResourceName))) return false;
 
-            return 
-                (
-                    this.BackupId == input.BackupId ||
-                    (this.BackupId != null &&
-                    this.BackupId.Equals(input.BackupId))
-                ) && 
-                (
-                    this.BackupName == input.BackupName ||
-                    (this.BackupName != null &&
-                    this.BackupName.Equals(input.BackupName))
-                ) && 
-                (
-                    this.TargetResourceId == input.TargetResourceId ||
-                    (this.TargetResourceId != null &&
-                    this.TargetResourceId.Equals(input.TargetResourceId))
-                ) && 
-                (
-                    this.TargetResourceName == input.TargetResourceName ||
-                    (this.TargetResourceName != null &&
-                    this.TargetResourceName.Equals(input.TargetResourceName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BackupId != null)
-                    hashCode = hashCode * 59 + this.BackupId.GetHashCode();
-                if (this.BackupName != null)
-                    hashCode = hashCode * 59 + this.BackupName.GetHashCode();
-                if (this.TargetResourceId != null)
-                    hashCode = hashCode * 59 + this.TargetResourceId.GetHashCode();
-                if (this.TargetResourceName != null)
-                    hashCode = hashCode * 59 + this.TargetResourceName.GetHashCode();
+                var hashCode = 41;
+                if (this.BackupId != null) hashCode = hashCode * 59 + this.BackupId.GetHashCode();
+                if (this.BackupName != null) hashCode = hashCode * 59 + this.BackupName.GetHashCode();
+                if (this.TargetResourceId != null) hashCode = hashCode * 59 + this.TargetResourceId.GetHashCode();
+                if (this.TargetResourceName != null) hashCode = hashCode * 59 + this.TargetResourceName.GetHashCode();
                 return hashCode;
             }
         }

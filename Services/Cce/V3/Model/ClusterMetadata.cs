@@ -91,47 +91,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ClusterMetadata input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Uid != input.Uid || (this.Uid != null && !this.Uid.Equals(input.Uid))) return false;
+            if (this.Alias != input.Alias || (this.Alias != null && !this.Alias.Equals(input.Alias))) return false;
+            if (this.Annotations != input.Annotations || (this.Annotations != null && input.Annotations != null && !this.Annotations.SequenceEqual(input.Annotations))) return false;
+            if (this.Labels != input.Labels || (this.Labels != null && input.Labels != null && !this.Labels.SequenceEqual(input.Labels))) return false;
+            if (this.CreationTimestamp != input.CreationTimestamp || (this.CreationTimestamp != null && !this.CreationTimestamp.Equals(input.CreationTimestamp))) return false;
+            if (this.UpdateTimestamp != input.UpdateTimestamp || (this.UpdateTimestamp != null && !this.UpdateTimestamp.Equals(input.UpdateTimestamp))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Uid == input.Uid ||
-                    (this.Uid != null &&
-                    this.Uid.Equals(input.Uid))
-                ) && 
-                (
-                    this.Alias == input.Alias ||
-                    (this.Alias != null &&
-                    this.Alias.Equals(input.Alias))
-                ) && 
-                (
-                    this.Annotations == input.Annotations ||
-                    this.Annotations != null &&
-                    input.Annotations != null &&
-                    this.Annotations.SequenceEqual(input.Annotations)
-                ) && 
-                (
-                    this.Labels == input.Labels ||
-                    this.Labels != null &&
-                    input.Labels != null &&
-                    this.Labels.SequenceEqual(input.Labels)
-                ) && 
-                (
-                    this.CreationTimestamp == input.CreationTimestamp ||
-                    (this.CreationTimestamp != null &&
-                    this.CreationTimestamp.Equals(input.CreationTimestamp))
-                ) && 
-                (
-                    this.UpdateTimestamp == input.UpdateTimestamp ||
-                    (this.UpdateTimestamp != null &&
-                    this.UpdateTimestamp.Equals(input.UpdateTimestamp))
-                );
+            return true;
         }
 
         /// <summary>
@@ -141,21 +110,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Uid != null)
-                    hashCode = hashCode * 59 + this.Uid.GetHashCode();
-                if (this.Alias != null)
-                    hashCode = hashCode * 59 + this.Alias.GetHashCode();
-                if (this.Annotations != null)
-                    hashCode = hashCode * 59 + this.Annotations.GetHashCode();
-                if (this.Labels != null)
-                    hashCode = hashCode * 59 + this.Labels.GetHashCode();
-                if (this.CreationTimestamp != null)
-                    hashCode = hashCode * 59 + this.CreationTimestamp.GetHashCode();
-                if (this.UpdateTimestamp != null)
-                    hashCode = hashCode * 59 + this.UpdateTimestamp.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Uid != null) hashCode = hashCode * 59 + this.Uid.GetHashCode();
+                if (this.Alias != null) hashCode = hashCode * 59 + this.Alias.GetHashCode();
+                if (this.Annotations != null) hashCode = hashCode * 59 + this.Annotations.GetHashCode();
+                if (this.Labels != null) hashCode = hashCode * 59 + this.Labels.GetHashCode();
+                if (this.CreationTimestamp != null) hashCode = hashCode * 59 + this.CreationTimestamp.GetHashCode();
+                if (this.UpdateTimestamp != null) hashCode = hashCode * 59 + this.UpdateTimestamp.GetHashCode();
                 return hashCode;
             }
         }

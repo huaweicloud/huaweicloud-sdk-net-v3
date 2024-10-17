@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(NodePoolNodeAutoscaling input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Enable != input.Enable || (this.Enable != null && !this.Enable.Equals(input.Enable))) return false;
+            if (this.MinNodeCount != input.MinNodeCount || (this.MinNodeCount != null && !this.MinNodeCount.Equals(input.MinNodeCount))) return false;
+            if (this.MaxNodeCount != input.MaxNodeCount || (this.MaxNodeCount != null && !this.MaxNodeCount.Equals(input.MaxNodeCount))) return false;
+            if (this.ScaleDownCooldownTime != input.ScaleDownCooldownTime || (this.ScaleDownCooldownTime != null && !this.ScaleDownCooldownTime.Equals(input.ScaleDownCooldownTime))) return false;
+            if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
 
-            return 
-                (
-                    this.Enable == input.Enable ||
-                    (this.Enable != null &&
-                    this.Enable.Equals(input.Enable))
-                ) && 
-                (
-                    this.MinNodeCount == input.MinNodeCount ||
-                    (this.MinNodeCount != null &&
-                    this.MinNodeCount.Equals(input.MinNodeCount))
-                ) && 
-                (
-                    this.MaxNodeCount == input.MaxNodeCount ||
-                    (this.MaxNodeCount != null &&
-                    this.MaxNodeCount.Equals(input.MaxNodeCount))
-                ) && 
-                (
-                    this.ScaleDownCooldownTime == input.ScaleDownCooldownTime ||
-                    (this.ScaleDownCooldownTime != null &&
-                    this.ScaleDownCooldownTime.Equals(input.ScaleDownCooldownTime))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    (this.Priority != null &&
-                    this.Priority.Equals(input.Priority))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Enable != null)
-                    hashCode = hashCode * 59 + this.Enable.GetHashCode();
-                if (this.MinNodeCount != null)
-                    hashCode = hashCode * 59 + this.MinNodeCount.GetHashCode();
-                if (this.MaxNodeCount != null)
-                    hashCode = hashCode * 59 + this.MaxNodeCount.GetHashCode();
-                if (this.ScaleDownCooldownTime != null)
-                    hashCode = hashCode * 59 + this.ScaleDownCooldownTime.GetHashCode();
-                if (this.Priority != null)
-                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                var hashCode = 41;
+                if (this.Enable != null) hashCode = hashCode * 59 + this.Enable.GetHashCode();
+                if (this.MinNodeCount != null) hashCode = hashCode * 59 + this.MinNodeCount.GetHashCode();
+                if (this.MaxNodeCount != null) hashCode = hashCode * 59 + this.MaxNodeCount.GetHashCode();
+                if (this.ScaleDownCooldownTime != null) hashCode = hashCode * 59 + this.ScaleDownCooldownTime.GetHashCode();
+                if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 return hashCode;
             }
         }

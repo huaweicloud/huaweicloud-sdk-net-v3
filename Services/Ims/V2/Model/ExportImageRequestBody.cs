@@ -189,25 +189,12 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         public bool Equals(ExportImageRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BucketUrl != input.BucketUrl || (this.BucketUrl != null && !this.BucketUrl.Equals(input.BucketUrl))) return false;
+            if (this.FileFormat != input.FileFormat) return false;
+            if (this.IsQuickExport != input.IsQuickExport || (this.IsQuickExport != null && !this.IsQuickExport.Equals(input.IsQuickExport))) return false;
 
-            return 
-                (
-                    this.BucketUrl == input.BucketUrl ||
-                    (this.BucketUrl != null &&
-                    this.BucketUrl.Equals(input.BucketUrl))
-                ) && 
-                (
-                    this.FileFormat == input.FileFormat ||
-                    (this.FileFormat != null &&
-                    this.FileFormat.Equals(input.FileFormat))
-                ) && 
-                (
-                    this.IsQuickExport == input.IsQuickExport ||
-                    (this.IsQuickExport != null &&
-                    this.IsQuickExport.Equals(input.IsQuickExport))
-                );
+            return true;
         }
 
         /// <summary>
@@ -217,13 +204,10 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BucketUrl != null)
-                    hashCode = hashCode * 59 + this.BucketUrl.GetHashCode();
-                if (this.FileFormat != null)
-                    hashCode = hashCode * 59 + this.FileFormat.GetHashCode();
-                if (this.IsQuickExport != null)
-                    hashCode = hashCode * 59 + this.IsQuickExport.GetHashCode();
+                var hashCode = 41;
+                if (this.BucketUrl != null) hashCode = hashCode * 59 + this.BucketUrl.GetHashCode();
+                hashCode = hashCode * 59 + this.FileFormat.GetHashCode();
+                if (this.IsQuickExport != null) hashCode = hashCode * 59 + this.IsQuickExport.GetHashCode();
                 return hashCode;
             }
         }

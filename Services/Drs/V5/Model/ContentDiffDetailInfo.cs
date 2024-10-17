@@ -77,36 +77,14 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ContentDiffDetailInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.TargetMetaIsNull != input.TargetMetaIsNull || (this.TargetMetaIsNull != null && !this.TargetMetaIsNull.Equals(input.TargetMetaIsNull))) return false;
+            if (this.SourceMetaIsNull != input.SourceMetaIsNull || (this.SourceMetaIsNull != null && !this.SourceMetaIsNull.Equals(input.SourceMetaIsNull))) return false;
+            if (this.SourceTargetMetaNotNull != input.SourceTargetMetaNotNull || (this.SourceTargetMetaNotNull != null && !this.SourceTargetMetaNotNull.Equals(input.SourceTargetMetaNotNull))) return false;
+            if (this.ContentsInfos != input.ContentsInfos || (this.ContentsInfos != null && input.ContentsInfos != null && !this.ContentsInfos.SequenceEqual(input.ContentsInfos))) return false;
 
-            return 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.TargetMetaIsNull == input.TargetMetaIsNull ||
-                    (this.TargetMetaIsNull != null &&
-                    this.TargetMetaIsNull.Equals(input.TargetMetaIsNull))
-                ) && 
-                (
-                    this.SourceMetaIsNull == input.SourceMetaIsNull ||
-                    (this.SourceMetaIsNull != null &&
-                    this.SourceMetaIsNull.Equals(input.SourceMetaIsNull))
-                ) && 
-                (
-                    this.SourceTargetMetaNotNull == input.SourceTargetMetaNotNull ||
-                    (this.SourceTargetMetaNotNull != null &&
-                    this.SourceTargetMetaNotNull.Equals(input.SourceTargetMetaNotNull))
-                ) && 
-                (
-                    this.ContentsInfos == input.ContentsInfos ||
-                    this.ContentsInfos != null &&
-                    input.ContentsInfos != null &&
-                    this.ContentsInfos.SequenceEqual(input.ContentsInfos)
-                );
+            return true;
         }
 
         /// <summary>
@@ -116,17 +94,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.TargetMetaIsNull != null)
-                    hashCode = hashCode * 59 + this.TargetMetaIsNull.GetHashCode();
-                if (this.SourceMetaIsNull != null)
-                    hashCode = hashCode * 59 + this.SourceMetaIsNull.GetHashCode();
-                if (this.SourceTargetMetaNotNull != null)
-                    hashCode = hashCode * 59 + this.SourceTargetMetaNotNull.GetHashCode();
-                if (this.ContentsInfos != null)
-                    hashCode = hashCode * 59 + this.ContentsInfos.GetHashCode();
+                var hashCode = 41;
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.TargetMetaIsNull != null) hashCode = hashCode * 59 + this.TargetMetaIsNull.GetHashCode();
+                if (this.SourceMetaIsNull != null) hashCode = hashCode * 59 + this.SourceMetaIsNull.GetHashCode();
+                if (this.SourceTargetMetaNotNull != null) hashCode = hashCode * 59 + this.SourceTargetMetaNotNull.GetHashCode();
+                if (this.ContentsInfos != null) hashCode = hashCode * 59 + this.ContentsInfos.GetHashCode();
                 return hashCode;
             }
         }

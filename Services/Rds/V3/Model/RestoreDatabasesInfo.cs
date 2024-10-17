@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(RestoreDatabasesInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Database != input.Database || (this.Database != null && !this.Database.Equals(input.Database))) return false;
+            if (this.Tables != input.Tables || (this.Tables != null && input.Tables != null && !this.Tables.SequenceEqual(input.Tables))) return false;
 
-            return 
-                (
-                    this.Database == input.Database ||
-                    (this.Database != null &&
-                    this.Database.Equals(input.Database))
-                ) && 
-                (
-                    this.Tables == input.Tables ||
-                    this.Tables != null &&
-                    input.Tables != null &&
-                    this.Tables.SequenceEqual(input.Tables)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Database != null)
-                    hashCode = hashCode * 59 + this.Database.GetHashCode();
-                if (this.Tables != null)
-                    hashCode = hashCode * 59 + this.Tables.GetHashCode();
+                var hashCode = 41;
+                if (this.Database != null) hashCode = hashCode * 59 + this.Database.GetHashCode();
+                if (this.Tables != null) hashCode = hashCode * 59 + this.Tables.GetHashCode();
                 return hashCode;
             }
         }

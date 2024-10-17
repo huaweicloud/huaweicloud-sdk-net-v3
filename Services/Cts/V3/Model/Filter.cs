@@ -177,26 +177,12 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         /// </summary>
         public bool Equals(Filter input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Condition != input.Condition) return false;
+            if (this.IsSupportFilter != input.IsSupportFilter || (this.IsSupportFilter != null && !this.IsSupportFilter.Equals(input.IsSupportFilter))) return false;
+            if (this.Rule != input.Rule || (this.Rule != null && input.Rule != null && !this.Rule.SequenceEqual(input.Rule))) return false;
 
-            return 
-                (
-                    this.Condition == input.Condition ||
-                    (this.Condition != null &&
-                    this.Condition.Equals(input.Condition))
-                ) && 
-                (
-                    this.IsSupportFilter == input.IsSupportFilter ||
-                    (this.IsSupportFilter != null &&
-                    this.IsSupportFilter.Equals(input.IsSupportFilter))
-                ) && 
-                (
-                    this.Rule == input.Rule ||
-                    this.Rule != null &&
-                    input.Rule != null &&
-                    this.Rule.SequenceEqual(input.Rule)
-                );
+            return true;
         }
 
         /// <summary>
@@ -206,13 +192,10 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Condition != null)
-                    hashCode = hashCode * 59 + this.Condition.GetHashCode();
-                if (this.IsSupportFilter != null)
-                    hashCode = hashCode * 59 + this.IsSupportFilter.GetHashCode();
-                if (this.Rule != null)
-                    hashCode = hashCode * 59 + this.Rule.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Condition.GetHashCode();
+                if (this.IsSupportFilter != null) hashCode = hashCode * 59 + this.IsSupportFilter.GetHashCode();
+                if (this.Rule != null) hashCode = hashCode * 59 + this.Rule.GetHashCode();
                 return hashCode;
             }
         }

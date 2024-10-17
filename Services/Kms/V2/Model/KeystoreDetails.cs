@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         /// </summary>
         public bool Equals(KeystoreDetails input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KeystoreId != input.KeystoreId || (this.KeystoreId != null && !this.KeystoreId.Equals(input.KeystoreId))) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.KeystoreAlias != input.KeystoreAlias || (this.KeystoreAlias != null && !this.KeystoreAlias.Equals(input.KeystoreAlias))) return false;
+            if (this.KeystoreType != input.KeystoreType || (this.KeystoreType != null && !this.KeystoreType.Equals(input.KeystoreType))) return false;
+            if (this.HsmClusterId != input.HsmClusterId || (this.HsmClusterId != null && !this.HsmClusterId.Equals(input.HsmClusterId))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
 
-            return 
-                (
-                    this.KeystoreId == input.KeystoreId ||
-                    (this.KeystoreId != null &&
-                    this.KeystoreId.Equals(input.KeystoreId))
-                ) && 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
-                    this.KeystoreAlias == input.KeystoreAlias ||
-                    (this.KeystoreAlias != null &&
-                    this.KeystoreAlias.Equals(input.KeystoreAlias))
-                ) && 
-                (
-                    this.KeystoreType == input.KeystoreType ||
-                    (this.KeystoreType != null &&
-                    this.KeystoreType.Equals(input.KeystoreType))
-                ) && 
-                (
-                    this.HsmClusterId == input.HsmClusterId ||
-                    (this.HsmClusterId != null &&
-                    this.HsmClusterId.Equals(input.HsmClusterId))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KeystoreId != null)
-                    hashCode = hashCode * 59 + this.KeystoreId.GetHashCode();
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.KeystoreAlias != null)
-                    hashCode = hashCode * 59 + this.KeystoreAlias.GetHashCode();
-                if (this.KeystoreType != null)
-                    hashCode = hashCode * 59 + this.KeystoreType.GetHashCode();
-                if (this.HsmClusterId != null)
-                    hashCode = hashCode * 59 + this.HsmClusterId.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                var hashCode = 41;
+                if (this.KeystoreId != null) hashCode = hashCode * 59 + this.KeystoreId.GetHashCode();
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.KeystoreAlias != null) hashCode = hashCode * 59 + this.KeystoreAlias.GetHashCode();
+                if (this.KeystoreType != null) hashCode = hashCode * 59 + this.KeystoreType.GetHashCode();
+                if (this.HsmClusterId != null) hashCode = hashCode * 59 + this.HsmClusterId.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 return hashCode;
             }
         }

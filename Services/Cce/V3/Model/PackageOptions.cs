@@ -198,40 +198,15 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(PackageOptions input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Default != input.Default || (this.Default != null && !this.Default.Equals(input.Default))) return false;
+            if (this.ValidAt != input.ValidAt) return false;
+            if (this.Empty != input.Empty || (this.Empty != null && !this.Empty.Equals(input.Empty))) return false;
+            if (this.Schema != input.Schema || (this.Schema != null && !this.Schema.Equals(input.Schema))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Default == input.Default ||
-                    (this.Default != null &&
-                    this.Default.Equals(input.Default))
-                ) && 
-                (
-                    this.ValidAt == input.ValidAt ||
-                    (this.ValidAt != null &&
-                    this.ValidAt.Equals(input.ValidAt))
-                ) && 
-                (
-                    this.Empty == input.Empty ||
-                    (this.Empty != null &&
-                    this.Empty.Equals(input.Empty))
-                ) && 
-                (
-                    this.Schema == input.Schema ||
-                    (this.Schema != null &&
-                    this.Schema.Equals(input.Schema))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                );
+            return true;
         }
 
         /// <summary>
@@ -241,19 +216,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Default != null)
-                    hashCode = hashCode * 59 + this.Default.GetHashCode();
-                if (this.ValidAt != null)
-                    hashCode = hashCode * 59 + this.ValidAt.GetHashCode();
-                if (this.Empty != null)
-                    hashCode = hashCode * 59 + this.Empty.GetHashCode();
-                if (this.Schema != null)
-                    hashCode = hashCode * 59 + this.Schema.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Default != null) hashCode = hashCode * 59 + this.Default.GetHashCode();
+                hashCode = hashCode * 59 + this.ValidAt.GetHashCode();
+                if (this.Empty != null) hashCode = hashCode * 59 + this.Empty.GetHashCode();
+                if (this.Schema != null) hashCode = hashCode * 59 + this.Schema.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

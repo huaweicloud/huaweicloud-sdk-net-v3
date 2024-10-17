@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(AgentRemovePathReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RemovePath != input.RemovePath || (this.RemovePath != null && input.RemovePath != null && !this.RemovePath.SequenceEqual(input.RemovePath))) return false;
 
-            return 
-                (
-                    this.RemovePath == input.RemovePath ||
-                    this.RemovePath != null &&
-                    input.RemovePath != null &&
-                    this.RemovePath.SequenceEqual(input.RemovePath)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RemovePath != null)
-                    hashCode = hashCode * 59 + this.RemovePath.GetHashCode();
+                var hashCode = 41;
+                if (this.RemovePath != null) hashCode = hashCode * 59 + this.RemovePath.GetHashCode();
                 return hashCode;
             }
         }

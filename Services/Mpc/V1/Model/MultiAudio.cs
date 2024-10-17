@@ -63,27 +63,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(MultiAudio input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TracksInfo != input.TracksInfo || (this.TracksInfo != null && input.TracksInfo != null && !this.TracksInfo.SequenceEqual(input.TracksInfo))) return false;
+            if (this.AudioFiles != input.AudioFiles || (this.AudioFiles != null && input.AudioFiles != null && !this.AudioFiles.SequenceEqual(input.AudioFiles))) return false;
+            if (this.DefaultLanguage != input.DefaultLanguage || (this.DefaultLanguage != null && !this.DefaultLanguage.Equals(input.DefaultLanguage))) return false;
 
-            return 
-                (
-                    this.TracksInfo == input.TracksInfo ||
-                    this.TracksInfo != null &&
-                    input.TracksInfo != null &&
-                    this.TracksInfo.SequenceEqual(input.TracksInfo)
-                ) && 
-                (
-                    this.AudioFiles == input.AudioFiles ||
-                    this.AudioFiles != null &&
-                    input.AudioFiles != null &&
-                    this.AudioFiles.SequenceEqual(input.AudioFiles)
-                ) && 
-                (
-                    this.DefaultLanguage == input.DefaultLanguage ||
-                    (this.DefaultLanguage != null &&
-                    this.DefaultLanguage.Equals(input.DefaultLanguage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +78,10 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TracksInfo != null)
-                    hashCode = hashCode * 59 + this.TracksInfo.GetHashCode();
-                if (this.AudioFiles != null)
-                    hashCode = hashCode * 59 + this.AudioFiles.GetHashCode();
-                if (this.DefaultLanguage != null)
-                    hashCode = hashCode * 59 + this.DefaultLanguage.GetHashCode();
+                var hashCode = 41;
+                if (this.TracksInfo != null) hashCode = hashCode * 59 + this.TracksInfo.GetHashCode();
+                if (this.AudioFiles != null) hashCode = hashCode * 59 + this.AudioFiles.GetHashCode();
+                if (this.DefaultLanguage != null) hashCode = hashCode * 59 + this.DefaultLanguage.GetHashCode();
                 return hashCode;
             }
         }

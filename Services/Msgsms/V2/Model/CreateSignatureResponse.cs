@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         /// </summary>
         public bool Equals(CreateSignatureResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.SignatureId != input.SignatureId || (this.SignatureId != null && !this.SignatureId.Equals(input.SignatureId))) return false;
+            if (this.SignatureName != input.SignatureName || (this.SignatureName != null && !this.SignatureName.Equals(input.SignatureName))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.SignatureId == input.SignatureId ||
-                    (this.SignatureId != null &&
-                    this.SignatureId.Equals(input.SignatureId))
-                ) && 
-                (
-                    this.SignatureName == input.SignatureName ||
-                    (this.SignatureName != null &&
-                    this.SignatureName.Equals(input.SignatureName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.SignatureId != null)
-                    hashCode = hashCode * 59 + this.SignatureId.GetHashCode();
-                if (this.SignatureName != null)
-                    hashCode = hashCode * 59 + this.SignatureName.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.SignatureId != null) hashCode = hashCode * 59 + this.SignatureId.GetHashCode();
+                if (this.SignatureName != null) hashCode = hashCode * 59 + this.SignatureName.GetHashCode();
                 return hashCode;
             }
         }

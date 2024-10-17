@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(DataBaseInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DatabaseName != input.DatabaseName || (this.DatabaseName != null && !this.DatabaseName.Equals(input.DatabaseName))) return false;
+            if (this.DbConfigCheckResults != input.DbConfigCheckResults || (this.DbConfigCheckResults != null && input.DbConfigCheckResults != null && !this.DbConfigCheckResults.SequenceEqual(input.DbConfigCheckResults))) return false;
 
-            return 
-                (
-                    this.DatabaseName == input.DatabaseName ||
-                    (this.DatabaseName != null &&
-                    this.DatabaseName.Equals(input.DatabaseName))
-                ) && 
-                (
-                    this.DbConfigCheckResults == input.DbConfigCheckResults ||
-                    this.DbConfigCheckResults != null &&
-                    input.DbConfigCheckResults != null &&
-                    this.DbConfigCheckResults.SequenceEqual(input.DbConfigCheckResults)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DatabaseName != null)
-                    hashCode = hashCode * 59 + this.DatabaseName.GetHashCode();
-                if (this.DbConfigCheckResults != null)
-                    hashCode = hashCode * 59 + this.DbConfigCheckResults.GetHashCode();
+                var hashCode = 41;
+                if (this.DatabaseName != null) hashCode = hashCode * 59 + this.DatabaseName.GetHashCode();
+                if (this.DbConfigCheckResults != null) hashCode = hashCode * 59 + this.DbConfigCheckResults.GetHashCode();
                 return hashCode;
             }
         }

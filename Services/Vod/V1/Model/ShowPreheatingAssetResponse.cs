@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(ShowPreheatingAssetResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PreheatingResults != input.PreheatingResults || (this.PreheatingResults != null && input.PreheatingResults != null && !this.PreheatingResults.SequenceEqual(input.PreheatingResults))) return false;
 
-            return 
-                (
-                    this.PreheatingResults == input.PreheatingResults ||
-                    this.PreheatingResults != null &&
-                    input.PreheatingResults != null &&
-                    this.PreheatingResults.SequenceEqual(input.PreheatingResults)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PreheatingResults != null)
-                    hashCode = hashCode * 59 + this.PreheatingResults.GetHashCode();
+                var hashCode = 41;
+                if (this.PreheatingResults != null) hashCode = hashCode * 59 + this.PreheatingResults.GetHashCode();
                 return hashCode;
             }
         }

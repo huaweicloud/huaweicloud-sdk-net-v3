@@ -91,47 +91,16 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(AomMappingRuleInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClusterId != input.ClusterId || (this.ClusterId != null && !this.ClusterId.Equals(input.ClusterId))) return false;
+            if (this.ClusterName != input.ClusterName || (this.ClusterName != null && !this.ClusterName.Equals(input.ClusterName))) return false;
+            if (this.DeploymentsPrefix != input.DeploymentsPrefix || (this.DeploymentsPrefix != null && !this.DeploymentsPrefix.Equals(input.DeploymentsPrefix))) return false;
+            if (this.Deployments != input.Deployments || (this.Deployments != null && input.Deployments != null && !this.Deployments.SequenceEqual(input.Deployments))) return false;
+            if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
+            if (this.ContainerName != input.ContainerName || (this.ContainerName != null && !this.ContainerName.Equals(input.ContainerName))) return false;
+            if (this.Files != input.Files || (this.Files != null && input.Files != null && !this.Files.SequenceEqual(input.Files))) return false;
 
-            return 
-                (
-                    this.ClusterId == input.ClusterId ||
-                    (this.ClusterId != null &&
-                    this.ClusterId.Equals(input.ClusterId))
-                ) && 
-                (
-                    this.ClusterName == input.ClusterName ||
-                    (this.ClusterName != null &&
-                    this.ClusterName.Equals(input.ClusterName))
-                ) && 
-                (
-                    this.DeploymentsPrefix == input.DeploymentsPrefix ||
-                    (this.DeploymentsPrefix != null &&
-                    this.DeploymentsPrefix.Equals(input.DeploymentsPrefix))
-                ) && 
-                (
-                    this.Deployments == input.Deployments ||
-                    this.Deployments != null &&
-                    input.Deployments != null &&
-                    this.Deployments.SequenceEqual(input.Deployments)
-                ) && 
-                (
-                    this.Namespace == input.Namespace ||
-                    (this.Namespace != null &&
-                    this.Namespace.Equals(input.Namespace))
-                ) && 
-                (
-                    this.ContainerName == input.ContainerName ||
-                    (this.ContainerName != null &&
-                    this.ContainerName.Equals(input.ContainerName))
-                ) && 
-                (
-                    this.Files == input.Files ||
-                    this.Files != null &&
-                    input.Files != null &&
-                    this.Files.SequenceEqual(input.Files)
-                );
+            return true;
         }
 
         /// <summary>
@@ -141,21 +110,14 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClusterId != null)
-                    hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
-                if (this.ClusterName != null)
-                    hashCode = hashCode * 59 + this.ClusterName.GetHashCode();
-                if (this.DeploymentsPrefix != null)
-                    hashCode = hashCode * 59 + this.DeploymentsPrefix.GetHashCode();
-                if (this.Deployments != null)
-                    hashCode = hashCode * 59 + this.Deployments.GetHashCode();
-                if (this.Namespace != null)
-                    hashCode = hashCode * 59 + this.Namespace.GetHashCode();
-                if (this.ContainerName != null)
-                    hashCode = hashCode * 59 + this.ContainerName.GetHashCode();
-                if (this.Files != null)
-                    hashCode = hashCode * 59 + this.Files.GetHashCode();
+                var hashCode = 41;
+                if (this.ClusterId != null) hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
+                if (this.ClusterName != null) hashCode = hashCode * 59 + this.ClusterName.GetHashCode();
+                if (this.DeploymentsPrefix != null) hashCode = hashCode * 59 + this.DeploymentsPrefix.GetHashCode();
+                if (this.Deployments != null) hashCode = hashCode * 59 + this.Deployments.GetHashCode();
+                if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.ContainerName != null) hashCode = hashCode * 59 + this.ContainerName.GetHashCode();
+                if (this.Files != null) hashCode = hashCode * 59 + this.Files.GetHashCode();
                 return hashCode;
             }
         }

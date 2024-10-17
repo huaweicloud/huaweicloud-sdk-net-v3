@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(NeutronListSecurityGroupRulesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SecurityGroupRules != input.SecurityGroupRules || (this.SecurityGroupRules != null && input.SecurityGroupRules != null && !this.SecurityGroupRules.SequenceEqual(input.SecurityGroupRules))) return false;
+            if (this.SecurityGroupRulesLinks != input.SecurityGroupRulesLinks || (this.SecurityGroupRulesLinks != null && input.SecurityGroupRulesLinks != null && !this.SecurityGroupRulesLinks.SequenceEqual(input.SecurityGroupRulesLinks))) return false;
 
-            return 
-                (
-                    this.SecurityGroupRules == input.SecurityGroupRules ||
-                    this.SecurityGroupRules != null &&
-                    input.SecurityGroupRules != null &&
-                    this.SecurityGroupRules.SequenceEqual(input.SecurityGroupRules)
-                ) && 
-                (
-                    this.SecurityGroupRulesLinks == input.SecurityGroupRulesLinks ||
-                    this.SecurityGroupRulesLinks != null &&
-                    input.SecurityGroupRulesLinks != null &&
-                    this.SecurityGroupRulesLinks.SequenceEqual(input.SecurityGroupRulesLinks)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SecurityGroupRules != null)
-                    hashCode = hashCode * 59 + this.SecurityGroupRules.GetHashCode();
-                if (this.SecurityGroupRulesLinks != null)
-                    hashCode = hashCode * 59 + this.SecurityGroupRulesLinks.GetHashCode();
+                var hashCode = 41;
+                if (this.SecurityGroupRules != null) hashCode = hashCode * 59 + this.SecurityGroupRules.GetHashCode();
+                if (this.SecurityGroupRulesLinks != null) hashCode = hashCode * 59 + this.SecurityGroupRulesLinks.GetHashCode();
                 return hashCode;
             }
         }

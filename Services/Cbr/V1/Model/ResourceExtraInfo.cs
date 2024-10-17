@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(ResourceExtraInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ExcludeVolumes != input.ExcludeVolumes || (this.ExcludeVolumes != null && input.ExcludeVolumes != null && !this.ExcludeVolumes.SequenceEqual(input.ExcludeVolumes))) return false;
+            if (this.IncludeVolumes != input.IncludeVolumes || (this.IncludeVolumes != null && input.IncludeVolumes != null && !this.IncludeVolumes.SequenceEqual(input.IncludeVolumes))) return false;
 
-            return 
-                (
-                    this.ExcludeVolumes == input.ExcludeVolumes ||
-                    this.ExcludeVolumes != null &&
-                    input.ExcludeVolumes != null &&
-                    this.ExcludeVolumes.SequenceEqual(input.ExcludeVolumes)
-                ) && 
-                (
-                    this.IncludeVolumes == input.IncludeVolumes ||
-                    this.IncludeVolumes != null &&
-                    input.IncludeVolumes != null &&
-                    this.IncludeVolumes.SequenceEqual(input.IncludeVolumes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ExcludeVolumes != null)
-                    hashCode = hashCode * 59 + this.ExcludeVolumes.GetHashCode();
-                if (this.IncludeVolumes != null)
-                    hashCode = hashCode * 59 + this.IncludeVolumes.GetHashCode();
+                var hashCode = 41;
+                if (this.ExcludeVolumes != null) hashCode = hashCode * 59 + this.ExcludeVolumes.GetHashCode();
+                if (this.IncludeVolumes != null) hashCode = hashCode * 59 + this.IncludeVolumes.GetHashCode();
                 return hashCode;
             }
         }

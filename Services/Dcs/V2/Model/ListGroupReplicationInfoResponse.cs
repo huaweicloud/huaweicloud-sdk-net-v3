@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ListGroupReplicationInfoResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.GroupList != input.GroupList || (this.GroupList != null && input.GroupList != null && !this.GroupList.SequenceEqual(input.GroupList))) return false;
+            if (this.GroupCount != input.GroupCount || (this.GroupCount != null && !this.GroupCount.Equals(input.GroupCount))) return false;
 
-            return 
-                (
-                    this.GroupList == input.GroupList ||
-                    this.GroupList != null &&
-                    input.GroupList != null &&
-                    this.GroupList.SequenceEqual(input.GroupList)
-                ) && 
-                (
-                    this.GroupCount == input.GroupCount ||
-                    (this.GroupCount != null &&
-                    this.GroupCount.Equals(input.GroupCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.GroupList != null)
-                    hashCode = hashCode * 59 + this.GroupList.GetHashCode();
-                if (this.GroupCount != null)
-                    hashCode = hashCode * 59 + this.GroupCount.GetHashCode();
+                var hashCode = 41;
+                if (this.GroupList != null) hashCode = hashCode * 59 + this.GroupList.GetHashCode();
+                if (this.GroupCount != null) hashCode = hashCode * 59 + this.GroupCount.GetHashCode();
                 return hashCode;
             }
         }

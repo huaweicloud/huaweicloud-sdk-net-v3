@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(UpdateExpireAutoScanConfigResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.EnableAutoScan != input.EnableAutoScan || (this.EnableAutoScan != null && !this.EnableAutoScan.Equals(input.EnableAutoScan))) return false;
+            if (this.FirstScanAt != input.FirstScanAt || (this.FirstScanAt != null && !this.FirstScanAt.Equals(input.FirstScanAt))) return false;
+            if (this.Interval != input.Interval || (this.Interval != null && !this.Interval.Equals(input.Interval))) return false;
+            if (this.Timeout != input.Timeout || (this.Timeout != null && !this.Timeout.Equals(input.Timeout))) return false;
+            if (this.ScanKeysCount != input.ScanKeysCount || (this.ScanKeysCount != null && !this.ScanKeysCount.Equals(input.ScanKeysCount))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.EnableAutoScan == input.EnableAutoScan ||
-                    (this.EnableAutoScan != null &&
-                    this.EnableAutoScan.Equals(input.EnableAutoScan))
-                ) && 
-                (
-                    this.FirstScanAt == input.FirstScanAt ||
-                    (this.FirstScanAt != null &&
-                    this.FirstScanAt.Equals(input.FirstScanAt))
-                ) && 
-                (
-                    this.Interval == input.Interval ||
-                    (this.Interval != null &&
-                    this.Interval.Equals(input.Interval))
-                ) && 
-                (
-                    this.Timeout == input.Timeout ||
-                    (this.Timeout != null &&
-                    this.Timeout.Equals(input.Timeout))
-                ) && 
-                (
-                    this.ScanKeysCount == input.ScanKeysCount ||
-                    (this.ScanKeysCount != null &&
-                    this.ScanKeysCount.Equals(input.ScanKeysCount))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.EnableAutoScan != null)
-                    hashCode = hashCode * 59 + this.EnableAutoScan.GetHashCode();
-                if (this.FirstScanAt != null)
-                    hashCode = hashCode * 59 + this.FirstScanAt.GetHashCode();
-                if (this.Interval != null)
-                    hashCode = hashCode * 59 + this.Interval.GetHashCode();
-                if (this.Timeout != null)
-                    hashCode = hashCode * 59 + this.Timeout.GetHashCode();
-                if (this.ScanKeysCount != null)
-                    hashCode = hashCode * 59 + this.ScanKeysCount.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.EnableAutoScan != null) hashCode = hashCode * 59 + this.EnableAutoScan.GetHashCode();
+                if (this.FirstScanAt != null) hashCode = hashCode * 59 + this.FirstScanAt.GetHashCode();
+                if (this.Interval != null) hashCode = hashCode * 59 + this.Interval.GetHashCode();
+                if (this.Timeout != null) hashCode = hashCode * 59 + this.Timeout.GetHashCode();
+                if (this.ScanKeysCount != null) hashCode = hashCode * 59 + this.ScanKeysCount.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 return hashCode;
             }
         }

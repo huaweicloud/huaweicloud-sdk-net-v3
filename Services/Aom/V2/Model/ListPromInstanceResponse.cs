@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(ListPromInstanceResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Prometheus != input.Prometheus || (this.Prometheus != null && input.Prometheus != null && !this.Prometheus.SequenceEqual(input.Prometheus))) return false;
 
-            return 
-                (
-                    this.Prometheus == input.Prometheus ||
-                    this.Prometheus != null &&
-                    input.Prometheus != null &&
-                    this.Prometheus.SequenceEqual(input.Prometheus)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Prometheus != null)
-                    hashCode = hashCode * 59 + this.Prometheus.GetHashCode();
+                var hashCode = 41;
+                if (this.Prometheus != null) hashCode = hashCode * 59 + this.Prometheus.GetHashCode();
                 return hashCode;
             }
         }

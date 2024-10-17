@@ -184,30 +184,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(CreateFirewallReqFlavor input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Version != input.Version) return false;
+            if (this.ExtendEipCount != input.ExtendEipCount || (this.ExtendEipCount != null && !this.ExtendEipCount.Equals(input.ExtendEipCount))) return false;
+            if (this.ExtendBandwidth != input.ExtendBandwidth || (this.ExtendBandwidth != null && !this.ExtendBandwidth.Equals(input.ExtendBandwidth))) return false;
+            if (this.ExtendVpcCount != input.ExtendVpcCount || (this.ExtendVpcCount != null && !this.ExtendVpcCount.Equals(input.ExtendVpcCount))) return false;
 
-            return 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.ExtendEipCount == input.ExtendEipCount ||
-                    (this.ExtendEipCount != null &&
-                    this.ExtendEipCount.Equals(input.ExtendEipCount))
-                ) && 
-                (
-                    this.ExtendBandwidth == input.ExtendBandwidth ||
-                    (this.ExtendBandwidth != null &&
-                    this.ExtendBandwidth.Equals(input.ExtendBandwidth))
-                ) && 
-                (
-                    this.ExtendVpcCount == input.ExtendVpcCount ||
-                    (this.ExtendVpcCount != null &&
-                    this.ExtendVpcCount.Equals(input.ExtendVpcCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -217,15 +200,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.ExtendEipCount != null)
-                    hashCode = hashCode * 59 + this.ExtendEipCount.GetHashCode();
-                if (this.ExtendBandwidth != null)
-                    hashCode = hashCode * 59 + this.ExtendBandwidth.GetHashCode();
-                if (this.ExtendVpcCount != null)
-                    hashCode = hashCode * 59 + this.ExtendVpcCount.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.ExtendEipCount != null) hashCode = hashCode * 59 + this.ExtendEipCount.GetHashCode();
+                if (this.ExtendBandwidth != null) hashCode = hashCode * 59 + this.ExtendBandwidth.GetHashCode();
+                if (this.ExtendVpcCount != null) hashCode = hashCode * 59 + this.ExtendVpcCount.GetHashCode();
                 return hashCode;
             }
         }

@@ -254,81 +254,23 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(QueryLtsLogParams input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.Labels != input.Labels || (this.Labels != null && input.Labels != null && !this.Labels.SequenceEqual(input.Labels))) return false;
+            if (this.IsCount != input.IsCount || (this.IsCount != null && !this.IsCount.Equals(input.IsCount))) return false;
+            if (this.Keywords != input.Keywords || (this.Keywords != null && !this.Keywords.Equals(input.Keywords))) return false;
+            if (this.LineNum != input.LineNum || (this.LineNum != null && !this.LineNum.Equals(input.LineNum))) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
+            if (this.IsDesc != input.IsDesc || (this.IsDesc != null && !this.IsDesc.Equals(input.IsDesc))) return false;
+            if (this.SearchType != input.SearchType) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Highlight != input.Highlight || (this.Highlight != null && !this.Highlight.Equals(input.Highlight))) return false;
+            if (this.IsIterative != input.IsIterative || (this.IsIterative != null && !this.IsIterative.Equals(input.IsIterative))) return false;
+            if (this.Query != input.Query || (this.Query != null && !this.Query.Equals(input.Query))) return false;
+            if (this.IsAnalysisQuery != input.IsAnalysisQuery || (this.IsAnalysisQuery != null && !this.IsAnalysisQuery.Equals(input.IsAnalysisQuery))) return false;
 
-            return 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.Labels == input.Labels ||
-                    this.Labels != null &&
-                    input.Labels != null &&
-                    this.Labels.SequenceEqual(input.Labels)
-                ) && 
-                (
-                    this.IsCount == input.IsCount ||
-                    (this.IsCount != null &&
-                    this.IsCount.Equals(input.IsCount))
-                ) && 
-                (
-                    this.Keywords == input.Keywords ||
-                    (this.Keywords != null &&
-                    this.Keywords.Equals(input.Keywords))
-                ) && 
-                (
-                    this.LineNum == input.LineNum ||
-                    (this.LineNum != null &&
-                    this.LineNum.Equals(input.LineNum))
-                ) && 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                ) && 
-                (
-                    this.IsDesc == input.IsDesc ||
-                    (this.IsDesc != null &&
-                    this.IsDesc.Equals(input.IsDesc))
-                ) && 
-                (
-                    this.SearchType == input.SearchType ||
-                    (this.SearchType != null &&
-                    this.SearchType.Equals(input.SearchType))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Highlight == input.Highlight ||
-                    (this.Highlight != null &&
-                    this.Highlight.Equals(input.Highlight))
-                ) && 
-                (
-                    this.IsIterative == input.IsIterative ||
-                    (this.IsIterative != null &&
-                    this.IsIterative.Equals(input.IsIterative))
-                ) && 
-                (
-                    this.Query == input.Query ||
-                    (this.Query != null &&
-                    this.Query.Equals(input.Query))
-                ) && 
-                (
-                    this.IsAnalysisQuery == input.IsAnalysisQuery ||
-                    (this.IsAnalysisQuery != null &&
-                    this.IsAnalysisQuery.Equals(input.IsAnalysisQuery))
-                );
+            return true;
         }
 
         /// <summary>
@@ -338,35 +280,21 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Labels != null)
-                    hashCode = hashCode * 59 + this.Labels.GetHashCode();
-                if (this.IsCount != null)
-                    hashCode = hashCode * 59 + this.IsCount.GetHashCode();
-                if (this.Keywords != null)
-                    hashCode = hashCode * 59 + this.Keywords.GetHashCode();
-                if (this.LineNum != null)
-                    hashCode = hashCode * 59 + this.LineNum.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.IsDesc != null)
-                    hashCode = hashCode * 59 + this.IsDesc.GetHashCode();
-                if (this.SearchType != null)
-                    hashCode = hashCode * 59 + this.SearchType.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Highlight != null)
-                    hashCode = hashCode * 59 + this.Highlight.GetHashCode();
-                if (this.IsIterative != null)
-                    hashCode = hashCode * 59 + this.IsIterative.GetHashCode();
-                if (this.Query != null)
-                    hashCode = hashCode * 59 + this.Query.GetHashCode();
-                if (this.IsAnalysisQuery != null)
-                    hashCode = hashCode * 59 + this.IsAnalysisQuery.GetHashCode();
+                var hashCode = 41;
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.Labels != null) hashCode = hashCode * 59 + this.Labels.GetHashCode();
+                if (this.IsCount != null) hashCode = hashCode * 59 + this.IsCount.GetHashCode();
+                if (this.Keywords != null) hashCode = hashCode * 59 + this.Keywords.GetHashCode();
+                if (this.LineNum != null) hashCode = hashCode * 59 + this.LineNum.GetHashCode();
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
+                if (this.IsDesc != null) hashCode = hashCode * 59 + this.IsDesc.GetHashCode();
+                hashCode = hashCode * 59 + this.SearchType.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Highlight != null) hashCode = hashCode * 59 + this.Highlight.GetHashCode();
+                if (this.IsIterative != null) hashCode = hashCode * 59 + this.IsIterative.GetHashCode();
+                if (this.Query != null) hashCode = hashCode * 59 + this.Query.GetHashCode();
+                if (this.IsAnalysisQuery != null) hashCode = hashCode * 59 + this.IsAnalysisQuery.GetHashCode();
                 return hashCode;
             }
         }

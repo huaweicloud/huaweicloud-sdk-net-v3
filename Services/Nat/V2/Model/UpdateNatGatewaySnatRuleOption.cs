@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// </summary>
         public bool Equals(UpdateNatGatewaySnatRuleOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NatGatewayId != input.NatGatewayId || (this.NatGatewayId != null && !this.NatGatewayId.Equals(input.NatGatewayId))) return false;
+            if (this.PublicIpAddress != input.PublicIpAddress || (this.PublicIpAddress != null && !this.PublicIpAddress.Equals(input.PublicIpAddress))) return false;
+            if (this.GlobalEipId != input.GlobalEipId || (this.GlobalEipId != null && !this.GlobalEipId.Equals(input.GlobalEipId))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
 
-            return 
-                (
-                    this.NatGatewayId == input.NatGatewayId ||
-                    (this.NatGatewayId != null &&
-                    this.NatGatewayId.Equals(input.NatGatewayId))
-                ) && 
-                (
-                    this.PublicIpAddress == input.PublicIpAddress ||
-                    (this.PublicIpAddress != null &&
-                    this.PublicIpAddress.Equals(input.PublicIpAddress))
-                ) && 
-                (
-                    this.GlobalEipId == input.GlobalEipId ||
-                    (this.GlobalEipId != null &&
-                    this.GlobalEipId.Equals(input.GlobalEipId))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NatGatewayId != null)
-                    hashCode = hashCode * 59 + this.NatGatewayId.GetHashCode();
-                if (this.PublicIpAddress != null)
-                    hashCode = hashCode * 59 + this.PublicIpAddress.GetHashCode();
-                if (this.GlobalEipId != null)
-                    hashCode = hashCode * 59 + this.GlobalEipId.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                var hashCode = 41;
+                if (this.NatGatewayId != null) hashCode = hashCode * 59 + this.NatGatewayId.GetHashCode();
+                if (this.PublicIpAddress != null) hashCode = hashCode * 59 + this.PublicIpAddress.GetHashCode();
+                if (this.GlobalEipId != null) hashCode = hashCode * 59 + this.GlobalEipId.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

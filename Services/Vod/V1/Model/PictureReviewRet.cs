@@ -204,43 +204,15 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(PictureReviewRet input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Suggestion != input.Suggestion) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.Politics != input.Politics || (this.Politics != null && input.Politics != null && !this.Politics.SequenceEqual(input.Politics))) return false;
+            if (this.Terrorism != input.Terrorism || (this.Terrorism != null && input.Terrorism != null && !this.Terrorism.SequenceEqual(input.Terrorism))) return false;
+            if (this.Porn != input.Porn || (this.Porn != null && input.Porn != null && !this.Porn.SequenceEqual(input.Porn))) return false;
 
-            return 
-                (
-                    this.Suggestion == input.Suggestion ||
-                    (this.Suggestion != null &&
-                    this.Suggestion.Equals(input.Suggestion))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.Politics == input.Politics ||
-                    this.Politics != null &&
-                    input.Politics != null &&
-                    this.Politics.SequenceEqual(input.Politics)
-                ) && 
-                (
-                    this.Terrorism == input.Terrorism ||
-                    this.Terrorism != null &&
-                    input.Terrorism != null &&
-                    this.Terrorism.SequenceEqual(input.Terrorism)
-                ) && 
-                (
-                    this.Porn == input.Porn ||
-                    this.Porn != null &&
-                    input.Porn != null &&
-                    this.Porn.SequenceEqual(input.Porn)
-                );
+            return true;
         }
 
         /// <summary>
@@ -250,19 +222,13 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Suggestion != null)
-                    hashCode = hashCode * 59 + this.Suggestion.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.Politics != null)
-                    hashCode = hashCode * 59 + this.Politics.GetHashCode();
-                if (this.Terrorism != null)
-                    hashCode = hashCode * 59 + this.Terrorism.GetHashCode();
-                if (this.Porn != null)
-                    hashCode = hashCode * 59 + this.Porn.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Suggestion.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.Politics != null) hashCode = hashCode * 59 + this.Politics.GetHashCode();
+                if (this.Terrorism != null) hashCode = hashCode * 59 + this.Terrorism.GetHashCode();
+                if (this.Porn != null) hashCode = hashCode * 59 + this.Porn.GetHashCode();
                 return hashCode;
             }
         }

@@ -350,50 +350,17 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(CreateRedirectUrlConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Protocol != input.Protocol) return false;
+            if (this.Host != input.Host || (this.Host != null && !this.Host.Equals(input.Host))) return false;
+            if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
+            if (this.Path != input.Path || (this.Path != null && !this.Path.Equals(input.Path))) return false;
+            if (this.Query != input.Query || (this.Query != null && !this.Query.Equals(input.Query))) return false;
+            if (this.StatusCode != input.StatusCode) return false;
+            if (this.InsertHeadersConfig != input.InsertHeadersConfig || (this.InsertHeadersConfig != null && !this.InsertHeadersConfig.Equals(input.InsertHeadersConfig))) return false;
+            if (this.RemoveHeadersConfig != input.RemoveHeadersConfig || (this.RemoveHeadersConfig != null && !this.RemoveHeadersConfig.Equals(input.RemoveHeadersConfig))) return false;
 
-            return 
-                (
-                    this.Protocol == input.Protocol ||
-                    (this.Protocol != null &&
-                    this.Protocol.Equals(input.Protocol))
-                ) && 
-                (
-                    this.Host == input.Host ||
-                    (this.Host != null &&
-                    this.Host.Equals(input.Host))
-                ) && 
-                (
-                    this.Port == input.Port ||
-                    (this.Port != null &&
-                    this.Port.Equals(input.Port))
-                ) && 
-                (
-                    this.Path == input.Path ||
-                    (this.Path != null &&
-                    this.Path.Equals(input.Path))
-                ) && 
-                (
-                    this.Query == input.Query ||
-                    (this.Query != null &&
-                    this.Query.Equals(input.Query))
-                ) && 
-                (
-                    this.StatusCode == input.StatusCode ||
-                    (this.StatusCode != null &&
-                    this.StatusCode.Equals(input.StatusCode))
-                ) && 
-                (
-                    this.InsertHeadersConfig == input.InsertHeadersConfig ||
-                    (this.InsertHeadersConfig != null &&
-                    this.InsertHeadersConfig.Equals(input.InsertHeadersConfig))
-                ) && 
-                (
-                    this.RemoveHeadersConfig == input.RemoveHeadersConfig ||
-                    (this.RemoveHeadersConfig != null &&
-                    this.RemoveHeadersConfig.Equals(input.RemoveHeadersConfig))
-                );
+            return true;
         }
 
         /// <summary>
@@ -403,23 +370,15 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
-                if (this.Host != null)
-                    hashCode = hashCode * 59 + this.Host.GetHashCode();
-                if (this.Port != null)
-                    hashCode = hashCode * 59 + this.Port.GetHashCode();
-                if (this.Path != null)
-                    hashCode = hashCode * 59 + this.Path.GetHashCode();
-                if (this.Query != null)
-                    hashCode = hashCode * 59 + this.Query.GetHashCode();
-                if (this.StatusCode != null)
-                    hashCode = hashCode * 59 + this.StatusCode.GetHashCode();
-                if (this.InsertHeadersConfig != null)
-                    hashCode = hashCode * 59 + this.InsertHeadersConfig.GetHashCode();
-                if (this.RemoveHeadersConfig != null)
-                    hashCode = hashCode * 59 + this.RemoveHeadersConfig.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.Host != null) hashCode = hashCode * 59 + this.Host.GetHashCode();
+                if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
+                if (this.Path != null) hashCode = hashCode * 59 + this.Path.GetHashCode();
+                if (this.Query != null) hashCode = hashCode * 59 + this.Query.GetHashCode();
+                hashCode = hashCode * 59 + this.StatusCode.GetHashCode();
+                if (this.InsertHeadersConfig != null) hashCode = hashCode * 59 + this.InsertHeadersConfig.GetHashCode();
+                if (this.RemoveHeadersConfig != null) hashCode = hashCode * 59 + this.RemoveHeadersConfig.GetHashCode();
                 return hashCode;
             }
         }

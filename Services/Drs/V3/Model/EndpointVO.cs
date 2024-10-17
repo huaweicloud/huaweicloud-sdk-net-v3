@@ -708,190 +708,45 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(EndpointVO input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.ObjId != input.ObjId || (this.ObjId != null && !this.ObjId.Equals(input.ObjId))) return false;
+            if (this.InstanceName != input.InstanceName || (this.InstanceName != null && !this.InstanceName.Equals(input.InstanceName))) return false;
+            if (this.DbType != input.DbType) return false;
+            if (this.DbUser != input.DbUser || (this.DbUser != null && !this.DbUser.Equals(input.DbUser))) return false;
+            if (this.DbPassword != input.DbPassword || (this.DbPassword != null && !this.DbPassword.Equals(input.DbPassword))) return false;
+            if (this.ManageIp != input.ManageIp || (this.ManageIp != null && !this.ManageIp.Equals(input.ManageIp))) return false;
+            if (this.TrafficIp != input.TrafficIp || (this.TrafficIp != null && !this.TrafficIp.Equals(input.TrafficIp))) return false;
+            if (this.DbPort != input.DbPort || (this.DbPort != null && !this.DbPort.Equals(input.DbPort))) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
+            if (this.PublicIp != input.PublicIp || (this.PublicIp != null && !this.PublicIp.Equals(input.PublicIp))) return false;
+            if (this.AzCode != input.AzCode || (this.AzCode != null && !this.AzCode.Equals(input.AzCode))) return false;
+            if (this.SecurityGroupId != input.SecurityGroupId || (this.SecurityGroupId != null && !this.SecurityGroupId.Equals(input.SecurityGroupId))) return false;
+            if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
+            if (this.VolumeSize != input.VolumeSize || (this.VolumeSize != null && !this.VolumeSize.Equals(input.VolumeSize))) return false;
+            if (this.FullTransUserPwd != input.FullTransUserPwd || (this.FullTransUserPwd != null && !this.FullTransUserPwd.Equals(input.FullTransUserPwd))) return false;
+            if (this.IncrementTransUserPwd != input.IncrementTransUserPwd || (this.IncrementTransUserPwd != null && !this.IncrementTransUserPwd.Equals(input.IncrementTransUserPwd))) return false;
+            if (this.SslLink != input.SslLink || (this.SslLink != null && !this.SslLink.Equals(input.SslLink))) return false;
+            if (this.SslCertKey != input.SslCertKey || (this.SslCertKey != null && !this.SslCertKey.Equals(input.SslCertKey))) return false;
+            if (this.SslCertName != input.SslCertName || (this.SslCertName != null && !this.SslCertName.Equals(input.SslCertName))) return false;
+            if (this.SslCertCheckSum != input.SslCertCheckSum || (this.SslCertCheckSum != null && !this.SslCertCheckSum.Equals(input.SslCertCheckSum))) return false;
+            if (this.SslCertPassword != input.SslCertPassword || (this.SslCertPassword != null && !this.SslCertPassword.Equals(input.SslCertPassword))) return false;
+            if (this.DbVersion != input.DbVersion || (this.DbVersion != null && !this.DbVersion.Equals(input.DbVersion))) return false;
+            if (this.MongoHaMode != input.MongoHaMode) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.ClusterMode != input.ClusterMode) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.DbName != input.DbName || (this.DbName != null && !this.DbName.Equals(input.DbName))) return false;
+            if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;
+            if (this.SafeMode != input.SafeMode || (this.SafeMode != null && !this.SafeMode.Equals(input.SafeMode))) return false;
+            if (this.KerberosVo != input.KerberosVo || (this.KerberosVo != null && !this.KerberosVo.Equals(input.KerberosVo))) return false;
+            if (this.MultiWriteDbId != input.MultiWriteDbId || (this.MultiWriteDbId != null && !this.MultiWriteDbId.Equals(input.MultiWriteDbId))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.ObjId == input.ObjId ||
-                    (this.ObjId != null &&
-                    this.ObjId.Equals(input.ObjId))
-                ) && 
-                (
-                    this.InstanceName == input.InstanceName ||
-                    (this.InstanceName != null &&
-                    this.InstanceName.Equals(input.InstanceName))
-                ) && 
-                (
-                    this.DbType == input.DbType ||
-                    (this.DbType != null &&
-                    this.DbType.Equals(input.DbType))
-                ) && 
-                (
-                    this.DbUser == input.DbUser ||
-                    (this.DbUser != null &&
-                    this.DbUser.Equals(input.DbUser))
-                ) && 
-                (
-                    this.DbPassword == input.DbPassword ||
-                    (this.DbPassword != null &&
-                    this.DbPassword.Equals(input.DbPassword))
-                ) && 
-                (
-                    this.ManageIp == input.ManageIp ||
-                    (this.ManageIp != null &&
-                    this.ManageIp.Equals(input.ManageIp))
-                ) && 
-                (
-                    this.TrafficIp == input.TrafficIp ||
-                    (this.TrafficIp != null &&
-                    this.TrafficIp.Equals(input.TrafficIp))
-                ) && 
-                (
-                    this.DbPort == input.DbPort ||
-                    (this.DbPort != null &&
-                    this.DbPort.Equals(input.DbPort))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                ) && 
-                (
-                    this.PublicIp == input.PublicIp ||
-                    (this.PublicIp != null &&
-                    this.PublicIp.Equals(input.PublicIp))
-                ) && 
-                (
-                    this.AzCode == input.AzCode ||
-                    (this.AzCode != null &&
-                    this.AzCode.Equals(input.AzCode))
-                ) && 
-                (
-                    this.SecurityGroupId == input.SecurityGroupId ||
-                    (this.SecurityGroupId != null &&
-                    this.SecurityGroupId.Equals(input.SecurityGroupId))
-                ) && 
-                (
-                    this.SubnetId == input.SubnetId ||
-                    (this.SubnetId != null &&
-                    this.SubnetId.Equals(input.SubnetId))
-                ) && 
-                (
-                    this.VpcId == input.VpcId ||
-                    (this.VpcId != null &&
-                    this.VpcId.Equals(input.VpcId))
-                ) && 
-                (
-                    this.VolumeSize == input.VolumeSize ||
-                    (this.VolumeSize != null &&
-                    this.VolumeSize.Equals(input.VolumeSize))
-                ) && 
-                (
-                    this.FullTransUserPwd == input.FullTransUserPwd ||
-                    (this.FullTransUserPwd != null &&
-                    this.FullTransUserPwd.Equals(input.FullTransUserPwd))
-                ) && 
-                (
-                    this.IncrementTransUserPwd == input.IncrementTransUserPwd ||
-                    (this.IncrementTransUserPwd != null &&
-                    this.IncrementTransUserPwd.Equals(input.IncrementTransUserPwd))
-                ) && 
-                (
-                    this.SslLink == input.SslLink ||
-                    (this.SslLink != null &&
-                    this.SslLink.Equals(input.SslLink))
-                ) && 
-                (
-                    this.SslCertKey == input.SslCertKey ||
-                    (this.SslCertKey != null &&
-                    this.SslCertKey.Equals(input.SslCertKey))
-                ) && 
-                (
-                    this.SslCertName == input.SslCertName ||
-                    (this.SslCertName != null &&
-                    this.SslCertName.Equals(input.SslCertName))
-                ) && 
-                (
-                    this.SslCertCheckSum == input.SslCertCheckSum ||
-                    (this.SslCertCheckSum != null &&
-                    this.SslCertCheckSum.Equals(input.SslCertCheckSum))
-                ) && 
-                (
-                    this.SslCertPassword == input.SslCertPassword ||
-                    (this.SslCertPassword != null &&
-                    this.SslCertPassword.Equals(input.SslCertPassword))
-                ) && 
-                (
-                    this.DbVersion == input.DbVersion ||
-                    (this.DbVersion != null &&
-                    this.DbVersion.Equals(input.DbVersion))
-                ) && 
-                (
-                    this.MongoHaMode == input.MongoHaMode ||
-                    (this.MongoHaMode != null &&
-                    this.MongoHaMode.Equals(input.MongoHaMode))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.ClusterMode == input.ClusterMode ||
-                    (this.ClusterMode != null &&
-                    this.ClusterMode.Equals(input.ClusterMode))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.DbName == input.DbName ||
-                    (this.DbName != null &&
-                    this.DbName.Equals(input.DbName))
-                ) && 
-                (
-                    this.Topic == input.Topic ||
-                    (this.Topic != null &&
-                    this.Topic.Equals(input.Topic))
-                ) && 
-                (
-                    this.SafeMode == input.SafeMode ||
-                    (this.SafeMode != null &&
-                    this.SafeMode.Equals(input.SafeMode))
-                ) && 
-                (
-                    this.KerberosVo == input.KerberosVo ||
-                    (this.KerberosVo != null &&
-                    this.KerberosVo.Equals(input.KerberosVo))
-                ) && 
-                (
-                    this.MultiWriteDbId == input.MultiWriteDbId ||
-                    (this.MultiWriteDbId != null &&
-                    this.MultiWriteDbId.Equals(input.MultiWriteDbId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -901,79 +756,43 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.ObjId != null)
-                    hashCode = hashCode * 59 + this.ObjId.GetHashCode();
-                if (this.InstanceName != null)
-                    hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
-                if (this.DbType != null)
-                    hashCode = hashCode * 59 + this.DbType.GetHashCode();
-                if (this.DbUser != null)
-                    hashCode = hashCode * 59 + this.DbUser.GetHashCode();
-                if (this.DbPassword != null)
-                    hashCode = hashCode * 59 + this.DbPassword.GetHashCode();
-                if (this.ManageIp != null)
-                    hashCode = hashCode * 59 + this.ManageIp.GetHashCode();
-                if (this.TrafficIp != null)
-                    hashCode = hashCode * 59 + this.TrafficIp.GetHashCode();
-                if (this.DbPort != null)
-                    hashCode = hashCode * 59 + this.DbPort.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.PublicIp != null)
-                    hashCode = hashCode * 59 + this.PublicIp.GetHashCode();
-                if (this.AzCode != null)
-                    hashCode = hashCode * 59 + this.AzCode.GetHashCode();
-                if (this.SecurityGroupId != null)
-                    hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
-                if (this.SubnetId != null)
-                    hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.VolumeSize != null)
-                    hashCode = hashCode * 59 + this.VolumeSize.GetHashCode();
-                if (this.FullTransUserPwd != null)
-                    hashCode = hashCode * 59 + this.FullTransUserPwd.GetHashCode();
-                if (this.IncrementTransUserPwd != null)
-                    hashCode = hashCode * 59 + this.IncrementTransUserPwd.GetHashCode();
-                if (this.SslLink != null)
-                    hashCode = hashCode * 59 + this.SslLink.GetHashCode();
-                if (this.SslCertKey != null)
-                    hashCode = hashCode * 59 + this.SslCertKey.GetHashCode();
-                if (this.SslCertName != null)
-                    hashCode = hashCode * 59 + this.SslCertName.GetHashCode();
-                if (this.SslCertCheckSum != null)
-                    hashCode = hashCode * 59 + this.SslCertCheckSum.GetHashCode();
-                if (this.SslCertPassword != null)
-                    hashCode = hashCode * 59 + this.SslCertPassword.GetHashCode();
-                if (this.DbVersion != null)
-                    hashCode = hashCode * 59 + this.DbVersion.GetHashCode();
-                if (this.MongoHaMode != null)
-                    hashCode = hashCode * 59 + this.MongoHaMode.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.ClusterMode != null)
-                    hashCode = hashCode * 59 + this.ClusterMode.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.DbName != null)
-                    hashCode = hashCode * 59 + this.DbName.GetHashCode();
-                if (this.Topic != null)
-                    hashCode = hashCode * 59 + this.Topic.GetHashCode();
-                if (this.SafeMode != null)
-                    hashCode = hashCode * 59 + this.SafeMode.GetHashCode();
-                if (this.KerberosVo != null)
-                    hashCode = hashCode * 59 + this.KerberosVo.GetHashCode();
-                if (this.MultiWriteDbId != null)
-                    hashCode = hashCode * 59 + this.MultiWriteDbId.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.ObjId != null) hashCode = hashCode * 59 + this.ObjId.GetHashCode();
+                if (this.InstanceName != null) hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
+                hashCode = hashCode * 59 + this.DbType.GetHashCode();
+                if (this.DbUser != null) hashCode = hashCode * 59 + this.DbUser.GetHashCode();
+                if (this.DbPassword != null) hashCode = hashCode * 59 + this.DbPassword.GetHashCode();
+                if (this.ManageIp != null) hashCode = hashCode * 59 + this.ManageIp.GetHashCode();
+                if (this.TrafficIp != null) hashCode = hashCode * 59 + this.TrafficIp.GetHashCode();
+                if (this.DbPort != null) hashCode = hashCode * 59 + this.DbPort.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.PublicIp != null) hashCode = hashCode * 59 + this.PublicIp.GetHashCode();
+                if (this.AzCode != null) hashCode = hashCode * 59 + this.AzCode.GetHashCode();
+                if (this.SecurityGroupId != null) hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
+                if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.VolumeSize != null) hashCode = hashCode * 59 + this.VolumeSize.GetHashCode();
+                if (this.FullTransUserPwd != null) hashCode = hashCode * 59 + this.FullTransUserPwd.GetHashCode();
+                if (this.IncrementTransUserPwd != null) hashCode = hashCode * 59 + this.IncrementTransUserPwd.GetHashCode();
+                if (this.SslLink != null) hashCode = hashCode * 59 + this.SslLink.GetHashCode();
+                if (this.SslCertKey != null) hashCode = hashCode * 59 + this.SslCertKey.GetHashCode();
+                if (this.SslCertName != null) hashCode = hashCode * 59 + this.SslCertName.GetHashCode();
+                if (this.SslCertCheckSum != null) hashCode = hashCode * 59 + this.SslCertCheckSum.GetHashCode();
+                if (this.SslCertPassword != null) hashCode = hashCode * 59 + this.SslCertPassword.GetHashCode();
+                if (this.DbVersion != null) hashCode = hashCode * 59 + this.DbVersion.GetHashCode();
+                hashCode = hashCode * 59 + this.MongoHaMode.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                hashCode = hashCode * 59 + this.ClusterMode.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.DbName != null) hashCode = hashCode * 59 + this.DbName.GetHashCode();
+                if (this.Topic != null) hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.SafeMode != null) hashCode = hashCode * 59 + this.SafeMode.GetHashCode();
+                if (this.KerberosVo != null) hashCode = hashCode * 59 + this.KerberosVo.GetHashCode();
+                if (this.MultiWriteDbId != null) hashCode = hashCode * 59 + this.MultiWriteDbId.GetHashCode();
                 return hashCode;
             }
         }

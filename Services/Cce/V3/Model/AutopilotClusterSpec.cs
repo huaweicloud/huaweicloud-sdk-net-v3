@@ -534,133 +534,33 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(AutopilotClusterSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Category != input.Category) return false;
+            if (this.Type != input.Type) return false;
+            if (this.Flavor != input.Flavor || (this.Flavor != null && !this.Flavor.Equals(input.Flavor))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.PlatformVersion != input.PlatformVersion || (this.PlatformVersion != null && !this.PlatformVersion.Equals(input.PlatformVersion))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.CustomSan != input.CustomSan || (this.CustomSan != null && input.CustomSan != null && !this.CustomSan.SequenceEqual(input.CustomSan))) return false;
+            if (this.EnableSnat != input.EnableSnat || (this.EnableSnat != null && !this.EnableSnat.Equals(input.EnableSnat))) return false;
+            if (this.EnableSWRImageAccess != input.EnableSWRImageAccess || (this.EnableSWRImageAccess != null && !this.EnableSWRImageAccess.Equals(input.EnableSWRImageAccess))) return false;
+            if (this.EnableAutopilot != input.EnableAutopilot || (this.EnableAutopilot != null && !this.EnableAutopilot.Equals(input.EnableAutopilot))) return false;
+            if (this.Ipv6enable != input.Ipv6enable || (this.Ipv6enable != null && !this.Ipv6enable.Equals(input.Ipv6enable))) return false;
+            if (this.HostNetwork != input.HostNetwork || (this.HostNetwork != null && !this.HostNetwork.Equals(input.HostNetwork))) return false;
+            if (this.ContainerNetwork != input.ContainerNetwork || (this.ContainerNetwork != null && !this.ContainerNetwork.Equals(input.ContainerNetwork))) return false;
+            if (this.EniNetwork != input.EniNetwork || (this.EniNetwork != null && !this.EniNetwork.Equals(input.EniNetwork))) return false;
+            if (this.ServiceNetwork != input.ServiceNetwork || (this.ServiceNetwork != null && !this.ServiceNetwork.Equals(input.ServiceNetwork))) return false;
+            if (this.Authentication != input.Authentication || (this.Authentication != null && !this.Authentication.Equals(input.Authentication))) return false;
+            if (this.BillingMode != input.BillingMode || (this.BillingMode != null && !this.BillingMode.Equals(input.BillingMode))) return false;
+            if (this.KubernetesSvcIpRange != input.KubernetesSvcIpRange || (this.KubernetesSvcIpRange != null && !this.KubernetesSvcIpRange.Equals(input.KubernetesSvcIpRange))) return false;
+            if (this.ClusterTags != input.ClusterTags || (this.ClusterTags != null && input.ClusterTags != null && !this.ClusterTags.SequenceEqual(input.ClusterTags))) return false;
+            if (this.KubeProxyMode != input.KubeProxyMode) return false;
+            if (this.Az != input.Az || (this.Az != null && !this.Az.Equals(input.Az))) return false;
+            if (this.ExtendParam != input.ExtendParam || (this.ExtendParam != null && !this.ExtendParam.Equals(input.ExtendParam))) return false;
+            if (this.ConfigurationsOverride != input.ConfigurationsOverride || (this.ConfigurationsOverride != null && input.ConfigurationsOverride != null && !this.ConfigurationsOverride.SequenceEqual(input.ConfigurationsOverride))) return false;
+            if (this.DeletionProtection != input.DeletionProtection || (this.DeletionProtection != null && !this.DeletionProtection.Equals(input.DeletionProtection))) return false;
 
-            return 
-                (
-                    this.Category == input.Category ||
-                    (this.Category != null &&
-                    this.Category.Equals(input.Category))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Flavor == input.Flavor ||
-                    (this.Flavor != null &&
-                    this.Flavor.Equals(input.Flavor))
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.PlatformVersion == input.PlatformVersion ||
-                    (this.PlatformVersion != null &&
-                    this.PlatformVersion.Equals(input.PlatformVersion))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.CustomSan == input.CustomSan ||
-                    this.CustomSan != null &&
-                    input.CustomSan != null &&
-                    this.CustomSan.SequenceEqual(input.CustomSan)
-                ) && 
-                (
-                    this.EnableSnat == input.EnableSnat ||
-                    (this.EnableSnat != null &&
-                    this.EnableSnat.Equals(input.EnableSnat))
-                ) && 
-                (
-                    this.EnableSWRImageAccess == input.EnableSWRImageAccess ||
-                    (this.EnableSWRImageAccess != null &&
-                    this.EnableSWRImageAccess.Equals(input.EnableSWRImageAccess))
-                ) && 
-                (
-                    this.EnableAutopilot == input.EnableAutopilot ||
-                    (this.EnableAutopilot != null &&
-                    this.EnableAutopilot.Equals(input.EnableAutopilot))
-                ) && 
-                (
-                    this.Ipv6enable == input.Ipv6enable ||
-                    (this.Ipv6enable != null &&
-                    this.Ipv6enable.Equals(input.Ipv6enable))
-                ) && 
-                (
-                    this.HostNetwork == input.HostNetwork ||
-                    (this.HostNetwork != null &&
-                    this.HostNetwork.Equals(input.HostNetwork))
-                ) && 
-                (
-                    this.ContainerNetwork == input.ContainerNetwork ||
-                    (this.ContainerNetwork != null &&
-                    this.ContainerNetwork.Equals(input.ContainerNetwork))
-                ) && 
-                (
-                    this.EniNetwork == input.EniNetwork ||
-                    (this.EniNetwork != null &&
-                    this.EniNetwork.Equals(input.EniNetwork))
-                ) && 
-                (
-                    this.ServiceNetwork == input.ServiceNetwork ||
-                    (this.ServiceNetwork != null &&
-                    this.ServiceNetwork.Equals(input.ServiceNetwork))
-                ) && 
-                (
-                    this.Authentication == input.Authentication ||
-                    (this.Authentication != null &&
-                    this.Authentication.Equals(input.Authentication))
-                ) && 
-                (
-                    this.BillingMode == input.BillingMode ||
-                    (this.BillingMode != null &&
-                    this.BillingMode.Equals(input.BillingMode))
-                ) && 
-                (
-                    this.KubernetesSvcIpRange == input.KubernetesSvcIpRange ||
-                    (this.KubernetesSvcIpRange != null &&
-                    this.KubernetesSvcIpRange.Equals(input.KubernetesSvcIpRange))
-                ) && 
-                (
-                    this.ClusterTags == input.ClusterTags ||
-                    this.ClusterTags != null &&
-                    input.ClusterTags != null &&
-                    this.ClusterTags.SequenceEqual(input.ClusterTags)
-                ) && 
-                (
-                    this.KubeProxyMode == input.KubeProxyMode ||
-                    (this.KubeProxyMode != null &&
-                    this.KubeProxyMode.Equals(input.KubeProxyMode))
-                ) && 
-                (
-                    this.Az == input.Az ||
-                    (this.Az != null &&
-                    this.Az.Equals(input.Az))
-                ) && 
-                (
-                    this.ExtendParam == input.ExtendParam ||
-                    (this.ExtendParam != null &&
-                    this.ExtendParam.Equals(input.ExtendParam))
-                ) && 
-                (
-                    this.ConfigurationsOverride == input.ConfigurationsOverride ||
-                    this.ConfigurationsOverride != null &&
-                    input.ConfigurationsOverride != null &&
-                    this.ConfigurationsOverride.SequenceEqual(input.ConfigurationsOverride)
-                ) && 
-                (
-                    this.DeletionProtection == input.DeletionProtection ||
-                    (this.DeletionProtection != null &&
-                    this.DeletionProtection.Equals(input.DeletionProtection))
-                );
+            return true;
         }
 
         /// <summary>
@@ -670,55 +570,31 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Category != null)
-                    hashCode = hashCode * 59 + this.Category.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Flavor != null)
-                    hashCode = hashCode * 59 + this.Flavor.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.PlatformVersion != null)
-                    hashCode = hashCode * 59 + this.PlatformVersion.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.CustomSan != null)
-                    hashCode = hashCode * 59 + this.CustomSan.GetHashCode();
-                if (this.EnableSnat != null)
-                    hashCode = hashCode * 59 + this.EnableSnat.GetHashCode();
-                if (this.EnableSWRImageAccess != null)
-                    hashCode = hashCode * 59 + this.EnableSWRImageAccess.GetHashCode();
-                if (this.EnableAutopilot != null)
-                    hashCode = hashCode * 59 + this.EnableAutopilot.GetHashCode();
-                if (this.Ipv6enable != null)
-                    hashCode = hashCode * 59 + this.Ipv6enable.GetHashCode();
-                if (this.HostNetwork != null)
-                    hashCode = hashCode * 59 + this.HostNetwork.GetHashCode();
-                if (this.ContainerNetwork != null)
-                    hashCode = hashCode * 59 + this.ContainerNetwork.GetHashCode();
-                if (this.EniNetwork != null)
-                    hashCode = hashCode * 59 + this.EniNetwork.GetHashCode();
-                if (this.ServiceNetwork != null)
-                    hashCode = hashCode * 59 + this.ServiceNetwork.GetHashCode();
-                if (this.Authentication != null)
-                    hashCode = hashCode * 59 + this.Authentication.GetHashCode();
-                if (this.BillingMode != null)
-                    hashCode = hashCode * 59 + this.BillingMode.GetHashCode();
-                if (this.KubernetesSvcIpRange != null)
-                    hashCode = hashCode * 59 + this.KubernetesSvcIpRange.GetHashCode();
-                if (this.ClusterTags != null)
-                    hashCode = hashCode * 59 + this.ClusterTags.GetHashCode();
-                if (this.KubeProxyMode != null)
-                    hashCode = hashCode * 59 + this.KubeProxyMode.GetHashCode();
-                if (this.Az != null)
-                    hashCode = hashCode * 59 + this.Az.GetHashCode();
-                if (this.ExtendParam != null)
-                    hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
-                if (this.ConfigurationsOverride != null)
-                    hashCode = hashCode * 59 + this.ConfigurationsOverride.GetHashCode();
-                if (this.DeletionProtection != null)
-                    hashCode = hashCode * 59 + this.DeletionProtection.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Category.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Flavor != null) hashCode = hashCode * 59 + this.Flavor.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.PlatformVersion != null) hashCode = hashCode * 59 + this.PlatformVersion.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.CustomSan != null) hashCode = hashCode * 59 + this.CustomSan.GetHashCode();
+                if (this.EnableSnat != null) hashCode = hashCode * 59 + this.EnableSnat.GetHashCode();
+                if (this.EnableSWRImageAccess != null) hashCode = hashCode * 59 + this.EnableSWRImageAccess.GetHashCode();
+                if (this.EnableAutopilot != null) hashCode = hashCode * 59 + this.EnableAutopilot.GetHashCode();
+                if (this.Ipv6enable != null) hashCode = hashCode * 59 + this.Ipv6enable.GetHashCode();
+                if (this.HostNetwork != null) hashCode = hashCode * 59 + this.HostNetwork.GetHashCode();
+                if (this.ContainerNetwork != null) hashCode = hashCode * 59 + this.ContainerNetwork.GetHashCode();
+                if (this.EniNetwork != null) hashCode = hashCode * 59 + this.EniNetwork.GetHashCode();
+                if (this.ServiceNetwork != null) hashCode = hashCode * 59 + this.ServiceNetwork.GetHashCode();
+                if (this.Authentication != null) hashCode = hashCode * 59 + this.Authentication.GetHashCode();
+                if (this.BillingMode != null) hashCode = hashCode * 59 + this.BillingMode.GetHashCode();
+                if (this.KubernetesSvcIpRange != null) hashCode = hashCode * 59 + this.KubernetesSvcIpRange.GetHashCode();
+                if (this.ClusterTags != null) hashCode = hashCode * 59 + this.ClusterTags.GetHashCode();
+                hashCode = hashCode * 59 + this.KubeProxyMode.GetHashCode();
+                if (this.Az != null) hashCode = hashCode * 59 + this.Az.GetHashCode();
+                if (this.ExtendParam != null) hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
+                if (this.ConfigurationsOverride != null) hashCode = hashCode * 59 + this.ConfigurationsOverride.GetHashCode();
+                if (this.DeletionProtection != null) hashCode = hashCode * 59 + this.DeletionProtection.GetHashCode();
                 return hashCode;
             }
         }

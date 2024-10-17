@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         /// </summary>
         public bool Equals(GenRandomRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RandomDataLength != input.RandomDataLength || (this.RandomDataLength != null && !this.RandomDataLength.Equals(input.RandomDataLength))) return false;
+            if (this.Sequence != input.Sequence || (this.Sequence != null && !this.Sequence.Equals(input.Sequence))) return false;
 
-            return 
-                (
-                    this.RandomDataLength == input.RandomDataLength ||
-                    (this.RandomDataLength != null &&
-                    this.RandomDataLength.Equals(input.RandomDataLength))
-                ) && 
-                (
-                    this.Sequence == input.Sequence ||
-                    (this.Sequence != null &&
-                    this.Sequence.Equals(input.Sequence))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RandomDataLength != null)
-                    hashCode = hashCode * 59 + this.RandomDataLength.GetHashCode();
-                if (this.Sequence != null)
-                    hashCode = hashCode * 59 + this.Sequence.GetHashCode();
+                var hashCode = 41;
+                if (this.RandomDataLength != null) hashCode = hashCode * 59 + this.RandomDataLength.GetHashCode();
+                if (this.Sequence != null) hashCode = hashCode * 59 + this.Sequence.GetHashCode();
                 return hashCode;
             }
         }

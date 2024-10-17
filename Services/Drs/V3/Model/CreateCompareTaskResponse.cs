@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(CreateCompareTaskResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.ObjectLevelCompareCreateResult != input.ObjectLevelCompareCreateResult || (this.ObjectLevelCompareCreateResult != null && !this.ObjectLevelCompareCreateResult.Equals(input.ObjectLevelCompareCreateResult))) return false;
+            if (this.DataLevelCompareCreateResult != input.DataLevelCompareCreateResult || (this.DataLevelCompareCreateResult != null && !this.DataLevelCompareCreateResult.Equals(input.DataLevelCompareCreateResult))) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
+            if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.ObjectLevelCompareCreateResult == input.ObjectLevelCompareCreateResult ||
-                    (this.ObjectLevelCompareCreateResult != null &&
-                    this.ObjectLevelCompareCreateResult.Equals(input.ObjectLevelCompareCreateResult))
-                ) && 
-                (
-                    this.DataLevelCompareCreateResult == input.DataLevelCompareCreateResult ||
-                    (this.DataLevelCompareCreateResult != null &&
-                    this.DataLevelCompareCreateResult.Equals(input.DataLevelCompareCreateResult))
-                ) && 
-                (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
-                ) && 
-                (
-                    this.ErrorMsg == input.ErrorMsg ||
-                    (this.ErrorMsg != null &&
-                    this.ErrorMsg.Equals(input.ErrorMsg))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.ObjectLevelCompareCreateResult != null)
-                    hashCode = hashCode * 59 + this.ObjectLevelCompareCreateResult.GetHashCode();
-                if (this.DataLevelCompareCreateResult != null)
-                    hashCode = hashCode * 59 + this.DataLevelCompareCreateResult.GetHashCode();
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.ErrorMsg != null)
-                    hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.ObjectLevelCompareCreateResult != null) hashCode = hashCode * 59 + this.ObjectLevelCompareCreateResult.GetHashCode();
+                if (this.DataLevelCompareCreateResult != null) hashCode = hashCode * 59 + this.DataLevelCompareCreateResult.GetHashCode();
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
                 return hashCode;
             }
         }

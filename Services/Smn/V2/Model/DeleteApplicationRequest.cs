@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public bool Equals(DeleteApplicationRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ApplicationUrn != input.ApplicationUrn || (this.ApplicationUrn != null && !this.ApplicationUrn.Equals(input.ApplicationUrn))) return false;
 
-            return 
-                (
-                    this.ApplicationUrn == input.ApplicationUrn ||
-                    (this.ApplicationUrn != null &&
-                    this.ApplicationUrn.Equals(input.ApplicationUrn))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ApplicationUrn != null)
-                    hashCode = hashCode * 59 + this.ApplicationUrn.GetHashCode();
+                var hashCode = 41;
+                if (this.ApplicationUrn != null) hashCode = hashCode * 59 + this.ApplicationUrn.GetHashCode();
                 return hashCode;
             }
         }

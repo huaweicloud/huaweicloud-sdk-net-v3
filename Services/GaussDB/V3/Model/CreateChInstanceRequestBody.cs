@@ -119,65 +119,20 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(CreateChInstanceRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Engine != input.Engine || (this.Engine != null && !this.Engine.Equals(input.Engine))) return false;
+            if (this.Ha != input.Ha || (this.Ha != null && !this.Ha.Equals(input.Ha))) return false;
+            if (this.FlavorId != input.FlavorId || (this.FlavorId != null && !this.FlavorId.Equals(input.FlavorId))) return false;
+            if (this.DbRootPwd != input.DbRootPwd || (this.DbRootPwd != null && !this.DbRootPwd.Equals(input.DbRootPwd))) return false;
+            if (this.AzMode != input.AzMode || (this.AzMode != null && !this.AzMode.Equals(input.AzMode))) return false;
+            if (this.Volume != input.Volume || (this.Volume != null && !this.Volume.Equals(input.Volume))) return false;
+            if (this.AzCode != input.AzCode || (this.AzCode != null && !this.AzCode.Equals(input.AzCode))) return false;
+            if (this.TimeZone != input.TimeZone || (this.TimeZone != null && !this.TimeZone.Equals(input.TimeZone))) return false;
+            if (this.TagsInfo != input.TagsInfo || (this.TagsInfo != null && !this.TagsInfo.Equals(input.TagsInfo))) return false;
+            if (this.PayInfo != input.PayInfo || (this.PayInfo != null && !this.PayInfo.Equals(input.PayInfo))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Engine == input.Engine ||
-                    (this.Engine != null &&
-                    this.Engine.Equals(input.Engine))
-                ) && 
-                (
-                    this.Ha == input.Ha ||
-                    (this.Ha != null &&
-                    this.Ha.Equals(input.Ha))
-                ) && 
-                (
-                    this.FlavorId == input.FlavorId ||
-                    (this.FlavorId != null &&
-                    this.FlavorId.Equals(input.FlavorId))
-                ) && 
-                (
-                    this.DbRootPwd == input.DbRootPwd ||
-                    (this.DbRootPwd != null &&
-                    this.DbRootPwd.Equals(input.DbRootPwd))
-                ) && 
-                (
-                    this.AzMode == input.AzMode ||
-                    (this.AzMode != null &&
-                    this.AzMode.Equals(input.AzMode))
-                ) && 
-                (
-                    this.Volume == input.Volume ||
-                    (this.Volume != null &&
-                    this.Volume.Equals(input.Volume))
-                ) && 
-                (
-                    this.AzCode == input.AzCode ||
-                    (this.AzCode != null &&
-                    this.AzCode.Equals(input.AzCode))
-                ) && 
-                (
-                    this.TimeZone == input.TimeZone ||
-                    (this.TimeZone != null &&
-                    this.TimeZone.Equals(input.TimeZone))
-                ) && 
-                (
-                    this.TagsInfo == input.TagsInfo ||
-                    (this.TagsInfo != null &&
-                    this.TagsInfo.Equals(input.TagsInfo))
-                ) && 
-                (
-                    this.PayInfo == input.PayInfo ||
-                    (this.PayInfo != null &&
-                    this.PayInfo.Equals(input.PayInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,29 +142,18 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Engine != null)
-                    hashCode = hashCode * 59 + this.Engine.GetHashCode();
-                if (this.Ha != null)
-                    hashCode = hashCode * 59 + this.Ha.GetHashCode();
-                if (this.FlavorId != null)
-                    hashCode = hashCode * 59 + this.FlavorId.GetHashCode();
-                if (this.DbRootPwd != null)
-                    hashCode = hashCode * 59 + this.DbRootPwd.GetHashCode();
-                if (this.AzMode != null)
-                    hashCode = hashCode * 59 + this.AzMode.GetHashCode();
-                if (this.Volume != null)
-                    hashCode = hashCode * 59 + this.Volume.GetHashCode();
-                if (this.AzCode != null)
-                    hashCode = hashCode * 59 + this.AzCode.GetHashCode();
-                if (this.TimeZone != null)
-                    hashCode = hashCode * 59 + this.TimeZone.GetHashCode();
-                if (this.TagsInfo != null)
-                    hashCode = hashCode * 59 + this.TagsInfo.GetHashCode();
-                if (this.PayInfo != null)
-                    hashCode = hashCode * 59 + this.PayInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Engine != null) hashCode = hashCode * 59 + this.Engine.GetHashCode();
+                if (this.Ha != null) hashCode = hashCode * 59 + this.Ha.GetHashCode();
+                if (this.FlavorId != null) hashCode = hashCode * 59 + this.FlavorId.GetHashCode();
+                if (this.DbRootPwd != null) hashCode = hashCode * 59 + this.DbRootPwd.GetHashCode();
+                if (this.AzMode != null) hashCode = hashCode * 59 + this.AzMode.GetHashCode();
+                if (this.Volume != null) hashCode = hashCode * 59 + this.Volume.GetHashCode();
+                if (this.AzCode != null) hashCode = hashCode * 59 + this.AzCode.GetHashCode();
+                if (this.TimeZone != null) hashCode = hashCode * 59 + this.TimeZone.GetHashCode();
+                if (this.TagsInfo != null) hashCode = hashCode * 59 + this.TagsInfo.GetHashCode();
+                if (this.PayInfo != null) hashCode = hashCode * 59 + this.PayInfo.GetHashCode();
                 return hashCode;
             }
         }

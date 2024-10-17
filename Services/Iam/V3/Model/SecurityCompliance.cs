@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(SecurityCompliance input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PasswordRegex != input.PasswordRegex || (this.PasswordRegex != null && !this.PasswordRegex.Equals(input.PasswordRegex))) return false;
+            if (this.PasswordRegexDescription != input.PasswordRegexDescription || (this.PasswordRegexDescription != null && !this.PasswordRegexDescription.Equals(input.PasswordRegexDescription))) return false;
 
-            return 
-                (
-                    this.PasswordRegex == input.PasswordRegex ||
-                    (this.PasswordRegex != null &&
-                    this.PasswordRegex.Equals(input.PasswordRegex))
-                ) && 
-                (
-                    this.PasswordRegexDescription == input.PasswordRegexDescription ||
-                    (this.PasswordRegexDescription != null &&
-                    this.PasswordRegexDescription.Equals(input.PasswordRegexDescription))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PasswordRegex != null)
-                    hashCode = hashCode * 59 + this.PasswordRegex.GetHashCode();
-                if (this.PasswordRegexDescription != null)
-                    hashCode = hashCode * 59 + this.PasswordRegexDescription.GetHashCode();
+                var hashCode = 41;
+                if (this.PasswordRegex != null) hashCode = hashCode * 59 + this.PasswordRegex.GetHashCode();
+                if (this.PasswordRegexDescription != null) hashCode = hashCode * 59 + this.PasswordRegexDescription.GetHashCode();
                 return hashCode;
             }
         }

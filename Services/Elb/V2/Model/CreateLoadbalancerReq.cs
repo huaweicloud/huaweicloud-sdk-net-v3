@@ -334,60 +334,19 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// </summary>
         public bool Equals(CreateLoadbalancerReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.VipSubnetId != input.VipSubnetId || (this.VipSubnetId != null && !this.VipSubnetId.Equals(input.VipSubnetId))) return false;
+            if (this.VipAddress != input.VipAddress || (this.VipAddress != null && !this.VipAddress.Equals(input.VipAddress))) return false;
+            if (this.Provider != input.Provider) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.ProtectionStatus != input.ProtectionStatus) return false;
+            if (this.ProtectionReason != input.ProtectionReason || (this.ProtectionReason != null && !this.ProtectionReason.Equals(input.ProtectionReason))) return false;
 
-            return 
-                (
-                    this.TenantId == input.TenantId ||
-                    (this.TenantId != null &&
-                    this.TenantId.Equals(input.TenantId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.VipSubnetId == input.VipSubnetId ||
-                    (this.VipSubnetId != null &&
-                    this.VipSubnetId.Equals(input.VipSubnetId))
-                ) && 
-                (
-                    this.VipAddress == input.VipAddress ||
-                    (this.VipAddress != null &&
-                    this.VipAddress.Equals(input.VipAddress))
-                ) && 
-                (
-                    this.Provider == input.Provider ||
-                    (this.Provider != null &&
-                    this.Provider.Equals(input.Provider))
-                ) && 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.ProtectionStatus == input.ProtectionStatus ||
-                    (this.ProtectionStatus != null &&
-                    this.ProtectionStatus.Equals(input.ProtectionStatus))
-                ) && 
-                (
-                    this.ProtectionReason == input.ProtectionReason ||
-                    (this.ProtectionReason != null &&
-                    this.ProtectionReason.Equals(input.ProtectionReason))
-                );
+            return true;
         }
 
         /// <summary>
@@ -397,27 +356,17 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TenantId != null)
-                    hashCode = hashCode * 59 + this.TenantId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.VipSubnetId != null)
-                    hashCode = hashCode * 59 + this.VipSubnetId.GetHashCode();
-                if (this.VipAddress != null)
-                    hashCode = hashCode * 59 + this.VipAddress.GetHashCode();
-                if (this.Provider != null)
-                    hashCode = hashCode * 59 + this.Provider.GetHashCode();
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.ProtectionStatus != null)
-                    hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
-                if (this.ProtectionReason != null)
-                    hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
+                var hashCode = 41;
+                if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.VipSubnetId != null) hashCode = hashCode * 59 + this.VipSubnetId.GetHashCode();
+                if (this.VipAddress != null) hashCode = hashCode * 59 + this.VipAddress.GetHashCode();
+                hashCode = hashCode * 59 + this.Provider.GetHashCode();
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
+                if (this.ProtectionReason != null) hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
                 return hashCode;
             }
         }

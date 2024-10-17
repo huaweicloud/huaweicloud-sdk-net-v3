@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ResetDeviceSecret input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Secret != input.Secret || (this.Secret != null && !this.Secret.Equals(input.Secret))) return false;
+            if (this.ForceDisconnect != input.ForceDisconnect || (this.ForceDisconnect != null && !this.ForceDisconnect.Equals(input.ForceDisconnect))) return false;
+            if (this.SecretType != input.SecretType || (this.SecretType != null && !this.SecretType.Equals(input.SecretType))) return false;
 
-            return 
-                (
-                    this.Secret == input.Secret ||
-                    (this.Secret != null &&
-                    this.Secret.Equals(input.Secret))
-                ) && 
-                (
-                    this.ForceDisconnect == input.ForceDisconnect ||
-                    (this.ForceDisconnect != null &&
-                    this.ForceDisconnect.Equals(input.ForceDisconnect))
-                ) && 
-                (
-                    this.SecretType == input.SecretType ||
-                    (this.SecretType != null &&
-                    this.SecretType.Equals(input.SecretType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Secret != null)
-                    hashCode = hashCode * 59 + this.Secret.GetHashCode();
-                if (this.ForceDisconnect != null)
-                    hashCode = hashCode * 59 + this.ForceDisconnect.GetHashCode();
-                if (this.SecretType != null)
-                    hashCode = hashCode * 59 + this.SecretType.GetHashCode();
+                var hashCode = 41;
+                if (this.Secret != null) hashCode = hashCode * 59 + this.Secret.GetHashCode();
+                if (this.ForceDisconnect != null) hashCode = hashCode * 59 + this.ForceDisconnect.GetHashCode();
+                if (this.SecretType != null) hashCode = hashCode * 59 + this.SecretType.GetHashCode();
                 return hashCode;
             }
         }

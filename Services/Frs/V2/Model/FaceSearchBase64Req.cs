@@ -84,42 +84,15 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public bool Equals(FaceSearchBase64Req input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Filter != input.Filter || (this.Filter != null && !this.Filter.Equals(input.Filter))) return false;
+            if (this.TopN != input.TopN || (this.TopN != null && !this.TopN.Equals(input.TopN))) return false;
+            if (this.ImageBase64 != input.ImageBase64 || (this.ImageBase64 != null && !this.ImageBase64.Equals(input.ImageBase64))) return false;
+            if (this.ReturnFields != input.ReturnFields || (this.ReturnFields != null && input.ReturnFields != null && !this.ReturnFields.SequenceEqual(input.ReturnFields))) return false;
+            if (this.Threshold != input.Threshold || (this.Threshold != null && !this.Threshold.Equals(input.Threshold))) return false;
+            if (this.Sort != input.Sort || (this.Sort != null && input.Sort != null && !this.Sort.SequenceEqual(input.Sort))) return false;
 
-            return 
-                (
-                    this.Filter == input.Filter ||
-                    (this.Filter != null &&
-                    this.Filter.Equals(input.Filter))
-                ) && 
-                (
-                    this.TopN == input.TopN ||
-                    (this.TopN != null &&
-                    this.TopN.Equals(input.TopN))
-                ) && 
-                (
-                    this.ImageBase64 == input.ImageBase64 ||
-                    (this.ImageBase64 != null &&
-                    this.ImageBase64.Equals(input.ImageBase64))
-                ) && 
-                (
-                    this.ReturnFields == input.ReturnFields ||
-                    this.ReturnFields != null &&
-                    input.ReturnFields != null &&
-                    this.ReturnFields.SequenceEqual(input.ReturnFields)
-                ) && 
-                (
-                    this.Threshold == input.Threshold ||
-                    (this.Threshold != null &&
-                    this.Threshold.Equals(input.Threshold))
-                ) && 
-                (
-                    this.Sort == input.Sort ||
-                    this.Sort != null &&
-                    input.Sort != null &&
-                    this.Sort.SequenceEqual(input.Sort)
-                );
+            return true;
         }
 
         /// <summary>
@@ -129,19 +102,13 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Filter != null)
-                    hashCode = hashCode * 59 + this.Filter.GetHashCode();
-                if (this.TopN != null)
-                    hashCode = hashCode * 59 + this.TopN.GetHashCode();
-                if (this.ImageBase64 != null)
-                    hashCode = hashCode * 59 + this.ImageBase64.GetHashCode();
-                if (this.ReturnFields != null)
-                    hashCode = hashCode * 59 + this.ReturnFields.GetHashCode();
-                if (this.Threshold != null)
-                    hashCode = hashCode * 59 + this.Threshold.GetHashCode();
-                if (this.Sort != null)
-                    hashCode = hashCode * 59 + this.Sort.GetHashCode();
+                var hashCode = 41;
+                if (this.Filter != null) hashCode = hashCode * 59 + this.Filter.GetHashCode();
+                if (this.TopN != null) hashCode = hashCode * 59 + this.TopN.GetHashCode();
+                if (this.ImageBase64 != null) hashCode = hashCode * 59 + this.ImageBase64.GetHashCode();
+                if (this.ReturnFields != null) hashCode = hashCode * 59 + this.ReturnFields.GetHashCode();
+                if (this.Threshold != null) hashCode = hashCode * 59 + this.Threshold.GetHashCode();
+                if (this.Sort != null) hashCode = hashCode * 59 + this.Sort.GetHashCode();
                 return hashCode;
             }
         }

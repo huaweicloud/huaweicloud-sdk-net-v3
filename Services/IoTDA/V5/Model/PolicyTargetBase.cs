@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(PolicyTargetBase input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TargetType != input.TargetType || (this.TargetType != null && !this.TargetType.Equals(input.TargetType))) return false;
+            if (this.TargetId != input.TargetId || (this.TargetId != null && !this.TargetId.Equals(input.TargetId))) return false;
 
-            return 
-                (
-                    this.TargetType == input.TargetType ||
-                    (this.TargetType != null &&
-                    this.TargetType.Equals(input.TargetType))
-                ) && 
-                (
-                    this.TargetId == input.TargetId ||
-                    (this.TargetId != null &&
-                    this.TargetId.Equals(input.TargetId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TargetType != null)
-                    hashCode = hashCode * 59 + this.TargetType.GetHashCode();
-                if (this.TargetId != null)
-                    hashCode = hashCode * 59 + this.TargetId.GetHashCode();
+                var hashCode = 41;
+                if (this.TargetType != null) hashCode = hashCode * 59 + this.TargetType.GetHashCode();
+                if (this.TargetId != null) hashCode = hashCode * 59 + this.TargetId.GetHashCode();
                 return hashCode;
             }
         }

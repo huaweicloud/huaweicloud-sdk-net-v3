@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(LogConfigDto input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FwInstanceId != input.FwInstanceId || (this.FwInstanceId != null && !this.FwInstanceId.Equals(input.FwInstanceId))) return false;
+            if (this.LtsEnable != input.LtsEnable || (this.LtsEnable != null && !this.LtsEnable.Equals(input.LtsEnable))) return false;
+            if (this.LtsLogGroupId != input.LtsLogGroupId || (this.LtsLogGroupId != null && !this.LtsLogGroupId.Equals(input.LtsLogGroupId))) return false;
+            if (this.LtsAttackLogStreamId != input.LtsAttackLogStreamId || (this.LtsAttackLogStreamId != null && !this.LtsAttackLogStreamId.Equals(input.LtsAttackLogStreamId))) return false;
+            if (this.LtsAttackLogStreamEnable != input.LtsAttackLogStreamEnable || (this.LtsAttackLogStreamEnable != null && !this.LtsAttackLogStreamEnable.Equals(input.LtsAttackLogStreamEnable))) return false;
+            if (this.LtsAccessLogStreamId != input.LtsAccessLogStreamId || (this.LtsAccessLogStreamId != null && !this.LtsAccessLogStreamId.Equals(input.LtsAccessLogStreamId))) return false;
+            if (this.LtsAccessLogStreamEnable != input.LtsAccessLogStreamEnable || (this.LtsAccessLogStreamEnable != null && !this.LtsAccessLogStreamEnable.Equals(input.LtsAccessLogStreamEnable))) return false;
+            if (this.LtsFlowLogStreamId != input.LtsFlowLogStreamId || (this.LtsFlowLogStreamId != null && !this.LtsFlowLogStreamId.Equals(input.LtsFlowLogStreamId))) return false;
+            if (this.LtsFlowLogStreamEnable != input.LtsFlowLogStreamEnable || (this.LtsFlowLogStreamEnable != null && !this.LtsFlowLogStreamEnable.Equals(input.LtsFlowLogStreamEnable))) return false;
 
-            return 
-                (
-                    this.FwInstanceId == input.FwInstanceId ||
-                    (this.FwInstanceId != null &&
-                    this.FwInstanceId.Equals(input.FwInstanceId))
-                ) && 
-                (
-                    this.LtsEnable == input.LtsEnable ||
-                    (this.LtsEnable != null &&
-                    this.LtsEnable.Equals(input.LtsEnable))
-                ) && 
-                (
-                    this.LtsLogGroupId == input.LtsLogGroupId ||
-                    (this.LtsLogGroupId != null &&
-                    this.LtsLogGroupId.Equals(input.LtsLogGroupId))
-                ) && 
-                (
-                    this.LtsAttackLogStreamId == input.LtsAttackLogStreamId ||
-                    (this.LtsAttackLogStreamId != null &&
-                    this.LtsAttackLogStreamId.Equals(input.LtsAttackLogStreamId))
-                ) && 
-                (
-                    this.LtsAttackLogStreamEnable == input.LtsAttackLogStreamEnable ||
-                    (this.LtsAttackLogStreamEnable != null &&
-                    this.LtsAttackLogStreamEnable.Equals(input.LtsAttackLogStreamEnable))
-                ) && 
-                (
-                    this.LtsAccessLogStreamId == input.LtsAccessLogStreamId ||
-                    (this.LtsAccessLogStreamId != null &&
-                    this.LtsAccessLogStreamId.Equals(input.LtsAccessLogStreamId))
-                ) && 
-                (
-                    this.LtsAccessLogStreamEnable == input.LtsAccessLogStreamEnable ||
-                    (this.LtsAccessLogStreamEnable != null &&
-                    this.LtsAccessLogStreamEnable.Equals(input.LtsAccessLogStreamEnable))
-                ) && 
-                (
-                    this.LtsFlowLogStreamId == input.LtsFlowLogStreamId ||
-                    (this.LtsFlowLogStreamId != null &&
-                    this.LtsFlowLogStreamId.Equals(input.LtsFlowLogStreamId))
-                ) && 
-                (
-                    this.LtsFlowLogStreamEnable == input.LtsFlowLogStreamEnable ||
-                    (this.LtsFlowLogStreamEnable != null &&
-                    this.LtsFlowLogStreamEnable.Equals(input.LtsFlowLogStreamEnable))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FwInstanceId != null)
-                    hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
-                if (this.LtsEnable != null)
-                    hashCode = hashCode * 59 + this.LtsEnable.GetHashCode();
-                if (this.LtsLogGroupId != null)
-                    hashCode = hashCode * 59 + this.LtsLogGroupId.GetHashCode();
-                if (this.LtsAttackLogStreamId != null)
-                    hashCode = hashCode * 59 + this.LtsAttackLogStreamId.GetHashCode();
-                if (this.LtsAttackLogStreamEnable != null)
-                    hashCode = hashCode * 59 + this.LtsAttackLogStreamEnable.GetHashCode();
-                if (this.LtsAccessLogStreamId != null)
-                    hashCode = hashCode * 59 + this.LtsAccessLogStreamId.GetHashCode();
-                if (this.LtsAccessLogStreamEnable != null)
-                    hashCode = hashCode * 59 + this.LtsAccessLogStreamEnable.GetHashCode();
-                if (this.LtsFlowLogStreamId != null)
-                    hashCode = hashCode * 59 + this.LtsFlowLogStreamId.GetHashCode();
-                if (this.LtsFlowLogStreamEnable != null)
-                    hashCode = hashCode * 59 + this.LtsFlowLogStreamEnable.GetHashCode();
+                var hashCode = 41;
+                if (this.FwInstanceId != null) hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
+                if (this.LtsEnable != null) hashCode = hashCode * 59 + this.LtsEnable.GetHashCode();
+                if (this.LtsLogGroupId != null) hashCode = hashCode * 59 + this.LtsLogGroupId.GetHashCode();
+                if (this.LtsAttackLogStreamId != null) hashCode = hashCode * 59 + this.LtsAttackLogStreamId.GetHashCode();
+                if (this.LtsAttackLogStreamEnable != null) hashCode = hashCode * 59 + this.LtsAttackLogStreamEnable.GetHashCode();
+                if (this.LtsAccessLogStreamId != null) hashCode = hashCode * 59 + this.LtsAccessLogStreamId.GetHashCode();
+                if (this.LtsAccessLogStreamEnable != null) hashCode = hashCode * 59 + this.LtsAccessLogStreamEnable.GetHashCode();
+                if (this.LtsFlowLogStreamId != null) hashCode = hashCode * 59 + this.LtsFlowLogStreamId.GetHashCode();
+                if (this.LtsFlowLogStreamEnable != null) hashCode = hashCode * 59 + this.LtsFlowLogStreamEnable.GetHashCode();
                 return hashCode;
             }
         }

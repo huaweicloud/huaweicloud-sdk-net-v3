@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ClusterCheckStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Phase != input.Phase || (this.Phase != null && !this.Phase.Equals(input.Phase))) return false;
+            if (this.ItemsStatus != input.ItemsStatus || (this.ItemsStatus != null && input.ItemsStatus != null && !this.ItemsStatus.SequenceEqual(input.ItemsStatus))) return false;
 
-            return 
-                (
-                    this.Phase == input.Phase ||
-                    (this.Phase != null &&
-                    this.Phase.Equals(input.Phase))
-                ) && 
-                (
-                    this.ItemsStatus == input.ItemsStatus ||
-                    this.ItemsStatus != null &&
-                    input.ItemsStatus != null &&
-                    this.ItemsStatus.SequenceEqual(input.ItemsStatus)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Phase != null)
-                    hashCode = hashCode * 59 + this.Phase.GetHashCode();
-                if (this.ItemsStatus != null)
-                    hashCode = hashCode * 59 + this.ItemsStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.Phase != null) hashCode = hashCode * 59 + this.Phase.GetHashCode();
+                if (this.ItemsStatus != null) hashCode = hashCode * 59 + this.ItemsStatus.GetHashCode();
                 return hashCode;
             }
         }

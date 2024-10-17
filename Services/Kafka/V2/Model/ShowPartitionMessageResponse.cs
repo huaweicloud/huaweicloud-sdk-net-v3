@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ShowPartitionMessageResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Message != input.Message || (this.Message != null && input.Message != null && !this.Message.SequenceEqual(input.Message))) return false;
 
-            return 
-                (
-                    this.Message == input.Message ||
-                    this.Message != null &&
-                    input.Message != null &&
-                    this.Message.SequenceEqual(input.Message)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
+                var hashCode = 41;
+                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
                 return hashCode;
             }
         }

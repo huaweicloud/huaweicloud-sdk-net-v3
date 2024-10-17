@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(QueryQuotaInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Resource != input.Resource || (this.Resource != null && !this.Resource.Equals(input.Resource))) return false;
 
-            return 
-                (
-                    this.Resource == input.Resource ||
-                    (this.Resource != null &&
-                    this.Resource.Equals(input.Resource))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Resource != null)
-                    hashCode = hashCode * 59 + this.Resource.GetHashCode();
+                var hashCode = 41;
+                if (this.Resource != null) hashCode = hashCode * 59 + this.Resource.GetHashCode();
                 return hashCode;
             }
         }

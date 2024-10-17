@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(CreateDisasterRecoveryResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.DisasterRecoveryId != input.DisasterRecoveryId || (this.DisasterRecoveryId != null && !this.DisasterRecoveryId.Equals(input.DisasterRecoveryId))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.DisasterRecoveryId == input.DisasterRecoveryId ||
-                    (this.DisasterRecoveryId != null &&
-                    this.DisasterRecoveryId.Equals(input.DisasterRecoveryId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.DisasterRecoveryId != null)
-                    hashCode = hashCode * 59 + this.DisasterRecoveryId.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.DisasterRecoveryId != null) hashCode = hashCode * 59 + this.DisasterRecoveryId.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ResetPasswordResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RetryTimesLeft != input.RetryTimesLeft || (this.RetryTimesLeft != null && !this.RetryTimesLeft.Equals(input.RetryTimesLeft))) return false;
+            if (this.LockTime != input.LockTime || (this.LockTime != null && !this.LockTime.Equals(input.LockTime))) return false;
+            if (this.LockTimeLeft != input.LockTimeLeft || (this.LockTimeLeft != null && !this.LockTimeLeft.Equals(input.LockTimeLeft))) return false;
 
-            return 
-                (
-                    this.RetryTimesLeft == input.RetryTimesLeft ||
-                    (this.RetryTimesLeft != null &&
-                    this.RetryTimesLeft.Equals(input.RetryTimesLeft))
-                ) && 
-                (
-                    this.LockTime == input.LockTime ||
-                    (this.LockTime != null &&
-                    this.LockTime.Equals(input.LockTime))
-                ) && 
-                (
-                    this.LockTimeLeft == input.LockTimeLeft ||
-                    (this.LockTimeLeft != null &&
-                    this.LockTimeLeft.Equals(input.LockTimeLeft))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RetryTimesLeft != null)
-                    hashCode = hashCode * 59 + this.RetryTimesLeft.GetHashCode();
-                if (this.LockTime != null)
-                    hashCode = hashCode * 59 + this.LockTime.GetHashCode();
-                if (this.LockTimeLeft != null)
-                    hashCode = hashCode * 59 + this.LockTimeLeft.GetHashCode();
+                var hashCode = 41;
+                if (this.RetryTimesLeft != null) hashCode = hashCode * 59 + this.RetryTimesLeft.GetHashCode();
+                if (this.LockTime != null) hashCode = hashCode * 59 + this.LockTime.GetHashCode();
+                if (this.LockTimeLeft != null) hashCode = hashCode * 59 + this.LockTimeLeft.GetHashCode();
                 return hashCode;
             }
         }

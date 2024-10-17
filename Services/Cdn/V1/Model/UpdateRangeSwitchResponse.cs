@@ -57,20 +57,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(UpdateRangeSwitchResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OriginRange != input.OriginRange || (this.OriginRange != null && !this.OriginRange.Equals(input.OriginRange))) return false;
+            if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
-            return 
-                (
-                    this.OriginRange == input.OriginRange ||
-                    (this.OriginRange != null &&
-                    this.OriginRange.Equals(input.OriginRange))
-                ) && 
-                (
-                    this.XRequestId == input.XRequestId ||
-                    (this.XRequestId != null &&
-                    this.XRequestId.Equals(input.XRequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +71,9 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OriginRange != null)
-                    hashCode = hashCode * 59 + this.OriginRange.GetHashCode();
-                if (this.XRequestId != null)
-                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.OriginRange != null) hashCode = hashCode * 59 + this.OriginRange.GetHashCode();
+                if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

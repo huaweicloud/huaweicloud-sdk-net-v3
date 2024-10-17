@@ -235,45 +235,16 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(LineCompareDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceTableName != input.SourceTableName || (this.SourceTableName != null && !this.SourceTableName.Equals(input.SourceTableName))) return false;
+            if (this.TargetTableName != input.TargetTableName || (this.TargetTableName != null && !this.TargetTableName.Equals(input.TargetTableName))) return false;
+            if (this.SourceRowNum != input.SourceRowNum || (this.SourceRowNum != null && !this.SourceRowNum.Equals(input.SourceRowNum))) return false;
+            if (this.TargetRowNum != input.TargetRowNum || (this.TargetRowNum != null && !this.TargetRowNum.Equals(input.TargetRowNum))) return false;
+            if (this.DiffRowNum != input.DiffRowNum || (this.DiffRowNum != null && !this.DiffRowNum.Equals(input.DiffRowNum))) return false;
+            if (this.LineCompareResult != input.LineCompareResult) return false;
+            if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
 
-            return 
-                (
-                    this.SourceTableName == input.SourceTableName ||
-                    (this.SourceTableName != null &&
-                    this.SourceTableName.Equals(input.SourceTableName))
-                ) && 
-                (
-                    this.TargetTableName == input.TargetTableName ||
-                    (this.TargetTableName != null &&
-                    this.TargetTableName.Equals(input.TargetTableName))
-                ) && 
-                (
-                    this.SourceRowNum == input.SourceRowNum ||
-                    (this.SourceRowNum != null &&
-                    this.SourceRowNum.Equals(input.SourceRowNum))
-                ) && 
-                (
-                    this.TargetRowNum == input.TargetRowNum ||
-                    (this.TargetRowNum != null &&
-                    this.TargetRowNum.Equals(input.TargetRowNum))
-                ) && 
-                (
-                    this.DiffRowNum == input.DiffRowNum ||
-                    (this.DiffRowNum != null &&
-                    this.DiffRowNum.Equals(input.DiffRowNum))
-                ) && 
-                (
-                    this.LineCompareResult == input.LineCompareResult ||
-                    (this.LineCompareResult != null &&
-                    this.LineCompareResult.Equals(input.LineCompareResult))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                );
+            return true;
         }
 
         /// <summary>
@@ -283,21 +254,14 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceTableName != null)
-                    hashCode = hashCode * 59 + this.SourceTableName.GetHashCode();
-                if (this.TargetTableName != null)
-                    hashCode = hashCode * 59 + this.TargetTableName.GetHashCode();
-                if (this.SourceRowNum != null)
-                    hashCode = hashCode * 59 + this.SourceRowNum.GetHashCode();
-                if (this.TargetRowNum != null)
-                    hashCode = hashCode * 59 + this.TargetRowNum.GetHashCode();
-                if (this.DiffRowNum != null)
-                    hashCode = hashCode * 59 + this.DiffRowNum.GetHashCode();
-                if (this.LineCompareResult != null)
-                    hashCode = hashCode * 59 + this.LineCompareResult.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
+                var hashCode = 41;
+                if (this.SourceTableName != null) hashCode = hashCode * 59 + this.SourceTableName.GetHashCode();
+                if (this.TargetTableName != null) hashCode = hashCode * 59 + this.TargetTableName.GetHashCode();
+                if (this.SourceRowNum != null) hashCode = hashCode * 59 + this.SourceRowNum.GetHashCode();
+                if (this.TargetRowNum != null) hashCode = hashCode * 59 + this.TargetRowNum.GetHashCode();
+                if (this.DiffRowNum != null) hashCode = hashCode * 59 + this.DiffRowNum.GetHashCode();
+                hashCode = hashCode * 59 + this.LineCompareResult.GetHashCode();
+                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
                 return hashCode;
             }
         }

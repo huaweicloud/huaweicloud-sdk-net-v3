@@ -190,31 +190,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(UpgradeTypeInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UpgradeType != input.UpgradeType) return false;
+            if (this.Enable != input.Enable || (this.Enable != null && !this.Enable.Equals(input.Enable))) return false;
+            if (this.UpgradeActionList != input.UpgradeActionList || (this.UpgradeActionList != null && input.UpgradeActionList != null && !this.UpgradeActionList.SequenceEqual(input.UpgradeActionList))) return false;
+            if (this.IsParallelUpgrade != input.IsParallelUpgrade || (this.IsParallelUpgrade != null && !this.IsParallelUpgrade.Equals(input.IsParallelUpgrade))) return false;
 
-            return 
-                (
-                    this.UpgradeType == input.UpgradeType ||
-                    (this.UpgradeType != null &&
-                    this.UpgradeType.Equals(input.UpgradeType))
-                ) && 
-                (
-                    this.Enable == input.Enable ||
-                    (this.Enable != null &&
-                    this.Enable.Equals(input.Enable))
-                ) && 
-                (
-                    this.UpgradeActionList == input.UpgradeActionList ||
-                    this.UpgradeActionList != null &&
-                    input.UpgradeActionList != null &&
-                    this.UpgradeActionList.SequenceEqual(input.UpgradeActionList)
-                ) && 
-                (
-                    this.IsParallelUpgrade == input.IsParallelUpgrade ||
-                    (this.IsParallelUpgrade != null &&
-                    this.IsParallelUpgrade.Equals(input.IsParallelUpgrade))
-                );
+            return true;
         }
 
         /// <summary>
@@ -224,15 +206,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UpgradeType != null)
-                    hashCode = hashCode * 59 + this.UpgradeType.GetHashCode();
-                if (this.Enable != null)
-                    hashCode = hashCode * 59 + this.Enable.GetHashCode();
-                if (this.UpgradeActionList != null)
-                    hashCode = hashCode * 59 + this.UpgradeActionList.GetHashCode();
-                if (this.IsParallelUpgrade != null)
-                    hashCode = hashCode * 59 + this.IsParallelUpgrade.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.UpgradeType.GetHashCode();
+                if (this.Enable != null) hashCode = hashCode * 59 + this.Enable.GetHashCode();
+                if (this.UpgradeActionList != null) hashCode = hashCode * 59 + this.UpgradeActionList.GetHashCode();
+                if (this.IsParallelUpgrade != null) hashCode = hashCode * 59 + this.IsParallelUpgrade.GetHashCode();
                 return hashCode;
             }
         }

@@ -70,34 +70,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(RiskSource input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ConfigurationRisks != input.ConfigurationRisks || (this.ConfigurationRisks != null && input.ConfigurationRisks != null && !this.ConfigurationRisks.SequenceEqual(input.ConfigurationRisks))) return false;
+            if (this.DeprecatedAPIRisks != input.DeprecatedAPIRisks || (this.DeprecatedAPIRisks != null && input.DeprecatedAPIRisks != null && !this.DeprecatedAPIRisks.SequenceEqual(input.DeprecatedAPIRisks))) return false;
+            if (this.NodeRisks != input.NodeRisks || (this.NodeRisks != null && input.NodeRisks != null && !this.NodeRisks.SequenceEqual(input.NodeRisks))) return false;
+            if (this.AddonRisks != input.AddonRisks || (this.AddonRisks != null && input.AddonRisks != null && !this.AddonRisks.SequenceEqual(input.AddonRisks))) return false;
 
-            return 
-                (
-                    this.ConfigurationRisks == input.ConfigurationRisks ||
-                    this.ConfigurationRisks != null &&
-                    input.ConfigurationRisks != null &&
-                    this.ConfigurationRisks.SequenceEqual(input.ConfigurationRisks)
-                ) && 
-                (
-                    this.DeprecatedAPIRisks == input.DeprecatedAPIRisks ||
-                    this.DeprecatedAPIRisks != null &&
-                    input.DeprecatedAPIRisks != null &&
-                    this.DeprecatedAPIRisks.SequenceEqual(input.DeprecatedAPIRisks)
-                ) && 
-                (
-                    this.NodeRisks == input.NodeRisks ||
-                    this.NodeRisks != null &&
-                    input.NodeRisks != null &&
-                    this.NodeRisks.SequenceEqual(input.NodeRisks)
-                ) && 
-                (
-                    this.AddonRisks == input.AddonRisks ||
-                    this.AddonRisks != null &&
-                    input.AddonRisks != null &&
-                    this.AddonRisks.SequenceEqual(input.AddonRisks)
-                );
+            return true;
         }
 
         /// <summary>
@@ -107,15 +86,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ConfigurationRisks != null)
-                    hashCode = hashCode * 59 + this.ConfigurationRisks.GetHashCode();
-                if (this.DeprecatedAPIRisks != null)
-                    hashCode = hashCode * 59 + this.DeprecatedAPIRisks.GetHashCode();
-                if (this.NodeRisks != null)
-                    hashCode = hashCode * 59 + this.NodeRisks.GetHashCode();
-                if (this.AddonRisks != null)
-                    hashCode = hashCode * 59 + this.AddonRisks.GetHashCode();
+                var hashCode = 41;
+                if (this.ConfigurationRisks != null) hashCode = hashCode * 59 + this.ConfigurationRisks.GetHashCode();
+                if (this.DeprecatedAPIRisks != null) hashCode = hashCode * 59 + this.DeprecatedAPIRisks.GetHashCode();
+                if (this.NodeRisks != null) hashCode = hashCode * 59 + this.NodeRisks.GetHashCode();
+                if (this.AddonRisks != null) hashCode = hashCode * 59 + this.AddonRisks.GetHashCode();
                 return hashCode;
             }
         }

@@ -627,86 +627,24 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(ScalingPolicyExecuteLogList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Status != input.Status) return false;
+            if (this.FailedReason != input.FailedReason || (this.FailedReason != null && !this.FailedReason.Equals(input.FailedReason))) return false;
+            if (this.ExecuteType != input.ExecuteType) return false;
+            if (this.ExecuteTime != input.ExecuteTime || (this.ExecuteTime != null && !this.ExecuteTime.Equals(input.ExecuteTime))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
+            if (this.ScalingPolicyId != input.ScalingPolicyId || (this.ScalingPolicyId != null && !this.ScalingPolicyId.Equals(input.ScalingPolicyId))) return false;
+            if (this.ScalingResourceType != input.ScalingResourceType) return false;
+            if (this.ScalingResourceId != input.ScalingResourceId || (this.ScalingResourceId != null && !this.ScalingResourceId.Equals(input.ScalingResourceId))) return false;
+            if (this.OldValue != input.OldValue || (this.OldValue != null && !this.OldValue.Equals(input.OldValue))) return false;
+            if (this.DesireValue != input.DesireValue || (this.DesireValue != null && !this.DesireValue.Equals(input.DesireValue))) return false;
+            if (this.LimitValue != input.LimitValue || (this.LimitValue != null && !this.LimitValue.Equals(input.LimitValue))) return false;
+            if (this.Type != input.Type) return false;
+            if (this.JobRecords != input.JobRecords || (this.JobRecords != null && input.JobRecords != null && !this.JobRecords.SequenceEqual(input.JobRecords))) return false;
+            if (this.MetaData != input.MetaData || (this.MetaData != null && !this.MetaData.Equals(input.MetaData))) return false;
 
-            return 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.FailedReason == input.FailedReason ||
-                    (this.FailedReason != null &&
-                    this.FailedReason.Equals(input.FailedReason))
-                ) && 
-                (
-                    this.ExecuteType == input.ExecuteType ||
-                    (this.ExecuteType != null &&
-                    this.ExecuteType.Equals(input.ExecuteType))
-                ) && 
-                (
-                    this.ExecuteTime == input.ExecuteTime ||
-                    (this.ExecuteTime != null &&
-                    this.ExecuteTime.Equals(input.ExecuteTime))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.TenantId == input.TenantId ||
-                    (this.TenantId != null &&
-                    this.TenantId.Equals(input.TenantId))
-                ) && 
-                (
-                    this.ScalingPolicyId == input.ScalingPolicyId ||
-                    (this.ScalingPolicyId != null &&
-                    this.ScalingPolicyId.Equals(input.ScalingPolicyId))
-                ) && 
-                (
-                    this.ScalingResourceType == input.ScalingResourceType ||
-                    (this.ScalingResourceType != null &&
-                    this.ScalingResourceType.Equals(input.ScalingResourceType))
-                ) && 
-                (
-                    this.ScalingResourceId == input.ScalingResourceId ||
-                    (this.ScalingResourceId != null &&
-                    this.ScalingResourceId.Equals(input.ScalingResourceId))
-                ) && 
-                (
-                    this.OldValue == input.OldValue ||
-                    (this.OldValue != null &&
-                    this.OldValue.Equals(input.OldValue))
-                ) && 
-                (
-                    this.DesireValue == input.DesireValue ||
-                    (this.DesireValue != null &&
-                    this.DesireValue.Equals(input.DesireValue))
-                ) && 
-                (
-                    this.LimitValue == input.LimitValue ||
-                    (this.LimitValue != null &&
-                    this.LimitValue.Equals(input.LimitValue))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.JobRecords == input.JobRecords ||
-                    this.JobRecords != null &&
-                    input.JobRecords != null &&
-                    this.JobRecords.SequenceEqual(input.JobRecords)
-                ) && 
-                (
-                    this.MetaData == input.MetaData ||
-                    (this.MetaData != null &&
-                    this.MetaData.Equals(input.MetaData))
-                );
+            return true;
         }
 
         /// <summary>
@@ -716,37 +654,22 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.FailedReason != null)
-                    hashCode = hashCode * 59 + this.FailedReason.GetHashCode();
-                if (this.ExecuteType != null)
-                    hashCode = hashCode * 59 + this.ExecuteType.GetHashCode();
-                if (this.ExecuteTime != null)
-                    hashCode = hashCode * 59 + this.ExecuteTime.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.TenantId != null)
-                    hashCode = hashCode * 59 + this.TenantId.GetHashCode();
-                if (this.ScalingPolicyId != null)
-                    hashCode = hashCode * 59 + this.ScalingPolicyId.GetHashCode();
-                if (this.ScalingResourceType != null)
-                    hashCode = hashCode * 59 + this.ScalingResourceType.GetHashCode();
-                if (this.ScalingResourceId != null)
-                    hashCode = hashCode * 59 + this.ScalingResourceId.GetHashCode();
-                if (this.OldValue != null)
-                    hashCode = hashCode * 59 + this.OldValue.GetHashCode();
-                if (this.DesireValue != null)
-                    hashCode = hashCode * 59 + this.DesireValue.GetHashCode();
-                if (this.LimitValue != null)
-                    hashCode = hashCode * 59 + this.LimitValue.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.JobRecords != null)
-                    hashCode = hashCode * 59 + this.JobRecords.GetHashCode();
-                if (this.MetaData != null)
-                    hashCode = hashCode * 59 + this.MetaData.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.FailedReason != null) hashCode = hashCode * 59 + this.FailedReason.GetHashCode();
+                hashCode = hashCode * 59 + this.ExecuteType.GetHashCode();
+                if (this.ExecuteTime != null) hashCode = hashCode * 59 + this.ExecuteTime.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
+                if (this.ScalingPolicyId != null) hashCode = hashCode * 59 + this.ScalingPolicyId.GetHashCode();
+                hashCode = hashCode * 59 + this.ScalingResourceType.GetHashCode();
+                if (this.ScalingResourceId != null) hashCode = hashCode * 59 + this.ScalingResourceId.GetHashCode();
+                if (this.OldValue != null) hashCode = hashCode * 59 + this.OldValue.GetHashCode();
+                if (this.DesireValue != null) hashCode = hashCode * 59 + this.DesireValue.GetHashCode();
+                if (this.LimitValue != null) hashCode = hashCode * 59 + this.LimitValue.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.JobRecords != null) hashCode = hashCode * 59 + this.JobRecords.GetHashCode();
+                if (this.MetaData != null) hashCode = hashCode * 59 + this.MetaData.GetHashCode();
                 return hashCode;
             }
         }

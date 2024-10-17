@@ -63,27 +63,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ServiceCommand input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CommandName != input.CommandName || (this.CommandName != null && !this.CommandName.Equals(input.CommandName))) return false;
+            if (this.Paras != input.Paras || (this.Paras != null && input.Paras != null && !this.Paras.SequenceEqual(input.Paras))) return false;
+            if (this.Responses != input.Responses || (this.Responses != null && input.Responses != null && !this.Responses.SequenceEqual(input.Responses))) return false;
 
-            return 
-                (
-                    this.CommandName == input.CommandName ||
-                    (this.CommandName != null &&
-                    this.CommandName.Equals(input.CommandName))
-                ) && 
-                (
-                    this.Paras == input.Paras ||
-                    this.Paras != null &&
-                    input.Paras != null &&
-                    this.Paras.SequenceEqual(input.Paras)
-                ) && 
-                (
-                    this.Responses == input.Responses ||
-                    this.Responses != null &&
-                    input.Responses != null &&
-                    this.Responses.SequenceEqual(input.Responses)
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +78,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CommandName != null)
-                    hashCode = hashCode * 59 + this.CommandName.GetHashCode();
-                if (this.Paras != null)
-                    hashCode = hashCode * 59 + this.Paras.GetHashCode();
-                if (this.Responses != null)
-                    hashCode = hashCode * 59 + this.Responses.GetHashCode();
+                var hashCode = 41;
+                if (this.CommandName != null) hashCode = hashCode * 59 + this.CommandName.GetHashCode();
+                if (this.Paras != null) hashCode = hashCode * 59 + this.Paras.GetHashCode();
+                if (this.Responses != null) hashCode = hashCode * 59 + this.Responses.GetHashCode();
                 return hashCode;
             }
         }

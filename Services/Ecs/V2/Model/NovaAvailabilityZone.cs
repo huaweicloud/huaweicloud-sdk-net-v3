@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(NovaAvailabilityZone input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Hosts != input.Hosts || (this.Hosts != null && input.Hosts != null && !this.Hosts.SequenceEqual(input.Hosts))) return false;
+            if (this.ZoneName != input.ZoneName || (this.ZoneName != null && !this.ZoneName.Equals(input.ZoneName))) return false;
+            if (this.ZoneState != input.ZoneState || (this.ZoneState != null && !this.ZoneState.Equals(input.ZoneState))) return false;
 
-            return 
-                (
-                    this.Hosts == input.Hosts ||
-                    this.Hosts != null &&
-                    input.Hosts != null &&
-                    this.Hosts.SequenceEqual(input.Hosts)
-                ) && 
-                (
-                    this.ZoneName == input.ZoneName ||
-                    (this.ZoneName != null &&
-                    this.ZoneName.Equals(input.ZoneName))
-                ) && 
-                (
-                    this.ZoneState == input.ZoneState ||
-                    (this.ZoneState != null &&
-                    this.ZoneState.Equals(input.ZoneState))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Hosts != null)
-                    hashCode = hashCode * 59 + this.Hosts.GetHashCode();
-                if (this.ZoneName != null)
-                    hashCode = hashCode * 59 + this.ZoneName.GetHashCode();
-                if (this.ZoneState != null)
-                    hashCode = hashCode * 59 + this.ZoneState.GetHashCode();
+                var hashCode = 41;
+                if (this.Hosts != null) hashCode = hashCode * 59 + this.Hosts.GetHashCode();
+                if (this.ZoneName != null) hashCode = hashCode * 59 + this.ZoneName.GetHashCode();
+                if (this.ZoneState != null) hashCode = hashCode * 59 + this.ZoneState.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(UpdateClientIpTransparentTransmissionRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TransparentClientIpEnable != input.TransparentClientIpEnable || (this.TransparentClientIpEnable != null && !this.TransparentClientIpEnable.Equals(input.TransparentClientIpEnable))) return false;
 
-            return 
-                (
-                    this.TransparentClientIpEnable == input.TransparentClientIpEnable ||
-                    (this.TransparentClientIpEnable != null &&
-                    this.TransparentClientIpEnable.Equals(input.TransparentClientIpEnable))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TransparentClientIpEnable != null)
-                    hashCode = hashCode * 59 + this.TransparentClientIpEnable.GetHashCode();
+                var hashCode = 41;
+                if (this.TransparentClientIpEnable != null) hashCode = hashCode * 59 + this.TransparentClientIpEnable.GetHashCode();
                 return hashCode;
             }
         }

@@ -267,85 +267,24 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         /// </summary>
         public bool Equals(RtcUser input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
+            if (this.App != input.App || (this.App != null && !this.App.Equals(input.App))) return false;
+            if (this.RoomId != input.RoomId || (this.RoomId != null && !this.RoomId.Equals(input.RoomId))) return false;
+            if (this.Uid != input.Uid || (this.Uid != null && !this.Uid.Equals(input.Uid))) return false;
+            if (this.Session != input.Session || (this.Session != null && !this.Session.Equals(input.Session))) return false;
+            if (this.State != input.State) return false;
+            if (this.NickName != input.NickName || (this.NickName != null && !this.NickName.Equals(input.NickName))) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
+            if (this.Isp != input.Isp || (this.Isp != null && !this.Isp.Equals(input.Isp))) return false;
+            if (this.DeviceModel != input.DeviceModel || (this.DeviceModel != null && !this.DeviceModel.Equals(input.DeviceModel))) return false;
+            if (this.Platform != input.Platform || (this.Platform != null && !this.Platform.Equals(input.Platform))) return false;
+            if (this.Sdk != input.Sdk || (this.Sdk != null && !this.Sdk.Equals(input.Sdk))) return false;
+            if (this.JoinTime != input.JoinTime || (this.JoinTime != null && !this.JoinTime.Equals(input.JoinTime))) return false;
+            if (this.LeaveTime != input.LeaveTime || (this.LeaveTime != null && !this.LeaveTime.Equals(input.LeaveTime))) return false;
 
-            return 
-                (
-                    this.Domain == input.Domain ||
-                    (this.Domain != null &&
-                    this.Domain.Equals(input.Domain))
-                ) && 
-                (
-                    this.App == input.App ||
-                    (this.App != null &&
-                    this.App.Equals(input.App))
-                ) && 
-                (
-                    this.RoomId == input.RoomId ||
-                    (this.RoomId != null &&
-                    this.RoomId.Equals(input.RoomId))
-                ) && 
-                (
-                    this.Uid == input.Uid ||
-                    (this.Uid != null &&
-                    this.Uid.Equals(input.Uid))
-                ) && 
-                (
-                    this.Session == input.Session ||
-                    (this.Session != null &&
-                    this.Session.Equals(input.Session))
-                ) && 
-                (
-                    this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
-                ) && 
-                (
-                    this.NickName == input.NickName ||
-                    (this.NickName != null &&
-                    this.NickName.Equals(input.NickName))
-                ) && 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.Isp == input.Isp ||
-                    (this.Isp != null &&
-                    this.Isp.Equals(input.Isp))
-                ) && 
-                (
-                    this.DeviceModel == input.DeviceModel ||
-                    (this.DeviceModel != null &&
-                    this.DeviceModel.Equals(input.DeviceModel))
-                ) && 
-                (
-                    this.Platform == input.Platform ||
-                    (this.Platform != null &&
-                    this.Platform.Equals(input.Platform))
-                ) && 
-                (
-                    this.Sdk == input.Sdk ||
-                    (this.Sdk != null &&
-                    this.Sdk.Equals(input.Sdk))
-                ) && 
-                (
-                    this.JoinTime == input.JoinTime ||
-                    (this.JoinTime != null &&
-                    this.JoinTime.Equals(input.JoinTime))
-                ) && 
-                (
-                    this.LeaveTime == input.LeaveTime ||
-                    (this.LeaveTime != null &&
-                    this.LeaveTime.Equals(input.LeaveTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -355,37 +294,22 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Domain != null)
-                    hashCode = hashCode * 59 + this.Domain.GetHashCode();
-                if (this.App != null)
-                    hashCode = hashCode * 59 + this.App.GetHashCode();
-                if (this.RoomId != null)
-                    hashCode = hashCode * 59 + this.RoomId.GetHashCode();
-                if (this.Uid != null)
-                    hashCode = hashCode * 59 + this.Uid.GetHashCode();
-                if (this.Session != null)
-                    hashCode = hashCode * 59 + this.Session.GetHashCode();
-                if (this.State != null)
-                    hashCode = hashCode * 59 + this.State.GetHashCode();
-                if (this.NickName != null)
-                    hashCode = hashCode * 59 + this.NickName.GetHashCode();
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.Isp != null)
-                    hashCode = hashCode * 59 + this.Isp.GetHashCode();
-                if (this.DeviceModel != null)
-                    hashCode = hashCode * 59 + this.DeviceModel.GetHashCode();
-                if (this.Platform != null)
-                    hashCode = hashCode * 59 + this.Platform.GetHashCode();
-                if (this.Sdk != null)
-                    hashCode = hashCode * 59 + this.Sdk.GetHashCode();
-                if (this.JoinTime != null)
-                    hashCode = hashCode * 59 + this.JoinTime.GetHashCode();
-                if (this.LeaveTime != null)
-                    hashCode = hashCode * 59 + this.LeaveTime.GetHashCode();
+                var hashCode = 41;
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                if (this.App != null) hashCode = hashCode * 59 + this.App.GetHashCode();
+                if (this.RoomId != null) hashCode = hashCode * 59 + this.RoomId.GetHashCode();
+                if (this.Uid != null) hashCode = hashCode * 59 + this.Uid.GetHashCode();
+                if (this.Session != null) hashCode = hashCode * 59 + this.Session.GetHashCode();
+                hashCode = hashCode * 59 + this.State.GetHashCode();
+                if (this.NickName != null) hashCode = hashCode * 59 + this.NickName.GetHashCode();
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
+                if (this.Isp != null) hashCode = hashCode * 59 + this.Isp.GetHashCode();
+                if (this.DeviceModel != null) hashCode = hashCode * 59 + this.DeviceModel.GetHashCode();
+                if (this.Platform != null) hashCode = hashCode * 59 + this.Platform.GetHashCode();
+                if (this.Sdk != null) hashCode = hashCode * 59 + this.Sdk.GetHashCode();
+                if (this.JoinTime != null) hashCode = hashCode * 59 + this.JoinTime.GetHashCode();
+                if (this.LeaveTime != null) hashCode = hashCode * 59 + this.LeaveTime.GetHashCode();
                 return hashCode;
             }
         }

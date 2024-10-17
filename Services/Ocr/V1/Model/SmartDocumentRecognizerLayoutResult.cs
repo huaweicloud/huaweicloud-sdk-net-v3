@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(SmartDocumentRecognizerLayoutResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LayoutBlockCount != input.LayoutBlockCount || (this.LayoutBlockCount != null && !this.LayoutBlockCount.Equals(input.LayoutBlockCount))) return false;
+            if (this.LayoutBlockList != input.LayoutBlockList || (this.LayoutBlockList != null && input.LayoutBlockList != null && !this.LayoutBlockList.SequenceEqual(input.LayoutBlockList))) return false;
 
-            return 
-                (
-                    this.LayoutBlockCount == input.LayoutBlockCount ||
-                    (this.LayoutBlockCount != null &&
-                    this.LayoutBlockCount.Equals(input.LayoutBlockCount))
-                ) && 
-                (
-                    this.LayoutBlockList == input.LayoutBlockList ||
-                    this.LayoutBlockList != null &&
-                    input.LayoutBlockList != null &&
-                    this.LayoutBlockList.SequenceEqual(input.LayoutBlockList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LayoutBlockCount != null)
-                    hashCode = hashCode * 59 + this.LayoutBlockCount.GetHashCode();
-                if (this.LayoutBlockList != null)
-                    hashCode = hashCode * 59 + this.LayoutBlockList.GetHashCode();
+                var hashCode = 41;
+                if (this.LayoutBlockCount != null) hashCode = hashCode * 59 + this.LayoutBlockCount.GetHashCode();
+                if (this.LayoutBlockList != null) hashCode = hashCode * 59 + this.LayoutBlockList.GetHashCode();
                 return hashCode;
             }
         }

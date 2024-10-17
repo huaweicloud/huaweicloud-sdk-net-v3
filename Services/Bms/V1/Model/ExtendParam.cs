@@ -319,45 +319,16 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(ExtendParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ChargingMode != input.ChargingMode) return false;
+            if (this.RegionID != input.RegionID || (this.RegionID != null && !this.RegionID.Equals(input.RegionID))) return false;
+            if (this.PeriodType != input.PeriodType) return false;
+            if (this.PeriodNum != input.PeriodNum || (this.PeriodNum != null && !this.PeriodNum.Equals(input.PeriodNum))) return false;
+            if (this.IsAutoRenew != input.IsAutoRenew || (this.IsAutoRenew != null && !this.IsAutoRenew.Equals(input.IsAutoRenew))) return false;
+            if (this.IsAutoPay != input.IsAutoPay || (this.IsAutoPay != null && !this.IsAutoPay.Equals(input.IsAutoPay))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
-            return 
-                (
-                    this.ChargingMode == input.ChargingMode ||
-                    (this.ChargingMode != null &&
-                    this.ChargingMode.Equals(input.ChargingMode))
-                ) && 
-                (
-                    this.RegionID == input.RegionID ||
-                    (this.RegionID != null &&
-                    this.RegionID.Equals(input.RegionID))
-                ) && 
-                (
-                    this.PeriodType == input.PeriodType ||
-                    (this.PeriodType != null &&
-                    this.PeriodType.Equals(input.PeriodType))
-                ) && 
-                (
-                    this.PeriodNum == input.PeriodNum ||
-                    (this.PeriodNum != null &&
-                    this.PeriodNum.Equals(input.PeriodNum))
-                ) && 
-                (
-                    this.IsAutoRenew == input.IsAutoRenew ||
-                    (this.IsAutoRenew != null &&
-                    this.IsAutoRenew.Equals(input.IsAutoRenew))
-                ) && 
-                (
-                    this.IsAutoPay == input.IsAutoPay ||
-                    (this.IsAutoPay != null &&
-                    this.IsAutoPay.Equals(input.IsAutoPay))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -367,21 +338,14 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ChargingMode != null)
-                    hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
-                if (this.RegionID != null)
-                    hashCode = hashCode * 59 + this.RegionID.GetHashCode();
-                if (this.PeriodType != null)
-                    hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
-                if (this.PeriodNum != null)
-                    hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
-                if (this.IsAutoRenew != null)
-                    hashCode = hashCode * 59 + this.IsAutoRenew.GetHashCode();
-                if (this.IsAutoPay != null)
-                    hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
+                if (this.RegionID != null) hashCode = hashCode * 59 + this.RegionID.GetHashCode();
+                hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
+                if (this.PeriodNum != null) hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
+                if (this.IsAutoRenew != null) hashCode = hashCode * 59 + this.IsAutoRenew.GetHashCode();
+                if (this.IsAutoPay != null) hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

@@ -164,15 +164,10 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(ShowApiVersionRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ApiVersion != input.ApiVersion) return false;
 
-            return 
-                (
-                    this.ApiVersion == input.ApiVersion ||
-                    (this.ApiVersion != null &&
-                    this.ApiVersion.Equals(input.ApiVersion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -182,9 +177,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ApiVersion != null)
-                    hashCode = hashCode * 59 + this.ApiVersion.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.ApiVersion.GetHashCode();
                 return hashCode;
             }
         }

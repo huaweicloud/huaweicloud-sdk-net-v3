@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(UpdateDomainConsoleAclPolicyRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ConsoleAclPolicy != input.ConsoleAclPolicy || (this.ConsoleAclPolicy != null && !this.ConsoleAclPolicy.Equals(input.ConsoleAclPolicy))) return false;
 
-            return 
-                (
-                    this.ConsoleAclPolicy == input.ConsoleAclPolicy ||
-                    (this.ConsoleAclPolicy != null &&
-                    this.ConsoleAclPolicy.Equals(input.ConsoleAclPolicy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ConsoleAclPolicy != null)
-                    hashCode = hashCode * 59 + this.ConsoleAclPolicy.GetHashCode();
+                var hashCode = 41;
+                if (this.ConsoleAclPolicy != null) hashCode = hashCode * 59 + this.ConsoleAclPolicy.GetHashCode();
                 return hashCode;
             }
         }

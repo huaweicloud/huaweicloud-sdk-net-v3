@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(CommandInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OriginName != input.OriginName || (this.OriginName != null && !this.OriginName.Equals(input.OriginName))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
 
-            return 
-                (
-                    this.OriginName == input.OriginName ||
-                    (this.OriginName != null &&
-                    this.OriginName.Equals(input.OriginName))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OriginName != null)
-                    hashCode = hashCode * 59 + this.OriginName.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                var hashCode = 41;
+                if (this.OriginName != null) hashCode = hashCode * 59 + this.OriginName.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 return hashCode;
             }
         }

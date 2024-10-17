@@ -63,28 +63,12 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         /// </summary>
         public bool Equals(TextDetectionReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Categories != input.Categories || (this.Categories != null && input.Categories != null && !this.Categories.SequenceEqual(input.Categories))) return false;
+            if (this.WhiteGlossaries != input.WhiteGlossaries || (this.WhiteGlossaries != null && input.WhiteGlossaries != null && !this.WhiteGlossaries.SequenceEqual(input.WhiteGlossaries))) return false;
+            if (this.Items != input.Items || (this.Items != null && input.Items != null && !this.Items.SequenceEqual(input.Items))) return false;
 
-            return 
-                (
-                    this.Categories == input.Categories ||
-                    this.Categories != null &&
-                    input.Categories != null &&
-                    this.Categories.SequenceEqual(input.Categories)
-                ) && 
-                (
-                    this.WhiteGlossaries == input.WhiteGlossaries ||
-                    this.WhiteGlossaries != null &&
-                    input.WhiteGlossaries != null &&
-                    this.WhiteGlossaries.SequenceEqual(input.WhiteGlossaries)
-                ) && 
-                (
-                    this.Items == input.Items ||
-                    this.Items != null &&
-                    input.Items != null &&
-                    this.Items.SequenceEqual(input.Items)
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +78,10 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Categories != null)
-                    hashCode = hashCode * 59 + this.Categories.GetHashCode();
-                if (this.WhiteGlossaries != null)
-                    hashCode = hashCode * 59 + this.WhiteGlossaries.GetHashCode();
-                if (this.Items != null)
-                    hashCode = hashCode * 59 + this.Items.GetHashCode();
+                var hashCode = 41;
+                if (this.Categories != null) hashCode = hashCode * 59 + this.Categories.GetHashCode();
+                if (this.WhiteGlossaries != null) hashCode = hashCode * 59 + this.WhiteGlossaries.GetHashCode();
+                if (this.Items != null) hashCode = hashCode * 59 + this.Items.GetHashCode();
                 return hashCode;
             }
         }

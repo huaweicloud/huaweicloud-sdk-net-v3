@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         /// </summary>
         public bool Equals(IdcardResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;
+            if (this.Sex != input.Sex || (this.Sex != null && !this.Sex.Equals(input.Sex))) return false;
+            if (this.Birth != input.Birth || (this.Birth != null && !this.Birth.Equals(input.Birth))) return false;
+            if (this.Ethnicity != input.Ethnicity || (this.Ethnicity != null && !this.Ethnicity.Equals(input.Ethnicity))) return false;
+            if (this.Address != input.Address || (this.Address != null && !this.Address.Equals(input.Address))) return false;
+            if (this.Issue != input.Issue || (this.Issue != null && !this.Issue.Equals(input.Issue))) return false;
+            if (this.ValidFrom != input.ValidFrom || (this.ValidFrom != null && !this.ValidFrom.Equals(input.ValidFrom))) return false;
+            if (this.ValidTo != input.ValidTo || (this.ValidTo != null && !this.ValidTo.Equals(input.ValidTo))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                ) && 
-                (
-                    this.Sex == input.Sex ||
-                    (this.Sex != null &&
-                    this.Sex.Equals(input.Sex))
-                ) && 
-                (
-                    this.Birth == input.Birth ||
-                    (this.Birth != null &&
-                    this.Birth.Equals(input.Birth))
-                ) && 
-                (
-                    this.Ethnicity == input.Ethnicity ||
-                    (this.Ethnicity != null &&
-                    this.Ethnicity.Equals(input.Ethnicity))
-                ) && 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
-                ) && 
-                (
-                    this.Issue == input.Issue ||
-                    (this.Issue != null &&
-                    this.Issue.Equals(input.Issue))
-                ) && 
-                (
-                    this.ValidFrom == input.ValidFrom ||
-                    (this.ValidFrom != null &&
-                    this.ValidFrom.Equals(input.ValidFrom))
-                ) && 
-                (
-                    this.ValidTo == input.ValidTo ||
-                    (this.ValidTo != null &&
-                    this.ValidTo.Equals(input.ValidTo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Number != null)
-                    hashCode = hashCode * 59 + this.Number.GetHashCode();
-                if (this.Sex != null)
-                    hashCode = hashCode * 59 + this.Sex.GetHashCode();
-                if (this.Birth != null)
-                    hashCode = hashCode * 59 + this.Birth.GetHashCode();
-                if (this.Ethnicity != null)
-                    hashCode = hashCode * 59 + this.Ethnicity.GetHashCode();
-                if (this.Address != null)
-                    hashCode = hashCode * 59 + this.Address.GetHashCode();
-                if (this.Issue != null)
-                    hashCode = hashCode * 59 + this.Issue.GetHashCode();
-                if (this.ValidFrom != null)
-                    hashCode = hashCode * 59 + this.ValidFrom.GetHashCode();
-                if (this.ValidTo != null)
-                    hashCode = hashCode * 59 + this.ValidTo.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Number != null) hashCode = hashCode * 59 + this.Number.GetHashCode();
+                if (this.Sex != null) hashCode = hashCode * 59 + this.Sex.GetHashCode();
+                if (this.Birth != null) hashCode = hashCode * 59 + this.Birth.GetHashCode();
+                if (this.Ethnicity != null) hashCode = hashCode * 59 + this.Ethnicity.GetHashCode();
+                if (this.Address != null) hashCode = hashCode * 59 + this.Address.GetHashCode();
+                if (this.Issue != null) hashCode = hashCode * 59 + this.Issue.GetHashCode();
+                if (this.ValidFrom != null) hashCode = hashCode * 59 + this.ValidFrom.GetHashCode();
+                if (this.ValidTo != null) hashCode = hashCode * 59 + this.ValidTo.GetHashCode();
                 return hashCode;
             }
         }

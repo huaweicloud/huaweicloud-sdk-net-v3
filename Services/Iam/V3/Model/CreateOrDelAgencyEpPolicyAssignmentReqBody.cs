@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(CreateOrDelAgencyEpPolicyAssignmentReqBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RoleAssignments != input.RoleAssignments || (this.RoleAssignments != null && input.RoleAssignments != null && !this.RoleAssignments.SequenceEqual(input.RoleAssignments))) return false;
 
-            return 
-                (
-                    this.RoleAssignments == input.RoleAssignments ||
-                    this.RoleAssignments != null &&
-                    input.RoleAssignments != null &&
-                    this.RoleAssignments.SequenceEqual(input.RoleAssignments)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RoleAssignments != null)
-                    hashCode = hashCode * 59 + this.RoleAssignments.GetHashCode();
+                var hashCode = 41;
+                if (this.RoleAssignments != null) hashCode = hashCode * 59 + this.RoleAssignments.GetHashCode();
                 return hashCode;
             }
         }

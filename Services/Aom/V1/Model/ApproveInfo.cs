@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         /// </summary>
         public bool Equals(ApproveInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TopicSelected != input.TopicSelected || (this.TopicSelected != null && !this.TopicSelected.Equals(input.TopicSelected))) return false;
+            if (this.NeedApprove != input.NeedApprove || (this.NeedApprove != null && !this.NeedApprove.Equals(input.NeedApprove))) return false;
+            if (this.SmnUrnList != input.SmnUrnList || (this.SmnUrnList != null && !this.SmnUrnList.Equals(input.SmnUrnList))) return false;
 
-            return 
-                (
-                    this.TopicSelected == input.TopicSelected ||
-                    (this.TopicSelected != null &&
-                    this.TopicSelected.Equals(input.TopicSelected))
-                ) && 
-                (
-                    this.NeedApprove == input.NeedApprove ||
-                    (this.NeedApprove != null &&
-                    this.NeedApprove.Equals(input.NeedApprove))
-                ) && 
-                (
-                    this.SmnUrnList == input.SmnUrnList ||
-                    (this.SmnUrnList != null &&
-                    this.SmnUrnList.Equals(input.SmnUrnList))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TopicSelected != null)
-                    hashCode = hashCode * 59 + this.TopicSelected.GetHashCode();
-                if (this.NeedApprove != null)
-                    hashCode = hashCode * 59 + this.NeedApprove.GetHashCode();
-                if (this.SmnUrnList != null)
-                    hashCode = hashCode * 59 + this.SmnUrnList.GetHashCode();
+                var hashCode = 41;
+                if (this.TopicSelected != null) hashCode = hashCode * 59 + this.TopicSelected.GetHashCode();
+                if (this.NeedApprove != null) hashCode = hashCode * 59 + this.NeedApprove.GetHashCode();
+                if (this.SmnUrnList != null) hashCode = hashCode * 59 + this.SmnUrnList.GetHashCode();
                 return hashCode;
             }
         }

@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(ListFirewallListResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UserSupportEps != input.UserSupportEps || (this.UserSupportEps != null && !this.UserSupportEps.Equals(input.UserSupportEps))) return false;
+            if (this.HasNdr != input.HasNdr || (this.HasNdr != null && !this.HasNdr.Equals(input.HasNdr))) return false;
+            if (this.IsSupportPostpaid != input.IsSupportPostpaid || (this.IsSupportPostpaid != null && !this.IsSupportPostpaid.Equals(input.IsSupportPostpaid))) return false;
+            if (this.IsSupportBasicVersion != input.IsSupportBasicVersion || (this.IsSupportBasicVersion != null && !this.IsSupportBasicVersion.Equals(input.IsSupportBasicVersion))) return false;
+            if (this.IsSupportBuyProfessional != input.IsSupportBuyProfessional || (this.IsSupportBuyProfessional != null && !this.IsSupportBuyProfessional.Equals(input.IsSupportBuyProfessional))) return false;
+            if (this.Data != input.Data || (this.Data != null && !this.Data.Equals(input.Data))) return false;
 
-            return 
-                (
-                    this.UserSupportEps == input.UserSupportEps ||
-                    (this.UserSupportEps != null &&
-                    this.UserSupportEps.Equals(input.UserSupportEps))
-                ) && 
-                (
-                    this.HasNdr == input.HasNdr ||
-                    (this.HasNdr != null &&
-                    this.HasNdr.Equals(input.HasNdr))
-                ) && 
-                (
-                    this.IsSupportPostpaid == input.IsSupportPostpaid ||
-                    (this.IsSupportPostpaid != null &&
-                    this.IsSupportPostpaid.Equals(input.IsSupportPostpaid))
-                ) && 
-                (
-                    this.IsSupportBasicVersion == input.IsSupportBasicVersion ||
-                    (this.IsSupportBasicVersion != null &&
-                    this.IsSupportBasicVersion.Equals(input.IsSupportBasicVersion))
-                ) && 
-                (
-                    this.IsSupportBuyProfessional == input.IsSupportBuyProfessional ||
-                    (this.IsSupportBuyProfessional != null &&
-                    this.IsSupportBuyProfessional.Equals(input.IsSupportBuyProfessional))
-                ) && 
-                (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UserSupportEps != null)
-                    hashCode = hashCode * 59 + this.UserSupportEps.GetHashCode();
-                if (this.HasNdr != null)
-                    hashCode = hashCode * 59 + this.HasNdr.GetHashCode();
-                if (this.IsSupportPostpaid != null)
-                    hashCode = hashCode * 59 + this.IsSupportPostpaid.GetHashCode();
-                if (this.IsSupportBasicVersion != null)
-                    hashCode = hashCode * 59 + this.IsSupportBasicVersion.GetHashCode();
-                if (this.IsSupportBuyProfessional != null)
-                    hashCode = hashCode * 59 + this.IsSupportBuyProfessional.GetHashCode();
-                if (this.Data != null)
-                    hashCode = hashCode * 59 + this.Data.GetHashCode();
+                var hashCode = 41;
+                if (this.UserSupportEps != null) hashCode = hashCode * 59 + this.UserSupportEps.GetHashCode();
+                if (this.HasNdr != null) hashCode = hashCode * 59 + this.HasNdr.GetHashCode();
+                if (this.IsSupportPostpaid != null) hashCode = hashCode * 59 + this.IsSupportPostpaid.GetHashCode();
+                if (this.IsSupportBasicVersion != null) hashCode = hashCode * 59 + this.IsSupportBasicVersion.GetHashCode();
+                if (this.IsSupportBuyProfessional != null) hashCode = hashCode * 59 + this.IsSupportBuyProfessional.GetHashCode();
+                if (this.Data != null) hashCode = hashCode * 59 + this.Data.GetHashCode();
                 return hashCode;
             }
         }

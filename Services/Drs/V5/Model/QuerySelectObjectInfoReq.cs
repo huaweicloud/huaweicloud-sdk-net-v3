@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(QuerySelectObjectInfoReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DbNames != input.DbNames || (this.DbNames != null && input.DbNames != null && !this.DbNames.SequenceEqual(input.DbNames))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.IsRefresh != input.IsRefresh || (this.IsRefresh != null && !this.IsRefresh.Equals(input.IsRefresh))) return false;
 
-            return 
-                (
-                    this.DbNames == input.DbNames ||
-                    this.DbNames != null &&
-                    input.DbNames != null &&
-                    this.DbNames.SequenceEqual(input.DbNames)
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.IsRefresh == input.IsRefresh ||
-                    (this.IsRefresh != null &&
-                    this.IsRefresh.Equals(input.IsRefresh))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DbNames != null)
-                    hashCode = hashCode * 59 + this.DbNames.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.IsRefresh != null)
-                    hashCode = hashCode * 59 + this.IsRefresh.GetHashCode();
+                var hashCode = 41;
+                if (this.DbNames != null) hashCode = hashCode * 59 + this.DbNames.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.IsRefresh != null) hashCode = hashCode * 59 + this.IsRefresh.GetHashCode();
                 return hashCode;
             }
         }

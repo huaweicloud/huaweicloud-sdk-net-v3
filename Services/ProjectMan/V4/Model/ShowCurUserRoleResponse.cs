@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ShowCurUserRoleResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UserRole != input.UserRole || (this.UserRole != null && !this.UserRole.Equals(input.UserRole))) return false;
 
-            return 
-                (
-                    this.UserRole == input.UserRole ||
-                    (this.UserRole != null &&
-                    this.UserRole.Equals(input.UserRole))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UserRole != null)
-                    hashCode = hashCode * 59 + this.UserRole.GetHashCode();
+                var hashCode = 41;
+                if (this.UserRole != null) hashCode = hashCode * 59 + this.UserRole.GetHashCode();
                 return hashCode;
             }
         }

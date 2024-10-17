@@ -184,30 +184,13 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(ModifyPwdEndPoint input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DbPassword != input.DbPassword || (this.DbPassword != null && !this.DbPassword.Equals(input.DbPassword))) return false;
+            if (this.EndPointType != input.EndPointType) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.Kerberos != input.Kerberos || (this.Kerberos != null && !this.Kerberos.Equals(input.Kerberos))) return false;
 
-            return 
-                (
-                    this.DbPassword == input.DbPassword ||
-                    (this.DbPassword != null &&
-                    this.DbPassword.Equals(input.DbPassword))
-                ) && 
-                (
-                    this.EndPointType == input.EndPointType ||
-                    (this.EndPointType != null &&
-                    this.EndPointType.Equals(input.EndPointType))
-                ) && 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.Kerberos == input.Kerberos ||
-                    (this.Kerberos != null &&
-                    this.Kerberos.Equals(input.Kerberos))
-                );
+            return true;
         }
 
         /// <summary>
@@ -217,15 +200,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DbPassword != null)
-                    hashCode = hashCode * 59 + this.DbPassword.GetHashCode();
-                if (this.EndPointType != null)
-                    hashCode = hashCode * 59 + this.EndPointType.GetHashCode();
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.Kerberos != null)
-                    hashCode = hashCode * 59 + this.Kerberos.GetHashCode();
+                var hashCode = 41;
+                if (this.DbPassword != null) hashCode = hashCode * 59 + this.DbPassword.GetHashCode();
+                hashCode = hashCode * 59 + this.EndPointType.GetHashCode();
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.Kerberos != null) hashCode = hashCode * 59 + this.Kerberos.GetHashCode();
                 return hashCode;
             }
         }

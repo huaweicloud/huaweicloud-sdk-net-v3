@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(QueryBodyParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Category != input.Category || (this.Category != null && !this.Category.Equals(input.Category))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.HideSyslog != input.HideSyslog || (this.HideSyslog != null && !this.HideSyslog.Equals(input.HideSyslog))) return false;
+            if (this.KeyWord != input.KeyWord || (this.KeyWord != null && !this.KeyWord.Equals(input.KeyWord))) return false;
+            if (this.LineNum != input.LineNum || (this.LineNum != null && !this.LineNum.Equals(input.LineNum))) return false;
+            if (this.PageSizeSize != input.PageSizeSize || (this.PageSizeSize != null && !this.PageSizeSize.Equals(input.PageSizeSize))) return false;
+            if (this.SearchKey != input.SearchKey || (this.SearchKey != null && !this.SearchKey.Equals(input.SearchKey))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.IsDesc != input.IsDesc || (this.IsDesc != null && !this.IsDesc.Equals(input.IsDesc))) return false;
 
-            return 
-                (
-                    this.Category == input.Category ||
-                    (this.Category != null &&
-                    this.Category.Equals(input.Category))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.HideSyslog == input.HideSyslog ||
-                    (this.HideSyslog != null &&
-                    this.HideSyslog.Equals(input.HideSyslog))
-                ) && 
-                (
-                    this.KeyWord == input.KeyWord ||
-                    (this.KeyWord != null &&
-                    this.KeyWord.Equals(input.KeyWord))
-                ) && 
-                (
-                    this.LineNum == input.LineNum ||
-                    (this.LineNum != null &&
-                    this.LineNum.Equals(input.LineNum))
-                ) && 
-                (
-                    this.PageSizeSize == input.PageSizeSize ||
-                    (this.PageSizeSize != null &&
-                    this.PageSizeSize.Equals(input.PageSizeSize))
-                ) && 
-                (
-                    this.SearchKey == input.SearchKey ||
-                    (this.SearchKey != null &&
-                    this.SearchKey.Equals(input.SearchKey))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.IsDesc == input.IsDesc ||
-                    (this.IsDesc != null &&
-                    this.IsDesc.Equals(input.IsDesc))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Category != null)
-                    hashCode = hashCode * 59 + this.Category.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.HideSyslog != null)
-                    hashCode = hashCode * 59 + this.HideSyslog.GetHashCode();
-                if (this.KeyWord != null)
-                    hashCode = hashCode * 59 + this.KeyWord.GetHashCode();
-                if (this.LineNum != null)
-                    hashCode = hashCode * 59 + this.LineNum.GetHashCode();
-                if (this.PageSizeSize != null)
-                    hashCode = hashCode * 59 + this.PageSizeSize.GetHashCode();
-                if (this.SearchKey != null)
-                    hashCode = hashCode * 59 + this.SearchKey.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.IsDesc != null)
-                    hashCode = hashCode * 59 + this.IsDesc.GetHashCode();
+                var hashCode = 41;
+                if (this.Category != null) hashCode = hashCode * 59 + this.Category.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.HideSyslog != null) hashCode = hashCode * 59 + this.HideSyslog.GetHashCode();
+                if (this.KeyWord != null) hashCode = hashCode * 59 + this.KeyWord.GetHashCode();
+                if (this.LineNum != null) hashCode = hashCode * 59 + this.LineNum.GetHashCode();
+                if (this.PageSizeSize != null) hashCode = hashCode * 59 + this.PageSizeSize.GetHashCode();
+                if (this.SearchKey != null) hashCode = hashCode * 59 + this.SearchKey.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.IsDesc != null) hashCode = hashCode * 59 + this.IsDesc.GetHashCode();
                 return hashCode;
             }
         }

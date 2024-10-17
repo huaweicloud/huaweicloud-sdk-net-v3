@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(EndpointSslConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SslLink != input.SslLink || (this.SslLink != null && !this.SslLink.Equals(input.SslLink))) return false;
+            if (this.SslCertName != input.SslCertName || (this.SslCertName != null && !this.SslCertName.Equals(input.SslCertName))) return false;
+            if (this.SslCertKey != input.SslCertKey || (this.SslCertKey != null && !this.SslCertKey.Equals(input.SslCertKey))) return false;
+            if (this.SslCertCheckSum != input.SslCertCheckSum || (this.SslCertCheckSum != null && !this.SslCertCheckSum.Equals(input.SslCertCheckSum))) return false;
+            if (this.SslCertPassword != input.SslCertPassword || (this.SslCertPassword != null && !this.SslCertPassword.Equals(input.SslCertPassword))) return false;
 
-            return 
-                (
-                    this.SslLink == input.SslLink ||
-                    (this.SslLink != null &&
-                    this.SslLink.Equals(input.SslLink))
-                ) && 
-                (
-                    this.SslCertName == input.SslCertName ||
-                    (this.SslCertName != null &&
-                    this.SslCertName.Equals(input.SslCertName))
-                ) && 
-                (
-                    this.SslCertKey == input.SslCertKey ||
-                    (this.SslCertKey != null &&
-                    this.SslCertKey.Equals(input.SslCertKey))
-                ) && 
-                (
-                    this.SslCertCheckSum == input.SslCertCheckSum ||
-                    (this.SslCertCheckSum != null &&
-                    this.SslCertCheckSum.Equals(input.SslCertCheckSum))
-                ) && 
-                (
-                    this.SslCertPassword == input.SslCertPassword ||
-                    (this.SslCertPassword != null &&
-                    this.SslCertPassword.Equals(input.SslCertPassword))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SslLink != null)
-                    hashCode = hashCode * 59 + this.SslLink.GetHashCode();
-                if (this.SslCertName != null)
-                    hashCode = hashCode * 59 + this.SslCertName.GetHashCode();
-                if (this.SslCertKey != null)
-                    hashCode = hashCode * 59 + this.SslCertKey.GetHashCode();
-                if (this.SslCertCheckSum != null)
-                    hashCode = hashCode * 59 + this.SslCertCheckSum.GetHashCode();
-                if (this.SslCertPassword != null)
-                    hashCode = hashCode * 59 + this.SslCertPassword.GetHashCode();
+                var hashCode = 41;
+                if (this.SslLink != null) hashCode = hashCode * 59 + this.SslLink.GetHashCode();
+                if (this.SslCertName != null) hashCode = hashCode * 59 + this.SslCertName.GetHashCode();
+                if (this.SslCertKey != null) hashCode = hashCode * 59 + this.SslCertKey.GetHashCode();
+                if (this.SslCertCheckSum != null) hashCode = hashCode * 59 + this.SslCertCheckSum.GetHashCode();
+                if (this.SslCertPassword != null) hashCode = hashCode * 59 + this.SslCertPassword.GetHashCode();
                 return hashCode;
             }
         }

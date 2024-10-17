@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(VaultMigrateResourceReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DestinationVaultId != input.DestinationVaultId || (this.DestinationVaultId != null && !this.DestinationVaultId.Equals(input.DestinationVaultId))) return false;
+            if (this.ResourceIds != input.ResourceIds || (this.ResourceIds != null && input.ResourceIds != null && !this.ResourceIds.SequenceEqual(input.ResourceIds))) return false;
 
-            return 
-                (
-                    this.DestinationVaultId == input.DestinationVaultId ||
-                    (this.DestinationVaultId != null &&
-                    this.DestinationVaultId.Equals(input.DestinationVaultId))
-                ) && 
-                (
-                    this.ResourceIds == input.ResourceIds ||
-                    this.ResourceIds != null &&
-                    input.ResourceIds != null &&
-                    this.ResourceIds.SequenceEqual(input.ResourceIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DestinationVaultId != null)
-                    hashCode = hashCode * 59 + this.DestinationVaultId.GetHashCode();
-                if (this.ResourceIds != null)
-                    hashCode = hashCode * 59 + this.ResourceIds.GetHashCode();
+                var hashCode = 41;
+                if (this.DestinationVaultId != null) hashCode = hashCode * 59 + this.DestinationVaultId.GetHashCode();
+                if (this.ResourceIds != null) hashCode = hashCode * 59 + this.ResourceIds.GetHashCode();
                 return hashCode;
             }
         }

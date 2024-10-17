@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(UpdateNewNodeAutoAddSwitchRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SwitchStatus != input.SwitchStatus || (this.SwitchStatus != null && !this.SwitchStatus.Equals(input.SwitchStatus))) return false;
+            if (this.Weight != input.Weight || (this.Weight != null && !this.Weight.Equals(input.Weight))) return false;
 
-            return 
-                (
-                    this.SwitchStatus == input.SwitchStatus ||
-                    (this.SwitchStatus != null &&
-                    this.SwitchStatus.Equals(input.SwitchStatus))
-                ) && 
-                (
-                    this.Weight == input.Weight ||
-                    (this.Weight != null &&
-                    this.Weight.Equals(input.Weight))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SwitchStatus != null)
-                    hashCode = hashCode * 59 + this.SwitchStatus.GetHashCode();
-                if (this.Weight != null)
-                    hashCode = hashCode * 59 + this.Weight.GetHashCode();
+                var hashCode = 41;
+                if (this.SwitchStatus != null) hashCode = hashCode * 59 + this.SwitchStatus.GetHashCode();
+                if (this.Weight != null) hashCode = hashCode * 59 + this.Weight.GetHashCode();
                 return hashCode;
             }
         }

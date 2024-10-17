@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(EniNetwork input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EniSubnetId != input.EniSubnetId || (this.EniSubnetId != null && !this.EniSubnetId.Equals(input.EniSubnetId))) return false;
+            if (this.EniSubnetCIDR != input.EniSubnetCIDR || (this.EniSubnetCIDR != null && !this.EniSubnetCIDR.Equals(input.EniSubnetCIDR))) return false;
+            if (this.Subnets != input.Subnets || (this.Subnets != null && input.Subnets != null && !this.Subnets.SequenceEqual(input.Subnets))) return false;
 
-            return 
-                (
-                    this.EniSubnetId == input.EniSubnetId ||
-                    (this.EniSubnetId != null &&
-                    this.EniSubnetId.Equals(input.EniSubnetId))
-                ) && 
-                (
-                    this.EniSubnetCIDR == input.EniSubnetCIDR ||
-                    (this.EniSubnetCIDR != null &&
-                    this.EniSubnetCIDR.Equals(input.EniSubnetCIDR))
-                ) && 
-                (
-                    this.Subnets == input.Subnets ||
-                    this.Subnets != null &&
-                    input.Subnets != null &&
-                    this.Subnets.SequenceEqual(input.Subnets)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EniSubnetId != null)
-                    hashCode = hashCode * 59 + this.EniSubnetId.GetHashCode();
-                if (this.EniSubnetCIDR != null)
-                    hashCode = hashCode * 59 + this.EniSubnetCIDR.GetHashCode();
-                if (this.Subnets != null)
-                    hashCode = hashCode * 59 + this.Subnets.GetHashCode();
+                var hashCode = 41;
+                if (this.EniSubnetId != null) hashCode = hashCode * 59 + this.EniSubnetId.GetHashCode();
+                if (this.EniSubnetCIDR != null) hashCode = hashCode * 59 + this.EniSubnetCIDR.GetHashCode();
+                if (this.Subnets != null) hashCode = hashCode * 59 + this.Subnets.GetHashCode();
                 return hashCode;
             }
         }

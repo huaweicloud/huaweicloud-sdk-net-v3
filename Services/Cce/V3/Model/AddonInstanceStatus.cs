@@ -265,46 +265,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(AddonInstanceStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Status != input.Status) return false;
+            if (this.Reason != input.Reason || (this.Reason != null && !this.Reason.Equals(input.Reason))) return false;
+            if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
+            if (this.TargetVersions != input.TargetVersions || (this.TargetVersions != null && input.TargetVersions != null && !this.TargetVersions.SequenceEqual(input.TargetVersions))) return false;
+            if (this.CurrentVersion != input.CurrentVersion || (this.CurrentVersion != null && !this.CurrentVersion.Equals(input.CurrentVersion))) return false;
+            if (this.IsRollbackable != input.IsRollbackable || (this.IsRollbackable != null && !this.IsRollbackable.Equals(input.IsRollbackable))) return false;
+            if (this.PreviousVersion != input.PreviousVersion || (this.PreviousVersion != null && !this.PreviousVersion.Equals(input.PreviousVersion))) return false;
 
-            return 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Reason == input.Reason ||
-                    (this.Reason != null &&
-                    this.Reason.Equals(input.Reason))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.TargetVersions == input.TargetVersions ||
-                    this.TargetVersions != null &&
-                    input.TargetVersions != null &&
-                    this.TargetVersions.SequenceEqual(input.TargetVersions)
-                ) && 
-                (
-                    this.CurrentVersion == input.CurrentVersion ||
-                    (this.CurrentVersion != null &&
-                    this.CurrentVersion.Equals(input.CurrentVersion))
-                ) && 
-                (
-                    this.IsRollbackable == input.IsRollbackable ||
-                    (this.IsRollbackable != null &&
-                    this.IsRollbackable.Equals(input.IsRollbackable))
-                ) && 
-                (
-                    this.PreviousVersion == input.PreviousVersion ||
-                    (this.PreviousVersion != null &&
-                    this.PreviousVersion.Equals(input.PreviousVersion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -314,21 +284,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Reason != null)
-                    hashCode = hashCode * 59 + this.Reason.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.TargetVersions != null)
-                    hashCode = hashCode * 59 + this.TargetVersions.GetHashCode();
-                if (this.CurrentVersion != null)
-                    hashCode = hashCode * 59 + this.CurrentVersion.GetHashCode();
-                if (this.IsRollbackable != null)
-                    hashCode = hashCode * 59 + this.IsRollbackable.GetHashCode();
-                if (this.PreviousVersion != null)
-                    hashCode = hashCode * 59 + this.PreviousVersion.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Reason != null) hashCode = hashCode * 59 + this.Reason.GetHashCode();
+                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.TargetVersions != null) hashCode = hashCode * 59 + this.TargetVersions.GetHashCode();
+                if (this.CurrentVersion != null) hashCode = hashCode * 59 + this.CurrentVersion.GetHashCode();
+                if (this.IsRollbackable != null) hashCode = hashCode * 59 + this.IsRollbackable.GetHashCode();
+                if (this.PreviousVersion != null) hashCode = hashCode * 59 + this.PreviousVersion.GetHashCode();
                 return hashCode;
             }
         }

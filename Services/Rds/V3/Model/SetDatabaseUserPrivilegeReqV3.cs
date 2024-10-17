@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(SetDatabaseUserPrivilegeReqV3 input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AllUsers != input.AllUsers || (this.AllUsers != null && !this.AllUsers.Equals(input.AllUsers))) return false;
+            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.Readonly != input.Readonly || (this.Readonly != null && !this.Readonly.Equals(input.Readonly))) return false;
 
-            return 
-                (
-                    this.AllUsers == input.AllUsers ||
-                    (this.AllUsers != null &&
-                    this.AllUsers.Equals(input.AllUsers))
-                ) && 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.Readonly == input.Readonly ||
-                    (this.Readonly != null &&
-                    this.Readonly.Equals(input.Readonly))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AllUsers != null)
-                    hashCode = hashCode * 59 + this.AllUsers.GetHashCode();
-                if (this.UserName != null)
-                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.Readonly != null)
-                    hashCode = hashCode * 59 + this.Readonly.GetHashCode();
+                var hashCode = 41;
+                if (this.AllUsers != null) hashCode = hashCode * 59 + this.AllUsers.GetHashCode();
+                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.Readonly != null) hashCode = hashCode * 59 + this.Readonly.GetHashCode();
                 return hashCode;
             }
         }

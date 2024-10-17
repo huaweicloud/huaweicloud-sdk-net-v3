@@ -105,59 +105,18 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(EditSetting input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TimelineStart != input.TimelineStart || (this.TimelineStart != null && !this.TimelineStart.Equals(input.TimelineStart))) return false;
+            if (this.TimelineEnd != input.TimelineEnd || (this.TimelineEnd != null && !this.TimelineEnd.Equals(input.TimelineEnd))) return false;
+            if (this.TransTemplateId != input.TransTemplateId || (this.TransTemplateId != null && !this.TransTemplateId.Equals(input.TransTemplateId))) return false;
+            if (this.AvParameter != input.AvParameter || (this.AvParameter != null && !this.AvParameter.Equals(input.AvParameter))) return false;
+            if (this.Mosaics != input.Mosaics || (this.Mosaics != null && input.Mosaics != null && !this.Mosaics.SequenceEqual(input.Mosaics))) return false;
+            if (this.ImageWatermarks != input.ImageWatermarks || (this.ImageWatermarks != null && input.ImageWatermarks != null && !this.ImageWatermarks.SequenceEqual(input.ImageWatermarks))) return false;
+            if (this.Heads != input.Heads || (this.Heads != null && input.Heads != null && !this.Heads.SequenceEqual(input.Heads))) return false;
+            if (this.Tails != input.Tails || (this.Tails != null && input.Tails != null && !this.Tails.SequenceEqual(input.Tails))) return false;
+            if (this.Output != input.Output || (this.Output != null && !this.Output.Equals(input.Output))) return false;
 
-            return 
-                (
-                    this.TimelineStart == input.TimelineStart ||
-                    (this.TimelineStart != null &&
-                    this.TimelineStart.Equals(input.TimelineStart))
-                ) && 
-                (
-                    this.TimelineEnd == input.TimelineEnd ||
-                    (this.TimelineEnd != null &&
-                    this.TimelineEnd.Equals(input.TimelineEnd))
-                ) && 
-                (
-                    this.TransTemplateId == input.TransTemplateId ||
-                    (this.TransTemplateId != null &&
-                    this.TransTemplateId.Equals(input.TransTemplateId))
-                ) && 
-                (
-                    this.AvParameter == input.AvParameter ||
-                    (this.AvParameter != null &&
-                    this.AvParameter.Equals(input.AvParameter))
-                ) && 
-                (
-                    this.Mosaics == input.Mosaics ||
-                    this.Mosaics != null &&
-                    input.Mosaics != null &&
-                    this.Mosaics.SequenceEqual(input.Mosaics)
-                ) && 
-                (
-                    this.ImageWatermarks == input.ImageWatermarks ||
-                    this.ImageWatermarks != null &&
-                    input.ImageWatermarks != null &&
-                    this.ImageWatermarks.SequenceEqual(input.ImageWatermarks)
-                ) && 
-                (
-                    this.Heads == input.Heads ||
-                    this.Heads != null &&
-                    input.Heads != null &&
-                    this.Heads.SequenceEqual(input.Heads)
-                ) && 
-                (
-                    this.Tails == input.Tails ||
-                    this.Tails != null &&
-                    input.Tails != null &&
-                    this.Tails.SequenceEqual(input.Tails)
-                ) && 
-                (
-                    this.Output == input.Output ||
-                    (this.Output != null &&
-                    this.Output.Equals(input.Output))
-                );
+            return true;
         }
 
         /// <summary>
@@ -167,25 +126,16 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TimelineStart != null)
-                    hashCode = hashCode * 59 + this.TimelineStart.GetHashCode();
-                if (this.TimelineEnd != null)
-                    hashCode = hashCode * 59 + this.TimelineEnd.GetHashCode();
-                if (this.TransTemplateId != null)
-                    hashCode = hashCode * 59 + this.TransTemplateId.GetHashCode();
-                if (this.AvParameter != null)
-                    hashCode = hashCode * 59 + this.AvParameter.GetHashCode();
-                if (this.Mosaics != null)
-                    hashCode = hashCode * 59 + this.Mosaics.GetHashCode();
-                if (this.ImageWatermarks != null)
-                    hashCode = hashCode * 59 + this.ImageWatermarks.GetHashCode();
-                if (this.Heads != null)
-                    hashCode = hashCode * 59 + this.Heads.GetHashCode();
-                if (this.Tails != null)
-                    hashCode = hashCode * 59 + this.Tails.GetHashCode();
-                if (this.Output != null)
-                    hashCode = hashCode * 59 + this.Output.GetHashCode();
+                var hashCode = 41;
+                if (this.TimelineStart != null) hashCode = hashCode * 59 + this.TimelineStart.GetHashCode();
+                if (this.TimelineEnd != null) hashCode = hashCode * 59 + this.TimelineEnd.GetHashCode();
+                if (this.TransTemplateId != null) hashCode = hashCode * 59 + this.TransTemplateId.GetHashCode();
+                if (this.AvParameter != null) hashCode = hashCode * 59 + this.AvParameter.GetHashCode();
+                if (this.Mosaics != null) hashCode = hashCode * 59 + this.Mosaics.GetHashCode();
+                if (this.ImageWatermarks != null) hashCode = hashCode * 59 + this.ImageWatermarks.GetHashCode();
+                if (this.Heads != null) hashCode = hashCode * 59 + this.Heads.GetHashCode();
+                if (this.Tails != null) hashCode = hashCode * 59 + this.Tails.GetHashCode();
+                if (this.Output != null) hashCode = hashCode * 59 + this.Output.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,27 +63,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(SmartDocumentRecognizerTableWordsBlock input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Words != input.Words || (this.Words != null && !this.Words.Equals(input.Words))) return false;
+            if (this.Rows != input.Rows || (this.Rows != null && input.Rows != null && !this.Rows.SequenceEqual(input.Rows))) return false;
+            if (this.Columns != input.Columns || (this.Columns != null && input.Columns != null && !this.Columns.SequenceEqual(input.Columns))) return false;
 
-            return 
-                (
-                    this.Words == input.Words ||
-                    (this.Words != null &&
-                    this.Words.Equals(input.Words))
-                ) && 
-                (
-                    this.Rows == input.Rows ||
-                    this.Rows != null &&
-                    input.Rows != null &&
-                    this.Rows.SequenceEqual(input.Rows)
-                ) && 
-                (
-                    this.Columns == input.Columns ||
-                    this.Columns != null &&
-                    input.Columns != null &&
-                    this.Columns.SequenceEqual(input.Columns)
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +78,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Words != null)
-                    hashCode = hashCode * 59 + this.Words.GetHashCode();
-                if (this.Rows != null)
-                    hashCode = hashCode * 59 + this.Rows.GetHashCode();
-                if (this.Columns != null)
-                    hashCode = hashCode * 59 + this.Columns.GetHashCode();
+                var hashCode = 41;
+                if (this.Words != null) hashCode = hashCode * 59 + this.Words.GetHashCode();
+                if (this.Rows != null) hashCode = hashCode * 59 + this.Rows.GetHashCode();
+                if (this.Columns != null) hashCode = hashCode * 59 + this.Columns.GetHashCode();
                 return hashCode;
             }
         }

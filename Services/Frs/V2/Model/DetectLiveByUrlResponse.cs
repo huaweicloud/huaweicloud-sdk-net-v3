@@ -64,26 +64,12 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public bool Equals(DetectLiveByUrlResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VideoResult != input.VideoResult || (this.VideoResult != null && !this.VideoResult.Equals(input.VideoResult))) return false;
+            if (this.WarningList != input.WarningList || (this.WarningList != null && input.WarningList != null && !this.WarningList.SequenceEqual(input.WarningList))) return false;
+            if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
-            return 
-                (
-                    this.VideoResult == input.VideoResult ||
-                    (this.VideoResult != null &&
-                    this.VideoResult.Equals(input.VideoResult))
-                ) && 
-                (
-                    this.WarningList == input.WarningList ||
-                    this.WarningList != null &&
-                    input.WarningList != null &&
-                    this.WarningList.SequenceEqual(input.WarningList)
-                ) && 
-                (
-                    this.XRequestId == input.XRequestId ||
-                    (this.XRequestId != null &&
-                    this.XRequestId.Equals(input.XRequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +79,10 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VideoResult != null)
-                    hashCode = hashCode * 59 + this.VideoResult.GetHashCode();
-                if (this.WarningList != null)
-                    hashCode = hashCode * 59 + this.WarningList.GetHashCode();
-                if (this.XRequestId != null)
-                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.VideoResult != null) hashCode = hashCode * 59 + this.VideoResult.GetHashCode();
+                if (this.WarningList != null) hashCode = hashCode * 59 + this.WarningList.GetHashCode();
+                if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

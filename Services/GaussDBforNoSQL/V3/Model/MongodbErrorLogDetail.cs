@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(MongodbErrorLogDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NodeName != input.NodeName || (this.NodeName != null && !this.NodeName.Equals(input.NodeName))) return false;
+            if (this.NodeId != input.NodeId || (this.NodeId != null && !this.NodeId.Equals(input.NodeId))) return false;
+            if (this.RawMessage != input.RawMessage || (this.RawMessage != null && !this.RawMessage.Equals(input.RawMessage))) return false;
+            if (this.Severity != input.Severity || (this.Severity != null && !this.Severity.Equals(input.Severity))) return false;
+            if (this.LogTime != input.LogTime || (this.LogTime != null && !this.LogTime.Equals(input.LogTime))) return false;
+            if (this.LineNum != input.LineNum || (this.LineNum != null && !this.LineNum.Equals(input.LineNum))) return false;
 
-            return 
-                (
-                    this.NodeName == input.NodeName ||
-                    (this.NodeName != null &&
-                    this.NodeName.Equals(input.NodeName))
-                ) && 
-                (
-                    this.NodeId == input.NodeId ||
-                    (this.NodeId != null &&
-                    this.NodeId.Equals(input.NodeId))
-                ) && 
-                (
-                    this.RawMessage == input.RawMessage ||
-                    (this.RawMessage != null &&
-                    this.RawMessage.Equals(input.RawMessage))
-                ) && 
-                (
-                    this.Severity == input.Severity ||
-                    (this.Severity != null &&
-                    this.Severity.Equals(input.Severity))
-                ) && 
-                (
-                    this.LogTime == input.LogTime ||
-                    (this.LogTime != null &&
-                    this.LogTime.Equals(input.LogTime))
-                ) && 
-                (
-                    this.LineNum == input.LineNum ||
-                    (this.LineNum != null &&
-                    this.LineNum.Equals(input.LineNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NodeName != null)
-                    hashCode = hashCode * 59 + this.NodeName.GetHashCode();
-                if (this.NodeId != null)
-                    hashCode = hashCode * 59 + this.NodeId.GetHashCode();
-                if (this.RawMessage != null)
-                    hashCode = hashCode * 59 + this.RawMessage.GetHashCode();
-                if (this.Severity != null)
-                    hashCode = hashCode * 59 + this.Severity.GetHashCode();
-                if (this.LogTime != null)
-                    hashCode = hashCode * 59 + this.LogTime.GetHashCode();
-                if (this.LineNum != null)
-                    hashCode = hashCode * 59 + this.LineNum.GetHashCode();
+                var hashCode = 41;
+                if (this.NodeName != null) hashCode = hashCode * 59 + this.NodeName.GetHashCode();
+                if (this.NodeId != null) hashCode = hashCode * 59 + this.NodeId.GetHashCode();
+                if (this.RawMessage != null) hashCode = hashCode * 59 + this.RawMessage.GetHashCode();
+                if (this.Severity != null) hashCode = hashCode * 59 + this.Severity.GetHashCode();
+                if (this.LogTime != null) hashCode = hashCode * 59 + this.LogTime.GetHashCode();
+                if (this.LineNum != null) hashCode = hashCode * 59 + this.LineNum.GetHashCode();
                 return hashCode;
             }
         }

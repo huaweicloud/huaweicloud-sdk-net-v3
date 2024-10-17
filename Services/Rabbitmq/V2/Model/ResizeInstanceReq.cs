@@ -176,20 +176,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public bool Equals(ResizeInstanceReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NewSpecCode != input.NewSpecCode) return false;
+            if (this.NewStorageSpace != input.NewStorageSpace || (this.NewStorageSpace != null && !this.NewStorageSpace.Equals(input.NewStorageSpace))) return false;
 
-            return 
-                (
-                    this.NewSpecCode == input.NewSpecCode ||
-                    (this.NewSpecCode != null &&
-                    this.NewSpecCode.Equals(input.NewSpecCode))
-                ) && 
-                (
-                    this.NewStorageSpace == input.NewStorageSpace ||
-                    (this.NewStorageSpace != null &&
-                    this.NewStorageSpace.Equals(input.NewStorageSpace))
-                );
+            return true;
         }
 
         /// <summary>
@@ -199,11 +190,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NewSpecCode != null)
-                    hashCode = hashCode * 59 + this.NewSpecCode.GetHashCode();
-                if (this.NewStorageSpace != null)
-                    hashCode = hashCode * 59 + this.NewStorageSpace.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.NewSpecCode.GetHashCode();
+                if (this.NewStorageSpace != null) hashCode = hashCode * 59 + this.NewStorageSpace.GetHashCode();
                 return hashCode;
             }
         }

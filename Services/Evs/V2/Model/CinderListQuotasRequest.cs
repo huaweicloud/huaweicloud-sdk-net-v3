@@ -166,20 +166,11 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(CinderListQuotasRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TargetProjectId != input.TargetProjectId || (this.TargetProjectId != null && !this.TargetProjectId.Equals(input.TargetProjectId))) return false;
+            if (this.Usage != input.Usage) return false;
 
-            return 
-                (
-                    this.TargetProjectId == input.TargetProjectId ||
-                    (this.TargetProjectId != null &&
-                    this.TargetProjectId.Equals(input.TargetProjectId))
-                ) && 
-                (
-                    this.Usage == input.Usage ||
-                    (this.Usage != null &&
-                    this.Usage.Equals(input.Usage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -189,11 +180,9 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TargetProjectId != null)
-                    hashCode = hashCode * 59 + this.TargetProjectId.GetHashCode();
-                if (this.Usage != null)
-                    hashCode = hashCode * 59 + this.Usage.GetHashCode();
+                var hashCode = 41;
+                if (this.TargetProjectId != null) hashCode = hashCode * 59 + this.TargetProjectId.GetHashCode();
+                hashCode = hashCode * 59 + this.Usage.GetHashCode();
                 return hashCode;
             }
         }

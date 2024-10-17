@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(AppTemplateResourceDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
+            if (this.Icon != input.Icon || (this.Icon != null && !this.Icon.Equals(input.Icon))) return false;
+            if (this.Href != input.Href || (this.Href != null && !this.Href.Equals(input.Href))) return false;
 
-            return 
-                (
-                    this.ResourceName == input.ResourceName ||
-                    (this.ResourceName != null &&
-                    this.ResourceName.Equals(input.ResourceName))
-                ) && 
-                (
-                    this.Icon == input.Icon ||
-                    (this.Icon != null &&
-                    this.Icon.Equals(input.Icon))
-                ) && 
-                (
-                    this.Href == input.Href ||
-                    (this.Href != null &&
-                    this.Href.Equals(input.Href))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResourceName != null)
-                    hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
-                if (this.Icon != null)
-                    hashCode = hashCode * 59 + this.Icon.GetHashCode();
-                if (this.Href != null)
-                    hashCode = hashCode * 59 + this.Href.GetHashCode();
+                var hashCode = 41;
+                if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
+                if (this.Icon != null) hashCode = hashCode * 59 + this.Icon.GetHashCode();
+                if (this.Href != null) hashCode = hashCode * 59 + this.Href.GetHashCode();
                 return hashCode;
             }
         }

@@ -285,55 +285,18 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(StackEvent input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
+            if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
+            if (this.ResourceIdKey != input.ResourceIdKey || (this.ResourceIdKey != null && !this.ResourceIdKey.Equals(input.ResourceIdKey))) return false;
+            if (this.ResourceIdValue != input.ResourceIdValue || (this.ResourceIdValue != null && !this.ResourceIdValue.Equals(input.ResourceIdValue))) return false;
+            if (this.ResourceKey != input.ResourceKey || (this.ResourceKey != null && !this.ResourceKey.Equals(input.ResourceKey))) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
+            if (this.EventType != input.EventType) return false;
+            if (this.EventMessage != input.EventMessage || (this.EventMessage != null && !this.EventMessage.Equals(input.EventMessage))) return false;
+            if (this.ElapsedSeconds != input.ElapsedSeconds || (this.ElapsedSeconds != null && !this.ElapsedSeconds.Equals(input.ElapsedSeconds))) return false;
 
-            return 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.ResourceName == input.ResourceName ||
-                    (this.ResourceName != null &&
-                    this.ResourceName.Equals(input.ResourceName))
-                ) && 
-                (
-                    this.ResourceIdKey == input.ResourceIdKey ||
-                    (this.ResourceIdKey != null &&
-                    this.ResourceIdKey.Equals(input.ResourceIdKey))
-                ) && 
-                (
-                    this.ResourceIdValue == input.ResourceIdValue ||
-                    (this.ResourceIdValue != null &&
-                    this.ResourceIdValue.Equals(input.ResourceIdValue))
-                ) && 
-                (
-                    this.ResourceKey == input.ResourceKey ||
-                    (this.ResourceKey != null &&
-                    this.ResourceKey.Equals(input.ResourceKey))
-                ) && 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                ) && 
-                (
-                    this.EventType == input.EventType ||
-                    (this.EventType != null &&
-                    this.EventType.Equals(input.EventType))
-                ) && 
-                (
-                    this.EventMessage == input.EventMessage ||
-                    (this.EventMessage != null &&
-                    this.EventMessage.Equals(input.EventMessage))
-                ) && 
-                (
-                    this.ElapsedSeconds == input.ElapsedSeconds ||
-                    (this.ElapsedSeconds != null &&
-                    this.ElapsedSeconds.Equals(input.ElapsedSeconds))
-                );
+            return true;
         }
 
         /// <summary>
@@ -343,25 +306,16 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
-                if (this.ResourceName != null)
-                    hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
-                if (this.ResourceIdKey != null)
-                    hashCode = hashCode * 59 + this.ResourceIdKey.GetHashCode();
-                if (this.ResourceIdValue != null)
-                    hashCode = hashCode * 59 + this.ResourceIdValue.GetHashCode();
-                if (this.ResourceKey != null)
-                    hashCode = hashCode * 59 + this.ResourceKey.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.EventType != null)
-                    hashCode = hashCode * 59 + this.EventType.GetHashCode();
-                if (this.EventMessage != null)
-                    hashCode = hashCode * 59 + this.EventMessage.GetHashCode();
-                if (this.ElapsedSeconds != null)
-                    hashCode = hashCode * 59 + this.ElapsedSeconds.GetHashCode();
+                var hashCode = 41;
+                if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
+                if (this.ResourceIdKey != null) hashCode = hashCode * 59 + this.ResourceIdKey.GetHashCode();
+                if (this.ResourceIdValue != null) hashCode = hashCode * 59 + this.ResourceIdValue.GetHashCode();
+                if (this.ResourceKey != null) hashCode = hashCode * 59 + this.ResourceKey.GetHashCode();
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
+                hashCode = hashCode * 59 + this.EventType.GetHashCode();
+                if (this.EventMessage != null) hashCode = hashCode * 59 + this.EventMessage.GetHashCode();
+                if (this.ElapsedSeconds != null) hashCode = hashCode * 59 + this.ElapsedSeconds.GetHashCode();
                 return hashCode;
             }
         }

@@ -567,115 +567,30 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(TestEndPoint input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.NetType != input.NetType) return false;
+            if (this.DbType != input.DbType) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
+            if (this.DbPort != input.DbPort || (this.DbPort != null && !this.DbPort.Equals(input.DbPort))) return false;
+            if (this.InstId != input.InstId || (this.InstId != null && !this.InstId.Equals(input.InstId))) return false;
+            if (this.DbUser != input.DbUser || (this.DbUser != null && !this.DbUser.Equals(input.DbUser))) return false;
+            if (this.DbPassword != input.DbPassword || (this.DbPassword != null && !this.DbPassword.Equals(input.DbPassword))) return false;
+            if (this.SslLink != input.SslLink || (this.SslLink != null && !this.SslLink.Equals(input.SslLink))) return false;
+            if (this.SslCertKey != input.SslCertKey || (this.SslCertKey != null && !this.SslCertKey.Equals(input.SslCertKey))) return false;
+            if (this.SslCertName != input.SslCertName || (this.SslCertName != null && !this.SslCertName.Equals(input.SslCertName))) return false;
+            if (this.SslCertCheckSum != input.SslCertCheckSum || (this.SslCertCheckSum != null && !this.SslCertCheckSum.Equals(input.SslCertCheckSum))) return false;
+            if (this.SslCertPassword != input.SslCertPassword || (this.SslCertPassword != null && !this.SslCertPassword.Equals(input.SslCertPassword))) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
+            if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
+            if (this.EndPointType != input.EndPointType) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.DbName != input.DbName || (this.DbName != null && !this.DbName.Equals(input.DbName))) return false;
+            if (this.KafkaSecurityConfig != input.KafkaSecurityConfig || (this.KafkaSecurityConfig != null && !this.KafkaSecurityConfig.Equals(input.KafkaSecurityConfig))) return false;
+            if (this.CustomizedDns != input.CustomizedDns || (this.CustomizedDns != null && !this.CustomizedDns.Equals(input.CustomizedDns))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.NetType == input.NetType ||
-                    (this.NetType != null &&
-                    this.NetType.Equals(input.NetType))
-                ) && 
-                (
-                    this.DbType == input.DbType ||
-                    (this.DbType != null &&
-                    this.DbType.Equals(input.DbType))
-                ) && 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                ) && 
-                (
-                    this.DbPort == input.DbPort ||
-                    (this.DbPort != null &&
-                    this.DbPort.Equals(input.DbPort))
-                ) && 
-                (
-                    this.InstId == input.InstId ||
-                    (this.InstId != null &&
-                    this.InstId.Equals(input.InstId))
-                ) && 
-                (
-                    this.DbUser == input.DbUser ||
-                    (this.DbUser != null &&
-                    this.DbUser.Equals(input.DbUser))
-                ) && 
-                (
-                    this.DbPassword == input.DbPassword ||
-                    (this.DbPassword != null &&
-                    this.DbPassword.Equals(input.DbPassword))
-                ) && 
-                (
-                    this.SslLink == input.SslLink ||
-                    (this.SslLink != null &&
-                    this.SslLink.Equals(input.SslLink))
-                ) && 
-                (
-                    this.SslCertKey == input.SslCertKey ||
-                    (this.SslCertKey != null &&
-                    this.SslCertKey.Equals(input.SslCertKey))
-                ) && 
-                (
-                    this.SslCertName == input.SslCertName ||
-                    (this.SslCertName != null &&
-                    this.SslCertName.Equals(input.SslCertName))
-                ) && 
-                (
-                    this.SslCertCheckSum == input.SslCertCheckSum ||
-                    (this.SslCertCheckSum != null &&
-                    this.SslCertCheckSum.Equals(input.SslCertCheckSum))
-                ) && 
-                (
-                    this.SslCertPassword == input.SslCertPassword ||
-                    (this.SslCertPassword != null &&
-                    this.SslCertPassword.Equals(input.SslCertPassword))
-                ) && 
-                (
-                    this.VpcId == input.VpcId ||
-                    (this.VpcId != null &&
-                    this.VpcId.Equals(input.VpcId))
-                ) && 
-                (
-                    this.SubnetId == input.SubnetId ||
-                    (this.SubnetId != null &&
-                    this.SubnetId.Equals(input.SubnetId))
-                ) && 
-                (
-                    this.EndPointType == input.EndPointType ||
-                    (this.EndPointType != null &&
-                    this.EndPointType.Equals(input.EndPointType))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.DbName == input.DbName ||
-                    (this.DbName != null &&
-                    this.DbName.Equals(input.DbName))
-                ) && 
-                (
-                    this.KafkaSecurityConfig == input.KafkaSecurityConfig ||
-                    (this.KafkaSecurityConfig != null &&
-                    this.KafkaSecurityConfig.Equals(input.KafkaSecurityConfig))
-                ) && 
-                (
-                    this.CustomizedDns == input.CustomizedDns ||
-                    (this.CustomizedDns != null &&
-                    this.CustomizedDns.Equals(input.CustomizedDns))
-                );
+            return true;
         }
 
         /// <summary>
@@ -685,49 +600,28 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.NetType != null)
-                    hashCode = hashCode * 59 + this.NetType.GetHashCode();
-                if (this.DbType != null)
-                    hashCode = hashCode * 59 + this.DbType.GetHashCode();
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.DbPort != null)
-                    hashCode = hashCode * 59 + this.DbPort.GetHashCode();
-                if (this.InstId != null)
-                    hashCode = hashCode * 59 + this.InstId.GetHashCode();
-                if (this.DbUser != null)
-                    hashCode = hashCode * 59 + this.DbUser.GetHashCode();
-                if (this.DbPassword != null)
-                    hashCode = hashCode * 59 + this.DbPassword.GetHashCode();
-                if (this.SslLink != null)
-                    hashCode = hashCode * 59 + this.SslLink.GetHashCode();
-                if (this.SslCertKey != null)
-                    hashCode = hashCode * 59 + this.SslCertKey.GetHashCode();
-                if (this.SslCertName != null)
-                    hashCode = hashCode * 59 + this.SslCertName.GetHashCode();
-                if (this.SslCertCheckSum != null)
-                    hashCode = hashCode * 59 + this.SslCertCheckSum.GetHashCode();
-                if (this.SslCertPassword != null)
-                    hashCode = hashCode * 59 + this.SslCertPassword.GetHashCode();
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.SubnetId != null)
-                    hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
-                if (this.EndPointType != null)
-                    hashCode = hashCode * 59 + this.EndPointType.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.DbName != null)
-                    hashCode = hashCode * 59 + this.DbName.GetHashCode();
-                if (this.KafkaSecurityConfig != null)
-                    hashCode = hashCode * 59 + this.KafkaSecurityConfig.GetHashCode();
-                if (this.CustomizedDns != null)
-                    hashCode = hashCode * 59 + this.CustomizedDns.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                hashCode = hashCode * 59 + this.NetType.GetHashCode();
+                hashCode = hashCode * 59 + this.DbType.GetHashCode();
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.DbPort != null) hashCode = hashCode * 59 + this.DbPort.GetHashCode();
+                if (this.InstId != null) hashCode = hashCode * 59 + this.InstId.GetHashCode();
+                if (this.DbUser != null) hashCode = hashCode * 59 + this.DbUser.GetHashCode();
+                if (this.DbPassword != null) hashCode = hashCode * 59 + this.DbPassword.GetHashCode();
+                if (this.SslLink != null) hashCode = hashCode * 59 + this.SslLink.GetHashCode();
+                if (this.SslCertKey != null) hashCode = hashCode * 59 + this.SslCertKey.GetHashCode();
+                if (this.SslCertName != null) hashCode = hashCode * 59 + this.SslCertName.GetHashCode();
+                if (this.SslCertCheckSum != null) hashCode = hashCode * 59 + this.SslCertCheckSum.GetHashCode();
+                if (this.SslCertPassword != null) hashCode = hashCode * 59 + this.SslCertPassword.GetHashCode();
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
+                hashCode = hashCode * 59 + this.EndPointType.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.DbName != null) hashCode = hashCode * 59 + this.DbName.GetHashCode();
+                if (this.KafkaSecurityConfig != null) hashCode = hashCode * 59 + this.KafkaSecurityConfig.GetHashCode();
+                if (this.CustomizedDns != null) hashCode = hashCode * 59 + this.CustomizedDns.GetHashCode();
                 return hashCode;
             }
         }

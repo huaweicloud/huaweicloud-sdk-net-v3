@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(DeleteKafkaUserClientQuotaTaskReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.User != input.User || (this.User != null && !this.User.Equals(input.User))) return false;
+            if (this.Client != input.Client || (this.Client != null && !this.Client.Equals(input.Client))) return false;
+            if (this.UserDefault != input.UserDefault || (this.UserDefault != null && !this.UserDefault.Equals(input.UserDefault))) return false;
+            if (this.ClientDefault != input.ClientDefault || (this.ClientDefault != null && !this.ClientDefault.Equals(input.ClientDefault))) return false;
 
-            return 
-                (
-                    this.User == input.User ||
-                    (this.User != null &&
-                    this.User.Equals(input.User))
-                ) && 
-                (
-                    this.Client == input.Client ||
-                    (this.Client != null &&
-                    this.Client.Equals(input.Client))
-                ) && 
-                (
-                    this.UserDefault == input.UserDefault ||
-                    (this.UserDefault != null &&
-                    this.UserDefault.Equals(input.UserDefault))
-                ) && 
-                (
-                    this.ClientDefault == input.ClientDefault ||
-                    (this.ClientDefault != null &&
-                    this.ClientDefault.Equals(input.ClientDefault))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.User != null)
-                    hashCode = hashCode * 59 + this.User.GetHashCode();
-                if (this.Client != null)
-                    hashCode = hashCode * 59 + this.Client.GetHashCode();
-                if (this.UserDefault != null)
-                    hashCode = hashCode * 59 + this.UserDefault.GetHashCode();
-                if (this.ClientDefault != null)
-                    hashCode = hashCode * 59 + this.ClientDefault.GetHashCode();
+                var hashCode = 41;
+                if (this.User != null) hashCode = hashCode * 59 + this.User.GetHashCode();
+                if (this.Client != null) hashCode = hashCode * 59 + this.Client.GetHashCode();
+                if (this.UserDefault != null) hashCode = hashCode * 59 + this.UserDefault.GetHashCode();
+                if (this.ClientDefault != null) hashCode = hashCode * 59 + this.ClientDefault.GetHashCode();
                 return hashCode;
             }
         }

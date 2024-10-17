@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(UserAgentFilter input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
+            if (this.IncludeEmpty != input.IncludeEmpty || (this.IncludeEmpty != null && !this.IncludeEmpty.Equals(input.IncludeEmpty))) return false;
+            if (this.UaList != input.UaList || (this.UaList != null && input.UaList != null && !this.UaList.SequenceEqual(input.UaList))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                ) && 
-                (
-                    this.IncludeEmpty == input.IncludeEmpty ||
-                    (this.IncludeEmpty != null &&
-                    this.IncludeEmpty.Equals(input.IncludeEmpty))
-                ) && 
-                (
-                    this.UaList == input.UaList ||
-                    this.UaList != null &&
-                    input.UaList != null &&
-                    this.UaList.SequenceEqual(input.UaList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
-                if (this.IncludeEmpty != null)
-                    hashCode = hashCode * 59 + this.IncludeEmpty.GetHashCode();
-                if (this.UaList != null)
-                    hashCode = hashCode * 59 + this.UaList.GetHashCode();
+                var hashCode = 41;
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.IncludeEmpty != null) hashCode = hashCode * 59 + this.IncludeEmpty.GetHashCode();
+                if (this.UaList != null) hashCode = hashCode * 59 + this.UaList.GetHashCode();
                 return hashCode;
             }
         }

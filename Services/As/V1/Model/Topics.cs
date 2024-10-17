@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(Topics input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TopicUrn != input.TopicUrn || (this.TopicUrn != null && !this.TopicUrn.Equals(input.TopicUrn))) return false;
+            if (this.TopicScene != input.TopicScene || (this.TopicScene != null && input.TopicScene != null && !this.TopicScene.SequenceEqual(input.TopicScene))) return false;
+            if (this.TopicName != input.TopicName || (this.TopicName != null && !this.TopicName.Equals(input.TopicName))) return false;
 
-            return 
-                (
-                    this.TopicUrn == input.TopicUrn ||
-                    (this.TopicUrn != null &&
-                    this.TopicUrn.Equals(input.TopicUrn))
-                ) && 
-                (
-                    this.TopicScene == input.TopicScene ||
-                    this.TopicScene != null &&
-                    input.TopicScene != null &&
-                    this.TopicScene.SequenceEqual(input.TopicScene)
-                ) && 
-                (
-                    this.TopicName == input.TopicName ||
-                    (this.TopicName != null &&
-                    this.TopicName.Equals(input.TopicName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TopicUrn != null)
-                    hashCode = hashCode * 59 + this.TopicUrn.GetHashCode();
-                if (this.TopicScene != null)
-                    hashCode = hashCode * 59 + this.TopicScene.GetHashCode();
-                if (this.TopicName != null)
-                    hashCode = hashCode * 59 + this.TopicName.GetHashCode();
+                var hashCode = 41;
+                if (this.TopicUrn != null) hashCode = hashCode * 59 + this.TopicUrn.GetHashCode();
+                if (this.TopicScene != null) hashCode = hashCode * 59 + this.TopicScene.GetHashCode();
+                if (this.TopicName != null) hashCode = hashCode * 59 + this.TopicName.GetHashCode();
                 return hashCode;
             }
         }

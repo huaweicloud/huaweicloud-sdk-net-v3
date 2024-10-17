@@ -205,45 +205,16 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(DeploymentGroup input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.RegionName != input.RegionName || (this.RegionName != null && !this.RegionName.Equals(input.RegionName))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.Os != input.Os) return false;
+            if (this.SlaveClusterId != input.SlaveClusterId || (this.SlaveClusterId != null && !this.SlaveClusterId.Equals(input.SlaveClusterId))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.IsProxyMode != input.IsProxyMode || (this.IsProxyMode != null && !this.IsProxyMode.Equals(input.IsProxyMode))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.RegionName == input.RegionName ||
-                    (this.RegionName != null &&
-                    this.RegionName.Equals(input.RegionName))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Os == input.Os ||
-                    (this.Os != null &&
-                    this.Os.Equals(input.Os))
-                ) && 
-                (
-                    this.SlaveClusterId == input.SlaveClusterId ||
-                    (this.SlaveClusterId != null &&
-                    this.SlaveClusterId.Equals(input.SlaveClusterId))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.IsProxyMode == input.IsProxyMode ||
-                    (this.IsProxyMode != null &&
-                    this.IsProxyMode.Equals(input.IsProxyMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -253,21 +224,14 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.RegionName != null)
-                    hashCode = hashCode * 59 + this.RegionName.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.Os != null)
-                    hashCode = hashCode * 59 + this.Os.GetHashCode();
-                if (this.SlaveClusterId != null)
-                    hashCode = hashCode * 59 + this.SlaveClusterId.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.IsProxyMode != null)
-                    hashCode = hashCode * 59 + this.IsProxyMode.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.RegionName != null) hashCode = hashCode * 59 + this.RegionName.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                hashCode = hashCode * 59 + this.Os.GetHashCode();
+                if (this.SlaveClusterId != null) hashCode = hashCode * 59 + this.SlaveClusterId.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.IsProxyMode != null) hashCode = hashCode * 59 + this.IsProxyMode.GetHashCode();
                 return hashCode;
             }
         }

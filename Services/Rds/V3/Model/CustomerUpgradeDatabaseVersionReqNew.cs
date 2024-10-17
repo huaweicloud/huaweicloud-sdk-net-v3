@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(CustomerUpgradeDatabaseVersionReqNew input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IsDelayed != input.IsDelayed || (this.IsDelayed != null && !this.IsDelayed.Equals(input.IsDelayed))) return false;
 
-            return 
-                (
-                    this.IsDelayed == input.IsDelayed ||
-                    (this.IsDelayed != null &&
-                    this.IsDelayed.Equals(input.IsDelayed))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IsDelayed != null)
-                    hashCode = hashCode * 59 + this.IsDelayed.GetHashCode();
+                var hashCode = 41;
+                if (this.IsDelayed != null) hashCode = hashCode * 59 + this.IsDelayed.GetHashCode();
                 return hashCode;
             }
         }

@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(ShowAssetDetailResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
+            if (this.BaseInfo != input.BaseInfo || (this.BaseInfo != null && !this.BaseInfo.Equals(input.BaseInfo))) return false;
+            if (this.TranscodeInfo != input.TranscodeInfo || (this.TranscodeInfo != null && !this.TranscodeInfo.Equals(input.TranscodeInfo))) return false;
+            if (this.ThumbnailInfo != input.ThumbnailInfo || (this.ThumbnailInfo != null && !this.ThumbnailInfo.Equals(input.ThumbnailInfo))) return false;
+            if (this.ReviewInfo != input.ReviewInfo || (this.ReviewInfo != null && !this.ReviewInfo.Equals(input.ReviewInfo))) return false;
 
-            return 
-                (
-                    this.AssetId == input.AssetId ||
-                    (this.AssetId != null &&
-                    this.AssetId.Equals(input.AssetId))
-                ) && 
-                (
-                    this.BaseInfo == input.BaseInfo ||
-                    (this.BaseInfo != null &&
-                    this.BaseInfo.Equals(input.BaseInfo))
-                ) && 
-                (
-                    this.TranscodeInfo == input.TranscodeInfo ||
-                    (this.TranscodeInfo != null &&
-                    this.TranscodeInfo.Equals(input.TranscodeInfo))
-                ) && 
-                (
-                    this.ThumbnailInfo == input.ThumbnailInfo ||
-                    (this.ThumbnailInfo != null &&
-                    this.ThumbnailInfo.Equals(input.ThumbnailInfo))
-                ) && 
-                (
-                    this.ReviewInfo == input.ReviewInfo ||
-                    (this.ReviewInfo != null &&
-                    this.ReviewInfo.Equals(input.ReviewInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AssetId != null)
-                    hashCode = hashCode * 59 + this.AssetId.GetHashCode();
-                if (this.BaseInfo != null)
-                    hashCode = hashCode * 59 + this.BaseInfo.GetHashCode();
-                if (this.TranscodeInfo != null)
-                    hashCode = hashCode * 59 + this.TranscodeInfo.GetHashCode();
-                if (this.ThumbnailInfo != null)
-                    hashCode = hashCode * 59 + this.ThumbnailInfo.GetHashCode();
-                if (this.ReviewInfo != null)
-                    hashCode = hashCode * 59 + this.ReviewInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                if (this.BaseInfo != null) hashCode = hashCode * 59 + this.BaseInfo.GetHashCode();
+                if (this.TranscodeInfo != null) hashCode = hashCode * 59 + this.TranscodeInfo.GetHashCode();
+                if (this.ThumbnailInfo != null) hashCode = hashCode * 59 + this.ThumbnailInfo.GetHashCode();
+                if (this.ReviewInfo != null) hashCode = hashCode * 59 + this.ReviewInfo.GetHashCode();
                 return hashCode;
             }
         }

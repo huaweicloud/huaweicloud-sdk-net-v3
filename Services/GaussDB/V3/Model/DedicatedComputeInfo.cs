@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(DedicatedComputeInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VcpusTotal != input.VcpusTotal || (this.VcpusTotal != null && !this.VcpusTotal.Equals(input.VcpusTotal))) return false;
+            if (this.VcpusUsed != input.VcpusUsed || (this.VcpusUsed != null && !this.VcpusUsed.Equals(input.VcpusUsed))) return false;
+            if (this.RamTotal != input.RamTotal || (this.RamTotal != null && !this.RamTotal.Equals(input.RamTotal))) return false;
+            if (this.RamUsed != input.RamUsed || (this.RamUsed != null && !this.RamUsed.Equals(input.RamUsed))) return false;
+            if (this.SpecCode != input.SpecCode || (this.SpecCode != null && !this.SpecCode.Equals(input.SpecCode))) return false;
+            if (this.HostNum != input.HostNum || (this.HostNum != null && !this.HostNum.Equals(input.HostNum))) return false;
 
-            return 
-                (
-                    this.VcpusTotal == input.VcpusTotal ||
-                    (this.VcpusTotal != null &&
-                    this.VcpusTotal.Equals(input.VcpusTotal))
-                ) && 
-                (
-                    this.VcpusUsed == input.VcpusUsed ||
-                    (this.VcpusUsed != null &&
-                    this.VcpusUsed.Equals(input.VcpusUsed))
-                ) && 
-                (
-                    this.RamTotal == input.RamTotal ||
-                    (this.RamTotal != null &&
-                    this.RamTotal.Equals(input.RamTotal))
-                ) && 
-                (
-                    this.RamUsed == input.RamUsed ||
-                    (this.RamUsed != null &&
-                    this.RamUsed.Equals(input.RamUsed))
-                ) && 
-                (
-                    this.SpecCode == input.SpecCode ||
-                    (this.SpecCode != null &&
-                    this.SpecCode.Equals(input.SpecCode))
-                ) && 
-                (
-                    this.HostNum == input.HostNum ||
-                    (this.HostNum != null &&
-                    this.HostNum.Equals(input.HostNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VcpusTotal != null)
-                    hashCode = hashCode * 59 + this.VcpusTotal.GetHashCode();
-                if (this.VcpusUsed != null)
-                    hashCode = hashCode * 59 + this.VcpusUsed.GetHashCode();
-                if (this.RamTotal != null)
-                    hashCode = hashCode * 59 + this.RamTotal.GetHashCode();
-                if (this.RamUsed != null)
-                    hashCode = hashCode * 59 + this.RamUsed.GetHashCode();
-                if (this.SpecCode != null)
-                    hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
-                if (this.HostNum != null)
-                    hashCode = hashCode * 59 + this.HostNum.GetHashCode();
+                var hashCode = 41;
+                if (this.VcpusTotal != null) hashCode = hashCode * 59 + this.VcpusTotal.GetHashCode();
+                if (this.VcpusUsed != null) hashCode = hashCode * 59 + this.VcpusUsed.GetHashCode();
+                if (this.RamTotal != null) hashCode = hashCode * 59 + this.RamTotal.GetHashCode();
+                if (this.RamUsed != null) hashCode = hashCode * 59 + this.RamUsed.GetHashCode();
+                if (this.SpecCode != null) hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
+                if (this.HostNum != null) hashCode = hashCode * 59 + this.HostNum.GetHashCode();
                 return hashCode;
             }
         }

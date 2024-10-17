@@ -119,65 +119,20 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(HandshakeDto input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Urn != input.Urn || (this.Urn != null && !this.Urn.Equals(input.Urn))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.ExpiredAt != input.ExpiredAt || (this.ExpiredAt != null && !this.ExpiredAt.Equals(input.ExpiredAt))) return false;
+            if (this.ManagementAccountId != input.ManagementAccountId || (this.ManagementAccountId != null && !this.ManagementAccountId.Equals(input.ManagementAccountId))) return false;
+            if (this.ManagementAccountName != input.ManagementAccountName || (this.ManagementAccountName != null && !this.ManagementAccountName.Equals(input.ManagementAccountName))) return false;
+            if (this.OrganizationId != input.OrganizationId || (this.OrganizationId != null && !this.OrganizationId.Equals(input.OrganizationId))) return false;
+            if (this.Notes != input.Notes || (this.Notes != null && !this.Notes.Equals(input.Notes))) return false;
+            if (this.Target != input.Target || (this.Target != null && !this.Target.Equals(input.Target))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Urn == input.Urn ||
-                    (this.Urn != null &&
-                    this.Urn.Equals(input.Urn))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.ExpiredAt == input.ExpiredAt ||
-                    (this.ExpiredAt != null &&
-                    this.ExpiredAt.Equals(input.ExpiredAt))
-                ) && 
-                (
-                    this.ManagementAccountId == input.ManagementAccountId ||
-                    (this.ManagementAccountId != null &&
-                    this.ManagementAccountId.Equals(input.ManagementAccountId))
-                ) && 
-                (
-                    this.ManagementAccountName == input.ManagementAccountName ||
-                    (this.ManagementAccountName != null &&
-                    this.ManagementAccountName.Equals(input.ManagementAccountName))
-                ) && 
-                (
-                    this.OrganizationId == input.OrganizationId ||
-                    (this.OrganizationId != null &&
-                    this.OrganizationId.Equals(input.OrganizationId))
-                ) && 
-                (
-                    this.Notes == input.Notes ||
-                    (this.Notes != null &&
-                    this.Notes.Equals(input.Notes))
-                ) && 
-                (
-                    this.Target == input.Target ||
-                    (this.Target != null &&
-                    this.Target.Equals(input.Target))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,29 +142,18 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Urn != null)
-                    hashCode = hashCode * 59 + this.Urn.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.ExpiredAt != null)
-                    hashCode = hashCode * 59 + this.ExpiredAt.GetHashCode();
-                if (this.ManagementAccountId != null)
-                    hashCode = hashCode * 59 + this.ManagementAccountId.GetHashCode();
-                if (this.ManagementAccountName != null)
-                    hashCode = hashCode * 59 + this.ManagementAccountName.GetHashCode();
-                if (this.OrganizationId != null)
-                    hashCode = hashCode * 59 + this.OrganizationId.GetHashCode();
-                if (this.Notes != null)
-                    hashCode = hashCode * 59 + this.Notes.GetHashCode();
-                if (this.Target != null)
-                    hashCode = hashCode * 59 + this.Target.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Urn != null) hashCode = hashCode * 59 + this.Urn.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.ExpiredAt != null) hashCode = hashCode * 59 + this.ExpiredAt.GetHashCode();
+                if (this.ManagementAccountId != null) hashCode = hashCode * 59 + this.ManagementAccountId.GetHashCode();
+                if (this.ManagementAccountName != null) hashCode = hashCode * 59 + this.ManagementAccountName.GetHashCode();
+                if (this.OrganizationId != null) hashCode = hashCode * 59 + this.OrganizationId.GetHashCode();
+                if (this.Notes != null) hashCode = hashCode * 59 + this.Notes.GetHashCode();
+                if (this.Target != null) hashCode = hashCode * 59 + this.Target.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

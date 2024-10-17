@@ -170,20 +170,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(UpdateUserDriverReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DriverName != input.DriverName || (this.DriverName != null && !this.DriverName.Equals(input.DriverName))) return false;
+            if (this.DriverType != input.DriverType) return false;
 
-            return 
-                (
-                    this.DriverName == input.DriverName ||
-                    (this.DriverName != null &&
-                    this.DriverName.Equals(input.DriverName))
-                ) && 
-                (
-                    this.DriverType == input.DriverType ||
-                    (this.DriverType != null &&
-                    this.DriverType.Equals(input.DriverType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -193,11 +184,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DriverName != null)
-                    hashCode = hashCode * 59 + this.DriverName.GetHashCode();
-                if (this.DriverType != null)
-                    hashCode = hashCode * 59 + this.DriverType.GetHashCode();
+                var hashCode = 41;
+                if (this.DriverName != null) hashCode = hashCode * 59 + this.DriverName.GetHashCode();
+                hashCode = hashCode * 59 + this.DriverType.GetHashCode();
                 return hashCode;
             }
         }

@@ -275,95 +275,26 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(EipResource input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.PublicIp != input.PublicIp || (this.PublicIp != null && !this.PublicIp.Equals(input.PublicIp))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.PublicIpv6 != input.PublicIpv6 || (this.PublicIpv6 != null && !this.PublicIpv6.Equals(input.PublicIpv6))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.DeviceId != input.DeviceId || (this.DeviceId != null && !this.DeviceId.Equals(input.DeviceId))) return false;
+            if (this.DeviceName != input.DeviceName || (this.DeviceName != null && !this.DeviceName.Equals(input.DeviceName))) return false;
+            if (this.DeviceOwner != input.DeviceOwner || (this.DeviceOwner != null && !this.DeviceOwner.Equals(input.DeviceOwner))) return false;
+            if (this.AssociateInstanceType != input.AssociateInstanceType || (this.AssociateInstanceType != null && !this.AssociateInstanceType.Equals(input.AssociateInstanceType))) return false;
+            if (this.FwInstanceName != input.FwInstanceName || (this.FwInstanceName != null && !this.FwInstanceName.Equals(input.FwInstanceName))) return false;
+            if (this.FwInstanceId != input.FwInstanceId || (this.FwInstanceId != null && !this.FwInstanceId.Equals(input.FwInstanceId))) return false;
+            if (this.FwEnterpriseProjectId != input.FwEnterpriseProjectId || (this.FwEnterpriseProjectId != null && !this.FwEnterpriseProjectId.Equals(input.FwEnterpriseProjectId))) return false;
+            if (this.ObjectId != input.ObjectId || (this.ObjectId != null && !this.ObjectId.Equals(input.ObjectId))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && !this.Tags.Equals(input.Tags))) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.Owner != input.Owner || (this.Owner != null && !this.Owner.Equals(input.Owner))) return false;
+            if (this.FwDomainId != input.FwDomainId || (this.FwDomainId != null && !this.FwDomainId.Equals(input.FwDomainId))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.PublicIp == input.PublicIp ||
-                    (this.PublicIp != null &&
-                    this.PublicIp.Equals(input.PublicIp))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.PublicIpv6 == input.PublicIpv6 ||
-                    (this.PublicIpv6 != null &&
-                    this.PublicIpv6.Equals(input.PublicIpv6))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.DeviceId == input.DeviceId ||
-                    (this.DeviceId != null &&
-                    this.DeviceId.Equals(input.DeviceId))
-                ) && 
-                (
-                    this.DeviceName == input.DeviceName ||
-                    (this.DeviceName != null &&
-                    this.DeviceName.Equals(input.DeviceName))
-                ) && 
-                (
-                    this.DeviceOwner == input.DeviceOwner ||
-                    (this.DeviceOwner != null &&
-                    this.DeviceOwner.Equals(input.DeviceOwner))
-                ) && 
-                (
-                    this.AssociateInstanceType == input.AssociateInstanceType ||
-                    (this.AssociateInstanceType != null &&
-                    this.AssociateInstanceType.Equals(input.AssociateInstanceType))
-                ) && 
-                (
-                    this.FwInstanceName == input.FwInstanceName ||
-                    (this.FwInstanceName != null &&
-                    this.FwInstanceName.Equals(input.FwInstanceName))
-                ) && 
-                (
-                    this.FwInstanceId == input.FwInstanceId ||
-                    (this.FwInstanceId != null &&
-                    this.FwInstanceId.Equals(input.FwInstanceId))
-                ) && 
-                (
-                    this.FwEnterpriseProjectId == input.FwEnterpriseProjectId ||
-                    (this.FwEnterpriseProjectId != null &&
-                    this.FwEnterpriseProjectId.Equals(input.FwEnterpriseProjectId))
-                ) && 
-                (
-                    this.ObjectId == input.ObjectId ||
-                    (this.ObjectId != null &&
-                    this.ObjectId.Equals(input.ObjectId))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    (this.Tags != null &&
-                    this.Tags.Equals(input.Tags))
-                ) && 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
-                    this.Owner == input.Owner ||
-                    (this.Owner != null &&
-                    this.Owner.Equals(input.Owner))
-                ) && 
-                (
-                    this.FwDomainId == input.FwDomainId ||
-                    (this.FwDomainId != null &&
-                    this.FwDomainId.Equals(input.FwDomainId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -373,41 +304,24 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.PublicIp != null)
-                    hashCode = hashCode * 59 + this.PublicIp.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.PublicIpv6 != null)
-                    hashCode = hashCode * 59 + this.PublicIpv6.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.DeviceId != null)
-                    hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
-                if (this.DeviceName != null)
-                    hashCode = hashCode * 59 + this.DeviceName.GetHashCode();
-                if (this.DeviceOwner != null)
-                    hashCode = hashCode * 59 + this.DeviceOwner.GetHashCode();
-                if (this.AssociateInstanceType != null)
-                    hashCode = hashCode * 59 + this.AssociateInstanceType.GetHashCode();
-                if (this.FwInstanceName != null)
-                    hashCode = hashCode * 59 + this.FwInstanceName.GetHashCode();
-                if (this.FwInstanceId != null)
-                    hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
-                if (this.FwEnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.FwEnterpriseProjectId.GetHashCode();
-                if (this.ObjectId != null)
-                    hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.Owner != null)
-                    hashCode = hashCode * 59 + this.Owner.GetHashCode();
-                if (this.FwDomainId != null)
-                    hashCode = hashCode * 59 + this.FwDomainId.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.PublicIp != null) hashCode = hashCode * 59 + this.PublicIp.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.PublicIpv6 != null) hashCode = hashCode * 59 + this.PublicIpv6.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.DeviceId != null) hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
+                if (this.DeviceName != null) hashCode = hashCode * 59 + this.DeviceName.GetHashCode();
+                if (this.DeviceOwner != null) hashCode = hashCode * 59 + this.DeviceOwner.GetHashCode();
+                if (this.AssociateInstanceType != null) hashCode = hashCode * 59 + this.AssociateInstanceType.GetHashCode();
+                if (this.FwInstanceName != null) hashCode = hashCode * 59 + this.FwInstanceName.GetHashCode();
+                if (this.FwInstanceId != null) hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
+                if (this.FwEnterpriseProjectId != null) hashCode = hashCode * 59 + this.FwEnterpriseProjectId.GetHashCode();
+                if (this.ObjectId != null) hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.Owner != null) hashCode = hashCode * 59 + this.Owner.GetHashCode();
+                if (this.FwDomainId != null) hashCode = hashCode * 59 + this.FwDomainId.GetHashCode();
                 return hashCode;
             }
         }

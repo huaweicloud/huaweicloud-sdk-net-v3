@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         /// </summary>
         public bool Equals(TriggerQpsDict input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HttpRequestPosId != input.HttpRequestPosId || (this.HttpRequestPosId != null && !this.HttpRequestPosId.Equals(input.HttpRequestPosId))) return false;
+            if (this.HttpPacketPerSecond != input.HttpPacketPerSecond || (this.HttpPacketPerSecond != null && !this.HttpPacketPerSecond.Equals(input.HttpPacketPerSecond))) return false;
 
-            return 
-                (
-                    this.HttpRequestPosId == input.HttpRequestPosId ||
-                    (this.HttpRequestPosId != null &&
-                    this.HttpRequestPosId.Equals(input.HttpRequestPosId))
-                ) && 
-                (
-                    this.HttpPacketPerSecond == input.HttpPacketPerSecond ||
-                    (this.HttpPacketPerSecond != null &&
-                    this.HttpPacketPerSecond.Equals(input.HttpPacketPerSecond))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HttpRequestPosId != null)
-                    hashCode = hashCode * 59 + this.HttpRequestPosId.GetHashCode();
-                if (this.HttpPacketPerSecond != null)
-                    hashCode = hashCode * 59 + this.HttpPacketPerSecond.GetHashCode();
+                var hashCode = 41;
+                if (this.HttpRequestPosId != null) hashCode = hashCode * 59 + this.HttpRequestPosId.GetHashCode();
+                if (this.HttpPacketPerSecond != null) hashCode = hashCode * 59 + this.HttpPacketPerSecond.GetHashCode();
                 return hashCode;
             }
         }

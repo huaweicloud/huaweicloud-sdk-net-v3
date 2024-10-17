@@ -131,75 +131,22 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(PoliciesInListResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AlarmPolicyId != input.AlarmPolicyId || (this.AlarmPolicyId != null && !this.AlarmPolicyId.Equals(input.AlarmPolicyId))) return false;
+            if (this.MetricName != input.MetricName || (this.MetricName != null && !this.MetricName.Equals(input.MetricName))) return false;
+            if (this.ExtraInfo != input.ExtraInfo || (this.ExtraInfo != null && !this.ExtraInfo.Equals(input.ExtraInfo))) return false;
+            if (this.Period != input.Period) return false;
+            if (this.Filter != input.Filter || (this.Filter != null && !this.Filter.Equals(input.Filter))) return false;
+            if (this.ComparisonOperator != input.ComparisonOperator || (this.ComparisonOperator != null && !this.ComparisonOperator.Equals(input.ComparisonOperator))) return false;
+            if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
+            if (this.Unit != input.Unit || (this.Unit != null && !this.Unit.Equals(input.Unit))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.SuppressDuration != input.SuppressDuration) return false;
+            if (this.AlarmLevel != input.AlarmLevel || (this.AlarmLevel != null && !this.AlarmLevel.Equals(input.AlarmLevel))) return false;
+            if (this.SelectedUnit != input.SelectedUnit || (this.SelectedUnit != null && !this.SelectedUnit.Equals(input.SelectedUnit))) return false;
 
-            return 
-                (
-                    this.AlarmPolicyId == input.AlarmPolicyId ||
-                    (this.AlarmPolicyId != null &&
-                    this.AlarmPolicyId.Equals(input.AlarmPolicyId))
-                ) && 
-                (
-                    this.MetricName == input.MetricName ||
-                    (this.MetricName != null &&
-                    this.MetricName.Equals(input.MetricName))
-                ) && 
-                (
-                    this.ExtraInfo == input.ExtraInfo ||
-                    (this.ExtraInfo != null &&
-                    this.ExtraInfo.Equals(input.ExtraInfo))
-                ) && 
-                (
-                    this.Period == input.Period ||
-                    (this.Period != null &&
-                    this.Period.Equals(input.Period))
-                ) && 
-                (
-                    this.Filter == input.Filter ||
-                    (this.Filter != null &&
-                    this.Filter.Equals(input.Filter))
-                ) && 
-                (
-                    this.ComparisonOperator == input.ComparisonOperator ||
-                    (this.ComparisonOperator != null &&
-                    this.ComparisonOperator.Equals(input.ComparisonOperator))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                ) && 
-                (
-                    this.Unit == input.Unit ||
-                    (this.Unit != null &&
-                    this.Unit.Equals(input.Unit))
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.SuppressDuration == input.SuppressDuration ||
-                    (this.SuppressDuration != null &&
-                    this.SuppressDuration.Equals(input.SuppressDuration))
-                ) && 
-                (
-                    this.AlarmLevel == input.AlarmLevel ||
-                    (this.AlarmLevel != null &&
-                    this.AlarmLevel.Equals(input.AlarmLevel))
-                ) && 
-                (
-                    this.SelectedUnit == input.SelectedUnit ||
-                    (this.SelectedUnit != null &&
-                    this.SelectedUnit.Equals(input.SelectedUnit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -209,33 +156,20 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AlarmPolicyId != null)
-                    hashCode = hashCode * 59 + this.AlarmPolicyId.GetHashCode();
-                if (this.MetricName != null)
-                    hashCode = hashCode * 59 + this.MetricName.GetHashCode();
-                if (this.ExtraInfo != null)
-                    hashCode = hashCode * 59 + this.ExtraInfo.GetHashCode();
-                if (this.Period != null)
-                    hashCode = hashCode * 59 + this.Period.GetHashCode();
-                if (this.Filter != null)
-                    hashCode = hashCode * 59 + this.Filter.GetHashCode();
-                if (this.ComparisonOperator != null)
-                    hashCode = hashCode * 59 + this.ComparisonOperator.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
-                if (this.Unit != null)
-                    hashCode = hashCode * 59 + this.Unit.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.SuppressDuration != null)
-                    hashCode = hashCode * 59 + this.SuppressDuration.GetHashCode();
-                if (this.AlarmLevel != null)
-                    hashCode = hashCode * 59 + this.AlarmLevel.GetHashCode();
-                if (this.SelectedUnit != null)
-                    hashCode = hashCode * 59 + this.SelectedUnit.GetHashCode();
+                var hashCode = 41;
+                if (this.AlarmPolicyId != null) hashCode = hashCode * 59 + this.AlarmPolicyId.GetHashCode();
+                if (this.MetricName != null) hashCode = hashCode * 59 + this.MetricName.GetHashCode();
+                if (this.ExtraInfo != null) hashCode = hashCode * 59 + this.ExtraInfo.GetHashCode();
+                hashCode = hashCode * 59 + this.Period.GetHashCode();
+                if (this.Filter != null) hashCode = hashCode * 59 + this.Filter.GetHashCode();
+                if (this.ComparisonOperator != null) hashCode = hashCode * 59 + this.ComparisonOperator.GetHashCode();
+                if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.Unit != null) hashCode = hashCode * 59 + this.Unit.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                hashCode = hashCode * 59 + this.SuppressDuration.GetHashCode();
+                if (this.AlarmLevel != null) hashCode = hashCode * 59 + this.AlarmLevel.GetHashCode();
+                if (this.SelectedUnit != null) hashCode = hashCode * 59 + this.SelectedUnit.GetHashCode();
                 return hashCode;
             }
         }

@@ -119,65 +119,20 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public bool Equals(SyncRepo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.DomainID != input.DomainID || (this.DomainID != null && !this.DomainID.Equals(input.DomainID))) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
+            if (this.Override != input.Override || (this.Override != null && !this.Override.Equals(input.Override))) return false;
+            if (this.RemoteNamespace != input.RemoteNamespace || (this.RemoteNamespace != null && !this.RemoteNamespace.Equals(input.RemoteNamespace))) return false;
+            if (this.RemoteRegionId != input.RemoteRegionId || (this.RemoteRegionId != null && !this.RemoteRegionId.Equals(input.RemoteRegionId))) return false;
+            if (this.RepoName != input.RepoName || (this.RepoName != null && !this.RepoName.Equals(input.RepoName))) return false;
+            if (this.SyncAuto != input.SyncAuto || (this.SyncAuto != null && !this.SyncAuto.Equals(input.SyncAuto))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
 
-            return 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.DomainID == input.DomainID ||
-                    (this.DomainID != null &&
-                    this.DomainID.Equals(input.DomainID))
-                ) && 
-                (
-                    this.DomainName == input.DomainName ||
-                    (this.DomainName != null &&
-                    this.DomainName.Equals(input.DomainName))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Namespace == input.Namespace ||
-                    (this.Namespace != null &&
-                    this.Namespace.Equals(input.Namespace))
-                ) && 
-                (
-                    this.Override == input.Override ||
-                    (this.Override != null &&
-                    this.Override.Equals(input.Override))
-                ) && 
-                (
-                    this.RemoteNamespace == input.RemoteNamespace ||
-                    (this.RemoteNamespace != null &&
-                    this.RemoteNamespace.Equals(input.RemoteNamespace))
-                ) && 
-                (
-                    this.RemoteRegionId == input.RemoteRegionId ||
-                    (this.RemoteRegionId != null &&
-                    this.RemoteRegionId.Equals(input.RemoteRegionId))
-                ) && 
-                (
-                    this.RepoName == input.RepoName ||
-                    (this.RepoName != null &&
-                    this.RepoName.Equals(input.RepoName))
-                ) && 
-                (
-                    this.SyncAuto == input.SyncAuto ||
-                    (this.SyncAuto != null &&
-                    this.SyncAuto.Equals(input.SyncAuto))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,29 +142,18 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.DomainID != null)
-                    hashCode = hashCode * 59 + this.DomainID.GetHashCode();
-                if (this.DomainName != null)
-                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Namespace != null)
-                    hashCode = hashCode * 59 + this.Namespace.GetHashCode();
-                if (this.Override != null)
-                    hashCode = hashCode * 59 + this.Override.GetHashCode();
-                if (this.RemoteNamespace != null)
-                    hashCode = hashCode * 59 + this.RemoteNamespace.GetHashCode();
-                if (this.RemoteRegionId != null)
-                    hashCode = hashCode * 59 + this.RemoteRegionId.GetHashCode();
-                if (this.RepoName != null)
-                    hashCode = hashCode * 59 + this.RepoName.GetHashCode();
-                if (this.SyncAuto != null)
-                    hashCode = hashCode * 59 + this.SyncAuto.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                var hashCode = 41;
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.DomainID != null) hashCode = hashCode * 59 + this.DomainID.GetHashCode();
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.Override != null) hashCode = hashCode * 59 + this.Override.GetHashCode();
+                if (this.RemoteNamespace != null) hashCode = hashCode * 59 + this.RemoteNamespace.GetHashCode();
+                if (this.RemoteRegionId != null) hashCode = hashCode * 59 + this.RemoteRegionId.GetHashCode();
+                if (this.RepoName != null) hashCode = hashCode * 59 + this.RepoName.GetHashCode();
+                if (this.SyncAuto != null) hashCode = hashCode * 59 + this.SyncAuto.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 return hashCode;
             }
         }

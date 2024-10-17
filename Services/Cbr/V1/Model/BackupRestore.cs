@@ -84,41 +84,15 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(BackupRestore input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Mappings != input.Mappings || (this.Mappings != null && input.Mappings != null && !this.Mappings.SequenceEqual(input.Mappings))) return false;
+            if (this.PowerOn != input.PowerOn || (this.PowerOn != null && !this.PowerOn.Equals(input.PowerOn))) return false;
+            if (this.ServerId != input.ServerId || (this.ServerId != null && !this.ServerId.Equals(input.ServerId))) return false;
+            if (this.VolumeId != input.VolumeId || (this.VolumeId != null && !this.VolumeId.Equals(input.VolumeId))) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
+            if (this.Details != input.Details || (this.Details != null && !this.Details.Equals(input.Details))) return false;
 
-            return 
-                (
-                    this.Mappings == input.Mappings ||
-                    this.Mappings != null &&
-                    input.Mappings != null &&
-                    this.Mappings.SequenceEqual(input.Mappings)
-                ) && 
-                (
-                    this.PowerOn == input.PowerOn ||
-                    (this.PowerOn != null &&
-                    this.PowerOn.Equals(input.PowerOn))
-                ) && 
-                (
-                    this.ServerId == input.ServerId ||
-                    (this.ServerId != null &&
-                    this.ServerId.Equals(input.ServerId))
-                ) && 
-                (
-                    this.VolumeId == input.VolumeId ||
-                    (this.VolumeId != null &&
-                    this.VolumeId.Equals(input.VolumeId))
-                ) && 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
-                ) && 
-                (
-                    this.Details == input.Details ||
-                    (this.Details != null &&
-                    this.Details.Equals(input.Details))
-                );
+            return true;
         }
 
         /// <summary>
@@ -128,19 +102,13 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Mappings != null)
-                    hashCode = hashCode * 59 + this.Mappings.GetHashCode();
-                if (this.PowerOn != null)
-                    hashCode = hashCode * 59 + this.PowerOn.GetHashCode();
-                if (this.ServerId != null)
-                    hashCode = hashCode * 59 + this.ServerId.GetHashCode();
-                if (this.VolumeId != null)
-                    hashCode = hashCode * 59 + this.VolumeId.GetHashCode();
-                if (this.ResourceId != null)
-                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
-                if (this.Details != null)
-                    hashCode = hashCode * 59 + this.Details.GetHashCode();
+                var hashCode = 41;
+                if (this.Mappings != null) hashCode = hashCode * 59 + this.Mappings.GetHashCode();
+                if (this.PowerOn != null) hashCode = hashCode * 59 + this.PowerOn.GetHashCode();
+                if (this.ServerId != null) hashCode = hashCode * 59 + this.ServerId.GetHashCode();
+                if (this.VolumeId != null) hashCode = hashCode * 59 + this.VolumeId.GetHashCode();
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.Details != null) hashCode = hashCode * 59 + this.Details.GetHashCode();
                 return hashCode;
             }
         }

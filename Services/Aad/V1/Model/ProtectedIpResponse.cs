@@ -434,80 +434,23 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         /// </summary>
         public bool Equals(ProtectedIpResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
+            if (this.Type != input.Type) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.StatusDetail != input.StatusDetail || (this.StatusDetail != null && !this.StatusDetail.Equals(input.StatusDetail))) return false;
+            if (this.PolicyName != input.PolicyName || (this.PolicyName != null && !this.PolicyName.Equals(input.PolicyName))) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
+            if (this.PackageId != input.PackageId || (this.PackageId != null && !this.PackageId.Equals(input.PackageId))) return false;
+            if (this.PackageName != input.PackageName || (this.PackageName != null && !this.PackageName.Equals(input.PackageName))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && !this.Tags.Equals(input.Tags))) return false;
+            if (this.Tag != input.Tag || (this.Tag != null && !this.Tag.Equals(input.Tag))) return false;
+            if (this.IsResale != input.IsResale || (this.IsResale != null && !this.IsResale.Equals(input.IsResale))) return false;
+            if (this.PackageVersion != input.PackageVersion) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.StatusDetail == input.StatusDetail ||
-                    (this.StatusDetail != null &&
-                    this.StatusDetail.Equals(input.StatusDetail))
-                ) && 
-                (
-                    this.PolicyName == input.PolicyName ||
-                    (this.PolicyName != null &&
-                    this.PolicyName.Equals(input.PolicyName))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.PackageId == input.PackageId ||
-                    (this.PackageId != null &&
-                    this.PackageId.Equals(input.PackageId))
-                ) && 
-                (
-                    this.PackageName == input.PackageName ||
-                    (this.PackageName != null &&
-                    this.PackageName.Equals(input.PackageName))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    (this.Tags != null &&
-                    this.Tags.Equals(input.Tags))
-                ) && 
-                (
-                    this.Tag == input.Tag ||
-                    (this.Tag != null &&
-                    this.Tag.Equals(input.Tag))
-                ) && 
-                (
-                    this.IsResale == input.IsResale ||
-                    (this.IsResale != null &&
-                    this.IsResale.Equals(input.IsResale))
-                ) && 
-                (
-                    this.PackageVersion == input.PackageVersion ||
-                    (this.PackageVersion != null &&
-                    this.PackageVersion.Equals(input.PackageVersion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -517,35 +460,21 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.StatusDetail != null)
-                    hashCode = hashCode * 59 + this.StatusDetail.GetHashCode();
-                if (this.PolicyName != null)
-                    hashCode = hashCode * 59 + this.PolicyName.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.PackageId != null)
-                    hashCode = hashCode * 59 + this.PackageId.GetHashCode();
-                if (this.PackageName != null)
-                    hashCode = hashCode * 59 + this.PackageName.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.Tag != null)
-                    hashCode = hashCode * 59 + this.Tag.GetHashCode();
-                if (this.IsResale != null)
-                    hashCode = hashCode * 59 + this.IsResale.GetHashCode();
-                if (this.PackageVersion != null)
-                    hashCode = hashCode * 59 + this.PackageVersion.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.StatusDetail != null) hashCode = hashCode * 59 + this.StatusDetail.GetHashCode();
+                if (this.PolicyName != null) hashCode = hashCode * 59 + this.PolicyName.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
+                if (this.PackageId != null) hashCode = hashCode * 59 + this.PackageId.GetHashCode();
+                if (this.PackageName != null) hashCode = hashCode * 59 + this.PackageName.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.Tag != null) hashCode = hashCode * 59 + this.Tag.GetHashCode();
+                if (this.IsResale != null) hashCode = hashCode * 59 + this.IsResale.GetHashCode();
+                hashCode = hashCode * 59 + this.PackageVersion.GetHashCode();
                 return hashCode;
             }
         }

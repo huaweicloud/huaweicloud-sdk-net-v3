@@ -223,47 +223,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(NodePoolStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CurrentNode != input.CurrentNode || (this.CurrentNode != null && !this.CurrentNode.Equals(input.CurrentNode))) return false;
+            if (this.CreatingNode != input.CreatingNode || (this.CreatingNode != null && !this.CreatingNode.Equals(input.CreatingNode))) return false;
+            if (this.DeletingNode != input.DeletingNode || (this.DeletingNode != null && !this.DeletingNode.Equals(input.DeletingNode))) return false;
+            if (this.Phase != input.Phase) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.Conditions != input.Conditions || (this.Conditions != null && input.Conditions != null && !this.Conditions.SequenceEqual(input.Conditions))) return false;
+            if (this.ScaleGroupStatuses != input.ScaleGroupStatuses || (this.ScaleGroupStatuses != null && input.ScaleGroupStatuses != null && !this.ScaleGroupStatuses.SequenceEqual(input.ScaleGroupStatuses))) return false;
 
-            return 
-                (
-                    this.CurrentNode == input.CurrentNode ||
-                    (this.CurrentNode != null &&
-                    this.CurrentNode.Equals(input.CurrentNode))
-                ) && 
-                (
-                    this.CreatingNode == input.CreatingNode ||
-                    (this.CreatingNode != null &&
-                    this.CreatingNode.Equals(input.CreatingNode))
-                ) && 
-                (
-                    this.DeletingNode == input.DeletingNode ||
-                    (this.DeletingNode != null &&
-                    this.DeletingNode.Equals(input.DeletingNode))
-                ) && 
-                (
-                    this.Phase == input.Phase ||
-                    (this.Phase != null &&
-                    this.Phase.Equals(input.Phase))
-                ) && 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.Conditions == input.Conditions ||
-                    this.Conditions != null &&
-                    input.Conditions != null &&
-                    this.Conditions.SequenceEqual(input.Conditions)
-                ) && 
-                (
-                    this.ScaleGroupStatuses == input.ScaleGroupStatuses ||
-                    this.ScaleGroupStatuses != null &&
-                    input.ScaleGroupStatuses != null &&
-                    this.ScaleGroupStatuses.SequenceEqual(input.ScaleGroupStatuses)
-                );
+            return true;
         }
 
         /// <summary>
@@ -273,21 +242,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CurrentNode != null)
-                    hashCode = hashCode * 59 + this.CurrentNode.GetHashCode();
-                if (this.CreatingNode != null)
-                    hashCode = hashCode * 59 + this.CreatingNode.GetHashCode();
-                if (this.DeletingNode != null)
-                    hashCode = hashCode * 59 + this.DeletingNode.GetHashCode();
-                if (this.Phase != null)
-                    hashCode = hashCode * 59 + this.Phase.GetHashCode();
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.Conditions != null)
-                    hashCode = hashCode * 59 + this.Conditions.GetHashCode();
-                if (this.ScaleGroupStatuses != null)
-                    hashCode = hashCode * 59 + this.ScaleGroupStatuses.GetHashCode();
+                var hashCode = 41;
+                if (this.CurrentNode != null) hashCode = hashCode * 59 + this.CurrentNode.GetHashCode();
+                if (this.CreatingNode != null) hashCode = hashCode * 59 + this.CreatingNode.GetHashCode();
+                if (this.DeletingNode != null) hashCode = hashCode * 59 + this.DeletingNode.GetHashCode();
+                hashCode = hashCode * 59 + this.Phase.GetHashCode();
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.Conditions != null) hashCode = hashCode * 59 + this.Conditions.GetHashCode();
+                if (this.ScaleGroupStatuses != null) hashCode = hashCode * 59 + this.ScaleGroupStatuses.GetHashCode();
                 return hashCode;
             }
         }

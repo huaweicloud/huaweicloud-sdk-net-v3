@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(Referer input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RefererType != input.RefererType || (this.RefererType != null && !this.RefererType.Equals(input.RefererType))) return false;
+            if (this.RefererList != input.RefererList || (this.RefererList != null && !this.RefererList.Equals(input.RefererList))) return false;
+            if (this.IncludeEmpty != input.IncludeEmpty || (this.IncludeEmpty != null && !this.IncludeEmpty.Equals(input.IncludeEmpty))) return false;
 
-            return 
-                (
-                    this.RefererType == input.RefererType ||
-                    (this.RefererType != null &&
-                    this.RefererType.Equals(input.RefererType))
-                ) && 
-                (
-                    this.RefererList == input.RefererList ||
-                    (this.RefererList != null &&
-                    this.RefererList.Equals(input.RefererList))
-                ) && 
-                (
-                    this.IncludeEmpty == input.IncludeEmpty ||
-                    (this.IncludeEmpty != null &&
-                    this.IncludeEmpty.Equals(input.IncludeEmpty))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RefererType != null)
-                    hashCode = hashCode * 59 + this.RefererType.GetHashCode();
-                if (this.RefererList != null)
-                    hashCode = hashCode * 59 + this.RefererList.GetHashCode();
-                if (this.IncludeEmpty != null)
-                    hashCode = hashCode * 59 + this.IncludeEmpty.GetHashCode();
+                var hashCode = 41;
+                if (this.RefererType != null) hashCode = hashCode * 59 + this.RefererType.GetHashCode();
+                if (this.RefererList != null) hashCode = hashCode * 59 + this.RefererList.GetHashCode();
+                if (this.IncludeEmpty != null) hashCode = hashCode * 59 + this.IncludeEmpty.GetHashCode();
                 return hashCode;
             }
         }

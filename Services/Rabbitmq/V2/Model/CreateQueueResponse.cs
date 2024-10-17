@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public bool Equals(CreateQueueResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.AutoDelete != input.AutoDelete || (this.AutoDelete != null && !this.AutoDelete.Equals(input.AutoDelete))) return false;
+            if (this.Durable != input.Durable || (this.Durable != null && !this.Durable.Equals(input.Durable))) return false;
+            if (this.DeadLetterExchange != input.DeadLetterExchange || (this.DeadLetterExchange != null && !this.DeadLetterExchange.Equals(input.DeadLetterExchange))) return false;
+            if (this.DeadLetterRoutingKey != input.DeadLetterRoutingKey || (this.DeadLetterRoutingKey != null && !this.DeadLetterRoutingKey.Equals(input.DeadLetterRoutingKey))) return false;
+            if (this.MessageTtl != input.MessageTtl || (this.MessageTtl != null && !this.MessageTtl.Equals(input.MessageTtl))) return false;
+            if (this.LazyMode != input.LazyMode || (this.LazyMode != null && !this.LazyMode.Equals(input.LazyMode))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.AutoDelete == input.AutoDelete ||
-                    (this.AutoDelete != null &&
-                    this.AutoDelete.Equals(input.AutoDelete))
-                ) && 
-                (
-                    this.Durable == input.Durable ||
-                    (this.Durable != null &&
-                    this.Durable.Equals(input.Durable))
-                ) && 
-                (
-                    this.DeadLetterExchange == input.DeadLetterExchange ||
-                    (this.DeadLetterExchange != null &&
-                    this.DeadLetterExchange.Equals(input.DeadLetterExchange))
-                ) && 
-                (
-                    this.DeadLetterRoutingKey == input.DeadLetterRoutingKey ||
-                    (this.DeadLetterRoutingKey != null &&
-                    this.DeadLetterRoutingKey.Equals(input.DeadLetterRoutingKey))
-                ) && 
-                (
-                    this.MessageTtl == input.MessageTtl ||
-                    (this.MessageTtl != null &&
-                    this.MessageTtl.Equals(input.MessageTtl))
-                ) && 
-                (
-                    this.LazyMode == input.LazyMode ||
-                    (this.LazyMode != null &&
-                    this.LazyMode.Equals(input.LazyMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.AutoDelete != null)
-                    hashCode = hashCode * 59 + this.AutoDelete.GetHashCode();
-                if (this.Durable != null)
-                    hashCode = hashCode * 59 + this.Durable.GetHashCode();
-                if (this.DeadLetterExchange != null)
-                    hashCode = hashCode * 59 + this.DeadLetterExchange.GetHashCode();
-                if (this.DeadLetterRoutingKey != null)
-                    hashCode = hashCode * 59 + this.DeadLetterRoutingKey.GetHashCode();
-                if (this.MessageTtl != null)
-                    hashCode = hashCode * 59 + this.MessageTtl.GetHashCode();
-                if (this.LazyMode != null)
-                    hashCode = hashCode * 59 + this.LazyMode.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.AutoDelete != null) hashCode = hashCode * 59 + this.AutoDelete.GetHashCode();
+                if (this.Durable != null) hashCode = hashCode * 59 + this.Durable.GetHashCode();
+                if (this.DeadLetterExchange != null) hashCode = hashCode * 59 + this.DeadLetterExchange.GetHashCode();
+                if (this.DeadLetterRoutingKey != null) hashCode = hashCode * 59 + this.DeadLetterRoutingKey.GetHashCode();
+                if (this.MessageTtl != null) hashCode = hashCode * 59 + this.MessageTtl.GetHashCode();
+                if (this.LazyMode != null) hashCode = hashCode * 59 + this.LazyMode.GetHashCode();
                 return hashCode;
             }
         }

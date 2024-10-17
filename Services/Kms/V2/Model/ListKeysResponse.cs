@@ -191,37 +191,14 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         /// </summary>
         public bool Equals(ListKeysResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Keys != input.Keys || (this.Keys != null && input.Keys != null && !this.Keys.SequenceEqual(input.Keys))) return false;
+            if (this.KeyDetails != input.KeyDetails || (this.KeyDetails != null && input.KeyDetails != null && !this.KeyDetails.SequenceEqual(input.KeyDetails))) return false;
+            if (this.NextMarker != input.NextMarker || (this.NextMarker != null && !this.NextMarker.Equals(input.NextMarker))) return false;
+            if (this.Truncated != input.Truncated) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
-            return 
-                (
-                    this.Keys == input.Keys ||
-                    this.Keys != null &&
-                    input.Keys != null &&
-                    this.Keys.SequenceEqual(input.Keys)
-                ) && 
-                (
-                    this.KeyDetails == input.KeyDetails ||
-                    this.KeyDetails != null &&
-                    input.KeyDetails != null &&
-                    this.KeyDetails.SequenceEqual(input.KeyDetails)
-                ) && 
-                (
-                    this.NextMarker == input.NextMarker ||
-                    (this.NextMarker != null &&
-                    this.NextMarker.Equals(input.NextMarker))
-                ) && 
-                (
-                    this.Truncated == input.Truncated ||
-                    (this.Truncated != null &&
-                    this.Truncated.Equals(input.Truncated))
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                );
+            return true;
         }
 
         /// <summary>
@@ -231,17 +208,12 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Keys != null)
-                    hashCode = hashCode * 59 + this.Keys.GetHashCode();
-                if (this.KeyDetails != null)
-                    hashCode = hashCode * 59 + this.KeyDetails.GetHashCode();
-                if (this.NextMarker != null)
-                    hashCode = hashCode * 59 + this.NextMarker.GetHashCode();
-                if (this.Truncated != null)
-                    hashCode = hashCode * 59 + this.Truncated.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                var hashCode = 41;
+                if (this.Keys != null) hashCode = hashCode * 59 + this.Keys.GetHashCode();
+                if (this.KeyDetails != null) hashCode = hashCode * 59 + this.KeyDetails.GetHashCode();
+                if (this.NextMarker != null) hashCode = hashCode * 59 + this.NextMarker.GetHashCode();
+                hashCode = hashCode * 59 + this.Truncated.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

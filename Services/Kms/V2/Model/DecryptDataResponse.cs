@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         /// </summary>
         public bool Equals(DecryptDataResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KeyId != input.KeyId || (this.KeyId != null && !this.KeyId.Equals(input.KeyId))) return false;
+            if (this.PlainText != input.PlainText || (this.PlainText != null && !this.PlainText.Equals(input.PlainText))) return false;
+            if (this.PlainTextBase64 != input.PlainTextBase64 || (this.PlainTextBase64 != null && !this.PlainTextBase64.Equals(input.PlainTextBase64))) return false;
 
-            return 
-                (
-                    this.KeyId == input.KeyId ||
-                    (this.KeyId != null &&
-                    this.KeyId.Equals(input.KeyId))
-                ) && 
-                (
-                    this.PlainText == input.PlainText ||
-                    (this.PlainText != null &&
-                    this.PlainText.Equals(input.PlainText))
-                ) && 
-                (
-                    this.PlainTextBase64 == input.PlainTextBase64 ||
-                    (this.PlainTextBase64 != null &&
-                    this.PlainTextBase64.Equals(input.PlainTextBase64))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KeyId != null)
-                    hashCode = hashCode * 59 + this.KeyId.GetHashCode();
-                if (this.PlainText != null)
-                    hashCode = hashCode * 59 + this.PlainText.GetHashCode();
-                if (this.PlainTextBase64 != null)
-                    hashCode = hashCode * 59 + this.PlainTextBase64.GetHashCode();
+                var hashCode = 41;
+                if (this.KeyId != null) hashCode = hashCode * 59 + this.KeyId.GetHashCode();
+                if (this.PlainText != null) hashCode = hashCode * 59 + this.PlainText.GetHashCode();
+                if (this.PlainTextBase64 != null) hashCode = hashCode * 59 + this.PlainTextBase64.GetHashCode();
                 return hashCode;
             }
         }

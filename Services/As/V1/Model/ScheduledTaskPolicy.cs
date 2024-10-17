@@ -197,35 +197,14 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(ScheduledTaskPolicy input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.LaunchTime != input.LaunchTime || (this.LaunchTime != null && !this.LaunchTime.Equals(input.LaunchTime))) return false;
+            if (this.RecurrenceType != input.RecurrenceType) return false;
+            if (this.RecurrenceValue != input.RecurrenceValue || (this.RecurrenceValue != null && !this.RecurrenceValue.Equals(input.RecurrenceValue))) return false;
 
-            return 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.LaunchTime == input.LaunchTime ||
-                    (this.LaunchTime != null &&
-                    this.LaunchTime.Equals(input.LaunchTime))
-                ) && 
-                (
-                    this.RecurrenceType == input.RecurrenceType ||
-                    (this.RecurrenceType != null &&
-                    this.RecurrenceType.Equals(input.RecurrenceType))
-                ) && 
-                (
-                    this.RecurrenceValue == input.RecurrenceValue ||
-                    (this.RecurrenceValue != null &&
-                    this.RecurrenceValue.Equals(input.RecurrenceValue))
-                );
+            return true;
         }
 
         /// <summary>
@@ -235,17 +214,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.LaunchTime != null)
-                    hashCode = hashCode * 59 + this.LaunchTime.GetHashCode();
-                if (this.RecurrenceType != null)
-                    hashCode = hashCode * 59 + this.RecurrenceType.GetHashCode();
-                if (this.RecurrenceValue != null)
-                    hashCode = hashCode * 59 + this.RecurrenceValue.GetHashCode();
+                var hashCode = 41;
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.LaunchTime != null) hashCode = hashCode * 59 + this.LaunchTime.GetHashCode();
+                hashCode = hashCode * 59 + this.RecurrenceType.GetHashCode();
+                if (this.RecurrenceValue != null) hashCode = hashCode * 59 + this.RecurrenceValue.GetHashCode();
                 return hashCode;
             }
         }

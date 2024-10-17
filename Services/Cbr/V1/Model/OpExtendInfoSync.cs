@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(OpExtendInfoSync input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SyncBackupNum != input.SyncBackupNum || (this.SyncBackupNum != null && !this.SyncBackupNum.Equals(input.SyncBackupNum))) return false;
+            if (this.DeleteBackupNum != input.DeleteBackupNum || (this.DeleteBackupNum != null && !this.DeleteBackupNum.Equals(input.DeleteBackupNum))) return false;
+            if (this.ErrSyncBackupNum != input.ErrSyncBackupNum || (this.ErrSyncBackupNum != null && !this.ErrSyncBackupNum.Equals(input.ErrSyncBackupNum))) return false;
 
-            return 
-                (
-                    this.SyncBackupNum == input.SyncBackupNum ||
-                    (this.SyncBackupNum != null &&
-                    this.SyncBackupNum.Equals(input.SyncBackupNum))
-                ) && 
-                (
-                    this.DeleteBackupNum == input.DeleteBackupNum ||
-                    (this.DeleteBackupNum != null &&
-                    this.DeleteBackupNum.Equals(input.DeleteBackupNum))
-                ) && 
-                (
-                    this.ErrSyncBackupNum == input.ErrSyncBackupNum ||
-                    (this.ErrSyncBackupNum != null &&
-                    this.ErrSyncBackupNum.Equals(input.ErrSyncBackupNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SyncBackupNum != null)
-                    hashCode = hashCode * 59 + this.SyncBackupNum.GetHashCode();
-                if (this.DeleteBackupNum != null)
-                    hashCode = hashCode * 59 + this.DeleteBackupNum.GetHashCode();
-                if (this.ErrSyncBackupNum != null)
-                    hashCode = hashCode * 59 + this.ErrSyncBackupNum.GetHashCode();
+                var hashCode = 41;
+                if (this.SyncBackupNum != null) hashCode = hashCode * 59 + this.SyncBackupNum.GetHashCode();
+                if (this.DeleteBackupNum != null) hashCode = hashCode * 59 + this.DeleteBackupNum.GetHashCode();
+                if (this.ErrSyncBackupNum != null) hashCode = hashCode * 59 + this.ErrSyncBackupNum.GetHashCode();
                 return hashCode;
             }
         }

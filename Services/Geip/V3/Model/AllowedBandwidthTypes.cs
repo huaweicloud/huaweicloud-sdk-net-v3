@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// </summary>
         public bool Equals(AllowedBandwidthTypes input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.CnName != input.CnName || (this.CnName != null && !this.CnName.Equals(input.CnName))) return false;
+            if (this.EnName != input.EnName || (this.EnName != null && !this.EnName.Equals(input.EnName))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.CnName == input.CnName ||
-                    (this.CnName != null &&
-                    this.CnName.Equals(input.CnName))
-                ) && 
-                (
-                    this.EnName == input.EnName ||
-                    (this.EnName != null &&
-                    this.EnName.Equals(input.EnName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.CnName != null)
-                    hashCode = hashCode * 59 + this.CnName.GetHashCode();
-                if (this.EnName != null)
-                    hashCode = hashCode * 59 + this.EnName.GetHashCode();
+                var hashCode = 41;
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.CnName != null) hashCode = hashCode * 59 + this.CnName.GetHashCode();
+                if (this.EnName != null) hashCode = hashCode * 59 + this.EnName.GetHashCode();
                 return hashCode;
             }
         }

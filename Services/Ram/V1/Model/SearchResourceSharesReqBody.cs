@@ -212,52 +212,17 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         /// </summary>
         public bool Equals(SearchResourceSharesReqBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.PermissionId != input.PermissionId || (this.PermissionId != null && !this.PermissionId.Equals(input.PermissionId))) return false;
+            if (this.ResourceOwner != input.ResourceOwner) return false;
+            if (this.ResourceShareIds != input.ResourceShareIds || (this.ResourceShareIds != null && input.ResourceShareIds != null && !this.ResourceShareIds.SequenceEqual(input.ResourceShareIds))) return false;
+            if (this.ResourceShareStatus != input.ResourceShareStatus || (this.ResourceShareStatus != null && !this.ResourceShareStatus.Equals(input.ResourceShareStatus))) return false;
+            if (this.TagFilters != input.TagFilters || (this.TagFilters != null && input.TagFilters != null && !this.TagFilters.SequenceEqual(input.TagFilters))) return false;
 
-            return 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.PermissionId == input.PermissionId ||
-                    (this.PermissionId != null &&
-                    this.PermissionId.Equals(input.PermissionId))
-                ) && 
-                (
-                    this.ResourceOwner == input.ResourceOwner ||
-                    (this.ResourceOwner != null &&
-                    this.ResourceOwner.Equals(input.ResourceOwner))
-                ) && 
-                (
-                    this.ResourceShareIds == input.ResourceShareIds ||
-                    this.ResourceShareIds != null &&
-                    input.ResourceShareIds != null &&
-                    this.ResourceShareIds.SequenceEqual(input.ResourceShareIds)
-                ) && 
-                (
-                    this.ResourceShareStatus == input.ResourceShareStatus ||
-                    (this.ResourceShareStatus != null &&
-                    this.ResourceShareStatus.Equals(input.ResourceShareStatus))
-                ) && 
-                (
-                    this.TagFilters == input.TagFilters ||
-                    this.TagFilters != null &&
-                    input.TagFilters != null &&
-                    this.TagFilters.SequenceEqual(input.TagFilters)
-                );
+            return true;
         }
 
         /// <summary>
@@ -267,23 +232,15 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.PermissionId != null)
-                    hashCode = hashCode * 59 + this.PermissionId.GetHashCode();
-                if (this.ResourceOwner != null)
-                    hashCode = hashCode * 59 + this.ResourceOwner.GetHashCode();
-                if (this.ResourceShareIds != null)
-                    hashCode = hashCode * 59 + this.ResourceShareIds.GetHashCode();
-                if (this.ResourceShareStatus != null)
-                    hashCode = hashCode * 59 + this.ResourceShareStatus.GetHashCode();
-                if (this.TagFilters != null)
-                    hashCode = hashCode * 59 + this.TagFilters.GetHashCode();
+                var hashCode = 41;
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.PermissionId != null) hashCode = hashCode * 59 + this.PermissionId.GetHashCode();
+                hashCode = hashCode * 59 + this.ResourceOwner.GetHashCode();
+                if (this.ResourceShareIds != null) hashCode = hashCode * 59 + this.ResourceShareIds.GetHashCode();
+                if (this.ResourceShareStatus != null) hashCode = hashCode * 59 + this.ResourceShareStatus.GetHashCode();
+                if (this.TagFilters != null) hashCode = hashCode * 59 + this.TagFilters.GetHashCode();
                 return hashCode;
             }
         }

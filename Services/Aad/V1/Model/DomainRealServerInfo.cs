@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         /// </summary>
         public bool Equals(DomainRealServerInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RealServerType != input.RealServerType || (this.RealServerType != null && !this.RealServerType.Equals(input.RealServerType))) return false;
+            if (this.RealServers != input.RealServers || (this.RealServers != null && !this.RealServers.Equals(input.RealServers))) return false;
 
-            return 
-                (
-                    this.RealServerType == input.RealServerType ||
-                    (this.RealServerType != null &&
-                    this.RealServerType.Equals(input.RealServerType))
-                ) && 
-                (
-                    this.RealServers == input.RealServers ||
-                    (this.RealServers != null &&
-                    this.RealServers.Equals(input.RealServers))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RealServerType != null)
-                    hashCode = hashCode * 59 + this.RealServerType.GetHashCode();
-                if (this.RealServers != null)
-                    hashCode = hashCode * 59 + this.RealServers.GetHashCode();
+                var hashCode = 41;
+                if (this.RealServerType != null) hashCode = hashCode * 59 + this.RealServerType.GetHashCode();
+                if (this.RealServers != null) hashCode = hashCode * 59 + this.RealServers.GetHashCode();
                 return hashCode;
             }
         }

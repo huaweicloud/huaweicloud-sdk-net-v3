@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(MetricExtraInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OriginMetricName != input.OriginMetricName || (this.OriginMetricName != null && !this.OriginMetricName.Equals(input.OriginMetricName))) return false;
+            if (this.MetricPrefix != input.MetricPrefix || (this.MetricPrefix != null && !this.MetricPrefix.Equals(input.MetricPrefix))) return false;
+            if (this.CustomProcName != input.CustomProcName || (this.CustomProcName != null && !this.CustomProcName.Equals(input.CustomProcName))) return false;
+            if (this.MetricType != input.MetricType || (this.MetricType != null && !this.MetricType.Equals(input.MetricType))) return false;
 
-            return 
-                (
-                    this.OriginMetricName == input.OriginMetricName ||
-                    (this.OriginMetricName != null &&
-                    this.OriginMetricName.Equals(input.OriginMetricName))
-                ) && 
-                (
-                    this.MetricPrefix == input.MetricPrefix ||
-                    (this.MetricPrefix != null &&
-                    this.MetricPrefix.Equals(input.MetricPrefix))
-                ) && 
-                (
-                    this.CustomProcName == input.CustomProcName ||
-                    (this.CustomProcName != null &&
-                    this.CustomProcName.Equals(input.CustomProcName))
-                ) && 
-                (
-                    this.MetricType == input.MetricType ||
-                    (this.MetricType != null &&
-                    this.MetricType.Equals(input.MetricType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OriginMetricName != null)
-                    hashCode = hashCode * 59 + this.OriginMetricName.GetHashCode();
-                if (this.MetricPrefix != null)
-                    hashCode = hashCode * 59 + this.MetricPrefix.GetHashCode();
-                if (this.CustomProcName != null)
-                    hashCode = hashCode * 59 + this.CustomProcName.GetHashCode();
-                if (this.MetricType != null)
-                    hashCode = hashCode * 59 + this.MetricType.GetHashCode();
+                var hashCode = 41;
+                if (this.OriginMetricName != null) hashCode = hashCode * 59 + this.OriginMetricName.GetHashCode();
+                if (this.MetricPrefix != null) hashCode = hashCode * 59 + this.MetricPrefix.GetHashCode();
+                if (this.CustomProcName != null) hashCode = hashCode * 59 + this.CustomProcName.GetHashCode();
+                if (this.MetricType != null) hashCode = hashCode * 59 + this.MetricType.GetHashCode();
                 return hashCode;
             }
         }

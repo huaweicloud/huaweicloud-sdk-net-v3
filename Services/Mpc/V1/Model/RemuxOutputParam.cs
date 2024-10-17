@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(RemuxOutputParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Format != input.Format || (this.Format != null && !this.Format.Equals(input.Format))) return false;
+            if (this.SegmentDuration != input.SegmentDuration || (this.SegmentDuration != null && !this.SegmentDuration.Equals(input.SegmentDuration))) return false;
+            if (this.RemoveMeta != input.RemoveMeta || (this.RemoveMeta != null && !this.RemoveMeta.Equals(input.RemoveMeta))) return false;
 
-            return 
-                (
-                    this.Format == input.Format ||
-                    (this.Format != null &&
-                    this.Format.Equals(input.Format))
-                ) && 
-                (
-                    this.SegmentDuration == input.SegmentDuration ||
-                    (this.SegmentDuration != null &&
-                    this.SegmentDuration.Equals(input.SegmentDuration))
-                ) && 
-                (
-                    this.RemoveMeta == input.RemoveMeta ||
-                    (this.RemoveMeta != null &&
-                    this.RemoveMeta.Equals(input.RemoveMeta))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Format != null)
-                    hashCode = hashCode * 59 + this.Format.GetHashCode();
-                if (this.SegmentDuration != null)
-                    hashCode = hashCode * 59 + this.SegmentDuration.GetHashCode();
-                if (this.RemoveMeta != null)
-                    hashCode = hashCode * 59 + this.RemoveMeta.GetHashCode();
+                var hashCode = 41;
+                if (this.Format != null) hashCode = hashCode * 59 + this.Format.GetHashCode();
+                if (this.SegmentDuration != null) hashCode = hashCode * 59 + this.SegmentDuration.GetHashCode();
+                if (this.RemoveMeta != null) hashCode = hashCode * 59 + this.RemoveMeta.GetHashCode();
                 return hashCode;
             }
         }

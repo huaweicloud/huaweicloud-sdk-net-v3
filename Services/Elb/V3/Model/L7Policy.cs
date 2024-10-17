@@ -189,117 +189,30 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(L7Policy input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Action != input.Action || (this.Action != null && !this.Action.Equals(input.Action))) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.ListenerId != input.ListenerId || (this.ListenerId != null && !this.ListenerId.Equals(input.ListenerId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Position != input.Position || (this.Position != null && !this.Position.Equals(input.Position))) return false;
+            if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.ProvisioningStatus != input.ProvisioningStatus || (this.ProvisioningStatus != null && !this.ProvisioningStatus.Equals(input.ProvisioningStatus))) return false;
+            if (this.RedirectPoolId != input.RedirectPoolId || (this.RedirectPoolId != null && !this.RedirectPoolId.Equals(input.RedirectPoolId))) return false;
+            if (this.RedirectListenerId != input.RedirectListenerId || (this.RedirectListenerId != null && !this.RedirectListenerId.Equals(input.RedirectListenerId))) return false;
+            if (this.RedirectUrl != input.RedirectUrl || (this.RedirectUrl != null && !this.RedirectUrl.Equals(input.RedirectUrl))) return false;
+            if (this.Rules != input.Rules || (this.Rules != null && input.Rules != null && !this.Rules.SequenceEqual(input.Rules))) return false;
+            if (this.RedirectUrlConfig != input.RedirectUrlConfig || (this.RedirectUrlConfig != null && !this.RedirectUrlConfig.Equals(input.RedirectUrlConfig))) return false;
+            if (this.RedirectPoolsConfig != input.RedirectPoolsConfig || (this.RedirectPoolsConfig != null && input.RedirectPoolsConfig != null && !this.RedirectPoolsConfig.SequenceEqual(input.RedirectPoolsConfig))) return false;
+            if (this.RedirectPoolsStickySessionConfig != input.RedirectPoolsStickySessionConfig || (this.RedirectPoolsStickySessionConfig != null && !this.RedirectPoolsStickySessionConfig.Equals(input.RedirectPoolsStickySessionConfig))) return false;
+            if (this.RedirectPoolsExtendConfig != input.RedirectPoolsExtendConfig || (this.RedirectPoolsExtendConfig != null && !this.RedirectPoolsExtendConfig.Equals(input.RedirectPoolsExtendConfig))) return false;
+            if (this.FixedResponseConfig != input.FixedResponseConfig || (this.FixedResponseConfig != null && !this.FixedResponseConfig.Equals(input.FixedResponseConfig))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
 
-            return 
-                (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                ) && 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.ListenerId == input.ListenerId ||
-                    (this.ListenerId != null &&
-                    this.ListenerId.Equals(input.ListenerId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Position == input.Position ||
-                    (this.Position != null &&
-                    this.Position.Equals(input.Position))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    (this.Priority != null &&
-                    this.Priority.Equals(input.Priority))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.ProvisioningStatus == input.ProvisioningStatus ||
-                    (this.ProvisioningStatus != null &&
-                    this.ProvisioningStatus.Equals(input.ProvisioningStatus))
-                ) && 
-                (
-                    this.RedirectPoolId == input.RedirectPoolId ||
-                    (this.RedirectPoolId != null &&
-                    this.RedirectPoolId.Equals(input.RedirectPoolId))
-                ) && 
-                (
-                    this.RedirectListenerId == input.RedirectListenerId ||
-                    (this.RedirectListenerId != null &&
-                    this.RedirectListenerId.Equals(input.RedirectListenerId))
-                ) && 
-                (
-                    this.RedirectUrl == input.RedirectUrl ||
-                    (this.RedirectUrl != null &&
-                    this.RedirectUrl.Equals(input.RedirectUrl))
-                ) && 
-                (
-                    this.Rules == input.Rules ||
-                    this.Rules != null &&
-                    input.Rules != null &&
-                    this.Rules.SequenceEqual(input.Rules)
-                ) && 
-                (
-                    this.RedirectUrlConfig == input.RedirectUrlConfig ||
-                    (this.RedirectUrlConfig != null &&
-                    this.RedirectUrlConfig.Equals(input.RedirectUrlConfig))
-                ) && 
-                (
-                    this.RedirectPoolsConfig == input.RedirectPoolsConfig ||
-                    this.RedirectPoolsConfig != null &&
-                    input.RedirectPoolsConfig != null &&
-                    this.RedirectPoolsConfig.SequenceEqual(input.RedirectPoolsConfig)
-                ) && 
-                (
-                    this.RedirectPoolsStickySessionConfig == input.RedirectPoolsStickySessionConfig ||
-                    (this.RedirectPoolsStickySessionConfig != null &&
-                    this.RedirectPoolsStickySessionConfig.Equals(input.RedirectPoolsStickySessionConfig))
-                ) && 
-                (
-                    this.RedirectPoolsExtendConfig == input.RedirectPoolsExtendConfig ||
-                    (this.RedirectPoolsExtendConfig != null &&
-                    this.RedirectPoolsExtendConfig.Equals(input.RedirectPoolsExtendConfig))
-                ) && 
-                (
-                    this.FixedResponseConfig == input.FixedResponseConfig ||
-                    (this.FixedResponseConfig != null &&
-                    this.FixedResponseConfig.Equals(input.FixedResponseConfig))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -309,49 +222,28 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.ListenerId != null)
-                    hashCode = hashCode * 59 + this.ListenerId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Position != null)
-                    hashCode = hashCode * 59 + this.Position.GetHashCode();
-                if (this.Priority != null)
-                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.ProvisioningStatus != null)
-                    hashCode = hashCode * 59 + this.ProvisioningStatus.GetHashCode();
-                if (this.RedirectPoolId != null)
-                    hashCode = hashCode * 59 + this.RedirectPoolId.GetHashCode();
-                if (this.RedirectListenerId != null)
-                    hashCode = hashCode * 59 + this.RedirectListenerId.GetHashCode();
-                if (this.RedirectUrl != null)
-                    hashCode = hashCode * 59 + this.RedirectUrl.GetHashCode();
-                if (this.Rules != null)
-                    hashCode = hashCode * 59 + this.Rules.GetHashCode();
-                if (this.RedirectUrlConfig != null)
-                    hashCode = hashCode * 59 + this.RedirectUrlConfig.GetHashCode();
-                if (this.RedirectPoolsConfig != null)
-                    hashCode = hashCode * 59 + this.RedirectPoolsConfig.GetHashCode();
-                if (this.RedirectPoolsStickySessionConfig != null)
-                    hashCode = hashCode * 59 + this.RedirectPoolsStickySessionConfig.GetHashCode();
-                if (this.RedirectPoolsExtendConfig != null)
-                    hashCode = hashCode * 59 + this.RedirectPoolsExtendConfig.GetHashCode();
-                if (this.FixedResponseConfig != null)
-                    hashCode = hashCode * 59 + this.FixedResponseConfig.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                var hashCode = 41;
+                if (this.Action != null) hashCode = hashCode * 59 + this.Action.GetHashCode();
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.ListenerId != null) hashCode = hashCode * 59 + this.ListenerId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Position != null) hashCode = hashCode * 59 + this.Position.GetHashCode();
+                if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.ProvisioningStatus != null) hashCode = hashCode * 59 + this.ProvisioningStatus.GetHashCode();
+                if (this.RedirectPoolId != null) hashCode = hashCode * 59 + this.RedirectPoolId.GetHashCode();
+                if (this.RedirectListenerId != null) hashCode = hashCode * 59 + this.RedirectListenerId.GetHashCode();
+                if (this.RedirectUrl != null) hashCode = hashCode * 59 + this.RedirectUrl.GetHashCode();
+                if (this.Rules != null) hashCode = hashCode * 59 + this.Rules.GetHashCode();
+                if (this.RedirectUrlConfig != null) hashCode = hashCode * 59 + this.RedirectUrlConfig.GetHashCode();
+                if (this.RedirectPoolsConfig != null) hashCode = hashCode * 59 + this.RedirectPoolsConfig.GetHashCode();
+                if (this.RedirectPoolsStickySessionConfig != null) hashCode = hashCode * 59 + this.RedirectPoolsStickySessionConfig.GetHashCode();
+                if (this.RedirectPoolsExtendConfig != null) hashCode = hashCode * 59 + this.RedirectPoolsExtendConfig.GetHashCode();
+                if (this.FixedResponseConfig != null) hashCode = hashCode * 59 + this.FixedResponseConfig.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 return hashCode;
             }
         }

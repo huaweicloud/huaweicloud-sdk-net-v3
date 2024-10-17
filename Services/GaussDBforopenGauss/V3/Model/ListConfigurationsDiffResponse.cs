@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ListConfigurationsDiffResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Differences != input.Differences || (this.Differences != null && input.Differences != null && !this.Differences.SequenceEqual(input.Differences))) return false;
 
-            return 
-                (
-                    this.Differences == input.Differences ||
-                    this.Differences != null &&
-                    input.Differences != null &&
-                    this.Differences.SequenceEqual(input.Differences)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Differences != null)
-                    hashCode = hashCode * 59 + this.Differences.GetHashCode();
+                var hashCode = 41;
+                if (this.Differences != null) hashCode = hashCode * 59 + this.Differences.GetHashCode();
                 return hashCode;
             }
         }

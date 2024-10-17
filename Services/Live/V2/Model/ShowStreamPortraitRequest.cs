@@ -66,25 +66,12 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         /// </summary>
         public bool Equals(ShowStreamPortraitRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PlayDomain != input.PlayDomain || (this.PlayDomain != null && !this.PlayDomain.Equals(input.PlayDomain))) return false;
+            if (this.Stream != input.Stream || (this.Stream != null && !this.Stream.Equals(input.Stream))) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
 
-            return 
-                (
-                    this.PlayDomain == input.PlayDomain ||
-                    (this.PlayDomain != null &&
-                    this.PlayDomain.Equals(input.PlayDomain))
-                ) && 
-                (
-                    this.Stream == input.Stream ||
-                    (this.Stream != null &&
-                    this.Stream.Equals(input.Stream))
-                ) && 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +81,10 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PlayDomain != null)
-                    hashCode = hashCode * 59 + this.PlayDomain.GetHashCode();
-                if (this.Stream != null)
-                    hashCode = hashCode * 59 + this.Stream.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
+                var hashCode = 41;
+                if (this.PlayDomain != null) hashCode = hashCode * 59 + this.PlayDomain.GetHashCode();
+                if (this.Stream != null) hashCode = hashCode * 59 + this.Stream.GetHashCode();
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
                 return hashCode;
             }
         }

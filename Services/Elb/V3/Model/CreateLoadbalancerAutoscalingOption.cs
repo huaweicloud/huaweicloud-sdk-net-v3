@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(CreateLoadbalancerAutoscalingOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Enable != input.Enable || (this.Enable != null && !this.Enable.Equals(input.Enable))) return false;
+            if (this.MinL7FlavorId != input.MinL7FlavorId || (this.MinL7FlavorId != null && !this.MinL7FlavorId.Equals(input.MinL7FlavorId))) return false;
 
-            return 
-                (
-                    this.Enable == input.Enable ||
-                    (this.Enable != null &&
-                    this.Enable.Equals(input.Enable))
-                ) && 
-                (
-                    this.MinL7FlavorId == input.MinL7FlavorId ||
-                    (this.MinL7FlavorId != null &&
-                    this.MinL7FlavorId.Equals(input.MinL7FlavorId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Enable != null)
-                    hashCode = hashCode * 59 + this.Enable.GetHashCode();
-                if (this.MinL7FlavorId != null)
-                    hashCode = hashCode * 59 + this.MinL7FlavorId.GetHashCode();
+                var hashCode = 41;
+                if (this.Enable != null) hashCode = hashCode * 59 + this.Enable.GetHashCode();
+                if (this.MinL7FlavorId != null) hashCode = hashCode * 59 + this.MinL7FlavorId.GetHashCode();
                 return hashCode;
             }
         }

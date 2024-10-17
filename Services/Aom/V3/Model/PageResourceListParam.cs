@@ -98,52 +98,17 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         /// </summary>
         public bool Equals(PageResourceListParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Keywords != input.Keywords || (this.Keywords != null && input.Keywords != null && !this.Keywords.SequenceEqual(input.Keywords))) return false;
+            if (this.CiRelationships != input.CiRelationships || (this.CiRelationships != null && !this.CiRelationships.Equals(input.CiRelationships))) return false;
+            if (this.CiType != input.CiType || (this.CiType != null && !this.CiType.Equals(input.CiType))) return false;
+            if (this.CiRegion != input.CiRegion || (this.CiRegion != null && !this.CiRegion.Equals(input.CiRegion))) return false;
+            if (this.CiIds != input.CiIds || (this.CiIds != null && input.CiIds != null && !this.CiIds.SequenceEqual(input.CiIds))) return false;
+            if (this.CiId != input.CiId || (this.CiId != null && !this.CiId.Equals(input.CiId))) return false;
 
-            return 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Keywords == input.Keywords ||
-                    this.Keywords != null &&
-                    input.Keywords != null &&
-                    this.Keywords.SequenceEqual(input.Keywords)
-                ) && 
-                (
-                    this.CiRelationships == input.CiRelationships ||
-                    (this.CiRelationships != null &&
-                    this.CiRelationships.Equals(input.CiRelationships))
-                ) && 
-                (
-                    this.CiType == input.CiType ||
-                    (this.CiType != null &&
-                    this.CiType.Equals(input.CiType))
-                ) && 
-                (
-                    this.CiRegion == input.CiRegion ||
-                    (this.CiRegion != null &&
-                    this.CiRegion.Equals(input.CiRegion))
-                ) && 
-                (
-                    this.CiIds == input.CiIds ||
-                    this.CiIds != null &&
-                    input.CiIds != null &&
-                    this.CiIds.SequenceEqual(input.CiIds)
-                ) && 
-                (
-                    this.CiId == input.CiId ||
-                    (this.CiId != null &&
-                    this.CiId.Equals(input.CiId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -153,23 +118,15 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Keywords != null)
-                    hashCode = hashCode * 59 + this.Keywords.GetHashCode();
-                if (this.CiRelationships != null)
-                    hashCode = hashCode * 59 + this.CiRelationships.GetHashCode();
-                if (this.CiType != null)
-                    hashCode = hashCode * 59 + this.CiType.GetHashCode();
-                if (this.CiRegion != null)
-                    hashCode = hashCode * 59 + this.CiRegion.GetHashCode();
-                if (this.CiIds != null)
-                    hashCode = hashCode * 59 + this.CiIds.GetHashCode();
-                if (this.CiId != null)
-                    hashCode = hashCode * 59 + this.CiId.GetHashCode();
+                var hashCode = 41;
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Keywords != null) hashCode = hashCode * 59 + this.Keywords.GetHashCode();
+                if (this.CiRelationships != null) hashCode = hashCode * 59 + this.CiRelationships.GetHashCode();
+                if (this.CiType != null) hashCode = hashCode * 59 + this.CiType.GetHashCode();
+                if (this.CiRegion != null) hashCode = hashCode * 59 + this.CiRegion.GetHashCode();
+                if (this.CiIds != null) hashCode = hashCode * 59 + this.CiIds.GetHashCode();
+                if (this.CiId != null) hashCode = hashCode * 59 + this.CiId.GetHashCode();
                 return hashCode;
             }
         }

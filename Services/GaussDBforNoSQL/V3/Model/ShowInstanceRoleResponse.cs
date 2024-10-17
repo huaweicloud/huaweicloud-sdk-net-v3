@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(ShowInstanceRoleResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Role != input.Role || (this.Role != null && !this.Role.Equals(input.Role))) return false;
 
-            return 
-                (
-                    this.Role == input.Role ||
-                    (this.Role != null &&
-                    this.Role.Equals(input.Role))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Role != null)
-                    hashCode = hashCode * 59 + this.Role.GetHashCode();
+                var hashCode = 41;
+                if (this.Role != null) hashCode = hashCode * 59 + this.Role.GetHashCode();
                 return hashCode;
             }
         }

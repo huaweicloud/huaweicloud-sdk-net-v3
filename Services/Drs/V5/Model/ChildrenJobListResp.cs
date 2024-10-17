@@ -1369,105 +1369,28 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ChildrenJobListResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.EngineType != input.EngineType) return false;
+            if (this.NetType != input.NetType) return false;
+            if (this.ChargingMode != input.ChargingMode) return false;
+            if (this.BillingTag != input.BillingTag || (this.BillingTag != null && !this.BillingTag.Equals(input.BillingTag))) return false;
+            if (this.JobDirection != input.JobDirection) return false;
+            if (this.JobType != input.JobType) return false;
+            if (this.TaskType != input.TaskType) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.JobMode != input.JobMode) return false;
+            if (this.JobModeRole != input.JobModeRole) return false;
+            if (this.IsMultiAz != input.IsMultiAz || (this.IsMultiAz != null && !this.IsMultiAz.Equals(input.IsMultiAz))) return false;
+            if (this.NodeRole != input.NodeRole || (this.NodeRole != null && !this.NodeRole.Equals(input.NodeRole))) return false;
+            if (this.NodeNewFramework != input.NodeNewFramework || (this.NodeNewFramework != null && !this.NodeNewFramework.Equals(input.NodeNewFramework))) return false;
+            if (this.JobAction != input.JobAction || (this.JobAction != null && !this.JobAction.Equals(input.JobAction))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.EngineType == input.EngineType ||
-                    (this.EngineType != null &&
-                    this.EngineType.Equals(input.EngineType))
-                ) && 
-                (
-                    this.NetType == input.NetType ||
-                    (this.NetType != null &&
-                    this.NetType.Equals(input.NetType))
-                ) && 
-                (
-                    this.ChargingMode == input.ChargingMode ||
-                    (this.ChargingMode != null &&
-                    this.ChargingMode.Equals(input.ChargingMode))
-                ) && 
-                (
-                    this.BillingTag == input.BillingTag ||
-                    (this.BillingTag != null &&
-                    this.BillingTag.Equals(input.BillingTag))
-                ) && 
-                (
-                    this.JobDirection == input.JobDirection ||
-                    (this.JobDirection != null &&
-                    this.JobDirection.Equals(input.JobDirection))
-                ) && 
-                (
-                    this.JobType == input.JobType ||
-                    (this.JobType != null &&
-                    this.JobType.Equals(input.JobType))
-                ) && 
-                (
-                    this.TaskType == input.TaskType ||
-                    (this.TaskType != null &&
-                    this.TaskType.Equals(input.TaskType))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.JobMode == input.JobMode ||
-                    (this.JobMode != null &&
-                    this.JobMode.Equals(input.JobMode))
-                ) && 
-                (
-                    this.JobModeRole == input.JobModeRole ||
-                    (this.JobModeRole != null &&
-                    this.JobModeRole.Equals(input.JobModeRole))
-                ) && 
-                (
-                    this.IsMultiAz == input.IsMultiAz ||
-                    (this.IsMultiAz != null &&
-                    this.IsMultiAz.Equals(input.IsMultiAz))
-                ) && 
-                (
-                    this.NodeRole == input.NodeRole ||
-                    (this.NodeRole != null &&
-                    this.NodeRole.Equals(input.NodeRole))
-                ) && 
-                (
-                    this.NodeNewFramework == input.NodeNewFramework ||
-                    (this.NodeNewFramework != null &&
-                    this.NodeNewFramework.Equals(input.NodeNewFramework))
-                ) && 
-                (
-                    this.JobAction == input.JobAction ||
-                    (this.JobAction != null &&
-                    this.JobAction.Equals(input.JobAction))
-                );
+            return true;
         }
 
         /// <summary>
@@ -1477,45 +1400,26 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.EngineType != null)
-                    hashCode = hashCode * 59 + this.EngineType.GetHashCode();
-                if (this.NetType != null)
-                    hashCode = hashCode * 59 + this.NetType.GetHashCode();
-                if (this.ChargingMode != null)
-                    hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
-                if (this.BillingTag != null)
-                    hashCode = hashCode * 59 + this.BillingTag.GetHashCode();
-                if (this.JobDirection != null)
-                    hashCode = hashCode * 59 + this.JobDirection.GetHashCode();
-                if (this.JobType != null)
-                    hashCode = hashCode * 59 + this.JobType.GetHashCode();
-                if (this.TaskType != null)
-                    hashCode = hashCode * 59 + this.TaskType.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.JobMode != null)
-                    hashCode = hashCode * 59 + this.JobMode.GetHashCode();
-                if (this.JobModeRole != null)
-                    hashCode = hashCode * 59 + this.JobModeRole.GetHashCode();
-                if (this.IsMultiAz != null)
-                    hashCode = hashCode * 59 + this.IsMultiAz.GetHashCode();
-                if (this.NodeRole != null)
-                    hashCode = hashCode * 59 + this.NodeRole.GetHashCode();
-                if (this.NodeNewFramework != null)
-                    hashCode = hashCode * 59 + this.NodeNewFramework.GetHashCode();
-                if (this.JobAction != null)
-                    hashCode = hashCode * 59 + this.JobAction.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                hashCode = hashCode * 59 + this.EngineType.GetHashCode();
+                hashCode = hashCode * 59 + this.NetType.GetHashCode();
+                hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
+                if (this.BillingTag != null) hashCode = hashCode * 59 + this.BillingTag.GetHashCode();
+                hashCode = hashCode * 59 + this.JobDirection.GetHashCode();
+                hashCode = hashCode * 59 + this.JobType.GetHashCode();
+                hashCode = hashCode * 59 + this.TaskType.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                hashCode = hashCode * 59 + this.JobMode.GetHashCode();
+                hashCode = hashCode * 59 + this.JobModeRole.GetHashCode();
+                if (this.IsMultiAz != null) hashCode = hashCode * 59 + this.IsMultiAz.GetHashCode();
+                if (this.NodeRole != null) hashCode = hashCode * 59 + this.NodeRole.GetHashCode();
+                if (this.NodeNewFramework != null) hashCode = hashCode * 59 + this.NodeNewFramework.GetHashCode();
+                if (this.JobAction != null) hashCode = hashCode * 59 + this.JobAction.GetHashCode();
                 return hashCode;
             }
         }

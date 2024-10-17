@@ -225,56 +225,18 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(Thumbnail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type) return false;
+            if (this.Quantity != input.Quantity || (this.Quantity != null && !this.Quantity.Equals(input.Quantity))) return false;
+            if (this.QuantityTime != input.QuantityTime || (this.QuantityTime != null && !this.QuantityTime.Equals(input.QuantityTime))) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
+            if (this.Dots != input.Dots || (this.Dots != null && input.Dots != null && !this.Dots.SequenceEqual(input.Dots))) return false;
+            if (this.CoverPosition != input.CoverPosition || (this.CoverPosition != null && !this.CoverPosition.Equals(input.CoverPosition))) return false;
+            if (this.Format != input.Format || (this.Format != null && !this.Format.Equals(input.Format))) return false;
+            if (this.AspectRatio != input.AspectRatio || (this.AspectRatio != null && !this.AspectRatio.Equals(input.AspectRatio))) return false;
+            if (this.MaxLength != input.MaxLength || (this.MaxLength != null && !this.MaxLength.Equals(input.MaxLength))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Quantity == input.Quantity ||
-                    (this.Quantity != null &&
-                    this.Quantity.Equals(input.Quantity))
-                ) && 
-                (
-                    this.QuantityTime == input.QuantityTime ||
-                    (this.QuantityTime != null &&
-                    this.QuantityTime.Equals(input.QuantityTime))
-                ) && 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                ) && 
-                (
-                    this.Dots == input.Dots ||
-                    this.Dots != null &&
-                    input.Dots != null &&
-                    this.Dots.SequenceEqual(input.Dots)
-                ) && 
-                (
-                    this.CoverPosition == input.CoverPosition ||
-                    (this.CoverPosition != null &&
-                    this.CoverPosition.Equals(input.CoverPosition))
-                ) && 
-                (
-                    this.Format == input.Format ||
-                    (this.Format != null &&
-                    this.Format.Equals(input.Format))
-                ) && 
-                (
-                    this.AspectRatio == input.AspectRatio ||
-                    (this.AspectRatio != null &&
-                    this.AspectRatio.Equals(input.AspectRatio))
-                ) && 
-                (
-                    this.MaxLength == input.MaxLength ||
-                    (this.MaxLength != null &&
-                    this.MaxLength.Equals(input.MaxLength))
-                );
+            return true;
         }
 
         /// <summary>
@@ -284,25 +246,16 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Quantity != null)
-                    hashCode = hashCode * 59 + this.Quantity.GetHashCode();
-                if (this.QuantityTime != null)
-                    hashCode = hashCode * 59 + this.QuantityTime.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.Dots != null)
-                    hashCode = hashCode * 59 + this.Dots.GetHashCode();
-                if (this.CoverPosition != null)
-                    hashCode = hashCode * 59 + this.CoverPosition.GetHashCode();
-                if (this.Format != null)
-                    hashCode = hashCode * 59 + this.Format.GetHashCode();
-                if (this.AspectRatio != null)
-                    hashCode = hashCode * 59 + this.AspectRatio.GetHashCode();
-                if (this.MaxLength != null)
-                    hashCode = hashCode * 59 + this.MaxLength.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Quantity != null) hashCode = hashCode * 59 + this.Quantity.GetHashCode();
+                if (this.QuantityTime != null) hashCode = hashCode * 59 + this.QuantityTime.GetHashCode();
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
+                if (this.Dots != null) hashCode = hashCode * 59 + this.Dots.GetHashCode();
+                if (this.CoverPosition != null) hashCode = hashCode * 59 + this.CoverPosition.GetHashCode();
+                if (this.Format != null) hashCode = hashCode * 59 + this.Format.GetHashCode();
+                if (this.AspectRatio != null) hashCode = hashCode * 59 + this.AspectRatio.GetHashCode();
+                if (this.MaxLength != null) hashCode = hashCode * 59 + this.MaxLength.GetHashCode();
                 return hashCode;
             }
         }

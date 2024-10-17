@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public bool Equals(TagSelector input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Kind != input.Kind || (this.Kind != null && !this.Kind.Equals(input.Kind))) return false;
+            if (this.Pattern != input.Pattern || (this.Pattern != null && !this.Pattern.Equals(input.Pattern))) return false;
 
-            return 
-                (
-                    this.Kind == input.Kind ||
-                    (this.Kind != null &&
-                    this.Kind.Equals(input.Kind))
-                ) && 
-                (
-                    this.Pattern == input.Pattern ||
-                    (this.Pattern != null &&
-                    this.Pattern.Equals(input.Pattern))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Kind != null)
-                    hashCode = hashCode * 59 + this.Kind.GetHashCode();
-                if (this.Pattern != null)
-                    hashCode = hashCode * 59 + this.Pattern.GetHashCode();
+                var hashCode = 41;
+                if (this.Kind != null) hashCode = hashCode * 59 + this.Kind.GetHashCode();
+                if (this.Pattern != null) hashCode = hashCode * 59 + this.Pattern.GetHashCode();
                 return hashCode;
             }
         }

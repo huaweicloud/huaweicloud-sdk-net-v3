@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(UpdateAomMappingRulesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.RuleName != input.RuleName || (this.RuleName != null && !this.RuleName.Equals(input.RuleName))) return false;
+            if (this.RuleId != input.RuleId || (this.RuleId != null && !this.RuleId.Equals(input.RuleId))) return false;
+            if (this.RuleInfo != input.RuleInfo || (this.RuleInfo != null && !this.RuleInfo.Equals(input.RuleInfo))) return false;
 
-            return 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.RuleName == input.RuleName ||
-                    (this.RuleName != null &&
-                    this.RuleName.Equals(input.RuleName))
-                ) && 
-                (
-                    this.RuleId == input.RuleId ||
-                    (this.RuleId != null &&
-                    this.RuleId.Equals(input.RuleId))
-                ) && 
-                (
-                    this.RuleInfo == input.RuleInfo ||
-                    (this.RuleInfo != null &&
-                    this.RuleInfo.Equals(input.RuleInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.RuleName != null)
-                    hashCode = hashCode * 59 + this.RuleName.GetHashCode();
-                if (this.RuleId != null)
-                    hashCode = hashCode * 59 + this.RuleId.GetHashCode();
-                if (this.RuleInfo != null)
-                    hashCode = hashCode * 59 + this.RuleInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.RuleName != null) hashCode = hashCode * 59 + this.RuleName.GetHashCode();
+                if (this.RuleId != null) hashCode = hashCode * 59 + this.RuleId.GetHashCode();
+                if (this.RuleInfo != null) hashCode = hashCode * 59 + this.RuleInfo.GetHashCode();
                 return hashCode;
             }
         }

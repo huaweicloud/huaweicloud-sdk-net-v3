@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// </summary>
         public bool Equals(GlobalConnectionBandwidthInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.GcbId != input.GcbId || (this.GcbId != null && !this.GcbId.Equals(input.GcbId))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.GcbType != input.GcbType || (this.GcbType != null && !this.GcbType.Equals(input.GcbType))) return false;
+            if (this.AdminState != input.AdminState || (this.AdminState != null && !this.AdminState.Equals(input.AdminState))) return false;
+            if (this.SlaLevel != input.SlaLevel || (this.SlaLevel != null && !this.SlaLevel.Equals(input.SlaLevel))) return false;
+            if (this.Dscp != input.Dscp || (this.Dscp != null && !this.Dscp.Equals(input.Dscp))) return false;
 
-            return 
-                (
-                    this.GcbId == input.GcbId ||
-                    (this.GcbId != null &&
-                    this.GcbId.Equals(input.GcbId))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.GcbType == input.GcbType ||
-                    (this.GcbType != null &&
-                    this.GcbType.Equals(input.GcbType))
-                ) && 
-                (
-                    this.AdminState == input.AdminState ||
-                    (this.AdminState != null &&
-                    this.AdminState.Equals(input.AdminState))
-                ) && 
-                (
-                    this.SlaLevel == input.SlaLevel ||
-                    (this.SlaLevel != null &&
-                    this.SlaLevel.Equals(input.SlaLevel))
-                ) && 
-                (
-                    this.Dscp == input.Dscp ||
-                    (this.Dscp != null &&
-                    this.Dscp.Equals(input.Dscp))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.GcbId != null)
-                    hashCode = hashCode * 59 + this.GcbId.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.GcbType != null)
-                    hashCode = hashCode * 59 + this.GcbType.GetHashCode();
-                if (this.AdminState != null)
-                    hashCode = hashCode * 59 + this.AdminState.GetHashCode();
-                if (this.SlaLevel != null)
-                    hashCode = hashCode * 59 + this.SlaLevel.GetHashCode();
-                if (this.Dscp != null)
-                    hashCode = hashCode * 59 + this.Dscp.GetHashCode();
+                var hashCode = 41;
+                if (this.GcbId != null) hashCode = hashCode * 59 + this.GcbId.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.GcbType != null) hashCode = hashCode * 59 + this.GcbType.GetHashCode();
+                if (this.AdminState != null) hashCode = hashCode * 59 + this.AdminState.GetHashCode();
+                if (this.SlaLevel != null) hashCode = hashCode * 59 + this.SlaLevel.GetHashCode();
+                if (this.Dscp != null) hashCode = hashCode * 59 + this.Dscp.GetHashCode();
                 return hashCode;
             }
         }

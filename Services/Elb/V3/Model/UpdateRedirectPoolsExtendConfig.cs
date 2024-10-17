@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(UpdateRedirectPoolsExtendConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RewriteUrlEnable != input.RewriteUrlEnable || (this.RewriteUrlEnable != null && !this.RewriteUrlEnable.Equals(input.RewriteUrlEnable))) return false;
+            if (this.RewriteUrlConfig != input.RewriteUrlConfig || (this.RewriteUrlConfig != null && !this.RewriteUrlConfig.Equals(input.RewriteUrlConfig))) return false;
+            if (this.InsertHeadersConfig != input.InsertHeadersConfig || (this.InsertHeadersConfig != null && !this.InsertHeadersConfig.Equals(input.InsertHeadersConfig))) return false;
+            if (this.RemoveHeadersConfig != input.RemoveHeadersConfig || (this.RemoveHeadersConfig != null && !this.RemoveHeadersConfig.Equals(input.RemoveHeadersConfig))) return false;
+            if (this.TrafficLimitConfig != input.TrafficLimitConfig || (this.TrafficLimitConfig != null && !this.TrafficLimitConfig.Equals(input.TrafficLimitConfig))) return false;
 
-            return 
-                (
-                    this.RewriteUrlEnable == input.RewriteUrlEnable ||
-                    (this.RewriteUrlEnable != null &&
-                    this.RewriteUrlEnable.Equals(input.RewriteUrlEnable))
-                ) && 
-                (
-                    this.RewriteUrlConfig == input.RewriteUrlConfig ||
-                    (this.RewriteUrlConfig != null &&
-                    this.RewriteUrlConfig.Equals(input.RewriteUrlConfig))
-                ) && 
-                (
-                    this.InsertHeadersConfig == input.InsertHeadersConfig ||
-                    (this.InsertHeadersConfig != null &&
-                    this.InsertHeadersConfig.Equals(input.InsertHeadersConfig))
-                ) && 
-                (
-                    this.RemoveHeadersConfig == input.RemoveHeadersConfig ||
-                    (this.RemoveHeadersConfig != null &&
-                    this.RemoveHeadersConfig.Equals(input.RemoveHeadersConfig))
-                ) && 
-                (
-                    this.TrafficLimitConfig == input.TrafficLimitConfig ||
-                    (this.TrafficLimitConfig != null &&
-                    this.TrafficLimitConfig.Equals(input.TrafficLimitConfig))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RewriteUrlEnable != null)
-                    hashCode = hashCode * 59 + this.RewriteUrlEnable.GetHashCode();
-                if (this.RewriteUrlConfig != null)
-                    hashCode = hashCode * 59 + this.RewriteUrlConfig.GetHashCode();
-                if (this.InsertHeadersConfig != null)
-                    hashCode = hashCode * 59 + this.InsertHeadersConfig.GetHashCode();
-                if (this.RemoveHeadersConfig != null)
-                    hashCode = hashCode * 59 + this.RemoveHeadersConfig.GetHashCode();
-                if (this.TrafficLimitConfig != null)
-                    hashCode = hashCode * 59 + this.TrafficLimitConfig.GetHashCode();
+                var hashCode = 41;
+                if (this.RewriteUrlEnable != null) hashCode = hashCode * 59 + this.RewriteUrlEnable.GetHashCode();
+                if (this.RewriteUrlConfig != null) hashCode = hashCode * 59 + this.RewriteUrlConfig.GetHashCode();
+                if (this.InsertHeadersConfig != null) hashCode = hashCode * 59 + this.InsertHeadersConfig.GetHashCode();
+                if (this.RemoveHeadersConfig != null) hashCode = hashCode * 59 + this.RemoveHeadersConfig.GetHashCode();
+                if (this.TrafficLimitConfig != null) hashCode = hashCode * 59 + this.TrafficLimitConfig.GetHashCode();
                 return hashCode;
             }
         }

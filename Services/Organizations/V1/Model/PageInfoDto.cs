@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(PageInfoDto input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NextMarker != input.NextMarker || (this.NextMarker != null && !this.NextMarker.Equals(input.NextMarker))) return false;
+            if (this.CurrentCount != input.CurrentCount || (this.CurrentCount != null && !this.CurrentCount.Equals(input.CurrentCount))) return false;
 
-            return 
-                (
-                    this.NextMarker == input.NextMarker ||
-                    (this.NextMarker != null &&
-                    this.NextMarker.Equals(input.NextMarker))
-                ) && 
-                (
-                    this.CurrentCount == input.CurrentCount ||
-                    (this.CurrentCount != null &&
-                    this.CurrentCount.Equals(input.CurrentCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NextMarker != null)
-                    hashCode = hashCode * 59 + this.NextMarker.GetHashCode();
-                if (this.CurrentCount != null)
-                    hashCode = hashCode * 59 + this.CurrentCount.GetHashCode();
+                var hashCode = 41;
+                if (this.NextMarker != null) hashCode = hashCode * 59 + this.NextMarker.GetHashCode();
+                if (this.CurrentCount != null) hashCode = hashCode * 59 + this.CurrentCount.GetHashCode();
                 return hashCode;
             }
         }

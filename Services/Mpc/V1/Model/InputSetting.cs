@@ -177,25 +177,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(InputSetting input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Input != input.Input || (this.Input != null && !this.Input.Equals(input.Input))) return false;
+            if (this.PaneId != input.PaneId || (this.PaneId != null && !this.PaneId.Equals(input.PaneId))) return false;
+            if (this.AudioPolicy != input.AudioPolicy) return false;
 
-            return 
-                (
-                    this.Input == input.Input ||
-                    (this.Input != null &&
-                    this.Input.Equals(input.Input))
-                ) && 
-                (
-                    this.PaneId == input.PaneId ||
-                    (this.PaneId != null &&
-                    this.PaneId.Equals(input.PaneId))
-                ) && 
-                (
-                    this.AudioPolicy == input.AudioPolicy ||
-                    (this.AudioPolicy != null &&
-                    this.AudioPolicy.Equals(input.AudioPolicy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -205,13 +192,10 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Input != null)
-                    hashCode = hashCode * 59 + this.Input.GetHashCode();
-                if (this.PaneId != null)
-                    hashCode = hashCode * 59 + this.PaneId.GetHashCode();
-                if (this.AudioPolicy != null)
-                    hashCode = hashCode * 59 + this.AudioPolicy.GetHashCode();
+                var hashCode = 41;
+                if (this.Input != null) hashCode = hashCode * 59 + this.Input.GetHashCode();
+                if (this.PaneId != null) hashCode = hashCode * 59 + this.PaneId.GetHashCode();
+                hashCode = hashCode * 59 + this.AudioPolicy.GetHashCode();
                 return hashCode;
             }
         }

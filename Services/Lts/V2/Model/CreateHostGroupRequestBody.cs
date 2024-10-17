@@ -184,32 +184,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(CreateHostGroupRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HostGroupName != input.HostGroupName || (this.HostGroupName != null && !this.HostGroupName.Equals(input.HostGroupName))) return false;
+            if (this.HostGroupType != input.HostGroupType) return false;
+            if (this.HostIdList != input.HostIdList || (this.HostIdList != null && input.HostIdList != null && !this.HostIdList.SequenceEqual(input.HostIdList))) return false;
+            if (this.HostGroupTag != input.HostGroupTag || (this.HostGroupTag != null && input.HostGroupTag != null && !this.HostGroupTag.SequenceEqual(input.HostGroupTag))) return false;
 
-            return 
-                (
-                    this.HostGroupName == input.HostGroupName ||
-                    (this.HostGroupName != null &&
-                    this.HostGroupName.Equals(input.HostGroupName))
-                ) && 
-                (
-                    this.HostGroupType == input.HostGroupType ||
-                    (this.HostGroupType != null &&
-                    this.HostGroupType.Equals(input.HostGroupType))
-                ) && 
-                (
-                    this.HostIdList == input.HostIdList ||
-                    this.HostIdList != null &&
-                    input.HostIdList != null &&
-                    this.HostIdList.SequenceEqual(input.HostIdList)
-                ) && 
-                (
-                    this.HostGroupTag == input.HostGroupTag ||
-                    this.HostGroupTag != null &&
-                    input.HostGroupTag != null &&
-                    this.HostGroupTag.SequenceEqual(input.HostGroupTag)
-                );
+            return true;
         }
 
         /// <summary>
@@ -219,15 +200,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HostGroupName != null)
-                    hashCode = hashCode * 59 + this.HostGroupName.GetHashCode();
-                if (this.HostGroupType != null)
-                    hashCode = hashCode * 59 + this.HostGroupType.GetHashCode();
-                if (this.HostIdList != null)
-                    hashCode = hashCode * 59 + this.HostIdList.GetHashCode();
-                if (this.HostGroupTag != null)
-                    hashCode = hashCode * 59 + this.HostGroupTag.GetHashCode();
+                var hashCode = 41;
+                if (this.HostGroupName != null) hashCode = hashCode * 59 + this.HostGroupName.GetHashCode();
+                hashCode = hashCode * 59 + this.HostGroupType.GetHashCode();
+                if (this.HostIdList != null) hashCode = hashCode * 59 + this.HostIdList.GetHashCode();
+                if (this.HostGroupTag != null) hashCode = hashCode * 59 + this.HostGroupTag.GetHashCode();
                 return hashCode;
             }
         }

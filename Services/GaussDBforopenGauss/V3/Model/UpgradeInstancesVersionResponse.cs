@@ -77,38 +77,14 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(UpgradeInstancesVersionResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobIds != input.JobIds || (this.JobIds != null && input.JobIds != null && !this.JobIds.SequenceEqual(input.JobIds))) return false;
+            if (this.SucceededNum != input.SucceededNum || (this.SucceededNum != null && !this.SucceededNum.Equals(input.SucceededNum))) return false;
+            if (this.FailedNum != input.FailedNum || (this.FailedNum != null && !this.FailedNum.Equals(input.FailedNum))) return false;
+            if (this.FailedInstanceIds != input.FailedInstanceIds || (this.FailedInstanceIds != null && input.FailedInstanceIds != null && !this.FailedInstanceIds.SequenceEqual(input.FailedInstanceIds))) return false;
+            if (this.ErrorMessages != input.ErrorMessages || (this.ErrorMessages != null && input.ErrorMessages != null && !this.ErrorMessages.SequenceEqual(input.ErrorMessages))) return false;
 
-            return 
-                (
-                    this.JobIds == input.JobIds ||
-                    this.JobIds != null &&
-                    input.JobIds != null &&
-                    this.JobIds.SequenceEqual(input.JobIds)
-                ) && 
-                (
-                    this.SucceededNum == input.SucceededNum ||
-                    (this.SucceededNum != null &&
-                    this.SucceededNum.Equals(input.SucceededNum))
-                ) && 
-                (
-                    this.FailedNum == input.FailedNum ||
-                    (this.FailedNum != null &&
-                    this.FailedNum.Equals(input.FailedNum))
-                ) && 
-                (
-                    this.FailedInstanceIds == input.FailedInstanceIds ||
-                    this.FailedInstanceIds != null &&
-                    input.FailedInstanceIds != null &&
-                    this.FailedInstanceIds.SequenceEqual(input.FailedInstanceIds)
-                ) && 
-                (
-                    this.ErrorMessages == input.ErrorMessages ||
-                    this.ErrorMessages != null &&
-                    input.ErrorMessages != null &&
-                    this.ErrorMessages.SequenceEqual(input.ErrorMessages)
-                );
+            return true;
         }
 
         /// <summary>
@@ -118,17 +94,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobIds != null)
-                    hashCode = hashCode * 59 + this.JobIds.GetHashCode();
-                if (this.SucceededNum != null)
-                    hashCode = hashCode * 59 + this.SucceededNum.GetHashCode();
-                if (this.FailedNum != null)
-                    hashCode = hashCode * 59 + this.FailedNum.GetHashCode();
-                if (this.FailedInstanceIds != null)
-                    hashCode = hashCode * 59 + this.FailedInstanceIds.GetHashCode();
-                if (this.ErrorMessages != null)
-                    hashCode = hashCode * 59 + this.ErrorMessages.GetHashCode();
+                var hashCode = 41;
+                if (this.JobIds != null) hashCode = hashCode * 59 + this.JobIds.GetHashCode();
+                if (this.SucceededNum != null) hashCode = hashCode * 59 + this.SucceededNum.GetHashCode();
+                if (this.FailedNum != null) hashCode = hashCode * 59 + this.FailedNum.GetHashCode();
+                if (this.FailedInstanceIds != null) hashCode = hashCode * 59 + this.FailedInstanceIds.GetHashCode();
+                if (this.ErrorMessages != null) hashCode = hashCode * 59 + this.ErrorMessages.GetHashCode();
                 return hashCode;
             }
         }

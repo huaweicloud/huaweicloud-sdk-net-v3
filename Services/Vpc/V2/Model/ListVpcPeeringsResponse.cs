@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(ListVpcPeeringsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Peerings != input.Peerings || (this.Peerings != null && input.Peerings != null && !this.Peerings.SequenceEqual(input.Peerings))) return false;
+            if (this.PeeringsLinks != input.PeeringsLinks || (this.PeeringsLinks != null && input.PeeringsLinks != null && !this.PeeringsLinks.SequenceEqual(input.PeeringsLinks))) return false;
 
-            return 
-                (
-                    this.Peerings == input.Peerings ||
-                    this.Peerings != null &&
-                    input.Peerings != null &&
-                    this.Peerings.SequenceEqual(input.Peerings)
-                ) && 
-                (
-                    this.PeeringsLinks == input.PeeringsLinks ||
-                    this.PeeringsLinks != null &&
-                    input.PeeringsLinks != null &&
-                    this.PeeringsLinks.SequenceEqual(input.PeeringsLinks)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Peerings != null)
-                    hashCode = hashCode * 59 + this.Peerings.GetHashCode();
-                if (this.PeeringsLinks != null)
-                    hashCode = hashCode * 59 + this.PeeringsLinks.GetHashCode();
+                var hashCode = 41;
+                if (this.Peerings != null) hashCode = hashCode * 59 + this.Peerings.GetHashCode();
+                if (this.PeeringsLinks != null) hashCode = hashCode * 59 + this.PeeringsLinks.GetHashCode();
                 return hashCode;
             }
         }

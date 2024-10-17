@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ReleaseReqBodyParams input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DryRun != input.DryRun || (this.DryRun != null && !this.DryRun.Equals(input.DryRun))) return false;
+            if (this.NameTemplate != input.NameTemplate || (this.NameTemplate != null && !this.NameTemplate.Equals(input.NameTemplate))) return false;
+            if (this.NoHooks != input.NoHooks || (this.NoHooks != null && !this.NoHooks.Equals(input.NoHooks))) return false;
+            if (this.Replace != input.Replace || (this.Replace != null && !this.Replace.Equals(input.Replace))) return false;
+            if (this.Recreate != input.Recreate || (this.Recreate != null && !this.Recreate.Equals(input.Recreate))) return false;
+            if (this.ResetValues != input.ResetValues || (this.ResetValues != null && !this.ResetValues.Equals(input.ResetValues))) return false;
+            if (this.ReleaseVersion != input.ReleaseVersion || (this.ReleaseVersion != null && !this.ReleaseVersion.Equals(input.ReleaseVersion))) return false;
+            if (this.IncludeHooks != input.IncludeHooks || (this.IncludeHooks != null && !this.IncludeHooks.Equals(input.IncludeHooks))) return false;
 
-            return 
-                (
-                    this.DryRun == input.DryRun ||
-                    (this.DryRun != null &&
-                    this.DryRun.Equals(input.DryRun))
-                ) && 
-                (
-                    this.NameTemplate == input.NameTemplate ||
-                    (this.NameTemplate != null &&
-                    this.NameTemplate.Equals(input.NameTemplate))
-                ) && 
-                (
-                    this.NoHooks == input.NoHooks ||
-                    (this.NoHooks != null &&
-                    this.NoHooks.Equals(input.NoHooks))
-                ) && 
-                (
-                    this.Replace == input.Replace ||
-                    (this.Replace != null &&
-                    this.Replace.Equals(input.Replace))
-                ) && 
-                (
-                    this.Recreate == input.Recreate ||
-                    (this.Recreate != null &&
-                    this.Recreate.Equals(input.Recreate))
-                ) && 
-                (
-                    this.ResetValues == input.ResetValues ||
-                    (this.ResetValues != null &&
-                    this.ResetValues.Equals(input.ResetValues))
-                ) && 
-                (
-                    this.ReleaseVersion == input.ReleaseVersion ||
-                    (this.ReleaseVersion != null &&
-                    this.ReleaseVersion.Equals(input.ReleaseVersion))
-                ) && 
-                (
-                    this.IncludeHooks == input.IncludeHooks ||
-                    (this.IncludeHooks != null &&
-                    this.IncludeHooks.Equals(input.IncludeHooks))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DryRun != null)
-                    hashCode = hashCode * 59 + this.DryRun.GetHashCode();
-                if (this.NameTemplate != null)
-                    hashCode = hashCode * 59 + this.NameTemplate.GetHashCode();
-                if (this.NoHooks != null)
-                    hashCode = hashCode * 59 + this.NoHooks.GetHashCode();
-                if (this.Replace != null)
-                    hashCode = hashCode * 59 + this.Replace.GetHashCode();
-                if (this.Recreate != null)
-                    hashCode = hashCode * 59 + this.Recreate.GetHashCode();
-                if (this.ResetValues != null)
-                    hashCode = hashCode * 59 + this.ResetValues.GetHashCode();
-                if (this.ReleaseVersion != null)
-                    hashCode = hashCode * 59 + this.ReleaseVersion.GetHashCode();
-                if (this.IncludeHooks != null)
-                    hashCode = hashCode * 59 + this.IncludeHooks.GetHashCode();
+                var hashCode = 41;
+                if (this.DryRun != null) hashCode = hashCode * 59 + this.DryRun.GetHashCode();
+                if (this.NameTemplate != null) hashCode = hashCode * 59 + this.NameTemplate.GetHashCode();
+                if (this.NoHooks != null) hashCode = hashCode * 59 + this.NoHooks.GetHashCode();
+                if (this.Replace != null) hashCode = hashCode * 59 + this.Replace.GetHashCode();
+                if (this.Recreate != null) hashCode = hashCode * 59 + this.Recreate.GetHashCode();
+                if (this.ResetValues != null) hashCode = hashCode * 59 + this.ResetValues.GetHashCode();
+                if (this.ReleaseVersion != null) hashCode = hashCode * 59 + this.ReleaseVersion.GetHashCode();
+                if (this.IncludeHooks != null) hashCode = hashCode * 59 + this.IncludeHooks.GetHashCode();
                 return hashCode;
             }
         }

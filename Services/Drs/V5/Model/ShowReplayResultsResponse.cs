@@ -98,57 +98,17 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ShowReplayResultsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
+            if (this.ShardStatics != input.ShardStatics || (this.ShardStatics != null && input.ShardStatics != null && !this.ShardStatics.SequenceEqual(input.ShardStatics))) return false;
+            if (this.SlowSqls != input.SlowSqls || (this.SlowSqls != null && input.SlowSqls != null && !this.SlowSqls.SequenceEqual(input.SlowSqls))) return false;
+            if (this.SlowSqlTemplates != input.SlowSqlTemplates || (this.SlowSqlTemplates != null && input.SlowSqlTemplates != null && !this.SlowSqlTemplates.SequenceEqual(input.SlowSqlTemplates))) return false;
+            if (this.ErrorSqls != input.ErrorSqls || (this.ErrorSqls != null && input.ErrorSqls != null && !this.ErrorSqls.SequenceEqual(input.ErrorSqls))) return false;
+            if (this.ErrorSqlTemplates != input.ErrorSqlTemplates || (this.ErrorSqlTemplates != null && input.ErrorSqlTemplates != null && !this.ErrorSqlTemplates.SequenceEqual(input.ErrorSqlTemplates))) return false;
+            if (this.ReplayingSqls != input.ReplayingSqls || (this.ReplayingSqls != null && input.ReplayingSqls != null && !this.ReplayingSqls.SequenceEqual(input.ReplayingSqls))) return false;
+            if (this.ErrorClassifications != input.ErrorClassifications || (this.ErrorClassifications != null && input.ErrorClassifications != null && !this.ErrorClassifications.SequenceEqual(input.ErrorClassifications))) return false;
 
-            return 
-                (
-                    this.TotalCount == input.TotalCount ||
-                    (this.TotalCount != null &&
-                    this.TotalCount.Equals(input.TotalCount))
-                ) && 
-                (
-                    this.ShardStatics == input.ShardStatics ||
-                    this.ShardStatics != null &&
-                    input.ShardStatics != null &&
-                    this.ShardStatics.SequenceEqual(input.ShardStatics)
-                ) && 
-                (
-                    this.SlowSqls == input.SlowSqls ||
-                    this.SlowSqls != null &&
-                    input.SlowSqls != null &&
-                    this.SlowSqls.SequenceEqual(input.SlowSqls)
-                ) && 
-                (
-                    this.SlowSqlTemplates == input.SlowSqlTemplates ||
-                    this.SlowSqlTemplates != null &&
-                    input.SlowSqlTemplates != null &&
-                    this.SlowSqlTemplates.SequenceEqual(input.SlowSqlTemplates)
-                ) && 
-                (
-                    this.ErrorSqls == input.ErrorSqls ||
-                    this.ErrorSqls != null &&
-                    input.ErrorSqls != null &&
-                    this.ErrorSqls.SequenceEqual(input.ErrorSqls)
-                ) && 
-                (
-                    this.ErrorSqlTemplates == input.ErrorSqlTemplates ||
-                    this.ErrorSqlTemplates != null &&
-                    input.ErrorSqlTemplates != null &&
-                    this.ErrorSqlTemplates.SequenceEqual(input.ErrorSqlTemplates)
-                ) && 
-                (
-                    this.ReplayingSqls == input.ReplayingSqls ||
-                    this.ReplayingSqls != null &&
-                    input.ReplayingSqls != null &&
-                    this.ReplayingSqls.SequenceEqual(input.ReplayingSqls)
-                ) && 
-                (
-                    this.ErrorClassifications == input.ErrorClassifications ||
-                    this.ErrorClassifications != null &&
-                    input.ErrorClassifications != null &&
-                    this.ErrorClassifications.SequenceEqual(input.ErrorClassifications)
-                );
+            return true;
         }
 
         /// <summary>
@@ -158,23 +118,15 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TotalCount != null)
-                    hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
-                if (this.ShardStatics != null)
-                    hashCode = hashCode * 59 + this.ShardStatics.GetHashCode();
-                if (this.SlowSqls != null)
-                    hashCode = hashCode * 59 + this.SlowSqls.GetHashCode();
-                if (this.SlowSqlTemplates != null)
-                    hashCode = hashCode * 59 + this.SlowSqlTemplates.GetHashCode();
-                if (this.ErrorSqls != null)
-                    hashCode = hashCode * 59 + this.ErrorSqls.GetHashCode();
-                if (this.ErrorSqlTemplates != null)
-                    hashCode = hashCode * 59 + this.ErrorSqlTemplates.GetHashCode();
-                if (this.ReplayingSqls != null)
-                    hashCode = hashCode * 59 + this.ReplayingSqls.GetHashCode();
-                if (this.ErrorClassifications != null)
-                    hashCode = hashCode * 59 + this.ErrorClassifications.GetHashCode();
+                var hashCode = 41;
+                if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
+                if (this.ShardStatics != null) hashCode = hashCode * 59 + this.ShardStatics.GetHashCode();
+                if (this.SlowSqls != null) hashCode = hashCode * 59 + this.SlowSqls.GetHashCode();
+                if (this.SlowSqlTemplates != null) hashCode = hashCode * 59 + this.SlowSqlTemplates.GetHashCode();
+                if (this.ErrorSqls != null) hashCode = hashCode * 59 + this.ErrorSqls.GetHashCode();
+                if (this.ErrorSqlTemplates != null) hashCode = hashCode * 59 + this.ErrorSqlTemplates.GetHashCode();
+                if (this.ReplayingSqls != null) hashCode = hashCode * 59 + this.ReplayingSqls.GetHashCode();
+                if (this.ErrorClassifications != null) hashCode = hashCode * 59 + this.ErrorClassifications.GetHashCode();
                 return hashCode;
             }
         }

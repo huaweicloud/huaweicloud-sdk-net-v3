@@ -184,30 +184,13 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(AppDeleteResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ApplicationId != input.ApplicationId || (this.ApplicationId != null && !this.ApplicationId.Equals(input.ApplicationId))) return false;
+            if (this.ApplicationName != input.ApplicationName || (this.ApplicationName != null && !this.ApplicationName.Equals(input.ApplicationName))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.ErrorReason != input.ErrorReason || (this.ErrorReason != null && !this.ErrorReason.Equals(input.ErrorReason))) return false;
 
-            return 
-                (
-                    this.ApplicationId == input.ApplicationId ||
-                    (this.ApplicationId != null &&
-                    this.ApplicationId.Equals(input.ApplicationId))
-                ) && 
-                (
-                    this.ApplicationName == input.ApplicationName ||
-                    (this.ApplicationName != null &&
-                    this.ApplicationName.Equals(input.ApplicationName))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.ErrorReason == input.ErrorReason ||
-                    (this.ErrorReason != null &&
-                    this.ErrorReason.Equals(input.ErrorReason))
-                );
+            return true;
         }
 
         /// <summary>
@@ -217,15 +200,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ApplicationId != null)
-                    hashCode = hashCode * 59 + this.ApplicationId.GetHashCode();
-                if (this.ApplicationName != null)
-                    hashCode = hashCode * 59 + this.ApplicationName.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.ErrorReason != null)
-                    hashCode = hashCode * 59 + this.ErrorReason.GetHashCode();
+                var hashCode = 41;
+                if (this.ApplicationId != null) hashCode = hashCode * 59 + this.ApplicationId.GetHashCode();
+                if (this.ApplicationName != null) hashCode = hashCode * 59 + this.ApplicationName.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.ErrorReason != null) hashCode = hashCode * 59 + this.ErrorReason.GetHashCode();
                 return hashCode;
             }
         }

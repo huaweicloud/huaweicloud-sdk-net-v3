@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         public bool Equals(SensitiveMaskResponseRules input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Regex != input.Regex || (this.Regex != null && !this.Regex.Equals(input.Regex))) return false;
+            if (this.MaskValue != input.MaskValue || (this.MaskValue != null && !this.MaskValue.Equals(input.MaskValue))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.OperateTime != input.OperateTime || (this.OperateTime != null && !this.OperateTime.Equals(input.OperateTime))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Regex == input.Regex ||
-                    (this.Regex != null &&
-                    this.Regex.Equals(input.Regex))
-                ) && 
-                (
-                    this.MaskValue == input.MaskValue ||
-                    (this.MaskValue != null &&
-                    this.MaskValue.Equals(input.MaskValue))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.OperateTime == input.OperateTime ||
-                    (this.OperateTime != null &&
-                    this.OperateTime.Equals(input.OperateTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Regex != null)
-                    hashCode = hashCode * 59 + this.Regex.GetHashCode();
-                if (this.MaskValue != null)
-                    hashCode = hashCode * 59 + this.MaskValue.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.OperateTime != null)
-                    hashCode = hashCode * 59 + this.OperateTime.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Regex != null) hashCode = hashCode * 59 + this.Regex.GetHashCode();
+                if (this.MaskValue != null) hashCode = hashCode * 59 + this.MaskValue.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.OperateTime != null) hashCode = hashCode * 59 + this.OperateTime.GetHashCode();
                 return hashCode;
             }
         }

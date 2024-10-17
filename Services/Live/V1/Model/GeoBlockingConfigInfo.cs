@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(GeoBlockingConfigInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.App != input.App || (this.App != null && !this.App.Equals(input.App))) return false;
+            if (this.AreaWhitelist != input.AreaWhitelist || (this.AreaWhitelist != null && input.AreaWhitelist != null && !this.AreaWhitelist.SequenceEqual(input.AreaWhitelist))) return false;
 
-            return 
-                (
-                    this.App == input.App ||
-                    (this.App != null &&
-                    this.App.Equals(input.App))
-                ) && 
-                (
-                    this.AreaWhitelist == input.AreaWhitelist ||
-                    this.AreaWhitelist != null &&
-                    input.AreaWhitelist != null &&
-                    this.AreaWhitelist.SequenceEqual(input.AreaWhitelist)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.App != null)
-                    hashCode = hashCode * 59 + this.App.GetHashCode();
-                if (this.AreaWhitelist != null)
-                    hashCode = hashCode * 59 + this.AreaWhitelist.GetHashCode();
+                var hashCode = 41;
+                if (this.App != null) hashCode = hashCode * 59 + this.App.GetHashCode();
+                if (this.AreaWhitelist != null) hashCode = hashCode * 59 + this.AreaWhitelist.GetHashCode();
                 return hashCode;
             }
         }

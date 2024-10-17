@@ -63,27 +63,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ShowInstanceTopicDetailResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;
+            if (this.Partitions != input.Partitions || (this.Partitions != null && input.Partitions != null && !this.Partitions.SequenceEqual(input.Partitions))) return false;
+            if (this.GroupSubscribed != input.GroupSubscribed || (this.GroupSubscribed != null && input.GroupSubscribed != null && !this.GroupSubscribed.SequenceEqual(input.GroupSubscribed))) return false;
 
-            return 
-                (
-                    this.Topic == input.Topic ||
-                    (this.Topic != null &&
-                    this.Topic.Equals(input.Topic))
-                ) && 
-                (
-                    this.Partitions == input.Partitions ||
-                    this.Partitions != null &&
-                    input.Partitions != null &&
-                    this.Partitions.SequenceEqual(input.Partitions)
-                ) && 
-                (
-                    this.GroupSubscribed == input.GroupSubscribed ||
-                    this.GroupSubscribed != null &&
-                    input.GroupSubscribed != null &&
-                    this.GroupSubscribed.SequenceEqual(input.GroupSubscribed)
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +78,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Topic != null)
-                    hashCode = hashCode * 59 + this.Topic.GetHashCode();
-                if (this.Partitions != null)
-                    hashCode = hashCode * 59 + this.Partitions.GetHashCode();
-                if (this.GroupSubscribed != null)
-                    hashCode = hashCode * 59 + this.GroupSubscribed.GetHashCode();
+                var hashCode = 41;
+                if (this.Topic != null) hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.Partitions != null) hashCode = hashCode * 59 + this.Partitions.GetHashCode();
+                if (this.GroupSubscribed != null) hashCode = hashCode * 59 + this.GroupSubscribed.GetHashCode();
                 return hashCode;
             }
         }

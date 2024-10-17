@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(ResetPassword input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NewPassword != input.NewPassword || (this.NewPassword != null && !this.NewPassword.Equals(input.NewPassword))) return false;
 
-            return 
-                (
-                    this.NewPassword == input.NewPassword ||
-                    (this.NewPassword != null &&
-                    this.NewPassword.Equals(input.NewPassword))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NewPassword != null)
-                    hashCode = hashCode * 59 + this.NewPassword.GetHashCode();
+                var hashCode = 41;
+                if (this.NewPassword != null) hashCode = hashCode * 59 + this.NewPassword.GetHashCode();
                 return hashCode;
             }
         }

@@ -91,48 +91,16 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(ContentCompareResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CompareTaskId != input.CompareTaskId || (this.CompareTaskId != null && !this.CompareTaskId.Equals(input.CompareTaskId))) return false;
+            if (this.ContentCompareOverview != input.ContentCompareOverview || (this.ContentCompareOverview != null && input.ContentCompareOverview != null && !this.ContentCompareOverview.SequenceEqual(input.ContentCompareOverview))) return false;
+            if (this.ContentCompareOverviewCount != input.ContentCompareOverviewCount || (this.ContentCompareOverviewCount != null && !this.ContentCompareOverviewCount.Equals(input.ContentCompareOverviewCount))) return false;
+            if (this.ContentCompareDetails != input.ContentCompareDetails || (this.ContentCompareDetails != null && input.ContentCompareDetails != null && !this.ContentCompareDetails.SequenceEqual(input.ContentCompareDetails))) return false;
+            if (this.ContentCompareDiffs != input.ContentCompareDiffs || (this.ContentCompareDiffs != null && input.ContentCompareDiffs != null && !this.ContentCompareDiffs.SequenceEqual(input.ContentCompareDiffs))) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
+            if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
 
-            return 
-                (
-                    this.CompareTaskId == input.CompareTaskId ||
-                    (this.CompareTaskId != null &&
-                    this.CompareTaskId.Equals(input.CompareTaskId))
-                ) && 
-                (
-                    this.ContentCompareOverview == input.ContentCompareOverview ||
-                    this.ContentCompareOverview != null &&
-                    input.ContentCompareOverview != null &&
-                    this.ContentCompareOverview.SequenceEqual(input.ContentCompareOverview)
-                ) && 
-                (
-                    this.ContentCompareOverviewCount == input.ContentCompareOverviewCount ||
-                    (this.ContentCompareOverviewCount != null &&
-                    this.ContentCompareOverviewCount.Equals(input.ContentCompareOverviewCount))
-                ) && 
-                (
-                    this.ContentCompareDetails == input.ContentCompareDetails ||
-                    this.ContentCompareDetails != null &&
-                    input.ContentCompareDetails != null &&
-                    this.ContentCompareDetails.SequenceEqual(input.ContentCompareDetails)
-                ) && 
-                (
-                    this.ContentCompareDiffs == input.ContentCompareDiffs ||
-                    this.ContentCompareDiffs != null &&
-                    input.ContentCompareDiffs != null &&
-                    this.ContentCompareDiffs.SequenceEqual(input.ContentCompareDiffs)
-                ) && 
-                (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
-                ) && 
-                (
-                    this.ErrorMsg == input.ErrorMsg ||
-                    (this.ErrorMsg != null &&
-                    this.ErrorMsg.Equals(input.ErrorMsg))
-                );
+            return true;
         }
 
         /// <summary>
@@ -142,21 +110,14 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CompareTaskId != null)
-                    hashCode = hashCode * 59 + this.CompareTaskId.GetHashCode();
-                if (this.ContentCompareOverview != null)
-                    hashCode = hashCode * 59 + this.ContentCompareOverview.GetHashCode();
-                if (this.ContentCompareOverviewCount != null)
-                    hashCode = hashCode * 59 + this.ContentCompareOverviewCount.GetHashCode();
-                if (this.ContentCompareDetails != null)
-                    hashCode = hashCode * 59 + this.ContentCompareDetails.GetHashCode();
-                if (this.ContentCompareDiffs != null)
-                    hashCode = hashCode * 59 + this.ContentCompareDiffs.GetHashCode();
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.ErrorMsg != null)
-                    hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
+                var hashCode = 41;
+                if (this.CompareTaskId != null) hashCode = hashCode * 59 + this.CompareTaskId.GetHashCode();
+                if (this.ContentCompareOverview != null) hashCode = hashCode * 59 + this.ContentCompareOverview.GetHashCode();
+                if (this.ContentCompareOverviewCount != null) hashCode = hashCode * 59 + this.ContentCompareOverviewCount.GetHashCode();
+                if (this.ContentCompareDetails != null) hashCode = hashCode * 59 + this.ContentCompareDetails.GetHashCode();
+                if (this.ContentCompareDiffs != null) hashCode = hashCode * 59 + this.ContentCompareDiffs.GetHashCode();
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
                 return hashCode;
             }
         }

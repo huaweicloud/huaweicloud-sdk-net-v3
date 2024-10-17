@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ShowProxyVersionResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CurrentVersion != input.CurrentVersion || (this.CurrentVersion != null && !this.CurrentVersion.Equals(input.CurrentVersion))) return false;
+            if (this.LatestVersion != input.LatestVersion || (this.LatestVersion != null && !this.LatestVersion.Equals(input.LatestVersion))) return false;
+            if (this.CanUpgrade != input.CanUpgrade || (this.CanUpgrade != null && !this.CanUpgrade.Equals(input.CanUpgrade))) return false;
 
-            return 
-                (
-                    this.CurrentVersion == input.CurrentVersion ||
-                    (this.CurrentVersion != null &&
-                    this.CurrentVersion.Equals(input.CurrentVersion))
-                ) && 
-                (
-                    this.LatestVersion == input.LatestVersion ||
-                    (this.LatestVersion != null &&
-                    this.LatestVersion.Equals(input.LatestVersion))
-                ) && 
-                (
-                    this.CanUpgrade == input.CanUpgrade ||
-                    (this.CanUpgrade != null &&
-                    this.CanUpgrade.Equals(input.CanUpgrade))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CurrentVersion != null)
-                    hashCode = hashCode * 59 + this.CurrentVersion.GetHashCode();
-                if (this.LatestVersion != null)
-                    hashCode = hashCode * 59 + this.LatestVersion.GetHashCode();
-                if (this.CanUpgrade != null)
-                    hashCode = hashCode * 59 + this.CanUpgrade.GetHashCode();
+                var hashCode = 41;
+                if (this.CurrentVersion != null) hashCode = hashCode * 59 + this.CurrentVersion.GetHashCode();
+                if (this.LatestVersion != null) hashCode = hashCode * 59 + this.LatestVersion.GetHashCode();
+                if (this.CanUpgrade != null) hashCode = hashCode * 59 + this.CanUpgrade.GetHashCode();
                 return hashCode;
             }
         }

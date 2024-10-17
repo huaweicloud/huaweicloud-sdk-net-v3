@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ExportExcelJobResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.FileName != input.FileName || (this.FileName != null && !this.FileName.Equals(input.FileName))) return false;
+            if (this.Link != input.Link || (this.Link != null && !this.Link.Equals(input.Link))) return false;
+            if (this.ErrCode != input.ErrCode || (this.ErrCode != null && !this.ErrCode.Equals(input.ErrCode))) return false;
+            if (this.ErrMsg != input.ErrMsg || (this.ErrMsg != null && !this.ErrMsg.Equals(input.ErrMsg))) return false;
 
-            return 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.FileName == input.FileName ||
-                    (this.FileName != null &&
-                    this.FileName.Equals(input.FileName))
-                ) && 
-                (
-                    this.Link == input.Link ||
-                    (this.Link != null &&
-                    this.Link.Equals(input.Link))
-                ) && 
-                (
-                    this.ErrCode == input.ErrCode ||
-                    (this.ErrCode != null &&
-                    this.ErrCode.Equals(input.ErrCode))
-                ) && 
-                (
-                    this.ErrMsg == input.ErrMsg ||
-                    (this.ErrMsg != null &&
-                    this.ErrMsg.Equals(input.ErrMsg))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.FileName != null)
-                    hashCode = hashCode * 59 + this.FileName.GetHashCode();
-                if (this.Link != null)
-                    hashCode = hashCode * 59 + this.Link.GetHashCode();
-                if (this.ErrCode != null)
-                    hashCode = hashCode * 59 + this.ErrCode.GetHashCode();
-                if (this.ErrMsg != null)
-                    hashCode = hashCode * 59 + this.ErrMsg.GetHashCode();
+                var hashCode = 41;
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.FileName != null) hashCode = hashCode * 59 + this.FileName.GetHashCode();
+                if (this.Link != null) hashCode = hashCode * 59 + this.Link.GetHashCode();
+                if (this.ErrCode != null) hashCode = hashCode * 59 + this.ErrCode.GetHashCode();
+                if (this.ErrMsg != null) hashCode = hashCode * 59 + this.ErrMsg.GetHashCode();
                 return hashCode;
             }
         }

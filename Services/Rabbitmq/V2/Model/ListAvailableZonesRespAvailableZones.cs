@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public bool Equals(ListAvailableZonesRespAvailableZones input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SoldOut != input.SoldOut || (this.SoldOut != null && !this.SoldOut.Equals(input.SoldOut))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Code != input.Code || (this.Code != null && !this.Code.Equals(input.Code))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
+            if (this.ResourceAvailability != input.ResourceAvailability || (this.ResourceAvailability != null && !this.ResourceAvailability.Equals(input.ResourceAvailability))) return false;
+            if (this.DefaultAz != input.DefaultAz || (this.DefaultAz != null && !this.DefaultAz.Equals(input.DefaultAz))) return false;
+            if (this.RemainTime != input.RemainTime || (this.RemainTime != null && !this.RemainTime.Equals(input.RemainTime))) return false;
+            if (this.Ipv6Enable != input.Ipv6Enable || (this.Ipv6Enable != null && !this.Ipv6Enable.Equals(input.Ipv6Enable))) return false;
 
-            return 
-                (
-                    this.SoldOut == input.SoldOut ||
-                    (this.SoldOut != null &&
-                    this.SoldOut.Equals(input.SoldOut))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Port == input.Port ||
-                    (this.Port != null &&
-                    this.Port.Equals(input.Port))
-                ) && 
-                (
-                    this.ResourceAvailability == input.ResourceAvailability ||
-                    (this.ResourceAvailability != null &&
-                    this.ResourceAvailability.Equals(input.ResourceAvailability))
-                ) && 
-                (
-                    this.DefaultAz == input.DefaultAz ||
-                    (this.DefaultAz != null &&
-                    this.DefaultAz.Equals(input.DefaultAz))
-                ) && 
-                (
-                    this.RemainTime == input.RemainTime ||
-                    (this.RemainTime != null &&
-                    this.RemainTime.Equals(input.RemainTime))
-                ) && 
-                (
-                    this.Ipv6Enable == input.Ipv6Enable ||
-                    (this.Ipv6Enable != null &&
-                    this.Ipv6Enable.Equals(input.Ipv6Enable))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SoldOut != null)
-                    hashCode = hashCode * 59 + this.SoldOut.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Code != null)
-                    hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Port != null)
-                    hashCode = hashCode * 59 + this.Port.GetHashCode();
-                if (this.ResourceAvailability != null)
-                    hashCode = hashCode * 59 + this.ResourceAvailability.GetHashCode();
-                if (this.DefaultAz != null)
-                    hashCode = hashCode * 59 + this.DefaultAz.GetHashCode();
-                if (this.RemainTime != null)
-                    hashCode = hashCode * 59 + this.RemainTime.GetHashCode();
-                if (this.Ipv6Enable != null)
-                    hashCode = hashCode * 59 + this.Ipv6Enable.GetHashCode();
+                var hashCode = 41;
+                if (this.SoldOut != null) hashCode = hashCode * 59 + this.SoldOut.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Code != null) hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
+                if (this.ResourceAvailability != null) hashCode = hashCode * 59 + this.ResourceAvailability.GetHashCode();
+                if (this.DefaultAz != null) hashCode = hashCode * 59 + this.DefaultAz.GetHashCode();
+                if (this.RemainTime != null) hashCode = hashCode * 59 + this.RemainTime.GetHashCode();
+                if (this.Ipv6Enable != null) hashCode = hashCode * 59 + this.Ipv6Enable.GetHashCode();
                 return hashCode;
             }
         }

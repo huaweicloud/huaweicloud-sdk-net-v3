@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(DeleteMigrateTaskRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TaskIdList != input.TaskIdList || (this.TaskIdList != null && input.TaskIdList != null && !this.TaskIdList.SequenceEqual(input.TaskIdList))) return false;
 
-            return 
-                (
-                    this.TaskIdList == input.TaskIdList ||
-                    this.TaskIdList != null &&
-                    input.TaskIdList != null &&
-                    this.TaskIdList.SequenceEqual(input.TaskIdList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TaskIdList != null)
-                    hashCode = hashCode * 59 + this.TaskIdList.GetHashCode();
+                var hashCode = 41;
+                if (this.TaskIdList != null) hashCode = hashCode * 59 + this.TaskIdList.GetHashCode();
                 return hashCode;
             }
         }

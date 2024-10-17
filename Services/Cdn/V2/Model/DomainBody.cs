@@ -323,36 +323,14 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(DomainBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
+            if (this.BusinessType != input.BusinessType) return false;
+            if (this.Sources != input.Sources || (this.Sources != null && input.Sources != null && !this.Sources.SequenceEqual(input.Sources))) return false;
+            if (this.ServiceArea != input.ServiceArea) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
-            return 
-                (
-                    this.DomainName == input.DomainName ||
-                    (this.DomainName != null &&
-                    this.DomainName.Equals(input.DomainName))
-                ) && 
-                (
-                    this.BusinessType == input.BusinessType ||
-                    (this.BusinessType != null &&
-                    this.BusinessType.Equals(input.BusinessType))
-                ) && 
-                (
-                    this.Sources == input.Sources ||
-                    this.Sources != null &&
-                    input.Sources != null &&
-                    this.Sources.SequenceEqual(input.Sources)
-                ) && 
-                (
-                    this.ServiceArea == input.ServiceArea ||
-                    (this.ServiceArea != null &&
-                    this.ServiceArea.Equals(input.ServiceArea))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -362,17 +340,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DomainName != null)
-                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.BusinessType != null)
-                    hashCode = hashCode * 59 + this.BusinessType.GetHashCode();
-                if (this.Sources != null)
-                    hashCode = hashCode * 59 + this.Sources.GetHashCode();
-                if (this.ServiceArea != null)
-                    hashCode = hashCode * 59 + this.ServiceArea.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                var hashCode = 41;
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                hashCode = hashCode * 59 + this.BusinessType.GetHashCode();
+                if (this.Sources != null) hashCode = hashCode * 59 + this.Sources.GetHashCode();
+                hashCode = hashCode * 59 + this.ServiceArea.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

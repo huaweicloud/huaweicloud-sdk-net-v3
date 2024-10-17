@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         /// </summary>
         public bool Equals(CreateSecretVersionRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SecretBinary != input.SecretBinary || (this.SecretBinary != null && !this.SecretBinary.Equals(input.SecretBinary))) return false;
+            if (this.SecretString != input.SecretString || (this.SecretString != null && !this.SecretString.Equals(input.SecretString))) return false;
+            if (this.VersionStages != input.VersionStages || (this.VersionStages != null && input.VersionStages != null && !this.VersionStages.SequenceEqual(input.VersionStages))) return false;
+            if (this.ExpireTime != input.ExpireTime || (this.ExpireTime != null && !this.ExpireTime.Equals(input.ExpireTime))) return false;
 
-            return 
-                (
-                    this.SecretBinary == input.SecretBinary ||
-                    (this.SecretBinary != null &&
-                    this.SecretBinary.Equals(input.SecretBinary))
-                ) && 
-                (
-                    this.SecretString == input.SecretString ||
-                    (this.SecretString != null &&
-                    this.SecretString.Equals(input.SecretString))
-                ) && 
-                (
-                    this.VersionStages == input.VersionStages ||
-                    this.VersionStages != null &&
-                    input.VersionStages != null &&
-                    this.VersionStages.SequenceEqual(input.VersionStages)
-                ) && 
-                (
-                    this.ExpireTime == input.ExpireTime ||
-                    (this.ExpireTime != null &&
-                    this.ExpireTime.Equals(input.ExpireTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SecretBinary != null)
-                    hashCode = hashCode * 59 + this.SecretBinary.GetHashCode();
-                if (this.SecretString != null)
-                    hashCode = hashCode * 59 + this.SecretString.GetHashCode();
-                if (this.VersionStages != null)
-                    hashCode = hashCode * 59 + this.VersionStages.GetHashCode();
-                if (this.ExpireTime != null)
-                    hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
+                var hashCode = 41;
+                if (this.SecretBinary != null) hashCode = hashCode * 59 + this.SecretBinary.GetHashCode();
+                if (this.SecretString != null) hashCode = hashCode * 59 + this.SecretString.GetHashCode();
+                if (this.VersionStages != null) hashCode = hashCode * 59 + this.VersionStages.GetHashCode();
+                if (this.ExpireTime != null) hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
                 return hashCode;
             }
         }

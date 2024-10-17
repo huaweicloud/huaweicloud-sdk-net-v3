@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(ChangeServerChargeModeRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ServerIds != input.ServerIds || (this.ServerIds != null && input.ServerIds != null && !this.ServerIds.SequenceEqual(input.ServerIds))) return false;
+            if (this.ChargeMode != input.ChargeMode || (this.ChargeMode != null && !this.ChargeMode.Equals(input.ChargeMode))) return false;
+            if (this.PrepaidOptions != input.PrepaidOptions || (this.PrepaidOptions != null && !this.PrepaidOptions.Equals(input.PrepaidOptions))) return false;
+            if (this.DryRun != input.DryRun || (this.DryRun != null && !this.DryRun.Equals(input.DryRun))) return false;
 
-            return 
-                (
-                    this.ServerIds == input.ServerIds ||
-                    this.ServerIds != null &&
-                    input.ServerIds != null &&
-                    this.ServerIds.SequenceEqual(input.ServerIds)
-                ) && 
-                (
-                    this.ChargeMode == input.ChargeMode ||
-                    (this.ChargeMode != null &&
-                    this.ChargeMode.Equals(input.ChargeMode))
-                ) && 
-                (
-                    this.PrepaidOptions == input.PrepaidOptions ||
-                    (this.PrepaidOptions != null &&
-                    this.PrepaidOptions.Equals(input.PrepaidOptions))
-                ) && 
-                (
-                    this.DryRun == input.DryRun ||
-                    (this.DryRun != null &&
-                    this.DryRun.Equals(input.DryRun))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ServerIds != null)
-                    hashCode = hashCode * 59 + this.ServerIds.GetHashCode();
-                if (this.ChargeMode != null)
-                    hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
-                if (this.PrepaidOptions != null)
-                    hashCode = hashCode * 59 + this.PrepaidOptions.GetHashCode();
-                if (this.DryRun != null)
-                    hashCode = hashCode * 59 + this.DryRun.GetHashCode();
+                var hashCode = 41;
+                if (this.ServerIds != null) hashCode = hashCode * 59 + this.ServerIds.GetHashCode();
+                if (this.ChargeMode != null) hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
+                if (this.PrepaidOptions != null) hashCode = hashCode * 59 + this.PrepaidOptions.GetHashCode();
+                if (this.DryRun != null) hashCode = hashCode * 59 + this.DryRun.GetHashCode();
                 return hashCode;
             }
         }

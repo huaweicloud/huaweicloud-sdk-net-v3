@@ -298,91 +298,25 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(TransferDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ObsPeriod != input.ObsPeriod) return false;
+            if (this.ObsEncryptedId != input.ObsEncryptedId || (this.ObsEncryptedId != null && !this.ObsEncryptedId.Equals(input.ObsEncryptedId))) return false;
+            if (this.ObsPrefixName != input.ObsPrefixName || (this.ObsPrefixName != null && !this.ObsPrefixName.Equals(input.ObsPrefixName))) return false;
+            if (this.ObsPeriodUnit != input.ObsPeriodUnit || (this.ObsPeriodUnit != null && !this.ObsPeriodUnit.Equals(input.ObsPeriodUnit))) return false;
+            if (this.ObsTransferPath != input.ObsTransferPath || (this.ObsTransferPath != null && !this.ObsTransferPath.Equals(input.ObsTransferPath))) return false;
+            if (this.ObsEpsId != input.ObsEpsId || (this.ObsEpsId != null && !this.ObsEpsId.Equals(input.ObsEpsId))) return false;
+            if (this.ObsBucketName != input.ObsBucketName || (this.ObsBucketName != null && !this.ObsBucketName.Equals(input.ObsBucketName))) return false;
+            if (this.ObsEncryptedEnable != input.ObsEncryptedEnable || (this.ObsEncryptedEnable != null && !this.ObsEncryptedEnable.Equals(input.ObsEncryptedEnable))) return false;
+            if (this.ObsDirPreFixName != input.ObsDirPreFixName || (this.ObsDirPreFixName != null && !this.ObsDirPreFixName.Equals(input.ObsDirPreFixName))) return false;
+            if (this.DisId != input.DisId || (this.DisId != null && !this.DisId.Equals(input.DisId))) return false;
+            if (this.DisName != input.DisName || (this.DisName != null && !this.DisName.Equals(input.DisName))) return false;
+            if (this.KafkaId != input.KafkaId || (this.KafkaId != null && !this.KafkaId.Equals(input.KafkaId))) return false;
+            if (this.KafkaTopic != input.KafkaTopic || (this.KafkaTopic != null && !this.KafkaTopic.Equals(input.KafkaTopic))) return false;
+            if (this.ObsTimeZone != input.ObsTimeZone || (this.ObsTimeZone != null && !this.ObsTimeZone.Equals(input.ObsTimeZone))) return false;
+            if (this.ObsTimeZoneId != input.ObsTimeZoneId || (this.ObsTimeZoneId != null && !this.ObsTimeZoneId.Equals(input.ObsTimeZoneId))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
 
-            return 
-                (
-                    this.ObsPeriod == input.ObsPeriod ||
-                    (this.ObsPeriod != null &&
-                    this.ObsPeriod.Equals(input.ObsPeriod))
-                ) && 
-                (
-                    this.ObsEncryptedId == input.ObsEncryptedId ||
-                    (this.ObsEncryptedId != null &&
-                    this.ObsEncryptedId.Equals(input.ObsEncryptedId))
-                ) && 
-                (
-                    this.ObsPrefixName == input.ObsPrefixName ||
-                    (this.ObsPrefixName != null &&
-                    this.ObsPrefixName.Equals(input.ObsPrefixName))
-                ) && 
-                (
-                    this.ObsPeriodUnit == input.ObsPeriodUnit ||
-                    (this.ObsPeriodUnit != null &&
-                    this.ObsPeriodUnit.Equals(input.ObsPeriodUnit))
-                ) && 
-                (
-                    this.ObsTransferPath == input.ObsTransferPath ||
-                    (this.ObsTransferPath != null &&
-                    this.ObsTransferPath.Equals(input.ObsTransferPath))
-                ) && 
-                (
-                    this.ObsEpsId == input.ObsEpsId ||
-                    (this.ObsEpsId != null &&
-                    this.ObsEpsId.Equals(input.ObsEpsId))
-                ) && 
-                (
-                    this.ObsBucketName == input.ObsBucketName ||
-                    (this.ObsBucketName != null &&
-                    this.ObsBucketName.Equals(input.ObsBucketName))
-                ) && 
-                (
-                    this.ObsEncryptedEnable == input.ObsEncryptedEnable ||
-                    (this.ObsEncryptedEnable != null &&
-                    this.ObsEncryptedEnable.Equals(input.ObsEncryptedEnable))
-                ) && 
-                (
-                    this.ObsDirPreFixName == input.ObsDirPreFixName ||
-                    (this.ObsDirPreFixName != null &&
-                    this.ObsDirPreFixName.Equals(input.ObsDirPreFixName))
-                ) && 
-                (
-                    this.DisId == input.DisId ||
-                    (this.DisId != null &&
-                    this.DisId.Equals(input.DisId))
-                ) && 
-                (
-                    this.DisName == input.DisName ||
-                    (this.DisName != null &&
-                    this.DisName.Equals(input.DisName))
-                ) && 
-                (
-                    this.KafkaId == input.KafkaId ||
-                    (this.KafkaId != null &&
-                    this.KafkaId.Equals(input.KafkaId))
-                ) && 
-                (
-                    this.KafkaTopic == input.KafkaTopic ||
-                    (this.KafkaTopic != null &&
-                    this.KafkaTopic.Equals(input.KafkaTopic))
-                ) && 
-                (
-                    this.ObsTimeZone == input.ObsTimeZone ||
-                    (this.ObsTimeZone != null &&
-                    this.ObsTimeZone.Equals(input.ObsTimeZone))
-                ) && 
-                (
-                    this.ObsTimeZoneId == input.ObsTimeZoneId ||
-                    (this.ObsTimeZoneId != null &&
-                    this.ObsTimeZoneId.Equals(input.ObsTimeZoneId))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                );
+            return true;
         }
 
         /// <summary>
@@ -392,39 +326,23 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ObsPeriod != null)
-                    hashCode = hashCode * 59 + this.ObsPeriod.GetHashCode();
-                if (this.ObsEncryptedId != null)
-                    hashCode = hashCode * 59 + this.ObsEncryptedId.GetHashCode();
-                if (this.ObsPrefixName != null)
-                    hashCode = hashCode * 59 + this.ObsPrefixName.GetHashCode();
-                if (this.ObsPeriodUnit != null)
-                    hashCode = hashCode * 59 + this.ObsPeriodUnit.GetHashCode();
-                if (this.ObsTransferPath != null)
-                    hashCode = hashCode * 59 + this.ObsTransferPath.GetHashCode();
-                if (this.ObsEpsId != null)
-                    hashCode = hashCode * 59 + this.ObsEpsId.GetHashCode();
-                if (this.ObsBucketName != null)
-                    hashCode = hashCode * 59 + this.ObsBucketName.GetHashCode();
-                if (this.ObsEncryptedEnable != null)
-                    hashCode = hashCode * 59 + this.ObsEncryptedEnable.GetHashCode();
-                if (this.ObsDirPreFixName != null)
-                    hashCode = hashCode * 59 + this.ObsDirPreFixName.GetHashCode();
-                if (this.DisId != null)
-                    hashCode = hashCode * 59 + this.DisId.GetHashCode();
-                if (this.DisName != null)
-                    hashCode = hashCode * 59 + this.DisName.GetHashCode();
-                if (this.KafkaId != null)
-                    hashCode = hashCode * 59 + this.KafkaId.GetHashCode();
-                if (this.KafkaTopic != null)
-                    hashCode = hashCode * 59 + this.KafkaTopic.GetHashCode();
-                if (this.ObsTimeZone != null)
-                    hashCode = hashCode * 59 + this.ObsTimeZone.GetHashCode();
-                if (this.ObsTimeZoneId != null)
-                    hashCode = hashCode * 59 + this.ObsTimeZoneId.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.ObsPeriod.GetHashCode();
+                if (this.ObsEncryptedId != null) hashCode = hashCode * 59 + this.ObsEncryptedId.GetHashCode();
+                if (this.ObsPrefixName != null) hashCode = hashCode * 59 + this.ObsPrefixName.GetHashCode();
+                if (this.ObsPeriodUnit != null) hashCode = hashCode * 59 + this.ObsPeriodUnit.GetHashCode();
+                if (this.ObsTransferPath != null) hashCode = hashCode * 59 + this.ObsTransferPath.GetHashCode();
+                if (this.ObsEpsId != null) hashCode = hashCode * 59 + this.ObsEpsId.GetHashCode();
+                if (this.ObsBucketName != null) hashCode = hashCode * 59 + this.ObsBucketName.GetHashCode();
+                if (this.ObsEncryptedEnable != null) hashCode = hashCode * 59 + this.ObsEncryptedEnable.GetHashCode();
+                if (this.ObsDirPreFixName != null) hashCode = hashCode * 59 + this.ObsDirPreFixName.GetHashCode();
+                if (this.DisId != null) hashCode = hashCode * 59 + this.DisId.GetHashCode();
+                if (this.DisName != null) hashCode = hashCode * 59 + this.DisName.GetHashCode();
+                if (this.KafkaId != null) hashCode = hashCode * 59 + this.KafkaId.GetHashCode();
+                if (this.KafkaTopic != null) hashCode = hashCode * 59 + this.KafkaTopic.GetHashCode();
+                if (this.ObsTimeZone != null) hashCode = hashCode * 59 + this.ObsTimeZone.GetHashCode();
+                if (this.ObsTimeZoneId != null) hashCode = hashCode * 59 + this.ObsTimeZoneId.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

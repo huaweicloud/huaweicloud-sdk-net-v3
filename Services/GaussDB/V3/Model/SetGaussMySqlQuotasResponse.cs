@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(SetGaussMySqlQuotasResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.QuotaList != input.QuotaList || (this.QuotaList != null && input.QuotaList != null && !this.QuotaList.SequenceEqual(input.QuotaList))) return false;
 
-            return 
-                (
-                    this.QuotaList == input.QuotaList ||
-                    this.QuotaList != null &&
-                    input.QuotaList != null &&
-                    this.QuotaList.SequenceEqual(input.QuotaList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.QuotaList != null)
-                    hashCode = hashCode * 59 + this.QuotaList.GetHashCode();
+                var hashCode = 41;
+                if (this.QuotaList != null) hashCode = hashCode * 59 + this.QuotaList.GetHashCode();
                 return hashCode;
             }
         }

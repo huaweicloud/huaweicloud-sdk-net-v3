@@ -392,88 +392,24 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(AlarmHistoryItemV2 input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RecordId != input.RecordId || (this.RecordId != null && !this.RecordId.Equals(input.RecordId))) return false;
+            if (this.AlarmId != input.AlarmId || (this.AlarmId != null && !this.AlarmId.Equals(input.AlarmId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.Level != input.Level) return false;
+            if (this.Type != input.Type) return false;
+            if (this.ActionEnabled != input.ActionEnabled || (this.ActionEnabled != null && !this.ActionEnabled.Equals(input.ActionEnabled))) return false;
+            if (this.BeginTime != input.BeginTime || (this.BeginTime != null && !this.BeginTime.Equals(input.BeginTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.Metric != input.Metric || (this.Metric != null && !this.Metric.Equals(input.Metric))) return false;
+            if (this.Condition != input.Condition || (this.Condition != null && !this.Condition.Equals(input.Condition))) return false;
+            if (this.AdditionalInfo != input.AdditionalInfo || (this.AdditionalInfo != null && !this.AdditionalInfo.Equals(input.AdditionalInfo))) return false;
+            if (this.AlarmActions != input.AlarmActions || (this.AlarmActions != null && input.AlarmActions != null && !this.AlarmActions.SequenceEqual(input.AlarmActions))) return false;
+            if (this.OkActions != input.OkActions || (this.OkActions != null && input.OkActions != null && !this.OkActions.SequenceEqual(input.OkActions))) return false;
+            if (this.DataPoints != input.DataPoints || (this.DataPoints != null && input.DataPoints != null && !this.DataPoints.SequenceEqual(input.DataPoints))) return false;
 
-            return 
-                (
-                    this.RecordId == input.RecordId ||
-                    (this.RecordId != null &&
-                    this.RecordId.Equals(input.RecordId))
-                ) && 
-                (
-                    this.AlarmId == input.AlarmId ||
-                    (this.AlarmId != null &&
-                    this.AlarmId.Equals(input.AlarmId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Level == input.Level ||
-                    (this.Level != null &&
-                    this.Level.Equals(input.Level))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.ActionEnabled == input.ActionEnabled ||
-                    (this.ActionEnabled != null &&
-                    this.ActionEnabled.Equals(input.ActionEnabled))
-                ) && 
-                (
-                    this.BeginTime == input.BeginTime ||
-                    (this.BeginTime != null &&
-                    this.BeginTime.Equals(input.BeginTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.Metric == input.Metric ||
-                    (this.Metric != null &&
-                    this.Metric.Equals(input.Metric))
-                ) && 
-                (
-                    this.Condition == input.Condition ||
-                    (this.Condition != null &&
-                    this.Condition.Equals(input.Condition))
-                ) && 
-                (
-                    this.AdditionalInfo == input.AdditionalInfo ||
-                    (this.AdditionalInfo != null &&
-                    this.AdditionalInfo.Equals(input.AdditionalInfo))
-                ) && 
-                (
-                    this.AlarmActions == input.AlarmActions ||
-                    this.AlarmActions != null &&
-                    input.AlarmActions != null &&
-                    this.AlarmActions.SequenceEqual(input.AlarmActions)
-                ) && 
-                (
-                    this.OkActions == input.OkActions ||
-                    this.OkActions != null &&
-                    input.OkActions != null &&
-                    this.OkActions.SequenceEqual(input.OkActions)
-                ) && 
-                (
-                    this.DataPoints == input.DataPoints ||
-                    this.DataPoints != null &&
-                    input.DataPoints != null &&
-                    this.DataPoints.SequenceEqual(input.DataPoints)
-                );
+            return true;
         }
 
         /// <summary>
@@ -483,37 +419,22 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RecordId != null)
-                    hashCode = hashCode * 59 + this.RecordId.GetHashCode();
-                if (this.AlarmId != null)
-                    hashCode = hashCode * 59 + this.AlarmId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Level != null)
-                    hashCode = hashCode * 59 + this.Level.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.ActionEnabled != null)
-                    hashCode = hashCode * 59 + this.ActionEnabled.GetHashCode();
-                if (this.BeginTime != null)
-                    hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Metric != null)
-                    hashCode = hashCode * 59 + this.Metric.GetHashCode();
-                if (this.Condition != null)
-                    hashCode = hashCode * 59 + this.Condition.GetHashCode();
-                if (this.AdditionalInfo != null)
-                    hashCode = hashCode * 59 + this.AdditionalInfo.GetHashCode();
-                if (this.AlarmActions != null)
-                    hashCode = hashCode * 59 + this.AlarmActions.GetHashCode();
-                if (this.OkActions != null)
-                    hashCode = hashCode * 59 + this.OkActions.GetHashCode();
-                if (this.DataPoints != null)
-                    hashCode = hashCode * 59 + this.DataPoints.GetHashCode();
+                var hashCode = 41;
+                if (this.RecordId != null) hashCode = hashCode * 59 + this.RecordId.GetHashCode();
+                if (this.AlarmId != null) hashCode = hashCode * 59 + this.AlarmId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                hashCode = hashCode * 59 + this.Level.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.ActionEnabled != null) hashCode = hashCode * 59 + this.ActionEnabled.GetHashCode();
+                if (this.BeginTime != null) hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.Metric != null) hashCode = hashCode * 59 + this.Metric.GetHashCode();
+                if (this.Condition != null) hashCode = hashCode * 59 + this.Condition.GetHashCode();
+                if (this.AdditionalInfo != null) hashCode = hashCode * 59 + this.AdditionalInfo.GetHashCode();
+                if (this.AlarmActions != null) hashCode = hashCode * 59 + this.AlarmActions.GetHashCode();
+                if (this.OkActions != null) hashCode = hashCode * 59 + this.OkActions.GetHashCode();
+                if (this.DataPoints != null) hashCode = hashCode * 59 + this.DataPoints.GetHashCode();
                 return hashCode;
             }
         }

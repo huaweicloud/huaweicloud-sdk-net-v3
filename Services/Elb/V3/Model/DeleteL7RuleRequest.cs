@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(DeleteL7RuleRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.L7policyId != input.L7policyId || (this.L7policyId != null && !this.L7policyId.Equals(input.L7policyId))) return false;
+            if (this.L7ruleId != input.L7ruleId || (this.L7ruleId != null && !this.L7ruleId.Equals(input.L7ruleId))) return false;
 
-            return 
-                (
-                    this.L7policyId == input.L7policyId ||
-                    (this.L7policyId != null &&
-                    this.L7policyId.Equals(input.L7policyId))
-                ) && 
-                (
-                    this.L7ruleId == input.L7ruleId ||
-                    (this.L7ruleId != null &&
-                    this.L7ruleId.Equals(input.L7ruleId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.L7policyId != null)
-                    hashCode = hashCode * 59 + this.L7policyId.GetHashCode();
-                if (this.L7ruleId != null)
-                    hashCode = hashCode * 59 + this.L7ruleId.GetHashCode();
+                var hashCode = 41;
+                if (this.L7policyId != null) hashCode = hashCode * 59 + this.L7policyId.GetHashCode();
+                if (this.L7ruleId != null) hashCode = hashCode * 59 + this.L7ruleId.GetHashCode();
                 return hashCode;
             }
         }

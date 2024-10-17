@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(PostgreSQLRestoreSchema input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Schema != input.Schema || (this.Schema != null && !this.Schema.Equals(input.Schema))) return false;
+            if (this.Tables != input.Tables || (this.Tables != null && input.Tables != null && !this.Tables.SequenceEqual(input.Tables))) return false;
 
-            return 
-                (
-                    this.Schema == input.Schema ||
-                    (this.Schema != null &&
-                    this.Schema.Equals(input.Schema))
-                ) && 
-                (
-                    this.Tables == input.Tables ||
-                    this.Tables != null &&
-                    input.Tables != null &&
-                    this.Tables.SequenceEqual(input.Tables)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Schema != null)
-                    hashCode = hashCode * 59 + this.Schema.GetHashCode();
-                if (this.Tables != null)
-                    hashCode = hashCode * 59 + this.Tables.GetHashCode();
+                var hashCode = 41;
+                if (this.Schema != null) hashCode = hashCode * 59 + this.Schema.GetHashCode();
+                if (this.Tables != null) hashCode = hashCode * 59 + this.Tables.GetHashCode();
                 return hashCode;
             }
         }

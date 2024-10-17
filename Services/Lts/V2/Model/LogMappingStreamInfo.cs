@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(LogMappingStreamInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceLogStreamId != input.SourceLogStreamId || (this.SourceLogStreamId != null && !this.SourceLogStreamId.Equals(input.SourceLogStreamId))) return false;
+            if (this.TargetLogStreamId != input.TargetLogStreamId || (this.TargetLogStreamId != null && !this.TargetLogStreamId.Equals(input.TargetLogStreamId))) return false;
+            if (this.TargetLogStreamName != input.TargetLogStreamName || (this.TargetLogStreamName != null && !this.TargetLogStreamName.Equals(input.TargetLogStreamName))) return false;
+            if (this.TargetLogStreamEpsId != input.TargetLogStreamEpsId || (this.TargetLogStreamEpsId != null && !this.TargetLogStreamEpsId.Equals(input.TargetLogStreamEpsId))) return false;
+            if (this.TargetLogStreamTtl != input.TargetLogStreamTtl || (this.TargetLogStreamTtl != null && !this.TargetLogStreamTtl.Equals(input.TargetLogStreamTtl))) return false;
 
-            return 
-                (
-                    this.SourceLogStreamId == input.SourceLogStreamId ||
-                    (this.SourceLogStreamId != null &&
-                    this.SourceLogStreamId.Equals(input.SourceLogStreamId))
-                ) && 
-                (
-                    this.TargetLogStreamId == input.TargetLogStreamId ||
-                    (this.TargetLogStreamId != null &&
-                    this.TargetLogStreamId.Equals(input.TargetLogStreamId))
-                ) && 
-                (
-                    this.TargetLogStreamName == input.TargetLogStreamName ||
-                    (this.TargetLogStreamName != null &&
-                    this.TargetLogStreamName.Equals(input.TargetLogStreamName))
-                ) && 
-                (
-                    this.TargetLogStreamEpsId == input.TargetLogStreamEpsId ||
-                    (this.TargetLogStreamEpsId != null &&
-                    this.TargetLogStreamEpsId.Equals(input.TargetLogStreamEpsId))
-                ) && 
-                (
-                    this.TargetLogStreamTtl == input.TargetLogStreamTtl ||
-                    (this.TargetLogStreamTtl != null &&
-                    this.TargetLogStreamTtl.Equals(input.TargetLogStreamTtl))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceLogStreamId != null)
-                    hashCode = hashCode * 59 + this.SourceLogStreamId.GetHashCode();
-                if (this.TargetLogStreamId != null)
-                    hashCode = hashCode * 59 + this.TargetLogStreamId.GetHashCode();
-                if (this.TargetLogStreamName != null)
-                    hashCode = hashCode * 59 + this.TargetLogStreamName.GetHashCode();
-                if (this.TargetLogStreamEpsId != null)
-                    hashCode = hashCode * 59 + this.TargetLogStreamEpsId.GetHashCode();
-                if (this.TargetLogStreamTtl != null)
-                    hashCode = hashCode * 59 + this.TargetLogStreamTtl.GetHashCode();
+                var hashCode = 41;
+                if (this.SourceLogStreamId != null) hashCode = hashCode * 59 + this.SourceLogStreamId.GetHashCode();
+                if (this.TargetLogStreamId != null) hashCode = hashCode * 59 + this.TargetLogStreamId.GetHashCode();
+                if (this.TargetLogStreamName != null) hashCode = hashCode * 59 + this.TargetLogStreamName.GetHashCode();
+                if (this.TargetLogStreamEpsId != null) hashCode = hashCode * 59 + this.TargetLogStreamEpsId.GetHashCode();
+                if (this.TargetLogStreamTtl != null) hashCode = hashCode * 59 + this.TargetLogStreamTtl.GetHashCode();
                 return hashCode;
             }
         }

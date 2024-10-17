@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public bool Equals(DeleteImageSyncRepoRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RemoteRegionId != input.RemoteRegionId || (this.RemoteRegionId != null && !this.RemoteRegionId.Equals(input.RemoteRegionId))) return false;
+            if (this.RemoteNamespace != input.RemoteNamespace || (this.RemoteNamespace != null && !this.RemoteNamespace.Equals(input.RemoteNamespace))) return false;
 
-            return 
-                (
-                    this.RemoteRegionId == input.RemoteRegionId ||
-                    (this.RemoteRegionId != null &&
-                    this.RemoteRegionId.Equals(input.RemoteRegionId))
-                ) && 
-                (
-                    this.RemoteNamespace == input.RemoteNamespace ||
-                    (this.RemoteNamespace != null &&
-                    this.RemoteNamespace.Equals(input.RemoteNamespace))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RemoteRegionId != null)
-                    hashCode = hashCode * 59 + this.RemoteRegionId.GetHashCode();
-                if (this.RemoteNamespace != null)
-                    hashCode = hashCode * 59 + this.RemoteNamespace.GetHashCode();
+                var hashCode = 41;
+                if (this.RemoteRegionId != null) hashCode = hashCode * 59 + this.RemoteRegionId.GetHashCode();
+                if (this.RemoteNamespace != null) hashCode = hashCode * 59 + this.RemoteNamespace.GetHashCode();
                 return hashCode;
             }
         }

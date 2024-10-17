@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ListTopicProducersResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.Producers != input.Producers || (this.Producers != null && input.Producers != null && !this.Producers.SequenceEqual(input.Producers))) return false;
 
-            return 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.Producers == input.Producers ||
-                    this.Producers != null &&
-                    input.Producers != null &&
-                    this.Producers.SequenceEqual(input.Producers)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.Producers != null)
-                    hashCode = hashCode * 59 + this.Producers.GetHashCode();
+                var hashCode = 41;
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.Producers != null) hashCode = hashCode * 59 + this.Producers.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ShowGaussMySqlProxyListResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProxyList != input.ProxyList || (this.ProxyList != null && input.ProxyList != null && !this.ProxyList.SequenceEqual(input.ProxyList))) return false;
 
-            return 
-                (
-                    this.ProxyList == input.ProxyList ||
-                    this.ProxyList != null &&
-                    input.ProxyList != null &&
-                    this.ProxyList.SequenceEqual(input.ProxyList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProxyList != null)
-                    hashCode = hashCode * 59 + this.ProxyList.GetHashCode();
+                var hashCode = 41;
+                if (this.ProxyList != null) hashCode = hashCode * 59 + this.ProxyList.GetHashCode();
                 return hashCode;
             }
         }

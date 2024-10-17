@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(TaskProgress input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.Processing != input.Processing || (this.Processing != null && !this.Processing.Equals(input.Processing))) return false;
+            if (this.Success != input.Success || (this.Success != null && !this.Success.Equals(input.Success))) return false;
+            if (this.Fail != input.Fail || (this.Fail != null && !this.Fail.Equals(input.Fail))) return false;
+            if (this.Waitting != input.Waitting || (this.Waitting != null && !this.Waitting.Equals(input.Waitting))) return false;
+            if (this.FailWaitRetry != input.FailWaitRetry || (this.FailWaitRetry != null && !this.FailWaitRetry.Equals(input.FailWaitRetry))) return false;
+            if (this.Stopped != input.Stopped || (this.Stopped != null && !this.Stopped.Equals(input.Stopped))) return false;
+            if (this.Removed != input.Removed || (this.Removed != null && !this.Removed.Equals(input.Removed))) return false;
 
-            return 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.Processing == input.Processing ||
-                    (this.Processing != null &&
-                    this.Processing.Equals(input.Processing))
-                ) && 
-                (
-                    this.Success == input.Success ||
-                    (this.Success != null &&
-                    this.Success.Equals(input.Success))
-                ) && 
-                (
-                    this.Fail == input.Fail ||
-                    (this.Fail != null &&
-                    this.Fail.Equals(input.Fail))
-                ) && 
-                (
-                    this.Waitting == input.Waitting ||
-                    (this.Waitting != null &&
-                    this.Waitting.Equals(input.Waitting))
-                ) && 
-                (
-                    this.FailWaitRetry == input.FailWaitRetry ||
-                    (this.FailWaitRetry != null &&
-                    this.FailWaitRetry.Equals(input.FailWaitRetry))
-                ) && 
-                (
-                    this.Stopped == input.Stopped ||
-                    (this.Stopped != null &&
-                    this.Stopped.Equals(input.Stopped))
-                ) && 
-                (
-                    this.Removed == input.Removed ||
-                    (this.Removed != null &&
-                    this.Removed.Equals(input.Removed))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.Processing != null)
-                    hashCode = hashCode * 59 + this.Processing.GetHashCode();
-                if (this.Success != null)
-                    hashCode = hashCode * 59 + this.Success.GetHashCode();
-                if (this.Fail != null)
-                    hashCode = hashCode * 59 + this.Fail.GetHashCode();
-                if (this.Waitting != null)
-                    hashCode = hashCode * 59 + this.Waitting.GetHashCode();
-                if (this.FailWaitRetry != null)
-                    hashCode = hashCode * 59 + this.FailWaitRetry.GetHashCode();
-                if (this.Stopped != null)
-                    hashCode = hashCode * 59 + this.Stopped.GetHashCode();
-                if (this.Removed != null)
-                    hashCode = hashCode * 59 + this.Removed.GetHashCode();
+                var hashCode = 41;
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.Processing != null) hashCode = hashCode * 59 + this.Processing.GetHashCode();
+                if (this.Success != null) hashCode = hashCode * 59 + this.Success.GetHashCode();
+                if (this.Fail != null) hashCode = hashCode * 59 + this.Fail.GetHashCode();
+                if (this.Waitting != null) hashCode = hashCode * 59 + this.Waitting.GetHashCode();
+                if (this.FailWaitRetry != null) hashCode = hashCode * 59 + this.FailWaitRetry.GetHashCode();
+                if (this.Stopped != null) hashCode = hashCode * 59 + this.Stopped.GetHashCode();
+                if (this.Removed != null) hashCode = hashCode * 59 + this.Removed.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ServerlessInfoResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MinComputeUnit != input.MinComputeUnit || (this.MinComputeUnit != null && !this.MinComputeUnit.Equals(input.MinComputeUnit))) return false;
+            if (this.MaxComputeUnit != input.MaxComputeUnit || (this.MaxComputeUnit != null && !this.MaxComputeUnit.Equals(input.MaxComputeUnit))) return false;
 
-            return 
-                (
-                    this.MinComputeUnit == input.MinComputeUnit ||
-                    (this.MinComputeUnit != null &&
-                    this.MinComputeUnit.Equals(input.MinComputeUnit))
-                ) && 
-                (
-                    this.MaxComputeUnit == input.MaxComputeUnit ||
-                    (this.MaxComputeUnit != null &&
-                    this.MaxComputeUnit.Equals(input.MaxComputeUnit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MinComputeUnit != null)
-                    hashCode = hashCode * 59 + this.MinComputeUnit.GetHashCode();
-                if (this.MaxComputeUnit != null)
-                    hashCode = hashCode * 59 + this.MaxComputeUnit.GetHashCode();
+                var hashCode = 41;
+                if (this.MinComputeUnit != null) hashCode = hashCode * 59 + this.MinComputeUnit.GetHashCode();
+                if (this.MaxComputeUnit != null) hashCode = hashCode * 59 + this.MaxComputeUnit.GetHashCode();
                 return hashCode;
             }
         }

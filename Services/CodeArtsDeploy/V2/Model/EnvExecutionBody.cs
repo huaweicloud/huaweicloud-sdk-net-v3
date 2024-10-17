@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(EnvExecutionBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Params != input.Params || (this.Params != null && input.Params != null && !this.Params.SequenceEqual(input.Params))) return false;
+            if (this.RecordId != input.RecordId || (this.RecordId != null && !this.RecordId.Equals(input.RecordId))) return false;
+            if (this.TriggerSource != input.TriggerSource || (this.TriggerSource != null && !this.TriggerSource.Equals(input.TriggerSource))) return false;
 
-            return 
-                (
-                    this.Params == input.Params ||
-                    this.Params != null &&
-                    input.Params != null &&
-                    this.Params.SequenceEqual(input.Params)
-                ) && 
-                (
-                    this.RecordId == input.RecordId ||
-                    (this.RecordId != null &&
-                    this.RecordId.Equals(input.RecordId))
-                ) && 
-                (
-                    this.TriggerSource == input.TriggerSource ||
-                    (this.TriggerSource != null &&
-                    this.TriggerSource.Equals(input.TriggerSource))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Params != null)
-                    hashCode = hashCode * 59 + this.Params.GetHashCode();
-                if (this.RecordId != null)
-                    hashCode = hashCode * 59 + this.RecordId.GetHashCode();
-                if (this.TriggerSource != null)
-                    hashCode = hashCode * 59 + this.TriggerSource.GetHashCode();
+                var hashCode = 41;
+                if (this.Params != null) hashCode = hashCode * 59 + this.Params.GetHashCode();
+                if (this.RecordId != null) hashCode = hashCode * 59 + this.RecordId.GetHashCode();
+                if (this.TriggerSource != null) hashCode = hashCode * 59 + this.TriggerSource.GetHashCode();
                 return hashCode;
             }
         }

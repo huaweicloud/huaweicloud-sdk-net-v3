@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(PartitionSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HostNetwork != input.HostNetwork || (this.HostNetwork != null && !this.HostNetwork.Equals(input.HostNetwork))) return false;
+            if (this.ContainerNetwork != input.ContainerNetwork || (this.ContainerNetwork != null && input.ContainerNetwork != null && !this.ContainerNetwork.SequenceEqual(input.ContainerNetwork))) return false;
+            if (this.PublicBorderGroup != input.PublicBorderGroup || (this.PublicBorderGroup != null && !this.PublicBorderGroup.Equals(input.PublicBorderGroup))) return false;
+            if (this.Category != input.Category || (this.Category != null && !this.Category.Equals(input.Category))) return false;
 
-            return 
-                (
-                    this.HostNetwork == input.HostNetwork ||
-                    (this.HostNetwork != null &&
-                    this.HostNetwork.Equals(input.HostNetwork))
-                ) && 
-                (
-                    this.ContainerNetwork == input.ContainerNetwork ||
-                    this.ContainerNetwork != null &&
-                    input.ContainerNetwork != null &&
-                    this.ContainerNetwork.SequenceEqual(input.ContainerNetwork)
-                ) && 
-                (
-                    this.PublicBorderGroup == input.PublicBorderGroup ||
-                    (this.PublicBorderGroup != null &&
-                    this.PublicBorderGroup.Equals(input.PublicBorderGroup))
-                ) && 
-                (
-                    this.Category == input.Category ||
-                    (this.Category != null &&
-                    this.Category.Equals(input.Category))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HostNetwork != null)
-                    hashCode = hashCode * 59 + this.HostNetwork.GetHashCode();
-                if (this.ContainerNetwork != null)
-                    hashCode = hashCode * 59 + this.ContainerNetwork.GetHashCode();
-                if (this.PublicBorderGroup != null)
-                    hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
-                if (this.Category != null)
-                    hashCode = hashCode * 59 + this.Category.GetHashCode();
+                var hashCode = 41;
+                if (this.HostNetwork != null) hashCode = hashCode * 59 + this.HostNetwork.GetHashCode();
+                if (this.ContainerNetwork != null) hashCode = hashCode * 59 + this.ContainerNetwork.GetHashCode();
+                if (this.PublicBorderGroup != null) hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                if (this.Category != null) hashCode = hashCode * 59 + this.Category.GetHashCode();
                 return hashCode;
             }
         }

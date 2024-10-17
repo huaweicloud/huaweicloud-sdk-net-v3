@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// </summary>
         public bool Equals(BwListIps input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
+            if (this.Desc != input.Desc || (this.Desc != null && !this.Desc.Equals(input.Desc))) return false;
 
-            return 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                ) && 
-                (
-                    this.Desc == input.Desc ||
-                    (this.Desc != null &&
-                    this.Desc.Equals(input.Desc))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.Desc != null)
-                    hashCode = hashCode * 59 + this.Desc.GetHashCode();
+                var hashCode = 41;
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.Desc != null) hashCode = hashCode * 59 + this.Desc.GetHashCode();
                 return hashCode;
             }
         }

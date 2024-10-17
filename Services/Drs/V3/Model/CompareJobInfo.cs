@@ -112,62 +112,19 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(CompareJobInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Options != input.Options || (this.Options != null && input.Options != null && !this.Options.SequenceEqual(input.Options))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.ExportStatus != input.ExportStatus || (this.ExportStatus != null && !this.ExportStatus.Equals(input.ExportStatus))) return false;
+            if (this.ReportRemainSeconds != input.ReportRemainSeconds || (this.ReportRemainSeconds != null && !this.ReportRemainSeconds.Equals(input.ReportRemainSeconds))) return false;
+            if (this.CompareJobTag != input.CompareJobTag || (this.CompareJobTag != null && input.CompareJobTag != null && !this.CompareJobTag.SequenceEqual(input.CompareJobTag))) return false;
+            if (this.ProportionValue != input.ProportionValue || (this.ProportionValue != null && !this.ProportionValue.Equals(input.ProportionValue))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Options == input.Options ||
-                    this.Options != null &&
-                    input.Options != null &&
-                    this.Options.SequenceEqual(input.Options)
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.ExportStatus == input.ExportStatus ||
-                    (this.ExportStatus != null &&
-                    this.ExportStatus.Equals(input.ExportStatus))
-                ) && 
-                (
-                    this.ReportRemainSeconds == input.ReportRemainSeconds ||
-                    (this.ReportRemainSeconds != null &&
-                    this.ReportRemainSeconds.Equals(input.ReportRemainSeconds))
-                ) && 
-                (
-                    this.CompareJobTag == input.CompareJobTag ||
-                    this.CompareJobTag != null &&
-                    input.CompareJobTag != null &&
-                    this.CompareJobTag.SequenceEqual(input.CompareJobTag)
-                ) && 
-                (
-                    this.ProportionValue == input.ProportionValue ||
-                    (this.ProportionValue != null &&
-                    this.ProportionValue.Equals(input.ProportionValue))
-                );
+            return true;
         }
 
         /// <summary>
@@ -177,27 +134,17 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Options != null)
-                    hashCode = hashCode * 59 + this.Options.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.ExportStatus != null)
-                    hashCode = hashCode * 59 + this.ExportStatus.GetHashCode();
-                if (this.ReportRemainSeconds != null)
-                    hashCode = hashCode * 59 + this.ReportRemainSeconds.GetHashCode();
-                if (this.CompareJobTag != null)
-                    hashCode = hashCode * 59 + this.CompareJobTag.GetHashCode();
-                if (this.ProportionValue != null)
-                    hashCode = hashCode * 59 + this.ProportionValue.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Options != null) hashCode = hashCode * 59 + this.Options.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.ExportStatus != null) hashCode = hashCode * 59 + this.ExportStatus.GetHashCode();
+                if (this.ReportRemainSeconds != null) hashCode = hashCode * 59 + this.ReportRemainSeconds.GetHashCode();
+                if (this.CompareJobTag != null) hashCode = hashCode * 59 + this.CompareJobTag.GetHashCode();
+                if (this.ProportionValue != null) hashCode = hashCode * 59 + this.ProportionValue.GetHashCode();
                 return hashCode;
             }
         }

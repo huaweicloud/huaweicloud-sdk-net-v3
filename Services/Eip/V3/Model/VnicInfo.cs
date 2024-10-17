@@ -119,65 +119,20 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(VnicInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PrivateIpAddress != input.PrivateIpAddress || (this.PrivateIpAddress != null && !this.PrivateIpAddress.Equals(input.PrivateIpAddress))) return false;
+            if (this.DeviceId != input.DeviceId || (this.DeviceId != null && !this.DeviceId.Equals(input.DeviceId))) return false;
+            if (this.DeviceOwner != input.DeviceOwner || (this.DeviceOwner != null && !this.DeviceOwner.Equals(input.DeviceOwner))) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
+            if (this.PortId != input.PortId || (this.PortId != null && !this.PortId.Equals(input.PortId))) return false;
+            if (this.PortProfile != input.PortProfile || (this.PortProfile != null && !this.PortProfile.Equals(input.PortProfile))) return false;
+            if (this.Mac != input.Mac || (this.Mac != null && !this.Mac.Equals(input.Mac))) return false;
+            if (this.Vtep != input.Vtep || (this.Vtep != null && !this.Vtep.Equals(input.Vtep))) return false;
+            if (this.Vni != input.Vni || (this.Vni != null && !this.Vni.Equals(input.Vni))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.InstanceType != input.InstanceType || (this.InstanceType != null && !this.InstanceType.Equals(input.InstanceType))) return false;
 
-            return 
-                (
-                    this.PrivateIpAddress == input.PrivateIpAddress ||
-                    (this.PrivateIpAddress != null &&
-                    this.PrivateIpAddress.Equals(input.PrivateIpAddress))
-                ) && 
-                (
-                    this.DeviceId == input.DeviceId ||
-                    (this.DeviceId != null &&
-                    this.DeviceId.Equals(input.DeviceId))
-                ) && 
-                (
-                    this.DeviceOwner == input.DeviceOwner ||
-                    (this.DeviceOwner != null &&
-                    this.DeviceOwner.Equals(input.DeviceOwner))
-                ) && 
-                (
-                    this.VpcId == input.VpcId ||
-                    (this.VpcId != null &&
-                    this.VpcId.Equals(input.VpcId))
-                ) && 
-                (
-                    this.PortId == input.PortId ||
-                    (this.PortId != null &&
-                    this.PortId.Equals(input.PortId))
-                ) && 
-                (
-                    this.PortProfile == input.PortProfile ||
-                    (this.PortProfile != null &&
-                    this.PortProfile.Equals(input.PortProfile))
-                ) && 
-                (
-                    this.Mac == input.Mac ||
-                    (this.Mac != null &&
-                    this.Mac.Equals(input.Mac))
-                ) && 
-                (
-                    this.Vtep == input.Vtep ||
-                    (this.Vtep != null &&
-                    this.Vtep.Equals(input.Vtep))
-                ) && 
-                (
-                    this.Vni == input.Vni ||
-                    (this.Vni != null &&
-                    this.Vni.Equals(input.Vni))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.InstanceType == input.InstanceType ||
-                    (this.InstanceType != null &&
-                    this.InstanceType.Equals(input.InstanceType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,29 +142,18 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PrivateIpAddress != null)
-                    hashCode = hashCode * 59 + this.PrivateIpAddress.GetHashCode();
-                if (this.DeviceId != null)
-                    hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
-                if (this.DeviceOwner != null)
-                    hashCode = hashCode * 59 + this.DeviceOwner.GetHashCode();
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.PortId != null)
-                    hashCode = hashCode * 59 + this.PortId.GetHashCode();
-                if (this.PortProfile != null)
-                    hashCode = hashCode * 59 + this.PortProfile.GetHashCode();
-                if (this.Mac != null)
-                    hashCode = hashCode * 59 + this.Mac.GetHashCode();
-                if (this.Vtep != null)
-                    hashCode = hashCode * 59 + this.Vtep.GetHashCode();
-                if (this.Vni != null)
-                    hashCode = hashCode * 59 + this.Vni.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.InstanceType != null)
-                    hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
+                var hashCode = 41;
+                if (this.PrivateIpAddress != null) hashCode = hashCode * 59 + this.PrivateIpAddress.GetHashCode();
+                if (this.DeviceId != null) hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
+                if (this.DeviceOwner != null) hashCode = hashCode * 59 + this.DeviceOwner.GetHashCode();
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.PortId != null) hashCode = hashCode * 59 + this.PortId.GetHashCode();
+                if (this.PortProfile != null) hashCode = hashCode * 59 + this.PortProfile.GetHashCode();
+                if (this.Mac != null) hashCode = hashCode * 59 + this.Mac.GetHashCode();
+                if (this.Vtep != null) hashCode = hashCode * 59 + this.Vtep.GetHashCode();
+                if (this.Vni != null) hashCode = hashCode * 59 + this.Vni.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.InstanceType != null) hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
                 return hashCode;
             }
         }

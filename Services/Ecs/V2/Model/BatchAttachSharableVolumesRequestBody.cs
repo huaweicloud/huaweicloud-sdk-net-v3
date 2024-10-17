@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(BatchAttachSharableVolumesRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Serverinfo != input.Serverinfo || (this.Serverinfo != null && input.Serverinfo != null && !this.Serverinfo.SequenceEqual(input.Serverinfo))) return false;
 
-            return 
-                (
-                    this.Serverinfo == input.Serverinfo ||
-                    this.Serverinfo != null &&
-                    input.Serverinfo != null &&
-                    this.Serverinfo.SequenceEqual(input.Serverinfo)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Serverinfo != null)
-                    hashCode = hashCode * 59 + this.Serverinfo.GetHashCode();
+                var hashCode = 41;
+                if (this.Serverinfo != null) hashCode = hashCode * 59 + this.Serverinfo.GetHashCode();
                 return hashCode;
             }
         }

@@ -170,21 +170,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(VersionStrategy input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Rules != input.Rules || (this.Rules != null && input.Rules != null && !this.Rules.SequenceEqual(input.Rules))) return false;
+            if (this.CombineType != input.CombineType) return false;
 
-            return 
-                (
-                    this.Rules == input.Rules ||
-                    this.Rules != null &&
-                    input.Rules != null &&
-                    this.Rules.SequenceEqual(input.Rules)
-                ) && 
-                (
-                    this.CombineType == input.CombineType ||
-                    (this.CombineType != null &&
-                    this.CombineType.Equals(input.CombineType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -194,11 +184,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Rules != null)
-                    hashCode = hashCode * 59 + this.Rules.GetHashCode();
-                if (this.CombineType != null)
-                    hashCode = hashCode * 59 + this.CombineType.GetHashCode();
+                var hashCode = 41;
+                if (this.Rules != null) hashCode = hashCode * 59 + this.Rules.GetHashCode();
+                hashCode = hashCode * 59 + this.CombineType.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ProxyUpgradeProxyVersionRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceVersion != input.SourceVersion || (this.SourceVersion != null && !this.SourceVersion.Equals(input.SourceVersion))) return false;
+            if (this.TargetVersion != input.TargetVersion || (this.TargetVersion != null && !this.TargetVersion.Equals(input.TargetVersion))) return false;
 
-            return 
-                (
-                    this.SourceVersion == input.SourceVersion ||
-                    (this.SourceVersion != null &&
-                    this.SourceVersion.Equals(input.SourceVersion))
-                ) && 
-                (
-                    this.TargetVersion == input.TargetVersion ||
-                    (this.TargetVersion != null &&
-                    this.TargetVersion.Equals(input.TargetVersion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceVersion != null)
-                    hashCode = hashCode * 59 + this.SourceVersion.GetHashCode();
-                if (this.TargetVersion != null)
-                    hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
+                var hashCode = 41;
+                if (this.SourceVersion != null) hashCode = hashCode * 59 + this.SourceVersion.GetHashCode();
+                if (this.TargetVersion != null) hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
                 return hashCode;
             }
         }

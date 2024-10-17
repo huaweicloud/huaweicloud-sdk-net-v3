@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(UpgradePgMajorVersion input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TargetVersion != input.TargetVersion || (this.TargetVersion != null && !this.TargetVersion.Equals(input.TargetVersion))) return false;
+            if (this.IsChangePrivateIp != input.IsChangePrivateIp || (this.IsChangePrivateIp != null && !this.IsChangePrivateIp.Equals(input.IsChangePrivateIp))) return false;
+            if (this.StatisticsCollectionMode != input.StatisticsCollectionMode || (this.StatisticsCollectionMode != null && !this.StatisticsCollectionMode.Equals(input.StatisticsCollectionMode))) return false;
 
-            return 
-                (
-                    this.TargetVersion == input.TargetVersion ||
-                    (this.TargetVersion != null &&
-                    this.TargetVersion.Equals(input.TargetVersion))
-                ) && 
-                (
-                    this.IsChangePrivateIp == input.IsChangePrivateIp ||
-                    (this.IsChangePrivateIp != null &&
-                    this.IsChangePrivateIp.Equals(input.IsChangePrivateIp))
-                ) && 
-                (
-                    this.StatisticsCollectionMode == input.StatisticsCollectionMode ||
-                    (this.StatisticsCollectionMode != null &&
-                    this.StatisticsCollectionMode.Equals(input.StatisticsCollectionMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TargetVersion != null)
-                    hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
-                if (this.IsChangePrivateIp != null)
-                    hashCode = hashCode * 59 + this.IsChangePrivateIp.GetHashCode();
-                if (this.StatisticsCollectionMode != null)
-                    hashCode = hashCode * 59 + this.StatisticsCollectionMode.GetHashCode();
+                var hashCode = 41;
+                if (this.TargetVersion != null) hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
+                if (this.IsChangePrivateIp != null) hashCode = hashCode * 59 + this.IsChangePrivateIp.GetHashCode();
+                if (this.StatisticsCollectionMode != null) hashCode = hashCode * 59 + this.StatisticsCollectionMode.GetHashCode();
                 return hashCode;
             }
         }

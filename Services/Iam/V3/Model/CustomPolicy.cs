@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(CustomPolicy input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.Statement != input.Statement || (this.Statement != null && input.Statement != null && !this.Statement.SequenceEqual(input.Statement))) return false;
 
-            return 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.Statement == input.Statement ||
-                    this.Statement != null &&
-                    input.Statement != null &&
-                    this.Statement.SequenceEqual(input.Statement)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.Statement != null)
-                    hashCode = hashCode * 59 + this.Statement.GetHashCode();
+                var hashCode = 41;
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.Statement != null) hashCode = hashCode * 59 + this.Statement.GetHashCode();
                 return hashCode;
             }
         }

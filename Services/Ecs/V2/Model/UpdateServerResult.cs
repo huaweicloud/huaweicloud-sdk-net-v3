@@ -196,124 +196,31 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(UpdateServerResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
+            if (this.Image != input.Image || (this.Image != null && !this.Image.Equals(input.Image))) return false;
+            if (this.AccessIPv4 != input.AccessIPv4 || (this.AccessIPv4 != null && !this.AccessIPv4.Equals(input.AccessIPv4))) return false;
+            if (this.AccessIPv6 != input.AccessIPv6 || (this.AccessIPv6 != null && !this.AccessIPv6.Equals(input.AccessIPv6))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && input.Metadata != null && !this.Metadata.SequenceEqual(input.Metadata))) return false;
+            if (this.Addresses != input.Addresses || (this.Addresses != null && input.Addresses != null && !this.Addresses.SequenceEqual(input.Addresses))) return false;
+            if (this.Created != input.Created || (this.Created != null && !this.Created.Equals(input.Created))) return false;
+            if (this.HostId != input.HostId || (this.HostId != null && !this.HostId.Equals(input.HostId))) return false;
+            if (this.Flavor != input.Flavor || (this.Flavor != null && !this.Flavor.Equals(input.Flavor))) return false;
+            if (this.OSDCFdiskConfig != input.OSDCFdiskConfig || (this.OSDCFdiskConfig != null && !this.OSDCFdiskConfig.Equals(input.OSDCFdiskConfig))) return false;
+            if (this.UserId != input.UserId || (this.UserId != null && !this.UserId.Equals(input.UserId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Progress != input.Progress || (this.Progress != null && !this.Progress.Equals(input.Progress))) return false;
+            if (this.Links != input.Links || (this.Links != null && input.Links != null && !this.Links.SequenceEqual(input.Links))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Updated != input.Updated || (this.Updated != null && !this.Updated.Equals(input.Updated))) return false;
+            if (this.Locked != input.Locked || (this.Locked != null && !this.Locked.Equals(input.Locked))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.OSEXTSRVATTRuserData != input.OSEXTSRVATTRuserData || (this.OSEXTSRVATTRuserData != null && !this.OSEXTSRVATTRuserData.Equals(input.OSEXTSRVATTRuserData))) return false;
+            if (this.OSEXTSRVATTRhostname != input.OSEXTSRVATTRhostname || (this.OSEXTSRVATTRhostname != null && !this.OSEXTSRVATTRhostname.Equals(input.OSEXTSRVATTRhostname))) return false;
 
-            return 
-                (
-                    this.TenantId == input.TenantId ||
-                    (this.TenantId != null &&
-                    this.TenantId.Equals(input.TenantId))
-                ) && 
-                (
-                    this.Image == input.Image ||
-                    (this.Image != null &&
-                    this.Image.Equals(input.Image))
-                ) && 
-                (
-                    this.AccessIPv4 == input.AccessIPv4 ||
-                    (this.AccessIPv4 != null &&
-                    this.AccessIPv4.Equals(input.AccessIPv4))
-                ) && 
-                (
-                    this.AccessIPv6 == input.AccessIPv6 ||
-                    (this.AccessIPv6 != null &&
-                    this.AccessIPv6.Equals(input.AccessIPv6))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    this.Metadata != null &&
-                    input.Metadata != null &&
-                    this.Metadata.SequenceEqual(input.Metadata)
-                ) && 
-                (
-                    this.Addresses == input.Addresses ||
-                    this.Addresses != null &&
-                    input.Addresses != null &&
-                    this.Addresses.SequenceEqual(input.Addresses)
-                ) && 
-                (
-                    this.Created == input.Created ||
-                    (this.Created != null &&
-                    this.Created.Equals(input.Created))
-                ) && 
-                (
-                    this.HostId == input.HostId ||
-                    (this.HostId != null &&
-                    this.HostId.Equals(input.HostId))
-                ) && 
-                (
-                    this.Flavor == input.Flavor ||
-                    (this.Flavor != null &&
-                    this.Flavor.Equals(input.Flavor))
-                ) && 
-                (
-                    this.OSDCFdiskConfig == input.OSDCFdiskConfig ||
-                    (this.OSDCFdiskConfig != null &&
-                    this.OSDCFdiskConfig.Equals(input.OSDCFdiskConfig))
-                ) && 
-                (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Progress == input.Progress ||
-                    (this.Progress != null &&
-                    this.Progress.Equals(input.Progress))
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    this.Links != null &&
-                    input.Links != null &&
-                    this.Links.SequenceEqual(input.Links)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Updated == input.Updated ||
-                    (this.Updated != null &&
-                    this.Updated.Equals(input.Updated))
-                ) && 
-                (
-                    this.Locked == input.Locked ||
-                    (this.Locked != null &&
-                    this.Locked.Equals(input.Locked))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.OSEXTSRVATTRuserData == input.OSEXTSRVATTRuserData ||
-                    (this.OSEXTSRVATTRuserData != null &&
-                    this.OSEXTSRVATTRuserData.Equals(input.OSEXTSRVATTRuserData))
-                ) && 
-                (
-                    this.OSEXTSRVATTRhostname == input.OSEXTSRVATTRhostname ||
-                    (this.OSEXTSRVATTRhostname != null &&
-                    this.OSEXTSRVATTRhostname.Equals(input.OSEXTSRVATTRhostname))
-                );
+            return true;
         }
 
         /// <summary>
@@ -323,51 +230,29 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TenantId != null)
-                    hashCode = hashCode * 59 + this.TenantId.GetHashCode();
-                if (this.Image != null)
-                    hashCode = hashCode * 59 + this.Image.GetHashCode();
-                if (this.AccessIPv4 != null)
-                    hashCode = hashCode * 59 + this.AccessIPv4.GetHashCode();
-                if (this.AccessIPv6 != null)
-                    hashCode = hashCode * 59 + this.AccessIPv6.GetHashCode();
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
-                if (this.Addresses != null)
-                    hashCode = hashCode * 59 + this.Addresses.GetHashCode();
-                if (this.Created != null)
-                    hashCode = hashCode * 59 + this.Created.GetHashCode();
-                if (this.HostId != null)
-                    hashCode = hashCode * 59 + this.HostId.GetHashCode();
-                if (this.Flavor != null)
-                    hashCode = hashCode * 59 + this.Flavor.GetHashCode();
-                if (this.OSDCFdiskConfig != null)
-                    hashCode = hashCode * 59 + this.OSDCFdiskConfig.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Progress != null)
-                    hashCode = hashCode * 59 + this.Progress.GetHashCode();
-                if (this.Links != null)
-                    hashCode = hashCode * 59 + this.Links.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Updated != null)
-                    hashCode = hashCode * 59 + this.Updated.GetHashCode();
-                if (this.Locked != null)
-                    hashCode = hashCode * 59 + this.Locked.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.OSEXTSRVATTRuserData != null)
-                    hashCode = hashCode * 59 + this.OSEXTSRVATTRuserData.GetHashCode();
-                if (this.OSEXTSRVATTRhostname != null)
-                    hashCode = hashCode * 59 + this.OSEXTSRVATTRhostname.GetHashCode();
+                var hashCode = 41;
+                if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
+                if (this.Image != null) hashCode = hashCode * 59 + this.Image.GetHashCode();
+                if (this.AccessIPv4 != null) hashCode = hashCode * 59 + this.AccessIPv4.GetHashCode();
+                if (this.AccessIPv6 != null) hashCode = hashCode * 59 + this.AccessIPv6.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                if (this.Addresses != null) hashCode = hashCode * 59 + this.Addresses.GetHashCode();
+                if (this.Created != null) hashCode = hashCode * 59 + this.Created.GetHashCode();
+                if (this.HostId != null) hashCode = hashCode * 59 + this.HostId.GetHashCode();
+                if (this.Flavor != null) hashCode = hashCode * 59 + this.Flavor.GetHashCode();
+                if (this.OSDCFdiskConfig != null) hashCode = hashCode * 59 + this.OSDCFdiskConfig.GetHashCode();
+                if (this.UserId != null) hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Progress != null) hashCode = hashCode * 59 + this.Progress.GetHashCode();
+                if (this.Links != null) hashCode = hashCode * 59 + this.Links.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Updated != null) hashCode = hashCode * 59 + this.Updated.GetHashCode();
+                if (this.Locked != null) hashCode = hashCode * 59 + this.Locked.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.OSEXTSRVATTRuserData != null) hashCode = hashCode * 59 + this.OSEXTSRVATTRuserData.GetHashCode();
+                if (this.OSEXTSRVATTRhostname != null) hashCode = hashCode * 59 + this.OSEXTSRVATTRhostname.GetHashCode();
                 return hashCode;
             }
         }

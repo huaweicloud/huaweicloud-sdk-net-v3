@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(Rules input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RuleType != input.RuleType || (this.RuleType != null && !this.RuleType.Equals(input.RuleType))) return false;
+            if (this.Content != input.Content || (this.Content != null && !this.Content.Equals(input.Content))) return false;
+            if (this.Ttl != input.Ttl || (this.Ttl != null && !this.Ttl.Equals(input.Ttl))) return false;
+            if (this.TtlType != input.TtlType || (this.TtlType != null && !this.TtlType.Equals(input.TtlType))) return false;
+            if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
 
-            return 
-                (
-                    this.RuleType == input.RuleType ||
-                    (this.RuleType != null &&
-                    this.RuleType.Equals(input.RuleType))
-                ) && 
-                (
-                    this.Content == input.Content ||
-                    (this.Content != null &&
-                    this.Content.Equals(input.Content))
-                ) && 
-                (
-                    this.Ttl == input.Ttl ||
-                    (this.Ttl != null &&
-                    this.Ttl.Equals(input.Ttl))
-                ) && 
-                (
-                    this.TtlType == input.TtlType ||
-                    (this.TtlType != null &&
-                    this.TtlType.Equals(input.TtlType))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    (this.Priority != null &&
-                    this.Priority.Equals(input.Priority))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RuleType != null)
-                    hashCode = hashCode * 59 + this.RuleType.GetHashCode();
-                if (this.Content != null)
-                    hashCode = hashCode * 59 + this.Content.GetHashCode();
-                if (this.Ttl != null)
-                    hashCode = hashCode * 59 + this.Ttl.GetHashCode();
-                if (this.TtlType != null)
-                    hashCode = hashCode * 59 + this.TtlType.GetHashCode();
-                if (this.Priority != null)
-                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                var hashCode = 41;
+                if (this.RuleType != null) hashCode = hashCode * 59 + this.RuleType.GetHashCode();
+                if (this.Content != null) hashCode = hashCode * 59 + this.Content.GetHashCode();
+                if (this.Ttl != null) hashCode = hashCode * 59 + this.Ttl.GetHashCode();
+                if (this.TtlType != null) hashCode = hashCode * 59 + this.TtlType.GetHashCode();
+                if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 return hashCode;
             }
         }

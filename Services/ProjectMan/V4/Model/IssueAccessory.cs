@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(IssueAccessory input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AttachmentId != input.AttachmentId || (this.AttachmentId != null && !this.AttachmentId.Equals(input.AttachmentId))) return false;
+            if (this.IssueId != input.IssueId || (this.IssueId != null && !this.IssueId.Equals(input.IssueId))) return false;
+            if (this.CreatorNumId != input.CreatorNumId || (this.CreatorNumId != null && !this.CreatorNumId.Equals(input.CreatorNumId))) return false;
+            if (this.CreatedDate != input.CreatedDate || (this.CreatedDate != null && !this.CreatedDate.Equals(input.CreatedDate))) return false;
+            if (this.FileName != input.FileName || (this.FileName != null && !this.FileName.Equals(input.FileName))) return false;
+            if (this.ContainerType != input.ContainerType || (this.ContainerType != null && !this.ContainerType.Equals(input.ContainerType))) return false;
+            if (this.DiskFileName != input.DiskFileName || (this.DiskFileName != null && !this.DiskFileName.Equals(input.DiskFileName))) return false;
+            if (this.Digest != input.Digest || (this.Digest != null && !this.Digest.Equals(input.Digest))) return false;
+            if (this.DiskDirectory != input.DiskDirectory || (this.DiskDirectory != null && !this.DiskDirectory.Equals(input.DiskDirectory))) return false;
+            if (this.CreatorId != input.CreatorId || (this.CreatorId != null && !this.CreatorId.Equals(input.CreatorId))) return false;
 
-            return 
-                (
-                    this.AttachmentId == input.AttachmentId ||
-                    (this.AttachmentId != null &&
-                    this.AttachmentId.Equals(input.AttachmentId))
-                ) && 
-                (
-                    this.IssueId == input.IssueId ||
-                    (this.IssueId != null &&
-                    this.IssueId.Equals(input.IssueId))
-                ) && 
-                (
-                    this.CreatorNumId == input.CreatorNumId ||
-                    (this.CreatorNumId != null &&
-                    this.CreatorNumId.Equals(input.CreatorNumId))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.FileName == input.FileName ||
-                    (this.FileName != null &&
-                    this.FileName.Equals(input.FileName))
-                ) && 
-                (
-                    this.ContainerType == input.ContainerType ||
-                    (this.ContainerType != null &&
-                    this.ContainerType.Equals(input.ContainerType))
-                ) && 
-                (
-                    this.DiskFileName == input.DiskFileName ||
-                    (this.DiskFileName != null &&
-                    this.DiskFileName.Equals(input.DiskFileName))
-                ) && 
-                (
-                    this.Digest == input.Digest ||
-                    (this.Digest != null &&
-                    this.Digest.Equals(input.Digest))
-                ) && 
-                (
-                    this.DiskDirectory == input.DiskDirectory ||
-                    (this.DiskDirectory != null &&
-                    this.DiskDirectory.Equals(input.DiskDirectory))
-                ) && 
-                (
-                    this.CreatorId == input.CreatorId ||
-                    (this.CreatorId != null &&
-                    this.CreatorId.Equals(input.CreatorId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AttachmentId != null)
-                    hashCode = hashCode * 59 + this.AttachmentId.GetHashCode();
-                if (this.IssueId != null)
-                    hashCode = hashCode * 59 + this.IssueId.GetHashCode();
-                if (this.CreatorNumId != null)
-                    hashCode = hashCode * 59 + this.CreatorNumId.GetHashCode();
-                if (this.CreatedDate != null)
-                    hashCode = hashCode * 59 + this.CreatedDate.GetHashCode();
-                if (this.FileName != null)
-                    hashCode = hashCode * 59 + this.FileName.GetHashCode();
-                if (this.ContainerType != null)
-                    hashCode = hashCode * 59 + this.ContainerType.GetHashCode();
-                if (this.DiskFileName != null)
-                    hashCode = hashCode * 59 + this.DiskFileName.GetHashCode();
-                if (this.Digest != null)
-                    hashCode = hashCode * 59 + this.Digest.GetHashCode();
-                if (this.DiskDirectory != null)
-                    hashCode = hashCode * 59 + this.DiskDirectory.GetHashCode();
-                if (this.CreatorId != null)
-                    hashCode = hashCode * 59 + this.CreatorId.GetHashCode();
+                var hashCode = 41;
+                if (this.AttachmentId != null) hashCode = hashCode * 59 + this.AttachmentId.GetHashCode();
+                if (this.IssueId != null) hashCode = hashCode * 59 + this.IssueId.GetHashCode();
+                if (this.CreatorNumId != null) hashCode = hashCode * 59 + this.CreatorNumId.GetHashCode();
+                if (this.CreatedDate != null) hashCode = hashCode * 59 + this.CreatedDate.GetHashCode();
+                if (this.FileName != null) hashCode = hashCode * 59 + this.FileName.GetHashCode();
+                if (this.ContainerType != null) hashCode = hashCode * 59 + this.ContainerType.GetHashCode();
+                if (this.DiskFileName != null) hashCode = hashCode * 59 + this.DiskFileName.GetHashCode();
+                if (this.Digest != null) hashCode = hashCode * 59 + this.Digest.GetHashCode();
+                if (this.DiskDirectory != null) hashCode = hashCode * 59 + this.DiskDirectory.GetHashCode();
+                if (this.CreatorId != null) hashCode = hashCode * 59 + this.CreatorId.GetHashCode();
                 return hashCode;
             }
         }

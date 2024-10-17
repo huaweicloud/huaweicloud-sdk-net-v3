@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(ListFunctionTemplateResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FuncTemplates != input.FuncTemplates || (this.FuncTemplates != null && input.FuncTemplates != null && !this.FuncTemplates.SequenceEqual(input.FuncTemplates))) return false;
+            if (this.NextMarker != input.NextMarker || (this.NextMarker != null && !this.NextMarker.Equals(input.NextMarker))) return false;
 
-            return 
-                (
-                    this.FuncTemplates == input.FuncTemplates ||
-                    this.FuncTemplates != null &&
-                    input.FuncTemplates != null &&
-                    this.FuncTemplates.SequenceEqual(input.FuncTemplates)
-                ) && 
-                (
-                    this.NextMarker == input.NextMarker ||
-                    (this.NextMarker != null &&
-                    this.NextMarker.Equals(input.NextMarker))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FuncTemplates != null)
-                    hashCode = hashCode * 59 + this.FuncTemplates.GetHashCode();
-                if (this.NextMarker != null)
-                    hashCode = hashCode * 59 + this.NextMarker.GetHashCode();
+                var hashCode = 41;
+                if (this.FuncTemplates != null) hashCode = hashCode * 59 + this.FuncTemplates.GetHashCode();
+                if (this.NextMarker != null) hashCode = hashCode * 59 + this.NextMarker.GetHashCode();
                 return hashCode;
             }
         }

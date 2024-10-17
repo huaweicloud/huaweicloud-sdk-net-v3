@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(QuertHistorySQLResultsBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LastUseTime != input.LastUseTime || (this.LastUseTime != null && !this.LastUseTime.Equals(input.LastUseTime))) return false;
+            if (this.SqlStatement != input.SqlStatement || (this.SqlStatement != null && !this.SqlStatement.Equals(input.SqlStatement))) return false;
 
-            return 
-                (
-                    this.LastUseTime == input.LastUseTime ||
-                    (this.LastUseTime != null &&
-                    this.LastUseTime.Equals(input.LastUseTime))
-                ) && 
-                (
-                    this.SqlStatement == input.SqlStatement ||
-                    (this.SqlStatement != null &&
-                    this.SqlStatement.Equals(input.SqlStatement))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LastUseTime != null)
-                    hashCode = hashCode * 59 + this.LastUseTime.GetHashCode();
-                if (this.SqlStatement != null)
-                    hashCode = hashCode * 59 + this.SqlStatement.GetHashCode();
+                var hashCode = 41;
+                if (this.LastUseTime != null) hashCode = hashCode * 59 + this.LastUseTime.GetHashCode();
+                if (this.SqlStatement != null) hashCode = hashCode * 59 + this.SqlStatement.GetHashCode();
                 return hashCode;
             }
         }

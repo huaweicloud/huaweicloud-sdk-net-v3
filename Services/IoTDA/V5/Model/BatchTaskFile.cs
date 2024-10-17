@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(BatchTaskFile input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FileId != input.FileId || (this.FileId != null && !this.FileId.Equals(input.FileId))) return false;
+            if (this.FileName != input.FileName || (this.FileName != null && !this.FileName.Equals(input.FileName))) return false;
+            if (this.UploadTime != input.UploadTime || (this.UploadTime != null && !this.UploadTime.Equals(input.UploadTime))) return false;
 
-            return 
-                (
-                    this.FileId == input.FileId ||
-                    (this.FileId != null &&
-                    this.FileId.Equals(input.FileId))
-                ) && 
-                (
-                    this.FileName == input.FileName ||
-                    (this.FileName != null &&
-                    this.FileName.Equals(input.FileName))
-                ) && 
-                (
-                    this.UploadTime == input.UploadTime ||
-                    (this.UploadTime != null &&
-                    this.UploadTime.Equals(input.UploadTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FileId != null)
-                    hashCode = hashCode * 59 + this.FileId.GetHashCode();
-                if (this.FileName != null)
-                    hashCode = hashCode * 59 + this.FileName.GetHashCode();
-                if (this.UploadTime != null)
-                    hashCode = hashCode * 59 + this.UploadTime.GetHashCode();
+                var hashCode = 41;
+                if (this.FileId != null) hashCode = hashCode * 59 + this.FileId.GetHashCode();
+                if (this.FileName != null) hashCode = hashCode * 59 + this.FileName.GetHashCode();
+                if (this.UploadTime != null) hashCode = hashCode * 59 + this.UploadTime.GetHashCode();
                 return hashCode;
             }
         }

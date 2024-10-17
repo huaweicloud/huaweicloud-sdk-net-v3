@@ -63,27 +63,12 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         /// </summary>
         public bool Equals(ListWeeklyReportsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DdosInterceptTimes != input.DdosInterceptTimes || (this.DdosInterceptTimes != null && !this.DdosInterceptTimes.Equals(input.DdosInterceptTimes))) return false;
+            if (this.Weekdata != input.Weekdata || (this.Weekdata != null && input.Weekdata != null && !this.Weekdata.SequenceEqual(input.Weekdata))) return false;
+            if (this.Top10 != input.Top10 || (this.Top10 != null && input.Top10 != null && !this.Top10.SequenceEqual(input.Top10))) return false;
 
-            return 
-                (
-                    this.DdosInterceptTimes == input.DdosInterceptTimes ||
-                    (this.DdosInterceptTimes != null &&
-                    this.DdosInterceptTimes.Equals(input.DdosInterceptTimes))
-                ) && 
-                (
-                    this.Weekdata == input.Weekdata ||
-                    this.Weekdata != null &&
-                    input.Weekdata != null &&
-                    this.Weekdata.SequenceEqual(input.Weekdata)
-                ) && 
-                (
-                    this.Top10 == input.Top10 ||
-                    this.Top10 != null &&
-                    input.Top10 != null &&
-                    this.Top10.SequenceEqual(input.Top10)
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +78,10 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DdosInterceptTimes != null)
-                    hashCode = hashCode * 59 + this.DdosInterceptTimes.GetHashCode();
-                if (this.Weekdata != null)
-                    hashCode = hashCode * 59 + this.Weekdata.GetHashCode();
-                if (this.Top10 != null)
-                    hashCode = hashCode * 59 + this.Top10.GetHashCode();
+                var hashCode = 41;
+                if (this.DdosInterceptTimes != null) hashCode = hashCode * 59 + this.DdosInterceptTimes.GetHashCode();
+                if (this.Weekdata != null) hashCode = hashCode * 59 + this.Weekdata.GetHashCode();
+                if (this.Top10 != null) hashCode = hashCode * 59 + this.Top10.GetHashCode();
                 return hashCode;
             }
         }

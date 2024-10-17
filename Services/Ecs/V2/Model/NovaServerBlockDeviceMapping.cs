@@ -339,55 +339,18 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(NovaServerBlockDeviceMapping input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceType != input.SourceType) return false;
+            if (this.DestinationType != input.DestinationType) return false;
+            if (this.GuestFormat != input.GuestFormat || (this.GuestFormat != null && !this.GuestFormat.Equals(input.GuestFormat))) return false;
+            if (this.DeviceName != input.DeviceName || (this.DeviceName != null && !this.DeviceName.Equals(input.DeviceName))) return false;
+            if (this.DeleteOnTermination != input.DeleteOnTermination || (this.DeleteOnTermination != null && !this.DeleteOnTermination.Equals(input.DeleteOnTermination))) return false;
+            if (this.BootIndex != input.BootIndex || (this.BootIndex != null && !this.BootIndex.Equals(input.BootIndex))) return false;
+            if (this.Uuid != input.Uuid || (this.Uuid != null && !this.Uuid.Equals(input.Uuid))) return false;
+            if (this.VolumeSize != input.VolumeSize || (this.VolumeSize != null && !this.VolumeSize.Equals(input.VolumeSize))) return false;
+            if (this.VolumeType != input.VolumeType || (this.VolumeType != null && !this.VolumeType.Equals(input.VolumeType))) return false;
 
-            return 
-                (
-                    this.SourceType == input.SourceType ||
-                    (this.SourceType != null &&
-                    this.SourceType.Equals(input.SourceType))
-                ) && 
-                (
-                    this.DestinationType == input.DestinationType ||
-                    (this.DestinationType != null &&
-                    this.DestinationType.Equals(input.DestinationType))
-                ) && 
-                (
-                    this.GuestFormat == input.GuestFormat ||
-                    (this.GuestFormat != null &&
-                    this.GuestFormat.Equals(input.GuestFormat))
-                ) && 
-                (
-                    this.DeviceName == input.DeviceName ||
-                    (this.DeviceName != null &&
-                    this.DeviceName.Equals(input.DeviceName))
-                ) && 
-                (
-                    this.DeleteOnTermination == input.DeleteOnTermination ||
-                    (this.DeleteOnTermination != null &&
-                    this.DeleteOnTermination.Equals(input.DeleteOnTermination))
-                ) && 
-                (
-                    this.BootIndex == input.BootIndex ||
-                    (this.BootIndex != null &&
-                    this.BootIndex.Equals(input.BootIndex))
-                ) && 
-                (
-                    this.Uuid == input.Uuid ||
-                    (this.Uuid != null &&
-                    this.Uuid.Equals(input.Uuid))
-                ) && 
-                (
-                    this.VolumeSize == input.VolumeSize ||
-                    (this.VolumeSize != null &&
-                    this.VolumeSize.Equals(input.VolumeSize))
-                ) && 
-                (
-                    this.VolumeType == input.VolumeType ||
-                    (this.VolumeType != null &&
-                    this.VolumeType.Equals(input.VolumeType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -397,25 +360,16 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceType != null)
-                    hashCode = hashCode * 59 + this.SourceType.GetHashCode();
-                if (this.DestinationType != null)
-                    hashCode = hashCode * 59 + this.DestinationType.GetHashCode();
-                if (this.GuestFormat != null)
-                    hashCode = hashCode * 59 + this.GuestFormat.GetHashCode();
-                if (this.DeviceName != null)
-                    hashCode = hashCode * 59 + this.DeviceName.GetHashCode();
-                if (this.DeleteOnTermination != null)
-                    hashCode = hashCode * 59 + this.DeleteOnTermination.GetHashCode();
-                if (this.BootIndex != null)
-                    hashCode = hashCode * 59 + this.BootIndex.GetHashCode();
-                if (this.Uuid != null)
-                    hashCode = hashCode * 59 + this.Uuid.GetHashCode();
-                if (this.VolumeSize != null)
-                    hashCode = hashCode * 59 + this.VolumeSize.GetHashCode();
-                if (this.VolumeType != null)
-                    hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.SourceType.GetHashCode();
+                hashCode = hashCode * 59 + this.DestinationType.GetHashCode();
+                if (this.GuestFormat != null) hashCode = hashCode * 59 + this.GuestFormat.GetHashCode();
+                if (this.DeviceName != null) hashCode = hashCode * 59 + this.DeviceName.GetHashCode();
+                if (this.DeleteOnTermination != null) hashCode = hashCode * 59 + this.DeleteOnTermination.GetHashCode();
+                if (this.BootIndex != null) hashCode = hashCode * 59 + this.BootIndex.GetHashCode();
+                if (this.Uuid != null) hashCode = hashCode * 59 + this.Uuid.GetHashCode();
+                if (this.VolumeSize != null) hashCode = hashCode * 59 + this.VolumeSize.GetHashCode();
+                if (this.VolumeType != null) hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(MbTaskParameter input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StatusDescription != input.StatusDescription || (this.StatusDescription != null && !this.StatusDescription.Equals(input.StatusDescription))) return false;
+            if (this.OutputFilename != input.OutputFilename || (this.OutputFilename != null && !this.OutputFilename.Equals(input.OutputFilename))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && !this.Metadata.Equals(input.Metadata))) return false;
 
-            return 
-                (
-                    this.StatusDescription == input.StatusDescription ||
-                    (this.StatusDescription != null &&
-                    this.StatusDescription.Equals(input.StatusDescription))
-                ) && 
-                (
-                    this.OutputFilename == input.OutputFilename ||
-                    (this.OutputFilename != null &&
-                    this.OutputFilename.Equals(input.OutputFilename))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    (this.Metadata != null &&
-                    this.Metadata.Equals(input.Metadata))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StatusDescription != null)
-                    hashCode = hashCode * 59 + this.StatusDescription.GetHashCode();
-                if (this.OutputFilename != null)
-                    hashCode = hashCode * 59 + this.OutputFilename.GetHashCode();
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                var hashCode = 41;
+                if (this.StatusDescription != null) hashCode = hashCode * 59 + this.StatusDescription.GetHashCode();
+                if (this.OutputFilename != null) hashCode = hashCode * 59 + this.OutputFilename.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
                 return hashCode;
             }
         }

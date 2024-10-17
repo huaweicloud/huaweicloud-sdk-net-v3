@@ -183,25 +183,12 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(UpdateTopicReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ReadQueueNum != input.ReadQueueNum || (this.ReadQueueNum != null && !this.ReadQueueNum.Equals(input.ReadQueueNum))) return false;
+            if (this.WriteQueueNum != input.WriteQueueNum || (this.WriteQueueNum != null && !this.WriteQueueNum.Equals(input.WriteQueueNum))) return false;
+            if (this.Permission != input.Permission) return false;
 
-            return 
-                (
-                    this.ReadQueueNum == input.ReadQueueNum ||
-                    (this.ReadQueueNum != null &&
-                    this.ReadQueueNum.Equals(input.ReadQueueNum))
-                ) && 
-                (
-                    this.WriteQueueNum == input.WriteQueueNum ||
-                    (this.WriteQueueNum != null &&
-                    this.WriteQueueNum.Equals(input.WriteQueueNum))
-                ) && 
-                (
-                    this.Permission == input.Permission ||
-                    (this.Permission != null &&
-                    this.Permission.Equals(input.Permission))
-                );
+            return true;
         }
 
         /// <summary>
@@ -211,13 +198,10 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ReadQueueNum != null)
-                    hashCode = hashCode * 59 + this.ReadQueueNum.GetHashCode();
-                if (this.WriteQueueNum != null)
-                    hashCode = hashCode * 59 + this.WriteQueueNum.GetHashCode();
-                if (this.Permission != null)
-                    hashCode = hashCode * 59 + this.Permission.GetHashCode();
+                var hashCode = 41;
+                if (this.ReadQueueNum != null) hashCode = hashCode * 59 + this.ReadQueueNum.GetHashCode();
+                if (this.WriteQueueNum != null) hashCode = hashCode * 59 + this.WriteQueueNum.GetHashCode();
+                hashCode = hashCode * 59 + this.Permission.GetHashCode();
                 return hashCode;
             }
         }

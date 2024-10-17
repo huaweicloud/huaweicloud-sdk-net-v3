@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(CreateTenantVpcIgwRequestBodyVpcIgw input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
+            if (this.NetworkId != input.NetworkId || (this.NetworkId != null && !this.NetworkId.Equals(input.NetworkId))) return false;
+            if (this.AddRoute != input.AddRoute || (this.AddRoute != null && !this.AddRoute.Equals(input.AddRoute))) return false;
+            if (this.EnableIpv6 != input.EnableIpv6 || (this.EnableIpv6 != null && !this.EnableIpv6.Equals(input.EnableIpv6))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
 
-            return 
-                (
-                    this.VpcId == input.VpcId ||
-                    (this.VpcId != null &&
-                    this.VpcId.Equals(input.VpcId))
-                ) && 
-                (
-                    this.NetworkId == input.NetworkId ||
-                    (this.NetworkId != null &&
-                    this.NetworkId.Equals(input.NetworkId))
-                ) && 
-                (
-                    this.AddRoute == input.AddRoute ||
-                    (this.AddRoute != null &&
-                    this.AddRoute.Equals(input.AddRoute))
-                ) && 
-                (
-                    this.EnableIpv6 == input.EnableIpv6 ||
-                    (this.EnableIpv6 != null &&
-                    this.EnableIpv6.Equals(input.EnableIpv6))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.NetworkId != null)
-                    hashCode = hashCode * 59 + this.NetworkId.GetHashCode();
-                if (this.AddRoute != null)
-                    hashCode = hashCode * 59 + this.AddRoute.GetHashCode();
-                if (this.EnableIpv6 != null)
-                    hashCode = hashCode * 59 + this.EnableIpv6.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                var hashCode = 41;
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.NetworkId != null) hashCode = hashCode * 59 + this.NetworkId.GetHashCode();
+                if (this.AddRoute != null) hashCode = hashCode * 59 + this.AddRoute.GetHashCode();
+                if (this.EnableIpv6 != null) hashCode = hashCode * 59 + this.EnableIpv6.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
                 return hashCode;
             }
         }

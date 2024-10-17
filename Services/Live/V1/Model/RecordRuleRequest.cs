@@ -203,35 +203,14 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(RecordRuleRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PublishDomain != input.PublishDomain || (this.PublishDomain != null && !this.PublishDomain.Equals(input.PublishDomain))) return false;
+            if (this.App != input.App || (this.App != null && !this.App.Equals(input.App))) return false;
+            if (this.Stream != input.Stream || (this.Stream != null && !this.Stream.Equals(input.Stream))) return false;
+            if (this.RecordType != input.RecordType) return false;
+            if (this.DefaultRecordConfig != input.DefaultRecordConfig || (this.DefaultRecordConfig != null && !this.DefaultRecordConfig.Equals(input.DefaultRecordConfig))) return false;
 
-            return 
-                (
-                    this.PublishDomain == input.PublishDomain ||
-                    (this.PublishDomain != null &&
-                    this.PublishDomain.Equals(input.PublishDomain))
-                ) && 
-                (
-                    this.App == input.App ||
-                    (this.App != null &&
-                    this.App.Equals(input.App))
-                ) && 
-                (
-                    this.Stream == input.Stream ||
-                    (this.Stream != null &&
-                    this.Stream.Equals(input.Stream))
-                ) && 
-                (
-                    this.RecordType == input.RecordType ||
-                    (this.RecordType != null &&
-                    this.RecordType.Equals(input.RecordType))
-                ) && 
-                (
-                    this.DefaultRecordConfig == input.DefaultRecordConfig ||
-                    (this.DefaultRecordConfig != null &&
-                    this.DefaultRecordConfig.Equals(input.DefaultRecordConfig))
-                );
+            return true;
         }
 
         /// <summary>
@@ -241,17 +220,12 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PublishDomain != null)
-                    hashCode = hashCode * 59 + this.PublishDomain.GetHashCode();
-                if (this.App != null)
-                    hashCode = hashCode * 59 + this.App.GetHashCode();
-                if (this.Stream != null)
-                    hashCode = hashCode * 59 + this.Stream.GetHashCode();
-                if (this.RecordType != null)
-                    hashCode = hashCode * 59 + this.RecordType.GetHashCode();
-                if (this.DefaultRecordConfig != null)
-                    hashCode = hashCode * 59 + this.DefaultRecordConfig.GetHashCode();
+                var hashCode = 41;
+                if (this.PublishDomain != null) hashCode = hashCode * 59 + this.PublishDomain.GetHashCode();
+                if (this.App != null) hashCode = hashCode * 59 + this.App.GetHashCode();
+                if (this.Stream != null) hashCode = hashCode * 59 + this.Stream.GetHashCode();
+                hashCode = hashCode * 59 + this.RecordType.GetHashCode();
+                if (this.DefaultRecordConfig != null) hashCode = hashCode * 59 + this.DefaultRecordConfig.GetHashCode();
                 return hashCode;
             }
         }

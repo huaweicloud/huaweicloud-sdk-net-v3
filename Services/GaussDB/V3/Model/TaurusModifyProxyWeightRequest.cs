@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(TaurusModifyProxyWeightRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MasterWeight != input.MasterWeight || (this.MasterWeight != null && !this.MasterWeight.Equals(input.MasterWeight))) return false;
+            if (this.ReadonlyNodes != input.ReadonlyNodes || (this.ReadonlyNodes != null && input.ReadonlyNodes != null && !this.ReadonlyNodes.SequenceEqual(input.ReadonlyNodes))) return false;
 
-            return 
-                (
-                    this.MasterWeight == input.MasterWeight ||
-                    (this.MasterWeight != null &&
-                    this.MasterWeight.Equals(input.MasterWeight))
-                ) && 
-                (
-                    this.ReadonlyNodes == input.ReadonlyNodes ||
-                    this.ReadonlyNodes != null &&
-                    input.ReadonlyNodes != null &&
-                    this.ReadonlyNodes.SequenceEqual(input.ReadonlyNodes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MasterWeight != null)
-                    hashCode = hashCode * 59 + this.MasterWeight.GetHashCode();
-                if (this.ReadonlyNodes != null)
-                    hashCode = hashCode * 59 + this.ReadonlyNodes.GetHashCode();
+                var hashCode = 41;
+                if (this.MasterWeight != null) hashCode = hashCode * 59 + this.MasterWeight.GetHashCode();
+                if (this.ReadonlyNodes != null) hashCode = hashCode * 59 + this.ReadonlyNodes.GetHashCode();
                 return hashCode;
             }
         }

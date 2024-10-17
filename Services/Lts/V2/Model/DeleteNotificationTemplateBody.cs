@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(DeleteNotificationTemplateBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TemplateNames != input.TemplateNames || (this.TemplateNames != null && input.TemplateNames != null && !this.TemplateNames.SequenceEqual(input.TemplateNames))) return false;
 
-            return 
-                (
-                    this.TemplateNames == input.TemplateNames ||
-                    this.TemplateNames != null &&
-                    input.TemplateNames != null &&
-                    this.TemplateNames.SequenceEqual(input.TemplateNames)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TemplateNames != null)
-                    hashCode = hashCode * 59 + this.TemplateNames.GetHashCode();
+                var hashCode = 41;
+                if (this.TemplateNames != null) hashCode = hashCode * 59 + this.TemplateNames.GetHashCode();
                 return hashCode;
             }
         }

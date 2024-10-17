@@ -170,20 +170,11 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// </summary>
         public bool Equals(Pager input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Href != input.Href || (this.Href != null && !this.Href.Equals(input.Href))) return false;
+            if (this.Rel != input.Rel) return false;
 
-            return 
-                (
-                    this.Href == input.Href ||
-                    (this.Href != null &&
-                    this.Href.Equals(input.Href))
-                ) && 
-                (
-                    this.Rel == input.Rel ||
-                    (this.Rel != null &&
-                    this.Rel.Equals(input.Rel))
-                );
+            return true;
         }
 
         /// <summary>
@@ -193,11 +184,9 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Href != null)
-                    hashCode = hashCode * 59 + this.Href.GetHashCode();
-                if (this.Rel != null)
-                    hashCode = hashCode * 59 + this.Rel.GetHashCode();
+                var hashCode = 41;
+                if (this.Href != null) hashCode = hashCode * 59 + this.Href.GetHashCode();
+                hashCode = hashCode * 59 + this.Rel.GetHashCode();
                 return hashCode;
             }
         }

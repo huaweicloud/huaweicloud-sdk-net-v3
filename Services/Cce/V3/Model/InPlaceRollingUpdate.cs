@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(InPlaceRollingUpdate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UserDefinedStep != input.UserDefinedStep || (this.UserDefinedStep != null && !this.UserDefinedStep.Equals(input.UserDefinedStep))) return false;
 
-            return 
-                (
-                    this.UserDefinedStep == input.UserDefinedStep ||
-                    (this.UserDefinedStep != null &&
-                    this.UserDefinedStep.Equals(input.UserDefinedStep))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UserDefinedStep != null)
-                    hashCode = hashCode * 59 + this.UserDefinedStep.GetHashCode();
+                var hashCode = 41;
+                if (this.UserDefinedStep != null) hashCode = hashCode * 59 + this.UserDefinedStep.GetHashCode();
                 return hashCode;
             }
         }

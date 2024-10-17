@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(PeriodOrderResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
+            if (this.ChargingMode != input.ChargingMode || (this.ChargingMode != null && !this.ChargingMode.Equals(input.ChargingMode))) return false;
+            if (this.PeriodType != input.PeriodType || (this.PeriodType != null && !this.PeriodType.Equals(input.PeriodType))) return false;
+            if (this.PeriodNum != input.PeriodNum || (this.PeriodNum != null && !this.PeriodNum.Equals(input.PeriodNum))) return false;
+            if (this.IsAutoRenew != input.IsAutoRenew || (this.IsAutoRenew != null && !this.IsAutoRenew.Equals(input.IsAutoRenew))) return false;
+            if (this.EffTime != input.EffTime || (this.EffTime != null && !this.EffTime.Equals(input.EffTime))) return false;
+            if (this.ExpTime != input.ExpTime || (this.ExpTime != null && !this.ExpTime.Equals(input.ExpTime))) return false;
 
-            return 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.OrderId == input.OrderId ||
-                    (this.OrderId != null &&
-                    this.OrderId.Equals(input.OrderId))
-                ) && 
-                (
-                    this.ChargingMode == input.ChargingMode ||
-                    (this.ChargingMode != null &&
-                    this.ChargingMode.Equals(input.ChargingMode))
-                ) && 
-                (
-                    this.PeriodType == input.PeriodType ||
-                    (this.PeriodType != null &&
-                    this.PeriodType.Equals(input.PeriodType))
-                ) && 
-                (
-                    this.PeriodNum == input.PeriodNum ||
-                    (this.PeriodNum != null &&
-                    this.PeriodNum.Equals(input.PeriodNum))
-                ) && 
-                (
-                    this.IsAutoRenew == input.IsAutoRenew ||
-                    (this.IsAutoRenew != null &&
-                    this.IsAutoRenew.Equals(input.IsAutoRenew))
-                ) && 
-                (
-                    this.EffTime == input.EffTime ||
-                    (this.EffTime != null &&
-                    this.EffTime.Equals(input.EffTime))
-                ) && 
-                (
-                    this.ExpTime == input.ExpTime ||
-                    (this.ExpTime != null &&
-                    this.ExpTime.Equals(input.ExpTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.OrderId != null)
-                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
-                if (this.ChargingMode != null)
-                    hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
-                if (this.PeriodType != null)
-                    hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
-                if (this.PeriodNum != null)
-                    hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
-                if (this.IsAutoRenew != null)
-                    hashCode = hashCode * 59 + this.IsAutoRenew.GetHashCode();
-                if (this.EffTime != null)
-                    hashCode = hashCode * 59 + this.EffTime.GetHashCode();
-                if (this.ExpTime != null)
-                    hashCode = hashCode * 59 + this.ExpTime.GetHashCode();
+                var hashCode = 41;
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.ChargingMode != null) hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
+                if (this.PeriodType != null) hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
+                if (this.PeriodNum != null) hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
+                if (this.IsAutoRenew != null) hashCode = hashCode * 59 + this.IsAutoRenew.GetHashCode();
+                if (this.EffTime != null) hashCode = hashCode * 59 + this.EffTime.GetHashCode();
+                if (this.ExpTime != null) hashCode = hashCode * 59 + this.ExpTime.GetHashCode();
                 return hashCode;
             }
         }

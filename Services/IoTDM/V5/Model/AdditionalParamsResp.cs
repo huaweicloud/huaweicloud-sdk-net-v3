@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
         /// </summary>
         public bool Equals(AdditionalParamsResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
+            if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
+            if (this.SecurityGroupId != input.SecurityGroupId || (this.SecurityGroupId != null && !this.SecurityGroupId.Equals(input.SecurityGroupId))) return false;
+            if (this.CipheringAlgorithm != input.CipheringAlgorithm || (this.CipheringAlgorithm != null && !this.CipheringAlgorithm.Equals(input.CipheringAlgorithm))) return false;
+            if (this.ForwardingInfo != input.ForwardingInfo || (this.ForwardingInfo != null && !this.ForwardingInfo.Equals(input.ForwardingInfo))) return false;
 
-            return 
-                (
-                    this.VpcId == input.VpcId ||
-                    (this.VpcId != null &&
-                    this.VpcId.Equals(input.VpcId))
-                ) && 
-                (
-                    this.SubnetId == input.SubnetId ||
-                    (this.SubnetId != null &&
-                    this.SubnetId.Equals(input.SubnetId))
-                ) && 
-                (
-                    this.SecurityGroupId == input.SecurityGroupId ||
-                    (this.SecurityGroupId != null &&
-                    this.SecurityGroupId.Equals(input.SecurityGroupId))
-                ) && 
-                (
-                    this.CipheringAlgorithm == input.CipheringAlgorithm ||
-                    (this.CipheringAlgorithm != null &&
-                    this.CipheringAlgorithm.Equals(input.CipheringAlgorithm))
-                ) && 
-                (
-                    this.ForwardingInfo == input.ForwardingInfo ||
-                    (this.ForwardingInfo != null &&
-                    this.ForwardingInfo.Equals(input.ForwardingInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.SubnetId != null)
-                    hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
-                if (this.SecurityGroupId != null)
-                    hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
-                if (this.CipheringAlgorithm != null)
-                    hashCode = hashCode * 59 + this.CipheringAlgorithm.GetHashCode();
-                if (this.ForwardingInfo != null)
-                    hashCode = hashCode * 59 + this.ForwardingInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
+                if (this.SecurityGroupId != null) hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
+                if (this.CipheringAlgorithm != null) hashCode = hashCode * 59 + this.CipheringAlgorithm.GetHashCode();
+                if (this.ForwardingInfo != null) hashCode = hashCode * 59 + this.ForwardingInfo.GetHashCode();
                 return hashCode;
             }
         }

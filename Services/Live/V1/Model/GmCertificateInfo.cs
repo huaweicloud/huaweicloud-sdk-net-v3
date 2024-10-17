@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(GmCertificateInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Source != input.Source || (this.Source != null && !this.Source.Equals(input.Source))) return false;
+            if (this.CertName != input.CertName || (this.CertName != null && !this.CertName.Equals(input.CertName))) return false;
+            if (this.CertId != input.CertId || (this.CertId != null && !this.CertId.Equals(input.CertId))) return false;
+            if (this.SignCertificate != input.SignCertificate || (this.SignCertificate != null && !this.SignCertificate.Equals(input.SignCertificate))) return false;
+            if (this.SignCertificateKey != input.SignCertificateKey || (this.SignCertificateKey != null && !this.SignCertificateKey.Equals(input.SignCertificateKey))) return false;
+            if (this.EncCertificate != input.EncCertificate || (this.EncCertificate != null && !this.EncCertificate.Equals(input.EncCertificate))) return false;
+            if (this.EncCertificateKey != input.EncCertificateKey || (this.EncCertificateKey != null && !this.EncCertificateKey.Equals(input.EncCertificateKey))) return false;
 
-            return 
-                (
-                    this.Source == input.Source ||
-                    (this.Source != null &&
-                    this.Source.Equals(input.Source))
-                ) && 
-                (
-                    this.CertName == input.CertName ||
-                    (this.CertName != null &&
-                    this.CertName.Equals(input.CertName))
-                ) && 
-                (
-                    this.CertId == input.CertId ||
-                    (this.CertId != null &&
-                    this.CertId.Equals(input.CertId))
-                ) && 
-                (
-                    this.SignCertificate == input.SignCertificate ||
-                    (this.SignCertificate != null &&
-                    this.SignCertificate.Equals(input.SignCertificate))
-                ) && 
-                (
-                    this.SignCertificateKey == input.SignCertificateKey ||
-                    (this.SignCertificateKey != null &&
-                    this.SignCertificateKey.Equals(input.SignCertificateKey))
-                ) && 
-                (
-                    this.EncCertificate == input.EncCertificate ||
-                    (this.EncCertificate != null &&
-                    this.EncCertificate.Equals(input.EncCertificate))
-                ) && 
-                (
-                    this.EncCertificateKey == input.EncCertificateKey ||
-                    (this.EncCertificateKey != null &&
-                    this.EncCertificateKey.Equals(input.EncCertificateKey))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Source != null)
-                    hashCode = hashCode * 59 + this.Source.GetHashCode();
-                if (this.CertName != null)
-                    hashCode = hashCode * 59 + this.CertName.GetHashCode();
-                if (this.CertId != null)
-                    hashCode = hashCode * 59 + this.CertId.GetHashCode();
-                if (this.SignCertificate != null)
-                    hashCode = hashCode * 59 + this.SignCertificate.GetHashCode();
-                if (this.SignCertificateKey != null)
-                    hashCode = hashCode * 59 + this.SignCertificateKey.GetHashCode();
-                if (this.EncCertificate != null)
-                    hashCode = hashCode * 59 + this.EncCertificate.GetHashCode();
-                if (this.EncCertificateKey != null)
-                    hashCode = hashCode * 59 + this.EncCertificateKey.GetHashCode();
+                var hashCode = 41;
+                if (this.Source != null) hashCode = hashCode * 59 + this.Source.GetHashCode();
+                if (this.CertName != null) hashCode = hashCode * 59 + this.CertName.GetHashCode();
+                if (this.CertId != null) hashCode = hashCode * 59 + this.CertId.GetHashCode();
+                if (this.SignCertificate != null) hashCode = hashCode * 59 + this.SignCertificate.GetHashCode();
+                if (this.SignCertificateKey != null) hashCode = hashCode * 59 + this.SignCertificateKey.GetHashCode();
+                if (this.EncCertificate != null) hashCode = hashCode * 59 + this.EncCertificate.GetHashCode();
+                if (this.EncCertificateKey != null) hashCode = hashCode * 59 + this.EncCertificateKey.GetHashCode();
                 return hashCode;
             }
         }

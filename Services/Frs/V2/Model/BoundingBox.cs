@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public bool Equals(BoundingBox input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Width != input.Width || (this.Width != null && !this.Width.Equals(input.Width))) return false;
+            if (this.TopLeftY != input.TopLeftY || (this.TopLeftY != null && !this.TopLeftY.Equals(input.TopLeftY))) return false;
+            if (this.TopLeftX != input.TopLeftX || (this.TopLeftX != null && !this.TopLeftX.Equals(input.TopLeftX))) return false;
+            if (this.Height != input.Height || (this.Height != null && !this.Height.Equals(input.Height))) return false;
 
-            return 
-                (
-                    this.Width == input.Width ||
-                    (this.Width != null &&
-                    this.Width.Equals(input.Width))
-                ) && 
-                (
-                    this.TopLeftY == input.TopLeftY ||
-                    (this.TopLeftY != null &&
-                    this.TopLeftY.Equals(input.TopLeftY))
-                ) && 
-                (
-                    this.TopLeftX == input.TopLeftX ||
-                    (this.TopLeftX != null &&
-                    this.TopLeftX.Equals(input.TopLeftX))
-                ) && 
-                (
-                    this.Height == input.Height ||
-                    (this.Height != null &&
-                    this.Height.Equals(input.Height))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Width != null)
-                    hashCode = hashCode * 59 + this.Width.GetHashCode();
-                if (this.TopLeftY != null)
-                    hashCode = hashCode * 59 + this.TopLeftY.GetHashCode();
-                if (this.TopLeftX != null)
-                    hashCode = hashCode * 59 + this.TopLeftX.GetHashCode();
-                if (this.Height != null)
-                    hashCode = hashCode * 59 + this.Height.GetHashCode();
+                var hashCode = 41;
+                if (this.Width != null) hashCode = hashCode * 59 + this.Width.GetHashCode();
+                if (this.TopLeftY != null) hashCode = hashCode * 59 + this.TopLeftY.GetHashCode();
+                if (this.TopLeftX != null) hashCode = hashCode * 59 + this.TopLeftX.GetHashCode();
+                if (this.Height != null) hashCode = hashCode * 59 + this.Height.GetHashCode();
                 return hashCode;
             }
         }

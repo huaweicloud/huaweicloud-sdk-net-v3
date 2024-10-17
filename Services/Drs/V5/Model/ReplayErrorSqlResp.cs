@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ReplayErrorSqlResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ObjectType != input.ObjectType || (this.ObjectType != null && !this.ObjectType.Equals(input.ObjectType))) return false;
+            if (this.AbnormalSql != input.AbnormalSql || (this.AbnormalSql != null && !this.AbnormalSql.Equals(input.AbnormalSql))) return false;
+            if (this.AbnormalInfo != input.AbnormalInfo || (this.AbnormalInfo != null && !this.AbnormalInfo.Equals(input.AbnormalInfo))) return false;
 
-            return 
-                (
-                    this.ObjectType == input.ObjectType ||
-                    (this.ObjectType != null &&
-                    this.ObjectType.Equals(input.ObjectType))
-                ) && 
-                (
-                    this.AbnormalSql == input.AbnormalSql ||
-                    (this.AbnormalSql != null &&
-                    this.AbnormalSql.Equals(input.AbnormalSql))
-                ) && 
-                (
-                    this.AbnormalInfo == input.AbnormalInfo ||
-                    (this.AbnormalInfo != null &&
-                    this.AbnormalInfo.Equals(input.AbnormalInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ObjectType != null)
-                    hashCode = hashCode * 59 + this.ObjectType.GetHashCode();
-                if (this.AbnormalSql != null)
-                    hashCode = hashCode * 59 + this.AbnormalSql.GetHashCode();
-                if (this.AbnormalInfo != null)
-                    hashCode = hashCode * 59 + this.AbnormalInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.ObjectType != null) hashCode = hashCode * 59 + this.ObjectType.GetHashCode();
+                if (this.AbnormalSql != null) hashCode = hashCode * 59 + this.AbnormalSql.GetHashCode();
+                if (this.AbnormalInfo != null) hashCode = hashCode * 59 + this.AbnormalInfo.GetHashCode();
                 return hashCode;
             }
         }

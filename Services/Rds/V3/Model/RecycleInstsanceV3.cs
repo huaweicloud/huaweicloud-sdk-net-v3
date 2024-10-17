@@ -161,95 +161,26 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(RecycleInstsanceV3 input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.HaMode != input.HaMode || (this.HaMode != null && !this.HaMode.Equals(input.HaMode))) return false;
+            if (this.EngineName != input.EngineName || (this.EngineName != null && !this.EngineName.Equals(input.EngineName))) return false;
+            if (this.EngineVersion != input.EngineVersion || (this.EngineVersion != null && !this.EngineVersion.Equals(input.EngineVersion))) return false;
+            if (this.PayModel != input.PayModel || (this.PayModel != null && !this.PayModel.Equals(input.PayModel))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.DeletedAt != input.DeletedAt || (this.DeletedAt != null && !this.DeletedAt.Equals(input.DeletedAt))) return false;
+            if (this.VolumeType != input.VolumeType || (this.VolumeType != null && !this.VolumeType.Equals(input.VolumeType))) return false;
+            if (this.VolumeSize != input.VolumeSize || (this.VolumeSize != null && !this.VolumeSize.Equals(input.VolumeSize))) return false;
+            if (this.DataVip != input.DataVip || (this.DataVip != null && !this.DataVip.Equals(input.DataVip))) return false;
+            if (this.DataVipV6 != input.DataVipV6 || (this.DataVipV6 != null && !this.DataVipV6.Equals(input.DataVipV6))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.RetainedUntil != input.RetainedUntil || (this.RetainedUntil != null && !this.RetainedUntil.Equals(input.RetainedUntil))) return false;
+            if (this.RecycleBackupId != input.RecycleBackupId || (this.RecycleBackupId != null && !this.RecycleBackupId.Equals(input.RecycleBackupId))) return false;
+            if (this.RecycleStatus != input.RecycleStatus || (this.RecycleStatus != null && !this.RecycleStatus.Equals(input.RecycleStatus))) return false;
+            if (this.IsServerless != input.IsServerless || (this.IsServerless != null && !this.IsServerless.Equals(input.IsServerless))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.HaMode == input.HaMode ||
-                    (this.HaMode != null &&
-                    this.HaMode.Equals(input.HaMode))
-                ) && 
-                (
-                    this.EngineName == input.EngineName ||
-                    (this.EngineName != null &&
-                    this.EngineName.Equals(input.EngineName))
-                ) && 
-                (
-                    this.EngineVersion == input.EngineVersion ||
-                    (this.EngineVersion != null &&
-                    this.EngineVersion.Equals(input.EngineVersion))
-                ) && 
-                (
-                    this.PayModel == input.PayModel ||
-                    (this.PayModel != null &&
-                    this.PayModel.Equals(input.PayModel))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.DeletedAt == input.DeletedAt ||
-                    (this.DeletedAt != null &&
-                    this.DeletedAt.Equals(input.DeletedAt))
-                ) && 
-                (
-                    this.VolumeType == input.VolumeType ||
-                    (this.VolumeType != null &&
-                    this.VolumeType.Equals(input.VolumeType))
-                ) && 
-                (
-                    this.VolumeSize == input.VolumeSize ||
-                    (this.VolumeSize != null &&
-                    this.VolumeSize.Equals(input.VolumeSize))
-                ) && 
-                (
-                    this.DataVip == input.DataVip ||
-                    (this.DataVip != null &&
-                    this.DataVip.Equals(input.DataVip))
-                ) && 
-                (
-                    this.DataVipV6 == input.DataVipV6 ||
-                    (this.DataVipV6 != null &&
-                    this.DataVipV6.Equals(input.DataVipV6))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.RetainedUntil == input.RetainedUntil ||
-                    (this.RetainedUntil != null &&
-                    this.RetainedUntil.Equals(input.RetainedUntil))
-                ) && 
-                (
-                    this.RecycleBackupId == input.RecycleBackupId ||
-                    (this.RecycleBackupId != null &&
-                    this.RecycleBackupId.Equals(input.RecycleBackupId))
-                ) && 
-                (
-                    this.RecycleStatus == input.RecycleStatus ||
-                    (this.RecycleStatus != null &&
-                    this.RecycleStatus.Equals(input.RecycleStatus))
-                ) && 
-                (
-                    this.IsServerless == input.IsServerless ||
-                    (this.IsServerless != null &&
-                    this.IsServerless.Equals(input.IsServerless))
-                );
+            return true;
         }
 
         /// <summary>
@@ -259,41 +190,24 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.HaMode != null)
-                    hashCode = hashCode * 59 + this.HaMode.GetHashCode();
-                if (this.EngineName != null)
-                    hashCode = hashCode * 59 + this.EngineName.GetHashCode();
-                if (this.EngineVersion != null)
-                    hashCode = hashCode * 59 + this.EngineVersion.GetHashCode();
-                if (this.PayModel != null)
-                    hashCode = hashCode * 59 + this.PayModel.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.DeletedAt != null)
-                    hashCode = hashCode * 59 + this.DeletedAt.GetHashCode();
-                if (this.VolumeType != null)
-                    hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
-                if (this.VolumeSize != null)
-                    hashCode = hashCode * 59 + this.VolumeSize.GetHashCode();
-                if (this.DataVip != null)
-                    hashCode = hashCode * 59 + this.DataVip.GetHashCode();
-                if (this.DataVipV6 != null)
-                    hashCode = hashCode * 59 + this.DataVipV6.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.RetainedUntil != null)
-                    hashCode = hashCode * 59 + this.RetainedUntil.GetHashCode();
-                if (this.RecycleBackupId != null)
-                    hashCode = hashCode * 59 + this.RecycleBackupId.GetHashCode();
-                if (this.RecycleStatus != null)
-                    hashCode = hashCode * 59 + this.RecycleStatus.GetHashCode();
-                if (this.IsServerless != null)
-                    hashCode = hashCode * 59 + this.IsServerless.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.HaMode != null) hashCode = hashCode * 59 + this.HaMode.GetHashCode();
+                if (this.EngineName != null) hashCode = hashCode * 59 + this.EngineName.GetHashCode();
+                if (this.EngineVersion != null) hashCode = hashCode * 59 + this.EngineVersion.GetHashCode();
+                if (this.PayModel != null) hashCode = hashCode * 59 + this.PayModel.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.DeletedAt != null) hashCode = hashCode * 59 + this.DeletedAt.GetHashCode();
+                if (this.VolumeType != null) hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
+                if (this.VolumeSize != null) hashCode = hashCode * 59 + this.VolumeSize.GetHashCode();
+                if (this.DataVip != null) hashCode = hashCode * 59 + this.DataVip.GetHashCode();
+                if (this.DataVipV6 != null) hashCode = hashCode * 59 + this.DataVipV6.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.RetainedUntil != null) hashCode = hashCode * 59 + this.RetainedUntil.GetHashCode();
+                if (this.RecycleBackupId != null) hashCode = hashCode * 59 + this.RecycleBackupId.GetHashCode();
+                if (this.RecycleStatus != null) hashCode = hashCode * 59 + this.RecycleStatus.GetHashCode();
+                if (this.IsServerless != null) hashCode = hashCode * 59 + this.IsServerless.GetHashCode();
                 return hashCode;
             }
         }

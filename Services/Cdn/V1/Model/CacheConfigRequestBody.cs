@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(CacheConfigRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CacheConfig != input.CacheConfig || (this.CacheConfig != null && !this.CacheConfig.Equals(input.CacheConfig))) return false;
 
-            return 
-                (
-                    this.CacheConfig == input.CacheConfig ||
-                    (this.CacheConfig != null &&
-                    this.CacheConfig.Equals(input.CacheConfig))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CacheConfig != null)
-                    hashCode = hashCode * 59 + this.CacheConfig.GetHashCode();
+                var hashCode = 41;
+                if (this.CacheConfig != null) hashCode = hashCode * 59 + this.CacheConfig.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(ListGroupScheduledTasksResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PageInfo != input.PageInfo || (this.PageInfo != null && !this.PageInfo.Equals(input.PageInfo))) return false;
+            if (this.ScheduledTasks != input.ScheduledTasks || (this.ScheduledTasks != null && input.ScheduledTasks != null && !this.ScheduledTasks.SequenceEqual(input.ScheduledTasks))) return false;
 
-            return 
-                (
-                    this.PageInfo == input.PageInfo ||
-                    (this.PageInfo != null &&
-                    this.PageInfo.Equals(input.PageInfo))
-                ) && 
-                (
-                    this.ScheduledTasks == input.ScheduledTasks ||
-                    this.ScheduledTasks != null &&
-                    input.ScheduledTasks != null &&
-                    this.ScheduledTasks.SequenceEqual(input.ScheduledTasks)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PageInfo != null)
-                    hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
-                if (this.ScheduledTasks != null)
-                    hashCode = hashCode * 59 + this.ScheduledTasks.GetHashCode();
+                var hashCode = 41;
+                if (this.PageInfo != null) hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
+                if (this.ScheduledTasks != null) hashCode = hashCode * 59 + this.ScheduledTasks.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(User input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClientCertificateData != input.ClientCertificateData || (this.ClientCertificateData != null && !this.ClientCertificateData.Equals(input.ClientCertificateData))) return false;
+            if (this.ClientKeyData != input.ClientKeyData || (this.ClientKeyData != null && !this.ClientKeyData.Equals(input.ClientKeyData))) return false;
 
-            return 
-                (
-                    this.ClientCertificateData == input.ClientCertificateData ||
-                    (this.ClientCertificateData != null &&
-                    this.ClientCertificateData.Equals(input.ClientCertificateData))
-                ) && 
-                (
-                    this.ClientKeyData == input.ClientKeyData ||
-                    (this.ClientKeyData != null &&
-                    this.ClientKeyData.Equals(input.ClientKeyData))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClientCertificateData != null)
-                    hashCode = hashCode * 59 + this.ClientCertificateData.GetHashCode();
-                if (this.ClientKeyData != null)
-                    hashCode = hashCode * 59 + this.ClientKeyData.GetHashCode();
+                var hashCode = 41;
+                if (this.ClientCertificateData != null) hashCode = hashCode * 59 + this.ClientCertificateData.GetHashCode();
+                if (this.ClientKeyData != null) hashCode = hashCode * 59 + this.ClientKeyData.GetHashCode();
                 return hashCode;
             }
         }

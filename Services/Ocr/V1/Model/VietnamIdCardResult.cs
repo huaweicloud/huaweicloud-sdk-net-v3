@@ -175,106 +175,28 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(VietnamIdCardResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Side != input.Side || (this.Side != null && !this.Side.Equals(input.Side))) return false;
+            if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;
+            if (this.FullName != input.FullName || (this.FullName != null && !this.FullName.Equals(input.FullName))) return false;
+            if (this.BirthDate != input.BirthDate || (this.BirthDate != null && !this.BirthDate.Equals(input.BirthDate))) return false;
+            if (this.Sex != input.Sex || (this.Sex != null && !this.Sex.Equals(input.Sex))) return false;
+            if (this.Nationality != input.Nationality || (this.Nationality != null && !this.Nationality.Equals(input.Nationality))) return false;
+            if (this.OriginPlace != input.OriginPlace || (this.OriginPlace != null && !this.OriginPlace.Equals(input.OriginPlace))) return false;
+            if (this.ResidencePlace != input.ResidencePlace || (this.ResidencePlace != null && !this.ResidencePlace.Equals(input.ResidencePlace))) return false;
+            if (this.ExpiryDate != input.ExpiryDate || (this.ExpiryDate != null && !this.ExpiryDate.Equals(input.ExpiryDate))) return false;
+            if (this.PersonalIdentification != input.PersonalIdentification || (this.PersonalIdentification != null && !this.PersonalIdentification.Equals(input.PersonalIdentification))) return false;
+            if (this.IssueDate != input.IssueDate || (this.IssueDate != null && !this.IssueDate.Equals(input.IssueDate))) return false;
+            if (this.MachineCode1 != input.MachineCode1 || (this.MachineCode1 != null && !this.MachineCode1.Equals(input.MachineCode1))) return false;
+            if (this.MachineCode2 != input.MachineCode2 || (this.MachineCode2 != null && !this.MachineCode2.Equals(input.MachineCode2))) return false;
+            if (this.MachineCode3 != input.MachineCode3 || (this.MachineCode3 != null && !this.MachineCode3.Equals(input.MachineCode3))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
+            if (this.PortraitImage != input.PortraitImage || (this.PortraitImage != null && !this.PortraitImage.Equals(input.PortraitImage))) return false;
+            if (this.PortraitLocation != input.PortraitLocation || (this.PortraitLocation != null && input.PortraitLocation != null && !this.PortraitLocation.SequenceEqual(input.PortraitLocation))) return false;
+            if (this.IdcardType != input.IdcardType || (this.IdcardType != null && !this.IdcardType.Equals(input.IdcardType))) return false;
+            if (this.TextLocation != input.TextLocation || (this.TextLocation != null && !this.TextLocation.Equals(input.TextLocation))) return false;
 
-            return 
-                (
-                    this.Side == input.Side ||
-                    (this.Side != null &&
-                    this.Side.Equals(input.Side))
-                ) && 
-                (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                ) && 
-                (
-                    this.FullName == input.FullName ||
-                    (this.FullName != null &&
-                    this.FullName.Equals(input.FullName))
-                ) && 
-                (
-                    this.BirthDate == input.BirthDate ||
-                    (this.BirthDate != null &&
-                    this.BirthDate.Equals(input.BirthDate))
-                ) && 
-                (
-                    this.Sex == input.Sex ||
-                    (this.Sex != null &&
-                    this.Sex.Equals(input.Sex))
-                ) && 
-                (
-                    this.Nationality == input.Nationality ||
-                    (this.Nationality != null &&
-                    this.Nationality.Equals(input.Nationality))
-                ) && 
-                (
-                    this.OriginPlace == input.OriginPlace ||
-                    (this.OriginPlace != null &&
-                    this.OriginPlace.Equals(input.OriginPlace))
-                ) && 
-                (
-                    this.ResidencePlace == input.ResidencePlace ||
-                    (this.ResidencePlace != null &&
-                    this.ResidencePlace.Equals(input.ResidencePlace))
-                ) && 
-                (
-                    this.ExpiryDate == input.ExpiryDate ||
-                    (this.ExpiryDate != null &&
-                    this.ExpiryDate.Equals(input.ExpiryDate))
-                ) && 
-                (
-                    this.PersonalIdentification == input.PersonalIdentification ||
-                    (this.PersonalIdentification != null &&
-                    this.PersonalIdentification.Equals(input.PersonalIdentification))
-                ) && 
-                (
-                    this.IssueDate == input.IssueDate ||
-                    (this.IssueDate != null &&
-                    this.IssueDate.Equals(input.IssueDate))
-                ) && 
-                (
-                    this.MachineCode1 == input.MachineCode1 ||
-                    (this.MachineCode1 != null &&
-                    this.MachineCode1.Equals(input.MachineCode1))
-                ) && 
-                (
-                    this.MachineCode2 == input.MachineCode2 ||
-                    (this.MachineCode2 != null &&
-                    this.MachineCode2.Equals(input.MachineCode2))
-                ) && 
-                (
-                    this.MachineCode3 == input.MachineCode3 ||
-                    (this.MachineCode3 != null &&
-                    this.MachineCode3.Equals(input.MachineCode3))
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                ) && 
-                (
-                    this.PortraitImage == input.PortraitImage ||
-                    (this.PortraitImage != null &&
-                    this.PortraitImage.Equals(input.PortraitImage))
-                ) && 
-                (
-                    this.PortraitLocation == input.PortraitLocation ||
-                    this.PortraitLocation != null &&
-                    input.PortraitLocation != null &&
-                    this.PortraitLocation.SequenceEqual(input.PortraitLocation)
-                ) && 
-                (
-                    this.IdcardType == input.IdcardType ||
-                    (this.IdcardType != null &&
-                    this.IdcardType.Equals(input.IdcardType))
-                ) && 
-                (
-                    this.TextLocation == input.TextLocation ||
-                    (this.TextLocation != null &&
-                    this.TextLocation.Equals(input.TextLocation))
-                );
+            return true;
         }
 
         /// <summary>
@@ -284,45 +206,26 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Side != null)
-                    hashCode = hashCode * 59 + this.Side.GetHashCode();
-                if (this.Number != null)
-                    hashCode = hashCode * 59 + this.Number.GetHashCode();
-                if (this.FullName != null)
-                    hashCode = hashCode * 59 + this.FullName.GetHashCode();
-                if (this.BirthDate != null)
-                    hashCode = hashCode * 59 + this.BirthDate.GetHashCode();
-                if (this.Sex != null)
-                    hashCode = hashCode * 59 + this.Sex.GetHashCode();
-                if (this.Nationality != null)
-                    hashCode = hashCode * 59 + this.Nationality.GetHashCode();
-                if (this.OriginPlace != null)
-                    hashCode = hashCode * 59 + this.OriginPlace.GetHashCode();
-                if (this.ResidencePlace != null)
-                    hashCode = hashCode * 59 + this.ResidencePlace.GetHashCode();
-                if (this.ExpiryDate != null)
-                    hashCode = hashCode * 59 + this.ExpiryDate.GetHashCode();
-                if (this.PersonalIdentification != null)
-                    hashCode = hashCode * 59 + this.PersonalIdentification.GetHashCode();
-                if (this.IssueDate != null)
-                    hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
-                if (this.MachineCode1 != null)
-                    hashCode = hashCode * 59 + this.MachineCode1.GetHashCode();
-                if (this.MachineCode2 != null)
-                    hashCode = hashCode * 59 + this.MachineCode2.GetHashCode();
-                if (this.MachineCode3 != null)
-                    hashCode = hashCode * 59 + this.MachineCode3.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
-                if (this.PortraitImage != null)
-                    hashCode = hashCode * 59 + this.PortraitImage.GetHashCode();
-                if (this.PortraitLocation != null)
-                    hashCode = hashCode * 59 + this.PortraitLocation.GetHashCode();
-                if (this.IdcardType != null)
-                    hashCode = hashCode * 59 + this.IdcardType.GetHashCode();
-                if (this.TextLocation != null)
-                    hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
+                var hashCode = 41;
+                if (this.Side != null) hashCode = hashCode * 59 + this.Side.GetHashCode();
+                if (this.Number != null) hashCode = hashCode * 59 + this.Number.GetHashCode();
+                if (this.FullName != null) hashCode = hashCode * 59 + this.FullName.GetHashCode();
+                if (this.BirthDate != null) hashCode = hashCode * 59 + this.BirthDate.GetHashCode();
+                if (this.Sex != null) hashCode = hashCode * 59 + this.Sex.GetHashCode();
+                if (this.Nationality != null) hashCode = hashCode * 59 + this.Nationality.GetHashCode();
+                if (this.OriginPlace != null) hashCode = hashCode * 59 + this.OriginPlace.GetHashCode();
+                if (this.ResidencePlace != null) hashCode = hashCode * 59 + this.ResidencePlace.GetHashCode();
+                if (this.ExpiryDate != null) hashCode = hashCode * 59 + this.ExpiryDate.GetHashCode();
+                if (this.PersonalIdentification != null) hashCode = hashCode * 59 + this.PersonalIdentification.GetHashCode();
+                if (this.IssueDate != null) hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
+                if (this.MachineCode1 != null) hashCode = hashCode * 59 + this.MachineCode1.GetHashCode();
+                if (this.MachineCode2 != null) hashCode = hashCode * 59 + this.MachineCode2.GetHashCode();
+                if (this.MachineCode3 != null) hashCode = hashCode * 59 + this.MachineCode3.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                if (this.PortraitImage != null) hashCode = hashCode * 59 + this.PortraitImage.GetHashCode();
+                if (this.PortraitLocation != null) hashCode = hashCode * 59 + this.PortraitLocation.GetHashCode();
+                if (this.IdcardType != null) hashCode = hashCode * 59 + this.IdcardType.GetHashCode();
+                if (this.TextLocation != null) hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
                 return hashCode;
             }
         }

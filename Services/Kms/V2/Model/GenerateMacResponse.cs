@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         /// </summary>
         public bool Equals(GenerateMacResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KeyId != input.KeyId || (this.KeyId != null && !this.KeyId.Equals(input.KeyId))) return false;
+            if (this.MacAlgorithm != input.MacAlgorithm || (this.MacAlgorithm != null && !this.MacAlgorithm.Equals(input.MacAlgorithm))) return false;
+            if (this.Mac != input.Mac || (this.Mac != null && !this.Mac.Equals(input.Mac))) return false;
 
-            return 
-                (
-                    this.KeyId == input.KeyId ||
-                    (this.KeyId != null &&
-                    this.KeyId.Equals(input.KeyId))
-                ) && 
-                (
-                    this.MacAlgorithm == input.MacAlgorithm ||
-                    (this.MacAlgorithm != null &&
-                    this.MacAlgorithm.Equals(input.MacAlgorithm))
-                ) && 
-                (
-                    this.Mac == input.Mac ||
-                    (this.Mac != null &&
-                    this.Mac.Equals(input.Mac))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KeyId != null)
-                    hashCode = hashCode * 59 + this.KeyId.GetHashCode();
-                if (this.MacAlgorithm != null)
-                    hashCode = hashCode * 59 + this.MacAlgorithm.GetHashCode();
-                if (this.Mac != null)
-                    hashCode = hashCode * 59 + this.Mac.GetHashCode();
+                var hashCode = 41;
+                if (this.KeyId != null) hashCode = hashCode * 59 + this.KeyId.GetHashCode();
+                if (this.MacAlgorithm != null) hashCode = hashCode * 59 + this.MacAlgorithm.GetHashCode();
+                if (this.Mac != null) hashCode = hashCode * 59 + this.Mac.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(BatchLimitSpeedReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SpeedLimits != input.SpeedLimits || (this.SpeedLimits != null && input.SpeedLimits != null && !this.SpeedLimits.SequenceEqual(input.SpeedLimits))) return false;
 
-            return 
-                (
-                    this.SpeedLimits == input.SpeedLimits ||
-                    this.SpeedLimits != null &&
-                    input.SpeedLimits != null &&
-                    this.SpeedLimits.SequenceEqual(input.SpeedLimits)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SpeedLimits != null)
-                    hashCode = hashCode * 59 + this.SpeedLimits.GetHashCode();
+                var hashCode = 41;
+                if (this.SpeedLimits != null) hashCode = hashCode * 59 + this.SpeedLimits.GetHashCode();
                 return hashCode;
             }
         }

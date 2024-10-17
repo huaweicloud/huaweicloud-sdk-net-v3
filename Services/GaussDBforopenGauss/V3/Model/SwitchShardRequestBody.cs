@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(SwitchShardRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Shards != input.Shards || (this.Shards != null && input.Shards != null && !this.Shards.SequenceEqual(input.Shards))) return false;
 
-            return 
-                (
-                    this.Shards == input.Shards ||
-                    this.Shards != null &&
-                    input.Shards != null &&
-                    this.Shards.SequenceEqual(input.Shards)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Shards != null)
-                    hashCode = hashCode * 59 + this.Shards.GetHashCode();
+                var hashCode = 41;
+                if (this.Shards != null) hashCode = hashCode * 59 + this.Shards.GetHashCode();
                 return hashCode;
             }
         }

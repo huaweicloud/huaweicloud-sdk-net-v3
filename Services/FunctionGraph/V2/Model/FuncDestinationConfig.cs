@@ -182,20 +182,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(FuncDestinationConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Destination != input.Destination) return false;
+            if (this.Param != input.Param || (this.Param != null && !this.Param.Equals(input.Param))) return false;
 
-            return 
-                (
-                    this.Destination == input.Destination ||
-                    (this.Destination != null &&
-                    this.Destination.Equals(input.Destination))
-                ) && 
-                (
-                    this.Param == input.Param ||
-                    (this.Param != null &&
-                    this.Param.Equals(input.Param))
-                );
+            return true;
         }
 
         /// <summary>
@@ -205,11 +196,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Destination != null)
-                    hashCode = hashCode * 59 + this.Destination.GetHashCode();
-                if (this.Param != null)
-                    hashCode = hashCode * 59 + this.Param.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Destination.GetHashCode();
+                if (this.Param != null) hashCode = hashCode * 59 + this.Param.GetHashCode();
                 return hashCode;
             }
         }

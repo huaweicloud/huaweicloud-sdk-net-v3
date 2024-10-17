@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         public bool Equals(ListImagesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Images != input.Images || (this.Images != null && input.Images != null && !this.Images.SequenceEqual(input.Images))) return false;
 
-            return 
-                (
-                    this.Images == input.Images ||
-                    this.Images != null &&
-                    input.Images != null &&
-                    this.Images.SequenceEqual(input.Images)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Images != null)
-                    hashCode = hashCode * 59 + this.Images.GetHashCode();
+                var hashCode = 41;
+                if (this.Images != null) hashCode = hashCode * 59 + this.Images.GetHashCode();
                 return hashCode;
             }
         }

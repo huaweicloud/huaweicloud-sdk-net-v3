@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(SchemaObject input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SyncType != input.SyncType || (this.SyncType != null && !this.SyncType.Equals(input.SyncType))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.All != input.All || (this.All != null && !this.All.Equals(input.All))) return false;
+            if (this.Tables != input.Tables || (this.Tables != null && input.Tables != null && !this.Tables.SequenceEqual(input.Tables))) return false;
 
-            return 
-                (
-                    this.SyncType == input.SyncType ||
-                    (this.SyncType != null &&
-                    this.SyncType.Equals(input.SyncType))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.All == input.All ||
-                    (this.All != null &&
-                    this.All.Equals(input.All))
-                ) && 
-                (
-                    this.Tables == input.Tables ||
-                    this.Tables != null &&
-                    input.Tables != null &&
-                    this.Tables.SequenceEqual(input.Tables)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SyncType != null)
-                    hashCode = hashCode * 59 + this.SyncType.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.All != null)
-                    hashCode = hashCode * 59 + this.All.GetHashCode();
-                if (this.Tables != null)
-                    hashCode = hashCode * 59 + this.Tables.GetHashCode();
+                var hashCode = 41;
+                if (this.SyncType != null) hashCode = hashCode * 59 + this.SyncType.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.All != null) hashCode = hashCode * 59 + this.All.GetHashCode();
+                if (this.Tables != null) hashCode = hashCode * 59 + this.Tables.GetHashCode();
                 return hashCode;
             }
         }

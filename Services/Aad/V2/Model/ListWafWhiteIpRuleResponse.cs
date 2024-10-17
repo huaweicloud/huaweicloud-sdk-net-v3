@@ -63,27 +63,12 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// </summary>
         public bool Equals(ListWafWhiteIpRuleResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.Black != input.Black || (this.Black != null && input.Black != null && !this.Black.SequenceEqual(input.Black))) return false;
+            if (this.White != input.White || (this.White != null && input.White != null && !this.White.SequenceEqual(input.White))) return false;
 
-            return 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.Black == input.Black ||
-                    this.Black != null &&
-                    input.Black != null &&
-                    this.Black.SequenceEqual(input.Black)
-                ) && 
-                (
-                    this.White == input.White ||
-                    this.White != null &&
-                    input.White != null &&
-                    this.White.SequenceEqual(input.White)
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +78,10 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.Black != null)
-                    hashCode = hashCode * 59 + this.Black.GetHashCode();
-                if (this.White != null)
-                    hashCode = hashCode * 59 + this.White.GetHashCode();
+                var hashCode = 41;
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.Black != null) hashCode = hashCode * 59 + this.Black.GetHashCode();
+                if (this.White != null) hashCode = hashCode * 59 + this.White.GetHashCode();
                 return hashCode;
             }
         }

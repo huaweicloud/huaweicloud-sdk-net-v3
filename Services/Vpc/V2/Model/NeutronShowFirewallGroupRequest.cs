@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(NeutronShowFirewallGroupRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FirewallGroupId != input.FirewallGroupId || (this.FirewallGroupId != null && !this.FirewallGroupId.Equals(input.FirewallGroupId))) return false;
 
-            return 
-                (
-                    this.FirewallGroupId == input.FirewallGroupId ||
-                    (this.FirewallGroupId != null &&
-                    this.FirewallGroupId.Equals(input.FirewallGroupId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FirewallGroupId != null)
-                    hashCode = hashCode * 59 + this.FirewallGroupId.GetHashCode();
+                var hashCode = 41;
+                if (this.FirewallGroupId != null) hashCode = hashCode * 59 + this.FirewallGroupId.GetHashCode();
                 return hashCode;
             }
         }

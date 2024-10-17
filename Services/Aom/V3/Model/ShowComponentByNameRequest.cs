@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         /// </summary>
         public bool Equals(ShowComponentByNameRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ApplicationId != input.ApplicationId || (this.ApplicationId != null && !this.ApplicationId.Equals(input.ApplicationId))) return false;
+            if (this.ComponentName != input.ComponentName || (this.ComponentName != null && !this.ComponentName.Equals(input.ComponentName))) return false;
 
-            return 
-                (
-                    this.ApplicationId == input.ApplicationId ||
-                    (this.ApplicationId != null &&
-                    this.ApplicationId.Equals(input.ApplicationId))
-                ) && 
-                (
-                    this.ComponentName == input.ComponentName ||
-                    (this.ComponentName != null &&
-                    this.ComponentName.Equals(input.ComponentName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ApplicationId != null)
-                    hashCode = hashCode * 59 + this.ApplicationId.GetHashCode();
-                if (this.ComponentName != null)
-                    hashCode = hashCode * 59 + this.ComponentName.GetHashCode();
+                var hashCode = 41;
+                if (this.ApplicationId != null) hashCode = hashCode * 59 + this.ApplicationId.GetHashCode();
+                if (this.ComponentName != null) hashCode = hashCode * 59 + this.ComponentName.GetHashCode();
                 return hashCode;
             }
         }

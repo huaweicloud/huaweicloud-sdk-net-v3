@@ -212,51 +212,17 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(DiagnosisNodeReport input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NodeIp != input.NodeIp || (this.NodeIp != null && !this.NodeIp.Equals(input.NodeIp))) return false;
+            if (this.AzCode != input.AzCode || (this.AzCode != null && !this.AzCode.Equals(input.AzCode))) return false;
+            if (this.GroupName != input.GroupName || (this.GroupName != null && !this.GroupName.Equals(input.GroupName))) return false;
+            if (this.AbnormalSum != input.AbnormalSum || (this.AbnormalSum != null && !this.AbnormalSum.Equals(input.AbnormalSum))) return false;
+            if (this.FailedSum != input.FailedSum || (this.FailedSum != null && !this.FailedSum.Equals(input.FailedSum))) return false;
+            if (this.Role != input.Role) return false;
+            if (this.DiagnosisDimensionList != input.DiagnosisDimensionList || (this.DiagnosisDimensionList != null && input.DiagnosisDimensionList != null && !this.DiagnosisDimensionList.SequenceEqual(input.DiagnosisDimensionList))) return false;
+            if (this.CommandTimeTakenList != input.CommandTimeTakenList || (this.CommandTimeTakenList != null && !this.CommandTimeTakenList.Equals(input.CommandTimeTakenList))) return false;
 
-            return 
-                (
-                    this.NodeIp == input.NodeIp ||
-                    (this.NodeIp != null &&
-                    this.NodeIp.Equals(input.NodeIp))
-                ) && 
-                (
-                    this.AzCode == input.AzCode ||
-                    (this.AzCode != null &&
-                    this.AzCode.Equals(input.AzCode))
-                ) && 
-                (
-                    this.GroupName == input.GroupName ||
-                    (this.GroupName != null &&
-                    this.GroupName.Equals(input.GroupName))
-                ) && 
-                (
-                    this.AbnormalSum == input.AbnormalSum ||
-                    (this.AbnormalSum != null &&
-                    this.AbnormalSum.Equals(input.AbnormalSum))
-                ) && 
-                (
-                    this.FailedSum == input.FailedSum ||
-                    (this.FailedSum != null &&
-                    this.FailedSum.Equals(input.FailedSum))
-                ) && 
-                (
-                    this.Role == input.Role ||
-                    (this.Role != null &&
-                    this.Role.Equals(input.Role))
-                ) && 
-                (
-                    this.DiagnosisDimensionList == input.DiagnosisDimensionList ||
-                    this.DiagnosisDimensionList != null &&
-                    input.DiagnosisDimensionList != null &&
-                    this.DiagnosisDimensionList.SequenceEqual(input.DiagnosisDimensionList)
-                ) && 
-                (
-                    this.CommandTimeTakenList == input.CommandTimeTakenList ||
-                    (this.CommandTimeTakenList != null &&
-                    this.CommandTimeTakenList.Equals(input.CommandTimeTakenList))
-                );
+            return true;
         }
 
         /// <summary>
@@ -266,23 +232,15 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NodeIp != null)
-                    hashCode = hashCode * 59 + this.NodeIp.GetHashCode();
-                if (this.AzCode != null)
-                    hashCode = hashCode * 59 + this.AzCode.GetHashCode();
-                if (this.GroupName != null)
-                    hashCode = hashCode * 59 + this.GroupName.GetHashCode();
-                if (this.AbnormalSum != null)
-                    hashCode = hashCode * 59 + this.AbnormalSum.GetHashCode();
-                if (this.FailedSum != null)
-                    hashCode = hashCode * 59 + this.FailedSum.GetHashCode();
-                if (this.Role != null)
-                    hashCode = hashCode * 59 + this.Role.GetHashCode();
-                if (this.DiagnosisDimensionList != null)
-                    hashCode = hashCode * 59 + this.DiagnosisDimensionList.GetHashCode();
-                if (this.CommandTimeTakenList != null)
-                    hashCode = hashCode * 59 + this.CommandTimeTakenList.GetHashCode();
+                var hashCode = 41;
+                if (this.NodeIp != null) hashCode = hashCode * 59 + this.NodeIp.GetHashCode();
+                if (this.AzCode != null) hashCode = hashCode * 59 + this.AzCode.GetHashCode();
+                if (this.GroupName != null) hashCode = hashCode * 59 + this.GroupName.GetHashCode();
+                if (this.AbnormalSum != null) hashCode = hashCode * 59 + this.AbnormalSum.GetHashCode();
+                if (this.FailedSum != null) hashCode = hashCode * 59 + this.FailedSum.GetHashCode();
+                hashCode = hashCode * 59 + this.Role.GetHashCode();
+                if (this.DiagnosisDimensionList != null) hashCode = hashCode * 59 + this.DiagnosisDimensionList.GetHashCode();
+                if (this.CommandTimeTakenList != null) hashCode = hashCode * 59 + this.CommandTimeTakenList.GetHashCode();
                 return hashCode;
             }
         }

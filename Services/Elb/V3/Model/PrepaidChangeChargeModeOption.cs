@@ -191,35 +191,14 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(PrepaidChangeChargeModeOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IncludePublicip != input.IncludePublicip || (this.IncludePublicip != null && !this.IncludePublicip.Equals(input.IncludePublicip))) return false;
+            if (this.PeriodType != input.PeriodType) return false;
+            if (this.PeriodNum != input.PeriodNum || (this.PeriodNum != null && !this.PeriodNum.Equals(input.PeriodNum))) return false;
+            if (this.AutoRenew != input.AutoRenew || (this.AutoRenew != null && !this.AutoRenew.Equals(input.AutoRenew))) return false;
+            if (this.AutoPay != input.AutoPay || (this.AutoPay != null && !this.AutoPay.Equals(input.AutoPay))) return false;
 
-            return 
-                (
-                    this.IncludePublicip == input.IncludePublicip ||
-                    (this.IncludePublicip != null &&
-                    this.IncludePublicip.Equals(input.IncludePublicip))
-                ) && 
-                (
-                    this.PeriodType == input.PeriodType ||
-                    (this.PeriodType != null &&
-                    this.PeriodType.Equals(input.PeriodType))
-                ) && 
-                (
-                    this.PeriodNum == input.PeriodNum ||
-                    (this.PeriodNum != null &&
-                    this.PeriodNum.Equals(input.PeriodNum))
-                ) && 
-                (
-                    this.AutoRenew == input.AutoRenew ||
-                    (this.AutoRenew != null &&
-                    this.AutoRenew.Equals(input.AutoRenew))
-                ) && 
-                (
-                    this.AutoPay == input.AutoPay ||
-                    (this.AutoPay != null &&
-                    this.AutoPay.Equals(input.AutoPay))
-                );
+            return true;
         }
 
         /// <summary>
@@ -229,17 +208,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IncludePublicip != null)
-                    hashCode = hashCode * 59 + this.IncludePublicip.GetHashCode();
-                if (this.PeriodType != null)
-                    hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
-                if (this.PeriodNum != null)
-                    hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
-                if (this.AutoRenew != null)
-                    hashCode = hashCode * 59 + this.AutoRenew.GetHashCode();
-                if (this.AutoPay != null)
-                    hashCode = hashCode * 59 + this.AutoPay.GetHashCode();
+                var hashCode = 41;
+                if (this.IncludePublicip != null) hashCode = hashCode * 59 + this.IncludePublicip.GetHashCode();
+                hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
+                if (this.PeriodNum != null) hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
+                if (this.AutoRenew != null) hashCode = hashCode * 59 + this.AutoRenew.GetHashCode();
+                if (this.AutoPay != null) hashCode = hashCode * 59 + this.AutoPay.GetHashCode();
                 return hashCode;
             }
         }

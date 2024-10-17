@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         /// </summary>
         public bool Equals(DeleteResourceShareRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResourceShareId != input.ResourceShareId || (this.ResourceShareId != null && !this.ResourceShareId.Equals(input.ResourceShareId))) return false;
 
-            return 
-                (
-                    this.ResourceShareId == input.ResourceShareId ||
-                    (this.ResourceShareId != null &&
-                    this.ResourceShareId.Equals(input.ResourceShareId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResourceShareId != null)
-                    hashCode = hashCode * 59 + this.ResourceShareId.GetHashCode();
+                var hashCode = 41;
+                if (this.ResourceShareId != null) hashCode = hashCode * 59 + this.ResourceShareId.GetHashCode();
                 return hashCode;
             }
         }

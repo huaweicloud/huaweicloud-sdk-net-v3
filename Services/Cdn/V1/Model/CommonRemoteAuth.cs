@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(CommonRemoteAuth input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RemoteAuthentication != input.RemoteAuthentication || (this.RemoteAuthentication != null && !this.RemoteAuthentication.Equals(input.RemoteAuthentication))) return false;
+            if (this.RemoteAuthRules != input.RemoteAuthRules || (this.RemoteAuthRules != null && !this.RemoteAuthRules.Equals(input.RemoteAuthRules))) return false;
 
-            return 
-                (
-                    this.RemoteAuthentication == input.RemoteAuthentication ||
-                    (this.RemoteAuthentication != null &&
-                    this.RemoteAuthentication.Equals(input.RemoteAuthentication))
-                ) && 
-                (
-                    this.RemoteAuthRules == input.RemoteAuthRules ||
-                    (this.RemoteAuthRules != null &&
-                    this.RemoteAuthRules.Equals(input.RemoteAuthRules))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RemoteAuthentication != null)
-                    hashCode = hashCode * 59 + this.RemoteAuthentication.GetHashCode();
-                if (this.RemoteAuthRules != null)
-                    hashCode = hashCode * 59 + this.RemoteAuthRules.GetHashCode();
+                var hashCode = 41;
+                if (this.RemoteAuthentication != null) hashCode = hashCode * 59 + this.RemoteAuthentication.GetHashCode();
+                if (this.RemoteAuthRules != null) hashCode = hashCode * 59 + this.RemoteAuthRules.GetHashCode();
                 return hashCode;
             }
         }

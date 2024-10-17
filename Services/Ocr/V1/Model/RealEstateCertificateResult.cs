@@ -196,120 +196,31 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(RealEstateCertificateResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Issuer != input.Issuer || (this.Issuer != null && !this.Issuer.Equals(input.Issuer))) return false;
+            if (this.IssueDate != input.IssueDate || (this.IssueDate != null && !this.IssueDate.Equals(input.IssueDate))) return false;
+            if (this.RealEstateCertificateNo != input.RealEstateCertificateNo || (this.RealEstateCertificateNo != null && !this.RealEstateCertificateNo.Equals(input.RealEstateCertificateNo))) return false;
+            if (this.MortgageSeals != input.MortgageSeals || (this.MortgageSeals != null && !this.MortgageSeals.Equals(input.MortgageSeals))) return false;
+            if (this.CanceledMortgageSeals != input.CanceledMortgageSeals || (this.CanceledMortgageSeals != null && !this.CanceledMortgageSeals.Equals(input.CanceledMortgageSeals))) return false;
+            if (this.EstateLocation != input.EstateLocation || (this.EstateLocation != null && !this.EstateLocation.Equals(input.EstateLocation))) return false;
+            if (this.TotalFloors != input.TotalFloors || (this.TotalFloors != null && !this.TotalFloors.Equals(input.TotalFloors))) return false;
+            if (this.Floor != input.Floor || (this.Floor != null && !this.Floor.Equals(input.Floor))) return false;
+            if (this.YearBuilt != input.YearBuilt || (this.YearBuilt != null && !this.YearBuilt.Equals(input.YearBuilt))) return false;
+            if (this.Structure != input.Structure || (this.Structure != null && !this.Structure.Equals(input.Structure))) return false;
+            if (this.Area != input.Area || (this.Area != null && !this.Area.Equals(input.Area))) return false;
+            if (this.RevenueStamps != input.RevenueStamps || (this.RevenueStamps != null && !this.RevenueStamps.Equals(input.RevenueStamps))) return false;
+            if (this.OwnershipCertificateNo != input.OwnershipCertificateNo || (this.OwnershipCertificateNo != null && !this.OwnershipCertificateNo.Equals(input.OwnershipCertificateNo))) return false;
+            if (this.EstateHolder != input.EstateHolder || (this.EstateHolder != null && !this.EstateHolder.Equals(input.EstateHolder))) return false;
+            if (this.Obligee != input.Obligee || (this.Obligee != null && !this.Obligee.Equals(input.Obligee))) return false;
+            if (this.Ownership != input.Ownership || (this.Ownership != null && !this.Ownership.Equals(input.Ownership))) return false;
+            if (this.PropertyUnitNo != input.PropertyUnitNo || (this.PropertyUnitNo != null && !this.PropertyUnitNo.Equals(input.PropertyUnitNo))) return false;
+            if (this.RightType != input.RightType || (this.RightType != null && !this.RightType.Equals(input.RightType))) return false;
+            if (this.RightNature != input.RightNature || (this.RightNature != null && !this.RightNature.Equals(input.RightNature))) return false;
+            if (this.Usage != input.Usage || (this.Usage != null && !this.Usage.Equals(input.Usage))) return false;
+            if (this.IntendedUsage != input.IntendedUsage || (this.IntendedUsage != null && !this.IntendedUsage.Equals(input.IntendedUsage))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
 
-            return 
-                (
-                    this.Issuer == input.Issuer ||
-                    (this.Issuer != null &&
-                    this.Issuer.Equals(input.Issuer))
-                ) && 
-                (
-                    this.IssueDate == input.IssueDate ||
-                    (this.IssueDate != null &&
-                    this.IssueDate.Equals(input.IssueDate))
-                ) && 
-                (
-                    this.RealEstateCertificateNo == input.RealEstateCertificateNo ||
-                    (this.RealEstateCertificateNo != null &&
-                    this.RealEstateCertificateNo.Equals(input.RealEstateCertificateNo))
-                ) && 
-                (
-                    this.MortgageSeals == input.MortgageSeals ||
-                    (this.MortgageSeals != null &&
-                    this.MortgageSeals.Equals(input.MortgageSeals))
-                ) && 
-                (
-                    this.CanceledMortgageSeals == input.CanceledMortgageSeals ||
-                    (this.CanceledMortgageSeals != null &&
-                    this.CanceledMortgageSeals.Equals(input.CanceledMortgageSeals))
-                ) && 
-                (
-                    this.EstateLocation == input.EstateLocation ||
-                    (this.EstateLocation != null &&
-                    this.EstateLocation.Equals(input.EstateLocation))
-                ) && 
-                (
-                    this.TotalFloors == input.TotalFloors ||
-                    (this.TotalFloors != null &&
-                    this.TotalFloors.Equals(input.TotalFloors))
-                ) && 
-                (
-                    this.Floor == input.Floor ||
-                    (this.Floor != null &&
-                    this.Floor.Equals(input.Floor))
-                ) && 
-                (
-                    this.YearBuilt == input.YearBuilt ||
-                    (this.YearBuilt != null &&
-                    this.YearBuilt.Equals(input.YearBuilt))
-                ) && 
-                (
-                    this.Structure == input.Structure ||
-                    (this.Structure != null &&
-                    this.Structure.Equals(input.Structure))
-                ) && 
-                (
-                    this.Area == input.Area ||
-                    (this.Area != null &&
-                    this.Area.Equals(input.Area))
-                ) && 
-                (
-                    this.RevenueStamps == input.RevenueStamps ||
-                    (this.RevenueStamps != null &&
-                    this.RevenueStamps.Equals(input.RevenueStamps))
-                ) && 
-                (
-                    this.OwnershipCertificateNo == input.OwnershipCertificateNo ||
-                    (this.OwnershipCertificateNo != null &&
-                    this.OwnershipCertificateNo.Equals(input.OwnershipCertificateNo))
-                ) && 
-                (
-                    this.EstateHolder == input.EstateHolder ||
-                    (this.EstateHolder != null &&
-                    this.EstateHolder.Equals(input.EstateHolder))
-                ) && 
-                (
-                    this.Obligee == input.Obligee ||
-                    (this.Obligee != null &&
-                    this.Obligee.Equals(input.Obligee))
-                ) && 
-                (
-                    this.Ownership == input.Ownership ||
-                    (this.Ownership != null &&
-                    this.Ownership.Equals(input.Ownership))
-                ) && 
-                (
-                    this.PropertyUnitNo == input.PropertyUnitNo ||
-                    (this.PropertyUnitNo != null &&
-                    this.PropertyUnitNo.Equals(input.PropertyUnitNo))
-                ) && 
-                (
-                    this.RightType == input.RightType ||
-                    (this.RightType != null &&
-                    this.RightType.Equals(input.RightType))
-                ) && 
-                (
-                    this.RightNature == input.RightNature ||
-                    (this.RightNature != null &&
-                    this.RightNature.Equals(input.RightNature))
-                ) && 
-                (
-                    this.Usage == input.Usage ||
-                    (this.Usage != null &&
-                    this.Usage.Equals(input.Usage))
-                ) && 
-                (
-                    this.IntendedUsage == input.IntendedUsage ||
-                    (this.IntendedUsage != null &&
-                    this.IntendedUsage.Equals(input.IntendedUsage))
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                );
+            return true;
         }
 
         /// <summary>
@@ -319,51 +230,29 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Issuer != null)
-                    hashCode = hashCode * 59 + this.Issuer.GetHashCode();
-                if (this.IssueDate != null)
-                    hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
-                if (this.RealEstateCertificateNo != null)
-                    hashCode = hashCode * 59 + this.RealEstateCertificateNo.GetHashCode();
-                if (this.MortgageSeals != null)
-                    hashCode = hashCode * 59 + this.MortgageSeals.GetHashCode();
-                if (this.CanceledMortgageSeals != null)
-                    hashCode = hashCode * 59 + this.CanceledMortgageSeals.GetHashCode();
-                if (this.EstateLocation != null)
-                    hashCode = hashCode * 59 + this.EstateLocation.GetHashCode();
-                if (this.TotalFloors != null)
-                    hashCode = hashCode * 59 + this.TotalFloors.GetHashCode();
-                if (this.Floor != null)
-                    hashCode = hashCode * 59 + this.Floor.GetHashCode();
-                if (this.YearBuilt != null)
-                    hashCode = hashCode * 59 + this.YearBuilt.GetHashCode();
-                if (this.Structure != null)
-                    hashCode = hashCode * 59 + this.Structure.GetHashCode();
-                if (this.Area != null)
-                    hashCode = hashCode * 59 + this.Area.GetHashCode();
-                if (this.RevenueStamps != null)
-                    hashCode = hashCode * 59 + this.RevenueStamps.GetHashCode();
-                if (this.OwnershipCertificateNo != null)
-                    hashCode = hashCode * 59 + this.OwnershipCertificateNo.GetHashCode();
-                if (this.EstateHolder != null)
-                    hashCode = hashCode * 59 + this.EstateHolder.GetHashCode();
-                if (this.Obligee != null)
-                    hashCode = hashCode * 59 + this.Obligee.GetHashCode();
-                if (this.Ownership != null)
-                    hashCode = hashCode * 59 + this.Ownership.GetHashCode();
-                if (this.PropertyUnitNo != null)
-                    hashCode = hashCode * 59 + this.PropertyUnitNo.GetHashCode();
-                if (this.RightType != null)
-                    hashCode = hashCode * 59 + this.RightType.GetHashCode();
-                if (this.RightNature != null)
-                    hashCode = hashCode * 59 + this.RightNature.GetHashCode();
-                if (this.Usage != null)
-                    hashCode = hashCode * 59 + this.Usage.GetHashCode();
-                if (this.IntendedUsage != null)
-                    hashCode = hashCode * 59 + this.IntendedUsage.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                var hashCode = 41;
+                if (this.Issuer != null) hashCode = hashCode * 59 + this.Issuer.GetHashCode();
+                if (this.IssueDate != null) hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
+                if (this.RealEstateCertificateNo != null) hashCode = hashCode * 59 + this.RealEstateCertificateNo.GetHashCode();
+                if (this.MortgageSeals != null) hashCode = hashCode * 59 + this.MortgageSeals.GetHashCode();
+                if (this.CanceledMortgageSeals != null) hashCode = hashCode * 59 + this.CanceledMortgageSeals.GetHashCode();
+                if (this.EstateLocation != null) hashCode = hashCode * 59 + this.EstateLocation.GetHashCode();
+                if (this.TotalFloors != null) hashCode = hashCode * 59 + this.TotalFloors.GetHashCode();
+                if (this.Floor != null) hashCode = hashCode * 59 + this.Floor.GetHashCode();
+                if (this.YearBuilt != null) hashCode = hashCode * 59 + this.YearBuilt.GetHashCode();
+                if (this.Structure != null) hashCode = hashCode * 59 + this.Structure.GetHashCode();
+                if (this.Area != null) hashCode = hashCode * 59 + this.Area.GetHashCode();
+                if (this.RevenueStamps != null) hashCode = hashCode * 59 + this.RevenueStamps.GetHashCode();
+                if (this.OwnershipCertificateNo != null) hashCode = hashCode * 59 + this.OwnershipCertificateNo.GetHashCode();
+                if (this.EstateHolder != null) hashCode = hashCode * 59 + this.EstateHolder.GetHashCode();
+                if (this.Obligee != null) hashCode = hashCode * 59 + this.Obligee.GetHashCode();
+                if (this.Ownership != null) hashCode = hashCode * 59 + this.Ownership.GetHashCode();
+                if (this.PropertyUnitNo != null) hashCode = hashCode * 59 + this.PropertyUnitNo.GetHashCode();
+                if (this.RightType != null) hashCode = hashCode * 59 + this.RightType.GetHashCode();
+                if (this.RightNature != null) hashCode = hashCode * 59 + this.RightNature.GetHashCode();
+                if (this.Usage != null) hashCode = hashCode * 59 + this.Usage.GetHashCode();
+                if (this.IntendedUsage != null) hashCode = hashCode * 59 + this.IntendedUsage.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
                 return hashCode;
             }
         }

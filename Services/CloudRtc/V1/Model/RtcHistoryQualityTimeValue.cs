@@ -147,85 +147,24 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         /// </summary>
         public bool Equals(RtcHistoryQualityTimeValue input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Date != input.Date || (this.Date != null && !this.Date.Equals(input.Date))) return false;
+            if (this.JoinSuccessRate != input.JoinSuccessRate || (this.JoinSuccessRate != null && !this.JoinSuccessRate.Equals(input.JoinSuccessRate))) return false;
+            if (this.JoinSuccessIn5secsRate != input.JoinSuccessIn5secsRate || (this.JoinSuccessIn5secsRate != null && !this.JoinSuccessIn5secsRate.Equals(input.JoinSuccessIn5secsRate))) return false;
+            if (this.VideoFreezeRate != input.VideoFreezeRate || (this.VideoFreezeRate != null && !this.VideoFreezeRate.Equals(input.VideoFreezeRate))) return false;
+            if (this.AudioFreezeRate != input.AudioFreezeRate || (this.AudioFreezeRate != null && !this.AudioFreezeRate.Equals(input.AudioFreezeRate))) return false;
+            if (this.FirstVideoRecvTime != input.FirstVideoRecvTime || (this.FirstVideoRecvTime != null && !this.FirstVideoRecvTime.Equals(input.FirstVideoRecvTime))) return false;
+            if (this.FirstAudioRecvTime != input.FirstAudioRecvTime || (this.FirstAudioRecvTime != null && !this.FirstAudioRecvTime.Equals(input.FirstAudioRecvTime))) return false;
+            if (this.PullStreamSuccessRate != input.PullStreamSuccessRate || (this.PullStreamSuccessRate != null && !this.PullStreamSuccessRate.Equals(input.PullStreamSuccessRate))) return false;
+            if (this.PushStreamSuccessRate != input.PushStreamSuccessRate || (this.PushStreamSuccessRate != null && !this.PushStreamSuccessRate.Equals(input.PushStreamSuccessRate))) return false;
+            if (this.VideoUpstreamExcellentTransRate != input.VideoUpstreamExcellentTransRate || (this.VideoUpstreamExcellentTransRate != null && !this.VideoUpstreamExcellentTransRate.Equals(input.VideoUpstreamExcellentTransRate))) return false;
+            if (this.AudioUpstreamExcellentTransRate != input.AudioUpstreamExcellentTransRate || (this.AudioUpstreamExcellentTransRate != null && !this.AudioUpstreamExcellentTransRate.Equals(input.AudioUpstreamExcellentTransRate))) return false;
+            if (this.VideoExcellentTransRate != input.VideoExcellentTransRate || (this.VideoExcellentTransRate != null && !this.VideoExcellentTransRate.Equals(input.VideoExcellentTransRate))) return false;
+            if (this.AudioExcellentTransRate != input.AudioExcellentTransRate || (this.AudioExcellentTransRate != null && !this.AudioExcellentTransRate.Equals(input.AudioExcellentTransRate))) return false;
+            if (this.VideoTransDelay != input.VideoTransDelay || (this.VideoTransDelay != null && !this.VideoTransDelay.Equals(input.VideoTransDelay))) return false;
+            if (this.AudioTransDelay != input.AudioTransDelay || (this.AudioTransDelay != null && !this.AudioTransDelay.Equals(input.AudioTransDelay))) return false;
 
-            return 
-                (
-                    this.Date == input.Date ||
-                    (this.Date != null &&
-                    this.Date.Equals(input.Date))
-                ) && 
-                (
-                    this.JoinSuccessRate == input.JoinSuccessRate ||
-                    (this.JoinSuccessRate != null &&
-                    this.JoinSuccessRate.Equals(input.JoinSuccessRate))
-                ) && 
-                (
-                    this.JoinSuccessIn5secsRate == input.JoinSuccessIn5secsRate ||
-                    (this.JoinSuccessIn5secsRate != null &&
-                    this.JoinSuccessIn5secsRate.Equals(input.JoinSuccessIn5secsRate))
-                ) && 
-                (
-                    this.VideoFreezeRate == input.VideoFreezeRate ||
-                    (this.VideoFreezeRate != null &&
-                    this.VideoFreezeRate.Equals(input.VideoFreezeRate))
-                ) && 
-                (
-                    this.AudioFreezeRate == input.AudioFreezeRate ||
-                    (this.AudioFreezeRate != null &&
-                    this.AudioFreezeRate.Equals(input.AudioFreezeRate))
-                ) && 
-                (
-                    this.FirstVideoRecvTime == input.FirstVideoRecvTime ||
-                    (this.FirstVideoRecvTime != null &&
-                    this.FirstVideoRecvTime.Equals(input.FirstVideoRecvTime))
-                ) && 
-                (
-                    this.FirstAudioRecvTime == input.FirstAudioRecvTime ||
-                    (this.FirstAudioRecvTime != null &&
-                    this.FirstAudioRecvTime.Equals(input.FirstAudioRecvTime))
-                ) && 
-                (
-                    this.PullStreamSuccessRate == input.PullStreamSuccessRate ||
-                    (this.PullStreamSuccessRate != null &&
-                    this.PullStreamSuccessRate.Equals(input.PullStreamSuccessRate))
-                ) && 
-                (
-                    this.PushStreamSuccessRate == input.PushStreamSuccessRate ||
-                    (this.PushStreamSuccessRate != null &&
-                    this.PushStreamSuccessRate.Equals(input.PushStreamSuccessRate))
-                ) && 
-                (
-                    this.VideoUpstreamExcellentTransRate == input.VideoUpstreamExcellentTransRate ||
-                    (this.VideoUpstreamExcellentTransRate != null &&
-                    this.VideoUpstreamExcellentTransRate.Equals(input.VideoUpstreamExcellentTransRate))
-                ) && 
-                (
-                    this.AudioUpstreamExcellentTransRate == input.AudioUpstreamExcellentTransRate ||
-                    (this.AudioUpstreamExcellentTransRate != null &&
-                    this.AudioUpstreamExcellentTransRate.Equals(input.AudioUpstreamExcellentTransRate))
-                ) && 
-                (
-                    this.VideoExcellentTransRate == input.VideoExcellentTransRate ||
-                    (this.VideoExcellentTransRate != null &&
-                    this.VideoExcellentTransRate.Equals(input.VideoExcellentTransRate))
-                ) && 
-                (
-                    this.AudioExcellentTransRate == input.AudioExcellentTransRate ||
-                    (this.AudioExcellentTransRate != null &&
-                    this.AudioExcellentTransRate.Equals(input.AudioExcellentTransRate))
-                ) && 
-                (
-                    this.VideoTransDelay == input.VideoTransDelay ||
-                    (this.VideoTransDelay != null &&
-                    this.VideoTransDelay.Equals(input.VideoTransDelay))
-                ) && 
-                (
-                    this.AudioTransDelay == input.AudioTransDelay ||
-                    (this.AudioTransDelay != null &&
-                    this.AudioTransDelay.Equals(input.AudioTransDelay))
-                );
+            return true;
         }
 
         /// <summary>
@@ -235,37 +174,22 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Date != null)
-                    hashCode = hashCode * 59 + this.Date.GetHashCode();
-                if (this.JoinSuccessRate != null)
-                    hashCode = hashCode * 59 + this.JoinSuccessRate.GetHashCode();
-                if (this.JoinSuccessIn5secsRate != null)
-                    hashCode = hashCode * 59 + this.JoinSuccessIn5secsRate.GetHashCode();
-                if (this.VideoFreezeRate != null)
-                    hashCode = hashCode * 59 + this.VideoFreezeRate.GetHashCode();
-                if (this.AudioFreezeRate != null)
-                    hashCode = hashCode * 59 + this.AudioFreezeRate.GetHashCode();
-                if (this.FirstVideoRecvTime != null)
-                    hashCode = hashCode * 59 + this.FirstVideoRecvTime.GetHashCode();
-                if (this.FirstAudioRecvTime != null)
-                    hashCode = hashCode * 59 + this.FirstAudioRecvTime.GetHashCode();
-                if (this.PullStreamSuccessRate != null)
-                    hashCode = hashCode * 59 + this.PullStreamSuccessRate.GetHashCode();
-                if (this.PushStreamSuccessRate != null)
-                    hashCode = hashCode * 59 + this.PushStreamSuccessRate.GetHashCode();
-                if (this.VideoUpstreamExcellentTransRate != null)
-                    hashCode = hashCode * 59 + this.VideoUpstreamExcellentTransRate.GetHashCode();
-                if (this.AudioUpstreamExcellentTransRate != null)
-                    hashCode = hashCode * 59 + this.AudioUpstreamExcellentTransRate.GetHashCode();
-                if (this.VideoExcellentTransRate != null)
-                    hashCode = hashCode * 59 + this.VideoExcellentTransRate.GetHashCode();
-                if (this.AudioExcellentTransRate != null)
-                    hashCode = hashCode * 59 + this.AudioExcellentTransRate.GetHashCode();
-                if (this.VideoTransDelay != null)
-                    hashCode = hashCode * 59 + this.VideoTransDelay.GetHashCode();
-                if (this.AudioTransDelay != null)
-                    hashCode = hashCode * 59 + this.AudioTransDelay.GetHashCode();
+                var hashCode = 41;
+                if (this.Date != null) hashCode = hashCode * 59 + this.Date.GetHashCode();
+                if (this.JoinSuccessRate != null) hashCode = hashCode * 59 + this.JoinSuccessRate.GetHashCode();
+                if (this.JoinSuccessIn5secsRate != null) hashCode = hashCode * 59 + this.JoinSuccessIn5secsRate.GetHashCode();
+                if (this.VideoFreezeRate != null) hashCode = hashCode * 59 + this.VideoFreezeRate.GetHashCode();
+                if (this.AudioFreezeRate != null) hashCode = hashCode * 59 + this.AudioFreezeRate.GetHashCode();
+                if (this.FirstVideoRecvTime != null) hashCode = hashCode * 59 + this.FirstVideoRecvTime.GetHashCode();
+                if (this.FirstAudioRecvTime != null) hashCode = hashCode * 59 + this.FirstAudioRecvTime.GetHashCode();
+                if (this.PullStreamSuccessRate != null) hashCode = hashCode * 59 + this.PullStreamSuccessRate.GetHashCode();
+                if (this.PushStreamSuccessRate != null) hashCode = hashCode * 59 + this.PushStreamSuccessRate.GetHashCode();
+                if (this.VideoUpstreamExcellentTransRate != null) hashCode = hashCode * 59 + this.VideoUpstreamExcellentTransRate.GetHashCode();
+                if (this.AudioUpstreamExcellentTransRate != null) hashCode = hashCode * 59 + this.AudioUpstreamExcellentTransRate.GetHashCode();
+                if (this.VideoExcellentTransRate != null) hashCode = hashCode * 59 + this.VideoExcellentTransRate.GetHashCode();
+                if (this.AudioExcellentTransRate != null) hashCode = hashCode * 59 + this.AudioExcellentTransRate.GetHashCode();
+                if (this.VideoTransDelay != null) hashCode = hashCode * 59 + this.VideoTransDelay.GetHashCode();
+                if (this.AudioTransDelay != null) hashCode = hashCode * 59 + this.AudioTransDelay.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(NeutronListPortsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Ports != input.Ports || (this.Ports != null && input.Ports != null && !this.Ports.SequenceEqual(input.Ports))) return false;
+            if (this.PortsLinks != input.PortsLinks || (this.PortsLinks != null && input.PortsLinks != null && !this.PortsLinks.SequenceEqual(input.PortsLinks))) return false;
 
-            return 
-                (
-                    this.Ports == input.Ports ||
-                    this.Ports != null &&
-                    input.Ports != null &&
-                    this.Ports.SequenceEqual(input.Ports)
-                ) && 
-                (
-                    this.PortsLinks == input.PortsLinks ||
-                    this.PortsLinks != null &&
-                    input.PortsLinks != null &&
-                    this.PortsLinks.SequenceEqual(input.PortsLinks)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Ports != null)
-                    hashCode = hashCode * 59 + this.Ports.GetHashCode();
-                if (this.PortsLinks != null)
-                    hashCode = hashCode * 59 + this.PortsLinks.GetHashCode();
+                var hashCode = 41;
+                if (this.Ports != null) hashCode = hashCode * 59 + this.Ports.GetHashCode();
+                if (this.PortsLinks != null) hashCode = hashCode * 59 + this.PortsLinks.GetHashCode();
                 return hashCode;
             }
         }

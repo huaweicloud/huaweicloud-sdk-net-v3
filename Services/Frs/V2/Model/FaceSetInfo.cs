@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public bool Equals(FaceSetInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FaceNumber != input.FaceNumber || (this.FaceNumber != null && !this.FaceNumber.Equals(input.FaceNumber))) return false;
+            if (this.ExternalFields != input.ExternalFields || (this.ExternalFields != null && !this.ExternalFields.Equals(input.ExternalFields))) return false;
+            if (this.FaceSetId != input.FaceSetId || (this.FaceSetId != null && !this.FaceSetId.Equals(input.FaceSetId))) return false;
+            if (this.FaceSetName != input.FaceSetName || (this.FaceSetName != null && !this.FaceSetName.Equals(input.FaceSetName))) return false;
+            if (this.CreateDate != input.CreateDate || (this.CreateDate != null && !this.CreateDate.Equals(input.CreateDate))) return false;
+            if (this.FaceSetCapacity != input.FaceSetCapacity || (this.FaceSetCapacity != null && !this.FaceSetCapacity.Equals(input.FaceSetCapacity))) return false;
 
-            return 
-                (
-                    this.FaceNumber == input.FaceNumber ||
-                    (this.FaceNumber != null &&
-                    this.FaceNumber.Equals(input.FaceNumber))
-                ) && 
-                (
-                    this.ExternalFields == input.ExternalFields ||
-                    (this.ExternalFields != null &&
-                    this.ExternalFields.Equals(input.ExternalFields))
-                ) && 
-                (
-                    this.FaceSetId == input.FaceSetId ||
-                    (this.FaceSetId != null &&
-                    this.FaceSetId.Equals(input.FaceSetId))
-                ) && 
-                (
-                    this.FaceSetName == input.FaceSetName ||
-                    (this.FaceSetName != null &&
-                    this.FaceSetName.Equals(input.FaceSetName))
-                ) && 
-                (
-                    this.CreateDate == input.CreateDate ||
-                    (this.CreateDate != null &&
-                    this.CreateDate.Equals(input.CreateDate))
-                ) && 
-                (
-                    this.FaceSetCapacity == input.FaceSetCapacity ||
-                    (this.FaceSetCapacity != null &&
-                    this.FaceSetCapacity.Equals(input.FaceSetCapacity))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FaceNumber != null)
-                    hashCode = hashCode * 59 + this.FaceNumber.GetHashCode();
-                if (this.ExternalFields != null)
-                    hashCode = hashCode * 59 + this.ExternalFields.GetHashCode();
-                if (this.FaceSetId != null)
-                    hashCode = hashCode * 59 + this.FaceSetId.GetHashCode();
-                if (this.FaceSetName != null)
-                    hashCode = hashCode * 59 + this.FaceSetName.GetHashCode();
-                if (this.CreateDate != null)
-                    hashCode = hashCode * 59 + this.CreateDate.GetHashCode();
-                if (this.FaceSetCapacity != null)
-                    hashCode = hashCode * 59 + this.FaceSetCapacity.GetHashCode();
+                var hashCode = 41;
+                if (this.FaceNumber != null) hashCode = hashCode * 59 + this.FaceNumber.GetHashCode();
+                if (this.ExternalFields != null) hashCode = hashCode * 59 + this.ExternalFields.GetHashCode();
+                if (this.FaceSetId != null) hashCode = hashCode * 59 + this.FaceSetId.GetHashCode();
+                if (this.FaceSetName != null) hashCode = hashCode * 59 + this.FaceSetName.GetHashCode();
+                if (this.CreateDate != null) hashCode = hashCode * 59 + this.CreateDate.GetHashCode();
+                if (this.FaceSetCapacity != null) hashCode = hashCode * 59 + this.FaceSetCapacity.GetHashCode();
                 return hashCode;
             }
         }

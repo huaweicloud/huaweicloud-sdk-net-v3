@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(BackupFileResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FileName != input.FileName || (this.FileName != null && !this.FileName.Equals(input.FileName))) return false;
+            if (this.FileSize != input.FileSize || (this.FileSize != null && !this.FileSize.Equals(input.FileSize))) return false;
+            if (this.FileLastModify != input.FileLastModify || (this.FileLastModify != null && !this.FileLastModify.Equals(input.FileLastModify))) return false;
 
-            return 
-                (
-                    this.FileName == input.FileName ||
-                    (this.FileName != null &&
-                    this.FileName.Equals(input.FileName))
-                ) && 
-                (
-                    this.FileSize == input.FileSize ||
-                    (this.FileSize != null &&
-                    this.FileSize.Equals(input.FileSize))
-                ) && 
-                (
-                    this.FileLastModify == input.FileLastModify ||
-                    (this.FileLastModify != null &&
-                    this.FileLastModify.Equals(input.FileLastModify))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FileName != null)
-                    hashCode = hashCode * 59 + this.FileName.GetHashCode();
-                if (this.FileSize != null)
-                    hashCode = hashCode * 59 + this.FileSize.GetHashCode();
-                if (this.FileLastModify != null)
-                    hashCode = hashCode * 59 + this.FileLastModify.GetHashCode();
+                var hashCode = 41;
+                if (this.FileName != null) hashCode = hashCode * 59 + this.FileName.GetHashCode();
+                if (this.FileSize != null) hashCode = hashCode * 59 + this.FileSize.GetHashCode();
+                if (this.FileLastModify != null) hashCode = hashCode * 59 + this.FileLastModify.GetHashCode();
                 return hashCode;
             }
         }

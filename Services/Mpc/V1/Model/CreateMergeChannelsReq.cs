@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(CreateMergeChannelsReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MultiAudio != input.MultiAudio || (this.MultiAudio != null && !this.MultiAudio.Equals(input.MultiAudio))) return false;
 
-            return 
-                (
-                    this.MultiAudio == input.MultiAudio ||
-                    (this.MultiAudio != null &&
-                    this.MultiAudio.Equals(input.MultiAudio))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MultiAudio != null)
-                    hashCode = hashCode * 59 + this.MultiAudio.GetHashCode();
+                var hashCode = 41;
+                if (this.MultiAudio != null) hashCode = hashCode * 59 + this.MultiAudio.GetHashCode();
                 return hashCode;
             }
         }

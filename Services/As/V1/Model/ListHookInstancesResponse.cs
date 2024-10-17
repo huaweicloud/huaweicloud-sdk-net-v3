@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(ListHookInstancesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceHangingInfo != input.InstanceHangingInfo || (this.InstanceHangingInfo != null && input.InstanceHangingInfo != null && !this.InstanceHangingInfo.SequenceEqual(input.InstanceHangingInfo))) return false;
 
-            return 
-                (
-                    this.InstanceHangingInfo == input.InstanceHangingInfo ||
-                    this.InstanceHangingInfo != null &&
-                    input.InstanceHangingInfo != null &&
-                    this.InstanceHangingInfo.SequenceEqual(input.InstanceHangingInfo)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceHangingInfo != null)
-                    hashCode = hashCode * 59 + this.InstanceHangingInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceHangingInfo != null) hashCode = hashCode * 59 + this.InstanceHangingInfo.GetHashCode();
                 return hashCode;
             }
         }

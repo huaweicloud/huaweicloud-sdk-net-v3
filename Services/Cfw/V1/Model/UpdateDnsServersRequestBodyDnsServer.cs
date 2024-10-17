@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(UpdateDnsServersRequestBodyDnsServer input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ServerIp != input.ServerIp || (this.ServerIp != null && !this.ServerIp.Equals(input.ServerIp))) return false;
+            if (this.IsCustomized != input.IsCustomized || (this.IsCustomized != null && !this.IsCustomized.Equals(input.IsCustomized))) return false;
+            if (this.IsApplied != input.IsApplied || (this.IsApplied != null && !this.IsApplied.Equals(input.IsApplied))) return false;
 
-            return 
-                (
-                    this.ServerIp == input.ServerIp ||
-                    (this.ServerIp != null &&
-                    this.ServerIp.Equals(input.ServerIp))
-                ) && 
-                (
-                    this.IsCustomized == input.IsCustomized ||
-                    (this.IsCustomized != null &&
-                    this.IsCustomized.Equals(input.IsCustomized))
-                ) && 
-                (
-                    this.IsApplied == input.IsApplied ||
-                    (this.IsApplied != null &&
-                    this.IsApplied.Equals(input.IsApplied))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ServerIp != null)
-                    hashCode = hashCode * 59 + this.ServerIp.GetHashCode();
-                if (this.IsCustomized != null)
-                    hashCode = hashCode * 59 + this.IsCustomized.GetHashCode();
-                if (this.IsApplied != null)
-                    hashCode = hashCode * 59 + this.IsApplied.GetHashCode();
+                var hashCode = 41;
+                if (this.ServerIp != null) hashCode = hashCode * 59 + this.ServerIp.GetHashCode();
+                if (this.IsCustomized != null) hashCode = hashCode * 59 + this.IsCustomized.GetHashCode();
+                if (this.IsApplied != null) hashCode = hashCode * 59 + this.IsApplied.GetHashCode();
                 return hashCode;
             }
         }

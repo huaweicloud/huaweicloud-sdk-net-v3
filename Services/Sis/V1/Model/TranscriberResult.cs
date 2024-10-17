@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         /// </summary>
         public bool Equals(TranscriberResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Text != input.Text || (this.Text != null && !this.Text.Equals(input.Text))) return false;
+            if (this.AnalysisInfo != input.AnalysisInfo || (this.AnalysisInfo != null && !this.AnalysisInfo.Equals(input.AnalysisInfo))) return false;
+            if (this.WordInfo != input.WordInfo || (this.WordInfo != null && input.WordInfo != null && !this.WordInfo.SequenceEqual(input.WordInfo))) return false;
 
-            return 
-                (
-                    this.Text == input.Text ||
-                    (this.Text != null &&
-                    this.Text.Equals(input.Text))
-                ) && 
-                (
-                    this.AnalysisInfo == input.AnalysisInfo ||
-                    (this.AnalysisInfo != null &&
-                    this.AnalysisInfo.Equals(input.AnalysisInfo))
-                ) && 
-                (
-                    this.WordInfo == input.WordInfo ||
-                    this.WordInfo != null &&
-                    input.WordInfo != null &&
-                    this.WordInfo.SequenceEqual(input.WordInfo)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Text != null)
-                    hashCode = hashCode * 59 + this.Text.GetHashCode();
-                if (this.AnalysisInfo != null)
-                    hashCode = hashCode * 59 + this.AnalysisInfo.GetHashCode();
-                if (this.WordInfo != null)
-                    hashCode = hashCode * 59 + this.WordInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.Text != null) hashCode = hashCode * 59 + this.Text.GetHashCode();
+                if (this.AnalysisInfo != null) hashCode = hashCode * 59 + this.AnalysisInfo.GetHashCode();
+                if (this.WordInfo != null) hashCode = hashCode * 59 + this.WordInfo.GetHashCode();
                 return hashCode;
             }
         }

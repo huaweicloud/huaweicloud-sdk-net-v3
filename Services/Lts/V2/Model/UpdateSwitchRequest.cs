@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(UpdateSwitchRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LogConvergeSwitch != input.LogConvergeSwitch || (this.LogConvergeSwitch != null && !this.LogConvergeSwitch.Equals(input.LogConvergeSwitch))) return false;
 
-            return 
-                (
-                    this.LogConvergeSwitch == input.LogConvergeSwitch ||
-                    (this.LogConvergeSwitch != null &&
-                    this.LogConvergeSwitch.Equals(input.LogConvergeSwitch))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LogConvergeSwitch != null)
-                    hashCode = hashCode * 59 + this.LogConvergeSwitch.GetHashCode();
+                var hashCode = 41;
+                if (this.LogConvergeSwitch != null) hashCode = hashCode * 59 + this.LogConvergeSwitch.GetHashCode();
                 return hashCode;
             }
         }

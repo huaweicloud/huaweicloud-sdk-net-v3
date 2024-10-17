@@ -396,40 +396,15 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(UpdateTriggerResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TriggerId != input.TriggerId || (this.TriggerId != null && !this.TriggerId.Equals(input.TriggerId))) return false;
+            if (this.TriggerTypeCode != input.TriggerTypeCode) return false;
+            if (this.TriggerStatus != input.TriggerStatus) return false;
+            if (this.EventData != input.EventData || (this.EventData != null && !this.EventData.Equals(input.EventData))) return false;
+            if (this.LastUpdatedTime != input.LastUpdatedTime || (this.LastUpdatedTime != null && !this.LastUpdatedTime.Equals(input.LastUpdatedTime))) return false;
+            if (this.CreatedTime != input.CreatedTime || (this.CreatedTime != null && !this.CreatedTime.Equals(input.CreatedTime))) return false;
 
-            return 
-                (
-                    this.TriggerId == input.TriggerId ||
-                    (this.TriggerId != null &&
-                    this.TriggerId.Equals(input.TriggerId))
-                ) && 
-                (
-                    this.TriggerTypeCode == input.TriggerTypeCode ||
-                    (this.TriggerTypeCode != null &&
-                    this.TriggerTypeCode.Equals(input.TriggerTypeCode))
-                ) && 
-                (
-                    this.TriggerStatus == input.TriggerStatus ||
-                    (this.TriggerStatus != null &&
-                    this.TriggerStatus.Equals(input.TriggerStatus))
-                ) && 
-                (
-                    this.EventData == input.EventData ||
-                    (this.EventData != null &&
-                    this.EventData.Equals(input.EventData))
-                ) && 
-                (
-                    this.LastUpdatedTime == input.LastUpdatedTime ||
-                    (this.LastUpdatedTime != null &&
-                    this.LastUpdatedTime.Equals(input.LastUpdatedTime))
-                ) && 
-                (
-                    this.CreatedTime == input.CreatedTime ||
-                    (this.CreatedTime != null &&
-                    this.CreatedTime.Equals(input.CreatedTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -439,19 +414,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TriggerId != null)
-                    hashCode = hashCode * 59 + this.TriggerId.GetHashCode();
-                if (this.TriggerTypeCode != null)
-                    hashCode = hashCode * 59 + this.TriggerTypeCode.GetHashCode();
-                if (this.TriggerStatus != null)
-                    hashCode = hashCode * 59 + this.TriggerStatus.GetHashCode();
-                if (this.EventData != null)
-                    hashCode = hashCode * 59 + this.EventData.GetHashCode();
-                if (this.LastUpdatedTime != null)
-                    hashCode = hashCode * 59 + this.LastUpdatedTime.GetHashCode();
-                if (this.CreatedTime != null)
-                    hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
+                var hashCode = 41;
+                if (this.TriggerId != null) hashCode = hashCode * 59 + this.TriggerId.GetHashCode();
+                hashCode = hashCode * 59 + this.TriggerTypeCode.GetHashCode();
+                hashCode = hashCode * 59 + this.TriggerStatus.GetHashCode();
+                if (this.EventData != null) hashCode = hashCode * 59 + this.EventData.GetHashCode();
+                if (this.LastUpdatedTime != null) hashCode = hashCode * 59 + this.LastUpdatedTime.GetHashCode();
+                if (this.CreatedTime != null) hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
                 return hashCode;
             }
         }

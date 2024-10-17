@@ -70,33 +70,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public bool Equals(ShowCeshierarchyRespChildren input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Metrics != input.Metrics || (this.Metrics != null && input.Metrics != null && !this.Metrics.SequenceEqual(input.Metrics))) return false;
+            if (this.KeyName != input.KeyName || (this.KeyName != null && input.KeyName != null && !this.KeyName.SequenceEqual(input.KeyName))) return false;
+            if (this.DimRouter != input.DimRouter || (this.DimRouter != null && input.DimRouter != null && !this.DimRouter.SequenceEqual(input.DimRouter))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Metrics == input.Metrics ||
-                    this.Metrics != null &&
-                    input.Metrics != null &&
-                    this.Metrics.SequenceEqual(input.Metrics)
-                ) && 
-                (
-                    this.KeyName == input.KeyName ||
-                    this.KeyName != null &&
-                    input.KeyName != null &&
-                    this.KeyName.SequenceEqual(input.KeyName)
-                ) && 
-                (
-                    this.DimRouter == input.DimRouter ||
-                    this.DimRouter != null &&
-                    input.DimRouter != null &&
-                    this.DimRouter.SequenceEqual(input.DimRouter)
-                );
+            return true;
         }
 
         /// <summary>
@@ -106,15 +86,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Metrics != null)
-                    hashCode = hashCode * 59 + this.Metrics.GetHashCode();
-                if (this.KeyName != null)
-                    hashCode = hashCode * 59 + this.KeyName.GetHashCode();
-                if (this.DimRouter != null)
-                    hashCode = hashCode * 59 + this.DimRouter.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Metrics != null) hashCode = hashCode * 59 + this.Metrics.GetHashCode();
+                if (this.KeyName != null) hashCode = hashCode * 59 + this.KeyName.GetHashCode();
+                if (this.DimRouter != null) hashCode = hashCode * 59 + this.DimRouter.GetHashCode();
                 return hashCode;
             }
         }

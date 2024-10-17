@@ -119,65 +119,20 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(PolicyoODCreate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DayBackups != input.DayBackups || (this.DayBackups != null && !this.DayBackups.Equals(input.DayBackups))) return false;
+            if (this.DestinationProjectId != input.DestinationProjectId || (this.DestinationProjectId != null && !this.DestinationProjectId.Equals(input.DestinationProjectId))) return false;
+            if (this.DestinationRegion != input.DestinationRegion || (this.DestinationRegion != null && !this.DestinationRegion.Equals(input.DestinationRegion))) return false;
+            if (this.EnableAcceleration != input.EnableAcceleration || (this.EnableAcceleration != null && !this.EnableAcceleration.Equals(input.EnableAcceleration))) return false;
+            if (this.MaxBackups != input.MaxBackups || (this.MaxBackups != null && !this.MaxBackups.Equals(input.MaxBackups))) return false;
+            if (this.MonthBackups != input.MonthBackups || (this.MonthBackups != null && !this.MonthBackups.Equals(input.MonthBackups))) return false;
+            if (this.RetentionDurationDays != input.RetentionDurationDays || (this.RetentionDurationDays != null && !this.RetentionDurationDays.Equals(input.RetentionDurationDays))) return false;
+            if (this.Timezone != input.Timezone || (this.Timezone != null && !this.Timezone.Equals(input.Timezone))) return false;
+            if (this.WeekBackups != input.WeekBackups || (this.WeekBackups != null && !this.WeekBackups.Equals(input.WeekBackups))) return false;
+            if (this.YearBackups != input.YearBackups || (this.YearBackups != null && !this.YearBackups.Equals(input.YearBackups))) return false;
+            if (this.FullBackupInterval != input.FullBackupInterval || (this.FullBackupInterval != null && !this.FullBackupInterval.Equals(input.FullBackupInterval))) return false;
 
-            return 
-                (
-                    this.DayBackups == input.DayBackups ||
-                    (this.DayBackups != null &&
-                    this.DayBackups.Equals(input.DayBackups))
-                ) && 
-                (
-                    this.DestinationProjectId == input.DestinationProjectId ||
-                    (this.DestinationProjectId != null &&
-                    this.DestinationProjectId.Equals(input.DestinationProjectId))
-                ) && 
-                (
-                    this.DestinationRegion == input.DestinationRegion ||
-                    (this.DestinationRegion != null &&
-                    this.DestinationRegion.Equals(input.DestinationRegion))
-                ) && 
-                (
-                    this.EnableAcceleration == input.EnableAcceleration ||
-                    (this.EnableAcceleration != null &&
-                    this.EnableAcceleration.Equals(input.EnableAcceleration))
-                ) && 
-                (
-                    this.MaxBackups == input.MaxBackups ||
-                    (this.MaxBackups != null &&
-                    this.MaxBackups.Equals(input.MaxBackups))
-                ) && 
-                (
-                    this.MonthBackups == input.MonthBackups ||
-                    (this.MonthBackups != null &&
-                    this.MonthBackups.Equals(input.MonthBackups))
-                ) && 
-                (
-                    this.RetentionDurationDays == input.RetentionDurationDays ||
-                    (this.RetentionDurationDays != null &&
-                    this.RetentionDurationDays.Equals(input.RetentionDurationDays))
-                ) && 
-                (
-                    this.Timezone == input.Timezone ||
-                    (this.Timezone != null &&
-                    this.Timezone.Equals(input.Timezone))
-                ) && 
-                (
-                    this.WeekBackups == input.WeekBackups ||
-                    (this.WeekBackups != null &&
-                    this.WeekBackups.Equals(input.WeekBackups))
-                ) && 
-                (
-                    this.YearBackups == input.YearBackups ||
-                    (this.YearBackups != null &&
-                    this.YearBackups.Equals(input.YearBackups))
-                ) && 
-                (
-                    this.FullBackupInterval == input.FullBackupInterval ||
-                    (this.FullBackupInterval != null &&
-                    this.FullBackupInterval.Equals(input.FullBackupInterval))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,29 +142,18 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DayBackups != null)
-                    hashCode = hashCode * 59 + this.DayBackups.GetHashCode();
-                if (this.DestinationProjectId != null)
-                    hashCode = hashCode * 59 + this.DestinationProjectId.GetHashCode();
-                if (this.DestinationRegion != null)
-                    hashCode = hashCode * 59 + this.DestinationRegion.GetHashCode();
-                if (this.EnableAcceleration != null)
-                    hashCode = hashCode * 59 + this.EnableAcceleration.GetHashCode();
-                if (this.MaxBackups != null)
-                    hashCode = hashCode * 59 + this.MaxBackups.GetHashCode();
-                if (this.MonthBackups != null)
-                    hashCode = hashCode * 59 + this.MonthBackups.GetHashCode();
-                if (this.RetentionDurationDays != null)
-                    hashCode = hashCode * 59 + this.RetentionDurationDays.GetHashCode();
-                if (this.Timezone != null)
-                    hashCode = hashCode * 59 + this.Timezone.GetHashCode();
-                if (this.WeekBackups != null)
-                    hashCode = hashCode * 59 + this.WeekBackups.GetHashCode();
-                if (this.YearBackups != null)
-                    hashCode = hashCode * 59 + this.YearBackups.GetHashCode();
-                if (this.FullBackupInterval != null)
-                    hashCode = hashCode * 59 + this.FullBackupInterval.GetHashCode();
+                var hashCode = 41;
+                if (this.DayBackups != null) hashCode = hashCode * 59 + this.DayBackups.GetHashCode();
+                if (this.DestinationProjectId != null) hashCode = hashCode * 59 + this.DestinationProjectId.GetHashCode();
+                if (this.DestinationRegion != null) hashCode = hashCode * 59 + this.DestinationRegion.GetHashCode();
+                if (this.EnableAcceleration != null) hashCode = hashCode * 59 + this.EnableAcceleration.GetHashCode();
+                if (this.MaxBackups != null) hashCode = hashCode * 59 + this.MaxBackups.GetHashCode();
+                if (this.MonthBackups != null) hashCode = hashCode * 59 + this.MonthBackups.GetHashCode();
+                if (this.RetentionDurationDays != null) hashCode = hashCode * 59 + this.RetentionDurationDays.GetHashCode();
+                if (this.Timezone != null) hashCode = hashCode * 59 + this.Timezone.GetHashCode();
+                if (this.WeekBackups != null) hashCode = hashCode * 59 + this.WeekBackups.GetHashCode();
+                if (this.YearBackups != null) hashCode = hashCode * 59 + this.YearBackups.GetHashCode();
+                if (this.FullBackupInterval != null) hashCode = hashCode * 59 + this.FullBackupInterval.GetHashCode();
                 return hashCode;
             }
         }

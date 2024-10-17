@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(InstallKernelPluginRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PluginName != input.PluginName || (this.PluginName != null && !this.PluginName.Equals(input.PluginName))) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.Sha256 != input.Sha256 || (this.Sha256 != null && !this.Sha256.Equals(input.Sha256))) return false;
 
-            return 
-                (
-                    this.PluginName == input.PluginName ||
-                    (this.PluginName != null &&
-                    this.PluginName.Equals(input.PluginName))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.Sha256 == input.Sha256 ||
-                    (this.Sha256 != null &&
-                    this.Sha256.Equals(input.Sha256))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PluginName != null)
-                    hashCode = hashCode * 59 + this.PluginName.GetHashCode();
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.Sha256 != null)
-                    hashCode = hashCode * 59 + this.Sha256.GetHashCode();
+                var hashCode = 41;
+                if (this.PluginName != null) hashCode = hashCode * 59 + this.PluginName.GetHashCode();
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.Sha256 != null) hashCode = hashCode * 59 + this.Sha256.GetHashCode();
                 return hashCode;
             }
         }

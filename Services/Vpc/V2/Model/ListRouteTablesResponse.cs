@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(ListRouteTablesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Routetables != input.Routetables || (this.Routetables != null && input.Routetables != null && !this.Routetables.SequenceEqual(input.Routetables))) return false;
 
-            return 
-                (
-                    this.Routetables == input.Routetables ||
-                    this.Routetables != null &&
-                    input.Routetables != null &&
-                    this.Routetables.SequenceEqual(input.Routetables)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Routetables != null)
-                    hashCode = hashCode * 59 + this.Routetables.GetHashCode();
+                var hashCode = 41;
+                if (this.Routetables != null) hashCode = hashCode * 59 + this.Routetables.GetHashCode();
                 return hashCode;
             }
         }

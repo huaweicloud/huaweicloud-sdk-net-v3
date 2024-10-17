@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(ShowDomainRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceProjectId != input.SourceProjectId || (this.SourceProjectId != null && !this.SourceProjectId.Equals(input.SourceProjectId))) return false;
 
-            return 
-                (
-                    this.SourceProjectId == input.SourceProjectId ||
-                    (this.SourceProjectId != null &&
-                    this.SourceProjectId.Equals(input.SourceProjectId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceProjectId != null)
-                    hashCode = hashCode * 59 + this.SourceProjectId.GetHashCode();
+                var hashCode = 41;
+                if (this.SourceProjectId != null) hashCode = hashCode * 59 + this.SourceProjectId.GetHashCode();
                 return hashCode;
             }
         }

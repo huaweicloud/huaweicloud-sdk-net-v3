@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(HotfixVersionInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.UpgradeFinishedTime != input.UpgradeFinishedTime || (this.UpgradeFinishedTime != null && !this.UpgradeFinishedTime.Equals(input.UpgradeFinishedTime))) return false;
 
-            return 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.UpgradeFinishedTime == input.UpgradeFinishedTime ||
-                    (this.UpgradeFinishedTime != null &&
-                    this.UpgradeFinishedTime.Equals(input.UpgradeFinishedTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.UpgradeFinishedTime != null)
-                    hashCode = hashCode * 59 + this.UpgradeFinishedTime.GetHashCode();
+                var hashCode = 41;
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.UpgradeFinishedTime != null) hashCode = hashCode * 59 + this.UpgradeFinishedTime.GetHashCode();
                 return hashCode;
             }
         }

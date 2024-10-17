@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(RedisConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ParamValue != input.ParamValue || (this.ParamValue != null && !this.ParamValue.Equals(input.ParamValue))) return false;
+            if (this.ParamName != input.ParamName || (this.ParamName != null && !this.ParamName.Equals(input.ParamName))) return false;
+            if (this.ParamId != input.ParamId || (this.ParamId != null && !this.ParamId.Equals(input.ParamId))) return false;
 
-            return 
-                (
-                    this.ParamValue == input.ParamValue ||
-                    (this.ParamValue != null &&
-                    this.ParamValue.Equals(input.ParamValue))
-                ) && 
-                (
-                    this.ParamName == input.ParamName ||
-                    (this.ParamName != null &&
-                    this.ParamName.Equals(input.ParamName))
-                ) && 
-                (
-                    this.ParamId == input.ParamId ||
-                    (this.ParamId != null &&
-                    this.ParamId.Equals(input.ParamId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ParamValue != null)
-                    hashCode = hashCode * 59 + this.ParamValue.GetHashCode();
-                if (this.ParamName != null)
-                    hashCode = hashCode * 59 + this.ParamName.GetHashCode();
-                if (this.ParamId != null)
-                    hashCode = hashCode * 59 + this.ParamId.GetHashCode();
+                var hashCode = 41;
+                if (this.ParamValue != null) hashCode = hashCode * 59 + this.ParamValue.GetHashCode();
+                if (this.ParamName != null) hashCode = hashCode * 59 + this.ParamName.GetHashCode();
+                if (this.ParamId != null) hashCode = hashCode * 59 + this.ParamId.GetHashCode();
                 return hashCode;
             }
         }

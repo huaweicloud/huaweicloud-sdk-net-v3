@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(UpdateRuleReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RuleName != input.RuleName || (this.RuleName != null && !this.RuleName.Equals(input.RuleName))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Select != input.Select || (this.Select != null && !this.Select.Equals(input.Select))) return false;
+            if (this.Where != input.Where || (this.Where != null && !this.Where.Equals(input.Where))) return false;
+            if (this.Active != input.Active || (this.Active != null && !this.Active.Equals(input.Active))) return false;
 
-            return 
-                (
-                    this.RuleName == input.RuleName ||
-                    (this.RuleName != null &&
-                    this.RuleName.Equals(input.RuleName))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Select == input.Select ||
-                    (this.Select != null &&
-                    this.Select.Equals(input.Select))
-                ) && 
-                (
-                    this.Where == input.Where ||
-                    (this.Where != null &&
-                    this.Where.Equals(input.Where))
-                ) && 
-                (
-                    this.Active == input.Active ||
-                    (this.Active != null &&
-                    this.Active.Equals(input.Active))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RuleName != null)
-                    hashCode = hashCode * 59 + this.RuleName.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Select != null)
-                    hashCode = hashCode * 59 + this.Select.GetHashCode();
-                if (this.Where != null)
-                    hashCode = hashCode * 59 + this.Where.GetHashCode();
-                if (this.Active != null)
-                    hashCode = hashCode * 59 + this.Active.GetHashCode();
+                var hashCode = 41;
+                if (this.RuleName != null) hashCode = hashCode * 59 + this.RuleName.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Select != null) hashCode = hashCode * 59 + this.Select.GetHashCode();
+                if (this.Where != null) hashCode = hashCode * 59 + this.Where.GetHashCode();
+                if (this.Active != null) hashCode = hashCode * 59 + this.Active.GetHashCode();
                 return hashCode;
             }
         }

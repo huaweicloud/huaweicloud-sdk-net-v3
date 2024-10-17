@@ -305,35 +305,14 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// </summary>
         public bool Equals(CreatePrePaidPublicipExtendParamOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ChargeMode != input.ChargeMode) return false;
+            if (this.PeriodType != input.PeriodType) return false;
+            if (this.PeriodNum != input.PeriodNum || (this.PeriodNum != null && !this.PeriodNum.Equals(input.PeriodNum))) return false;
+            if (this.IsAutoRenew != input.IsAutoRenew || (this.IsAutoRenew != null && !this.IsAutoRenew.Equals(input.IsAutoRenew))) return false;
+            if (this.IsAutoPay != input.IsAutoPay || (this.IsAutoPay != null && !this.IsAutoPay.Equals(input.IsAutoPay))) return false;
 
-            return 
-                (
-                    this.ChargeMode == input.ChargeMode ||
-                    (this.ChargeMode != null &&
-                    this.ChargeMode.Equals(input.ChargeMode))
-                ) && 
-                (
-                    this.PeriodType == input.PeriodType ||
-                    (this.PeriodType != null &&
-                    this.PeriodType.Equals(input.PeriodType))
-                ) && 
-                (
-                    this.PeriodNum == input.PeriodNum ||
-                    (this.PeriodNum != null &&
-                    this.PeriodNum.Equals(input.PeriodNum))
-                ) && 
-                (
-                    this.IsAutoRenew == input.IsAutoRenew ||
-                    (this.IsAutoRenew != null &&
-                    this.IsAutoRenew.Equals(input.IsAutoRenew))
-                ) && 
-                (
-                    this.IsAutoPay == input.IsAutoPay ||
-                    (this.IsAutoPay != null &&
-                    this.IsAutoPay.Equals(input.IsAutoPay))
-                );
+            return true;
         }
 
         /// <summary>
@@ -343,17 +322,12 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ChargeMode != null)
-                    hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
-                if (this.PeriodType != null)
-                    hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
-                if (this.PeriodNum != null)
-                    hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
-                if (this.IsAutoRenew != null)
-                    hashCode = hashCode * 59 + this.IsAutoRenew.GetHashCode();
-                if (this.IsAutoPay != null)
-                    hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
+                hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
+                if (this.PeriodNum != null) hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
+                if (this.IsAutoRenew != null) hashCode = hashCode * 59 + this.IsAutoRenew.GetHashCode();
+                if (this.IsAutoPay != null) hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
                 return hashCode;
             }
         }

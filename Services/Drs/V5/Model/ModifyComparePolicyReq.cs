@@ -91,46 +91,16 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ModifyComparePolicyReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Action != input.Action || (this.Action != null && !this.Action.Equals(input.Action))) return false;
+            if (this.Period != input.Period || (this.Period != null && !this.Period.Equals(input.Period))) return false;
+            if (this.BeginTime != input.BeginTime || (this.BeginTime != null && !this.BeginTime.Equals(input.BeginTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.CompareType != input.CompareType || (this.CompareType != null && input.CompareType != null && !this.CompareType.SequenceEqual(input.CompareType))) return false;
+            if (this.ComparePolicy != input.ComparePolicy || (this.ComparePolicy != null && !this.ComparePolicy.Equals(input.ComparePolicy))) return false;
+            if (this.IntervalHour != input.IntervalHour || (this.IntervalHour != null && !this.IntervalHour.Equals(input.IntervalHour))) return false;
 
-            return 
-                (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                ) && 
-                (
-                    this.Period == input.Period ||
-                    (this.Period != null &&
-                    this.Period.Equals(input.Period))
-                ) && 
-                (
-                    this.BeginTime == input.BeginTime ||
-                    (this.BeginTime != null &&
-                    this.BeginTime.Equals(input.BeginTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.CompareType == input.CompareType ||
-                    this.CompareType != null &&
-                    input.CompareType != null &&
-                    this.CompareType.SequenceEqual(input.CompareType)
-                ) && 
-                (
-                    this.ComparePolicy == input.ComparePolicy ||
-                    (this.ComparePolicy != null &&
-                    this.ComparePolicy.Equals(input.ComparePolicy))
-                ) && 
-                (
-                    this.IntervalHour == input.IntervalHour ||
-                    (this.IntervalHour != null &&
-                    this.IntervalHour.Equals(input.IntervalHour))
-                );
+            return true;
         }
 
         /// <summary>
@@ -140,21 +110,14 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
-                if (this.Period != null)
-                    hashCode = hashCode * 59 + this.Period.GetHashCode();
-                if (this.BeginTime != null)
-                    hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.CompareType != null)
-                    hashCode = hashCode * 59 + this.CompareType.GetHashCode();
-                if (this.ComparePolicy != null)
-                    hashCode = hashCode * 59 + this.ComparePolicy.GetHashCode();
-                if (this.IntervalHour != null)
-                    hashCode = hashCode * 59 + this.IntervalHour.GetHashCode();
+                var hashCode = 41;
+                if (this.Action != null) hashCode = hashCode * 59 + this.Action.GetHashCode();
+                if (this.Period != null) hashCode = hashCode * 59 + this.Period.GetHashCode();
+                if (this.BeginTime != null) hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.CompareType != null) hashCode = hashCode * 59 + this.CompareType.GetHashCode();
+                if (this.ComparePolicy != null) hashCode = hashCode * 59 + this.ComparePolicy.GetHashCode();
+                if (this.IntervalHour != null) hashCode = hashCode * 59 + this.IntervalHour.GetHashCode();
                 return hashCode;
             }
         }

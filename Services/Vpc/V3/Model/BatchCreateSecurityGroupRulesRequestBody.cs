@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(BatchCreateSecurityGroupRulesRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SecurityGroupRules != input.SecurityGroupRules || (this.SecurityGroupRules != null && input.SecurityGroupRules != null && !this.SecurityGroupRules.SequenceEqual(input.SecurityGroupRules))) return false;
+            if (this.IgnoreDuplicate != input.IgnoreDuplicate || (this.IgnoreDuplicate != null && !this.IgnoreDuplicate.Equals(input.IgnoreDuplicate))) return false;
+            if (this.DryRun != input.DryRun || (this.DryRun != null && !this.DryRun.Equals(input.DryRun))) return false;
 
-            return 
-                (
-                    this.SecurityGroupRules == input.SecurityGroupRules ||
-                    this.SecurityGroupRules != null &&
-                    input.SecurityGroupRules != null &&
-                    this.SecurityGroupRules.SequenceEqual(input.SecurityGroupRules)
-                ) && 
-                (
-                    this.IgnoreDuplicate == input.IgnoreDuplicate ||
-                    (this.IgnoreDuplicate != null &&
-                    this.IgnoreDuplicate.Equals(input.IgnoreDuplicate))
-                ) && 
-                (
-                    this.DryRun == input.DryRun ||
-                    (this.DryRun != null &&
-                    this.DryRun.Equals(input.DryRun))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SecurityGroupRules != null)
-                    hashCode = hashCode * 59 + this.SecurityGroupRules.GetHashCode();
-                if (this.IgnoreDuplicate != null)
-                    hashCode = hashCode * 59 + this.IgnoreDuplicate.GetHashCode();
-                if (this.DryRun != null)
-                    hashCode = hashCode * 59 + this.DryRun.GetHashCode();
+                var hashCode = 41;
+                if (this.SecurityGroupRules != null) hashCode = hashCode * 59 + this.SecurityGroupRules.GetHashCode();
+                if (this.IgnoreDuplicate != null) hashCode = hashCode * 59 + this.IgnoreDuplicate.GetHashCode();
+                if (this.DryRun != null) hashCode = hashCode * 59 + this.DryRun.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(SupportImportFileResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FileSize != input.FileSize || (this.FileSize != null && !this.FileSize.Equals(input.FileSize))) return false;
+            if (this.PreviousSelect != input.PreviousSelect || (this.PreviousSelect != null && !this.PreviousSelect.Equals(input.PreviousSelect))) return false;
 
-            return 
-                (
-                    this.FileSize == input.FileSize ||
-                    (this.FileSize != null &&
-                    this.FileSize.Equals(input.FileSize))
-                ) && 
-                (
-                    this.PreviousSelect == input.PreviousSelect ||
-                    (this.PreviousSelect != null &&
-                    this.PreviousSelect.Equals(input.PreviousSelect))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FileSize != null)
-                    hashCode = hashCode * 59 + this.FileSize.GetHashCode();
-                if (this.PreviousSelect != null)
-                    hashCode = hashCode * 59 + this.PreviousSelect.GetHashCode();
+                var hashCode = 41;
+                if (this.FileSize != null) hashCode = hashCode * 59 + this.FileSize.GetHashCode();
+                if (this.PreviousSelect != null) hashCode = hashCode * 59 + this.PreviousSelect.GetHashCode();
                 return hashCode;
             }
         }

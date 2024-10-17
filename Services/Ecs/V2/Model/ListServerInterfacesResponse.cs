@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(ListServerInterfacesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AttachableQuantity != input.AttachableQuantity || (this.AttachableQuantity != null && !this.AttachableQuantity.Equals(input.AttachableQuantity))) return false;
+            if (this.InterfaceAttachments != input.InterfaceAttachments || (this.InterfaceAttachments != null && input.InterfaceAttachments != null && !this.InterfaceAttachments.SequenceEqual(input.InterfaceAttachments))) return false;
 
-            return 
-                (
-                    this.AttachableQuantity == input.AttachableQuantity ||
-                    (this.AttachableQuantity != null &&
-                    this.AttachableQuantity.Equals(input.AttachableQuantity))
-                ) && 
-                (
-                    this.InterfaceAttachments == input.InterfaceAttachments ||
-                    this.InterfaceAttachments != null &&
-                    input.InterfaceAttachments != null &&
-                    this.InterfaceAttachments.SequenceEqual(input.InterfaceAttachments)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AttachableQuantity != null)
-                    hashCode = hashCode * 59 + this.AttachableQuantity.GetHashCode();
-                if (this.InterfaceAttachments != null)
-                    hashCode = hashCode * 59 + this.InterfaceAttachments.GetHashCode();
+                var hashCode = 41;
+                if (this.AttachableQuantity != null) hashCode = hashCode * 59 + this.AttachableQuantity.GetHashCode();
+                if (this.InterfaceAttachments != null) hashCode = hashCode * 59 + this.InterfaceAttachments.GetHashCode();
                 return hashCode;
             }
         }

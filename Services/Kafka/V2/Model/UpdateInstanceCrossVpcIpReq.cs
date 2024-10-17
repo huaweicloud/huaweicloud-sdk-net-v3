@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(UpdateInstanceCrossVpcIpReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AdvertisedIpContents != input.AdvertisedIpContents || (this.AdvertisedIpContents != null && input.AdvertisedIpContents != null && !this.AdvertisedIpContents.SequenceEqual(input.AdvertisedIpContents))) return false;
 
-            return 
-                (
-                    this.AdvertisedIpContents == input.AdvertisedIpContents ||
-                    this.AdvertisedIpContents != null &&
-                    input.AdvertisedIpContents != null &&
-                    this.AdvertisedIpContents.SequenceEqual(input.AdvertisedIpContents)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AdvertisedIpContents != null)
-                    hashCode = hashCode * 59 + this.AdvertisedIpContents.GetHashCode();
+                var hashCode = 41;
+                if (this.AdvertisedIpContents != null) hashCode = hashCode * 59 + this.AdvertisedIpContents.GetHashCode();
                 return hashCode;
             }
         }

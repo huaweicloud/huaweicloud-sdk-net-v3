@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(ListQuotasResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Quotas != input.Quotas || (this.Quotas != null && !this.Quotas.Equals(input.Quotas))) return false;
 
-            return 
-                (
-                    this.Quotas == input.Quotas ||
-                    (this.Quotas != null &&
-                    this.Quotas.Equals(input.Quotas))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Quotas != null)
-                    hashCode = hashCode * 59 + this.Quotas.GetHashCode();
+                var hashCode = 41;
+                if (this.Quotas != null) hashCode = hashCode * 59 + this.Quotas.GetHashCode();
                 return hashCode;
             }
         }

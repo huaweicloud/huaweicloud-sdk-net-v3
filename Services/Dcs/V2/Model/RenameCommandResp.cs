@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(RenameCommandResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Command != input.Command || (this.Command != null && !this.Command.Equals(input.Command))) return false;
+            if (this.Flushall != input.Flushall || (this.Flushall != null && !this.Flushall.Equals(input.Flushall))) return false;
+            if (this.Flushdb != input.Flushdb || (this.Flushdb != null && !this.Flushdb.Equals(input.Flushdb))) return false;
+            if (this.Hgetall != input.Hgetall || (this.Hgetall != null && !this.Hgetall.Equals(input.Hgetall))) return false;
+            if (this.Keys != input.Keys || (this.Keys != null && !this.Keys.Equals(input.Keys))) return false;
 
-            return 
-                (
-                    this.Command == input.Command ||
-                    (this.Command != null &&
-                    this.Command.Equals(input.Command))
-                ) && 
-                (
-                    this.Flushall == input.Flushall ||
-                    (this.Flushall != null &&
-                    this.Flushall.Equals(input.Flushall))
-                ) && 
-                (
-                    this.Flushdb == input.Flushdb ||
-                    (this.Flushdb != null &&
-                    this.Flushdb.Equals(input.Flushdb))
-                ) && 
-                (
-                    this.Hgetall == input.Hgetall ||
-                    (this.Hgetall != null &&
-                    this.Hgetall.Equals(input.Hgetall))
-                ) && 
-                (
-                    this.Keys == input.Keys ||
-                    (this.Keys != null &&
-                    this.Keys.Equals(input.Keys))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Command != null)
-                    hashCode = hashCode * 59 + this.Command.GetHashCode();
-                if (this.Flushall != null)
-                    hashCode = hashCode * 59 + this.Flushall.GetHashCode();
-                if (this.Flushdb != null)
-                    hashCode = hashCode * 59 + this.Flushdb.GetHashCode();
-                if (this.Hgetall != null)
-                    hashCode = hashCode * 59 + this.Hgetall.GetHashCode();
-                if (this.Keys != null)
-                    hashCode = hashCode * 59 + this.Keys.GetHashCode();
+                var hashCode = 41;
+                if (this.Command != null) hashCode = hashCode * 59 + this.Command.GetHashCode();
+                if (this.Flushall != null) hashCode = hashCode * 59 + this.Flushall.GetHashCode();
+                if (this.Flushdb != null) hashCode = hashCode * 59 + this.Flushdb.GetHashCode();
+                if (this.Hgetall != null) hashCode = hashCode * 59 + this.Hgetall.GetHashCode();
+                if (this.Keys != null) hashCode = hashCode * 59 + this.Keys.GetHashCode();
                 return hashCode;
             }
         }

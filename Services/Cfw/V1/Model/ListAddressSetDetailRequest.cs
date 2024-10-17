@@ -74,30 +74,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(ListAddressSetDetailRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SetId != input.SetId || (this.SetId != null && !this.SetId.Equals(input.SetId))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.FwInstanceId != input.FwInstanceId || (this.FwInstanceId != null && !this.FwInstanceId.Equals(input.FwInstanceId))) return false;
+            if (this.QueryAddressSetType != input.QueryAddressSetType || (this.QueryAddressSetType != null && !this.QueryAddressSetType.Equals(input.QueryAddressSetType))) return false;
 
-            return 
-                (
-                    this.SetId == input.SetId ||
-                    (this.SetId != null &&
-                    this.SetId.Equals(input.SetId))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.FwInstanceId == input.FwInstanceId ||
-                    (this.FwInstanceId != null &&
-                    this.FwInstanceId.Equals(input.FwInstanceId))
-                ) && 
-                (
-                    this.QueryAddressSetType == input.QueryAddressSetType ||
-                    (this.QueryAddressSetType != null &&
-                    this.QueryAddressSetType.Equals(input.QueryAddressSetType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -107,15 +90,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SetId != null)
-                    hashCode = hashCode * 59 + this.SetId.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.FwInstanceId != null)
-                    hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
-                if (this.QueryAddressSetType != null)
-                    hashCode = hashCode * 59 + this.QueryAddressSetType.GetHashCode();
+                var hashCode = 41;
+                if (this.SetId != null) hashCode = hashCode * 59 + this.SetId.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.FwInstanceId != null) hashCode = hashCode * 59 + this.FwInstanceId.GetHashCode();
+                if (this.QueryAddressSetType != null) hashCode = hashCode * 59 + this.QueryAddressSetType.GetHashCode();
                 return hashCode;
             }
         }

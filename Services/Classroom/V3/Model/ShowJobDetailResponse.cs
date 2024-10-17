@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         /// </summary>
         public bool Equals(ShowJobDetailResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AcceptJobNum != input.AcceptJobNum || (this.AcceptJobNum != null && !this.AcceptJobNum.Equals(input.AcceptJobNum))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.IsAnswerVisibility != input.IsAnswerVisibility || (this.IsAnswerVisibility != null && !this.IsAnswerVisibility.Equals(input.IsAnswerVisibility))) return false;
+            if (this.IsScoreVisibility != input.IsScoreVisibility || (this.IsScoreVisibility != null && !this.IsScoreVisibility.Equals(input.IsScoreVisibility))) return false;
+            if (this.AverageScore != input.AverageScore || (this.AverageScore != null && !this.AverageScore.Equals(input.AverageScore))) return false;
+            if (this.ScoreJobNum != input.ScoreJobNum || (this.ScoreJobNum != null && !this.ScoreJobNum.Equals(input.ScoreJobNum))) return false;
+            if (this.SubmitJobNum != input.SubmitJobNum || (this.SubmitJobNum != null && !this.SubmitJobNum.Equals(input.SubmitJobNum))) return false;
 
-            return 
-                (
-                    this.AcceptJobNum == input.AcceptJobNum ||
-                    (this.AcceptJobNum != null &&
-                    this.AcceptJobNum.Equals(input.AcceptJobNum))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.IsAnswerVisibility == input.IsAnswerVisibility ||
-                    (this.IsAnswerVisibility != null &&
-                    this.IsAnswerVisibility.Equals(input.IsAnswerVisibility))
-                ) && 
-                (
-                    this.IsScoreVisibility == input.IsScoreVisibility ||
-                    (this.IsScoreVisibility != null &&
-                    this.IsScoreVisibility.Equals(input.IsScoreVisibility))
-                ) && 
-                (
-                    this.AverageScore == input.AverageScore ||
-                    (this.AverageScore != null &&
-                    this.AverageScore.Equals(input.AverageScore))
-                ) && 
-                (
-                    this.ScoreJobNum == input.ScoreJobNum ||
-                    (this.ScoreJobNum != null &&
-                    this.ScoreJobNum.Equals(input.ScoreJobNum))
-                ) && 
-                (
-                    this.SubmitJobNum == input.SubmitJobNum ||
-                    (this.SubmitJobNum != null &&
-                    this.SubmitJobNum.Equals(input.SubmitJobNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AcceptJobNum != null)
-                    hashCode = hashCode * 59 + this.AcceptJobNum.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.IsAnswerVisibility != null)
-                    hashCode = hashCode * 59 + this.IsAnswerVisibility.GetHashCode();
-                if (this.IsScoreVisibility != null)
-                    hashCode = hashCode * 59 + this.IsScoreVisibility.GetHashCode();
-                if (this.AverageScore != null)
-                    hashCode = hashCode * 59 + this.AverageScore.GetHashCode();
-                if (this.ScoreJobNum != null)
-                    hashCode = hashCode * 59 + this.ScoreJobNum.GetHashCode();
-                if (this.SubmitJobNum != null)
-                    hashCode = hashCode * 59 + this.SubmitJobNum.GetHashCode();
+                var hashCode = 41;
+                if (this.AcceptJobNum != null) hashCode = hashCode * 59 + this.AcceptJobNum.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.IsAnswerVisibility != null) hashCode = hashCode * 59 + this.IsAnswerVisibility.GetHashCode();
+                if (this.IsScoreVisibility != null) hashCode = hashCode * 59 + this.IsScoreVisibility.GetHashCode();
+                if (this.AverageScore != null) hashCode = hashCode * 59 + this.AverageScore.GetHashCode();
+                if (this.ScoreJobNum != null) hashCode = hashCode * 59 + this.ScoreJobNum.GetHashCode();
+                if (this.SubmitJobNum != null) hashCode = hashCode * 59 + this.SubmitJobNum.GetHashCode();
                 return hashCode;
             }
         }

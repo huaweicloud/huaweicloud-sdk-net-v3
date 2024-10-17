@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(CreateWatermarkTemplateResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.UploadUrl != input.UploadUrl || (this.UploadUrl != null && !this.UploadUrl.Equals(input.UploadUrl))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.UploadUrl == input.UploadUrl ||
-                    (this.UploadUrl != null &&
-                    this.UploadUrl.Equals(input.UploadUrl))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.UploadUrl != null)
-                    hashCode = hashCode * 59 + this.UploadUrl.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.UploadUrl != null) hashCode = hashCode * 59 + this.UploadUrl.GetHashCode();
                 return hashCode;
             }
         }

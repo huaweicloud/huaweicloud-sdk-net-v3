@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(MigrationRocketMqTopicConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TopicName != input.TopicName || (this.TopicName != null && !this.TopicName.Equals(input.TopicName))) return false;
+            if (this.Order != input.Order || (this.Order != null && !this.Order.Equals(input.Order))) return false;
+            if (this.Perm != input.Perm || (this.Perm != null && !this.Perm.Equals(input.Perm))) return false;
+            if (this.ReadQueueNums != input.ReadQueueNums || (this.ReadQueueNums != null && !this.ReadQueueNums.Equals(input.ReadQueueNums))) return false;
+            if (this.WriteQueueNums != input.WriteQueueNums || (this.WriteQueueNums != null && !this.WriteQueueNums.Equals(input.WriteQueueNums))) return false;
+            if (this.TopicFilterType != input.TopicFilterType || (this.TopicFilterType != null && !this.TopicFilterType.Equals(input.TopicFilterType))) return false;
+            if (this.TopicSysFlag != input.TopicSysFlag || (this.TopicSysFlag != null && !this.TopicSysFlag.Equals(input.TopicSysFlag))) return false;
 
-            return 
-                (
-                    this.TopicName == input.TopicName ||
-                    (this.TopicName != null &&
-                    this.TopicName.Equals(input.TopicName))
-                ) && 
-                (
-                    this.Order == input.Order ||
-                    (this.Order != null &&
-                    this.Order.Equals(input.Order))
-                ) && 
-                (
-                    this.Perm == input.Perm ||
-                    (this.Perm != null &&
-                    this.Perm.Equals(input.Perm))
-                ) && 
-                (
-                    this.ReadQueueNums == input.ReadQueueNums ||
-                    (this.ReadQueueNums != null &&
-                    this.ReadQueueNums.Equals(input.ReadQueueNums))
-                ) && 
-                (
-                    this.WriteQueueNums == input.WriteQueueNums ||
-                    (this.WriteQueueNums != null &&
-                    this.WriteQueueNums.Equals(input.WriteQueueNums))
-                ) && 
-                (
-                    this.TopicFilterType == input.TopicFilterType ||
-                    (this.TopicFilterType != null &&
-                    this.TopicFilterType.Equals(input.TopicFilterType))
-                ) && 
-                (
-                    this.TopicSysFlag == input.TopicSysFlag ||
-                    (this.TopicSysFlag != null &&
-                    this.TopicSysFlag.Equals(input.TopicSysFlag))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TopicName != null)
-                    hashCode = hashCode * 59 + this.TopicName.GetHashCode();
-                if (this.Order != null)
-                    hashCode = hashCode * 59 + this.Order.GetHashCode();
-                if (this.Perm != null)
-                    hashCode = hashCode * 59 + this.Perm.GetHashCode();
-                if (this.ReadQueueNums != null)
-                    hashCode = hashCode * 59 + this.ReadQueueNums.GetHashCode();
-                if (this.WriteQueueNums != null)
-                    hashCode = hashCode * 59 + this.WriteQueueNums.GetHashCode();
-                if (this.TopicFilterType != null)
-                    hashCode = hashCode * 59 + this.TopicFilterType.GetHashCode();
-                if (this.TopicSysFlag != null)
-                    hashCode = hashCode * 59 + this.TopicSysFlag.GetHashCode();
+                var hashCode = 41;
+                if (this.TopicName != null) hashCode = hashCode * 59 + this.TopicName.GetHashCode();
+                if (this.Order != null) hashCode = hashCode * 59 + this.Order.GetHashCode();
+                if (this.Perm != null) hashCode = hashCode * 59 + this.Perm.GetHashCode();
+                if (this.ReadQueueNums != null) hashCode = hashCode * 59 + this.ReadQueueNums.GetHashCode();
+                if (this.WriteQueueNums != null) hashCode = hashCode * 59 + this.WriteQueueNums.GetHashCode();
+                if (this.TopicFilterType != null) hashCode = hashCode * 59 + this.TopicFilterType.GetHashCode();
+                if (this.TopicSysFlag != null) hashCode = hashCode * 59 + this.TopicSysFlag.GetHashCode();
                 return hashCode;
             }
         }

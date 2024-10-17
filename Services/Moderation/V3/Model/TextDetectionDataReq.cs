@@ -164,20 +164,11 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// </summary>
         public bool Equals(TextDetectionDataReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Text != input.Text || (this.Text != null && !this.Text.Equals(input.Text))) return false;
+            if (this.Language != input.Language) return false;
 
-            return 
-                (
-                    this.Text == input.Text ||
-                    (this.Text != null &&
-                    this.Text.Equals(input.Text))
-                ) && 
-                (
-                    this.Language == input.Language ||
-                    (this.Language != null &&
-                    this.Language.Equals(input.Language))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,11 +178,9 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Text != null)
-                    hashCode = hashCode * 59 + this.Text.GetHashCode();
-                if (this.Language != null)
-                    hashCode = hashCode * 59 + this.Language.GetHashCode();
+                var hashCode = 41;
+                if (this.Text != null) hashCode = hashCode * 59 + this.Text.GetHashCode();
+                hashCode = hashCode * 59 + this.Language.GetHashCode();
                 return hashCode;
             }
         }

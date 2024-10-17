@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         /// </summary>
         public bool Equals(ListDDosStatusResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.DdosStatus != input.DdosStatus || (this.DdosStatus != null && input.DdosStatus != null && !this.DdosStatus.SequenceEqual(input.DdosStatus))) return false;
 
-            return 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.DdosStatus == input.DdosStatus ||
-                    this.DdosStatus != null &&
-                    input.DdosStatus != null &&
-                    this.DdosStatus.SequenceEqual(input.DdosStatus)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.DdosStatus != null)
-                    hashCode = hashCode * 59 + this.DdosStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.DdosStatus != null) hashCode = hashCode * 59 + this.DdosStatus.GetHashCode();
                 return hashCode;
             }
         }

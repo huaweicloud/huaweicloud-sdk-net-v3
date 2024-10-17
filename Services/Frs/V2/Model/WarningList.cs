@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public bool Equals(WarningList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.WarningCode != input.WarningCode || (this.WarningCode != null && !this.WarningCode.Equals(input.WarningCode))) return false;
+            if (this.WarningMsg != input.WarningMsg || (this.WarningMsg != null && !this.WarningMsg.Equals(input.WarningMsg))) return false;
 
-            return 
-                (
-                    this.WarningCode == input.WarningCode ||
-                    (this.WarningCode != null &&
-                    this.WarningCode.Equals(input.WarningCode))
-                ) && 
-                (
-                    this.WarningMsg == input.WarningMsg ||
-                    (this.WarningMsg != null &&
-                    this.WarningMsg.Equals(input.WarningMsg))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.WarningCode != null)
-                    hashCode = hashCode * 59 + this.WarningCode.GetHashCode();
-                if (this.WarningMsg != null)
-                    hashCode = hashCode * 59 + this.WarningMsg.GetHashCode();
+                var hashCode = 41;
+                if (this.WarningCode != null) hashCode = hashCode * 59 + this.WarningCode.GetHashCode();
+                if (this.WarningMsg != null) hashCode = hashCode * 59 + this.WarningMsg.GetHashCode();
                 return hashCode;
             }
         }

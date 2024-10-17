@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(InstanceRestartRequsetBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Restart != input.Restart || (this.Restart != null && !this.Restart.Equals(input.Restart))) return false;
 
-            return 
-                (
-                    this.Restart == input.Restart ||
-                    (this.Restart != null &&
-                    this.Restart.Equals(input.Restart))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Restart != null)
-                    hashCode = hashCode * 59 + this.Restart.GetHashCode();
+                var hashCode = 41;
+                if (this.Restart != null) hashCode = hashCode * 59 + this.Restart.GetHashCode();
                 return hashCode;
             }
         }

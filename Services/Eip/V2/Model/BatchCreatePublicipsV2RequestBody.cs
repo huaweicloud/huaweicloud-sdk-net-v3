@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// </summary>
         public bool Equals(BatchCreatePublicipsV2RequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Bandwidth != input.Bandwidth || (this.Bandwidth != null && !this.Bandwidth.Equals(input.Bandwidth))) return false;
+            if (this.Publicip != input.Publicip || (this.Publicip != null && !this.Publicip.Equals(input.Publicip))) return false;
+            if (this.PublicipNumber != input.PublicipNumber || (this.PublicipNumber != null && !this.PublicipNumber.Equals(input.PublicipNumber))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
-            return 
-                (
-                    this.Bandwidth == input.Bandwidth ||
-                    (this.Bandwidth != null &&
-                    this.Bandwidth.Equals(input.Bandwidth))
-                ) && 
-                (
-                    this.Publicip == input.Publicip ||
-                    (this.Publicip != null &&
-                    this.Publicip.Equals(input.Publicip))
-                ) && 
-                (
-                    this.PublicipNumber == input.PublicipNumber ||
-                    (this.PublicipNumber != null &&
-                    this.PublicipNumber.Equals(input.PublicipNumber))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Bandwidth != null)
-                    hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
-                if (this.Publicip != null)
-                    hashCode = hashCode * 59 + this.Publicip.GetHashCode();
-                if (this.PublicipNumber != null)
-                    hashCode = hashCode * 59 + this.PublicipNumber.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                var hashCode = 41;
+                if (this.Bandwidth != null) hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
+                if (this.Publicip != null) hashCode = hashCode * 59 + this.Publicip.GetHashCode();
+                if (this.PublicipNumber != null) hashCode = hashCode * 59 + this.PublicipNumber.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

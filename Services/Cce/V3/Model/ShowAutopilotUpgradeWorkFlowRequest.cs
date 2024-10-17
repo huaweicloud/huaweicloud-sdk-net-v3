@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ShowAutopilotUpgradeWorkFlowRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClusterId != input.ClusterId || (this.ClusterId != null && !this.ClusterId.Equals(input.ClusterId))) return false;
+            if (this.UpgradeWorkflowId != input.UpgradeWorkflowId || (this.UpgradeWorkflowId != null && !this.UpgradeWorkflowId.Equals(input.UpgradeWorkflowId))) return false;
 
-            return 
-                (
-                    this.ClusterId == input.ClusterId ||
-                    (this.ClusterId != null &&
-                    this.ClusterId.Equals(input.ClusterId))
-                ) && 
-                (
-                    this.UpgradeWorkflowId == input.UpgradeWorkflowId ||
-                    (this.UpgradeWorkflowId != null &&
-                    this.UpgradeWorkflowId.Equals(input.UpgradeWorkflowId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClusterId != null)
-                    hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
-                if (this.UpgradeWorkflowId != null)
-                    hashCode = hashCode * 59 + this.UpgradeWorkflowId.GetHashCode();
+                var hashCode = 41;
+                if (this.ClusterId != null) hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
+                if (this.UpgradeWorkflowId != null) hashCode = hashCode * 59 + this.UpgradeWorkflowId.GetHashCode();
                 return hashCode;
             }
         }

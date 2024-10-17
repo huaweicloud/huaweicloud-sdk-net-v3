@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(UpgradeDatabaseVersionRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UpgradeMode != input.UpgradeMode || (this.UpgradeMode != null && !this.UpgradeMode.Equals(input.UpgradeMode))) return false;
 
-            return 
-                (
-                    this.UpgradeMode == input.UpgradeMode ||
-                    (this.UpgradeMode != null &&
-                    this.UpgradeMode.Equals(input.UpgradeMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UpgradeMode != null)
-                    hashCode = hashCode * 59 + this.UpgradeMode.GetHashCode();
+                var hashCode = 41;
+                if (this.UpgradeMode != null) hashCode = hashCode * 59 + this.UpgradeMode.GetHashCode();
                 return hashCode;
             }
         }

@@ -325,48 +325,16 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(ShowPullSourcesConfigResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PlayDomain != input.PlayDomain || (this.PlayDomain != null && !this.PlayDomain.Equals(input.PlayDomain))) return false;
+            if (this.SourceType != input.SourceType) return false;
+            if (this.Sources != input.Sources || (this.Sources != null && input.Sources != null && !this.Sources.SequenceEqual(input.Sources))) return false;
+            if (this.SourcesIp != input.SourcesIp || (this.SourcesIp != null && input.SourcesIp != null && !this.SourcesIp.SequenceEqual(input.SourcesIp))) return false;
+            if (this.SourcePort != input.SourcePort || (this.SourcePort != null && !this.SourcePort.Equals(input.SourcePort))) return false;
+            if (this.Scheme != input.Scheme) return false;
+            if (this.AdditionalArgs != input.AdditionalArgs || (this.AdditionalArgs != null && input.AdditionalArgs != null && !this.AdditionalArgs.SequenceEqual(input.AdditionalArgs))) return false;
 
-            return 
-                (
-                    this.PlayDomain == input.PlayDomain ||
-                    (this.PlayDomain != null &&
-                    this.PlayDomain.Equals(input.PlayDomain))
-                ) && 
-                (
-                    this.SourceType == input.SourceType ||
-                    (this.SourceType != null &&
-                    this.SourceType.Equals(input.SourceType))
-                ) && 
-                (
-                    this.Sources == input.Sources ||
-                    this.Sources != null &&
-                    input.Sources != null &&
-                    this.Sources.SequenceEqual(input.Sources)
-                ) && 
-                (
-                    this.SourcesIp == input.SourcesIp ||
-                    this.SourcesIp != null &&
-                    input.SourcesIp != null &&
-                    this.SourcesIp.SequenceEqual(input.SourcesIp)
-                ) && 
-                (
-                    this.SourcePort == input.SourcePort ||
-                    (this.SourcePort != null &&
-                    this.SourcePort.Equals(input.SourcePort))
-                ) && 
-                (
-                    this.Scheme == input.Scheme ||
-                    (this.Scheme != null &&
-                    this.Scheme.Equals(input.Scheme))
-                ) && 
-                (
-                    this.AdditionalArgs == input.AdditionalArgs ||
-                    this.AdditionalArgs != null &&
-                    input.AdditionalArgs != null &&
-                    this.AdditionalArgs.SequenceEqual(input.AdditionalArgs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -376,21 +344,14 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PlayDomain != null)
-                    hashCode = hashCode * 59 + this.PlayDomain.GetHashCode();
-                if (this.SourceType != null)
-                    hashCode = hashCode * 59 + this.SourceType.GetHashCode();
-                if (this.Sources != null)
-                    hashCode = hashCode * 59 + this.Sources.GetHashCode();
-                if (this.SourcesIp != null)
-                    hashCode = hashCode * 59 + this.SourcesIp.GetHashCode();
-                if (this.SourcePort != null)
-                    hashCode = hashCode * 59 + this.SourcePort.GetHashCode();
-                if (this.Scheme != null)
-                    hashCode = hashCode * 59 + this.Scheme.GetHashCode();
-                if (this.AdditionalArgs != null)
-                    hashCode = hashCode * 59 + this.AdditionalArgs.GetHashCode();
+                var hashCode = 41;
+                if (this.PlayDomain != null) hashCode = hashCode * 59 + this.PlayDomain.GetHashCode();
+                hashCode = hashCode * 59 + this.SourceType.GetHashCode();
+                if (this.Sources != null) hashCode = hashCode * 59 + this.Sources.GetHashCode();
+                if (this.SourcesIp != null) hashCode = hashCode * 59 + this.SourcesIp.GetHashCode();
+                if (this.SourcePort != null) hashCode = hashCode * 59 + this.SourcePort.GetHashCode();
+                hashCode = hashCode * 59 + this.Scheme.GetHashCode();
+                if (this.AdditionalArgs != null) hashCode = hashCode * 59 + this.AdditionalArgs.GetHashCode();
                 return hashCode;
             }
         }

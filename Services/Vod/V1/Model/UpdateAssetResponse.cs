@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(UpdateAssetResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
+            if (this.VideoUploadUrl != input.VideoUploadUrl || (this.VideoUploadUrl != null && !this.VideoUploadUrl.Equals(input.VideoUploadUrl))) return false;
+            if (this.CoverUploadUrl != input.CoverUploadUrl || (this.CoverUploadUrl != null && !this.CoverUploadUrl.Equals(input.CoverUploadUrl))) return false;
+            if (this.SubtitleUploadUrls != input.SubtitleUploadUrls || (this.SubtitleUploadUrls != null && input.SubtitleUploadUrls != null && !this.SubtitleUploadUrls.SequenceEqual(input.SubtitleUploadUrls))) return false;
 
-            return 
-                (
-                    this.AssetId == input.AssetId ||
-                    (this.AssetId != null &&
-                    this.AssetId.Equals(input.AssetId))
-                ) && 
-                (
-                    this.VideoUploadUrl == input.VideoUploadUrl ||
-                    (this.VideoUploadUrl != null &&
-                    this.VideoUploadUrl.Equals(input.VideoUploadUrl))
-                ) && 
-                (
-                    this.CoverUploadUrl == input.CoverUploadUrl ||
-                    (this.CoverUploadUrl != null &&
-                    this.CoverUploadUrl.Equals(input.CoverUploadUrl))
-                ) && 
-                (
-                    this.SubtitleUploadUrls == input.SubtitleUploadUrls ||
-                    this.SubtitleUploadUrls != null &&
-                    input.SubtitleUploadUrls != null &&
-                    this.SubtitleUploadUrls.SequenceEqual(input.SubtitleUploadUrls)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AssetId != null)
-                    hashCode = hashCode * 59 + this.AssetId.GetHashCode();
-                if (this.VideoUploadUrl != null)
-                    hashCode = hashCode * 59 + this.VideoUploadUrl.GetHashCode();
-                if (this.CoverUploadUrl != null)
-                    hashCode = hashCode * 59 + this.CoverUploadUrl.GetHashCode();
-                if (this.SubtitleUploadUrls != null)
-                    hashCode = hashCode * 59 + this.SubtitleUploadUrls.GetHashCode();
+                var hashCode = 41;
+                if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                if (this.VideoUploadUrl != null) hashCode = hashCode * 59 + this.VideoUploadUrl.GetHashCode();
+                if (this.CoverUploadUrl != null) hashCode = hashCode * 59 + this.CoverUploadUrl.GetHashCode();
+                if (this.SubtitleUploadUrls != null) hashCode = hashCode * 59 + this.SubtitleUploadUrls.GetHashCode();
                 return hashCode;
             }
         }

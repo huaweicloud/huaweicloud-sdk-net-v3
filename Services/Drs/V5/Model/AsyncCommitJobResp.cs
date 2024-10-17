@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(AsyncCommitJobResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AsyncJobId != input.AsyncJobId || (this.AsyncJobId != null && !this.AsyncJobId.Equals(input.AsyncJobId))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Msg != input.Msg || (this.Msg != null && !this.Msg.Equals(input.Msg))) return false;
 
-            return 
-                (
-                    this.AsyncJobId == input.AsyncJobId ||
-                    (this.AsyncJobId != null &&
-                    this.AsyncJobId.Equals(input.AsyncJobId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Msg == input.Msg ||
-                    (this.Msg != null &&
-                    this.Msg.Equals(input.Msg))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AsyncJobId != null)
-                    hashCode = hashCode * 59 + this.AsyncJobId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Msg != null)
-                    hashCode = hashCode * 59 + this.Msg.GetHashCode();
+                var hashCode = 41;
+                if (this.AsyncJobId != null) hashCode = hashCode * 59 + this.AsyncJobId.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Msg != null) hashCode = hashCode * 59 + this.Msg.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(StreamSelectionItem input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Key != input.Key || (this.Key != null && !this.Key.Equals(input.Key))) return false;
+            if (this.MaxBandwidth != input.MaxBandwidth || (this.MaxBandwidth != null && !this.MaxBandwidth.Equals(input.MaxBandwidth))) return false;
+            if (this.MinBandwidth != input.MinBandwidth || (this.MinBandwidth != null && !this.MinBandwidth.Equals(input.MinBandwidth))) return false;
 
-            return 
-                (
-                    this.Key == input.Key ||
-                    (this.Key != null &&
-                    this.Key.Equals(input.Key))
-                ) && 
-                (
-                    this.MaxBandwidth == input.MaxBandwidth ||
-                    (this.MaxBandwidth != null &&
-                    this.MaxBandwidth.Equals(input.MaxBandwidth))
-                ) && 
-                (
-                    this.MinBandwidth == input.MinBandwidth ||
-                    (this.MinBandwidth != null &&
-                    this.MinBandwidth.Equals(input.MinBandwidth))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Key != null)
-                    hashCode = hashCode * 59 + this.Key.GetHashCode();
-                if (this.MaxBandwidth != null)
-                    hashCode = hashCode * 59 + this.MaxBandwidth.GetHashCode();
-                if (this.MinBandwidth != null)
-                    hashCode = hashCode * 59 + this.MinBandwidth.GetHashCode();
+                var hashCode = 41;
+                if (this.Key != null) hashCode = hashCode * 59 + this.Key.GetHashCode();
+                if (this.MaxBandwidth != null) hashCode = hashCode * 59 + this.MaxBandwidth.GetHashCode();
+                if (this.MinBandwidth != null) hashCode = hashCode * 59 + this.MinBandwidth.GetHashCode();
                 return hashCode;
             }
         }

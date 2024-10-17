@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(OpExtendInfoReplication input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DestinationBackupId != input.DestinationBackupId || (this.DestinationBackupId != null && !this.DestinationBackupId.Equals(input.DestinationBackupId))) return false;
+            if (this.DestinationCheckpointId != input.DestinationCheckpointId || (this.DestinationCheckpointId != null && !this.DestinationCheckpointId.Equals(input.DestinationCheckpointId))) return false;
+            if (this.DestinationProjectId != input.DestinationProjectId || (this.DestinationProjectId != null && !this.DestinationProjectId.Equals(input.DestinationProjectId))) return false;
+            if (this.DestinationRegion != input.DestinationRegion || (this.DestinationRegion != null && !this.DestinationRegion.Equals(input.DestinationRegion))) return false;
+            if (this.SourceBackupId != input.SourceBackupId || (this.SourceBackupId != null && !this.SourceBackupId.Equals(input.SourceBackupId))) return false;
+            if (this.SourceCheckpointId != input.SourceCheckpointId || (this.SourceCheckpointId != null && !this.SourceCheckpointId.Equals(input.SourceCheckpointId))) return false;
+            if (this.SourceProjectId != input.SourceProjectId || (this.SourceProjectId != null && !this.SourceProjectId.Equals(input.SourceProjectId))) return false;
+            if (this.SourceRegion != input.SourceRegion || (this.SourceRegion != null && !this.SourceRegion.Equals(input.SourceRegion))) return false;
+            if (this.SourceBackupName != input.SourceBackupName || (this.SourceBackupName != null && !this.SourceBackupName.Equals(input.SourceBackupName))) return false;
+            if (this.DestinationBackupName != input.DestinationBackupName || (this.DestinationBackupName != null && !this.DestinationBackupName.Equals(input.DestinationBackupName))) return false;
 
-            return 
-                (
-                    this.DestinationBackupId == input.DestinationBackupId ||
-                    (this.DestinationBackupId != null &&
-                    this.DestinationBackupId.Equals(input.DestinationBackupId))
-                ) && 
-                (
-                    this.DestinationCheckpointId == input.DestinationCheckpointId ||
-                    (this.DestinationCheckpointId != null &&
-                    this.DestinationCheckpointId.Equals(input.DestinationCheckpointId))
-                ) && 
-                (
-                    this.DestinationProjectId == input.DestinationProjectId ||
-                    (this.DestinationProjectId != null &&
-                    this.DestinationProjectId.Equals(input.DestinationProjectId))
-                ) && 
-                (
-                    this.DestinationRegion == input.DestinationRegion ||
-                    (this.DestinationRegion != null &&
-                    this.DestinationRegion.Equals(input.DestinationRegion))
-                ) && 
-                (
-                    this.SourceBackupId == input.SourceBackupId ||
-                    (this.SourceBackupId != null &&
-                    this.SourceBackupId.Equals(input.SourceBackupId))
-                ) && 
-                (
-                    this.SourceCheckpointId == input.SourceCheckpointId ||
-                    (this.SourceCheckpointId != null &&
-                    this.SourceCheckpointId.Equals(input.SourceCheckpointId))
-                ) && 
-                (
-                    this.SourceProjectId == input.SourceProjectId ||
-                    (this.SourceProjectId != null &&
-                    this.SourceProjectId.Equals(input.SourceProjectId))
-                ) && 
-                (
-                    this.SourceRegion == input.SourceRegion ||
-                    (this.SourceRegion != null &&
-                    this.SourceRegion.Equals(input.SourceRegion))
-                ) && 
-                (
-                    this.SourceBackupName == input.SourceBackupName ||
-                    (this.SourceBackupName != null &&
-                    this.SourceBackupName.Equals(input.SourceBackupName))
-                ) && 
-                (
-                    this.DestinationBackupName == input.DestinationBackupName ||
-                    (this.DestinationBackupName != null &&
-                    this.DestinationBackupName.Equals(input.DestinationBackupName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DestinationBackupId != null)
-                    hashCode = hashCode * 59 + this.DestinationBackupId.GetHashCode();
-                if (this.DestinationCheckpointId != null)
-                    hashCode = hashCode * 59 + this.DestinationCheckpointId.GetHashCode();
-                if (this.DestinationProjectId != null)
-                    hashCode = hashCode * 59 + this.DestinationProjectId.GetHashCode();
-                if (this.DestinationRegion != null)
-                    hashCode = hashCode * 59 + this.DestinationRegion.GetHashCode();
-                if (this.SourceBackupId != null)
-                    hashCode = hashCode * 59 + this.SourceBackupId.GetHashCode();
-                if (this.SourceCheckpointId != null)
-                    hashCode = hashCode * 59 + this.SourceCheckpointId.GetHashCode();
-                if (this.SourceProjectId != null)
-                    hashCode = hashCode * 59 + this.SourceProjectId.GetHashCode();
-                if (this.SourceRegion != null)
-                    hashCode = hashCode * 59 + this.SourceRegion.GetHashCode();
-                if (this.SourceBackupName != null)
-                    hashCode = hashCode * 59 + this.SourceBackupName.GetHashCode();
-                if (this.DestinationBackupName != null)
-                    hashCode = hashCode * 59 + this.DestinationBackupName.GetHashCode();
+                var hashCode = 41;
+                if (this.DestinationBackupId != null) hashCode = hashCode * 59 + this.DestinationBackupId.GetHashCode();
+                if (this.DestinationCheckpointId != null) hashCode = hashCode * 59 + this.DestinationCheckpointId.GetHashCode();
+                if (this.DestinationProjectId != null) hashCode = hashCode * 59 + this.DestinationProjectId.GetHashCode();
+                if (this.DestinationRegion != null) hashCode = hashCode * 59 + this.DestinationRegion.GetHashCode();
+                if (this.SourceBackupId != null) hashCode = hashCode * 59 + this.SourceBackupId.GetHashCode();
+                if (this.SourceCheckpointId != null) hashCode = hashCode * 59 + this.SourceCheckpointId.GetHashCode();
+                if (this.SourceProjectId != null) hashCode = hashCode * 59 + this.SourceProjectId.GetHashCode();
+                if (this.SourceRegion != null) hashCode = hashCode * 59 + this.SourceRegion.GetHashCode();
+                if (this.SourceBackupName != null) hashCode = hashCode * 59 + this.SourceBackupName.GetHashCode();
+                if (this.DestinationBackupName != null) hashCode = hashCode * 59 + this.DestinationBackupName.GetHashCode();
                 return hashCode;
             }
         }

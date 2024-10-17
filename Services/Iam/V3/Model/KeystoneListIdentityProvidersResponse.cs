@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(KeystoneListIdentityProvidersResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IdentityProviders != input.IdentityProviders || (this.IdentityProviders != null && input.IdentityProviders != null && !this.IdentityProviders.SequenceEqual(input.IdentityProviders))) return false;
+            if (this.Links != input.Links || (this.Links != null && !this.Links.Equals(input.Links))) return false;
 
-            return 
-                (
-                    this.IdentityProviders == input.IdentityProviders ||
-                    this.IdentityProviders != null &&
-                    input.IdentityProviders != null &&
-                    this.IdentityProviders.SequenceEqual(input.IdentityProviders)
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    (this.Links != null &&
-                    this.Links.Equals(input.Links))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IdentityProviders != null)
-                    hashCode = hashCode * 59 + this.IdentityProviders.GetHashCode();
-                if (this.Links != null)
-                    hashCode = hashCode * 59 + this.Links.GetHashCode();
+                var hashCode = 41;
+                if (this.IdentityProviders != null) hashCode = hashCode * 59 + this.IdentityProviders.GetHashCode();
+                if (this.Links != null) hashCode = hashCode * 59 + this.Links.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(HstsQuery input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.MaxAge != input.MaxAge || (this.MaxAge != null && !this.MaxAge.Equals(input.MaxAge))) return false;
+            if (this.IncludeSubdomains != input.IncludeSubdomains || (this.IncludeSubdomains != null && !this.IncludeSubdomains.Equals(input.IncludeSubdomains))) return false;
 
-            return 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.MaxAge == input.MaxAge ||
-                    (this.MaxAge != null &&
-                    this.MaxAge.Equals(input.MaxAge))
-                ) && 
-                (
-                    this.IncludeSubdomains == input.IncludeSubdomains ||
-                    (this.IncludeSubdomains != null &&
-                    this.IncludeSubdomains.Equals(input.IncludeSubdomains))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.MaxAge != null)
-                    hashCode = hashCode * 59 + this.MaxAge.GetHashCode();
-                if (this.IncludeSubdomains != null)
-                    hashCode = hashCode * 59 + this.IncludeSubdomains.GetHashCode();
+                var hashCode = 41;
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.MaxAge != null) hashCode = hashCode * 59 + this.MaxAge.GetHashCode();
+                if (this.IncludeSubdomains != null) hashCode = hashCode * 59 + this.IncludeSubdomains.GetHashCode();
                 return hashCode;
             }
         }

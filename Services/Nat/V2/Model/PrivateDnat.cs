@@ -260,80 +260,23 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// </summary>
         public bool Equals(PrivateDnat input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.TransitIpId != input.TransitIpId || (this.TransitIpId != null && !this.TransitIpId.Equals(input.TransitIpId))) return false;
+            if (this.GatewayId != input.GatewayId || (this.GatewayId != null && !this.GatewayId.Equals(input.GatewayId))) return false;
+            if (this.NetworkInterfaceId != input.NetworkInterfaceId || (this.NetworkInterfaceId != null && !this.NetworkInterfaceId.Equals(input.NetworkInterfaceId))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Protocol != input.Protocol) return false;
+            if (this.PrivateIpAddress != input.PrivateIpAddress || (this.PrivateIpAddress != null && !this.PrivateIpAddress.Equals(input.PrivateIpAddress))) return false;
+            if (this.InternalServicePort != input.InternalServicePort || (this.InternalServicePort != null && !this.InternalServicePort.Equals(input.InternalServicePort))) return false;
+            if (this.TransitServicePort != input.TransitServicePort || (this.TransitServicePort != null && !this.TransitServicePort.Equals(input.TransitServicePort))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.TransitIpId == input.TransitIpId ||
-                    (this.TransitIpId != null &&
-                    this.TransitIpId.Equals(input.TransitIpId))
-                ) && 
-                (
-                    this.GatewayId == input.GatewayId ||
-                    (this.GatewayId != null &&
-                    this.GatewayId.Equals(input.GatewayId))
-                ) && 
-                (
-                    this.NetworkInterfaceId == input.NetworkInterfaceId ||
-                    (this.NetworkInterfaceId != null &&
-                    this.NetworkInterfaceId.Equals(input.NetworkInterfaceId))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Protocol == input.Protocol ||
-                    (this.Protocol != null &&
-                    this.Protocol.Equals(input.Protocol))
-                ) && 
-                (
-                    this.PrivateIpAddress == input.PrivateIpAddress ||
-                    (this.PrivateIpAddress != null &&
-                    this.PrivateIpAddress.Equals(input.PrivateIpAddress))
-                ) && 
-                (
-                    this.InternalServicePort == input.InternalServicePort ||
-                    (this.InternalServicePort != null &&
-                    this.InternalServicePort.Equals(input.InternalServicePort))
-                ) && 
-                (
-                    this.TransitServicePort == input.TransitServicePort ||
-                    (this.TransitServicePort != null &&
-                    this.TransitServicePort.Equals(input.TransitServicePort))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -343,35 +286,21 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.TransitIpId != null)
-                    hashCode = hashCode * 59 + this.TransitIpId.GetHashCode();
-                if (this.GatewayId != null)
-                    hashCode = hashCode * 59 + this.GatewayId.GetHashCode();
-                if (this.NetworkInterfaceId != null)
-                    hashCode = hashCode * 59 + this.NetworkInterfaceId.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
-                if (this.PrivateIpAddress != null)
-                    hashCode = hashCode * 59 + this.PrivateIpAddress.GetHashCode();
-                if (this.InternalServicePort != null)
-                    hashCode = hashCode * 59 + this.InternalServicePort.GetHashCode();
-                if (this.TransitServicePort != null)
-                    hashCode = hashCode * 59 + this.TransitServicePort.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.TransitIpId != null) hashCode = hashCode * 59 + this.TransitIpId.GetHashCode();
+                if (this.GatewayId != null) hashCode = hashCode * 59 + this.GatewayId.GetHashCode();
+                if (this.NetworkInterfaceId != null) hashCode = hashCode * 59 + this.NetworkInterfaceId.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.PrivateIpAddress != null) hashCode = hashCode * 59 + this.PrivateIpAddress.GetHashCode();
+                if (this.InternalServicePort != null) hashCode = hashCode * 59 + this.InternalServicePort.GetHashCode();
+                if (this.TransitServicePort != null) hashCode = hashCode * 59 + this.TransitServicePort.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 return hashCode;
             }
         }

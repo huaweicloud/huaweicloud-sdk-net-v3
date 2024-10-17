@@ -70,34 +70,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(TuningParamInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FullSync != input.FullSync || (this.FullSync != null && input.FullSync != null && !this.FullSync.SequenceEqual(input.FullSync))) return false;
+            if (this.IncreCapture != input.IncreCapture || (this.IncreCapture != null && input.IncreCapture != null && !this.IncreCapture.SequenceEqual(input.IncreCapture))) return false;
+            if (this.IncreApply != input.IncreApply || (this.IncreApply != null && input.IncreApply != null && !this.IncreApply.SequenceEqual(input.IncreApply))) return false;
+            if (this.IncreRelay != input.IncreRelay || (this.IncreRelay != null && input.IncreRelay != null && !this.IncreRelay.SequenceEqual(input.IncreRelay))) return false;
 
-            return 
-                (
-                    this.FullSync == input.FullSync ||
-                    this.FullSync != null &&
-                    input.FullSync != null &&
-                    this.FullSync.SequenceEqual(input.FullSync)
-                ) && 
-                (
-                    this.IncreCapture == input.IncreCapture ||
-                    this.IncreCapture != null &&
-                    input.IncreCapture != null &&
-                    this.IncreCapture.SequenceEqual(input.IncreCapture)
-                ) && 
-                (
-                    this.IncreApply == input.IncreApply ||
-                    this.IncreApply != null &&
-                    input.IncreApply != null &&
-                    this.IncreApply.SequenceEqual(input.IncreApply)
-                ) && 
-                (
-                    this.IncreRelay == input.IncreRelay ||
-                    this.IncreRelay != null &&
-                    input.IncreRelay != null &&
-                    this.IncreRelay.SequenceEqual(input.IncreRelay)
-                );
+            return true;
         }
 
         /// <summary>
@@ -107,15 +86,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FullSync != null)
-                    hashCode = hashCode * 59 + this.FullSync.GetHashCode();
-                if (this.IncreCapture != null)
-                    hashCode = hashCode * 59 + this.IncreCapture.GetHashCode();
-                if (this.IncreApply != null)
-                    hashCode = hashCode * 59 + this.IncreApply.GetHashCode();
-                if (this.IncreRelay != null)
-                    hashCode = hashCode * 59 + this.IncreRelay.GetHashCode();
+                var hashCode = 41;
+                if (this.FullSync != null) hashCode = hashCode * 59 + this.FullSync.GetHashCode();
+                if (this.IncreCapture != null) hashCode = hashCode * 59 + this.IncreCapture.GetHashCode();
+                if (this.IncreApply != null) hashCode = hashCode * 59 + this.IncreApply.GetHashCode();
+                if (this.IncreRelay != null) hashCode = hashCode * 59 + this.IncreRelay.GetHashCode();
                 return hashCode;
             }
         }

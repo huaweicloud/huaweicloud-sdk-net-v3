@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(CreateEWFirewallResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Er != input.Er || (this.Er != null && !this.Er.Equals(input.Er))) return false;
+            if (this.InspertionVpc != input.InspertionVpc || (this.InspertionVpc != null && !this.InspertionVpc.Equals(input.InspertionVpc))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Er == input.Er ||
-                    (this.Er != null &&
-                    this.Er.Equals(input.Er))
-                ) && 
-                (
-                    this.InspertionVpc == input.InspertionVpc ||
-                    (this.InspertionVpc != null &&
-                    this.InspertionVpc.Equals(input.InspertionVpc))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Er != null)
-                    hashCode = hashCode * 59 + this.Er.GetHashCode();
-                if (this.InspertionVpc != null)
-                    hashCode = hashCode * 59 + this.InspertionVpc.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Er != null) hashCode = hashCode * 59 + this.Er.GetHashCode();
+                if (this.InspertionVpc != null) hashCode = hashCode * 59 + this.InspertionVpc.GetHashCode();
                 return hashCode;
             }
         }

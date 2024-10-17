@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(AgentRegister input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AgentId != input.AgentId || (this.AgentId != null && !this.AgentId.Equals(input.AgentId))) return false;
+            if (this.HostName != input.HostName || (this.HostName != null && !this.HostName.Equals(input.HostName))) return false;
+            if (this.HostIp != input.HostIp || (this.HostIp != null && !this.HostIp.Equals(input.HostIp))) return false;
+            if (this.HostOs != input.HostOs || (this.HostOs != null && !this.HostOs.Equals(input.HostOs))) return false;
+            if (this.HostNickname != input.HostNickname || (this.HostNickname != null && !this.HostNickname.Equals(input.HostNickname))) return false;
+            if (this.AgentVersion != input.AgentVersion || (this.AgentVersion != null && !this.AgentVersion.Equals(input.AgentVersion))) return false;
+            if (this.AgentType != input.AgentType || (this.AgentType != null && !this.AgentType.Equals(input.AgentType))) return false;
 
-            return 
-                (
-                    this.AgentId == input.AgentId ||
-                    (this.AgentId != null &&
-                    this.AgentId.Equals(input.AgentId))
-                ) && 
-                (
-                    this.HostName == input.HostName ||
-                    (this.HostName != null &&
-                    this.HostName.Equals(input.HostName))
-                ) && 
-                (
-                    this.HostIp == input.HostIp ||
-                    (this.HostIp != null &&
-                    this.HostIp.Equals(input.HostIp))
-                ) && 
-                (
-                    this.HostOs == input.HostOs ||
-                    (this.HostOs != null &&
-                    this.HostOs.Equals(input.HostOs))
-                ) && 
-                (
-                    this.HostNickname == input.HostNickname ||
-                    (this.HostNickname != null &&
-                    this.HostNickname.Equals(input.HostNickname))
-                ) && 
-                (
-                    this.AgentVersion == input.AgentVersion ||
-                    (this.AgentVersion != null &&
-                    this.AgentVersion.Equals(input.AgentVersion))
-                ) && 
-                (
-                    this.AgentType == input.AgentType ||
-                    (this.AgentType != null &&
-                    this.AgentType.Equals(input.AgentType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AgentId != null)
-                    hashCode = hashCode * 59 + this.AgentId.GetHashCode();
-                if (this.HostName != null)
-                    hashCode = hashCode * 59 + this.HostName.GetHashCode();
-                if (this.HostIp != null)
-                    hashCode = hashCode * 59 + this.HostIp.GetHashCode();
-                if (this.HostOs != null)
-                    hashCode = hashCode * 59 + this.HostOs.GetHashCode();
-                if (this.HostNickname != null)
-                    hashCode = hashCode * 59 + this.HostNickname.GetHashCode();
-                if (this.AgentVersion != null)
-                    hashCode = hashCode * 59 + this.AgentVersion.GetHashCode();
-                if (this.AgentType != null)
-                    hashCode = hashCode * 59 + this.AgentType.GetHashCode();
+                var hashCode = 41;
+                if (this.AgentId != null) hashCode = hashCode * 59 + this.AgentId.GetHashCode();
+                if (this.HostName != null) hashCode = hashCode * 59 + this.HostName.GetHashCode();
+                if (this.HostIp != null) hashCode = hashCode * 59 + this.HostIp.GetHashCode();
+                if (this.HostOs != null) hashCode = hashCode * 59 + this.HostOs.GetHashCode();
+                if (this.HostNickname != null) hashCode = hashCode * 59 + this.HostNickname.GetHashCode();
+                if (this.AgentVersion != null) hashCode = hashCode * 59 + this.AgentVersion.GetHashCode();
+                if (this.AgentType != null) hashCode = hashCode * 59 + this.AgentType.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ResizeClusterRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FlavorResize != input.FlavorResize || (this.FlavorResize != null && !this.FlavorResize.Equals(input.FlavorResize))) return false;
+            if (this.ExtendParam != input.ExtendParam || (this.ExtendParam != null && !this.ExtendParam.Equals(input.ExtendParam))) return false;
 
-            return 
-                (
-                    this.FlavorResize == input.FlavorResize ||
-                    (this.FlavorResize != null &&
-                    this.FlavorResize.Equals(input.FlavorResize))
-                ) && 
-                (
-                    this.ExtendParam == input.ExtendParam ||
-                    (this.ExtendParam != null &&
-                    this.ExtendParam.Equals(input.ExtendParam))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FlavorResize != null)
-                    hashCode = hashCode * 59 + this.FlavorResize.GetHashCode();
-                if (this.ExtendParam != null)
-                    hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
+                var hashCode = 41;
+                if (this.FlavorResize != null) hashCode = hashCode * 59 + this.FlavorResize.GetHashCode();
+                if (this.ExtendParam != null) hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
                 return hashCode;
             }
         }

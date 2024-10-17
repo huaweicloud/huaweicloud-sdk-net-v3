@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         /// </summary>
         public bool Equals(KeyProtection input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PrivateKey != input.PrivateKey || (this.PrivateKey != null && !this.PrivateKey.Equals(input.PrivateKey))) return false;
+            if (this.Encryption != input.Encryption || (this.Encryption != null && !this.Encryption.Equals(input.Encryption))) return false;
 
-            return 
-                (
-                    this.PrivateKey == input.PrivateKey ||
-                    (this.PrivateKey != null &&
-                    this.PrivateKey.Equals(input.PrivateKey))
-                ) && 
-                (
-                    this.Encryption == input.Encryption ||
-                    (this.Encryption != null &&
-                    this.Encryption.Equals(input.Encryption))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PrivateKey != null)
-                    hashCode = hashCode * 59 + this.PrivateKey.GetHashCode();
-                if (this.Encryption != null)
-                    hashCode = hashCode * 59 + this.Encryption.GetHashCode();
+                var hashCode = 41;
+                if (this.PrivateKey != null) hashCode = hashCode * 59 + this.PrivateKey.GetHashCode();
+                if (this.Encryption != null) hashCode = hashCode * 59 + this.Encryption.GetHashCode();
                 return hashCode;
             }
         }

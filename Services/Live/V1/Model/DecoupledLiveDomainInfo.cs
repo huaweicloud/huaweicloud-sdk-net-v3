@@ -630,70 +630,21 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(DecoupledLiveDomainInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
+            if (this.DomainType != input.DomainType) return false;
+            if (this.Vendor != input.Vendor) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
+            if (this.DomainCname != input.DomainCname || (this.DomainCname != null && !this.DomainCname.Equals(input.DomainCname))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.RelatedDomain != input.RelatedDomain || (this.RelatedDomain != null && !this.RelatedDomain.Equals(input.RelatedDomain))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.StatusDescribe != input.StatusDescribe || (this.StatusDescribe != null && !this.StatusDescribe.Equals(input.StatusDescribe))) return false;
+            if (this.ServiceArea != input.ServiceArea) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.IsIpv6 != input.IsIpv6 || (this.IsIpv6 != null && !this.IsIpv6.Equals(input.IsIpv6))) return false;
 
-            return 
-                (
-                    this.Domain == input.Domain ||
-                    (this.Domain != null &&
-                    this.Domain.Equals(input.Domain))
-                ) && 
-                (
-                    this.DomainType == input.DomainType ||
-                    (this.DomainType != null &&
-                    this.DomainType.Equals(input.DomainType))
-                ) && 
-                (
-                    this.Vendor == input.Vendor ||
-                    (this.Vendor != null &&
-                    this.Vendor.Equals(input.Vendor))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.DomainCname == input.DomainCname ||
-                    (this.DomainCname != null &&
-                    this.DomainCname.Equals(input.DomainCname))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.RelatedDomain == input.RelatedDomain ||
-                    (this.RelatedDomain != null &&
-                    this.RelatedDomain.Equals(input.RelatedDomain))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.StatusDescribe == input.StatusDescribe ||
-                    (this.StatusDescribe != null &&
-                    this.StatusDescribe.Equals(input.StatusDescribe))
-                ) && 
-                (
-                    this.ServiceArea == input.ServiceArea ||
-                    (this.ServiceArea != null &&
-                    this.ServiceArea.Equals(input.ServiceArea))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.IsIpv6 == input.IsIpv6 ||
-                    (this.IsIpv6 != null &&
-                    this.IsIpv6.Equals(input.IsIpv6))
-                );
+            return true;
         }
 
         /// <summary>
@@ -703,31 +654,19 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Domain != null)
-                    hashCode = hashCode * 59 + this.Domain.GetHashCode();
-                if (this.DomainType != null)
-                    hashCode = hashCode * 59 + this.DomainType.GetHashCode();
-                if (this.Vendor != null)
-                    hashCode = hashCode * 59 + this.Vendor.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.DomainCname != null)
-                    hashCode = hashCode * 59 + this.DomainCname.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.RelatedDomain != null)
-                    hashCode = hashCode * 59 + this.RelatedDomain.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.StatusDescribe != null)
-                    hashCode = hashCode * 59 + this.StatusDescribe.GetHashCode();
-                if (this.ServiceArea != null)
-                    hashCode = hashCode * 59 + this.ServiceArea.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.IsIpv6 != null)
-                    hashCode = hashCode * 59 + this.IsIpv6.GetHashCode();
+                var hashCode = 41;
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                hashCode = hashCode * 59 + this.DomainType.GetHashCode();
+                hashCode = hashCode * 59 + this.Vendor.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
+                if (this.DomainCname != null) hashCode = hashCode * 59 + this.DomainCname.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.RelatedDomain != null) hashCode = hashCode * 59 + this.RelatedDomain.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.StatusDescribe != null) hashCode = hashCode * 59 + this.StatusDescribe.GetHashCode();
+                hashCode = hashCode * 59 + this.ServiceArea.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.IsIpv6 != null) hashCode = hashCode * 59 + this.IsIpv6.GetHashCode();
                 return hashCode;
             }
         }

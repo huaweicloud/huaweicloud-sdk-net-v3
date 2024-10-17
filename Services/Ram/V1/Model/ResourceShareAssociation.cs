@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         /// </summary>
         public bool Equals(ResourceShareAssociation input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AssociatedEntity != input.AssociatedEntity || (this.AssociatedEntity != null && !this.AssociatedEntity.Equals(input.AssociatedEntity))) return false;
+            if (this.AssociationType != input.AssociationType || (this.AssociationType != null && !this.AssociationType.Equals(input.AssociationType))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.External != input.External || (this.External != null && !this.External.Equals(input.External))) return false;
+            if (this.ResourceShareId != input.ResourceShareId || (this.ResourceShareId != null && !this.ResourceShareId.Equals(input.ResourceShareId))) return false;
+            if (this.ResourceShareName != input.ResourceShareName || (this.ResourceShareName != null && !this.ResourceShareName.Equals(input.ResourceShareName))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.StatusMessage != input.StatusMessage || (this.StatusMessage != null && !this.StatusMessage.Equals(input.StatusMessage))) return false;
 
-            return 
-                (
-                    this.AssociatedEntity == input.AssociatedEntity ||
-                    (this.AssociatedEntity != null &&
-                    this.AssociatedEntity.Equals(input.AssociatedEntity))
-                ) && 
-                (
-                    this.AssociationType == input.AssociationType ||
-                    (this.AssociationType != null &&
-                    this.AssociationType.Equals(input.AssociationType))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.External == input.External ||
-                    (this.External != null &&
-                    this.External.Equals(input.External))
-                ) && 
-                (
-                    this.ResourceShareId == input.ResourceShareId ||
-                    (this.ResourceShareId != null &&
-                    this.ResourceShareId.Equals(input.ResourceShareId))
-                ) && 
-                (
-                    this.ResourceShareName == input.ResourceShareName ||
-                    (this.ResourceShareName != null &&
-                    this.ResourceShareName.Equals(input.ResourceShareName))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.StatusMessage == input.StatusMessage ||
-                    (this.StatusMessage != null &&
-                    this.StatusMessage.Equals(input.StatusMessage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AssociatedEntity != null)
-                    hashCode = hashCode * 59 + this.AssociatedEntity.GetHashCode();
-                if (this.AssociationType != null)
-                    hashCode = hashCode * 59 + this.AssociationType.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.External != null)
-                    hashCode = hashCode * 59 + this.External.GetHashCode();
-                if (this.ResourceShareId != null)
-                    hashCode = hashCode * 59 + this.ResourceShareId.GetHashCode();
-                if (this.ResourceShareName != null)
-                    hashCode = hashCode * 59 + this.ResourceShareName.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.StatusMessage != null)
-                    hashCode = hashCode * 59 + this.StatusMessage.GetHashCode();
+                var hashCode = 41;
+                if (this.AssociatedEntity != null) hashCode = hashCode * 59 + this.AssociatedEntity.GetHashCode();
+                if (this.AssociationType != null) hashCode = hashCode * 59 + this.AssociationType.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.External != null) hashCode = hashCode * 59 + this.External.GetHashCode();
+                if (this.ResourceShareId != null) hashCode = hashCode * 59 + this.ResourceShareId.GetHashCode();
+                if (this.ResourceShareName != null) hashCode = hashCode * 59 + this.ResourceShareName.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.StatusMessage != null) hashCode = hashCode * 59 + this.StatusMessage.GetHashCode();
                 return hashCode;
             }
         }

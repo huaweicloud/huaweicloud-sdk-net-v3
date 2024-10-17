@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(ShowWorkFlowResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.WorkflowUrn != input.WorkflowUrn || (this.WorkflowUrn != null && !this.WorkflowUrn.Equals(input.WorkflowUrn))) return false;
+            if (this.CreatedTime != input.CreatedTime || (this.CreatedTime != null && !this.CreatedTime.Equals(input.CreatedTime))) return false;
+            if (this.UpdatedTime != input.UpdatedTime || (this.UpdatedTime != null && !this.UpdatedTime.Equals(input.UpdatedTime))) return false;
+            if (this.CreatedBy != input.CreatedBy || (this.CreatedBy != null && !this.CreatedBy.Equals(input.CreatedBy))) return false;
+            if (this.LtsGroupId != input.LtsGroupId || (this.LtsGroupId != null && !this.LtsGroupId.Equals(input.LtsGroupId))) return false;
+            if (this.LtsStreamId != input.LtsStreamId || (this.LtsStreamId != null && !this.LtsStreamId.Equals(input.LtsStreamId))) return false;
+            if (this.Definition != input.Definition || (this.Definition != null && !this.Definition.Equals(input.Definition))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.WorkflowUrn == input.WorkflowUrn ||
-                    (this.WorkflowUrn != null &&
-                    this.WorkflowUrn.Equals(input.WorkflowUrn))
-                ) && 
-                (
-                    this.CreatedTime == input.CreatedTime ||
-                    (this.CreatedTime != null &&
-                    this.CreatedTime.Equals(input.CreatedTime))
-                ) && 
-                (
-                    this.UpdatedTime == input.UpdatedTime ||
-                    (this.UpdatedTime != null &&
-                    this.UpdatedTime.Equals(input.UpdatedTime))
-                ) && 
-                (
-                    this.CreatedBy == input.CreatedBy ||
-                    (this.CreatedBy != null &&
-                    this.CreatedBy.Equals(input.CreatedBy))
-                ) && 
-                (
-                    this.LtsGroupId == input.LtsGroupId ||
-                    (this.LtsGroupId != null &&
-                    this.LtsGroupId.Equals(input.LtsGroupId))
-                ) && 
-                (
-                    this.LtsStreamId == input.LtsStreamId ||
-                    (this.LtsStreamId != null &&
-                    this.LtsStreamId.Equals(input.LtsStreamId))
-                ) && 
-                (
-                    this.Definition == input.Definition ||
-                    (this.Definition != null &&
-                    this.Definition.Equals(input.Definition))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.WorkflowUrn != null)
-                    hashCode = hashCode * 59 + this.WorkflowUrn.GetHashCode();
-                if (this.CreatedTime != null)
-                    hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
-                if (this.UpdatedTime != null)
-                    hashCode = hashCode * 59 + this.UpdatedTime.GetHashCode();
-                if (this.CreatedBy != null)
-                    hashCode = hashCode * 59 + this.CreatedBy.GetHashCode();
-                if (this.LtsGroupId != null)
-                    hashCode = hashCode * 59 + this.LtsGroupId.GetHashCode();
-                if (this.LtsStreamId != null)
-                    hashCode = hashCode * 59 + this.LtsStreamId.GetHashCode();
-                if (this.Definition != null)
-                    hashCode = hashCode * 59 + this.Definition.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.WorkflowUrn != null) hashCode = hashCode * 59 + this.WorkflowUrn.GetHashCode();
+                if (this.CreatedTime != null) hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
+                if (this.UpdatedTime != null) hashCode = hashCode * 59 + this.UpdatedTime.GetHashCode();
+                if (this.CreatedBy != null) hashCode = hashCode * 59 + this.CreatedBy.GetHashCode();
+                if (this.LtsGroupId != null) hashCode = hashCode * 59 + this.LtsGroupId.GetHashCode();
+                if (this.LtsStreamId != null) hashCode = hashCode * 59 + this.LtsStreamId.GetHashCode();
+                if (this.Definition != null) hashCode = hashCode * 59 + this.Definition.GetHashCode();
                 return hashCode;
             }
         }

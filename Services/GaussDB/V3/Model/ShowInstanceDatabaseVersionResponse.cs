@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ShowInstanceDatabaseVersionResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Datastore != input.Datastore || (this.Datastore != null && !this.Datastore.Equals(input.Datastore))) return false;
+            if (this.UpgradeFlag != input.UpgradeFlag || (this.UpgradeFlag != null && !this.UpgradeFlag.Equals(input.UpgradeFlag))) return false;
 
-            return 
-                (
-                    this.Datastore == input.Datastore ||
-                    (this.Datastore != null &&
-                    this.Datastore.Equals(input.Datastore))
-                ) && 
-                (
-                    this.UpgradeFlag == input.UpgradeFlag ||
-                    (this.UpgradeFlag != null &&
-                    this.UpgradeFlag.Equals(input.UpgradeFlag))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Datastore != null)
-                    hashCode = hashCode * 59 + this.Datastore.GetHashCode();
-                if (this.UpgradeFlag != null)
-                    hashCode = hashCode * 59 + this.UpgradeFlag.GetHashCode();
+                var hashCode = 41;
+                if (this.Datastore != null) hashCode = hashCode * 59 + this.Datastore.GetHashCode();
+                if (this.UpgradeFlag != null) hashCode = hashCode * 59 + this.UpgradeFlag.GetHashCode();
                 return hashCode;
             }
         }

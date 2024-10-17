@@ -175,105 +175,28 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(QuotaList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BackupGigabytes != input.BackupGigabytes || (this.BackupGigabytes != null && !this.BackupGigabytes.Equals(input.BackupGigabytes))) return false;
+            if (this.Backups != input.Backups || (this.Backups != null && !this.Backups.Equals(input.Backups))) return false;
+            if (this.Gigabytes != input.Gigabytes || (this.Gigabytes != null && !this.Gigabytes.Equals(input.Gigabytes))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Snapshots != input.Snapshots || (this.Snapshots != null && !this.Snapshots.Equals(input.Snapshots))) return false;
+            if (this.Volumes != input.Volumes || (this.Volumes != null && !this.Volumes.Equals(input.Volumes))) return false;
+            if (this.GigabytesSATA != input.GigabytesSATA || (this.GigabytesSATA != null && !this.GigabytesSATA.Equals(input.GigabytesSATA))) return false;
+            if (this.SnapshotsSATA != input.SnapshotsSATA || (this.SnapshotsSATA != null && !this.SnapshotsSATA.Equals(input.SnapshotsSATA))) return false;
+            if (this.VolumesSATA != input.VolumesSATA || (this.VolumesSATA != null && !this.VolumesSATA.Equals(input.VolumesSATA))) return false;
+            if (this.GigabytesSAS != input.GigabytesSAS || (this.GigabytesSAS != null && !this.GigabytesSAS.Equals(input.GigabytesSAS))) return false;
+            if (this.SnapshotsSAS != input.SnapshotsSAS || (this.SnapshotsSAS != null && !this.SnapshotsSAS.Equals(input.SnapshotsSAS))) return false;
+            if (this.VolumesSAS != input.VolumesSAS || (this.VolumesSAS != null && !this.VolumesSAS.Equals(input.VolumesSAS))) return false;
+            if (this.GigabytesSSD != input.GigabytesSSD || (this.GigabytesSSD != null && !this.GigabytesSSD.Equals(input.GigabytesSSD))) return false;
+            if (this.SnapshotsSSD != input.SnapshotsSSD || (this.SnapshotsSSD != null && !this.SnapshotsSSD.Equals(input.SnapshotsSSD))) return false;
+            if (this.VolumesSSD != input.VolumesSSD || (this.VolumesSSD != null && !this.VolumesSSD.Equals(input.VolumesSSD))) return false;
+            if (this.GigabytesGPSSD != input.GigabytesGPSSD || (this.GigabytesGPSSD != null && !this.GigabytesGPSSD.Equals(input.GigabytesGPSSD))) return false;
+            if (this.SnapshotsGPSSD != input.SnapshotsGPSSD || (this.SnapshotsGPSSD != null && !this.SnapshotsGPSSD.Equals(input.SnapshotsGPSSD))) return false;
+            if (this.VolumesGPSSD != input.VolumesGPSSD || (this.VolumesGPSSD != null && !this.VolumesGPSSD.Equals(input.VolumesGPSSD))) return false;
+            if (this.PerVolumeGigabytes != input.PerVolumeGigabytes || (this.PerVolumeGigabytes != null && !this.PerVolumeGigabytes.Equals(input.PerVolumeGigabytes))) return false;
 
-            return 
-                (
-                    this.BackupGigabytes == input.BackupGigabytes ||
-                    (this.BackupGigabytes != null &&
-                    this.BackupGigabytes.Equals(input.BackupGigabytes))
-                ) && 
-                (
-                    this.Backups == input.Backups ||
-                    (this.Backups != null &&
-                    this.Backups.Equals(input.Backups))
-                ) && 
-                (
-                    this.Gigabytes == input.Gigabytes ||
-                    (this.Gigabytes != null &&
-                    this.Gigabytes.Equals(input.Gigabytes))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Snapshots == input.Snapshots ||
-                    (this.Snapshots != null &&
-                    this.Snapshots.Equals(input.Snapshots))
-                ) && 
-                (
-                    this.Volumes == input.Volumes ||
-                    (this.Volumes != null &&
-                    this.Volumes.Equals(input.Volumes))
-                ) && 
-                (
-                    this.GigabytesSATA == input.GigabytesSATA ||
-                    (this.GigabytesSATA != null &&
-                    this.GigabytesSATA.Equals(input.GigabytesSATA))
-                ) && 
-                (
-                    this.SnapshotsSATA == input.SnapshotsSATA ||
-                    (this.SnapshotsSATA != null &&
-                    this.SnapshotsSATA.Equals(input.SnapshotsSATA))
-                ) && 
-                (
-                    this.VolumesSATA == input.VolumesSATA ||
-                    (this.VolumesSATA != null &&
-                    this.VolumesSATA.Equals(input.VolumesSATA))
-                ) && 
-                (
-                    this.GigabytesSAS == input.GigabytesSAS ||
-                    (this.GigabytesSAS != null &&
-                    this.GigabytesSAS.Equals(input.GigabytesSAS))
-                ) && 
-                (
-                    this.SnapshotsSAS == input.SnapshotsSAS ||
-                    (this.SnapshotsSAS != null &&
-                    this.SnapshotsSAS.Equals(input.SnapshotsSAS))
-                ) && 
-                (
-                    this.VolumesSAS == input.VolumesSAS ||
-                    (this.VolumesSAS != null &&
-                    this.VolumesSAS.Equals(input.VolumesSAS))
-                ) && 
-                (
-                    this.GigabytesSSD == input.GigabytesSSD ||
-                    (this.GigabytesSSD != null &&
-                    this.GigabytesSSD.Equals(input.GigabytesSSD))
-                ) && 
-                (
-                    this.SnapshotsSSD == input.SnapshotsSSD ||
-                    (this.SnapshotsSSD != null &&
-                    this.SnapshotsSSD.Equals(input.SnapshotsSSD))
-                ) && 
-                (
-                    this.VolumesSSD == input.VolumesSSD ||
-                    (this.VolumesSSD != null &&
-                    this.VolumesSSD.Equals(input.VolumesSSD))
-                ) && 
-                (
-                    this.GigabytesGPSSD == input.GigabytesGPSSD ||
-                    (this.GigabytesGPSSD != null &&
-                    this.GigabytesGPSSD.Equals(input.GigabytesGPSSD))
-                ) && 
-                (
-                    this.SnapshotsGPSSD == input.SnapshotsGPSSD ||
-                    (this.SnapshotsGPSSD != null &&
-                    this.SnapshotsGPSSD.Equals(input.SnapshotsGPSSD))
-                ) && 
-                (
-                    this.VolumesGPSSD == input.VolumesGPSSD ||
-                    (this.VolumesGPSSD != null &&
-                    this.VolumesGPSSD.Equals(input.VolumesGPSSD))
-                ) && 
-                (
-                    this.PerVolumeGigabytes == input.PerVolumeGigabytes ||
-                    (this.PerVolumeGigabytes != null &&
-                    this.PerVolumeGigabytes.Equals(input.PerVolumeGigabytes))
-                );
+            return true;
         }
 
         /// <summary>
@@ -283,45 +206,26 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BackupGigabytes != null)
-                    hashCode = hashCode * 59 + this.BackupGigabytes.GetHashCode();
-                if (this.Backups != null)
-                    hashCode = hashCode * 59 + this.Backups.GetHashCode();
-                if (this.Gigabytes != null)
-                    hashCode = hashCode * 59 + this.Gigabytes.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Snapshots != null)
-                    hashCode = hashCode * 59 + this.Snapshots.GetHashCode();
-                if (this.Volumes != null)
-                    hashCode = hashCode * 59 + this.Volumes.GetHashCode();
-                if (this.GigabytesSATA != null)
-                    hashCode = hashCode * 59 + this.GigabytesSATA.GetHashCode();
-                if (this.SnapshotsSATA != null)
-                    hashCode = hashCode * 59 + this.SnapshotsSATA.GetHashCode();
-                if (this.VolumesSATA != null)
-                    hashCode = hashCode * 59 + this.VolumesSATA.GetHashCode();
-                if (this.GigabytesSAS != null)
-                    hashCode = hashCode * 59 + this.GigabytesSAS.GetHashCode();
-                if (this.SnapshotsSAS != null)
-                    hashCode = hashCode * 59 + this.SnapshotsSAS.GetHashCode();
-                if (this.VolumesSAS != null)
-                    hashCode = hashCode * 59 + this.VolumesSAS.GetHashCode();
-                if (this.GigabytesSSD != null)
-                    hashCode = hashCode * 59 + this.GigabytesSSD.GetHashCode();
-                if (this.SnapshotsSSD != null)
-                    hashCode = hashCode * 59 + this.SnapshotsSSD.GetHashCode();
-                if (this.VolumesSSD != null)
-                    hashCode = hashCode * 59 + this.VolumesSSD.GetHashCode();
-                if (this.GigabytesGPSSD != null)
-                    hashCode = hashCode * 59 + this.GigabytesGPSSD.GetHashCode();
-                if (this.SnapshotsGPSSD != null)
-                    hashCode = hashCode * 59 + this.SnapshotsGPSSD.GetHashCode();
-                if (this.VolumesGPSSD != null)
-                    hashCode = hashCode * 59 + this.VolumesGPSSD.GetHashCode();
-                if (this.PerVolumeGigabytes != null)
-                    hashCode = hashCode * 59 + this.PerVolumeGigabytes.GetHashCode();
+                var hashCode = 41;
+                if (this.BackupGigabytes != null) hashCode = hashCode * 59 + this.BackupGigabytes.GetHashCode();
+                if (this.Backups != null) hashCode = hashCode * 59 + this.Backups.GetHashCode();
+                if (this.Gigabytes != null) hashCode = hashCode * 59 + this.Gigabytes.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Snapshots != null) hashCode = hashCode * 59 + this.Snapshots.GetHashCode();
+                if (this.Volumes != null) hashCode = hashCode * 59 + this.Volumes.GetHashCode();
+                if (this.GigabytesSATA != null) hashCode = hashCode * 59 + this.GigabytesSATA.GetHashCode();
+                if (this.SnapshotsSATA != null) hashCode = hashCode * 59 + this.SnapshotsSATA.GetHashCode();
+                if (this.VolumesSATA != null) hashCode = hashCode * 59 + this.VolumesSATA.GetHashCode();
+                if (this.GigabytesSAS != null) hashCode = hashCode * 59 + this.GigabytesSAS.GetHashCode();
+                if (this.SnapshotsSAS != null) hashCode = hashCode * 59 + this.SnapshotsSAS.GetHashCode();
+                if (this.VolumesSAS != null) hashCode = hashCode * 59 + this.VolumesSAS.GetHashCode();
+                if (this.GigabytesSSD != null) hashCode = hashCode * 59 + this.GigabytesSSD.GetHashCode();
+                if (this.SnapshotsSSD != null) hashCode = hashCode * 59 + this.SnapshotsSSD.GetHashCode();
+                if (this.VolumesSSD != null) hashCode = hashCode * 59 + this.VolumesSSD.GetHashCode();
+                if (this.GigabytesGPSSD != null) hashCode = hashCode * 59 + this.GigabytesGPSSD.GetHashCode();
+                if (this.SnapshotsGPSSD != null) hashCode = hashCode * 59 + this.SnapshotsGPSSD.GetHashCode();
+                if (this.VolumesGPSSD != null) hashCode = hashCode * 59 + this.VolumesGPSSD.GetHashCode();
+                if (this.PerVolumeGigabytes != null) hashCode = hashCode * 59 + this.PerVolumeGigabytes.GetHashCode();
                 return hashCode;
             }
         }

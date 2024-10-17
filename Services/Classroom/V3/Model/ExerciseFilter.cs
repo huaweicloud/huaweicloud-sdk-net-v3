@@ -70,33 +70,13 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         /// </summary>
         public bool Equals(ExerciseFilter input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.ExerciseType != input.ExerciseType || (this.ExerciseType != null && input.ExerciseType != null && !this.ExerciseType.SequenceEqual(input.ExerciseType))) return false;
+            if (this.DifficultIds != input.DifficultIds || (this.DifficultIds != null && input.DifficultIds != null && !this.DifficultIds.SequenceEqual(input.DifficultIds))) return false;
+            if (this.KnowledgePointIds != input.KnowledgePointIds || (this.KnowledgePointIds != null && input.KnowledgePointIds != null && !this.KnowledgePointIds.SequenceEqual(input.KnowledgePointIds))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ExerciseType == input.ExerciseType ||
-                    this.ExerciseType != null &&
-                    input.ExerciseType != null &&
-                    this.ExerciseType.SequenceEqual(input.ExerciseType)
-                ) && 
-                (
-                    this.DifficultIds == input.DifficultIds ||
-                    this.DifficultIds != null &&
-                    input.DifficultIds != null &&
-                    this.DifficultIds.SequenceEqual(input.DifficultIds)
-                ) && 
-                (
-                    this.KnowledgePointIds == input.KnowledgePointIds ||
-                    this.KnowledgePointIds != null &&
-                    input.KnowledgePointIds != null &&
-                    this.KnowledgePointIds.SequenceEqual(input.KnowledgePointIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -106,15 +86,11 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.ExerciseType != null)
-                    hashCode = hashCode * 59 + this.ExerciseType.GetHashCode();
-                if (this.DifficultIds != null)
-                    hashCode = hashCode * 59 + this.DifficultIds.GetHashCode();
-                if (this.KnowledgePointIds != null)
-                    hashCode = hashCode * 59 + this.KnowledgePointIds.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.ExerciseType != null) hashCode = hashCode * 59 + this.ExerciseType.GetHashCode();
+                if (this.DifficultIds != null) hashCode = hashCode * 59 + this.DifficultIds.GetHashCode();
+                if (this.KnowledgePointIds != null) hashCode = hashCode * 59 + this.KnowledgePointIds.GetHashCode();
                 return hashCode;
             }
         }

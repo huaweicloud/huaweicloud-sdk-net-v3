@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(PriorityBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SlavePriorityWeight != input.SlavePriorityWeight || (this.SlavePriorityWeight != null && !this.SlavePriorityWeight.Equals(input.SlavePriorityWeight))) return false;
 
-            return 
-                (
-                    this.SlavePriorityWeight == input.SlavePriorityWeight ||
-                    (this.SlavePriorityWeight != null &&
-                    this.SlavePriorityWeight.Equals(input.SlavePriorityWeight))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SlavePriorityWeight != null)
-                    hashCode = hashCode * 59 + this.SlavePriorityWeight.GetHashCode();
+                var hashCode = 41;
+                if (this.SlavePriorityWeight != null) hashCode = hashCode * 59 + this.SlavePriorityWeight.GetHashCode();
                 return hashCode;
             }
         }

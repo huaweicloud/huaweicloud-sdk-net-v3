@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(PreheatingTaskRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ZhUrlEncode != input.ZhUrlEncode || (this.ZhUrlEncode != null && !this.ZhUrlEncode.Equals(input.ZhUrlEncode))) return false;
+            if (this.Urls != input.Urls || (this.Urls != null && input.Urls != null && !this.Urls.SequenceEqual(input.Urls))) return false;
 
-            return 
-                (
-                    this.ZhUrlEncode == input.ZhUrlEncode ||
-                    (this.ZhUrlEncode != null &&
-                    this.ZhUrlEncode.Equals(input.ZhUrlEncode))
-                ) && 
-                (
-                    this.Urls == input.Urls ||
-                    this.Urls != null &&
-                    input.Urls != null &&
-                    this.Urls.SequenceEqual(input.Urls)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ZhUrlEncode != null)
-                    hashCode = hashCode * 59 + this.ZhUrlEncode.GetHashCode();
-                if (this.Urls != null)
-                    hashCode = hashCode * 59 + this.Urls.GetHashCode();
+                var hashCode = 41;
+                if (this.ZhUrlEncode != null) hashCode = hashCode * 59 + this.ZhUrlEncode.GetHashCode();
+                if (this.Urls != null) hashCode = hashCode * 59 + this.Urls.GetHashCode();
                 return hashCode;
             }
         }

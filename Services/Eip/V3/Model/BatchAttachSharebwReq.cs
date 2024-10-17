@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(BatchAttachSharebwReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Publicips != input.Publicips || (this.Publicips != null && input.Publicips != null && !this.Publicips.SequenceEqual(input.Publicips))) return false;
 
-            return 
-                (
-                    this.Publicips == input.Publicips ||
-                    this.Publicips != null &&
-                    input.Publicips != null &&
-                    this.Publicips.SequenceEqual(input.Publicips)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Publicips != null)
-                    hashCode = hashCode * 59 + this.Publicips.GetHashCode();
+                var hashCode = 41;
+                if (this.Publicips != null) hashCode = hashCode * 59 + this.Publicips.GetHashCode();
                 return hashCode;
             }
         }

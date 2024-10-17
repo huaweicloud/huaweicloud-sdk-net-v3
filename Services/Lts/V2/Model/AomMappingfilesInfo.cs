@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(AomMappingfilesInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FileName != input.FileName || (this.FileName != null && !this.FileName.Equals(input.FileName))) return false;
+            if (this.LogStreamInfo != input.LogStreamInfo || (this.LogStreamInfo != null && !this.LogStreamInfo.Equals(input.LogStreamInfo))) return false;
 
-            return 
-                (
-                    this.FileName == input.FileName ||
-                    (this.FileName != null &&
-                    this.FileName.Equals(input.FileName))
-                ) && 
-                (
-                    this.LogStreamInfo == input.LogStreamInfo ||
-                    (this.LogStreamInfo != null &&
-                    this.LogStreamInfo.Equals(input.LogStreamInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FileName != null)
-                    hashCode = hashCode * 59 + this.FileName.GetHashCode();
-                if (this.LogStreamInfo != null)
-                    hashCode = hashCode * 59 + this.LogStreamInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.FileName != null) hashCode = hashCode * 59 + this.FileName.GetHashCode();
+                if (this.LogStreamInfo != null) hashCode = hashCode * 59 + this.LogStreamInfo.GetHashCode();
                 return hashCode;
             }
         }

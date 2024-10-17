@@ -106,50 +106,17 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ListEngineFlavorsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.AvailabilityZoneIds != input.AvailabilityZoneIds || (this.AvailabilityZoneIds != null && !this.AvailabilityZoneIds.Equals(input.AvailabilityZoneIds))) return false;
+            if (this.HaMode != input.HaMode || (this.HaMode != null && !this.HaMode.Equals(input.HaMode))) return false;
+            if (this.SpecCodeLike != input.SpecCodeLike || (this.SpecCodeLike != null && !this.SpecCodeLike.Equals(input.SpecCodeLike))) return false;
+            if (this.FlavorCategoryType != input.FlavorCategoryType || (this.FlavorCategoryType != null && !this.FlavorCategoryType.Equals(input.FlavorCategoryType))) return false;
+            if (this.IsRhaFlavor != input.IsRhaFlavor || (this.IsRhaFlavor != null && !this.IsRhaFlavor.Equals(input.IsRhaFlavor))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.AvailabilityZoneIds == input.AvailabilityZoneIds ||
-                    (this.AvailabilityZoneIds != null &&
-                    this.AvailabilityZoneIds.Equals(input.AvailabilityZoneIds))
-                ) && 
-                (
-                    this.HaMode == input.HaMode ||
-                    (this.HaMode != null &&
-                    this.HaMode.Equals(input.HaMode))
-                ) && 
-                (
-                    this.SpecCodeLike == input.SpecCodeLike ||
-                    (this.SpecCodeLike != null &&
-                    this.SpecCodeLike.Equals(input.SpecCodeLike))
-                ) && 
-                (
-                    this.FlavorCategoryType == input.FlavorCategoryType ||
-                    (this.FlavorCategoryType != null &&
-                    this.FlavorCategoryType.Equals(input.FlavorCategoryType))
-                ) && 
-                (
-                    this.IsRhaFlavor == input.IsRhaFlavor ||
-                    (this.IsRhaFlavor != null &&
-                    this.IsRhaFlavor.Equals(input.IsRhaFlavor))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -159,23 +126,15 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.AvailabilityZoneIds != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZoneIds.GetHashCode();
-                if (this.HaMode != null)
-                    hashCode = hashCode * 59 + this.HaMode.GetHashCode();
-                if (this.SpecCodeLike != null)
-                    hashCode = hashCode * 59 + this.SpecCodeLike.GetHashCode();
-                if (this.FlavorCategoryType != null)
-                    hashCode = hashCode * 59 + this.FlavorCategoryType.GetHashCode();
-                if (this.IsRhaFlavor != null)
-                    hashCode = hashCode * 59 + this.IsRhaFlavor.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.AvailabilityZoneIds != null) hashCode = hashCode * 59 + this.AvailabilityZoneIds.GetHashCode();
+                if (this.HaMode != null) hashCode = hashCode * 59 + this.HaMode.GetHashCode();
+                if (this.SpecCodeLike != null) hashCode = hashCode * 59 + this.SpecCodeLike.GetHashCode();
+                if (this.FlavorCategoryType != null) hashCode = hashCode * 59 + this.FlavorCategoryType.GetHashCode();
+                if (this.IsRhaFlavor != null) hashCode = hashCode * 59 + this.IsRhaFlavor.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;
             }
         }

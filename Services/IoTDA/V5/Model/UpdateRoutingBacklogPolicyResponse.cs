@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(UpdateRoutingBacklogPolicyResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PolicyId != input.PolicyId || (this.PolicyId != null && !this.PolicyId.Equals(input.PolicyId))) return false;
+            if (this.PolicyName != input.PolicyName || (this.PolicyName != null && !this.PolicyName.Equals(input.PolicyName))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.BacklogSize != input.BacklogSize || (this.BacklogSize != null && !this.BacklogSize.Equals(input.BacklogSize))) return false;
+            if (this.BacklogTime != input.BacklogTime || (this.BacklogTime != null && !this.BacklogTime.Equals(input.BacklogTime))) return false;
 
-            return 
-                (
-                    this.PolicyId == input.PolicyId ||
-                    (this.PolicyId != null &&
-                    this.PolicyId.Equals(input.PolicyId))
-                ) && 
-                (
-                    this.PolicyName == input.PolicyName ||
-                    (this.PolicyName != null &&
-                    this.PolicyName.Equals(input.PolicyName))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.BacklogSize == input.BacklogSize ||
-                    (this.BacklogSize != null &&
-                    this.BacklogSize.Equals(input.BacklogSize))
-                ) && 
-                (
-                    this.BacklogTime == input.BacklogTime ||
-                    (this.BacklogTime != null &&
-                    this.BacklogTime.Equals(input.BacklogTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PolicyId != null)
-                    hashCode = hashCode * 59 + this.PolicyId.GetHashCode();
-                if (this.PolicyName != null)
-                    hashCode = hashCode * 59 + this.PolicyName.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.BacklogSize != null)
-                    hashCode = hashCode * 59 + this.BacklogSize.GetHashCode();
-                if (this.BacklogTime != null)
-                    hashCode = hashCode * 59 + this.BacklogTime.GetHashCode();
+                var hashCode = 41;
+                if (this.PolicyId != null) hashCode = hashCode * 59 + this.PolicyId.GetHashCode();
+                if (this.PolicyName != null) hashCode = hashCode * 59 + this.PolicyName.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.BacklogSize != null) hashCode = hashCode * 59 + this.BacklogSize.GetHashCode();
+                if (this.BacklogTime != null) hashCode = hashCode * 59 + this.BacklogTime.GetHashCode();
                 return hashCode;
             }
         }

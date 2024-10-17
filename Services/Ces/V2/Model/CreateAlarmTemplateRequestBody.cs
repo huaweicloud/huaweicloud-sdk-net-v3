@@ -184,31 +184,13 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(CreateAlarmTemplateRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TemplateName != input.TemplateName || (this.TemplateName != null && !this.TemplateName.Equals(input.TemplateName))) return false;
+            if (this.TemplateDescription != input.TemplateDescription || (this.TemplateDescription != null && !this.TemplateDescription.Equals(input.TemplateDescription))) return false;
+            if (this.TemplateType != input.TemplateType) return false;
+            if (this.Policies != input.Policies || (this.Policies != null && input.Policies != null && !this.Policies.SequenceEqual(input.Policies))) return false;
 
-            return 
-                (
-                    this.TemplateName == input.TemplateName ||
-                    (this.TemplateName != null &&
-                    this.TemplateName.Equals(input.TemplateName))
-                ) && 
-                (
-                    this.TemplateDescription == input.TemplateDescription ||
-                    (this.TemplateDescription != null &&
-                    this.TemplateDescription.Equals(input.TemplateDescription))
-                ) && 
-                (
-                    this.TemplateType == input.TemplateType ||
-                    (this.TemplateType != null &&
-                    this.TemplateType.Equals(input.TemplateType))
-                ) && 
-                (
-                    this.Policies == input.Policies ||
-                    this.Policies != null &&
-                    input.Policies != null &&
-                    this.Policies.SequenceEqual(input.Policies)
-                );
+            return true;
         }
 
         /// <summary>
@@ -218,15 +200,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TemplateName != null)
-                    hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
-                if (this.TemplateDescription != null)
-                    hashCode = hashCode * 59 + this.TemplateDescription.GetHashCode();
-                if (this.TemplateType != null)
-                    hashCode = hashCode * 59 + this.TemplateType.GetHashCode();
-                if (this.Policies != null)
-                    hashCode = hashCode * 59 + this.Policies.GetHashCode();
+                var hashCode = 41;
+                if (this.TemplateName != null) hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
+                if (this.TemplateDescription != null) hashCode = hashCode * 59 + this.TemplateDescription.GetHashCode();
+                hashCode = hashCode * 59 + this.TemplateType.GetHashCode();
+                if (this.Policies != null) hashCode = hashCode * 59 + this.Policies.GetHashCode();
                 return hashCode;
             }
         }

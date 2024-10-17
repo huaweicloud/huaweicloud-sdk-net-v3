@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// </summary>
         public bool Equals(ListWafBandwidthResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Curve != input.Curve || (this.Curve != null && input.Curve != null && !this.Curve.SequenceEqual(input.Curve))) return false;
 
-            return 
-                (
-                    this.Curve == input.Curve ||
-                    this.Curve != null &&
-                    input.Curve != null &&
-                    this.Curve.SequenceEqual(input.Curve)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Curve != null)
-                    hashCode = hashCode * 59 + this.Curve.GetHashCode();
+                var hashCode = 41;
+                if (this.Curve != null) hashCode = hashCode * 59 + this.Curve.GetHashCode();
                 return hashCode;
             }
         }

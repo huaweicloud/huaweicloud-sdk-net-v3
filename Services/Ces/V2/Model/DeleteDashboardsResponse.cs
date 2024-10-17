@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(DeleteDashboardsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Dashboards != input.Dashboards || (this.Dashboards != null && input.Dashboards != null && !this.Dashboards.SequenceEqual(input.Dashboards))) return false;
 
-            return 
-                (
-                    this.Dashboards == input.Dashboards ||
-                    this.Dashboards != null &&
-                    input.Dashboards != null &&
-                    this.Dashboards.SequenceEqual(input.Dashboards)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Dashboards != null)
-                    hashCode = hashCode * 59 + this.Dashboards.GetHashCode();
+                var hashCode = 41;
+                if (this.Dashboards != null) hashCode = hashCode * 59 + this.Dashboards.GetHashCode();
                 return hashCode;
             }
         }

@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(ShowLifeCycleHookRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ScalingGroupId != input.ScalingGroupId || (this.ScalingGroupId != null && !this.ScalingGroupId.Equals(input.ScalingGroupId))) return false;
+            if (this.LifecycleHookName != input.LifecycleHookName || (this.LifecycleHookName != null && !this.LifecycleHookName.Equals(input.LifecycleHookName))) return false;
 
-            return 
-                (
-                    this.ScalingGroupId == input.ScalingGroupId ||
-                    (this.ScalingGroupId != null &&
-                    this.ScalingGroupId.Equals(input.ScalingGroupId))
-                ) && 
-                (
-                    this.LifecycleHookName == input.LifecycleHookName ||
-                    (this.LifecycleHookName != null &&
-                    this.LifecycleHookName.Equals(input.LifecycleHookName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ScalingGroupId != null)
-                    hashCode = hashCode * 59 + this.ScalingGroupId.GetHashCode();
-                if (this.LifecycleHookName != null)
-                    hashCode = hashCode * 59 + this.LifecycleHookName.GetHashCode();
+                var hashCode = 41;
+                if (this.ScalingGroupId != null) hashCode = hashCode * 59 + this.ScalingGroupId.GetHashCode();
+                if (this.LifecycleHookName != null) hashCode = hashCode * 59 + this.LifecycleHookName.GetHashCode();
                 return hashCode;
             }
         }

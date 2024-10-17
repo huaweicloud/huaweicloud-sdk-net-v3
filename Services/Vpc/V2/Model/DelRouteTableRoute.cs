@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(DelRouteTableRoute input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Destination != input.Destination || (this.Destination != null && !this.Destination.Equals(input.Destination))) return false;
+            if (this.Nexthop != input.Nexthop || (this.Nexthop != null && !this.Nexthop.Equals(input.Nexthop))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Destination == input.Destination ||
-                    (this.Destination != null &&
-                    this.Destination.Equals(input.Destination))
-                ) && 
-                (
-                    this.Nexthop == input.Nexthop ||
-                    (this.Nexthop != null &&
-                    this.Nexthop.Equals(input.Nexthop))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Destination != null)
-                    hashCode = hashCode * 59 + this.Destination.GetHashCode();
-                if (this.Nexthop != null)
-                    hashCode = hashCode * 59 + this.Nexthop.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                var hashCode = 41;
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Destination != null) hashCode = hashCode * 59 + this.Destination.GetHashCode();
+                if (this.Nexthop != null) hashCode = hashCode * 59 + this.Nexthop.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

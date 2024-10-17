@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ReplaySlowSqlResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ObjectType != input.ObjectType || (this.ObjectType != null && !this.ObjectType.Equals(input.ObjectType))) return false;
+            if (this.SlowSql != input.SlowSql || (this.SlowSql != null && !this.SlowSql.Equals(input.SlowSql))) return false;
+            if (this.OldTime != input.OldTime || (this.OldTime != null && !this.OldTime.Equals(input.OldTime))) return false;
+            if (this.ReplayTime != input.ReplayTime || (this.ReplayTime != null && !this.ReplayTime.Equals(input.ReplayTime))) return false;
 
-            return 
-                (
-                    this.ObjectType == input.ObjectType ||
-                    (this.ObjectType != null &&
-                    this.ObjectType.Equals(input.ObjectType))
-                ) && 
-                (
-                    this.SlowSql == input.SlowSql ||
-                    (this.SlowSql != null &&
-                    this.SlowSql.Equals(input.SlowSql))
-                ) && 
-                (
-                    this.OldTime == input.OldTime ||
-                    (this.OldTime != null &&
-                    this.OldTime.Equals(input.OldTime))
-                ) && 
-                (
-                    this.ReplayTime == input.ReplayTime ||
-                    (this.ReplayTime != null &&
-                    this.ReplayTime.Equals(input.ReplayTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ObjectType != null)
-                    hashCode = hashCode * 59 + this.ObjectType.GetHashCode();
-                if (this.SlowSql != null)
-                    hashCode = hashCode * 59 + this.SlowSql.GetHashCode();
-                if (this.OldTime != null)
-                    hashCode = hashCode * 59 + this.OldTime.GetHashCode();
-                if (this.ReplayTime != null)
-                    hashCode = hashCode * 59 + this.ReplayTime.GetHashCode();
+                var hashCode = 41;
+                if (this.ObjectType != null) hashCode = hashCode * 59 + this.ObjectType.GetHashCode();
+                if (this.SlowSql != null) hashCode = hashCode * 59 + this.SlowSql.GetHashCode();
+                if (this.OldTime != null) hashCode = hashCode * 59 + this.OldTime.GetHashCode();
+                if (this.ReplayTime != null) hashCode = hashCode * 59 + this.ReplayTime.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(ScopedTokenIdentity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Methods != input.Methods || (this.Methods != null && input.Methods != null && !this.Methods.SequenceEqual(input.Methods))) return false;
+            if (this.Token != input.Token || (this.Token != null && !this.Token.Equals(input.Token))) return false;
 
-            return 
-                (
-                    this.Methods == input.Methods ||
-                    this.Methods != null &&
-                    input.Methods != null &&
-                    this.Methods.SequenceEqual(input.Methods)
-                ) && 
-                (
-                    this.Token == input.Token ||
-                    (this.Token != null &&
-                    this.Token.Equals(input.Token))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Methods != null)
-                    hashCode = hashCode * 59 + this.Methods.GetHashCode();
-                if (this.Token != null)
-                    hashCode = hashCode * 59 + this.Token.GetHashCode();
+                var hashCode = 41;
+                if (this.Methods != null) hashCode = hashCode * 59 + this.Methods.GetHashCode();
+                if (this.Token != null) hashCode = hashCode * 59 + this.Token.GetHashCode();
                 return hashCode;
             }
         }

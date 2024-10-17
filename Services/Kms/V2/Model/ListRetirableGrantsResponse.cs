@@ -184,31 +184,13 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         /// </summary>
         public bool Equals(ListRetirableGrantsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Grants != input.Grants || (this.Grants != null && input.Grants != null && !this.Grants.SequenceEqual(input.Grants))) return false;
+            if (this.NextMarker != input.NextMarker || (this.NextMarker != null && !this.NextMarker.Equals(input.NextMarker))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.Truncated != input.Truncated) return false;
 
-            return 
-                (
-                    this.Grants == input.Grants ||
-                    this.Grants != null &&
-                    input.Grants != null &&
-                    this.Grants.SequenceEqual(input.Grants)
-                ) && 
-                (
-                    this.NextMarker == input.NextMarker ||
-                    (this.NextMarker != null &&
-                    this.NextMarker.Equals(input.NextMarker))
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.Truncated == input.Truncated ||
-                    (this.Truncated != null &&
-                    this.Truncated.Equals(input.Truncated))
-                );
+            return true;
         }
 
         /// <summary>
@@ -218,15 +200,11 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Grants != null)
-                    hashCode = hashCode * 59 + this.Grants.GetHashCode();
-                if (this.NextMarker != null)
-                    hashCode = hashCode * 59 + this.NextMarker.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.Truncated != null)
-                    hashCode = hashCode * 59 + this.Truncated.GetHashCode();
+                var hashCode = 41;
+                if (this.Grants != null) hashCode = hashCode * 59 + this.Grants.GetHashCode();
+                if (this.NextMarker != null) hashCode = hashCode * 59 + this.NextMarker.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                hashCode = hashCode * 59 + this.Truncated.GetHashCode();
                 return hashCode;
             }
         }

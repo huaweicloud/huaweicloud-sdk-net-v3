@@ -409,105 +409,28 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(RuleAclListResponseDTODataRecords input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RuleId != input.RuleId || (this.RuleId != null && !this.RuleId.Equals(input.RuleId))) return false;
+            if (this.AddressType != input.AddressType || (this.AddressType != null && !this.AddressType.Equals(input.AddressType))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Direction != input.Direction) return false;
+            if (this.ActionType != input.ActionType || (this.ActionType != null && !this.ActionType.Equals(input.ActionType))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.LongConnectTime != input.LongConnectTime || (this.LongConnectTime != null && !this.LongConnectTime.Equals(input.LongConnectTime))) return false;
+            if (this.LongConnectEnable != input.LongConnectEnable || (this.LongConnectEnable != null && !this.LongConnectEnable.Equals(input.LongConnectEnable))) return false;
+            if (this.LongConnectTimeHour != input.LongConnectTimeHour || (this.LongConnectTimeHour != null && !this.LongConnectTimeHour.Equals(input.LongConnectTimeHour))) return false;
+            if (this.LongConnectTimeMinute != input.LongConnectTimeMinute || (this.LongConnectTimeMinute != null && !this.LongConnectTimeMinute.Equals(input.LongConnectTimeMinute))) return false;
+            if (this.LongConnectTimeSecond != input.LongConnectTimeSecond || (this.LongConnectTimeSecond != null && !this.LongConnectTimeSecond.Equals(input.LongConnectTimeSecond))) return false;
+            if (this.Source != input.Source || (this.Source != null && !this.Source.Equals(input.Source))) return false;
+            if (this.Destination != input.Destination || (this.Destination != null && !this.Destination.Equals(input.Destination))) return false;
+            if (this.Service != input.Service || (this.Service != null && !this.Service.Equals(input.Service))) return false;
+            if (this.Type != input.Type) return false;
+            if (this.CreatedDate != input.CreatedDate || (this.CreatedDate != null && !this.CreatedDate.Equals(input.CreatedDate))) return false;
+            if (this.LastOpenTime != input.LastOpenTime || (this.LastOpenTime != null && !this.LastOpenTime.Equals(input.LastOpenTime))) return false;
+            if (this.Tag != input.Tag || (this.Tag != null && !this.Tag.Equals(input.Tag))) return false;
 
-            return 
-                (
-                    this.RuleId == input.RuleId ||
-                    (this.RuleId != null &&
-                    this.RuleId.Equals(input.RuleId))
-                ) && 
-                (
-                    this.AddressType == input.AddressType ||
-                    (this.AddressType != null &&
-                    this.AddressType.Equals(input.AddressType))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Direction == input.Direction ||
-                    (this.Direction != null &&
-                    this.Direction.Equals(input.Direction))
-                ) && 
-                (
-                    this.ActionType == input.ActionType ||
-                    (this.ActionType != null &&
-                    this.ActionType.Equals(input.ActionType))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.LongConnectTime == input.LongConnectTime ||
-                    (this.LongConnectTime != null &&
-                    this.LongConnectTime.Equals(input.LongConnectTime))
-                ) && 
-                (
-                    this.LongConnectEnable == input.LongConnectEnable ||
-                    (this.LongConnectEnable != null &&
-                    this.LongConnectEnable.Equals(input.LongConnectEnable))
-                ) && 
-                (
-                    this.LongConnectTimeHour == input.LongConnectTimeHour ||
-                    (this.LongConnectTimeHour != null &&
-                    this.LongConnectTimeHour.Equals(input.LongConnectTimeHour))
-                ) && 
-                (
-                    this.LongConnectTimeMinute == input.LongConnectTimeMinute ||
-                    (this.LongConnectTimeMinute != null &&
-                    this.LongConnectTimeMinute.Equals(input.LongConnectTimeMinute))
-                ) && 
-                (
-                    this.LongConnectTimeSecond == input.LongConnectTimeSecond ||
-                    (this.LongConnectTimeSecond != null &&
-                    this.LongConnectTimeSecond.Equals(input.LongConnectTimeSecond))
-                ) && 
-                (
-                    this.Source == input.Source ||
-                    (this.Source != null &&
-                    this.Source.Equals(input.Source))
-                ) && 
-                (
-                    this.Destination == input.Destination ||
-                    (this.Destination != null &&
-                    this.Destination.Equals(input.Destination))
-                ) && 
-                (
-                    this.Service == input.Service ||
-                    (this.Service != null &&
-                    this.Service.Equals(input.Service))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.LastOpenTime == input.LastOpenTime ||
-                    (this.LastOpenTime != null &&
-                    this.LastOpenTime.Equals(input.LastOpenTime))
-                ) && 
-                (
-                    this.Tag == input.Tag ||
-                    (this.Tag != null &&
-                    this.Tag.Equals(input.Tag))
-                );
+            return true;
         }
 
         /// <summary>
@@ -517,45 +440,26 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RuleId != null)
-                    hashCode = hashCode * 59 + this.RuleId.GetHashCode();
-                if (this.AddressType != null)
-                    hashCode = hashCode * 59 + this.AddressType.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Direction != null)
-                    hashCode = hashCode * 59 + this.Direction.GetHashCode();
-                if (this.ActionType != null)
-                    hashCode = hashCode * 59 + this.ActionType.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.LongConnectTime != null)
-                    hashCode = hashCode * 59 + this.LongConnectTime.GetHashCode();
-                if (this.LongConnectEnable != null)
-                    hashCode = hashCode * 59 + this.LongConnectEnable.GetHashCode();
-                if (this.LongConnectTimeHour != null)
-                    hashCode = hashCode * 59 + this.LongConnectTimeHour.GetHashCode();
-                if (this.LongConnectTimeMinute != null)
-                    hashCode = hashCode * 59 + this.LongConnectTimeMinute.GetHashCode();
-                if (this.LongConnectTimeSecond != null)
-                    hashCode = hashCode * 59 + this.LongConnectTimeSecond.GetHashCode();
-                if (this.Source != null)
-                    hashCode = hashCode * 59 + this.Source.GetHashCode();
-                if (this.Destination != null)
-                    hashCode = hashCode * 59 + this.Destination.GetHashCode();
-                if (this.Service != null)
-                    hashCode = hashCode * 59 + this.Service.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.CreatedDate != null)
-                    hashCode = hashCode * 59 + this.CreatedDate.GetHashCode();
-                if (this.LastOpenTime != null)
-                    hashCode = hashCode * 59 + this.LastOpenTime.GetHashCode();
-                if (this.Tag != null)
-                    hashCode = hashCode * 59 + this.Tag.GetHashCode();
+                var hashCode = 41;
+                if (this.RuleId != null) hashCode = hashCode * 59 + this.RuleId.GetHashCode();
+                if (this.AddressType != null) hashCode = hashCode * 59 + this.AddressType.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = hashCode * 59 + this.Direction.GetHashCode();
+                if (this.ActionType != null) hashCode = hashCode * 59 + this.ActionType.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.LongConnectTime != null) hashCode = hashCode * 59 + this.LongConnectTime.GetHashCode();
+                if (this.LongConnectEnable != null) hashCode = hashCode * 59 + this.LongConnectEnable.GetHashCode();
+                if (this.LongConnectTimeHour != null) hashCode = hashCode * 59 + this.LongConnectTimeHour.GetHashCode();
+                if (this.LongConnectTimeMinute != null) hashCode = hashCode * 59 + this.LongConnectTimeMinute.GetHashCode();
+                if (this.LongConnectTimeSecond != null) hashCode = hashCode * 59 + this.LongConnectTimeSecond.GetHashCode();
+                if (this.Source != null) hashCode = hashCode * 59 + this.Source.GetHashCode();
+                if (this.Destination != null) hashCode = hashCode * 59 + this.Destination.GetHashCode();
+                if (this.Service != null) hashCode = hashCode * 59 + this.Service.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.CreatedDate != null) hashCode = hashCode * 59 + this.CreatedDate.GetHashCode();
+                if (this.LastOpenTime != null) hashCode = hashCode * 59 + this.LastOpenTime.GetHashCode();
+                if (this.Tag != null) hashCode = hashCode * 59 + this.Tag.GetHashCode();
                 return hashCode;
             }
         }

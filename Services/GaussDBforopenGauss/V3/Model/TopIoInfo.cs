@@ -233,65 +233,20 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(TopIoInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ThreadId != input.ThreadId || (this.ThreadId != null && !this.ThreadId.Equals(input.ThreadId))) return false;
+            if (this.ThreadType != input.ThreadType) return false;
+            if (this.DiskReadRate != input.DiskReadRate || (this.DiskReadRate != null && !this.DiskReadRate.Equals(input.DiskReadRate))) return false;
+            if (this.DiskWriteRate != input.DiskWriteRate || (this.DiskWriteRate != null && !this.DiskWriteRate.Equals(input.DiskWriteRate))) return false;
+            if (this.SessionId != input.SessionId || (this.SessionId != null && !this.SessionId.Equals(input.SessionId))) return false;
+            if (this.UniqueSqlId != input.UniqueSqlId || (this.UniqueSqlId != null && !this.UniqueSqlId.Equals(input.UniqueSqlId))) return false;
+            if (this.DatabaseName != input.DatabaseName || (this.DatabaseName != null && !this.DatabaseName.Equals(input.DatabaseName))) return false;
+            if (this.ClientIp != input.ClientIp || (this.ClientIp != null && !this.ClientIp.Equals(input.ClientIp))) return false;
+            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.State != input.State || (this.State != null && !this.State.Equals(input.State))) return false;
+            if (this.SqlStart != input.SqlStart || (this.SqlStart != null && !this.SqlStart.Equals(input.SqlStart))) return false;
 
-            return 
-                (
-                    this.ThreadId == input.ThreadId ||
-                    (this.ThreadId != null &&
-                    this.ThreadId.Equals(input.ThreadId))
-                ) && 
-                (
-                    this.ThreadType == input.ThreadType ||
-                    (this.ThreadType != null &&
-                    this.ThreadType.Equals(input.ThreadType))
-                ) && 
-                (
-                    this.DiskReadRate == input.DiskReadRate ||
-                    (this.DiskReadRate != null &&
-                    this.DiskReadRate.Equals(input.DiskReadRate))
-                ) && 
-                (
-                    this.DiskWriteRate == input.DiskWriteRate ||
-                    (this.DiskWriteRate != null &&
-                    this.DiskWriteRate.Equals(input.DiskWriteRate))
-                ) && 
-                (
-                    this.SessionId == input.SessionId ||
-                    (this.SessionId != null &&
-                    this.SessionId.Equals(input.SessionId))
-                ) && 
-                (
-                    this.UniqueSqlId == input.UniqueSqlId ||
-                    (this.UniqueSqlId != null &&
-                    this.UniqueSqlId.Equals(input.UniqueSqlId))
-                ) && 
-                (
-                    this.DatabaseName == input.DatabaseName ||
-                    (this.DatabaseName != null &&
-                    this.DatabaseName.Equals(input.DatabaseName))
-                ) && 
-                (
-                    this.ClientIp == input.ClientIp ||
-                    (this.ClientIp != null &&
-                    this.ClientIp.Equals(input.ClientIp))
-                ) && 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
-                ) && 
-                (
-                    this.SqlStart == input.SqlStart ||
-                    (this.SqlStart != null &&
-                    this.SqlStart.Equals(input.SqlStart))
-                );
+            return true;
         }
 
         /// <summary>
@@ -301,29 +256,18 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ThreadId != null)
-                    hashCode = hashCode * 59 + this.ThreadId.GetHashCode();
-                if (this.ThreadType != null)
-                    hashCode = hashCode * 59 + this.ThreadType.GetHashCode();
-                if (this.DiskReadRate != null)
-                    hashCode = hashCode * 59 + this.DiskReadRate.GetHashCode();
-                if (this.DiskWriteRate != null)
-                    hashCode = hashCode * 59 + this.DiskWriteRate.GetHashCode();
-                if (this.SessionId != null)
-                    hashCode = hashCode * 59 + this.SessionId.GetHashCode();
-                if (this.UniqueSqlId != null)
-                    hashCode = hashCode * 59 + this.UniqueSqlId.GetHashCode();
-                if (this.DatabaseName != null)
-                    hashCode = hashCode * 59 + this.DatabaseName.GetHashCode();
-                if (this.ClientIp != null)
-                    hashCode = hashCode * 59 + this.ClientIp.GetHashCode();
-                if (this.UserName != null)
-                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.State != null)
-                    hashCode = hashCode * 59 + this.State.GetHashCode();
-                if (this.SqlStart != null)
-                    hashCode = hashCode * 59 + this.SqlStart.GetHashCode();
+                var hashCode = 41;
+                if (this.ThreadId != null) hashCode = hashCode * 59 + this.ThreadId.GetHashCode();
+                hashCode = hashCode * 59 + this.ThreadType.GetHashCode();
+                if (this.DiskReadRate != null) hashCode = hashCode * 59 + this.DiskReadRate.GetHashCode();
+                if (this.DiskWriteRate != null) hashCode = hashCode * 59 + this.DiskWriteRate.GetHashCode();
+                if (this.SessionId != null) hashCode = hashCode * 59 + this.SessionId.GetHashCode();
+                if (this.UniqueSqlId != null) hashCode = hashCode * 59 + this.UniqueSqlId.GetHashCode();
+                if (this.DatabaseName != null) hashCode = hashCode * 59 + this.DatabaseName.GetHashCode();
+                if (this.ClientIp != null) hashCode = hashCode * 59 + this.ClientIp.GetHashCode();
+                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();
+                if (this.SqlStart != null) hashCode = hashCode * 59 + this.SqlStart.GetHashCode();
                 return hashCode;
             }
         }

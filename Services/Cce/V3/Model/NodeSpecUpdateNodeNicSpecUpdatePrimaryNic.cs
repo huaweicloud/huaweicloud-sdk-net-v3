@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(NodeSpecUpdateNodeNicSpecUpdatePrimaryNic input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
+            if (this.SubnetList != input.SubnetList || (this.SubnetList != null && input.SubnetList != null && !this.SubnetList.SequenceEqual(input.SubnetList))) return false;
 
-            return 
-                (
-                    this.SubnetId == input.SubnetId ||
-                    (this.SubnetId != null &&
-                    this.SubnetId.Equals(input.SubnetId))
-                ) && 
-                (
-                    this.SubnetList == input.SubnetList ||
-                    this.SubnetList != null &&
-                    input.SubnetList != null &&
-                    this.SubnetList.SequenceEqual(input.SubnetList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SubnetId != null)
-                    hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
-                if (this.SubnetList != null)
-                    hashCode = hashCode * 59 + this.SubnetList.GetHashCode();
+                var hashCode = 41;
+                if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
+                if (this.SubnetList != null) hashCode = hashCode * 59 + this.SubnetList.GetHashCode();
                 return hashCode;
             }
         }

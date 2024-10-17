@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(KmsStructure input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.CipherText != input.CipherText || (this.CipherText != null && !this.CipherText.Equals(input.CipherText))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.CipherText == input.CipherText ||
-                    (this.CipherText != null &&
-                    this.CipherText.Equals(input.CipherText))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.CipherText != null)
-                    hashCode = hashCode * 59 + this.CipherText.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.CipherText != null) hashCode = hashCode * 59 + this.CipherText.GetHashCode();
                 return hashCode;
             }
         }

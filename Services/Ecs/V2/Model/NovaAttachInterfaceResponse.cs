@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(NovaAttachInterfaceResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InterfaceAttachment != input.InterfaceAttachment || (this.InterfaceAttachment != null && !this.InterfaceAttachment.Equals(input.InterfaceAttachment))) return false;
 
-            return 
-                (
-                    this.InterfaceAttachment == input.InterfaceAttachment ||
-                    (this.InterfaceAttachment != null &&
-                    this.InterfaceAttachment.Equals(input.InterfaceAttachment))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InterfaceAttachment != null)
-                    hashCode = hashCode * 59 + this.InterfaceAttachment.GetHashCode();
+                var hashCode = 41;
+                if (this.InterfaceAttachment != null) hashCode = hashCode * 59 + this.InterfaceAttachment.GetHashCode();
                 return hashCode;
             }
         }

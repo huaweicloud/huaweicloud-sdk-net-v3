@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(TranscodeInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TemplateGroupName != input.TemplateGroupName || (this.TemplateGroupName != null && !this.TemplateGroupName.Equals(input.TemplateGroupName))) return false;
+            if (this.Output != input.Output || (this.Output != null && input.Output != null && !this.Output.SequenceEqual(input.Output))) return false;
+            if (this.ExecDesc != input.ExecDesc || (this.ExecDesc != null && !this.ExecDesc.Equals(input.ExecDesc))) return false;
+            if (this.TranscodeStatus != input.TranscodeStatus || (this.TranscodeStatus != null && !this.TranscodeStatus.Equals(input.TranscodeStatus))) return false;
 
-            return 
-                (
-                    this.TemplateGroupName == input.TemplateGroupName ||
-                    (this.TemplateGroupName != null &&
-                    this.TemplateGroupName.Equals(input.TemplateGroupName))
-                ) && 
-                (
-                    this.Output == input.Output ||
-                    this.Output != null &&
-                    input.Output != null &&
-                    this.Output.SequenceEqual(input.Output)
-                ) && 
-                (
-                    this.ExecDesc == input.ExecDesc ||
-                    (this.ExecDesc != null &&
-                    this.ExecDesc.Equals(input.ExecDesc))
-                ) && 
-                (
-                    this.TranscodeStatus == input.TranscodeStatus ||
-                    (this.TranscodeStatus != null &&
-                    this.TranscodeStatus.Equals(input.TranscodeStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TemplateGroupName != null)
-                    hashCode = hashCode * 59 + this.TemplateGroupName.GetHashCode();
-                if (this.Output != null)
-                    hashCode = hashCode * 59 + this.Output.GetHashCode();
-                if (this.ExecDesc != null)
-                    hashCode = hashCode * 59 + this.ExecDesc.GetHashCode();
-                if (this.TranscodeStatus != null)
-                    hashCode = hashCode * 59 + this.TranscodeStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.TemplateGroupName != null) hashCode = hashCode * 59 + this.TemplateGroupName.GetHashCode();
+                if (this.Output != null) hashCode = hashCode * 59 + this.Output.GetHashCode();
+                if (this.ExecDesc != null) hashCode = hashCode * 59 + this.ExecDesc.GetHashCode();
+                if (this.TranscodeStatus != null) hashCode = hashCode * 59 + this.TranscodeStatus.GetHashCode();
                 return hashCode;
             }
         }

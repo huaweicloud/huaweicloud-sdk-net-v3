@@ -66,25 +66,12 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(DeleteHarvestTaskRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AccessControlAllowInternal != input.AccessControlAllowInternal || (this.AccessControlAllowInternal != null && !this.AccessControlAllowInternal.Equals(input.AccessControlAllowInternal))) return false;
+            if (this.AccessControlAllowExternal != input.AccessControlAllowExternal || (this.AccessControlAllowExternal != null && !this.AccessControlAllowExternal.Equals(input.AccessControlAllowExternal))) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
 
-            return 
-                (
-                    this.AccessControlAllowInternal == input.AccessControlAllowInternal ||
-                    (this.AccessControlAllowInternal != null &&
-                    this.AccessControlAllowInternal.Equals(input.AccessControlAllowInternal))
-                ) && 
-                (
-                    this.AccessControlAllowExternal == input.AccessControlAllowExternal ||
-                    (this.AccessControlAllowExternal != null &&
-                    this.AccessControlAllowExternal.Equals(input.AccessControlAllowExternal))
-                ) && 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +81,10 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AccessControlAllowInternal != null)
-                    hashCode = hashCode * 59 + this.AccessControlAllowInternal.GetHashCode();
-                if (this.AccessControlAllowExternal != null)
-                    hashCode = hashCode * 59 + this.AccessControlAllowExternal.GetHashCode();
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                var hashCode = 41;
+                if (this.AccessControlAllowInternal != null) hashCode = hashCode * 59 + this.AccessControlAllowInternal.GetHashCode();
+                if (this.AccessControlAllowExternal != null) hashCode = hashCode * 59 + this.AccessControlAllowExternal.GetHashCode();
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 return hashCode;
             }
         }

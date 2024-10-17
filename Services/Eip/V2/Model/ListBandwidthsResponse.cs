@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// </summary>
         public bool Equals(ListBandwidthsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Bandwidths != input.Bandwidths || (this.Bandwidths != null && input.Bandwidths != null && !this.Bandwidths.SequenceEqual(input.Bandwidths))) return false;
 
-            return 
-                (
-                    this.Bandwidths == input.Bandwidths ||
-                    this.Bandwidths != null &&
-                    input.Bandwidths != null &&
-                    this.Bandwidths.SequenceEqual(input.Bandwidths)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Bandwidths != null)
-                    hashCode = hashCode * 59 + this.Bandwidths.GetHashCode();
+                var hashCode = 41;
+                if (this.Bandwidths != null) hashCode = hashCode * 59 + this.Bandwidths.GetHashCode();
                 return hashCode;
             }
         }

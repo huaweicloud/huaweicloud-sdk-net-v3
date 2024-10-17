@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(TrustedServiceReqBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ServicePrincipal != input.ServicePrincipal || (this.ServicePrincipal != null && !this.ServicePrincipal.Equals(input.ServicePrincipal))) return false;
 
-            return 
-                (
-                    this.ServicePrincipal == input.ServicePrincipal ||
-                    (this.ServicePrincipal != null &&
-                    this.ServicePrincipal.Equals(input.ServicePrincipal))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ServicePrincipal != null)
-                    hashCode = hashCode * 59 + this.ServicePrincipal.GetHashCode();
+                var hashCode = 41;
+                if (this.ServicePrincipal != null) hashCode = hashCode * 59 + this.ServicePrincipal.GetHashCode();
                 return hashCode;
             }
         }

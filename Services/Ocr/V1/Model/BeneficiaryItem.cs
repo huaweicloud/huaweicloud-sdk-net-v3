@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(BeneficiaryItem input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BeneficiaryName != input.BeneficiaryName || (this.BeneficiaryName != null && !this.BeneficiaryName.Equals(input.BeneficiaryName))) return false;
+            if (this.BeneficiaryType != input.BeneficiaryType || (this.BeneficiaryType != null && !this.BeneficiaryType.Equals(input.BeneficiaryType))) return false;
+            if (this.BeneficiaryOrder != input.BeneficiaryOrder || (this.BeneficiaryOrder != null && !this.BeneficiaryOrder.Equals(input.BeneficiaryOrder))) return false;
+            if (this.BeneficiaryShare != input.BeneficiaryShare || (this.BeneficiaryShare != null && !this.BeneficiaryShare.Equals(input.BeneficiaryShare))) return false;
 
-            return 
-                (
-                    this.BeneficiaryName == input.BeneficiaryName ||
-                    (this.BeneficiaryName != null &&
-                    this.BeneficiaryName.Equals(input.BeneficiaryName))
-                ) && 
-                (
-                    this.BeneficiaryType == input.BeneficiaryType ||
-                    (this.BeneficiaryType != null &&
-                    this.BeneficiaryType.Equals(input.BeneficiaryType))
-                ) && 
-                (
-                    this.BeneficiaryOrder == input.BeneficiaryOrder ||
-                    (this.BeneficiaryOrder != null &&
-                    this.BeneficiaryOrder.Equals(input.BeneficiaryOrder))
-                ) && 
-                (
-                    this.BeneficiaryShare == input.BeneficiaryShare ||
-                    (this.BeneficiaryShare != null &&
-                    this.BeneficiaryShare.Equals(input.BeneficiaryShare))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BeneficiaryName != null)
-                    hashCode = hashCode * 59 + this.BeneficiaryName.GetHashCode();
-                if (this.BeneficiaryType != null)
-                    hashCode = hashCode * 59 + this.BeneficiaryType.GetHashCode();
-                if (this.BeneficiaryOrder != null)
-                    hashCode = hashCode * 59 + this.BeneficiaryOrder.GetHashCode();
-                if (this.BeneficiaryShare != null)
-                    hashCode = hashCode * 59 + this.BeneficiaryShare.GetHashCode();
+                var hashCode = 41;
+                if (this.BeneficiaryName != null) hashCode = hashCode * 59 + this.BeneficiaryName.GetHashCode();
+                if (this.BeneficiaryType != null) hashCode = hashCode * 59 + this.BeneficiaryType.GetHashCode();
+                if (this.BeneficiaryOrder != null) hashCode = hashCode * 59 + this.BeneficiaryOrder.GetHashCode();
+                if (this.BeneficiaryShare != null) hashCode = hashCode * 59 + this.BeneficiaryShare.GetHashCode();
                 return hashCode;
             }
         }

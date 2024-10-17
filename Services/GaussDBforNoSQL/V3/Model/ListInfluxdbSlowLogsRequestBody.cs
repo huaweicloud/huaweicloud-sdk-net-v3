@@ -119,65 +119,20 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(ListInfluxdbSlowLogsRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.LineNum != input.LineNum || (this.LineNum != null && !this.LineNum.Equals(input.LineNum))) return false;
+            if (this.OperateType != input.OperateType || (this.OperateType != null && !this.OperateType.Equals(input.OperateType))) return false;
+            if (this.NodeId != input.NodeId || (this.NodeId != null && !this.NodeId.Equals(input.NodeId))) return false;
+            if (this.Keywords != input.Keywords || (this.Keywords != null && !this.Keywords.Equals(input.Keywords))) return false;
+            if (this.MaxCostTime != input.MaxCostTime || (this.MaxCostTime != null && !this.MaxCostTime.Equals(input.MaxCostTime))) return false;
+            if (this.MinCostTime != input.MinCostTime || (this.MinCostTime != null && !this.MinCostTime.Equals(input.MinCostTime))) return false;
+            if (this.Database != input.Database || (this.Database != null && !this.Database.Equals(input.Database))) return false;
+            if (this.RetentionPolicy != input.RetentionPolicy || (this.RetentionPolicy != null && !this.RetentionPolicy.Equals(input.RetentionPolicy))) return false;
 
-            return 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.LineNum == input.LineNum ||
-                    (this.LineNum != null &&
-                    this.LineNum.Equals(input.LineNum))
-                ) && 
-                (
-                    this.OperateType == input.OperateType ||
-                    (this.OperateType != null &&
-                    this.OperateType.Equals(input.OperateType))
-                ) && 
-                (
-                    this.NodeId == input.NodeId ||
-                    (this.NodeId != null &&
-                    this.NodeId.Equals(input.NodeId))
-                ) && 
-                (
-                    this.Keywords == input.Keywords ||
-                    (this.Keywords != null &&
-                    this.Keywords.Equals(input.Keywords))
-                ) && 
-                (
-                    this.MaxCostTime == input.MaxCostTime ||
-                    (this.MaxCostTime != null &&
-                    this.MaxCostTime.Equals(input.MaxCostTime))
-                ) && 
-                (
-                    this.MinCostTime == input.MinCostTime ||
-                    (this.MinCostTime != null &&
-                    this.MinCostTime.Equals(input.MinCostTime))
-                ) && 
-                (
-                    this.Database == input.Database ||
-                    (this.Database != null &&
-                    this.Database.Equals(input.Database))
-                ) && 
-                (
-                    this.RetentionPolicy == input.RetentionPolicy ||
-                    (this.RetentionPolicy != null &&
-                    this.RetentionPolicy.Equals(input.RetentionPolicy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,29 +142,18 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.LineNum != null)
-                    hashCode = hashCode * 59 + this.LineNum.GetHashCode();
-                if (this.OperateType != null)
-                    hashCode = hashCode * 59 + this.OperateType.GetHashCode();
-                if (this.NodeId != null)
-                    hashCode = hashCode * 59 + this.NodeId.GetHashCode();
-                if (this.Keywords != null)
-                    hashCode = hashCode * 59 + this.Keywords.GetHashCode();
-                if (this.MaxCostTime != null)
-                    hashCode = hashCode * 59 + this.MaxCostTime.GetHashCode();
-                if (this.MinCostTime != null)
-                    hashCode = hashCode * 59 + this.MinCostTime.GetHashCode();
-                if (this.Database != null)
-                    hashCode = hashCode * 59 + this.Database.GetHashCode();
-                if (this.RetentionPolicy != null)
-                    hashCode = hashCode * 59 + this.RetentionPolicy.GetHashCode();
+                var hashCode = 41;
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.LineNum != null) hashCode = hashCode * 59 + this.LineNum.GetHashCode();
+                if (this.OperateType != null) hashCode = hashCode * 59 + this.OperateType.GetHashCode();
+                if (this.NodeId != null) hashCode = hashCode * 59 + this.NodeId.GetHashCode();
+                if (this.Keywords != null) hashCode = hashCode * 59 + this.Keywords.GetHashCode();
+                if (this.MaxCostTime != null) hashCode = hashCode * 59 + this.MaxCostTime.GetHashCode();
+                if (this.MinCostTime != null) hashCode = hashCode * 59 + this.MinCostTime.GetHashCode();
+                if (this.Database != null) hashCode = hashCode * 59 + this.Database.GetHashCode();
+                if (this.RetentionPolicy != null) hashCode = hashCode * 59 + this.RetentionPolicy.GetHashCode();
                 return hashCode;
             }
         }

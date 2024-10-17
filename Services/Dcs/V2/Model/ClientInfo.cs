@@ -303,115 +303,30 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ClientInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Addr != input.Addr || (this.Addr != null && !this.Addr.Equals(input.Addr))) return false;
+            if (this.Fd != input.Fd || (this.Fd != null && !this.Fd.Equals(input.Fd))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Cmd != input.Cmd || (this.Cmd != null && !this.Cmd.Equals(input.Cmd))) return false;
+            if (this.Age != input.Age || (this.Age != null && !this.Age.Equals(input.Age))) return false;
+            if (this.Idle != input.Idle || (this.Idle != null && !this.Idle.Equals(input.Idle))) return false;
+            if (this.Db != input.Db || (this.Db != null && !this.Db.Equals(input.Db))) return false;
+            if (this.Flags != input.Flags || (this.Flags != null && !this.Flags.Equals(input.Flags))) return false;
+            if (this.Sub != input.Sub || (this.Sub != null && !this.Sub.Equals(input.Sub))) return false;
+            if (this.Psub != input.Psub || (this.Psub != null && !this.Psub.Equals(input.Psub))) return false;
+            if (this.Multi != input.Multi || (this.Multi != null && !this.Multi.Equals(input.Multi))) return false;
+            if (this.Qbuf != input.Qbuf || (this.Qbuf != null && !this.Qbuf.Equals(input.Qbuf))) return false;
+            if (this.QbufFree != input.QbufFree || (this.QbufFree != null && !this.QbufFree.Equals(input.QbufFree))) return false;
+            if (this.Obl != input.Obl || (this.Obl != null && !this.Obl.Equals(input.Obl))) return false;
+            if (this.Oll != input.Oll || (this.Oll != null && !this.Oll.Equals(input.Oll))) return false;
+            if (this.Omem != input.Omem || (this.Omem != null && !this.Omem.Equals(input.Omem))) return false;
+            if (this.Events != input.Events) return false;
+            if (this.Network != input.Network || (this.Network != null && !this.Network.Equals(input.Network))) return false;
+            if (this.Peer != input.Peer || (this.Peer != null && !this.Peer.Equals(input.Peer))) return false;
+            if (this.User != input.User || (this.User != null && !this.User.Equals(input.User))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Addr == input.Addr ||
-                    (this.Addr != null &&
-                    this.Addr.Equals(input.Addr))
-                ) && 
-                (
-                    this.Fd == input.Fd ||
-                    (this.Fd != null &&
-                    this.Fd.Equals(input.Fd))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Cmd == input.Cmd ||
-                    (this.Cmd != null &&
-                    this.Cmd.Equals(input.Cmd))
-                ) && 
-                (
-                    this.Age == input.Age ||
-                    (this.Age != null &&
-                    this.Age.Equals(input.Age))
-                ) && 
-                (
-                    this.Idle == input.Idle ||
-                    (this.Idle != null &&
-                    this.Idle.Equals(input.Idle))
-                ) && 
-                (
-                    this.Db == input.Db ||
-                    (this.Db != null &&
-                    this.Db.Equals(input.Db))
-                ) && 
-                (
-                    this.Flags == input.Flags ||
-                    (this.Flags != null &&
-                    this.Flags.Equals(input.Flags))
-                ) && 
-                (
-                    this.Sub == input.Sub ||
-                    (this.Sub != null &&
-                    this.Sub.Equals(input.Sub))
-                ) && 
-                (
-                    this.Psub == input.Psub ||
-                    (this.Psub != null &&
-                    this.Psub.Equals(input.Psub))
-                ) && 
-                (
-                    this.Multi == input.Multi ||
-                    (this.Multi != null &&
-                    this.Multi.Equals(input.Multi))
-                ) && 
-                (
-                    this.Qbuf == input.Qbuf ||
-                    (this.Qbuf != null &&
-                    this.Qbuf.Equals(input.Qbuf))
-                ) && 
-                (
-                    this.QbufFree == input.QbufFree ||
-                    (this.QbufFree != null &&
-                    this.QbufFree.Equals(input.QbufFree))
-                ) && 
-                (
-                    this.Obl == input.Obl ||
-                    (this.Obl != null &&
-                    this.Obl.Equals(input.Obl))
-                ) && 
-                (
-                    this.Oll == input.Oll ||
-                    (this.Oll != null &&
-                    this.Oll.Equals(input.Oll))
-                ) && 
-                (
-                    this.Omem == input.Omem ||
-                    (this.Omem != null &&
-                    this.Omem.Equals(input.Omem))
-                ) && 
-                (
-                    this.Events == input.Events ||
-                    (this.Events != null &&
-                    this.Events.Equals(input.Events))
-                ) && 
-                (
-                    this.Network == input.Network ||
-                    (this.Network != null &&
-                    this.Network.Equals(input.Network))
-                ) && 
-                (
-                    this.Peer == input.Peer ||
-                    (this.Peer != null &&
-                    this.Peer.Equals(input.Peer))
-                ) && 
-                (
-                    this.User == input.User ||
-                    (this.User != null &&
-                    this.User.Equals(input.User))
-                );
+            return true;
         }
 
         /// <summary>
@@ -421,49 +336,28 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Addr != null)
-                    hashCode = hashCode * 59 + this.Addr.GetHashCode();
-                if (this.Fd != null)
-                    hashCode = hashCode * 59 + this.Fd.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Cmd != null)
-                    hashCode = hashCode * 59 + this.Cmd.GetHashCode();
-                if (this.Age != null)
-                    hashCode = hashCode * 59 + this.Age.GetHashCode();
-                if (this.Idle != null)
-                    hashCode = hashCode * 59 + this.Idle.GetHashCode();
-                if (this.Db != null)
-                    hashCode = hashCode * 59 + this.Db.GetHashCode();
-                if (this.Flags != null)
-                    hashCode = hashCode * 59 + this.Flags.GetHashCode();
-                if (this.Sub != null)
-                    hashCode = hashCode * 59 + this.Sub.GetHashCode();
-                if (this.Psub != null)
-                    hashCode = hashCode * 59 + this.Psub.GetHashCode();
-                if (this.Multi != null)
-                    hashCode = hashCode * 59 + this.Multi.GetHashCode();
-                if (this.Qbuf != null)
-                    hashCode = hashCode * 59 + this.Qbuf.GetHashCode();
-                if (this.QbufFree != null)
-                    hashCode = hashCode * 59 + this.QbufFree.GetHashCode();
-                if (this.Obl != null)
-                    hashCode = hashCode * 59 + this.Obl.GetHashCode();
-                if (this.Oll != null)
-                    hashCode = hashCode * 59 + this.Oll.GetHashCode();
-                if (this.Omem != null)
-                    hashCode = hashCode * 59 + this.Omem.GetHashCode();
-                if (this.Events != null)
-                    hashCode = hashCode * 59 + this.Events.GetHashCode();
-                if (this.Network != null)
-                    hashCode = hashCode * 59 + this.Network.GetHashCode();
-                if (this.Peer != null)
-                    hashCode = hashCode * 59 + this.Peer.GetHashCode();
-                if (this.User != null)
-                    hashCode = hashCode * 59 + this.User.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Addr != null) hashCode = hashCode * 59 + this.Addr.GetHashCode();
+                if (this.Fd != null) hashCode = hashCode * 59 + this.Fd.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Cmd != null) hashCode = hashCode * 59 + this.Cmd.GetHashCode();
+                if (this.Age != null) hashCode = hashCode * 59 + this.Age.GetHashCode();
+                if (this.Idle != null) hashCode = hashCode * 59 + this.Idle.GetHashCode();
+                if (this.Db != null) hashCode = hashCode * 59 + this.Db.GetHashCode();
+                if (this.Flags != null) hashCode = hashCode * 59 + this.Flags.GetHashCode();
+                if (this.Sub != null) hashCode = hashCode * 59 + this.Sub.GetHashCode();
+                if (this.Psub != null) hashCode = hashCode * 59 + this.Psub.GetHashCode();
+                if (this.Multi != null) hashCode = hashCode * 59 + this.Multi.GetHashCode();
+                if (this.Qbuf != null) hashCode = hashCode * 59 + this.Qbuf.GetHashCode();
+                if (this.QbufFree != null) hashCode = hashCode * 59 + this.QbufFree.GetHashCode();
+                if (this.Obl != null) hashCode = hashCode * 59 + this.Obl.GetHashCode();
+                if (this.Oll != null) hashCode = hashCode * 59 + this.Oll.GetHashCode();
+                if (this.Omem != null) hashCode = hashCode * 59 + this.Omem.GetHashCode();
+                hashCode = hashCode * 59 + this.Events.GetHashCode();
+                if (this.Network != null) hashCode = hashCode * 59 + this.Network.GetHashCode();
+                if (this.Peer != null) hashCode = hashCode * 59 + this.Peer.GetHashCode();
+                if (this.User != null) hashCode = hashCode * 59 + this.User.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(UpdateActionReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Channel != input.Channel || (this.Channel != null && !this.Channel.Equals(input.Channel))) return false;
+            if (this.ChannelDetail != input.ChannelDetail || (this.ChannelDetail != null && !this.ChannelDetail.Equals(input.ChannelDetail))) return false;
 
-            return 
-                (
-                    this.Channel == input.Channel ||
-                    (this.Channel != null &&
-                    this.Channel.Equals(input.Channel))
-                ) && 
-                (
-                    this.ChannelDetail == input.ChannelDetail ||
-                    (this.ChannelDetail != null &&
-                    this.ChannelDetail.Equals(input.ChannelDetail))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Channel != null)
-                    hashCode = hashCode * 59 + this.Channel.GetHashCode();
-                if (this.ChannelDetail != null)
-                    hashCode = hashCode * 59 + this.ChannelDetail.GetHashCode();
+                var hashCode = 41;
+                if (this.Channel != null) hashCode = hashCode * 59 + this.Channel.GetHashCode();
+                if (this.ChannelDetail != null) hashCode = hashCode * 59 + this.ChannelDetail.GetHashCode();
                 return hashCode;
             }
         }

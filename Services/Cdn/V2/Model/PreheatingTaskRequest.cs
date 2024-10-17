@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(PreheatingTaskRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PreheatingTask != input.PreheatingTask || (this.PreheatingTask != null && !this.PreheatingTask.Equals(input.PreheatingTask))) return false;
 
-            return 
-                (
-                    this.PreheatingTask == input.PreheatingTask ||
-                    (this.PreheatingTask != null &&
-                    this.PreheatingTask.Equals(input.PreheatingTask))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PreheatingTask != null)
-                    hashCode = hashCode * 59 + this.PreheatingTask.GetHashCode();
+                var hashCode = 41;
+                if (this.PreheatingTask != null) hashCode = hashCode * 59 + this.PreheatingTask.GetHashCode();
                 return hashCode;
             }
         }

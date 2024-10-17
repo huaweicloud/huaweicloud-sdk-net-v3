@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public bool Equals(HttpDetectRequestBodyExtension input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Header != input.Header || (this.Header != null && input.Header != null && !this.Header.SequenceEqual(input.Header))) return false;
 
-            return 
-                (
-                    this.Header == input.Header ||
-                    this.Header != null &&
-                    input.Header != null &&
-                    this.Header.SequenceEqual(input.Header)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Header != null)
-                    hashCode = hashCode * 59 + this.Header.GetHashCode();
+                var hashCode = 41;
+                if (this.Header != null) hashCode = hashCode * 59 + this.Header.GetHashCode();
                 return hashCode;
             }
         }

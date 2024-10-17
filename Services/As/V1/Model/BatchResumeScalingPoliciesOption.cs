@@ -292,31 +292,13 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(BatchResumeScalingPoliciesOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ScalingPolicyId != input.ScalingPolicyId || (this.ScalingPolicyId != null && input.ScalingPolicyId != null && !this.ScalingPolicyId.SequenceEqual(input.ScalingPolicyId))) return false;
+            if (this.ForceDelete != input.ForceDelete) return false;
+            if (this.Action != input.Action) return false;
+            if (this.DeleteAlarm != input.DeleteAlarm || (this.DeleteAlarm != null && !this.DeleteAlarm.Equals(input.DeleteAlarm))) return false;
 
-            return 
-                (
-                    this.ScalingPolicyId == input.ScalingPolicyId ||
-                    this.ScalingPolicyId != null &&
-                    input.ScalingPolicyId != null &&
-                    this.ScalingPolicyId.SequenceEqual(input.ScalingPolicyId)
-                ) && 
-                (
-                    this.ForceDelete == input.ForceDelete ||
-                    (this.ForceDelete != null &&
-                    this.ForceDelete.Equals(input.ForceDelete))
-                ) && 
-                (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                ) && 
-                (
-                    this.DeleteAlarm == input.DeleteAlarm ||
-                    (this.DeleteAlarm != null &&
-                    this.DeleteAlarm.Equals(input.DeleteAlarm))
-                );
+            return true;
         }
 
         /// <summary>
@@ -326,15 +308,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ScalingPolicyId != null)
-                    hashCode = hashCode * 59 + this.ScalingPolicyId.GetHashCode();
-                if (this.ForceDelete != null)
-                    hashCode = hashCode * 59 + this.ForceDelete.GetHashCode();
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
-                if (this.DeleteAlarm != null)
-                    hashCode = hashCode * 59 + this.DeleteAlarm.GetHashCode();
+                var hashCode = 41;
+                if (this.ScalingPolicyId != null) hashCode = hashCode * 59 + this.ScalingPolicyId.GetHashCode();
+                hashCode = hashCode * 59 + this.ForceDelete.GetHashCode();
+                hashCode = hashCode * 59 + this.Action.GetHashCode();
+                if (this.DeleteAlarm != null) hashCode = hashCode * 59 + this.DeleteAlarm.GetHashCode();
                 return hashCode;
             }
         }

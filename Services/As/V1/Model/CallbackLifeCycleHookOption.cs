@@ -190,30 +190,13 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(CallbackLifeCycleHookOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LifecycleActionKey != input.LifecycleActionKey || (this.LifecycleActionKey != null && !this.LifecycleActionKey.Equals(input.LifecycleActionKey))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.LifecycleHookName != input.LifecycleHookName || (this.LifecycleHookName != null && !this.LifecycleHookName.Equals(input.LifecycleHookName))) return false;
+            if (this.LifecycleActionResult != input.LifecycleActionResult) return false;
 
-            return 
-                (
-                    this.LifecycleActionKey == input.LifecycleActionKey ||
-                    (this.LifecycleActionKey != null &&
-                    this.LifecycleActionKey.Equals(input.LifecycleActionKey))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.LifecycleHookName == input.LifecycleHookName ||
-                    (this.LifecycleHookName != null &&
-                    this.LifecycleHookName.Equals(input.LifecycleHookName))
-                ) && 
-                (
-                    this.LifecycleActionResult == input.LifecycleActionResult ||
-                    (this.LifecycleActionResult != null &&
-                    this.LifecycleActionResult.Equals(input.LifecycleActionResult))
-                );
+            return true;
         }
 
         /// <summary>
@@ -223,15 +206,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LifecycleActionKey != null)
-                    hashCode = hashCode * 59 + this.LifecycleActionKey.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.LifecycleHookName != null)
-                    hashCode = hashCode * 59 + this.LifecycleHookName.GetHashCode();
-                if (this.LifecycleActionResult != null)
-                    hashCode = hashCode * 59 + this.LifecycleActionResult.GetHashCode();
+                var hashCode = 41;
+                if (this.LifecycleActionKey != null) hashCode = hashCode * 59 + this.LifecycleActionKey.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.LifecycleHookName != null) hashCode = hashCode * 59 + this.LifecycleHookName.GetHashCode();
+                hashCode = hashCode * 59 + this.LifecycleActionResult.GetHashCode();
                 return hashCode;
             }
         }

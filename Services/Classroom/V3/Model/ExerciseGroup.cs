@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         /// </summary>
         public bool Equals(ExerciseGroup input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Exercises != input.Exercises || (this.Exercises != null && input.Exercises != null && !this.Exercises.SequenceEqual(input.Exercises))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
 
-            return 
-                (
-                    this.Exercises == input.Exercises ||
-                    this.Exercises != null &&
-                    input.Exercises != null &&
-                    this.Exercises.SequenceEqual(input.Exercises)
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Exercises != null)
-                    hashCode = hashCode * 59 + this.Exercises.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                var hashCode = 41;
+                if (this.Exercises != null) hashCode = hashCode * 59 + this.Exercises.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

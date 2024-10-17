@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(ShowUpgradeDurationResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Strategies != input.Strategies || (this.Strategies != null && input.Strategies != null && !this.Strategies.SequenceEqual(input.Strategies))) return false;
 
-            return 
-                (
-                    this.Strategies == input.Strategies ||
-                    this.Strategies != null &&
-                    input.Strategies != null &&
-                    this.Strategies.SequenceEqual(input.Strategies)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Strategies != null)
-                    hashCode = hashCode * 59 + this.Strategies.GetHashCode();
+                var hashCode = 41;
+                if (this.Strategies != null) hashCode = hashCode * 59 + this.Strategies.GetHashCode();
                 return hashCode;
             }
         }

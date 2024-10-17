@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(BatchDeleteManualBackupResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DeleteResults != input.DeleteResults || (this.DeleteResults != null && input.DeleteResults != null && !this.DeleteResults.SequenceEqual(input.DeleteResults))) return false;
 
-            return 
-                (
-                    this.DeleteResults == input.DeleteResults ||
-                    this.DeleteResults != null &&
-                    input.DeleteResults != null &&
-                    this.DeleteResults.SequenceEqual(input.DeleteResults)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DeleteResults != null)
-                    hashCode = hashCode * 59 + this.DeleteResults.GetHashCode();
+                var hashCode = 41;
+                if (this.DeleteResults != null) hashCode = hashCode * 59 + this.DeleteResults.GetHashCode();
                 return hashCode;
             }
         }

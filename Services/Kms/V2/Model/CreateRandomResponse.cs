@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         /// </summary>
         public bool Equals(CreateRandomResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RandomData != input.RandomData || (this.RandomData != null && !this.RandomData.Equals(input.RandomData))) return false;
 
-            return 
-                (
-                    this.RandomData == input.RandomData ||
-                    (this.RandomData != null &&
-                    this.RandomData.Equals(input.RandomData))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RandomData != null)
-                    hashCode = hashCode * 59 + this.RandomData.GetHashCode();
+                var hashCode = 41;
+                if (this.RandomData != null) hashCode = hashCode * 59 + this.RandomData.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(UpdateTrafficLimitConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Qps != input.Qps || (this.Qps != null && !this.Qps.Equals(input.Qps))) return false;
+            if (this.PerSourceIpQps != input.PerSourceIpQps || (this.PerSourceIpQps != null && !this.PerSourceIpQps.Equals(input.PerSourceIpQps))) return false;
+            if (this.Burst != input.Burst || (this.Burst != null && !this.Burst.Equals(input.Burst))) return false;
 
-            return 
-                (
-                    this.Qps == input.Qps ||
-                    (this.Qps != null &&
-                    this.Qps.Equals(input.Qps))
-                ) && 
-                (
-                    this.PerSourceIpQps == input.PerSourceIpQps ||
-                    (this.PerSourceIpQps != null &&
-                    this.PerSourceIpQps.Equals(input.PerSourceIpQps))
-                ) && 
-                (
-                    this.Burst == input.Burst ||
-                    (this.Burst != null &&
-                    this.Burst.Equals(input.Burst))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Qps != null)
-                    hashCode = hashCode * 59 + this.Qps.GetHashCode();
-                if (this.PerSourceIpQps != null)
-                    hashCode = hashCode * 59 + this.PerSourceIpQps.GetHashCode();
-                if (this.Burst != null)
-                    hashCode = hashCode * 59 + this.Burst.GetHashCode();
+                var hashCode = 41;
+                if (this.Qps != null) hashCode = hashCode * 59 + this.Qps.GetHashCode();
+                if (this.PerSourceIpQps != null) hashCode = hashCode * 59 + this.PerSourceIpQps.GetHashCode();
+                if (this.Burst != null) hashCode = hashCode * 59 + this.Burst.GetHashCode();
                 return hashCode;
             }
         }

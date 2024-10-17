@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(NovaCreateServersRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Server != input.Server || (this.Server != null && !this.Server.Equals(input.Server))) return false;
+            if (this.OsschedulerHints != input.OsschedulerHints || (this.OsschedulerHints != null && !this.OsschedulerHints.Equals(input.OsschedulerHints))) return false;
 
-            return 
-                (
-                    this.Server == input.Server ||
-                    (this.Server != null &&
-                    this.Server.Equals(input.Server))
-                ) && 
-                (
-                    this.OsschedulerHints == input.OsschedulerHints ||
-                    (this.OsschedulerHints != null &&
-                    this.OsschedulerHints.Equals(input.OsschedulerHints))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Server != null)
-                    hashCode = hashCode * 59 + this.Server.GetHashCode();
-                if (this.OsschedulerHints != null)
-                    hashCode = hashCode * 59 + this.OsschedulerHints.GetHashCode();
+                var hashCode = 41;
+                if (this.Server != null) hashCode = hashCode * 59 + this.Server.GetHashCode();
+                if (this.OsschedulerHints != null) hashCode = hashCode * 59 + this.OsschedulerHints.GetHashCode();
                 return hashCode;
             }
         }

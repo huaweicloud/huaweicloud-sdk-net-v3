@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(ShowRocketMqConfigsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RocketmqConfigs != input.RocketmqConfigs || (this.RocketmqConfigs != null && input.RocketmqConfigs != null && !this.RocketmqConfigs.SequenceEqual(input.RocketmqConfigs))) return false;
 
-            return 
-                (
-                    this.RocketmqConfigs == input.RocketmqConfigs ||
-                    this.RocketmqConfigs != null &&
-                    input.RocketmqConfigs != null &&
-                    this.RocketmqConfigs.SequenceEqual(input.RocketmqConfigs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RocketmqConfigs != null)
-                    hashCode = hashCode * 59 + this.RocketmqConfigs.GetHashCode();
+                var hashCode = 41;
+                if (this.RocketmqConfigs != null) hashCode = hashCode * 59 + this.RocketmqConfigs.GetHashCode();
                 return hashCode;
             }
         }

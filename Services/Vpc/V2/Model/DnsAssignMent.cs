@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(DnsAssignMent input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Hostname != input.Hostname || (this.Hostname != null && !this.Hostname.Equals(input.Hostname))) return false;
+            if (this.IpAddress != input.IpAddress || (this.IpAddress != null && !this.IpAddress.Equals(input.IpAddress))) return false;
+            if (this.Fqdn != input.Fqdn || (this.Fqdn != null && !this.Fqdn.Equals(input.Fqdn))) return false;
 
-            return 
-                (
-                    this.Hostname == input.Hostname ||
-                    (this.Hostname != null &&
-                    this.Hostname.Equals(input.Hostname))
-                ) && 
-                (
-                    this.IpAddress == input.IpAddress ||
-                    (this.IpAddress != null &&
-                    this.IpAddress.Equals(input.IpAddress))
-                ) && 
-                (
-                    this.Fqdn == input.Fqdn ||
-                    (this.Fqdn != null &&
-                    this.Fqdn.Equals(input.Fqdn))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Hostname != null)
-                    hashCode = hashCode * 59 + this.Hostname.GetHashCode();
-                if (this.IpAddress != null)
-                    hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
-                if (this.Fqdn != null)
-                    hashCode = hashCode * 59 + this.Fqdn.GetHashCode();
+                var hashCode = 41;
+                if (this.Hostname != null) hashCode = hashCode * 59 + this.Hostname.GetHashCode();
+                if (this.IpAddress != null) hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
+                if (this.Fqdn != null) hashCode = hashCode * 59 + this.Fqdn.GetHashCode();
                 return hashCode;
             }
         }

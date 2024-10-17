@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(CheckWeakPasswordResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Weak != input.Weak || (this.Weak != null && !this.Weak.Equals(input.Weak))) return false;
 
-            return 
-                (
-                    this.Weak == input.Weak ||
-                    (this.Weak != null &&
-                    this.Weak.Equals(input.Weak))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Weak != null)
-                    hashCode = hashCode * 59 + this.Weak.GetHashCode();
+                var hashCode = 41;
+                if (this.Weak != null) hashCode = hashCode * 59 + this.Weak.GetHashCode();
                 return hashCode;
             }
         }

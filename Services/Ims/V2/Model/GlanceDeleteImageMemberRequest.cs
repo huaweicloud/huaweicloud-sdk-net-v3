@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         public bool Equals(GlanceDeleteImageMemberRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ImageId != input.ImageId || (this.ImageId != null && !this.ImageId.Equals(input.ImageId))) return false;
+            if (this.MemberId != input.MemberId || (this.MemberId != null && !this.MemberId.Equals(input.MemberId))) return false;
 
-            return 
-                (
-                    this.ImageId == input.ImageId ||
-                    (this.ImageId != null &&
-                    this.ImageId.Equals(input.ImageId))
-                ) && 
-                (
-                    this.MemberId == input.MemberId ||
-                    (this.MemberId != null &&
-                    this.MemberId.Equals(input.MemberId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ImageId != null)
-                    hashCode = hashCode * 59 + this.ImageId.GetHashCode();
-                if (this.MemberId != null)
-                    hashCode = hashCode * 59 + this.MemberId.GetHashCode();
+                var hashCode = 41;
+                if (this.ImageId != null) hashCode = hashCode * 59 + this.ImageId.GetHashCode();
+                if (this.MemberId != null) hashCode = hashCode * 59 + this.MemberId.GetHashCode();
                 return hashCode;
             }
         }

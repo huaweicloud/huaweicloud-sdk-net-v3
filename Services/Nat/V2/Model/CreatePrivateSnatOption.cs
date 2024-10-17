@@ -77,36 +77,14 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// </summary>
         public bool Equals(CreatePrivateSnatOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.GatewayId != input.GatewayId || (this.GatewayId != null && !this.GatewayId.Equals(input.GatewayId))) return false;
+            if (this.Cidr != input.Cidr || (this.Cidr != null && !this.Cidr.Equals(input.Cidr))) return false;
+            if (this.VirsubnetId != input.VirsubnetId || (this.VirsubnetId != null && !this.VirsubnetId.Equals(input.VirsubnetId))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.TransitIpIds != input.TransitIpIds || (this.TransitIpIds != null && input.TransitIpIds != null && !this.TransitIpIds.SequenceEqual(input.TransitIpIds))) return false;
 
-            return 
-                (
-                    this.GatewayId == input.GatewayId ||
-                    (this.GatewayId != null &&
-                    this.GatewayId.Equals(input.GatewayId))
-                ) && 
-                (
-                    this.Cidr == input.Cidr ||
-                    (this.Cidr != null &&
-                    this.Cidr.Equals(input.Cidr))
-                ) && 
-                (
-                    this.VirsubnetId == input.VirsubnetId ||
-                    (this.VirsubnetId != null &&
-                    this.VirsubnetId.Equals(input.VirsubnetId))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.TransitIpIds == input.TransitIpIds ||
-                    this.TransitIpIds != null &&
-                    input.TransitIpIds != null &&
-                    this.TransitIpIds.SequenceEqual(input.TransitIpIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -116,17 +94,12 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.GatewayId != null)
-                    hashCode = hashCode * 59 + this.GatewayId.GetHashCode();
-                if (this.Cidr != null)
-                    hashCode = hashCode * 59 + this.Cidr.GetHashCode();
-                if (this.VirsubnetId != null)
-                    hashCode = hashCode * 59 + this.VirsubnetId.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.TransitIpIds != null)
-                    hashCode = hashCode * 59 + this.TransitIpIds.GetHashCode();
+                var hashCode = 41;
+                if (this.GatewayId != null) hashCode = hashCode * 59 + this.GatewayId.GetHashCode();
+                if (this.Cidr != null) hashCode = hashCode * 59 + this.Cidr.GetHashCode();
+                if (this.VirsubnetId != null) hashCode = hashCode * 59 + this.VirsubnetId.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.TransitIpIds != null) hashCode = hashCode * 59 + this.TransitIpIds.GetHashCode();
                 return hashCode;
             }
         }

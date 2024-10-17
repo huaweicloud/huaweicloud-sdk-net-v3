@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         /// </summary>
         public bool Equals(TransferRuleBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ForwardProtocol != input.ForwardProtocol || (this.ForwardProtocol != null && !this.ForwardProtocol.Equals(input.ForwardProtocol))) return false;
+            if (this.ForwardPort != input.ForwardPort || (this.ForwardPort != null && !this.ForwardPort.Equals(input.ForwardPort))) return false;
+            if (this.SourcePort != input.SourcePort || (this.SourcePort != null && !this.SourcePort.Equals(input.SourcePort))) return false;
+            if (this.SourceIp != input.SourceIp || (this.SourceIp != null && !this.SourceIp.Equals(input.SourceIp))) return false;
 
-            return 
-                (
-                    this.ForwardProtocol == input.ForwardProtocol ||
-                    (this.ForwardProtocol != null &&
-                    this.ForwardProtocol.Equals(input.ForwardProtocol))
-                ) && 
-                (
-                    this.ForwardPort == input.ForwardPort ||
-                    (this.ForwardPort != null &&
-                    this.ForwardPort.Equals(input.ForwardPort))
-                ) && 
-                (
-                    this.SourcePort == input.SourcePort ||
-                    (this.SourcePort != null &&
-                    this.SourcePort.Equals(input.SourcePort))
-                ) && 
-                (
-                    this.SourceIp == input.SourceIp ||
-                    (this.SourceIp != null &&
-                    this.SourceIp.Equals(input.SourceIp))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ForwardProtocol != null)
-                    hashCode = hashCode * 59 + this.ForwardProtocol.GetHashCode();
-                if (this.ForwardPort != null)
-                    hashCode = hashCode * 59 + this.ForwardPort.GetHashCode();
-                if (this.SourcePort != null)
-                    hashCode = hashCode * 59 + this.SourcePort.GetHashCode();
-                if (this.SourceIp != null)
-                    hashCode = hashCode * 59 + this.SourceIp.GetHashCode();
+                var hashCode = 41;
+                if (this.ForwardProtocol != null) hashCode = hashCode * 59 + this.ForwardProtocol.GetHashCode();
+                if (this.ForwardPort != null) hashCode = hashCode * 59 + this.ForwardPort.GetHashCode();
+                if (this.SourcePort != null) hashCode = hashCode * 59 + this.SourcePort.GetHashCode();
+                if (this.SourceIp != null) hashCode = hashCode * 59 + this.SourceIp.GetHashCode();
                 return hashCode;
             }
         }

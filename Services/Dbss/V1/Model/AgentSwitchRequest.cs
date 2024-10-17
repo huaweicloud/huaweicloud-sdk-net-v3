@@ -15,19 +15,133 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     /// </summary>
     public class AgentSwitchRequest 
     {
+        /// <summary>
+        /// Agent开关状态 - 1：开启 - 0：关闭
+        /// </summary>
+        /// <value>Agent开关状态 - 1：开启 - 0：关闭</value>
+        [JsonConverter(typeof(EnumClassConverter<StatusEnum>))]
+        public class StatusEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_0 for value: 0
+            /// </summary>
+            public static readonly StatusEnum NUMBER_0 = new StatusEnum(0);
+
+            /// <summary>
+            /// Enum NUMBER_1 for value: 1
+            /// </summary>
+            public static readonly StatusEnum NUMBER_1 = new StatusEnum(1);
+
+            private static readonly Dictionary<int?, StatusEnum> StaticFields =
+            new Dictionary<int?, StatusEnum>()
+            {
+                { 0, NUMBER_0 },
+                { 1, NUMBER_1 },
+            };
+
+            private int? _value;
+
+            public StatusEnum()
+            {
+
+            }
+
+            public StatusEnum(int? value)
+            {
+                _value = value;
+            }
+
+            public static StatusEnum FromValue(int? value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public int? GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as StatusEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(StatusEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(StatusEnum a, StatusEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(StatusEnum a, StatusEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
-        /// 审计agent的ID
+        /// 审计agent的ID。可在查询数据库agent列表接口ID字段获取。
         /// </summary>
         [JsonProperty("agent_id", NullValueHandling = NullValueHandling.Ignore)]
         public string AgentId { get; set; }
 
         /// <summary>
-        /// Agent开关状态 1：开启 0：关闭
+        /// Agent开关状态 - 1：开启 - 0：关闭
         /// </summary>
         [JsonProperty("status", NullValueHandling = NullValueHandling.Ignore)]
-        public int? Status { get; set; }
-
+        public StatusEnum Status { get; set; }
 
 
         /// <summary>
@@ -56,20 +170,11 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         public bool Equals(AgentSwitchRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AgentId != input.AgentId || (this.AgentId != null && !this.AgentId.Equals(input.AgentId))) return false;
+            if (this.Status != input.Status) return false;
 
-            return 
-                (
-                    this.AgentId == input.AgentId ||
-                    (this.AgentId != null &&
-                    this.AgentId.Equals(input.AgentId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +184,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AgentId != null)
-                    hashCode = hashCode * 59 + this.AgentId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                var hashCode = 41;
+                if (this.AgentId != null) hashCode = hashCode * 59 + this.AgentId.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

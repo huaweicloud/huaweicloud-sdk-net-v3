@@ -63,27 +63,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(BankReceiptDict input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KvPairCount != input.KvPairCount || (this.KvPairCount != null && !this.KvPairCount.Equals(input.KvPairCount))) return false;
+            if (this.BankReceiptLocation != input.BankReceiptLocation || (this.BankReceiptLocation != null && input.BankReceiptLocation != null && !this.BankReceiptLocation.SequenceEqual(input.BankReceiptLocation))) return false;
+            if (this.KvPairList != input.KvPairList || (this.KvPairList != null && input.KvPairList != null && !this.KvPairList.SequenceEqual(input.KvPairList))) return false;
 
-            return 
-                (
-                    this.KvPairCount == input.KvPairCount ||
-                    (this.KvPairCount != null &&
-                    this.KvPairCount.Equals(input.KvPairCount))
-                ) && 
-                (
-                    this.BankReceiptLocation == input.BankReceiptLocation ||
-                    this.BankReceiptLocation != null &&
-                    input.BankReceiptLocation != null &&
-                    this.BankReceiptLocation.SequenceEqual(input.BankReceiptLocation)
-                ) && 
-                (
-                    this.KvPairList == input.KvPairList ||
-                    this.KvPairList != null &&
-                    input.KvPairList != null &&
-                    this.KvPairList.SequenceEqual(input.KvPairList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +78,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KvPairCount != null)
-                    hashCode = hashCode * 59 + this.KvPairCount.GetHashCode();
-                if (this.BankReceiptLocation != null)
-                    hashCode = hashCode * 59 + this.BankReceiptLocation.GetHashCode();
-                if (this.KvPairList != null)
-                    hashCode = hashCode * 59 + this.KvPairList.GetHashCode();
+                var hashCode = 41;
+                if (this.KvPairCount != null) hashCode = hashCode * 59 + this.KvPairCount.GetHashCode();
+                if (this.BankReceiptLocation != null) hashCode = hashCode * 59 + this.BankReceiptLocation.GetHashCode();
+                if (this.KvPairList != null) hashCode = hashCode * 59 + this.KvPairList.GetHashCode();
                 return hashCode;
             }
         }

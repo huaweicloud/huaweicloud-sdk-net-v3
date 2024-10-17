@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(DomainRegion input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
+            if (this.RegionIspDetails != input.RegionIspDetails || (this.RegionIspDetails != null && input.RegionIspDetails != null && !this.RegionIspDetails.SequenceEqual(input.RegionIspDetails))) return false;
 
-            return 
-                (
-                    this.DomainName == input.DomainName ||
-                    (this.DomainName != null &&
-                    this.DomainName.Equals(input.DomainName))
-                ) && 
-                (
-                    this.RegionIspDetails == input.RegionIspDetails ||
-                    this.RegionIspDetails != null &&
-                    input.RegionIspDetails != null &&
-                    this.RegionIspDetails.SequenceEqual(input.RegionIspDetails)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DomainName != null)
-                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.RegionIspDetails != null)
-                    hashCode = hashCode * 59 + this.RegionIspDetails.GetHashCode();
+                var hashCode = 41;
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.RegionIspDetails != null) hashCode = hashCode * 59 + this.RegionIspDetails.GetHashCode();
                 return hashCode;
             }
         }

@@ -178,107 +178,26 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(ListHealthMonitorsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.PageReverse != input.PageReverse || (this.PageReverse != null && !this.PageReverse.Equals(input.PageReverse))) return false;
+            if (this.Id != input.Id || (this.Id != null && input.Id != null && !this.Id.SequenceEqual(input.Id))) return false;
+            if (this.MonitorPort != input.MonitorPort || (this.MonitorPort != null && input.MonitorPort != null && !this.MonitorPort.SequenceEqual(input.MonitorPort))) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && input.DomainName != null && !this.DomainName.SequenceEqual(input.DomainName))) return false;
+            if (this.Name != input.Name || (this.Name != null && input.Name != null && !this.Name.SequenceEqual(input.Name))) return false;
+            if (this.Delay != input.Delay || (this.Delay != null && input.Delay != null && !this.Delay.SequenceEqual(input.Delay))) return false;
+            if (this.MaxRetries != input.MaxRetries || (this.MaxRetries != null && input.MaxRetries != null && !this.MaxRetries.SequenceEqual(input.MaxRetries))) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.MaxRetriesDown != input.MaxRetriesDown || (this.MaxRetriesDown != null && input.MaxRetriesDown != null && !this.MaxRetriesDown.SequenceEqual(input.MaxRetriesDown))) return false;
+            if (this.Timeout != input.Timeout || (this.Timeout != null && !this.Timeout.Equals(input.Timeout))) return false;
+            if (this.Type != input.Type || (this.Type != null && input.Type != null && !this.Type.SequenceEqual(input.Type))) return false;
+            if (this.ExpectedCodes != input.ExpectedCodes || (this.ExpectedCodes != null && input.ExpectedCodes != null && !this.ExpectedCodes.SequenceEqual(input.ExpectedCodes))) return false;
+            if (this.UrlPath != input.UrlPath || (this.UrlPath != null && input.UrlPath != null && !this.UrlPath.SequenceEqual(input.UrlPath))) return false;
+            if (this.HttpMethod != input.HttpMethod || (this.HttpMethod != null && input.HttpMethod != null && !this.HttpMethod.SequenceEqual(input.HttpMethod))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && input.EnterpriseProjectId != null && !this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId))) return false;
 
-            return 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.PageReverse == input.PageReverse ||
-                    (this.PageReverse != null &&
-                    this.PageReverse.Equals(input.PageReverse))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    this.Id != null &&
-                    input.Id != null &&
-                    this.Id.SequenceEqual(input.Id)
-                ) && 
-                (
-                    this.MonitorPort == input.MonitorPort ||
-                    this.MonitorPort != null &&
-                    input.MonitorPort != null &&
-                    this.MonitorPort.SequenceEqual(input.MonitorPort)
-                ) && 
-                (
-                    this.DomainName == input.DomainName ||
-                    this.DomainName != null &&
-                    input.DomainName != null &&
-                    this.DomainName.SequenceEqual(input.DomainName)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    this.Name != null &&
-                    input.Name != null &&
-                    this.Name.SequenceEqual(input.Name)
-                ) && 
-                (
-                    this.Delay == input.Delay ||
-                    this.Delay != null &&
-                    input.Delay != null &&
-                    this.Delay.SequenceEqual(input.Delay)
-                ) && 
-                (
-                    this.MaxRetries == input.MaxRetries ||
-                    this.MaxRetries != null &&
-                    input.MaxRetries != null &&
-                    this.MaxRetries.SequenceEqual(input.MaxRetries)
-                ) && 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.MaxRetriesDown == input.MaxRetriesDown ||
-                    this.MaxRetriesDown != null &&
-                    input.MaxRetriesDown != null &&
-                    this.MaxRetriesDown.SequenceEqual(input.MaxRetriesDown)
-                ) && 
-                (
-                    this.Timeout == input.Timeout ||
-                    (this.Timeout != null &&
-                    this.Timeout.Equals(input.Timeout))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    this.Type != null &&
-                    input.Type != null &&
-                    this.Type.SequenceEqual(input.Type)
-                ) && 
-                (
-                    this.ExpectedCodes == input.ExpectedCodes ||
-                    this.ExpectedCodes != null &&
-                    input.ExpectedCodes != null &&
-                    this.ExpectedCodes.SequenceEqual(input.ExpectedCodes)
-                ) && 
-                (
-                    this.UrlPath == input.UrlPath ||
-                    this.UrlPath != null &&
-                    input.UrlPath != null &&
-                    this.UrlPath.SequenceEqual(input.UrlPath)
-                ) && 
-                (
-                    this.HttpMethod == input.HttpMethod ||
-                    this.HttpMethod != null &&
-                    input.HttpMethod != null &&
-                    this.HttpMethod.SequenceEqual(input.HttpMethod)
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    this.EnterpriseProjectId != null &&
-                    input.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId)
-                );
+            return true;
         }
 
         /// <summary>
@@ -288,41 +207,24 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.PageReverse != null)
-                    hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.MonitorPort != null)
-                    hashCode = hashCode * 59 + this.MonitorPort.GetHashCode();
-                if (this.DomainName != null)
-                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Delay != null)
-                    hashCode = hashCode * 59 + this.Delay.GetHashCode();
-                if (this.MaxRetries != null)
-                    hashCode = hashCode * 59 + this.MaxRetries.GetHashCode();
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.MaxRetriesDown != null)
-                    hashCode = hashCode * 59 + this.MaxRetriesDown.GetHashCode();
-                if (this.Timeout != null)
-                    hashCode = hashCode * 59 + this.Timeout.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.ExpectedCodes != null)
-                    hashCode = hashCode * 59 + this.ExpectedCodes.GetHashCode();
-                if (this.UrlPath != null)
-                    hashCode = hashCode * 59 + this.UrlPath.GetHashCode();
-                if (this.HttpMethod != null)
-                    hashCode = hashCode * 59 + this.HttpMethod.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                var hashCode = 41;
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.PageReverse != null) hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.MonitorPort != null) hashCode = hashCode * 59 + this.MonitorPort.GetHashCode();
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Delay != null) hashCode = hashCode * 59 + this.Delay.GetHashCode();
+                if (this.MaxRetries != null) hashCode = hashCode * 59 + this.MaxRetries.GetHashCode();
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.MaxRetriesDown != null) hashCode = hashCode * 59 + this.MaxRetriesDown.GetHashCode();
+                if (this.Timeout != null) hashCode = hashCode * 59 + this.Timeout.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.ExpectedCodes != null) hashCode = hashCode * 59 + this.ExpectedCodes.GetHashCode();
+                if (this.UrlPath != null) hashCode = hashCode * 59 + this.UrlPath.GetHashCode();
+                if (this.HttpMethod != null) hashCode = hashCode * 59 + this.HttpMethod.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

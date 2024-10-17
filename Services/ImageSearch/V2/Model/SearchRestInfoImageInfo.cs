@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         /// </summary>
         public bool Equals(SearchRestInfoImageInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Box != input.Box || (this.Box != null && !this.Box.Equals(input.Box))) return false;
+            if (this.Category != input.Category || (this.Category != null && !this.Category.Equals(input.Category))) return false;
+            if (this.CategoryName != input.CategoryName || (this.CategoryName != null && !this.CategoryName.Equals(input.CategoryName))) return false;
+            if (this.Objects != input.Objects || (this.Objects != null && input.Objects != null && !this.Objects.SequenceEqual(input.Objects))) return false;
 
-            return 
-                (
-                    this.Box == input.Box ||
-                    (this.Box != null &&
-                    this.Box.Equals(input.Box))
-                ) && 
-                (
-                    this.Category == input.Category ||
-                    (this.Category != null &&
-                    this.Category.Equals(input.Category))
-                ) && 
-                (
-                    this.CategoryName == input.CategoryName ||
-                    (this.CategoryName != null &&
-                    this.CategoryName.Equals(input.CategoryName))
-                ) && 
-                (
-                    this.Objects == input.Objects ||
-                    this.Objects != null &&
-                    input.Objects != null &&
-                    this.Objects.SequenceEqual(input.Objects)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Box != null)
-                    hashCode = hashCode * 59 + this.Box.GetHashCode();
-                if (this.Category != null)
-                    hashCode = hashCode * 59 + this.Category.GetHashCode();
-                if (this.CategoryName != null)
-                    hashCode = hashCode * 59 + this.CategoryName.GetHashCode();
-                if (this.Objects != null)
-                    hashCode = hashCode * 59 + this.Objects.GetHashCode();
+                var hashCode = 41;
+                if (this.Box != null) hashCode = hashCode * 59 + this.Box.GetHashCode();
+                if (this.Category != null) hashCode = hashCode * 59 + this.Category.GetHashCode();
+                if (this.CategoryName != null) hashCode = hashCode * 59 + this.CategoryName.GetHashCode();
+                if (this.Objects != null) hashCode = hashCode * 59 + this.Objects.GetHashCode();
                 return hashCode;
             }
         }

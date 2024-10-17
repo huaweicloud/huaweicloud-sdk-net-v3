@@ -77,36 +77,14 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(AutoClassificationRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Image != input.Image || (this.Image != null && !this.Image.Equals(input.Image))) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.TypeList != input.TypeList || (this.TypeList != null && input.TypeList != null && !this.TypeList.SequenceEqual(input.TypeList))) return false;
+            if (this.ExtendedParameters != input.ExtendedParameters || (this.ExtendedParameters != null && !this.ExtendedParameters.Equals(input.ExtendedParameters))) return false;
+            if (this.DetectSeal != input.DetectSeal || (this.DetectSeal != null && !this.DetectSeal.Equals(input.DetectSeal))) return false;
 
-            return 
-                (
-                    this.Image == input.Image ||
-                    (this.Image != null &&
-                    this.Image.Equals(input.Image))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.TypeList == input.TypeList ||
-                    this.TypeList != null &&
-                    input.TypeList != null &&
-                    this.TypeList.SequenceEqual(input.TypeList)
-                ) && 
-                (
-                    this.ExtendedParameters == input.ExtendedParameters ||
-                    (this.ExtendedParameters != null &&
-                    this.ExtendedParameters.Equals(input.ExtendedParameters))
-                ) && 
-                (
-                    this.DetectSeal == input.DetectSeal ||
-                    (this.DetectSeal != null &&
-                    this.DetectSeal.Equals(input.DetectSeal))
-                );
+            return true;
         }
 
         /// <summary>
@@ -116,17 +94,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Image != null)
-                    hashCode = hashCode * 59 + this.Image.GetHashCode();
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.TypeList != null)
-                    hashCode = hashCode * 59 + this.TypeList.GetHashCode();
-                if (this.ExtendedParameters != null)
-                    hashCode = hashCode * 59 + this.ExtendedParameters.GetHashCode();
-                if (this.DetectSeal != null)
-                    hashCode = hashCode * 59 + this.DetectSeal.GetHashCode();
+                var hashCode = 41;
+                if (this.Image != null) hashCode = hashCode * 59 + this.Image.GetHashCode();
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.TypeList != null) hashCode = hashCode * 59 + this.TypeList.GetHashCode();
+                if (this.ExtendedParameters != null) hashCode = hashCode * 59 + this.ExtendedParameters.GetHashCode();
+                if (this.DetectSeal != null) hashCode = hashCode * 59 + this.DetectSeal.GetHashCode();
                 return hashCode;
             }
         }

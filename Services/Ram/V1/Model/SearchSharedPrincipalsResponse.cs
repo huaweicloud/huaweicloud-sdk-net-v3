@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         /// </summary>
         public bool Equals(SearchSharedPrincipalsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SharedPrincipals != input.SharedPrincipals || (this.SharedPrincipals != null && input.SharedPrincipals != null && !this.SharedPrincipals.SequenceEqual(input.SharedPrincipals))) return false;
+            if (this.PageInfo != input.PageInfo || (this.PageInfo != null && !this.PageInfo.Equals(input.PageInfo))) return false;
 
-            return 
-                (
-                    this.SharedPrincipals == input.SharedPrincipals ||
-                    this.SharedPrincipals != null &&
-                    input.SharedPrincipals != null &&
-                    this.SharedPrincipals.SequenceEqual(input.SharedPrincipals)
-                ) && 
-                (
-                    this.PageInfo == input.PageInfo ||
-                    (this.PageInfo != null &&
-                    this.PageInfo.Equals(input.PageInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SharedPrincipals != null)
-                    hashCode = hashCode * 59 + this.SharedPrincipals.GetHashCode();
-                if (this.PageInfo != null)
-                    hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.SharedPrincipals != null) hashCode = hashCode * 59 + this.SharedPrincipals.GetHashCode();
+                if (this.PageInfo != null) hashCode = hashCode * 59 + this.PageInfo.GetHashCode();
                 return hashCode;
             }
         }

@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(NoSQLDrDateSyncIndicators input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RsyncOps != input.RsyncOps || (this.RsyncOps != null && !this.RsyncOps.Equals(input.RsyncOps))) return false;
+            if (this.RsyncWalSize != input.RsyncWalSize || (this.RsyncWalSize != null && !this.RsyncWalSize.Equals(input.RsyncWalSize))) return false;
+            if (this.RsyncPushCost != input.RsyncPushCost || (this.RsyncPushCost != null && !this.RsyncPushCost.Equals(input.RsyncPushCost))) return false;
+            if (this.RsyncSendCost != input.RsyncSendCost || (this.RsyncSendCost != null && !this.RsyncSendCost.Equals(input.RsyncSendCost))) return false;
+            if (this.RsyncMaxPushCost != input.RsyncMaxPushCost || (this.RsyncMaxPushCost != null && !this.RsyncMaxPushCost.Equals(input.RsyncMaxPushCost))) return false;
+            if (this.RsyncMaxSendCost != input.RsyncMaxSendCost || (this.RsyncMaxSendCost != null && !this.RsyncMaxSendCost.Equals(input.RsyncMaxSendCost))) return false;
+            if (this.RsyncStatus != input.RsyncStatus || (this.RsyncStatus != null && !this.RsyncStatus.Equals(input.RsyncStatus))) return false;
 
-            return 
-                (
-                    this.RsyncOps == input.RsyncOps ||
-                    (this.RsyncOps != null &&
-                    this.RsyncOps.Equals(input.RsyncOps))
-                ) && 
-                (
-                    this.RsyncWalSize == input.RsyncWalSize ||
-                    (this.RsyncWalSize != null &&
-                    this.RsyncWalSize.Equals(input.RsyncWalSize))
-                ) && 
-                (
-                    this.RsyncPushCost == input.RsyncPushCost ||
-                    (this.RsyncPushCost != null &&
-                    this.RsyncPushCost.Equals(input.RsyncPushCost))
-                ) && 
-                (
-                    this.RsyncSendCost == input.RsyncSendCost ||
-                    (this.RsyncSendCost != null &&
-                    this.RsyncSendCost.Equals(input.RsyncSendCost))
-                ) && 
-                (
-                    this.RsyncMaxPushCost == input.RsyncMaxPushCost ||
-                    (this.RsyncMaxPushCost != null &&
-                    this.RsyncMaxPushCost.Equals(input.RsyncMaxPushCost))
-                ) && 
-                (
-                    this.RsyncMaxSendCost == input.RsyncMaxSendCost ||
-                    (this.RsyncMaxSendCost != null &&
-                    this.RsyncMaxSendCost.Equals(input.RsyncMaxSendCost))
-                ) && 
-                (
-                    this.RsyncStatus == input.RsyncStatus ||
-                    (this.RsyncStatus != null &&
-                    this.RsyncStatus.Equals(input.RsyncStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RsyncOps != null)
-                    hashCode = hashCode * 59 + this.RsyncOps.GetHashCode();
-                if (this.RsyncWalSize != null)
-                    hashCode = hashCode * 59 + this.RsyncWalSize.GetHashCode();
-                if (this.RsyncPushCost != null)
-                    hashCode = hashCode * 59 + this.RsyncPushCost.GetHashCode();
-                if (this.RsyncSendCost != null)
-                    hashCode = hashCode * 59 + this.RsyncSendCost.GetHashCode();
-                if (this.RsyncMaxPushCost != null)
-                    hashCode = hashCode * 59 + this.RsyncMaxPushCost.GetHashCode();
-                if (this.RsyncMaxSendCost != null)
-                    hashCode = hashCode * 59 + this.RsyncMaxSendCost.GetHashCode();
-                if (this.RsyncStatus != null)
-                    hashCode = hashCode * 59 + this.RsyncStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.RsyncOps != null) hashCode = hashCode * 59 + this.RsyncOps.GetHashCode();
+                if (this.RsyncWalSize != null) hashCode = hashCode * 59 + this.RsyncWalSize.GetHashCode();
+                if (this.RsyncPushCost != null) hashCode = hashCode * 59 + this.RsyncPushCost.GetHashCode();
+                if (this.RsyncSendCost != null) hashCode = hashCode * 59 + this.RsyncSendCost.GetHashCode();
+                if (this.RsyncMaxPushCost != null) hashCode = hashCode * 59 + this.RsyncMaxPushCost.GetHashCode();
+                if (this.RsyncMaxSendCost != null) hashCode = hashCode * 59 + this.RsyncMaxSendCost.GetHashCode();
+                if (this.RsyncStatus != null) hashCode = hashCode * 59 + this.RsyncStatus.GetHashCode();
                 return hashCode;
             }
         }

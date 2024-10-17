@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(IterationHistoryDetails input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OperateFieldName != input.OperateFieldName || (this.OperateFieldName != null && !this.OperateFieldName.Equals(input.OperateFieldName))) return false;
+            if (this.NewValue != input.NewValue || (this.NewValue != null && !this.NewValue.Equals(input.NewValue))) return false;
+            if (this.OldValue != input.OldValue || (this.OldValue != null && !this.OldValue.Equals(input.OldValue))) return false;
 
-            return 
-                (
-                    this.OperateFieldName == input.OperateFieldName ||
-                    (this.OperateFieldName != null &&
-                    this.OperateFieldName.Equals(input.OperateFieldName))
-                ) && 
-                (
-                    this.NewValue == input.NewValue ||
-                    (this.NewValue != null &&
-                    this.NewValue.Equals(input.NewValue))
-                ) && 
-                (
-                    this.OldValue == input.OldValue ||
-                    (this.OldValue != null &&
-                    this.OldValue.Equals(input.OldValue))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OperateFieldName != null)
-                    hashCode = hashCode * 59 + this.OperateFieldName.GetHashCode();
-                if (this.NewValue != null)
-                    hashCode = hashCode * 59 + this.NewValue.GetHashCode();
-                if (this.OldValue != null)
-                    hashCode = hashCode * 59 + this.OldValue.GetHashCode();
+                var hashCode = 41;
+                if (this.OperateFieldName != null) hashCode = hashCode * 59 + this.OperateFieldName.GetHashCode();
+                if (this.NewValue != null) hashCode = hashCode * 59 + this.NewValue.GetHashCode();
+                if (this.OldValue != null) hashCode = hashCode * 59 + this.OldValue.GetHashCode();
                 return hashCode;
             }
         }

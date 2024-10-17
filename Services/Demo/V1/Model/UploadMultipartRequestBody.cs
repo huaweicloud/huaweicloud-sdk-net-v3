@@ -80,20 +80,11 @@ namespace HuaweiCloud.SDK.Demo.V1.Model
         /// </summary>
         public bool Equals(UploadMultipartRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Upfile != input.Upfile || (this.Upfile != null && !this.Upfile.Equals(input.Upfile))) return false;
+            if (this.Uuid != input.Uuid || (this.Uuid != null && !this.Uuid.Equals(input.Uuid))) return false;
 
-            return 
-                (
-                    this.Upfile == input.Upfile ||
-                    (this.Upfile != null &&
-                    this.Upfile.Equals(input.Upfile))
-                ) && 
-                (
-                    this.Uuid == input.Uuid ||
-                    (this.Uuid != null &&
-                    this.Uuid.Equals(input.Uuid))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,11 +94,9 @@ namespace HuaweiCloud.SDK.Demo.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Upfile != null)
-                    hashCode = hashCode * 59 + this.Upfile.GetHashCode();
-                if (this.Uuid != null)
-                    hashCode = hashCode * 59 + this.Uuid.GetHashCode();
+                var hashCode = 41;
+                if (this.Upfile != null) hashCode = hashCode * 59 + this.Upfile.GetHashCode();
+                if (this.Uuid != null) hashCode = hashCode * 59 + this.Uuid.GetHashCode();
                 return hashCode;
             }
         }

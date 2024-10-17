@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(OrderRuleAclDto input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DestRuleId != input.DestRuleId || (this.DestRuleId != null && !this.DestRuleId.Equals(input.DestRuleId))) return false;
+            if (this.Top != input.Top || (this.Top != null && !this.Top.Equals(input.Top))) return false;
+            if (this.Bottom != input.Bottom || (this.Bottom != null && !this.Bottom.Equals(input.Bottom))) return false;
 
-            return 
-                (
-                    this.DestRuleId == input.DestRuleId ||
-                    (this.DestRuleId != null &&
-                    this.DestRuleId.Equals(input.DestRuleId))
-                ) && 
-                (
-                    this.Top == input.Top ||
-                    (this.Top != null &&
-                    this.Top.Equals(input.Top))
-                ) && 
-                (
-                    this.Bottom == input.Bottom ||
-                    (this.Bottom != null &&
-                    this.Bottom.Equals(input.Bottom))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DestRuleId != null)
-                    hashCode = hashCode * 59 + this.DestRuleId.GetHashCode();
-                if (this.Top != null)
-                    hashCode = hashCode * 59 + this.Top.GetHashCode();
-                if (this.Bottom != null)
-                    hashCode = hashCode * 59 + this.Bottom.GetHashCode();
+                var hashCode = 41;
+                if (this.DestRuleId != null) hashCode = hashCode * 59 + this.DestRuleId.GetHashCode();
+                if (this.Top != null) hashCode = hashCode * 59 + this.Top.GetHashCode();
+                if (this.Bottom != null) hashCode = hashCode * 59 + this.Bottom.GetHashCode();
                 return hashCode;
             }
         }

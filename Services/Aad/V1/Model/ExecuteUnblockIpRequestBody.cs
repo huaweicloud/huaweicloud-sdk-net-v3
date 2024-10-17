@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         /// </summary>
         public bool Equals(ExecuteUnblockIpRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
+            if (this.BlockingTime != input.BlockingTime || (this.BlockingTime != null && !this.BlockingTime.Equals(input.BlockingTime))) return false;
 
-            return 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                ) && 
-                (
-                    this.BlockingTime == input.BlockingTime ||
-                    (this.BlockingTime != null &&
-                    this.BlockingTime.Equals(input.BlockingTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.BlockingTime != null)
-                    hashCode = hashCode * 59 + this.BlockingTime.GetHashCode();
+                var hashCode = 41;
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.BlockingTime != null) hashCode = hashCode * 59 + this.BlockingTime.GetHashCode();
                 return hashCode;
             }
         }

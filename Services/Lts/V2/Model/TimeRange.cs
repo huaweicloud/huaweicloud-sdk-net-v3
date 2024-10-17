@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(TimeRange input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SqlTimeZone != input.SqlTimeZone || (this.SqlTimeZone != null && !this.SqlTimeZone.Equals(input.SqlTimeZone))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.StartTimeGt != input.StartTimeGt || (this.StartTimeGt != null && !this.StartTimeGt.Equals(input.StartTimeGt))) return false;
+            if (this.EndTimeLt != input.EndTimeLt || (this.EndTimeLt != null && !this.EndTimeLt.Equals(input.EndTimeLt))) return false;
 
-            return 
-                (
-                    this.SqlTimeZone == input.SqlTimeZone ||
-                    (this.SqlTimeZone != null &&
-                    this.SqlTimeZone.Equals(input.SqlTimeZone))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.StartTimeGt == input.StartTimeGt ||
-                    (this.StartTimeGt != null &&
-                    this.StartTimeGt.Equals(input.StartTimeGt))
-                ) && 
-                (
-                    this.EndTimeLt == input.EndTimeLt ||
-                    (this.EndTimeLt != null &&
-                    this.EndTimeLt.Equals(input.EndTimeLt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SqlTimeZone != null)
-                    hashCode = hashCode * 59 + this.SqlTimeZone.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.StartTimeGt != null)
-                    hashCode = hashCode * 59 + this.StartTimeGt.GetHashCode();
-                if (this.EndTimeLt != null)
-                    hashCode = hashCode * 59 + this.EndTimeLt.GetHashCode();
+                var hashCode = 41;
+                if (this.SqlTimeZone != null) hashCode = hashCode * 59 + this.SqlTimeZone.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.StartTimeGt != null) hashCode = hashCode * 59 + this.StartTimeGt.GetHashCode();
+                if (this.EndTimeLt != null) hashCode = hashCode * 59 + this.EndTimeLt.GetHashCode();
                 return hashCode;
             }
         }

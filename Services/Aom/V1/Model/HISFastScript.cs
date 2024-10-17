@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         /// </summary>
         public bool Equals(HISFastScript input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ScriptType != input.ScriptType || (this.ScriptType != null && !this.ScriptType.Equals(input.ScriptType))) return false;
+            if (this.CmdUser != input.CmdUser || (this.CmdUser != null && !this.CmdUser.Equals(input.CmdUser))) return false;
+            if (this.ScriptContent != input.ScriptContent || (this.ScriptContent != null && !this.ScriptContent.Equals(input.ScriptContent))) return false;
+            if (this.EcsIdList != input.EcsIdList || (this.EcsIdList != null && !this.EcsIdList.Equals(input.EcsIdList))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.ScriptArgs != input.ScriptArgs || (this.ScriptArgs != null && !this.ScriptArgs.Equals(input.ScriptArgs))) return false;
 
-            return 
-                (
-                    this.ScriptType == input.ScriptType ||
-                    (this.ScriptType != null &&
-                    this.ScriptType.Equals(input.ScriptType))
-                ) && 
-                (
-                    this.CmdUser == input.CmdUser ||
-                    (this.CmdUser != null &&
-                    this.CmdUser.Equals(input.CmdUser))
-                ) && 
-                (
-                    this.ScriptContent == input.ScriptContent ||
-                    (this.ScriptContent != null &&
-                    this.ScriptContent.Equals(input.ScriptContent))
-                ) && 
-                (
-                    this.EcsIdList == input.EcsIdList ||
-                    (this.EcsIdList != null &&
-                    this.EcsIdList.Equals(input.EcsIdList))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.ScriptArgs == input.ScriptArgs ||
-                    (this.ScriptArgs != null &&
-                    this.ScriptArgs.Equals(input.ScriptArgs))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ScriptType != null)
-                    hashCode = hashCode * 59 + this.ScriptType.GetHashCode();
-                if (this.CmdUser != null)
-                    hashCode = hashCode * 59 + this.CmdUser.GetHashCode();
-                if (this.ScriptContent != null)
-                    hashCode = hashCode * 59 + this.ScriptContent.GetHashCode();
-                if (this.EcsIdList != null)
-                    hashCode = hashCode * 59 + this.EcsIdList.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.ScriptArgs != null)
-                    hashCode = hashCode * 59 + this.ScriptArgs.GetHashCode();
+                var hashCode = 41;
+                if (this.ScriptType != null) hashCode = hashCode * 59 + this.ScriptType.GetHashCode();
+                if (this.CmdUser != null) hashCode = hashCode * 59 + this.CmdUser.GetHashCode();
+                if (this.ScriptContent != null) hashCode = hashCode * 59 + this.ScriptContent.GetHashCode();
+                if (this.EcsIdList != null) hashCode = hashCode * 59 + this.EcsIdList.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.ScriptArgs != null) hashCode = hashCode * 59 + this.ScriptArgs.GetHashCode();
                 return hashCode;
             }
         }

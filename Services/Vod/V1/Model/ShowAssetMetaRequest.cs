@@ -558,74 +558,21 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(ShowAssetMetaRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.XSdkDate != input.XSdkDate || (this.XSdkDate != null && !this.XSdkDate.Equals(input.XSdkDate))) return false;
+            if (this.AssetId != input.AssetId || (this.AssetId != null && input.AssetId != null && !this.AssetId.SequenceEqual(input.AssetId))) return false;
+            if (this.Status != input.Status || (this.Status != null && input.Status != null && !this.Status.SequenceEqual(input.Status))) return false;
+            if (this.TranscodeStatus != input.TranscodeStatus || (this.TranscodeStatus != null && input.TranscodeStatus != null && !this.TranscodeStatus.SequenceEqual(input.TranscodeStatus))) return false;
+            if (this.AssetStatus != input.AssetStatus || (this.AssetStatus != null && input.AssetStatus != null && !this.AssetStatus.SequenceEqual(input.AssetStatus))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.CategoryId != input.CategoryId || (this.CategoryId != null && !this.CategoryId.Equals(input.CategoryId))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && !this.Tags.Equals(input.Tags))) return false;
+            if (this.QueryString != input.QueryString || (this.QueryString != null && !this.QueryString.Equals(input.QueryString))) return false;
+            if (this.Page != input.Page || (this.Page != null && !this.Page.Equals(input.Page))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
 
-            return 
-                (
-                    this.XSdkDate == input.XSdkDate ||
-                    (this.XSdkDate != null &&
-                    this.XSdkDate.Equals(input.XSdkDate))
-                ) && 
-                (
-                    this.AssetId == input.AssetId ||
-                    this.AssetId != null &&
-                    input.AssetId != null &&
-                    this.AssetId.SequenceEqual(input.AssetId)
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    this.Status != null &&
-                    input.Status != null &&
-                    this.Status.SequenceEqual(input.Status)
-                ) && 
-                (
-                    this.TranscodeStatus == input.TranscodeStatus ||
-                    this.TranscodeStatus != null &&
-                    input.TranscodeStatus != null &&
-                    this.TranscodeStatus.SequenceEqual(input.TranscodeStatus)
-                ) && 
-                (
-                    this.AssetStatus == input.AssetStatus ||
-                    this.AssetStatus != null &&
-                    input.AssetStatus != null &&
-                    this.AssetStatus.SequenceEqual(input.AssetStatus)
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.CategoryId == input.CategoryId ||
-                    (this.CategoryId != null &&
-                    this.CategoryId.Equals(input.CategoryId))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    (this.Tags != null &&
-                    this.Tags.Equals(input.Tags))
-                ) && 
-                (
-                    this.QueryString == input.QueryString ||
-                    (this.QueryString != null &&
-                    this.QueryString.Equals(input.QueryString))
-                ) && 
-                (
-                    this.Page == input.Page ||
-                    (this.Page != null &&
-                    this.Page.Equals(input.Page))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                );
+            return true;
         }
 
         /// <summary>
@@ -635,31 +582,19 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.XSdkDate != null)
-                    hashCode = hashCode * 59 + this.XSdkDate.GetHashCode();
-                if (this.AssetId != null)
-                    hashCode = hashCode * 59 + this.AssetId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.TranscodeStatus != null)
-                    hashCode = hashCode * 59 + this.TranscodeStatus.GetHashCode();
-                if (this.AssetStatus != null)
-                    hashCode = hashCode * 59 + this.AssetStatus.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.CategoryId != null)
-                    hashCode = hashCode * 59 + this.CategoryId.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.QueryString != null)
-                    hashCode = hashCode * 59 + this.QueryString.GetHashCode();
-                if (this.Page != null)
-                    hashCode = hashCode * 59 + this.Page.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
+                var hashCode = 41;
+                if (this.XSdkDate != null) hashCode = hashCode * 59 + this.XSdkDate.GetHashCode();
+                if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                hashCode = hashCode * 59 + this.TranscodeStatus.GetHashCode();
+                hashCode = hashCode * 59 + this.AssetStatus.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.CategoryId != null) hashCode = hashCode * 59 + this.CategoryId.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.QueryString != null) hashCode = hashCode * 59 + this.QueryString.GetHashCode();
+                if (this.Page != null) hashCode = hashCode * 59 + this.Page.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
                 return hashCode;
             }
         }

@@ -168,101 +168,27 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(CreateDomainResponseBodyContent input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
+            if (this.BusinessType != input.BusinessType || (this.BusinessType != null && !this.BusinessType.Equals(input.BusinessType))) return false;
+            if (this.ServiceArea != input.ServiceArea || (this.ServiceArea != null && !this.ServiceArea.Equals(input.ServiceArea))) return false;
+            if (this.UserDomainId != input.UserDomainId || (this.UserDomainId != null && !this.UserDomainId.Equals(input.UserDomainId))) return false;
+            if (this.DomainStatus != input.DomainStatus || (this.DomainStatus != null && !this.DomainStatus.Equals(input.DomainStatus))) return false;
+            if (this.Cname != input.Cname || (this.Cname != null && !this.Cname.Equals(input.Cname))) return false;
+            if (this.Sources != input.Sources || (this.Sources != null && input.Sources != null && !this.Sources.SequenceEqual(input.Sources))) return false;
+            if (this.DomainOriginHost != input.DomainOriginHost || (this.DomainOriginHost != null && !this.DomainOriginHost.Equals(input.DomainOriginHost))) return false;
+            if (this.HttpsStatus != input.HttpsStatus || (this.HttpsStatus != null && !this.HttpsStatus.Equals(input.HttpsStatus))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.ModifyTime != input.ModifyTime || (this.ModifyTime != null && !this.ModifyTime.Equals(input.ModifyTime))) return false;
+            if (this.Disabled != input.Disabled || (this.Disabled != null && !this.Disabled.Equals(input.Disabled))) return false;
+            if (this.Locked != input.Locked || (this.Locked != null && !this.Locked.Equals(input.Locked))) return false;
+            if (this.RangeStatus != input.RangeStatus || (this.RangeStatus != null && !this.RangeStatus.Equals(input.RangeStatus))) return false;
+            if (this.FollowStatus != input.FollowStatus || (this.FollowStatus != null && !this.FollowStatus.Equals(input.FollowStatus))) return false;
+            if (this.OriginStatus != input.OriginStatus || (this.OriginStatus != null && !this.OriginStatus.Equals(input.OriginStatus))) return false;
+            if (this.AutoRefreshPreheat != input.AutoRefreshPreheat || (this.AutoRefreshPreheat != null && !this.AutoRefreshPreheat.Equals(input.AutoRefreshPreheat))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.DomainName == input.DomainName ||
-                    (this.DomainName != null &&
-                    this.DomainName.Equals(input.DomainName))
-                ) && 
-                (
-                    this.BusinessType == input.BusinessType ||
-                    (this.BusinessType != null &&
-                    this.BusinessType.Equals(input.BusinessType))
-                ) && 
-                (
-                    this.ServiceArea == input.ServiceArea ||
-                    (this.ServiceArea != null &&
-                    this.ServiceArea.Equals(input.ServiceArea))
-                ) && 
-                (
-                    this.UserDomainId == input.UserDomainId ||
-                    (this.UserDomainId != null &&
-                    this.UserDomainId.Equals(input.UserDomainId))
-                ) && 
-                (
-                    this.DomainStatus == input.DomainStatus ||
-                    (this.DomainStatus != null &&
-                    this.DomainStatus.Equals(input.DomainStatus))
-                ) && 
-                (
-                    this.Cname == input.Cname ||
-                    (this.Cname != null &&
-                    this.Cname.Equals(input.Cname))
-                ) && 
-                (
-                    this.Sources == input.Sources ||
-                    this.Sources != null &&
-                    input.Sources != null &&
-                    this.Sources.SequenceEqual(input.Sources)
-                ) && 
-                (
-                    this.DomainOriginHost == input.DomainOriginHost ||
-                    (this.DomainOriginHost != null &&
-                    this.DomainOriginHost.Equals(input.DomainOriginHost))
-                ) && 
-                (
-                    this.HttpsStatus == input.HttpsStatus ||
-                    (this.HttpsStatus != null &&
-                    this.HttpsStatus.Equals(input.HttpsStatus))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.ModifyTime == input.ModifyTime ||
-                    (this.ModifyTime != null &&
-                    this.ModifyTime.Equals(input.ModifyTime))
-                ) && 
-                (
-                    this.Disabled == input.Disabled ||
-                    (this.Disabled != null &&
-                    this.Disabled.Equals(input.Disabled))
-                ) && 
-                (
-                    this.Locked == input.Locked ||
-                    (this.Locked != null &&
-                    this.Locked.Equals(input.Locked))
-                ) && 
-                (
-                    this.RangeStatus == input.RangeStatus ||
-                    (this.RangeStatus != null &&
-                    this.RangeStatus.Equals(input.RangeStatus))
-                ) && 
-                (
-                    this.FollowStatus == input.FollowStatus ||
-                    (this.FollowStatus != null &&
-                    this.FollowStatus.Equals(input.FollowStatus))
-                ) && 
-                (
-                    this.OriginStatus == input.OriginStatus ||
-                    (this.OriginStatus != null &&
-                    this.OriginStatus.Equals(input.OriginStatus))
-                ) && 
-                (
-                    this.AutoRefreshPreheat == input.AutoRefreshPreheat ||
-                    (this.AutoRefreshPreheat != null &&
-                    this.AutoRefreshPreheat.Equals(input.AutoRefreshPreheat))
-                );
+            return true;
         }
 
         /// <summary>
@@ -272,43 +198,25 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.DomainName != null)
-                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.BusinessType != null)
-                    hashCode = hashCode * 59 + this.BusinessType.GetHashCode();
-                if (this.ServiceArea != null)
-                    hashCode = hashCode * 59 + this.ServiceArea.GetHashCode();
-                if (this.UserDomainId != null)
-                    hashCode = hashCode * 59 + this.UserDomainId.GetHashCode();
-                if (this.DomainStatus != null)
-                    hashCode = hashCode * 59 + this.DomainStatus.GetHashCode();
-                if (this.Cname != null)
-                    hashCode = hashCode * 59 + this.Cname.GetHashCode();
-                if (this.Sources != null)
-                    hashCode = hashCode * 59 + this.Sources.GetHashCode();
-                if (this.DomainOriginHost != null)
-                    hashCode = hashCode * 59 + this.DomainOriginHost.GetHashCode();
-                if (this.HttpsStatus != null)
-                    hashCode = hashCode * 59 + this.HttpsStatus.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.ModifyTime != null)
-                    hashCode = hashCode * 59 + this.ModifyTime.GetHashCode();
-                if (this.Disabled != null)
-                    hashCode = hashCode * 59 + this.Disabled.GetHashCode();
-                if (this.Locked != null)
-                    hashCode = hashCode * 59 + this.Locked.GetHashCode();
-                if (this.RangeStatus != null)
-                    hashCode = hashCode * 59 + this.RangeStatus.GetHashCode();
-                if (this.FollowStatus != null)
-                    hashCode = hashCode * 59 + this.FollowStatus.GetHashCode();
-                if (this.OriginStatus != null)
-                    hashCode = hashCode * 59 + this.OriginStatus.GetHashCode();
-                if (this.AutoRefreshPreheat != null)
-                    hashCode = hashCode * 59 + this.AutoRefreshPreheat.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.BusinessType != null) hashCode = hashCode * 59 + this.BusinessType.GetHashCode();
+                if (this.ServiceArea != null) hashCode = hashCode * 59 + this.ServiceArea.GetHashCode();
+                if (this.UserDomainId != null) hashCode = hashCode * 59 + this.UserDomainId.GetHashCode();
+                if (this.DomainStatus != null) hashCode = hashCode * 59 + this.DomainStatus.GetHashCode();
+                if (this.Cname != null) hashCode = hashCode * 59 + this.Cname.GetHashCode();
+                if (this.Sources != null) hashCode = hashCode * 59 + this.Sources.GetHashCode();
+                if (this.DomainOriginHost != null) hashCode = hashCode * 59 + this.DomainOriginHost.GetHashCode();
+                if (this.HttpsStatus != null) hashCode = hashCode * 59 + this.HttpsStatus.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.ModifyTime != null) hashCode = hashCode * 59 + this.ModifyTime.GetHashCode();
+                if (this.Disabled != null) hashCode = hashCode * 59 + this.Disabled.GetHashCode();
+                if (this.Locked != null) hashCode = hashCode * 59 + this.Locked.GetHashCode();
+                if (this.RangeStatus != null) hashCode = hashCode * 59 + this.RangeStatus.GetHashCode();
+                if (this.FollowStatus != null) hashCode = hashCode * 59 + this.FollowStatus.GetHashCode();
+                if (this.OriginStatus != null) hashCode = hashCode * 59 + this.OriginStatus.GetHashCode();
+                if (this.AutoRefreshPreheat != null) hashCode = hashCode * 59 + this.AutoRefreshPreheat.GetHashCode();
                 return hashCode;
             }
         }

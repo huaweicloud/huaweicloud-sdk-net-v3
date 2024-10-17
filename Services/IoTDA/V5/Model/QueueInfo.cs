@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(QueueInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.QueueName != input.QueueName || (this.QueueName != null && !this.QueueName.Equals(input.QueueName))) return false;
 
-            return 
-                (
-                    this.QueueName == input.QueueName ||
-                    (this.QueueName != null &&
-                    this.QueueName.Equals(input.QueueName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.QueueName != null)
-                    hashCode = hashCode * 59 + this.QueueName.GetHashCode();
+                var hashCode = 41;
+                if (this.QueueName != null) hashCode = hashCode * 59 + this.QueueName.GetHashCode();
                 return hashCode;
             }
         }

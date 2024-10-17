@@ -91,47 +91,16 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(QueryRestoreList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.InstanceMode != input.InstanceMode || (this.InstanceMode != null && !this.InstanceMode.Equals(input.InstanceMode))) return false;
+            if (this.EngineName != input.EngineName || (this.EngineName != null && !this.EngineName.Equals(input.EngineName))) return false;
+            if (this.EngineVersion != input.EngineVersion || (this.EngineVersion != null && !this.EngineVersion.Equals(input.EngineVersion))) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
+            if (this.SubnetIds != input.SubnetIds || (this.SubnetIds != null && input.SubnetIds != null && !this.SubnetIds.SequenceEqual(input.SubnetIds))) return false;
+            if (this.SecurityGroupIds != input.SecurityGroupIds || (this.SecurityGroupIds != null && input.SecurityGroupIds != null && !this.SecurityGroupIds.SequenceEqual(input.SecurityGroupIds))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.InstanceMode == input.InstanceMode ||
-                    (this.InstanceMode != null &&
-                    this.InstanceMode.Equals(input.InstanceMode))
-                ) && 
-                (
-                    this.EngineName == input.EngineName ||
-                    (this.EngineName != null &&
-                    this.EngineName.Equals(input.EngineName))
-                ) && 
-                (
-                    this.EngineVersion == input.EngineVersion ||
-                    (this.EngineVersion != null &&
-                    this.EngineVersion.Equals(input.EngineVersion))
-                ) && 
-                (
-                    this.VpcId == input.VpcId ||
-                    (this.VpcId != null &&
-                    this.VpcId.Equals(input.VpcId))
-                ) && 
-                (
-                    this.SubnetIds == input.SubnetIds ||
-                    this.SubnetIds != null &&
-                    input.SubnetIds != null &&
-                    this.SubnetIds.SequenceEqual(input.SubnetIds)
-                ) && 
-                (
-                    this.SecurityGroupIds == input.SecurityGroupIds ||
-                    this.SecurityGroupIds != null &&
-                    input.SecurityGroupIds != null &&
-                    this.SecurityGroupIds.SequenceEqual(input.SecurityGroupIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -141,21 +110,14 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.InstanceMode != null)
-                    hashCode = hashCode * 59 + this.InstanceMode.GetHashCode();
-                if (this.EngineName != null)
-                    hashCode = hashCode * 59 + this.EngineName.GetHashCode();
-                if (this.EngineVersion != null)
-                    hashCode = hashCode * 59 + this.EngineVersion.GetHashCode();
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.SubnetIds != null)
-                    hashCode = hashCode * 59 + this.SubnetIds.GetHashCode();
-                if (this.SecurityGroupIds != null)
-                    hashCode = hashCode * 59 + this.SecurityGroupIds.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.InstanceMode != null) hashCode = hashCode * 59 + this.InstanceMode.GetHashCode();
+                if (this.EngineName != null) hashCode = hashCode * 59 + this.EngineName.GetHashCode();
+                if (this.EngineVersion != null) hashCode = hashCode * 59 + this.EngineVersion.GetHashCode();
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.SubnetIds != null) hashCode = hashCode * 59 + this.SubnetIds.GetHashCode();
+                if (this.SecurityGroupIds != null) hashCode = hashCode * 59 + this.SecurityGroupIds.GetHashCode();
                 return hashCode;
             }
         }

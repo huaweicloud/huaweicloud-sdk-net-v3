@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(NovaListKeypairsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Keypairs != input.Keypairs || (this.Keypairs != null && input.Keypairs != null && !this.Keypairs.SequenceEqual(input.Keypairs))) return false;
 
-            return 
-                (
-                    this.Keypairs == input.Keypairs ||
-                    this.Keypairs != null &&
-                    input.Keypairs != null &&
-                    this.Keypairs.SequenceEqual(input.Keypairs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Keypairs != null)
-                    hashCode = hashCode * 59 + this.Keypairs.GetHashCode();
+                var hashCode = 41;
+                if (this.Keypairs != null) hashCode = hashCode * 59 + this.Keypairs.GetHashCode();
                 return hashCode;
             }
         }

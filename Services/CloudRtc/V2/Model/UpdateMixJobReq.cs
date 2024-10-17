@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         /// </summary>
         public bool Equals(UpdateMixJobReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MixParam != input.MixParam || (this.MixParam != null && !this.MixParam.Equals(input.MixParam))) return false;
 
-            return 
-                (
-                    this.MixParam == input.MixParam ||
-                    (this.MixParam != null &&
-                    this.MixParam.Equals(input.MixParam))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MixParam != null)
-                    hashCode = hashCode * 59 + this.MixParam.GetHashCode();
+                var hashCode = 41;
+                if (this.MixParam != null) hashCode = hashCode * 59 + this.MixParam.GetHashCode();
                 return hashCode;
             }
         }

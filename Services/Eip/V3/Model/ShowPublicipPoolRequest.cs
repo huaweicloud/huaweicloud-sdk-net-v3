@@ -58,21 +58,11 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(ShowPublicipPoolRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PublicipPoolId != input.PublicipPoolId || (this.PublicipPoolId != null && !this.PublicipPoolId.Equals(input.PublicipPoolId))) return false;
+            if (this.Fields != input.Fields || (this.Fields != null && input.Fields != null && !this.Fields.SequenceEqual(input.Fields))) return false;
 
-            return 
-                (
-                    this.PublicipPoolId == input.PublicipPoolId ||
-                    (this.PublicipPoolId != null &&
-                    this.PublicipPoolId.Equals(input.PublicipPoolId))
-                ) && 
-                (
-                    this.Fields == input.Fields ||
-                    this.Fields != null &&
-                    input.Fields != null &&
-                    this.Fields.SequenceEqual(input.Fields)
-                );
+            return true;
         }
 
         /// <summary>
@@ -82,11 +72,9 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PublicipPoolId != null)
-                    hashCode = hashCode * 59 + this.PublicipPoolId.GetHashCode();
-                if (this.Fields != null)
-                    hashCode = hashCode * 59 + this.Fields.GetHashCode();
+                var hashCode = 41;
+                if (this.PublicipPoolId != null) hashCode = hashCode * 59 + this.PublicipPoolId.GetHashCode();
+                if (this.Fields != null) hashCode = hashCode * 59 + this.Fields.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(CreateFirewallRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Firewall != input.Firewall || (this.Firewall != null && !this.Firewall.Equals(input.Firewall))) return false;
+            if (this.DryRun != input.DryRun || (this.DryRun != null && !this.DryRun.Equals(input.DryRun))) return false;
 
-            return 
-                (
-                    this.Firewall == input.Firewall ||
-                    (this.Firewall != null &&
-                    this.Firewall.Equals(input.Firewall))
-                ) && 
-                (
-                    this.DryRun == input.DryRun ||
-                    (this.DryRun != null &&
-                    this.DryRun.Equals(input.DryRun))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Firewall != null)
-                    hashCode = hashCode * 59 + this.Firewall.GetHashCode();
-                if (this.DryRun != null)
-                    hashCode = hashCode * 59 + this.DryRun.GetHashCode();
+                var hashCode = 41;
+                if (this.Firewall != null) hashCode = hashCode * 59 + this.Firewall.GetHashCode();
+                if (this.DryRun != null) hashCode = hashCode * 59 + this.DryRun.GetHashCode();
                 return hashCode;
             }
         }

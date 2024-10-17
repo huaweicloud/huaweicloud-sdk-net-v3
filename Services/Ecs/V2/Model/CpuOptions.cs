@@ -163,15 +163,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(CpuOptions input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HwcpuThreads != input.HwcpuThreads) return false;
 
-            return 
-                (
-                    this.HwcpuThreads == input.HwcpuThreads ||
-                    (this.HwcpuThreads != null &&
-                    this.HwcpuThreads.Equals(input.HwcpuThreads))
-                );
+            return true;
         }
 
         /// <summary>
@@ -181,9 +176,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HwcpuThreads != null)
-                    hashCode = hashCode * 59 + this.HwcpuThreads.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.HwcpuThreads.GetHashCode();
                 return hashCode;
             }
         }

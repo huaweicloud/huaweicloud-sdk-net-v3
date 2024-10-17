@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ShowIssueCompletionRateResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IssueCompletionRates != input.IssueCompletionRates || (this.IssueCompletionRates != null && input.IssueCompletionRates != null && !this.IssueCompletionRates.SequenceEqual(input.IssueCompletionRates))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
-            return 
-                (
-                    this.IssueCompletionRates == input.IssueCompletionRates ||
-                    this.IssueCompletionRates != null &&
-                    input.IssueCompletionRates != null &&
-                    this.IssueCompletionRates.SequenceEqual(input.IssueCompletionRates)
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IssueCompletionRates != null)
-                    hashCode = hashCode * 59 + this.IssueCompletionRates.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                var hashCode = 41;
+                if (this.IssueCompletionRates != null) hashCode = hashCode * 59 + this.IssueCompletionRates.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

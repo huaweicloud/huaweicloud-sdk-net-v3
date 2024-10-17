@@ -133,75 +133,22 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(VehicleLicenseback input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;
+            if (this.FileNo != input.FileNo || (this.FileNo != null && !this.FileNo.Equals(input.FileNo))) return false;
+            if (this.ApprovedPassengers != input.ApprovedPassengers || (this.ApprovedPassengers != null && !this.ApprovedPassengers.Equals(input.ApprovedPassengers))) return false;
+            if (this.GrossMass != input.GrossMass || (this.GrossMass != null && !this.GrossMass.Equals(input.GrossMass))) return false;
+            if (this.UnladenMass != input.UnladenMass || (this.UnladenMass != null && !this.UnladenMass.Equals(input.UnladenMass))) return false;
+            if (this.ApprovedLoad != input.ApprovedLoad || (this.ApprovedLoad != null && !this.ApprovedLoad.Equals(input.ApprovedLoad))) return false;
+            if (this.Dimension != input.Dimension || (this.Dimension != null && !this.Dimension.Equals(input.Dimension))) return false;
+            if (this.TractionMass != input.TractionMass || (this.TractionMass != null && !this.TractionMass.Equals(input.TractionMass))) return false;
+            if (this.Remarks != input.Remarks || (this.Remarks != null && !this.Remarks.Equals(input.Remarks))) return false;
+            if (this.InspectionRecord != input.InspectionRecord || (this.InspectionRecord != null && !this.InspectionRecord.Equals(input.InspectionRecord))) return false;
+            if (this.CodeNumber != input.CodeNumber || (this.CodeNumber != null && !this.CodeNumber.Equals(input.CodeNumber))) return false;
+            if (this.EnergyType != input.EnergyType || (this.EnergyType != null && !this.EnergyType.Equals(input.EnergyType))) return false;
+            if (this.TextLocation != input.TextLocation || (this.TextLocation != null && !this.TextLocation.Equals(input.TextLocation))) return false;
 
-            return 
-                (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                ) && 
-                (
-                    this.FileNo == input.FileNo ||
-                    (this.FileNo != null &&
-                    this.FileNo.Equals(input.FileNo))
-                ) && 
-                (
-                    this.ApprovedPassengers == input.ApprovedPassengers ||
-                    (this.ApprovedPassengers != null &&
-                    this.ApprovedPassengers.Equals(input.ApprovedPassengers))
-                ) && 
-                (
-                    this.GrossMass == input.GrossMass ||
-                    (this.GrossMass != null &&
-                    this.GrossMass.Equals(input.GrossMass))
-                ) && 
-                (
-                    this.UnladenMass == input.UnladenMass ||
-                    (this.UnladenMass != null &&
-                    this.UnladenMass.Equals(input.UnladenMass))
-                ) && 
-                (
-                    this.ApprovedLoad == input.ApprovedLoad ||
-                    (this.ApprovedLoad != null &&
-                    this.ApprovedLoad.Equals(input.ApprovedLoad))
-                ) && 
-                (
-                    this.Dimension == input.Dimension ||
-                    (this.Dimension != null &&
-                    this.Dimension.Equals(input.Dimension))
-                ) && 
-                (
-                    this.TractionMass == input.TractionMass ||
-                    (this.TractionMass != null &&
-                    this.TractionMass.Equals(input.TractionMass))
-                ) && 
-                (
-                    this.Remarks == input.Remarks ||
-                    (this.Remarks != null &&
-                    this.Remarks.Equals(input.Remarks))
-                ) && 
-                (
-                    this.InspectionRecord == input.InspectionRecord ||
-                    (this.InspectionRecord != null &&
-                    this.InspectionRecord.Equals(input.InspectionRecord))
-                ) && 
-                (
-                    this.CodeNumber == input.CodeNumber ||
-                    (this.CodeNumber != null &&
-                    this.CodeNumber.Equals(input.CodeNumber))
-                ) && 
-                (
-                    this.EnergyType == input.EnergyType ||
-                    (this.EnergyType != null &&
-                    this.EnergyType.Equals(input.EnergyType))
-                ) && 
-                (
-                    this.TextLocation == input.TextLocation ||
-                    (this.TextLocation != null &&
-                    this.TextLocation.Equals(input.TextLocation))
-                );
+            return true;
         }
 
         /// <summary>
@@ -211,33 +158,20 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Number != null)
-                    hashCode = hashCode * 59 + this.Number.GetHashCode();
-                if (this.FileNo != null)
-                    hashCode = hashCode * 59 + this.FileNo.GetHashCode();
-                if (this.ApprovedPassengers != null)
-                    hashCode = hashCode * 59 + this.ApprovedPassengers.GetHashCode();
-                if (this.GrossMass != null)
-                    hashCode = hashCode * 59 + this.GrossMass.GetHashCode();
-                if (this.UnladenMass != null)
-                    hashCode = hashCode * 59 + this.UnladenMass.GetHashCode();
-                if (this.ApprovedLoad != null)
-                    hashCode = hashCode * 59 + this.ApprovedLoad.GetHashCode();
-                if (this.Dimension != null)
-                    hashCode = hashCode * 59 + this.Dimension.GetHashCode();
-                if (this.TractionMass != null)
-                    hashCode = hashCode * 59 + this.TractionMass.GetHashCode();
-                if (this.Remarks != null)
-                    hashCode = hashCode * 59 + this.Remarks.GetHashCode();
-                if (this.InspectionRecord != null)
-                    hashCode = hashCode * 59 + this.InspectionRecord.GetHashCode();
-                if (this.CodeNumber != null)
-                    hashCode = hashCode * 59 + this.CodeNumber.GetHashCode();
-                if (this.EnergyType != null)
-                    hashCode = hashCode * 59 + this.EnergyType.GetHashCode();
-                if (this.TextLocation != null)
-                    hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
+                var hashCode = 41;
+                if (this.Number != null) hashCode = hashCode * 59 + this.Number.GetHashCode();
+                if (this.FileNo != null) hashCode = hashCode * 59 + this.FileNo.GetHashCode();
+                if (this.ApprovedPassengers != null) hashCode = hashCode * 59 + this.ApprovedPassengers.GetHashCode();
+                if (this.GrossMass != null) hashCode = hashCode * 59 + this.GrossMass.GetHashCode();
+                if (this.UnladenMass != null) hashCode = hashCode * 59 + this.UnladenMass.GetHashCode();
+                if (this.ApprovedLoad != null) hashCode = hashCode * 59 + this.ApprovedLoad.GetHashCode();
+                if (this.Dimension != null) hashCode = hashCode * 59 + this.Dimension.GetHashCode();
+                if (this.TractionMass != null) hashCode = hashCode * 59 + this.TractionMass.GetHashCode();
+                if (this.Remarks != null) hashCode = hashCode * 59 + this.Remarks.GetHashCode();
+                if (this.InspectionRecord != null) hashCode = hashCode * 59 + this.InspectionRecord.GetHashCode();
+                if (this.CodeNumber != null) hashCode = hashCode * 59 + this.CodeNumber.GetHashCode();
+                if (this.EnergyType != null) hashCode = hashCode * 59 + this.EnergyType.GetHashCode();
+                if (this.TextLocation != null) hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
                 return hashCode;
             }
         }

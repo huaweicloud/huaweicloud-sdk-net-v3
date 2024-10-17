@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         /// </summary>
         public bool Equals(ShowKeyRotationStatusResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KeyRotationEnabled != input.KeyRotationEnabled || (this.KeyRotationEnabled != null && !this.KeyRotationEnabled.Equals(input.KeyRotationEnabled))) return false;
+            if (this.RotationInterval != input.RotationInterval || (this.RotationInterval != null && !this.RotationInterval.Equals(input.RotationInterval))) return false;
+            if (this.LastRotationTime != input.LastRotationTime || (this.LastRotationTime != null && !this.LastRotationTime.Equals(input.LastRotationTime))) return false;
+            if (this.NumberOfRotations != input.NumberOfRotations || (this.NumberOfRotations != null && !this.NumberOfRotations.Equals(input.NumberOfRotations))) return false;
 
-            return 
-                (
-                    this.KeyRotationEnabled == input.KeyRotationEnabled ||
-                    (this.KeyRotationEnabled != null &&
-                    this.KeyRotationEnabled.Equals(input.KeyRotationEnabled))
-                ) && 
-                (
-                    this.RotationInterval == input.RotationInterval ||
-                    (this.RotationInterval != null &&
-                    this.RotationInterval.Equals(input.RotationInterval))
-                ) && 
-                (
-                    this.LastRotationTime == input.LastRotationTime ||
-                    (this.LastRotationTime != null &&
-                    this.LastRotationTime.Equals(input.LastRotationTime))
-                ) && 
-                (
-                    this.NumberOfRotations == input.NumberOfRotations ||
-                    (this.NumberOfRotations != null &&
-                    this.NumberOfRotations.Equals(input.NumberOfRotations))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KeyRotationEnabled != null)
-                    hashCode = hashCode * 59 + this.KeyRotationEnabled.GetHashCode();
-                if (this.RotationInterval != null)
-                    hashCode = hashCode * 59 + this.RotationInterval.GetHashCode();
-                if (this.LastRotationTime != null)
-                    hashCode = hashCode * 59 + this.LastRotationTime.GetHashCode();
-                if (this.NumberOfRotations != null)
-                    hashCode = hashCode * 59 + this.NumberOfRotations.GetHashCode();
+                var hashCode = 41;
+                if (this.KeyRotationEnabled != null) hashCode = hashCode * 59 + this.KeyRotationEnabled.GetHashCode();
+                if (this.RotationInterval != null) hashCode = hashCode * 59 + this.RotationInterval.GetHashCode();
+                if (this.LastRotationTime != null) hashCode = hashCode * 59 + this.LastRotationTime.GetHashCode();
+                if (this.NumberOfRotations != null) hashCode = hashCode * 59 + this.NumberOfRotations.GetHashCode();
                 return hashCode;
             }
         }

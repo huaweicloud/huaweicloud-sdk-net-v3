@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(UnbindMfaDevice input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UserId != input.UserId || (this.UserId != null && !this.UserId.Equals(input.UserId))) return false;
+            if (this.AuthenticationCode != input.AuthenticationCode || (this.AuthenticationCode != null && !this.AuthenticationCode.Equals(input.AuthenticationCode))) return false;
+            if (this.SerialNumber != input.SerialNumber || (this.SerialNumber != null && !this.SerialNumber.Equals(input.SerialNumber))) return false;
 
-            return 
-                (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
-                ) && 
-                (
-                    this.AuthenticationCode == input.AuthenticationCode ||
-                    (this.AuthenticationCode != null &&
-                    this.AuthenticationCode.Equals(input.AuthenticationCode))
-                ) && 
-                (
-                    this.SerialNumber == input.SerialNumber ||
-                    (this.SerialNumber != null &&
-                    this.SerialNumber.Equals(input.SerialNumber))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.AuthenticationCode != null)
-                    hashCode = hashCode * 59 + this.AuthenticationCode.GetHashCode();
-                if (this.SerialNumber != null)
-                    hashCode = hashCode * 59 + this.SerialNumber.GetHashCode();
+                var hashCode = 41;
+                if (this.UserId != null) hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                if (this.AuthenticationCode != null) hashCode = hashCode * 59 + this.AuthenticationCode.GetHashCode();
+                if (this.SerialNumber != null) hashCode = hashCode * 59 + this.SerialNumber.GetHashCode();
                 return hashCode;
             }
         }

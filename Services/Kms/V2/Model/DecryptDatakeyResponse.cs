@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         /// </summary>
         public bool Equals(DecryptDatakeyResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DataKey != input.DataKey || (this.DataKey != null && !this.DataKey.Equals(input.DataKey))) return false;
+            if (this.DatakeyLength != input.DatakeyLength || (this.DatakeyLength != null && !this.DatakeyLength.Equals(input.DatakeyLength))) return false;
+            if (this.DatakeyDgst != input.DatakeyDgst || (this.DatakeyDgst != null && !this.DatakeyDgst.Equals(input.DatakeyDgst))) return false;
 
-            return 
-                (
-                    this.DataKey == input.DataKey ||
-                    (this.DataKey != null &&
-                    this.DataKey.Equals(input.DataKey))
-                ) && 
-                (
-                    this.DatakeyLength == input.DatakeyLength ||
-                    (this.DatakeyLength != null &&
-                    this.DatakeyLength.Equals(input.DatakeyLength))
-                ) && 
-                (
-                    this.DatakeyDgst == input.DatakeyDgst ||
-                    (this.DatakeyDgst != null &&
-                    this.DatakeyDgst.Equals(input.DatakeyDgst))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DataKey != null)
-                    hashCode = hashCode * 59 + this.DataKey.GetHashCode();
-                if (this.DatakeyLength != null)
-                    hashCode = hashCode * 59 + this.DatakeyLength.GetHashCode();
-                if (this.DatakeyDgst != null)
-                    hashCode = hashCode * 59 + this.DatakeyDgst.GetHashCode();
+                var hashCode = 41;
+                if (this.DataKey != null) hashCode = hashCode * 59 + this.DataKey.GetHashCode();
+                if (this.DatakeyLength != null) hashCode = hashCode * 59 + this.DatakeyLength.GetHashCode();
+                if (this.DatakeyDgst != null) hashCode = hashCode * 59 + this.DatakeyDgst.GetHashCode();
                 return hashCode;
             }
         }

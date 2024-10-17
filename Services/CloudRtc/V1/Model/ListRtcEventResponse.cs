@@ -71,30 +71,13 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         /// </summary>
         public bool Equals(ListRtcEventResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Ctime != input.Ctime || (this.Ctime != null && !this.Ctime.Equals(input.Ctime))) return false;
+            if (this.EventId != input.EventId || (this.EventId != null && !this.EventId.Equals(input.EventId))) return false;
+            if (this.EventInfo != input.EventInfo || (this.EventInfo != null && !this.EventInfo.Equals(input.EventInfo))) return false;
+            if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
-            return 
-                (
-                    this.Ctime == input.Ctime ||
-                    (this.Ctime != null &&
-                    this.Ctime.Equals(input.Ctime))
-                ) && 
-                (
-                    this.EventId == input.EventId ||
-                    (this.EventId != null &&
-                    this.EventId.Equals(input.EventId))
-                ) && 
-                (
-                    this.EventInfo == input.EventInfo ||
-                    (this.EventInfo != null &&
-                    this.EventInfo.Equals(input.EventInfo))
-                ) && 
-                (
-                    this.XRequestId == input.XRequestId ||
-                    (this.XRequestId != null &&
-                    this.XRequestId.Equals(input.XRequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +87,11 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Ctime != null)
-                    hashCode = hashCode * 59 + this.Ctime.GetHashCode();
-                if (this.EventId != null)
-                    hashCode = hashCode * 59 + this.EventId.GetHashCode();
-                if (this.EventInfo != null)
-                    hashCode = hashCode * 59 + this.EventInfo.GetHashCode();
-                if (this.XRequestId != null)
-                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.Ctime != null) hashCode = hashCode * 59 + this.Ctime.GetHashCode();
+                if (this.EventId != null) hashCode = hashCode * 59 + this.EventId.GetHashCode();
+                if (this.EventInfo != null) hashCode = hashCode * 59 + this.EventInfo.GetHashCode();
+                if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

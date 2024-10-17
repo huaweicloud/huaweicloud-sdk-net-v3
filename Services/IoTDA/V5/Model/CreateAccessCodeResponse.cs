@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(CreateAccessCodeResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AccessKey != input.AccessKey || (this.AccessKey != null && !this.AccessKey.Equals(input.AccessKey))) return false;
+            if (this.AccessCode != input.AccessCode || (this.AccessCode != null && !this.AccessCode.Equals(input.AccessCode))) return false;
 
-            return 
-                (
-                    this.AccessKey == input.AccessKey ||
-                    (this.AccessKey != null &&
-                    this.AccessKey.Equals(input.AccessKey))
-                ) && 
-                (
-                    this.AccessCode == input.AccessCode ||
-                    (this.AccessCode != null &&
-                    this.AccessCode.Equals(input.AccessCode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AccessKey != null)
-                    hashCode = hashCode * 59 + this.AccessKey.GetHashCode();
-                if (this.AccessCode != null)
-                    hashCode = hashCode * 59 + this.AccessCode.GetHashCode();
+                var hashCode = 41;
+                if (this.AccessKey != null) hashCode = hashCode * 59 + this.AccessKey.GetHashCode();
+                if (this.AccessCode != null) hashCode = hashCode * 59 + this.AccessCode.GetHashCode();
                 return hashCode;
             }
         }

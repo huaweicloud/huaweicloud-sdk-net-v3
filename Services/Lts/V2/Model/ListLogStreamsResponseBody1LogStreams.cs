@@ -77,36 +77,14 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(ListLogStreamsResponseBody1LogStreams input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CreationTime != input.CreationTime || (this.CreationTime != null && !this.CreationTime.Equals(input.CreationTime))) return false;
+            if (this.LogStreamId != input.LogStreamId || (this.LogStreamId != null && !this.LogStreamId.Equals(input.LogStreamId))) return false;
+            if (this.LogStreamName != input.LogStreamName || (this.LogStreamName != null && !this.LogStreamName.Equals(input.LogStreamName))) return false;
+            if (this.Tag != input.Tag || (this.Tag != null && input.Tag != null && !this.Tag.SequenceEqual(input.Tag))) return false;
+            if (this.FilterCount != input.FilterCount || (this.FilterCount != null && !this.FilterCount.Equals(input.FilterCount))) return false;
 
-            return 
-                (
-                    this.CreationTime == input.CreationTime ||
-                    (this.CreationTime != null &&
-                    this.CreationTime.Equals(input.CreationTime))
-                ) && 
-                (
-                    this.LogStreamId == input.LogStreamId ||
-                    (this.LogStreamId != null &&
-                    this.LogStreamId.Equals(input.LogStreamId))
-                ) && 
-                (
-                    this.LogStreamName == input.LogStreamName ||
-                    (this.LogStreamName != null &&
-                    this.LogStreamName.Equals(input.LogStreamName))
-                ) && 
-                (
-                    this.Tag == input.Tag ||
-                    this.Tag != null &&
-                    input.Tag != null &&
-                    this.Tag.SequenceEqual(input.Tag)
-                ) && 
-                (
-                    this.FilterCount == input.FilterCount ||
-                    (this.FilterCount != null &&
-                    this.FilterCount.Equals(input.FilterCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -116,17 +94,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CreationTime != null)
-                    hashCode = hashCode * 59 + this.CreationTime.GetHashCode();
-                if (this.LogStreamId != null)
-                    hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
-                if (this.LogStreamName != null)
-                    hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
-                if (this.Tag != null)
-                    hashCode = hashCode * 59 + this.Tag.GetHashCode();
-                if (this.FilterCount != null)
-                    hashCode = hashCode * 59 + this.FilterCount.GetHashCode();
+                var hashCode = 41;
+                if (this.CreationTime != null) hashCode = hashCode * 59 + this.CreationTime.GetHashCode();
+                if (this.LogStreamId != null) hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
+                if (this.LogStreamName != null) hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
+                if (this.Tag != null) hashCode = hashCode * 59 + this.Tag.GetHashCode();
+                if (this.FilterCount != null) hashCode = hashCode * 59 + this.FilterCount.GetHashCode();
                 return hashCode;
             }
         }

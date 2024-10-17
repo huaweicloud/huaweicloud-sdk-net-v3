@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ModifyCollationRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Collation != input.Collation || (this.Collation != null && !this.Collation.Equals(input.Collation))) return false;
 
-            return 
-                (
-                    this.Collation == input.Collation ||
-                    (this.Collation != null &&
-                    this.Collation.Equals(input.Collation))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Collation != null)
-                    hashCode = hashCode * 59 + this.Collation.GetHashCode();
+                var hashCode = 41;
+                if (this.Collation != null) hashCode = hashCode * 59 + this.Collation.GetHashCode();
                 return hashCode;
             }
         }

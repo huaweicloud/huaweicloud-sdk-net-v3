@@ -105,56 +105,18 @@ namespace HuaweiCloud.SDK.PanguLargeModels.V1.Model
         /// </summary>
         public bool Equals(ChatCompletionReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Messages != input.Messages || (this.Messages != null && input.Messages != null && !this.Messages.SequenceEqual(input.Messages))) return false;
+            if (this.User != input.User || (this.User != null && !this.User.Equals(input.User))) return false;
+            if (this.Stream != input.Stream || (this.Stream != null && !this.Stream.Equals(input.Stream))) return false;
+            if (this.Temperature != input.Temperature || (this.Temperature != null && !this.Temperature.Equals(input.Temperature))) return false;
+            if (this.TopP != input.TopP || (this.TopP != null && !this.TopP.Equals(input.TopP))) return false;
+            if (this.MaxTokens != input.MaxTokens || (this.MaxTokens != null && !this.MaxTokens.Equals(input.MaxTokens))) return false;
+            if (this.N != input.N || (this.N != null && !this.N.Equals(input.N))) return false;
+            if (this.PresencePenalty != input.PresencePenalty || (this.PresencePenalty != null && !this.PresencePenalty.Equals(input.PresencePenalty))) return false;
+            if (this.FrequencyPenalty != input.FrequencyPenalty || (this.FrequencyPenalty != null && !this.FrequencyPenalty.Equals(input.FrequencyPenalty))) return false;
 
-            return 
-                (
-                    this.Messages == input.Messages ||
-                    this.Messages != null &&
-                    input.Messages != null &&
-                    this.Messages.SequenceEqual(input.Messages)
-                ) && 
-                (
-                    this.User == input.User ||
-                    (this.User != null &&
-                    this.User.Equals(input.User))
-                ) && 
-                (
-                    this.Stream == input.Stream ||
-                    (this.Stream != null &&
-                    this.Stream.Equals(input.Stream))
-                ) && 
-                (
-                    this.Temperature == input.Temperature ||
-                    (this.Temperature != null &&
-                    this.Temperature.Equals(input.Temperature))
-                ) && 
-                (
-                    this.TopP == input.TopP ||
-                    (this.TopP != null &&
-                    this.TopP.Equals(input.TopP))
-                ) && 
-                (
-                    this.MaxTokens == input.MaxTokens ||
-                    (this.MaxTokens != null &&
-                    this.MaxTokens.Equals(input.MaxTokens))
-                ) && 
-                (
-                    this.N == input.N ||
-                    (this.N != null &&
-                    this.N.Equals(input.N))
-                ) && 
-                (
-                    this.PresencePenalty == input.PresencePenalty ||
-                    (this.PresencePenalty != null &&
-                    this.PresencePenalty.Equals(input.PresencePenalty))
-                ) && 
-                (
-                    this.FrequencyPenalty == input.FrequencyPenalty ||
-                    (this.FrequencyPenalty != null &&
-                    this.FrequencyPenalty.Equals(input.FrequencyPenalty))
-                );
+            return true;
         }
 
         /// <summary>
@@ -164,25 +126,16 @@ namespace HuaweiCloud.SDK.PanguLargeModels.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Messages != null)
-                    hashCode = hashCode * 59 + this.Messages.GetHashCode();
-                if (this.User != null)
-                    hashCode = hashCode * 59 + this.User.GetHashCode();
-                if (this.Stream != null)
-                    hashCode = hashCode * 59 + this.Stream.GetHashCode();
-                if (this.Temperature != null)
-                    hashCode = hashCode * 59 + this.Temperature.GetHashCode();
-                if (this.TopP != null)
-                    hashCode = hashCode * 59 + this.TopP.GetHashCode();
-                if (this.MaxTokens != null)
-                    hashCode = hashCode * 59 + this.MaxTokens.GetHashCode();
-                if (this.N != null)
-                    hashCode = hashCode * 59 + this.N.GetHashCode();
-                if (this.PresencePenalty != null)
-                    hashCode = hashCode * 59 + this.PresencePenalty.GetHashCode();
-                if (this.FrequencyPenalty != null)
-                    hashCode = hashCode * 59 + this.FrequencyPenalty.GetHashCode();
+                var hashCode = 41;
+                if (this.Messages != null) hashCode = hashCode * 59 + this.Messages.GetHashCode();
+                if (this.User != null) hashCode = hashCode * 59 + this.User.GetHashCode();
+                if (this.Stream != null) hashCode = hashCode * 59 + this.Stream.GetHashCode();
+                if (this.Temperature != null) hashCode = hashCode * 59 + this.Temperature.GetHashCode();
+                if (this.TopP != null) hashCode = hashCode * 59 + this.TopP.GetHashCode();
+                if (this.MaxTokens != null) hashCode = hashCode * 59 + this.MaxTokens.GetHashCode();
+                if (this.N != null) hashCode = hashCode * 59 + this.N.GetHashCode();
+                if (this.PresencePenalty != null) hashCode = hashCode * 59 + this.PresencePenalty.GetHashCode();
+                if (this.FrequencyPenalty != null) hashCode = hashCode * 59 + this.FrequencyPenalty.GetHashCode();
                 return hashCode;
             }
         }

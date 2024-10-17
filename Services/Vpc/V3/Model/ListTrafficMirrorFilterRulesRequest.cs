@@ -146,75 +146,22 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(ListTrafficMirrorFilterRulesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.TrafficMirrorFilterId != input.TrafficMirrorFilterId || (this.TrafficMirrorFilterId != null && !this.TrafficMirrorFilterId.Equals(input.TrafficMirrorFilterId))) return false;
+            if (this.Direction != input.Direction || (this.Direction != null && !this.Direction.Equals(input.Direction))) return false;
+            if (this.Protocol != input.Protocol || (this.Protocol != null && !this.Protocol.Equals(input.Protocol))) return false;
+            if (this.SourceCidrBlock != input.SourceCidrBlock || (this.SourceCidrBlock != null && !this.SourceCidrBlock.Equals(input.SourceCidrBlock))) return false;
+            if (this.DestinationCidrBlock != input.DestinationCidrBlock || (this.DestinationCidrBlock != null && !this.DestinationCidrBlock.Equals(input.DestinationCidrBlock))) return false;
+            if (this.SourcePortRange != input.SourcePortRange || (this.SourcePortRange != null && !this.SourcePortRange.Equals(input.SourcePortRange))) return false;
+            if (this.DestinationPortRange != input.DestinationPortRange || (this.DestinationPortRange != null && !this.DestinationPortRange.Equals(input.DestinationPortRange))) return false;
+            if (this.Action != input.Action || (this.Action != null && !this.Action.Equals(input.Action))) return false;
+            if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.TrafficMirrorFilterId == input.TrafficMirrorFilterId ||
-                    (this.TrafficMirrorFilterId != null &&
-                    this.TrafficMirrorFilterId.Equals(input.TrafficMirrorFilterId))
-                ) && 
-                (
-                    this.Direction == input.Direction ||
-                    (this.Direction != null &&
-                    this.Direction.Equals(input.Direction))
-                ) && 
-                (
-                    this.Protocol == input.Protocol ||
-                    (this.Protocol != null &&
-                    this.Protocol.Equals(input.Protocol))
-                ) && 
-                (
-                    this.SourceCidrBlock == input.SourceCidrBlock ||
-                    (this.SourceCidrBlock != null &&
-                    this.SourceCidrBlock.Equals(input.SourceCidrBlock))
-                ) && 
-                (
-                    this.DestinationCidrBlock == input.DestinationCidrBlock ||
-                    (this.DestinationCidrBlock != null &&
-                    this.DestinationCidrBlock.Equals(input.DestinationCidrBlock))
-                ) && 
-                (
-                    this.SourcePortRange == input.SourcePortRange ||
-                    (this.SourcePortRange != null &&
-                    this.SourcePortRange.Equals(input.SourcePortRange))
-                ) && 
-                (
-                    this.DestinationPortRange == input.DestinationPortRange ||
-                    (this.DestinationPortRange != null &&
-                    this.DestinationPortRange.Equals(input.DestinationPortRange))
-                ) && 
-                (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    (this.Priority != null &&
-                    this.Priority.Equals(input.Priority))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                );
+            return true;
         }
 
         /// <summary>
@@ -224,33 +171,20 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.TrafficMirrorFilterId != null)
-                    hashCode = hashCode * 59 + this.TrafficMirrorFilterId.GetHashCode();
-                if (this.Direction != null)
-                    hashCode = hashCode * 59 + this.Direction.GetHashCode();
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
-                if (this.SourceCidrBlock != null)
-                    hashCode = hashCode * 59 + this.SourceCidrBlock.GetHashCode();
-                if (this.DestinationCidrBlock != null)
-                    hashCode = hashCode * 59 + this.DestinationCidrBlock.GetHashCode();
-                if (this.SourcePortRange != null)
-                    hashCode = hashCode * 59 + this.SourcePortRange.GetHashCode();
-                if (this.DestinationPortRange != null)
-                    hashCode = hashCode * 59 + this.DestinationPortRange.GetHashCode();
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
-                if (this.Priority != null)
-                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.TrafficMirrorFilterId != null) hashCode = hashCode * 59 + this.TrafficMirrorFilterId.GetHashCode();
+                if (this.Direction != null) hashCode = hashCode * 59 + this.Direction.GetHashCode();
+                if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.SourceCidrBlock != null) hashCode = hashCode * 59 + this.SourceCidrBlock.GetHashCode();
+                if (this.DestinationCidrBlock != null) hashCode = hashCode * 59 + this.DestinationCidrBlock.GetHashCode();
+                if (this.SourcePortRange != null) hashCode = hashCode * 59 + this.SourcePortRange.GetHashCode();
+                if (this.DestinationPortRange != null) hashCode = hashCode * 59 + this.DestinationPortRange.GetHashCode();
+                if (this.Action != null) hashCode = hashCode * 59 + this.Action.GetHashCode();
+                if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 return hashCode;
             }
         }

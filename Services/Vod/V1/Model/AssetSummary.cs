@@ -675,86 +675,24 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(AssetSummary input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
+            if (this.Title != input.Title || (this.Title != null && !this.Title.Equals(input.Title))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.OriginalUrl != input.OriginalUrl || (this.OriginalUrl != null && !this.OriginalUrl.Equals(input.OriginalUrl))) return false;
+            if (this.Category != input.Category || (this.Category != null && !this.Category.Equals(input.Category))) return false;
+            if (this.Covers != input.Covers || (this.Covers != null && input.Covers != null && !this.Covers.SequenceEqual(input.Covers))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.AssetStatus != input.AssetStatus) return false;
+            if (this.TranscodeStatus != input.TranscodeStatus) return false;
+            if (this.ThumbnailStatus != input.ThumbnailStatus) return false;
+            if (this.ReviewStatus != input.ReviewStatus) return false;
+            if (this.ExecDesc != input.ExecDesc || (this.ExecDesc != null && !this.ExecDesc.Equals(input.ExecDesc))) return false;
+            if (this.MediaType != input.MediaType || (this.MediaType != null && !this.MediaType.Equals(input.MediaType))) return false;
 
-            return 
-                (
-                    this.AssetId == input.AssetId ||
-                    (this.AssetId != null &&
-                    this.AssetId.Equals(input.AssetId))
-                ) && 
-                (
-                    this.Title == input.Title ||
-                    (this.Title != null &&
-                    this.Title.Equals(input.Title))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.OriginalUrl == input.OriginalUrl ||
-                    (this.OriginalUrl != null &&
-                    this.OriginalUrl.Equals(input.OriginalUrl))
-                ) && 
-                (
-                    this.Category == input.Category ||
-                    (this.Category != null &&
-                    this.Category.Equals(input.Category))
-                ) && 
-                (
-                    this.Covers == input.Covers ||
-                    this.Covers != null &&
-                    input.Covers != null &&
-                    this.Covers.SequenceEqual(input.Covers)
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.AssetStatus == input.AssetStatus ||
-                    (this.AssetStatus != null &&
-                    this.AssetStatus.Equals(input.AssetStatus))
-                ) && 
-                (
-                    this.TranscodeStatus == input.TranscodeStatus ||
-                    (this.TranscodeStatus != null &&
-                    this.TranscodeStatus.Equals(input.TranscodeStatus))
-                ) && 
-                (
-                    this.ThumbnailStatus == input.ThumbnailStatus ||
-                    (this.ThumbnailStatus != null &&
-                    this.ThumbnailStatus.Equals(input.ThumbnailStatus))
-                ) && 
-                (
-                    this.ReviewStatus == input.ReviewStatus ||
-                    (this.ReviewStatus != null &&
-                    this.ReviewStatus.Equals(input.ReviewStatus))
-                ) && 
-                (
-                    this.ExecDesc == input.ExecDesc ||
-                    (this.ExecDesc != null &&
-                    this.ExecDesc.Equals(input.ExecDesc))
-                ) && 
-                (
-                    this.MediaType == input.MediaType ||
-                    (this.MediaType != null &&
-                    this.MediaType.Equals(input.MediaType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -764,37 +702,22 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AssetId != null)
-                    hashCode = hashCode * 59 + this.AssetId.GetHashCode();
-                if (this.Title != null)
-                    hashCode = hashCode * 59 + this.Title.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Duration != null)
-                    hashCode = hashCode * 59 + this.Duration.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.OriginalUrl != null)
-                    hashCode = hashCode * 59 + this.OriginalUrl.GetHashCode();
-                if (this.Category != null)
-                    hashCode = hashCode * 59 + this.Category.GetHashCode();
-                if (this.Covers != null)
-                    hashCode = hashCode * 59 + this.Covers.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.AssetStatus != null)
-                    hashCode = hashCode * 59 + this.AssetStatus.GetHashCode();
-                if (this.TranscodeStatus != null)
-                    hashCode = hashCode * 59 + this.TranscodeStatus.GetHashCode();
-                if (this.ThumbnailStatus != null)
-                    hashCode = hashCode * 59 + this.ThumbnailStatus.GetHashCode();
-                if (this.ReviewStatus != null)
-                    hashCode = hashCode * 59 + this.ReviewStatus.GetHashCode();
-                if (this.ExecDesc != null)
-                    hashCode = hashCode * 59 + this.ExecDesc.GetHashCode();
-                if (this.MediaType != null)
-                    hashCode = hashCode * 59 + this.MediaType.GetHashCode();
+                var hashCode = 41;
+                if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                if (this.Title != null) hashCode = hashCode * 59 + this.Title.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.OriginalUrl != null) hashCode = hashCode * 59 + this.OriginalUrl.GetHashCode();
+                if (this.Category != null) hashCode = hashCode * 59 + this.Category.GetHashCode();
+                if (this.Covers != null) hashCode = hashCode * 59 + this.Covers.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                hashCode = hashCode * 59 + this.AssetStatus.GetHashCode();
+                hashCode = hashCode * 59 + this.TranscodeStatus.GetHashCode();
+                hashCode = hashCode * 59 + this.ThumbnailStatus.GetHashCode();
+                hashCode = hashCode * 59 + this.ReviewStatus.GetHashCode();
+                if (this.ExecDesc != null) hashCode = hashCode * 59 + this.ExecDesc.GetHashCode();
+                if (this.MediaType != null) hashCode = hashCode * 59 + this.MediaType.GetHashCode();
                 return hashCode;
             }
         }

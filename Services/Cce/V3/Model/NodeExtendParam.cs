@@ -189,115 +189,30 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(NodeExtendParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Ecsperformancetype != input.Ecsperformancetype || (this.Ecsperformancetype != null && !this.Ecsperformancetype.Equals(input.Ecsperformancetype))) return false;
+            if (this.OrderID != input.OrderID || (this.OrderID != null && !this.OrderID.Equals(input.OrderID))) return false;
+            if (this.ProductID != input.ProductID || (this.ProductID != null && !this.ProductID.Equals(input.ProductID))) return false;
+            if (this.MaxPods != input.MaxPods || (this.MaxPods != null && !this.MaxPods.Equals(input.MaxPods))) return false;
+            if (this.PeriodType != input.PeriodType || (this.PeriodType != null && !this.PeriodType.Equals(input.PeriodType))) return false;
+            if (this.PeriodNum != input.PeriodNum || (this.PeriodNum != null && !this.PeriodNum.Equals(input.PeriodNum))) return false;
+            if (this.IsAutoRenew != input.IsAutoRenew || (this.IsAutoRenew != null && !this.IsAutoRenew.Equals(input.IsAutoRenew))) return false;
+            if (this.IsAutoPay != input.IsAutoPay || (this.IsAutoPay != null && !this.IsAutoPay.Equals(input.IsAutoPay))) return false;
+            if (this.DockerLVMConfigOverride != input.DockerLVMConfigOverride || (this.DockerLVMConfigOverride != null && !this.DockerLVMConfigOverride.Equals(input.DockerLVMConfigOverride))) return false;
+            if (this.DockerBaseSize != input.DockerBaseSize || (this.DockerBaseSize != null && !this.DockerBaseSize.Equals(input.DockerBaseSize))) return false;
+            if (this.PublicKey != input.PublicKey || (this.PublicKey != null && !this.PublicKey.Equals(input.PublicKey))) return false;
+            if (this.AlphaCcePreInstall != input.AlphaCcePreInstall || (this.AlphaCcePreInstall != null && !this.AlphaCcePreInstall.Equals(input.AlphaCcePreInstall))) return false;
+            if (this.AlphaCcePostInstall != input.AlphaCcePostInstall || (this.AlphaCcePostInstall != null && !this.AlphaCcePostInstall.Equals(input.AlphaCcePostInstall))) return false;
+            if (this.AlphaCceNodeImageID != input.AlphaCceNodeImageID || (this.AlphaCceNodeImageID != null && !this.AlphaCceNodeImageID.Equals(input.AlphaCceNodeImageID))) return false;
+            if (this.NicMultiqueue != input.NicMultiqueue || (this.NicMultiqueue != null && !this.NicMultiqueue.Equals(input.NicMultiqueue))) return false;
+            if (this.NicThreshold != input.NicThreshold || (this.NicThreshold != null && !this.NicThreshold.Equals(input.NicThreshold))) return false;
+            if (this.ChargingMode != input.ChargingMode || (this.ChargingMode != null && !this.ChargingMode.Equals(input.ChargingMode))) return false;
+            if (this.AgencyName != input.AgencyName || (this.AgencyName != null && !this.AgencyName.Equals(input.AgencyName))) return false;
+            if (this.KubeReservedMem != input.KubeReservedMem || (this.KubeReservedMem != null && !this.KubeReservedMem.Equals(input.KubeReservedMem))) return false;
+            if (this.SystemReservedMem != input.SystemReservedMem || (this.SystemReservedMem != null && !this.SystemReservedMem.Equals(input.SystemReservedMem))) return false;
+            if (this.InitNodePassword != input.InitNodePassword || (this.InitNodePassword != null && !this.InitNodePassword.Equals(input.InitNodePassword))) return false;
 
-            return 
-                (
-                    this.Ecsperformancetype == input.Ecsperformancetype ||
-                    (this.Ecsperformancetype != null &&
-                    this.Ecsperformancetype.Equals(input.Ecsperformancetype))
-                ) && 
-                (
-                    this.OrderID == input.OrderID ||
-                    (this.OrderID != null &&
-                    this.OrderID.Equals(input.OrderID))
-                ) && 
-                (
-                    this.ProductID == input.ProductID ||
-                    (this.ProductID != null &&
-                    this.ProductID.Equals(input.ProductID))
-                ) && 
-                (
-                    this.MaxPods == input.MaxPods ||
-                    (this.MaxPods != null &&
-                    this.MaxPods.Equals(input.MaxPods))
-                ) && 
-                (
-                    this.PeriodType == input.PeriodType ||
-                    (this.PeriodType != null &&
-                    this.PeriodType.Equals(input.PeriodType))
-                ) && 
-                (
-                    this.PeriodNum == input.PeriodNum ||
-                    (this.PeriodNum != null &&
-                    this.PeriodNum.Equals(input.PeriodNum))
-                ) && 
-                (
-                    this.IsAutoRenew == input.IsAutoRenew ||
-                    (this.IsAutoRenew != null &&
-                    this.IsAutoRenew.Equals(input.IsAutoRenew))
-                ) && 
-                (
-                    this.IsAutoPay == input.IsAutoPay ||
-                    (this.IsAutoPay != null &&
-                    this.IsAutoPay.Equals(input.IsAutoPay))
-                ) && 
-                (
-                    this.DockerLVMConfigOverride == input.DockerLVMConfigOverride ||
-                    (this.DockerLVMConfigOverride != null &&
-                    this.DockerLVMConfigOverride.Equals(input.DockerLVMConfigOverride))
-                ) && 
-                (
-                    this.DockerBaseSize == input.DockerBaseSize ||
-                    (this.DockerBaseSize != null &&
-                    this.DockerBaseSize.Equals(input.DockerBaseSize))
-                ) && 
-                (
-                    this.PublicKey == input.PublicKey ||
-                    (this.PublicKey != null &&
-                    this.PublicKey.Equals(input.PublicKey))
-                ) && 
-                (
-                    this.AlphaCcePreInstall == input.AlphaCcePreInstall ||
-                    (this.AlphaCcePreInstall != null &&
-                    this.AlphaCcePreInstall.Equals(input.AlphaCcePreInstall))
-                ) && 
-                (
-                    this.AlphaCcePostInstall == input.AlphaCcePostInstall ||
-                    (this.AlphaCcePostInstall != null &&
-                    this.AlphaCcePostInstall.Equals(input.AlphaCcePostInstall))
-                ) && 
-                (
-                    this.AlphaCceNodeImageID == input.AlphaCceNodeImageID ||
-                    (this.AlphaCceNodeImageID != null &&
-                    this.AlphaCceNodeImageID.Equals(input.AlphaCceNodeImageID))
-                ) && 
-                (
-                    this.NicMultiqueue == input.NicMultiqueue ||
-                    (this.NicMultiqueue != null &&
-                    this.NicMultiqueue.Equals(input.NicMultiqueue))
-                ) && 
-                (
-                    this.NicThreshold == input.NicThreshold ||
-                    (this.NicThreshold != null &&
-                    this.NicThreshold.Equals(input.NicThreshold))
-                ) && 
-                (
-                    this.ChargingMode == input.ChargingMode ||
-                    (this.ChargingMode != null &&
-                    this.ChargingMode.Equals(input.ChargingMode))
-                ) && 
-                (
-                    this.AgencyName == input.AgencyName ||
-                    (this.AgencyName != null &&
-                    this.AgencyName.Equals(input.AgencyName))
-                ) && 
-                (
-                    this.KubeReservedMem == input.KubeReservedMem ||
-                    (this.KubeReservedMem != null &&
-                    this.KubeReservedMem.Equals(input.KubeReservedMem))
-                ) && 
-                (
-                    this.SystemReservedMem == input.SystemReservedMem ||
-                    (this.SystemReservedMem != null &&
-                    this.SystemReservedMem.Equals(input.SystemReservedMem))
-                ) && 
-                (
-                    this.InitNodePassword == input.InitNodePassword ||
-                    (this.InitNodePassword != null &&
-                    this.InitNodePassword.Equals(input.InitNodePassword))
-                );
+            return true;
         }
 
         /// <summary>
@@ -307,49 +222,28 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Ecsperformancetype != null)
-                    hashCode = hashCode * 59 + this.Ecsperformancetype.GetHashCode();
-                if (this.OrderID != null)
-                    hashCode = hashCode * 59 + this.OrderID.GetHashCode();
-                if (this.ProductID != null)
-                    hashCode = hashCode * 59 + this.ProductID.GetHashCode();
-                if (this.MaxPods != null)
-                    hashCode = hashCode * 59 + this.MaxPods.GetHashCode();
-                if (this.PeriodType != null)
-                    hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
-                if (this.PeriodNum != null)
-                    hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
-                if (this.IsAutoRenew != null)
-                    hashCode = hashCode * 59 + this.IsAutoRenew.GetHashCode();
-                if (this.IsAutoPay != null)
-                    hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
-                if (this.DockerLVMConfigOverride != null)
-                    hashCode = hashCode * 59 + this.DockerLVMConfigOverride.GetHashCode();
-                if (this.DockerBaseSize != null)
-                    hashCode = hashCode * 59 + this.DockerBaseSize.GetHashCode();
-                if (this.PublicKey != null)
-                    hashCode = hashCode * 59 + this.PublicKey.GetHashCode();
-                if (this.AlphaCcePreInstall != null)
-                    hashCode = hashCode * 59 + this.AlphaCcePreInstall.GetHashCode();
-                if (this.AlphaCcePostInstall != null)
-                    hashCode = hashCode * 59 + this.AlphaCcePostInstall.GetHashCode();
-                if (this.AlphaCceNodeImageID != null)
-                    hashCode = hashCode * 59 + this.AlphaCceNodeImageID.GetHashCode();
-                if (this.NicMultiqueue != null)
-                    hashCode = hashCode * 59 + this.NicMultiqueue.GetHashCode();
-                if (this.NicThreshold != null)
-                    hashCode = hashCode * 59 + this.NicThreshold.GetHashCode();
-                if (this.ChargingMode != null)
-                    hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
-                if (this.AgencyName != null)
-                    hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
-                if (this.KubeReservedMem != null)
-                    hashCode = hashCode * 59 + this.KubeReservedMem.GetHashCode();
-                if (this.SystemReservedMem != null)
-                    hashCode = hashCode * 59 + this.SystemReservedMem.GetHashCode();
-                if (this.InitNodePassword != null)
-                    hashCode = hashCode * 59 + this.InitNodePassword.GetHashCode();
+                var hashCode = 41;
+                if (this.Ecsperformancetype != null) hashCode = hashCode * 59 + this.Ecsperformancetype.GetHashCode();
+                if (this.OrderID != null) hashCode = hashCode * 59 + this.OrderID.GetHashCode();
+                if (this.ProductID != null) hashCode = hashCode * 59 + this.ProductID.GetHashCode();
+                if (this.MaxPods != null) hashCode = hashCode * 59 + this.MaxPods.GetHashCode();
+                if (this.PeriodType != null) hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
+                if (this.PeriodNum != null) hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
+                if (this.IsAutoRenew != null) hashCode = hashCode * 59 + this.IsAutoRenew.GetHashCode();
+                if (this.IsAutoPay != null) hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
+                if (this.DockerLVMConfigOverride != null) hashCode = hashCode * 59 + this.DockerLVMConfigOverride.GetHashCode();
+                if (this.DockerBaseSize != null) hashCode = hashCode * 59 + this.DockerBaseSize.GetHashCode();
+                if (this.PublicKey != null) hashCode = hashCode * 59 + this.PublicKey.GetHashCode();
+                if (this.AlphaCcePreInstall != null) hashCode = hashCode * 59 + this.AlphaCcePreInstall.GetHashCode();
+                if (this.AlphaCcePostInstall != null) hashCode = hashCode * 59 + this.AlphaCcePostInstall.GetHashCode();
+                if (this.AlphaCceNodeImageID != null) hashCode = hashCode * 59 + this.AlphaCceNodeImageID.GetHashCode();
+                if (this.NicMultiqueue != null) hashCode = hashCode * 59 + this.NicMultiqueue.GetHashCode();
+                if (this.NicThreshold != null) hashCode = hashCode * 59 + this.NicThreshold.GetHashCode();
+                if (this.ChargingMode != null) hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
+                if (this.AgencyName != null) hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
+                if (this.KubeReservedMem != null) hashCode = hashCode * 59 + this.KubeReservedMem.GetHashCode();
+                if (this.SystemReservedMem != null) hashCode = hashCode * 59 + this.SystemReservedMem.GetHashCode();
+                if (this.InitNodePassword != null) hashCode = hashCode * 59 + this.InitNodePassword.GetHashCode();
                 return hashCode;
             }
         }

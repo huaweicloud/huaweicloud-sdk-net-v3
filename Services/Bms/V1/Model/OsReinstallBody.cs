@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(OsReinstallBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OsReinstall != input.OsReinstall || (this.OsReinstall != null && !this.OsReinstall.Equals(input.OsReinstall))) return false;
 
-            return 
-                (
-                    this.OsReinstall == input.OsReinstall ||
-                    (this.OsReinstall != null &&
-                    this.OsReinstall.Equals(input.OsReinstall))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OsReinstall != null)
-                    hashCode = hashCode * 59 + this.OsReinstall.GetHashCode();
+                var hashCode = 41;
+                if (this.OsReinstall != null) hashCode = hashCode * 59 + this.OsReinstall.GetHashCode();
                 return hashCode;
             }
         }

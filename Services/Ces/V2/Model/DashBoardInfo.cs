@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(DashBoardInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DashboardId != input.DashboardId || (this.DashboardId != null && !this.DashboardId.Equals(input.DashboardId))) return false;
+            if (this.DashboardName != input.DashboardName || (this.DashboardName != null && !this.DashboardName.Equals(input.DashboardName))) return false;
+            if (this.EnterpriseId != input.EnterpriseId || (this.EnterpriseId != null && !this.EnterpriseId.Equals(input.EnterpriseId))) return false;
+            if (this.RowWidgetNum != input.RowWidgetNum || (this.RowWidgetNum != null && !this.RowWidgetNum.Equals(input.RowWidgetNum))) return false;
+            if (this.IsFavorite != input.IsFavorite || (this.IsFavorite != null && !this.IsFavorite.Equals(input.IsFavorite))) return false;
+            if (this.CreatorName != input.CreatorName || (this.CreatorName != null && !this.CreatorName.Equals(input.CreatorName))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
 
-            return 
-                (
-                    this.DashboardId == input.DashboardId ||
-                    (this.DashboardId != null &&
-                    this.DashboardId.Equals(input.DashboardId))
-                ) && 
-                (
-                    this.DashboardName == input.DashboardName ||
-                    (this.DashboardName != null &&
-                    this.DashboardName.Equals(input.DashboardName))
-                ) && 
-                (
-                    this.EnterpriseId == input.EnterpriseId ||
-                    (this.EnterpriseId != null &&
-                    this.EnterpriseId.Equals(input.EnterpriseId))
-                ) && 
-                (
-                    this.RowWidgetNum == input.RowWidgetNum ||
-                    (this.RowWidgetNum != null &&
-                    this.RowWidgetNum.Equals(input.RowWidgetNum))
-                ) && 
-                (
-                    this.IsFavorite == input.IsFavorite ||
-                    (this.IsFavorite != null &&
-                    this.IsFavorite.Equals(input.IsFavorite))
-                ) && 
-                (
-                    this.CreatorName == input.CreatorName ||
-                    (this.CreatorName != null &&
-                    this.CreatorName.Equals(input.CreatorName))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DashboardId != null)
-                    hashCode = hashCode * 59 + this.DashboardId.GetHashCode();
-                if (this.DashboardName != null)
-                    hashCode = hashCode * 59 + this.DashboardName.GetHashCode();
-                if (this.EnterpriseId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseId.GetHashCode();
-                if (this.RowWidgetNum != null)
-                    hashCode = hashCode * 59 + this.RowWidgetNum.GetHashCode();
-                if (this.IsFavorite != null)
-                    hashCode = hashCode * 59 + this.IsFavorite.GetHashCode();
-                if (this.CreatorName != null)
-                    hashCode = hashCode * 59 + this.CreatorName.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                var hashCode = 41;
+                if (this.DashboardId != null) hashCode = hashCode * 59 + this.DashboardId.GetHashCode();
+                if (this.DashboardName != null) hashCode = hashCode * 59 + this.DashboardName.GetHashCode();
+                if (this.EnterpriseId != null) hashCode = hashCode * 59 + this.EnterpriseId.GetHashCode();
+                if (this.RowWidgetNum != null) hashCode = hashCode * 59 + this.RowWidgetNum.GetHashCode();
+                if (this.IsFavorite != null) hashCode = hashCode * 59 + this.IsFavorite.GetHashCode();
+                if (this.CreatorName != null) hashCode = hashCode * 59 + this.CreatorName.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 return hashCode;
             }
         }

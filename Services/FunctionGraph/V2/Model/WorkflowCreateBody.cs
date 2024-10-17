@@ -240,74 +240,21 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(WorkflowCreateBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Start != input.Start || (this.Start != null && !this.Start.Equals(input.Start))) return false;
+            if (this.Triggers != input.Triggers || (this.Triggers != null && input.Triggers != null && !this.Triggers.SequenceEqual(input.Triggers))) return false;
+            if (this.Functions != input.Functions || (this.Functions != null && input.Functions != null && !this.Functions.SequenceEqual(input.Functions))) return false;
+            if (this.States != input.States || (this.States != null && input.States != null && !this.States.SequenceEqual(input.States))) return false;
+            if (this.Constants != input.Constants || (this.Constants != null && !this.Constants.Equals(input.Constants))) return false;
+            if (this.Retries != input.Retries || (this.Retries != null && input.Retries != null && !this.Retries.SequenceEqual(input.Retries))) return false;
+            if (this.Mode != input.Mode) return false;
+            if (this.ExpressConfig != input.ExpressConfig || (this.ExpressConfig != null && !this.ExpressConfig.Equals(input.ExpressConfig))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.EnableStreamResponse != input.EnableStreamResponse || (this.EnableStreamResponse != null && !this.EnableStreamResponse.Equals(input.EnableStreamResponse))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Start == input.Start ||
-                    (this.Start != null &&
-                    this.Start.Equals(input.Start))
-                ) && 
-                (
-                    this.Triggers == input.Triggers ||
-                    this.Triggers != null &&
-                    input.Triggers != null &&
-                    this.Triggers.SequenceEqual(input.Triggers)
-                ) && 
-                (
-                    this.Functions == input.Functions ||
-                    this.Functions != null &&
-                    input.Functions != null &&
-                    this.Functions.SequenceEqual(input.Functions)
-                ) && 
-                (
-                    this.States == input.States ||
-                    this.States != null &&
-                    input.States != null &&
-                    this.States.SequenceEqual(input.States)
-                ) && 
-                (
-                    this.Constants == input.Constants ||
-                    (this.Constants != null &&
-                    this.Constants.Equals(input.Constants))
-                ) && 
-                (
-                    this.Retries == input.Retries ||
-                    this.Retries != null &&
-                    input.Retries != null &&
-                    this.Retries.SequenceEqual(input.Retries)
-                ) && 
-                (
-                    this.Mode == input.Mode ||
-                    (this.Mode != null &&
-                    this.Mode.Equals(input.Mode))
-                ) && 
-                (
-                    this.ExpressConfig == input.ExpressConfig ||
-                    (this.ExpressConfig != null &&
-                    this.ExpressConfig.Equals(input.ExpressConfig))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.EnableStreamResponse == input.EnableStreamResponse ||
-                    (this.EnableStreamResponse != null &&
-                    this.EnableStreamResponse.Equals(input.EnableStreamResponse))
-                );
+            return true;
         }
 
         /// <summary>
@@ -317,31 +264,19 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Start != null)
-                    hashCode = hashCode * 59 + this.Start.GetHashCode();
-                if (this.Triggers != null)
-                    hashCode = hashCode * 59 + this.Triggers.GetHashCode();
-                if (this.Functions != null)
-                    hashCode = hashCode * 59 + this.Functions.GetHashCode();
-                if (this.States != null)
-                    hashCode = hashCode * 59 + this.States.GetHashCode();
-                if (this.Constants != null)
-                    hashCode = hashCode * 59 + this.Constants.GetHashCode();
-                if (this.Retries != null)
-                    hashCode = hashCode * 59 + this.Retries.GetHashCode();
-                if (this.Mode != null)
-                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
-                if (this.ExpressConfig != null)
-                    hashCode = hashCode * 59 + this.ExpressConfig.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.EnableStreamResponse != null)
-                    hashCode = hashCode * 59 + this.EnableStreamResponse.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Start != null) hashCode = hashCode * 59 + this.Start.GetHashCode();
+                if (this.Triggers != null) hashCode = hashCode * 59 + this.Triggers.GetHashCode();
+                if (this.Functions != null) hashCode = hashCode * 59 + this.Functions.GetHashCode();
+                if (this.States != null) hashCode = hashCode * 59 + this.States.GetHashCode();
+                if (this.Constants != null) hashCode = hashCode * 59 + this.Constants.GetHashCode();
+                if (this.Retries != null) hashCode = hashCode * 59 + this.Retries.GetHashCode();
+                hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                if (this.ExpressConfig != null) hashCode = hashCode * 59 + this.ExpressConfig.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.EnableStreamResponse != null) hashCode = hashCode * 59 + this.EnableStreamResponse.GetHashCode();
                 return hashCode;
             }
         }

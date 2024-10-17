@@ -188,30 +188,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ListsAgencyPermissionsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.XLanguage != input.XLanguage) return false;
+            if (this.SourceType != input.SourceType || (this.SourceType != null && !this.SourceType.Equals(input.SourceType))) return false;
+            if (this.TargetType != input.TargetType || (this.TargetType != null && !this.TargetType.Equals(input.TargetType))) return false;
+            if (this.IsNonDbs != input.IsNonDbs || (this.IsNonDbs != null && !this.IsNonDbs.Equals(input.IsNonDbs))) return false;
 
-            return 
-                (
-                    this.XLanguage == input.XLanguage ||
-                    (this.XLanguage != null &&
-                    this.XLanguage.Equals(input.XLanguage))
-                ) && 
-                (
-                    this.SourceType == input.SourceType ||
-                    (this.SourceType != null &&
-                    this.SourceType.Equals(input.SourceType))
-                ) && 
-                (
-                    this.TargetType == input.TargetType ||
-                    (this.TargetType != null &&
-                    this.TargetType.Equals(input.TargetType))
-                ) && 
-                (
-                    this.IsNonDbs == input.IsNonDbs ||
-                    (this.IsNonDbs != null &&
-                    this.IsNonDbs.Equals(input.IsNonDbs))
-                );
+            return true;
         }
 
         /// <summary>
@@ -221,15 +204,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.XLanguage != null)
-                    hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
-                if (this.SourceType != null)
-                    hashCode = hashCode * 59 + this.SourceType.GetHashCode();
-                if (this.TargetType != null)
-                    hashCode = hashCode * 59 + this.TargetType.GetHashCode();
-                if (this.IsNonDbs != null)
-                    hashCode = hashCode * 59 + this.IsNonDbs.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                if (this.SourceType != null) hashCode = hashCode * 59 + this.SourceType.GetHashCode();
+                if (this.TargetType != null) hashCode = hashCode * 59 + this.TargetType.GetHashCode();
+                if (this.IsNonDbs != null) hashCode = hashCode * 59 + this.IsNonDbs.GetHashCode();
                 return hashCode;
             }
         }

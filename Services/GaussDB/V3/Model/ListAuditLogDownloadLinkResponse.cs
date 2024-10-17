@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ListAuditLogDownloadLinkResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Files != input.Files || (this.Files != null && input.Files != null && !this.Files.SequenceEqual(input.Files))) return false;
 
-            return 
-                (
-                    this.Files == input.Files ||
-                    this.Files != null &&
-                    input.Files != null &&
-                    this.Files.SequenceEqual(input.Files)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Files != null)
-                    hashCode = hashCode * 59 + this.Files.GetHashCode();
+                var hashCode = 41;
+                if (this.Files != null) hashCode = hashCode * 59 + this.Files.GetHashCode();
                 return hashCode;
             }
         }

@@ -191,30 +191,13 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(ListIpAuthListResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
+            if (this.AuthType != input.AuthType) return false;
+            if (this.IpAuthList != input.IpAuthList || (this.IpAuthList != null && !this.IpAuthList.Equals(input.IpAuthList))) return false;
+            if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
-            return 
-                (
-                    this.Domain == input.Domain ||
-                    (this.Domain != null &&
-                    this.Domain.Equals(input.Domain))
-                ) && 
-                (
-                    this.AuthType == input.AuthType ||
-                    (this.AuthType != null &&
-                    this.AuthType.Equals(input.AuthType))
-                ) && 
-                (
-                    this.IpAuthList == input.IpAuthList ||
-                    (this.IpAuthList != null &&
-                    this.IpAuthList.Equals(input.IpAuthList))
-                ) && 
-                (
-                    this.XRequestId == input.XRequestId ||
-                    (this.XRequestId != null &&
-                    this.XRequestId.Equals(input.XRequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -224,15 +207,11 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Domain != null)
-                    hashCode = hashCode * 59 + this.Domain.GetHashCode();
-                if (this.AuthType != null)
-                    hashCode = hashCode * 59 + this.AuthType.GetHashCode();
-                if (this.IpAuthList != null)
-                    hashCode = hashCode * 59 + this.IpAuthList.GetHashCode();
-                if (this.XRequestId != null)
-                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                hashCode = hashCode * 59 + this.AuthType.GetHashCode();
+                if (this.IpAuthList != null) hashCode = hashCode * 59 + this.IpAuthList.GetHashCode();
+                if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

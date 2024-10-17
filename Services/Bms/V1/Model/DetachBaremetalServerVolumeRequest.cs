@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(DetachBaremetalServerVolumeRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ServerId != input.ServerId || (this.ServerId != null && !this.ServerId.Equals(input.ServerId))) return false;
+            if (this.AttachmentId != input.AttachmentId || (this.AttachmentId != null && !this.AttachmentId.Equals(input.AttachmentId))) return false;
 
-            return 
-                (
-                    this.ServerId == input.ServerId ||
-                    (this.ServerId != null &&
-                    this.ServerId.Equals(input.ServerId))
-                ) && 
-                (
-                    this.AttachmentId == input.AttachmentId ||
-                    (this.AttachmentId != null &&
-                    this.AttachmentId.Equals(input.AttachmentId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ServerId != null)
-                    hashCode = hashCode * 59 + this.ServerId.GetHashCode();
-                if (this.AttachmentId != null)
-                    hashCode = hashCode * 59 + this.AttachmentId.GetHashCode();
+                var hashCode = 41;
+                if (this.ServerId != null) hashCode = hashCode * 59 + this.ServerId.GetHashCode();
+                if (this.AttachmentId != null) hashCode = hashCode * 59 + this.AttachmentId.GetHashCode();
                 return hashCode;
             }
         }

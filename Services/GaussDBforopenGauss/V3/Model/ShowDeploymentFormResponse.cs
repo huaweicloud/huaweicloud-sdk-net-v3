@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ShowDeploymentFormResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InitialNodeNum != input.InitialNodeNum || (this.InitialNodeNum != null && !this.InitialNodeNum.Equals(input.InitialNodeNum))) return false;
+            if (this.Solution != input.Solution || (this.Solution != null && !this.Solution.Equals(input.Solution))) return false;
+            if (this.ShardNum != input.ShardNum || (this.ShardNum != null && !this.ShardNum.Equals(input.ShardNum))) return false;
+            if (this.ReplicaNum != input.ReplicaNum || (this.ReplicaNum != null && !this.ReplicaNum.Equals(input.ReplicaNum))) return false;
 
-            return 
-                (
-                    this.InitialNodeNum == input.InitialNodeNum ||
-                    (this.InitialNodeNum != null &&
-                    this.InitialNodeNum.Equals(input.InitialNodeNum))
-                ) && 
-                (
-                    this.Solution == input.Solution ||
-                    (this.Solution != null &&
-                    this.Solution.Equals(input.Solution))
-                ) && 
-                (
-                    this.ShardNum == input.ShardNum ||
-                    (this.ShardNum != null &&
-                    this.ShardNum.Equals(input.ShardNum))
-                ) && 
-                (
-                    this.ReplicaNum == input.ReplicaNum ||
-                    (this.ReplicaNum != null &&
-                    this.ReplicaNum.Equals(input.ReplicaNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InitialNodeNum != null)
-                    hashCode = hashCode * 59 + this.InitialNodeNum.GetHashCode();
-                if (this.Solution != null)
-                    hashCode = hashCode * 59 + this.Solution.GetHashCode();
-                if (this.ShardNum != null)
-                    hashCode = hashCode * 59 + this.ShardNum.GetHashCode();
-                if (this.ReplicaNum != null)
-                    hashCode = hashCode * 59 + this.ReplicaNum.GetHashCode();
+                var hashCode = 41;
+                if (this.InitialNodeNum != null) hashCode = hashCode * 59 + this.InitialNodeNum.GetHashCode();
+                if (this.Solution != null) hashCode = hashCode * 59 + this.Solution.GetHashCode();
+                if (this.ShardNum != null) hashCode = hashCode * 59 + this.ShardNum.GetHashCode();
+                if (this.ReplicaNum != null) hashCode = hashCode * 59 + this.ReplicaNum.GetHashCode();
                 return hashCode;
             }
         }

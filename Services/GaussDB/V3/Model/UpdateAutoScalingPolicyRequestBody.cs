@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(UpdateAutoScalingPolicyRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.MonitorCycle != input.MonitorCycle || (this.MonitorCycle != null && !this.MonitorCycle.Equals(input.MonitorCycle))) return false;
+            if (this.SilenceCycle != input.SilenceCycle || (this.SilenceCycle != null && !this.SilenceCycle.Equals(input.SilenceCycle))) return false;
+            if (this.EnlargeThreshold != input.EnlargeThreshold || (this.EnlargeThreshold != null && !this.EnlargeThreshold.Equals(input.EnlargeThreshold))) return false;
+            if (this.MaxFlavor != input.MaxFlavor || (this.MaxFlavor != null && !this.MaxFlavor.Equals(input.MaxFlavor))) return false;
+            if (this.ReduceEnabled != input.ReduceEnabled || (this.ReduceEnabled != null && !this.ReduceEnabled.Equals(input.ReduceEnabled))) return false;
+            if (this.MaxReadOnlyCount != input.MaxReadOnlyCount || (this.MaxReadOnlyCount != null && !this.MaxReadOnlyCount.Equals(input.MaxReadOnlyCount))) return false;
+            if (this.ReadOnlyWeight != input.ReadOnlyWeight || (this.ReadOnlyWeight != null && !this.ReadOnlyWeight.Equals(input.ReadOnlyWeight))) return false;
+            if (this.ScalingStrategy != input.ScalingStrategy || (this.ScalingStrategy != null && !this.ScalingStrategy.Equals(input.ScalingStrategy))) return false;
 
-            return 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.MonitorCycle == input.MonitorCycle ||
-                    (this.MonitorCycle != null &&
-                    this.MonitorCycle.Equals(input.MonitorCycle))
-                ) && 
-                (
-                    this.SilenceCycle == input.SilenceCycle ||
-                    (this.SilenceCycle != null &&
-                    this.SilenceCycle.Equals(input.SilenceCycle))
-                ) && 
-                (
-                    this.EnlargeThreshold == input.EnlargeThreshold ||
-                    (this.EnlargeThreshold != null &&
-                    this.EnlargeThreshold.Equals(input.EnlargeThreshold))
-                ) && 
-                (
-                    this.MaxFlavor == input.MaxFlavor ||
-                    (this.MaxFlavor != null &&
-                    this.MaxFlavor.Equals(input.MaxFlavor))
-                ) && 
-                (
-                    this.ReduceEnabled == input.ReduceEnabled ||
-                    (this.ReduceEnabled != null &&
-                    this.ReduceEnabled.Equals(input.ReduceEnabled))
-                ) && 
-                (
-                    this.MaxReadOnlyCount == input.MaxReadOnlyCount ||
-                    (this.MaxReadOnlyCount != null &&
-                    this.MaxReadOnlyCount.Equals(input.MaxReadOnlyCount))
-                ) && 
-                (
-                    this.ReadOnlyWeight == input.ReadOnlyWeight ||
-                    (this.ReadOnlyWeight != null &&
-                    this.ReadOnlyWeight.Equals(input.ReadOnlyWeight))
-                ) && 
-                (
-                    this.ScalingStrategy == input.ScalingStrategy ||
-                    (this.ScalingStrategy != null &&
-                    this.ScalingStrategy.Equals(input.ScalingStrategy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.MonitorCycle != null)
-                    hashCode = hashCode * 59 + this.MonitorCycle.GetHashCode();
-                if (this.SilenceCycle != null)
-                    hashCode = hashCode * 59 + this.SilenceCycle.GetHashCode();
-                if (this.EnlargeThreshold != null)
-                    hashCode = hashCode * 59 + this.EnlargeThreshold.GetHashCode();
-                if (this.MaxFlavor != null)
-                    hashCode = hashCode * 59 + this.MaxFlavor.GetHashCode();
-                if (this.ReduceEnabled != null)
-                    hashCode = hashCode * 59 + this.ReduceEnabled.GetHashCode();
-                if (this.MaxReadOnlyCount != null)
-                    hashCode = hashCode * 59 + this.MaxReadOnlyCount.GetHashCode();
-                if (this.ReadOnlyWeight != null)
-                    hashCode = hashCode * 59 + this.ReadOnlyWeight.GetHashCode();
-                if (this.ScalingStrategy != null)
-                    hashCode = hashCode * 59 + this.ScalingStrategy.GetHashCode();
+                var hashCode = 41;
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.MonitorCycle != null) hashCode = hashCode * 59 + this.MonitorCycle.GetHashCode();
+                if (this.SilenceCycle != null) hashCode = hashCode * 59 + this.SilenceCycle.GetHashCode();
+                if (this.EnlargeThreshold != null) hashCode = hashCode * 59 + this.EnlargeThreshold.GetHashCode();
+                if (this.MaxFlavor != null) hashCode = hashCode * 59 + this.MaxFlavor.GetHashCode();
+                if (this.ReduceEnabled != null) hashCode = hashCode * 59 + this.ReduceEnabled.GetHashCode();
+                if (this.MaxReadOnlyCount != null) hashCode = hashCode * 59 + this.MaxReadOnlyCount.GetHashCode();
+                if (this.ReadOnlyWeight != null) hashCode = hashCode * 59 + this.ReadOnlyWeight.GetHashCode();
+                if (this.ScalingStrategy != null) hashCode = hashCode * 59 + this.ScalingStrategy.GetHashCode();
                 return hashCode;
             }
         }

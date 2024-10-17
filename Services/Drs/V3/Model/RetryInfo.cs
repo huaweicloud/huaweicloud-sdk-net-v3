@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(RetryInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.IsSyncReEdit != input.IsSyncReEdit || (this.IsSyncReEdit != null && !this.IsSyncReEdit.Equals(input.IsSyncReEdit))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.IsSyncReEdit == input.IsSyncReEdit ||
-                    (this.IsSyncReEdit != null &&
-                    this.IsSyncReEdit.Equals(input.IsSyncReEdit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.IsSyncReEdit != null)
-                    hashCode = hashCode * 59 + this.IsSyncReEdit.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.IsSyncReEdit != null) hashCode = hashCode * 59 + this.IsSyncReEdit.GetHashCode();
                 return hashCode;
             }
         }

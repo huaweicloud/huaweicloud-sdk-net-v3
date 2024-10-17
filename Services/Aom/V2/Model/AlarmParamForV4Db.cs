@@ -254,80 +254,23 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(AlarmParamForV4Db input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AlarmCreateTime != input.AlarmCreateTime || (this.AlarmCreateTime != null && !this.AlarmCreateTime.Equals(input.AlarmCreateTime))) return false;
+            if (this.AlarmUpdateTime != input.AlarmUpdateTime || (this.AlarmUpdateTime != null && !this.AlarmUpdateTime.Equals(input.AlarmUpdateTime))) return false;
+            if (this.AlarmRuleName != input.AlarmRuleName || (this.AlarmRuleName != null && !this.AlarmRuleName.Equals(input.AlarmRuleName))) return false;
+            if (this.AlarmRuleId != input.AlarmRuleId || (this.AlarmRuleId != null && !this.AlarmRuleId.Equals(input.AlarmRuleId))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.PromInstanceId != input.PromInstanceId || (this.PromInstanceId != null && !this.PromInstanceId.Equals(input.PromInstanceId))) return false;
+            if (this.AlarmRuleDescription != input.AlarmRuleDescription || (this.AlarmRuleDescription != null && !this.AlarmRuleDescription.Equals(input.AlarmRuleDescription))) return false;
+            if (this.AlarmRuleEnable != input.AlarmRuleEnable || (this.AlarmRuleEnable != null && !this.AlarmRuleEnable.Equals(input.AlarmRuleEnable))) return false;
+            if (this.AlarmRuleStatus != input.AlarmRuleStatus || (this.AlarmRuleStatus != null && !this.AlarmRuleStatus.Equals(input.AlarmRuleStatus))) return false;
+            if (this.AlarmRuleType != input.AlarmRuleType) return false;
+            if (this.MetricAlarmSpec != input.MetricAlarmSpec || (this.MetricAlarmSpec != null && !this.MetricAlarmSpec.Equals(input.MetricAlarmSpec))) return false;
+            if (this.EventAlarmSpec != input.EventAlarmSpec || (this.EventAlarmSpec != null && !this.EventAlarmSpec.Equals(input.EventAlarmSpec))) return false;
+            if (this.AlarmNotifications != input.AlarmNotifications || (this.AlarmNotifications != null && !this.AlarmNotifications.Equals(input.AlarmNotifications))) return false;
+            if (this.UserId != input.UserId || (this.UserId != null && !this.UserId.Equals(input.UserId))) return false;
 
-            return 
-                (
-                    this.AlarmCreateTime == input.AlarmCreateTime ||
-                    (this.AlarmCreateTime != null &&
-                    this.AlarmCreateTime.Equals(input.AlarmCreateTime))
-                ) && 
-                (
-                    this.AlarmUpdateTime == input.AlarmUpdateTime ||
-                    (this.AlarmUpdateTime != null &&
-                    this.AlarmUpdateTime.Equals(input.AlarmUpdateTime))
-                ) && 
-                (
-                    this.AlarmRuleName == input.AlarmRuleName ||
-                    (this.AlarmRuleName != null &&
-                    this.AlarmRuleName.Equals(input.AlarmRuleName))
-                ) && 
-                (
-                    this.AlarmRuleId == input.AlarmRuleId ||
-                    (this.AlarmRuleId != null &&
-                    this.AlarmRuleId.Equals(input.AlarmRuleId))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.PromInstanceId == input.PromInstanceId ||
-                    (this.PromInstanceId != null &&
-                    this.PromInstanceId.Equals(input.PromInstanceId))
-                ) && 
-                (
-                    this.AlarmRuleDescription == input.AlarmRuleDescription ||
-                    (this.AlarmRuleDescription != null &&
-                    this.AlarmRuleDescription.Equals(input.AlarmRuleDescription))
-                ) && 
-                (
-                    this.AlarmRuleEnable == input.AlarmRuleEnable ||
-                    (this.AlarmRuleEnable != null &&
-                    this.AlarmRuleEnable.Equals(input.AlarmRuleEnable))
-                ) && 
-                (
-                    this.AlarmRuleStatus == input.AlarmRuleStatus ||
-                    (this.AlarmRuleStatus != null &&
-                    this.AlarmRuleStatus.Equals(input.AlarmRuleStatus))
-                ) && 
-                (
-                    this.AlarmRuleType == input.AlarmRuleType ||
-                    (this.AlarmRuleType != null &&
-                    this.AlarmRuleType.Equals(input.AlarmRuleType))
-                ) && 
-                (
-                    this.MetricAlarmSpec == input.MetricAlarmSpec ||
-                    (this.MetricAlarmSpec != null &&
-                    this.MetricAlarmSpec.Equals(input.MetricAlarmSpec))
-                ) && 
-                (
-                    this.EventAlarmSpec == input.EventAlarmSpec ||
-                    (this.EventAlarmSpec != null &&
-                    this.EventAlarmSpec.Equals(input.EventAlarmSpec))
-                ) && 
-                (
-                    this.AlarmNotifications == input.AlarmNotifications ||
-                    (this.AlarmNotifications != null &&
-                    this.AlarmNotifications.Equals(input.AlarmNotifications))
-                ) && 
-                (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -337,35 +280,21 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AlarmCreateTime != null)
-                    hashCode = hashCode * 59 + this.AlarmCreateTime.GetHashCode();
-                if (this.AlarmUpdateTime != null)
-                    hashCode = hashCode * 59 + this.AlarmUpdateTime.GetHashCode();
-                if (this.AlarmRuleName != null)
-                    hashCode = hashCode * 59 + this.AlarmRuleName.GetHashCode();
-                if (this.AlarmRuleId != null)
-                    hashCode = hashCode * 59 + this.AlarmRuleId.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.PromInstanceId != null)
-                    hashCode = hashCode * 59 + this.PromInstanceId.GetHashCode();
-                if (this.AlarmRuleDescription != null)
-                    hashCode = hashCode * 59 + this.AlarmRuleDescription.GetHashCode();
-                if (this.AlarmRuleEnable != null)
-                    hashCode = hashCode * 59 + this.AlarmRuleEnable.GetHashCode();
-                if (this.AlarmRuleStatus != null)
-                    hashCode = hashCode * 59 + this.AlarmRuleStatus.GetHashCode();
-                if (this.AlarmRuleType != null)
-                    hashCode = hashCode * 59 + this.AlarmRuleType.GetHashCode();
-                if (this.MetricAlarmSpec != null)
-                    hashCode = hashCode * 59 + this.MetricAlarmSpec.GetHashCode();
-                if (this.EventAlarmSpec != null)
-                    hashCode = hashCode * 59 + this.EventAlarmSpec.GetHashCode();
-                if (this.AlarmNotifications != null)
-                    hashCode = hashCode * 59 + this.AlarmNotifications.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                var hashCode = 41;
+                if (this.AlarmCreateTime != null) hashCode = hashCode * 59 + this.AlarmCreateTime.GetHashCode();
+                if (this.AlarmUpdateTime != null) hashCode = hashCode * 59 + this.AlarmUpdateTime.GetHashCode();
+                if (this.AlarmRuleName != null) hashCode = hashCode * 59 + this.AlarmRuleName.GetHashCode();
+                if (this.AlarmRuleId != null) hashCode = hashCode * 59 + this.AlarmRuleId.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.PromInstanceId != null) hashCode = hashCode * 59 + this.PromInstanceId.GetHashCode();
+                if (this.AlarmRuleDescription != null) hashCode = hashCode * 59 + this.AlarmRuleDescription.GetHashCode();
+                if (this.AlarmRuleEnable != null) hashCode = hashCode * 59 + this.AlarmRuleEnable.GetHashCode();
+                if (this.AlarmRuleStatus != null) hashCode = hashCode * 59 + this.AlarmRuleStatus.GetHashCode();
+                hashCode = hashCode * 59 + this.AlarmRuleType.GetHashCode();
+                if (this.MetricAlarmSpec != null) hashCode = hashCode * 59 + this.MetricAlarmSpec.GetHashCode();
+                if (this.EventAlarmSpec != null) hashCode = hashCode * 59 + this.EventAlarmSpec.GetHashCode();
+                if (this.AlarmNotifications != null) hashCode = hashCode * 59 + this.AlarmNotifications.GetHashCode();
+                if (this.UserId != null) hashCode = hashCode * 59 + this.UserId.GetHashCode();
                 return hashCode;
             }
         }

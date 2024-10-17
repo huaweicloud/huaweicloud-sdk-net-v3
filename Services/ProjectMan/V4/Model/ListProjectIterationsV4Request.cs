@@ -66,25 +66,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ListProjectIterationsV4Request input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.UpdatedTimeInterval != input.UpdatedTimeInterval || (this.UpdatedTimeInterval != null && !this.UpdatedTimeInterval.Equals(input.UpdatedTimeInterval))) return false;
+            if (this.IncludeDeleted != input.IncludeDeleted || (this.IncludeDeleted != null && !this.IncludeDeleted.Equals(input.IncludeDeleted))) return false;
 
-            return 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.UpdatedTimeInterval == input.UpdatedTimeInterval ||
-                    (this.UpdatedTimeInterval != null &&
-                    this.UpdatedTimeInterval.Equals(input.UpdatedTimeInterval))
-                ) && 
-                (
-                    this.IncludeDeleted == input.IncludeDeleted ||
-                    (this.IncludeDeleted != null &&
-                    this.IncludeDeleted.Equals(input.IncludeDeleted))
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +81,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.UpdatedTimeInterval != null)
-                    hashCode = hashCode * 59 + this.UpdatedTimeInterval.GetHashCode();
-                if (this.IncludeDeleted != null)
-                    hashCode = hashCode * 59 + this.IncludeDeleted.GetHashCode();
+                var hashCode = 41;
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.UpdatedTimeInterval != null) hashCode = hashCode * 59 + this.UpdatedTimeInterval.GetHashCode();
+                if (this.IncludeDeleted != null) hashCode = hashCode * 59 + this.IncludeDeleted.GetHashCode();
                 return hashCode;
             }
         }

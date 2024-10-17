@@ -82,35 +82,14 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(DeleteExecutionPlanRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClientRequestId != input.ClientRequestId || (this.ClientRequestId != null && !this.ClientRequestId.Equals(input.ClientRequestId))) return false;
+            if (this.StackName != input.StackName || (this.StackName != null && !this.StackName.Equals(input.StackName))) return false;
+            if (this.ExecutionPlanName != input.ExecutionPlanName || (this.ExecutionPlanName != null && !this.ExecutionPlanName.Equals(input.ExecutionPlanName))) return false;
+            if (this.StackId != input.StackId || (this.StackId != null && !this.StackId.Equals(input.StackId))) return false;
+            if (this.ExecutionPlanId != input.ExecutionPlanId || (this.ExecutionPlanId != null && !this.ExecutionPlanId.Equals(input.ExecutionPlanId))) return false;
 
-            return 
-                (
-                    this.ClientRequestId == input.ClientRequestId ||
-                    (this.ClientRequestId != null &&
-                    this.ClientRequestId.Equals(input.ClientRequestId))
-                ) && 
-                (
-                    this.StackName == input.StackName ||
-                    (this.StackName != null &&
-                    this.StackName.Equals(input.StackName))
-                ) && 
-                (
-                    this.ExecutionPlanName == input.ExecutionPlanName ||
-                    (this.ExecutionPlanName != null &&
-                    this.ExecutionPlanName.Equals(input.ExecutionPlanName))
-                ) && 
-                (
-                    this.StackId == input.StackId ||
-                    (this.StackId != null &&
-                    this.StackId.Equals(input.StackId))
-                ) && 
-                (
-                    this.ExecutionPlanId == input.ExecutionPlanId ||
-                    (this.ExecutionPlanId != null &&
-                    this.ExecutionPlanId.Equals(input.ExecutionPlanId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -120,17 +99,12 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClientRequestId != null)
-                    hashCode = hashCode * 59 + this.ClientRequestId.GetHashCode();
-                if (this.StackName != null)
-                    hashCode = hashCode * 59 + this.StackName.GetHashCode();
-                if (this.ExecutionPlanName != null)
-                    hashCode = hashCode * 59 + this.ExecutionPlanName.GetHashCode();
-                if (this.StackId != null)
-                    hashCode = hashCode * 59 + this.StackId.GetHashCode();
-                if (this.ExecutionPlanId != null)
-                    hashCode = hashCode * 59 + this.ExecutionPlanId.GetHashCode();
+                var hashCode = 41;
+                if (this.ClientRequestId != null) hashCode = hashCode * 59 + this.ClientRequestId.GetHashCode();
+                if (this.StackName != null) hashCode = hashCode * 59 + this.StackName.GetHashCode();
+                if (this.ExecutionPlanName != null) hashCode = hashCode * 59 + this.ExecutionPlanName.GetHashCode();
+                if (this.StackId != null) hashCode = hashCode * 59 + this.StackId.GetHashCode();
+                if (this.ExecutionPlanId != null) hashCode = hashCode * 59 + this.ExecutionPlanId.GetHashCode();
                 return hashCode;
             }
         }

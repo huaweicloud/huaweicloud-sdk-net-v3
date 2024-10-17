@@ -147,85 +147,24 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ClusterExtendParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClusterAZ != input.ClusterAZ || (this.ClusterAZ != null && !this.ClusterAZ.Equals(input.ClusterAZ))) return false;
+            if (this.DssMasterVolumes != input.DssMasterVolumes || (this.DssMasterVolumes != null && !this.DssMasterVolumes.Equals(input.DssMasterVolumes))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.KubeProxyMode != input.KubeProxyMode || (this.KubeProxyMode != null && !this.KubeProxyMode.Equals(input.KubeProxyMode))) return false;
+            if (this.ClusterExternalIP != input.ClusterExternalIP || (this.ClusterExternalIP != null && !this.ClusterExternalIP.Equals(input.ClusterExternalIP))) return false;
+            if (this.AlphaCceFixPoolMask != input.AlphaCceFixPoolMask || (this.AlphaCceFixPoolMask != null && !this.AlphaCceFixPoolMask.Equals(input.AlphaCceFixPoolMask))) return false;
+            if (this.DecMasterFlavor != input.DecMasterFlavor || (this.DecMasterFlavor != null && !this.DecMasterFlavor.Equals(input.DecMasterFlavor))) return false;
+            if (this.DockerUmaskMode != input.DockerUmaskMode || (this.DockerUmaskMode != null && !this.DockerUmaskMode.Equals(input.DockerUmaskMode))) return false;
+            if (this.KubernetesIoCpuManagerPolicy != input.KubernetesIoCpuManagerPolicy || (this.KubernetesIoCpuManagerPolicy != null && !this.KubernetesIoCpuManagerPolicy.Equals(input.KubernetesIoCpuManagerPolicy))) return false;
+            if (this.OrderID != input.OrderID || (this.OrderID != null && !this.OrderID.Equals(input.OrderID))) return false;
+            if (this.PeriodType != input.PeriodType || (this.PeriodType != null && !this.PeriodType.Equals(input.PeriodType))) return false;
+            if (this.PeriodNum != input.PeriodNum || (this.PeriodNum != null && !this.PeriodNum.Equals(input.PeriodNum))) return false;
+            if (this.IsAutoRenew != input.IsAutoRenew || (this.IsAutoRenew != null && !this.IsAutoRenew.Equals(input.IsAutoRenew))) return false;
+            if (this.IsAutoPay != input.IsAutoPay || (this.IsAutoPay != null && !this.IsAutoPay.Equals(input.IsAutoPay))) return false;
+            if (this.Upgradefrom != input.Upgradefrom || (this.Upgradefrom != null && !this.Upgradefrom.Equals(input.Upgradefrom))) return false;
 
-            return 
-                (
-                    this.ClusterAZ == input.ClusterAZ ||
-                    (this.ClusterAZ != null &&
-                    this.ClusterAZ.Equals(input.ClusterAZ))
-                ) && 
-                (
-                    this.DssMasterVolumes == input.DssMasterVolumes ||
-                    (this.DssMasterVolumes != null &&
-                    this.DssMasterVolumes.Equals(input.DssMasterVolumes))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.KubeProxyMode == input.KubeProxyMode ||
-                    (this.KubeProxyMode != null &&
-                    this.KubeProxyMode.Equals(input.KubeProxyMode))
-                ) && 
-                (
-                    this.ClusterExternalIP == input.ClusterExternalIP ||
-                    (this.ClusterExternalIP != null &&
-                    this.ClusterExternalIP.Equals(input.ClusterExternalIP))
-                ) && 
-                (
-                    this.AlphaCceFixPoolMask == input.AlphaCceFixPoolMask ||
-                    (this.AlphaCceFixPoolMask != null &&
-                    this.AlphaCceFixPoolMask.Equals(input.AlphaCceFixPoolMask))
-                ) && 
-                (
-                    this.DecMasterFlavor == input.DecMasterFlavor ||
-                    (this.DecMasterFlavor != null &&
-                    this.DecMasterFlavor.Equals(input.DecMasterFlavor))
-                ) && 
-                (
-                    this.DockerUmaskMode == input.DockerUmaskMode ||
-                    (this.DockerUmaskMode != null &&
-                    this.DockerUmaskMode.Equals(input.DockerUmaskMode))
-                ) && 
-                (
-                    this.KubernetesIoCpuManagerPolicy == input.KubernetesIoCpuManagerPolicy ||
-                    (this.KubernetesIoCpuManagerPolicy != null &&
-                    this.KubernetesIoCpuManagerPolicy.Equals(input.KubernetesIoCpuManagerPolicy))
-                ) && 
-                (
-                    this.OrderID == input.OrderID ||
-                    (this.OrderID != null &&
-                    this.OrderID.Equals(input.OrderID))
-                ) && 
-                (
-                    this.PeriodType == input.PeriodType ||
-                    (this.PeriodType != null &&
-                    this.PeriodType.Equals(input.PeriodType))
-                ) && 
-                (
-                    this.PeriodNum == input.PeriodNum ||
-                    (this.PeriodNum != null &&
-                    this.PeriodNum.Equals(input.PeriodNum))
-                ) && 
-                (
-                    this.IsAutoRenew == input.IsAutoRenew ||
-                    (this.IsAutoRenew != null &&
-                    this.IsAutoRenew.Equals(input.IsAutoRenew))
-                ) && 
-                (
-                    this.IsAutoPay == input.IsAutoPay ||
-                    (this.IsAutoPay != null &&
-                    this.IsAutoPay.Equals(input.IsAutoPay))
-                ) && 
-                (
-                    this.Upgradefrom == input.Upgradefrom ||
-                    (this.Upgradefrom != null &&
-                    this.Upgradefrom.Equals(input.Upgradefrom))
-                );
+            return true;
         }
 
         /// <summary>
@@ -235,37 +174,22 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClusterAZ != null)
-                    hashCode = hashCode * 59 + this.ClusterAZ.GetHashCode();
-                if (this.DssMasterVolumes != null)
-                    hashCode = hashCode * 59 + this.DssMasterVolumes.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.KubeProxyMode != null)
-                    hashCode = hashCode * 59 + this.KubeProxyMode.GetHashCode();
-                if (this.ClusterExternalIP != null)
-                    hashCode = hashCode * 59 + this.ClusterExternalIP.GetHashCode();
-                if (this.AlphaCceFixPoolMask != null)
-                    hashCode = hashCode * 59 + this.AlphaCceFixPoolMask.GetHashCode();
-                if (this.DecMasterFlavor != null)
-                    hashCode = hashCode * 59 + this.DecMasterFlavor.GetHashCode();
-                if (this.DockerUmaskMode != null)
-                    hashCode = hashCode * 59 + this.DockerUmaskMode.GetHashCode();
-                if (this.KubernetesIoCpuManagerPolicy != null)
-                    hashCode = hashCode * 59 + this.KubernetesIoCpuManagerPolicy.GetHashCode();
-                if (this.OrderID != null)
-                    hashCode = hashCode * 59 + this.OrderID.GetHashCode();
-                if (this.PeriodType != null)
-                    hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
-                if (this.PeriodNum != null)
-                    hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
-                if (this.IsAutoRenew != null)
-                    hashCode = hashCode * 59 + this.IsAutoRenew.GetHashCode();
-                if (this.IsAutoPay != null)
-                    hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
-                if (this.Upgradefrom != null)
-                    hashCode = hashCode * 59 + this.Upgradefrom.GetHashCode();
+                var hashCode = 41;
+                if (this.ClusterAZ != null) hashCode = hashCode * 59 + this.ClusterAZ.GetHashCode();
+                if (this.DssMasterVolumes != null) hashCode = hashCode * 59 + this.DssMasterVolumes.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.KubeProxyMode != null) hashCode = hashCode * 59 + this.KubeProxyMode.GetHashCode();
+                if (this.ClusterExternalIP != null) hashCode = hashCode * 59 + this.ClusterExternalIP.GetHashCode();
+                if (this.AlphaCceFixPoolMask != null) hashCode = hashCode * 59 + this.AlphaCceFixPoolMask.GetHashCode();
+                if (this.DecMasterFlavor != null) hashCode = hashCode * 59 + this.DecMasterFlavor.GetHashCode();
+                if (this.DockerUmaskMode != null) hashCode = hashCode * 59 + this.DockerUmaskMode.GetHashCode();
+                if (this.KubernetesIoCpuManagerPolicy != null) hashCode = hashCode * 59 + this.KubernetesIoCpuManagerPolicy.GetHashCode();
+                if (this.OrderID != null) hashCode = hashCode * 59 + this.OrderID.GetHashCode();
+                if (this.PeriodType != null) hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
+                if (this.PeriodNum != null) hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
+                if (this.IsAutoRenew != null) hashCode = hashCode * 59 + this.IsAutoRenew.GetHashCode();
+                if (this.IsAutoPay != null) hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
+                if (this.Upgradefrom != null) hashCode = hashCode * 59 + this.Upgradefrom.GetHashCode();
                 return hashCode;
             }
         }

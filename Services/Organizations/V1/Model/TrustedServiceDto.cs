@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(TrustedServiceDto input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ServicePrincipal != input.ServicePrincipal || (this.ServicePrincipal != null && !this.ServicePrincipal.Equals(input.ServicePrincipal))) return false;
+            if (this.EnabledAt != input.EnabledAt || (this.EnabledAt != null && !this.EnabledAt.Equals(input.EnabledAt))) return false;
 
-            return 
-                (
-                    this.ServicePrincipal == input.ServicePrincipal ||
-                    (this.ServicePrincipal != null &&
-                    this.ServicePrincipal.Equals(input.ServicePrincipal))
-                ) && 
-                (
-                    this.EnabledAt == input.EnabledAt ||
-                    (this.EnabledAt != null &&
-                    this.EnabledAt.Equals(input.EnabledAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ServicePrincipal != null)
-                    hashCode = hashCode * 59 + this.ServicePrincipal.GetHashCode();
-                if (this.EnabledAt != null)
-                    hashCode = hashCode * 59 + this.EnabledAt.GetHashCode();
+                var hashCode = 41;
+                if (this.ServicePrincipal != null) hashCode = hashCode * 59 + this.ServicePrincipal.GetHashCode();
+                if (this.EnabledAt != null) hashCode = hashCode * 59 + this.EnabledAt.GetHashCode();
                 return hashCode;
             }
         }

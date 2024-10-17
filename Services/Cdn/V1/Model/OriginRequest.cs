@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(OriginRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Origin != input.Origin || (this.Origin != null && !this.Origin.Equals(input.Origin))) return false;
 
-            return 
-                (
-                    this.Origin == input.Origin ||
-                    (this.Origin != null &&
-                    this.Origin.Equals(input.Origin))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Origin != null)
-                    hashCode = hashCode * 59 + this.Origin.GetHashCode();
+                var hashCode = 41;
+                if (this.Origin != null) hashCode = hashCode * 59 + this.Origin.GetHashCode();
                 return hashCode;
             }
         }

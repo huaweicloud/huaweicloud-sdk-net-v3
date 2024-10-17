@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(DeleteAgencyRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AgencyId != input.AgencyId || (this.AgencyId != null && !this.AgencyId.Equals(input.AgencyId))) return false;
 
-            return 
-                (
-                    this.AgencyId == input.AgencyId ||
-                    (this.AgencyId != null &&
-                    this.AgencyId.Equals(input.AgencyId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AgencyId != null)
-                    hashCode = hashCode * 59 + this.AgencyId.GetHashCode();
+                var hashCode = 41;
+                if (this.AgencyId != null) hashCode = hashCode * 59 + this.AgencyId.GetHashCode();
                 return hashCode;
             }
         }

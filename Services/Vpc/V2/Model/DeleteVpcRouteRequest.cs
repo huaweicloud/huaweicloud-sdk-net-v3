@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(DeleteVpcRouteRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RouteId != input.RouteId || (this.RouteId != null && !this.RouteId.Equals(input.RouteId))) return false;
 
-            return 
-                (
-                    this.RouteId == input.RouteId ||
-                    (this.RouteId != null &&
-                    this.RouteId.Equals(input.RouteId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RouteId != null)
-                    hashCode = hashCode * 59 + this.RouteId.GetHashCode();
+                var hashCode = 41;
+                if (this.RouteId != null) hashCode = hashCode * 59 + this.RouteId.GetHashCode();
                 return hashCode;
             }
         }

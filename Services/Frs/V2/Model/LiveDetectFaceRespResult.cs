@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public bool Equals(LiveDetectFaceRespResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Alive != input.Alive || (this.Alive != null && !this.Alive.Equals(input.Alive))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
+            if (this.Picture != input.Picture || (this.Picture != null && !this.Picture.Equals(input.Picture))) return false;
 
-            return 
-                (
-                    this.Alive == input.Alive ||
-                    (this.Alive != null &&
-                    this.Alive.Equals(input.Alive))
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                ) && 
-                (
-                    this.Picture == input.Picture ||
-                    (this.Picture != null &&
-                    this.Picture.Equals(input.Picture))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Alive != null)
-                    hashCode = hashCode * 59 + this.Alive.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
-                if (this.Picture != null)
-                    hashCode = hashCode * 59 + this.Picture.GetHashCode();
+                var hashCode = 41;
+                if (this.Alive != null) hashCode = hashCode * 59 + this.Alive.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                if (this.Picture != null) hashCode = hashCode * 59 + this.Picture.GetHashCode();
                 return hashCode;
             }
         }

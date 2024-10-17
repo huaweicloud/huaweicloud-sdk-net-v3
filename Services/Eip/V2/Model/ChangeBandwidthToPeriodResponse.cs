@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// </summary>
         public bool Equals(ChangeBandwidthToPeriodResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BandwidthIds != input.BandwidthIds || (this.BandwidthIds != null && input.BandwidthIds != null && !this.BandwidthIds.SequenceEqual(input.BandwidthIds))) return false;
+            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
 
-            return 
-                (
-                    this.BandwidthIds == input.BandwidthIds ||
-                    this.BandwidthIds != null &&
-                    input.BandwidthIds != null &&
-                    this.BandwidthIds.SequenceEqual(input.BandwidthIds)
-                ) && 
-                (
-                    this.OrderId == input.OrderId ||
-                    (this.OrderId != null &&
-                    this.OrderId.Equals(input.OrderId))
-                ) && 
-                (
-                    this.RequestId == input.RequestId ||
-                    (this.RequestId != null &&
-                    this.RequestId.Equals(input.RequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BandwidthIds != null)
-                    hashCode = hashCode * 59 + this.BandwidthIds.GetHashCode();
-                if (this.OrderId != null)
-                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
-                if (this.RequestId != null)
-                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.BandwidthIds != null) hashCode = hashCode * 59 + this.BandwidthIds.GetHashCode();
+                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 return hashCode;
             }
         }

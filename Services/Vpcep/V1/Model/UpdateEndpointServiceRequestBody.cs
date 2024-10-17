@@ -223,46 +223,16 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         public bool Equals(UpdateEndpointServiceRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ApprovalEnabled != input.ApprovalEnabled || (this.ApprovalEnabled != null && !this.ApprovalEnabled.Equals(input.ApprovalEnabled))) return false;
+            if (this.ServiceName != input.ServiceName || (this.ServiceName != null && !this.ServiceName.Equals(input.ServiceName))) return false;
+            if (this.Ports != input.Ports || (this.Ports != null && input.Ports != null && !this.Ports.SequenceEqual(input.Ports))) return false;
+            if (this.PortId != input.PortId || (this.PortId != null && !this.PortId.Equals(input.PortId))) return false;
+            if (this.TcpProxy != input.TcpProxy) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
 
-            return 
-                (
-                    this.ApprovalEnabled == input.ApprovalEnabled ||
-                    (this.ApprovalEnabled != null &&
-                    this.ApprovalEnabled.Equals(input.ApprovalEnabled))
-                ) && 
-                (
-                    this.ServiceName == input.ServiceName ||
-                    (this.ServiceName != null &&
-                    this.ServiceName.Equals(input.ServiceName))
-                ) && 
-                (
-                    this.Ports == input.Ports ||
-                    this.Ports != null &&
-                    input.Ports != null &&
-                    this.Ports.SequenceEqual(input.Ports)
-                ) && 
-                (
-                    this.PortId == input.PortId ||
-                    (this.PortId != null &&
-                    this.PortId.Equals(input.PortId))
-                ) && 
-                (
-                    this.TcpProxy == input.TcpProxy ||
-                    (this.TcpProxy != null &&
-                    this.TcpProxy.Equals(input.TcpProxy))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                );
+            return true;
         }
 
         /// <summary>
@@ -272,21 +242,14 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ApprovalEnabled != null)
-                    hashCode = hashCode * 59 + this.ApprovalEnabled.GetHashCode();
-                if (this.ServiceName != null)
-                    hashCode = hashCode * 59 + this.ServiceName.GetHashCode();
-                if (this.Ports != null)
-                    hashCode = hashCode * 59 + this.Ports.GetHashCode();
-                if (this.PortId != null)
-                    hashCode = hashCode * 59 + this.PortId.GetHashCode();
-                if (this.TcpProxy != null)
-                    hashCode = hashCode * 59 + this.TcpProxy.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                var hashCode = 41;
+                if (this.ApprovalEnabled != null) hashCode = hashCode * 59 + this.ApprovalEnabled.GetHashCode();
+                if (this.ServiceName != null) hashCode = hashCode * 59 + this.ServiceName.GetHashCode();
+                if (this.Ports != null) hashCode = hashCode * 59 + this.Ports.GetHashCode();
+                if (this.PortId != null) hashCode = hashCode * 59 + this.PortId.GetHashCode();
+                hashCode = hashCode * 59 + this.TcpProxy.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(NodePriority input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NodeSelector != input.NodeSelector || (this.NodeSelector != null && !this.NodeSelector.Equals(input.NodeSelector))) return false;
+            if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
 
-            return 
-                (
-                    this.NodeSelector == input.NodeSelector ||
-                    (this.NodeSelector != null &&
-                    this.NodeSelector.Equals(input.NodeSelector))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    (this.Priority != null &&
-                    this.Priority.Equals(input.Priority))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NodeSelector != null)
-                    hashCode = hashCode * 59 + this.NodeSelector.GetHashCode();
-                if (this.Priority != null)
-                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                var hashCode = 41;
+                if (this.NodeSelector != null) hashCode = hashCode * 59 + this.NodeSelector.GetHashCode();
+                if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 return hashCode;
             }
         }

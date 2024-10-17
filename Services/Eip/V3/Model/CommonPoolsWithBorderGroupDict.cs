@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(CommonPoolsWithBorderGroupDict input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PublicipPools != input.PublicipPools || (this.PublicipPools != null && input.PublicipPools != null && !this.PublicipPools.SequenceEqual(input.PublicipPools))) return false;
+            if (this.PublicBorderGroup != input.PublicBorderGroup || (this.PublicBorderGroup != null && !this.PublicBorderGroup.Equals(input.PublicBorderGroup))) return false;
 
-            return 
-                (
-                    this.PublicipPools == input.PublicipPools ||
-                    this.PublicipPools != null &&
-                    input.PublicipPools != null &&
-                    this.PublicipPools.SequenceEqual(input.PublicipPools)
-                ) && 
-                (
-                    this.PublicBorderGroup == input.PublicBorderGroup ||
-                    (this.PublicBorderGroup != null &&
-                    this.PublicBorderGroup.Equals(input.PublicBorderGroup))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PublicipPools != null)
-                    hashCode = hashCode * 59 + this.PublicipPools.GetHashCode();
-                if (this.PublicBorderGroup != null)
-                    hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                var hashCode = 41;
+                if (this.PublicipPools != null) hashCode = hashCode * 59 + this.PublicipPools.GetHashCode();
+                if (this.PublicBorderGroup != null) hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
                 return hashCode;
             }
         }

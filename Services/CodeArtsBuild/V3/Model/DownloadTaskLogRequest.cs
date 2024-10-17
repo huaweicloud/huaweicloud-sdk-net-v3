@@ -66,25 +66,12 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public bool Equals(DownloadTaskLogRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RecordId != input.RecordId || (this.RecordId != null && !this.RecordId.Equals(input.RecordId))) return false;
+            if (this.TaskName != input.TaskName || (this.TaskName != null && !this.TaskName.Equals(input.TaskName))) return false;
+            if (this.LogLevel != input.LogLevel || (this.LogLevel != null && !this.LogLevel.Equals(input.LogLevel))) return false;
 
-            return 
-                (
-                    this.RecordId == input.RecordId ||
-                    (this.RecordId != null &&
-                    this.RecordId.Equals(input.RecordId))
-                ) && 
-                (
-                    this.TaskName == input.TaskName ||
-                    (this.TaskName != null &&
-                    this.TaskName.Equals(input.TaskName))
-                ) && 
-                (
-                    this.LogLevel == input.LogLevel ||
-                    (this.LogLevel != null &&
-                    this.LogLevel.Equals(input.LogLevel))
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +81,10 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RecordId != null)
-                    hashCode = hashCode * 59 + this.RecordId.GetHashCode();
-                if (this.TaskName != null)
-                    hashCode = hashCode * 59 + this.TaskName.GetHashCode();
-                if (this.LogLevel != null)
-                    hashCode = hashCode * 59 + this.LogLevel.GetHashCode();
+                var hashCode = 41;
+                if (this.RecordId != null) hashCode = hashCode * 59 + this.RecordId.GetHashCode();
+                if (this.TaskName != null) hashCode = hashCode * 59 + this.TaskName.GetHashCode();
+                if (this.LogLevel != null) hashCode = hashCode * 59 + this.LogLevel.GetHashCode();
                 return hashCode;
             }
         }

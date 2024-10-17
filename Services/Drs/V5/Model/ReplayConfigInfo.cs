@@ -331,45 +331,16 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ReplayConfigInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DbInstanceId != input.DbInstanceId || (this.DbInstanceId != null && !this.DbInstanceId.Equals(input.DbInstanceId))) return false;
+            if (this.CloudType != input.CloudType) return false;
+            if (this.Ak != input.Ak || (this.Ak != null && !this.Ak.Equals(input.Ak))) return false;
+            if (this.Sk != input.Sk || (this.Sk != null && !this.Sk.Equals(input.Sk))) return false;
+            if (this.DbSource != input.DbSource) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
+            if (this.TrafficSource != input.TrafficSource || (this.TrafficSource != null && !this.TrafficSource.Equals(input.TrafficSource))) return false;
 
-            return 
-                (
-                    this.DbInstanceId == input.DbInstanceId ||
-                    (this.DbInstanceId != null &&
-                    this.DbInstanceId.Equals(input.DbInstanceId))
-                ) && 
-                (
-                    this.CloudType == input.CloudType ||
-                    (this.CloudType != null &&
-                    this.CloudType.Equals(input.CloudType))
-                ) && 
-                (
-                    this.Ak == input.Ak ||
-                    (this.Ak != null &&
-                    this.Ak.Equals(input.Ak))
-                ) && 
-                (
-                    this.Sk == input.Sk ||
-                    (this.Sk != null &&
-                    this.Sk.Equals(input.Sk))
-                ) && 
-                (
-                    this.DbSource == input.DbSource ||
-                    (this.DbSource != null &&
-                    this.DbSource.Equals(input.DbSource))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.TrafficSource == input.TrafficSource ||
-                    (this.TrafficSource != null &&
-                    this.TrafficSource.Equals(input.TrafficSource))
-                );
+            return true;
         }
 
         /// <summary>
@@ -379,21 +350,14 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DbInstanceId != null)
-                    hashCode = hashCode * 59 + this.DbInstanceId.GetHashCode();
-                if (this.CloudType != null)
-                    hashCode = hashCode * 59 + this.CloudType.GetHashCode();
-                if (this.Ak != null)
-                    hashCode = hashCode * 59 + this.Ak.GetHashCode();
-                if (this.Sk != null)
-                    hashCode = hashCode * 59 + this.Sk.GetHashCode();
-                if (this.DbSource != null)
-                    hashCode = hashCode * 59 + this.DbSource.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.TrafficSource != null)
-                    hashCode = hashCode * 59 + this.TrafficSource.GetHashCode();
+                var hashCode = 41;
+                if (this.DbInstanceId != null) hashCode = hashCode * 59 + this.DbInstanceId.GetHashCode();
+                hashCode = hashCode * 59 + this.CloudType.GetHashCode();
+                if (this.Ak != null) hashCode = hashCode * 59 + this.Ak.GetHashCode();
+                if (this.Sk != null) hashCode = hashCode * 59 + this.Sk.GetHashCode();
+                hashCode = hashCode * 59 + this.DbSource.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
+                if (this.TrafficSource != null) hashCode = hashCode * 59 + this.TrafficSource.GetHashCode();
                 return hashCode;
             }
         }

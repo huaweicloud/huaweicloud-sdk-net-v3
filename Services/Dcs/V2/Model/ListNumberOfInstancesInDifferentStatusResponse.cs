@@ -147,85 +147,24 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ListNumberOfInstancesInDifferentStatusResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Redis != input.Redis || (this.Redis != null && !this.Redis.Equals(input.Redis))) return false;
+            if (this.Memcached != input.Memcached || (this.Memcached != null && !this.Memcached.Equals(input.Memcached))) return false;
+            if (this.PayingCount != input.PayingCount || (this.PayingCount != null && !this.PayingCount.Equals(input.PayingCount))) return false;
+            if (this.FreezingCount != input.FreezingCount || (this.FreezingCount != null && !this.FreezingCount.Equals(input.FreezingCount))) return false;
+            if (this.MigratingCount != input.MigratingCount || (this.MigratingCount != null && !this.MigratingCount.Equals(input.MigratingCount))) return false;
+            if (this.FlushingCount != input.FlushingCount || (this.FlushingCount != null && !this.FlushingCount.Equals(input.FlushingCount))) return false;
+            if (this.UpgradingCount != input.UpgradingCount || (this.UpgradingCount != null && !this.UpgradingCount.Equals(input.UpgradingCount))) return false;
+            if (this.RestoringCount != input.RestoringCount || (this.RestoringCount != null && !this.RestoringCount.Equals(input.RestoringCount))) return false;
+            if (this.ExtendingCount != input.ExtendingCount || (this.ExtendingCount != null && !this.ExtendingCount.Equals(input.ExtendingCount))) return false;
+            if (this.CreatingCount != input.CreatingCount || (this.CreatingCount != null && !this.CreatingCount.Equals(input.CreatingCount))) return false;
+            if (this.RunningCount != input.RunningCount || (this.RunningCount != null && !this.RunningCount.Equals(input.RunningCount))) return false;
+            if (this.ErrorCount != input.ErrorCount || (this.ErrorCount != null && !this.ErrorCount.Equals(input.ErrorCount))) return false;
+            if (this.FrozenCount != input.FrozenCount || (this.FrozenCount != null && !this.FrozenCount.Equals(input.FrozenCount))) return false;
+            if (this.CreatefailedCount != input.CreatefailedCount || (this.CreatefailedCount != null && !this.CreatefailedCount.Equals(input.CreatefailedCount))) return false;
+            if (this.RestartingCount != input.RestartingCount || (this.RestartingCount != null && !this.RestartingCount.Equals(input.RestartingCount))) return false;
 
-            return 
-                (
-                    this.Redis == input.Redis ||
-                    (this.Redis != null &&
-                    this.Redis.Equals(input.Redis))
-                ) && 
-                (
-                    this.Memcached == input.Memcached ||
-                    (this.Memcached != null &&
-                    this.Memcached.Equals(input.Memcached))
-                ) && 
-                (
-                    this.PayingCount == input.PayingCount ||
-                    (this.PayingCount != null &&
-                    this.PayingCount.Equals(input.PayingCount))
-                ) && 
-                (
-                    this.FreezingCount == input.FreezingCount ||
-                    (this.FreezingCount != null &&
-                    this.FreezingCount.Equals(input.FreezingCount))
-                ) && 
-                (
-                    this.MigratingCount == input.MigratingCount ||
-                    (this.MigratingCount != null &&
-                    this.MigratingCount.Equals(input.MigratingCount))
-                ) && 
-                (
-                    this.FlushingCount == input.FlushingCount ||
-                    (this.FlushingCount != null &&
-                    this.FlushingCount.Equals(input.FlushingCount))
-                ) && 
-                (
-                    this.UpgradingCount == input.UpgradingCount ||
-                    (this.UpgradingCount != null &&
-                    this.UpgradingCount.Equals(input.UpgradingCount))
-                ) && 
-                (
-                    this.RestoringCount == input.RestoringCount ||
-                    (this.RestoringCount != null &&
-                    this.RestoringCount.Equals(input.RestoringCount))
-                ) && 
-                (
-                    this.ExtendingCount == input.ExtendingCount ||
-                    (this.ExtendingCount != null &&
-                    this.ExtendingCount.Equals(input.ExtendingCount))
-                ) && 
-                (
-                    this.CreatingCount == input.CreatingCount ||
-                    (this.CreatingCount != null &&
-                    this.CreatingCount.Equals(input.CreatingCount))
-                ) && 
-                (
-                    this.RunningCount == input.RunningCount ||
-                    (this.RunningCount != null &&
-                    this.RunningCount.Equals(input.RunningCount))
-                ) && 
-                (
-                    this.ErrorCount == input.ErrorCount ||
-                    (this.ErrorCount != null &&
-                    this.ErrorCount.Equals(input.ErrorCount))
-                ) && 
-                (
-                    this.FrozenCount == input.FrozenCount ||
-                    (this.FrozenCount != null &&
-                    this.FrozenCount.Equals(input.FrozenCount))
-                ) && 
-                (
-                    this.CreatefailedCount == input.CreatefailedCount ||
-                    (this.CreatefailedCount != null &&
-                    this.CreatefailedCount.Equals(input.CreatefailedCount))
-                ) && 
-                (
-                    this.RestartingCount == input.RestartingCount ||
-                    (this.RestartingCount != null &&
-                    this.RestartingCount.Equals(input.RestartingCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -235,37 +174,22 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Redis != null)
-                    hashCode = hashCode * 59 + this.Redis.GetHashCode();
-                if (this.Memcached != null)
-                    hashCode = hashCode * 59 + this.Memcached.GetHashCode();
-                if (this.PayingCount != null)
-                    hashCode = hashCode * 59 + this.PayingCount.GetHashCode();
-                if (this.FreezingCount != null)
-                    hashCode = hashCode * 59 + this.FreezingCount.GetHashCode();
-                if (this.MigratingCount != null)
-                    hashCode = hashCode * 59 + this.MigratingCount.GetHashCode();
-                if (this.FlushingCount != null)
-                    hashCode = hashCode * 59 + this.FlushingCount.GetHashCode();
-                if (this.UpgradingCount != null)
-                    hashCode = hashCode * 59 + this.UpgradingCount.GetHashCode();
-                if (this.RestoringCount != null)
-                    hashCode = hashCode * 59 + this.RestoringCount.GetHashCode();
-                if (this.ExtendingCount != null)
-                    hashCode = hashCode * 59 + this.ExtendingCount.GetHashCode();
-                if (this.CreatingCount != null)
-                    hashCode = hashCode * 59 + this.CreatingCount.GetHashCode();
-                if (this.RunningCount != null)
-                    hashCode = hashCode * 59 + this.RunningCount.GetHashCode();
-                if (this.ErrorCount != null)
-                    hashCode = hashCode * 59 + this.ErrorCount.GetHashCode();
-                if (this.FrozenCount != null)
-                    hashCode = hashCode * 59 + this.FrozenCount.GetHashCode();
-                if (this.CreatefailedCount != null)
-                    hashCode = hashCode * 59 + this.CreatefailedCount.GetHashCode();
-                if (this.RestartingCount != null)
-                    hashCode = hashCode * 59 + this.RestartingCount.GetHashCode();
+                var hashCode = 41;
+                if (this.Redis != null) hashCode = hashCode * 59 + this.Redis.GetHashCode();
+                if (this.Memcached != null) hashCode = hashCode * 59 + this.Memcached.GetHashCode();
+                if (this.PayingCount != null) hashCode = hashCode * 59 + this.PayingCount.GetHashCode();
+                if (this.FreezingCount != null) hashCode = hashCode * 59 + this.FreezingCount.GetHashCode();
+                if (this.MigratingCount != null) hashCode = hashCode * 59 + this.MigratingCount.GetHashCode();
+                if (this.FlushingCount != null) hashCode = hashCode * 59 + this.FlushingCount.GetHashCode();
+                if (this.UpgradingCount != null) hashCode = hashCode * 59 + this.UpgradingCount.GetHashCode();
+                if (this.RestoringCount != null) hashCode = hashCode * 59 + this.RestoringCount.GetHashCode();
+                if (this.ExtendingCount != null) hashCode = hashCode * 59 + this.ExtendingCount.GetHashCode();
+                if (this.CreatingCount != null) hashCode = hashCode * 59 + this.CreatingCount.GetHashCode();
+                if (this.RunningCount != null) hashCode = hashCode * 59 + this.RunningCount.GetHashCode();
+                if (this.ErrorCount != null) hashCode = hashCode * 59 + this.ErrorCount.GetHashCode();
+                if (this.FrozenCount != null) hashCode = hashCode * 59 + this.FrozenCount.GetHashCode();
+                if (this.CreatefailedCount != null) hashCode = hashCode * 59 + this.CreatefailedCount.GetHashCode();
+                if (this.RestartingCount != null) hashCode = hashCode * 59 + this.RestartingCount.GetHashCode();
                 return hashCode;
             }
         }

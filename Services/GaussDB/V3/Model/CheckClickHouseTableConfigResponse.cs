@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(CheckClickHouseTableConfigResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceDatabaseName != input.SourceDatabaseName || (this.SourceDatabaseName != null && !this.SourceDatabaseName.Equals(input.SourceDatabaseName))) return false;
+            if (this.TableConfigCheckResults != input.TableConfigCheckResults || (this.TableConfigCheckResults != null && input.TableConfigCheckResults != null && !this.TableConfigCheckResults.SequenceEqual(input.TableConfigCheckResults))) return false;
 
-            return 
-                (
-                    this.SourceDatabaseName == input.SourceDatabaseName ||
-                    (this.SourceDatabaseName != null &&
-                    this.SourceDatabaseName.Equals(input.SourceDatabaseName))
-                ) && 
-                (
-                    this.TableConfigCheckResults == input.TableConfigCheckResults ||
-                    this.TableConfigCheckResults != null &&
-                    input.TableConfigCheckResults != null &&
-                    this.TableConfigCheckResults.SequenceEqual(input.TableConfigCheckResults)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceDatabaseName != null)
-                    hashCode = hashCode * 59 + this.SourceDatabaseName.GetHashCode();
-                if (this.TableConfigCheckResults != null)
-                    hashCode = hashCode * 59 + this.TableConfigCheckResults.GetHashCode();
+                var hashCode = 41;
+                if (this.SourceDatabaseName != null) hashCode = hashCode * 59 + this.SourceDatabaseName.GetHashCode();
+                if (this.TableConfigCheckResults != null) hashCode = hashCode * 59 + this.TableConfigCheckResults.GetHashCode();
                 return hashCode;
             }
         }

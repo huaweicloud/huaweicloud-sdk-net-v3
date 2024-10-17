@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(CreateScalingConfigOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ScalingConfigurationName != input.ScalingConfigurationName || (this.ScalingConfigurationName != null && !this.ScalingConfigurationName.Equals(input.ScalingConfigurationName))) return false;
+            if (this.InstanceConfig != input.InstanceConfig || (this.InstanceConfig != null && !this.InstanceConfig.Equals(input.InstanceConfig))) return false;
+            if (this.SourceScalingConfigurationId != input.SourceScalingConfigurationId || (this.SourceScalingConfigurationId != null && !this.SourceScalingConfigurationId.Equals(input.SourceScalingConfigurationId))) return false;
 
-            return 
-                (
-                    this.ScalingConfigurationName == input.ScalingConfigurationName ||
-                    (this.ScalingConfigurationName != null &&
-                    this.ScalingConfigurationName.Equals(input.ScalingConfigurationName))
-                ) && 
-                (
-                    this.InstanceConfig == input.InstanceConfig ||
-                    (this.InstanceConfig != null &&
-                    this.InstanceConfig.Equals(input.InstanceConfig))
-                ) && 
-                (
-                    this.SourceScalingConfigurationId == input.SourceScalingConfigurationId ||
-                    (this.SourceScalingConfigurationId != null &&
-                    this.SourceScalingConfigurationId.Equals(input.SourceScalingConfigurationId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ScalingConfigurationName != null)
-                    hashCode = hashCode * 59 + this.ScalingConfigurationName.GetHashCode();
-                if (this.InstanceConfig != null)
-                    hashCode = hashCode * 59 + this.InstanceConfig.GetHashCode();
-                if (this.SourceScalingConfigurationId != null)
-                    hashCode = hashCode * 59 + this.SourceScalingConfigurationId.GetHashCode();
+                var hashCode = 41;
+                if (this.ScalingConfigurationName != null) hashCode = hashCode * 59 + this.ScalingConfigurationName.GetHashCode();
+                if (this.InstanceConfig != null) hashCode = hashCode * 59 + this.InstanceConfig.GetHashCode();
+                if (this.SourceScalingConfigurationId != null) hashCode = hashCode * 59 + this.SourceScalingConfigurationId.GetHashCode();
                 return hashCode;
             }
         }

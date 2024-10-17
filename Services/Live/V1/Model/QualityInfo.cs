@@ -830,80 +830,23 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(QualityInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TemplateName != input.TemplateName || (this.TemplateName != null && !this.TemplateName.Equals(input.TemplateName))) return false;
+            if (this.Quality != input.Quality || (this.Quality != null && !this.Quality.Equals(input.Quality))) return false;
+            if (this.Pvc != input.Pvc) return false;
+            if (this.Hdlb != input.Hdlb) return false;
+            if (this.Codec != input.Codec) return false;
+            if (this.Width != input.Width || (this.Width != null && !this.Width.Equals(input.Width))) return false;
+            if (this.Height != input.Height || (this.Height != null && !this.Height.Equals(input.Height))) return false;
+            if (this.Bitrate != input.Bitrate || (this.Bitrate != null && !this.Bitrate.Equals(input.Bitrate))) return false;
+            if (this.VideoFrameRate != input.VideoFrameRate || (this.VideoFrameRate != null && !this.VideoFrameRate.Equals(input.VideoFrameRate))) return false;
+            if (this.Protocol != input.Protocol) return false;
+            if (this.IFrameInterval != input.IFrameInterval || (this.IFrameInterval != null && !this.IFrameInterval.Equals(input.IFrameInterval))) return false;
+            if (this.Gop != input.Gop || (this.Gop != null && !this.Gop.Equals(input.Gop))) return false;
+            if (this.BitrateAdaptive != input.BitrateAdaptive) return false;
+            if (this.IFramePolicy != input.IFramePolicy) return false;
 
-            return 
-                (
-                    this.TemplateName == input.TemplateName ||
-                    (this.TemplateName != null &&
-                    this.TemplateName.Equals(input.TemplateName))
-                ) && 
-                (
-                    this.Quality == input.Quality ||
-                    (this.Quality != null &&
-                    this.Quality.Equals(input.Quality))
-                ) && 
-                (
-                    this.Pvc == input.Pvc ||
-                    (this.Pvc != null &&
-                    this.Pvc.Equals(input.Pvc))
-                ) && 
-                (
-                    this.Hdlb == input.Hdlb ||
-                    (this.Hdlb != null &&
-                    this.Hdlb.Equals(input.Hdlb))
-                ) && 
-                (
-                    this.Codec == input.Codec ||
-                    (this.Codec != null &&
-                    this.Codec.Equals(input.Codec))
-                ) && 
-                (
-                    this.Width == input.Width ||
-                    (this.Width != null &&
-                    this.Width.Equals(input.Width))
-                ) && 
-                (
-                    this.Height == input.Height ||
-                    (this.Height != null &&
-                    this.Height.Equals(input.Height))
-                ) && 
-                (
-                    this.Bitrate == input.Bitrate ||
-                    (this.Bitrate != null &&
-                    this.Bitrate.Equals(input.Bitrate))
-                ) && 
-                (
-                    this.VideoFrameRate == input.VideoFrameRate ||
-                    (this.VideoFrameRate != null &&
-                    this.VideoFrameRate.Equals(input.VideoFrameRate))
-                ) && 
-                (
-                    this.Protocol == input.Protocol ||
-                    (this.Protocol != null &&
-                    this.Protocol.Equals(input.Protocol))
-                ) && 
-                (
-                    this.IFrameInterval == input.IFrameInterval ||
-                    (this.IFrameInterval != null &&
-                    this.IFrameInterval.Equals(input.IFrameInterval))
-                ) && 
-                (
-                    this.Gop == input.Gop ||
-                    (this.Gop != null &&
-                    this.Gop.Equals(input.Gop))
-                ) && 
-                (
-                    this.BitrateAdaptive == input.BitrateAdaptive ||
-                    (this.BitrateAdaptive != null &&
-                    this.BitrateAdaptive.Equals(input.BitrateAdaptive))
-                ) && 
-                (
-                    this.IFramePolicy == input.IFramePolicy ||
-                    (this.IFramePolicy != null &&
-                    this.IFramePolicy.Equals(input.IFramePolicy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -913,35 +856,21 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TemplateName != null)
-                    hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
-                if (this.Quality != null)
-                    hashCode = hashCode * 59 + this.Quality.GetHashCode();
-                if (this.Pvc != null)
-                    hashCode = hashCode * 59 + this.Pvc.GetHashCode();
-                if (this.Hdlb != null)
-                    hashCode = hashCode * 59 + this.Hdlb.GetHashCode();
-                if (this.Codec != null)
-                    hashCode = hashCode * 59 + this.Codec.GetHashCode();
-                if (this.Width != null)
-                    hashCode = hashCode * 59 + this.Width.GetHashCode();
-                if (this.Height != null)
-                    hashCode = hashCode * 59 + this.Height.GetHashCode();
-                if (this.Bitrate != null)
-                    hashCode = hashCode * 59 + this.Bitrate.GetHashCode();
-                if (this.VideoFrameRate != null)
-                    hashCode = hashCode * 59 + this.VideoFrameRate.GetHashCode();
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
-                if (this.IFrameInterval != null)
-                    hashCode = hashCode * 59 + this.IFrameInterval.GetHashCode();
-                if (this.Gop != null)
-                    hashCode = hashCode * 59 + this.Gop.GetHashCode();
-                if (this.BitrateAdaptive != null)
-                    hashCode = hashCode * 59 + this.BitrateAdaptive.GetHashCode();
-                if (this.IFramePolicy != null)
-                    hashCode = hashCode * 59 + this.IFramePolicy.GetHashCode();
+                var hashCode = 41;
+                if (this.TemplateName != null) hashCode = hashCode * 59 + this.TemplateName.GetHashCode();
+                if (this.Quality != null) hashCode = hashCode * 59 + this.Quality.GetHashCode();
+                hashCode = hashCode * 59 + this.Pvc.GetHashCode();
+                hashCode = hashCode * 59 + this.Hdlb.GetHashCode();
+                hashCode = hashCode * 59 + this.Codec.GetHashCode();
+                if (this.Width != null) hashCode = hashCode * 59 + this.Width.GetHashCode();
+                if (this.Height != null) hashCode = hashCode * 59 + this.Height.GetHashCode();
+                if (this.Bitrate != null) hashCode = hashCode * 59 + this.Bitrate.GetHashCode();
+                if (this.VideoFrameRate != null) hashCode = hashCode * 59 + this.VideoFrameRate.GetHashCode();
+                hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.IFrameInterval != null) hashCode = hashCode * 59 + this.IFrameInterval.GetHashCode();
+                if (this.Gop != null) hashCode = hashCode * 59 + this.Gop.GetHashCode();
+                hashCode = hashCode * 59 + this.BitrateAdaptive.GetHashCode();
+                hashCode = hashCode * 59 + this.IFramePolicy.GetHashCode();
                 return hashCode;
             }
         }

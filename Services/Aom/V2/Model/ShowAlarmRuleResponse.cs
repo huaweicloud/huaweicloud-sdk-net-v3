@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(ShowAlarmRuleResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MetaData != input.MetaData || (this.MetaData != null && !this.MetaData.Equals(input.MetaData))) return false;
+            if (this.Thresholds != input.Thresholds || (this.Thresholds != null && input.Thresholds != null && !this.Thresholds.SequenceEqual(input.Thresholds))) return false;
 
-            return 
-                (
-                    this.MetaData == input.MetaData ||
-                    (this.MetaData != null &&
-                    this.MetaData.Equals(input.MetaData))
-                ) && 
-                (
-                    this.Thresholds == input.Thresholds ||
-                    this.Thresholds != null &&
-                    input.Thresholds != null &&
-                    this.Thresholds.SequenceEqual(input.Thresholds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MetaData != null)
-                    hashCode = hashCode * 59 + this.MetaData.GetHashCode();
-                if (this.Thresholds != null)
-                    hashCode = hashCode * 59 + this.Thresholds.GetHashCode();
+                var hashCode = 41;
+                if (this.MetaData != null) hashCode = hashCode * 59 + this.MetaData.GetHashCode();
+                if (this.Thresholds != null) hashCode = hashCode * 59 + this.Thresholds.GetHashCode();
                 return hashCode;
             }
         }

@@ -350,230 +350,53 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(AcceptanceBillResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IssueDate != input.IssueDate || (this.IssueDate != null && !this.IssueDate.Equals(input.IssueDate))) return false;
+            if (this.DueDate != input.DueDate || (this.DueDate != null && !this.DueDate.Equals(input.DueDate))) return false;
+            if (this.BillStatus != input.BillStatus || (this.BillStatus != null && !this.BillStatus.Equals(input.BillStatus))) return false;
+            if (this.BillNumber != input.BillNumber || (this.BillNumber != null && !this.BillNumber.Equals(input.BillNumber))) return false;
+            if (this.IssuerFullName != input.IssuerFullName || (this.IssuerFullName != null && !this.IssuerFullName.Equals(input.IssuerFullName))) return false;
+            if (this.IssuerAccount != input.IssuerAccount || (this.IssuerAccount != null && !this.IssuerAccount.Equals(input.IssuerAccount))) return false;
+            if (this.IssuerBankName != input.IssuerBankName || (this.IssuerBankName != null && !this.IssuerBankName.Equals(input.IssuerBankName))) return false;
+            if (this.IssuerBankNumber != input.IssuerBankNumber || (this.IssuerBankNumber != null && !this.IssuerBankNumber.Equals(input.IssuerBankNumber))) return false;
+            if (this.PayeeFullName != input.PayeeFullName || (this.PayeeFullName != null && !this.PayeeFullName.Equals(input.PayeeFullName))) return false;
+            if (this.PayeeAccount != input.PayeeAccount || (this.PayeeAccount != null && !this.PayeeAccount.Equals(input.PayeeAccount))) return false;
+            if (this.PayeeBankName != input.PayeeBankName || (this.PayeeBankName != null && !this.PayeeBankName.Equals(input.PayeeBankName))) return false;
+            if (this.PayeeBankNumber != input.PayeeBankNumber || (this.PayeeBankNumber != null && !this.PayeeBankNumber.Equals(input.PayeeBankNumber))) return false;
+            if (this.IssuanceGuarantorName != input.IssuanceGuarantorName || (this.IssuanceGuarantorName != null && !this.IssuanceGuarantorName.Equals(input.IssuanceGuarantorName))) return false;
+            if (this.IssuanceGuarantorAddress != input.IssuanceGuarantorAddress || (this.IssuanceGuarantorAddress != null && !this.IssuanceGuarantorAddress.Equals(input.IssuanceGuarantorAddress))) return false;
+            if (this.IssuanceGuarantorAccount != input.IssuanceGuarantorAccount || (this.IssuanceGuarantorAccount != null && !this.IssuanceGuarantorAccount.Equals(input.IssuanceGuarantorAccount))) return false;
+            if (this.IssuanceGuaranteeDate != input.IssuanceGuaranteeDate || (this.IssuanceGuaranteeDate != null && !this.IssuanceGuaranteeDate.Equals(input.IssuanceGuaranteeDate))) return false;
+            if (this.IssuanceGuarantorBankNumber != input.IssuanceGuarantorBankNumber || (this.IssuanceGuarantorBankNumber != null && !this.IssuanceGuarantorBankNumber.Equals(input.IssuanceGuarantorBankNumber))) return false;
+            if (this.IssuanceGuarantorBankName != input.IssuanceGuarantorBankName || (this.IssuanceGuarantorBankName != null && !this.IssuanceGuarantorBankName.Equals(input.IssuanceGuarantorBankName))) return false;
+            if (this.AmountInWords != input.AmountInWords || (this.AmountInWords != null && !this.AmountInWords.Equals(input.AmountInWords))) return false;
+            if (this.AmountInFigures != input.AmountInFigures || (this.AmountInFigures != null && !this.AmountInFigures.Equals(input.AmountInFigures))) return false;
+            if (this.AcceptorFullName != input.AcceptorFullName || (this.AcceptorFullName != null && !this.AcceptorFullName.Equals(input.AcceptorFullName))) return false;
+            if (this.AcceptorAccount != input.AcceptorAccount || (this.AcceptorAccount != null && !this.AcceptorAccount.Equals(input.AcceptorAccount))) return false;
+            if (this.AcceptorBankNumber != input.AcceptorBankNumber || (this.AcceptorBankNumber != null && !this.AcceptorBankNumber.Equals(input.AcceptorBankNumber))) return false;
+            if (this.AcceptorBankName != input.AcceptorBankName || (this.AcceptorBankName != null && !this.AcceptorBankName.Equals(input.AcceptorBankName))) return false;
+            if (this.ContractNumber != input.ContractNumber || (this.ContractNumber != null && !this.ContractNumber.Equals(input.ContractNumber))) return false;
+            if (this.Assignability != input.Assignability || (this.Assignability != null && !this.Assignability.Equals(input.Assignability))) return false;
+            if (this.IssuerCommitment != input.IssuerCommitment || (this.IssuerCommitment != null && !this.IssuerCommitment.Equals(input.IssuerCommitment))) return false;
+            if (this.AcceptorCommitment != input.AcceptorCommitment || (this.AcceptorCommitment != null && !this.AcceptorCommitment.Equals(input.AcceptorCommitment))) return false;
+            if (this.AcceptanceDate != input.AcceptanceDate || (this.AcceptanceDate != null && !this.AcceptanceDate.Equals(input.AcceptanceDate))) return false;
+            if (this.AcceptanceGuarantorName != input.AcceptanceGuarantorName || (this.AcceptanceGuarantorName != null && !this.AcceptanceGuarantorName.Equals(input.AcceptanceGuarantorName))) return false;
+            if (this.AcceptanceGuarantorAddress != input.AcceptanceGuarantorAddress || (this.AcceptanceGuarantorAddress != null && !this.AcceptanceGuarantorAddress.Equals(input.AcceptanceGuarantorAddress))) return false;
+            if (this.AcceptanceGuarantorAccount != input.AcceptanceGuarantorAccount || (this.AcceptanceGuarantorAccount != null && !this.AcceptanceGuarantorAccount.Equals(input.AcceptanceGuarantorAccount))) return false;
+            if (this.AcceptanceGuaranteeDate != input.AcceptanceGuaranteeDate || (this.AcceptanceGuaranteeDate != null && !this.AcceptanceGuaranteeDate.Equals(input.AcceptanceGuaranteeDate))) return false;
+            if (this.AcceptanceGuarantorBankNumber != input.AcceptanceGuarantorBankNumber || (this.AcceptanceGuarantorBankNumber != null && !this.AcceptanceGuarantorBankNumber.Equals(input.AcceptanceGuarantorBankNumber))) return false;
+            if (this.AcceptanceGuarantorBankName != input.AcceptanceGuarantorBankName || (this.AcceptanceGuarantorBankName != null && !this.AcceptanceGuarantorBankName.Equals(input.AcceptanceGuarantorBankName))) return false;
+            if (this.IssuerRatingEntity != input.IssuerRatingEntity || (this.IssuerRatingEntity != null && !this.IssuerRatingEntity.Equals(input.IssuerRatingEntity))) return false;
+            if (this.IssuerCreditRating != input.IssuerCreditRating || (this.IssuerCreditRating != null && !this.IssuerCreditRating.Equals(input.IssuerCreditRating))) return false;
+            if (this.IssuerRatingDueDate != input.IssuerRatingDueDate || (this.IssuerRatingDueDate != null && !this.IssuerRatingDueDate.Equals(input.IssuerRatingDueDate))) return false;
+            if (this.AcceptorRatingEntity != input.AcceptorRatingEntity || (this.AcceptorRatingEntity != null && !this.AcceptorRatingEntity.Equals(input.AcceptorRatingEntity))) return false;
+            if (this.AcceptorCreditRating != input.AcceptorCreditRating || (this.AcceptorCreditRating != null && !this.AcceptorCreditRating.Equals(input.AcceptorCreditRating))) return false;
+            if (this.AcceptorRatingDueDate != input.AcceptorRatingDueDate || (this.AcceptorRatingDueDate != null && !this.AcceptorRatingDueDate.Equals(input.AcceptorRatingDueDate))) return false;
+            if (this.BillPackageNumber != input.BillPackageNumber || (this.BillPackageNumber != null && !this.BillPackageNumber.Equals(input.BillPackageNumber))) return false;
+            if (this.Remarks != input.Remarks || (this.Remarks != null && !this.Remarks.Equals(input.Remarks))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
 
-            return 
-                (
-                    this.IssueDate == input.IssueDate ||
-                    (this.IssueDate != null &&
-                    this.IssueDate.Equals(input.IssueDate))
-                ) && 
-                (
-                    this.DueDate == input.DueDate ||
-                    (this.DueDate != null &&
-                    this.DueDate.Equals(input.DueDate))
-                ) && 
-                (
-                    this.BillStatus == input.BillStatus ||
-                    (this.BillStatus != null &&
-                    this.BillStatus.Equals(input.BillStatus))
-                ) && 
-                (
-                    this.BillNumber == input.BillNumber ||
-                    (this.BillNumber != null &&
-                    this.BillNumber.Equals(input.BillNumber))
-                ) && 
-                (
-                    this.IssuerFullName == input.IssuerFullName ||
-                    (this.IssuerFullName != null &&
-                    this.IssuerFullName.Equals(input.IssuerFullName))
-                ) && 
-                (
-                    this.IssuerAccount == input.IssuerAccount ||
-                    (this.IssuerAccount != null &&
-                    this.IssuerAccount.Equals(input.IssuerAccount))
-                ) && 
-                (
-                    this.IssuerBankName == input.IssuerBankName ||
-                    (this.IssuerBankName != null &&
-                    this.IssuerBankName.Equals(input.IssuerBankName))
-                ) && 
-                (
-                    this.IssuerBankNumber == input.IssuerBankNumber ||
-                    (this.IssuerBankNumber != null &&
-                    this.IssuerBankNumber.Equals(input.IssuerBankNumber))
-                ) && 
-                (
-                    this.PayeeFullName == input.PayeeFullName ||
-                    (this.PayeeFullName != null &&
-                    this.PayeeFullName.Equals(input.PayeeFullName))
-                ) && 
-                (
-                    this.PayeeAccount == input.PayeeAccount ||
-                    (this.PayeeAccount != null &&
-                    this.PayeeAccount.Equals(input.PayeeAccount))
-                ) && 
-                (
-                    this.PayeeBankName == input.PayeeBankName ||
-                    (this.PayeeBankName != null &&
-                    this.PayeeBankName.Equals(input.PayeeBankName))
-                ) && 
-                (
-                    this.PayeeBankNumber == input.PayeeBankNumber ||
-                    (this.PayeeBankNumber != null &&
-                    this.PayeeBankNumber.Equals(input.PayeeBankNumber))
-                ) && 
-                (
-                    this.IssuanceGuarantorName == input.IssuanceGuarantorName ||
-                    (this.IssuanceGuarantorName != null &&
-                    this.IssuanceGuarantorName.Equals(input.IssuanceGuarantorName))
-                ) && 
-                (
-                    this.IssuanceGuarantorAddress == input.IssuanceGuarantorAddress ||
-                    (this.IssuanceGuarantorAddress != null &&
-                    this.IssuanceGuarantorAddress.Equals(input.IssuanceGuarantorAddress))
-                ) && 
-                (
-                    this.IssuanceGuarantorAccount == input.IssuanceGuarantorAccount ||
-                    (this.IssuanceGuarantorAccount != null &&
-                    this.IssuanceGuarantorAccount.Equals(input.IssuanceGuarantorAccount))
-                ) && 
-                (
-                    this.IssuanceGuaranteeDate == input.IssuanceGuaranteeDate ||
-                    (this.IssuanceGuaranteeDate != null &&
-                    this.IssuanceGuaranteeDate.Equals(input.IssuanceGuaranteeDate))
-                ) && 
-                (
-                    this.IssuanceGuarantorBankNumber == input.IssuanceGuarantorBankNumber ||
-                    (this.IssuanceGuarantorBankNumber != null &&
-                    this.IssuanceGuarantorBankNumber.Equals(input.IssuanceGuarantorBankNumber))
-                ) && 
-                (
-                    this.IssuanceGuarantorBankName == input.IssuanceGuarantorBankName ||
-                    (this.IssuanceGuarantorBankName != null &&
-                    this.IssuanceGuarantorBankName.Equals(input.IssuanceGuarantorBankName))
-                ) && 
-                (
-                    this.AmountInWords == input.AmountInWords ||
-                    (this.AmountInWords != null &&
-                    this.AmountInWords.Equals(input.AmountInWords))
-                ) && 
-                (
-                    this.AmountInFigures == input.AmountInFigures ||
-                    (this.AmountInFigures != null &&
-                    this.AmountInFigures.Equals(input.AmountInFigures))
-                ) && 
-                (
-                    this.AcceptorFullName == input.AcceptorFullName ||
-                    (this.AcceptorFullName != null &&
-                    this.AcceptorFullName.Equals(input.AcceptorFullName))
-                ) && 
-                (
-                    this.AcceptorAccount == input.AcceptorAccount ||
-                    (this.AcceptorAccount != null &&
-                    this.AcceptorAccount.Equals(input.AcceptorAccount))
-                ) && 
-                (
-                    this.AcceptorBankNumber == input.AcceptorBankNumber ||
-                    (this.AcceptorBankNumber != null &&
-                    this.AcceptorBankNumber.Equals(input.AcceptorBankNumber))
-                ) && 
-                (
-                    this.AcceptorBankName == input.AcceptorBankName ||
-                    (this.AcceptorBankName != null &&
-                    this.AcceptorBankName.Equals(input.AcceptorBankName))
-                ) && 
-                (
-                    this.ContractNumber == input.ContractNumber ||
-                    (this.ContractNumber != null &&
-                    this.ContractNumber.Equals(input.ContractNumber))
-                ) && 
-                (
-                    this.Assignability == input.Assignability ||
-                    (this.Assignability != null &&
-                    this.Assignability.Equals(input.Assignability))
-                ) && 
-                (
-                    this.IssuerCommitment == input.IssuerCommitment ||
-                    (this.IssuerCommitment != null &&
-                    this.IssuerCommitment.Equals(input.IssuerCommitment))
-                ) && 
-                (
-                    this.AcceptorCommitment == input.AcceptorCommitment ||
-                    (this.AcceptorCommitment != null &&
-                    this.AcceptorCommitment.Equals(input.AcceptorCommitment))
-                ) && 
-                (
-                    this.AcceptanceDate == input.AcceptanceDate ||
-                    (this.AcceptanceDate != null &&
-                    this.AcceptanceDate.Equals(input.AcceptanceDate))
-                ) && 
-                (
-                    this.AcceptanceGuarantorName == input.AcceptanceGuarantorName ||
-                    (this.AcceptanceGuarantorName != null &&
-                    this.AcceptanceGuarantorName.Equals(input.AcceptanceGuarantorName))
-                ) && 
-                (
-                    this.AcceptanceGuarantorAddress == input.AcceptanceGuarantorAddress ||
-                    (this.AcceptanceGuarantorAddress != null &&
-                    this.AcceptanceGuarantorAddress.Equals(input.AcceptanceGuarantorAddress))
-                ) && 
-                (
-                    this.AcceptanceGuarantorAccount == input.AcceptanceGuarantorAccount ||
-                    (this.AcceptanceGuarantorAccount != null &&
-                    this.AcceptanceGuarantorAccount.Equals(input.AcceptanceGuarantorAccount))
-                ) && 
-                (
-                    this.AcceptanceGuaranteeDate == input.AcceptanceGuaranteeDate ||
-                    (this.AcceptanceGuaranteeDate != null &&
-                    this.AcceptanceGuaranteeDate.Equals(input.AcceptanceGuaranteeDate))
-                ) && 
-                (
-                    this.AcceptanceGuarantorBankNumber == input.AcceptanceGuarantorBankNumber ||
-                    (this.AcceptanceGuarantorBankNumber != null &&
-                    this.AcceptanceGuarantorBankNumber.Equals(input.AcceptanceGuarantorBankNumber))
-                ) && 
-                (
-                    this.AcceptanceGuarantorBankName == input.AcceptanceGuarantorBankName ||
-                    (this.AcceptanceGuarantorBankName != null &&
-                    this.AcceptanceGuarantorBankName.Equals(input.AcceptanceGuarantorBankName))
-                ) && 
-                (
-                    this.IssuerRatingEntity == input.IssuerRatingEntity ||
-                    (this.IssuerRatingEntity != null &&
-                    this.IssuerRatingEntity.Equals(input.IssuerRatingEntity))
-                ) && 
-                (
-                    this.IssuerCreditRating == input.IssuerCreditRating ||
-                    (this.IssuerCreditRating != null &&
-                    this.IssuerCreditRating.Equals(input.IssuerCreditRating))
-                ) && 
-                (
-                    this.IssuerRatingDueDate == input.IssuerRatingDueDate ||
-                    (this.IssuerRatingDueDate != null &&
-                    this.IssuerRatingDueDate.Equals(input.IssuerRatingDueDate))
-                ) && 
-                (
-                    this.AcceptorRatingEntity == input.AcceptorRatingEntity ||
-                    (this.AcceptorRatingEntity != null &&
-                    this.AcceptorRatingEntity.Equals(input.AcceptorRatingEntity))
-                ) && 
-                (
-                    this.AcceptorCreditRating == input.AcceptorCreditRating ||
-                    (this.AcceptorCreditRating != null &&
-                    this.AcceptorCreditRating.Equals(input.AcceptorCreditRating))
-                ) && 
-                (
-                    this.AcceptorRatingDueDate == input.AcceptorRatingDueDate ||
-                    (this.AcceptorRatingDueDate != null &&
-                    this.AcceptorRatingDueDate.Equals(input.AcceptorRatingDueDate))
-                ) && 
-                (
-                    this.BillPackageNumber == input.BillPackageNumber ||
-                    (this.BillPackageNumber != null &&
-                    this.BillPackageNumber.Equals(input.BillPackageNumber))
-                ) && 
-                (
-                    this.Remarks == input.Remarks ||
-                    (this.Remarks != null &&
-                    this.Remarks.Equals(input.Remarks))
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                );
+            return true;
         }
 
         /// <summary>
@@ -583,95 +406,51 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IssueDate != null)
-                    hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
-                if (this.DueDate != null)
-                    hashCode = hashCode * 59 + this.DueDate.GetHashCode();
-                if (this.BillStatus != null)
-                    hashCode = hashCode * 59 + this.BillStatus.GetHashCode();
-                if (this.BillNumber != null)
-                    hashCode = hashCode * 59 + this.BillNumber.GetHashCode();
-                if (this.IssuerFullName != null)
-                    hashCode = hashCode * 59 + this.IssuerFullName.GetHashCode();
-                if (this.IssuerAccount != null)
-                    hashCode = hashCode * 59 + this.IssuerAccount.GetHashCode();
-                if (this.IssuerBankName != null)
-                    hashCode = hashCode * 59 + this.IssuerBankName.GetHashCode();
-                if (this.IssuerBankNumber != null)
-                    hashCode = hashCode * 59 + this.IssuerBankNumber.GetHashCode();
-                if (this.PayeeFullName != null)
-                    hashCode = hashCode * 59 + this.PayeeFullName.GetHashCode();
-                if (this.PayeeAccount != null)
-                    hashCode = hashCode * 59 + this.PayeeAccount.GetHashCode();
-                if (this.PayeeBankName != null)
-                    hashCode = hashCode * 59 + this.PayeeBankName.GetHashCode();
-                if (this.PayeeBankNumber != null)
-                    hashCode = hashCode * 59 + this.PayeeBankNumber.GetHashCode();
-                if (this.IssuanceGuarantorName != null)
-                    hashCode = hashCode * 59 + this.IssuanceGuarantorName.GetHashCode();
-                if (this.IssuanceGuarantorAddress != null)
-                    hashCode = hashCode * 59 + this.IssuanceGuarantorAddress.GetHashCode();
-                if (this.IssuanceGuarantorAccount != null)
-                    hashCode = hashCode * 59 + this.IssuanceGuarantorAccount.GetHashCode();
-                if (this.IssuanceGuaranteeDate != null)
-                    hashCode = hashCode * 59 + this.IssuanceGuaranteeDate.GetHashCode();
-                if (this.IssuanceGuarantorBankNumber != null)
-                    hashCode = hashCode * 59 + this.IssuanceGuarantorBankNumber.GetHashCode();
-                if (this.IssuanceGuarantorBankName != null)
-                    hashCode = hashCode * 59 + this.IssuanceGuarantorBankName.GetHashCode();
-                if (this.AmountInWords != null)
-                    hashCode = hashCode * 59 + this.AmountInWords.GetHashCode();
-                if (this.AmountInFigures != null)
-                    hashCode = hashCode * 59 + this.AmountInFigures.GetHashCode();
-                if (this.AcceptorFullName != null)
-                    hashCode = hashCode * 59 + this.AcceptorFullName.GetHashCode();
-                if (this.AcceptorAccount != null)
-                    hashCode = hashCode * 59 + this.AcceptorAccount.GetHashCode();
-                if (this.AcceptorBankNumber != null)
-                    hashCode = hashCode * 59 + this.AcceptorBankNumber.GetHashCode();
-                if (this.AcceptorBankName != null)
-                    hashCode = hashCode * 59 + this.AcceptorBankName.GetHashCode();
-                if (this.ContractNumber != null)
-                    hashCode = hashCode * 59 + this.ContractNumber.GetHashCode();
-                if (this.Assignability != null)
-                    hashCode = hashCode * 59 + this.Assignability.GetHashCode();
-                if (this.IssuerCommitment != null)
-                    hashCode = hashCode * 59 + this.IssuerCommitment.GetHashCode();
-                if (this.AcceptorCommitment != null)
-                    hashCode = hashCode * 59 + this.AcceptorCommitment.GetHashCode();
-                if (this.AcceptanceDate != null)
-                    hashCode = hashCode * 59 + this.AcceptanceDate.GetHashCode();
-                if (this.AcceptanceGuarantorName != null)
-                    hashCode = hashCode * 59 + this.AcceptanceGuarantorName.GetHashCode();
-                if (this.AcceptanceGuarantorAddress != null)
-                    hashCode = hashCode * 59 + this.AcceptanceGuarantorAddress.GetHashCode();
-                if (this.AcceptanceGuarantorAccount != null)
-                    hashCode = hashCode * 59 + this.AcceptanceGuarantorAccount.GetHashCode();
-                if (this.AcceptanceGuaranteeDate != null)
-                    hashCode = hashCode * 59 + this.AcceptanceGuaranteeDate.GetHashCode();
-                if (this.AcceptanceGuarantorBankNumber != null)
-                    hashCode = hashCode * 59 + this.AcceptanceGuarantorBankNumber.GetHashCode();
-                if (this.AcceptanceGuarantorBankName != null)
-                    hashCode = hashCode * 59 + this.AcceptanceGuarantorBankName.GetHashCode();
-                if (this.IssuerRatingEntity != null)
-                    hashCode = hashCode * 59 + this.IssuerRatingEntity.GetHashCode();
-                if (this.IssuerCreditRating != null)
-                    hashCode = hashCode * 59 + this.IssuerCreditRating.GetHashCode();
-                if (this.IssuerRatingDueDate != null)
-                    hashCode = hashCode * 59 + this.IssuerRatingDueDate.GetHashCode();
-                if (this.AcceptorRatingEntity != null)
-                    hashCode = hashCode * 59 + this.AcceptorRatingEntity.GetHashCode();
-                if (this.AcceptorCreditRating != null)
-                    hashCode = hashCode * 59 + this.AcceptorCreditRating.GetHashCode();
-                if (this.AcceptorRatingDueDate != null)
-                    hashCode = hashCode * 59 + this.AcceptorRatingDueDate.GetHashCode();
-                if (this.BillPackageNumber != null)
-                    hashCode = hashCode * 59 + this.BillPackageNumber.GetHashCode();
-                if (this.Remarks != null)
-                    hashCode = hashCode * 59 + this.Remarks.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                var hashCode = 41;
+                if (this.IssueDate != null) hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
+                if (this.DueDate != null) hashCode = hashCode * 59 + this.DueDate.GetHashCode();
+                if (this.BillStatus != null) hashCode = hashCode * 59 + this.BillStatus.GetHashCode();
+                if (this.BillNumber != null) hashCode = hashCode * 59 + this.BillNumber.GetHashCode();
+                if (this.IssuerFullName != null) hashCode = hashCode * 59 + this.IssuerFullName.GetHashCode();
+                if (this.IssuerAccount != null) hashCode = hashCode * 59 + this.IssuerAccount.GetHashCode();
+                if (this.IssuerBankName != null) hashCode = hashCode * 59 + this.IssuerBankName.GetHashCode();
+                if (this.IssuerBankNumber != null) hashCode = hashCode * 59 + this.IssuerBankNumber.GetHashCode();
+                if (this.PayeeFullName != null) hashCode = hashCode * 59 + this.PayeeFullName.GetHashCode();
+                if (this.PayeeAccount != null) hashCode = hashCode * 59 + this.PayeeAccount.GetHashCode();
+                if (this.PayeeBankName != null) hashCode = hashCode * 59 + this.PayeeBankName.GetHashCode();
+                if (this.PayeeBankNumber != null) hashCode = hashCode * 59 + this.PayeeBankNumber.GetHashCode();
+                if (this.IssuanceGuarantorName != null) hashCode = hashCode * 59 + this.IssuanceGuarantorName.GetHashCode();
+                if (this.IssuanceGuarantorAddress != null) hashCode = hashCode * 59 + this.IssuanceGuarantorAddress.GetHashCode();
+                if (this.IssuanceGuarantorAccount != null) hashCode = hashCode * 59 + this.IssuanceGuarantorAccount.GetHashCode();
+                if (this.IssuanceGuaranteeDate != null) hashCode = hashCode * 59 + this.IssuanceGuaranteeDate.GetHashCode();
+                if (this.IssuanceGuarantorBankNumber != null) hashCode = hashCode * 59 + this.IssuanceGuarantorBankNumber.GetHashCode();
+                if (this.IssuanceGuarantorBankName != null) hashCode = hashCode * 59 + this.IssuanceGuarantorBankName.GetHashCode();
+                if (this.AmountInWords != null) hashCode = hashCode * 59 + this.AmountInWords.GetHashCode();
+                if (this.AmountInFigures != null) hashCode = hashCode * 59 + this.AmountInFigures.GetHashCode();
+                if (this.AcceptorFullName != null) hashCode = hashCode * 59 + this.AcceptorFullName.GetHashCode();
+                if (this.AcceptorAccount != null) hashCode = hashCode * 59 + this.AcceptorAccount.GetHashCode();
+                if (this.AcceptorBankNumber != null) hashCode = hashCode * 59 + this.AcceptorBankNumber.GetHashCode();
+                if (this.AcceptorBankName != null) hashCode = hashCode * 59 + this.AcceptorBankName.GetHashCode();
+                if (this.ContractNumber != null) hashCode = hashCode * 59 + this.ContractNumber.GetHashCode();
+                if (this.Assignability != null) hashCode = hashCode * 59 + this.Assignability.GetHashCode();
+                if (this.IssuerCommitment != null) hashCode = hashCode * 59 + this.IssuerCommitment.GetHashCode();
+                if (this.AcceptorCommitment != null) hashCode = hashCode * 59 + this.AcceptorCommitment.GetHashCode();
+                if (this.AcceptanceDate != null) hashCode = hashCode * 59 + this.AcceptanceDate.GetHashCode();
+                if (this.AcceptanceGuarantorName != null) hashCode = hashCode * 59 + this.AcceptanceGuarantorName.GetHashCode();
+                if (this.AcceptanceGuarantorAddress != null) hashCode = hashCode * 59 + this.AcceptanceGuarantorAddress.GetHashCode();
+                if (this.AcceptanceGuarantorAccount != null) hashCode = hashCode * 59 + this.AcceptanceGuarantorAccount.GetHashCode();
+                if (this.AcceptanceGuaranteeDate != null) hashCode = hashCode * 59 + this.AcceptanceGuaranteeDate.GetHashCode();
+                if (this.AcceptanceGuarantorBankNumber != null) hashCode = hashCode * 59 + this.AcceptanceGuarantorBankNumber.GetHashCode();
+                if (this.AcceptanceGuarantorBankName != null) hashCode = hashCode * 59 + this.AcceptanceGuarantorBankName.GetHashCode();
+                if (this.IssuerRatingEntity != null) hashCode = hashCode * 59 + this.IssuerRatingEntity.GetHashCode();
+                if (this.IssuerCreditRating != null) hashCode = hashCode * 59 + this.IssuerCreditRating.GetHashCode();
+                if (this.IssuerRatingDueDate != null) hashCode = hashCode * 59 + this.IssuerRatingDueDate.GetHashCode();
+                if (this.AcceptorRatingEntity != null) hashCode = hashCode * 59 + this.AcceptorRatingEntity.GetHashCode();
+                if (this.AcceptorCreditRating != null) hashCode = hashCode * 59 + this.AcceptorCreditRating.GetHashCode();
+                if (this.AcceptorRatingDueDate != null) hashCode = hashCode * 59 + this.AcceptorRatingDueDate.GetHashCode();
+                if (this.BillPackageNumber != null) hashCode = hashCode * 59 + this.BillPackageNumber.GetHashCode();
+                if (this.Remarks != null) hashCode = hashCode * 59 + this.Remarks.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
                 return hashCode;
             }
         }

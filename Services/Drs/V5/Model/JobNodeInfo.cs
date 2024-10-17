@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(JobNodeInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Spec != input.Spec || (this.Spec != null && !this.Spec.Equals(input.Spec))) return false;
+            if (this.Vpc != input.Vpc || (this.Vpc != null && !this.Vpc.Equals(input.Vpc))) return false;
+            if (this.BaseInfo != input.BaseInfo || (this.BaseInfo != null && !this.BaseInfo.Equals(input.BaseInfo))) return false;
 
-            return 
-                (
-                    this.Spec == input.Spec ||
-                    (this.Spec != null &&
-                    this.Spec.Equals(input.Spec))
-                ) && 
-                (
-                    this.Vpc == input.Vpc ||
-                    (this.Vpc != null &&
-                    this.Vpc.Equals(input.Vpc))
-                ) && 
-                (
-                    this.BaseInfo == input.BaseInfo ||
-                    (this.BaseInfo != null &&
-                    this.BaseInfo.Equals(input.BaseInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Spec != null)
-                    hashCode = hashCode * 59 + this.Spec.GetHashCode();
-                if (this.Vpc != null)
-                    hashCode = hashCode * 59 + this.Vpc.GetHashCode();
-                if (this.BaseInfo != null)
-                    hashCode = hashCode * 59 + this.BaseInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.Spec != null) hashCode = hashCode * 59 + this.Spec.GetHashCode();
+                if (this.Vpc != null) hashCode = hashCode * 59 + this.Vpc.GetHashCode();
+                if (this.BaseInfo != null) hashCode = hashCode * 59 + this.BaseInfo.GetHashCode();
                 return hashCode;
             }
         }

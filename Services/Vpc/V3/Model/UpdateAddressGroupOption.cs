@@ -77,37 +77,14 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(UpdateAddressGroupOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.IpSet != input.IpSet || (this.IpSet != null && input.IpSet != null && !this.IpSet.SequenceEqual(input.IpSet))) return false;
+            if (this.MaxCapacity != input.MaxCapacity || (this.MaxCapacity != null && !this.MaxCapacity.Equals(input.MaxCapacity))) return false;
+            if (this.IpExtraSet != input.IpExtraSet || (this.IpExtraSet != null && input.IpExtraSet != null && !this.IpExtraSet.SequenceEqual(input.IpExtraSet))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.IpSet == input.IpSet ||
-                    this.IpSet != null &&
-                    input.IpSet != null &&
-                    this.IpSet.SequenceEqual(input.IpSet)
-                ) && 
-                (
-                    this.MaxCapacity == input.MaxCapacity ||
-                    (this.MaxCapacity != null &&
-                    this.MaxCapacity.Equals(input.MaxCapacity))
-                ) && 
-                (
-                    this.IpExtraSet == input.IpExtraSet ||
-                    this.IpExtraSet != null &&
-                    input.IpExtraSet != null &&
-                    this.IpExtraSet.SequenceEqual(input.IpExtraSet)
-                );
+            return true;
         }
 
         /// <summary>
@@ -117,17 +94,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.IpSet != null)
-                    hashCode = hashCode * 59 + this.IpSet.GetHashCode();
-                if (this.MaxCapacity != null)
-                    hashCode = hashCode * 59 + this.MaxCapacity.GetHashCode();
-                if (this.IpExtraSet != null)
-                    hashCode = hashCode * 59 + this.IpExtraSet.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.IpSet != null) hashCode = hashCode * 59 + this.IpSet.GetHashCode();
+                if (this.MaxCapacity != null) hashCode = hashCode * 59 + this.MaxCapacity.GetHashCode();
+                if (this.IpExtraSet != null) hashCode = hashCode * 59 + this.IpExtraSet.GetHashCode();
                 return hashCode;
             }
         }

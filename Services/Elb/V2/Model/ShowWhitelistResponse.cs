@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// </summary>
         public bool Equals(ShowWhitelistResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Whitelist != input.Whitelist || (this.Whitelist != null && !this.Whitelist.Equals(input.Whitelist))) return false;
 
-            return 
-                (
-                    this.Whitelist == input.Whitelist ||
-                    (this.Whitelist != null &&
-                    this.Whitelist.Equals(input.Whitelist))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Whitelist != null)
-                    hashCode = hashCode * 59 + this.Whitelist.GetHashCode();
+                var hashCode = 41;
+                if (this.Whitelist != null) hashCode = hashCode * 59 + this.Whitelist.GetHashCode();
                 return hashCode;
             }
         }

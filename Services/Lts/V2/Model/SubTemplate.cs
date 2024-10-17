@@ -188,20 +188,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(SubTemplate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SubType != input.SubType) return false;
+            if (this.Content != input.Content || (this.Content != null && !this.Content.Equals(input.Content))) return false;
 
-            return 
-                (
-                    this.SubType == input.SubType ||
-                    (this.SubType != null &&
-                    this.SubType.Equals(input.SubType))
-                ) && 
-                (
-                    this.Content == input.Content ||
-                    (this.Content != null &&
-                    this.Content.Equals(input.Content))
-                );
+            return true;
         }
 
         /// <summary>
@@ -211,11 +202,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SubType != null)
-                    hashCode = hashCode * 59 + this.SubType.GetHashCode();
-                if (this.Content != null)
-                    hashCode = hashCode * 59 + this.Content.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.SubType.GetHashCode();
+                if (this.Content != null) hashCode = hashCode * 59 + this.Content.GetHashCode();
                 return hashCode;
             }
         }

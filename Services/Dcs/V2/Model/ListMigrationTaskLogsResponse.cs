@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ListMigrationTaskLogsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LogNum != input.LogNum || (this.LogNum != null && !this.LogNum.Equals(input.LogNum))) return false;
+            if (this.MigrationLogs != input.MigrationLogs || (this.MigrationLogs != null && input.MigrationLogs != null && !this.MigrationLogs.SequenceEqual(input.MigrationLogs))) return false;
 
-            return 
-                (
-                    this.LogNum == input.LogNum ||
-                    (this.LogNum != null &&
-                    this.LogNum.Equals(input.LogNum))
-                ) && 
-                (
-                    this.MigrationLogs == input.MigrationLogs ||
-                    this.MigrationLogs != null &&
-                    input.MigrationLogs != null &&
-                    this.MigrationLogs.SequenceEqual(input.MigrationLogs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LogNum != null)
-                    hashCode = hashCode * 59 + this.LogNum.GetHashCode();
-                if (this.MigrationLogs != null)
-                    hashCode = hashCode * 59 + this.MigrationLogs.GetHashCode();
+                var hashCode = 41;
+                if (this.LogNum != null) hashCode = hashCode * 59 + this.LogNum.GetHashCode();
+                if (this.MigrationLogs != null) hashCode = hashCode * 59 + this.MigrationLogs.GetHashCode();
                 return hashCode;
             }
         }

@@ -254,51 +254,17 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(StackResource input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PhysicalResourceId != input.PhysicalResourceId || (this.PhysicalResourceId != null && !this.PhysicalResourceId.Equals(input.PhysicalResourceId))) return false;
+            if (this.PhysicalResourceName != input.PhysicalResourceName || (this.PhysicalResourceName != null && !this.PhysicalResourceName.Equals(input.PhysicalResourceName))) return false;
+            if (this.LogicalResourceName != input.LogicalResourceName || (this.LogicalResourceName != null && !this.LogicalResourceName.Equals(input.LogicalResourceName))) return false;
+            if (this.LogicalResourceType != input.LogicalResourceType || (this.LogicalResourceType != null && !this.LogicalResourceType.Equals(input.LogicalResourceType))) return false;
+            if (this.IndexKey != input.IndexKey || (this.IndexKey != null && !this.IndexKey.Equals(input.IndexKey))) return false;
+            if (this.ResourceStatus != input.ResourceStatus) return false;
+            if (this.StatusMessage != input.StatusMessage || (this.StatusMessage != null && !this.StatusMessage.Equals(input.StatusMessage))) return false;
+            if (this.ResourceAttributes != input.ResourceAttributes || (this.ResourceAttributes != null && input.ResourceAttributes != null && !this.ResourceAttributes.SequenceEqual(input.ResourceAttributes))) return false;
 
-            return 
-                (
-                    this.PhysicalResourceId == input.PhysicalResourceId ||
-                    (this.PhysicalResourceId != null &&
-                    this.PhysicalResourceId.Equals(input.PhysicalResourceId))
-                ) && 
-                (
-                    this.PhysicalResourceName == input.PhysicalResourceName ||
-                    (this.PhysicalResourceName != null &&
-                    this.PhysicalResourceName.Equals(input.PhysicalResourceName))
-                ) && 
-                (
-                    this.LogicalResourceName == input.LogicalResourceName ||
-                    (this.LogicalResourceName != null &&
-                    this.LogicalResourceName.Equals(input.LogicalResourceName))
-                ) && 
-                (
-                    this.LogicalResourceType == input.LogicalResourceType ||
-                    (this.LogicalResourceType != null &&
-                    this.LogicalResourceType.Equals(input.LogicalResourceType))
-                ) && 
-                (
-                    this.IndexKey == input.IndexKey ||
-                    (this.IndexKey != null &&
-                    this.IndexKey.Equals(input.IndexKey))
-                ) && 
-                (
-                    this.ResourceStatus == input.ResourceStatus ||
-                    (this.ResourceStatus != null &&
-                    this.ResourceStatus.Equals(input.ResourceStatus))
-                ) && 
-                (
-                    this.StatusMessage == input.StatusMessage ||
-                    (this.StatusMessage != null &&
-                    this.StatusMessage.Equals(input.StatusMessage))
-                ) && 
-                (
-                    this.ResourceAttributes == input.ResourceAttributes ||
-                    this.ResourceAttributes != null &&
-                    input.ResourceAttributes != null &&
-                    this.ResourceAttributes.SequenceEqual(input.ResourceAttributes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -308,23 +274,15 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PhysicalResourceId != null)
-                    hashCode = hashCode * 59 + this.PhysicalResourceId.GetHashCode();
-                if (this.PhysicalResourceName != null)
-                    hashCode = hashCode * 59 + this.PhysicalResourceName.GetHashCode();
-                if (this.LogicalResourceName != null)
-                    hashCode = hashCode * 59 + this.LogicalResourceName.GetHashCode();
-                if (this.LogicalResourceType != null)
-                    hashCode = hashCode * 59 + this.LogicalResourceType.GetHashCode();
-                if (this.IndexKey != null)
-                    hashCode = hashCode * 59 + this.IndexKey.GetHashCode();
-                if (this.ResourceStatus != null)
-                    hashCode = hashCode * 59 + this.ResourceStatus.GetHashCode();
-                if (this.StatusMessage != null)
-                    hashCode = hashCode * 59 + this.StatusMessage.GetHashCode();
-                if (this.ResourceAttributes != null)
-                    hashCode = hashCode * 59 + this.ResourceAttributes.GetHashCode();
+                var hashCode = 41;
+                if (this.PhysicalResourceId != null) hashCode = hashCode * 59 + this.PhysicalResourceId.GetHashCode();
+                if (this.PhysicalResourceName != null) hashCode = hashCode * 59 + this.PhysicalResourceName.GetHashCode();
+                if (this.LogicalResourceName != null) hashCode = hashCode * 59 + this.LogicalResourceName.GetHashCode();
+                if (this.LogicalResourceType != null) hashCode = hashCode * 59 + this.LogicalResourceType.GetHashCode();
+                if (this.IndexKey != null) hashCode = hashCode * 59 + this.IndexKey.GetHashCode();
+                hashCode = hashCode * 59 + this.ResourceStatus.GetHashCode();
+                if (this.StatusMessage != null) hashCode = hashCode * 59 + this.StatusMessage.GetHashCode();
+                if (this.ResourceAttributes != null) hashCode = hashCode * 59 + this.ResourceAttributes.GetHashCode();
                 return hashCode;
             }
         }

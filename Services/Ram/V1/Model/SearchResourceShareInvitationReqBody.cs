@@ -77,37 +77,14 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         /// </summary>
         public bool Equals(SearchResourceShareInvitationReqBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResourceShareIds != input.ResourceShareIds || (this.ResourceShareIds != null && input.ResourceShareIds != null && !this.ResourceShareIds.SequenceEqual(input.ResourceShareIds))) return false;
+            if (this.ResourceShareInvitationIds != input.ResourceShareInvitationIds || (this.ResourceShareInvitationIds != null && input.ResourceShareInvitationIds != null && !this.ResourceShareInvitationIds.SequenceEqual(input.ResourceShareInvitationIds))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
 
-            return 
-                (
-                    this.ResourceShareIds == input.ResourceShareIds ||
-                    this.ResourceShareIds != null &&
-                    input.ResourceShareIds != null &&
-                    this.ResourceShareIds.SequenceEqual(input.ResourceShareIds)
-                ) && 
-                (
-                    this.ResourceShareInvitationIds == input.ResourceShareInvitationIds ||
-                    this.ResourceShareInvitationIds != null &&
-                    input.ResourceShareInvitationIds != null &&
-                    this.ResourceShareInvitationIds.SequenceEqual(input.ResourceShareInvitationIds)
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                );
+            return true;
         }
 
         /// <summary>
@@ -117,17 +94,12 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResourceShareIds != null)
-                    hashCode = hashCode * 59 + this.ResourceShareIds.GetHashCode();
-                if (this.ResourceShareInvitationIds != null)
-                    hashCode = hashCode * 59 + this.ResourceShareInvitationIds.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                var hashCode = 41;
+                if (this.ResourceShareIds != null) hashCode = hashCode * 59 + this.ResourceShareIds.GetHashCode();
+                if (this.ResourceShareInvitationIds != null) hashCode = hashCode * 59 + this.ResourceShareInvitationIds.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 return hashCode;
             }
         }

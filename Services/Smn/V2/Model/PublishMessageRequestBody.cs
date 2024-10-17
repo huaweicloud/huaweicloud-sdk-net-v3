@@ -91,47 +91,16 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public bool Equals(PublishMessageRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Subject != input.Subject || (this.Subject != null && !this.Subject.Equals(input.Subject))) return false;
+            if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
+            if (this.MessageStructure != input.MessageStructure || (this.MessageStructure != null && !this.MessageStructure.Equals(input.MessageStructure))) return false;
+            if (this.MessageTemplateName != input.MessageTemplateName || (this.MessageTemplateName != null && !this.MessageTemplateName.Equals(input.MessageTemplateName))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.TimeToLive != input.TimeToLive || (this.TimeToLive != null && !this.TimeToLive.Equals(input.TimeToLive))) return false;
+            if (this.MessageAttributes != input.MessageAttributes || (this.MessageAttributes != null && input.MessageAttributes != null && !this.MessageAttributes.SequenceEqual(input.MessageAttributes))) return false;
 
-            return 
-                (
-                    this.Subject == input.Subject ||
-                    (this.Subject != null &&
-                    this.Subject.Equals(input.Subject))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.MessageStructure == input.MessageStructure ||
-                    (this.MessageStructure != null &&
-                    this.MessageStructure.Equals(input.MessageStructure))
-                ) && 
-                (
-                    this.MessageTemplateName == input.MessageTemplateName ||
-                    (this.MessageTemplateName != null &&
-                    this.MessageTemplateName.Equals(input.MessageTemplateName))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.TimeToLive == input.TimeToLive ||
-                    (this.TimeToLive != null &&
-                    this.TimeToLive.Equals(input.TimeToLive))
-                ) && 
-                (
-                    this.MessageAttributes == input.MessageAttributes ||
-                    this.MessageAttributes != null &&
-                    input.MessageAttributes != null &&
-                    this.MessageAttributes.SequenceEqual(input.MessageAttributes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -141,21 +110,14 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Subject != null)
-                    hashCode = hashCode * 59 + this.Subject.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.MessageStructure != null)
-                    hashCode = hashCode * 59 + this.MessageStructure.GetHashCode();
-                if (this.MessageTemplateName != null)
-                    hashCode = hashCode * 59 + this.MessageTemplateName.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.TimeToLive != null)
-                    hashCode = hashCode * 59 + this.TimeToLive.GetHashCode();
-                if (this.MessageAttributes != null)
-                    hashCode = hashCode * 59 + this.MessageAttributes.GetHashCode();
+                var hashCode = 41;
+                if (this.Subject != null) hashCode = hashCode * 59 + this.Subject.GetHashCode();
+                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.MessageStructure != null) hashCode = hashCode * 59 + this.MessageStructure.GetHashCode();
+                if (this.MessageTemplateName != null) hashCode = hashCode * 59 + this.MessageTemplateName.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.TimeToLive != null) hashCode = hashCode * 59 + this.TimeToLive.GetHashCode();
+                if (this.MessageAttributes != null) hashCode = hashCode * 59 + this.MessageAttributes.GetHashCode();
                 return hashCode;
             }
         }

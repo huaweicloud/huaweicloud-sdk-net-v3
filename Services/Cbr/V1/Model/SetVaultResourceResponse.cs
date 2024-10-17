@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(SetVaultResourceResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SetResourceIds != input.SetResourceIds || (this.SetResourceIds != null && input.SetResourceIds != null && !this.SetResourceIds.SequenceEqual(input.SetResourceIds))) return false;
 
-            return 
-                (
-                    this.SetResourceIds == input.SetResourceIds ||
-                    this.SetResourceIds != null &&
-                    input.SetResourceIds != null &&
-                    this.SetResourceIds.SequenceEqual(input.SetResourceIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SetResourceIds != null)
-                    hashCode = hashCode * 59 + this.SetResourceIds.GetHashCode();
+                var hashCode = 41;
+                if (this.SetResourceIds != null) hashCode = hashCode * 59 + this.SetResourceIds.GetHashCode();
                 return hashCode;
             }
         }

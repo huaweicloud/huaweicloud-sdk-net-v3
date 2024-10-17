@@ -64,26 +64,12 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public bool Equals(ListRetentionHistoriesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RetentionLog != input.RetentionLog || (this.RetentionLog != null && input.RetentionLog != null && !this.RetentionLog.SequenceEqual(input.RetentionLog))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.ContentRange != input.ContentRange || (this.ContentRange != null && !this.ContentRange.Equals(input.ContentRange))) return false;
 
-            return 
-                (
-                    this.RetentionLog == input.RetentionLog ||
-                    this.RetentionLog != null &&
-                    input.RetentionLog != null &&
-                    this.RetentionLog.SequenceEqual(input.RetentionLog)
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.ContentRange == input.ContentRange ||
-                    (this.ContentRange != null &&
-                    this.ContentRange.Equals(input.ContentRange))
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +79,10 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RetentionLog != null)
-                    hashCode = hashCode * 59 + this.RetentionLog.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.ContentRange != null)
-                    hashCode = hashCode * 59 + this.ContentRange.GetHashCode();
+                var hashCode = 41;
+                if (this.RetentionLog != null) hashCode = hashCode * 59 + this.RetentionLog.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.ContentRange != null) hashCode = hashCode * 59 + this.ContentRange.GetHashCode();
                 return hashCode;
             }
         }

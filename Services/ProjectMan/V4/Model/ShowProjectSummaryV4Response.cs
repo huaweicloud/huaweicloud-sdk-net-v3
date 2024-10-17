@@ -70,33 +70,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ShowProjectSummaryV4Response input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BugStatistics != input.BugStatistics || (this.BugStatistics != null && input.BugStatistics != null && !this.BugStatistics.SequenceEqual(input.BugStatistics))) return false;
+            if (this.DemandStatistics != input.DemandStatistics || (this.DemandStatistics != null && input.DemandStatistics != null && !this.DemandStatistics.SequenceEqual(input.DemandStatistics))) return false;
+            if (this.IssueCompletionRates != input.IssueCompletionRates || (this.IssueCompletionRates != null && input.IssueCompletionRates != null && !this.IssueCompletionRates.SequenceEqual(input.IssueCompletionRates))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
 
-            return 
-                (
-                    this.BugStatistics == input.BugStatistics ||
-                    this.BugStatistics != null &&
-                    input.BugStatistics != null &&
-                    this.BugStatistics.SequenceEqual(input.BugStatistics)
-                ) && 
-                (
-                    this.DemandStatistics == input.DemandStatistics ||
-                    this.DemandStatistics != null &&
-                    input.DemandStatistics != null &&
-                    this.DemandStatistics.SequenceEqual(input.DemandStatistics)
-                ) && 
-                (
-                    this.IssueCompletionRates == input.IssueCompletionRates ||
-                    this.IssueCompletionRates != null &&
-                    input.IssueCompletionRates != null &&
-                    this.IssueCompletionRates.SequenceEqual(input.IssueCompletionRates)
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -106,15 +86,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BugStatistics != null)
-                    hashCode = hashCode * 59 + this.BugStatistics.GetHashCode();
-                if (this.DemandStatistics != null)
-                    hashCode = hashCode * 59 + this.DemandStatistics.GetHashCode();
-                if (this.IssueCompletionRates != null)
-                    hashCode = hashCode * 59 + this.IssueCompletionRates.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                var hashCode = 41;
+                if (this.BugStatistics != null) hashCode = hashCode * 59 + this.BugStatistics.GetHashCode();
+                if (this.DemandStatistics != null) hashCode = hashCode * 59 + this.DemandStatistics.GetHashCode();
+                if (this.IssueCompletionRates != null) hashCode = hashCode * 59 + this.IssueCompletionRates.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
                 return hashCode;
             }
         }

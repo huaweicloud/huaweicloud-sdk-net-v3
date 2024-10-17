@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ShowReplayDelayStatusResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CurDelayTimeMills != input.CurDelayTimeMills || (this.CurDelayTimeMills != null && !this.CurDelayTimeMills.Equals(input.CurDelayTimeMills))) return false;
+            if (this.DelayTimeValueRange != input.DelayTimeValueRange || (this.DelayTimeValueRange != null && !this.DelayTimeValueRange.Equals(input.DelayTimeValueRange))) return false;
+            if (this.RealDelayTimeMills != input.RealDelayTimeMills || (this.RealDelayTimeMills != null && !this.RealDelayTimeMills.Equals(input.RealDelayTimeMills))) return false;
+            if (this.CurLogReplayPaused != input.CurLogReplayPaused || (this.CurLogReplayPaused != null && !this.CurLogReplayPaused.Equals(input.CurLogReplayPaused))) return false;
+            if (this.LatestReceiveLog != input.LatestReceiveLog || (this.LatestReceiveLog != null && !this.LatestReceiveLog.Equals(input.LatestReceiveLog))) return false;
+            if (this.LatestReplayLog != input.LatestReplayLog || (this.LatestReplayLog != null && !this.LatestReplayLog.Equals(input.LatestReplayLog))) return false;
 
-            return 
-                (
-                    this.CurDelayTimeMills == input.CurDelayTimeMills ||
-                    (this.CurDelayTimeMills != null &&
-                    this.CurDelayTimeMills.Equals(input.CurDelayTimeMills))
-                ) && 
-                (
-                    this.DelayTimeValueRange == input.DelayTimeValueRange ||
-                    (this.DelayTimeValueRange != null &&
-                    this.DelayTimeValueRange.Equals(input.DelayTimeValueRange))
-                ) && 
-                (
-                    this.RealDelayTimeMills == input.RealDelayTimeMills ||
-                    (this.RealDelayTimeMills != null &&
-                    this.RealDelayTimeMills.Equals(input.RealDelayTimeMills))
-                ) && 
-                (
-                    this.CurLogReplayPaused == input.CurLogReplayPaused ||
-                    (this.CurLogReplayPaused != null &&
-                    this.CurLogReplayPaused.Equals(input.CurLogReplayPaused))
-                ) && 
-                (
-                    this.LatestReceiveLog == input.LatestReceiveLog ||
-                    (this.LatestReceiveLog != null &&
-                    this.LatestReceiveLog.Equals(input.LatestReceiveLog))
-                ) && 
-                (
-                    this.LatestReplayLog == input.LatestReplayLog ||
-                    (this.LatestReplayLog != null &&
-                    this.LatestReplayLog.Equals(input.LatestReplayLog))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CurDelayTimeMills != null)
-                    hashCode = hashCode * 59 + this.CurDelayTimeMills.GetHashCode();
-                if (this.DelayTimeValueRange != null)
-                    hashCode = hashCode * 59 + this.DelayTimeValueRange.GetHashCode();
-                if (this.RealDelayTimeMills != null)
-                    hashCode = hashCode * 59 + this.RealDelayTimeMills.GetHashCode();
-                if (this.CurLogReplayPaused != null)
-                    hashCode = hashCode * 59 + this.CurLogReplayPaused.GetHashCode();
-                if (this.LatestReceiveLog != null)
-                    hashCode = hashCode * 59 + this.LatestReceiveLog.GetHashCode();
-                if (this.LatestReplayLog != null)
-                    hashCode = hashCode * 59 + this.LatestReplayLog.GetHashCode();
+                var hashCode = 41;
+                if (this.CurDelayTimeMills != null) hashCode = hashCode * 59 + this.CurDelayTimeMills.GetHashCode();
+                if (this.DelayTimeValueRange != null) hashCode = hashCode * 59 + this.DelayTimeValueRange.GetHashCode();
+                if (this.RealDelayTimeMills != null) hashCode = hashCode * 59 + this.RealDelayTimeMills.GetHashCode();
+                if (this.CurLogReplayPaused != null) hashCode = hashCode * 59 + this.CurLogReplayPaused.GetHashCode();
+                if (this.LatestReceiveLog != null) hashCode = hashCode * 59 + this.LatestReceiveLog.GetHashCode();
+                if (this.LatestReplayLog != null) hashCode = hashCode * 59 + this.LatestReplayLog.GetHashCode();
                 return hashCode;
             }
         }

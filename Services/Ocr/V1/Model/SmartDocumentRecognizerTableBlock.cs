@@ -70,32 +70,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(SmartDocumentRecognizerTableBlock input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Location != input.Location || (this.Location != null && input.Location != null && !this.Location.SequenceEqual(input.Location))) return false;
+            if (this.WordsBlockCount != input.WordsBlockCount || (this.WordsBlockCount != null && !this.WordsBlockCount.Equals(input.WordsBlockCount))) return false;
+            if (this.WordsBlockList != input.WordsBlockList || (this.WordsBlockList != null && input.WordsBlockList != null && !this.WordsBlockList.SequenceEqual(input.WordsBlockList))) return false;
+            if (this.Excel != input.Excel || (this.Excel != null && !this.Excel.Equals(input.Excel))) return false;
 
-            return 
-                (
-                    this.Location == input.Location ||
-                    this.Location != null &&
-                    input.Location != null &&
-                    this.Location.SequenceEqual(input.Location)
-                ) && 
-                (
-                    this.WordsBlockCount == input.WordsBlockCount ||
-                    (this.WordsBlockCount != null &&
-                    this.WordsBlockCount.Equals(input.WordsBlockCount))
-                ) && 
-                (
-                    this.WordsBlockList == input.WordsBlockList ||
-                    this.WordsBlockList != null &&
-                    input.WordsBlockList != null &&
-                    this.WordsBlockList.SequenceEqual(input.WordsBlockList)
-                ) && 
-                (
-                    this.Excel == input.Excel ||
-                    (this.Excel != null &&
-                    this.Excel.Equals(input.Excel))
-                );
+            return true;
         }
 
         /// <summary>
@@ -105,15 +86,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Location != null)
-                    hashCode = hashCode * 59 + this.Location.GetHashCode();
-                if (this.WordsBlockCount != null)
-                    hashCode = hashCode * 59 + this.WordsBlockCount.GetHashCode();
-                if (this.WordsBlockList != null)
-                    hashCode = hashCode * 59 + this.WordsBlockList.GetHashCode();
-                if (this.Excel != null)
-                    hashCode = hashCode * 59 + this.Excel.GetHashCode();
+                var hashCode = 41;
+                if (this.Location != null) hashCode = hashCode * 59 + this.Location.GetHashCode();
+                if (this.WordsBlockCount != null) hashCode = hashCode * 59 + this.WordsBlockCount.GetHashCode();
+                if (this.WordsBlockList != null) hashCode = hashCode * 59 + this.WordsBlockList.GetHashCode();
+                if (this.Excel != null) hashCode = hashCode * 59 + this.Excel.GetHashCode();
                 return hashCode;
             }
         }

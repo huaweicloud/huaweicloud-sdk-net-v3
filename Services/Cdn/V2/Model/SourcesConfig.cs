@@ -133,75 +133,22 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(SourcesConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OriginType != input.OriginType || (this.OriginType != null && !this.OriginType.Equals(input.OriginType))) return false;
+            if (this.OriginAddr != input.OriginAddr || (this.OriginAddr != null && !this.OriginAddr.Equals(input.OriginAddr))) return false;
+            if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
+            if (this.Weight != input.Weight || (this.Weight != null && !this.Weight.Equals(input.Weight))) return false;
+            if (this.ObsWebHostingStatus != input.ObsWebHostingStatus || (this.ObsWebHostingStatus != null && !this.ObsWebHostingStatus.Equals(input.ObsWebHostingStatus))) return false;
+            if (this.HttpPort != input.HttpPort || (this.HttpPort != null && !this.HttpPort.Equals(input.HttpPort))) return false;
+            if (this.HttpsPort != input.HttpsPort || (this.HttpsPort != null && !this.HttpsPort.Equals(input.HttpsPort))) return false;
+            if (this.HostName != input.HostName || (this.HostName != null && !this.HostName.Equals(input.HostName))) return false;
+            if (this.ObsBucketType != input.ObsBucketType || (this.ObsBucketType != null && !this.ObsBucketType.Equals(input.ObsBucketType))) return false;
+            if (this.BucketAccessKey != input.BucketAccessKey || (this.BucketAccessKey != null && !this.BucketAccessKey.Equals(input.BucketAccessKey))) return false;
+            if (this.BucketSecretKey != input.BucketSecretKey || (this.BucketSecretKey != null && !this.BucketSecretKey.Equals(input.BucketSecretKey))) return false;
+            if (this.BucketRegion != input.BucketRegion || (this.BucketRegion != null && !this.BucketRegion.Equals(input.BucketRegion))) return false;
+            if (this.BucketName != input.BucketName || (this.BucketName != null && !this.BucketName.Equals(input.BucketName))) return false;
 
-            return 
-                (
-                    this.OriginType == input.OriginType ||
-                    (this.OriginType != null &&
-                    this.OriginType.Equals(input.OriginType))
-                ) && 
-                (
-                    this.OriginAddr == input.OriginAddr ||
-                    (this.OriginAddr != null &&
-                    this.OriginAddr.Equals(input.OriginAddr))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    (this.Priority != null &&
-                    this.Priority.Equals(input.Priority))
-                ) && 
-                (
-                    this.Weight == input.Weight ||
-                    (this.Weight != null &&
-                    this.Weight.Equals(input.Weight))
-                ) && 
-                (
-                    this.ObsWebHostingStatus == input.ObsWebHostingStatus ||
-                    (this.ObsWebHostingStatus != null &&
-                    this.ObsWebHostingStatus.Equals(input.ObsWebHostingStatus))
-                ) && 
-                (
-                    this.HttpPort == input.HttpPort ||
-                    (this.HttpPort != null &&
-                    this.HttpPort.Equals(input.HttpPort))
-                ) && 
-                (
-                    this.HttpsPort == input.HttpsPort ||
-                    (this.HttpsPort != null &&
-                    this.HttpsPort.Equals(input.HttpsPort))
-                ) && 
-                (
-                    this.HostName == input.HostName ||
-                    (this.HostName != null &&
-                    this.HostName.Equals(input.HostName))
-                ) && 
-                (
-                    this.ObsBucketType == input.ObsBucketType ||
-                    (this.ObsBucketType != null &&
-                    this.ObsBucketType.Equals(input.ObsBucketType))
-                ) && 
-                (
-                    this.BucketAccessKey == input.BucketAccessKey ||
-                    (this.BucketAccessKey != null &&
-                    this.BucketAccessKey.Equals(input.BucketAccessKey))
-                ) && 
-                (
-                    this.BucketSecretKey == input.BucketSecretKey ||
-                    (this.BucketSecretKey != null &&
-                    this.BucketSecretKey.Equals(input.BucketSecretKey))
-                ) && 
-                (
-                    this.BucketRegion == input.BucketRegion ||
-                    (this.BucketRegion != null &&
-                    this.BucketRegion.Equals(input.BucketRegion))
-                ) && 
-                (
-                    this.BucketName == input.BucketName ||
-                    (this.BucketName != null &&
-                    this.BucketName.Equals(input.BucketName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -211,33 +158,20 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OriginType != null)
-                    hashCode = hashCode * 59 + this.OriginType.GetHashCode();
-                if (this.OriginAddr != null)
-                    hashCode = hashCode * 59 + this.OriginAddr.GetHashCode();
-                if (this.Priority != null)
-                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
-                if (this.Weight != null)
-                    hashCode = hashCode * 59 + this.Weight.GetHashCode();
-                if (this.ObsWebHostingStatus != null)
-                    hashCode = hashCode * 59 + this.ObsWebHostingStatus.GetHashCode();
-                if (this.HttpPort != null)
-                    hashCode = hashCode * 59 + this.HttpPort.GetHashCode();
-                if (this.HttpsPort != null)
-                    hashCode = hashCode * 59 + this.HttpsPort.GetHashCode();
-                if (this.HostName != null)
-                    hashCode = hashCode * 59 + this.HostName.GetHashCode();
-                if (this.ObsBucketType != null)
-                    hashCode = hashCode * 59 + this.ObsBucketType.GetHashCode();
-                if (this.BucketAccessKey != null)
-                    hashCode = hashCode * 59 + this.BucketAccessKey.GetHashCode();
-                if (this.BucketSecretKey != null)
-                    hashCode = hashCode * 59 + this.BucketSecretKey.GetHashCode();
-                if (this.BucketRegion != null)
-                    hashCode = hashCode * 59 + this.BucketRegion.GetHashCode();
-                if (this.BucketName != null)
-                    hashCode = hashCode * 59 + this.BucketName.GetHashCode();
+                var hashCode = 41;
+                if (this.OriginType != null) hashCode = hashCode * 59 + this.OriginType.GetHashCode();
+                if (this.OriginAddr != null) hashCode = hashCode * 59 + this.OriginAddr.GetHashCode();
+                if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                if (this.Weight != null) hashCode = hashCode * 59 + this.Weight.GetHashCode();
+                if (this.ObsWebHostingStatus != null) hashCode = hashCode * 59 + this.ObsWebHostingStatus.GetHashCode();
+                if (this.HttpPort != null) hashCode = hashCode * 59 + this.HttpPort.GetHashCode();
+                if (this.HttpsPort != null) hashCode = hashCode * 59 + this.HttpsPort.GetHashCode();
+                if (this.HostName != null) hashCode = hashCode * 59 + this.HostName.GetHashCode();
+                if (this.ObsBucketType != null) hashCode = hashCode * 59 + this.ObsBucketType.GetHashCode();
+                if (this.BucketAccessKey != null) hashCode = hashCode * 59 + this.BucketAccessKey.GetHashCode();
+                if (this.BucketSecretKey != null) hashCode = hashCode * 59 + this.BucketSecretKey.GetHashCode();
+                if (this.BucketRegion != null) hashCode = hashCode * 59 + this.BucketRegion.GetHashCode();
+                if (this.BucketName != null) hashCode = hashCode * 59 + this.BucketName.GetHashCode();
                 return hashCode;
             }
         }

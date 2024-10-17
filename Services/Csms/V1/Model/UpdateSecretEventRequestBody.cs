@@ -177,26 +177,12 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         /// </summary>
         public bool Equals(UpdateSecretEventRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.State != input.State) return false;
+            if (this.EventTypes != input.EventTypes || (this.EventTypes != null && input.EventTypes != null && !this.EventTypes.SequenceEqual(input.EventTypes))) return false;
+            if (this.Notification != input.Notification || (this.Notification != null && !this.Notification.Equals(input.Notification))) return false;
 
-            return 
-                (
-                    this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
-                ) && 
-                (
-                    this.EventTypes == input.EventTypes ||
-                    this.EventTypes != null &&
-                    input.EventTypes != null &&
-                    this.EventTypes.SequenceEqual(input.EventTypes)
-                ) && 
-                (
-                    this.Notification == input.Notification ||
-                    (this.Notification != null &&
-                    this.Notification.Equals(input.Notification))
-                );
+            return true;
         }
 
         /// <summary>
@@ -206,13 +192,10 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.State != null)
-                    hashCode = hashCode * 59 + this.State.GetHashCode();
-                if (this.EventTypes != null)
-                    hashCode = hashCode * 59 + this.EventTypes.GetHashCode();
-                if (this.Notification != null)
-                    hashCode = hashCode * 59 + this.Notification.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.State.GetHashCode();
+                if (this.EventTypes != null) hashCode = hashCode * 59 + this.EventTypes.GetHashCode();
+                if (this.Notification != null) hashCode = hashCode * 59 + this.Notification.GetHashCode();
                 return hashCode;
             }
         }

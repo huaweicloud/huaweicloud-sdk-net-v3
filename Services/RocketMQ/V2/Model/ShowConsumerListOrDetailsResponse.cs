@@ -84,42 +84,15 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(ShowConsumerListOrDetailsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Topics != input.Topics || (this.Topics != null && input.Topics != null && !this.Topics.SequenceEqual(input.Topics))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.Lag != input.Lag || (this.Lag != null && !this.Lag.Equals(input.Lag))) return false;
+            if (this.MaxOffset != input.MaxOffset || (this.MaxOffset != null && !this.MaxOffset.Equals(input.MaxOffset))) return false;
+            if (this.ConsumerOffset != input.ConsumerOffset || (this.ConsumerOffset != null && !this.ConsumerOffset.Equals(input.ConsumerOffset))) return false;
+            if (this.Brokers != input.Brokers || (this.Brokers != null && input.Brokers != null && !this.Brokers.SequenceEqual(input.Brokers))) return false;
 
-            return 
-                (
-                    this.Topics == input.Topics ||
-                    this.Topics != null &&
-                    input.Topics != null &&
-                    this.Topics.SequenceEqual(input.Topics)
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.Lag == input.Lag ||
-                    (this.Lag != null &&
-                    this.Lag.Equals(input.Lag))
-                ) && 
-                (
-                    this.MaxOffset == input.MaxOffset ||
-                    (this.MaxOffset != null &&
-                    this.MaxOffset.Equals(input.MaxOffset))
-                ) && 
-                (
-                    this.ConsumerOffset == input.ConsumerOffset ||
-                    (this.ConsumerOffset != null &&
-                    this.ConsumerOffset.Equals(input.ConsumerOffset))
-                ) && 
-                (
-                    this.Brokers == input.Brokers ||
-                    this.Brokers != null &&
-                    input.Brokers != null &&
-                    this.Brokers.SequenceEqual(input.Brokers)
-                );
+            return true;
         }
 
         /// <summary>
@@ -129,19 +102,13 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Topics != null)
-                    hashCode = hashCode * 59 + this.Topics.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.Lag != null)
-                    hashCode = hashCode * 59 + this.Lag.GetHashCode();
-                if (this.MaxOffset != null)
-                    hashCode = hashCode * 59 + this.MaxOffset.GetHashCode();
-                if (this.ConsumerOffset != null)
-                    hashCode = hashCode * 59 + this.ConsumerOffset.GetHashCode();
-                if (this.Brokers != null)
-                    hashCode = hashCode * 59 + this.Brokers.GetHashCode();
+                var hashCode = 41;
+                if (this.Topics != null) hashCode = hashCode * 59 + this.Topics.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.Lag != null) hashCode = hashCode * 59 + this.Lag.GetHashCode();
+                if (this.MaxOffset != null) hashCode = hashCode * 59 + this.MaxOffset.GetHashCode();
+                if (this.ConsumerOffset != null) hashCode = hashCode * 59 + this.ConsumerOffset.GetHashCode();
+                if (this.Brokers != null) hashCode = hashCode * 59 + this.Brokers.GetHashCode();
                 return hashCode;
             }
         }

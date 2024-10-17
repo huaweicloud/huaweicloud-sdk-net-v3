@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(DeviceMessageRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MessageId != input.MessageId || (this.MessageId != null && !this.MessageId.Equals(input.MessageId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
+            if (this.Properties != input.Properties || (this.Properties != null && !this.Properties.Equals(input.Properties))) return false;
+            if (this.Encoding != input.Encoding || (this.Encoding != null && !this.Encoding.Equals(input.Encoding))) return false;
+            if (this.PayloadFormat != input.PayloadFormat || (this.PayloadFormat != null && !this.PayloadFormat.Equals(input.PayloadFormat))) return false;
+            if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;
+            if (this.TopicFullName != input.TopicFullName || (this.TopicFullName != null && !this.TopicFullName.Equals(input.TopicFullName))) return false;
+            if (this.Ttl != input.Ttl || (this.Ttl != null && !this.Ttl.Equals(input.Ttl))) return false;
 
-            return 
-                (
-                    this.MessageId == input.MessageId ||
-                    (this.MessageId != null &&
-                    this.MessageId.Equals(input.MessageId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.Properties == input.Properties ||
-                    (this.Properties != null &&
-                    this.Properties.Equals(input.Properties))
-                ) && 
-                (
-                    this.Encoding == input.Encoding ||
-                    (this.Encoding != null &&
-                    this.Encoding.Equals(input.Encoding))
-                ) && 
-                (
-                    this.PayloadFormat == input.PayloadFormat ||
-                    (this.PayloadFormat != null &&
-                    this.PayloadFormat.Equals(input.PayloadFormat))
-                ) && 
-                (
-                    this.Topic == input.Topic ||
-                    (this.Topic != null &&
-                    this.Topic.Equals(input.Topic))
-                ) && 
-                (
-                    this.TopicFullName == input.TopicFullName ||
-                    (this.TopicFullName != null &&
-                    this.TopicFullName.Equals(input.TopicFullName))
-                ) && 
-                (
-                    this.Ttl == input.Ttl ||
-                    (this.Ttl != null &&
-                    this.Ttl.Equals(input.Ttl))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MessageId != null)
-                    hashCode = hashCode * 59 + this.MessageId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.Properties != null)
-                    hashCode = hashCode * 59 + this.Properties.GetHashCode();
-                if (this.Encoding != null)
-                    hashCode = hashCode * 59 + this.Encoding.GetHashCode();
-                if (this.PayloadFormat != null)
-                    hashCode = hashCode * 59 + this.PayloadFormat.GetHashCode();
-                if (this.Topic != null)
-                    hashCode = hashCode * 59 + this.Topic.GetHashCode();
-                if (this.TopicFullName != null)
-                    hashCode = hashCode * 59 + this.TopicFullName.GetHashCode();
-                if (this.Ttl != null)
-                    hashCode = hashCode * 59 + this.Ttl.GetHashCode();
+                var hashCode = 41;
+                if (this.MessageId != null) hashCode = hashCode * 59 + this.MessageId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.Properties != null) hashCode = hashCode * 59 + this.Properties.GetHashCode();
+                if (this.Encoding != null) hashCode = hashCode * 59 + this.Encoding.GetHashCode();
+                if (this.PayloadFormat != null) hashCode = hashCode * 59 + this.PayloadFormat.GetHashCode();
+                if (this.Topic != null) hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.TopicFullName != null) hashCode = hashCode * 59 + this.TopicFullName.GetHashCode();
+                if (this.Ttl != null) hashCode = hashCode * 59 + this.Ttl.GetHashCode();
                 return hashCode;
             }
         }

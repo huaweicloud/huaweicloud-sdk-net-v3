@@ -163,15 +163,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(PrePaidServerEipExtendParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ChargingMode != input.ChargingMode) return false;
 
-            return 
-                (
-                    this.ChargingMode == input.ChargingMode ||
-                    (this.ChargingMode != null &&
-                    this.ChargingMode.Equals(input.ChargingMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -181,9 +176,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ChargingMode != null)
-                    hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
                 return hashCode;
             }
         }

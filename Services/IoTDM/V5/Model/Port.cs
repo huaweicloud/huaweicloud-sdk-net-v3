@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
         /// </summary>
         public bool Equals(Port input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AppHttpsPort != input.AppHttpsPort || (this.AppHttpsPort != null && !this.AppHttpsPort.Equals(input.AppHttpsPort))) return false;
+            if (this.AppAmqpsPort != input.AppAmqpsPort || (this.AppAmqpsPort != null && !this.AppAmqpsPort.Equals(input.AppAmqpsPort))) return false;
+            if (this.DeviceCoapPort != input.DeviceCoapPort || (this.DeviceCoapPort != null && !this.DeviceCoapPort.Equals(input.DeviceCoapPort))) return false;
+            if (this.DeviceCoapsPort != input.DeviceCoapsPort || (this.DeviceCoapsPort != null && !this.DeviceCoapsPort.Equals(input.DeviceCoapsPort))) return false;
+            if (this.DeviceMqttPort != input.DeviceMqttPort || (this.DeviceMqttPort != null && !this.DeviceMqttPort.Equals(input.DeviceMqttPort))) return false;
+            if (this.DeviceMqttsPort != input.DeviceMqttsPort || (this.DeviceMqttsPort != null && !this.DeviceMqttsPort.Equals(input.DeviceMqttsPort))) return false;
+            if (this.DeviceHttpsPort != input.DeviceHttpsPort || (this.DeviceHttpsPort != null && !this.DeviceHttpsPort.Equals(input.DeviceHttpsPort))) return false;
 
-            return 
-                (
-                    this.AppHttpsPort == input.AppHttpsPort ||
-                    (this.AppHttpsPort != null &&
-                    this.AppHttpsPort.Equals(input.AppHttpsPort))
-                ) && 
-                (
-                    this.AppAmqpsPort == input.AppAmqpsPort ||
-                    (this.AppAmqpsPort != null &&
-                    this.AppAmqpsPort.Equals(input.AppAmqpsPort))
-                ) && 
-                (
-                    this.DeviceCoapPort == input.DeviceCoapPort ||
-                    (this.DeviceCoapPort != null &&
-                    this.DeviceCoapPort.Equals(input.DeviceCoapPort))
-                ) && 
-                (
-                    this.DeviceCoapsPort == input.DeviceCoapsPort ||
-                    (this.DeviceCoapsPort != null &&
-                    this.DeviceCoapsPort.Equals(input.DeviceCoapsPort))
-                ) && 
-                (
-                    this.DeviceMqttPort == input.DeviceMqttPort ||
-                    (this.DeviceMqttPort != null &&
-                    this.DeviceMqttPort.Equals(input.DeviceMqttPort))
-                ) && 
-                (
-                    this.DeviceMqttsPort == input.DeviceMqttsPort ||
-                    (this.DeviceMqttsPort != null &&
-                    this.DeviceMqttsPort.Equals(input.DeviceMqttsPort))
-                ) && 
-                (
-                    this.DeviceHttpsPort == input.DeviceHttpsPort ||
-                    (this.DeviceHttpsPort != null &&
-                    this.DeviceHttpsPort.Equals(input.DeviceHttpsPort))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AppHttpsPort != null)
-                    hashCode = hashCode * 59 + this.AppHttpsPort.GetHashCode();
-                if (this.AppAmqpsPort != null)
-                    hashCode = hashCode * 59 + this.AppAmqpsPort.GetHashCode();
-                if (this.DeviceCoapPort != null)
-                    hashCode = hashCode * 59 + this.DeviceCoapPort.GetHashCode();
-                if (this.DeviceCoapsPort != null)
-                    hashCode = hashCode * 59 + this.DeviceCoapsPort.GetHashCode();
-                if (this.DeviceMqttPort != null)
-                    hashCode = hashCode * 59 + this.DeviceMqttPort.GetHashCode();
-                if (this.DeviceMqttsPort != null)
-                    hashCode = hashCode * 59 + this.DeviceMqttsPort.GetHashCode();
-                if (this.DeviceHttpsPort != null)
-                    hashCode = hashCode * 59 + this.DeviceHttpsPort.GetHashCode();
+                var hashCode = 41;
+                if (this.AppHttpsPort != null) hashCode = hashCode * 59 + this.AppHttpsPort.GetHashCode();
+                if (this.AppAmqpsPort != null) hashCode = hashCode * 59 + this.AppAmqpsPort.GetHashCode();
+                if (this.DeviceCoapPort != null) hashCode = hashCode * 59 + this.DeviceCoapPort.GetHashCode();
+                if (this.DeviceCoapsPort != null) hashCode = hashCode * 59 + this.DeviceCoapsPort.GetHashCode();
+                if (this.DeviceMqttPort != null) hashCode = hashCode * 59 + this.DeviceMqttPort.GetHashCode();
+                if (this.DeviceMqttsPort != null) hashCode = hashCode * 59 + this.DeviceMqttsPort.GetHashCode();
+                if (this.DeviceHttpsPort != null) hashCode = hashCode * 59 + this.DeviceHttpsPort.GetHashCode();
                 return hashCode;
             }
         }

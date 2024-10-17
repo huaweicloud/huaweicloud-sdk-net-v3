@@ -105,58 +105,18 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(Flavor input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Vcpus != input.Vcpus || (this.Vcpus != null && !this.Vcpus.Equals(input.Vcpus))) return false;
+            if (this.Ram != input.Ram || (this.Ram != null && !this.Ram.Equals(input.Ram))) return false;
+            if (this.SpecCode != input.SpecCode || (this.SpecCode != null && !this.SpecCode.Equals(input.SpecCode))) return false;
+            if (this.InstanceMode != input.InstanceMode || (this.InstanceMode != null && !this.InstanceMode.Equals(input.InstanceMode))) return false;
+            if (this.AzStatus != input.AzStatus || (this.AzStatus != null && input.AzStatus != null && !this.AzStatus.SequenceEqual(input.AzStatus))) return false;
+            if (this.AzDesc != input.AzDesc || (this.AzDesc != null && input.AzDesc != null && !this.AzDesc.SequenceEqual(input.AzDesc))) return false;
+            if (this.VersionName != input.VersionName || (this.VersionName != null && input.VersionName != null && !this.VersionName.SequenceEqual(input.VersionName))) return false;
+            if (this.GroupType != input.GroupType || (this.GroupType != null && !this.GroupType.Equals(input.GroupType))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Vcpus == input.Vcpus ||
-                    (this.Vcpus != null &&
-                    this.Vcpus.Equals(input.Vcpus))
-                ) && 
-                (
-                    this.Ram == input.Ram ||
-                    (this.Ram != null &&
-                    this.Ram.Equals(input.Ram))
-                ) && 
-                (
-                    this.SpecCode == input.SpecCode ||
-                    (this.SpecCode != null &&
-                    this.SpecCode.Equals(input.SpecCode))
-                ) && 
-                (
-                    this.InstanceMode == input.InstanceMode ||
-                    (this.InstanceMode != null &&
-                    this.InstanceMode.Equals(input.InstanceMode))
-                ) && 
-                (
-                    this.AzStatus == input.AzStatus ||
-                    this.AzStatus != null &&
-                    input.AzStatus != null &&
-                    this.AzStatus.SequenceEqual(input.AzStatus)
-                ) && 
-                (
-                    this.AzDesc == input.AzDesc ||
-                    this.AzDesc != null &&
-                    input.AzDesc != null &&
-                    this.AzDesc.SequenceEqual(input.AzDesc)
-                ) && 
-                (
-                    this.VersionName == input.VersionName ||
-                    this.VersionName != null &&
-                    input.VersionName != null &&
-                    this.VersionName.SequenceEqual(input.VersionName)
-                ) && 
-                (
-                    this.GroupType == input.GroupType ||
-                    (this.GroupType != null &&
-                    this.GroupType.Equals(input.GroupType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -166,25 +126,16 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Vcpus != null)
-                    hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
-                if (this.Ram != null)
-                    hashCode = hashCode * 59 + this.Ram.GetHashCode();
-                if (this.SpecCode != null)
-                    hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
-                if (this.InstanceMode != null)
-                    hashCode = hashCode * 59 + this.InstanceMode.GetHashCode();
-                if (this.AzStatus != null)
-                    hashCode = hashCode * 59 + this.AzStatus.GetHashCode();
-                if (this.AzDesc != null)
-                    hashCode = hashCode * 59 + this.AzDesc.GetHashCode();
-                if (this.VersionName != null)
-                    hashCode = hashCode * 59 + this.VersionName.GetHashCode();
-                if (this.GroupType != null)
-                    hashCode = hashCode * 59 + this.GroupType.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Vcpus != null) hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
+                if (this.Ram != null) hashCode = hashCode * 59 + this.Ram.GetHashCode();
+                if (this.SpecCode != null) hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
+                if (this.InstanceMode != null) hashCode = hashCode * 59 + this.InstanceMode.GetHashCode();
+                if (this.AzStatus != null) hashCode = hashCode * 59 + this.AzStatus.GetHashCode();
+                if (this.AzDesc != null) hashCode = hashCode * 59 + this.AzDesc.GetHashCode();
+                if (this.VersionName != null) hashCode = hashCode * 59 + this.VersionName.GetHashCode();
+                if (this.GroupType != null) hashCode = hashCode * 59 + this.GroupType.GetHashCode();
                 return hashCode;
             }
         }

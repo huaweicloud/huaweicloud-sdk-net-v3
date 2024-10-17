@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(AssociateRouteTableAndSubnetReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Associate != input.Associate || (this.Associate != null && input.Associate != null && !this.Associate.SequenceEqual(input.Associate))) return false;
+            if (this.Disassociate != input.Disassociate || (this.Disassociate != null && input.Disassociate != null && !this.Disassociate.SequenceEqual(input.Disassociate))) return false;
 
-            return 
-                (
-                    this.Associate == input.Associate ||
-                    this.Associate != null &&
-                    input.Associate != null &&
-                    this.Associate.SequenceEqual(input.Associate)
-                ) && 
-                (
-                    this.Disassociate == input.Disassociate ||
-                    this.Disassociate != null &&
-                    input.Disassociate != null &&
-                    this.Disassociate.SequenceEqual(input.Disassociate)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Associate != null)
-                    hashCode = hashCode * 59 + this.Associate.GetHashCode();
-                if (this.Disassociate != null)
-                    hashCode = hashCode * 59 + this.Disassociate.GetHashCode();
+                var hashCode = 41;
+                if (this.Associate != null) hashCode = hashCode * 59 + this.Associate.GetHashCode();
+                if (this.Disassociate != null) hashCode = hashCode * 59 + this.Disassociate.GetHashCode();
                 return hashCode;
             }
         }

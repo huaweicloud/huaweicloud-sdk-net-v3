@@ -77,37 +77,14 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(FinancialStatementResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.WordsRegionCount != input.WordsRegionCount || (this.WordsRegionCount != null && !this.WordsRegionCount.Equals(input.WordsRegionCount))) return false;
+            if (this.WordsRegionList != input.WordsRegionList || (this.WordsRegionList != null && input.WordsRegionList != null && !this.WordsRegionList.SequenceEqual(input.WordsRegionList))) return false;
+            if (this.Excel != input.Excel || (this.Excel != null && !this.Excel.Equals(input.Excel))) return false;
+            if (this.ImageSize != input.ImageSize || (this.ImageSize != null && !this.ImageSize.Equals(input.ImageSize))) return false;
+            if (this.RectificationMatrix != input.RectificationMatrix || (this.RectificationMatrix != null && input.RectificationMatrix != null && !this.RectificationMatrix.SequenceEqual(input.RectificationMatrix))) return false;
 
-            return 
-                (
-                    this.WordsRegionCount == input.WordsRegionCount ||
-                    (this.WordsRegionCount != null &&
-                    this.WordsRegionCount.Equals(input.WordsRegionCount))
-                ) && 
-                (
-                    this.WordsRegionList == input.WordsRegionList ||
-                    this.WordsRegionList != null &&
-                    input.WordsRegionList != null &&
-                    this.WordsRegionList.SequenceEqual(input.WordsRegionList)
-                ) && 
-                (
-                    this.Excel == input.Excel ||
-                    (this.Excel != null &&
-                    this.Excel.Equals(input.Excel))
-                ) && 
-                (
-                    this.ImageSize == input.ImageSize ||
-                    (this.ImageSize != null &&
-                    this.ImageSize.Equals(input.ImageSize))
-                ) && 
-                (
-                    this.RectificationMatrix == input.RectificationMatrix ||
-                    this.RectificationMatrix != null &&
-                    input.RectificationMatrix != null &&
-                    this.RectificationMatrix.SequenceEqual(input.RectificationMatrix)
-                );
+            return true;
         }
 
         /// <summary>
@@ -117,17 +94,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.WordsRegionCount != null)
-                    hashCode = hashCode * 59 + this.WordsRegionCount.GetHashCode();
-                if (this.WordsRegionList != null)
-                    hashCode = hashCode * 59 + this.WordsRegionList.GetHashCode();
-                if (this.Excel != null)
-                    hashCode = hashCode * 59 + this.Excel.GetHashCode();
-                if (this.ImageSize != null)
-                    hashCode = hashCode * 59 + this.ImageSize.GetHashCode();
-                if (this.RectificationMatrix != null)
-                    hashCode = hashCode * 59 + this.RectificationMatrix.GetHashCode();
+                var hashCode = 41;
+                if (this.WordsRegionCount != null) hashCode = hashCode * 59 + this.WordsRegionCount.GetHashCode();
+                if (this.WordsRegionList != null) hashCode = hashCode * 59 + this.WordsRegionList.GetHashCode();
+                if (this.Excel != null) hashCode = hashCode * 59 + this.Excel.GetHashCode();
+                if (this.ImageSize != null) hashCode = hashCode * 59 + this.ImageSize.GetHashCode();
+                if (this.RectificationMatrix != null) hashCode = hashCode * 59 + this.RectificationMatrix.GetHashCode();
                 return hashCode;
             }
         }

@@ -204,42 +204,15 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(ReviewInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Suggestion != input.Suggestion) return false;
+            if (this.Text != input.Text || (this.Text != null && !this.Text.Equals(input.Text))) return false;
+            if (this.Cover != input.Cover || (this.Cover != null && input.Cover != null && !this.Cover.SequenceEqual(input.Cover))) return false;
+            if (this.Video != input.Video || (this.Video != null && input.Video != null && !this.Video.SequenceEqual(input.Video))) return false;
+            if (this.ExecDesc != input.ExecDesc || (this.ExecDesc != null && !this.ExecDesc.Equals(input.ExecDesc))) return false;
+            if (this.ReviewStatus != input.ReviewStatus || (this.ReviewStatus != null && !this.ReviewStatus.Equals(input.ReviewStatus))) return false;
 
-            return 
-                (
-                    this.Suggestion == input.Suggestion ||
-                    (this.Suggestion != null &&
-                    this.Suggestion.Equals(input.Suggestion))
-                ) && 
-                (
-                    this.Text == input.Text ||
-                    (this.Text != null &&
-                    this.Text.Equals(input.Text))
-                ) && 
-                (
-                    this.Cover == input.Cover ||
-                    this.Cover != null &&
-                    input.Cover != null &&
-                    this.Cover.SequenceEqual(input.Cover)
-                ) && 
-                (
-                    this.Video == input.Video ||
-                    this.Video != null &&
-                    input.Video != null &&
-                    this.Video.SequenceEqual(input.Video)
-                ) && 
-                (
-                    this.ExecDesc == input.ExecDesc ||
-                    (this.ExecDesc != null &&
-                    this.ExecDesc.Equals(input.ExecDesc))
-                ) && 
-                (
-                    this.ReviewStatus == input.ReviewStatus ||
-                    (this.ReviewStatus != null &&
-                    this.ReviewStatus.Equals(input.ReviewStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -249,19 +222,13 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Suggestion != null)
-                    hashCode = hashCode * 59 + this.Suggestion.GetHashCode();
-                if (this.Text != null)
-                    hashCode = hashCode * 59 + this.Text.GetHashCode();
-                if (this.Cover != null)
-                    hashCode = hashCode * 59 + this.Cover.GetHashCode();
-                if (this.Video != null)
-                    hashCode = hashCode * 59 + this.Video.GetHashCode();
-                if (this.ExecDesc != null)
-                    hashCode = hashCode * 59 + this.ExecDesc.GetHashCode();
-                if (this.ReviewStatus != null)
-                    hashCode = hashCode * 59 + this.ReviewStatus.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Suggestion.GetHashCode();
+                if (this.Text != null) hashCode = hashCode * 59 + this.Text.GetHashCode();
+                if (this.Cover != null) hashCode = hashCode * 59 + this.Cover.GetHashCode();
+                if (this.Video != null) hashCode = hashCode * 59 + this.Video.GetHashCode();
+                if (this.ExecDesc != null) hashCode = hashCode * 59 + this.ExecDesc.GetHashCode();
+                if (this.ReviewStatus != null) hashCode = hashCode * 59 + this.ReviewStatus.GetHashCode();
                 return hashCode;
             }
         }

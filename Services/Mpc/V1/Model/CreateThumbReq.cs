@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(CreateThumbReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Input != input.Input || (this.Input != null && !this.Input.Equals(input.Input))) return false;
+            if (this.Output != input.Output || (this.Output != null && !this.Output.Equals(input.Output))) return false;
+            if (this.UserData != input.UserData || (this.UserData != null && !this.UserData.Equals(input.UserData))) return false;
+            if (this.ThumbnailPara != input.ThumbnailPara || (this.ThumbnailPara != null && !this.ThumbnailPara.Equals(input.ThumbnailPara))) return false;
+            if (this.Tar != input.Tar || (this.Tar != null && !this.Tar.Equals(input.Tar))) return false;
+            if (this.Sync != input.Sync || (this.Sync != null && !this.Sync.Equals(input.Sync))) return false;
+            if (this.OriginalDir != input.OriginalDir || (this.OriginalDir != null && !this.OriginalDir.Equals(input.OriginalDir))) return false;
 
-            return 
-                (
-                    this.Input == input.Input ||
-                    (this.Input != null &&
-                    this.Input.Equals(input.Input))
-                ) && 
-                (
-                    this.Output == input.Output ||
-                    (this.Output != null &&
-                    this.Output.Equals(input.Output))
-                ) && 
-                (
-                    this.UserData == input.UserData ||
-                    (this.UserData != null &&
-                    this.UserData.Equals(input.UserData))
-                ) && 
-                (
-                    this.ThumbnailPara == input.ThumbnailPara ||
-                    (this.ThumbnailPara != null &&
-                    this.ThumbnailPara.Equals(input.ThumbnailPara))
-                ) && 
-                (
-                    this.Tar == input.Tar ||
-                    (this.Tar != null &&
-                    this.Tar.Equals(input.Tar))
-                ) && 
-                (
-                    this.Sync == input.Sync ||
-                    (this.Sync != null &&
-                    this.Sync.Equals(input.Sync))
-                ) && 
-                (
-                    this.OriginalDir == input.OriginalDir ||
-                    (this.OriginalDir != null &&
-                    this.OriginalDir.Equals(input.OriginalDir))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Input != null)
-                    hashCode = hashCode * 59 + this.Input.GetHashCode();
-                if (this.Output != null)
-                    hashCode = hashCode * 59 + this.Output.GetHashCode();
-                if (this.UserData != null)
-                    hashCode = hashCode * 59 + this.UserData.GetHashCode();
-                if (this.ThumbnailPara != null)
-                    hashCode = hashCode * 59 + this.ThumbnailPara.GetHashCode();
-                if (this.Tar != null)
-                    hashCode = hashCode * 59 + this.Tar.GetHashCode();
-                if (this.Sync != null)
-                    hashCode = hashCode * 59 + this.Sync.GetHashCode();
-                if (this.OriginalDir != null)
-                    hashCode = hashCode * 59 + this.OriginalDir.GetHashCode();
+                var hashCode = 41;
+                if (this.Input != null) hashCode = hashCode * 59 + this.Input.GetHashCode();
+                if (this.Output != null) hashCode = hashCode * 59 + this.Output.GetHashCode();
+                if (this.UserData != null) hashCode = hashCode * 59 + this.UserData.GetHashCode();
+                if (this.ThumbnailPara != null) hashCode = hashCode * 59 + this.ThumbnailPara.GetHashCode();
+                if (this.Tar != null) hashCode = hashCode * 59 + this.Tar.GetHashCode();
+                if (this.Sync != null) hashCode = hashCode * 59 + this.Sync.GetHashCode();
+                if (this.OriginalDir != null) hashCode = hashCode * 59 + this.OriginalDir.GetHashCode();
                 return hashCode;
             }
         }

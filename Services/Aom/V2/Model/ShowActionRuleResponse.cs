@@ -226,61 +226,19 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(ShowActionRuleResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RuleName != input.RuleName || (this.RuleName != null && !this.RuleName.Equals(input.RuleName))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.Desc != input.Desc || (this.Desc != null && !this.Desc.Equals(input.Desc))) return false;
+            if (this.Type != input.Type) return false;
+            if (this.NotificationTemplate != input.NotificationTemplate || (this.NotificationTemplate != null && !this.NotificationTemplate.Equals(input.NotificationTemplate))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.TimeZone != input.TimeZone || (this.TimeZone != null && !this.TimeZone.Equals(input.TimeZone))) return false;
+            if (this.SmnTopics != input.SmnTopics || (this.SmnTopics != null && input.SmnTopics != null && !this.SmnTopics.SequenceEqual(input.SmnTopics))) return false;
 
-            return 
-                (
-                    this.RuleName == input.RuleName ||
-                    (this.RuleName != null &&
-                    this.RuleName.Equals(input.RuleName))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.Desc == input.Desc ||
-                    (this.Desc != null &&
-                    this.Desc.Equals(input.Desc))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.NotificationTemplate == input.NotificationTemplate ||
-                    (this.NotificationTemplate != null &&
-                    this.NotificationTemplate.Equals(input.NotificationTemplate))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.TimeZone == input.TimeZone ||
-                    (this.TimeZone != null &&
-                    this.TimeZone.Equals(input.TimeZone))
-                ) && 
-                (
-                    this.SmnTopics == input.SmnTopics ||
-                    this.SmnTopics != null &&
-                    input.SmnTopics != null &&
-                    this.SmnTopics.SequenceEqual(input.SmnTopics)
-                );
+            return true;
         }
 
         /// <summary>
@@ -290,27 +248,17 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RuleName != null)
-                    hashCode = hashCode * 59 + this.RuleName.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.UserName != null)
-                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.Desc != null)
-                    hashCode = hashCode * 59 + this.Desc.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.NotificationTemplate != null)
-                    hashCode = hashCode * 59 + this.NotificationTemplate.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.TimeZone != null)
-                    hashCode = hashCode * 59 + this.TimeZone.GetHashCode();
-                if (this.SmnTopics != null)
-                    hashCode = hashCode * 59 + this.SmnTopics.GetHashCode();
+                var hashCode = 41;
+                if (this.RuleName != null) hashCode = hashCode * 59 + this.RuleName.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.Desc != null) hashCode = hashCode * 59 + this.Desc.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.NotificationTemplate != null) hashCode = hashCode * 59 + this.NotificationTemplate.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.TimeZone != null) hashCode = hashCode * 59 + this.TimeZone.GetHashCode();
+                if (this.SmnTopics != null) hashCode = hashCode * 59 + this.SmnTopics.GetHashCode();
                 return hashCode;
             }
         }

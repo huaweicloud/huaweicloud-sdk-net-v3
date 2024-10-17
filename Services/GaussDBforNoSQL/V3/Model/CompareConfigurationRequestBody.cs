@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(CompareConfigurationRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceConfigurationId != input.SourceConfigurationId || (this.SourceConfigurationId != null && !this.SourceConfigurationId.Equals(input.SourceConfigurationId))) return false;
+            if (this.TargetConfigurationId != input.TargetConfigurationId || (this.TargetConfigurationId != null && !this.TargetConfigurationId.Equals(input.TargetConfigurationId))) return false;
 
-            return 
-                (
-                    this.SourceConfigurationId == input.SourceConfigurationId ||
-                    (this.SourceConfigurationId != null &&
-                    this.SourceConfigurationId.Equals(input.SourceConfigurationId))
-                ) && 
-                (
-                    this.TargetConfigurationId == input.TargetConfigurationId ||
-                    (this.TargetConfigurationId != null &&
-                    this.TargetConfigurationId.Equals(input.TargetConfigurationId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceConfigurationId != null)
-                    hashCode = hashCode * 59 + this.SourceConfigurationId.GetHashCode();
-                if (this.TargetConfigurationId != null)
-                    hashCode = hashCode * 59 + this.TargetConfigurationId.GetHashCode();
+                var hashCode = 41;
+                if (this.SourceConfigurationId != null) hashCode = hashCode * 59 + this.SourceConfigurationId.GetHashCode();
+                if (this.TargetConfigurationId != null) hashCode = hashCode * 59 + this.TargetConfigurationId.GetHashCode();
                 return hashCode;
             }
         }

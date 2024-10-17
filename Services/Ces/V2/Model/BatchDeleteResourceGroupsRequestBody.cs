@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(BatchDeleteResourceGroupsRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.GroupIds != input.GroupIds || (this.GroupIds != null && input.GroupIds != null && !this.GroupIds.SequenceEqual(input.GroupIds))) return false;
 
-            return 
-                (
-                    this.GroupIds == input.GroupIds ||
-                    this.GroupIds != null &&
-                    input.GroupIds != null &&
-                    this.GroupIds.SequenceEqual(input.GroupIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.GroupIds != null)
-                    hashCode = hashCode * 59 + this.GroupIds.GetHashCode();
+                var hashCode = 41;
+                if (this.GroupIds != null) hashCode = hashCode * 59 + this.GroupIds.GetHashCode();
                 return hashCode;
             }
         }

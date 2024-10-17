@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(BackupInfoResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FileSource != input.FileSource || (this.FileSource != null && !this.FileSource.Equals(input.FileSource))) return false;
+            if (this.BucketName != input.BucketName || (this.BucketName != null && !this.BucketName.Equals(input.BucketName))) return false;
+            if (this.FileInfo != input.FileInfo || (this.FileInfo != null && input.FileInfo != null && !this.FileInfo.SequenceEqual(input.FileInfo))) return false;
 
-            return 
-                (
-                    this.FileSource == input.FileSource ||
-                    (this.FileSource != null &&
-                    this.FileSource.Equals(input.FileSource))
-                ) && 
-                (
-                    this.BucketName == input.BucketName ||
-                    (this.BucketName != null &&
-                    this.BucketName.Equals(input.BucketName))
-                ) && 
-                (
-                    this.FileInfo == input.FileInfo ||
-                    this.FileInfo != null &&
-                    input.FileInfo != null &&
-                    this.FileInfo.SequenceEqual(input.FileInfo)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FileSource != null)
-                    hashCode = hashCode * 59 + this.FileSource.GetHashCode();
-                if (this.BucketName != null)
-                    hashCode = hashCode * 59 + this.BucketName.GetHashCode();
-                if (this.FileInfo != null)
-                    hashCode = hashCode * 59 + this.FileInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.FileSource != null) hashCode = hashCode * 59 + this.FileSource.GetHashCode();
+                if (this.BucketName != null) hashCode = hashCode * 59 + this.BucketName.GetHashCode();
+                if (this.FileInfo != null) hashCode = hashCode * 59 + this.FileInfo.GetHashCode();
                 return hashCode;
             }
         }

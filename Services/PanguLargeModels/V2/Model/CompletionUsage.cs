@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.PanguLargeModels.V2.Model
         /// </summary>
         public bool Equals(CompletionUsage input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CompletionTokens != input.CompletionTokens || (this.CompletionTokens != null && !this.CompletionTokens.Equals(input.CompletionTokens))) return false;
+            if (this.PromptTokens != input.PromptTokens || (this.PromptTokens != null && !this.PromptTokens.Equals(input.PromptTokens))) return false;
+            if (this.TotalTokens != input.TotalTokens || (this.TotalTokens != null && !this.TotalTokens.Equals(input.TotalTokens))) return false;
 
-            return 
-                (
-                    this.CompletionTokens == input.CompletionTokens ||
-                    (this.CompletionTokens != null &&
-                    this.CompletionTokens.Equals(input.CompletionTokens))
-                ) && 
-                (
-                    this.PromptTokens == input.PromptTokens ||
-                    (this.PromptTokens != null &&
-                    this.PromptTokens.Equals(input.PromptTokens))
-                ) && 
-                (
-                    this.TotalTokens == input.TotalTokens ||
-                    (this.TotalTokens != null &&
-                    this.TotalTokens.Equals(input.TotalTokens))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.PanguLargeModels.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CompletionTokens != null)
-                    hashCode = hashCode * 59 + this.CompletionTokens.GetHashCode();
-                if (this.PromptTokens != null)
-                    hashCode = hashCode * 59 + this.PromptTokens.GetHashCode();
-                if (this.TotalTokens != null)
-                    hashCode = hashCode * 59 + this.TotalTokens.GetHashCode();
+                var hashCode = 41;
+                if (this.CompletionTokens != null) hashCode = hashCode * 59 + this.CompletionTokens.GetHashCode();
+                if (this.PromptTokens != null) hashCode = hashCode * 59 + this.PromptTokens.GetHashCode();
+                if (this.TotalTokens != null) hashCode = hashCode * 59 + this.TotalTokens.GetHashCode();
                 return hashCode;
             }
         }

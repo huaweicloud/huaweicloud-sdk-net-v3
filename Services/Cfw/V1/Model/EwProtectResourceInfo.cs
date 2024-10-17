@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(EwProtectResourceInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProtectedResourceType != input.ProtectedResourceType || (this.ProtectedResourceType != null && !this.ProtectedResourceType.Equals(input.ProtectedResourceType))) return false;
+            if (this.ProtectedResourceName != input.ProtectedResourceName || (this.ProtectedResourceName != null && !this.ProtectedResourceName.Equals(input.ProtectedResourceName))) return false;
+            if (this.ProtectedResourceId != input.ProtectedResourceId || (this.ProtectedResourceId != null && !this.ProtectedResourceId.Equals(input.ProtectedResourceId))) return false;
+            if (this.ProtectedResourceNatName != input.ProtectedResourceNatName || (this.ProtectedResourceNatName != null && !this.ProtectedResourceNatName.Equals(input.ProtectedResourceNatName))) return false;
+            if (this.ProtectedResourceNatId != input.ProtectedResourceNatId || (this.ProtectedResourceNatId != null && !this.ProtectedResourceNatId.Equals(input.ProtectedResourceNatId))) return false;
+            if (this.ProtectedResourceProjectId != input.ProtectedResourceProjectId || (this.ProtectedResourceProjectId != null && !this.ProtectedResourceProjectId.Equals(input.ProtectedResourceProjectId))) return false;
+            if (this.ProtectedResourceMode != input.ProtectedResourceMode || (this.ProtectedResourceMode != null && !this.ProtectedResourceMode.Equals(input.ProtectedResourceMode))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
 
-            return 
-                (
-                    this.ProtectedResourceType == input.ProtectedResourceType ||
-                    (this.ProtectedResourceType != null &&
-                    this.ProtectedResourceType.Equals(input.ProtectedResourceType))
-                ) && 
-                (
-                    this.ProtectedResourceName == input.ProtectedResourceName ||
-                    (this.ProtectedResourceName != null &&
-                    this.ProtectedResourceName.Equals(input.ProtectedResourceName))
-                ) && 
-                (
-                    this.ProtectedResourceId == input.ProtectedResourceId ||
-                    (this.ProtectedResourceId != null &&
-                    this.ProtectedResourceId.Equals(input.ProtectedResourceId))
-                ) && 
-                (
-                    this.ProtectedResourceNatName == input.ProtectedResourceNatName ||
-                    (this.ProtectedResourceNatName != null &&
-                    this.ProtectedResourceNatName.Equals(input.ProtectedResourceNatName))
-                ) && 
-                (
-                    this.ProtectedResourceNatId == input.ProtectedResourceNatId ||
-                    (this.ProtectedResourceNatId != null &&
-                    this.ProtectedResourceNatId.Equals(input.ProtectedResourceNatId))
-                ) && 
-                (
-                    this.ProtectedResourceProjectId == input.ProtectedResourceProjectId ||
-                    (this.ProtectedResourceProjectId != null &&
-                    this.ProtectedResourceProjectId.Equals(input.ProtectedResourceProjectId))
-                ) && 
-                (
-                    this.ProtectedResourceMode == input.ProtectedResourceMode ||
-                    (this.ProtectedResourceMode != null &&
-                    this.ProtectedResourceMode.Equals(input.ProtectedResourceMode))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProtectedResourceType != null)
-                    hashCode = hashCode * 59 + this.ProtectedResourceType.GetHashCode();
-                if (this.ProtectedResourceName != null)
-                    hashCode = hashCode * 59 + this.ProtectedResourceName.GetHashCode();
-                if (this.ProtectedResourceId != null)
-                    hashCode = hashCode * 59 + this.ProtectedResourceId.GetHashCode();
-                if (this.ProtectedResourceNatName != null)
-                    hashCode = hashCode * 59 + this.ProtectedResourceNatName.GetHashCode();
-                if (this.ProtectedResourceNatId != null)
-                    hashCode = hashCode * 59 + this.ProtectedResourceNatId.GetHashCode();
-                if (this.ProtectedResourceProjectId != null)
-                    hashCode = hashCode * 59 + this.ProtectedResourceProjectId.GetHashCode();
-                if (this.ProtectedResourceMode != null)
-                    hashCode = hashCode * 59 + this.ProtectedResourceMode.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                var hashCode = 41;
+                if (this.ProtectedResourceType != null) hashCode = hashCode * 59 + this.ProtectedResourceType.GetHashCode();
+                if (this.ProtectedResourceName != null) hashCode = hashCode * 59 + this.ProtectedResourceName.GetHashCode();
+                if (this.ProtectedResourceId != null) hashCode = hashCode * 59 + this.ProtectedResourceId.GetHashCode();
+                if (this.ProtectedResourceNatName != null) hashCode = hashCode * 59 + this.ProtectedResourceNatName.GetHashCode();
+                if (this.ProtectedResourceNatId != null) hashCode = hashCode * 59 + this.ProtectedResourceNatId.GetHashCode();
+                if (this.ProtectedResourceProjectId != null) hashCode = hashCode * 59 + this.ProtectedResourceProjectId.GetHashCode();
+                if (this.ProtectedResourceMode != null) hashCode = hashCode * 59 + this.ProtectedResourceMode.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public bool Equals(SubscriptionsFilterPolicy input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.StringEquals != input.StringEquals || (this.StringEquals != null && input.StringEquals != null && !this.StringEquals.SequenceEqual(input.StringEquals))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.StringEquals == input.StringEquals ||
-                    this.StringEquals != null &&
-                    input.StringEquals != null &&
-                    this.StringEquals.SequenceEqual(input.StringEquals)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.StringEquals != null)
-                    hashCode = hashCode * 59 + this.StringEquals.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.StringEquals != null) hashCode = hashCode * 59 + this.StringEquals.GetHashCode();
                 return hashCode;
             }
         }

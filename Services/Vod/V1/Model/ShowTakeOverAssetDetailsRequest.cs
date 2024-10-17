@@ -66,25 +66,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(ShowTakeOverAssetDetailsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.XSdkDate != input.XSdkDate || (this.XSdkDate != null && !this.XSdkDate.Equals(input.XSdkDate))) return false;
+            if (this.SourceBucket != input.SourceBucket || (this.SourceBucket != null && !this.SourceBucket.Equals(input.SourceBucket))) return false;
+            if (this.SourceObject != input.SourceObject || (this.SourceObject != null && !this.SourceObject.Equals(input.SourceObject))) return false;
 
-            return 
-                (
-                    this.XSdkDate == input.XSdkDate ||
-                    (this.XSdkDate != null &&
-                    this.XSdkDate.Equals(input.XSdkDate))
-                ) && 
-                (
-                    this.SourceBucket == input.SourceBucket ||
-                    (this.SourceBucket != null &&
-                    this.SourceBucket.Equals(input.SourceBucket))
-                ) && 
-                (
-                    this.SourceObject == input.SourceObject ||
-                    (this.SourceObject != null &&
-                    this.SourceObject.Equals(input.SourceObject))
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +81,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.XSdkDate != null)
-                    hashCode = hashCode * 59 + this.XSdkDate.GetHashCode();
-                if (this.SourceBucket != null)
-                    hashCode = hashCode * 59 + this.SourceBucket.GetHashCode();
-                if (this.SourceObject != null)
-                    hashCode = hashCode * 59 + this.SourceObject.GetHashCode();
+                var hashCode = 41;
+                if (this.XSdkDate != null) hashCode = hashCode * 59 + this.XSdkDate.GetHashCode();
+                if (this.SourceBucket != null) hashCode = hashCode * 59 + this.SourceBucket.GetHashCode();
+                if (this.SourceObject != null) hashCode = hashCode * 59 + this.SourceObject.GetHashCode();
                 return hashCode;
             }
         }

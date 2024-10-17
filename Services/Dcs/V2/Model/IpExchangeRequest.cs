@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(IpExchangeRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ExchangedIp != input.ExchangedIp || (this.ExchangedIp != null && input.ExchangedIp != null && !this.ExchangedIp.SequenceEqual(input.ExchangedIp))) return false;
+            if (this.IsExchangeDomain != input.IsExchangeDomain || (this.IsExchangeDomain != null && !this.IsExchangeDomain.Equals(input.IsExchangeDomain))) return false;
 
-            return 
-                (
-                    this.ExchangedIp == input.ExchangedIp ||
-                    this.ExchangedIp != null &&
-                    input.ExchangedIp != null &&
-                    this.ExchangedIp.SequenceEqual(input.ExchangedIp)
-                ) && 
-                (
-                    this.IsExchangeDomain == input.IsExchangeDomain ||
-                    (this.IsExchangeDomain != null &&
-                    this.IsExchangeDomain.Equals(input.IsExchangeDomain))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ExchangedIp != null)
-                    hashCode = hashCode * 59 + this.ExchangedIp.GetHashCode();
-                if (this.IsExchangeDomain != null)
-                    hashCode = hashCode * 59 + this.IsExchangeDomain.GetHashCode();
+                var hashCode = 41;
+                if (this.ExchangedIp != null) hashCode = hashCode * 59 + this.ExchangedIp.GetHashCode();
+                if (this.IsExchangeDomain != null) hashCode = hashCode * 59 + this.IsExchangeDomain.GetHashCode();
                 return hashCode;
             }
         }

@@ -282,103 +282,27 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(BandwidthResponseBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AdminState != input.AdminState || (this.AdminState != null && !this.AdminState.Equals(input.AdminState))) return false;
+            if (this.IngressSize != input.IngressSize || (this.IngressSize != null && !this.IngressSize.Equals(input.IngressSize))) return false;
+            if (this.RuleQuota != input.RuleQuota || (this.RuleQuota != null && !this.RuleQuota.Equals(input.RuleQuota))) return false;
+            if (this.Ratio95peakPlus != input.Ratio95peakPlus || (this.Ratio95peakPlus != null && !this.Ratio95peakPlus.Equals(input.Ratio95peakPlus))) return false;
+            if (this.EnableBandwidthRules != input.EnableBandwidthRules || (this.EnableBandwidthRules != null && !this.EnableBandwidthRules.Equals(input.EnableBandwidthRules))) return false;
+            if (this.BandwidthRules != input.BandwidthRules || (this.BandwidthRules != null && input.BandwidthRules != null && !this.BandwidthRules.SequenceEqual(input.BandwidthRules))) return false;
+            if (this.PublicBorderGroup != input.PublicBorderGroup || (this.PublicBorderGroup != null && !this.PublicBorderGroup.Equals(input.PublicBorderGroup))) return false;
+            if (this.BandwidthType != input.BandwidthType || (this.BandwidthType != null && !this.BandwidthType.Equals(input.BandwidthType))) return false;
+            if (this.Billinginfo != input.Billinginfo || (this.Billinginfo != null && !this.Billinginfo.Equals(input.Billinginfo))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.PublicipInfo != input.PublicipInfo || (this.PublicipInfo != null && input.PublicipInfo != null && !this.PublicipInfo.SequenceEqual(input.PublicipInfo))) return false;
+            if (this.Type != input.Type) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
 
-            return 
-                (
-                    this.AdminState == input.AdminState ||
-                    (this.AdminState != null &&
-                    this.AdminState.Equals(input.AdminState))
-                ) && 
-                (
-                    this.IngressSize == input.IngressSize ||
-                    (this.IngressSize != null &&
-                    this.IngressSize.Equals(input.IngressSize))
-                ) && 
-                (
-                    this.RuleQuota == input.RuleQuota ||
-                    (this.RuleQuota != null &&
-                    this.RuleQuota.Equals(input.RuleQuota))
-                ) && 
-                (
-                    this.Ratio95peakPlus == input.Ratio95peakPlus ||
-                    (this.Ratio95peakPlus != null &&
-                    this.Ratio95peakPlus.Equals(input.Ratio95peakPlus))
-                ) && 
-                (
-                    this.EnableBandwidthRules == input.EnableBandwidthRules ||
-                    (this.EnableBandwidthRules != null &&
-                    this.EnableBandwidthRules.Equals(input.EnableBandwidthRules))
-                ) && 
-                (
-                    this.BandwidthRules == input.BandwidthRules ||
-                    this.BandwidthRules != null &&
-                    input.BandwidthRules != null &&
-                    this.BandwidthRules.SequenceEqual(input.BandwidthRules)
-                ) && 
-                (
-                    this.PublicBorderGroup == input.PublicBorderGroup ||
-                    (this.PublicBorderGroup != null &&
-                    this.PublicBorderGroup.Equals(input.PublicBorderGroup))
-                ) && 
-                (
-                    this.BandwidthType == input.BandwidthType ||
-                    (this.BandwidthType != null &&
-                    this.BandwidthType.Equals(input.BandwidthType))
-                ) && 
-                (
-                    this.Billinginfo == input.Billinginfo ||
-                    (this.Billinginfo != null &&
-                    this.Billinginfo.Equals(input.Billinginfo))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.PublicipInfo == input.PublicipInfo ||
-                    this.PublicipInfo != null &&
-                    input.PublicipInfo != null &&
-                    this.PublicipInfo.SequenceEqual(input.PublicipInfo)
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -388,43 +312,25 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AdminState != null)
-                    hashCode = hashCode * 59 + this.AdminState.GetHashCode();
-                if (this.IngressSize != null)
-                    hashCode = hashCode * 59 + this.IngressSize.GetHashCode();
-                if (this.RuleQuota != null)
-                    hashCode = hashCode * 59 + this.RuleQuota.GetHashCode();
-                if (this.Ratio95peakPlus != null)
-                    hashCode = hashCode * 59 + this.Ratio95peakPlus.GetHashCode();
-                if (this.EnableBandwidthRules != null)
-                    hashCode = hashCode * 59 + this.EnableBandwidthRules.GetHashCode();
-                if (this.BandwidthRules != null)
-                    hashCode = hashCode * 59 + this.BandwidthRules.GetHashCode();
-                if (this.PublicBorderGroup != null)
-                    hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
-                if (this.BandwidthType != null)
-                    hashCode = hashCode * 59 + this.BandwidthType.GetHashCode();
-                if (this.Billinginfo != null)
-                    hashCode = hashCode * 59 + this.Billinginfo.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.PublicipInfo != null)
-                    hashCode = hashCode * 59 + this.PublicipInfo.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                var hashCode = 41;
+                if (this.AdminState != null) hashCode = hashCode * 59 + this.AdminState.GetHashCode();
+                if (this.IngressSize != null) hashCode = hashCode * 59 + this.IngressSize.GetHashCode();
+                if (this.RuleQuota != null) hashCode = hashCode * 59 + this.RuleQuota.GetHashCode();
+                if (this.Ratio95peakPlus != null) hashCode = hashCode * 59 + this.Ratio95peakPlus.GetHashCode();
+                if (this.EnableBandwidthRules != null) hashCode = hashCode * 59 + this.EnableBandwidthRules.GetHashCode();
+                if (this.BandwidthRules != null) hashCode = hashCode * 59 + this.BandwidthRules.GetHashCode();
+                if (this.PublicBorderGroup != null) hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                if (this.BandwidthType != null) hashCode = hashCode * 59 + this.BandwidthType.GetHashCode();
+                if (this.Billinginfo != null) hashCode = hashCode * 59 + this.Billinginfo.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.PublicipInfo != null) hashCode = hashCode * 59 + this.PublicipInfo.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 return hashCode;
             }
         }

@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(ConstructDisasterRecoveryBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Alias != input.Alias || (this.Alias != null && !this.Alias.Equals(input.Alias))) return false;
+            if (this.Password != input.Password || (this.Password != null && !this.Password.Equals(input.Password))) return false;
+            if (this.InstanceRole != input.InstanceRole || (this.InstanceRole != null && !this.InstanceRole.Equals(input.InstanceRole))) return false;
+            if (this.DisasterRecoveryInstance != input.DisasterRecoveryInstance || (this.DisasterRecoveryInstance != null && !this.DisasterRecoveryInstance.Equals(input.DisasterRecoveryInstance))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Alias == input.Alias ||
-                    (this.Alias != null &&
-                    this.Alias.Equals(input.Alias))
-                ) && 
-                (
-                    this.Password == input.Password ||
-                    (this.Password != null &&
-                    this.Password.Equals(input.Password))
-                ) && 
-                (
-                    this.InstanceRole == input.InstanceRole ||
-                    (this.InstanceRole != null &&
-                    this.InstanceRole.Equals(input.InstanceRole))
-                ) && 
-                (
-                    this.DisasterRecoveryInstance == input.DisasterRecoveryInstance ||
-                    (this.DisasterRecoveryInstance != null &&
-                    this.DisasterRecoveryInstance.Equals(input.DisasterRecoveryInstance))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Alias != null)
-                    hashCode = hashCode * 59 + this.Alias.GetHashCode();
-                if (this.Password != null)
-                    hashCode = hashCode * 59 + this.Password.GetHashCode();
-                if (this.InstanceRole != null)
-                    hashCode = hashCode * 59 + this.InstanceRole.GetHashCode();
-                if (this.DisasterRecoveryInstance != null)
-                    hashCode = hashCode * 59 + this.DisasterRecoveryInstance.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Alias != null) hashCode = hashCode * 59 + this.Alias.GetHashCode();
+                if (this.Password != null) hashCode = hashCode * 59 + this.Password.GetHashCode();
+                if (this.InstanceRole != null) hashCode = hashCode * 59 + this.InstanceRole.GetHashCode();
+                if (this.DisasterRecoveryInstance != null) hashCode = hashCode * 59 + this.DisasterRecoveryInstance.GetHashCode();
                 return hashCode;
             }
         }

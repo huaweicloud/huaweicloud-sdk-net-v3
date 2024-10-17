@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(DeviceShadowProperties input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Properties != input.Properties || (this.Properties != null && !this.Properties.Equals(input.Properties))) return false;
+            if (this.EventTime != input.EventTime || (this.EventTime != null && !this.EventTime.Equals(input.EventTime))) return false;
 
-            return 
-                (
-                    this.Properties == input.Properties ||
-                    (this.Properties != null &&
-                    this.Properties.Equals(input.Properties))
-                ) && 
-                (
-                    this.EventTime == input.EventTime ||
-                    (this.EventTime != null &&
-                    this.EventTime.Equals(input.EventTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Properties != null)
-                    hashCode = hashCode * 59 + this.Properties.GetHashCode();
-                if (this.EventTime != null)
-                    hashCode = hashCode * 59 + this.EventTime.GetHashCode();
+                var hashCode = 41;
+                if (this.Properties != null) hashCode = hashCode * 59 + this.Properties.GetHashCode();
+                if (this.EventTime != null) hashCode = hashCode * 59 + this.EventTime.GetHashCode();
                 return hashCode;
             }
         }

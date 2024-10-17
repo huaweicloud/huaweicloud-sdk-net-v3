@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(CreateStarRocksDataReplication input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceInstanceId != input.SourceInstanceId || (this.SourceInstanceId != null && !this.SourceInstanceId.Equals(input.SourceInstanceId))) return false;
+            if (this.SourceNodeId != input.SourceNodeId || (this.SourceNodeId != null && !this.SourceNodeId.Equals(input.SourceNodeId))) return false;
+            if (this.SourceDatabase != input.SourceDatabase || (this.SourceDatabase != null && !this.SourceDatabase.Equals(input.SourceDatabase))) return false;
+            if (this.TargetDatabase != input.TargetDatabase || (this.TargetDatabase != null && !this.TargetDatabase.Equals(input.TargetDatabase))) return false;
+            if (this.TaskName != input.TaskName || (this.TaskName != null && !this.TaskName.Equals(input.TaskName))) return false;
 
-            return 
-                (
-                    this.SourceInstanceId == input.SourceInstanceId ||
-                    (this.SourceInstanceId != null &&
-                    this.SourceInstanceId.Equals(input.SourceInstanceId))
-                ) && 
-                (
-                    this.SourceNodeId == input.SourceNodeId ||
-                    (this.SourceNodeId != null &&
-                    this.SourceNodeId.Equals(input.SourceNodeId))
-                ) && 
-                (
-                    this.SourceDatabase == input.SourceDatabase ||
-                    (this.SourceDatabase != null &&
-                    this.SourceDatabase.Equals(input.SourceDatabase))
-                ) && 
-                (
-                    this.TargetDatabase == input.TargetDatabase ||
-                    (this.TargetDatabase != null &&
-                    this.TargetDatabase.Equals(input.TargetDatabase))
-                ) && 
-                (
-                    this.TaskName == input.TaskName ||
-                    (this.TaskName != null &&
-                    this.TaskName.Equals(input.TaskName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceInstanceId != null)
-                    hashCode = hashCode * 59 + this.SourceInstanceId.GetHashCode();
-                if (this.SourceNodeId != null)
-                    hashCode = hashCode * 59 + this.SourceNodeId.GetHashCode();
-                if (this.SourceDatabase != null)
-                    hashCode = hashCode * 59 + this.SourceDatabase.GetHashCode();
-                if (this.TargetDatabase != null)
-                    hashCode = hashCode * 59 + this.TargetDatabase.GetHashCode();
-                if (this.TaskName != null)
-                    hashCode = hashCode * 59 + this.TaskName.GetHashCode();
+                var hashCode = 41;
+                if (this.SourceInstanceId != null) hashCode = hashCode * 59 + this.SourceInstanceId.GetHashCode();
+                if (this.SourceNodeId != null) hashCode = hashCode * 59 + this.SourceNodeId.GetHashCode();
+                if (this.SourceDatabase != null) hashCode = hashCode * 59 + this.SourceDatabase.GetHashCode();
+                if (this.TargetDatabase != null) hashCode = hashCode * 59 + this.TargetDatabase.GetHashCode();
+                if (this.TaskName != null) hashCode = hashCode * 59 + this.TaskName.GetHashCode();
                 return hashCode;
             }
         }

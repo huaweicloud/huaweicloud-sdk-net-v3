@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(BatchStopServersRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OsStop != input.OsStop || (this.OsStop != null && !this.OsStop.Equals(input.OsStop))) return false;
 
-            return 
-                (
-                    this.OsStop == input.OsStop ||
-                    (this.OsStop != null &&
-                    this.OsStop.Equals(input.OsStop))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OsStop != null)
-                    hashCode = hashCode * 59 + this.OsStop.GetHashCode();
+                var hashCode = 41;
+                if (this.OsStop != null) hashCode = hashCode * 59 + this.OsStop.GetHashCode();
                 return hashCode;
             }
         }

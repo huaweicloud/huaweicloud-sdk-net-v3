@@ -112,62 +112,19 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(CreateBatchTask input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
+            if (this.TaskName != input.TaskName || (this.TaskName != null && !this.TaskName.Equals(input.TaskName))) return false;
+            if (this.TaskType != input.TaskType || (this.TaskType != null && !this.TaskType.Equals(input.TaskType))) return false;
+            if (this.TaskMode != input.TaskMode || (this.TaskMode != null && !this.TaskMode.Equals(input.TaskMode))) return false;
+            if (this.TaskExtInfo != input.TaskExtInfo || (this.TaskExtInfo != null && !this.TaskExtInfo.Equals(input.TaskExtInfo))) return false;
+            if (this.Targets != input.Targets || (this.Targets != null && input.Targets != null && !this.Targets.SequenceEqual(input.Targets))) return false;
+            if (this.TargetsFilter != input.TargetsFilter || (this.TargetsFilter != null && input.TargetsFilter != null && !this.TargetsFilter.SequenceEqual(input.TargetsFilter))) return false;
+            if (this.Document != input.Document || (this.Document != null && !this.Document.Equals(input.Document))) return false;
+            if (this.TaskPolicy != input.TaskPolicy || (this.TaskPolicy != null && !this.TaskPolicy.Equals(input.TaskPolicy))) return false;
+            if (this.DocumentSource != input.DocumentSource || (this.DocumentSource != null && !this.DocumentSource.Equals(input.DocumentSource))) return false;
 
-            return 
-                (
-                    this.AppId == input.AppId ||
-                    (this.AppId != null &&
-                    this.AppId.Equals(input.AppId))
-                ) && 
-                (
-                    this.TaskName == input.TaskName ||
-                    (this.TaskName != null &&
-                    this.TaskName.Equals(input.TaskName))
-                ) && 
-                (
-                    this.TaskType == input.TaskType ||
-                    (this.TaskType != null &&
-                    this.TaskType.Equals(input.TaskType))
-                ) && 
-                (
-                    this.TaskMode == input.TaskMode ||
-                    (this.TaskMode != null &&
-                    this.TaskMode.Equals(input.TaskMode))
-                ) && 
-                (
-                    this.TaskExtInfo == input.TaskExtInfo ||
-                    (this.TaskExtInfo != null &&
-                    this.TaskExtInfo.Equals(input.TaskExtInfo))
-                ) && 
-                (
-                    this.Targets == input.Targets ||
-                    this.Targets != null &&
-                    input.Targets != null &&
-                    this.Targets.SequenceEqual(input.Targets)
-                ) && 
-                (
-                    this.TargetsFilter == input.TargetsFilter ||
-                    this.TargetsFilter != null &&
-                    input.TargetsFilter != null &&
-                    this.TargetsFilter.SequenceEqual(input.TargetsFilter)
-                ) && 
-                (
-                    this.Document == input.Document ||
-                    (this.Document != null &&
-                    this.Document.Equals(input.Document))
-                ) && 
-                (
-                    this.TaskPolicy == input.TaskPolicy ||
-                    (this.TaskPolicy != null &&
-                    this.TaskPolicy.Equals(input.TaskPolicy))
-                ) && 
-                (
-                    this.DocumentSource == input.DocumentSource ||
-                    (this.DocumentSource != null &&
-                    this.DocumentSource.Equals(input.DocumentSource))
-                );
+            return true;
         }
 
         /// <summary>
@@ -177,27 +134,17 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AppId != null)
-                    hashCode = hashCode * 59 + this.AppId.GetHashCode();
-                if (this.TaskName != null)
-                    hashCode = hashCode * 59 + this.TaskName.GetHashCode();
-                if (this.TaskType != null)
-                    hashCode = hashCode * 59 + this.TaskType.GetHashCode();
-                if (this.TaskMode != null)
-                    hashCode = hashCode * 59 + this.TaskMode.GetHashCode();
-                if (this.TaskExtInfo != null)
-                    hashCode = hashCode * 59 + this.TaskExtInfo.GetHashCode();
-                if (this.Targets != null)
-                    hashCode = hashCode * 59 + this.Targets.GetHashCode();
-                if (this.TargetsFilter != null)
-                    hashCode = hashCode * 59 + this.TargetsFilter.GetHashCode();
-                if (this.Document != null)
-                    hashCode = hashCode * 59 + this.Document.GetHashCode();
-                if (this.TaskPolicy != null)
-                    hashCode = hashCode * 59 + this.TaskPolicy.GetHashCode();
-                if (this.DocumentSource != null)
-                    hashCode = hashCode * 59 + this.DocumentSource.GetHashCode();
+                var hashCode = 41;
+                if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
+                if (this.TaskName != null) hashCode = hashCode * 59 + this.TaskName.GetHashCode();
+                if (this.TaskType != null) hashCode = hashCode * 59 + this.TaskType.GetHashCode();
+                if (this.TaskMode != null) hashCode = hashCode * 59 + this.TaskMode.GetHashCode();
+                if (this.TaskExtInfo != null) hashCode = hashCode * 59 + this.TaskExtInfo.GetHashCode();
+                if (this.Targets != null) hashCode = hashCode * 59 + this.Targets.GetHashCode();
+                if (this.TargetsFilter != null) hashCode = hashCode * 59 + this.TargetsFilter.GetHashCode();
+                if (this.Document != null) hashCode = hashCode * 59 + this.Document.GetHashCode();
+                if (this.TaskPolicy != null) hashCode = hashCode * 59 + this.TaskPolicy.GetHashCode();
+                if (this.DocumentSource != null) hashCode = hashCode * 59 + this.DocumentSource.GetHashCode();
                 return hashCode;
             }
         }

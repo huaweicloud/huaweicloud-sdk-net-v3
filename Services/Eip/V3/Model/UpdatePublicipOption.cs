@@ -196,30 +196,13 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(UpdatePublicipOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Alias != input.Alias || (this.Alias != null && !this.Alias.Equals(input.Alias))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.AssociateInstanceType != input.AssociateInstanceType) return false;
+            if (this.AssociateInstanceId != input.AssociateInstanceId || (this.AssociateInstanceId != null && !this.AssociateInstanceId.Equals(input.AssociateInstanceId))) return false;
 
-            return 
-                (
-                    this.Alias == input.Alias ||
-                    (this.Alias != null &&
-                    this.Alias.Equals(input.Alias))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.AssociateInstanceType == input.AssociateInstanceType ||
-                    (this.AssociateInstanceType != null &&
-                    this.AssociateInstanceType.Equals(input.AssociateInstanceType))
-                ) && 
-                (
-                    this.AssociateInstanceId == input.AssociateInstanceId ||
-                    (this.AssociateInstanceId != null &&
-                    this.AssociateInstanceId.Equals(input.AssociateInstanceId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -229,15 +212,11 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Alias != null)
-                    hashCode = hashCode * 59 + this.Alias.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.AssociateInstanceType != null)
-                    hashCode = hashCode * 59 + this.AssociateInstanceType.GetHashCode();
-                if (this.AssociateInstanceId != null)
-                    hashCode = hashCode * 59 + this.AssociateInstanceId.GetHashCode();
+                var hashCode = 41;
+                if (this.Alias != null) hashCode = hashCode * 59 + this.Alias.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                hashCode = hashCode * 59 + this.AssociateInstanceType.GetHashCode();
+                if (this.AssociateInstanceId != null) hashCode = hashCode * 59 + this.AssociateInstanceId.GetHashCode();
                 return hashCode;
             }
         }

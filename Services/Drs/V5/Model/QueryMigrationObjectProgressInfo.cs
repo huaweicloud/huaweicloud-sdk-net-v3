@@ -84,41 +84,15 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(QueryMigrationObjectProgressInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MigrationObjectOverview != input.MigrationObjectOverview || (this.MigrationObjectOverview != null && input.MigrationObjectOverview != null && !this.MigrationObjectOverview.SequenceEqual(input.MigrationObjectOverview))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.FullStartTime != input.FullStartTime || (this.FullStartTime != null && !this.FullStartTime.Equals(input.FullStartTime))) return false;
+            if (this.FullCompleteTime != input.FullCompleteTime || (this.FullCompleteTime != null && !this.FullCompleteTime.Equals(input.FullCompleteTime))) return false;
+            if (this.IncrStartTime != input.IncrStartTime || (this.IncrStartTime != null && !this.IncrStartTime.Equals(input.IncrStartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
 
-            return 
-                (
-                    this.MigrationObjectOverview == input.MigrationObjectOverview ||
-                    this.MigrationObjectOverview != null &&
-                    input.MigrationObjectOverview != null &&
-                    this.MigrationObjectOverview.SequenceEqual(input.MigrationObjectOverview)
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.FullStartTime == input.FullStartTime ||
-                    (this.FullStartTime != null &&
-                    this.FullStartTime.Equals(input.FullStartTime))
-                ) && 
-                (
-                    this.FullCompleteTime == input.FullCompleteTime ||
-                    (this.FullCompleteTime != null &&
-                    this.FullCompleteTime.Equals(input.FullCompleteTime))
-                ) && 
-                (
-                    this.IncrStartTime == input.IncrStartTime ||
-                    (this.IncrStartTime != null &&
-                    this.IncrStartTime.Equals(input.IncrStartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -128,19 +102,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MigrationObjectOverview != null)
-                    hashCode = hashCode * 59 + this.MigrationObjectOverview.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.FullStartTime != null)
-                    hashCode = hashCode * 59 + this.FullStartTime.GetHashCode();
-                if (this.FullCompleteTime != null)
-                    hashCode = hashCode * 59 + this.FullCompleteTime.GetHashCode();
-                if (this.IncrStartTime != null)
-                    hashCode = hashCode * 59 + this.IncrStartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                var hashCode = 41;
+                if (this.MigrationObjectOverview != null) hashCode = hashCode * 59 + this.MigrationObjectOverview.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.FullStartTime != null) hashCode = hashCode * 59 + this.FullStartTime.GetHashCode();
+                if (this.FullCompleteTime != null) hashCode = hashCode * 59 + this.FullCompleteTime.GetHashCode();
+                if (this.IncrStartTime != null) hashCode = hashCode * 59 + this.IncrStartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 return hashCode;
             }
         }

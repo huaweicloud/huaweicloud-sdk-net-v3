@@ -254,80 +254,23 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(UpdatePoolOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.LbAlgorithm != input.LbAlgorithm || (this.LbAlgorithm != null && !this.LbAlgorithm.Equals(input.LbAlgorithm))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.SessionPersistence != input.SessionPersistence || (this.SessionPersistence != null && !this.SessionPersistence.Equals(input.SessionPersistence))) return false;
+            if (this.SlowStart != input.SlowStart || (this.SlowStart != null && !this.SlowStart.Equals(input.SlowStart))) return false;
+            if (this.MemberDeletionProtectionEnable != input.MemberDeletionProtectionEnable || (this.MemberDeletionProtectionEnable != null && !this.MemberDeletionProtectionEnable.Equals(input.MemberDeletionProtectionEnable))) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.ProtectionStatus != input.ProtectionStatus) return false;
+            if (this.ProtectionReason != input.ProtectionReason || (this.ProtectionReason != null && !this.ProtectionReason.Equals(input.ProtectionReason))) return false;
+            if (this.AnyPortEnable != input.AnyPortEnable || (this.AnyPortEnable != null && !this.AnyPortEnable.Equals(input.AnyPortEnable))) return false;
+            if (this.ConnectionDrain != input.ConnectionDrain || (this.ConnectionDrain != null && !this.ConnectionDrain.Equals(input.ConnectionDrain))) return false;
+            if (this.PoolHealth != input.PoolHealth || (this.PoolHealth != null && !this.PoolHealth.Equals(input.PoolHealth))) return false;
 
-            return 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.LbAlgorithm == input.LbAlgorithm ||
-                    (this.LbAlgorithm != null &&
-                    this.LbAlgorithm.Equals(input.LbAlgorithm))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.SessionPersistence == input.SessionPersistence ||
-                    (this.SessionPersistence != null &&
-                    this.SessionPersistence.Equals(input.SessionPersistence))
-                ) && 
-                (
-                    this.SlowStart == input.SlowStart ||
-                    (this.SlowStart != null &&
-                    this.SlowStart.Equals(input.SlowStart))
-                ) && 
-                (
-                    this.MemberDeletionProtectionEnable == input.MemberDeletionProtectionEnable ||
-                    (this.MemberDeletionProtectionEnable != null &&
-                    this.MemberDeletionProtectionEnable.Equals(input.MemberDeletionProtectionEnable))
-                ) && 
-                (
-                    this.VpcId == input.VpcId ||
-                    (this.VpcId != null &&
-                    this.VpcId.Equals(input.VpcId))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.ProtectionStatus == input.ProtectionStatus ||
-                    (this.ProtectionStatus != null &&
-                    this.ProtectionStatus.Equals(input.ProtectionStatus))
-                ) && 
-                (
-                    this.ProtectionReason == input.ProtectionReason ||
-                    (this.ProtectionReason != null &&
-                    this.ProtectionReason.Equals(input.ProtectionReason))
-                ) && 
-                (
-                    this.AnyPortEnable == input.AnyPortEnable ||
-                    (this.AnyPortEnable != null &&
-                    this.AnyPortEnable.Equals(input.AnyPortEnable))
-                ) && 
-                (
-                    this.ConnectionDrain == input.ConnectionDrain ||
-                    (this.ConnectionDrain != null &&
-                    this.ConnectionDrain.Equals(input.ConnectionDrain))
-                ) && 
-                (
-                    this.PoolHealth == input.PoolHealth ||
-                    (this.PoolHealth != null &&
-                    this.PoolHealth.Equals(input.PoolHealth))
-                );
+            return true;
         }
 
         /// <summary>
@@ -337,35 +280,21 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.LbAlgorithm != null)
-                    hashCode = hashCode * 59 + this.LbAlgorithm.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.SessionPersistence != null)
-                    hashCode = hashCode * 59 + this.SessionPersistence.GetHashCode();
-                if (this.SlowStart != null)
-                    hashCode = hashCode * 59 + this.SlowStart.GetHashCode();
-                if (this.MemberDeletionProtectionEnable != null)
-                    hashCode = hashCode * 59 + this.MemberDeletionProtectionEnable.GetHashCode();
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.ProtectionStatus != null)
-                    hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
-                if (this.ProtectionReason != null)
-                    hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
-                if (this.AnyPortEnable != null)
-                    hashCode = hashCode * 59 + this.AnyPortEnable.GetHashCode();
-                if (this.ConnectionDrain != null)
-                    hashCode = hashCode * 59 + this.ConnectionDrain.GetHashCode();
-                if (this.PoolHealth != null)
-                    hashCode = hashCode * 59 + this.PoolHealth.GetHashCode();
+                var hashCode = 41;
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.LbAlgorithm != null) hashCode = hashCode * 59 + this.LbAlgorithm.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.SessionPersistence != null) hashCode = hashCode * 59 + this.SessionPersistence.GetHashCode();
+                if (this.SlowStart != null) hashCode = hashCode * 59 + this.SlowStart.GetHashCode();
+                if (this.MemberDeletionProtectionEnable != null) hashCode = hashCode * 59 + this.MemberDeletionProtectionEnable.GetHashCode();
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
+                if (this.ProtectionReason != null) hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
+                if (this.AnyPortEnable != null) hashCode = hashCode * 59 + this.AnyPortEnable.GetHashCode();
+                if (this.ConnectionDrain != null) hashCode = hashCode * 59 + this.ConnectionDrain.GetHashCode();
+                if (this.PoolHealth != null) hashCode = hashCode * 59 + this.PoolHealth.GetHashCode();
                 return hashCode;
             }
         }

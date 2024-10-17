@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(PromConfigModel input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RemoteWriteUrl != input.RemoteWriteUrl || (this.RemoteWriteUrl != null && !this.RemoteWriteUrl.Equals(input.RemoteWriteUrl))) return false;
+            if (this.RemoteReadUrl != input.RemoteReadUrl || (this.RemoteReadUrl != null && !this.RemoteReadUrl.Equals(input.RemoteReadUrl))) return false;
+            if (this.PromHttpApiEndpoint != input.PromHttpApiEndpoint || (this.PromHttpApiEndpoint != null && !this.PromHttpApiEndpoint.Equals(input.PromHttpApiEndpoint))) return false;
+            if (this.DashboardId != input.DashboardId || (this.DashboardId != null && !this.DashboardId.Equals(input.DashboardId))) return false;
+            if (this.RegionId != input.RegionId || (this.RegionId != null && !this.RegionId.Equals(input.RegionId))) return false;
 
-            return 
-                (
-                    this.RemoteWriteUrl == input.RemoteWriteUrl ||
-                    (this.RemoteWriteUrl != null &&
-                    this.RemoteWriteUrl.Equals(input.RemoteWriteUrl))
-                ) && 
-                (
-                    this.RemoteReadUrl == input.RemoteReadUrl ||
-                    (this.RemoteReadUrl != null &&
-                    this.RemoteReadUrl.Equals(input.RemoteReadUrl))
-                ) && 
-                (
-                    this.PromHttpApiEndpoint == input.PromHttpApiEndpoint ||
-                    (this.PromHttpApiEndpoint != null &&
-                    this.PromHttpApiEndpoint.Equals(input.PromHttpApiEndpoint))
-                ) && 
-                (
-                    this.DashboardId == input.DashboardId ||
-                    (this.DashboardId != null &&
-                    this.DashboardId.Equals(input.DashboardId))
-                ) && 
-                (
-                    this.RegionId == input.RegionId ||
-                    (this.RegionId != null &&
-                    this.RegionId.Equals(input.RegionId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RemoteWriteUrl != null)
-                    hashCode = hashCode * 59 + this.RemoteWriteUrl.GetHashCode();
-                if (this.RemoteReadUrl != null)
-                    hashCode = hashCode * 59 + this.RemoteReadUrl.GetHashCode();
-                if (this.PromHttpApiEndpoint != null)
-                    hashCode = hashCode * 59 + this.PromHttpApiEndpoint.GetHashCode();
-                if (this.DashboardId != null)
-                    hashCode = hashCode * 59 + this.DashboardId.GetHashCode();
-                if (this.RegionId != null)
-                    hashCode = hashCode * 59 + this.RegionId.GetHashCode();
+                var hashCode = 41;
+                if (this.RemoteWriteUrl != null) hashCode = hashCode * 59 + this.RemoteWriteUrl.GetHashCode();
+                if (this.RemoteReadUrl != null) hashCode = hashCode * 59 + this.RemoteReadUrl.GetHashCode();
+                if (this.PromHttpApiEndpoint != null) hashCode = hashCode * 59 + this.PromHttpApiEndpoint.GetHashCode();
+                if (this.DashboardId != null) hashCode = hashCode * 59 + this.DashboardId.GetHashCode();
+                if (this.RegionId != null) hashCode = hashCode * 59 + this.RegionId.GetHashCode();
                 return hashCode;
             }
         }

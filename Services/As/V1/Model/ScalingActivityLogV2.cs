@@ -288,109 +288,27 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(ScalingActivityLogV2 input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Status != input.Status) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.InstanceRemovedList != input.InstanceRemovedList || (this.InstanceRemovedList != null && input.InstanceRemovedList != null && !this.InstanceRemovedList.SequenceEqual(input.InstanceRemovedList))) return false;
+            if (this.InstanceDeletedList != input.InstanceDeletedList || (this.InstanceDeletedList != null && input.InstanceDeletedList != null && !this.InstanceDeletedList.SequenceEqual(input.InstanceDeletedList))) return false;
+            if (this.InstanceAddedList != input.InstanceAddedList || (this.InstanceAddedList != null && input.InstanceAddedList != null && !this.InstanceAddedList.SequenceEqual(input.InstanceAddedList))) return false;
+            if (this.InstanceFailedList != input.InstanceFailedList || (this.InstanceFailedList != null && input.InstanceFailedList != null && !this.InstanceFailedList.SequenceEqual(input.InstanceFailedList))) return false;
+            if (this.InstanceStandbyList != input.InstanceStandbyList || (this.InstanceStandbyList != null && input.InstanceStandbyList != null && !this.InstanceStandbyList.SequenceEqual(input.InstanceStandbyList))) return false;
+            if (this.ScalingValue != input.ScalingValue || (this.ScalingValue != null && !this.ScalingValue.Equals(input.ScalingValue))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.InstanceValue != input.InstanceValue || (this.InstanceValue != null && !this.InstanceValue.Equals(input.InstanceValue))) return false;
+            if (this.DesireValue != input.DesireValue || (this.DesireValue != null && !this.DesireValue.Equals(input.DesireValue))) return false;
+            if (this.LbBindSuccessList != input.LbBindSuccessList || (this.LbBindSuccessList != null && input.LbBindSuccessList != null && !this.LbBindSuccessList.SequenceEqual(input.LbBindSuccessList))) return false;
+            if (this.LbBindFailedList != input.LbBindFailedList || (this.LbBindFailedList != null && input.LbBindFailedList != null && !this.LbBindFailedList.SequenceEqual(input.LbBindFailedList))) return false;
+            if (this.LbUnbindSuccessList != input.LbUnbindSuccessList || (this.LbUnbindSuccessList != null && input.LbUnbindSuccessList != null && !this.LbUnbindSuccessList.SequenceEqual(input.LbUnbindSuccessList))) return false;
+            if (this.LbUnbindFailedList != input.LbUnbindFailedList || (this.LbUnbindFailedList != null && input.LbUnbindFailedList != null && !this.LbUnbindFailedList.SequenceEqual(input.LbUnbindFailedList))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
 
-            return 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.InstanceRemovedList == input.InstanceRemovedList ||
-                    this.InstanceRemovedList != null &&
-                    input.InstanceRemovedList != null &&
-                    this.InstanceRemovedList.SequenceEqual(input.InstanceRemovedList)
-                ) && 
-                (
-                    this.InstanceDeletedList == input.InstanceDeletedList ||
-                    this.InstanceDeletedList != null &&
-                    input.InstanceDeletedList != null &&
-                    this.InstanceDeletedList.SequenceEqual(input.InstanceDeletedList)
-                ) && 
-                (
-                    this.InstanceAddedList == input.InstanceAddedList ||
-                    this.InstanceAddedList != null &&
-                    input.InstanceAddedList != null &&
-                    this.InstanceAddedList.SequenceEqual(input.InstanceAddedList)
-                ) && 
-                (
-                    this.InstanceFailedList == input.InstanceFailedList ||
-                    this.InstanceFailedList != null &&
-                    input.InstanceFailedList != null &&
-                    this.InstanceFailedList.SequenceEqual(input.InstanceFailedList)
-                ) && 
-                (
-                    this.InstanceStandbyList == input.InstanceStandbyList ||
-                    this.InstanceStandbyList != null &&
-                    input.InstanceStandbyList != null &&
-                    this.InstanceStandbyList.SequenceEqual(input.InstanceStandbyList)
-                ) && 
-                (
-                    this.ScalingValue == input.ScalingValue ||
-                    (this.ScalingValue != null &&
-                    this.ScalingValue.Equals(input.ScalingValue))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.InstanceValue == input.InstanceValue ||
-                    (this.InstanceValue != null &&
-                    this.InstanceValue.Equals(input.InstanceValue))
-                ) && 
-                (
-                    this.DesireValue == input.DesireValue ||
-                    (this.DesireValue != null &&
-                    this.DesireValue.Equals(input.DesireValue))
-                ) && 
-                (
-                    this.LbBindSuccessList == input.LbBindSuccessList ||
-                    this.LbBindSuccessList != null &&
-                    input.LbBindSuccessList != null &&
-                    this.LbBindSuccessList.SequenceEqual(input.LbBindSuccessList)
-                ) && 
-                (
-                    this.LbBindFailedList == input.LbBindFailedList ||
-                    this.LbBindFailedList != null &&
-                    input.LbBindFailedList != null &&
-                    this.LbBindFailedList.SequenceEqual(input.LbBindFailedList)
-                ) && 
-                (
-                    this.LbUnbindSuccessList == input.LbUnbindSuccessList ||
-                    this.LbUnbindSuccessList != null &&
-                    input.LbUnbindSuccessList != null &&
-                    this.LbUnbindSuccessList.SequenceEqual(input.LbUnbindSuccessList)
-                ) && 
-                (
-                    this.LbUnbindFailedList == input.LbUnbindFailedList ||
-                    this.LbUnbindFailedList != null &&
-                    input.LbUnbindFailedList != null &&
-                    this.LbUnbindFailedList.SequenceEqual(input.LbUnbindFailedList)
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                );
+            return true;
         }
 
         /// <summary>
@@ -400,43 +318,25 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.InstanceRemovedList != null)
-                    hashCode = hashCode * 59 + this.InstanceRemovedList.GetHashCode();
-                if (this.InstanceDeletedList != null)
-                    hashCode = hashCode * 59 + this.InstanceDeletedList.GetHashCode();
-                if (this.InstanceAddedList != null)
-                    hashCode = hashCode * 59 + this.InstanceAddedList.GetHashCode();
-                if (this.InstanceFailedList != null)
-                    hashCode = hashCode * 59 + this.InstanceFailedList.GetHashCode();
-                if (this.InstanceStandbyList != null)
-                    hashCode = hashCode * 59 + this.InstanceStandbyList.GetHashCode();
-                if (this.ScalingValue != null)
-                    hashCode = hashCode * 59 + this.ScalingValue.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.InstanceValue != null)
-                    hashCode = hashCode * 59 + this.InstanceValue.GetHashCode();
-                if (this.DesireValue != null)
-                    hashCode = hashCode * 59 + this.DesireValue.GetHashCode();
-                if (this.LbBindSuccessList != null)
-                    hashCode = hashCode * 59 + this.LbBindSuccessList.GetHashCode();
-                if (this.LbBindFailedList != null)
-                    hashCode = hashCode * 59 + this.LbBindFailedList.GetHashCode();
-                if (this.LbUnbindSuccessList != null)
-                    hashCode = hashCode * 59 + this.LbUnbindSuccessList.GetHashCode();
-                if (this.LbUnbindFailedList != null)
-                    hashCode = hashCode * 59 + this.LbUnbindFailedList.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.InstanceRemovedList != null) hashCode = hashCode * 59 + this.InstanceRemovedList.GetHashCode();
+                if (this.InstanceDeletedList != null) hashCode = hashCode * 59 + this.InstanceDeletedList.GetHashCode();
+                if (this.InstanceAddedList != null) hashCode = hashCode * 59 + this.InstanceAddedList.GetHashCode();
+                if (this.InstanceFailedList != null) hashCode = hashCode * 59 + this.InstanceFailedList.GetHashCode();
+                if (this.InstanceStandbyList != null) hashCode = hashCode * 59 + this.InstanceStandbyList.GetHashCode();
+                if (this.ScalingValue != null) hashCode = hashCode * 59 + this.ScalingValue.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.InstanceValue != null) hashCode = hashCode * 59 + this.InstanceValue.GetHashCode();
+                if (this.DesireValue != null) hashCode = hashCode * 59 + this.DesireValue.GetHashCode();
+                if (this.LbBindSuccessList != null) hashCode = hashCode * 59 + this.LbBindSuccessList.GetHashCode();
+                if (this.LbBindFailedList != null) hashCode = hashCode * 59 + this.LbBindFailedList.GetHashCode();
+                if (this.LbUnbindSuccessList != null) hashCode = hashCode * 59 + this.LbUnbindSuccessList.GetHashCode();
+                if (this.LbUnbindFailedList != null) hashCode = hashCode * 59 + this.LbUnbindFailedList.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

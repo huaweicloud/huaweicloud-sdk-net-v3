@@ -84,41 +84,15 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         /// </summary>
         public bool Equals(JudgementResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Output != input.Output || (this.Output != null && !this.Output.Equals(input.Output))) return false;
+            if (this.FileId != input.FileId || (this.FileId != null && !this.FileId.Equals(input.FileId))) return false;
+            if (this.ImageId != input.ImageId || (this.ImageId != null && !this.ImageId.Equals(input.ImageId))) return false;
+            if (this.CaseCount != input.CaseCount || (this.CaseCount != null && !this.CaseCount.Equals(input.CaseCount))) return false;
+            if (this.ExecutedCount != input.ExecutedCount || (this.ExecutedCount != null && !this.ExecutedCount.Equals(input.ExecutedCount))) return false;
+            if (this.Testcases != input.Testcases || (this.Testcases != null && input.Testcases != null && !this.Testcases.SequenceEqual(input.Testcases))) return false;
 
-            return 
-                (
-                    this.Output == input.Output ||
-                    (this.Output != null &&
-                    this.Output.Equals(input.Output))
-                ) && 
-                (
-                    this.FileId == input.FileId ||
-                    (this.FileId != null &&
-                    this.FileId.Equals(input.FileId))
-                ) && 
-                (
-                    this.ImageId == input.ImageId ||
-                    (this.ImageId != null &&
-                    this.ImageId.Equals(input.ImageId))
-                ) && 
-                (
-                    this.CaseCount == input.CaseCount ||
-                    (this.CaseCount != null &&
-                    this.CaseCount.Equals(input.CaseCount))
-                ) && 
-                (
-                    this.ExecutedCount == input.ExecutedCount ||
-                    (this.ExecutedCount != null &&
-                    this.ExecutedCount.Equals(input.ExecutedCount))
-                ) && 
-                (
-                    this.Testcases == input.Testcases ||
-                    this.Testcases != null &&
-                    input.Testcases != null &&
-                    this.Testcases.SequenceEqual(input.Testcases)
-                );
+            return true;
         }
 
         /// <summary>
@@ -128,19 +102,13 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Output != null)
-                    hashCode = hashCode * 59 + this.Output.GetHashCode();
-                if (this.FileId != null)
-                    hashCode = hashCode * 59 + this.FileId.GetHashCode();
-                if (this.ImageId != null)
-                    hashCode = hashCode * 59 + this.ImageId.GetHashCode();
-                if (this.CaseCount != null)
-                    hashCode = hashCode * 59 + this.CaseCount.GetHashCode();
-                if (this.ExecutedCount != null)
-                    hashCode = hashCode * 59 + this.ExecutedCount.GetHashCode();
-                if (this.Testcases != null)
-                    hashCode = hashCode * 59 + this.Testcases.GetHashCode();
+                var hashCode = 41;
+                if (this.Output != null) hashCode = hashCode * 59 + this.Output.GetHashCode();
+                if (this.FileId != null) hashCode = hashCode * 59 + this.FileId.GetHashCode();
+                if (this.ImageId != null) hashCode = hashCode * 59 + this.ImageId.GetHashCode();
+                if (this.CaseCount != null) hashCode = hashCode * 59 + this.CaseCount.GetHashCode();
+                if (this.ExecutedCount != null) hashCode = hashCode * 59 + this.ExecutedCount.GetHashCode();
+                if (this.Testcases != null) hashCode = hashCode * 59 + this.Testcases.GetHashCode();
                 return hashCode;
             }
         }

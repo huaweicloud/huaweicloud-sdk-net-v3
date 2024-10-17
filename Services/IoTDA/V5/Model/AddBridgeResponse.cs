@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(AddBridgeResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BridgeId != input.BridgeId || (this.BridgeId != null && !this.BridgeId.Equals(input.BridgeId))) return false;
+            if (this.BridgeName != input.BridgeName || (this.BridgeName != null && !this.BridgeName.Equals(input.BridgeName))) return false;
+            if (this.AuthInfo != input.AuthInfo || (this.AuthInfo != null && !this.AuthInfo.Equals(input.AuthInfo))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
 
-            return 
-                (
-                    this.BridgeId == input.BridgeId ||
-                    (this.BridgeId != null &&
-                    this.BridgeId.Equals(input.BridgeId))
-                ) && 
-                (
-                    this.BridgeName == input.BridgeName ||
-                    (this.BridgeName != null &&
-                    this.BridgeName.Equals(input.BridgeName))
-                ) && 
-                (
-                    this.AuthInfo == input.AuthInfo ||
-                    (this.AuthInfo != null &&
-                    this.AuthInfo.Equals(input.AuthInfo))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BridgeId != null)
-                    hashCode = hashCode * 59 + this.BridgeId.GetHashCode();
-                if (this.BridgeName != null)
-                    hashCode = hashCode * 59 + this.BridgeName.GetHashCode();
-                if (this.AuthInfo != null)
-                    hashCode = hashCode * 59 + this.AuthInfo.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                var hashCode = 41;
+                if (this.BridgeId != null) hashCode = hashCode * 59 + this.BridgeId.GetHashCode();
+                if (this.BridgeName != null) hashCode = hashCode * 59 + this.BridgeName.GetHashCode();
+                if (this.AuthInfo != null) hashCode = hashCode * 59 + this.AuthInfo.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 return hashCode;
             }
         }

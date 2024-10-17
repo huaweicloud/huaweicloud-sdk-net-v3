@@ -140,80 +140,23 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(CreateCustomfieldsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Options != input.Options || (this.Options != null && !this.Options.Equals(input.Options))) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Identifier != input.Identifier || (this.Identifier != null && !this.Identifier.Equals(input.Identifier))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.TrackerId != input.TrackerId || (this.TrackerId != null && !this.TrackerId.Equals(input.TrackerId))) return false;
+            if (this.CustomField != input.CustomField || (this.CustomField != null && !this.CustomField.Equals(input.CustomField))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Sort != input.Sort || (this.Sort != null && !this.Sort.Equals(input.Sort))) return false;
+            if (this.Memo != input.Memo || (this.Memo != null && !this.Memo.Equals(input.Memo))) return false;
+            if (this.Created != input.Created || (this.Created != null && !this.Created.Equals(input.Created))) return false;
+            if (this.Modified != input.Modified || (this.Modified != null && !this.Modified.Equals(input.Modified))) return false;
+            if (this.IsDelete != input.IsDelete || (this.IsDelete != null && !this.IsDelete.Equals(input.IsDelete))) return false;
 
-            return 
-                (
-                    this.Options == input.Options ||
-                    (this.Options != null &&
-                    this.Options.Equals(input.Options))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Identifier == input.Identifier ||
-                    (this.Identifier != null &&
-                    this.Identifier.Equals(input.Identifier))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.TrackerId == input.TrackerId ||
-                    (this.TrackerId != null &&
-                    this.TrackerId.Equals(input.TrackerId))
-                ) && 
-                (
-                    this.CustomField == input.CustomField ||
-                    (this.CustomField != null &&
-                    this.CustomField.Equals(input.CustomField))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Sort == input.Sort ||
-                    (this.Sort != null &&
-                    this.Sort.Equals(input.Sort))
-                ) && 
-                (
-                    this.Memo == input.Memo ||
-                    (this.Memo != null &&
-                    this.Memo.Equals(input.Memo))
-                ) && 
-                (
-                    this.Created == input.Created ||
-                    (this.Created != null &&
-                    this.Created.Equals(input.Created))
-                ) && 
-                (
-                    this.Modified == input.Modified ||
-                    (this.Modified != null &&
-                    this.Modified.Equals(input.Modified))
-                ) && 
-                (
-                    this.IsDelete == input.IsDelete ||
-                    (this.IsDelete != null &&
-                    this.IsDelete.Equals(input.IsDelete))
-                );
+            return true;
         }
 
         /// <summary>
@@ -223,35 +166,21 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Options != null)
-                    hashCode = hashCode * 59 + this.Options.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Identifier != null)
-                    hashCode = hashCode * 59 + this.Identifier.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.TrackerId != null)
-                    hashCode = hashCode * 59 + this.TrackerId.GetHashCode();
-                if (this.CustomField != null)
-                    hashCode = hashCode * 59 + this.CustomField.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Sort != null)
-                    hashCode = hashCode * 59 + this.Sort.GetHashCode();
-                if (this.Memo != null)
-                    hashCode = hashCode * 59 + this.Memo.GetHashCode();
-                if (this.Created != null)
-                    hashCode = hashCode * 59 + this.Created.GetHashCode();
-                if (this.Modified != null)
-                    hashCode = hashCode * 59 + this.Modified.GetHashCode();
-                if (this.IsDelete != null)
-                    hashCode = hashCode * 59 + this.IsDelete.GetHashCode();
+                var hashCode = 41;
+                if (this.Options != null) hashCode = hashCode * 59 + this.Options.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Identifier != null) hashCode = hashCode * 59 + this.Identifier.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.TrackerId != null) hashCode = hashCode * 59 + this.TrackerId.GetHashCode();
+                if (this.CustomField != null) hashCode = hashCode * 59 + this.CustomField.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Sort != null) hashCode = hashCode * 59 + this.Sort.GetHashCode();
+                if (this.Memo != null) hashCode = hashCode * 59 + this.Memo.GetHashCode();
+                if (this.Created != null) hashCode = hashCode * 59 + this.Created.GetHashCode();
+                if (this.Modified != null) hashCode = hashCode * 59 + this.Modified.GetHashCode();
+                if (this.IsDelete != null) hashCode = hashCode * 59 + this.IsDelete.GetHashCode();
                 return hashCode;
             }
         }

@@ -163,15 +163,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(AclAccountRoleModifyBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AccountRole != input.AccountRole) return false;
 
-            return 
-                (
-                    this.AccountRole == input.AccountRole ||
-                    (this.AccountRole != null &&
-                    this.AccountRole.Equals(input.AccountRole))
-                );
+            return true;
         }
 
         /// <summary>
@@ -181,9 +176,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AccountRole != null)
-                    hashCode = hashCode * 59 + this.AccountRole.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.AccountRole.GetHashCode();
                 return hashCode;
             }
         }

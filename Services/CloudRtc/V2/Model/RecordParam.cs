@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         /// </summary>
         public bool Equals(RecordParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RecordRuleId != input.RecordRuleId || (this.RecordRuleId != null && !this.RecordRuleId.Equals(input.RecordRuleId))) return false;
 
-            return 
-                (
-                    this.RecordRuleId == input.RecordRuleId ||
-                    (this.RecordRuleId != null &&
-                    this.RecordRuleId.Equals(input.RecordRuleId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RecordRuleId != null)
-                    hashCode = hashCode * 59 + this.RecordRuleId.GetHashCode();
+                var hashCode = 41;
+                if (this.RecordRuleId != null) hashCode = hashCode * 59 + this.RecordRuleId.GetHashCode();
                 return hashCode;
             }
         }

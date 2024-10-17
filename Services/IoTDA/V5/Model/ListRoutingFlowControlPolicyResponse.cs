@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ListRoutingFlowControlPolicyResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FlowcontrolPolicies != input.FlowcontrolPolicies || (this.FlowcontrolPolicies != null && input.FlowcontrolPolicies != null && !this.FlowcontrolPolicies.SequenceEqual(input.FlowcontrolPolicies))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
 
-            return 
-                (
-                    this.FlowcontrolPolicies == input.FlowcontrolPolicies ||
-                    this.FlowcontrolPolicies != null &&
-                    input.FlowcontrolPolicies != null &&
-                    this.FlowcontrolPolicies.SequenceEqual(input.FlowcontrolPolicies)
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FlowcontrolPolicies != null)
-                    hashCode = hashCode * 59 + this.FlowcontrolPolicies.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                var hashCode = 41;
+                if (this.FlowcontrolPolicies != null) hashCode = hashCode * 59 + this.FlowcontrolPolicies.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
                 return hashCode;
             }
         }

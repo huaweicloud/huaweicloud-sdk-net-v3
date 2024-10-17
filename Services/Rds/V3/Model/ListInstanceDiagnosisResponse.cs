@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ListInstanceDiagnosisResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Diagnosis != input.Diagnosis || (this.Diagnosis != null && input.Diagnosis != null && !this.Diagnosis.SequenceEqual(input.Diagnosis))) return false;
 
-            return 
-                (
-                    this.Diagnosis == input.Diagnosis ||
-                    this.Diagnosis != null &&
-                    input.Diagnosis != null &&
-                    this.Diagnosis.SequenceEqual(input.Diagnosis)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Diagnosis != null)
-                    hashCode = hashCode * 59 + this.Diagnosis.GetHashCode();
+                var hashCode = 41;
+                if (this.Diagnosis != null) hashCode = hashCode * 59 + this.Diagnosis.GetHashCode();
                 return hashCode;
             }
         }

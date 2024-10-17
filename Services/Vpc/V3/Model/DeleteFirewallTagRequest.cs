@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(DeleteFirewallTagRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FirewallId != input.FirewallId || (this.FirewallId != null && !this.FirewallId.Equals(input.FirewallId))) return false;
+            if (this.TagKey != input.TagKey || (this.TagKey != null && !this.TagKey.Equals(input.TagKey))) return false;
 
-            return 
-                (
-                    this.FirewallId == input.FirewallId ||
-                    (this.FirewallId != null &&
-                    this.FirewallId.Equals(input.FirewallId))
-                ) && 
-                (
-                    this.TagKey == input.TagKey ||
-                    (this.TagKey != null &&
-                    this.TagKey.Equals(input.TagKey))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FirewallId != null)
-                    hashCode = hashCode * 59 + this.FirewallId.GetHashCode();
-                if (this.TagKey != null)
-                    hashCode = hashCode * 59 + this.TagKey.GetHashCode();
+                var hashCode = 41;
+                if (this.FirewallId != null) hashCode = hashCode * 59 + this.FirewallId.GetHashCode();
+                if (this.TagKey != null) hashCode = hashCode * 59 + this.TagKey.GetHashCode();
                 return hashCode;
             }
         }

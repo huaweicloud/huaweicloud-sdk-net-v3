@@ -198,41 +198,15 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(EventTriggerCondition input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EventName != input.EventName || (this.EventName != null && !this.EventName.Equals(input.EventName))) return false;
+            if (this.TriggerType != input.TriggerType) return false;
+            if (this.AggregationWindow != input.AggregationWindow || (this.AggregationWindow != null && !this.AggregationWindow.Equals(input.AggregationWindow))) return false;
+            if (this.Operator != input.Operator || (this.Operator != null && !this.Operator.Equals(input.Operator))) return false;
+            if (this.Thresholds != input.Thresholds || (this.Thresholds != null && input.Thresholds != null && !this.Thresholds.SequenceEqual(input.Thresholds))) return false;
+            if (this.Frequency != input.Frequency || (this.Frequency != null && !this.Frequency.Equals(input.Frequency))) return false;
 
-            return 
-                (
-                    this.EventName == input.EventName ||
-                    (this.EventName != null &&
-                    this.EventName.Equals(input.EventName))
-                ) && 
-                (
-                    this.TriggerType == input.TriggerType ||
-                    (this.TriggerType != null &&
-                    this.TriggerType.Equals(input.TriggerType))
-                ) && 
-                (
-                    this.AggregationWindow == input.AggregationWindow ||
-                    (this.AggregationWindow != null &&
-                    this.AggregationWindow.Equals(input.AggregationWindow))
-                ) && 
-                (
-                    this.Operator == input.Operator ||
-                    (this.Operator != null &&
-                    this.Operator.Equals(input.Operator))
-                ) && 
-                (
-                    this.Thresholds == input.Thresholds ||
-                    this.Thresholds != null &&
-                    input.Thresholds != null &&
-                    this.Thresholds.SequenceEqual(input.Thresholds)
-                ) && 
-                (
-                    this.Frequency == input.Frequency ||
-                    (this.Frequency != null &&
-                    this.Frequency.Equals(input.Frequency))
-                );
+            return true;
         }
 
         /// <summary>
@@ -242,19 +216,13 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EventName != null)
-                    hashCode = hashCode * 59 + this.EventName.GetHashCode();
-                if (this.TriggerType != null)
-                    hashCode = hashCode * 59 + this.TriggerType.GetHashCode();
-                if (this.AggregationWindow != null)
-                    hashCode = hashCode * 59 + this.AggregationWindow.GetHashCode();
-                if (this.Operator != null)
-                    hashCode = hashCode * 59 + this.Operator.GetHashCode();
-                if (this.Thresholds != null)
-                    hashCode = hashCode * 59 + this.Thresholds.GetHashCode();
-                if (this.Frequency != null)
-                    hashCode = hashCode * 59 + this.Frequency.GetHashCode();
+                var hashCode = 41;
+                if (this.EventName != null) hashCode = hashCode * 59 + this.EventName.GetHashCode();
+                hashCode = hashCode * 59 + this.TriggerType.GetHashCode();
+                if (this.AggregationWindow != null) hashCode = hashCode * 59 + this.AggregationWindow.GetHashCode();
+                if (this.Operator != null) hashCode = hashCode * 59 + this.Operator.GetHashCode();
+                if (this.Thresholds != null) hashCode = hashCode * 59 + this.Thresholds.GetHashCode();
+                if (this.Frequency != null) hashCode = hashCode * 59 + this.Frequency.GetHashCode();
                 return hashCode;
             }
         }

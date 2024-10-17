@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(MetaDataInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OpSvcUserid != input.OpSvcUserid || (this.OpSvcUserid != null && !this.OpSvcUserid.Equals(input.OpSvcUserid))) return false;
+            if (this.AdminPass != input.AdminPass || (this.AdminPass != null && !this.AdminPass.Equals(input.AdminPass))) return false;
+            if (this.Byol != input.Byol || (this.Byol != null && !this.Byol.Equals(input.Byol))) return false;
+            if (this.AgencyName != input.AgencyName || (this.AgencyName != null && !this.AgencyName.Equals(input.AgencyName))) return false;
 
-            return 
-                (
-                    this.OpSvcUserid == input.OpSvcUserid ||
-                    (this.OpSvcUserid != null &&
-                    this.OpSvcUserid.Equals(input.OpSvcUserid))
-                ) && 
-                (
-                    this.AdminPass == input.AdminPass ||
-                    (this.AdminPass != null &&
-                    this.AdminPass.Equals(input.AdminPass))
-                ) && 
-                (
-                    this.Byol == input.Byol ||
-                    (this.Byol != null &&
-                    this.Byol.Equals(input.Byol))
-                ) && 
-                (
-                    this.AgencyName == input.AgencyName ||
-                    (this.AgencyName != null &&
-                    this.AgencyName.Equals(input.AgencyName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OpSvcUserid != null)
-                    hashCode = hashCode * 59 + this.OpSvcUserid.GetHashCode();
-                if (this.AdminPass != null)
-                    hashCode = hashCode * 59 + this.AdminPass.GetHashCode();
-                if (this.Byol != null)
-                    hashCode = hashCode * 59 + this.Byol.GetHashCode();
-                if (this.AgencyName != null)
-                    hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
+                var hashCode = 41;
+                if (this.OpSvcUserid != null) hashCode = hashCode * 59 + this.OpSvcUserid.GetHashCode();
+                if (this.AdminPass != null) hashCode = hashCode * 59 + this.AdminPass.GetHashCode();
+                if (this.Byol != null) hashCode = hashCode * 59 + this.Byol.GetHashCode();
+                if (this.AgencyName != null) hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
                 return hashCode;
             }
         }

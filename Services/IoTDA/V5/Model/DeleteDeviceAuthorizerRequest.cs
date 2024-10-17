@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(DeleteDeviceAuthorizerRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.AuthorizerId != input.AuthorizerId || (this.AuthorizerId != null && !this.AuthorizerId.Equals(input.AuthorizerId))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.AuthorizerId == input.AuthorizerId ||
-                    (this.AuthorizerId != null &&
-                    this.AuthorizerId.Equals(input.AuthorizerId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.AuthorizerId != null)
-                    hashCode = hashCode * 59 + this.AuthorizerId.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.AuthorizerId != null) hashCode = hashCode * 59 + this.AuthorizerId.GetHashCode();
                 return hashCode;
             }
         }

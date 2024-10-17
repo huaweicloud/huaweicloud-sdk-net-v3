@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(HangUpClientsRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NodeId != input.NodeId || (this.NodeId != null && !this.NodeId.Equals(input.NodeId))) return false;
+            if (this.ClientAddrs != input.ClientAddrs || (this.ClientAddrs != null && input.ClientAddrs != null && !this.ClientAddrs.SequenceEqual(input.ClientAddrs))) return false;
 
-            return 
-                (
-                    this.NodeId == input.NodeId ||
-                    (this.NodeId != null &&
-                    this.NodeId.Equals(input.NodeId))
-                ) && 
-                (
-                    this.ClientAddrs == input.ClientAddrs ||
-                    this.ClientAddrs != null &&
-                    input.ClientAddrs != null &&
-                    this.ClientAddrs.SequenceEqual(input.ClientAddrs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NodeId != null)
-                    hashCode = hashCode * 59 + this.NodeId.GetHashCode();
-                if (this.ClientAddrs != null)
-                    hashCode = hashCode * 59 + this.ClientAddrs.GetHashCode();
+                var hashCode = 41;
+                if (this.NodeId != null) hashCode = hashCode * 59 + this.NodeId.GetHashCode();
+                if (this.ClientAddrs != null) hashCode = hashCode * 59 + this.ClientAddrs.GetHashCode();
                 return hashCode;
             }
         }

@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(ListAllProjectsPermissionsForAgencyRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AgencyId != input.AgencyId || (this.AgencyId != null && !this.AgencyId.Equals(input.AgencyId))) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
 
-            return 
-                (
-                    this.AgencyId == input.AgencyId ||
-                    (this.AgencyId != null &&
-                    this.AgencyId.Equals(input.AgencyId))
-                ) && 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AgencyId != null)
-                    hashCode = hashCode * 59 + this.AgencyId.GetHashCode();
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                var hashCode = 41;
+                if (this.AgencyId != null) hashCode = hashCode * 59 + this.AgencyId.GetHashCode();
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
                 return hashCode;
             }
         }

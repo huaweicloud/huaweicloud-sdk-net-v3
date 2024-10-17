@@ -90,40 +90,15 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(ListStackEventsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClientRequestId != input.ClientRequestId || (this.ClientRequestId != null && !this.ClientRequestId.Equals(input.ClientRequestId))) return false;
+            if (this.StackName != input.StackName || (this.StackName != null && !this.StackName.Equals(input.StackName))) return false;
+            if (this.StackId != input.StackId || (this.StackId != null && !this.StackId.Equals(input.StackId))) return false;
+            if (this.DeploymentId != input.DeploymentId || (this.DeploymentId != null && !this.DeploymentId.Equals(input.DeploymentId))) return false;
+            if (this.Filter != input.Filter || (this.Filter != null && !this.Filter.Equals(input.Filter))) return false;
+            if (this.Field != input.Field || (this.Field != null && !this.Field.Equals(input.Field))) return false;
 
-            return 
-                (
-                    this.ClientRequestId == input.ClientRequestId ||
-                    (this.ClientRequestId != null &&
-                    this.ClientRequestId.Equals(input.ClientRequestId))
-                ) && 
-                (
-                    this.StackName == input.StackName ||
-                    (this.StackName != null &&
-                    this.StackName.Equals(input.StackName))
-                ) && 
-                (
-                    this.StackId == input.StackId ||
-                    (this.StackId != null &&
-                    this.StackId.Equals(input.StackId))
-                ) && 
-                (
-                    this.DeploymentId == input.DeploymentId ||
-                    (this.DeploymentId != null &&
-                    this.DeploymentId.Equals(input.DeploymentId))
-                ) && 
-                (
-                    this.Filter == input.Filter ||
-                    (this.Filter != null &&
-                    this.Filter.Equals(input.Filter))
-                ) && 
-                (
-                    this.Field == input.Field ||
-                    (this.Field != null &&
-                    this.Field.Equals(input.Field))
-                );
+            return true;
         }
 
         /// <summary>
@@ -133,19 +108,13 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClientRequestId != null)
-                    hashCode = hashCode * 59 + this.ClientRequestId.GetHashCode();
-                if (this.StackName != null)
-                    hashCode = hashCode * 59 + this.StackName.GetHashCode();
-                if (this.StackId != null)
-                    hashCode = hashCode * 59 + this.StackId.GetHashCode();
-                if (this.DeploymentId != null)
-                    hashCode = hashCode * 59 + this.DeploymentId.GetHashCode();
-                if (this.Filter != null)
-                    hashCode = hashCode * 59 + this.Filter.GetHashCode();
-                if (this.Field != null)
-                    hashCode = hashCode * 59 + this.Field.GetHashCode();
+                var hashCode = 41;
+                if (this.ClientRequestId != null) hashCode = hashCode * 59 + this.ClientRequestId.GetHashCode();
+                if (this.StackName != null) hashCode = hashCode * 59 + this.StackName.GetHashCode();
+                if (this.StackId != null) hashCode = hashCode * 59 + this.StackId.GetHashCode();
+                if (this.DeploymentId != null) hashCode = hashCode * 59 + this.DeploymentId.GetHashCode();
+                if (this.Filter != null) hashCode = hashCode * 59 + this.Filter.GetHashCode();
+                if (this.Field != null) hashCode = hashCode * 59 + this.Field.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(CreateObjectCompareJobReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CompareTaskNum != input.CompareTaskNum || (this.CompareTaskNum != null && !this.CompareTaskNum.Equals(input.CompareTaskNum))) return false;
 
-            return 
-                (
-                    this.CompareTaskNum == input.CompareTaskNum ||
-                    (this.CompareTaskNum != null &&
-                    this.CompareTaskNum.Equals(input.CompareTaskNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CompareTaskNum != null)
-                    hashCode = hashCode * 59 + this.CompareTaskNum.GetHashCode();
+                var hashCode = 41;
+                if (this.CompareTaskNum != null) hashCode = hashCode * 59 + this.CompareTaskNum.GetHashCode();
                 return hashCode;
             }
         }

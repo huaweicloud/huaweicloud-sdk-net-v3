@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(ShowProjectSuccessRateResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SuccessRate != input.SuccessRate || (this.SuccessRate != null && !this.SuccessRate.Equals(input.SuccessRate))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.ProjectName != input.ProjectName || (this.ProjectName != null && !this.ProjectName.Equals(input.ProjectName))) return false;
+            if (this.StartDate != input.StartDate || (this.StartDate != null && !this.StartDate.Equals(input.StartDate))) return false;
+            if (this.EndDate != input.EndDate || (this.EndDate != null && !this.EndDate.Equals(input.EndDate))) return false;
+            if (this.TaskCount != input.TaskCount || (this.TaskCount != null && !this.TaskCount.Equals(input.TaskCount))) return false;
+            if (this.RecordCount != input.RecordCount || (this.RecordCount != null && !this.RecordCount.Equals(input.RecordCount))) return false;
+            if (this.SuccessRecordCount != input.SuccessRecordCount || (this.SuccessRecordCount != null && !this.SuccessRecordCount.Equals(input.SuccessRecordCount))) return false;
 
-            return 
-                (
-                    this.SuccessRate == input.SuccessRate ||
-                    (this.SuccessRate != null &&
-                    this.SuccessRate.Equals(input.SuccessRate))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.ProjectName == input.ProjectName ||
-                    (this.ProjectName != null &&
-                    this.ProjectName.Equals(input.ProjectName))
-                ) && 
-                (
-                    this.StartDate == input.StartDate ||
-                    (this.StartDate != null &&
-                    this.StartDate.Equals(input.StartDate))
-                ) && 
-                (
-                    this.EndDate == input.EndDate ||
-                    (this.EndDate != null &&
-                    this.EndDate.Equals(input.EndDate))
-                ) && 
-                (
-                    this.TaskCount == input.TaskCount ||
-                    (this.TaskCount != null &&
-                    this.TaskCount.Equals(input.TaskCount))
-                ) && 
-                (
-                    this.RecordCount == input.RecordCount ||
-                    (this.RecordCount != null &&
-                    this.RecordCount.Equals(input.RecordCount))
-                ) && 
-                (
-                    this.SuccessRecordCount == input.SuccessRecordCount ||
-                    (this.SuccessRecordCount != null &&
-                    this.SuccessRecordCount.Equals(input.SuccessRecordCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SuccessRate != null)
-                    hashCode = hashCode * 59 + this.SuccessRate.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.ProjectName != null)
-                    hashCode = hashCode * 59 + this.ProjectName.GetHashCode();
-                if (this.StartDate != null)
-                    hashCode = hashCode * 59 + this.StartDate.GetHashCode();
-                if (this.EndDate != null)
-                    hashCode = hashCode * 59 + this.EndDate.GetHashCode();
-                if (this.TaskCount != null)
-                    hashCode = hashCode * 59 + this.TaskCount.GetHashCode();
-                if (this.RecordCount != null)
-                    hashCode = hashCode * 59 + this.RecordCount.GetHashCode();
-                if (this.SuccessRecordCount != null)
-                    hashCode = hashCode * 59 + this.SuccessRecordCount.GetHashCode();
+                var hashCode = 41;
+                if (this.SuccessRate != null) hashCode = hashCode * 59 + this.SuccessRate.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.ProjectName != null) hashCode = hashCode * 59 + this.ProjectName.GetHashCode();
+                if (this.StartDate != null) hashCode = hashCode * 59 + this.StartDate.GetHashCode();
+                if (this.EndDate != null) hashCode = hashCode * 59 + this.EndDate.GetHashCode();
+                if (this.TaskCount != null) hashCode = hashCode * 59 + this.TaskCount.GetHashCode();
+                if (this.RecordCount != null) hashCode = hashCode * 59 + this.RecordCount.GetHashCode();
+                if (this.SuccessRecordCount != null) hashCode = hashCode * 59 + this.SuccessRecordCount.GetHashCode();
                 return hashCode;
             }
         }

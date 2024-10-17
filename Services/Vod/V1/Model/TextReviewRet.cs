@@ -190,30 +190,13 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(TextReviewRet input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Suggestion != input.Suggestion) return false;
+            if (this.Politics != input.Politics || (this.Politics != null && !this.Politics.Equals(input.Politics))) return false;
+            if (this.Porn != input.Porn || (this.Porn != null && !this.Porn.Equals(input.Porn))) return false;
+            if (this.Abuse != input.Abuse || (this.Abuse != null && !this.Abuse.Equals(input.Abuse))) return false;
 
-            return 
-                (
-                    this.Suggestion == input.Suggestion ||
-                    (this.Suggestion != null &&
-                    this.Suggestion.Equals(input.Suggestion))
-                ) && 
-                (
-                    this.Politics == input.Politics ||
-                    (this.Politics != null &&
-                    this.Politics.Equals(input.Politics))
-                ) && 
-                (
-                    this.Porn == input.Porn ||
-                    (this.Porn != null &&
-                    this.Porn.Equals(input.Porn))
-                ) && 
-                (
-                    this.Abuse == input.Abuse ||
-                    (this.Abuse != null &&
-                    this.Abuse.Equals(input.Abuse))
-                );
+            return true;
         }
 
         /// <summary>
@@ -223,15 +206,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Suggestion != null)
-                    hashCode = hashCode * 59 + this.Suggestion.GetHashCode();
-                if (this.Politics != null)
-                    hashCode = hashCode * 59 + this.Politics.GetHashCode();
-                if (this.Porn != null)
-                    hashCode = hashCode * 59 + this.Porn.GetHashCode();
-                if (this.Abuse != null)
-                    hashCode = hashCode * 59 + this.Abuse.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Suggestion.GetHashCode();
+                if (this.Politics != null) hashCode = hashCode * 59 + this.Politics.GetHashCode();
+                if (this.Porn != null) hashCode = hashCode * 59 + this.Porn.GetHashCode();
+                if (this.Abuse != null) hashCode = hashCode * 59 + this.Abuse.GetHashCode();
                 return hashCode;
             }
         }

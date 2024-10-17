@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(SearchCriteriasBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Criterias != input.Criterias || (this.Criterias != null && input.Criterias != null && !this.Criterias.SequenceEqual(input.Criterias))) return false;
+            if (this.LogStreamId != input.LogStreamId || (this.LogStreamId != null && !this.LogStreamId.Equals(input.LogStreamId))) return false;
+            if (this.LogStreamName != input.LogStreamName || (this.LogStreamName != null && !this.LogStreamName.Equals(input.LogStreamName))) return false;
 
-            return 
-                (
-                    this.Criterias == input.Criterias ||
-                    this.Criterias != null &&
-                    input.Criterias != null &&
-                    this.Criterias.SequenceEqual(input.Criterias)
-                ) && 
-                (
-                    this.LogStreamId == input.LogStreamId ||
-                    (this.LogStreamId != null &&
-                    this.LogStreamId.Equals(input.LogStreamId))
-                ) && 
-                (
-                    this.LogStreamName == input.LogStreamName ||
-                    (this.LogStreamName != null &&
-                    this.LogStreamName.Equals(input.LogStreamName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Criterias != null)
-                    hashCode = hashCode * 59 + this.Criterias.GetHashCode();
-                if (this.LogStreamId != null)
-                    hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
-                if (this.LogStreamName != null)
-                    hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
+                var hashCode = 41;
+                if (this.Criterias != null) hashCode = hashCode * 59 + this.Criterias.GetHashCode();
+                if (this.LogStreamId != null) hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
+                if (this.LogStreamName != null) hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
                 return hashCode;
             }
         }

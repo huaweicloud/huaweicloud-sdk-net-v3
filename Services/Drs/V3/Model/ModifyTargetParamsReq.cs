@@ -170,21 +170,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(ModifyTargetParamsReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Group != input.Group) return false;
+            if (this.Params != input.Params || (this.Params != null && input.Params != null && !this.Params.SequenceEqual(input.Params))) return false;
 
-            return 
-                (
-                    this.Group == input.Group ||
-                    (this.Group != null &&
-                    this.Group.Equals(input.Group))
-                ) && 
-                (
-                    this.Params == input.Params ||
-                    this.Params != null &&
-                    input.Params != null &&
-                    this.Params.SequenceEqual(input.Params)
-                );
+            return true;
         }
 
         /// <summary>
@@ -194,11 +184,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Group != null)
-                    hashCode = hashCode * 59 + this.Group.GetHashCode();
-                if (this.Params != null)
-                    hashCode = hashCode * 59 + this.Params.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Group.GetHashCode();
+                if (this.Params != null) hashCode = hashCode * 59 + this.Params.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(UpdateNameRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NewInstanceName != input.NewInstanceName || (this.NewInstanceName != null && !this.NewInstanceName.Equals(input.NewInstanceName))) return false;
 
-            return 
-                (
-                    this.NewInstanceName == input.NewInstanceName ||
-                    (this.NewInstanceName != null &&
-                    this.NewInstanceName.Equals(input.NewInstanceName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NewInstanceName != null)
-                    hashCode = hashCode * 59 + this.NewInstanceName.GetHashCode();
+                var hashCode = 41;
+                if (this.NewInstanceName != null) hashCode = hashCode * 59 + this.NewInstanceName.GetHashCode();
                 return hashCode;
             }
         }

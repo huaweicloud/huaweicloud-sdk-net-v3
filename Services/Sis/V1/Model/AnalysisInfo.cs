@@ -190,30 +190,13 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         /// </summary>
         public bool Equals(AnalysisInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Diarization != input.Diarization || (this.Diarization != null && !this.Diarization.Equals(input.Diarization))) return false;
+            if (this.Channel != input.Channel) return false;
+            if (this.Emotion != input.Emotion || (this.Emotion != null && !this.Emotion.Equals(input.Emotion))) return false;
+            if (this.Speed != input.Speed || (this.Speed != null && !this.Speed.Equals(input.Speed))) return false;
 
-            return 
-                (
-                    this.Diarization == input.Diarization ||
-                    (this.Diarization != null &&
-                    this.Diarization.Equals(input.Diarization))
-                ) && 
-                (
-                    this.Channel == input.Channel ||
-                    (this.Channel != null &&
-                    this.Channel.Equals(input.Channel))
-                ) && 
-                (
-                    this.Emotion == input.Emotion ||
-                    (this.Emotion != null &&
-                    this.Emotion.Equals(input.Emotion))
-                ) && 
-                (
-                    this.Speed == input.Speed ||
-                    (this.Speed != null &&
-                    this.Speed.Equals(input.Speed))
-                );
+            return true;
         }
 
         /// <summary>
@@ -223,15 +206,11 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Diarization != null)
-                    hashCode = hashCode * 59 + this.Diarization.GetHashCode();
-                if (this.Channel != null)
-                    hashCode = hashCode * 59 + this.Channel.GetHashCode();
-                if (this.Emotion != null)
-                    hashCode = hashCode * 59 + this.Emotion.GetHashCode();
-                if (this.Speed != null)
-                    hashCode = hashCode * 59 + this.Speed.GetHashCode();
+                var hashCode = 41;
+                if (this.Diarization != null) hashCode = hashCode * 59 + this.Diarization.GetHashCode();
+                hashCode = hashCode * 59 + this.Channel.GetHashCode();
+                if (this.Emotion != null) hashCode = hashCode * 59 + this.Emotion.GetHashCode();
+                if (this.Speed != null) hashCode = hashCode * 59 + this.Speed.GetHashCode();
                 return hashCode;
             }
         }

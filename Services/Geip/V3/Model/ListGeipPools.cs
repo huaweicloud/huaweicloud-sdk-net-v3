@@ -360,71 +360,21 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// </summary>
         public bool Equals(ListGeipPools input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.EnName != input.EnName || (this.EnName != null && !this.EnName.Equals(input.EnName))) return false;
+            if (this.CnName != input.CnName || (this.CnName != null && !this.CnName.Equals(input.CnName))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.Isp != input.Isp || (this.Isp != null && !this.Isp.Equals(input.Isp))) return false;
+            if (this.IpVersion != input.IpVersion) return false;
+            if (this.AccessSite != input.AccessSite || (this.AccessSite != null && !this.AccessSite.Equals(input.AccessSite))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.AllowedBandwidthTypes != input.AllowedBandwidthTypes || (this.AllowedBandwidthTypes != null && input.AllowedBandwidthTypes != null && !this.AllowedBandwidthTypes.SequenceEqual(input.AllowedBandwidthTypes))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.EnName == input.EnName ||
-                    (this.EnName != null &&
-                    this.EnName.Equals(input.EnName))
-                ) && 
-                (
-                    this.CnName == input.CnName ||
-                    (this.CnName != null &&
-                    this.CnName.Equals(input.CnName))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Isp == input.Isp ||
-                    (this.Isp != null &&
-                    this.Isp.Equals(input.Isp))
-                ) && 
-                (
-                    this.IpVersion == input.IpVersion ||
-                    (this.IpVersion != null &&
-                    this.IpVersion.Equals(input.IpVersion))
-                ) && 
-                (
-                    this.AccessSite == input.AccessSite ||
-                    (this.AccessSite != null &&
-                    this.AccessSite.Equals(input.AccessSite))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.AllowedBandwidthTypes == input.AllowedBandwidthTypes ||
-                    this.AllowedBandwidthTypes != null &&
-                    input.AllowedBandwidthTypes != null &&
-                    this.AllowedBandwidthTypes.SequenceEqual(input.AllowedBandwidthTypes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -434,31 +384,19 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.EnName != null)
-                    hashCode = hashCode * 59 + this.EnName.GetHashCode();
-                if (this.CnName != null)
-                    hashCode = hashCode * 59 + this.CnName.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Isp != null)
-                    hashCode = hashCode * 59 + this.Isp.GetHashCode();
-                if (this.IpVersion != null)
-                    hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
-                if (this.AccessSite != null)
-                    hashCode = hashCode * 59 + this.AccessSite.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.AllowedBandwidthTypes != null)
-                    hashCode = hashCode * 59 + this.AllowedBandwidthTypes.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.EnName != null) hashCode = hashCode * 59 + this.EnName.GetHashCode();
+                if (this.CnName != null) hashCode = hashCode * 59 + this.CnName.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Isp != null) hashCode = hashCode * 59 + this.Isp.GetHashCode();
+                hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
+                if (this.AccessSite != null) hashCode = hashCode * 59 + this.AccessSite.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.AllowedBandwidthTypes != null) hashCode = hashCode * 59 + this.AllowedBandwidthTypes.GetHashCode();
                 return hashCode;
             }
         }

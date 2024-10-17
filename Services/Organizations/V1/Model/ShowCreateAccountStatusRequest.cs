@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(ShowCreateAccountStatusRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.XSecurityToken != input.XSecurityToken || (this.XSecurityToken != null && !this.XSecurityToken.Equals(input.XSecurityToken))) return false;
+            if (this.CreateAccountStatusId != input.CreateAccountStatusId || (this.CreateAccountStatusId != null && !this.CreateAccountStatusId.Equals(input.CreateAccountStatusId))) return false;
 
-            return 
-                (
-                    this.XSecurityToken == input.XSecurityToken ||
-                    (this.XSecurityToken != null &&
-                    this.XSecurityToken.Equals(input.XSecurityToken))
-                ) && 
-                (
-                    this.CreateAccountStatusId == input.CreateAccountStatusId ||
-                    (this.CreateAccountStatusId != null &&
-                    this.CreateAccountStatusId.Equals(input.CreateAccountStatusId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.XSecurityToken != null)
-                    hashCode = hashCode * 59 + this.XSecurityToken.GetHashCode();
-                if (this.CreateAccountStatusId != null)
-                    hashCode = hashCode * 59 + this.CreateAccountStatusId.GetHashCode();
+                var hashCode = 41;
+                if (this.XSecurityToken != null) hashCode = hashCode * 59 + this.XSecurityToken.GetHashCode();
+                if (this.CreateAccountStatusId != null) hashCode = hashCode * 59 + this.CreateAccountStatusId.GetHashCode();
                 return hashCode;
             }
         }

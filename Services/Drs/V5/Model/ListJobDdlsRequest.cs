@@ -212,45 +212,16 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ListJobDdlsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.XLanguage != input.XLanguage || (this.XLanguage != null && !this.XLanguage.Equals(input.XLanguage))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.StartSeqNo != input.StartSeqNo || (this.StartSeqNo != null && !this.StartSeqNo.Equals(input.StartSeqNo))) return false;
+            if (this.EndSeqNo != input.EndSeqNo || (this.EndSeqNo != null && !this.EndSeqNo.Equals(input.EndSeqNo))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
 
-            return 
-                (
-                    this.XLanguage == input.XLanguage ||
-                    (this.XLanguage != null &&
-                    this.XLanguage.Equals(input.XLanguage))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.StartSeqNo == input.StartSeqNo ||
-                    (this.StartSeqNo != null &&
-                    this.StartSeqNo.Equals(input.StartSeqNo))
-                ) && 
-                (
-                    this.EndSeqNo == input.EndSeqNo ||
-                    (this.EndSeqNo != null &&
-                    this.EndSeqNo.Equals(input.EndSeqNo))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -260,21 +231,14 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.XLanguage != null)
-                    hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.StartSeqNo != null)
-                    hashCode = hashCode * 59 + this.StartSeqNo.GetHashCode();
-                if (this.EndSeqNo != null)
-                    hashCode = hashCode * 59 + this.EndSeqNo.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                var hashCode = 41;
+                if (this.XLanguage != null) hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.StartSeqNo != null) hashCode = hashCode * 59 + this.StartSeqNo.GetHashCode();
+                if (this.EndSeqNo != null) hashCode = hashCode * 59 + this.EndSeqNo.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
                 return hashCode;
             }
         }

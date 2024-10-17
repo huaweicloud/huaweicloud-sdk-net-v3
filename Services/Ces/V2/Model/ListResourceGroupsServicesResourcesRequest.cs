@@ -218,45 +218,16 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(ListResourceGroupsServicesResourcesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
+            if (this.Service != input.Service || (this.Service != null && !this.Service.Equals(input.Service))) return false;
+            if (this.DimName != input.DimName || (this.DimName != null && !this.DimName.Equals(input.DimName))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.DimValue != input.DimValue || (this.DimValue != null && !this.DimValue.Equals(input.DimValue))) return false;
 
-            return 
-                (
-                    this.GroupId == input.GroupId ||
-                    (this.GroupId != null &&
-                    this.GroupId.Equals(input.GroupId))
-                ) && 
-                (
-                    this.Service == input.Service ||
-                    (this.Service != null &&
-                    this.Service.Equals(input.Service))
-                ) && 
-                (
-                    this.DimName == input.DimName ||
-                    (this.DimName != null &&
-                    this.DimName.Equals(input.DimName))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.DimValue == input.DimValue ||
-                    (this.DimValue != null &&
-                    this.DimValue.Equals(input.DimValue))
-                );
+            return true;
         }
 
         /// <summary>
@@ -266,21 +237,14 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.GroupId != null)
-                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
-                if (this.Service != null)
-                    hashCode = hashCode * 59 + this.Service.GetHashCode();
-                if (this.DimName != null)
-                    hashCode = hashCode * 59 + this.DimName.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.DimValue != null)
-                    hashCode = hashCode * 59 + this.DimValue.GetHashCode();
+                var hashCode = 41;
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.Service != null) hashCode = hashCode * 59 + this.Service.GetHashCode();
+                if (this.DimName != null) hashCode = hashCode * 59 + this.DimName.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.DimValue != null) hashCode = hashCode * 59 + this.DimValue.GetHashCode();
                 return hashCode;
             }
         }

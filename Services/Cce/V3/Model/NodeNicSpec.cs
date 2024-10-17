@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(NodeNicSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PrimaryNic != input.PrimaryNic || (this.PrimaryNic != null && !this.PrimaryNic.Equals(input.PrimaryNic))) return false;
+            if (this.ExtNics != input.ExtNics || (this.ExtNics != null && input.ExtNics != null && !this.ExtNics.SequenceEqual(input.ExtNics))) return false;
 
-            return 
-                (
-                    this.PrimaryNic == input.PrimaryNic ||
-                    (this.PrimaryNic != null &&
-                    this.PrimaryNic.Equals(input.PrimaryNic))
-                ) && 
-                (
-                    this.ExtNics == input.ExtNics ||
-                    this.ExtNics != null &&
-                    input.ExtNics != null &&
-                    this.ExtNics.SequenceEqual(input.ExtNics)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PrimaryNic != null)
-                    hashCode = hashCode * 59 + this.PrimaryNic.GetHashCode();
-                if (this.ExtNics != null)
-                    hashCode = hashCode * 59 + this.ExtNics.GetHashCode();
+                var hashCode = 41;
+                if (this.PrimaryNic != null) hashCode = hashCode * 59 + this.PrimaryNic.GetHashCode();
+                if (this.ExtNics != null) hashCode = hashCode * 59 + this.ExtNics.GetHashCode();
                 return hashCode;
             }
         }

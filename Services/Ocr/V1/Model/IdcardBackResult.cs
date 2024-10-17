@@ -147,85 +147,24 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(IdcardBackResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Issue != input.Issue || (this.Issue != null && !this.Issue.Equals(input.Issue))) return false;
+            if (this.ValidFrom != input.ValidFrom || (this.ValidFrom != null && !this.ValidFrom.Equals(input.ValidFrom))) return false;
+            if (this.ValidTo != input.ValidTo || (this.ValidTo != null && !this.ValidTo.Equals(input.ValidTo))) return false;
+            if (this.AdjustedImage != input.AdjustedImage || (this.AdjustedImage != null && !this.AdjustedImage.Equals(input.AdjustedImage))) return false;
+            if (this.VerificationResult != input.VerificationResult || (this.VerificationResult != null && !this.VerificationResult.Equals(input.VerificationResult))) return false;
+            if (this.TextLocation != input.TextLocation || (this.TextLocation != null && !this.TextLocation.Equals(input.TextLocation))) return false;
+            if (this.DetectReproduceResult != input.DetectReproduceResult || (this.DetectReproduceResult != null && !this.DetectReproduceResult.Equals(input.DetectReproduceResult))) return false;
+            if (this.DetectCopyResult != input.DetectCopyResult || (this.DetectCopyResult != null && !this.DetectCopyResult.Equals(input.DetectCopyResult))) return false;
+            if (this.DetectTamperingResult != input.DetectTamperingResult || (this.DetectTamperingResult != null && !this.DetectTamperingResult.Equals(input.DetectTamperingResult))) return false;
+            if (this.DetectBorderIntegrityResult != input.DetectBorderIntegrityResult || (this.DetectBorderIntegrityResult != null && !this.DetectBorderIntegrityResult.Equals(input.DetectBorderIntegrityResult))) return false;
+            if (this.DetectBlockingWithinBorderResult != input.DetectBlockingWithinBorderResult || (this.DetectBlockingWithinBorderResult != null && !this.DetectBlockingWithinBorderResult.Equals(input.DetectBlockingWithinBorderResult))) return false;
+            if (this.DetectBlurResult != input.DetectBlurResult || (this.DetectBlurResult != null && !this.DetectBlurResult.Equals(input.DetectBlurResult))) return false;
+            if (this.DetectInterimResult != input.DetectInterimResult || (this.DetectInterimResult != null && !this.DetectInterimResult.Equals(input.DetectInterimResult))) return false;
+            if (this.DetectGlareResult != input.DetectGlareResult || (this.DetectGlareResult != null && !this.DetectGlareResult.Equals(input.DetectGlareResult))) return false;
+            if (this.ScoreInfo != input.ScoreInfo || (this.ScoreInfo != null && !this.ScoreInfo.Equals(input.ScoreInfo))) return false;
 
-            return 
-                (
-                    this.Issue == input.Issue ||
-                    (this.Issue != null &&
-                    this.Issue.Equals(input.Issue))
-                ) && 
-                (
-                    this.ValidFrom == input.ValidFrom ||
-                    (this.ValidFrom != null &&
-                    this.ValidFrom.Equals(input.ValidFrom))
-                ) && 
-                (
-                    this.ValidTo == input.ValidTo ||
-                    (this.ValidTo != null &&
-                    this.ValidTo.Equals(input.ValidTo))
-                ) && 
-                (
-                    this.AdjustedImage == input.AdjustedImage ||
-                    (this.AdjustedImage != null &&
-                    this.AdjustedImage.Equals(input.AdjustedImage))
-                ) && 
-                (
-                    this.VerificationResult == input.VerificationResult ||
-                    (this.VerificationResult != null &&
-                    this.VerificationResult.Equals(input.VerificationResult))
-                ) && 
-                (
-                    this.TextLocation == input.TextLocation ||
-                    (this.TextLocation != null &&
-                    this.TextLocation.Equals(input.TextLocation))
-                ) && 
-                (
-                    this.DetectReproduceResult == input.DetectReproduceResult ||
-                    (this.DetectReproduceResult != null &&
-                    this.DetectReproduceResult.Equals(input.DetectReproduceResult))
-                ) && 
-                (
-                    this.DetectCopyResult == input.DetectCopyResult ||
-                    (this.DetectCopyResult != null &&
-                    this.DetectCopyResult.Equals(input.DetectCopyResult))
-                ) && 
-                (
-                    this.DetectTamperingResult == input.DetectTamperingResult ||
-                    (this.DetectTamperingResult != null &&
-                    this.DetectTamperingResult.Equals(input.DetectTamperingResult))
-                ) && 
-                (
-                    this.DetectBorderIntegrityResult == input.DetectBorderIntegrityResult ||
-                    (this.DetectBorderIntegrityResult != null &&
-                    this.DetectBorderIntegrityResult.Equals(input.DetectBorderIntegrityResult))
-                ) && 
-                (
-                    this.DetectBlockingWithinBorderResult == input.DetectBlockingWithinBorderResult ||
-                    (this.DetectBlockingWithinBorderResult != null &&
-                    this.DetectBlockingWithinBorderResult.Equals(input.DetectBlockingWithinBorderResult))
-                ) && 
-                (
-                    this.DetectBlurResult == input.DetectBlurResult ||
-                    (this.DetectBlurResult != null &&
-                    this.DetectBlurResult.Equals(input.DetectBlurResult))
-                ) && 
-                (
-                    this.DetectInterimResult == input.DetectInterimResult ||
-                    (this.DetectInterimResult != null &&
-                    this.DetectInterimResult.Equals(input.DetectInterimResult))
-                ) && 
-                (
-                    this.DetectGlareResult == input.DetectGlareResult ||
-                    (this.DetectGlareResult != null &&
-                    this.DetectGlareResult.Equals(input.DetectGlareResult))
-                ) && 
-                (
-                    this.ScoreInfo == input.ScoreInfo ||
-                    (this.ScoreInfo != null &&
-                    this.ScoreInfo.Equals(input.ScoreInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -235,37 +174,22 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Issue != null)
-                    hashCode = hashCode * 59 + this.Issue.GetHashCode();
-                if (this.ValidFrom != null)
-                    hashCode = hashCode * 59 + this.ValidFrom.GetHashCode();
-                if (this.ValidTo != null)
-                    hashCode = hashCode * 59 + this.ValidTo.GetHashCode();
-                if (this.AdjustedImage != null)
-                    hashCode = hashCode * 59 + this.AdjustedImage.GetHashCode();
-                if (this.VerificationResult != null)
-                    hashCode = hashCode * 59 + this.VerificationResult.GetHashCode();
-                if (this.TextLocation != null)
-                    hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
-                if (this.DetectReproduceResult != null)
-                    hashCode = hashCode * 59 + this.DetectReproduceResult.GetHashCode();
-                if (this.DetectCopyResult != null)
-                    hashCode = hashCode * 59 + this.DetectCopyResult.GetHashCode();
-                if (this.DetectTamperingResult != null)
-                    hashCode = hashCode * 59 + this.DetectTamperingResult.GetHashCode();
-                if (this.DetectBorderIntegrityResult != null)
-                    hashCode = hashCode * 59 + this.DetectBorderIntegrityResult.GetHashCode();
-                if (this.DetectBlockingWithinBorderResult != null)
-                    hashCode = hashCode * 59 + this.DetectBlockingWithinBorderResult.GetHashCode();
-                if (this.DetectBlurResult != null)
-                    hashCode = hashCode * 59 + this.DetectBlurResult.GetHashCode();
-                if (this.DetectInterimResult != null)
-                    hashCode = hashCode * 59 + this.DetectInterimResult.GetHashCode();
-                if (this.DetectGlareResult != null)
-                    hashCode = hashCode * 59 + this.DetectGlareResult.GetHashCode();
-                if (this.ScoreInfo != null)
-                    hashCode = hashCode * 59 + this.ScoreInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.Issue != null) hashCode = hashCode * 59 + this.Issue.GetHashCode();
+                if (this.ValidFrom != null) hashCode = hashCode * 59 + this.ValidFrom.GetHashCode();
+                if (this.ValidTo != null) hashCode = hashCode * 59 + this.ValidTo.GetHashCode();
+                if (this.AdjustedImage != null) hashCode = hashCode * 59 + this.AdjustedImage.GetHashCode();
+                if (this.VerificationResult != null) hashCode = hashCode * 59 + this.VerificationResult.GetHashCode();
+                if (this.TextLocation != null) hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
+                if (this.DetectReproduceResult != null) hashCode = hashCode * 59 + this.DetectReproduceResult.GetHashCode();
+                if (this.DetectCopyResult != null) hashCode = hashCode * 59 + this.DetectCopyResult.GetHashCode();
+                if (this.DetectTamperingResult != null) hashCode = hashCode * 59 + this.DetectTamperingResult.GetHashCode();
+                if (this.DetectBorderIntegrityResult != null) hashCode = hashCode * 59 + this.DetectBorderIntegrityResult.GetHashCode();
+                if (this.DetectBlockingWithinBorderResult != null) hashCode = hashCode * 59 + this.DetectBlockingWithinBorderResult.GetHashCode();
+                if (this.DetectBlurResult != null) hashCode = hashCode * 59 + this.DetectBlurResult.GetHashCode();
+                if (this.DetectInterimResult != null) hashCode = hashCode * 59 + this.DetectInterimResult.GetHashCode();
+                if (this.DetectGlareResult != null) hashCode = hashCode * 59 + this.DetectGlareResult.GetHashCode();
+                if (this.ScoreInfo != null) hashCode = hashCode * 59 + this.ScoreInfo.GetHashCode();
                 return hashCode;
             }
         }

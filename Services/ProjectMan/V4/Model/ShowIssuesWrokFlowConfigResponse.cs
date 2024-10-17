@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ShowIssuesWrokFlowConfigResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Workflows != input.Workflows || (this.Workflows != null && input.Workflows != null && !this.Workflows.SequenceEqual(input.Workflows))) return false;
 
-            return 
-                (
-                    this.Workflows == input.Workflows ||
-                    this.Workflows != null &&
-                    input.Workflows != null &&
-                    this.Workflows.SequenceEqual(input.Workflows)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Workflows != null)
-                    hashCode = hashCode * 59 + this.Workflows.GetHashCode();
+                var hashCode = 41;
+                if (this.Workflows != null) hashCode = hashCode * 59 + this.Workflows.GetHashCode();
                 return hashCode;
             }
         }

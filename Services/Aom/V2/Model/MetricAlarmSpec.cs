@@ -218,54 +218,17 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(MetricAlarmSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MonitorType != input.MonitorType) return false;
+            if (this.NoDataConditions != input.NoDataConditions || (this.NoDataConditions != null && input.NoDataConditions != null && !this.NoDataConditions.SequenceEqual(input.NoDataConditions))) return false;
+            if (this.AlarmTags != input.AlarmTags || (this.AlarmTags != null && input.AlarmTags != null && !this.AlarmTags.SequenceEqual(input.AlarmTags))) return false;
+            if (this.MonitorObjects != input.MonitorObjects || (this.MonitorObjects != null && input.MonitorObjects != null && !this.MonitorObjects.SequenceEqual(input.MonitorObjects))) return false;
+            if (this.RecoveryConditions != input.RecoveryConditions || (this.RecoveryConditions != null && !this.RecoveryConditions.Equals(input.RecoveryConditions))) return false;
+            if (this.TriggerConditions != input.TriggerConditions || (this.TriggerConditions != null && input.TriggerConditions != null && !this.TriggerConditions.SequenceEqual(input.TriggerConditions))) return false;
+            if (this.AlarmRuleTemplateBindEnable != input.AlarmRuleTemplateBindEnable || (this.AlarmRuleTemplateBindEnable != null && !this.AlarmRuleTemplateBindEnable.Equals(input.AlarmRuleTemplateBindEnable))) return false;
+            if (this.AlarmRuleTemplateId != input.AlarmRuleTemplateId || (this.AlarmRuleTemplateId != null && !this.AlarmRuleTemplateId.Equals(input.AlarmRuleTemplateId))) return false;
 
-            return 
-                (
-                    this.MonitorType == input.MonitorType ||
-                    (this.MonitorType != null &&
-                    this.MonitorType.Equals(input.MonitorType))
-                ) && 
-                (
-                    this.NoDataConditions == input.NoDataConditions ||
-                    this.NoDataConditions != null &&
-                    input.NoDataConditions != null &&
-                    this.NoDataConditions.SequenceEqual(input.NoDataConditions)
-                ) && 
-                (
-                    this.AlarmTags == input.AlarmTags ||
-                    this.AlarmTags != null &&
-                    input.AlarmTags != null &&
-                    this.AlarmTags.SequenceEqual(input.AlarmTags)
-                ) && 
-                (
-                    this.MonitorObjects == input.MonitorObjects ||
-                    this.MonitorObjects != null &&
-                    input.MonitorObjects != null &&
-                    this.MonitorObjects.SequenceEqual(input.MonitorObjects)
-                ) && 
-                (
-                    this.RecoveryConditions == input.RecoveryConditions ||
-                    (this.RecoveryConditions != null &&
-                    this.RecoveryConditions.Equals(input.RecoveryConditions))
-                ) && 
-                (
-                    this.TriggerConditions == input.TriggerConditions ||
-                    this.TriggerConditions != null &&
-                    input.TriggerConditions != null &&
-                    this.TriggerConditions.SequenceEqual(input.TriggerConditions)
-                ) && 
-                (
-                    this.AlarmRuleTemplateBindEnable == input.AlarmRuleTemplateBindEnable ||
-                    (this.AlarmRuleTemplateBindEnable != null &&
-                    this.AlarmRuleTemplateBindEnable.Equals(input.AlarmRuleTemplateBindEnable))
-                ) && 
-                (
-                    this.AlarmRuleTemplateId == input.AlarmRuleTemplateId ||
-                    (this.AlarmRuleTemplateId != null &&
-                    this.AlarmRuleTemplateId.Equals(input.AlarmRuleTemplateId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -275,23 +238,15 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MonitorType != null)
-                    hashCode = hashCode * 59 + this.MonitorType.GetHashCode();
-                if (this.NoDataConditions != null)
-                    hashCode = hashCode * 59 + this.NoDataConditions.GetHashCode();
-                if (this.AlarmTags != null)
-                    hashCode = hashCode * 59 + this.AlarmTags.GetHashCode();
-                if (this.MonitorObjects != null)
-                    hashCode = hashCode * 59 + this.MonitorObjects.GetHashCode();
-                if (this.RecoveryConditions != null)
-                    hashCode = hashCode * 59 + this.RecoveryConditions.GetHashCode();
-                if (this.TriggerConditions != null)
-                    hashCode = hashCode * 59 + this.TriggerConditions.GetHashCode();
-                if (this.AlarmRuleTemplateBindEnable != null)
-                    hashCode = hashCode * 59 + this.AlarmRuleTemplateBindEnable.GetHashCode();
-                if (this.AlarmRuleTemplateId != null)
-                    hashCode = hashCode * 59 + this.AlarmRuleTemplateId.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.MonitorType.GetHashCode();
+                if (this.NoDataConditions != null) hashCode = hashCode * 59 + this.NoDataConditions.GetHashCode();
+                if (this.AlarmTags != null) hashCode = hashCode * 59 + this.AlarmTags.GetHashCode();
+                if (this.MonitorObjects != null) hashCode = hashCode * 59 + this.MonitorObjects.GetHashCode();
+                if (this.RecoveryConditions != null) hashCode = hashCode * 59 + this.RecoveryConditions.GetHashCode();
+                if (this.TriggerConditions != null) hashCode = hashCode * 59 + this.TriggerConditions.GetHashCode();
+                if (this.AlarmRuleTemplateBindEnable != null) hashCode = hashCode * 59 + this.AlarmRuleTemplateBindEnable.GetHashCode();
+                if (this.AlarmRuleTemplateId != null) hashCode = hashCode * 59 + this.AlarmRuleTemplateId.GetHashCode();
                 return hashCode;
             }
         }

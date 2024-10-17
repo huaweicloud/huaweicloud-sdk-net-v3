@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(HttpForwarding input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.CertId != input.CertId || (this.CertId != null && !this.CertId.Equals(input.CertId))) return false;
+            if (this.CnName != input.CnName || (this.CnName != null && !this.CnName.Equals(input.CnName))) return false;
+            if (this.SniEnable != input.SniEnable || (this.SniEnable != null && !this.SniEnable.Equals(input.SniEnable))) return false;
+            if (this.SignatureEnable != input.SignatureEnable || (this.SignatureEnable != null && !this.SignatureEnable.Equals(input.SignatureEnable))) return false;
+            if (this.Token != input.Token || (this.Token != null && !this.Token.Equals(input.Token))) return false;
 
-            return 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.CertId == input.CertId ||
-                    (this.CertId != null &&
-                    this.CertId.Equals(input.CertId))
-                ) && 
-                (
-                    this.CnName == input.CnName ||
-                    (this.CnName != null &&
-                    this.CnName.Equals(input.CnName))
-                ) && 
-                (
-                    this.SniEnable == input.SniEnable ||
-                    (this.SniEnable != null &&
-                    this.SniEnable.Equals(input.SniEnable))
-                ) && 
-                (
-                    this.SignatureEnable == input.SignatureEnable ||
-                    (this.SignatureEnable != null &&
-                    this.SignatureEnable.Equals(input.SignatureEnable))
-                ) && 
-                (
-                    this.Token == input.Token ||
-                    (this.Token != null &&
-                    this.Token.Equals(input.Token))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.CertId != null)
-                    hashCode = hashCode * 59 + this.CertId.GetHashCode();
-                if (this.CnName != null)
-                    hashCode = hashCode * 59 + this.CnName.GetHashCode();
-                if (this.SniEnable != null)
-                    hashCode = hashCode * 59 + this.SniEnable.GetHashCode();
-                if (this.SignatureEnable != null)
-                    hashCode = hashCode * 59 + this.SignatureEnable.GetHashCode();
-                if (this.Token != null)
-                    hashCode = hashCode * 59 + this.Token.GetHashCode();
+                var hashCode = 41;
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.CertId != null) hashCode = hashCode * 59 + this.CertId.GetHashCode();
+                if (this.CnName != null) hashCode = hashCode * 59 + this.CnName.GetHashCode();
+                if (this.SniEnable != null) hashCode = hashCode * 59 + this.SniEnable.GetHashCode();
+                if (this.SignatureEnable != null) hashCode = hashCode * 59 + this.SignatureEnable.GetHashCode();
+                if (this.Token != null) hashCode = hashCode * 59 + this.Token.GetHashCode();
                 return hashCode;
             }
         }

@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(RegionLocales input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ZhCn != input.ZhCn || (this.ZhCn != null && !this.ZhCn.Equals(input.ZhCn))) return false;
+            if (this.EnUs != input.EnUs || (this.EnUs != null && !this.EnUs.Equals(input.EnUs))) return false;
+            if (this.PtBr != input.PtBr || (this.PtBr != null && !this.PtBr.Equals(input.PtBr))) return false;
+            if (this.EsUs != input.EsUs || (this.EsUs != null && !this.EsUs.Equals(input.EsUs))) return false;
+            if (this.EsEs != input.EsEs || (this.EsEs != null && !this.EsEs.Equals(input.EsEs))) return false;
 
-            return 
-                (
-                    this.ZhCn == input.ZhCn ||
-                    (this.ZhCn != null &&
-                    this.ZhCn.Equals(input.ZhCn))
-                ) && 
-                (
-                    this.EnUs == input.EnUs ||
-                    (this.EnUs != null &&
-                    this.EnUs.Equals(input.EnUs))
-                ) && 
-                (
-                    this.PtBr == input.PtBr ||
-                    (this.PtBr != null &&
-                    this.PtBr.Equals(input.PtBr))
-                ) && 
-                (
-                    this.EsUs == input.EsUs ||
-                    (this.EsUs != null &&
-                    this.EsUs.Equals(input.EsUs))
-                ) && 
-                (
-                    this.EsEs == input.EsEs ||
-                    (this.EsEs != null &&
-                    this.EsEs.Equals(input.EsEs))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ZhCn != null)
-                    hashCode = hashCode * 59 + this.ZhCn.GetHashCode();
-                if (this.EnUs != null)
-                    hashCode = hashCode * 59 + this.EnUs.GetHashCode();
-                if (this.PtBr != null)
-                    hashCode = hashCode * 59 + this.PtBr.GetHashCode();
-                if (this.EsUs != null)
-                    hashCode = hashCode * 59 + this.EsUs.GetHashCode();
-                if (this.EsEs != null)
-                    hashCode = hashCode * 59 + this.EsEs.GetHashCode();
+                var hashCode = 41;
+                if (this.ZhCn != null) hashCode = hashCode * 59 + this.ZhCn.GetHashCode();
+                if (this.EnUs != null) hashCode = hashCode * 59 + this.EnUs.GetHashCode();
+                if (this.PtBr != null) hashCode = hashCode * 59 + this.PtBr.GetHashCode();
+                if (this.EsUs != null) hashCode = hashCode * 59 + this.EsUs.GetHashCode();
+                if (this.EsEs != null) hashCode = hashCode * 59 + this.EsEs.GetHashCode();
                 return hashCode;
             }
         }

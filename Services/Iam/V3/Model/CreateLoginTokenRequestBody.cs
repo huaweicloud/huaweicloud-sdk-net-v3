@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(CreateLoginTokenRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Auth != input.Auth || (this.Auth != null && !this.Auth.Equals(input.Auth))) return false;
 
-            return 
-                (
-                    this.Auth == input.Auth ||
-                    (this.Auth != null &&
-                    this.Auth.Equals(input.Auth))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Auth != null)
-                    hashCode = hashCode * 59 + this.Auth.GetHashCode();
+                var hashCode = 41;
+                if (this.Auth != null) hashCode = hashCode * 59 + this.Auth.GetHashCode();
                 return hashCode;
             }
         }

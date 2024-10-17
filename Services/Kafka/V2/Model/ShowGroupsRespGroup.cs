@@ -84,42 +84,15 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ShowGroupsRespGroup input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
+            if (this.State != input.State || (this.State != null && !this.State.Equals(input.State))) return false;
+            if (this.CoordinatorId != input.CoordinatorId || (this.CoordinatorId != null && !this.CoordinatorId.Equals(input.CoordinatorId))) return false;
+            if (this.Members != input.Members || (this.Members != null && input.Members != null && !this.Members.SequenceEqual(input.Members))) return false;
+            if (this.GroupMessageOffsets != input.GroupMessageOffsets || (this.GroupMessageOffsets != null && input.GroupMessageOffsets != null && !this.GroupMessageOffsets.SequenceEqual(input.GroupMessageOffsets))) return false;
+            if (this.AssignmentStrategy != input.AssignmentStrategy || (this.AssignmentStrategy != null && !this.AssignmentStrategy.Equals(input.AssignmentStrategy))) return false;
 
-            return 
-                (
-                    this.GroupId == input.GroupId ||
-                    (this.GroupId != null &&
-                    this.GroupId.Equals(input.GroupId))
-                ) && 
-                (
-                    this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
-                ) && 
-                (
-                    this.CoordinatorId == input.CoordinatorId ||
-                    (this.CoordinatorId != null &&
-                    this.CoordinatorId.Equals(input.CoordinatorId))
-                ) && 
-                (
-                    this.Members == input.Members ||
-                    this.Members != null &&
-                    input.Members != null &&
-                    this.Members.SequenceEqual(input.Members)
-                ) && 
-                (
-                    this.GroupMessageOffsets == input.GroupMessageOffsets ||
-                    this.GroupMessageOffsets != null &&
-                    input.GroupMessageOffsets != null &&
-                    this.GroupMessageOffsets.SequenceEqual(input.GroupMessageOffsets)
-                ) && 
-                (
-                    this.AssignmentStrategy == input.AssignmentStrategy ||
-                    (this.AssignmentStrategy != null &&
-                    this.AssignmentStrategy.Equals(input.AssignmentStrategy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -129,19 +102,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.GroupId != null)
-                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
-                if (this.State != null)
-                    hashCode = hashCode * 59 + this.State.GetHashCode();
-                if (this.CoordinatorId != null)
-                    hashCode = hashCode * 59 + this.CoordinatorId.GetHashCode();
-                if (this.Members != null)
-                    hashCode = hashCode * 59 + this.Members.GetHashCode();
-                if (this.GroupMessageOffsets != null)
-                    hashCode = hashCode * 59 + this.GroupMessageOffsets.GetHashCode();
-                if (this.AssignmentStrategy != null)
-                    hashCode = hashCode * 59 + this.AssignmentStrategy.GetHashCode();
+                var hashCode = 41;
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();
+                if (this.CoordinatorId != null) hashCode = hashCode * 59 + this.CoordinatorId.GetHashCode();
+                if (this.Members != null) hashCode = hashCode * 59 + this.Members.GetHashCode();
+                if (this.GroupMessageOffsets != null) hashCode = hashCode * 59 + this.GroupMessageOffsets.GetHashCode();
+                if (this.AssignmentStrategy != null) hashCode = hashCode * 59 + this.AssignmentStrategy.GetHashCode();
                 return hashCode;
             }
         }

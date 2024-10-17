@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         public bool Equals(AddRdsNoAgentDatabaseResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IllegalDbId != input.IllegalDbId || (this.IllegalDbId != null && input.IllegalDbId != null && !this.IllegalDbId.SequenceEqual(input.IllegalDbId))) return false;
+            if (this.LegalDbId != input.LegalDbId || (this.LegalDbId != null && input.LegalDbId != null && !this.LegalDbId.SequenceEqual(input.LegalDbId))) return false;
 
-            return 
-                (
-                    this.IllegalDbId == input.IllegalDbId ||
-                    this.IllegalDbId != null &&
-                    input.IllegalDbId != null &&
-                    this.IllegalDbId.SequenceEqual(input.IllegalDbId)
-                ) && 
-                (
-                    this.LegalDbId == input.LegalDbId ||
-                    this.LegalDbId != null &&
-                    input.LegalDbId != null &&
-                    this.LegalDbId.SequenceEqual(input.LegalDbId)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IllegalDbId != null)
-                    hashCode = hashCode * 59 + this.IllegalDbId.GetHashCode();
-                if (this.LegalDbId != null)
-                    hashCode = hashCode * 59 + this.LegalDbId.GetHashCode();
+                var hashCode = 41;
+                if (this.IllegalDbId != null) hashCode = hashCode * 59 + this.IllegalDbId.GetHashCode();
+                if (this.LegalDbId != null) hashCode = hashCode * 59 + this.LegalDbId.GetHashCode();
                 return hashCode;
             }
         }

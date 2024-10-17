@@ -82,36 +82,14 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(CountPreoccupyIpNumRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.L7FlavorId != input.L7FlavorId || (this.L7FlavorId != null && !this.L7FlavorId.Equals(input.L7FlavorId))) return false;
+            if (this.IpTargetEnable != input.IpTargetEnable || (this.IpTargetEnable != null && !this.IpTargetEnable.Equals(input.IpTargetEnable))) return false;
+            if (this.IpVersion != input.IpVersion || (this.IpVersion != null && !this.IpVersion.Equals(input.IpVersion))) return false;
+            if (this.LoadbalancerId != input.LoadbalancerId || (this.LoadbalancerId != null && !this.LoadbalancerId.Equals(input.LoadbalancerId))) return false;
+            if (this.AvailabilityZoneId != input.AvailabilityZoneId || (this.AvailabilityZoneId != null && input.AvailabilityZoneId != null && !this.AvailabilityZoneId.SequenceEqual(input.AvailabilityZoneId))) return false;
 
-            return 
-                (
-                    this.L7FlavorId == input.L7FlavorId ||
-                    (this.L7FlavorId != null &&
-                    this.L7FlavorId.Equals(input.L7FlavorId))
-                ) && 
-                (
-                    this.IpTargetEnable == input.IpTargetEnable ||
-                    (this.IpTargetEnable != null &&
-                    this.IpTargetEnable.Equals(input.IpTargetEnable))
-                ) && 
-                (
-                    this.IpVersion == input.IpVersion ||
-                    (this.IpVersion != null &&
-                    this.IpVersion.Equals(input.IpVersion))
-                ) && 
-                (
-                    this.LoadbalancerId == input.LoadbalancerId ||
-                    (this.LoadbalancerId != null &&
-                    this.LoadbalancerId.Equals(input.LoadbalancerId))
-                ) && 
-                (
-                    this.AvailabilityZoneId == input.AvailabilityZoneId ||
-                    this.AvailabilityZoneId != null &&
-                    input.AvailabilityZoneId != null &&
-                    this.AvailabilityZoneId.SequenceEqual(input.AvailabilityZoneId)
-                );
+            return true;
         }
 
         /// <summary>
@@ -121,17 +99,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.L7FlavorId != null)
-                    hashCode = hashCode * 59 + this.L7FlavorId.GetHashCode();
-                if (this.IpTargetEnable != null)
-                    hashCode = hashCode * 59 + this.IpTargetEnable.GetHashCode();
-                if (this.IpVersion != null)
-                    hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
-                if (this.LoadbalancerId != null)
-                    hashCode = hashCode * 59 + this.LoadbalancerId.GetHashCode();
-                if (this.AvailabilityZoneId != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZoneId.GetHashCode();
+                var hashCode = 41;
+                if (this.L7FlavorId != null) hashCode = hashCode * 59 + this.L7FlavorId.GetHashCode();
+                if (this.IpTargetEnable != null) hashCode = hashCode * 59 + this.IpTargetEnable.GetHashCode();
+                if (this.IpVersion != null) hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
+                if (this.LoadbalancerId != null) hashCode = hashCode * 59 + this.LoadbalancerId.GetHashCode();
+                if (this.AvailabilityZoneId != null) hashCode = hashCode * 59 + this.AvailabilityZoneId.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(UpdateTenantVpcIgwRequestBodyVpcIgw input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.EnableIpv6 != input.EnableIpv6 || (this.EnableIpv6 != null && !this.EnableIpv6.Equals(input.EnableIpv6))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.EnableIpv6 == input.EnableIpv6 ||
-                    (this.EnableIpv6 != null &&
-                    this.EnableIpv6.Equals(input.EnableIpv6))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.EnableIpv6 != null)
-                    hashCode = hashCode * 59 + this.EnableIpv6.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.EnableIpv6 != null) hashCode = hashCode * 59 + this.EnableIpv6.GetHashCode();
                 return hashCode;
             }
         }

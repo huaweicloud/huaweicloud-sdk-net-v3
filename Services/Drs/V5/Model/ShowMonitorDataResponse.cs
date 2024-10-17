@@ -189,115 +189,30 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ShowMonitorDataResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Bandwidth != input.Bandwidth || (this.Bandwidth != null && !this.Bandwidth.Equals(input.Bandwidth))) return false;
+            if (this.IsSrcNormal != input.IsSrcNormal || (this.IsSrcNormal != null && !this.IsSrcNormal.Equals(input.IsSrcNormal))) return false;
+            if (this.IsDstNormal != input.IsDstNormal || (this.IsDstNormal != null && !this.IsDstNormal.Equals(input.IsDstNormal))) return false;
+            if (this.SrcOffset != input.SrcOffset || (this.SrcOffset != null && !this.SrcOffset.Equals(input.SrcOffset))) return false;
+            if (this.NodeOffset != input.NodeOffset || (this.NodeOffset != null && !this.NodeOffset.Equals(input.NodeOffset))) return false;
+            if (this.DstOffset != input.DstOffset || (this.DstOffset != null && !this.DstOffset.Equals(input.DstOffset))) return false;
+            if (this.SrcDelay != input.SrcDelay || (this.SrcDelay != null && !this.SrcDelay.Equals(input.SrcDelay))) return false;
+            if (this.DstDelay != input.DstDelay || (this.DstDelay != null && !this.DstDelay.Equals(input.DstDelay))) return false;
+            if (this.SrcRps != input.SrcRps || (this.SrcRps != null && !this.SrcRps.Equals(input.SrcRps))) return false;
+            if (this.SrcIo != input.SrcIo || (this.SrcIo != null && !this.SrcIo.Equals(input.SrcIo))) return false;
+            if (this.DstRps != input.DstRps || (this.DstRps != null && !this.DstRps.Equals(input.DstRps))) return false;
+            if (this.DstIo != input.DstIo || (this.DstIo != null && !this.DstIo.Equals(input.DstIo))) return false;
+            if (this.TransData != input.TransData || (this.TransData != null && !this.TransData.Equals(input.TransData))) return false;
+            if (this.TransLines != input.TransLines || (this.TransLines != null && !this.TransLines.Equals(input.TransLines))) return false;
+            if (this.UsedVolumes != input.UsedVolumes || (this.UsedVolumes != null && !this.UsedVolumes.Equals(input.UsedVolumes))) return false;
+            if (this.UsedMemory != input.UsedMemory || (this.UsedMemory != null && !this.UsedMemory.Equals(input.UsedMemory))) return false;
+            if (this.UsedCpuPercent != input.UsedCpuPercent || (this.UsedCpuPercent != null && !this.UsedCpuPercent.Equals(input.UsedCpuPercent))) return false;
+            if (this.NodeVolumeSize != input.NodeVolumeSize || (this.NodeVolumeSize != null && !this.NodeVolumeSize.Equals(input.NodeVolumeSize))) return false;
+            if (this.NodeMemorySize != input.NodeMemorySize || (this.NodeMemorySize != null && !this.NodeMemorySize.Equals(input.NodeMemorySize))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.ApplyRate != input.ApplyRate || (this.ApplyRate != null && !this.ApplyRate.Equals(input.ApplyRate))) return false;
 
-            return 
-                (
-                    this.Bandwidth == input.Bandwidth ||
-                    (this.Bandwidth != null &&
-                    this.Bandwidth.Equals(input.Bandwidth))
-                ) && 
-                (
-                    this.IsSrcNormal == input.IsSrcNormal ||
-                    (this.IsSrcNormal != null &&
-                    this.IsSrcNormal.Equals(input.IsSrcNormal))
-                ) && 
-                (
-                    this.IsDstNormal == input.IsDstNormal ||
-                    (this.IsDstNormal != null &&
-                    this.IsDstNormal.Equals(input.IsDstNormal))
-                ) && 
-                (
-                    this.SrcOffset == input.SrcOffset ||
-                    (this.SrcOffset != null &&
-                    this.SrcOffset.Equals(input.SrcOffset))
-                ) && 
-                (
-                    this.NodeOffset == input.NodeOffset ||
-                    (this.NodeOffset != null &&
-                    this.NodeOffset.Equals(input.NodeOffset))
-                ) && 
-                (
-                    this.DstOffset == input.DstOffset ||
-                    (this.DstOffset != null &&
-                    this.DstOffset.Equals(input.DstOffset))
-                ) && 
-                (
-                    this.SrcDelay == input.SrcDelay ||
-                    (this.SrcDelay != null &&
-                    this.SrcDelay.Equals(input.SrcDelay))
-                ) && 
-                (
-                    this.DstDelay == input.DstDelay ||
-                    (this.DstDelay != null &&
-                    this.DstDelay.Equals(input.DstDelay))
-                ) && 
-                (
-                    this.SrcRps == input.SrcRps ||
-                    (this.SrcRps != null &&
-                    this.SrcRps.Equals(input.SrcRps))
-                ) && 
-                (
-                    this.SrcIo == input.SrcIo ||
-                    (this.SrcIo != null &&
-                    this.SrcIo.Equals(input.SrcIo))
-                ) && 
-                (
-                    this.DstRps == input.DstRps ||
-                    (this.DstRps != null &&
-                    this.DstRps.Equals(input.DstRps))
-                ) && 
-                (
-                    this.DstIo == input.DstIo ||
-                    (this.DstIo != null &&
-                    this.DstIo.Equals(input.DstIo))
-                ) && 
-                (
-                    this.TransData == input.TransData ||
-                    (this.TransData != null &&
-                    this.TransData.Equals(input.TransData))
-                ) && 
-                (
-                    this.TransLines == input.TransLines ||
-                    (this.TransLines != null &&
-                    this.TransLines.Equals(input.TransLines))
-                ) && 
-                (
-                    this.UsedVolumes == input.UsedVolumes ||
-                    (this.UsedVolumes != null &&
-                    this.UsedVolumes.Equals(input.UsedVolumes))
-                ) && 
-                (
-                    this.UsedMemory == input.UsedMemory ||
-                    (this.UsedMemory != null &&
-                    this.UsedMemory.Equals(input.UsedMemory))
-                ) && 
-                (
-                    this.UsedCpuPercent == input.UsedCpuPercent ||
-                    (this.UsedCpuPercent != null &&
-                    this.UsedCpuPercent.Equals(input.UsedCpuPercent))
-                ) && 
-                (
-                    this.NodeVolumeSize == input.NodeVolumeSize ||
-                    (this.NodeVolumeSize != null &&
-                    this.NodeVolumeSize.Equals(input.NodeVolumeSize))
-                ) && 
-                (
-                    this.NodeMemorySize == input.NodeMemorySize ||
-                    (this.NodeMemorySize != null &&
-                    this.NodeMemorySize.Equals(input.NodeMemorySize))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.ApplyRate == input.ApplyRate ||
-                    (this.ApplyRate != null &&
-                    this.ApplyRate.Equals(input.ApplyRate))
-                );
+            return true;
         }
 
         /// <summary>
@@ -307,49 +222,28 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Bandwidth != null)
-                    hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
-                if (this.IsSrcNormal != null)
-                    hashCode = hashCode * 59 + this.IsSrcNormal.GetHashCode();
-                if (this.IsDstNormal != null)
-                    hashCode = hashCode * 59 + this.IsDstNormal.GetHashCode();
-                if (this.SrcOffset != null)
-                    hashCode = hashCode * 59 + this.SrcOffset.GetHashCode();
-                if (this.NodeOffset != null)
-                    hashCode = hashCode * 59 + this.NodeOffset.GetHashCode();
-                if (this.DstOffset != null)
-                    hashCode = hashCode * 59 + this.DstOffset.GetHashCode();
-                if (this.SrcDelay != null)
-                    hashCode = hashCode * 59 + this.SrcDelay.GetHashCode();
-                if (this.DstDelay != null)
-                    hashCode = hashCode * 59 + this.DstDelay.GetHashCode();
-                if (this.SrcRps != null)
-                    hashCode = hashCode * 59 + this.SrcRps.GetHashCode();
-                if (this.SrcIo != null)
-                    hashCode = hashCode * 59 + this.SrcIo.GetHashCode();
-                if (this.DstRps != null)
-                    hashCode = hashCode * 59 + this.DstRps.GetHashCode();
-                if (this.DstIo != null)
-                    hashCode = hashCode * 59 + this.DstIo.GetHashCode();
-                if (this.TransData != null)
-                    hashCode = hashCode * 59 + this.TransData.GetHashCode();
-                if (this.TransLines != null)
-                    hashCode = hashCode * 59 + this.TransLines.GetHashCode();
-                if (this.UsedVolumes != null)
-                    hashCode = hashCode * 59 + this.UsedVolumes.GetHashCode();
-                if (this.UsedMemory != null)
-                    hashCode = hashCode * 59 + this.UsedMemory.GetHashCode();
-                if (this.UsedCpuPercent != null)
-                    hashCode = hashCode * 59 + this.UsedCpuPercent.GetHashCode();
-                if (this.NodeVolumeSize != null)
-                    hashCode = hashCode * 59 + this.NodeVolumeSize.GetHashCode();
-                if (this.NodeMemorySize != null)
-                    hashCode = hashCode * 59 + this.NodeMemorySize.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.ApplyRate != null)
-                    hashCode = hashCode * 59 + this.ApplyRate.GetHashCode();
+                var hashCode = 41;
+                if (this.Bandwidth != null) hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
+                if (this.IsSrcNormal != null) hashCode = hashCode * 59 + this.IsSrcNormal.GetHashCode();
+                if (this.IsDstNormal != null) hashCode = hashCode * 59 + this.IsDstNormal.GetHashCode();
+                if (this.SrcOffset != null) hashCode = hashCode * 59 + this.SrcOffset.GetHashCode();
+                if (this.NodeOffset != null) hashCode = hashCode * 59 + this.NodeOffset.GetHashCode();
+                if (this.DstOffset != null) hashCode = hashCode * 59 + this.DstOffset.GetHashCode();
+                if (this.SrcDelay != null) hashCode = hashCode * 59 + this.SrcDelay.GetHashCode();
+                if (this.DstDelay != null) hashCode = hashCode * 59 + this.DstDelay.GetHashCode();
+                if (this.SrcRps != null) hashCode = hashCode * 59 + this.SrcRps.GetHashCode();
+                if (this.SrcIo != null) hashCode = hashCode * 59 + this.SrcIo.GetHashCode();
+                if (this.DstRps != null) hashCode = hashCode * 59 + this.DstRps.GetHashCode();
+                if (this.DstIo != null) hashCode = hashCode * 59 + this.DstIo.GetHashCode();
+                if (this.TransData != null) hashCode = hashCode * 59 + this.TransData.GetHashCode();
+                if (this.TransLines != null) hashCode = hashCode * 59 + this.TransLines.GetHashCode();
+                if (this.UsedVolumes != null) hashCode = hashCode * 59 + this.UsedVolumes.GetHashCode();
+                if (this.UsedMemory != null) hashCode = hashCode * 59 + this.UsedMemory.GetHashCode();
+                if (this.UsedCpuPercent != null) hashCode = hashCode * 59 + this.UsedCpuPercent.GetHashCode();
+                if (this.NodeVolumeSize != null) hashCode = hashCode * 59 + this.NodeVolumeSize.GetHashCode();
+                if (this.NodeMemorySize != null) hashCode = hashCode * 59 + this.NodeMemorySize.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.ApplyRate != null) hashCode = hashCode * 59 + this.ApplyRate.GetHashCode();
                 return hashCode;
             }
         }

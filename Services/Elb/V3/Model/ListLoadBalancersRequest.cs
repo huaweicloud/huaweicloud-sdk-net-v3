@@ -330,218 +330,45 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(ListLoadBalancersRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.PageReverse != input.PageReverse || (this.PageReverse != null && !this.PageReverse.Equals(input.PageReverse))) return false;
+            if (this.Id != input.Id || (this.Id != null && input.Id != null && !this.Id.SequenceEqual(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && input.Name != null && !this.Name.SequenceEqual(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && input.Description != null && !this.Description.SequenceEqual(input.Description))) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.ProvisioningStatus != input.ProvisioningStatus || (this.ProvisioningStatus != null && input.ProvisioningStatus != null && !this.ProvisioningStatus.SequenceEqual(input.ProvisioningStatus))) return false;
+            if (this.OperatingStatus != input.OperatingStatus || (this.OperatingStatus != null && input.OperatingStatus != null && !this.OperatingStatus.SequenceEqual(input.OperatingStatus))) return false;
+            if (this.Guaranteed != input.Guaranteed || (this.Guaranteed != null && !this.Guaranteed.Equals(input.Guaranteed))) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && input.VpcId != null && !this.VpcId.SequenceEqual(input.VpcId))) return false;
+            if (this.VipPortId != input.VipPortId || (this.VipPortId != null && input.VipPortId != null && !this.VipPortId.SequenceEqual(input.VipPortId))) return false;
+            if (this.VipAddress != input.VipAddress || (this.VipAddress != null && input.VipAddress != null && !this.VipAddress.SequenceEqual(input.VipAddress))) return false;
+            if (this.VipSubnetCidrId != input.VipSubnetCidrId || (this.VipSubnetCidrId != null && input.VipSubnetCidrId != null && !this.VipSubnetCidrId.SequenceEqual(input.VipSubnetCidrId))) return false;
+            if (this.Ipv6VipPortId != input.Ipv6VipPortId || (this.Ipv6VipPortId != null && input.Ipv6VipPortId != null && !this.Ipv6VipPortId.SequenceEqual(input.Ipv6VipPortId))) return false;
+            if (this.Ipv6VipAddress != input.Ipv6VipAddress || (this.Ipv6VipAddress != null && input.Ipv6VipAddress != null && !this.Ipv6VipAddress.SequenceEqual(input.Ipv6VipAddress))) return false;
+            if (this.Ipv6VipVirsubnetId != input.Ipv6VipVirsubnetId || (this.Ipv6VipVirsubnetId != null && input.Ipv6VipVirsubnetId != null && !this.Ipv6VipVirsubnetId.SequenceEqual(input.Ipv6VipVirsubnetId))) return false;
+            if (this.Eips != input.Eips || (this.Eips != null && input.Eips != null && !this.Eips.SequenceEqual(input.Eips))) return false;
+            if (this.Publicips != input.Publicips || (this.Publicips != null && input.Publicips != null && !this.Publicips.SequenceEqual(input.Publicips))) return false;
+            if (this.AvailabilityZoneList != input.AvailabilityZoneList || (this.AvailabilityZoneList != null && input.AvailabilityZoneList != null && !this.AvailabilityZoneList.SequenceEqual(input.AvailabilityZoneList))) return false;
+            if (this.L4FlavorId != input.L4FlavorId || (this.L4FlavorId != null && input.L4FlavorId != null && !this.L4FlavorId.SequenceEqual(input.L4FlavorId))) return false;
+            if (this.L4ScaleFlavorId != input.L4ScaleFlavorId || (this.L4ScaleFlavorId != null && input.L4ScaleFlavorId != null && !this.L4ScaleFlavorId.SequenceEqual(input.L4ScaleFlavorId))) return false;
+            if (this.L7FlavorId != input.L7FlavorId || (this.L7FlavorId != null && input.L7FlavorId != null && !this.L7FlavorId.SequenceEqual(input.L7FlavorId))) return false;
+            if (this.L7ScaleFlavorId != input.L7ScaleFlavorId || (this.L7ScaleFlavorId != null && input.L7ScaleFlavorId != null && !this.L7ScaleFlavorId.SequenceEqual(input.L7ScaleFlavorId))) return false;
+            if (this.BillingInfo != input.BillingInfo || (this.BillingInfo != null && input.BillingInfo != null && !this.BillingInfo.SequenceEqual(input.BillingInfo))) return false;
+            if (this.MemberDeviceId != input.MemberDeviceId || (this.MemberDeviceId != null && input.MemberDeviceId != null && !this.MemberDeviceId.SequenceEqual(input.MemberDeviceId))) return false;
+            if (this.MemberAddress != input.MemberAddress || (this.MemberAddress != null && input.MemberAddress != null && !this.MemberAddress.SequenceEqual(input.MemberAddress))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && input.EnterpriseProjectId != null && !this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId))) return false;
+            if (this.IpVersion != input.IpVersion || (this.IpVersion != null && input.IpVersion != null && !this.IpVersion.SequenceEqual(input.IpVersion))) return false;
+            if (this.DeletionProtectionEnable != input.DeletionProtectionEnable || (this.DeletionProtectionEnable != null && !this.DeletionProtectionEnable.Equals(input.DeletionProtectionEnable))) return false;
+            if (this.ElbVirsubnetType != input.ElbVirsubnetType || (this.ElbVirsubnetType != null && input.ElbVirsubnetType != null && !this.ElbVirsubnetType.SequenceEqual(input.ElbVirsubnetType))) return false;
+            if (this.Autoscaling != input.Autoscaling || (this.Autoscaling != null && input.Autoscaling != null && !this.Autoscaling.SequenceEqual(input.Autoscaling))) return false;
+            if (this.ProtectionStatus != input.ProtectionStatus || (this.ProtectionStatus != null && input.ProtectionStatus != null && !this.ProtectionStatus.SequenceEqual(input.ProtectionStatus))) return false;
+            if (this.GlobalEips != input.GlobalEips || (this.GlobalEips != null && input.GlobalEips != null && !this.GlobalEips.SequenceEqual(input.GlobalEips))) return false;
+            if (this.LogTopicId != input.LogTopicId || (this.LogTopicId != null && !this.LogTopicId.Equals(input.LogTopicId))) return false;
+            if (this.LogGroupId != input.LogGroupId || (this.LogGroupId != null && !this.LogGroupId.Equals(input.LogGroupId))) return false;
 
-            return 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.PageReverse == input.PageReverse ||
-                    (this.PageReverse != null &&
-                    this.PageReverse.Equals(input.PageReverse))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    this.Id != null &&
-                    input.Id != null &&
-                    this.Id.SequenceEqual(input.Id)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    this.Name != null &&
-                    input.Name != null &&
-                    this.Name.SequenceEqual(input.Name)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    this.Description != null &&
-                    input.Description != null &&
-                    this.Description.SequenceEqual(input.Description)
-                ) && 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.ProvisioningStatus == input.ProvisioningStatus ||
-                    this.ProvisioningStatus != null &&
-                    input.ProvisioningStatus != null &&
-                    this.ProvisioningStatus.SequenceEqual(input.ProvisioningStatus)
-                ) && 
-                (
-                    this.OperatingStatus == input.OperatingStatus ||
-                    this.OperatingStatus != null &&
-                    input.OperatingStatus != null &&
-                    this.OperatingStatus.SequenceEqual(input.OperatingStatus)
-                ) && 
-                (
-                    this.Guaranteed == input.Guaranteed ||
-                    (this.Guaranteed != null &&
-                    this.Guaranteed.Equals(input.Guaranteed))
-                ) && 
-                (
-                    this.VpcId == input.VpcId ||
-                    this.VpcId != null &&
-                    input.VpcId != null &&
-                    this.VpcId.SequenceEqual(input.VpcId)
-                ) && 
-                (
-                    this.VipPortId == input.VipPortId ||
-                    this.VipPortId != null &&
-                    input.VipPortId != null &&
-                    this.VipPortId.SequenceEqual(input.VipPortId)
-                ) && 
-                (
-                    this.VipAddress == input.VipAddress ||
-                    this.VipAddress != null &&
-                    input.VipAddress != null &&
-                    this.VipAddress.SequenceEqual(input.VipAddress)
-                ) && 
-                (
-                    this.VipSubnetCidrId == input.VipSubnetCidrId ||
-                    this.VipSubnetCidrId != null &&
-                    input.VipSubnetCidrId != null &&
-                    this.VipSubnetCidrId.SequenceEqual(input.VipSubnetCidrId)
-                ) && 
-                (
-                    this.Ipv6VipPortId == input.Ipv6VipPortId ||
-                    this.Ipv6VipPortId != null &&
-                    input.Ipv6VipPortId != null &&
-                    this.Ipv6VipPortId.SequenceEqual(input.Ipv6VipPortId)
-                ) && 
-                (
-                    this.Ipv6VipAddress == input.Ipv6VipAddress ||
-                    this.Ipv6VipAddress != null &&
-                    input.Ipv6VipAddress != null &&
-                    this.Ipv6VipAddress.SequenceEqual(input.Ipv6VipAddress)
-                ) && 
-                (
-                    this.Ipv6VipVirsubnetId == input.Ipv6VipVirsubnetId ||
-                    this.Ipv6VipVirsubnetId != null &&
-                    input.Ipv6VipVirsubnetId != null &&
-                    this.Ipv6VipVirsubnetId.SequenceEqual(input.Ipv6VipVirsubnetId)
-                ) && 
-                (
-                    this.Eips == input.Eips ||
-                    this.Eips != null &&
-                    input.Eips != null &&
-                    this.Eips.SequenceEqual(input.Eips)
-                ) && 
-                (
-                    this.Publicips == input.Publicips ||
-                    this.Publicips != null &&
-                    input.Publicips != null &&
-                    this.Publicips.SequenceEqual(input.Publicips)
-                ) && 
-                (
-                    this.AvailabilityZoneList == input.AvailabilityZoneList ||
-                    this.AvailabilityZoneList != null &&
-                    input.AvailabilityZoneList != null &&
-                    this.AvailabilityZoneList.SequenceEqual(input.AvailabilityZoneList)
-                ) && 
-                (
-                    this.L4FlavorId == input.L4FlavorId ||
-                    this.L4FlavorId != null &&
-                    input.L4FlavorId != null &&
-                    this.L4FlavorId.SequenceEqual(input.L4FlavorId)
-                ) && 
-                (
-                    this.L4ScaleFlavorId == input.L4ScaleFlavorId ||
-                    this.L4ScaleFlavorId != null &&
-                    input.L4ScaleFlavorId != null &&
-                    this.L4ScaleFlavorId.SequenceEqual(input.L4ScaleFlavorId)
-                ) && 
-                (
-                    this.L7FlavorId == input.L7FlavorId ||
-                    this.L7FlavorId != null &&
-                    input.L7FlavorId != null &&
-                    this.L7FlavorId.SequenceEqual(input.L7FlavorId)
-                ) && 
-                (
-                    this.L7ScaleFlavorId == input.L7ScaleFlavorId ||
-                    this.L7ScaleFlavorId != null &&
-                    input.L7ScaleFlavorId != null &&
-                    this.L7ScaleFlavorId.SequenceEqual(input.L7ScaleFlavorId)
-                ) && 
-                (
-                    this.BillingInfo == input.BillingInfo ||
-                    this.BillingInfo != null &&
-                    input.BillingInfo != null &&
-                    this.BillingInfo.SequenceEqual(input.BillingInfo)
-                ) && 
-                (
-                    this.MemberDeviceId == input.MemberDeviceId ||
-                    this.MemberDeviceId != null &&
-                    input.MemberDeviceId != null &&
-                    this.MemberDeviceId.SequenceEqual(input.MemberDeviceId)
-                ) && 
-                (
-                    this.MemberAddress == input.MemberAddress ||
-                    this.MemberAddress != null &&
-                    input.MemberAddress != null &&
-                    this.MemberAddress.SequenceEqual(input.MemberAddress)
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    this.EnterpriseProjectId != null &&
-                    input.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId)
-                ) && 
-                (
-                    this.IpVersion == input.IpVersion ||
-                    this.IpVersion != null &&
-                    input.IpVersion != null &&
-                    this.IpVersion.SequenceEqual(input.IpVersion)
-                ) && 
-                (
-                    this.DeletionProtectionEnable == input.DeletionProtectionEnable ||
-                    (this.DeletionProtectionEnable != null &&
-                    this.DeletionProtectionEnable.Equals(input.DeletionProtectionEnable))
-                ) && 
-                (
-                    this.ElbVirsubnetType == input.ElbVirsubnetType ||
-                    this.ElbVirsubnetType != null &&
-                    input.ElbVirsubnetType != null &&
-                    this.ElbVirsubnetType.SequenceEqual(input.ElbVirsubnetType)
-                ) && 
-                (
-                    this.Autoscaling == input.Autoscaling ||
-                    this.Autoscaling != null &&
-                    input.Autoscaling != null &&
-                    this.Autoscaling.SequenceEqual(input.Autoscaling)
-                ) && 
-                (
-                    this.ProtectionStatus == input.ProtectionStatus ||
-                    this.ProtectionStatus != null &&
-                    input.ProtectionStatus != null &&
-                    this.ProtectionStatus.SequenceEqual(input.ProtectionStatus)
-                ) && 
-                (
-                    this.GlobalEips == input.GlobalEips ||
-                    this.GlobalEips != null &&
-                    input.GlobalEips != null &&
-                    this.GlobalEips.SequenceEqual(input.GlobalEips)
-                ) && 
-                (
-                    this.LogTopicId == input.LogTopicId ||
-                    (this.LogTopicId != null &&
-                    this.LogTopicId.Equals(input.LogTopicId))
-                ) && 
-                (
-                    this.LogGroupId == input.LogGroupId ||
-                    (this.LogGroupId != null &&
-                    this.LogGroupId.Equals(input.LogGroupId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -551,79 +378,43 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.PageReverse != null)
-                    hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.ProvisioningStatus != null)
-                    hashCode = hashCode * 59 + this.ProvisioningStatus.GetHashCode();
-                if (this.OperatingStatus != null)
-                    hashCode = hashCode * 59 + this.OperatingStatus.GetHashCode();
-                if (this.Guaranteed != null)
-                    hashCode = hashCode * 59 + this.Guaranteed.GetHashCode();
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.VipPortId != null)
-                    hashCode = hashCode * 59 + this.VipPortId.GetHashCode();
-                if (this.VipAddress != null)
-                    hashCode = hashCode * 59 + this.VipAddress.GetHashCode();
-                if (this.VipSubnetCidrId != null)
-                    hashCode = hashCode * 59 + this.VipSubnetCidrId.GetHashCode();
-                if (this.Ipv6VipPortId != null)
-                    hashCode = hashCode * 59 + this.Ipv6VipPortId.GetHashCode();
-                if (this.Ipv6VipAddress != null)
-                    hashCode = hashCode * 59 + this.Ipv6VipAddress.GetHashCode();
-                if (this.Ipv6VipVirsubnetId != null)
-                    hashCode = hashCode * 59 + this.Ipv6VipVirsubnetId.GetHashCode();
-                if (this.Eips != null)
-                    hashCode = hashCode * 59 + this.Eips.GetHashCode();
-                if (this.Publicips != null)
-                    hashCode = hashCode * 59 + this.Publicips.GetHashCode();
-                if (this.AvailabilityZoneList != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZoneList.GetHashCode();
-                if (this.L4FlavorId != null)
-                    hashCode = hashCode * 59 + this.L4FlavorId.GetHashCode();
-                if (this.L4ScaleFlavorId != null)
-                    hashCode = hashCode * 59 + this.L4ScaleFlavorId.GetHashCode();
-                if (this.L7FlavorId != null)
-                    hashCode = hashCode * 59 + this.L7FlavorId.GetHashCode();
-                if (this.L7ScaleFlavorId != null)
-                    hashCode = hashCode * 59 + this.L7ScaleFlavorId.GetHashCode();
-                if (this.BillingInfo != null)
-                    hashCode = hashCode * 59 + this.BillingInfo.GetHashCode();
-                if (this.MemberDeviceId != null)
-                    hashCode = hashCode * 59 + this.MemberDeviceId.GetHashCode();
-                if (this.MemberAddress != null)
-                    hashCode = hashCode * 59 + this.MemberAddress.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.IpVersion != null)
-                    hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
-                if (this.DeletionProtectionEnable != null)
-                    hashCode = hashCode * 59 + this.DeletionProtectionEnable.GetHashCode();
-                if (this.ElbVirsubnetType != null)
-                    hashCode = hashCode * 59 + this.ElbVirsubnetType.GetHashCode();
-                if (this.Autoscaling != null)
-                    hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
-                if (this.ProtectionStatus != null)
-                    hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
-                if (this.GlobalEips != null)
-                    hashCode = hashCode * 59 + this.GlobalEips.GetHashCode();
-                if (this.LogTopicId != null)
-                    hashCode = hashCode * 59 + this.LogTopicId.GetHashCode();
-                if (this.LogGroupId != null)
-                    hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
+                var hashCode = 41;
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.PageReverse != null) hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.ProvisioningStatus != null) hashCode = hashCode * 59 + this.ProvisioningStatus.GetHashCode();
+                if (this.OperatingStatus != null) hashCode = hashCode * 59 + this.OperatingStatus.GetHashCode();
+                if (this.Guaranteed != null) hashCode = hashCode * 59 + this.Guaranteed.GetHashCode();
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.VipPortId != null) hashCode = hashCode * 59 + this.VipPortId.GetHashCode();
+                if (this.VipAddress != null) hashCode = hashCode * 59 + this.VipAddress.GetHashCode();
+                if (this.VipSubnetCidrId != null) hashCode = hashCode * 59 + this.VipSubnetCidrId.GetHashCode();
+                if (this.Ipv6VipPortId != null) hashCode = hashCode * 59 + this.Ipv6VipPortId.GetHashCode();
+                if (this.Ipv6VipAddress != null) hashCode = hashCode * 59 + this.Ipv6VipAddress.GetHashCode();
+                if (this.Ipv6VipVirsubnetId != null) hashCode = hashCode * 59 + this.Ipv6VipVirsubnetId.GetHashCode();
+                if (this.Eips != null) hashCode = hashCode * 59 + this.Eips.GetHashCode();
+                if (this.Publicips != null) hashCode = hashCode * 59 + this.Publicips.GetHashCode();
+                if (this.AvailabilityZoneList != null) hashCode = hashCode * 59 + this.AvailabilityZoneList.GetHashCode();
+                if (this.L4FlavorId != null) hashCode = hashCode * 59 + this.L4FlavorId.GetHashCode();
+                if (this.L4ScaleFlavorId != null) hashCode = hashCode * 59 + this.L4ScaleFlavorId.GetHashCode();
+                if (this.L7FlavorId != null) hashCode = hashCode * 59 + this.L7FlavorId.GetHashCode();
+                if (this.L7ScaleFlavorId != null) hashCode = hashCode * 59 + this.L7ScaleFlavorId.GetHashCode();
+                if (this.BillingInfo != null) hashCode = hashCode * 59 + this.BillingInfo.GetHashCode();
+                if (this.MemberDeviceId != null) hashCode = hashCode * 59 + this.MemberDeviceId.GetHashCode();
+                if (this.MemberAddress != null) hashCode = hashCode * 59 + this.MemberAddress.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.IpVersion != null) hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
+                if (this.DeletionProtectionEnable != null) hashCode = hashCode * 59 + this.DeletionProtectionEnable.GetHashCode();
+                if (this.ElbVirsubnetType != null) hashCode = hashCode * 59 + this.ElbVirsubnetType.GetHashCode();
+                if (this.Autoscaling != null) hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
+                if (this.ProtectionStatus != null) hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
+                if (this.GlobalEips != null) hashCode = hashCode * 59 + this.GlobalEips.GetHashCode();
+                if (this.LogTopicId != null) hashCode = hashCode * 59 + this.LogTopicId.GetHashCode();
+                if (this.LogGroupId != null) hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
                 return hashCode;
             }
         }

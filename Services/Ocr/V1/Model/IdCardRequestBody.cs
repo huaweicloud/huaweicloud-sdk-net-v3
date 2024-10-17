@@ -154,90 +154,25 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(IdCardRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Image != input.Image || (this.Image != null && !this.Image.Equals(input.Image))) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.Side != input.Side || (this.Side != null && !this.Side.Equals(input.Side))) return false;
+            if (this.ReturnVerification != input.ReturnVerification || (this.ReturnVerification != null && !this.ReturnVerification.Equals(input.ReturnVerification))) return false;
+            if (this.ReturnTextLocation != input.ReturnTextLocation || (this.ReturnTextLocation != null && !this.ReturnTextLocation.Equals(input.ReturnTextLocation))) return false;
+            if (this.DetectReproduce != input.DetectReproduce || (this.DetectReproduce != null && !this.DetectReproduce.Equals(input.DetectReproduce))) return false;
+            if (this.DetectCopy != input.DetectCopy || (this.DetectCopy != null && !this.DetectCopy.Equals(input.DetectCopy))) return false;
+            if (this.ReturnPortraitLocation != input.ReturnPortraitLocation || (this.ReturnPortraitLocation != null && !this.ReturnPortraitLocation.Equals(input.ReturnPortraitLocation))) return false;
+            if (this.ReturnPortraitImage != input.ReturnPortraitImage || (this.ReturnPortraitImage != null && !this.ReturnPortraitImage.Equals(input.ReturnPortraitImage))) return false;
+            if (this.ReturnAdjustedImage != input.ReturnAdjustedImage || (this.ReturnAdjustedImage != null && !this.ReturnAdjustedImage.Equals(input.ReturnAdjustedImage))) return false;
+            if (this.DetectTampering != input.DetectTampering || (this.DetectTampering != null && !this.DetectTampering.Equals(input.DetectTampering))) return false;
+            if (this.DetectBorderIntegrity != input.DetectBorderIntegrity || (this.DetectBorderIntegrity != null && !this.DetectBorderIntegrity.Equals(input.DetectBorderIntegrity))) return false;
+            if (this.DetectBlockingWithinBorder != input.DetectBlockingWithinBorder || (this.DetectBlockingWithinBorder != null && !this.DetectBlockingWithinBorder.Equals(input.DetectBlockingWithinBorder))) return false;
+            if (this.DetectBlur != input.DetectBlur || (this.DetectBlur != null && !this.DetectBlur.Equals(input.DetectBlur))) return false;
+            if (this.DetectInterim != input.DetectInterim || (this.DetectInterim != null && !this.DetectInterim.Equals(input.DetectInterim))) return false;
+            if (this.DetectGlare != input.DetectGlare || (this.DetectGlare != null && !this.DetectGlare.Equals(input.DetectGlare))) return false;
 
-            return 
-                (
-                    this.Image == input.Image ||
-                    (this.Image != null &&
-                    this.Image.Equals(input.Image))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.Side == input.Side ||
-                    (this.Side != null &&
-                    this.Side.Equals(input.Side))
-                ) && 
-                (
-                    this.ReturnVerification == input.ReturnVerification ||
-                    (this.ReturnVerification != null &&
-                    this.ReturnVerification.Equals(input.ReturnVerification))
-                ) && 
-                (
-                    this.ReturnTextLocation == input.ReturnTextLocation ||
-                    (this.ReturnTextLocation != null &&
-                    this.ReturnTextLocation.Equals(input.ReturnTextLocation))
-                ) && 
-                (
-                    this.DetectReproduce == input.DetectReproduce ||
-                    (this.DetectReproduce != null &&
-                    this.DetectReproduce.Equals(input.DetectReproduce))
-                ) && 
-                (
-                    this.DetectCopy == input.DetectCopy ||
-                    (this.DetectCopy != null &&
-                    this.DetectCopy.Equals(input.DetectCopy))
-                ) && 
-                (
-                    this.ReturnPortraitLocation == input.ReturnPortraitLocation ||
-                    (this.ReturnPortraitLocation != null &&
-                    this.ReturnPortraitLocation.Equals(input.ReturnPortraitLocation))
-                ) && 
-                (
-                    this.ReturnPortraitImage == input.ReturnPortraitImage ||
-                    (this.ReturnPortraitImage != null &&
-                    this.ReturnPortraitImage.Equals(input.ReturnPortraitImage))
-                ) && 
-                (
-                    this.ReturnAdjustedImage == input.ReturnAdjustedImage ||
-                    (this.ReturnAdjustedImage != null &&
-                    this.ReturnAdjustedImage.Equals(input.ReturnAdjustedImage))
-                ) && 
-                (
-                    this.DetectTampering == input.DetectTampering ||
-                    (this.DetectTampering != null &&
-                    this.DetectTampering.Equals(input.DetectTampering))
-                ) && 
-                (
-                    this.DetectBorderIntegrity == input.DetectBorderIntegrity ||
-                    (this.DetectBorderIntegrity != null &&
-                    this.DetectBorderIntegrity.Equals(input.DetectBorderIntegrity))
-                ) && 
-                (
-                    this.DetectBlockingWithinBorder == input.DetectBlockingWithinBorder ||
-                    (this.DetectBlockingWithinBorder != null &&
-                    this.DetectBlockingWithinBorder.Equals(input.DetectBlockingWithinBorder))
-                ) && 
-                (
-                    this.DetectBlur == input.DetectBlur ||
-                    (this.DetectBlur != null &&
-                    this.DetectBlur.Equals(input.DetectBlur))
-                ) && 
-                (
-                    this.DetectInterim == input.DetectInterim ||
-                    (this.DetectInterim != null &&
-                    this.DetectInterim.Equals(input.DetectInterim))
-                ) && 
-                (
-                    this.DetectGlare == input.DetectGlare ||
-                    (this.DetectGlare != null &&
-                    this.DetectGlare.Equals(input.DetectGlare))
-                );
+            return true;
         }
 
         /// <summary>
@@ -247,39 +182,23 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Image != null)
-                    hashCode = hashCode * 59 + this.Image.GetHashCode();
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.Side != null)
-                    hashCode = hashCode * 59 + this.Side.GetHashCode();
-                if (this.ReturnVerification != null)
-                    hashCode = hashCode * 59 + this.ReturnVerification.GetHashCode();
-                if (this.ReturnTextLocation != null)
-                    hashCode = hashCode * 59 + this.ReturnTextLocation.GetHashCode();
-                if (this.DetectReproduce != null)
-                    hashCode = hashCode * 59 + this.DetectReproduce.GetHashCode();
-                if (this.DetectCopy != null)
-                    hashCode = hashCode * 59 + this.DetectCopy.GetHashCode();
-                if (this.ReturnPortraitLocation != null)
-                    hashCode = hashCode * 59 + this.ReturnPortraitLocation.GetHashCode();
-                if (this.ReturnPortraitImage != null)
-                    hashCode = hashCode * 59 + this.ReturnPortraitImage.GetHashCode();
-                if (this.ReturnAdjustedImage != null)
-                    hashCode = hashCode * 59 + this.ReturnAdjustedImage.GetHashCode();
-                if (this.DetectTampering != null)
-                    hashCode = hashCode * 59 + this.DetectTampering.GetHashCode();
-                if (this.DetectBorderIntegrity != null)
-                    hashCode = hashCode * 59 + this.DetectBorderIntegrity.GetHashCode();
-                if (this.DetectBlockingWithinBorder != null)
-                    hashCode = hashCode * 59 + this.DetectBlockingWithinBorder.GetHashCode();
-                if (this.DetectBlur != null)
-                    hashCode = hashCode * 59 + this.DetectBlur.GetHashCode();
-                if (this.DetectInterim != null)
-                    hashCode = hashCode * 59 + this.DetectInterim.GetHashCode();
-                if (this.DetectGlare != null)
-                    hashCode = hashCode * 59 + this.DetectGlare.GetHashCode();
+                var hashCode = 41;
+                if (this.Image != null) hashCode = hashCode * 59 + this.Image.GetHashCode();
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.Side != null) hashCode = hashCode * 59 + this.Side.GetHashCode();
+                if (this.ReturnVerification != null) hashCode = hashCode * 59 + this.ReturnVerification.GetHashCode();
+                if (this.ReturnTextLocation != null) hashCode = hashCode * 59 + this.ReturnTextLocation.GetHashCode();
+                if (this.DetectReproduce != null) hashCode = hashCode * 59 + this.DetectReproduce.GetHashCode();
+                if (this.DetectCopy != null) hashCode = hashCode * 59 + this.DetectCopy.GetHashCode();
+                if (this.ReturnPortraitLocation != null) hashCode = hashCode * 59 + this.ReturnPortraitLocation.GetHashCode();
+                if (this.ReturnPortraitImage != null) hashCode = hashCode * 59 + this.ReturnPortraitImage.GetHashCode();
+                if (this.ReturnAdjustedImage != null) hashCode = hashCode * 59 + this.ReturnAdjustedImage.GetHashCode();
+                if (this.DetectTampering != null) hashCode = hashCode * 59 + this.DetectTampering.GetHashCode();
+                if (this.DetectBorderIntegrity != null) hashCode = hashCode * 59 + this.DetectBorderIntegrity.GetHashCode();
+                if (this.DetectBlockingWithinBorder != null) hashCode = hashCode * 59 + this.DetectBlockingWithinBorder.GetHashCode();
+                if (this.DetectBlur != null) hashCode = hashCode * 59 + this.DetectBlur.GetHashCode();
+                if (this.DetectInterim != null) hashCode = hashCode * 59 + this.DetectInterim.GetHashCode();
+                if (this.DetectGlare != null) hashCode = hashCode * 59 + this.DetectGlare.GetHashCode();
                 return hashCode;
             }
         }

@@ -602,50 +602,17 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(CommonInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Pvc != input.Pvc || (this.Pvc != null && !this.Pvc.Equals(input.Pvc))) return false;
+            if (this.VideoCodec != input.VideoCodec) return false;
+            if (this.AudioCodec != input.AudioCodec) return false;
+            if (this.IsBlackCut != input.IsBlackCut || (this.IsBlackCut != null && !this.IsBlackCut.Equals(input.IsBlackCut))) return false;
+            if (this.Format != input.Format) return false;
+            if (this.HlsInterval != input.HlsInterval || (this.HlsInterval != null && !this.HlsInterval.Equals(input.HlsInterval))) return false;
+            if (this.Upsample != input.Upsample || (this.Upsample != null && !this.Upsample.Equals(input.Upsample))) return false;
+            if (this.Adaptation != input.Adaptation) return false;
 
-            return 
-                (
-                    this.Pvc == input.Pvc ||
-                    (this.Pvc != null &&
-                    this.Pvc.Equals(input.Pvc))
-                ) && 
-                (
-                    this.VideoCodec == input.VideoCodec ||
-                    (this.VideoCodec != null &&
-                    this.VideoCodec.Equals(input.VideoCodec))
-                ) && 
-                (
-                    this.AudioCodec == input.AudioCodec ||
-                    (this.AudioCodec != null &&
-                    this.AudioCodec.Equals(input.AudioCodec))
-                ) && 
-                (
-                    this.IsBlackCut == input.IsBlackCut ||
-                    (this.IsBlackCut != null &&
-                    this.IsBlackCut.Equals(input.IsBlackCut))
-                ) && 
-                (
-                    this.Format == input.Format ||
-                    (this.Format != null &&
-                    this.Format.Equals(input.Format))
-                ) && 
-                (
-                    this.HlsInterval == input.HlsInterval ||
-                    (this.HlsInterval != null &&
-                    this.HlsInterval.Equals(input.HlsInterval))
-                ) && 
-                (
-                    this.Upsample == input.Upsample ||
-                    (this.Upsample != null &&
-                    this.Upsample.Equals(input.Upsample))
-                ) && 
-                (
-                    this.Adaptation == input.Adaptation ||
-                    (this.Adaptation != null &&
-                    this.Adaptation.Equals(input.Adaptation))
-                );
+            return true;
         }
 
         /// <summary>
@@ -655,23 +622,15 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Pvc != null)
-                    hashCode = hashCode * 59 + this.Pvc.GetHashCode();
-                if (this.VideoCodec != null)
-                    hashCode = hashCode * 59 + this.VideoCodec.GetHashCode();
-                if (this.AudioCodec != null)
-                    hashCode = hashCode * 59 + this.AudioCodec.GetHashCode();
-                if (this.IsBlackCut != null)
-                    hashCode = hashCode * 59 + this.IsBlackCut.GetHashCode();
-                if (this.Format != null)
-                    hashCode = hashCode * 59 + this.Format.GetHashCode();
-                if (this.HlsInterval != null)
-                    hashCode = hashCode * 59 + this.HlsInterval.GetHashCode();
-                if (this.Upsample != null)
-                    hashCode = hashCode * 59 + this.Upsample.GetHashCode();
-                if (this.Adaptation != null)
-                    hashCode = hashCode * 59 + this.Adaptation.GetHashCode();
+                var hashCode = 41;
+                if (this.Pvc != null) hashCode = hashCode * 59 + this.Pvc.GetHashCode();
+                hashCode = hashCode * 59 + this.VideoCodec.GetHashCode();
+                hashCode = hashCode * 59 + this.AudioCodec.GetHashCode();
+                if (this.IsBlackCut != null) hashCode = hashCode * 59 + this.IsBlackCut.GetHashCode();
+                hashCode = hashCode * 59 + this.Format.GetHashCode();
+                if (this.HlsInterval != null) hashCode = hashCode * 59 + this.HlsInterval.GetHashCode();
+                if (this.Upsample != null) hashCode = hashCode * 59 + this.Upsample.GetHashCode();
+                hashCode = hashCode * 59 + this.Adaptation.GetHashCode();
                 return hashCode;
             }
         }

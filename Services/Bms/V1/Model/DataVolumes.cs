@@ -311,35 +311,14 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(DataVolumes input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Volumetype != input.Volumetype) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.Shareable != input.Shareable || (this.Shareable != null && !this.Shareable.Equals(input.Shareable))) return false;
+            if (this.ClusterId != input.ClusterId || (this.ClusterId != null && !this.ClusterId.Equals(input.ClusterId))) return false;
+            if (this.ClusterType != input.ClusterType) return false;
 
-            return 
-                (
-                    this.Volumetype == input.Volumetype ||
-                    (this.Volumetype != null &&
-                    this.Volumetype.Equals(input.Volumetype))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.Shareable == input.Shareable ||
-                    (this.Shareable != null &&
-                    this.Shareable.Equals(input.Shareable))
-                ) && 
-                (
-                    this.ClusterId == input.ClusterId ||
-                    (this.ClusterId != null &&
-                    this.ClusterId.Equals(input.ClusterId))
-                ) && 
-                (
-                    this.ClusterType == input.ClusterType ||
-                    (this.ClusterType != null &&
-                    this.ClusterType.Equals(input.ClusterType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -349,17 +328,12 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Volumetype != null)
-                    hashCode = hashCode * 59 + this.Volumetype.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.Shareable != null)
-                    hashCode = hashCode * 59 + this.Shareable.GetHashCode();
-                if (this.ClusterId != null)
-                    hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
-                if (this.ClusterType != null)
-                    hashCode = hashCode * 59 + this.ClusterType.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Volumetype.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Shareable != null) hashCode = hashCode * 59 + this.Shareable.GetHashCode();
+                if (this.ClusterId != null) hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
+                hashCode = hashCode * 59 + this.ClusterType.GetHashCode();
                 return hashCode;
             }
         }

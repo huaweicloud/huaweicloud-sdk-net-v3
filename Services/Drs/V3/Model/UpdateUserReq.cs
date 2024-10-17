@@ -91,47 +91,16 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(UpdateUserReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.Password != input.Password || (this.Password != null && !this.Password.Equals(input.Password))) return false;
+            if (this.List != input.List || (this.List != null && input.List != null && !this.List.SequenceEqual(input.List))) return false;
+            if (this.UserRoles != input.UserRoles || (this.UserRoles != null && input.UserRoles != null && !this.UserRoles.SequenceEqual(input.UserRoles))) return false;
+            if (this.IsSetPassword != input.IsSetPassword || (this.IsSetPassword != null && !this.IsSetPassword.Equals(input.IsSetPassword))) return false;
+            if (this.IsMigrateUser != input.IsMigrateUser || (this.IsMigrateUser != null && !this.IsMigrateUser.Equals(input.IsMigrateUser))) return false;
+            if (this.IsSyncObjectPrivilege != input.IsSyncObjectPrivilege || (this.IsSyncObjectPrivilege != null && !this.IsSyncObjectPrivilege.Equals(input.IsSyncObjectPrivilege))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.Password == input.Password ||
-                    (this.Password != null &&
-                    this.Password.Equals(input.Password))
-                ) && 
-                (
-                    this.List == input.List ||
-                    this.List != null &&
-                    input.List != null &&
-                    this.List.SequenceEqual(input.List)
-                ) && 
-                (
-                    this.UserRoles == input.UserRoles ||
-                    this.UserRoles != null &&
-                    input.UserRoles != null &&
-                    this.UserRoles.SequenceEqual(input.UserRoles)
-                ) && 
-                (
-                    this.IsSetPassword == input.IsSetPassword ||
-                    (this.IsSetPassword != null &&
-                    this.IsSetPassword.Equals(input.IsSetPassword))
-                ) && 
-                (
-                    this.IsMigrateUser == input.IsMigrateUser ||
-                    (this.IsMigrateUser != null &&
-                    this.IsMigrateUser.Equals(input.IsMigrateUser))
-                ) && 
-                (
-                    this.IsSyncObjectPrivilege == input.IsSyncObjectPrivilege ||
-                    (this.IsSyncObjectPrivilege != null &&
-                    this.IsSyncObjectPrivilege.Equals(input.IsSyncObjectPrivilege))
-                );
+            return true;
         }
 
         /// <summary>
@@ -141,21 +110,14 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.Password != null)
-                    hashCode = hashCode * 59 + this.Password.GetHashCode();
-                if (this.List != null)
-                    hashCode = hashCode * 59 + this.List.GetHashCode();
-                if (this.UserRoles != null)
-                    hashCode = hashCode * 59 + this.UserRoles.GetHashCode();
-                if (this.IsSetPassword != null)
-                    hashCode = hashCode * 59 + this.IsSetPassword.GetHashCode();
-                if (this.IsMigrateUser != null)
-                    hashCode = hashCode * 59 + this.IsMigrateUser.GetHashCode();
-                if (this.IsSyncObjectPrivilege != null)
-                    hashCode = hashCode * 59 + this.IsSyncObjectPrivilege.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.Password != null) hashCode = hashCode * 59 + this.Password.GetHashCode();
+                if (this.List != null) hashCode = hashCode * 59 + this.List.GetHashCode();
+                if (this.UserRoles != null) hashCode = hashCode * 59 + this.UserRoles.GetHashCode();
+                if (this.IsSetPassword != null) hashCode = hashCode * 59 + this.IsSetPassword.GetHashCode();
+                if (this.IsMigrateUser != null) hashCode = hashCode * 59 + this.IsMigrateUser.GetHashCode();
+                if (this.IsSyncObjectPrivilege != null) hashCode = hashCode * 59 + this.IsSyncObjectPrivilege.GetHashCode();
                 return hashCode;
             }
         }

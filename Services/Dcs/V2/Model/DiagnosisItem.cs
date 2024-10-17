@@ -353,38 +353,14 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(DiagnosisItem input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name) return false;
+            if (this.CauseIds != input.CauseIds || (this.CauseIds != null && input.CauseIds != null && !this.CauseIds.SequenceEqual(input.CauseIds))) return false;
+            if (this.ImpactIds != input.ImpactIds || (this.ImpactIds != null && input.ImpactIds != null && !this.ImpactIds.SequenceEqual(input.ImpactIds))) return false;
+            if (this.AdviceIds != input.AdviceIds || (this.AdviceIds != null && input.AdviceIds != null && !this.AdviceIds.SequenceEqual(input.AdviceIds))) return false;
+            if (this.Result != input.Result) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.CauseIds == input.CauseIds ||
-                    this.CauseIds != null &&
-                    input.CauseIds != null &&
-                    this.CauseIds.SequenceEqual(input.CauseIds)
-                ) && 
-                (
-                    this.ImpactIds == input.ImpactIds ||
-                    this.ImpactIds != null &&
-                    input.ImpactIds != null &&
-                    this.ImpactIds.SequenceEqual(input.ImpactIds)
-                ) && 
-                (
-                    this.AdviceIds == input.AdviceIds ||
-                    this.AdviceIds != null &&
-                    input.AdviceIds != null &&
-                    this.AdviceIds.SequenceEqual(input.AdviceIds)
-                ) && 
-                (
-                    this.Result == input.Result ||
-                    (this.Result != null &&
-                    this.Result.Equals(input.Result))
-                );
+            return true;
         }
 
         /// <summary>
@@ -394,17 +370,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.CauseIds != null)
-                    hashCode = hashCode * 59 + this.CauseIds.GetHashCode();
-                if (this.ImpactIds != null)
-                    hashCode = hashCode * 59 + this.ImpactIds.GetHashCode();
-                if (this.AdviceIds != null)
-                    hashCode = hashCode * 59 + this.AdviceIds.GetHashCode();
-                if (this.Result != null)
-                    hashCode = hashCode * 59 + this.Result.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.CauseIds != null) hashCode = hashCode * 59 + this.CauseIds.GetHashCode();
+                if (this.ImpactIds != null) hashCode = hashCode * 59 + this.ImpactIds.GetHashCode();
+                if (this.AdviceIds != null) hashCode = hashCode * 59 + this.AdviceIds.GetHashCode();
+                hashCode = hashCode * 59 + this.Result.GetHashCode();
                 return hashCode;
             }
         }

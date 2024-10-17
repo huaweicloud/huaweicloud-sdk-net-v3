@@ -338,51 +338,17 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(RecordCallbackConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.PublishDomain != input.PublishDomain || (this.PublishDomain != null && !this.PublishDomain.Equals(input.PublishDomain))) return false;
+            if (this.App != input.App || (this.App != null && !this.App.Equals(input.App))) return false;
+            if (this.NotifyCallbackUrl != input.NotifyCallbackUrl || (this.NotifyCallbackUrl != null && !this.NotifyCallbackUrl.Equals(input.NotifyCallbackUrl))) return false;
+            if (this.NotifyEventSubscription != input.NotifyEventSubscription || (this.NotifyEventSubscription != null && input.NotifyEventSubscription != null && !this.NotifyEventSubscription.SequenceEqual(input.NotifyEventSubscription))) return false;
+            if (this.SignType != input.SignType) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.PublishDomain == input.PublishDomain ||
-                    (this.PublishDomain != null &&
-                    this.PublishDomain.Equals(input.PublishDomain))
-                ) && 
-                (
-                    this.App == input.App ||
-                    (this.App != null &&
-                    this.App.Equals(input.App))
-                ) && 
-                (
-                    this.NotifyCallbackUrl == input.NotifyCallbackUrl ||
-                    (this.NotifyCallbackUrl != null &&
-                    this.NotifyCallbackUrl.Equals(input.NotifyCallbackUrl))
-                ) && 
-                (
-                    this.NotifyEventSubscription == input.NotifyEventSubscription ||
-                    this.NotifyEventSubscription != null &&
-                    input.NotifyEventSubscription != null &&
-                    this.NotifyEventSubscription.SequenceEqual(input.NotifyEventSubscription)
-                ) && 
-                (
-                    this.SignType == input.SignType ||
-                    (this.SignType != null &&
-                    this.SignType.Equals(input.SignType))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -392,23 +358,15 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.PublishDomain != null)
-                    hashCode = hashCode * 59 + this.PublishDomain.GetHashCode();
-                if (this.App != null)
-                    hashCode = hashCode * 59 + this.App.GetHashCode();
-                if (this.NotifyCallbackUrl != null)
-                    hashCode = hashCode * 59 + this.NotifyCallbackUrl.GetHashCode();
-                if (this.NotifyEventSubscription != null)
-                    hashCode = hashCode * 59 + this.NotifyEventSubscription.GetHashCode();
-                if (this.SignType != null)
-                    hashCode = hashCode * 59 + this.SignType.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.PublishDomain != null) hashCode = hashCode * 59 + this.PublishDomain.GetHashCode();
+                if (this.App != null) hashCode = hashCode * 59 + this.App.GetHashCode();
+                if (this.NotifyCallbackUrl != null) hashCode = hashCode * 59 + this.NotifyCallbackUrl.GetHashCode();
+                hashCode = hashCode * 59 + this.NotifyEventSubscription.GetHashCode();
+                hashCode = hashCode * 59 + this.SignType.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 return hashCode;
             }
         }

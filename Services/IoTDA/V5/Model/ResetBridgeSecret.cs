@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ResetBridgeSecret input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ForceDisconnect != input.ForceDisconnect || (this.ForceDisconnect != null && !this.ForceDisconnect.Equals(input.ForceDisconnect))) return false;
 
-            return 
-                (
-                    this.ForceDisconnect == input.ForceDisconnect ||
-                    (this.ForceDisconnect != null &&
-                    this.ForceDisconnect.Equals(input.ForceDisconnect))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ForceDisconnect != null)
-                    hashCode = hashCode * 59 + this.ForceDisconnect.GetHashCode();
+                var hashCode = 41;
+                if (this.ForceDisconnect != null) hashCode = hashCode * 59 + this.ForceDisconnect.GetHashCode();
                 return hashCode;
             }
         }

@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ShowMessageDiagnosisReportResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AbnormalItemNum != input.AbnormalItemNum || (this.AbnormalItemNum != null && !this.AbnormalItemNum.Equals(input.AbnormalItemNum))) return false;
+            if (this.FailedItemNum != input.FailedItemNum || (this.FailedItemNum != null && !this.FailedItemNum.Equals(input.FailedItemNum))) return false;
+            if (this.NormalItemNum != input.NormalItemNum || (this.NormalItemNum != null && !this.NormalItemNum.Equals(input.NormalItemNum))) return false;
+            if (this.DiagnosisDimensionList != input.DiagnosisDimensionList || (this.DiagnosisDimensionList != null && input.DiagnosisDimensionList != null && !this.DiagnosisDimensionList.SequenceEqual(input.DiagnosisDimensionList))) return false;
 
-            return 
-                (
-                    this.AbnormalItemNum == input.AbnormalItemNum ||
-                    (this.AbnormalItemNum != null &&
-                    this.AbnormalItemNum.Equals(input.AbnormalItemNum))
-                ) && 
-                (
-                    this.FailedItemNum == input.FailedItemNum ||
-                    (this.FailedItemNum != null &&
-                    this.FailedItemNum.Equals(input.FailedItemNum))
-                ) && 
-                (
-                    this.NormalItemNum == input.NormalItemNum ||
-                    (this.NormalItemNum != null &&
-                    this.NormalItemNum.Equals(input.NormalItemNum))
-                ) && 
-                (
-                    this.DiagnosisDimensionList == input.DiagnosisDimensionList ||
-                    this.DiagnosisDimensionList != null &&
-                    input.DiagnosisDimensionList != null &&
-                    this.DiagnosisDimensionList.SequenceEqual(input.DiagnosisDimensionList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AbnormalItemNum != null)
-                    hashCode = hashCode * 59 + this.AbnormalItemNum.GetHashCode();
-                if (this.FailedItemNum != null)
-                    hashCode = hashCode * 59 + this.FailedItemNum.GetHashCode();
-                if (this.NormalItemNum != null)
-                    hashCode = hashCode * 59 + this.NormalItemNum.GetHashCode();
-                if (this.DiagnosisDimensionList != null)
-                    hashCode = hashCode * 59 + this.DiagnosisDimensionList.GetHashCode();
+                var hashCode = 41;
+                if (this.AbnormalItemNum != null) hashCode = hashCode * 59 + this.AbnormalItemNum.GetHashCode();
+                if (this.FailedItemNum != null) hashCode = hashCode * 59 + this.FailedItemNum.GetHashCode();
+                if (this.NormalItemNum != null) hashCode = hashCode * 59 + this.NormalItemNum.GetHashCode();
+                if (this.DiagnosisDimensionList != null) hashCode = hashCode * 59 + this.DiagnosisDimensionList.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(Er input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ErId != input.ErId || (this.ErId != null && !this.ErId.Equals(input.ErId))) return false;
+            if (this.ErAttachId != input.ErAttachId || (this.ErAttachId != null && !this.ErAttachId.Equals(input.ErAttachId))) return false;
 
-            return 
-                (
-                    this.ErId == input.ErId ||
-                    (this.ErId != null &&
-                    this.ErId.Equals(input.ErId))
-                ) && 
-                (
-                    this.ErAttachId == input.ErAttachId ||
-                    (this.ErAttachId != null &&
-                    this.ErAttachId.Equals(input.ErAttachId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ErId != null)
-                    hashCode = hashCode * 59 + this.ErId.GetHashCode();
-                if (this.ErAttachId != null)
-                    hashCode = hashCode * 59 + this.ErAttachId.GetHashCode();
+                var hashCode = 41;
+                if (this.ErId != null) hashCode = hashCode * 59 + this.ErId.GetHashCode();
+                if (this.ErAttachId != null) hashCode = hashCode * 59 + this.ErAttachId.GetHashCode();
                 return hashCode;
             }
         }

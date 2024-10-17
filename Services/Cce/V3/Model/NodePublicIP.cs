@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(NodePublicIP input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Ids != input.Ids || (this.Ids != null && input.Ids != null && !this.Ids.SequenceEqual(input.Ids))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.Eip != input.Eip || (this.Eip != null && !this.Eip.Equals(input.Eip))) return false;
 
-            return 
-                (
-                    this.Ids == input.Ids ||
-                    this.Ids != null &&
-                    input.Ids != null &&
-                    this.Ids.SequenceEqual(input.Ids)
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.Eip == input.Eip ||
-                    (this.Eip != null &&
-                    this.Eip.Equals(input.Eip))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Ids != null)
-                    hashCode = hashCode * 59 + this.Ids.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.Eip != null)
-                    hashCode = hashCode * 59 + this.Eip.GetHashCode();
+                var hashCode = 41;
+                if (this.Ids != null) hashCode = hashCode * 59 + this.Ids.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.Eip != null) hashCode = hashCode * 59 + this.Eip.GetHashCode();
                 return hashCode;
             }
         }

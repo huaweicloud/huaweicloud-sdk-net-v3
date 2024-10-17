@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public bool Equals(UpdateLineGroupsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LinegroupId != input.LinegroupId || (this.LinegroupId != null && !this.LinegroupId.Equals(input.LinegroupId))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
-            return 
-                (
-                    this.LinegroupId == input.LinegroupId ||
-                    (this.LinegroupId != null &&
-                    this.LinegroupId.Equals(input.LinegroupId))
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LinegroupId != null)
-                    hashCode = hashCode * 59 + this.LinegroupId.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                var hashCode = 41;
+                if (this.LinegroupId != null) hashCode = hashCode * 59 + this.LinegroupId.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

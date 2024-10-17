@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(BatchAddAvailableZonesRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AvailabilityZoneList != input.AvailabilityZoneList || (this.AvailabilityZoneList != null && input.AvailabilityZoneList != null && !this.AvailabilityZoneList.SequenceEqual(input.AvailabilityZoneList))) return false;
 
-            return 
-                (
-                    this.AvailabilityZoneList == input.AvailabilityZoneList ||
-                    this.AvailabilityZoneList != null &&
-                    input.AvailabilityZoneList != null &&
-                    this.AvailabilityZoneList.SequenceEqual(input.AvailabilityZoneList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AvailabilityZoneList != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZoneList.GetHashCode();
+                var hashCode = 41;
+                if (this.AvailabilityZoneList != null) hashCode = hashCode * 59 + this.AvailabilityZoneList.GetHashCode();
                 return hashCode;
             }
         }

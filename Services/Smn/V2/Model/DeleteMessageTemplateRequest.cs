@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public bool Equals(DeleteMessageTemplateRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MessageTemplateId != input.MessageTemplateId || (this.MessageTemplateId != null && !this.MessageTemplateId.Equals(input.MessageTemplateId))) return false;
 
-            return 
-                (
-                    this.MessageTemplateId == input.MessageTemplateId ||
-                    (this.MessageTemplateId != null &&
-                    this.MessageTemplateId.Equals(input.MessageTemplateId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MessageTemplateId != null)
-                    hashCode = hashCode * 59 + this.MessageTemplateId.GetHashCode();
+                var hashCode = 41;
+                if (this.MessageTemplateId != null) hashCode = hashCode * 59 + this.MessageTemplateId.GetHashCode();
                 return hashCode;
             }
         }

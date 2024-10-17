@@ -189,25 +189,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(ScalingPolicyActionV1 input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Operation != input.Operation) return false;
+            if (this.InstanceNumber != input.InstanceNumber || (this.InstanceNumber != null && !this.InstanceNumber.Equals(input.InstanceNumber))) return false;
+            if (this.InstancePercentage != input.InstancePercentage || (this.InstancePercentage != null && !this.InstancePercentage.Equals(input.InstancePercentage))) return false;
 
-            return 
-                (
-                    this.Operation == input.Operation ||
-                    (this.Operation != null &&
-                    this.Operation.Equals(input.Operation))
-                ) && 
-                (
-                    this.InstanceNumber == input.InstanceNumber ||
-                    (this.InstanceNumber != null &&
-                    this.InstanceNumber.Equals(input.InstanceNumber))
-                ) && 
-                (
-                    this.InstancePercentage == input.InstancePercentage ||
-                    (this.InstancePercentage != null &&
-                    this.InstancePercentage.Equals(input.InstancePercentage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -217,13 +204,10 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Operation != null)
-                    hashCode = hashCode * 59 + this.Operation.GetHashCode();
-                if (this.InstanceNumber != null)
-                    hashCode = hashCode * 59 + this.InstanceNumber.GetHashCode();
-                if (this.InstancePercentage != null)
-                    hashCode = hashCode * 59 + this.InstancePercentage.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Operation.GetHashCode();
+                if (this.InstanceNumber != null) hashCode = hashCode * 59 + this.InstanceNumber.GetHashCode();
+                if (this.InstancePercentage != null) hashCode = hashCode * 59 + this.InstancePercentage.GetHashCode();
                 return hashCode;
             }
         }

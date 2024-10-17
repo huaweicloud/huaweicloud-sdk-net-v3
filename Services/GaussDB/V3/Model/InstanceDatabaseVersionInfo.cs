@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(InstanceDatabaseVersionInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CurrentVersion != input.CurrentVersion || (this.CurrentVersion != null && !this.CurrentVersion.Equals(input.CurrentVersion))) return false;
+            if (this.CurrentKernelVersion != input.CurrentKernelVersion || (this.CurrentKernelVersion != null && !this.CurrentKernelVersion.Equals(input.CurrentKernelVersion))) return false;
+            if (this.LatestVersion != input.LatestVersion || (this.LatestVersion != null && !this.LatestVersion.Equals(input.LatestVersion))) return false;
+            if (this.LatestKernelVersion != input.LatestKernelVersion || (this.LatestKernelVersion != null && !this.LatestKernelVersion.Equals(input.LatestKernelVersion))) return false;
 
-            return 
-                (
-                    this.CurrentVersion == input.CurrentVersion ||
-                    (this.CurrentVersion != null &&
-                    this.CurrentVersion.Equals(input.CurrentVersion))
-                ) && 
-                (
-                    this.CurrentKernelVersion == input.CurrentKernelVersion ||
-                    (this.CurrentKernelVersion != null &&
-                    this.CurrentKernelVersion.Equals(input.CurrentKernelVersion))
-                ) && 
-                (
-                    this.LatestVersion == input.LatestVersion ||
-                    (this.LatestVersion != null &&
-                    this.LatestVersion.Equals(input.LatestVersion))
-                ) && 
-                (
-                    this.LatestKernelVersion == input.LatestKernelVersion ||
-                    (this.LatestKernelVersion != null &&
-                    this.LatestKernelVersion.Equals(input.LatestKernelVersion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CurrentVersion != null)
-                    hashCode = hashCode * 59 + this.CurrentVersion.GetHashCode();
-                if (this.CurrentKernelVersion != null)
-                    hashCode = hashCode * 59 + this.CurrentKernelVersion.GetHashCode();
-                if (this.LatestVersion != null)
-                    hashCode = hashCode * 59 + this.LatestVersion.GetHashCode();
-                if (this.LatestKernelVersion != null)
-                    hashCode = hashCode * 59 + this.LatestKernelVersion.GetHashCode();
+                var hashCode = 41;
+                if (this.CurrentVersion != null) hashCode = hashCode * 59 + this.CurrentVersion.GetHashCode();
+                if (this.CurrentKernelVersion != null) hashCode = hashCode * 59 + this.CurrentKernelVersion.GetHashCode();
+                if (this.LatestVersion != null) hashCode = hashCode * 59 + this.LatestVersion.GetHashCode();
+                if (this.LatestKernelVersion != null) hashCode = hashCode * 59 + this.LatestKernelVersion.GetHashCode();
                 return hashCode;
             }
         }

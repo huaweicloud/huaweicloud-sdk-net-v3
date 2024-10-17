@@ -82,35 +82,14 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(StartWorkflowExecutionRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.WorkflowId != input.WorkflowId || (this.WorkflowId != null && !this.WorkflowId.Equals(input.WorkflowId))) return false;
+            if (this.XCreateTime != input.XCreateTime || (this.XCreateTime != null && !this.XCreateTime.Equals(input.XCreateTime))) return false;
+            if (this.XWorkflowRunID != input.XWorkflowRunID || (this.XWorkflowRunID != null && !this.XWorkflowRunID.Equals(input.XWorkflowRunID))) return false;
+            if (this.XWorkflowRunMergeFnParameters != input.XWorkflowRunMergeFnParameters || (this.XWorkflowRunMergeFnParameters != null && !this.XWorkflowRunMergeFnParameters.Equals(input.XWorkflowRunMergeFnParameters))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
-            return 
-                (
-                    this.WorkflowId == input.WorkflowId ||
-                    (this.WorkflowId != null &&
-                    this.WorkflowId.Equals(input.WorkflowId))
-                ) && 
-                (
-                    this.XCreateTime == input.XCreateTime ||
-                    (this.XCreateTime != null &&
-                    this.XCreateTime.Equals(input.XCreateTime))
-                ) && 
-                (
-                    this.XWorkflowRunID == input.XWorkflowRunID ||
-                    (this.XWorkflowRunID != null &&
-                    this.XWorkflowRunID.Equals(input.XWorkflowRunID))
-                ) && 
-                (
-                    this.XWorkflowRunMergeFnParameters == input.XWorkflowRunMergeFnParameters ||
-                    (this.XWorkflowRunMergeFnParameters != null &&
-                    this.XWorkflowRunMergeFnParameters.Equals(input.XWorkflowRunMergeFnParameters))
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
-                );
+            return true;
         }
 
         /// <summary>
@@ -120,17 +99,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.WorkflowId != null)
-                    hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
-                if (this.XCreateTime != null)
-                    hashCode = hashCode * 59 + this.XCreateTime.GetHashCode();
-                if (this.XWorkflowRunID != null)
-                    hashCode = hashCode * 59 + this.XWorkflowRunID.GetHashCode();
-                if (this.XWorkflowRunMergeFnParameters != null)
-                    hashCode = hashCode * 59 + this.XWorkflowRunMergeFnParameters.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                var hashCode = 41;
+                if (this.WorkflowId != null) hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
+                if (this.XCreateTime != null) hashCode = hashCode * 59 + this.XCreateTime.GetHashCode();
+                if (this.XWorkflowRunID != null) hashCode = hashCode * 59 + this.XWorkflowRunID.GetHashCode();
+                if (this.XWorkflowRunMergeFnParameters != null) hashCode = hashCode * 59 + this.XWorkflowRunMergeFnParameters.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

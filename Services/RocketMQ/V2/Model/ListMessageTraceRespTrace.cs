@@ -554,110 +554,29 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(ListMessageTraceRespTrace input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Success != input.Success || (this.Success != null && !this.Success.Equals(input.Success))) return false;
+            if (this.TraceType != input.TraceType) return false;
+            if (this.Timestamp != input.Timestamp || (this.Timestamp != null && !this.Timestamp.Equals(input.Timestamp))) return false;
+            if (this.GroupName != input.GroupName || (this.GroupName != null && !this.GroupName.Equals(input.GroupName))) return false;
+            if (this.CostTime != input.CostTime || (this.CostTime != null && !this.CostTime.Equals(input.CostTime))) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
+            if (this.ConsumeStatus != input.ConsumeStatus || (this.ConsumeStatus != null && !this.ConsumeStatus.Equals(input.ConsumeStatus))) return false;
+            if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;
+            if (this.MsgId != input.MsgId || (this.MsgId != null && !this.MsgId.Equals(input.MsgId))) return false;
+            if (this.OffsetMsgId != input.OffsetMsgId || (this.OffsetMsgId != null && !this.OffsetMsgId.Equals(input.OffsetMsgId))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && !this.Tags.Equals(input.Tags))) return false;
+            if (this.Keys != input.Keys || (this.Keys != null && !this.Keys.Equals(input.Keys))) return false;
+            if (this.StoreHost != input.StoreHost || (this.StoreHost != null && !this.StoreHost.Equals(input.StoreHost))) return false;
+            if (this.ClientHost != input.ClientHost || (this.ClientHost != null && !this.ClientHost.Equals(input.ClientHost))) return false;
+            if (this.RetryTimes != input.RetryTimes || (this.RetryTimes != null && !this.RetryTimes.Equals(input.RetryTimes))) return false;
+            if (this.BodyLength != input.BodyLength || (this.BodyLength != null && !this.BodyLength.Equals(input.BodyLength))) return false;
+            if (this.MsgType != input.MsgType) return false;
+            if (this.TransactionState != input.TransactionState) return false;
+            if (this.TransactionId != input.TransactionId || (this.TransactionId != null && !this.TransactionId.Equals(input.TransactionId))) return false;
+            if (this.FromTransactionCheck != input.FromTransactionCheck || (this.FromTransactionCheck != null && !this.FromTransactionCheck.Equals(input.FromTransactionCheck))) return false;
 
-            return 
-                (
-                    this.Success == input.Success ||
-                    (this.Success != null &&
-                    this.Success.Equals(input.Success))
-                ) && 
-                (
-                    this.TraceType == input.TraceType ||
-                    (this.TraceType != null &&
-                    this.TraceType.Equals(input.TraceType))
-                ) && 
-                (
-                    this.Timestamp == input.Timestamp ||
-                    (this.Timestamp != null &&
-                    this.Timestamp.Equals(input.Timestamp))
-                ) && 
-                (
-                    this.GroupName == input.GroupName ||
-                    (this.GroupName != null &&
-                    this.GroupName.Equals(input.GroupName))
-                ) && 
-                (
-                    this.CostTime == input.CostTime ||
-                    (this.CostTime != null &&
-                    this.CostTime.Equals(input.CostTime))
-                ) && 
-                (
-                    this.RequestId == input.RequestId ||
-                    (this.RequestId != null &&
-                    this.RequestId.Equals(input.RequestId))
-                ) && 
-                (
-                    this.ConsumeStatus == input.ConsumeStatus ||
-                    (this.ConsumeStatus != null &&
-                    this.ConsumeStatus.Equals(input.ConsumeStatus))
-                ) && 
-                (
-                    this.Topic == input.Topic ||
-                    (this.Topic != null &&
-                    this.Topic.Equals(input.Topic))
-                ) && 
-                (
-                    this.MsgId == input.MsgId ||
-                    (this.MsgId != null &&
-                    this.MsgId.Equals(input.MsgId))
-                ) && 
-                (
-                    this.OffsetMsgId == input.OffsetMsgId ||
-                    (this.OffsetMsgId != null &&
-                    this.OffsetMsgId.Equals(input.OffsetMsgId))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    (this.Tags != null &&
-                    this.Tags.Equals(input.Tags))
-                ) && 
-                (
-                    this.Keys == input.Keys ||
-                    (this.Keys != null &&
-                    this.Keys.Equals(input.Keys))
-                ) && 
-                (
-                    this.StoreHost == input.StoreHost ||
-                    (this.StoreHost != null &&
-                    this.StoreHost.Equals(input.StoreHost))
-                ) && 
-                (
-                    this.ClientHost == input.ClientHost ||
-                    (this.ClientHost != null &&
-                    this.ClientHost.Equals(input.ClientHost))
-                ) && 
-                (
-                    this.RetryTimes == input.RetryTimes ||
-                    (this.RetryTimes != null &&
-                    this.RetryTimes.Equals(input.RetryTimes))
-                ) && 
-                (
-                    this.BodyLength == input.BodyLength ||
-                    (this.BodyLength != null &&
-                    this.BodyLength.Equals(input.BodyLength))
-                ) && 
-                (
-                    this.MsgType == input.MsgType ||
-                    (this.MsgType != null &&
-                    this.MsgType.Equals(input.MsgType))
-                ) && 
-                (
-                    this.TransactionState == input.TransactionState ||
-                    (this.TransactionState != null &&
-                    this.TransactionState.Equals(input.TransactionState))
-                ) && 
-                (
-                    this.TransactionId == input.TransactionId ||
-                    (this.TransactionId != null &&
-                    this.TransactionId.Equals(input.TransactionId))
-                ) && 
-                (
-                    this.FromTransactionCheck == input.FromTransactionCheck ||
-                    (this.FromTransactionCheck != null &&
-                    this.FromTransactionCheck.Equals(input.FromTransactionCheck))
-                );
+            return true;
         }
 
         /// <summary>
@@ -667,47 +586,27 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Success != null)
-                    hashCode = hashCode * 59 + this.Success.GetHashCode();
-                if (this.TraceType != null)
-                    hashCode = hashCode * 59 + this.TraceType.GetHashCode();
-                if (this.Timestamp != null)
-                    hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
-                if (this.GroupName != null)
-                    hashCode = hashCode * 59 + this.GroupName.GetHashCode();
-                if (this.CostTime != null)
-                    hashCode = hashCode * 59 + this.CostTime.GetHashCode();
-                if (this.RequestId != null)
-                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
-                if (this.ConsumeStatus != null)
-                    hashCode = hashCode * 59 + this.ConsumeStatus.GetHashCode();
-                if (this.Topic != null)
-                    hashCode = hashCode * 59 + this.Topic.GetHashCode();
-                if (this.MsgId != null)
-                    hashCode = hashCode * 59 + this.MsgId.GetHashCode();
-                if (this.OffsetMsgId != null)
-                    hashCode = hashCode * 59 + this.OffsetMsgId.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.Keys != null)
-                    hashCode = hashCode * 59 + this.Keys.GetHashCode();
-                if (this.StoreHost != null)
-                    hashCode = hashCode * 59 + this.StoreHost.GetHashCode();
-                if (this.ClientHost != null)
-                    hashCode = hashCode * 59 + this.ClientHost.GetHashCode();
-                if (this.RetryTimes != null)
-                    hashCode = hashCode * 59 + this.RetryTimes.GetHashCode();
-                if (this.BodyLength != null)
-                    hashCode = hashCode * 59 + this.BodyLength.GetHashCode();
-                if (this.MsgType != null)
-                    hashCode = hashCode * 59 + this.MsgType.GetHashCode();
-                if (this.TransactionState != null)
-                    hashCode = hashCode * 59 + this.TransactionState.GetHashCode();
-                if (this.TransactionId != null)
-                    hashCode = hashCode * 59 + this.TransactionId.GetHashCode();
-                if (this.FromTransactionCheck != null)
-                    hashCode = hashCode * 59 + this.FromTransactionCheck.GetHashCode();
+                var hashCode = 41;
+                if (this.Success != null) hashCode = hashCode * 59 + this.Success.GetHashCode();
+                hashCode = hashCode * 59 + this.TraceType.GetHashCode();
+                if (this.Timestamp != null) hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
+                if (this.GroupName != null) hashCode = hashCode * 59 + this.GroupName.GetHashCode();
+                if (this.CostTime != null) hashCode = hashCode * 59 + this.CostTime.GetHashCode();
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                if (this.ConsumeStatus != null) hashCode = hashCode * 59 + this.ConsumeStatus.GetHashCode();
+                if (this.Topic != null) hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.MsgId != null) hashCode = hashCode * 59 + this.MsgId.GetHashCode();
+                if (this.OffsetMsgId != null) hashCode = hashCode * 59 + this.OffsetMsgId.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.Keys != null) hashCode = hashCode * 59 + this.Keys.GetHashCode();
+                if (this.StoreHost != null) hashCode = hashCode * 59 + this.StoreHost.GetHashCode();
+                if (this.ClientHost != null) hashCode = hashCode * 59 + this.ClientHost.GetHashCode();
+                if (this.RetryTimes != null) hashCode = hashCode * 59 + this.RetryTimes.GetHashCode();
+                if (this.BodyLength != null) hashCode = hashCode * 59 + this.BodyLength.GetHashCode();
+                hashCode = hashCode * 59 + this.MsgType.GetHashCode();
+                hashCode = hashCode * 59 + this.TransactionState.GetHashCode();
+                if (this.TransactionId != null) hashCode = hashCode * 59 + this.TransactionId.GetHashCode();
+                if (this.FromTransactionCheck != null) hashCode = hashCode * 59 + this.FromTransactionCheck.GetHashCode();
                 return hashCode;
             }
         }

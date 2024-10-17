@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public bool Equals(CreateManualImageSyncRepoRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ImageTag != input.ImageTag || (this.ImageTag != null && input.ImageTag != null && !this.ImageTag.SequenceEqual(input.ImageTag))) return false;
+            if (this.Override != input.Override || (this.Override != null && !this.Override.Equals(input.Override))) return false;
+            if (this.RemoteNamespace != input.RemoteNamespace || (this.RemoteNamespace != null && !this.RemoteNamespace.Equals(input.RemoteNamespace))) return false;
+            if (this.RemoteRegionId != input.RemoteRegionId || (this.RemoteRegionId != null && !this.RemoteRegionId.Equals(input.RemoteRegionId))) return false;
 
-            return 
-                (
-                    this.ImageTag == input.ImageTag ||
-                    this.ImageTag != null &&
-                    input.ImageTag != null &&
-                    this.ImageTag.SequenceEqual(input.ImageTag)
-                ) && 
-                (
-                    this.Override == input.Override ||
-                    (this.Override != null &&
-                    this.Override.Equals(input.Override))
-                ) && 
-                (
-                    this.RemoteNamespace == input.RemoteNamespace ||
-                    (this.RemoteNamespace != null &&
-                    this.RemoteNamespace.Equals(input.RemoteNamespace))
-                ) && 
-                (
-                    this.RemoteRegionId == input.RemoteRegionId ||
-                    (this.RemoteRegionId != null &&
-                    this.RemoteRegionId.Equals(input.RemoteRegionId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ImageTag != null)
-                    hashCode = hashCode * 59 + this.ImageTag.GetHashCode();
-                if (this.Override != null)
-                    hashCode = hashCode * 59 + this.Override.GetHashCode();
-                if (this.RemoteNamespace != null)
-                    hashCode = hashCode * 59 + this.RemoteNamespace.GetHashCode();
-                if (this.RemoteRegionId != null)
-                    hashCode = hashCode * 59 + this.RemoteRegionId.GetHashCode();
+                var hashCode = 41;
+                if (this.ImageTag != null) hashCode = hashCode * 59 + this.ImageTag.GetHashCode();
+                if (this.Override != null) hashCode = hashCode * 59 + this.Override.GetHashCode();
+                if (this.RemoteNamespace != null) hashCode = hashCode * 59 + this.RemoteNamespace.GetHashCode();
+                if (this.RemoteRegionId != null) hashCode = hashCode * 59 + this.RemoteRegionId.GetHashCode();
                 return hashCode;
             }
         }

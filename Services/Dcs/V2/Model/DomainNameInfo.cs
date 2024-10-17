@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(DomainNameInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SupportPublicResolve != input.SupportPublicResolve || (this.SupportPublicResolve != null && !this.SupportPublicResolve.Equals(input.SupportPublicResolve))) return false;
+            if (this.IsLatestRules != input.IsLatestRules || (this.IsLatestRules != null && !this.IsLatestRules.Equals(input.IsLatestRules))) return false;
+            if (this.ZoneName != input.ZoneName || (this.ZoneName != null && !this.ZoneName.Equals(input.ZoneName))) return false;
+            if (this.HistoryDomainNames != input.HistoryDomainNames || (this.HistoryDomainNames != null && input.HistoryDomainNames != null && !this.HistoryDomainNames.SequenceEqual(input.HistoryDomainNames))) return false;
 
-            return 
-                (
-                    this.SupportPublicResolve == input.SupportPublicResolve ||
-                    (this.SupportPublicResolve != null &&
-                    this.SupportPublicResolve.Equals(input.SupportPublicResolve))
-                ) && 
-                (
-                    this.IsLatestRules == input.IsLatestRules ||
-                    (this.IsLatestRules != null &&
-                    this.IsLatestRules.Equals(input.IsLatestRules))
-                ) && 
-                (
-                    this.ZoneName == input.ZoneName ||
-                    (this.ZoneName != null &&
-                    this.ZoneName.Equals(input.ZoneName))
-                ) && 
-                (
-                    this.HistoryDomainNames == input.HistoryDomainNames ||
-                    this.HistoryDomainNames != null &&
-                    input.HistoryDomainNames != null &&
-                    this.HistoryDomainNames.SequenceEqual(input.HistoryDomainNames)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SupportPublicResolve != null)
-                    hashCode = hashCode * 59 + this.SupportPublicResolve.GetHashCode();
-                if (this.IsLatestRules != null)
-                    hashCode = hashCode * 59 + this.IsLatestRules.GetHashCode();
-                if (this.ZoneName != null)
-                    hashCode = hashCode * 59 + this.ZoneName.GetHashCode();
-                if (this.HistoryDomainNames != null)
-                    hashCode = hashCode * 59 + this.HistoryDomainNames.GetHashCode();
+                var hashCode = 41;
+                if (this.SupportPublicResolve != null) hashCode = hashCode * 59 + this.SupportPublicResolve.GetHashCode();
+                if (this.IsLatestRules != null) hashCode = hashCode * 59 + this.IsLatestRules.GetHashCode();
+                if (this.ZoneName != null) hashCode = hashCode * 59 + this.ZoneName.GetHashCode();
+                if (this.HistoryDomainNames != null) hashCode = hashCode * 59 + this.HistoryDomainNames.GetHashCode();
                 return hashCode;
             }
         }

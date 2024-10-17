@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(UrlRewriteCondition input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MatchType != input.MatchType || (this.MatchType != null && !this.MatchType.Equals(input.MatchType))) return false;
+            if (this.MatchValue != input.MatchValue || (this.MatchValue != null && !this.MatchValue.Equals(input.MatchValue))) return false;
+            if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
 
-            return 
-                (
-                    this.MatchType == input.MatchType ||
-                    (this.MatchType != null &&
-                    this.MatchType.Equals(input.MatchType))
-                ) && 
-                (
-                    this.MatchValue == input.MatchValue ||
-                    (this.MatchValue != null &&
-                    this.MatchValue.Equals(input.MatchValue))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    (this.Priority != null &&
-                    this.Priority.Equals(input.Priority))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MatchType != null)
-                    hashCode = hashCode * 59 + this.MatchType.GetHashCode();
-                if (this.MatchValue != null)
-                    hashCode = hashCode * 59 + this.MatchValue.GetHashCode();
-                if (this.Priority != null)
-                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                var hashCode = 41;
+                if (this.MatchType != null) hashCode = hashCode * 59 + this.MatchType.GetHashCode();
+                if (this.MatchValue != null) hashCode = hashCode * 59 + this.MatchValue.GetHashCode();
+                if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 return hashCode;
             }
         }

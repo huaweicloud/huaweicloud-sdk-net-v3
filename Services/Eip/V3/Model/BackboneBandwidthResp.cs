@@ -210,40 +210,15 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(BackboneBandwidthResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.AdminStatus != input.AdminStatus || (this.AdminStatus != null && !this.AdminStatus.Equals(input.AdminStatus))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.ShortId != input.ShortId || (this.ShortId != null && !this.ShortId.Equals(input.ShortId))) return false;
+            if (this.SlaLevel != input.SlaLevel) return false;
+            if (this.Dscp != input.Dscp || (this.Dscp != null && !this.Dscp.Equals(input.Dscp))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.AdminStatus == input.AdminStatus ||
-                    (this.AdminStatus != null &&
-                    this.AdminStatus.Equals(input.AdminStatus))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.ShortId == input.ShortId ||
-                    (this.ShortId != null &&
-                    this.ShortId.Equals(input.ShortId))
-                ) && 
-                (
-                    this.SlaLevel == input.SlaLevel ||
-                    (this.SlaLevel != null &&
-                    this.SlaLevel.Equals(input.SlaLevel))
-                ) && 
-                (
-                    this.Dscp == input.Dscp ||
-                    (this.Dscp != null &&
-                    this.Dscp.Equals(input.Dscp))
-                );
+            return true;
         }
 
         /// <summary>
@@ -253,19 +228,13 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.AdminStatus != null)
-                    hashCode = hashCode * 59 + this.AdminStatus.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.ShortId != null)
-                    hashCode = hashCode * 59 + this.ShortId.GetHashCode();
-                if (this.SlaLevel != null)
-                    hashCode = hashCode * 59 + this.SlaLevel.GetHashCode();
-                if (this.Dscp != null)
-                    hashCode = hashCode * 59 + this.Dscp.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.AdminStatus != null) hashCode = hashCode * 59 + this.AdminStatus.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.ShortId != null) hashCode = hashCode * 59 + this.ShortId.GetHashCode();
+                hashCode = hashCode * 59 + this.SlaLevel.GetHashCode();
+                if (this.Dscp != null) hashCode = hashCode * 59 + this.Dscp.GetHashCode();
                 return hashCode;
             }
         }

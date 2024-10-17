@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ImportBatchCreateJobsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AsyncJobId != input.AsyncJobId || (this.AsyncJobId != null && !this.AsyncJobId.Equals(input.AsyncJobId))) return false;
+            if (this.ImportErrorMessages != input.ImportErrorMessages || (this.ImportErrorMessages != null && input.ImportErrorMessages != null && !this.ImportErrorMessages.SequenceEqual(input.ImportErrorMessages))) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
+            if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
 
-            return 
-                (
-                    this.AsyncJobId == input.AsyncJobId ||
-                    (this.AsyncJobId != null &&
-                    this.AsyncJobId.Equals(input.AsyncJobId))
-                ) && 
-                (
-                    this.ImportErrorMessages == input.ImportErrorMessages ||
-                    this.ImportErrorMessages != null &&
-                    input.ImportErrorMessages != null &&
-                    this.ImportErrorMessages.SequenceEqual(input.ImportErrorMessages)
-                ) && 
-                (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
-                ) && 
-                (
-                    this.ErrorMsg == input.ErrorMsg ||
-                    (this.ErrorMsg != null &&
-                    this.ErrorMsg.Equals(input.ErrorMsg))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AsyncJobId != null)
-                    hashCode = hashCode * 59 + this.AsyncJobId.GetHashCode();
-                if (this.ImportErrorMessages != null)
-                    hashCode = hashCode * 59 + this.ImportErrorMessages.GetHashCode();
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.ErrorMsg != null)
-                    hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
+                var hashCode = 41;
+                if (this.AsyncJobId != null) hashCode = hashCode * 59 + this.AsyncJobId.GetHashCode();
+                if (this.ImportErrorMessages != null) hashCode = hashCode * 59 + this.ImportErrorMessages.GetHashCode();
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
                 return hashCode;
             }
         }

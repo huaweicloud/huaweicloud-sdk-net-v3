@@ -1028,80 +1028,23 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(ChildrenJobInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BillingTag != input.BillingTag || (this.BillingTag != null && !this.BillingTag.Equals(input.BillingTag))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.DbUseType != input.DbUseType) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.EngineType != input.EngineType) return false;
+            if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.JobDirection != input.JobDirection) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.NetType != input.NetType) return false;
+            if (this.NodeNewFramework != input.NodeNewFramework || (this.NodeNewFramework != null && !this.NodeNewFramework.Equals(input.NodeNewFramework))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.TaskType != input.TaskType) return false;
+            if (this.JobAction != input.JobAction || (this.JobAction != null && !this.JobAction.Equals(input.JobAction))) return false;
 
-            return 
-                (
-                    this.BillingTag == input.BillingTag ||
-                    (this.BillingTag != null &&
-                    this.BillingTag.Equals(input.BillingTag))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.DbUseType == input.DbUseType ||
-                    (this.DbUseType != null &&
-                    this.DbUseType.Equals(input.DbUseType))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.EngineType == input.EngineType ||
-                    (this.EngineType != null &&
-                    this.EngineType.Equals(input.EngineType))
-                ) && 
-                (
-                    this.ErrorMsg == input.ErrorMsg ||
-                    (this.ErrorMsg != null &&
-                    this.ErrorMsg.Equals(input.ErrorMsg))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.JobDirection == input.JobDirection ||
-                    (this.JobDirection != null &&
-                    this.JobDirection.Equals(input.JobDirection))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.NetType == input.NetType ||
-                    (this.NetType != null &&
-                    this.NetType.Equals(input.NetType))
-                ) && 
-                (
-                    this.NodeNewFramework == input.NodeNewFramework ||
-                    (this.NodeNewFramework != null &&
-                    this.NodeNewFramework.Equals(input.NodeNewFramework))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.TaskType == input.TaskType ||
-                    (this.TaskType != null &&
-                    this.TaskType.Equals(input.TaskType))
-                ) && 
-                (
-                    this.JobAction == input.JobAction ||
-                    (this.JobAction != null &&
-                    this.JobAction.Equals(input.JobAction))
-                );
+            return true;
         }
 
         /// <summary>
@@ -1111,35 +1054,21 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BillingTag != null)
-                    hashCode = hashCode * 59 + this.BillingTag.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.DbUseType != null)
-                    hashCode = hashCode * 59 + this.DbUseType.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.EngineType != null)
-                    hashCode = hashCode * 59 + this.EngineType.GetHashCode();
-                if (this.ErrorMsg != null)
-                    hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.JobDirection != null)
-                    hashCode = hashCode * 59 + this.JobDirection.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.NetType != null)
-                    hashCode = hashCode * 59 + this.NetType.GetHashCode();
-                if (this.NodeNewFramework != null)
-                    hashCode = hashCode * 59 + this.NodeNewFramework.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.TaskType != null)
-                    hashCode = hashCode * 59 + this.TaskType.GetHashCode();
-                if (this.JobAction != null)
-                    hashCode = hashCode * 59 + this.JobAction.GetHashCode();
+                var hashCode = 41;
+                if (this.BillingTag != null) hashCode = hashCode * 59 + this.BillingTag.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                hashCode = hashCode * 59 + this.DbUseType.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                hashCode = hashCode * 59 + this.EngineType.GetHashCode();
+                if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                hashCode = hashCode * 59 + this.JobDirection.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = hashCode * 59 + this.NetType.GetHashCode();
+                if (this.NodeNewFramework != null) hashCode = hashCode * 59 + this.NodeNewFramework.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                hashCode = hashCode * 59 + this.TaskType.GetHashCode();
+                if (this.JobAction != null) hashCode = hashCode * 59 + this.JobAction.GetHashCode();
                 return hashCode;
             }
         }

@@ -170,16 +170,10 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// </summary>
         public bool Equals(ShowUserDisclaimerRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Fields != input.Fields || (this.Fields != null && input.Fields != null && !this.Fields.SequenceEqual(input.Fields))) return false;
 
-            return 
-                (
-                    this.Fields == input.Fields ||
-                    this.Fields != null &&
-                    input.Fields != null &&
-                    this.Fields.SequenceEqual(input.Fields)
-                );
+            return true;
         }
 
         /// <summary>
@@ -189,9 +183,8 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Fields != null)
-                    hashCode = hashCode * 59 + this.Fields.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Fields.GetHashCode();
                 return hashCode;
             }
         }

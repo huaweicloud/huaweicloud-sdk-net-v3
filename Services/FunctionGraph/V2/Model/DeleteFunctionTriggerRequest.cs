@@ -270,25 +270,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(DeleteFunctionTriggerRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FunctionUrn != input.FunctionUrn || (this.FunctionUrn != null && !this.FunctionUrn.Equals(input.FunctionUrn))) return false;
+            if (this.TriggerTypeCode != input.TriggerTypeCode) return false;
+            if (this.TriggerId != input.TriggerId || (this.TriggerId != null && !this.TriggerId.Equals(input.TriggerId))) return false;
 
-            return 
-                (
-                    this.FunctionUrn == input.FunctionUrn ||
-                    (this.FunctionUrn != null &&
-                    this.FunctionUrn.Equals(input.FunctionUrn))
-                ) && 
-                (
-                    this.TriggerTypeCode == input.TriggerTypeCode ||
-                    (this.TriggerTypeCode != null &&
-                    this.TriggerTypeCode.Equals(input.TriggerTypeCode))
-                ) && 
-                (
-                    this.TriggerId == input.TriggerId ||
-                    (this.TriggerId != null &&
-                    this.TriggerId.Equals(input.TriggerId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -298,13 +285,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FunctionUrn != null)
-                    hashCode = hashCode * 59 + this.FunctionUrn.GetHashCode();
-                if (this.TriggerTypeCode != null)
-                    hashCode = hashCode * 59 + this.TriggerTypeCode.GetHashCode();
-                if (this.TriggerId != null)
-                    hashCode = hashCode * 59 + this.TriggerId.GetHashCode();
+                var hashCode = 41;
+                if (this.FunctionUrn != null) hashCode = hashCode * 59 + this.FunctionUrn.GetHashCode();
+                hashCode = hashCode * 59 + this.TriggerTypeCode.GetHashCode();
+                if (this.TriggerId != null) hashCode = hashCode * 59 + this.TriggerId.GetHashCode();
                 return hashCode;
             }
         }

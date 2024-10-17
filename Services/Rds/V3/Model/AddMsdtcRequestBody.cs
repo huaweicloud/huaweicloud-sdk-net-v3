@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(AddMsdtcRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Hosts != input.Hosts || (this.Hosts != null && input.Hosts != null && !this.Hosts.SequenceEqual(input.Hosts))) return false;
 
-            return 
-                (
-                    this.Hosts == input.Hosts ||
-                    this.Hosts != null &&
-                    input.Hosts != null &&
-                    this.Hosts.SequenceEqual(input.Hosts)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Hosts != null)
-                    hashCode = hashCode * 59 + this.Hosts.GetHashCode();
+                var hashCode = 41;
+                if (this.Hosts != null) hashCode = hashCode * 59 + this.Hosts.GetHashCode();
                 return hashCode;
             }
         }

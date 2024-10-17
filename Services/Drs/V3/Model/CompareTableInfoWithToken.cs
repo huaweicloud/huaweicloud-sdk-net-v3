@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(CompareTableInfoWithToken input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TableName != input.TableName || (this.TableName != null && !this.TableName.Equals(input.TableName))) return false;
+            if (this.MinToken != input.MinToken || (this.MinToken != null && !this.MinToken.Equals(input.MinToken))) return false;
+            if (this.MaxToken != input.MaxToken || (this.MaxToken != null && !this.MaxToken.Equals(input.MaxToken))) return false;
 
-            return 
-                (
-                    this.TableName == input.TableName ||
-                    (this.TableName != null &&
-                    this.TableName.Equals(input.TableName))
-                ) && 
-                (
-                    this.MinToken == input.MinToken ||
-                    (this.MinToken != null &&
-                    this.MinToken.Equals(input.MinToken))
-                ) && 
-                (
-                    this.MaxToken == input.MaxToken ||
-                    (this.MaxToken != null &&
-                    this.MaxToken.Equals(input.MaxToken))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TableName != null)
-                    hashCode = hashCode * 59 + this.TableName.GetHashCode();
-                if (this.MinToken != null)
-                    hashCode = hashCode * 59 + this.MinToken.GetHashCode();
-                if (this.MaxToken != null)
-                    hashCode = hashCode * 59 + this.MaxToken.GetHashCode();
+                var hashCode = 41;
+                if (this.TableName != null) hashCode = hashCode * 59 + this.TableName.GetHashCode();
+                if (this.MinToken != null) hashCode = hashCode * 59 + this.MinToken.GetHashCode();
+                if (this.MaxToken != null) hashCode = hashCode * 59 + this.MaxToken.GetHashCode();
                 return hashCode;
             }
         }

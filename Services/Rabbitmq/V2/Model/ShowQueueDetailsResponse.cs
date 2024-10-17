@@ -112,62 +112,19 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public bool Equals(ShowQueueDetailsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Vhost != input.Vhost || (this.Vhost != null && !this.Vhost.Equals(input.Vhost))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Durable != input.Durable || (this.Durable != null && !this.Durable.Equals(input.Durable))) return false;
+            if (this.AutoDelete != input.AutoDelete || (this.AutoDelete != null && !this.AutoDelete.Equals(input.AutoDelete))) return false;
+            if (this.Messages != input.Messages || (this.Messages != null && !this.Messages.Equals(input.Messages))) return false;
+            if (this.Consumers != input.Consumers || (this.Consumers != null && !this.Consumers.Equals(input.Consumers))) return false;
+            if (this.Policy != input.Policy || (this.Policy != null && !this.Policy.Equals(input.Policy))) return false;
+            if (this.Arguments != input.Arguments || (this.Arguments != null && !this.Arguments.Equals(input.Arguments))) return false;
+            if (this.ConsumerDetails != input.ConsumerDetails || (this.ConsumerDetails != null && input.ConsumerDetails != null && !this.ConsumerDetails.SequenceEqual(input.ConsumerDetails))) return false;
+            if (this.QueueBindings != input.QueueBindings || (this.QueueBindings != null && input.QueueBindings != null && !this.QueueBindings.SequenceEqual(input.QueueBindings))) return false;
 
-            return 
-                (
-                    this.Vhost == input.Vhost ||
-                    (this.Vhost != null &&
-                    this.Vhost.Equals(input.Vhost))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Durable == input.Durable ||
-                    (this.Durable != null &&
-                    this.Durable.Equals(input.Durable))
-                ) && 
-                (
-                    this.AutoDelete == input.AutoDelete ||
-                    (this.AutoDelete != null &&
-                    this.AutoDelete.Equals(input.AutoDelete))
-                ) && 
-                (
-                    this.Messages == input.Messages ||
-                    (this.Messages != null &&
-                    this.Messages.Equals(input.Messages))
-                ) && 
-                (
-                    this.Consumers == input.Consumers ||
-                    (this.Consumers != null &&
-                    this.Consumers.Equals(input.Consumers))
-                ) && 
-                (
-                    this.Policy == input.Policy ||
-                    (this.Policy != null &&
-                    this.Policy.Equals(input.Policy))
-                ) && 
-                (
-                    this.Arguments == input.Arguments ||
-                    (this.Arguments != null &&
-                    this.Arguments.Equals(input.Arguments))
-                ) && 
-                (
-                    this.ConsumerDetails == input.ConsumerDetails ||
-                    this.ConsumerDetails != null &&
-                    input.ConsumerDetails != null &&
-                    this.ConsumerDetails.SequenceEqual(input.ConsumerDetails)
-                ) && 
-                (
-                    this.QueueBindings == input.QueueBindings ||
-                    this.QueueBindings != null &&
-                    input.QueueBindings != null &&
-                    this.QueueBindings.SequenceEqual(input.QueueBindings)
-                );
+            return true;
         }
 
         /// <summary>
@@ -177,27 +134,17 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Vhost != null)
-                    hashCode = hashCode * 59 + this.Vhost.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Durable != null)
-                    hashCode = hashCode * 59 + this.Durable.GetHashCode();
-                if (this.AutoDelete != null)
-                    hashCode = hashCode * 59 + this.AutoDelete.GetHashCode();
-                if (this.Messages != null)
-                    hashCode = hashCode * 59 + this.Messages.GetHashCode();
-                if (this.Consumers != null)
-                    hashCode = hashCode * 59 + this.Consumers.GetHashCode();
-                if (this.Policy != null)
-                    hashCode = hashCode * 59 + this.Policy.GetHashCode();
-                if (this.Arguments != null)
-                    hashCode = hashCode * 59 + this.Arguments.GetHashCode();
-                if (this.ConsumerDetails != null)
-                    hashCode = hashCode * 59 + this.ConsumerDetails.GetHashCode();
-                if (this.QueueBindings != null)
-                    hashCode = hashCode * 59 + this.QueueBindings.GetHashCode();
+                var hashCode = 41;
+                if (this.Vhost != null) hashCode = hashCode * 59 + this.Vhost.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Durable != null) hashCode = hashCode * 59 + this.Durable.GetHashCode();
+                if (this.AutoDelete != null) hashCode = hashCode * 59 + this.AutoDelete.GetHashCode();
+                if (this.Messages != null) hashCode = hashCode * 59 + this.Messages.GetHashCode();
+                if (this.Consumers != null) hashCode = hashCode * 59 + this.Consumers.GetHashCode();
+                if (this.Policy != null) hashCode = hashCode * 59 + this.Policy.GetHashCode();
+                if (this.Arguments != null) hashCode = hashCode * 59 + this.Arguments.GetHashCode();
+                if (this.ConsumerDetails != null) hashCode = hashCode * 59 + this.ConsumerDetails.GetHashCode();
+                if (this.QueueBindings != null) hashCode = hashCode * 59 + this.QueueBindings.GetHashCode();
                 return hashCode;
             }
         }

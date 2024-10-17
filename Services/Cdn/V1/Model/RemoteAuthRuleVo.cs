@@ -147,87 +147,24 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(RemoteAuthRuleVo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AuthServer != input.AuthServer || (this.AuthServer != null && !this.AuthServer.Equals(input.AuthServer))) return false;
+            if (this.RequestMethod != input.RequestMethod || (this.RequestMethod != null && !this.RequestMethod.Equals(input.RequestMethod))) return false;
+            if (this.FileTypeSetting != input.FileTypeSetting || (this.FileTypeSetting != null && !this.FileTypeSetting.Equals(input.FileTypeSetting))) return false;
+            if (this.SpecifiedFileType != input.SpecifiedFileType || (this.SpecifiedFileType != null && !this.SpecifiedFileType.Equals(input.SpecifiedFileType))) return false;
+            if (this.ReserveArgsSetting != input.ReserveArgsSetting || (this.ReserveArgsSetting != null && !this.ReserveArgsSetting.Equals(input.ReserveArgsSetting))) return false;
+            if (this.ReserveArgs != input.ReserveArgs || (this.ReserveArgs != null && !this.ReserveArgs.Equals(input.ReserveArgs))) return false;
+            if (this.AddCustomArgsRules != input.AddCustomArgsRules || (this.AddCustomArgsRules != null && input.AddCustomArgsRules != null && !this.AddCustomArgsRules.SequenceEqual(input.AddCustomArgsRules))) return false;
+            if (this.ReserveHeadersSetting != input.ReserveHeadersSetting || (this.ReserveHeadersSetting != null && !this.ReserveHeadersSetting.Equals(input.ReserveHeadersSetting))) return false;
+            if (this.AddCustomHeadersRules != input.AddCustomHeadersRules || (this.AddCustomHeadersRules != null && input.AddCustomHeadersRules != null && !this.AddCustomHeadersRules.SequenceEqual(input.AddCustomHeadersRules))) return false;
+            if (this.AuthSuccessStatus != input.AuthSuccessStatus || (this.AuthSuccessStatus != null && !this.AuthSuccessStatus.Equals(input.AuthSuccessStatus))) return false;
+            if (this.AuthFailedStatus != input.AuthFailedStatus || (this.AuthFailedStatus != null && !this.AuthFailedStatus.Equals(input.AuthFailedStatus))) return false;
+            if (this.ResponseStatus != input.ResponseStatus || (this.ResponseStatus != null && !this.ResponseStatus.Equals(input.ResponseStatus))) return false;
+            if (this.Timeout != input.Timeout || (this.Timeout != null && !this.Timeout.Equals(input.Timeout))) return false;
+            if (this.TimeoutAction != input.TimeoutAction || (this.TimeoutAction != null && !this.TimeoutAction.Equals(input.TimeoutAction))) return false;
+            if (this.ReserveHeaders != input.ReserveHeaders || (this.ReserveHeaders != null && !this.ReserveHeaders.Equals(input.ReserveHeaders))) return false;
 
-            return 
-                (
-                    this.AuthServer == input.AuthServer ||
-                    (this.AuthServer != null &&
-                    this.AuthServer.Equals(input.AuthServer))
-                ) && 
-                (
-                    this.RequestMethod == input.RequestMethod ||
-                    (this.RequestMethod != null &&
-                    this.RequestMethod.Equals(input.RequestMethod))
-                ) && 
-                (
-                    this.FileTypeSetting == input.FileTypeSetting ||
-                    (this.FileTypeSetting != null &&
-                    this.FileTypeSetting.Equals(input.FileTypeSetting))
-                ) && 
-                (
-                    this.SpecifiedFileType == input.SpecifiedFileType ||
-                    (this.SpecifiedFileType != null &&
-                    this.SpecifiedFileType.Equals(input.SpecifiedFileType))
-                ) && 
-                (
-                    this.ReserveArgsSetting == input.ReserveArgsSetting ||
-                    (this.ReserveArgsSetting != null &&
-                    this.ReserveArgsSetting.Equals(input.ReserveArgsSetting))
-                ) && 
-                (
-                    this.ReserveArgs == input.ReserveArgs ||
-                    (this.ReserveArgs != null &&
-                    this.ReserveArgs.Equals(input.ReserveArgs))
-                ) && 
-                (
-                    this.AddCustomArgsRules == input.AddCustomArgsRules ||
-                    this.AddCustomArgsRules != null &&
-                    input.AddCustomArgsRules != null &&
-                    this.AddCustomArgsRules.SequenceEqual(input.AddCustomArgsRules)
-                ) && 
-                (
-                    this.ReserveHeadersSetting == input.ReserveHeadersSetting ||
-                    (this.ReserveHeadersSetting != null &&
-                    this.ReserveHeadersSetting.Equals(input.ReserveHeadersSetting))
-                ) && 
-                (
-                    this.AddCustomHeadersRules == input.AddCustomHeadersRules ||
-                    this.AddCustomHeadersRules != null &&
-                    input.AddCustomHeadersRules != null &&
-                    this.AddCustomHeadersRules.SequenceEqual(input.AddCustomHeadersRules)
-                ) && 
-                (
-                    this.AuthSuccessStatus == input.AuthSuccessStatus ||
-                    (this.AuthSuccessStatus != null &&
-                    this.AuthSuccessStatus.Equals(input.AuthSuccessStatus))
-                ) && 
-                (
-                    this.AuthFailedStatus == input.AuthFailedStatus ||
-                    (this.AuthFailedStatus != null &&
-                    this.AuthFailedStatus.Equals(input.AuthFailedStatus))
-                ) && 
-                (
-                    this.ResponseStatus == input.ResponseStatus ||
-                    (this.ResponseStatus != null &&
-                    this.ResponseStatus.Equals(input.ResponseStatus))
-                ) && 
-                (
-                    this.Timeout == input.Timeout ||
-                    (this.Timeout != null &&
-                    this.Timeout.Equals(input.Timeout))
-                ) && 
-                (
-                    this.TimeoutAction == input.TimeoutAction ||
-                    (this.TimeoutAction != null &&
-                    this.TimeoutAction.Equals(input.TimeoutAction))
-                ) && 
-                (
-                    this.ReserveHeaders == input.ReserveHeaders ||
-                    (this.ReserveHeaders != null &&
-                    this.ReserveHeaders.Equals(input.ReserveHeaders))
-                );
+            return true;
         }
 
         /// <summary>
@@ -237,37 +174,22 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AuthServer != null)
-                    hashCode = hashCode * 59 + this.AuthServer.GetHashCode();
-                if (this.RequestMethod != null)
-                    hashCode = hashCode * 59 + this.RequestMethod.GetHashCode();
-                if (this.FileTypeSetting != null)
-                    hashCode = hashCode * 59 + this.FileTypeSetting.GetHashCode();
-                if (this.SpecifiedFileType != null)
-                    hashCode = hashCode * 59 + this.SpecifiedFileType.GetHashCode();
-                if (this.ReserveArgsSetting != null)
-                    hashCode = hashCode * 59 + this.ReserveArgsSetting.GetHashCode();
-                if (this.ReserveArgs != null)
-                    hashCode = hashCode * 59 + this.ReserveArgs.GetHashCode();
-                if (this.AddCustomArgsRules != null)
-                    hashCode = hashCode * 59 + this.AddCustomArgsRules.GetHashCode();
-                if (this.ReserveHeadersSetting != null)
-                    hashCode = hashCode * 59 + this.ReserveHeadersSetting.GetHashCode();
-                if (this.AddCustomHeadersRules != null)
-                    hashCode = hashCode * 59 + this.AddCustomHeadersRules.GetHashCode();
-                if (this.AuthSuccessStatus != null)
-                    hashCode = hashCode * 59 + this.AuthSuccessStatus.GetHashCode();
-                if (this.AuthFailedStatus != null)
-                    hashCode = hashCode * 59 + this.AuthFailedStatus.GetHashCode();
-                if (this.ResponseStatus != null)
-                    hashCode = hashCode * 59 + this.ResponseStatus.GetHashCode();
-                if (this.Timeout != null)
-                    hashCode = hashCode * 59 + this.Timeout.GetHashCode();
-                if (this.TimeoutAction != null)
-                    hashCode = hashCode * 59 + this.TimeoutAction.GetHashCode();
-                if (this.ReserveHeaders != null)
-                    hashCode = hashCode * 59 + this.ReserveHeaders.GetHashCode();
+                var hashCode = 41;
+                if (this.AuthServer != null) hashCode = hashCode * 59 + this.AuthServer.GetHashCode();
+                if (this.RequestMethod != null) hashCode = hashCode * 59 + this.RequestMethod.GetHashCode();
+                if (this.FileTypeSetting != null) hashCode = hashCode * 59 + this.FileTypeSetting.GetHashCode();
+                if (this.SpecifiedFileType != null) hashCode = hashCode * 59 + this.SpecifiedFileType.GetHashCode();
+                if (this.ReserveArgsSetting != null) hashCode = hashCode * 59 + this.ReserveArgsSetting.GetHashCode();
+                if (this.ReserveArgs != null) hashCode = hashCode * 59 + this.ReserveArgs.GetHashCode();
+                if (this.AddCustomArgsRules != null) hashCode = hashCode * 59 + this.AddCustomArgsRules.GetHashCode();
+                if (this.ReserveHeadersSetting != null) hashCode = hashCode * 59 + this.ReserveHeadersSetting.GetHashCode();
+                if (this.AddCustomHeadersRules != null) hashCode = hashCode * 59 + this.AddCustomHeadersRules.GetHashCode();
+                if (this.AuthSuccessStatus != null) hashCode = hashCode * 59 + this.AuthSuccessStatus.GetHashCode();
+                if (this.AuthFailedStatus != null) hashCode = hashCode * 59 + this.AuthFailedStatus.GetHashCode();
+                if (this.ResponseStatus != null) hashCode = hashCode * 59 + this.ResponseStatus.GetHashCode();
+                if (this.Timeout != null) hashCode = hashCode * 59 + this.Timeout.GetHashCode();
+                if (this.TimeoutAction != null) hashCode = hashCode * 59 + this.TimeoutAction.GetHashCode();
+                if (this.ReserveHeaders != null) hashCode = hashCode * 59 + this.ReserveHeaders.GetHashCode();
                 return hashCode;
             }
         }

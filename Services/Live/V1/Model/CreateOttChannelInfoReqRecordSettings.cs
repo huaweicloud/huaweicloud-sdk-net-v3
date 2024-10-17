@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(CreateOttChannelInfoReqRecordSettings input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RollingbufferDuration != input.RollingbufferDuration || (this.RollingbufferDuration != null && !this.RollingbufferDuration.Equals(input.RollingbufferDuration))) return false;
 
-            return 
-                (
-                    this.RollingbufferDuration == input.RollingbufferDuration ||
-                    (this.RollingbufferDuration != null &&
-                    this.RollingbufferDuration.Equals(input.RollingbufferDuration))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RollingbufferDuration != null)
-                    hashCode = hashCode * 59 + this.RollingbufferDuration.GetHashCode();
+                var hashCode = 41;
+                if (this.RollingbufferDuration != null) hashCode = hashCode * 59 + this.RollingbufferDuration.GetHashCode();
                 return hashCode;
             }
         }

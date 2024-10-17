@@ -196,35 +196,14 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(ShowStackInstanceRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClientRequestId != input.ClientRequestId || (this.ClientRequestId != null && !this.ClientRequestId.Equals(input.ClientRequestId))) return false;
+            if (this.StackSetName != input.StackSetName || (this.StackSetName != null && !this.StackSetName.Equals(input.StackSetName))) return false;
+            if (this.StackInstanceAddr != input.StackInstanceAddr || (this.StackInstanceAddr != null && !this.StackInstanceAddr.Equals(input.StackInstanceAddr))) return false;
+            if (this.StackSetId != input.StackSetId || (this.StackSetId != null && !this.StackSetId.Equals(input.StackSetId))) return false;
+            if (this.CallIdentity != input.CallIdentity) return false;
 
-            return 
-                (
-                    this.ClientRequestId == input.ClientRequestId ||
-                    (this.ClientRequestId != null &&
-                    this.ClientRequestId.Equals(input.ClientRequestId))
-                ) && 
-                (
-                    this.StackSetName == input.StackSetName ||
-                    (this.StackSetName != null &&
-                    this.StackSetName.Equals(input.StackSetName))
-                ) && 
-                (
-                    this.StackInstanceAddr == input.StackInstanceAddr ||
-                    (this.StackInstanceAddr != null &&
-                    this.StackInstanceAddr.Equals(input.StackInstanceAddr))
-                ) && 
-                (
-                    this.StackSetId == input.StackSetId ||
-                    (this.StackSetId != null &&
-                    this.StackSetId.Equals(input.StackSetId))
-                ) && 
-                (
-                    this.CallIdentity == input.CallIdentity ||
-                    (this.CallIdentity != null &&
-                    this.CallIdentity.Equals(input.CallIdentity))
-                );
+            return true;
         }
 
         /// <summary>
@@ -234,17 +213,12 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClientRequestId != null)
-                    hashCode = hashCode * 59 + this.ClientRequestId.GetHashCode();
-                if (this.StackSetName != null)
-                    hashCode = hashCode * 59 + this.StackSetName.GetHashCode();
-                if (this.StackInstanceAddr != null)
-                    hashCode = hashCode * 59 + this.StackInstanceAddr.GetHashCode();
-                if (this.StackSetId != null)
-                    hashCode = hashCode * 59 + this.StackSetId.GetHashCode();
-                if (this.CallIdentity != null)
-                    hashCode = hashCode * 59 + this.CallIdentity.GetHashCode();
+                var hashCode = 41;
+                if (this.ClientRequestId != null) hashCode = hashCode * 59 + this.ClientRequestId.GetHashCode();
+                if (this.StackSetName != null) hashCode = hashCode * 59 + this.StackSetName.GetHashCode();
+                if (this.StackInstanceAddr != null) hashCode = hashCode * 59 + this.StackInstanceAddr.GetHashCode();
+                if (this.StackSetId != null) hashCode = hashCode * 59 + this.StackSetId.GetHashCode();
+                hashCode = hashCode * 59 + this.CallIdentity.GetHashCode();
                 return hashCode;
             }
         }

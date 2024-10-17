@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(AclPolicyResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AllowAddressNetmasks != input.AllowAddressNetmasks || (this.AllowAddressNetmasks != null && input.AllowAddressNetmasks != null && !this.AllowAddressNetmasks.SequenceEqual(input.AllowAddressNetmasks))) return false;
+            if (this.AllowIpRanges != input.AllowIpRanges || (this.AllowIpRanges != null && input.AllowIpRanges != null && !this.AllowIpRanges.SequenceEqual(input.AllowIpRanges))) return false;
 
-            return 
-                (
-                    this.AllowAddressNetmasks == input.AllowAddressNetmasks ||
-                    this.AllowAddressNetmasks != null &&
-                    input.AllowAddressNetmasks != null &&
-                    this.AllowAddressNetmasks.SequenceEqual(input.AllowAddressNetmasks)
-                ) && 
-                (
-                    this.AllowIpRanges == input.AllowIpRanges ||
-                    this.AllowIpRanges != null &&
-                    input.AllowIpRanges != null &&
-                    this.AllowIpRanges.SequenceEqual(input.AllowIpRanges)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AllowAddressNetmasks != null)
-                    hashCode = hashCode * 59 + this.AllowAddressNetmasks.GetHashCode();
-                if (this.AllowIpRanges != null)
-                    hashCode = hashCode * 59 + this.AllowIpRanges.GetHashCode();
+                var hashCode = 41;
+                if (this.AllowAddressNetmasks != null) hashCode = hashCode * 59 + this.AllowAddressNetmasks.GetHashCode();
+                if (this.AllowIpRanges != null) hashCode = hashCode * 59 + this.AllowIpRanges.GetHashCode();
                 return hashCode;
             }
         }

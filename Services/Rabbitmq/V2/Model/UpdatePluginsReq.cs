@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public bool Equals(UpdatePluginsReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Enable != input.Enable || (this.Enable != null && !this.Enable.Equals(input.Enable))) return false;
+            if (this.Plugins != input.Plugins || (this.Plugins != null && !this.Plugins.Equals(input.Plugins))) return false;
 
-            return 
-                (
-                    this.Enable == input.Enable ||
-                    (this.Enable != null &&
-                    this.Enable.Equals(input.Enable))
-                ) && 
-                (
-                    this.Plugins == input.Plugins ||
-                    (this.Plugins != null &&
-                    this.Plugins.Equals(input.Plugins))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Enable != null)
-                    hashCode = hashCode * 59 + this.Enable.GetHashCode();
-                if (this.Plugins != null)
-                    hashCode = hashCode * 59 + this.Plugins.GetHashCode();
+                var hashCode = 41;
+                if (this.Enable != null) hashCode = hashCode * 59 + this.Enable.GetHashCode();
+                if (this.Plugins != null) hashCode = hashCode * 59 + this.Plugins.GetHashCode();
                 return hashCode;
             }
         }

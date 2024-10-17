@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(StatusFlowDirectToVo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ParentName != input.ParentName || (this.ParentName != null && !this.ParentName.Equals(input.ParentName))) return false;
+            if (this.ParentType != input.ParentType || (this.ParentType != null && !this.ParentType.Equals(input.ParentType))) return false;
+            if (this.StatusId != input.StatusId || (this.StatusId != null && !this.StatusId.Equals(input.StatusId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.StatusType != input.StatusType || (this.StatusType != null && !this.StatusType.Equals(input.StatusType))) return false;
+            if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
+            if (this.ParentId != input.ParentId || (this.ParentId != null && !this.ParentId.Equals(input.ParentId))) return false;
 
-            return 
-                (
-                    this.ParentName == input.ParentName ||
-                    (this.ParentName != null &&
-                    this.ParentName.Equals(input.ParentName))
-                ) && 
-                (
-                    this.ParentType == input.ParentType ||
-                    (this.ParentType != null &&
-                    this.ParentType.Equals(input.ParentType))
-                ) && 
-                (
-                    this.StatusId == input.StatusId ||
-                    (this.StatusId != null &&
-                    this.StatusId.Equals(input.StatusId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.StatusType == input.StatusType ||
-                    (this.StatusType != null &&
-                    this.StatusType.Equals(input.StatusType))
-                ) && 
-                (
-                    this.Enabled == input.Enabled ||
-                    (this.Enabled != null &&
-                    this.Enabled.Equals(input.Enabled))
-                ) && 
-                (
-                    this.ParentId == input.ParentId ||
-                    (this.ParentId != null &&
-                    this.ParentId.Equals(input.ParentId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ParentName != null)
-                    hashCode = hashCode * 59 + this.ParentName.GetHashCode();
-                if (this.ParentType != null)
-                    hashCode = hashCode * 59 + this.ParentType.GetHashCode();
-                if (this.StatusId != null)
-                    hashCode = hashCode * 59 + this.StatusId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.StatusType != null)
-                    hashCode = hashCode * 59 + this.StatusType.GetHashCode();
-                if (this.Enabled != null)
-                    hashCode = hashCode * 59 + this.Enabled.GetHashCode();
-                if (this.ParentId != null)
-                    hashCode = hashCode * 59 + this.ParentId.GetHashCode();
+                var hashCode = 41;
+                if (this.ParentName != null) hashCode = hashCode * 59 + this.ParentName.GetHashCode();
+                if (this.ParentType != null) hashCode = hashCode * 59 + this.ParentType.GetHashCode();
+                if (this.StatusId != null) hashCode = hashCode * 59 + this.StatusId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.StatusType != null) hashCode = hashCode * 59 + this.StatusType.GetHashCode();
+                if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
+                if (this.ParentId != null) hashCode = hashCode * 59 + this.ParentId.GetHashCode();
                 return hashCode;
             }
         }

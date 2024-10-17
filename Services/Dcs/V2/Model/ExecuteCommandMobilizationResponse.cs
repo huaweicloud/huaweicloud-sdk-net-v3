@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ExecuteCommandMobilizationResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Response != input.Response || (this.Response != null && !this.Response.Equals(input.Response))) return false;
 
-            return 
-                (
-                    this.Response == input.Response ||
-                    (this.Response != null &&
-                    this.Response.Equals(input.Response))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Response != null)
-                    hashCode = hashCode * 59 + this.Response.GetHashCode();
+                var hashCode = 41;
+                if (this.Response != null) hashCode = hashCode * 59 + this.Response.GetHashCode();
                 return hashCode;
             }
         }

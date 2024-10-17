@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ValidateParaGroupNameResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Exist != input.Exist || (this.Exist != null && !this.Exist.Equals(input.Exist))) return false;
 
-            return 
-                (
-                    this.Exist == input.Exist ||
-                    (this.Exist != null &&
-                    this.Exist.Equals(input.Exist))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Exist != null)
-                    hashCode = hashCode * 59 + this.Exist.GetHashCode();
+                var hashCode = 41;
+                if (this.Exist != null) hashCode = hashCode * 59 + this.Exist.GetHashCode();
                 return hashCode;
             }
         }

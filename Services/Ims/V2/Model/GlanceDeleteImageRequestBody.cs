@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         public bool Equals(GlanceDeleteImageRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DeleteBackup != input.DeleteBackup || (this.DeleteBackup != null && !this.DeleteBackup.Equals(input.DeleteBackup))) return false;
 
-            return 
-                (
-                    this.DeleteBackup == input.DeleteBackup ||
-                    (this.DeleteBackup != null &&
-                    this.DeleteBackup.Equals(input.DeleteBackup))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DeleteBackup != null)
-                    hashCode = hashCode * 59 + this.DeleteBackup.GetHashCode();
+                var hashCode = 41;
+                if (this.DeleteBackup != null) hashCode = hashCode * 59 + this.DeleteBackup.GetHashCode();
                 return hashCode;
             }
         }

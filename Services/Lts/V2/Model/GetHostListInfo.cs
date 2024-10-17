@@ -391,45 +391,16 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(GetHostListInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HostId != input.HostId || (this.HostId != null && !this.HostId.Equals(input.HostId))) return false;
+            if (this.HostIp != input.HostIp || (this.HostIp != null && !this.HostIp.Equals(input.HostIp))) return false;
+            if (this.HostName != input.HostName || (this.HostName != null && !this.HostName.Equals(input.HostName))) return false;
+            if (this.HostStatus != input.HostStatus) return false;
+            if (this.HostType != input.HostType) return false;
+            if (this.HostVersion != input.HostVersion || (this.HostVersion != null && !this.HostVersion.Equals(input.HostVersion))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
 
-            return 
-                (
-                    this.HostId == input.HostId ||
-                    (this.HostId != null &&
-                    this.HostId.Equals(input.HostId))
-                ) && 
-                (
-                    this.HostIp == input.HostIp ||
-                    (this.HostIp != null &&
-                    this.HostIp.Equals(input.HostIp))
-                ) && 
-                (
-                    this.HostName == input.HostName ||
-                    (this.HostName != null &&
-                    this.HostName.Equals(input.HostName))
-                ) && 
-                (
-                    this.HostStatus == input.HostStatus ||
-                    (this.HostStatus != null &&
-                    this.HostStatus.Equals(input.HostStatus))
-                ) && 
-                (
-                    this.HostType == input.HostType ||
-                    (this.HostType != null &&
-                    this.HostType.Equals(input.HostType))
-                ) && 
-                (
-                    this.HostVersion == input.HostVersion ||
-                    (this.HostVersion != null &&
-                    this.HostVersion.Equals(input.HostVersion))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -439,21 +410,14 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HostId != null)
-                    hashCode = hashCode * 59 + this.HostId.GetHashCode();
-                if (this.HostIp != null)
-                    hashCode = hashCode * 59 + this.HostIp.GetHashCode();
-                if (this.HostName != null)
-                    hashCode = hashCode * 59 + this.HostName.GetHashCode();
-                if (this.HostStatus != null)
-                    hashCode = hashCode * 59 + this.HostStatus.GetHashCode();
-                if (this.HostType != null)
-                    hashCode = hashCode * 59 + this.HostType.GetHashCode();
-                if (this.HostVersion != null)
-                    hashCode = hashCode * 59 + this.HostVersion.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                var hashCode = 41;
+                if (this.HostId != null) hashCode = hashCode * 59 + this.HostId.GetHashCode();
+                if (this.HostIp != null) hashCode = hashCode * 59 + this.HostIp.GetHashCode();
+                if (this.HostName != null) hashCode = hashCode * 59 + this.HostName.GetHashCode();
+                hashCode = hashCode * 59 + this.HostStatus.GetHashCode();
+                hashCode = hashCode * 59 + this.HostType.GetHashCode();
+                if (this.HostVersion != null) hashCode = hashCode * 59 + this.HostVersion.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 return hashCode;
             }
         }

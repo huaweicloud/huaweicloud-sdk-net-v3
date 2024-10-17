@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         /// </summary>
         public bool Equals(StreamPortrait input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
+            if (this.Flow != input.Flow || (this.Flow != null && !this.Flow.Equals(input.Flow))) return false;
+            if (this.PlayDuration != input.PlayDuration || (this.PlayDuration != null && !this.PlayDuration.Equals(input.PlayDuration))) return false;
+            if (this.RequestCount != input.RequestCount || (this.RequestCount != null && !this.RequestCount.Equals(input.RequestCount))) return false;
+            if (this.UserCount != input.UserCount || (this.UserCount != null && !this.UserCount.Equals(input.UserCount))) return false;
+            if (this.PeakUserCount != input.PeakUserCount || (this.PeakUserCount != null && !this.PeakUserCount.Equals(input.PeakUserCount))) return false;
+            if (this.PeakBandwidth != input.PeakBandwidth || (this.PeakBandwidth != null && !this.PeakBandwidth.Equals(input.PeakBandwidth))) return false;
+            if (this.PushDuration != input.PushDuration || (this.PushDuration != null && !this.PushDuration.Equals(input.PushDuration))) return false;
 
-            return 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                ) && 
-                (
-                    this.Flow == input.Flow ||
-                    (this.Flow != null &&
-                    this.Flow.Equals(input.Flow))
-                ) && 
-                (
-                    this.PlayDuration == input.PlayDuration ||
-                    (this.PlayDuration != null &&
-                    this.PlayDuration.Equals(input.PlayDuration))
-                ) && 
-                (
-                    this.RequestCount == input.RequestCount ||
-                    (this.RequestCount != null &&
-                    this.RequestCount.Equals(input.RequestCount))
-                ) && 
-                (
-                    this.UserCount == input.UserCount ||
-                    (this.UserCount != null &&
-                    this.UserCount.Equals(input.UserCount))
-                ) && 
-                (
-                    this.PeakUserCount == input.PeakUserCount ||
-                    (this.PeakUserCount != null &&
-                    this.PeakUserCount.Equals(input.PeakUserCount))
-                ) && 
-                (
-                    this.PeakBandwidth == input.PeakBandwidth ||
-                    (this.PeakBandwidth != null &&
-                    this.PeakBandwidth.Equals(input.PeakBandwidth))
-                ) && 
-                (
-                    this.PushDuration == input.PushDuration ||
-                    (this.PushDuration != null &&
-                    this.PushDuration.Equals(input.PushDuration))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.Flow != null)
-                    hashCode = hashCode * 59 + this.Flow.GetHashCode();
-                if (this.PlayDuration != null)
-                    hashCode = hashCode * 59 + this.PlayDuration.GetHashCode();
-                if (this.RequestCount != null)
-                    hashCode = hashCode * 59 + this.RequestCount.GetHashCode();
-                if (this.UserCount != null)
-                    hashCode = hashCode * 59 + this.UserCount.GetHashCode();
-                if (this.PeakUserCount != null)
-                    hashCode = hashCode * 59 + this.PeakUserCount.GetHashCode();
-                if (this.PeakBandwidth != null)
-                    hashCode = hashCode * 59 + this.PeakBandwidth.GetHashCode();
-                if (this.PushDuration != null)
-                    hashCode = hashCode * 59 + this.PushDuration.GetHashCode();
+                var hashCode = 41;
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
+                if (this.Flow != null) hashCode = hashCode * 59 + this.Flow.GetHashCode();
+                if (this.PlayDuration != null) hashCode = hashCode * 59 + this.PlayDuration.GetHashCode();
+                if (this.RequestCount != null) hashCode = hashCode * 59 + this.RequestCount.GetHashCode();
+                if (this.UserCount != null) hashCode = hashCode * 59 + this.UserCount.GetHashCode();
+                if (this.PeakUserCount != null) hashCode = hashCode * 59 + this.PeakUserCount.GetHashCode();
+                if (this.PeakBandwidth != null) hashCode = hashCode * 59 + this.PeakBandwidth.GetHashCode();
+                if (this.PushDuration != null) hashCode = hashCode * 59 + this.PushDuration.GetHashCode();
                 return hashCode;
             }
         }

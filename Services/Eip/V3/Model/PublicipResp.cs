@@ -675,115 +675,30 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(PublicipResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.IpVersion != input.IpVersion) return false;
+            if (this.PublicIpAddress != input.PublicIpAddress || (this.PublicIpAddress != null && !this.PublicIpAddress.Equals(input.PublicIpAddress))) return false;
+            if (this.PublicIpv6Address != input.PublicIpv6Address || (this.PublicIpv6Address != null && !this.PublicIpv6Address.Equals(input.PublicIpv6Address))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.Type != input.Type) return false;
+            if (this.Vnic != input.Vnic || (this.Vnic != null && !this.Vnic.Equals(input.Vnic))) return false;
+            if (this.Bandwidth != input.Bandwidth || (this.Bandwidth != null && !this.Bandwidth.Equals(input.Bandwidth))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.BillingInfo != input.BillingInfo || (this.BillingInfo != null && !this.BillingInfo.Equals(input.BillingInfo))) return false;
+            if (this.LockStatus != input.LockStatus || (this.LockStatus != null && !this.LockStatus.Equals(input.LockStatus))) return false;
+            if (this.AssociateInstanceType != input.AssociateInstanceType) return false;
+            if (this.AssociateInstanceId != input.AssociateInstanceId || (this.AssociateInstanceId != null && !this.AssociateInstanceId.Equals(input.AssociateInstanceId))) return false;
+            if (this.PublicipPoolId != input.PublicipPoolId || (this.PublicipPoolId != null && !this.PublicipPoolId.Equals(input.PublicipPoolId))) return false;
+            if (this.PublicipPoolName != input.PublicipPoolName || (this.PublicipPoolName != null && !this.PublicipPoolName.Equals(input.PublicipPoolName))) return false;
+            if (this.Alias != input.Alias || (this.Alias != null && !this.Alias.Equals(input.Alias))) return false;
+            if (this.PublicBorderGroup != input.PublicBorderGroup || (this.PublicBorderGroup != null && !this.PublicBorderGroup.Equals(input.PublicBorderGroup))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.IpVersion == input.IpVersion ||
-                    (this.IpVersion != null &&
-                    this.IpVersion.Equals(input.IpVersion))
-                ) && 
-                (
-                    this.PublicIpAddress == input.PublicIpAddress ||
-                    (this.PublicIpAddress != null &&
-                    this.PublicIpAddress.Equals(input.PublicIpAddress))
-                ) && 
-                (
-                    this.PublicIpv6Address == input.PublicIpv6Address ||
-                    (this.PublicIpv6Address != null &&
-                    this.PublicIpv6Address.Equals(input.PublicIpv6Address))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Vnic == input.Vnic ||
-                    (this.Vnic != null &&
-                    this.Vnic.Equals(input.Vnic))
-                ) && 
-                (
-                    this.Bandwidth == input.Bandwidth ||
-                    (this.Bandwidth != null &&
-                    this.Bandwidth.Equals(input.Bandwidth))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.BillingInfo == input.BillingInfo ||
-                    (this.BillingInfo != null &&
-                    this.BillingInfo.Equals(input.BillingInfo))
-                ) && 
-                (
-                    this.LockStatus == input.LockStatus ||
-                    (this.LockStatus != null &&
-                    this.LockStatus.Equals(input.LockStatus))
-                ) && 
-                (
-                    this.AssociateInstanceType == input.AssociateInstanceType ||
-                    (this.AssociateInstanceType != null &&
-                    this.AssociateInstanceType.Equals(input.AssociateInstanceType))
-                ) && 
-                (
-                    this.AssociateInstanceId == input.AssociateInstanceId ||
-                    (this.AssociateInstanceId != null &&
-                    this.AssociateInstanceId.Equals(input.AssociateInstanceId))
-                ) && 
-                (
-                    this.PublicipPoolId == input.PublicipPoolId ||
-                    (this.PublicipPoolId != null &&
-                    this.PublicipPoolId.Equals(input.PublicipPoolId))
-                ) && 
-                (
-                    this.PublicipPoolName == input.PublicipPoolName ||
-                    (this.PublicipPoolName != null &&
-                    this.PublicipPoolName.Equals(input.PublicipPoolName))
-                ) && 
-                (
-                    this.Alias == input.Alias ||
-                    (this.Alias != null &&
-                    this.Alias.Equals(input.Alias))
-                ) && 
-                (
-                    this.PublicBorderGroup == input.PublicBorderGroup ||
-                    (this.PublicBorderGroup != null &&
-                    this.PublicBorderGroup.Equals(input.PublicBorderGroup))
-                );
+            return true;
         }
 
         /// <summary>
@@ -793,49 +708,28 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.IpVersion != null)
-                    hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
-                if (this.PublicIpAddress != null)
-                    hashCode = hashCode * 59 + this.PublicIpAddress.GetHashCode();
-                if (this.PublicIpv6Address != null)
-                    hashCode = hashCode * 59 + this.PublicIpv6Address.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Vnic != null)
-                    hashCode = hashCode * 59 + this.Vnic.GetHashCode();
-                if (this.Bandwidth != null)
-                    hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.BillingInfo != null)
-                    hashCode = hashCode * 59 + this.BillingInfo.GetHashCode();
-                if (this.LockStatus != null)
-                    hashCode = hashCode * 59 + this.LockStatus.GetHashCode();
-                if (this.AssociateInstanceType != null)
-                    hashCode = hashCode * 59 + this.AssociateInstanceType.GetHashCode();
-                if (this.AssociateInstanceId != null)
-                    hashCode = hashCode * 59 + this.AssociateInstanceId.GetHashCode();
-                if (this.PublicipPoolId != null)
-                    hashCode = hashCode * 59 + this.PublicipPoolId.GetHashCode();
-                if (this.PublicipPoolName != null)
-                    hashCode = hashCode * 59 + this.PublicipPoolName.GetHashCode();
-                if (this.Alias != null)
-                    hashCode = hashCode * 59 + this.Alias.GetHashCode();
-                if (this.PublicBorderGroup != null)
-                    hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
+                if (this.PublicIpAddress != null) hashCode = hashCode * 59 + this.PublicIpAddress.GetHashCode();
+                if (this.PublicIpv6Address != null) hashCode = hashCode * 59 + this.PublicIpv6Address.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Vnic != null) hashCode = hashCode * 59 + this.Vnic.GetHashCode();
+                if (this.Bandwidth != null) hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.BillingInfo != null) hashCode = hashCode * 59 + this.BillingInfo.GetHashCode();
+                if (this.LockStatus != null) hashCode = hashCode * 59 + this.LockStatus.GetHashCode();
+                hashCode = hashCode * 59 + this.AssociateInstanceType.GetHashCode();
+                if (this.AssociateInstanceId != null) hashCode = hashCode * 59 + this.AssociateInstanceId.GetHashCode();
+                if (this.PublicipPoolId != null) hashCode = hashCode * 59 + this.PublicipPoolId.GetHashCode();
+                if (this.PublicipPoolName != null) hashCode = hashCode * 59 + this.PublicipPoolName.GetHashCode();
+                if (this.Alias != null) hashCode = hashCode * 59 + this.Alias.GetHashCode();
+                if (this.PublicBorderGroup != null) hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
                 return hashCode;
             }
         }

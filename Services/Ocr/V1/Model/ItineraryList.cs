@@ -119,65 +119,20 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(ItineraryList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DepartureStation != input.DepartureStation || (this.DepartureStation != null && !this.DepartureStation.Equals(input.DepartureStation))) return false;
+            if (this.DestinationStation != input.DestinationStation || (this.DestinationStation != null && !this.DestinationStation.Equals(input.DestinationStation))) return false;
+            if (this.Carrier != input.Carrier || (this.Carrier != null && !this.Carrier.Equals(input.Carrier))) return false;
+            if (this.Flight != input.Flight || (this.Flight != null && !this.Flight.Equals(input.Flight))) return false;
+            if (this.CabinClass != input.CabinClass || (this.CabinClass != null && !this.CabinClass.Equals(input.CabinClass))) return false;
+            if (this.Date != input.Date || (this.Date != null && !this.Date.Equals(input.Date))) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
+            if (this.FareBasis != input.FareBasis || (this.FareBasis != null && !this.FareBasis.Equals(input.FareBasis))) return false;
+            if (this.EffectiveDate != input.EffectiveDate || (this.EffectiveDate != null && !this.EffectiveDate.Equals(input.EffectiveDate))) return false;
+            if (this.ExpiryDate != input.ExpiryDate || (this.ExpiryDate != null && !this.ExpiryDate.Equals(input.ExpiryDate))) return false;
+            if (this.BaggageAllowance != input.BaggageAllowance || (this.BaggageAllowance != null && !this.BaggageAllowance.Equals(input.BaggageAllowance))) return false;
 
-            return 
-                (
-                    this.DepartureStation == input.DepartureStation ||
-                    (this.DepartureStation != null &&
-                    this.DepartureStation.Equals(input.DepartureStation))
-                ) && 
-                (
-                    this.DestinationStation == input.DestinationStation ||
-                    (this.DestinationStation != null &&
-                    this.DestinationStation.Equals(input.DestinationStation))
-                ) && 
-                (
-                    this.Carrier == input.Carrier ||
-                    (this.Carrier != null &&
-                    this.Carrier.Equals(input.Carrier))
-                ) && 
-                (
-                    this.Flight == input.Flight ||
-                    (this.Flight != null &&
-                    this.Flight.Equals(input.Flight))
-                ) && 
-                (
-                    this.CabinClass == input.CabinClass ||
-                    (this.CabinClass != null &&
-                    this.CabinClass.Equals(input.CabinClass))
-                ) && 
-                (
-                    this.Date == input.Date ||
-                    (this.Date != null &&
-                    this.Date.Equals(input.Date))
-                ) && 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                ) && 
-                (
-                    this.FareBasis == input.FareBasis ||
-                    (this.FareBasis != null &&
-                    this.FareBasis.Equals(input.FareBasis))
-                ) && 
-                (
-                    this.EffectiveDate == input.EffectiveDate ||
-                    (this.EffectiveDate != null &&
-                    this.EffectiveDate.Equals(input.EffectiveDate))
-                ) && 
-                (
-                    this.ExpiryDate == input.ExpiryDate ||
-                    (this.ExpiryDate != null &&
-                    this.ExpiryDate.Equals(input.ExpiryDate))
-                ) && 
-                (
-                    this.BaggageAllowance == input.BaggageAllowance ||
-                    (this.BaggageAllowance != null &&
-                    this.BaggageAllowance.Equals(input.BaggageAllowance))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,29 +142,18 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DepartureStation != null)
-                    hashCode = hashCode * 59 + this.DepartureStation.GetHashCode();
-                if (this.DestinationStation != null)
-                    hashCode = hashCode * 59 + this.DestinationStation.GetHashCode();
-                if (this.Carrier != null)
-                    hashCode = hashCode * 59 + this.Carrier.GetHashCode();
-                if (this.Flight != null)
-                    hashCode = hashCode * 59 + this.Flight.GetHashCode();
-                if (this.CabinClass != null)
-                    hashCode = hashCode * 59 + this.CabinClass.GetHashCode();
-                if (this.Date != null)
-                    hashCode = hashCode * 59 + this.Date.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.FareBasis != null)
-                    hashCode = hashCode * 59 + this.FareBasis.GetHashCode();
-                if (this.EffectiveDate != null)
-                    hashCode = hashCode * 59 + this.EffectiveDate.GetHashCode();
-                if (this.ExpiryDate != null)
-                    hashCode = hashCode * 59 + this.ExpiryDate.GetHashCode();
-                if (this.BaggageAllowance != null)
-                    hashCode = hashCode * 59 + this.BaggageAllowance.GetHashCode();
+                var hashCode = 41;
+                if (this.DepartureStation != null) hashCode = hashCode * 59 + this.DepartureStation.GetHashCode();
+                if (this.DestinationStation != null) hashCode = hashCode * 59 + this.DestinationStation.GetHashCode();
+                if (this.Carrier != null) hashCode = hashCode * 59 + this.Carrier.GetHashCode();
+                if (this.Flight != null) hashCode = hashCode * 59 + this.Flight.GetHashCode();
+                if (this.CabinClass != null) hashCode = hashCode * 59 + this.CabinClass.GetHashCode();
+                if (this.Date != null) hashCode = hashCode * 59 + this.Date.GetHashCode();
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
+                if (this.FareBasis != null) hashCode = hashCode * 59 + this.FareBasis.GetHashCode();
+                if (this.EffectiveDate != null) hashCode = hashCode * 59 + this.EffectiveDate.GetHashCode();
+                if (this.ExpiryDate != null) hashCode = hashCode * 59 + this.ExpiryDate.GetHashCode();
+                if (this.BaggageAllowance != null) hashCode = hashCode * 59 + this.BaggageAllowance.GetHashCode();
                 return hashCode;
             }
         }

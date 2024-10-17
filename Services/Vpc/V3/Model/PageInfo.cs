@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(PageInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PreviousMarker != input.PreviousMarker || (this.PreviousMarker != null && !this.PreviousMarker.Equals(input.PreviousMarker))) return false;
+            if (this.CurrentCount != input.CurrentCount || (this.CurrentCount != null && !this.CurrentCount.Equals(input.CurrentCount))) return false;
+            if (this.NextMarker != input.NextMarker || (this.NextMarker != null && !this.NextMarker.Equals(input.NextMarker))) return false;
 
-            return 
-                (
-                    this.PreviousMarker == input.PreviousMarker ||
-                    (this.PreviousMarker != null &&
-                    this.PreviousMarker.Equals(input.PreviousMarker))
-                ) && 
-                (
-                    this.CurrentCount == input.CurrentCount ||
-                    (this.CurrentCount != null &&
-                    this.CurrentCount.Equals(input.CurrentCount))
-                ) && 
-                (
-                    this.NextMarker == input.NextMarker ||
-                    (this.NextMarker != null &&
-                    this.NextMarker.Equals(input.NextMarker))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PreviousMarker != null)
-                    hashCode = hashCode * 59 + this.PreviousMarker.GetHashCode();
-                if (this.CurrentCount != null)
-                    hashCode = hashCode * 59 + this.CurrentCount.GetHashCode();
-                if (this.NextMarker != null)
-                    hashCode = hashCode * 59 + this.NextMarker.GetHashCode();
+                var hashCode = 41;
+                if (this.PreviousMarker != null) hashCode = hashCode * 59 + this.PreviousMarker.GetHashCode();
+                if (this.CurrentCount != null) hashCode = hashCode * 59 + this.CurrentCount.GetHashCode();
+                if (this.NextMarker != null) hashCode = hashCode * 59 + this.NextMarker.GetHashCode();
                 return hashCode;
             }
         }

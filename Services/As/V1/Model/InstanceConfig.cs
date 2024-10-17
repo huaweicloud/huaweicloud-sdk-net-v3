@@ -477,88 +477,24 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(InstanceConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.FlavorRef != input.FlavorRef || (this.FlavorRef != null && !this.FlavorRef.Equals(input.FlavorRef))) return false;
+            if (this.ImageRef != input.ImageRef || (this.ImageRef != null && !this.ImageRef.Equals(input.ImageRef))) return false;
+            if (this.Disk != input.Disk || (this.Disk != null && input.Disk != null && !this.Disk.SequenceEqual(input.Disk))) return false;
+            if (this.KeyName != input.KeyName || (this.KeyName != null && !this.KeyName.Equals(input.KeyName))) return false;
+            if (this.Personality != input.Personality || (this.Personality != null && input.Personality != null && !this.Personality.SequenceEqual(input.Personality))) return false;
+            if (this.PublicIp != input.PublicIp || (this.PublicIp != null && !this.PublicIp.Equals(input.PublicIp))) return false;
+            if (this.UserData != input.UserData || (this.UserData != null && !this.UserData.Equals(input.UserData))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && !this.Metadata.Equals(input.Metadata))) return false;
+            if (this.SecurityGroups != input.SecurityGroups || (this.SecurityGroups != null && input.SecurityGroups != null && !this.SecurityGroups.SequenceEqual(input.SecurityGroups))) return false;
+            if (this.ServerGroupId != input.ServerGroupId || (this.ServerGroupId != null && !this.ServerGroupId.Equals(input.ServerGroupId))) return false;
+            if (this.Tenancy != input.Tenancy) return false;
+            if (this.DedicatedHostId != input.DedicatedHostId || (this.DedicatedHostId != null && !this.DedicatedHostId.Equals(input.DedicatedHostId))) return false;
+            if (this.MultiFlavorPriorityPolicy != input.MultiFlavorPriorityPolicy) return false;
+            if (this.MarketType != input.MarketType) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.FlavorRef == input.FlavorRef ||
-                    (this.FlavorRef != null &&
-                    this.FlavorRef.Equals(input.FlavorRef))
-                ) && 
-                (
-                    this.ImageRef == input.ImageRef ||
-                    (this.ImageRef != null &&
-                    this.ImageRef.Equals(input.ImageRef))
-                ) && 
-                (
-                    this.Disk == input.Disk ||
-                    this.Disk != null &&
-                    input.Disk != null &&
-                    this.Disk.SequenceEqual(input.Disk)
-                ) && 
-                (
-                    this.KeyName == input.KeyName ||
-                    (this.KeyName != null &&
-                    this.KeyName.Equals(input.KeyName))
-                ) && 
-                (
-                    this.Personality == input.Personality ||
-                    this.Personality != null &&
-                    input.Personality != null &&
-                    this.Personality.SequenceEqual(input.Personality)
-                ) && 
-                (
-                    this.PublicIp == input.PublicIp ||
-                    (this.PublicIp != null &&
-                    this.PublicIp.Equals(input.PublicIp))
-                ) && 
-                (
-                    this.UserData == input.UserData ||
-                    (this.UserData != null &&
-                    this.UserData.Equals(input.UserData))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    (this.Metadata != null &&
-                    this.Metadata.Equals(input.Metadata))
-                ) && 
-                (
-                    this.SecurityGroups == input.SecurityGroups ||
-                    this.SecurityGroups != null &&
-                    input.SecurityGroups != null &&
-                    this.SecurityGroups.SequenceEqual(input.SecurityGroups)
-                ) && 
-                (
-                    this.ServerGroupId == input.ServerGroupId ||
-                    (this.ServerGroupId != null &&
-                    this.ServerGroupId.Equals(input.ServerGroupId))
-                ) && 
-                (
-                    this.Tenancy == input.Tenancy ||
-                    (this.Tenancy != null &&
-                    this.Tenancy.Equals(input.Tenancy))
-                ) && 
-                (
-                    this.DedicatedHostId == input.DedicatedHostId ||
-                    (this.DedicatedHostId != null &&
-                    this.DedicatedHostId.Equals(input.DedicatedHostId))
-                ) && 
-                (
-                    this.MultiFlavorPriorityPolicy == input.MultiFlavorPriorityPolicy ||
-                    (this.MultiFlavorPriorityPolicy != null &&
-                    this.MultiFlavorPriorityPolicy.Equals(input.MultiFlavorPriorityPolicy))
-                ) && 
-                (
-                    this.MarketType == input.MarketType ||
-                    (this.MarketType != null &&
-                    this.MarketType.Equals(input.MarketType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -568,37 +504,22 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.FlavorRef != null)
-                    hashCode = hashCode * 59 + this.FlavorRef.GetHashCode();
-                if (this.ImageRef != null)
-                    hashCode = hashCode * 59 + this.ImageRef.GetHashCode();
-                if (this.Disk != null)
-                    hashCode = hashCode * 59 + this.Disk.GetHashCode();
-                if (this.KeyName != null)
-                    hashCode = hashCode * 59 + this.KeyName.GetHashCode();
-                if (this.Personality != null)
-                    hashCode = hashCode * 59 + this.Personality.GetHashCode();
-                if (this.PublicIp != null)
-                    hashCode = hashCode * 59 + this.PublicIp.GetHashCode();
-                if (this.UserData != null)
-                    hashCode = hashCode * 59 + this.UserData.GetHashCode();
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
-                if (this.SecurityGroups != null)
-                    hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
-                if (this.ServerGroupId != null)
-                    hashCode = hashCode * 59 + this.ServerGroupId.GetHashCode();
-                if (this.Tenancy != null)
-                    hashCode = hashCode * 59 + this.Tenancy.GetHashCode();
-                if (this.DedicatedHostId != null)
-                    hashCode = hashCode * 59 + this.DedicatedHostId.GetHashCode();
-                if (this.MultiFlavorPriorityPolicy != null)
-                    hashCode = hashCode * 59 + this.MultiFlavorPriorityPolicy.GetHashCode();
-                if (this.MarketType != null)
-                    hashCode = hashCode * 59 + this.MarketType.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.FlavorRef != null) hashCode = hashCode * 59 + this.FlavorRef.GetHashCode();
+                if (this.ImageRef != null) hashCode = hashCode * 59 + this.ImageRef.GetHashCode();
+                if (this.Disk != null) hashCode = hashCode * 59 + this.Disk.GetHashCode();
+                if (this.KeyName != null) hashCode = hashCode * 59 + this.KeyName.GetHashCode();
+                if (this.Personality != null) hashCode = hashCode * 59 + this.Personality.GetHashCode();
+                if (this.PublicIp != null) hashCode = hashCode * 59 + this.PublicIp.GetHashCode();
+                if (this.UserData != null) hashCode = hashCode * 59 + this.UserData.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                if (this.SecurityGroups != null) hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
+                if (this.ServerGroupId != null) hashCode = hashCode * 59 + this.ServerGroupId.GetHashCode();
+                hashCode = hashCode * 59 + this.Tenancy.GetHashCode();
+                if (this.DedicatedHostId != null) hashCode = hashCode * 59 + this.DedicatedHostId.GetHashCode();
+                hashCode = hashCode * 59 + this.MultiFlavorPriorityPolicy.GetHashCode();
+                hashCode = hashCode * 59 + this.MarketType.GetHashCode();
                 return hashCode;
             }
         }

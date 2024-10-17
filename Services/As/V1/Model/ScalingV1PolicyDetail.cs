@@ -232,60 +232,19 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(ScalingV1PolicyDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ScalingGroupId != input.ScalingGroupId || (this.ScalingGroupId != null && !this.ScalingGroupId.Equals(input.ScalingGroupId))) return false;
+            if (this.ScalingPolicyName != input.ScalingPolicyName || (this.ScalingPolicyName != null && !this.ScalingPolicyName.Equals(input.ScalingPolicyName))) return false;
+            if (this.ScalingPolicyId != input.ScalingPolicyId || (this.ScalingPolicyId != null && !this.ScalingPolicyId.Equals(input.ScalingPolicyId))) return false;
+            if (this.PolicyStatus != input.PolicyStatus || (this.PolicyStatus != null && !this.PolicyStatus.Equals(input.PolicyStatus))) return false;
+            if (this.ScalingPolicyType != input.ScalingPolicyType) return false;
+            if (this.AlarmId != input.AlarmId || (this.AlarmId != null && !this.AlarmId.Equals(input.AlarmId))) return false;
+            if (this.ScheduledPolicy != input.ScheduledPolicy || (this.ScheduledPolicy != null && !this.ScheduledPolicy.Equals(input.ScheduledPolicy))) return false;
+            if (this.ScalingPolicyAction != input.ScalingPolicyAction || (this.ScalingPolicyAction != null && !this.ScalingPolicyAction.Equals(input.ScalingPolicyAction))) return false;
+            if (this.CoolDownTime != input.CoolDownTime || (this.CoolDownTime != null && !this.CoolDownTime.Equals(input.CoolDownTime))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
 
-            return 
-                (
-                    this.ScalingGroupId == input.ScalingGroupId ||
-                    (this.ScalingGroupId != null &&
-                    this.ScalingGroupId.Equals(input.ScalingGroupId))
-                ) && 
-                (
-                    this.ScalingPolicyName == input.ScalingPolicyName ||
-                    (this.ScalingPolicyName != null &&
-                    this.ScalingPolicyName.Equals(input.ScalingPolicyName))
-                ) && 
-                (
-                    this.ScalingPolicyId == input.ScalingPolicyId ||
-                    (this.ScalingPolicyId != null &&
-                    this.ScalingPolicyId.Equals(input.ScalingPolicyId))
-                ) && 
-                (
-                    this.PolicyStatus == input.PolicyStatus ||
-                    (this.PolicyStatus != null &&
-                    this.PolicyStatus.Equals(input.PolicyStatus))
-                ) && 
-                (
-                    this.ScalingPolicyType == input.ScalingPolicyType ||
-                    (this.ScalingPolicyType != null &&
-                    this.ScalingPolicyType.Equals(input.ScalingPolicyType))
-                ) && 
-                (
-                    this.AlarmId == input.AlarmId ||
-                    (this.AlarmId != null &&
-                    this.AlarmId.Equals(input.AlarmId))
-                ) && 
-                (
-                    this.ScheduledPolicy == input.ScheduledPolicy ||
-                    (this.ScheduledPolicy != null &&
-                    this.ScheduledPolicy.Equals(input.ScheduledPolicy))
-                ) && 
-                (
-                    this.ScalingPolicyAction == input.ScalingPolicyAction ||
-                    (this.ScalingPolicyAction != null &&
-                    this.ScalingPolicyAction.Equals(input.ScalingPolicyAction))
-                ) && 
-                (
-                    this.CoolDownTime == input.CoolDownTime ||
-                    (this.CoolDownTime != null &&
-                    this.CoolDownTime.Equals(input.CoolDownTime))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -295,27 +254,17 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ScalingGroupId != null)
-                    hashCode = hashCode * 59 + this.ScalingGroupId.GetHashCode();
-                if (this.ScalingPolicyName != null)
-                    hashCode = hashCode * 59 + this.ScalingPolicyName.GetHashCode();
-                if (this.ScalingPolicyId != null)
-                    hashCode = hashCode * 59 + this.ScalingPolicyId.GetHashCode();
-                if (this.PolicyStatus != null)
-                    hashCode = hashCode * 59 + this.PolicyStatus.GetHashCode();
-                if (this.ScalingPolicyType != null)
-                    hashCode = hashCode * 59 + this.ScalingPolicyType.GetHashCode();
-                if (this.AlarmId != null)
-                    hashCode = hashCode * 59 + this.AlarmId.GetHashCode();
-                if (this.ScheduledPolicy != null)
-                    hashCode = hashCode * 59 + this.ScheduledPolicy.GetHashCode();
-                if (this.ScalingPolicyAction != null)
-                    hashCode = hashCode * 59 + this.ScalingPolicyAction.GetHashCode();
-                if (this.CoolDownTime != null)
-                    hashCode = hashCode * 59 + this.CoolDownTime.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                var hashCode = 41;
+                if (this.ScalingGroupId != null) hashCode = hashCode * 59 + this.ScalingGroupId.GetHashCode();
+                if (this.ScalingPolicyName != null) hashCode = hashCode * 59 + this.ScalingPolicyName.GetHashCode();
+                if (this.ScalingPolicyId != null) hashCode = hashCode * 59 + this.ScalingPolicyId.GetHashCode();
+                if (this.PolicyStatus != null) hashCode = hashCode * 59 + this.PolicyStatus.GetHashCode();
+                hashCode = hashCode * 59 + this.ScalingPolicyType.GetHashCode();
+                if (this.AlarmId != null) hashCode = hashCode * 59 + this.AlarmId.GetHashCode();
+                if (this.ScheduledPolicy != null) hashCode = hashCode * 59 + this.ScheduledPolicy.GetHashCode();
+                if (this.ScalingPolicyAction != null) hashCode = hashCode * 59 + this.ScalingPolicyAction.GetHashCode();
+                if (this.CoolDownTime != null) hashCode = hashCode * 59 + this.CoolDownTime.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 return hashCode;
             }
         }

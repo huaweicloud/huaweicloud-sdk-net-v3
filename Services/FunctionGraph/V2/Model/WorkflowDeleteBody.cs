@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(WorkflowDeleteBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.WorkflowUrns != input.WorkflowUrns || (this.WorkflowUrns != null && input.WorkflowUrns != null && !this.WorkflowUrns.SequenceEqual(input.WorkflowUrns))) return false;
 
-            return 
-                (
-                    this.WorkflowUrns == input.WorkflowUrns ||
-                    this.WorkflowUrns != null &&
-                    input.WorkflowUrns != null &&
-                    this.WorkflowUrns.SequenceEqual(input.WorkflowUrns)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.WorkflowUrns != null)
-                    hashCode = hashCode * 59 + this.WorkflowUrns.GetHashCode();
+                var hashCode = 41;
+                if (this.WorkflowUrns != null) hashCode = hashCode * 59 + this.WorkflowUrns.GetHashCode();
                 return hashCode;
             }
         }

@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(CreateAccountStatusDto input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AccountId != input.AccountId || (this.AccountId != null && !this.AccountId.Equals(input.AccountId))) return false;
+            if (this.AccountName != input.AccountName || (this.AccountName != null && !this.AccountName.Equals(input.AccountName))) return false;
+            if (this.CompletedAt != input.CompletedAt || (this.CompletedAt != null && !this.CompletedAt.Equals(input.CompletedAt))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.State != input.State || (this.State != null && !this.State.Equals(input.State))) return false;
+            if (this.FailureReason != input.FailureReason || (this.FailureReason != null && !this.FailureReason.Equals(input.FailureReason))) return false;
 
-            return 
-                (
-                    this.AccountId == input.AccountId ||
-                    (this.AccountId != null &&
-                    this.AccountId.Equals(input.AccountId))
-                ) && 
-                (
-                    this.AccountName == input.AccountName ||
-                    (this.AccountName != null &&
-                    this.AccountName.Equals(input.AccountName))
-                ) && 
-                (
-                    this.CompletedAt == input.CompletedAt ||
-                    (this.CompletedAt != null &&
-                    this.CompletedAt.Equals(input.CompletedAt))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
-                ) && 
-                (
-                    this.FailureReason == input.FailureReason ||
-                    (this.FailureReason != null &&
-                    this.FailureReason.Equals(input.FailureReason))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AccountId != null)
-                    hashCode = hashCode * 59 + this.AccountId.GetHashCode();
-                if (this.AccountName != null)
-                    hashCode = hashCode * 59 + this.AccountName.GetHashCode();
-                if (this.CompletedAt != null)
-                    hashCode = hashCode * 59 + this.CompletedAt.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.State != null)
-                    hashCode = hashCode * 59 + this.State.GetHashCode();
-                if (this.FailureReason != null)
-                    hashCode = hashCode * 59 + this.FailureReason.GetHashCode();
+                var hashCode = 41;
+                if (this.AccountId != null) hashCode = hashCode * 59 + this.AccountId.GetHashCode();
+                if (this.AccountName != null) hashCode = hashCode * 59 + this.AccountName.GetHashCode();
+                if (this.CompletedAt != null) hashCode = hashCode * 59 + this.CompletedAt.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();
+                if (this.FailureReason != null) hashCode = hashCode * 59 + this.FailureReason.GetHashCode();
                 return hashCode;
             }
         }

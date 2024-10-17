@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(BrowserCacheRules input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Condition != input.Condition || (this.Condition != null && !this.Condition.Equals(input.Condition))) return false;
+            if (this.CacheType != input.CacheType || (this.CacheType != null && !this.CacheType.Equals(input.CacheType))) return false;
+            if (this.Ttl != input.Ttl || (this.Ttl != null && !this.Ttl.Equals(input.Ttl))) return false;
+            if (this.TtlUnit != input.TtlUnit || (this.TtlUnit != null && !this.TtlUnit.Equals(input.TtlUnit))) return false;
 
-            return 
-                (
-                    this.Condition == input.Condition ||
-                    (this.Condition != null &&
-                    this.Condition.Equals(input.Condition))
-                ) && 
-                (
-                    this.CacheType == input.CacheType ||
-                    (this.CacheType != null &&
-                    this.CacheType.Equals(input.CacheType))
-                ) && 
-                (
-                    this.Ttl == input.Ttl ||
-                    (this.Ttl != null &&
-                    this.Ttl.Equals(input.Ttl))
-                ) && 
-                (
-                    this.TtlUnit == input.TtlUnit ||
-                    (this.TtlUnit != null &&
-                    this.TtlUnit.Equals(input.TtlUnit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Condition != null)
-                    hashCode = hashCode * 59 + this.Condition.GetHashCode();
-                if (this.CacheType != null)
-                    hashCode = hashCode * 59 + this.CacheType.GetHashCode();
-                if (this.Ttl != null)
-                    hashCode = hashCode * 59 + this.Ttl.GetHashCode();
-                if (this.TtlUnit != null)
-                    hashCode = hashCode * 59 + this.TtlUnit.GetHashCode();
+                var hashCode = 41;
+                if (this.Condition != null) hashCode = hashCode * 59 + this.Condition.GetHashCode();
+                if (this.CacheType != null) hashCode = hashCode * 59 + this.CacheType.GetHashCode();
+                if (this.Ttl != null) hashCode = hashCode * 59 + this.Ttl.GetHashCode();
+                if (this.TtlUnit != null) hashCode = hashCode * 59 + this.TtlUnit.GetHashCode();
                 return hashCode;
             }
         }

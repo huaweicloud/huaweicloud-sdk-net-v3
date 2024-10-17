@@ -20,13 +20,13 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// 标签列表 租户权限时该字段必选，op_service权限时和sys_tags二选一
         /// </summary>
         [JsonProperty("tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<KeyValueBean> Tags { get; set; }
+        public List<ResourceTagRequestTags> Tags { get; set; }
 
         /// <summary>
         /// 系统标签列表 op_service权限可以访问，和tags二选一。 目前TMS调用时只包含一个resource_tag结构体 ，key固定为：_sys_enterprise_project_id value是UUID或0,value为0表示默认企业项目
         /// </summary>
         [JsonProperty("sys_tags", NullValueHandling = NullValueHandling.Ignore)]
-        public List<KeyValueBean> SysTags { get; set; }
+        public List<ResourceTagRequestTags> SysTags { get; set; }
 
 
 
@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         public bool Equals(ResourceTagRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.SysTags != input.SysTags || (this.SysTags != null && input.SysTags != null && !this.SysTags.SequenceEqual(input.SysTags))) return false;
 
-            return 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.SysTags == input.SysTags ||
-                    this.SysTags != null &&
-                    input.SysTags != null &&
-                    this.SysTags.SequenceEqual(input.SysTags)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.SysTags != null)
-                    hashCode = hashCode * 59 + this.SysTags.GetHashCode();
+                var hashCode = 41;
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.SysTags != null) hashCode = hashCode * 59 + this.SysTags.GetHashCode();
                 return hashCode;
             }
         }

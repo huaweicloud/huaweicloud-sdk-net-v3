@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         /// </summary>
         public bool Equals(ShowClassroomDetailRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClassroomId != input.ClassroomId || (this.ClassroomId != null && !this.ClassroomId.Equals(input.ClassroomId))) return false;
 
-            return 
-                (
-                    this.ClassroomId == input.ClassroomId ||
-                    (this.ClassroomId != null &&
-                    this.ClassroomId.Equals(input.ClassroomId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClassroomId != null)
-                    hashCode = hashCode * 59 + this.ClassroomId.GetHashCode();
+                var hashCode = 41;
+                if (this.ClassroomId != null) hashCode = hashCode * 59 + this.ClassroomId.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(PwdResetRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DbUserPwd != input.DbUserPwd || (this.DbUserPwd != null && !this.DbUserPwd.Equals(input.DbUserPwd))) return false;
 
-            return 
-                (
-                    this.DbUserPwd == input.DbUserPwd ||
-                    (this.DbUserPwd != null &&
-                    this.DbUserPwd.Equals(input.DbUserPwd))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DbUserPwd != null)
-                    hashCode = hashCode * 59 + this.DbUserPwd.GetHashCode();
+                var hashCode = 41;
+                if (this.DbUserPwd != null) hashCode = hashCode * 59 + this.DbUserPwd.GetHashCode();
                 return hashCode;
             }
         }

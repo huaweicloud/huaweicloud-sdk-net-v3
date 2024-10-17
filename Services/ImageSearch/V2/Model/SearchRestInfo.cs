@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         /// </summary>
         public bool Equals(SearchRestInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Items != input.Items || (this.Items != null && input.Items != null && !this.Items.SequenceEqual(input.Items))) return false;
+            if (this.SearchInfo != input.SearchInfo || (this.SearchInfo != null && !this.SearchInfo.Equals(input.SearchInfo))) return false;
+            if (this.ImageInfo != input.ImageInfo || (this.ImageInfo != null && !this.ImageInfo.Equals(input.ImageInfo))) return false;
 
-            return 
-                (
-                    this.Items == input.Items ||
-                    this.Items != null &&
-                    input.Items != null &&
-                    this.Items.SequenceEqual(input.Items)
-                ) && 
-                (
-                    this.SearchInfo == input.SearchInfo ||
-                    (this.SearchInfo != null &&
-                    this.SearchInfo.Equals(input.SearchInfo))
-                ) && 
-                (
-                    this.ImageInfo == input.ImageInfo ||
-                    (this.ImageInfo != null &&
-                    this.ImageInfo.Equals(input.ImageInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Items != null)
-                    hashCode = hashCode * 59 + this.Items.GetHashCode();
-                if (this.SearchInfo != null)
-                    hashCode = hashCode * 59 + this.SearchInfo.GetHashCode();
-                if (this.ImageInfo != null)
-                    hashCode = hashCode * 59 + this.ImageInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.Items != null) hashCode = hashCode * 59 + this.Items.GetHashCode();
+                if (this.SearchInfo != null) hashCode = hashCode * 59 + this.SearchInfo.GetHashCode();
+                if (this.ImageInfo != null) hashCode = hashCode * 59 + this.ImageInfo.GetHashCode();
                 return hashCode;
             }
         }

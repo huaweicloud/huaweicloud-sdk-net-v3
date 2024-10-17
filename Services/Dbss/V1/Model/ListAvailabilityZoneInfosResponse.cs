@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     {
 
         /// <summary>
-        /// az列表
+        /// 可用区集合
         /// </summary>
         [JsonProperty("azs", NullValueHandling = NullValueHandling.Ignore)]
         public List<AzInfo> Azs { get; set; }
@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         public bool Equals(ListAvailabilityZoneInfosResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Azs != input.Azs || (this.Azs != null && input.Azs != null && !this.Azs.SequenceEqual(input.Azs))) return false;
 
-            return 
-                (
-                    this.Azs == input.Azs ||
-                    this.Azs != null &&
-                    input.Azs != null &&
-                    this.Azs.SequenceEqual(input.Azs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Azs != null)
-                    hashCode = hashCode * 59 + this.Azs.GetHashCode();
+                var hashCode = 41;
+                if (this.Azs != null) hashCode = hashCode * 59 + this.Azs.GetHashCode();
                 return hashCode;
             }
         }

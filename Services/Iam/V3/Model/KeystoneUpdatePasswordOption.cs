@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(KeystoneUpdatePasswordOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Password != input.Password || (this.Password != null && !this.Password.Equals(input.Password))) return false;
+            if (this.OriginalPassword != input.OriginalPassword || (this.OriginalPassword != null && !this.OriginalPassword.Equals(input.OriginalPassword))) return false;
 
-            return 
-                (
-                    this.Password == input.Password ||
-                    (this.Password != null &&
-                    this.Password.Equals(input.Password))
-                ) && 
-                (
-                    this.OriginalPassword == input.OriginalPassword ||
-                    (this.OriginalPassword != null &&
-                    this.OriginalPassword.Equals(input.OriginalPassword))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Password != null)
-                    hashCode = hashCode * 59 + this.Password.GetHashCode();
-                if (this.OriginalPassword != null)
-                    hashCode = hashCode * 59 + this.OriginalPassword.GetHashCode();
+                var hashCode = 41;
+                if (this.Password != null) hashCode = hashCode * 59 + this.Password.GetHashCode();
+                if (this.OriginalPassword != null) hashCode = hashCode * 59 + this.OriginalPassword.GetHashCode();
                 return hashCode;
             }
         }

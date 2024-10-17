@@ -154,91 +154,25 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         /// </summary>
         public bool Equals(Secret input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.State != input.State || (this.State != null && !this.State.Equals(input.State))) return false;
+            if (this.KmsKeyId != input.KmsKeyId || (this.KmsKeyId != null && !this.KmsKeyId.Equals(input.KmsKeyId))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.ScheduledDeleteTime != input.ScheduledDeleteTime || (this.ScheduledDeleteTime != null && !this.ScheduledDeleteTime.Equals(input.ScheduledDeleteTime))) return false;
+            if (this.SecretType != input.SecretType || (this.SecretType != null && !this.SecretType.Equals(input.SecretType))) return false;
+            if (this.AutoRotation != input.AutoRotation || (this.AutoRotation != null && !this.AutoRotation.Equals(input.AutoRotation))) return false;
+            if (this.RotationPeriod != input.RotationPeriod || (this.RotationPeriod != null && !this.RotationPeriod.Equals(input.RotationPeriod))) return false;
+            if (this.RotationConfig != input.RotationConfig || (this.RotationConfig != null && !this.RotationConfig.Equals(input.RotationConfig))) return false;
+            if (this.RotationTime != input.RotationTime || (this.RotationTime != null && !this.RotationTime.Equals(input.RotationTime))) return false;
+            if (this.NextRotationTime != input.NextRotationTime || (this.NextRotationTime != null && !this.NextRotationTime.Equals(input.NextRotationTime))) return false;
+            if (this.EventSubscriptions != input.EventSubscriptions || (this.EventSubscriptions != null && input.EventSubscriptions != null && !this.EventSubscriptions.SequenceEqual(input.EventSubscriptions))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.State == input.State ||
-                    (this.State != null &&
-                    this.State.Equals(input.State))
-                ) && 
-                (
-                    this.KmsKeyId == input.KmsKeyId ||
-                    (this.KmsKeyId != null &&
-                    this.KmsKeyId.Equals(input.KmsKeyId))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.ScheduledDeleteTime == input.ScheduledDeleteTime ||
-                    (this.ScheduledDeleteTime != null &&
-                    this.ScheduledDeleteTime.Equals(input.ScheduledDeleteTime))
-                ) && 
-                (
-                    this.SecretType == input.SecretType ||
-                    (this.SecretType != null &&
-                    this.SecretType.Equals(input.SecretType))
-                ) && 
-                (
-                    this.AutoRotation == input.AutoRotation ||
-                    (this.AutoRotation != null &&
-                    this.AutoRotation.Equals(input.AutoRotation))
-                ) && 
-                (
-                    this.RotationPeriod == input.RotationPeriod ||
-                    (this.RotationPeriod != null &&
-                    this.RotationPeriod.Equals(input.RotationPeriod))
-                ) && 
-                (
-                    this.RotationConfig == input.RotationConfig ||
-                    (this.RotationConfig != null &&
-                    this.RotationConfig.Equals(input.RotationConfig))
-                ) && 
-                (
-                    this.RotationTime == input.RotationTime ||
-                    (this.RotationTime != null &&
-                    this.RotationTime.Equals(input.RotationTime))
-                ) && 
-                (
-                    this.NextRotationTime == input.NextRotationTime ||
-                    (this.NextRotationTime != null &&
-                    this.NextRotationTime.Equals(input.NextRotationTime))
-                ) && 
-                (
-                    this.EventSubscriptions == input.EventSubscriptions ||
-                    this.EventSubscriptions != null &&
-                    input.EventSubscriptions != null &&
-                    this.EventSubscriptions.SequenceEqual(input.EventSubscriptions)
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -248,39 +182,23 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.State != null)
-                    hashCode = hashCode * 59 + this.State.GetHashCode();
-                if (this.KmsKeyId != null)
-                    hashCode = hashCode * 59 + this.KmsKeyId.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.ScheduledDeleteTime != null)
-                    hashCode = hashCode * 59 + this.ScheduledDeleteTime.GetHashCode();
-                if (this.SecretType != null)
-                    hashCode = hashCode * 59 + this.SecretType.GetHashCode();
-                if (this.AutoRotation != null)
-                    hashCode = hashCode * 59 + this.AutoRotation.GetHashCode();
-                if (this.RotationPeriod != null)
-                    hashCode = hashCode * 59 + this.RotationPeriod.GetHashCode();
-                if (this.RotationConfig != null)
-                    hashCode = hashCode * 59 + this.RotationConfig.GetHashCode();
-                if (this.RotationTime != null)
-                    hashCode = hashCode * 59 + this.RotationTime.GetHashCode();
-                if (this.NextRotationTime != null)
-                    hashCode = hashCode * 59 + this.NextRotationTime.GetHashCode();
-                if (this.EventSubscriptions != null)
-                    hashCode = hashCode * 59 + this.EventSubscriptions.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.State != null) hashCode = hashCode * 59 + this.State.GetHashCode();
+                if (this.KmsKeyId != null) hashCode = hashCode * 59 + this.KmsKeyId.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.ScheduledDeleteTime != null) hashCode = hashCode * 59 + this.ScheduledDeleteTime.GetHashCode();
+                if (this.SecretType != null) hashCode = hashCode * 59 + this.SecretType.GetHashCode();
+                if (this.AutoRotation != null) hashCode = hashCode * 59 + this.AutoRotation.GetHashCode();
+                if (this.RotationPeriod != null) hashCode = hashCode * 59 + this.RotationPeriod.GetHashCode();
+                if (this.RotationConfig != null) hashCode = hashCode * 59 + this.RotationConfig.GetHashCode();
+                if (this.RotationTime != null) hashCode = hashCode * 59 + this.RotationTime.GetHashCode();
+                if (this.NextRotationTime != null) hashCode = hashCode * 59 + this.NextRotationTime.GetHashCode();
+                if (this.EventSubscriptions != null) hashCode = hashCode * 59 + this.EventSubscriptions.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

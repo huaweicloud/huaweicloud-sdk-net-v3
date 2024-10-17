@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         /// </summary>
         public bool Equals(RunModerationAudioResponseBodyResultDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Text != input.Text || (this.Text != null && !this.Text.Equals(input.Text))) return false;
+            if (this.Audio != input.Audio || (this.Audio != null && !this.Audio.Equals(input.Audio))) return false;
 
-            return 
-                (
-                    this.Text == input.Text ||
-                    (this.Text != null &&
-                    this.Text.Equals(input.Text))
-                ) && 
-                (
-                    this.Audio == input.Audio ||
-                    (this.Audio != null &&
-                    this.Audio.Equals(input.Audio))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Text != null)
-                    hashCode = hashCode * 59 + this.Text.GetHashCode();
-                if (this.Audio != null)
-                    hashCode = hashCode * 59 + this.Audio.GetHashCode();
+                var hashCode = 41;
+                if (this.Text != null) hashCode = hashCode * 59 + this.Text.GetHashCode();
+                if (this.Audio != null) hashCode = hashCode * 59 + this.Audio.GetHashCode();
                 return hashCode;
             }
         }

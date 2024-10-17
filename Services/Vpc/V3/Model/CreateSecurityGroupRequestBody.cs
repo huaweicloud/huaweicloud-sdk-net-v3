@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(CreateSecurityGroupRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DryRun != input.DryRun || (this.DryRun != null && !this.DryRun.Equals(input.DryRun))) return false;
+            if (this.SecurityGroup != input.SecurityGroup || (this.SecurityGroup != null && !this.SecurityGroup.Equals(input.SecurityGroup))) return false;
 
-            return 
-                (
-                    this.DryRun == input.DryRun ||
-                    (this.DryRun != null &&
-                    this.DryRun.Equals(input.DryRun))
-                ) && 
-                (
-                    this.SecurityGroup == input.SecurityGroup ||
-                    (this.SecurityGroup != null &&
-                    this.SecurityGroup.Equals(input.SecurityGroup))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DryRun != null)
-                    hashCode = hashCode * 59 + this.DryRun.GetHashCode();
-                if (this.SecurityGroup != null)
-                    hashCode = hashCode * 59 + this.SecurityGroup.GetHashCode();
+                var hashCode = 41;
+                if (this.DryRun != null) hashCode = hashCode * 59 + this.DryRun.GetHashCode();
+                if (this.SecurityGroup != null) hashCode = hashCode * 59 + this.SecurityGroup.GetHashCode();
                 return hashCode;
             }
         }

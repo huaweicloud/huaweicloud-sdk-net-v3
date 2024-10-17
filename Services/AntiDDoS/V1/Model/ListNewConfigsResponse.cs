@@ -70,34 +70,13 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         /// </summary>
         public bool Equals(ListNewConfigsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TrafficLimitedList != input.TrafficLimitedList || (this.TrafficLimitedList != null && input.TrafficLimitedList != null && !this.TrafficLimitedList.SequenceEqual(input.TrafficLimitedList))) return false;
+            if (this.HttpLimitedList != input.HttpLimitedList || (this.HttpLimitedList != null && input.HttpLimitedList != null && !this.HttpLimitedList.SequenceEqual(input.HttpLimitedList))) return false;
+            if (this.ConnectionLimitedList != input.ConnectionLimitedList || (this.ConnectionLimitedList != null && input.ConnectionLimitedList != null && !this.ConnectionLimitedList.SequenceEqual(input.ConnectionLimitedList))) return false;
+            if (this.ExtendDdosConfig != input.ExtendDdosConfig || (this.ExtendDdosConfig != null && input.ExtendDdosConfig != null && !this.ExtendDdosConfig.SequenceEqual(input.ExtendDdosConfig))) return false;
 
-            return 
-                (
-                    this.TrafficLimitedList == input.TrafficLimitedList ||
-                    this.TrafficLimitedList != null &&
-                    input.TrafficLimitedList != null &&
-                    this.TrafficLimitedList.SequenceEqual(input.TrafficLimitedList)
-                ) && 
-                (
-                    this.HttpLimitedList == input.HttpLimitedList ||
-                    this.HttpLimitedList != null &&
-                    input.HttpLimitedList != null &&
-                    this.HttpLimitedList.SequenceEqual(input.HttpLimitedList)
-                ) && 
-                (
-                    this.ConnectionLimitedList == input.ConnectionLimitedList ||
-                    this.ConnectionLimitedList != null &&
-                    input.ConnectionLimitedList != null &&
-                    this.ConnectionLimitedList.SequenceEqual(input.ConnectionLimitedList)
-                ) && 
-                (
-                    this.ExtendDdosConfig == input.ExtendDdosConfig ||
-                    this.ExtendDdosConfig != null &&
-                    input.ExtendDdosConfig != null &&
-                    this.ExtendDdosConfig.SequenceEqual(input.ExtendDdosConfig)
-                );
+            return true;
         }
 
         /// <summary>
@@ -107,15 +86,11 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TrafficLimitedList != null)
-                    hashCode = hashCode * 59 + this.TrafficLimitedList.GetHashCode();
-                if (this.HttpLimitedList != null)
-                    hashCode = hashCode * 59 + this.HttpLimitedList.GetHashCode();
-                if (this.ConnectionLimitedList != null)
-                    hashCode = hashCode * 59 + this.ConnectionLimitedList.GetHashCode();
-                if (this.ExtendDdosConfig != null)
-                    hashCode = hashCode * 59 + this.ExtendDdosConfig.GetHashCode();
+                var hashCode = 41;
+                if (this.TrafficLimitedList != null) hashCode = hashCode * 59 + this.TrafficLimitedList.GetHashCode();
+                if (this.HttpLimitedList != null) hashCode = hashCode * 59 + this.HttpLimitedList.GetHashCode();
+                if (this.ConnectionLimitedList != null) hashCode = hashCode * 59 + this.ConnectionLimitedList.GetHashCode();
+                if (this.ExtendDdosConfig != null) hashCode = hashCode * 59 + this.ExtendDdosConfig.GetHashCode();
                 return hashCode;
             }
         }

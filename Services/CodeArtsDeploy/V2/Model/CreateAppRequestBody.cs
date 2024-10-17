@@ -213,56 +213,18 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(CreateAppRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
+            if (this.IsDraft != input.IsDraft || (this.IsDraft != null && !this.IsDraft.Equals(input.IsDraft))) return false;
+            if (this.CreateType != input.CreateType) return false;
+            if (this.SlaveClusterId != input.SlaveClusterId || (this.SlaveClusterId != null && !this.SlaveClusterId.Equals(input.SlaveClusterId))) return false;
+            if (this.Trigger != input.Trigger || (this.Trigger != null && !this.Trigger.Equals(input.Trigger))) return false;
+            if (this.ArrangeInfos != input.ArrangeInfos || (this.ArrangeInfos != null && input.ArrangeInfos != null && !this.ArrangeInfos.SequenceEqual(input.ArrangeInfos))) return false;
 
-            return 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.GroupId == input.GroupId ||
-                    (this.GroupId != null &&
-                    this.GroupId.Equals(input.GroupId))
-                ) && 
-                (
-                    this.IsDraft == input.IsDraft ||
-                    (this.IsDraft != null &&
-                    this.IsDraft.Equals(input.IsDraft))
-                ) && 
-                (
-                    this.CreateType == input.CreateType ||
-                    (this.CreateType != null &&
-                    this.CreateType.Equals(input.CreateType))
-                ) && 
-                (
-                    this.SlaveClusterId == input.SlaveClusterId ||
-                    (this.SlaveClusterId != null &&
-                    this.SlaveClusterId.Equals(input.SlaveClusterId))
-                ) && 
-                (
-                    this.Trigger == input.Trigger ||
-                    (this.Trigger != null &&
-                    this.Trigger.Equals(input.Trigger))
-                ) && 
-                (
-                    this.ArrangeInfos == input.ArrangeInfos ||
-                    this.ArrangeInfos != null &&
-                    input.ArrangeInfos != null &&
-                    this.ArrangeInfos.SequenceEqual(input.ArrangeInfos)
-                );
+            return true;
         }
 
         /// <summary>
@@ -272,25 +234,16 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.GroupId != null)
-                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
-                if (this.IsDraft != null)
-                    hashCode = hashCode * 59 + this.IsDraft.GetHashCode();
-                if (this.CreateType != null)
-                    hashCode = hashCode * 59 + this.CreateType.GetHashCode();
-                if (this.SlaveClusterId != null)
-                    hashCode = hashCode * 59 + this.SlaveClusterId.GetHashCode();
-                if (this.Trigger != null)
-                    hashCode = hashCode * 59 + this.Trigger.GetHashCode();
-                if (this.ArrangeInfos != null)
-                    hashCode = hashCode * 59 + this.ArrangeInfos.GetHashCode();
+                var hashCode = 41;
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.IsDraft != null) hashCode = hashCode * 59 + this.IsDraft.GetHashCode();
+                hashCode = hashCode * 59 + this.CreateType.GetHashCode();
+                if (this.SlaveClusterId != null) hashCode = hashCode * 59 + this.SlaveClusterId.GetHashCode();
+                if (this.Trigger != null) hashCode = hashCode * 59 + this.Trigger.GetHashCode();
+                if (this.ArrangeInfos != null) hashCode = hashCode * 59 + this.ArrangeInfos.GetHashCode();
                 return hashCode;
             }
         }

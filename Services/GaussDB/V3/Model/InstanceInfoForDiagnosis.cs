@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(InstanceInfoForDiagnosis input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.MasterNodeId != input.MasterNodeId || (this.MasterNodeId != null && !this.MasterNodeId.Equals(input.MasterNodeId))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.MasterNodeId == input.MasterNodeId ||
-                    (this.MasterNodeId != null &&
-                    this.MasterNodeId.Equals(input.MasterNodeId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.MasterNodeId != null)
-                    hashCode = hashCode * 59 + this.MasterNodeId.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.MasterNodeId != null) hashCode = hashCode * 59 + this.MasterNodeId.GetHashCode();
                 return hashCode;
             }
         }

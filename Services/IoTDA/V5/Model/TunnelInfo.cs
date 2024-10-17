@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(TunnelInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TunnelId != input.TunnelId || (this.TunnelId != null && !this.TunnelId.Equals(input.TunnelId))) return false;
+            if (this.DeviceId != input.DeviceId || (this.DeviceId != null && !this.DeviceId.Equals(input.DeviceId))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.ClosedTime != input.ClosedTime || (this.ClosedTime != null && !this.ClosedTime.Equals(input.ClosedTime))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.SourceConnectState != input.SourceConnectState || (this.SourceConnectState != null && !this.SourceConnectState.Equals(input.SourceConnectState))) return false;
+            if (this.DeviceConnectState != input.DeviceConnectState || (this.DeviceConnectState != null && !this.DeviceConnectState.Equals(input.DeviceConnectState))) return false;
 
-            return 
-                (
-                    this.TunnelId == input.TunnelId ||
-                    (this.TunnelId != null &&
-                    this.TunnelId.Equals(input.TunnelId))
-                ) && 
-                (
-                    this.DeviceId == input.DeviceId ||
-                    (this.DeviceId != null &&
-                    this.DeviceId.Equals(input.DeviceId))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.ClosedTime == input.ClosedTime ||
-                    (this.ClosedTime != null &&
-                    this.ClosedTime.Equals(input.ClosedTime))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.SourceConnectState == input.SourceConnectState ||
-                    (this.SourceConnectState != null &&
-                    this.SourceConnectState.Equals(input.SourceConnectState))
-                ) && 
-                (
-                    this.DeviceConnectState == input.DeviceConnectState ||
-                    (this.DeviceConnectState != null &&
-                    this.DeviceConnectState.Equals(input.DeviceConnectState))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TunnelId != null)
-                    hashCode = hashCode * 59 + this.TunnelId.GetHashCode();
-                if (this.DeviceId != null)
-                    hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.ClosedTime != null)
-                    hashCode = hashCode * 59 + this.ClosedTime.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.SourceConnectState != null)
-                    hashCode = hashCode * 59 + this.SourceConnectState.GetHashCode();
-                if (this.DeviceConnectState != null)
-                    hashCode = hashCode * 59 + this.DeviceConnectState.GetHashCode();
+                var hashCode = 41;
+                if (this.TunnelId != null) hashCode = hashCode * 59 + this.TunnelId.GetHashCode();
+                if (this.DeviceId != null) hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.ClosedTime != null) hashCode = hashCode * 59 + this.ClosedTime.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.SourceConnectState != null) hashCode = hashCode * 59 + this.SourceConnectState.GetHashCode();
+                if (this.DeviceConnectState != null) hashCode = hashCode * 59 + this.DeviceConnectState.GetHashCode();
                 return hashCode;
             }
         }

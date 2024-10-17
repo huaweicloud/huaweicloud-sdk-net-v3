@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(Route input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Destination != input.Destination || (this.Destination != null && !this.Destination.Equals(input.Destination))) return false;
+            if (this.Nexthop != input.Nexthop || (this.Nexthop != null && !this.Nexthop.Equals(input.Nexthop))) return false;
 
-            return 
-                (
-                    this.Destination == input.Destination ||
-                    (this.Destination != null &&
-                    this.Destination.Equals(input.Destination))
-                ) && 
-                (
-                    this.Nexthop == input.Nexthop ||
-                    (this.Nexthop != null &&
-                    this.Nexthop.Equals(input.Nexthop))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Destination != null)
-                    hashCode = hashCode * 59 + this.Destination.GetHashCode();
-                if (this.Nexthop != null)
-                    hashCode = hashCode * 59 + this.Nexthop.GetHashCode();
+                var hashCode = 41;
+                if (this.Destination != null) hashCode = hashCode * 59 + this.Destination.GetHashCode();
+                if (this.Nexthop != null) hashCode = hashCode * 59 + this.Nexthop.GetHashCode();
                 return hashCode;
             }
         }

@@ -207,25 +207,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(ContentCompareResultOverview input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceDbName != input.SourceDbName || (this.SourceDbName != null && !this.SourceDbName.Equals(input.SourceDbName))) return false;
+            if (this.TargetDbName != input.TargetDbName || (this.TargetDbName != null && !this.TargetDbName.Equals(input.TargetDbName))) return false;
+            if (this.ContentCompareResult != input.ContentCompareResult) return false;
 
-            return 
-                (
-                    this.SourceDbName == input.SourceDbName ||
-                    (this.SourceDbName != null &&
-                    this.SourceDbName.Equals(input.SourceDbName))
-                ) && 
-                (
-                    this.TargetDbName == input.TargetDbName ||
-                    (this.TargetDbName != null &&
-                    this.TargetDbName.Equals(input.TargetDbName))
-                ) && 
-                (
-                    this.ContentCompareResult == input.ContentCompareResult ||
-                    (this.ContentCompareResult != null &&
-                    this.ContentCompareResult.Equals(input.ContentCompareResult))
-                );
+            return true;
         }
 
         /// <summary>
@@ -235,13 +222,10 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceDbName != null)
-                    hashCode = hashCode * 59 + this.SourceDbName.GetHashCode();
-                if (this.TargetDbName != null)
-                    hashCode = hashCode * 59 + this.TargetDbName.GetHashCode();
-                if (this.ContentCompareResult != null)
-                    hashCode = hashCode * 59 + this.ContentCompareResult.GetHashCode();
+                var hashCode = 41;
+                if (this.SourceDbName != null) hashCode = hashCode * 59 + this.SourceDbName.GetHashCode();
+                if (this.TargetDbName != null) hashCode = hashCode * 59 + this.TargetDbName.GetHashCode();
+                hashCode = hashCode * 59 + this.ContentCompareResult.GetHashCode();
                 return hashCode;
             }
         }

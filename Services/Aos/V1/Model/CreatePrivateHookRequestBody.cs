@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(CreatePrivateHookRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HookName != input.HookName || (this.HookName != null && !this.HookName.Equals(input.HookName))) return false;
+            if (this.HookVersion != input.HookVersion || (this.HookVersion != null && !this.HookVersion.Equals(input.HookVersion))) return false;
+            if (this.HookDescription != input.HookDescription || (this.HookDescription != null && !this.HookDescription.Equals(input.HookDescription))) return false;
+            if (this.HookVersionDescription != input.HookVersionDescription || (this.HookVersionDescription != null && !this.HookVersionDescription.Equals(input.HookVersionDescription))) return false;
+            if (this.Configuration != input.Configuration || (this.Configuration != null && !this.Configuration.Equals(input.Configuration))) return false;
+            if (this.PolicyUri != input.PolicyUri || (this.PolicyUri != null && !this.PolicyUri.Equals(input.PolicyUri))) return false;
+            if (this.PolicyBody != input.PolicyBody || (this.PolicyBody != null && !this.PolicyBody.Equals(input.PolicyBody))) return false;
 
-            return 
-                (
-                    this.HookName == input.HookName ||
-                    (this.HookName != null &&
-                    this.HookName.Equals(input.HookName))
-                ) && 
-                (
-                    this.HookVersion == input.HookVersion ||
-                    (this.HookVersion != null &&
-                    this.HookVersion.Equals(input.HookVersion))
-                ) && 
-                (
-                    this.HookDescription == input.HookDescription ||
-                    (this.HookDescription != null &&
-                    this.HookDescription.Equals(input.HookDescription))
-                ) && 
-                (
-                    this.HookVersionDescription == input.HookVersionDescription ||
-                    (this.HookVersionDescription != null &&
-                    this.HookVersionDescription.Equals(input.HookVersionDescription))
-                ) && 
-                (
-                    this.Configuration == input.Configuration ||
-                    (this.Configuration != null &&
-                    this.Configuration.Equals(input.Configuration))
-                ) && 
-                (
-                    this.PolicyUri == input.PolicyUri ||
-                    (this.PolicyUri != null &&
-                    this.PolicyUri.Equals(input.PolicyUri))
-                ) && 
-                (
-                    this.PolicyBody == input.PolicyBody ||
-                    (this.PolicyBody != null &&
-                    this.PolicyBody.Equals(input.PolicyBody))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HookName != null)
-                    hashCode = hashCode * 59 + this.HookName.GetHashCode();
-                if (this.HookVersion != null)
-                    hashCode = hashCode * 59 + this.HookVersion.GetHashCode();
-                if (this.HookDescription != null)
-                    hashCode = hashCode * 59 + this.HookDescription.GetHashCode();
-                if (this.HookVersionDescription != null)
-                    hashCode = hashCode * 59 + this.HookVersionDescription.GetHashCode();
-                if (this.Configuration != null)
-                    hashCode = hashCode * 59 + this.Configuration.GetHashCode();
-                if (this.PolicyUri != null)
-                    hashCode = hashCode * 59 + this.PolicyUri.GetHashCode();
-                if (this.PolicyBody != null)
-                    hashCode = hashCode * 59 + this.PolicyBody.GetHashCode();
+                var hashCode = 41;
+                if (this.HookName != null) hashCode = hashCode * 59 + this.HookName.GetHashCode();
+                if (this.HookVersion != null) hashCode = hashCode * 59 + this.HookVersion.GetHashCode();
+                if (this.HookDescription != null) hashCode = hashCode * 59 + this.HookDescription.GetHashCode();
+                if (this.HookVersionDescription != null) hashCode = hashCode * 59 + this.HookVersionDescription.GetHashCode();
+                if (this.Configuration != null) hashCode = hashCode * 59 + this.Configuration.GetHashCode();
+                if (this.PolicyUri != null) hashCode = hashCode * 59 + this.PolicyUri.GetHashCode();
+                if (this.PolicyBody != null) hashCode = hashCode * 59 + this.PolicyBody.GetHashCode();
                 return hashCode;
             }
         }

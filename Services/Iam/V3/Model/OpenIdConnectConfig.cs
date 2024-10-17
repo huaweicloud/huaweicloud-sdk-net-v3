@@ -320,50 +320,17 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(OpenIdConnectConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AccessMode != input.AccessMode || (this.AccessMode != null && !this.AccessMode.Equals(input.AccessMode))) return false;
+            if (this.IdpUrl != input.IdpUrl || (this.IdpUrl != null && !this.IdpUrl.Equals(input.IdpUrl))) return false;
+            if (this.ClientId != input.ClientId || (this.ClientId != null && !this.ClientId.Equals(input.ClientId))) return false;
+            if (this.AuthorizationEndpoint != input.AuthorizationEndpoint || (this.AuthorizationEndpoint != null && !this.AuthorizationEndpoint.Equals(input.AuthorizationEndpoint))) return false;
+            if (this.Scope != input.Scope || (this.Scope != null && !this.Scope.Equals(input.Scope))) return false;
+            if (this.ResponseType != input.ResponseType) return false;
+            if (this.ResponseMode != input.ResponseMode) return false;
+            if (this.SigningKey != input.SigningKey || (this.SigningKey != null && !this.SigningKey.Equals(input.SigningKey))) return false;
 
-            return 
-                (
-                    this.AccessMode == input.AccessMode ||
-                    (this.AccessMode != null &&
-                    this.AccessMode.Equals(input.AccessMode))
-                ) && 
-                (
-                    this.IdpUrl == input.IdpUrl ||
-                    (this.IdpUrl != null &&
-                    this.IdpUrl.Equals(input.IdpUrl))
-                ) && 
-                (
-                    this.ClientId == input.ClientId ||
-                    (this.ClientId != null &&
-                    this.ClientId.Equals(input.ClientId))
-                ) && 
-                (
-                    this.AuthorizationEndpoint == input.AuthorizationEndpoint ||
-                    (this.AuthorizationEndpoint != null &&
-                    this.AuthorizationEndpoint.Equals(input.AuthorizationEndpoint))
-                ) && 
-                (
-                    this.Scope == input.Scope ||
-                    (this.Scope != null &&
-                    this.Scope.Equals(input.Scope))
-                ) && 
-                (
-                    this.ResponseType == input.ResponseType ||
-                    (this.ResponseType != null &&
-                    this.ResponseType.Equals(input.ResponseType))
-                ) && 
-                (
-                    this.ResponseMode == input.ResponseMode ||
-                    (this.ResponseMode != null &&
-                    this.ResponseMode.Equals(input.ResponseMode))
-                ) && 
-                (
-                    this.SigningKey == input.SigningKey ||
-                    (this.SigningKey != null &&
-                    this.SigningKey.Equals(input.SigningKey))
-                );
+            return true;
         }
 
         /// <summary>
@@ -373,23 +340,15 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AccessMode != null)
-                    hashCode = hashCode * 59 + this.AccessMode.GetHashCode();
-                if (this.IdpUrl != null)
-                    hashCode = hashCode * 59 + this.IdpUrl.GetHashCode();
-                if (this.ClientId != null)
-                    hashCode = hashCode * 59 + this.ClientId.GetHashCode();
-                if (this.AuthorizationEndpoint != null)
-                    hashCode = hashCode * 59 + this.AuthorizationEndpoint.GetHashCode();
-                if (this.Scope != null)
-                    hashCode = hashCode * 59 + this.Scope.GetHashCode();
-                if (this.ResponseType != null)
-                    hashCode = hashCode * 59 + this.ResponseType.GetHashCode();
-                if (this.ResponseMode != null)
-                    hashCode = hashCode * 59 + this.ResponseMode.GetHashCode();
-                if (this.SigningKey != null)
-                    hashCode = hashCode * 59 + this.SigningKey.GetHashCode();
+                var hashCode = 41;
+                if (this.AccessMode != null) hashCode = hashCode * 59 + this.AccessMode.GetHashCode();
+                if (this.IdpUrl != null) hashCode = hashCode * 59 + this.IdpUrl.GetHashCode();
+                if (this.ClientId != null) hashCode = hashCode * 59 + this.ClientId.GetHashCode();
+                if (this.AuthorizationEndpoint != null) hashCode = hashCode * 59 + this.AuthorizationEndpoint.GetHashCode();
+                if (this.Scope != null) hashCode = hashCode * 59 + this.Scope.GetHashCode();
+                hashCode = hashCode * 59 + this.ResponseType.GetHashCode();
+                hashCode = hashCode * 59 + this.ResponseMode.GetHashCode();
+                if (this.SigningKey != null) hashCode = hashCode * 59 + this.SigningKey.GetHashCode();
                 return hashCode;
             }
         }

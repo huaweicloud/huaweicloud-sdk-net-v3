@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(DataTransformationInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TransformationInfo != input.TransformationInfo || (this.TransformationInfo != null && !this.TransformationInfo.Equals(input.TransformationInfo))) return false;
+            if (this.ConfigTransformation != input.ConfigTransformation || (this.ConfigTransformation != null && !this.ConfigTransformation.Equals(input.ConfigTransformation))) return false;
+            if (this.DataTransformationObjectInfos != input.DataTransformationObjectInfos || (this.DataTransformationObjectInfos != null && input.DataTransformationObjectInfos != null && !this.DataTransformationObjectInfos.SequenceEqual(input.DataTransformationObjectInfos))) return false;
 
-            return 
-                (
-                    this.TransformationInfo == input.TransformationInfo ||
-                    (this.TransformationInfo != null &&
-                    this.TransformationInfo.Equals(input.TransformationInfo))
-                ) && 
-                (
-                    this.ConfigTransformation == input.ConfigTransformation ||
-                    (this.ConfigTransformation != null &&
-                    this.ConfigTransformation.Equals(input.ConfigTransformation))
-                ) && 
-                (
-                    this.DataTransformationObjectInfos == input.DataTransformationObjectInfos ||
-                    this.DataTransformationObjectInfos != null &&
-                    input.DataTransformationObjectInfos != null &&
-                    this.DataTransformationObjectInfos.SequenceEqual(input.DataTransformationObjectInfos)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TransformationInfo != null)
-                    hashCode = hashCode * 59 + this.TransformationInfo.GetHashCode();
-                if (this.ConfigTransformation != null)
-                    hashCode = hashCode * 59 + this.ConfigTransformation.GetHashCode();
-                if (this.DataTransformationObjectInfos != null)
-                    hashCode = hashCode * 59 + this.DataTransformationObjectInfos.GetHashCode();
+                var hashCode = 41;
+                if (this.TransformationInfo != null) hashCode = hashCode * 59 + this.TransformationInfo.GetHashCode();
+                if (this.ConfigTransformation != null) hashCode = hashCode * 59 + this.ConfigTransformation.GetHashCode();
+                if (this.DataTransformationObjectInfos != null) hashCode = hashCode * 59 + this.DataTransformationObjectInfos.GetHashCode();
                 return hashCode;
             }
         }

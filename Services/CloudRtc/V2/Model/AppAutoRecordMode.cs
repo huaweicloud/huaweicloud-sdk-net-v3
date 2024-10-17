@@ -177,25 +177,12 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         /// </summary>
         public bool Equals(AppAutoRecordMode input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Mode != input.Mode) return false;
+            if (this.RecordRuleId != input.RecordRuleId || (this.RecordRuleId != null && !this.RecordRuleId.Equals(input.RecordRuleId))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
 
-            return 
-                (
-                    this.Mode == input.Mode ||
-                    (this.Mode != null &&
-                    this.Mode.Equals(input.Mode))
-                ) && 
-                (
-                    this.RecordRuleId == input.RecordRuleId ||
-                    (this.RecordRuleId != null &&
-                    this.RecordRuleId.Equals(input.RecordRuleId))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -205,13 +192,10 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Mode != null)
-                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
-                if (this.RecordRuleId != null)
-                    hashCode = hashCode * 59 + this.RecordRuleId.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                if (this.RecordRuleId != null) hashCode = hashCode * 59 + this.RecordRuleId.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 return hashCode;
             }
         }

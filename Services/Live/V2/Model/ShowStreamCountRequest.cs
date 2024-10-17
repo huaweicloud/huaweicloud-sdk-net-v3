@@ -66,26 +66,12 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         /// </summary>
         public bool Equals(ShowStreamCountRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PublishDomains != input.PublishDomains || (this.PublishDomains != null && input.PublishDomains != null && !this.PublishDomains.SequenceEqual(input.PublishDomains))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
 
-            return 
-                (
-                    this.PublishDomains == input.PublishDomains ||
-                    this.PublishDomains != null &&
-                    input.PublishDomains != null &&
-                    this.PublishDomains.SequenceEqual(input.PublishDomains)
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -95,13 +81,10 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PublishDomains != null)
-                    hashCode = hashCode * 59 + this.PublishDomains.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                var hashCode = 41;
+                if (this.PublishDomains != null) hashCode = hashCode * 59 + this.PublishDomains.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
                 return hashCode;
             }
         }

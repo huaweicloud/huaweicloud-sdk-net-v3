@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(AutoScalingSwitchStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ScalingSwitch != input.ScalingSwitch || (this.ScalingSwitch != null && !this.ScalingSwitch.Equals(input.ScalingSwitch))) return false;
+            if (this.FlavorSwitch != input.FlavorSwitch || (this.FlavorSwitch != null && !this.FlavorSwitch.Equals(input.FlavorSwitch))) return false;
+            if (this.ReadOnlySwitch != input.ReadOnlySwitch || (this.ReadOnlySwitch != null && !this.ReadOnlySwitch.Equals(input.ReadOnlySwitch))) return false;
 
-            return 
-                (
-                    this.ScalingSwitch == input.ScalingSwitch ||
-                    (this.ScalingSwitch != null &&
-                    this.ScalingSwitch.Equals(input.ScalingSwitch))
-                ) && 
-                (
-                    this.FlavorSwitch == input.FlavorSwitch ||
-                    (this.FlavorSwitch != null &&
-                    this.FlavorSwitch.Equals(input.FlavorSwitch))
-                ) && 
-                (
-                    this.ReadOnlySwitch == input.ReadOnlySwitch ||
-                    (this.ReadOnlySwitch != null &&
-                    this.ReadOnlySwitch.Equals(input.ReadOnlySwitch))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ScalingSwitch != null)
-                    hashCode = hashCode * 59 + this.ScalingSwitch.GetHashCode();
-                if (this.FlavorSwitch != null)
-                    hashCode = hashCode * 59 + this.FlavorSwitch.GetHashCode();
-                if (this.ReadOnlySwitch != null)
-                    hashCode = hashCode * 59 + this.ReadOnlySwitch.GetHashCode();
+                var hashCode = 41;
+                if (this.ScalingSwitch != null) hashCode = hashCode * 59 + this.ScalingSwitch.GetHashCode();
+                if (this.FlavorSwitch != null) hashCode = hashCode * 59 + this.FlavorSwitch.GetHashCode();
+                if (this.ReadOnlySwitch != null) hashCode = hashCode * 59 + this.ReadOnlySwitch.GetHashCode();
                 return hashCode;
             }
         }

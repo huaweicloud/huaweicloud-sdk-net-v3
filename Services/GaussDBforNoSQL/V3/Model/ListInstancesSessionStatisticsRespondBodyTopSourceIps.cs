@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(ListInstancesSessionStatisticsRespondBodyTopSourceIps input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClientIp != input.ClientIp || (this.ClientIp != null && !this.ClientIp.Equals(input.ClientIp))) return false;
+            if (this.ConnectionCount != input.ConnectionCount || (this.ConnectionCount != null && !this.ConnectionCount.Equals(input.ConnectionCount))) return false;
 
-            return 
-                (
-                    this.ClientIp == input.ClientIp ||
-                    (this.ClientIp != null &&
-                    this.ClientIp.Equals(input.ClientIp))
-                ) && 
-                (
-                    this.ConnectionCount == input.ConnectionCount ||
-                    (this.ConnectionCount != null &&
-                    this.ConnectionCount.Equals(input.ConnectionCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClientIp != null)
-                    hashCode = hashCode * 59 + this.ClientIp.GetHashCode();
-                if (this.ConnectionCount != null)
-                    hashCode = hashCode * 59 + this.ConnectionCount.GetHashCode();
+                var hashCode = 41;
+                if (this.ClientIp != null) hashCode = hashCode * 59 + this.ClientIp.GetHashCode();
+                if (this.ConnectionCount != null) hashCode = hashCode * 59 + this.ConnectionCount.GetHashCode();
                 return hashCode;
             }
         }

@@ -66,25 +66,12 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// </summary>
         public bool Equals(UpdateL7ruleRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.L7policyId != input.L7policyId || (this.L7policyId != null && !this.L7policyId.Equals(input.L7policyId))) return false;
+            if (this.L7ruleId != input.L7ruleId || (this.L7ruleId != null && !this.L7ruleId.Equals(input.L7ruleId))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
-            return 
-                (
-                    this.L7policyId == input.L7policyId ||
-                    (this.L7policyId != null &&
-                    this.L7policyId.Equals(input.L7policyId))
-                ) && 
-                (
-                    this.L7ruleId == input.L7ruleId ||
-                    (this.L7ruleId != null &&
-                    this.L7ruleId.Equals(input.L7ruleId))
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +81,10 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.L7policyId != null)
-                    hashCode = hashCode * 59 + this.L7policyId.GetHashCode();
-                if (this.L7ruleId != null)
-                    hashCode = hashCode * 59 + this.L7ruleId.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                var hashCode = 41;
+                if (this.L7policyId != null) hashCode = hashCode * 59 + this.L7policyId.GetHashCode();
+                if (this.L7ruleId != null) hashCode = hashCode * 59 + this.L7ruleId.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

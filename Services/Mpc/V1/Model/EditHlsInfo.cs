@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(EditHlsInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Interval != input.Interval || (this.Interval != null && !this.Interval.Equals(input.Interval))) return false;
 
-            return 
-                (
-                    this.Interval == input.Interval ||
-                    (this.Interval != null &&
-                    this.Interval.Equals(input.Interval))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Interval != null)
-                    hashCode = hashCode * 59 + this.Interval.GetHashCode();
+                var hashCode = 41;
+                if (this.Interval != null) hashCode = hashCode * 59 + this.Interval.GetHashCode();
                 return hashCode;
             }
         }

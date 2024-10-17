@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(DomainIpv6SwitchReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
+            if (this.IsIpv6 != input.IsIpv6 || (this.IsIpv6 != null && !this.IsIpv6.Equals(input.IsIpv6))) return false;
 
-            return 
-                (
-                    this.Domain == input.Domain ||
-                    (this.Domain != null &&
-                    this.Domain.Equals(input.Domain))
-                ) && 
-                (
-                    this.IsIpv6 == input.IsIpv6 ||
-                    (this.IsIpv6 != null &&
-                    this.IsIpv6.Equals(input.IsIpv6))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Domain != null)
-                    hashCode = hashCode * 59 + this.Domain.GetHashCode();
-                if (this.IsIpv6 != null)
-                    hashCode = hashCode * 59 + this.IsIpv6.GetHashCode();
+                var hashCode = 41;
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                if (this.IsIpv6 != null) hashCode = hashCode * 59 + this.IsIpv6.GetHashCode();
                 return hashCode;
             }
         }

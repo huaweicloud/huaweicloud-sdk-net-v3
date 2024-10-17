@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(AddCertificateResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CertificateId != input.CertificateId || (this.CertificateId != null && !this.CertificateId.Equals(input.CertificateId))) return false;
+            if (this.CnName != input.CnName || (this.CnName != null && !this.CnName.Equals(input.CnName))) return false;
+            if (this.Owner != input.Owner || (this.Owner != null && !this.Owner.Equals(input.Owner))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.VerifyCode != input.VerifyCode || (this.VerifyCode != null && !this.VerifyCode.Equals(input.VerifyCode))) return false;
+            if (this.ProvisionEnable != input.ProvisionEnable || (this.ProvisionEnable != null && !this.ProvisionEnable.Equals(input.ProvisionEnable))) return false;
+            if (this.TemplateId != input.TemplateId || (this.TemplateId != null && !this.TemplateId.Equals(input.TemplateId))) return false;
+            if (this.CreateDate != input.CreateDate || (this.CreateDate != null && !this.CreateDate.Equals(input.CreateDate))) return false;
+            if (this.EffectiveDate != input.EffectiveDate || (this.EffectiveDate != null && !this.EffectiveDate.Equals(input.EffectiveDate))) return false;
+            if (this.ExpiryDate != input.ExpiryDate || (this.ExpiryDate != null && !this.ExpiryDate.Equals(input.ExpiryDate))) return false;
 
-            return 
-                (
-                    this.CertificateId == input.CertificateId ||
-                    (this.CertificateId != null &&
-                    this.CertificateId.Equals(input.CertificateId))
-                ) && 
-                (
-                    this.CnName == input.CnName ||
-                    (this.CnName != null &&
-                    this.CnName.Equals(input.CnName))
-                ) && 
-                (
-                    this.Owner == input.Owner ||
-                    (this.Owner != null &&
-                    this.Owner.Equals(input.Owner))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.VerifyCode == input.VerifyCode ||
-                    (this.VerifyCode != null &&
-                    this.VerifyCode.Equals(input.VerifyCode))
-                ) && 
-                (
-                    this.ProvisionEnable == input.ProvisionEnable ||
-                    (this.ProvisionEnable != null &&
-                    this.ProvisionEnable.Equals(input.ProvisionEnable))
-                ) && 
-                (
-                    this.TemplateId == input.TemplateId ||
-                    (this.TemplateId != null &&
-                    this.TemplateId.Equals(input.TemplateId))
-                ) && 
-                (
-                    this.CreateDate == input.CreateDate ||
-                    (this.CreateDate != null &&
-                    this.CreateDate.Equals(input.CreateDate))
-                ) && 
-                (
-                    this.EffectiveDate == input.EffectiveDate ||
-                    (this.EffectiveDate != null &&
-                    this.EffectiveDate.Equals(input.EffectiveDate))
-                ) && 
-                (
-                    this.ExpiryDate == input.ExpiryDate ||
-                    (this.ExpiryDate != null &&
-                    this.ExpiryDate.Equals(input.ExpiryDate))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CertificateId != null)
-                    hashCode = hashCode * 59 + this.CertificateId.GetHashCode();
-                if (this.CnName != null)
-                    hashCode = hashCode * 59 + this.CnName.GetHashCode();
-                if (this.Owner != null)
-                    hashCode = hashCode * 59 + this.Owner.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.VerifyCode != null)
-                    hashCode = hashCode * 59 + this.VerifyCode.GetHashCode();
-                if (this.ProvisionEnable != null)
-                    hashCode = hashCode * 59 + this.ProvisionEnable.GetHashCode();
-                if (this.TemplateId != null)
-                    hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
-                if (this.CreateDate != null)
-                    hashCode = hashCode * 59 + this.CreateDate.GetHashCode();
-                if (this.EffectiveDate != null)
-                    hashCode = hashCode * 59 + this.EffectiveDate.GetHashCode();
-                if (this.ExpiryDate != null)
-                    hashCode = hashCode * 59 + this.ExpiryDate.GetHashCode();
+                var hashCode = 41;
+                if (this.CertificateId != null) hashCode = hashCode * 59 + this.CertificateId.GetHashCode();
+                if (this.CnName != null) hashCode = hashCode * 59 + this.CnName.GetHashCode();
+                if (this.Owner != null) hashCode = hashCode * 59 + this.Owner.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.VerifyCode != null) hashCode = hashCode * 59 + this.VerifyCode.GetHashCode();
+                if (this.ProvisionEnable != null) hashCode = hashCode * 59 + this.ProvisionEnable.GetHashCode();
+                if (this.TemplateId != null) hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
+                if (this.CreateDate != null) hashCode = hashCode * 59 + this.CreateDate.GetHashCode();
+                if (this.EffectiveDate != null) hashCode = hashCode * 59 + this.EffectiveDate.GetHashCode();
+                if (this.ExpiryDate != null) hashCode = hashCode * 59 + this.ExpiryDate.GetHashCode();
                 return hashCode;
             }
         }

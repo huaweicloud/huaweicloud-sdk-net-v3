@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// </summary>
         public bool Equals(Datapoint input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Max != input.Max || (this.Max != null && !this.Max.Equals(input.Max))) return false;
+            if (this.Min != input.Min || (this.Min != null && !this.Min.Equals(input.Min))) return false;
+            if (this.Average != input.Average || (this.Average != null && !this.Average.Equals(input.Average))) return false;
+            if (this.Sum != input.Sum || (this.Sum != null && !this.Sum.Equals(input.Sum))) return false;
+            if (this.Variance != input.Variance || (this.Variance != null && !this.Variance.Equals(input.Variance))) return false;
+            if (this.Timestamp != input.Timestamp || (this.Timestamp != null && !this.Timestamp.Equals(input.Timestamp))) return false;
+            if (this.Unit != input.Unit || (this.Unit != null && !this.Unit.Equals(input.Unit))) return false;
 
-            return 
-                (
-                    this.Max == input.Max ||
-                    (this.Max != null &&
-                    this.Max.Equals(input.Max))
-                ) && 
-                (
-                    this.Min == input.Min ||
-                    (this.Min != null &&
-                    this.Min.Equals(input.Min))
-                ) && 
-                (
-                    this.Average == input.Average ||
-                    (this.Average != null &&
-                    this.Average.Equals(input.Average))
-                ) && 
-                (
-                    this.Sum == input.Sum ||
-                    (this.Sum != null &&
-                    this.Sum.Equals(input.Sum))
-                ) && 
-                (
-                    this.Variance == input.Variance ||
-                    (this.Variance != null &&
-                    this.Variance.Equals(input.Variance))
-                ) && 
-                (
-                    this.Timestamp == input.Timestamp ||
-                    (this.Timestamp != null &&
-                    this.Timestamp.Equals(input.Timestamp))
-                ) && 
-                (
-                    this.Unit == input.Unit ||
-                    (this.Unit != null &&
-                    this.Unit.Equals(input.Unit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Max != null)
-                    hashCode = hashCode * 59 + this.Max.GetHashCode();
-                if (this.Min != null)
-                    hashCode = hashCode * 59 + this.Min.GetHashCode();
-                if (this.Average != null)
-                    hashCode = hashCode * 59 + this.Average.GetHashCode();
-                if (this.Sum != null)
-                    hashCode = hashCode * 59 + this.Sum.GetHashCode();
-                if (this.Variance != null)
-                    hashCode = hashCode * 59 + this.Variance.GetHashCode();
-                if (this.Timestamp != null)
-                    hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
-                if (this.Unit != null)
-                    hashCode = hashCode * 59 + this.Unit.GetHashCode();
+                var hashCode = 41;
+                if (this.Max != null) hashCode = hashCode * 59 + this.Max.GetHashCode();
+                if (this.Min != null) hashCode = hashCode * 59 + this.Min.GetHashCode();
+                if (this.Average != null) hashCode = hashCode * 59 + this.Average.GetHashCode();
+                if (this.Sum != null) hashCode = hashCode * 59 + this.Sum.GetHashCode();
+                if (this.Variance != null) hashCode = hashCode * 59 + this.Variance.GetHashCode();
+                if (this.Timestamp != null) hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
+                if (this.Unit != null) hashCode = hashCode * 59 + this.Unit.GetHashCode();
                 return hashCode;
             }
         }

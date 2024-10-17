@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(TriggerMetadataList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TriggerName != input.TriggerName || (this.TriggerName != null && !this.TriggerName.Equals(input.TriggerName))) return false;
+            if (this.TriggerType != input.TriggerType || (this.TriggerType != null && !this.TriggerType.Equals(input.TriggerType))) return false;
+            if (this.EventType != input.EventType || (this.EventType != null && !this.EventType.Equals(input.EventType))) return false;
+            if (this.EventData != input.EventData || (this.EventData != null && !this.EventData.Equals(input.EventData))) return false;
 
-            return 
-                (
-                    this.TriggerName == input.TriggerName ||
-                    (this.TriggerName != null &&
-                    this.TriggerName.Equals(input.TriggerName))
-                ) && 
-                (
-                    this.TriggerType == input.TriggerType ||
-                    (this.TriggerType != null &&
-                    this.TriggerType.Equals(input.TriggerType))
-                ) && 
-                (
-                    this.EventType == input.EventType ||
-                    (this.EventType != null &&
-                    this.EventType.Equals(input.EventType))
-                ) && 
-                (
-                    this.EventData == input.EventData ||
-                    (this.EventData != null &&
-                    this.EventData.Equals(input.EventData))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TriggerName != null)
-                    hashCode = hashCode * 59 + this.TriggerName.GetHashCode();
-                if (this.TriggerType != null)
-                    hashCode = hashCode * 59 + this.TriggerType.GetHashCode();
-                if (this.EventType != null)
-                    hashCode = hashCode * 59 + this.EventType.GetHashCode();
-                if (this.EventData != null)
-                    hashCode = hashCode * 59 + this.EventData.GetHashCode();
+                var hashCode = 41;
+                if (this.TriggerName != null) hashCode = hashCode * 59 + this.TriggerName.GetHashCode();
+                if (this.TriggerType != null) hashCode = hashCode * 59 + this.TriggerType.GetHashCode();
+                if (this.EventType != null) hashCode = hashCode * 59 + this.EventType.GetHashCode();
+                if (this.EventData != null) hashCode = hashCode * 59 + this.EventData.GetHashCode();
                 return hashCode;
             }
         }

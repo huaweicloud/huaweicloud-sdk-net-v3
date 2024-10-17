@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(PaneSetting input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PaneId != input.PaneId || (this.PaneId != null && !this.PaneId.Equals(input.PaneId))) return false;
+            if (this.X != input.X || (this.X != null && !this.X.Equals(input.X))) return false;
+            if (this.Y != input.Y || (this.Y != null && !this.Y.Equals(input.Y))) return false;
+            if (this.Width != input.Width || (this.Width != null && !this.Width.Equals(input.Width))) return false;
+            if (this.Height != input.Height || (this.Height != null && !this.Height.Equals(input.Height))) return false;
 
-            return 
-                (
-                    this.PaneId == input.PaneId ||
-                    (this.PaneId != null &&
-                    this.PaneId.Equals(input.PaneId))
-                ) && 
-                (
-                    this.X == input.X ||
-                    (this.X != null &&
-                    this.X.Equals(input.X))
-                ) && 
-                (
-                    this.Y == input.Y ||
-                    (this.Y != null &&
-                    this.Y.Equals(input.Y))
-                ) && 
-                (
-                    this.Width == input.Width ||
-                    (this.Width != null &&
-                    this.Width.Equals(input.Width))
-                ) && 
-                (
-                    this.Height == input.Height ||
-                    (this.Height != null &&
-                    this.Height.Equals(input.Height))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PaneId != null)
-                    hashCode = hashCode * 59 + this.PaneId.GetHashCode();
-                if (this.X != null)
-                    hashCode = hashCode * 59 + this.X.GetHashCode();
-                if (this.Y != null)
-                    hashCode = hashCode * 59 + this.Y.GetHashCode();
-                if (this.Width != null)
-                    hashCode = hashCode * 59 + this.Width.GetHashCode();
-                if (this.Height != null)
-                    hashCode = hashCode * 59 + this.Height.GetHashCode();
+                var hashCode = 41;
+                if (this.PaneId != null) hashCode = hashCode * 59 + this.PaneId.GetHashCode();
+                if (this.X != null) hashCode = hashCode * 59 + this.X.GetHashCode();
+                if (this.Y != null) hashCode = hashCode * 59 + this.Y.GetHashCode();
+                if (this.Width != null) hashCode = hashCode * 59 + this.Width.GetHashCode();
+                if (this.Height != null) hashCode = hashCode * 59 + this.Height.GetHashCode();
                 return hashCode;
             }
         }

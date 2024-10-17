@@ -212,50 +212,17 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(LiveSnapshotConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
+            if (this.AppName != input.AppName || (this.AppName != null && !this.AppName.Equals(input.AppName))) return false;
+            if (this.AuthKey != input.AuthKey || (this.AuthKey != null && !this.AuthKey.Equals(input.AuthKey))) return false;
+            if (this.TimeInterval != input.TimeInterval || (this.TimeInterval != null && !this.TimeInterval.Equals(input.TimeInterval))) return false;
+            if (this.ObjectWriteMode != input.ObjectWriteMode || (this.ObjectWriteMode != null && !this.ObjectWriteMode.Equals(input.ObjectWriteMode))) return false;
+            if (this.ObsLocation != input.ObsLocation || (this.ObsLocation != null && !this.ObsLocation.Equals(input.ObsLocation))) return false;
+            if (this.CallBackEnable != input.CallBackEnable) return false;
+            if (this.CallBackUrl != input.CallBackUrl || (this.CallBackUrl != null && !this.CallBackUrl.Equals(input.CallBackUrl))) return false;
 
-            return 
-                (
-                    this.Domain == input.Domain ||
-                    (this.Domain != null &&
-                    this.Domain.Equals(input.Domain))
-                ) && 
-                (
-                    this.AppName == input.AppName ||
-                    (this.AppName != null &&
-                    this.AppName.Equals(input.AppName))
-                ) && 
-                (
-                    this.AuthKey == input.AuthKey ||
-                    (this.AuthKey != null &&
-                    this.AuthKey.Equals(input.AuthKey))
-                ) && 
-                (
-                    this.TimeInterval == input.TimeInterval ||
-                    (this.TimeInterval != null &&
-                    this.TimeInterval.Equals(input.TimeInterval))
-                ) && 
-                (
-                    this.ObjectWriteMode == input.ObjectWriteMode ||
-                    (this.ObjectWriteMode != null &&
-                    this.ObjectWriteMode.Equals(input.ObjectWriteMode))
-                ) && 
-                (
-                    this.ObsLocation == input.ObsLocation ||
-                    (this.ObsLocation != null &&
-                    this.ObsLocation.Equals(input.ObsLocation))
-                ) && 
-                (
-                    this.CallBackEnable == input.CallBackEnable ||
-                    (this.CallBackEnable != null &&
-                    this.CallBackEnable.Equals(input.CallBackEnable))
-                ) && 
-                (
-                    this.CallBackUrl == input.CallBackUrl ||
-                    (this.CallBackUrl != null &&
-                    this.CallBackUrl.Equals(input.CallBackUrl))
-                );
+            return true;
         }
 
         /// <summary>
@@ -265,23 +232,15 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Domain != null)
-                    hashCode = hashCode * 59 + this.Domain.GetHashCode();
-                if (this.AppName != null)
-                    hashCode = hashCode * 59 + this.AppName.GetHashCode();
-                if (this.AuthKey != null)
-                    hashCode = hashCode * 59 + this.AuthKey.GetHashCode();
-                if (this.TimeInterval != null)
-                    hashCode = hashCode * 59 + this.TimeInterval.GetHashCode();
-                if (this.ObjectWriteMode != null)
-                    hashCode = hashCode * 59 + this.ObjectWriteMode.GetHashCode();
-                if (this.ObsLocation != null)
-                    hashCode = hashCode * 59 + this.ObsLocation.GetHashCode();
-                if (this.CallBackEnable != null)
-                    hashCode = hashCode * 59 + this.CallBackEnable.GetHashCode();
-                if (this.CallBackUrl != null)
-                    hashCode = hashCode * 59 + this.CallBackUrl.GetHashCode();
+                var hashCode = 41;
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                if (this.AppName != null) hashCode = hashCode * 59 + this.AppName.GetHashCode();
+                if (this.AuthKey != null) hashCode = hashCode * 59 + this.AuthKey.GetHashCode();
+                if (this.TimeInterval != null) hashCode = hashCode * 59 + this.TimeInterval.GetHashCode();
+                if (this.ObjectWriteMode != null) hashCode = hashCode * 59 + this.ObjectWriteMode.GetHashCode();
+                if (this.ObsLocation != null) hashCode = hashCode * 59 + this.ObsLocation.GetHashCode();
+                hashCode = hashCode * 59 + this.CallBackEnable.GetHashCode();
+                if (this.CallBackUrl != null) hashCode = hashCode * 59 + this.CallBackUrl.GetHashCode();
                 return hashCode;
             }
         }

@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(UpdateDomainMultiCertificatesResponseBodyContent input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
+            if (this.HttpsSwitch != input.HttpsSwitch || (this.HttpsSwitch != null && !this.HttpsSwitch.Equals(input.HttpsSwitch))) return false;
+            if (this.AccessOriginWay != input.AccessOriginWay || (this.AccessOriginWay != null && !this.AccessOriginWay.Equals(input.AccessOriginWay))) return false;
+            if (this.ForceRedirectHttps != input.ForceRedirectHttps || (this.ForceRedirectHttps != null && !this.ForceRedirectHttps.Equals(input.ForceRedirectHttps))) return false;
+            if (this.ForceRedirectConfig != input.ForceRedirectConfig || (this.ForceRedirectConfig != null && !this.ForceRedirectConfig.Equals(input.ForceRedirectConfig))) return false;
+            if (this.Http2 != input.Http2 || (this.Http2 != null && !this.Http2.Equals(input.Http2))) return false;
+            if (this.CertName != input.CertName || (this.CertName != null && !this.CertName.Equals(input.CertName))) return false;
+            if (this.Certificate != input.Certificate || (this.Certificate != null && !this.Certificate.Equals(input.Certificate))) return false;
+            if (this.CertificateType != input.CertificateType || (this.CertificateType != null && !this.CertificateType.Equals(input.CertificateType))) return false;
+            if (this.ExpirationTime != input.ExpirationTime || (this.ExpirationTime != null && !this.ExpirationTime.Equals(input.ExpirationTime))) return false;
 
-            return 
-                (
-                    this.DomainName == input.DomainName ||
-                    (this.DomainName != null &&
-                    this.DomainName.Equals(input.DomainName))
-                ) && 
-                (
-                    this.HttpsSwitch == input.HttpsSwitch ||
-                    (this.HttpsSwitch != null &&
-                    this.HttpsSwitch.Equals(input.HttpsSwitch))
-                ) && 
-                (
-                    this.AccessOriginWay == input.AccessOriginWay ||
-                    (this.AccessOriginWay != null &&
-                    this.AccessOriginWay.Equals(input.AccessOriginWay))
-                ) && 
-                (
-                    this.ForceRedirectHttps == input.ForceRedirectHttps ||
-                    (this.ForceRedirectHttps != null &&
-                    this.ForceRedirectHttps.Equals(input.ForceRedirectHttps))
-                ) && 
-                (
-                    this.ForceRedirectConfig == input.ForceRedirectConfig ||
-                    (this.ForceRedirectConfig != null &&
-                    this.ForceRedirectConfig.Equals(input.ForceRedirectConfig))
-                ) && 
-                (
-                    this.Http2 == input.Http2 ||
-                    (this.Http2 != null &&
-                    this.Http2.Equals(input.Http2))
-                ) && 
-                (
-                    this.CertName == input.CertName ||
-                    (this.CertName != null &&
-                    this.CertName.Equals(input.CertName))
-                ) && 
-                (
-                    this.Certificate == input.Certificate ||
-                    (this.Certificate != null &&
-                    this.Certificate.Equals(input.Certificate))
-                ) && 
-                (
-                    this.CertificateType == input.CertificateType ||
-                    (this.CertificateType != null &&
-                    this.CertificateType.Equals(input.CertificateType))
-                ) && 
-                (
-                    this.ExpirationTime == input.ExpirationTime ||
-                    (this.ExpirationTime != null &&
-                    this.ExpirationTime.Equals(input.ExpirationTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DomainName != null)
-                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.HttpsSwitch != null)
-                    hashCode = hashCode * 59 + this.HttpsSwitch.GetHashCode();
-                if (this.AccessOriginWay != null)
-                    hashCode = hashCode * 59 + this.AccessOriginWay.GetHashCode();
-                if (this.ForceRedirectHttps != null)
-                    hashCode = hashCode * 59 + this.ForceRedirectHttps.GetHashCode();
-                if (this.ForceRedirectConfig != null)
-                    hashCode = hashCode * 59 + this.ForceRedirectConfig.GetHashCode();
-                if (this.Http2 != null)
-                    hashCode = hashCode * 59 + this.Http2.GetHashCode();
-                if (this.CertName != null)
-                    hashCode = hashCode * 59 + this.CertName.GetHashCode();
-                if (this.Certificate != null)
-                    hashCode = hashCode * 59 + this.Certificate.GetHashCode();
-                if (this.CertificateType != null)
-                    hashCode = hashCode * 59 + this.CertificateType.GetHashCode();
-                if (this.ExpirationTime != null)
-                    hashCode = hashCode * 59 + this.ExpirationTime.GetHashCode();
+                var hashCode = 41;
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.HttpsSwitch != null) hashCode = hashCode * 59 + this.HttpsSwitch.GetHashCode();
+                if (this.AccessOriginWay != null) hashCode = hashCode * 59 + this.AccessOriginWay.GetHashCode();
+                if (this.ForceRedirectHttps != null) hashCode = hashCode * 59 + this.ForceRedirectHttps.GetHashCode();
+                if (this.ForceRedirectConfig != null) hashCode = hashCode * 59 + this.ForceRedirectConfig.GetHashCode();
+                if (this.Http2 != null) hashCode = hashCode * 59 + this.Http2.GetHashCode();
+                if (this.CertName != null) hashCode = hashCode * 59 + this.CertName.GetHashCode();
+                if (this.Certificate != null) hashCode = hashCode * 59 + this.Certificate.GetHashCode();
+                if (this.CertificateType != null) hashCode = hashCode * 59 + this.CertificateType.GetHashCode();
+                if (this.ExpirationTime != null) hashCode = hashCode * 59 + this.ExpirationTime.GetHashCode();
                 return hashCode;
             }
         }

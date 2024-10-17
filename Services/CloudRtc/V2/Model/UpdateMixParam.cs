@@ -91,47 +91,16 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         /// </summary>
         public bool Equals(UpdateMixParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LayoutTemplate != input.LayoutTemplate || (this.LayoutTemplate != null && !this.LayoutTemplate.Equals(input.LayoutTemplate))) return false;
+            if (this.BackgroundImage != input.BackgroundImage || (this.BackgroundImage != null && !this.BackgroundImage.Equals(input.BackgroundImage))) return false;
+            if (this.DefaultUserBackgroundImage != input.DefaultUserBackgroundImage || (this.DefaultUserBackgroundImage != null && !this.DefaultUserBackgroundImage.Equals(input.DefaultUserBackgroundImage))) return false;
+            if (this.ScreenBackgroundImage != input.ScreenBackgroundImage || (this.ScreenBackgroundImage != null && !this.ScreenBackgroundImage.Equals(input.ScreenBackgroundImage))) return false;
+            if (this.MaxIdleTime != input.MaxIdleTime || (this.MaxIdleTime != null && !this.MaxIdleTime.Equals(input.MaxIdleTime))) return false;
+            if (this.LayoutPanes != input.LayoutPanes || (this.LayoutPanes != null && input.LayoutPanes != null && !this.LayoutPanes.SequenceEqual(input.LayoutPanes))) return false;
+            if (this.UserBackgroundImages != input.UserBackgroundImages || (this.UserBackgroundImages != null && input.UserBackgroundImages != null && !this.UserBackgroundImages.SequenceEqual(input.UserBackgroundImages))) return false;
 
-            return 
-                (
-                    this.LayoutTemplate == input.LayoutTemplate ||
-                    (this.LayoutTemplate != null &&
-                    this.LayoutTemplate.Equals(input.LayoutTemplate))
-                ) && 
-                (
-                    this.BackgroundImage == input.BackgroundImage ||
-                    (this.BackgroundImage != null &&
-                    this.BackgroundImage.Equals(input.BackgroundImage))
-                ) && 
-                (
-                    this.DefaultUserBackgroundImage == input.DefaultUserBackgroundImage ||
-                    (this.DefaultUserBackgroundImage != null &&
-                    this.DefaultUserBackgroundImage.Equals(input.DefaultUserBackgroundImage))
-                ) && 
-                (
-                    this.ScreenBackgroundImage == input.ScreenBackgroundImage ||
-                    (this.ScreenBackgroundImage != null &&
-                    this.ScreenBackgroundImage.Equals(input.ScreenBackgroundImage))
-                ) && 
-                (
-                    this.MaxIdleTime == input.MaxIdleTime ||
-                    (this.MaxIdleTime != null &&
-                    this.MaxIdleTime.Equals(input.MaxIdleTime))
-                ) && 
-                (
-                    this.LayoutPanes == input.LayoutPanes ||
-                    this.LayoutPanes != null &&
-                    input.LayoutPanes != null &&
-                    this.LayoutPanes.SequenceEqual(input.LayoutPanes)
-                ) && 
-                (
-                    this.UserBackgroundImages == input.UserBackgroundImages ||
-                    this.UserBackgroundImages != null &&
-                    input.UserBackgroundImages != null &&
-                    this.UserBackgroundImages.SequenceEqual(input.UserBackgroundImages)
-                );
+            return true;
         }
 
         /// <summary>
@@ -141,21 +110,14 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LayoutTemplate != null)
-                    hashCode = hashCode * 59 + this.LayoutTemplate.GetHashCode();
-                if (this.BackgroundImage != null)
-                    hashCode = hashCode * 59 + this.BackgroundImage.GetHashCode();
-                if (this.DefaultUserBackgroundImage != null)
-                    hashCode = hashCode * 59 + this.DefaultUserBackgroundImage.GetHashCode();
-                if (this.ScreenBackgroundImage != null)
-                    hashCode = hashCode * 59 + this.ScreenBackgroundImage.GetHashCode();
-                if (this.MaxIdleTime != null)
-                    hashCode = hashCode * 59 + this.MaxIdleTime.GetHashCode();
-                if (this.LayoutPanes != null)
-                    hashCode = hashCode * 59 + this.LayoutPanes.GetHashCode();
-                if (this.UserBackgroundImages != null)
-                    hashCode = hashCode * 59 + this.UserBackgroundImages.GetHashCode();
+                var hashCode = 41;
+                if (this.LayoutTemplate != null) hashCode = hashCode * 59 + this.LayoutTemplate.GetHashCode();
+                if (this.BackgroundImage != null) hashCode = hashCode * 59 + this.BackgroundImage.GetHashCode();
+                if (this.DefaultUserBackgroundImage != null) hashCode = hashCode * 59 + this.DefaultUserBackgroundImage.GetHashCode();
+                if (this.ScreenBackgroundImage != null) hashCode = hashCode * 59 + this.ScreenBackgroundImage.GetHashCode();
+                if (this.MaxIdleTime != null) hashCode = hashCode * 59 + this.MaxIdleTime.GetHashCode();
+                if (this.LayoutPanes != null) hashCode = hashCode * 59 + this.LayoutPanes.GetHashCode();
+                if (this.UserBackgroundImages != null) hashCode = hashCode * 59 + this.UserBackgroundImages.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(CreateRewriteUrlConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Host != input.Host || (this.Host != null && !this.Host.Equals(input.Host))) return false;
+            if (this.Path != input.Path || (this.Path != null && !this.Path.Equals(input.Path))) return false;
+            if (this.Query != input.Query || (this.Query != null && !this.Query.Equals(input.Query))) return false;
 
-            return 
-                (
-                    this.Host == input.Host ||
-                    (this.Host != null &&
-                    this.Host.Equals(input.Host))
-                ) && 
-                (
-                    this.Path == input.Path ||
-                    (this.Path != null &&
-                    this.Path.Equals(input.Path))
-                ) && 
-                (
-                    this.Query == input.Query ||
-                    (this.Query != null &&
-                    this.Query.Equals(input.Query))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Host != null)
-                    hashCode = hashCode * 59 + this.Host.GetHashCode();
-                if (this.Path != null)
-                    hashCode = hashCode * 59 + this.Path.GetHashCode();
-                if (this.Query != null)
-                    hashCode = hashCode * 59 + this.Query.GetHashCode();
+                var hashCode = 41;
+                if (this.Host != null) hashCode = hashCode * 59 + this.Host.GetHashCode();
+                if (this.Path != null) hashCode = hashCode * 59 + this.Path.GetHashCode();
+                if (this.Query != null) hashCode = hashCode * 59 + this.Query.GetHashCode();
                 return hashCode;
             }
         }

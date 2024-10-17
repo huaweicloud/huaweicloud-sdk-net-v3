@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(EnableAutoRollbackPrimitiveTypeHolder input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EnableAutoRollback != input.EnableAutoRollback || (this.EnableAutoRollback != null && !this.EnableAutoRollback.Equals(input.EnableAutoRollback))) return false;
 
-            return 
-                (
-                    this.EnableAutoRollback == input.EnableAutoRollback ||
-                    (this.EnableAutoRollback != null &&
-                    this.EnableAutoRollback.Equals(input.EnableAutoRollback))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EnableAutoRollback != null)
-                    hashCode = hashCode * 59 + this.EnableAutoRollback.GetHashCode();
+                var hashCode = 41;
+                if (this.EnableAutoRollback != null) hashCode = hashCode * 59 + this.EnableAutoRollback.GetHashCode();
                 return hashCode;
             }
         }

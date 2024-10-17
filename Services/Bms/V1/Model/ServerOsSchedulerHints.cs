@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(ServerOsSchedulerHints input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Group != input.Group || (this.Group != null && input.Group != null && !this.Group.SequenceEqual(input.Group))) return false;
 
-            return 
-                (
-                    this.Group == input.Group ||
-                    this.Group != null &&
-                    input.Group != null &&
-                    this.Group.SequenceEqual(input.Group)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Group != null)
-                    hashCode = hashCode * 59 + this.Group.GetHashCode();
+                var hashCode = 41;
+                if (this.Group != null) hashCode = hashCode * 59 + this.Group.GetHashCode();
                 return hashCode;
             }
         }

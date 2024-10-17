@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(NodeTemplateExtendParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UserID != input.UserID || (this.UserID != null && !this.UserID.Equals(input.UserID))) return false;
 
-            return 
-                (
-                    this.UserID == input.UserID ||
-                    (this.UserID != null &&
-                    this.UserID.Equals(input.UserID))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UserID != null)
-                    hashCode = hashCode * 59 + this.UserID.GetHashCode();
+                var hashCode = 41;
+                if (this.UserID != null) hashCode = hashCode * 59 + this.UserID.GetHashCode();
                 return hashCode;
             }
         }

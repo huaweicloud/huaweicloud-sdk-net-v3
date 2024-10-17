@@ -98,48 +98,16 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(NeutronListFirewallGroupsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Id != input.Id || (this.Id != null && input.Id != null && !this.Id.SequenceEqual(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && input.Name != null && !this.Name.SequenceEqual(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && input.Description != null && !this.Description.SequenceEqual(input.Description))) return false;
+            if (this.IngressFirewallPolicyId != input.IngressFirewallPolicyId || (this.IngressFirewallPolicyId != null && !this.IngressFirewallPolicyId.Equals(input.IngressFirewallPolicyId))) return false;
+            if (this.EgressFirewallPolicyId != input.EgressFirewallPolicyId || (this.EgressFirewallPolicyId != null && !this.EgressFirewallPolicyId.Equals(input.EgressFirewallPolicyId))) return false;
 
-            return 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    this.Id != null &&
-                    input.Id != null &&
-                    this.Id.SequenceEqual(input.Id)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    this.Name != null &&
-                    input.Name != null &&
-                    this.Name.SequenceEqual(input.Name)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    this.Description != null &&
-                    input.Description != null &&
-                    this.Description.SequenceEqual(input.Description)
-                ) && 
-                (
-                    this.IngressFirewallPolicyId == input.IngressFirewallPolicyId ||
-                    (this.IngressFirewallPolicyId != null &&
-                    this.IngressFirewallPolicyId.Equals(input.IngressFirewallPolicyId))
-                ) && 
-                (
-                    this.EgressFirewallPolicyId == input.EgressFirewallPolicyId ||
-                    (this.EgressFirewallPolicyId != null &&
-                    this.EgressFirewallPolicyId.Equals(input.EgressFirewallPolicyId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -149,21 +117,14 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.IngressFirewallPolicyId != null)
-                    hashCode = hashCode * 59 + this.IngressFirewallPolicyId.GetHashCode();
-                if (this.EgressFirewallPolicyId != null)
-                    hashCode = hashCode * 59 + this.EgressFirewallPolicyId.GetHashCode();
+                var hashCode = 41;
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.IngressFirewallPolicyId != null) hashCode = hashCode * 59 + this.IngressFirewallPolicyId.GetHashCode();
+                if (this.EgressFirewallPolicyId != null) hashCode = hashCode * 59 + this.EgressFirewallPolicyId.GetHashCode();
                 return hashCode;
             }
         }

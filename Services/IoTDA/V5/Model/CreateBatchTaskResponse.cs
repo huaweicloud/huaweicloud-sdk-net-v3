@@ -133,77 +133,22 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(CreateBatchTaskResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TaskId != input.TaskId || (this.TaskId != null && !this.TaskId.Equals(input.TaskId))) return false;
+            if (this.TaskName != input.TaskName || (this.TaskName != null && !this.TaskName.Equals(input.TaskName))) return false;
+            if (this.TaskType != input.TaskType || (this.TaskType != null && !this.TaskType.Equals(input.TaskType))) return false;
+            if (this.TaskMode != input.TaskMode || (this.TaskMode != null && !this.TaskMode.Equals(input.TaskMode))) return false;
+            if (this.TaskExtInfo != input.TaskExtInfo || (this.TaskExtInfo != null && !this.TaskExtInfo.Equals(input.TaskExtInfo))) return false;
+            if (this.Targets != input.Targets || (this.Targets != null && input.Targets != null && !this.Targets.SequenceEqual(input.Targets))) return false;
+            if (this.TargetsFilter != input.TargetsFilter || (this.TargetsFilter != null && input.TargetsFilter != null && !this.TargetsFilter.SequenceEqual(input.TargetsFilter))) return false;
+            if (this.Document != input.Document || (this.Document != null && !this.Document.Equals(input.Document))) return false;
+            if (this.TaskPolicy != input.TaskPolicy || (this.TaskPolicy != null && !this.TaskPolicy.Equals(input.TaskPolicy))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.StatusDesc != input.StatusDesc || (this.StatusDesc != null && !this.StatusDesc.Equals(input.StatusDesc))) return false;
+            if (this.TaskProgress != input.TaskProgress || (this.TaskProgress != null && !this.TaskProgress.Equals(input.TaskProgress))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
 
-            return 
-                (
-                    this.TaskId == input.TaskId ||
-                    (this.TaskId != null &&
-                    this.TaskId.Equals(input.TaskId))
-                ) && 
-                (
-                    this.TaskName == input.TaskName ||
-                    (this.TaskName != null &&
-                    this.TaskName.Equals(input.TaskName))
-                ) && 
-                (
-                    this.TaskType == input.TaskType ||
-                    (this.TaskType != null &&
-                    this.TaskType.Equals(input.TaskType))
-                ) && 
-                (
-                    this.TaskMode == input.TaskMode ||
-                    (this.TaskMode != null &&
-                    this.TaskMode.Equals(input.TaskMode))
-                ) && 
-                (
-                    this.TaskExtInfo == input.TaskExtInfo ||
-                    (this.TaskExtInfo != null &&
-                    this.TaskExtInfo.Equals(input.TaskExtInfo))
-                ) && 
-                (
-                    this.Targets == input.Targets ||
-                    this.Targets != null &&
-                    input.Targets != null &&
-                    this.Targets.SequenceEqual(input.Targets)
-                ) && 
-                (
-                    this.TargetsFilter == input.TargetsFilter ||
-                    this.TargetsFilter != null &&
-                    input.TargetsFilter != null &&
-                    this.TargetsFilter.SequenceEqual(input.TargetsFilter)
-                ) && 
-                (
-                    this.Document == input.Document ||
-                    (this.Document != null &&
-                    this.Document.Equals(input.Document))
-                ) && 
-                (
-                    this.TaskPolicy == input.TaskPolicy ||
-                    (this.TaskPolicy != null &&
-                    this.TaskPolicy.Equals(input.TaskPolicy))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.StatusDesc == input.StatusDesc ||
-                    (this.StatusDesc != null &&
-                    this.StatusDesc.Equals(input.StatusDesc))
-                ) && 
-                (
-                    this.TaskProgress == input.TaskProgress ||
-                    (this.TaskProgress != null &&
-                    this.TaskProgress.Equals(input.TaskProgress))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -213,33 +158,20 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TaskId != null)
-                    hashCode = hashCode * 59 + this.TaskId.GetHashCode();
-                if (this.TaskName != null)
-                    hashCode = hashCode * 59 + this.TaskName.GetHashCode();
-                if (this.TaskType != null)
-                    hashCode = hashCode * 59 + this.TaskType.GetHashCode();
-                if (this.TaskMode != null)
-                    hashCode = hashCode * 59 + this.TaskMode.GetHashCode();
-                if (this.TaskExtInfo != null)
-                    hashCode = hashCode * 59 + this.TaskExtInfo.GetHashCode();
-                if (this.Targets != null)
-                    hashCode = hashCode * 59 + this.Targets.GetHashCode();
-                if (this.TargetsFilter != null)
-                    hashCode = hashCode * 59 + this.TargetsFilter.GetHashCode();
-                if (this.Document != null)
-                    hashCode = hashCode * 59 + this.Document.GetHashCode();
-                if (this.TaskPolicy != null)
-                    hashCode = hashCode * 59 + this.TaskPolicy.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.StatusDesc != null)
-                    hashCode = hashCode * 59 + this.StatusDesc.GetHashCode();
-                if (this.TaskProgress != null)
-                    hashCode = hashCode * 59 + this.TaskProgress.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                var hashCode = 41;
+                if (this.TaskId != null) hashCode = hashCode * 59 + this.TaskId.GetHashCode();
+                if (this.TaskName != null) hashCode = hashCode * 59 + this.TaskName.GetHashCode();
+                if (this.TaskType != null) hashCode = hashCode * 59 + this.TaskType.GetHashCode();
+                if (this.TaskMode != null) hashCode = hashCode * 59 + this.TaskMode.GetHashCode();
+                if (this.TaskExtInfo != null) hashCode = hashCode * 59 + this.TaskExtInfo.GetHashCode();
+                if (this.Targets != null) hashCode = hashCode * 59 + this.Targets.GetHashCode();
+                if (this.TargetsFilter != null) hashCode = hashCode * 59 + this.TargetsFilter.GetHashCode();
+                if (this.Document != null) hashCode = hashCode * 59 + this.Document.GetHashCode();
+                if (this.TaskPolicy != null) hashCode = hashCode * 59 + this.TaskPolicy.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.StatusDesc != null) hashCode = hashCode * 59 + this.StatusDesc.GetHashCode();
+                if (this.TaskProgress != null) hashCode = hashCode * 59 + this.TaskProgress.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(UpdateDomainApiAclPolicyResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ApiAclPolicy != input.ApiAclPolicy || (this.ApiAclPolicy != null && !this.ApiAclPolicy.Equals(input.ApiAclPolicy))) return false;
 
-            return 
-                (
-                    this.ApiAclPolicy == input.ApiAclPolicy ||
-                    (this.ApiAclPolicy != null &&
-                    this.ApiAclPolicy.Equals(input.ApiAclPolicy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ApiAclPolicy != null)
-                    hashCode = hashCode * 59 + this.ApiAclPolicy.GetHashCode();
+                var hashCode = 41;
+                if (this.ApiAclPolicy != null) hashCode = hashCode * 59 + this.ApiAclPolicy.GetHashCode();
                 return hashCode;
             }
         }

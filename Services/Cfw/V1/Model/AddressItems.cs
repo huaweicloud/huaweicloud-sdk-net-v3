@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(AddressItems input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Items != input.Items || (this.Items != null && input.Items != null && !this.Items.SequenceEqual(input.Items))) return false;
+            if (this.CoveredIp != input.CoveredIp || (this.CoveredIp != null && input.CoveredIp != null && !this.CoveredIp.SequenceEqual(input.CoveredIp))) return false;
 
-            return 
-                (
-                    this.Items == input.Items ||
-                    this.Items != null &&
-                    input.Items != null &&
-                    this.Items.SequenceEqual(input.Items)
-                ) && 
-                (
-                    this.CoveredIp == input.CoveredIp ||
-                    this.CoveredIp != null &&
-                    input.CoveredIp != null &&
-                    this.CoveredIp.SequenceEqual(input.CoveredIp)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Items != null)
-                    hashCode = hashCode * 59 + this.Items.GetHashCode();
-                if (this.CoveredIp != null)
-                    hashCode = hashCode * 59 + this.CoveredIp.GetHashCode();
+                var hashCode = 41;
+                if (this.Items != null) hashCode = hashCode * 59 + this.Items.GetHashCode();
+                if (this.CoveredIp != null) hashCode = hashCode * 59 + this.CoveredIp.GetHashCode();
                 return hashCode;
             }
         }

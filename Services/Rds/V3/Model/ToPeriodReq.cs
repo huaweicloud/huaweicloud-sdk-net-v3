@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ToPeriodReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PeriodType != input.PeriodType || (this.PeriodType != null && !this.PeriodType.Equals(input.PeriodType))) return false;
+            if (this.PeriodNum != input.PeriodNum || (this.PeriodNum != null && !this.PeriodNum.Equals(input.PeriodNum))) return false;
+            if (this.AutoPayPolicy != input.AutoPayPolicy || (this.AutoPayPolicy != null && !this.AutoPayPolicy.Equals(input.AutoPayPolicy))) return false;
+            if (this.AutoRenewPolicy != input.AutoRenewPolicy || (this.AutoRenewPolicy != null && !this.AutoRenewPolicy.Equals(input.AutoRenewPolicy))) return false;
 
-            return 
-                (
-                    this.PeriodType == input.PeriodType ||
-                    (this.PeriodType != null &&
-                    this.PeriodType.Equals(input.PeriodType))
-                ) && 
-                (
-                    this.PeriodNum == input.PeriodNum ||
-                    (this.PeriodNum != null &&
-                    this.PeriodNum.Equals(input.PeriodNum))
-                ) && 
-                (
-                    this.AutoPayPolicy == input.AutoPayPolicy ||
-                    (this.AutoPayPolicy != null &&
-                    this.AutoPayPolicy.Equals(input.AutoPayPolicy))
-                ) && 
-                (
-                    this.AutoRenewPolicy == input.AutoRenewPolicy ||
-                    (this.AutoRenewPolicy != null &&
-                    this.AutoRenewPolicy.Equals(input.AutoRenewPolicy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PeriodType != null)
-                    hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
-                if (this.PeriodNum != null)
-                    hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
-                if (this.AutoPayPolicy != null)
-                    hashCode = hashCode * 59 + this.AutoPayPolicy.GetHashCode();
-                if (this.AutoRenewPolicy != null)
-                    hashCode = hashCode * 59 + this.AutoRenewPolicy.GetHashCode();
+                var hashCode = 41;
+                if (this.PeriodType != null) hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
+                if (this.PeriodNum != null) hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
+                if (this.AutoPayPolicy != null) hashCode = hashCode * 59 + this.AutoPayPolicy.GetHashCode();
+                if (this.AutoRenewPolicy != null) hashCode = hashCode * 59 + this.AutoRenewPolicy.GetHashCode();
                 return hashCode;
             }
         }

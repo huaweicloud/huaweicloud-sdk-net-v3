@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(CreateTemplateGroupResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TemplateGroup != input.TemplateGroup || (this.TemplateGroup != null && !this.TemplateGroup.Equals(input.TemplateGroup))) return false;
 
-            return 
-                (
-                    this.TemplateGroup == input.TemplateGroup ||
-                    (this.TemplateGroup != null &&
-                    this.TemplateGroup.Equals(input.TemplateGroup))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TemplateGroup != null)
-                    hashCode = hashCode * 59 + this.TemplateGroup.GetHashCode();
+                var hashCode = 41;
+                if (this.TemplateGroup != null) hashCode = hashCode * 59 + this.TemplateGroup.GetHashCode();
                 return hashCode;
             }
         }

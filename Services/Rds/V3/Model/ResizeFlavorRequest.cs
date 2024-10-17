@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ResizeFlavorRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResizeFlavor != input.ResizeFlavor || (this.ResizeFlavor != null && !this.ResizeFlavor.Equals(input.ResizeFlavor))) return false;
 
-            return 
-                (
-                    this.ResizeFlavor == input.ResizeFlavor ||
-                    (this.ResizeFlavor != null &&
-                    this.ResizeFlavor.Equals(input.ResizeFlavor))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResizeFlavor != null)
-                    hashCode = hashCode * 59 + this.ResizeFlavor.GetHashCode();
+                var hashCode = 41;
+                if (this.ResizeFlavor != null) hashCode = hashCode * 59 + this.ResizeFlavor.GetHashCode();
                 return hashCode;
             }
         }

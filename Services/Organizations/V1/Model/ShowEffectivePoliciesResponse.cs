@@ -178,30 +178,13 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(ShowEffectivePoliciesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LastUpdatedAt != input.LastUpdatedAt || (this.LastUpdatedAt != null && !this.LastUpdatedAt.Equals(input.LastUpdatedAt))) return false;
+            if (this.PolicyContent != input.PolicyContent || (this.PolicyContent != null && !this.PolicyContent.Equals(input.PolicyContent))) return false;
+            if (this.PolicyType != input.PolicyType) return false;
+            if (this.EntityId != input.EntityId || (this.EntityId != null && !this.EntityId.Equals(input.EntityId))) return false;
 
-            return 
-                (
-                    this.LastUpdatedAt == input.LastUpdatedAt ||
-                    (this.LastUpdatedAt != null &&
-                    this.LastUpdatedAt.Equals(input.LastUpdatedAt))
-                ) && 
-                (
-                    this.PolicyContent == input.PolicyContent ||
-                    (this.PolicyContent != null &&
-                    this.PolicyContent.Equals(input.PolicyContent))
-                ) && 
-                (
-                    this.PolicyType == input.PolicyType ||
-                    (this.PolicyType != null &&
-                    this.PolicyType.Equals(input.PolicyType))
-                ) && 
-                (
-                    this.EntityId == input.EntityId ||
-                    (this.EntityId != null &&
-                    this.EntityId.Equals(input.EntityId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -211,15 +194,11 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LastUpdatedAt != null)
-                    hashCode = hashCode * 59 + this.LastUpdatedAt.GetHashCode();
-                if (this.PolicyContent != null)
-                    hashCode = hashCode * 59 + this.PolicyContent.GetHashCode();
-                if (this.PolicyType != null)
-                    hashCode = hashCode * 59 + this.PolicyType.GetHashCode();
-                if (this.EntityId != null)
-                    hashCode = hashCode * 59 + this.EntityId.GetHashCode();
+                var hashCode = 41;
+                if (this.LastUpdatedAt != null) hashCode = hashCode * 59 + this.LastUpdatedAt.GetHashCode();
+                if (this.PolicyContent != null) hashCode = hashCode * 59 + this.PolicyContent.GetHashCode();
+                hashCode = hashCode * 59 + this.PolicyType.GetHashCode();
+                if (this.EntityId != null) hashCode = hashCode * 59 + this.EntityId.GetHashCode();
                 return hashCode;
             }
         }

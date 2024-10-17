@@ -224,144 +224,35 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(HtapInstanceListInstances input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.EngineName != input.EngineName || (this.EngineName != null && !this.EngineName.Equals(input.EngineName))) return false;
+            if (this.EngineVersion != input.EngineVersion || (this.EngineVersion != null && !this.EngineVersion.Equals(input.EngineVersion))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.InstanceState != input.InstanceState || (this.InstanceState != null && !this.InstanceState.Equals(input.InstanceState))) return false;
+            if (this.CreateAt != input.CreateAt || (this.CreateAt != null && !this.CreateAt.Equals(input.CreateAt))) return false;
+            if (this.IsFrozen != input.IsFrozen || (this.IsFrozen != null && !this.IsFrozen.Equals(input.IsFrozen))) return false;
+            if (this.HaMode != input.HaMode || (this.HaMode != null && !this.HaMode.Equals(input.HaMode))) return false;
+            if (this.PayModel != input.PayModel || (this.PayModel != null && !this.PayModel.Equals(input.PayModel))) return false;
+            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
+            if (this.AlterOrderId != input.AlterOrderId || (this.AlterOrderId != null && !this.AlterOrderId.Equals(input.AlterOrderId))) return false;
+            if (this.DataVip != input.DataVip || (this.DataVip != null && !this.DataVip.Equals(input.DataVip))) return false;
+            if (this.ReadableNodeInfos != input.ReadableNodeInfos || (this.ReadableNodeInfos != null && input.ReadableNodeInfos != null && !this.ReadableNodeInfos.SequenceEqual(input.ReadableNodeInfos))) return false;
+            if (this.ProxyIps != input.ProxyIps || (this.ProxyIps != null && input.ProxyIps != null && !this.ProxyIps.SequenceEqual(input.ProxyIps))) return false;
+            if (this.DataVipV6 != input.DataVipV6 || (this.DataVipV6 != null && !this.DataVipV6.Equals(input.DataVipV6))) return false;
+            if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
+            if (this.AvailableZones != input.AvailableZones || (this.AvailableZones != null && input.AvailableZones != null && !this.AvailableZones.SequenceEqual(input.AvailableZones))) return false;
+            if (this.CurrentActions != input.CurrentActions || (this.CurrentActions != null && input.CurrentActions != null && !this.CurrentActions.SequenceEqual(input.CurrentActions))) return false;
+            if (this.VolumeType != input.VolumeType || (this.VolumeType != null && !this.VolumeType.Equals(input.VolumeType))) return false;
+            if (this.ServerType != input.ServerType || (this.ServerType != null && !this.ServerType.Equals(input.ServerType))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.DedicatedResourceId != input.DedicatedResourceId || (this.DedicatedResourceId != null && !this.DedicatedResourceId.Equals(input.DedicatedResourceId))) return false;
+            if (this.Network != input.Network || (this.Network != null && !this.Network.Equals(input.Network))) return false;
+            if (this.ChMasterNodeId != input.ChMasterNodeId || (this.ChMasterNodeId != null && !this.ChMasterNodeId.Equals(input.ChMasterNodeId))) return false;
+            if (this.NodeNum != input.NodeNum || (this.NodeNum != null && !this.NodeNum.Equals(input.NodeNum))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.EngineName == input.EngineName ||
-                    (this.EngineName != null &&
-                    this.EngineName.Equals(input.EngineName))
-                ) && 
-                (
-                    this.EngineVersion == input.EngineVersion ||
-                    (this.EngineVersion != null &&
-                    this.EngineVersion.Equals(input.EngineVersion))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.InstanceState == input.InstanceState ||
-                    (this.InstanceState != null &&
-                    this.InstanceState.Equals(input.InstanceState))
-                ) && 
-                (
-                    this.CreateAt == input.CreateAt ||
-                    (this.CreateAt != null &&
-                    this.CreateAt.Equals(input.CreateAt))
-                ) && 
-                (
-                    this.IsFrozen == input.IsFrozen ||
-                    (this.IsFrozen != null &&
-                    this.IsFrozen.Equals(input.IsFrozen))
-                ) && 
-                (
-                    this.HaMode == input.HaMode ||
-                    (this.HaMode != null &&
-                    this.HaMode.Equals(input.HaMode))
-                ) && 
-                (
-                    this.PayModel == input.PayModel ||
-                    (this.PayModel != null &&
-                    this.PayModel.Equals(input.PayModel))
-                ) && 
-                (
-                    this.OrderId == input.OrderId ||
-                    (this.OrderId != null &&
-                    this.OrderId.Equals(input.OrderId))
-                ) && 
-                (
-                    this.AlterOrderId == input.AlterOrderId ||
-                    (this.AlterOrderId != null &&
-                    this.AlterOrderId.Equals(input.AlterOrderId))
-                ) && 
-                (
-                    this.DataVip == input.DataVip ||
-                    (this.DataVip != null &&
-                    this.DataVip.Equals(input.DataVip))
-                ) && 
-                (
-                    this.ReadableNodeInfos == input.ReadableNodeInfos ||
-                    this.ReadableNodeInfos != null &&
-                    input.ReadableNodeInfos != null &&
-                    this.ReadableNodeInfos.SequenceEqual(input.ReadableNodeInfos)
-                ) && 
-                (
-                    this.ProxyIps == input.ProxyIps ||
-                    this.ProxyIps != null &&
-                    input.ProxyIps != null &&
-                    this.ProxyIps.SequenceEqual(input.ProxyIps)
-                ) && 
-                (
-                    this.DataVipV6 == input.DataVipV6 ||
-                    (this.DataVipV6 != null &&
-                    this.DataVipV6.Equals(input.DataVipV6))
-                ) && 
-                (
-                    this.Port == input.Port ||
-                    (this.Port != null &&
-                    this.Port.Equals(input.Port))
-                ) && 
-                (
-                    this.AvailableZones == input.AvailableZones ||
-                    this.AvailableZones != null &&
-                    input.AvailableZones != null &&
-                    this.AvailableZones.SequenceEqual(input.AvailableZones)
-                ) && 
-                (
-                    this.CurrentActions == input.CurrentActions ||
-                    this.CurrentActions != null &&
-                    input.CurrentActions != null &&
-                    this.CurrentActions.SequenceEqual(input.CurrentActions)
-                ) && 
-                (
-                    this.VolumeType == input.VolumeType ||
-                    (this.VolumeType != null &&
-                    this.VolumeType.Equals(input.VolumeType))
-                ) && 
-                (
-                    this.ServerType == input.ServerType ||
-                    (this.ServerType != null &&
-                    this.ServerType.Equals(input.ServerType))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.DedicatedResourceId == input.DedicatedResourceId ||
-                    (this.DedicatedResourceId != null &&
-                    this.DedicatedResourceId.Equals(input.DedicatedResourceId))
-                ) && 
-                (
-                    this.Network == input.Network ||
-                    (this.Network != null &&
-                    this.Network.Equals(input.Network))
-                ) && 
-                (
-                    this.ChMasterNodeId == input.ChMasterNodeId ||
-                    (this.ChMasterNodeId != null &&
-                    this.ChMasterNodeId.Equals(input.ChMasterNodeId))
-                ) && 
-                (
-                    this.NodeNum == input.NodeNum ||
-                    (this.NodeNum != null &&
-                    this.NodeNum.Equals(input.NodeNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -371,59 +262,33 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.EngineName != null)
-                    hashCode = hashCode * 59 + this.EngineName.GetHashCode();
-                if (this.EngineVersion != null)
-                    hashCode = hashCode * 59 + this.EngineVersion.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.InstanceState != null)
-                    hashCode = hashCode * 59 + this.InstanceState.GetHashCode();
-                if (this.CreateAt != null)
-                    hashCode = hashCode * 59 + this.CreateAt.GetHashCode();
-                if (this.IsFrozen != null)
-                    hashCode = hashCode * 59 + this.IsFrozen.GetHashCode();
-                if (this.HaMode != null)
-                    hashCode = hashCode * 59 + this.HaMode.GetHashCode();
-                if (this.PayModel != null)
-                    hashCode = hashCode * 59 + this.PayModel.GetHashCode();
-                if (this.OrderId != null)
-                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
-                if (this.AlterOrderId != null)
-                    hashCode = hashCode * 59 + this.AlterOrderId.GetHashCode();
-                if (this.DataVip != null)
-                    hashCode = hashCode * 59 + this.DataVip.GetHashCode();
-                if (this.ReadableNodeInfos != null)
-                    hashCode = hashCode * 59 + this.ReadableNodeInfos.GetHashCode();
-                if (this.ProxyIps != null)
-                    hashCode = hashCode * 59 + this.ProxyIps.GetHashCode();
-                if (this.DataVipV6 != null)
-                    hashCode = hashCode * 59 + this.DataVipV6.GetHashCode();
-                if (this.Port != null)
-                    hashCode = hashCode * 59 + this.Port.GetHashCode();
-                if (this.AvailableZones != null)
-                    hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
-                if (this.CurrentActions != null)
-                    hashCode = hashCode * 59 + this.CurrentActions.GetHashCode();
-                if (this.VolumeType != null)
-                    hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
-                if (this.ServerType != null)
-                    hashCode = hashCode * 59 + this.ServerType.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.DedicatedResourceId != null)
-                    hashCode = hashCode * 59 + this.DedicatedResourceId.GetHashCode();
-                if (this.Network != null)
-                    hashCode = hashCode * 59 + this.Network.GetHashCode();
-                if (this.ChMasterNodeId != null)
-                    hashCode = hashCode * 59 + this.ChMasterNodeId.GetHashCode();
-                if (this.NodeNum != null)
-                    hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.EngineName != null) hashCode = hashCode * 59 + this.EngineName.GetHashCode();
+                if (this.EngineVersion != null) hashCode = hashCode * 59 + this.EngineVersion.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.InstanceState != null) hashCode = hashCode * 59 + this.InstanceState.GetHashCode();
+                if (this.CreateAt != null) hashCode = hashCode * 59 + this.CreateAt.GetHashCode();
+                if (this.IsFrozen != null) hashCode = hashCode * 59 + this.IsFrozen.GetHashCode();
+                if (this.HaMode != null) hashCode = hashCode * 59 + this.HaMode.GetHashCode();
+                if (this.PayModel != null) hashCode = hashCode * 59 + this.PayModel.GetHashCode();
+                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.AlterOrderId != null) hashCode = hashCode * 59 + this.AlterOrderId.GetHashCode();
+                if (this.DataVip != null) hashCode = hashCode * 59 + this.DataVip.GetHashCode();
+                if (this.ReadableNodeInfos != null) hashCode = hashCode * 59 + this.ReadableNodeInfos.GetHashCode();
+                if (this.ProxyIps != null) hashCode = hashCode * 59 + this.ProxyIps.GetHashCode();
+                if (this.DataVipV6 != null) hashCode = hashCode * 59 + this.DataVipV6.GetHashCode();
+                if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
+                if (this.AvailableZones != null) hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
+                if (this.CurrentActions != null) hashCode = hashCode * 59 + this.CurrentActions.GetHashCode();
+                if (this.VolumeType != null) hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
+                if (this.ServerType != null) hashCode = hashCode * 59 + this.ServerType.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.DedicatedResourceId != null) hashCode = hashCode * 59 + this.DedicatedResourceId.GetHashCode();
+                if (this.Network != null) hashCode = hashCode * 59 + this.Network.GetHashCode();
+                if (this.ChMasterNodeId != null) hashCode = hashCode * 59 + this.ChMasterNodeId.GetHashCode();
+                if (this.NodeNum != null) hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
                 return hashCode;
             }
         }

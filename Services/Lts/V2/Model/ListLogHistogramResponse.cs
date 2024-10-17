@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(ListLogHistogramResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Histogram != input.Histogram || (this.Histogram != null && !this.Histogram.Equals(input.Histogram))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.IsQueryComplete != input.IsQueryComplete || (this.IsQueryComplete != null && !this.IsQueryComplete.Equals(input.IsQueryComplete))) return false;
 
-            return 
-                (
-                    this.Histogram == input.Histogram ||
-                    (this.Histogram != null &&
-                    this.Histogram.Equals(input.Histogram))
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.IsQueryComplete == input.IsQueryComplete ||
-                    (this.IsQueryComplete != null &&
-                    this.IsQueryComplete.Equals(input.IsQueryComplete))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Histogram != null)
-                    hashCode = hashCode * 59 + this.Histogram.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.IsQueryComplete != null)
-                    hashCode = hashCode * 59 + this.IsQueryComplete.GetHashCode();
+                var hashCode = 41;
+                if (this.Histogram != null) hashCode = hashCode * 59 + this.Histogram.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.IsQueryComplete != null) hashCode = hashCode * 59 + this.IsQueryComplete.GetHashCode();
                 return hashCode;
             }
         }

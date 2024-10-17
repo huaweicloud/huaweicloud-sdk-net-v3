@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// </summary>
         public bool Equals(AssociateInstanceGlobalEipRequestBodyGlobalEip input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AssociateInstanceInfo != input.AssociateInstanceInfo || (this.AssociateInstanceInfo != null && !this.AssociateInstanceInfo.Equals(input.AssociateInstanceInfo))) return false;
+            if (this.GcBandwidthInfo != input.GcBandwidthInfo || (this.GcBandwidthInfo != null && !this.GcBandwidthInfo.Equals(input.GcBandwidthInfo))) return false;
 
-            return 
-                (
-                    this.AssociateInstanceInfo == input.AssociateInstanceInfo ||
-                    (this.AssociateInstanceInfo != null &&
-                    this.AssociateInstanceInfo.Equals(input.AssociateInstanceInfo))
-                ) && 
-                (
-                    this.GcBandwidthInfo == input.GcBandwidthInfo ||
-                    (this.GcBandwidthInfo != null &&
-                    this.GcBandwidthInfo.Equals(input.GcBandwidthInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AssociateInstanceInfo != null)
-                    hashCode = hashCode * 59 + this.AssociateInstanceInfo.GetHashCode();
-                if (this.GcBandwidthInfo != null)
-                    hashCode = hashCode * 59 + this.GcBandwidthInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.AssociateInstanceInfo != null) hashCode = hashCode * 59 + this.AssociateInstanceInfo.GetHashCode();
+                if (this.GcBandwidthInfo != null) hashCode = hashCode * 59 + this.GcBandwidthInfo.GetHashCode();
                 return hashCode;
             }
         }

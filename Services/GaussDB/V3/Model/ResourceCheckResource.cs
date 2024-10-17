@@ -226,60 +226,19 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ResourceCheckResource input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.InstanceNum != input.InstanceNum || (this.InstanceNum != null && !this.InstanceNum.Equals(input.InstanceNum))) return false;
+            if (this.Mode != input.Mode) return false;
+            if (this.AvailabilityZoneMode != input.AvailabilityZoneMode || (this.AvailabilityZoneMode != null && !this.AvailabilityZoneMode.Equals(input.AvailabilityZoneMode))) return false;
+            if (this.FeNodeNum != input.FeNodeNum || (this.FeNodeNum != null && !this.FeNodeNum.Equals(input.FeNodeNum))) return false;
+            if (this.BeNodeNum != input.BeNodeNum || (this.BeNodeNum != null && !this.BeNodeNum.Equals(input.BeNodeNum))) return false;
+            if (this.FeFlavorRef != input.FeFlavorRef || (this.FeFlavorRef != null && !this.FeFlavorRef.Equals(input.FeFlavorRef))) return false;
+            if (this.BeFlavorRef != input.BeFlavorRef || (this.BeFlavorRef != null && !this.BeFlavorRef.Equals(input.BeFlavorRef))) return false;
+            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
+            if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
 
-            return 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.InstanceNum == input.InstanceNum ||
-                    (this.InstanceNum != null &&
-                    this.InstanceNum.Equals(input.InstanceNum))
-                ) && 
-                (
-                    this.Mode == input.Mode ||
-                    (this.Mode != null &&
-                    this.Mode.Equals(input.Mode))
-                ) && 
-                (
-                    this.AvailabilityZoneMode == input.AvailabilityZoneMode ||
-                    (this.AvailabilityZoneMode != null &&
-                    this.AvailabilityZoneMode.Equals(input.AvailabilityZoneMode))
-                ) && 
-                (
-                    this.FeNodeNum == input.FeNodeNum ||
-                    (this.FeNodeNum != null &&
-                    this.FeNodeNum.Equals(input.FeNodeNum))
-                ) && 
-                (
-                    this.BeNodeNum == input.BeNodeNum ||
-                    (this.BeNodeNum != null &&
-                    this.BeNodeNum.Equals(input.BeNodeNum))
-                ) && 
-                (
-                    this.FeFlavorRef == input.FeFlavorRef ||
-                    (this.FeFlavorRef != null &&
-                    this.FeFlavorRef.Equals(input.FeFlavorRef))
-                ) && 
-                (
-                    this.BeFlavorRef == input.BeFlavorRef ||
-                    (this.BeFlavorRef != null &&
-                    this.BeFlavorRef.Equals(input.BeFlavorRef))
-                ) && 
-                (
-                    this.AvailabilityZone == input.AvailabilityZone ||
-                    (this.AvailabilityZone != null &&
-                    this.AvailabilityZone.Equals(input.AvailabilityZone))
-                ) && 
-                (
-                    this.SubnetId == input.SubnetId ||
-                    (this.SubnetId != null &&
-                    this.SubnetId.Equals(input.SubnetId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -289,27 +248,17 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.InstanceNum != null)
-                    hashCode = hashCode * 59 + this.InstanceNum.GetHashCode();
-                if (this.Mode != null)
-                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
-                if (this.AvailabilityZoneMode != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZoneMode.GetHashCode();
-                if (this.FeNodeNum != null)
-                    hashCode = hashCode * 59 + this.FeNodeNum.GetHashCode();
-                if (this.BeNodeNum != null)
-                    hashCode = hashCode * 59 + this.BeNodeNum.GetHashCode();
-                if (this.FeFlavorRef != null)
-                    hashCode = hashCode * 59 + this.FeFlavorRef.GetHashCode();
-                if (this.BeFlavorRef != null)
-                    hashCode = hashCode * 59 + this.BeFlavorRef.GetHashCode();
-                if (this.AvailabilityZone != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
-                if (this.SubnetId != null)
-                    hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
+                var hashCode = 41;
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.InstanceNum != null) hashCode = hashCode * 59 + this.InstanceNum.GetHashCode();
+                hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                if (this.AvailabilityZoneMode != null) hashCode = hashCode * 59 + this.AvailabilityZoneMode.GetHashCode();
+                if (this.FeNodeNum != null) hashCode = hashCode * 59 + this.FeNodeNum.GetHashCode();
+                if (this.BeNodeNum != null) hashCode = hashCode * 59 + this.BeNodeNum.GetHashCode();
+                if (this.FeFlavorRef != null) hashCode = hashCode * 59 + this.FeFlavorRef.GetHashCode();
+                if (this.BeFlavorRef != null) hashCode = hashCode * 59 + this.BeFlavorRef.GetHashCode();
+                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
+                if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
                 return hashCode;
             }
         }

@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(ResendReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Group != input.Group || (this.Group != null && !this.Group.Equals(input.Group))) return false;
+            if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;
+            if (this.ClientId != input.ClientId || (this.ClientId != null && !this.ClientId.Equals(input.ClientId))) return false;
+            if (this.MsgIdList != input.MsgIdList || (this.MsgIdList != null && input.MsgIdList != null && !this.MsgIdList.SequenceEqual(input.MsgIdList))) return false;
 
-            return 
-                (
-                    this.Group == input.Group ||
-                    (this.Group != null &&
-                    this.Group.Equals(input.Group))
-                ) && 
-                (
-                    this.Topic == input.Topic ||
-                    (this.Topic != null &&
-                    this.Topic.Equals(input.Topic))
-                ) && 
-                (
-                    this.ClientId == input.ClientId ||
-                    (this.ClientId != null &&
-                    this.ClientId.Equals(input.ClientId))
-                ) && 
-                (
-                    this.MsgIdList == input.MsgIdList ||
-                    this.MsgIdList != null &&
-                    input.MsgIdList != null &&
-                    this.MsgIdList.SequenceEqual(input.MsgIdList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Group != null)
-                    hashCode = hashCode * 59 + this.Group.GetHashCode();
-                if (this.Topic != null)
-                    hashCode = hashCode * 59 + this.Topic.GetHashCode();
-                if (this.ClientId != null)
-                    hashCode = hashCode * 59 + this.ClientId.GetHashCode();
-                if (this.MsgIdList != null)
-                    hashCode = hashCode * 59 + this.MsgIdList.GetHashCode();
+                var hashCode = 41;
+                if (this.Group != null) hashCode = hashCode * 59 + this.Group.GetHashCode();
+                if (this.Topic != null) hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.ClientId != null) hashCode = hashCode * 59 + this.ClientId.GetHashCode();
+                if (this.MsgIdList != null) hashCode = hashCode * 59 + this.MsgIdList.GetHashCode();
                 return hashCode;
             }
         }

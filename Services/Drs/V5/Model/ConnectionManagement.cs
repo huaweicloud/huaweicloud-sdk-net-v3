@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ConnectionManagement input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DriverManagement != input.DriverManagement || (this.DriverManagement != null && !this.DriverManagement.Equals(input.DriverManagement))) return false;
 
-            return 
-                (
-                    this.DriverManagement == input.DriverManagement ||
-                    (this.DriverManagement != null &&
-                    this.DriverManagement.Equals(input.DriverManagement))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DriverManagement != null)
-                    hashCode = hashCode * 59 + this.DriverManagement.GetHashCode();
+                var hashCode = 41;
+                if (this.DriverManagement != null) hashCode = hashCode * 59 + this.DriverManagement.GetHashCode();
                 return hashCode;
             }
         }

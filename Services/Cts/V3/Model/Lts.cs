@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         /// </summary>
         public bool Equals(Lts input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IsLtsEnabled != input.IsLtsEnabled || (this.IsLtsEnabled != null && !this.IsLtsEnabled.Equals(input.IsLtsEnabled))) return false;
+            if (this.LogGroupName != input.LogGroupName || (this.LogGroupName != null && !this.LogGroupName.Equals(input.LogGroupName))) return false;
+            if (this.LogTopicName != input.LogTopicName || (this.LogTopicName != null && !this.LogTopicName.Equals(input.LogTopicName))) return false;
 
-            return 
-                (
-                    this.IsLtsEnabled == input.IsLtsEnabled ||
-                    (this.IsLtsEnabled != null &&
-                    this.IsLtsEnabled.Equals(input.IsLtsEnabled))
-                ) && 
-                (
-                    this.LogGroupName == input.LogGroupName ||
-                    (this.LogGroupName != null &&
-                    this.LogGroupName.Equals(input.LogGroupName))
-                ) && 
-                (
-                    this.LogTopicName == input.LogTopicName ||
-                    (this.LogTopicName != null &&
-                    this.LogTopicName.Equals(input.LogTopicName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IsLtsEnabled != null)
-                    hashCode = hashCode * 59 + this.IsLtsEnabled.GetHashCode();
-                if (this.LogGroupName != null)
-                    hashCode = hashCode * 59 + this.LogGroupName.GetHashCode();
-                if (this.LogTopicName != null)
-                    hashCode = hashCode * 59 + this.LogTopicName.GetHashCode();
+                var hashCode = 41;
+                if (this.IsLtsEnabled != null) hashCode = hashCode * 59 + this.IsLtsEnabled.GetHashCode();
+                if (this.LogGroupName != null) hashCode = hashCode * 59 + this.LogGroupName.GetHashCode();
+                if (this.LogTopicName != null) hashCode = hashCode * 59 + this.LogTopicName.GetHashCode();
                 return hashCode;
             }
         }

@@ -84,41 +84,15 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         /// </summary>
         public bool Equals(VersionMetadata input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.ExpireTime != input.ExpireTime || (this.ExpireTime != null && !this.ExpireTime.Equals(input.ExpireTime))) return false;
+            if (this.KmsKeyId != input.KmsKeyId || (this.KmsKeyId != null && !this.KmsKeyId.Equals(input.KmsKeyId))) return false;
+            if (this.SecretName != input.SecretName || (this.SecretName != null && !this.SecretName.Equals(input.SecretName))) return false;
+            if (this.VersionStages != input.VersionStages || (this.VersionStages != null && input.VersionStages != null && !this.VersionStages.SequenceEqual(input.VersionStages))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.ExpireTime == input.ExpireTime ||
-                    (this.ExpireTime != null &&
-                    this.ExpireTime.Equals(input.ExpireTime))
-                ) && 
-                (
-                    this.KmsKeyId == input.KmsKeyId ||
-                    (this.KmsKeyId != null &&
-                    this.KmsKeyId.Equals(input.KmsKeyId))
-                ) && 
-                (
-                    this.SecretName == input.SecretName ||
-                    (this.SecretName != null &&
-                    this.SecretName.Equals(input.SecretName))
-                ) && 
-                (
-                    this.VersionStages == input.VersionStages ||
-                    this.VersionStages != null &&
-                    input.VersionStages != null &&
-                    this.VersionStages.SequenceEqual(input.VersionStages)
-                );
+            return true;
         }
 
         /// <summary>
@@ -128,19 +102,13 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.ExpireTime != null)
-                    hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
-                if (this.KmsKeyId != null)
-                    hashCode = hashCode * 59 + this.KmsKeyId.GetHashCode();
-                if (this.SecretName != null)
-                    hashCode = hashCode * 59 + this.SecretName.GetHashCode();
-                if (this.VersionStages != null)
-                    hashCode = hashCode * 59 + this.VersionStages.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.ExpireTime != null) hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
+                if (this.KmsKeyId != null) hashCode = hashCode * 59 + this.KmsKeyId.GetHashCode();
+                if (this.SecretName != null) hashCode = hashCode * 59 + this.SecretName.GetHashCode();
+                if (this.VersionStages != null) hashCode = hashCode * 59 + this.VersionStages.GetHashCode();
                 return hashCode;
             }
         }

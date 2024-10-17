@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(PluginExtensions input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ExtensionName != input.ExtensionName || (this.ExtensionName != null && !this.ExtensionName.Equals(input.ExtensionName))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
 
-            return 
-                (
-                    this.ExtensionName == input.ExtensionName ||
-                    (this.ExtensionName != null &&
-                    this.ExtensionName.Equals(input.ExtensionName))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ExtensionName != null)
-                    hashCode = hashCode * 59 + this.ExtensionName.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                var hashCode = 41;
+                if (this.ExtensionName != null) hashCode = hashCode * 59 + this.ExtensionName.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

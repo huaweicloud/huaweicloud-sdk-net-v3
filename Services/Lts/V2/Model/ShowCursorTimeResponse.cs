@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(ShowCursorTimeResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CursorTime != input.CursorTime || (this.CursorTime != null && !this.CursorTime.Equals(input.CursorTime))) return false;
 
-            return 
-                (
-                    this.CursorTime == input.CursorTime ||
-                    (this.CursorTime != null &&
-                    this.CursorTime.Equals(input.CursorTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CursorTime != null)
-                    hashCode = hashCode * 59 + this.CursorTime.GetHashCode();
+                var hashCode = 41;
+                if (this.CursorTime != null) hashCode = hashCode * 59 + this.CursorTime.GetHashCode();
                 return hashCode;
             }
         }

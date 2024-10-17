@@ -119,65 +119,20 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(TollInvoiceResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Code != input.Code || (this.Code != null && !this.Code.Equals(input.Code))) return false;
+            if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;
+            if (this.Entry != input.Entry || (this.Entry != null && !this.Entry.Equals(input.Entry))) return false;
+            if (this.Exit != input.Exit || (this.Exit != null && !this.Exit.Equals(input.Exit))) return false;
+            if (this.Amount != input.Amount || (this.Amount != null && !this.Amount.Equals(input.Amount))) return false;
+            if (this.Cashier != input.Cashier || (this.Cashier != null && !this.Cashier.Equals(input.Cashier))) return false;
+            if (this.VehicleType != input.VehicleType || (this.VehicleType != null && !this.VehicleType.Equals(input.VehicleType))) return false;
+            if (this.Date != input.Date || (this.Date != null && !this.Date.Equals(input.Date))) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
+            if (this.TextLocation != input.TextLocation || (this.TextLocation != null && !this.TextLocation.Equals(input.TextLocation))) return false;
 
-            return 
-                (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
-                ) && 
-                (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                ) && 
-                (
-                    this.Entry == input.Entry ||
-                    (this.Entry != null &&
-                    this.Entry.Equals(input.Entry))
-                ) && 
-                (
-                    this.Exit == input.Exit ||
-                    (this.Exit != null &&
-                    this.Exit.Equals(input.Exit))
-                ) && 
-                (
-                    this.Amount == input.Amount ||
-                    (this.Amount != null &&
-                    this.Amount.Equals(input.Amount))
-                ) && 
-                (
-                    this.Cashier == input.Cashier ||
-                    (this.Cashier != null &&
-                    this.Cashier.Equals(input.Cashier))
-                ) && 
-                (
-                    this.VehicleType == input.VehicleType ||
-                    (this.VehicleType != null &&
-                    this.VehicleType.Equals(input.VehicleType))
-                ) && 
-                (
-                    this.Date == input.Date ||
-                    (this.Date != null &&
-                    this.Date.Equals(input.Date))
-                ) && 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                ) && 
-                (
-                    this.TextLocation == input.TextLocation ||
-                    (this.TextLocation != null &&
-                    this.TextLocation.Equals(input.TextLocation))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,29 +142,18 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Code != null)
-                    hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.Number != null)
-                    hashCode = hashCode * 59 + this.Number.GetHashCode();
-                if (this.Entry != null)
-                    hashCode = hashCode * 59 + this.Entry.GetHashCode();
-                if (this.Exit != null)
-                    hashCode = hashCode * 59 + this.Exit.GetHashCode();
-                if (this.Amount != null)
-                    hashCode = hashCode * 59 + this.Amount.GetHashCode();
-                if (this.Cashier != null)
-                    hashCode = hashCode * 59 + this.Cashier.GetHashCode();
-                if (this.VehicleType != null)
-                    hashCode = hashCode * 59 + this.VehicleType.GetHashCode();
-                if (this.Date != null)
-                    hashCode = hashCode * 59 + this.Date.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
-                if (this.TextLocation != null)
-                    hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
+                var hashCode = 41;
+                if (this.Code != null) hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Number != null) hashCode = hashCode * 59 + this.Number.GetHashCode();
+                if (this.Entry != null) hashCode = hashCode * 59 + this.Entry.GetHashCode();
+                if (this.Exit != null) hashCode = hashCode * 59 + this.Exit.GetHashCode();
+                if (this.Amount != null) hashCode = hashCode * 59 + this.Amount.GetHashCode();
+                if (this.Cashier != null) hashCode = hashCode * 59 + this.Cashier.GetHashCode();
+                if (this.VehicleType != null) hashCode = hashCode * 59 + this.VehicleType.GetHashCode();
+                if (this.Date != null) hashCode = hashCode * 59 + this.Date.GetHashCode();
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                if (this.TextLocation != null) hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
                 return hashCode;
             }
         }

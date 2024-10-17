@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ScaleNodePoolOptions input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ScalableChecking != input.ScalableChecking || (this.ScalableChecking != null && !this.ScalableChecking.Equals(input.ScalableChecking))) return false;
+            if (this.BillingConfigOverride != input.BillingConfigOverride || (this.BillingConfigOverride != null && !this.BillingConfigOverride.Equals(input.BillingConfigOverride))) return false;
 
-            return 
-                (
-                    this.ScalableChecking == input.ScalableChecking ||
-                    (this.ScalableChecking != null &&
-                    this.ScalableChecking.Equals(input.ScalableChecking))
-                ) && 
-                (
-                    this.BillingConfigOverride == input.BillingConfigOverride ||
-                    (this.BillingConfigOverride != null &&
-                    this.BillingConfigOverride.Equals(input.BillingConfigOverride))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ScalableChecking != null)
-                    hashCode = hashCode * 59 + this.ScalableChecking.GetHashCode();
-                if (this.BillingConfigOverride != null)
-                    hashCode = hashCode * 59 + this.BillingConfigOverride.GetHashCode();
+                var hashCode = 41;
+                if (this.ScalableChecking != null) hashCode = hashCode * 59 + this.ScalableChecking.GetHashCode();
+                if (this.BillingConfigOverride != null) hashCode = hashCode * 59 + this.BillingConfigOverride.GetHashCode();
                 return hashCode;
             }
         }

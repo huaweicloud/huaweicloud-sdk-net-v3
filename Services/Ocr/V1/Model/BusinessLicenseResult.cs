@@ -126,70 +126,21 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(BusinessLicenseResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RegistrationNumber != input.RegistrationNumber || (this.RegistrationNumber != null && !this.RegistrationNumber.Equals(input.RegistrationNumber))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Address != input.Address || (this.Address != null && !this.Address.Equals(input.Address))) return false;
+            if (this.LegalRepresentative != input.LegalRepresentative || (this.LegalRepresentative != null && !this.LegalRepresentative.Equals(input.LegalRepresentative))) return false;
+            if (this.RegisteredCapital != input.RegisteredCapital || (this.RegisteredCapital != null && !this.RegisteredCapital.Equals(input.RegisteredCapital))) return false;
+            if (this.OrganizationForm != input.OrganizationForm || (this.OrganizationForm != null && !this.OrganizationForm.Equals(input.OrganizationForm))) return false;
+            if (this.FoundDate != input.FoundDate || (this.FoundDate != null && !this.FoundDate.Equals(input.FoundDate))) return false;
+            if (this.BusinessTerm != input.BusinessTerm || (this.BusinessTerm != null && !this.BusinessTerm.Equals(input.BusinessTerm))) return false;
+            if (this.BusinessScope != input.BusinessScope || (this.BusinessScope != null && !this.BusinessScope.Equals(input.BusinessScope))) return false;
+            if (this.IssueDate != input.IssueDate || (this.IssueDate != null && !this.IssueDate.Equals(input.IssueDate))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
 
-            return 
-                (
-                    this.RegistrationNumber == input.RegistrationNumber ||
-                    (this.RegistrationNumber != null &&
-                    this.RegistrationNumber.Equals(input.RegistrationNumber))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
-                ) && 
-                (
-                    this.LegalRepresentative == input.LegalRepresentative ||
-                    (this.LegalRepresentative != null &&
-                    this.LegalRepresentative.Equals(input.LegalRepresentative))
-                ) && 
-                (
-                    this.RegisteredCapital == input.RegisteredCapital ||
-                    (this.RegisteredCapital != null &&
-                    this.RegisteredCapital.Equals(input.RegisteredCapital))
-                ) && 
-                (
-                    this.OrganizationForm == input.OrganizationForm ||
-                    (this.OrganizationForm != null &&
-                    this.OrganizationForm.Equals(input.OrganizationForm))
-                ) && 
-                (
-                    this.FoundDate == input.FoundDate ||
-                    (this.FoundDate != null &&
-                    this.FoundDate.Equals(input.FoundDate))
-                ) && 
-                (
-                    this.BusinessTerm == input.BusinessTerm ||
-                    (this.BusinessTerm != null &&
-                    this.BusinessTerm.Equals(input.BusinessTerm))
-                ) && 
-                (
-                    this.BusinessScope == input.BusinessScope ||
-                    (this.BusinessScope != null &&
-                    this.BusinessScope.Equals(input.BusinessScope))
-                ) && 
-                (
-                    this.IssueDate == input.IssueDate ||
-                    (this.IssueDate != null &&
-                    this.IssueDate.Equals(input.IssueDate))
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                );
+            return true;
         }
 
         /// <summary>
@@ -199,31 +150,19 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RegistrationNumber != null)
-                    hashCode = hashCode * 59 + this.RegistrationNumber.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Address != null)
-                    hashCode = hashCode * 59 + this.Address.GetHashCode();
-                if (this.LegalRepresentative != null)
-                    hashCode = hashCode * 59 + this.LegalRepresentative.GetHashCode();
-                if (this.RegisteredCapital != null)
-                    hashCode = hashCode * 59 + this.RegisteredCapital.GetHashCode();
-                if (this.OrganizationForm != null)
-                    hashCode = hashCode * 59 + this.OrganizationForm.GetHashCode();
-                if (this.FoundDate != null)
-                    hashCode = hashCode * 59 + this.FoundDate.GetHashCode();
-                if (this.BusinessTerm != null)
-                    hashCode = hashCode * 59 + this.BusinessTerm.GetHashCode();
-                if (this.BusinessScope != null)
-                    hashCode = hashCode * 59 + this.BusinessScope.GetHashCode();
-                if (this.IssueDate != null)
-                    hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                var hashCode = 41;
+                if (this.RegistrationNumber != null) hashCode = hashCode * 59 + this.RegistrationNumber.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Address != null) hashCode = hashCode * 59 + this.Address.GetHashCode();
+                if (this.LegalRepresentative != null) hashCode = hashCode * 59 + this.LegalRepresentative.GetHashCode();
+                if (this.RegisteredCapital != null) hashCode = hashCode * 59 + this.RegisteredCapital.GetHashCode();
+                if (this.OrganizationForm != null) hashCode = hashCode * 59 + this.OrganizationForm.GetHashCode();
+                if (this.FoundDate != null) hashCode = hashCode * 59 + this.FoundDate.GetHashCode();
+                if (this.BusinessTerm != null) hashCode = hashCode * 59 + this.BusinessTerm.GetHashCode();
+                if (this.BusinessScope != null) hashCode = hashCode * 59 + this.BusinessScope.GetHashCode();
+                if (this.IssueDate != null) hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
                 return hashCode;
             }
         }

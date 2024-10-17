@@ -446,45 +446,16 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         /// </summary>
         public bool Equals(ListAgentInvocationsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.InstanceType != input.InstanceType) return false;
+            if (this.InvocationId != input.InvocationId || (this.InvocationId != null && !this.InvocationId.Equals(input.InvocationId))) return false;
+            if (this.InvocationType != input.InvocationType) return false;
+            if (this.InvocationTarget != input.InvocationTarget) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.InstanceType == input.InstanceType ||
-                    (this.InstanceType != null &&
-                    this.InstanceType.Equals(input.InstanceType))
-                ) && 
-                (
-                    this.InvocationId == input.InvocationId ||
-                    (this.InvocationId != null &&
-                    this.InvocationId.Equals(input.InvocationId))
-                ) && 
-                (
-                    this.InvocationType == input.InvocationType ||
-                    (this.InvocationType != null &&
-                    this.InvocationType.Equals(input.InvocationType))
-                ) && 
-                (
-                    this.InvocationTarget == input.InvocationTarget ||
-                    (this.InvocationTarget != null &&
-                    this.InvocationTarget.Equals(input.InvocationTarget))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -494,21 +465,14 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.InstanceType != null)
-                    hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
-                if (this.InvocationId != null)
-                    hashCode = hashCode * 59 + this.InvocationId.GetHashCode();
-                if (this.InvocationType != null)
-                    hashCode = hashCode * 59 + this.InvocationType.GetHashCode();
-                if (this.InvocationTarget != null)
-                    hashCode = hashCode * 59 + this.InvocationTarget.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
+                if (this.InvocationId != null) hashCode = hashCode * 59 + this.InvocationId.GetHashCode();
+                hashCode = hashCode * 59 + this.InvocationType.GetHashCode();
+                hashCode = hashCode * 59 + this.InvocationTarget.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;
             }
         }

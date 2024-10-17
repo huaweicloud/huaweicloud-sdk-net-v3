@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(ListEnterpriseResourceDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DetailId != input.DetailId || (this.DetailId != null && !this.DetailId.Equals(input.DetailId))) return false;
 
-            return 
-                (
-                    this.DetailId == input.DetailId ||
-                    (this.DetailId != null &&
-                    this.DetailId.Equals(input.DetailId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DetailId != null)
-                    hashCode = hashCode * 59 + this.DetailId.GetHashCode();
+                var hashCode = 41;
+                if (this.DetailId != null) hashCode = hashCode * 59 + this.DetailId.GetHashCode();
                 return hashCode;
             }
         }

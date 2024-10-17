@@ -184,30 +184,13 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(PostPaidServerEipBandwidth input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.Sharetype != input.Sharetype) return false;
+            if (this.Chargemode != input.Chargemode || (this.Chargemode != null && !this.Chargemode.Equals(input.Chargemode))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
 
-            return 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.Sharetype == input.Sharetype ||
-                    (this.Sharetype != null &&
-                    this.Sharetype.Equals(input.Sharetype))
-                ) && 
-                (
-                    this.Chargemode == input.Chargemode ||
-                    (this.Chargemode != null &&
-                    this.Chargemode.Equals(input.Chargemode))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                );
+            return true;
         }
 
         /// <summary>
@@ -217,15 +200,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.Sharetype != null)
-                    hashCode = hashCode * 59 + this.Sharetype.GetHashCode();
-                if (this.Chargemode != null)
-                    hashCode = hashCode * 59 + this.Chargemode.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                var hashCode = 41;
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                hashCode = hashCode * 59 + this.Sharetype.GetHashCode();
+                if (this.Chargemode != null) hashCode = hashCode * 59 + this.Chargemode.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 return hashCode;
             }
         }

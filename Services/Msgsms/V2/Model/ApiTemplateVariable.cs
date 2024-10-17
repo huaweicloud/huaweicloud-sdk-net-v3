@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         /// </summary>
         public bool Equals(ApiTemplateVariable input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.TempName != input.TempName || (this.TempName != null && !this.TempName.Equals(input.TempName))) return false;
+            if (this.VariableIndex != input.VariableIndex || (this.VariableIndex != null && !this.VariableIndex.Equals(input.VariableIndex))) return false;
+            if (this.VariableType != input.VariableType || (this.VariableType != null && !this.VariableType.Equals(input.VariableType))) return false;
+            if (this.VariableLength != input.VariableLength || (this.VariableLength != null && !this.VariableLength.Equals(input.VariableLength))) return false;
+            if (this.VariableDesc != input.VariableDesc || (this.VariableDesc != null && !this.VariableDesc.Equals(input.VariableDesc))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.TempName == input.TempName ||
-                    (this.TempName != null &&
-                    this.TempName.Equals(input.TempName))
-                ) && 
-                (
-                    this.VariableIndex == input.VariableIndex ||
-                    (this.VariableIndex != null &&
-                    this.VariableIndex.Equals(input.VariableIndex))
-                ) && 
-                (
-                    this.VariableType == input.VariableType ||
-                    (this.VariableType != null &&
-                    this.VariableType.Equals(input.VariableType))
-                ) && 
-                (
-                    this.VariableLength == input.VariableLength ||
-                    (this.VariableLength != null &&
-                    this.VariableLength.Equals(input.VariableLength))
-                ) && 
-                (
-                    this.VariableDesc == input.VariableDesc ||
-                    (this.VariableDesc != null &&
-                    this.VariableDesc.Equals(input.VariableDesc))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.UserName != null)
-                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.TempName != null)
-                    hashCode = hashCode * 59 + this.TempName.GetHashCode();
-                if (this.VariableIndex != null)
-                    hashCode = hashCode * 59 + this.VariableIndex.GetHashCode();
-                if (this.VariableType != null)
-                    hashCode = hashCode * 59 + this.VariableType.GetHashCode();
-                if (this.VariableLength != null)
-                    hashCode = hashCode * 59 + this.VariableLength.GetHashCode();
-                if (this.VariableDesc != null)
-                    hashCode = hashCode * 59 + this.VariableDesc.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.TempName != null) hashCode = hashCode * 59 + this.TempName.GetHashCode();
+                if (this.VariableIndex != null) hashCode = hashCode * 59 + this.VariableIndex.GetHashCode();
+                if (this.VariableType != null) hashCode = hashCode * 59 + this.VariableType.GetHashCode();
+                if (this.VariableLength != null) hashCode = hashCode * 59 + this.VariableLength.GetHashCode();
+                if (this.VariableDesc != null) hashCode = hashCode * 59 + this.VariableDesc.GetHashCode();
                 return hashCode;
             }
         }

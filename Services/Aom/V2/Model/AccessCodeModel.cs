@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(AccessCodeModel input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AccessCode != input.AccessCode || (this.AccessCode != null && !this.AccessCode.Equals(input.AccessCode))) return false;
+            if (this.AccessCodeId != input.AccessCodeId || (this.AccessCodeId != null && !this.AccessCodeId.Equals(input.AccessCodeId))) return false;
+            if (this.CreateAt != input.CreateAt || (this.CreateAt != null && !this.CreateAt.Equals(input.CreateAt))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
 
-            return 
-                (
-                    this.AccessCode == input.AccessCode ||
-                    (this.AccessCode != null &&
-                    this.AccessCode.Equals(input.AccessCode))
-                ) && 
-                (
-                    this.AccessCodeId == input.AccessCodeId ||
-                    (this.AccessCodeId != null &&
-                    this.AccessCodeId.Equals(input.AccessCodeId))
-                ) && 
-                (
-                    this.CreateAt == input.CreateAt ||
-                    (this.CreateAt != null &&
-                    this.CreateAt.Equals(input.CreateAt))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AccessCode != null)
-                    hashCode = hashCode * 59 + this.AccessCode.GetHashCode();
-                if (this.AccessCodeId != null)
-                    hashCode = hashCode * 59 + this.AccessCodeId.GetHashCode();
-                if (this.CreateAt != null)
-                    hashCode = hashCode * 59 + this.CreateAt.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                var hashCode = 41;
+                if (this.AccessCode != null) hashCode = hashCode * 59 + this.AccessCode.GetHashCode();
+                if (this.AccessCodeId != null) hashCode = hashCode * 59 + this.AccessCodeId.GetHashCode();
+                if (this.CreateAt != null) hashCode = hashCode * 59 + this.CreateAt.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

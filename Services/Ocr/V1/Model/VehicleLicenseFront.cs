@@ -126,70 +126,21 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(VehicleLicenseFront input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;
+            if (this.VehicleType != input.VehicleType || (this.VehicleType != null && !this.VehicleType.Equals(input.VehicleType))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Address != input.Address || (this.Address != null && !this.Address.Equals(input.Address))) return false;
+            if (this.UseCharacter != input.UseCharacter || (this.UseCharacter != null && !this.UseCharacter.Equals(input.UseCharacter))) return false;
+            if (this.Model != input.Model || (this.Model != null && !this.Model.Equals(input.Model))) return false;
+            if (this.Vin != input.Vin || (this.Vin != null && !this.Vin.Equals(input.Vin))) return false;
+            if (this.EngineNo != input.EngineNo || (this.EngineNo != null && !this.EngineNo.Equals(input.EngineNo))) return false;
+            if (this.RegisterDate != input.RegisterDate || (this.RegisterDate != null && !this.RegisterDate.Equals(input.RegisterDate))) return false;
+            if (this.IssueDate != input.IssueDate || (this.IssueDate != null && !this.IssueDate.Equals(input.IssueDate))) return false;
+            if (this.IssuingAuthority != input.IssuingAuthority || (this.IssuingAuthority != null && !this.IssuingAuthority.Equals(input.IssuingAuthority))) return false;
+            if (this.TextLocation != input.TextLocation || (this.TextLocation != null && !this.TextLocation.Equals(input.TextLocation))) return false;
 
-            return 
-                (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                ) && 
-                (
-                    this.VehicleType == input.VehicleType ||
-                    (this.VehicleType != null &&
-                    this.VehicleType.Equals(input.VehicleType))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
-                ) && 
-                (
-                    this.UseCharacter == input.UseCharacter ||
-                    (this.UseCharacter != null &&
-                    this.UseCharacter.Equals(input.UseCharacter))
-                ) && 
-                (
-                    this.Model == input.Model ||
-                    (this.Model != null &&
-                    this.Model.Equals(input.Model))
-                ) && 
-                (
-                    this.Vin == input.Vin ||
-                    (this.Vin != null &&
-                    this.Vin.Equals(input.Vin))
-                ) && 
-                (
-                    this.EngineNo == input.EngineNo ||
-                    (this.EngineNo != null &&
-                    this.EngineNo.Equals(input.EngineNo))
-                ) && 
-                (
-                    this.RegisterDate == input.RegisterDate ||
-                    (this.RegisterDate != null &&
-                    this.RegisterDate.Equals(input.RegisterDate))
-                ) && 
-                (
-                    this.IssueDate == input.IssueDate ||
-                    (this.IssueDate != null &&
-                    this.IssueDate.Equals(input.IssueDate))
-                ) && 
-                (
-                    this.IssuingAuthority == input.IssuingAuthority ||
-                    (this.IssuingAuthority != null &&
-                    this.IssuingAuthority.Equals(input.IssuingAuthority))
-                ) && 
-                (
-                    this.TextLocation == input.TextLocation ||
-                    (this.TextLocation != null &&
-                    this.TextLocation.Equals(input.TextLocation))
-                );
+            return true;
         }
 
         /// <summary>
@@ -199,31 +150,19 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Number != null)
-                    hashCode = hashCode * 59 + this.Number.GetHashCode();
-                if (this.VehicleType != null)
-                    hashCode = hashCode * 59 + this.VehicleType.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Address != null)
-                    hashCode = hashCode * 59 + this.Address.GetHashCode();
-                if (this.UseCharacter != null)
-                    hashCode = hashCode * 59 + this.UseCharacter.GetHashCode();
-                if (this.Model != null)
-                    hashCode = hashCode * 59 + this.Model.GetHashCode();
-                if (this.Vin != null)
-                    hashCode = hashCode * 59 + this.Vin.GetHashCode();
-                if (this.EngineNo != null)
-                    hashCode = hashCode * 59 + this.EngineNo.GetHashCode();
-                if (this.RegisterDate != null)
-                    hashCode = hashCode * 59 + this.RegisterDate.GetHashCode();
-                if (this.IssueDate != null)
-                    hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
-                if (this.IssuingAuthority != null)
-                    hashCode = hashCode * 59 + this.IssuingAuthority.GetHashCode();
-                if (this.TextLocation != null)
-                    hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
+                var hashCode = 41;
+                if (this.Number != null) hashCode = hashCode * 59 + this.Number.GetHashCode();
+                if (this.VehicleType != null) hashCode = hashCode * 59 + this.VehicleType.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Address != null) hashCode = hashCode * 59 + this.Address.GetHashCode();
+                if (this.UseCharacter != null) hashCode = hashCode * 59 + this.UseCharacter.GetHashCode();
+                if (this.Model != null) hashCode = hashCode * 59 + this.Model.GetHashCode();
+                if (this.Vin != null) hashCode = hashCode * 59 + this.Vin.GetHashCode();
+                if (this.EngineNo != null) hashCode = hashCode * 59 + this.EngineNo.GetHashCode();
+                if (this.RegisterDate != null) hashCode = hashCode * 59 + this.RegisterDate.GetHashCode();
+                if (this.IssueDate != null) hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
+                if (this.IssuingAuthority != null) hashCode = hashCode * 59 + this.IssuingAuthority.GetHashCode();
+                if (this.TextLocation != null) hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
                 return hashCode;
             }
         }

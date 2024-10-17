@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(CreateDeploymentHostResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HostId != input.HostId || (this.HostId != null && !this.HostId.Equals(input.HostId))) return false;
 
-            return 
-                (
-                    this.HostId == input.HostId ||
-                    (this.HostId != null &&
-                    this.HostId.Equals(input.HostId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HostId != null)
-                    hashCode = hashCode * 59 + this.HostId.GetHashCode();
+                var hashCode = 41;
+                if (this.HostId != null) hashCode = hashCode * 59 + this.HostId.GetHashCode();
                 return hashCode;
             }
         }

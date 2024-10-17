@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ParamGroupDiffRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceId != input.SourceId || (this.SourceId != null && !this.SourceId.Equals(input.SourceId))) return false;
+            if (this.TargetId != input.TargetId || (this.TargetId != null && !this.TargetId.Equals(input.TargetId))) return false;
 
-            return 
-                (
-                    this.SourceId == input.SourceId ||
-                    (this.SourceId != null &&
-                    this.SourceId.Equals(input.SourceId))
-                ) && 
-                (
-                    this.TargetId == input.TargetId ||
-                    (this.TargetId != null &&
-                    this.TargetId.Equals(input.TargetId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceId != null)
-                    hashCode = hashCode * 59 + this.SourceId.GetHashCode();
-                if (this.TargetId != null)
-                    hashCode = hashCode * 59 + this.TargetId.GetHashCode();
+                var hashCode = 41;
+                if (this.SourceId != null) hashCode = hashCode * 59 + this.SourceId.GetHashCode();
+                if (this.TargetId != null) hashCode = hashCode * 59 + this.TargetId.GetHashCode();
                 return hashCode;
             }
         }

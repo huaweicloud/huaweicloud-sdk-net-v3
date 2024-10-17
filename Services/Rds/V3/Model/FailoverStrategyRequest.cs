@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(FailoverStrategyRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RepairStrategy != input.RepairStrategy || (this.RepairStrategy != null && !this.RepairStrategy.Equals(input.RepairStrategy))) return false;
 
-            return 
-                (
-                    this.RepairStrategy == input.RepairStrategy ||
-                    (this.RepairStrategy != null &&
-                    this.RepairStrategy.Equals(input.RepairStrategy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RepairStrategy != null)
-                    hashCode = hashCode * 59 + this.RepairStrategy.GetHashCode();
+                var hashCode = 41;
+                if (this.RepairStrategy != null) hashCode = hashCode * 59 + this.RepairStrategy.GetHashCode();
                 return hashCode;
             }
         }

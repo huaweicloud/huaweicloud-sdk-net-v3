@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
         /// </summary>
         public bool Equals(UpdateAccessInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AccessType != input.AccessType || (this.AccessType != null && !this.AccessType.Equals(input.AccessType))) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
+            if (this.PublicAddressesEnable != input.PublicAddressesEnable || (this.PublicAddressesEnable != null && !this.PublicAddressesEnable.Equals(input.PublicAddressesEnable))) return false;
+            if (this.IpWhitelist != input.IpWhitelist || (this.IpWhitelist != null && !this.IpWhitelist.Equals(input.IpWhitelist))) return false;
 
-            return 
-                (
-                    this.AccessType == input.AccessType ||
-                    (this.AccessType != null &&
-                    this.AccessType.Equals(input.AccessType))
-                ) && 
-                (
-                    this.DomainName == input.DomainName ||
-                    (this.DomainName != null &&
-                    this.DomainName.Equals(input.DomainName))
-                ) && 
-                (
-                    this.PublicAddressesEnable == input.PublicAddressesEnable ||
-                    (this.PublicAddressesEnable != null &&
-                    this.PublicAddressesEnable.Equals(input.PublicAddressesEnable))
-                ) && 
-                (
-                    this.IpWhitelist == input.IpWhitelist ||
-                    (this.IpWhitelist != null &&
-                    this.IpWhitelist.Equals(input.IpWhitelist))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AccessType != null)
-                    hashCode = hashCode * 59 + this.AccessType.GetHashCode();
-                if (this.DomainName != null)
-                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.PublicAddressesEnable != null)
-                    hashCode = hashCode * 59 + this.PublicAddressesEnable.GetHashCode();
-                if (this.IpWhitelist != null)
-                    hashCode = hashCode * 59 + this.IpWhitelist.GetHashCode();
+                var hashCode = 41;
+                if (this.AccessType != null) hashCode = hashCode * 59 + this.AccessType.GetHashCode();
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.PublicAddressesEnable != null) hashCode = hashCode * 59 + this.PublicAddressesEnable.GetHashCode();
+                if (this.IpWhitelist != null) hashCode = hashCode * 59 + this.IpWhitelist.GetHashCode();
                 return hashCode;
             }
         }

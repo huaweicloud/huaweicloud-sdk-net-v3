@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(NeutronInsertFirewallRuleRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FirewallRuleId != input.FirewallRuleId || (this.FirewallRuleId != null && !this.FirewallRuleId.Equals(input.FirewallRuleId))) return false;
+            if (this.InsertAfter != input.InsertAfter || (this.InsertAfter != null && !this.InsertAfter.Equals(input.InsertAfter))) return false;
+            if (this.InsertBefore != input.InsertBefore || (this.InsertBefore != null && !this.InsertBefore.Equals(input.InsertBefore))) return false;
 
-            return 
-                (
-                    this.FirewallRuleId == input.FirewallRuleId ||
-                    (this.FirewallRuleId != null &&
-                    this.FirewallRuleId.Equals(input.FirewallRuleId))
-                ) && 
-                (
-                    this.InsertAfter == input.InsertAfter ||
-                    (this.InsertAfter != null &&
-                    this.InsertAfter.Equals(input.InsertAfter))
-                ) && 
-                (
-                    this.InsertBefore == input.InsertBefore ||
-                    (this.InsertBefore != null &&
-                    this.InsertBefore.Equals(input.InsertBefore))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FirewallRuleId != null)
-                    hashCode = hashCode * 59 + this.FirewallRuleId.GetHashCode();
-                if (this.InsertAfter != null)
-                    hashCode = hashCode * 59 + this.InsertAfter.GetHashCode();
-                if (this.InsertBefore != null)
-                    hashCode = hashCode * 59 + this.InsertBefore.GetHashCode();
+                var hashCode = 41;
+                if (this.FirewallRuleId != null) hashCode = hashCode * 59 + this.FirewallRuleId.GetHashCode();
+                if (this.InsertAfter != null) hashCode = hashCode * 59 + this.InsertAfter.GetHashCode();
+                if (this.InsertBefore != null) hashCode = hashCode * 59 + this.InsertBefore.GetHashCode();
                 return hashCode;
             }
         }

@@ -476,50 +476,17 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(AclAccountResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AccountId != input.AccountId || (this.AccountId != null && !this.AccountId.Equals(input.AccountId))) return false;
+            if (this.AccountName != input.AccountName || (this.AccountName != null && !this.AccountName.Equals(input.AccountName))) return false;
+            if (this.AccountType != input.AccountType) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.AccountRole != input.AccountRole) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
 
-            return 
-                (
-                    this.AccountId == input.AccountId ||
-                    (this.AccountId != null &&
-                    this.AccountId.Equals(input.AccountId))
-                ) && 
-                (
-                    this.AccountName == input.AccountName ||
-                    (this.AccountName != null &&
-                    this.AccountName.Equals(input.AccountName))
-                ) && 
-                (
-                    this.AccountType == input.AccountType ||
-                    (this.AccountType != null &&
-                    this.AccountType.Equals(input.AccountType))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.AccountRole == input.AccountRole ||
-                    (this.AccountRole != null &&
-                    this.AccountRole.Equals(input.AccountRole))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -529,23 +496,15 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AccountId != null)
-                    hashCode = hashCode * 59 + this.AccountId.GetHashCode();
-                if (this.AccountName != null)
-                    hashCode = hashCode * 59 + this.AccountName.GetHashCode();
-                if (this.AccountType != null)
-                    hashCode = hashCode * 59 + this.AccountType.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.AccountRole != null)
-                    hashCode = hashCode * 59 + this.AccountRole.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                var hashCode = 41;
+                if (this.AccountId != null) hashCode = hashCode * 59 + this.AccountId.GetHashCode();
+                if (this.AccountName != null) hashCode = hashCode * 59 + this.AccountName.GetHashCode();
+                hashCode = hashCode * 59 + this.AccountType.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                hashCode = hashCode * 59 + this.AccountRole.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
                 return hashCode;
             }
         }

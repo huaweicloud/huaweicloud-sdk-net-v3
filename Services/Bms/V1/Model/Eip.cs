@@ -177,25 +177,12 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(Eip input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Iptype != input.Iptype) return false;
+            if (this.Bandwidth != input.Bandwidth || (this.Bandwidth != null && !this.Bandwidth.Equals(input.Bandwidth))) return false;
+            if (this.Extendparam != input.Extendparam || (this.Extendparam != null && !this.Extendparam.Equals(input.Extendparam))) return false;
 
-            return 
-                (
-                    this.Iptype == input.Iptype ||
-                    (this.Iptype != null &&
-                    this.Iptype.Equals(input.Iptype))
-                ) && 
-                (
-                    this.Bandwidth == input.Bandwidth ||
-                    (this.Bandwidth != null &&
-                    this.Bandwidth.Equals(input.Bandwidth))
-                ) && 
-                (
-                    this.Extendparam == input.Extendparam ||
-                    (this.Extendparam != null &&
-                    this.Extendparam.Equals(input.Extendparam))
-                );
+            return true;
         }
 
         /// <summary>
@@ -205,13 +192,10 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Iptype != null)
-                    hashCode = hashCode * 59 + this.Iptype.GetHashCode();
-                if (this.Bandwidth != null)
-                    hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
-                if (this.Extendparam != null)
-                    hashCode = hashCode * 59 + this.Extendparam.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Iptype.GetHashCode();
+                if (this.Bandwidth != null) hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
+                if (this.Extendparam != null) hashCode = hashCode * 59 + this.Extendparam.GetHashCode();
                 return hashCode;
             }
         }

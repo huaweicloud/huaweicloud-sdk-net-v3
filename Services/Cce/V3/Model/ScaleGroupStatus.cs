@@ -251,66 +251,20 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ScaleGroupStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Uid != input.Uid || (this.Uid != null && !this.Uid.Equals(input.Uid))) return false;
+            if (this.CreationTimestamp != input.CreationTimestamp || (this.CreationTimestamp != null && !this.CreationTimestamp.Equals(input.CreationTimestamp))) return false;
+            if (this.UpdateTimestamp != input.UpdateTimestamp || (this.UpdateTimestamp != null && !this.UpdateTimestamp.Equals(input.UpdateTimestamp))) return false;
+            if (this.Phase != input.Phase) return false;
+            if (this.DesiredNodeCount != input.DesiredNodeCount || (this.DesiredNodeCount != null && !this.DesiredNodeCount.Equals(input.DesiredNodeCount))) return false;
+            if (this.UnpaidScaleNodeCount != input.UnpaidScaleNodeCount || (this.UnpaidScaleNodeCount != null && !this.UnpaidScaleNodeCount.Equals(input.UnpaidScaleNodeCount))) return false;
+            if (this.ExistingNodeCount != input.ExistingNodeCount || (this.ExistingNodeCount != null && !this.ExistingNodeCount.Equals(input.ExistingNodeCount))) return false;
+            if (this.UpcomingNodeCount != input.UpcomingNodeCount || (this.UpcomingNodeCount != null && !this.UpcomingNodeCount.Equals(input.UpcomingNodeCount))) return false;
+            if (this.ScaleDownDisabledNodeCount != input.ScaleDownDisabledNodeCount || (this.ScaleDownDisabledNodeCount != null && !this.ScaleDownDisabledNodeCount.Equals(input.ScaleDownDisabledNodeCount))) return false;
+            if (this.Conditions != input.Conditions || (this.Conditions != null && input.Conditions != null && !this.Conditions.SequenceEqual(input.Conditions))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Uid == input.Uid ||
-                    (this.Uid != null &&
-                    this.Uid.Equals(input.Uid))
-                ) && 
-                (
-                    this.CreationTimestamp == input.CreationTimestamp ||
-                    (this.CreationTimestamp != null &&
-                    this.CreationTimestamp.Equals(input.CreationTimestamp))
-                ) && 
-                (
-                    this.UpdateTimestamp == input.UpdateTimestamp ||
-                    (this.UpdateTimestamp != null &&
-                    this.UpdateTimestamp.Equals(input.UpdateTimestamp))
-                ) && 
-                (
-                    this.Phase == input.Phase ||
-                    (this.Phase != null &&
-                    this.Phase.Equals(input.Phase))
-                ) && 
-                (
-                    this.DesiredNodeCount == input.DesiredNodeCount ||
-                    (this.DesiredNodeCount != null &&
-                    this.DesiredNodeCount.Equals(input.DesiredNodeCount))
-                ) && 
-                (
-                    this.UnpaidScaleNodeCount == input.UnpaidScaleNodeCount ||
-                    (this.UnpaidScaleNodeCount != null &&
-                    this.UnpaidScaleNodeCount.Equals(input.UnpaidScaleNodeCount))
-                ) && 
-                (
-                    this.ExistingNodeCount == input.ExistingNodeCount ||
-                    (this.ExistingNodeCount != null &&
-                    this.ExistingNodeCount.Equals(input.ExistingNodeCount))
-                ) && 
-                (
-                    this.UpcomingNodeCount == input.UpcomingNodeCount ||
-                    (this.UpcomingNodeCount != null &&
-                    this.UpcomingNodeCount.Equals(input.UpcomingNodeCount))
-                ) && 
-                (
-                    this.ScaleDownDisabledNodeCount == input.ScaleDownDisabledNodeCount ||
-                    (this.ScaleDownDisabledNodeCount != null &&
-                    this.ScaleDownDisabledNodeCount.Equals(input.ScaleDownDisabledNodeCount))
-                ) && 
-                (
-                    this.Conditions == input.Conditions ||
-                    this.Conditions != null &&
-                    input.Conditions != null &&
-                    this.Conditions.SequenceEqual(input.Conditions)
-                );
+            return true;
         }
 
         /// <summary>
@@ -320,29 +274,18 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Uid != null)
-                    hashCode = hashCode * 59 + this.Uid.GetHashCode();
-                if (this.CreationTimestamp != null)
-                    hashCode = hashCode * 59 + this.CreationTimestamp.GetHashCode();
-                if (this.UpdateTimestamp != null)
-                    hashCode = hashCode * 59 + this.UpdateTimestamp.GetHashCode();
-                if (this.Phase != null)
-                    hashCode = hashCode * 59 + this.Phase.GetHashCode();
-                if (this.DesiredNodeCount != null)
-                    hashCode = hashCode * 59 + this.DesiredNodeCount.GetHashCode();
-                if (this.UnpaidScaleNodeCount != null)
-                    hashCode = hashCode * 59 + this.UnpaidScaleNodeCount.GetHashCode();
-                if (this.ExistingNodeCount != null)
-                    hashCode = hashCode * 59 + this.ExistingNodeCount.GetHashCode();
-                if (this.UpcomingNodeCount != null)
-                    hashCode = hashCode * 59 + this.UpcomingNodeCount.GetHashCode();
-                if (this.ScaleDownDisabledNodeCount != null)
-                    hashCode = hashCode * 59 + this.ScaleDownDisabledNodeCount.GetHashCode();
-                if (this.Conditions != null)
-                    hashCode = hashCode * 59 + this.Conditions.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Uid != null) hashCode = hashCode * 59 + this.Uid.GetHashCode();
+                if (this.CreationTimestamp != null) hashCode = hashCode * 59 + this.CreationTimestamp.GetHashCode();
+                if (this.UpdateTimestamp != null) hashCode = hashCode * 59 + this.UpdateTimestamp.GetHashCode();
+                hashCode = hashCode * 59 + this.Phase.GetHashCode();
+                if (this.DesiredNodeCount != null) hashCode = hashCode * 59 + this.DesiredNodeCount.GetHashCode();
+                if (this.UnpaidScaleNodeCount != null) hashCode = hashCode * 59 + this.UnpaidScaleNodeCount.GetHashCode();
+                if (this.ExistingNodeCount != null) hashCode = hashCode * 59 + this.ExistingNodeCount.GetHashCode();
+                if (this.UpcomingNodeCount != null) hashCode = hashCode * 59 + this.UpcomingNodeCount.GetHashCode();
+                if (this.ScaleDownDisabledNodeCount != null) hashCode = hashCode * 59 + this.ScaleDownDisabledNodeCount.GetHashCode();
+                if (this.Conditions != null) hashCode = hashCode * 59 + this.Conditions.GetHashCode();
                 return hashCode;
             }
         }

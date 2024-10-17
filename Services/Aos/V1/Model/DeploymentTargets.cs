@@ -203,38 +203,14 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(DeploymentTargets input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Regions != input.Regions || (this.Regions != null && input.Regions != null && !this.Regions.SequenceEqual(input.Regions))) return false;
+            if (this.DomainIds != input.DomainIds || (this.DomainIds != null && input.DomainIds != null && !this.DomainIds.SequenceEqual(input.DomainIds))) return false;
+            if (this.DomainIdsUri != input.DomainIdsUri || (this.DomainIdsUri != null && !this.DomainIdsUri.Equals(input.DomainIdsUri))) return false;
+            if (this.OrganizationalUnitIds != input.OrganizationalUnitIds || (this.OrganizationalUnitIds != null && input.OrganizationalUnitIds != null && !this.OrganizationalUnitIds.SequenceEqual(input.OrganizationalUnitIds))) return false;
+            if (this.DomainIdFilterType != input.DomainIdFilterType) return false;
 
-            return 
-                (
-                    this.Regions == input.Regions ||
-                    this.Regions != null &&
-                    input.Regions != null &&
-                    this.Regions.SequenceEqual(input.Regions)
-                ) && 
-                (
-                    this.DomainIds == input.DomainIds ||
-                    this.DomainIds != null &&
-                    input.DomainIds != null &&
-                    this.DomainIds.SequenceEqual(input.DomainIds)
-                ) && 
-                (
-                    this.DomainIdsUri == input.DomainIdsUri ||
-                    (this.DomainIdsUri != null &&
-                    this.DomainIdsUri.Equals(input.DomainIdsUri))
-                ) && 
-                (
-                    this.OrganizationalUnitIds == input.OrganizationalUnitIds ||
-                    this.OrganizationalUnitIds != null &&
-                    input.OrganizationalUnitIds != null &&
-                    this.OrganizationalUnitIds.SequenceEqual(input.OrganizationalUnitIds)
-                ) && 
-                (
-                    this.DomainIdFilterType == input.DomainIdFilterType ||
-                    (this.DomainIdFilterType != null &&
-                    this.DomainIdFilterType.Equals(input.DomainIdFilterType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -244,17 +220,12 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Regions != null)
-                    hashCode = hashCode * 59 + this.Regions.GetHashCode();
-                if (this.DomainIds != null)
-                    hashCode = hashCode * 59 + this.DomainIds.GetHashCode();
-                if (this.DomainIdsUri != null)
-                    hashCode = hashCode * 59 + this.DomainIdsUri.GetHashCode();
-                if (this.OrganizationalUnitIds != null)
-                    hashCode = hashCode * 59 + this.OrganizationalUnitIds.GetHashCode();
-                if (this.DomainIdFilterType != null)
-                    hashCode = hashCode * 59 + this.DomainIdFilterType.GetHashCode();
+                var hashCode = 41;
+                if (this.Regions != null) hashCode = hashCode * 59 + this.Regions.GetHashCode();
+                if (this.DomainIds != null) hashCode = hashCode * 59 + this.DomainIds.GetHashCode();
+                if (this.DomainIdsUri != null) hashCode = hashCode * 59 + this.DomainIdsUri.GetHashCode();
+                if (this.OrganizationalUnitIds != null) hashCode = hashCode * 59 + this.OrganizationalUnitIds.GetHashCode();
+                hashCode = hashCode * 59 + this.DomainIdFilterType.GetHashCode();
                 return hashCode;
             }
         }

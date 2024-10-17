@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(VirtualSpace input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.LvmConfig != input.LvmConfig || (this.LvmConfig != null && !this.LvmConfig.Equals(input.LvmConfig))) return false;
+            if (this.RuntimeConfig != input.RuntimeConfig || (this.RuntimeConfig != null && !this.RuntimeConfig.Equals(input.RuntimeConfig))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.LvmConfig == input.LvmConfig ||
-                    (this.LvmConfig != null &&
-                    this.LvmConfig.Equals(input.LvmConfig))
-                ) && 
-                (
-                    this.RuntimeConfig == input.RuntimeConfig ||
-                    (this.RuntimeConfig != null &&
-                    this.RuntimeConfig.Equals(input.RuntimeConfig))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.LvmConfig != null)
-                    hashCode = hashCode * 59 + this.LvmConfig.GetHashCode();
-                if (this.RuntimeConfig != null)
-                    hashCode = hashCode * 59 + this.RuntimeConfig.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.LvmConfig != null) hashCode = hashCode * 59 + this.LvmConfig.GetHashCode();
+                if (this.RuntimeConfig != null) hashCode = hashCode * 59 + this.RuntimeConfig.GetHashCode();
                 return hashCode;
             }
         }

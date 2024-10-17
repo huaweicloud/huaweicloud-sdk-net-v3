@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(PasswordPolicyResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MaximumConsecutiveIdenticalChars != input.MaximumConsecutiveIdenticalChars || (this.MaximumConsecutiveIdenticalChars != null && !this.MaximumConsecutiveIdenticalChars.Equals(input.MaximumConsecutiveIdenticalChars))) return false;
+            if (this.MaximumPasswordLength != input.MaximumPasswordLength || (this.MaximumPasswordLength != null && !this.MaximumPasswordLength.Equals(input.MaximumPasswordLength))) return false;
+            if (this.MinimumPasswordAge != input.MinimumPasswordAge || (this.MinimumPasswordAge != null && !this.MinimumPasswordAge.Equals(input.MinimumPasswordAge))) return false;
+            if (this.MinimumPasswordLength != input.MinimumPasswordLength || (this.MinimumPasswordLength != null && !this.MinimumPasswordLength.Equals(input.MinimumPasswordLength))) return false;
+            if (this.NumberOfRecentPasswordsDisallowed != input.NumberOfRecentPasswordsDisallowed || (this.NumberOfRecentPasswordsDisallowed != null && !this.NumberOfRecentPasswordsDisallowed.Equals(input.NumberOfRecentPasswordsDisallowed))) return false;
+            if (this.PasswordNotUsernameOrInvert != input.PasswordNotUsernameOrInvert || (this.PasswordNotUsernameOrInvert != null && !this.PasswordNotUsernameOrInvert.Equals(input.PasswordNotUsernameOrInvert))) return false;
+            if (this.PasswordRequirements != input.PasswordRequirements || (this.PasswordRequirements != null && !this.PasswordRequirements.Equals(input.PasswordRequirements))) return false;
+            if (this.PasswordValidityPeriod != input.PasswordValidityPeriod || (this.PasswordValidityPeriod != null && !this.PasswordValidityPeriod.Equals(input.PasswordValidityPeriod))) return false;
+            if (this.PasswordCharCombination != input.PasswordCharCombination || (this.PasswordCharCombination != null && !this.PasswordCharCombination.Equals(input.PasswordCharCombination))) return false;
 
-            return 
-                (
-                    this.MaximumConsecutiveIdenticalChars == input.MaximumConsecutiveIdenticalChars ||
-                    (this.MaximumConsecutiveIdenticalChars != null &&
-                    this.MaximumConsecutiveIdenticalChars.Equals(input.MaximumConsecutiveIdenticalChars))
-                ) && 
-                (
-                    this.MaximumPasswordLength == input.MaximumPasswordLength ||
-                    (this.MaximumPasswordLength != null &&
-                    this.MaximumPasswordLength.Equals(input.MaximumPasswordLength))
-                ) && 
-                (
-                    this.MinimumPasswordAge == input.MinimumPasswordAge ||
-                    (this.MinimumPasswordAge != null &&
-                    this.MinimumPasswordAge.Equals(input.MinimumPasswordAge))
-                ) && 
-                (
-                    this.MinimumPasswordLength == input.MinimumPasswordLength ||
-                    (this.MinimumPasswordLength != null &&
-                    this.MinimumPasswordLength.Equals(input.MinimumPasswordLength))
-                ) && 
-                (
-                    this.NumberOfRecentPasswordsDisallowed == input.NumberOfRecentPasswordsDisallowed ||
-                    (this.NumberOfRecentPasswordsDisallowed != null &&
-                    this.NumberOfRecentPasswordsDisallowed.Equals(input.NumberOfRecentPasswordsDisallowed))
-                ) && 
-                (
-                    this.PasswordNotUsernameOrInvert == input.PasswordNotUsernameOrInvert ||
-                    (this.PasswordNotUsernameOrInvert != null &&
-                    this.PasswordNotUsernameOrInvert.Equals(input.PasswordNotUsernameOrInvert))
-                ) && 
-                (
-                    this.PasswordRequirements == input.PasswordRequirements ||
-                    (this.PasswordRequirements != null &&
-                    this.PasswordRequirements.Equals(input.PasswordRequirements))
-                ) && 
-                (
-                    this.PasswordValidityPeriod == input.PasswordValidityPeriod ||
-                    (this.PasswordValidityPeriod != null &&
-                    this.PasswordValidityPeriod.Equals(input.PasswordValidityPeriod))
-                ) && 
-                (
-                    this.PasswordCharCombination == input.PasswordCharCombination ||
-                    (this.PasswordCharCombination != null &&
-                    this.PasswordCharCombination.Equals(input.PasswordCharCombination))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MaximumConsecutiveIdenticalChars != null)
-                    hashCode = hashCode * 59 + this.MaximumConsecutiveIdenticalChars.GetHashCode();
-                if (this.MaximumPasswordLength != null)
-                    hashCode = hashCode * 59 + this.MaximumPasswordLength.GetHashCode();
-                if (this.MinimumPasswordAge != null)
-                    hashCode = hashCode * 59 + this.MinimumPasswordAge.GetHashCode();
-                if (this.MinimumPasswordLength != null)
-                    hashCode = hashCode * 59 + this.MinimumPasswordLength.GetHashCode();
-                if (this.NumberOfRecentPasswordsDisallowed != null)
-                    hashCode = hashCode * 59 + this.NumberOfRecentPasswordsDisallowed.GetHashCode();
-                if (this.PasswordNotUsernameOrInvert != null)
-                    hashCode = hashCode * 59 + this.PasswordNotUsernameOrInvert.GetHashCode();
-                if (this.PasswordRequirements != null)
-                    hashCode = hashCode * 59 + this.PasswordRequirements.GetHashCode();
-                if (this.PasswordValidityPeriod != null)
-                    hashCode = hashCode * 59 + this.PasswordValidityPeriod.GetHashCode();
-                if (this.PasswordCharCombination != null)
-                    hashCode = hashCode * 59 + this.PasswordCharCombination.GetHashCode();
+                var hashCode = 41;
+                if (this.MaximumConsecutiveIdenticalChars != null) hashCode = hashCode * 59 + this.MaximumConsecutiveIdenticalChars.GetHashCode();
+                if (this.MaximumPasswordLength != null) hashCode = hashCode * 59 + this.MaximumPasswordLength.GetHashCode();
+                if (this.MinimumPasswordAge != null) hashCode = hashCode * 59 + this.MinimumPasswordAge.GetHashCode();
+                if (this.MinimumPasswordLength != null) hashCode = hashCode * 59 + this.MinimumPasswordLength.GetHashCode();
+                if (this.NumberOfRecentPasswordsDisallowed != null) hashCode = hashCode * 59 + this.NumberOfRecentPasswordsDisallowed.GetHashCode();
+                if (this.PasswordNotUsernameOrInvert != null) hashCode = hashCode * 59 + this.PasswordNotUsernameOrInvert.GetHashCode();
+                if (this.PasswordRequirements != null) hashCode = hashCode * 59 + this.PasswordRequirements.GetHashCode();
+                if (this.PasswordValidityPeriod != null) hashCode = hashCode * 59 + this.PasswordValidityPeriod.GetHashCode();
+                if (this.PasswordCharCombination != null) hashCode = hashCode * 59 + this.PasswordCharCombination.GetHashCode();
                 return hashCode;
             }
         }

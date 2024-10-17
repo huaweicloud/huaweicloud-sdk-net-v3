@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(TimeshiftRequestArgs input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BackTime != input.BackTime || (this.BackTime != null && !this.BackTime.Equals(input.BackTime))) return false;
+            if (this.Unit != input.Unit || (this.Unit != null && !this.Unit.Equals(input.Unit))) return false;
 
-            return 
-                (
-                    this.BackTime == input.BackTime ||
-                    (this.BackTime != null &&
-                    this.BackTime.Equals(input.BackTime))
-                ) && 
-                (
-                    this.Unit == input.Unit ||
-                    (this.Unit != null &&
-                    this.Unit.Equals(input.Unit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BackTime != null)
-                    hashCode = hashCode * 59 + this.BackTime.GetHashCode();
-                if (this.Unit != null)
-                    hashCode = hashCode * 59 + this.Unit.GetHashCode();
+                var hashCode = 41;
+                if (this.BackTime != null) hashCode = hashCode * 59 + this.BackTime.GetHashCode();
+                if (this.Unit != null) hashCode = hashCode * 59 + this.Unit.GetHashCode();
                 return hashCode;
             }
         }

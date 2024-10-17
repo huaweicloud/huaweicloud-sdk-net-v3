@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// </summary>
         public bool Equals(ShowPrivateNatResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Gateway != input.Gateway || (this.Gateway != null && !this.Gateway.Equals(input.Gateway))) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
 
-            return 
-                (
-                    this.Gateway == input.Gateway ||
-                    (this.Gateway != null &&
-                    this.Gateway.Equals(input.Gateway))
-                ) && 
-                (
-                    this.RequestId == input.RequestId ||
-                    (this.RequestId != null &&
-                    this.RequestId.Equals(input.RequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Gateway != null)
-                    hashCode = hashCode * 59 + this.Gateway.GetHashCode();
-                if (this.RequestId != null)
-                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.Gateway != null) hashCode = hashCode * 59 + this.Gateway.GetHashCode();
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 return hashCode;
             }
         }

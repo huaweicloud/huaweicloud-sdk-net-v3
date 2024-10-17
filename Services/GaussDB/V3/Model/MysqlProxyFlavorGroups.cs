@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(MysqlProxyFlavorGroups input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.GroupType != input.GroupType || (this.GroupType != null && !this.GroupType.Equals(input.GroupType))) return false;
+            if (this.ProxyFlavors != input.ProxyFlavors || (this.ProxyFlavors != null && input.ProxyFlavors != null && !this.ProxyFlavors.SequenceEqual(input.ProxyFlavors))) return false;
 
-            return 
-                (
-                    this.GroupType == input.GroupType ||
-                    (this.GroupType != null &&
-                    this.GroupType.Equals(input.GroupType))
-                ) && 
-                (
-                    this.ProxyFlavors == input.ProxyFlavors ||
-                    this.ProxyFlavors != null &&
-                    input.ProxyFlavors != null &&
-                    this.ProxyFlavors.SequenceEqual(input.ProxyFlavors)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.GroupType != null)
-                    hashCode = hashCode * 59 + this.GroupType.GetHashCode();
-                if (this.ProxyFlavors != null)
-                    hashCode = hashCode * 59 + this.ProxyFlavors.GetHashCode();
+                var hashCode = 41;
+                if (this.GroupType != null) hashCode = hashCode * 59 + this.GroupType.GetHashCode();
+                if (this.ProxyFlavors != null) hashCode = hashCode * 59 + this.ProxyFlavors.GetHashCode();
                 return hashCode;
             }
         }

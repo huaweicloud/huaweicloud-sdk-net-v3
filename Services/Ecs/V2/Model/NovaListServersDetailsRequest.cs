@@ -500,75 +500,22 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(NovaListServersDetailsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ChangesSince != input.ChangesSince || (this.ChangesSince != null && !this.ChangesSince.Equals(input.ChangesSince))) return false;
+            if (this.Flavor != input.Flavor || (this.Flavor != null && !this.Flavor.Equals(input.Flavor))) return false;
+            if (this.Image != input.Image || (this.Image != null && !this.Image.Equals(input.Image))) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.NotTags != input.NotTags || (this.NotTags != null && !this.NotTags.Equals(input.NotTags))) return false;
+            if (this.ReservationId != input.ReservationId || (this.ReservationId != null && !this.ReservationId.Equals(input.ReservationId))) return false;
+            if (this.SortKey != input.SortKey) return false;
+            if (this.Status != input.Status) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && !this.Tags.Equals(input.Tags))) return false;
+            if (this.OpenStackAPIVersion != input.OpenStackAPIVersion || (this.OpenStackAPIVersion != null && !this.OpenStackAPIVersion.Equals(input.OpenStackAPIVersion))) return false;
 
-            return 
-                (
-                    this.ChangesSince == input.ChangesSince ||
-                    (this.ChangesSince != null &&
-                    this.ChangesSince.Equals(input.ChangesSince))
-                ) && 
-                (
-                    this.Flavor == input.Flavor ||
-                    (this.Flavor != null &&
-                    this.Flavor.Equals(input.Flavor))
-                ) && 
-                (
-                    this.Image == input.Image ||
-                    (this.Image != null &&
-                    this.Image.Equals(input.Image))
-                ) && 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.NotTags == input.NotTags ||
-                    (this.NotTags != null &&
-                    this.NotTags.Equals(input.NotTags))
-                ) && 
-                (
-                    this.ReservationId == input.ReservationId ||
-                    (this.ReservationId != null &&
-                    this.ReservationId.Equals(input.ReservationId))
-                ) && 
-                (
-                    this.SortKey == input.SortKey ||
-                    (this.SortKey != null &&
-                    this.SortKey.Equals(input.SortKey))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    (this.Tags != null &&
-                    this.Tags.Equals(input.Tags))
-                ) && 
-                (
-                    this.OpenStackAPIVersion == input.OpenStackAPIVersion ||
-                    (this.OpenStackAPIVersion != null &&
-                    this.OpenStackAPIVersion.Equals(input.OpenStackAPIVersion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -578,33 +525,20 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ChangesSince != null)
-                    hashCode = hashCode * 59 + this.ChangesSince.GetHashCode();
-                if (this.Flavor != null)
-                    hashCode = hashCode * 59 + this.Flavor.GetHashCode();
-                if (this.Image != null)
-                    hashCode = hashCode * 59 + this.Image.GetHashCode();
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.NotTags != null)
-                    hashCode = hashCode * 59 + this.NotTags.GetHashCode();
-                if (this.ReservationId != null)
-                    hashCode = hashCode * 59 + this.ReservationId.GetHashCode();
-                if (this.SortKey != null)
-                    hashCode = hashCode * 59 + this.SortKey.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.OpenStackAPIVersion != null)
-                    hashCode = hashCode * 59 + this.OpenStackAPIVersion.GetHashCode();
+                var hashCode = 41;
+                if (this.ChangesSince != null) hashCode = hashCode * 59 + this.ChangesSince.GetHashCode();
+                if (this.Flavor != null) hashCode = hashCode * 59 + this.Flavor.GetHashCode();
+                if (this.Image != null) hashCode = hashCode * 59 + this.Image.GetHashCode();
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.NotTags != null) hashCode = hashCode * 59 + this.NotTags.GetHashCode();
+                if (this.ReservationId != null) hashCode = hashCode * 59 + this.ReservationId.GetHashCode();
+                hashCode = hashCode * 59 + this.SortKey.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.OpenStackAPIVersion != null) hashCode = hashCode * 59 + this.OpenStackAPIVersion.GetHashCode();
                 return hashCode;
             }
         }

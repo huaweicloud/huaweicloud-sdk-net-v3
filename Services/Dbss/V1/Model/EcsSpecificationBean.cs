@@ -17,31 +17,31 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     {
 
         /// <summary>
-        /// 可用区集合
+        /// ECS规格所在的可用区集合
         /// </summary>
         [JsonProperty("azs", NullValueHandling = NullValueHandling.Ignore)]
         public List<string> Azs { get; set; }
 
         /// <summary>
-        /// ID
+        /// 规格ID
         /// </summary>
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
         public string Id { get; set; }
 
         /// <summary>
-        /// 等级
+        /// 规格等级，支持的等级以局点配置为准。 - entry:入门版 - low:基础版 - medium:专业版 - high:高级版
         /// </summary>
         [JsonProperty("level", NullValueHandling = NullValueHandling.Ignore)]
         public string Level { get; set; }
 
         /// <summary>
-        /// 名称
+        /// 规格名称
         /// </summary>
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore)]
         public string Name { get; set; }
 
         /// <summary>
-        /// 代理
+        /// 规格可添加的数据库数量
         /// </summary>
         [JsonProperty("proxy", NullValueHandling = NullValueHandling.Ignore)]
         public int? Proxy { get; set; }
@@ -57,6 +57,12 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         [JsonProperty("vcpus", NullValueHandling = NullValueHandling.Ignore)]
         public int? Vcpus { get; set; }
+
+        /// <summary>
+        /// 可用区类型 - DEDICATED - DEC - EDGE
+        /// </summary>
+        [JsonProperty("az_type", NullValueHandling = NullValueHandling.Ignore)]
+        public string AzType { get; set; }
 
 
 
@@ -74,6 +80,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
             sb.Append("  proxy: ").Append(Proxy).Append("\n");
             sb.Append("  ram: ").Append(Ram).Append("\n");
             sb.Append("  vcpus: ").Append(Vcpus).Append("\n");
+            sb.Append("  azType: ").Append(AzType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,46 +98,17 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         public bool Equals(EcsSpecificationBean input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Azs != input.Azs || (this.Azs != null && input.Azs != null && !this.Azs.SequenceEqual(input.Azs))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Level != input.Level || (this.Level != null && !this.Level.Equals(input.Level))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Proxy != input.Proxy || (this.Proxy != null && !this.Proxy.Equals(input.Proxy))) return false;
+            if (this.Ram != input.Ram || (this.Ram != null && !this.Ram.Equals(input.Ram))) return false;
+            if (this.Vcpus != input.Vcpus || (this.Vcpus != null && !this.Vcpus.Equals(input.Vcpus))) return false;
+            if (this.AzType != input.AzType || (this.AzType != null && !this.AzType.Equals(input.AzType))) return false;
 
-            return 
-                (
-                    this.Azs == input.Azs ||
-                    this.Azs != null &&
-                    input.Azs != null &&
-                    this.Azs.SequenceEqual(input.Azs)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Level == input.Level ||
-                    (this.Level != null &&
-                    this.Level.Equals(input.Level))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Proxy == input.Proxy ||
-                    (this.Proxy != null &&
-                    this.Proxy.Equals(input.Proxy))
-                ) && 
-                (
-                    this.Ram == input.Ram ||
-                    (this.Ram != null &&
-                    this.Ram.Equals(input.Ram))
-                ) && 
-                (
-                    this.Vcpus == input.Vcpus ||
-                    (this.Vcpus != null &&
-                    this.Vcpus.Equals(input.Vcpus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -140,21 +118,15 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Azs != null)
-                    hashCode = hashCode * 59 + this.Azs.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Level != null)
-                    hashCode = hashCode * 59 + this.Level.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Proxy != null)
-                    hashCode = hashCode * 59 + this.Proxy.GetHashCode();
-                if (this.Ram != null)
-                    hashCode = hashCode * 59 + this.Ram.GetHashCode();
-                if (this.Vcpus != null)
-                    hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
+                var hashCode = 41;
+                if (this.Azs != null) hashCode = hashCode * 59 + this.Azs.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Level != null) hashCode = hashCode * 59 + this.Level.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Proxy != null) hashCode = hashCode * 59 + this.Proxy.GetHashCode();
+                if (this.Ram != null) hashCode = hashCode * 59 + this.Ram.GetHashCode();
+                if (this.Vcpus != null) hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
+                if (this.AzType != null) hashCode = hashCode * 59 + this.AzType.GetHashCode();
                 return hashCode;
             }
         }

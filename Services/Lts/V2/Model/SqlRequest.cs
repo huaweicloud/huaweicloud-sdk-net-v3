@@ -219,55 +219,18 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(SqlRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IsTimeRangeRelative != input.IsTimeRangeRelative || (this.IsTimeRangeRelative != null && !this.IsTimeRangeRelative.Equals(input.IsTimeRangeRelative))) return false;
+            if (this.LogStreamId != input.LogStreamId || (this.LogStreamId != null && !this.LogStreamId.Equals(input.LogStreamId))) return false;
+            if (this.LogStreamName != input.LogStreamName || (this.LogStreamName != null && !this.LogStreamName.Equals(input.LogStreamName))) return false;
+            if (this.LogGroupId != input.LogGroupId || (this.LogGroupId != null && !this.LogGroupId.Equals(input.LogGroupId))) return false;
+            if (this.LogGroupName != input.LogGroupName || (this.LogGroupName != null && !this.LogGroupName.Equals(input.LogGroupName))) return false;
+            if (this.Sql != input.Sql || (this.Sql != null && !this.Sql.Equals(input.Sql))) return false;
+            if (this.SqlRequestTitle != input.SqlRequestTitle || (this.SqlRequestTitle != null && !this.SqlRequestTitle.Equals(input.SqlRequestTitle))) return false;
+            if (this.SearchTimeRange != input.SearchTimeRange || (this.SearchTimeRange != null && !this.SearchTimeRange.Equals(input.SearchTimeRange))) return false;
+            if (this.SearchTimeRangeUnit != input.SearchTimeRangeUnit) return false;
 
-            return 
-                (
-                    this.IsTimeRangeRelative == input.IsTimeRangeRelative ||
-                    (this.IsTimeRangeRelative != null &&
-                    this.IsTimeRangeRelative.Equals(input.IsTimeRangeRelative))
-                ) && 
-                (
-                    this.LogStreamId == input.LogStreamId ||
-                    (this.LogStreamId != null &&
-                    this.LogStreamId.Equals(input.LogStreamId))
-                ) && 
-                (
-                    this.LogStreamName == input.LogStreamName ||
-                    (this.LogStreamName != null &&
-                    this.LogStreamName.Equals(input.LogStreamName))
-                ) && 
-                (
-                    this.LogGroupId == input.LogGroupId ||
-                    (this.LogGroupId != null &&
-                    this.LogGroupId.Equals(input.LogGroupId))
-                ) && 
-                (
-                    this.LogGroupName == input.LogGroupName ||
-                    (this.LogGroupName != null &&
-                    this.LogGroupName.Equals(input.LogGroupName))
-                ) && 
-                (
-                    this.Sql == input.Sql ||
-                    (this.Sql != null &&
-                    this.Sql.Equals(input.Sql))
-                ) && 
-                (
-                    this.SqlRequestTitle == input.SqlRequestTitle ||
-                    (this.SqlRequestTitle != null &&
-                    this.SqlRequestTitle.Equals(input.SqlRequestTitle))
-                ) && 
-                (
-                    this.SearchTimeRange == input.SearchTimeRange ||
-                    (this.SearchTimeRange != null &&
-                    this.SearchTimeRange.Equals(input.SearchTimeRange))
-                ) && 
-                (
-                    this.SearchTimeRangeUnit == input.SearchTimeRangeUnit ||
-                    (this.SearchTimeRangeUnit != null &&
-                    this.SearchTimeRangeUnit.Equals(input.SearchTimeRangeUnit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -277,25 +240,16 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IsTimeRangeRelative != null)
-                    hashCode = hashCode * 59 + this.IsTimeRangeRelative.GetHashCode();
-                if (this.LogStreamId != null)
-                    hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
-                if (this.LogStreamName != null)
-                    hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
-                if (this.LogGroupId != null)
-                    hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
-                if (this.LogGroupName != null)
-                    hashCode = hashCode * 59 + this.LogGroupName.GetHashCode();
-                if (this.Sql != null)
-                    hashCode = hashCode * 59 + this.Sql.GetHashCode();
-                if (this.SqlRequestTitle != null)
-                    hashCode = hashCode * 59 + this.SqlRequestTitle.GetHashCode();
-                if (this.SearchTimeRange != null)
-                    hashCode = hashCode * 59 + this.SearchTimeRange.GetHashCode();
-                if (this.SearchTimeRangeUnit != null)
-                    hashCode = hashCode * 59 + this.SearchTimeRangeUnit.GetHashCode();
+                var hashCode = 41;
+                if (this.IsTimeRangeRelative != null) hashCode = hashCode * 59 + this.IsTimeRangeRelative.GetHashCode();
+                if (this.LogStreamId != null) hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
+                if (this.LogStreamName != null) hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
+                if (this.LogGroupId != null) hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
+                if (this.LogGroupName != null) hashCode = hashCode * 59 + this.LogGroupName.GetHashCode();
+                if (this.Sql != null) hashCode = hashCode * 59 + this.Sql.GetHashCode();
+                if (this.SqlRequestTitle != null) hashCode = hashCode * 59 + this.SqlRequestTitle.GetHashCode();
+                if (this.SearchTimeRange != null) hashCode = hashCode * 59 + this.SearchTimeRange.GetHashCode();
+                hashCode = hashCode * 59 + this.SearchTimeRangeUnit.GetHashCode();
                 return hashCode;
             }
         }

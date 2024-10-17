@@ -90,40 +90,15 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public bool Equals(DeleteBindingRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.Vhost != input.Vhost || (this.Vhost != null && !this.Vhost.Equals(input.Vhost))) return false;
+            if (this.Exchange != input.Exchange || (this.Exchange != null && !this.Exchange.Equals(input.Exchange))) return false;
+            if (this.DestinationType != input.DestinationType || (this.DestinationType != null && !this.DestinationType.Equals(input.DestinationType))) return false;
+            if (this.Destination != input.Destination || (this.Destination != null && !this.Destination.Equals(input.Destination))) return false;
+            if (this.PropertiesKey != input.PropertiesKey || (this.PropertiesKey != null && !this.PropertiesKey.Equals(input.PropertiesKey))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.Vhost == input.Vhost ||
-                    (this.Vhost != null &&
-                    this.Vhost.Equals(input.Vhost))
-                ) && 
-                (
-                    this.Exchange == input.Exchange ||
-                    (this.Exchange != null &&
-                    this.Exchange.Equals(input.Exchange))
-                ) && 
-                (
-                    this.DestinationType == input.DestinationType ||
-                    (this.DestinationType != null &&
-                    this.DestinationType.Equals(input.DestinationType))
-                ) && 
-                (
-                    this.Destination == input.Destination ||
-                    (this.Destination != null &&
-                    this.Destination.Equals(input.Destination))
-                ) && 
-                (
-                    this.PropertiesKey == input.PropertiesKey ||
-                    (this.PropertiesKey != null &&
-                    this.PropertiesKey.Equals(input.PropertiesKey))
-                );
+            return true;
         }
 
         /// <summary>
@@ -133,19 +108,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.Vhost != null)
-                    hashCode = hashCode * 59 + this.Vhost.GetHashCode();
-                if (this.Exchange != null)
-                    hashCode = hashCode * 59 + this.Exchange.GetHashCode();
-                if (this.DestinationType != null)
-                    hashCode = hashCode * 59 + this.DestinationType.GetHashCode();
-                if (this.Destination != null)
-                    hashCode = hashCode * 59 + this.Destination.GetHashCode();
-                if (this.PropertiesKey != null)
-                    hashCode = hashCode * 59 + this.PropertiesKey.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.Vhost != null) hashCode = hashCode * 59 + this.Vhost.GetHashCode();
+                if (this.Exchange != null) hashCode = hashCode * 59 + this.Exchange.GetHashCode();
+                if (this.DestinationType != null) hashCode = hashCode * 59 + this.DestinationType.GetHashCode();
+                if (this.Destination != null) hashCode = hashCode * 59 + this.Destination.GetHashCode();
+                if (this.PropertiesKey != null) hashCode = hashCode * 59 + this.PropertiesKey.GetHashCode();
                 return hashCode;
             }
         }

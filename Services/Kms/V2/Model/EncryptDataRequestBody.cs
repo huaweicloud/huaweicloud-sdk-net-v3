@@ -197,35 +197,14 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         /// </summary>
         public bool Equals(EncryptDataRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KeyId != input.KeyId || (this.KeyId != null && !this.KeyId.Equals(input.KeyId))) return false;
+            if (this.PlainText != input.PlainText || (this.PlainText != null && !this.PlainText.Equals(input.PlainText))) return false;
+            if (this.EncryptionAlgorithm != input.EncryptionAlgorithm) return false;
+            if (this.AdditionalAuthenticatedData != input.AdditionalAuthenticatedData || (this.AdditionalAuthenticatedData != null && !this.AdditionalAuthenticatedData.Equals(input.AdditionalAuthenticatedData))) return false;
+            if (this.Sequence != input.Sequence || (this.Sequence != null && !this.Sequence.Equals(input.Sequence))) return false;
 
-            return 
-                (
-                    this.KeyId == input.KeyId ||
-                    (this.KeyId != null &&
-                    this.KeyId.Equals(input.KeyId))
-                ) && 
-                (
-                    this.PlainText == input.PlainText ||
-                    (this.PlainText != null &&
-                    this.PlainText.Equals(input.PlainText))
-                ) && 
-                (
-                    this.EncryptionAlgorithm == input.EncryptionAlgorithm ||
-                    (this.EncryptionAlgorithm != null &&
-                    this.EncryptionAlgorithm.Equals(input.EncryptionAlgorithm))
-                ) && 
-                (
-                    this.AdditionalAuthenticatedData == input.AdditionalAuthenticatedData ||
-                    (this.AdditionalAuthenticatedData != null &&
-                    this.AdditionalAuthenticatedData.Equals(input.AdditionalAuthenticatedData))
-                ) && 
-                (
-                    this.Sequence == input.Sequence ||
-                    (this.Sequence != null &&
-                    this.Sequence.Equals(input.Sequence))
-                );
+            return true;
         }
 
         /// <summary>
@@ -235,17 +214,12 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KeyId != null)
-                    hashCode = hashCode * 59 + this.KeyId.GetHashCode();
-                if (this.PlainText != null)
-                    hashCode = hashCode * 59 + this.PlainText.GetHashCode();
-                if (this.EncryptionAlgorithm != null)
-                    hashCode = hashCode * 59 + this.EncryptionAlgorithm.GetHashCode();
-                if (this.AdditionalAuthenticatedData != null)
-                    hashCode = hashCode * 59 + this.AdditionalAuthenticatedData.GetHashCode();
-                if (this.Sequence != null)
-                    hashCode = hashCode * 59 + this.Sequence.GetHashCode();
+                var hashCode = 41;
+                if (this.KeyId != null) hashCode = hashCode * 59 + this.KeyId.GetHashCode();
+                if (this.PlainText != null) hashCode = hashCode * 59 + this.PlainText.GetHashCode();
+                hashCode = hashCode * 59 + this.EncryptionAlgorithm.GetHashCode();
+                if (this.AdditionalAuthenticatedData != null) hashCode = hashCode * 59 + this.AdditionalAuthenticatedData.GetHashCode();
+                if (this.Sequence != null) hashCode = hashCode * 59 + this.Sequence.GetHashCode();
                 return hashCode;
             }
         }

@@ -205,46 +205,16 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(Policy input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.OperationDefinition != input.OperationDefinition || (this.OperationDefinition != null && !this.OperationDefinition.Equals(input.OperationDefinition))) return false;
+            if (this.OperationType != input.OperationType) return false;
+            if (this.Trigger != input.Trigger || (this.Trigger != null && !this.Trigger.Equals(input.Trigger))) return false;
+            if (this.AssociatedVaults != input.AssociatedVaults || (this.AssociatedVaults != null && input.AssociatedVaults != null && !this.AssociatedVaults.SequenceEqual(input.AssociatedVaults))) return false;
 
-            return 
-                (
-                    this.Enabled == input.Enabled ||
-                    (this.Enabled != null &&
-                    this.Enabled.Equals(input.Enabled))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.OperationDefinition == input.OperationDefinition ||
-                    (this.OperationDefinition != null &&
-                    this.OperationDefinition.Equals(input.OperationDefinition))
-                ) && 
-                (
-                    this.OperationType == input.OperationType ||
-                    (this.OperationType != null &&
-                    this.OperationType.Equals(input.OperationType))
-                ) && 
-                (
-                    this.Trigger == input.Trigger ||
-                    (this.Trigger != null &&
-                    this.Trigger.Equals(input.Trigger))
-                ) && 
-                (
-                    this.AssociatedVaults == input.AssociatedVaults ||
-                    this.AssociatedVaults != null &&
-                    input.AssociatedVaults != null &&
-                    this.AssociatedVaults.SequenceEqual(input.AssociatedVaults)
-                );
+            return true;
         }
 
         /// <summary>
@@ -254,21 +224,14 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Enabled != null)
-                    hashCode = hashCode * 59 + this.Enabled.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.OperationDefinition != null)
-                    hashCode = hashCode * 59 + this.OperationDefinition.GetHashCode();
-                if (this.OperationType != null)
-                    hashCode = hashCode * 59 + this.OperationType.GetHashCode();
-                if (this.Trigger != null)
-                    hashCode = hashCode * 59 + this.Trigger.GetHashCode();
-                if (this.AssociatedVaults != null)
-                    hashCode = hashCode * 59 + this.AssociatedVaults.GetHashCode();
+                var hashCode = 41;
+                if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.OperationDefinition != null) hashCode = hashCode * 59 + this.OperationDefinition.GetHashCode();
+                hashCode = hashCode * 59 + this.OperationType.GetHashCode();
+                if (this.Trigger != null) hashCode = hashCode * 59 + this.Trigger.GetHashCode();
+                if (this.AssociatedVaults != null) hashCode = hashCode * 59 + this.AssociatedVaults.GetHashCode();
                 return hashCode;
             }
         }

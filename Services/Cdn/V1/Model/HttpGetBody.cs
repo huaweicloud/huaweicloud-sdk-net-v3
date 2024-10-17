@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(HttpGetBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HttpsStatus != input.HttpsStatus || (this.HttpsStatus != null && !this.HttpsStatus.Equals(input.HttpsStatus))) return false;
+            if (this.CertificateName != input.CertificateName || (this.CertificateName != null && !this.CertificateName.Equals(input.CertificateName))) return false;
+            if (this.CertificateValue != input.CertificateValue || (this.CertificateValue != null && !this.CertificateValue.Equals(input.CertificateValue))) return false;
+            if (this.ExpireTime != input.ExpireTime || (this.ExpireTime != null && !this.ExpireTime.Equals(input.ExpireTime))) return false;
+            if (this.CertificateSource != input.CertificateSource || (this.CertificateSource != null && !this.CertificateSource.Equals(input.CertificateSource))) return false;
+            if (this.CertificateType != input.CertificateType || (this.CertificateType != null && !this.CertificateType.Equals(input.CertificateType))) return false;
+            if (this.Http2Status != input.Http2Status || (this.Http2Status != null && !this.Http2Status.Equals(input.Http2Status))) return false;
+            if (this.TlsVersion != input.TlsVersion || (this.TlsVersion != null && !this.TlsVersion.Equals(input.TlsVersion))) return false;
+            if (this.OcspStaplingStatus != input.OcspStaplingStatus || (this.OcspStaplingStatus != null && !this.OcspStaplingStatus.Equals(input.OcspStaplingStatus))) return false;
 
-            return 
-                (
-                    this.HttpsStatus == input.HttpsStatus ||
-                    (this.HttpsStatus != null &&
-                    this.HttpsStatus.Equals(input.HttpsStatus))
-                ) && 
-                (
-                    this.CertificateName == input.CertificateName ||
-                    (this.CertificateName != null &&
-                    this.CertificateName.Equals(input.CertificateName))
-                ) && 
-                (
-                    this.CertificateValue == input.CertificateValue ||
-                    (this.CertificateValue != null &&
-                    this.CertificateValue.Equals(input.CertificateValue))
-                ) && 
-                (
-                    this.ExpireTime == input.ExpireTime ||
-                    (this.ExpireTime != null &&
-                    this.ExpireTime.Equals(input.ExpireTime))
-                ) && 
-                (
-                    this.CertificateSource == input.CertificateSource ||
-                    (this.CertificateSource != null &&
-                    this.CertificateSource.Equals(input.CertificateSource))
-                ) && 
-                (
-                    this.CertificateType == input.CertificateType ||
-                    (this.CertificateType != null &&
-                    this.CertificateType.Equals(input.CertificateType))
-                ) && 
-                (
-                    this.Http2Status == input.Http2Status ||
-                    (this.Http2Status != null &&
-                    this.Http2Status.Equals(input.Http2Status))
-                ) && 
-                (
-                    this.TlsVersion == input.TlsVersion ||
-                    (this.TlsVersion != null &&
-                    this.TlsVersion.Equals(input.TlsVersion))
-                ) && 
-                (
-                    this.OcspStaplingStatus == input.OcspStaplingStatus ||
-                    (this.OcspStaplingStatus != null &&
-                    this.OcspStaplingStatus.Equals(input.OcspStaplingStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HttpsStatus != null)
-                    hashCode = hashCode * 59 + this.HttpsStatus.GetHashCode();
-                if (this.CertificateName != null)
-                    hashCode = hashCode * 59 + this.CertificateName.GetHashCode();
-                if (this.CertificateValue != null)
-                    hashCode = hashCode * 59 + this.CertificateValue.GetHashCode();
-                if (this.ExpireTime != null)
-                    hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
-                if (this.CertificateSource != null)
-                    hashCode = hashCode * 59 + this.CertificateSource.GetHashCode();
-                if (this.CertificateType != null)
-                    hashCode = hashCode * 59 + this.CertificateType.GetHashCode();
-                if (this.Http2Status != null)
-                    hashCode = hashCode * 59 + this.Http2Status.GetHashCode();
-                if (this.TlsVersion != null)
-                    hashCode = hashCode * 59 + this.TlsVersion.GetHashCode();
-                if (this.OcspStaplingStatus != null)
-                    hashCode = hashCode * 59 + this.OcspStaplingStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.HttpsStatus != null) hashCode = hashCode * 59 + this.HttpsStatus.GetHashCode();
+                if (this.CertificateName != null) hashCode = hashCode * 59 + this.CertificateName.GetHashCode();
+                if (this.CertificateValue != null) hashCode = hashCode * 59 + this.CertificateValue.GetHashCode();
+                if (this.ExpireTime != null) hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
+                if (this.CertificateSource != null) hashCode = hashCode * 59 + this.CertificateSource.GetHashCode();
+                if (this.CertificateType != null) hashCode = hashCode * 59 + this.CertificateType.GetHashCode();
+                if (this.Http2Status != null) hashCode = hashCode * 59 + this.Http2Status.GetHashCode();
+                if (this.TlsVersion != null) hashCode = hashCode * 59 + this.TlsVersion.GetHashCode();
+                if (this.OcspStaplingStatus != null) hashCode = hashCode * 59 + this.OcspStaplingStatus.GetHashCode();
                 return hashCode;
             }
         }

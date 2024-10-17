@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         /// </summary>
         public bool Equals(RtcHistoryScaleTimeValue input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Date != input.Date || (this.Date != null && !this.Date.Equals(input.Date))) return false;
+            if (this.UserCount != input.UserCount || (this.UserCount != null && !this.UserCount.Equals(input.UserCount))) return false;
+            if (this.SessionCount != input.SessionCount || (this.SessionCount != null && !this.SessionCount.Equals(input.SessionCount))) return false;
+            if (this.RoomCount != input.RoomCount || (this.RoomCount != null && !this.RoomCount.Equals(input.RoomCount))) return false;
+            if (this.MaxOnlineUserCount != input.MaxOnlineUserCount || (this.MaxOnlineUserCount != null && !this.MaxOnlineUserCount.Equals(input.MaxOnlineUserCount))) return false;
+            if (this.MaxOnlineRoomCount != input.MaxOnlineRoomCount || (this.MaxOnlineRoomCount != null && !this.MaxOnlineRoomCount.Equals(input.MaxOnlineRoomCount))) return false;
+            if (this.CommunicationDuration != input.CommunicationDuration || (this.CommunicationDuration != null && !this.CommunicationDuration.Equals(input.CommunicationDuration))) return false;
+            if (this.VideoCommunicationDuration != input.VideoCommunicationDuration || (this.VideoCommunicationDuration != null && !this.VideoCommunicationDuration.Equals(input.VideoCommunicationDuration))) return false;
+            if (this.AudioCommunicationDuration != input.AudioCommunicationDuration || (this.AudioCommunicationDuration != null && !this.AudioCommunicationDuration.Equals(input.AudioCommunicationDuration))) return false;
 
-            return 
-                (
-                    this.Date == input.Date ||
-                    (this.Date != null &&
-                    this.Date.Equals(input.Date))
-                ) && 
-                (
-                    this.UserCount == input.UserCount ||
-                    (this.UserCount != null &&
-                    this.UserCount.Equals(input.UserCount))
-                ) && 
-                (
-                    this.SessionCount == input.SessionCount ||
-                    (this.SessionCount != null &&
-                    this.SessionCount.Equals(input.SessionCount))
-                ) && 
-                (
-                    this.RoomCount == input.RoomCount ||
-                    (this.RoomCount != null &&
-                    this.RoomCount.Equals(input.RoomCount))
-                ) && 
-                (
-                    this.MaxOnlineUserCount == input.MaxOnlineUserCount ||
-                    (this.MaxOnlineUserCount != null &&
-                    this.MaxOnlineUserCount.Equals(input.MaxOnlineUserCount))
-                ) && 
-                (
-                    this.MaxOnlineRoomCount == input.MaxOnlineRoomCount ||
-                    (this.MaxOnlineRoomCount != null &&
-                    this.MaxOnlineRoomCount.Equals(input.MaxOnlineRoomCount))
-                ) && 
-                (
-                    this.CommunicationDuration == input.CommunicationDuration ||
-                    (this.CommunicationDuration != null &&
-                    this.CommunicationDuration.Equals(input.CommunicationDuration))
-                ) && 
-                (
-                    this.VideoCommunicationDuration == input.VideoCommunicationDuration ||
-                    (this.VideoCommunicationDuration != null &&
-                    this.VideoCommunicationDuration.Equals(input.VideoCommunicationDuration))
-                ) && 
-                (
-                    this.AudioCommunicationDuration == input.AudioCommunicationDuration ||
-                    (this.AudioCommunicationDuration != null &&
-                    this.AudioCommunicationDuration.Equals(input.AudioCommunicationDuration))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Date != null)
-                    hashCode = hashCode * 59 + this.Date.GetHashCode();
-                if (this.UserCount != null)
-                    hashCode = hashCode * 59 + this.UserCount.GetHashCode();
-                if (this.SessionCount != null)
-                    hashCode = hashCode * 59 + this.SessionCount.GetHashCode();
-                if (this.RoomCount != null)
-                    hashCode = hashCode * 59 + this.RoomCount.GetHashCode();
-                if (this.MaxOnlineUserCount != null)
-                    hashCode = hashCode * 59 + this.MaxOnlineUserCount.GetHashCode();
-                if (this.MaxOnlineRoomCount != null)
-                    hashCode = hashCode * 59 + this.MaxOnlineRoomCount.GetHashCode();
-                if (this.CommunicationDuration != null)
-                    hashCode = hashCode * 59 + this.CommunicationDuration.GetHashCode();
-                if (this.VideoCommunicationDuration != null)
-                    hashCode = hashCode * 59 + this.VideoCommunicationDuration.GetHashCode();
-                if (this.AudioCommunicationDuration != null)
-                    hashCode = hashCode * 59 + this.AudioCommunicationDuration.GetHashCode();
+                var hashCode = 41;
+                if (this.Date != null) hashCode = hashCode * 59 + this.Date.GetHashCode();
+                if (this.UserCount != null) hashCode = hashCode * 59 + this.UserCount.GetHashCode();
+                if (this.SessionCount != null) hashCode = hashCode * 59 + this.SessionCount.GetHashCode();
+                if (this.RoomCount != null) hashCode = hashCode * 59 + this.RoomCount.GetHashCode();
+                if (this.MaxOnlineUserCount != null) hashCode = hashCode * 59 + this.MaxOnlineUserCount.GetHashCode();
+                if (this.MaxOnlineRoomCount != null) hashCode = hashCode * 59 + this.MaxOnlineRoomCount.GetHashCode();
+                if (this.CommunicationDuration != null) hashCode = hashCode * 59 + this.CommunicationDuration.GetHashCode();
+                if (this.VideoCommunicationDuration != null) hashCode = hashCode * 59 + this.VideoCommunicationDuration.GetHashCode();
+                if (this.AudioCommunicationDuration != null) hashCode = hashCode * 59 + this.AudioCommunicationDuration.GetHashCode();
                 return hashCode;
             }
         }

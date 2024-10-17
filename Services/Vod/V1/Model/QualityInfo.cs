@@ -207,25 +207,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(QualityInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Video != input.Video || (this.Video != null && !this.Video.Equals(input.Video))) return false;
+            if (this.Audio != input.Audio || (this.Audio != null && !this.Audio.Equals(input.Audio))) return false;
+            if (this.Format != input.Format) return false;
 
-            return 
-                (
-                    this.Video == input.Video ||
-                    (this.Video != null &&
-                    this.Video.Equals(input.Video))
-                ) && 
-                (
-                    this.Audio == input.Audio ||
-                    (this.Audio != null &&
-                    this.Audio.Equals(input.Audio))
-                ) && 
-                (
-                    this.Format == input.Format ||
-                    (this.Format != null &&
-                    this.Format.Equals(input.Format))
-                );
+            return true;
         }
 
         /// <summary>
@@ -235,13 +222,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Video != null)
-                    hashCode = hashCode * 59 + this.Video.GetHashCode();
-                if (this.Audio != null)
-                    hashCode = hashCode * 59 + this.Audio.GetHashCode();
-                if (this.Format != null)
-                    hashCode = hashCode * 59 + this.Format.GetHashCode();
+                var hashCode = 41;
+                if (this.Video != null) hashCode = hashCode * 59 + this.Video.GetHashCode();
+                if (this.Audio != null) hashCode = hashCode * 59 + this.Audio.GetHashCode();
+                hashCode = hashCode * 59 + this.Format.GetHashCode();
                 return hashCode;
             }
         }

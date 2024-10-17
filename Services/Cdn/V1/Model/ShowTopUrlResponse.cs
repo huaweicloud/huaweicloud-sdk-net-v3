@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(ShowTopUrlResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ServiceArea != input.ServiceArea || (this.ServiceArea != null && !this.ServiceArea.Equals(input.ServiceArea))) return false;
+            if (this.TopUrlSummary != input.TopUrlSummary || (this.TopUrlSummary != null && input.TopUrlSummary != null && !this.TopUrlSummary.SequenceEqual(input.TopUrlSummary))) return false;
 
-            return 
-                (
-                    this.ServiceArea == input.ServiceArea ||
-                    (this.ServiceArea != null &&
-                    this.ServiceArea.Equals(input.ServiceArea))
-                ) && 
-                (
-                    this.TopUrlSummary == input.TopUrlSummary ||
-                    this.TopUrlSummary != null &&
-                    input.TopUrlSummary != null &&
-                    this.TopUrlSummary.SequenceEqual(input.TopUrlSummary)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ServiceArea != null)
-                    hashCode = hashCode * 59 + this.ServiceArea.GetHashCode();
-                if (this.TopUrlSummary != null)
-                    hashCode = hashCode * 59 + this.TopUrlSummary.GetHashCode();
+                var hashCode = 41;
+                if (this.ServiceArea != null) hashCode = hashCode * 59 + this.ServiceArea.GetHashCode();
+                if (this.TopUrlSummary != null) hashCode = hashCode * 59 + this.TopUrlSummary.GetHashCode();
                 return hashCode;
             }
         }

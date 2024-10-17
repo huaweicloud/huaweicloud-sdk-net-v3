@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         /// </summary>
         public bool Equals(CleanLimitDict input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CleaningAccessPosId != input.CleaningAccessPosId || (this.CleaningAccessPosId != null && !this.CleaningAccessPosId.Equals(input.CleaningAccessPosId))) return false;
+            if (this.NewConnectionLimited != input.NewConnectionLimited || (this.NewConnectionLimited != null && !this.NewConnectionLimited.Equals(input.NewConnectionLimited))) return false;
+            if (this.TotalConnectionLimited != input.TotalConnectionLimited || (this.TotalConnectionLimited != null && !this.TotalConnectionLimited.Equals(input.TotalConnectionLimited))) return false;
 
-            return 
-                (
-                    this.CleaningAccessPosId == input.CleaningAccessPosId ||
-                    (this.CleaningAccessPosId != null &&
-                    this.CleaningAccessPosId.Equals(input.CleaningAccessPosId))
-                ) && 
-                (
-                    this.NewConnectionLimited == input.NewConnectionLimited ||
-                    (this.NewConnectionLimited != null &&
-                    this.NewConnectionLimited.Equals(input.NewConnectionLimited))
-                ) && 
-                (
-                    this.TotalConnectionLimited == input.TotalConnectionLimited ||
-                    (this.TotalConnectionLimited != null &&
-                    this.TotalConnectionLimited.Equals(input.TotalConnectionLimited))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CleaningAccessPosId != null)
-                    hashCode = hashCode * 59 + this.CleaningAccessPosId.GetHashCode();
-                if (this.NewConnectionLimited != null)
-                    hashCode = hashCode * 59 + this.NewConnectionLimited.GetHashCode();
-                if (this.TotalConnectionLimited != null)
-                    hashCode = hashCode * 59 + this.TotalConnectionLimited.GetHashCode();
+                var hashCode = 41;
+                if (this.CleaningAccessPosId != null) hashCode = hashCode * 59 + this.CleaningAccessPosId.GetHashCode();
+                if (this.NewConnectionLimited != null) hashCode = hashCode * 59 + this.NewConnectionLimited.GetHashCode();
+                if (this.TotalConnectionLimited != null) hashCode = hashCode * 59 + this.TotalConnectionLimited.GetHashCode();
                 return hashCode;
             }
         }

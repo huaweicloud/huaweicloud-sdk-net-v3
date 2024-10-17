@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(ListVpcRoutesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Routes != input.Routes || (this.Routes != null && input.Routes != null && !this.Routes.SequenceEqual(input.Routes))) return false;
+            if (this.RoutesLinks != input.RoutesLinks || (this.RoutesLinks != null && input.RoutesLinks != null && !this.RoutesLinks.SequenceEqual(input.RoutesLinks))) return false;
 
-            return 
-                (
-                    this.Routes == input.Routes ||
-                    this.Routes != null &&
-                    input.Routes != null &&
-                    this.Routes.SequenceEqual(input.Routes)
-                ) && 
-                (
-                    this.RoutesLinks == input.RoutesLinks ||
-                    this.RoutesLinks != null &&
-                    input.RoutesLinks != null &&
-                    this.RoutesLinks.SequenceEqual(input.RoutesLinks)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Routes != null)
-                    hashCode = hashCode * 59 + this.Routes.GetHashCode();
-                if (this.RoutesLinks != null)
-                    hashCode = hashCode * 59 + this.RoutesLinks.GetHashCode();
+                var hashCode = 41;
+                if (this.Routes != null) hashCode = hashCode * 59 + this.Routes.GetHashCode();
+                if (this.RoutesLinks != null) hashCode = hashCode * 59 + this.RoutesLinks.GetHashCode();
                 return hashCode;
             }
         }

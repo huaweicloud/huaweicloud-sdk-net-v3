@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(EpsQuotasOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EnterpriseProjectsId != input.EnterpriseProjectsId || (this.EnterpriseProjectsId != null && !this.EnterpriseProjectsId.Equals(input.EnterpriseProjectsId))) return false;
+            if (this.InstanceQuota != input.InstanceQuota || (this.InstanceQuota != null && !this.InstanceQuota.Equals(input.InstanceQuota))) return false;
+            if (this.VcpusQuota != input.VcpusQuota || (this.VcpusQuota != null && !this.VcpusQuota.Equals(input.VcpusQuota))) return false;
+            if (this.RamQuota != input.RamQuota || (this.RamQuota != null && !this.RamQuota.Equals(input.RamQuota))) return false;
+            if (this.VolumeQuota != input.VolumeQuota || (this.VolumeQuota != null && !this.VolumeQuota.Equals(input.VolumeQuota))) return false;
 
-            return 
-                (
-                    this.EnterpriseProjectsId == input.EnterpriseProjectsId ||
-                    (this.EnterpriseProjectsId != null &&
-                    this.EnterpriseProjectsId.Equals(input.EnterpriseProjectsId))
-                ) && 
-                (
-                    this.InstanceQuota == input.InstanceQuota ||
-                    (this.InstanceQuota != null &&
-                    this.InstanceQuota.Equals(input.InstanceQuota))
-                ) && 
-                (
-                    this.VcpusQuota == input.VcpusQuota ||
-                    (this.VcpusQuota != null &&
-                    this.VcpusQuota.Equals(input.VcpusQuota))
-                ) && 
-                (
-                    this.RamQuota == input.RamQuota ||
-                    (this.RamQuota != null &&
-                    this.RamQuota.Equals(input.RamQuota))
-                ) && 
-                (
-                    this.VolumeQuota == input.VolumeQuota ||
-                    (this.VolumeQuota != null &&
-                    this.VolumeQuota.Equals(input.VolumeQuota))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EnterpriseProjectsId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectsId.GetHashCode();
-                if (this.InstanceQuota != null)
-                    hashCode = hashCode * 59 + this.InstanceQuota.GetHashCode();
-                if (this.VcpusQuota != null)
-                    hashCode = hashCode * 59 + this.VcpusQuota.GetHashCode();
-                if (this.RamQuota != null)
-                    hashCode = hashCode * 59 + this.RamQuota.GetHashCode();
-                if (this.VolumeQuota != null)
-                    hashCode = hashCode * 59 + this.VolumeQuota.GetHashCode();
+                var hashCode = 41;
+                if (this.EnterpriseProjectsId != null) hashCode = hashCode * 59 + this.EnterpriseProjectsId.GetHashCode();
+                if (this.InstanceQuota != null) hashCode = hashCode * 59 + this.InstanceQuota.GetHashCode();
+                if (this.VcpusQuota != null) hashCode = hashCode * 59 + this.VcpusQuota.GetHashCode();
+                if (this.RamQuota != null) hashCode = hashCode * 59 + this.RamQuota.GetHashCode();
+                if (this.VolumeQuota != null) hashCode = hashCode * 59 + this.VolumeQuota.GetHashCode();
                 return hashCode;
             }
         }

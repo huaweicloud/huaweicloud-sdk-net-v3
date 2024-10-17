@@ -317,128 +317,32 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// </summary>
         public bool Equals(ListInternetBandwidths input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Isp != input.Isp || (this.Isp != null && !this.Isp.Equals(input.Isp))) return false;
+            if (this.IngressSize != input.IngressSize || (this.IngressSize != null && !this.IngressSize.Equals(input.IngressSize))) return false;
+            if (this.AccessSite != input.AccessSite || (this.AccessSite != null && !this.AccessSite.Equals(input.AccessSite))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.ChargeMode != input.ChargeMode || (this.ChargeMode != null && !this.ChargeMode.Equals(input.ChargeMode))) return false;
+            if (this.Ratio95peak != input.Ratio95peak || (this.Ratio95peak != null && !this.Ratio95peak.Equals(input.Ratio95peak))) return false;
+            if (this.BillingInfo != input.BillingInfo || (this.BillingInfo != null && !this.BillingInfo.Equals(input.BillingInfo))) return false;
+            if (this.FreezenInfo != input.FreezenInfo || (this.FreezenInfo != null && !this.FreezenInfo.Equals(input.FreezenInfo))) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.GeipCount != input.GeipCount || (this.GeipCount != null && !this.GeipCount.Equals(input.GeipCount))) return false;
+            if (this.GeipSegmentCount != input.GeipSegmentCount || (this.GeipSegmentCount != null && !this.GeipSegmentCount.Equals(input.GeipSegmentCount))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.IsPrePaid != input.IsPrePaid || (this.IsPrePaid != null && !this.IsPrePaid.Equals(input.IsPrePaid))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.SysTags != input.SysTags || (this.SysTags != null && input.SysTags != null && !this.SysTags.SequenceEqual(input.SysTags))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.LockInfos != input.LockInfos || (this.LockInfos != null && input.LockInfos != null && !this.LockInfos.SequenceEqual(input.LockInfos))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Isp == input.Isp ||
-                    (this.Isp != null &&
-                    this.Isp.Equals(input.Isp))
-                ) && 
-                (
-                    this.IngressSize == input.IngressSize ||
-                    (this.IngressSize != null &&
-                    this.IngressSize.Equals(input.IngressSize))
-                ) && 
-                (
-                    this.AccessSite == input.AccessSite ||
-                    (this.AccessSite != null &&
-                    this.AccessSite.Equals(input.AccessSite))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.ChargeMode == input.ChargeMode ||
-                    (this.ChargeMode != null &&
-                    this.ChargeMode.Equals(input.ChargeMode))
-                ) && 
-                (
-                    this.Ratio95peak == input.Ratio95peak ||
-                    (this.Ratio95peak != null &&
-                    this.Ratio95peak.Equals(input.Ratio95peak))
-                ) && 
-                (
-                    this.BillingInfo == input.BillingInfo ||
-                    (this.BillingInfo != null &&
-                    this.BillingInfo.Equals(input.BillingInfo))
-                ) && 
-                (
-                    this.FreezenInfo == input.FreezenInfo ||
-                    (this.FreezenInfo != null &&
-                    this.FreezenInfo.Equals(input.FreezenInfo))
-                ) && 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.GeipCount == input.GeipCount ||
-                    (this.GeipCount != null &&
-                    this.GeipCount.Equals(input.GeipCount))
-                ) && 
-                (
-                    this.GeipSegmentCount == input.GeipSegmentCount ||
-                    (this.GeipSegmentCount != null &&
-                    this.GeipSegmentCount.Equals(input.GeipSegmentCount))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.IsPrePaid == input.IsPrePaid ||
-                    (this.IsPrePaid != null &&
-                    this.IsPrePaid.Equals(input.IsPrePaid))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.SysTags == input.SysTags ||
-                    this.SysTags != null &&
-                    input.SysTags != null &&
-                    this.SysTags.SequenceEqual(input.SysTags)
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.LockInfos == input.LockInfos ||
-                    this.LockInfos != null &&
-                    input.LockInfos != null &&
-                    this.LockInfos.SequenceEqual(input.LockInfos)
-                );
+            return true;
         }
 
         /// <summary>
@@ -448,53 +352,30 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Isp != null)
-                    hashCode = hashCode * 59 + this.Isp.GetHashCode();
-                if (this.IngressSize != null)
-                    hashCode = hashCode * 59 + this.IngressSize.GetHashCode();
-                if (this.AccessSite != null)
-                    hashCode = hashCode * 59 + this.AccessSite.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.ChargeMode != null)
-                    hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
-                if (this.Ratio95peak != null)
-                    hashCode = hashCode * 59 + this.Ratio95peak.GetHashCode();
-                if (this.BillingInfo != null)
-                    hashCode = hashCode * 59 + this.BillingInfo.GetHashCode();
-                if (this.FreezenInfo != null)
-                    hashCode = hashCode * 59 + this.FreezenInfo.GetHashCode();
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.GeipCount != null)
-                    hashCode = hashCode * 59 + this.GeipCount.GetHashCode();
-                if (this.GeipSegmentCount != null)
-                    hashCode = hashCode * 59 + this.GeipSegmentCount.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.IsPrePaid != null)
-                    hashCode = hashCode * 59 + this.IsPrePaid.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.SysTags != null)
-                    hashCode = hashCode * 59 + this.SysTags.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.LockInfos != null)
-                    hashCode = hashCode * 59 + this.LockInfos.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Isp != null) hashCode = hashCode * 59 + this.Isp.GetHashCode();
+                if (this.IngressSize != null) hashCode = hashCode * 59 + this.IngressSize.GetHashCode();
+                if (this.AccessSite != null) hashCode = hashCode * 59 + this.AccessSite.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.ChargeMode != null) hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
+                if (this.Ratio95peak != null) hashCode = hashCode * 59 + this.Ratio95peak.GetHashCode();
+                if (this.BillingInfo != null) hashCode = hashCode * 59 + this.BillingInfo.GetHashCode();
+                if (this.FreezenInfo != null) hashCode = hashCode * 59 + this.FreezenInfo.GetHashCode();
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.GeipCount != null) hashCode = hashCode * 59 + this.GeipCount.GetHashCode();
+                if (this.GeipSegmentCount != null) hashCode = hashCode * 59 + this.GeipSegmentCount.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.IsPrePaid != null) hashCode = hashCode * 59 + this.IsPrePaid.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.SysTags != null) hashCode = hashCode * 59 + this.SysTags.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.LockInfos != null) hashCode = hashCode * 59 + this.LockInfos.GetHashCode();
                 return hashCode;
             }
         }

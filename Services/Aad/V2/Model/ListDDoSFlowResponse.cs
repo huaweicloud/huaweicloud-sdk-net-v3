@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// </summary>
         public bool Equals(ListDDoSFlowResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FlowBps != input.FlowBps || (this.FlowBps != null && input.FlowBps != null && !this.FlowBps.SequenceEqual(input.FlowBps))) return false;
+            if (this.FlowPps != input.FlowPps || (this.FlowPps != null && input.FlowPps != null && !this.FlowPps.SequenceEqual(input.FlowPps))) return false;
 
-            return 
-                (
-                    this.FlowBps == input.FlowBps ||
-                    this.FlowBps != null &&
-                    input.FlowBps != null &&
-                    this.FlowBps.SequenceEqual(input.FlowBps)
-                ) && 
-                (
-                    this.FlowPps == input.FlowPps ||
-                    this.FlowPps != null &&
-                    input.FlowPps != null &&
-                    this.FlowPps.SequenceEqual(input.FlowPps)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FlowBps != null)
-                    hashCode = hashCode * 59 + this.FlowBps.GetHashCode();
-                if (this.FlowPps != null)
-                    hashCode = hashCode * 59 + this.FlowPps.GetHashCode();
+                var hashCode = 41;
+                if (this.FlowBps != null) hashCode = hashCode * 59 + this.FlowBps.GetHashCode();
+                if (this.FlowPps != null) hashCode = hashCode * 59 + this.FlowPps.GetHashCode();
                 return hashCode;
             }
         }

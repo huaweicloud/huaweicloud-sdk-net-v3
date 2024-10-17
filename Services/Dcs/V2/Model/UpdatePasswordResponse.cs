@@ -203,35 +203,14 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(UpdatePasswordResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LockTime != input.LockTime || (this.LockTime != null && !this.LockTime.Equals(input.LockTime))) return false;
+            if (this.Result != input.Result) return false;
+            if (this.LockTimeLeft != input.LockTimeLeft || (this.LockTimeLeft != null && !this.LockTimeLeft.Equals(input.LockTimeLeft))) return false;
+            if (this.RetryTimesLeft != input.RetryTimesLeft || (this.RetryTimesLeft != null && !this.RetryTimesLeft.Equals(input.RetryTimesLeft))) return false;
+            if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
 
-            return 
-                (
-                    this.LockTime == input.LockTime ||
-                    (this.LockTime != null &&
-                    this.LockTime.Equals(input.LockTime))
-                ) && 
-                (
-                    this.Result == input.Result ||
-                    (this.Result != null &&
-                    this.Result.Equals(input.Result))
-                ) && 
-                (
-                    this.LockTimeLeft == input.LockTimeLeft ||
-                    (this.LockTimeLeft != null &&
-                    this.LockTimeLeft.Equals(input.LockTimeLeft))
-                ) && 
-                (
-                    this.RetryTimesLeft == input.RetryTimesLeft ||
-                    (this.RetryTimesLeft != null &&
-                    this.RetryTimesLeft.Equals(input.RetryTimesLeft))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                );
+            return true;
         }
 
         /// <summary>
@@ -241,17 +220,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LockTime != null)
-                    hashCode = hashCode * 59 + this.LockTime.GetHashCode();
-                if (this.Result != null)
-                    hashCode = hashCode * 59 + this.Result.GetHashCode();
-                if (this.LockTimeLeft != null)
-                    hashCode = hashCode * 59 + this.LockTimeLeft.GetHashCode();
-                if (this.RetryTimesLeft != null)
-                    hashCode = hashCode * 59 + this.RetryTimesLeft.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
+                var hashCode = 41;
+                if (this.LockTime != null) hashCode = hashCode * 59 + this.LockTime.GetHashCode();
+                hashCode = hashCode * 59 + this.Result.GetHashCode();
+                if (this.LockTimeLeft != null) hashCode = hashCode * 59 + this.LockTimeLeft.GetHashCode();
+                if (this.RetryTimesLeft != null) hashCode = hashCode * 59 + this.RetryTimesLeft.GetHashCode();
+                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
                 return hashCode;
             }
         }

@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(ReplicationRecordsExtraInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Progress != input.Progress || (this.Progress != null && !this.Progress.Equals(input.Progress))) return false;
+            if (this.FailCode != input.FailCode || (this.FailCode != null && !this.FailCode.Equals(input.FailCode))) return false;
+            if (this.FailReason != input.FailReason || (this.FailReason != null && !this.FailReason.Equals(input.FailReason))) return false;
+            if (this.AutoTrigger != input.AutoTrigger || (this.AutoTrigger != null && !this.AutoTrigger.Equals(input.AutoTrigger))) return false;
+            if (this.DestinatioVaultId != input.DestinatioVaultId || (this.DestinatioVaultId != null && !this.DestinatioVaultId.Equals(input.DestinatioVaultId))) return false;
 
-            return 
-                (
-                    this.Progress == input.Progress ||
-                    (this.Progress != null &&
-                    this.Progress.Equals(input.Progress))
-                ) && 
-                (
-                    this.FailCode == input.FailCode ||
-                    (this.FailCode != null &&
-                    this.FailCode.Equals(input.FailCode))
-                ) && 
-                (
-                    this.FailReason == input.FailReason ||
-                    (this.FailReason != null &&
-                    this.FailReason.Equals(input.FailReason))
-                ) && 
-                (
-                    this.AutoTrigger == input.AutoTrigger ||
-                    (this.AutoTrigger != null &&
-                    this.AutoTrigger.Equals(input.AutoTrigger))
-                ) && 
-                (
-                    this.DestinatioVaultId == input.DestinatioVaultId ||
-                    (this.DestinatioVaultId != null &&
-                    this.DestinatioVaultId.Equals(input.DestinatioVaultId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Progress != null)
-                    hashCode = hashCode * 59 + this.Progress.GetHashCode();
-                if (this.FailCode != null)
-                    hashCode = hashCode * 59 + this.FailCode.GetHashCode();
-                if (this.FailReason != null)
-                    hashCode = hashCode * 59 + this.FailReason.GetHashCode();
-                if (this.AutoTrigger != null)
-                    hashCode = hashCode * 59 + this.AutoTrigger.GetHashCode();
-                if (this.DestinatioVaultId != null)
-                    hashCode = hashCode * 59 + this.DestinatioVaultId.GetHashCode();
+                var hashCode = 41;
+                if (this.Progress != null) hashCode = hashCode * 59 + this.Progress.GetHashCode();
+                if (this.FailCode != null) hashCode = hashCode * 59 + this.FailCode.GetHashCode();
+                if (this.FailReason != null) hashCode = hashCode * 59 + this.FailReason.GetHashCode();
+                if (this.AutoTrigger != null) hashCode = hashCode * 59 + this.AutoTrigger.GetHashCode();
+                if (this.DestinatioVaultId != null) hashCode = hashCode * 59 + this.DestinatioVaultId.GetHashCode();
                 return hashCode;
             }
         }

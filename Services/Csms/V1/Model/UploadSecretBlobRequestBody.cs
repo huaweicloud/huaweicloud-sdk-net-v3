@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         /// </summary>
         public bool Equals(UploadSecretBlobRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SecretBlob != input.SecretBlob || (this.SecretBlob != null && !this.SecretBlob.Equals(input.SecretBlob))) return false;
 
-            return 
-                (
-                    this.SecretBlob == input.SecretBlob ||
-                    (this.SecretBlob != null &&
-                    this.SecretBlob.Equals(input.SecretBlob))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SecretBlob != null)
-                    hashCode = hashCode * 59 + this.SecretBlob.GetHashCode();
+                var hashCode = 41;
+                if (this.SecretBlob != null) hashCode = hashCode * 59 + this.SecretBlob.GetHashCode();
                 return hashCode;
             }
         }

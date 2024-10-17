@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(CompressRules input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CompressType != input.CompressType || (this.CompressType != null && !this.CompressType.Equals(input.CompressType))) return false;
+            if (this.CompressFileType != input.CompressFileType || (this.CompressFileType != null && !this.CompressFileType.Equals(input.CompressFileType))) return false;
 
-            return 
-                (
-                    this.CompressType == input.CompressType ||
-                    (this.CompressType != null &&
-                    this.CompressType.Equals(input.CompressType))
-                ) && 
-                (
-                    this.CompressFileType == input.CompressFileType ||
-                    (this.CompressFileType != null &&
-                    this.CompressFileType.Equals(input.CompressFileType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CompressType != null)
-                    hashCode = hashCode * 59 + this.CompressType.GetHashCode();
-                if (this.CompressFileType != null)
-                    hashCode = hashCode * 59 + this.CompressFileType.GetHashCode();
+                var hashCode = 41;
+                if (this.CompressType != null) hashCode = hashCode * 59 + this.CompressType.GetHashCode();
+                if (this.CompressFileType != null) hashCode = hashCode * 59 + this.CompressFileType.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         public bool Equals(UpdateEndpointServiceNameRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EndpointServiceName != input.EndpointServiceName || (this.EndpointServiceName != null && !this.EndpointServiceName.Equals(input.EndpointServiceName))) return false;
 
-            return 
-                (
-                    this.EndpointServiceName == input.EndpointServiceName ||
-                    (this.EndpointServiceName != null &&
-                    this.EndpointServiceName.Equals(input.EndpointServiceName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EndpointServiceName != null)
-                    hashCode = hashCode * 59 + this.EndpointServiceName.GetHashCode();
+                var hashCode = 41;
+                if (this.EndpointServiceName != null) hashCode = hashCode * 59 + this.EndpointServiceName.GetHashCode();
                 return hashCode;
             }
         }

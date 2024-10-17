@@ -203,35 +203,14 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(OutputSetting input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Format != input.Format) return false;
+            if (this.Video != input.Video || (this.Video != null && !this.Video.Equals(input.Video))) return false;
+            if (this.Audio != input.Audio || (this.Audio != null && !this.Audio.Equals(input.Audio))) return false;
+            if (this.Hls != input.Hls || (this.Hls != null && !this.Hls.Equals(input.Hls))) return false;
+            if (this.Output != input.Output || (this.Output != null && !this.Output.Equals(input.Output))) return false;
 
-            return 
-                (
-                    this.Format == input.Format ||
-                    (this.Format != null &&
-                    this.Format.Equals(input.Format))
-                ) && 
-                (
-                    this.Video == input.Video ||
-                    (this.Video != null &&
-                    this.Video.Equals(input.Video))
-                ) && 
-                (
-                    this.Audio == input.Audio ||
-                    (this.Audio != null &&
-                    this.Audio.Equals(input.Audio))
-                ) && 
-                (
-                    this.Hls == input.Hls ||
-                    (this.Hls != null &&
-                    this.Hls.Equals(input.Hls))
-                ) && 
-                (
-                    this.Output == input.Output ||
-                    (this.Output != null &&
-                    this.Output.Equals(input.Output))
-                );
+            return true;
         }
 
         /// <summary>
@@ -241,17 +220,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Format != null)
-                    hashCode = hashCode * 59 + this.Format.GetHashCode();
-                if (this.Video != null)
-                    hashCode = hashCode * 59 + this.Video.GetHashCode();
-                if (this.Audio != null)
-                    hashCode = hashCode * 59 + this.Audio.GetHashCode();
-                if (this.Hls != null)
-                    hashCode = hashCode * 59 + this.Hls.GetHashCode();
-                if (this.Output != null)
-                    hashCode = hashCode * 59 + this.Output.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Format.GetHashCode();
+                if (this.Video != null) hashCode = hashCode * 59 + this.Video.GetHashCode();
+                if (this.Audio != null) hashCode = hashCode * 59 + this.Audio.GetHashCode();
+                if (this.Hls != null) hashCode = hashCode * 59 + this.Hls.GetHashCode();
+                if (this.Output != null) hashCode = hashCode * 59 + this.Output.GetHashCode();
                 return hashCode;
             }
         }

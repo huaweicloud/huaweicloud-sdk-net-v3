@@ -190,30 +190,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(CustomerModifyAutoEnlargePolicyReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SwitchOption != input.SwitchOption || (this.SwitchOption != null && !this.SwitchOption.Equals(input.SwitchOption))) return false;
+            if (this.LimitSize != input.LimitSize || (this.LimitSize != null && !this.LimitSize.Equals(input.LimitSize))) return false;
+            if (this.TriggerThreshold != input.TriggerThreshold) return false;
+            if (this.StepPercent != input.StepPercent || (this.StepPercent != null && !this.StepPercent.Equals(input.StepPercent))) return false;
 
-            return 
-                (
-                    this.SwitchOption == input.SwitchOption ||
-                    (this.SwitchOption != null &&
-                    this.SwitchOption.Equals(input.SwitchOption))
-                ) && 
-                (
-                    this.LimitSize == input.LimitSize ||
-                    (this.LimitSize != null &&
-                    this.LimitSize.Equals(input.LimitSize))
-                ) && 
-                (
-                    this.TriggerThreshold == input.TriggerThreshold ||
-                    (this.TriggerThreshold != null &&
-                    this.TriggerThreshold.Equals(input.TriggerThreshold))
-                ) && 
-                (
-                    this.StepPercent == input.StepPercent ||
-                    (this.StepPercent != null &&
-                    this.StepPercent.Equals(input.StepPercent))
-                );
+            return true;
         }
 
         /// <summary>
@@ -223,15 +206,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SwitchOption != null)
-                    hashCode = hashCode * 59 + this.SwitchOption.GetHashCode();
-                if (this.LimitSize != null)
-                    hashCode = hashCode * 59 + this.LimitSize.GetHashCode();
-                if (this.TriggerThreshold != null)
-                    hashCode = hashCode * 59 + this.TriggerThreshold.GetHashCode();
-                if (this.StepPercent != null)
-                    hashCode = hashCode * 59 + this.StepPercent.GetHashCode();
+                var hashCode = 41;
+                if (this.SwitchOption != null) hashCode = hashCode * 59 + this.SwitchOption.GetHashCode();
+                if (this.LimitSize != null) hashCode = hashCode * 59 + this.LimitSize.GetHashCode();
+                hashCode = hashCode * 59 + this.TriggerThreshold.GetHashCode();
+                if (this.StepPercent != null) hashCode = hashCode * 59 + this.StepPercent.GetHashCode();
                 return hashCode;
             }
         }

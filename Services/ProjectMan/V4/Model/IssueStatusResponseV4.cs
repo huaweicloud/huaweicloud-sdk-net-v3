@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(IssueStatusResponseV4 input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClosedNum != input.ClosedNum || (this.ClosedNum != null && !this.ClosedNum.Equals(input.ClosedNum))) return false;
+            if (this.NewNum != input.NewNum || (this.NewNum != null && !this.NewNum.Equals(input.NewNum))) return false;
+            if (this.ProcessNum != input.ProcessNum || (this.ProcessNum != null && !this.ProcessNum.Equals(input.ProcessNum))) return false;
+            if (this.RejectedNum != input.RejectedNum || (this.RejectedNum != null && !this.RejectedNum.Equals(input.RejectedNum))) return false;
+            if (this.SolvedNum != input.SolvedNum || (this.SolvedNum != null && !this.SolvedNum.Equals(input.SolvedNum))) return false;
+            if (this.TestNum != input.TestNum || (this.TestNum != null && !this.TestNum.Equals(input.TestNum))) return false;
 
-            return 
-                (
-                    this.ClosedNum == input.ClosedNum ||
-                    (this.ClosedNum != null &&
-                    this.ClosedNum.Equals(input.ClosedNum))
-                ) && 
-                (
-                    this.NewNum == input.NewNum ||
-                    (this.NewNum != null &&
-                    this.NewNum.Equals(input.NewNum))
-                ) && 
-                (
-                    this.ProcessNum == input.ProcessNum ||
-                    (this.ProcessNum != null &&
-                    this.ProcessNum.Equals(input.ProcessNum))
-                ) && 
-                (
-                    this.RejectedNum == input.RejectedNum ||
-                    (this.RejectedNum != null &&
-                    this.RejectedNum.Equals(input.RejectedNum))
-                ) && 
-                (
-                    this.SolvedNum == input.SolvedNum ||
-                    (this.SolvedNum != null &&
-                    this.SolvedNum.Equals(input.SolvedNum))
-                ) && 
-                (
-                    this.TestNum == input.TestNum ||
-                    (this.TestNum != null &&
-                    this.TestNum.Equals(input.TestNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClosedNum != null)
-                    hashCode = hashCode * 59 + this.ClosedNum.GetHashCode();
-                if (this.NewNum != null)
-                    hashCode = hashCode * 59 + this.NewNum.GetHashCode();
-                if (this.ProcessNum != null)
-                    hashCode = hashCode * 59 + this.ProcessNum.GetHashCode();
-                if (this.RejectedNum != null)
-                    hashCode = hashCode * 59 + this.RejectedNum.GetHashCode();
-                if (this.SolvedNum != null)
-                    hashCode = hashCode * 59 + this.SolvedNum.GetHashCode();
-                if (this.TestNum != null)
-                    hashCode = hashCode * 59 + this.TestNum.GetHashCode();
+                var hashCode = 41;
+                if (this.ClosedNum != null) hashCode = hashCode * 59 + this.ClosedNum.GetHashCode();
+                if (this.NewNum != null) hashCode = hashCode * 59 + this.NewNum.GetHashCode();
+                if (this.ProcessNum != null) hashCode = hashCode * 59 + this.ProcessNum.GetHashCode();
+                if (this.RejectedNum != null) hashCode = hashCode * 59 + this.RejectedNum.GetHashCode();
+                if (this.SolvedNum != null) hashCode = hashCode * 59 + this.SolvedNum.GetHashCode();
+                if (this.TestNum != null) hashCode = hashCode * 59 + this.TestNum.GetHashCode();
                 return hashCode;
             }
         }

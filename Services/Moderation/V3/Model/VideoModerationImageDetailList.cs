@@ -338,51 +338,17 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// </summary>
         public bool Equals(VideoModerationImageDetailList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
+            if (this.Category != input.Category) return false;
+            if (this.Suggestion != input.Suggestion) return false;
+            if (this.Label != input.Label || (this.Label != null && !this.Label.Equals(input.Label))) return false;
+            if (this.FaceLocation != input.FaceLocation || (this.FaceLocation != null && !this.FaceLocation.Equals(input.FaceLocation))) return false;
+            if (this.QrLocation != input.QrLocation || (this.QrLocation != null && !this.QrLocation.Equals(input.QrLocation))) return false;
+            if (this.QrContent != input.QrContent || (this.QrContent != null && !this.QrContent.Equals(input.QrContent))) return false;
+            if (this.Segments != input.Segments || (this.Segments != null && input.Segments != null && !this.Segments.SequenceEqual(input.Segments))) return false;
 
-            return 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                ) && 
-                (
-                    this.Category == input.Category ||
-                    (this.Category != null &&
-                    this.Category.Equals(input.Category))
-                ) && 
-                (
-                    this.Suggestion == input.Suggestion ||
-                    (this.Suggestion != null &&
-                    this.Suggestion.Equals(input.Suggestion))
-                ) && 
-                (
-                    this.Label == input.Label ||
-                    (this.Label != null &&
-                    this.Label.Equals(input.Label))
-                ) && 
-                (
-                    this.FaceLocation == input.FaceLocation ||
-                    (this.FaceLocation != null &&
-                    this.FaceLocation.Equals(input.FaceLocation))
-                ) && 
-                (
-                    this.QrLocation == input.QrLocation ||
-                    (this.QrLocation != null &&
-                    this.QrLocation.Equals(input.QrLocation))
-                ) && 
-                (
-                    this.QrContent == input.QrContent ||
-                    (this.QrContent != null &&
-                    this.QrContent.Equals(input.QrContent))
-                ) && 
-                (
-                    this.Segments == input.Segments ||
-                    this.Segments != null &&
-                    input.Segments != null &&
-                    this.Segments.SequenceEqual(input.Segments)
-                );
+            return true;
         }
 
         /// <summary>
@@ -392,23 +358,15 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
-                if (this.Category != null)
-                    hashCode = hashCode * 59 + this.Category.GetHashCode();
-                if (this.Suggestion != null)
-                    hashCode = hashCode * 59 + this.Suggestion.GetHashCode();
-                if (this.Label != null)
-                    hashCode = hashCode * 59 + this.Label.GetHashCode();
-                if (this.FaceLocation != null)
-                    hashCode = hashCode * 59 + this.FaceLocation.GetHashCode();
-                if (this.QrLocation != null)
-                    hashCode = hashCode * 59 + this.QrLocation.GetHashCode();
-                if (this.QrContent != null)
-                    hashCode = hashCode * 59 + this.QrContent.GetHashCode();
-                if (this.Segments != null)
-                    hashCode = hashCode * 59 + this.Segments.GetHashCode();
+                var hashCode = 41;
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                hashCode = hashCode * 59 + this.Category.GetHashCode();
+                hashCode = hashCode * 59 + this.Suggestion.GetHashCode();
+                if (this.Label != null) hashCode = hashCode * 59 + this.Label.GetHashCode();
+                if (this.FaceLocation != null) hashCode = hashCode * 59 + this.FaceLocation.GetHashCode();
+                if (this.QrLocation != null) hashCode = hashCode * 59 + this.QrLocation.GetHashCode();
+                if (this.QrContent != null) hashCode = hashCode * 59 + this.QrContent.GetHashCode();
+                if (this.Segments != null) hashCode = hashCode * 59 + this.Segments.GetHashCode();
                 return hashCode;
             }
         }

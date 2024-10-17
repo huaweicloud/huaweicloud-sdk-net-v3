@@ -198,40 +198,15 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         /// </summary>
         public bool Equals(TrackerObsInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BucketName != input.BucketName || (this.BucketName != null && !this.BucketName.Equals(input.BucketName))) return false;
+            if (this.FilePrefixName != input.FilePrefixName || (this.FilePrefixName != null && !this.FilePrefixName.Equals(input.FilePrefixName))) return false;
+            if (this.IsObsCreated != input.IsObsCreated || (this.IsObsCreated != null && !this.IsObsCreated.Equals(input.IsObsCreated))) return false;
+            if (this.BucketLifecycle != input.BucketLifecycle || (this.BucketLifecycle != null && !this.BucketLifecycle.Equals(input.BucketLifecycle))) return false;
+            if (this.CompressType != input.CompressType) return false;
+            if (this.IsSortByService != input.IsSortByService || (this.IsSortByService != null && !this.IsSortByService.Equals(input.IsSortByService))) return false;
 
-            return 
-                (
-                    this.BucketName == input.BucketName ||
-                    (this.BucketName != null &&
-                    this.BucketName.Equals(input.BucketName))
-                ) && 
-                (
-                    this.FilePrefixName == input.FilePrefixName ||
-                    (this.FilePrefixName != null &&
-                    this.FilePrefixName.Equals(input.FilePrefixName))
-                ) && 
-                (
-                    this.IsObsCreated == input.IsObsCreated ||
-                    (this.IsObsCreated != null &&
-                    this.IsObsCreated.Equals(input.IsObsCreated))
-                ) && 
-                (
-                    this.BucketLifecycle == input.BucketLifecycle ||
-                    (this.BucketLifecycle != null &&
-                    this.BucketLifecycle.Equals(input.BucketLifecycle))
-                ) && 
-                (
-                    this.CompressType == input.CompressType ||
-                    (this.CompressType != null &&
-                    this.CompressType.Equals(input.CompressType))
-                ) && 
-                (
-                    this.IsSortByService == input.IsSortByService ||
-                    (this.IsSortByService != null &&
-                    this.IsSortByService.Equals(input.IsSortByService))
-                );
+            return true;
         }
 
         /// <summary>
@@ -241,19 +216,13 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BucketName != null)
-                    hashCode = hashCode * 59 + this.BucketName.GetHashCode();
-                if (this.FilePrefixName != null)
-                    hashCode = hashCode * 59 + this.FilePrefixName.GetHashCode();
-                if (this.IsObsCreated != null)
-                    hashCode = hashCode * 59 + this.IsObsCreated.GetHashCode();
-                if (this.BucketLifecycle != null)
-                    hashCode = hashCode * 59 + this.BucketLifecycle.GetHashCode();
-                if (this.CompressType != null)
-                    hashCode = hashCode * 59 + this.CompressType.GetHashCode();
-                if (this.IsSortByService != null)
-                    hashCode = hashCode * 59 + this.IsSortByService.GetHashCode();
+                var hashCode = 41;
+                if (this.BucketName != null) hashCode = hashCode * 59 + this.BucketName.GetHashCode();
+                if (this.FilePrefixName != null) hashCode = hashCode * 59 + this.FilePrefixName.GetHashCode();
+                if (this.IsObsCreated != null) hashCode = hashCode * 59 + this.IsObsCreated.GetHashCode();
+                if (this.BucketLifecycle != null) hashCode = hashCode * 59 + this.BucketLifecycle.GetHashCode();
+                hashCode = hashCode * 59 + this.CompressType.GetHashCode();
+                if (this.IsSortByService != null) hashCode = hashCode * 59 + this.IsSortByService.GetHashCode();
                 return hashCode;
             }
         }

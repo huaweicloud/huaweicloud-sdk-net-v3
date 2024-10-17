@@ -246,71 +246,21 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(TakeOverTask input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Bucket != input.Bucket || (this.Bucket != null && !this.Bucket.Equals(input.Bucket))) return false;
+            if (this.Object != input.Object || (this.Object != null && !this.Object.Equals(input.Object))) return false;
+            if (this.HostType != input.HostType || (this.HostType != null && !this.HostType.Equals(input.HostType))) return false;
+            if (this.OutputBucket != input.OutputBucket || (this.OutputBucket != null && !this.OutputBucket.Equals(input.OutputBucket))) return false;
+            if (this.OutputPath != input.OutputPath || (this.OutputPath != null && !this.OutputPath.Equals(input.OutputPath))) return false;
+            if (this.TaskId != input.TaskId || (this.TaskId != null && !this.TaskId.Equals(input.TaskId))) return false;
+            if (this.Suffix != input.Suffix || (this.Suffix != null && input.Suffix != null && !this.Suffix.SequenceEqual(input.Suffix))) return false;
+            if (this.TemplateGroupName != input.TemplateGroupName || (this.TemplateGroupName != null && !this.TemplateGroupName.Equals(input.TemplateGroupName))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.ExecDesc != input.ExecDesc || (this.ExecDesc != null && !this.ExecDesc.Equals(input.ExecDesc))) return false;
 
-            return 
-                (
-                    this.Bucket == input.Bucket ||
-                    (this.Bucket != null &&
-                    this.Bucket.Equals(input.Bucket))
-                ) && 
-                (
-                    this.Object == input.Object ||
-                    (this.Object != null &&
-                    this.Object.Equals(input.Object))
-                ) && 
-                (
-                    this.HostType == input.HostType ||
-                    (this.HostType != null &&
-                    this.HostType.Equals(input.HostType))
-                ) && 
-                (
-                    this.OutputBucket == input.OutputBucket ||
-                    (this.OutputBucket != null &&
-                    this.OutputBucket.Equals(input.OutputBucket))
-                ) && 
-                (
-                    this.OutputPath == input.OutputPath ||
-                    (this.OutputPath != null &&
-                    this.OutputPath.Equals(input.OutputPath))
-                ) && 
-                (
-                    this.TaskId == input.TaskId ||
-                    (this.TaskId != null &&
-                    this.TaskId.Equals(input.TaskId))
-                ) && 
-                (
-                    this.Suffix == input.Suffix ||
-                    this.Suffix != null &&
-                    input.Suffix != null &&
-                    this.Suffix.SequenceEqual(input.Suffix)
-                ) && 
-                (
-                    this.TemplateGroupName == input.TemplateGroupName ||
-                    (this.TemplateGroupName != null &&
-                    this.TemplateGroupName.Equals(input.TemplateGroupName))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.ExecDesc == input.ExecDesc ||
-                    (this.ExecDesc != null &&
-                    this.ExecDesc.Equals(input.ExecDesc))
-                );
+            return true;
         }
 
         /// <summary>
@@ -320,31 +270,19 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Bucket != null)
-                    hashCode = hashCode * 59 + this.Bucket.GetHashCode();
-                if (this.Object != null)
-                    hashCode = hashCode * 59 + this.Object.GetHashCode();
-                if (this.HostType != null)
-                    hashCode = hashCode * 59 + this.HostType.GetHashCode();
-                if (this.OutputBucket != null)
-                    hashCode = hashCode * 59 + this.OutputBucket.GetHashCode();
-                if (this.OutputPath != null)
-                    hashCode = hashCode * 59 + this.OutputPath.GetHashCode();
-                if (this.TaskId != null)
-                    hashCode = hashCode * 59 + this.TaskId.GetHashCode();
-                if (this.Suffix != null)
-                    hashCode = hashCode * 59 + this.Suffix.GetHashCode();
-                if (this.TemplateGroupName != null)
-                    hashCode = hashCode * 59 + this.TemplateGroupName.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.ExecDesc != null)
-                    hashCode = hashCode * 59 + this.ExecDesc.GetHashCode();
+                var hashCode = 41;
+                if (this.Bucket != null) hashCode = hashCode * 59 + this.Bucket.GetHashCode();
+                if (this.Object != null) hashCode = hashCode * 59 + this.Object.GetHashCode();
+                if (this.HostType != null) hashCode = hashCode * 59 + this.HostType.GetHashCode();
+                if (this.OutputBucket != null) hashCode = hashCode * 59 + this.OutputBucket.GetHashCode();
+                if (this.OutputPath != null) hashCode = hashCode * 59 + this.OutputPath.GetHashCode();
+                if (this.TaskId != null) hashCode = hashCode * 59 + this.TaskId.GetHashCode();
+                if (this.Suffix != null) hashCode = hashCode * 59 + this.Suffix.GetHashCode();
+                if (this.TemplateGroupName != null) hashCode = hashCode * 59 + this.TemplateGroupName.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.ExecDesc != null) hashCode = hashCode * 59 + this.ExecDesc.GetHashCode();
                 return hashCode;
             }
         }

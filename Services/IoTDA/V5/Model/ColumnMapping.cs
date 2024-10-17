@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ColumnMapping input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ColumnName != input.ColumnName || (this.ColumnName != null && !this.ColumnName.Equals(input.ColumnName))) return false;
+            if (this.JsonKey != input.JsonKey || (this.JsonKey != null && !this.JsonKey.Equals(input.JsonKey))) return false;
 
-            return 
-                (
-                    this.ColumnName == input.ColumnName ||
-                    (this.ColumnName != null &&
-                    this.ColumnName.Equals(input.ColumnName))
-                ) && 
-                (
-                    this.JsonKey == input.JsonKey ||
-                    (this.JsonKey != null &&
-                    this.JsonKey.Equals(input.JsonKey))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ColumnName != null)
-                    hashCode = hashCode * 59 + this.ColumnName.GetHashCode();
-                if (this.JsonKey != null)
-                    hashCode = hashCode * 59 + this.JsonKey.GetHashCode();
+                var hashCode = 41;
+                if (this.ColumnName != null) hashCode = hashCode * 59 + this.ColumnName.GetHashCode();
+                if (this.JsonKey != null) hashCode = hashCode * 59 + this.JsonKey.GetHashCode();
                 return hashCode;
             }
         }

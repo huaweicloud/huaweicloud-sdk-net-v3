@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public bool Equals(ListMessageTemplatesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
+            if (this.MessageTemplateCount != input.MessageTemplateCount || (this.MessageTemplateCount != null && !this.MessageTemplateCount.Equals(input.MessageTemplateCount))) return false;
+            if (this.MessageTemplates != input.MessageTemplates || (this.MessageTemplates != null && input.MessageTemplates != null && !this.MessageTemplates.SequenceEqual(input.MessageTemplates))) return false;
 
-            return 
-                (
-                    this.RequestId == input.RequestId ||
-                    (this.RequestId != null &&
-                    this.RequestId.Equals(input.RequestId))
-                ) && 
-                (
-                    this.MessageTemplateCount == input.MessageTemplateCount ||
-                    (this.MessageTemplateCount != null &&
-                    this.MessageTemplateCount.Equals(input.MessageTemplateCount))
-                ) && 
-                (
-                    this.MessageTemplates == input.MessageTemplates ||
-                    this.MessageTemplates != null &&
-                    input.MessageTemplates != null &&
-                    this.MessageTemplates.SequenceEqual(input.MessageTemplates)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RequestId != null)
-                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
-                if (this.MessageTemplateCount != null)
-                    hashCode = hashCode * 59 + this.MessageTemplateCount.GetHashCode();
-                if (this.MessageTemplates != null)
-                    hashCode = hashCode * 59 + this.MessageTemplates.GetHashCode();
+                var hashCode = 41;
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                if (this.MessageTemplateCount != null) hashCode = hashCode * 59 + this.MessageTemplateCount.GetHashCode();
+                if (this.MessageTemplates != null) hashCode = hashCode * 59 + this.MessageTemplates.GetHashCode();
                 return hashCode;
             }
         }

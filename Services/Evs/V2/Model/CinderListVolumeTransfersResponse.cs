@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(CinderListVolumeTransfersResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Transfers != input.Transfers || (this.Transfers != null && input.Transfers != null && !this.Transfers.SequenceEqual(input.Transfers))) return false;
 
-            return 
-                (
-                    this.Transfers == input.Transfers ||
-                    this.Transfers != null &&
-                    input.Transfers != null &&
-                    this.Transfers.SequenceEqual(input.Transfers)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Transfers != null)
-                    hashCode = hashCode * 59 + this.Transfers.GetHashCode();
+                var hashCode = 41;
+                if (this.Transfers != null) hashCode = hashCode * 59 + this.Transfers.GetHashCode();
                 return hashCode;
             }
         }

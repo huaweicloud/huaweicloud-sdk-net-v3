@@ -15,9 +15,62 @@ namespace HuaweiCloud.SDK.Dbss.V1
 
         
         /// <summary>
-        /// 添加RDS免agent数据库
+        /// 添加自建数据库
         ///
-        /// 添加RDS免agent数据库
+        /// 添加自建数据库
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AddAuditDatabaseResponse AddAuditDatabase(AddAuditDatabaseRequest addAuditDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", addAuditDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{instance_id}/audit/databases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addAuditDatabaseRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<AddAuditDatabaseResponse>(response);
+        }
+
+        public SyncInvoker<AddAuditDatabaseResponse> AddAuditDatabaseInvoker(AddAuditDatabaseRequest addAuditDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", addAuditDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{instance_id}/audit/databases", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addAuditDatabaseRequest);
+            return new SyncInvoker<AddAuditDatabaseResponse>(this, "POST", request, JsonUtils.DeSerialize<AddAuditDatabaseResponse>);
+        }
+        
+        /// <summary>
+        /// 添加RDS数据库
+        ///
+        /// 添加RDS数据库
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AddRdsDatabaseResponse AddRdsDatabase(AddRdsDatabaseRequest addRdsDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", addRdsDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{instance_id}/audit/databases/rds", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addRdsDatabaseRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<AddRdsDatabaseResponse>(response);
+        }
+
+        public SyncInvoker<AddRdsDatabaseResponse> AddRdsDatabaseInvoker(AddRdsDatabaseRequest addRdsDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", addRdsDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{instance_id}/audit/databases/rds", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addRdsDatabaseRequest);
+            return new SyncInvoker<AddRdsDatabaseResponse>(this, "POST", request, JsonUtils.DeSerialize<AddRdsDatabaseResponse>);
+        }
+        
+        /// <summary>
+        /// 添加RDS数据库(V1待下线)
+        ///
+        /// 添加RDS数据库。V1版本已不再维护，待下线。
+        /// 请使用V2版本接口（/v2/{project_id}/{instance_id}/audit/databases/rds）。
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -38,88 +91,6 @@ namespace HuaweiCloud.SDK.Dbss.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{instance_id}/dbss/audit/databases/rds", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addRdsNoAgentDatabaseRequest);
             return new SyncInvoker<AddRdsNoAgentDatabaseResponse>(this, "POST", request, JsonUtils.DeSerialize<AddRdsNoAgentDatabaseResponse>);
-        }
-        
-        /// <summary>
-        /// 批量添加资源标签
-        ///
-        /// 批量添加资源标签
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public BatchAddResourceTagResponse BatchAddResourceTag(BatchAddResourceTagRequest batchAddResourceTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", batchAddResourceTagRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", batchAddResourceTagRequest.ResourceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/{resource_id}/tags/create", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddResourceTagRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerializeNull<BatchAddResourceTagResponse>(response);
-        }
-
-        public SyncInvoker<BatchAddResourceTagResponse> BatchAddResourceTagInvoker(BatchAddResourceTagRequest batchAddResourceTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", batchAddResourceTagRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", batchAddResourceTagRequest.ResourceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/{resource_id}/tags/create", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddResourceTagRequest);
-            return new SyncInvoker<BatchAddResourceTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchAddResourceTagResponse>);
-        }
-        
-        /// <summary>
-        /// 批量删除资源标签
-        ///
-        /// 批量删除资源标签
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public BatchDeleteResourceTagResponse BatchDeleteResourceTag(BatchDeleteResourceTagRequest batchDeleteResourceTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", batchDeleteResourceTagRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", batchDeleteResourceTagRequest.ResourceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/{resource_id}/tags/delete", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteResourceTagRequest);
-            var response = DoHttpRequestSync("DELETE", request);
-            return JsonUtils.DeSerializeNull<BatchDeleteResourceTagResponse>(response);
-        }
-
-        public SyncInvoker<BatchDeleteResourceTagResponse> BatchDeleteResourceTagInvoker(BatchDeleteResourceTagRequest batchDeleteResourceTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", batchDeleteResourceTagRequest.ResourceType.ToString());
-            urlParam.Add("resource_id", batchDeleteResourceTagRequest.ResourceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/{resource_id}/tags/delete", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteResourceTagRequest);
-            return new SyncInvoker<BatchDeleteResourceTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<BatchDeleteResourceTagResponse>);
-        }
-        
-        /// <summary>
-        /// 根据标签查询资源实例数量
-        ///
-        /// 根据标签查询资源实例数量
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public CountResourceInstanceByTagResponse CountResourceInstanceByTag(CountResourceInstanceByTagRequest countResourceInstanceByTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", countResourceInstanceByTagRequest.ResourceType.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/resource-instances/count", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", countResourceInstanceByTagRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<CountResourceInstanceByTagResponse>(response);
-        }
-
-        public SyncInvoker<CountResourceInstanceByTagResponse> CountResourceInstanceByTagInvoker(CountResourceInstanceByTagRequest countResourceInstanceByTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", countResourceInstanceByTagRequest.ResourceType.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/resource-instances/count", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", countResourceInstanceByTagRequest);
-            return new SyncInvoker<CountResourceInstanceByTagResponse>(this, "POST", request, JsonUtils.DeSerialize<CountResourceInstanceByTagResponse>);
         }
         
         /// <summary>
@@ -144,6 +115,84 @@ namespace HuaweiCloud.SDK.Dbss.V1
             var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/dbss/audit/charge/period/order", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", createInstancesPeriodOrderRequest);
             return new SyncInvoker<CreateInstancesPeriodOrderResponse>(this, "POST", request, JsonUtils.DeSerialize<CreateInstancesPeriodOrderResponse>);
+        }
+        
+        /// <summary>
+        /// 删除数据库
+        ///
+        /// 删除数据库
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteAuditDatabaseResponse DeleteAuditDatabase(DeleteAuditDatabaseRequest deleteAuditDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteAuditDatabaseRequest.InstanceId.ToString());
+            urlParam.Add("db_id", deleteAuditDatabaseRequest.DbId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{instance_id}/audit/databases/{db_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAuditDatabaseRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteAuditDatabaseResponse>(response);
+        }
+
+        public SyncInvoker<DeleteAuditDatabaseResponse> DeleteAuditDatabaseInvoker(DeleteAuditDatabaseRequest deleteAuditDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteAuditDatabaseRequest.InstanceId.ToString());
+            urlParam.Add("db_id", deleteAuditDatabaseRequest.DbId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{instance_id}/audit/databases/{db_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAuditDatabaseRequest);
+            return new SyncInvoker<DeleteAuditDatabaseResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteAuditDatabaseResponse>);
+        }
+        
+        /// <summary>
+        /// 删除审计实例
+        ///
+        /// 只有按需计费模式实例没有任务时 或 包周期模式实例状态为故障时，才能执行此操作。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteInstancesResponse DeleteInstances(DeleteInstancesRequest deleteInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dbss/audit/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteInstancesRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteInstancesResponse>(response);
+        }
+
+        public SyncInvoker<DeleteInstancesResponse> DeleteInstancesInvoker(DeleteInstancesRequest deleteInstancesRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dbss/audit/instances", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", deleteInstancesRequest);
+            return new SyncInvoker<DeleteInstancesResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteInstancesResponse>);
+        }
+        
+        /// <summary>
+        /// 查询审计告警信息
+        ///
+        /// 查询审计告警信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListAuditAlarmLogResponse ListAuditAlarmLog(ListAuditAlarmLogRequest listAuditAlarmLogRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listAuditAlarmLogRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{instance_id}/audit/alarm-log", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listAuditAlarmLogRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ListAuditAlarmLogResponse>(response);
+        }
+
+        public SyncInvoker<ListAuditAlarmLogResponse> ListAuditAlarmLogInvoker(ListAuditAlarmLogRequest listAuditAlarmLogRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listAuditAlarmLogRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{instance_id}/audit/alarm-log", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listAuditAlarmLogRequest);
+            return new SyncInvoker<ListAuditAlarmLogResponse>(this, "POST", request, JsonUtils.DeSerialize<ListAuditAlarmLogResponse>);
         }
         
         /// <summary>
@@ -327,6 +376,56 @@ namespace HuaweiCloud.SDK.Dbss.V1
         }
         
         /// <summary>
+        /// 查询审计SQL语句
+        ///
+        /// 查询审计SQL语句
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListAuditSqlsResponse ListAuditSqls(ListAuditSqlsRequest listAuditSqlsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listAuditSqlsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{instance_id}/audit/sqls", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listAuditSqlsRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ListAuditSqlsResponse>(response);
+        }
+
+        public SyncInvoker<ListAuditSqlsResponse> ListAuditSqlsInvoker(ListAuditSqlsRequest listAuditSqlsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listAuditSqlsRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{instance_id}/audit/sqls", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listAuditSqlsRequest);
+            return new SyncInvoker<ListAuditSqlsResponse>(this, "POST", request, JsonUtils.DeSerialize<ListAuditSqlsResponse>);
+        }
+        
+        /// <summary>
+        /// 查询审计汇总信息
+        ///
+        /// 查询审计汇总信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListAuditSummaryInfosResponse ListAuditSummaryInfos(ListAuditSummaryInfosRequest listAuditSummaryInfosRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/audit/summary/info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditSummaryInfosRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListAuditSummaryInfosResponse>(response);
+        }
+
+        public SyncInvoker<ListAuditSummaryInfosResponse> ListAuditSummaryInfosInvoker(ListAuditSummaryInfosRequest listAuditSummaryInfosRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/audit/summary/info", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditSummaryInfosRequest);
+            return new SyncInvoker<ListAuditSummaryInfosResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAuditSummaryInfosResponse>);
+        }
+        
+        /// <summary>
         /// 查询可用区信息
         ///
         /// 查询可用区信息
@@ -351,9 +450,9 @@ namespace HuaweiCloud.SDK.Dbss.V1
         }
         
         /// <summary>
-        /// 查询ecs服务器规格信息
+        /// 查询ECS服务器规格信息
         ///
-        /// 查询ecs服务器规格信息
+        /// 查询ECS服务器规格信息
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -375,55 +474,27 @@ namespace HuaweiCloud.SDK.Dbss.V1
         }
         
         /// <summary>
-        /// 查询项目标签
+        /// 查询RDS数据库列表
         ///
-        /// 查询项目标签
+        /// 查询RDS数据库列表
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public ListProjectResourceTagsResponse ListProjectResourceTags(ListProjectResourceTagsRequest listProjectResourceTagsRequest)
+        public ListRdsDatabasesResponse ListRdsDatabases(ListRdsDatabasesRequest listRdsDatabasesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listProjectResourceTagsRequest.ResourceType.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectResourceTagsRequest);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/audit/databases/rds", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRdsDatabasesRequest);
             var response = DoHttpRequestSync("GET", request);
-            return JsonUtils.DeSerialize<ListProjectResourceTagsResponse>(response);
+            return JsonUtils.DeSerialize<ListRdsDatabasesResponse>(response);
         }
 
-        public SyncInvoker<ListProjectResourceTagsResponse> ListProjectResourceTagsInvoker(ListProjectResourceTagsRequest listProjectResourceTagsRequest)
+        public SyncInvoker<ListRdsDatabasesResponse> ListRdsDatabasesInvoker(ListRdsDatabasesRequest listRdsDatabasesRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listProjectResourceTagsRequest.ResourceType.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/tags", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectResourceTagsRequest);
-            return new SyncInvoker<ListProjectResourceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProjectResourceTagsResponse>);
-        }
-        
-        /// <summary>
-        /// 根据标签查询资源实例列表
-        ///
-        /// 根据标签查询资源实例列表
-        /// 
-        /// Please refer to HUAWEI cloud API Explorer for details.
-        /// </summary>
-        public ListResourceInstanceByTagResponse ListResourceInstanceByTag(ListResourceInstanceByTagRequest listResourceInstanceByTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listResourceInstanceByTagRequest.ResourceType.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/resource-instances/filter", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listResourceInstanceByTagRequest);
-            var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<ListResourceInstanceByTagResponse>(response);
-        }
-
-        public SyncInvoker<ListResourceInstanceByTagResponse> ListResourceInstanceByTagInvoker(ListResourceInstanceByTagRequest listResourceInstanceByTagRequest)
-        {
-            var urlParam = new Dictionary<string, string>();
-            urlParam.Add("resource_type", listResourceInstanceByTagRequest.ResourceType.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/resource-instances/filter", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listResourceInstanceByTagRequest);
-            return new SyncInvoker<ListResourceInstanceByTagResponse>(this, "POST", request, JsonUtils.DeSerialize<ListResourceInstanceByTagResponse>);
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/audit/databases/rds", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listRdsDatabasesRequest);
+            return new SyncInvoker<ListRdsDatabasesResponse>(this, "GET", request, JsonUtils.DeSerialize<ListRdsDatabasesResponse>);
         }
         
         /// <summary>
@@ -450,6 +521,30 @@ namespace HuaweiCloud.SDK.Dbss.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{instance_id}/dbss/audit/rule/sql-injections", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listSqlInjectionRulesRequest);
             return new SyncInvoker<ListSqlInjectionRulesResponse>(this, "POST", request, JsonUtils.DeSerialize<ListSqlInjectionRulesResponse>);
+        }
+        
+        /// <summary>
+        /// 重启审计实例
+        ///
+        /// 重启审计实例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public RebootAuditInstanceResponse RebootAuditInstance(RebootAuditInstanceRequest rebootAuditInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dbss/audit/instance/reboot", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", rebootAuditInstanceRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<RebootAuditInstanceResponse>(response);
+        }
+
+        public SyncInvoker<RebootAuditInstanceResponse> RebootAuditInstanceInvoker(RebootAuditInstanceRequest rebootAuditInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dbss/audit/instance/reboot", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", rebootAuditInstanceRequest);
+            return new SyncInvoker<RebootAuditInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<RebootAuditInstanceResponse>);
         }
         
         /// <summary>
@@ -505,29 +600,77 @@ namespace HuaweiCloud.SDK.Dbss.V1
         }
         
         /// <summary>
-        /// 开启关闭Agent
+        /// 开启审计实例
         ///
-        /// 用于开启和关闭agent的功能，当开启后，开始抓取用户的访问信息。
+        /// 开启审计实例
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
-        public SwitchAgentResponse SwitchAgent(SwitchAgentRequest switchAgentRequest)
+        public StartAuditInstanceResponse StartAuditInstance(StartAuditInstanceRequest startAuditInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", switchAgentRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{instance_id}/audit/agent/switch", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchAgentRequest);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dbss/audit/instance/start", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", startAuditInstanceRequest);
             var response = DoHttpRequestSync("POST", request);
-            return JsonUtils.DeSerialize<SwitchAgentResponse>(response);
+            return JsonUtils.DeSerialize<StartAuditInstanceResponse>(response);
         }
 
-        public SyncInvoker<SwitchAgentResponse> SwitchAgentInvoker(SwitchAgentRequest switchAgentRequest)
+        public SyncInvoker<StartAuditInstanceResponse> StartAuditInstanceInvoker(StartAuditInstanceRequest startAuditInstanceRequest)
         {
             var urlParam = new Dictionary<string, string>();
-            urlParam.Add("instance_id", switchAgentRequest.InstanceId.ToString());
-            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{instance_id}/audit/agent/switch", urlParam);
-            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchAgentRequest);
-            return new SyncInvoker<SwitchAgentResponse>(this, "POST", request, JsonUtils.DeSerialize<SwitchAgentResponse>);
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dbss/audit/instance/start", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", startAuditInstanceRequest);
+            return new SyncInvoker<StartAuditInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<StartAuditInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 关闭审计实例
+        ///
+        /// 关闭审计实例
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public StopAuditInstanceResponse StopAuditInstance(StopAuditInstanceRequest stopAuditInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dbss/audit/instance/stop", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", stopAuditInstanceRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<StopAuditInstanceResponse>(response);
+        }
+
+        public SyncInvoker<StopAuditInstanceResponse> StopAuditInstanceInvoker(StopAuditInstanceRequest stopAuditInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dbss/audit/instance/stop", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", stopAuditInstanceRequest);
+            return new SyncInvoker<StopAuditInstanceResponse>(this, "POST", request, JsonUtils.DeSerialize<StopAuditInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 开启关闭数据库
+        ///
+        /// 开启关闭数据库
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SwitchAuditDatabaseResponse SwitchAuditDatabase(SwitchAuditDatabaseRequest switchAuditDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", switchAuditDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{instance_id}/audit/databases/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchAuditDatabaseRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<SwitchAuditDatabaseResponse>(response);
+        }
+
+        public SyncInvoker<SwitchAuditDatabaseResponse> SwitchAuditDatabaseInvoker(SwitchAuditDatabaseRequest switchAuditDatabaseRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", switchAuditDatabaseRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{instance_id}/audit/databases/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchAuditDatabaseRequest);
+            return new SyncInvoker<SwitchAuditDatabaseResponse>(this, "POST", request, JsonUtils.DeSerialize<SwitchAuditDatabaseResponse>);
         }
         
         /// <summary>
@@ -557,9 +700,35 @@ namespace HuaweiCloud.SDK.Dbss.V1
         }
         
         /// <summary>
-        /// 修改安全组
+        /// 更新审计实例信息
         ///
-        /// 修改安全组
+        /// 更新审计实例信息
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public UpdateAuditInstanceResponse UpdateAuditInstance(UpdateAuditInstanceRequest updateAuditInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateAuditInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dbss/audit/instances/{instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAuditInstanceRequest);
+            var response = DoHttpRequestSync("PUT", request);
+            return JsonUtils.DeSerialize<UpdateAuditInstanceResponse>(response);
+        }
+
+        public SyncInvoker<UpdateAuditInstanceResponse> UpdateAuditInstanceInvoker(UpdateAuditInstanceRequest updateAuditInstanceRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", updateAuditInstanceRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dbss/audit/instances/{instance_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAuditInstanceRequest);
+            return new SyncInvoker<UpdateAuditInstanceResponse>(this, "PUT", request, JsonUtils.DeSerialize<UpdateAuditInstanceResponse>);
+        }
+        
+        /// <summary>
+        /// 修改实例安全组
+        ///
+        /// 修改实例安全组
         /// 
         /// Please refer to HUAWEI cloud API Explorer for details.
         /// </summary>
@@ -578,6 +747,274 @@ namespace HuaweiCloud.SDK.Dbss.V1
             var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/dbss/audit/security-group", urlParam);
             var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", updateAuditSecurityGroupRequest);
             return new SyncInvoker<UpdateAuditSecurityGroupResponse>(this, "POST", request, JsonUtils.DeSerialize<UpdateAuditSecurityGroupResponse>);
+        }
+        
+        /// <summary>
+        /// 添加审计数据库Agent
+        ///
+        /// 添加审计数据库Agent
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public AddAuditAgentResponse AddAuditAgent(AddAuditAgentRequest addAuditAgentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", addAuditAgentRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{instance_id}/audit/agents", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addAuditAgentRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<AddAuditAgentResponse>(response);
+        }
+
+        public SyncInvoker<AddAuditAgentResponse> AddAuditAgentInvoker(AddAuditAgentRequest addAuditAgentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", addAuditAgentRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{instance_id}/audit/agents", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", addAuditAgentRequest);
+            return new SyncInvoker<AddAuditAgentResponse>(this, "POST", request, JsonUtils.DeSerialize<AddAuditAgentResponse>);
+        }
+        
+        /// <summary>
+        /// 删除数据库Agent
+        ///
+        /// 删除数据库Agent
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DeleteAuditAgentResponse DeleteAuditAgent(DeleteAuditAgentRequest deleteAuditAgentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteAuditAgentRequest.InstanceId.ToString());
+            urlParam.Add("agent_id", deleteAuditAgentRequest.AgentId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{instance_id}/audit/agents/{agent_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAuditAgentRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerialize<DeleteAuditAgentResponse>(response);
+        }
+
+        public SyncInvoker<DeleteAuditAgentResponse> DeleteAuditAgentInvoker(DeleteAuditAgentRequest deleteAuditAgentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", deleteAuditAgentRequest.InstanceId.ToString());
+            urlParam.Add("agent_id", deleteAuditAgentRequest.AgentId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{instance_id}/audit/agents/{agent_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", deleteAuditAgentRequest);
+            return new SyncInvoker<DeleteAuditAgentResponse>(this, "DELETE", request, JsonUtils.DeSerialize<DeleteAuditAgentResponse>);
+        }
+        
+        /// <summary>
+        /// 下载审计Agent
+        ///
+        /// 下载审计Agent
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public DownloadAuditAgentResponse DownloadAuditAgent(DownloadAuditAgentRequest downloadAuditAgentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", downloadAuditAgentRequest.InstanceId.ToString());
+            urlParam.Add("agent_id", downloadAuditAgentRequest.AgentId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{instance_id}/audit/agents/{agent_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadAuditAgentRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<DownloadAuditAgentResponse>(response);
+        }
+
+        public SyncInvoker<DownloadAuditAgentResponse> DownloadAuditAgentInvoker(DownloadAuditAgentRequest downloadAuditAgentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", downloadAuditAgentRequest.InstanceId.ToString());
+            urlParam.Add("agent_id", downloadAuditAgentRequest.AgentId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{instance_id}/audit/agents/{agent_id}", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", downloadAuditAgentRequest);
+            return new SyncInvoker<DownloadAuditAgentResponse>(this, "GET", request, JsonUtils.DeSerialize<DownloadAuditAgentResponse>);
+        }
+        
+        /// <summary>
+        /// 查询数据库Agent列表
+        ///
+        /// 查询数据库Agent列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListAuditAgentResponse ListAuditAgent(ListAuditAgentRequest listAuditAgentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listAuditAgentRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{instance_id}/audit/agents", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditAgentRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListAuditAgentResponse>(response);
+        }
+
+        public SyncInvoker<ListAuditAgentResponse> ListAuditAgentInvoker(ListAuditAgentRequest listAuditAgentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", listAuditAgentRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v2/{project_id}/{instance_id}/audit/agents", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listAuditAgentRequest);
+            return new SyncInvoker<ListAuditAgentResponse>(this, "GET", request, JsonUtils.DeSerialize<ListAuditAgentResponse>);
+        }
+        
+        /// <summary>
+        /// 开启关闭Agent
+        ///
+        /// 用于开启和关闭Agent审计的功能，当开启后，开始抓取用户的访问信息。
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public SwitchAgentResponse SwitchAgent(SwitchAgentRequest switchAgentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", switchAgentRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{instance_id}/audit/agent/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchAgentRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<SwitchAgentResponse>(response);
+        }
+
+        public SyncInvoker<SwitchAgentResponse> SwitchAgentInvoker(SwitchAgentRequest switchAgentRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("instance_id", switchAgentRequest.InstanceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{instance_id}/audit/agent/switch", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", switchAgentRequest);
+            return new SyncInvoker<SwitchAgentResponse>(this, "POST", request, JsonUtils.DeSerialize<SwitchAgentResponse>);
+        }
+        
+        /// <summary>
+        /// 批量添加资源标签
+        ///
+        /// 批量添加资源标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchAddResourceTagResponse BatchAddResourceTag(BatchAddResourceTagRequest batchAddResourceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", batchAddResourceTagRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", batchAddResourceTagRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/{resource_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddResourceTagRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerializeNull<BatchAddResourceTagResponse>(response);
+        }
+
+        public SyncInvoker<BatchAddResourceTagResponse> BatchAddResourceTagInvoker(BatchAddResourceTagRequest batchAddResourceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", batchAddResourceTagRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", batchAddResourceTagRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/{resource_id}/tags/create", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchAddResourceTagRequest);
+            return new SyncInvoker<BatchAddResourceTagResponse>(this, "POST", request, JsonUtils.DeSerializeNull<BatchAddResourceTagResponse>);
+        }
+        
+        /// <summary>
+        /// 批量删除资源标签
+        ///
+        /// 批量删除资源标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public BatchDeleteResourceTagResponse BatchDeleteResourceTag(BatchDeleteResourceTagRequest batchDeleteResourceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", batchDeleteResourceTagRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", batchDeleteResourceTagRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/{resource_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteResourceTagRequest);
+            var response = DoHttpRequestSync("DELETE", request);
+            return JsonUtils.DeSerializeNull<BatchDeleteResourceTagResponse>(response);
+        }
+
+        public SyncInvoker<BatchDeleteResourceTagResponse> BatchDeleteResourceTagInvoker(BatchDeleteResourceTagRequest batchDeleteResourceTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", batchDeleteResourceTagRequest.ResourceType.ToString());
+            urlParam.Add("resource_id", batchDeleteResourceTagRequest.ResourceId.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/{resource_id}/tags/delete", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", batchDeleteResourceTagRequest);
+            return new SyncInvoker<BatchDeleteResourceTagResponse>(this, "DELETE", request, JsonUtils.DeSerializeNull<BatchDeleteResourceTagResponse>);
+        }
+        
+        /// <summary>
+        /// 根据标签查询资源实例数量
+        ///
+        /// 根据标签查询资源实例数量
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public CountResourceInstanceByTagResponse CountResourceInstanceByTag(CountResourceInstanceByTagRequest countResourceInstanceByTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", countResourceInstanceByTagRequest.ResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/resource-instances/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", countResourceInstanceByTagRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<CountResourceInstanceByTagResponse>(response);
+        }
+
+        public SyncInvoker<CountResourceInstanceByTagResponse> CountResourceInstanceByTagInvoker(CountResourceInstanceByTagRequest countResourceInstanceByTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", countResourceInstanceByTagRequest.ResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/resource-instances/count", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", countResourceInstanceByTagRequest);
+            return new SyncInvoker<CountResourceInstanceByTagResponse>(this, "POST", request, JsonUtils.DeSerialize<CountResourceInstanceByTagResponse>);
+        }
+        
+        /// <summary>
+        /// 查询项目标签
+        ///
+        /// 查询项目标签
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListProjectResourceTagsResponse ListProjectResourceTags(ListProjectResourceTagsRequest listProjectResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listProjectResourceTagsRequest.ResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectResourceTagsRequest);
+            var response = DoHttpRequestSync("GET", request);
+            return JsonUtils.DeSerialize<ListProjectResourceTagsResponse>(response);
+        }
+
+        public SyncInvoker<ListProjectResourceTagsResponse> ListProjectResourceTagsInvoker(ListProjectResourceTagsRequest listProjectResourceTagsRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listProjectResourceTagsRequest.ResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/tags", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json", listProjectResourceTagsRequest);
+            return new SyncInvoker<ListProjectResourceTagsResponse>(this, "GET", request, JsonUtils.DeSerialize<ListProjectResourceTagsResponse>);
+        }
+        
+        /// <summary>
+        /// 根据标签查询资源实例列表
+        ///
+        /// 根据标签查询资源实例列表
+        /// 
+        /// Please refer to HUAWEI cloud API Explorer for details.
+        /// </summary>
+        public ListResourceInstanceByTagResponse ListResourceInstanceByTag(ListResourceInstanceByTagRequest listResourceInstanceByTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listResourceInstanceByTagRequest.ResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/resource-instances/filter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listResourceInstanceByTagRequest);
+            var response = DoHttpRequestSync("POST", request);
+            return JsonUtils.DeSerialize<ListResourceInstanceByTagResponse>(response);
+        }
+
+        public SyncInvoker<ListResourceInstanceByTagResponse> ListResourceInstanceByTagInvoker(ListResourceInstanceByTagRequest listResourceInstanceByTagRequest)
+        {
+            var urlParam = new Dictionary<string, string>();
+            urlParam.Add("resource_type", listResourceInstanceByTagRequest.ResourceType.ToString());
+            var urlPath = HttpUtils.AddUrlPath("/v1/{project_id}/{resource_type}/resource-instances/filter", urlParam);
+            var request = HttpUtils.InitSdkRequest(urlPath, "application/json;charset=UTF-8", listResourceInstanceByTagRequest);
+            return new SyncInvoker<ListResourceInstanceByTagResponse>(this, "POST", request, JsonUtils.DeSerialize<ListResourceInstanceByTagResponse>);
         }
         
     }

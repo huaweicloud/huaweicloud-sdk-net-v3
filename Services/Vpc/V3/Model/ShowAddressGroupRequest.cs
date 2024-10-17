@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(ShowAddressGroupRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AddressGroupId != input.AddressGroupId || (this.AddressGroupId != null && !this.AddressGroupId.Equals(input.AddressGroupId))) return false;
 
-            return 
-                (
-                    this.AddressGroupId == input.AddressGroupId ||
-                    (this.AddressGroupId != null &&
-                    this.AddressGroupId.Equals(input.AddressGroupId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AddressGroupId != null)
-                    hashCode = hashCode * 59 + this.AddressGroupId.GetHashCode();
+                var hashCode = 41;
+                if (this.AddressGroupId != null) hashCode = hashCode * 59 + this.AddressGroupId.GetHashCode();
                 return hashCode;
             }
         }

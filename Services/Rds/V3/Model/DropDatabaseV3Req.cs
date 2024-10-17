@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(DropDatabaseV3Req input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IsForceDelete != input.IsForceDelete || (this.IsForceDelete != null && !this.IsForceDelete.Equals(input.IsForceDelete))) return false;
 
-            return 
-                (
-                    this.IsForceDelete == input.IsForceDelete ||
-                    (this.IsForceDelete != null &&
-                    this.IsForceDelete.Equals(input.IsForceDelete))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IsForceDelete != null)
-                    hashCode = hashCode * 59 + this.IsForceDelete.GetHashCode();
+                var hashCode = 41;
+                if (this.IsForceDelete != null) hashCode = hashCode * 59 + this.IsForceDelete.GetHashCode();
                 return hashCode;
             }
         }

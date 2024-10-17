@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(FlexibleOrigins input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MatchType != input.MatchType || (this.MatchType != null && !this.MatchType.Equals(input.MatchType))) return false;
+            if (this.MatchPattern != input.MatchPattern || (this.MatchPattern != null && !this.MatchPattern.Equals(input.MatchPattern))) return false;
+            if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
+            if (this.BackSources != input.BackSources || (this.BackSources != null && input.BackSources != null && !this.BackSources.SequenceEqual(input.BackSources))) return false;
 
-            return 
-                (
-                    this.MatchType == input.MatchType ||
-                    (this.MatchType != null &&
-                    this.MatchType.Equals(input.MatchType))
-                ) && 
-                (
-                    this.MatchPattern == input.MatchPattern ||
-                    (this.MatchPattern != null &&
-                    this.MatchPattern.Equals(input.MatchPattern))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    (this.Priority != null &&
-                    this.Priority.Equals(input.Priority))
-                ) && 
-                (
-                    this.BackSources == input.BackSources ||
-                    this.BackSources != null &&
-                    input.BackSources != null &&
-                    this.BackSources.SequenceEqual(input.BackSources)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MatchType != null)
-                    hashCode = hashCode * 59 + this.MatchType.GetHashCode();
-                if (this.MatchPattern != null)
-                    hashCode = hashCode * 59 + this.MatchPattern.GetHashCode();
-                if (this.Priority != null)
-                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
-                if (this.BackSources != null)
-                    hashCode = hashCode * 59 + this.BackSources.GetHashCode();
+                var hashCode = 41;
+                if (this.MatchType != null) hashCode = hashCode * 59 + this.MatchType.GetHashCode();
+                if (this.MatchPattern != null) hashCode = hashCode * 59 + this.MatchPattern.GetHashCode();
+                if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                if (this.BackSources != null) hashCode = hashCode * 59 + this.BackSources.GetHashCode();
                 return hashCode;
             }
         }

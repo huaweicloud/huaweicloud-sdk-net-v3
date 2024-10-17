@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ShowCompletionRateResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DividendValue != input.DividendValue || (this.DividendValue != null && !this.DividendValue.Equals(input.DividendValue))) return false;
+            if (this.DivisorValue != input.DivisorValue || (this.DivisorValue != null && !this.DivisorValue.Equals(input.DivisorValue))) return false;
+            if (this.MetricName != input.MetricName || (this.MetricName != null && !this.MetricName.Equals(input.MetricName))) return false;
+            if (this.MetricValue != input.MetricValue || (this.MetricValue != null && !this.MetricValue.Equals(input.MetricValue))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.ProjectName != input.ProjectName || (this.ProjectName != null && !this.ProjectName.Equals(input.ProjectName))) return false;
 
-            return 
-                (
-                    this.DividendValue == input.DividendValue ||
-                    (this.DividendValue != null &&
-                    this.DividendValue.Equals(input.DividendValue))
-                ) && 
-                (
-                    this.DivisorValue == input.DivisorValue ||
-                    (this.DivisorValue != null &&
-                    this.DivisorValue.Equals(input.DivisorValue))
-                ) && 
-                (
-                    this.MetricName == input.MetricName ||
-                    (this.MetricName != null &&
-                    this.MetricName.Equals(input.MetricName))
-                ) && 
-                (
-                    this.MetricValue == input.MetricValue ||
-                    (this.MetricValue != null &&
-                    this.MetricValue.Equals(input.MetricValue))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.ProjectName == input.ProjectName ||
-                    (this.ProjectName != null &&
-                    this.ProjectName.Equals(input.ProjectName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DividendValue != null)
-                    hashCode = hashCode * 59 + this.DividendValue.GetHashCode();
-                if (this.DivisorValue != null)
-                    hashCode = hashCode * 59 + this.DivisorValue.GetHashCode();
-                if (this.MetricName != null)
-                    hashCode = hashCode * 59 + this.MetricName.GetHashCode();
-                if (this.MetricValue != null)
-                    hashCode = hashCode * 59 + this.MetricValue.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.ProjectName != null)
-                    hashCode = hashCode * 59 + this.ProjectName.GetHashCode();
+                var hashCode = 41;
+                if (this.DividendValue != null) hashCode = hashCode * 59 + this.DividendValue.GetHashCode();
+                if (this.DivisorValue != null) hashCode = hashCode * 59 + this.DivisorValue.GetHashCode();
+                if (this.MetricName != null) hashCode = hashCode * 59 + this.MetricName.GetHashCode();
+                if (this.MetricValue != null) hashCode = hashCode * 59 + this.MetricValue.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.ProjectName != null) hashCode = hashCode * 59 + this.ProjectName.GetHashCode();
                 return hashCode;
             }
         }

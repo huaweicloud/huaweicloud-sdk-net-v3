@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         /// </summary>
         public bool Equals(RecognizeFlashAsrResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TraceId != input.TraceId || (this.TraceId != null && !this.TraceId.Equals(input.TraceId))) return false;
+            if (this.AudioDuration != input.AudioDuration || (this.AudioDuration != null && !this.AudioDuration.Equals(input.AudioDuration))) return false;
+            if (this.FlashResult != input.FlashResult || (this.FlashResult != null && input.FlashResult != null && !this.FlashResult.SequenceEqual(input.FlashResult))) return false;
 
-            return 
-                (
-                    this.TraceId == input.TraceId ||
-                    (this.TraceId != null &&
-                    this.TraceId.Equals(input.TraceId))
-                ) && 
-                (
-                    this.AudioDuration == input.AudioDuration ||
-                    (this.AudioDuration != null &&
-                    this.AudioDuration.Equals(input.AudioDuration))
-                ) && 
-                (
-                    this.FlashResult == input.FlashResult ||
-                    this.FlashResult != null &&
-                    input.FlashResult != null &&
-                    this.FlashResult.SequenceEqual(input.FlashResult)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TraceId != null)
-                    hashCode = hashCode * 59 + this.TraceId.GetHashCode();
-                if (this.AudioDuration != null)
-                    hashCode = hashCode * 59 + this.AudioDuration.GetHashCode();
-                if (this.FlashResult != null)
-                    hashCode = hashCode * 59 + this.FlashResult.GetHashCode();
+                var hashCode = 41;
+                if (this.TraceId != null) hashCode = hashCode * 59 + this.TraceId.GetHashCode();
+                if (this.AudioDuration != null) hashCode = hashCode * 59 + this.AudioDuration.GetHashCode();
+                if (this.FlashResult != null) hashCode = hashCode * 59 + this.FlashResult.GetHashCode();
                 return hashCode;
             }
         }

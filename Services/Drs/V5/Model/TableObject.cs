@@ -239,68 +239,20 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(TableObject input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SyncType != input.SyncType || (this.SyncType != null && !this.SyncType.Equals(input.SyncType))) return false;
+            if (this.Type != input.Type) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.All != input.All || (this.All != null && !this.All.Equals(input.All))) return false;
+            if (this.DbAliasName != input.DbAliasName || (this.DbAliasName != null && !this.DbAliasName.Equals(input.DbAliasName))) return false;
+            if (this.SchemaAliasName != input.SchemaAliasName || (this.SchemaAliasName != null && !this.SchemaAliasName.Equals(input.SchemaAliasName))) return false;
+            if (this.Filtered != input.Filtered || (this.Filtered != null && !this.Filtered.Equals(input.Filtered))) return false;
+            if (this.FilterConditions != input.FilterConditions || (this.FilterConditions != null && input.FilterConditions != null && !this.FilterConditions.SequenceEqual(input.FilterConditions))) return false;
+            if (this.ConfigConditions != input.ConfigConditions || (this.ConfigConditions != null && input.ConfigConditions != null && !this.ConfigConditions.SequenceEqual(input.ConfigConditions))) return false;
+            if (this.IsSynchronized != input.IsSynchronized || (this.IsSynchronized != null && !this.IsSynchronized.Equals(input.IsSynchronized))) return false;
+            if (this.Columns != input.Columns || (this.Columns != null && input.Columns != null && !this.Columns.SequenceEqual(input.Columns))) return false;
 
-            return 
-                (
-                    this.SyncType == input.SyncType ||
-                    (this.SyncType != null &&
-                    this.SyncType.Equals(input.SyncType))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.All == input.All ||
-                    (this.All != null &&
-                    this.All.Equals(input.All))
-                ) && 
-                (
-                    this.DbAliasName == input.DbAliasName ||
-                    (this.DbAliasName != null &&
-                    this.DbAliasName.Equals(input.DbAliasName))
-                ) && 
-                (
-                    this.SchemaAliasName == input.SchemaAliasName ||
-                    (this.SchemaAliasName != null &&
-                    this.SchemaAliasName.Equals(input.SchemaAliasName))
-                ) && 
-                (
-                    this.Filtered == input.Filtered ||
-                    (this.Filtered != null &&
-                    this.Filtered.Equals(input.Filtered))
-                ) && 
-                (
-                    this.FilterConditions == input.FilterConditions ||
-                    this.FilterConditions != null &&
-                    input.FilterConditions != null &&
-                    this.FilterConditions.SequenceEqual(input.FilterConditions)
-                ) && 
-                (
-                    this.ConfigConditions == input.ConfigConditions ||
-                    this.ConfigConditions != null &&
-                    input.ConfigConditions != null &&
-                    this.ConfigConditions.SequenceEqual(input.ConfigConditions)
-                ) && 
-                (
-                    this.IsSynchronized == input.IsSynchronized ||
-                    (this.IsSynchronized != null &&
-                    this.IsSynchronized.Equals(input.IsSynchronized))
-                ) && 
-                (
-                    this.Columns == input.Columns ||
-                    this.Columns != null &&
-                    input.Columns != null &&
-                    this.Columns.SequenceEqual(input.Columns)
-                );
+            return true;
         }
 
         /// <summary>
@@ -310,29 +262,18 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SyncType != null)
-                    hashCode = hashCode * 59 + this.SyncType.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.All != null)
-                    hashCode = hashCode * 59 + this.All.GetHashCode();
-                if (this.DbAliasName != null)
-                    hashCode = hashCode * 59 + this.DbAliasName.GetHashCode();
-                if (this.SchemaAliasName != null)
-                    hashCode = hashCode * 59 + this.SchemaAliasName.GetHashCode();
-                if (this.Filtered != null)
-                    hashCode = hashCode * 59 + this.Filtered.GetHashCode();
-                if (this.FilterConditions != null)
-                    hashCode = hashCode * 59 + this.FilterConditions.GetHashCode();
-                if (this.ConfigConditions != null)
-                    hashCode = hashCode * 59 + this.ConfigConditions.GetHashCode();
-                if (this.IsSynchronized != null)
-                    hashCode = hashCode * 59 + this.IsSynchronized.GetHashCode();
-                if (this.Columns != null)
-                    hashCode = hashCode * 59 + this.Columns.GetHashCode();
+                var hashCode = 41;
+                if (this.SyncType != null) hashCode = hashCode * 59 + this.SyncType.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.All != null) hashCode = hashCode * 59 + this.All.GetHashCode();
+                if (this.DbAliasName != null) hashCode = hashCode * 59 + this.DbAliasName.GetHashCode();
+                if (this.SchemaAliasName != null) hashCode = hashCode * 59 + this.SchemaAliasName.GetHashCode();
+                if (this.Filtered != null) hashCode = hashCode * 59 + this.Filtered.GetHashCode();
+                if (this.FilterConditions != null) hashCode = hashCode * 59 + this.FilterConditions.GetHashCode();
+                if (this.ConfigConditions != null) hashCode = hashCode * 59 + this.ConfigConditions.GetHashCode();
+                if (this.IsSynchronized != null) hashCode = hashCode * 59 + this.IsSynchronized.GetHashCode();
+                if (this.Columns != null) hashCode = hashCode * 59 + this.Columns.GetHashCode();
                 return hashCode;
             }
         }

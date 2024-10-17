@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(NeutronUpdateRouterOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.ExternalGatewayInfo != input.ExternalGatewayInfo || (this.ExternalGatewayInfo != null && !this.ExternalGatewayInfo.Equals(input.ExternalGatewayInfo))) return false;
+            if (this.Routes != input.Routes || (this.Routes != null && input.Routes != null && !this.Routes.SequenceEqual(input.Routes))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.ExternalGatewayInfo == input.ExternalGatewayInfo ||
-                    (this.ExternalGatewayInfo != null &&
-                    this.ExternalGatewayInfo.Equals(input.ExternalGatewayInfo))
-                ) && 
-                (
-                    this.Routes == input.Routes ||
-                    this.Routes != null &&
-                    input.Routes != null &&
-                    this.Routes.SequenceEqual(input.Routes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.ExternalGatewayInfo != null)
-                    hashCode = hashCode * 59 + this.ExternalGatewayInfo.GetHashCode();
-                if (this.Routes != null)
-                    hashCode = hashCode * 59 + this.Routes.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.ExternalGatewayInfo != null) hashCode = hashCode * 59 + this.ExternalGatewayInfo.GetHashCode();
+                if (this.Routes != null) hashCode = hashCode * 59 + this.Routes.GetHashCode();
                 return hashCode;
             }
         }

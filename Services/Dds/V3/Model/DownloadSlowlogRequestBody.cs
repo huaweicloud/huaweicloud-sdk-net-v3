@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(DownloadSlowlogRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FileNameList != input.FileNameList || (this.FileNameList != null && input.FileNameList != null && !this.FileNameList.SequenceEqual(input.FileNameList))) return false;
+            if (this.NodeIdList != input.NodeIdList || (this.NodeIdList != null && input.NodeIdList != null && !this.NodeIdList.SequenceEqual(input.NodeIdList))) return false;
 
-            return 
-                (
-                    this.FileNameList == input.FileNameList ||
-                    this.FileNameList != null &&
-                    input.FileNameList != null &&
-                    this.FileNameList.SequenceEqual(input.FileNameList)
-                ) && 
-                (
-                    this.NodeIdList == input.NodeIdList ||
-                    this.NodeIdList != null &&
-                    input.NodeIdList != null &&
-                    this.NodeIdList.SequenceEqual(input.NodeIdList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FileNameList != null)
-                    hashCode = hashCode * 59 + this.FileNameList.GetHashCode();
-                if (this.NodeIdList != null)
-                    hashCode = hashCode * 59 + this.NodeIdList.GetHashCode();
+                var hashCode = 41;
+                if (this.FileNameList != null) hashCode = hashCode * 59 + this.FileNameList.GetHashCode();
+                if (this.NodeIdList != null) hashCode = hashCode * 59 + this.NodeIdList.GetHashCode();
                 return hashCode;
             }
         }

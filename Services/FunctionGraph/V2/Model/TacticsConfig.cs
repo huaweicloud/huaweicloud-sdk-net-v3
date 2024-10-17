@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(TacticsConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CronConfigs != input.CronConfigs || (this.CronConfigs != null && input.CronConfigs != null && !this.CronConfigs.SequenceEqual(input.CronConfigs))) return false;
+            if (this.MetricConfigs != input.MetricConfigs || (this.MetricConfigs != null && input.MetricConfigs != null && !this.MetricConfigs.SequenceEqual(input.MetricConfigs))) return false;
 
-            return 
-                (
-                    this.CronConfigs == input.CronConfigs ||
-                    this.CronConfigs != null &&
-                    input.CronConfigs != null &&
-                    this.CronConfigs.SequenceEqual(input.CronConfigs)
-                ) && 
-                (
-                    this.MetricConfigs == input.MetricConfigs ||
-                    this.MetricConfigs != null &&
-                    input.MetricConfigs != null &&
-                    this.MetricConfigs.SequenceEqual(input.MetricConfigs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CronConfigs != null)
-                    hashCode = hashCode * 59 + this.CronConfigs.GetHashCode();
-                if (this.MetricConfigs != null)
-                    hashCode = hashCode * 59 + this.MetricConfigs.GetHashCode();
+                var hashCode = 41;
+                if (this.CronConfigs != null) hashCode = hashCode * 59 + this.CronConfigs.GetHashCode();
+                if (this.MetricConfigs != null) hashCode = hashCode * 59 + this.MetricConfigs.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public bool Equals(Scm input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BuildTag != input.BuildTag || (this.BuildTag != null && !this.BuildTag.Equals(input.BuildTag))) return false;
+            if (this.BuildCommitId != input.BuildCommitId || (this.BuildCommitId != null && !this.BuildCommitId.Equals(input.BuildCommitId))) return false;
 
-            return 
-                (
-                    this.BuildTag == input.BuildTag ||
-                    (this.BuildTag != null &&
-                    this.BuildTag.Equals(input.BuildTag))
-                ) && 
-                (
-                    this.BuildCommitId == input.BuildCommitId ||
-                    (this.BuildCommitId != null &&
-                    this.BuildCommitId.Equals(input.BuildCommitId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BuildTag != null)
-                    hashCode = hashCode * 59 + this.BuildTag.GetHashCode();
-                if (this.BuildCommitId != null)
-                    hashCode = hashCode * 59 + this.BuildCommitId.GetHashCode();
+                var hashCode = 41;
+                if (this.BuildTag != null) hashCode = hashCode * 59 + this.BuildTag.GetHashCode();
+                if (this.BuildCommitId != null) hashCode = hashCode * 59 + this.BuildCommitId.GetHashCode();
                 return hashCode;
             }
         }

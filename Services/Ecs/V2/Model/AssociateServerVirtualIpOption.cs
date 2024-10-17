@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(AssociateServerVirtualIpOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
+            if (this.IpAddress != input.IpAddress || (this.IpAddress != null && !this.IpAddress.Equals(input.IpAddress))) return false;
+            if (this.ReverseBinding != input.ReverseBinding || (this.ReverseBinding != null && !this.ReverseBinding.Equals(input.ReverseBinding))) return false;
 
-            return 
-                (
-                    this.SubnetId == input.SubnetId ||
-                    (this.SubnetId != null &&
-                    this.SubnetId.Equals(input.SubnetId))
-                ) && 
-                (
-                    this.IpAddress == input.IpAddress ||
-                    (this.IpAddress != null &&
-                    this.IpAddress.Equals(input.IpAddress))
-                ) && 
-                (
-                    this.ReverseBinding == input.ReverseBinding ||
-                    (this.ReverseBinding != null &&
-                    this.ReverseBinding.Equals(input.ReverseBinding))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SubnetId != null)
-                    hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
-                if (this.IpAddress != null)
-                    hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
-                if (this.ReverseBinding != null)
-                    hashCode = hashCode * 59 + this.ReverseBinding.GetHashCode();
+                var hashCode = 41;
+                if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
+                if (this.IpAddress != null) hashCode = hashCode * 59 + this.IpAddress.GetHashCode();
+                if (this.ReverseBinding != null) hashCode = hashCode * 59 + this.ReverseBinding.GetHashCode();
                 return hashCode;
             }
         }

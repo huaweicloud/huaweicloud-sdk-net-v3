@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         /// </summary>
         public bool Equals(RecordData input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ConcurrentCount != input.ConcurrentCount || (this.ConcurrentCount != null && !this.ConcurrentCount.Equals(input.ConcurrentCount))) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
 
-            return 
-                (
-                    this.ConcurrentCount == input.ConcurrentCount ||
-                    (this.ConcurrentCount != null &&
-                    this.ConcurrentCount.Equals(input.ConcurrentCount))
-                ) && 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ConcurrentCount != null)
-                    hashCode = hashCode * 59 + this.ConcurrentCount.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
+                var hashCode = 41;
+                if (this.ConcurrentCount != null) hashCode = hashCode * 59 + this.ConcurrentCount.GetHashCode();
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
                 return hashCode;
             }
         }

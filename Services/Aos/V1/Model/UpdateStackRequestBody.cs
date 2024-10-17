@@ -77,36 +77,14 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(UpdateStackRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.StackId != input.StackId || (this.StackId != null && !this.StackId.Equals(input.StackId))) return false;
+            if (this.EnableDeletionProtection != input.EnableDeletionProtection || (this.EnableDeletionProtection != null && !this.EnableDeletionProtection.Equals(input.EnableDeletionProtection))) return false;
+            if (this.EnableAutoRollback != input.EnableAutoRollback || (this.EnableAutoRollback != null && !this.EnableAutoRollback.Equals(input.EnableAutoRollback))) return false;
+            if (this.Agencies != input.Agencies || (this.Agencies != null && input.Agencies != null && !this.Agencies.SequenceEqual(input.Agencies))) return false;
 
-            return 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.StackId == input.StackId ||
-                    (this.StackId != null &&
-                    this.StackId.Equals(input.StackId))
-                ) && 
-                (
-                    this.EnableDeletionProtection == input.EnableDeletionProtection ||
-                    (this.EnableDeletionProtection != null &&
-                    this.EnableDeletionProtection.Equals(input.EnableDeletionProtection))
-                ) && 
-                (
-                    this.EnableAutoRollback == input.EnableAutoRollback ||
-                    (this.EnableAutoRollback != null &&
-                    this.EnableAutoRollback.Equals(input.EnableAutoRollback))
-                ) && 
-                (
-                    this.Agencies == input.Agencies ||
-                    this.Agencies != null &&
-                    input.Agencies != null &&
-                    this.Agencies.SequenceEqual(input.Agencies)
-                );
+            return true;
         }
 
         /// <summary>
@@ -116,17 +94,12 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.StackId != null)
-                    hashCode = hashCode * 59 + this.StackId.GetHashCode();
-                if (this.EnableDeletionProtection != null)
-                    hashCode = hashCode * 59 + this.EnableDeletionProtection.GetHashCode();
-                if (this.EnableAutoRollback != null)
-                    hashCode = hashCode * 59 + this.EnableAutoRollback.GetHashCode();
-                if (this.Agencies != null)
-                    hashCode = hashCode * 59 + this.Agencies.GetHashCode();
+                var hashCode = 41;
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.StackId != null) hashCode = hashCode * 59 + this.StackId.GetHashCode();
+                if (this.EnableDeletionProtection != null) hashCode = hashCode * 59 + this.EnableDeletionProtection.GetHashCode();
+                if (this.EnableAutoRollback != null) hashCode = hashCode * 59 + this.EnableAutoRollback.GetHashCode();
+                if (this.Agencies != null) hashCode = hashCode * 59 + this.Agencies.GetHashCode();
                 return hashCode;
             }
         }

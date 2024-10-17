@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(QueryProxyResponseV3 input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Proxy != input.Proxy || (this.Proxy != null && !this.Proxy.Equals(input.Proxy))) return false;
+            if (this.MasterInstance != input.MasterInstance || (this.MasterInstance != null && !this.MasterInstance.Equals(input.MasterInstance))) return false;
+            if (this.ReadonlyInstances != input.ReadonlyInstances || (this.ReadonlyInstances != null && input.ReadonlyInstances != null && !this.ReadonlyInstances.SequenceEqual(input.ReadonlyInstances))) return false;
+            if (this.ProxySecurityGroupCheckResult != input.ProxySecurityGroupCheckResult || (this.ProxySecurityGroupCheckResult != null && !this.ProxySecurityGroupCheckResult.Equals(input.ProxySecurityGroupCheckResult))) return false;
 
-            return 
-                (
-                    this.Proxy == input.Proxy ||
-                    (this.Proxy != null &&
-                    this.Proxy.Equals(input.Proxy))
-                ) && 
-                (
-                    this.MasterInstance == input.MasterInstance ||
-                    (this.MasterInstance != null &&
-                    this.MasterInstance.Equals(input.MasterInstance))
-                ) && 
-                (
-                    this.ReadonlyInstances == input.ReadonlyInstances ||
-                    this.ReadonlyInstances != null &&
-                    input.ReadonlyInstances != null &&
-                    this.ReadonlyInstances.SequenceEqual(input.ReadonlyInstances)
-                ) && 
-                (
-                    this.ProxySecurityGroupCheckResult == input.ProxySecurityGroupCheckResult ||
-                    (this.ProxySecurityGroupCheckResult != null &&
-                    this.ProxySecurityGroupCheckResult.Equals(input.ProxySecurityGroupCheckResult))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Proxy != null)
-                    hashCode = hashCode * 59 + this.Proxy.GetHashCode();
-                if (this.MasterInstance != null)
-                    hashCode = hashCode * 59 + this.MasterInstance.GetHashCode();
-                if (this.ReadonlyInstances != null)
-                    hashCode = hashCode * 59 + this.ReadonlyInstances.GetHashCode();
-                if (this.ProxySecurityGroupCheckResult != null)
-                    hashCode = hashCode * 59 + this.ProxySecurityGroupCheckResult.GetHashCode();
+                var hashCode = 41;
+                if (this.Proxy != null) hashCode = hashCode * 59 + this.Proxy.GetHashCode();
+                if (this.MasterInstance != null) hashCode = hashCode * 59 + this.MasterInstance.GetHashCode();
+                if (this.ReadonlyInstances != null) hashCode = hashCode * 59 + this.ReadonlyInstances.GetHashCode();
+                if (this.ProxySecurityGroupCheckResult != null) hashCode = hashCode * 59 + this.ProxySecurityGroupCheckResult.GetHashCode();
                 return hashCode;
             }
         }

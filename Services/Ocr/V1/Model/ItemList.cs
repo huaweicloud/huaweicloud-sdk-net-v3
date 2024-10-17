@@ -126,70 +126,21 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(ItemList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Specification != input.Specification || (this.Specification != null && !this.Specification.Equals(input.Specification))) return false;
+            if (this.Unit != input.Unit || (this.Unit != null && !this.Unit.Equals(input.Unit))) return false;
+            if (this.Quantity != input.Quantity || (this.Quantity != null && !this.Quantity.Equals(input.Quantity))) return false;
+            if (this.UnitPrice != input.UnitPrice || (this.UnitPrice != null && !this.UnitPrice.Equals(input.UnitPrice))) return false;
+            if (this.LicensePlateNumber != input.LicensePlateNumber || (this.LicensePlateNumber != null && !this.LicensePlateNumber.Equals(input.LicensePlateNumber))) return false;
+            if (this.Amount != input.Amount || (this.Amount != null && !this.Amount.Equals(input.Amount))) return false;
+            if (this.TaxRate != input.TaxRate || (this.TaxRate != null && !this.TaxRate.Equals(input.TaxRate))) return false;
+            if (this.Tax != input.Tax || (this.Tax != null && !this.Tax.Equals(input.Tax))) return false;
+            if (this.EndDate != input.EndDate || (this.EndDate != null && !this.EndDate.Equals(input.EndDate))) return false;
+            if (this.StartDate != input.StartDate || (this.StartDate != null && !this.StartDate.Equals(input.StartDate))) return false;
+            if (this.VehicleType != input.VehicleType || (this.VehicleType != null && !this.VehicleType.Equals(input.VehicleType))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Specification == input.Specification ||
-                    (this.Specification != null &&
-                    this.Specification.Equals(input.Specification))
-                ) && 
-                (
-                    this.Unit == input.Unit ||
-                    (this.Unit != null &&
-                    this.Unit.Equals(input.Unit))
-                ) && 
-                (
-                    this.Quantity == input.Quantity ||
-                    (this.Quantity != null &&
-                    this.Quantity.Equals(input.Quantity))
-                ) && 
-                (
-                    this.UnitPrice == input.UnitPrice ||
-                    (this.UnitPrice != null &&
-                    this.UnitPrice.Equals(input.UnitPrice))
-                ) && 
-                (
-                    this.LicensePlateNumber == input.LicensePlateNumber ||
-                    (this.LicensePlateNumber != null &&
-                    this.LicensePlateNumber.Equals(input.LicensePlateNumber))
-                ) && 
-                (
-                    this.Amount == input.Amount ||
-                    (this.Amount != null &&
-                    this.Amount.Equals(input.Amount))
-                ) && 
-                (
-                    this.TaxRate == input.TaxRate ||
-                    (this.TaxRate != null &&
-                    this.TaxRate.Equals(input.TaxRate))
-                ) && 
-                (
-                    this.Tax == input.Tax ||
-                    (this.Tax != null &&
-                    this.Tax.Equals(input.Tax))
-                ) && 
-                (
-                    this.EndDate == input.EndDate ||
-                    (this.EndDate != null &&
-                    this.EndDate.Equals(input.EndDate))
-                ) && 
-                (
-                    this.StartDate == input.StartDate ||
-                    (this.StartDate != null &&
-                    this.StartDate.Equals(input.StartDate))
-                ) && 
-                (
-                    this.VehicleType == input.VehicleType ||
-                    (this.VehicleType != null &&
-                    this.VehicleType.Equals(input.VehicleType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -199,31 +150,19 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Specification != null)
-                    hashCode = hashCode * 59 + this.Specification.GetHashCode();
-                if (this.Unit != null)
-                    hashCode = hashCode * 59 + this.Unit.GetHashCode();
-                if (this.Quantity != null)
-                    hashCode = hashCode * 59 + this.Quantity.GetHashCode();
-                if (this.UnitPrice != null)
-                    hashCode = hashCode * 59 + this.UnitPrice.GetHashCode();
-                if (this.LicensePlateNumber != null)
-                    hashCode = hashCode * 59 + this.LicensePlateNumber.GetHashCode();
-                if (this.Amount != null)
-                    hashCode = hashCode * 59 + this.Amount.GetHashCode();
-                if (this.TaxRate != null)
-                    hashCode = hashCode * 59 + this.TaxRate.GetHashCode();
-                if (this.Tax != null)
-                    hashCode = hashCode * 59 + this.Tax.GetHashCode();
-                if (this.EndDate != null)
-                    hashCode = hashCode * 59 + this.EndDate.GetHashCode();
-                if (this.StartDate != null)
-                    hashCode = hashCode * 59 + this.StartDate.GetHashCode();
-                if (this.VehicleType != null)
-                    hashCode = hashCode * 59 + this.VehicleType.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Specification != null) hashCode = hashCode * 59 + this.Specification.GetHashCode();
+                if (this.Unit != null) hashCode = hashCode * 59 + this.Unit.GetHashCode();
+                if (this.Quantity != null) hashCode = hashCode * 59 + this.Quantity.GetHashCode();
+                if (this.UnitPrice != null) hashCode = hashCode * 59 + this.UnitPrice.GetHashCode();
+                if (this.LicensePlateNumber != null) hashCode = hashCode * 59 + this.LicensePlateNumber.GetHashCode();
+                if (this.Amount != null) hashCode = hashCode * 59 + this.Amount.GetHashCode();
+                if (this.TaxRate != null) hashCode = hashCode * 59 + this.TaxRate.GetHashCode();
+                if (this.Tax != null) hashCode = hashCode * 59 + this.Tax.GetHashCode();
+                if (this.EndDate != null) hashCode = hashCode * 59 + this.EndDate.GetHashCode();
+                if (this.StartDate != null) hashCode = hashCode * 59 + this.StartDate.GetHashCode();
+                if (this.VehicleType != null) hashCode = hashCode * 59 + this.VehicleType.GetHashCode();
                 return hashCode;
             }
         }

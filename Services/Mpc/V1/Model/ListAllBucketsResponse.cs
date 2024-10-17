@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(ListAllBucketsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Buckets != input.Buckets || (this.Buckets != null && input.Buckets != null && !this.Buckets.SequenceEqual(input.Buckets))) return false;
 
-            return 
-                (
-                    this.Buckets == input.Buckets ||
-                    this.Buckets != null &&
-                    input.Buckets != null &&
-                    this.Buckets.SequenceEqual(input.Buckets)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Buckets != null)
-                    hashCode = hashCode * 59 + this.Buckets.GetHashCode();
+                var hashCode = 41;
+                if (this.Buckets != null) hashCode = hashCode * 59 + this.Buckets.GetHashCode();
                 return hashCode;
             }
         }

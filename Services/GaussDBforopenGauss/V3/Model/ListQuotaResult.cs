@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ListQuotaResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.EnterpriseProjectName != input.EnterpriseProjectName || (this.EnterpriseProjectName != null && !this.EnterpriseProjectName.Equals(input.EnterpriseProjectName))) return false;
+            if (this.InstanceEpsQuota != input.InstanceEpsQuota || (this.InstanceEpsQuota != null && !this.InstanceEpsQuota.Equals(input.InstanceEpsQuota))) return false;
+            if (this.VcpusEpsQuota != input.VcpusEpsQuota || (this.VcpusEpsQuota != null && !this.VcpusEpsQuota.Equals(input.VcpusEpsQuota))) return false;
+            if (this.RamEpsQuota != input.RamEpsQuota || (this.RamEpsQuota != null && !this.RamEpsQuota.Equals(input.RamEpsQuota))) return false;
+            if (this.VolumeEpsQuota != input.VolumeEpsQuota || (this.VolumeEpsQuota != null && !this.VolumeEpsQuota.Equals(input.VolumeEpsQuota))) return false;
+            if (this.InstanceUsed != input.InstanceUsed || (this.InstanceUsed != null && !this.InstanceUsed.Equals(input.InstanceUsed))) return false;
+            if (this.VcpusUsed != input.VcpusUsed || (this.VcpusUsed != null && !this.VcpusUsed.Equals(input.VcpusUsed))) return false;
+            if (this.RamUsed != input.RamUsed || (this.RamUsed != null && !this.RamUsed.Equals(input.RamUsed))) return false;
+            if (this.VolumeUsed != input.VolumeUsed || (this.VolumeUsed != null && !this.VolumeUsed.Equals(input.VolumeUsed))) return false;
 
-            return 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.EnterpriseProjectName == input.EnterpriseProjectName ||
-                    (this.EnterpriseProjectName != null &&
-                    this.EnterpriseProjectName.Equals(input.EnterpriseProjectName))
-                ) && 
-                (
-                    this.InstanceEpsQuota == input.InstanceEpsQuota ||
-                    (this.InstanceEpsQuota != null &&
-                    this.InstanceEpsQuota.Equals(input.InstanceEpsQuota))
-                ) && 
-                (
-                    this.VcpusEpsQuota == input.VcpusEpsQuota ||
-                    (this.VcpusEpsQuota != null &&
-                    this.VcpusEpsQuota.Equals(input.VcpusEpsQuota))
-                ) && 
-                (
-                    this.RamEpsQuota == input.RamEpsQuota ||
-                    (this.RamEpsQuota != null &&
-                    this.RamEpsQuota.Equals(input.RamEpsQuota))
-                ) && 
-                (
-                    this.VolumeEpsQuota == input.VolumeEpsQuota ||
-                    (this.VolumeEpsQuota != null &&
-                    this.VolumeEpsQuota.Equals(input.VolumeEpsQuota))
-                ) && 
-                (
-                    this.InstanceUsed == input.InstanceUsed ||
-                    (this.InstanceUsed != null &&
-                    this.InstanceUsed.Equals(input.InstanceUsed))
-                ) && 
-                (
-                    this.VcpusUsed == input.VcpusUsed ||
-                    (this.VcpusUsed != null &&
-                    this.VcpusUsed.Equals(input.VcpusUsed))
-                ) && 
-                (
-                    this.RamUsed == input.RamUsed ||
-                    (this.RamUsed != null &&
-                    this.RamUsed.Equals(input.RamUsed))
-                ) && 
-                (
-                    this.VolumeUsed == input.VolumeUsed ||
-                    (this.VolumeUsed != null &&
-                    this.VolumeUsed.Equals(input.VolumeUsed))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.EnterpriseProjectName != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectName.GetHashCode();
-                if (this.InstanceEpsQuota != null)
-                    hashCode = hashCode * 59 + this.InstanceEpsQuota.GetHashCode();
-                if (this.VcpusEpsQuota != null)
-                    hashCode = hashCode * 59 + this.VcpusEpsQuota.GetHashCode();
-                if (this.RamEpsQuota != null)
-                    hashCode = hashCode * 59 + this.RamEpsQuota.GetHashCode();
-                if (this.VolumeEpsQuota != null)
-                    hashCode = hashCode * 59 + this.VolumeEpsQuota.GetHashCode();
-                if (this.InstanceUsed != null)
-                    hashCode = hashCode * 59 + this.InstanceUsed.GetHashCode();
-                if (this.VcpusUsed != null)
-                    hashCode = hashCode * 59 + this.VcpusUsed.GetHashCode();
-                if (this.RamUsed != null)
-                    hashCode = hashCode * 59 + this.RamUsed.GetHashCode();
-                if (this.VolumeUsed != null)
-                    hashCode = hashCode * 59 + this.VolumeUsed.GetHashCode();
+                var hashCode = 41;
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.EnterpriseProjectName != null) hashCode = hashCode * 59 + this.EnterpriseProjectName.GetHashCode();
+                if (this.InstanceEpsQuota != null) hashCode = hashCode * 59 + this.InstanceEpsQuota.GetHashCode();
+                if (this.VcpusEpsQuota != null) hashCode = hashCode * 59 + this.VcpusEpsQuota.GetHashCode();
+                if (this.RamEpsQuota != null) hashCode = hashCode * 59 + this.RamEpsQuota.GetHashCode();
+                if (this.VolumeEpsQuota != null) hashCode = hashCode * 59 + this.VolumeEpsQuota.GetHashCode();
+                if (this.InstanceUsed != null) hashCode = hashCode * 59 + this.InstanceUsed.GetHashCode();
+                if (this.VcpusUsed != null) hashCode = hashCode * 59 + this.VcpusUsed.GetHashCode();
+                if (this.RamUsed != null) hashCode = hashCode * 59 + this.RamUsed.GetHashCode();
+                if (this.VolumeUsed != null) hashCode = hashCode * 59 + this.VolumeUsed.GetHashCode();
                 return hashCode;
             }
         }

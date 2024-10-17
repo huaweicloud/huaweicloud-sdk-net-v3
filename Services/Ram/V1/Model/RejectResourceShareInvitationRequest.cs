@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         /// </summary>
         public bool Equals(RejectResourceShareInvitationRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResourceShareInvitationId != input.ResourceShareInvitationId || (this.ResourceShareInvitationId != null && !this.ResourceShareInvitationId.Equals(input.ResourceShareInvitationId))) return false;
 
-            return 
-                (
-                    this.ResourceShareInvitationId == input.ResourceShareInvitationId ||
-                    (this.ResourceShareInvitationId != null &&
-                    this.ResourceShareInvitationId.Equals(input.ResourceShareInvitationId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResourceShareInvitationId != null)
-                    hashCode = hashCode * 59 + this.ResourceShareInvitationId.GetHashCode();
+                var hashCode = 41;
+                if (this.ResourceShareInvitationId != null) hashCode = hashCode * 59 + this.ResourceShareInvitationId.GetHashCode();
                 return hashCode;
             }
         }

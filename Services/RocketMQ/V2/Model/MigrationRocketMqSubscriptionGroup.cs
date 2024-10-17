@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(MigrationRocketMqSubscriptionGroup input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.GroupName != input.GroupName || (this.GroupName != null && !this.GroupName.Equals(input.GroupName))) return false;
+            if (this.ConsumeBroadcastEnable != input.ConsumeBroadcastEnable || (this.ConsumeBroadcastEnable != null && !this.ConsumeBroadcastEnable.Equals(input.ConsumeBroadcastEnable))) return false;
+            if (this.ConsumeEnable != input.ConsumeEnable || (this.ConsumeEnable != null && !this.ConsumeEnable.Equals(input.ConsumeEnable))) return false;
+            if (this.ConsumeFromMinEnable != input.ConsumeFromMinEnable || (this.ConsumeFromMinEnable != null && !this.ConsumeFromMinEnable.Equals(input.ConsumeFromMinEnable))) return false;
+            if (this.NotifyConsumerIdsChangedEnable != input.NotifyConsumerIdsChangedEnable || (this.NotifyConsumerIdsChangedEnable != null && !this.NotifyConsumerIdsChangedEnable.Equals(input.NotifyConsumerIdsChangedEnable))) return false;
+            if (this.RetryMaxTimes != input.RetryMaxTimes || (this.RetryMaxTimes != null && !this.RetryMaxTimes.Equals(input.RetryMaxTimes))) return false;
+            if (this.RetryQueueNums != input.RetryQueueNums || (this.RetryQueueNums != null && !this.RetryQueueNums.Equals(input.RetryQueueNums))) return false;
+            if (this.WhichBrokerWhenConsumeSlow != input.WhichBrokerWhenConsumeSlow || (this.WhichBrokerWhenConsumeSlow != null && !this.WhichBrokerWhenConsumeSlow.Equals(input.WhichBrokerWhenConsumeSlow))) return false;
 
-            return 
-                (
-                    this.GroupName == input.GroupName ||
-                    (this.GroupName != null &&
-                    this.GroupName.Equals(input.GroupName))
-                ) && 
-                (
-                    this.ConsumeBroadcastEnable == input.ConsumeBroadcastEnable ||
-                    (this.ConsumeBroadcastEnable != null &&
-                    this.ConsumeBroadcastEnable.Equals(input.ConsumeBroadcastEnable))
-                ) && 
-                (
-                    this.ConsumeEnable == input.ConsumeEnable ||
-                    (this.ConsumeEnable != null &&
-                    this.ConsumeEnable.Equals(input.ConsumeEnable))
-                ) && 
-                (
-                    this.ConsumeFromMinEnable == input.ConsumeFromMinEnable ||
-                    (this.ConsumeFromMinEnable != null &&
-                    this.ConsumeFromMinEnable.Equals(input.ConsumeFromMinEnable))
-                ) && 
-                (
-                    this.NotifyConsumerIdsChangedEnable == input.NotifyConsumerIdsChangedEnable ||
-                    (this.NotifyConsumerIdsChangedEnable != null &&
-                    this.NotifyConsumerIdsChangedEnable.Equals(input.NotifyConsumerIdsChangedEnable))
-                ) && 
-                (
-                    this.RetryMaxTimes == input.RetryMaxTimes ||
-                    (this.RetryMaxTimes != null &&
-                    this.RetryMaxTimes.Equals(input.RetryMaxTimes))
-                ) && 
-                (
-                    this.RetryQueueNums == input.RetryQueueNums ||
-                    (this.RetryQueueNums != null &&
-                    this.RetryQueueNums.Equals(input.RetryQueueNums))
-                ) && 
-                (
-                    this.WhichBrokerWhenConsumeSlow == input.WhichBrokerWhenConsumeSlow ||
-                    (this.WhichBrokerWhenConsumeSlow != null &&
-                    this.WhichBrokerWhenConsumeSlow.Equals(input.WhichBrokerWhenConsumeSlow))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.GroupName != null)
-                    hashCode = hashCode * 59 + this.GroupName.GetHashCode();
-                if (this.ConsumeBroadcastEnable != null)
-                    hashCode = hashCode * 59 + this.ConsumeBroadcastEnable.GetHashCode();
-                if (this.ConsumeEnable != null)
-                    hashCode = hashCode * 59 + this.ConsumeEnable.GetHashCode();
-                if (this.ConsumeFromMinEnable != null)
-                    hashCode = hashCode * 59 + this.ConsumeFromMinEnable.GetHashCode();
-                if (this.NotifyConsumerIdsChangedEnable != null)
-                    hashCode = hashCode * 59 + this.NotifyConsumerIdsChangedEnable.GetHashCode();
-                if (this.RetryMaxTimes != null)
-                    hashCode = hashCode * 59 + this.RetryMaxTimes.GetHashCode();
-                if (this.RetryQueueNums != null)
-                    hashCode = hashCode * 59 + this.RetryQueueNums.GetHashCode();
-                if (this.WhichBrokerWhenConsumeSlow != null)
-                    hashCode = hashCode * 59 + this.WhichBrokerWhenConsumeSlow.GetHashCode();
+                var hashCode = 41;
+                if (this.GroupName != null) hashCode = hashCode * 59 + this.GroupName.GetHashCode();
+                if (this.ConsumeBroadcastEnable != null) hashCode = hashCode * 59 + this.ConsumeBroadcastEnable.GetHashCode();
+                if (this.ConsumeEnable != null) hashCode = hashCode * 59 + this.ConsumeEnable.GetHashCode();
+                if (this.ConsumeFromMinEnable != null) hashCode = hashCode * 59 + this.ConsumeFromMinEnable.GetHashCode();
+                if (this.NotifyConsumerIdsChangedEnable != null) hashCode = hashCode * 59 + this.NotifyConsumerIdsChangedEnable.GetHashCode();
+                if (this.RetryMaxTimes != null) hashCode = hashCode * 59 + this.RetryMaxTimes.GetHashCode();
+                if (this.RetryQueueNums != null) hashCode = hashCode * 59 + this.RetryQueueNums.GetHashCode();
+                if (this.WhichBrokerWhenConsumeSlow != null) hashCode = hashCode * 59 + this.WhichBrokerWhenConsumeSlow.GetHashCode();
                 return hashCode;
             }
         }

@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(Cmd input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CommandName != input.CommandName || (this.CommandName != null && !this.CommandName.Equals(input.CommandName))) return false;
+            if (this.CommandBody != input.CommandBody || (this.CommandBody != null && !this.CommandBody.Equals(input.CommandBody))) return false;
+            if (this.ServiceId != input.ServiceId || (this.ServiceId != null && !this.ServiceId.Equals(input.ServiceId))) return false;
+            if (this.BufferTimeout != input.BufferTimeout || (this.BufferTimeout != null && !this.BufferTimeout.Equals(input.BufferTimeout))) return false;
+            if (this.ResponseTimeout != input.ResponseTimeout || (this.ResponseTimeout != null && !this.ResponseTimeout.Equals(input.ResponseTimeout))) return false;
+            if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
 
-            return 
-                (
-                    this.CommandName == input.CommandName ||
-                    (this.CommandName != null &&
-                    this.CommandName.Equals(input.CommandName))
-                ) && 
-                (
-                    this.CommandBody == input.CommandBody ||
-                    (this.CommandBody != null &&
-                    this.CommandBody.Equals(input.CommandBody))
-                ) && 
-                (
-                    this.ServiceId == input.ServiceId ||
-                    (this.ServiceId != null &&
-                    this.ServiceId.Equals(input.ServiceId))
-                ) && 
-                (
-                    this.BufferTimeout == input.BufferTimeout ||
-                    (this.BufferTimeout != null &&
-                    this.BufferTimeout.Equals(input.BufferTimeout))
-                ) && 
-                (
-                    this.ResponseTimeout == input.ResponseTimeout ||
-                    (this.ResponseTimeout != null &&
-                    this.ResponseTimeout.Equals(input.ResponseTimeout))
-                ) && 
-                (
-                    this.Mode == input.Mode ||
-                    (this.Mode != null &&
-                    this.Mode.Equals(input.Mode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CommandName != null)
-                    hashCode = hashCode * 59 + this.CommandName.GetHashCode();
-                if (this.CommandBody != null)
-                    hashCode = hashCode * 59 + this.CommandBody.GetHashCode();
-                if (this.ServiceId != null)
-                    hashCode = hashCode * 59 + this.ServiceId.GetHashCode();
-                if (this.BufferTimeout != null)
-                    hashCode = hashCode * 59 + this.BufferTimeout.GetHashCode();
-                if (this.ResponseTimeout != null)
-                    hashCode = hashCode * 59 + this.ResponseTimeout.GetHashCode();
-                if (this.Mode != null)
-                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                var hashCode = 41;
+                if (this.CommandName != null) hashCode = hashCode * 59 + this.CommandName.GetHashCode();
+                if (this.CommandBody != null) hashCode = hashCode * 59 + this.CommandBody.GetHashCode();
+                if (this.ServiceId != null) hashCode = hashCode * 59 + this.ServiceId.GetHashCode();
+                if (this.BufferTimeout != null) hashCode = hashCode * 59 + this.BufferTimeout.GetHashCode();
+                if (this.ResponseTimeout != null) hashCode = hashCode * 59 + this.ResponseTimeout.GetHashCode();
+                if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
                 return hashCode;
             }
         }

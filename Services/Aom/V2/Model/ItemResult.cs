@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(ItemResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AlarmRuleName != input.AlarmRuleName || (this.AlarmRuleName != null && !this.AlarmRuleName.Equals(input.AlarmRuleName))) return false;
 
-            return 
-                (
-                    this.AlarmRuleName == input.AlarmRuleName ||
-                    (this.AlarmRuleName != null &&
-                    this.AlarmRuleName.Equals(input.AlarmRuleName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AlarmRuleName != null)
-                    hashCode = hashCode * 59 + this.AlarmRuleName.GetHashCode();
+                var hashCode = 41;
+                if (this.AlarmRuleName != null) hashCode = hashCode * 59 + this.AlarmRuleName.GetHashCode();
                 return hashCode;
             }
         }

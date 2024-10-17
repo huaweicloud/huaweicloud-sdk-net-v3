@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(LTSIndexConfigInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FullTextIndex != input.FullTextIndex || (this.FullTextIndex != null && !this.FullTextIndex.Equals(input.FullTextIndex))) return false;
+            if (this.Fields != input.Fields || (this.Fields != null && input.Fields != null && !this.Fields.SequenceEqual(input.Fields))) return false;
+            if (this.SqlAnalysisEnable != input.SqlAnalysisEnable || (this.SqlAnalysisEnable != null && !this.SqlAnalysisEnable.Equals(input.SqlAnalysisEnable))) return false;
+            if (this.LogStreamId != input.LogStreamId || (this.LogStreamId != null && !this.LogStreamId.Equals(input.LogStreamId))) return false;
 
-            return 
-                (
-                    this.FullTextIndex == input.FullTextIndex ||
-                    (this.FullTextIndex != null &&
-                    this.FullTextIndex.Equals(input.FullTextIndex))
-                ) && 
-                (
-                    this.Fields == input.Fields ||
-                    this.Fields != null &&
-                    input.Fields != null &&
-                    this.Fields.SequenceEqual(input.Fields)
-                ) && 
-                (
-                    this.SqlAnalysisEnable == input.SqlAnalysisEnable ||
-                    (this.SqlAnalysisEnable != null &&
-                    this.SqlAnalysisEnable.Equals(input.SqlAnalysisEnable))
-                ) && 
-                (
-                    this.LogStreamId == input.LogStreamId ||
-                    (this.LogStreamId != null &&
-                    this.LogStreamId.Equals(input.LogStreamId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FullTextIndex != null)
-                    hashCode = hashCode * 59 + this.FullTextIndex.GetHashCode();
-                if (this.Fields != null)
-                    hashCode = hashCode * 59 + this.Fields.GetHashCode();
-                if (this.SqlAnalysisEnable != null)
-                    hashCode = hashCode * 59 + this.SqlAnalysisEnable.GetHashCode();
-                if (this.LogStreamId != null)
-                    hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
+                var hashCode = 41;
+                if (this.FullTextIndex != null) hashCode = hashCode * 59 + this.FullTextIndex.GetHashCode();
+                if (this.Fields != null) hashCode = hashCode * 59 + this.Fields.GetHashCode();
+                if (this.SqlAnalysisEnable != null) hashCode = hashCode * 59 + this.SqlAnalysisEnable.GetHashCode();
+                if (this.LogStreamId != null) hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
                 return hashCode;
             }
         }

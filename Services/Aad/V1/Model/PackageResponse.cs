@@ -341,125 +341,32 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         /// </summary>
         public bool Equals(PackageResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PackageId != input.PackageId || (this.PackageId != null && !this.PackageId.Equals(input.PackageId))) return false;
+            if (this.PackageName != input.PackageName || (this.PackageName != null && !this.PackageName.Equals(input.PackageName))) return false;
+            if (this.RegionId != input.RegionId || (this.RegionId != null && !this.RegionId.Equals(input.RegionId))) return false;
+            if (this.ProtectionType != input.ProtectionType || (this.ProtectionType != null && !this.ProtectionType.Equals(input.ProtectionType))) return false;
+            if (this.InstanceType != input.InstanceType) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
+            if (this.CountDownCode != input.CountDownCode || (this.CountDownCode != null && !this.CountDownCode.Equals(input.CountDownCode))) return false;
+            if (this.CountDownInfos != input.CountDownInfos || (this.CountDownInfos != null && !this.CountDownInfos.Equals(input.CountDownInfos))) return false;
+            if (this.CountDownTips != input.CountDownTips || (this.CountDownTips != null && !this.CountDownTips.Equals(input.CountDownTips))) return false;
+            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
+            if (this.SubscriptionId != input.SubscriptionId || (this.SubscriptionId != null && !this.SubscriptionId.Equals(input.SubscriptionId))) return false;
+            if (this.IpNum != input.IpNum || (this.IpNum != null && !this.IpNum.Equals(input.IpNum))) return false;
+            if (this.IpNumNow != input.IpNumNow || (this.IpNumNow != null && !this.IpNumNow.Equals(input.IpNumNow))) return false;
+            if (this.ProtectionNumNow != input.ProtectionNumNow || (this.ProtectionNumNow != null && !this.ProtectionNumNow.Equals(input.ProtectionNumNow))) return false;
+            if (this.ProtectionNum != input.ProtectionNum || (this.ProtectionNum != null && !this.ProtectionNum.Equals(input.ProtectionNum))) return false;
+            if (this.BasicBandwidth != input.BasicBandwidth || (this.BasicBandwidth != null && !this.BasicBandwidth.Equals(input.BasicBandwidth))) return false;
+            if (this.ElasticBandwidth != input.ElasticBandwidth || (this.ElasticBandwidth != null && !this.ElasticBandwidth.Equals(input.ElasticBandwidth))) return false;
+            if (this.ServiceBandwidth != input.ServiceBandwidth || (this.ServiceBandwidth != null && !this.ServiceBandwidth.Equals(input.ServiceBandwidth))) return false;
+            if (this.CleanBandwidth != input.CleanBandwidth || (this.CleanBandwidth != null && !this.CleanBandwidth.Equals(input.CleanBandwidth))) return false;
+            if (this.PolicyNum != input.PolicyNum || (this.PolicyNum != null && !this.PolicyNum.Equals(input.PolicyNum))) return false;
+            if (this.IsOld != input.IsOld || (this.IsOld != null && !this.IsOld.Equals(input.IsOld))) return false;
+            if (this.NewFlag != input.NewFlag || (this.NewFlag != null && !this.NewFlag.Equals(input.NewFlag))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
 
-            return 
-                (
-                    this.PackageId == input.PackageId ||
-                    (this.PackageId != null &&
-                    this.PackageId.Equals(input.PackageId))
-                ) && 
-                (
-                    this.PackageName == input.PackageName ||
-                    (this.PackageName != null &&
-                    this.PackageName.Equals(input.PackageName))
-                ) && 
-                (
-                    this.RegionId == input.RegionId ||
-                    (this.RegionId != null &&
-                    this.RegionId.Equals(input.RegionId))
-                ) && 
-                (
-                    this.ProtectionType == input.ProtectionType ||
-                    (this.ProtectionType != null &&
-                    this.ProtectionType.Equals(input.ProtectionType))
-                ) && 
-                (
-                    this.InstanceType == input.InstanceType ||
-                    (this.InstanceType != null &&
-                    this.InstanceType.Equals(input.InstanceType))
-                ) && 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
-                ) && 
-                (
-                    this.CountDownCode == input.CountDownCode ||
-                    (this.CountDownCode != null &&
-                    this.CountDownCode.Equals(input.CountDownCode))
-                ) && 
-                (
-                    this.CountDownInfos == input.CountDownInfos ||
-                    (this.CountDownInfos != null &&
-                    this.CountDownInfos.Equals(input.CountDownInfos))
-                ) && 
-                (
-                    this.CountDownTips == input.CountDownTips ||
-                    (this.CountDownTips != null &&
-                    this.CountDownTips.Equals(input.CountDownTips))
-                ) && 
-                (
-                    this.OrderId == input.OrderId ||
-                    (this.OrderId != null &&
-                    this.OrderId.Equals(input.OrderId))
-                ) && 
-                (
-                    this.SubscriptionId == input.SubscriptionId ||
-                    (this.SubscriptionId != null &&
-                    this.SubscriptionId.Equals(input.SubscriptionId))
-                ) && 
-                (
-                    this.IpNum == input.IpNum ||
-                    (this.IpNum != null &&
-                    this.IpNum.Equals(input.IpNum))
-                ) && 
-                (
-                    this.IpNumNow == input.IpNumNow ||
-                    (this.IpNumNow != null &&
-                    this.IpNumNow.Equals(input.IpNumNow))
-                ) && 
-                (
-                    this.ProtectionNumNow == input.ProtectionNumNow ||
-                    (this.ProtectionNumNow != null &&
-                    this.ProtectionNumNow.Equals(input.ProtectionNumNow))
-                ) && 
-                (
-                    this.ProtectionNum == input.ProtectionNum ||
-                    (this.ProtectionNum != null &&
-                    this.ProtectionNum.Equals(input.ProtectionNum))
-                ) && 
-                (
-                    this.BasicBandwidth == input.BasicBandwidth ||
-                    (this.BasicBandwidth != null &&
-                    this.BasicBandwidth.Equals(input.BasicBandwidth))
-                ) && 
-                (
-                    this.ElasticBandwidth == input.ElasticBandwidth ||
-                    (this.ElasticBandwidth != null &&
-                    this.ElasticBandwidth.Equals(input.ElasticBandwidth))
-                ) && 
-                (
-                    this.ServiceBandwidth == input.ServiceBandwidth ||
-                    (this.ServiceBandwidth != null &&
-                    this.ServiceBandwidth.Equals(input.ServiceBandwidth))
-                ) && 
-                (
-                    this.CleanBandwidth == input.CleanBandwidth ||
-                    (this.CleanBandwidth != null &&
-                    this.CleanBandwidth.Equals(input.CleanBandwidth))
-                ) && 
-                (
-                    this.PolicyNum == input.PolicyNum ||
-                    (this.PolicyNum != null &&
-                    this.PolicyNum.Equals(input.PolicyNum))
-                ) && 
-                (
-                    this.IsOld == input.IsOld ||
-                    (this.IsOld != null &&
-                    this.IsOld.Equals(input.IsOld))
-                ) && 
-                (
-                    this.NewFlag == input.NewFlag ||
-                    (this.NewFlag != null &&
-                    this.NewFlag.Equals(input.NewFlag))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -469,53 +376,30 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PackageId != null)
-                    hashCode = hashCode * 59 + this.PackageId.GetHashCode();
-                if (this.PackageName != null)
-                    hashCode = hashCode * 59 + this.PackageName.GetHashCode();
-                if (this.RegionId != null)
-                    hashCode = hashCode * 59 + this.RegionId.GetHashCode();
-                if (this.ProtectionType != null)
-                    hashCode = hashCode * 59 + this.ProtectionType.GetHashCode();
-                if (this.InstanceType != null)
-                    hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
-                if (this.ResourceId != null)
-                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
-                if (this.CountDownCode != null)
-                    hashCode = hashCode * 59 + this.CountDownCode.GetHashCode();
-                if (this.CountDownInfos != null)
-                    hashCode = hashCode * 59 + this.CountDownInfos.GetHashCode();
-                if (this.CountDownTips != null)
-                    hashCode = hashCode * 59 + this.CountDownTips.GetHashCode();
-                if (this.OrderId != null)
-                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
-                if (this.SubscriptionId != null)
-                    hashCode = hashCode * 59 + this.SubscriptionId.GetHashCode();
-                if (this.IpNum != null)
-                    hashCode = hashCode * 59 + this.IpNum.GetHashCode();
-                if (this.IpNumNow != null)
-                    hashCode = hashCode * 59 + this.IpNumNow.GetHashCode();
-                if (this.ProtectionNumNow != null)
-                    hashCode = hashCode * 59 + this.ProtectionNumNow.GetHashCode();
-                if (this.ProtectionNum != null)
-                    hashCode = hashCode * 59 + this.ProtectionNum.GetHashCode();
-                if (this.BasicBandwidth != null)
-                    hashCode = hashCode * 59 + this.BasicBandwidth.GetHashCode();
-                if (this.ElasticBandwidth != null)
-                    hashCode = hashCode * 59 + this.ElasticBandwidth.GetHashCode();
-                if (this.ServiceBandwidth != null)
-                    hashCode = hashCode * 59 + this.ServiceBandwidth.GetHashCode();
-                if (this.CleanBandwidth != null)
-                    hashCode = hashCode * 59 + this.CleanBandwidth.GetHashCode();
-                if (this.PolicyNum != null)
-                    hashCode = hashCode * 59 + this.PolicyNum.GetHashCode();
-                if (this.IsOld != null)
-                    hashCode = hashCode * 59 + this.IsOld.GetHashCode();
-                if (this.NewFlag != null)
-                    hashCode = hashCode * 59 + this.NewFlag.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                var hashCode = 41;
+                if (this.PackageId != null) hashCode = hashCode * 59 + this.PackageId.GetHashCode();
+                if (this.PackageName != null) hashCode = hashCode * 59 + this.PackageName.GetHashCode();
+                if (this.RegionId != null) hashCode = hashCode * 59 + this.RegionId.GetHashCode();
+                if (this.ProtectionType != null) hashCode = hashCode * 59 + this.ProtectionType.GetHashCode();
+                hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.CountDownCode != null) hashCode = hashCode * 59 + this.CountDownCode.GetHashCode();
+                if (this.CountDownInfos != null) hashCode = hashCode * 59 + this.CountDownInfos.GetHashCode();
+                if (this.CountDownTips != null) hashCode = hashCode * 59 + this.CountDownTips.GetHashCode();
+                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.SubscriptionId != null) hashCode = hashCode * 59 + this.SubscriptionId.GetHashCode();
+                if (this.IpNum != null) hashCode = hashCode * 59 + this.IpNum.GetHashCode();
+                if (this.IpNumNow != null) hashCode = hashCode * 59 + this.IpNumNow.GetHashCode();
+                if (this.ProtectionNumNow != null) hashCode = hashCode * 59 + this.ProtectionNumNow.GetHashCode();
+                if (this.ProtectionNum != null) hashCode = hashCode * 59 + this.ProtectionNum.GetHashCode();
+                if (this.BasicBandwidth != null) hashCode = hashCode * 59 + this.BasicBandwidth.GetHashCode();
+                if (this.ElasticBandwidth != null) hashCode = hashCode * 59 + this.ElasticBandwidth.GetHashCode();
+                if (this.ServiceBandwidth != null) hashCode = hashCode * 59 + this.ServiceBandwidth.GetHashCode();
+                if (this.CleanBandwidth != null) hashCode = hashCode * 59 + this.CleanBandwidth.GetHashCode();
+                if (this.PolicyNum != null) hashCode = hashCode * 59 + this.PolicyNum.GetHashCode();
+                if (this.IsOld != null) hashCode = hashCode * 59 + this.IsOld.GetHashCode();
+                if (this.NewFlag != null) hashCode = hashCode * 59 + this.NewFlag.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(MrsKafkaForwarding input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Addresses != input.Addresses || (this.Addresses != null && input.Addresses != null && !this.Addresses.SequenceEqual(input.Addresses))) return false;
+            if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;
+            if (this.KerberosAuthentication != input.KerberosAuthentication || (this.KerberosAuthentication != null && !this.KerberosAuthentication.Equals(input.KerberosAuthentication))) return false;
 
-            return 
-                (
-                    this.Addresses == input.Addresses ||
-                    this.Addresses != null &&
-                    input.Addresses != null &&
-                    this.Addresses.SequenceEqual(input.Addresses)
-                ) && 
-                (
-                    this.Topic == input.Topic ||
-                    (this.Topic != null &&
-                    this.Topic.Equals(input.Topic))
-                ) && 
-                (
-                    this.KerberosAuthentication == input.KerberosAuthentication ||
-                    (this.KerberosAuthentication != null &&
-                    this.KerberosAuthentication.Equals(input.KerberosAuthentication))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Addresses != null)
-                    hashCode = hashCode * 59 + this.Addresses.GetHashCode();
-                if (this.Topic != null)
-                    hashCode = hashCode * 59 + this.Topic.GetHashCode();
-                if (this.KerberosAuthentication != null)
-                    hashCode = hashCode * 59 + this.KerberosAuthentication.GetHashCode();
+                var hashCode = 41;
+                if (this.Addresses != null) hashCode = hashCode * 59 + this.Addresses.GetHashCode();
+                if (this.Topic != null) hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.KerberosAuthentication != null) hashCode = hashCode * 59 + this.KerberosAuthentication.GetHashCode();
                 return hashCode;
             }
         }

@@ -404,90 +404,25 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         /// </summary>
         public bool Equals(ListTracesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TraceType != input.TraceType) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.From != input.From || (this.From != null && !this.From.Equals(input.From))) return false;
+            if (this.Next != input.Next || (this.Next != null && !this.Next.Equals(input.Next))) return false;
+            if (this.To != input.To || (this.To != null && !this.To.Equals(input.To))) return false;
+            if (this.TrackerName != input.TrackerName || (this.TrackerName != null && !this.TrackerName.Equals(input.TrackerName))) return false;
+            if (this.ServiceType != input.ServiceType || (this.ServiceType != null && !this.ServiceType.Equals(input.ServiceType))) return false;
+            if (this.User != input.User || (this.User != null && !this.User.Equals(input.User))) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
+            if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
+            if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
+            if (this.TraceId != input.TraceId || (this.TraceId != null && !this.TraceId.Equals(input.TraceId))) return false;
+            if (this.TraceName != input.TraceName || (this.TraceName != null && !this.TraceName.Equals(input.TraceName))) return false;
+            if (this.TraceRating != input.TraceRating) return false;
+            if (this.AccessKeyId != input.AccessKeyId || (this.AccessKeyId != null && !this.AccessKeyId.Equals(input.AccessKeyId))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
-            return 
-                (
-                    this.TraceType == input.TraceType ||
-                    (this.TraceType != null &&
-                    this.TraceType.Equals(input.TraceType))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.From == input.From ||
-                    (this.From != null &&
-                    this.From.Equals(input.From))
-                ) && 
-                (
-                    this.Next == input.Next ||
-                    (this.Next != null &&
-                    this.Next.Equals(input.Next))
-                ) && 
-                (
-                    this.To == input.To ||
-                    (this.To != null &&
-                    this.To.Equals(input.To))
-                ) && 
-                (
-                    this.TrackerName == input.TrackerName ||
-                    (this.TrackerName != null &&
-                    this.TrackerName.Equals(input.TrackerName))
-                ) && 
-                (
-                    this.ServiceType == input.ServiceType ||
-                    (this.ServiceType != null &&
-                    this.ServiceType.Equals(input.ServiceType))
-                ) && 
-                (
-                    this.User == input.User ||
-                    (this.User != null &&
-                    this.User.Equals(input.User))
-                ) && 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
-                ) && 
-                (
-                    this.ResourceName == input.ResourceName ||
-                    (this.ResourceName != null &&
-                    this.ResourceName.Equals(input.ResourceName))
-                ) && 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.TraceId == input.TraceId ||
-                    (this.TraceId != null &&
-                    this.TraceId.Equals(input.TraceId))
-                ) && 
-                (
-                    this.TraceName == input.TraceName ||
-                    (this.TraceName != null &&
-                    this.TraceName.Equals(input.TraceName))
-                ) && 
-                (
-                    this.TraceRating == input.TraceRating ||
-                    (this.TraceRating != null &&
-                    this.TraceRating.Equals(input.TraceRating))
-                ) && 
-                (
-                    this.AccessKeyId == input.AccessKeyId ||
-                    (this.AccessKeyId != null &&
-                    this.AccessKeyId.Equals(input.AccessKeyId))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -497,39 +432,23 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TraceType != null)
-                    hashCode = hashCode * 59 + this.TraceType.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.From != null)
-                    hashCode = hashCode * 59 + this.From.GetHashCode();
-                if (this.Next != null)
-                    hashCode = hashCode * 59 + this.Next.GetHashCode();
-                if (this.To != null)
-                    hashCode = hashCode * 59 + this.To.GetHashCode();
-                if (this.TrackerName != null)
-                    hashCode = hashCode * 59 + this.TrackerName.GetHashCode();
-                if (this.ServiceType != null)
-                    hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
-                if (this.User != null)
-                    hashCode = hashCode * 59 + this.User.GetHashCode();
-                if (this.ResourceId != null)
-                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
-                if (this.ResourceName != null)
-                    hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
-                if (this.TraceId != null)
-                    hashCode = hashCode * 59 + this.TraceId.GetHashCode();
-                if (this.TraceName != null)
-                    hashCode = hashCode * 59 + this.TraceName.GetHashCode();
-                if (this.TraceRating != null)
-                    hashCode = hashCode * 59 + this.TraceRating.GetHashCode();
-                if (this.AccessKeyId != null)
-                    hashCode = hashCode * 59 + this.AccessKeyId.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.TraceType.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.From != null) hashCode = hashCode * 59 + this.From.GetHashCode();
+                if (this.Next != null) hashCode = hashCode * 59 + this.Next.GetHashCode();
+                if (this.To != null) hashCode = hashCode * 59 + this.To.GetHashCode();
+                if (this.TrackerName != null) hashCode = hashCode * 59 + this.TrackerName.GetHashCode();
+                if (this.ServiceType != null) hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
+                if (this.User != null) hashCode = hashCode * 59 + this.User.GetHashCode();
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
+                if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.TraceId != null) hashCode = hashCode * 59 + this.TraceId.GetHashCode();
+                if (this.TraceName != null) hashCode = hashCode * 59 + this.TraceName.GetHashCode();
+                hashCode = hashCode * 59 + this.TraceRating.GetHashCode();
+                if (this.AccessKeyId != null) hashCode = hashCode * 59 + this.AccessKeyId.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

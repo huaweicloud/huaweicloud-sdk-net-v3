@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ReplayErrorClassification input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TargetName != input.TargetName || (this.TargetName != null && !this.TargetName.Equals(input.TargetName))) return false;
+            if (this.ErrorType != input.ErrorType || (this.ErrorType != null && !this.ErrorType.Equals(input.ErrorType))) return false;
+            if (this.ErrorCnt != input.ErrorCnt || (this.ErrorCnt != null && !this.ErrorCnt.Equals(input.ErrorCnt))) return false;
+            if (this.ErrorTemplateCnt != input.ErrorTemplateCnt || (this.ErrorTemplateCnt != null && !this.ErrorTemplateCnt.Equals(input.ErrorTemplateCnt))) return false;
 
-            return 
-                (
-                    this.TargetName == input.TargetName ||
-                    (this.TargetName != null &&
-                    this.TargetName.Equals(input.TargetName))
-                ) && 
-                (
-                    this.ErrorType == input.ErrorType ||
-                    (this.ErrorType != null &&
-                    this.ErrorType.Equals(input.ErrorType))
-                ) && 
-                (
-                    this.ErrorCnt == input.ErrorCnt ||
-                    (this.ErrorCnt != null &&
-                    this.ErrorCnt.Equals(input.ErrorCnt))
-                ) && 
-                (
-                    this.ErrorTemplateCnt == input.ErrorTemplateCnt ||
-                    (this.ErrorTemplateCnt != null &&
-                    this.ErrorTemplateCnt.Equals(input.ErrorTemplateCnt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TargetName != null)
-                    hashCode = hashCode * 59 + this.TargetName.GetHashCode();
-                if (this.ErrorType != null)
-                    hashCode = hashCode * 59 + this.ErrorType.GetHashCode();
-                if (this.ErrorCnt != null)
-                    hashCode = hashCode * 59 + this.ErrorCnt.GetHashCode();
-                if (this.ErrorTemplateCnt != null)
-                    hashCode = hashCode * 59 + this.ErrorTemplateCnt.GetHashCode();
+                var hashCode = 41;
+                if (this.TargetName != null) hashCode = hashCode * 59 + this.TargetName.GetHashCode();
+                if (this.ErrorType != null) hashCode = hashCode * 59 + this.ErrorType.GetHashCode();
+                if (this.ErrorCnt != null) hashCode = hashCode * 59 + this.ErrorCnt.GetHashCode();
+                if (this.ErrorTemplateCnt != null) hashCode = hashCode * 59 + this.ErrorTemplateCnt.GetHashCode();
                 return hashCode;
             }
         }

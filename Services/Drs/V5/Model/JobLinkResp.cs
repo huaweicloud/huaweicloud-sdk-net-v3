@@ -1077,57 +1077,18 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(JobLinkResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobType != input.JobType) return false;
+            if (this.EngineType != input.EngineType) return false;
+            if (this.SourceEndpointType != input.SourceEndpointType) return false;
+            if (this.TargetEndpointType != input.TargetEndpointType) return false;
+            if (this.JobDirection != input.JobDirection) return false;
+            if (this.NetType != input.NetType) return false;
+            if (this.TaskTypes != input.TaskTypes || (this.TaskTypes != null && input.TaskTypes != null && !this.TaskTypes.SequenceEqual(input.TaskTypes))) return false;
+            if (this.ClusterModes != input.ClusterModes || (this.ClusterModes != null && input.ClusterModes != null && !this.ClusterModes.SequenceEqual(input.ClusterModes))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
 
-            return 
-                (
-                    this.JobType == input.JobType ||
-                    (this.JobType != null &&
-                    this.JobType.Equals(input.JobType))
-                ) && 
-                (
-                    this.EngineType == input.EngineType ||
-                    (this.EngineType != null &&
-                    this.EngineType.Equals(input.EngineType))
-                ) && 
-                (
-                    this.SourceEndpointType == input.SourceEndpointType ||
-                    (this.SourceEndpointType != null &&
-                    this.SourceEndpointType.Equals(input.SourceEndpointType))
-                ) && 
-                (
-                    this.TargetEndpointType == input.TargetEndpointType ||
-                    (this.TargetEndpointType != null &&
-                    this.TargetEndpointType.Equals(input.TargetEndpointType))
-                ) && 
-                (
-                    this.JobDirection == input.JobDirection ||
-                    (this.JobDirection != null &&
-                    this.JobDirection.Equals(input.JobDirection))
-                ) && 
-                (
-                    this.NetType == input.NetType ||
-                    (this.NetType != null &&
-                    this.NetType.Equals(input.NetType))
-                ) && 
-                (
-                    this.TaskTypes == input.TaskTypes ||
-                    this.TaskTypes != null &&
-                    input.TaskTypes != null &&
-                    this.TaskTypes.SequenceEqual(input.TaskTypes)
-                ) && 
-                (
-                    this.ClusterModes == input.ClusterModes ||
-                    this.ClusterModes != null &&
-                    input.ClusterModes != null &&
-                    this.ClusterModes.SequenceEqual(input.ClusterModes)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                );
+            return true;
         }
 
         /// <summary>
@@ -1137,25 +1098,16 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobType != null)
-                    hashCode = hashCode * 59 + this.JobType.GetHashCode();
-                if (this.EngineType != null)
-                    hashCode = hashCode * 59 + this.EngineType.GetHashCode();
-                if (this.SourceEndpointType != null)
-                    hashCode = hashCode * 59 + this.SourceEndpointType.GetHashCode();
-                if (this.TargetEndpointType != null)
-                    hashCode = hashCode * 59 + this.TargetEndpointType.GetHashCode();
-                if (this.JobDirection != null)
-                    hashCode = hashCode * 59 + this.JobDirection.GetHashCode();
-                if (this.NetType != null)
-                    hashCode = hashCode * 59 + this.NetType.GetHashCode();
-                if (this.TaskTypes != null)
-                    hashCode = hashCode * 59 + this.TaskTypes.GetHashCode();
-                if (this.ClusterModes != null)
-                    hashCode = hashCode * 59 + this.ClusterModes.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.JobType.GetHashCode();
+                hashCode = hashCode * 59 + this.EngineType.GetHashCode();
+                hashCode = hashCode * 59 + this.SourceEndpointType.GetHashCode();
+                hashCode = hashCode * 59 + this.TargetEndpointType.GetHashCode();
+                hashCode = hashCode * 59 + this.JobDirection.GetHashCode();
+                hashCode = hashCode * 59 + this.NetType.GetHashCode();
+                hashCode = hashCode * 59 + this.TaskTypes.GetHashCode();
+                hashCode = hashCode * 59 + this.ClusterModes.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

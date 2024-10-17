@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(CreateUrlAuthchainResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Keychain != input.Keychain || (this.Keychain != null && input.Keychain != null && !this.Keychain.SequenceEqual(input.Keychain))) return false;
 
-            return 
-                (
-                    this.Keychain == input.Keychain ||
-                    this.Keychain != null &&
-                    input.Keychain != null &&
-                    this.Keychain.SequenceEqual(input.Keychain)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Keychain != null)
-                    hashCode = hashCode * 59 + this.Keychain.GetHashCode();
+                var hashCode = 41;
+                if (this.Keychain != null) hashCode = hashCode * 59 + this.Keychain.GetHashCode();
                 return hashCode;
             }
         }

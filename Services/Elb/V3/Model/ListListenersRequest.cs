@@ -266,169 +266,37 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(ListListenersRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.PageReverse != input.PageReverse || (this.PageReverse != null && !this.PageReverse.Equals(input.PageReverse))) return false;
+            if (this.ProtocolPort != input.ProtocolPort || (this.ProtocolPort != null && input.ProtocolPort != null && !this.ProtocolPort.SequenceEqual(input.ProtocolPort))) return false;
+            if (this.Protocol != input.Protocol || (this.Protocol != null && input.Protocol != null && !this.Protocol.SequenceEqual(input.Protocol))) return false;
+            if (this.Description != input.Description || (this.Description != null && input.Description != null && !this.Description.SequenceEqual(input.Description))) return false;
+            if (this.DefaultTlsContainerRef != input.DefaultTlsContainerRef || (this.DefaultTlsContainerRef != null && input.DefaultTlsContainerRef != null && !this.DefaultTlsContainerRef.SequenceEqual(input.DefaultTlsContainerRef))) return false;
+            if (this.ClientCaTlsContainerRef != input.ClientCaTlsContainerRef || (this.ClientCaTlsContainerRef != null && input.ClientCaTlsContainerRef != null && !this.ClientCaTlsContainerRef.SequenceEqual(input.ClientCaTlsContainerRef))) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.ConnectionLimit != input.ConnectionLimit || (this.ConnectionLimit != null && input.ConnectionLimit != null && !this.ConnectionLimit.SequenceEqual(input.ConnectionLimit))) return false;
+            if (this.DefaultPoolId != input.DefaultPoolId || (this.DefaultPoolId != null && input.DefaultPoolId != null && !this.DefaultPoolId.SequenceEqual(input.DefaultPoolId))) return false;
+            if (this.Id != input.Id || (this.Id != null && input.Id != null && !this.Id.SequenceEqual(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && input.Name != null && !this.Name.SequenceEqual(input.Name))) return false;
+            if (this.Http2Enable != input.Http2Enable || (this.Http2Enable != null && !this.Http2Enable.Equals(input.Http2Enable))) return false;
+            if (this.LoadbalancerId != input.LoadbalancerId || (this.LoadbalancerId != null && input.LoadbalancerId != null && !this.LoadbalancerId.SequenceEqual(input.LoadbalancerId))) return false;
+            if (this.TlsCiphersPolicy != input.TlsCiphersPolicy || (this.TlsCiphersPolicy != null && input.TlsCiphersPolicy != null && !this.TlsCiphersPolicy.SequenceEqual(input.TlsCiphersPolicy))) return false;
+            if (this.MemberAddress != input.MemberAddress || (this.MemberAddress != null && input.MemberAddress != null && !this.MemberAddress.SequenceEqual(input.MemberAddress))) return false;
+            if (this.MemberDeviceId != input.MemberDeviceId || (this.MemberDeviceId != null && input.MemberDeviceId != null && !this.MemberDeviceId.SequenceEqual(input.MemberDeviceId))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && input.EnterpriseProjectId != null && !this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId))) return false;
+            if (this.EnableMemberRetry != input.EnableMemberRetry || (this.EnableMemberRetry != null && !this.EnableMemberRetry.Equals(input.EnableMemberRetry))) return false;
+            if (this.MemberTimeout != input.MemberTimeout || (this.MemberTimeout != null && input.MemberTimeout != null && !this.MemberTimeout.SequenceEqual(input.MemberTimeout))) return false;
+            if (this.ClientTimeout != input.ClientTimeout || (this.ClientTimeout != null && input.ClientTimeout != null && !this.ClientTimeout.SequenceEqual(input.ClientTimeout))) return false;
+            if (this.KeepaliveTimeout != input.KeepaliveTimeout || (this.KeepaliveTimeout != null && input.KeepaliveTimeout != null && !this.KeepaliveTimeout.SequenceEqual(input.KeepaliveTimeout))) return false;
+            if (this.TransparentClientIpEnable != input.TransparentClientIpEnable || (this.TransparentClientIpEnable != null && !this.TransparentClientIpEnable.Equals(input.TransparentClientIpEnable))) return false;
+            if (this.ProxyProtocolEnable != input.ProxyProtocolEnable || (this.ProxyProtocolEnable != null && !this.ProxyProtocolEnable.Equals(input.ProxyProtocolEnable))) return false;
+            if (this.EnhanceL7policyEnable != input.EnhanceL7policyEnable || (this.EnhanceL7policyEnable != null && !this.EnhanceL7policyEnable.Equals(input.EnhanceL7policyEnable))) return false;
+            if (this.MemberInstanceId != input.MemberInstanceId || (this.MemberInstanceId != null && input.MemberInstanceId != null && !this.MemberInstanceId.SequenceEqual(input.MemberInstanceId))) return false;
+            if (this.ProtectionStatus != input.ProtectionStatus || (this.ProtectionStatus != null && input.ProtectionStatus != null && !this.ProtectionStatus.SequenceEqual(input.ProtectionStatus))) return false;
 
-            return 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.PageReverse == input.PageReverse ||
-                    (this.PageReverse != null &&
-                    this.PageReverse.Equals(input.PageReverse))
-                ) && 
-                (
-                    this.ProtocolPort == input.ProtocolPort ||
-                    this.ProtocolPort != null &&
-                    input.ProtocolPort != null &&
-                    this.ProtocolPort.SequenceEqual(input.ProtocolPort)
-                ) && 
-                (
-                    this.Protocol == input.Protocol ||
-                    this.Protocol != null &&
-                    input.Protocol != null &&
-                    this.Protocol.SequenceEqual(input.Protocol)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    this.Description != null &&
-                    input.Description != null &&
-                    this.Description.SequenceEqual(input.Description)
-                ) && 
-                (
-                    this.DefaultTlsContainerRef == input.DefaultTlsContainerRef ||
-                    this.DefaultTlsContainerRef != null &&
-                    input.DefaultTlsContainerRef != null &&
-                    this.DefaultTlsContainerRef.SequenceEqual(input.DefaultTlsContainerRef)
-                ) && 
-                (
-                    this.ClientCaTlsContainerRef == input.ClientCaTlsContainerRef ||
-                    this.ClientCaTlsContainerRef != null &&
-                    input.ClientCaTlsContainerRef != null &&
-                    this.ClientCaTlsContainerRef.SequenceEqual(input.ClientCaTlsContainerRef)
-                ) && 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.ConnectionLimit == input.ConnectionLimit ||
-                    this.ConnectionLimit != null &&
-                    input.ConnectionLimit != null &&
-                    this.ConnectionLimit.SequenceEqual(input.ConnectionLimit)
-                ) && 
-                (
-                    this.DefaultPoolId == input.DefaultPoolId ||
-                    this.DefaultPoolId != null &&
-                    input.DefaultPoolId != null &&
-                    this.DefaultPoolId.SequenceEqual(input.DefaultPoolId)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    this.Id != null &&
-                    input.Id != null &&
-                    this.Id.SequenceEqual(input.Id)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    this.Name != null &&
-                    input.Name != null &&
-                    this.Name.SequenceEqual(input.Name)
-                ) && 
-                (
-                    this.Http2Enable == input.Http2Enable ||
-                    (this.Http2Enable != null &&
-                    this.Http2Enable.Equals(input.Http2Enable))
-                ) && 
-                (
-                    this.LoadbalancerId == input.LoadbalancerId ||
-                    this.LoadbalancerId != null &&
-                    input.LoadbalancerId != null &&
-                    this.LoadbalancerId.SequenceEqual(input.LoadbalancerId)
-                ) && 
-                (
-                    this.TlsCiphersPolicy == input.TlsCiphersPolicy ||
-                    this.TlsCiphersPolicy != null &&
-                    input.TlsCiphersPolicy != null &&
-                    this.TlsCiphersPolicy.SequenceEqual(input.TlsCiphersPolicy)
-                ) && 
-                (
-                    this.MemberAddress == input.MemberAddress ||
-                    this.MemberAddress != null &&
-                    input.MemberAddress != null &&
-                    this.MemberAddress.SequenceEqual(input.MemberAddress)
-                ) && 
-                (
-                    this.MemberDeviceId == input.MemberDeviceId ||
-                    this.MemberDeviceId != null &&
-                    input.MemberDeviceId != null &&
-                    this.MemberDeviceId.SequenceEqual(input.MemberDeviceId)
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    this.EnterpriseProjectId != null &&
-                    input.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.SequenceEqual(input.EnterpriseProjectId)
-                ) && 
-                (
-                    this.EnableMemberRetry == input.EnableMemberRetry ||
-                    (this.EnableMemberRetry != null &&
-                    this.EnableMemberRetry.Equals(input.EnableMemberRetry))
-                ) && 
-                (
-                    this.MemberTimeout == input.MemberTimeout ||
-                    this.MemberTimeout != null &&
-                    input.MemberTimeout != null &&
-                    this.MemberTimeout.SequenceEqual(input.MemberTimeout)
-                ) && 
-                (
-                    this.ClientTimeout == input.ClientTimeout ||
-                    this.ClientTimeout != null &&
-                    input.ClientTimeout != null &&
-                    this.ClientTimeout.SequenceEqual(input.ClientTimeout)
-                ) && 
-                (
-                    this.KeepaliveTimeout == input.KeepaliveTimeout ||
-                    this.KeepaliveTimeout != null &&
-                    input.KeepaliveTimeout != null &&
-                    this.KeepaliveTimeout.SequenceEqual(input.KeepaliveTimeout)
-                ) && 
-                (
-                    this.TransparentClientIpEnable == input.TransparentClientIpEnable ||
-                    (this.TransparentClientIpEnable != null &&
-                    this.TransparentClientIpEnable.Equals(input.TransparentClientIpEnable))
-                ) && 
-                (
-                    this.ProxyProtocolEnable == input.ProxyProtocolEnable ||
-                    (this.ProxyProtocolEnable != null &&
-                    this.ProxyProtocolEnable.Equals(input.ProxyProtocolEnable))
-                ) && 
-                (
-                    this.EnhanceL7policyEnable == input.EnhanceL7policyEnable ||
-                    (this.EnhanceL7policyEnable != null &&
-                    this.EnhanceL7policyEnable.Equals(input.EnhanceL7policyEnable))
-                ) && 
-                (
-                    this.MemberInstanceId == input.MemberInstanceId ||
-                    this.MemberInstanceId != null &&
-                    input.MemberInstanceId != null &&
-                    this.MemberInstanceId.SequenceEqual(input.MemberInstanceId)
-                ) && 
-                (
-                    this.ProtectionStatus == input.ProtectionStatus ||
-                    this.ProtectionStatus != null &&
-                    input.ProtectionStatus != null &&
-                    this.ProtectionStatus.SequenceEqual(input.ProtectionStatus)
-                );
+            return true;
         }
 
         /// <summary>
@@ -438,63 +306,35 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.PageReverse != null)
-                    hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
-                if (this.ProtocolPort != null)
-                    hashCode = hashCode * 59 + this.ProtocolPort.GetHashCode();
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.DefaultTlsContainerRef != null)
-                    hashCode = hashCode * 59 + this.DefaultTlsContainerRef.GetHashCode();
-                if (this.ClientCaTlsContainerRef != null)
-                    hashCode = hashCode * 59 + this.ClientCaTlsContainerRef.GetHashCode();
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.ConnectionLimit != null)
-                    hashCode = hashCode * 59 + this.ConnectionLimit.GetHashCode();
-                if (this.DefaultPoolId != null)
-                    hashCode = hashCode * 59 + this.DefaultPoolId.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Http2Enable != null)
-                    hashCode = hashCode * 59 + this.Http2Enable.GetHashCode();
-                if (this.LoadbalancerId != null)
-                    hashCode = hashCode * 59 + this.LoadbalancerId.GetHashCode();
-                if (this.TlsCiphersPolicy != null)
-                    hashCode = hashCode * 59 + this.TlsCiphersPolicy.GetHashCode();
-                if (this.MemberAddress != null)
-                    hashCode = hashCode * 59 + this.MemberAddress.GetHashCode();
-                if (this.MemberDeviceId != null)
-                    hashCode = hashCode * 59 + this.MemberDeviceId.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.EnableMemberRetry != null)
-                    hashCode = hashCode * 59 + this.EnableMemberRetry.GetHashCode();
-                if (this.MemberTimeout != null)
-                    hashCode = hashCode * 59 + this.MemberTimeout.GetHashCode();
-                if (this.ClientTimeout != null)
-                    hashCode = hashCode * 59 + this.ClientTimeout.GetHashCode();
-                if (this.KeepaliveTimeout != null)
-                    hashCode = hashCode * 59 + this.KeepaliveTimeout.GetHashCode();
-                if (this.TransparentClientIpEnable != null)
-                    hashCode = hashCode * 59 + this.TransparentClientIpEnable.GetHashCode();
-                if (this.ProxyProtocolEnable != null)
-                    hashCode = hashCode * 59 + this.ProxyProtocolEnable.GetHashCode();
-                if (this.EnhanceL7policyEnable != null)
-                    hashCode = hashCode * 59 + this.EnhanceL7policyEnable.GetHashCode();
-                if (this.MemberInstanceId != null)
-                    hashCode = hashCode * 59 + this.MemberInstanceId.GetHashCode();
-                if (this.ProtectionStatus != null)
-                    hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.PageReverse != null) hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
+                if (this.ProtocolPort != null) hashCode = hashCode * 59 + this.ProtocolPort.GetHashCode();
+                if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.DefaultTlsContainerRef != null) hashCode = hashCode * 59 + this.DefaultTlsContainerRef.GetHashCode();
+                if (this.ClientCaTlsContainerRef != null) hashCode = hashCode * 59 + this.ClientCaTlsContainerRef.GetHashCode();
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.ConnectionLimit != null) hashCode = hashCode * 59 + this.ConnectionLimit.GetHashCode();
+                if (this.DefaultPoolId != null) hashCode = hashCode * 59 + this.DefaultPoolId.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Http2Enable != null) hashCode = hashCode * 59 + this.Http2Enable.GetHashCode();
+                if (this.LoadbalancerId != null) hashCode = hashCode * 59 + this.LoadbalancerId.GetHashCode();
+                if (this.TlsCiphersPolicy != null) hashCode = hashCode * 59 + this.TlsCiphersPolicy.GetHashCode();
+                if (this.MemberAddress != null) hashCode = hashCode * 59 + this.MemberAddress.GetHashCode();
+                if (this.MemberDeviceId != null) hashCode = hashCode * 59 + this.MemberDeviceId.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.EnableMemberRetry != null) hashCode = hashCode * 59 + this.EnableMemberRetry.GetHashCode();
+                if (this.MemberTimeout != null) hashCode = hashCode * 59 + this.MemberTimeout.GetHashCode();
+                if (this.ClientTimeout != null) hashCode = hashCode * 59 + this.ClientTimeout.GetHashCode();
+                if (this.KeepaliveTimeout != null) hashCode = hashCode * 59 + this.KeepaliveTimeout.GetHashCode();
+                if (this.TransparentClientIpEnable != null) hashCode = hashCode * 59 + this.TransparentClientIpEnable.GetHashCode();
+                if (this.ProxyProtocolEnable != null) hashCode = hashCode * 59 + this.ProxyProtocolEnable.GetHashCode();
+                if (this.EnhanceL7policyEnable != null) hashCode = hashCode * 59 + this.EnhanceL7policyEnable.GetHashCode();
+                if (this.MemberInstanceId != null) hashCode = hashCode * 59 + this.MemberInstanceId.GetHashCode();
+                if (this.ProtectionStatus != null) hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
                 return hashCode;
             }
         }

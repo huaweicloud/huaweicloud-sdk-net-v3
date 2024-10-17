@@ -227,65 +227,20 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(PostPaidServerExtendParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ChargingMode != input.ChargingMode || (this.ChargingMode != null && !this.ChargingMode.Equals(input.ChargingMode))) return false;
+            if (this.RegionID != input.RegionID || (this.RegionID != null && !this.RegionID.Equals(input.RegionID))) return false;
+            if (this.SupportAutoRecovery != input.SupportAutoRecovery || (this.SupportAutoRecovery != null && !this.SupportAutoRecovery.Equals(input.SupportAutoRecovery))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.MarketType != input.MarketType || (this.MarketType != null && !this.MarketType.Equals(input.MarketType))) return false;
+            if (this.SpotPrice != input.SpotPrice || (this.SpotPrice != null && !this.SpotPrice.Equals(input.SpotPrice))) return false;
+            if (this.DiskPrior != input.DiskPrior || (this.DiskPrior != null && !this.DiskPrior.Equals(input.DiskPrior))) return false;
+            if (this.SpotDurationHours != input.SpotDurationHours || (this.SpotDurationHours != null && !this.SpotDurationHours.Equals(input.SpotDurationHours))) return false;
+            if (this.InterruptionPolicy != input.InterruptionPolicy) return false;
+            if (this.SpotDurationCount != input.SpotDurationCount || (this.SpotDurationCount != null && !this.SpotDurationCount.Equals(input.SpotDurationCount))) return false;
+            if (this.CbCsbsBackup != input.CbCsbsBackup || (this.CbCsbsBackup != null && !this.CbCsbsBackup.Equals(input.CbCsbsBackup))) return false;
 
-            return 
-                (
-                    this.ChargingMode == input.ChargingMode ||
-                    (this.ChargingMode != null &&
-                    this.ChargingMode.Equals(input.ChargingMode))
-                ) && 
-                (
-                    this.RegionID == input.RegionID ||
-                    (this.RegionID != null &&
-                    this.RegionID.Equals(input.RegionID))
-                ) && 
-                (
-                    this.SupportAutoRecovery == input.SupportAutoRecovery ||
-                    (this.SupportAutoRecovery != null &&
-                    this.SupportAutoRecovery.Equals(input.SupportAutoRecovery))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.MarketType == input.MarketType ||
-                    (this.MarketType != null &&
-                    this.MarketType.Equals(input.MarketType))
-                ) && 
-                (
-                    this.SpotPrice == input.SpotPrice ||
-                    (this.SpotPrice != null &&
-                    this.SpotPrice.Equals(input.SpotPrice))
-                ) && 
-                (
-                    this.DiskPrior == input.DiskPrior ||
-                    (this.DiskPrior != null &&
-                    this.DiskPrior.Equals(input.DiskPrior))
-                ) && 
-                (
-                    this.SpotDurationHours == input.SpotDurationHours ||
-                    (this.SpotDurationHours != null &&
-                    this.SpotDurationHours.Equals(input.SpotDurationHours))
-                ) && 
-                (
-                    this.InterruptionPolicy == input.InterruptionPolicy ||
-                    (this.InterruptionPolicy != null &&
-                    this.InterruptionPolicy.Equals(input.InterruptionPolicy))
-                ) && 
-                (
-                    this.SpotDurationCount == input.SpotDurationCount ||
-                    (this.SpotDurationCount != null &&
-                    this.SpotDurationCount.Equals(input.SpotDurationCount))
-                ) && 
-                (
-                    this.CbCsbsBackup == input.CbCsbsBackup ||
-                    (this.CbCsbsBackup != null &&
-                    this.CbCsbsBackup.Equals(input.CbCsbsBackup))
-                );
+            return true;
         }
 
         /// <summary>
@@ -295,29 +250,18 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ChargingMode != null)
-                    hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
-                if (this.RegionID != null)
-                    hashCode = hashCode * 59 + this.RegionID.GetHashCode();
-                if (this.SupportAutoRecovery != null)
-                    hashCode = hashCode * 59 + this.SupportAutoRecovery.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.MarketType != null)
-                    hashCode = hashCode * 59 + this.MarketType.GetHashCode();
-                if (this.SpotPrice != null)
-                    hashCode = hashCode * 59 + this.SpotPrice.GetHashCode();
-                if (this.DiskPrior != null)
-                    hashCode = hashCode * 59 + this.DiskPrior.GetHashCode();
-                if (this.SpotDurationHours != null)
-                    hashCode = hashCode * 59 + this.SpotDurationHours.GetHashCode();
-                if (this.InterruptionPolicy != null)
-                    hashCode = hashCode * 59 + this.InterruptionPolicy.GetHashCode();
-                if (this.SpotDurationCount != null)
-                    hashCode = hashCode * 59 + this.SpotDurationCount.GetHashCode();
-                if (this.CbCsbsBackup != null)
-                    hashCode = hashCode * 59 + this.CbCsbsBackup.GetHashCode();
+                var hashCode = 41;
+                if (this.ChargingMode != null) hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
+                if (this.RegionID != null) hashCode = hashCode * 59 + this.RegionID.GetHashCode();
+                if (this.SupportAutoRecovery != null) hashCode = hashCode * 59 + this.SupportAutoRecovery.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.MarketType != null) hashCode = hashCode * 59 + this.MarketType.GetHashCode();
+                if (this.SpotPrice != null) hashCode = hashCode * 59 + this.SpotPrice.GetHashCode();
+                if (this.DiskPrior != null) hashCode = hashCode * 59 + this.DiskPrior.GetHashCode();
+                if (this.SpotDurationHours != null) hashCode = hashCode * 59 + this.SpotDurationHours.GetHashCode();
+                hashCode = hashCode * 59 + this.InterruptionPolicy.GetHashCode();
+                if (this.SpotDurationCount != null) hashCode = hashCode * 59 + this.SpotDurationCount.GetHashCode();
+                if (this.CbCsbsBackup != null) hashCode = hashCode * 59 + this.CbCsbsBackup.GetHashCode();
                 return hashCode;
             }
         }

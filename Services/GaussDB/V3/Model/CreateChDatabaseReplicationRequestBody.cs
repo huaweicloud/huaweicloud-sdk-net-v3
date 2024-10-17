@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(CreateChDatabaseReplicationRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceInstanceId != input.SourceInstanceId || (this.SourceInstanceId != null && !this.SourceInstanceId.Equals(input.SourceInstanceId))) return false;
+            if (this.SourceNodeId != input.SourceNodeId || (this.SourceNodeId != null && !this.SourceNodeId.Equals(input.SourceNodeId))) return false;
+            if (this.SourceDatabase != input.SourceDatabase || (this.SourceDatabase != null && !this.SourceDatabase.Equals(input.SourceDatabase))) return false;
 
-            return 
-                (
-                    this.SourceInstanceId == input.SourceInstanceId ||
-                    (this.SourceInstanceId != null &&
-                    this.SourceInstanceId.Equals(input.SourceInstanceId))
-                ) && 
-                (
-                    this.SourceNodeId == input.SourceNodeId ||
-                    (this.SourceNodeId != null &&
-                    this.SourceNodeId.Equals(input.SourceNodeId))
-                ) && 
-                (
-                    this.SourceDatabase == input.SourceDatabase ||
-                    (this.SourceDatabase != null &&
-                    this.SourceDatabase.Equals(input.SourceDatabase))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceInstanceId != null)
-                    hashCode = hashCode * 59 + this.SourceInstanceId.GetHashCode();
-                if (this.SourceNodeId != null)
-                    hashCode = hashCode * 59 + this.SourceNodeId.GetHashCode();
-                if (this.SourceDatabase != null)
-                    hashCode = hashCode * 59 + this.SourceDatabase.GetHashCode();
+                var hashCode = 41;
+                if (this.SourceInstanceId != null) hashCode = hashCode * 59 + this.SourceInstanceId.GetHashCode();
+                if (this.SourceNodeId != null) hashCode = hashCode * 59 + this.SourceNodeId.GetHashCode();
+                if (this.SourceDatabase != null) hashCode = hashCode * 59 + this.SourceDatabase.GetHashCode();
                 return hashCode;
             }
         }

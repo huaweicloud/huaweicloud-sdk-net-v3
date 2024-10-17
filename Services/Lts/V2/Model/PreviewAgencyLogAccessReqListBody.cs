@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(PreviewAgencyLogAccessReqListBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PreviewAgencyList != input.PreviewAgencyList || (this.PreviewAgencyList != null && input.PreviewAgencyList != null && !this.PreviewAgencyList.SequenceEqual(input.PreviewAgencyList))) return false;
 
-            return 
-                (
-                    this.PreviewAgencyList == input.PreviewAgencyList ||
-                    this.PreviewAgencyList != null &&
-                    input.PreviewAgencyList != null &&
-                    this.PreviewAgencyList.SequenceEqual(input.PreviewAgencyList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PreviewAgencyList != null)
-                    hashCode = hashCode * 59 + this.PreviewAgencyList.GetHashCode();
+                var hashCode = 41;
+                if (this.PreviewAgencyList != null) hashCode = hashCode * 59 + this.PreviewAgencyList.GetHashCode();
                 return hashCode;
             }
         }

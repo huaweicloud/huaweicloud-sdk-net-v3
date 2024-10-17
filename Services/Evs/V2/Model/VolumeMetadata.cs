@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(VolumeMetadata input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SystemCmkid != input.SystemCmkid || (this.SystemCmkid != null && !this.SystemCmkid.Equals(input.SystemCmkid))) return false;
+            if (this.SystemEncrypted != input.SystemEncrypted || (this.SystemEncrypted != null && !this.SystemEncrypted.Equals(input.SystemEncrypted))) return false;
+            if (this.FullClone != input.FullClone || (this.FullClone != null && !this.FullClone.Equals(input.FullClone))) return false;
+            if (this.Hwpassthrough != input.Hwpassthrough || (this.Hwpassthrough != null && !this.Hwpassthrough.Equals(input.Hwpassthrough))) return false;
+            if (this.OrderID != input.OrderID || (this.OrderID != null && !this.OrderID.Equals(input.OrderID))) return false;
 
-            return 
-                (
-                    this.SystemCmkid == input.SystemCmkid ||
-                    (this.SystemCmkid != null &&
-                    this.SystemCmkid.Equals(input.SystemCmkid))
-                ) && 
-                (
-                    this.SystemEncrypted == input.SystemEncrypted ||
-                    (this.SystemEncrypted != null &&
-                    this.SystemEncrypted.Equals(input.SystemEncrypted))
-                ) && 
-                (
-                    this.FullClone == input.FullClone ||
-                    (this.FullClone != null &&
-                    this.FullClone.Equals(input.FullClone))
-                ) && 
-                (
-                    this.Hwpassthrough == input.Hwpassthrough ||
-                    (this.Hwpassthrough != null &&
-                    this.Hwpassthrough.Equals(input.Hwpassthrough))
-                ) && 
-                (
-                    this.OrderID == input.OrderID ||
-                    (this.OrderID != null &&
-                    this.OrderID.Equals(input.OrderID))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SystemCmkid != null)
-                    hashCode = hashCode * 59 + this.SystemCmkid.GetHashCode();
-                if (this.SystemEncrypted != null)
-                    hashCode = hashCode * 59 + this.SystemEncrypted.GetHashCode();
-                if (this.FullClone != null)
-                    hashCode = hashCode * 59 + this.FullClone.GetHashCode();
-                if (this.Hwpassthrough != null)
-                    hashCode = hashCode * 59 + this.Hwpassthrough.GetHashCode();
-                if (this.OrderID != null)
-                    hashCode = hashCode * 59 + this.OrderID.GetHashCode();
+                var hashCode = 41;
+                if (this.SystemCmkid != null) hashCode = hashCode * 59 + this.SystemCmkid.GetHashCode();
+                if (this.SystemEncrypted != null) hashCode = hashCode * 59 + this.SystemEncrypted.GetHashCode();
+                if (this.FullClone != null) hashCode = hashCode * 59 + this.FullClone.GetHashCode();
+                if (this.Hwpassthrough != null) hashCode = hashCode * 59 + this.Hwpassthrough.GetHashCode();
+                if (this.OrderID != null) hashCode = hashCode * 59 + this.OrderID.GetHashCode();
                 return hashCode;
             }
         }

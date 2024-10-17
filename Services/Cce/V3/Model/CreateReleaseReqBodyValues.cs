@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(CreateReleaseReqBodyValues input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ImagePullPolicy != input.ImagePullPolicy || (this.ImagePullPolicy != null && !this.ImagePullPolicy.Equals(input.ImagePullPolicy))) return false;
+            if (this.ImageTag != input.ImageTag || (this.ImageTag != null && !this.ImageTag.Equals(input.ImageTag))) return false;
 
-            return 
-                (
-                    this.ImagePullPolicy == input.ImagePullPolicy ||
-                    (this.ImagePullPolicy != null &&
-                    this.ImagePullPolicy.Equals(input.ImagePullPolicy))
-                ) && 
-                (
-                    this.ImageTag == input.ImageTag ||
-                    (this.ImageTag != null &&
-                    this.ImageTag.Equals(input.ImageTag))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ImagePullPolicy != null)
-                    hashCode = hashCode * 59 + this.ImagePullPolicy.GetHashCode();
-                if (this.ImageTag != null)
-                    hashCode = hashCode * 59 + this.ImageTag.GetHashCode();
+                var hashCode = 41;
+                if (this.ImagePullPolicy != null) hashCode = hashCode * 59 + this.ImagePullPolicy.GetHashCode();
+                if (this.ImageTag != null) hashCode = hashCode * 59 + this.ImageTag.GetHashCode();
                 return hashCode;
             }
         }

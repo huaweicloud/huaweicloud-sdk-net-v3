@@ -645,181 +645,42 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(ScalingGroups input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ScalingGroupName != input.ScalingGroupName || (this.ScalingGroupName != null && !this.ScalingGroupName.Equals(input.ScalingGroupName))) return false;
+            if (this.ScalingGroupId != input.ScalingGroupId || (this.ScalingGroupId != null && !this.ScalingGroupId.Equals(input.ScalingGroupId))) return false;
+            if (this.ScalingGroupStatus != input.ScalingGroupStatus) return false;
+            if (this.ScalingConfigurationId != input.ScalingConfigurationId || (this.ScalingConfigurationId != null && !this.ScalingConfigurationId.Equals(input.ScalingConfigurationId))) return false;
+            if (this.ScalingConfigurationName != input.ScalingConfigurationName || (this.ScalingConfigurationName != null && !this.ScalingConfigurationName.Equals(input.ScalingConfigurationName))) return false;
+            if (this.CurrentInstanceNumber != input.CurrentInstanceNumber || (this.CurrentInstanceNumber != null && !this.CurrentInstanceNumber.Equals(input.CurrentInstanceNumber))) return false;
+            if (this.DesireInstanceNumber != input.DesireInstanceNumber || (this.DesireInstanceNumber != null && !this.DesireInstanceNumber.Equals(input.DesireInstanceNumber))) return false;
+            if (this.MinInstanceNumber != input.MinInstanceNumber || (this.MinInstanceNumber != null && !this.MinInstanceNumber.Equals(input.MinInstanceNumber))) return false;
+            if (this.MaxInstanceNumber != input.MaxInstanceNumber || (this.MaxInstanceNumber != null && !this.MaxInstanceNumber.Equals(input.MaxInstanceNumber))) return false;
+            if (this.CoolDownTime != input.CoolDownTime || (this.CoolDownTime != null && !this.CoolDownTime.Equals(input.CoolDownTime))) return false;
+            if (this.LbListenerId != input.LbListenerId || (this.LbListenerId != null && !this.LbListenerId.Equals(input.LbListenerId))) return false;
+            if (this.LbaasListeners != input.LbaasListeners || (this.LbaasListeners != null && input.LbaasListeners != null && !this.LbaasListeners.SequenceEqual(input.LbaasListeners))) return false;
+            if (this.AvailableZones != input.AvailableZones || (this.AvailableZones != null && input.AvailableZones != null && !this.AvailableZones.SequenceEqual(input.AvailableZones))) return false;
+            if (this.Networks != input.Networks || (this.Networks != null && input.Networks != null && !this.Networks.SequenceEqual(input.Networks))) return false;
+            if (this.SecurityGroups != input.SecurityGroups || (this.SecurityGroups != null && input.SecurityGroups != null && !this.SecurityGroups.SequenceEqual(input.SecurityGroups))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
+            if (this.Detail != input.Detail || (this.Detail != null && !this.Detail.Equals(input.Detail))) return false;
+            if (this.IsScaling != input.IsScaling || (this.IsScaling != null && !this.IsScaling.Equals(input.IsScaling))) return false;
+            if (this.HealthPeriodicAuditMethod != input.HealthPeriodicAuditMethod) return false;
+            if (this.HealthPeriodicAuditTime != input.HealthPeriodicAuditTime || (this.HealthPeriodicAuditTime != null && !this.HealthPeriodicAuditTime.Equals(input.HealthPeriodicAuditTime))) return false;
+            if (this.HealthPeriodicAuditGracePeriod != input.HealthPeriodicAuditGracePeriod || (this.HealthPeriodicAuditGracePeriod != null && !this.HealthPeriodicAuditGracePeriod.Equals(input.HealthPeriodicAuditGracePeriod))) return false;
+            if (this.InstanceTerminatePolicy != input.InstanceTerminatePolicy) return false;
+            if (this.Notifications != input.Notifications || (this.Notifications != null && input.Notifications != null && !this.Notifications.SequenceEqual(input.Notifications))) return false;
+            if (this.DeletePublicip != input.DeletePublicip || (this.DeletePublicip != null && !this.DeletePublicip.Equals(input.DeletePublicip))) return false;
+            if (this.DeleteVolume != input.DeleteVolume || (this.DeleteVolume != null && !this.DeleteVolume.Equals(input.DeleteVolume))) return false;
+            if (this.CloudLocationId != input.CloudLocationId || (this.CloudLocationId != null && !this.CloudLocationId.Equals(input.CloudLocationId))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.ActivityType != input.ActivityType || (this.ActivityType != null && !this.ActivityType.Equals(input.ActivityType))) return false;
+            if (this.MultiAzPriorityPolicy != input.MultiAzPriorityPolicy || (this.MultiAzPriorityPolicy != null && !this.MultiAzPriorityPolicy.Equals(input.MultiAzPriorityPolicy))) return false;
+            if (this.IamAgencyName != input.IamAgencyName || (this.IamAgencyName != null && !this.IamAgencyName.Equals(input.IamAgencyName))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
 
-            return 
-                (
-                    this.ScalingGroupName == input.ScalingGroupName ||
-                    (this.ScalingGroupName != null &&
-                    this.ScalingGroupName.Equals(input.ScalingGroupName))
-                ) && 
-                (
-                    this.ScalingGroupId == input.ScalingGroupId ||
-                    (this.ScalingGroupId != null &&
-                    this.ScalingGroupId.Equals(input.ScalingGroupId))
-                ) && 
-                (
-                    this.ScalingGroupStatus == input.ScalingGroupStatus ||
-                    (this.ScalingGroupStatus != null &&
-                    this.ScalingGroupStatus.Equals(input.ScalingGroupStatus))
-                ) && 
-                (
-                    this.ScalingConfigurationId == input.ScalingConfigurationId ||
-                    (this.ScalingConfigurationId != null &&
-                    this.ScalingConfigurationId.Equals(input.ScalingConfigurationId))
-                ) && 
-                (
-                    this.ScalingConfigurationName == input.ScalingConfigurationName ||
-                    (this.ScalingConfigurationName != null &&
-                    this.ScalingConfigurationName.Equals(input.ScalingConfigurationName))
-                ) && 
-                (
-                    this.CurrentInstanceNumber == input.CurrentInstanceNumber ||
-                    (this.CurrentInstanceNumber != null &&
-                    this.CurrentInstanceNumber.Equals(input.CurrentInstanceNumber))
-                ) && 
-                (
-                    this.DesireInstanceNumber == input.DesireInstanceNumber ||
-                    (this.DesireInstanceNumber != null &&
-                    this.DesireInstanceNumber.Equals(input.DesireInstanceNumber))
-                ) && 
-                (
-                    this.MinInstanceNumber == input.MinInstanceNumber ||
-                    (this.MinInstanceNumber != null &&
-                    this.MinInstanceNumber.Equals(input.MinInstanceNumber))
-                ) && 
-                (
-                    this.MaxInstanceNumber == input.MaxInstanceNumber ||
-                    (this.MaxInstanceNumber != null &&
-                    this.MaxInstanceNumber.Equals(input.MaxInstanceNumber))
-                ) && 
-                (
-                    this.CoolDownTime == input.CoolDownTime ||
-                    (this.CoolDownTime != null &&
-                    this.CoolDownTime.Equals(input.CoolDownTime))
-                ) && 
-                (
-                    this.LbListenerId == input.LbListenerId ||
-                    (this.LbListenerId != null &&
-                    this.LbListenerId.Equals(input.LbListenerId))
-                ) && 
-                (
-                    this.LbaasListeners == input.LbaasListeners ||
-                    this.LbaasListeners != null &&
-                    input.LbaasListeners != null &&
-                    this.LbaasListeners.SequenceEqual(input.LbaasListeners)
-                ) && 
-                (
-                    this.AvailableZones == input.AvailableZones ||
-                    this.AvailableZones != null &&
-                    input.AvailableZones != null &&
-                    this.AvailableZones.SequenceEqual(input.AvailableZones)
-                ) && 
-                (
-                    this.Networks == input.Networks ||
-                    this.Networks != null &&
-                    input.Networks != null &&
-                    this.Networks.SequenceEqual(input.Networks)
-                ) && 
-                (
-                    this.SecurityGroups == input.SecurityGroups ||
-                    this.SecurityGroups != null &&
-                    input.SecurityGroups != null &&
-                    this.SecurityGroups.SequenceEqual(input.SecurityGroups)
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.VpcId == input.VpcId ||
-                    (this.VpcId != null &&
-                    this.VpcId.Equals(input.VpcId))
-                ) && 
-                (
-                    this.Detail == input.Detail ||
-                    (this.Detail != null &&
-                    this.Detail.Equals(input.Detail))
-                ) && 
-                (
-                    this.IsScaling == input.IsScaling ||
-                    (this.IsScaling != null &&
-                    this.IsScaling.Equals(input.IsScaling))
-                ) && 
-                (
-                    this.HealthPeriodicAuditMethod == input.HealthPeriodicAuditMethod ||
-                    (this.HealthPeriodicAuditMethod != null &&
-                    this.HealthPeriodicAuditMethod.Equals(input.HealthPeriodicAuditMethod))
-                ) && 
-                (
-                    this.HealthPeriodicAuditTime == input.HealthPeriodicAuditTime ||
-                    (this.HealthPeriodicAuditTime != null &&
-                    this.HealthPeriodicAuditTime.Equals(input.HealthPeriodicAuditTime))
-                ) && 
-                (
-                    this.HealthPeriodicAuditGracePeriod == input.HealthPeriodicAuditGracePeriod ||
-                    (this.HealthPeriodicAuditGracePeriod != null &&
-                    this.HealthPeriodicAuditGracePeriod.Equals(input.HealthPeriodicAuditGracePeriod))
-                ) && 
-                (
-                    this.InstanceTerminatePolicy == input.InstanceTerminatePolicy ||
-                    (this.InstanceTerminatePolicy != null &&
-                    this.InstanceTerminatePolicy.Equals(input.InstanceTerminatePolicy))
-                ) && 
-                (
-                    this.Notifications == input.Notifications ||
-                    this.Notifications != null &&
-                    input.Notifications != null &&
-                    this.Notifications.SequenceEqual(input.Notifications)
-                ) && 
-                (
-                    this.DeletePublicip == input.DeletePublicip ||
-                    (this.DeletePublicip != null &&
-                    this.DeletePublicip.Equals(input.DeletePublicip))
-                ) && 
-                (
-                    this.DeleteVolume == input.DeleteVolume ||
-                    (this.DeleteVolume != null &&
-                    this.DeleteVolume.Equals(input.DeleteVolume))
-                ) && 
-                (
-                    this.CloudLocationId == input.CloudLocationId ||
-                    (this.CloudLocationId != null &&
-                    this.CloudLocationId.Equals(input.CloudLocationId))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.ActivityType == input.ActivityType ||
-                    (this.ActivityType != null &&
-                    this.ActivityType.Equals(input.ActivityType))
-                ) && 
-                (
-                    this.MultiAzPriorityPolicy == input.MultiAzPriorityPolicy ||
-                    (this.MultiAzPriorityPolicy != null &&
-                    this.MultiAzPriorityPolicy.Equals(input.MultiAzPriorityPolicy))
-                ) && 
-                (
-                    this.IamAgencyName == input.IamAgencyName ||
-                    (this.IamAgencyName != null &&
-                    this.IamAgencyName.Equals(input.IamAgencyName))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                );
+            return true;
         }
 
         /// <summary>
@@ -829,73 +690,40 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ScalingGroupName != null)
-                    hashCode = hashCode * 59 + this.ScalingGroupName.GetHashCode();
-                if (this.ScalingGroupId != null)
-                    hashCode = hashCode * 59 + this.ScalingGroupId.GetHashCode();
-                if (this.ScalingGroupStatus != null)
-                    hashCode = hashCode * 59 + this.ScalingGroupStatus.GetHashCode();
-                if (this.ScalingConfigurationId != null)
-                    hashCode = hashCode * 59 + this.ScalingConfigurationId.GetHashCode();
-                if (this.ScalingConfigurationName != null)
-                    hashCode = hashCode * 59 + this.ScalingConfigurationName.GetHashCode();
-                if (this.CurrentInstanceNumber != null)
-                    hashCode = hashCode * 59 + this.CurrentInstanceNumber.GetHashCode();
-                if (this.DesireInstanceNumber != null)
-                    hashCode = hashCode * 59 + this.DesireInstanceNumber.GetHashCode();
-                if (this.MinInstanceNumber != null)
-                    hashCode = hashCode * 59 + this.MinInstanceNumber.GetHashCode();
-                if (this.MaxInstanceNumber != null)
-                    hashCode = hashCode * 59 + this.MaxInstanceNumber.GetHashCode();
-                if (this.CoolDownTime != null)
-                    hashCode = hashCode * 59 + this.CoolDownTime.GetHashCode();
-                if (this.LbListenerId != null)
-                    hashCode = hashCode * 59 + this.LbListenerId.GetHashCode();
-                if (this.LbaasListeners != null)
-                    hashCode = hashCode * 59 + this.LbaasListeners.GetHashCode();
-                if (this.AvailableZones != null)
-                    hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
-                if (this.Networks != null)
-                    hashCode = hashCode * 59 + this.Networks.GetHashCode();
-                if (this.SecurityGroups != null)
-                    hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.Detail != null)
-                    hashCode = hashCode * 59 + this.Detail.GetHashCode();
-                if (this.IsScaling != null)
-                    hashCode = hashCode * 59 + this.IsScaling.GetHashCode();
-                if (this.HealthPeriodicAuditMethod != null)
-                    hashCode = hashCode * 59 + this.HealthPeriodicAuditMethod.GetHashCode();
-                if (this.HealthPeriodicAuditTime != null)
-                    hashCode = hashCode * 59 + this.HealthPeriodicAuditTime.GetHashCode();
-                if (this.HealthPeriodicAuditGracePeriod != null)
-                    hashCode = hashCode * 59 + this.HealthPeriodicAuditGracePeriod.GetHashCode();
-                if (this.InstanceTerminatePolicy != null)
-                    hashCode = hashCode * 59 + this.InstanceTerminatePolicy.GetHashCode();
-                if (this.Notifications != null)
-                    hashCode = hashCode * 59 + this.Notifications.GetHashCode();
-                if (this.DeletePublicip != null)
-                    hashCode = hashCode * 59 + this.DeletePublicip.GetHashCode();
-                if (this.DeleteVolume != null)
-                    hashCode = hashCode * 59 + this.DeleteVolume.GetHashCode();
-                if (this.CloudLocationId != null)
-                    hashCode = hashCode * 59 + this.CloudLocationId.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.ActivityType != null)
-                    hashCode = hashCode * 59 + this.ActivityType.GetHashCode();
-                if (this.MultiAzPriorityPolicy != null)
-                    hashCode = hashCode * 59 + this.MultiAzPriorityPolicy.GetHashCode();
-                if (this.IamAgencyName != null)
-                    hashCode = hashCode * 59 + this.IamAgencyName.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                var hashCode = 41;
+                if (this.ScalingGroupName != null) hashCode = hashCode * 59 + this.ScalingGroupName.GetHashCode();
+                if (this.ScalingGroupId != null) hashCode = hashCode * 59 + this.ScalingGroupId.GetHashCode();
+                hashCode = hashCode * 59 + this.ScalingGroupStatus.GetHashCode();
+                if (this.ScalingConfigurationId != null) hashCode = hashCode * 59 + this.ScalingConfigurationId.GetHashCode();
+                if (this.ScalingConfigurationName != null) hashCode = hashCode * 59 + this.ScalingConfigurationName.GetHashCode();
+                if (this.CurrentInstanceNumber != null) hashCode = hashCode * 59 + this.CurrentInstanceNumber.GetHashCode();
+                if (this.DesireInstanceNumber != null) hashCode = hashCode * 59 + this.DesireInstanceNumber.GetHashCode();
+                if (this.MinInstanceNumber != null) hashCode = hashCode * 59 + this.MinInstanceNumber.GetHashCode();
+                if (this.MaxInstanceNumber != null) hashCode = hashCode * 59 + this.MaxInstanceNumber.GetHashCode();
+                if (this.CoolDownTime != null) hashCode = hashCode * 59 + this.CoolDownTime.GetHashCode();
+                if (this.LbListenerId != null) hashCode = hashCode * 59 + this.LbListenerId.GetHashCode();
+                if (this.LbaasListeners != null) hashCode = hashCode * 59 + this.LbaasListeners.GetHashCode();
+                if (this.AvailableZones != null) hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
+                if (this.Networks != null) hashCode = hashCode * 59 + this.Networks.GetHashCode();
+                if (this.SecurityGroups != null) hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.Detail != null) hashCode = hashCode * 59 + this.Detail.GetHashCode();
+                if (this.IsScaling != null) hashCode = hashCode * 59 + this.IsScaling.GetHashCode();
+                hashCode = hashCode * 59 + this.HealthPeriodicAuditMethod.GetHashCode();
+                if (this.HealthPeriodicAuditTime != null) hashCode = hashCode * 59 + this.HealthPeriodicAuditTime.GetHashCode();
+                if (this.HealthPeriodicAuditGracePeriod != null) hashCode = hashCode * 59 + this.HealthPeriodicAuditGracePeriod.GetHashCode();
+                hashCode = hashCode * 59 + this.InstanceTerminatePolicy.GetHashCode();
+                if (this.Notifications != null) hashCode = hashCode * 59 + this.Notifications.GetHashCode();
+                if (this.DeletePublicip != null) hashCode = hashCode * 59 + this.DeletePublicip.GetHashCode();
+                if (this.DeleteVolume != null) hashCode = hashCode * 59 + this.DeleteVolume.GetHashCode();
+                if (this.CloudLocationId != null) hashCode = hashCode * 59 + this.CloudLocationId.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.ActivityType != null) hashCode = hashCode * 59 + this.ActivityType.GetHashCode();
+                if (this.MultiAzPriorityPolicy != null) hashCode = hashCode * 59 + this.MultiAzPriorityPolicy.GetHashCode();
+                if (this.IamAgencyName != null) hashCode = hashCode * 59 + this.IamAgencyName.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
                 return hashCode;
             }
         }

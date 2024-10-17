@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(ModifyLb input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LbaasListener != input.LbaasListener || (this.LbaasListener != null && !this.LbaasListener.Equals(input.LbaasListener))) return false;
+            if (this.Listener != input.Listener || (this.Listener != null && !this.Listener.Equals(input.Listener))) return false;
+            if (this.FailedReason != input.FailedReason || (this.FailedReason != null && !this.FailedReason.Equals(input.FailedReason))) return false;
+            if (this.FailedDetails != input.FailedDetails || (this.FailedDetails != null && !this.FailedDetails.Equals(input.FailedDetails))) return false;
 
-            return 
-                (
-                    this.LbaasListener == input.LbaasListener ||
-                    (this.LbaasListener != null &&
-                    this.LbaasListener.Equals(input.LbaasListener))
-                ) && 
-                (
-                    this.Listener == input.Listener ||
-                    (this.Listener != null &&
-                    this.Listener.Equals(input.Listener))
-                ) && 
-                (
-                    this.FailedReason == input.FailedReason ||
-                    (this.FailedReason != null &&
-                    this.FailedReason.Equals(input.FailedReason))
-                ) && 
-                (
-                    this.FailedDetails == input.FailedDetails ||
-                    (this.FailedDetails != null &&
-                    this.FailedDetails.Equals(input.FailedDetails))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LbaasListener != null)
-                    hashCode = hashCode * 59 + this.LbaasListener.GetHashCode();
-                if (this.Listener != null)
-                    hashCode = hashCode * 59 + this.Listener.GetHashCode();
-                if (this.FailedReason != null)
-                    hashCode = hashCode * 59 + this.FailedReason.GetHashCode();
-                if (this.FailedDetails != null)
-                    hashCode = hashCode * 59 + this.FailedDetails.GetHashCode();
+                var hashCode = 41;
+                if (this.LbaasListener != null) hashCode = hashCode * 59 + this.LbaasListener.GetHashCode();
+                if (this.Listener != null) hashCode = hashCode * 59 + this.Listener.GetHashCode();
+                if (this.FailedReason != null) hashCode = hashCode * 59 + this.FailedReason.GetHashCode();
+                if (this.FailedDetails != null) hashCode = hashCode * 59 + this.FailedDetails.GetHashCode();
                 return hashCode;
             }
         }

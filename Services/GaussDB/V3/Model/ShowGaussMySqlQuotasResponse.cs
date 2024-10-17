@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ShowGaussMySqlQuotasResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.QuotaList != input.QuotaList || (this.QuotaList != null && input.QuotaList != null && !this.QuotaList.SequenceEqual(input.QuotaList))) return false;
+            if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
 
-            return 
-                (
-                    this.QuotaList == input.QuotaList ||
-                    this.QuotaList != null &&
-                    input.QuotaList != null &&
-                    this.QuotaList.SequenceEqual(input.QuotaList)
-                ) && 
-                (
-                    this.TotalCount == input.TotalCount ||
-                    (this.TotalCount != null &&
-                    this.TotalCount.Equals(input.TotalCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.QuotaList != null)
-                    hashCode = hashCode * 59 + this.QuotaList.GetHashCode();
-                if (this.TotalCount != null)
-                    hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
+                var hashCode = 41;
+                if (this.QuotaList != null) hashCode = hashCode * 59 + this.QuotaList.GetHashCode();
+                if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
                 return hashCode;
             }
         }

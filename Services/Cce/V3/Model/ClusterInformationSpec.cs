@@ -77,36 +77,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ClusterInformationSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.CustomSan != input.CustomSan || (this.CustomSan != null && input.CustomSan != null && !this.CustomSan.SequenceEqual(input.CustomSan))) return false;
+            if (this.ContainerNetwork != input.ContainerNetwork || (this.ContainerNetwork != null && !this.ContainerNetwork.Equals(input.ContainerNetwork))) return false;
+            if (this.EniNetwork != input.EniNetwork || (this.EniNetwork != null && !this.EniNetwork.Equals(input.EniNetwork))) return false;
+            if (this.HostNetwork != input.HostNetwork || (this.HostNetwork != null && !this.HostNetwork.Equals(input.HostNetwork))) return false;
 
-            return 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.CustomSan == input.CustomSan ||
-                    this.CustomSan != null &&
-                    input.CustomSan != null &&
-                    this.CustomSan.SequenceEqual(input.CustomSan)
-                ) && 
-                (
-                    this.ContainerNetwork == input.ContainerNetwork ||
-                    (this.ContainerNetwork != null &&
-                    this.ContainerNetwork.Equals(input.ContainerNetwork))
-                ) && 
-                (
-                    this.EniNetwork == input.EniNetwork ||
-                    (this.EniNetwork != null &&
-                    this.EniNetwork.Equals(input.EniNetwork))
-                ) && 
-                (
-                    this.HostNetwork == input.HostNetwork ||
-                    (this.HostNetwork != null &&
-                    this.HostNetwork.Equals(input.HostNetwork))
-                );
+            return true;
         }
 
         /// <summary>
@@ -116,17 +94,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.CustomSan != null)
-                    hashCode = hashCode * 59 + this.CustomSan.GetHashCode();
-                if (this.ContainerNetwork != null)
-                    hashCode = hashCode * 59 + this.ContainerNetwork.GetHashCode();
-                if (this.EniNetwork != null)
-                    hashCode = hashCode * 59 + this.EniNetwork.GetHashCode();
-                if (this.HostNetwork != null)
-                    hashCode = hashCode * 59 + this.HostNetwork.GetHashCode();
+                var hashCode = 41;
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.CustomSan != null) hashCode = hashCode * 59 + this.CustomSan.GetHashCode();
+                if (this.ContainerNetwork != null) hashCode = hashCode * 59 + this.ContainerNetwork.GetHashCode();
+                if (this.EniNetwork != null) hashCode = hashCode * 59 + this.EniNetwork.GetHashCode();
+                if (this.HostNetwork != null) hashCode = hashCode * 59 + this.HostNetwork.GetHashCode();
                 return hashCode;
             }
         }

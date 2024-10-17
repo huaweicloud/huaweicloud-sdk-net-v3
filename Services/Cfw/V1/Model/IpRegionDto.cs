@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(IpRegionDto input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RegionId != input.RegionId || (this.RegionId != null && !this.RegionId.Equals(input.RegionId))) return false;
+            if (this.DescriptionCn != input.DescriptionCn || (this.DescriptionCn != null && !this.DescriptionCn.Equals(input.DescriptionCn))) return false;
+            if (this.DescriptionEn != input.DescriptionEn || (this.DescriptionEn != null && !this.DescriptionEn.Equals(input.DescriptionEn))) return false;
+            if (this.RegionType != input.RegionType || (this.RegionType != null && !this.RegionType.Equals(input.RegionType))) return false;
 
-            return 
-                (
-                    this.RegionId == input.RegionId ||
-                    (this.RegionId != null &&
-                    this.RegionId.Equals(input.RegionId))
-                ) && 
-                (
-                    this.DescriptionCn == input.DescriptionCn ||
-                    (this.DescriptionCn != null &&
-                    this.DescriptionCn.Equals(input.DescriptionCn))
-                ) && 
-                (
-                    this.DescriptionEn == input.DescriptionEn ||
-                    (this.DescriptionEn != null &&
-                    this.DescriptionEn.Equals(input.DescriptionEn))
-                ) && 
-                (
-                    this.RegionType == input.RegionType ||
-                    (this.RegionType != null &&
-                    this.RegionType.Equals(input.RegionType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RegionId != null)
-                    hashCode = hashCode * 59 + this.RegionId.GetHashCode();
-                if (this.DescriptionCn != null)
-                    hashCode = hashCode * 59 + this.DescriptionCn.GetHashCode();
-                if (this.DescriptionEn != null)
-                    hashCode = hashCode * 59 + this.DescriptionEn.GetHashCode();
-                if (this.RegionType != null)
-                    hashCode = hashCode * 59 + this.RegionType.GetHashCode();
+                var hashCode = 41;
+                if (this.RegionId != null) hashCode = hashCode * 59 + this.RegionId.GetHashCode();
+                if (this.DescriptionCn != null) hashCode = hashCode * 59 + this.DescriptionCn.GetHashCode();
+                if (this.DescriptionEn != null) hashCode = hashCode * 59 + this.DescriptionEn.GetHashCode();
+                if (this.RegionType != null) hashCode = hashCode * 59 + this.RegionType.GetHashCode();
                 return hashCode;
             }
         }

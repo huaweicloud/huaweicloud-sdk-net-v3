@@ -191,35 +191,14 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         /// </summary>
         public bool Equals(ListUnblockQuotaStatisticsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type) return false;
+            if (this.TotalUnblockingQuota != input.TotalUnblockingQuota || (this.TotalUnblockingQuota != null && !this.TotalUnblockingQuota.Equals(input.TotalUnblockingQuota))) return false;
+            if (this.RemainingUnblockingQuota != input.RemainingUnblockingQuota || (this.RemainingUnblockingQuota != null && !this.RemainingUnblockingQuota.Equals(input.RemainingUnblockingQuota))) return false;
+            if (this.UnblockingQuotaToday != input.UnblockingQuotaToday || (this.UnblockingQuotaToday != null && !this.UnblockingQuotaToday.Equals(input.UnblockingQuotaToday))) return false;
+            if (this.RemainingUnblockingQuotaToday != input.RemainingUnblockingQuotaToday || (this.RemainingUnblockingQuotaToday != null && !this.RemainingUnblockingQuotaToday.Equals(input.RemainingUnblockingQuotaToday))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.TotalUnblockingQuota == input.TotalUnblockingQuota ||
-                    (this.TotalUnblockingQuota != null &&
-                    this.TotalUnblockingQuota.Equals(input.TotalUnblockingQuota))
-                ) && 
-                (
-                    this.RemainingUnblockingQuota == input.RemainingUnblockingQuota ||
-                    (this.RemainingUnblockingQuota != null &&
-                    this.RemainingUnblockingQuota.Equals(input.RemainingUnblockingQuota))
-                ) && 
-                (
-                    this.UnblockingQuotaToday == input.UnblockingQuotaToday ||
-                    (this.UnblockingQuotaToday != null &&
-                    this.UnblockingQuotaToday.Equals(input.UnblockingQuotaToday))
-                ) && 
-                (
-                    this.RemainingUnblockingQuotaToday == input.RemainingUnblockingQuotaToday ||
-                    (this.RemainingUnblockingQuotaToday != null &&
-                    this.RemainingUnblockingQuotaToday.Equals(input.RemainingUnblockingQuotaToday))
-                );
+            return true;
         }
 
         /// <summary>
@@ -229,17 +208,12 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.TotalUnblockingQuota != null)
-                    hashCode = hashCode * 59 + this.TotalUnblockingQuota.GetHashCode();
-                if (this.RemainingUnblockingQuota != null)
-                    hashCode = hashCode * 59 + this.RemainingUnblockingQuota.GetHashCode();
-                if (this.UnblockingQuotaToday != null)
-                    hashCode = hashCode * 59 + this.UnblockingQuotaToday.GetHashCode();
-                if (this.RemainingUnblockingQuotaToday != null)
-                    hashCode = hashCode * 59 + this.RemainingUnblockingQuotaToday.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.TotalUnblockingQuota != null) hashCode = hashCode * 59 + this.TotalUnblockingQuota.GetHashCode();
+                if (this.RemainingUnblockingQuota != null) hashCode = hashCode * 59 + this.RemainingUnblockingQuota.GetHashCode();
+                if (this.UnblockingQuotaToday != null) hashCode = hashCode * 59 + this.UnblockingQuotaToday.GetHashCode();
+                if (this.RemainingUnblockingQuotaToday != null) hashCode = hashCode * 59 + this.RemainingUnblockingQuotaToday.GetHashCode();
                 return hashCode;
             }
         }

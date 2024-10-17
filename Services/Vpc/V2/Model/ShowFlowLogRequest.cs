@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(ShowFlowLogRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FlowlogId != input.FlowlogId || (this.FlowlogId != null && !this.FlowlogId.Equals(input.FlowlogId))) return false;
 
-            return 
-                (
-                    this.FlowlogId == input.FlowlogId ||
-                    (this.FlowlogId != null &&
-                    this.FlowlogId.Equals(input.FlowlogId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FlowlogId != null)
-                    hashCode = hashCode * 59 + this.FlowlogId.GetHashCode();
+                var hashCode = 41;
+                if (this.FlowlogId != null) hashCode = hashCode * 59 + this.FlowlogId.GetHashCode();
                 return hashCode;
             }
         }

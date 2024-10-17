@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(DomainMigrate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AllRegions != input.AllRegions || (this.AllRegions != null && !this.AllRegions.Equals(input.AllRegions))) return false;
+            if (this.Reservation != input.Reservation || (this.Reservation != null && !this.Reservation.Equals(input.Reservation))) return false;
 
-            return 
-                (
-                    this.AllRegions == input.AllRegions ||
-                    (this.AllRegions != null &&
-                    this.AllRegions.Equals(input.AllRegions))
-                ) && 
-                (
-                    this.Reservation == input.Reservation ||
-                    (this.Reservation != null &&
-                    this.Reservation.Equals(input.Reservation))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AllRegions != null)
-                    hashCode = hashCode * 59 + this.AllRegions.GetHashCode();
-                if (this.Reservation != null)
-                    hashCode = hashCode * 59 + this.Reservation.GetHashCode();
+                var hashCode = 41;
+                if (this.AllRegions != null) hashCode = hashCode * 59 + this.AllRegions.GetHashCode();
+                if (this.Reservation != null) hashCode = hashCode * 59 + this.Reservation.GetHashCode();
                 return hashCode;
             }
         }

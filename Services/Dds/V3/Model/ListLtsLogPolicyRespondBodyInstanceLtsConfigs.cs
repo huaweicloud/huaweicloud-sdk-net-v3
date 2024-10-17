@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(ListLtsLogPolicyRespondBodyInstanceLtsConfigs input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Instance != input.Instance || (this.Instance != null && !this.Instance.Equals(input.Instance))) return false;
+            if (this.LtsConfigs != input.LtsConfigs || (this.LtsConfigs != null && input.LtsConfigs != null && !this.LtsConfigs.SequenceEqual(input.LtsConfigs))) return false;
 
-            return 
-                (
-                    this.Instance == input.Instance ||
-                    (this.Instance != null &&
-                    this.Instance.Equals(input.Instance))
-                ) && 
-                (
-                    this.LtsConfigs == input.LtsConfigs ||
-                    this.LtsConfigs != null &&
-                    input.LtsConfigs != null &&
-                    this.LtsConfigs.SequenceEqual(input.LtsConfigs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Instance != null)
-                    hashCode = hashCode * 59 + this.Instance.GetHashCode();
-                if (this.LtsConfigs != null)
-                    hashCode = hashCode * 59 + this.LtsConfigs.GetHashCode();
+                var hashCode = 41;
+                if (this.Instance != null) hashCode = hashCode * 59 + this.Instance.GetHashCode();
+                if (this.LtsConfigs != null) hashCode = hashCode * 59 + this.LtsConfigs.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(ShowAssetTempAuthorityResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SignStr != input.SignStr || (this.SignStr != null && !this.SignStr.Equals(input.SignStr))) return false;
 
-            return 
-                (
-                    this.SignStr == input.SignStr ||
-                    (this.SignStr != null &&
-                    this.SignStr.Equals(input.SignStr))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SignStr != null)
-                    hashCode = hashCode * 59 + this.SignStr.GetHashCode();
+                var hashCode = 41;
+                if (this.SignStr != null) hashCode = hashCode * 59 + this.SignStr.GetHashCode();
                 return hashCode;
             }
         }

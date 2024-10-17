@@ -66,25 +66,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(NovaListKeypairsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.OpenStackAPIVersion != input.OpenStackAPIVersion || (this.OpenStackAPIVersion != null && !this.OpenStackAPIVersion.Equals(input.OpenStackAPIVersion))) return false;
 
-            return 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.OpenStackAPIVersion == input.OpenStackAPIVersion ||
-                    (this.OpenStackAPIVersion != null &&
-                    this.OpenStackAPIVersion.Equals(input.OpenStackAPIVersion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +81,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.OpenStackAPIVersion != null)
-                    hashCode = hashCode * 59 + this.OpenStackAPIVersion.GetHashCode();
+                var hashCode = 41;
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.OpenStackAPIVersion != null) hashCode = hashCode * 59 + this.OpenStackAPIVersion.GetHashCode();
                 return hashCode;
             }
         }

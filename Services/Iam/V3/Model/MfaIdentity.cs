@@ -177,26 +177,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(MfaIdentity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Methods != input.Methods || (this.Methods != null && input.Methods != null && !this.Methods.SequenceEqual(input.Methods))) return false;
+            if (this.Password != input.Password || (this.Password != null && !this.Password.Equals(input.Password))) return false;
+            if (this.Totp != input.Totp || (this.Totp != null && !this.Totp.Equals(input.Totp))) return false;
 
-            return 
-                (
-                    this.Methods == input.Methods ||
-                    this.Methods != null &&
-                    input.Methods != null &&
-                    this.Methods.SequenceEqual(input.Methods)
-                ) && 
-                (
-                    this.Password == input.Password ||
-                    (this.Password != null &&
-                    this.Password.Equals(input.Password))
-                ) && 
-                (
-                    this.Totp == input.Totp ||
-                    (this.Totp != null &&
-                    this.Totp.Equals(input.Totp))
-                );
+            return true;
         }
 
         /// <summary>
@@ -206,13 +192,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Methods != null)
-                    hashCode = hashCode * 59 + this.Methods.GetHashCode();
-                if (this.Password != null)
-                    hashCode = hashCode * 59 + this.Password.GetHashCode();
-                if (this.Totp != null)
-                    hashCode = hashCode * 59 + this.Totp.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Methods.GetHashCode();
+                if (this.Password != null) hashCode = hashCode * 59 + this.Password.GetHashCode();
+                if (this.Totp != null) hashCode = hashCode * 59 + this.Totp.GetHashCode();
                 return hashCode;
             }
         }

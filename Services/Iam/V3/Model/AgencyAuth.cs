@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(AgencyAuth input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Identity != input.Identity || (this.Identity != null && !this.Identity.Equals(input.Identity))) return false;
 
-            return 
-                (
-                    this.Identity == input.Identity ||
-                    (this.Identity != null &&
-                    this.Identity.Equals(input.Identity))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Identity != null)
-                    hashCode = hashCode * 59 + this.Identity.GetHashCode();
+                var hashCode = 41;
+                if (this.Identity != null) hashCode = hashCode * 59 + this.Identity.GetHashCode();
                 return hashCode;
             }
         }

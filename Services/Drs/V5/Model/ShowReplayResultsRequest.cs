@@ -632,75 +632,22 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ShowReplayResultsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.XLanguage != input.XLanguage) return false;
+            if (this.Type != input.Type) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.SortKey != input.SortKey || (this.SortKey != null && !this.SortKey.Equals(input.SortKey))) return false;
+            if (this.SortDir != input.SortDir) return false;
+            if (this.TargetName != input.TargetName) return false;
+            if (this.IsSample != input.IsSample || (this.IsSample != null && !this.IsSample.Equals(input.IsSample))) return false;
+            if (this.ErrorType != input.ErrorType || (this.ErrorType != null && !this.ErrorType.Equals(input.ErrorType))) return false;
+            if (this.SqlTemplateMd5 != input.SqlTemplateMd5 || (this.SqlTemplateMd5 != null && !this.SqlTemplateMd5.Equals(input.SqlTemplateMd5))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.XLanguage == input.XLanguage ||
-                    (this.XLanguage != null &&
-                    this.XLanguage.Equals(input.XLanguage))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.SortKey == input.SortKey ||
-                    (this.SortKey != null &&
-                    this.SortKey.Equals(input.SortKey))
-                ) && 
-                (
-                    this.SortDir == input.SortDir ||
-                    (this.SortDir != null &&
-                    this.SortDir.Equals(input.SortDir))
-                ) && 
-                (
-                    this.TargetName == input.TargetName ||
-                    (this.TargetName != null &&
-                    this.TargetName.Equals(input.TargetName))
-                ) && 
-                (
-                    this.IsSample == input.IsSample ||
-                    (this.IsSample != null &&
-                    this.IsSample.Equals(input.IsSample))
-                ) && 
-                (
-                    this.ErrorType == input.ErrorType ||
-                    (this.ErrorType != null &&
-                    this.ErrorType.Equals(input.ErrorType))
-                ) && 
-                (
-                    this.SqlTemplateMd5 == input.SqlTemplateMd5 ||
-                    (this.SqlTemplateMd5 != null &&
-                    this.SqlTemplateMd5.Equals(input.SqlTemplateMd5))
-                );
+            return true;
         }
 
         /// <summary>
@@ -710,33 +657,20 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.XLanguage != null)
-                    hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.SortKey != null)
-                    hashCode = hashCode * 59 + this.SortKey.GetHashCode();
-                if (this.SortDir != null)
-                    hashCode = hashCode * 59 + this.SortDir.GetHashCode();
-                if (this.TargetName != null)
-                    hashCode = hashCode * 59 + this.TargetName.GetHashCode();
-                if (this.IsSample != null)
-                    hashCode = hashCode * 59 + this.IsSample.GetHashCode();
-                if (this.ErrorType != null)
-                    hashCode = hashCode * 59 + this.ErrorType.GetHashCode();
-                if (this.SqlTemplateMd5 != null)
-                    hashCode = hashCode * 59 + this.SqlTemplateMd5.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.SortKey != null) hashCode = hashCode * 59 + this.SortKey.GetHashCode();
+                hashCode = hashCode * 59 + this.SortDir.GetHashCode();
+                hashCode = hashCode * 59 + this.TargetName.GetHashCode();
+                if (this.IsSample != null) hashCode = hashCode * 59 + this.IsSample.GetHashCode();
+                if (this.ErrorType != null) hashCode = hashCode * 59 + this.ErrorType.GetHashCode();
+                if (this.SqlTemplateMd5 != null) hashCode = hashCode * 59 + this.SqlTemplateMd5.GetHashCode();
                 return hashCode;
             }
         }

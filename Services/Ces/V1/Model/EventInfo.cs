@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// </summary>
         public bool Equals(EventInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EventName != input.EventName || (this.EventName != null && !this.EventName.Equals(input.EventName))) return false;
+            if (this.EventType != input.EventType || (this.EventType != null && !this.EventType.Equals(input.EventType))) return false;
+            if (this.EventCount != input.EventCount || (this.EventCount != null && !this.EventCount.Equals(input.EventCount))) return false;
+            if (this.LatestOccurTime != input.LatestOccurTime || (this.LatestOccurTime != null && !this.LatestOccurTime.Equals(input.LatestOccurTime))) return false;
+            if (this.LatestEventSource != input.LatestEventSource || (this.LatestEventSource != null && !this.LatestEventSource.Equals(input.LatestEventSource))) return false;
 
-            return 
-                (
-                    this.EventName == input.EventName ||
-                    (this.EventName != null &&
-                    this.EventName.Equals(input.EventName))
-                ) && 
-                (
-                    this.EventType == input.EventType ||
-                    (this.EventType != null &&
-                    this.EventType.Equals(input.EventType))
-                ) && 
-                (
-                    this.EventCount == input.EventCount ||
-                    (this.EventCount != null &&
-                    this.EventCount.Equals(input.EventCount))
-                ) && 
-                (
-                    this.LatestOccurTime == input.LatestOccurTime ||
-                    (this.LatestOccurTime != null &&
-                    this.LatestOccurTime.Equals(input.LatestOccurTime))
-                ) && 
-                (
-                    this.LatestEventSource == input.LatestEventSource ||
-                    (this.LatestEventSource != null &&
-                    this.LatestEventSource.Equals(input.LatestEventSource))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EventName != null)
-                    hashCode = hashCode * 59 + this.EventName.GetHashCode();
-                if (this.EventType != null)
-                    hashCode = hashCode * 59 + this.EventType.GetHashCode();
-                if (this.EventCount != null)
-                    hashCode = hashCode * 59 + this.EventCount.GetHashCode();
-                if (this.LatestOccurTime != null)
-                    hashCode = hashCode * 59 + this.LatestOccurTime.GetHashCode();
-                if (this.LatestEventSource != null)
-                    hashCode = hashCode * 59 + this.LatestEventSource.GetHashCode();
+                var hashCode = 41;
+                if (this.EventName != null) hashCode = hashCode * 59 + this.EventName.GetHashCode();
+                if (this.EventType != null) hashCode = hashCode * 59 + this.EventType.GetHashCode();
+                if (this.EventCount != null) hashCode = hashCode * 59 + this.EventCount.GetHashCode();
+                if (this.LatestOccurTime != null) hashCode = hashCode * 59 + this.LatestOccurTime.GetHashCode();
+                if (this.LatestEventSource != null) hashCode = hashCode * 59 + this.LatestEventSource.GetHashCode();
                 return hashCode;
             }
         }

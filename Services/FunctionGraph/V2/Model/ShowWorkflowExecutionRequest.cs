@@ -66,25 +66,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(ShowWorkflowExecutionRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.WorkflowId != input.WorkflowId || (this.WorkflowId != null && !this.WorkflowId.Equals(input.WorkflowId))) return false;
+            if (this.ExecutionId != input.ExecutionId || (this.ExecutionId != null && !this.ExecutionId.Equals(input.ExecutionId))) return false;
+            if (this.XGetWorkflowFullHistoryData != input.XGetWorkflowFullHistoryData || (this.XGetWorkflowFullHistoryData != null && !this.XGetWorkflowFullHistoryData.Equals(input.XGetWorkflowFullHistoryData))) return false;
 
-            return 
-                (
-                    this.WorkflowId == input.WorkflowId ||
-                    (this.WorkflowId != null &&
-                    this.WorkflowId.Equals(input.WorkflowId))
-                ) && 
-                (
-                    this.ExecutionId == input.ExecutionId ||
-                    (this.ExecutionId != null &&
-                    this.ExecutionId.Equals(input.ExecutionId))
-                ) && 
-                (
-                    this.XGetWorkflowFullHistoryData == input.XGetWorkflowFullHistoryData ||
-                    (this.XGetWorkflowFullHistoryData != null &&
-                    this.XGetWorkflowFullHistoryData.Equals(input.XGetWorkflowFullHistoryData))
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +81,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.WorkflowId != null)
-                    hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
-                if (this.ExecutionId != null)
-                    hashCode = hashCode * 59 + this.ExecutionId.GetHashCode();
-                if (this.XGetWorkflowFullHistoryData != null)
-                    hashCode = hashCode * 59 + this.XGetWorkflowFullHistoryData.GetHashCode();
+                var hashCode = 41;
+                if (this.WorkflowId != null) hashCode = hashCode * 59 + this.WorkflowId.GetHashCode();
+                if (this.ExecutionId != null) hashCode = hashCode * 59 + this.ExecutionId.GetHashCode();
+                if (this.XGetWorkflowFullHistoryData != null) hashCode = hashCode * 59 + this.XGetWorkflowFullHistoryData.GetHashCode();
                 return hashCode;
             }
         }

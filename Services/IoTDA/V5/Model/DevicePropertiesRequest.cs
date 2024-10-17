@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(DevicePropertiesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Services != input.Services || (this.Services != null && !this.Services.Equals(input.Services))) return false;
 
-            return 
-                (
-                    this.Services == input.Services ||
-                    (this.Services != null &&
-                    this.Services.Equals(input.Services))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Services != null)
-                    hashCode = hashCode * 59 + this.Services.GetHashCode();
+                var hashCode = 41;
+                if (this.Services != null) hashCode = hashCode * 59 + this.Services.GetHashCode();
                 return hashCode;
             }
         }

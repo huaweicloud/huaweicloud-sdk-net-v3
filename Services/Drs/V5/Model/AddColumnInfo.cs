@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(AddColumnInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ColumnType != input.ColumnType || (this.ColumnType != null && !this.ColumnType.Equals(input.ColumnType))) return false;
+            if (this.ColumnName != input.ColumnName || (this.ColumnName != null && !this.ColumnName.Equals(input.ColumnName))) return false;
+            if (this.ColumnValue != input.ColumnValue || (this.ColumnValue != null && !this.ColumnValue.Equals(input.ColumnValue))) return false;
+            if (this.DataType != input.DataType || (this.DataType != null && !this.DataType.Equals(input.DataType))) return false;
 
-            return 
-                (
-                    this.ColumnType == input.ColumnType ||
-                    (this.ColumnType != null &&
-                    this.ColumnType.Equals(input.ColumnType))
-                ) && 
-                (
-                    this.ColumnName == input.ColumnName ||
-                    (this.ColumnName != null &&
-                    this.ColumnName.Equals(input.ColumnName))
-                ) && 
-                (
-                    this.ColumnValue == input.ColumnValue ||
-                    (this.ColumnValue != null &&
-                    this.ColumnValue.Equals(input.ColumnValue))
-                ) && 
-                (
-                    this.DataType == input.DataType ||
-                    (this.DataType != null &&
-                    this.DataType.Equals(input.DataType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ColumnType != null)
-                    hashCode = hashCode * 59 + this.ColumnType.GetHashCode();
-                if (this.ColumnName != null)
-                    hashCode = hashCode * 59 + this.ColumnName.GetHashCode();
-                if (this.ColumnValue != null)
-                    hashCode = hashCode * 59 + this.ColumnValue.GetHashCode();
-                if (this.DataType != null)
-                    hashCode = hashCode * 59 + this.DataType.GetHashCode();
+                var hashCode = 41;
+                if (this.ColumnType != null) hashCode = hashCode * 59 + this.ColumnType.GetHashCode();
+                if (this.ColumnName != null) hashCode = hashCode * 59 + this.ColumnName.GetHashCode();
+                if (this.ColumnValue != null) hashCode = hashCode * 59 + this.ColumnValue.GetHashCode();
+                if (this.DataType != null) hashCode = hashCode * 59 + this.DataType.GetHashCode();
                 return hashCode;
             }
         }

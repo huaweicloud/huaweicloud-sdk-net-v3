@@ -420,42 +420,15 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(CreateDataLevelCompareReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ConflictPolicy != input.ConflictPolicy) return false;
+            if (this.CompareType != input.CompareType) return false;
+            if (this.CompareMode != input.CompareMode) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.CompareObjectInfos != input.CompareObjectInfos || (this.CompareObjectInfos != null && input.CompareObjectInfos != null && !this.CompareObjectInfos.SequenceEqual(input.CompareObjectInfos))) return false;
+            if (this.CompareObjectInfosWithToken != input.CompareObjectInfosWithToken || (this.CompareObjectInfosWithToken != null && input.CompareObjectInfosWithToken != null && !this.CompareObjectInfosWithToken.SequenceEqual(input.CompareObjectInfosWithToken))) return false;
 
-            return 
-                (
-                    this.ConflictPolicy == input.ConflictPolicy ||
-                    (this.ConflictPolicy != null &&
-                    this.ConflictPolicy.Equals(input.ConflictPolicy))
-                ) && 
-                (
-                    this.CompareType == input.CompareType ||
-                    (this.CompareType != null &&
-                    this.CompareType.Equals(input.CompareType))
-                ) && 
-                (
-                    this.CompareMode == input.CompareMode ||
-                    (this.CompareMode != null &&
-                    this.CompareMode.Equals(input.CompareMode))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.CompareObjectInfos == input.CompareObjectInfos ||
-                    this.CompareObjectInfos != null &&
-                    input.CompareObjectInfos != null &&
-                    this.CompareObjectInfos.SequenceEqual(input.CompareObjectInfos)
-                ) && 
-                (
-                    this.CompareObjectInfosWithToken == input.CompareObjectInfosWithToken ||
-                    this.CompareObjectInfosWithToken != null &&
-                    input.CompareObjectInfosWithToken != null &&
-                    this.CompareObjectInfosWithToken.SequenceEqual(input.CompareObjectInfosWithToken)
-                );
+            return true;
         }
 
         /// <summary>
@@ -465,19 +438,13 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ConflictPolicy != null)
-                    hashCode = hashCode * 59 + this.ConflictPolicy.GetHashCode();
-                if (this.CompareType != null)
-                    hashCode = hashCode * 59 + this.CompareType.GetHashCode();
-                if (this.CompareMode != null)
-                    hashCode = hashCode * 59 + this.CompareMode.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.CompareObjectInfos != null)
-                    hashCode = hashCode * 59 + this.CompareObjectInfos.GetHashCode();
-                if (this.CompareObjectInfosWithToken != null)
-                    hashCode = hashCode * 59 + this.CompareObjectInfosWithToken.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.ConflictPolicy.GetHashCode();
+                hashCode = hashCode * 59 + this.CompareType.GetHashCode();
+                hashCode = hashCode * 59 + this.CompareMode.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.CompareObjectInfos != null) hashCode = hashCode * 59 + this.CompareObjectInfos.GetHashCode();
+                if (this.CompareObjectInfosWithToken != null) hashCode = hashCode * 59 + this.CompareObjectInfosWithToken.GetHashCode();
                 return hashCode;
             }
         }

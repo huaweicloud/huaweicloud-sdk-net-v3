@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ReinstallVolumeConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LvmConfig != input.LvmConfig || (this.LvmConfig != null && !this.LvmConfig.Equals(input.LvmConfig))) return false;
+            if (this.Storage != input.Storage || (this.Storage != null && !this.Storage.Equals(input.Storage))) return false;
 
-            return 
-                (
-                    this.LvmConfig == input.LvmConfig ||
-                    (this.LvmConfig != null &&
-                    this.LvmConfig.Equals(input.LvmConfig))
-                ) && 
-                (
-                    this.Storage == input.Storage ||
-                    (this.Storage != null &&
-                    this.Storage.Equals(input.Storage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LvmConfig != null)
-                    hashCode = hashCode * 59 + this.LvmConfig.GetHashCode();
-                if (this.Storage != null)
-                    hashCode = hashCode * 59 + this.Storage.GetHashCode();
+                var hashCode = 41;
+                if (this.LvmConfig != null) hashCode = hashCode * 59 + this.LvmConfig.GetHashCode();
+                if (this.Storage != null) hashCode = hashCode * 59 + this.Storage.GetHashCode();
                 return hashCode;
             }
         }

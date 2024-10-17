@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(WebImageContactInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Phone != input.Phone || (this.Phone != null && !this.Phone.Equals(input.Phone))) return false;
+            if (this.Province != input.Province || (this.Province != null && !this.Province.Equals(input.Province))) return false;
+            if (this.City != input.City || (this.City != null && !this.City.Equals(input.City))) return false;
+            if (this.District != input.District || (this.District != null && !this.District.Equals(input.District))) return false;
+            if (this.DetailAddress != input.DetailAddress || (this.DetailAddress != null && !this.DetailAddress.Equals(input.DetailAddress))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Phone == input.Phone ||
-                    (this.Phone != null &&
-                    this.Phone.Equals(input.Phone))
-                ) && 
-                (
-                    this.Province == input.Province ||
-                    (this.Province != null &&
-                    this.Province.Equals(input.Province))
-                ) && 
-                (
-                    this.City == input.City ||
-                    (this.City != null &&
-                    this.City.Equals(input.City))
-                ) && 
-                (
-                    this.District == input.District ||
-                    (this.District != null &&
-                    this.District.Equals(input.District))
-                ) && 
-                (
-                    this.DetailAddress == input.DetailAddress ||
-                    (this.DetailAddress != null &&
-                    this.DetailAddress.Equals(input.DetailAddress))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Phone != null)
-                    hashCode = hashCode * 59 + this.Phone.GetHashCode();
-                if (this.Province != null)
-                    hashCode = hashCode * 59 + this.Province.GetHashCode();
-                if (this.City != null)
-                    hashCode = hashCode * 59 + this.City.GetHashCode();
-                if (this.District != null)
-                    hashCode = hashCode * 59 + this.District.GetHashCode();
-                if (this.DetailAddress != null)
-                    hashCode = hashCode * 59 + this.DetailAddress.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Phone != null) hashCode = hashCode * 59 + this.Phone.GetHashCode();
+                if (this.Province != null) hashCode = hashCode * 59 + this.Province.GetHashCode();
+                if (this.City != null) hashCode = hashCode * 59 + this.City.GetHashCode();
+                if (this.District != null) hashCode = hashCode * 59 + this.District.GetHashCode();
+                if (this.DetailAddress != null) hashCode = hashCode * 59 + this.DetailAddress.GetHashCode();
                 return hashCode;
             }
         }

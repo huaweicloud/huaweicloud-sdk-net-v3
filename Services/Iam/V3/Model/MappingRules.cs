@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(MappingRules input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Local != input.Local || (this.Local != null && input.Local != null && !this.Local.SequenceEqual(input.Local))) return false;
+            if (this.Remote != input.Remote || (this.Remote != null && input.Remote != null && !this.Remote.SequenceEqual(input.Remote))) return false;
 
-            return 
-                (
-                    this.Local == input.Local ||
-                    this.Local != null &&
-                    input.Local != null &&
-                    this.Local.SequenceEqual(input.Local)
-                ) && 
-                (
-                    this.Remote == input.Remote ||
-                    this.Remote != null &&
-                    input.Remote != null &&
-                    this.Remote.SequenceEqual(input.Remote)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Local != null)
-                    hashCode = hashCode * 59 + this.Local.GetHashCode();
-                if (this.Remote != null)
-                    hashCode = hashCode * 59 + this.Remote.GetHashCode();
+                var hashCode = 41;
+                if (this.Local != null) hashCode = hashCode * 59 + this.Local.GetHashCode();
+                if (this.Remote != null) hashCode = hashCode * 59 + this.Remote.GetHashCode();
                 return hashCode;
             }
         }

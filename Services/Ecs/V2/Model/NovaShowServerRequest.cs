@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(NovaShowServerRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ServerId != input.ServerId || (this.ServerId != null && !this.ServerId.Equals(input.ServerId))) return false;
+            if (this.OpenStackAPIVersion != input.OpenStackAPIVersion || (this.OpenStackAPIVersion != null && !this.OpenStackAPIVersion.Equals(input.OpenStackAPIVersion))) return false;
 
-            return 
-                (
-                    this.ServerId == input.ServerId ||
-                    (this.ServerId != null &&
-                    this.ServerId.Equals(input.ServerId))
-                ) && 
-                (
-                    this.OpenStackAPIVersion == input.OpenStackAPIVersion ||
-                    (this.OpenStackAPIVersion != null &&
-                    this.OpenStackAPIVersion.Equals(input.OpenStackAPIVersion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ServerId != null)
-                    hashCode = hashCode * 59 + this.ServerId.GetHashCode();
-                if (this.OpenStackAPIVersion != null)
-                    hashCode = hashCode * 59 + this.OpenStackAPIVersion.GetHashCode();
+                var hashCode = 41;
+                if (this.ServerId != null) hashCode = hashCode * 59 + this.ServerId.GetHashCode();
+                if (this.OpenStackAPIVersion != null) hashCode = hashCode * 59 + this.OpenStackAPIVersion.GetHashCode();
                 return hashCode;
             }
         }

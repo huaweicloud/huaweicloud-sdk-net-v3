@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(GeneralTableResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.WordsRegionCount != input.WordsRegionCount || (this.WordsRegionCount != null && !this.WordsRegionCount.Equals(input.WordsRegionCount))) return false;
+            if (this.WordsRegionList != input.WordsRegionList || (this.WordsRegionList != null && input.WordsRegionList != null && !this.WordsRegionList.SequenceEqual(input.WordsRegionList))) return false;
+            if (this.Excel != input.Excel || (this.Excel != null && !this.Excel.Equals(input.Excel))) return false;
 
-            return 
-                (
-                    this.WordsRegionCount == input.WordsRegionCount ||
-                    (this.WordsRegionCount != null &&
-                    this.WordsRegionCount.Equals(input.WordsRegionCount))
-                ) && 
-                (
-                    this.WordsRegionList == input.WordsRegionList ||
-                    this.WordsRegionList != null &&
-                    input.WordsRegionList != null &&
-                    this.WordsRegionList.SequenceEqual(input.WordsRegionList)
-                ) && 
-                (
-                    this.Excel == input.Excel ||
-                    (this.Excel != null &&
-                    this.Excel.Equals(input.Excel))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.WordsRegionCount != null)
-                    hashCode = hashCode * 59 + this.WordsRegionCount.GetHashCode();
-                if (this.WordsRegionList != null)
-                    hashCode = hashCode * 59 + this.WordsRegionList.GetHashCode();
-                if (this.Excel != null)
-                    hashCode = hashCode * 59 + this.Excel.GetHashCode();
+                var hashCode = 41;
+                if (this.WordsRegionCount != null) hashCode = hashCode * 59 + this.WordsRegionCount.GetHashCode();
+                if (this.WordsRegionList != null) hashCode = hashCode * 59 + this.WordsRegionList.GetHashCode();
+                if (this.Excel != null) hashCode = hashCode * 59 + this.Excel.GetHashCode();
                 return hashCode;
             }
         }

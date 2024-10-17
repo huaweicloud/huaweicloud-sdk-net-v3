@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(SetRecyclePolicyRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RecyclePolicy != input.RecyclePolicy || (this.RecyclePolicy != null && !this.RecyclePolicy.Equals(input.RecyclePolicy))) return false;
 
-            return 
-                (
-                    this.RecyclePolicy == input.RecyclePolicy ||
-                    (this.RecyclePolicy != null &&
-                    this.RecyclePolicy.Equals(input.RecyclePolicy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RecyclePolicy != null)
-                    hashCode = hashCode * 59 + this.RecyclePolicy.GetHashCode();
+                var hashCode = 41;
+                if (this.RecyclePolicy != null) hashCode = hashCode * 59 + this.RecyclePolicy.GetHashCode();
                 return hashCode;
             }
         }

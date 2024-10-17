@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(OsExtend input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NewSize != input.NewSize || (this.NewSize != null && !this.NewSize.Equals(input.NewSize))) return false;
 
-            return 
-                (
-                    this.NewSize == input.NewSize ||
-                    (this.NewSize != null &&
-                    this.NewSize.Equals(input.NewSize))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NewSize != null)
-                    hashCode = hashCode * 59 + this.NewSize.GetHashCode();
+                var hashCode = 41;
+                if (this.NewSize != null) hashCode = hashCode * 59 + this.NewSize.GetHashCode();
                 return hashCode;
             }
         }

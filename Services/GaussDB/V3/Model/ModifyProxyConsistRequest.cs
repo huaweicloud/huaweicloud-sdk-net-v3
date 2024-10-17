@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ModifyProxyConsistRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SessionConsistence != input.SessionConsistence || (this.SessionConsistence != null && !this.SessionConsistence.Equals(input.SessionConsistence))) return false;
+            if (this.ConsistenceMode != input.ConsistenceMode || (this.ConsistenceMode != null && !this.ConsistenceMode.Equals(input.ConsistenceMode))) return false;
 
-            return 
-                (
-                    this.SessionConsistence == input.SessionConsistence ||
-                    (this.SessionConsistence != null &&
-                    this.SessionConsistence.Equals(input.SessionConsistence))
-                ) && 
-                (
-                    this.ConsistenceMode == input.ConsistenceMode ||
-                    (this.ConsistenceMode != null &&
-                    this.ConsistenceMode.Equals(input.ConsistenceMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SessionConsistence != null)
-                    hashCode = hashCode * 59 + this.SessionConsistence.GetHashCode();
-                if (this.ConsistenceMode != null)
-                    hashCode = hashCode * 59 + this.ConsistenceMode.GetHashCode();
+                var hashCode = 41;
+                if (this.SessionConsistence != null) hashCode = hashCode * 59 + this.SessionConsistence.GetHashCode();
+                if (this.ConsistenceMode != null) hashCode = hashCode * 59 + this.ConsistenceMode.GetHashCode();
                 return hashCode;
             }
         }

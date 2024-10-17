@@ -191,35 +191,14 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(CreateStackInstanceRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StackSetId != input.StackSetId || (this.StackSetId != null && !this.StackSetId.Equals(input.StackSetId))) return false;
+            if (this.DeploymentTargets != input.DeploymentTargets || (this.DeploymentTargets != null && !this.DeploymentTargets.Equals(input.DeploymentTargets))) return false;
+            if (this.VarOverrides != input.VarOverrides || (this.VarOverrides != null && !this.VarOverrides.Equals(input.VarOverrides))) return false;
+            if (this.OperationPreferences != input.OperationPreferences || (this.OperationPreferences != null && !this.OperationPreferences.Equals(input.OperationPreferences))) return false;
+            if (this.CallIdentity != input.CallIdentity) return false;
 
-            return 
-                (
-                    this.StackSetId == input.StackSetId ||
-                    (this.StackSetId != null &&
-                    this.StackSetId.Equals(input.StackSetId))
-                ) && 
-                (
-                    this.DeploymentTargets == input.DeploymentTargets ||
-                    (this.DeploymentTargets != null &&
-                    this.DeploymentTargets.Equals(input.DeploymentTargets))
-                ) && 
-                (
-                    this.VarOverrides == input.VarOverrides ||
-                    (this.VarOverrides != null &&
-                    this.VarOverrides.Equals(input.VarOverrides))
-                ) && 
-                (
-                    this.OperationPreferences == input.OperationPreferences ||
-                    (this.OperationPreferences != null &&
-                    this.OperationPreferences.Equals(input.OperationPreferences))
-                ) && 
-                (
-                    this.CallIdentity == input.CallIdentity ||
-                    (this.CallIdentity != null &&
-                    this.CallIdentity.Equals(input.CallIdentity))
-                );
+            return true;
         }
 
         /// <summary>
@@ -229,17 +208,12 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StackSetId != null)
-                    hashCode = hashCode * 59 + this.StackSetId.GetHashCode();
-                if (this.DeploymentTargets != null)
-                    hashCode = hashCode * 59 + this.DeploymentTargets.GetHashCode();
-                if (this.VarOverrides != null)
-                    hashCode = hashCode * 59 + this.VarOverrides.GetHashCode();
-                if (this.OperationPreferences != null)
-                    hashCode = hashCode * 59 + this.OperationPreferences.GetHashCode();
-                if (this.CallIdentity != null)
-                    hashCode = hashCode * 59 + this.CallIdentity.GetHashCode();
+                var hashCode = 41;
+                if (this.StackSetId != null) hashCode = hashCode * 59 + this.StackSetId.GetHashCode();
+                if (this.DeploymentTargets != null) hashCode = hashCode * 59 + this.DeploymentTargets.GetHashCode();
+                if (this.VarOverrides != null) hashCode = hashCode * 59 + this.VarOverrides.GetHashCode();
+                if (this.OperationPreferences != null) hashCode = hashCode * 59 + this.OperationPreferences.GetHashCode();
+                hashCode = hashCode * 59 + this.CallIdentity.GetHashCode();
                 return hashCode;
             }
         }

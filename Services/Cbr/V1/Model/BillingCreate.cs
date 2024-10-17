@@ -840,70 +840,21 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(BillingCreate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CloudType != input.CloudType) return false;
+            if (this.ConsistentLevel != input.ConsistentLevel) return false;
+            if (this.ObjectType != input.ObjectType) return false;
+            if (this.ProtectType != input.ProtectType) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.ChargingMode != input.ChargingMode) return false;
+            if (this.PeriodType != input.PeriodType) return false;
+            if (this.PeriodNum != input.PeriodNum || (this.PeriodNum != null && !this.PeriodNum.Equals(input.PeriodNum))) return false;
+            if (this.IsAutoRenew != input.IsAutoRenew || (this.IsAutoRenew != null && !this.IsAutoRenew.Equals(input.IsAutoRenew))) return false;
+            if (this.IsAutoPay != input.IsAutoPay || (this.IsAutoPay != null && !this.IsAutoPay.Equals(input.IsAutoPay))) return false;
+            if (this.ConsoleUrl != input.ConsoleUrl || (this.ConsoleUrl != null && !this.ConsoleUrl.Equals(input.ConsoleUrl))) return false;
+            if (this.IsMultiAz != input.IsMultiAz || (this.IsMultiAz != null && !this.IsMultiAz.Equals(input.IsMultiAz))) return false;
 
-            return 
-                (
-                    this.CloudType == input.CloudType ||
-                    (this.CloudType != null &&
-                    this.CloudType.Equals(input.CloudType))
-                ) && 
-                (
-                    this.ConsistentLevel == input.ConsistentLevel ||
-                    (this.ConsistentLevel != null &&
-                    this.ConsistentLevel.Equals(input.ConsistentLevel))
-                ) && 
-                (
-                    this.ObjectType == input.ObjectType ||
-                    (this.ObjectType != null &&
-                    this.ObjectType.Equals(input.ObjectType))
-                ) && 
-                (
-                    this.ProtectType == input.ProtectType ||
-                    (this.ProtectType != null &&
-                    this.ProtectType.Equals(input.ProtectType))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.ChargingMode == input.ChargingMode ||
-                    (this.ChargingMode != null &&
-                    this.ChargingMode.Equals(input.ChargingMode))
-                ) && 
-                (
-                    this.PeriodType == input.PeriodType ||
-                    (this.PeriodType != null &&
-                    this.PeriodType.Equals(input.PeriodType))
-                ) && 
-                (
-                    this.PeriodNum == input.PeriodNum ||
-                    (this.PeriodNum != null &&
-                    this.PeriodNum.Equals(input.PeriodNum))
-                ) && 
-                (
-                    this.IsAutoRenew == input.IsAutoRenew ||
-                    (this.IsAutoRenew != null &&
-                    this.IsAutoRenew.Equals(input.IsAutoRenew))
-                ) && 
-                (
-                    this.IsAutoPay == input.IsAutoPay ||
-                    (this.IsAutoPay != null &&
-                    this.IsAutoPay.Equals(input.IsAutoPay))
-                ) && 
-                (
-                    this.ConsoleUrl == input.ConsoleUrl ||
-                    (this.ConsoleUrl != null &&
-                    this.ConsoleUrl.Equals(input.ConsoleUrl))
-                ) && 
-                (
-                    this.IsMultiAz == input.IsMultiAz ||
-                    (this.IsMultiAz != null &&
-                    this.IsMultiAz.Equals(input.IsMultiAz))
-                );
+            return true;
         }
 
         /// <summary>
@@ -913,31 +864,19 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CloudType != null)
-                    hashCode = hashCode * 59 + this.CloudType.GetHashCode();
-                if (this.ConsistentLevel != null)
-                    hashCode = hashCode * 59 + this.ConsistentLevel.GetHashCode();
-                if (this.ObjectType != null)
-                    hashCode = hashCode * 59 + this.ObjectType.GetHashCode();
-                if (this.ProtectType != null)
-                    hashCode = hashCode * 59 + this.ProtectType.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.ChargingMode != null)
-                    hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
-                if (this.PeriodType != null)
-                    hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
-                if (this.PeriodNum != null)
-                    hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
-                if (this.IsAutoRenew != null)
-                    hashCode = hashCode * 59 + this.IsAutoRenew.GetHashCode();
-                if (this.IsAutoPay != null)
-                    hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
-                if (this.ConsoleUrl != null)
-                    hashCode = hashCode * 59 + this.ConsoleUrl.GetHashCode();
-                if (this.IsMultiAz != null)
-                    hashCode = hashCode * 59 + this.IsMultiAz.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.CloudType.GetHashCode();
+                hashCode = hashCode * 59 + this.ConsistentLevel.GetHashCode();
+                hashCode = hashCode * 59 + this.ObjectType.GetHashCode();
+                hashCode = hashCode * 59 + this.ProtectType.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
+                hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
+                if (this.PeriodNum != null) hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
+                if (this.IsAutoRenew != null) hashCode = hashCode * 59 + this.IsAutoRenew.GetHashCode();
+                if (this.IsAutoPay != null) hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
+                if (this.ConsoleUrl != null) hashCode = hashCode * 59 + this.ConsoleUrl.GetHashCode();
+                if (this.IsMultiAz != null) hashCode = hashCode * 59 + this.IsMultiAz.GetHashCode();
                 return hashCode;
             }
         }

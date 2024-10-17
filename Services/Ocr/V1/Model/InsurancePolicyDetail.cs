@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(InsurancePolicyDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Words != input.Words || (this.Words != null && !this.Words.Equals(input.Words))) return false;
+            if (this.Location != input.Location || (this.Location != null && input.Location != null && !this.Location.SequenceEqual(input.Location))) return false;
 
-            return 
-                (
-                    this.Words == input.Words ||
-                    (this.Words != null &&
-                    this.Words.Equals(input.Words))
-                ) && 
-                (
-                    this.Location == input.Location ||
-                    this.Location != null &&
-                    input.Location != null &&
-                    this.Location.SequenceEqual(input.Location)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Words != null)
-                    hashCode = hashCode * 59 + this.Words.GetHashCode();
-                if (this.Location != null)
-                    hashCode = hashCode * 59 + this.Location.GetHashCode();
+                var hashCode = 41;
+                if (this.Words != null) hashCode = hashCode * 59 + this.Words.GetHashCode();
+                if (this.Location != null) hashCode = hashCode * 59 + this.Location.GetHashCode();
                 return hashCode;
             }
         }

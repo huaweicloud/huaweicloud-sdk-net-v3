@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public bool Equals(AddFacesUrlReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ImageUrl != input.ImageUrl || (this.ImageUrl != null && !this.ImageUrl.Equals(input.ImageUrl))) return false;
+            if (this.ExternalFields != input.ExternalFields || (this.ExternalFields != null && !this.ExternalFields.Equals(input.ExternalFields))) return false;
+            if (this.ExternalImageId != input.ExternalImageId || (this.ExternalImageId != null && !this.ExternalImageId.Equals(input.ExternalImageId))) return false;
+            if (this.Single != input.Single || (this.Single != null && !this.Single.Equals(input.Single))) return false;
 
-            return 
-                (
-                    this.ImageUrl == input.ImageUrl ||
-                    (this.ImageUrl != null &&
-                    this.ImageUrl.Equals(input.ImageUrl))
-                ) && 
-                (
-                    this.ExternalFields == input.ExternalFields ||
-                    (this.ExternalFields != null &&
-                    this.ExternalFields.Equals(input.ExternalFields))
-                ) && 
-                (
-                    this.ExternalImageId == input.ExternalImageId ||
-                    (this.ExternalImageId != null &&
-                    this.ExternalImageId.Equals(input.ExternalImageId))
-                ) && 
-                (
-                    this.Single == input.Single ||
-                    (this.Single != null &&
-                    this.Single.Equals(input.Single))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ImageUrl != null)
-                    hashCode = hashCode * 59 + this.ImageUrl.GetHashCode();
-                if (this.ExternalFields != null)
-                    hashCode = hashCode * 59 + this.ExternalFields.GetHashCode();
-                if (this.ExternalImageId != null)
-                    hashCode = hashCode * 59 + this.ExternalImageId.GetHashCode();
-                if (this.Single != null)
-                    hashCode = hashCode * 59 + this.Single.GetHashCode();
+                var hashCode = 41;
+                if (this.ImageUrl != null) hashCode = hashCode * 59 + this.ImageUrl.GetHashCode();
+                if (this.ExternalFields != null) hashCode = hashCode * 59 + this.ExternalFields.GetHashCode();
+                if (this.ExternalImageId != null) hashCode = hashCode * 59 + this.ExternalImageId.GetHashCode();
+                if (this.Single != null) hashCode = hashCode * 59 + this.Single.GetHashCode();
                 return hashCode;
             }
         }

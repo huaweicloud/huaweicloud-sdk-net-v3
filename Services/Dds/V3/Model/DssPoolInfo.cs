@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(DssPoolInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AzName != input.AzName || (this.AzName != null && !this.AzName.Equals(input.AzName))) return false;
+            if (this.FreeCapacityGb != input.FreeCapacityGb || (this.FreeCapacityGb != null && !this.FreeCapacityGb.Equals(input.FreeCapacityGb))) return false;
+            if (this.DssPoolVolumeType != input.DssPoolVolumeType || (this.DssPoolVolumeType != null && !this.DssPoolVolumeType.Equals(input.DssPoolVolumeType))) return false;
+            if (this.DssPoolId != input.DssPoolId || (this.DssPoolId != null && !this.DssPoolId.Equals(input.DssPoolId))) return false;
+            if (this.DssPoolStatus != input.DssPoolStatus || (this.DssPoolStatus != null && !this.DssPoolStatus.Equals(input.DssPoolStatus))) return false;
 
-            return 
-                (
-                    this.AzName == input.AzName ||
-                    (this.AzName != null &&
-                    this.AzName.Equals(input.AzName))
-                ) && 
-                (
-                    this.FreeCapacityGb == input.FreeCapacityGb ||
-                    (this.FreeCapacityGb != null &&
-                    this.FreeCapacityGb.Equals(input.FreeCapacityGb))
-                ) && 
-                (
-                    this.DssPoolVolumeType == input.DssPoolVolumeType ||
-                    (this.DssPoolVolumeType != null &&
-                    this.DssPoolVolumeType.Equals(input.DssPoolVolumeType))
-                ) && 
-                (
-                    this.DssPoolId == input.DssPoolId ||
-                    (this.DssPoolId != null &&
-                    this.DssPoolId.Equals(input.DssPoolId))
-                ) && 
-                (
-                    this.DssPoolStatus == input.DssPoolStatus ||
-                    (this.DssPoolStatus != null &&
-                    this.DssPoolStatus.Equals(input.DssPoolStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AzName != null)
-                    hashCode = hashCode * 59 + this.AzName.GetHashCode();
-                if (this.FreeCapacityGb != null)
-                    hashCode = hashCode * 59 + this.FreeCapacityGb.GetHashCode();
-                if (this.DssPoolVolumeType != null)
-                    hashCode = hashCode * 59 + this.DssPoolVolumeType.GetHashCode();
-                if (this.DssPoolId != null)
-                    hashCode = hashCode * 59 + this.DssPoolId.GetHashCode();
-                if (this.DssPoolStatus != null)
-                    hashCode = hashCode * 59 + this.DssPoolStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.AzName != null) hashCode = hashCode * 59 + this.AzName.GetHashCode();
+                if (this.FreeCapacityGb != null) hashCode = hashCode * 59 + this.FreeCapacityGb.GetHashCode();
+                if (this.DssPoolVolumeType != null) hashCode = hashCode * 59 + this.DssPoolVolumeType.GetHashCode();
+                if (this.DssPoolId != null) hashCode = hashCode * 59 + this.DssPoolId.GetHashCode();
+                if (this.DssPoolStatus != null) hashCode = hashCode * 59 + this.DssPoolStatus.GetHashCode();
                 return hashCode;
             }
         }

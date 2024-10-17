@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         public bool Equals(UpdateEndpointPolicyRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PolicyStatement != input.PolicyStatement || (this.PolicyStatement != null && input.PolicyStatement != null && !this.PolicyStatement.SequenceEqual(input.PolicyStatement))) return false;
+            if (this.PolicyDocument != input.PolicyDocument || (this.PolicyDocument != null && !this.PolicyDocument.Equals(input.PolicyDocument))) return false;
 
-            return 
-                (
-                    this.PolicyStatement == input.PolicyStatement ||
-                    this.PolicyStatement != null &&
-                    input.PolicyStatement != null &&
-                    this.PolicyStatement.SequenceEqual(input.PolicyStatement)
-                ) && 
-                (
-                    this.PolicyDocument == input.PolicyDocument ||
-                    (this.PolicyDocument != null &&
-                    this.PolicyDocument.Equals(input.PolicyDocument))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PolicyStatement != null)
-                    hashCode = hashCode * 59 + this.PolicyStatement.GetHashCode();
-                if (this.PolicyDocument != null)
-                    hashCode = hashCode * 59 + this.PolicyDocument.GetHashCode();
+                var hashCode = 41;
+                if (this.PolicyStatement != null) hashCode = hashCode * 59 + this.PolicyStatement.GetHashCode();
+                if (this.PolicyDocument != null) hashCode = hashCode * 59 + this.PolicyDocument.GetHashCode();
                 return hashCode;
             }
         }

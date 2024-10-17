@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public bool Equals(ListNameServersResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Nameservers != input.Nameservers || (this.Nameservers != null && input.Nameservers != null && !this.Nameservers.SequenceEqual(input.Nameservers))) return false;
 
-            return 
-                (
-                    this.Nameservers == input.Nameservers ||
-                    this.Nameservers != null &&
-                    input.Nameservers != null &&
-                    this.Nameservers.SequenceEqual(input.Nameservers)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Nameservers != null)
-                    hashCode = hashCode * 59 + this.Nameservers.GetHashCode();
+                var hashCode = 41;
+                if (this.Nameservers != null) hashCode = hashCode * 59 + this.Nameservers.GetHashCode();
                 return hashCode;
             }
         }

@@ -17,10 +17,10 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     {
 
         /// <summary>
-        /// 资源ID
+        /// 实例ID。可在查询实例列表接口的ID字段获取。
         /// </summary>
-        [JsonProperty("resource_id", NullValueHandling = NullValueHandling.Ignore)]
-        public string ResourceId { get; set; }
+        [JsonProperty("instance_id", NullValueHandling = NullValueHandling.Ignore)]
+        public string InstanceId { get; set; }
 
         /// <summary>
         /// 安全组ID列表(目前只支持传一个ID)
@@ -37,7 +37,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SecurityGroupRequest {\n");
-            sb.Append("  resourceId: ").Append(ResourceId).Append("\n");
+            sb.Append("  instanceId: ").Append(InstanceId).Append("\n");
             sb.Append("  securitygroupIds: ").Append(SecuritygroupIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         public bool Equals(SecurityGroupRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.SecuritygroupIds != input.SecuritygroupIds || (this.SecuritygroupIds != null && input.SecuritygroupIds != null && !this.SecuritygroupIds.SequenceEqual(input.SecuritygroupIds))) return false;
 
-            return 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
-                ) && 
-                (
-                    this.SecuritygroupIds == input.SecuritygroupIds ||
-                    this.SecuritygroupIds != null &&
-                    input.SecuritygroupIds != null &&
-                    this.SecuritygroupIds.SequenceEqual(input.SecuritygroupIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResourceId != null)
-                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
-                if (this.SecuritygroupIds != null)
-                    hashCode = hashCode * 59 + this.SecuritygroupIds.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.SecuritygroupIds != null) hashCode = hashCode * 59 + this.SecuritygroupIds.GetHashCode();
                 return hashCode;
             }
         }

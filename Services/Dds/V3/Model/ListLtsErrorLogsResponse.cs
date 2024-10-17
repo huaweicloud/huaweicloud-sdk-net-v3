@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(ListLtsErrorLogsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ErrorLogs != input.ErrorLogs || (this.ErrorLogs != null && input.ErrorLogs != null && !this.ErrorLogs.SequenceEqual(input.ErrorLogs))) return false;
 
-            return 
-                (
-                    this.ErrorLogs == input.ErrorLogs ||
-                    this.ErrorLogs != null &&
-                    input.ErrorLogs != null &&
-                    this.ErrorLogs.SequenceEqual(input.ErrorLogs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ErrorLogs != null)
-                    hashCode = hashCode * 59 + this.ErrorLogs.GetHashCode();
+                var hashCode = 41;
+                if (this.ErrorLogs != null) hashCode = hashCode * 59 + this.ErrorLogs.GetHashCode();
                 return hashCode;
             }
         }

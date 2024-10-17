@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(SetBackupPolicyRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BackupPolicy != input.BackupPolicy || (this.BackupPolicy != null && !this.BackupPolicy.Equals(input.BackupPolicy))) return false;
+            if (this.ReserveBackups != input.ReserveBackups || (this.ReserveBackups != null && !this.ReserveBackups.Equals(input.ReserveBackups))) return false;
 
-            return 
-                (
-                    this.BackupPolicy == input.BackupPolicy ||
-                    (this.BackupPolicy != null &&
-                    this.BackupPolicy.Equals(input.BackupPolicy))
-                ) && 
-                (
-                    this.ReserveBackups == input.ReserveBackups ||
-                    (this.ReserveBackups != null &&
-                    this.ReserveBackups.Equals(input.ReserveBackups))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BackupPolicy != null)
-                    hashCode = hashCode * 59 + this.BackupPolicy.GetHashCode();
-                if (this.ReserveBackups != null)
-                    hashCode = hashCode * 59 + this.ReserveBackups.GetHashCode();
+                var hashCode = 41;
+                if (this.BackupPolicy != null) hashCode = hashCode * 59 + this.BackupPolicy.GetHashCode();
+                if (this.ReserveBackups != null) hashCode = hashCode * 59 + this.ReserveBackups.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(PolicyDepends input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Catalog != input.Catalog || (this.Catalog != null && !this.Catalog.Equals(input.Catalog))) return false;
+            if (this.DisplayName != input.DisplayName || (this.DisplayName != null && !this.DisplayName.Equals(input.DisplayName))) return false;
 
-            return 
-                (
-                    this.Catalog == input.Catalog ||
-                    (this.Catalog != null &&
-                    this.Catalog.Equals(input.Catalog))
-                ) && 
-                (
-                    this.DisplayName == input.DisplayName ||
-                    (this.DisplayName != null &&
-                    this.DisplayName.Equals(input.DisplayName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Catalog != null)
-                    hashCode = hashCode * 59 + this.Catalog.GetHashCode();
-                if (this.DisplayName != null)
-                    hashCode = hashCode * 59 + this.DisplayName.GetHashCode();
+                var hashCode = 41;
+                if (this.Catalog != null) hashCode = hashCode * 59 + this.Catalog.GetHashCode();
+                if (this.DisplayName != null) hashCode = hashCode * 59 + this.DisplayName.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(ListAlarmHistoriesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AlarmHistories != input.AlarmHistories || (this.AlarmHistories != null && input.AlarmHistories != null && !this.AlarmHistories.SequenceEqual(input.AlarmHistories))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
 
-            return 
-                (
-                    this.AlarmHistories == input.AlarmHistories ||
-                    this.AlarmHistories != null &&
-                    input.AlarmHistories != null &&
-                    this.AlarmHistories.SequenceEqual(input.AlarmHistories)
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AlarmHistories != null)
-                    hashCode = hashCode * 59 + this.AlarmHistories.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
+                var hashCode = 41;
+                if (this.AlarmHistories != null) hashCode = hashCode * 59 + this.AlarmHistories.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
                 return hashCode;
             }
         }

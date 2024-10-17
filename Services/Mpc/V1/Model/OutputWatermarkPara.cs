@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(OutputWatermarkPara input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TimeDuration != input.TimeDuration || (this.TimeDuration != null && !this.TimeDuration.Equals(input.TimeDuration))) return false;
 
-            return 
-                (
-                    this.TimeDuration == input.TimeDuration ||
-                    (this.TimeDuration != null &&
-                    this.TimeDuration.Equals(input.TimeDuration))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TimeDuration != null)
-                    hashCode = hashCode * 59 + this.TimeDuration.GetHashCode();
+                var hashCode = 41;
+                if (this.TimeDuration != null) hashCode = hashCode * 59 + this.TimeDuration.GetHashCode();
                 return hashCode;
             }
         }

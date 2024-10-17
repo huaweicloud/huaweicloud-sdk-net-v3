@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(QueryCompareResultReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.ObjectLevelCompareId != input.ObjectLevelCompareId || (this.ObjectLevelCompareId != null && !this.ObjectLevelCompareId.Equals(input.ObjectLevelCompareId))) return false;
+            if (this.LineCompareId != input.LineCompareId || (this.LineCompareId != null && !this.LineCompareId.Equals(input.LineCompareId))) return false;
+            if (this.ContentCompareId != input.ContentCompareId || (this.ContentCompareId != null && !this.ContentCompareId.Equals(input.ContentCompareId))) return false;
+            if (this.CurrentPage != input.CurrentPage || (this.CurrentPage != null && !this.CurrentPage.Equals(input.CurrentPage))) return false;
+            if (this.PerPage != input.PerPage || (this.PerPage != null && !this.PerPage.Equals(input.PerPage))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.ObjectLevelCompareId == input.ObjectLevelCompareId ||
-                    (this.ObjectLevelCompareId != null &&
-                    this.ObjectLevelCompareId.Equals(input.ObjectLevelCompareId))
-                ) && 
-                (
-                    this.LineCompareId == input.LineCompareId ||
-                    (this.LineCompareId != null &&
-                    this.LineCompareId.Equals(input.LineCompareId))
-                ) && 
-                (
-                    this.ContentCompareId == input.ContentCompareId ||
-                    (this.ContentCompareId != null &&
-                    this.ContentCompareId.Equals(input.ContentCompareId))
-                ) && 
-                (
-                    this.CurrentPage == input.CurrentPage ||
-                    (this.CurrentPage != null &&
-                    this.CurrentPage.Equals(input.CurrentPage))
-                ) && 
-                (
-                    this.PerPage == input.PerPage ||
-                    (this.PerPage != null &&
-                    this.PerPage.Equals(input.PerPage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.ObjectLevelCompareId != null)
-                    hashCode = hashCode * 59 + this.ObjectLevelCompareId.GetHashCode();
-                if (this.LineCompareId != null)
-                    hashCode = hashCode * 59 + this.LineCompareId.GetHashCode();
-                if (this.ContentCompareId != null)
-                    hashCode = hashCode * 59 + this.ContentCompareId.GetHashCode();
-                if (this.CurrentPage != null)
-                    hashCode = hashCode * 59 + this.CurrentPage.GetHashCode();
-                if (this.PerPage != null)
-                    hashCode = hashCode * 59 + this.PerPage.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.ObjectLevelCompareId != null) hashCode = hashCode * 59 + this.ObjectLevelCompareId.GetHashCode();
+                if (this.LineCompareId != null) hashCode = hashCode * 59 + this.LineCompareId.GetHashCode();
+                if (this.ContentCompareId != null) hashCode = hashCode * 59 + this.ContentCompareId.GetHashCode();
+                if (this.CurrentPage != null) hashCode = hashCode * 59 + this.CurrentPage.GetHashCode();
+                if (this.PerPage != null) hashCode = hashCode * 59 + this.PerPage.GetHashCode();
                 return hashCode;
             }
         }

@@ -119,65 +119,20 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         public bool Equals(RuleScopeInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Action != input.Action || (this.Action != null && !this.Action.Equals(input.Action))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.ExceptionIps != input.ExceptionIps || (this.ExceptionIps != null && !this.ExceptionIps.Equals(input.ExceptionIps))) return false;
+            if (this.SourceIps != input.SourceIps || (this.SourceIps != null && !this.SourceIps.Equals(input.SourceIps))) return false;
+            if (this.SourcePorts != input.SourcePorts || (this.SourcePorts != null && !this.SourcePorts.Equals(input.SourcePorts))) return false;
+            if (this.DbIds != input.DbIds || (this.DbIds != null && !this.DbIds.Equals(input.DbIds))) return false;
+            if (this.DbNames != input.DbNames || (this.DbNames != null && !this.DbNames.Equals(input.DbNames))) return false;
+            if (this.DbUsers != input.DbUsers || (this.DbUsers != null && !this.DbUsers.Equals(input.DbUsers))) return false;
+            if (this.AllAudit != input.AllAudit || (this.AllAudit != null && !this.AllAudit.Equals(input.AllAudit))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.ExceptionIps == input.ExceptionIps ||
-                    (this.ExceptionIps != null &&
-                    this.ExceptionIps.Equals(input.ExceptionIps))
-                ) && 
-                (
-                    this.SourceIps == input.SourceIps ||
-                    (this.SourceIps != null &&
-                    this.SourceIps.Equals(input.SourceIps))
-                ) && 
-                (
-                    this.SourcePorts == input.SourcePorts ||
-                    (this.SourcePorts != null &&
-                    this.SourcePorts.Equals(input.SourcePorts))
-                ) && 
-                (
-                    this.DbIds == input.DbIds ||
-                    (this.DbIds != null &&
-                    this.DbIds.Equals(input.DbIds))
-                ) && 
-                (
-                    this.DbNames == input.DbNames ||
-                    (this.DbNames != null &&
-                    this.DbNames.Equals(input.DbNames))
-                ) && 
-                (
-                    this.DbUsers == input.DbUsers ||
-                    (this.DbUsers != null &&
-                    this.DbUsers.Equals(input.DbUsers))
-                ) && 
-                (
-                    this.AllAudit == input.AllAudit ||
-                    (this.AllAudit != null &&
-                    this.AllAudit.Equals(input.AllAudit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,29 +142,18 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.ExceptionIps != null)
-                    hashCode = hashCode * 59 + this.ExceptionIps.GetHashCode();
-                if (this.SourceIps != null)
-                    hashCode = hashCode * 59 + this.SourceIps.GetHashCode();
-                if (this.SourcePorts != null)
-                    hashCode = hashCode * 59 + this.SourcePorts.GetHashCode();
-                if (this.DbIds != null)
-                    hashCode = hashCode * 59 + this.DbIds.GetHashCode();
-                if (this.DbNames != null)
-                    hashCode = hashCode * 59 + this.DbNames.GetHashCode();
-                if (this.DbUsers != null)
-                    hashCode = hashCode * 59 + this.DbUsers.GetHashCode();
-                if (this.AllAudit != null)
-                    hashCode = hashCode * 59 + this.AllAudit.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Action != null) hashCode = hashCode * 59 + this.Action.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.ExceptionIps != null) hashCode = hashCode * 59 + this.ExceptionIps.GetHashCode();
+                if (this.SourceIps != null) hashCode = hashCode * 59 + this.SourceIps.GetHashCode();
+                if (this.SourcePorts != null) hashCode = hashCode * 59 + this.SourcePorts.GetHashCode();
+                if (this.DbIds != null) hashCode = hashCode * 59 + this.DbIds.GetHashCode();
+                if (this.DbNames != null) hashCode = hashCode * 59 + this.DbNames.GetHashCode();
+                if (this.DbUsers != null) hashCode = hashCode * 59 + this.DbUsers.GetHashCode();
+                if (this.AllAudit != null) hashCode = hashCode * 59 + this.AllAudit.GetHashCode();
                 return hashCode;
             }
         }

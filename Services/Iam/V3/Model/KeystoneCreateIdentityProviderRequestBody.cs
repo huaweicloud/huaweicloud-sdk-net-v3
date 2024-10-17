@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(KeystoneCreateIdentityProviderRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IdentityProvider != input.IdentityProvider || (this.IdentityProvider != null && !this.IdentityProvider.Equals(input.IdentityProvider))) return false;
 
-            return 
-                (
-                    this.IdentityProvider == input.IdentityProvider ||
-                    (this.IdentityProvider != null &&
-                    this.IdentityProvider.Equals(input.IdentityProvider))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IdentityProvider != null)
-                    hashCode = hashCode * 59 + this.IdentityProvider.GetHashCode();
+                var hashCode = 41;
+                if (this.IdentityProvider != null) hashCode = hashCode * 59 + this.IdentityProvider.GetHashCode();
                 return hashCode;
             }
         }

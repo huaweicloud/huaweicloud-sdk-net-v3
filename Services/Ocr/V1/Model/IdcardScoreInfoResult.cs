@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(IdcardScoreInfoResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TamperingScore != input.TamperingScore || (this.TamperingScore != null && !this.TamperingScore.Equals(input.TamperingScore))) return false;
+            if (this.InterimScore != input.InterimScore || (this.InterimScore != null && !this.InterimScore.Equals(input.InterimScore))) return false;
+            if (this.ReproduceScore != input.ReproduceScore || (this.ReproduceScore != null && !this.ReproduceScore.Equals(input.ReproduceScore))) return false;
+            if (this.CopyScore != input.CopyScore || (this.CopyScore != null && !this.CopyScore.Equals(input.CopyScore))) return false;
+            if (this.BorderIntegrityScore != input.BorderIntegrityScore || (this.BorderIntegrityScore != null && !this.BorderIntegrityScore.Equals(input.BorderIntegrityScore))) return false;
+            if (this.BlurScore != input.BlurScore || (this.BlurScore != null && !this.BlurScore.Equals(input.BlurScore))) return false;
+            if (this.GlareScore != input.GlareScore || (this.GlareScore != null && !this.GlareScore.Equals(input.GlareScore))) return false;
+            if (this.BlockingWithinBorderScore != input.BlockingWithinBorderScore || (this.BlockingWithinBorderScore != null && !this.BlockingWithinBorderScore.Equals(input.BlockingWithinBorderScore))) return false;
 
-            return 
-                (
-                    this.TamperingScore == input.TamperingScore ||
-                    (this.TamperingScore != null &&
-                    this.TamperingScore.Equals(input.TamperingScore))
-                ) && 
-                (
-                    this.InterimScore == input.InterimScore ||
-                    (this.InterimScore != null &&
-                    this.InterimScore.Equals(input.InterimScore))
-                ) && 
-                (
-                    this.ReproduceScore == input.ReproduceScore ||
-                    (this.ReproduceScore != null &&
-                    this.ReproduceScore.Equals(input.ReproduceScore))
-                ) && 
-                (
-                    this.CopyScore == input.CopyScore ||
-                    (this.CopyScore != null &&
-                    this.CopyScore.Equals(input.CopyScore))
-                ) && 
-                (
-                    this.BorderIntegrityScore == input.BorderIntegrityScore ||
-                    (this.BorderIntegrityScore != null &&
-                    this.BorderIntegrityScore.Equals(input.BorderIntegrityScore))
-                ) && 
-                (
-                    this.BlurScore == input.BlurScore ||
-                    (this.BlurScore != null &&
-                    this.BlurScore.Equals(input.BlurScore))
-                ) && 
-                (
-                    this.GlareScore == input.GlareScore ||
-                    (this.GlareScore != null &&
-                    this.GlareScore.Equals(input.GlareScore))
-                ) && 
-                (
-                    this.BlockingWithinBorderScore == input.BlockingWithinBorderScore ||
-                    (this.BlockingWithinBorderScore != null &&
-                    this.BlockingWithinBorderScore.Equals(input.BlockingWithinBorderScore))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TamperingScore != null)
-                    hashCode = hashCode * 59 + this.TamperingScore.GetHashCode();
-                if (this.InterimScore != null)
-                    hashCode = hashCode * 59 + this.InterimScore.GetHashCode();
-                if (this.ReproduceScore != null)
-                    hashCode = hashCode * 59 + this.ReproduceScore.GetHashCode();
-                if (this.CopyScore != null)
-                    hashCode = hashCode * 59 + this.CopyScore.GetHashCode();
-                if (this.BorderIntegrityScore != null)
-                    hashCode = hashCode * 59 + this.BorderIntegrityScore.GetHashCode();
-                if (this.BlurScore != null)
-                    hashCode = hashCode * 59 + this.BlurScore.GetHashCode();
-                if (this.GlareScore != null)
-                    hashCode = hashCode * 59 + this.GlareScore.GetHashCode();
-                if (this.BlockingWithinBorderScore != null)
-                    hashCode = hashCode * 59 + this.BlockingWithinBorderScore.GetHashCode();
+                var hashCode = 41;
+                if (this.TamperingScore != null) hashCode = hashCode * 59 + this.TamperingScore.GetHashCode();
+                if (this.InterimScore != null) hashCode = hashCode * 59 + this.InterimScore.GetHashCode();
+                if (this.ReproduceScore != null) hashCode = hashCode * 59 + this.ReproduceScore.GetHashCode();
+                if (this.CopyScore != null) hashCode = hashCode * 59 + this.CopyScore.GetHashCode();
+                if (this.BorderIntegrityScore != null) hashCode = hashCode * 59 + this.BorderIntegrityScore.GetHashCode();
+                if (this.BlurScore != null) hashCode = hashCode * 59 + this.BlurScore.GetHashCode();
+                if (this.GlareScore != null) hashCode = hashCode * 59 + this.GlareScore.GetHashCode();
+                if (this.BlockingWithinBorderScore != null) hashCode = hashCode * 59 + this.BlockingWithinBorderScore.GetHashCode();
                 return hashCode;
             }
         }

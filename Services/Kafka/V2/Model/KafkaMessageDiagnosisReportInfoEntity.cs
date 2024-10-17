@@ -229,45 +229,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(KafkaMessageDiagnosisReportInfoEntity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ReportId != input.ReportId || (this.ReportId != null && !this.ReportId.Equals(input.ReportId))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.BeginTime != input.BeginTime || (this.BeginTime != null && !this.BeginTime.Equals(input.BeginTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.GroupName != input.GroupName || (this.GroupName != null && !this.GroupName.Equals(input.GroupName))) return false;
+            if (this.TopicName != input.TopicName || (this.TopicName != null && !this.TopicName.Equals(input.TopicName))) return false;
+            if (this.AccumulatedPartitions != input.AccumulatedPartitions || (this.AccumulatedPartitions != null && !this.AccumulatedPartitions.Equals(input.AccumulatedPartitions))) return false;
 
-            return 
-                (
-                    this.ReportId == input.ReportId ||
-                    (this.ReportId != null &&
-                    this.ReportId.Equals(input.ReportId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.BeginTime == input.BeginTime ||
-                    (this.BeginTime != null &&
-                    this.BeginTime.Equals(input.BeginTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.GroupName == input.GroupName ||
-                    (this.GroupName != null &&
-                    this.GroupName.Equals(input.GroupName))
-                ) && 
-                (
-                    this.TopicName == input.TopicName ||
-                    (this.TopicName != null &&
-                    this.TopicName.Equals(input.TopicName))
-                ) && 
-                (
-                    this.AccumulatedPartitions == input.AccumulatedPartitions ||
-                    (this.AccumulatedPartitions != null &&
-                    this.AccumulatedPartitions.Equals(input.AccumulatedPartitions))
-                );
+            return true;
         }
 
         /// <summary>
@@ -277,21 +248,14 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ReportId != null)
-                    hashCode = hashCode * 59 + this.ReportId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.BeginTime != null)
-                    hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.GroupName != null)
-                    hashCode = hashCode * 59 + this.GroupName.GetHashCode();
-                if (this.TopicName != null)
-                    hashCode = hashCode * 59 + this.TopicName.GetHashCode();
-                if (this.AccumulatedPartitions != null)
-                    hashCode = hashCode * 59 + this.AccumulatedPartitions.GetHashCode();
+                var hashCode = 41;
+                if (this.ReportId != null) hashCode = hashCode * 59 + this.ReportId.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.BeginTime != null) hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.GroupName != null) hashCode = hashCode * 59 + this.GroupName.GetHashCode();
+                if (this.TopicName != null) hashCode = hashCode * 59 + this.TopicName.GetHashCode();
+                if (this.AccumulatedPartitions != null) hashCode = hashCode * 59 + this.AccumulatedPartitions.GetHashCode();
                 return hashCode;
             }
         }

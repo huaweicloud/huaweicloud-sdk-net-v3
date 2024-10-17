@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(InheritConfigQuery input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.InheritType != input.InheritType || (this.InheritType != null && !this.InheritType.Equals(input.InheritType))) return false;
+            if (this.InheritTimeType != input.InheritTimeType || (this.InheritTimeType != null && !this.InheritTimeType.Equals(input.InheritTimeType))) return false;
 
-            return 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.InheritType == input.InheritType ||
-                    (this.InheritType != null &&
-                    this.InheritType.Equals(input.InheritType))
-                ) && 
-                (
-                    this.InheritTimeType == input.InheritTimeType ||
-                    (this.InheritTimeType != null &&
-                    this.InheritTimeType.Equals(input.InheritTimeType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.InheritType != null)
-                    hashCode = hashCode * 59 + this.InheritType.GetHashCode();
-                if (this.InheritTimeType != null)
-                    hashCode = hashCode * 59 + this.InheritTimeType.GetHashCode();
+                var hashCode = 41;
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.InheritType != null) hashCode = hashCode * 59 + this.InheritType.GetHashCode();
+                if (this.InheritTimeType != null) hashCode = hashCode * 59 + this.InheritTimeType.GetHashCode();
                 return hashCode;
             }
         }

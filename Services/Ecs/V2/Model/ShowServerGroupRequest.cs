@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(ShowServerGroupRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ServerGroupId != input.ServerGroupId || (this.ServerGroupId != null && !this.ServerGroupId.Equals(input.ServerGroupId))) return false;
 
-            return 
-                (
-                    this.ServerGroupId == input.ServerGroupId ||
-                    (this.ServerGroupId != null &&
-                    this.ServerGroupId.Equals(input.ServerGroupId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ServerGroupId != null)
-                    hashCode = hashCode * 59 + this.ServerGroupId.GetHashCode();
+                var hashCode = 41;
+                if (this.ServerGroupId != null) hashCode = hashCode * 59 + this.ServerGroupId.GetHashCode();
                 return hashCode;
             }
         }

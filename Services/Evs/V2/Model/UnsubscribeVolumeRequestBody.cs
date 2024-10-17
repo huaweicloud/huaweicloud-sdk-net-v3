@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(UnsubscribeVolumeRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VolumeIds != input.VolumeIds || (this.VolumeIds != null && input.VolumeIds != null && !this.VolumeIds.SequenceEqual(input.VolumeIds))) return false;
 
-            return 
-                (
-                    this.VolumeIds == input.VolumeIds ||
-                    this.VolumeIds != null &&
-                    input.VolumeIds != null &&
-                    this.VolumeIds.SequenceEqual(input.VolumeIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VolumeIds != null)
-                    hashCode = hashCode * 59 + this.VolumeIds.GetHashCode();
+                var hashCode = 41;
+                if (this.VolumeIds != null) hashCode = hashCode * 59 + this.VolumeIds.GetHashCode();
                 return hashCode;
             }
         }

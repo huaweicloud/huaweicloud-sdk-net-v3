@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// </summary>
         public bool Equals(ListNatGatewaySnatRulesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SnatRules != input.SnatRules || (this.SnatRules != null && input.SnatRules != null && !this.SnatRules.SequenceEqual(input.SnatRules))) return false;
 
-            return 
-                (
-                    this.SnatRules == input.SnatRules ||
-                    this.SnatRules != null &&
-                    input.SnatRules != null &&
-                    this.SnatRules.SequenceEqual(input.SnatRules)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SnatRules != null)
-                    hashCode = hashCode * 59 + this.SnatRules.GetHashCode();
+                var hashCode = 41;
+                if (this.SnatRules != null) hashCode = hashCode * 59 + this.SnatRules.GetHashCode();
                 return hashCode;
             }
         }

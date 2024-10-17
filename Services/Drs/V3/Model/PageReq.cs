@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(PageReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CurPage != input.CurPage || (this.CurPage != null && !this.CurPage.Equals(input.CurPage))) return false;
+            if (this.PerPage != input.PerPage || (this.PerPage != null && !this.PerPage.Equals(input.PerPage))) return false;
 
-            return 
-                (
-                    this.CurPage == input.CurPage ||
-                    (this.CurPage != null &&
-                    this.CurPage.Equals(input.CurPage))
-                ) && 
-                (
-                    this.PerPage == input.PerPage ||
-                    (this.PerPage != null &&
-                    this.PerPage.Equals(input.PerPage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CurPage != null)
-                    hashCode = hashCode * 59 + this.CurPage.GetHashCode();
-                if (this.PerPage != null)
-                    hashCode = hashCode * 59 + this.PerPage.GetHashCode();
+                var hashCode = 41;
+                if (this.CurPage != null) hashCode = hashCode * 59 + this.CurPage.GetHashCode();
+                if (this.PerPage != null) hashCode = hashCode * 59 + this.PerPage.GetHashCode();
                 return hashCode;
             }
         }

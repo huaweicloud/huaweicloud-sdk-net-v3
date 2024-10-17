@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ListHtapInstanceInfoResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.Instances != input.Instances || (this.Instances != null && input.Instances != null && !this.Instances.SequenceEqual(input.Instances))) return false;
+            if (this.MaxHtapInstanceNumOfTaurus != input.MaxHtapInstanceNumOfTaurus || (this.MaxHtapInstanceNumOfTaurus != null && !this.MaxHtapInstanceNumOfTaurus.Equals(input.MaxHtapInstanceNumOfTaurus))) return false;
 
-            return 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.Instances == input.Instances ||
-                    this.Instances != null &&
-                    input.Instances != null &&
-                    this.Instances.SequenceEqual(input.Instances)
-                ) && 
-                (
-                    this.MaxHtapInstanceNumOfTaurus == input.MaxHtapInstanceNumOfTaurus ||
-                    (this.MaxHtapInstanceNumOfTaurus != null &&
-                    this.MaxHtapInstanceNumOfTaurus.Equals(input.MaxHtapInstanceNumOfTaurus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.Instances != null)
-                    hashCode = hashCode * 59 + this.Instances.GetHashCode();
-                if (this.MaxHtapInstanceNumOfTaurus != null)
-                    hashCode = hashCode * 59 + this.MaxHtapInstanceNumOfTaurus.GetHashCode();
+                var hashCode = 41;
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.Instances != null) hashCode = hashCode * 59 + this.Instances.GetHashCode();
+                if (this.MaxHtapInstanceNumOfTaurus != null) hashCode = hashCode * 59 + this.MaxHtapInstanceNumOfTaurus.GetHashCode();
                 return hashCode;
             }
         }

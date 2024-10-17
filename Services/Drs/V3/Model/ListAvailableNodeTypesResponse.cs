@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(ListAvailableNodeTypesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NodeTypes != input.NodeTypes || (this.NodeTypes != null && input.NodeTypes != null && !this.NodeTypes.SequenceEqual(input.NodeTypes))) return false;
 
-            return 
-                (
-                    this.NodeTypes == input.NodeTypes ||
-                    this.NodeTypes != null &&
-                    input.NodeTypes != null &&
-                    this.NodeTypes.SequenceEqual(input.NodeTypes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NodeTypes != null)
-                    hashCode = hashCode * 59 + this.NodeTypes.GetHashCode();
+                var hashCode = 41;
+                if (this.NodeTypes != null) hashCode = hashCode * 59 + this.NodeTypes.GetHashCode();
                 return hashCode;
             }
         }

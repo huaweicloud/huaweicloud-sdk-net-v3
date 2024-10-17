@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// </summary>
         public bool Equals(UpdateMemberRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Member != input.Member || (this.Member != null && !this.Member.Equals(input.Member))) return false;
 
-            return 
-                (
-                    this.Member == input.Member ||
-                    (this.Member != null &&
-                    this.Member.Equals(input.Member))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Member != null)
-                    hashCode = hashCode * 59 + this.Member.GetHashCode();
+                var hashCode = 41;
+                if (this.Member != null) hashCode = hashCode * 59 + this.Member.GetHashCode();
                 return hashCode;
             }
         }

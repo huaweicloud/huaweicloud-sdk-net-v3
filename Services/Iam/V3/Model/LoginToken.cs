@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(LoginToken input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.ExpiresAt != input.ExpiresAt || (this.ExpiresAt != null && !this.ExpiresAt.Equals(input.ExpiresAt))) return false;
+            if (this.Method != input.Method || (this.Method != null && !this.Method.Equals(input.Method))) return false;
+            if (this.UserId != input.UserId || (this.UserId != null && !this.UserId.Equals(input.UserId))) return false;
+            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.SessionId != input.SessionId || (this.SessionId != null && !this.SessionId.Equals(input.SessionId))) return false;
+            if (this.SessionUserId != input.SessionUserId || (this.SessionUserId != null && !this.SessionUserId.Equals(input.SessionUserId))) return false;
+            if (this.SessionName != input.SessionName || (this.SessionName != null && !this.SessionName.Equals(input.SessionName))) return false;
+            if (this.AssumedBy != input.AssumedBy || (this.AssumedBy != null && !this.AssumedBy.Equals(input.AssumedBy))) return false;
 
-            return 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
-                    this.ExpiresAt == input.ExpiresAt ||
-                    (this.ExpiresAt != null &&
-                    this.ExpiresAt.Equals(input.ExpiresAt))
-                ) && 
-                (
-                    this.Method == input.Method ||
-                    (this.Method != null &&
-                    this.Method.Equals(input.Method))
-                ) && 
-                (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
-                ) && 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.SessionId == input.SessionId ||
-                    (this.SessionId != null &&
-                    this.SessionId.Equals(input.SessionId))
-                ) && 
-                (
-                    this.SessionUserId == input.SessionUserId ||
-                    (this.SessionUserId != null &&
-                    this.SessionUserId.Equals(input.SessionUserId))
-                ) && 
-                (
-                    this.SessionName == input.SessionName ||
-                    (this.SessionName != null &&
-                    this.SessionName.Equals(input.SessionName))
-                ) && 
-                (
-                    this.AssumedBy == input.AssumedBy ||
-                    (this.AssumedBy != null &&
-                    this.AssumedBy.Equals(input.AssumedBy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.ExpiresAt != null)
-                    hashCode = hashCode * 59 + this.ExpiresAt.GetHashCode();
-                if (this.Method != null)
-                    hashCode = hashCode * 59 + this.Method.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.UserName != null)
-                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.SessionId != null)
-                    hashCode = hashCode * 59 + this.SessionId.GetHashCode();
-                if (this.SessionUserId != null)
-                    hashCode = hashCode * 59 + this.SessionUserId.GetHashCode();
-                if (this.SessionName != null)
-                    hashCode = hashCode * 59 + this.SessionName.GetHashCode();
-                if (this.AssumedBy != null)
-                    hashCode = hashCode * 59 + this.AssumedBy.GetHashCode();
+                var hashCode = 41;
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.ExpiresAt != null) hashCode = hashCode * 59 + this.ExpiresAt.GetHashCode();
+                if (this.Method != null) hashCode = hashCode * 59 + this.Method.GetHashCode();
+                if (this.UserId != null) hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.SessionId != null) hashCode = hashCode * 59 + this.SessionId.GetHashCode();
+                if (this.SessionUserId != null) hashCode = hashCode * 59 + this.SessionUserId.GetHashCode();
+                if (this.SessionName != null) hashCode = hashCode * 59 + this.SessionName.GetHashCode();
+                if (this.AssumedBy != null) hashCode = hashCode * 59 + this.AssumedBy.GetHashCode();
                 return hashCode;
             }
         }

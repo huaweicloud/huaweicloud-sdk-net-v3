@@ -77,37 +77,14 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(PostgresqlHbaHistory input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
+            if (this.FailReason != input.FailReason || (this.FailReason != null && !this.FailReason.Equals(input.FailReason))) return false;
+            if (this.BeforeConfs != input.BeforeConfs || (this.BeforeConfs != null && input.BeforeConfs != null && !this.BeforeConfs.SequenceEqual(input.BeforeConfs))) return false;
+            if (this.AfterConfs != input.AfterConfs || (this.AfterConfs != null && input.AfterConfs != null && !this.AfterConfs.SequenceEqual(input.AfterConfs))) return false;
 
-            return 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                ) && 
-                (
-                    this.FailReason == input.FailReason ||
-                    (this.FailReason != null &&
-                    this.FailReason.Equals(input.FailReason))
-                ) && 
-                (
-                    this.BeforeConfs == input.BeforeConfs ||
-                    this.BeforeConfs != null &&
-                    input.BeforeConfs != null &&
-                    this.BeforeConfs.SequenceEqual(input.BeforeConfs)
-                ) && 
-                (
-                    this.AfterConfs == input.AfterConfs ||
-                    this.AfterConfs != null &&
-                    input.AfterConfs != null &&
-                    this.AfterConfs.SequenceEqual(input.AfterConfs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -117,17 +94,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.FailReason != null)
-                    hashCode = hashCode * 59 + this.FailReason.GetHashCode();
-                if (this.BeforeConfs != null)
-                    hashCode = hashCode * 59 + this.BeforeConfs.GetHashCode();
-                if (this.AfterConfs != null)
-                    hashCode = hashCode * 59 + this.AfterConfs.GetHashCode();
+                var hashCode = 41;
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
+                if (this.FailReason != null) hashCode = hashCode * 59 + this.FailReason.GetHashCode();
+                if (this.BeforeConfs != null) hashCode = hashCode * 59 + this.BeforeConfs.GetHashCode();
+                if (this.AfterConfs != null) hashCode = hashCode * 59 + this.AfterConfs.GetHashCode();
                 return hashCode;
             }
         }

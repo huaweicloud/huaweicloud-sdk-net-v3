@@ -66,25 +66,12 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         public bool Equals(UpdateEndpointServicePermissionDescRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VpcEndpointServiceId != input.VpcEndpointServiceId || (this.VpcEndpointServiceId != null && !this.VpcEndpointServiceId.Equals(input.VpcEndpointServiceId))) return false;
+            if (this.PermissionId != input.PermissionId || (this.PermissionId != null && !this.PermissionId.Equals(input.PermissionId))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
-            return 
-                (
-                    this.VpcEndpointServiceId == input.VpcEndpointServiceId ||
-                    (this.VpcEndpointServiceId != null &&
-                    this.VpcEndpointServiceId.Equals(input.VpcEndpointServiceId))
-                ) && 
-                (
-                    this.PermissionId == input.PermissionId ||
-                    (this.PermissionId != null &&
-                    this.PermissionId.Equals(input.PermissionId))
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +81,10 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VpcEndpointServiceId != null)
-                    hashCode = hashCode * 59 + this.VpcEndpointServiceId.GetHashCode();
-                if (this.PermissionId != null)
-                    hashCode = hashCode * 59 + this.PermissionId.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                var hashCode = 41;
+                if (this.VpcEndpointServiceId != null) hashCode = hashCode * 59 + this.VpcEndpointServiceId.GetHashCode();
+                if (this.PermissionId != null) hashCode = hashCode * 59 + this.PermissionId.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

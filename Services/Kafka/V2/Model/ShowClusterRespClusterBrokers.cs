@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ShowClusterRespClusterBrokers input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Host != input.Host || (this.Host != null && !this.Host.Equals(input.Host))) return false;
+            if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
+            if (this.BrokerId != input.BrokerId || (this.BrokerId != null && !this.BrokerId.Equals(input.BrokerId))) return false;
+            if (this.IsController != input.IsController || (this.IsController != null && !this.IsController.Equals(input.IsController))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.RegisterTime != input.RegisterTime || (this.RegisterTime != null && !this.RegisterTime.Equals(input.RegisterTime))) return false;
+            if (this.IsHealth != input.IsHealth || (this.IsHealth != null && !this.IsHealth.Equals(input.IsHealth))) return false;
 
-            return 
-                (
-                    this.Host == input.Host ||
-                    (this.Host != null &&
-                    this.Host.Equals(input.Host))
-                ) && 
-                (
-                    this.Port == input.Port ||
-                    (this.Port != null &&
-                    this.Port.Equals(input.Port))
-                ) && 
-                (
-                    this.BrokerId == input.BrokerId ||
-                    (this.BrokerId != null &&
-                    this.BrokerId.Equals(input.BrokerId))
-                ) && 
-                (
-                    this.IsController == input.IsController ||
-                    (this.IsController != null &&
-                    this.IsController.Equals(input.IsController))
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.RegisterTime == input.RegisterTime ||
-                    (this.RegisterTime != null &&
-                    this.RegisterTime.Equals(input.RegisterTime))
-                ) && 
-                (
-                    this.IsHealth == input.IsHealth ||
-                    (this.IsHealth != null &&
-                    this.IsHealth.Equals(input.IsHealth))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Host != null)
-                    hashCode = hashCode * 59 + this.Host.GetHashCode();
-                if (this.Port != null)
-                    hashCode = hashCode * 59 + this.Port.GetHashCode();
-                if (this.BrokerId != null)
-                    hashCode = hashCode * 59 + this.BrokerId.GetHashCode();
-                if (this.IsController != null)
-                    hashCode = hashCode * 59 + this.IsController.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.RegisterTime != null)
-                    hashCode = hashCode * 59 + this.RegisterTime.GetHashCode();
-                if (this.IsHealth != null)
-                    hashCode = hashCode * 59 + this.IsHealth.GetHashCode();
+                var hashCode = 41;
+                if (this.Host != null) hashCode = hashCode * 59 + this.Host.GetHashCode();
+                if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
+                if (this.BrokerId != null) hashCode = hashCode * 59 + this.BrokerId.GetHashCode();
+                if (this.IsController != null) hashCode = hashCode * 59 + this.IsController.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.RegisterTime != null) hashCode = hashCode * 59 + this.RegisterTime.GetHashCode();
+                if (this.IsHealth != null) hashCode = hashCode * 59 + this.IsHealth.GetHashCode();
                 return hashCode;
             }
         }

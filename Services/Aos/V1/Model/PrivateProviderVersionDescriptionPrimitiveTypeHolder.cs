@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(PrivateProviderVersionDescriptionPrimitiveTypeHolder input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VersionDescription != input.VersionDescription || (this.VersionDescription != null && !this.VersionDescription.Equals(input.VersionDescription))) return false;
 
-            return 
-                (
-                    this.VersionDescription == input.VersionDescription ||
-                    (this.VersionDescription != null &&
-                    this.VersionDescription.Equals(input.VersionDescription))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VersionDescription != null)
-                    hashCode = hashCode * 59 + this.VersionDescription.GetHashCode();
+                var hashCode = 41;
+                if (this.VersionDescription != null) hashCode = hashCode * 59 + this.VersionDescription.GetHashCode();
                 return hashCode;
             }
         }

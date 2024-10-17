@@ -84,44 +84,15 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(FinancialStatementWordsBlockList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Words != input.Words || (this.Words != null && !this.Words.Equals(input.Words))) return false;
+            if (this.Location != input.Location || (this.Location != null && input.Location != null && !this.Location.SequenceEqual(input.Location))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
+            if (this.Rows != input.Rows || (this.Rows != null && input.Rows != null && !this.Rows.SequenceEqual(input.Rows))) return false;
+            if (this.Columns != input.Columns || (this.Columns != null && input.Columns != null && !this.Columns.SequenceEqual(input.Columns))) return false;
+            if (this.CellLocation != input.CellLocation || (this.CellLocation != null && input.CellLocation != null && !this.CellLocation.SequenceEqual(input.CellLocation))) return false;
 
-            return 
-                (
-                    this.Words == input.Words ||
-                    (this.Words != null &&
-                    this.Words.Equals(input.Words))
-                ) && 
-                (
-                    this.Location == input.Location ||
-                    this.Location != null &&
-                    input.Location != null &&
-                    this.Location.SequenceEqual(input.Location)
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                ) && 
-                (
-                    this.Rows == input.Rows ||
-                    this.Rows != null &&
-                    input.Rows != null &&
-                    this.Rows.SequenceEqual(input.Rows)
-                ) && 
-                (
-                    this.Columns == input.Columns ||
-                    this.Columns != null &&
-                    input.Columns != null &&
-                    this.Columns.SequenceEqual(input.Columns)
-                ) && 
-                (
-                    this.CellLocation == input.CellLocation ||
-                    this.CellLocation != null &&
-                    input.CellLocation != null &&
-                    this.CellLocation.SequenceEqual(input.CellLocation)
-                );
+            return true;
         }
 
         /// <summary>
@@ -131,19 +102,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Words != null)
-                    hashCode = hashCode * 59 + this.Words.GetHashCode();
-                if (this.Location != null)
-                    hashCode = hashCode * 59 + this.Location.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
-                if (this.Rows != null)
-                    hashCode = hashCode * 59 + this.Rows.GetHashCode();
-                if (this.Columns != null)
-                    hashCode = hashCode * 59 + this.Columns.GetHashCode();
-                if (this.CellLocation != null)
-                    hashCode = hashCode * 59 + this.CellLocation.GetHashCode();
+                var hashCode = 41;
+                if (this.Words != null) hashCode = hashCode * 59 + this.Words.GetHashCode();
+                if (this.Location != null) hashCode = hashCode * 59 + this.Location.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                if (this.Rows != null) hashCode = hashCode * 59 + this.Rows.GetHashCode();
+                if (this.Columns != null) hashCode = hashCode * 59 + this.Columns.GetHashCode();
+                if (this.CellLocation != null) hashCode = hashCode * 59 + this.CellLocation.GetHashCode();
                 return hashCode;
             }
         }

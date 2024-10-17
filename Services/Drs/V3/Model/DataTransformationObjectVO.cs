@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(DataTransformationObjectVO input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.DataTransformationType != input.DataTransformationType || (this.DataTransformationType != null && !this.DataTransformationType.Equals(input.DataTransformationType))) return false;
+            if (this.DbName != input.DbName || (this.DbName != null && !this.DbName.Equals(input.DbName))) return false;
+            if (this.SchemaName != input.SchemaName || (this.SchemaName != null && !this.SchemaName.Equals(input.SchemaName))) return false;
+            if (this.TableName != input.TableName || (this.TableName != null && !this.TableName.Equals(input.TableName))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.DataTransformationType == input.DataTransformationType ||
-                    (this.DataTransformationType != null &&
-                    this.DataTransformationType.Equals(input.DataTransformationType))
-                ) && 
-                (
-                    this.DbName == input.DbName ||
-                    (this.DbName != null &&
-                    this.DbName.Equals(input.DbName))
-                ) && 
-                (
-                    this.SchemaName == input.SchemaName ||
-                    (this.SchemaName != null &&
-                    this.SchemaName.Equals(input.SchemaName))
-                ) && 
-                (
-                    this.TableName == input.TableName ||
-                    (this.TableName != null &&
-                    this.TableName.Equals(input.TableName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.DataTransformationType != null)
-                    hashCode = hashCode * 59 + this.DataTransformationType.GetHashCode();
-                if (this.DbName != null)
-                    hashCode = hashCode * 59 + this.DbName.GetHashCode();
-                if (this.SchemaName != null)
-                    hashCode = hashCode * 59 + this.SchemaName.GetHashCode();
-                if (this.TableName != null)
-                    hashCode = hashCode * 59 + this.TableName.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.DataTransformationType != null) hashCode = hashCode * 59 + this.DataTransformationType.GetHashCode();
+                if (this.DbName != null) hashCode = hashCode * 59 + this.DbName.GetHashCode();
+                if (this.SchemaName != null) hashCode = hashCode * 59 + this.SchemaName.GetHashCode();
+                if (this.TableName != null) hashCode = hashCode * 59 + this.TableName.GetHashCode();
                 return hashCode;
             }
         }

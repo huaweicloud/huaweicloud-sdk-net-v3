@@ -98,53 +98,17 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(ShowMetadataResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BackupId != input.BackupId || (this.BackupId != null && !this.BackupId.Equals(input.BackupId))) return false;
+            if (this.Backups != input.Backups || (this.Backups != null && !this.Backups.Equals(input.Backups))) return false;
+            if (this.Flavor != input.Flavor || (this.Flavor != null && !this.Flavor.Equals(input.Flavor))) return false;
+            if (this.Floatingips != input.Floatingips || (this.Floatingips != null && input.Floatingips != null && !this.Floatingips.SequenceEqual(input.Floatingips))) return false;
+            if (this.Interface != input.Interface || (this.Interface != null && !this.Interface.Equals(input.Interface))) return false;
+            if (this.Ports != input.Ports || (this.Ports != null && input.Ports != null && !this.Ports.SequenceEqual(input.Ports))) return false;
+            if (this.Server != input.Server || (this.Server != null && !this.Server.Equals(input.Server))) return false;
+            if (this.Volumes != input.Volumes || (this.Volumes != null && input.Volumes != null && !this.Volumes.SequenceEqual(input.Volumes))) return false;
 
-            return 
-                (
-                    this.BackupId == input.BackupId ||
-                    (this.BackupId != null &&
-                    this.BackupId.Equals(input.BackupId))
-                ) && 
-                (
-                    this.Backups == input.Backups ||
-                    (this.Backups != null &&
-                    this.Backups.Equals(input.Backups))
-                ) && 
-                (
-                    this.Flavor == input.Flavor ||
-                    (this.Flavor != null &&
-                    this.Flavor.Equals(input.Flavor))
-                ) && 
-                (
-                    this.Floatingips == input.Floatingips ||
-                    this.Floatingips != null &&
-                    input.Floatingips != null &&
-                    this.Floatingips.SequenceEqual(input.Floatingips)
-                ) && 
-                (
-                    this.Interface == input.Interface ||
-                    (this.Interface != null &&
-                    this.Interface.Equals(input.Interface))
-                ) && 
-                (
-                    this.Ports == input.Ports ||
-                    this.Ports != null &&
-                    input.Ports != null &&
-                    this.Ports.SequenceEqual(input.Ports)
-                ) && 
-                (
-                    this.Server == input.Server ||
-                    (this.Server != null &&
-                    this.Server.Equals(input.Server))
-                ) && 
-                (
-                    this.Volumes == input.Volumes ||
-                    this.Volumes != null &&
-                    input.Volumes != null &&
-                    this.Volumes.SequenceEqual(input.Volumes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -154,23 +118,15 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BackupId != null)
-                    hashCode = hashCode * 59 + this.BackupId.GetHashCode();
-                if (this.Backups != null)
-                    hashCode = hashCode * 59 + this.Backups.GetHashCode();
-                if (this.Flavor != null)
-                    hashCode = hashCode * 59 + this.Flavor.GetHashCode();
-                if (this.Floatingips != null)
-                    hashCode = hashCode * 59 + this.Floatingips.GetHashCode();
-                if (this.Interface != null)
-                    hashCode = hashCode * 59 + this.Interface.GetHashCode();
-                if (this.Ports != null)
-                    hashCode = hashCode * 59 + this.Ports.GetHashCode();
-                if (this.Server != null)
-                    hashCode = hashCode * 59 + this.Server.GetHashCode();
-                if (this.Volumes != null)
-                    hashCode = hashCode * 59 + this.Volumes.GetHashCode();
+                var hashCode = 41;
+                if (this.BackupId != null) hashCode = hashCode * 59 + this.BackupId.GetHashCode();
+                if (this.Backups != null) hashCode = hashCode * 59 + this.Backups.GetHashCode();
+                if (this.Flavor != null) hashCode = hashCode * 59 + this.Flavor.GetHashCode();
+                if (this.Floatingips != null) hashCode = hashCode * 59 + this.Floatingips.GetHashCode();
+                if (this.Interface != null) hashCode = hashCode * 59 + this.Interface.GetHashCode();
+                if (this.Ports != null) hashCode = hashCode * 59 + this.Ports.GetHashCode();
+                if (this.Server != null) hashCode = hashCode * 59 + this.Server.GetHashCode();
+                if (this.Volumes != null) hashCode = hashCode * 59 + this.Volumes.GetHashCode();
                 return hashCode;
             }
         }

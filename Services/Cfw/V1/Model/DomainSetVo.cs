@@ -98,51 +98,17 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(DomainSetVo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SetId != input.SetId || (this.SetId != null && !this.SetId.Equals(input.SetId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.RefCount != input.RefCount || (this.RefCount != null && !this.RefCount.Equals(input.RefCount))) return false;
+            if (this.DomainSetType != input.DomainSetType || (this.DomainSetType != null && !this.DomainSetType.Equals(input.DomainSetType))) return false;
+            if (this.ConfigStatus != input.ConfigStatus || (this.ConfigStatus != null && !this.ConfigStatus.Equals(input.ConfigStatus))) return false;
+            if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
+            if (this.Rules != input.Rules || (this.Rules != null && input.Rules != null && !this.Rules.SequenceEqual(input.Rules))) return false;
 
-            return 
-                (
-                    this.SetId == input.SetId ||
-                    (this.SetId != null &&
-                    this.SetId.Equals(input.SetId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.RefCount == input.RefCount ||
-                    (this.RefCount != null &&
-                    this.RefCount.Equals(input.RefCount))
-                ) && 
-                (
-                    this.DomainSetType == input.DomainSetType ||
-                    (this.DomainSetType != null &&
-                    this.DomainSetType.Equals(input.DomainSetType))
-                ) && 
-                (
-                    this.ConfigStatus == input.ConfigStatus ||
-                    (this.ConfigStatus != null &&
-                    this.ConfigStatus.Equals(input.ConfigStatus))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.Rules == input.Rules ||
-                    this.Rules != null &&
-                    input.Rules != null &&
-                    this.Rules.SequenceEqual(input.Rules)
-                );
+            return true;
         }
 
         /// <summary>
@@ -152,23 +118,15 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SetId != null)
-                    hashCode = hashCode * 59 + this.SetId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.RefCount != null)
-                    hashCode = hashCode * 59 + this.RefCount.GetHashCode();
-                if (this.DomainSetType != null)
-                    hashCode = hashCode * 59 + this.DomainSetType.GetHashCode();
-                if (this.ConfigStatus != null)
-                    hashCode = hashCode * 59 + this.ConfigStatus.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.Rules != null)
-                    hashCode = hashCode * 59 + this.Rules.GetHashCode();
+                var hashCode = 41;
+                if (this.SetId != null) hashCode = hashCode * 59 + this.SetId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.RefCount != null) hashCode = hashCode * 59 + this.RefCount.GetHashCode();
+                if (this.DomainSetType != null) hashCode = hashCode * 59 + this.DomainSetType.GetHashCode();
+                if (this.ConfigStatus != null) hashCode = hashCode * 59 + this.ConfigStatus.GetHashCode();
+                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.Rules != null) hashCode = hashCode * 59 + this.Rules.GetHashCode();
                 return hashCode;
             }
         }

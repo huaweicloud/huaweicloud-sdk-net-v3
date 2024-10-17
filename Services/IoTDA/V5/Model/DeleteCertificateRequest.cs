@@ -74,30 +74,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(DeleteCertificateRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SpAuthToken != input.SpAuthToken || (this.SpAuthToken != null && !this.SpAuthToken.Equals(input.SpAuthToken))) return false;
+            if (this.StageAuthToken != input.StageAuthToken || (this.StageAuthToken != null && !this.StageAuthToken.Equals(input.StageAuthToken))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.CertificateId != input.CertificateId || (this.CertificateId != null && !this.CertificateId.Equals(input.CertificateId))) return false;
 
-            return 
-                (
-                    this.SpAuthToken == input.SpAuthToken ||
-                    (this.SpAuthToken != null &&
-                    this.SpAuthToken.Equals(input.SpAuthToken))
-                ) && 
-                (
-                    this.StageAuthToken == input.StageAuthToken ||
-                    (this.StageAuthToken != null &&
-                    this.StageAuthToken.Equals(input.StageAuthToken))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.CertificateId == input.CertificateId ||
-                    (this.CertificateId != null &&
-                    this.CertificateId.Equals(input.CertificateId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -107,15 +90,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SpAuthToken != null)
-                    hashCode = hashCode * 59 + this.SpAuthToken.GetHashCode();
-                if (this.StageAuthToken != null)
-                    hashCode = hashCode * 59 + this.StageAuthToken.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.CertificateId != null)
-                    hashCode = hashCode * 59 + this.CertificateId.GetHashCode();
+                var hashCode = 41;
+                if (this.SpAuthToken != null) hashCode = hashCode * 59 + this.SpAuthToken.GetHashCode();
+                if (this.StageAuthToken != null) hashCode = hashCode * 59 + this.StageAuthToken.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.CertificateId != null) hashCode = hashCode * 59 + this.CertificateId.GetHashCode();
                 return hashCode;
             }
         }

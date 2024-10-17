@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// </summary>
         public bool Equals(DeleteHealthmonitorRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HealthmonitorId != input.HealthmonitorId || (this.HealthmonitorId != null && !this.HealthmonitorId.Equals(input.HealthmonitorId))) return false;
 
-            return 
-                (
-                    this.HealthmonitorId == input.HealthmonitorId ||
-                    (this.HealthmonitorId != null &&
-                    this.HealthmonitorId.Equals(input.HealthmonitorId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HealthmonitorId != null)
-                    hashCode = hashCode * 59 + this.HealthmonitorId.GetHashCode();
+                var hashCode = 41;
+                if (this.HealthmonitorId != null) hashCode = hashCode * 59 + this.HealthmonitorId.GetHashCode();
                 return hashCode;
             }
         }

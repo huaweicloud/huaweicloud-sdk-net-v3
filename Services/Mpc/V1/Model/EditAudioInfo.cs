@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(EditAudioInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Codec != input.Codec || (this.Codec != null && !this.Codec.Equals(input.Codec))) return false;
+            if (this.Bitrate != input.Bitrate || (this.Bitrate != null && !this.Bitrate.Equals(input.Bitrate))) return false;
+            if (this.Sample != input.Sample || (this.Sample != null && !this.Sample.Equals(input.Sample))) return false;
+            if (this.Channels != input.Channels || (this.Channels != null && !this.Channels.Equals(input.Channels))) return false;
 
-            return 
-                (
-                    this.Codec == input.Codec ||
-                    (this.Codec != null &&
-                    this.Codec.Equals(input.Codec))
-                ) && 
-                (
-                    this.Bitrate == input.Bitrate ||
-                    (this.Bitrate != null &&
-                    this.Bitrate.Equals(input.Bitrate))
-                ) && 
-                (
-                    this.Sample == input.Sample ||
-                    (this.Sample != null &&
-                    this.Sample.Equals(input.Sample))
-                ) && 
-                (
-                    this.Channels == input.Channels ||
-                    (this.Channels != null &&
-                    this.Channels.Equals(input.Channels))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Codec != null)
-                    hashCode = hashCode * 59 + this.Codec.GetHashCode();
-                if (this.Bitrate != null)
-                    hashCode = hashCode * 59 + this.Bitrate.GetHashCode();
-                if (this.Sample != null)
-                    hashCode = hashCode * 59 + this.Sample.GetHashCode();
-                if (this.Channels != null)
-                    hashCode = hashCode * 59 + this.Channels.GetHashCode();
+                var hashCode = 41;
+                if (this.Codec != null) hashCode = hashCode * 59 + this.Codec.GetHashCode();
+                if (this.Bitrate != null) hashCode = hashCode * 59 + this.Bitrate.GetHashCode();
+                if (this.Sample != null) hashCode = hashCode * 59 + this.Sample.GetHashCode();
+                if (this.Channels != null) hashCode = hashCode * 59 + this.Channels.GetHashCode();
                 return hashCode;
             }
         }

@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         /// </summary>
         public bool Equals(ClassroomMember input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MemberId != input.MemberId || (this.MemberId != null && !this.MemberId.Equals(input.MemberId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;
+            if (this.ClassName != input.ClassName || (this.ClassName != null && !this.ClassName.Equals(input.ClassName))) return false;
+            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.JoinTime != input.JoinTime || (this.JoinTime != null && !this.JoinTime.Equals(input.JoinTime))) return false;
+            if (this.JobReceivedCount != input.JobReceivedCount || (this.JobReceivedCount != null && !this.JobReceivedCount.Equals(input.JobReceivedCount))) return false;
+            if (this.JobFinishedCount != input.JobFinishedCount || (this.JobFinishedCount != null && !this.JobFinishedCount.Equals(input.JobFinishedCount))) return false;
+            if (this.JobFinishedRate != input.JobFinishedRate || (this.JobFinishedRate != null && !this.JobFinishedRate.Equals(input.JobFinishedRate))) return false;
 
-            return 
-                (
-                    this.MemberId == input.MemberId ||
-                    (this.MemberId != null &&
-                    this.MemberId.Equals(input.MemberId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                ) && 
-                (
-                    this.ClassName == input.ClassName ||
-                    (this.ClassName != null &&
-                    this.ClassName.Equals(input.ClassName))
-                ) && 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.JoinTime == input.JoinTime ||
-                    (this.JoinTime != null &&
-                    this.JoinTime.Equals(input.JoinTime))
-                ) && 
-                (
-                    this.JobReceivedCount == input.JobReceivedCount ||
-                    (this.JobReceivedCount != null &&
-                    this.JobReceivedCount.Equals(input.JobReceivedCount))
-                ) && 
-                (
-                    this.JobFinishedCount == input.JobFinishedCount ||
-                    (this.JobFinishedCount != null &&
-                    this.JobFinishedCount.Equals(input.JobFinishedCount))
-                ) && 
-                (
-                    this.JobFinishedRate == input.JobFinishedRate ||
-                    (this.JobFinishedRate != null &&
-                    this.JobFinishedRate.Equals(input.JobFinishedRate))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MemberId != null)
-                    hashCode = hashCode * 59 + this.MemberId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Number != null)
-                    hashCode = hashCode * 59 + this.Number.GetHashCode();
-                if (this.ClassName != null)
-                    hashCode = hashCode * 59 + this.ClassName.GetHashCode();
-                if (this.UserName != null)
-                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.JoinTime != null)
-                    hashCode = hashCode * 59 + this.JoinTime.GetHashCode();
-                if (this.JobReceivedCount != null)
-                    hashCode = hashCode * 59 + this.JobReceivedCount.GetHashCode();
-                if (this.JobFinishedCount != null)
-                    hashCode = hashCode * 59 + this.JobFinishedCount.GetHashCode();
-                if (this.JobFinishedRate != null)
-                    hashCode = hashCode * 59 + this.JobFinishedRate.GetHashCode();
+                var hashCode = 41;
+                if (this.MemberId != null) hashCode = hashCode * 59 + this.MemberId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Number != null) hashCode = hashCode * 59 + this.Number.GetHashCode();
+                if (this.ClassName != null) hashCode = hashCode * 59 + this.ClassName.GetHashCode();
+                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.JoinTime != null) hashCode = hashCode * 59 + this.JoinTime.GetHashCode();
+                if (this.JobReceivedCount != null) hashCode = hashCode * 59 + this.JobReceivedCount.GetHashCode();
+                if (this.JobFinishedCount != null) hashCode = hashCode * 59 + this.JobFinishedCount.GetHashCode();
+                if (this.JobFinishedRate != null) hashCode = hashCode * 59 + this.JobFinishedRate.GetHashCode();
                 return hashCode;
             }
         }

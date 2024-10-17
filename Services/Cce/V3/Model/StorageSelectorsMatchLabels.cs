@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(StorageSelectorsMatchLabels input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.VolumeType != input.VolumeType || (this.VolumeType != null && !this.VolumeType.Equals(input.VolumeType))) return false;
+            if (this.Iops != input.Iops || (this.Iops != null && !this.Iops.Equals(input.Iops))) return false;
+            if (this.Throughput != input.Throughput || (this.Throughput != null && !this.Throughput.Equals(input.Throughput))) return false;
+            if (this.MetadataEncrypted != input.MetadataEncrypted || (this.MetadataEncrypted != null && !this.MetadataEncrypted.Equals(input.MetadataEncrypted))) return false;
+            if (this.MetadataCmkid != input.MetadataCmkid || (this.MetadataCmkid != null && !this.MetadataCmkid.Equals(input.MetadataCmkid))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
 
-            return 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.VolumeType == input.VolumeType ||
-                    (this.VolumeType != null &&
-                    this.VolumeType.Equals(input.VolumeType))
-                ) && 
-                (
-                    this.Iops == input.Iops ||
-                    (this.Iops != null &&
-                    this.Iops.Equals(input.Iops))
-                ) && 
-                (
-                    this.Throughput == input.Throughput ||
-                    (this.Throughput != null &&
-                    this.Throughput.Equals(input.Throughput))
-                ) && 
-                (
-                    this.MetadataEncrypted == input.MetadataEncrypted ||
-                    (this.MetadataEncrypted != null &&
-                    this.MetadataEncrypted.Equals(input.MetadataEncrypted))
-                ) && 
-                (
-                    this.MetadataCmkid == input.MetadataCmkid ||
-                    (this.MetadataCmkid != null &&
-                    this.MetadataCmkid.Equals(input.MetadataCmkid))
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.VolumeType != null)
-                    hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
-                if (this.Iops != null)
-                    hashCode = hashCode * 59 + this.Iops.GetHashCode();
-                if (this.Throughput != null)
-                    hashCode = hashCode * 59 + this.Throughput.GetHashCode();
-                if (this.MetadataEncrypted != null)
-                    hashCode = hashCode * 59 + this.MetadataEncrypted.GetHashCode();
-                if (this.MetadataCmkid != null)
-                    hashCode = hashCode * 59 + this.MetadataCmkid.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
+                var hashCode = 41;
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.VolumeType != null) hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
+                if (this.Iops != null) hashCode = hashCode * 59 + this.Iops.GetHashCode();
+                if (this.Throughput != null) hashCode = hashCode * 59 + this.Throughput.GetHashCode();
+                if (this.MetadataEncrypted != null) hashCode = hashCode * 59 + this.MetadataEncrypted.GetHashCode();
+                if (this.MetadataCmkid != null) hashCode = hashCode * 59 + this.MetadataCmkid.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
                 return hashCode;
             }
         }

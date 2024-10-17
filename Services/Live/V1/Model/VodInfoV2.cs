@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(VodInfoV2 input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
+            if (this.PlayUrl != input.PlayUrl || (this.PlayUrl != null && !this.PlayUrl.Equals(input.PlayUrl))) return false;
 
-            return 
-                (
-                    this.AssetId == input.AssetId ||
-                    (this.AssetId != null &&
-                    this.AssetId.Equals(input.AssetId))
-                ) && 
-                (
-                    this.PlayUrl == input.PlayUrl ||
-                    (this.PlayUrl != null &&
-                    this.PlayUrl.Equals(input.PlayUrl))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AssetId != null)
-                    hashCode = hashCode * 59 + this.AssetId.GetHashCode();
-                if (this.PlayUrl != null)
-                    hashCode = hashCode * 59 + this.PlayUrl.GetHashCode();
+                var hashCode = 41;
+                if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                if (this.PlayUrl != null) hashCode = hashCode * 59 + this.PlayUrl.GetHashCode();
                 return hashCode;
             }
         }

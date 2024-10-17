@@ -272,81 +272,23 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(DevUcEnvironmentPermission input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.RoleId != input.RoleId || (this.RoleId != null && !this.RoleId.Equals(input.RoleId))) return false;
+            if (this.DevucRoleIdList != input.DevucRoleIdList || (this.DevucRoleIdList != null && input.DevucRoleIdList != null && !this.DevucRoleIdList.SequenceEqual(input.DevucRoleIdList))) return false;
+            if (this.RoleType != input.RoleType) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
+            if (this.EnvironmentId != input.EnvironmentId || (this.EnvironmentId != null && !this.EnvironmentId.Equals(input.EnvironmentId))) return false;
+            if (this.CanView != input.CanView || (this.CanView != null && !this.CanView.Equals(input.CanView))) return false;
+            if (this.CanEdit != input.CanEdit || (this.CanEdit != null && !this.CanEdit.Equals(input.CanEdit))) return false;
+            if (this.CanDelete != input.CanDelete || (this.CanDelete != null && !this.CanDelete.Equals(input.CanDelete))) return false;
+            if (this.CanDeploy != input.CanDeploy || (this.CanDeploy != null && !this.CanDeploy.Equals(input.CanDeploy))) return false;
+            if (this.CanManage != input.CanManage || (this.CanManage != null && !this.CanManage.Equals(input.CanManage))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.RoleId == input.RoleId ||
-                    (this.RoleId != null &&
-                    this.RoleId.Equals(input.RoleId))
-                ) && 
-                (
-                    this.DevucRoleIdList == input.DevucRoleIdList ||
-                    this.DevucRoleIdList != null &&
-                    input.DevucRoleIdList != null &&
-                    this.DevucRoleIdList.SequenceEqual(input.DevucRoleIdList)
-                ) && 
-                (
-                    this.RoleType == input.RoleType ||
-                    (this.RoleType != null &&
-                    this.RoleType.Equals(input.RoleType))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.EnvironmentId == input.EnvironmentId ||
-                    (this.EnvironmentId != null &&
-                    this.EnvironmentId.Equals(input.EnvironmentId))
-                ) && 
-                (
-                    this.CanView == input.CanView ||
-                    (this.CanView != null &&
-                    this.CanView.Equals(input.CanView))
-                ) && 
-                (
-                    this.CanEdit == input.CanEdit ||
-                    (this.CanEdit != null &&
-                    this.CanEdit.Equals(input.CanEdit))
-                ) && 
-                (
-                    this.CanDelete == input.CanDelete ||
-                    (this.CanDelete != null &&
-                    this.CanDelete.Equals(input.CanDelete))
-                ) && 
-                (
-                    this.CanDeploy == input.CanDeploy ||
-                    (this.CanDeploy != null &&
-                    this.CanDeploy.Equals(input.CanDeploy))
-                ) && 
-                (
-                    this.CanManage == input.CanManage ||
-                    (this.CanManage != null &&
-                    this.CanManage.Equals(input.CanManage))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -356,35 +298,21 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.RoleId != null)
-                    hashCode = hashCode * 59 + this.RoleId.GetHashCode();
-                if (this.DevucRoleIdList != null)
-                    hashCode = hashCode * 59 + this.DevucRoleIdList.GetHashCode();
-                if (this.RoleType != null)
-                    hashCode = hashCode * 59 + this.RoleType.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.EnvironmentId != null)
-                    hashCode = hashCode * 59 + this.EnvironmentId.GetHashCode();
-                if (this.CanView != null)
-                    hashCode = hashCode * 59 + this.CanView.GetHashCode();
-                if (this.CanEdit != null)
-                    hashCode = hashCode * 59 + this.CanEdit.GetHashCode();
-                if (this.CanDelete != null)
-                    hashCode = hashCode * 59 + this.CanDelete.GetHashCode();
-                if (this.CanDeploy != null)
-                    hashCode = hashCode * 59 + this.CanDeploy.GetHashCode();
-                if (this.CanManage != null)
-                    hashCode = hashCode * 59 + this.CanManage.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.RoleId != null) hashCode = hashCode * 59 + this.RoleId.GetHashCode();
+                if (this.DevucRoleIdList != null) hashCode = hashCode * 59 + this.DevucRoleIdList.GetHashCode();
+                hashCode = hashCode * 59 + this.RoleType.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
+                if (this.EnvironmentId != null) hashCode = hashCode * 59 + this.EnvironmentId.GetHashCode();
+                if (this.CanView != null) hashCode = hashCode * 59 + this.CanView.GetHashCode();
+                if (this.CanEdit != null) hashCode = hashCode * 59 + this.CanEdit.GetHashCode();
+                if (this.CanDelete != null) hashCode = hashCode * 59 + this.CanDelete.GetHashCode();
+                if (this.CanDeploy != null) hashCode = hashCode * 59 + this.CanDeploy.GetHashCode();
+                if (this.CanManage != null) hashCode = hashCode * 59 + this.CanManage.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 return hashCode;
             }
         }

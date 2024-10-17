@@ -77,36 +77,14 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(RollUpgradeProgress input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UpgradedDnGroupNumbers != input.UpgradedDnGroupNumbers || (this.UpgradedDnGroupNumbers != null && !this.UpgradedDnGroupNumbers.Equals(input.UpgradedDnGroupNumbers))) return false;
+            if (this.TotalDnGroupNumbers != input.TotalDnGroupNumbers || (this.TotalDnGroupNumbers != null && !this.TotalDnGroupNumbers.Equals(input.TotalDnGroupNumbers))) return false;
+            if (this.NotFullyUpgradedAz != input.NotFullyUpgradedAz || (this.NotFullyUpgradedAz != null && !this.NotFullyUpgradedAz.Equals(input.NotFullyUpgradedAz))) return false;
+            if (this.AlreadyUpgradedAz != input.AlreadyUpgradedAz || (this.AlreadyUpgradedAz != null && !this.AlreadyUpgradedAz.Equals(input.AlreadyUpgradedAz))) return false;
+            if (this.AzDescriptionMap != input.AzDescriptionMap || (this.AzDescriptionMap != null && input.AzDescriptionMap != null && !this.AzDescriptionMap.SequenceEqual(input.AzDescriptionMap))) return false;
 
-            return 
-                (
-                    this.UpgradedDnGroupNumbers == input.UpgradedDnGroupNumbers ||
-                    (this.UpgradedDnGroupNumbers != null &&
-                    this.UpgradedDnGroupNumbers.Equals(input.UpgradedDnGroupNumbers))
-                ) && 
-                (
-                    this.TotalDnGroupNumbers == input.TotalDnGroupNumbers ||
-                    (this.TotalDnGroupNumbers != null &&
-                    this.TotalDnGroupNumbers.Equals(input.TotalDnGroupNumbers))
-                ) && 
-                (
-                    this.NotFullyUpgradedAz == input.NotFullyUpgradedAz ||
-                    (this.NotFullyUpgradedAz != null &&
-                    this.NotFullyUpgradedAz.Equals(input.NotFullyUpgradedAz))
-                ) && 
-                (
-                    this.AlreadyUpgradedAz == input.AlreadyUpgradedAz ||
-                    (this.AlreadyUpgradedAz != null &&
-                    this.AlreadyUpgradedAz.Equals(input.AlreadyUpgradedAz))
-                ) && 
-                (
-                    this.AzDescriptionMap == input.AzDescriptionMap ||
-                    this.AzDescriptionMap != null &&
-                    input.AzDescriptionMap != null &&
-                    this.AzDescriptionMap.SequenceEqual(input.AzDescriptionMap)
-                );
+            return true;
         }
 
         /// <summary>
@@ -116,17 +94,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UpgradedDnGroupNumbers != null)
-                    hashCode = hashCode * 59 + this.UpgradedDnGroupNumbers.GetHashCode();
-                if (this.TotalDnGroupNumbers != null)
-                    hashCode = hashCode * 59 + this.TotalDnGroupNumbers.GetHashCode();
-                if (this.NotFullyUpgradedAz != null)
-                    hashCode = hashCode * 59 + this.NotFullyUpgradedAz.GetHashCode();
-                if (this.AlreadyUpgradedAz != null)
-                    hashCode = hashCode * 59 + this.AlreadyUpgradedAz.GetHashCode();
-                if (this.AzDescriptionMap != null)
-                    hashCode = hashCode * 59 + this.AzDescriptionMap.GetHashCode();
+                var hashCode = 41;
+                if (this.UpgradedDnGroupNumbers != null) hashCode = hashCode * 59 + this.UpgradedDnGroupNumbers.GetHashCode();
+                if (this.TotalDnGroupNumbers != null) hashCode = hashCode * 59 + this.TotalDnGroupNumbers.GetHashCode();
+                if (this.NotFullyUpgradedAz != null) hashCode = hashCode * 59 + this.NotFullyUpgradedAz.GetHashCode();
+                if (this.AlreadyUpgradedAz != null) hashCode = hashCode * 59 + this.AlreadyUpgradedAz.GetHashCode();
+                if (this.AzDescriptionMap != null) hashCode = hashCode * 59 + this.AzDescriptionMap.GetHashCode();
                 return hashCode;
             }
         }

@@ -84,42 +84,15 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(ListUsersResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.IsGlobalPassword != input.IsGlobalPassword || (this.IsGlobalPassword != null && !this.IsGlobalPassword.Equals(input.IsGlobalPassword))) return false;
+            if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
+            if (this.UserList != input.UserList || (this.UserList != null && input.UserList != null && !this.UserList.SequenceEqual(input.UserList))) return false;
+            if (this.RolesList != input.RolesList || (this.RolesList != null && input.RolesList != null && !this.RolesList.SequenceEqual(input.RolesList))) return false;
+            if (this.IsSuccess != input.IsSuccess || (this.IsSuccess != null && !this.IsSuccess.Equals(input.IsSuccess))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.IsGlobalPassword == input.IsGlobalPassword ||
-                    (this.IsGlobalPassword != null &&
-                    this.IsGlobalPassword.Equals(input.IsGlobalPassword))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.UserList == input.UserList ||
-                    this.UserList != null &&
-                    input.UserList != null &&
-                    this.UserList.SequenceEqual(input.UserList)
-                ) && 
-                (
-                    this.RolesList == input.RolesList ||
-                    this.RolesList != null &&
-                    input.RolesList != null &&
-                    this.RolesList.SequenceEqual(input.RolesList)
-                ) && 
-                (
-                    this.IsSuccess == input.IsSuccess ||
-                    (this.IsSuccess != null &&
-                    this.IsSuccess.Equals(input.IsSuccess))
-                );
+            return true;
         }
 
         /// <summary>
@@ -129,19 +102,13 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.IsGlobalPassword != null)
-                    hashCode = hashCode * 59 + this.IsGlobalPassword.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.UserList != null)
-                    hashCode = hashCode * 59 + this.UserList.GetHashCode();
-                if (this.RolesList != null)
-                    hashCode = hashCode * 59 + this.RolesList.GetHashCode();
-                if (this.IsSuccess != null)
-                    hashCode = hashCode * 59 + this.IsSuccess.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.IsGlobalPassword != null) hashCode = hashCode * 59 + this.IsGlobalPassword.GetHashCode();
+                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.UserList != null) hashCode = hashCode * 59 + this.UserList.GetHashCode();
+                if (this.RolesList != null) hashCode = hashCode * 59 + this.RolesList.GetHashCode();
+                if (this.IsSuccess != null) hashCode = hashCode * 59 + this.IsSuccess.GetHashCode();
                 return hashCode;
             }
         }

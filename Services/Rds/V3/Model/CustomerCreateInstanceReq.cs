@@ -245,156 +245,38 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(CustomerCreateInstanceReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Datastore != input.Datastore || (this.Datastore != null && !this.Datastore.Equals(input.Datastore))) return false;
+            if (this.Ha != input.Ha || (this.Ha != null && !this.Ha.Equals(input.Ha))) return false;
+            if (this.ConfigurationId != input.ConfigurationId || (this.ConfigurationId != null && !this.ConfigurationId.Equals(input.ConfigurationId))) return false;
+            if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
+            if (this.Password != input.Password || (this.Password != null && !this.Password.Equals(input.Password))) return false;
+            if (this.BackupStrategy != input.BackupStrategy || (this.BackupStrategy != null && !this.BackupStrategy.Equals(input.BackupStrategy))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.DiskEncryptionId != input.DiskEncryptionId || (this.DiskEncryptionId != null && !this.DiskEncryptionId.Equals(input.DiskEncryptionId))) return false;
+            if (this.FlavorRef != input.FlavorRef || (this.FlavorRef != null && !this.FlavorRef.Equals(input.FlavorRef))) return false;
+            if (this.Volume != input.Volume || (this.Volume != null && !this.Volume.Equals(input.Volume))) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
+            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
+            if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
+            if (this.DataVip != input.DataVip || (this.DataVip != null && !this.DataVip.Equals(input.DataVip))) return false;
+            if (this.SecurityGroupId != input.SecurityGroupId || (this.SecurityGroupId != null && !this.SecurityGroupId.Equals(input.SecurityGroupId))) return false;
+            if (this.ChargeInfo != input.ChargeInfo || (this.ChargeInfo != null && !this.ChargeInfo.Equals(input.ChargeInfo))) return false;
+            if (this.TimeZone != input.TimeZone || (this.TimeZone != null && !this.TimeZone.Equals(input.TimeZone))) return false;
+            if (this.DsspoolId != input.DsspoolId || (this.DsspoolId != null && !this.DsspoolId.Equals(input.DsspoolId))) return false;
+            if (this.ReplicaOfId != input.ReplicaOfId || (this.ReplicaOfId != null && !this.ReplicaOfId.Equals(input.ReplicaOfId))) return false;
+            if (this.RestorePoint != input.RestorePoint || (this.RestorePoint != null && !this.RestorePoint.Equals(input.RestorePoint))) return false;
+            if (this.Collation != input.Collation || (this.Collation != null && !this.Collation.Equals(input.Collation))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.UnchangeableParam != input.UnchangeableParam || (this.UnchangeableParam != null && !this.UnchangeableParam.Equals(input.UnchangeableParam))) return false;
+            if (this.DryRun != input.DryRun || (this.DryRun != null && !this.DryRun.Equals(input.DryRun))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.ServerlessInfo != input.ServerlessInfo || (this.ServerlessInfo != null && !this.ServerlessInfo.Equals(input.ServerlessInfo))) return false;
+            if (this.SubscriptionAgency != input.SubscriptionAgency || (this.SubscriptionAgency != null && !this.SubscriptionAgency.Equals(input.SubscriptionAgency))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Datastore == input.Datastore ||
-                    (this.Datastore != null &&
-                    this.Datastore.Equals(input.Datastore))
-                ) && 
-                (
-                    this.Ha == input.Ha ||
-                    (this.Ha != null &&
-                    this.Ha.Equals(input.Ha))
-                ) && 
-                (
-                    this.ConfigurationId == input.ConfigurationId ||
-                    (this.ConfigurationId != null &&
-                    this.ConfigurationId.Equals(input.ConfigurationId))
-                ) && 
-                (
-                    this.Port == input.Port ||
-                    (this.Port != null &&
-                    this.Port.Equals(input.Port))
-                ) && 
-                (
-                    this.Password == input.Password ||
-                    (this.Password != null &&
-                    this.Password.Equals(input.Password))
-                ) && 
-                (
-                    this.BackupStrategy == input.BackupStrategy ||
-                    (this.BackupStrategy != null &&
-                    this.BackupStrategy.Equals(input.BackupStrategy))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.DiskEncryptionId == input.DiskEncryptionId ||
-                    (this.DiskEncryptionId != null &&
-                    this.DiskEncryptionId.Equals(input.DiskEncryptionId))
-                ) && 
-                (
-                    this.FlavorRef == input.FlavorRef ||
-                    (this.FlavorRef != null &&
-                    this.FlavorRef.Equals(input.FlavorRef))
-                ) && 
-                (
-                    this.Volume == input.Volume ||
-                    (this.Volume != null &&
-                    this.Volume.Equals(input.Volume))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.AvailabilityZone == input.AvailabilityZone ||
-                    (this.AvailabilityZone != null &&
-                    this.AvailabilityZone.Equals(input.AvailabilityZone))
-                ) && 
-                (
-                    this.VpcId == input.VpcId ||
-                    (this.VpcId != null &&
-                    this.VpcId.Equals(input.VpcId))
-                ) && 
-                (
-                    this.SubnetId == input.SubnetId ||
-                    (this.SubnetId != null &&
-                    this.SubnetId.Equals(input.SubnetId))
-                ) && 
-                (
-                    this.DataVip == input.DataVip ||
-                    (this.DataVip != null &&
-                    this.DataVip.Equals(input.DataVip))
-                ) && 
-                (
-                    this.SecurityGroupId == input.SecurityGroupId ||
-                    (this.SecurityGroupId != null &&
-                    this.SecurityGroupId.Equals(input.SecurityGroupId))
-                ) && 
-                (
-                    this.ChargeInfo == input.ChargeInfo ||
-                    (this.ChargeInfo != null &&
-                    this.ChargeInfo.Equals(input.ChargeInfo))
-                ) && 
-                (
-                    this.TimeZone == input.TimeZone ||
-                    (this.TimeZone != null &&
-                    this.TimeZone.Equals(input.TimeZone))
-                ) && 
-                (
-                    this.DsspoolId == input.DsspoolId ||
-                    (this.DsspoolId != null &&
-                    this.DsspoolId.Equals(input.DsspoolId))
-                ) && 
-                (
-                    this.ReplicaOfId == input.ReplicaOfId ||
-                    (this.ReplicaOfId != null &&
-                    this.ReplicaOfId.Equals(input.ReplicaOfId))
-                ) && 
-                (
-                    this.RestorePoint == input.RestorePoint ||
-                    (this.RestorePoint != null &&
-                    this.RestorePoint.Equals(input.RestorePoint))
-                ) && 
-                (
-                    this.Collation == input.Collation ||
-                    (this.Collation != null &&
-                    this.Collation.Equals(input.Collation))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.UnchangeableParam == input.UnchangeableParam ||
-                    (this.UnchangeableParam != null &&
-                    this.UnchangeableParam.Equals(input.UnchangeableParam))
-                ) && 
-                (
-                    this.DryRun == input.DryRun ||
-                    (this.DryRun != null &&
-                    this.DryRun.Equals(input.DryRun))
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.ServerlessInfo == input.ServerlessInfo ||
-                    (this.ServerlessInfo != null &&
-                    this.ServerlessInfo.Equals(input.ServerlessInfo))
-                ) && 
-                (
-                    this.SubscriptionAgency == input.SubscriptionAgency ||
-                    (this.SubscriptionAgency != null &&
-                    this.SubscriptionAgency.Equals(input.SubscriptionAgency))
-                );
+            return true;
         }
 
         /// <summary>
@@ -404,65 +286,36 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Datastore != null)
-                    hashCode = hashCode * 59 + this.Datastore.GetHashCode();
-                if (this.Ha != null)
-                    hashCode = hashCode * 59 + this.Ha.GetHashCode();
-                if (this.ConfigurationId != null)
-                    hashCode = hashCode * 59 + this.ConfigurationId.GetHashCode();
-                if (this.Port != null)
-                    hashCode = hashCode * 59 + this.Port.GetHashCode();
-                if (this.Password != null)
-                    hashCode = hashCode * 59 + this.Password.GetHashCode();
-                if (this.BackupStrategy != null)
-                    hashCode = hashCode * 59 + this.BackupStrategy.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.DiskEncryptionId != null)
-                    hashCode = hashCode * 59 + this.DiskEncryptionId.GetHashCode();
-                if (this.FlavorRef != null)
-                    hashCode = hashCode * 59 + this.FlavorRef.GetHashCode();
-                if (this.Volume != null)
-                    hashCode = hashCode * 59 + this.Volume.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.AvailabilityZone != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.SubnetId != null)
-                    hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
-                if (this.DataVip != null)
-                    hashCode = hashCode * 59 + this.DataVip.GetHashCode();
-                if (this.SecurityGroupId != null)
-                    hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
-                if (this.ChargeInfo != null)
-                    hashCode = hashCode * 59 + this.ChargeInfo.GetHashCode();
-                if (this.TimeZone != null)
-                    hashCode = hashCode * 59 + this.TimeZone.GetHashCode();
-                if (this.DsspoolId != null)
-                    hashCode = hashCode * 59 + this.DsspoolId.GetHashCode();
-                if (this.ReplicaOfId != null)
-                    hashCode = hashCode * 59 + this.ReplicaOfId.GetHashCode();
-                if (this.RestorePoint != null)
-                    hashCode = hashCode * 59 + this.RestorePoint.GetHashCode();
-                if (this.Collation != null)
-                    hashCode = hashCode * 59 + this.Collation.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.UnchangeableParam != null)
-                    hashCode = hashCode * 59 + this.UnchangeableParam.GetHashCode();
-                if (this.DryRun != null)
-                    hashCode = hashCode * 59 + this.DryRun.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.ServerlessInfo != null)
-                    hashCode = hashCode * 59 + this.ServerlessInfo.GetHashCode();
-                if (this.SubscriptionAgency != null)
-                    hashCode = hashCode * 59 + this.SubscriptionAgency.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Datastore != null) hashCode = hashCode * 59 + this.Datastore.GetHashCode();
+                if (this.Ha != null) hashCode = hashCode * 59 + this.Ha.GetHashCode();
+                if (this.ConfigurationId != null) hashCode = hashCode * 59 + this.ConfigurationId.GetHashCode();
+                if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
+                if (this.Password != null) hashCode = hashCode * 59 + this.Password.GetHashCode();
+                if (this.BackupStrategy != null) hashCode = hashCode * 59 + this.BackupStrategy.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.DiskEncryptionId != null) hashCode = hashCode * 59 + this.DiskEncryptionId.GetHashCode();
+                if (this.FlavorRef != null) hashCode = hashCode * 59 + this.FlavorRef.GetHashCode();
+                if (this.Volume != null) hashCode = hashCode * 59 + this.Volume.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
+                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
+                if (this.DataVip != null) hashCode = hashCode * 59 + this.DataVip.GetHashCode();
+                if (this.SecurityGroupId != null) hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
+                if (this.ChargeInfo != null) hashCode = hashCode * 59 + this.ChargeInfo.GetHashCode();
+                if (this.TimeZone != null) hashCode = hashCode * 59 + this.TimeZone.GetHashCode();
+                if (this.DsspoolId != null) hashCode = hashCode * 59 + this.DsspoolId.GetHashCode();
+                if (this.ReplicaOfId != null) hashCode = hashCode * 59 + this.ReplicaOfId.GetHashCode();
+                if (this.RestorePoint != null) hashCode = hashCode * 59 + this.RestorePoint.GetHashCode();
+                if (this.Collation != null) hashCode = hashCode * 59 + this.Collation.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.UnchangeableParam != null) hashCode = hashCode * 59 + this.UnchangeableParam.GetHashCode();
+                if (this.DryRun != null) hashCode = hashCode * 59 + this.DryRun.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.ServerlessInfo != null) hashCode = hashCode * 59 + this.ServerlessInfo.GetHashCode();
+                if (this.SubscriptionAgency != null) hashCode = hashCode * 59 + this.SubscriptionAgency.GetHashCode();
                 return hashCode;
             }
         }

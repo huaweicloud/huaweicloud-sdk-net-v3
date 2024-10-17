@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(VerifyDomainOwnerRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VerifyType != input.VerifyType || (this.VerifyType != null && !this.VerifyType.Equals(input.VerifyType))) return false;
 
-            return 
-                (
-                    this.VerifyType == input.VerifyType ||
-                    (this.VerifyType != null &&
-                    this.VerifyType.Equals(input.VerifyType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VerifyType != null)
-                    hashCode = hashCode * 59 + this.VerifyType.GetHashCode();
+                var hashCode = 41;
+                if (this.VerifyType != null) hashCode = hashCode * 59 + this.VerifyType.GetHashCode();
                 return hashCode;
             }
         }

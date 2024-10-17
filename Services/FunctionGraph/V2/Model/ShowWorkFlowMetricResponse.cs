@@ -70,34 +70,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(ShowWorkFlowMetricResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Count != input.Count || (this.Count != null && input.Count != null && !this.Count.SequenceEqual(input.Count))) return false;
+            if (this.Duration != input.Duration || (this.Duration != null && input.Duration != null && !this.Duration.SequenceEqual(input.Duration))) return false;
+            if (this.FailCount != input.FailCount || (this.FailCount != null && input.FailCount != null && !this.FailCount.SequenceEqual(input.FailCount))) return false;
+            if (this.RunningCount != input.RunningCount || (this.RunningCount != null && input.RunningCount != null && !this.RunningCount.SequenceEqual(input.RunningCount))) return false;
 
-            return 
-                (
-                    this.Count == input.Count ||
-                    this.Count != null &&
-                    input.Count != null &&
-                    this.Count.SequenceEqual(input.Count)
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    this.Duration != null &&
-                    input.Duration != null &&
-                    this.Duration.SequenceEqual(input.Duration)
-                ) && 
-                (
-                    this.FailCount == input.FailCount ||
-                    this.FailCount != null &&
-                    input.FailCount != null &&
-                    this.FailCount.SequenceEqual(input.FailCount)
-                ) && 
-                (
-                    this.RunningCount == input.RunningCount ||
-                    this.RunningCount != null &&
-                    input.RunningCount != null &&
-                    this.RunningCount.SequenceEqual(input.RunningCount)
-                );
+            return true;
         }
 
         /// <summary>
@@ -107,15 +86,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.Duration != null)
-                    hashCode = hashCode * 59 + this.Duration.GetHashCode();
-                if (this.FailCount != null)
-                    hashCode = hashCode * 59 + this.FailCount.GetHashCode();
-                if (this.RunningCount != null)
-                    hashCode = hashCode * 59 + this.RunningCount.GetHashCode();
+                var hashCode = 41;
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                if (this.FailCount != null) hashCode = hashCode * 59 + this.FailCount.GetHashCode();
+                if (this.RunningCount != null) hashCode = hashCode * 59 + this.RunningCount.GetHashCode();
                 return hashCode;
             }
         }

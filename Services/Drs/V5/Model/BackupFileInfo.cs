@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(BackupFileInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.ObsPath != input.ObsPath || (this.ObsPath != null && !this.ObsPath.Equals(input.ObsPath))) return false;
+            if (this.RdsVersion != input.RdsVersion || (this.RdsVersion != null && !this.RdsVersion.Equals(input.RdsVersion))) return false;
+            if (this.RdsSourceInstanceId != input.RdsSourceInstanceId || (this.RdsSourceInstanceId != null && !this.RdsSourceInstanceId.Equals(input.RdsSourceInstanceId))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ObsPath == input.ObsPath ||
-                    (this.ObsPath != null &&
-                    this.ObsPath.Equals(input.ObsPath))
-                ) && 
-                (
-                    this.RdsVersion == input.RdsVersion ||
-                    (this.RdsVersion != null &&
-                    this.RdsVersion.Equals(input.RdsVersion))
-                ) && 
-                (
-                    this.RdsSourceInstanceId == input.RdsSourceInstanceId ||
-                    (this.RdsSourceInstanceId != null &&
-                    this.RdsSourceInstanceId.Equals(input.RdsSourceInstanceId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.ObsPath != null)
-                    hashCode = hashCode * 59 + this.ObsPath.GetHashCode();
-                if (this.RdsVersion != null)
-                    hashCode = hashCode * 59 + this.RdsVersion.GetHashCode();
-                if (this.RdsSourceInstanceId != null)
-                    hashCode = hashCode * 59 + this.RdsSourceInstanceId.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.ObsPath != null) hashCode = hashCode * 59 + this.ObsPath.GetHashCode();
+                if (this.RdsVersion != null) hashCode = hashCode * 59 + this.RdsVersion.GetHashCode();
+                if (this.RdsSourceInstanceId != null) hashCode = hashCode * 59 + this.RdsSourceInstanceId.GetHashCode();
                 return hashCode;
             }
         }

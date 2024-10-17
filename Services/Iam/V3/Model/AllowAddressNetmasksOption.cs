@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(AllowAddressNetmasksOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AddressNetmask != input.AddressNetmask || (this.AddressNetmask != null && !this.AddressNetmask.Equals(input.AddressNetmask))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
 
-            return 
-                (
-                    this.AddressNetmask == input.AddressNetmask ||
-                    (this.AddressNetmask != null &&
-                    this.AddressNetmask.Equals(input.AddressNetmask))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AddressNetmask != null)
-                    hashCode = hashCode * 59 + this.AddressNetmask.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                var hashCode = 41;
+                if (this.AddressNetmask != null) hashCode = hashCode * 59 + this.AddressNetmask.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

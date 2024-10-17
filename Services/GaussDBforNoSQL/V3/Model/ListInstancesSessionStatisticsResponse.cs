@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(ListInstancesSessionStatisticsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TotalConnectionCount != input.TotalConnectionCount || (this.TotalConnectionCount != null && !this.TotalConnectionCount.Equals(input.TotalConnectionCount))) return false;
+            if (this.ActiveConnectionCount != input.ActiveConnectionCount || (this.ActiveConnectionCount != null && !this.ActiveConnectionCount.Equals(input.ActiveConnectionCount))) return false;
+            if (this.TopSourceIps != input.TopSourceIps || (this.TopSourceIps != null && input.TopSourceIps != null && !this.TopSourceIps.SequenceEqual(input.TopSourceIps))) return false;
+            if (this.TopDbs != input.TopDbs || (this.TopDbs != null && !this.TopDbs.Equals(input.TopDbs))) return false;
 
-            return 
-                (
-                    this.TotalConnectionCount == input.TotalConnectionCount ||
-                    (this.TotalConnectionCount != null &&
-                    this.TotalConnectionCount.Equals(input.TotalConnectionCount))
-                ) && 
-                (
-                    this.ActiveConnectionCount == input.ActiveConnectionCount ||
-                    (this.ActiveConnectionCount != null &&
-                    this.ActiveConnectionCount.Equals(input.ActiveConnectionCount))
-                ) && 
-                (
-                    this.TopSourceIps == input.TopSourceIps ||
-                    this.TopSourceIps != null &&
-                    input.TopSourceIps != null &&
-                    this.TopSourceIps.SequenceEqual(input.TopSourceIps)
-                ) && 
-                (
-                    this.TopDbs == input.TopDbs ||
-                    (this.TopDbs != null &&
-                    this.TopDbs.Equals(input.TopDbs))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TotalConnectionCount != null)
-                    hashCode = hashCode * 59 + this.TotalConnectionCount.GetHashCode();
-                if (this.ActiveConnectionCount != null)
-                    hashCode = hashCode * 59 + this.ActiveConnectionCount.GetHashCode();
-                if (this.TopSourceIps != null)
-                    hashCode = hashCode * 59 + this.TopSourceIps.GetHashCode();
-                if (this.TopDbs != null)
-                    hashCode = hashCode * 59 + this.TopDbs.GetHashCode();
+                var hashCode = 41;
+                if (this.TotalConnectionCount != null) hashCode = hashCode * 59 + this.TotalConnectionCount.GetHashCode();
+                if (this.ActiveConnectionCount != null) hashCode = hashCode * 59 + this.ActiveConnectionCount.GetHashCode();
+                if (this.TopSourceIps != null) hashCode = hashCode * 59 + this.TopSourceIps.GetHashCode();
+                if (this.TopDbs != null) hashCode = hashCode * 59 + this.TopDbs.GetHashCode();
                 return hashCode;
             }
         }

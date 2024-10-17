@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(RestoreDatabaseInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OldName != input.OldName || (this.OldName != null && !this.OldName.Equals(input.OldName))) return false;
+            if (this.NewName != input.NewName || (this.NewName != null && !this.NewName.Equals(input.NewName))) return false;
 
-            return 
-                (
-                    this.OldName == input.OldName ||
-                    (this.OldName != null &&
-                    this.OldName.Equals(input.OldName))
-                ) && 
-                (
-                    this.NewName == input.NewName ||
-                    (this.NewName != null &&
-                    this.NewName.Equals(input.NewName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OldName != null)
-                    hashCode = hashCode * 59 + this.OldName.GetHashCode();
-                if (this.NewName != null)
-                    hashCode = hashCode * 59 + this.NewName.GetHashCode();
+                var hashCode = 41;
+                if (this.OldName != null) hashCode = hashCode * 59 + this.OldName.GetHashCode();
+                if (this.NewName != null) hashCode = hashCode * 59 + this.NewName.GetHashCode();
                 return hashCode;
             }
         }

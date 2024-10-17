@@ -1585,321 +1585,70 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(QueryJobResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.ParentId != input.ParentId || (this.ParentId != null && !this.ParentId.Equals(input.ParentId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.TaskType != input.TaskType) return false;
+            if (this.SourceEndpoint != input.SourceEndpoint || (this.SourceEndpoint != null && !this.SourceEndpoint.Equals(input.SourceEndpoint))) return false;
+            if (this.DmqEndpoint != input.DmqEndpoint || (this.DmqEndpoint != null && !this.DmqEndpoint.Equals(input.DmqEndpoint))) return false;
+            if (this.SourceSharding != input.SourceSharding || (this.SourceSharding != null && input.SourceSharding != null && !this.SourceSharding.SequenceEqual(input.SourceSharding))) return false;
+            if (this.TargetEndpoint != input.TargetEndpoint || (this.TargetEndpoint != null && !this.TargetEndpoint.Equals(input.TargetEndpoint))) return false;
+            if (this.NetType != input.NetType) return false;
+            if (this.FailedReason != input.FailedReason || (this.FailedReason != null && !this.FailedReason.Equals(input.FailedReason))) return false;
+            if (this.InstInfo != input.InstInfo || (this.InstInfo != null && !this.InstInfo.Equals(input.InstInfo))) return false;
+            if (this.ActualStartTime != input.ActualStartTime || (this.ActualStartTime != null && !this.ActualStartTime.Equals(input.ActualStartTime))) return false;
+            if (this.FullTransferCompleteTime != input.FullTransferCompleteTime || (this.FullTransferCompleteTime != null && !this.FullTransferCompleteTime.Equals(input.FullTransferCompleteTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.JobDirection != input.JobDirection) return false;
+            if (this.DbUseType != input.DbUseType) return false;
+            if (this.NeedRestart != input.NeedRestart || (this.NeedRestart != null && !this.NeedRestart.Equals(input.NeedRestart))) return false;
+            if (this.IsTargetReadonly != input.IsTargetReadonly || (this.IsTargetReadonly != null && !this.IsTargetReadonly.Equals(input.IsTargetReadonly))) return false;
+            if (this.ConflictPolicy != input.ConflictPolicy) return false;
+            if (this.FilterDdlPolicy != input.FilterDdlPolicy || (this.FilterDdlPolicy != null && !this.FilterDdlPolicy.Equals(input.FilterDdlPolicy))) return false;
+            if (this.SpeedLimit != input.SpeedLimit || (this.SpeedLimit != null && input.SpeedLimit != null && !this.SpeedLimit.SequenceEqual(input.SpeedLimit))) return false;
+            if (this.SchemaType != input.SchemaType) return false;
+            if (this.NodeNum != input.NodeNum || (this.NodeNum != null && !this.NodeNum.Equals(input.NodeNum))) return false;
+            if (this.ObjectSwitch != input.ObjectSwitch || (this.ObjectSwitch != null && !this.ObjectSwitch.Equals(input.ObjectSwitch))) return false;
+            if (this.MasterJobId != input.MasterJobId || (this.MasterJobId != null && !this.MasterJobId.Equals(input.MasterJobId))) return false;
+            if (this.FullMode != input.FullMode || (this.FullMode != null && !this.FullMode.Equals(input.FullMode))) return false;
+            if (this.StructTrans != input.StructTrans || (this.StructTrans != null && !this.StructTrans.Equals(input.StructTrans))) return false;
+            if (this.IndexTrans != input.IndexTrans || (this.IndexTrans != null && !this.IndexTrans.Equals(input.IndexTrans))) return false;
+            if (this.ReplaceDefiner != input.ReplaceDefiner || (this.ReplaceDefiner != null && !this.ReplaceDefiner.Equals(input.ReplaceDefiner))) return false;
+            if (this.MigrateUser != input.MigrateUser || (this.MigrateUser != null && !this.MigrateUser.Equals(input.MigrateUser))) return false;
+            if (this.SyncDatabase != input.SyncDatabase || (this.SyncDatabase != null && !this.SyncDatabase.Equals(input.SyncDatabase))) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
+            if (this.ErrorMessage != input.ErrorMessage || (this.ErrorMessage != null && !this.ErrorMessage.Equals(input.ErrorMessage))) return false;
+            if (this.TargetRootDb != input.TargetRootDb || (this.TargetRootDb != null && !this.TargetRootDb.Equals(input.TargetRootDb))) return false;
+            if (this.AzCode != input.AzCode || (this.AzCode != null && !this.AzCode.Equals(input.AzCode))) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
+            if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
+            if (this.SecurityGroupId != input.SecurityGroupId || (this.SecurityGroupId != null && !this.SecurityGroupId.Equals(input.SecurityGroupId))) return false;
+            if (this.MultiWrite != input.MultiWrite || (this.MultiWrite != null && !this.MultiWrite.Equals(input.MultiWrite))) return false;
+            if (this.SupportIpV6 != input.SupportIpV6 || (this.SupportIpV6 != null && !this.SupportIpV6.Equals(input.SupportIpV6))) return false;
+            if (this.InheritId != input.InheritId || (this.InheritId != null && !this.InheritId.Equals(input.InheritId))) return false;
+            if (this.Gtid != input.Gtid || (this.Gtid != null && !this.Gtid.Equals(input.Gtid))) return false;
+            if (this.AlarmNotify != input.AlarmNotify || (this.AlarmNotify != null && !this.AlarmNotify.Equals(input.AlarmNotify))) return false;
+            if (this.IncreStartPosition != input.IncreStartPosition || (this.IncreStartPosition != null && !this.IncreStartPosition.Equals(input.IncreStartPosition))) return false;
+            if (this.IsMultiAz != input.IsMultiAz || (this.IsMultiAz != null && !this.IsMultiAz.Equals(input.IsMultiAz))) return false;
+            if (this.AzName != input.AzName || (this.AzName != null && !this.AzName.Equals(input.AzName))) return false;
+            if (this.MasterAz != input.MasterAz || (this.MasterAz != null && !this.MasterAz.Equals(input.MasterAz))) return false;
+            if (this.SlaveAz != input.SlaveAz || (this.SlaveAz != null && !this.SlaveAz.Equals(input.SlaveAz))) return false;
+            if (this.NodeRole != input.NodeRole || (this.NodeRole != null && !this.NodeRole.Equals(input.NodeRole))) return false;
+            if (this.PeriodOrder != input.PeriodOrder || (this.PeriodOrder != null && !this.PeriodOrder.Equals(input.PeriodOrder))) return false;
+            if (this.ObjectInfos != input.ObjectInfos || (this.ObjectInfos != null && input.ObjectInfos != null && !this.ObjectInfos.SequenceEqual(input.ObjectInfos))) return false;
+            if (this.OriginalJobDirection != input.OriginalJobDirection) return false;
+            if (this.DataTransformation != input.DataTransformation || (this.DataTransformation != null && !this.DataTransformation.Equals(input.DataTransformation))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.PublicIpList != input.PublicIpList || (this.PublicIpList != null && input.PublicIpList != null && !this.PublicIpList.SequenceEqual(input.PublicIpList))) return false;
+            if (this.BindPublicIpState != input.BindPublicIpState || (this.BindPublicIpState != null && !this.BindPublicIpState.Equals(input.BindPublicIpState))) return false;
+            if (this.Children != input.Children || (this.Children != null && input.Children != null && !this.Children.SequenceEqual(input.Children))) return false;
+            if (this.IsOpenFastClean != input.IsOpenFastClean || (this.IsOpenFastClean != null && !this.IsOpenFastClean.Equals(input.IsOpenFastClean))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.ParentId == input.ParentId ||
-                    (this.ParentId != null &&
-                    this.ParentId.Equals(input.ParentId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.TaskType == input.TaskType ||
-                    (this.TaskType != null &&
-                    this.TaskType.Equals(input.TaskType))
-                ) && 
-                (
-                    this.SourceEndpoint == input.SourceEndpoint ||
-                    (this.SourceEndpoint != null &&
-                    this.SourceEndpoint.Equals(input.SourceEndpoint))
-                ) && 
-                (
-                    this.DmqEndpoint == input.DmqEndpoint ||
-                    (this.DmqEndpoint != null &&
-                    this.DmqEndpoint.Equals(input.DmqEndpoint))
-                ) && 
-                (
-                    this.SourceSharding == input.SourceSharding ||
-                    this.SourceSharding != null &&
-                    input.SourceSharding != null &&
-                    this.SourceSharding.SequenceEqual(input.SourceSharding)
-                ) && 
-                (
-                    this.TargetEndpoint == input.TargetEndpoint ||
-                    (this.TargetEndpoint != null &&
-                    this.TargetEndpoint.Equals(input.TargetEndpoint))
-                ) && 
-                (
-                    this.NetType == input.NetType ||
-                    (this.NetType != null &&
-                    this.NetType.Equals(input.NetType))
-                ) && 
-                (
-                    this.FailedReason == input.FailedReason ||
-                    (this.FailedReason != null &&
-                    this.FailedReason.Equals(input.FailedReason))
-                ) && 
-                (
-                    this.InstInfo == input.InstInfo ||
-                    (this.InstInfo != null &&
-                    this.InstInfo.Equals(input.InstInfo))
-                ) && 
-                (
-                    this.ActualStartTime == input.ActualStartTime ||
-                    (this.ActualStartTime != null &&
-                    this.ActualStartTime.Equals(input.ActualStartTime))
-                ) && 
-                (
-                    this.FullTransferCompleteTime == input.FullTransferCompleteTime ||
-                    (this.FullTransferCompleteTime != null &&
-                    this.FullTransferCompleteTime.Equals(input.FullTransferCompleteTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.JobDirection == input.JobDirection ||
-                    (this.JobDirection != null &&
-                    this.JobDirection.Equals(input.JobDirection))
-                ) && 
-                (
-                    this.DbUseType == input.DbUseType ||
-                    (this.DbUseType != null &&
-                    this.DbUseType.Equals(input.DbUseType))
-                ) && 
-                (
-                    this.NeedRestart == input.NeedRestart ||
-                    (this.NeedRestart != null &&
-                    this.NeedRestart.Equals(input.NeedRestart))
-                ) && 
-                (
-                    this.IsTargetReadonly == input.IsTargetReadonly ||
-                    (this.IsTargetReadonly != null &&
-                    this.IsTargetReadonly.Equals(input.IsTargetReadonly))
-                ) && 
-                (
-                    this.ConflictPolicy == input.ConflictPolicy ||
-                    (this.ConflictPolicy != null &&
-                    this.ConflictPolicy.Equals(input.ConflictPolicy))
-                ) && 
-                (
-                    this.FilterDdlPolicy == input.FilterDdlPolicy ||
-                    (this.FilterDdlPolicy != null &&
-                    this.FilterDdlPolicy.Equals(input.FilterDdlPolicy))
-                ) && 
-                (
-                    this.SpeedLimit == input.SpeedLimit ||
-                    this.SpeedLimit != null &&
-                    input.SpeedLimit != null &&
-                    this.SpeedLimit.SequenceEqual(input.SpeedLimit)
-                ) && 
-                (
-                    this.SchemaType == input.SchemaType ||
-                    (this.SchemaType != null &&
-                    this.SchemaType.Equals(input.SchemaType))
-                ) && 
-                (
-                    this.NodeNum == input.NodeNum ||
-                    (this.NodeNum != null &&
-                    this.NodeNum.Equals(input.NodeNum))
-                ) && 
-                (
-                    this.ObjectSwitch == input.ObjectSwitch ||
-                    (this.ObjectSwitch != null &&
-                    this.ObjectSwitch.Equals(input.ObjectSwitch))
-                ) && 
-                (
-                    this.MasterJobId == input.MasterJobId ||
-                    (this.MasterJobId != null &&
-                    this.MasterJobId.Equals(input.MasterJobId))
-                ) && 
-                (
-                    this.FullMode == input.FullMode ||
-                    (this.FullMode != null &&
-                    this.FullMode.Equals(input.FullMode))
-                ) && 
-                (
-                    this.StructTrans == input.StructTrans ||
-                    (this.StructTrans != null &&
-                    this.StructTrans.Equals(input.StructTrans))
-                ) && 
-                (
-                    this.IndexTrans == input.IndexTrans ||
-                    (this.IndexTrans != null &&
-                    this.IndexTrans.Equals(input.IndexTrans))
-                ) && 
-                (
-                    this.ReplaceDefiner == input.ReplaceDefiner ||
-                    (this.ReplaceDefiner != null &&
-                    this.ReplaceDefiner.Equals(input.ReplaceDefiner))
-                ) && 
-                (
-                    this.MigrateUser == input.MigrateUser ||
-                    (this.MigrateUser != null &&
-                    this.MigrateUser.Equals(input.MigrateUser))
-                ) && 
-                (
-                    this.SyncDatabase == input.SyncDatabase ||
-                    (this.SyncDatabase != null &&
-                    this.SyncDatabase.Equals(input.SyncDatabase))
-                ) && 
-                (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
-                ) && 
-                (
-                    this.ErrorMessage == input.ErrorMessage ||
-                    (this.ErrorMessage != null &&
-                    this.ErrorMessage.Equals(input.ErrorMessage))
-                ) && 
-                (
-                    this.TargetRootDb == input.TargetRootDb ||
-                    (this.TargetRootDb != null &&
-                    this.TargetRootDb.Equals(input.TargetRootDb))
-                ) && 
-                (
-                    this.AzCode == input.AzCode ||
-                    (this.AzCode != null &&
-                    this.AzCode.Equals(input.AzCode))
-                ) && 
-                (
-                    this.VpcId == input.VpcId ||
-                    (this.VpcId != null &&
-                    this.VpcId.Equals(input.VpcId))
-                ) && 
-                (
-                    this.SubnetId == input.SubnetId ||
-                    (this.SubnetId != null &&
-                    this.SubnetId.Equals(input.SubnetId))
-                ) && 
-                (
-                    this.SecurityGroupId == input.SecurityGroupId ||
-                    (this.SecurityGroupId != null &&
-                    this.SecurityGroupId.Equals(input.SecurityGroupId))
-                ) && 
-                (
-                    this.MultiWrite == input.MultiWrite ||
-                    (this.MultiWrite != null &&
-                    this.MultiWrite.Equals(input.MultiWrite))
-                ) && 
-                (
-                    this.SupportIpV6 == input.SupportIpV6 ||
-                    (this.SupportIpV6 != null &&
-                    this.SupportIpV6.Equals(input.SupportIpV6))
-                ) && 
-                (
-                    this.InheritId == input.InheritId ||
-                    (this.InheritId != null &&
-                    this.InheritId.Equals(input.InheritId))
-                ) && 
-                (
-                    this.Gtid == input.Gtid ||
-                    (this.Gtid != null &&
-                    this.Gtid.Equals(input.Gtid))
-                ) && 
-                (
-                    this.AlarmNotify == input.AlarmNotify ||
-                    (this.AlarmNotify != null &&
-                    this.AlarmNotify.Equals(input.AlarmNotify))
-                ) && 
-                (
-                    this.IncreStartPosition == input.IncreStartPosition ||
-                    (this.IncreStartPosition != null &&
-                    this.IncreStartPosition.Equals(input.IncreStartPosition))
-                ) && 
-                (
-                    this.IsMultiAz == input.IsMultiAz ||
-                    (this.IsMultiAz != null &&
-                    this.IsMultiAz.Equals(input.IsMultiAz))
-                ) && 
-                (
-                    this.AzName == input.AzName ||
-                    (this.AzName != null &&
-                    this.AzName.Equals(input.AzName))
-                ) && 
-                (
-                    this.MasterAz == input.MasterAz ||
-                    (this.MasterAz != null &&
-                    this.MasterAz.Equals(input.MasterAz))
-                ) && 
-                (
-                    this.SlaveAz == input.SlaveAz ||
-                    (this.SlaveAz != null &&
-                    this.SlaveAz.Equals(input.SlaveAz))
-                ) && 
-                (
-                    this.NodeRole == input.NodeRole ||
-                    (this.NodeRole != null &&
-                    this.NodeRole.Equals(input.NodeRole))
-                ) && 
-                (
-                    this.PeriodOrder == input.PeriodOrder ||
-                    (this.PeriodOrder != null &&
-                    this.PeriodOrder.Equals(input.PeriodOrder))
-                ) && 
-                (
-                    this.ObjectInfos == input.ObjectInfos ||
-                    this.ObjectInfos != null &&
-                    input.ObjectInfos != null &&
-                    this.ObjectInfos.SequenceEqual(input.ObjectInfos)
-                ) && 
-                (
-                    this.OriginalJobDirection == input.OriginalJobDirection ||
-                    (this.OriginalJobDirection != null &&
-                    this.OriginalJobDirection.Equals(input.OriginalJobDirection))
-                ) && 
-                (
-                    this.DataTransformation == input.DataTransformation ||
-                    (this.DataTransformation != null &&
-                    this.DataTransformation.Equals(input.DataTransformation))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.PublicIpList == input.PublicIpList ||
-                    this.PublicIpList != null &&
-                    input.PublicIpList != null &&
-                    this.PublicIpList.SequenceEqual(input.PublicIpList)
-                ) && 
-                (
-                    this.BindPublicIpState == input.BindPublicIpState ||
-                    (this.BindPublicIpState != null &&
-                    this.BindPublicIpState.Equals(input.BindPublicIpState))
-                ) && 
-                (
-                    this.Children == input.Children ||
-                    this.Children != null &&
-                    input.Children != null &&
-                    this.Children.SequenceEqual(input.Children)
-                ) && 
-                (
-                    this.IsOpenFastClean == input.IsOpenFastClean ||
-                    (this.IsOpenFastClean != null &&
-                    this.IsOpenFastClean.Equals(input.IsOpenFastClean))
-                );
+            return true;
         }
 
         /// <summary>
@@ -1909,129 +1658,68 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.ParentId != null)
-                    hashCode = hashCode * 59 + this.ParentId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.TaskType != null)
-                    hashCode = hashCode * 59 + this.TaskType.GetHashCode();
-                if (this.SourceEndpoint != null)
-                    hashCode = hashCode * 59 + this.SourceEndpoint.GetHashCode();
-                if (this.DmqEndpoint != null)
-                    hashCode = hashCode * 59 + this.DmqEndpoint.GetHashCode();
-                if (this.SourceSharding != null)
-                    hashCode = hashCode * 59 + this.SourceSharding.GetHashCode();
-                if (this.TargetEndpoint != null)
-                    hashCode = hashCode * 59 + this.TargetEndpoint.GetHashCode();
-                if (this.NetType != null)
-                    hashCode = hashCode * 59 + this.NetType.GetHashCode();
-                if (this.FailedReason != null)
-                    hashCode = hashCode * 59 + this.FailedReason.GetHashCode();
-                if (this.InstInfo != null)
-                    hashCode = hashCode * 59 + this.InstInfo.GetHashCode();
-                if (this.ActualStartTime != null)
-                    hashCode = hashCode * 59 + this.ActualStartTime.GetHashCode();
-                if (this.FullTransferCompleteTime != null)
-                    hashCode = hashCode * 59 + this.FullTransferCompleteTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.JobDirection != null)
-                    hashCode = hashCode * 59 + this.JobDirection.GetHashCode();
-                if (this.DbUseType != null)
-                    hashCode = hashCode * 59 + this.DbUseType.GetHashCode();
-                if (this.NeedRestart != null)
-                    hashCode = hashCode * 59 + this.NeedRestart.GetHashCode();
-                if (this.IsTargetReadonly != null)
-                    hashCode = hashCode * 59 + this.IsTargetReadonly.GetHashCode();
-                if (this.ConflictPolicy != null)
-                    hashCode = hashCode * 59 + this.ConflictPolicy.GetHashCode();
-                if (this.FilterDdlPolicy != null)
-                    hashCode = hashCode * 59 + this.FilterDdlPolicy.GetHashCode();
-                if (this.SpeedLimit != null)
-                    hashCode = hashCode * 59 + this.SpeedLimit.GetHashCode();
-                if (this.SchemaType != null)
-                    hashCode = hashCode * 59 + this.SchemaType.GetHashCode();
-                if (this.NodeNum != null)
-                    hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
-                if (this.ObjectSwitch != null)
-                    hashCode = hashCode * 59 + this.ObjectSwitch.GetHashCode();
-                if (this.MasterJobId != null)
-                    hashCode = hashCode * 59 + this.MasterJobId.GetHashCode();
-                if (this.FullMode != null)
-                    hashCode = hashCode * 59 + this.FullMode.GetHashCode();
-                if (this.StructTrans != null)
-                    hashCode = hashCode * 59 + this.StructTrans.GetHashCode();
-                if (this.IndexTrans != null)
-                    hashCode = hashCode * 59 + this.IndexTrans.GetHashCode();
-                if (this.ReplaceDefiner != null)
-                    hashCode = hashCode * 59 + this.ReplaceDefiner.GetHashCode();
-                if (this.MigrateUser != null)
-                    hashCode = hashCode * 59 + this.MigrateUser.GetHashCode();
-                if (this.SyncDatabase != null)
-                    hashCode = hashCode * 59 + this.SyncDatabase.GetHashCode();
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.ErrorMessage != null)
-                    hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
-                if (this.TargetRootDb != null)
-                    hashCode = hashCode * 59 + this.TargetRootDb.GetHashCode();
-                if (this.AzCode != null)
-                    hashCode = hashCode * 59 + this.AzCode.GetHashCode();
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.SubnetId != null)
-                    hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
-                if (this.SecurityGroupId != null)
-                    hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
-                if (this.MultiWrite != null)
-                    hashCode = hashCode * 59 + this.MultiWrite.GetHashCode();
-                if (this.SupportIpV6 != null)
-                    hashCode = hashCode * 59 + this.SupportIpV6.GetHashCode();
-                if (this.InheritId != null)
-                    hashCode = hashCode * 59 + this.InheritId.GetHashCode();
-                if (this.Gtid != null)
-                    hashCode = hashCode * 59 + this.Gtid.GetHashCode();
-                if (this.AlarmNotify != null)
-                    hashCode = hashCode * 59 + this.AlarmNotify.GetHashCode();
-                if (this.IncreStartPosition != null)
-                    hashCode = hashCode * 59 + this.IncreStartPosition.GetHashCode();
-                if (this.IsMultiAz != null)
-                    hashCode = hashCode * 59 + this.IsMultiAz.GetHashCode();
-                if (this.AzName != null)
-                    hashCode = hashCode * 59 + this.AzName.GetHashCode();
-                if (this.MasterAz != null)
-                    hashCode = hashCode * 59 + this.MasterAz.GetHashCode();
-                if (this.SlaveAz != null)
-                    hashCode = hashCode * 59 + this.SlaveAz.GetHashCode();
-                if (this.NodeRole != null)
-                    hashCode = hashCode * 59 + this.NodeRole.GetHashCode();
-                if (this.PeriodOrder != null)
-                    hashCode = hashCode * 59 + this.PeriodOrder.GetHashCode();
-                if (this.ObjectInfos != null)
-                    hashCode = hashCode * 59 + this.ObjectInfos.GetHashCode();
-                if (this.OriginalJobDirection != null)
-                    hashCode = hashCode * 59 + this.OriginalJobDirection.GetHashCode();
-                if (this.DataTransformation != null)
-                    hashCode = hashCode * 59 + this.DataTransformation.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.PublicIpList != null)
-                    hashCode = hashCode * 59 + this.PublicIpList.GetHashCode();
-                if (this.BindPublicIpState != null)
-                    hashCode = hashCode * 59 + this.BindPublicIpState.GetHashCode();
-                if (this.Children != null)
-                    hashCode = hashCode * 59 + this.Children.GetHashCode();
-                if (this.IsOpenFastClean != null)
-                    hashCode = hashCode * 59 + this.IsOpenFastClean.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.ParentId != null) hashCode = hashCode * 59 + this.ParentId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                hashCode = hashCode * 59 + this.TaskType.GetHashCode();
+                if (this.SourceEndpoint != null) hashCode = hashCode * 59 + this.SourceEndpoint.GetHashCode();
+                if (this.DmqEndpoint != null) hashCode = hashCode * 59 + this.DmqEndpoint.GetHashCode();
+                if (this.SourceSharding != null) hashCode = hashCode * 59 + this.SourceSharding.GetHashCode();
+                if (this.TargetEndpoint != null) hashCode = hashCode * 59 + this.TargetEndpoint.GetHashCode();
+                hashCode = hashCode * 59 + this.NetType.GetHashCode();
+                if (this.FailedReason != null) hashCode = hashCode * 59 + this.FailedReason.GetHashCode();
+                if (this.InstInfo != null) hashCode = hashCode * 59 + this.InstInfo.GetHashCode();
+                if (this.ActualStartTime != null) hashCode = hashCode * 59 + this.ActualStartTime.GetHashCode();
+                if (this.FullTransferCompleteTime != null) hashCode = hashCode * 59 + this.FullTransferCompleteTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                hashCode = hashCode * 59 + this.JobDirection.GetHashCode();
+                hashCode = hashCode * 59 + this.DbUseType.GetHashCode();
+                if (this.NeedRestart != null) hashCode = hashCode * 59 + this.NeedRestart.GetHashCode();
+                if (this.IsTargetReadonly != null) hashCode = hashCode * 59 + this.IsTargetReadonly.GetHashCode();
+                hashCode = hashCode * 59 + this.ConflictPolicy.GetHashCode();
+                if (this.FilterDdlPolicy != null) hashCode = hashCode * 59 + this.FilterDdlPolicy.GetHashCode();
+                if (this.SpeedLimit != null) hashCode = hashCode * 59 + this.SpeedLimit.GetHashCode();
+                hashCode = hashCode * 59 + this.SchemaType.GetHashCode();
+                if (this.NodeNum != null) hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
+                if (this.ObjectSwitch != null) hashCode = hashCode * 59 + this.ObjectSwitch.GetHashCode();
+                if (this.MasterJobId != null) hashCode = hashCode * 59 + this.MasterJobId.GetHashCode();
+                if (this.FullMode != null) hashCode = hashCode * 59 + this.FullMode.GetHashCode();
+                if (this.StructTrans != null) hashCode = hashCode * 59 + this.StructTrans.GetHashCode();
+                if (this.IndexTrans != null) hashCode = hashCode * 59 + this.IndexTrans.GetHashCode();
+                if (this.ReplaceDefiner != null) hashCode = hashCode * 59 + this.ReplaceDefiner.GetHashCode();
+                if (this.MigrateUser != null) hashCode = hashCode * 59 + this.MigrateUser.GetHashCode();
+                if (this.SyncDatabase != null) hashCode = hashCode * 59 + this.SyncDatabase.GetHashCode();
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.ErrorMessage != null) hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
+                if (this.TargetRootDb != null) hashCode = hashCode * 59 + this.TargetRootDb.GetHashCode();
+                if (this.AzCode != null) hashCode = hashCode * 59 + this.AzCode.GetHashCode();
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
+                if (this.SecurityGroupId != null) hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
+                if (this.MultiWrite != null) hashCode = hashCode * 59 + this.MultiWrite.GetHashCode();
+                if (this.SupportIpV6 != null) hashCode = hashCode * 59 + this.SupportIpV6.GetHashCode();
+                if (this.InheritId != null) hashCode = hashCode * 59 + this.InheritId.GetHashCode();
+                if (this.Gtid != null) hashCode = hashCode * 59 + this.Gtid.GetHashCode();
+                if (this.AlarmNotify != null) hashCode = hashCode * 59 + this.AlarmNotify.GetHashCode();
+                if (this.IncreStartPosition != null) hashCode = hashCode * 59 + this.IncreStartPosition.GetHashCode();
+                if (this.IsMultiAz != null) hashCode = hashCode * 59 + this.IsMultiAz.GetHashCode();
+                if (this.AzName != null) hashCode = hashCode * 59 + this.AzName.GetHashCode();
+                if (this.MasterAz != null) hashCode = hashCode * 59 + this.MasterAz.GetHashCode();
+                if (this.SlaveAz != null) hashCode = hashCode * 59 + this.SlaveAz.GetHashCode();
+                if (this.NodeRole != null) hashCode = hashCode * 59 + this.NodeRole.GetHashCode();
+                if (this.PeriodOrder != null) hashCode = hashCode * 59 + this.PeriodOrder.GetHashCode();
+                if (this.ObjectInfos != null) hashCode = hashCode * 59 + this.ObjectInfos.GetHashCode();
+                hashCode = hashCode * 59 + this.OriginalJobDirection.GetHashCode();
+                if (this.DataTransformation != null) hashCode = hashCode * 59 + this.DataTransformation.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.PublicIpList != null) hashCode = hashCode * 59 + this.PublicIpList.GetHashCode();
+                if (this.BindPublicIpState != null) hashCode = hashCode * 59 + this.BindPublicIpState.GetHashCode();
+                if (this.Children != null) hashCode = hashCode * 59 + this.Children.GetHashCode();
+                if (this.IsOpenFastClean != null) hashCode = hashCode * 59 + this.IsOpenFastClean.GetHashCode();
                 return hashCode;
             }
         }

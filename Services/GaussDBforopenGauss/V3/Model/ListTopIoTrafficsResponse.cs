@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ListTopIoTrafficsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TopIoInfos != input.TopIoInfos || (this.TopIoInfos != null && input.TopIoInfos != null && !this.TopIoInfos.SequenceEqual(input.TopIoInfos))) return false;
 
-            return 
-                (
-                    this.TopIoInfos == input.TopIoInfos ||
-                    this.TopIoInfos != null &&
-                    input.TopIoInfos != null &&
-                    this.TopIoInfos.SequenceEqual(input.TopIoInfos)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TopIoInfos != null)
-                    hashCode = hashCode * 59 + this.TopIoInfos.GetHashCode();
+                var hashCode = 41;
+                if (this.TopIoInfos != null) hashCode = hashCode * 59 + this.TopIoInfos.GetHashCode();
                 return hashCode;
             }
         }

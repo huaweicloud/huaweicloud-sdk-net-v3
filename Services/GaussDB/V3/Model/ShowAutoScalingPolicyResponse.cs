@@ -147,85 +147,24 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ShowAutoScalingPolicyResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.InstanceName != input.InstanceName || (this.InstanceName != null && !this.InstanceName.Equals(input.InstanceName))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.MonitorCycle != input.MonitorCycle || (this.MonitorCycle != null && !this.MonitorCycle.Equals(input.MonitorCycle))) return false;
+            if (this.SilenceCycle != input.SilenceCycle || (this.SilenceCycle != null && !this.SilenceCycle.Equals(input.SilenceCycle))) return false;
+            if (this.EnlargeThreshold != input.EnlargeThreshold || (this.EnlargeThreshold != null && !this.EnlargeThreshold.Equals(input.EnlargeThreshold))) return false;
+            if (this.MaxFlavor != input.MaxFlavor || (this.MaxFlavor != null && !this.MaxFlavor.Equals(input.MaxFlavor))) return false;
+            if (this.ReduceEnabled != input.ReduceEnabled || (this.ReduceEnabled != null && !this.ReduceEnabled.Equals(input.ReduceEnabled))) return false;
+            if (this.MinFlavor != input.MinFlavor || (this.MinFlavor != null && !this.MinFlavor.Equals(input.MinFlavor))) return false;
+            if (this.SilenceStartAt != input.SilenceStartAt || (this.SilenceStartAt != null && !this.SilenceStartAt.Equals(input.SilenceStartAt))) return false;
+            if (this.ScalingStrategy != input.ScalingStrategy || (this.ScalingStrategy != null && !this.ScalingStrategy.Equals(input.ScalingStrategy))) return false;
+            if (this.MaxReadOnlyCount != input.MaxReadOnlyCount || (this.MaxReadOnlyCount != null && !this.MaxReadOnlyCount.Equals(input.MaxReadOnlyCount))) return false;
+            if (this.MinReadOnlyCount != input.MinReadOnlyCount || (this.MinReadOnlyCount != null && !this.MinReadOnlyCount.Equals(input.MinReadOnlyCount))) return false;
+            if (this.ReadOnlyWeight != input.ReadOnlyWeight || (this.ReadOnlyWeight != null && !this.ReadOnlyWeight.Equals(input.ReadOnlyWeight))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.InstanceName == input.InstanceName ||
-                    (this.InstanceName != null &&
-                    this.InstanceName.Equals(input.InstanceName))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.MonitorCycle == input.MonitorCycle ||
-                    (this.MonitorCycle != null &&
-                    this.MonitorCycle.Equals(input.MonitorCycle))
-                ) && 
-                (
-                    this.SilenceCycle == input.SilenceCycle ||
-                    (this.SilenceCycle != null &&
-                    this.SilenceCycle.Equals(input.SilenceCycle))
-                ) && 
-                (
-                    this.EnlargeThreshold == input.EnlargeThreshold ||
-                    (this.EnlargeThreshold != null &&
-                    this.EnlargeThreshold.Equals(input.EnlargeThreshold))
-                ) && 
-                (
-                    this.MaxFlavor == input.MaxFlavor ||
-                    (this.MaxFlavor != null &&
-                    this.MaxFlavor.Equals(input.MaxFlavor))
-                ) && 
-                (
-                    this.ReduceEnabled == input.ReduceEnabled ||
-                    (this.ReduceEnabled != null &&
-                    this.ReduceEnabled.Equals(input.ReduceEnabled))
-                ) && 
-                (
-                    this.MinFlavor == input.MinFlavor ||
-                    (this.MinFlavor != null &&
-                    this.MinFlavor.Equals(input.MinFlavor))
-                ) && 
-                (
-                    this.SilenceStartAt == input.SilenceStartAt ||
-                    (this.SilenceStartAt != null &&
-                    this.SilenceStartAt.Equals(input.SilenceStartAt))
-                ) && 
-                (
-                    this.ScalingStrategy == input.ScalingStrategy ||
-                    (this.ScalingStrategy != null &&
-                    this.ScalingStrategy.Equals(input.ScalingStrategy))
-                ) && 
-                (
-                    this.MaxReadOnlyCount == input.MaxReadOnlyCount ||
-                    (this.MaxReadOnlyCount != null &&
-                    this.MaxReadOnlyCount.Equals(input.MaxReadOnlyCount))
-                ) && 
-                (
-                    this.MinReadOnlyCount == input.MinReadOnlyCount ||
-                    (this.MinReadOnlyCount != null &&
-                    this.MinReadOnlyCount.Equals(input.MinReadOnlyCount))
-                ) && 
-                (
-                    this.ReadOnlyWeight == input.ReadOnlyWeight ||
-                    (this.ReadOnlyWeight != null &&
-                    this.ReadOnlyWeight.Equals(input.ReadOnlyWeight))
-                );
+            return true;
         }
 
         /// <summary>
@@ -235,37 +174,22 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.InstanceName != null)
-                    hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.MonitorCycle != null)
-                    hashCode = hashCode * 59 + this.MonitorCycle.GetHashCode();
-                if (this.SilenceCycle != null)
-                    hashCode = hashCode * 59 + this.SilenceCycle.GetHashCode();
-                if (this.EnlargeThreshold != null)
-                    hashCode = hashCode * 59 + this.EnlargeThreshold.GetHashCode();
-                if (this.MaxFlavor != null)
-                    hashCode = hashCode * 59 + this.MaxFlavor.GetHashCode();
-                if (this.ReduceEnabled != null)
-                    hashCode = hashCode * 59 + this.ReduceEnabled.GetHashCode();
-                if (this.MinFlavor != null)
-                    hashCode = hashCode * 59 + this.MinFlavor.GetHashCode();
-                if (this.SilenceStartAt != null)
-                    hashCode = hashCode * 59 + this.SilenceStartAt.GetHashCode();
-                if (this.ScalingStrategy != null)
-                    hashCode = hashCode * 59 + this.ScalingStrategy.GetHashCode();
-                if (this.MaxReadOnlyCount != null)
-                    hashCode = hashCode * 59 + this.MaxReadOnlyCount.GetHashCode();
-                if (this.MinReadOnlyCount != null)
-                    hashCode = hashCode * 59 + this.MinReadOnlyCount.GetHashCode();
-                if (this.ReadOnlyWeight != null)
-                    hashCode = hashCode * 59 + this.ReadOnlyWeight.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.InstanceName != null) hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.MonitorCycle != null) hashCode = hashCode * 59 + this.MonitorCycle.GetHashCode();
+                if (this.SilenceCycle != null) hashCode = hashCode * 59 + this.SilenceCycle.GetHashCode();
+                if (this.EnlargeThreshold != null) hashCode = hashCode * 59 + this.EnlargeThreshold.GetHashCode();
+                if (this.MaxFlavor != null) hashCode = hashCode * 59 + this.MaxFlavor.GetHashCode();
+                if (this.ReduceEnabled != null) hashCode = hashCode * 59 + this.ReduceEnabled.GetHashCode();
+                if (this.MinFlavor != null) hashCode = hashCode * 59 + this.MinFlavor.GetHashCode();
+                if (this.SilenceStartAt != null) hashCode = hashCode * 59 + this.SilenceStartAt.GetHashCode();
+                if (this.ScalingStrategy != null) hashCode = hashCode * 59 + this.ScalingStrategy.GetHashCode();
+                if (this.MaxReadOnlyCount != null) hashCode = hashCode * 59 + this.MaxReadOnlyCount.GetHashCode();
+                if (this.MinReadOnlyCount != null) hashCode = hashCode * 59 + this.MinReadOnlyCount.GetHashCode();
+                if (this.ReadOnlyWeight != null) hashCode = hashCode * 59 + this.ReadOnlyWeight.GetHashCode();
                 return hashCode;
             }
         }

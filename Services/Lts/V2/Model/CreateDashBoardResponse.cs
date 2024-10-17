@@ -98,52 +98,17 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(CreateDashBoardResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Charts != input.Charts || (this.Charts != null && input.Charts != null && !this.Charts.SequenceEqual(input.Charts))) return false;
+            if (this.Filters != input.Filters || (this.Filters != null && input.Filters != null && !this.Filters.SequenceEqual(input.Filters))) return false;
+            if (this.GroupName != input.GroupName || (this.GroupName != null && !this.GroupName.Equals(input.GroupName))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.LastUpdateTime != input.LastUpdateTime || (this.LastUpdateTime != null && !this.LastUpdateTime.Equals(input.LastUpdateTime))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.Title != input.Title || (this.Title != null && !this.Title.Equals(input.Title))) return false;
+            if (this.UseSystemTemplate != input.UseSystemTemplate || (this.UseSystemTemplate != null && !this.UseSystemTemplate.Equals(input.UseSystemTemplate))) return false;
 
-            return 
-                (
-                    this.Charts == input.Charts ||
-                    this.Charts != null &&
-                    input.Charts != null &&
-                    this.Charts.SequenceEqual(input.Charts)
-                ) && 
-                (
-                    this.Filters == input.Filters ||
-                    this.Filters != null &&
-                    input.Filters != null &&
-                    this.Filters.SequenceEqual(input.Filters)
-                ) && 
-                (
-                    this.GroupName == input.GroupName ||
-                    (this.GroupName != null &&
-                    this.GroupName.Equals(input.GroupName))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.LastUpdateTime == input.LastUpdateTime ||
-                    (this.LastUpdateTime != null &&
-                    this.LastUpdateTime.Equals(input.LastUpdateTime))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Title == input.Title ||
-                    (this.Title != null &&
-                    this.Title.Equals(input.Title))
-                ) && 
-                (
-                    this.UseSystemTemplate == input.UseSystemTemplate ||
-                    (this.UseSystemTemplate != null &&
-                    this.UseSystemTemplate.Equals(input.UseSystemTemplate))
-                );
+            return true;
         }
 
         /// <summary>
@@ -153,23 +118,15 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Charts != null)
-                    hashCode = hashCode * 59 + this.Charts.GetHashCode();
-                if (this.Filters != null)
-                    hashCode = hashCode * 59 + this.Filters.GetHashCode();
-                if (this.GroupName != null)
-                    hashCode = hashCode * 59 + this.GroupName.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.LastUpdateTime != null)
-                    hashCode = hashCode * 59 + this.LastUpdateTime.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.Title != null)
-                    hashCode = hashCode * 59 + this.Title.GetHashCode();
-                if (this.UseSystemTemplate != null)
-                    hashCode = hashCode * 59 + this.UseSystemTemplate.GetHashCode();
+                var hashCode = 41;
+                if (this.Charts != null) hashCode = hashCode * 59 + this.Charts.GetHashCode();
+                if (this.Filters != null) hashCode = hashCode * 59 + this.Filters.GetHashCode();
+                if (this.GroupName != null) hashCode = hashCode * 59 + this.GroupName.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.LastUpdateTime != null) hashCode = hashCode * 59 + this.LastUpdateTime.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.Title != null) hashCode = hashCode * 59 + this.Title.GetHashCode();
+                if (this.UseSystemTemplate != null) hashCode = hashCode * 59 + this.UseSystemTemplate.GetHashCode();
                 return hashCode;
             }
         }

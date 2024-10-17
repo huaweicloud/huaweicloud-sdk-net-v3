@@ -514,72 +514,20 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// </summary>
         public bool Equals(ListAccessSitesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.PageReverse != input.PageReverse || (this.PageReverse != null && !this.PageReverse.Equals(input.PageReverse))) return false;
+            if (this.Fields != input.Fields || (this.Fields != null && input.Fields != null && !this.Fields.SequenceEqual(input.Fields))) return false;
+            if (this.SortKey != input.SortKey || (this.SortKey != null && input.SortKey != null && !this.SortKey.SequenceEqual(input.SortKey))) return false;
+            if (this.SortDir != input.SortDir || (this.SortDir != null && input.SortDir != null && !this.SortDir.SequenceEqual(input.SortDir))) return false;
+            if (this.Id != input.Id || (this.Id != null && input.Id != null && !this.Id.SequenceEqual(input.Id))) return false;
+            if (this.Code != input.Code || (this.Code != null && input.Code != null && !this.Code.SequenceEqual(input.Code))) return false;
+            if (this.ProxyRegion != input.ProxyRegion || (this.ProxyRegion != null && input.ProxyRegion != null && !this.ProxyRegion.SequenceEqual(input.ProxyRegion))) return false;
+            if (this.IecAzCode != input.IecAzCode || (this.IecAzCode != null && input.IecAzCode != null && !this.IecAzCode.SequenceEqual(input.IecAzCode))) return false;
 
-            return 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.PageReverse == input.PageReverse ||
-                    (this.PageReverse != null &&
-                    this.PageReverse.Equals(input.PageReverse))
-                ) && 
-                (
-                    this.Fields == input.Fields ||
-                    this.Fields != null &&
-                    input.Fields != null &&
-                    this.Fields.SequenceEqual(input.Fields)
-                ) && 
-                (
-                    this.SortKey == input.SortKey ||
-                    this.SortKey != null &&
-                    input.SortKey != null &&
-                    this.SortKey.SequenceEqual(input.SortKey)
-                ) && 
-                (
-                    this.SortDir == input.SortDir ||
-                    this.SortDir != null &&
-                    input.SortDir != null &&
-                    this.SortDir.SequenceEqual(input.SortDir)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    this.Id != null &&
-                    input.Id != null &&
-                    this.Id.SequenceEqual(input.Id)
-                ) && 
-                (
-                    this.Code == input.Code ||
-                    this.Code != null &&
-                    input.Code != null &&
-                    this.Code.SequenceEqual(input.Code)
-                ) && 
-                (
-                    this.ProxyRegion == input.ProxyRegion ||
-                    this.ProxyRegion != null &&
-                    input.ProxyRegion != null &&
-                    this.ProxyRegion.SequenceEqual(input.ProxyRegion)
-                ) && 
-                (
-                    this.IecAzCode == input.IecAzCode ||
-                    this.IecAzCode != null &&
-                    input.IecAzCode != null &&
-                    this.IecAzCode.SequenceEqual(input.IecAzCode)
-                );
+            return true;
         }
 
         /// <summary>
@@ -589,29 +537,18 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.PageReverse != null)
-                    hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
-                if (this.Fields != null)
-                    hashCode = hashCode * 59 + this.Fields.GetHashCode();
-                if (this.SortKey != null)
-                    hashCode = hashCode * 59 + this.SortKey.GetHashCode();
-                if (this.SortDir != null)
-                    hashCode = hashCode * 59 + this.SortDir.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Code != null)
-                    hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.ProxyRegion != null)
-                    hashCode = hashCode * 59 + this.ProxyRegion.GetHashCode();
-                if (this.IecAzCode != null)
-                    hashCode = hashCode * 59 + this.IecAzCode.GetHashCode();
+                var hashCode = 41;
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.PageReverse != null) hashCode = hashCode * 59 + this.PageReverse.GetHashCode();
+                hashCode = hashCode * 59 + this.Fields.GetHashCode();
+                hashCode = hashCode * 59 + this.SortKey.GetHashCode();
+                hashCode = hashCode * 59 + this.SortDir.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Code != null) hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.ProxyRegion != null) hashCode = hashCode * 59 + this.ProxyRegion.GetHashCode();
+                if (this.IecAzCode != null) hashCode = hashCode * 59 + this.IecAzCode.GetHashCode();
                 return hashCode;
             }
         }

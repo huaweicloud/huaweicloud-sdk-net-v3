@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         /// </summary>
         public bool Equals(RateControl input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HaveRateControl != input.HaveRateControl || (this.HaveRateControl != null && !this.HaveRateControl.Equals(input.HaveRateControl))) return false;
+            if (this.TimeDelay != input.TimeDelay || (this.TimeDelay != null && !this.TimeDelay.Equals(input.TimeDelay))) return false;
+            if (this.Max != input.Max || (this.Max != null && !this.Max.Equals(input.Max))) return false;
 
-            return 
-                (
-                    this.HaveRateControl == input.HaveRateControl ||
-                    (this.HaveRateControl != null &&
-                    this.HaveRateControl.Equals(input.HaveRateControl))
-                ) && 
-                (
-                    this.TimeDelay == input.TimeDelay ||
-                    (this.TimeDelay != null &&
-                    this.TimeDelay.Equals(input.TimeDelay))
-                ) && 
-                (
-                    this.Max == input.Max ||
-                    (this.Max != null &&
-                    this.Max.Equals(input.Max))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Aom.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HaveRateControl != null)
-                    hashCode = hashCode * 59 + this.HaveRateControl.GetHashCode();
-                if (this.TimeDelay != null)
-                    hashCode = hashCode * 59 + this.TimeDelay.GetHashCode();
-                if (this.Max != null)
-                    hashCode = hashCode * 59 + this.Max.GetHashCode();
+                var hashCode = 41;
+                if (this.HaveRateControl != null) hashCode = hashCode * 59 + this.HaveRateControl.GetHashCode();
+                if (this.TimeDelay != null) hashCode = hashCode * 59 + this.TimeDelay.GetHashCode();
+                if (this.Max != null) hashCode = hashCode * 59 + this.Max.GetHashCode();
                 return hashCode;
             }
         }

@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         /// </summary>
         public bool Equals(StandardRespDataByVideoAndNameAndId input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VerificationResult != input.VerificationResult || (this.VerificationResult != null && !this.VerificationResult.Equals(input.VerificationResult))) return false;
+            if (this.VerificationMessage != input.VerificationMessage || (this.VerificationMessage != null && !this.VerificationMessage.Equals(input.VerificationMessage))) return false;
+            if (this.VerificationCode != input.VerificationCode || (this.VerificationCode != null && !this.VerificationCode.Equals(input.VerificationCode))) return false;
+            if (this.Similarity != input.Similarity || (this.Similarity != null && !this.Similarity.Equals(input.Similarity))) return false;
+            if (this.VideoResult != input.VideoResult || (this.VideoResult != null && !this.VideoResult.Equals(input.VideoResult))) return false;
 
-            return 
-                (
-                    this.VerificationResult == input.VerificationResult ||
-                    (this.VerificationResult != null &&
-                    this.VerificationResult.Equals(input.VerificationResult))
-                ) && 
-                (
-                    this.VerificationMessage == input.VerificationMessage ||
-                    (this.VerificationMessage != null &&
-                    this.VerificationMessage.Equals(input.VerificationMessage))
-                ) && 
-                (
-                    this.VerificationCode == input.VerificationCode ||
-                    (this.VerificationCode != null &&
-                    this.VerificationCode.Equals(input.VerificationCode))
-                ) && 
-                (
-                    this.Similarity == input.Similarity ||
-                    (this.Similarity != null &&
-                    this.Similarity.Equals(input.Similarity))
-                ) && 
-                (
-                    this.VideoResult == input.VideoResult ||
-                    (this.VideoResult != null &&
-                    this.VideoResult.Equals(input.VideoResult))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VerificationResult != null)
-                    hashCode = hashCode * 59 + this.VerificationResult.GetHashCode();
-                if (this.VerificationMessage != null)
-                    hashCode = hashCode * 59 + this.VerificationMessage.GetHashCode();
-                if (this.VerificationCode != null)
-                    hashCode = hashCode * 59 + this.VerificationCode.GetHashCode();
-                if (this.Similarity != null)
-                    hashCode = hashCode * 59 + this.Similarity.GetHashCode();
-                if (this.VideoResult != null)
-                    hashCode = hashCode * 59 + this.VideoResult.GetHashCode();
+                var hashCode = 41;
+                if (this.VerificationResult != null) hashCode = hashCode * 59 + this.VerificationResult.GetHashCode();
+                if (this.VerificationMessage != null) hashCode = hashCode * 59 + this.VerificationMessage.GetHashCode();
+                if (this.VerificationCode != null) hashCode = hashCode * 59 + this.VerificationCode.GetHashCode();
+                if (this.Similarity != null) hashCode = hashCode * 59 + this.Similarity.GetHashCode();
+                if (this.VideoResult != null) hashCode = hashCode * 59 + this.VideoResult.GetHashCode();
                 return hashCode;
             }
         }

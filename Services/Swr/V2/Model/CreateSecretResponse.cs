@@ -57,21 +57,11 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public bool Equals(CreateSecretResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Auths != input.Auths || (this.Auths != null && input.Auths != null && !this.Auths.SequenceEqual(input.Auths))) return false;
+            if (this.XSwrDockerlogin != input.XSwrDockerlogin || (this.XSwrDockerlogin != null && !this.XSwrDockerlogin.Equals(input.XSwrDockerlogin))) return false;
 
-            return 
-                (
-                    this.Auths == input.Auths ||
-                    this.Auths != null &&
-                    input.Auths != null &&
-                    this.Auths.SequenceEqual(input.Auths)
-                ) && 
-                (
-                    this.XSwrDockerlogin == input.XSwrDockerlogin ||
-                    (this.XSwrDockerlogin != null &&
-                    this.XSwrDockerlogin.Equals(input.XSwrDockerlogin))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +71,9 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Auths != null)
-                    hashCode = hashCode * 59 + this.Auths.GetHashCode();
-                if (this.XSwrDockerlogin != null)
-                    hashCode = hashCode * 59 + this.XSwrDockerlogin.GetHashCode();
+                var hashCode = 41;
+                if (this.Auths != null) hashCode = hashCode * 59 + this.Auths.GetHashCode();
+                if (this.XSwrDockerlogin != null) hashCode = hashCode * 59 + this.XSwrDockerlogin.GetHashCode();
                 return hashCode;
             }
         }

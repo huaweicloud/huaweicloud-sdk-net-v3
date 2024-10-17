@@ -119,68 +119,20 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// </summary>
         public bool Equals(DocumentQueryResponseResultDetails input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Suggestion != input.Suggestion || (this.Suggestion != null && !this.Suggestion.Equals(input.Suggestion))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Label != input.Label || (this.Label != null && !this.Label.Equals(input.Label))) return false;
+            if (this.Index != input.Index || (this.Index != null && !this.Index.Equals(input.Index))) return false;
+            if (this.Text != input.Text || (this.Text != null && !this.Text.Equals(input.Text))) return false;
+            if (this.StartPosition != input.StartPosition || (this.StartPosition != null && !this.StartPosition.Equals(input.StartPosition))) return false;
+            if (this.EndPosition != input.EndPosition || (this.EndPosition != null && !this.EndPosition.Equals(input.EndPosition))) return false;
+            if (this.ImageUrl != input.ImageUrl || (this.ImageUrl != null && !this.ImageUrl.Equals(input.ImageUrl))) return false;
+            if (this.Segments != input.Segments || (this.Segments != null && input.Segments != null && !this.Segments.SequenceEqual(input.Segments))) return false;
+            if (this.VideoImageDetails != input.VideoImageDetails || (this.VideoImageDetails != null && input.VideoImageDetails != null && !this.VideoImageDetails.SequenceEqual(input.VideoImageDetails))) return false;
+            if (this.AudioDetails != input.AudioDetails || (this.AudioDetails != null && input.AudioDetails != null && !this.AudioDetails.SequenceEqual(input.AudioDetails))) return false;
 
-            return 
-                (
-                    this.Suggestion == input.Suggestion ||
-                    (this.Suggestion != null &&
-                    this.Suggestion.Equals(input.Suggestion))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Label == input.Label ||
-                    (this.Label != null &&
-                    this.Label.Equals(input.Label))
-                ) && 
-                (
-                    this.Index == input.Index ||
-                    (this.Index != null &&
-                    this.Index.Equals(input.Index))
-                ) && 
-                (
-                    this.Text == input.Text ||
-                    (this.Text != null &&
-                    this.Text.Equals(input.Text))
-                ) && 
-                (
-                    this.StartPosition == input.StartPosition ||
-                    (this.StartPosition != null &&
-                    this.StartPosition.Equals(input.StartPosition))
-                ) && 
-                (
-                    this.EndPosition == input.EndPosition ||
-                    (this.EndPosition != null &&
-                    this.EndPosition.Equals(input.EndPosition))
-                ) && 
-                (
-                    this.ImageUrl == input.ImageUrl ||
-                    (this.ImageUrl != null &&
-                    this.ImageUrl.Equals(input.ImageUrl))
-                ) && 
-                (
-                    this.Segments == input.Segments ||
-                    this.Segments != null &&
-                    input.Segments != null &&
-                    this.Segments.SequenceEqual(input.Segments)
-                ) && 
-                (
-                    this.VideoImageDetails == input.VideoImageDetails ||
-                    this.VideoImageDetails != null &&
-                    input.VideoImageDetails != null &&
-                    this.VideoImageDetails.SequenceEqual(input.VideoImageDetails)
-                ) && 
-                (
-                    this.AudioDetails == input.AudioDetails ||
-                    this.AudioDetails != null &&
-                    input.AudioDetails != null &&
-                    this.AudioDetails.SequenceEqual(input.AudioDetails)
-                );
+            return true;
         }
 
         /// <summary>
@@ -190,29 +142,18 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Suggestion != null)
-                    hashCode = hashCode * 59 + this.Suggestion.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Label != null)
-                    hashCode = hashCode * 59 + this.Label.GetHashCode();
-                if (this.Index != null)
-                    hashCode = hashCode * 59 + this.Index.GetHashCode();
-                if (this.Text != null)
-                    hashCode = hashCode * 59 + this.Text.GetHashCode();
-                if (this.StartPosition != null)
-                    hashCode = hashCode * 59 + this.StartPosition.GetHashCode();
-                if (this.EndPosition != null)
-                    hashCode = hashCode * 59 + this.EndPosition.GetHashCode();
-                if (this.ImageUrl != null)
-                    hashCode = hashCode * 59 + this.ImageUrl.GetHashCode();
-                if (this.Segments != null)
-                    hashCode = hashCode * 59 + this.Segments.GetHashCode();
-                if (this.VideoImageDetails != null)
-                    hashCode = hashCode * 59 + this.VideoImageDetails.GetHashCode();
-                if (this.AudioDetails != null)
-                    hashCode = hashCode * 59 + this.AudioDetails.GetHashCode();
+                var hashCode = 41;
+                if (this.Suggestion != null) hashCode = hashCode * 59 + this.Suggestion.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Label != null) hashCode = hashCode * 59 + this.Label.GetHashCode();
+                if (this.Index != null) hashCode = hashCode * 59 + this.Index.GetHashCode();
+                if (this.Text != null) hashCode = hashCode * 59 + this.Text.GetHashCode();
+                if (this.StartPosition != null) hashCode = hashCode * 59 + this.StartPosition.GetHashCode();
+                if (this.EndPosition != null) hashCode = hashCode * 59 + this.EndPosition.GetHashCode();
+                if (this.ImageUrl != null) hashCode = hashCode * 59 + this.ImageUrl.GetHashCode();
+                if (this.Segments != null) hashCode = hashCode * 59 + this.Segments.GetHashCode();
+                if (this.VideoImageDetails != null) hashCode = hashCode * 59 + this.VideoImageDetails.GetHashCode();
+                if (this.AudioDetails != null) hashCode = hashCode * 59 + this.AudioDetails.GetHashCode();
                 return hashCode;
             }
         }

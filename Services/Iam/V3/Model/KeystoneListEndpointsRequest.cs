@@ -178,20 +178,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(KeystoneListEndpointsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Interface != input.Interface) return false;
+            if (this.ServiceId != input.ServiceId || (this.ServiceId != null && !this.ServiceId.Equals(input.ServiceId))) return false;
 
-            return 
-                (
-                    this.Interface == input.Interface ||
-                    (this.Interface != null &&
-                    this.Interface.Equals(input.Interface))
-                ) && 
-                (
-                    this.ServiceId == input.ServiceId ||
-                    (this.ServiceId != null &&
-                    this.ServiceId.Equals(input.ServiceId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -201,11 +192,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Interface != null)
-                    hashCode = hashCode * 59 + this.Interface.GetHashCode();
-                if (this.ServiceId != null)
-                    hashCode = hashCode * 59 + this.ServiceId.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Interface.GetHashCode();
+                if (this.ServiceId != null) hashCode = hashCode * 59 + this.ServiceId.GetHashCode();
                 return hashCode;
             }
         }

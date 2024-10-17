@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(RocketMQExtendProductPropertiesEntity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MaxBroker != input.MaxBroker || (this.MaxBroker != null && !this.MaxBroker.Equals(input.MaxBroker))) return false;
+            if (this.MaxTopicPerBroker != input.MaxTopicPerBroker || (this.MaxTopicPerBroker != null && !this.MaxTopicPerBroker.Equals(input.MaxTopicPerBroker))) return false;
+            if (this.MaxConsumerPerBroker != input.MaxConsumerPerBroker || (this.MaxConsumerPerBroker != null && !this.MaxConsumerPerBroker.Equals(input.MaxConsumerPerBroker))) return false;
+            if (this.MaxStoragePerNode != input.MaxStoragePerNode || (this.MaxStoragePerNode != null && !this.MaxStoragePerNode.Equals(input.MaxStoragePerNode))) return false;
+            if (this.MinBroker != input.MinBroker || (this.MinBroker != null && !this.MinBroker.Equals(input.MinBroker))) return false;
+            if (this.EngineVersions != input.EngineVersions || (this.EngineVersions != null && !this.EngineVersions.Equals(input.EngineVersions))) return false;
+            if (this.MinStoragePerNode != input.MinStoragePerNode || (this.MinStoragePerNode != null && !this.MinStoragePerNode.Equals(input.MinStoragePerNode))) return false;
+            if (this.ProductAlias != input.ProductAlias || (this.ProductAlias != null && !this.ProductAlias.Equals(input.ProductAlias))) return false;
 
-            return 
-                (
-                    this.MaxBroker == input.MaxBroker ||
-                    (this.MaxBroker != null &&
-                    this.MaxBroker.Equals(input.MaxBroker))
-                ) && 
-                (
-                    this.MaxTopicPerBroker == input.MaxTopicPerBroker ||
-                    (this.MaxTopicPerBroker != null &&
-                    this.MaxTopicPerBroker.Equals(input.MaxTopicPerBroker))
-                ) && 
-                (
-                    this.MaxConsumerPerBroker == input.MaxConsumerPerBroker ||
-                    (this.MaxConsumerPerBroker != null &&
-                    this.MaxConsumerPerBroker.Equals(input.MaxConsumerPerBroker))
-                ) && 
-                (
-                    this.MaxStoragePerNode == input.MaxStoragePerNode ||
-                    (this.MaxStoragePerNode != null &&
-                    this.MaxStoragePerNode.Equals(input.MaxStoragePerNode))
-                ) && 
-                (
-                    this.MinBroker == input.MinBroker ||
-                    (this.MinBroker != null &&
-                    this.MinBroker.Equals(input.MinBroker))
-                ) && 
-                (
-                    this.EngineVersions == input.EngineVersions ||
-                    (this.EngineVersions != null &&
-                    this.EngineVersions.Equals(input.EngineVersions))
-                ) && 
-                (
-                    this.MinStoragePerNode == input.MinStoragePerNode ||
-                    (this.MinStoragePerNode != null &&
-                    this.MinStoragePerNode.Equals(input.MinStoragePerNode))
-                ) && 
-                (
-                    this.ProductAlias == input.ProductAlias ||
-                    (this.ProductAlias != null &&
-                    this.ProductAlias.Equals(input.ProductAlias))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MaxBroker != null)
-                    hashCode = hashCode * 59 + this.MaxBroker.GetHashCode();
-                if (this.MaxTopicPerBroker != null)
-                    hashCode = hashCode * 59 + this.MaxTopicPerBroker.GetHashCode();
-                if (this.MaxConsumerPerBroker != null)
-                    hashCode = hashCode * 59 + this.MaxConsumerPerBroker.GetHashCode();
-                if (this.MaxStoragePerNode != null)
-                    hashCode = hashCode * 59 + this.MaxStoragePerNode.GetHashCode();
-                if (this.MinBroker != null)
-                    hashCode = hashCode * 59 + this.MinBroker.GetHashCode();
-                if (this.EngineVersions != null)
-                    hashCode = hashCode * 59 + this.EngineVersions.GetHashCode();
-                if (this.MinStoragePerNode != null)
-                    hashCode = hashCode * 59 + this.MinStoragePerNode.GetHashCode();
-                if (this.ProductAlias != null)
-                    hashCode = hashCode * 59 + this.ProductAlias.GetHashCode();
+                var hashCode = 41;
+                if (this.MaxBroker != null) hashCode = hashCode * 59 + this.MaxBroker.GetHashCode();
+                if (this.MaxTopicPerBroker != null) hashCode = hashCode * 59 + this.MaxTopicPerBroker.GetHashCode();
+                if (this.MaxConsumerPerBroker != null) hashCode = hashCode * 59 + this.MaxConsumerPerBroker.GetHashCode();
+                if (this.MaxStoragePerNode != null) hashCode = hashCode * 59 + this.MaxStoragePerNode.GetHashCode();
+                if (this.MinBroker != null) hashCode = hashCode * 59 + this.MinBroker.GetHashCode();
+                if (this.EngineVersions != null) hashCode = hashCode * 59 + this.EngineVersions.GetHashCode();
+                if (this.MinStoragePerNode != null) hashCode = hashCode * 59 + this.MinStoragePerNode.GetHashCode();
+                if (this.ProductAlias != null) hashCode = hashCode * 59 + this.ProductAlias.GetHashCode();
                 return hashCode;
             }
         }

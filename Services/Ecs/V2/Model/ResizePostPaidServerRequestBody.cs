@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(ResizePostPaidServerRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Resize != input.Resize || (this.Resize != null && !this.Resize.Equals(input.Resize))) return false;
+            if (this.DryRun != input.DryRun || (this.DryRun != null && !this.DryRun.Equals(input.DryRun))) return false;
 
-            return 
-                (
-                    this.Resize == input.Resize ||
-                    (this.Resize != null &&
-                    this.Resize.Equals(input.Resize))
-                ) && 
-                (
-                    this.DryRun == input.DryRun ||
-                    (this.DryRun != null &&
-                    this.DryRun.Equals(input.DryRun))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Resize != null)
-                    hashCode = hashCode * 59 + this.Resize.GetHashCode();
-                if (this.DryRun != null)
-                    hashCode = hashCode * 59 + this.DryRun.GetHashCode();
+                var hashCode = 41;
+                if (this.Resize != null) hashCode = hashCode * 59 + this.Resize.GetHashCode();
+                if (this.DryRun != null) hashCode = hashCode * 59 + this.DryRun.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         /// </summary>
         public bool Equals(ShowUnblockRecordResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UnblockRecord != input.UnblockRecord || (this.UnblockRecord != null && input.UnblockRecord != null && !this.UnblockRecord.SequenceEqual(input.UnblockRecord))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
 
-            return 
-                (
-                    this.UnblockRecord == input.UnblockRecord ||
-                    this.UnblockRecord != null &&
-                    input.UnblockRecord != null &&
-                    this.UnblockRecord.SequenceEqual(input.UnblockRecord)
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UnblockRecord != null)
-                    hashCode = hashCode * 59 + this.UnblockRecord.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                var hashCode = 41;
+                if (this.UnblockRecord != null) hashCode = hashCode * 59 + this.UnblockRecord.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
                 return hashCode;
             }
         }

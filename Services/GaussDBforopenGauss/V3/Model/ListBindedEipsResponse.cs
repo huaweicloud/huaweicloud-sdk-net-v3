@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ListBindedEipsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PublicIps != input.PublicIps || (this.PublicIps != null && input.PublicIps != null && !this.PublicIps.SequenceEqual(input.PublicIps))) return false;
+            if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
 
-            return 
-                (
-                    this.PublicIps == input.PublicIps ||
-                    this.PublicIps != null &&
-                    input.PublicIps != null &&
-                    this.PublicIps.SequenceEqual(input.PublicIps)
-                ) && 
-                (
-                    this.TotalCount == input.TotalCount ||
-                    (this.TotalCount != null &&
-                    this.TotalCount.Equals(input.TotalCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PublicIps != null)
-                    hashCode = hashCode * 59 + this.PublicIps.GetHashCode();
-                if (this.TotalCount != null)
-                    hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
+                var hashCode = 41;
+                if (this.PublicIps != null) hashCode = hashCode * 59 + this.PublicIps.GetHashCode();
+                if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
                 return hashCode;
             }
         }

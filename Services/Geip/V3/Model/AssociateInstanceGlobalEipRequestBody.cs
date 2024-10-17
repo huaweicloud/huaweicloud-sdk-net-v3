@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// </summary>
         public bool Equals(AssociateInstanceGlobalEipRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DryRun != input.DryRun || (this.DryRun != null && !this.DryRun.Equals(input.DryRun))) return false;
+            if (this.GlobalEip != input.GlobalEip || (this.GlobalEip != null && !this.GlobalEip.Equals(input.GlobalEip))) return false;
 
-            return 
-                (
-                    this.DryRun == input.DryRun ||
-                    (this.DryRun != null &&
-                    this.DryRun.Equals(input.DryRun))
-                ) && 
-                (
-                    this.GlobalEip == input.GlobalEip ||
-                    (this.GlobalEip != null &&
-                    this.GlobalEip.Equals(input.GlobalEip))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DryRun != null)
-                    hashCode = hashCode * 59 + this.DryRun.GetHashCode();
-                if (this.GlobalEip != null)
-                    hashCode = hashCode * 59 + this.GlobalEip.GetHashCode();
+                var hashCode = 41;
+                if (this.DryRun != null) hashCode = hashCode * 59 + this.DryRun.GetHashCode();
+                if (this.GlobalEip != null) hashCode = hashCode * 59 + this.GlobalEip.GetHashCode();
                 return hashCode;
             }
         }

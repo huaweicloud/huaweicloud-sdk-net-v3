@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(MosaicInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TimelineStart != input.TimelineStart || (this.TimelineStart != null && !this.TimelineStart.Equals(input.TimelineStart))) return false;
+            if (this.TimelineDuration != input.TimelineDuration || (this.TimelineDuration != null && !this.TimelineDuration.Equals(input.TimelineDuration))) return false;
+            if (this.Dx != input.Dx || (this.Dx != null && !this.Dx.Equals(input.Dx))) return false;
+            if (this.Dy != input.Dy || (this.Dy != null && !this.Dy.Equals(input.Dy))) return false;
+            if (this.Width != input.Width || (this.Width != null && !this.Width.Equals(input.Width))) return false;
+            if (this.Height != input.Height || (this.Height != null && !this.Height.Equals(input.Height))) return false;
 
-            return 
-                (
-                    this.TimelineStart == input.TimelineStart ||
-                    (this.TimelineStart != null &&
-                    this.TimelineStart.Equals(input.TimelineStart))
-                ) && 
-                (
-                    this.TimelineDuration == input.TimelineDuration ||
-                    (this.TimelineDuration != null &&
-                    this.TimelineDuration.Equals(input.TimelineDuration))
-                ) && 
-                (
-                    this.Dx == input.Dx ||
-                    (this.Dx != null &&
-                    this.Dx.Equals(input.Dx))
-                ) && 
-                (
-                    this.Dy == input.Dy ||
-                    (this.Dy != null &&
-                    this.Dy.Equals(input.Dy))
-                ) && 
-                (
-                    this.Width == input.Width ||
-                    (this.Width != null &&
-                    this.Width.Equals(input.Width))
-                ) && 
-                (
-                    this.Height == input.Height ||
-                    (this.Height != null &&
-                    this.Height.Equals(input.Height))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TimelineStart != null)
-                    hashCode = hashCode * 59 + this.TimelineStart.GetHashCode();
-                if (this.TimelineDuration != null)
-                    hashCode = hashCode * 59 + this.TimelineDuration.GetHashCode();
-                if (this.Dx != null)
-                    hashCode = hashCode * 59 + this.Dx.GetHashCode();
-                if (this.Dy != null)
-                    hashCode = hashCode * 59 + this.Dy.GetHashCode();
-                if (this.Width != null)
-                    hashCode = hashCode * 59 + this.Width.GetHashCode();
-                if (this.Height != null)
-                    hashCode = hashCode * 59 + this.Height.GetHashCode();
+                var hashCode = 41;
+                if (this.TimelineStart != null) hashCode = hashCode * 59 + this.TimelineStart.GetHashCode();
+                if (this.TimelineDuration != null) hashCode = hashCode * 59 + this.TimelineDuration.GetHashCode();
+                if (this.Dx != null) hashCode = hashCode * 59 + this.Dx.GetHashCode();
+                if (this.Dy != null) hashCode = hashCode * 59 + this.Dy.GetHashCode();
+                if (this.Width != null) hashCode = hashCode * 59 + this.Width.GetHashCode();
+                if (this.Height != null) hashCode = hashCode * 59 + this.Height.GetHashCode();
                 return hashCode;
             }
         }

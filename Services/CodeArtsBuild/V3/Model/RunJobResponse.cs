@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public bool Equals(RunJobResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OctopusJobName != input.OctopusJobName || (this.OctopusJobName != null && !this.OctopusJobName.Equals(input.OctopusJobName))) return false;
+            if (this.ActualBuildNumber != input.ActualBuildNumber || (this.ActualBuildNumber != null && !this.ActualBuildNumber.Equals(input.ActualBuildNumber))) return false;
+            if (this.DailyBuildNumber != input.DailyBuildNumber || (this.DailyBuildNumber != null && !this.DailyBuildNumber.Equals(input.DailyBuildNumber))) return false;
 
-            return 
-                (
-                    this.OctopusJobName == input.OctopusJobName ||
-                    (this.OctopusJobName != null &&
-                    this.OctopusJobName.Equals(input.OctopusJobName))
-                ) && 
-                (
-                    this.ActualBuildNumber == input.ActualBuildNumber ||
-                    (this.ActualBuildNumber != null &&
-                    this.ActualBuildNumber.Equals(input.ActualBuildNumber))
-                ) && 
-                (
-                    this.DailyBuildNumber == input.DailyBuildNumber ||
-                    (this.DailyBuildNumber != null &&
-                    this.DailyBuildNumber.Equals(input.DailyBuildNumber))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OctopusJobName != null)
-                    hashCode = hashCode * 59 + this.OctopusJobName.GetHashCode();
-                if (this.ActualBuildNumber != null)
-                    hashCode = hashCode * 59 + this.ActualBuildNumber.GetHashCode();
-                if (this.DailyBuildNumber != null)
-                    hashCode = hashCode * 59 + this.DailyBuildNumber.GetHashCode();
+                var hashCode = 41;
+                if (this.OctopusJobName != null) hashCode = hashCode * 59 + this.OctopusJobName.GetHashCode();
+                if (this.ActualBuildNumber != null) hashCode = hashCode * 59 + this.ActualBuildNumber.GetHashCode();
+                if (this.DailyBuildNumber != null) hashCode = hashCode * 59 + this.DailyBuildNumber.GetHashCode();
                 return hashCode;
             }
         }

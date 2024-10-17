@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(CreateReassignmentTaskResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.ReassignmentTime != input.ReassignmentTime || (this.ReassignmentTime != null && !this.ReassignmentTime.Equals(input.ReassignmentTime))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.ReassignmentTime == input.ReassignmentTime ||
-                    (this.ReassignmentTime != null &&
-                    this.ReassignmentTime.Equals(input.ReassignmentTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.ReassignmentTime != null)
-                    hashCode = hashCode * 59 + this.ReassignmentTime.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.ReassignmentTime != null) hashCode = hashCode * 59 + this.ReassignmentTime.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         /// </summary>
         public bool Equals(TriggerBpsDict input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TrafficPosId != input.TrafficPosId || (this.TrafficPosId != null && !this.TrafficPosId.Equals(input.TrafficPosId))) return false;
+            if (this.TrafficPerSecond != input.TrafficPerSecond || (this.TrafficPerSecond != null && !this.TrafficPerSecond.Equals(input.TrafficPerSecond))) return false;
+            if (this.PacketPerSecond != input.PacketPerSecond || (this.PacketPerSecond != null && !this.PacketPerSecond.Equals(input.PacketPerSecond))) return false;
 
-            return 
-                (
-                    this.TrafficPosId == input.TrafficPosId ||
-                    (this.TrafficPosId != null &&
-                    this.TrafficPosId.Equals(input.TrafficPosId))
-                ) && 
-                (
-                    this.TrafficPerSecond == input.TrafficPerSecond ||
-                    (this.TrafficPerSecond != null &&
-                    this.TrafficPerSecond.Equals(input.TrafficPerSecond))
-                ) && 
-                (
-                    this.PacketPerSecond == input.PacketPerSecond ||
-                    (this.PacketPerSecond != null &&
-                    this.PacketPerSecond.Equals(input.PacketPerSecond))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TrafficPosId != null)
-                    hashCode = hashCode * 59 + this.TrafficPosId.GetHashCode();
-                if (this.TrafficPerSecond != null)
-                    hashCode = hashCode * 59 + this.TrafficPerSecond.GetHashCode();
-                if (this.PacketPerSecond != null)
-                    hashCode = hashCode * 59 + this.PacketPerSecond.GetHashCode();
+                var hashCode = 41;
+                if (this.TrafficPosId != null) hashCode = hashCode * 59 + this.TrafficPosId.GetHashCode();
+                if (this.TrafficPerSecond != null) hashCode = hashCode * 59 + this.TrafficPerSecond.GetHashCode();
+                if (this.PacketPerSecond != null) hashCode = hashCode * 59 + this.PacketPerSecond.GetHashCode();
                 return hashCode;
             }
         }

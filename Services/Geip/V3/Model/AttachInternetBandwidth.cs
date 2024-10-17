@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// </summary>
         public bool Equals(AttachInternetBandwidth input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.GlobalEipSegmentId != input.GlobalEipSegmentId || (this.GlobalEipSegmentId != null && !this.GlobalEipSegmentId.Equals(input.GlobalEipSegmentId))) return false;
+            if (this.InternetBandwidthId != input.InternetBandwidthId || (this.InternetBandwidthId != null && !this.InternetBandwidthId.Equals(input.InternetBandwidthId))) return false;
 
-            return 
-                (
-                    this.GlobalEipSegmentId == input.GlobalEipSegmentId ||
-                    (this.GlobalEipSegmentId != null &&
-                    this.GlobalEipSegmentId.Equals(input.GlobalEipSegmentId))
-                ) && 
-                (
-                    this.InternetBandwidthId == input.InternetBandwidthId ||
-                    (this.InternetBandwidthId != null &&
-                    this.InternetBandwidthId.Equals(input.InternetBandwidthId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.GlobalEipSegmentId != null)
-                    hashCode = hashCode * 59 + this.GlobalEipSegmentId.GetHashCode();
-                if (this.InternetBandwidthId != null)
-                    hashCode = hashCode * 59 + this.InternetBandwidthId.GetHashCode();
+                var hashCode = 41;
+                if (this.GlobalEipSegmentId != null) hashCode = hashCode * 59 + this.GlobalEipSegmentId.GetHashCode();
+                if (this.InternetBandwidthId != null) hashCode = hashCode * 59 + this.InternetBandwidthId.GetHashCode();
                 return hashCode;
             }
         }

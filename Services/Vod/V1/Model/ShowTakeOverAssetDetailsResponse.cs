@@ -341,35 +341,14 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(ShowTakeOverAssetDetailsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
+            if (this.AssetStatus != input.AssetStatus) return false;
+            if (this.TranscodeStatus != input.TranscodeStatus) return false;
+            if (this.BaseInfo != input.BaseInfo || (this.BaseInfo != null && !this.BaseInfo.Equals(input.BaseInfo))) return false;
+            if (this.TranscodeInfo != input.TranscodeInfo || (this.TranscodeInfo != null && !this.TranscodeInfo.Equals(input.TranscodeInfo))) return false;
 
-            return 
-                (
-                    this.AssetId == input.AssetId ||
-                    (this.AssetId != null &&
-                    this.AssetId.Equals(input.AssetId))
-                ) && 
-                (
-                    this.AssetStatus == input.AssetStatus ||
-                    (this.AssetStatus != null &&
-                    this.AssetStatus.Equals(input.AssetStatus))
-                ) && 
-                (
-                    this.TranscodeStatus == input.TranscodeStatus ||
-                    (this.TranscodeStatus != null &&
-                    this.TranscodeStatus.Equals(input.TranscodeStatus))
-                ) && 
-                (
-                    this.BaseInfo == input.BaseInfo ||
-                    (this.BaseInfo != null &&
-                    this.BaseInfo.Equals(input.BaseInfo))
-                ) && 
-                (
-                    this.TranscodeInfo == input.TranscodeInfo ||
-                    (this.TranscodeInfo != null &&
-                    this.TranscodeInfo.Equals(input.TranscodeInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -379,17 +358,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AssetId != null)
-                    hashCode = hashCode * 59 + this.AssetId.GetHashCode();
-                if (this.AssetStatus != null)
-                    hashCode = hashCode * 59 + this.AssetStatus.GetHashCode();
-                if (this.TranscodeStatus != null)
-                    hashCode = hashCode * 59 + this.TranscodeStatus.GetHashCode();
-                if (this.BaseInfo != null)
-                    hashCode = hashCode * 59 + this.BaseInfo.GetHashCode();
-                if (this.TranscodeInfo != null)
-                    hashCode = hashCode * 59 + this.TranscodeInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                hashCode = hashCode * 59 + this.AssetStatus.GetHashCode();
+                hashCode = hashCode * 59 + this.TranscodeStatus.GetHashCode();
+                if (this.BaseInfo != null) hashCode = hashCode * 59 + this.BaseInfo.GetHashCode();
+                if (this.TranscodeInfo != null) hashCode = hashCode * 59 + this.TranscodeInfo.GetHashCode();
                 return hashCode;
             }
         }

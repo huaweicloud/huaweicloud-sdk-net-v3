@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// </summary>
         public bool Equals(UpdatePrivateDnatRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DnatRuleId != input.DnatRuleId || (this.DnatRuleId != null && !this.DnatRuleId.Equals(input.DnatRuleId))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
-            return 
-                (
-                    this.DnatRuleId == input.DnatRuleId ||
-                    (this.DnatRuleId != null &&
-                    this.DnatRuleId.Equals(input.DnatRuleId))
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DnatRuleId != null)
-                    hashCode = hashCode * 59 + this.DnatRuleId.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                var hashCode = 41;
+                if (this.DnatRuleId != null) hashCode = hashCode * 59 + this.DnatRuleId.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(ResizePrePaidServerOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FlavorRef != input.FlavorRef || (this.FlavorRef != null && !this.FlavorRef.Equals(input.FlavorRef))) return false;
+            if (this.DedicatedHostId != input.DedicatedHostId || (this.DedicatedHostId != null && !this.DedicatedHostId.Equals(input.DedicatedHostId))) return false;
+            if (this.Extendparam != input.Extendparam || (this.Extendparam != null && !this.Extendparam.Equals(input.Extendparam))) return false;
+            if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
+            if (this.CpuOptions != input.CpuOptions || (this.CpuOptions != null && !this.CpuOptions.Equals(input.CpuOptions))) return false;
 
-            return 
-                (
-                    this.FlavorRef == input.FlavorRef ||
-                    (this.FlavorRef != null &&
-                    this.FlavorRef.Equals(input.FlavorRef))
-                ) && 
-                (
-                    this.DedicatedHostId == input.DedicatedHostId ||
-                    (this.DedicatedHostId != null &&
-                    this.DedicatedHostId.Equals(input.DedicatedHostId))
-                ) && 
-                (
-                    this.Extendparam == input.Extendparam ||
-                    (this.Extendparam != null &&
-                    this.Extendparam.Equals(input.Extendparam))
-                ) && 
-                (
-                    this.Mode == input.Mode ||
-                    (this.Mode != null &&
-                    this.Mode.Equals(input.Mode))
-                ) && 
-                (
-                    this.CpuOptions == input.CpuOptions ||
-                    (this.CpuOptions != null &&
-                    this.CpuOptions.Equals(input.CpuOptions))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FlavorRef != null)
-                    hashCode = hashCode * 59 + this.FlavorRef.GetHashCode();
-                if (this.DedicatedHostId != null)
-                    hashCode = hashCode * 59 + this.DedicatedHostId.GetHashCode();
-                if (this.Extendparam != null)
-                    hashCode = hashCode * 59 + this.Extendparam.GetHashCode();
-                if (this.Mode != null)
-                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
-                if (this.CpuOptions != null)
-                    hashCode = hashCode * 59 + this.CpuOptions.GetHashCode();
+                var hashCode = 41;
+                if (this.FlavorRef != null) hashCode = hashCode * 59 + this.FlavorRef.GetHashCode();
+                if (this.DedicatedHostId != null) hashCode = hashCode * 59 + this.DedicatedHostId.GetHashCode();
+                if (this.Extendparam != null) hashCode = hashCode * 59 + this.Extendparam.GetHashCode();
+                if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                if (this.CpuOptions != null) hashCode = hashCode * 59 + this.CpuOptions.GetHashCode();
                 return hashCode;
             }
         }

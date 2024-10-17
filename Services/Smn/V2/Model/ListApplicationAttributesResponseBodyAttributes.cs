@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public bool Equals(ListApplicationAttributesResponseBodyAttributes input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
+            if (this.AppleCertificateExpirationDate != input.AppleCertificateExpirationDate || (this.AppleCertificateExpirationDate != null && !this.AppleCertificateExpirationDate.Equals(input.AppleCertificateExpirationDate))) return false;
 
-            return 
-                (
-                    this.Enabled == input.Enabled ||
-                    (this.Enabled != null &&
-                    this.Enabled.Equals(input.Enabled))
-                ) && 
-                (
-                    this.AppleCertificateExpirationDate == input.AppleCertificateExpirationDate ||
-                    (this.AppleCertificateExpirationDate != null &&
-                    this.AppleCertificateExpirationDate.Equals(input.AppleCertificateExpirationDate))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Enabled != null)
-                    hashCode = hashCode * 59 + this.Enabled.GetHashCode();
-                if (this.AppleCertificateExpirationDate != null)
-                    hashCode = hashCode * 59 + this.AppleCertificateExpirationDate.GetHashCode();
+                var hashCode = 41;
+                if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
+                if (this.AppleCertificateExpirationDate != null) hashCode = hashCode * 59 + this.AppleCertificateExpirationDate.GetHashCode();
                 return hashCode;
             }
         }

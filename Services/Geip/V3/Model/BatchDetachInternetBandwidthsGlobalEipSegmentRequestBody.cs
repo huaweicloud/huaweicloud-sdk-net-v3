@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// </summary>
         public bool Equals(BatchDetachInternetBandwidthsGlobalEipSegmentRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.GlobalEipSegments != input.GlobalEipSegments || (this.GlobalEipSegments != null && input.GlobalEipSegments != null && !this.GlobalEipSegments.SequenceEqual(input.GlobalEipSegments))) return false;
 
-            return 
-                (
-                    this.GlobalEipSegments == input.GlobalEipSegments ||
-                    this.GlobalEipSegments != null &&
-                    input.GlobalEipSegments != null &&
-                    this.GlobalEipSegments.SequenceEqual(input.GlobalEipSegments)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.GlobalEipSegments != null)
-                    hashCode = hashCode * 59 + this.GlobalEipSegments.GetHashCode();
+                var hashCode = 41;
+                if (this.GlobalEipSegments != null) hashCode = hashCode * 59 + this.GlobalEipSegments.GetHashCode();
                 return hashCode;
             }
         }

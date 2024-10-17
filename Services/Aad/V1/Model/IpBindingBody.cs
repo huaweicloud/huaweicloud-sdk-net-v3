@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         /// </summary>
         public bool Equals(IpBindingBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PackageId != input.PackageId || (this.PackageId != null && !this.PackageId.Equals(input.PackageId))) return false;
+            if (this.IdList != input.IdList || (this.IdList != null && input.IdList != null && !this.IdList.SequenceEqual(input.IdList))) return false;
 
-            return 
-                (
-                    this.PackageId == input.PackageId ||
-                    (this.PackageId != null &&
-                    this.PackageId.Equals(input.PackageId))
-                ) && 
-                (
-                    this.IdList == input.IdList ||
-                    this.IdList != null &&
-                    input.IdList != null &&
-                    this.IdList.SequenceEqual(input.IdList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PackageId != null)
-                    hashCode = hashCode * 59 + this.PackageId.GetHashCode();
-                if (this.IdList != null)
-                    hashCode = hashCode * 59 + this.IdList.GetHashCode();
+                var hashCode = 41;
+                if (this.PackageId != null) hashCode = hashCode * 59 + this.PackageId.GetHashCode();
+                if (this.IdList != null) hashCode = hashCode * 59 + this.IdList.GetHashCode();
                 return hashCode;
             }
         }

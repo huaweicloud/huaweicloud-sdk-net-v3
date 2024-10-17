@@ -936,101 +936,27 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(ModifyJobReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.AlarmNotify != input.AlarmNotify || (this.AlarmNotify != null && !this.AlarmNotify.Equals(input.AlarmNotify))) return false;
+            if (this.TaskType != input.TaskType) return false;
+            if (this.SourceEndpoint != input.SourceEndpoint || (this.SourceEndpoint != null && !this.SourceEndpoint.Equals(input.SourceEndpoint))) return false;
+            if (this.TargetEndpoint != input.TargetEndpoint || (this.TargetEndpoint != null && !this.TargetEndpoint.Equals(input.TargetEndpoint))) return false;
+            if (this.NodeType != input.NodeType) return false;
+            if (this.EngineType != input.EngineType) return false;
+            if (this.NetType != input.NetType) return false;
+            if (this.StoreDbInfo != input.StoreDbInfo || (this.StoreDbInfo != null && !this.StoreDbInfo.Equals(input.StoreDbInfo))) return false;
+            if (this.IsRecreate != input.IsRecreate || (this.IsRecreate != null && !this.IsRecreate.Equals(input.IsRecreate))) return false;
+            if (this.JobDirection != input.JobDirection) return false;
+            if (this.IsTargetReadonly != input.IsTargetReadonly || (this.IsTargetReadonly != null && !this.IsTargetReadonly.Equals(input.IsTargetReadonly))) return false;
+            if (this.ReplaceDefiner != input.ReplaceDefiner || (this.ReplaceDefiner != null && !this.ReplaceDefiner.Equals(input.ReplaceDefiner))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.DbUseType != input.DbUseType) return false;
+            if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.AlarmNotify == input.AlarmNotify ||
-                    (this.AlarmNotify != null &&
-                    this.AlarmNotify.Equals(input.AlarmNotify))
-                ) && 
-                (
-                    this.TaskType == input.TaskType ||
-                    (this.TaskType != null &&
-                    this.TaskType.Equals(input.TaskType))
-                ) && 
-                (
-                    this.SourceEndpoint == input.SourceEndpoint ||
-                    (this.SourceEndpoint != null &&
-                    this.SourceEndpoint.Equals(input.SourceEndpoint))
-                ) && 
-                (
-                    this.TargetEndpoint == input.TargetEndpoint ||
-                    (this.TargetEndpoint != null &&
-                    this.TargetEndpoint.Equals(input.TargetEndpoint))
-                ) && 
-                (
-                    this.NodeType == input.NodeType ||
-                    (this.NodeType != null &&
-                    this.NodeType.Equals(input.NodeType))
-                ) && 
-                (
-                    this.EngineType == input.EngineType ||
-                    (this.EngineType != null &&
-                    this.EngineType.Equals(input.EngineType))
-                ) && 
-                (
-                    this.NetType == input.NetType ||
-                    (this.NetType != null &&
-                    this.NetType.Equals(input.NetType))
-                ) && 
-                (
-                    this.StoreDbInfo == input.StoreDbInfo ||
-                    (this.StoreDbInfo != null &&
-                    this.StoreDbInfo.Equals(input.StoreDbInfo))
-                ) && 
-                (
-                    this.IsRecreate == input.IsRecreate ||
-                    (this.IsRecreate != null &&
-                    this.IsRecreate.Equals(input.IsRecreate))
-                ) && 
-                (
-                    this.JobDirection == input.JobDirection ||
-                    (this.JobDirection != null &&
-                    this.JobDirection.Equals(input.JobDirection))
-                ) && 
-                (
-                    this.IsTargetReadonly == input.IsTargetReadonly ||
-                    (this.IsTargetReadonly != null &&
-                    this.IsTargetReadonly.Equals(input.IsTargetReadonly))
-                ) && 
-                (
-                    this.ReplaceDefiner == input.ReplaceDefiner ||
-                    (this.ReplaceDefiner != null &&
-                    this.ReplaceDefiner.Equals(input.ReplaceDefiner))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.DbUseType == input.DbUseType ||
-                    (this.DbUseType != null &&
-                    this.DbUseType.Equals(input.DbUseType))
-                ) && 
-                (
-                    this.ProductId == input.ProductId ||
-                    (this.ProductId != null &&
-                    this.ProductId.Equals(input.ProductId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -1040,43 +966,25 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.AlarmNotify != null)
-                    hashCode = hashCode * 59 + this.AlarmNotify.GetHashCode();
-                if (this.TaskType != null)
-                    hashCode = hashCode * 59 + this.TaskType.GetHashCode();
-                if (this.SourceEndpoint != null)
-                    hashCode = hashCode * 59 + this.SourceEndpoint.GetHashCode();
-                if (this.TargetEndpoint != null)
-                    hashCode = hashCode * 59 + this.TargetEndpoint.GetHashCode();
-                if (this.NodeType != null)
-                    hashCode = hashCode * 59 + this.NodeType.GetHashCode();
-                if (this.EngineType != null)
-                    hashCode = hashCode * 59 + this.EngineType.GetHashCode();
-                if (this.NetType != null)
-                    hashCode = hashCode * 59 + this.NetType.GetHashCode();
-                if (this.StoreDbInfo != null)
-                    hashCode = hashCode * 59 + this.StoreDbInfo.GetHashCode();
-                if (this.IsRecreate != null)
-                    hashCode = hashCode * 59 + this.IsRecreate.GetHashCode();
-                if (this.JobDirection != null)
-                    hashCode = hashCode * 59 + this.JobDirection.GetHashCode();
-                if (this.IsTargetReadonly != null)
-                    hashCode = hashCode * 59 + this.IsTargetReadonly.GetHashCode();
-                if (this.ReplaceDefiner != null)
-                    hashCode = hashCode * 59 + this.ReplaceDefiner.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.DbUseType != null)
-                    hashCode = hashCode * 59 + this.DbUseType.GetHashCode();
-                if (this.ProductId != null)
-                    hashCode = hashCode * 59 + this.ProductId.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.AlarmNotify != null) hashCode = hashCode * 59 + this.AlarmNotify.GetHashCode();
+                hashCode = hashCode * 59 + this.TaskType.GetHashCode();
+                if (this.SourceEndpoint != null) hashCode = hashCode * 59 + this.SourceEndpoint.GetHashCode();
+                if (this.TargetEndpoint != null) hashCode = hashCode * 59 + this.TargetEndpoint.GetHashCode();
+                hashCode = hashCode * 59 + this.NodeType.GetHashCode();
+                hashCode = hashCode * 59 + this.EngineType.GetHashCode();
+                hashCode = hashCode * 59 + this.NetType.GetHashCode();
+                if (this.StoreDbInfo != null) hashCode = hashCode * 59 + this.StoreDbInfo.GetHashCode();
+                if (this.IsRecreate != null) hashCode = hashCode * 59 + this.IsRecreate.GetHashCode();
+                hashCode = hashCode * 59 + this.JobDirection.GetHashCode();
+                if (this.IsTargetReadonly != null) hashCode = hashCode * 59 + this.IsTargetReadonly.GetHashCode();
+                if (this.ReplaceDefiner != null) hashCode = hashCode * 59 + this.ReplaceDefiner.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                hashCode = hashCode * 59 + this.DbUseType.GetHashCode();
+                if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
                 return hashCode;
             }
         }

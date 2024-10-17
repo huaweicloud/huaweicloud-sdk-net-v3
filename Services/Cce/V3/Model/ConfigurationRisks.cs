@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ConfigurationRisks input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Package != input.Package || (this.Package != null && !this.Package.Equals(input.Package))) return false;
+            if (this.SourceFile != input.SourceFile || (this.SourceFile != null && !this.SourceFile.Equals(input.SourceFile))) return false;
+            if (this.NodeMsg != input.NodeMsg || (this.NodeMsg != null && !this.NodeMsg.Equals(input.NodeMsg))) return false;
+            if (this.Field != input.Field || (this.Field != null && !this.Field.Equals(input.Field))) return false;
+            if (this.Operation != input.Operation || (this.Operation != null && !this.Operation.Equals(input.Operation))) return false;
+            if (this.OriginalValue != input.OriginalValue || (this.OriginalValue != null && !this.OriginalValue.Equals(input.OriginalValue))) return false;
+            if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
 
-            return 
-                (
-                    this.Package == input.Package ||
-                    (this.Package != null &&
-                    this.Package.Equals(input.Package))
-                ) && 
-                (
-                    this.SourceFile == input.SourceFile ||
-                    (this.SourceFile != null &&
-                    this.SourceFile.Equals(input.SourceFile))
-                ) && 
-                (
-                    this.NodeMsg == input.NodeMsg ||
-                    (this.NodeMsg != null &&
-                    this.NodeMsg.Equals(input.NodeMsg))
-                ) && 
-                (
-                    this.Field == input.Field ||
-                    (this.Field != null &&
-                    this.Field.Equals(input.Field))
-                ) && 
-                (
-                    this.Operation == input.Operation ||
-                    (this.Operation != null &&
-                    this.Operation.Equals(input.Operation))
-                ) && 
-                (
-                    this.OriginalValue == input.OriginalValue ||
-                    (this.OriginalValue != null &&
-                    this.OriginalValue.Equals(input.OriginalValue))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Package != null)
-                    hashCode = hashCode * 59 + this.Package.GetHashCode();
-                if (this.SourceFile != null)
-                    hashCode = hashCode * 59 + this.SourceFile.GetHashCode();
-                if (this.NodeMsg != null)
-                    hashCode = hashCode * 59 + this.NodeMsg.GetHashCode();
-                if (this.Field != null)
-                    hashCode = hashCode * 59 + this.Field.GetHashCode();
-                if (this.Operation != null)
-                    hashCode = hashCode * 59 + this.Operation.GetHashCode();
-                if (this.OriginalValue != null)
-                    hashCode = hashCode * 59 + this.OriginalValue.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
+                var hashCode = 41;
+                if (this.Package != null) hashCode = hashCode * 59 + this.Package.GetHashCode();
+                if (this.SourceFile != null) hashCode = hashCode * 59 + this.SourceFile.GetHashCode();
+                if (this.NodeMsg != null) hashCode = hashCode * 59 + this.NodeMsg.GetHashCode();
+                if (this.Field != null) hashCode = hashCode * 59 + this.Field.GetHashCode();
+                if (this.Operation != null) hashCode = hashCode * 59 + this.Operation.GetHashCode();
+                if (this.OriginalValue != null) hashCode = hashCode * 59 + this.OriginalValue.GetHashCode();
+                if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
                 return hashCode;
             }
         }

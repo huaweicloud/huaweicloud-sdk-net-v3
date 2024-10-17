@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         /// </summary>
         public bool Equals(Bw input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BlackIpList != input.BlackIpList || (this.BlackIpList != null && input.BlackIpList != null && !this.BlackIpList.SequenceEqual(input.BlackIpList))) return false;
+            if (this.WhiteIpList != input.WhiteIpList || (this.WhiteIpList != null && input.WhiteIpList != null && !this.WhiteIpList.SequenceEqual(input.WhiteIpList))) return false;
 
-            return 
-                (
-                    this.BlackIpList == input.BlackIpList ||
-                    this.BlackIpList != null &&
-                    input.BlackIpList != null &&
-                    this.BlackIpList.SequenceEqual(input.BlackIpList)
-                ) && 
-                (
-                    this.WhiteIpList == input.WhiteIpList ||
-                    this.WhiteIpList != null &&
-                    input.WhiteIpList != null &&
-                    this.WhiteIpList.SequenceEqual(input.WhiteIpList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BlackIpList != null)
-                    hashCode = hashCode * 59 + this.BlackIpList.GetHashCode();
-                if (this.WhiteIpList != null)
-                    hashCode = hashCode * 59 + this.WhiteIpList.GetHashCode();
+                var hashCode = 41;
+                if (this.BlackIpList != null) hashCode = hashCode * 59 + this.BlackIpList.GetHashCode();
+                if (this.WhiteIpList != null) hashCode = hashCode * 59 + this.WhiteIpList.GetHashCode();
                 return hashCode;
             }
         }

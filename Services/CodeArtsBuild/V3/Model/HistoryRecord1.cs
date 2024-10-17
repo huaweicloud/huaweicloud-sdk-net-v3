@@ -119,65 +119,20 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public bool Equals(HistoryRecord1 input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RecordId != input.RecordId || (this.RecordId != null && !this.RecordId.Equals(input.RecordId))) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.BuildNumber != input.BuildNumber || (this.BuildNumber != null && !this.BuildNumber.Equals(input.BuildNumber))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.Result != input.Result || (this.Result != null && !this.Result.Equals(input.Result))) return false;
+            if (this.Branch != input.Branch || (this.Branch != null && !this.Branch.Equals(input.Branch))) return false;
+            if (this.CommitId != input.CommitId || (this.CommitId != null && !this.CommitId.Equals(input.CommitId))) return false;
+            if (this.CommitMessage != input.CommitMessage || (this.CommitMessage != null && !this.CommitMessage.Equals(input.CommitMessage))) return false;
+            if (this.Executor != input.Executor || (this.Executor != null && !this.Executor.Equals(input.Executor))) return false;
+            if (this.TriggerType != input.TriggerType || (this.TriggerType != null && !this.TriggerType.Equals(input.TriggerType))) return false;
 
-            return 
-                (
-                    this.RecordId == input.RecordId ||
-                    (this.RecordId != null &&
-                    this.RecordId.Equals(input.RecordId))
-                ) && 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.BuildNumber == input.BuildNumber ||
-                    (this.BuildNumber != null &&
-                    this.BuildNumber.Equals(input.BuildNumber))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.Result == input.Result ||
-                    (this.Result != null &&
-                    this.Result.Equals(input.Result))
-                ) && 
-                (
-                    this.Branch == input.Branch ||
-                    (this.Branch != null &&
-                    this.Branch.Equals(input.Branch))
-                ) && 
-                (
-                    this.CommitId == input.CommitId ||
-                    (this.CommitId != null &&
-                    this.CommitId.Equals(input.CommitId))
-                ) && 
-                (
-                    this.CommitMessage == input.CommitMessage ||
-                    (this.CommitMessage != null &&
-                    this.CommitMessage.Equals(input.CommitMessage))
-                ) && 
-                (
-                    this.Executor == input.Executor ||
-                    (this.Executor != null &&
-                    this.Executor.Equals(input.Executor))
-                ) && 
-                (
-                    this.TriggerType == input.TriggerType ||
-                    (this.TriggerType != null &&
-                    this.TriggerType.Equals(input.TriggerType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,29 +142,18 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RecordId != null)
-                    hashCode = hashCode * 59 + this.RecordId.GetHashCode();
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.BuildNumber != null)
-                    hashCode = hashCode * 59 + this.BuildNumber.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Result != null)
-                    hashCode = hashCode * 59 + this.Result.GetHashCode();
-                if (this.Branch != null)
-                    hashCode = hashCode * 59 + this.Branch.GetHashCode();
-                if (this.CommitId != null)
-                    hashCode = hashCode * 59 + this.CommitId.GetHashCode();
-                if (this.CommitMessage != null)
-                    hashCode = hashCode * 59 + this.CommitMessage.GetHashCode();
-                if (this.Executor != null)
-                    hashCode = hashCode * 59 + this.Executor.GetHashCode();
-                if (this.TriggerType != null)
-                    hashCode = hashCode * 59 + this.TriggerType.GetHashCode();
+                var hashCode = 41;
+                if (this.RecordId != null) hashCode = hashCode * 59 + this.RecordId.GetHashCode();
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.BuildNumber != null) hashCode = hashCode * 59 + this.BuildNumber.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.Result != null) hashCode = hashCode * 59 + this.Result.GetHashCode();
+                if (this.Branch != null) hashCode = hashCode * 59 + this.Branch.GetHashCode();
+                if (this.CommitId != null) hashCode = hashCode * 59 + this.CommitId.GetHashCode();
+                if (this.CommitMessage != null) hashCode = hashCode * 59 + this.CommitMessage.GetHashCode();
+                if (this.Executor != null) hashCode = hashCode * 59 + this.Executor.GetHashCode();
+                if (this.TriggerType != null) hashCode = hashCode * 59 + this.TriggerType.GetHashCode();
                 return hashCode;
             }
         }

@@ -212,50 +212,17 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(UpdateStackSetRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StackSetId != input.StackSetId || (this.StackSetId != null && !this.StackSetId.Equals(input.StackSetId))) return false;
+            if (this.StackSetDescription != input.StackSetDescription || (this.StackSetDescription != null && !this.StackSetDescription.Equals(input.StackSetDescription))) return false;
+            if (this.InitialStackDescription != input.InitialStackDescription || (this.InitialStackDescription != null && !this.InitialStackDescription.Equals(input.InitialStackDescription))) return false;
+            if (this.AdministrationAgencyName != input.AdministrationAgencyName || (this.AdministrationAgencyName != null && !this.AdministrationAgencyName.Equals(input.AdministrationAgencyName))) return false;
+            if (this.ManagedAgencyName != input.ManagedAgencyName || (this.ManagedAgencyName != null && !this.ManagedAgencyName.Equals(input.ManagedAgencyName))) return false;
+            if (this.AdministrationAgencyUrn != input.AdministrationAgencyUrn || (this.AdministrationAgencyUrn != null && !this.AdministrationAgencyUrn.Equals(input.AdministrationAgencyUrn))) return false;
+            if (this.ManagedOperation != input.ManagedOperation || (this.ManagedOperation != null && !this.ManagedOperation.Equals(input.ManagedOperation))) return false;
+            if (this.CallIdentity != input.CallIdentity) return false;
 
-            return 
-                (
-                    this.StackSetId == input.StackSetId ||
-                    (this.StackSetId != null &&
-                    this.StackSetId.Equals(input.StackSetId))
-                ) && 
-                (
-                    this.StackSetDescription == input.StackSetDescription ||
-                    (this.StackSetDescription != null &&
-                    this.StackSetDescription.Equals(input.StackSetDescription))
-                ) && 
-                (
-                    this.InitialStackDescription == input.InitialStackDescription ||
-                    (this.InitialStackDescription != null &&
-                    this.InitialStackDescription.Equals(input.InitialStackDescription))
-                ) && 
-                (
-                    this.AdministrationAgencyName == input.AdministrationAgencyName ||
-                    (this.AdministrationAgencyName != null &&
-                    this.AdministrationAgencyName.Equals(input.AdministrationAgencyName))
-                ) && 
-                (
-                    this.ManagedAgencyName == input.ManagedAgencyName ||
-                    (this.ManagedAgencyName != null &&
-                    this.ManagedAgencyName.Equals(input.ManagedAgencyName))
-                ) && 
-                (
-                    this.AdministrationAgencyUrn == input.AdministrationAgencyUrn ||
-                    (this.AdministrationAgencyUrn != null &&
-                    this.AdministrationAgencyUrn.Equals(input.AdministrationAgencyUrn))
-                ) && 
-                (
-                    this.ManagedOperation == input.ManagedOperation ||
-                    (this.ManagedOperation != null &&
-                    this.ManagedOperation.Equals(input.ManagedOperation))
-                ) && 
-                (
-                    this.CallIdentity == input.CallIdentity ||
-                    (this.CallIdentity != null &&
-                    this.CallIdentity.Equals(input.CallIdentity))
-                );
+            return true;
         }
 
         /// <summary>
@@ -265,23 +232,15 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StackSetId != null)
-                    hashCode = hashCode * 59 + this.StackSetId.GetHashCode();
-                if (this.StackSetDescription != null)
-                    hashCode = hashCode * 59 + this.StackSetDescription.GetHashCode();
-                if (this.InitialStackDescription != null)
-                    hashCode = hashCode * 59 + this.InitialStackDescription.GetHashCode();
-                if (this.AdministrationAgencyName != null)
-                    hashCode = hashCode * 59 + this.AdministrationAgencyName.GetHashCode();
-                if (this.ManagedAgencyName != null)
-                    hashCode = hashCode * 59 + this.ManagedAgencyName.GetHashCode();
-                if (this.AdministrationAgencyUrn != null)
-                    hashCode = hashCode * 59 + this.AdministrationAgencyUrn.GetHashCode();
-                if (this.ManagedOperation != null)
-                    hashCode = hashCode * 59 + this.ManagedOperation.GetHashCode();
-                if (this.CallIdentity != null)
-                    hashCode = hashCode * 59 + this.CallIdentity.GetHashCode();
+                var hashCode = 41;
+                if (this.StackSetId != null) hashCode = hashCode * 59 + this.StackSetId.GetHashCode();
+                if (this.StackSetDescription != null) hashCode = hashCode * 59 + this.StackSetDescription.GetHashCode();
+                if (this.InitialStackDescription != null) hashCode = hashCode * 59 + this.InitialStackDescription.GetHashCode();
+                if (this.AdministrationAgencyName != null) hashCode = hashCode * 59 + this.AdministrationAgencyName.GetHashCode();
+                if (this.ManagedAgencyName != null) hashCode = hashCode * 59 + this.ManagedAgencyName.GetHashCode();
+                if (this.AdministrationAgencyUrn != null) hashCode = hashCode * 59 + this.AdministrationAgencyUrn.GetHashCode();
+                if (this.ManagedOperation != null) hashCode = hashCode * 59 + this.ManagedOperation.GetHashCode();
+                hashCode = hashCode * 59 + this.CallIdentity.GetHashCode();
                 return hashCode;
             }
         }

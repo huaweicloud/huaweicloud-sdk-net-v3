@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ShowQuotasResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Quotas != input.Quotas || (this.Quotas != null && input.Quotas != null && !this.Quotas.SequenceEqual(input.Quotas))) return false;
 
-            return 
-                (
-                    this.Quotas == input.Quotas ||
-                    this.Quotas != null &&
-                    input.Quotas != null &&
-                    this.Quotas.SequenceEqual(input.Quotas)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Quotas != null)
-                    hashCode = hashCode * 59 + this.Quotas.GetHashCode();
+                var hashCode = 41;
+                if (this.Quotas != null) hashCode = hashCode * 59 + this.Quotas.GetHashCode();
                 return hashCode;
             }
         }

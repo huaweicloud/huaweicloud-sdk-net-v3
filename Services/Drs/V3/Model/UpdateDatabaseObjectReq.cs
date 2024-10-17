@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(UpdateDatabaseObjectReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.Selected != input.Selected || (this.Selected != null && !this.Selected.Equals(input.Selected))) return false;
+            if (this.SyncDatabase != input.SyncDatabase || (this.SyncDatabase != null && !this.SyncDatabase.Equals(input.SyncDatabase))) return false;
+            if (this.Job != input.Job || (this.Job != null && input.Job != null && !this.Job.SequenceEqual(input.Job))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.Selected == input.Selected ||
-                    (this.Selected != null &&
-                    this.Selected.Equals(input.Selected))
-                ) && 
-                (
-                    this.SyncDatabase == input.SyncDatabase ||
-                    (this.SyncDatabase != null &&
-                    this.SyncDatabase.Equals(input.SyncDatabase))
-                ) && 
-                (
-                    this.Job == input.Job ||
-                    this.Job != null &&
-                    input.Job != null &&
-                    this.Job.SequenceEqual(input.Job)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.Selected != null)
-                    hashCode = hashCode * 59 + this.Selected.GetHashCode();
-                if (this.SyncDatabase != null)
-                    hashCode = hashCode * 59 + this.SyncDatabase.GetHashCode();
-                if (this.Job != null)
-                    hashCode = hashCode * 59 + this.Job.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.Selected != null) hashCode = hashCode * 59 + this.Selected.GetHashCode();
+                if (this.SyncDatabase != null) hashCode = hashCode * 59 + this.SyncDatabase.GetHashCode();
+                if (this.Job != null) hashCode = hashCode * 59 + this.Job.GetHashCode();
                 return hashCode;
             }
         }

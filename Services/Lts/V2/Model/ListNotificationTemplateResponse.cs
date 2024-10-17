@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(ListNotificationTemplateResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Template != input.Template || (this.Template != null && !this.Template.Equals(input.Template))) return false;
 
-            return 
-                (
-                    this.Template == input.Template ||
-                    (this.Template != null &&
-                    this.Template.Equals(input.Template))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Template != null)
-                    hashCode = hashCode * 59 + this.Template.GetHashCode();
+                var hashCode = 41;
+                if (this.Template != null) hashCode = hashCode * 59 + this.Template.GetHashCode();
                 return hashCode;
             }
         }

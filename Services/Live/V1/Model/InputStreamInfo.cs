@@ -222,42 +222,15 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(InputStreamInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InputProtocol != input.InputProtocol) return false;
+            if (this.Sources != input.Sources || (this.Sources != null && input.Sources != null && !this.Sources.SequenceEqual(input.Sources))) return false;
+            if (this.SecondarySources != input.SecondarySources || (this.SecondarySources != null && input.SecondarySources != null && !this.SecondarySources.SequenceEqual(input.SecondarySources))) return false;
+            if (this.FailoverConditions != input.FailoverConditions || (this.FailoverConditions != null && !this.FailoverConditions.Equals(input.FailoverConditions))) return false;
+            if (this.MaxBandwidthLimit != input.MaxBandwidthLimit || (this.MaxBandwidthLimit != null && !this.MaxBandwidthLimit.Equals(input.MaxBandwidthLimit))) return false;
+            if (this.IpPortMode != input.IpPortMode || (this.IpPortMode != null && !this.IpPortMode.Equals(input.IpPortMode))) return false;
 
-            return 
-                (
-                    this.InputProtocol == input.InputProtocol ||
-                    (this.InputProtocol != null &&
-                    this.InputProtocol.Equals(input.InputProtocol))
-                ) && 
-                (
-                    this.Sources == input.Sources ||
-                    this.Sources != null &&
-                    input.Sources != null &&
-                    this.Sources.SequenceEqual(input.Sources)
-                ) && 
-                (
-                    this.SecondarySources == input.SecondarySources ||
-                    this.SecondarySources != null &&
-                    input.SecondarySources != null &&
-                    this.SecondarySources.SequenceEqual(input.SecondarySources)
-                ) && 
-                (
-                    this.FailoverConditions == input.FailoverConditions ||
-                    (this.FailoverConditions != null &&
-                    this.FailoverConditions.Equals(input.FailoverConditions))
-                ) && 
-                (
-                    this.MaxBandwidthLimit == input.MaxBandwidthLimit ||
-                    (this.MaxBandwidthLimit != null &&
-                    this.MaxBandwidthLimit.Equals(input.MaxBandwidthLimit))
-                ) && 
-                (
-                    this.IpPortMode == input.IpPortMode ||
-                    (this.IpPortMode != null &&
-                    this.IpPortMode.Equals(input.IpPortMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -267,19 +240,13 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InputProtocol != null)
-                    hashCode = hashCode * 59 + this.InputProtocol.GetHashCode();
-                if (this.Sources != null)
-                    hashCode = hashCode * 59 + this.Sources.GetHashCode();
-                if (this.SecondarySources != null)
-                    hashCode = hashCode * 59 + this.SecondarySources.GetHashCode();
-                if (this.FailoverConditions != null)
-                    hashCode = hashCode * 59 + this.FailoverConditions.GetHashCode();
-                if (this.MaxBandwidthLimit != null)
-                    hashCode = hashCode * 59 + this.MaxBandwidthLimit.GetHashCode();
-                if (this.IpPortMode != null)
-                    hashCode = hashCode * 59 + this.IpPortMode.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.InputProtocol.GetHashCode();
+                if (this.Sources != null) hashCode = hashCode * 59 + this.Sources.GetHashCode();
+                if (this.SecondarySources != null) hashCode = hashCode * 59 + this.SecondarySources.GetHashCode();
+                if (this.FailoverConditions != null) hashCode = hashCode * 59 + this.FailoverConditions.GetHashCode();
+                if (this.MaxBandwidthLimit != null) hashCode = hashCode * 59 + this.MaxBandwidthLimit.GetHashCode();
+                if (this.IpPortMode != null) hashCode = hashCode * 59 + this.IpPortMode.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(RefererBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Referer != input.Referer || (this.Referer != null && !this.Referer.Equals(input.Referer))) return false;
 
-            return 
-                (
-                    this.Referer == input.Referer ||
-                    (this.Referer != null &&
-                    this.Referer.Equals(input.Referer))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Referer != null)
-                    hashCode = hashCode * 59 + this.Referer.GetHashCode();
+                var hashCode = 41;
+                if (this.Referer != null) hashCode = hashCode * 59 + this.Referer.GetHashCode();
                 return hashCode;
             }
         }

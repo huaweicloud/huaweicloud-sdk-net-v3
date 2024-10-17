@@ -247,76 +247,22 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// </summary>
         public bool Equals(UpdateListenerReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.ConnectionLimit != input.ConnectionLimit || (this.ConnectionLimit != null && !this.ConnectionLimit.Equals(input.ConnectionLimit))) return false;
+            if (this.Http2Enable != input.Http2Enable || (this.Http2Enable != null && !this.Http2Enable.Equals(input.Http2Enable))) return false;
+            if (this.DefaultPoolId != input.DefaultPoolId || (this.DefaultPoolId != null && !this.DefaultPoolId.Equals(input.DefaultPoolId))) return false;
+            if (this.DefaultTlsContainerRef != input.DefaultTlsContainerRef || (this.DefaultTlsContainerRef != null && !this.DefaultTlsContainerRef.Equals(input.DefaultTlsContainerRef))) return false;
+            if (this.ClientCaTlsContainerRef != input.ClientCaTlsContainerRef || (this.ClientCaTlsContainerRef != null && !this.ClientCaTlsContainerRef.Equals(input.ClientCaTlsContainerRef))) return false;
+            if (this.SniContainerRefs != input.SniContainerRefs || (this.SniContainerRefs != null && input.SniContainerRefs != null && !this.SniContainerRefs.SequenceEqual(input.SniContainerRefs))) return false;
+            if (this.InsertHeaders != input.InsertHeaders || (this.InsertHeaders != null && !this.InsertHeaders.Equals(input.InsertHeaders))) return false;
+            if (this.TlsCiphersPolicy != input.TlsCiphersPolicy || (this.TlsCiphersPolicy != null && !this.TlsCiphersPolicy.Equals(input.TlsCiphersPolicy))) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.ProtectionStatus != input.ProtectionStatus) return false;
+            if (this.ProtectionReason != input.ProtectionReason || (this.ProtectionReason != null && !this.ProtectionReason.Equals(input.ProtectionReason))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.ConnectionLimit == input.ConnectionLimit ||
-                    (this.ConnectionLimit != null &&
-                    this.ConnectionLimit.Equals(input.ConnectionLimit))
-                ) && 
-                (
-                    this.Http2Enable == input.Http2Enable ||
-                    (this.Http2Enable != null &&
-                    this.Http2Enable.Equals(input.Http2Enable))
-                ) && 
-                (
-                    this.DefaultPoolId == input.DefaultPoolId ||
-                    (this.DefaultPoolId != null &&
-                    this.DefaultPoolId.Equals(input.DefaultPoolId))
-                ) && 
-                (
-                    this.DefaultTlsContainerRef == input.DefaultTlsContainerRef ||
-                    (this.DefaultTlsContainerRef != null &&
-                    this.DefaultTlsContainerRef.Equals(input.DefaultTlsContainerRef))
-                ) && 
-                (
-                    this.ClientCaTlsContainerRef == input.ClientCaTlsContainerRef ||
-                    (this.ClientCaTlsContainerRef != null &&
-                    this.ClientCaTlsContainerRef.Equals(input.ClientCaTlsContainerRef))
-                ) && 
-                (
-                    this.SniContainerRefs == input.SniContainerRefs ||
-                    this.SniContainerRefs != null &&
-                    input.SniContainerRefs != null &&
-                    this.SniContainerRefs.SequenceEqual(input.SniContainerRefs)
-                ) && 
-                (
-                    this.InsertHeaders == input.InsertHeaders ||
-                    (this.InsertHeaders != null &&
-                    this.InsertHeaders.Equals(input.InsertHeaders))
-                ) && 
-                (
-                    this.TlsCiphersPolicy == input.TlsCiphersPolicy ||
-                    (this.TlsCiphersPolicy != null &&
-                    this.TlsCiphersPolicy.Equals(input.TlsCiphersPolicy))
-                ) && 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.ProtectionStatus == input.ProtectionStatus ||
-                    (this.ProtectionStatus != null &&
-                    this.ProtectionStatus.Equals(input.ProtectionStatus))
-                ) && 
-                (
-                    this.ProtectionReason == input.ProtectionReason ||
-                    (this.ProtectionReason != null &&
-                    this.ProtectionReason.Equals(input.ProtectionReason))
-                );
+            return true;
         }
 
         /// <summary>
@@ -326,33 +272,20 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.ConnectionLimit != null)
-                    hashCode = hashCode * 59 + this.ConnectionLimit.GetHashCode();
-                if (this.Http2Enable != null)
-                    hashCode = hashCode * 59 + this.Http2Enable.GetHashCode();
-                if (this.DefaultPoolId != null)
-                    hashCode = hashCode * 59 + this.DefaultPoolId.GetHashCode();
-                if (this.DefaultTlsContainerRef != null)
-                    hashCode = hashCode * 59 + this.DefaultTlsContainerRef.GetHashCode();
-                if (this.ClientCaTlsContainerRef != null)
-                    hashCode = hashCode * 59 + this.ClientCaTlsContainerRef.GetHashCode();
-                if (this.SniContainerRefs != null)
-                    hashCode = hashCode * 59 + this.SniContainerRefs.GetHashCode();
-                if (this.InsertHeaders != null)
-                    hashCode = hashCode * 59 + this.InsertHeaders.GetHashCode();
-                if (this.TlsCiphersPolicy != null)
-                    hashCode = hashCode * 59 + this.TlsCiphersPolicy.GetHashCode();
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.ProtectionStatus != null)
-                    hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
-                if (this.ProtectionReason != null)
-                    hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.ConnectionLimit != null) hashCode = hashCode * 59 + this.ConnectionLimit.GetHashCode();
+                if (this.Http2Enable != null) hashCode = hashCode * 59 + this.Http2Enable.GetHashCode();
+                if (this.DefaultPoolId != null) hashCode = hashCode * 59 + this.DefaultPoolId.GetHashCode();
+                if (this.DefaultTlsContainerRef != null) hashCode = hashCode * 59 + this.DefaultTlsContainerRef.GetHashCode();
+                if (this.ClientCaTlsContainerRef != null) hashCode = hashCode * 59 + this.ClientCaTlsContainerRef.GetHashCode();
+                if (this.SniContainerRefs != null) hashCode = hashCode * 59 + this.SniContainerRefs.GetHashCode();
+                if (this.InsertHeaders != null) hashCode = hashCode * 59 + this.InsertHeaders.GetHashCode();
+                if (this.TlsCiphersPolicy != null) hashCode = hashCode * 59 + this.TlsCiphersPolicy.GetHashCode();
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
+                if (this.ProtectionReason != null) hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
                 return hashCode;
             }
         }

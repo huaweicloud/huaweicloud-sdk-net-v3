@@ -183,27 +183,12 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// </summary>
         public bool Equals(VideoModerationResultResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Suggestion != input.Suggestion) return false;
+            if (this.ImageDetail != input.ImageDetail || (this.ImageDetail != null && input.ImageDetail != null && !this.ImageDetail.SequenceEqual(input.ImageDetail))) return false;
+            if (this.AudioDetail != input.AudioDetail || (this.AudioDetail != null && input.AudioDetail != null && !this.AudioDetail.SequenceEqual(input.AudioDetail))) return false;
 
-            return 
-                (
-                    this.Suggestion == input.Suggestion ||
-                    (this.Suggestion != null &&
-                    this.Suggestion.Equals(input.Suggestion))
-                ) && 
-                (
-                    this.ImageDetail == input.ImageDetail ||
-                    this.ImageDetail != null &&
-                    input.ImageDetail != null &&
-                    this.ImageDetail.SequenceEqual(input.ImageDetail)
-                ) && 
-                (
-                    this.AudioDetail == input.AudioDetail ||
-                    this.AudioDetail != null &&
-                    input.AudioDetail != null &&
-                    this.AudioDetail.SequenceEqual(input.AudioDetail)
-                );
+            return true;
         }
 
         /// <summary>
@@ -213,13 +198,10 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Suggestion != null)
-                    hashCode = hashCode * 59 + this.Suggestion.GetHashCode();
-                if (this.ImageDetail != null)
-                    hashCode = hashCode * 59 + this.ImageDetail.GetHashCode();
-                if (this.AudioDetail != null)
-                    hashCode = hashCode * 59 + this.AudioDetail.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Suggestion.GetHashCode();
+                if (this.ImageDetail != null) hashCode = hashCode * 59 + this.ImageDetail.GetHashCode();
+                if (this.AudioDetail != null) hashCode = hashCode * 59 + this.AudioDetail.GetHashCode();
                 return hashCode;
             }
         }

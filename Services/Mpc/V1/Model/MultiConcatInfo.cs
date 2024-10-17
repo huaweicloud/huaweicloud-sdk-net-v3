@@ -77,39 +77,14 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(MultiConcatInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Inputs != input.Inputs || (this.Inputs != null && input.Inputs != null && !this.Inputs.SequenceEqual(input.Inputs))) return false;
+            if (this.TransTemplateIds != input.TransTemplateIds || (this.TransTemplateIds != null && input.TransTemplateIds != null && !this.TransTemplateIds.SequenceEqual(input.TransTemplateIds))) return false;
+            if (this.AvParameters != input.AvParameters || (this.AvParameters != null && input.AvParameters != null && !this.AvParameters.SequenceEqual(input.AvParameters))) return false;
+            if (this.Output != input.Output || (this.Output != null && !this.Output.Equals(input.Output))) return false;
+            if (this.ImageWatermarkSettings != input.ImageWatermarkSettings || (this.ImageWatermarkSettings != null && input.ImageWatermarkSettings != null && !this.ImageWatermarkSettings.SequenceEqual(input.ImageWatermarkSettings))) return false;
 
-            return 
-                (
-                    this.Inputs == input.Inputs ||
-                    this.Inputs != null &&
-                    input.Inputs != null &&
-                    this.Inputs.SequenceEqual(input.Inputs)
-                ) && 
-                (
-                    this.TransTemplateIds == input.TransTemplateIds ||
-                    this.TransTemplateIds != null &&
-                    input.TransTemplateIds != null &&
-                    this.TransTemplateIds.SequenceEqual(input.TransTemplateIds)
-                ) && 
-                (
-                    this.AvParameters == input.AvParameters ||
-                    this.AvParameters != null &&
-                    input.AvParameters != null &&
-                    this.AvParameters.SequenceEqual(input.AvParameters)
-                ) && 
-                (
-                    this.Output == input.Output ||
-                    (this.Output != null &&
-                    this.Output.Equals(input.Output))
-                ) && 
-                (
-                    this.ImageWatermarkSettings == input.ImageWatermarkSettings ||
-                    this.ImageWatermarkSettings != null &&
-                    input.ImageWatermarkSettings != null &&
-                    this.ImageWatermarkSettings.SequenceEqual(input.ImageWatermarkSettings)
-                );
+            return true;
         }
 
         /// <summary>
@@ -119,17 +94,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Inputs != null)
-                    hashCode = hashCode * 59 + this.Inputs.GetHashCode();
-                if (this.TransTemplateIds != null)
-                    hashCode = hashCode * 59 + this.TransTemplateIds.GetHashCode();
-                if (this.AvParameters != null)
-                    hashCode = hashCode * 59 + this.AvParameters.GetHashCode();
-                if (this.Output != null)
-                    hashCode = hashCode * 59 + this.Output.GetHashCode();
-                if (this.ImageWatermarkSettings != null)
-                    hashCode = hashCode * 59 + this.ImageWatermarkSettings.GetHashCode();
+                var hashCode = 41;
+                if (this.Inputs != null) hashCode = hashCode * 59 + this.Inputs.GetHashCode();
+                if (this.TransTemplateIds != null) hashCode = hashCode * 59 + this.TransTemplateIds.GetHashCode();
+                if (this.AvParameters != null) hashCode = hashCode * 59 + this.AvParameters.GetHashCode();
+                if (this.Output != null) hashCode = hashCode * 59 + this.Output.GetHashCode();
+                if (this.ImageWatermarkSettings != null) hashCode = hashCode * 59 + this.ImageWatermarkSettings.GetHashCode();
                 return hashCode;
             }
         }

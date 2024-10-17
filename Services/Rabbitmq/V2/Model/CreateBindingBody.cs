@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public bool Equals(CreateBindingBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Destination != input.Destination || (this.Destination != null && !this.Destination.Equals(input.Destination))) return false;
+            if (this.RoutingKey != input.RoutingKey || (this.RoutingKey != null && !this.RoutingKey.Equals(input.RoutingKey))) return false;
+            if (this.DestinationType != input.DestinationType || (this.DestinationType != null && !this.DestinationType.Equals(input.DestinationType))) return false;
 
-            return 
-                (
-                    this.Destination == input.Destination ||
-                    (this.Destination != null &&
-                    this.Destination.Equals(input.Destination))
-                ) && 
-                (
-                    this.RoutingKey == input.RoutingKey ||
-                    (this.RoutingKey != null &&
-                    this.RoutingKey.Equals(input.RoutingKey))
-                ) && 
-                (
-                    this.DestinationType == input.DestinationType ||
-                    (this.DestinationType != null &&
-                    this.DestinationType.Equals(input.DestinationType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Destination != null)
-                    hashCode = hashCode * 59 + this.Destination.GetHashCode();
-                if (this.RoutingKey != null)
-                    hashCode = hashCode * 59 + this.RoutingKey.GetHashCode();
-                if (this.DestinationType != null)
-                    hashCode = hashCode * 59 + this.DestinationType.GetHashCode();
+                var hashCode = 41;
+                if (this.Destination != null) hashCode = hashCode * 59 + this.Destination.GetHashCode();
+                if (this.RoutingKey != null) hashCode = hashCode * 59 + this.RoutingKey.GetHashCode();
+                if (this.DestinationType != null) hashCode = hashCode * 59 + this.DestinationType.GetHashCode();
                 return hashCode;
             }
         }

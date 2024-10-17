@@ -182,110 +182,29 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(SmartConnectTaskRespSinkConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RedisAddress != input.RedisAddress || (this.RedisAddress != null && !this.RedisAddress.Equals(input.RedisAddress))) return false;
+            if (this.RedisType != input.RedisType || (this.RedisType != null && !this.RedisType.Equals(input.RedisType))) return false;
+            if (this.DcsInstanceId != input.DcsInstanceId || (this.DcsInstanceId != null && !this.DcsInstanceId.Equals(input.DcsInstanceId))) return false;
+            if (this.TargetDb != input.TargetDb || (this.TargetDb != null && !this.TargetDb.Equals(input.TargetDb))) return false;
+            if (this.ConsumerStrategy != input.ConsumerStrategy || (this.ConsumerStrategy != null && !this.ConsumerStrategy.Equals(input.ConsumerStrategy))) return false;
+            if (this.DestinationFileType != input.DestinationFileType || (this.DestinationFileType != null && !this.DestinationFileType.Equals(input.DestinationFileType))) return false;
+            if (this.DeliverTimeInterval != input.DeliverTimeInterval || (this.DeliverTimeInterval != null && !this.DeliverTimeInterval.Equals(input.DeliverTimeInterval))) return false;
+            if (this.ObsBucketName != input.ObsBucketName || (this.ObsBucketName != null && !this.ObsBucketName.Equals(input.ObsBucketName))) return false;
+            if (this.ObsPath != input.ObsPath || (this.ObsPath != null && !this.ObsPath.Equals(input.ObsPath))) return false;
+            if (this.PartitionFormat != input.PartitionFormat || (this.PartitionFormat != null && !this.PartitionFormat.Equals(input.PartitionFormat))) return false;
+            if (this.RecordDelimiter != input.RecordDelimiter || (this.RecordDelimiter != null && !this.RecordDelimiter.Equals(input.RecordDelimiter))) return false;
+            if (this.StoreKeys != input.StoreKeys || (this.StoreKeys != null && !this.StoreKeys.Equals(input.StoreKeys))) return false;
+            if (this.ObsPartSize != input.ObsPartSize || (this.ObsPartSize != null && !this.ObsPartSize.Equals(input.ObsPartSize))) return false;
+            if (this.FlushSize != input.FlushSize || (this.FlushSize != null && !this.FlushSize.Equals(input.FlushSize))) return false;
+            if (this.Timezone != input.Timezone || (this.Timezone != null && !this.Timezone.Equals(input.Timezone))) return false;
+            if (this.SchemaGeneratorClass != input.SchemaGeneratorClass || (this.SchemaGeneratorClass != null && !this.SchemaGeneratorClass.Equals(input.SchemaGeneratorClass))) return false;
+            if (this.PartitionerClass != input.PartitionerClass || (this.PartitionerClass != null && !this.PartitionerClass.Equals(input.PartitionerClass))) return false;
+            if (this.ValueConverter != input.ValueConverter || (this.ValueConverter != null && !this.ValueConverter.Equals(input.ValueConverter))) return false;
+            if (this.KeyConverter != input.KeyConverter || (this.KeyConverter != null && !this.KeyConverter.Equals(input.KeyConverter))) return false;
+            if (this.KvDelimiter != input.KvDelimiter || (this.KvDelimiter != null && !this.KvDelimiter.Equals(input.KvDelimiter))) return false;
 
-            return 
-                (
-                    this.RedisAddress == input.RedisAddress ||
-                    (this.RedisAddress != null &&
-                    this.RedisAddress.Equals(input.RedisAddress))
-                ) && 
-                (
-                    this.RedisType == input.RedisType ||
-                    (this.RedisType != null &&
-                    this.RedisType.Equals(input.RedisType))
-                ) && 
-                (
-                    this.DcsInstanceId == input.DcsInstanceId ||
-                    (this.DcsInstanceId != null &&
-                    this.DcsInstanceId.Equals(input.DcsInstanceId))
-                ) && 
-                (
-                    this.TargetDb == input.TargetDb ||
-                    (this.TargetDb != null &&
-                    this.TargetDb.Equals(input.TargetDb))
-                ) && 
-                (
-                    this.ConsumerStrategy == input.ConsumerStrategy ||
-                    (this.ConsumerStrategy != null &&
-                    this.ConsumerStrategy.Equals(input.ConsumerStrategy))
-                ) && 
-                (
-                    this.DestinationFileType == input.DestinationFileType ||
-                    (this.DestinationFileType != null &&
-                    this.DestinationFileType.Equals(input.DestinationFileType))
-                ) && 
-                (
-                    this.DeliverTimeInterval == input.DeliverTimeInterval ||
-                    (this.DeliverTimeInterval != null &&
-                    this.DeliverTimeInterval.Equals(input.DeliverTimeInterval))
-                ) && 
-                (
-                    this.ObsBucketName == input.ObsBucketName ||
-                    (this.ObsBucketName != null &&
-                    this.ObsBucketName.Equals(input.ObsBucketName))
-                ) && 
-                (
-                    this.ObsPath == input.ObsPath ||
-                    (this.ObsPath != null &&
-                    this.ObsPath.Equals(input.ObsPath))
-                ) && 
-                (
-                    this.PartitionFormat == input.PartitionFormat ||
-                    (this.PartitionFormat != null &&
-                    this.PartitionFormat.Equals(input.PartitionFormat))
-                ) && 
-                (
-                    this.RecordDelimiter == input.RecordDelimiter ||
-                    (this.RecordDelimiter != null &&
-                    this.RecordDelimiter.Equals(input.RecordDelimiter))
-                ) && 
-                (
-                    this.StoreKeys == input.StoreKeys ||
-                    (this.StoreKeys != null &&
-                    this.StoreKeys.Equals(input.StoreKeys))
-                ) && 
-                (
-                    this.ObsPartSize == input.ObsPartSize ||
-                    (this.ObsPartSize != null &&
-                    this.ObsPartSize.Equals(input.ObsPartSize))
-                ) && 
-                (
-                    this.FlushSize == input.FlushSize ||
-                    (this.FlushSize != null &&
-                    this.FlushSize.Equals(input.FlushSize))
-                ) && 
-                (
-                    this.Timezone == input.Timezone ||
-                    (this.Timezone != null &&
-                    this.Timezone.Equals(input.Timezone))
-                ) && 
-                (
-                    this.SchemaGeneratorClass == input.SchemaGeneratorClass ||
-                    (this.SchemaGeneratorClass != null &&
-                    this.SchemaGeneratorClass.Equals(input.SchemaGeneratorClass))
-                ) && 
-                (
-                    this.PartitionerClass == input.PartitionerClass ||
-                    (this.PartitionerClass != null &&
-                    this.PartitionerClass.Equals(input.PartitionerClass))
-                ) && 
-                (
-                    this.ValueConverter == input.ValueConverter ||
-                    (this.ValueConverter != null &&
-                    this.ValueConverter.Equals(input.ValueConverter))
-                ) && 
-                (
-                    this.KeyConverter == input.KeyConverter ||
-                    (this.KeyConverter != null &&
-                    this.KeyConverter.Equals(input.KeyConverter))
-                ) && 
-                (
-                    this.KvDelimiter == input.KvDelimiter ||
-                    (this.KvDelimiter != null &&
-                    this.KvDelimiter.Equals(input.KvDelimiter))
-                );
+            return true;
         }
 
         /// <summary>
@@ -295,47 +214,27 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RedisAddress != null)
-                    hashCode = hashCode * 59 + this.RedisAddress.GetHashCode();
-                if (this.RedisType != null)
-                    hashCode = hashCode * 59 + this.RedisType.GetHashCode();
-                if (this.DcsInstanceId != null)
-                    hashCode = hashCode * 59 + this.DcsInstanceId.GetHashCode();
-                if (this.TargetDb != null)
-                    hashCode = hashCode * 59 + this.TargetDb.GetHashCode();
-                if (this.ConsumerStrategy != null)
-                    hashCode = hashCode * 59 + this.ConsumerStrategy.GetHashCode();
-                if (this.DestinationFileType != null)
-                    hashCode = hashCode * 59 + this.DestinationFileType.GetHashCode();
-                if (this.DeliverTimeInterval != null)
-                    hashCode = hashCode * 59 + this.DeliverTimeInterval.GetHashCode();
-                if (this.ObsBucketName != null)
-                    hashCode = hashCode * 59 + this.ObsBucketName.GetHashCode();
-                if (this.ObsPath != null)
-                    hashCode = hashCode * 59 + this.ObsPath.GetHashCode();
-                if (this.PartitionFormat != null)
-                    hashCode = hashCode * 59 + this.PartitionFormat.GetHashCode();
-                if (this.RecordDelimiter != null)
-                    hashCode = hashCode * 59 + this.RecordDelimiter.GetHashCode();
-                if (this.StoreKeys != null)
-                    hashCode = hashCode * 59 + this.StoreKeys.GetHashCode();
-                if (this.ObsPartSize != null)
-                    hashCode = hashCode * 59 + this.ObsPartSize.GetHashCode();
-                if (this.FlushSize != null)
-                    hashCode = hashCode * 59 + this.FlushSize.GetHashCode();
-                if (this.Timezone != null)
-                    hashCode = hashCode * 59 + this.Timezone.GetHashCode();
-                if (this.SchemaGeneratorClass != null)
-                    hashCode = hashCode * 59 + this.SchemaGeneratorClass.GetHashCode();
-                if (this.PartitionerClass != null)
-                    hashCode = hashCode * 59 + this.PartitionerClass.GetHashCode();
-                if (this.ValueConverter != null)
-                    hashCode = hashCode * 59 + this.ValueConverter.GetHashCode();
-                if (this.KeyConverter != null)
-                    hashCode = hashCode * 59 + this.KeyConverter.GetHashCode();
-                if (this.KvDelimiter != null)
-                    hashCode = hashCode * 59 + this.KvDelimiter.GetHashCode();
+                var hashCode = 41;
+                if (this.RedisAddress != null) hashCode = hashCode * 59 + this.RedisAddress.GetHashCode();
+                if (this.RedisType != null) hashCode = hashCode * 59 + this.RedisType.GetHashCode();
+                if (this.DcsInstanceId != null) hashCode = hashCode * 59 + this.DcsInstanceId.GetHashCode();
+                if (this.TargetDb != null) hashCode = hashCode * 59 + this.TargetDb.GetHashCode();
+                if (this.ConsumerStrategy != null) hashCode = hashCode * 59 + this.ConsumerStrategy.GetHashCode();
+                if (this.DestinationFileType != null) hashCode = hashCode * 59 + this.DestinationFileType.GetHashCode();
+                if (this.DeliverTimeInterval != null) hashCode = hashCode * 59 + this.DeliverTimeInterval.GetHashCode();
+                if (this.ObsBucketName != null) hashCode = hashCode * 59 + this.ObsBucketName.GetHashCode();
+                if (this.ObsPath != null) hashCode = hashCode * 59 + this.ObsPath.GetHashCode();
+                if (this.PartitionFormat != null) hashCode = hashCode * 59 + this.PartitionFormat.GetHashCode();
+                if (this.RecordDelimiter != null) hashCode = hashCode * 59 + this.RecordDelimiter.GetHashCode();
+                if (this.StoreKeys != null) hashCode = hashCode * 59 + this.StoreKeys.GetHashCode();
+                if (this.ObsPartSize != null) hashCode = hashCode * 59 + this.ObsPartSize.GetHashCode();
+                if (this.FlushSize != null) hashCode = hashCode * 59 + this.FlushSize.GetHashCode();
+                if (this.Timezone != null) hashCode = hashCode * 59 + this.Timezone.GetHashCode();
+                if (this.SchemaGeneratorClass != null) hashCode = hashCode * 59 + this.SchemaGeneratorClass.GetHashCode();
+                if (this.PartitionerClass != null) hashCode = hashCode * 59 + this.PartitionerClass.GetHashCode();
+                if (this.ValueConverter != null) hashCode = hashCode * 59 + this.ValueConverter.GetHashCode();
+                if (this.KeyConverter != null) hashCode = hashCode * 59 + this.KeyConverter.GetHashCode();
+                if (this.KvDelimiter != null) hashCode = hashCode * 59 + this.KvDelimiter.GetHashCode();
                 return hashCode;
             }
         }

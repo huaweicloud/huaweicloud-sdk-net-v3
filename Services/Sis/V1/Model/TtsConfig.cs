@@ -648,40 +648,15 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         /// </summary>
         public bool Equals(TtsConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AudioFormat != input.AudioFormat) return false;
+            if (this.SampleRate != input.SampleRate) return false;
+            if (this.Property != input.Property) return false;
+            if (this.Speed != input.Speed || (this.Speed != null && !this.Speed.Equals(input.Speed))) return false;
+            if (this.Pitch != input.Pitch || (this.Pitch != null && !this.Pitch.Equals(input.Pitch))) return false;
+            if (this.Volume != input.Volume || (this.Volume != null && !this.Volume.Equals(input.Volume))) return false;
 
-            return 
-                (
-                    this.AudioFormat == input.AudioFormat ||
-                    (this.AudioFormat != null &&
-                    this.AudioFormat.Equals(input.AudioFormat))
-                ) && 
-                (
-                    this.SampleRate == input.SampleRate ||
-                    (this.SampleRate != null &&
-                    this.SampleRate.Equals(input.SampleRate))
-                ) && 
-                (
-                    this.Property == input.Property ||
-                    (this.Property != null &&
-                    this.Property.Equals(input.Property))
-                ) && 
-                (
-                    this.Speed == input.Speed ||
-                    (this.Speed != null &&
-                    this.Speed.Equals(input.Speed))
-                ) && 
-                (
-                    this.Pitch == input.Pitch ||
-                    (this.Pitch != null &&
-                    this.Pitch.Equals(input.Pitch))
-                ) && 
-                (
-                    this.Volume == input.Volume ||
-                    (this.Volume != null &&
-                    this.Volume.Equals(input.Volume))
-                );
+            return true;
         }
 
         /// <summary>
@@ -691,19 +666,13 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AudioFormat != null)
-                    hashCode = hashCode * 59 + this.AudioFormat.GetHashCode();
-                if (this.SampleRate != null)
-                    hashCode = hashCode * 59 + this.SampleRate.GetHashCode();
-                if (this.Property != null)
-                    hashCode = hashCode * 59 + this.Property.GetHashCode();
-                if (this.Speed != null)
-                    hashCode = hashCode * 59 + this.Speed.GetHashCode();
-                if (this.Pitch != null)
-                    hashCode = hashCode * 59 + this.Pitch.GetHashCode();
-                if (this.Volume != null)
-                    hashCode = hashCode * 59 + this.Volume.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.AudioFormat.GetHashCode();
+                hashCode = hashCode * 59 + this.SampleRate.GetHashCode();
+                hashCode = hashCode * 59 + this.Property.GetHashCode();
+                if (this.Speed != null) hashCode = hashCode * 59 + this.Speed.GetHashCode();
+                if (this.Pitch != null) hashCode = hashCode * 59 + this.Pitch.GetHashCode();
+                if (this.Volume != null) hashCode = hashCode * 59 + this.Volume.GetHashCode();
                 return hashCode;
             }
         }

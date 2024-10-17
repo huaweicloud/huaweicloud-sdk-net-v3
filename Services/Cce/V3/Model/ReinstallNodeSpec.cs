@@ -119,66 +119,20 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ReinstallNodeSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Os != input.Os || (this.Os != null && !this.Os.Equals(input.Os))) return false;
+            if (this.Login != input.Login || (this.Login != null && !this.Login.Equals(input.Login))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.ServerConfig != input.ServerConfig || (this.ServerConfig != null && !this.ServerConfig.Equals(input.ServerConfig))) return false;
+            if (this.VolumeConfig != input.VolumeConfig || (this.VolumeConfig != null && !this.VolumeConfig.Equals(input.VolumeConfig))) return false;
+            if (this.RuntimeConfig != input.RuntimeConfig || (this.RuntimeConfig != null && !this.RuntimeConfig.Equals(input.RuntimeConfig))) return false;
+            if (this.K8sOptions != input.K8sOptions || (this.K8sOptions != null && !this.K8sOptions.Equals(input.K8sOptions))) return false;
+            if (this.Lifecycle != input.Lifecycle || (this.Lifecycle != null && !this.Lifecycle.Equals(input.Lifecycle))) return false;
+            if (this.InitializedConditions != input.InitializedConditions || (this.InitializedConditions != null && input.InitializedConditions != null && !this.InitializedConditions.SequenceEqual(input.InitializedConditions))) return false;
+            if (this.ExtendParam != input.ExtendParam || (this.ExtendParam != null && !this.ExtendParam.Equals(input.ExtendParam))) return false;
+            if (this.HostnameConfig != input.HostnameConfig || (this.HostnameConfig != null && !this.HostnameConfig.Equals(input.HostnameConfig))) return false;
 
-            return 
-                (
-                    this.Os == input.Os ||
-                    (this.Os != null &&
-                    this.Os.Equals(input.Os))
-                ) && 
-                (
-                    this.Login == input.Login ||
-                    (this.Login != null &&
-                    this.Login.Equals(input.Login))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ServerConfig == input.ServerConfig ||
-                    (this.ServerConfig != null &&
-                    this.ServerConfig.Equals(input.ServerConfig))
-                ) && 
-                (
-                    this.VolumeConfig == input.VolumeConfig ||
-                    (this.VolumeConfig != null &&
-                    this.VolumeConfig.Equals(input.VolumeConfig))
-                ) && 
-                (
-                    this.RuntimeConfig == input.RuntimeConfig ||
-                    (this.RuntimeConfig != null &&
-                    this.RuntimeConfig.Equals(input.RuntimeConfig))
-                ) && 
-                (
-                    this.K8sOptions == input.K8sOptions ||
-                    (this.K8sOptions != null &&
-                    this.K8sOptions.Equals(input.K8sOptions))
-                ) && 
-                (
-                    this.Lifecycle == input.Lifecycle ||
-                    (this.Lifecycle != null &&
-                    this.Lifecycle.Equals(input.Lifecycle))
-                ) && 
-                (
-                    this.InitializedConditions == input.InitializedConditions ||
-                    this.InitializedConditions != null &&
-                    input.InitializedConditions != null &&
-                    this.InitializedConditions.SequenceEqual(input.InitializedConditions)
-                ) && 
-                (
-                    this.ExtendParam == input.ExtendParam ||
-                    (this.ExtendParam != null &&
-                    this.ExtendParam.Equals(input.ExtendParam))
-                ) && 
-                (
-                    this.HostnameConfig == input.HostnameConfig ||
-                    (this.HostnameConfig != null &&
-                    this.HostnameConfig.Equals(input.HostnameConfig))
-                );
+            return true;
         }
 
         /// <summary>
@@ -188,29 +142,18 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Os != null)
-                    hashCode = hashCode * 59 + this.Os.GetHashCode();
-                if (this.Login != null)
-                    hashCode = hashCode * 59 + this.Login.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.ServerConfig != null)
-                    hashCode = hashCode * 59 + this.ServerConfig.GetHashCode();
-                if (this.VolumeConfig != null)
-                    hashCode = hashCode * 59 + this.VolumeConfig.GetHashCode();
-                if (this.RuntimeConfig != null)
-                    hashCode = hashCode * 59 + this.RuntimeConfig.GetHashCode();
-                if (this.K8sOptions != null)
-                    hashCode = hashCode * 59 + this.K8sOptions.GetHashCode();
-                if (this.Lifecycle != null)
-                    hashCode = hashCode * 59 + this.Lifecycle.GetHashCode();
-                if (this.InitializedConditions != null)
-                    hashCode = hashCode * 59 + this.InitializedConditions.GetHashCode();
-                if (this.ExtendParam != null)
-                    hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
-                if (this.HostnameConfig != null)
-                    hashCode = hashCode * 59 + this.HostnameConfig.GetHashCode();
+                var hashCode = 41;
+                if (this.Os != null) hashCode = hashCode * 59 + this.Os.GetHashCode();
+                if (this.Login != null) hashCode = hashCode * 59 + this.Login.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.ServerConfig != null) hashCode = hashCode * 59 + this.ServerConfig.GetHashCode();
+                if (this.VolumeConfig != null) hashCode = hashCode * 59 + this.VolumeConfig.GetHashCode();
+                if (this.RuntimeConfig != null) hashCode = hashCode * 59 + this.RuntimeConfig.GetHashCode();
+                if (this.K8sOptions != null) hashCode = hashCode * 59 + this.K8sOptions.GetHashCode();
+                if (this.Lifecycle != null) hashCode = hashCode * 59 + this.Lifecycle.GetHashCode();
+                if (this.InitializedConditions != null) hashCode = hashCode * 59 + this.InitializedConditions.GetHashCode();
+                if (this.ExtendParam != null) hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
+                if (this.HostnameConfig != null) hashCode = hashCode * 59 + this.HostnameConfig.GetHashCode();
                 return hashCode;
             }
         }

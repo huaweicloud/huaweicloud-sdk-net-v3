@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(ConfigTransformationVo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DbTableName != input.DbTableName || (this.DbTableName != null && !this.DbTableName.Equals(input.DbTableName))) return false;
+            if (this.DbName != input.DbName || (this.DbName != null && !this.DbName.Equals(input.DbName))) return false;
+            if (this.TableName != input.TableName || (this.TableName != null && !this.TableName.Equals(input.TableName))) return false;
+            if (this.ColNames != input.ColNames || (this.ColNames != null && !this.ColNames.Equals(input.ColNames))) return false;
+            if (this.PrimKeyOrIndex != input.PrimKeyOrIndex || (this.PrimKeyOrIndex != null && !this.PrimKeyOrIndex.Equals(input.PrimKeyOrIndex))) return false;
+            if (this.Indexs != input.Indexs || (this.Indexs != null && !this.Indexs.Equals(input.Indexs))) return false;
+            if (this.Values != input.Values || (this.Values != null && !this.Values.Equals(input.Values))) return false;
 
-            return 
-                (
-                    this.DbTableName == input.DbTableName ||
-                    (this.DbTableName != null &&
-                    this.DbTableName.Equals(input.DbTableName))
-                ) && 
-                (
-                    this.DbName == input.DbName ||
-                    (this.DbName != null &&
-                    this.DbName.Equals(input.DbName))
-                ) && 
-                (
-                    this.TableName == input.TableName ||
-                    (this.TableName != null &&
-                    this.TableName.Equals(input.TableName))
-                ) && 
-                (
-                    this.ColNames == input.ColNames ||
-                    (this.ColNames != null &&
-                    this.ColNames.Equals(input.ColNames))
-                ) && 
-                (
-                    this.PrimKeyOrIndex == input.PrimKeyOrIndex ||
-                    (this.PrimKeyOrIndex != null &&
-                    this.PrimKeyOrIndex.Equals(input.PrimKeyOrIndex))
-                ) && 
-                (
-                    this.Indexs == input.Indexs ||
-                    (this.Indexs != null &&
-                    this.Indexs.Equals(input.Indexs))
-                ) && 
-                (
-                    this.Values == input.Values ||
-                    (this.Values != null &&
-                    this.Values.Equals(input.Values))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DbTableName != null)
-                    hashCode = hashCode * 59 + this.DbTableName.GetHashCode();
-                if (this.DbName != null)
-                    hashCode = hashCode * 59 + this.DbName.GetHashCode();
-                if (this.TableName != null)
-                    hashCode = hashCode * 59 + this.TableName.GetHashCode();
-                if (this.ColNames != null)
-                    hashCode = hashCode * 59 + this.ColNames.GetHashCode();
-                if (this.PrimKeyOrIndex != null)
-                    hashCode = hashCode * 59 + this.PrimKeyOrIndex.GetHashCode();
-                if (this.Indexs != null)
-                    hashCode = hashCode * 59 + this.Indexs.GetHashCode();
-                if (this.Values != null)
-                    hashCode = hashCode * 59 + this.Values.GetHashCode();
+                var hashCode = 41;
+                if (this.DbTableName != null) hashCode = hashCode * 59 + this.DbTableName.GetHashCode();
+                if (this.DbName != null) hashCode = hashCode * 59 + this.DbName.GetHashCode();
+                if (this.TableName != null) hashCode = hashCode * 59 + this.TableName.GetHashCode();
+                if (this.ColNames != null) hashCode = hashCode * 59 + this.ColNames.GetHashCode();
+                if (this.PrimKeyOrIndex != null) hashCode = hashCode * 59 + this.PrimKeyOrIndex.GetHashCode();
+                if (this.Indexs != null) hashCode = hashCode * 59 + this.Indexs.GetHashCode();
+                if (this.Values != null) hashCode = hashCode * 59 + this.Values.GetHashCode();
                 return hashCode;
             }
         }

@@ -98,45 +98,16 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(ShowKillOpRuleRuleListRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.OperationTypes != input.OperationTypes || (this.OperationTypes != null && !this.OperationTypes.Equals(input.OperationTypes))) return false;
+            if (this.Namespaces != input.Namespaces || (this.Namespaces != null && !this.Namespaces.Equals(input.Namespaces))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.PlanSummary != input.PlanSummary || (this.PlanSummary != null && !this.PlanSummary.Equals(input.PlanSummary))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.OperationTypes == input.OperationTypes ||
-                    (this.OperationTypes != null &&
-                    this.OperationTypes.Equals(input.OperationTypes))
-                ) && 
-                (
-                    this.Namespaces == input.Namespaces ||
-                    (this.Namespaces != null &&
-                    this.Namespaces.Equals(input.Namespaces))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.PlanSummary == input.PlanSummary ||
-                    (this.PlanSummary != null &&
-                    this.PlanSummary.Equals(input.PlanSummary))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -146,21 +117,14 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.OperationTypes != null)
-                    hashCode = hashCode * 59 + this.OperationTypes.GetHashCode();
-                if (this.Namespaces != null)
-                    hashCode = hashCode * 59 + this.Namespaces.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.PlanSummary != null)
-                    hashCode = hashCode * 59 + this.PlanSummary.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.OperationTypes != null) hashCode = hashCode * 59 + this.OperationTypes.GetHashCode();
+                if (this.Namespaces != null) hashCode = hashCode * 59 + this.Namespaces.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.PlanSummary != null) hashCode = hashCode * 59 + this.PlanSummary.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;
             }
         }

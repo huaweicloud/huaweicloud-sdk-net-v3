@@ -908,75 +908,22 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ShowJobDetailRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.XLanguage != input.XLanguage) return false;
+            if (this.Type != input.Type) return false;
+            if (this.QueryId != input.QueryId || (this.QueryId != null && !this.QueryId.Equals(input.QueryId))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.CompareType != input.CompareType) return false;
+            if (this.QueryType != input.QueryType) return false;
+            if (this.ObjectType != input.ObjectType) return false;
+            if (this.CompareTaskId != input.CompareTaskId || (this.CompareTaskId != null && !this.CompareTaskId.Equals(input.CompareTaskId))) return false;
+            if (this.SourceDbName != input.SourceDbName || (this.SourceDbName != null && !this.SourceDbName.Equals(input.SourceDbName))) return false;
+            if (this.TargetDbName != input.TargetDbName || (this.TargetDbName != null && !this.TargetDbName.Equals(input.TargetDbName))) return false;
+            if (this.CompareDetailType != input.CompareDetailType) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.XLanguage == input.XLanguage ||
-                    (this.XLanguage != null &&
-                    this.XLanguage.Equals(input.XLanguage))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.QueryId == input.QueryId ||
-                    (this.QueryId != null &&
-                    this.QueryId.Equals(input.QueryId))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.CompareType == input.CompareType ||
-                    (this.CompareType != null &&
-                    this.CompareType.Equals(input.CompareType))
-                ) && 
-                (
-                    this.QueryType == input.QueryType ||
-                    (this.QueryType != null &&
-                    this.QueryType.Equals(input.QueryType))
-                ) && 
-                (
-                    this.ObjectType == input.ObjectType ||
-                    (this.ObjectType != null &&
-                    this.ObjectType.Equals(input.ObjectType))
-                ) && 
-                (
-                    this.CompareTaskId == input.CompareTaskId ||
-                    (this.CompareTaskId != null &&
-                    this.CompareTaskId.Equals(input.CompareTaskId))
-                ) && 
-                (
-                    this.SourceDbName == input.SourceDbName ||
-                    (this.SourceDbName != null &&
-                    this.SourceDbName.Equals(input.SourceDbName))
-                ) && 
-                (
-                    this.TargetDbName == input.TargetDbName ||
-                    (this.TargetDbName != null &&
-                    this.TargetDbName.Equals(input.TargetDbName))
-                ) && 
-                (
-                    this.CompareDetailType == input.CompareDetailType ||
-                    (this.CompareDetailType != null &&
-                    this.CompareDetailType.Equals(input.CompareDetailType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -986,33 +933,20 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.XLanguage != null)
-                    hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.QueryId != null)
-                    hashCode = hashCode * 59 + this.QueryId.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.CompareType != null)
-                    hashCode = hashCode * 59 + this.CompareType.GetHashCode();
-                if (this.QueryType != null)
-                    hashCode = hashCode * 59 + this.QueryType.GetHashCode();
-                if (this.ObjectType != null)
-                    hashCode = hashCode * 59 + this.ObjectType.GetHashCode();
-                if (this.CompareTaskId != null)
-                    hashCode = hashCode * 59 + this.CompareTaskId.GetHashCode();
-                if (this.SourceDbName != null)
-                    hashCode = hashCode * 59 + this.SourceDbName.GetHashCode();
-                if (this.TargetDbName != null)
-                    hashCode = hashCode * 59 + this.TargetDbName.GetHashCode();
-                if (this.CompareDetailType != null)
-                    hashCode = hashCode * 59 + this.CompareDetailType.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.QueryId != null) hashCode = hashCode * 59 + this.QueryId.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                hashCode = hashCode * 59 + this.CompareType.GetHashCode();
+                hashCode = hashCode * 59 + this.QueryType.GetHashCode();
+                hashCode = hashCode * 59 + this.ObjectType.GetHashCode();
+                if (this.CompareTaskId != null) hashCode = hashCode * 59 + this.CompareTaskId.GetHashCode();
+                if (this.SourceDbName != null) hashCode = hashCode * 59 + this.SourceDbName.GetHashCode();
+                if (this.TargetDbName != null) hashCode = hashCode * 59 + this.TargetDbName.GetHashCode();
+                hashCode = hashCode * 59 + this.CompareDetailType.GetHashCode();
                 return hashCode;
             }
         }

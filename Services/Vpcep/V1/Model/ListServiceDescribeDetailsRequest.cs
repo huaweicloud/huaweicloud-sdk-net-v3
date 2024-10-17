@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         public bool Equals(ListServiceDescribeDetailsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EndpointServiceName != input.EndpointServiceName || (this.EndpointServiceName != null && !this.EndpointServiceName.Equals(input.EndpointServiceName))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
 
-            return 
-                (
-                    this.EndpointServiceName == input.EndpointServiceName ||
-                    (this.EndpointServiceName != null &&
-                    this.EndpointServiceName.Equals(input.EndpointServiceName))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EndpointServiceName != null)
-                    hashCode = hashCode * 59 + this.EndpointServiceName.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                var hashCode = 41;
+                if (this.EndpointServiceName != null) hashCode = hashCode * 59 + this.EndpointServiceName.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 return hashCode;
             }
         }

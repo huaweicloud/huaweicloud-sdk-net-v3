@@ -284,20 +284,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(ConfigurationPrimitiveTypeHolderConfiguration input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TargetStacks != input.TargetStacks) return false;
+            if (this.FailureMode != input.FailureMode) return false;
 
-            return 
-                (
-                    this.TargetStacks == input.TargetStacks ||
-                    (this.TargetStacks != null &&
-                    this.TargetStacks.Equals(input.TargetStacks))
-                ) && 
-                (
-                    this.FailureMode == input.FailureMode ||
-                    (this.FailureMode != null &&
-                    this.FailureMode.Equals(input.FailureMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -307,11 +298,9 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TargetStacks != null)
-                    hashCode = hashCode * 59 + this.TargetStacks.GetHashCode();
-                if (this.FailureMode != null)
-                    hashCode = hashCode * 59 + this.FailureMode.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.TargetStacks.GetHashCode();
+                hashCode = hashCode * 59 + this.FailureMode.GetHashCode();
                 return hashCode;
             }
         }

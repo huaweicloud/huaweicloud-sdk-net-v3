@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// </summary>
         public bool Equals(WafPolicyOptions input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Cc != input.Cc || (this.Cc != null && !this.Cc.Equals(input.Cc))) return false;
+            if (this.Custom != input.Custom || (this.Custom != null && !this.Custom.Equals(input.Custom))) return false;
+            if (this.Geoip != input.Geoip || (this.Geoip != null && !this.Geoip.Equals(input.Geoip))) return false;
+            if (this.Whiteblackip != input.Whiteblackip || (this.Whiteblackip != null && !this.Whiteblackip.Equals(input.Whiteblackip))) return false;
+            if (this.ModulexEnabled != input.ModulexEnabled || (this.ModulexEnabled != null && !this.ModulexEnabled.Equals(input.ModulexEnabled))) return false;
 
-            return 
-                (
-                    this.Cc == input.Cc ||
-                    (this.Cc != null &&
-                    this.Cc.Equals(input.Cc))
-                ) && 
-                (
-                    this.Custom == input.Custom ||
-                    (this.Custom != null &&
-                    this.Custom.Equals(input.Custom))
-                ) && 
-                (
-                    this.Geoip == input.Geoip ||
-                    (this.Geoip != null &&
-                    this.Geoip.Equals(input.Geoip))
-                ) && 
-                (
-                    this.Whiteblackip == input.Whiteblackip ||
-                    (this.Whiteblackip != null &&
-                    this.Whiteblackip.Equals(input.Whiteblackip))
-                ) && 
-                (
-                    this.ModulexEnabled == input.ModulexEnabled ||
-                    (this.ModulexEnabled != null &&
-                    this.ModulexEnabled.Equals(input.ModulexEnabled))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Cc != null)
-                    hashCode = hashCode * 59 + this.Cc.GetHashCode();
-                if (this.Custom != null)
-                    hashCode = hashCode * 59 + this.Custom.GetHashCode();
-                if (this.Geoip != null)
-                    hashCode = hashCode * 59 + this.Geoip.GetHashCode();
-                if (this.Whiteblackip != null)
-                    hashCode = hashCode * 59 + this.Whiteblackip.GetHashCode();
-                if (this.ModulexEnabled != null)
-                    hashCode = hashCode * 59 + this.ModulexEnabled.GetHashCode();
+                var hashCode = 41;
+                if (this.Cc != null) hashCode = hashCode * 59 + this.Cc.GetHashCode();
+                if (this.Custom != null) hashCode = hashCode * 59 + this.Custom.GetHashCode();
+                if (this.Geoip != null) hashCode = hashCode * 59 + this.Geoip.GetHashCode();
+                if (this.Whiteblackip != null) hashCode = hashCode * 59 + this.Whiteblackip.GetHashCode();
+                if (this.ModulexEnabled != null) hashCode = hashCode * 59 + this.ModulexEnabled.GetHashCode();
                 return hashCode;
             }
         }

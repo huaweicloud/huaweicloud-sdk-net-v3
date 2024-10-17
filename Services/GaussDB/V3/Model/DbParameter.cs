@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(DbParameter input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ParamName != input.ParamName || (this.ParamName != null && !this.ParamName.Equals(input.ParamName))) return false;
+            if (this.DataType != input.DataType || (this.DataType != null && !this.DataType.Equals(input.DataType))) return false;
+            if (this.DefaultValue != input.DefaultValue || (this.DefaultValue != null && !this.DefaultValue.Equals(input.DefaultValue))) return false;
+            if (this.ValueRange != input.ValueRange || (this.ValueRange != null && !this.ValueRange.Equals(input.ValueRange))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
 
-            return 
-                (
-                    this.ParamName == input.ParamName ||
-                    (this.ParamName != null &&
-                    this.ParamName.Equals(input.ParamName))
-                ) && 
-                (
-                    this.DataType == input.DataType ||
-                    (this.DataType != null &&
-                    this.DataType.Equals(input.DataType))
-                ) && 
-                (
-                    this.DefaultValue == input.DefaultValue ||
-                    (this.DefaultValue != null &&
-                    this.DefaultValue.Equals(input.DefaultValue))
-                ) && 
-                (
-                    this.ValueRange == input.ValueRange ||
-                    (this.ValueRange != null &&
-                    this.ValueRange.Equals(input.ValueRange))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ParamName != null)
-                    hashCode = hashCode * 59 + this.ParamName.GetHashCode();
-                if (this.DataType != null)
-                    hashCode = hashCode * 59 + this.DataType.GetHashCode();
-                if (this.DefaultValue != null)
-                    hashCode = hashCode * 59 + this.DefaultValue.GetHashCode();
-                if (this.ValueRange != null)
-                    hashCode = hashCode * 59 + this.ValueRange.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                var hashCode = 41;
+                if (this.ParamName != null) hashCode = hashCode * 59 + this.ParamName.GetHashCode();
+                if (this.DataType != null) hashCode = hashCode * 59 + this.DataType.GetHashCode();
+                if (this.DefaultValue != null) hashCode = hashCode * 59 + this.DefaultValue.GetHashCode();
+                if (this.ValueRange != null) hashCode = hashCode * 59 + this.ValueRange.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

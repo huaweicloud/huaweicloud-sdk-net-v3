@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(NeutronListFirewallPoliciesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FirewallPolicies != input.FirewallPolicies || (this.FirewallPolicies != null && input.FirewallPolicies != null && !this.FirewallPolicies.SequenceEqual(input.FirewallPolicies))) return false;
+            if (this.FirewallPoliciesLinks != input.FirewallPoliciesLinks || (this.FirewallPoliciesLinks != null && input.FirewallPoliciesLinks != null && !this.FirewallPoliciesLinks.SequenceEqual(input.FirewallPoliciesLinks))) return false;
 
-            return 
-                (
-                    this.FirewallPolicies == input.FirewallPolicies ||
-                    this.FirewallPolicies != null &&
-                    input.FirewallPolicies != null &&
-                    this.FirewallPolicies.SequenceEqual(input.FirewallPolicies)
-                ) && 
-                (
-                    this.FirewallPoliciesLinks == input.FirewallPoliciesLinks ||
-                    this.FirewallPoliciesLinks != null &&
-                    input.FirewallPoliciesLinks != null &&
-                    this.FirewallPoliciesLinks.SequenceEqual(input.FirewallPoliciesLinks)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FirewallPolicies != null)
-                    hashCode = hashCode * 59 + this.FirewallPolicies.GetHashCode();
-                if (this.FirewallPoliciesLinks != null)
-                    hashCode = hashCode * 59 + this.FirewallPoliciesLinks.GetHashCode();
+                var hashCode = 41;
+                if (this.FirewallPolicies != null) hashCode = hashCode * 59 + this.FirewallPolicies.GetHashCode();
+                if (this.FirewallPoliciesLinks != null) hashCode = hashCode * 59 + this.FirewallPoliciesLinks.GetHashCode();
                 return hashCode;
             }
         }

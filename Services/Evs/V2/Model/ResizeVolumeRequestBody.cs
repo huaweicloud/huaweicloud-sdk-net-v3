@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(ResizeVolumeRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BssParam != input.BssParam || (this.BssParam != null && !this.BssParam.Equals(input.BssParam))) return false;
+            if (this.OsExtend != input.OsExtend || (this.OsExtend != null && !this.OsExtend.Equals(input.OsExtend))) return false;
 
-            return 
-                (
-                    this.BssParam == input.BssParam ||
-                    (this.BssParam != null &&
-                    this.BssParam.Equals(input.BssParam))
-                ) && 
-                (
-                    this.OsExtend == input.OsExtend ||
-                    (this.OsExtend != null &&
-                    this.OsExtend.Equals(input.OsExtend))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BssParam != null)
-                    hashCode = hashCode * 59 + this.BssParam.GetHashCode();
-                if (this.OsExtend != null)
-                    hashCode = hashCode * 59 + this.OsExtend.GetHashCode();
+                var hashCode = 41;
+                if (this.BssParam != null) hashCode = hashCode * 59 + this.BssParam.GetHashCode();
+                if (this.OsExtend != null) hashCode = hashCode * 59 + this.OsExtend.GetHashCode();
                 return hashCode;
             }
         }

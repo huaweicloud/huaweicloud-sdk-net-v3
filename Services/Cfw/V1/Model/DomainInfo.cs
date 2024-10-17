@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(DomainInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DomainAddressId != input.DomainAddressId || (this.DomainAddressId != null && !this.DomainAddressId.Equals(input.DomainAddressId))) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.DnsIps != input.DnsIps || (this.DnsIps != null && input.DnsIps != null && !this.DnsIps.SequenceEqual(input.DnsIps))) return false;
 
-            return 
-                (
-                    this.DomainAddressId == input.DomainAddressId ||
-                    (this.DomainAddressId != null &&
-                    this.DomainAddressId.Equals(input.DomainAddressId))
-                ) && 
-                (
-                    this.DomainName == input.DomainName ||
-                    (this.DomainName != null &&
-                    this.DomainName.Equals(input.DomainName))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.DnsIps == input.DnsIps ||
-                    this.DnsIps != null &&
-                    input.DnsIps != null &&
-                    this.DnsIps.SequenceEqual(input.DnsIps)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DomainAddressId != null)
-                    hashCode = hashCode * 59 + this.DomainAddressId.GetHashCode();
-                if (this.DomainName != null)
-                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.DnsIps != null)
-                    hashCode = hashCode * 59 + this.DnsIps.GetHashCode();
+                var hashCode = 41;
+                if (this.DomainAddressId != null) hashCode = hashCode * 59 + this.DomainAddressId.GetHashCode();
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.DnsIps != null) hashCode = hashCode * 59 + this.DnsIps.GetHashCode();
                 return hashCode;
             }
         }

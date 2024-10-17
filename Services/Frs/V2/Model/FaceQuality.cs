@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public bool Equals(FaceQuality input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TotalScore != input.TotalScore || (this.TotalScore != null && !this.TotalScore.Equals(input.TotalScore))) return false;
+            if (this.Blur != input.Blur || (this.Blur != null && !this.Blur.Equals(input.Blur))) return false;
+            if (this.Pose != input.Pose || (this.Pose != null && !this.Pose.Equals(input.Pose))) return false;
+            if (this.Occlusion != input.Occlusion || (this.Occlusion != null && !this.Occlusion.Equals(input.Occlusion))) return false;
+            if (this.Illumination != input.Illumination || (this.Illumination != null && !this.Illumination.Equals(input.Illumination))) return false;
 
-            return 
-                (
-                    this.TotalScore == input.TotalScore ||
-                    (this.TotalScore != null &&
-                    this.TotalScore.Equals(input.TotalScore))
-                ) && 
-                (
-                    this.Blur == input.Blur ||
-                    (this.Blur != null &&
-                    this.Blur.Equals(input.Blur))
-                ) && 
-                (
-                    this.Pose == input.Pose ||
-                    (this.Pose != null &&
-                    this.Pose.Equals(input.Pose))
-                ) && 
-                (
-                    this.Occlusion == input.Occlusion ||
-                    (this.Occlusion != null &&
-                    this.Occlusion.Equals(input.Occlusion))
-                ) && 
-                (
-                    this.Illumination == input.Illumination ||
-                    (this.Illumination != null &&
-                    this.Illumination.Equals(input.Illumination))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TotalScore != null)
-                    hashCode = hashCode * 59 + this.TotalScore.GetHashCode();
-                if (this.Blur != null)
-                    hashCode = hashCode * 59 + this.Blur.GetHashCode();
-                if (this.Pose != null)
-                    hashCode = hashCode * 59 + this.Pose.GetHashCode();
-                if (this.Occlusion != null)
-                    hashCode = hashCode * 59 + this.Occlusion.GetHashCode();
-                if (this.Illumination != null)
-                    hashCode = hashCode * 59 + this.Illumination.GetHashCode();
+                var hashCode = 41;
+                if (this.TotalScore != null) hashCode = hashCode * 59 + this.TotalScore.GetHashCode();
+                if (this.Blur != null) hashCode = hashCode * 59 + this.Blur.GetHashCode();
+                if (this.Pose != null) hashCode = hashCode * 59 + this.Pose.GetHashCode();
+                if (this.Occlusion != null) hashCode = hashCode * 59 + this.Occlusion.GetHashCode();
+                if (this.Illumination != null) hashCode = hashCode * 59 + this.Illumination.GetHashCode();
                 return hashCode;
             }
         }

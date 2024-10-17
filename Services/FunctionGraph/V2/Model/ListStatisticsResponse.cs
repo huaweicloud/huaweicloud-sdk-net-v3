@@ -70,33 +70,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(ListStatisticsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Count != input.Count || (this.Count != null && input.Count != null && !this.Count.SequenceEqual(input.Count))) return false;
+            if (this.Gbs != input.Gbs || (this.Gbs != null && input.Gbs != null && !this.Gbs.SequenceEqual(input.Gbs))) return false;
+            if (this.GpuGbs != input.GpuGbs || (this.GpuGbs != null && input.GpuGbs != null && !this.GpuGbs.SequenceEqual(input.GpuGbs))) return false;
+            if (this.Statistics != input.Statistics || (this.Statistics != null && !this.Statistics.Equals(input.Statistics))) return false;
 
-            return 
-                (
-                    this.Count == input.Count ||
-                    this.Count != null &&
-                    input.Count != null &&
-                    this.Count.SequenceEqual(input.Count)
-                ) && 
-                (
-                    this.Gbs == input.Gbs ||
-                    this.Gbs != null &&
-                    input.Gbs != null &&
-                    this.Gbs.SequenceEqual(input.Gbs)
-                ) && 
-                (
-                    this.GpuGbs == input.GpuGbs ||
-                    this.GpuGbs != null &&
-                    input.GpuGbs != null &&
-                    this.GpuGbs.SequenceEqual(input.GpuGbs)
-                ) && 
-                (
-                    this.Statistics == input.Statistics ||
-                    (this.Statistics != null &&
-                    this.Statistics.Equals(input.Statistics))
-                );
+            return true;
         }
 
         /// <summary>
@@ -106,15 +86,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.Gbs != null)
-                    hashCode = hashCode * 59 + this.Gbs.GetHashCode();
-                if (this.GpuGbs != null)
-                    hashCode = hashCode * 59 + this.GpuGbs.GetHashCode();
-                if (this.Statistics != null)
-                    hashCode = hashCode * 59 + this.Statistics.GetHashCode();
+                var hashCode = 41;
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.Gbs != null) hashCode = hashCode * 59 + this.Gbs.GetHashCode();
+                if (this.GpuGbs != null) hashCode = hashCode * 59 + this.GpuGbs.GetHashCode();
+                if (this.Statistics != null) hashCode = hashCode * 59 + this.Statistics.GetHashCode();
                 return hashCode;
             }
         }

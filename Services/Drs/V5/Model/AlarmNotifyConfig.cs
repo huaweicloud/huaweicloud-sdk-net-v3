@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(AlarmNotifyConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AlarmToUser != input.AlarmToUser || (this.AlarmToUser != null && !this.AlarmToUser.Equals(input.AlarmToUser))) return false;
+            if (this.TopicUrn != input.TopicUrn || (this.TopicUrn != null && !this.TopicUrn.Equals(input.TopicUrn))) return false;
+            if (this.DelayTime != input.DelayTime || (this.DelayTime != null && !this.DelayTime.Equals(input.DelayTime))) return false;
+            if (this.RpoDelay != input.RpoDelay || (this.RpoDelay != null && !this.RpoDelay.Equals(input.RpoDelay))) return false;
+            if (this.RtoDelay != input.RtoDelay || (this.RtoDelay != null && !this.RtoDelay.Equals(input.RtoDelay))) return false;
 
-            return 
-                (
-                    this.AlarmToUser == input.AlarmToUser ||
-                    (this.AlarmToUser != null &&
-                    this.AlarmToUser.Equals(input.AlarmToUser))
-                ) && 
-                (
-                    this.TopicUrn == input.TopicUrn ||
-                    (this.TopicUrn != null &&
-                    this.TopicUrn.Equals(input.TopicUrn))
-                ) && 
-                (
-                    this.DelayTime == input.DelayTime ||
-                    (this.DelayTime != null &&
-                    this.DelayTime.Equals(input.DelayTime))
-                ) && 
-                (
-                    this.RpoDelay == input.RpoDelay ||
-                    (this.RpoDelay != null &&
-                    this.RpoDelay.Equals(input.RpoDelay))
-                ) && 
-                (
-                    this.RtoDelay == input.RtoDelay ||
-                    (this.RtoDelay != null &&
-                    this.RtoDelay.Equals(input.RtoDelay))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AlarmToUser != null)
-                    hashCode = hashCode * 59 + this.AlarmToUser.GetHashCode();
-                if (this.TopicUrn != null)
-                    hashCode = hashCode * 59 + this.TopicUrn.GetHashCode();
-                if (this.DelayTime != null)
-                    hashCode = hashCode * 59 + this.DelayTime.GetHashCode();
-                if (this.RpoDelay != null)
-                    hashCode = hashCode * 59 + this.RpoDelay.GetHashCode();
-                if (this.RtoDelay != null)
-                    hashCode = hashCode * 59 + this.RtoDelay.GetHashCode();
+                var hashCode = 41;
+                if (this.AlarmToUser != null) hashCode = hashCode * 59 + this.AlarmToUser.GetHashCode();
+                if (this.TopicUrn != null) hashCode = hashCode * 59 + this.TopicUrn.GetHashCode();
+                if (this.DelayTime != null) hashCode = hashCode * 59 + this.DelayTime.GetHashCode();
+                if (this.RpoDelay != null) hashCode = hashCode * 59 + this.RpoDelay.GetHashCode();
+                if (this.RtoDelay != null) hashCode = hashCode * 59 + this.RtoDelay.GetHashCode();
                 return hashCode;
             }
         }

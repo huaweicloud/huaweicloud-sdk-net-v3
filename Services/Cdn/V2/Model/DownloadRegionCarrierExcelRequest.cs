@@ -122,60 +122,19 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(DownloadRegionCarrierExcelRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
+            if (this.Interval != input.Interval || (this.Interval != null && !this.Interval.Equals(input.Interval))) return false;
+            if (this.Country != input.Country || (this.Country != null && !this.Country.Equals(input.Country))) return false;
+            if (this.ExcelLanguage != input.ExcelLanguage || (this.ExcelLanguage != null && !this.ExcelLanguage.Equals(input.ExcelLanguage))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.ExcelType != input.ExcelType || (this.ExcelType != null && !this.ExcelType.Equals(input.ExcelType))) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
+            if (this.Carrier != input.Carrier || (this.Carrier != null && !this.Carrier.Equals(input.Carrier))) return false;
 
-            return 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.DomainName == input.DomainName ||
-                    (this.DomainName != null &&
-                    this.DomainName.Equals(input.DomainName))
-                ) && 
-                (
-                    this.Interval == input.Interval ||
-                    (this.Interval != null &&
-                    this.Interval.Equals(input.Interval))
-                ) && 
-                (
-                    this.Country == input.Country ||
-                    (this.Country != null &&
-                    this.Country.Equals(input.Country))
-                ) && 
-                (
-                    this.ExcelLanguage == input.ExcelLanguage ||
-                    (this.ExcelLanguage != null &&
-                    this.ExcelLanguage.Equals(input.ExcelLanguage))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.ExcelType == input.ExcelType ||
-                    (this.ExcelType != null &&
-                    this.ExcelType.Equals(input.ExcelType))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.Carrier == input.Carrier ||
-                    (this.Carrier != null &&
-                    this.Carrier.Equals(input.Carrier))
-                );
+            return true;
         }
 
         /// <summary>
@@ -185,27 +144,17 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.DomainName != null)
-                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.Interval != null)
-                    hashCode = hashCode * 59 + this.Interval.GetHashCode();
-                if (this.Country != null)
-                    hashCode = hashCode * 59 + this.Country.GetHashCode();
-                if (this.ExcelLanguage != null)
-                    hashCode = hashCode * 59 + this.ExcelLanguage.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.ExcelType != null)
-                    hashCode = hashCode * 59 + this.ExcelType.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.Carrier != null)
-                    hashCode = hashCode * 59 + this.Carrier.GetHashCode();
+                var hashCode = 41;
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.Interval != null) hashCode = hashCode * 59 + this.Interval.GetHashCode();
+                if (this.Country != null) hashCode = hashCode * 59 + this.Country.GetHashCode();
+                if (this.ExcelLanguage != null) hashCode = hashCode * 59 + this.ExcelLanguage.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.ExcelType != null) hashCode = hashCode * 59 + this.ExcelType.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
+                if (this.Carrier != null) hashCode = hashCode * 59 + this.Carrier.GetHashCode();
                 return hashCode;
             }
         }

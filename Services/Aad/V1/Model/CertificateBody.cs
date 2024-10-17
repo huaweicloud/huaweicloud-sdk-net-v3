@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         /// </summary>
         public bool Equals(CertificateBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OpType != input.OpType || (this.OpType != null && !this.OpType.Equals(input.OpType))) return false;
+            if (this.CertName != input.CertName || (this.CertName != null && !this.CertName.Equals(input.CertName))) return false;
+            if (this.CertFile != input.CertFile || (this.CertFile != null && !this.CertFile.Equals(input.CertFile))) return false;
+            if (this.CertKeyFile != input.CertKeyFile || (this.CertKeyFile != null && !this.CertKeyFile.Equals(input.CertKeyFile))) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
 
-            return 
-                (
-                    this.OpType == input.OpType ||
-                    (this.OpType != null &&
-                    this.OpType.Equals(input.OpType))
-                ) && 
-                (
-                    this.CertName == input.CertName ||
-                    (this.CertName != null &&
-                    this.CertName.Equals(input.CertName))
-                ) && 
-                (
-                    this.CertFile == input.CertFile ||
-                    (this.CertFile != null &&
-                    this.CertFile.Equals(input.CertFile))
-                ) && 
-                (
-                    this.CertKeyFile == input.CertKeyFile ||
-                    (this.CertKeyFile != null &&
-                    this.CertKeyFile.Equals(input.CertKeyFile))
-                ) && 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OpType != null)
-                    hashCode = hashCode * 59 + this.OpType.GetHashCode();
-                if (this.CertName != null)
-                    hashCode = hashCode * 59 + this.CertName.GetHashCode();
-                if (this.CertFile != null)
-                    hashCode = hashCode * 59 + this.CertFile.GetHashCode();
-                if (this.CertKeyFile != null)
-                    hashCode = hashCode * 59 + this.CertKeyFile.GetHashCode();
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                var hashCode = 41;
+                if (this.OpType != null) hashCode = hashCode * 59 + this.OpType.GetHashCode();
+                if (this.CertName != null) hashCode = hashCode * 59 + this.CertName.GetHashCode();
+                if (this.CertFile != null) hashCode = hashCode * 59 + this.CertFile.GetHashCode();
+                if (this.CertKeyFile != null) hashCode = hashCode * 59 + this.CertKeyFile.GetHashCode();
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
                 return hashCode;
             }
         }

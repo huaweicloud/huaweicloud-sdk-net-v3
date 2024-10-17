@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ReduceVolumeRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ReduceVolume != input.ReduceVolume || (this.ReduceVolume != null && !this.ReduceVolume.Equals(input.ReduceVolume))) return false;
 
-            return 
-                (
-                    this.ReduceVolume == input.ReduceVolume ||
-                    (this.ReduceVolume != null &&
-                    this.ReduceVolume.Equals(input.ReduceVolume))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ReduceVolume != null)
-                    hashCode = hashCode * 59 + this.ReduceVolume.GetHashCode();
+                var hashCode = 41;
+                if (this.ReduceVolume != null) hashCode = hashCode * 59 + this.ReduceVolume.GetHashCode();
                 return hashCode;
             }
         }

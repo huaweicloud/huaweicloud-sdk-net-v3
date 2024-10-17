@@ -322,210 +322,49 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(FlavorExtraSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Ecsperformancetype != input.Ecsperformancetype || (this.Ecsperformancetype != null && !this.Ecsperformancetype.Equals(input.Ecsperformancetype))) return false;
+            if (this.HwnumaNodes != input.HwnumaNodes || (this.HwnumaNodes != null && !this.HwnumaNodes.Equals(input.HwnumaNodes))) return false;
+            if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
+            if (this.HpetSupport != input.HpetSupport || (this.HpetSupport != null && !this.HpetSupport.Equals(input.HpetSupport))) return false;
+            if (this.InstanceVnictype != input.InstanceVnictype || (this.InstanceVnictype != null && !this.InstanceVnictype.Equals(input.InstanceVnictype))) return false;
+            if (this.InstanceVnicinstanceBandwidth != input.InstanceVnicinstanceBandwidth || (this.InstanceVnicinstanceBandwidth != null && !this.InstanceVnicinstanceBandwidth.Equals(input.InstanceVnicinstanceBandwidth))) return false;
+            if (this.InstanceVnicmaxCount != input.InstanceVnicmaxCount || (this.InstanceVnicmaxCount != null && !this.InstanceVnicmaxCount.Equals(input.InstanceVnicmaxCount))) return false;
+            if (this.QuotalocalDisk != input.QuotalocalDisk || (this.QuotalocalDisk != null && !this.QuotalocalDisk.Equals(input.QuotalocalDisk))) return false;
+            if (this.QuotanvmeSsd != input.QuotanvmeSsd || (this.QuotanvmeSsd != null && !this.QuotanvmeSsd.Equals(input.QuotanvmeSsd))) return false;
+            if (this.ExtraSpeciopersistentGrant != input.ExtraSpeciopersistentGrant || (this.ExtraSpeciopersistentGrant != null && !this.ExtraSpeciopersistentGrant.Equals(input.ExtraSpeciopersistentGrant))) return false;
+            if (this.Ecsgeneration != input.Ecsgeneration || (this.Ecsgeneration != null && !this.Ecsgeneration.Equals(input.Ecsgeneration))) return false;
+            if (this.EcsvirtualizationEnvTypes != input.EcsvirtualizationEnvTypes || (this.EcsvirtualizationEnvTypes != null && !this.EcsvirtualizationEnvTypes.Equals(input.EcsvirtualizationEnvTypes))) return false;
+            if (this.PciPassthroughenableGpu != input.PciPassthroughenableGpu || (this.PciPassthroughenableGpu != null && !this.PciPassthroughenableGpu.Equals(input.PciPassthroughenableGpu))) return false;
+            if (this.PciPassthroughgpuSpecs != input.PciPassthroughgpuSpecs || (this.PciPassthroughgpuSpecs != null && !this.PciPassthroughgpuSpecs.Equals(input.PciPassthroughgpuSpecs))) return false;
+            if (this.PciPassthroughalias != input.PciPassthroughalias || (this.PciPassthroughalias != null && !this.PciPassthroughalias.Equals(input.PciPassthroughalias))) return false;
+            if (this.Condoperationstatus != input.Condoperationstatus || (this.Condoperationstatus != null && !this.Condoperationstatus.Equals(input.Condoperationstatus))) return false;
+            if (this.Condoperationaz != input.Condoperationaz || (this.Condoperationaz != null && !this.Condoperationaz.Equals(input.Condoperationaz))) return false;
+            if (this.QuotamaxRate != input.QuotamaxRate || (this.QuotamaxRate != null && !this.QuotamaxRate.Equals(input.QuotamaxRate))) return false;
+            if (this.QuotaminRate != input.QuotaminRate || (this.QuotaminRate != null && !this.QuotaminRate.Equals(input.QuotaminRate))) return false;
+            if (this.QuotamaxPps != input.QuotamaxPps || (this.QuotamaxPps != null && !this.QuotamaxPps.Equals(input.QuotamaxPps))) return false;
+            if (this.Condoperationcharge != input.Condoperationcharge || (this.Condoperationcharge != null && !this.Condoperationcharge.Equals(input.Condoperationcharge))) return false;
+            if (this.Condoperationchargestop != input.Condoperationchargestop || (this.Condoperationchargestop != null && !this.Condoperationchargestop.Equals(input.Condoperationchargestop))) return false;
+            if (this.Condspotoperationaz != input.Condspotoperationaz || (this.Condspotoperationaz != null && !this.Condspotoperationaz.Equals(input.Condspotoperationaz))) return false;
+            if (this.Condoperationroles != input.Condoperationroles || (this.Condoperationroles != null && !this.Condoperationroles.Equals(input.Condoperationroles))) return false;
+            if (this.Condspotoperationstatus != input.Condspotoperationstatus || (this.Condspotoperationstatus != null && !this.Condspotoperationstatus.Equals(input.Condspotoperationstatus))) return false;
+            if (this.Condnetwork != input.Condnetwork || (this.Condnetwork != null && !this.Condnetwork.Equals(input.Condnetwork))) return false;
+            if (this.Condstorage != input.Condstorage || (this.Condstorage != null && !this.Condstorage.Equals(input.Condstorage))) return false;
+            if (this.Condstoragetype != input.Condstoragetype || (this.Condstoragetype != null && !this.Condstoragetype.Equals(input.Condstoragetype))) return false;
+            if (this.CondcomputeliveResizable != input.CondcomputeliveResizable || (this.CondcomputeliveResizable != null && !this.CondcomputeliveResizable.Equals(input.CondcomputeliveResizable))) return false;
+            if (this.Condcompute != input.Condcompute || (this.Condcompute != null && !this.Condcompute.Equals(input.Condcompute))) return false;
+            if (this.Infogpuname != input.Infogpuname || (this.Infogpuname != null && !this.Infogpuname.Equals(input.Infogpuname))) return false;
+            if (this.Infocpuname != input.Infocpuname || (this.Infocpuname != null && !this.Infocpuname.Equals(input.Infocpuname))) return false;
+            if (this.Quotagpu != input.Quotagpu || (this.Quotagpu != null && !this.Quotagpu.Equals(input.Quotagpu))) return false;
+            if (this.QuotavifMaxNum != input.QuotavifMaxNum || (this.QuotavifMaxNum != null && !this.QuotavifMaxNum.Equals(input.QuotavifMaxNum))) return false;
+            if (this.QuotasubNetworkInterfaceMaxNum != input.QuotasubNetworkInterfaceMaxNum || (this.QuotasubNetworkInterfaceMaxNum != null && !this.QuotasubNetworkInterfaceMaxNum.Equals(input.QuotasubNetworkInterfaceMaxNum))) return false;
+            if (this.EcsinstanceArchitecture != input.EcsinstanceArchitecture || (this.EcsinstanceArchitecture != null && !this.EcsinstanceArchitecture.Equals(input.EcsinstanceArchitecture))) return false;
+            if (this.NetworkInterfacetrafficMirroringSupported != input.NetworkInterfacetrafficMirroringSupported || (this.NetworkInterfacetrafficMirroringSupported != null && !this.NetworkInterfacetrafficMirroringSupported.Equals(input.NetworkInterfacetrafficMirroringSupported))) return false;
+            if (this.SecurityenclaveSupported != input.SecurityenclaveSupported || (this.SecurityenclaveSupported != null && !this.SecurityenclaveSupported.Equals(input.SecurityenclaveSupported))) return false;
+            if (this.Infogpus != input.Infogpus || (this.Infogpus != null && !this.Infogpus.Equals(input.Infogpus))) return false;
+            if (this.InfoasicAccelerators != input.InfoasicAccelerators || (this.InfoasicAccelerators != null && !this.InfoasicAccelerators.Equals(input.InfoasicAccelerators))) return false;
 
-            return 
-                (
-                    this.Ecsperformancetype == input.Ecsperformancetype ||
-                    (this.Ecsperformancetype != null &&
-                    this.Ecsperformancetype.Equals(input.Ecsperformancetype))
-                ) && 
-                (
-                    this.HwnumaNodes == input.HwnumaNodes ||
-                    (this.HwnumaNodes != null &&
-                    this.HwnumaNodes.Equals(input.HwnumaNodes))
-                ) && 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.HpetSupport == input.HpetSupport ||
-                    (this.HpetSupport != null &&
-                    this.HpetSupport.Equals(input.HpetSupport))
-                ) && 
-                (
-                    this.InstanceVnictype == input.InstanceVnictype ||
-                    (this.InstanceVnictype != null &&
-                    this.InstanceVnictype.Equals(input.InstanceVnictype))
-                ) && 
-                (
-                    this.InstanceVnicinstanceBandwidth == input.InstanceVnicinstanceBandwidth ||
-                    (this.InstanceVnicinstanceBandwidth != null &&
-                    this.InstanceVnicinstanceBandwidth.Equals(input.InstanceVnicinstanceBandwidth))
-                ) && 
-                (
-                    this.InstanceVnicmaxCount == input.InstanceVnicmaxCount ||
-                    (this.InstanceVnicmaxCount != null &&
-                    this.InstanceVnicmaxCount.Equals(input.InstanceVnicmaxCount))
-                ) && 
-                (
-                    this.QuotalocalDisk == input.QuotalocalDisk ||
-                    (this.QuotalocalDisk != null &&
-                    this.QuotalocalDisk.Equals(input.QuotalocalDisk))
-                ) && 
-                (
-                    this.QuotanvmeSsd == input.QuotanvmeSsd ||
-                    (this.QuotanvmeSsd != null &&
-                    this.QuotanvmeSsd.Equals(input.QuotanvmeSsd))
-                ) && 
-                (
-                    this.ExtraSpeciopersistentGrant == input.ExtraSpeciopersistentGrant ||
-                    (this.ExtraSpeciopersistentGrant != null &&
-                    this.ExtraSpeciopersistentGrant.Equals(input.ExtraSpeciopersistentGrant))
-                ) && 
-                (
-                    this.Ecsgeneration == input.Ecsgeneration ||
-                    (this.Ecsgeneration != null &&
-                    this.Ecsgeneration.Equals(input.Ecsgeneration))
-                ) && 
-                (
-                    this.EcsvirtualizationEnvTypes == input.EcsvirtualizationEnvTypes ||
-                    (this.EcsvirtualizationEnvTypes != null &&
-                    this.EcsvirtualizationEnvTypes.Equals(input.EcsvirtualizationEnvTypes))
-                ) && 
-                (
-                    this.PciPassthroughenableGpu == input.PciPassthroughenableGpu ||
-                    (this.PciPassthroughenableGpu != null &&
-                    this.PciPassthroughenableGpu.Equals(input.PciPassthroughenableGpu))
-                ) && 
-                (
-                    this.PciPassthroughgpuSpecs == input.PciPassthroughgpuSpecs ||
-                    (this.PciPassthroughgpuSpecs != null &&
-                    this.PciPassthroughgpuSpecs.Equals(input.PciPassthroughgpuSpecs))
-                ) && 
-                (
-                    this.PciPassthroughalias == input.PciPassthroughalias ||
-                    (this.PciPassthroughalias != null &&
-                    this.PciPassthroughalias.Equals(input.PciPassthroughalias))
-                ) && 
-                (
-                    this.Condoperationstatus == input.Condoperationstatus ||
-                    (this.Condoperationstatus != null &&
-                    this.Condoperationstatus.Equals(input.Condoperationstatus))
-                ) && 
-                (
-                    this.Condoperationaz == input.Condoperationaz ||
-                    (this.Condoperationaz != null &&
-                    this.Condoperationaz.Equals(input.Condoperationaz))
-                ) && 
-                (
-                    this.QuotamaxRate == input.QuotamaxRate ||
-                    (this.QuotamaxRate != null &&
-                    this.QuotamaxRate.Equals(input.QuotamaxRate))
-                ) && 
-                (
-                    this.QuotaminRate == input.QuotaminRate ||
-                    (this.QuotaminRate != null &&
-                    this.QuotaminRate.Equals(input.QuotaminRate))
-                ) && 
-                (
-                    this.QuotamaxPps == input.QuotamaxPps ||
-                    (this.QuotamaxPps != null &&
-                    this.QuotamaxPps.Equals(input.QuotamaxPps))
-                ) && 
-                (
-                    this.Condoperationcharge == input.Condoperationcharge ||
-                    (this.Condoperationcharge != null &&
-                    this.Condoperationcharge.Equals(input.Condoperationcharge))
-                ) && 
-                (
-                    this.Condoperationchargestop == input.Condoperationchargestop ||
-                    (this.Condoperationchargestop != null &&
-                    this.Condoperationchargestop.Equals(input.Condoperationchargestop))
-                ) && 
-                (
-                    this.Condspotoperationaz == input.Condspotoperationaz ||
-                    (this.Condspotoperationaz != null &&
-                    this.Condspotoperationaz.Equals(input.Condspotoperationaz))
-                ) && 
-                (
-                    this.Condoperationroles == input.Condoperationroles ||
-                    (this.Condoperationroles != null &&
-                    this.Condoperationroles.Equals(input.Condoperationroles))
-                ) && 
-                (
-                    this.Condspotoperationstatus == input.Condspotoperationstatus ||
-                    (this.Condspotoperationstatus != null &&
-                    this.Condspotoperationstatus.Equals(input.Condspotoperationstatus))
-                ) && 
-                (
-                    this.Condnetwork == input.Condnetwork ||
-                    (this.Condnetwork != null &&
-                    this.Condnetwork.Equals(input.Condnetwork))
-                ) && 
-                (
-                    this.Condstorage == input.Condstorage ||
-                    (this.Condstorage != null &&
-                    this.Condstorage.Equals(input.Condstorage))
-                ) && 
-                (
-                    this.Condstoragetype == input.Condstoragetype ||
-                    (this.Condstoragetype != null &&
-                    this.Condstoragetype.Equals(input.Condstoragetype))
-                ) && 
-                (
-                    this.CondcomputeliveResizable == input.CondcomputeliveResizable ||
-                    (this.CondcomputeliveResizable != null &&
-                    this.CondcomputeliveResizable.Equals(input.CondcomputeliveResizable))
-                ) && 
-                (
-                    this.Condcompute == input.Condcompute ||
-                    (this.Condcompute != null &&
-                    this.Condcompute.Equals(input.Condcompute))
-                ) && 
-                (
-                    this.Infogpuname == input.Infogpuname ||
-                    (this.Infogpuname != null &&
-                    this.Infogpuname.Equals(input.Infogpuname))
-                ) && 
-                (
-                    this.Infocpuname == input.Infocpuname ||
-                    (this.Infocpuname != null &&
-                    this.Infocpuname.Equals(input.Infocpuname))
-                ) && 
-                (
-                    this.Quotagpu == input.Quotagpu ||
-                    (this.Quotagpu != null &&
-                    this.Quotagpu.Equals(input.Quotagpu))
-                ) && 
-                (
-                    this.QuotavifMaxNum == input.QuotavifMaxNum ||
-                    (this.QuotavifMaxNum != null &&
-                    this.QuotavifMaxNum.Equals(input.QuotavifMaxNum))
-                ) && 
-                (
-                    this.QuotasubNetworkInterfaceMaxNum == input.QuotasubNetworkInterfaceMaxNum ||
-                    (this.QuotasubNetworkInterfaceMaxNum != null &&
-                    this.QuotasubNetworkInterfaceMaxNum.Equals(input.QuotasubNetworkInterfaceMaxNum))
-                ) && 
-                (
-                    this.EcsinstanceArchitecture == input.EcsinstanceArchitecture ||
-                    (this.EcsinstanceArchitecture != null &&
-                    this.EcsinstanceArchitecture.Equals(input.EcsinstanceArchitecture))
-                ) && 
-                (
-                    this.NetworkInterfacetrafficMirroringSupported == input.NetworkInterfacetrafficMirroringSupported ||
-                    (this.NetworkInterfacetrafficMirroringSupported != null &&
-                    this.NetworkInterfacetrafficMirroringSupported.Equals(input.NetworkInterfacetrafficMirroringSupported))
-                ) && 
-                (
-                    this.SecurityenclaveSupported == input.SecurityenclaveSupported ||
-                    (this.SecurityenclaveSupported != null &&
-                    this.SecurityenclaveSupported.Equals(input.SecurityenclaveSupported))
-                ) && 
-                (
-                    this.Infogpus == input.Infogpus ||
-                    (this.Infogpus != null &&
-                    this.Infogpus.Equals(input.Infogpus))
-                ) && 
-                (
-                    this.InfoasicAccelerators == input.InfoasicAccelerators ||
-                    (this.InfoasicAccelerators != null &&
-                    this.InfoasicAccelerators.Equals(input.InfoasicAccelerators))
-                );
+            return true;
         }
 
         /// <summary>
@@ -535,87 +374,47 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Ecsperformancetype != null)
-                    hashCode = hashCode * 59 + this.Ecsperformancetype.GetHashCode();
-                if (this.HwnumaNodes != null)
-                    hashCode = hashCode * 59 + this.HwnumaNodes.GetHashCode();
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
-                if (this.HpetSupport != null)
-                    hashCode = hashCode * 59 + this.HpetSupport.GetHashCode();
-                if (this.InstanceVnictype != null)
-                    hashCode = hashCode * 59 + this.InstanceVnictype.GetHashCode();
-                if (this.InstanceVnicinstanceBandwidth != null)
-                    hashCode = hashCode * 59 + this.InstanceVnicinstanceBandwidth.GetHashCode();
-                if (this.InstanceVnicmaxCount != null)
-                    hashCode = hashCode * 59 + this.InstanceVnicmaxCount.GetHashCode();
-                if (this.QuotalocalDisk != null)
-                    hashCode = hashCode * 59 + this.QuotalocalDisk.GetHashCode();
-                if (this.QuotanvmeSsd != null)
-                    hashCode = hashCode * 59 + this.QuotanvmeSsd.GetHashCode();
-                if (this.ExtraSpeciopersistentGrant != null)
-                    hashCode = hashCode * 59 + this.ExtraSpeciopersistentGrant.GetHashCode();
-                if (this.Ecsgeneration != null)
-                    hashCode = hashCode * 59 + this.Ecsgeneration.GetHashCode();
-                if (this.EcsvirtualizationEnvTypes != null)
-                    hashCode = hashCode * 59 + this.EcsvirtualizationEnvTypes.GetHashCode();
-                if (this.PciPassthroughenableGpu != null)
-                    hashCode = hashCode * 59 + this.PciPassthroughenableGpu.GetHashCode();
-                if (this.PciPassthroughgpuSpecs != null)
-                    hashCode = hashCode * 59 + this.PciPassthroughgpuSpecs.GetHashCode();
-                if (this.PciPassthroughalias != null)
-                    hashCode = hashCode * 59 + this.PciPassthroughalias.GetHashCode();
-                if (this.Condoperationstatus != null)
-                    hashCode = hashCode * 59 + this.Condoperationstatus.GetHashCode();
-                if (this.Condoperationaz != null)
-                    hashCode = hashCode * 59 + this.Condoperationaz.GetHashCode();
-                if (this.QuotamaxRate != null)
-                    hashCode = hashCode * 59 + this.QuotamaxRate.GetHashCode();
-                if (this.QuotaminRate != null)
-                    hashCode = hashCode * 59 + this.QuotaminRate.GetHashCode();
-                if (this.QuotamaxPps != null)
-                    hashCode = hashCode * 59 + this.QuotamaxPps.GetHashCode();
-                if (this.Condoperationcharge != null)
-                    hashCode = hashCode * 59 + this.Condoperationcharge.GetHashCode();
-                if (this.Condoperationchargestop != null)
-                    hashCode = hashCode * 59 + this.Condoperationchargestop.GetHashCode();
-                if (this.Condspotoperationaz != null)
-                    hashCode = hashCode * 59 + this.Condspotoperationaz.GetHashCode();
-                if (this.Condoperationroles != null)
-                    hashCode = hashCode * 59 + this.Condoperationroles.GetHashCode();
-                if (this.Condspotoperationstatus != null)
-                    hashCode = hashCode * 59 + this.Condspotoperationstatus.GetHashCode();
-                if (this.Condnetwork != null)
-                    hashCode = hashCode * 59 + this.Condnetwork.GetHashCode();
-                if (this.Condstorage != null)
-                    hashCode = hashCode * 59 + this.Condstorage.GetHashCode();
-                if (this.Condstoragetype != null)
-                    hashCode = hashCode * 59 + this.Condstoragetype.GetHashCode();
-                if (this.CondcomputeliveResizable != null)
-                    hashCode = hashCode * 59 + this.CondcomputeliveResizable.GetHashCode();
-                if (this.Condcompute != null)
-                    hashCode = hashCode * 59 + this.Condcompute.GetHashCode();
-                if (this.Infogpuname != null)
-                    hashCode = hashCode * 59 + this.Infogpuname.GetHashCode();
-                if (this.Infocpuname != null)
-                    hashCode = hashCode * 59 + this.Infocpuname.GetHashCode();
-                if (this.Quotagpu != null)
-                    hashCode = hashCode * 59 + this.Quotagpu.GetHashCode();
-                if (this.QuotavifMaxNum != null)
-                    hashCode = hashCode * 59 + this.QuotavifMaxNum.GetHashCode();
-                if (this.QuotasubNetworkInterfaceMaxNum != null)
-                    hashCode = hashCode * 59 + this.QuotasubNetworkInterfaceMaxNum.GetHashCode();
-                if (this.EcsinstanceArchitecture != null)
-                    hashCode = hashCode * 59 + this.EcsinstanceArchitecture.GetHashCode();
-                if (this.NetworkInterfacetrafficMirroringSupported != null)
-                    hashCode = hashCode * 59 + this.NetworkInterfacetrafficMirroringSupported.GetHashCode();
-                if (this.SecurityenclaveSupported != null)
-                    hashCode = hashCode * 59 + this.SecurityenclaveSupported.GetHashCode();
-                if (this.Infogpus != null)
-                    hashCode = hashCode * 59 + this.Infogpus.GetHashCode();
-                if (this.InfoasicAccelerators != null)
-                    hashCode = hashCode * 59 + this.InfoasicAccelerators.GetHashCode();
+                var hashCode = 41;
+                if (this.Ecsperformancetype != null) hashCode = hashCode * 59 + this.Ecsperformancetype.GetHashCode();
+                if (this.HwnumaNodes != null) hashCode = hashCode * 59 + this.HwnumaNodes.GetHashCode();
+                if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.HpetSupport != null) hashCode = hashCode * 59 + this.HpetSupport.GetHashCode();
+                if (this.InstanceVnictype != null) hashCode = hashCode * 59 + this.InstanceVnictype.GetHashCode();
+                if (this.InstanceVnicinstanceBandwidth != null) hashCode = hashCode * 59 + this.InstanceVnicinstanceBandwidth.GetHashCode();
+                if (this.InstanceVnicmaxCount != null) hashCode = hashCode * 59 + this.InstanceVnicmaxCount.GetHashCode();
+                if (this.QuotalocalDisk != null) hashCode = hashCode * 59 + this.QuotalocalDisk.GetHashCode();
+                if (this.QuotanvmeSsd != null) hashCode = hashCode * 59 + this.QuotanvmeSsd.GetHashCode();
+                if (this.ExtraSpeciopersistentGrant != null) hashCode = hashCode * 59 + this.ExtraSpeciopersistentGrant.GetHashCode();
+                if (this.Ecsgeneration != null) hashCode = hashCode * 59 + this.Ecsgeneration.GetHashCode();
+                if (this.EcsvirtualizationEnvTypes != null) hashCode = hashCode * 59 + this.EcsvirtualizationEnvTypes.GetHashCode();
+                if (this.PciPassthroughenableGpu != null) hashCode = hashCode * 59 + this.PciPassthroughenableGpu.GetHashCode();
+                if (this.PciPassthroughgpuSpecs != null) hashCode = hashCode * 59 + this.PciPassthroughgpuSpecs.GetHashCode();
+                if (this.PciPassthroughalias != null) hashCode = hashCode * 59 + this.PciPassthroughalias.GetHashCode();
+                if (this.Condoperationstatus != null) hashCode = hashCode * 59 + this.Condoperationstatus.GetHashCode();
+                if (this.Condoperationaz != null) hashCode = hashCode * 59 + this.Condoperationaz.GetHashCode();
+                if (this.QuotamaxRate != null) hashCode = hashCode * 59 + this.QuotamaxRate.GetHashCode();
+                if (this.QuotaminRate != null) hashCode = hashCode * 59 + this.QuotaminRate.GetHashCode();
+                if (this.QuotamaxPps != null) hashCode = hashCode * 59 + this.QuotamaxPps.GetHashCode();
+                if (this.Condoperationcharge != null) hashCode = hashCode * 59 + this.Condoperationcharge.GetHashCode();
+                if (this.Condoperationchargestop != null) hashCode = hashCode * 59 + this.Condoperationchargestop.GetHashCode();
+                if (this.Condspotoperationaz != null) hashCode = hashCode * 59 + this.Condspotoperationaz.GetHashCode();
+                if (this.Condoperationroles != null) hashCode = hashCode * 59 + this.Condoperationroles.GetHashCode();
+                if (this.Condspotoperationstatus != null) hashCode = hashCode * 59 + this.Condspotoperationstatus.GetHashCode();
+                if (this.Condnetwork != null) hashCode = hashCode * 59 + this.Condnetwork.GetHashCode();
+                if (this.Condstorage != null) hashCode = hashCode * 59 + this.Condstorage.GetHashCode();
+                if (this.Condstoragetype != null) hashCode = hashCode * 59 + this.Condstoragetype.GetHashCode();
+                if (this.CondcomputeliveResizable != null) hashCode = hashCode * 59 + this.CondcomputeliveResizable.GetHashCode();
+                if (this.Condcompute != null) hashCode = hashCode * 59 + this.Condcompute.GetHashCode();
+                if (this.Infogpuname != null) hashCode = hashCode * 59 + this.Infogpuname.GetHashCode();
+                if (this.Infocpuname != null) hashCode = hashCode * 59 + this.Infocpuname.GetHashCode();
+                if (this.Quotagpu != null) hashCode = hashCode * 59 + this.Quotagpu.GetHashCode();
+                if (this.QuotavifMaxNum != null) hashCode = hashCode * 59 + this.QuotavifMaxNum.GetHashCode();
+                if (this.QuotasubNetworkInterfaceMaxNum != null) hashCode = hashCode * 59 + this.QuotasubNetworkInterfaceMaxNum.GetHashCode();
+                if (this.EcsinstanceArchitecture != null) hashCode = hashCode * 59 + this.EcsinstanceArchitecture.GetHashCode();
+                if (this.NetworkInterfacetrafficMirroringSupported != null) hashCode = hashCode * 59 + this.NetworkInterfacetrafficMirroringSupported.GetHashCode();
+                if (this.SecurityenclaveSupported != null) hashCode = hashCode * 59 + this.SecurityenclaveSupported.GetHashCode();
+                if (this.Infogpus != null) hashCode = hashCode * 59 + this.Infogpus.GetHashCode();
+                if (this.InfoasicAccelerators != null) hashCode = hashCode * 59 + this.InfoasicAccelerators.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         /// </summary>
         public bool Equals(IvsStandardByVideoAndNameAndIdResponseBodyResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ServiceName != input.ServiceName || (this.ServiceName != null && !this.ServiceName.Equals(input.ServiceName))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.RespData != input.RespData || (this.RespData != null && input.RespData != null && !this.RespData.SequenceEqual(input.RespData))) return false;
 
-            return 
-                (
-                    this.ServiceName == input.ServiceName ||
-                    (this.ServiceName != null &&
-                    this.ServiceName.Equals(input.ServiceName))
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.RespData == input.RespData ||
-                    this.RespData != null &&
-                    input.RespData != null &&
-                    this.RespData.SequenceEqual(input.RespData)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ServiceName != null)
-                    hashCode = hashCode * 59 + this.ServiceName.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.RespData != null)
-                    hashCode = hashCode * 59 + this.RespData.GetHashCode();
+                var hashCode = 41;
+                if (this.ServiceName != null) hashCode = hashCode * 59 + this.ServiceName.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.RespData != null) hashCode = hashCode * 59 + this.RespData.GetHashCode();
                 return hashCode;
             }
         }

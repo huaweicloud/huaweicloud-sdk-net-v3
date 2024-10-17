@@ -91,50 +91,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(KafkaMessageDiagnosisItemEntity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Result != input.Result || (this.Result != null && !this.Result.Equals(input.Result))) return false;
+            if (this.CauseIds != input.CauseIds || (this.CauseIds != null && input.CauseIds != null && !this.CauseIds.SequenceEqual(input.CauseIds))) return false;
+            if (this.AdviceIds != input.AdviceIds || (this.AdviceIds != null && input.AdviceIds != null && !this.AdviceIds.SequenceEqual(input.AdviceIds))) return false;
+            if (this.Partitions != input.Partitions || (this.Partitions != null && input.Partitions != null && !this.Partitions.SequenceEqual(input.Partitions))) return false;
+            if (this.FailedPartitions != input.FailedPartitions || (this.FailedPartitions != null && input.FailedPartitions != null && !this.FailedPartitions.SequenceEqual(input.FailedPartitions))) return false;
+            if (this.BrokerIds != input.BrokerIds || (this.BrokerIds != null && input.BrokerIds != null && !this.BrokerIds.SequenceEqual(input.BrokerIds))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Result == input.Result ||
-                    (this.Result != null &&
-                    this.Result.Equals(input.Result))
-                ) && 
-                (
-                    this.CauseIds == input.CauseIds ||
-                    this.CauseIds != null &&
-                    input.CauseIds != null &&
-                    this.CauseIds.SequenceEqual(input.CauseIds)
-                ) && 
-                (
-                    this.AdviceIds == input.AdviceIds ||
-                    this.AdviceIds != null &&
-                    input.AdviceIds != null &&
-                    this.AdviceIds.SequenceEqual(input.AdviceIds)
-                ) && 
-                (
-                    this.Partitions == input.Partitions ||
-                    this.Partitions != null &&
-                    input.Partitions != null &&
-                    this.Partitions.SequenceEqual(input.Partitions)
-                ) && 
-                (
-                    this.FailedPartitions == input.FailedPartitions ||
-                    this.FailedPartitions != null &&
-                    input.FailedPartitions != null &&
-                    this.FailedPartitions.SequenceEqual(input.FailedPartitions)
-                ) && 
-                (
-                    this.BrokerIds == input.BrokerIds ||
-                    this.BrokerIds != null &&
-                    input.BrokerIds != null &&
-                    this.BrokerIds.SequenceEqual(input.BrokerIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -144,21 +110,14 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Result != null)
-                    hashCode = hashCode * 59 + this.Result.GetHashCode();
-                if (this.CauseIds != null)
-                    hashCode = hashCode * 59 + this.CauseIds.GetHashCode();
-                if (this.AdviceIds != null)
-                    hashCode = hashCode * 59 + this.AdviceIds.GetHashCode();
-                if (this.Partitions != null)
-                    hashCode = hashCode * 59 + this.Partitions.GetHashCode();
-                if (this.FailedPartitions != null)
-                    hashCode = hashCode * 59 + this.FailedPartitions.GetHashCode();
-                if (this.BrokerIds != null)
-                    hashCode = hashCode * 59 + this.BrokerIds.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Result != null) hashCode = hashCode * 59 + this.Result.GetHashCode();
+                if (this.CauseIds != null) hashCode = hashCode * 59 + this.CauseIds.GetHashCode();
+                if (this.AdviceIds != null) hashCode = hashCode * 59 + this.AdviceIds.GetHashCode();
+                if (this.Partitions != null) hashCode = hashCode * 59 + this.Partitions.GetHashCode();
+                if (this.FailedPartitions != null) hashCode = hashCode * 59 + this.FailedPartitions.GetHashCode();
+                if (this.BrokerIds != null) hashCode = hashCode * 59 + this.BrokerIds.GetHashCode();
                 return hashCode;
             }
         }

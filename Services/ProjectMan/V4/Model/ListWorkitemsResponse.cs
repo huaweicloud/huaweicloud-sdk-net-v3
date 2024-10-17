@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ListWorkitemsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.WorkItems != input.WorkItems || (this.WorkItems != null && input.WorkItems != null && !this.WorkItems.SequenceEqual(input.WorkItems))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
-            return 
-                (
-                    this.WorkItems == input.WorkItems ||
-                    this.WorkItems != null &&
-                    input.WorkItems != null &&
-                    this.WorkItems.SequenceEqual(input.WorkItems)
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.WorkItems != null)
-                    hashCode = hashCode * 59 + this.WorkItems.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                var hashCode = 41;
+                if (this.WorkItems != null) hashCode = hashCode * 59 + this.WorkItems.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

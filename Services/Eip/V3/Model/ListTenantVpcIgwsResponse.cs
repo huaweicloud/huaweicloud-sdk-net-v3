@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(ListTenantVpcIgwsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VpcIgws != input.VpcIgws || (this.VpcIgws != null && input.VpcIgws != null && !this.VpcIgws.SequenceEqual(input.VpcIgws))) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
 
-            return 
-                (
-                    this.VpcIgws == input.VpcIgws ||
-                    this.VpcIgws != null &&
-                    input.VpcIgws != null &&
-                    this.VpcIgws.SequenceEqual(input.VpcIgws)
-                ) && 
-                (
-                    this.RequestId == input.RequestId ||
-                    (this.RequestId != null &&
-                    this.RequestId.Equals(input.RequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VpcIgws != null)
-                    hashCode = hashCode * 59 + this.VpcIgws.GetHashCode();
-                if (this.RequestId != null)
-                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.VpcIgws != null) hashCode = hashCode * 59 + this.VpcIgws.GetHashCode();
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 return hashCode;
             }
         }

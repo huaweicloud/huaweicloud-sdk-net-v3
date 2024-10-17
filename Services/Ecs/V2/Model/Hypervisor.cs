@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(Hypervisor input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HypervisorType != input.HypervisorType || (this.HypervisorType != null && !this.HypervisorType.Equals(input.HypervisorType))) return false;
+            if (this.CsdHypervisor != input.CsdHypervisor || (this.CsdHypervisor != null && !this.CsdHypervisor.Equals(input.CsdHypervisor))) return false;
 
-            return 
-                (
-                    this.HypervisorType == input.HypervisorType ||
-                    (this.HypervisorType != null &&
-                    this.HypervisorType.Equals(input.HypervisorType))
-                ) && 
-                (
-                    this.CsdHypervisor == input.CsdHypervisor ||
-                    (this.CsdHypervisor != null &&
-                    this.CsdHypervisor.Equals(input.CsdHypervisor))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HypervisorType != null)
-                    hashCode = hashCode * 59 + this.HypervisorType.GetHashCode();
-                if (this.CsdHypervisor != null)
-                    hashCode = hashCode * 59 + this.CsdHypervisor.GetHashCode();
+                var hashCode = 41;
+                if (this.HypervisorType != null) hashCode = hashCode * 59 + this.HypervisorType.GetHashCode();
+                if (this.CsdHypervisor != null) hashCode = hashCode * 59 + this.CsdHypervisor.GetHashCode();
                 return hashCode;
             }
         }

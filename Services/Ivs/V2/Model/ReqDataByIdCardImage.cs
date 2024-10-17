@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         /// </summary>
         public bool Equals(ReqDataByIdCardImage input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IdcardImage1 != input.IdcardImage1 || (this.IdcardImage1 != null && !this.IdcardImage1.Equals(input.IdcardImage1))) return false;
+            if (this.IdcardImage2 != input.IdcardImage2 || (this.IdcardImage2 != null && !this.IdcardImage2.Equals(input.IdcardImage2))) return false;
+            if (this.FaceImage != input.FaceImage || (this.FaceImage != null && !this.FaceImage.Equals(input.FaceImage))) return false;
+            if (this.Detail != input.Detail || (this.Detail != null && !this.Detail.Equals(input.Detail))) return false;
+            if (this.Crop != input.Crop || (this.Crop != null && !this.Crop.Equals(input.Crop))) return false;
 
-            return 
-                (
-                    this.IdcardImage1 == input.IdcardImage1 ||
-                    (this.IdcardImage1 != null &&
-                    this.IdcardImage1.Equals(input.IdcardImage1))
-                ) && 
-                (
-                    this.IdcardImage2 == input.IdcardImage2 ||
-                    (this.IdcardImage2 != null &&
-                    this.IdcardImage2.Equals(input.IdcardImage2))
-                ) && 
-                (
-                    this.FaceImage == input.FaceImage ||
-                    (this.FaceImage != null &&
-                    this.FaceImage.Equals(input.FaceImage))
-                ) && 
-                (
-                    this.Detail == input.Detail ||
-                    (this.Detail != null &&
-                    this.Detail.Equals(input.Detail))
-                ) && 
-                (
-                    this.Crop == input.Crop ||
-                    (this.Crop != null &&
-                    this.Crop.Equals(input.Crop))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IdcardImage1 != null)
-                    hashCode = hashCode * 59 + this.IdcardImage1.GetHashCode();
-                if (this.IdcardImage2 != null)
-                    hashCode = hashCode * 59 + this.IdcardImage2.GetHashCode();
-                if (this.FaceImage != null)
-                    hashCode = hashCode * 59 + this.FaceImage.GetHashCode();
-                if (this.Detail != null)
-                    hashCode = hashCode * 59 + this.Detail.GetHashCode();
-                if (this.Crop != null)
-                    hashCode = hashCode * 59 + this.Crop.GetHashCode();
+                var hashCode = 41;
+                if (this.IdcardImage1 != null) hashCode = hashCode * 59 + this.IdcardImage1.GetHashCode();
+                if (this.IdcardImage2 != null) hashCode = hashCode * 59 + this.IdcardImage2.GetHashCode();
+                if (this.FaceImage != null) hashCode = hashCode * 59 + this.FaceImage.GetHashCode();
+                if (this.Detail != null) hashCode = hashCode * 59 + this.Detail.GetHashCode();
+                if (this.Crop != null) hashCode = hashCode * 59 + this.Crop.GetHashCode();
                 return hashCode;
             }
         }

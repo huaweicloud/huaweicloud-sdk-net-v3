@@ -84,41 +84,15 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(NeutronCreateFirewallGroupOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.IngressFirewallPolicyId != input.IngressFirewallPolicyId || (this.IngressFirewallPolicyId != null && !this.IngressFirewallPolicyId.Equals(input.IngressFirewallPolicyId))) return false;
+            if (this.EgressFirewallPolicyId != input.EgressFirewallPolicyId || (this.EgressFirewallPolicyId != null && !this.EgressFirewallPolicyId.Equals(input.EgressFirewallPolicyId))) return false;
+            if (this.Ports != input.Ports || (this.Ports != null && input.Ports != null && !this.Ports.SequenceEqual(input.Ports))) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.IngressFirewallPolicyId == input.IngressFirewallPolicyId ||
-                    (this.IngressFirewallPolicyId != null &&
-                    this.IngressFirewallPolicyId.Equals(input.IngressFirewallPolicyId))
-                ) && 
-                (
-                    this.EgressFirewallPolicyId == input.EgressFirewallPolicyId ||
-                    (this.EgressFirewallPolicyId != null &&
-                    this.EgressFirewallPolicyId.Equals(input.EgressFirewallPolicyId))
-                ) && 
-                (
-                    this.Ports == input.Ports ||
-                    this.Ports != null &&
-                    input.Ports != null &&
-                    this.Ports.SequenceEqual(input.Ports)
-                ) && 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                );
+            return true;
         }
 
         /// <summary>
@@ -128,19 +102,13 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.IngressFirewallPolicyId != null)
-                    hashCode = hashCode * 59 + this.IngressFirewallPolicyId.GetHashCode();
-                if (this.EgressFirewallPolicyId != null)
-                    hashCode = hashCode * 59 + this.EgressFirewallPolicyId.GetHashCode();
-                if (this.Ports != null)
-                    hashCode = hashCode * 59 + this.Ports.GetHashCode();
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.IngressFirewallPolicyId != null) hashCode = hashCode * 59 + this.IngressFirewallPolicyId.GetHashCode();
+                if (this.EgressFirewallPolicyId != null) hashCode = hashCode * 59 + this.EgressFirewallPolicyId.GetHashCode();
+                if (this.Ports != null) hashCode = hashCode * 59 + this.Ports.GetHashCode();
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
                 return hashCode;
             }
         }

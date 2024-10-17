@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(CustomImage input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
+            if (this.Image != input.Image || (this.Image != null && !this.Image.Equals(input.Image))) return false;
+            if (this.Command != input.Command || (this.Command != null && !this.Command.Equals(input.Command))) return false;
+            if (this.Args != input.Args || (this.Args != null && !this.Args.Equals(input.Args))) return false;
+            if (this.WorkingDir != input.WorkingDir || (this.WorkingDir != null && !this.WorkingDir.Equals(input.WorkingDir))) return false;
+            if (this.Uid != input.Uid || (this.Uid != null && !this.Uid.Equals(input.Uid))) return false;
+            if (this.Gid != input.Gid || (this.Gid != null && !this.Gid.Equals(input.Gid))) return false;
 
-            return 
-                (
-                    this.Enabled == input.Enabled ||
-                    (this.Enabled != null &&
-                    this.Enabled.Equals(input.Enabled))
-                ) && 
-                (
-                    this.Image == input.Image ||
-                    (this.Image != null &&
-                    this.Image.Equals(input.Image))
-                ) && 
-                (
-                    this.Command == input.Command ||
-                    (this.Command != null &&
-                    this.Command.Equals(input.Command))
-                ) && 
-                (
-                    this.Args == input.Args ||
-                    (this.Args != null &&
-                    this.Args.Equals(input.Args))
-                ) && 
-                (
-                    this.WorkingDir == input.WorkingDir ||
-                    (this.WorkingDir != null &&
-                    this.WorkingDir.Equals(input.WorkingDir))
-                ) && 
-                (
-                    this.Uid == input.Uid ||
-                    (this.Uid != null &&
-                    this.Uid.Equals(input.Uid))
-                ) && 
-                (
-                    this.Gid == input.Gid ||
-                    (this.Gid != null &&
-                    this.Gid.Equals(input.Gid))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Enabled != null)
-                    hashCode = hashCode * 59 + this.Enabled.GetHashCode();
-                if (this.Image != null)
-                    hashCode = hashCode * 59 + this.Image.GetHashCode();
-                if (this.Command != null)
-                    hashCode = hashCode * 59 + this.Command.GetHashCode();
-                if (this.Args != null)
-                    hashCode = hashCode * 59 + this.Args.GetHashCode();
-                if (this.WorkingDir != null)
-                    hashCode = hashCode * 59 + this.WorkingDir.GetHashCode();
-                if (this.Uid != null)
-                    hashCode = hashCode * 59 + this.Uid.GetHashCode();
-                if (this.Gid != null)
-                    hashCode = hashCode * 59 + this.Gid.GetHashCode();
+                var hashCode = 41;
+                if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
+                if (this.Image != null) hashCode = hashCode * 59 + this.Image.GetHashCode();
+                if (this.Command != null) hashCode = hashCode * 59 + this.Command.GetHashCode();
+                if (this.Args != null) hashCode = hashCode * 59 + this.Args.GetHashCode();
+                if (this.WorkingDir != null) hashCode = hashCode * 59 + this.WorkingDir.GetHashCode();
+                if (this.Uid != null) hashCode = hashCode * 59 + this.Uid.GetHashCode();
+                if (this.Gid != null) hashCode = hashCode * 59 + this.Gid.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(ShowResetPasswordFlagResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResetpwdFlag != input.ResetpwdFlag || (this.ResetpwdFlag != null && !this.ResetpwdFlag.Equals(input.ResetpwdFlag))) return false;
 
-            return 
-                (
-                    this.ResetpwdFlag == input.ResetpwdFlag ||
-                    (this.ResetpwdFlag != null &&
-                    this.ResetpwdFlag.Equals(input.ResetpwdFlag))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResetpwdFlag != null)
-                    hashCode = hashCode * 59 + this.ResetpwdFlag.GetHashCode();
+                var hashCode = 41;
+                if (this.ResetpwdFlag != null) hashCode = hashCode * 59 + this.ResetpwdFlag.GetHashCode();
                 return hashCode;
             }
         }

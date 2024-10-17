@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(MoveAccountReqBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceParentId != input.SourceParentId || (this.SourceParentId != null && !this.SourceParentId.Equals(input.SourceParentId))) return false;
+            if (this.DestinationParentId != input.DestinationParentId || (this.DestinationParentId != null && !this.DestinationParentId.Equals(input.DestinationParentId))) return false;
 
-            return 
-                (
-                    this.SourceParentId == input.SourceParentId ||
-                    (this.SourceParentId != null &&
-                    this.SourceParentId.Equals(input.SourceParentId))
-                ) && 
-                (
-                    this.DestinationParentId == input.DestinationParentId ||
-                    (this.DestinationParentId != null &&
-                    this.DestinationParentId.Equals(input.DestinationParentId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceParentId != null)
-                    hashCode = hashCode * 59 + this.SourceParentId.GetHashCode();
-                if (this.DestinationParentId != null)
-                    hashCode = hashCode * 59 + this.DestinationParentId.GetHashCode();
+                var hashCode = 41;
+                if (this.SourceParentId != null) hashCode = hashCode * 59 + this.SourceParentId.GetHashCode();
+                if (this.DestinationParentId != null) hashCode = hashCode * 59 + this.DestinationParentId.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(HeaderBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Headers != input.Headers || (this.Headers != null && !this.Headers.Equals(input.Headers))) return false;
 
-            return 
-                (
-                    this.Headers == input.Headers ||
-                    (this.Headers != null &&
-                    this.Headers.Equals(input.Headers))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Headers != null)
-                    hashCode = hashCode * 59 + this.Headers.GetHashCode();
+                var hashCode = 41;
+                if (this.Headers != null) hashCode = hashCode * 59 + this.Headers.GetHashCode();
                 return hashCode;
             }
         }

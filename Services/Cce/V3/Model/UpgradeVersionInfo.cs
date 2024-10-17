@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(UpgradeVersionInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Release != input.Release || (this.Release != null && !this.Release.Equals(input.Release))) return false;
+            if (this.Patch != input.Patch || (this.Patch != null && !this.Patch.Equals(input.Patch))) return false;
+            if (this.SuggestPatch != input.SuggestPatch || (this.SuggestPatch != null && !this.SuggestPatch.Equals(input.SuggestPatch))) return false;
+            if (this.TargetVersions != input.TargetVersions || (this.TargetVersions != null && input.TargetVersions != null && !this.TargetVersions.SequenceEqual(input.TargetVersions))) return false;
 
-            return 
-                (
-                    this.Release == input.Release ||
-                    (this.Release != null &&
-                    this.Release.Equals(input.Release))
-                ) && 
-                (
-                    this.Patch == input.Patch ||
-                    (this.Patch != null &&
-                    this.Patch.Equals(input.Patch))
-                ) && 
-                (
-                    this.SuggestPatch == input.SuggestPatch ||
-                    (this.SuggestPatch != null &&
-                    this.SuggestPatch.Equals(input.SuggestPatch))
-                ) && 
-                (
-                    this.TargetVersions == input.TargetVersions ||
-                    this.TargetVersions != null &&
-                    input.TargetVersions != null &&
-                    this.TargetVersions.SequenceEqual(input.TargetVersions)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Release != null)
-                    hashCode = hashCode * 59 + this.Release.GetHashCode();
-                if (this.Patch != null)
-                    hashCode = hashCode * 59 + this.Patch.GetHashCode();
-                if (this.SuggestPatch != null)
-                    hashCode = hashCode * 59 + this.SuggestPatch.GetHashCode();
-                if (this.TargetVersions != null)
-                    hashCode = hashCode * 59 + this.TargetVersions.GetHashCode();
+                var hashCode = 41;
+                if (this.Release != null) hashCode = hashCode * 59 + this.Release.GetHashCode();
+                if (this.Patch != null) hashCode = hashCode * 59 + this.Patch.GetHashCode();
+                if (this.SuggestPatch != null) hashCode = hashCode * 59 + this.SuggestPatch.GetHashCode();
+                if (this.TargetVersions != null) hashCode = hashCode * 59 + this.TargetVersions.GetHashCode();
                 return hashCode;
             }
         }

@@ -254,60 +254,19 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// </summary>
         public bool Equals(ShowMetricDataRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
+            if (this.MetricName != input.MetricName || (this.MetricName != null && !this.MetricName.Equals(input.MetricName))) return false;
+            if (this.Dim0 != input.Dim0 || (this.Dim0 != null && !this.Dim0.Equals(input.Dim0))) return false;
+            if (this.Dim1 != input.Dim1 || (this.Dim1 != null && !this.Dim1.Equals(input.Dim1))) return false;
+            if (this.Dim2 != input.Dim2 || (this.Dim2 != null && !this.Dim2.Equals(input.Dim2))) return false;
+            if (this.Dim3 != input.Dim3 || (this.Dim3 != null && !this.Dim3.Equals(input.Dim3))) return false;
+            if (this.Filter != input.Filter) return false;
+            if (this.Period != input.Period || (this.Period != null && !this.Period.Equals(input.Period))) return false;
+            if (this.From != input.From || (this.From != null && !this.From.Equals(input.From))) return false;
+            if (this.To != input.To || (this.To != null && !this.To.Equals(input.To))) return false;
 
-            return 
-                (
-                    this.Namespace == input.Namespace ||
-                    (this.Namespace != null &&
-                    this.Namespace.Equals(input.Namespace))
-                ) && 
-                (
-                    this.MetricName == input.MetricName ||
-                    (this.MetricName != null &&
-                    this.MetricName.Equals(input.MetricName))
-                ) && 
-                (
-                    this.Dim0 == input.Dim0 ||
-                    (this.Dim0 != null &&
-                    this.Dim0.Equals(input.Dim0))
-                ) && 
-                (
-                    this.Dim1 == input.Dim1 ||
-                    (this.Dim1 != null &&
-                    this.Dim1.Equals(input.Dim1))
-                ) && 
-                (
-                    this.Dim2 == input.Dim2 ||
-                    (this.Dim2 != null &&
-                    this.Dim2.Equals(input.Dim2))
-                ) && 
-                (
-                    this.Dim3 == input.Dim3 ||
-                    (this.Dim3 != null &&
-                    this.Dim3.Equals(input.Dim3))
-                ) && 
-                (
-                    this.Filter == input.Filter ||
-                    (this.Filter != null &&
-                    this.Filter.Equals(input.Filter))
-                ) && 
-                (
-                    this.Period == input.Period ||
-                    (this.Period != null &&
-                    this.Period.Equals(input.Period))
-                ) && 
-                (
-                    this.From == input.From ||
-                    (this.From != null &&
-                    this.From.Equals(input.From))
-                ) && 
-                (
-                    this.To == input.To ||
-                    (this.To != null &&
-                    this.To.Equals(input.To))
-                );
+            return true;
         }
 
         /// <summary>
@@ -317,27 +276,17 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Namespace != null)
-                    hashCode = hashCode * 59 + this.Namespace.GetHashCode();
-                if (this.MetricName != null)
-                    hashCode = hashCode * 59 + this.MetricName.GetHashCode();
-                if (this.Dim0 != null)
-                    hashCode = hashCode * 59 + this.Dim0.GetHashCode();
-                if (this.Dim1 != null)
-                    hashCode = hashCode * 59 + this.Dim1.GetHashCode();
-                if (this.Dim2 != null)
-                    hashCode = hashCode * 59 + this.Dim2.GetHashCode();
-                if (this.Dim3 != null)
-                    hashCode = hashCode * 59 + this.Dim3.GetHashCode();
-                if (this.Filter != null)
-                    hashCode = hashCode * 59 + this.Filter.GetHashCode();
-                if (this.Period != null)
-                    hashCode = hashCode * 59 + this.Period.GetHashCode();
-                if (this.From != null)
-                    hashCode = hashCode * 59 + this.From.GetHashCode();
-                if (this.To != null)
-                    hashCode = hashCode * 59 + this.To.GetHashCode();
+                var hashCode = 41;
+                if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.MetricName != null) hashCode = hashCode * 59 + this.MetricName.GetHashCode();
+                if (this.Dim0 != null) hashCode = hashCode * 59 + this.Dim0.GetHashCode();
+                if (this.Dim1 != null) hashCode = hashCode * 59 + this.Dim1.GetHashCode();
+                if (this.Dim2 != null) hashCode = hashCode * 59 + this.Dim2.GetHashCode();
+                if (this.Dim3 != null) hashCode = hashCode * 59 + this.Dim3.GetHashCode();
+                hashCode = hashCode * 59 + this.Filter.GetHashCode();
+                if (this.Period != null) hashCode = hashCode * 59 + this.Period.GetHashCode();
+                if (this.From != null) hashCode = hashCode * 59 + this.From.GetHashCode();
+                if (this.To != null) hashCode = hashCode * 59 + this.To.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(CreateVolumeSchedulerHints input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DedicatedStorageId != input.DedicatedStorageId || (this.DedicatedStorageId != null && !this.DedicatedStorageId.Equals(input.DedicatedStorageId))) return false;
 
-            return 
-                (
-                    this.DedicatedStorageId == input.DedicatedStorageId ||
-                    (this.DedicatedStorageId != null &&
-                    this.DedicatedStorageId.Equals(input.DedicatedStorageId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DedicatedStorageId != null)
-                    hashCode = hashCode * 59 + this.DedicatedStorageId.GetHashCode();
+                var hashCode = 41;
+                if (this.DedicatedStorageId != null) hashCode = hashCode * 59 + this.DedicatedStorageId.GetHashCode();
                 return hashCode;
             }
         }

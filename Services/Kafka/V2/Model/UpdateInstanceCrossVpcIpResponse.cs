@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(UpdateInstanceCrossVpcIpResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Success != input.Success || (this.Success != null && !this.Success.Equals(input.Success))) return false;
+            if (this.Results != input.Results || (this.Results != null && input.Results != null && !this.Results.SequenceEqual(input.Results))) return false;
 
-            return 
-                (
-                    this.Success == input.Success ||
-                    (this.Success != null &&
-                    this.Success.Equals(input.Success))
-                ) && 
-                (
-                    this.Results == input.Results ||
-                    this.Results != null &&
-                    input.Results != null &&
-                    this.Results.SequenceEqual(input.Results)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Success != null)
-                    hashCode = hashCode * 59 + this.Success.GetHashCode();
-                if (this.Results != null)
-                    hashCode = hashCode * 59 + this.Results.GetHashCode();
+                var hashCode = 41;
+                if (this.Success != null) hashCode = hashCode * 59 + this.Success.GetHashCode();
+                if (this.Results != null) hashCode = hashCode * 59 + this.Results.GetHashCode();
                 return hashCode;
             }
         }

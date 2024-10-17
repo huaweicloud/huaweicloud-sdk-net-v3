@@ -439,45 +439,16 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(VideoProcess input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HlsInitCount != input.HlsInitCount || (this.HlsInitCount != null && !this.HlsInitCount.Equals(input.HlsInitCount))) return false;
+            if (this.HlsInitInterval != input.HlsInitInterval || (this.HlsInitInterval != null && !this.HlsInitInterval.Equals(input.HlsInitInterval))) return false;
+            if (this.HlsStorageType != input.HlsStorageType) return false;
+            if (this.Rotate != input.Rotate || (this.Rotate != null && !this.Rotate.Equals(input.Rotate))) return false;
+            if (this.Adaptation != input.Adaptation) return false;
+            if (this.Upsample != input.Upsample || (this.Upsample != null && !this.Upsample.Equals(input.Upsample))) return false;
+            if (this.HlsSegmentType != input.HlsSegmentType) return false;
 
-            return 
-                (
-                    this.HlsInitCount == input.HlsInitCount ||
-                    (this.HlsInitCount != null &&
-                    this.HlsInitCount.Equals(input.HlsInitCount))
-                ) && 
-                (
-                    this.HlsInitInterval == input.HlsInitInterval ||
-                    (this.HlsInitInterval != null &&
-                    this.HlsInitInterval.Equals(input.HlsInitInterval))
-                ) && 
-                (
-                    this.HlsStorageType == input.HlsStorageType ||
-                    (this.HlsStorageType != null &&
-                    this.HlsStorageType.Equals(input.HlsStorageType))
-                ) && 
-                (
-                    this.Rotate == input.Rotate ||
-                    (this.Rotate != null &&
-                    this.Rotate.Equals(input.Rotate))
-                ) && 
-                (
-                    this.Adaptation == input.Adaptation ||
-                    (this.Adaptation != null &&
-                    this.Adaptation.Equals(input.Adaptation))
-                ) && 
-                (
-                    this.Upsample == input.Upsample ||
-                    (this.Upsample != null &&
-                    this.Upsample.Equals(input.Upsample))
-                ) && 
-                (
-                    this.HlsSegmentType == input.HlsSegmentType ||
-                    (this.HlsSegmentType != null &&
-                    this.HlsSegmentType.Equals(input.HlsSegmentType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -487,21 +458,14 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HlsInitCount != null)
-                    hashCode = hashCode * 59 + this.HlsInitCount.GetHashCode();
-                if (this.HlsInitInterval != null)
-                    hashCode = hashCode * 59 + this.HlsInitInterval.GetHashCode();
-                if (this.HlsStorageType != null)
-                    hashCode = hashCode * 59 + this.HlsStorageType.GetHashCode();
-                if (this.Rotate != null)
-                    hashCode = hashCode * 59 + this.Rotate.GetHashCode();
-                if (this.Adaptation != null)
-                    hashCode = hashCode * 59 + this.Adaptation.GetHashCode();
-                if (this.Upsample != null)
-                    hashCode = hashCode * 59 + this.Upsample.GetHashCode();
-                if (this.HlsSegmentType != null)
-                    hashCode = hashCode * 59 + this.HlsSegmentType.GetHashCode();
+                var hashCode = 41;
+                if (this.HlsInitCount != null) hashCode = hashCode * 59 + this.HlsInitCount.GetHashCode();
+                if (this.HlsInitInterval != null) hashCode = hashCode * 59 + this.HlsInitInterval.GetHashCode();
+                hashCode = hashCode * 59 + this.HlsStorageType.GetHashCode();
+                if (this.Rotate != null) hashCode = hashCode * 59 + this.Rotate.GetHashCode();
+                hashCode = hashCode * 59 + this.Adaptation.GetHashCode();
+                if (this.Upsample != null) hashCode = hashCode * 59 + this.Upsample.GetHashCode();
+                hashCode = hashCode * 59 + this.HlsSegmentType.GetHashCode();
                 return hashCode;
             }
         }

@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public bool Equals(MaintainWindowsEntity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Default != input.Default || (this.Default != null && !this.Default.Equals(input.Default))) return false;
+            if (this.End != input.End || (this.End != null && !this.End.Equals(input.End))) return false;
+            if (this.Begin != input.Begin || (this.Begin != null && !this.Begin.Equals(input.Begin))) return false;
+            if (this.Seq != input.Seq || (this.Seq != null && !this.Seq.Equals(input.Seq))) return false;
 
-            return 
-                (
-                    this.Default == input.Default ||
-                    (this.Default != null &&
-                    this.Default.Equals(input.Default))
-                ) && 
-                (
-                    this.End == input.End ||
-                    (this.End != null &&
-                    this.End.Equals(input.End))
-                ) && 
-                (
-                    this.Begin == input.Begin ||
-                    (this.Begin != null &&
-                    this.Begin.Equals(input.Begin))
-                ) && 
-                (
-                    this.Seq == input.Seq ||
-                    (this.Seq != null &&
-                    this.Seq.Equals(input.Seq))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Default != null)
-                    hashCode = hashCode * 59 + this.Default.GetHashCode();
-                if (this.End != null)
-                    hashCode = hashCode * 59 + this.End.GetHashCode();
-                if (this.Begin != null)
-                    hashCode = hashCode * 59 + this.Begin.GetHashCode();
-                if (this.Seq != null)
-                    hashCode = hashCode * 59 + this.Seq.GetHashCode();
+                var hashCode = 41;
+                if (this.Default != null) hashCode = hashCode * 59 + this.Default.GetHashCode();
+                if (this.End != null) hashCode = hashCode * 59 + this.End.GetHashCode();
+                if (this.Begin != null) hashCode = hashCode * 59 + this.Begin.GetHashCode();
+                if (this.Seq != null) hashCode = hashCode * 59 + this.Seq.GetHashCode();
                 return hashCode;
             }
         }

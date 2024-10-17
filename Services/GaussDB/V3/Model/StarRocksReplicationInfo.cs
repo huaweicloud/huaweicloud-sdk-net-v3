@@ -476,50 +476,17 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(StarRocksReplicationInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceDatabase != input.SourceDatabase || (this.SourceDatabase != null && !this.SourceDatabase.Equals(input.SourceDatabase))) return false;
+            if (this.TargetDatabase != input.TargetDatabase || (this.TargetDatabase != null && !this.TargetDatabase.Equals(input.TargetDatabase))) return false;
+            if (this.TaskName != input.TaskName || (this.TaskName != null && !this.TaskName.Equals(input.TaskName))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.Stage != input.Stage) return false;
+            if (this.Percentage != input.Percentage || (this.Percentage != null && !this.Percentage.Equals(input.Percentage))) return false;
+            if (this.CatchupStage != input.CatchupStage) return false;
+            if (this.CatchupPercentage != input.CatchupPercentage || (this.CatchupPercentage != null && !this.CatchupPercentage.Equals(input.CatchupPercentage))) return false;
 
-            return 
-                (
-                    this.SourceDatabase == input.SourceDatabase ||
-                    (this.SourceDatabase != null &&
-                    this.SourceDatabase.Equals(input.SourceDatabase))
-                ) && 
-                (
-                    this.TargetDatabase == input.TargetDatabase ||
-                    (this.TargetDatabase != null &&
-                    this.TargetDatabase.Equals(input.TargetDatabase))
-                ) && 
-                (
-                    this.TaskName == input.TaskName ||
-                    (this.TaskName != null &&
-                    this.TaskName.Equals(input.TaskName))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Stage == input.Stage ||
-                    (this.Stage != null &&
-                    this.Stage.Equals(input.Stage))
-                ) && 
-                (
-                    this.Percentage == input.Percentage ||
-                    (this.Percentage != null &&
-                    this.Percentage.Equals(input.Percentage))
-                ) && 
-                (
-                    this.CatchupStage == input.CatchupStage ||
-                    (this.CatchupStage != null &&
-                    this.CatchupStage.Equals(input.CatchupStage))
-                ) && 
-                (
-                    this.CatchupPercentage == input.CatchupPercentage ||
-                    (this.CatchupPercentage != null &&
-                    this.CatchupPercentage.Equals(input.CatchupPercentage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -529,23 +496,15 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceDatabase != null)
-                    hashCode = hashCode * 59 + this.SourceDatabase.GetHashCode();
-                if (this.TargetDatabase != null)
-                    hashCode = hashCode * 59 + this.TargetDatabase.GetHashCode();
-                if (this.TaskName != null)
-                    hashCode = hashCode * 59 + this.TaskName.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Stage != null)
-                    hashCode = hashCode * 59 + this.Stage.GetHashCode();
-                if (this.Percentage != null)
-                    hashCode = hashCode * 59 + this.Percentage.GetHashCode();
-                if (this.CatchupStage != null)
-                    hashCode = hashCode * 59 + this.CatchupStage.GetHashCode();
-                if (this.CatchupPercentage != null)
-                    hashCode = hashCode * 59 + this.CatchupPercentage.GetHashCode();
+                var hashCode = 41;
+                if (this.SourceDatabase != null) hashCode = hashCode * 59 + this.SourceDatabase.GetHashCode();
+                if (this.TargetDatabase != null) hashCode = hashCode * 59 + this.TargetDatabase.GetHashCode();
+                if (this.TaskName != null) hashCode = hashCode * 59 + this.TaskName.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                hashCode = hashCode * 59 + this.Stage.GetHashCode();
+                if (this.Percentage != null) hashCode = hashCode * 59 + this.Percentage.GetHashCode();
+                hashCode = hashCode * 59 + this.CatchupStage.GetHashCode();
+                if (this.CatchupPercentage != null) hashCode = hashCode * 59 + this.CatchupPercentage.GetHashCode();
                 return hashCode;
             }
         }

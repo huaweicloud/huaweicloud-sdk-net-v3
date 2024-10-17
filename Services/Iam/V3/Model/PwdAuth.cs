@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(PwdAuth input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Identity != input.Identity || (this.Identity != null && !this.Identity.Equals(input.Identity))) return false;
+            if (this.Scope != input.Scope || (this.Scope != null && !this.Scope.Equals(input.Scope))) return false;
 
-            return 
-                (
-                    this.Identity == input.Identity ||
-                    (this.Identity != null &&
-                    this.Identity.Equals(input.Identity))
-                ) && 
-                (
-                    this.Scope == input.Scope ||
-                    (this.Scope != null &&
-                    this.Scope.Equals(input.Scope))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Identity != null)
-                    hashCode = hashCode * 59 + this.Identity.GetHashCode();
-                if (this.Scope != null)
-                    hashCode = hashCode * 59 + this.Scope.GetHashCode();
+                var hashCode = 41;
+                if (this.Identity != null) hashCode = hashCode * 59 + this.Identity.GetHashCode();
+                if (this.Scope != null) hashCode = hashCode * 59 + this.Scope.GetHashCode();
                 return hashCode;
             }
         }

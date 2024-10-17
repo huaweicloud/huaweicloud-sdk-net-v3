@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(SimpleTimerType input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.RepeatInterval != input.RepeatInterval || (this.RepeatInterval != null && !this.RepeatInterval.Equals(input.RepeatInterval))) return false;
+            if (this.RepeatCount != input.RepeatCount || (this.RepeatCount != null && !this.RepeatCount.Equals(input.RepeatCount))) return false;
 
-            return 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.RepeatInterval == input.RepeatInterval ||
-                    (this.RepeatInterval != null &&
-                    this.RepeatInterval.Equals(input.RepeatInterval))
-                ) && 
-                (
-                    this.RepeatCount == input.RepeatCount ||
-                    (this.RepeatCount != null &&
-                    this.RepeatCount.Equals(input.RepeatCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.RepeatInterval != null)
-                    hashCode = hashCode * 59 + this.RepeatInterval.GetHashCode();
-                if (this.RepeatCount != null)
-                    hashCode = hashCode * 59 + this.RepeatCount.GetHashCode();
+                var hashCode = 41;
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.RepeatInterval != null) hashCode = hashCode * 59 + this.RepeatInterval.GetHashCode();
+                if (this.RepeatCount != null) hashCode = hashCode * 59 + this.RepeatCount.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(UpdateSubNetworkInterfaceRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DryRun != input.DryRun || (this.DryRun != null && !this.DryRun.Equals(input.DryRun))) return false;
+            if (this.SubNetworkInterface != input.SubNetworkInterface || (this.SubNetworkInterface != null && !this.SubNetworkInterface.Equals(input.SubNetworkInterface))) return false;
 
-            return 
-                (
-                    this.DryRun == input.DryRun ||
-                    (this.DryRun != null &&
-                    this.DryRun.Equals(input.DryRun))
-                ) && 
-                (
-                    this.SubNetworkInterface == input.SubNetworkInterface ||
-                    (this.SubNetworkInterface != null &&
-                    this.SubNetworkInterface.Equals(input.SubNetworkInterface))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DryRun != null)
-                    hashCode = hashCode * 59 + this.DryRun.GetHashCode();
-                if (this.SubNetworkInterface != null)
-                    hashCode = hashCode * 59 + this.SubNetworkInterface.GetHashCode();
+                var hashCode = 41;
+                if (this.DryRun != null) hashCode = hashCode * 59 + this.DryRun.GetHashCode();
+                if (this.SubNetworkInterface != null) hashCode = hashCode * 59 + this.SubNetworkInterface.GetHashCode();
                 return hashCode;
             }
         }

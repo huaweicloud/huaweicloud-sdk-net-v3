@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ClusterConfigurationsSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Packages != input.Packages || (this.Packages != null && input.Packages != null && !this.Packages.SequenceEqual(input.Packages))) return false;
 
-            return 
-                (
-                    this.Packages == input.Packages ||
-                    this.Packages != null &&
-                    input.Packages != null &&
-                    this.Packages.SequenceEqual(input.Packages)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Packages != null)
-                    hashCode = hashCode * 59 + this.Packages.GetHashCode();
+                var hashCode = 41;
+                if (this.Packages != null) hashCode = hashCode * 59 + this.Packages.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ChEnlargeVolumeRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SizeInGb != input.SizeInGb || (this.SizeInGb != null && !this.SizeInGb.Equals(input.SizeInGb))) return false;
 
-            return 
-                (
-                    this.SizeInGb == input.SizeInGb ||
-                    (this.SizeInGb != null &&
-                    this.SizeInGb.Equals(input.SizeInGb))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SizeInGb != null)
-                    hashCode = hashCode * 59 + this.SizeInGb.GetHashCode();
+                var hashCode = 41;
+                if (this.SizeInGb != null) hashCode = hashCode * 59 + this.SizeInGb.GetHashCode();
                 return hashCode;
             }
         }

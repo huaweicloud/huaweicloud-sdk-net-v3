@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(AutoscanConfigRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EnableAutoScan != input.EnableAutoScan || (this.EnableAutoScan != null && !this.EnableAutoScan.Equals(input.EnableAutoScan))) return false;
+            if (this.ScheduleAt != input.ScheduleAt || (this.ScheduleAt != null && input.ScheduleAt != null && !this.ScheduleAt.SequenceEqual(input.ScheduleAt))) return false;
 
-            return 
-                (
-                    this.EnableAutoScan == input.EnableAutoScan ||
-                    (this.EnableAutoScan != null &&
-                    this.EnableAutoScan.Equals(input.EnableAutoScan))
-                ) && 
-                (
-                    this.ScheduleAt == input.ScheduleAt ||
-                    this.ScheduleAt != null &&
-                    input.ScheduleAt != null &&
-                    this.ScheduleAt.SequenceEqual(input.ScheduleAt)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EnableAutoScan != null)
-                    hashCode = hashCode * 59 + this.EnableAutoScan.GetHashCode();
-                if (this.ScheduleAt != null)
-                    hashCode = hashCode * 59 + this.ScheduleAt.GetHashCode();
+                var hashCode = 41;
+                if (this.EnableAutoScan != null) hashCode = hashCode * 59 + this.EnableAutoScan.GetHashCode();
+                if (this.ScheduleAt != null) hashCode = hashCode * 59 + this.ScheduleAt.GetHashCode();
                 return hashCode;
             }
         }

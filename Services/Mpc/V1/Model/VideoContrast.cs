@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(VideoContrast input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.ExecutionOrder != input.ExecutionOrder || (this.ExecutionOrder != null && !this.ExecutionOrder.Equals(input.ExecutionOrder))) return false;
+            if (this.Contrast != input.Contrast || (this.Contrast != null && !this.Contrast.Equals(input.Contrast))) return false;
+            if (this.Brightness != input.Brightness || (this.Brightness != null && !this.Brightness.Equals(input.Brightness))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ExecutionOrder == input.ExecutionOrder ||
-                    (this.ExecutionOrder != null &&
-                    this.ExecutionOrder.Equals(input.ExecutionOrder))
-                ) && 
-                (
-                    this.Contrast == input.Contrast ||
-                    (this.Contrast != null &&
-                    this.Contrast.Equals(input.Contrast))
-                ) && 
-                (
-                    this.Brightness == input.Brightness ||
-                    (this.Brightness != null &&
-                    this.Brightness.Equals(input.Brightness))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.ExecutionOrder != null)
-                    hashCode = hashCode * 59 + this.ExecutionOrder.GetHashCode();
-                if (this.Contrast != null)
-                    hashCode = hashCode * 59 + this.Contrast.GetHashCode();
-                if (this.Brightness != null)
-                    hashCode = hashCode * 59 + this.Brightness.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.ExecutionOrder != null) hashCode = hashCode * 59 + this.ExecutionOrder.GetHashCode();
+                if (this.Contrast != null) hashCode = hashCode * 59 + this.Contrast.GetHashCode();
+                if (this.Brightness != null) hashCode = hashCode * 59 + this.Brightness.GetHashCode();
                 return hashCode;
             }
         }

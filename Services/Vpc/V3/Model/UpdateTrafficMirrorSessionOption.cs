@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(UpdateTrafficMirrorSessionOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.TrafficMirrorFilterId != input.TrafficMirrorFilterId || (this.TrafficMirrorFilterId != null && !this.TrafficMirrorFilterId.Equals(input.TrafficMirrorFilterId))) return false;
+            if (this.TrafficMirrorTargetId != input.TrafficMirrorTargetId || (this.TrafficMirrorTargetId != null && !this.TrafficMirrorTargetId.Equals(input.TrafficMirrorTargetId))) return false;
+            if (this.TrafficMirrorTargetType != input.TrafficMirrorTargetType || (this.TrafficMirrorTargetType != null && !this.TrafficMirrorTargetType.Equals(input.TrafficMirrorTargetType))) return false;
+            if (this.VirtualNetworkId != input.VirtualNetworkId || (this.VirtualNetworkId != null && !this.VirtualNetworkId.Equals(input.VirtualNetworkId))) return false;
+            if (this.PacketLength != input.PacketLength || (this.PacketLength != null && !this.PacketLength.Equals(input.PacketLength))) return false;
+            if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
+            if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.TrafficMirrorFilterId == input.TrafficMirrorFilterId ||
-                    (this.TrafficMirrorFilterId != null &&
-                    this.TrafficMirrorFilterId.Equals(input.TrafficMirrorFilterId))
-                ) && 
-                (
-                    this.TrafficMirrorTargetId == input.TrafficMirrorTargetId ||
-                    (this.TrafficMirrorTargetId != null &&
-                    this.TrafficMirrorTargetId.Equals(input.TrafficMirrorTargetId))
-                ) && 
-                (
-                    this.TrafficMirrorTargetType == input.TrafficMirrorTargetType ||
-                    (this.TrafficMirrorTargetType != null &&
-                    this.TrafficMirrorTargetType.Equals(input.TrafficMirrorTargetType))
-                ) && 
-                (
-                    this.VirtualNetworkId == input.VirtualNetworkId ||
-                    (this.VirtualNetworkId != null &&
-                    this.VirtualNetworkId.Equals(input.VirtualNetworkId))
-                ) && 
-                (
-                    this.PacketLength == input.PacketLength ||
-                    (this.PacketLength != null &&
-                    this.PacketLength.Equals(input.PacketLength))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    (this.Priority != null &&
-                    this.Priority.Equals(input.Priority))
-                ) && 
-                (
-                    this.Enabled == input.Enabled ||
-                    (this.Enabled != null &&
-                    this.Enabled.Equals(input.Enabled))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.TrafficMirrorFilterId != null)
-                    hashCode = hashCode * 59 + this.TrafficMirrorFilterId.GetHashCode();
-                if (this.TrafficMirrorTargetId != null)
-                    hashCode = hashCode * 59 + this.TrafficMirrorTargetId.GetHashCode();
-                if (this.TrafficMirrorTargetType != null)
-                    hashCode = hashCode * 59 + this.TrafficMirrorTargetType.GetHashCode();
-                if (this.VirtualNetworkId != null)
-                    hashCode = hashCode * 59 + this.VirtualNetworkId.GetHashCode();
-                if (this.PacketLength != null)
-                    hashCode = hashCode * 59 + this.PacketLength.GetHashCode();
-                if (this.Priority != null)
-                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
-                if (this.Enabled != null)
-                    hashCode = hashCode * 59 + this.Enabled.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.TrafficMirrorFilterId != null) hashCode = hashCode * 59 + this.TrafficMirrorFilterId.GetHashCode();
+                if (this.TrafficMirrorTargetId != null) hashCode = hashCode * 59 + this.TrafficMirrorTargetId.GetHashCode();
+                if (this.TrafficMirrorTargetType != null) hashCode = hashCode * 59 + this.TrafficMirrorTargetType.GetHashCode();
+                if (this.VirtualNetworkId != null) hashCode = hashCode * 59 + this.VirtualNetworkId.GetHashCode();
+                if (this.PacketLength != null) hashCode = hashCode * 59 + this.PacketLength.GetHashCode();
+                if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(CaptureServiceDto input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DestPort != input.DestPort || (this.DestPort != null && !this.DestPort.Equals(input.DestPort))) return false;
+            if (this.Protocol != input.Protocol || (this.Protocol != null && !this.Protocol.Equals(input.Protocol))) return false;
+            if (this.SourcePort != input.SourcePort || (this.SourcePort != null && !this.SourcePort.Equals(input.SourcePort))) return false;
 
-            return 
-                (
-                    this.DestPort == input.DestPort ||
-                    (this.DestPort != null &&
-                    this.DestPort.Equals(input.DestPort))
-                ) && 
-                (
-                    this.Protocol == input.Protocol ||
-                    (this.Protocol != null &&
-                    this.Protocol.Equals(input.Protocol))
-                ) && 
-                (
-                    this.SourcePort == input.SourcePort ||
-                    (this.SourcePort != null &&
-                    this.SourcePort.Equals(input.SourcePort))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DestPort != null)
-                    hashCode = hashCode * 59 + this.DestPort.GetHashCode();
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
-                if (this.SourcePort != null)
-                    hashCode = hashCode * 59 + this.SourcePort.GetHashCode();
+                var hashCode = 41;
+                if (this.DestPort != null) hashCode = hashCode * 59 + this.DestPort.GetHashCode();
+                if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.SourcePort != null) hashCode = hashCode * 59 + this.SourcePort.GetHashCode();
                 return hashCode;
             }
         }

@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ReplayingSqlResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SchemaName != input.SchemaName || (this.SchemaName != null && !this.SchemaName.Equals(input.SchemaName))) return false;
+            if (this.SqlStatement != input.SqlStatement || (this.SqlStatement != null && !this.SqlStatement.Equals(input.SqlStatement))) return false;
+            if (this.Latency != input.Latency || (this.Latency != null && !this.Latency.Equals(input.Latency))) return false;
+            if (this.ExecuteLatency != input.ExecuteLatency || (this.ExecuteLatency != null && !this.ExecuteLatency.Equals(input.ExecuteLatency))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Client != input.Client || (this.Client != null && !this.Client.Equals(input.Client))) return false;
+            if (this.ConnectionId != input.ConnectionId || (this.ConnectionId != null && !this.ConnectionId.Equals(input.ConnectionId))) return false;
+            if (this.ReplayStartTime != input.ReplayStartTime || (this.ReplayStartTime != null && !this.ReplayStartTime.Equals(input.ReplayStartTime))) return false;
 
-            return 
-                (
-                    this.SchemaName == input.SchemaName ||
-                    (this.SchemaName != null &&
-                    this.SchemaName.Equals(input.SchemaName))
-                ) && 
-                (
-                    this.SqlStatement == input.SqlStatement ||
-                    (this.SqlStatement != null &&
-                    this.SqlStatement.Equals(input.SqlStatement))
-                ) && 
-                (
-                    this.Latency == input.Latency ||
-                    (this.Latency != null &&
-                    this.Latency.Equals(input.Latency))
-                ) && 
-                (
-                    this.ExecuteLatency == input.ExecuteLatency ||
-                    (this.ExecuteLatency != null &&
-                    this.ExecuteLatency.Equals(input.ExecuteLatency))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Client == input.Client ||
-                    (this.Client != null &&
-                    this.Client.Equals(input.Client))
-                ) && 
-                (
-                    this.ConnectionId == input.ConnectionId ||
-                    (this.ConnectionId != null &&
-                    this.ConnectionId.Equals(input.ConnectionId))
-                ) && 
-                (
-                    this.ReplayStartTime == input.ReplayStartTime ||
-                    (this.ReplayStartTime != null &&
-                    this.ReplayStartTime.Equals(input.ReplayStartTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SchemaName != null)
-                    hashCode = hashCode * 59 + this.SchemaName.GetHashCode();
-                if (this.SqlStatement != null)
-                    hashCode = hashCode * 59 + this.SqlStatement.GetHashCode();
-                if (this.Latency != null)
-                    hashCode = hashCode * 59 + this.Latency.GetHashCode();
-                if (this.ExecuteLatency != null)
-                    hashCode = hashCode * 59 + this.ExecuteLatency.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Client != null)
-                    hashCode = hashCode * 59 + this.Client.GetHashCode();
-                if (this.ConnectionId != null)
-                    hashCode = hashCode * 59 + this.ConnectionId.GetHashCode();
-                if (this.ReplayStartTime != null)
-                    hashCode = hashCode * 59 + this.ReplayStartTime.GetHashCode();
+                var hashCode = 41;
+                if (this.SchemaName != null) hashCode = hashCode * 59 + this.SchemaName.GetHashCode();
+                if (this.SqlStatement != null) hashCode = hashCode * 59 + this.SqlStatement.GetHashCode();
+                if (this.Latency != null) hashCode = hashCode * 59 + this.Latency.GetHashCode();
+                if (this.ExecuteLatency != null) hashCode = hashCode * 59 + this.ExecuteLatency.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Client != null) hashCode = hashCode * 59 + this.Client.GetHashCode();
+                if (this.ConnectionId != null) hashCode = hashCode * 59 + this.ConnectionId.GetHashCode();
+                if (this.ReplayStartTime != null) hashCode = hashCode * 59 + this.ReplayStartTime.GetHashCode();
                 return hashCode;
             }
         }

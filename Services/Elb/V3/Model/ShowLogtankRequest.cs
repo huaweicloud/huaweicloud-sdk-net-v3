@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(ShowLogtankRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LogtankId != input.LogtankId || (this.LogtankId != null && !this.LogtankId.Equals(input.LogtankId))) return false;
 
-            return 
-                (
-                    this.LogtankId == input.LogtankId ||
-                    (this.LogtankId != null &&
-                    this.LogtankId.Equals(input.LogtankId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LogtankId != null)
-                    hashCode = hashCode * 59 + this.LogtankId.GetHashCode();
+                var hashCode = 41;
+                if (this.LogtankId != null) hashCode = hashCode * 59 + this.LogtankId.GetHashCode();
                 return hashCode;
             }
         }

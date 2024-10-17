@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(StructLogContents input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LogContent != input.LogContent || (this.LogContent != null && !this.LogContent.Equals(input.LogContent))) return false;
+            if (this.LineNum != input.LineNum || (this.LineNum != null && !this.LineNum.Equals(input.LineNum))) return false;
 
-            return 
-                (
-                    this.LogContent == input.LogContent ||
-                    (this.LogContent != null &&
-                    this.LogContent.Equals(input.LogContent))
-                ) && 
-                (
-                    this.LineNum == input.LineNum ||
-                    (this.LineNum != null &&
-                    this.LineNum.Equals(input.LineNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LogContent != null)
-                    hashCode = hashCode * 59 + this.LogContent.GetHashCode();
-                if (this.LineNum != null)
-                    hashCode = hashCode * 59 + this.LineNum.GetHashCode();
+                var hashCode = 41;
+                if (this.LogContent != null) hashCode = hashCode * 59 + this.LogContent.GetHashCode();
+                if (this.LineNum != null) hashCode = hashCode * 59 + this.LineNum.GetHashCode();
                 return hashCode;
             }
         }

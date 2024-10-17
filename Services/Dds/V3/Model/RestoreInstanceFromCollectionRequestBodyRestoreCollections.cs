@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(RestoreInstanceFromCollectionRequestBodyRestoreCollections input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Database != input.Database || (this.Database != null && !this.Database.Equals(input.Database))) return false;
+            if (this.RestoreDatabaseTime != input.RestoreDatabaseTime || (this.RestoreDatabaseTime != null && !this.RestoreDatabaseTime.Equals(input.RestoreDatabaseTime))) return false;
+            if (this.Collections != input.Collections || (this.Collections != null && input.Collections != null && !this.Collections.SequenceEqual(input.Collections))) return false;
 
-            return 
-                (
-                    this.Database == input.Database ||
-                    (this.Database != null &&
-                    this.Database.Equals(input.Database))
-                ) && 
-                (
-                    this.RestoreDatabaseTime == input.RestoreDatabaseTime ||
-                    (this.RestoreDatabaseTime != null &&
-                    this.RestoreDatabaseTime.Equals(input.RestoreDatabaseTime))
-                ) && 
-                (
-                    this.Collections == input.Collections ||
-                    this.Collections != null &&
-                    input.Collections != null &&
-                    this.Collections.SequenceEqual(input.Collections)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Database != null)
-                    hashCode = hashCode * 59 + this.Database.GetHashCode();
-                if (this.RestoreDatabaseTime != null)
-                    hashCode = hashCode * 59 + this.RestoreDatabaseTime.GetHashCode();
-                if (this.Collections != null)
-                    hashCode = hashCode * 59 + this.Collections.GetHashCode();
+                var hashCode = 41;
+                if (this.Database != null) hashCode = hashCode * 59 + this.Database.GetHashCode();
+                if (this.RestoreDatabaseTime != null) hashCode = hashCode * 59 + this.RestoreDatabaseTime.GetHashCode();
+                if (this.Collections != null) hashCode = hashCode * 59 + this.Collections.GetHashCode();
                 return hashCode;
             }
         }

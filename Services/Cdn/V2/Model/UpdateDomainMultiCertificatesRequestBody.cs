@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(UpdateDomainMultiCertificatesRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Https != input.Https || (this.Https != null && !this.Https.Equals(input.Https))) return false;
 
-            return 
-                (
-                    this.Https == input.Https ||
-                    (this.Https != null &&
-                    this.Https.Equals(input.Https))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Https != null)
-                    hashCode = hashCode * 59 + this.Https.GetHashCode();
+                var hashCode = 41;
+                if (this.Https != null) hashCode = hashCode * 59 + this.Https.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(ResizeInstanceOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TargetSpecCode != input.TargetSpecCode || (this.TargetSpecCode != null && !this.TargetSpecCode.Equals(input.TargetSpecCode))) return false;
 
-            return 
-                (
-                    this.TargetSpecCode == input.TargetSpecCode ||
-                    (this.TargetSpecCode != null &&
-                    this.TargetSpecCode.Equals(input.TargetSpecCode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TargetSpecCode != null)
-                    hashCode = hashCode * 59 + this.TargetSpecCode.GetHashCode();
+                var hashCode = 41;
+                if (this.TargetSpecCode != null) hashCode = hashCode * 59 + this.TargetSpecCode.GetHashCode();
                 return hashCode;
             }
         }

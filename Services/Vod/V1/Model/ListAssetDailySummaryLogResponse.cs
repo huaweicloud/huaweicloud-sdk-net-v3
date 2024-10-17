@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(ListAssetDailySummaryLogResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.SummaryResults != input.SummaryResults || (this.SummaryResults != null && input.SummaryResults != null && !this.SummaryResults.SequenceEqual(input.SummaryResults))) return false;
 
-            return 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.SummaryResults == input.SummaryResults ||
-                    this.SummaryResults != null &&
-                    input.SummaryResults != null &&
-                    this.SummaryResults.SequenceEqual(input.SummaryResults)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.SummaryResults != null)
-                    hashCode = hashCode * 59 + this.SummaryResults.GetHashCode();
+                var hashCode = 41;
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.SummaryResults != null) hashCode = hashCode * 59 + this.SummaryResults.GetHashCode();
                 return hashCode;
             }
         }

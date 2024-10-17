@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(ListCdnDomainTopRefersResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TopReferSummary != input.TopReferSummary || (this.TopReferSummary != null && input.TopReferSummary != null && !this.TopReferSummary.SequenceEqual(input.TopReferSummary))) return false;
 
-            return 
-                (
-                    this.TopReferSummary == input.TopReferSummary ||
-                    this.TopReferSummary != null &&
-                    input.TopReferSummary != null &&
-                    this.TopReferSummary.SequenceEqual(input.TopReferSummary)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TopReferSummary != null)
-                    hashCode = hashCode * 59 + this.TopReferSummary.GetHashCode();
+                var hashCode = 41;
+                if (this.TopReferSummary != null) hashCode = hashCode * 59 + this.TopReferSummary.GetHashCode();
                 return hashCode;
             }
         }

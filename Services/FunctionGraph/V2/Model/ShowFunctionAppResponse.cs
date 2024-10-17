@@ -126,70 +126,21 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(ShowFunctionAppResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.LastModifiedTime != input.LastModifiedTime || (this.LastModifiedTime != null && !this.LastModifiedTime.Equals(input.LastModifiedTime))) return false;
+            if (this.StackResources != input.StackResources || (this.StackResources != null && !this.StackResources.Equals(input.StackResources))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.StackName != input.StackName || (this.StackName != null && !this.StackName.Equals(input.StackName))) return false;
+            if (this.StackId != input.StackId || (this.StackId != null && !this.StackId.Equals(input.StackId))) return false;
+            if (this.RepoName != input.RepoName || (this.RepoName != null && !this.RepoName.Equals(input.RepoName))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Repo != input.Repo || (this.Repo != null && !this.Repo.Equals(input.Repo))) return false;
+            if (this.PipelineId != input.PipelineId || (this.PipelineId != null && !this.PipelineId.Equals(input.PipelineId))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.ApigUrl != input.ApigUrl || (this.ApigUrl != null && !this.ApigUrl.Equals(input.ApigUrl))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.LastModifiedTime == input.LastModifiedTime ||
-                    (this.LastModifiedTime != null &&
-                    this.LastModifiedTime.Equals(input.LastModifiedTime))
-                ) && 
-                (
-                    this.StackResources == input.StackResources ||
-                    (this.StackResources != null &&
-                    this.StackResources.Equals(input.StackResources))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.StackName == input.StackName ||
-                    (this.StackName != null &&
-                    this.StackName.Equals(input.StackName))
-                ) && 
-                (
-                    this.StackId == input.StackId ||
-                    (this.StackId != null &&
-                    this.StackId.Equals(input.StackId))
-                ) && 
-                (
-                    this.RepoName == input.RepoName ||
-                    (this.RepoName != null &&
-                    this.RepoName.Equals(input.RepoName))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Repo == input.Repo ||
-                    (this.Repo != null &&
-                    this.Repo.Equals(input.Repo))
-                ) && 
-                (
-                    this.PipelineId == input.PipelineId ||
-                    (this.PipelineId != null &&
-                    this.PipelineId.Equals(input.PipelineId))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.ApigUrl == input.ApigUrl ||
-                    (this.ApigUrl != null &&
-                    this.ApigUrl.Equals(input.ApigUrl))
-                );
+            return true;
         }
 
         /// <summary>
@@ -199,31 +150,19 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.LastModifiedTime != null)
-                    hashCode = hashCode * 59 + this.LastModifiedTime.GetHashCode();
-                if (this.StackResources != null)
-                    hashCode = hashCode * 59 + this.StackResources.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.StackName != null)
-                    hashCode = hashCode * 59 + this.StackName.GetHashCode();
-                if (this.StackId != null)
-                    hashCode = hashCode * 59 + this.StackId.GetHashCode();
-                if (this.RepoName != null)
-                    hashCode = hashCode * 59 + this.RepoName.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Repo != null)
-                    hashCode = hashCode * 59 + this.Repo.GetHashCode();
-                if (this.PipelineId != null)
-                    hashCode = hashCode * 59 + this.PipelineId.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.ApigUrl != null)
-                    hashCode = hashCode * 59 + this.ApigUrl.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.LastModifiedTime != null) hashCode = hashCode * 59 + this.LastModifiedTime.GetHashCode();
+                if (this.StackResources != null) hashCode = hashCode * 59 + this.StackResources.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.StackName != null) hashCode = hashCode * 59 + this.StackName.GetHashCode();
+                if (this.StackId != null) hashCode = hashCode * 59 + this.StackId.GetHashCode();
+                if (this.RepoName != null) hashCode = hashCode * 59 + this.RepoName.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Repo != null) hashCode = hashCode * 59 + this.Repo.GetHashCode();
+                if (this.PipelineId != null) hashCode = hashCode * 59 + this.PipelineId.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.ApigUrl != null) hashCode = hashCode * 59 + this.ApigUrl.GetHashCode();
                 return hashCode;
             }
         }

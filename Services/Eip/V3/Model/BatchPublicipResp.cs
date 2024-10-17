@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(BatchPublicipResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StatusCode != input.StatusCode || (this.StatusCode != null && !this.StatusCode.Equals(input.StatusCode))) return false;
+            if (this.Publicip != input.Publicip || (this.Publicip != null && !this.Publicip.Equals(input.Publicip))) return false;
 
-            return 
-                (
-                    this.StatusCode == input.StatusCode ||
-                    (this.StatusCode != null &&
-                    this.StatusCode.Equals(input.StatusCode))
-                ) && 
-                (
-                    this.Publicip == input.Publicip ||
-                    (this.Publicip != null &&
-                    this.Publicip.Equals(input.Publicip))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StatusCode != null)
-                    hashCode = hashCode * 59 + this.StatusCode.GetHashCode();
-                if (this.Publicip != null)
-                    hashCode = hashCode * 59 + this.Publicip.GetHashCode();
+                var hashCode = 41;
+                if (this.StatusCode != null) hashCode = hashCode * 59 + this.StatusCode.GetHashCode();
+                if (this.Publicip != null) hashCode = hashCode * 59 + this.Publicip.GetHashCode();
                 return hashCode;
             }
         }

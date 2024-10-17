@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(UpdateDesireds input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Shadow != input.Shadow || (this.Shadow != null && input.Shadow != null && !this.Shadow.SequenceEqual(input.Shadow))) return false;
 
-            return 
-                (
-                    this.Shadow == input.Shadow ||
-                    this.Shadow != null &&
-                    input.Shadow != null &&
-                    this.Shadow.SequenceEqual(input.Shadow)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Shadow != null)
-                    hashCode = hashCode * 59 + this.Shadow.GetHashCode();
+                var hashCode = 41;
+                if (this.Shadow != null) hashCode = hashCode * 59 + this.Shadow.GetHashCode();
                 return hashCode;
             }
         }

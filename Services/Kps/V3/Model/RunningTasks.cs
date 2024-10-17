@@ -204,40 +204,15 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         /// </summary>
         public bool Equals(RunningTasks input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TaskId != input.TaskId || (this.TaskId != null && !this.TaskId.Equals(input.TaskId))) return false;
+            if (this.OperateType != input.OperateType) return false;
+            if (this.TaskTime != input.TaskTime || (this.TaskTime != null && !this.TaskTime.Equals(input.TaskTime))) return false;
+            if (this.ServerName != input.ServerName || (this.ServerName != null && !this.ServerName.Equals(input.ServerName))) return false;
+            if (this.ServerId != input.ServerId || (this.ServerId != null && !this.ServerId.Equals(input.ServerId))) return false;
+            if (this.KeypairName != input.KeypairName || (this.KeypairName != null && !this.KeypairName.Equals(input.KeypairName))) return false;
 
-            return 
-                (
-                    this.TaskId == input.TaskId ||
-                    (this.TaskId != null &&
-                    this.TaskId.Equals(input.TaskId))
-                ) && 
-                (
-                    this.OperateType == input.OperateType ||
-                    (this.OperateType != null &&
-                    this.OperateType.Equals(input.OperateType))
-                ) && 
-                (
-                    this.TaskTime == input.TaskTime ||
-                    (this.TaskTime != null &&
-                    this.TaskTime.Equals(input.TaskTime))
-                ) && 
-                (
-                    this.ServerName == input.ServerName ||
-                    (this.ServerName != null &&
-                    this.ServerName.Equals(input.ServerName))
-                ) && 
-                (
-                    this.ServerId == input.ServerId ||
-                    (this.ServerId != null &&
-                    this.ServerId.Equals(input.ServerId))
-                ) && 
-                (
-                    this.KeypairName == input.KeypairName ||
-                    (this.KeypairName != null &&
-                    this.KeypairName.Equals(input.KeypairName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -247,19 +222,13 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TaskId != null)
-                    hashCode = hashCode * 59 + this.TaskId.GetHashCode();
-                if (this.OperateType != null)
-                    hashCode = hashCode * 59 + this.OperateType.GetHashCode();
-                if (this.TaskTime != null)
-                    hashCode = hashCode * 59 + this.TaskTime.GetHashCode();
-                if (this.ServerName != null)
-                    hashCode = hashCode * 59 + this.ServerName.GetHashCode();
-                if (this.ServerId != null)
-                    hashCode = hashCode * 59 + this.ServerId.GetHashCode();
-                if (this.KeypairName != null)
-                    hashCode = hashCode * 59 + this.KeypairName.GetHashCode();
+                var hashCode = 41;
+                if (this.TaskId != null) hashCode = hashCode * 59 + this.TaskId.GetHashCode();
+                hashCode = hashCode * 59 + this.OperateType.GetHashCode();
+                if (this.TaskTime != null) hashCode = hashCode * 59 + this.TaskTime.GetHashCode();
+                if (this.ServerName != null) hashCode = hashCode * 59 + this.ServerName.GetHashCode();
+                if (this.ServerId != null) hashCode = hashCode * 59 + this.ServerId.GetHashCode();
+                if (this.KeypairName != null) hashCode = hashCode * 59 + this.KeypairName.GetHashCode();
                 return hashCode;
             }
         }

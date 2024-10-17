@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ActionSmnForwarding input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RegionName != input.RegionName || (this.RegionName != null && !this.RegionName.Equals(input.RegionName))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.ThemeName != input.ThemeName || (this.ThemeName != null && !this.ThemeName.Equals(input.ThemeName))) return false;
+            if (this.TopicUrn != input.TopicUrn || (this.TopicUrn != null && !this.TopicUrn.Equals(input.TopicUrn))) return false;
+            if (this.MessageContent != input.MessageContent || (this.MessageContent != null && !this.MessageContent.Equals(input.MessageContent))) return false;
+            if (this.MessageTemplateName != input.MessageTemplateName || (this.MessageTemplateName != null && !this.MessageTemplateName.Equals(input.MessageTemplateName))) return false;
+            if (this.MessageTitle != input.MessageTitle || (this.MessageTitle != null && !this.MessageTitle.Equals(input.MessageTitle))) return false;
 
-            return 
-                (
-                    this.RegionName == input.RegionName ||
-                    (this.RegionName != null &&
-                    this.RegionName.Equals(input.RegionName))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.ThemeName == input.ThemeName ||
-                    (this.ThemeName != null &&
-                    this.ThemeName.Equals(input.ThemeName))
-                ) && 
-                (
-                    this.TopicUrn == input.TopicUrn ||
-                    (this.TopicUrn != null &&
-                    this.TopicUrn.Equals(input.TopicUrn))
-                ) && 
-                (
-                    this.MessageContent == input.MessageContent ||
-                    (this.MessageContent != null &&
-                    this.MessageContent.Equals(input.MessageContent))
-                ) && 
-                (
-                    this.MessageTemplateName == input.MessageTemplateName ||
-                    (this.MessageTemplateName != null &&
-                    this.MessageTemplateName.Equals(input.MessageTemplateName))
-                ) && 
-                (
-                    this.MessageTitle == input.MessageTitle ||
-                    (this.MessageTitle != null &&
-                    this.MessageTitle.Equals(input.MessageTitle))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RegionName != null)
-                    hashCode = hashCode * 59 + this.RegionName.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.ThemeName != null)
-                    hashCode = hashCode * 59 + this.ThemeName.GetHashCode();
-                if (this.TopicUrn != null)
-                    hashCode = hashCode * 59 + this.TopicUrn.GetHashCode();
-                if (this.MessageContent != null)
-                    hashCode = hashCode * 59 + this.MessageContent.GetHashCode();
-                if (this.MessageTemplateName != null)
-                    hashCode = hashCode * 59 + this.MessageTemplateName.GetHashCode();
-                if (this.MessageTitle != null)
-                    hashCode = hashCode * 59 + this.MessageTitle.GetHashCode();
+                var hashCode = 41;
+                if (this.RegionName != null) hashCode = hashCode * 59 + this.RegionName.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.ThemeName != null) hashCode = hashCode * 59 + this.ThemeName.GetHashCode();
+                if (this.TopicUrn != null) hashCode = hashCode * 59 + this.TopicUrn.GetHashCode();
+                if (this.MessageContent != null) hashCode = hashCode * 59 + this.MessageContent.GetHashCode();
+                if (this.MessageTemplateName != null) hashCode = hashCode * 59 + this.MessageTemplateName.GetHashCode();
+                if (this.MessageTitle != null) hashCode = hashCode * 59 + this.MessageTitle.GetHashCode();
                 return hashCode;
             }
         }

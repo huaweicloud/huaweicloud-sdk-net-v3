@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(ListUserMfaDevicesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VirtualMfaDevices != input.VirtualMfaDevices || (this.VirtualMfaDevices != null && input.VirtualMfaDevices != null && !this.VirtualMfaDevices.SequenceEqual(input.VirtualMfaDevices))) return false;
 
-            return 
-                (
-                    this.VirtualMfaDevices == input.VirtualMfaDevices ||
-                    this.VirtualMfaDevices != null &&
-                    input.VirtualMfaDevices != null &&
-                    this.VirtualMfaDevices.SequenceEqual(input.VirtualMfaDevices)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VirtualMfaDevices != null)
-                    hashCode = hashCode * 59 + this.VirtualMfaDevices.GetHashCode();
+                var hashCode = 41;
+                if (this.VirtualMfaDevices != null) hashCode = hashCode * 59 + this.VirtualMfaDevices.GetHashCode();
                 return hashCode;
             }
         }

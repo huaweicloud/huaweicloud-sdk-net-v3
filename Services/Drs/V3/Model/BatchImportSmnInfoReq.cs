@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(BatchImportSmnInfoReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Jobs != input.Jobs || (this.Jobs != null && input.Jobs != null && !this.Jobs.SequenceEqual(input.Jobs))) return false;
+            if (this.AlarmNotifyInfo != input.AlarmNotifyInfo || (this.AlarmNotifyInfo != null && !this.AlarmNotifyInfo.Equals(input.AlarmNotifyInfo))) return false;
 
-            return 
-                (
-                    this.Jobs == input.Jobs ||
-                    this.Jobs != null &&
-                    input.Jobs != null &&
-                    this.Jobs.SequenceEqual(input.Jobs)
-                ) && 
-                (
-                    this.AlarmNotifyInfo == input.AlarmNotifyInfo ||
-                    (this.AlarmNotifyInfo != null &&
-                    this.AlarmNotifyInfo.Equals(input.AlarmNotifyInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Jobs != null)
-                    hashCode = hashCode * 59 + this.Jobs.GetHashCode();
-                if (this.AlarmNotifyInfo != null)
-                    hashCode = hashCode * 59 + this.AlarmNotifyInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.Jobs != null) hashCode = hashCode * 59 + this.Jobs.GetHashCode();
+                if (this.AlarmNotifyInfo != null) hashCode = hashCode * 59 + this.AlarmNotifyInfo.GetHashCode();
                 return hashCode;
             }
         }

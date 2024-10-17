@@ -259,75 +259,22 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(KafkaSecurity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type) return false;
+            if (this.TrustStoreKeyName != input.TrustStoreKeyName || (this.TrustStoreKeyName != null && !this.TrustStoreKeyName.Equals(input.TrustStoreKeyName))) return false;
+            if (this.TrustStoreKey != input.TrustStoreKey || (this.TrustStoreKey != null && !this.TrustStoreKey.Equals(input.TrustStoreKey))) return false;
+            if (this.TrustStorePassword != input.TrustStorePassword || (this.TrustStorePassword != null && !this.TrustStorePassword.Equals(input.TrustStorePassword))) return false;
+            if (this.EndpointAlgorithm != input.EndpointAlgorithm || (this.EndpointAlgorithm != null && !this.EndpointAlgorithm.Equals(input.EndpointAlgorithm))) return false;
+            if (this.SaslMechanism != input.SaslMechanism || (this.SaslMechanism != null && !this.SaslMechanism.Equals(input.SaslMechanism))) return false;
+            if (this.DelegationTokens != input.DelegationTokens || (this.DelegationTokens != null && !this.DelegationTokens.Equals(input.DelegationTokens))) return false;
+            if (this.EnableKeyStore != input.EnableKeyStore || (this.EnableKeyStore != null && !this.EnableKeyStore.Equals(input.EnableKeyStore))) return false;
+            if (this.KeyStoreKey != input.KeyStoreKey || (this.KeyStoreKey != null && !this.KeyStoreKey.Equals(input.KeyStoreKey))) return false;
+            if (this.KeyStoreKeyName != input.KeyStoreKeyName || (this.KeyStoreKeyName != null && !this.KeyStoreKeyName.Equals(input.KeyStoreKeyName))) return false;
+            if (this.KeyStorePassword != input.KeyStorePassword || (this.KeyStorePassword != null && !this.KeyStorePassword.Equals(input.KeyStorePassword))) return false;
+            if (this.SetPrivateKeyPassword != input.SetPrivateKeyPassword || (this.SetPrivateKeyPassword != null && !this.SetPrivateKeyPassword.Equals(input.SetPrivateKeyPassword))) return false;
+            if (this.KeyPassword != input.KeyPassword || (this.KeyPassword != null && !this.KeyPassword.Equals(input.KeyPassword))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.TrustStoreKeyName == input.TrustStoreKeyName ||
-                    (this.TrustStoreKeyName != null &&
-                    this.TrustStoreKeyName.Equals(input.TrustStoreKeyName))
-                ) && 
-                (
-                    this.TrustStoreKey == input.TrustStoreKey ||
-                    (this.TrustStoreKey != null &&
-                    this.TrustStoreKey.Equals(input.TrustStoreKey))
-                ) && 
-                (
-                    this.TrustStorePassword == input.TrustStorePassword ||
-                    (this.TrustStorePassword != null &&
-                    this.TrustStorePassword.Equals(input.TrustStorePassword))
-                ) && 
-                (
-                    this.EndpointAlgorithm == input.EndpointAlgorithm ||
-                    (this.EndpointAlgorithm != null &&
-                    this.EndpointAlgorithm.Equals(input.EndpointAlgorithm))
-                ) && 
-                (
-                    this.SaslMechanism == input.SaslMechanism ||
-                    (this.SaslMechanism != null &&
-                    this.SaslMechanism.Equals(input.SaslMechanism))
-                ) && 
-                (
-                    this.DelegationTokens == input.DelegationTokens ||
-                    (this.DelegationTokens != null &&
-                    this.DelegationTokens.Equals(input.DelegationTokens))
-                ) && 
-                (
-                    this.EnableKeyStore == input.EnableKeyStore ||
-                    (this.EnableKeyStore != null &&
-                    this.EnableKeyStore.Equals(input.EnableKeyStore))
-                ) && 
-                (
-                    this.KeyStoreKey == input.KeyStoreKey ||
-                    (this.KeyStoreKey != null &&
-                    this.KeyStoreKey.Equals(input.KeyStoreKey))
-                ) && 
-                (
-                    this.KeyStoreKeyName == input.KeyStoreKeyName ||
-                    (this.KeyStoreKeyName != null &&
-                    this.KeyStoreKeyName.Equals(input.KeyStoreKeyName))
-                ) && 
-                (
-                    this.KeyStorePassword == input.KeyStorePassword ||
-                    (this.KeyStorePassword != null &&
-                    this.KeyStorePassword.Equals(input.KeyStorePassword))
-                ) && 
-                (
-                    this.SetPrivateKeyPassword == input.SetPrivateKeyPassword ||
-                    (this.SetPrivateKeyPassword != null &&
-                    this.SetPrivateKeyPassword.Equals(input.SetPrivateKeyPassword))
-                ) && 
-                (
-                    this.KeyPassword == input.KeyPassword ||
-                    (this.KeyPassword != null &&
-                    this.KeyPassword.Equals(input.KeyPassword))
-                );
+            return true;
         }
 
         /// <summary>
@@ -337,33 +284,20 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.TrustStoreKeyName != null)
-                    hashCode = hashCode * 59 + this.TrustStoreKeyName.GetHashCode();
-                if (this.TrustStoreKey != null)
-                    hashCode = hashCode * 59 + this.TrustStoreKey.GetHashCode();
-                if (this.TrustStorePassword != null)
-                    hashCode = hashCode * 59 + this.TrustStorePassword.GetHashCode();
-                if (this.EndpointAlgorithm != null)
-                    hashCode = hashCode * 59 + this.EndpointAlgorithm.GetHashCode();
-                if (this.SaslMechanism != null)
-                    hashCode = hashCode * 59 + this.SaslMechanism.GetHashCode();
-                if (this.DelegationTokens != null)
-                    hashCode = hashCode * 59 + this.DelegationTokens.GetHashCode();
-                if (this.EnableKeyStore != null)
-                    hashCode = hashCode * 59 + this.EnableKeyStore.GetHashCode();
-                if (this.KeyStoreKey != null)
-                    hashCode = hashCode * 59 + this.KeyStoreKey.GetHashCode();
-                if (this.KeyStoreKeyName != null)
-                    hashCode = hashCode * 59 + this.KeyStoreKeyName.GetHashCode();
-                if (this.KeyStorePassword != null)
-                    hashCode = hashCode * 59 + this.KeyStorePassword.GetHashCode();
-                if (this.SetPrivateKeyPassword != null)
-                    hashCode = hashCode * 59 + this.SetPrivateKeyPassword.GetHashCode();
-                if (this.KeyPassword != null)
-                    hashCode = hashCode * 59 + this.KeyPassword.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.TrustStoreKeyName != null) hashCode = hashCode * 59 + this.TrustStoreKeyName.GetHashCode();
+                if (this.TrustStoreKey != null) hashCode = hashCode * 59 + this.TrustStoreKey.GetHashCode();
+                if (this.TrustStorePassword != null) hashCode = hashCode * 59 + this.TrustStorePassword.GetHashCode();
+                if (this.EndpointAlgorithm != null) hashCode = hashCode * 59 + this.EndpointAlgorithm.GetHashCode();
+                if (this.SaslMechanism != null) hashCode = hashCode * 59 + this.SaslMechanism.GetHashCode();
+                if (this.DelegationTokens != null) hashCode = hashCode * 59 + this.DelegationTokens.GetHashCode();
+                if (this.EnableKeyStore != null) hashCode = hashCode * 59 + this.EnableKeyStore.GetHashCode();
+                if (this.KeyStoreKey != null) hashCode = hashCode * 59 + this.KeyStoreKey.GetHashCode();
+                if (this.KeyStoreKeyName != null) hashCode = hashCode * 59 + this.KeyStoreKeyName.GetHashCode();
+                if (this.KeyStorePassword != null) hashCode = hashCode * 59 + this.KeyStorePassword.GetHashCode();
+                if (this.SetPrivateKeyPassword != null) hashCode = hashCode * 59 + this.SetPrivateKeyPassword.GetHashCode();
+                if (this.KeyPassword != null) hashCode = hashCode * 59 + this.KeyPassword.GetHashCode();
                 return hashCode;
             }
         }

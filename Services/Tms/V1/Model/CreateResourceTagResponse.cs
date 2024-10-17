@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Tms.V1.Model
         /// </summary>
         public bool Equals(CreateResourceTagResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FailedResources != input.FailedResources || (this.FailedResources != null && input.FailedResources != null && !this.FailedResources.SequenceEqual(input.FailedResources))) return false;
 
-            return 
-                (
-                    this.FailedResources == input.FailedResources ||
-                    this.FailedResources != null &&
-                    input.FailedResources != null &&
-                    this.FailedResources.SequenceEqual(input.FailedResources)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Tms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FailedResources != null)
-                    hashCode = hashCode * 59 + this.FailedResources.GetHashCode();
+                var hashCode = 41;
+                if (this.FailedResources != null) hashCode = hashCode * 59 + this.FailedResources.GetHashCode();
                 return hashCode;
             }
         }

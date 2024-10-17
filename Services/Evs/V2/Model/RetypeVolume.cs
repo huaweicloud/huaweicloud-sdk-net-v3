@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(RetypeVolume input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NewType != input.NewType || (this.NewType != null && !this.NewType.Equals(input.NewType))) return false;
 
-            return 
-                (
-                    this.NewType == input.NewType ||
-                    (this.NewType != null &&
-                    this.NewType.Equals(input.NewType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NewType != null)
-                    hashCode = hashCode * 59 + this.NewType.GetHashCode();
+                var hashCode = 41;
+                if (this.NewType != null) hashCode = hashCode * 59 + this.NewType.GetHashCode();
                 return hashCode;
             }
         }

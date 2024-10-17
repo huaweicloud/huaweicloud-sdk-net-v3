@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(Action input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FunctionRef != input.FunctionRef || (this.FunctionRef != null && !this.FunctionRef.Equals(input.FunctionRef))) return false;
 
-            return 
-                (
-                    this.FunctionRef == input.FunctionRef ||
-                    (this.FunctionRef != null &&
-                    this.FunctionRef.Equals(input.FunctionRef))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FunctionRef != null)
-                    hashCode = hashCode * 59 + this.FunctionRef.GetHashCode();
+                var hashCode = 41;
+                if (this.FunctionRef != null) hashCode = hashCode * 59 + this.FunctionRef.GetHashCode();
                 return hashCode;
             }
         }

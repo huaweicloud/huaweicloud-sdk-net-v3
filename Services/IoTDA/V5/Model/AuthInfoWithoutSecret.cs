@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(AuthInfoWithoutSecret input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SecureAccess != input.SecureAccess || (this.SecureAccess != null && !this.SecureAccess.Equals(input.SecureAccess))) return false;
+            if (this.Timeout != input.Timeout || (this.Timeout != null && !this.Timeout.Equals(input.Timeout))) return false;
 
-            return 
-                (
-                    this.SecureAccess == input.SecureAccess ||
-                    (this.SecureAccess != null &&
-                    this.SecureAccess.Equals(input.SecureAccess))
-                ) && 
-                (
-                    this.Timeout == input.Timeout ||
-                    (this.Timeout != null &&
-                    this.Timeout.Equals(input.Timeout))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SecureAccess != null)
-                    hashCode = hashCode * 59 + this.SecureAccess.GetHashCode();
-                if (this.Timeout != null)
-                    hashCode = hashCode * 59 + this.Timeout.GetHashCode();
+                var hashCode = 41;
+                if (this.SecureAccess != null) hashCode = hashCode * 59 + this.SecureAccess.GetHashCode();
+                if (this.Timeout != null) hashCode = hashCode * 59 + this.Timeout.GetHashCode();
                 return hashCode;
             }
         }

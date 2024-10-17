@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(SnapshotTaskStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LatestBackupTime != input.LatestBackupTime || (this.LatestBackupTime != null && !this.LatestBackupTime.Equals(input.LatestBackupTime))) return false;
 
-            return 
-                (
-                    this.LatestBackupTime == input.LatestBackupTime ||
-                    (this.LatestBackupTime != null &&
-                    this.LatestBackupTime.Equals(input.LatestBackupTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LatestBackupTime != null)
-                    hashCode = hashCode * 59 + this.LatestBackupTime.GetHashCode();
+                var hashCode = 41;
+                if (this.LatestBackupTime != null) hashCode = hashCode * 59 + this.LatestBackupTime.GetHashCode();
                 return hashCode;
             }
         }

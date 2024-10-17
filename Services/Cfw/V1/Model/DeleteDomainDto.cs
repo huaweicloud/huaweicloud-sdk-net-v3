@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(DeleteDomainDto input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ObjectId != input.ObjectId || (this.ObjectId != null && !this.ObjectId.Equals(input.ObjectId))) return false;
+            if (this.DomainAddressIds != input.DomainAddressIds || (this.DomainAddressIds != null && input.DomainAddressIds != null && !this.DomainAddressIds.SequenceEqual(input.DomainAddressIds))) return false;
 
-            return 
-                (
-                    this.ObjectId == input.ObjectId ||
-                    (this.ObjectId != null &&
-                    this.ObjectId.Equals(input.ObjectId))
-                ) && 
-                (
-                    this.DomainAddressIds == input.DomainAddressIds ||
-                    this.DomainAddressIds != null &&
-                    input.DomainAddressIds != null &&
-                    this.DomainAddressIds.SequenceEqual(input.DomainAddressIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ObjectId != null)
-                    hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
-                if (this.DomainAddressIds != null)
-                    hashCode = hashCode * 59 + this.DomainAddressIds.GetHashCode();
+                var hashCode = 41;
+                if (this.ObjectId != null) hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
+                if (this.DomainAddressIds != null) hashCode = hashCode * 59 + this.DomainAddressIds.GetHashCode();
                 return hashCode;
             }
         }

@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(ServerBlockDevice input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BootIndex != input.BootIndex || (this.BootIndex != null && !this.BootIndex.Equals(input.BootIndex))) return false;
+            if (this.PciAddress != input.PciAddress || (this.PciAddress != null && !this.PciAddress.Equals(input.PciAddress))) return false;
+            if (this.VolumeId != input.VolumeId || (this.VolumeId != null && !this.VolumeId.Equals(input.VolumeId))) return false;
+            if (this.Device != input.Device || (this.Device != null && !this.Device.Equals(input.Device))) return false;
+            if (this.ServerId != input.ServerId || (this.ServerId != null && !this.ServerId.Equals(input.ServerId))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.Bus != input.Bus || (this.Bus != null && !this.Bus.Equals(input.Bus))) return false;
 
-            return 
-                (
-                    this.BootIndex == input.BootIndex ||
-                    (this.BootIndex != null &&
-                    this.BootIndex.Equals(input.BootIndex))
-                ) && 
-                (
-                    this.PciAddress == input.PciAddress ||
-                    (this.PciAddress != null &&
-                    this.PciAddress.Equals(input.PciAddress))
-                ) && 
-                (
-                    this.VolumeId == input.VolumeId ||
-                    (this.VolumeId != null &&
-                    this.VolumeId.Equals(input.VolumeId))
-                ) && 
-                (
-                    this.Device == input.Device ||
-                    (this.Device != null &&
-                    this.Device.Equals(input.Device))
-                ) && 
-                (
-                    this.ServerId == input.ServerId ||
-                    (this.ServerId != null &&
-                    this.ServerId.Equals(input.ServerId))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.Bus == input.Bus ||
-                    (this.Bus != null &&
-                    this.Bus.Equals(input.Bus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BootIndex != null)
-                    hashCode = hashCode * 59 + this.BootIndex.GetHashCode();
-                if (this.PciAddress != null)
-                    hashCode = hashCode * 59 + this.PciAddress.GetHashCode();
-                if (this.VolumeId != null)
-                    hashCode = hashCode * 59 + this.VolumeId.GetHashCode();
-                if (this.Device != null)
-                    hashCode = hashCode * 59 + this.Device.GetHashCode();
-                if (this.ServerId != null)
-                    hashCode = hashCode * 59 + this.ServerId.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.Bus != null)
-                    hashCode = hashCode * 59 + this.Bus.GetHashCode();
+                var hashCode = 41;
+                if (this.BootIndex != null) hashCode = hashCode * 59 + this.BootIndex.GetHashCode();
+                if (this.PciAddress != null) hashCode = hashCode * 59 + this.PciAddress.GetHashCode();
+                if (this.VolumeId != null) hashCode = hashCode * 59 + this.VolumeId.GetHashCode();
+                if (this.Device != null) hashCode = hashCode * 59 + this.Device.GetHashCode();
+                if (this.ServerId != null) hashCode = hashCode * 59 + this.ServerId.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Bus != null) hashCode = hashCode * 59 + this.Bus.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(Encryption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HlsEncrypt != input.HlsEncrypt || (this.HlsEncrypt != null && !this.HlsEncrypt.Equals(input.HlsEncrypt))) return false;
 
-            return 
-                (
-                    this.HlsEncrypt == input.HlsEncrypt ||
-                    (this.HlsEncrypt != null &&
-                    this.HlsEncrypt.Equals(input.HlsEncrypt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HlsEncrypt != null)
-                    hashCode = hashCode * 59 + this.HlsEncrypt.GetHashCode();
+                var hashCode = 41;
+                if (this.HlsEncrypt != null) hashCode = hashCode * 59 + this.HlsEncrypt.GetHashCode();
                 return hashCode;
             }
         }

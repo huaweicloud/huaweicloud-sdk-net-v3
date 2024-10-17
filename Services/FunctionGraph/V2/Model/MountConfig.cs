@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(MountConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MountUser != input.MountUser || (this.MountUser != null && !this.MountUser.Equals(input.MountUser))) return false;
+            if (this.FuncMounts != input.FuncMounts || (this.FuncMounts != null && input.FuncMounts != null && !this.FuncMounts.SequenceEqual(input.FuncMounts))) return false;
 
-            return 
-                (
-                    this.MountUser == input.MountUser ||
-                    (this.MountUser != null &&
-                    this.MountUser.Equals(input.MountUser))
-                ) && 
-                (
-                    this.FuncMounts == input.FuncMounts ||
-                    this.FuncMounts != null &&
-                    input.FuncMounts != null &&
-                    this.FuncMounts.SequenceEqual(input.FuncMounts)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MountUser != null)
-                    hashCode = hashCode * 59 + this.MountUser.GetHashCode();
-                if (this.FuncMounts != null)
-                    hashCode = hashCode * 59 + this.FuncMounts.GetHashCode();
+                var hashCode = 41;
+                if (this.MountUser != null) hashCode = hashCode * 59 + this.MountUser.GetHashCode();
+                if (this.FuncMounts != null) hashCode = hashCode * 59 + this.FuncMounts.GetHashCode();
                 return hashCode;
             }
         }

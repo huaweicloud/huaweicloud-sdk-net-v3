@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ShowDomainNameResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.DnsName != input.DnsName || (this.DnsName != null && !this.DnsName.Equals(input.DnsName))) return false;
+            if (this.DnsType != input.DnsType || (this.DnsType != null && !this.DnsType.Equals(input.DnsType))) return false;
+            if (this.Ipv4Address != input.Ipv4Address || (this.Ipv4Address != null && !this.Ipv4Address.Equals(input.Ipv4Address))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.DnsName == input.DnsName ||
-                    (this.DnsName != null &&
-                    this.DnsName.Equals(input.DnsName))
-                ) && 
-                (
-                    this.DnsType == input.DnsType ||
-                    (this.DnsType != null &&
-                    this.DnsType.Equals(input.DnsType))
-                ) && 
-                (
-                    this.Ipv4Address == input.Ipv4Address ||
-                    (this.Ipv4Address != null &&
-                    this.Ipv4Address.Equals(input.Ipv4Address))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.DnsName != null)
-                    hashCode = hashCode * 59 + this.DnsName.GetHashCode();
-                if (this.DnsType != null)
-                    hashCode = hashCode * 59 + this.DnsType.GetHashCode();
-                if (this.Ipv4Address != null)
-                    hashCode = hashCode * 59 + this.Ipv4Address.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.DnsName != null) hashCode = hashCode * 59 + this.DnsName.GetHashCode();
+                if (this.DnsType != null) hashCode = hashCode * 59 + this.DnsType.GetHashCode();
+                if (this.Ipv4Address != null) hashCode = hashCode * 59 + this.Ipv4Address.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

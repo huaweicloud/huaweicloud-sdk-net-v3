@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(UpdateSnapshotRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Snapshot != input.Snapshot || (this.Snapshot != null && !this.Snapshot.Equals(input.Snapshot))) return false;
 
-            return 
-                (
-                    this.Snapshot == input.Snapshot ||
-                    (this.Snapshot != null &&
-                    this.Snapshot.Equals(input.Snapshot))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Snapshot != null)
-                    hashCode = hashCode * 59 + this.Snapshot.GetHashCode();
+                var hashCode = 41;
+                if (this.Snapshot != null) hashCode = hashCode * 59 + this.Snapshot.GetHashCode();
                 return hashCode;
             }
         }

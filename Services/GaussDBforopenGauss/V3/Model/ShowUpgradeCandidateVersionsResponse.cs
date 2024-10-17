@@ -112,64 +112,19 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ShowUpgradeCandidateVersionsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UpgradeTypeList != input.UpgradeTypeList || (this.UpgradeTypeList != null && input.UpgradeTypeList != null && !this.UpgradeTypeList.SequenceEqual(input.UpgradeTypeList))) return false;
+            if (this.RollbackEnabled != input.RollbackEnabled || (this.RollbackEnabled != null && !this.RollbackEnabled.Equals(input.RollbackEnabled))) return false;
+            if (this.SourceVersion != input.SourceVersion || (this.SourceVersion != null && !this.SourceVersion.Equals(input.SourceVersion))) return false;
+            if (this.TargetVersion != input.TargetVersion || (this.TargetVersion != null && !this.TargetVersion.Equals(input.TargetVersion))) return false;
+            if (this.RollUpgradeProgress != input.RollUpgradeProgress || (this.RollUpgradeProgress != null && !this.RollUpgradeProgress.Equals(input.RollUpgradeProgress))) return false;
+            if (this.UpgradeCandidateVersions != input.UpgradeCandidateVersions || (this.UpgradeCandidateVersions != null && input.UpgradeCandidateVersions != null && !this.UpgradeCandidateVersions.SequenceEqual(input.UpgradeCandidateVersions))) return false;
+            if (this.HotfixUpgradeCandidateVersions != input.HotfixUpgradeCandidateVersions || (this.HotfixUpgradeCandidateVersions != null && input.HotfixUpgradeCandidateVersions != null && !this.HotfixUpgradeCandidateVersions.SequenceEqual(input.HotfixUpgradeCandidateVersions))) return false;
+            if (this.HotfixRollbackCandidateVersions != input.HotfixRollbackCandidateVersions || (this.HotfixRollbackCandidateVersions != null && input.HotfixRollbackCandidateVersions != null && !this.HotfixRollbackCandidateVersions.SequenceEqual(input.HotfixRollbackCandidateVersions))) return false;
+            if (this.HotfixUpgradeInfos != input.HotfixUpgradeInfos || (this.HotfixUpgradeInfos != null && !this.HotfixUpgradeInfos.Equals(input.HotfixUpgradeInfos))) return false;
+            if (this.HotfixRollbackInfos != input.HotfixRollbackInfos || (this.HotfixRollbackInfos != null && !this.HotfixRollbackInfos.Equals(input.HotfixRollbackInfos))) return false;
 
-            return 
-                (
-                    this.UpgradeTypeList == input.UpgradeTypeList ||
-                    this.UpgradeTypeList != null &&
-                    input.UpgradeTypeList != null &&
-                    this.UpgradeTypeList.SequenceEqual(input.UpgradeTypeList)
-                ) && 
-                (
-                    this.RollbackEnabled == input.RollbackEnabled ||
-                    (this.RollbackEnabled != null &&
-                    this.RollbackEnabled.Equals(input.RollbackEnabled))
-                ) && 
-                (
-                    this.SourceVersion == input.SourceVersion ||
-                    (this.SourceVersion != null &&
-                    this.SourceVersion.Equals(input.SourceVersion))
-                ) && 
-                (
-                    this.TargetVersion == input.TargetVersion ||
-                    (this.TargetVersion != null &&
-                    this.TargetVersion.Equals(input.TargetVersion))
-                ) && 
-                (
-                    this.RollUpgradeProgress == input.RollUpgradeProgress ||
-                    (this.RollUpgradeProgress != null &&
-                    this.RollUpgradeProgress.Equals(input.RollUpgradeProgress))
-                ) && 
-                (
-                    this.UpgradeCandidateVersions == input.UpgradeCandidateVersions ||
-                    this.UpgradeCandidateVersions != null &&
-                    input.UpgradeCandidateVersions != null &&
-                    this.UpgradeCandidateVersions.SequenceEqual(input.UpgradeCandidateVersions)
-                ) && 
-                (
-                    this.HotfixUpgradeCandidateVersions == input.HotfixUpgradeCandidateVersions ||
-                    this.HotfixUpgradeCandidateVersions != null &&
-                    input.HotfixUpgradeCandidateVersions != null &&
-                    this.HotfixUpgradeCandidateVersions.SequenceEqual(input.HotfixUpgradeCandidateVersions)
-                ) && 
-                (
-                    this.HotfixRollbackCandidateVersions == input.HotfixRollbackCandidateVersions ||
-                    this.HotfixRollbackCandidateVersions != null &&
-                    input.HotfixRollbackCandidateVersions != null &&
-                    this.HotfixRollbackCandidateVersions.SequenceEqual(input.HotfixRollbackCandidateVersions)
-                ) && 
-                (
-                    this.HotfixUpgradeInfos == input.HotfixUpgradeInfos ||
-                    (this.HotfixUpgradeInfos != null &&
-                    this.HotfixUpgradeInfos.Equals(input.HotfixUpgradeInfos))
-                ) && 
-                (
-                    this.HotfixRollbackInfos == input.HotfixRollbackInfos ||
-                    (this.HotfixRollbackInfos != null &&
-                    this.HotfixRollbackInfos.Equals(input.HotfixRollbackInfos))
-                );
+            return true;
         }
 
         /// <summary>
@@ -179,27 +134,17 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UpgradeTypeList != null)
-                    hashCode = hashCode * 59 + this.UpgradeTypeList.GetHashCode();
-                if (this.RollbackEnabled != null)
-                    hashCode = hashCode * 59 + this.RollbackEnabled.GetHashCode();
-                if (this.SourceVersion != null)
-                    hashCode = hashCode * 59 + this.SourceVersion.GetHashCode();
-                if (this.TargetVersion != null)
-                    hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
-                if (this.RollUpgradeProgress != null)
-                    hashCode = hashCode * 59 + this.RollUpgradeProgress.GetHashCode();
-                if (this.UpgradeCandidateVersions != null)
-                    hashCode = hashCode * 59 + this.UpgradeCandidateVersions.GetHashCode();
-                if (this.HotfixUpgradeCandidateVersions != null)
-                    hashCode = hashCode * 59 + this.HotfixUpgradeCandidateVersions.GetHashCode();
-                if (this.HotfixRollbackCandidateVersions != null)
-                    hashCode = hashCode * 59 + this.HotfixRollbackCandidateVersions.GetHashCode();
-                if (this.HotfixUpgradeInfos != null)
-                    hashCode = hashCode * 59 + this.HotfixUpgradeInfos.GetHashCode();
-                if (this.HotfixRollbackInfos != null)
-                    hashCode = hashCode * 59 + this.HotfixRollbackInfos.GetHashCode();
+                var hashCode = 41;
+                if (this.UpgradeTypeList != null) hashCode = hashCode * 59 + this.UpgradeTypeList.GetHashCode();
+                if (this.RollbackEnabled != null) hashCode = hashCode * 59 + this.RollbackEnabled.GetHashCode();
+                if (this.SourceVersion != null) hashCode = hashCode * 59 + this.SourceVersion.GetHashCode();
+                if (this.TargetVersion != null) hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
+                if (this.RollUpgradeProgress != null) hashCode = hashCode * 59 + this.RollUpgradeProgress.GetHashCode();
+                if (this.UpgradeCandidateVersions != null) hashCode = hashCode * 59 + this.UpgradeCandidateVersions.GetHashCode();
+                if (this.HotfixUpgradeCandidateVersions != null) hashCode = hashCode * 59 + this.HotfixUpgradeCandidateVersions.GetHashCode();
+                if (this.HotfixRollbackCandidateVersions != null) hashCode = hashCode * 59 + this.HotfixRollbackCandidateVersions.GetHashCode();
+                if (this.HotfixUpgradeInfos != null) hashCode = hashCode * 59 + this.HotfixUpgradeInfos.GetHashCode();
+                if (this.HotfixRollbackInfos != null) hashCode = hashCode * 59 + this.HotfixRollbackInfos.GetHashCode();
                 return hashCode;
             }
         }

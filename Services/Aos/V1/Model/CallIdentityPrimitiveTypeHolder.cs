@@ -163,15 +163,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(CallIdentityPrimitiveTypeHolder input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CallIdentity != input.CallIdentity) return false;
 
-            return 
-                (
-                    this.CallIdentity == input.CallIdentity ||
-                    (this.CallIdentity != null &&
-                    this.CallIdentity.Equals(input.CallIdentity))
-                );
+            return true;
         }
 
         /// <summary>
@@ -181,9 +176,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CallIdentity != null)
-                    hashCode = hashCode * 59 + this.CallIdentity.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.CallIdentity.GetHashCode();
                 return hashCode;
             }
         }

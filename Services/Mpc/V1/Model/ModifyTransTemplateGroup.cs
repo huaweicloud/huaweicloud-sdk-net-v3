@@ -84,41 +84,15 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(ModifyTransTemplateGroup input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Videos != input.Videos || (this.Videos != null && input.Videos != null && !this.Videos.SequenceEqual(input.Videos))) return false;
+            if (this.Audio != input.Audio || (this.Audio != null && !this.Audio.Equals(input.Audio))) return false;
+            if (this.VideoCommon != input.VideoCommon || (this.VideoCommon != null && !this.VideoCommon.Equals(input.VideoCommon))) return false;
+            if (this.Common != input.Common || (this.Common != null && !this.Common.Equals(input.Common))) return false;
 
-            return 
-                (
-                    this.GroupId == input.GroupId ||
-                    (this.GroupId != null &&
-                    this.GroupId.Equals(input.GroupId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Videos == input.Videos ||
-                    this.Videos != null &&
-                    input.Videos != null &&
-                    this.Videos.SequenceEqual(input.Videos)
-                ) && 
-                (
-                    this.Audio == input.Audio ||
-                    (this.Audio != null &&
-                    this.Audio.Equals(input.Audio))
-                ) && 
-                (
-                    this.VideoCommon == input.VideoCommon ||
-                    (this.VideoCommon != null &&
-                    this.VideoCommon.Equals(input.VideoCommon))
-                ) && 
-                (
-                    this.Common == input.Common ||
-                    (this.Common != null &&
-                    this.Common.Equals(input.Common))
-                );
+            return true;
         }
 
         /// <summary>
@@ -128,19 +102,13 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.GroupId != null)
-                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Videos != null)
-                    hashCode = hashCode * 59 + this.Videos.GetHashCode();
-                if (this.Audio != null)
-                    hashCode = hashCode * 59 + this.Audio.GetHashCode();
-                if (this.VideoCommon != null)
-                    hashCode = hashCode * 59 + this.VideoCommon.GetHashCode();
-                if (this.Common != null)
-                    hashCode = hashCode * 59 + this.Common.GetHashCode();
+                var hashCode = 41;
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Videos != null) hashCode = hashCode * 59 + this.Videos.GetHashCode();
+                if (this.Audio != null) hashCode = hashCode * 59 + this.Audio.GetHashCode();
+                if (this.VideoCommon != null) hashCode = hashCode * 59 + this.VideoCommon.GetHashCode();
+                if (this.Common != null) hashCode = hashCode * 59 + this.Common.GetHashCode();
                 return hashCode;
             }
         }

@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(CreateTransferResponseBodyLogTransferInfoLogAgencyTransfer input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AgencyDomainId != input.AgencyDomainId || (this.AgencyDomainId != null && !this.AgencyDomainId.Equals(input.AgencyDomainId))) return false;
+            if (this.AgencyDomainName != input.AgencyDomainName || (this.AgencyDomainName != null && !this.AgencyDomainName.Equals(input.AgencyDomainName))) return false;
+            if (this.AgencyName != input.AgencyName || (this.AgencyName != null && !this.AgencyName.Equals(input.AgencyName))) return false;
+            if (this.AgencyProjectId != input.AgencyProjectId || (this.AgencyProjectId != null && !this.AgencyProjectId.Equals(input.AgencyProjectId))) return false;
+            if (this.BeAgencyDomainId != input.BeAgencyDomainId || (this.BeAgencyDomainId != null && !this.BeAgencyDomainId.Equals(input.BeAgencyDomainId))) return false;
+            if (this.BeAgencyProjectId != input.BeAgencyProjectId || (this.BeAgencyProjectId != null && !this.BeAgencyProjectId.Equals(input.BeAgencyProjectId))) return false;
 
-            return 
-                (
-                    this.AgencyDomainId == input.AgencyDomainId ||
-                    (this.AgencyDomainId != null &&
-                    this.AgencyDomainId.Equals(input.AgencyDomainId))
-                ) && 
-                (
-                    this.AgencyDomainName == input.AgencyDomainName ||
-                    (this.AgencyDomainName != null &&
-                    this.AgencyDomainName.Equals(input.AgencyDomainName))
-                ) && 
-                (
-                    this.AgencyName == input.AgencyName ||
-                    (this.AgencyName != null &&
-                    this.AgencyName.Equals(input.AgencyName))
-                ) && 
-                (
-                    this.AgencyProjectId == input.AgencyProjectId ||
-                    (this.AgencyProjectId != null &&
-                    this.AgencyProjectId.Equals(input.AgencyProjectId))
-                ) && 
-                (
-                    this.BeAgencyDomainId == input.BeAgencyDomainId ||
-                    (this.BeAgencyDomainId != null &&
-                    this.BeAgencyDomainId.Equals(input.BeAgencyDomainId))
-                ) && 
-                (
-                    this.BeAgencyProjectId == input.BeAgencyProjectId ||
-                    (this.BeAgencyProjectId != null &&
-                    this.BeAgencyProjectId.Equals(input.BeAgencyProjectId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AgencyDomainId != null)
-                    hashCode = hashCode * 59 + this.AgencyDomainId.GetHashCode();
-                if (this.AgencyDomainName != null)
-                    hashCode = hashCode * 59 + this.AgencyDomainName.GetHashCode();
-                if (this.AgencyName != null)
-                    hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
-                if (this.AgencyProjectId != null)
-                    hashCode = hashCode * 59 + this.AgencyProjectId.GetHashCode();
-                if (this.BeAgencyDomainId != null)
-                    hashCode = hashCode * 59 + this.BeAgencyDomainId.GetHashCode();
-                if (this.BeAgencyProjectId != null)
-                    hashCode = hashCode * 59 + this.BeAgencyProjectId.GetHashCode();
+                var hashCode = 41;
+                if (this.AgencyDomainId != null) hashCode = hashCode * 59 + this.AgencyDomainId.GetHashCode();
+                if (this.AgencyDomainName != null) hashCode = hashCode * 59 + this.AgencyDomainName.GetHashCode();
+                if (this.AgencyName != null) hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
+                if (this.AgencyProjectId != null) hashCode = hashCode * 59 + this.AgencyProjectId.GetHashCode();
+                if (this.BeAgencyDomainId != null) hashCode = hashCode * 59 + this.BeAgencyDomainId.GetHashCode();
+                if (this.BeAgencyProjectId != null) hashCode = hashCode * 59 + this.BeAgencyProjectId.GetHashCode();
                 return hashCode;
             }
         }

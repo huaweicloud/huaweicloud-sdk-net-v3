@@ -189,25 +189,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(CreateConnectorReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Specification != input.Specification) return false;
+            if (this.NodeCnt != input.NodeCnt || (this.NodeCnt != null && !this.NodeCnt.Equals(input.NodeCnt))) return false;
+            if (this.SpecCode != input.SpecCode || (this.SpecCode != null && !this.SpecCode.Equals(input.SpecCode))) return false;
 
-            return 
-                (
-                    this.Specification == input.Specification ||
-                    (this.Specification != null &&
-                    this.Specification.Equals(input.Specification))
-                ) && 
-                (
-                    this.NodeCnt == input.NodeCnt ||
-                    (this.NodeCnt != null &&
-                    this.NodeCnt.Equals(input.NodeCnt))
-                ) && 
-                (
-                    this.SpecCode == input.SpecCode ||
-                    (this.SpecCode != null &&
-                    this.SpecCode.Equals(input.SpecCode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -217,13 +204,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Specification != null)
-                    hashCode = hashCode * 59 + this.Specification.GetHashCode();
-                if (this.NodeCnt != null)
-                    hashCode = hashCode * 59 + this.NodeCnt.GetHashCode();
-                if (this.SpecCode != null)
-                    hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Specification.GetHashCode();
+                if (this.NodeCnt != null) hashCode = hashCode * 59 + this.NodeCnt.GetHashCode();
+                if (this.SpecCode != null) hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
                 return hashCode;
             }
         }

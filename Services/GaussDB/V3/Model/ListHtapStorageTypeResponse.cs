@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ListHtapStorageTypeResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StorageType != input.StorageType || (this.StorageType != null && input.StorageType != null && !this.StorageType.SequenceEqual(input.StorageType))) return false;
 
-            return 
-                (
-                    this.StorageType == input.StorageType ||
-                    this.StorageType != null &&
-                    input.StorageType != null &&
-                    this.StorageType.SequenceEqual(input.StorageType)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StorageType != null)
-                    hashCode = hashCode * 59 + this.StorageType.GetHashCode();
+                var hashCode = 41;
+                if (this.StorageType != null) hashCode = hashCode * 59 + this.StorageType.GetHashCode();
                 return hashCode;
             }
         }

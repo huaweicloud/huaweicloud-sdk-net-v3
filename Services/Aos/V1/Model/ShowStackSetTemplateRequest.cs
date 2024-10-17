@@ -204,42 +204,15 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(ShowStackSetTemplateRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClientRequestId != input.ClientRequestId || (this.ClientRequestId != null && !this.ClientRequestId.Equals(input.ClientRequestId))) return false;
+            if (this.StackSetName != input.StackSetName || (this.StackSetName != null && !this.StackSetName.Equals(input.StackSetName))) return false;
+            if (this.StackSetId != input.StackSetId || (this.StackSetId != null && !this.StackSetId.Equals(input.StackSetId))) return false;
+            if (this.AccessControlSourceIps != input.AccessControlSourceIps || (this.AccessControlSourceIps != null && input.AccessControlSourceIps != null && !this.AccessControlSourceIps.SequenceEqual(input.AccessControlSourceIps))) return false;
+            if (this.AccessControlSourceVpcIds != input.AccessControlSourceVpcIds || (this.AccessControlSourceVpcIds != null && input.AccessControlSourceVpcIds != null && !this.AccessControlSourceVpcIds.SequenceEqual(input.AccessControlSourceVpcIds))) return false;
+            if (this.CallIdentity != input.CallIdentity) return false;
 
-            return 
-                (
-                    this.ClientRequestId == input.ClientRequestId ||
-                    (this.ClientRequestId != null &&
-                    this.ClientRequestId.Equals(input.ClientRequestId))
-                ) && 
-                (
-                    this.StackSetName == input.StackSetName ||
-                    (this.StackSetName != null &&
-                    this.StackSetName.Equals(input.StackSetName))
-                ) && 
-                (
-                    this.StackSetId == input.StackSetId ||
-                    (this.StackSetId != null &&
-                    this.StackSetId.Equals(input.StackSetId))
-                ) && 
-                (
-                    this.AccessControlSourceIps == input.AccessControlSourceIps ||
-                    this.AccessControlSourceIps != null &&
-                    input.AccessControlSourceIps != null &&
-                    this.AccessControlSourceIps.SequenceEqual(input.AccessControlSourceIps)
-                ) && 
-                (
-                    this.AccessControlSourceVpcIds == input.AccessControlSourceVpcIds ||
-                    this.AccessControlSourceVpcIds != null &&
-                    input.AccessControlSourceVpcIds != null &&
-                    this.AccessControlSourceVpcIds.SequenceEqual(input.AccessControlSourceVpcIds)
-                ) && 
-                (
-                    this.CallIdentity == input.CallIdentity ||
-                    (this.CallIdentity != null &&
-                    this.CallIdentity.Equals(input.CallIdentity))
-                );
+            return true;
         }
 
         /// <summary>
@@ -249,19 +222,13 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClientRequestId != null)
-                    hashCode = hashCode * 59 + this.ClientRequestId.GetHashCode();
-                if (this.StackSetName != null)
-                    hashCode = hashCode * 59 + this.StackSetName.GetHashCode();
-                if (this.StackSetId != null)
-                    hashCode = hashCode * 59 + this.StackSetId.GetHashCode();
-                if (this.AccessControlSourceIps != null)
-                    hashCode = hashCode * 59 + this.AccessControlSourceIps.GetHashCode();
-                if (this.AccessControlSourceVpcIds != null)
-                    hashCode = hashCode * 59 + this.AccessControlSourceVpcIds.GetHashCode();
-                if (this.CallIdentity != null)
-                    hashCode = hashCode * 59 + this.CallIdentity.GetHashCode();
+                var hashCode = 41;
+                if (this.ClientRequestId != null) hashCode = hashCode * 59 + this.ClientRequestId.GetHashCode();
+                if (this.StackSetName != null) hashCode = hashCode * 59 + this.StackSetName.GetHashCode();
+                if (this.StackSetId != null) hashCode = hashCode * 59 + this.StackSetId.GetHashCode();
+                if (this.AccessControlSourceIps != null) hashCode = hashCode * 59 + this.AccessControlSourceIps.GetHashCode();
+                if (this.AccessControlSourceVpcIds != null) hashCode = hashCode * 59 + this.AccessControlSourceVpcIds.GetHashCode();
+                hashCode = hashCode * 59 + this.CallIdentity.GetHashCode();
                 return hashCode;
             }
         }

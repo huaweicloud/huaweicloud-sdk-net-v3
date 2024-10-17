@@ -268,93 +268,25 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(Event2alarmRuleBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UserId != input.UserId || (this.UserId != null && !this.UserId.Equals(input.UserId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.ResourceProvider != input.ResourceProvider || (this.ResourceProvider != null && !this.ResourceProvider.Equals(input.ResourceProvider))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && !this.Metadata.Equals(input.Metadata))) return false;
+            if (this.Enable != input.Enable || (this.Enable != null && !this.Enable.Equals(input.Enable))) return false;
+            if (this.TriggerPolicies != input.TriggerPolicies || (this.TriggerPolicies != null && input.TriggerPolicies != null && !this.TriggerPolicies.SequenceEqual(input.TriggerPolicies))) return false;
+            if (this.AlarmType != input.AlarmType) return false;
+            if (this.ActionRule != input.ActionRule || (this.ActionRule != null && !this.ActionRule.Equals(input.ActionRule))) return false;
+            if (this.InhibitRule != input.InhibitRule || (this.InhibitRule != null && !this.InhibitRule.Equals(input.InhibitRule))) return false;
+            if (this.RouteGroupRule != input.RouteGroupRule || (this.RouteGroupRule != null && !this.RouteGroupRule.Equals(input.RouteGroupRule))) return false;
+            if (this.EventNames != input.EventNames || (this.EventNames != null && input.EventNames != null && !this.EventNames.SequenceEqual(input.EventNames))) return false;
+            if (this.Migrated != input.Migrated || (this.Migrated != null && !this.Migrated.Equals(input.Migrated))) return false;
+            if (this.Topics != input.Topics || (this.Topics != null && input.Topics != null && !this.Topics.SequenceEqual(input.Topics))) return false;
 
-            return 
-                (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.ResourceProvider == input.ResourceProvider ||
-                    (this.ResourceProvider != null &&
-                    this.ResourceProvider.Equals(input.ResourceProvider))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    (this.Metadata != null &&
-                    this.Metadata.Equals(input.Metadata))
-                ) && 
-                (
-                    this.Enable == input.Enable ||
-                    (this.Enable != null &&
-                    this.Enable.Equals(input.Enable))
-                ) && 
-                (
-                    this.TriggerPolicies == input.TriggerPolicies ||
-                    this.TriggerPolicies != null &&
-                    input.TriggerPolicies != null &&
-                    this.TriggerPolicies.SequenceEqual(input.TriggerPolicies)
-                ) && 
-                (
-                    this.AlarmType == input.AlarmType ||
-                    (this.AlarmType != null &&
-                    this.AlarmType.Equals(input.AlarmType))
-                ) && 
-                (
-                    this.ActionRule == input.ActionRule ||
-                    (this.ActionRule != null &&
-                    this.ActionRule.Equals(input.ActionRule))
-                ) && 
-                (
-                    this.InhibitRule == input.InhibitRule ||
-                    (this.InhibitRule != null &&
-                    this.InhibitRule.Equals(input.InhibitRule))
-                ) && 
-                (
-                    this.RouteGroupRule == input.RouteGroupRule ||
-                    (this.RouteGroupRule != null &&
-                    this.RouteGroupRule.Equals(input.RouteGroupRule))
-                ) && 
-                (
-                    this.EventNames == input.EventNames ||
-                    this.EventNames != null &&
-                    input.EventNames != null &&
-                    this.EventNames.SequenceEqual(input.EventNames)
-                ) && 
-                (
-                    this.Migrated == input.Migrated ||
-                    (this.Migrated != null &&
-                    this.Migrated.Equals(input.Migrated))
-                ) && 
-                (
-                    this.Topics == input.Topics ||
-                    this.Topics != null &&
-                    input.Topics != null &&
-                    this.Topics.SequenceEqual(input.Topics)
-                );
+            return true;
         }
 
         /// <summary>
@@ -364,39 +296,23 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.ResourceProvider != null)
-                    hashCode = hashCode * 59 + this.ResourceProvider.GetHashCode();
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
-                if (this.Enable != null)
-                    hashCode = hashCode * 59 + this.Enable.GetHashCode();
-                if (this.TriggerPolicies != null)
-                    hashCode = hashCode * 59 + this.TriggerPolicies.GetHashCode();
-                if (this.AlarmType != null)
-                    hashCode = hashCode * 59 + this.AlarmType.GetHashCode();
-                if (this.ActionRule != null)
-                    hashCode = hashCode * 59 + this.ActionRule.GetHashCode();
-                if (this.InhibitRule != null)
-                    hashCode = hashCode * 59 + this.InhibitRule.GetHashCode();
-                if (this.RouteGroupRule != null)
-                    hashCode = hashCode * 59 + this.RouteGroupRule.GetHashCode();
-                if (this.EventNames != null)
-                    hashCode = hashCode * 59 + this.EventNames.GetHashCode();
-                if (this.Migrated != null)
-                    hashCode = hashCode * 59 + this.Migrated.GetHashCode();
-                if (this.Topics != null)
-                    hashCode = hashCode * 59 + this.Topics.GetHashCode();
+                var hashCode = 41;
+                if (this.UserId != null) hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.ResourceProvider != null) hashCode = hashCode * 59 + this.ResourceProvider.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                if (this.Enable != null) hashCode = hashCode * 59 + this.Enable.GetHashCode();
+                if (this.TriggerPolicies != null) hashCode = hashCode * 59 + this.TriggerPolicies.GetHashCode();
+                hashCode = hashCode * 59 + this.AlarmType.GetHashCode();
+                if (this.ActionRule != null) hashCode = hashCode * 59 + this.ActionRule.GetHashCode();
+                if (this.InhibitRule != null) hashCode = hashCode * 59 + this.InhibitRule.GetHashCode();
+                if (this.RouteGroupRule != null) hashCode = hashCode * 59 + this.RouteGroupRule.GetHashCode();
+                if (this.EventNames != null) hashCode = hashCode * 59 + this.EventNames.GetHashCode();
+                if (this.Migrated != null) hashCode = hashCode * 59 + this.Migrated.GetHashCode();
+                if (this.Topics != null) hashCode = hashCode * 59 + this.Topics.GetHashCode();
                 return hashCode;
             }
         }

@@ -184,30 +184,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(UpdateReleaseReqBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ChartId != input.ChartId || (this.ChartId != null && !this.ChartId.Equals(input.ChartId))) return false;
+            if (this.Action != input.Action) return false;
+            if (this.Parameters != input.Parameters || (this.Parameters != null && !this.Parameters.Equals(input.Parameters))) return false;
+            if (this.Values != input.Values || (this.Values != null && !this.Values.Equals(input.Values))) return false;
 
-            return 
-                (
-                    this.ChartId == input.ChartId ||
-                    (this.ChartId != null &&
-                    this.ChartId.Equals(input.ChartId))
-                ) && 
-                (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                ) && 
-                (
-                    this.Parameters == input.Parameters ||
-                    (this.Parameters != null &&
-                    this.Parameters.Equals(input.Parameters))
-                ) && 
-                (
-                    this.Values == input.Values ||
-                    (this.Values != null &&
-                    this.Values.Equals(input.Values))
-                );
+            return true;
         }
 
         /// <summary>
@@ -217,15 +200,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ChartId != null)
-                    hashCode = hashCode * 59 + this.ChartId.GetHashCode();
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
-                if (this.Parameters != null)
-                    hashCode = hashCode * 59 + this.Parameters.GetHashCode();
-                if (this.Values != null)
-                    hashCode = hashCode * 59 + this.Values.GetHashCode();
+                var hashCode = 41;
+                if (this.ChartId != null) hashCode = hashCode * 59 + this.ChartId.GetHashCode();
+                hashCode = hashCode * 59 + this.Action.GetHashCode();
+                if (this.Parameters != null) hashCode = hashCode * 59 + this.Parameters.GetHashCode();
+                if (this.Values != null) hashCode = hashCode * 59 + this.Values.GetHashCode();
                 return hashCode;
             }
         }

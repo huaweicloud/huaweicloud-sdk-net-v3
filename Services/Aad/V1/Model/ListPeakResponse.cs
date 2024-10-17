@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         /// </summary>
         public bool Equals(ListPeakResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AttackKbpsPeak != input.AttackKbpsPeak || (this.AttackKbpsPeak != null && !this.AttackKbpsPeak.Equals(input.AttackKbpsPeak))) return false;
+            if (this.InKbpsPeak != input.InKbpsPeak || (this.InKbpsPeak != null && !this.InKbpsPeak.Equals(input.InKbpsPeak))) return false;
+            if (this.DdosCount != input.DdosCount || (this.DdosCount != null && !this.DdosCount.Equals(input.DdosCount))) return false;
+            if (this.Timestamp != input.Timestamp || (this.Timestamp != null && !this.Timestamp.Equals(input.Timestamp))) return false;
+            if (this.Vip != input.Vip || (this.Vip != null && !this.Vip.Equals(input.Vip))) return false;
 
-            return 
-                (
-                    this.AttackKbpsPeak == input.AttackKbpsPeak ||
-                    (this.AttackKbpsPeak != null &&
-                    this.AttackKbpsPeak.Equals(input.AttackKbpsPeak))
-                ) && 
-                (
-                    this.InKbpsPeak == input.InKbpsPeak ||
-                    (this.InKbpsPeak != null &&
-                    this.InKbpsPeak.Equals(input.InKbpsPeak))
-                ) && 
-                (
-                    this.DdosCount == input.DdosCount ||
-                    (this.DdosCount != null &&
-                    this.DdosCount.Equals(input.DdosCount))
-                ) && 
-                (
-                    this.Timestamp == input.Timestamp ||
-                    (this.Timestamp != null &&
-                    this.Timestamp.Equals(input.Timestamp))
-                ) && 
-                (
-                    this.Vip == input.Vip ||
-                    (this.Vip != null &&
-                    this.Vip.Equals(input.Vip))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AttackKbpsPeak != null)
-                    hashCode = hashCode * 59 + this.AttackKbpsPeak.GetHashCode();
-                if (this.InKbpsPeak != null)
-                    hashCode = hashCode * 59 + this.InKbpsPeak.GetHashCode();
-                if (this.DdosCount != null)
-                    hashCode = hashCode * 59 + this.DdosCount.GetHashCode();
-                if (this.Timestamp != null)
-                    hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
-                if (this.Vip != null)
-                    hashCode = hashCode * 59 + this.Vip.GetHashCode();
+                var hashCode = 41;
+                if (this.AttackKbpsPeak != null) hashCode = hashCode * 59 + this.AttackKbpsPeak.GetHashCode();
+                if (this.InKbpsPeak != null) hashCode = hashCode * 59 + this.InKbpsPeak.GetHashCode();
+                if (this.DdosCount != null) hashCode = hashCode * 59 + this.DdosCount.GetHashCode();
+                if (this.Timestamp != null) hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
+                if (this.Vip != null) hashCode = hashCode * 59 + this.Vip.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(VmMetaData input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AdminPass != input.AdminPass || (this.AdminPass != null && !this.AdminPass.Equals(input.AdminPass))) return false;
 
-            return 
-                (
-                    this.AdminPass == input.AdminPass ||
-                    (this.AdminPass != null &&
-                    this.AdminPass.Equals(input.AdminPass))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AdminPass != null)
-                    hashCode = hashCode * 59 + this.AdminPass.GetHashCode();
+                var hashCode = 41;
+                if (this.AdminPass != null) hashCode = hashCode * 59 + this.AdminPass.GetHashCode();
                 return hashCode;
             }
         }

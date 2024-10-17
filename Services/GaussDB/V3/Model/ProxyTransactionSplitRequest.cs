@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ProxyTransactionSplitRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TransactionSplit != input.TransactionSplit || (this.TransactionSplit != null && !this.TransactionSplit.Equals(input.TransactionSplit))) return false;
+            if (this.ProxyIdList != input.ProxyIdList || (this.ProxyIdList != null && input.ProxyIdList != null && !this.ProxyIdList.SequenceEqual(input.ProxyIdList))) return false;
 
-            return 
-                (
-                    this.TransactionSplit == input.TransactionSplit ||
-                    (this.TransactionSplit != null &&
-                    this.TransactionSplit.Equals(input.TransactionSplit))
-                ) && 
-                (
-                    this.ProxyIdList == input.ProxyIdList ||
-                    this.ProxyIdList != null &&
-                    input.ProxyIdList != null &&
-                    this.ProxyIdList.SequenceEqual(input.ProxyIdList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TransactionSplit != null)
-                    hashCode = hashCode * 59 + this.TransactionSplit.GetHashCode();
-                if (this.ProxyIdList != null)
-                    hashCode = hashCode * 59 + this.ProxyIdList.GetHashCode();
+                var hashCode = 41;
+                if (this.TransactionSplit != null) hashCode = hashCode * 59 + this.TransactionSplit.GetHashCode();
+                if (this.ProxyIdList != null) hashCode = hashCode * 59 + this.ProxyIdList.GetHashCode();
                 return hashCode;
             }
         }

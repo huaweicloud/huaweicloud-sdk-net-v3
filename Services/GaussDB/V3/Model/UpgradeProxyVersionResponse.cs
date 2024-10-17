@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(UpgradeProxyVersionResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UpdateResult != input.UpdateResult || (this.UpdateResult != null && input.UpdateResult != null && !this.UpdateResult.SequenceEqual(input.UpdateResult))) return false;
 
-            return 
-                (
-                    this.UpdateResult == input.UpdateResult ||
-                    this.UpdateResult != null &&
-                    input.UpdateResult != null &&
-                    this.UpdateResult.SequenceEqual(input.UpdateResult)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UpdateResult != null)
-                    hashCode = hashCode * 59 + this.UpdateResult.GetHashCode();
+                var hashCode = 41;
+                if (this.UpdateResult != null) hashCode = hashCode * 59 + this.UpdateResult.GetHashCode();
                 return hashCode;
             }
         }

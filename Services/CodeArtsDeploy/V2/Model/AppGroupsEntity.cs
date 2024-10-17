@@ -112,61 +112,19 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(AppGroupsEntity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.Path != input.Path || (this.Path != null && !this.Path.Equals(input.Path))) return false;
+            if (this.ParentId != input.ParentId || (this.ParentId != null && !this.ParentId.Equals(input.ParentId))) return false;
+            if (this.Ordinal != input.Ordinal || (this.Ordinal != null && !this.Ordinal.Equals(input.Ordinal))) return false;
+            if (this.CreateUserId != input.CreateUserId || (this.CreateUserId != null && !this.CreateUserId.Equals(input.CreateUserId))) return false;
+            if (this.LastUpdateUserId != input.LastUpdateUserId || (this.LastUpdateUserId != null && !this.LastUpdateUserId.Equals(input.LastUpdateUserId))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.Children != input.Children || (this.Children != null && input.Children != null && !this.Children.SequenceEqual(input.Children))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Path == input.Path ||
-                    (this.Path != null &&
-                    this.Path.Equals(input.Path))
-                ) && 
-                (
-                    this.ParentId == input.ParentId ||
-                    (this.ParentId != null &&
-                    this.ParentId.Equals(input.ParentId))
-                ) && 
-                (
-                    this.Ordinal == input.Ordinal ||
-                    (this.Ordinal != null &&
-                    this.Ordinal.Equals(input.Ordinal))
-                ) && 
-                (
-                    this.CreateUserId == input.CreateUserId ||
-                    (this.CreateUserId != null &&
-                    this.CreateUserId.Equals(input.CreateUserId))
-                ) && 
-                (
-                    this.LastUpdateUserId == input.LastUpdateUserId ||
-                    (this.LastUpdateUserId != null &&
-                    this.LastUpdateUserId.Equals(input.LastUpdateUserId))
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.Children == input.Children ||
-                    this.Children != null &&
-                    input.Children != null &&
-                    this.Children.SequenceEqual(input.Children)
-                );
+            return true;
         }
 
         /// <summary>
@@ -176,27 +134,17 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.Path != null)
-                    hashCode = hashCode * 59 + this.Path.GetHashCode();
-                if (this.ParentId != null)
-                    hashCode = hashCode * 59 + this.ParentId.GetHashCode();
-                if (this.Ordinal != null)
-                    hashCode = hashCode * 59 + this.Ordinal.GetHashCode();
-                if (this.CreateUserId != null)
-                    hashCode = hashCode * 59 + this.CreateUserId.GetHashCode();
-                if (this.LastUpdateUserId != null)
-                    hashCode = hashCode * 59 + this.LastUpdateUserId.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.Children != null)
-                    hashCode = hashCode * 59 + this.Children.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.Path != null) hashCode = hashCode * 59 + this.Path.GetHashCode();
+                if (this.ParentId != null) hashCode = hashCode * 59 + this.ParentId.GetHashCode();
+                if (this.Ordinal != null) hashCode = hashCode * 59 + this.Ordinal.GetHashCode();
+                if (this.CreateUserId != null) hashCode = hashCode * 59 + this.CreateUserId.GetHashCode();
+                if (this.LastUpdateUserId != null) hashCode = hashCode * 59 + this.LastUpdateUserId.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.Children != null) hashCode = hashCode * 59 + this.Children.GetHashCode();
                 return hashCode;
             }
         }

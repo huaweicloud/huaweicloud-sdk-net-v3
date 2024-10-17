@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(MasterEIPResponseStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PrivateEndpoint != input.PrivateEndpoint || (this.PrivateEndpoint != null && !this.PrivateEndpoint.Equals(input.PrivateEndpoint))) return false;
+            if (this.PublicEndpoint != input.PublicEndpoint || (this.PublicEndpoint != null && !this.PublicEndpoint.Equals(input.PublicEndpoint))) return false;
 
-            return 
-                (
-                    this.PrivateEndpoint == input.PrivateEndpoint ||
-                    (this.PrivateEndpoint != null &&
-                    this.PrivateEndpoint.Equals(input.PrivateEndpoint))
-                ) && 
-                (
-                    this.PublicEndpoint == input.PublicEndpoint ||
-                    (this.PublicEndpoint != null &&
-                    this.PublicEndpoint.Equals(input.PublicEndpoint))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PrivateEndpoint != null)
-                    hashCode = hashCode * 59 + this.PrivateEndpoint.GetHashCode();
-                if (this.PublicEndpoint != null)
-                    hashCode = hashCode * 59 + this.PublicEndpoint.GetHashCode();
+                var hashCode = 41;
+                if (this.PrivateEndpoint != null) hashCode = hashCode * 59 + this.PrivateEndpoint.GetHashCode();
+                if (this.PublicEndpoint != null) hashCode = hashCode * 59 + this.PublicEndpoint.GetHashCode();
                 return hashCode;
             }
         }

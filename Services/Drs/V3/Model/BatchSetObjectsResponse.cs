@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(BatchSetObjectsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AllCounts != input.AllCounts || (this.AllCounts != null && !this.AllCounts.Equals(input.AllCounts))) return false;
+            if (this.Results != input.Results || (this.Results != null && input.Results != null && !this.Results.SequenceEqual(input.Results))) return false;
 
-            return 
-                (
-                    this.AllCounts == input.AllCounts ||
-                    (this.AllCounts != null &&
-                    this.AllCounts.Equals(input.AllCounts))
-                ) && 
-                (
-                    this.Results == input.Results ||
-                    this.Results != null &&
-                    input.Results != null &&
-                    this.Results.SequenceEqual(input.Results)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AllCounts != null)
-                    hashCode = hashCode * 59 + this.AllCounts.GetHashCode();
-                if (this.Results != null)
-                    hashCode = hashCode * 59 + this.Results.GetHashCode();
+                var hashCode = 41;
+                if (this.AllCounts != null) hashCode = hashCode * 59 + this.AllCounts.GetHashCode();
+                if (this.Results != null) hashCode = hashCode * 59 + this.Results.GetHashCode();
                 return hashCode;
             }
         }

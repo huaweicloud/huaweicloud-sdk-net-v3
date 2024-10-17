@@ -757,166 +757,40 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(CreateFunctionRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FuncName != input.FuncName || (this.FuncName != null && !this.FuncName.Equals(input.FuncName))) return false;
+            if (this.Package != input.Package || (this.Package != null && !this.Package.Equals(input.Package))) return false;
+            if (this.Runtime != input.Runtime) return false;
+            if (this.Timeout != input.Timeout || (this.Timeout != null && !this.Timeout.Equals(input.Timeout))) return false;
+            if (this.Handler != input.Handler || (this.Handler != null && !this.Handler.Equals(input.Handler))) return false;
+            if (this.DependVersionList != input.DependVersionList || (this.DependVersionList != null && input.DependVersionList != null && !this.DependVersionList.SequenceEqual(input.DependVersionList))) return false;
+            if (this.FuncVpc != input.FuncVpc || (this.FuncVpc != null && !this.FuncVpc.Equals(input.FuncVpc))) return false;
+            if (this.MemorySize != input.MemorySize || (this.MemorySize != null && !this.MemorySize.Equals(input.MemorySize))) return false;
+            if (this.GpuMemory != input.GpuMemory || (this.GpuMemory != null && !this.GpuMemory.Equals(input.GpuMemory))) return false;
+            if (this.GpuType != input.GpuType || (this.GpuType != null && !this.GpuType.Equals(input.GpuType))) return false;
+            if (this.CodeType != input.CodeType) return false;
+            if (this.CodeUrl != input.CodeUrl || (this.CodeUrl != null && !this.CodeUrl.Equals(input.CodeUrl))) return false;
+            if (this.CodeFilename != input.CodeFilename || (this.CodeFilename != null && !this.CodeFilename.Equals(input.CodeFilename))) return false;
+            if (this.CustomImage != input.CustomImage || (this.CustomImage != null && !this.CustomImage.Equals(input.CustomImage))) return false;
+            if (this.UserData != input.UserData || (this.UserData != null && !this.UserData.Equals(input.UserData))) return false;
+            if (this.EncryptedUserData != input.EncryptedUserData || (this.EncryptedUserData != null && !this.EncryptedUserData.Equals(input.EncryptedUserData))) return false;
+            if (this.Xrole != input.Xrole || (this.Xrole != null && !this.Xrole.Equals(input.Xrole))) return false;
+            if (this.AppXrole != input.AppXrole || (this.AppXrole != null && !this.AppXrole.Equals(input.AppXrole))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.FuncCode != input.FuncCode || (this.FuncCode != null && !this.FuncCode.Equals(input.FuncCode))) return false;
+            if (this.MountConfig != input.MountConfig || (this.MountConfig != null && !this.MountConfig.Equals(input.MountConfig))) return false;
+            if (this.InitializerHandler != input.InitializerHandler || (this.InitializerHandler != null && !this.InitializerHandler.Equals(input.InitializerHandler))) return false;
+            if (this.InitializerTimeout != input.InitializerTimeout || (this.InitializerTimeout != null && !this.InitializerTimeout.Equals(input.InitializerTimeout))) return false;
+            if (this.PreStopHandler != input.PreStopHandler || (this.PreStopHandler != null && !this.PreStopHandler.Equals(input.PreStopHandler))) return false;
+            if (this.PreStopTimeout != input.PreStopTimeout || (this.PreStopTimeout != null && !this.PreStopTimeout.Equals(input.PreStopTimeout))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.Type != input.Type) return false;
+            if (this.LogConfig != input.LogConfig || (this.LogConfig != null && !this.LogConfig.Equals(input.LogConfig))) return false;
+            if (this.NetworkController != input.NetworkController || (this.NetworkController != null && !this.NetworkController.Equals(input.NetworkController))) return false;
+            if (this.IsStatefulFunction != input.IsStatefulFunction || (this.IsStatefulFunction != null && !this.IsStatefulFunction.Equals(input.IsStatefulFunction))) return false;
+            if (this.EnableDynamicMemory != input.EnableDynamicMemory || (this.EnableDynamicMemory != null && !this.EnableDynamicMemory.Equals(input.EnableDynamicMemory))) return false;
 
-            return 
-                (
-                    this.FuncName == input.FuncName ||
-                    (this.FuncName != null &&
-                    this.FuncName.Equals(input.FuncName))
-                ) && 
-                (
-                    this.Package == input.Package ||
-                    (this.Package != null &&
-                    this.Package.Equals(input.Package))
-                ) && 
-                (
-                    this.Runtime == input.Runtime ||
-                    (this.Runtime != null &&
-                    this.Runtime.Equals(input.Runtime))
-                ) && 
-                (
-                    this.Timeout == input.Timeout ||
-                    (this.Timeout != null &&
-                    this.Timeout.Equals(input.Timeout))
-                ) && 
-                (
-                    this.Handler == input.Handler ||
-                    (this.Handler != null &&
-                    this.Handler.Equals(input.Handler))
-                ) && 
-                (
-                    this.DependVersionList == input.DependVersionList ||
-                    this.DependVersionList != null &&
-                    input.DependVersionList != null &&
-                    this.DependVersionList.SequenceEqual(input.DependVersionList)
-                ) && 
-                (
-                    this.FuncVpc == input.FuncVpc ||
-                    (this.FuncVpc != null &&
-                    this.FuncVpc.Equals(input.FuncVpc))
-                ) && 
-                (
-                    this.MemorySize == input.MemorySize ||
-                    (this.MemorySize != null &&
-                    this.MemorySize.Equals(input.MemorySize))
-                ) && 
-                (
-                    this.GpuMemory == input.GpuMemory ||
-                    (this.GpuMemory != null &&
-                    this.GpuMemory.Equals(input.GpuMemory))
-                ) && 
-                (
-                    this.GpuType == input.GpuType ||
-                    (this.GpuType != null &&
-                    this.GpuType.Equals(input.GpuType))
-                ) && 
-                (
-                    this.CodeType == input.CodeType ||
-                    (this.CodeType != null &&
-                    this.CodeType.Equals(input.CodeType))
-                ) && 
-                (
-                    this.CodeUrl == input.CodeUrl ||
-                    (this.CodeUrl != null &&
-                    this.CodeUrl.Equals(input.CodeUrl))
-                ) && 
-                (
-                    this.CodeFilename == input.CodeFilename ||
-                    (this.CodeFilename != null &&
-                    this.CodeFilename.Equals(input.CodeFilename))
-                ) && 
-                (
-                    this.CustomImage == input.CustomImage ||
-                    (this.CustomImage != null &&
-                    this.CustomImage.Equals(input.CustomImage))
-                ) && 
-                (
-                    this.UserData == input.UserData ||
-                    (this.UserData != null &&
-                    this.UserData.Equals(input.UserData))
-                ) && 
-                (
-                    this.EncryptedUserData == input.EncryptedUserData ||
-                    (this.EncryptedUserData != null &&
-                    this.EncryptedUserData.Equals(input.EncryptedUserData))
-                ) && 
-                (
-                    this.Xrole == input.Xrole ||
-                    (this.Xrole != null &&
-                    this.Xrole.Equals(input.Xrole))
-                ) && 
-                (
-                    this.AppXrole == input.AppXrole ||
-                    (this.AppXrole != null &&
-                    this.AppXrole.Equals(input.AppXrole))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.FuncCode == input.FuncCode ||
-                    (this.FuncCode != null &&
-                    this.FuncCode.Equals(input.FuncCode))
-                ) && 
-                (
-                    this.MountConfig == input.MountConfig ||
-                    (this.MountConfig != null &&
-                    this.MountConfig.Equals(input.MountConfig))
-                ) && 
-                (
-                    this.InitializerHandler == input.InitializerHandler ||
-                    (this.InitializerHandler != null &&
-                    this.InitializerHandler.Equals(input.InitializerHandler))
-                ) && 
-                (
-                    this.InitializerTimeout == input.InitializerTimeout ||
-                    (this.InitializerTimeout != null &&
-                    this.InitializerTimeout.Equals(input.InitializerTimeout))
-                ) && 
-                (
-                    this.PreStopHandler == input.PreStopHandler ||
-                    (this.PreStopHandler != null &&
-                    this.PreStopHandler.Equals(input.PreStopHandler))
-                ) && 
-                (
-                    this.PreStopTimeout == input.PreStopTimeout ||
-                    (this.PreStopTimeout != null &&
-                    this.PreStopTimeout.Equals(input.PreStopTimeout))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.LogConfig == input.LogConfig ||
-                    (this.LogConfig != null &&
-                    this.LogConfig.Equals(input.LogConfig))
-                ) && 
-                (
-                    this.NetworkController == input.NetworkController ||
-                    (this.NetworkController != null &&
-                    this.NetworkController.Equals(input.NetworkController))
-                ) && 
-                (
-                    this.IsStatefulFunction == input.IsStatefulFunction ||
-                    (this.IsStatefulFunction != null &&
-                    this.IsStatefulFunction.Equals(input.IsStatefulFunction))
-                ) && 
-                (
-                    this.EnableDynamicMemory == input.EnableDynamicMemory ||
-                    (this.EnableDynamicMemory != null &&
-                    this.EnableDynamicMemory.Equals(input.EnableDynamicMemory))
-                );
+            return true;
         }
 
         /// <summary>
@@ -926,69 +800,38 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FuncName != null)
-                    hashCode = hashCode * 59 + this.FuncName.GetHashCode();
-                if (this.Package != null)
-                    hashCode = hashCode * 59 + this.Package.GetHashCode();
-                if (this.Runtime != null)
-                    hashCode = hashCode * 59 + this.Runtime.GetHashCode();
-                if (this.Timeout != null)
-                    hashCode = hashCode * 59 + this.Timeout.GetHashCode();
-                if (this.Handler != null)
-                    hashCode = hashCode * 59 + this.Handler.GetHashCode();
-                if (this.DependVersionList != null)
-                    hashCode = hashCode * 59 + this.DependVersionList.GetHashCode();
-                if (this.FuncVpc != null)
-                    hashCode = hashCode * 59 + this.FuncVpc.GetHashCode();
-                if (this.MemorySize != null)
-                    hashCode = hashCode * 59 + this.MemorySize.GetHashCode();
-                if (this.GpuMemory != null)
-                    hashCode = hashCode * 59 + this.GpuMemory.GetHashCode();
-                if (this.GpuType != null)
-                    hashCode = hashCode * 59 + this.GpuType.GetHashCode();
-                if (this.CodeType != null)
-                    hashCode = hashCode * 59 + this.CodeType.GetHashCode();
-                if (this.CodeUrl != null)
-                    hashCode = hashCode * 59 + this.CodeUrl.GetHashCode();
-                if (this.CodeFilename != null)
-                    hashCode = hashCode * 59 + this.CodeFilename.GetHashCode();
-                if (this.CustomImage != null)
-                    hashCode = hashCode * 59 + this.CustomImage.GetHashCode();
-                if (this.UserData != null)
-                    hashCode = hashCode * 59 + this.UserData.GetHashCode();
-                if (this.EncryptedUserData != null)
-                    hashCode = hashCode * 59 + this.EncryptedUserData.GetHashCode();
-                if (this.Xrole != null)
-                    hashCode = hashCode * 59 + this.Xrole.GetHashCode();
-                if (this.AppXrole != null)
-                    hashCode = hashCode * 59 + this.AppXrole.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.FuncCode != null)
-                    hashCode = hashCode * 59 + this.FuncCode.GetHashCode();
-                if (this.MountConfig != null)
-                    hashCode = hashCode * 59 + this.MountConfig.GetHashCode();
-                if (this.InitializerHandler != null)
-                    hashCode = hashCode * 59 + this.InitializerHandler.GetHashCode();
-                if (this.InitializerTimeout != null)
-                    hashCode = hashCode * 59 + this.InitializerTimeout.GetHashCode();
-                if (this.PreStopHandler != null)
-                    hashCode = hashCode * 59 + this.PreStopHandler.GetHashCode();
-                if (this.PreStopTimeout != null)
-                    hashCode = hashCode * 59 + this.PreStopTimeout.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.LogConfig != null)
-                    hashCode = hashCode * 59 + this.LogConfig.GetHashCode();
-                if (this.NetworkController != null)
-                    hashCode = hashCode * 59 + this.NetworkController.GetHashCode();
-                if (this.IsStatefulFunction != null)
-                    hashCode = hashCode * 59 + this.IsStatefulFunction.GetHashCode();
-                if (this.EnableDynamicMemory != null)
-                    hashCode = hashCode * 59 + this.EnableDynamicMemory.GetHashCode();
+                var hashCode = 41;
+                if (this.FuncName != null) hashCode = hashCode * 59 + this.FuncName.GetHashCode();
+                if (this.Package != null) hashCode = hashCode * 59 + this.Package.GetHashCode();
+                hashCode = hashCode * 59 + this.Runtime.GetHashCode();
+                if (this.Timeout != null) hashCode = hashCode * 59 + this.Timeout.GetHashCode();
+                if (this.Handler != null) hashCode = hashCode * 59 + this.Handler.GetHashCode();
+                if (this.DependVersionList != null) hashCode = hashCode * 59 + this.DependVersionList.GetHashCode();
+                if (this.FuncVpc != null) hashCode = hashCode * 59 + this.FuncVpc.GetHashCode();
+                if (this.MemorySize != null) hashCode = hashCode * 59 + this.MemorySize.GetHashCode();
+                if (this.GpuMemory != null) hashCode = hashCode * 59 + this.GpuMemory.GetHashCode();
+                if (this.GpuType != null) hashCode = hashCode * 59 + this.GpuType.GetHashCode();
+                hashCode = hashCode * 59 + this.CodeType.GetHashCode();
+                if (this.CodeUrl != null) hashCode = hashCode * 59 + this.CodeUrl.GetHashCode();
+                if (this.CodeFilename != null) hashCode = hashCode * 59 + this.CodeFilename.GetHashCode();
+                if (this.CustomImage != null) hashCode = hashCode * 59 + this.CustomImage.GetHashCode();
+                if (this.UserData != null) hashCode = hashCode * 59 + this.UserData.GetHashCode();
+                if (this.EncryptedUserData != null) hashCode = hashCode * 59 + this.EncryptedUserData.GetHashCode();
+                if (this.Xrole != null) hashCode = hashCode * 59 + this.Xrole.GetHashCode();
+                if (this.AppXrole != null) hashCode = hashCode * 59 + this.AppXrole.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.FuncCode != null) hashCode = hashCode * 59 + this.FuncCode.GetHashCode();
+                if (this.MountConfig != null) hashCode = hashCode * 59 + this.MountConfig.GetHashCode();
+                if (this.InitializerHandler != null) hashCode = hashCode * 59 + this.InitializerHandler.GetHashCode();
+                if (this.InitializerTimeout != null) hashCode = hashCode * 59 + this.InitializerTimeout.GetHashCode();
+                if (this.PreStopHandler != null) hashCode = hashCode * 59 + this.PreStopHandler.GetHashCode();
+                if (this.PreStopTimeout != null) hashCode = hashCode * 59 + this.PreStopTimeout.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.LogConfig != null) hashCode = hashCode * 59 + this.LogConfig.GetHashCode();
+                if (this.NetworkController != null) hashCode = hashCode * 59 + this.NetworkController.GetHashCode();
+                if (this.IsStatefulFunction != null) hashCode = hashCode * 59 + this.IsStatefulFunction.GetHashCode();
+                if (this.EnableDynamicMemory != null) hashCode = hashCode * 59 + this.EnableDynamicMemory.GetHashCode();
                 return hashCode;
             }
         }

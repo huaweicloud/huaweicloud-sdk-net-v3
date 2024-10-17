@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(UpgradeInfoSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LastUpgradeInfo != input.LastUpgradeInfo || (this.LastUpgradeInfo != null && !this.LastUpgradeInfo.Equals(input.LastUpgradeInfo))) return false;
+            if (this.VersionInfo != input.VersionInfo || (this.VersionInfo != null && !this.VersionInfo.Equals(input.VersionInfo))) return false;
+            if (this.UpgradeFeatureGates != input.UpgradeFeatureGates || (this.UpgradeFeatureGates != null && !this.UpgradeFeatureGates.Equals(input.UpgradeFeatureGates))) return false;
 
-            return 
-                (
-                    this.LastUpgradeInfo == input.LastUpgradeInfo ||
-                    (this.LastUpgradeInfo != null &&
-                    this.LastUpgradeInfo.Equals(input.LastUpgradeInfo))
-                ) && 
-                (
-                    this.VersionInfo == input.VersionInfo ||
-                    (this.VersionInfo != null &&
-                    this.VersionInfo.Equals(input.VersionInfo))
-                ) && 
-                (
-                    this.UpgradeFeatureGates == input.UpgradeFeatureGates ||
-                    (this.UpgradeFeatureGates != null &&
-                    this.UpgradeFeatureGates.Equals(input.UpgradeFeatureGates))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LastUpgradeInfo != null)
-                    hashCode = hashCode * 59 + this.LastUpgradeInfo.GetHashCode();
-                if (this.VersionInfo != null)
-                    hashCode = hashCode * 59 + this.VersionInfo.GetHashCode();
-                if (this.UpgradeFeatureGates != null)
-                    hashCode = hashCode * 59 + this.UpgradeFeatureGates.GetHashCode();
+                var hashCode = 41;
+                if (this.LastUpgradeInfo != null) hashCode = hashCode * 59 + this.LastUpgradeInfo.GetHashCode();
+                if (this.VersionInfo != null) hashCode = hashCode * 59 + this.VersionInfo.GetHashCode();
+                if (this.UpgradeFeatureGates != null) hashCode = hashCode * 59 + this.UpgradeFeatureGates.GetHashCode();
                 return hashCode;
             }
         }

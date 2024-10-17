@@ -98,52 +98,17 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ListProjectWorkHoursRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProjectIds != input.ProjectIds || (this.ProjectIds != null && input.ProjectIds != null && !this.ProjectIds.SequenceEqual(input.ProjectIds))) return false;
+            if (this.UserIds != input.UserIds || (this.UserIds != null && input.UserIds != null && !this.UserIds.SequenceEqual(input.UserIds))) return false;
+            if (this.WorkHoursTypes != input.WorkHoursTypes || (this.WorkHoursTypes != null && !this.WorkHoursTypes.Equals(input.WorkHoursTypes))) return false;
+            if (this.WorkHoursDates != input.WorkHoursDates || (this.WorkHoursDates != null && !this.WorkHoursDates.Equals(input.WorkHoursDates))) return false;
+            if (this.BeginTime != input.BeginTime || (this.BeginTime != null && !this.BeginTime.Equals(input.BeginTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
-            return 
-                (
-                    this.ProjectIds == input.ProjectIds ||
-                    this.ProjectIds != null &&
-                    input.ProjectIds != null &&
-                    this.ProjectIds.SequenceEqual(input.ProjectIds)
-                ) && 
-                (
-                    this.UserIds == input.UserIds ||
-                    this.UserIds != null &&
-                    input.UserIds != null &&
-                    this.UserIds.SequenceEqual(input.UserIds)
-                ) && 
-                (
-                    this.WorkHoursTypes == input.WorkHoursTypes ||
-                    (this.WorkHoursTypes != null &&
-                    this.WorkHoursTypes.Equals(input.WorkHoursTypes))
-                ) && 
-                (
-                    this.WorkHoursDates == input.WorkHoursDates ||
-                    (this.WorkHoursDates != null &&
-                    this.WorkHoursDates.Equals(input.WorkHoursDates))
-                ) && 
-                (
-                    this.BeginTime == input.BeginTime ||
-                    (this.BeginTime != null &&
-                    this.BeginTime.Equals(input.BeginTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -153,23 +118,15 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProjectIds != null)
-                    hashCode = hashCode * 59 + this.ProjectIds.GetHashCode();
-                if (this.UserIds != null)
-                    hashCode = hashCode * 59 + this.UserIds.GetHashCode();
-                if (this.WorkHoursTypes != null)
-                    hashCode = hashCode * 59 + this.WorkHoursTypes.GetHashCode();
-                if (this.WorkHoursDates != null)
-                    hashCode = hashCode * 59 + this.WorkHoursDates.GetHashCode();
-                if (this.BeginTime != null)
-                    hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                var hashCode = 41;
+                if (this.ProjectIds != null) hashCode = hashCode * 59 + this.ProjectIds.GetHashCode();
+                if (this.UserIds != null) hashCode = hashCode * 59 + this.UserIds.GetHashCode();
+                if (this.WorkHoursTypes != null) hashCode = hashCode * 59 + this.WorkHoursTypes.GetHashCode();
+                if (this.WorkHoursDates != null) hashCode = hashCode * 59 + this.WorkHoursDates.GetHashCode();
+                if (this.BeginTime != null) hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;
             }
         }

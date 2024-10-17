@@ -182,20 +182,11 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(AssociatePublicipsOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AssociateInstanceType != input.AssociateInstanceType) return false;
+            if (this.AssociateInstanceId != input.AssociateInstanceId || (this.AssociateInstanceId != null && !this.AssociateInstanceId.Equals(input.AssociateInstanceId))) return false;
 
-            return 
-                (
-                    this.AssociateInstanceType == input.AssociateInstanceType ||
-                    (this.AssociateInstanceType != null &&
-                    this.AssociateInstanceType.Equals(input.AssociateInstanceType))
-                ) && 
-                (
-                    this.AssociateInstanceId == input.AssociateInstanceId ||
-                    (this.AssociateInstanceId != null &&
-                    this.AssociateInstanceId.Equals(input.AssociateInstanceId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -205,11 +196,9 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AssociateInstanceType != null)
-                    hashCode = hashCode * 59 + this.AssociateInstanceType.GetHashCode();
-                if (this.AssociateInstanceId != null)
-                    hashCode = hashCode * 59 + this.AssociateInstanceId.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.AssociateInstanceType.GetHashCode();
+                if (this.AssociateInstanceId != null) hashCode = hashCode * 59 + this.AssociateInstanceId.GetHashCode();
                 return hashCode;
             }
         }

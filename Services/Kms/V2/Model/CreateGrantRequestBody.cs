@@ -205,46 +205,16 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         /// </summary>
         public bool Equals(CreateGrantRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KeyId != input.KeyId || (this.KeyId != null && !this.KeyId.Equals(input.KeyId))) return false;
+            if (this.GranteePrincipal != input.GranteePrincipal || (this.GranteePrincipal != null && !this.GranteePrincipal.Equals(input.GranteePrincipal))) return false;
+            if (this.Operations != input.Operations || (this.Operations != null && input.Operations != null && !this.Operations.SequenceEqual(input.Operations))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.RetiringPrincipal != input.RetiringPrincipal || (this.RetiringPrincipal != null && !this.RetiringPrincipal.Equals(input.RetiringPrincipal))) return false;
+            if (this.GranteePrincipalType != input.GranteePrincipalType) return false;
+            if (this.Sequence != input.Sequence || (this.Sequence != null && !this.Sequence.Equals(input.Sequence))) return false;
 
-            return 
-                (
-                    this.KeyId == input.KeyId ||
-                    (this.KeyId != null &&
-                    this.KeyId.Equals(input.KeyId))
-                ) && 
-                (
-                    this.GranteePrincipal == input.GranteePrincipal ||
-                    (this.GranteePrincipal != null &&
-                    this.GranteePrincipal.Equals(input.GranteePrincipal))
-                ) && 
-                (
-                    this.Operations == input.Operations ||
-                    this.Operations != null &&
-                    input.Operations != null &&
-                    this.Operations.SequenceEqual(input.Operations)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.RetiringPrincipal == input.RetiringPrincipal ||
-                    (this.RetiringPrincipal != null &&
-                    this.RetiringPrincipal.Equals(input.RetiringPrincipal))
-                ) && 
-                (
-                    this.GranteePrincipalType == input.GranteePrincipalType ||
-                    (this.GranteePrincipalType != null &&
-                    this.GranteePrincipalType.Equals(input.GranteePrincipalType))
-                ) && 
-                (
-                    this.Sequence == input.Sequence ||
-                    (this.Sequence != null &&
-                    this.Sequence.Equals(input.Sequence))
-                );
+            return true;
         }
 
         /// <summary>
@@ -254,21 +224,14 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KeyId != null)
-                    hashCode = hashCode * 59 + this.KeyId.GetHashCode();
-                if (this.GranteePrincipal != null)
-                    hashCode = hashCode * 59 + this.GranteePrincipal.GetHashCode();
-                if (this.Operations != null)
-                    hashCode = hashCode * 59 + this.Operations.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.RetiringPrincipal != null)
-                    hashCode = hashCode * 59 + this.RetiringPrincipal.GetHashCode();
-                if (this.GranteePrincipalType != null)
-                    hashCode = hashCode * 59 + this.GranteePrincipalType.GetHashCode();
-                if (this.Sequence != null)
-                    hashCode = hashCode * 59 + this.Sequence.GetHashCode();
+                var hashCode = 41;
+                if (this.KeyId != null) hashCode = hashCode * 59 + this.KeyId.GetHashCode();
+                if (this.GranteePrincipal != null) hashCode = hashCode * 59 + this.GranteePrincipal.GetHashCode();
+                if (this.Operations != null) hashCode = hashCode * 59 + this.Operations.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.RetiringPrincipal != null) hashCode = hashCode * 59 + this.RetiringPrincipal.GetHashCode();
+                hashCode = hashCode * 59 + this.GranteePrincipalType.GetHashCode();
+                if (this.Sequence != null) hashCode = hashCode * 59 + this.Sequence.GetHashCode();
                 return hashCode;
             }
         }

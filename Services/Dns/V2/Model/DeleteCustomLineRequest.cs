@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public bool Equals(DeleteCustomLineRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LineId != input.LineId || (this.LineId != null && !this.LineId.Equals(input.LineId))) return false;
 
-            return 
-                (
-                    this.LineId == input.LineId ||
-                    (this.LineId != null &&
-                    this.LineId.Equals(input.LineId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LineId != null)
-                    hashCode = hashCode * 59 + this.LineId.GetHashCode();
+                var hashCode = 41;
+                if (this.LineId != null) hashCode = hashCode * 59 + this.LineId.GetHashCode();
                 return hashCode;
             }
         }

@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(DeletePortTagRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PortId != input.PortId || (this.PortId != null && !this.PortId.Equals(input.PortId))) return false;
+            if (this.TagKey != input.TagKey || (this.TagKey != null && !this.TagKey.Equals(input.TagKey))) return false;
 
-            return 
-                (
-                    this.PortId == input.PortId ||
-                    (this.PortId != null &&
-                    this.PortId.Equals(input.PortId))
-                ) && 
-                (
-                    this.TagKey == input.TagKey ||
-                    (this.TagKey != null &&
-                    this.TagKey.Equals(input.TagKey))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PortId != null)
-                    hashCode = hashCode * 59 + this.PortId.GetHashCode();
-                if (this.TagKey != null)
-                    hashCode = hashCode * 59 + this.TagKey.GetHashCode();
+                var hashCode = 41;
+                if (this.PortId != null) hashCode = hashCode * 59 + this.PortId.GetHashCode();
+                if (this.TagKey != null) hashCode = hashCode * 59 + this.TagKey.GetHashCode();
                 return hashCode;
             }
         }

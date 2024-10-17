@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(EipInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EipId != input.EipId || (this.EipId != null && !this.EipId.Equals(input.EipId))) return false;
+            if (this.EipAddress != input.EipAddress || (this.EipAddress != null && !this.EipAddress.Equals(input.EipAddress))) return false;
+            if (this.IpVersion != input.IpVersion || (this.IpVersion != null && !this.IpVersion.Equals(input.IpVersion))) return false;
 
-            return 
-                (
-                    this.EipId == input.EipId ||
-                    (this.EipId != null &&
-                    this.EipId.Equals(input.EipId))
-                ) && 
-                (
-                    this.EipAddress == input.EipAddress ||
-                    (this.EipAddress != null &&
-                    this.EipAddress.Equals(input.EipAddress))
-                ) && 
-                (
-                    this.IpVersion == input.IpVersion ||
-                    (this.IpVersion != null &&
-                    this.IpVersion.Equals(input.IpVersion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EipId != null)
-                    hashCode = hashCode * 59 + this.EipId.GetHashCode();
-                if (this.EipAddress != null)
-                    hashCode = hashCode * 59 + this.EipAddress.GetHashCode();
-                if (this.IpVersion != null)
-                    hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
+                var hashCode = 41;
+                if (this.EipId != null) hashCode = hashCode * 59 + this.EipId.GetHashCode();
+                if (this.EipAddress != null) hashCode = hashCode * 59 + this.EipAddress.GetHashCode();
+                if (this.IpVersion != null) hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
                 return hashCode;
             }
         }

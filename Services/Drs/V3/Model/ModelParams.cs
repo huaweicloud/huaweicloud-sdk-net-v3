@@ -454,60 +454,19 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(ModelParams input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CompareResult != input.CompareResult) return false;
+            if (this.DataType != input.DataType || (this.DataType != null && !this.DataType.Equals(input.DataType))) return false;
+            if (this.Group != input.Group) return false;
+            if (this.Key != input.Key || (this.Key != null && !this.Key.Equals(input.Key))) return false;
+            if (this.NeedRestart != input.NeedRestart) return false;
+            if (this.SourceValue != input.SourceValue || (this.SourceValue != null && !this.SourceValue.Equals(input.SourceValue))) return false;
+            if (this.TargetValue != input.TargetValue || (this.TargetValue != null && !this.TargetValue.Equals(input.TargetValue))) return false;
+            if (this.ValueRange != input.ValueRange || (this.ValueRange != null && !this.ValueRange.Equals(input.ValueRange))) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
+            if (this.ErrorMessage != input.ErrorMessage || (this.ErrorMessage != null && !this.ErrorMessage.Equals(input.ErrorMessage))) return false;
 
-            return 
-                (
-                    this.CompareResult == input.CompareResult ||
-                    (this.CompareResult != null &&
-                    this.CompareResult.Equals(input.CompareResult))
-                ) && 
-                (
-                    this.DataType == input.DataType ||
-                    (this.DataType != null &&
-                    this.DataType.Equals(input.DataType))
-                ) && 
-                (
-                    this.Group == input.Group ||
-                    (this.Group != null &&
-                    this.Group.Equals(input.Group))
-                ) && 
-                (
-                    this.Key == input.Key ||
-                    (this.Key != null &&
-                    this.Key.Equals(input.Key))
-                ) && 
-                (
-                    this.NeedRestart == input.NeedRestart ||
-                    (this.NeedRestart != null &&
-                    this.NeedRestart.Equals(input.NeedRestart))
-                ) && 
-                (
-                    this.SourceValue == input.SourceValue ||
-                    (this.SourceValue != null &&
-                    this.SourceValue.Equals(input.SourceValue))
-                ) && 
-                (
-                    this.TargetValue == input.TargetValue ||
-                    (this.TargetValue != null &&
-                    this.TargetValue.Equals(input.TargetValue))
-                ) && 
-                (
-                    this.ValueRange == input.ValueRange ||
-                    (this.ValueRange != null &&
-                    this.ValueRange.Equals(input.ValueRange))
-                ) && 
-                (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
-                ) && 
-                (
-                    this.ErrorMessage == input.ErrorMessage ||
-                    (this.ErrorMessage != null &&
-                    this.ErrorMessage.Equals(input.ErrorMessage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -517,27 +476,17 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CompareResult != null)
-                    hashCode = hashCode * 59 + this.CompareResult.GetHashCode();
-                if (this.DataType != null)
-                    hashCode = hashCode * 59 + this.DataType.GetHashCode();
-                if (this.Group != null)
-                    hashCode = hashCode * 59 + this.Group.GetHashCode();
-                if (this.Key != null)
-                    hashCode = hashCode * 59 + this.Key.GetHashCode();
-                if (this.NeedRestart != null)
-                    hashCode = hashCode * 59 + this.NeedRestart.GetHashCode();
-                if (this.SourceValue != null)
-                    hashCode = hashCode * 59 + this.SourceValue.GetHashCode();
-                if (this.TargetValue != null)
-                    hashCode = hashCode * 59 + this.TargetValue.GetHashCode();
-                if (this.ValueRange != null)
-                    hashCode = hashCode * 59 + this.ValueRange.GetHashCode();
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.ErrorMessage != null)
-                    hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.CompareResult.GetHashCode();
+                if (this.DataType != null) hashCode = hashCode * 59 + this.DataType.GetHashCode();
+                hashCode = hashCode * 59 + this.Group.GetHashCode();
+                if (this.Key != null) hashCode = hashCode * 59 + this.Key.GetHashCode();
+                hashCode = hashCode * 59 + this.NeedRestart.GetHashCode();
+                if (this.SourceValue != null) hashCode = hashCode * 59 + this.SourceValue.GetHashCode();
+                if (this.TargetValue != null) hashCode = hashCode * 59 + this.TargetValue.GetHashCode();
+                if (this.ValueRange != null) hashCode = hashCode * 59 + this.ValueRange.GetHashCode();
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.ErrorMessage != null) hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ListBridgesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Bridges != input.Bridges || (this.Bridges != null && input.Bridges != null && !this.Bridges.SequenceEqual(input.Bridges))) return false;
+            if (this.Page != input.Page || (this.Page != null && !this.Page.Equals(input.Page))) return false;
 
-            return 
-                (
-                    this.Bridges == input.Bridges ||
-                    this.Bridges != null &&
-                    input.Bridges != null &&
-                    this.Bridges.SequenceEqual(input.Bridges)
-                ) && 
-                (
-                    this.Page == input.Page ||
-                    (this.Page != null &&
-                    this.Page.Equals(input.Page))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Bridges != null)
-                    hashCode = hashCode * 59 + this.Bridges.GetHashCode();
-                if (this.Page != null)
-                    hashCode = hashCode * 59 + this.Page.GetHashCode();
+                var hashCode = 41;
+                if (this.Bridges != null) hashCode = hashCode * 59 + this.Bridges.GetHashCode();
+                if (this.Page != null) hashCode = hashCode * 59 + this.Page.GetHashCode();
                 return hashCode;
             }
         }

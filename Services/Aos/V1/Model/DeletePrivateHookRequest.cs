@@ -66,25 +66,12 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(DeletePrivateHookRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClientRequestId != input.ClientRequestId || (this.ClientRequestId != null && !this.ClientRequestId.Equals(input.ClientRequestId))) return false;
+            if (this.HookName != input.HookName || (this.HookName != null && !this.HookName.Equals(input.HookName))) return false;
+            if (this.HookId != input.HookId || (this.HookId != null && !this.HookId.Equals(input.HookId))) return false;
 
-            return 
-                (
-                    this.ClientRequestId == input.ClientRequestId ||
-                    (this.ClientRequestId != null &&
-                    this.ClientRequestId.Equals(input.ClientRequestId))
-                ) && 
-                (
-                    this.HookName == input.HookName ||
-                    (this.HookName != null &&
-                    this.HookName.Equals(input.HookName))
-                ) && 
-                (
-                    this.HookId == input.HookId ||
-                    (this.HookId != null &&
-                    this.HookId.Equals(input.HookId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +81,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClientRequestId != null)
-                    hashCode = hashCode * 59 + this.ClientRequestId.GetHashCode();
-                if (this.HookName != null)
-                    hashCode = hashCode * 59 + this.HookName.GetHashCode();
-                if (this.HookId != null)
-                    hashCode = hashCode * 59 + this.HookId.GetHashCode();
+                var hashCode = 41;
+                if (this.ClientRequestId != null) hashCode = hashCode * 59 + this.ClientRequestId.GetHashCode();
+                if (this.HookName != null) hashCode = hashCode * 59 + this.HookName.GetHashCode();
+                if (this.HookId != null) hashCode = hashCode * 59 + this.HookId.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(InstanceLtsConfigResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LtsConfigs != input.LtsConfigs || (this.LtsConfigs != null && input.LtsConfigs != null && !this.LtsConfigs.SequenceEqual(input.LtsConfigs))) return false;
+            if (this.Instance != input.Instance || (this.Instance != null && !this.Instance.Equals(input.Instance))) return false;
 
-            return 
-                (
-                    this.LtsConfigs == input.LtsConfigs ||
-                    this.LtsConfigs != null &&
-                    input.LtsConfigs != null &&
-                    this.LtsConfigs.SequenceEqual(input.LtsConfigs)
-                ) && 
-                (
-                    this.Instance == input.Instance ||
-                    (this.Instance != null &&
-                    this.Instance.Equals(input.Instance))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LtsConfigs != null)
-                    hashCode = hashCode * 59 + this.LtsConfigs.GetHashCode();
-                if (this.Instance != null)
-                    hashCode = hashCode * 59 + this.Instance.GetHashCode();
+                var hashCode = 41;
+                if (this.LtsConfigs != null) hashCode = hashCode * 59 + this.LtsConfigs.GetHashCode();
+                if (this.Instance != null) hashCode = hashCode * 59 + this.Instance.GetHashCode();
                 return hashCode;
             }
         }

@@ -594,132 +594,33 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(BackupResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CheckpointId != input.CheckpointId || (this.CheckpointId != null && !this.CheckpointId.Equals(input.CheckpointId))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.ExpiredAt != input.ExpiredAt || (this.ExpiredAt != null && !this.ExpiredAt.Equals(input.ExpiredAt))) return false;
+            if (this.ExtendInfo != input.ExtendInfo || (this.ExtendInfo != null && !this.ExtendInfo.Equals(input.ExtendInfo))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.ImageType != input.ImageType) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.ParentId != input.ParentId || (this.ParentId != null && !this.ParentId.Equals(input.ParentId))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.ProtectedAt != input.ProtectedAt || (this.ProtectedAt != null && !this.ProtectedAt.Equals(input.ProtectedAt))) return false;
+            if (this.ResourceAz != input.ResourceAz || (this.ResourceAz != null && !this.ResourceAz.Equals(input.ResourceAz))) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
+            if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
+            if (this.ResourceSize != input.ResourceSize || (this.ResourceSize != null && !this.ResourceSize.Equals(input.ResourceSize))) return false;
+            if (this.ResourceType != input.ResourceType) return false;
+            if (this.Status != input.Status) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.VaultId != input.VaultId || (this.VaultId != null && !this.VaultId.Equals(input.VaultId))) return false;
+            if (this.ReplicationRecords != input.ReplicationRecords || (this.ReplicationRecords != null && input.ReplicationRecords != null && !this.ReplicationRecords.SequenceEqual(input.ReplicationRecords))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.ProviderId != input.ProviderId || (this.ProviderId != null && !this.ProviderId.Equals(input.ProviderId))) return false;
+            if (this.Children != input.Children || (this.Children != null && input.Children != null && !this.Children.SequenceEqual(input.Children))) return false;
+            if (this.Incremental != input.Incremental || (this.Incremental != null && !this.Incremental.Equals(input.Incremental))) return false;
 
-            return 
-                (
-                    this.CheckpointId == input.CheckpointId ||
-                    (this.CheckpointId != null &&
-                    this.CheckpointId.Equals(input.CheckpointId))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.ExpiredAt == input.ExpiredAt ||
-                    (this.ExpiredAt != null &&
-                    this.ExpiredAt.Equals(input.ExpiredAt))
-                ) && 
-                (
-                    this.ExtendInfo == input.ExtendInfo ||
-                    (this.ExtendInfo != null &&
-                    this.ExtendInfo.Equals(input.ExtendInfo))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.ImageType == input.ImageType ||
-                    (this.ImageType != null &&
-                    this.ImageType.Equals(input.ImageType))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ParentId == input.ParentId ||
-                    (this.ParentId != null &&
-                    this.ParentId.Equals(input.ParentId))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.ProtectedAt == input.ProtectedAt ||
-                    (this.ProtectedAt != null &&
-                    this.ProtectedAt.Equals(input.ProtectedAt))
-                ) && 
-                (
-                    this.ResourceAz == input.ResourceAz ||
-                    (this.ResourceAz != null &&
-                    this.ResourceAz.Equals(input.ResourceAz))
-                ) && 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
-                ) && 
-                (
-                    this.ResourceName == input.ResourceName ||
-                    (this.ResourceName != null &&
-                    this.ResourceName.Equals(input.ResourceName))
-                ) && 
-                (
-                    this.ResourceSize == input.ResourceSize ||
-                    (this.ResourceSize != null &&
-                    this.ResourceSize.Equals(input.ResourceSize))
-                ) && 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.VaultId == input.VaultId ||
-                    (this.VaultId != null &&
-                    this.VaultId.Equals(input.VaultId))
-                ) && 
-                (
-                    this.ReplicationRecords == input.ReplicationRecords ||
-                    this.ReplicationRecords != null &&
-                    input.ReplicationRecords != null &&
-                    this.ReplicationRecords.SequenceEqual(input.ReplicationRecords)
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.ProviderId == input.ProviderId ||
-                    (this.ProviderId != null &&
-                    this.ProviderId.Equals(input.ProviderId))
-                ) && 
-                (
-                    this.Children == input.Children ||
-                    this.Children != null &&
-                    input.Children != null &&
-                    this.Children.SequenceEqual(input.Children)
-                ) && 
-                (
-                    this.Incremental == input.Incremental ||
-                    (this.Incremental != null &&
-                    this.Incremental.Equals(input.Incremental))
-                );
+            return true;
         }
 
         /// <summary>
@@ -729,55 +630,31 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CheckpointId != null)
-                    hashCode = hashCode * 59 + this.CheckpointId.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.ExpiredAt != null)
-                    hashCode = hashCode * 59 + this.ExpiredAt.GetHashCode();
-                if (this.ExtendInfo != null)
-                    hashCode = hashCode * 59 + this.ExtendInfo.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.ImageType != null)
-                    hashCode = hashCode * 59 + this.ImageType.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.ParentId != null)
-                    hashCode = hashCode * 59 + this.ParentId.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.ProtectedAt != null)
-                    hashCode = hashCode * 59 + this.ProtectedAt.GetHashCode();
-                if (this.ResourceAz != null)
-                    hashCode = hashCode * 59 + this.ResourceAz.GetHashCode();
-                if (this.ResourceId != null)
-                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
-                if (this.ResourceName != null)
-                    hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
-                if (this.ResourceSize != null)
-                    hashCode = hashCode * 59 + this.ResourceSize.GetHashCode();
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.VaultId != null)
-                    hashCode = hashCode * 59 + this.VaultId.GetHashCode();
-                if (this.ReplicationRecords != null)
-                    hashCode = hashCode * 59 + this.ReplicationRecords.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.ProviderId != null)
-                    hashCode = hashCode * 59 + this.ProviderId.GetHashCode();
-                if (this.Children != null)
-                    hashCode = hashCode * 59 + this.Children.GetHashCode();
-                if (this.Incremental != null)
-                    hashCode = hashCode * 59 + this.Incremental.GetHashCode();
+                var hashCode = 41;
+                if (this.CheckpointId != null) hashCode = hashCode * 59 + this.CheckpointId.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.ExpiredAt != null) hashCode = hashCode * 59 + this.ExpiredAt.GetHashCode();
+                if (this.ExtendInfo != null) hashCode = hashCode * 59 + this.ExtendInfo.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                hashCode = hashCode * 59 + this.ImageType.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.ParentId != null) hashCode = hashCode * 59 + this.ParentId.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.ProtectedAt != null) hashCode = hashCode * 59 + this.ProtectedAt.GetHashCode();
+                if (this.ResourceAz != null) hashCode = hashCode * 59 + this.ResourceAz.GetHashCode();
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
+                if (this.ResourceSize != null) hashCode = hashCode * 59 + this.ResourceSize.GetHashCode();
+                hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.VaultId != null) hashCode = hashCode * 59 + this.VaultId.GetHashCode();
+                if (this.ReplicationRecords != null) hashCode = hashCode * 59 + this.ReplicationRecords.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.ProviderId != null) hashCode = hashCode * 59 + this.ProviderId.GetHashCode();
+                if (this.Children != null) hashCode = hashCode * 59 + this.Children.GetHashCode();
+                if (this.Incremental != null) hashCode = hashCode * 59 + this.Incremental.GetHashCode();
                 return hashCode;
             }
         }

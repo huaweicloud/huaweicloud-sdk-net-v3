@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(UpdatePrivateHookMetadataRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HookDescription != input.HookDescription || (this.HookDescription != null && !this.HookDescription.Equals(input.HookDescription))) return false;
+            if (this.HookId != input.HookId || (this.HookId != null && !this.HookId.Equals(input.HookId))) return false;
+            if (this.DefaultVersion != input.DefaultVersion || (this.DefaultVersion != null && !this.DefaultVersion.Equals(input.DefaultVersion))) return false;
+            if (this.Configuration != input.Configuration || (this.Configuration != null && !this.Configuration.Equals(input.Configuration))) return false;
 
-            return 
-                (
-                    this.HookDescription == input.HookDescription ||
-                    (this.HookDescription != null &&
-                    this.HookDescription.Equals(input.HookDescription))
-                ) && 
-                (
-                    this.HookId == input.HookId ||
-                    (this.HookId != null &&
-                    this.HookId.Equals(input.HookId))
-                ) && 
-                (
-                    this.DefaultVersion == input.DefaultVersion ||
-                    (this.DefaultVersion != null &&
-                    this.DefaultVersion.Equals(input.DefaultVersion))
-                ) && 
-                (
-                    this.Configuration == input.Configuration ||
-                    (this.Configuration != null &&
-                    this.Configuration.Equals(input.Configuration))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HookDescription != null)
-                    hashCode = hashCode * 59 + this.HookDescription.GetHashCode();
-                if (this.HookId != null)
-                    hashCode = hashCode * 59 + this.HookId.GetHashCode();
-                if (this.DefaultVersion != null)
-                    hashCode = hashCode * 59 + this.DefaultVersion.GetHashCode();
-                if (this.Configuration != null)
-                    hashCode = hashCode * 59 + this.Configuration.GetHashCode();
+                var hashCode = 41;
+                if (this.HookDescription != null) hashCode = hashCode * 59 + this.HookDescription.GetHashCode();
+                if (this.HookId != null) hashCode = hashCode * 59 + this.HookId.GetHashCode();
+                if (this.DefaultVersion != null) hashCode = hashCode * 59 + this.DefaultVersion.GetHashCode();
+                if (this.Configuration != null) hashCode = hashCode * 59 + this.Configuration.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         /// </summary>
         public bool Equals(BatchCreateAgentInvocationsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Invocations != input.Invocations || (this.Invocations != null && input.Invocations != null && !this.Invocations.SequenceEqual(input.Invocations))) return false;
 
-            return 
-                (
-                    this.Invocations == input.Invocations ||
-                    this.Invocations != null &&
-                    input.Invocations != null &&
-                    this.Invocations.SequenceEqual(input.Invocations)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Invocations != null)
-                    hashCode = hashCode * 59 + this.Invocations.GetHashCode();
+                var hashCode = 41;
+                if (this.Invocations != null) hashCode = hashCode * 59 + this.Invocations.GetHashCode();
                 return hashCode;
             }
         }

@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(DeleteSqlAlarmRuleRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SqlAlarmRuleId != input.SqlAlarmRuleId || (this.SqlAlarmRuleId != null && !this.SqlAlarmRuleId.Equals(input.SqlAlarmRuleId))) return false;
 
-            return 
-                (
-                    this.SqlAlarmRuleId == input.SqlAlarmRuleId ||
-                    (this.SqlAlarmRuleId != null &&
-                    this.SqlAlarmRuleId.Equals(input.SqlAlarmRuleId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SqlAlarmRuleId != null)
-                    hashCode = hashCode * 59 + this.SqlAlarmRuleId.GetHashCode();
+                var hashCode = 41;
+                if (this.SqlAlarmRuleId != null) hashCode = hashCode * 59 + this.SqlAlarmRuleId.GetHashCode();
                 return hashCode;
             }
         }

@@ -239,67 +239,20 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(ThumbnailPara input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
+            if (this.Dots != input.Dots || (this.Dots != null && input.Dots != null && !this.Dots.SequenceEqual(input.Dots))) return false;
+            if (this.DotsMs != input.DotsMs || (this.DotsMs != null && input.DotsMs != null && !this.DotsMs.SequenceEqual(input.DotsMs))) return false;
+            if (this.OutputFilename != input.OutputFilename || (this.OutputFilename != null && !this.OutputFilename.Equals(input.OutputFilename))) return false;
+            if (this.Format != input.Format || (this.Format != null && !this.Format.Equals(input.Format))) return false;
+            if (this.Width != input.Width || (this.Width != null && !this.Width.Equals(input.Width))) return false;
+            if (this.Height != input.Height || (this.Height != null && !this.Height.Equals(input.Height))) return false;
+            if (this.MaxLength != input.MaxLength || (this.MaxLength != null && !this.MaxLength.Equals(input.MaxLength))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
-                ) && 
-                (
-                    this.Dots == input.Dots ||
-                    this.Dots != null &&
-                    input.Dots != null &&
-                    this.Dots.SequenceEqual(input.Dots)
-                ) && 
-                (
-                    this.DotsMs == input.DotsMs ||
-                    this.DotsMs != null &&
-                    input.DotsMs != null &&
-                    this.DotsMs.SequenceEqual(input.DotsMs)
-                ) && 
-                (
-                    this.OutputFilename == input.OutputFilename ||
-                    (this.OutputFilename != null &&
-                    this.OutputFilename.Equals(input.OutputFilename))
-                ) && 
-                (
-                    this.Format == input.Format ||
-                    (this.Format != null &&
-                    this.Format.Equals(input.Format))
-                ) && 
-                (
-                    this.Width == input.Width ||
-                    (this.Width != null &&
-                    this.Width.Equals(input.Width))
-                ) && 
-                (
-                    this.Height == input.Height ||
-                    (this.Height != null &&
-                    this.Height.Equals(input.Height))
-                ) && 
-                (
-                    this.MaxLength == input.MaxLength ||
-                    (this.MaxLength != null &&
-                    this.MaxLength.Equals(input.MaxLength))
-                );
+            return true;
         }
 
         /// <summary>
@@ -309,29 +262,18 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.Duration != null)
-                    hashCode = hashCode * 59 + this.Duration.GetHashCode();
-                if (this.Dots != null)
-                    hashCode = hashCode * 59 + this.Dots.GetHashCode();
-                if (this.DotsMs != null)
-                    hashCode = hashCode * 59 + this.DotsMs.GetHashCode();
-                if (this.OutputFilename != null)
-                    hashCode = hashCode * 59 + this.OutputFilename.GetHashCode();
-                if (this.Format != null)
-                    hashCode = hashCode * 59 + this.Format.GetHashCode();
-                if (this.Width != null)
-                    hashCode = hashCode * 59 + this.Width.GetHashCode();
-                if (this.Height != null)
-                    hashCode = hashCode * 59 + this.Height.GetHashCode();
-                if (this.MaxLength != null)
-                    hashCode = hashCode * 59 + this.MaxLength.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                if (this.Dots != null) hashCode = hashCode * 59 + this.Dots.GetHashCode();
+                if (this.DotsMs != null) hashCode = hashCode * 59 + this.DotsMs.GetHashCode();
+                if (this.OutputFilename != null) hashCode = hashCode * 59 + this.OutputFilename.GetHashCode();
+                if (this.Format != null) hashCode = hashCode * 59 + this.Format.GetHashCode();
+                if (this.Width != null) hashCode = hashCode * 59 + this.Width.GetHashCode();
+                if (this.Height != null) hashCode = hashCode * 59 + this.Height.GetHashCode();
+                if (this.MaxLength != null) hashCode = hashCode * 59 + this.MaxLength.GetHashCode();
                 return hashCode;
             }
         }

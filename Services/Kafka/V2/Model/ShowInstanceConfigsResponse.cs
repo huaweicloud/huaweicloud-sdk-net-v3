@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ShowInstanceConfigsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KafkaConfigs != input.KafkaConfigs || (this.KafkaConfigs != null && input.KafkaConfigs != null && !this.KafkaConfigs.SequenceEqual(input.KafkaConfigs))) return false;
 
-            return 
-                (
-                    this.KafkaConfigs == input.KafkaConfigs ||
-                    this.KafkaConfigs != null &&
-                    input.KafkaConfigs != null &&
-                    this.KafkaConfigs.SequenceEqual(input.KafkaConfigs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KafkaConfigs != null)
-                    hashCode = hashCode * 59 + this.KafkaConfigs.GetHashCode();
+                var hashCode = 41;
+                if (this.KafkaConfigs != null) hashCode = hashCode * 59 + this.KafkaConfigs.GetHashCode();
                 return hashCode;
             }
         }

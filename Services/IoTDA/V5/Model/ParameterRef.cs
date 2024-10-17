@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ParameterRef input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Ref != input.Ref || (this.Ref != null && !this.Ref.Equals(input.Ref))) return false;
 
-            return 
-                (
-                    this.Ref == input.Ref ||
-                    (this.Ref != null &&
-                    this.Ref.Equals(input.Ref))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Ref != null)
-                    hashCode = hashCode * 59 + this.Ref.GetHashCode();
+                var hashCode = 41;
+                if (this.Ref != null) hashCode = hashCode * 59 + this.Ref.GetHashCode();
                 return hashCode;
             }
         }

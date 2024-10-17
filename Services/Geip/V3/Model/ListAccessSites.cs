@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// </summary>
         public bool Equals(ListAccessSites input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.ProxyRegion != input.ProxyRegion || (this.ProxyRegion != null && !this.ProxyRegion.Equals(input.ProxyRegion))) return false;
+            if (this.IecAzCode != input.IecAzCode || (this.IecAzCode != null && !this.IecAzCode.Equals(input.IecAzCode))) return false;
+            if (this.EnName != input.EnName || (this.EnName != null && !this.EnName.Equals(input.EnName))) return false;
+            if (this.CnName != input.CnName || (this.CnName != null && !this.CnName.Equals(input.CnName))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ProxyRegion == input.ProxyRegion ||
-                    (this.ProxyRegion != null &&
-                    this.ProxyRegion.Equals(input.ProxyRegion))
-                ) && 
-                (
-                    this.IecAzCode == input.IecAzCode ||
-                    (this.IecAzCode != null &&
-                    this.IecAzCode.Equals(input.IecAzCode))
-                ) && 
-                (
-                    this.EnName == input.EnName ||
-                    (this.EnName != null &&
-                    this.EnName.Equals(input.EnName))
-                ) && 
-                (
-                    this.CnName == input.CnName ||
-                    (this.CnName != null &&
-                    this.CnName.Equals(input.CnName))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.ProxyRegion != null)
-                    hashCode = hashCode * 59 + this.ProxyRegion.GetHashCode();
-                if (this.IecAzCode != null)
-                    hashCode = hashCode * 59 + this.IecAzCode.GetHashCode();
-                if (this.EnName != null)
-                    hashCode = hashCode * 59 + this.EnName.GetHashCode();
-                if (this.CnName != null)
-                    hashCode = hashCode * 59 + this.CnName.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.ProxyRegion != null) hashCode = hashCode * 59 + this.ProxyRegion.GetHashCode();
+                if (this.IecAzCode != null) hashCode = hashCode * 59 + this.IecAzCode.GetHashCode();
+                if (this.EnName != null) hashCode = hashCode * 59 + this.EnName.GetHashCode();
+                if (this.CnName != null) hashCode = hashCode * 59 + this.CnName.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 return hashCode;
             }
         }

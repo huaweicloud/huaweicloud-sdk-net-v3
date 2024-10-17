@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(UnpublishAssetsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AssetInfoArray != input.AssetInfoArray || (this.AssetInfoArray != null && input.AssetInfoArray != null && !this.AssetInfoArray.SequenceEqual(input.AssetInfoArray))) return false;
 
-            return 
-                (
-                    this.AssetInfoArray == input.AssetInfoArray ||
-                    this.AssetInfoArray != null &&
-                    input.AssetInfoArray != null &&
-                    this.AssetInfoArray.SequenceEqual(input.AssetInfoArray)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AssetInfoArray != null)
-                    hashCode = hashCode * 59 + this.AssetInfoArray.GetHashCode();
+                var hashCode = 41;
+                if (this.AssetInfoArray != null) hashCode = hashCode * 59 + this.AssetInfoArray.GetHashCode();
                 return hashCode;
             }
         }

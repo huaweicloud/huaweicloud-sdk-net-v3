@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(FailoverRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Force != input.Force || (this.Force != null && !this.Force.Equals(input.Force))) return false;
 
-            return 
-                (
-                    this.Force == input.Force ||
-                    (this.Force != null &&
-                    this.Force.Equals(input.Force))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Force != null)
-                    hashCode = hashCode * 59 + this.Force.GetHashCode();
+                var hashCode = 41;
+                if (this.Force != null) hashCode = hashCode * 59 + this.Force.GetHashCode();
                 return hashCode;
             }
         }

@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(ListNotifiedHistoriesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EventSn != input.EventSn || (this.EventSn != null && !this.EventSn.Equals(input.EventSn))) return false;
 
-            return 
-                (
-                    this.EventSn == input.EventSn ||
-                    (this.EventSn != null &&
-                    this.EventSn.Equals(input.EventSn))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EventSn != null)
-                    hashCode = hashCode * 59 + this.EventSn.GetHashCode();
+                var hashCode = 41;
+                if (this.EventSn != null) hashCode = hashCode * 59 + this.EventSn.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ModifyRedisConfigBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RedisConfig != input.RedisConfig || (this.RedisConfig != null && input.RedisConfig != null && !this.RedisConfig.SequenceEqual(input.RedisConfig))) return false;
 
-            return 
-                (
-                    this.RedisConfig == input.RedisConfig ||
-                    this.RedisConfig != null &&
-                    input.RedisConfig != null &&
-                    this.RedisConfig.SequenceEqual(input.RedisConfig)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RedisConfig != null)
-                    hashCode = hashCode * 59 + this.RedisConfig.GetHashCode();
+                var hashCode = 41;
+                if (this.RedisConfig != null) hashCode = hashCode * 59 + this.RedisConfig.GetHashCode();
                 return hashCode;
             }
         }

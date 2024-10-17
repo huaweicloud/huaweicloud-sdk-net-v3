@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(SourcesDomainConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OriginType != input.OriginType || (this.OriginType != null && !this.OriginType.Equals(input.OriginType))) return false;
+            if (this.OriginAddr != input.OriginAddr || (this.OriginAddr != null && !this.OriginAddr.Equals(input.OriginAddr))) return false;
+            if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
+            if (this.ObsWebHostingStatus != input.ObsWebHostingStatus || (this.ObsWebHostingStatus != null && !this.ObsWebHostingStatus.Equals(input.ObsWebHostingStatus))) return false;
+            if (this.HttpPort != input.HttpPort || (this.HttpPort != null && !this.HttpPort.Equals(input.HttpPort))) return false;
+            if (this.HttpsPort != input.HttpsPort || (this.HttpsPort != null && !this.HttpsPort.Equals(input.HttpsPort))) return false;
+            if (this.HostName != input.HostName || (this.HostName != null && !this.HostName.Equals(input.HostName))) return false;
+            if (this.ObsBucketType != input.ObsBucketType || (this.ObsBucketType != null && !this.ObsBucketType.Equals(input.ObsBucketType))) return false;
 
-            return 
-                (
-                    this.OriginType == input.OriginType ||
-                    (this.OriginType != null &&
-                    this.OriginType.Equals(input.OriginType))
-                ) && 
-                (
-                    this.OriginAddr == input.OriginAddr ||
-                    (this.OriginAddr != null &&
-                    this.OriginAddr.Equals(input.OriginAddr))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    (this.Priority != null &&
-                    this.Priority.Equals(input.Priority))
-                ) && 
-                (
-                    this.ObsWebHostingStatus == input.ObsWebHostingStatus ||
-                    (this.ObsWebHostingStatus != null &&
-                    this.ObsWebHostingStatus.Equals(input.ObsWebHostingStatus))
-                ) && 
-                (
-                    this.HttpPort == input.HttpPort ||
-                    (this.HttpPort != null &&
-                    this.HttpPort.Equals(input.HttpPort))
-                ) && 
-                (
-                    this.HttpsPort == input.HttpsPort ||
-                    (this.HttpsPort != null &&
-                    this.HttpsPort.Equals(input.HttpsPort))
-                ) && 
-                (
-                    this.HostName == input.HostName ||
-                    (this.HostName != null &&
-                    this.HostName.Equals(input.HostName))
-                ) && 
-                (
-                    this.ObsBucketType == input.ObsBucketType ||
-                    (this.ObsBucketType != null &&
-                    this.ObsBucketType.Equals(input.ObsBucketType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OriginType != null)
-                    hashCode = hashCode * 59 + this.OriginType.GetHashCode();
-                if (this.OriginAddr != null)
-                    hashCode = hashCode * 59 + this.OriginAddr.GetHashCode();
-                if (this.Priority != null)
-                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
-                if (this.ObsWebHostingStatus != null)
-                    hashCode = hashCode * 59 + this.ObsWebHostingStatus.GetHashCode();
-                if (this.HttpPort != null)
-                    hashCode = hashCode * 59 + this.HttpPort.GetHashCode();
-                if (this.HttpsPort != null)
-                    hashCode = hashCode * 59 + this.HttpsPort.GetHashCode();
-                if (this.HostName != null)
-                    hashCode = hashCode * 59 + this.HostName.GetHashCode();
-                if (this.ObsBucketType != null)
-                    hashCode = hashCode * 59 + this.ObsBucketType.GetHashCode();
+                var hashCode = 41;
+                if (this.OriginType != null) hashCode = hashCode * 59 + this.OriginType.GetHashCode();
+                if (this.OriginAddr != null) hashCode = hashCode * 59 + this.OriginAddr.GetHashCode();
+                if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                if (this.ObsWebHostingStatus != null) hashCode = hashCode * 59 + this.ObsWebHostingStatus.GetHashCode();
+                if (this.HttpPort != null) hashCode = hashCode * 59 + this.HttpPort.GetHashCode();
+                if (this.HttpsPort != null) hashCode = hashCode * 59 + this.HttpsPort.GetHashCode();
+                if (this.HostName != null) hashCode = hashCode * 59 + this.HostName.GetHashCode();
+                if (this.ObsBucketType != null) hashCode = hashCode * 59 + this.ObsBucketType.GetHashCode();
                 return hashCode;
             }
         }

@@ -91,48 +91,16 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(EventModel input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StartsAt != input.StartsAt || (this.StartsAt != null && !this.StartsAt.Equals(input.StartsAt))) return false;
+            if (this.EndsAt != input.EndsAt || (this.EndsAt != null && !this.EndsAt.Equals(input.EndsAt))) return false;
+            if (this.Timeout != input.Timeout || (this.Timeout != null && !this.Timeout.Equals(input.Timeout))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && input.Metadata != null && !this.Metadata.SequenceEqual(input.Metadata))) return false;
+            if (this.Annotations != input.Annotations || (this.Annotations != null && input.Annotations != null && !this.Annotations.SequenceEqual(input.Annotations))) return false;
+            if (this.AttachRule != input.AttachRule || (this.AttachRule != null && input.AttachRule != null && !this.AttachRule.SequenceEqual(input.AttachRule))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
 
-            return 
-                (
-                    this.StartsAt == input.StartsAt ||
-                    (this.StartsAt != null &&
-                    this.StartsAt.Equals(input.StartsAt))
-                ) && 
-                (
-                    this.EndsAt == input.EndsAt ||
-                    (this.EndsAt != null &&
-                    this.EndsAt.Equals(input.EndsAt))
-                ) && 
-                (
-                    this.Timeout == input.Timeout ||
-                    (this.Timeout != null &&
-                    this.Timeout.Equals(input.Timeout))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    this.Metadata != null &&
-                    input.Metadata != null &&
-                    this.Metadata.SequenceEqual(input.Metadata)
-                ) && 
-                (
-                    this.Annotations == input.Annotations ||
-                    this.Annotations != null &&
-                    input.Annotations != null &&
-                    this.Annotations.SequenceEqual(input.Annotations)
-                ) && 
-                (
-                    this.AttachRule == input.AttachRule ||
-                    this.AttachRule != null &&
-                    input.AttachRule != null &&
-                    this.AttachRule.SequenceEqual(input.AttachRule)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                );
+            return true;
         }
 
         /// <summary>
@@ -142,21 +110,14 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StartsAt != null)
-                    hashCode = hashCode * 59 + this.StartsAt.GetHashCode();
-                if (this.EndsAt != null)
-                    hashCode = hashCode * 59 + this.EndsAt.GetHashCode();
-                if (this.Timeout != null)
-                    hashCode = hashCode * 59 + this.Timeout.GetHashCode();
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
-                if (this.Annotations != null)
-                    hashCode = hashCode * 59 + this.Annotations.GetHashCode();
-                if (this.AttachRule != null)
-                    hashCode = hashCode * 59 + this.AttachRule.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                var hashCode = 41;
+                if (this.StartsAt != null) hashCode = hashCode * 59 + this.StartsAt.GetHashCode();
+                if (this.EndsAt != null) hashCode = hashCode * 59 + this.EndsAt.GetHashCode();
+                if (this.Timeout != null) hashCode = hashCode * 59 + this.Timeout.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                if (this.Annotations != null) hashCode = hashCode * 59 + this.Annotations.GetHashCode();
+                if (this.AttachRule != null) hashCode = hashCode * 59 + this.AttachRule.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
                 return hashCode;
             }
         }

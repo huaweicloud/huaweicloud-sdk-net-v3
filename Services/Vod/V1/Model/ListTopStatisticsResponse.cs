@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(ListTopStatisticsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TopUrls != input.TopUrls || (this.TopUrls != null && input.TopUrls != null && !this.TopUrls.SequenceEqual(input.TopUrls))) return false;
 
-            return 
-                (
-                    this.TopUrls == input.TopUrls ||
-                    this.TopUrls != null &&
-                    input.TopUrls != null &&
-                    this.TopUrls.SequenceEqual(input.TopUrls)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TopUrls != null)
-                    hashCode = hashCode * 59 + this.TopUrls.GetHashCode();
+                var hashCode = 41;
+                if (this.TopUrls != null) hashCode = hashCode * 59 + this.TopUrls.GetHashCode();
                 return hashCode;
             }
         }

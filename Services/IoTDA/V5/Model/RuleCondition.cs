@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(RuleCondition input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.DevicePropertyCondition != input.DevicePropertyCondition || (this.DevicePropertyCondition != null && !this.DevicePropertyCondition.Equals(input.DevicePropertyCondition))) return false;
+            if (this.SimpleTimerCondition != input.SimpleTimerCondition || (this.SimpleTimerCondition != null && !this.SimpleTimerCondition.Equals(input.SimpleTimerCondition))) return false;
+            if (this.DailyTimerCondition != input.DailyTimerCondition || (this.DailyTimerCondition != null && !this.DailyTimerCondition.Equals(input.DailyTimerCondition))) return false;
+            if (this.DeviceLinkageStatusCondition != input.DeviceLinkageStatusCondition || (this.DeviceLinkageStatusCondition != null && !this.DeviceLinkageStatusCondition.Equals(input.DeviceLinkageStatusCondition))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.DevicePropertyCondition == input.DevicePropertyCondition ||
-                    (this.DevicePropertyCondition != null &&
-                    this.DevicePropertyCondition.Equals(input.DevicePropertyCondition))
-                ) && 
-                (
-                    this.SimpleTimerCondition == input.SimpleTimerCondition ||
-                    (this.SimpleTimerCondition != null &&
-                    this.SimpleTimerCondition.Equals(input.SimpleTimerCondition))
-                ) && 
-                (
-                    this.DailyTimerCondition == input.DailyTimerCondition ||
-                    (this.DailyTimerCondition != null &&
-                    this.DailyTimerCondition.Equals(input.DailyTimerCondition))
-                ) && 
-                (
-                    this.DeviceLinkageStatusCondition == input.DeviceLinkageStatusCondition ||
-                    (this.DeviceLinkageStatusCondition != null &&
-                    this.DeviceLinkageStatusCondition.Equals(input.DeviceLinkageStatusCondition))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.DevicePropertyCondition != null)
-                    hashCode = hashCode * 59 + this.DevicePropertyCondition.GetHashCode();
-                if (this.SimpleTimerCondition != null)
-                    hashCode = hashCode * 59 + this.SimpleTimerCondition.GetHashCode();
-                if (this.DailyTimerCondition != null)
-                    hashCode = hashCode * 59 + this.DailyTimerCondition.GetHashCode();
-                if (this.DeviceLinkageStatusCondition != null)
-                    hashCode = hashCode * 59 + this.DeviceLinkageStatusCondition.GetHashCode();
+                var hashCode = 41;
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.DevicePropertyCondition != null) hashCode = hashCode * 59 + this.DevicePropertyCondition.GetHashCode();
+                if (this.SimpleTimerCondition != null) hashCode = hashCode * 59 + this.SimpleTimerCondition.GetHashCode();
+                if (this.DailyTimerCondition != null) hashCode = hashCode * 59 + this.DailyTimerCondition.GetHashCode();
+                if (this.DeviceLinkageStatusCondition != null) hashCode = hashCode * 59 + this.DeviceLinkageStatusCondition.GetHashCode();
                 return hashCode;
             }
         }

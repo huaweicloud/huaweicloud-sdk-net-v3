@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(RuleAction input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.DeviceCommand != input.DeviceCommand || (this.DeviceCommand != null && !this.DeviceCommand.Equals(input.DeviceCommand))) return false;
+            if (this.SmnForwarding != input.SmnForwarding || (this.SmnForwarding != null && !this.SmnForwarding.Equals(input.SmnForwarding))) return false;
+            if (this.DeviceAlarm != input.DeviceAlarm || (this.DeviceAlarm != null && !this.DeviceAlarm.Equals(input.DeviceAlarm))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.DeviceCommand == input.DeviceCommand ||
-                    (this.DeviceCommand != null &&
-                    this.DeviceCommand.Equals(input.DeviceCommand))
-                ) && 
-                (
-                    this.SmnForwarding == input.SmnForwarding ||
-                    (this.SmnForwarding != null &&
-                    this.SmnForwarding.Equals(input.SmnForwarding))
-                ) && 
-                (
-                    this.DeviceAlarm == input.DeviceAlarm ||
-                    (this.DeviceAlarm != null &&
-                    this.DeviceAlarm.Equals(input.DeviceAlarm))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.DeviceCommand != null)
-                    hashCode = hashCode * 59 + this.DeviceCommand.GetHashCode();
-                if (this.SmnForwarding != null)
-                    hashCode = hashCode * 59 + this.SmnForwarding.GetHashCode();
-                if (this.DeviceAlarm != null)
-                    hashCode = hashCode * 59 + this.DeviceAlarm.GetHashCode();
+                var hashCode = 41;
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.DeviceCommand != null) hashCode = hashCode * 59 + this.DeviceCommand.GetHashCode();
+                if (this.SmnForwarding != null) hashCode = hashCode * 59 + this.SmnForwarding.GetHashCode();
+                if (this.DeviceAlarm != null) hashCode = hashCode * 59 + this.DeviceAlarm.GetHashCode();
                 return hashCode;
             }
         }

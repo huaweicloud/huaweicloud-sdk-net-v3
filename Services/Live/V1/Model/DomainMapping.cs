@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(DomainMapping input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PullDomain != input.PullDomain || (this.PullDomain != null && !this.PullDomain.Equals(input.PullDomain))) return false;
+            if (this.PushDomain != input.PushDomain || (this.PushDomain != null && !this.PushDomain.Equals(input.PushDomain))) return false;
 
-            return 
-                (
-                    this.PullDomain == input.PullDomain ||
-                    (this.PullDomain != null &&
-                    this.PullDomain.Equals(input.PullDomain))
-                ) && 
-                (
-                    this.PushDomain == input.PushDomain ||
-                    (this.PushDomain != null &&
-                    this.PushDomain.Equals(input.PushDomain))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PullDomain != null)
-                    hashCode = hashCode * 59 + this.PullDomain.GetHashCode();
-                if (this.PushDomain != null)
-                    hashCode = hashCode * 59 + this.PushDomain.GetHashCode();
+                var hashCode = 41;
+                if (this.PullDomain != null) hashCode = hashCode * 59 + this.PullDomain.GetHashCode();
+                if (this.PushDomain != null) hashCode = hashCode * 59 + this.PushDomain.GetHashCode();
                 return hashCode;
             }
         }

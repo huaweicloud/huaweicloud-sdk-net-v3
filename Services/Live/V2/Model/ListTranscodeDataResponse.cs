@@ -64,27 +64,12 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         /// </summary>
         public bool Equals(ListTranscodeDataResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TranscodeDataList != input.TranscodeDataList || (this.TranscodeDataList != null && input.TranscodeDataList != null && !this.TranscodeDataList.SequenceEqual(input.TranscodeDataList))) return false;
+            if (this.SummaryList != input.SummaryList || (this.SummaryList != null && input.SummaryList != null && !this.SummaryList.SequenceEqual(input.SummaryList))) return false;
+            if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
-            return 
-                (
-                    this.TranscodeDataList == input.TranscodeDataList ||
-                    this.TranscodeDataList != null &&
-                    input.TranscodeDataList != null &&
-                    this.TranscodeDataList.SequenceEqual(input.TranscodeDataList)
-                ) && 
-                (
-                    this.SummaryList == input.SummaryList ||
-                    this.SummaryList != null &&
-                    input.SummaryList != null &&
-                    this.SummaryList.SequenceEqual(input.SummaryList)
-                ) && 
-                (
-                    this.XRequestId == input.XRequestId ||
-                    (this.XRequestId != null &&
-                    this.XRequestId.Equals(input.XRequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +79,10 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TranscodeDataList != null)
-                    hashCode = hashCode * 59 + this.TranscodeDataList.GetHashCode();
-                if (this.SummaryList != null)
-                    hashCode = hashCode * 59 + this.SummaryList.GetHashCode();
-                if (this.XRequestId != null)
-                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.TranscodeDataList != null) hashCode = hashCode * 59 + this.TranscodeDataList.GetHashCode();
+                if (this.SummaryList != null) hashCode = hashCode * 59 + this.SummaryList.GetHashCode();
+                if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

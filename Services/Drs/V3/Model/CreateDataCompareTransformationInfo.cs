@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(CreateDataCompareTransformationInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TransformationType != input.TransformationType || (this.TransformationType != null && !this.TransformationType.Equals(input.TransformationType))) return false;
+            if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
 
-            return 
-                (
-                    this.TransformationType == input.TransformationType ||
-                    (this.TransformationType != null &&
-                    this.TransformationType.Equals(input.TransformationType))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TransformationType != null)
-                    hashCode = hashCode * 59 + this.TransformationType.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
+                var hashCode = 41;
+                if (this.TransformationType != null) hashCode = hashCode * 59 + this.TransformationType.GetHashCode();
+                if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
                 return hashCode;
             }
         }

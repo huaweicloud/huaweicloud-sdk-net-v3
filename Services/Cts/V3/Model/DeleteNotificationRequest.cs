@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         /// </summary>
         public bool Equals(DeleteNotificationRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NotificationId != input.NotificationId || (this.NotificationId != null && !this.NotificationId.Equals(input.NotificationId))) return false;
 
-            return 
-                (
-                    this.NotificationId == input.NotificationId ||
-                    (this.NotificationId != null &&
-                    this.NotificationId.Equals(input.NotificationId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NotificationId != null)
-                    hashCode = hashCode * 59 + this.NotificationId.GetHashCode();
+                var hashCode = 41;
+                if (this.NotificationId != null) hashCode = hashCode * 59 + this.NotificationId.GetHashCode();
                 return hashCode;
             }
         }

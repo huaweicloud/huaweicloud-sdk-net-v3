@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(TemplateApplyHistory input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TargetId != input.TargetId || (this.TargetId != null && !this.TargetId.Equals(input.TargetId))) return false;
+            if (this.TargetName != input.TargetName || (this.TargetName != null && !this.TargetName.Equals(input.TargetName))) return false;
+            if (this.ApplyResult != input.ApplyResult || (this.ApplyResult != null && !this.ApplyResult.Equals(input.ApplyResult))) return false;
+            if (this.AppliedAt != input.AppliedAt || (this.AppliedAt != null && !this.AppliedAt.Equals(input.AppliedAt))) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
 
-            return 
-                (
-                    this.TargetId == input.TargetId ||
-                    (this.TargetId != null &&
-                    this.TargetId.Equals(input.TargetId))
-                ) && 
-                (
-                    this.TargetName == input.TargetName ||
-                    (this.TargetName != null &&
-                    this.TargetName.Equals(input.TargetName))
-                ) && 
-                (
-                    this.ApplyResult == input.ApplyResult ||
-                    (this.ApplyResult != null &&
-                    this.ApplyResult.Equals(input.ApplyResult))
-                ) && 
-                (
-                    this.AppliedAt == input.AppliedAt ||
-                    (this.AppliedAt != null &&
-                    this.AppliedAt.Equals(input.AppliedAt))
-                ) && 
-                (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TargetId != null)
-                    hashCode = hashCode * 59 + this.TargetId.GetHashCode();
-                if (this.TargetName != null)
-                    hashCode = hashCode * 59 + this.TargetName.GetHashCode();
-                if (this.ApplyResult != null)
-                    hashCode = hashCode * 59 + this.ApplyResult.GetHashCode();
-                if (this.AppliedAt != null)
-                    hashCode = hashCode * 59 + this.AppliedAt.GetHashCode();
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                var hashCode = 41;
+                if (this.TargetId != null) hashCode = hashCode * 59 + this.TargetId.GetHashCode();
+                if (this.TargetName != null) hashCode = hashCode * 59 + this.TargetName.GetHashCode();
+                if (this.ApplyResult != null) hashCode = hashCode * 59 + this.ApplyResult.GetHashCode();
+                if (this.AppliedAt != null) hashCode = hashCode * 59 + this.AppliedAt.GetHashCode();
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
                 return hashCode;
             }
         }

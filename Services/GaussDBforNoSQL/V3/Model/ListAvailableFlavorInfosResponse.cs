@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(ListAvailableFlavorInfosResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.InstanceName != input.InstanceName || (this.InstanceName != null && !this.InstanceName.Equals(input.InstanceName))) return false;
+            if (this.CurrentFlavor != input.CurrentFlavor || (this.CurrentFlavor != null && !this.CurrentFlavor.Equals(input.CurrentFlavor))) return false;
+            if (this.OptionalFlavors != input.OptionalFlavors || (this.OptionalFlavors != null && !this.OptionalFlavors.Equals(input.OptionalFlavors))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.InstanceName == input.InstanceName ||
-                    (this.InstanceName != null &&
-                    this.InstanceName.Equals(input.InstanceName))
-                ) && 
-                (
-                    this.CurrentFlavor == input.CurrentFlavor ||
-                    (this.CurrentFlavor != null &&
-                    this.CurrentFlavor.Equals(input.CurrentFlavor))
-                ) && 
-                (
-                    this.OptionalFlavors == input.OptionalFlavors ||
-                    (this.OptionalFlavors != null &&
-                    this.OptionalFlavors.Equals(input.OptionalFlavors))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.InstanceName != null)
-                    hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
-                if (this.CurrentFlavor != null)
-                    hashCode = hashCode * 59 + this.CurrentFlavor.GetHashCode();
-                if (this.OptionalFlavors != null)
-                    hashCode = hashCode * 59 + this.OptionalFlavors.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.InstanceName != null) hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
+                if (this.CurrentFlavor != null) hashCode = hashCode * 59 + this.CurrentFlavor.GetHashCode();
+                if (this.OptionalFlavors != null) hashCode = hashCode * 59 + this.OptionalFlavors.GetHashCode();
                 return hashCode;
             }
         }

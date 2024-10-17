@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// </summary>
         public bool Equals(NeutronDeleteFloatingIpRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FloatingipId != input.FloatingipId || (this.FloatingipId != null && !this.FloatingipId.Equals(input.FloatingipId))) return false;
 
-            return 
-                (
-                    this.FloatingipId == input.FloatingipId ||
-                    (this.FloatingipId != null &&
-                    this.FloatingipId.Equals(input.FloatingipId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FloatingipId != null)
-                    hashCode = hashCode * 59 + this.FloatingipId.GetHashCode();
+                var hashCode = 41;
+                if (this.FloatingipId != null) hashCode = hashCode * 59 + this.FloatingipId.GetHashCode();
                 return hashCode;
             }
         }

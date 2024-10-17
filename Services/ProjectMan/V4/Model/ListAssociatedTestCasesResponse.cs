@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ListAssociatedTestCasesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TestCases != input.TestCases || (this.TestCases != null && input.TestCases != null && !this.TestCases.SequenceEqual(input.TestCases))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
-            return 
-                (
-                    this.TestCases == input.TestCases ||
-                    this.TestCases != null &&
-                    input.TestCases != null &&
-                    this.TestCases.SequenceEqual(input.TestCases)
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TestCases != null)
-                    hashCode = hashCode * 59 + this.TestCases.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                var hashCode = 41;
+                if (this.TestCases != null) hashCode = hashCode * 59 + this.TestCases.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

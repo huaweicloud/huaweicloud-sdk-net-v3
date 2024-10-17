@@ -168,101 +168,27 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// </summary>
         public bool Equals(FrequencyControlRule input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Producer != input.Producer || (this.Producer != null && !this.Producer.Equals(input.Producer))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.LimitNum != input.LimitNum || (this.LimitNum != null && !this.LimitNum.Equals(input.LimitNum))) return false;
+            if (this.LimitPeriod != input.LimitPeriod || (this.LimitPeriod != null && !this.LimitPeriod.Equals(input.LimitPeriod))) return false;
+            if (this.LockTime != input.LockTime || (this.LockTime != null && !this.LockTime.Equals(input.LockTime))) return false;
+            if (this.TagType != input.TagType || (this.TagType != null && !this.TagType.Equals(input.TagType))) return false;
+            if (this.TagIndex != input.TagIndex || (this.TagIndex != null && !this.TagIndex.Equals(input.TagIndex))) return false;
+            if (this.TagCondition != input.TagCondition || (this.TagCondition != null && !this.TagCondition.Equals(input.TagCondition))) return false;
+            if (this.Action != input.Action || (this.Action != null && !this.Action.Equals(input.Action))) return false;
+            if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
+            if (this.Conditions != input.Conditions || (this.Conditions != null && input.Conditions != null && !this.Conditions.SequenceEqual(input.Conditions))) return false;
+            if (this.UnlockNum != input.UnlockNum || (this.UnlockNum != null && !this.UnlockNum.Equals(input.UnlockNum))) return false;
+            if (this.DomainAggregation != input.DomainAggregation || (this.DomainAggregation != null && !this.DomainAggregation.Equals(input.DomainAggregation))) return false;
+            if (this.RegionAggregation != input.RegionAggregation || (this.RegionAggregation != null && !this.RegionAggregation.Equals(input.RegionAggregation))) return false;
+            if (this.CaptchaLockTime != input.CaptchaLockTime || (this.CaptchaLockTime != null && !this.CaptchaLockTime.Equals(input.CaptchaLockTime))) return false;
+            if (this.GrayscaleTime != input.GrayscaleTime || (this.GrayscaleTime != null && !this.GrayscaleTime.Equals(input.GrayscaleTime))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Producer == input.Producer ||
-                    (this.Producer != null &&
-                    this.Producer.Equals(input.Producer))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.LimitNum == input.LimitNum ||
-                    (this.LimitNum != null &&
-                    this.LimitNum.Equals(input.LimitNum))
-                ) && 
-                (
-                    this.LimitPeriod == input.LimitPeriod ||
-                    (this.LimitPeriod != null &&
-                    this.LimitPeriod.Equals(input.LimitPeriod))
-                ) && 
-                (
-                    this.LockTime == input.LockTime ||
-                    (this.LockTime != null &&
-                    this.LockTime.Equals(input.LockTime))
-                ) && 
-                (
-                    this.TagType == input.TagType ||
-                    (this.TagType != null &&
-                    this.TagType.Equals(input.TagType))
-                ) && 
-                (
-                    this.TagIndex == input.TagIndex ||
-                    (this.TagIndex != null &&
-                    this.TagIndex.Equals(input.TagIndex))
-                ) && 
-                (
-                    this.TagCondition == input.TagCondition ||
-                    (this.TagCondition != null &&
-                    this.TagCondition.Equals(input.TagCondition))
-                ) && 
-                (
-                    this.Action == input.Action ||
-                    (this.Action != null &&
-                    this.Action.Equals(input.Action))
-                ) && 
-                (
-                    this.Mode == input.Mode ||
-                    (this.Mode != null &&
-                    this.Mode.Equals(input.Mode))
-                ) && 
-                (
-                    this.Conditions == input.Conditions ||
-                    this.Conditions != null &&
-                    input.Conditions != null &&
-                    this.Conditions.SequenceEqual(input.Conditions)
-                ) && 
-                (
-                    this.UnlockNum == input.UnlockNum ||
-                    (this.UnlockNum != null &&
-                    this.UnlockNum.Equals(input.UnlockNum))
-                ) && 
-                (
-                    this.DomainAggregation == input.DomainAggregation ||
-                    (this.DomainAggregation != null &&
-                    this.DomainAggregation.Equals(input.DomainAggregation))
-                ) && 
-                (
-                    this.RegionAggregation == input.RegionAggregation ||
-                    (this.RegionAggregation != null &&
-                    this.RegionAggregation.Equals(input.RegionAggregation))
-                ) && 
-                (
-                    this.CaptchaLockTime == input.CaptchaLockTime ||
-                    (this.CaptchaLockTime != null &&
-                    this.CaptchaLockTime.Equals(input.CaptchaLockTime))
-                ) && 
-                (
-                    this.GrayscaleTime == input.GrayscaleTime ||
-                    (this.GrayscaleTime != null &&
-                    this.GrayscaleTime.Equals(input.GrayscaleTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -272,43 +198,25 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Producer != null)
-                    hashCode = hashCode * 59 + this.Producer.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.LimitNum != null)
-                    hashCode = hashCode * 59 + this.LimitNum.GetHashCode();
-                if (this.LimitPeriod != null)
-                    hashCode = hashCode * 59 + this.LimitPeriod.GetHashCode();
-                if (this.LockTime != null)
-                    hashCode = hashCode * 59 + this.LockTime.GetHashCode();
-                if (this.TagType != null)
-                    hashCode = hashCode * 59 + this.TagType.GetHashCode();
-                if (this.TagIndex != null)
-                    hashCode = hashCode * 59 + this.TagIndex.GetHashCode();
-                if (this.TagCondition != null)
-                    hashCode = hashCode * 59 + this.TagCondition.GetHashCode();
-                if (this.Action != null)
-                    hashCode = hashCode * 59 + this.Action.GetHashCode();
-                if (this.Mode != null)
-                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
-                if (this.Conditions != null)
-                    hashCode = hashCode * 59 + this.Conditions.GetHashCode();
-                if (this.UnlockNum != null)
-                    hashCode = hashCode * 59 + this.UnlockNum.GetHashCode();
-                if (this.DomainAggregation != null)
-                    hashCode = hashCode * 59 + this.DomainAggregation.GetHashCode();
-                if (this.RegionAggregation != null)
-                    hashCode = hashCode * 59 + this.RegionAggregation.GetHashCode();
-                if (this.CaptchaLockTime != null)
-                    hashCode = hashCode * 59 + this.CaptchaLockTime.GetHashCode();
-                if (this.GrayscaleTime != null)
-                    hashCode = hashCode * 59 + this.GrayscaleTime.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Producer != null) hashCode = hashCode * 59 + this.Producer.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.LimitNum != null) hashCode = hashCode * 59 + this.LimitNum.GetHashCode();
+                if (this.LimitPeriod != null) hashCode = hashCode * 59 + this.LimitPeriod.GetHashCode();
+                if (this.LockTime != null) hashCode = hashCode * 59 + this.LockTime.GetHashCode();
+                if (this.TagType != null) hashCode = hashCode * 59 + this.TagType.GetHashCode();
+                if (this.TagIndex != null) hashCode = hashCode * 59 + this.TagIndex.GetHashCode();
+                if (this.TagCondition != null) hashCode = hashCode * 59 + this.TagCondition.GetHashCode();
+                if (this.Action != null) hashCode = hashCode * 59 + this.Action.GetHashCode();
+                if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                if (this.Conditions != null) hashCode = hashCode * 59 + this.Conditions.GetHashCode();
+                if (this.UnlockNum != null) hashCode = hashCode * 59 + this.UnlockNum.GetHashCode();
+                if (this.DomainAggregation != null) hashCode = hashCode * 59 + this.DomainAggregation.GetHashCode();
+                if (this.RegionAggregation != null) hashCode = hashCode * 59 + this.RegionAggregation.GetHashCode();
+                if (this.CaptchaLockTime != null) hashCode = hashCode * 59 + this.CaptchaLockTime.GetHashCode();
+                if (this.GrayscaleTime != null) hashCode = hashCode * 59 + this.GrayscaleTime.GetHashCode();
                 return hashCode;
             }
         }

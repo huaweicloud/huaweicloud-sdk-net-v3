@@ -453,55 +453,18 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ShowInstanceSnapshotResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClusterMode != input.ClusterMode) return false;
+            if (this.InstanceMode != input.InstanceMode) return false;
+            if (this.DataVolumeSize != input.DataVolumeSize || (this.DataVolumeSize != null && !this.DataVolumeSize.Equals(input.DataVolumeSize))) return false;
+            if (this.Solution != input.Solution) return false;
+            if (this.NodeNum != input.NodeNum || (this.NodeNum != null && !this.NodeNum.Equals(input.NodeNum))) return false;
+            if (this.CoordinatorNum != input.CoordinatorNum || (this.CoordinatorNum != null && !this.CoordinatorNum.Equals(input.CoordinatorNum))) return false;
+            if (this.ShardingNum != input.ShardingNum || (this.ShardingNum != null && !this.ShardingNum.Equals(input.ShardingNum))) return false;
+            if (this.ReplicaNum != input.ReplicaNum || (this.ReplicaNum != null && !this.ReplicaNum.Equals(input.ReplicaNum))) return false;
+            if (this.EngineVersion != input.EngineVersion || (this.EngineVersion != null && !this.EngineVersion.Equals(input.EngineVersion))) return false;
 
-            return 
-                (
-                    this.ClusterMode == input.ClusterMode ||
-                    (this.ClusterMode != null &&
-                    this.ClusterMode.Equals(input.ClusterMode))
-                ) && 
-                (
-                    this.InstanceMode == input.InstanceMode ||
-                    (this.InstanceMode != null &&
-                    this.InstanceMode.Equals(input.InstanceMode))
-                ) && 
-                (
-                    this.DataVolumeSize == input.DataVolumeSize ||
-                    (this.DataVolumeSize != null &&
-                    this.DataVolumeSize.Equals(input.DataVolumeSize))
-                ) && 
-                (
-                    this.Solution == input.Solution ||
-                    (this.Solution != null &&
-                    this.Solution.Equals(input.Solution))
-                ) && 
-                (
-                    this.NodeNum == input.NodeNum ||
-                    (this.NodeNum != null &&
-                    this.NodeNum.Equals(input.NodeNum))
-                ) && 
-                (
-                    this.CoordinatorNum == input.CoordinatorNum ||
-                    (this.CoordinatorNum != null &&
-                    this.CoordinatorNum.Equals(input.CoordinatorNum))
-                ) && 
-                (
-                    this.ShardingNum == input.ShardingNum ||
-                    (this.ShardingNum != null &&
-                    this.ShardingNum.Equals(input.ShardingNum))
-                ) && 
-                (
-                    this.ReplicaNum == input.ReplicaNum ||
-                    (this.ReplicaNum != null &&
-                    this.ReplicaNum.Equals(input.ReplicaNum))
-                ) && 
-                (
-                    this.EngineVersion == input.EngineVersion ||
-                    (this.EngineVersion != null &&
-                    this.EngineVersion.Equals(input.EngineVersion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -511,25 +474,16 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClusterMode != null)
-                    hashCode = hashCode * 59 + this.ClusterMode.GetHashCode();
-                if (this.InstanceMode != null)
-                    hashCode = hashCode * 59 + this.InstanceMode.GetHashCode();
-                if (this.DataVolumeSize != null)
-                    hashCode = hashCode * 59 + this.DataVolumeSize.GetHashCode();
-                if (this.Solution != null)
-                    hashCode = hashCode * 59 + this.Solution.GetHashCode();
-                if (this.NodeNum != null)
-                    hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
-                if (this.CoordinatorNum != null)
-                    hashCode = hashCode * 59 + this.CoordinatorNum.GetHashCode();
-                if (this.ShardingNum != null)
-                    hashCode = hashCode * 59 + this.ShardingNum.GetHashCode();
-                if (this.ReplicaNum != null)
-                    hashCode = hashCode * 59 + this.ReplicaNum.GetHashCode();
-                if (this.EngineVersion != null)
-                    hashCode = hashCode * 59 + this.EngineVersion.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.ClusterMode.GetHashCode();
+                hashCode = hashCode * 59 + this.InstanceMode.GetHashCode();
+                if (this.DataVolumeSize != null) hashCode = hashCode * 59 + this.DataVolumeSize.GetHashCode();
+                hashCode = hashCode * 59 + this.Solution.GetHashCode();
+                if (this.NodeNum != null) hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
+                if (this.CoordinatorNum != null) hashCode = hashCode * 59 + this.CoordinatorNum.GetHashCode();
+                if (this.ShardingNum != null) hashCode = hashCode * 59 + this.ShardingNum.GetHashCode();
+                if (this.ReplicaNum != null) hashCode = hashCode * 59 + this.ReplicaNum.GetHashCode();
+                if (this.EngineVersion != null) hashCode = hashCode * 59 + this.EngineVersion.GetHashCode();
                 return hashCode;
             }
         }

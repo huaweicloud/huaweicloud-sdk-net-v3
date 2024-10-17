@@ -587,159 +587,38 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(CreateLoadBalancerOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.VipAddress != input.VipAddress || (this.VipAddress != null && !this.VipAddress.Equals(input.VipAddress))) return false;
+            if (this.VipSubnetCidrId != input.VipSubnetCidrId || (this.VipSubnetCidrId != null && !this.VipSubnetCidrId.Equals(input.VipSubnetCidrId))) return false;
+            if (this.Ipv6VipVirsubnetId != input.Ipv6VipVirsubnetId || (this.Ipv6VipVirsubnetId != null && !this.Ipv6VipVirsubnetId.Equals(input.Ipv6VipVirsubnetId))) return false;
+            if (this.Provider != input.Provider || (this.Provider != null && !this.Provider.Equals(input.Provider))) return false;
+            if (this.L4FlavorId != input.L4FlavorId || (this.L4FlavorId != null && !this.L4FlavorId.Equals(input.L4FlavorId))) return false;
+            if (this.L7FlavorId != input.L7FlavorId || (this.L7FlavorId != null && !this.L7FlavorId.Equals(input.L7FlavorId))) return false;
+            if (this.Guaranteed != input.Guaranteed || (this.Guaranteed != null && !this.Guaranteed.Equals(input.Guaranteed))) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
+            if (this.AvailabilityZoneList != input.AvailabilityZoneList || (this.AvailabilityZoneList != null && input.AvailabilityZoneList != null && !this.AvailabilityZoneList.SequenceEqual(input.AvailabilityZoneList))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.BillingInfo != input.BillingInfo || (this.BillingInfo != null && !this.BillingInfo.Equals(input.BillingInfo))) return false;
+            if (this.Ipv6Bandwidth != input.Ipv6Bandwidth || (this.Ipv6Bandwidth != null && !this.Ipv6Bandwidth.Equals(input.Ipv6Bandwidth))) return false;
+            if (this.PublicipIds != input.PublicipIds || (this.PublicipIds != null && input.PublicipIds != null && !this.PublicipIds.SequenceEqual(input.PublicipIds))) return false;
+            if (this.Publicip != input.Publicip || (this.Publicip != null && !this.Publicip.Equals(input.Publicip))) return false;
+            if (this.ElbVirsubnetIds != input.ElbVirsubnetIds || (this.ElbVirsubnetIds != null && input.ElbVirsubnetIds != null && !this.ElbVirsubnetIds.SequenceEqual(input.ElbVirsubnetIds))) return false;
+            if (this.IpTargetEnable != input.IpTargetEnable || (this.IpTargetEnable != null && !this.IpTargetEnable.Equals(input.IpTargetEnable))) return false;
+            if (this.DeletionProtectionEnable != input.DeletionProtectionEnable || (this.DeletionProtectionEnable != null && !this.DeletionProtectionEnable.Equals(input.DeletionProtectionEnable))) return false;
+            if (this.PrepaidOptions != input.PrepaidOptions || (this.PrepaidOptions != null && !this.PrepaidOptions.Equals(input.PrepaidOptions))) return false;
+            if (this.Autoscaling != input.Autoscaling || (this.Autoscaling != null && !this.Autoscaling.Equals(input.Autoscaling))) return false;
+            if (this.WafFailureAction != input.WafFailureAction) return false;
+            if (this.ProtectionStatus != input.ProtectionStatus) return false;
+            if (this.ProtectionReason != input.ProtectionReason || (this.ProtectionReason != null && !this.ProtectionReason.Equals(input.ProtectionReason))) return false;
+            if (this.ChargeMode != input.ChargeMode) return false;
+            if (this.Ipv6VipAddress != input.Ipv6VipAddress || (this.Ipv6VipAddress != null && !this.Ipv6VipAddress.Equals(input.Ipv6VipAddress))) return false;
 
-            return 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.VipAddress == input.VipAddress ||
-                    (this.VipAddress != null &&
-                    this.VipAddress.Equals(input.VipAddress))
-                ) && 
-                (
-                    this.VipSubnetCidrId == input.VipSubnetCidrId ||
-                    (this.VipSubnetCidrId != null &&
-                    this.VipSubnetCidrId.Equals(input.VipSubnetCidrId))
-                ) && 
-                (
-                    this.Ipv6VipVirsubnetId == input.Ipv6VipVirsubnetId ||
-                    (this.Ipv6VipVirsubnetId != null &&
-                    this.Ipv6VipVirsubnetId.Equals(input.Ipv6VipVirsubnetId))
-                ) && 
-                (
-                    this.Provider == input.Provider ||
-                    (this.Provider != null &&
-                    this.Provider.Equals(input.Provider))
-                ) && 
-                (
-                    this.L4FlavorId == input.L4FlavorId ||
-                    (this.L4FlavorId != null &&
-                    this.L4FlavorId.Equals(input.L4FlavorId))
-                ) && 
-                (
-                    this.L7FlavorId == input.L7FlavorId ||
-                    (this.L7FlavorId != null &&
-                    this.L7FlavorId.Equals(input.L7FlavorId))
-                ) && 
-                (
-                    this.Guaranteed == input.Guaranteed ||
-                    (this.Guaranteed != null &&
-                    this.Guaranteed.Equals(input.Guaranteed))
-                ) && 
-                (
-                    this.VpcId == input.VpcId ||
-                    (this.VpcId != null &&
-                    this.VpcId.Equals(input.VpcId))
-                ) && 
-                (
-                    this.AvailabilityZoneList == input.AvailabilityZoneList ||
-                    this.AvailabilityZoneList != null &&
-                    input.AvailabilityZoneList != null &&
-                    this.AvailabilityZoneList.SequenceEqual(input.AvailabilityZoneList)
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.BillingInfo == input.BillingInfo ||
-                    (this.BillingInfo != null &&
-                    this.BillingInfo.Equals(input.BillingInfo))
-                ) && 
-                (
-                    this.Ipv6Bandwidth == input.Ipv6Bandwidth ||
-                    (this.Ipv6Bandwidth != null &&
-                    this.Ipv6Bandwidth.Equals(input.Ipv6Bandwidth))
-                ) && 
-                (
-                    this.PublicipIds == input.PublicipIds ||
-                    this.PublicipIds != null &&
-                    input.PublicipIds != null &&
-                    this.PublicipIds.SequenceEqual(input.PublicipIds)
-                ) && 
-                (
-                    this.Publicip == input.Publicip ||
-                    (this.Publicip != null &&
-                    this.Publicip.Equals(input.Publicip))
-                ) && 
-                (
-                    this.ElbVirsubnetIds == input.ElbVirsubnetIds ||
-                    this.ElbVirsubnetIds != null &&
-                    input.ElbVirsubnetIds != null &&
-                    this.ElbVirsubnetIds.SequenceEqual(input.ElbVirsubnetIds)
-                ) && 
-                (
-                    this.IpTargetEnable == input.IpTargetEnable ||
-                    (this.IpTargetEnable != null &&
-                    this.IpTargetEnable.Equals(input.IpTargetEnable))
-                ) && 
-                (
-                    this.DeletionProtectionEnable == input.DeletionProtectionEnable ||
-                    (this.DeletionProtectionEnable != null &&
-                    this.DeletionProtectionEnable.Equals(input.DeletionProtectionEnable))
-                ) && 
-                (
-                    this.PrepaidOptions == input.PrepaidOptions ||
-                    (this.PrepaidOptions != null &&
-                    this.PrepaidOptions.Equals(input.PrepaidOptions))
-                ) && 
-                (
-                    this.Autoscaling == input.Autoscaling ||
-                    (this.Autoscaling != null &&
-                    this.Autoscaling.Equals(input.Autoscaling))
-                ) && 
-                (
-                    this.WafFailureAction == input.WafFailureAction ||
-                    (this.WafFailureAction != null &&
-                    this.WafFailureAction.Equals(input.WafFailureAction))
-                ) && 
-                (
-                    this.ProtectionStatus == input.ProtectionStatus ||
-                    (this.ProtectionStatus != null &&
-                    this.ProtectionStatus.Equals(input.ProtectionStatus))
-                ) && 
-                (
-                    this.ProtectionReason == input.ProtectionReason ||
-                    (this.ProtectionReason != null &&
-                    this.ProtectionReason.Equals(input.ProtectionReason))
-                ) && 
-                (
-                    this.ChargeMode == input.ChargeMode ||
-                    (this.ChargeMode != null &&
-                    this.ChargeMode.Equals(input.ChargeMode))
-                ) && 
-                (
-                    this.Ipv6VipAddress == input.Ipv6VipAddress ||
-                    (this.Ipv6VipAddress != null &&
-                    this.Ipv6VipAddress.Equals(input.Ipv6VipAddress))
-                );
+            return true;
         }
 
         /// <summary>
@@ -749,65 +628,36 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.VipAddress != null)
-                    hashCode = hashCode * 59 + this.VipAddress.GetHashCode();
-                if (this.VipSubnetCidrId != null)
-                    hashCode = hashCode * 59 + this.VipSubnetCidrId.GetHashCode();
-                if (this.Ipv6VipVirsubnetId != null)
-                    hashCode = hashCode * 59 + this.Ipv6VipVirsubnetId.GetHashCode();
-                if (this.Provider != null)
-                    hashCode = hashCode * 59 + this.Provider.GetHashCode();
-                if (this.L4FlavorId != null)
-                    hashCode = hashCode * 59 + this.L4FlavorId.GetHashCode();
-                if (this.L7FlavorId != null)
-                    hashCode = hashCode * 59 + this.L7FlavorId.GetHashCode();
-                if (this.Guaranteed != null)
-                    hashCode = hashCode * 59 + this.Guaranteed.GetHashCode();
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.AvailabilityZoneList != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZoneList.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.BillingInfo != null)
-                    hashCode = hashCode * 59 + this.BillingInfo.GetHashCode();
-                if (this.Ipv6Bandwidth != null)
-                    hashCode = hashCode * 59 + this.Ipv6Bandwidth.GetHashCode();
-                if (this.PublicipIds != null)
-                    hashCode = hashCode * 59 + this.PublicipIds.GetHashCode();
-                if (this.Publicip != null)
-                    hashCode = hashCode * 59 + this.Publicip.GetHashCode();
-                if (this.ElbVirsubnetIds != null)
-                    hashCode = hashCode * 59 + this.ElbVirsubnetIds.GetHashCode();
-                if (this.IpTargetEnable != null)
-                    hashCode = hashCode * 59 + this.IpTargetEnable.GetHashCode();
-                if (this.DeletionProtectionEnable != null)
-                    hashCode = hashCode * 59 + this.DeletionProtectionEnable.GetHashCode();
-                if (this.PrepaidOptions != null)
-                    hashCode = hashCode * 59 + this.PrepaidOptions.GetHashCode();
-                if (this.Autoscaling != null)
-                    hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
-                if (this.WafFailureAction != null)
-                    hashCode = hashCode * 59 + this.WafFailureAction.GetHashCode();
-                if (this.ProtectionStatus != null)
-                    hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
-                if (this.ProtectionReason != null)
-                    hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
-                if (this.ChargeMode != null)
-                    hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
-                if (this.Ipv6VipAddress != null)
-                    hashCode = hashCode * 59 + this.Ipv6VipAddress.GetHashCode();
+                var hashCode = 41;
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.VipAddress != null) hashCode = hashCode * 59 + this.VipAddress.GetHashCode();
+                if (this.VipSubnetCidrId != null) hashCode = hashCode * 59 + this.VipSubnetCidrId.GetHashCode();
+                if (this.Ipv6VipVirsubnetId != null) hashCode = hashCode * 59 + this.Ipv6VipVirsubnetId.GetHashCode();
+                if (this.Provider != null) hashCode = hashCode * 59 + this.Provider.GetHashCode();
+                if (this.L4FlavorId != null) hashCode = hashCode * 59 + this.L4FlavorId.GetHashCode();
+                if (this.L7FlavorId != null) hashCode = hashCode * 59 + this.L7FlavorId.GetHashCode();
+                if (this.Guaranteed != null) hashCode = hashCode * 59 + this.Guaranteed.GetHashCode();
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.AvailabilityZoneList != null) hashCode = hashCode * 59 + this.AvailabilityZoneList.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.BillingInfo != null) hashCode = hashCode * 59 + this.BillingInfo.GetHashCode();
+                if (this.Ipv6Bandwidth != null) hashCode = hashCode * 59 + this.Ipv6Bandwidth.GetHashCode();
+                if (this.PublicipIds != null) hashCode = hashCode * 59 + this.PublicipIds.GetHashCode();
+                if (this.Publicip != null) hashCode = hashCode * 59 + this.Publicip.GetHashCode();
+                if (this.ElbVirsubnetIds != null) hashCode = hashCode * 59 + this.ElbVirsubnetIds.GetHashCode();
+                if (this.IpTargetEnable != null) hashCode = hashCode * 59 + this.IpTargetEnable.GetHashCode();
+                if (this.DeletionProtectionEnable != null) hashCode = hashCode * 59 + this.DeletionProtectionEnable.GetHashCode();
+                if (this.PrepaidOptions != null) hashCode = hashCode * 59 + this.PrepaidOptions.GetHashCode();
+                if (this.Autoscaling != null) hashCode = hashCode * 59 + this.Autoscaling.GetHashCode();
+                hashCode = hashCode * 59 + this.WafFailureAction.GetHashCode();
+                hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
+                if (this.ProtectionReason != null) hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
+                hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
+                if (this.Ipv6VipAddress != null) hashCode = hashCode * 59 + this.Ipv6VipAddress.GetHashCode();
                 return hashCode;
             }
         }

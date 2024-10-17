@@ -466,35 +466,14 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(ListPromInstanceRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PromId != input.PromId || (this.PromId != null && !this.PromId.Equals(input.PromId))) return false;
+            if (this.PromType != input.PromType) return false;
+            if (this.CceClusterEnable != input.CceClusterEnable) return false;
+            if (this.PromStatus != input.PromStatus) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
-            return 
-                (
-                    this.PromId == input.PromId ||
-                    (this.PromId != null &&
-                    this.PromId.Equals(input.PromId))
-                ) && 
-                (
-                    this.PromType == input.PromType ||
-                    (this.PromType != null &&
-                    this.PromType.Equals(input.PromType))
-                ) && 
-                (
-                    this.CceClusterEnable == input.CceClusterEnable ||
-                    (this.CceClusterEnable != null &&
-                    this.CceClusterEnable.Equals(input.CceClusterEnable))
-                ) && 
-                (
-                    this.PromStatus == input.PromStatus ||
-                    (this.PromStatus != null &&
-                    this.PromStatus.Equals(input.PromStatus))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -504,17 +483,12 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PromId != null)
-                    hashCode = hashCode * 59 + this.PromId.GetHashCode();
-                if (this.PromType != null)
-                    hashCode = hashCode * 59 + this.PromType.GetHashCode();
-                if (this.CceClusterEnable != null)
-                    hashCode = hashCode * 59 + this.CceClusterEnable.GetHashCode();
-                if (this.PromStatus != null)
-                    hashCode = hashCode * 59 + this.PromStatus.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                var hashCode = 41;
+                if (this.PromId != null) hashCode = hashCode * 59 + this.PromId.GetHashCode();
+                hashCode = hashCode * 59 + this.PromType.GetHashCode();
+                hashCode = hashCode * 59 + this.CceClusterEnable.GetHashCode();
+                hashCode = hashCode * 59 + this.PromStatus.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

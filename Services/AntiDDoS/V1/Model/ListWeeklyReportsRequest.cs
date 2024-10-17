@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         /// </summary>
         public bool Equals(ListWeeklyReportsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PeriodStartDate != input.PeriodStartDate || (this.PeriodStartDate != null && !this.PeriodStartDate.Equals(input.PeriodStartDate))) return false;
 
-            return 
-                (
-                    this.PeriodStartDate == input.PeriodStartDate ||
-                    (this.PeriodStartDate != null &&
-                    this.PeriodStartDate.Equals(input.PeriodStartDate))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PeriodStartDate != null)
-                    hashCode = hashCode * 59 + this.PeriodStartDate.GetHashCode();
+                var hashCode = 41;
+                if (this.PeriodStartDate != null) hashCode = hashCode * 59 + this.PeriodStartDate.GetHashCode();
                 return hashCode;
             }
         }

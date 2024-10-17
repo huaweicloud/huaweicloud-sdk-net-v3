@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(QueryColumnReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IsForceRefresh != input.IsForceRefresh || (this.IsForceRefresh != null && !this.IsForceRefresh.Equals(input.IsForceRefresh))) return false;
+            if (this.DbObjectInfos != input.DbObjectInfos || (this.DbObjectInfos != null && input.DbObjectInfos != null && !this.DbObjectInfos.SequenceEqual(input.DbObjectInfos))) return false;
 
-            return 
-                (
-                    this.IsForceRefresh == input.IsForceRefresh ||
-                    (this.IsForceRefresh != null &&
-                    this.IsForceRefresh.Equals(input.IsForceRefresh))
-                ) && 
-                (
-                    this.DbObjectInfos == input.DbObjectInfos ||
-                    this.DbObjectInfos != null &&
-                    input.DbObjectInfos != null &&
-                    this.DbObjectInfos.SequenceEqual(input.DbObjectInfos)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IsForceRefresh != null)
-                    hashCode = hashCode * 59 + this.IsForceRefresh.GetHashCode();
-                if (this.DbObjectInfos != null)
-                    hashCode = hashCode * 59 + this.DbObjectInfos.GetHashCode();
+                var hashCode = 41;
+                if (this.IsForceRefresh != null) hashCode = hashCode * 59 + this.IsForceRefresh.GetHashCode();
+                if (this.DbObjectInfos != null) hashCode = hashCode * 59 + this.DbObjectInfos.GetHashCode();
                 return hashCode;
             }
         }

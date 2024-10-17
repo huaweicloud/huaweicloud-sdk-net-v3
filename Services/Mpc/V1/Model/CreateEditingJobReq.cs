@@ -112,65 +112,19 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(CreateEditingJobReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EditType != input.EditType || (this.EditType != null && input.EditType != null && !this.EditType.SequenceEqual(input.EditType))) return false;
+            if (this.Clips != input.Clips || (this.Clips != null && input.Clips != null && !this.Clips.SequenceEqual(input.Clips))) return false;
+            if (this.Concats != input.Concats || (this.Concats != null && input.Concats != null && !this.Concats.SequenceEqual(input.Concats))) return false;
+            if (this.Concat != input.Concat || (this.Concat != null && !this.Concat.Equals(input.Concat))) return false;
+            if (this.Mix != input.Mix || (this.Mix != null && !this.Mix.Equals(input.Mix))) return false;
+            if (this.Input != input.Input || (this.Input != null && !this.Input.Equals(input.Input))) return false;
+            if (this.OutputSetting != input.OutputSetting || (this.OutputSetting != null && !this.OutputSetting.Equals(input.OutputSetting))) return false;
+            if (this.ImageWatermarkSettings != input.ImageWatermarkSettings || (this.ImageWatermarkSettings != null && input.ImageWatermarkSettings != null && !this.ImageWatermarkSettings.SequenceEqual(input.ImageWatermarkSettings))) return false;
+            if (this.EditSettings != input.EditSettings || (this.EditSettings != null && input.EditSettings != null && !this.EditSettings.SequenceEqual(input.EditSettings))) return false;
+            if (this.UserData != input.UserData || (this.UserData != null && !this.UserData.Equals(input.UserData))) return false;
 
-            return 
-                (
-                    this.EditType == input.EditType ||
-                    this.EditType != null &&
-                    input.EditType != null &&
-                    this.EditType.SequenceEqual(input.EditType)
-                ) && 
-                (
-                    this.Clips == input.Clips ||
-                    this.Clips != null &&
-                    input.Clips != null &&
-                    this.Clips.SequenceEqual(input.Clips)
-                ) && 
-                (
-                    this.Concats == input.Concats ||
-                    this.Concats != null &&
-                    input.Concats != null &&
-                    this.Concats.SequenceEqual(input.Concats)
-                ) && 
-                (
-                    this.Concat == input.Concat ||
-                    (this.Concat != null &&
-                    this.Concat.Equals(input.Concat))
-                ) && 
-                (
-                    this.Mix == input.Mix ||
-                    (this.Mix != null &&
-                    this.Mix.Equals(input.Mix))
-                ) && 
-                (
-                    this.Input == input.Input ||
-                    (this.Input != null &&
-                    this.Input.Equals(input.Input))
-                ) && 
-                (
-                    this.OutputSetting == input.OutputSetting ||
-                    (this.OutputSetting != null &&
-                    this.OutputSetting.Equals(input.OutputSetting))
-                ) && 
-                (
-                    this.ImageWatermarkSettings == input.ImageWatermarkSettings ||
-                    this.ImageWatermarkSettings != null &&
-                    input.ImageWatermarkSettings != null &&
-                    this.ImageWatermarkSettings.SequenceEqual(input.ImageWatermarkSettings)
-                ) && 
-                (
-                    this.EditSettings == input.EditSettings ||
-                    this.EditSettings != null &&
-                    input.EditSettings != null &&
-                    this.EditSettings.SequenceEqual(input.EditSettings)
-                ) && 
-                (
-                    this.UserData == input.UserData ||
-                    (this.UserData != null &&
-                    this.UserData.Equals(input.UserData))
-                );
+            return true;
         }
 
         /// <summary>
@@ -180,27 +134,17 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EditType != null)
-                    hashCode = hashCode * 59 + this.EditType.GetHashCode();
-                if (this.Clips != null)
-                    hashCode = hashCode * 59 + this.Clips.GetHashCode();
-                if (this.Concats != null)
-                    hashCode = hashCode * 59 + this.Concats.GetHashCode();
-                if (this.Concat != null)
-                    hashCode = hashCode * 59 + this.Concat.GetHashCode();
-                if (this.Mix != null)
-                    hashCode = hashCode * 59 + this.Mix.GetHashCode();
-                if (this.Input != null)
-                    hashCode = hashCode * 59 + this.Input.GetHashCode();
-                if (this.OutputSetting != null)
-                    hashCode = hashCode * 59 + this.OutputSetting.GetHashCode();
-                if (this.ImageWatermarkSettings != null)
-                    hashCode = hashCode * 59 + this.ImageWatermarkSettings.GetHashCode();
-                if (this.EditSettings != null)
-                    hashCode = hashCode * 59 + this.EditSettings.GetHashCode();
-                if (this.UserData != null)
-                    hashCode = hashCode * 59 + this.UserData.GetHashCode();
+                var hashCode = 41;
+                if (this.EditType != null) hashCode = hashCode * 59 + this.EditType.GetHashCode();
+                if (this.Clips != null) hashCode = hashCode * 59 + this.Clips.GetHashCode();
+                if (this.Concats != null) hashCode = hashCode * 59 + this.Concats.GetHashCode();
+                if (this.Concat != null) hashCode = hashCode * 59 + this.Concat.GetHashCode();
+                if (this.Mix != null) hashCode = hashCode * 59 + this.Mix.GetHashCode();
+                if (this.Input != null) hashCode = hashCode * 59 + this.Input.GetHashCode();
+                if (this.OutputSetting != null) hashCode = hashCode * 59 + this.OutputSetting.GetHashCode();
+                if (this.ImageWatermarkSettings != null) hashCode = hashCode * 59 + this.ImageWatermarkSettings.GetHashCode();
+                if (this.EditSettings != null) hashCode = hashCode * 59 + this.EditSettings.GetHashCode();
+                if (this.UserData != null) hashCode = hashCode * 59 + this.UserData.GetHashCode();
                 return hashCode;
             }
         }

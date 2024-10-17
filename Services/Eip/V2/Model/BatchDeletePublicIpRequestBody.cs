@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// </summary>
         public bool Equals(BatchDeletePublicIpRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PublicipIds != input.PublicipIds || (this.PublicipIds != null && input.PublicipIds != null && !this.PublicipIds.SequenceEqual(input.PublicipIds))) return false;
 
-            return 
-                (
-                    this.PublicipIds == input.PublicipIds ||
-                    this.PublicipIds != null &&
-                    input.PublicipIds != null &&
-                    this.PublicipIds.SequenceEqual(input.PublicipIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PublicipIds != null)
-                    hashCode = hashCode * 59 + this.PublicipIds.GetHashCode();
+                var hashCode = 41;
+                if (this.PublicipIds != null) hashCode = hashCode * 59 + this.PublicipIds.GetHashCode();
                 return hashCode;
             }
         }

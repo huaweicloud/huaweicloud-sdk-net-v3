@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(AvailabilityZoneDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PrimaryAvailabilityZone != input.PrimaryAvailabilityZone || (this.PrimaryAvailabilityZone != null && !this.PrimaryAvailabilityZone.Equals(input.PrimaryAvailabilityZone))) return false;
+            if (this.SecondaryAvailabilityZone != input.SecondaryAvailabilityZone || (this.SecondaryAvailabilityZone != null && !this.SecondaryAvailabilityZone.Equals(input.SecondaryAvailabilityZone))) return false;
 
-            return 
-                (
-                    this.PrimaryAvailabilityZone == input.PrimaryAvailabilityZone ||
-                    (this.PrimaryAvailabilityZone != null &&
-                    this.PrimaryAvailabilityZone.Equals(input.PrimaryAvailabilityZone))
-                ) && 
-                (
-                    this.SecondaryAvailabilityZone == input.SecondaryAvailabilityZone ||
-                    (this.SecondaryAvailabilityZone != null &&
-                    this.SecondaryAvailabilityZone.Equals(input.SecondaryAvailabilityZone))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PrimaryAvailabilityZone != null)
-                    hashCode = hashCode * 59 + this.PrimaryAvailabilityZone.GetHashCode();
-                if (this.SecondaryAvailabilityZone != null)
-                    hashCode = hashCode * 59 + this.SecondaryAvailabilityZone.GetHashCode();
+                var hashCode = 41;
+                if (this.PrimaryAvailabilityZone != null) hashCode = hashCode * 59 + this.PrimaryAvailabilityZone.GetHashCode();
+                if (this.SecondaryAvailabilityZone != null) hashCode = hashCode * 59 + this.SecondaryAvailabilityZone.GetHashCode();
                 return hashCode;
             }
         }

@@ -98,51 +98,17 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(PreCheckItemStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Kind != input.Kind || (this.Kind != null && !this.Kind.Equals(input.Kind))) return false;
+            if (this.Group != input.Group || (this.Group != null && !this.Group.Equals(input.Group))) return false;
+            if (this.Level != input.Level || (this.Level != null && !this.Level.Equals(input.Level))) return false;
+            if (this.Phase != input.Phase || (this.Phase != null && !this.Phase.Equals(input.Phase))) return false;
+            if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
+            if (this.RiskSource != input.RiskSource || (this.RiskSource != null && !this.RiskSource.Equals(input.RiskSource))) return false;
+            if (this.ErrorCodes != input.ErrorCodes || (this.ErrorCodes != null && input.ErrorCodes != null && !this.ErrorCodes.SequenceEqual(input.ErrorCodes))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Kind == input.Kind ||
-                    (this.Kind != null &&
-                    this.Kind.Equals(input.Kind))
-                ) && 
-                (
-                    this.Group == input.Group ||
-                    (this.Group != null &&
-                    this.Group.Equals(input.Group))
-                ) && 
-                (
-                    this.Level == input.Level ||
-                    (this.Level != null &&
-                    this.Level.Equals(input.Level))
-                ) && 
-                (
-                    this.Phase == input.Phase ||
-                    (this.Phase != null &&
-                    this.Phase.Equals(input.Phase))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.RiskSource == input.RiskSource ||
-                    (this.RiskSource != null &&
-                    this.RiskSource.Equals(input.RiskSource))
-                ) && 
-                (
-                    this.ErrorCodes == input.ErrorCodes ||
-                    this.ErrorCodes != null &&
-                    input.ErrorCodes != null &&
-                    this.ErrorCodes.SequenceEqual(input.ErrorCodes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -152,23 +118,15 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Kind != null)
-                    hashCode = hashCode * 59 + this.Kind.GetHashCode();
-                if (this.Group != null)
-                    hashCode = hashCode * 59 + this.Group.GetHashCode();
-                if (this.Level != null)
-                    hashCode = hashCode * 59 + this.Level.GetHashCode();
-                if (this.Phase != null)
-                    hashCode = hashCode * 59 + this.Phase.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.RiskSource != null)
-                    hashCode = hashCode * 59 + this.RiskSource.GetHashCode();
-                if (this.ErrorCodes != null)
-                    hashCode = hashCode * 59 + this.ErrorCodes.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Kind != null) hashCode = hashCode * 59 + this.Kind.GetHashCode();
+                if (this.Group != null) hashCode = hashCode * 59 + this.Group.GetHashCode();
+                if (this.Level != null) hashCode = hashCode * 59 + this.Level.GetHashCode();
+                if (this.Phase != null) hashCode = hashCode * 59 + this.Phase.GetHashCode();
+                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.RiskSource != null) hashCode = hashCode * 59 + this.RiskSource.GetHashCode();
+                if (this.ErrorCodes != null) hashCode = hashCode * 59 + this.ErrorCodes.GetHashCode();
                 return hashCode;
             }
         }

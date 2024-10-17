@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(AomMappingLogStreamInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TargetLogGroupId != input.TargetLogGroupId || (this.TargetLogGroupId != null && !this.TargetLogGroupId.Equals(input.TargetLogGroupId))) return false;
+            if (this.TargetLogGroupName != input.TargetLogGroupName || (this.TargetLogGroupName != null && !this.TargetLogGroupName.Equals(input.TargetLogGroupName))) return false;
+            if (this.TargetLogStreamId != input.TargetLogStreamId || (this.TargetLogStreamId != null && !this.TargetLogStreamId.Equals(input.TargetLogStreamId))) return false;
+            if (this.TargetLogStreamName != input.TargetLogStreamName || (this.TargetLogStreamName != null && !this.TargetLogStreamName.Equals(input.TargetLogStreamName))) return false;
 
-            return 
-                (
-                    this.TargetLogGroupId == input.TargetLogGroupId ||
-                    (this.TargetLogGroupId != null &&
-                    this.TargetLogGroupId.Equals(input.TargetLogGroupId))
-                ) && 
-                (
-                    this.TargetLogGroupName == input.TargetLogGroupName ||
-                    (this.TargetLogGroupName != null &&
-                    this.TargetLogGroupName.Equals(input.TargetLogGroupName))
-                ) && 
-                (
-                    this.TargetLogStreamId == input.TargetLogStreamId ||
-                    (this.TargetLogStreamId != null &&
-                    this.TargetLogStreamId.Equals(input.TargetLogStreamId))
-                ) && 
-                (
-                    this.TargetLogStreamName == input.TargetLogStreamName ||
-                    (this.TargetLogStreamName != null &&
-                    this.TargetLogStreamName.Equals(input.TargetLogStreamName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TargetLogGroupId != null)
-                    hashCode = hashCode * 59 + this.TargetLogGroupId.GetHashCode();
-                if (this.TargetLogGroupName != null)
-                    hashCode = hashCode * 59 + this.TargetLogGroupName.GetHashCode();
-                if (this.TargetLogStreamId != null)
-                    hashCode = hashCode * 59 + this.TargetLogStreamId.GetHashCode();
-                if (this.TargetLogStreamName != null)
-                    hashCode = hashCode * 59 + this.TargetLogStreamName.GetHashCode();
+                var hashCode = 41;
+                if (this.TargetLogGroupId != null) hashCode = hashCode * 59 + this.TargetLogGroupId.GetHashCode();
+                if (this.TargetLogGroupName != null) hashCode = hashCode * 59 + this.TargetLogGroupName.GetHashCode();
+                if (this.TargetLogStreamId != null) hashCode = hashCode * 59 + this.TargetLogStreamId.GetHashCode();
+                if (this.TargetLogStreamName != null) hashCode = hashCode * 59 + this.TargetLogStreamName.GetHashCode();
                 return hashCode;
             }
         }

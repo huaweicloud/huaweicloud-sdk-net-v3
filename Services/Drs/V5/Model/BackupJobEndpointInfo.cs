@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(BackupJobEndpointInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TargetInstanceId != input.TargetInstanceId || (this.TargetInstanceId != null && !this.TargetInstanceId.Equals(input.TargetInstanceId))) return false;
+            if (this.MsFileStreamStatus != input.MsFileStreamStatus || (this.MsFileStreamStatus != null && !this.MsFileStreamStatus.Equals(input.MsFileStreamStatus))) return false;
+            if (this.FileId != input.FileId || (this.FileId != null && !this.FileId.Equals(input.FileId))) return false;
 
-            return 
-                (
-                    this.TargetInstanceId == input.TargetInstanceId ||
-                    (this.TargetInstanceId != null &&
-                    this.TargetInstanceId.Equals(input.TargetInstanceId))
-                ) && 
-                (
-                    this.MsFileStreamStatus == input.MsFileStreamStatus ||
-                    (this.MsFileStreamStatus != null &&
-                    this.MsFileStreamStatus.Equals(input.MsFileStreamStatus))
-                ) && 
-                (
-                    this.FileId == input.FileId ||
-                    (this.FileId != null &&
-                    this.FileId.Equals(input.FileId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TargetInstanceId != null)
-                    hashCode = hashCode * 59 + this.TargetInstanceId.GetHashCode();
-                if (this.MsFileStreamStatus != null)
-                    hashCode = hashCode * 59 + this.MsFileStreamStatus.GetHashCode();
-                if (this.FileId != null)
-                    hashCode = hashCode * 59 + this.FileId.GetHashCode();
+                var hashCode = 41;
+                if (this.TargetInstanceId != null) hashCode = hashCode * 59 + this.TargetInstanceId.GetHashCode();
+                if (this.MsFileStreamStatus != null) hashCode = hashCode * 59 + this.MsFileStreamStatus.GetHashCode();
+                if (this.FileId != null) hashCode = hashCode * 59 + this.FileId.GetHashCode();
                 return hashCode;
             }
         }

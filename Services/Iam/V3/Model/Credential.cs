@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(Credential input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ExpiresAt != input.ExpiresAt || (this.ExpiresAt != null && !this.ExpiresAt.Equals(input.ExpiresAt))) return false;
+            if (this.Access != input.Access || (this.Access != null && !this.Access.Equals(input.Access))) return false;
+            if (this.Secret != input.Secret || (this.Secret != null && !this.Secret.Equals(input.Secret))) return false;
+            if (this.Securitytoken != input.Securitytoken || (this.Securitytoken != null && !this.Securitytoken.Equals(input.Securitytoken))) return false;
 
-            return 
-                (
-                    this.ExpiresAt == input.ExpiresAt ||
-                    (this.ExpiresAt != null &&
-                    this.ExpiresAt.Equals(input.ExpiresAt))
-                ) && 
-                (
-                    this.Access == input.Access ||
-                    (this.Access != null &&
-                    this.Access.Equals(input.Access))
-                ) && 
-                (
-                    this.Secret == input.Secret ||
-                    (this.Secret != null &&
-                    this.Secret.Equals(input.Secret))
-                ) && 
-                (
-                    this.Securitytoken == input.Securitytoken ||
-                    (this.Securitytoken != null &&
-                    this.Securitytoken.Equals(input.Securitytoken))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ExpiresAt != null)
-                    hashCode = hashCode * 59 + this.ExpiresAt.GetHashCode();
-                if (this.Access != null)
-                    hashCode = hashCode * 59 + this.Access.GetHashCode();
-                if (this.Secret != null)
-                    hashCode = hashCode * 59 + this.Secret.GetHashCode();
-                if (this.Securitytoken != null)
-                    hashCode = hashCode * 59 + this.Securitytoken.GetHashCode();
+                var hashCode = 41;
+                if (this.ExpiresAt != null) hashCode = hashCode * 59 + this.ExpiresAt.GetHashCode();
+                if (this.Access != null) hashCode = hashCode * 59 + this.Access.GetHashCode();
+                if (this.Secret != null) hashCode = hashCode * 59 + this.Secret.GetHashCode();
+                if (this.Securitytoken != null) hashCode = hashCode * 59 + this.Securitytoken.GetHashCode();
                 return hashCode;
             }
         }

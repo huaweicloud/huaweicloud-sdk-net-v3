@@ -232,60 +232,19 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// </summary>
         public bool Equals(PostAndPutFloatingIpResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FixedIpAddress != input.FixedIpAddress || (this.FixedIpAddress != null && !this.FixedIpAddress.Equals(input.FixedIpAddress))) return false;
+            if (this.FloatingIpAddress != input.FloatingIpAddress || (this.FloatingIpAddress != null && !this.FloatingIpAddress.Equals(input.FloatingIpAddress))) return false;
+            if (this.FloatingNetworkId != input.FloatingNetworkId || (this.FloatingNetworkId != null && !this.FloatingNetworkId.Equals(input.FloatingNetworkId))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.PortId != input.PortId || (this.PortId != null && !this.PortId.Equals(input.PortId))) return false;
+            if (this.RouterId != input.RouterId || (this.RouterId != null && !this.RouterId.Equals(input.RouterId))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
+            if (this.DnsName != input.DnsName || (this.DnsName != null && !this.DnsName.Equals(input.DnsName))) return false;
+            if (this.DnsDomain != input.DnsDomain || (this.DnsDomain != null && !this.DnsDomain.Equals(input.DnsDomain))) return false;
 
-            return 
-                (
-                    this.FixedIpAddress == input.FixedIpAddress ||
-                    (this.FixedIpAddress != null &&
-                    this.FixedIpAddress.Equals(input.FixedIpAddress))
-                ) && 
-                (
-                    this.FloatingIpAddress == input.FloatingIpAddress ||
-                    (this.FloatingIpAddress != null &&
-                    this.FloatingIpAddress.Equals(input.FloatingIpAddress))
-                ) && 
-                (
-                    this.FloatingNetworkId == input.FloatingNetworkId ||
-                    (this.FloatingNetworkId != null &&
-                    this.FloatingNetworkId.Equals(input.FloatingNetworkId))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.PortId == input.PortId ||
-                    (this.PortId != null &&
-                    this.PortId.Equals(input.PortId))
-                ) && 
-                (
-                    this.RouterId == input.RouterId ||
-                    (this.RouterId != null &&
-                    this.RouterId.Equals(input.RouterId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.TenantId == input.TenantId ||
-                    (this.TenantId != null &&
-                    this.TenantId.Equals(input.TenantId))
-                ) && 
-                (
-                    this.DnsName == input.DnsName ||
-                    (this.DnsName != null &&
-                    this.DnsName.Equals(input.DnsName))
-                ) && 
-                (
-                    this.DnsDomain == input.DnsDomain ||
-                    (this.DnsDomain != null &&
-                    this.DnsDomain.Equals(input.DnsDomain))
-                );
+            return true;
         }
 
         /// <summary>
@@ -295,27 +254,17 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FixedIpAddress != null)
-                    hashCode = hashCode * 59 + this.FixedIpAddress.GetHashCode();
-                if (this.FloatingIpAddress != null)
-                    hashCode = hashCode * 59 + this.FloatingIpAddress.GetHashCode();
-                if (this.FloatingNetworkId != null)
-                    hashCode = hashCode * 59 + this.FloatingNetworkId.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.PortId != null)
-                    hashCode = hashCode * 59 + this.PortId.GetHashCode();
-                if (this.RouterId != null)
-                    hashCode = hashCode * 59 + this.RouterId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.TenantId != null)
-                    hashCode = hashCode * 59 + this.TenantId.GetHashCode();
-                if (this.DnsName != null)
-                    hashCode = hashCode * 59 + this.DnsName.GetHashCode();
-                if (this.DnsDomain != null)
-                    hashCode = hashCode * 59 + this.DnsDomain.GetHashCode();
+                var hashCode = 41;
+                if (this.FixedIpAddress != null) hashCode = hashCode * 59 + this.FixedIpAddress.GetHashCode();
+                if (this.FloatingIpAddress != null) hashCode = hashCode * 59 + this.FloatingIpAddress.GetHashCode();
+                if (this.FloatingNetworkId != null) hashCode = hashCode * 59 + this.FloatingNetworkId.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.PortId != null) hashCode = hashCode * 59 + this.PortId.GetHashCode();
+                if (this.RouterId != null) hashCode = hashCode * 59 + this.RouterId.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
+                if (this.DnsName != null) hashCode = hashCode * 59 + this.DnsName.GetHashCode();
+                if (this.DnsDomain != null) hashCode = hashCode * 59 + this.DnsDomain.GetHashCode();
                 return hashCode;
             }
         }

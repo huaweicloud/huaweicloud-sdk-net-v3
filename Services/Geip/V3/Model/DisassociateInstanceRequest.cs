@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// </summary>
         public bool Equals(DisassociateInstanceRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IsReserveGcb != input.IsReserveGcb || (this.IsReserveGcb != null && !this.IsReserveGcb.Equals(input.IsReserveGcb))) return false;
+            if (this.GlobalEipId != input.GlobalEipId || (this.GlobalEipId != null && !this.GlobalEipId.Equals(input.GlobalEipId))) return false;
 
-            return 
-                (
-                    this.IsReserveGcb == input.IsReserveGcb ||
-                    (this.IsReserveGcb != null &&
-                    this.IsReserveGcb.Equals(input.IsReserveGcb))
-                ) && 
-                (
-                    this.GlobalEipId == input.GlobalEipId ||
-                    (this.GlobalEipId != null &&
-                    this.GlobalEipId.Equals(input.GlobalEipId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IsReserveGcb != null)
-                    hashCode = hashCode * 59 + this.IsReserveGcb.GetHashCode();
-                if (this.GlobalEipId != null)
-                    hashCode = hashCode * 59 + this.GlobalEipId.GetHashCode();
+                var hashCode = 41;
+                if (this.IsReserveGcb != null) hashCode = hashCode * 59 + this.IsReserveGcb.GetHashCode();
+                if (this.GlobalEipId != null) hashCode = hashCode * 59 + this.GlobalEipId.GetHashCode();
                 return hashCode;
             }
         }

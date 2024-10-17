@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public bool Equals(AMQPUserPerm input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Vhost != input.Vhost || (this.Vhost != null && !this.Vhost.Equals(input.Vhost))) return false;
+            if (this.Conf != input.Conf || (this.Conf != null && !this.Conf.Equals(input.Conf))) return false;
+            if (this.Write != input.Write || (this.Write != null && !this.Write.Equals(input.Write))) return false;
+            if (this.Read != input.Read || (this.Read != null && !this.Read.Equals(input.Read))) return false;
 
-            return 
-                (
-                    this.Vhost == input.Vhost ||
-                    (this.Vhost != null &&
-                    this.Vhost.Equals(input.Vhost))
-                ) && 
-                (
-                    this.Conf == input.Conf ||
-                    (this.Conf != null &&
-                    this.Conf.Equals(input.Conf))
-                ) && 
-                (
-                    this.Write == input.Write ||
-                    (this.Write != null &&
-                    this.Write.Equals(input.Write))
-                ) && 
-                (
-                    this.Read == input.Read ||
-                    (this.Read != null &&
-                    this.Read.Equals(input.Read))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Vhost != null)
-                    hashCode = hashCode * 59 + this.Vhost.GetHashCode();
-                if (this.Conf != null)
-                    hashCode = hashCode * 59 + this.Conf.GetHashCode();
-                if (this.Write != null)
-                    hashCode = hashCode * 59 + this.Write.GetHashCode();
-                if (this.Read != null)
-                    hashCode = hashCode * 59 + this.Read.GetHashCode();
+                var hashCode = 41;
+                if (this.Vhost != null) hashCode = hashCode * 59 + this.Vhost.GetHashCode();
+                if (this.Conf != null) hashCode = hashCode * 59 + this.Conf.GetHashCode();
+                if (this.Write != null) hashCode = hashCode * 59 + this.Write.GetHashCode();
+                if (this.Read != null) hashCode = hashCode * 59 + this.Read.GetHashCode();
                 return hashCode;
             }
         }

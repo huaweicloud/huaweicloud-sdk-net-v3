@@ -133,79 +133,22 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(AppRulesSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AppType != input.AppType || (this.AppType != null && !this.AppType.Equals(input.AppType))) return false;
+            if (this.AttrList != input.AttrList || (this.AttrList != null && input.AttrList != null && !this.AttrList.SequenceEqual(input.AttrList))) return false;
+            if (this.DetectLog != input.DetectLog || (this.DetectLog != null && !this.DetectLog.Equals(input.DetectLog))) return false;
+            if (this.DiscoveryRule != input.DiscoveryRule || (this.DiscoveryRule != null && input.DiscoveryRule != null && !this.DiscoveryRule.SequenceEqual(input.DiscoveryRule))) return false;
+            if (this.IsDefaultRule != input.IsDefaultRule || (this.IsDefaultRule != null && !this.IsDefaultRule.Equals(input.IsDefaultRule))) return false;
+            if (this.IsDetect != input.IsDetect || (this.IsDetect != null && !this.IsDetect.Equals(input.IsDetect))) return false;
+            if (this.LogFileFix != input.LogFileFix || (this.LogFileFix != null && input.LogFileFix != null && !this.LogFileFix.SequenceEqual(input.LogFileFix))) return false;
+            if (this.LogPathRule != input.LogPathRule || (this.LogPathRule != null && input.LogPathRule != null && !this.LogPathRule.SequenceEqual(input.LogPathRule))) return false;
+            if (this.NameRule != input.NameRule || (this.NameRule != null && !this.NameRule.Equals(input.NameRule))) return false;
+            if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
+            if (this.DataSource != input.DataSource || (this.DataSource != null && !this.DataSource.Equals(input.DataSource))) return false;
+            if (this.Editable != input.Editable || (this.Editable != null && !this.Editable.Equals(input.Editable))) return false;
+            if (this.AomMetricRelabelConfigs != input.AomMetricRelabelConfigs || (this.AomMetricRelabelConfigs != null && !this.AomMetricRelabelConfigs.Equals(input.AomMetricRelabelConfigs))) return false;
 
-            return 
-                (
-                    this.AppType == input.AppType ||
-                    (this.AppType != null &&
-                    this.AppType.Equals(input.AppType))
-                ) && 
-                (
-                    this.AttrList == input.AttrList ||
-                    this.AttrList != null &&
-                    input.AttrList != null &&
-                    this.AttrList.SequenceEqual(input.AttrList)
-                ) && 
-                (
-                    this.DetectLog == input.DetectLog ||
-                    (this.DetectLog != null &&
-                    this.DetectLog.Equals(input.DetectLog))
-                ) && 
-                (
-                    this.DiscoveryRule == input.DiscoveryRule ||
-                    this.DiscoveryRule != null &&
-                    input.DiscoveryRule != null &&
-                    this.DiscoveryRule.SequenceEqual(input.DiscoveryRule)
-                ) && 
-                (
-                    this.IsDefaultRule == input.IsDefaultRule ||
-                    (this.IsDefaultRule != null &&
-                    this.IsDefaultRule.Equals(input.IsDefaultRule))
-                ) && 
-                (
-                    this.IsDetect == input.IsDetect ||
-                    (this.IsDetect != null &&
-                    this.IsDetect.Equals(input.IsDetect))
-                ) && 
-                (
-                    this.LogFileFix == input.LogFileFix ||
-                    this.LogFileFix != null &&
-                    input.LogFileFix != null &&
-                    this.LogFileFix.SequenceEqual(input.LogFileFix)
-                ) && 
-                (
-                    this.LogPathRule == input.LogPathRule ||
-                    this.LogPathRule != null &&
-                    input.LogPathRule != null &&
-                    this.LogPathRule.SequenceEqual(input.LogPathRule)
-                ) && 
-                (
-                    this.NameRule == input.NameRule ||
-                    (this.NameRule != null &&
-                    this.NameRule.Equals(input.NameRule))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    (this.Priority != null &&
-                    this.Priority.Equals(input.Priority))
-                ) && 
-                (
-                    this.DataSource == input.DataSource ||
-                    (this.DataSource != null &&
-                    this.DataSource.Equals(input.DataSource))
-                ) && 
-                (
-                    this.Editable == input.Editable ||
-                    (this.Editable != null &&
-                    this.Editable.Equals(input.Editable))
-                ) && 
-                (
-                    this.AomMetricRelabelConfigs == input.AomMetricRelabelConfigs ||
-                    (this.AomMetricRelabelConfigs != null &&
-                    this.AomMetricRelabelConfigs.Equals(input.AomMetricRelabelConfigs))
-                );
+            return true;
         }
 
         /// <summary>
@@ -215,33 +158,20 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AppType != null)
-                    hashCode = hashCode * 59 + this.AppType.GetHashCode();
-                if (this.AttrList != null)
-                    hashCode = hashCode * 59 + this.AttrList.GetHashCode();
-                if (this.DetectLog != null)
-                    hashCode = hashCode * 59 + this.DetectLog.GetHashCode();
-                if (this.DiscoveryRule != null)
-                    hashCode = hashCode * 59 + this.DiscoveryRule.GetHashCode();
-                if (this.IsDefaultRule != null)
-                    hashCode = hashCode * 59 + this.IsDefaultRule.GetHashCode();
-                if (this.IsDetect != null)
-                    hashCode = hashCode * 59 + this.IsDetect.GetHashCode();
-                if (this.LogFileFix != null)
-                    hashCode = hashCode * 59 + this.LogFileFix.GetHashCode();
-                if (this.LogPathRule != null)
-                    hashCode = hashCode * 59 + this.LogPathRule.GetHashCode();
-                if (this.NameRule != null)
-                    hashCode = hashCode * 59 + this.NameRule.GetHashCode();
-                if (this.Priority != null)
-                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
-                if (this.DataSource != null)
-                    hashCode = hashCode * 59 + this.DataSource.GetHashCode();
-                if (this.Editable != null)
-                    hashCode = hashCode * 59 + this.Editable.GetHashCode();
-                if (this.AomMetricRelabelConfigs != null)
-                    hashCode = hashCode * 59 + this.AomMetricRelabelConfigs.GetHashCode();
+                var hashCode = 41;
+                if (this.AppType != null) hashCode = hashCode * 59 + this.AppType.GetHashCode();
+                if (this.AttrList != null) hashCode = hashCode * 59 + this.AttrList.GetHashCode();
+                if (this.DetectLog != null) hashCode = hashCode * 59 + this.DetectLog.GetHashCode();
+                if (this.DiscoveryRule != null) hashCode = hashCode * 59 + this.DiscoveryRule.GetHashCode();
+                if (this.IsDefaultRule != null) hashCode = hashCode * 59 + this.IsDefaultRule.GetHashCode();
+                if (this.IsDetect != null) hashCode = hashCode * 59 + this.IsDetect.GetHashCode();
+                if (this.LogFileFix != null) hashCode = hashCode * 59 + this.LogFileFix.GetHashCode();
+                if (this.LogPathRule != null) hashCode = hashCode * 59 + this.LogPathRule.GetHashCode();
+                if (this.NameRule != null) hashCode = hashCode * 59 + this.NameRule.GetHashCode();
+                if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                if (this.DataSource != null) hashCode = hashCode * 59 + this.DataSource.GetHashCode();
+                if (this.Editable != null) hashCode = hashCode * 59 + this.Editable.GetHashCode();
+                if (this.AomMetricRelabelConfigs != null) hashCode = hashCode * 59 + this.AomMetricRelabelConfigs.GetHashCode();
                 return hashCode;
             }
         }

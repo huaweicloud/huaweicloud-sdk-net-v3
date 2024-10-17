@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(SealRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Data != input.Data || (this.Data != null && !this.Data.Equals(input.Data))) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.ReturnSealImage != input.ReturnSealImage || (this.ReturnSealImage != null && !this.ReturnSealImage.Equals(input.ReturnSealImage))) return false;
+            if (this.ReturnErasedSealImage != input.ReturnErasedSealImage || (this.ReturnErasedSealImage != null && !this.ReturnErasedSealImage.Equals(input.ReturnErasedSealImage))) return false;
+            if (this.PdfPageNumber != input.PdfPageNumber || (this.PdfPageNumber != null && !this.PdfPageNumber.Equals(input.PdfPageNumber))) return false;
 
-            return 
-                (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.ReturnSealImage == input.ReturnSealImage ||
-                    (this.ReturnSealImage != null &&
-                    this.ReturnSealImage.Equals(input.ReturnSealImage))
-                ) && 
-                (
-                    this.ReturnErasedSealImage == input.ReturnErasedSealImage ||
-                    (this.ReturnErasedSealImage != null &&
-                    this.ReturnErasedSealImage.Equals(input.ReturnErasedSealImage))
-                ) && 
-                (
-                    this.PdfPageNumber == input.PdfPageNumber ||
-                    (this.PdfPageNumber != null &&
-                    this.PdfPageNumber.Equals(input.PdfPageNumber))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Data != null)
-                    hashCode = hashCode * 59 + this.Data.GetHashCode();
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.ReturnSealImage != null)
-                    hashCode = hashCode * 59 + this.ReturnSealImage.GetHashCode();
-                if (this.ReturnErasedSealImage != null)
-                    hashCode = hashCode * 59 + this.ReturnErasedSealImage.GetHashCode();
-                if (this.PdfPageNumber != null)
-                    hashCode = hashCode * 59 + this.PdfPageNumber.GetHashCode();
+                var hashCode = 41;
+                if (this.Data != null) hashCode = hashCode * 59 + this.Data.GetHashCode();
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.ReturnSealImage != null) hashCode = hashCode * 59 + this.ReturnSealImage.GetHashCode();
+                if (this.ReturnErasedSealImage != null) hashCode = hashCode * 59 + this.ReturnErasedSealImage.GetHashCode();
+                if (this.PdfPageNumber != null) hashCode = hashCode * 59 + this.PdfPageNumber.GetHashCode();
                 return hashCode;
             }
         }

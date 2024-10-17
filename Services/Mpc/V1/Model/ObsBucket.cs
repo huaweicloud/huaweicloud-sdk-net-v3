@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(ObsBucket input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Bucket != input.Bucket || (this.Bucket != null && !this.Bucket.Equals(input.Bucket))) return false;
+            if (this.CreationDate != input.CreationDate || (this.CreationDate != null && !this.CreationDate.Equals(input.CreationDate))) return false;
+            if (this.IsAuthorized != input.IsAuthorized || (this.IsAuthorized != null && !this.IsAuthorized.Equals(input.IsAuthorized))) return false;
 
-            return 
-                (
-                    this.Bucket == input.Bucket ||
-                    (this.Bucket != null &&
-                    this.Bucket.Equals(input.Bucket))
-                ) && 
-                (
-                    this.CreationDate == input.CreationDate ||
-                    (this.CreationDate != null &&
-                    this.CreationDate.Equals(input.CreationDate))
-                ) && 
-                (
-                    this.IsAuthorized == input.IsAuthorized ||
-                    (this.IsAuthorized != null &&
-                    this.IsAuthorized.Equals(input.IsAuthorized))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Bucket != null)
-                    hashCode = hashCode * 59 + this.Bucket.GetHashCode();
-                if (this.CreationDate != null)
-                    hashCode = hashCode * 59 + this.CreationDate.GetHashCode();
-                if (this.IsAuthorized != null)
-                    hashCode = hashCode * 59 + this.IsAuthorized.GetHashCode();
+                var hashCode = 41;
+                if (this.Bucket != null) hashCode = hashCode * 59 + this.Bucket.GetHashCode();
+                if (this.CreationDate != null) hashCode = hashCode * 59 + this.CreationDate.GetHashCode();
+                if (this.IsAuthorized != null) hashCode = hashCode * 59 + this.IsAuthorized.GetHashCode();
                 return hashCode;
             }
         }

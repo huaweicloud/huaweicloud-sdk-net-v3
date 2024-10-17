@@ -168,101 +168,27 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(QualificationConfidence input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IdNumber != input.IdNumber || (this.IdNumber != null && !this.IdNumber.Equals(input.IdNumber))) return false;
+            if (this.AssessmentDate != input.AssessmentDate || (this.AssessmentDate != null && !this.AssessmentDate.Equals(input.AssessmentDate))) return false;
+            if (this.CertificateNumber != input.CertificateNumber || (this.CertificateNumber != null && !this.CertificateNumber.Equals(input.CertificateNumber))) return false;
+            if (this.FileNumber != input.FileNumber || (this.FileNumber != null && !this.FileNumber.Equals(input.FileNumber))) return false;
+            if (this.UnionCardNumber != input.UnionCardNumber || (this.UnionCardNumber != null && !this.UnionCardNumber.Equals(input.UnionCardNumber))) return false;
+            if (this.ContinuingEducationInfo != input.ContinuingEducationInfo || (this.ContinuingEducationInfo != null && !this.ContinuingEducationInfo.Equals(input.ContinuingEducationInfo))) return false;
+            if (this.Sex != input.Sex || (this.Sex != null && !this.Sex.Equals(input.Sex))) return false;
+            if (this.PhoneNumber != input.PhoneNumber || (this.PhoneNumber != null && !this.PhoneNumber.Equals(input.PhoneNumber))) return false;
+            if (this.RegistrationDate != input.RegistrationDate || (this.RegistrationDate != null && !this.RegistrationDate.Equals(input.RegistrationDate))) return false;
+            if (this.WorkUnit != input.WorkUnit || (this.WorkUnit != null && !this.WorkUnit.Equals(input.WorkUnit))) return false;
+            if (this.IntegrityAssessmentInfo != input.IntegrityAssessmentInfo || (this.IntegrityAssessmentInfo != null && !this.IntegrityAssessmentInfo.Equals(input.IntegrityAssessmentInfo))) return false;
+            if (this.Nationality != input.Nationality || (this.Nationality != null && !this.Nationality.Equals(input.Nationality))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Address != input.Address || (this.Address != null && !this.Address.Equals(input.Address))) return false;
+            if (this.DrivingClass != input.DrivingClass || (this.DrivingClass != null && !this.DrivingClass.Equals(input.DrivingClass))) return false;
+            if (this.IssuingAuthority != input.IssuingAuthority || (this.IssuingAuthority != null && !this.IssuingAuthority.Equals(input.IssuingAuthority))) return false;
+            if (this.BirthDate != input.BirthDate || (this.BirthDate != null && !this.BirthDate.Equals(input.BirthDate))) return false;
+            if (this.QualificationCategoryList != input.QualificationCategoryList || (this.QualificationCategoryList != null && input.QualificationCategoryList != null && !this.QualificationCategoryList.SequenceEqual(input.QualificationCategoryList))) return false;
 
-            return 
-                (
-                    this.IdNumber == input.IdNumber ||
-                    (this.IdNumber != null &&
-                    this.IdNumber.Equals(input.IdNumber))
-                ) && 
-                (
-                    this.AssessmentDate == input.AssessmentDate ||
-                    (this.AssessmentDate != null &&
-                    this.AssessmentDate.Equals(input.AssessmentDate))
-                ) && 
-                (
-                    this.CertificateNumber == input.CertificateNumber ||
-                    (this.CertificateNumber != null &&
-                    this.CertificateNumber.Equals(input.CertificateNumber))
-                ) && 
-                (
-                    this.FileNumber == input.FileNumber ||
-                    (this.FileNumber != null &&
-                    this.FileNumber.Equals(input.FileNumber))
-                ) && 
-                (
-                    this.UnionCardNumber == input.UnionCardNumber ||
-                    (this.UnionCardNumber != null &&
-                    this.UnionCardNumber.Equals(input.UnionCardNumber))
-                ) && 
-                (
-                    this.ContinuingEducationInfo == input.ContinuingEducationInfo ||
-                    (this.ContinuingEducationInfo != null &&
-                    this.ContinuingEducationInfo.Equals(input.ContinuingEducationInfo))
-                ) && 
-                (
-                    this.Sex == input.Sex ||
-                    (this.Sex != null &&
-                    this.Sex.Equals(input.Sex))
-                ) && 
-                (
-                    this.PhoneNumber == input.PhoneNumber ||
-                    (this.PhoneNumber != null &&
-                    this.PhoneNumber.Equals(input.PhoneNumber))
-                ) && 
-                (
-                    this.RegistrationDate == input.RegistrationDate ||
-                    (this.RegistrationDate != null &&
-                    this.RegistrationDate.Equals(input.RegistrationDate))
-                ) && 
-                (
-                    this.WorkUnit == input.WorkUnit ||
-                    (this.WorkUnit != null &&
-                    this.WorkUnit.Equals(input.WorkUnit))
-                ) && 
-                (
-                    this.IntegrityAssessmentInfo == input.IntegrityAssessmentInfo ||
-                    (this.IntegrityAssessmentInfo != null &&
-                    this.IntegrityAssessmentInfo.Equals(input.IntegrityAssessmentInfo))
-                ) && 
-                (
-                    this.Nationality == input.Nationality ||
-                    (this.Nationality != null &&
-                    this.Nationality.Equals(input.Nationality))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Address == input.Address ||
-                    (this.Address != null &&
-                    this.Address.Equals(input.Address))
-                ) && 
-                (
-                    this.DrivingClass == input.DrivingClass ||
-                    (this.DrivingClass != null &&
-                    this.DrivingClass.Equals(input.DrivingClass))
-                ) && 
-                (
-                    this.IssuingAuthority == input.IssuingAuthority ||
-                    (this.IssuingAuthority != null &&
-                    this.IssuingAuthority.Equals(input.IssuingAuthority))
-                ) && 
-                (
-                    this.BirthDate == input.BirthDate ||
-                    (this.BirthDate != null &&
-                    this.BirthDate.Equals(input.BirthDate))
-                ) && 
-                (
-                    this.QualificationCategoryList == input.QualificationCategoryList ||
-                    this.QualificationCategoryList != null &&
-                    input.QualificationCategoryList != null &&
-                    this.QualificationCategoryList.SequenceEqual(input.QualificationCategoryList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -272,43 +198,25 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IdNumber != null)
-                    hashCode = hashCode * 59 + this.IdNumber.GetHashCode();
-                if (this.AssessmentDate != null)
-                    hashCode = hashCode * 59 + this.AssessmentDate.GetHashCode();
-                if (this.CertificateNumber != null)
-                    hashCode = hashCode * 59 + this.CertificateNumber.GetHashCode();
-                if (this.FileNumber != null)
-                    hashCode = hashCode * 59 + this.FileNumber.GetHashCode();
-                if (this.UnionCardNumber != null)
-                    hashCode = hashCode * 59 + this.UnionCardNumber.GetHashCode();
-                if (this.ContinuingEducationInfo != null)
-                    hashCode = hashCode * 59 + this.ContinuingEducationInfo.GetHashCode();
-                if (this.Sex != null)
-                    hashCode = hashCode * 59 + this.Sex.GetHashCode();
-                if (this.PhoneNumber != null)
-                    hashCode = hashCode * 59 + this.PhoneNumber.GetHashCode();
-                if (this.RegistrationDate != null)
-                    hashCode = hashCode * 59 + this.RegistrationDate.GetHashCode();
-                if (this.WorkUnit != null)
-                    hashCode = hashCode * 59 + this.WorkUnit.GetHashCode();
-                if (this.IntegrityAssessmentInfo != null)
-                    hashCode = hashCode * 59 + this.IntegrityAssessmentInfo.GetHashCode();
-                if (this.Nationality != null)
-                    hashCode = hashCode * 59 + this.Nationality.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Address != null)
-                    hashCode = hashCode * 59 + this.Address.GetHashCode();
-                if (this.DrivingClass != null)
-                    hashCode = hashCode * 59 + this.DrivingClass.GetHashCode();
-                if (this.IssuingAuthority != null)
-                    hashCode = hashCode * 59 + this.IssuingAuthority.GetHashCode();
-                if (this.BirthDate != null)
-                    hashCode = hashCode * 59 + this.BirthDate.GetHashCode();
-                if (this.QualificationCategoryList != null)
-                    hashCode = hashCode * 59 + this.QualificationCategoryList.GetHashCode();
+                var hashCode = 41;
+                if (this.IdNumber != null) hashCode = hashCode * 59 + this.IdNumber.GetHashCode();
+                if (this.AssessmentDate != null) hashCode = hashCode * 59 + this.AssessmentDate.GetHashCode();
+                if (this.CertificateNumber != null) hashCode = hashCode * 59 + this.CertificateNumber.GetHashCode();
+                if (this.FileNumber != null) hashCode = hashCode * 59 + this.FileNumber.GetHashCode();
+                if (this.UnionCardNumber != null) hashCode = hashCode * 59 + this.UnionCardNumber.GetHashCode();
+                if (this.ContinuingEducationInfo != null) hashCode = hashCode * 59 + this.ContinuingEducationInfo.GetHashCode();
+                if (this.Sex != null) hashCode = hashCode * 59 + this.Sex.GetHashCode();
+                if (this.PhoneNumber != null) hashCode = hashCode * 59 + this.PhoneNumber.GetHashCode();
+                if (this.RegistrationDate != null) hashCode = hashCode * 59 + this.RegistrationDate.GetHashCode();
+                if (this.WorkUnit != null) hashCode = hashCode * 59 + this.WorkUnit.GetHashCode();
+                if (this.IntegrityAssessmentInfo != null) hashCode = hashCode * 59 + this.IntegrityAssessmentInfo.GetHashCode();
+                if (this.Nationality != null) hashCode = hashCode * 59 + this.Nationality.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Address != null) hashCode = hashCode * 59 + this.Address.GetHashCode();
+                if (this.DrivingClass != null) hashCode = hashCode * 59 + this.DrivingClass.GetHashCode();
+                if (this.IssuingAuthority != null) hashCode = hashCode * 59 + this.IssuingAuthority.GetHashCode();
+                if (this.BirthDate != null) hashCode = hashCode * 59 + this.BirthDate.GetHashCode();
+                if (this.QualificationCategoryList != null) hashCode = hashCode * 59 + this.QualificationCategoryList.GetHashCode();
                 return hashCode;
             }
         }

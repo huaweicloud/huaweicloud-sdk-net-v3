@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(MigrateServerOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DedicatedHostId != input.DedicatedHostId || (this.DedicatedHostId != null && !this.DedicatedHostId.Equals(input.DedicatedHostId))) return false;
 
-            return 
-                (
-                    this.DedicatedHostId == input.DedicatedHostId ||
-                    (this.DedicatedHostId != null &&
-                    this.DedicatedHostId.Equals(input.DedicatedHostId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DedicatedHostId != null)
-                    hashCode = hashCode * 59 + this.DedicatedHostId.GetHashCode();
+                var hashCode = 41;
+                if (this.DedicatedHostId != null) hashCode = hashCode * 59 + this.DedicatedHostId.GetHashCode();
                 return hashCode;
             }
         }

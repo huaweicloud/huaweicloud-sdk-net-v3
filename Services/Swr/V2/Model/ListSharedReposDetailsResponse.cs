@@ -57,21 +57,11 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public bool Equals(ListSharedReposDetailsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Body != input.Body || (this.Body != null && input.Body != null && !this.Body.SequenceEqual(input.Body))) return false;
+            if (this.ContentRange != input.ContentRange || (this.ContentRange != null && !this.ContentRange.Equals(input.ContentRange))) return false;
 
-            return 
-                (
-                    this.Body == input.Body ||
-                    this.Body != null &&
-                    input.Body != null &&
-                    this.Body.SequenceEqual(input.Body)
-                ) && 
-                (
-                    this.ContentRange == input.ContentRange ||
-                    (this.ContentRange != null &&
-                    this.ContentRange.Equals(input.ContentRange))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +71,9 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
-                if (this.ContentRange != null)
-                    hashCode = hashCode * 59 + this.ContentRange.GetHashCode();
+                var hashCode = 41;
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.ContentRange != null) hashCode = hashCode * 59 + this.ContentRange.GetHashCode();
                 return hashCode;
             }
         }

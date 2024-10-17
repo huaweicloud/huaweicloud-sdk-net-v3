@@ -209,36 +209,14 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(UpdateFunctionCodeRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CodeType != input.CodeType) return false;
+            if (this.CodeUrl != input.CodeUrl || (this.CodeUrl != null && !this.CodeUrl.Equals(input.CodeUrl))) return false;
+            if (this.CodeFilename != input.CodeFilename || (this.CodeFilename != null && !this.CodeFilename.Equals(input.CodeFilename))) return false;
+            if (this.FuncCode != input.FuncCode || (this.FuncCode != null && !this.FuncCode.Equals(input.FuncCode))) return false;
+            if (this.DependVersionList != input.DependVersionList || (this.DependVersionList != null && input.DependVersionList != null && !this.DependVersionList.SequenceEqual(input.DependVersionList))) return false;
 
-            return 
-                (
-                    this.CodeType == input.CodeType ||
-                    (this.CodeType != null &&
-                    this.CodeType.Equals(input.CodeType))
-                ) && 
-                (
-                    this.CodeUrl == input.CodeUrl ||
-                    (this.CodeUrl != null &&
-                    this.CodeUrl.Equals(input.CodeUrl))
-                ) && 
-                (
-                    this.CodeFilename == input.CodeFilename ||
-                    (this.CodeFilename != null &&
-                    this.CodeFilename.Equals(input.CodeFilename))
-                ) && 
-                (
-                    this.FuncCode == input.FuncCode ||
-                    (this.FuncCode != null &&
-                    this.FuncCode.Equals(input.FuncCode))
-                ) && 
-                (
-                    this.DependVersionList == input.DependVersionList ||
-                    this.DependVersionList != null &&
-                    input.DependVersionList != null &&
-                    this.DependVersionList.SequenceEqual(input.DependVersionList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -248,17 +226,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CodeType != null)
-                    hashCode = hashCode * 59 + this.CodeType.GetHashCode();
-                if (this.CodeUrl != null)
-                    hashCode = hashCode * 59 + this.CodeUrl.GetHashCode();
-                if (this.CodeFilename != null)
-                    hashCode = hashCode * 59 + this.CodeFilename.GetHashCode();
-                if (this.FuncCode != null)
-                    hashCode = hashCode * 59 + this.FuncCode.GetHashCode();
-                if (this.DependVersionList != null)
-                    hashCode = hashCode * 59 + this.DependVersionList.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.CodeType.GetHashCode();
+                if (this.CodeUrl != null) hashCode = hashCode * 59 + this.CodeUrl.GetHashCode();
+                if (this.CodeFilename != null) hashCode = hashCode * 59 + this.CodeFilename.GetHashCode();
+                if (this.FuncCode != null) hashCode = hashCode * 59 + this.FuncCode.GetHashCode();
+                if (this.DependVersionList != null) hashCode = hashCode * 59 + this.DependVersionList.GetHashCode();
                 return hashCode;
             }
         }

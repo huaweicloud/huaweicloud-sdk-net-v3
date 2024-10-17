@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// </summary>
         public bool Equals(ListBandwidthPkgResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Bandwidthpkgs != input.Bandwidthpkgs || (this.Bandwidthpkgs != null && input.Bandwidthpkgs != null && !this.Bandwidthpkgs.SequenceEqual(input.Bandwidthpkgs))) return false;
+            if (this.BandwidthpkgsLinks != input.BandwidthpkgsLinks || (this.BandwidthpkgsLinks != null && input.BandwidthpkgsLinks != null && !this.BandwidthpkgsLinks.SequenceEqual(input.BandwidthpkgsLinks))) return false;
 
-            return 
-                (
-                    this.Bandwidthpkgs == input.Bandwidthpkgs ||
-                    this.Bandwidthpkgs != null &&
-                    input.Bandwidthpkgs != null &&
-                    this.Bandwidthpkgs.SequenceEqual(input.Bandwidthpkgs)
-                ) && 
-                (
-                    this.BandwidthpkgsLinks == input.BandwidthpkgsLinks ||
-                    this.BandwidthpkgsLinks != null &&
-                    input.BandwidthpkgsLinks != null &&
-                    this.BandwidthpkgsLinks.SequenceEqual(input.BandwidthpkgsLinks)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Bandwidthpkgs != null)
-                    hashCode = hashCode * 59 + this.Bandwidthpkgs.GetHashCode();
-                if (this.BandwidthpkgsLinks != null)
-                    hashCode = hashCode * 59 + this.BandwidthpkgsLinks.GetHashCode();
+                var hashCode = 41;
+                if (this.Bandwidthpkgs != null) hashCode = hashCode * 59 + this.Bandwidthpkgs.GetHashCode();
+                if (this.BandwidthpkgsLinks != null) hashCode = hashCode * 59 + this.BandwidthpkgsLinks.GetHashCode();
                 return hashCode;
             }
         }

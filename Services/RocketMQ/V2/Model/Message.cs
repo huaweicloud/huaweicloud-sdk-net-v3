@@ -140,81 +140,23 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(Message input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MsgId != input.MsgId || (this.MsgId != null && !this.MsgId.Equals(input.MsgId))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;
+            if (this.StoreTimestamp != input.StoreTimestamp || (this.StoreTimestamp != null && !this.StoreTimestamp.Equals(input.StoreTimestamp))) return false;
+            if (this.BornTimestamp != input.BornTimestamp || (this.BornTimestamp != null && !this.BornTimestamp.Equals(input.BornTimestamp))) return false;
+            if (this.ReconsumeTimes != input.ReconsumeTimes || (this.ReconsumeTimes != null && !this.ReconsumeTimes.Equals(input.ReconsumeTimes))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
+            if (this.BodyCrc != input.BodyCrc || (this.BodyCrc != null && !this.BodyCrc.Equals(input.BodyCrc))) return false;
+            if (this.StoreSize != input.StoreSize || (this.StoreSize != null && !this.StoreSize.Equals(input.StoreSize))) return false;
+            if (this.PropertyList != input.PropertyList || (this.PropertyList != null && input.PropertyList != null && !this.PropertyList.SequenceEqual(input.PropertyList))) return false;
+            if (this.BornHost != input.BornHost || (this.BornHost != null && !this.BornHost.Equals(input.BornHost))) return false;
+            if (this.StoreHost != input.StoreHost || (this.StoreHost != null && !this.StoreHost.Equals(input.StoreHost))) return false;
+            if (this.QueueId != input.QueueId || (this.QueueId != null && !this.QueueId.Equals(input.QueueId))) return false;
+            if (this.QueueOffset != input.QueueOffset || (this.QueueOffset != null && !this.QueueOffset.Equals(input.QueueOffset))) return false;
 
-            return 
-                (
-                    this.MsgId == input.MsgId ||
-                    (this.MsgId != null &&
-                    this.MsgId.Equals(input.MsgId))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.Topic == input.Topic ||
-                    (this.Topic != null &&
-                    this.Topic.Equals(input.Topic))
-                ) && 
-                (
-                    this.StoreTimestamp == input.StoreTimestamp ||
-                    (this.StoreTimestamp != null &&
-                    this.StoreTimestamp.Equals(input.StoreTimestamp))
-                ) && 
-                (
-                    this.BornTimestamp == input.BornTimestamp ||
-                    (this.BornTimestamp != null &&
-                    this.BornTimestamp.Equals(input.BornTimestamp))
-                ) && 
-                (
-                    this.ReconsumeTimes == input.ReconsumeTimes ||
-                    (this.ReconsumeTimes != null &&
-                    this.ReconsumeTimes.Equals(input.ReconsumeTimes))
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
-                ) && 
-                (
-                    this.BodyCrc == input.BodyCrc ||
-                    (this.BodyCrc != null &&
-                    this.BodyCrc.Equals(input.BodyCrc))
-                ) && 
-                (
-                    this.StoreSize == input.StoreSize ||
-                    (this.StoreSize != null &&
-                    this.StoreSize.Equals(input.StoreSize))
-                ) && 
-                (
-                    this.PropertyList == input.PropertyList ||
-                    this.PropertyList != null &&
-                    input.PropertyList != null &&
-                    this.PropertyList.SequenceEqual(input.PropertyList)
-                ) && 
-                (
-                    this.BornHost == input.BornHost ||
-                    (this.BornHost != null &&
-                    this.BornHost.Equals(input.BornHost))
-                ) && 
-                (
-                    this.StoreHost == input.StoreHost ||
-                    (this.StoreHost != null &&
-                    this.StoreHost.Equals(input.StoreHost))
-                ) && 
-                (
-                    this.QueueId == input.QueueId ||
-                    (this.QueueId != null &&
-                    this.QueueId.Equals(input.QueueId))
-                ) && 
-                (
-                    this.QueueOffset == input.QueueOffset ||
-                    (this.QueueOffset != null &&
-                    this.QueueOffset.Equals(input.QueueOffset))
-                );
+            return true;
         }
 
         /// <summary>
@@ -224,35 +166,21 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MsgId != null)
-                    hashCode = hashCode * 59 + this.MsgId.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.Topic != null)
-                    hashCode = hashCode * 59 + this.Topic.GetHashCode();
-                if (this.StoreTimestamp != null)
-                    hashCode = hashCode * 59 + this.StoreTimestamp.GetHashCode();
-                if (this.BornTimestamp != null)
-                    hashCode = hashCode * 59 + this.BornTimestamp.GetHashCode();
-                if (this.ReconsumeTimes != null)
-                    hashCode = hashCode * 59 + this.ReconsumeTimes.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
-                if (this.BodyCrc != null)
-                    hashCode = hashCode * 59 + this.BodyCrc.GetHashCode();
-                if (this.StoreSize != null)
-                    hashCode = hashCode * 59 + this.StoreSize.GetHashCode();
-                if (this.PropertyList != null)
-                    hashCode = hashCode * 59 + this.PropertyList.GetHashCode();
-                if (this.BornHost != null)
-                    hashCode = hashCode * 59 + this.BornHost.GetHashCode();
-                if (this.StoreHost != null)
-                    hashCode = hashCode * 59 + this.StoreHost.GetHashCode();
-                if (this.QueueId != null)
-                    hashCode = hashCode * 59 + this.QueueId.GetHashCode();
-                if (this.QueueOffset != null)
-                    hashCode = hashCode * 59 + this.QueueOffset.GetHashCode();
+                var hashCode = 41;
+                if (this.MsgId != null) hashCode = hashCode * 59 + this.MsgId.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.Topic != null) hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.StoreTimestamp != null) hashCode = hashCode * 59 + this.StoreTimestamp.GetHashCode();
+                if (this.BornTimestamp != null) hashCode = hashCode * 59 + this.BornTimestamp.GetHashCode();
+                if (this.ReconsumeTimes != null) hashCode = hashCode * 59 + this.ReconsumeTimes.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.BodyCrc != null) hashCode = hashCode * 59 + this.BodyCrc.GetHashCode();
+                if (this.StoreSize != null) hashCode = hashCode * 59 + this.StoreSize.GetHashCode();
+                if (this.PropertyList != null) hashCode = hashCode * 59 + this.PropertyList.GetHashCode();
+                if (this.BornHost != null) hashCode = hashCode * 59 + this.BornHost.GetHashCode();
+                if (this.StoreHost != null) hashCode = hashCode * 59 + this.StoreHost.GetHashCode();
+                if (this.QueueId != null) hashCode = hashCode * 59 + this.QueueId.GetHashCode();
+                if (this.QueueOffset != null) hashCode = hashCode * 59 + this.QueueOffset.GetHashCode();
                 return hashCode;
             }
         }

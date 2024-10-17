@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         /// </summary>
         public bool Equals(NotificationUsers input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UserGroup != input.UserGroup || (this.UserGroup != null && !this.UserGroup.Equals(input.UserGroup))) return false;
+            if (this.UserList != input.UserList || (this.UserList != null && input.UserList != null && !this.UserList.SequenceEqual(input.UserList))) return false;
 
-            return 
-                (
-                    this.UserGroup == input.UserGroup ||
-                    (this.UserGroup != null &&
-                    this.UserGroup.Equals(input.UserGroup))
-                ) && 
-                (
-                    this.UserList == input.UserList ||
-                    this.UserList != null &&
-                    input.UserList != null &&
-                    this.UserList.SequenceEqual(input.UserList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UserGroup != null)
-                    hashCode = hashCode * 59 + this.UserGroup.GetHashCode();
-                if (this.UserList != null)
-                    hashCode = hashCode * 59 + this.UserList.GetHashCode();
+                var hashCode = 41;
+                if (this.UserGroup != null) hashCode = hashCode * 59 + this.UserGroup.GetHashCode();
+                if (this.UserList != null) hashCode = hashCode * 59 + this.UserList.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(CreateListenerRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Listener != input.Listener || (this.Listener != null && !this.Listener.Equals(input.Listener))) return false;
 
-            return 
-                (
-                    this.Listener == input.Listener ||
-                    (this.Listener != null &&
-                    this.Listener.Equals(input.Listener))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Listener != null)
-                    hashCode = hashCode * 59 + this.Listener.GetHashCode();
+                var hashCode = 41;
+                if (this.Listener != null) hashCode = hashCode * 59 + this.Listener.GetHashCode();
                 return hashCode;
             }
         }

@@ -216,40 +216,15 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(FixtedResponseConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StatusCode != input.StatusCode || (this.StatusCode != null && !this.StatusCode.Equals(input.StatusCode))) return false;
+            if (this.ContentType != input.ContentType) return false;
+            if (this.MessageBody != input.MessageBody || (this.MessageBody != null && !this.MessageBody.Equals(input.MessageBody))) return false;
+            if (this.InsertHeadersConfig != input.InsertHeadersConfig || (this.InsertHeadersConfig != null && !this.InsertHeadersConfig.Equals(input.InsertHeadersConfig))) return false;
+            if (this.RemoveHeadersConfig != input.RemoveHeadersConfig || (this.RemoveHeadersConfig != null && !this.RemoveHeadersConfig.Equals(input.RemoveHeadersConfig))) return false;
+            if (this.TrafficLimitConfig != input.TrafficLimitConfig || (this.TrafficLimitConfig != null && !this.TrafficLimitConfig.Equals(input.TrafficLimitConfig))) return false;
 
-            return 
-                (
-                    this.StatusCode == input.StatusCode ||
-                    (this.StatusCode != null &&
-                    this.StatusCode.Equals(input.StatusCode))
-                ) && 
-                (
-                    this.ContentType == input.ContentType ||
-                    (this.ContentType != null &&
-                    this.ContentType.Equals(input.ContentType))
-                ) && 
-                (
-                    this.MessageBody == input.MessageBody ||
-                    (this.MessageBody != null &&
-                    this.MessageBody.Equals(input.MessageBody))
-                ) && 
-                (
-                    this.InsertHeadersConfig == input.InsertHeadersConfig ||
-                    (this.InsertHeadersConfig != null &&
-                    this.InsertHeadersConfig.Equals(input.InsertHeadersConfig))
-                ) && 
-                (
-                    this.RemoveHeadersConfig == input.RemoveHeadersConfig ||
-                    (this.RemoveHeadersConfig != null &&
-                    this.RemoveHeadersConfig.Equals(input.RemoveHeadersConfig))
-                ) && 
-                (
-                    this.TrafficLimitConfig == input.TrafficLimitConfig ||
-                    (this.TrafficLimitConfig != null &&
-                    this.TrafficLimitConfig.Equals(input.TrafficLimitConfig))
-                );
+            return true;
         }
 
         /// <summary>
@@ -259,19 +234,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StatusCode != null)
-                    hashCode = hashCode * 59 + this.StatusCode.GetHashCode();
-                if (this.ContentType != null)
-                    hashCode = hashCode * 59 + this.ContentType.GetHashCode();
-                if (this.MessageBody != null)
-                    hashCode = hashCode * 59 + this.MessageBody.GetHashCode();
-                if (this.InsertHeadersConfig != null)
-                    hashCode = hashCode * 59 + this.InsertHeadersConfig.GetHashCode();
-                if (this.RemoveHeadersConfig != null)
-                    hashCode = hashCode * 59 + this.RemoveHeadersConfig.GetHashCode();
-                if (this.TrafficLimitConfig != null)
-                    hashCode = hashCode * 59 + this.TrafficLimitConfig.GetHashCode();
+                var hashCode = 41;
+                if (this.StatusCode != null) hashCode = hashCode * 59 + this.StatusCode.GetHashCode();
+                hashCode = hashCode * 59 + this.ContentType.GetHashCode();
+                if (this.MessageBody != null) hashCode = hashCode * 59 + this.MessageBody.GetHashCode();
+                if (this.InsertHeadersConfig != null) hashCode = hashCode * 59 + this.InsertHeadersConfig.GetHashCode();
+                if (this.RemoveHeadersConfig != null) hashCode = hashCode * 59 + this.RemoveHeadersConfig.GetHashCode();
+                if (this.TrafficLimitConfig != null) hashCode = hashCode * 59 + this.TrafficLimitConfig.GetHashCode();
                 return hashCode;
             }
         }

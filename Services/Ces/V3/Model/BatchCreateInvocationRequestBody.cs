@@ -552,42 +552,15 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         /// </summary>
         public bool Equals(BatchCreateInvocationRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceIds != input.InstanceIds || (this.InstanceIds != null && input.InstanceIds != null && !this.InstanceIds.SequenceEqual(input.InstanceIds))) return false;
+            if (this.InvocationType != input.InvocationType) return false;
+            if (this.InvocationTarget != input.InvocationTarget) return false;
+            if (this.InvocationIds != input.InvocationIds || (this.InvocationIds != null && input.InvocationIds != null && !this.InvocationIds.SequenceEqual(input.InvocationIds))) return false;
+            if (this.VersionType != input.VersionType) return false;
+            if (this.Origin != input.Origin) return false;
 
-            return 
-                (
-                    this.InstanceIds == input.InstanceIds ||
-                    this.InstanceIds != null &&
-                    input.InstanceIds != null &&
-                    this.InstanceIds.SequenceEqual(input.InstanceIds)
-                ) && 
-                (
-                    this.InvocationType == input.InvocationType ||
-                    (this.InvocationType != null &&
-                    this.InvocationType.Equals(input.InvocationType))
-                ) && 
-                (
-                    this.InvocationTarget == input.InvocationTarget ||
-                    (this.InvocationTarget != null &&
-                    this.InvocationTarget.Equals(input.InvocationTarget))
-                ) && 
-                (
-                    this.InvocationIds == input.InvocationIds ||
-                    this.InvocationIds != null &&
-                    input.InvocationIds != null &&
-                    this.InvocationIds.SequenceEqual(input.InvocationIds)
-                ) && 
-                (
-                    this.VersionType == input.VersionType ||
-                    (this.VersionType != null &&
-                    this.VersionType.Equals(input.VersionType))
-                ) && 
-                (
-                    this.Origin == input.Origin ||
-                    (this.Origin != null &&
-                    this.Origin.Equals(input.Origin))
-                );
+            return true;
         }
 
         /// <summary>
@@ -597,19 +570,13 @@ namespace HuaweiCloud.SDK.Ces.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceIds != null)
-                    hashCode = hashCode * 59 + this.InstanceIds.GetHashCode();
-                if (this.InvocationType != null)
-                    hashCode = hashCode * 59 + this.InvocationType.GetHashCode();
-                if (this.InvocationTarget != null)
-                    hashCode = hashCode * 59 + this.InvocationTarget.GetHashCode();
-                if (this.InvocationIds != null)
-                    hashCode = hashCode * 59 + this.InvocationIds.GetHashCode();
-                if (this.VersionType != null)
-                    hashCode = hashCode * 59 + this.VersionType.GetHashCode();
-                if (this.Origin != null)
-                    hashCode = hashCode * 59 + this.Origin.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceIds != null) hashCode = hashCode * 59 + this.InstanceIds.GetHashCode();
+                hashCode = hashCode * 59 + this.InvocationType.GetHashCode();
+                hashCode = hashCode * 59 + this.InvocationTarget.GetHashCode();
+                if (this.InvocationIds != null) hashCode = hashCode * 59 + this.InvocationIds.GetHashCode();
+                hashCode = hashCode * 59 + this.VersionType.GetHashCode();
+                hashCode = hashCode * 59 + this.Origin.GetHashCode();
                 return hashCode;
             }
         }

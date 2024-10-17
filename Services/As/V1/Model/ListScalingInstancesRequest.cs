@@ -468,40 +468,15 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(ListScalingInstancesRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ScalingGroupId != input.ScalingGroupId || (this.ScalingGroupId != null && !this.ScalingGroupId.Equals(input.ScalingGroupId))) return false;
+            if (this.LifeCycleState != input.LifeCycleState) return false;
+            if (this.HealthStatus != input.HealthStatus) return false;
+            if (this.ProtectFromScalingDown != input.ProtectFromScalingDown) return false;
+            if (this.StartNumber != input.StartNumber || (this.StartNumber != null && !this.StartNumber.Equals(input.StartNumber))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
 
-            return 
-                (
-                    this.ScalingGroupId == input.ScalingGroupId ||
-                    (this.ScalingGroupId != null &&
-                    this.ScalingGroupId.Equals(input.ScalingGroupId))
-                ) && 
-                (
-                    this.LifeCycleState == input.LifeCycleState ||
-                    (this.LifeCycleState != null &&
-                    this.LifeCycleState.Equals(input.LifeCycleState))
-                ) && 
-                (
-                    this.HealthStatus == input.HealthStatus ||
-                    (this.HealthStatus != null &&
-                    this.HealthStatus.Equals(input.HealthStatus))
-                ) && 
-                (
-                    this.ProtectFromScalingDown == input.ProtectFromScalingDown ||
-                    (this.ProtectFromScalingDown != null &&
-                    this.ProtectFromScalingDown.Equals(input.ProtectFromScalingDown))
-                ) && 
-                (
-                    this.StartNumber == input.StartNumber ||
-                    (this.StartNumber != null &&
-                    this.StartNumber.Equals(input.StartNumber))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -511,19 +486,13 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ScalingGroupId != null)
-                    hashCode = hashCode * 59 + this.ScalingGroupId.GetHashCode();
-                if (this.LifeCycleState != null)
-                    hashCode = hashCode * 59 + this.LifeCycleState.GetHashCode();
-                if (this.HealthStatus != null)
-                    hashCode = hashCode * 59 + this.HealthStatus.GetHashCode();
-                if (this.ProtectFromScalingDown != null)
-                    hashCode = hashCode * 59 + this.ProtectFromScalingDown.GetHashCode();
-                if (this.StartNumber != null)
-                    hashCode = hashCode * 59 + this.StartNumber.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                var hashCode = 41;
+                if (this.ScalingGroupId != null) hashCode = hashCode * 59 + this.ScalingGroupId.GetHashCode();
+                hashCode = hashCode * 59 + this.LifeCycleState.GetHashCode();
+                hashCode = hashCode * 59 + this.HealthStatus.GetHashCode();
+                hashCode = hashCode * 59 + this.ProtectFromScalingDown.GetHashCode();
+                if (this.StartNumber != null) hashCode = hashCode * 59 + this.StartNumber.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 return hashCode;
             }
         }

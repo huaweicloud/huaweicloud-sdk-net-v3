@@ -70,32 +70,13 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         /// </summary>
         public bool Equals(UpdateParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ItemId != input.ItemId || (this.ItemId != null && !this.ItemId.Equals(input.ItemId))) return false;
+            if (this.Desc != input.Desc || (this.Desc != null && !this.Desc.Equals(input.Desc))) return false;
+            if (this.CustomTags != input.CustomTags || (this.CustomTags != null && input.CustomTags != null && !this.CustomTags.SequenceEqual(input.CustomTags))) return false;
+            if (this.CustomNumTags != input.CustomNumTags || (this.CustomNumTags != null && input.CustomNumTags != null && !this.CustomNumTags.SequenceEqual(input.CustomNumTags))) return false;
 
-            return 
-                (
-                    this.ItemId == input.ItemId ||
-                    (this.ItemId != null &&
-                    this.ItemId.Equals(input.ItemId))
-                ) && 
-                (
-                    this.Desc == input.Desc ||
-                    (this.Desc != null &&
-                    this.Desc.Equals(input.Desc))
-                ) && 
-                (
-                    this.CustomTags == input.CustomTags ||
-                    this.CustomTags != null &&
-                    input.CustomTags != null &&
-                    this.CustomTags.SequenceEqual(input.CustomTags)
-                ) && 
-                (
-                    this.CustomNumTags == input.CustomNumTags ||
-                    this.CustomNumTags != null &&
-                    input.CustomNumTags != null &&
-                    this.CustomNumTags.SequenceEqual(input.CustomNumTags)
-                );
+            return true;
         }
 
         /// <summary>
@@ -105,15 +86,11 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ItemId != null)
-                    hashCode = hashCode * 59 + this.ItemId.GetHashCode();
-                if (this.Desc != null)
-                    hashCode = hashCode * 59 + this.Desc.GetHashCode();
-                if (this.CustomTags != null)
-                    hashCode = hashCode * 59 + this.CustomTags.GetHashCode();
-                if (this.CustomNumTags != null)
-                    hashCode = hashCode * 59 + this.CustomNumTags.GetHashCode();
+                var hashCode = 41;
+                if (this.ItemId != null) hashCode = hashCode * 59 + this.ItemId.GetHashCode();
+                if (this.Desc != null) hashCode = hashCode * 59 + this.Desc.GetHashCode();
+                if (this.CustomTags != null) hashCode = hashCode * 59 + this.CustomTags.GetHashCode();
+                if (this.CustomNumTags != null) hashCode = hashCode * 59 + this.CustomNumTags.GetHashCode();
                 return hashCode;
             }
         }

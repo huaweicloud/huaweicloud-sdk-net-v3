@@ -178,31 +178,13 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(UpdateTaskV2RequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.DeploySystem != input.DeploySystem) return false;
+            if (this.TemplateId != input.TemplateId || (this.TemplateId != null && !this.TemplateId.Equals(input.TemplateId))) return false;
+            if (this.OperationList != input.OperationList || (this.OperationList != null && input.OperationList != null && !this.OperationList.SequenceEqual(input.OperationList))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.DeploySystem == input.DeploySystem ||
-                    (this.DeploySystem != null &&
-                    this.DeploySystem.Equals(input.DeploySystem))
-                ) && 
-                (
-                    this.TemplateId == input.TemplateId ||
-                    (this.TemplateId != null &&
-                    this.TemplateId.Equals(input.TemplateId))
-                ) && 
-                (
-                    this.OperationList == input.OperationList ||
-                    this.OperationList != null &&
-                    input.OperationList != null &&
-                    this.OperationList.SequenceEqual(input.OperationList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -212,15 +194,11 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.DeploySystem != null)
-                    hashCode = hashCode * 59 + this.DeploySystem.GetHashCode();
-                if (this.TemplateId != null)
-                    hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
-                if (this.OperationList != null)
-                    hashCode = hashCode * 59 + this.OperationList.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                hashCode = hashCode * 59 + this.DeploySystem.GetHashCode();
+                if (this.TemplateId != null) hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
+                if (this.OperationList != null) hashCode = hashCode * 59 + this.OperationList.GetHashCode();
                 return hashCode;
             }
         }

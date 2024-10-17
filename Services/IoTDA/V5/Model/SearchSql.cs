@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(SearchSql input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Sql != input.Sql || (this.Sql != null && !this.Sql.Equals(input.Sql))) return false;
 
-            return 
-                (
-                    this.Sql == input.Sql ||
-                    (this.Sql != null &&
-                    this.Sql.Equals(input.Sql))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Sql != null)
-                    hashCode = hashCode * 59 + this.Sql.GetHashCode();
+                var hashCode = 41;
+                if (this.Sql != null) hashCode = hashCode * 59 + this.Sql.GetHashCode();
                 return hashCode;
             }
         }

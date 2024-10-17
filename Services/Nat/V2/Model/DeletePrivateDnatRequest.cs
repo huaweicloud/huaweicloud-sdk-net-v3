@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// </summary>
         public bool Equals(DeletePrivateDnatRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DnatRuleId != input.DnatRuleId || (this.DnatRuleId != null && !this.DnatRuleId.Equals(input.DnatRuleId))) return false;
 
-            return 
-                (
-                    this.DnatRuleId == input.DnatRuleId ||
-                    (this.DnatRuleId != null &&
-                    this.DnatRuleId.Equals(input.DnatRuleId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DnatRuleId != null)
-                    hashCode = hashCode * 59 + this.DnatRuleId.GetHashCode();
+                var hashCode = 41;
+                if (this.DnatRuleId != null) hashCode = hashCode * 59 + this.DnatRuleId.GetHashCode();
                 return hashCode;
             }
         }

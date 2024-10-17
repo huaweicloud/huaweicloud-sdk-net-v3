@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// </summary>
         public bool Equals(InsertHeader input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.XForwardedELBIP != input.XForwardedELBIP || (this.XForwardedELBIP != null && !this.XForwardedELBIP.Equals(input.XForwardedELBIP))) return false;
+            if (this.XForwardedHost != input.XForwardedHost || (this.XForwardedHost != null && !this.XForwardedHost.Equals(input.XForwardedHost))) return false;
 
-            return 
-                (
-                    this.XForwardedELBIP == input.XForwardedELBIP ||
-                    (this.XForwardedELBIP != null &&
-                    this.XForwardedELBIP.Equals(input.XForwardedELBIP))
-                ) && 
-                (
-                    this.XForwardedHost == input.XForwardedHost ||
-                    (this.XForwardedHost != null &&
-                    this.XForwardedHost.Equals(input.XForwardedHost))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.XForwardedELBIP != null)
-                    hashCode = hashCode * 59 + this.XForwardedELBIP.GetHashCode();
-                if (this.XForwardedHost != null)
-                    hashCode = hashCode * 59 + this.XForwardedHost.GetHashCode();
+                var hashCode = 41;
+                if (this.XForwardedELBIP != null) hashCode = hashCode * 59 + this.XForwardedELBIP.GetHashCode();
+                if (this.XForwardedHost != null) hashCode = hashCode * 59 + this.XForwardedHost.GetHashCode();
                 return hashCode;
             }
         }

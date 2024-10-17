@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ScaleGroupAutoscaling input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Enable != input.Enable || (this.Enable != null && !this.Enable.Equals(input.Enable))) return false;
+            if (this.ExtensionPriority != input.ExtensionPriority || (this.ExtensionPriority != null && !this.ExtensionPriority.Equals(input.ExtensionPriority))) return false;
+            if (this.MinNodeCount != input.MinNodeCount || (this.MinNodeCount != null && !this.MinNodeCount.Equals(input.MinNodeCount))) return false;
+            if (this.MaxNodeCount != input.MaxNodeCount || (this.MaxNodeCount != null && !this.MaxNodeCount.Equals(input.MaxNodeCount))) return false;
 
-            return 
-                (
-                    this.Enable == input.Enable ||
-                    (this.Enable != null &&
-                    this.Enable.Equals(input.Enable))
-                ) && 
-                (
-                    this.ExtensionPriority == input.ExtensionPriority ||
-                    (this.ExtensionPriority != null &&
-                    this.ExtensionPriority.Equals(input.ExtensionPriority))
-                ) && 
-                (
-                    this.MinNodeCount == input.MinNodeCount ||
-                    (this.MinNodeCount != null &&
-                    this.MinNodeCount.Equals(input.MinNodeCount))
-                ) && 
-                (
-                    this.MaxNodeCount == input.MaxNodeCount ||
-                    (this.MaxNodeCount != null &&
-                    this.MaxNodeCount.Equals(input.MaxNodeCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Enable != null)
-                    hashCode = hashCode * 59 + this.Enable.GetHashCode();
-                if (this.ExtensionPriority != null)
-                    hashCode = hashCode * 59 + this.ExtensionPriority.GetHashCode();
-                if (this.MinNodeCount != null)
-                    hashCode = hashCode * 59 + this.MinNodeCount.GetHashCode();
-                if (this.MaxNodeCount != null)
-                    hashCode = hashCode * 59 + this.MaxNodeCount.GetHashCode();
+                var hashCode = 41;
+                if (this.Enable != null) hashCode = hashCode * 59 + this.Enable.GetHashCode();
+                if (this.ExtensionPriority != null) hashCode = hashCode * 59 + this.ExtensionPriority.GetHashCode();
+                if (this.MinNodeCount != null) hashCode = hashCode * 59 + this.MinNodeCount.GetHashCode();
+                if (this.MaxNodeCount != null) hashCode = hashCode * 59 + this.MaxNodeCount.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// </summary>
         public bool Equals(ListPoolsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Pools != input.Pools || (this.Pools != null && input.Pools != null && !this.Pools.SequenceEqual(input.Pools))) return false;
 
-            return 
-                (
-                    this.Pools == input.Pools ||
-                    this.Pools != null &&
-                    input.Pools != null &&
-                    this.Pools.SequenceEqual(input.Pools)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Pools != null)
-                    hashCode = hashCode * 59 + this.Pools.GetHashCode();
+                var hashCode = 41;
+                if (this.Pools != null) hashCode = hashCode * 59 + this.Pools.GetHashCode();
                 return hashCode;
             }
         }

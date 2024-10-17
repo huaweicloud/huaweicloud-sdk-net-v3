@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ListConfigTemplatesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TemplateNum != input.TemplateNum || (this.TemplateNum != null && !this.TemplateNum.Equals(input.TemplateNum))) return false;
+            if (this.Templates != input.Templates || (this.Templates != null && input.Templates != null && !this.Templates.SequenceEqual(input.Templates))) return false;
 
-            return 
-                (
-                    this.TemplateNum == input.TemplateNum ||
-                    (this.TemplateNum != null &&
-                    this.TemplateNum.Equals(input.TemplateNum))
-                ) && 
-                (
-                    this.Templates == input.Templates ||
-                    this.Templates != null &&
-                    input.Templates != null &&
-                    this.Templates.SequenceEqual(input.Templates)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TemplateNum != null)
-                    hashCode = hashCode * 59 + this.TemplateNum.GetHashCode();
-                if (this.Templates != null)
-                    hashCode = hashCode * 59 + this.Templates.GetHashCode();
+                var hashCode = 41;
+                if (this.TemplateNum != null) hashCode = hashCode * 59 + this.TemplateNum.GetHashCode();
+                if (this.Templates != null) hashCode = hashCode * 59 + this.Templates.GetHashCode();
                 return hashCode;
             }
         }

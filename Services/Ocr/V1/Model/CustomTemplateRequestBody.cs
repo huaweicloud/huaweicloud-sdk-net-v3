@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(CustomTemplateRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Image != input.Image || (this.Image != null && !this.Image.Equals(input.Image))) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.TemplateId != input.TemplateId || (this.TemplateId != null && !this.TemplateId.Equals(input.TemplateId))) return false;
+            if (this.ClassifierId != input.ClassifierId || (this.ClassifierId != null && !this.ClassifierId.Equals(input.ClassifierId))) return false;
+            if (this.ClassifierMode != input.ClassifierMode || (this.ClassifierMode != null && !this.ClassifierMode.Equals(input.ClassifierMode))) return false;
 
-            return 
-                (
-                    this.Image == input.Image ||
-                    (this.Image != null &&
-                    this.Image.Equals(input.Image))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.TemplateId == input.TemplateId ||
-                    (this.TemplateId != null &&
-                    this.TemplateId.Equals(input.TemplateId))
-                ) && 
-                (
-                    this.ClassifierId == input.ClassifierId ||
-                    (this.ClassifierId != null &&
-                    this.ClassifierId.Equals(input.ClassifierId))
-                ) && 
-                (
-                    this.ClassifierMode == input.ClassifierMode ||
-                    (this.ClassifierMode != null &&
-                    this.ClassifierMode.Equals(input.ClassifierMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Image != null)
-                    hashCode = hashCode * 59 + this.Image.GetHashCode();
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.TemplateId != null)
-                    hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
-                if (this.ClassifierId != null)
-                    hashCode = hashCode * 59 + this.ClassifierId.GetHashCode();
-                if (this.ClassifierMode != null)
-                    hashCode = hashCode * 59 + this.ClassifierMode.GetHashCode();
+                var hashCode = 41;
+                if (this.Image != null) hashCode = hashCode * 59 + this.Image.GetHashCode();
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.TemplateId != null) hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
+                if (this.ClassifierId != null) hashCode = hashCode * 59 + this.ClassifierId.GetHashCode();
+                if (this.ClassifierMode != null) hashCode = hashCode * 59 + this.ClassifierMode.GetHashCode();
                 return hashCode;
             }
         }

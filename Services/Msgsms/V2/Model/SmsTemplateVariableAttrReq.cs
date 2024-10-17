@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         /// </summary>
         public bool Equals(SmsTemplateVariableAttrReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VariableDesc != input.VariableDesc || (this.VariableDesc != null && !this.VariableDesc.Equals(input.VariableDesc))) return false;
+            if (this.VariableIndex != input.VariableIndex || (this.VariableIndex != null && !this.VariableIndex.Equals(input.VariableIndex))) return false;
+            if (this.VariableType != input.VariableType || (this.VariableType != null && !this.VariableType.Equals(input.VariableType))) return false;
 
-            return 
-                (
-                    this.VariableDesc == input.VariableDesc ||
-                    (this.VariableDesc != null &&
-                    this.VariableDesc.Equals(input.VariableDesc))
-                ) && 
-                (
-                    this.VariableIndex == input.VariableIndex ||
-                    (this.VariableIndex != null &&
-                    this.VariableIndex.Equals(input.VariableIndex))
-                ) && 
-                (
-                    this.VariableType == input.VariableType ||
-                    (this.VariableType != null &&
-                    this.VariableType.Equals(input.VariableType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VariableDesc != null)
-                    hashCode = hashCode * 59 + this.VariableDesc.GetHashCode();
-                if (this.VariableIndex != null)
-                    hashCode = hashCode * 59 + this.VariableIndex.GetHashCode();
-                if (this.VariableType != null)
-                    hashCode = hashCode * 59 + this.VariableType.GetHashCode();
+                var hashCode = 41;
+                if (this.VariableDesc != null) hashCode = hashCode * 59 + this.VariableDesc.GetHashCode();
+                if (this.VariableIndex != null) hashCode = hashCode * 59 + this.VariableIndex.GetHashCode();
+                if (this.VariableType != null) hashCode = hashCode * 59 + this.VariableType.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ChSlowlogSensitiveResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OpenSlowLogSwitch != input.OpenSlowLogSwitch || (this.OpenSlowLogSwitch != null && !this.OpenSlowLogSwitch.Equals(input.OpenSlowLogSwitch))) return false;
 
-            return 
-                (
-                    this.OpenSlowLogSwitch == input.OpenSlowLogSwitch ||
-                    (this.OpenSlowLogSwitch != null &&
-                    this.OpenSlowLogSwitch.Equals(input.OpenSlowLogSwitch))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OpenSlowLogSwitch != null)
-                    hashCode = hashCode * 59 + this.OpenSlowLogSwitch.GetHashCode();
+                var hashCode = 41;
+                if (this.OpenSlowLogSwitch != null) hashCode = hashCode * 59 + this.OpenSlowLogSwitch.GetHashCode();
                 return hashCode;
             }
         }

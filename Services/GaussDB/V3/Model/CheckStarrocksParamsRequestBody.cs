@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(CheckStarrocksParamsRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceConfigurationId != input.SourceConfigurationId || (this.SourceConfigurationId != null && !this.SourceConfigurationId.Equals(input.SourceConfigurationId))) return false;
 
-            return 
-                (
-                    this.SourceConfigurationId == input.SourceConfigurationId ||
-                    (this.SourceConfigurationId != null &&
-                    this.SourceConfigurationId.Equals(input.SourceConfigurationId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceConfigurationId != null)
-                    hashCode = hashCode * 59 + this.SourceConfigurationId.GetHashCode();
+                var hashCode = 41;
+                if (this.SourceConfigurationId != null) hashCode = hashCode * 59 + this.SourceConfigurationId.GetHashCode();
                 return hashCode;
             }
         }

@@ -403,75 +403,22 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(PromInstanceEpsModel input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PromName != input.PromName || (this.PromName != null && !this.PromName.Equals(input.PromName))) return false;
+            if (this.PromId != input.PromId || (this.PromId != null && !this.PromId.Equals(input.PromId))) return false;
+            if (this.PromType != input.PromType) return false;
+            if (this.PromVersion != input.PromVersion || (this.PromVersion != null && !this.PromVersion.Equals(input.PromVersion))) return false;
+            if (this.PromCreateTimestamp != input.PromCreateTimestamp || (this.PromCreateTimestamp != null && !this.PromCreateTimestamp.Equals(input.PromCreateTimestamp))) return false;
+            if (this.PromUpdateTimestamp != input.PromUpdateTimestamp || (this.PromUpdateTimestamp != null && !this.PromUpdateTimestamp.Equals(input.PromUpdateTimestamp))) return false;
+            if (this.PromStatus != input.PromStatus) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.IsDeletedTag != input.IsDeletedTag || (this.IsDeletedTag != null && !this.IsDeletedTag.Equals(input.IsDeletedTag))) return false;
+            if (this.DeletedTime != input.DeletedTime || (this.DeletedTime != null && !this.DeletedTime.Equals(input.DeletedTime))) return false;
+            if (this.PromSpecConfig != input.PromSpecConfig || (this.PromSpecConfig != null && !this.PromSpecConfig.Equals(input.PromSpecConfig))) return false;
+            if (this.CceSpecConfig != input.CceSpecConfig || (this.CceSpecConfig != null && !this.CceSpecConfig.Equals(input.CceSpecConfig))) return false;
 
-            return 
-                (
-                    this.PromName == input.PromName ||
-                    (this.PromName != null &&
-                    this.PromName.Equals(input.PromName))
-                ) && 
-                (
-                    this.PromId == input.PromId ||
-                    (this.PromId != null &&
-                    this.PromId.Equals(input.PromId))
-                ) && 
-                (
-                    this.PromType == input.PromType ||
-                    (this.PromType != null &&
-                    this.PromType.Equals(input.PromType))
-                ) && 
-                (
-                    this.PromVersion == input.PromVersion ||
-                    (this.PromVersion != null &&
-                    this.PromVersion.Equals(input.PromVersion))
-                ) && 
-                (
-                    this.PromCreateTimestamp == input.PromCreateTimestamp ||
-                    (this.PromCreateTimestamp != null &&
-                    this.PromCreateTimestamp.Equals(input.PromCreateTimestamp))
-                ) && 
-                (
-                    this.PromUpdateTimestamp == input.PromUpdateTimestamp ||
-                    (this.PromUpdateTimestamp != null &&
-                    this.PromUpdateTimestamp.Equals(input.PromUpdateTimestamp))
-                ) && 
-                (
-                    this.PromStatus == input.PromStatus ||
-                    (this.PromStatus != null &&
-                    this.PromStatus.Equals(input.PromStatus))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.IsDeletedTag == input.IsDeletedTag ||
-                    (this.IsDeletedTag != null &&
-                    this.IsDeletedTag.Equals(input.IsDeletedTag))
-                ) && 
-                (
-                    this.DeletedTime == input.DeletedTime ||
-                    (this.DeletedTime != null &&
-                    this.DeletedTime.Equals(input.DeletedTime))
-                ) && 
-                (
-                    this.PromSpecConfig == input.PromSpecConfig ||
-                    (this.PromSpecConfig != null &&
-                    this.PromSpecConfig.Equals(input.PromSpecConfig))
-                ) && 
-                (
-                    this.CceSpecConfig == input.CceSpecConfig ||
-                    (this.CceSpecConfig != null &&
-                    this.CceSpecConfig.Equals(input.CceSpecConfig))
-                );
+            return true;
         }
 
         /// <summary>
@@ -481,33 +428,20 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PromName != null)
-                    hashCode = hashCode * 59 + this.PromName.GetHashCode();
-                if (this.PromId != null)
-                    hashCode = hashCode * 59 + this.PromId.GetHashCode();
-                if (this.PromType != null)
-                    hashCode = hashCode * 59 + this.PromType.GetHashCode();
-                if (this.PromVersion != null)
-                    hashCode = hashCode * 59 + this.PromVersion.GetHashCode();
-                if (this.PromCreateTimestamp != null)
-                    hashCode = hashCode * 59 + this.PromCreateTimestamp.GetHashCode();
-                if (this.PromUpdateTimestamp != null)
-                    hashCode = hashCode * 59 + this.PromUpdateTimestamp.GetHashCode();
-                if (this.PromStatus != null)
-                    hashCode = hashCode * 59 + this.PromStatus.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.IsDeletedTag != null)
-                    hashCode = hashCode * 59 + this.IsDeletedTag.GetHashCode();
-                if (this.DeletedTime != null)
-                    hashCode = hashCode * 59 + this.DeletedTime.GetHashCode();
-                if (this.PromSpecConfig != null)
-                    hashCode = hashCode * 59 + this.PromSpecConfig.GetHashCode();
-                if (this.CceSpecConfig != null)
-                    hashCode = hashCode * 59 + this.CceSpecConfig.GetHashCode();
+                var hashCode = 41;
+                if (this.PromName != null) hashCode = hashCode * 59 + this.PromName.GetHashCode();
+                if (this.PromId != null) hashCode = hashCode * 59 + this.PromId.GetHashCode();
+                hashCode = hashCode * 59 + this.PromType.GetHashCode();
+                if (this.PromVersion != null) hashCode = hashCode * 59 + this.PromVersion.GetHashCode();
+                if (this.PromCreateTimestamp != null) hashCode = hashCode * 59 + this.PromCreateTimestamp.GetHashCode();
+                if (this.PromUpdateTimestamp != null) hashCode = hashCode * 59 + this.PromUpdateTimestamp.GetHashCode();
+                hashCode = hashCode * 59 + this.PromStatus.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.IsDeletedTag != null) hashCode = hashCode * 59 + this.IsDeletedTag.GetHashCode();
+                if (this.DeletedTime != null) hashCode = hashCode * 59 + this.DeletedTime.GetHashCode();
+                if (this.PromSpecConfig != null) hashCode = hashCode * 59 + this.PromSpecConfig.GetHashCode();
+                if (this.CceSpecConfig != null) hashCode = hashCode * 59 + this.CceSpecConfig.GetHashCode();
                 return hashCode;
             }
         }

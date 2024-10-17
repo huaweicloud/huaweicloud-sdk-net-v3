@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         /// </summary>
         public bool Equals(ExerciseDetailData input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ExerciseCodeResource != input.ExerciseCodeResource || (this.ExerciseCodeResource != null && !this.ExerciseCodeResource.Equals(input.ExerciseCodeResource))) return false;
+            if (this.ExerciseCaseResource != input.ExerciseCaseResource || (this.ExerciseCaseResource != null && input.ExerciseCaseResource != null && !this.ExerciseCaseResource.SequenceEqual(input.ExerciseCaseResource))) return false;
 
-            return 
-                (
-                    this.ExerciseCodeResource == input.ExerciseCodeResource ||
-                    (this.ExerciseCodeResource != null &&
-                    this.ExerciseCodeResource.Equals(input.ExerciseCodeResource))
-                ) && 
-                (
-                    this.ExerciseCaseResource == input.ExerciseCaseResource ||
-                    this.ExerciseCaseResource != null &&
-                    input.ExerciseCaseResource != null &&
-                    this.ExerciseCaseResource.SequenceEqual(input.ExerciseCaseResource)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ExerciseCodeResource != null)
-                    hashCode = hashCode * 59 + this.ExerciseCodeResource.GetHashCode();
-                if (this.ExerciseCaseResource != null)
-                    hashCode = hashCode * 59 + this.ExerciseCaseResource.GetHashCode();
+                var hashCode = 41;
+                if (this.ExerciseCodeResource != null) hashCode = hashCode * 59 + this.ExerciseCodeResource.GetHashCode();
+                if (this.ExerciseCaseResource != null) hashCode = hashCode * 59 + this.ExerciseCaseResource.GetHashCode();
                 return hashCode;
             }
         }

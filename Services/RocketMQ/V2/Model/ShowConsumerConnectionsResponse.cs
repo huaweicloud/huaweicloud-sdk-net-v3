@@ -91,46 +91,16 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(ShowConsumerConnectionsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.GroupName != input.GroupName || (this.GroupName != null && !this.GroupName.Equals(input.GroupName))) return false;
+            if (this.Online != input.Online || (this.Online != null && !this.Online.Equals(input.Online))) return false;
+            if (this.SubscriptionConsistency != input.SubscriptionConsistency || (this.SubscriptionConsistency != null && !this.SubscriptionConsistency.Equals(input.SubscriptionConsistency))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.NextOffset != input.NextOffset || (this.NextOffset != null && !this.NextOffset.Equals(input.NextOffset))) return false;
+            if (this.PreviousOffset != input.PreviousOffset || (this.PreviousOffset != null && !this.PreviousOffset.Equals(input.PreviousOffset))) return false;
+            if (this.Clients != input.Clients || (this.Clients != null && input.Clients != null && !this.Clients.SequenceEqual(input.Clients))) return false;
 
-            return 
-                (
-                    this.GroupName == input.GroupName ||
-                    (this.GroupName != null &&
-                    this.GroupName.Equals(input.GroupName))
-                ) && 
-                (
-                    this.Online == input.Online ||
-                    (this.Online != null &&
-                    this.Online.Equals(input.Online))
-                ) && 
-                (
-                    this.SubscriptionConsistency == input.SubscriptionConsistency ||
-                    (this.SubscriptionConsistency != null &&
-                    this.SubscriptionConsistency.Equals(input.SubscriptionConsistency))
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.NextOffset == input.NextOffset ||
-                    (this.NextOffset != null &&
-                    this.NextOffset.Equals(input.NextOffset))
-                ) && 
-                (
-                    this.PreviousOffset == input.PreviousOffset ||
-                    (this.PreviousOffset != null &&
-                    this.PreviousOffset.Equals(input.PreviousOffset))
-                ) && 
-                (
-                    this.Clients == input.Clients ||
-                    this.Clients != null &&
-                    input.Clients != null &&
-                    this.Clients.SequenceEqual(input.Clients)
-                );
+            return true;
         }
 
         /// <summary>
@@ -140,21 +110,14 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.GroupName != null)
-                    hashCode = hashCode * 59 + this.GroupName.GetHashCode();
-                if (this.Online != null)
-                    hashCode = hashCode * 59 + this.Online.GetHashCode();
-                if (this.SubscriptionConsistency != null)
-                    hashCode = hashCode * 59 + this.SubscriptionConsistency.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.NextOffset != null)
-                    hashCode = hashCode * 59 + this.NextOffset.GetHashCode();
-                if (this.PreviousOffset != null)
-                    hashCode = hashCode * 59 + this.PreviousOffset.GetHashCode();
-                if (this.Clients != null)
-                    hashCode = hashCode * 59 + this.Clients.GetHashCode();
+                var hashCode = 41;
+                if (this.GroupName != null) hashCode = hashCode * 59 + this.GroupName.GetHashCode();
+                if (this.Online != null) hashCode = hashCode * 59 + this.Online.GetHashCode();
+                if (this.SubscriptionConsistency != null) hashCode = hashCode * 59 + this.SubscriptionConsistency.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.NextOffset != null) hashCode = hashCode * 59 + this.NextOffset.GetHashCode();
+                if (this.PreviousOffset != null) hashCode = hashCode * 59 + this.PreviousOffset.GetHashCode();
+                if (this.Clients != null) hashCode = hashCode * 59 + this.Clients.GetHashCode();
                 return hashCode;
             }
         }

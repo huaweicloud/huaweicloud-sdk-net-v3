@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         public bool Equals(ListEndpointServiceResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EndpointServices != input.EndpointServices || (this.EndpointServices != null && input.EndpointServices != null && !this.EndpointServices.SequenceEqual(input.EndpointServices))) return false;
+            if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
 
-            return 
-                (
-                    this.EndpointServices == input.EndpointServices ||
-                    this.EndpointServices != null &&
-                    input.EndpointServices != null &&
-                    this.EndpointServices.SequenceEqual(input.EndpointServices)
-                ) && 
-                (
-                    this.TotalCount == input.TotalCount ||
-                    (this.TotalCount != null &&
-                    this.TotalCount.Equals(input.TotalCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EndpointServices != null)
-                    hashCode = hashCode * 59 + this.EndpointServices.GetHashCode();
-                if (this.TotalCount != null)
-                    hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
+                var hashCode = 41;
+                if (this.EndpointServices != null) hashCode = hashCode * 59 + this.EndpointServices.GetHashCode();
+                if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
                 return hashCode;
             }
         }

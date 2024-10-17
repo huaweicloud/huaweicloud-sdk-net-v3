@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(StarRocksInstanceInfoPortInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MysqlPort != input.MysqlPort || (this.MysqlPort != null && !this.MysqlPort.Equals(input.MysqlPort))) return false;
 
-            return 
-                (
-                    this.MysqlPort == input.MysqlPort ||
-                    (this.MysqlPort != null &&
-                    this.MysqlPort.Equals(input.MysqlPort))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MysqlPort != null)
-                    hashCode = hashCode * 59 + this.MysqlPort.GetHashCode();
+                var hashCode = 41;
+                if (this.MysqlPort != null) hashCode = hashCode * 59 + this.MysqlPort.GetHashCode();
                 return hashCode;
             }
         }

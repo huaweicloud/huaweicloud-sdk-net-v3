@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(BackSources input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourcesType != input.SourcesType || (this.SourcesType != null && !this.SourcesType.Equals(input.SourcesType))) return false;
+            if (this.IpOrDomain != input.IpOrDomain || (this.IpOrDomain != null && !this.IpOrDomain.Equals(input.IpOrDomain))) return false;
+            if (this.ObsBucketType != input.ObsBucketType || (this.ObsBucketType != null && !this.ObsBucketType.Equals(input.ObsBucketType))) return false;
+            if (this.HttpPort != input.HttpPort || (this.HttpPort != null && !this.HttpPort.Equals(input.HttpPort))) return false;
+            if (this.HttpsPort != input.HttpsPort || (this.HttpsPort != null && !this.HttpsPort.Equals(input.HttpsPort))) return false;
 
-            return 
-                (
-                    this.SourcesType == input.SourcesType ||
-                    (this.SourcesType != null &&
-                    this.SourcesType.Equals(input.SourcesType))
-                ) && 
-                (
-                    this.IpOrDomain == input.IpOrDomain ||
-                    (this.IpOrDomain != null &&
-                    this.IpOrDomain.Equals(input.IpOrDomain))
-                ) && 
-                (
-                    this.ObsBucketType == input.ObsBucketType ||
-                    (this.ObsBucketType != null &&
-                    this.ObsBucketType.Equals(input.ObsBucketType))
-                ) && 
-                (
-                    this.HttpPort == input.HttpPort ||
-                    (this.HttpPort != null &&
-                    this.HttpPort.Equals(input.HttpPort))
-                ) && 
-                (
-                    this.HttpsPort == input.HttpsPort ||
-                    (this.HttpsPort != null &&
-                    this.HttpsPort.Equals(input.HttpsPort))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourcesType != null)
-                    hashCode = hashCode * 59 + this.SourcesType.GetHashCode();
-                if (this.IpOrDomain != null)
-                    hashCode = hashCode * 59 + this.IpOrDomain.GetHashCode();
-                if (this.ObsBucketType != null)
-                    hashCode = hashCode * 59 + this.ObsBucketType.GetHashCode();
-                if (this.HttpPort != null)
-                    hashCode = hashCode * 59 + this.HttpPort.GetHashCode();
-                if (this.HttpsPort != null)
-                    hashCode = hashCode * 59 + this.HttpsPort.GetHashCode();
+                var hashCode = 41;
+                if (this.SourcesType != null) hashCode = hashCode * 59 + this.SourcesType.GetHashCode();
+                if (this.IpOrDomain != null) hashCode = hashCode * 59 + this.IpOrDomain.GetHashCode();
+                if (this.ObsBucketType != null) hashCode = hashCode * 59 + this.ObsBucketType.GetHashCode();
+                if (this.HttpPort != null) hashCode = hashCode * 59 + this.HttpPort.GetHashCode();
+                if (this.HttpsPort != null) hashCode = hashCode * 59 + this.HttpsPort.GetHashCode();
                 return hashCode;
             }
         }

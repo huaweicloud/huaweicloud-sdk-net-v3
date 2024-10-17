@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(ShowStorageUsageResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResourceCount != input.ResourceCount || (this.ResourceCount != null && !this.ResourceCount.Equals(input.ResourceCount))) return false;
+            if (this.StorageUsage != input.StorageUsage || (this.StorageUsage != null && input.StorageUsage != null && !this.StorageUsage.SequenceEqual(input.StorageUsage))) return false;
 
-            return 
-                (
-                    this.ResourceCount == input.ResourceCount ||
-                    (this.ResourceCount != null &&
-                    this.ResourceCount.Equals(input.ResourceCount))
-                ) && 
-                (
-                    this.StorageUsage == input.StorageUsage ||
-                    this.StorageUsage != null &&
-                    input.StorageUsage != null &&
-                    this.StorageUsage.SequenceEqual(input.StorageUsage)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResourceCount != null)
-                    hashCode = hashCode * 59 + this.ResourceCount.GetHashCode();
-                if (this.StorageUsage != null)
-                    hashCode = hashCode * 59 + this.StorageUsage.GetHashCode();
+                var hashCode = 41;
+                if (this.ResourceCount != null) hashCode = hashCode * 59 + this.ResourceCount.GetHashCode();
+                if (this.StorageUsage != null) hashCode = hashCode * 59 + this.StorageUsage.GetHashCode();
                 return hashCode;
             }
         }

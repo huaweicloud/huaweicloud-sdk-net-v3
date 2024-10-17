@@ -319,45 +319,16 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         /// </summary>
         public bool Equals(Keypair input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Type != input.Type) return false;
+            if (this.Scope != input.Scope) return false;
+            if (this.PublicKey != input.PublicKey || (this.PublicKey != null && !this.PublicKey.Equals(input.PublicKey))) return false;
+            if (this.Fingerprint != input.Fingerprint || (this.Fingerprint != null && !this.Fingerprint.Equals(input.Fingerprint))) return false;
+            if (this.IsKeyProtection != input.IsKeyProtection || (this.IsKeyProtection != null && !this.IsKeyProtection.Equals(input.IsKeyProtection))) return false;
+            if (this.FrozenState != input.FrozenState || (this.FrozenState != null && !this.FrozenState.Equals(input.FrozenState))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Scope == input.Scope ||
-                    (this.Scope != null &&
-                    this.Scope.Equals(input.Scope))
-                ) && 
-                (
-                    this.PublicKey == input.PublicKey ||
-                    (this.PublicKey != null &&
-                    this.PublicKey.Equals(input.PublicKey))
-                ) && 
-                (
-                    this.Fingerprint == input.Fingerprint ||
-                    (this.Fingerprint != null &&
-                    this.Fingerprint.Equals(input.Fingerprint))
-                ) && 
-                (
-                    this.IsKeyProtection == input.IsKeyProtection ||
-                    (this.IsKeyProtection != null &&
-                    this.IsKeyProtection.Equals(input.IsKeyProtection))
-                ) && 
-                (
-                    this.FrozenState == input.FrozenState ||
-                    (this.FrozenState != null &&
-                    this.FrozenState.Equals(input.FrozenState))
-                );
+            return true;
         }
 
         /// <summary>
@@ -367,21 +338,14 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Scope != null)
-                    hashCode = hashCode * 59 + this.Scope.GetHashCode();
-                if (this.PublicKey != null)
-                    hashCode = hashCode * 59 + this.PublicKey.GetHashCode();
-                if (this.Fingerprint != null)
-                    hashCode = hashCode * 59 + this.Fingerprint.GetHashCode();
-                if (this.IsKeyProtection != null)
-                    hashCode = hashCode * 59 + this.IsKeyProtection.GetHashCode();
-                if (this.FrozenState != null)
-                    hashCode = hashCode * 59 + this.FrozenState.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                hashCode = hashCode * 59 + this.Scope.GetHashCode();
+                if (this.PublicKey != null) hashCode = hashCode * 59 + this.PublicKey.GetHashCode();
+                if (this.Fingerprint != null) hashCode = hashCode * 59 + this.Fingerprint.GetHashCode();
+                if (this.IsKeyProtection != null) hashCode = hashCode * 59 + this.IsKeyProtection.GetHashCode();
+                if (this.FrozenState != null) hashCode = hashCode * 59 + this.FrozenState.GetHashCode();
                 return hashCode;
             }
         }

@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(ChangeServerChargeModePrepaidOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IncludeDataDisks != input.IncludeDataDisks || (this.IncludeDataDisks != null && !this.IncludeDataDisks.Equals(input.IncludeDataDisks))) return false;
+            if (this.IncludePublicips != input.IncludePublicips || (this.IncludePublicips != null && !this.IncludePublicips.Equals(input.IncludePublicips))) return false;
+            if (this.PeriodType != input.PeriodType || (this.PeriodType != null && !this.PeriodType.Equals(input.PeriodType))) return false;
+            if (this.PeriodNum != input.PeriodNum || (this.PeriodNum != null && !this.PeriodNum.Equals(input.PeriodNum))) return false;
+            if (this.AutoPay != input.AutoPay || (this.AutoPay != null && !this.AutoPay.Equals(input.AutoPay))) return false;
+            if (this.AutoRenew != input.AutoRenew || (this.AutoRenew != null && !this.AutoRenew.Equals(input.AutoRenew))) return false;
 
-            return 
-                (
-                    this.IncludeDataDisks == input.IncludeDataDisks ||
-                    (this.IncludeDataDisks != null &&
-                    this.IncludeDataDisks.Equals(input.IncludeDataDisks))
-                ) && 
-                (
-                    this.IncludePublicips == input.IncludePublicips ||
-                    (this.IncludePublicips != null &&
-                    this.IncludePublicips.Equals(input.IncludePublicips))
-                ) && 
-                (
-                    this.PeriodType == input.PeriodType ||
-                    (this.PeriodType != null &&
-                    this.PeriodType.Equals(input.PeriodType))
-                ) && 
-                (
-                    this.PeriodNum == input.PeriodNum ||
-                    (this.PeriodNum != null &&
-                    this.PeriodNum.Equals(input.PeriodNum))
-                ) && 
-                (
-                    this.AutoPay == input.AutoPay ||
-                    (this.AutoPay != null &&
-                    this.AutoPay.Equals(input.AutoPay))
-                ) && 
-                (
-                    this.AutoRenew == input.AutoRenew ||
-                    (this.AutoRenew != null &&
-                    this.AutoRenew.Equals(input.AutoRenew))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IncludeDataDisks != null)
-                    hashCode = hashCode * 59 + this.IncludeDataDisks.GetHashCode();
-                if (this.IncludePublicips != null)
-                    hashCode = hashCode * 59 + this.IncludePublicips.GetHashCode();
-                if (this.PeriodType != null)
-                    hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
-                if (this.PeriodNum != null)
-                    hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
-                if (this.AutoPay != null)
-                    hashCode = hashCode * 59 + this.AutoPay.GetHashCode();
-                if (this.AutoRenew != null)
-                    hashCode = hashCode * 59 + this.AutoRenew.GetHashCode();
+                var hashCode = 41;
+                if (this.IncludeDataDisks != null) hashCode = hashCode * 59 + this.IncludeDataDisks.GetHashCode();
+                if (this.IncludePublicips != null) hashCode = hashCode * 59 + this.IncludePublicips.GetHashCode();
+                if (this.PeriodType != null) hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
+                if (this.PeriodNum != null) hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
+                if (this.AutoPay != null) hashCode = hashCode * 59 + this.AutoPay.GetHashCode();
+                if (this.AutoRenew != null) hashCode = hashCode * 59 + this.AutoRenew.GetHashCode();
                 return hashCode;
             }
         }

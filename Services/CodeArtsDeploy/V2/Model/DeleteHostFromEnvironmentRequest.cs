@@ -66,25 +66,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(DeleteHostFromEnvironmentRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ApplicationId != input.ApplicationId || (this.ApplicationId != null && !this.ApplicationId.Equals(input.ApplicationId))) return false;
+            if (this.EnvironmentId != input.EnvironmentId || (this.EnvironmentId != null && !this.EnvironmentId.Equals(input.EnvironmentId))) return false;
+            if (this.HostId != input.HostId || (this.HostId != null && !this.HostId.Equals(input.HostId))) return false;
 
-            return 
-                (
-                    this.ApplicationId == input.ApplicationId ||
-                    (this.ApplicationId != null &&
-                    this.ApplicationId.Equals(input.ApplicationId))
-                ) && 
-                (
-                    this.EnvironmentId == input.EnvironmentId ||
-                    (this.EnvironmentId != null &&
-                    this.EnvironmentId.Equals(input.EnvironmentId))
-                ) && 
-                (
-                    this.HostId == input.HostId ||
-                    (this.HostId != null &&
-                    this.HostId.Equals(input.HostId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +81,10 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ApplicationId != null)
-                    hashCode = hashCode * 59 + this.ApplicationId.GetHashCode();
-                if (this.EnvironmentId != null)
-                    hashCode = hashCode * 59 + this.EnvironmentId.GetHashCode();
-                if (this.HostId != null)
-                    hashCode = hashCode * 59 + this.HostId.GetHashCode();
+                var hashCode = 41;
+                if (this.ApplicationId != null) hashCode = hashCode * 59 + this.ApplicationId.GetHashCode();
+                if (this.EnvironmentId != null) hashCode = hashCode * 59 + this.EnvironmentId.GetHashCode();
+                if (this.HostId != null) hashCode = hashCode * 59 + this.HostId.GetHashCode();
                 return hashCode;
             }
         }

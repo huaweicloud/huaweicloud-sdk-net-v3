@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(UpgradeResponseSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClusterUpgradeAction != input.ClusterUpgradeAction || (this.ClusterUpgradeAction != null && !this.ClusterUpgradeAction.Equals(input.ClusterUpgradeAction))) return false;
 
-            return 
-                (
-                    this.ClusterUpgradeAction == input.ClusterUpgradeAction ||
-                    (this.ClusterUpgradeAction != null &&
-                    this.ClusterUpgradeAction.Equals(input.ClusterUpgradeAction))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClusterUpgradeAction != null)
-                    hashCode = hashCode * 59 + this.ClusterUpgradeAction.GetHashCode();
+                var hashCode = 41;
+                if (this.ClusterUpgradeAction != null) hashCode = hashCode * 59 + this.ClusterUpgradeAction.GetHashCode();
                 return hashCode;
             }
         }

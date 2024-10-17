@@ -133,75 +133,22 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(MpeMetaData input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PackType != input.PackType || (this.PackType != null && !this.PackType.Equals(input.PackType))) return false;
+            if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
+            if (this.VideoSize != input.VideoSize || (this.VideoSize != null && !this.VideoSize.Equals(input.VideoSize))) return false;
+            if (this.Width != input.Width || (this.Width != null && !this.Width.Equals(input.Width))) return false;
+            if (this.Height != input.Height || (this.Height != null && !this.Height.Equals(input.Height))) return false;
+            if (this.BitRate != input.BitRate || (this.BitRate != null && !this.BitRate.Equals(input.BitRate))) return false;
+            if (this.AudioBitRate != input.AudioBitRate || (this.AudioBitRate != null && !this.AudioBitRate.Equals(input.AudioBitRate))) return false;
+            if (this.FrameRate != input.FrameRate || (this.FrameRate != null && !this.FrameRate.Equals(input.FrameRate))) return false;
+            if (this.CodecName != input.CodecName || (this.CodecName != null && !this.CodecName.Equals(input.CodecName))) return false;
+            if (this.AudioCodecName != input.AudioCodecName || (this.AudioCodecName != null && !this.AudioCodecName.Equals(input.AudioCodecName))) return false;
+            if (this.Channels != input.Channels || (this.Channels != null && !this.Channels.Equals(input.Channels))) return false;
+            if (this.Sample != input.Sample || (this.Sample != null && !this.Sample.Equals(input.Sample))) return false;
+            if (this.IsAudio != input.IsAudio || (this.IsAudio != null && !this.IsAudio.Equals(input.IsAudio))) return false;
 
-            return 
-                (
-                    this.PackType == input.PackType ||
-                    (this.PackType != null &&
-                    this.PackType.Equals(input.PackType))
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
-                ) && 
-                (
-                    this.VideoSize == input.VideoSize ||
-                    (this.VideoSize != null &&
-                    this.VideoSize.Equals(input.VideoSize))
-                ) && 
-                (
-                    this.Width == input.Width ||
-                    (this.Width != null &&
-                    this.Width.Equals(input.Width))
-                ) && 
-                (
-                    this.Height == input.Height ||
-                    (this.Height != null &&
-                    this.Height.Equals(input.Height))
-                ) && 
-                (
-                    this.BitRate == input.BitRate ||
-                    (this.BitRate != null &&
-                    this.BitRate.Equals(input.BitRate))
-                ) && 
-                (
-                    this.AudioBitRate == input.AudioBitRate ||
-                    (this.AudioBitRate != null &&
-                    this.AudioBitRate.Equals(input.AudioBitRate))
-                ) && 
-                (
-                    this.FrameRate == input.FrameRate ||
-                    (this.FrameRate != null &&
-                    this.FrameRate.Equals(input.FrameRate))
-                ) && 
-                (
-                    this.CodecName == input.CodecName ||
-                    (this.CodecName != null &&
-                    this.CodecName.Equals(input.CodecName))
-                ) && 
-                (
-                    this.AudioCodecName == input.AudioCodecName ||
-                    (this.AudioCodecName != null &&
-                    this.AudioCodecName.Equals(input.AudioCodecName))
-                ) && 
-                (
-                    this.Channels == input.Channels ||
-                    (this.Channels != null &&
-                    this.Channels.Equals(input.Channels))
-                ) && 
-                (
-                    this.Sample == input.Sample ||
-                    (this.Sample != null &&
-                    this.Sample.Equals(input.Sample))
-                ) && 
-                (
-                    this.IsAudio == input.IsAudio ||
-                    (this.IsAudio != null &&
-                    this.IsAudio.Equals(input.IsAudio))
-                );
+            return true;
         }
 
         /// <summary>
@@ -211,33 +158,20 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PackType != null)
-                    hashCode = hashCode * 59 + this.PackType.GetHashCode();
-                if (this.Duration != null)
-                    hashCode = hashCode * 59 + this.Duration.GetHashCode();
-                if (this.VideoSize != null)
-                    hashCode = hashCode * 59 + this.VideoSize.GetHashCode();
-                if (this.Width != null)
-                    hashCode = hashCode * 59 + this.Width.GetHashCode();
-                if (this.Height != null)
-                    hashCode = hashCode * 59 + this.Height.GetHashCode();
-                if (this.BitRate != null)
-                    hashCode = hashCode * 59 + this.BitRate.GetHashCode();
-                if (this.AudioBitRate != null)
-                    hashCode = hashCode * 59 + this.AudioBitRate.GetHashCode();
-                if (this.FrameRate != null)
-                    hashCode = hashCode * 59 + this.FrameRate.GetHashCode();
-                if (this.CodecName != null)
-                    hashCode = hashCode * 59 + this.CodecName.GetHashCode();
-                if (this.AudioCodecName != null)
-                    hashCode = hashCode * 59 + this.AudioCodecName.GetHashCode();
-                if (this.Channels != null)
-                    hashCode = hashCode * 59 + this.Channels.GetHashCode();
-                if (this.Sample != null)
-                    hashCode = hashCode * 59 + this.Sample.GetHashCode();
-                if (this.IsAudio != null)
-                    hashCode = hashCode * 59 + this.IsAudio.GetHashCode();
+                var hashCode = 41;
+                if (this.PackType != null) hashCode = hashCode * 59 + this.PackType.GetHashCode();
+                if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                if (this.VideoSize != null) hashCode = hashCode * 59 + this.VideoSize.GetHashCode();
+                if (this.Width != null) hashCode = hashCode * 59 + this.Width.GetHashCode();
+                if (this.Height != null) hashCode = hashCode * 59 + this.Height.GetHashCode();
+                if (this.BitRate != null) hashCode = hashCode * 59 + this.BitRate.GetHashCode();
+                if (this.AudioBitRate != null) hashCode = hashCode * 59 + this.AudioBitRate.GetHashCode();
+                if (this.FrameRate != null) hashCode = hashCode * 59 + this.FrameRate.GetHashCode();
+                if (this.CodecName != null) hashCode = hashCode * 59 + this.CodecName.GetHashCode();
+                if (this.AudioCodecName != null) hashCode = hashCode * 59 + this.AudioCodecName.GetHashCode();
+                if (this.Channels != null) hashCode = hashCode * 59 + this.Channels.GetHashCode();
+                if (this.Sample != null) hashCode = hashCode * 59 + this.Sample.GetHashCode();
+                if (this.IsAudio != null) hashCode = hashCode * 59 + this.IsAudio.GetHashCode();
                 return hashCode;
             }
         }

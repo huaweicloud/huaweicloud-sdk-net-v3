@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(UpdateDashboardRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DashboardName != input.DashboardName || (this.DashboardName != null && !this.DashboardName.Equals(input.DashboardName))) return false;
+            if (this.IsFavorite != input.IsFavorite || (this.IsFavorite != null && !this.IsFavorite.Equals(input.IsFavorite))) return false;
+            if (this.RowWidgetNum != input.RowWidgetNum || (this.RowWidgetNum != null && !this.RowWidgetNum.Equals(input.RowWidgetNum))) return false;
 
-            return 
-                (
-                    this.DashboardName == input.DashboardName ||
-                    (this.DashboardName != null &&
-                    this.DashboardName.Equals(input.DashboardName))
-                ) && 
-                (
-                    this.IsFavorite == input.IsFavorite ||
-                    (this.IsFavorite != null &&
-                    this.IsFavorite.Equals(input.IsFavorite))
-                ) && 
-                (
-                    this.RowWidgetNum == input.RowWidgetNum ||
-                    (this.RowWidgetNum != null &&
-                    this.RowWidgetNum.Equals(input.RowWidgetNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DashboardName != null)
-                    hashCode = hashCode * 59 + this.DashboardName.GetHashCode();
-                if (this.IsFavorite != null)
-                    hashCode = hashCode * 59 + this.IsFavorite.GetHashCode();
-                if (this.RowWidgetNum != null)
-                    hashCode = hashCode * 59 + this.RowWidgetNum.GetHashCode();
+                var hashCode = 41;
+                if (this.DashboardName != null) hashCode = hashCode * 59 + this.DashboardName.GetHashCode();
+                if (this.IsFavorite != null) hashCode = hashCode * 59 + this.IsFavorite.GetHashCode();
+                if (this.RowWidgetNum != null) hashCode = hashCode * 59 + this.RowWidgetNum.GetHashCode();
                 return hashCode;
             }
         }

@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         /// </summary>
         public bool Equals(Record input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EventName != input.EventName || (this.EventName != null && !this.EventName.Equals(input.EventName))) return false;
+            if (this.TriggerEventType != input.TriggerEventType || (this.TriggerEventType != null && !this.TriggerEventType.Equals(input.TriggerEventType))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.SecretName != input.SecretName || (this.SecretName != null && !this.SecretName.Equals(input.SecretName))) return false;
+            if (this.SecretType != input.SecretType || (this.SecretType != null && !this.SecretType.Equals(input.SecretType))) return false;
+            if (this.NotificationTargetName != input.NotificationTargetName || (this.NotificationTargetName != null && !this.NotificationTargetName.Equals(input.NotificationTargetName))) return false;
+            if (this.NotificationTargetId != input.NotificationTargetId || (this.NotificationTargetId != null && !this.NotificationTargetId.Equals(input.NotificationTargetId))) return false;
+            if (this.NotificationContent != input.NotificationContent || (this.NotificationContent != null && !this.NotificationContent.Equals(input.NotificationContent))) return false;
+            if (this.NotificationStatus != input.NotificationStatus || (this.NotificationStatus != null && !this.NotificationStatus.Equals(input.NotificationStatus))) return false;
 
-            return 
-                (
-                    this.EventName == input.EventName ||
-                    (this.EventName != null &&
-                    this.EventName.Equals(input.EventName))
-                ) && 
-                (
-                    this.TriggerEventType == input.TriggerEventType ||
-                    (this.TriggerEventType != null &&
-                    this.TriggerEventType.Equals(input.TriggerEventType))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.SecretName == input.SecretName ||
-                    (this.SecretName != null &&
-                    this.SecretName.Equals(input.SecretName))
-                ) && 
-                (
-                    this.SecretType == input.SecretType ||
-                    (this.SecretType != null &&
-                    this.SecretType.Equals(input.SecretType))
-                ) && 
-                (
-                    this.NotificationTargetName == input.NotificationTargetName ||
-                    (this.NotificationTargetName != null &&
-                    this.NotificationTargetName.Equals(input.NotificationTargetName))
-                ) && 
-                (
-                    this.NotificationTargetId == input.NotificationTargetId ||
-                    (this.NotificationTargetId != null &&
-                    this.NotificationTargetId.Equals(input.NotificationTargetId))
-                ) && 
-                (
-                    this.NotificationContent == input.NotificationContent ||
-                    (this.NotificationContent != null &&
-                    this.NotificationContent.Equals(input.NotificationContent))
-                ) && 
-                (
-                    this.NotificationStatus == input.NotificationStatus ||
-                    (this.NotificationStatus != null &&
-                    this.NotificationStatus.Equals(input.NotificationStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.Csms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EventName != null)
-                    hashCode = hashCode * 59 + this.EventName.GetHashCode();
-                if (this.TriggerEventType != null)
-                    hashCode = hashCode * 59 + this.TriggerEventType.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.SecretName != null)
-                    hashCode = hashCode * 59 + this.SecretName.GetHashCode();
-                if (this.SecretType != null)
-                    hashCode = hashCode * 59 + this.SecretType.GetHashCode();
-                if (this.NotificationTargetName != null)
-                    hashCode = hashCode * 59 + this.NotificationTargetName.GetHashCode();
-                if (this.NotificationTargetId != null)
-                    hashCode = hashCode * 59 + this.NotificationTargetId.GetHashCode();
-                if (this.NotificationContent != null)
-                    hashCode = hashCode * 59 + this.NotificationContent.GetHashCode();
-                if (this.NotificationStatus != null)
-                    hashCode = hashCode * 59 + this.NotificationStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.EventName != null) hashCode = hashCode * 59 + this.EventName.GetHashCode();
+                if (this.TriggerEventType != null) hashCode = hashCode * 59 + this.TriggerEventType.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.SecretName != null) hashCode = hashCode * 59 + this.SecretName.GetHashCode();
+                if (this.SecretType != null) hashCode = hashCode * 59 + this.SecretType.GetHashCode();
+                if (this.NotificationTargetName != null) hashCode = hashCode * 59 + this.NotificationTargetName.GetHashCode();
+                if (this.NotificationTargetId != null) hashCode = hashCode * 59 + this.NotificationTargetId.GetHashCode();
+                if (this.NotificationContent != null) hashCode = hashCode * 59 + this.NotificationContent.GetHashCode();
+                if (this.NotificationStatus != null) hashCode = hashCode * 59 + this.NotificationStatus.GetHashCode();
                 return hashCode;
             }
         }

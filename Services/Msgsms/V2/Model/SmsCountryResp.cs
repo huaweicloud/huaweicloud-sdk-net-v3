@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         /// </summary>
         public bool Equals(SmsCountryResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CountryId != input.CountryId || (this.CountryId != null && !this.CountryId.Equals(input.CountryId))) return false;
+            if (this.CountryNameEn != input.CountryNameEn || (this.CountryNameEn != null && !this.CountryNameEn.Equals(input.CountryNameEn))) return false;
+            if (this.CountryNameZh != input.CountryNameZh || (this.CountryNameZh != null && !this.CountryNameZh.Equals(input.CountryNameZh))) return false;
 
-            return 
-                (
-                    this.CountryId == input.CountryId ||
-                    (this.CountryId != null &&
-                    this.CountryId.Equals(input.CountryId))
-                ) && 
-                (
-                    this.CountryNameEn == input.CountryNameEn ||
-                    (this.CountryNameEn != null &&
-                    this.CountryNameEn.Equals(input.CountryNameEn))
-                ) && 
-                (
-                    this.CountryNameZh == input.CountryNameZh ||
-                    (this.CountryNameZh != null &&
-                    this.CountryNameZh.Equals(input.CountryNameZh))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CountryId != null)
-                    hashCode = hashCode * 59 + this.CountryId.GetHashCode();
-                if (this.CountryNameEn != null)
-                    hashCode = hashCode * 59 + this.CountryNameEn.GetHashCode();
-                if (this.CountryNameZh != null)
-                    hashCode = hashCode * 59 + this.CountryNameZh.GetHashCode();
+                var hashCode = 41;
+                if (this.CountryId != null) hashCode = hashCode * 59 + this.CountryId.GetHashCode();
+                if (this.CountryNameEn != null) hashCode = hashCode * 59 + this.CountryNameEn.GetHashCode();
+                if (this.CountryNameZh != null) hashCode = hashCode * 59 + this.CountryNameZh.GetHashCode();
                 return hashCode;
             }
         }

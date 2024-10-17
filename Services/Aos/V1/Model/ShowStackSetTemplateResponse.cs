@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(ShowStackSetTemplateResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Location != input.Location || (this.Location != null && !this.Location.Equals(input.Location))) return false;
 
-            return 
-                (
-                    this.Location == input.Location ||
-                    (this.Location != null &&
-                    this.Location.Equals(input.Location))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Location != null)
-                    hashCode = hashCode * 59 + this.Location.GetHashCode();
+                var hashCode = 41;
+                if (this.Location != null) hashCode = hashCode * 59 + this.Location.GetHashCode();
                 return hashCode;
             }
         }

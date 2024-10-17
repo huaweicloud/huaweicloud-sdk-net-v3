@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         /// </summary>
         public bool Equals(PostCustomTTSReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Text != input.Text || (this.Text != null && !this.Text.Equals(input.Text))) return false;
+            if (this.Config != input.Config || (this.Config != null && !this.Config.Equals(input.Config))) return false;
 
-            return 
-                (
-                    this.Text == input.Text ||
-                    (this.Text != null &&
-                    this.Text.Equals(input.Text))
-                ) && 
-                (
-                    this.Config == input.Config ||
-                    (this.Config != null &&
-                    this.Config.Equals(input.Config))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Text != null)
-                    hashCode = hashCode * 59 + this.Text.GetHashCode();
-                if (this.Config != null)
-                    hashCode = hashCode * 59 + this.Config.GetHashCode();
+                var hashCode = 41;
+                if (this.Text != null) hashCode = hashCode * 59 + this.Text.GetHashCode();
+                if (this.Config != null) hashCode = hashCode * 59 + this.Config.GetHashCode();
                 return hashCode;
             }
         }

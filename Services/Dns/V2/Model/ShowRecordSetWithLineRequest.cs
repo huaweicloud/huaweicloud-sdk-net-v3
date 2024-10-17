@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public bool Equals(ShowRecordSetWithLineRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ZoneId != input.ZoneId || (this.ZoneId != null && !this.ZoneId.Equals(input.ZoneId))) return false;
+            if (this.RecordsetId != input.RecordsetId || (this.RecordsetId != null && !this.RecordsetId.Equals(input.RecordsetId))) return false;
 
-            return 
-                (
-                    this.ZoneId == input.ZoneId ||
-                    (this.ZoneId != null &&
-                    this.ZoneId.Equals(input.ZoneId))
-                ) && 
-                (
-                    this.RecordsetId == input.RecordsetId ||
-                    (this.RecordsetId != null &&
-                    this.RecordsetId.Equals(input.RecordsetId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ZoneId != null)
-                    hashCode = hashCode * 59 + this.ZoneId.GetHashCode();
-                if (this.RecordsetId != null)
-                    hashCode = hashCode * 59 + this.RecordsetId.GetHashCode();
+                var hashCode = 41;
+                if (this.ZoneId != null) hashCode = hashCode * 59 + this.ZoneId.GetHashCode();
+                if (this.RecordsetId != null) hashCode = hashCode * 59 + this.RecordsetId.GetHashCode();
                 return hashCode;
             }
         }

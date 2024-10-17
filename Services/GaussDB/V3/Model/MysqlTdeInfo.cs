@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(MysqlTdeInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EnableTde != input.EnableTde || (this.EnableTde != null && !this.EnableTde.Equals(input.EnableTde))) return false;
+            if (this.EncryptionType != input.EncryptionType || (this.EncryptionType != null && !this.EncryptionType.Equals(input.EncryptionType))) return false;
 
-            return 
-                (
-                    this.EnableTde == input.EnableTde ||
-                    (this.EnableTde != null &&
-                    this.EnableTde.Equals(input.EnableTde))
-                ) && 
-                (
-                    this.EncryptionType == input.EncryptionType ||
-                    (this.EncryptionType != null &&
-                    this.EncryptionType.Equals(input.EncryptionType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EnableTde != null)
-                    hashCode = hashCode * 59 + this.EnableTde.GetHashCode();
-                if (this.EncryptionType != null)
-                    hashCode = hashCode * 59 + this.EncryptionType.GetHashCode();
+                var hashCode = 41;
+                if (this.EnableTde != null) hashCode = hashCode * 59 + this.EnableTde.GetHashCode();
+                if (this.EncryptionType != null) hashCode = hashCode * 59 + this.EncryptionType.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(UpgradeFeatureGates input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SupportUpgradePageV4 != input.SupportUpgradePageV4 || (this.SupportUpgradePageV4 != null && !this.SupportUpgradePageV4.Equals(input.SupportUpgradePageV4))) return false;
 
-            return 
-                (
-                    this.SupportUpgradePageV4 == input.SupportUpgradePageV4 ||
-                    (this.SupportUpgradePageV4 != null &&
-                    this.SupportUpgradePageV4.Equals(input.SupportUpgradePageV4))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SupportUpgradePageV4 != null)
-                    hashCode = hashCode * 59 + this.SupportUpgradePageV4.GetHashCode();
+                var hashCode = 41;
+                if (this.SupportUpgradePageV4 != null) hashCode = hashCode * 59 + this.SupportUpgradePageV4.GetHashCode();
                 return hashCode;
             }
         }

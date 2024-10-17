@@ -256,32 +256,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(GetHostListFilter input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HostNameList != input.HostNameList || (this.HostNameList != null && input.HostNameList != null && !this.HostNameList.SequenceEqual(input.HostNameList))) return false;
+            if (this.HostIpList != input.HostIpList || (this.HostIpList != null && input.HostIpList != null && !this.HostIpList.SequenceEqual(input.HostIpList))) return false;
+            if (this.HostStatus != input.HostStatus) return false;
+            if (this.HostVersion != input.HostVersion || (this.HostVersion != null && !this.HostVersion.Equals(input.HostVersion))) return false;
 
-            return 
-                (
-                    this.HostNameList == input.HostNameList ||
-                    this.HostNameList != null &&
-                    input.HostNameList != null &&
-                    this.HostNameList.SequenceEqual(input.HostNameList)
-                ) && 
-                (
-                    this.HostIpList == input.HostIpList ||
-                    this.HostIpList != null &&
-                    input.HostIpList != null &&
-                    this.HostIpList.SequenceEqual(input.HostIpList)
-                ) && 
-                (
-                    this.HostStatus == input.HostStatus ||
-                    (this.HostStatus != null &&
-                    this.HostStatus.Equals(input.HostStatus))
-                ) && 
-                (
-                    this.HostVersion == input.HostVersion ||
-                    (this.HostVersion != null &&
-                    this.HostVersion.Equals(input.HostVersion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -291,15 +272,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HostNameList != null)
-                    hashCode = hashCode * 59 + this.HostNameList.GetHashCode();
-                if (this.HostIpList != null)
-                    hashCode = hashCode * 59 + this.HostIpList.GetHashCode();
-                if (this.HostStatus != null)
-                    hashCode = hashCode * 59 + this.HostStatus.GetHashCode();
-                if (this.HostVersion != null)
-                    hashCode = hashCode * 59 + this.HostVersion.GetHashCode();
+                var hashCode = 41;
+                if (this.HostNameList != null) hashCode = hashCode * 59 + this.HostNameList.GetHashCode();
+                if (this.HostIpList != null) hashCode = hashCode * 59 + this.HostIpList.GetHashCode();
+                hashCode = hashCode * 59 + this.HostStatus.GetHashCode();
+                if (this.HostVersion != null) hashCode = hashCode * 59 + this.HostVersion.GetHashCode();
                 return hashCode;
             }
         }

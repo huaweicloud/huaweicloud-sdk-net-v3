@@ -596,80 +596,23 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(MetadataList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ChargingMode != input.ChargingMode) return false;
+            if (this.MeteringOrderId != input.MeteringOrderId || (this.MeteringOrderId != null && !this.MeteringOrderId.Equals(input.MeteringOrderId))) return false;
+            if (this.MeteringProductId != input.MeteringProductId || (this.MeteringProductId != null && !this.MeteringProductId.Equals(input.MeteringProductId))) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
+            if (this.MeteringImageId != input.MeteringImageId || (this.MeteringImageId != null && !this.MeteringImageId.Equals(input.MeteringImageId))) return false;
+            if (this.MeteringImagetype != input.MeteringImagetype) return false;
+            if (this.BaremetalPortIDList != input.BaremetalPortIDList || (this.BaremetalPortIDList != null && !this.BaremetalPortIDList.Equals(input.BaremetalPortIDList))) return false;
+            if (this.MeteringResourcespeccode != input.MeteringResourcespeccode || (this.MeteringResourcespeccode != null && !this.MeteringResourcespeccode.Equals(input.MeteringResourcespeccode))) return false;
+            if (this.MeteringResourcetype != input.MeteringResourcetype || (this.MeteringResourcetype != null && !this.MeteringResourcetype.Equals(input.MeteringResourcetype))) return false;
+            if (this.ImageName != input.ImageName || (this.ImageName != null && !this.ImageName.Equals(input.ImageName))) return false;
+            if (this.OpSvcUserid != input.OpSvcUserid || (this.OpSvcUserid != null && !this.OpSvcUserid.Equals(input.OpSvcUserid))) return false;
+            if (this.OsType != input.OsType) return false;
+            if (this.BmsSupportEvs != input.BmsSupportEvs || (this.BmsSupportEvs != null && !this.BmsSupportEvs.Equals(input.BmsSupportEvs))) return false;
+            if (this.OsBit != input.OsBit) return false;
 
-            return 
-                (
-                    this.ChargingMode == input.ChargingMode ||
-                    (this.ChargingMode != null &&
-                    this.ChargingMode.Equals(input.ChargingMode))
-                ) && 
-                (
-                    this.MeteringOrderId == input.MeteringOrderId ||
-                    (this.MeteringOrderId != null &&
-                    this.MeteringOrderId.Equals(input.MeteringOrderId))
-                ) && 
-                (
-                    this.MeteringProductId == input.MeteringProductId ||
-                    (this.MeteringProductId != null &&
-                    this.MeteringProductId.Equals(input.MeteringProductId))
-                ) && 
-                (
-                    this.VpcId == input.VpcId ||
-                    (this.VpcId != null &&
-                    this.VpcId.Equals(input.VpcId))
-                ) && 
-                (
-                    this.MeteringImageId == input.MeteringImageId ||
-                    (this.MeteringImageId != null &&
-                    this.MeteringImageId.Equals(input.MeteringImageId))
-                ) && 
-                (
-                    this.MeteringImagetype == input.MeteringImagetype ||
-                    (this.MeteringImagetype != null &&
-                    this.MeteringImagetype.Equals(input.MeteringImagetype))
-                ) && 
-                (
-                    this.BaremetalPortIDList == input.BaremetalPortIDList ||
-                    (this.BaremetalPortIDList != null &&
-                    this.BaremetalPortIDList.Equals(input.BaremetalPortIDList))
-                ) && 
-                (
-                    this.MeteringResourcespeccode == input.MeteringResourcespeccode ||
-                    (this.MeteringResourcespeccode != null &&
-                    this.MeteringResourcespeccode.Equals(input.MeteringResourcespeccode))
-                ) && 
-                (
-                    this.MeteringResourcetype == input.MeteringResourcetype ||
-                    (this.MeteringResourcetype != null &&
-                    this.MeteringResourcetype.Equals(input.MeteringResourcetype))
-                ) && 
-                (
-                    this.ImageName == input.ImageName ||
-                    (this.ImageName != null &&
-                    this.ImageName.Equals(input.ImageName))
-                ) && 
-                (
-                    this.OpSvcUserid == input.OpSvcUserid ||
-                    (this.OpSvcUserid != null &&
-                    this.OpSvcUserid.Equals(input.OpSvcUserid))
-                ) && 
-                (
-                    this.OsType == input.OsType ||
-                    (this.OsType != null &&
-                    this.OsType.Equals(input.OsType))
-                ) && 
-                (
-                    this.BmsSupportEvs == input.BmsSupportEvs ||
-                    (this.BmsSupportEvs != null &&
-                    this.BmsSupportEvs.Equals(input.BmsSupportEvs))
-                ) && 
-                (
-                    this.OsBit == input.OsBit ||
-                    (this.OsBit != null &&
-                    this.OsBit.Equals(input.OsBit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -679,35 +622,21 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ChargingMode != null)
-                    hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
-                if (this.MeteringOrderId != null)
-                    hashCode = hashCode * 59 + this.MeteringOrderId.GetHashCode();
-                if (this.MeteringProductId != null)
-                    hashCode = hashCode * 59 + this.MeteringProductId.GetHashCode();
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.MeteringImageId != null)
-                    hashCode = hashCode * 59 + this.MeteringImageId.GetHashCode();
-                if (this.MeteringImagetype != null)
-                    hashCode = hashCode * 59 + this.MeteringImagetype.GetHashCode();
-                if (this.BaremetalPortIDList != null)
-                    hashCode = hashCode * 59 + this.BaremetalPortIDList.GetHashCode();
-                if (this.MeteringResourcespeccode != null)
-                    hashCode = hashCode * 59 + this.MeteringResourcespeccode.GetHashCode();
-                if (this.MeteringResourcetype != null)
-                    hashCode = hashCode * 59 + this.MeteringResourcetype.GetHashCode();
-                if (this.ImageName != null)
-                    hashCode = hashCode * 59 + this.ImageName.GetHashCode();
-                if (this.OpSvcUserid != null)
-                    hashCode = hashCode * 59 + this.OpSvcUserid.GetHashCode();
-                if (this.OsType != null)
-                    hashCode = hashCode * 59 + this.OsType.GetHashCode();
-                if (this.BmsSupportEvs != null)
-                    hashCode = hashCode * 59 + this.BmsSupportEvs.GetHashCode();
-                if (this.OsBit != null)
-                    hashCode = hashCode * 59 + this.OsBit.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
+                if (this.MeteringOrderId != null) hashCode = hashCode * 59 + this.MeteringOrderId.GetHashCode();
+                if (this.MeteringProductId != null) hashCode = hashCode * 59 + this.MeteringProductId.GetHashCode();
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.MeteringImageId != null) hashCode = hashCode * 59 + this.MeteringImageId.GetHashCode();
+                hashCode = hashCode * 59 + this.MeteringImagetype.GetHashCode();
+                if (this.BaremetalPortIDList != null) hashCode = hashCode * 59 + this.BaremetalPortIDList.GetHashCode();
+                if (this.MeteringResourcespeccode != null) hashCode = hashCode * 59 + this.MeteringResourcespeccode.GetHashCode();
+                if (this.MeteringResourcetype != null) hashCode = hashCode * 59 + this.MeteringResourcetype.GetHashCode();
+                if (this.ImageName != null) hashCode = hashCode * 59 + this.ImageName.GetHashCode();
+                if (this.OpSvcUserid != null) hashCode = hashCode * 59 + this.OpSvcUserid.GetHashCode();
+                hashCode = hashCode * 59 + this.OsType.GetHashCode();
+                if (this.BmsSupportEvs != null) hashCode = hashCode * 59 + this.BmsSupportEvs.GetHashCode();
+                hashCode = hashCode * 59 + this.OsBit.GetHashCode();
                 return hashCode;
             }
         }

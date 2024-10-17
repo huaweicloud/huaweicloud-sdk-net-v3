@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(DeleteDriverReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DriverNames != input.DriverNames || (this.DriverNames != null && input.DriverNames != null && !this.DriverNames.SequenceEqual(input.DriverNames))) return false;
 
-            return 
-                (
-                    this.DriverNames == input.DriverNames ||
-                    this.DriverNames != null &&
-                    input.DriverNames != null &&
-                    this.DriverNames.SequenceEqual(input.DriverNames)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DriverNames != null)
-                    hashCode = hashCode * 59 + this.DriverNames.GetHashCode();
+                var hashCode = 41;
+                if (this.DriverNames != null) hashCode = hashCode * 59 + this.DriverNames.GetHashCode();
                 return hashCode;
             }
         }

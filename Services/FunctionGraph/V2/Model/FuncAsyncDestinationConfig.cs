@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(FuncAsyncDestinationConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OnSuccess != input.OnSuccess || (this.OnSuccess != null && !this.OnSuccess.Equals(input.OnSuccess))) return false;
+            if (this.OnFailure != input.OnFailure || (this.OnFailure != null && !this.OnFailure.Equals(input.OnFailure))) return false;
 
-            return 
-                (
-                    this.OnSuccess == input.OnSuccess ||
-                    (this.OnSuccess != null &&
-                    this.OnSuccess.Equals(input.OnSuccess))
-                ) && 
-                (
-                    this.OnFailure == input.OnFailure ||
-                    (this.OnFailure != null &&
-                    this.OnFailure.Equals(input.OnFailure))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OnSuccess != null)
-                    hashCode = hashCode * 59 + this.OnSuccess.GetHashCode();
-                if (this.OnFailure != null)
-                    hashCode = hashCode * 59 + this.OnFailure.GetHashCode();
+                var hashCode = 41;
+                if (this.OnSuccess != null) hashCode = hashCode * 59 + this.OnSuccess.GetHashCode();
+                if (this.OnFailure != null) hashCode = hashCode * 59 + this.OnFailure.GetHashCode();
                 return hashCode;
             }
         }

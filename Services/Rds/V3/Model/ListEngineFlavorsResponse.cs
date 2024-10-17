@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ListEngineFlavorsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OptionalFlavors != input.OptionalFlavors || (this.OptionalFlavors != null && input.OptionalFlavors != null && !this.OptionalFlavors.SequenceEqual(input.OptionalFlavors))) return false;
+            if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
 
-            return 
-                (
-                    this.OptionalFlavors == input.OptionalFlavors ||
-                    this.OptionalFlavors != null &&
-                    input.OptionalFlavors != null &&
-                    this.OptionalFlavors.SequenceEqual(input.OptionalFlavors)
-                ) && 
-                (
-                    this.TotalCount == input.TotalCount ||
-                    (this.TotalCount != null &&
-                    this.TotalCount.Equals(input.TotalCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OptionalFlavors != null)
-                    hashCode = hashCode * 59 + this.OptionalFlavors.GetHashCode();
-                if (this.TotalCount != null)
-                    hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
+                var hashCode = 41;
+                if (this.OptionalFlavors != null) hashCode = hashCode * 59 + this.OptionalFlavors.GetHashCode();
+                if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(MigrateAzRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TargetAzs != input.TargetAzs || (this.TargetAzs != null && !this.TargetAzs.Equals(input.TargetAzs))) return false;
 
-            return 
-                (
-                    this.TargetAzs == input.TargetAzs ||
-                    (this.TargetAzs != null &&
-                    this.TargetAzs.Equals(input.TargetAzs))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TargetAzs != null)
-                    hashCode = hashCode * 59 + this.TargetAzs.GetHashCode();
+                var hashCode = 41;
+                if (this.TargetAzs != null) hashCode = hashCode * 59 + this.TargetAzs.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(ErrorCodeRedirectRules input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
+            if (this.TargetCode != input.TargetCode || (this.TargetCode != null && !this.TargetCode.Equals(input.TargetCode))) return false;
+            if (this.TargetLink != input.TargetLink || (this.TargetLink != null && !this.TargetLink.Equals(input.TargetLink))) return false;
 
-            return 
-                (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
-                ) && 
-                (
-                    this.TargetCode == input.TargetCode ||
-                    (this.TargetCode != null &&
-                    this.TargetCode.Equals(input.TargetCode))
-                ) && 
-                (
-                    this.TargetLink == input.TargetLink ||
-                    (this.TargetLink != null &&
-                    this.TargetLink.Equals(input.TargetLink))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.TargetCode != null)
-                    hashCode = hashCode * 59 + this.TargetCode.GetHashCode();
-                if (this.TargetLink != null)
-                    hashCode = hashCode * 59 + this.TargetLink.GetHashCode();
+                var hashCode = 41;
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.TargetCode != null) hashCode = hashCode * 59 + this.TargetCode.GetHashCode();
+                if (this.TargetLink != null) hashCode = hashCode * 59 + this.TargetLink.GetHashCode();
                 return hashCode;
             }
         }

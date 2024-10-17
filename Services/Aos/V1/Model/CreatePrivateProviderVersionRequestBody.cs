@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(CreatePrivateProviderVersionRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProviderId != input.ProviderId || (this.ProviderId != null && !this.ProviderId.Equals(input.ProviderId))) return false;
+            if (this.ProviderVersion != input.ProviderVersion || (this.ProviderVersion != null && !this.ProviderVersion.Equals(input.ProviderVersion))) return false;
+            if (this.VersionDescription != input.VersionDescription || (this.VersionDescription != null && !this.VersionDescription.Equals(input.VersionDescription))) return false;
+            if (this.FunctionGraphUrn != input.FunctionGraphUrn || (this.FunctionGraphUrn != null && !this.FunctionGraphUrn.Equals(input.FunctionGraphUrn))) return false;
 
-            return 
-                (
-                    this.ProviderId == input.ProviderId ||
-                    (this.ProviderId != null &&
-                    this.ProviderId.Equals(input.ProviderId))
-                ) && 
-                (
-                    this.ProviderVersion == input.ProviderVersion ||
-                    (this.ProviderVersion != null &&
-                    this.ProviderVersion.Equals(input.ProviderVersion))
-                ) && 
-                (
-                    this.VersionDescription == input.VersionDescription ||
-                    (this.VersionDescription != null &&
-                    this.VersionDescription.Equals(input.VersionDescription))
-                ) && 
-                (
-                    this.FunctionGraphUrn == input.FunctionGraphUrn ||
-                    (this.FunctionGraphUrn != null &&
-                    this.FunctionGraphUrn.Equals(input.FunctionGraphUrn))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProviderId != null)
-                    hashCode = hashCode * 59 + this.ProviderId.GetHashCode();
-                if (this.ProviderVersion != null)
-                    hashCode = hashCode * 59 + this.ProviderVersion.GetHashCode();
-                if (this.VersionDescription != null)
-                    hashCode = hashCode * 59 + this.VersionDescription.GetHashCode();
-                if (this.FunctionGraphUrn != null)
-                    hashCode = hashCode * 59 + this.FunctionGraphUrn.GetHashCode();
+                var hashCode = 41;
+                if (this.ProviderId != null) hashCode = hashCode * 59 + this.ProviderId.GetHashCode();
+                if (this.ProviderVersion != null) hashCode = hashCode * 59 + this.ProviderVersion.GetHashCode();
+                if (this.VersionDescription != null) hashCode = hashCode * 59 + this.VersionDescription.GetHashCode();
+                if (this.FunctionGraphUrn != null) hashCode = hashCode * 59 + this.FunctionGraphUrn.GetHashCode();
                 return hashCode;
             }
         }

@@ -98,45 +98,16 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(ListActiveAsyncInvocationsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FunctionUrn != input.FunctionUrn || (this.FunctionUrn != null && !this.FunctionUrn.Equals(input.FunctionUrn))) return false;
+            if (this.Requests != input.Requests || (this.Requests != null && !this.Requests.Equals(input.Requests))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.QueryBeginTime != input.QueryBeginTime || (this.QueryBeginTime != null && !this.QueryBeginTime.Equals(input.QueryBeginTime))) return false;
+            if (this.QueryEndTime != input.QueryEndTime || (this.QueryEndTime != null && !this.QueryEndTime.Equals(input.QueryEndTime))) return false;
 
-            return 
-                (
-                    this.FunctionUrn == input.FunctionUrn ||
-                    (this.FunctionUrn != null &&
-                    this.FunctionUrn.Equals(input.FunctionUrn))
-                ) && 
-                (
-                    this.Requests == input.Requests ||
-                    (this.Requests != null &&
-                    this.Requests.Equals(input.Requests))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.QueryBeginTime == input.QueryBeginTime ||
-                    (this.QueryBeginTime != null &&
-                    this.QueryBeginTime.Equals(input.QueryBeginTime))
-                ) && 
-                (
-                    this.QueryEndTime == input.QueryEndTime ||
-                    (this.QueryEndTime != null &&
-                    this.QueryEndTime.Equals(input.QueryEndTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -146,21 +117,14 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FunctionUrn != null)
-                    hashCode = hashCode * 59 + this.FunctionUrn.GetHashCode();
-                if (this.Requests != null)
-                    hashCode = hashCode * 59 + this.Requests.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.QueryBeginTime != null)
-                    hashCode = hashCode * 59 + this.QueryBeginTime.GetHashCode();
-                if (this.QueryEndTime != null)
-                    hashCode = hashCode * 59 + this.QueryEndTime.GetHashCode();
+                var hashCode = 41;
+                if (this.FunctionUrn != null) hashCode = hashCode * 59 + this.FunctionUrn.GetHashCode();
+                if (this.Requests != null) hashCode = hashCode * 59 + this.Requests.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.QueryBeginTime != null) hashCode = hashCode * 59 + this.QueryBeginTime.GetHashCode();
+                if (this.QueryEndTime != null) hashCode = hashCode * 59 + this.QueryEndTime.GetHashCode();
                 return hashCode;
             }
         }

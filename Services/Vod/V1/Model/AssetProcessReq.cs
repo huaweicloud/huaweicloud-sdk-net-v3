@@ -198,41 +198,15 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(AssetProcessReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AssetId != input.AssetId || (this.AssetId != null && !this.AssetId.Equals(input.AssetId))) return false;
+            if (this.HlsStorageType != input.HlsStorageType) return false;
+            if (this.TemplateGroupName != input.TemplateGroupName || (this.TemplateGroupName != null && !this.TemplateGroupName.Equals(input.TemplateGroupName))) return false;
+            if (this.AutoEncrypt != input.AutoEncrypt || (this.AutoEncrypt != null && !this.AutoEncrypt.Equals(input.AutoEncrypt))) return false;
+            if (this.Thumbnail != input.Thumbnail || (this.Thumbnail != null && !this.Thumbnail.Equals(input.Thumbnail))) return false;
+            if (this.SubtitleId != input.SubtitleId || (this.SubtitleId != null && input.SubtitleId != null && !this.SubtitleId.SequenceEqual(input.SubtitleId))) return false;
 
-            return 
-                (
-                    this.AssetId == input.AssetId ||
-                    (this.AssetId != null &&
-                    this.AssetId.Equals(input.AssetId))
-                ) && 
-                (
-                    this.HlsStorageType == input.HlsStorageType ||
-                    (this.HlsStorageType != null &&
-                    this.HlsStorageType.Equals(input.HlsStorageType))
-                ) && 
-                (
-                    this.TemplateGroupName == input.TemplateGroupName ||
-                    (this.TemplateGroupName != null &&
-                    this.TemplateGroupName.Equals(input.TemplateGroupName))
-                ) && 
-                (
-                    this.AutoEncrypt == input.AutoEncrypt ||
-                    (this.AutoEncrypt != null &&
-                    this.AutoEncrypt.Equals(input.AutoEncrypt))
-                ) && 
-                (
-                    this.Thumbnail == input.Thumbnail ||
-                    (this.Thumbnail != null &&
-                    this.Thumbnail.Equals(input.Thumbnail))
-                ) && 
-                (
-                    this.SubtitleId == input.SubtitleId ||
-                    this.SubtitleId != null &&
-                    input.SubtitleId != null &&
-                    this.SubtitleId.SequenceEqual(input.SubtitleId)
-                );
+            return true;
         }
 
         /// <summary>
@@ -242,19 +216,13 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AssetId != null)
-                    hashCode = hashCode * 59 + this.AssetId.GetHashCode();
-                if (this.HlsStorageType != null)
-                    hashCode = hashCode * 59 + this.HlsStorageType.GetHashCode();
-                if (this.TemplateGroupName != null)
-                    hashCode = hashCode * 59 + this.TemplateGroupName.GetHashCode();
-                if (this.AutoEncrypt != null)
-                    hashCode = hashCode * 59 + this.AutoEncrypt.GetHashCode();
-                if (this.Thumbnail != null)
-                    hashCode = hashCode * 59 + this.Thumbnail.GetHashCode();
-                if (this.SubtitleId != null)
-                    hashCode = hashCode * 59 + this.SubtitleId.GetHashCode();
+                var hashCode = 41;
+                if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                hashCode = hashCode * 59 + this.HlsStorageType.GetHashCode();
+                if (this.TemplateGroupName != null) hashCode = hashCode * 59 + this.TemplateGroupName.GetHashCode();
+                if (this.AutoEncrypt != null) hashCode = hashCode * 59 + this.AutoEncrypt.GetHashCode();
+                if (this.Thumbnail != null) hashCode = hashCode * 59 + this.Thumbnail.GetHashCode();
+                if (this.SubtitleId != null) hashCode = hashCode * 59 + this.SubtitleId.GetHashCode();
                 return hashCode;
             }
         }

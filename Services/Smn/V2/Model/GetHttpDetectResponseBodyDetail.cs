@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public bool Equals(GetHttpDetectResponseBodyDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HttpCode != input.HttpCode || (this.HttpCode != null && !this.HttpCode.Equals(input.HttpCode))) return false;
+            if (this.HttpResponse != input.HttpResponse || (this.HttpResponse != null && !this.HttpResponse.Equals(input.HttpResponse))) return false;
 
-            return 
-                (
-                    this.HttpCode == input.HttpCode ||
-                    (this.HttpCode != null &&
-                    this.HttpCode.Equals(input.HttpCode))
-                ) && 
-                (
-                    this.HttpResponse == input.HttpResponse ||
-                    (this.HttpResponse != null &&
-                    this.HttpResponse.Equals(input.HttpResponse))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HttpCode != null)
-                    hashCode = hashCode * 59 + this.HttpCode.GetHashCode();
-                if (this.HttpResponse != null)
-                    hashCode = hashCode * 59 + this.HttpResponse.GetHashCode();
+                var hashCode = 41;
+                if (this.HttpCode != null) hashCode = hashCode * 59 + this.HttpCode.GetHashCode();
+                if (this.HttpResponse != null) hashCode = hashCode * 59 + this.HttpResponse.GetHashCode();
                 return hashCode;
             }
         }

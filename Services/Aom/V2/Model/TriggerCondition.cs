@@ -701,128 +701,32 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(TriggerCondition input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MetricQueryMode != input.MetricQueryMode) return false;
+            if (this.MetricNamespace != input.MetricNamespace || (this.MetricNamespace != null && !this.MetricNamespace.Equals(input.MetricNamespace))) return false;
+            if (this.MetricName != input.MetricName || (this.MetricName != null && !this.MetricName.Equals(input.MetricName))) return false;
+            if (this.MetricUnit != input.MetricUnit || (this.MetricUnit != null && !this.MetricUnit.Equals(input.MetricUnit))) return false;
+            if (this.MetricLabels != input.MetricLabels || (this.MetricLabels != null && input.MetricLabels != null && !this.MetricLabels.SequenceEqual(input.MetricLabels))) return false;
+            if (this.Promql != input.Promql || (this.Promql != null && !this.Promql.Equals(input.Promql))) return false;
+            if (this.PromqlExpr != input.PromqlExpr || (this.PromqlExpr != null && input.PromqlExpr != null && !this.PromqlExpr.SequenceEqual(input.PromqlExpr))) return false;
+            if (this.TriggerTimes != input.TriggerTimes || (this.TriggerTimes != null && !this.TriggerTimes.Equals(input.TriggerTimes))) return false;
+            if (this.TriggerInterval != input.TriggerInterval || (this.TriggerInterval != null && !this.TriggerInterval.Equals(input.TriggerInterval))) return false;
+            if (this.TriggerType != input.TriggerType) return false;
+            if (this.PromqlFor != input.PromqlFor || (this.PromqlFor != null && !this.PromqlFor.Equals(input.PromqlFor))) return false;
+            if (this.AggregationType != input.AggregationType || (this.AggregationType != null && !this.AggregationType.Equals(input.AggregationType))) return false;
+            if (this.Operator != input.Operator || (this.Operator != null && !this.Operator.Equals(input.Operator))) return false;
+            if (this.Thresholds != input.Thresholds || (this.Thresholds != null && input.Thresholds != null && !this.Thresholds.SequenceEqual(input.Thresholds))) return false;
+            if (this.AggregationWindow != input.AggregationWindow || (this.AggregationWindow != null && !this.AggregationWindow.Equals(input.AggregationWindow))) return false;
+            if (this.Cmdb != input.Cmdb || (this.Cmdb != null && !this.Cmdb.Equals(input.Cmdb))) return false;
+            if (this.QueryMatch != input.QueryMatch || (this.QueryMatch != null && !this.QueryMatch.Equals(input.QueryMatch))) return false;
+            if (this.QueryParam != input.QueryParam || (this.QueryParam != null && !this.QueryParam.Equals(input.QueryParam))) return false;
+            if (this.AomMonitorLevel != input.AomMonitorLevel || (this.AomMonitorLevel != null && !this.AomMonitorLevel.Equals(input.AomMonitorLevel))) return false;
+            if (this.AggregateType != input.AggregateType) return false;
+            if (this.MetricStatisticMethod != input.MetricStatisticMethod) return false;
+            if (this.Expression != input.Expression || (this.Expression != null && !this.Expression.Equals(input.Expression))) return false;
+            if (this.MixPromql != input.MixPromql || (this.MixPromql != null && !this.MixPromql.Equals(input.MixPromql))) return false;
 
-            return 
-                (
-                    this.MetricQueryMode == input.MetricQueryMode ||
-                    (this.MetricQueryMode != null &&
-                    this.MetricQueryMode.Equals(input.MetricQueryMode))
-                ) && 
-                (
-                    this.MetricNamespace == input.MetricNamespace ||
-                    (this.MetricNamespace != null &&
-                    this.MetricNamespace.Equals(input.MetricNamespace))
-                ) && 
-                (
-                    this.MetricName == input.MetricName ||
-                    (this.MetricName != null &&
-                    this.MetricName.Equals(input.MetricName))
-                ) && 
-                (
-                    this.MetricUnit == input.MetricUnit ||
-                    (this.MetricUnit != null &&
-                    this.MetricUnit.Equals(input.MetricUnit))
-                ) && 
-                (
-                    this.MetricLabels == input.MetricLabels ||
-                    this.MetricLabels != null &&
-                    input.MetricLabels != null &&
-                    this.MetricLabels.SequenceEqual(input.MetricLabels)
-                ) && 
-                (
-                    this.Promql == input.Promql ||
-                    (this.Promql != null &&
-                    this.Promql.Equals(input.Promql))
-                ) && 
-                (
-                    this.PromqlExpr == input.PromqlExpr ||
-                    this.PromqlExpr != null &&
-                    input.PromqlExpr != null &&
-                    this.PromqlExpr.SequenceEqual(input.PromqlExpr)
-                ) && 
-                (
-                    this.TriggerTimes == input.TriggerTimes ||
-                    (this.TriggerTimes != null &&
-                    this.TriggerTimes.Equals(input.TriggerTimes))
-                ) && 
-                (
-                    this.TriggerInterval == input.TriggerInterval ||
-                    (this.TriggerInterval != null &&
-                    this.TriggerInterval.Equals(input.TriggerInterval))
-                ) && 
-                (
-                    this.TriggerType == input.TriggerType ||
-                    (this.TriggerType != null &&
-                    this.TriggerType.Equals(input.TriggerType))
-                ) && 
-                (
-                    this.PromqlFor == input.PromqlFor ||
-                    (this.PromqlFor != null &&
-                    this.PromqlFor.Equals(input.PromqlFor))
-                ) && 
-                (
-                    this.AggregationType == input.AggregationType ||
-                    (this.AggregationType != null &&
-                    this.AggregationType.Equals(input.AggregationType))
-                ) && 
-                (
-                    this.Operator == input.Operator ||
-                    (this.Operator != null &&
-                    this.Operator.Equals(input.Operator))
-                ) && 
-                (
-                    this.Thresholds == input.Thresholds ||
-                    this.Thresholds != null &&
-                    input.Thresholds != null &&
-                    this.Thresholds.SequenceEqual(input.Thresholds)
-                ) && 
-                (
-                    this.AggregationWindow == input.AggregationWindow ||
-                    (this.AggregationWindow != null &&
-                    this.AggregationWindow.Equals(input.AggregationWindow))
-                ) && 
-                (
-                    this.Cmdb == input.Cmdb ||
-                    (this.Cmdb != null &&
-                    this.Cmdb.Equals(input.Cmdb))
-                ) && 
-                (
-                    this.QueryMatch == input.QueryMatch ||
-                    (this.QueryMatch != null &&
-                    this.QueryMatch.Equals(input.QueryMatch))
-                ) && 
-                (
-                    this.QueryParam == input.QueryParam ||
-                    (this.QueryParam != null &&
-                    this.QueryParam.Equals(input.QueryParam))
-                ) && 
-                (
-                    this.AomMonitorLevel == input.AomMonitorLevel ||
-                    (this.AomMonitorLevel != null &&
-                    this.AomMonitorLevel.Equals(input.AomMonitorLevel))
-                ) && 
-                (
-                    this.AggregateType == input.AggregateType ||
-                    (this.AggregateType != null &&
-                    this.AggregateType.Equals(input.AggregateType))
-                ) && 
-                (
-                    this.MetricStatisticMethod == input.MetricStatisticMethod ||
-                    (this.MetricStatisticMethod != null &&
-                    this.MetricStatisticMethod.Equals(input.MetricStatisticMethod))
-                ) && 
-                (
-                    this.Expression == input.Expression ||
-                    (this.Expression != null &&
-                    this.Expression.Equals(input.Expression))
-                ) && 
-                (
-                    this.MixPromql == input.MixPromql ||
-                    (this.MixPromql != null &&
-                    this.MixPromql.Equals(input.MixPromql))
-                );
+            return true;
         }
 
         /// <summary>
@@ -832,53 +736,30 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MetricQueryMode != null)
-                    hashCode = hashCode * 59 + this.MetricQueryMode.GetHashCode();
-                if (this.MetricNamespace != null)
-                    hashCode = hashCode * 59 + this.MetricNamespace.GetHashCode();
-                if (this.MetricName != null)
-                    hashCode = hashCode * 59 + this.MetricName.GetHashCode();
-                if (this.MetricUnit != null)
-                    hashCode = hashCode * 59 + this.MetricUnit.GetHashCode();
-                if (this.MetricLabels != null)
-                    hashCode = hashCode * 59 + this.MetricLabels.GetHashCode();
-                if (this.Promql != null)
-                    hashCode = hashCode * 59 + this.Promql.GetHashCode();
-                if (this.PromqlExpr != null)
-                    hashCode = hashCode * 59 + this.PromqlExpr.GetHashCode();
-                if (this.TriggerTimes != null)
-                    hashCode = hashCode * 59 + this.TriggerTimes.GetHashCode();
-                if (this.TriggerInterval != null)
-                    hashCode = hashCode * 59 + this.TriggerInterval.GetHashCode();
-                if (this.TriggerType != null)
-                    hashCode = hashCode * 59 + this.TriggerType.GetHashCode();
-                if (this.PromqlFor != null)
-                    hashCode = hashCode * 59 + this.PromqlFor.GetHashCode();
-                if (this.AggregationType != null)
-                    hashCode = hashCode * 59 + this.AggregationType.GetHashCode();
-                if (this.Operator != null)
-                    hashCode = hashCode * 59 + this.Operator.GetHashCode();
-                if (this.Thresholds != null)
-                    hashCode = hashCode * 59 + this.Thresholds.GetHashCode();
-                if (this.AggregationWindow != null)
-                    hashCode = hashCode * 59 + this.AggregationWindow.GetHashCode();
-                if (this.Cmdb != null)
-                    hashCode = hashCode * 59 + this.Cmdb.GetHashCode();
-                if (this.QueryMatch != null)
-                    hashCode = hashCode * 59 + this.QueryMatch.GetHashCode();
-                if (this.QueryParam != null)
-                    hashCode = hashCode * 59 + this.QueryParam.GetHashCode();
-                if (this.AomMonitorLevel != null)
-                    hashCode = hashCode * 59 + this.AomMonitorLevel.GetHashCode();
-                if (this.AggregateType != null)
-                    hashCode = hashCode * 59 + this.AggregateType.GetHashCode();
-                if (this.MetricStatisticMethod != null)
-                    hashCode = hashCode * 59 + this.MetricStatisticMethod.GetHashCode();
-                if (this.Expression != null)
-                    hashCode = hashCode * 59 + this.Expression.GetHashCode();
-                if (this.MixPromql != null)
-                    hashCode = hashCode * 59 + this.MixPromql.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.MetricQueryMode.GetHashCode();
+                if (this.MetricNamespace != null) hashCode = hashCode * 59 + this.MetricNamespace.GetHashCode();
+                if (this.MetricName != null) hashCode = hashCode * 59 + this.MetricName.GetHashCode();
+                if (this.MetricUnit != null) hashCode = hashCode * 59 + this.MetricUnit.GetHashCode();
+                if (this.MetricLabels != null) hashCode = hashCode * 59 + this.MetricLabels.GetHashCode();
+                if (this.Promql != null) hashCode = hashCode * 59 + this.Promql.GetHashCode();
+                if (this.PromqlExpr != null) hashCode = hashCode * 59 + this.PromqlExpr.GetHashCode();
+                if (this.TriggerTimes != null) hashCode = hashCode * 59 + this.TriggerTimes.GetHashCode();
+                if (this.TriggerInterval != null) hashCode = hashCode * 59 + this.TriggerInterval.GetHashCode();
+                hashCode = hashCode * 59 + this.TriggerType.GetHashCode();
+                if (this.PromqlFor != null) hashCode = hashCode * 59 + this.PromqlFor.GetHashCode();
+                if (this.AggregationType != null) hashCode = hashCode * 59 + this.AggregationType.GetHashCode();
+                if (this.Operator != null) hashCode = hashCode * 59 + this.Operator.GetHashCode();
+                if (this.Thresholds != null) hashCode = hashCode * 59 + this.Thresholds.GetHashCode();
+                if (this.AggregationWindow != null) hashCode = hashCode * 59 + this.AggregationWindow.GetHashCode();
+                if (this.Cmdb != null) hashCode = hashCode * 59 + this.Cmdb.GetHashCode();
+                if (this.QueryMatch != null) hashCode = hashCode * 59 + this.QueryMatch.GetHashCode();
+                if (this.QueryParam != null) hashCode = hashCode * 59 + this.QueryParam.GetHashCode();
+                if (this.AomMonitorLevel != null) hashCode = hashCode * 59 + this.AomMonitorLevel.GetHashCode();
+                hashCode = hashCode * 59 + this.AggregateType.GetHashCode();
+                hashCode = hashCode * 59 + this.MetricStatisticMethod.GetHashCode();
+                if (this.Expression != null) hashCode = hashCode * 59 + this.Expression.GetHashCode();
+                if (this.MixPromql != null) hashCode = hashCode * 59 + this.MixPromql.GetHashCode();
                 return hashCode;
             }
         }

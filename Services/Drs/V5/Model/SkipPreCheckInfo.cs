@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(SkipPreCheckInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SkippedPrecheckList != input.SkippedPrecheckList || (this.SkippedPrecheckList != null && input.SkippedPrecheckList != null && !this.SkippedPrecheckList.SequenceEqual(input.SkippedPrecheckList))) return false;
+            if (this.SkipReason != input.SkipReason || (this.SkipReason != null && !this.SkipReason.Equals(input.SkipReason))) return false;
 
-            return 
-                (
-                    this.SkippedPrecheckList == input.SkippedPrecheckList ||
-                    this.SkippedPrecheckList != null &&
-                    input.SkippedPrecheckList != null &&
-                    this.SkippedPrecheckList.SequenceEqual(input.SkippedPrecheckList)
-                ) && 
-                (
-                    this.SkipReason == input.SkipReason ||
-                    (this.SkipReason != null &&
-                    this.SkipReason.Equals(input.SkipReason))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SkippedPrecheckList != null)
-                    hashCode = hashCode * 59 + this.SkippedPrecheckList.GetHashCode();
-                if (this.SkipReason != null)
-                    hashCode = hashCode * 59 + this.SkipReason.GetHashCode();
+                var hashCode = 41;
+                if (this.SkippedPrecheckList != null) hashCode = hashCode * 59 + this.SkippedPrecheckList.GetHashCode();
+                if (this.SkipReason != null) hashCode = hashCode * 59 + this.SkipReason.GetHashCode();
                 return hashCode;
             }
         }

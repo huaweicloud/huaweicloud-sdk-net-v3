@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         /// </summary>
         public bool Equals(DailyLog input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.TriggerBps != input.TriggerBps || (this.TriggerBps != null && !this.TriggerBps.Equals(input.TriggerBps))) return false;
+            if (this.TriggerPps != input.TriggerPps || (this.TriggerPps != null && !this.TriggerPps.Equals(input.TriggerPps))) return false;
+            if (this.TriggerHttpPps != input.TriggerHttpPps || (this.TriggerHttpPps != null && !this.TriggerHttpPps.Equals(input.TriggerHttpPps))) return false;
 
-            return 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.TriggerBps == input.TriggerBps ||
-                    (this.TriggerBps != null &&
-                    this.TriggerBps.Equals(input.TriggerBps))
-                ) && 
-                (
-                    this.TriggerPps == input.TriggerPps ||
-                    (this.TriggerPps != null &&
-                    this.TriggerPps.Equals(input.TriggerPps))
-                ) && 
-                (
-                    this.TriggerHttpPps == input.TriggerHttpPps ||
-                    (this.TriggerHttpPps != null &&
-                    this.TriggerHttpPps.Equals(input.TriggerHttpPps))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.TriggerBps != null)
-                    hashCode = hashCode * 59 + this.TriggerBps.GetHashCode();
-                if (this.TriggerPps != null)
-                    hashCode = hashCode * 59 + this.TriggerPps.GetHashCode();
-                if (this.TriggerHttpPps != null)
-                    hashCode = hashCode * 59 + this.TriggerHttpPps.GetHashCode();
+                var hashCode = 41;
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.TriggerBps != null) hashCode = hashCode * 59 + this.TriggerBps.GetHashCode();
+                if (this.TriggerPps != null) hashCode = hashCode * 59 + this.TriggerPps.GetHashCode();
+                if (this.TriggerHttpPps != null) hashCode = hashCode * 59 + this.TriggerHttpPps.GetHashCode();
                 return hashCode;
             }
         }

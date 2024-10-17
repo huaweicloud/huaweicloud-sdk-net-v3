@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ConditionGroup input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Conditions != input.Conditions || (this.Conditions != null && input.Conditions != null && !this.Conditions.SequenceEqual(input.Conditions))) return false;
+            if (this.Logic != input.Logic || (this.Logic != null && !this.Logic.Equals(input.Logic))) return false;
+            if (this.TimeRange != input.TimeRange || (this.TimeRange != null && !this.TimeRange.Equals(input.TimeRange))) return false;
 
-            return 
-                (
-                    this.Conditions == input.Conditions ||
-                    this.Conditions != null &&
-                    input.Conditions != null &&
-                    this.Conditions.SequenceEqual(input.Conditions)
-                ) && 
-                (
-                    this.Logic == input.Logic ||
-                    (this.Logic != null &&
-                    this.Logic.Equals(input.Logic))
-                ) && 
-                (
-                    this.TimeRange == input.TimeRange ||
-                    (this.TimeRange != null &&
-                    this.TimeRange.Equals(input.TimeRange))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Conditions != null)
-                    hashCode = hashCode * 59 + this.Conditions.GetHashCode();
-                if (this.Logic != null)
-                    hashCode = hashCode * 59 + this.Logic.GetHashCode();
-                if (this.TimeRange != null)
-                    hashCode = hashCode * 59 + this.TimeRange.GetHashCode();
+                var hashCode = 41;
+                if (this.Conditions != null) hashCode = hashCode * 59 + this.Conditions.GetHashCode();
+                if (this.Logic != null) hashCode = hashCode * 59 + this.Logic.GetHashCode();
+                if (this.TimeRange != null) hashCode = hashCode * 59 + this.TimeRange.GetHashCode();
                 return hashCode;
             }
         }

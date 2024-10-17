@@ -202,30 +202,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(Trigger input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TriggerName != input.TriggerName || (this.TriggerName != null && !this.TriggerName.Equals(input.TriggerName))) return false;
+            if (this.TriggerType != input.TriggerType) return false;
+            if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
+            if (this.TriggerConfig != input.TriggerConfig || (this.TriggerConfig != null && !this.TriggerConfig.Equals(input.TriggerConfig))) return false;
 
-            return 
-                (
-                    this.TriggerName == input.TriggerName ||
-                    (this.TriggerName != null &&
-                    this.TriggerName.Equals(input.TriggerName))
-                ) && 
-                (
-                    this.TriggerType == input.TriggerType ||
-                    (this.TriggerType != null &&
-                    this.TriggerType.Equals(input.TriggerType))
-                ) && 
-                (
-                    this.Enabled == input.Enabled ||
-                    (this.Enabled != null &&
-                    this.Enabled.Equals(input.Enabled))
-                ) && 
-                (
-                    this.TriggerConfig == input.TriggerConfig ||
-                    (this.TriggerConfig != null &&
-                    this.TriggerConfig.Equals(input.TriggerConfig))
-                );
+            return true;
         }
 
         /// <summary>
@@ -235,15 +218,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TriggerName != null)
-                    hashCode = hashCode * 59 + this.TriggerName.GetHashCode();
-                if (this.TriggerType != null)
-                    hashCode = hashCode * 59 + this.TriggerType.GetHashCode();
-                if (this.Enabled != null)
-                    hashCode = hashCode * 59 + this.Enabled.GetHashCode();
-                if (this.TriggerConfig != null)
-                    hashCode = hashCode * 59 + this.TriggerConfig.GetHashCode();
+                var hashCode = 41;
+                if (this.TriggerName != null) hashCode = hashCode * 59 + this.TriggerName.GetHashCode();
+                hashCode = hashCode * 59 + this.TriggerType.GetHashCode();
+                if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
+                if (this.TriggerConfig != null) hashCode = hashCode * 59 + this.TriggerConfig.GetHashCode();
                 return hashCode;
             }
         }

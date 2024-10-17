@@ -171,25 +171,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(CreateCompareTaskReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.ObjectLevelCompareType != input.ObjectLevelCompareType) return false;
+            if (this.DataLevelCompareInfo != input.DataLevelCompareInfo || (this.DataLevelCompareInfo != null && !this.DataLevelCompareInfo.Equals(input.DataLevelCompareInfo))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.ObjectLevelCompareType == input.ObjectLevelCompareType ||
-                    (this.ObjectLevelCompareType != null &&
-                    this.ObjectLevelCompareType.Equals(input.ObjectLevelCompareType))
-                ) && 
-                (
-                    this.DataLevelCompareInfo == input.DataLevelCompareInfo ||
-                    (this.DataLevelCompareInfo != null &&
-                    this.DataLevelCompareInfo.Equals(input.DataLevelCompareInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -199,13 +186,10 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.ObjectLevelCompareType != null)
-                    hashCode = hashCode * 59 + this.ObjectLevelCompareType.GetHashCode();
-                if (this.DataLevelCompareInfo != null)
-                    hashCode = hashCode * 59 + this.DataLevelCompareInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                hashCode = hashCode * 59 + this.ObjectLevelCompareType.GetHashCode();
+                if (this.DataLevelCompareInfo != null) hashCode = hashCode * 59 + this.DataLevelCompareInfo.GetHashCode();
                 return hashCode;
             }
         }

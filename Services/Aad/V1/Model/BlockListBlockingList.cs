@@ -190,30 +190,13 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         /// </summary>
         public bool Equals(BlockListBlockingList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
+            if (this.BlockingTime != input.BlockingTime || (this.BlockingTime != null && !this.BlockingTime.Equals(input.BlockingTime))) return false;
+            if (this.EstimatedUnblockingTime != input.EstimatedUnblockingTime || (this.EstimatedUnblockingTime != null && !this.EstimatedUnblockingTime.Equals(input.EstimatedUnblockingTime))) return false;
+            if (this.Status != input.Status) return false;
 
-            return 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                ) && 
-                (
-                    this.BlockingTime == input.BlockingTime ||
-                    (this.BlockingTime != null &&
-                    this.BlockingTime.Equals(input.BlockingTime))
-                ) && 
-                (
-                    this.EstimatedUnblockingTime == input.EstimatedUnblockingTime ||
-                    (this.EstimatedUnblockingTime != null &&
-                    this.EstimatedUnblockingTime.Equals(input.EstimatedUnblockingTime))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
+            return true;
         }
 
         /// <summary>
@@ -223,15 +206,11 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.BlockingTime != null)
-                    hashCode = hashCode * 59 + this.BlockingTime.GetHashCode();
-                if (this.EstimatedUnblockingTime != null)
-                    hashCode = hashCode * 59 + this.EstimatedUnblockingTime.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                var hashCode = 41;
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.BlockingTime != null) hashCode = hashCode * 59 + this.BlockingTime.GetHashCode();
+                if (this.EstimatedUnblockingTime != null) hashCode = hashCode * 59 + this.EstimatedUnblockingTime.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(SessionPersistence input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CookieName != input.CookieName || (this.CookieName != null && !this.CookieName.Equals(input.CookieName))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.PersistenceTimeout != input.PersistenceTimeout || (this.PersistenceTimeout != null && !this.PersistenceTimeout.Equals(input.PersistenceTimeout))) return false;
 
-            return 
-                (
-                    this.CookieName == input.CookieName ||
-                    (this.CookieName != null &&
-                    this.CookieName.Equals(input.CookieName))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.PersistenceTimeout == input.PersistenceTimeout ||
-                    (this.PersistenceTimeout != null &&
-                    this.PersistenceTimeout.Equals(input.PersistenceTimeout))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CookieName != null)
-                    hashCode = hashCode * 59 + this.CookieName.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.PersistenceTimeout != null)
-                    hashCode = hashCode * 59 + this.PersistenceTimeout.GetHashCode();
+                var hashCode = 41;
+                if (this.CookieName != null) hashCode = hashCode * 59 + this.CookieName.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.PersistenceTimeout != null) hashCode = hashCode * 59 + this.PersistenceTimeout.GetHashCode();
                 return hashCode;
             }
         }

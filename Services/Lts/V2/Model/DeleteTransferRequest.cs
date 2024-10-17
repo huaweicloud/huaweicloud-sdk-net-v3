@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(DeleteTransferRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LogTransferId != input.LogTransferId || (this.LogTransferId != null && !this.LogTransferId.Equals(input.LogTransferId))) return false;
 
-            return 
-                (
-                    this.LogTransferId == input.LogTransferId ||
-                    (this.LogTransferId != null &&
-                    this.LogTransferId.Equals(input.LogTransferId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LogTransferId != null)
-                    hashCode = hashCode * 59 + this.LogTransferId.GetHashCode();
+                var hashCode = 41;
+                if (this.LogTransferId != null) hashCode = hashCode * 59 + this.LogTransferId.GetHashCode();
                 return hashCode;
             }
         }

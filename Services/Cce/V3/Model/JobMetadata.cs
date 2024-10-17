@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(JobMetadata input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Uid != input.Uid || (this.Uid != null && !this.Uid.Equals(input.Uid))) return false;
+            if (this.CreationTimestamp != input.CreationTimestamp || (this.CreationTimestamp != null && !this.CreationTimestamp.Equals(input.CreationTimestamp))) return false;
+            if (this.UpdateTimestamp != input.UpdateTimestamp || (this.UpdateTimestamp != null && !this.UpdateTimestamp.Equals(input.UpdateTimestamp))) return false;
 
-            return 
-                (
-                    this.Uid == input.Uid ||
-                    (this.Uid != null &&
-                    this.Uid.Equals(input.Uid))
-                ) && 
-                (
-                    this.CreationTimestamp == input.CreationTimestamp ||
-                    (this.CreationTimestamp != null &&
-                    this.CreationTimestamp.Equals(input.CreationTimestamp))
-                ) && 
-                (
-                    this.UpdateTimestamp == input.UpdateTimestamp ||
-                    (this.UpdateTimestamp != null &&
-                    this.UpdateTimestamp.Equals(input.UpdateTimestamp))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Uid != null)
-                    hashCode = hashCode * 59 + this.Uid.GetHashCode();
-                if (this.CreationTimestamp != null)
-                    hashCode = hashCode * 59 + this.CreationTimestamp.GetHashCode();
-                if (this.UpdateTimestamp != null)
-                    hashCode = hashCode * 59 + this.UpdateTimestamp.GetHashCode();
+                var hashCode = 41;
+                if (this.Uid != null) hashCode = hashCode * 59 + this.Uid.GetHashCode();
+                if (this.CreationTimestamp != null) hashCode = hashCode * 59 + this.CreationTimestamp.GetHashCode();
+                if (this.UpdateTimestamp != null) hashCode = hashCode * 59 + this.UpdateTimestamp.GetHashCode();
                 return hashCode;
             }
         }

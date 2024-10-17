@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ListCenterTaskResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TaskCount != input.TaskCount || (this.TaskCount != null && !this.TaskCount.Equals(input.TaskCount))) return false;
+            if (this.Tasks != input.Tasks || (this.Tasks != null && input.Tasks != null && !this.Tasks.SequenceEqual(input.Tasks))) return false;
 
-            return 
-                (
-                    this.TaskCount == input.TaskCount ||
-                    (this.TaskCount != null &&
-                    this.TaskCount.Equals(input.TaskCount))
-                ) && 
-                (
-                    this.Tasks == input.Tasks ||
-                    this.Tasks != null &&
-                    input.Tasks != null &&
-                    this.Tasks.SequenceEqual(input.Tasks)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TaskCount != null)
-                    hashCode = hashCode * 59 + this.TaskCount.GetHashCode();
-                if (this.Tasks != null)
-                    hashCode = hashCode * 59 + this.Tasks.GetHashCode();
+                var hashCode = 41;
+                if (this.TaskCount != null) hashCode = hashCode * 59 + this.TaskCount.GetHashCode();
+                if (this.Tasks != null) hashCode = hashCode * 59 + this.Tasks.GetHashCode();
                 return hashCode;
             }
         }

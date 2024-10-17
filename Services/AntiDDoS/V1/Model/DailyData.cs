@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         /// </summary>
         public bool Equals(DailyData input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PeriodStart != input.PeriodStart || (this.PeriodStart != null && !this.PeriodStart.Equals(input.PeriodStart))) return false;
+            if (this.BpsIn != input.BpsIn || (this.BpsIn != null && !this.BpsIn.Equals(input.BpsIn))) return false;
+            if (this.BpsAttack != input.BpsAttack || (this.BpsAttack != null && !this.BpsAttack.Equals(input.BpsAttack))) return false;
+            if (this.TotalBps != input.TotalBps || (this.TotalBps != null && !this.TotalBps.Equals(input.TotalBps))) return false;
+            if (this.PpsIn != input.PpsIn || (this.PpsIn != null && !this.PpsIn.Equals(input.PpsIn))) return false;
+            if (this.PpsAttack != input.PpsAttack || (this.PpsAttack != null && !this.PpsAttack.Equals(input.PpsAttack))) return false;
+            if (this.TotalPps != input.TotalPps || (this.TotalPps != null && !this.TotalPps.Equals(input.TotalPps))) return false;
 
-            return 
-                (
-                    this.PeriodStart == input.PeriodStart ||
-                    (this.PeriodStart != null &&
-                    this.PeriodStart.Equals(input.PeriodStart))
-                ) && 
-                (
-                    this.BpsIn == input.BpsIn ||
-                    (this.BpsIn != null &&
-                    this.BpsIn.Equals(input.BpsIn))
-                ) && 
-                (
-                    this.BpsAttack == input.BpsAttack ||
-                    (this.BpsAttack != null &&
-                    this.BpsAttack.Equals(input.BpsAttack))
-                ) && 
-                (
-                    this.TotalBps == input.TotalBps ||
-                    (this.TotalBps != null &&
-                    this.TotalBps.Equals(input.TotalBps))
-                ) && 
-                (
-                    this.PpsIn == input.PpsIn ||
-                    (this.PpsIn != null &&
-                    this.PpsIn.Equals(input.PpsIn))
-                ) && 
-                (
-                    this.PpsAttack == input.PpsAttack ||
-                    (this.PpsAttack != null &&
-                    this.PpsAttack.Equals(input.PpsAttack))
-                ) && 
-                (
-                    this.TotalPps == input.TotalPps ||
-                    (this.TotalPps != null &&
-                    this.TotalPps.Equals(input.TotalPps))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PeriodStart != null)
-                    hashCode = hashCode * 59 + this.PeriodStart.GetHashCode();
-                if (this.BpsIn != null)
-                    hashCode = hashCode * 59 + this.BpsIn.GetHashCode();
-                if (this.BpsAttack != null)
-                    hashCode = hashCode * 59 + this.BpsAttack.GetHashCode();
-                if (this.TotalBps != null)
-                    hashCode = hashCode * 59 + this.TotalBps.GetHashCode();
-                if (this.PpsIn != null)
-                    hashCode = hashCode * 59 + this.PpsIn.GetHashCode();
-                if (this.PpsAttack != null)
-                    hashCode = hashCode * 59 + this.PpsAttack.GetHashCode();
-                if (this.TotalPps != null)
-                    hashCode = hashCode * 59 + this.TotalPps.GetHashCode();
+                var hashCode = 41;
+                if (this.PeriodStart != null) hashCode = hashCode * 59 + this.PeriodStart.GetHashCode();
+                if (this.BpsIn != null) hashCode = hashCode * 59 + this.BpsIn.GetHashCode();
+                if (this.BpsAttack != null) hashCode = hashCode * 59 + this.BpsAttack.GetHashCode();
+                if (this.TotalBps != null) hashCode = hashCode * 59 + this.TotalBps.GetHashCode();
+                if (this.PpsIn != null) hashCode = hashCode * 59 + this.PpsIn.GetHashCode();
+                if (this.PpsAttack != null) hashCode = hashCode * 59 + this.PpsAttack.GetHashCode();
+                if (this.TotalPps != null) hashCode = hashCode * 59 + this.TotalPps.GetHashCode();
                 return hashCode;
             }
         }

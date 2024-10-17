@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public bool Equals(ChannelDetails input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;
+            if (this.User != input.User || (this.User != null && !this.User.Equals(input.User))) return false;
+            if (this.ConnectionName != input.ConnectionName || (this.ConnectionName != null && !this.ConnectionName.Equals(input.ConnectionName))) return false;
+            if (this.PeerHost != input.PeerHost || (this.PeerHost != null && !this.PeerHost.Equals(input.PeerHost))) return false;
+            if (this.PeerPort != input.PeerPort || (this.PeerPort != null && !this.PeerPort.Equals(input.PeerPort))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                ) && 
-                (
-                    this.User == input.User ||
-                    (this.User != null &&
-                    this.User.Equals(input.User))
-                ) && 
-                (
-                    this.ConnectionName == input.ConnectionName ||
-                    (this.ConnectionName != null &&
-                    this.ConnectionName.Equals(input.ConnectionName))
-                ) && 
-                (
-                    this.PeerHost == input.PeerHost ||
-                    (this.PeerHost != null &&
-                    this.PeerHost.Equals(input.PeerHost))
-                ) && 
-                (
-                    this.PeerPort == input.PeerPort ||
-                    (this.PeerPort != null &&
-                    this.PeerPort.Equals(input.PeerPort))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Number != null)
-                    hashCode = hashCode * 59 + this.Number.GetHashCode();
-                if (this.User != null)
-                    hashCode = hashCode * 59 + this.User.GetHashCode();
-                if (this.ConnectionName != null)
-                    hashCode = hashCode * 59 + this.ConnectionName.GetHashCode();
-                if (this.PeerHost != null)
-                    hashCode = hashCode * 59 + this.PeerHost.GetHashCode();
-                if (this.PeerPort != null)
-                    hashCode = hashCode * 59 + this.PeerPort.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Number != null) hashCode = hashCode * 59 + this.Number.GetHashCode();
+                if (this.User != null) hashCode = hashCode * 59 + this.User.GetHashCode();
+                if (this.ConnectionName != null) hashCode = hashCode * 59 + this.ConnectionName.GetHashCode();
+                if (this.PeerHost != null) hashCode = hashCode * 59 + this.PeerHost.GetHashCode();
+                if (this.PeerPort != null) hashCode = hashCode * 59 + this.PeerPort.GetHashCode();
                 return hashCode;
             }
         }

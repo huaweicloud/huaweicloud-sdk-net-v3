@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         /// </summary>
         public bool Equals(RtcHistoryUsage input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Date != input.Date || (this.Date != null && !this.Date.Equals(input.Date))) return false;
+            if (this.VideoSd != input.VideoSd || (this.VideoSd != null && !this.VideoSd.Equals(input.VideoSd))) return false;
+            if (this.VideoHd != input.VideoHd || (this.VideoHd != null && !this.VideoHd.Equals(input.VideoHd))) return false;
+            if (this.VideoHdp != input.VideoHdp || (this.VideoHdp != null && !this.VideoHdp.Equals(input.VideoHdp))) return false;
+            if (this.Audio != input.Audio || (this.Audio != null && !this.Audio.Equals(input.Audio))) return false;
+            if (this.TotalDuration != input.TotalDuration || (this.TotalDuration != null && !this.TotalDuration.Equals(input.TotalDuration))) return false;
 
-            return 
-                (
-                    this.Date == input.Date ||
-                    (this.Date != null &&
-                    this.Date.Equals(input.Date))
-                ) && 
-                (
-                    this.VideoSd == input.VideoSd ||
-                    (this.VideoSd != null &&
-                    this.VideoSd.Equals(input.VideoSd))
-                ) && 
-                (
-                    this.VideoHd == input.VideoHd ||
-                    (this.VideoHd != null &&
-                    this.VideoHd.Equals(input.VideoHd))
-                ) && 
-                (
-                    this.VideoHdp == input.VideoHdp ||
-                    (this.VideoHdp != null &&
-                    this.VideoHdp.Equals(input.VideoHdp))
-                ) && 
-                (
-                    this.Audio == input.Audio ||
-                    (this.Audio != null &&
-                    this.Audio.Equals(input.Audio))
-                ) && 
-                (
-                    this.TotalDuration == input.TotalDuration ||
-                    (this.TotalDuration != null &&
-                    this.TotalDuration.Equals(input.TotalDuration))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Date != null)
-                    hashCode = hashCode * 59 + this.Date.GetHashCode();
-                if (this.VideoSd != null)
-                    hashCode = hashCode * 59 + this.VideoSd.GetHashCode();
-                if (this.VideoHd != null)
-                    hashCode = hashCode * 59 + this.VideoHd.GetHashCode();
-                if (this.VideoHdp != null)
-                    hashCode = hashCode * 59 + this.VideoHdp.GetHashCode();
-                if (this.Audio != null)
-                    hashCode = hashCode * 59 + this.Audio.GetHashCode();
-                if (this.TotalDuration != null)
-                    hashCode = hashCode * 59 + this.TotalDuration.GetHashCode();
+                var hashCode = 41;
+                if (this.Date != null) hashCode = hashCode * 59 + this.Date.GetHashCode();
+                if (this.VideoSd != null) hashCode = hashCode * 59 + this.VideoSd.GetHashCode();
+                if (this.VideoHd != null) hashCode = hashCode * 59 + this.VideoHd.GetHashCode();
+                if (this.VideoHdp != null) hashCode = hashCode * 59 + this.VideoHdp.GetHashCode();
+                if (this.Audio != null) hashCode = hashCode * 59 + this.Audio.GetHashCode();
+                if (this.TotalDuration != null) hashCode = hashCode * 59 + this.TotalDuration.GetHashCode();
                 return hashCode;
             }
         }

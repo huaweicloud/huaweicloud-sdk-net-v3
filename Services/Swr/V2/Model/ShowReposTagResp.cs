@@ -161,95 +161,26 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public bool Equals(ShowReposTagResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.RepoId != input.RepoId || (this.RepoId != null && !this.RepoId.Equals(input.RepoId))) return false;
+            if (this.Tag != input.Tag || (this.Tag != null && !this.Tag.Equals(input.Tag))) return false;
+            if (this.ImageId != input.ImageId || (this.ImageId != null && !this.ImageId.Equals(input.ImageId))) return false;
+            if (this.Manifest != input.Manifest || (this.Manifest != null && !this.Manifest.Equals(input.Manifest))) return false;
+            if (this.Digest != input.Digest || (this.Digest != null && !this.Digest.Equals(input.Digest))) return false;
+            if (this.Schema != input.Schema || (this.Schema != null && !this.Schema.Equals(input.Schema))) return false;
+            if (this.Path != input.Path || (this.Path != null && !this.Path.Equals(input.Path))) return false;
+            if (this.InternalPath != input.InternalPath || (this.InternalPath != null && !this.InternalPath.Equals(input.InternalPath))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.IsTrusted != input.IsTrusted || (this.IsTrusted != null && !this.IsTrusted.Equals(input.IsTrusted))) return false;
+            if (this.Created != input.Created || (this.Created != null && !this.Created.Equals(input.Created))) return false;
+            if (this.Updated != input.Updated || (this.Updated != null && !this.Updated.Equals(input.Updated))) return false;
+            if (this.Deleted != input.Deleted || (this.Deleted != null && !this.Deleted.Equals(input.Deleted))) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.Scanned != input.Scanned || (this.Scanned != null && !this.Scanned.Equals(input.Scanned))) return false;
+            if (this.TagType != input.TagType || (this.TagType != null && !this.TagType.Equals(input.TagType))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.RepoId == input.RepoId ||
-                    (this.RepoId != null &&
-                    this.RepoId.Equals(input.RepoId))
-                ) && 
-                (
-                    this.Tag == input.Tag ||
-                    (this.Tag != null &&
-                    this.Tag.Equals(input.Tag))
-                ) && 
-                (
-                    this.ImageId == input.ImageId ||
-                    (this.ImageId != null &&
-                    this.ImageId.Equals(input.ImageId))
-                ) && 
-                (
-                    this.Manifest == input.Manifest ||
-                    (this.Manifest != null &&
-                    this.Manifest.Equals(input.Manifest))
-                ) && 
-                (
-                    this.Digest == input.Digest ||
-                    (this.Digest != null &&
-                    this.Digest.Equals(input.Digest))
-                ) && 
-                (
-                    this.Schema == input.Schema ||
-                    (this.Schema != null &&
-                    this.Schema.Equals(input.Schema))
-                ) && 
-                (
-                    this.Path == input.Path ||
-                    (this.Path != null &&
-                    this.Path.Equals(input.Path))
-                ) && 
-                (
-                    this.InternalPath == input.InternalPath ||
-                    (this.InternalPath != null &&
-                    this.InternalPath.Equals(input.InternalPath))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.IsTrusted == input.IsTrusted ||
-                    (this.IsTrusted != null &&
-                    this.IsTrusted.Equals(input.IsTrusted))
-                ) && 
-                (
-                    this.Created == input.Created ||
-                    (this.Created != null &&
-                    this.Created.Equals(input.Created))
-                ) && 
-                (
-                    this.Updated == input.Updated ||
-                    (this.Updated != null &&
-                    this.Updated.Equals(input.Updated))
-                ) && 
-                (
-                    this.Deleted == input.Deleted ||
-                    (this.Deleted != null &&
-                    this.Deleted.Equals(input.Deleted))
-                ) && 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
-                    this.Scanned == input.Scanned ||
-                    (this.Scanned != null &&
-                    this.Scanned.Equals(input.Scanned))
-                ) && 
-                (
-                    this.TagType == input.TagType ||
-                    (this.TagType != null &&
-                    this.TagType.Equals(input.TagType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -259,41 +190,24 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.RepoId != null)
-                    hashCode = hashCode * 59 + this.RepoId.GetHashCode();
-                if (this.Tag != null)
-                    hashCode = hashCode * 59 + this.Tag.GetHashCode();
-                if (this.ImageId != null)
-                    hashCode = hashCode * 59 + this.ImageId.GetHashCode();
-                if (this.Manifest != null)
-                    hashCode = hashCode * 59 + this.Manifest.GetHashCode();
-                if (this.Digest != null)
-                    hashCode = hashCode * 59 + this.Digest.GetHashCode();
-                if (this.Schema != null)
-                    hashCode = hashCode * 59 + this.Schema.GetHashCode();
-                if (this.Path != null)
-                    hashCode = hashCode * 59 + this.Path.GetHashCode();
-                if (this.InternalPath != null)
-                    hashCode = hashCode * 59 + this.InternalPath.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.IsTrusted != null)
-                    hashCode = hashCode * 59 + this.IsTrusted.GetHashCode();
-                if (this.Created != null)
-                    hashCode = hashCode * 59 + this.Created.GetHashCode();
-                if (this.Updated != null)
-                    hashCode = hashCode * 59 + this.Updated.GetHashCode();
-                if (this.Deleted != null)
-                    hashCode = hashCode * 59 + this.Deleted.GetHashCode();
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.Scanned != null)
-                    hashCode = hashCode * 59 + this.Scanned.GetHashCode();
-                if (this.TagType != null)
-                    hashCode = hashCode * 59 + this.TagType.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.RepoId != null) hashCode = hashCode * 59 + this.RepoId.GetHashCode();
+                if (this.Tag != null) hashCode = hashCode * 59 + this.Tag.GetHashCode();
+                if (this.ImageId != null) hashCode = hashCode * 59 + this.ImageId.GetHashCode();
+                if (this.Manifest != null) hashCode = hashCode * 59 + this.Manifest.GetHashCode();
+                if (this.Digest != null) hashCode = hashCode * 59 + this.Digest.GetHashCode();
+                if (this.Schema != null) hashCode = hashCode * 59 + this.Schema.GetHashCode();
+                if (this.Path != null) hashCode = hashCode * 59 + this.Path.GetHashCode();
+                if (this.InternalPath != null) hashCode = hashCode * 59 + this.InternalPath.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.IsTrusted != null) hashCode = hashCode * 59 + this.IsTrusted.GetHashCode();
+                if (this.Created != null) hashCode = hashCode * 59 + this.Created.GetHashCode();
+                if (this.Updated != null) hashCode = hashCode * 59 + this.Updated.GetHashCode();
+                if (this.Deleted != null) hashCode = hashCode * 59 + this.Deleted.GetHashCode();
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.Scanned != null) hashCode = hashCode * 59 + this.Scanned.GetHashCode();
+                if (this.TagType != null) hashCode = hashCode * 59 + this.TagType.GetHashCode();
                 return hashCode;
             }
         }

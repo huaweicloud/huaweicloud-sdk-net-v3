@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(UpdateSqlLimitRuleReqV3 input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DbName != input.DbName || (this.DbName != null && !this.DbName.Equals(input.DbName))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.MaxConcurrency != input.MaxConcurrency || (this.MaxConcurrency != null && !this.MaxConcurrency.Equals(input.MaxConcurrency))) return false;
+            if (this.MaxWaiting != input.MaxWaiting || (this.MaxWaiting != null && !this.MaxWaiting.Equals(input.MaxWaiting))) return false;
 
-            return 
-                (
-                    this.DbName == input.DbName ||
-                    (this.DbName != null &&
-                    this.DbName.Equals(input.DbName))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.MaxConcurrency == input.MaxConcurrency ||
-                    (this.MaxConcurrency != null &&
-                    this.MaxConcurrency.Equals(input.MaxConcurrency))
-                ) && 
-                (
-                    this.MaxWaiting == input.MaxWaiting ||
-                    (this.MaxWaiting != null &&
-                    this.MaxWaiting.Equals(input.MaxWaiting))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DbName != null)
-                    hashCode = hashCode * 59 + this.DbName.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.MaxConcurrency != null)
-                    hashCode = hashCode * 59 + this.MaxConcurrency.GetHashCode();
-                if (this.MaxWaiting != null)
-                    hashCode = hashCode * 59 + this.MaxWaiting.GetHashCode();
+                var hashCode = 41;
+                if (this.DbName != null) hashCode = hashCode * 59 + this.DbName.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.MaxConcurrency != null) hashCode = hashCode * 59 + this.MaxConcurrency.GetHashCode();
+                if (this.MaxWaiting != null) hashCode = hashCode * 59 + this.MaxWaiting.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(ShowServerRemoteConsoleResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RemoteConsole != input.RemoteConsole || (this.RemoteConsole != null && !this.RemoteConsole.Equals(input.RemoteConsole))) return false;
 
-            return 
-                (
-                    this.RemoteConsole == input.RemoteConsole ||
-                    (this.RemoteConsole != null &&
-                    this.RemoteConsole.Equals(input.RemoteConsole))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RemoteConsole != null)
-                    hashCode = hashCode * 59 + this.RemoteConsole.GetHashCode();
+                var hashCode = 41;
+                if (this.RemoteConsole != null) hashCode = hashCode * 59 + this.RemoteConsole.GetHashCode();
                 return hashCode;
             }
         }

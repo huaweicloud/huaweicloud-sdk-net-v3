@@ -170,20 +170,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(BackupInstanceBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Remark != input.Remark || (this.Remark != null && !this.Remark.Equals(input.Remark))) return false;
+            if (this.BackupFormat != input.BackupFormat) return false;
 
-            return 
-                (
-                    this.Remark == input.Remark ||
-                    (this.Remark != null &&
-                    this.Remark.Equals(input.Remark))
-                ) && 
-                (
-                    this.BackupFormat == input.BackupFormat ||
-                    (this.BackupFormat != null &&
-                    this.BackupFormat.Equals(input.BackupFormat))
-                );
+            return true;
         }
 
         /// <summary>
@@ -193,11 +184,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Remark != null)
-                    hashCode = hashCode * 59 + this.Remark.GetHashCode();
-                if (this.BackupFormat != null)
-                    hashCode = hashCode * 59 + this.BackupFormat.GetHashCode();
+                var hashCode = 41;
+                if (this.Remark != null) hashCode = hashCode * 59 + this.Remark.GetHashCode();
+                hashCode = hashCode * 59 + this.BackupFormat.GetHashCode();
                 return hashCode;
             }
         }

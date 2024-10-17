@@ -539,95 +539,26 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         /// </summary>
         public bool Equals(KeyDetails input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KeyId != input.KeyId || (this.KeyId != null && !this.KeyId.Equals(input.KeyId))) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.KeyAlias != input.KeyAlias || (this.KeyAlias != null && !this.KeyAlias.Equals(input.KeyAlias))) return false;
+            if (this.Realm != input.Realm || (this.Realm != null && !this.Realm.Equals(input.Realm))) return false;
+            if (this.KeySpec != input.KeySpec) return false;
+            if (this.KeyUsage != input.KeyUsage) return false;
+            if (this.KeyDescription != input.KeyDescription || (this.KeyDescription != null && !this.KeyDescription.Equals(input.KeyDescription))) return false;
+            if (this.CreationDate != input.CreationDate || (this.CreationDate != null && !this.CreationDate.Equals(input.CreationDate))) return false;
+            if (this.ScheduledDeletionDate != input.ScheduledDeletionDate || (this.ScheduledDeletionDate != null && !this.ScheduledDeletionDate.Equals(input.ScheduledDeletionDate))) return false;
+            if (this.KeyState != input.KeyState || (this.KeyState != null && !this.KeyState.Equals(input.KeyState))) return false;
+            if (this.DefaultKeyFlag != input.DefaultKeyFlag || (this.DefaultKeyFlag != null && !this.DefaultKeyFlag.Equals(input.DefaultKeyFlag))) return false;
+            if (this.KeyType != input.KeyType || (this.KeyType != null && !this.KeyType.Equals(input.KeyType))) return false;
+            if (this.ExpirationTime != input.ExpirationTime || (this.ExpirationTime != null && !this.ExpirationTime.Equals(input.ExpirationTime))) return false;
+            if (this.Origin != input.Origin) return false;
+            if (this.KeyRotationEnabled != input.KeyRotationEnabled || (this.KeyRotationEnabled != null && !this.KeyRotationEnabled.Equals(input.KeyRotationEnabled))) return false;
+            if (this.SysEnterpriseProjectId != input.SysEnterpriseProjectId || (this.SysEnterpriseProjectId != null && !this.SysEnterpriseProjectId.Equals(input.SysEnterpriseProjectId))) return false;
+            if (this.KeystoreId != input.KeystoreId || (this.KeystoreId != null && !this.KeystoreId.Equals(input.KeystoreId))) return false;
 
-            return 
-                (
-                    this.KeyId == input.KeyId ||
-                    (this.KeyId != null &&
-                    this.KeyId.Equals(input.KeyId))
-                ) && 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
-                    this.KeyAlias == input.KeyAlias ||
-                    (this.KeyAlias != null &&
-                    this.KeyAlias.Equals(input.KeyAlias))
-                ) && 
-                (
-                    this.Realm == input.Realm ||
-                    (this.Realm != null &&
-                    this.Realm.Equals(input.Realm))
-                ) && 
-                (
-                    this.KeySpec == input.KeySpec ||
-                    (this.KeySpec != null &&
-                    this.KeySpec.Equals(input.KeySpec))
-                ) && 
-                (
-                    this.KeyUsage == input.KeyUsage ||
-                    (this.KeyUsage != null &&
-                    this.KeyUsage.Equals(input.KeyUsage))
-                ) && 
-                (
-                    this.KeyDescription == input.KeyDescription ||
-                    (this.KeyDescription != null &&
-                    this.KeyDescription.Equals(input.KeyDescription))
-                ) && 
-                (
-                    this.CreationDate == input.CreationDate ||
-                    (this.CreationDate != null &&
-                    this.CreationDate.Equals(input.CreationDate))
-                ) && 
-                (
-                    this.ScheduledDeletionDate == input.ScheduledDeletionDate ||
-                    (this.ScheduledDeletionDate != null &&
-                    this.ScheduledDeletionDate.Equals(input.ScheduledDeletionDate))
-                ) && 
-                (
-                    this.KeyState == input.KeyState ||
-                    (this.KeyState != null &&
-                    this.KeyState.Equals(input.KeyState))
-                ) && 
-                (
-                    this.DefaultKeyFlag == input.DefaultKeyFlag ||
-                    (this.DefaultKeyFlag != null &&
-                    this.DefaultKeyFlag.Equals(input.DefaultKeyFlag))
-                ) && 
-                (
-                    this.KeyType == input.KeyType ||
-                    (this.KeyType != null &&
-                    this.KeyType.Equals(input.KeyType))
-                ) && 
-                (
-                    this.ExpirationTime == input.ExpirationTime ||
-                    (this.ExpirationTime != null &&
-                    this.ExpirationTime.Equals(input.ExpirationTime))
-                ) && 
-                (
-                    this.Origin == input.Origin ||
-                    (this.Origin != null &&
-                    this.Origin.Equals(input.Origin))
-                ) && 
-                (
-                    this.KeyRotationEnabled == input.KeyRotationEnabled ||
-                    (this.KeyRotationEnabled != null &&
-                    this.KeyRotationEnabled.Equals(input.KeyRotationEnabled))
-                ) && 
-                (
-                    this.SysEnterpriseProjectId == input.SysEnterpriseProjectId ||
-                    (this.SysEnterpriseProjectId != null &&
-                    this.SysEnterpriseProjectId.Equals(input.SysEnterpriseProjectId))
-                ) && 
-                (
-                    this.KeystoreId == input.KeystoreId ||
-                    (this.KeystoreId != null &&
-                    this.KeystoreId.Equals(input.KeystoreId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -637,41 +568,24 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KeyId != null)
-                    hashCode = hashCode * 59 + this.KeyId.GetHashCode();
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.KeyAlias != null)
-                    hashCode = hashCode * 59 + this.KeyAlias.GetHashCode();
-                if (this.Realm != null)
-                    hashCode = hashCode * 59 + this.Realm.GetHashCode();
-                if (this.KeySpec != null)
-                    hashCode = hashCode * 59 + this.KeySpec.GetHashCode();
-                if (this.KeyUsage != null)
-                    hashCode = hashCode * 59 + this.KeyUsage.GetHashCode();
-                if (this.KeyDescription != null)
-                    hashCode = hashCode * 59 + this.KeyDescription.GetHashCode();
-                if (this.CreationDate != null)
-                    hashCode = hashCode * 59 + this.CreationDate.GetHashCode();
-                if (this.ScheduledDeletionDate != null)
-                    hashCode = hashCode * 59 + this.ScheduledDeletionDate.GetHashCode();
-                if (this.KeyState != null)
-                    hashCode = hashCode * 59 + this.KeyState.GetHashCode();
-                if (this.DefaultKeyFlag != null)
-                    hashCode = hashCode * 59 + this.DefaultKeyFlag.GetHashCode();
-                if (this.KeyType != null)
-                    hashCode = hashCode * 59 + this.KeyType.GetHashCode();
-                if (this.ExpirationTime != null)
-                    hashCode = hashCode * 59 + this.ExpirationTime.GetHashCode();
-                if (this.Origin != null)
-                    hashCode = hashCode * 59 + this.Origin.GetHashCode();
-                if (this.KeyRotationEnabled != null)
-                    hashCode = hashCode * 59 + this.KeyRotationEnabled.GetHashCode();
-                if (this.SysEnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.SysEnterpriseProjectId.GetHashCode();
-                if (this.KeystoreId != null)
-                    hashCode = hashCode * 59 + this.KeystoreId.GetHashCode();
+                var hashCode = 41;
+                if (this.KeyId != null) hashCode = hashCode * 59 + this.KeyId.GetHashCode();
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.KeyAlias != null) hashCode = hashCode * 59 + this.KeyAlias.GetHashCode();
+                if (this.Realm != null) hashCode = hashCode * 59 + this.Realm.GetHashCode();
+                hashCode = hashCode * 59 + this.KeySpec.GetHashCode();
+                hashCode = hashCode * 59 + this.KeyUsage.GetHashCode();
+                if (this.KeyDescription != null) hashCode = hashCode * 59 + this.KeyDescription.GetHashCode();
+                if (this.CreationDate != null) hashCode = hashCode * 59 + this.CreationDate.GetHashCode();
+                if (this.ScheduledDeletionDate != null) hashCode = hashCode * 59 + this.ScheduledDeletionDate.GetHashCode();
+                if (this.KeyState != null) hashCode = hashCode * 59 + this.KeyState.GetHashCode();
+                if (this.DefaultKeyFlag != null) hashCode = hashCode * 59 + this.DefaultKeyFlag.GetHashCode();
+                if (this.KeyType != null) hashCode = hashCode * 59 + this.KeyType.GetHashCode();
+                if (this.ExpirationTime != null) hashCode = hashCode * 59 + this.ExpirationTime.GetHashCode();
+                hashCode = hashCode * 59 + this.Origin.GetHashCode();
+                if (this.KeyRotationEnabled != null) hashCode = hashCode * 59 + this.KeyRotationEnabled.GetHashCode();
+                if (this.SysEnterpriseProjectId != null) hashCode = hashCode * 59 + this.SysEnterpriseProjectId.GetHashCode();
+                if (this.KeystoreId != null) hashCode = hashCode * 59 + this.KeystoreId.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(CreateResetTracksReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AudioFile != input.AudioFile || (this.AudioFile != null && !this.AudioFile.Equals(input.AudioFile))) return false;
 
-            return 
-                (
-                    this.AudioFile == input.AudioFile ||
-                    (this.AudioFile != null &&
-                    this.AudioFile.Equals(input.AudioFile))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AudioFile != null)
-                    hashCode = hashCode * 59 + this.AudioFile.GetHashCode();
+                var hashCode = 41;
+                if (this.AudioFile != null) hashCode = hashCode * 59 + this.AudioFile.GetHashCode();
                 return hashCode;
             }
         }

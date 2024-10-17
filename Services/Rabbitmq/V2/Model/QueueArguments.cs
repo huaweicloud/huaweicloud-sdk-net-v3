@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public bool Equals(QueueArguments input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.XMessageTtl != input.XMessageTtl || (this.XMessageTtl != null && !this.XMessageTtl.Equals(input.XMessageTtl))) return false;
+            if (this.XDeadLetterExchange != input.XDeadLetterExchange || (this.XDeadLetterExchange != null && !this.XDeadLetterExchange.Equals(input.XDeadLetterExchange))) return false;
+            if (this.XDeadLetterRoutingKey != input.XDeadLetterRoutingKey || (this.XDeadLetterRoutingKey != null && !this.XDeadLetterRoutingKey.Equals(input.XDeadLetterRoutingKey))) return false;
+            if (this.XQueueMode != input.XQueueMode || (this.XQueueMode != null && !this.XQueueMode.Equals(input.XQueueMode))) return false;
 
-            return 
-                (
-                    this.XMessageTtl == input.XMessageTtl ||
-                    (this.XMessageTtl != null &&
-                    this.XMessageTtl.Equals(input.XMessageTtl))
-                ) && 
-                (
-                    this.XDeadLetterExchange == input.XDeadLetterExchange ||
-                    (this.XDeadLetterExchange != null &&
-                    this.XDeadLetterExchange.Equals(input.XDeadLetterExchange))
-                ) && 
-                (
-                    this.XDeadLetterRoutingKey == input.XDeadLetterRoutingKey ||
-                    (this.XDeadLetterRoutingKey != null &&
-                    this.XDeadLetterRoutingKey.Equals(input.XDeadLetterRoutingKey))
-                ) && 
-                (
-                    this.XQueueMode == input.XQueueMode ||
-                    (this.XQueueMode != null &&
-                    this.XQueueMode.Equals(input.XQueueMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.XMessageTtl != null)
-                    hashCode = hashCode * 59 + this.XMessageTtl.GetHashCode();
-                if (this.XDeadLetterExchange != null)
-                    hashCode = hashCode * 59 + this.XDeadLetterExchange.GetHashCode();
-                if (this.XDeadLetterRoutingKey != null)
-                    hashCode = hashCode * 59 + this.XDeadLetterRoutingKey.GetHashCode();
-                if (this.XQueueMode != null)
-                    hashCode = hashCode * 59 + this.XQueueMode.GetHashCode();
+                var hashCode = 41;
+                if (this.XMessageTtl != null) hashCode = hashCode * 59 + this.XMessageTtl.GetHashCode();
+                if (this.XDeadLetterExchange != null) hashCode = hashCode * 59 + this.XDeadLetterExchange.GetHashCode();
+                if (this.XDeadLetterRoutingKey != null) hashCode = hashCode * 59 + this.XDeadLetterRoutingKey.GetHashCode();
+                if (this.XQueueMode != null) hashCode = hashCode * 59 + this.XQueueMode.GetHashCode();
                 return hashCode;
             }
         }

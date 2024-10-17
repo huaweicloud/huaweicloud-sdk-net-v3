@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         /// </summary>
         public bool Equals(BatchAssociateKeypairRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BatchKeypairs != input.BatchKeypairs || (this.BatchKeypairs != null && input.BatchKeypairs != null && !this.BatchKeypairs.SequenceEqual(input.BatchKeypairs))) return false;
 
-            return 
-                (
-                    this.BatchKeypairs == input.BatchKeypairs ||
-                    this.BatchKeypairs != null &&
-                    input.BatchKeypairs != null &&
-                    this.BatchKeypairs.SequenceEqual(input.BatchKeypairs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BatchKeypairs != null)
-                    hashCode = hashCode * 59 + this.BatchKeypairs.GetHashCode();
+                var hashCode = 41;
+                if (this.BatchKeypairs != null) hashCode = hashCode * 59 + this.BatchKeypairs.GetHashCode();
                 return hashCode;
             }
         }

@@ -119,65 +119,20 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ChannelDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HttpForwarding != input.HttpForwarding || (this.HttpForwarding != null && !this.HttpForwarding.Equals(input.HttpForwarding))) return false;
+            if (this.DisForwarding != input.DisForwarding || (this.DisForwarding != null && !this.DisForwarding.Equals(input.DisForwarding))) return false;
+            if (this.ObsForwarding != input.ObsForwarding || (this.ObsForwarding != null && !this.ObsForwarding.Equals(input.ObsForwarding))) return false;
+            if (this.AmqpForwarding != input.AmqpForwarding || (this.AmqpForwarding != null && !this.AmqpForwarding.Equals(input.AmqpForwarding))) return false;
+            if (this.DmsKafkaForwarding != input.DmsKafkaForwarding || (this.DmsKafkaForwarding != null && !this.DmsKafkaForwarding.Equals(input.DmsKafkaForwarding))) return false;
+            if (this.RomaForwarding != input.RomaForwarding || (this.RomaForwarding != null && !this.RomaForwarding.Equals(input.RomaForwarding))) return false;
+            if (this.MysqlForwarding != input.MysqlForwarding || (this.MysqlForwarding != null && !this.MysqlForwarding.Equals(input.MysqlForwarding))) return false;
+            if (this.InfluxdbForwarding != input.InfluxdbForwarding || (this.InfluxdbForwarding != null && !this.InfluxdbForwarding.Equals(input.InfluxdbForwarding))) return false;
+            if (this.FunctiongraphForwarding != input.FunctiongraphForwarding || (this.FunctiongraphForwarding != null && !this.FunctiongraphForwarding.Equals(input.FunctiongraphForwarding))) return false;
+            if (this.MrsKafkaForwarding != input.MrsKafkaForwarding || (this.MrsKafkaForwarding != null && !this.MrsKafkaForwarding.Equals(input.MrsKafkaForwarding))) return false;
+            if (this.DmsRocketmqForwarding != input.DmsRocketmqForwarding || (this.DmsRocketmqForwarding != null && !this.DmsRocketmqForwarding.Equals(input.DmsRocketmqForwarding))) return false;
 
-            return 
-                (
-                    this.HttpForwarding == input.HttpForwarding ||
-                    (this.HttpForwarding != null &&
-                    this.HttpForwarding.Equals(input.HttpForwarding))
-                ) && 
-                (
-                    this.DisForwarding == input.DisForwarding ||
-                    (this.DisForwarding != null &&
-                    this.DisForwarding.Equals(input.DisForwarding))
-                ) && 
-                (
-                    this.ObsForwarding == input.ObsForwarding ||
-                    (this.ObsForwarding != null &&
-                    this.ObsForwarding.Equals(input.ObsForwarding))
-                ) && 
-                (
-                    this.AmqpForwarding == input.AmqpForwarding ||
-                    (this.AmqpForwarding != null &&
-                    this.AmqpForwarding.Equals(input.AmqpForwarding))
-                ) && 
-                (
-                    this.DmsKafkaForwarding == input.DmsKafkaForwarding ||
-                    (this.DmsKafkaForwarding != null &&
-                    this.DmsKafkaForwarding.Equals(input.DmsKafkaForwarding))
-                ) && 
-                (
-                    this.RomaForwarding == input.RomaForwarding ||
-                    (this.RomaForwarding != null &&
-                    this.RomaForwarding.Equals(input.RomaForwarding))
-                ) && 
-                (
-                    this.MysqlForwarding == input.MysqlForwarding ||
-                    (this.MysqlForwarding != null &&
-                    this.MysqlForwarding.Equals(input.MysqlForwarding))
-                ) && 
-                (
-                    this.InfluxdbForwarding == input.InfluxdbForwarding ||
-                    (this.InfluxdbForwarding != null &&
-                    this.InfluxdbForwarding.Equals(input.InfluxdbForwarding))
-                ) && 
-                (
-                    this.FunctiongraphForwarding == input.FunctiongraphForwarding ||
-                    (this.FunctiongraphForwarding != null &&
-                    this.FunctiongraphForwarding.Equals(input.FunctiongraphForwarding))
-                ) && 
-                (
-                    this.MrsKafkaForwarding == input.MrsKafkaForwarding ||
-                    (this.MrsKafkaForwarding != null &&
-                    this.MrsKafkaForwarding.Equals(input.MrsKafkaForwarding))
-                ) && 
-                (
-                    this.DmsRocketmqForwarding == input.DmsRocketmqForwarding ||
-                    (this.DmsRocketmqForwarding != null &&
-                    this.DmsRocketmqForwarding.Equals(input.DmsRocketmqForwarding))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,29 +142,18 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HttpForwarding != null)
-                    hashCode = hashCode * 59 + this.HttpForwarding.GetHashCode();
-                if (this.DisForwarding != null)
-                    hashCode = hashCode * 59 + this.DisForwarding.GetHashCode();
-                if (this.ObsForwarding != null)
-                    hashCode = hashCode * 59 + this.ObsForwarding.GetHashCode();
-                if (this.AmqpForwarding != null)
-                    hashCode = hashCode * 59 + this.AmqpForwarding.GetHashCode();
-                if (this.DmsKafkaForwarding != null)
-                    hashCode = hashCode * 59 + this.DmsKafkaForwarding.GetHashCode();
-                if (this.RomaForwarding != null)
-                    hashCode = hashCode * 59 + this.RomaForwarding.GetHashCode();
-                if (this.MysqlForwarding != null)
-                    hashCode = hashCode * 59 + this.MysqlForwarding.GetHashCode();
-                if (this.InfluxdbForwarding != null)
-                    hashCode = hashCode * 59 + this.InfluxdbForwarding.GetHashCode();
-                if (this.FunctiongraphForwarding != null)
-                    hashCode = hashCode * 59 + this.FunctiongraphForwarding.GetHashCode();
-                if (this.MrsKafkaForwarding != null)
-                    hashCode = hashCode * 59 + this.MrsKafkaForwarding.GetHashCode();
-                if (this.DmsRocketmqForwarding != null)
-                    hashCode = hashCode * 59 + this.DmsRocketmqForwarding.GetHashCode();
+                var hashCode = 41;
+                if (this.HttpForwarding != null) hashCode = hashCode * 59 + this.HttpForwarding.GetHashCode();
+                if (this.DisForwarding != null) hashCode = hashCode * 59 + this.DisForwarding.GetHashCode();
+                if (this.ObsForwarding != null) hashCode = hashCode * 59 + this.ObsForwarding.GetHashCode();
+                if (this.AmqpForwarding != null) hashCode = hashCode * 59 + this.AmqpForwarding.GetHashCode();
+                if (this.DmsKafkaForwarding != null) hashCode = hashCode * 59 + this.DmsKafkaForwarding.GetHashCode();
+                if (this.RomaForwarding != null) hashCode = hashCode * 59 + this.RomaForwarding.GetHashCode();
+                if (this.MysqlForwarding != null) hashCode = hashCode * 59 + this.MysqlForwarding.GetHashCode();
+                if (this.InfluxdbForwarding != null) hashCode = hashCode * 59 + this.InfluxdbForwarding.GetHashCode();
+                if (this.FunctiongraphForwarding != null) hashCode = hashCode * 59 + this.FunctiongraphForwarding.GetHashCode();
+                if (this.MrsKafkaForwarding != null) hashCode = hashCode * 59 + this.MrsKafkaForwarding.GetHashCode();
+                if (this.DmsRocketmqForwarding != null) hashCode = hashCode * 59 + this.DmsRocketmqForwarding.GetHashCode();
                 return hashCode;
             }
         }

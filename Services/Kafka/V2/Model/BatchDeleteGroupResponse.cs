@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(BatchDeleteGroupResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FailedGroups != input.FailedGroups || (this.FailedGroups != null && input.FailedGroups != null && !this.FailedGroups.SequenceEqual(input.FailedGroups))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
-            return 
-                (
-                    this.FailedGroups == input.FailedGroups ||
-                    this.FailedGroups != null &&
-                    input.FailedGroups != null &&
-                    this.FailedGroups.SequenceEqual(input.FailedGroups)
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FailedGroups != null)
-                    hashCode = hashCode * 59 + this.FailedGroups.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                var hashCode = 41;
+                if (this.FailedGroups != null) hashCode = hashCode * 59 + this.FailedGroups.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

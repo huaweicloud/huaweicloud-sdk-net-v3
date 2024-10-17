@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(AssociateServerVirtualIpRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Nic != input.Nic || (this.Nic != null && !this.Nic.Equals(input.Nic))) return false;
 
-            return 
-                (
-                    this.Nic == input.Nic ||
-                    (this.Nic != null &&
-                    this.Nic.Equals(input.Nic))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Nic != null)
-                    hashCode = hashCode * 59 + this.Nic.GetHashCode();
+                var hashCode = 41;
+                if (this.Nic != null) hashCode = hashCode * 59 + this.Nic.GetHashCode();
                 return hashCode;
             }
         }

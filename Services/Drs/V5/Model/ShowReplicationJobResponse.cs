@@ -119,65 +119,20 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ShowReplicationJobResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.FinishTime != input.FinishTime || (this.FinishTime != null && !this.FinishTime.Equals(input.FinishTime))) return false;
+            if (this.BackupInfo != input.BackupInfo || (this.BackupInfo != null && !this.BackupInfo.Equals(input.BackupInfo))) return false;
+            if (this.BaseInfo != input.BaseInfo || (this.BaseInfo != null && !this.BaseInfo.Equals(input.BaseInfo))) return false;
+            if (this.TargetDbInfo != input.TargetDbInfo || (this.TargetDbInfo != null && !this.TargetDbInfo.Equals(input.TargetDbInfo))) return false;
+            if (this.Options != input.Options || (this.Options != null && !this.Options.Equals(input.Options))) return false;
+            if (this.NewDbNames != input.NewDbNames || (this.NewDbNames != null && !this.NewDbNames.Equals(input.NewDbNames))) return false;
+            if (this.InstanceName != input.InstanceName || (this.InstanceName != null && !this.InstanceName.Equals(input.InstanceName))) return false;
+            if (this.ErrorLog != input.ErrorLog || (this.ErrorLog != null && !this.ErrorLog.Equals(input.ErrorLog))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.FinishTime == input.FinishTime ||
-                    (this.FinishTime != null &&
-                    this.FinishTime.Equals(input.FinishTime))
-                ) && 
-                (
-                    this.BackupInfo == input.BackupInfo ||
-                    (this.BackupInfo != null &&
-                    this.BackupInfo.Equals(input.BackupInfo))
-                ) && 
-                (
-                    this.BaseInfo == input.BaseInfo ||
-                    (this.BaseInfo != null &&
-                    this.BaseInfo.Equals(input.BaseInfo))
-                ) && 
-                (
-                    this.TargetDbInfo == input.TargetDbInfo ||
-                    (this.TargetDbInfo != null &&
-                    this.TargetDbInfo.Equals(input.TargetDbInfo))
-                ) && 
-                (
-                    this.Options == input.Options ||
-                    (this.Options != null &&
-                    this.Options.Equals(input.Options))
-                ) && 
-                (
-                    this.NewDbNames == input.NewDbNames ||
-                    (this.NewDbNames != null &&
-                    this.NewDbNames.Equals(input.NewDbNames))
-                ) && 
-                (
-                    this.InstanceName == input.InstanceName ||
-                    (this.InstanceName != null &&
-                    this.InstanceName.Equals(input.InstanceName))
-                ) && 
-                (
-                    this.ErrorLog == input.ErrorLog ||
-                    (this.ErrorLog != null &&
-                    this.ErrorLog.Equals(input.ErrorLog))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,29 +142,18 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.FinishTime != null)
-                    hashCode = hashCode * 59 + this.FinishTime.GetHashCode();
-                if (this.BackupInfo != null)
-                    hashCode = hashCode * 59 + this.BackupInfo.GetHashCode();
-                if (this.BaseInfo != null)
-                    hashCode = hashCode * 59 + this.BaseInfo.GetHashCode();
-                if (this.TargetDbInfo != null)
-                    hashCode = hashCode * 59 + this.TargetDbInfo.GetHashCode();
-                if (this.Options != null)
-                    hashCode = hashCode * 59 + this.Options.GetHashCode();
-                if (this.NewDbNames != null)
-                    hashCode = hashCode * 59 + this.NewDbNames.GetHashCode();
-                if (this.InstanceName != null)
-                    hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
-                if (this.ErrorLog != null)
-                    hashCode = hashCode * 59 + this.ErrorLog.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.FinishTime != null) hashCode = hashCode * 59 + this.FinishTime.GetHashCode();
+                if (this.BackupInfo != null) hashCode = hashCode * 59 + this.BackupInfo.GetHashCode();
+                if (this.BaseInfo != null) hashCode = hashCode * 59 + this.BaseInfo.GetHashCode();
+                if (this.TargetDbInfo != null) hashCode = hashCode * 59 + this.TargetDbInfo.GetHashCode();
+                if (this.Options != null) hashCode = hashCode * 59 + this.Options.GetHashCode();
+                if (this.NewDbNames != null) hashCode = hashCode * 59 + this.NewDbNames.GetHashCode();
+                if (this.InstanceName != null) hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
+                if (this.ErrorLog != null) hashCode = hashCode * 59 + this.ErrorLog.GetHashCode();
                 return hashCode;
             }
         }

@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(Path input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.AgentId != input.AgentId || (this.AgentId != null && !this.AgentId.Equals(input.AgentId))) return false;
+            if (this.DirPath != input.DirPath || (this.DirPath != null && !this.DirPath.Equals(input.DirPath))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.AgentId == input.AgentId ||
-                    (this.AgentId != null &&
-                    this.AgentId.Equals(input.AgentId))
-                ) && 
-                (
-                    this.DirPath == input.DirPath ||
-                    (this.DirPath != null &&
-                    this.DirPath.Equals(input.DirPath))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.AgentId != null)
-                    hashCode = hashCode * 59 + this.AgentId.GetHashCode();
-                if (this.DirPath != null)
-                    hashCode = hashCode * 59 + this.DirPath.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.AgentId != null) hashCode = hashCode * 59 + this.AgentId.GetHashCode();
+                if (this.DirPath != null) hashCode = hashCode * 59 + this.DirPath.GetHashCode();
                 return hashCode;
             }
         }

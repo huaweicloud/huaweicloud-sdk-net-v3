@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(Login input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SshKey != input.SshKey || (this.SshKey != null && !this.SshKey.Equals(input.SshKey))) return false;
+            if (this.UserPassword != input.UserPassword || (this.UserPassword != null && !this.UserPassword.Equals(input.UserPassword))) return false;
 
-            return 
-                (
-                    this.SshKey == input.SshKey ||
-                    (this.SshKey != null &&
-                    this.SshKey.Equals(input.SshKey))
-                ) && 
-                (
-                    this.UserPassword == input.UserPassword ||
-                    (this.UserPassword != null &&
-                    this.UserPassword.Equals(input.UserPassword))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SshKey != null)
-                    hashCode = hashCode * 59 + this.SshKey.GetHashCode();
-                if (this.UserPassword != null)
-                    hashCode = hashCode * 59 + this.UserPassword.GetHashCode();
+                var hashCode = 41;
+                if (this.SshKey != null) hashCode = hashCode * 59 + this.SshKey.GetHashCode();
+                if (this.UserPassword != null) hashCode = hashCode * 59 + this.UserPassword.GetHashCode();
                 return hashCode;
             }
         }

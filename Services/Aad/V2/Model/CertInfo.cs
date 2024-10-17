@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// </summary>
         public bool Equals(CertInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CertName != input.CertName || (this.CertName != null && !this.CertName.Equals(input.CertName))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.ApplyDomain != input.ApplyDomain || (this.ApplyDomain != null && !this.ApplyDomain.Equals(input.ApplyDomain))) return false;
+            if (this.ExpireTime != input.ExpireTime || (this.ExpireTime != null && !this.ExpireTime.Equals(input.ExpireTime))) return false;
+            if (this.ExpireStatus != input.ExpireStatus || (this.ExpireStatus != null && !this.ExpireStatus.Equals(input.ExpireStatus))) return false;
 
-            return 
-                (
-                    this.CertName == input.CertName ||
-                    (this.CertName != null &&
-                    this.CertName.Equals(input.CertName))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.ApplyDomain == input.ApplyDomain ||
-                    (this.ApplyDomain != null &&
-                    this.ApplyDomain.Equals(input.ApplyDomain))
-                ) && 
-                (
-                    this.ExpireTime == input.ExpireTime ||
-                    (this.ExpireTime != null &&
-                    this.ExpireTime.Equals(input.ExpireTime))
-                ) && 
-                (
-                    this.ExpireStatus == input.ExpireStatus ||
-                    (this.ExpireStatus != null &&
-                    this.ExpireStatus.Equals(input.ExpireStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CertName != null)
-                    hashCode = hashCode * 59 + this.CertName.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.ApplyDomain != null)
-                    hashCode = hashCode * 59 + this.ApplyDomain.GetHashCode();
-                if (this.ExpireTime != null)
-                    hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
-                if (this.ExpireStatus != null)
-                    hashCode = hashCode * 59 + this.ExpireStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.CertName != null) hashCode = hashCode * 59 + this.CertName.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.ApplyDomain != null) hashCode = hashCode * 59 + this.ApplyDomain.GetHashCode();
+                if (this.ExpireTime != null) hashCode = hashCode * 59 + this.ExpireTime.GetHashCode();
+                if (this.ExpireStatus != null) hashCode = hashCode * 59 + this.ExpireStatus.GetHashCode();
                 return hashCode;
             }
         }

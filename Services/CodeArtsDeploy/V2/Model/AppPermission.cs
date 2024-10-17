@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(AppPermission input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DevRoleId != input.DevRoleId || (this.DevRoleId != null && !this.DevRoleId.Equals(input.DevRoleId))) return false;
+            if (this.CanModify != input.CanModify || (this.CanModify != null && !this.CanModify.Equals(input.CanModify))) return false;
+            if (this.CanDelete != input.CanDelete || (this.CanDelete != null && !this.CanDelete.Equals(input.CanDelete))) return false;
+            if (this.CanView != input.CanView || (this.CanView != null && !this.CanView.Equals(input.CanView))) return false;
+            if (this.CanExecute != input.CanExecute || (this.CanExecute != null && !this.CanExecute.Equals(input.CanExecute))) return false;
+            if (this.CanCopy != input.CanCopy || (this.CanCopy != null && !this.CanCopy.Equals(input.CanCopy))) return false;
+            if (this.CanManage != input.CanManage || (this.CanManage != null && !this.CanManage.Equals(input.CanManage))) return false;
+            if (this.CanCreateEnv != input.CanCreateEnv || (this.CanCreateEnv != null && !this.CanCreateEnv.Equals(input.CanCreateEnv))) return false;
+            if (this.CanDisable != input.CanDisable || (this.CanDisable != null && !this.CanDisable.Equals(input.CanDisable))) return false;
 
-            return 
-                (
-                    this.DevRoleId == input.DevRoleId ||
-                    (this.DevRoleId != null &&
-                    this.DevRoleId.Equals(input.DevRoleId))
-                ) && 
-                (
-                    this.CanModify == input.CanModify ||
-                    (this.CanModify != null &&
-                    this.CanModify.Equals(input.CanModify))
-                ) && 
-                (
-                    this.CanDelete == input.CanDelete ||
-                    (this.CanDelete != null &&
-                    this.CanDelete.Equals(input.CanDelete))
-                ) && 
-                (
-                    this.CanView == input.CanView ||
-                    (this.CanView != null &&
-                    this.CanView.Equals(input.CanView))
-                ) && 
-                (
-                    this.CanExecute == input.CanExecute ||
-                    (this.CanExecute != null &&
-                    this.CanExecute.Equals(input.CanExecute))
-                ) && 
-                (
-                    this.CanCopy == input.CanCopy ||
-                    (this.CanCopy != null &&
-                    this.CanCopy.Equals(input.CanCopy))
-                ) && 
-                (
-                    this.CanManage == input.CanManage ||
-                    (this.CanManage != null &&
-                    this.CanManage.Equals(input.CanManage))
-                ) && 
-                (
-                    this.CanCreateEnv == input.CanCreateEnv ||
-                    (this.CanCreateEnv != null &&
-                    this.CanCreateEnv.Equals(input.CanCreateEnv))
-                ) && 
-                (
-                    this.CanDisable == input.CanDisable ||
-                    (this.CanDisable != null &&
-                    this.CanDisable.Equals(input.CanDisable))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DevRoleId != null)
-                    hashCode = hashCode * 59 + this.DevRoleId.GetHashCode();
-                if (this.CanModify != null)
-                    hashCode = hashCode * 59 + this.CanModify.GetHashCode();
-                if (this.CanDelete != null)
-                    hashCode = hashCode * 59 + this.CanDelete.GetHashCode();
-                if (this.CanView != null)
-                    hashCode = hashCode * 59 + this.CanView.GetHashCode();
-                if (this.CanExecute != null)
-                    hashCode = hashCode * 59 + this.CanExecute.GetHashCode();
-                if (this.CanCopy != null)
-                    hashCode = hashCode * 59 + this.CanCopy.GetHashCode();
-                if (this.CanManage != null)
-                    hashCode = hashCode * 59 + this.CanManage.GetHashCode();
-                if (this.CanCreateEnv != null)
-                    hashCode = hashCode * 59 + this.CanCreateEnv.GetHashCode();
-                if (this.CanDisable != null)
-                    hashCode = hashCode * 59 + this.CanDisable.GetHashCode();
+                var hashCode = 41;
+                if (this.DevRoleId != null) hashCode = hashCode * 59 + this.DevRoleId.GetHashCode();
+                if (this.CanModify != null) hashCode = hashCode * 59 + this.CanModify.GetHashCode();
+                if (this.CanDelete != null) hashCode = hashCode * 59 + this.CanDelete.GetHashCode();
+                if (this.CanView != null) hashCode = hashCode * 59 + this.CanView.GetHashCode();
+                if (this.CanExecute != null) hashCode = hashCode * 59 + this.CanExecute.GetHashCode();
+                if (this.CanCopy != null) hashCode = hashCode * 59 + this.CanCopy.GetHashCode();
+                if (this.CanManage != null) hashCode = hashCode * 59 + this.CanManage.GetHashCode();
+                if (this.CanCreateEnv != null) hashCode = hashCode * 59 + this.CanCreateEnv.GetHashCode();
+                if (this.CanDisable != null) hashCode = hashCode * 59 + this.CanDisable.GetHashCode();
                 return hashCode;
             }
         }

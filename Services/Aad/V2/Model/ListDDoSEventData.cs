@@ -119,65 +119,20 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// </summary>
         public bool Equals(ListDDoSEventData input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ZoneIp != input.ZoneIp || (this.ZoneIp != null && !this.ZoneIp.Equals(input.ZoneIp))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.MaxDropKbps != input.MaxDropKbps || (this.MaxDropKbps != null && !this.MaxDropKbps.Equals(input.MaxDropKbps))) return false;
+            if (this.MaxDropPps != input.MaxDropPps || (this.MaxDropPps != null && !this.MaxDropPps.Equals(input.MaxDropPps))) return false;
+            if (this.MaxInKbps != input.MaxInKbps || (this.MaxInKbps != null && !this.MaxInKbps.Equals(input.MaxInKbps))) return false;
+            if (this.MaxInPps != input.MaxInPps || (this.MaxInPps != null && !this.MaxInPps.Equals(input.MaxInPps))) return false;
+            if (this.AttackTypes != input.AttackTypes || (this.AttackTypes != null && !this.AttackTypes.Equals(input.AttackTypes))) return false;
+            if (this.AttackIps != input.AttackIps || (this.AttackIps != null && !this.AttackIps.Equals(input.AttackIps))) return false;
+            if (this.AttackIpsDesc != input.AttackIpsDesc || (this.AttackIpsDesc != null && !this.AttackIpsDesc.Equals(input.AttackIpsDesc))) return false;
+            if (this.AttackStatus != input.AttackStatus || (this.AttackStatus != null && !this.AttackStatus.Equals(input.AttackStatus))) return false;
 
-            return 
-                (
-                    this.ZoneIp == input.ZoneIp ||
-                    (this.ZoneIp != null &&
-                    this.ZoneIp.Equals(input.ZoneIp))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.MaxDropKbps == input.MaxDropKbps ||
-                    (this.MaxDropKbps != null &&
-                    this.MaxDropKbps.Equals(input.MaxDropKbps))
-                ) && 
-                (
-                    this.MaxDropPps == input.MaxDropPps ||
-                    (this.MaxDropPps != null &&
-                    this.MaxDropPps.Equals(input.MaxDropPps))
-                ) && 
-                (
-                    this.MaxInKbps == input.MaxInKbps ||
-                    (this.MaxInKbps != null &&
-                    this.MaxInKbps.Equals(input.MaxInKbps))
-                ) && 
-                (
-                    this.MaxInPps == input.MaxInPps ||
-                    (this.MaxInPps != null &&
-                    this.MaxInPps.Equals(input.MaxInPps))
-                ) && 
-                (
-                    this.AttackTypes == input.AttackTypes ||
-                    (this.AttackTypes != null &&
-                    this.AttackTypes.Equals(input.AttackTypes))
-                ) && 
-                (
-                    this.AttackIps == input.AttackIps ||
-                    (this.AttackIps != null &&
-                    this.AttackIps.Equals(input.AttackIps))
-                ) && 
-                (
-                    this.AttackIpsDesc == input.AttackIpsDesc ||
-                    (this.AttackIpsDesc != null &&
-                    this.AttackIpsDesc.Equals(input.AttackIpsDesc))
-                ) && 
-                (
-                    this.AttackStatus == input.AttackStatus ||
-                    (this.AttackStatus != null &&
-                    this.AttackStatus.Equals(input.AttackStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,29 +142,18 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ZoneIp != null)
-                    hashCode = hashCode * 59 + this.ZoneIp.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.MaxDropKbps != null)
-                    hashCode = hashCode * 59 + this.MaxDropKbps.GetHashCode();
-                if (this.MaxDropPps != null)
-                    hashCode = hashCode * 59 + this.MaxDropPps.GetHashCode();
-                if (this.MaxInKbps != null)
-                    hashCode = hashCode * 59 + this.MaxInKbps.GetHashCode();
-                if (this.MaxInPps != null)
-                    hashCode = hashCode * 59 + this.MaxInPps.GetHashCode();
-                if (this.AttackTypes != null)
-                    hashCode = hashCode * 59 + this.AttackTypes.GetHashCode();
-                if (this.AttackIps != null)
-                    hashCode = hashCode * 59 + this.AttackIps.GetHashCode();
-                if (this.AttackIpsDesc != null)
-                    hashCode = hashCode * 59 + this.AttackIpsDesc.GetHashCode();
-                if (this.AttackStatus != null)
-                    hashCode = hashCode * 59 + this.AttackStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.ZoneIp != null) hashCode = hashCode * 59 + this.ZoneIp.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.MaxDropKbps != null) hashCode = hashCode * 59 + this.MaxDropKbps.GetHashCode();
+                if (this.MaxDropPps != null) hashCode = hashCode * 59 + this.MaxDropPps.GetHashCode();
+                if (this.MaxInKbps != null) hashCode = hashCode * 59 + this.MaxInKbps.GetHashCode();
+                if (this.MaxInPps != null) hashCode = hashCode * 59 + this.MaxInPps.GetHashCode();
+                if (this.AttackTypes != null) hashCode = hashCode * 59 + this.AttackTypes.GetHashCode();
+                if (this.AttackIps != null) hashCode = hashCode * 59 + this.AttackIps.GetHashCode();
+                if (this.AttackIpsDesc != null) hashCode = hashCode * 59 + this.AttackIpsDesc.GetHashCode();
+                if (this.AttackStatus != null) hashCode = hashCode * 59 + this.AttackStatus.GetHashCode();
                 return hashCode;
             }
         }

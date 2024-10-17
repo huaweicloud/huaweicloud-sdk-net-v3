@@ -429,117 +429,30 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// </summary>
         public bool Equals(ShowGlobalEipSegment input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.AccessSite != input.AccessSite || (this.AccessSite != null && !this.AccessSite.Equals(input.AccessSite))) return false;
+            if (this.GeipPoolName != input.GeipPoolName || (this.GeipPoolName != null && !this.GeipPoolName.Equals(input.GeipPoolName))) return false;
+            if (this.Isp != input.Isp || (this.Isp != null && !this.Isp.Equals(input.Isp))) return false;
+            if (this.IpVersion != input.IpVersion) return false;
+            if (this.Cidr != input.Cidr || (this.Cidr != null && !this.Cidr.Equals(input.Cidr))) return false;
+            if (this.CidrV6 != input.CidrV6 || (this.CidrV6 != null && !this.CidrV6.Equals(input.CidrV6))) return false;
+            if (this.Freezen != input.Freezen || (this.Freezen != null && !this.Freezen.Equals(input.Freezen))) return false;
+            if (this.FreezenInfo != input.FreezenInfo || (this.FreezenInfo != null && !this.FreezenInfo.Equals(input.FreezenInfo))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.InternetBandwidth != input.InternetBandwidth || (this.InternetBandwidth != null && !this.InternetBandwidth.Equals(input.InternetBandwidth))) return false;
+            if (this.AssociateInstance != input.AssociateInstance || (this.AssociateInstance != null && !this.AssociateInstance.Equals(input.AssociateInstance))) return false;
+            if (this.IsPrePaid != input.IsPrePaid || (this.IsPrePaid != null && !this.IsPrePaid.Equals(input.IsPrePaid))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.SysTags != input.SysTags || (this.SysTags != null && input.SysTags != null && !this.SysTags.SequenceEqual(input.SysTags))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
-                    this.AccessSite == input.AccessSite ||
-                    (this.AccessSite != null &&
-                    this.AccessSite.Equals(input.AccessSite))
-                ) && 
-                (
-                    this.GeipPoolName == input.GeipPoolName ||
-                    (this.GeipPoolName != null &&
-                    this.GeipPoolName.Equals(input.GeipPoolName))
-                ) && 
-                (
-                    this.Isp == input.Isp ||
-                    (this.Isp != null &&
-                    this.Isp.Equals(input.Isp))
-                ) && 
-                (
-                    this.IpVersion == input.IpVersion ||
-                    (this.IpVersion != null &&
-                    this.IpVersion.Equals(input.IpVersion))
-                ) && 
-                (
-                    this.Cidr == input.Cidr ||
-                    (this.Cidr != null &&
-                    this.Cidr.Equals(input.Cidr))
-                ) && 
-                (
-                    this.CidrV6 == input.CidrV6 ||
-                    (this.CidrV6 != null &&
-                    this.CidrV6.Equals(input.CidrV6))
-                ) && 
-                (
-                    this.Freezen == input.Freezen ||
-                    (this.Freezen != null &&
-                    this.Freezen.Equals(input.Freezen))
-                ) && 
-                (
-                    this.FreezenInfo == input.FreezenInfo ||
-                    (this.FreezenInfo != null &&
-                    this.FreezenInfo.Equals(input.FreezenInfo))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.InternetBandwidth == input.InternetBandwidth ||
-                    (this.InternetBandwidth != null &&
-                    this.InternetBandwidth.Equals(input.InternetBandwidth))
-                ) && 
-                (
-                    this.AssociateInstance == input.AssociateInstance ||
-                    (this.AssociateInstance != null &&
-                    this.AssociateInstance.Equals(input.AssociateInstance))
-                ) && 
-                (
-                    this.IsPrePaid == input.IsPrePaid ||
-                    (this.IsPrePaid != null &&
-                    this.IsPrePaid.Equals(input.IsPrePaid))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.SysTags == input.SysTags ||
-                    this.SysTags != null &&
-                    input.SysTags != null &&
-                    this.SysTags.SequenceEqual(input.SysTags)
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -549,49 +462,28 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.AccessSite != null)
-                    hashCode = hashCode * 59 + this.AccessSite.GetHashCode();
-                if (this.GeipPoolName != null)
-                    hashCode = hashCode * 59 + this.GeipPoolName.GetHashCode();
-                if (this.Isp != null)
-                    hashCode = hashCode * 59 + this.Isp.GetHashCode();
-                if (this.IpVersion != null)
-                    hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
-                if (this.Cidr != null)
-                    hashCode = hashCode * 59 + this.Cidr.GetHashCode();
-                if (this.CidrV6 != null)
-                    hashCode = hashCode * 59 + this.CidrV6.GetHashCode();
-                if (this.Freezen != null)
-                    hashCode = hashCode * 59 + this.Freezen.GetHashCode();
-                if (this.FreezenInfo != null)
-                    hashCode = hashCode * 59 + this.FreezenInfo.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.InternetBandwidth != null)
-                    hashCode = hashCode * 59 + this.InternetBandwidth.GetHashCode();
-                if (this.AssociateInstance != null)
-                    hashCode = hashCode * 59 + this.AssociateInstance.GetHashCode();
-                if (this.IsPrePaid != null)
-                    hashCode = hashCode * 59 + this.IsPrePaid.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.SysTags != null)
-                    hashCode = hashCode * 59 + this.SysTags.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.AccessSite != null) hashCode = hashCode * 59 + this.AccessSite.GetHashCode();
+                if (this.GeipPoolName != null) hashCode = hashCode * 59 + this.GeipPoolName.GetHashCode();
+                if (this.Isp != null) hashCode = hashCode * 59 + this.Isp.GetHashCode();
+                hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
+                if (this.Cidr != null) hashCode = hashCode * 59 + this.Cidr.GetHashCode();
+                if (this.CidrV6 != null) hashCode = hashCode * 59 + this.CidrV6.GetHashCode();
+                if (this.Freezen != null) hashCode = hashCode * 59 + this.Freezen.GetHashCode();
+                if (this.FreezenInfo != null) hashCode = hashCode * 59 + this.FreezenInfo.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.InternetBandwidth != null) hashCode = hashCode * 59 + this.InternetBandwidth.GetHashCode();
+                if (this.AssociateInstance != null) hashCode = hashCode * 59 + this.AssociateInstance.GetHashCode();
+                if (this.IsPrePaid != null) hashCode = hashCode * 59 + this.IsPrePaid.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.SysTags != null) hashCode = hashCode * 59 + this.SysTags.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

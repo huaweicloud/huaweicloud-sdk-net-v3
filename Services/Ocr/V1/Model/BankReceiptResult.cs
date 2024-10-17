@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(BankReceiptResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BankReceiptCount != input.BankReceiptCount || (this.BankReceiptCount != null && !this.BankReceiptCount.Equals(input.BankReceiptCount))) return false;
+            if (this.BankReceiptList != input.BankReceiptList || (this.BankReceiptList != null && input.BankReceiptList != null && !this.BankReceiptList.SequenceEqual(input.BankReceiptList))) return false;
 
-            return 
-                (
-                    this.BankReceiptCount == input.BankReceiptCount ||
-                    (this.BankReceiptCount != null &&
-                    this.BankReceiptCount.Equals(input.BankReceiptCount))
-                ) && 
-                (
-                    this.BankReceiptList == input.BankReceiptList ||
-                    this.BankReceiptList != null &&
-                    input.BankReceiptList != null &&
-                    this.BankReceiptList.SequenceEqual(input.BankReceiptList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BankReceiptCount != null)
-                    hashCode = hashCode * 59 + this.BankReceiptCount.GetHashCode();
-                if (this.BankReceiptList != null)
-                    hashCode = hashCode * 59 + this.BankReceiptList.GetHashCode();
+                var hashCode = 41;
+                if (this.BankReceiptCount != null) hashCode = hashCode * 59 + this.BankReceiptCount.GetHashCode();
+                if (this.BankReceiptList != null) hashCode = hashCode * 59 + this.BankReceiptList.GetHashCode();
                 return hashCode;
             }
         }

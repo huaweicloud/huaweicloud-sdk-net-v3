@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(UpdateParamInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NodeType != input.NodeType || (this.NodeType != null && !this.NodeType.Equals(input.NodeType))) return false;
+            if (this.ParameterValues != input.ParameterValues || (this.ParameterValues != null && input.ParameterValues != null && !this.ParameterValues.SequenceEqual(input.ParameterValues))) return false;
 
-            return 
-                (
-                    this.NodeType == input.NodeType ||
-                    (this.NodeType != null &&
-                    this.NodeType.Equals(input.NodeType))
-                ) && 
-                (
-                    this.ParameterValues == input.ParameterValues ||
-                    this.ParameterValues != null &&
-                    input.ParameterValues != null &&
-                    this.ParameterValues.SequenceEqual(input.ParameterValues)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NodeType != null)
-                    hashCode = hashCode * 59 + this.NodeType.GetHashCode();
-                if (this.ParameterValues != null)
-                    hashCode = hashCode * 59 + this.ParameterValues.GetHashCode();
+                var hashCode = 41;
+                if (this.NodeType != null) hashCode = hashCode * 59 + this.NodeType.GetHashCode();
+                if (this.ParameterValues != null) hashCode = hashCode * 59 + this.ParameterValues.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(AgencyPolicyResource input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Uri != input.Uri || (this.Uri != null && input.Uri != null && !this.Uri.SequenceEqual(input.Uri))) return false;
 
-            return 
-                (
-                    this.Uri == input.Uri ||
-                    this.Uri != null &&
-                    input.Uri != null &&
-                    this.Uri.SequenceEqual(input.Uri)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Uri != null)
-                    hashCode = hashCode * 59 + this.Uri.GetHashCode();
+                var hashCode = 41;
+                if (this.Uri != null) hashCode = hashCode * 59 + this.Uri.GetHashCode();
                 return hashCode;
             }
         }

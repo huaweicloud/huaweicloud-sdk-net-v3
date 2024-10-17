@@ -198,42 +198,15 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(NovaCreateServersResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Links != input.Links || (this.Links != null && input.Links != null && !this.Links.SequenceEqual(input.Links))) return false;
+            if (this.SecurityGroups != input.SecurityGroups || (this.SecurityGroups != null && input.SecurityGroups != null && !this.SecurityGroups.SequenceEqual(input.SecurityGroups))) return false;
+            if (this.OSDCFdiskConfig != input.OSDCFdiskConfig) return false;
+            if (this.ReservationId != input.ReservationId || (this.ReservationId != null && !this.ReservationId.Equals(input.ReservationId))) return false;
+            if (this.AdminPass != input.AdminPass || (this.AdminPass != null && !this.AdminPass.Equals(input.AdminPass))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    this.Links != null &&
-                    input.Links != null &&
-                    this.Links.SequenceEqual(input.Links)
-                ) && 
-                (
-                    this.SecurityGroups == input.SecurityGroups ||
-                    this.SecurityGroups != null &&
-                    input.SecurityGroups != null &&
-                    this.SecurityGroups.SequenceEqual(input.SecurityGroups)
-                ) && 
-                (
-                    this.OSDCFdiskConfig == input.OSDCFdiskConfig ||
-                    (this.OSDCFdiskConfig != null &&
-                    this.OSDCFdiskConfig.Equals(input.OSDCFdiskConfig))
-                ) && 
-                (
-                    this.ReservationId == input.ReservationId ||
-                    (this.ReservationId != null &&
-                    this.ReservationId.Equals(input.ReservationId))
-                ) && 
-                (
-                    this.AdminPass == input.AdminPass ||
-                    (this.AdminPass != null &&
-                    this.AdminPass.Equals(input.AdminPass))
-                );
+            return true;
         }
 
         /// <summary>
@@ -243,19 +216,13 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Links != null)
-                    hashCode = hashCode * 59 + this.Links.GetHashCode();
-                if (this.SecurityGroups != null)
-                    hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
-                if (this.OSDCFdiskConfig != null)
-                    hashCode = hashCode * 59 + this.OSDCFdiskConfig.GetHashCode();
-                if (this.ReservationId != null)
-                    hashCode = hashCode * 59 + this.ReservationId.GetHashCode();
-                if (this.AdminPass != null)
-                    hashCode = hashCode * 59 + this.AdminPass.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Links != null) hashCode = hashCode * 59 + this.Links.GetHashCode();
+                if (this.SecurityGroups != null) hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
+                hashCode = hashCode * 59 + this.OSDCFdiskConfig.GetHashCode();
+                if (this.ReservationId != null) hashCode = hashCode * 59 + this.ReservationId.GetHashCode();
+                if (this.AdminPass != null) hashCode = hashCode * 59 + this.AdminPass.GetHashCode();
                 return hashCode;
             }
         }

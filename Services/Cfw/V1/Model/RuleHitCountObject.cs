@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(RuleHitCountObject input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RuleId != input.RuleId || (this.RuleId != null && !this.RuleId.Equals(input.RuleId))) return false;
+            if (this.RuleHitCount != input.RuleHitCount || (this.RuleHitCount != null && !this.RuleHitCount.Equals(input.RuleHitCount))) return false;
 
-            return 
-                (
-                    this.RuleId == input.RuleId ||
-                    (this.RuleId != null &&
-                    this.RuleId.Equals(input.RuleId))
-                ) && 
-                (
-                    this.RuleHitCount == input.RuleHitCount ||
-                    (this.RuleHitCount != null &&
-                    this.RuleHitCount.Equals(input.RuleHitCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RuleId != null)
-                    hashCode = hashCode * 59 + this.RuleId.GetHashCode();
-                if (this.RuleHitCount != null)
-                    hashCode = hashCode * 59 + this.RuleHitCount.GetHashCode();
+                var hashCode = 41;
+                if (this.RuleId != null) hashCode = hashCode * 59 + this.RuleId.GetHashCode();
+                if (this.RuleHitCount != null) hashCode = hashCode * 59 + this.RuleHitCount.GetHashCode();
                 return hashCode;
             }
         }

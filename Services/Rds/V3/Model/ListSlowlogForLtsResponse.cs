@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ListSlowlogForLtsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SlowLogList != input.SlowLogList || (this.SlowLogList != null && input.SlowLogList != null && !this.SlowLogList.SequenceEqual(input.SlowLogList))) return false;
+            if (this.LongQueryTime != input.LongQueryTime || (this.LongQueryTime != null && !this.LongQueryTime.Equals(input.LongQueryTime))) return false;
 
-            return 
-                (
-                    this.SlowLogList == input.SlowLogList ||
-                    this.SlowLogList != null &&
-                    input.SlowLogList != null &&
-                    this.SlowLogList.SequenceEqual(input.SlowLogList)
-                ) && 
-                (
-                    this.LongQueryTime == input.LongQueryTime ||
-                    (this.LongQueryTime != null &&
-                    this.LongQueryTime.Equals(input.LongQueryTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SlowLogList != null)
-                    hashCode = hashCode * 59 + this.SlowLogList.GetHashCode();
-                if (this.LongQueryTime != null)
-                    hashCode = hashCode * 59 + this.LongQueryTime.GetHashCode();
+                var hashCode = 41;
+                if (this.SlowLogList != null) hashCode = hashCode * 59 + this.SlowLogList.GetHashCode();
+                if (this.LongQueryTime != null) hashCode = hashCode * 59 + this.LongQueryTime.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         /// </summary>
         public bool Equals(DeleteRestInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Items != input.Items || (this.Items != null && input.Items != null && !this.Items.SequenceEqual(input.Items))) return false;
+            if (this.DeleteInfo != input.DeleteInfo || (this.DeleteInfo != null && !this.DeleteInfo.Equals(input.DeleteInfo))) return false;
 
-            return 
-                (
-                    this.Items == input.Items ||
-                    this.Items != null &&
-                    input.Items != null &&
-                    this.Items.SequenceEqual(input.Items)
-                ) && 
-                (
-                    this.DeleteInfo == input.DeleteInfo ||
-                    (this.DeleteInfo != null &&
-                    this.DeleteInfo.Equals(input.DeleteInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Items != null)
-                    hashCode = hashCode * 59 + this.Items.GetHashCode();
-                if (this.DeleteInfo != null)
-                    hashCode = hashCode * 59 + this.DeleteInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.Items != null) hashCode = hashCode * 59 + this.Items.GetHashCode();
+                if (this.DeleteInfo != null) hashCode = hashCode * 59 + this.DeleteInfo.GetHashCode();
                 return hashCode;
             }
         }

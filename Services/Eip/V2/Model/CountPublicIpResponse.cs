@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// </summary>
         public bool Equals(CountPublicIpResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ElasticipSize != input.ElasticipSize || (this.ElasticipSize != null && !this.ElasticipSize.Equals(input.ElasticipSize))) return false;
 
-            return 
-                (
-                    this.ElasticipSize == input.ElasticipSize ||
-                    (this.ElasticipSize != null &&
-                    this.ElasticipSize.Equals(input.ElasticipSize))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ElasticipSize != null)
-                    hashCode = hashCode * 59 + this.ElasticipSize.GetHashCode();
+                var hashCode = 41;
+                if (this.ElasticipSize != null) hashCode = hashCode * 59 + this.ElasticipSize.GetHashCode();
                 return hashCode;
             }
         }

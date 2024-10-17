@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(ModifyVolumeQoSOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Iops != input.Iops || (this.Iops != null && !this.Iops.Equals(input.Iops))) return false;
+            if (this.Throughput != input.Throughput || (this.Throughput != null && !this.Throughput.Equals(input.Throughput))) return false;
 
-            return 
-                (
-                    this.Iops == input.Iops ||
-                    (this.Iops != null &&
-                    this.Iops.Equals(input.Iops))
-                ) && 
-                (
-                    this.Throughput == input.Throughput ||
-                    (this.Throughput != null &&
-                    this.Throughput.Equals(input.Throughput))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Iops != null)
-                    hashCode = hashCode * 59 + this.Iops.GetHashCode();
-                if (this.Throughput != null)
-                    hashCode = hashCode * 59 + this.Throughput.GetHashCode();
+                var hashCode = 41;
+                if (this.Iops != null) hashCode = hashCode * 59 + this.Iops.GetHashCode();
+                if (this.Throughput != null) hashCode = hashCode * 59 + this.Throughput.GetHashCode();
                 return hashCode;
             }
         }

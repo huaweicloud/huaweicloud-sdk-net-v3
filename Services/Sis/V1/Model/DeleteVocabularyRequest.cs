@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         /// </summary>
         public bool Equals(DeleteVocabularyRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VocabularyId != input.VocabularyId || (this.VocabularyId != null && !this.VocabularyId.Equals(input.VocabularyId))) return false;
 
-            return 
-                (
-                    this.VocabularyId == input.VocabularyId ||
-                    (this.VocabularyId != null &&
-                    this.VocabularyId.Equals(input.VocabularyId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VocabularyId != null)
-                    hashCode = hashCode * 59 + this.VocabularyId.GetHashCode();
+                var hashCode = 41;
+                if (this.VocabularyId != null) hashCode = hashCode * 59 + this.VocabularyId.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ValidateWeakPasswordResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IsWeakPassword != input.IsWeakPassword || (this.IsWeakPassword != null && !this.IsWeakPassword.Equals(input.IsWeakPassword))) return false;
 
-            return 
-                (
-                    this.IsWeakPassword == input.IsWeakPassword ||
-                    (this.IsWeakPassword != null &&
-                    this.IsWeakPassword.Equals(input.IsWeakPassword))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IsWeakPassword != null)
-                    hashCode = hashCode * 59 + this.IsWeakPassword.GetHashCode();
+                var hashCode = 41;
+                if (this.IsWeakPassword != null) hashCode = hashCode * 59 + this.IsWeakPassword.GetHashCode();
                 return hashCode;
             }
         }

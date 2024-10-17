@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(ListDataCompareDetailResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
+            if (this.TableLineCompareResultInfos != input.TableLineCompareResultInfos || (this.TableLineCompareResultInfos != null && input.TableLineCompareResultInfos != null && !this.TableLineCompareResultInfos.SequenceEqual(input.TableLineCompareResultInfos))) return false;
 
-            return 
-                (
-                    this.TotalCount == input.TotalCount ||
-                    (this.TotalCount != null &&
-                    this.TotalCount.Equals(input.TotalCount))
-                ) && 
-                (
-                    this.TableLineCompareResultInfos == input.TableLineCompareResultInfos ||
-                    this.TableLineCompareResultInfos != null &&
-                    input.TableLineCompareResultInfos != null &&
-                    this.TableLineCompareResultInfos.SequenceEqual(input.TableLineCompareResultInfos)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TotalCount != null)
-                    hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
-                if (this.TableLineCompareResultInfos != null)
-                    hashCode = hashCode * 59 + this.TableLineCompareResultInfos.GetHashCode();
+                var hashCode = 41;
+                if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
+                if (this.TableLineCompareResultInfos != null) hashCode = hashCode * 59 + this.TableLineCompareResultInfos.GetHashCode();
                 return hashCode;
             }
         }

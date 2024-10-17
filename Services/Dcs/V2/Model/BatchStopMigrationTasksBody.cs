@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(BatchStopMigrationTasksBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MigrationTasks != input.MigrationTasks || (this.MigrationTasks != null && input.MigrationTasks != null && !this.MigrationTasks.SequenceEqual(input.MigrationTasks))) return false;
 
-            return 
-                (
-                    this.MigrationTasks == input.MigrationTasks ||
-                    this.MigrationTasks != null &&
-                    input.MigrationTasks != null &&
-                    this.MigrationTasks.SequenceEqual(input.MigrationTasks)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MigrationTasks != null)
-                    hashCode = hashCode * 59 + this.MigrationTasks.GetHashCode();
+                var hashCode = 41;
+                if (this.MigrationTasks != null) hashCode = hashCode * 59 + this.MigrationTasks.GetHashCode();
                 return hashCode;
             }
         }

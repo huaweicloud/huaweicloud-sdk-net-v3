@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ParamGroupParameterDifferences input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ParameterName != input.ParameterName || (this.ParameterName != null && !this.ParameterName.Equals(input.ParameterName))) return false;
+            if (this.SourceValue != input.SourceValue || (this.SourceValue != null && !this.SourceValue.Equals(input.SourceValue))) return false;
+            if (this.TargetValue != input.TargetValue || (this.TargetValue != null && !this.TargetValue.Equals(input.TargetValue))) return false;
 
-            return 
-                (
-                    this.ParameterName == input.ParameterName ||
-                    (this.ParameterName != null &&
-                    this.ParameterName.Equals(input.ParameterName))
-                ) && 
-                (
-                    this.SourceValue == input.SourceValue ||
-                    (this.SourceValue != null &&
-                    this.SourceValue.Equals(input.SourceValue))
-                ) && 
-                (
-                    this.TargetValue == input.TargetValue ||
-                    (this.TargetValue != null &&
-                    this.TargetValue.Equals(input.TargetValue))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ParameterName != null)
-                    hashCode = hashCode * 59 + this.ParameterName.GetHashCode();
-                if (this.SourceValue != null)
-                    hashCode = hashCode * 59 + this.SourceValue.GetHashCode();
-                if (this.TargetValue != null)
-                    hashCode = hashCode * 59 + this.TargetValue.GetHashCode();
+                var hashCode = 41;
+                if (this.ParameterName != null) hashCode = hashCode * 59 + this.ParameterName.GetHashCode();
+                if (this.SourceValue != null) hashCode = hashCode * 59 + this.SourceValue.GetHashCode();
+                if (this.TargetValue != null) hashCode = hashCode * 59 + this.TargetValue.GetHashCode();
                 return hashCode;
             }
         }

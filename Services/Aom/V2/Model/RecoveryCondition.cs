@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(RecoveryCondition input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RecoveryTimeframe != input.RecoveryTimeframe || (this.RecoveryTimeframe != null && !this.RecoveryTimeframe.Equals(input.RecoveryTimeframe))) return false;
 
-            return 
-                (
-                    this.RecoveryTimeframe == input.RecoveryTimeframe ||
-                    (this.RecoveryTimeframe != null &&
-                    this.RecoveryTimeframe.Equals(input.RecoveryTimeframe))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RecoveryTimeframe != null)
-                    hashCode = hashCode * 59 + this.RecoveryTimeframe.GetHashCode();
+                var hashCode = 41;
+                if (this.RecoveryTimeframe != null) hashCode = hashCode * 59 + this.RecoveryTimeframe.GetHashCode();
                 return hashCode;
             }
         }

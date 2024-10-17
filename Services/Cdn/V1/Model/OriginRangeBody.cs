@@ -170,20 +170,11 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(OriginRangeBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RangeStatus != input.RangeStatus) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
 
-            return 
-                (
-                    this.RangeStatus == input.RangeStatus ||
-                    (this.RangeStatus != null &&
-                    this.RangeStatus.Equals(input.RangeStatus))
-                ) && 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -193,11 +184,9 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RangeStatus != null)
-                    hashCode = hashCode * 59 + this.RangeStatus.GetHashCode();
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.RangeStatus.GetHashCode();
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
                 return hashCode;
             }
         }

@@ -176,20 +176,11 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(AudioProcess input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Volume != input.Volume) return false;
+            if (this.VolumeExpr != input.VolumeExpr || (this.VolumeExpr != null && !this.VolumeExpr.Equals(input.VolumeExpr))) return false;
 
-            return 
-                (
-                    this.Volume == input.Volume ||
-                    (this.Volume != null &&
-                    this.Volume.Equals(input.Volume))
-                ) && 
-                (
-                    this.VolumeExpr == input.VolumeExpr ||
-                    (this.VolumeExpr != null &&
-                    this.VolumeExpr.Equals(input.VolumeExpr))
-                );
+            return true;
         }
 
         /// <summary>
@@ -199,11 +190,9 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Volume != null)
-                    hashCode = hashCode * 59 + this.Volume.GetHashCode();
-                if (this.VolumeExpr != null)
-                    hashCode = hashCode * 59 + this.VolumeExpr.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Volume.GetHashCode();
+                if (this.VolumeExpr != null) hashCode = hashCode * 59 + this.VolumeExpr.GetHashCode();
                 return hashCode;
             }
         }

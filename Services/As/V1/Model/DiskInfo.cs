@@ -369,55 +369,18 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(DiskInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.VolumeType != input.VolumeType) return false;
+            if (this.DiskType != input.DiskType) return false;
+            if (this.DedicatedStorageId != input.DedicatedStorageId || (this.DedicatedStorageId != null && !this.DedicatedStorageId.Equals(input.DedicatedStorageId))) return false;
+            if (this.DataDiskImageId != input.DataDiskImageId || (this.DataDiskImageId != null && !this.DataDiskImageId.Equals(input.DataDiskImageId))) return false;
+            if (this.SnapshotId != input.SnapshotId || (this.SnapshotId != null && !this.SnapshotId.Equals(input.SnapshotId))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && !this.Metadata.Equals(input.Metadata))) return false;
+            if (this.Iops != input.Iops || (this.Iops != null && !this.Iops.Equals(input.Iops))) return false;
+            if (this.Throughput != input.Throughput || (this.Throughput != null && !this.Throughput.Equals(input.Throughput))) return false;
 
-            return 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.VolumeType == input.VolumeType ||
-                    (this.VolumeType != null &&
-                    this.VolumeType.Equals(input.VolumeType))
-                ) && 
-                (
-                    this.DiskType == input.DiskType ||
-                    (this.DiskType != null &&
-                    this.DiskType.Equals(input.DiskType))
-                ) && 
-                (
-                    this.DedicatedStorageId == input.DedicatedStorageId ||
-                    (this.DedicatedStorageId != null &&
-                    this.DedicatedStorageId.Equals(input.DedicatedStorageId))
-                ) && 
-                (
-                    this.DataDiskImageId == input.DataDiskImageId ||
-                    (this.DataDiskImageId != null &&
-                    this.DataDiskImageId.Equals(input.DataDiskImageId))
-                ) && 
-                (
-                    this.SnapshotId == input.SnapshotId ||
-                    (this.SnapshotId != null &&
-                    this.SnapshotId.Equals(input.SnapshotId))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    (this.Metadata != null &&
-                    this.Metadata.Equals(input.Metadata))
-                ) && 
-                (
-                    this.Iops == input.Iops ||
-                    (this.Iops != null &&
-                    this.Iops.Equals(input.Iops))
-                ) && 
-                (
-                    this.Throughput == input.Throughput ||
-                    (this.Throughput != null &&
-                    this.Throughput.Equals(input.Throughput))
-                );
+            return true;
         }
 
         /// <summary>
@@ -427,25 +390,16 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.VolumeType != null)
-                    hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
-                if (this.DiskType != null)
-                    hashCode = hashCode * 59 + this.DiskType.GetHashCode();
-                if (this.DedicatedStorageId != null)
-                    hashCode = hashCode * 59 + this.DedicatedStorageId.GetHashCode();
-                if (this.DataDiskImageId != null)
-                    hashCode = hashCode * 59 + this.DataDiskImageId.GetHashCode();
-                if (this.SnapshotId != null)
-                    hashCode = hashCode * 59 + this.SnapshotId.GetHashCode();
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
-                if (this.Iops != null)
-                    hashCode = hashCode * 59 + this.Iops.GetHashCode();
-                if (this.Throughput != null)
-                    hashCode = hashCode * 59 + this.Throughput.GetHashCode();
+                var hashCode = 41;
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
+                hashCode = hashCode * 59 + this.DiskType.GetHashCode();
+                if (this.DedicatedStorageId != null) hashCode = hashCode * 59 + this.DedicatedStorageId.GetHashCode();
+                if (this.DataDiskImageId != null) hashCode = hashCode * 59 + this.DataDiskImageId.GetHashCode();
+                if (this.SnapshotId != null) hashCode = hashCode * 59 + this.SnapshotId.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                if (this.Iops != null) hashCode = hashCode * 59 + this.Iops.GetHashCode();
+                if (this.Throughput != null) hashCode = hashCode * 59 + this.Throughput.GetHashCode();
                 return hashCode;
             }
         }

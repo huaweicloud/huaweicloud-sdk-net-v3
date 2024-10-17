@@ -216,40 +216,15 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(ListScalingGroupsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ScalingGroupName != input.ScalingGroupName || (this.ScalingGroupName != null && !this.ScalingGroupName.Equals(input.ScalingGroupName))) return false;
+            if (this.ScalingConfigurationId != input.ScalingConfigurationId || (this.ScalingConfigurationId != null && !this.ScalingConfigurationId.Equals(input.ScalingConfigurationId))) return false;
+            if (this.ScalingGroupStatus != input.ScalingGroupStatus) return false;
+            if (this.StartNumber != input.StartNumber || (this.StartNumber != null && !this.StartNumber.Equals(input.StartNumber))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
-            return 
-                (
-                    this.ScalingGroupName == input.ScalingGroupName ||
-                    (this.ScalingGroupName != null &&
-                    this.ScalingGroupName.Equals(input.ScalingGroupName))
-                ) && 
-                (
-                    this.ScalingConfigurationId == input.ScalingConfigurationId ||
-                    (this.ScalingConfigurationId != null &&
-                    this.ScalingConfigurationId.Equals(input.ScalingConfigurationId))
-                ) && 
-                (
-                    this.ScalingGroupStatus == input.ScalingGroupStatus ||
-                    (this.ScalingGroupStatus != null &&
-                    this.ScalingGroupStatus.Equals(input.ScalingGroupStatus))
-                ) && 
-                (
-                    this.StartNumber == input.StartNumber ||
-                    (this.StartNumber != null &&
-                    this.StartNumber.Equals(input.StartNumber))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -259,19 +234,13 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ScalingGroupName != null)
-                    hashCode = hashCode * 59 + this.ScalingGroupName.GetHashCode();
-                if (this.ScalingConfigurationId != null)
-                    hashCode = hashCode * 59 + this.ScalingConfigurationId.GetHashCode();
-                if (this.ScalingGroupStatus != null)
-                    hashCode = hashCode * 59 + this.ScalingGroupStatus.GetHashCode();
-                if (this.StartNumber != null)
-                    hashCode = hashCode * 59 + this.StartNumber.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                var hashCode = 41;
+                if (this.ScalingGroupName != null) hashCode = hashCode * 59 + this.ScalingGroupName.GetHashCode();
+                if (this.ScalingConfigurationId != null) hashCode = hashCode * 59 + this.ScalingConfigurationId.GetHashCode();
+                hashCode = hashCode * 59 + this.ScalingGroupStatus.GetHashCode();
+                if (this.StartNumber != null) hashCode = hashCode * 59 + this.StartNumber.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

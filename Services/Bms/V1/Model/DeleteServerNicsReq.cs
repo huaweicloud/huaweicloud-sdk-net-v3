@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(DeleteServerNicsReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Nics != input.Nics || (this.Nics != null && input.Nics != null && !this.Nics.SequenceEqual(input.Nics))) return false;
 
-            return 
-                (
-                    this.Nics == input.Nics ||
-                    this.Nics != null &&
-                    input.Nics != null &&
-                    this.Nics.SequenceEqual(input.Nics)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Nics != null)
-                    hashCode = hashCode * 59 + this.Nics.GetHashCode();
+                var hashCode = 41;
+                if (this.Nics != null) hashCode = hashCode * 59 + this.Nics.GetHashCode();
                 return hashCode;
             }
         }

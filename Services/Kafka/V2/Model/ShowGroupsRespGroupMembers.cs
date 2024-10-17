@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ShowGroupsRespGroupMembers input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Host != input.Host || (this.Host != null && !this.Host.Equals(input.Host))) return false;
+            if (this.Assignment != input.Assignment || (this.Assignment != null && input.Assignment != null && !this.Assignment.SequenceEqual(input.Assignment))) return false;
+            if (this.MemberId != input.MemberId || (this.MemberId != null && !this.MemberId.Equals(input.MemberId))) return false;
+            if (this.ClientId != input.ClientId || (this.ClientId != null && !this.ClientId.Equals(input.ClientId))) return false;
 
-            return 
-                (
-                    this.Host == input.Host ||
-                    (this.Host != null &&
-                    this.Host.Equals(input.Host))
-                ) && 
-                (
-                    this.Assignment == input.Assignment ||
-                    this.Assignment != null &&
-                    input.Assignment != null &&
-                    this.Assignment.SequenceEqual(input.Assignment)
-                ) && 
-                (
-                    this.MemberId == input.MemberId ||
-                    (this.MemberId != null &&
-                    this.MemberId.Equals(input.MemberId))
-                ) && 
-                (
-                    this.ClientId == input.ClientId ||
-                    (this.ClientId != null &&
-                    this.ClientId.Equals(input.ClientId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Host != null)
-                    hashCode = hashCode * 59 + this.Host.GetHashCode();
-                if (this.Assignment != null)
-                    hashCode = hashCode * 59 + this.Assignment.GetHashCode();
-                if (this.MemberId != null)
-                    hashCode = hashCode * 59 + this.MemberId.GetHashCode();
-                if (this.ClientId != null)
-                    hashCode = hashCode * 59 + this.ClientId.GetHashCode();
+                var hashCode = 41;
+                if (this.Host != null) hashCode = hashCode * 59 + this.Host.GetHashCode();
+                if (this.Assignment != null) hashCode = hashCode * 59 + this.Assignment.GetHashCode();
+                if (this.MemberId != null) hashCode = hashCode * 59 + this.MemberId.GetHashCode();
+                if (this.ClientId != null) hashCode = hashCode * 59 + this.ClientId.GetHashCode();
                 return hashCode;
             }
         }

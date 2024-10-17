@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Demo.V1.Model
         /// </summary>
         public bool Equals(CreateDemoResourceRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OnlyOneValue != input.OnlyOneValue || (this.OnlyOneValue != null && !this.OnlyOneValue.Equals(input.OnlyOneValue))) return false;
+            if (this.TwoValue != input.TwoValue || (this.TwoValue != null && !this.TwoValue.Equals(input.TwoValue))) return false;
+            if (this.ThreeValue != input.ThreeValue || (this.ThreeValue != null && !this.ThreeValue.Equals(input.ThreeValue))) return false;
 
-            return 
-                (
-                    this.OnlyOneValue == input.OnlyOneValue ||
-                    (this.OnlyOneValue != null &&
-                    this.OnlyOneValue.Equals(input.OnlyOneValue))
-                ) && 
-                (
-                    this.TwoValue == input.TwoValue ||
-                    (this.TwoValue != null &&
-                    this.TwoValue.Equals(input.TwoValue))
-                ) && 
-                (
-                    this.ThreeValue == input.ThreeValue ||
-                    (this.ThreeValue != null &&
-                    this.ThreeValue.Equals(input.ThreeValue))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Demo.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OnlyOneValue != null)
-                    hashCode = hashCode * 59 + this.OnlyOneValue.GetHashCode();
-                if (this.TwoValue != null)
-                    hashCode = hashCode * 59 + this.TwoValue.GetHashCode();
-                if (this.ThreeValue != null)
-                    hashCode = hashCode * 59 + this.ThreeValue.GetHashCode();
+                var hashCode = 41;
+                if (this.OnlyOneValue != null) hashCode = hashCode * 59 + this.OnlyOneValue.GetHashCode();
+                if (this.TwoValue != null) hashCode = hashCode * 59 + this.TwoValue.GetHashCode();
+                if (this.ThreeValue != null) hashCode = hashCode * 59 + this.ThreeValue.GetHashCode();
                 return hashCode;
             }
         }

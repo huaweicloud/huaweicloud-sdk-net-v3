@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(QuotaInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.QuotaKey != input.QuotaKey || (this.QuotaKey != null && !this.QuotaKey.Equals(input.QuotaKey))) return false;
+            if (this.QuotaLimit != input.QuotaLimit || (this.QuotaLimit != null && !this.QuotaLimit.Equals(input.QuotaLimit))) return false;
+            if (this.Used != input.Used || (this.Used != null && !this.Used.Equals(input.Used))) return false;
+            if (this.Unit != input.Unit || (this.Unit != null && !this.Unit.Equals(input.Unit))) return false;
 
-            return 
-                (
-                    this.QuotaKey == input.QuotaKey ||
-                    (this.QuotaKey != null &&
-                    this.QuotaKey.Equals(input.QuotaKey))
-                ) && 
-                (
-                    this.QuotaLimit == input.QuotaLimit ||
-                    (this.QuotaLimit != null &&
-                    this.QuotaLimit.Equals(input.QuotaLimit))
-                ) && 
-                (
-                    this.Used == input.Used ||
-                    (this.Used != null &&
-                    this.Used.Equals(input.Used))
-                ) && 
-                (
-                    this.Unit == input.Unit ||
-                    (this.Unit != null &&
-                    this.Unit.Equals(input.Unit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.QuotaKey != null)
-                    hashCode = hashCode * 59 + this.QuotaKey.GetHashCode();
-                if (this.QuotaLimit != null)
-                    hashCode = hashCode * 59 + this.QuotaLimit.GetHashCode();
-                if (this.Used != null)
-                    hashCode = hashCode * 59 + this.Used.GetHashCode();
-                if (this.Unit != null)
-                    hashCode = hashCode * 59 + this.Unit.GetHashCode();
+                var hashCode = 41;
+                if (this.QuotaKey != null) hashCode = hashCode * 59 + this.QuotaKey.GetHashCode();
+                if (this.QuotaLimit != null) hashCode = hashCode * 59 + this.QuotaLimit.GetHashCode();
+                if (this.Used != null) hashCode = hashCode * 59 + this.Used.GetHashCode();
+                if (this.Unit != null) hashCode = hashCode * 59 + this.Unit.GetHashCode();
                 return hashCode;
             }
         }

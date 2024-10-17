@@ -98,56 +98,17 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(CompareResultInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ObjectsCompareOverviewInfo != input.ObjectsCompareOverviewInfo || (this.ObjectsCompareOverviewInfo != null && !this.ObjectsCompareOverviewInfo.Equals(input.ObjectsCompareOverviewInfo))) return false;
+            if (this.ObjectsCompareDetailInfos != input.ObjectsCompareDetailInfos || (this.ObjectsCompareDetailInfos != null && input.ObjectsCompareDetailInfos != null && !this.ObjectsCompareDetailInfos.SequenceEqual(input.ObjectsCompareDetailInfos))) return false;
+            if (this.DataCompareTaskList != input.DataCompareTaskList || (this.DataCompareTaskList != null && input.DataCompareTaskList != null && !this.DataCompareTaskList.SequenceEqual(input.DataCompareTaskList))) return false;
+            if (this.LineCompareOverviewInfos != input.LineCompareOverviewInfos || (this.LineCompareOverviewInfos != null && input.LineCompareOverviewInfos != null && !this.LineCompareOverviewInfos.SequenceEqual(input.LineCompareOverviewInfos))) return false;
+            if (this.LineCompareDetailInfos != input.LineCompareDetailInfos || (this.LineCompareDetailInfos != null && input.LineCompareDetailInfos != null && !this.LineCompareDetailInfos.SequenceEqual(input.LineCompareDetailInfos))) return false;
+            if (this.ContentCompareOverviewInfos != input.ContentCompareOverviewInfos || (this.ContentCompareOverviewInfos != null && input.ContentCompareOverviewInfos != null && !this.ContentCompareOverviewInfos.SequenceEqual(input.ContentCompareOverviewInfos))) return false;
+            if (this.ContentCompareDetailInfos != input.ContentCompareDetailInfos || (this.ContentCompareDetailInfos != null && input.ContentCompareDetailInfos != null && !this.ContentCompareDetailInfos.SequenceEqual(input.ContentCompareDetailInfos))) return false;
+            if (this.ContentDiffDetailInfo != input.ContentDiffDetailInfo || (this.ContentDiffDetailInfo != null && !this.ContentDiffDetailInfo.Equals(input.ContentDiffDetailInfo))) return false;
 
-            return 
-                (
-                    this.ObjectsCompareOverviewInfo == input.ObjectsCompareOverviewInfo ||
-                    (this.ObjectsCompareOverviewInfo != null &&
-                    this.ObjectsCompareOverviewInfo.Equals(input.ObjectsCompareOverviewInfo))
-                ) && 
-                (
-                    this.ObjectsCompareDetailInfos == input.ObjectsCompareDetailInfos ||
-                    this.ObjectsCompareDetailInfos != null &&
-                    input.ObjectsCompareDetailInfos != null &&
-                    this.ObjectsCompareDetailInfos.SequenceEqual(input.ObjectsCompareDetailInfos)
-                ) && 
-                (
-                    this.DataCompareTaskList == input.DataCompareTaskList ||
-                    this.DataCompareTaskList != null &&
-                    input.DataCompareTaskList != null &&
-                    this.DataCompareTaskList.SequenceEqual(input.DataCompareTaskList)
-                ) && 
-                (
-                    this.LineCompareOverviewInfos == input.LineCompareOverviewInfos ||
-                    this.LineCompareOverviewInfos != null &&
-                    input.LineCompareOverviewInfos != null &&
-                    this.LineCompareOverviewInfos.SequenceEqual(input.LineCompareOverviewInfos)
-                ) && 
-                (
-                    this.LineCompareDetailInfos == input.LineCompareDetailInfos ||
-                    this.LineCompareDetailInfos != null &&
-                    input.LineCompareDetailInfos != null &&
-                    this.LineCompareDetailInfos.SequenceEqual(input.LineCompareDetailInfos)
-                ) && 
-                (
-                    this.ContentCompareOverviewInfos == input.ContentCompareOverviewInfos ||
-                    this.ContentCompareOverviewInfos != null &&
-                    input.ContentCompareOverviewInfos != null &&
-                    this.ContentCompareOverviewInfos.SequenceEqual(input.ContentCompareOverviewInfos)
-                ) && 
-                (
-                    this.ContentCompareDetailInfos == input.ContentCompareDetailInfos ||
-                    this.ContentCompareDetailInfos != null &&
-                    input.ContentCompareDetailInfos != null &&
-                    this.ContentCompareDetailInfos.SequenceEqual(input.ContentCompareDetailInfos)
-                ) && 
-                (
-                    this.ContentDiffDetailInfo == input.ContentDiffDetailInfo ||
-                    (this.ContentDiffDetailInfo != null &&
-                    this.ContentDiffDetailInfo.Equals(input.ContentDiffDetailInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -157,23 +118,15 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ObjectsCompareOverviewInfo != null)
-                    hashCode = hashCode * 59 + this.ObjectsCompareOverviewInfo.GetHashCode();
-                if (this.ObjectsCompareDetailInfos != null)
-                    hashCode = hashCode * 59 + this.ObjectsCompareDetailInfos.GetHashCode();
-                if (this.DataCompareTaskList != null)
-                    hashCode = hashCode * 59 + this.DataCompareTaskList.GetHashCode();
-                if (this.LineCompareOverviewInfos != null)
-                    hashCode = hashCode * 59 + this.LineCompareOverviewInfos.GetHashCode();
-                if (this.LineCompareDetailInfos != null)
-                    hashCode = hashCode * 59 + this.LineCompareDetailInfos.GetHashCode();
-                if (this.ContentCompareOverviewInfos != null)
-                    hashCode = hashCode * 59 + this.ContentCompareOverviewInfos.GetHashCode();
-                if (this.ContentCompareDetailInfos != null)
-                    hashCode = hashCode * 59 + this.ContentCompareDetailInfos.GetHashCode();
-                if (this.ContentDiffDetailInfo != null)
-                    hashCode = hashCode * 59 + this.ContentDiffDetailInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.ObjectsCompareOverviewInfo != null) hashCode = hashCode * 59 + this.ObjectsCompareOverviewInfo.GetHashCode();
+                if (this.ObjectsCompareDetailInfos != null) hashCode = hashCode * 59 + this.ObjectsCompareDetailInfos.GetHashCode();
+                if (this.DataCompareTaskList != null) hashCode = hashCode * 59 + this.DataCompareTaskList.GetHashCode();
+                if (this.LineCompareOverviewInfos != null) hashCode = hashCode * 59 + this.LineCompareOverviewInfos.GetHashCode();
+                if (this.LineCompareDetailInfos != null) hashCode = hashCode * 59 + this.LineCompareDetailInfos.GetHashCode();
+                if (this.ContentCompareOverviewInfos != null) hashCode = hashCode * 59 + this.ContentCompareOverviewInfos.GetHashCode();
+                if (this.ContentCompareDetailInfos != null) hashCode = hashCode * 59 + this.ContentCompareDetailInfos.GetHashCode();
+                if (this.ContentDiffDetailInfo != null) hashCode = hashCode * 59 + this.ContentDiffDetailInfo.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(SrFlavorResizeReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FeFlavorId != input.FeFlavorId || (this.FeFlavorId != null && !this.FeFlavorId.Equals(input.FeFlavorId))) return false;
+            if (this.BeFlavorId != input.BeFlavorId || (this.BeFlavorId != null && !this.BeFlavorId.Equals(input.BeFlavorId))) return false;
 
-            return 
-                (
-                    this.FeFlavorId == input.FeFlavorId ||
-                    (this.FeFlavorId != null &&
-                    this.FeFlavorId.Equals(input.FeFlavorId))
-                ) && 
-                (
-                    this.BeFlavorId == input.BeFlavorId ||
-                    (this.BeFlavorId != null &&
-                    this.BeFlavorId.Equals(input.BeFlavorId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FeFlavorId != null)
-                    hashCode = hashCode * 59 + this.FeFlavorId.GetHashCode();
-                if (this.BeFlavorId != null)
-                    hashCode = hashCode * 59 + this.BeFlavorId.GetHashCode();
+                var hashCode = 41;
+                if (this.FeFlavorId != null) hashCode = hashCode * 59 + this.FeFlavorId.GetHashCode();
+                if (this.BeFlavorId != null) hashCode = hashCode * 59 + this.BeFlavorId.GetHashCode();
                 return hashCode;
             }
         }

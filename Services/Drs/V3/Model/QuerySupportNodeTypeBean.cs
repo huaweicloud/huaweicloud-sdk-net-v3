@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(QuerySupportNodeTypeBean input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NodeType != input.NodeType || (this.NodeType != null && !this.NodeType.Equals(input.NodeType))) return false;
+            if (this.IsSellout != input.IsSellout || (this.IsSellout != null && !this.IsSellout.Equals(input.IsSellout))) return false;
 
-            return 
-                (
-                    this.NodeType == input.NodeType ||
-                    (this.NodeType != null &&
-                    this.NodeType.Equals(input.NodeType))
-                ) && 
-                (
-                    this.IsSellout == input.IsSellout ||
-                    (this.IsSellout != null &&
-                    this.IsSellout.Equals(input.IsSellout))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NodeType != null)
-                    hashCode = hashCode * 59 + this.NodeType.GetHashCode();
-                if (this.IsSellout != null)
-                    hashCode = hashCode * 59 + this.IsSellout.GetHashCode();
+                var hashCode = 41;
+                if (this.NodeType != null) hashCode = hashCode * 59 + this.NodeType.GetHashCode();
+                if (this.IsSellout != null) hashCode = hashCode * 59 + this.IsSellout.GetHashCode();
                 return hashCode;
             }
         }

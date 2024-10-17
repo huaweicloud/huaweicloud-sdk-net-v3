@@ -177,25 +177,12 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         /// </summary>
         public bool Equals(Encryption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type) return false;
+            if (this.KmsKeyName != input.KmsKeyName || (this.KmsKeyName != null && !this.KmsKeyName.Equals(input.KmsKeyName))) return false;
+            if (this.KmsKeyId != input.KmsKeyId || (this.KmsKeyId != null && !this.KmsKeyId.Equals(input.KmsKeyId))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.KmsKeyName == input.KmsKeyName ||
-                    (this.KmsKeyName != null &&
-                    this.KmsKeyName.Equals(input.KmsKeyName))
-                ) && 
-                (
-                    this.KmsKeyId == input.KmsKeyId ||
-                    (this.KmsKeyId != null &&
-                    this.KmsKeyId.Equals(input.KmsKeyId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -205,13 +192,10 @@ namespace HuaweiCloud.SDK.Kps.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.KmsKeyName != null)
-                    hashCode = hashCode * 59 + this.KmsKeyName.GetHashCode();
-                if (this.KmsKeyId != null)
-                    hashCode = hashCode * 59 + this.KmsKeyId.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.KmsKeyName != null) hashCode = hashCode * 59 + this.KmsKeyName.GetHashCode();
+                if (this.KmsKeyId != null) hashCode = hashCode * 59 + this.KmsKeyId.GetHashCode();
                 return hashCode;
             }
         }

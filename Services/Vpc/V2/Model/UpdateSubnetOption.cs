@@ -98,52 +98,17 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(UpdateSubnetOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Ipv6Enable != input.Ipv6Enable || (this.Ipv6Enable != null && !this.Ipv6Enable.Equals(input.Ipv6Enable))) return false;
+            if (this.DhcpEnable != input.DhcpEnable || (this.DhcpEnable != null && !this.DhcpEnable.Equals(input.DhcpEnable))) return false;
+            if (this.PrimaryDns != input.PrimaryDns || (this.PrimaryDns != null && !this.PrimaryDns.Equals(input.PrimaryDns))) return false;
+            if (this.SecondaryDns != input.SecondaryDns || (this.SecondaryDns != null && !this.SecondaryDns.Equals(input.SecondaryDns))) return false;
+            if (this.DnsList != input.DnsList || (this.DnsList != null && input.DnsList != null && !this.DnsList.SequenceEqual(input.DnsList))) return false;
+            if (this.ExtraDhcpOpts != input.ExtraDhcpOpts || (this.ExtraDhcpOpts != null && input.ExtraDhcpOpts != null && !this.ExtraDhcpOpts.SequenceEqual(input.ExtraDhcpOpts))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Ipv6Enable == input.Ipv6Enable ||
-                    (this.Ipv6Enable != null &&
-                    this.Ipv6Enable.Equals(input.Ipv6Enable))
-                ) && 
-                (
-                    this.DhcpEnable == input.DhcpEnable ||
-                    (this.DhcpEnable != null &&
-                    this.DhcpEnable.Equals(input.DhcpEnable))
-                ) && 
-                (
-                    this.PrimaryDns == input.PrimaryDns ||
-                    (this.PrimaryDns != null &&
-                    this.PrimaryDns.Equals(input.PrimaryDns))
-                ) && 
-                (
-                    this.SecondaryDns == input.SecondaryDns ||
-                    (this.SecondaryDns != null &&
-                    this.SecondaryDns.Equals(input.SecondaryDns))
-                ) && 
-                (
-                    this.DnsList == input.DnsList ||
-                    this.DnsList != null &&
-                    input.DnsList != null &&
-                    this.DnsList.SequenceEqual(input.DnsList)
-                ) && 
-                (
-                    this.ExtraDhcpOpts == input.ExtraDhcpOpts ||
-                    this.ExtraDhcpOpts != null &&
-                    input.ExtraDhcpOpts != null &&
-                    this.ExtraDhcpOpts.SequenceEqual(input.ExtraDhcpOpts)
-                );
+            return true;
         }
 
         /// <summary>
@@ -153,23 +118,15 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Ipv6Enable != null)
-                    hashCode = hashCode * 59 + this.Ipv6Enable.GetHashCode();
-                if (this.DhcpEnable != null)
-                    hashCode = hashCode * 59 + this.DhcpEnable.GetHashCode();
-                if (this.PrimaryDns != null)
-                    hashCode = hashCode * 59 + this.PrimaryDns.GetHashCode();
-                if (this.SecondaryDns != null)
-                    hashCode = hashCode * 59 + this.SecondaryDns.GetHashCode();
-                if (this.DnsList != null)
-                    hashCode = hashCode * 59 + this.DnsList.GetHashCode();
-                if (this.ExtraDhcpOpts != null)
-                    hashCode = hashCode * 59 + this.ExtraDhcpOpts.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Ipv6Enable != null) hashCode = hashCode * 59 + this.Ipv6Enable.GetHashCode();
+                if (this.DhcpEnable != null) hashCode = hashCode * 59 + this.DhcpEnable.GetHashCode();
+                if (this.PrimaryDns != null) hashCode = hashCode * 59 + this.PrimaryDns.GetHashCode();
+                if (this.SecondaryDns != null) hashCode = hashCode * 59 + this.SecondaryDns.GetHashCode();
+                if (this.DnsList != null) hashCode = hashCode * 59 + this.DnsList.GetHashCode();
+                if (this.ExtraDhcpOpts != null) hashCode = hashCode * 59 + this.ExtraDhcpOpts.GetHashCode();
                 return hashCode;
             }
         }

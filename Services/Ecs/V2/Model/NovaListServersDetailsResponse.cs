@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(NovaListServersDetailsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Servers != input.Servers || (this.Servers != null && input.Servers != null && !this.Servers.SequenceEqual(input.Servers))) return false;
+            if (this.ServersLinks != input.ServersLinks || (this.ServersLinks != null && input.ServersLinks != null && !this.ServersLinks.SequenceEqual(input.ServersLinks))) return false;
 
-            return 
-                (
-                    this.Servers == input.Servers ||
-                    this.Servers != null &&
-                    input.Servers != null &&
-                    this.Servers.SequenceEqual(input.Servers)
-                ) && 
-                (
-                    this.ServersLinks == input.ServersLinks ||
-                    this.ServersLinks != null &&
-                    input.ServersLinks != null &&
-                    this.ServersLinks.SequenceEqual(input.ServersLinks)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Servers != null)
-                    hashCode = hashCode * 59 + this.Servers.GetHashCode();
-                if (this.ServersLinks != null)
-                    hashCode = hashCode * 59 + this.ServersLinks.GetHashCode();
+                var hashCode = 41;
+                if (this.Servers != null) hashCode = hashCode * 59 + this.Servers.GetHashCode();
+                if (this.ServersLinks != null) hashCode = hashCode * 59 + this.ServersLinks.GetHashCode();
                 return hashCode;
             }
         }

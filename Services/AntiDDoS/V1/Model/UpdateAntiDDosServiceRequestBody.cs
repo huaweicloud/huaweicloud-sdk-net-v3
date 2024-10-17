@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         /// </summary>
         public bool Equals(UpdateAntiDDosServiceRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AppTypeId != input.AppTypeId || (this.AppTypeId != null && !this.AppTypeId.Equals(input.AppTypeId))) return false;
+            if (this.CleaningAccessPosId != input.CleaningAccessPosId || (this.CleaningAccessPosId != null && !this.CleaningAccessPosId.Equals(input.CleaningAccessPosId))) return false;
+            if (this.EnableL7 != input.EnableL7 || (this.EnableL7 != null && !this.EnableL7.Equals(input.EnableL7))) return false;
+            if (this.HttpRequestPosId != input.HttpRequestPosId || (this.HttpRequestPosId != null && !this.HttpRequestPosId.Equals(input.HttpRequestPosId))) return false;
+            if (this.TrafficPosId != input.TrafficPosId || (this.TrafficPosId != null && !this.TrafficPosId.Equals(input.TrafficPosId))) return false;
 
-            return 
-                (
-                    this.AppTypeId == input.AppTypeId ||
-                    (this.AppTypeId != null &&
-                    this.AppTypeId.Equals(input.AppTypeId))
-                ) && 
-                (
-                    this.CleaningAccessPosId == input.CleaningAccessPosId ||
-                    (this.CleaningAccessPosId != null &&
-                    this.CleaningAccessPosId.Equals(input.CleaningAccessPosId))
-                ) && 
-                (
-                    this.EnableL7 == input.EnableL7 ||
-                    (this.EnableL7 != null &&
-                    this.EnableL7.Equals(input.EnableL7))
-                ) && 
-                (
-                    this.HttpRequestPosId == input.HttpRequestPosId ||
-                    (this.HttpRequestPosId != null &&
-                    this.HttpRequestPosId.Equals(input.HttpRequestPosId))
-                ) && 
-                (
-                    this.TrafficPosId == input.TrafficPosId ||
-                    (this.TrafficPosId != null &&
-                    this.TrafficPosId.Equals(input.TrafficPosId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AppTypeId != null)
-                    hashCode = hashCode * 59 + this.AppTypeId.GetHashCode();
-                if (this.CleaningAccessPosId != null)
-                    hashCode = hashCode * 59 + this.CleaningAccessPosId.GetHashCode();
-                if (this.EnableL7 != null)
-                    hashCode = hashCode * 59 + this.EnableL7.GetHashCode();
-                if (this.HttpRequestPosId != null)
-                    hashCode = hashCode * 59 + this.HttpRequestPosId.GetHashCode();
-                if (this.TrafficPosId != null)
-                    hashCode = hashCode * 59 + this.TrafficPosId.GetHashCode();
+                var hashCode = 41;
+                if (this.AppTypeId != null) hashCode = hashCode * 59 + this.AppTypeId.GetHashCode();
+                if (this.CleaningAccessPosId != null) hashCode = hashCode * 59 + this.CleaningAccessPosId.GetHashCode();
+                if (this.EnableL7 != null) hashCode = hashCode * 59 + this.EnableL7.GetHashCode();
+                if (this.HttpRequestPosId != null) hashCode = hashCode * 59 + this.HttpRequestPosId.GetHashCode();
+                if (this.TrafficPosId != null) hashCode = hashCode * 59 + this.TrafficPosId.GetHashCode();
                 return hashCode;
             }
         }

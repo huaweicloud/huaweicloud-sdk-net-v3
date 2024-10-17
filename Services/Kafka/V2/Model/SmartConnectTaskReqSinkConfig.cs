@@ -140,80 +140,23 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(SmartConnectTaskReqSinkConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RedisAddress != input.RedisAddress || (this.RedisAddress != null && !this.RedisAddress.Equals(input.RedisAddress))) return false;
+            if (this.RedisType != input.RedisType || (this.RedisType != null && !this.RedisType.Equals(input.RedisType))) return false;
+            if (this.DcsInstanceId != input.DcsInstanceId || (this.DcsInstanceId != null && !this.DcsInstanceId.Equals(input.DcsInstanceId))) return false;
+            if (this.RedisPassword != input.RedisPassword || (this.RedisPassword != null && !this.RedisPassword.Equals(input.RedisPassword))) return false;
+            if (this.ConsumerStrategy != input.ConsumerStrategy || (this.ConsumerStrategy != null && !this.ConsumerStrategy.Equals(input.ConsumerStrategy))) return false;
+            if (this.DestinationFileType != input.DestinationFileType || (this.DestinationFileType != null && !this.DestinationFileType.Equals(input.DestinationFileType))) return false;
+            if (this.DeliverTimeInterval != input.DeliverTimeInterval || (this.DeliverTimeInterval != null && !this.DeliverTimeInterval.Equals(input.DeliverTimeInterval))) return false;
+            if (this.AccessKey != input.AccessKey || (this.AccessKey != null && !this.AccessKey.Equals(input.AccessKey))) return false;
+            if (this.SecretKey != input.SecretKey || (this.SecretKey != null && !this.SecretKey.Equals(input.SecretKey))) return false;
+            if (this.ObsBucketName != input.ObsBucketName || (this.ObsBucketName != null && !this.ObsBucketName.Equals(input.ObsBucketName))) return false;
+            if (this.ObsPath != input.ObsPath || (this.ObsPath != null && !this.ObsPath.Equals(input.ObsPath))) return false;
+            if (this.PartitionFormat != input.PartitionFormat || (this.PartitionFormat != null && !this.PartitionFormat.Equals(input.PartitionFormat))) return false;
+            if (this.RecordDelimiter != input.RecordDelimiter || (this.RecordDelimiter != null && !this.RecordDelimiter.Equals(input.RecordDelimiter))) return false;
+            if (this.StoreKeys != input.StoreKeys || (this.StoreKeys != null && !this.StoreKeys.Equals(input.StoreKeys))) return false;
 
-            return 
-                (
-                    this.RedisAddress == input.RedisAddress ||
-                    (this.RedisAddress != null &&
-                    this.RedisAddress.Equals(input.RedisAddress))
-                ) && 
-                (
-                    this.RedisType == input.RedisType ||
-                    (this.RedisType != null &&
-                    this.RedisType.Equals(input.RedisType))
-                ) && 
-                (
-                    this.DcsInstanceId == input.DcsInstanceId ||
-                    (this.DcsInstanceId != null &&
-                    this.DcsInstanceId.Equals(input.DcsInstanceId))
-                ) && 
-                (
-                    this.RedisPassword == input.RedisPassword ||
-                    (this.RedisPassword != null &&
-                    this.RedisPassword.Equals(input.RedisPassword))
-                ) && 
-                (
-                    this.ConsumerStrategy == input.ConsumerStrategy ||
-                    (this.ConsumerStrategy != null &&
-                    this.ConsumerStrategy.Equals(input.ConsumerStrategy))
-                ) && 
-                (
-                    this.DestinationFileType == input.DestinationFileType ||
-                    (this.DestinationFileType != null &&
-                    this.DestinationFileType.Equals(input.DestinationFileType))
-                ) && 
-                (
-                    this.DeliverTimeInterval == input.DeliverTimeInterval ||
-                    (this.DeliverTimeInterval != null &&
-                    this.DeliverTimeInterval.Equals(input.DeliverTimeInterval))
-                ) && 
-                (
-                    this.AccessKey == input.AccessKey ||
-                    (this.AccessKey != null &&
-                    this.AccessKey.Equals(input.AccessKey))
-                ) && 
-                (
-                    this.SecretKey == input.SecretKey ||
-                    (this.SecretKey != null &&
-                    this.SecretKey.Equals(input.SecretKey))
-                ) && 
-                (
-                    this.ObsBucketName == input.ObsBucketName ||
-                    (this.ObsBucketName != null &&
-                    this.ObsBucketName.Equals(input.ObsBucketName))
-                ) && 
-                (
-                    this.ObsPath == input.ObsPath ||
-                    (this.ObsPath != null &&
-                    this.ObsPath.Equals(input.ObsPath))
-                ) && 
-                (
-                    this.PartitionFormat == input.PartitionFormat ||
-                    (this.PartitionFormat != null &&
-                    this.PartitionFormat.Equals(input.PartitionFormat))
-                ) && 
-                (
-                    this.RecordDelimiter == input.RecordDelimiter ||
-                    (this.RecordDelimiter != null &&
-                    this.RecordDelimiter.Equals(input.RecordDelimiter))
-                ) && 
-                (
-                    this.StoreKeys == input.StoreKeys ||
-                    (this.StoreKeys != null &&
-                    this.StoreKeys.Equals(input.StoreKeys))
-                );
+            return true;
         }
 
         /// <summary>
@@ -223,35 +166,21 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RedisAddress != null)
-                    hashCode = hashCode * 59 + this.RedisAddress.GetHashCode();
-                if (this.RedisType != null)
-                    hashCode = hashCode * 59 + this.RedisType.GetHashCode();
-                if (this.DcsInstanceId != null)
-                    hashCode = hashCode * 59 + this.DcsInstanceId.GetHashCode();
-                if (this.RedisPassword != null)
-                    hashCode = hashCode * 59 + this.RedisPassword.GetHashCode();
-                if (this.ConsumerStrategy != null)
-                    hashCode = hashCode * 59 + this.ConsumerStrategy.GetHashCode();
-                if (this.DestinationFileType != null)
-                    hashCode = hashCode * 59 + this.DestinationFileType.GetHashCode();
-                if (this.DeliverTimeInterval != null)
-                    hashCode = hashCode * 59 + this.DeliverTimeInterval.GetHashCode();
-                if (this.AccessKey != null)
-                    hashCode = hashCode * 59 + this.AccessKey.GetHashCode();
-                if (this.SecretKey != null)
-                    hashCode = hashCode * 59 + this.SecretKey.GetHashCode();
-                if (this.ObsBucketName != null)
-                    hashCode = hashCode * 59 + this.ObsBucketName.GetHashCode();
-                if (this.ObsPath != null)
-                    hashCode = hashCode * 59 + this.ObsPath.GetHashCode();
-                if (this.PartitionFormat != null)
-                    hashCode = hashCode * 59 + this.PartitionFormat.GetHashCode();
-                if (this.RecordDelimiter != null)
-                    hashCode = hashCode * 59 + this.RecordDelimiter.GetHashCode();
-                if (this.StoreKeys != null)
-                    hashCode = hashCode * 59 + this.StoreKeys.GetHashCode();
+                var hashCode = 41;
+                if (this.RedisAddress != null) hashCode = hashCode * 59 + this.RedisAddress.GetHashCode();
+                if (this.RedisType != null) hashCode = hashCode * 59 + this.RedisType.GetHashCode();
+                if (this.DcsInstanceId != null) hashCode = hashCode * 59 + this.DcsInstanceId.GetHashCode();
+                if (this.RedisPassword != null) hashCode = hashCode * 59 + this.RedisPassword.GetHashCode();
+                if (this.ConsumerStrategy != null) hashCode = hashCode * 59 + this.ConsumerStrategy.GetHashCode();
+                if (this.DestinationFileType != null) hashCode = hashCode * 59 + this.DestinationFileType.GetHashCode();
+                if (this.DeliverTimeInterval != null) hashCode = hashCode * 59 + this.DeliverTimeInterval.GetHashCode();
+                if (this.AccessKey != null) hashCode = hashCode * 59 + this.AccessKey.GetHashCode();
+                if (this.SecretKey != null) hashCode = hashCode * 59 + this.SecretKey.GetHashCode();
+                if (this.ObsBucketName != null) hashCode = hashCode * 59 + this.ObsBucketName.GetHashCode();
+                if (this.ObsPath != null) hashCode = hashCode * 59 + this.ObsPath.GetHashCode();
+                if (this.PartitionFormat != null) hashCode = hashCode * 59 + this.PartitionFormat.GetHashCode();
+                if (this.RecordDelimiter != null) hashCode = hashCode * 59 + this.RecordDelimiter.GetHashCode();
+                if (this.StoreKeys != null) hashCode = hashCode * 59 + this.StoreKeys.GetHashCode();
                 return hashCode;
             }
         }

@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(AttachServerVolumeOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Device != input.Device || (this.Device != null && !this.Device.Equals(input.Device))) return false;
+            if (this.VolumeId != input.VolumeId || (this.VolumeId != null && !this.VolumeId.Equals(input.VolumeId))) return false;
+            if (this.VolumeType != input.VolumeType || (this.VolumeType != null && !this.VolumeType.Equals(input.VolumeType))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.Hwpassthrough != input.Hwpassthrough || (this.Hwpassthrough != null && !this.Hwpassthrough.Equals(input.Hwpassthrough))) return false;
 
-            return 
-                (
-                    this.Device == input.Device ||
-                    (this.Device != null &&
-                    this.Device.Equals(input.Device))
-                ) && 
-                (
-                    this.VolumeId == input.VolumeId ||
-                    (this.VolumeId != null &&
-                    this.VolumeId.Equals(input.VolumeId))
-                ) && 
-                (
-                    this.VolumeType == input.VolumeType ||
-                    (this.VolumeType != null &&
-                    this.VolumeType.Equals(input.VolumeType))
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.Hwpassthrough == input.Hwpassthrough ||
-                    (this.Hwpassthrough != null &&
-                    this.Hwpassthrough.Equals(input.Hwpassthrough))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Device != null)
-                    hashCode = hashCode * 59 + this.Device.GetHashCode();
-                if (this.VolumeId != null)
-                    hashCode = hashCode * 59 + this.VolumeId.GetHashCode();
-                if (this.VolumeType != null)
-                    hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.Hwpassthrough != null)
-                    hashCode = hashCode * 59 + this.Hwpassthrough.GetHashCode();
+                var hashCode = 41;
+                if (this.Device != null) hashCode = hashCode * 59 + this.Device.GetHashCode();
+                if (this.VolumeId != null) hashCode = hashCode * 59 + this.VolumeId.GetHashCode();
+                if (this.VolumeType != null) hashCode = hashCode * 59 + this.VolumeType.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.Hwpassthrough != null) hashCode = hashCode * 59 + this.Hwpassthrough.GetHashCode();
                 return hashCode;
             }
         }

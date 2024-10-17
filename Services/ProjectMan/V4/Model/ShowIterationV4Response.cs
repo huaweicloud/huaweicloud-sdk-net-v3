@@ -133,76 +133,22 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ShowIterationV4Response input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BeginTime != input.BeginTime || (this.BeginTime != null && !this.BeginTime.Equals(input.BeginTime))) return false;
+            if (this.Charts != input.Charts || (this.Charts != null && input.Charts != null && !this.Charts.SequenceEqual(input.Charts))) return false;
+            if (this.ClosedTotal != input.ClosedTotal || (this.ClosedTotal != null && !this.ClosedTotal.Equals(input.ClosedTotal))) return false;
+            if (this.CreatedTime != input.CreatedTime || (this.CreatedTime != null && !this.CreatedTime.Equals(input.CreatedTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.HaveTask != input.HaveTask || (this.HaveTask != null && !this.HaveTask.Equals(input.HaveTask))) return false;
+            if (this.IterationId != input.IterationId || (this.IterationId != null && !this.IterationId.Equals(input.IterationId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.OpenedTotal != input.OpenedTotal || (this.OpenedTotal != null && !this.OpenedTotal.Equals(input.OpenedTotal))) return false;
+            if (this.Progress != input.Progress || (this.Progress != null && !this.Progress.Equals(input.Progress))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.UpdatedTime != input.UpdatedTime || (this.UpdatedTime != null && !this.UpdatedTime.Equals(input.UpdatedTime))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
 
-            return 
-                (
-                    this.BeginTime == input.BeginTime ||
-                    (this.BeginTime != null &&
-                    this.BeginTime.Equals(input.BeginTime))
-                ) && 
-                (
-                    this.Charts == input.Charts ||
-                    this.Charts != null &&
-                    input.Charts != null &&
-                    this.Charts.SequenceEqual(input.Charts)
-                ) && 
-                (
-                    this.ClosedTotal == input.ClosedTotal ||
-                    (this.ClosedTotal != null &&
-                    this.ClosedTotal.Equals(input.ClosedTotal))
-                ) && 
-                (
-                    this.CreatedTime == input.CreatedTime ||
-                    (this.CreatedTime != null &&
-                    this.CreatedTime.Equals(input.CreatedTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.HaveTask == input.HaveTask ||
-                    (this.HaveTask != null &&
-                    this.HaveTask.Equals(input.HaveTask))
-                ) && 
-                (
-                    this.IterationId == input.IterationId ||
-                    (this.IterationId != null &&
-                    this.IterationId.Equals(input.IterationId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.OpenedTotal == input.OpenedTotal ||
-                    (this.OpenedTotal != null &&
-                    this.OpenedTotal.Equals(input.OpenedTotal))
-                ) && 
-                (
-                    this.Progress == input.Progress ||
-                    (this.Progress != null &&
-                    this.Progress.Equals(input.Progress))
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.UpdatedTime == input.UpdatedTime ||
-                    (this.UpdatedTime != null &&
-                    this.UpdatedTime.Equals(input.UpdatedTime))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                );
+            return true;
         }
 
         /// <summary>
@@ -212,33 +158,20 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BeginTime != null)
-                    hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
-                if (this.Charts != null)
-                    hashCode = hashCode * 59 + this.Charts.GetHashCode();
-                if (this.ClosedTotal != null)
-                    hashCode = hashCode * 59 + this.ClosedTotal.GetHashCode();
-                if (this.CreatedTime != null)
-                    hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.HaveTask != null)
-                    hashCode = hashCode * 59 + this.HaveTask.GetHashCode();
-                if (this.IterationId != null)
-                    hashCode = hashCode * 59 + this.IterationId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.OpenedTotal != null)
-                    hashCode = hashCode * 59 + this.OpenedTotal.GetHashCode();
-                if (this.Progress != null)
-                    hashCode = hashCode * 59 + this.Progress.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.UpdatedTime != null)
-                    hashCode = hashCode * 59 + this.UpdatedTime.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
+                var hashCode = 41;
+                if (this.BeginTime != null) hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
+                if (this.Charts != null) hashCode = hashCode * 59 + this.Charts.GetHashCode();
+                if (this.ClosedTotal != null) hashCode = hashCode * 59 + this.ClosedTotal.GetHashCode();
+                if (this.CreatedTime != null) hashCode = hashCode * 59 + this.CreatedTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.HaveTask != null) hashCode = hashCode * 59 + this.HaveTask.GetHashCode();
+                if (this.IterationId != null) hashCode = hashCode * 59 + this.IterationId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.OpenedTotal != null) hashCode = hashCode * 59 + this.OpenedTotal.GetHashCode();
+                if (this.Progress != null) hashCode = hashCode * 59 + this.Progress.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.UpdatedTime != null) hashCode = hashCode * 59 + this.UpdatedTime.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
                 return hashCode;
             }
         }

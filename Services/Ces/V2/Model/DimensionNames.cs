@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(DimensionNames input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Metric != input.Metric || (this.Metric != null && input.Metric != null && !this.Metric.SequenceEqual(input.Metric))) return false;
+            if (this.Event != input.Event || (this.Event != null && input.Event != null && !this.Event.SequenceEqual(input.Event))) return false;
 
-            return 
-                (
-                    this.Metric == input.Metric ||
-                    this.Metric != null &&
-                    input.Metric != null &&
-                    this.Metric.SequenceEqual(input.Metric)
-                ) && 
-                (
-                    this.Event == input.Event ||
-                    this.Event != null &&
-                    input.Event != null &&
-                    this.Event.SequenceEqual(input.Event)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Metric != null)
-                    hashCode = hashCode * 59 + this.Metric.GetHashCode();
-                if (this.Event != null)
-                    hashCode = hashCode * 59 + this.Event.GetHashCode();
+                var hashCode = 41;
+                if (this.Metric != null) hashCode = hashCode * 59 + this.Metric.GetHashCode();
+                if (this.Event != null) hashCode = hashCode * 59 + this.Event.GetHashCode();
                 return hashCode;
             }
         }

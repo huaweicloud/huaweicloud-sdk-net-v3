@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(DeleteSubNetworkInterfaceRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SubNetworkInterfaceId != input.SubNetworkInterfaceId || (this.SubNetworkInterfaceId != null && !this.SubNetworkInterfaceId.Equals(input.SubNetworkInterfaceId))) return false;
 
-            return 
-                (
-                    this.SubNetworkInterfaceId == input.SubNetworkInterfaceId ||
-                    (this.SubNetworkInterfaceId != null &&
-                    this.SubNetworkInterfaceId.Equals(input.SubNetworkInterfaceId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SubNetworkInterfaceId != null)
-                    hashCode = hashCode * 59 + this.SubNetworkInterfaceId.GetHashCode();
+                var hashCode = 41;
+                if (this.SubNetworkInterfaceId != null) hashCode = hashCode * 59 + this.SubNetworkInterfaceId.GetHashCode();
                 return hashCode;
             }
         }

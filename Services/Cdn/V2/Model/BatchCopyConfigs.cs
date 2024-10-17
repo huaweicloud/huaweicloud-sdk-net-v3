@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(BatchCopyConfigs input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TargetDomain != input.TargetDomain || (this.TargetDomain != null && !this.TargetDomain.Equals(input.TargetDomain))) return false;
+            if (this.SourceDomain != input.SourceDomain || (this.SourceDomain != null && !this.SourceDomain.Equals(input.SourceDomain))) return false;
+            if (this.ConfigList != input.ConfigList || (this.ConfigList != null && input.ConfigList != null && !this.ConfigList.SequenceEqual(input.ConfigList))) return false;
 
-            return 
-                (
-                    this.TargetDomain == input.TargetDomain ||
-                    (this.TargetDomain != null &&
-                    this.TargetDomain.Equals(input.TargetDomain))
-                ) && 
-                (
-                    this.SourceDomain == input.SourceDomain ||
-                    (this.SourceDomain != null &&
-                    this.SourceDomain.Equals(input.SourceDomain))
-                ) && 
-                (
-                    this.ConfigList == input.ConfigList ||
-                    this.ConfigList != null &&
-                    input.ConfigList != null &&
-                    this.ConfigList.SequenceEqual(input.ConfigList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TargetDomain != null)
-                    hashCode = hashCode * 59 + this.TargetDomain.GetHashCode();
-                if (this.SourceDomain != null)
-                    hashCode = hashCode * 59 + this.SourceDomain.GetHashCode();
-                if (this.ConfigList != null)
-                    hashCode = hashCode * 59 + this.ConfigList.GetHashCode();
+                var hashCode = 41;
+                if (this.TargetDomain != null) hashCode = hashCode * 59 + this.TargetDomain.GetHashCode();
+                if (this.SourceDomain != null) hashCode = hashCode * 59 + this.SourceDomain.GetHashCode();
+                if (this.ConfigList != null) hashCode = hashCode * 59 + this.ConfigList.GetHashCode();
                 return hashCode;
             }
         }

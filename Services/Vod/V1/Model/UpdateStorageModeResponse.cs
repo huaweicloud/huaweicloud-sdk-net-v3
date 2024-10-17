@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(UpdateStorageModeResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TaskResultArray != input.TaskResultArray || (this.TaskResultArray != null && input.TaskResultArray != null && !this.TaskResultArray.SequenceEqual(input.TaskResultArray))) return false;
 
-            return 
-                (
-                    this.TaskResultArray == input.TaskResultArray ||
-                    this.TaskResultArray != null &&
-                    input.TaskResultArray != null &&
-                    this.TaskResultArray.SequenceEqual(input.TaskResultArray)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TaskResultArray != null)
-                    hashCode = hashCode * 59 + this.TaskResultArray.GetHashCode();
+                var hashCode = 41;
+                if (this.TaskResultArray != null) hashCode = hashCode * 59 + this.TaskResultArray.GetHashCode();
                 return hashCode;
             }
         }

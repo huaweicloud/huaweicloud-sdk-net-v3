@@ -63,27 +63,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(MysqlCreateReadonlyNodeRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Priorities != input.Priorities || (this.Priorities != null && input.Priorities != null && !this.Priorities.SequenceEqual(input.Priorities))) return false;
+            if (this.IsAutoPay != input.IsAutoPay || (this.IsAutoPay != null && !this.IsAutoPay.Equals(input.IsAutoPay))) return false;
+            if (this.AvailabilityZones != input.AvailabilityZones || (this.AvailabilityZones != null && input.AvailabilityZones != null && !this.AvailabilityZones.SequenceEqual(input.AvailabilityZones))) return false;
 
-            return 
-                (
-                    this.Priorities == input.Priorities ||
-                    this.Priorities != null &&
-                    input.Priorities != null &&
-                    this.Priorities.SequenceEqual(input.Priorities)
-                ) && 
-                (
-                    this.IsAutoPay == input.IsAutoPay ||
-                    (this.IsAutoPay != null &&
-                    this.IsAutoPay.Equals(input.IsAutoPay))
-                ) && 
-                (
-                    this.AvailabilityZones == input.AvailabilityZones ||
-                    this.AvailabilityZones != null &&
-                    input.AvailabilityZones != null &&
-                    this.AvailabilityZones.SequenceEqual(input.AvailabilityZones)
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +78,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Priorities != null)
-                    hashCode = hashCode * 59 + this.Priorities.GetHashCode();
-                if (this.IsAutoPay != null)
-                    hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
-                if (this.AvailabilityZones != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZones.GetHashCode();
+                var hashCode = 41;
+                if (this.Priorities != null) hashCode = hashCode * 59 + this.Priorities.GetHashCode();
+                if (this.IsAutoPay != null) hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
+                if (this.AvailabilityZones != null) hashCode = hashCode * 59 + this.AvailabilityZones.GetHashCode();
                 return hashCode;
             }
         }

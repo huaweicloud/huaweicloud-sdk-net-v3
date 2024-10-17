@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(BatchUpdateNotificationMasksResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RelationIds != input.RelationIds || (this.RelationIds != null && input.RelationIds != null && !this.RelationIds.SequenceEqual(input.RelationIds))) return false;
+            if (this.NotificationMaskId != input.NotificationMaskId || (this.NotificationMaskId != null && !this.NotificationMaskId.Equals(input.NotificationMaskId))) return false;
 
-            return 
-                (
-                    this.RelationIds == input.RelationIds ||
-                    this.RelationIds != null &&
-                    input.RelationIds != null &&
-                    this.RelationIds.SequenceEqual(input.RelationIds)
-                ) && 
-                (
-                    this.NotificationMaskId == input.NotificationMaskId ||
-                    (this.NotificationMaskId != null &&
-                    this.NotificationMaskId.Equals(input.NotificationMaskId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RelationIds != null)
-                    hashCode = hashCode * 59 + this.RelationIds.GetHashCode();
-                if (this.NotificationMaskId != null)
-                    hashCode = hashCode * 59 + this.NotificationMaskId.GetHashCode();
+                var hashCode = 41;
+                if (this.RelationIds != null) hashCode = hashCode * 59 + this.RelationIds.GetHashCode();
+                if (this.NotificationMaskId != null) hashCode = hashCode * 59 + this.NotificationMaskId.GetHashCode();
                 return hashCode;
             }
         }

@@ -191,36 +191,14 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(MigrationLog input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.LogLevel != input.LogLevel) return false;
+            if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
+            if (this.LogCode != input.LogCode || (this.LogCode != null && !this.LogCode.Equals(input.LogCode))) return false;
+            if (this.Keyword != input.Keyword || (this.Keyword != null && input.Keyword != null && !this.Keyword.SequenceEqual(input.Keyword))) return false;
 
-            return 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.LogLevel == input.LogLevel ||
-                    (this.LogLevel != null &&
-                    this.LogLevel.Equals(input.LogLevel))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.LogCode == input.LogCode ||
-                    (this.LogCode != null &&
-                    this.LogCode.Equals(input.LogCode))
-                ) && 
-                (
-                    this.Keyword == input.Keyword ||
-                    this.Keyword != null &&
-                    input.Keyword != null &&
-                    this.Keyword.SequenceEqual(input.Keyword)
-                );
+            return true;
         }
 
         /// <summary>
@@ -230,17 +208,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.LogLevel != null)
-                    hashCode = hashCode * 59 + this.LogLevel.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.LogCode != null)
-                    hashCode = hashCode * 59 + this.LogCode.GetHashCode();
-                if (this.Keyword != null)
-                    hashCode = hashCode * 59 + this.Keyword.GetHashCode();
+                var hashCode = 41;
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                hashCode = hashCode * 59 + this.LogLevel.GetHashCode();
+                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.LogCode != null) hashCode = hashCode * 59 + this.LogCode.GetHashCode();
+                if (this.Keyword != null) hashCode = hashCode * 59 + this.Keyword.GetHashCode();
                 return hashCode;
             }
         }

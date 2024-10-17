@@ -993,85 +993,24 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(Billing input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Allocated != input.Allocated || (this.Allocated != null && !this.Allocated.Equals(input.Allocated))) return false;
+            if (this.ChargingMode != input.ChargingMode) return false;
+            if (this.CloudType != input.CloudType) return false;
+            if (this.ConsistentLevel != input.ConsistentLevel) return false;
+            if (this.ObjectType != input.ObjectType) return false;
+            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
+            if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
+            if (this.ProtectType != input.ProtectType) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.SpecCode != input.SpecCode) return false;
+            if (this.Status != input.Status) return false;
+            if (this.StorageUnit != input.StorageUnit || (this.StorageUnit != null && !this.StorageUnit.Equals(input.StorageUnit))) return false;
+            if (this.Used != input.Used || (this.Used != null && !this.Used.Equals(input.Used))) return false;
+            if (this.FrozenScene != input.FrozenScene || (this.FrozenScene != null && !this.FrozenScene.Equals(input.FrozenScene))) return false;
+            if (this.IsMultiAz != input.IsMultiAz || (this.IsMultiAz != null && !this.IsMultiAz.Equals(input.IsMultiAz))) return false;
 
-            return 
-                (
-                    this.Allocated == input.Allocated ||
-                    (this.Allocated != null &&
-                    this.Allocated.Equals(input.Allocated))
-                ) && 
-                (
-                    this.ChargingMode == input.ChargingMode ||
-                    (this.ChargingMode != null &&
-                    this.ChargingMode.Equals(input.ChargingMode))
-                ) && 
-                (
-                    this.CloudType == input.CloudType ||
-                    (this.CloudType != null &&
-                    this.CloudType.Equals(input.CloudType))
-                ) && 
-                (
-                    this.ConsistentLevel == input.ConsistentLevel ||
-                    (this.ConsistentLevel != null &&
-                    this.ConsistentLevel.Equals(input.ConsistentLevel))
-                ) && 
-                (
-                    this.ObjectType == input.ObjectType ||
-                    (this.ObjectType != null &&
-                    this.ObjectType.Equals(input.ObjectType))
-                ) && 
-                (
-                    this.OrderId == input.OrderId ||
-                    (this.OrderId != null &&
-                    this.OrderId.Equals(input.OrderId))
-                ) && 
-                (
-                    this.ProductId == input.ProductId ||
-                    (this.ProductId != null &&
-                    this.ProductId.Equals(input.ProductId))
-                ) && 
-                (
-                    this.ProtectType == input.ProtectType ||
-                    (this.ProtectType != null &&
-                    this.ProtectType.Equals(input.ProtectType))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.SpecCode == input.SpecCode ||
-                    (this.SpecCode != null &&
-                    this.SpecCode.Equals(input.SpecCode))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.StorageUnit == input.StorageUnit ||
-                    (this.StorageUnit != null &&
-                    this.StorageUnit.Equals(input.StorageUnit))
-                ) && 
-                (
-                    this.Used == input.Used ||
-                    (this.Used != null &&
-                    this.Used.Equals(input.Used))
-                ) && 
-                (
-                    this.FrozenScene == input.FrozenScene ||
-                    (this.FrozenScene != null &&
-                    this.FrozenScene.Equals(input.FrozenScene))
-                ) && 
-                (
-                    this.IsMultiAz == input.IsMultiAz ||
-                    (this.IsMultiAz != null &&
-                    this.IsMultiAz.Equals(input.IsMultiAz))
-                );
+            return true;
         }
 
         /// <summary>
@@ -1081,37 +1020,22 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Allocated != null)
-                    hashCode = hashCode * 59 + this.Allocated.GetHashCode();
-                if (this.ChargingMode != null)
-                    hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
-                if (this.CloudType != null)
-                    hashCode = hashCode * 59 + this.CloudType.GetHashCode();
-                if (this.ConsistentLevel != null)
-                    hashCode = hashCode * 59 + this.ConsistentLevel.GetHashCode();
-                if (this.ObjectType != null)
-                    hashCode = hashCode * 59 + this.ObjectType.GetHashCode();
-                if (this.OrderId != null)
-                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
-                if (this.ProductId != null)
-                    hashCode = hashCode * 59 + this.ProductId.GetHashCode();
-                if (this.ProtectType != null)
-                    hashCode = hashCode * 59 + this.ProtectType.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.SpecCode != null)
-                    hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.StorageUnit != null)
-                    hashCode = hashCode * 59 + this.StorageUnit.GetHashCode();
-                if (this.Used != null)
-                    hashCode = hashCode * 59 + this.Used.GetHashCode();
-                if (this.FrozenScene != null)
-                    hashCode = hashCode * 59 + this.FrozenScene.GetHashCode();
-                if (this.IsMultiAz != null)
-                    hashCode = hashCode * 59 + this.IsMultiAz.GetHashCode();
+                var hashCode = 41;
+                if (this.Allocated != null) hashCode = hashCode * 59 + this.Allocated.GetHashCode();
+                hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
+                hashCode = hashCode * 59 + this.CloudType.GetHashCode();
+                hashCode = hashCode * 59 + this.ConsistentLevel.GetHashCode();
+                hashCode = hashCode * 59 + this.ObjectType.GetHashCode();
+                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
+                hashCode = hashCode * 59 + this.ProtectType.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.StorageUnit != null) hashCode = hashCode * 59 + this.StorageUnit.GetHashCode();
+                if (this.Used != null) hashCode = hashCode * 59 + this.Used.GetHashCode();
+                if (this.FrozenScene != null) hashCode = hashCode * 59 + this.FrozenScene.GetHashCode();
+                if (this.IsMultiAz != null) hashCode = hashCode * 59 + this.IsMultiAz.GetHashCode();
                 return hashCode;
             }
         }

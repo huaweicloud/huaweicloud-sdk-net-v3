@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(PermissionHostDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CanView != input.CanView || (this.CanView != null && !this.CanView.Equals(input.CanView))) return false;
+            if (this.CanEdit != input.CanEdit || (this.CanEdit != null && !this.CanEdit.Equals(input.CanEdit))) return false;
+            if (this.CanDelete != input.CanDelete || (this.CanDelete != null && !this.CanDelete.Equals(input.CanDelete))) return false;
+            if (this.CanAddHost != input.CanAddHost || (this.CanAddHost != null && !this.CanAddHost.Equals(input.CanAddHost))) return false;
+            if (this.CanConnectionTest != input.CanConnectionTest || (this.CanConnectionTest != null && !this.CanConnectionTest.Equals(input.CanConnectionTest))) return false;
 
-            return 
-                (
-                    this.CanView == input.CanView ||
-                    (this.CanView != null &&
-                    this.CanView.Equals(input.CanView))
-                ) && 
-                (
-                    this.CanEdit == input.CanEdit ||
-                    (this.CanEdit != null &&
-                    this.CanEdit.Equals(input.CanEdit))
-                ) && 
-                (
-                    this.CanDelete == input.CanDelete ||
-                    (this.CanDelete != null &&
-                    this.CanDelete.Equals(input.CanDelete))
-                ) && 
-                (
-                    this.CanAddHost == input.CanAddHost ||
-                    (this.CanAddHost != null &&
-                    this.CanAddHost.Equals(input.CanAddHost))
-                ) && 
-                (
-                    this.CanConnectionTest == input.CanConnectionTest ||
-                    (this.CanConnectionTest != null &&
-                    this.CanConnectionTest.Equals(input.CanConnectionTest))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CanView != null)
-                    hashCode = hashCode * 59 + this.CanView.GetHashCode();
-                if (this.CanEdit != null)
-                    hashCode = hashCode * 59 + this.CanEdit.GetHashCode();
-                if (this.CanDelete != null)
-                    hashCode = hashCode * 59 + this.CanDelete.GetHashCode();
-                if (this.CanAddHost != null)
-                    hashCode = hashCode * 59 + this.CanAddHost.GetHashCode();
-                if (this.CanConnectionTest != null)
-                    hashCode = hashCode * 59 + this.CanConnectionTest.GetHashCode();
+                var hashCode = 41;
+                if (this.CanView != null) hashCode = hashCode * 59 + this.CanView.GetHashCode();
+                if (this.CanEdit != null) hashCode = hashCode * 59 + this.CanEdit.GetHashCode();
+                if (this.CanDelete != null) hashCode = hashCode * 59 + this.CanDelete.GetHashCode();
+                if (this.CanAddHost != null) hashCode = hashCode * 59 + this.CanAddHost.GetHashCode();
+                if (this.CanConnectionTest != null) hashCode = hashCode * 59 + this.CanConnectionTest.GetHashCode();
                 return hashCode;
             }
         }

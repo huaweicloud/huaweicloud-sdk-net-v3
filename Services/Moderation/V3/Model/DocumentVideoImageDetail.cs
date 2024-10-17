@@ -77,36 +77,14 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// </summary>
         public bool Equals(DocumentVideoImageDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
+            if (this.Suggestion != input.Suggestion || (this.Suggestion != null && !this.Suggestion.Equals(input.Suggestion))) return false;
+            if (this.OcrText != input.OcrText || (this.OcrText != null && !this.OcrText.Equals(input.OcrText))) return false;
+            if (this.Label != input.Label || (this.Label != null && !this.Label.Equals(input.Label))) return false;
+            if (this.Segments != input.Segments || (this.Segments != null && input.Segments != null && !this.Segments.SequenceEqual(input.Segments))) return false;
 
-            return 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                ) && 
-                (
-                    this.Suggestion == input.Suggestion ||
-                    (this.Suggestion != null &&
-                    this.Suggestion.Equals(input.Suggestion))
-                ) && 
-                (
-                    this.OcrText == input.OcrText ||
-                    (this.OcrText != null &&
-                    this.OcrText.Equals(input.OcrText))
-                ) && 
-                (
-                    this.Label == input.Label ||
-                    (this.Label != null &&
-                    this.Label.Equals(input.Label))
-                ) && 
-                (
-                    this.Segments == input.Segments ||
-                    this.Segments != null &&
-                    input.Segments != null &&
-                    this.Segments.SequenceEqual(input.Segments)
-                );
+            return true;
         }
 
         /// <summary>
@@ -116,17 +94,12 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.Suggestion != null)
-                    hashCode = hashCode * 59 + this.Suggestion.GetHashCode();
-                if (this.OcrText != null)
-                    hashCode = hashCode * 59 + this.OcrText.GetHashCode();
-                if (this.Label != null)
-                    hashCode = hashCode * 59 + this.Label.GetHashCode();
-                if (this.Segments != null)
-                    hashCode = hashCode * 59 + this.Segments.GetHashCode();
+                var hashCode = 41;
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
+                if (this.Suggestion != null) hashCode = hashCode * 59 + this.Suggestion.GetHashCode();
+                if (this.OcrText != null) hashCode = hashCode * 59 + this.OcrText.GetHashCode();
+                if (this.Label != null) hashCode = hashCode * 59 + this.Label.GetHashCode();
+                if (this.Segments != null) hashCode = hashCode * 59 + this.Segments.GetHashCode();
                 return hashCode;
             }
         }

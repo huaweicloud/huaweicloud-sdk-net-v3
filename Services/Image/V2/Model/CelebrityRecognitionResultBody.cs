@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         /// </summary>
         public bool Equals(CelebrityRecognitionResultBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
+            if (this.FaceDetail != input.FaceDetail || (this.FaceDetail != null && !this.FaceDetail.Equals(input.FaceDetail))) return false;
+            if (this.Label != input.Label || (this.Label != null && !this.Label.Equals(input.Label))) return false;
 
-            return 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                ) && 
-                (
-                    this.FaceDetail == input.FaceDetail ||
-                    (this.FaceDetail != null &&
-                    this.FaceDetail.Equals(input.FaceDetail))
-                ) && 
-                (
-                    this.Label == input.Label ||
-                    (this.Label != null &&
-                    this.Label.Equals(input.Label))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Image.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
-                if (this.FaceDetail != null)
-                    hashCode = hashCode * 59 + this.FaceDetail.GetHashCode();
-                if (this.Label != null)
-                    hashCode = hashCode * 59 + this.Label.GetHashCode();
+                var hashCode = 41;
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                if (this.FaceDetail != null) hashCode = hashCode * 59 + this.FaceDetail.GetHashCode();
+                if (this.Label != null) hashCode = hashCode * 59 + this.Label.GetHashCode();
                 return hashCode;
             }
         }

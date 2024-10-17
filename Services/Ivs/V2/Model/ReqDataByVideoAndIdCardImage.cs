@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         /// </summary>
         public bool Equals(ReqDataByVideoAndIdCardImage input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IdcardImage1 != input.IdcardImage1 || (this.IdcardImage1 != null && !this.IdcardImage1.Equals(input.IdcardImage1))) return false;
+            if (this.IdcardImage2 != input.IdcardImage2 || (this.IdcardImage2 != null && !this.IdcardImage2.Equals(input.IdcardImage2))) return false;
+            if (this.Video != input.Video || (this.Video != null && !this.Video.Equals(input.Video))) return false;
+            if (this.Actions != input.Actions || (this.Actions != null && !this.Actions.Equals(input.Actions))) return false;
+            if (this.NodThreshold != input.NodThreshold || (this.NodThreshold != null && !this.NodThreshold.Equals(input.NodThreshold))) return false;
+            if (this.Detail != input.Detail || (this.Detail != null && !this.Detail.Equals(input.Detail))) return false;
 
-            return 
-                (
-                    this.IdcardImage1 == input.IdcardImage1 ||
-                    (this.IdcardImage1 != null &&
-                    this.IdcardImage1.Equals(input.IdcardImage1))
-                ) && 
-                (
-                    this.IdcardImage2 == input.IdcardImage2 ||
-                    (this.IdcardImage2 != null &&
-                    this.IdcardImage2.Equals(input.IdcardImage2))
-                ) && 
-                (
-                    this.Video == input.Video ||
-                    (this.Video != null &&
-                    this.Video.Equals(input.Video))
-                ) && 
-                (
-                    this.Actions == input.Actions ||
-                    (this.Actions != null &&
-                    this.Actions.Equals(input.Actions))
-                ) && 
-                (
-                    this.NodThreshold == input.NodThreshold ||
-                    (this.NodThreshold != null &&
-                    this.NodThreshold.Equals(input.NodThreshold))
-                ) && 
-                (
-                    this.Detail == input.Detail ||
-                    (this.Detail != null &&
-                    this.Detail.Equals(input.Detail))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IdcardImage1 != null)
-                    hashCode = hashCode * 59 + this.IdcardImage1.GetHashCode();
-                if (this.IdcardImage2 != null)
-                    hashCode = hashCode * 59 + this.IdcardImage2.GetHashCode();
-                if (this.Video != null)
-                    hashCode = hashCode * 59 + this.Video.GetHashCode();
-                if (this.Actions != null)
-                    hashCode = hashCode * 59 + this.Actions.GetHashCode();
-                if (this.NodThreshold != null)
-                    hashCode = hashCode * 59 + this.NodThreshold.GetHashCode();
-                if (this.Detail != null)
-                    hashCode = hashCode * 59 + this.Detail.GetHashCode();
+                var hashCode = 41;
+                if (this.IdcardImage1 != null) hashCode = hashCode * 59 + this.IdcardImage1.GetHashCode();
+                if (this.IdcardImage2 != null) hashCode = hashCode * 59 + this.IdcardImage2.GetHashCode();
+                if (this.Video != null) hashCode = hashCode * 59 + this.Video.GetHashCode();
+                if (this.Actions != null) hashCode = hashCode * 59 + this.Actions.GetHashCode();
+                if (this.NodThreshold != null) hashCode = hashCode * 59 + this.NodThreshold.GetHashCode();
+                if (this.Detail != null) hashCode = hashCode * 59 + this.Detail.GetHashCode();
                 return hashCode;
             }
         }

@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(DeleteSnapshotRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SnapshotId != input.SnapshotId || (this.SnapshotId != null && !this.SnapshotId.Equals(input.SnapshotId))) return false;
 
-            return 
-                (
-                    this.SnapshotId == input.SnapshotId ||
-                    (this.SnapshotId != null &&
-                    this.SnapshotId.Equals(input.SnapshotId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SnapshotId != null)
-                    hashCode = hashCode * 59 + this.SnapshotId.GetHashCode();
+                var hashCode = 41;
+                if (this.SnapshotId != null) hashCode = hashCode * 59 + this.SnapshotId.GetHashCode();
                 return hashCode;
             }
         }

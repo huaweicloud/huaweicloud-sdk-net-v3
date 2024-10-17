@@ -126,70 +126,21 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(UpgradeReports input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.SrcInstanceId != input.SrcInstanceId || (this.SrcInstanceId != null && !this.SrcInstanceId.Equals(input.SrcInstanceId))) return false;
+            if (this.SrcDatabaseVersion != input.SrcDatabaseVersion || (this.SrcDatabaseVersion != null && !this.SrcDatabaseVersion.Equals(input.SrcDatabaseVersion))) return false;
+            if (this.DstInstanceId != input.DstInstanceId || (this.DstInstanceId != null && !this.DstInstanceId.Equals(input.DstInstanceId))) return false;
+            if (this.DstDatabaseVersion != input.DstDatabaseVersion || (this.DstDatabaseVersion != null && !this.DstDatabaseVersion.Equals(input.DstDatabaseVersion))) return false;
+            if (this.Result != input.Result || (this.Result != null && !this.Result.Equals(input.Result))) return false;
+            if (this.IsPrivateIpChanged != input.IsPrivateIpChanged || (this.IsPrivateIpChanged != null && !this.IsPrivateIpChanged.Equals(input.IsPrivateIpChanged))) return false;
+            if (this.PrivateIpChangeTime != input.PrivateIpChangeTime || (this.PrivateIpChangeTime != null && !this.PrivateIpChangeTime.Equals(input.PrivateIpChangeTime))) return false;
+            if (this.StatisticsCollectionMode != input.StatisticsCollectionMode || (this.StatisticsCollectionMode != null && !this.StatisticsCollectionMode.Equals(input.StatisticsCollectionMode))) return false;
+            if (this.Detail != input.Detail || (this.Detail != null && !this.Detail.Equals(input.Detail))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.SrcInstanceId == input.SrcInstanceId ||
-                    (this.SrcInstanceId != null &&
-                    this.SrcInstanceId.Equals(input.SrcInstanceId))
-                ) && 
-                (
-                    this.SrcDatabaseVersion == input.SrcDatabaseVersion ||
-                    (this.SrcDatabaseVersion != null &&
-                    this.SrcDatabaseVersion.Equals(input.SrcDatabaseVersion))
-                ) && 
-                (
-                    this.DstInstanceId == input.DstInstanceId ||
-                    (this.DstInstanceId != null &&
-                    this.DstInstanceId.Equals(input.DstInstanceId))
-                ) && 
-                (
-                    this.DstDatabaseVersion == input.DstDatabaseVersion ||
-                    (this.DstDatabaseVersion != null &&
-                    this.DstDatabaseVersion.Equals(input.DstDatabaseVersion))
-                ) && 
-                (
-                    this.Result == input.Result ||
-                    (this.Result != null &&
-                    this.Result.Equals(input.Result))
-                ) && 
-                (
-                    this.IsPrivateIpChanged == input.IsPrivateIpChanged ||
-                    (this.IsPrivateIpChanged != null &&
-                    this.IsPrivateIpChanged.Equals(input.IsPrivateIpChanged))
-                ) && 
-                (
-                    this.PrivateIpChangeTime == input.PrivateIpChangeTime ||
-                    (this.PrivateIpChangeTime != null &&
-                    this.PrivateIpChangeTime.Equals(input.PrivateIpChangeTime))
-                ) && 
-                (
-                    this.StatisticsCollectionMode == input.StatisticsCollectionMode ||
-                    (this.StatisticsCollectionMode != null &&
-                    this.StatisticsCollectionMode.Equals(input.StatisticsCollectionMode))
-                ) && 
-                (
-                    this.Detail == input.Detail ||
-                    (this.Detail != null &&
-                    this.Detail.Equals(input.Detail))
-                );
+            return true;
         }
 
         /// <summary>
@@ -199,31 +150,19 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.SrcInstanceId != null)
-                    hashCode = hashCode * 59 + this.SrcInstanceId.GetHashCode();
-                if (this.SrcDatabaseVersion != null)
-                    hashCode = hashCode * 59 + this.SrcDatabaseVersion.GetHashCode();
-                if (this.DstInstanceId != null)
-                    hashCode = hashCode * 59 + this.DstInstanceId.GetHashCode();
-                if (this.DstDatabaseVersion != null)
-                    hashCode = hashCode * 59 + this.DstDatabaseVersion.GetHashCode();
-                if (this.Result != null)
-                    hashCode = hashCode * 59 + this.Result.GetHashCode();
-                if (this.IsPrivateIpChanged != null)
-                    hashCode = hashCode * 59 + this.IsPrivateIpChanged.GetHashCode();
-                if (this.PrivateIpChangeTime != null)
-                    hashCode = hashCode * 59 + this.PrivateIpChangeTime.GetHashCode();
-                if (this.StatisticsCollectionMode != null)
-                    hashCode = hashCode * 59 + this.StatisticsCollectionMode.GetHashCode();
-                if (this.Detail != null)
-                    hashCode = hashCode * 59 + this.Detail.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.SrcInstanceId != null) hashCode = hashCode * 59 + this.SrcInstanceId.GetHashCode();
+                if (this.SrcDatabaseVersion != null) hashCode = hashCode * 59 + this.SrcDatabaseVersion.GetHashCode();
+                if (this.DstInstanceId != null) hashCode = hashCode * 59 + this.DstInstanceId.GetHashCode();
+                if (this.DstDatabaseVersion != null) hashCode = hashCode * 59 + this.DstDatabaseVersion.GetHashCode();
+                if (this.Result != null) hashCode = hashCode * 59 + this.Result.GetHashCode();
+                if (this.IsPrivateIpChanged != null) hashCode = hashCode * 59 + this.IsPrivateIpChanged.GetHashCode();
+                if (this.PrivateIpChangeTime != null) hashCode = hashCode * 59 + this.PrivateIpChangeTime.GetHashCode();
+                if (this.StatisticsCollectionMode != null) hashCode = hashCode * 59 + this.StatisticsCollectionMode.GetHashCode();
+                if (this.Detail != null) hashCode = hashCode * 59 + this.Detail.GetHashCode();
                 return hashCode;
             }
         }

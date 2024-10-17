@@ -105,59 +105,18 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ListEngineProductsEntity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
+            if (this.EcsFlavorId != input.EcsFlavorId || (this.EcsFlavorId != null && !this.EcsFlavorId.Equals(input.EcsFlavorId))) return false;
+            if (this.BillingCode != input.BillingCode || (this.BillingCode != null && !this.BillingCode.Equals(input.BillingCode))) return false;
+            if (this.ArchTypes != input.ArchTypes || (this.ArchTypes != null && input.ArchTypes != null && !this.ArchTypes.SequenceEqual(input.ArchTypes))) return false;
+            if (this.ChargingMode != input.ChargingMode || (this.ChargingMode != null && input.ChargingMode != null && !this.ChargingMode.SequenceEqual(input.ChargingMode))) return false;
+            if (this.Ios != input.Ios || (this.Ios != null && input.Ios != null && !this.Ios.SequenceEqual(input.Ios))) return false;
+            if (this.SupportFeatures != input.SupportFeatures || (this.SupportFeatures != null && input.SupportFeatures != null && !this.SupportFeatures.SequenceEqual(input.SupportFeatures))) return false;
+            if (this.Properties != input.Properties || (this.Properties != null && !this.Properties.Equals(input.Properties))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.ProductId == input.ProductId ||
-                    (this.ProductId != null &&
-                    this.ProductId.Equals(input.ProductId))
-                ) && 
-                (
-                    this.EcsFlavorId == input.EcsFlavorId ||
-                    (this.EcsFlavorId != null &&
-                    this.EcsFlavorId.Equals(input.EcsFlavorId))
-                ) && 
-                (
-                    this.BillingCode == input.BillingCode ||
-                    (this.BillingCode != null &&
-                    this.BillingCode.Equals(input.BillingCode))
-                ) && 
-                (
-                    this.ArchTypes == input.ArchTypes ||
-                    this.ArchTypes != null &&
-                    input.ArchTypes != null &&
-                    this.ArchTypes.SequenceEqual(input.ArchTypes)
-                ) && 
-                (
-                    this.ChargingMode == input.ChargingMode ||
-                    this.ChargingMode != null &&
-                    input.ChargingMode != null &&
-                    this.ChargingMode.SequenceEqual(input.ChargingMode)
-                ) && 
-                (
-                    this.Ios == input.Ios ||
-                    this.Ios != null &&
-                    input.Ios != null &&
-                    this.Ios.SequenceEqual(input.Ios)
-                ) && 
-                (
-                    this.SupportFeatures == input.SupportFeatures ||
-                    this.SupportFeatures != null &&
-                    input.SupportFeatures != null &&
-                    this.SupportFeatures.SequenceEqual(input.SupportFeatures)
-                ) && 
-                (
-                    this.Properties == input.Properties ||
-                    (this.Properties != null &&
-                    this.Properties.Equals(input.Properties))
-                );
+            return true;
         }
 
         /// <summary>
@@ -167,25 +126,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.ProductId != null)
-                    hashCode = hashCode * 59 + this.ProductId.GetHashCode();
-                if (this.EcsFlavorId != null)
-                    hashCode = hashCode * 59 + this.EcsFlavorId.GetHashCode();
-                if (this.BillingCode != null)
-                    hashCode = hashCode * 59 + this.BillingCode.GetHashCode();
-                if (this.ArchTypes != null)
-                    hashCode = hashCode * 59 + this.ArchTypes.GetHashCode();
-                if (this.ChargingMode != null)
-                    hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
-                if (this.Ios != null)
-                    hashCode = hashCode * 59 + this.Ios.GetHashCode();
-                if (this.SupportFeatures != null)
-                    hashCode = hashCode * 59 + this.SupportFeatures.GetHashCode();
-                if (this.Properties != null)
-                    hashCode = hashCode * 59 + this.Properties.GetHashCode();
+                var hashCode = 41;
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
+                if (this.EcsFlavorId != null) hashCode = hashCode * 59 + this.EcsFlavorId.GetHashCode();
+                if (this.BillingCode != null) hashCode = hashCode * 59 + this.BillingCode.GetHashCode();
+                if (this.ArchTypes != null) hashCode = hashCode * 59 + this.ArchTypes.GetHashCode();
+                if (this.ChargingMode != null) hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
+                if (this.Ios != null) hashCode = hashCode * 59 + this.Ios.GetHashCode();
+                if (this.SupportFeatures != null) hashCode = hashCode * 59 + this.SupportFeatures.GetHashCode();
+                if (this.Properties != null) hashCode = hashCode * 59 + this.Properties.GetHashCode();
                 return hashCode;
             }
         }

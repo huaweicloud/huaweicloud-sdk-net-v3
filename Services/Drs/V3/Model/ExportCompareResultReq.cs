@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(ExportCompareResultReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CompareType != input.CompareType || (this.CompareType != null && !this.CompareType.Equals(input.CompareType))) return false;
+            if (this.CompareJobId != input.CompareJobId || (this.CompareJobId != null && !this.CompareJobId.Equals(input.CompareJobId))) return false;
+            if (this.TimeZone != input.TimeZone || (this.TimeZone != null && !this.TimeZone.Equals(input.TimeZone))) return false;
 
-            return 
-                (
-                    this.CompareType == input.CompareType ||
-                    (this.CompareType != null &&
-                    this.CompareType.Equals(input.CompareType))
-                ) && 
-                (
-                    this.CompareJobId == input.CompareJobId ||
-                    (this.CompareJobId != null &&
-                    this.CompareJobId.Equals(input.CompareJobId))
-                ) && 
-                (
-                    this.TimeZone == input.TimeZone ||
-                    (this.TimeZone != null &&
-                    this.TimeZone.Equals(input.TimeZone))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CompareType != null)
-                    hashCode = hashCode * 59 + this.CompareType.GetHashCode();
-                if (this.CompareJobId != null)
-                    hashCode = hashCode * 59 + this.CompareJobId.GetHashCode();
-                if (this.TimeZone != null)
-                    hashCode = hashCode * 59 + this.TimeZone.GetHashCode();
+                var hashCode = 41;
+                if (this.CompareType != null) hashCode = hashCode * 59 + this.CompareType.GetHashCode();
+                if (this.CompareJobId != null) hashCode = hashCode * 59 + this.CompareJobId.GetHashCode();
+                if (this.TimeZone != null) hashCode = hashCode * 59 + this.TimeZone.GetHashCode();
                 return hashCode;
             }
         }

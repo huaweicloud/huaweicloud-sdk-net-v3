@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(OsStartBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OsStart != input.OsStart || (this.OsStart != null && !this.OsStart.Equals(input.OsStart))) return false;
 
-            return 
-                (
-                    this.OsStart == input.OsStart ||
-                    (this.OsStart != null &&
-                    this.OsStart.Equals(input.OsStart))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OsStart != null)
-                    hashCode = hashCode * 59 + this.OsStart.GetHashCode();
+                var hashCode = 41;
+                if (this.OsStart != null) hashCode = hashCode * 59 + this.OsStart.GetHashCode();
                 return hashCode;
             }
         }

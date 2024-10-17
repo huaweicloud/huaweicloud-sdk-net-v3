@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(ShowErrorLogResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
+            if (this.ErrorLogList != input.ErrorLogList || (this.ErrorLogList != null && input.ErrorLogList != null && !this.ErrorLogList.SequenceEqual(input.ErrorLogList))) return false;
 
-            return 
-                (
-                    this.TotalCount == input.TotalCount ||
-                    (this.TotalCount != null &&
-                    this.TotalCount.Equals(input.TotalCount))
-                ) && 
-                (
-                    this.ErrorLogList == input.ErrorLogList ||
-                    this.ErrorLogList != null &&
-                    input.ErrorLogList != null &&
-                    this.ErrorLogList.SequenceEqual(input.ErrorLogList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TotalCount != null)
-                    hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
-                if (this.ErrorLogList != null)
-                    hashCode = hashCode * 59 + this.ErrorLogList.GetHashCode();
+                var hashCode = 41;
+                if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
+                if (this.ErrorLogList != null) hashCode = hashCode * 59 + this.ErrorLogList.GetHashCode();
                 return hashCode;
             }
         }

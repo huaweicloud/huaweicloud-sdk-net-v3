@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// </summary>
         public bool Equals(UpdateL7policyReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.RedirectListenerId != input.RedirectListenerId || (this.RedirectListenerId != null && !this.RedirectListenerId.Equals(input.RedirectListenerId))) return false;
+            if (this.RedirectPoolId != input.RedirectPoolId || (this.RedirectPoolId != null && !this.RedirectPoolId.Equals(input.RedirectPoolId))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.RedirectListenerId == input.RedirectListenerId ||
-                    (this.RedirectListenerId != null &&
-                    this.RedirectListenerId.Equals(input.RedirectListenerId))
-                ) && 
-                (
-                    this.RedirectPoolId == input.RedirectPoolId ||
-                    (this.RedirectPoolId != null &&
-                    this.RedirectPoolId.Equals(input.RedirectPoolId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.RedirectListenerId != null)
-                    hashCode = hashCode * 59 + this.RedirectListenerId.GetHashCode();
-                if (this.RedirectPoolId != null)
-                    hashCode = hashCode * 59 + this.RedirectPoolId.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.RedirectListenerId != null) hashCode = hashCode * 59 + this.RedirectListenerId.GetHashCode();
+                if (this.RedirectPoolId != null) hashCode = hashCode * 59 + this.RedirectPoolId.GetHashCode();
                 return hashCode;
             }
         }

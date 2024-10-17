@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(PacketMessage input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HexIndex != input.HexIndex || (this.HexIndex != null && !this.HexIndex.Equals(input.HexIndex))) return false;
+            if (this.Hexs != input.Hexs || (this.Hexs != null && input.Hexs != null && !this.Hexs.SequenceEqual(input.Hexs))) return false;
+            if (this.Utf8String != input.Utf8String || (this.Utf8String != null && !this.Utf8String.Equals(input.Utf8String))) return false;
 
-            return 
-                (
-                    this.HexIndex == input.HexIndex ||
-                    (this.HexIndex != null &&
-                    this.HexIndex.Equals(input.HexIndex))
-                ) && 
-                (
-                    this.Hexs == input.Hexs ||
-                    this.Hexs != null &&
-                    input.Hexs != null &&
-                    this.Hexs.SequenceEqual(input.Hexs)
-                ) && 
-                (
-                    this.Utf8String == input.Utf8String ||
-                    (this.Utf8String != null &&
-                    this.Utf8String.Equals(input.Utf8String))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HexIndex != null)
-                    hashCode = hashCode * 59 + this.HexIndex.GetHashCode();
-                if (this.Hexs != null)
-                    hashCode = hashCode * 59 + this.Hexs.GetHashCode();
-                if (this.Utf8String != null)
-                    hashCode = hashCode * 59 + this.Utf8String.GetHashCode();
+                var hashCode = 41;
+                if (this.HexIndex != null) hashCode = hashCode * 59 + this.HexIndex.GetHashCode();
+                if (this.Hexs != null) hashCode = hashCode * 59 + this.Hexs.GetHashCode();
+                if (this.Utf8String != null) hashCode = hashCode * 59 + this.Utf8String.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// </summary>
         public bool Equals(ListAlarmsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MetricAlarms != input.MetricAlarms || (this.MetricAlarms != null && input.MetricAlarms != null && !this.MetricAlarms.SequenceEqual(input.MetricAlarms))) return false;
+            if (this.MetaData != input.MetaData || (this.MetaData != null && !this.MetaData.Equals(input.MetaData))) return false;
 
-            return 
-                (
-                    this.MetricAlarms == input.MetricAlarms ||
-                    this.MetricAlarms != null &&
-                    input.MetricAlarms != null &&
-                    this.MetricAlarms.SequenceEqual(input.MetricAlarms)
-                ) && 
-                (
-                    this.MetaData == input.MetaData ||
-                    (this.MetaData != null &&
-                    this.MetaData.Equals(input.MetaData))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MetricAlarms != null)
-                    hashCode = hashCode * 59 + this.MetricAlarms.GetHashCode();
-                if (this.MetaData != null)
-                    hashCode = hashCode * 59 + this.MetaData.GetHashCode();
+                var hashCode = 41;
+                if (this.MetricAlarms != null) hashCode = hashCode * 59 + this.MetricAlarms.GetHashCode();
+                if (this.MetaData != null) hashCode = hashCode * 59 + this.MetaData.GetHashCode();
                 return hashCode;
             }
         }

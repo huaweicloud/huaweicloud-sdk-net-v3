@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(CinderListQuotasResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.QuotaSet != input.QuotaSet || (this.QuotaSet != null && !this.QuotaSet.Equals(input.QuotaSet))) return false;
 
-            return 
-                (
-                    this.QuotaSet == input.QuotaSet ||
-                    (this.QuotaSet != null &&
-                    this.QuotaSet.Equals(input.QuotaSet))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.QuotaSet != null)
-                    hashCode = hashCode * 59 + this.QuotaSet.GetHashCode();
+                var hashCode = 41;
+                if (this.QuotaSet != null) hashCode = hashCode * 59 + this.QuotaSet.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ListConfigHistoriesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HistoryNum != input.HistoryNum || (this.HistoryNum != null && !this.HistoryNum.Equals(input.HistoryNum))) return false;
+            if (this.Histories != input.Histories || (this.Histories != null && input.Histories != null && !this.Histories.SequenceEqual(input.Histories))) return false;
 
-            return 
-                (
-                    this.HistoryNum == input.HistoryNum ||
-                    (this.HistoryNum != null &&
-                    this.HistoryNum.Equals(input.HistoryNum))
-                ) && 
-                (
-                    this.Histories == input.Histories ||
-                    this.Histories != null &&
-                    input.Histories != null &&
-                    this.Histories.SequenceEqual(input.Histories)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HistoryNum != null)
-                    hashCode = hashCode * 59 + this.HistoryNum.GetHashCode();
-                if (this.Histories != null)
-                    hashCode = hashCode * 59 + this.Histories.GetHashCode();
+                var hashCode = 41;
+                if (this.HistoryNum != null) hashCode = hashCode * 59 + this.HistoryNum.GetHashCode();
+                if (this.Histories != null) hashCode = hashCode * 59 + this.Histories.GetHashCode();
                 return hashCode;
             }
         }

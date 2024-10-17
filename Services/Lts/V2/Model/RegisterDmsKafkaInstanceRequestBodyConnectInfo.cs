@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(RegisterDmsKafkaInstanceRequestBodyConnectInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.Pwd != input.Pwd || (this.Pwd != null && !this.Pwd.Equals(input.Pwd))) return false;
 
-            return 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.Pwd == input.Pwd ||
-                    (this.Pwd != null &&
-                    this.Pwd.Equals(input.Pwd))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UserName != null)
-                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.Pwd != null)
-                    hashCode = hashCode * 59 + this.Pwd.GetHashCode();
+                var hashCode = 41;
+                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.Pwd != null) hashCode = hashCode * 59 + this.Pwd.GetHashCode();
                 return hashCode;
             }
         }

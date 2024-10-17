@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(NovaSecurityGroupCommonRule input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FromPort != input.FromPort || (this.FromPort != null && !this.FromPort.Equals(input.FromPort))) return false;
+            if (this.Group != input.Group || (this.Group != null && !this.Group.Equals(input.Group))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.IpProtocol != input.IpProtocol || (this.IpProtocol != null && !this.IpProtocol.Equals(input.IpProtocol))) return false;
+            if (this.IpRange != input.IpRange || (this.IpRange != null && !this.IpRange.Equals(input.IpRange))) return false;
+            if (this.ParentGroupId != input.ParentGroupId || (this.ParentGroupId != null && !this.ParentGroupId.Equals(input.ParentGroupId))) return false;
+            if (this.ToPort != input.ToPort || (this.ToPort != null && !this.ToPort.Equals(input.ToPort))) return false;
 
-            return 
-                (
-                    this.FromPort == input.FromPort ||
-                    (this.FromPort != null &&
-                    this.FromPort.Equals(input.FromPort))
-                ) && 
-                (
-                    this.Group == input.Group ||
-                    (this.Group != null &&
-                    this.Group.Equals(input.Group))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.IpProtocol == input.IpProtocol ||
-                    (this.IpProtocol != null &&
-                    this.IpProtocol.Equals(input.IpProtocol))
-                ) && 
-                (
-                    this.IpRange == input.IpRange ||
-                    (this.IpRange != null &&
-                    this.IpRange.Equals(input.IpRange))
-                ) && 
-                (
-                    this.ParentGroupId == input.ParentGroupId ||
-                    (this.ParentGroupId != null &&
-                    this.ParentGroupId.Equals(input.ParentGroupId))
-                ) && 
-                (
-                    this.ToPort == input.ToPort ||
-                    (this.ToPort != null &&
-                    this.ToPort.Equals(input.ToPort))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FromPort != null)
-                    hashCode = hashCode * 59 + this.FromPort.GetHashCode();
-                if (this.Group != null)
-                    hashCode = hashCode * 59 + this.Group.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.IpProtocol != null)
-                    hashCode = hashCode * 59 + this.IpProtocol.GetHashCode();
-                if (this.IpRange != null)
-                    hashCode = hashCode * 59 + this.IpRange.GetHashCode();
-                if (this.ParentGroupId != null)
-                    hashCode = hashCode * 59 + this.ParentGroupId.GetHashCode();
-                if (this.ToPort != null)
-                    hashCode = hashCode * 59 + this.ToPort.GetHashCode();
+                var hashCode = 41;
+                if (this.FromPort != null) hashCode = hashCode * 59 + this.FromPort.GetHashCode();
+                if (this.Group != null) hashCode = hashCode * 59 + this.Group.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.IpProtocol != null) hashCode = hashCode * 59 + this.IpProtocol.GetHashCode();
+                if (this.IpRange != null) hashCode = hashCode * 59 + this.IpRange.GetHashCode();
+                if (this.ParentGroupId != null) hashCode = hashCode * 59 + this.ParentGroupId.GetHashCode();
+                if (this.ToPort != null) hashCode = hashCode * 59 + this.ToPort.GetHashCode();
                 return hashCode;
             }
         }

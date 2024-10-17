@@ -105,56 +105,18 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(Volume input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.Volumetype != input.Volumetype || (this.Volumetype != null && !this.Volumetype.Equals(input.Volumetype))) return false;
+            if (this.Iops != input.Iops || (this.Iops != null && !this.Iops.Equals(input.Iops))) return false;
+            if (this.Throughput != input.Throughput || (this.Throughput != null && !this.Throughput.Equals(input.Throughput))) return false;
+            if (this.ExtendParam != input.ExtendParam || (this.ExtendParam != null && input.ExtendParam != null && !this.ExtendParam.SequenceEqual(input.ExtendParam))) return false;
+            if (this.ClusterId != input.ClusterId || (this.ClusterId != null && !this.ClusterId.Equals(input.ClusterId))) return false;
+            if (this.ClusterType != input.ClusterType || (this.ClusterType != null && !this.ClusterType.Equals(input.ClusterType))) return false;
+            if (this.Hwpassthrough != input.Hwpassthrough || (this.Hwpassthrough != null && !this.Hwpassthrough.Equals(input.Hwpassthrough))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && !this.Metadata.Equals(input.Metadata))) return false;
 
-            return 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.Volumetype == input.Volumetype ||
-                    (this.Volumetype != null &&
-                    this.Volumetype.Equals(input.Volumetype))
-                ) && 
-                (
-                    this.Iops == input.Iops ||
-                    (this.Iops != null &&
-                    this.Iops.Equals(input.Iops))
-                ) && 
-                (
-                    this.Throughput == input.Throughput ||
-                    (this.Throughput != null &&
-                    this.Throughput.Equals(input.Throughput))
-                ) && 
-                (
-                    this.ExtendParam == input.ExtendParam ||
-                    this.ExtendParam != null &&
-                    input.ExtendParam != null &&
-                    this.ExtendParam.SequenceEqual(input.ExtendParam)
-                ) && 
-                (
-                    this.ClusterId == input.ClusterId ||
-                    (this.ClusterId != null &&
-                    this.ClusterId.Equals(input.ClusterId))
-                ) && 
-                (
-                    this.ClusterType == input.ClusterType ||
-                    (this.ClusterType != null &&
-                    this.ClusterType.Equals(input.ClusterType))
-                ) && 
-                (
-                    this.Hwpassthrough == input.Hwpassthrough ||
-                    (this.Hwpassthrough != null &&
-                    this.Hwpassthrough.Equals(input.Hwpassthrough))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    (this.Metadata != null &&
-                    this.Metadata.Equals(input.Metadata))
-                );
+            return true;
         }
 
         /// <summary>
@@ -164,25 +126,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.Volumetype != null)
-                    hashCode = hashCode * 59 + this.Volumetype.GetHashCode();
-                if (this.Iops != null)
-                    hashCode = hashCode * 59 + this.Iops.GetHashCode();
-                if (this.Throughput != null)
-                    hashCode = hashCode * 59 + this.Throughput.GetHashCode();
-                if (this.ExtendParam != null)
-                    hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
-                if (this.ClusterId != null)
-                    hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
-                if (this.ClusterType != null)
-                    hashCode = hashCode * 59 + this.ClusterType.GetHashCode();
-                if (this.Hwpassthrough != null)
-                    hashCode = hashCode * 59 + this.Hwpassthrough.GetHashCode();
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                var hashCode = 41;
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Volumetype != null) hashCode = hashCode * 59 + this.Volumetype.GetHashCode();
+                if (this.Iops != null) hashCode = hashCode * 59 + this.Iops.GetHashCode();
+                if (this.Throughput != null) hashCode = hashCode * 59 + this.Throughput.GetHashCode();
+                if (this.ExtendParam != null) hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
+                if (this.ClusterId != null) hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
+                if (this.ClusterType != null) hashCode = hashCode * 59 + this.ClusterType.GetHashCode();
+                if (this.Hwpassthrough != null) hashCode = hashCode * 59 + this.Hwpassthrough.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
                 return hashCode;
             }
         }

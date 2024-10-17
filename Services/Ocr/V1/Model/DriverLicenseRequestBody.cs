@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(DriverLicenseRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Image != input.Image || (this.Image != null && !this.Image.Equals(input.Image))) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.Side != input.Side || (this.Side != null && !this.Side.Equals(input.Side))) return false;
+            if (this.ReturnIssuingAuthority != input.ReturnIssuingAuthority || (this.ReturnIssuingAuthority != null && !this.ReturnIssuingAuthority.Equals(input.ReturnIssuingAuthority))) return false;
+            if (this.ReturnTextLocation != input.ReturnTextLocation || (this.ReturnTextLocation != null && !this.ReturnTextLocation.Equals(input.ReturnTextLocation))) return false;
 
-            return 
-                (
-                    this.Image == input.Image ||
-                    (this.Image != null &&
-                    this.Image.Equals(input.Image))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.Side == input.Side ||
-                    (this.Side != null &&
-                    this.Side.Equals(input.Side))
-                ) && 
-                (
-                    this.ReturnIssuingAuthority == input.ReturnIssuingAuthority ||
-                    (this.ReturnIssuingAuthority != null &&
-                    this.ReturnIssuingAuthority.Equals(input.ReturnIssuingAuthority))
-                ) && 
-                (
-                    this.ReturnTextLocation == input.ReturnTextLocation ||
-                    (this.ReturnTextLocation != null &&
-                    this.ReturnTextLocation.Equals(input.ReturnTextLocation))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Image != null)
-                    hashCode = hashCode * 59 + this.Image.GetHashCode();
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.Side != null)
-                    hashCode = hashCode * 59 + this.Side.GetHashCode();
-                if (this.ReturnIssuingAuthority != null)
-                    hashCode = hashCode * 59 + this.ReturnIssuingAuthority.GetHashCode();
-                if (this.ReturnTextLocation != null)
-                    hashCode = hashCode * 59 + this.ReturnTextLocation.GetHashCode();
+                var hashCode = 41;
+                if (this.Image != null) hashCode = hashCode * 59 + this.Image.GetHashCode();
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.Side != null) hashCode = hashCode * 59 + this.Side.GetHashCode();
+                if (this.ReturnIssuingAuthority != null) hashCode = hashCode * 59 + this.ReturnIssuingAuthority.GetHashCode();
+                if (this.ReturnTextLocation != null) hashCode = hashCode * 59 + this.ReturnTextLocation.GetHashCode();
                 return hashCode;
             }
         }

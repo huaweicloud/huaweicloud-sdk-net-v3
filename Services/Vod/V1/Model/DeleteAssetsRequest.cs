@@ -66,26 +66,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(DeleteAssetsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.XSdkDate != input.XSdkDate || (this.XSdkDate != null && !this.XSdkDate.Equals(input.XSdkDate))) return false;
+            if (this.AssetId != input.AssetId || (this.AssetId != null && input.AssetId != null && !this.AssetId.SequenceEqual(input.AssetId))) return false;
+            if (this.DeleteType != input.DeleteType || (this.DeleteType != null && !this.DeleteType.Equals(input.DeleteType))) return false;
 
-            return 
-                (
-                    this.XSdkDate == input.XSdkDate ||
-                    (this.XSdkDate != null &&
-                    this.XSdkDate.Equals(input.XSdkDate))
-                ) && 
-                (
-                    this.AssetId == input.AssetId ||
-                    this.AssetId != null &&
-                    input.AssetId != null &&
-                    this.AssetId.SequenceEqual(input.AssetId)
-                ) && 
-                (
-                    this.DeleteType == input.DeleteType ||
-                    (this.DeleteType != null &&
-                    this.DeleteType.Equals(input.DeleteType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -95,13 +81,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.XSdkDate != null)
-                    hashCode = hashCode * 59 + this.XSdkDate.GetHashCode();
-                if (this.AssetId != null)
-                    hashCode = hashCode * 59 + this.AssetId.GetHashCode();
-                if (this.DeleteType != null)
-                    hashCode = hashCode * 59 + this.DeleteType.GetHashCode();
+                var hashCode = 41;
+                if (this.XSdkDate != null) hashCode = hashCode * 59 + this.XSdkDate.GetHashCode();
+                if (this.AssetId != null) hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                if (this.DeleteType != null) hashCode = hashCode * 59 + this.DeleteType.GetHashCode();
                 return hashCode;
             }
         }

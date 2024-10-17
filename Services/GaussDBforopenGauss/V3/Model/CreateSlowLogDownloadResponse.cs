@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(CreateSlowLogDownloadResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.List != input.List || (this.List != null && input.List != null && !this.List.SequenceEqual(input.List))) return false;
 
-            return 
-                (
-                    this.List == input.List ||
-                    this.List != null &&
-                    input.List != null &&
-                    this.List.SequenceEqual(input.List)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.List != null)
-                    hashCode = hashCode * 59 + this.List.GetHashCode();
+                var hashCode = 41;
+                if (this.List != null) hashCode = hashCode * 59 + this.List.GetHashCode();
                 return hashCode;
             }
         }

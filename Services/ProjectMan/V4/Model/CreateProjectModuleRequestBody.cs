@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(CreateProjectModuleRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.ModuleName != input.ModuleName || (this.ModuleName != null && !this.ModuleName.Equals(input.ModuleName))) return false;
+            if (this.ParentModuleId != input.ParentModuleId || (this.ParentModuleId != null && !this.ParentModuleId.Equals(input.ParentModuleId))) return false;
+            if (this.Owner != input.Owner || (this.Owner != null && !this.Owner.Equals(input.Owner))) return false;
 
-            return 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.ModuleName == input.ModuleName ||
-                    (this.ModuleName != null &&
-                    this.ModuleName.Equals(input.ModuleName))
-                ) && 
-                (
-                    this.ParentModuleId == input.ParentModuleId ||
-                    (this.ParentModuleId != null &&
-                    this.ParentModuleId.Equals(input.ParentModuleId))
-                ) && 
-                (
-                    this.Owner == input.Owner ||
-                    (this.Owner != null &&
-                    this.Owner.Equals(input.Owner))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.ModuleName != null)
-                    hashCode = hashCode * 59 + this.ModuleName.GetHashCode();
-                if (this.ParentModuleId != null)
-                    hashCode = hashCode * 59 + this.ParentModuleId.GetHashCode();
-                if (this.Owner != null)
-                    hashCode = hashCode * 59 + this.Owner.GetHashCode();
+                var hashCode = 41;
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.ModuleName != null) hashCode = hashCode * 59 + this.ModuleName.GetHashCode();
+                if (this.ParentModuleId != null) hashCode = hashCode * 59 + this.ParentModuleId.GetHashCode();
+                if (this.Owner != null) hashCode = hashCode * 59 + this.Owner.GetHashCode();
                 return hashCode;
             }
         }

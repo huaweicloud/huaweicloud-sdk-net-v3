@@ -91,51 +91,16 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ListMonitoredObjectsOfInstanceResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Router != input.Router || (this.Router != null && input.Router != null && !this.Router.SequenceEqual(input.Router))) return false;
+            if (this.Children != input.Children || (this.Children != null && input.Children != null && !this.Children.SequenceEqual(input.Children))) return false;
+            if (this.Instances != input.Instances || (this.Instances != null && input.Instances != null && !this.Instances.SequenceEqual(input.Instances))) return false;
+            if (this.DcsClusterRedisNode != input.DcsClusterRedisNode || (this.DcsClusterRedisNode != null && input.DcsClusterRedisNode != null && !this.DcsClusterRedisNode.SequenceEqual(input.DcsClusterRedisNode))) return false;
+            if (this.DcsClusterProxyNode != input.DcsClusterProxyNode || (this.DcsClusterProxyNode != null && input.DcsClusterProxyNode != null && !this.DcsClusterProxyNode.SequenceEqual(input.DcsClusterProxyNode))) return false;
+            if (this.DcsClusterProxy2Node != input.DcsClusterProxy2Node || (this.DcsClusterProxy2Node != null && input.DcsClusterProxy2Node != null && !this.DcsClusterProxy2Node.SequenceEqual(input.DcsClusterProxy2Node))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
-            return 
-                (
-                    this.Router == input.Router ||
-                    this.Router != null &&
-                    input.Router != null &&
-                    this.Router.SequenceEqual(input.Router)
-                ) && 
-                (
-                    this.Children == input.Children ||
-                    this.Children != null &&
-                    input.Children != null &&
-                    this.Children.SequenceEqual(input.Children)
-                ) && 
-                (
-                    this.Instances == input.Instances ||
-                    this.Instances != null &&
-                    input.Instances != null &&
-                    this.Instances.SequenceEqual(input.Instances)
-                ) && 
-                (
-                    this.DcsClusterRedisNode == input.DcsClusterRedisNode ||
-                    this.DcsClusterRedisNode != null &&
-                    input.DcsClusterRedisNode != null &&
-                    this.DcsClusterRedisNode.SequenceEqual(input.DcsClusterRedisNode)
-                ) && 
-                (
-                    this.DcsClusterProxyNode == input.DcsClusterProxyNode ||
-                    this.DcsClusterProxyNode != null &&
-                    input.DcsClusterProxyNode != null &&
-                    this.DcsClusterProxyNode.SequenceEqual(input.DcsClusterProxyNode)
-                ) && 
-                (
-                    this.DcsClusterProxy2Node == input.DcsClusterProxy2Node ||
-                    this.DcsClusterProxy2Node != null &&
-                    input.DcsClusterProxy2Node != null &&
-                    this.DcsClusterProxy2Node.SequenceEqual(input.DcsClusterProxy2Node)
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                );
+            return true;
         }
 
         /// <summary>
@@ -145,21 +110,14 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Router != null)
-                    hashCode = hashCode * 59 + this.Router.GetHashCode();
-                if (this.Children != null)
-                    hashCode = hashCode * 59 + this.Children.GetHashCode();
-                if (this.Instances != null)
-                    hashCode = hashCode * 59 + this.Instances.GetHashCode();
-                if (this.DcsClusterRedisNode != null)
-                    hashCode = hashCode * 59 + this.DcsClusterRedisNode.GetHashCode();
-                if (this.DcsClusterProxyNode != null)
-                    hashCode = hashCode * 59 + this.DcsClusterProxyNode.GetHashCode();
-                if (this.DcsClusterProxy2Node != null)
-                    hashCode = hashCode * 59 + this.DcsClusterProxy2Node.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                var hashCode = 41;
+                if (this.Router != null) hashCode = hashCode * 59 + this.Router.GetHashCode();
+                if (this.Children != null) hashCode = hashCode * 59 + this.Children.GetHashCode();
+                if (this.Instances != null) hashCode = hashCode * 59 + this.Instances.GetHashCode();
+                if (this.DcsClusterRedisNode != null) hashCode = hashCode * 59 + this.DcsClusterRedisNode.GetHashCode();
+                if (this.DcsClusterProxyNode != null) hashCode = hashCode * 59 + this.DcsClusterProxyNode.GetHashCode();
+                if (this.DcsClusterProxy2Node != null) hashCode = hashCode * 59 + this.DcsClusterProxy2Node.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

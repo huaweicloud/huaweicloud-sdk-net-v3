@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(CreateOfflineTaskReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BaseInfo != input.BaseInfo || (this.BaseInfo != null && !this.BaseInfo.Equals(input.BaseInfo))) return false;
+            if (this.TargetDbInfo != input.TargetDbInfo || (this.TargetDbInfo != null && !this.TargetDbInfo.Equals(input.TargetDbInfo))) return false;
+            if (this.BackupInfo != input.BackupInfo || (this.BackupInfo != null && !this.BackupInfo.Equals(input.BackupInfo))) return false;
+            if (this.Options != input.Options || (this.Options != null && !this.Options.Equals(input.Options))) return false;
 
-            return 
-                (
-                    this.BaseInfo == input.BaseInfo ||
-                    (this.BaseInfo != null &&
-                    this.BaseInfo.Equals(input.BaseInfo))
-                ) && 
-                (
-                    this.TargetDbInfo == input.TargetDbInfo ||
-                    (this.TargetDbInfo != null &&
-                    this.TargetDbInfo.Equals(input.TargetDbInfo))
-                ) && 
-                (
-                    this.BackupInfo == input.BackupInfo ||
-                    (this.BackupInfo != null &&
-                    this.BackupInfo.Equals(input.BackupInfo))
-                ) && 
-                (
-                    this.Options == input.Options ||
-                    (this.Options != null &&
-                    this.Options.Equals(input.Options))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BaseInfo != null)
-                    hashCode = hashCode * 59 + this.BaseInfo.GetHashCode();
-                if (this.TargetDbInfo != null)
-                    hashCode = hashCode * 59 + this.TargetDbInfo.GetHashCode();
-                if (this.BackupInfo != null)
-                    hashCode = hashCode * 59 + this.BackupInfo.GetHashCode();
-                if (this.Options != null)
-                    hashCode = hashCode * 59 + this.Options.GetHashCode();
+                var hashCode = 41;
+                if (this.BaseInfo != null) hashCode = hashCode * 59 + this.BaseInfo.GetHashCode();
+                if (this.TargetDbInfo != null) hashCode = hashCode * 59 + this.TargetDbInfo.GetHashCode();
+                if (this.BackupInfo != null) hashCode = hashCode * 59 + this.BackupInfo.GetHashCode();
+                if (this.Options != null) hashCode = hashCode * 59 + this.Options.GetHashCode();
                 return hashCode;
             }
         }

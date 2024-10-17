@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(RollbackSnapshotRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Rollback != input.Rollback || (this.Rollback != null && !this.Rollback.Equals(input.Rollback))) return false;
 
-            return 
-                (
-                    this.Rollback == input.Rollback ||
-                    (this.Rollback != null &&
-                    this.Rollback.Equals(input.Rollback))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Rollback != null)
-                    hashCode = hashCode * 59 + this.Rollback.GetHashCode();
+                var hashCode = 41;
+                if (this.Rollback != null) hashCode = hashCode * 59 + this.Rollback.GetHashCode();
                 return hashCode;
             }
         }

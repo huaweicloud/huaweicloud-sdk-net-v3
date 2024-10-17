@@ -70,32 +70,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ListSpecIssueStayTimesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Fails != input.Fails || (this.Fails != null && input.Fails != null && !this.Fails.SequenceEqual(input.Fails))) return false;
+            if (this.Data != input.Data || (this.Data != null && input.Data != null && !this.Data.SequenceEqual(input.Data))) return false;
+            if (this.TotalStayTime != input.TotalStayTime || (this.TotalStayTime != null && !this.TotalStayTime.Equals(input.TotalStayTime))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
-            return 
-                (
-                    this.Fails == input.Fails ||
-                    this.Fails != null &&
-                    input.Fails != null &&
-                    this.Fails.SequenceEqual(input.Fails)
-                ) && 
-                (
-                    this.Data == input.Data ||
-                    this.Data != null &&
-                    input.Data != null &&
-                    this.Data.SequenceEqual(input.Data)
-                ) && 
-                (
-                    this.TotalStayTime == input.TotalStayTime ||
-                    (this.TotalStayTime != null &&
-                    this.TotalStayTime.Equals(input.TotalStayTime))
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                );
+            return true;
         }
 
         /// <summary>
@@ -105,15 +86,11 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Fails != null)
-                    hashCode = hashCode * 59 + this.Fails.GetHashCode();
-                if (this.Data != null)
-                    hashCode = hashCode * 59 + this.Data.GetHashCode();
-                if (this.TotalStayTime != null)
-                    hashCode = hashCode * 59 + this.TotalStayTime.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                var hashCode = 41;
+                if (this.Fails != null) hashCode = hashCode * 59 + this.Fails.GetHashCode();
+                if (this.Data != null) hashCode = hashCode * 59 + this.Data.GetHashCode();
+                if (this.TotalStayTime != null) hashCode = hashCode * 59 + this.TotalStayTime.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

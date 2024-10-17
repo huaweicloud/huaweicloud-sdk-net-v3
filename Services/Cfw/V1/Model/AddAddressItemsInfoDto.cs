@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(AddAddressItemsInfoDto input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SetId != input.SetId || (this.SetId != null && !this.SetId.Equals(input.SetId))) return false;
+            if (this.AddressItems != input.AddressItems || (this.AddressItems != null && input.AddressItems != null && !this.AddressItems.SequenceEqual(input.AddressItems))) return false;
 
-            return 
-                (
-                    this.SetId == input.SetId ||
-                    (this.SetId != null &&
-                    this.SetId.Equals(input.SetId))
-                ) && 
-                (
-                    this.AddressItems == input.AddressItems ||
-                    this.AddressItems != null &&
-                    input.AddressItems != null &&
-                    this.AddressItems.SequenceEqual(input.AddressItems)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SetId != null)
-                    hashCode = hashCode * 59 + this.SetId.GetHashCode();
-                if (this.AddressItems != null)
-                    hashCode = hashCode * 59 + this.AddressItems.GetHashCode();
+                var hashCode = 41;
+                if (this.SetId != null) hashCode = hashCode * 59 + this.SetId.GetHashCode();
+                if (this.AddressItems != null) hashCode = hashCode * 59 + this.AddressItems.GetHashCode();
                 return hashCode;
             }
         }

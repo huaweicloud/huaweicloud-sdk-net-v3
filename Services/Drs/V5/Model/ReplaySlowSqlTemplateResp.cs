@@ -119,65 +119,20 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ReplaySlowSqlTemplateResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SqlTemplate != input.SqlTemplate || (this.SqlTemplate != null && !this.SqlTemplate.Equals(input.SqlTemplate))) return false;
+            if (this.SqlTemplateMd5 != input.SqlTemplateMd5 || (this.SqlTemplateMd5 != null && !this.SqlTemplateMd5.Equals(input.SqlTemplateMd5))) return false;
+            if (this.TargetName != input.TargetName || (this.TargetName != null && !this.TargetName.Equals(input.TargetName))) return false;
+            if (this.SchemaName != input.SchemaName || (this.SchemaName != null && !this.SchemaName.Equals(input.SchemaName))) return false;
+            if (this.QueryType != input.QueryType || (this.QueryType != null && !this.QueryType.Equals(input.QueryType))) return false;
+            if (this.MinLatency != input.MinLatency || (this.MinLatency != null && !this.MinLatency.Equals(input.MinLatency))) return false;
+            if (this.MaxLatency != input.MaxLatency || (this.MaxLatency != null && !this.MaxLatency.Equals(input.MaxLatency))) return false;
+            if (this.AvgLatency != input.AvgLatency || (this.AvgLatency != null && !this.AvgLatency.Equals(input.AvgLatency))) return false;
+            if (this.TotalLatency != input.TotalLatency || (this.TotalLatency != null && !this.TotalLatency.Equals(input.TotalLatency))) return false;
+            if (this.TargetType != input.TargetType || (this.TargetType != null && !this.TargetType.Equals(input.TargetType))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
 
-            return 
-                (
-                    this.SqlTemplate == input.SqlTemplate ||
-                    (this.SqlTemplate != null &&
-                    this.SqlTemplate.Equals(input.SqlTemplate))
-                ) && 
-                (
-                    this.SqlTemplateMd5 == input.SqlTemplateMd5 ||
-                    (this.SqlTemplateMd5 != null &&
-                    this.SqlTemplateMd5.Equals(input.SqlTemplateMd5))
-                ) && 
-                (
-                    this.TargetName == input.TargetName ||
-                    (this.TargetName != null &&
-                    this.TargetName.Equals(input.TargetName))
-                ) && 
-                (
-                    this.SchemaName == input.SchemaName ||
-                    (this.SchemaName != null &&
-                    this.SchemaName.Equals(input.SchemaName))
-                ) && 
-                (
-                    this.QueryType == input.QueryType ||
-                    (this.QueryType != null &&
-                    this.QueryType.Equals(input.QueryType))
-                ) && 
-                (
-                    this.MinLatency == input.MinLatency ||
-                    (this.MinLatency != null &&
-                    this.MinLatency.Equals(input.MinLatency))
-                ) && 
-                (
-                    this.MaxLatency == input.MaxLatency ||
-                    (this.MaxLatency != null &&
-                    this.MaxLatency.Equals(input.MaxLatency))
-                ) && 
-                (
-                    this.AvgLatency == input.AvgLatency ||
-                    (this.AvgLatency != null &&
-                    this.AvgLatency.Equals(input.AvgLatency))
-                ) && 
-                (
-                    this.TotalLatency == input.TotalLatency ||
-                    (this.TotalLatency != null &&
-                    this.TotalLatency.Equals(input.TotalLatency))
-                ) && 
-                (
-                    this.TargetType == input.TargetType ||
-                    (this.TargetType != null &&
-                    this.TargetType.Equals(input.TargetType))
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,29 +142,18 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SqlTemplate != null)
-                    hashCode = hashCode * 59 + this.SqlTemplate.GetHashCode();
-                if (this.SqlTemplateMd5 != null)
-                    hashCode = hashCode * 59 + this.SqlTemplateMd5.GetHashCode();
-                if (this.TargetName != null)
-                    hashCode = hashCode * 59 + this.TargetName.GetHashCode();
-                if (this.SchemaName != null)
-                    hashCode = hashCode * 59 + this.SchemaName.GetHashCode();
-                if (this.QueryType != null)
-                    hashCode = hashCode * 59 + this.QueryType.GetHashCode();
-                if (this.MinLatency != null)
-                    hashCode = hashCode * 59 + this.MinLatency.GetHashCode();
-                if (this.MaxLatency != null)
-                    hashCode = hashCode * 59 + this.MaxLatency.GetHashCode();
-                if (this.AvgLatency != null)
-                    hashCode = hashCode * 59 + this.AvgLatency.GetHashCode();
-                if (this.TotalLatency != null)
-                    hashCode = hashCode * 59 + this.TotalLatency.GetHashCode();
-                if (this.TargetType != null)
-                    hashCode = hashCode * 59 + this.TargetType.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
+                var hashCode = 41;
+                if (this.SqlTemplate != null) hashCode = hashCode * 59 + this.SqlTemplate.GetHashCode();
+                if (this.SqlTemplateMd5 != null) hashCode = hashCode * 59 + this.SqlTemplateMd5.GetHashCode();
+                if (this.TargetName != null) hashCode = hashCode * 59 + this.TargetName.GetHashCode();
+                if (this.SchemaName != null) hashCode = hashCode * 59 + this.SchemaName.GetHashCode();
+                if (this.QueryType != null) hashCode = hashCode * 59 + this.QueryType.GetHashCode();
+                if (this.MinLatency != null) hashCode = hashCode * 59 + this.MinLatency.GetHashCode();
+                if (this.MaxLatency != null) hashCode = hashCode * 59 + this.MaxLatency.GetHashCode();
+                if (this.AvgLatency != null) hashCode = hashCode * 59 + this.AvgLatency.GetHashCode();
+                if (this.TotalLatency != null) hashCode = hashCode * 59 + this.TotalLatency.GetHashCode();
+                if (this.TargetType != null) hashCode = hashCode * 59 + this.TargetType.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
                 return hashCode;
             }
         }

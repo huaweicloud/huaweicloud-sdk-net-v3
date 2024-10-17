@@ -1536,70 +1536,21 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(DeleteClusterRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClusterId != input.ClusterId || (this.ClusterId != null && !this.ClusterId.Equals(input.ClusterId))) return false;
+            if (this.DeleteEfs != input.DeleteEfs) return false;
+            if (this.DeleteEni != input.DeleteEni) return false;
+            if (this.DeleteEvs != input.DeleteEvs) return false;
+            if (this.DeleteNet != input.DeleteNet) return false;
+            if (this.DeleteObs != input.DeleteObs) return false;
+            if (this.DeleteSfs != input.DeleteSfs) return false;
+            if (this.DeleteSfs30 != input.DeleteSfs30) return false;
+            if (this.LtsReclaimPolicy != input.LtsReclaimPolicy) return false;
+            if (this.Tobedeleted != input.Tobedeleted) return false;
+            if (this.OndemandNodePolicy != input.OndemandNodePolicy) return false;
+            if (this.PeriodicNodePolicy != input.PeriodicNodePolicy) return false;
 
-            return 
-                (
-                    this.ClusterId == input.ClusterId ||
-                    (this.ClusterId != null &&
-                    this.ClusterId.Equals(input.ClusterId))
-                ) && 
-                (
-                    this.DeleteEfs == input.DeleteEfs ||
-                    (this.DeleteEfs != null &&
-                    this.DeleteEfs.Equals(input.DeleteEfs))
-                ) && 
-                (
-                    this.DeleteEni == input.DeleteEni ||
-                    (this.DeleteEni != null &&
-                    this.DeleteEni.Equals(input.DeleteEni))
-                ) && 
-                (
-                    this.DeleteEvs == input.DeleteEvs ||
-                    (this.DeleteEvs != null &&
-                    this.DeleteEvs.Equals(input.DeleteEvs))
-                ) && 
-                (
-                    this.DeleteNet == input.DeleteNet ||
-                    (this.DeleteNet != null &&
-                    this.DeleteNet.Equals(input.DeleteNet))
-                ) && 
-                (
-                    this.DeleteObs == input.DeleteObs ||
-                    (this.DeleteObs != null &&
-                    this.DeleteObs.Equals(input.DeleteObs))
-                ) && 
-                (
-                    this.DeleteSfs == input.DeleteSfs ||
-                    (this.DeleteSfs != null &&
-                    this.DeleteSfs.Equals(input.DeleteSfs))
-                ) && 
-                (
-                    this.DeleteSfs30 == input.DeleteSfs30 ||
-                    (this.DeleteSfs30 != null &&
-                    this.DeleteSfs30.Equals(input.DeleteSfs30))
-                ) && 
-                (
-                    this.LtsReclaimPolicy == input.LtsReclaimPolicy ||
-                    (this.LtsReclaimPolicy != null &&
-                    this.LtsReclaimPolicy.Equals(input.LtsReclaimPolicy))
-                ) && 
-                (
-                    this.Tobedeleted == input.Tobedeleted ||
-                    (this.Tobedeleted != null &&
-                    this.Tobedeleted.Equals(input.Tobedeleted))
-                ) && 
-                (
-                    this.OndemandNodePolicy == input.OndemandNodePolicy ||
-                    (this.OndemandNodePolicy != null &&
-                    this.OndemandNodePolicy.Equals(input.OndemandNodePolicy))
-                ) && 
-                (
-                    this.PeriodicNodePolicy == input.PeriodicNodePolicy ||
-                    (this.PeriodicNodePolicy != null &&
-                    this.PeriodicNodePolicy.Equals(input.PeriodicNodePolicy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -1609,31 +1560,19 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClusterId != null)
-                    hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
-                if (this.DeleteEfs != null)
-                    hashCode = hashCode * 59 + this.DeleteEfs.GetHashCode();
-                if (this.DeleteEni != null)
-                    hashCode = hashCode * 59 + this.DeleteEni.GetHashCode();
-                if (this.DeleteEvs != null)
-                    hashCode = hashCode * 59 + this.DeleteEvs.GetHashCode();
-                if (this.DeleteNet != null)
-                    hashCode = hashCode * 59 + this.DeleteNet.GetHashCode();
-                if (this.DeleteObs != null)
-                    hashCode = hashCode * 59 + this.DeleteObs.GetHashCode();
-                if (this.DeleteSfs != null)
-                    hashCode = hashCode * 59 + this.DeleteSfs.GetHashCode();
-                if (this.DeleteSfs30 != null)
-                    hashCode = hashCode * 59 + this.DeleteSfs30.GetHashCode();
-                if (this.LtsReclaimPolicy != null)
-                    hashCode = hashCode * 59 + this.LtsReclaimPolicy.GetHashCode();
-                if (this.Tobedeleted != null)
-                    hashCode = hashCode * 59 + this.Tobedeleted.GetHashCode();
-                if (this.OndemandNodePolicy != null)
-                    hashCode = hashCode * 59 + this.OndemandNodePolicy.GetHashCode();
-                if (this.PeriodicNodePolicy != null)
-                    hashCode = hashCode * 59 + this.PeriodicNodePolicy.GetHashCode();
+                var hashCode = 41;
+                if (this.ClusterId != null) hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
+                hashCode = hashCode * 59 + this.DeleteEfs.GetHashCode();
+                hashCode = hashCode * 59 + this.DeleteEni.GetHashCode();
+                hashCode = hashCode * 59 + this.DeleteEvs.GetHashCode();
+                hashCode = hashCode * 59 + this.DeleteNet.GetHashCode();
+                hashCode = hashCode * 59 + this.DeleteObs.GetHashCode();
+                hashCode = hashCode * 59 + this.DeleteSfs.GetHashCode();
+                hashCode = hashCode * 59 + this.DeleteSfs30.GetHashCode();
+                hashCode = hashCode * 59 + this.LtsReclaimPolicy.GetHashCode();
+                hashCode = hashCode * 59 + this.Tobedeleted.GetHashCode();
+                hashCode = hashCode * 59 + this.OndemandNodePolicy.GetHashCode();
+                hashCode = hashCode * 59 + this.PeriodicNodePolicy.GetHashCode();
                 return hashCode;
             }
         }

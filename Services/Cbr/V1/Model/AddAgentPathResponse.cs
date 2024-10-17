@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(AddAgentPathResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Added != input.Added || (this.Added != null && input.Added != null && !this.Added.SequenceEqual(input.Added))) return false;
+            if (this.Existed != input.Existed || (this.Existed != null && input.Existed != null && !this.Existed.SequenceEqual(input.Existed))) return false;
 
-            return 
-                (
-                    this.Added == input.Added ||
-                    this.Added != null &&
-                    input.Added != null &&
-                    this.Added.SequenceEqual(input.Added)
-                ) && 
-                (
-                    this.Existed == input.Existed ||
-                    this.Existed != null &&
-                    input.Existed != null &&
-                    this.Existed.SequenceEqual(input.Existed)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Added != null)
-                    hashCode = hashCode * 59 + this.Added.GetHashCode();
-                if (this.Existed != null)
-                    hashCode = hashCode * 59 + this.Existed.GetHashCode();
+                var hashCode = 41;
+                if (this.Added != null) hashCode = hashCode * 59 + this.Added.GetHashCode();
+                if (this.Existed != null) hashCode = hashCode * 59 + this.Existed.GetHashCode();
                 return hashCode;
             }
         }

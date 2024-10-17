@@ -347,66 +347,20 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(ShowWidgetResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.WidgetId != input.WidgetId || (this.WidgetId != null && !this.WidgetId.Equals(input.WidgetId))) return false;
+            if (this.Metrics != input.Metrics || (this.Metrics != null && input.Metrics != null && !this.Metrics.SequenceEqual(input.Metrics))) return false;
+            if (this.Title != input.Title || (this.Title != null && !this.Title.Equals(input.Title))) return false;
+            if (this.Threshold != input.Threshold || (this.Threshold != null && !this.Threshold.Equals(input.Threshold))) return false;
+            if (this.ThresholdEnabled != input.ThresholdEnabled || (this.ThresholdEnabled != null && !this.ThresholdEnabled.Equals(input.ThresholdEnabled))) return false;
+            if (this.View != input.View) return false;
+            if (this.MetricDisplayMode != input.MetricDisplayMode) return false;
+            if (this.Properties != input.Properties || (this.Properties != null && !this.Properties.Equals(input.Properties))) return false;
+            if (this.Location != input.Location || (this.Location != null && !this.Location.Equals(input.Location))) return false;
+            if (this.Unit != input.Unit || (this.Unit != null && !this.Unit.Equals(input.Unit))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
 
-            return 
-                (
-                    this.WidgetId == input.WidgetId ||
-                    (this.WidgetId != null &&
-                    this.WidgetId.Equals(input.WidgetId))
-                ) && 
-                (
-                    this.Metrics == input.Metrics ||
-                    this.Metrics != null &&
-                    input.Metrics != null &&
-                    this.Metrics.SequenceEqual(input.Metrics)
-                ) && 
-                (
-                    this.Title == input.Title ||
-                    (this.Title != null &&
-                    this.Title.Equals(input.Title))
-                ) && 
-                (
-                    this.Threshold == input.Threshold ||
-                    (this.Threshold != null &&
-                    this.Threshold.Equals(input.Threshold))
-                ) && 
-                (
-                    this.ThresholdEnabled == input.ThresholdEnabled ||
-                    (this.ThresholdEnabled != null &&
-                    this.ThresholdEnabled.Equals(input.ThresholdEnabled))
-                ) && 
-                (
-                    this.View == input.View ||
-                    (this.View != null &&
-                    this.View.Equals(input.View))
-                ) && 
-                (
-                    this.MetricDisplayMode == input.MetricDisplayMode ||
-                    (this.MetricDisplayMode != null &&
-                    this.MetricDisplayMode.Equals(input.MetricDisplayMode))
-                ) && 
-                (
-                    this.Properties == input.Properties ||
-                    (this.Properties != null &&
-                    this.Properties.Equals(input.Properties))
-                ) && 
-                (
-                    this.Location == input.Location ||
-                    (this.Location != null &&
-                    this.Location.Equals(input.Location))
-                ) && 
-                (
-                    this.Unit == input.Unit ||
-                    (this.Unit != null &&
-                    this.Unit.Equals(input.Unit))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -416,29 +370,18 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.WidgetId != null)
-                    hashCode = hashCode * 59 + this.WidgetId.GetHashCode();
-                if (this.Metrics != null)
-                    hashCode = hashCode * 59 + this.Metrics.GetHashCode();
-                if (this.Title != null)
-                    hashCode = hashCode * 59 + this.Title.GetHashCode();
-                if (this.Threshold != null)
-                    hashCode = hashCode * 59 + this.Threshold.GetHashCode();
-                if (this.ThresholdEnabled != null)
-                    hashCode = hashCode * 59 + this.ThresholdEnabled.GetHashCode();
-                if (this.View != null)
-                    hashCode = hashCode * 59 + this.View.GetHashCode();
-                if (this.MetricDisplayMode != null)
-                    hashCode = hashCode * 59 + this.MetricDisplayMode.GetHashCode();
-                if (this.Properties != null)
-                    hashCode = hashCode * 59 + this.Properties.GetHashCode();
-                if (this.Location != null)
-                    hashCode = hashCode * 59 + this.Location.GetHashCode();
-                if (this.Unit != null)
-                    hashCode = hashCode * 59 + this.Unit.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                var hashCode = 41;
+                if (this.WidgetId != null) hashCode = hashCode * 59 + this.WidgetId.GetHashCode();
+                if (this.Metrics != null) hashCode = hashCode * 59 + this.Metrics.GetHashCode();
+                if (this.Title != null) hashCode = hashCode * 59 + this.Title.GetHashCode();
+                if (this.Threshold != null) hashCode = hashCode * 59 + this.Threshold.GetHashCode();
+                if (this.ThresholdEnabled != null) hashCode = hashCode * 59 + this.ThresholdEnabled.GetHashCode();
+                hashCode = hashCode * 59 + this.View.GetHashCode();
+                hashCode = hashCode * 59 + this.MetricDisplayMode.GetHashCode();
+                if (this.Properties != null) hashCode = hashCode * 59 + this.Properties.GetHashCode();
+                if (this.Location != null) hashCode = hashCode * 59 + this.Location.GetHashCode();
+                if (this.Unit != null) hashCode = hashCode * 59 + this.Unit.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 return hashCode;
             }
         }

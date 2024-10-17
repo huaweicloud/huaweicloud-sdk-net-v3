@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         /// </summary>
         public bool Equals(AlertConfigRespWarnConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AntiDDoS != input.AntiDDoS || (this.AntiDDoS != null && !this.AntiDDoS.Equals(input.AntiDDoS))) return false;
+            if (this.BackDoors != input.BackDoors || (this.BackDoors != null && !this.BackDoors.Equals(input.BackDoors))) return false;
+            if (this.BruceForce != input.BruceForce || (this.BruceForce != null && !this.BruceForce.Equals(input.BruceForce))) return false;
+            if (this.HighPrivilege != input.HighPrivilege || (this.HighPrivilege != null && !this.HighPrivilege.Equals(input.HighPrivilege))) return false;
+            if (this.RemoteLogin != input.RemoteLogin || (this.RemoteLogin != null && !this.RemoteLogin.Equals(input.RemoteLogin))) return false;
+            if (this.SendFrequency != input.SendFrequency || (this.SendFrequency != null && !this.SendFrequency.Equals(input.SendFrequency))) return false;
+            if (this.Waf != input.Waf || (this.Waf != null && !this.Waf.Equals(input.Waf))) return false;
+            if (this.WeakPassword != input.WeakPassword || (this.WeakPassword != null && !this.WeakPassword.Equals(input.WeakPassword))) return false;
 
-            return 
-                (
-                    this.AntiDDoS == input.AntiDDoS ||
-                    (this.AntiDDoS != null &&
-                    this.AntiDDoS.Equals(input.AntiDDoS))
-                ) && 
-                (
-                    this.BackDoors == input.BackDoors ||
-                    (this.BackDoors != null &&
-                    this.BackDoors.Equals(input.BackDoors))
-                ) && 
-                (
-                    this.BruceForce == input.BruceForce ||
-                    (this.BruceForce != null &&
-                    this.BruceForce.Equals(input.BruceForce))
-                ) && 
-                (
-                    this.HighPrivilege == input.HighPrivilege ||
-                    (this.HighPrivilege != null &&
-                    this.HighPrivilege.Equals(input.HighPrivilege))
-                ) && 
-                (
-                    this.RemoteLogin == input.RemoteLogin ||
-                    (this.RemoteLogin != null &&
-                    this.RemoteLogin.Equals(input.RemoteLogin))
-                ) && 
-                (
-                    this.SendFrequency == input.SendFrequency ||
-                    (this.SendFrequency != null &&
-                    this.SendFrequency.Equals(input.SendFrequency))
-                ) && 
-                (
-                    this.Waf == input.Waf ||
-                    (this.Waf != null &&
-                    this.Waf.Equals(input.Waf))
-                ) && 
-                (
-                    this.WeakPassword == input.WeakPassword ||
-                    (this.WeakPassword != null &&
-                    this.WeakPassword.Equals(input.WeakPassword))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AntiDDoS != null)
-                    hashCode = hashCode * 59 + this.AntiDDoS.GetHashCode();
-                if (this.BackDoors != null)
-                    hashCode = hashCode * 59 + this.BackDoors.GetHashCode();
-                if (this.BruceForce != null)
-                    hashCode = hashCode * 59 + this.BruceForce.GetHashCode();
-                if (this.HighPrivilege != null)
-                    hashCode = hashCode * 59 + this.HighPrivilege.GetHashCode();
-                if (this.RemoteLogin != null)
-                    hashCode = hashCode * 59 + this.RemoteLogin.GetHashCode();
-                if (this.SendFrequency != null)
-                    hashCode = hashCode * 59 + this.SendFrequency.GetHashCode();
-                if (this.Waf != null)
-                    hashCode = hashCode * 59 + this.Waf.GetHashCode();
-                if (this.WeakPassword != null)
-                    hashCode = hashCode * 59 + this.WeakPassword.GetHashCode();
+                var hashCode = 41;
+                if (this.AntiDDoS != null) hashCode = hashCode * 59 + this.AntiDDoS.GetHashCode();
+                if (this.BackDoors != null) hashCode = hashCode * 59 + this.BackDoors.GetHashCode();
+                if (this.BruceForce != null) hashCode = hashCode * 59 + this.BruceForce.GetHashCode();
+                if (this.HighPrivilege != null) hashCode = hashCode * 59 + this.HighPrivilege.GetHashCode();
+                if (this.RemoteLogin != null) hashCode = hashCode * 59 + this.RemoteLogin.GetHashCode();
+                if (this.SendFrequency != null) hashCode = hashCode * 59 + this.SendFrequency.GetHashCode();
+                if (this.Waf != null) hashCode = hashCode * 59 + this.Waf.GetHashCode();
+                if (this.WeakPassword != null) hashCode = hashCode * 59 + this.WeakPassword.GetHashCode();
                 return hashCode;
             }
         }

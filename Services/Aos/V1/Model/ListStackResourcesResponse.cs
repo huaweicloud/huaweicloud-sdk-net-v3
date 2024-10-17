@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(ListStackResourcesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StackResources != input.StackResources || (this.StackResources != null && input.StackResources != null && !this.StackResources.SequenceEqual(input.StackResources))) return false;
 
-            return 
-                (
-                    this.StackResources == input.StackResources ||
-                    this.StackResources != null &&
-                    input.StackResources != null &&
-                    this.StackResources.SequenceEqual(input.StackResources)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StackResources != null)
-                    hashCode = hashCode * 59 + this.StackResources.GetHashCode();
+                var hashCode = 41;
+                if (this.StackResources != null) hashCode = hashCode * 59 + this.StackResources.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(ShowDomainItemDetailsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DomainItemDetails != input.DomainItemDetails || (this.DomainItemDetails != null && !this.DomainItemDetails.Equals(input.DomainItemDetails))) return false;
 
-            return 
-                (
-                    this.DomainItemDetails == input.DomainItemDetails ||
-                    (this.DomainItemDetails != null &&
-                    this.DomainItemDetails.Equals(input.DomainItemDetails))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DomainItemDetails != null)
-                    hashCode = hashCode * 59 + this.DomainItemDetails.GetHashCode();
+                var hashCode = 41;
+                if (this.DomainItemDetails != null) hashCode = hashCode * 59 + this.DomainItemDetails.GetHashCode();
                 return hashCode;
             }
         }

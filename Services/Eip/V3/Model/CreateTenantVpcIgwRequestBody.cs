@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(CreateTenantVpcIgwRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VpcIgw != input.VpcIgw || (this.VpcIgw != null && !this.VpcIgw.Equals(input.VpcIgw))) return false;
 
-            return 
-                (
-                    this.VpcIgw == input.VpcIgw ||
-                    (this.VpcIgw != null &&
-                    this.VpcIgw.Equals(input.VpcIgw))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VpcIgw != null)
-                    hashCode = hashCode * 59 + this.VpcIgw.GetHashCode();
+                var hashCode = 41;
+                if (this.VpcIgw != null) hashCode = hashCode * 59 + this.VpcIgw.GetHashCode();
                 return hashCode;
             }
         }

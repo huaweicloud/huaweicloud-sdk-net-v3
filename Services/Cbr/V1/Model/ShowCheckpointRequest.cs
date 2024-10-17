@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(ShowCheckpointRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CheckpointId != input.CheckpointId || (this.CheckpointId != null && !this.CheckpointId.Equals(input.CheckpointId))) return false;
 
-            return 
-                (
-                    this.CheckpointId == input.CheckpointId ||
-                    (this.CheckpointId != null &&
-                    this.CheckpointId.Equals(input.CheckpointId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CheckpointId != null)
-                    hashCode = hashCode * 59 + this.CheckpointId.GetHashCode();
+                var hashCode = 41;
+                if (this.CheckpointId != null) hashCode = hashCode * 59 + this.CheckpointId.GetHashCode();
                 return hashCode;
             }
         }

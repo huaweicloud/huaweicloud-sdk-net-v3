@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ListMigrationTaskResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.MigrationTasks != input.MigrationTasks || (this.MigrationTasks != null && input.MigrationTasks != null && !this.MigrationTasks.SequenceEqual(input.MigrationTasks))) return false;
 
-            return 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.MigrationTasks == input.MigrationTasks ||
-                    this.MigrationTasks != null &&
-                    input.MigrationTasks != null &&
-                    this.MigrationTasks.SequenceEqual(input.MigrationTasks)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.MigrationTasks != null)
-                    hashCode = hashCode * 59 + this.MigrationTasks.GetHashCode();
+                var hashCode = 41;
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.MigrationTasks != null) hashCode = hashCode * 59 + this.MigrationTasks.GetHashCode();
                 return hashCode;
             }
         }

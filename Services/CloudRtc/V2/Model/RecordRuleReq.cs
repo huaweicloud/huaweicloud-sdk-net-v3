@@ -184,31 +184,13 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         /// </summary>
         public bool Equals(RecordRuleReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ObsAddr != input.ObsAddr || (this.ObsAddr != null && !this.ObsAddr.Equals(input.ObsAddr))) return false;
+            if (this.RecordFormats != input.RecordFormats || (this.RecordFormats != null && input.RecordFormats != null && !this.RecordFormats.SequenceEqual(input.RecordFormats))) return false;
+            if (this.HlsConfig != input.HlsConfig || (this.HlsConfig != null && !this.HlsConfig.Equals(input.HlsConfig))) return false;
+            if (this.Mp4Config != input.Mp4Config || (this.Mp4Config != null && !this.Mp4Config.Equals(input.Mp4Config))) return false;
 
-            return 
-                (
-                    this.ObsAddr == input.ObsAddr ||
-                    (this.ObsAddr != null &&
-                    this.ObsAddr.Equals(input.ObsAddr))
-                ) && 
-                (
-                    this.RecordFormats == input.RecordFormats ||
-                    this.RecordFormats != null &&
-                    input.RecordFormats != null &&
-                    this.RecordFormats.SequenceEqual(input.RecordFormats)
-                ) && 
-                (
-                    this.HlsConfig == input.HlsConfig ||
-                    (this.HlsConfig != null &&
-                    this.HlsConfig.Equals(input.HlsConfig))
-                ) && 
-                (
-                    this.Mp4Config == input.Mp4Config ||
-                    (this.Mp4Config != null &&
-                    this.Mp4Config.Equals(input.Mp4Config))
-                );
+            return true;
         }
 
         /// <summary>
@@ -218,15 +200,11 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ObsAddr != null)
-                    hashCode = hashCode * 59 + this.ObsAddr.GetHashCode();
-                if (this.RecordFormats != null)
-                    hashCode = hashCode * 59 + this.RecordFormats.GetHashCode();
-                if (this.HlsConfig != null)
-                    hashCode = hashCode * 59 + this.HlsConfig.GetHashCode();
-                if (this.Mp4Config != null)
-                    hashCode = hashCode * 59 + this.Mp4Config.GetHashCode();
+                var hashCode = 41;
+                if (this.ObsAddr != null) hashCode = hashCode * 59 + this.ObsAddr.GetHashCode();
+                hashCode = hashCode * 59 + this.RecordFormats.GetHashCode();
+                if (this.HlsConfig != null) hashCode = hashCode * 59 + this.HlsConfig.GetHashCode();
+                if (this.Mp4Config != null) hashCode = hashCode * 59 + this.Mp4Config.GetHashCode();
                 return hashCode;
             }
         }

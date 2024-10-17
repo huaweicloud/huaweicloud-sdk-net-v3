@@ -850,125 +850,32 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(ListBackupsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CheckpointId != input.CheckpointId || (this.CheckpointId != null && !this.CheckpointId.Equals(input.CheckpointId))) return false;
+            if (this.Dec != input.Dec || (this.Dec != null && !this.Dec.Equals(input.Dec))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.ImageType != input.ImageType) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.ResourceAz != input.ResourceAz || (this.ResourceAz != null && !this.ResourceAz.Equals(input.ResourceAz))) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
+            if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
+            if (this.ResourceType != input.ResourceType) return false;
+            if (this.Sort != input.Sort || (this.Sort != null && !this.Sort.Equals(input.Sort))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.VaultId != input.VaultId || (this.VaultId != null && !this.VaultId.Equals(input.VaultId))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.OwnType != input.OwnType) return false;
+            if (this.MemberStatus != input.MemberStatus) return false;
+            if (this.ParentId != input.ParentId || (this.ParentId != null && !this.ParentId.Equals(input.ParentId))) return false;
+            if (this.UsedPercent != input.UsedPercent || (this.UsedPercent != null && !this.UsedPercent.Equals(input.UsedPercent))) return false;
+            if (this.ShowReplication != input.ShowReplication || (this.ShowReplication != null && !this.ShowReplication.Equals(input.ShowReplication))) return false;
+            if (this.Incremental != input.Incremental || (this.Incremental != null && !this.Incremental.Equals(input.Incremental))) return false;
 
-            return 
-                (
-                    this.CheckpointId == input.CheckpointId ||
-                    (this.CheckpointId != null &&
-                    this.CheckpointId.Equals(input.CheckpointId))
-                ) && 
-                (
-                    this.Dec == input.Dec ||
-                    (this.Dec != null &&
-                    this.Dec.Equals(input.Dec))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.ImageType == input.ImageType ||
-                    (this.ImageType != null &&
-                    this.ImageType.Equals(input.ImageType))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.ResourceAz == input.ResourceAz ||
-                    (this.ResourceAz != null &&
-                    this.ResourceAz.Equals(input.ResourceAz))
-                ) && 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
-                ) && 
-                (
-                    this.ResourceName == input.ResourceName ||
-                    (this.ResourceName != null &&
-                    this.ResourceName.Equals(input.ResourceName))
-                ) && 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.Sort == input.Sort ||
-                    (this.Sort != null &&
-                    this.Sort.Equals(input.Sort))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.VaultId == input.VaultId ||
-                    (this.VaultId != null &&
-                    this.VaultId.Equals(input.VaultId))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.OwnType == input.OwnType ||
-                    (this.OwnType != null &&
-                    this.OwnType.Equals(input.OwnType))
-                ) && 
-                (
-                    this.MemberStatus == input.MemberStatus ||
-                    (this.MemberStatus != null &&
-                    this.MemberStatus.Equals(input.MemberStatus))
-                ) && 
-                (
-                    this.ParentId == input.ParentId ||
-                    (this.ParentId != null &&
-                    this.ParentId.Equals(input.ParentId))
-                ) && 
-                (
-                    this.UsedPercent == input.UsedPercent ||
-                    (this.UsedPercent != null &&
-                    this.UsedPercent.Equals(input.UsedPercent))
-                ) && 
-                (
-                    this.ShowReplication == input.ShowReplication ||
-                    (this.ShowReplication != null &&
-                    this.ShowReplication.Equals(input.ShowReplication))
-                ) && 
-                (
-                    this.Incremental == input.Incremental ||
-                    (this.Incremental != null &&
-                    this.Incremental.Equals(input.Incremental))
-                );
+            return true;
         }
 
         /// <summary>
@@ -978,53 +885,30 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CheckpointId != null)
-                    hashCode = hashCode * 59 + this.CheckpointId.GetHashCode();
-                if (this.Dec != null)
-                    hashCode = hashCode * 59 + this.Dec.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.ImageType != null)
-                    hashCode = hashCode * 59 + this.ImageType.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.ResourceAz != null)
-                    hashCode = hashCode * 59 + this.ResourceAz.GetHashCode();
-                if (this.ResourceId != null)
-                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
-                if (this.ResourceName != null)
-                    hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
-                if (this.Sort != null)
-                    hashCode = hashCode * 59 + this.Sort.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.VaultId != null)
-                    hashCode = hashCode * 59 + this.VaultId.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.OwnType != null)
-                    hashCode = hashCode * 59 + this.OwnType.GetHashCode();
-                if (this.MemberStatus != null)
-                    hashCode = hashCode * 59 + this.MemberStatus.GetHashCode();
-                if (this.ParentId != null)
-                    hashCode = hashCode * 59 + this.ParentId.GetHashCode();
-                if (this.UsedPercent != null)
-                    hashCode = hashCode * 59 + this.UsedPercent.GetHashCode();
-                if (this.ShowReplication != null)
-                    hashCode = hashCode * 59 + this.ShowReplication.GetHashCode();
-                if (this.Incremental != null)
-                    hashCode = hashCode * 59 + this.Incremental.GetHashCode();
+                var hashCode = 41;
+                if (this.CheckpointId != null) hashCode = hashCode * 59 + this.CheckpointId.GetHashCode();
+                if (this.Dec != null) hashCode = hashCode * 59 + this.Dec.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                hashCode = hashCode * 59 + this.ImageType.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.ResourceAz != null) hashCode = hashCode * 59 + this.ResourceAz.GetHashCode();
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
+                hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.Sort != null) hashCode = hashCode * 59 + this.Sort.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.VaultId != null) hashCode = hashCode * 59 + this.VaultId.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                hashCode = hashCode * 59 + this.OwnType.GetHashCode();
+                hashCode = hashCode * 59 + this.MemberStatus.GetHashCode();
+                if (this.ParentId != null) hashCode = hashCode * 59 + this.ParentId.GetHashCode();
+                if (this.UsedPercent != null) hashCode = hashCode * 59 + this.UsedPercent.GetHashCode();
+                if (this.ShowReplication != null) hashCode = hashCode * 59 + this.ShowReplication.GetHashCode();
+                if (this.Incremental != null) hashCode = hashCode * 59 + this.Incremental.GetHashCode();
                 return hashCode;
             }
         }

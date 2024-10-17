@@ -226,30 +226,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ContentCompareOverviewInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceDb != input.SourceDb || (this.SourceDb != null && !this.SourceDb.Equals(input.SourceDb))) return false;
+            if (this.TargetDb != input.TargetDb || (this.TargetDb != null && !this.TargetDb.Equals(input.TargetDb))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.CompareResult != input.CompareResult || (this.CompareResult != null && !this.CompareResult.Equals(input.CompareResult))) return false;
 
-            return 
-                (
-                    this.SourceDb == input.SourceDb ||
-                    (this.SourceDb != null &&
-                    this.SourceDb.Equals(input.SourceDb))
-                ) && 
-                (
-                    this.TargetDb == input.TargetDb ||
-                    (this.TargetDb != null &&
-                    this.TargetDb.Equals(input.TargetDb))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.CompareResult == input.CompareResult ||
-                    (this.CompareResult != null &&
-                    this.CompareResult.Equals(input.CompareResult))
-                );
+            return true;
         }
 
         /// <summary>
@@ -259,15 +242,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceDb != null)
-                    hashCode = hashCode * 59 + this.SourceDb.GetHashCode();
-                if (this.TargetDb != null)
-                    hashCode = hashCode * 59 + this.TargetDb.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.CompareResult != null)
-                    hashCode = hashCode * 59 + this.CompareResult.GetHashCode();
+                var hashCode = 41;
+                if (this.SourceDb != null) hashCode = hashCode * 59 + this.SourceDb.GetHashCode();
+                if (this.TargetDb != null) hashCode = hashCode * 59 + this.TargetDb.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.CompareResult != null) hashCode = hashCode * 59 + this.CompareResult.GetHashCode();
                 return hashCode;
             }
         }

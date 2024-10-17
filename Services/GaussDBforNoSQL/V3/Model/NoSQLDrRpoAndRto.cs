@@ -177,25 +177,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(NoSQLDrRpoAndRto input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Scene != input.Scene) return false;
+            if (this.Rpo != input.Rpo || (this.Rpo != null && !this.Rpo.Equals(input.Rpo))) return false;
+            if (this.Rto != input.Rto || (this.Rto != null && !this.Rto.Equals(input.Rto))) return false;
 
-            return 
-                (
-                    this.Scene == input.Scene ||
-                    (this.Scene != null &&
-                    this.Scene.Equals(input.Scene))
-                ) && 
-                (
-                    this.Rpo == input.Rpo ||
-                    (this.Rpo != null &&
-                    this.Rpo.Equals(input.Rpo))
-                ) && 
-                (
-                    this.Rto == input.Rto ||
-                    (this.Rto != null &&
-                    this.Rto.Equals(input.Rto))
-                );
+            return true;
         }
 
         /// <summary>
@@ -205,13 +192,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Scene != null)
-                    hashCode = hashCode * 59 + this.Scene.GetHashCode();
-                if (this.Rpo != null)
-                    hashCode = hashCode * 59 + this.Rpo.GetHashCode();
-                if (this.Rto != null)
-                    hashCode = hashCode * 59 + this.Rto.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Scene.GetHashCode();
+                if (this.Rpo != null) hashCode = hashCode * 59 + this.Rpo.GetHashCode();
+                if (this.Rto != null) hashCode = hashCode * 59 + this.Rto.GetHashCode();
                 return hashCode;
             }
         }

@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public bool Equals(CreateSecretRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Projectname != input.Projectname || (this.Projectname != null && !this.Projectname.Equals(input.Projectname))) return false;
 
-            return 
-                (
-                    this.Projectname == input.Projectname ||
-                    (this.Projectname != null &&
-                    this.Projectname.Equals(input.Projectname))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Projectname != null)
-                    hashCode = hashCode * 59 + this.Projectname.GetHashCode();
+                var hashCode = 41;
+                if (this.Projectname != null) hashCode = hashCode * 59 + this.Projectname.GetHashCode();
                 return hashCode;
             }
         }

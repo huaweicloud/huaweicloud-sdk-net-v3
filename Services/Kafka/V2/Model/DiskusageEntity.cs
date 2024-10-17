@@ -91,46 +91,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(DiskusageEntity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BrokerName != input.BrokerName || (this.BrokerName != null && !this.BrokerName.Equals(input.BrokerName))) return false;
+            if (this.DataDiskSize != input.DataDiskSize || (this.DataDiskSize != null && !this.DataDiskSize.Equals(input.DataDiskSize))) return false;
+            if (this.DataDiskUse != input.DataDiskUse || (this.DataDiskUse != null && !this.DataDiskUse.Equals(input.DataDiskUse))) return false;
+            if (this.DataDiskFree != input.DataDiskFree || (this.DataDiskFree != null && !this.DataDiskFree.Equals(input.DataDiskFree))) return false;
+            if (this.DataDiskUsePercentage != input.DataDiskUsePercentage || (this.DataDiskUsePercentage != null && !this.DataDiskUsePercentage.Equals(input.DataDiskUsePercentage))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.TopicList != input.TopicList || (this.TopicList != null && input.TopicList != null && !this.TopicList.SequenceEqual(input.TopicList))) return false;
 
-            return 
-                (
-                    this.BrokerName == input.BrokerName ||
-                    (this.BrokerName != null &&
-                    this.BrokerName.Equals(input.BrokerName))
-                ) && 
-                (
-                    this.DataDiskSize == input.DataDiskSize ||
-                    (this.DataDiskSize != null &&
-                    this.DataDiskSize.Equals(input.DataDiskSize))
-                ) && 
-                (
-                    this.DataDiskUse == input.DataDiskUse ||
-                    (this.DataDiskUse != null &&
-                    this.DataDiskUse.Equals(input.DataDiskUse))
-                ) && 
-                (
-                    this.DataDiskFree == input.DataDiskFree ||
-                    (this.DataDiskFree != null &&
-                    this.DataDiskFree.Equals(input.DataDiskFree))
-                ) && 
-                (
-                    this.DataDiskUsePercentage == input.DataDiskUsePercentage ||
-                    (this.DataDiskUsePercentage != null &&
-                    this.DataDiskUsePercentage.Equals(input.DataDiskUsePercentage))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.TopicList == input.TopicList ||
-                    this.TopicList != null &&
-                    input.TopicList != null &&
-                    this.TopicList.SequenceEqual(input.TopicList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -140,21 +110,14 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BrokerName != null)
-                    hashCode = hashCode * 59 + this.BrokerName.GetHashCode();
-                if (this.DataDiskSize != null)
-                    hashCode = hashCode * 59 + this.DataDiskSize.GetHashCode();
-                if (this.DataDiskUse != null)
-                    hashCode = hashCode * 59 + this.DataDiskUse.GetHashCode();
-                if (this.DataDiskFree != null)
-                    hashCode = hashCode * 59 + this.DataDiskFree.GetHashCode();
-                if (this.DataDiskUsePercentage != null)
-                    hashCode = hashCode * 59 + this.DataDiskUsePercentage.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.TopicList != null)
-                    hashCode = hashCode * 59 + this.TopicList.GetHashCode();
+                var hashCode = 41;
+                if (this.BrokerName != null) hashCode = hashCode * 59 + this.BrokerName.GetHashCode();
+                if (this.DataDiskSize != null) hashCode = hashCode * 59 + this.DataDiskSize.GetHashCode();
+                if (this.DataDiskUse != null) hashCode = hashCode * 59 + this.DataDiskUse.GetHashCode();
+                if (this.DataDiskFree != null) hashCode = hashCode * 59 + this.DataDiskFree.GetHashCode();
+                if (this.DataDiskUsePercentage != null) hashCode = hashCode * 59 + this.DataDiskUsePercentage.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.TopicList != null) hashCode = hashCode * 59 + this.TopicList.GetHashCode();
                 return hashCode;
             }
         }

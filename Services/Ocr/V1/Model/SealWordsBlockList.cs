@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(SealWordsBlockList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Words != input.Words || (this.Words != null && !this.Words.Equals(input.Words))) return false;
+            if (this.WordsConfidence != input.WordsConfidence || (this.WordsConfidence != null && !this.WordsConfidence.Equals(input.WordsConfidence))) return false;
 
-            return 
-                (
-                    this.Words == input.Words ||
-                    (this.Words != null &&
-                    this.Words.Equals(input.Words))
-                ) && 
-                (
-                    this.WordsConfidence == input.WordsConfidence ||
-                    (this.WordsConfidence != null &&
-                    this.WordsConfidence.Equals(input.WordsConfidence))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Words != null)
-                    hashCode = hashCode * 59 + this.Words.GetHashCode();
-                if (this.WordsConfidence != null)
-                    hashCode = hashCode * 59 + this.WordsConfidence.GetHashCode();
+                var hashCode = 41;
+                if (this.Words != null) hashCode = hashCode * 59 + this.Words.GetHashCode();
+                if (this.WordsConfidence != null) hashCode = hashCode * 59 + this.WordsConfidence.GetHashCode();
                 return hashCode;
             }
         }

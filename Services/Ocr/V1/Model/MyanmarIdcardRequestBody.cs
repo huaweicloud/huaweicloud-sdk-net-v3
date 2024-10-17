@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(MyanmarIdcardRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Image != input.Image || (this.Image != null && !this.Image.Equals(input.Image))) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.ConvertUnicode != input.ConvertUnicode || (this.ConvertUnicode != null && !this.ConvertUnicode.Equals(input.ConvertUnicode))) return false;
+            if (this.ReturnConfidence != input.ReturnConfidence || (this.ReturnConfidence != null && !this.ReturnConfidence.Equals(input.ReturnConfidence))) return false;
+            if (this.ReturnPortraitImage != input.ReturnPortraitImage || (this.ReturnPortraitImage != null && !this.ReturnPortraitImage.Equals(input.ReturnPortraitImage))) return false;
+            if (this.ReturnPortraitLocation != input.ReturnPortraitLocation || (this.ReturnPortraitLocation != null && !this.ReturnPortraitLocation.Equals(input.ReturnPortraitLocation))) return false;
+            if (this.ReturnIdcardType != input.ReturnIdcardType || (this.ReturnIdcardType != null && !this.ReturnIdcardType.Equals(input.ReturnIdcardType))) return false;
+            if (this.ReturnTranslation != input.ReturnTranslation || (this.ReturnTranslation != null && !this.ReturnTranslation.Equals(input.ReturnTranslation))) return false;
 
-            return 
-                (
-                    this.Image == input.Image ||
-                    (this.Image != null &&
-                    this.Image.Equals(input.Image))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.ConvertUnicode == input.ConvertUnicode ||
-                    (this.ConvertUnicode != null &&
-                    this.ConvertUnicode.Equals(input.ConvertUnicode))
-                ) && 
-                (
-                    this.ReturnConfidence == input.ReturnConfidence ||
-                    (this.ReturnConfidence != null &&
-                    this.ReturnConfidence.Equals(input.ReturnConfidence))
-                ) && 
-                (
-                    this.ReturnPortraitImage == input.ReturnPortraitImage ||
-                    (this.ReturnPortraitImage != null &&
-                    this.ReturnPortraitImage.Equals(input.ReturnPortraitImage))
-                ) && 
-                (
-                    this.ReturnPortraitLocation == input.ReturnPortraitLocation ||
-                    (this.ReturnPortraitLocation != null &&
-                    this.ReturnPortraitLocation.Equals(input.ReturnPortraitLocation))
-                ) && 
-                (
-                    this.ReturnIdcardType == input.ReturnIdcardType ||
-                    (this.ReturnIdcardType != null &&
-                    this.ReturnIdcardType.Equals(input.ReturnIdcardType))
-                ) && 
-                (
-                    this.ReturnTranslation == input.ReturnTranslation ||
-                    (this.ReturnTranslation != null &&
-                    this.ReturnTranslation.Equals(input.ReturnTranslation))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Image != null)
-                    hashCode = hashCode * 59 + this.Image.GetHashCode();
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.ConvertUnicode != null)
-                    hashCode = hashCode * 59 + this.ConvertUnicode.GetHashCode();
-                if (this.ReturnConfidence != null)
-                    hashCode = hashCode * 59 + this.ReturnConfidence.GetHashCode();
-                if (this.ReturnPortraitImage != null)
-                    hashCode = hashCode * 59 + this.ReturnPortraitImage.GetHashCode();
-                if (this.ReturnPortraitLocation != null)
-                    hashCode = hashCode * 59 + this.ReturnPortraitLocation.GetHashCode();
-                if (this.ReturnIdcardType != null)
-                    hashCode = hashCode * 59 + this.ReturnIdcardType.GetHashCode();
-                if (this.ReturnTranslation != null)
-                    hashCode = hashCode * 59 + this.ReturnTranslation.GetHashCode();
+                var hashCode = 41;
+                if (this.Image != null) hashCode = hashCode * 59 + this.Image.GetHashCode();
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.ConvertUnicode != null) hashCode = hashCode * 59 + this.ConvertUnicode.GetHashCode();
+                if (this.ReturnConfidence != null) hashCode = hashCode * 59 + this.ReturnConfidence.GetHashCode();
+                if (this.ReturnPortraitImage != null) hashCode = hashCode * 59 + this.ReturnPortraitImage.GetHashCode();
+                if (this.ReturnPortraitLocation != null) hashCode = hashCode * 59 + this.ReturnPortraitLocation.GetHashCode();
+                if (this.ReturnIdcardType != null) hashCode = hashCode * 59 + this.ReturnIdcardType.GetHashCode();
+                if (this.ReturnTranslation != null) hashCode = hashCode * 59 + this.ReturnTranslation.GetHashCode();
                 return hashCode;
             }
         }

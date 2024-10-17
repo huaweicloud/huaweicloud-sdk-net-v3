@@ -225,58 +225,18 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// </summary>
         public bool Equals(UpdateAlarmRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AlarmName != input.AlarmName || (this.AlarmName != null && !this.AlarmName.Equals(input.AlarmName))) return false;
+            if (this.AlarmDescription != input.AlarmDescription || (this.AlarmDescription != null && !this.AlarmDescription.Equals(input.AlarmDescription))) return false;
+            if (this.Condition != input.Condition || (this.Condition != null && !this.Condition.Equals(input.Condition))) return false;
+            if (this.AlarmActionEnabled != input.AlarmActionEnabled || (this.AlarmActionEnabled != null && !this.AlarmActionEnabled.Equals(input.AlarmActionEnabled))) return false;
+            if (this.AlarmLevel != input.AlarmLevel || (this.AlarmLevel != null && !this.AlarmLevel.Equals(input.AlarmLevel))) return false;
+            if (this.AlarmType != input.AlarmType) return false;
+            if (this.AlarmActions != input.AlarmActions || (this.AlarmActions != null && input.AlarmActions != null && !this.AlarmActions.SequenceEqual(input.AlarmActions))) return false;
+            if (this.InsufficientdataActions != input.InsufficientdataActions || (this.InsufficientdataActions != null && input.InsufficientdataActions != null && !this.InsufficientdataActions.SequenceEqual(input.InsufficientdataActions))) return false;
+            if (this.OkActions != input.OkActions || (this.OkActions != null && input.OkActions != null && !this.OkActions.SequenceEqual(input.OkActions))) return false;
 
-            return 
-                (
-                    this.AlarmName == input.AlarmName ||
-                    (this.AlarmName != null &&
-                    this.AlarmName.Equals(input.AlarmName))
-                ) && 
-                (
-                    this.AlarmDescription == input.AlarmDescription ||
-                    (this.AlarmDescription != null &&
-                    this.AlarmDescription.Equals(input.AlarmDescription))
-                ) && 
-                (
-                    this.Condition == input.Condition ||
-                    (this.Condition != null &&
-                    this.Condition.Equals(input.Condition))
-                ) && 
-                (
-                    this.AlarmActionEnabled == input.AlarmActionEnabled ||
-                    (this.AlarmActionEnabled != null &&
-                    this.AlarmActionEnabled.Equals(input.AlarmActionEnabled))
-                ) && 
-                (
-                    this.AlarmLevel == input.AlarmLevel ||
-                    (this.AlarmLevel != null &&
-                    this.AlarmLevel.Equals(input.AlarmLevel))
-                ) && 
-                (
-                    this.AlarmType == input.AlarmType ||
-                    (this.AlarmType != null &&
-                    this.AlarmType.Equals(input.AlarmType))
-                ) && 
-                (
-                    this.AlarmActions == input.AlarmActions ||
-                    this.AlarmActions != null &&
-                    input.AlarmActions != null &&
-                    this.AlarmActions.SequenceEqual(input.AlarmActions)
-                ) && 
-                (
-                    this.InsufficientdataActions == input.InsufficientdataActions ||
-                    this.InsufficientdataActions != null &&
-                    input.InsufficientdataActions != null &&
-                    this.InsufficientdataActions.SequenceEqual(input.InsufficientdataActions)
-                ) && 
-                (
-                    this.OkActions == input.OkActions ||
-                    this.OkActions != null &&
-                    input.OkActions != null &&
-                    this.OkActions.SequenceEqual(input.OkActions)
-                );
+            return true;
         }
 
         /// <summary>
@@ -286,25 +246,16 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AlarmName != null)
-                    hashCode = hashCode * 59 + this.AlarmName.GetHashCode();
-                if (this.AlarmDescription != null)
-                    hashCode = hashCode * 59 + this.AlarmDescription.GetHashCode();
-                if (this.Condition != null)
-                    hashCode = hashCode * 59 + this.Condition.GetHashCode();
-                if (this.AlarmActionEnabled != null)
-                    hashCode = hashCode * 59 + this.AlarmActionEnabled.GetHashCode();
-                if (this.AlarmLevel != null)
-                    hashCode = hashCode * 59 + this.AlarmLevel.GetHashCode();
-                if (this.AlarmType != null)
-                    hashCode = hashCode * 59 + this.AlarmType.GetHashCode();
-                if (this.AlarmActions != null)
-                    hashCode = hashCode * 59 + this.AlarmActions.GetHashCode();
-                if (this.InsufficientdataActions != null)
-                    hashCode = hashCode * 59 + this.InsufficientdataActions.GetHashCode();
-                if (this.OkActions != null)
-                    hashCode = hashCode * 59 + this.OkActions.GetHashCode();
+                var hashCode = 41;
+                if (this.AlarmName != null) hashCode = hashCode * 59 + this.AlarmName.GetHashCode();
+                if (this.AlarmDescription != null) hashCode = hashCode * 59 + this.AlarmDescription.GetHashCode();
+                if (this.Condition != null) hashCode = hashCode * 59 + this.Condition.GetHashCode();
+                if (this.AlarmActionEnabled != null) hashCode = hashCode * 59 + this.AlarmActionEnabled.GetHashCode();
+                if (this.AlarmLevel != null) hashCode = hashCode * 59 + this.AlarmLevel.GetHashCode();
+                hashCode = hashCode * 59 + this.AlarmType.GetHashCode();
+                if (this.AlarmActions != null) hashCode = hashCode * 59 + this.AlarmActions.GetHashCode();
+                if (this.InsufficientdataActions != null) hashCode = hashCode * 59 + this.InsufficientdataActions.GetHashCode();
+                if (this.OkActions != null) hashCode = hashCode * 59 + this.OkActions.GetHashCode();
                 return hashCode;
             }
         }

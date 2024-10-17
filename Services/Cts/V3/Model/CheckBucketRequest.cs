@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         /// </summary>
         public bool Equals(CheckBucketRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BucketName != input.BucketName || (this.BucketName != null && !this.BucketName.Equals(input.BucketName))) return false;
+            if (this.BucketLocation != input.BucketLocation || (this.BucketLocation != null && !this.BucketLocation.Equals(input.BucketLocation))) return false;
+            if (this.KmsId != input.KmsId || (this.KmsId != null && !this.KmsId.Equals(input.KmsId))) return false;
+            if (this.IsSupportTraceFilesEncryption != input.IsSupportTraceFilesEncryption || (this.IsSupportTraceFilesEncryption != null && !this.IsSupportTraceFilesEncryption.Equals(input.IsSupportTraceFilesEncryption))) return false;
 
-            return 
-                (
-                    this.BucketName == input.BucketName ||
-                    (this.BucketName != null &&
-                    this.BucketName.Equals(input.BucketName))
-                ) && 
-                (
-                    this.BucketLocation == input.BucketLocation ||
-                    (this.BucketLocation != null &&
-                    this.BucketLocation.Equals(input.BucketLocation))
-                ) && 
-                (
-                    this.KmsId == input.KmsId ||
-                    (this.KmsId != null &&
-                    this.KmsId.Equals(input.KmsId))
-                ) && 
-                (
-                    this.IsSupportTraceFilesEncryption == input.IsSupportTraceFilesEncryption ||
-                    (this.IsSupportTraceFilesEncryption != null &&
-                    this.IsSupportTraceFilesEncryption.Equals(input.IsSupportTraceFilesEncryption))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BucketName != null)
-                    hashCode = hashCode * 59 + this.BucketName.GetHashCode();
-                if (this.BucketLocation != null)
-                    hashCode = hashCode * 59 + this.BucketLocation.GetHashCode();
-                if (this.KmsId != null)
-                    hashCode = hashCode * 59 + this.KmsId.GetHashCode();
-                if (this.IsSupportTraceFilesEncryption != null)
-                    hashCode = hashCode * 59 + this.IsSupportTraceFilesEncryption.GetHashCode();
+                var hashCode = 41;
+                if (this.BucketName != null) hashCode = hashCode * 59 + this.BucketName.GetHashCode();
+                if (this.BucketLocation != null) hashCode = hashCode * 59 + this.BucketLocation.GetHashCode();
+                if (this.KmsId != null) hashCode = hashCode * 59 + this.KmsId.GetHashCode();
+                if (this.IsSupportTraceFilesEncryption != null) hashCode = hashCode * 59 + this.IsSupportTraceFilesEncryption.GetHashCode();
                 return hashCode;
             }
         }

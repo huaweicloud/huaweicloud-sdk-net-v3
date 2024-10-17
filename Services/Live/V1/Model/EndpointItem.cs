@@ -63,28 +63,12 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(EndpointItem input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HlsPackage != input.HlsPackage || (this.HlsPackage != null && input.HlsPackage != null && !this.HlsPackage.SequenceEqual(input.HlsPackage))) return false;
+            if (this.DashPackage != input.DashPackage || (this.DashPackage != null && input.DashPackage != null && !this.DashPackage.SequenceEqual(input.DashPackage))) return false;
+            if (this.MssPackage != input.MssPackage || (this.MssPackage != null && input.MssPackage != null && !this.MssPackage.SequenceEqual(input.MssPackage))) return false;
 
-            return 
-                (
-                    this.HlsPackage == input.HlsPackage ||
-                    this.HlsPackage != null &&
-                    input.HlsPackage != null &&
-                    this.HlsPackage.SequenceEqual(input.HlsPackage)
-                ) && 
-                (
-                    this.DashPackage == input.DashPackage ||
-                    this.DashPackage != null &&
-                    input.DashPackage != null &&
-                    this.DashPackage.SequenceEqual(input.DashPackage)
-                ) && 
-                (
-                    this.MssPackage == input.MssPackage ||
-                    this.MssPackage != null &&
-                    input.MssPackage != null &&
-                    this.MssPackage.SequenceEqual(input.MssPackage)
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +78,10 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HlsPackage != null)
-                    hashCode = hashCode * 59 + this.HlsPackage.GetHashCode();
-                if (this.DashPackage != null)
-                    hashCode = hashCode * 59 + this.DashPackage.GetHashCode();
-                if (this.MssPackage != null)
-                    hashCode = hashCode * 59 + this.MssPackage.GetHashCode();
+                var hashCode = 41;
+                if (this.HlsPackage != null) hashCode = hashCode * 59 + this.HlsPackage.GetHashCode();
+                if (this.DashPackage != null) hashCode = hashCode * 59 + this.DashPackage.GetHashCode();
+                if (this.MssPackage != null) hashCode = hashCode * 59 + this.MssPackage.GetHashCode();
                 return hashCode;
             }
         }

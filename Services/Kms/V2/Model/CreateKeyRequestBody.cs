@@ -476,50 +476,17 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         /// </summary>
         public bool Equals(CreateKeyRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KeyAlias != input.KeyAlias || (this.KeyAlias != null && !this.KeyAlias.Equals(input.KeyAlias))) return false;
+            if (this.KeySpec != input.KeySpec) return false;
+            if (this.KeyUsage != input.KeyUsage) return false;
+            if (this.KeyDescription != input.KeyDescription || (this.KeyDescription != null && !this.KeyDescription.Equals(input.KeyDescription))) return false;
+            if (this.Origin != input.Origin) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.Sequence != input.Sequence || (this.Sequence != null && !this.Sequence.Equals(input.Sequence))) return false;
+            if (this.KeystoreId != input.KeystoreId || (this.KeystoreId != null && !this.KeystoreId.Equals(input.KeystoreId))) return false;
 
-            return 
-                (
-                    this.KeyAlias == input.KeyAlias ||
-                    (this.KeyAlias != null &&
-                    this.KeyAlias.Equals(input.KeyAlias))
-                ) && 
-                (
-                    this.KeySpec == input.KeySpec ||
-                    (this.KeySpec != null &&
-                    this.KeySpec.Equals(input.KeySpec))
-                ) && 
-                (
-                    this.KeyUsage == input.KeyUsage ||
-                    (this.KeyUsage != null &&
-                    this.KeyUsage.Equals(input.KeyUsage))
-                ) && 
-                (
-                    this.KeyDescription == input.KeyDescription ||
-                    (this.KeyDescription != null &&
-                    this.KeyDescription.Equals(input.KeyDescription))
-                ) && 
-                (
-                    this.Origin == input.Origin ||
-                    (this.Origin != null &&
-                    this.Origin.Equals(input.Origin))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.Sequence == input.Sequence ||
-                    (this.Sequence != null &&
-                    this.Sequence.Equals(input.Sequence))
-                ) && 
-                (
-                    this.KeystoreId == input.KeystoreId ||
-                    (this.KeystoreId != null &&
-                    this.KeystoreId.Equals(input.KeystoreId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -529,23 +496,15 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KeyAlias != null)
-                    hashCode = hashCode * 59 + this.KeyAlias.GetHashCode();
-                if (this.KeySpec != null)
-                    hashCode = hashCode * 59 + this.KeySpec.GetHashCode();
-                if (this.KeyUsage != null)
-                    hashCode = hashCode * 59 + this.KeyUsage.GetHashCode();
-                if (this.KeyDescription != null)
-                    hashCode = hashCode * 59 + this.KeyDescription.GetHashCode();
-                if (this.Origin != null)
-                    hashCode = hashCode * 59 + this.Origin.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.Sequence != null)
-                    hashCode = hashCode * 59 + this.Sequence.GetHashCode();
-                if (this.KeystoreId != null)
-                    hashCode = hashCode * 59 + this.KeystoreId.GetHashCode();
+                var hashCode = 41;
+                if (this.KeyAlias != null) hashCode = hashCode * 59 + this.KeyAlias.GetHashCode();
+                hashCode = hashCode * 59 + this.KeySpec.GetHashCode();
+                hashCode = hashCode * 59 + this.KeyUsage.GetHashCode();
+                if (this.KeyDescription != null) hashCode = hashCode * 59 + this.KeyDescription.GetHashCode();
+                hashCode = hashCode * 59 + this.Origin.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Sequence != null) hashCode = hashCode * 59 + this.Sequence.GetHashCode();
+                if (this.KeystoreId != null) hashCode = hashCode * 59 + this.KeystoreId.GetHashCode();
                 return hashCode;
             }
         }

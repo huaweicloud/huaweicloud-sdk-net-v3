@@ -289,77 +289,22 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(GetStackMetadataResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StackId != input.StackId || (this.StackId != null && !this.StackId.Equals(input.StackId))) return false;
+            if (this.StackName != input.StackName || (this.StackName != null && !this.StackName.Equals(input.StackName))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.VarsStructure != input.VarsStructure || (this.VarsStructure != null && input.VarsStructure != null && !this.VarsStructure.SequenceEqual(input.VarsStructure))) return false;
+            if (this.VarsBody != input.VarsBody || (this.VarsBody != null && !this.VarsBody.Equals(input.VarsBody))) return false;
+            if (this.EnableDeletionProtection != input.EnableDeletionProtection || (this.EnableDeletionProtection != null && !this.EnableDeletionProtection.Equals(input.EnableDeletionProtection))) return false;
+            if (this.EnableAutoRollback != input.EnableAutoRollback || (this.EnableAutoRollback != null && !this.EnableAutoRollback.Equals(input.EnableAutoRollback))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.Agencies != input.Agencies || (this.Agencies != null && input.Agencies != null && !this.Agencies.SequenceEqual(input.Agencies))) return false;
+            if (this.StatusMessage != input.StatusMessage || (this.StatusMessage != null && !this.StatusMessage.Equals(input.StatusMessage))) return false;
+            if (this.VarsUriContent != input.VarsUriContent || (this.VarsUriContent != null && !this.VarsUriContent.Equals(input.VarsUriContent))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
 
-            return 
-                (
-                    this.StackId == input.StackId ||
-                    (this.StackId != null &&
-                    this.StackId.Equals(input.StackId))
-                ) && 
-                (
-                    this.StackName == input.StackName ||
-                    (this.StackName != null &&
-                    this.StackName.Equals(input.StackName))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.VarsStructure == input.VarsStructure ||
-                    this.VarsStructure != null &&
-                    input.VarsStructure != null &&
-                    this.VarsStructure.SequenceEqual(input.VarsStructure)
-                ) && 
-                (
-                    this.VarsBody == input.VarsBody ||
-                    (this.VarsBody != null &&
-                    this.VarsBody.Equals(input.VarsBody))
-                ) && 
-                (
-                    this.EnableDeletionProtection == input.EnableDeletionProtection ||
-                    (this.EnableDeletionProtection != null &&
-                    this.EnableDeletionProtection.Equals(input.EnableDeletionProtection))
-                ) && 
-                (
-                    this.EnableAutoRollback == input.EnableAutoRollback ||
-                    (this.EnableAutoRollback != null &&
-                    this.EnableAutoRollback.Equals(input.EnableAutoRollback))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Agencies == input.Agencies ||
-                    this.Agencies != null &&
-                    input.Agencies != null &&
-                    this.Agencies.SequenceEqual(input.Agencies)
-                ) && 
-                (
-                    this.StatusMessage == input.StatusMessage ||
-                    (this.StatusMessage != null &&
-                    this.StatusMessage.Equals(input.StatusMessage))
-                ) && 
-                (
-                    this.VarsUriContent == input.VarsUriContent ||
-                    (this.VarsUriContent != null &&
-                    this.VarsUriContent.Equals(input.VarsUriContent))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -369,33 +314,20 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StackId != null)
-                    hashCode = hashCode * 59 + this.StackId.GetHashCode();
-                if (this.StackName != null)
-                    hashCode = hashCode * 59 + this.StackName.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.VarsStructure != null)
-                    hashCode = hashCode * 59 + this.VarsStructure.GetHashCode();
-                if (this.VarsBody != null)
-                    hashCode = hashCode * 59 + this.VarsBody.GetHashCode();
-                if (this.EnableDeletionProtection != null)
-                    hashCode = hashCode * 59 + this.EnableDeletionProtection.GetHashCode();
-                if (this.EnableAutoRollback != null)
-                    hashCode = hashCode * 59 + this.EnableAutoRollback.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Agencies != null)
-                    hashCode = hashCode * 59 + this.Agencies.GetHashCode();
-                if (this.StatusMessage != null)
-                    hashCode = hashCode * 59 + this.StatusMessage.GetHashCode();
-                if (this.VarsUriContent != null)
-                    hashCode = hashCode * 59 + this.VarsUriContent.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                var hashCode = 41;
+                if (this.StackId != null) hashCode = hashCode * 59 + this.StackId.GetHashCode();
+                if (this.StackName != null) hashCode = hashCode * 59 + this.StackName.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.VarsStructure != null) hashCode = hashCode * 59 + this.VarsStructure.GetHashCode();
+                if (this.VarsBody != null) hashCode = hashCode * 59 + this.VarsBody.GetHashCode();
+                if (this.EnableDeletionProtection != null) hashCode = hashCode * 59 + this.EnableDeletionProtection.GetHashCode();
+                if (this.EnableAutoRollback != null) hashCode = hashCode * 59 + this.EnableAutoRollback.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Agencies != null) hashCode = hashCode * 59 + this.Agencies.GetHashCode();
+                if (this.StatusMessage != null) hashCode = hashCode * 59 + this.StatusMessage.GetHashCode();
+                if (this.VarsUriContent != null) hashCode = hashCode * 59 + this.VarsUriContent.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 return hashCode;
             }
         }

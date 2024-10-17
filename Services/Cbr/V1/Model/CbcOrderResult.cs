@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(CbcOrderResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CloudServiceId != input.CloudServiceId || (this.CloudServiceId != null && !this.CloudServiceId.Equals(input.CloudServiceId))) return false;
+            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
+            if (this.SubscribeResult != input.SubscribeResult || (this.SubscribeResult != null && !this.SubscribeResult.Equals(input.SubscribeResult))) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
 
-            return 
-                (
-                    this.CloudServiceId == input.CloudServiceId ||
-                    (this.CloudServiceId != null &&
-                    this.CloudServiceId.Equals(input.CloudServiceId))
-                ) && 
-                (
-                    this.OrderId == input.OrderId ||
-                    (this.OrderId != null &&
-                    this.OrderId.Equals(input.OrderId))
-                ) && 
-                (
-                    this.SubscribeResult == input.SubscribeResult ||
-                    (this.SubscribeResult != null &&
-                    this.SubscribeResult.Equals(input.SubscribeResult))
-                ) && 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CloudServiceId != null)
-                    hashCode = hashCode * 59 + this.CloudServiceId.GetHashCode();
-                if (this.OrderId != null)
-                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
-                if (this.SubscribeResult != null)
-                    hashCode = hashCode * 59 + this.SubscribeResult.GetHashCode();
-                if (this.ResourceId != null)
-                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                var hashCode = 41;
+                if (this.CloudServiceId != null) hashCode = hashCode * 59 + this.CloudServiceId.GetHashCode();
+                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.SubscribeResult != null) hashCode = hashCode * 59 + this.SubscribeResult.GetHashCode();
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
                 return hashCode;
             }
         }

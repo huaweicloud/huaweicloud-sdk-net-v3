@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(GeneralTextRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Image != input.Image || (this.Image != null && !this.Image.Equals(input.Image))) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.DetectDirection != input.DetectDirection || (this.DetectDirection != null && !this.DetectDirection.Equals(input.DetectDirection))) return false;
+            if (this.QuickMode != input.QuickMode || (this.QuickMode != null && !this.QuickMode.Equals(input.QuickMode))) return false;
+            if (this.CharacterMode != input.CharacterMode || (this.CharacterMode != null && !this.CharacterMode.Equals(input.CharacterMode))) return false;
+            if (this.Language != input.Language || (this.Language != null && !this.Language.Equals(input.Language))) return false;
+            if (this.SingleOrientationMode != input.SingleOrientationMode || (this.SingleOrientationMode != null && !this.SingleOrientationMode.Equals(input.SingleOrientationMode))) return false;
 
-            return 
-                (
-                    this.Image == input.Image ||
-                    (this.Image != null &&
-                    this.Image.Equals(input.Image))
-                ) && 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.DetectDirection == input.DetectDirection ||
-                    (this.DetectDirection != null &&
-                    this.DetectDirection.Equals(input.DetectDirection))
-                ) && 
-                (
-                    this.QuickMode == input.QuickMode ||
-                    (this.QuickMode != null &&
-                    this.QuickMode.Equals(input.QuickMode))
-                ) && 
-                (
-                    this.CharacterMode == input.CharacterMode ||
-                    (this.CharacterMode != null &&
-                    this.CharacterMode.Equals(input.CharacterMode))
-                ) && 
-                (
-                    this.Language == input.Language ||
-                    (this.Language != null &&
-                    this.Language.Equals(input.Language))
-                ) && 
-                (
-                    this.SingleOrientationMode == input.SingleOrientationMode ||
-                    (this.SingleOrientationMode != null &&
-                    this.SingleOrientationMode.Equals(input.SingleOrientationMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Image != null)
-                    hashCode = hashCode * 59 + this.Image.GetHashCode();
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.DetectDirection != null)
-                    hashCode = hashCode * 59 + this.DetectDirection.GetHashCode();
-                if (this.QuickMode != null)
-                    hashCode = hashCode * 59 + this.QuickMode.GetHashCode();
-                if (this.CharacterMode != null)
-                    hashCode = hashCode * 59 + this.CharacterMode.GetHashCode();
-                if (this.Language != null)
-                    hashCode = hashCode * 59 + this.Language.GetHashCode();
-                if (this.SingleOrientationMode != null)
-                    hashCode = hashCode * 59 + this.SingleOrientationMode.GetHashCode();
+                var hashCode = 41;
+                if (this.Image != null) hashCode = hashCode * 59 + this.Image.GetHashCode();
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.DetectDirection != null) hashCode = hashCode * 59 + this.DetectDirection.GetHashCode();
+                if (this.QuickMode != null) hashCode = hashCode * 59 + this.QuickMode.GetHashCode();
+                if (this.CharacterMode != null) hashCode = hashCode * 59 + this.CharacterMode.GetHashCode();
+                if (this.Language != null) hashCode = hashCode * 59 + this.Language.GetHashCode();
+                if (this.SingleOrientationMode != null) hashCode = hashCode * 59 + this.SingleOrientationMode.GetHashCode();
                 return hashCode;
             }
         }

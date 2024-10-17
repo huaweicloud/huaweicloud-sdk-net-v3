@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         /// </summary>
         public bool Equals(ExtentionReqDataByNameAndId input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VerificationName != input.VerificationName || (this.VerificationName != null && !this.VerificationName.Equals(input.VerificationName))) return false;
+            if (this.VerificationId != input.VerificationId || (this.VerificationId != null && !this.VerificationId.Equals(input.VerificationId))) return false;
 
-            return 
-                (
-                    this.VerificationName == input.VerificationName ||
-                    (this.VerificationName != null &&
-                    this.VerificationName.Equals(input.VerificationName))
-                ) && 
-                (
-                    this.VerificationId == input.VerificationId ||
-                    (this.VerificationId != null &&
-                    this.VerificationId.Equals(input.VerificationId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Ivs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VerificationName != null)
-                    hashCode = hashCode * 59 + this.VerificationName.GetHashCode();
-                if (this.VerificationId != null)
-                    hashCode = hashCode * 59 + this.VerificationId.GetHashCode();
+                var hashCode = 41;
+                if (this.VerificationName != null) hashCode = hashCode * 59 + this.VerificationName.GetHashCode();
+                if (this.VerificationId != null) hashCode = hashCode * 59 + this.VerificationId.GetHashCode();
                 return hashCode;
             }
         }

@@ -205,46 +205,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(PersistentVolumeClaimSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VolumeID != input.VolumeID || (this.VolumeID != null && !this.VolumeID.Equals(input.VolumeID))) return false;
+            if (this.StorageType != input.StorageType || (this.StorageType != null && !this.StorageType.Equals(input.StorageType))) return false;
+            if (this.AccessModes != input.AccessModes || (this.AccessModes != null && input.AccessModes != null && !this.AccessModes.SequenceEqual(input.AccessModes))) return false;
+            if (this.StorageClassName != input.StorageClassName || (this.StorageClassName != null && !this.StorageClassName.Equals(input.StorageClassName))) return false;
+            if (this.VolumeName != input.VolumeName || (this.VolumeName != null && !this.VolumeName.Equals(input.VolumeName))) return false;
+            if (this.Resources != input.Resources || (this.Resources != null && !this.Resources.Equals(input.Resources))) return false;
+            if (this.VolumeMode != input.VolumeMode || (this.VolumeMode != null && !this.VolumeMode.Equals(input.VolumeMode))) return false;
 
-            return 
-                (
-                    this.VolumeID == input.VolumeID ||
-                    (this.VolumeID != null &&
-                    this.VolumeID.Equals(input.VolumeID))
-                ) && 
-                (
-                    this.StorageType == input.StorageType ||
-                    (this.StorageType != null &&
-                    this.StorageType.Equals(input.StorageType))
-                ) && 
-                (
-                    this.AccessModes == input.AccessModes ||
-                    this.AccessModes != null &&
-                    input.AccessModes != null &&
-                    this.AccessModes.SequenceEqual(input.AccessModes)
-                ) && 
-                (
-                    this.StorageClassName == input.StorageClassName ||
-                    (this.StorageClassName != null &&
-                    this.StorageClassName.Equals(input.StorageClassName))
-                ) && 
-                (
-                    this.VolumeName == input.VolumeName ||
-                    (this.VolumeName != null &&
-                    this.VolumeName.Equals(input.VolumeName))
-                ) && 
-                (
-                    this.Resources == input.Resources ||
-                    (this.Resources != null &&
-                    this.Resources.Equals(input.Resources))
-                ) && 
-                (
-                    this.VolumeMode == input.VolumeMode ||
-                    (this.VolumeMode != null &&
-                    this.VolumeMode.Equals(input.VolumeMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -254,21 +224,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VolumeID != null)
-                    hashCode = hashCode * 59 + this.VolumeID.GetHashCode();
-                if (this.StorageType != null)
-                    hashCode = hashCode * 59 + this.StorageType.GetHashCode();
-                if (this.AccessModes != null)
-                    hashCode = hashCode * 59 + this.AccessModes.GetHashCode();
-                if (this.StorageClassName != null)
-                    hashCode = hashCode * 59 + this.StorageClassName.GetHashCode();
-                if (this.VolumeName != null)
-                    hashCode = hashCode * 59 + this.VolumeName.GetHashCode();
-                if (this.Resources != null)
-                    hashCode = hashCode * 59 + this.Resources.GetHashCode();
-                if (this.VolumeMode != null)
-                    hashCode = hashCode * 59 + this.VolumeMode.GetHashCode();
+                var hashCode = 41;
+                if (this.VolumeID != null) hashCode = hashCode * 59 + this.VolumeID.GetHashCode();
+                if (this.StorageType != null) hashCode = hashCode * 59 + this.StorageType.GetHashCode();
+                hashCode = hashCode * 59 + this.AccessModes.GetHashCode();
+                if (this.StorageClassName != null) hashCode = hashCode * 59 + this.StorageClassName.GetHashCode();
+                if (this.VolumeName != null) hashCode = hashCode * 59 + this.VolumeName.GetHashCode();
+                if (this.Resources != null) hashCode = hashCode * 59 + this.Resources.GetHashCode();
+                if (this.VolumeMode != null) hashCode = hashCode * 59 + this.VolumeMode.GetHashCode();
                 return hashCode;
             }
         }

@@ -470,51 +470,17 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         /// </summary>
         public bool Equals(JudgementTaskRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NotifyUrl != input.NotifyUrl || (this.NotifyUrl != null && !this.NotifyUrl.Equals(input.NotifyUrl))) return false;
+            if (this.CodeType != input.CodeType) return false;
+            if (this.SourceCode != input.SourceCode || (this.SourceCode != null && !this.SourceCode.Equals(input.SourceCode))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.RuntimeType != input.RuntimeType) return false;
+            if (this.Timeout != input.Timeout || (this.Timeout != null && !this.Timeout.Equals(input.Timeout))) return false;
+            if (this.OutputType != input.OutputType) return false;
+            if (this.Testcases != input.Testcases || (this.Testcases != null && input.Testcases != null && !this.Testcases.SequenceEqual(input.Testcases))) return false;
 
-            return 
-                (
-                    this.NotifyUrl == input.NotifyUrl ||
-                    (this.NotifyUrl != null &&
-                    this.NotifyUrl.Equals(input.NotifyUrl))
-                ) && 
-                (
-                    this.CodeType == input.CodeType ||
-                    (this.CodeType != null &&
-                    this.CodeType.Equals(input.CodeType))
-                ) && 
-                (
-                    this.SourceCode == input.SourceCode ||
-                    (this.SourceCode != null &&
-                    this.SourceCode.Equals(input.SourceCode))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.RuntimeType == input.RuntimeType ||
-                    (this.RuntimeType != null &&
-                    this.RuntimeType.Equals(input.RuntimeType))
-                ) && 
-                (
-                    this.Timeout == input.Timeout ||
-                    (this.Timeout != null &&
-                    this.Timeout.Equals(input.Timeout))
-                ) && 
-                (
-                    this.OutputType == input.OutputType ||
-                    (this.OutputType != null &&
-                    this.OutputType.Equals(input.OutputType))
-                ) && 
-                (
-                    this.Testcases == input.Testcases ||
-                    this.Testcases != null &&
-                    input.Testcases != null &&
-                    this.Testcases.SequenceEqual(input.Testcases)
-                );
+            return true;
         }
 
         /// <summary>
@@ -524,23 +490,15 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NotifyUrl != null)
-                    hashCode = hashCode * 59 + this.NotifyUrl.GetHashCode();
-                if (this.CodeType != null)
-                    hashCode = hashCode * 59 + this.CodeType.GetHashCode();
-                if (this.SourceCode != null)
-                    hashCode = hashCode * 59 + this.SourceCode.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.RuntimeType != null)
-                    hashCode = hashCode * 59 + this.RuntimeType.GetHashCode();
-                if (this.Timeout != null)
-                    hashCode = hashCode * 59 + this.Timeout.GetHashCode();
-                if (this.OutputType != null)
-                    hashCode = hashCode * 59 + this.OutputType.GetHashCode();
-                if (this.Testcases != null)
-                    hashCode = hashCode * 59 + this.Testcases.GetHashCode();
+                var hashCode = 41;
+                if (this.NotifyUrl != null) hashCode = hashCode * 59 + this.NotifyUrl.GetHashCode();
+                hashCode = hashCode * 59 + this.CodeType.GetHashCode();
+                if (this.SourceCode != null) hashCode = hashCode * 59 + this.SourceCode.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                hashCode = hashCode * 59 + this.RuntimeType.GetHashCode();
+                if (this.Timeout != null) hashCode = hashCode * 59 + this.Timeout.GetHashCode();
+                hashCode = hashCode * 59 + this.OutputType.GetHashCode();
+                if (this.Testcases != null) hashCode = hashCode * 59 + this.Testcases.GetHashCode();
                 return hashCode;
             }
         }

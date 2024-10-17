@@ -338,52 +338,17 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(ShowUserResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AccessKey != input.AccessKey || (this.AccessKey != null && !this.AccessKey.Equals(input.AccessKey))) return false;
+            if (this.SecretKey != input.SecretKey || (this.SecretKey != null && !this.SecretKey.Equals(input.SecretKey))) return false;
+            if (this.WhiteRemoteAddress != input.WhiteRemoteAddress || (this.WhiteRemoteAddress != null && !this.WhiteRemoteAddress.Equals(input.WhiteRemoteAddress))) return false;
+            if (this.Admin != input.Admin || (this.Admin != null && !this.Admin.Equals(input.Admin))) return false;
+            if (this.DefaultTopicPerm != input.DefaultTopicPerm) return false;
+            if (this.DefaultGroupPerm != input.DefaultGroupPerm) return false;
+            if (this.TopicPerms != input.TopicPerms || (this.TopicPerms != null && input.TopicPerms != null && !this.TopicPerms.SequenceEqual(input.TopicPerms))) return false;
+            if (this.GroupPerms != input.GroupPerms || (this.GroupPerms != null && input.GroupPerms != null && !this.GroupPerms.SequenceEqual(input.GroupPerms))) return false;
 
-            return 
-                (
-                    this.AccessKey == input.AccessKey ||
-                    (this.AccessKey != null &&
-                    this.AccessKey.Equals(input.AccessKey))
-                ) && 
-                (
-                    this.SecretKey == input.SecretKey ||
-                    (this.SecretKey != null &&
-                    this.SecretKey.Equals(input.SecretKey))
-                ) && 
-                (
-                    this.WhiteRemoteAddress == input.WhiteRemoteAddress ||
-                    (this.WhiteRemoteAddress != null &&
-                    this.WhiteRemoteAddress.Equals(input.WhiteRemoteAddress))
-                ) && 
-                (
-                    this.Admin == input.Admin ||
-                    (this.Admin != null &&
-                    this.Admin.Equals(input.Admin))
-                ) && 
-                (
-                    this.DefaultTopicPerm == input.DefaultTopicPerm ||
-                    (this.DefaultTopicPerm != null &&
-                    this.DefaultTopicPerm.Equals(input.DefaultTopicPerm))
-                ) && 
-                (
-                    this.DefaultGroupPerm == input.DefaultGroupPerm ||
-                    (this.DefaultGroupPerm != null &&
-                    this.DefaultGroupPerm.Equals(input.DefaultGroupPerm))
-                ) && 
-                (
-                    this.TopicPerms == input.TopicPerms ||
-                    this.TopicPerms != null &&
-                    input.TopicPerms != null &&
-                    this.TopicPerms.SequenceEqual(input.TopicPerms)
-                ) && 
-                (
-                    this.GroupPerms == input.GroupPerms ||
-                    this.GroupPerms != null &&
-                    input.GroupPerms != null &&
-                    this.GroupPerms.SequenceEqual(input.GroupPerms)
-                );
+            return true;
         }
 
         /// <summary>
@@ -393,23 +358,15 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AccessKey != null)
-                    hashCode = hashCode * 59 + this.AccessKey.GetHashCode();
-                if (this.SecretKey != null)
-                    hashCode = hashCode * 59 + this.SecretKey.GetHashCode();
-                if (this.WhiteRemoteAddress != null)
-                    hashCode = hashCode * 59 + this.WhiteRemoteAddress.GetHashCode();
-                if (this.Admin != null)
-                    hashCode = hashCode * 59 + this.Admin.GetHashCode();
-                if (this.DefaultTopicPerm != null)
-                    hashCode = hashCode * 59 + this.DefaultTopicPerm.GetHashCode();
-                if (this.DefaultGroupPerm != null)
-                    hashCode = hashCode * 59 + this.DefaultGroupPerm.GetHashCode();
-                if (this.TopicPerms != null)
-                    hashCode = hashCode * 59 + this.TopicPerms.GetHashCode();
-                if (this.GroupPerms != null)
-                    hashCode = hashCode * 59 + this.GroupPerms.GetHashCode();
+                var hashCode = 41;
+                if (this.AccessKey != null) hashCode = hashCode * 59 + this.AccessKey.GetHashCode();
+                if (this.SecretKey != null) hashCode = hashCode * 59 + this.SecretKey.GetHashCode();
+                if (this.WhiteRemoteAddress != null) hashCode = hashCode * 59 + this.WhiteRemoteAddress.GetHashCode();
+                if (this.Admin != null) hashCode = hashCode * 59 + this.Admin.GetHashCode();
+                hashCode = hashCode * 59 + this.DefaultTopicPerm.GetHashCode();
+                hashCode = hashCode * 59 + this.DefaultGroupPerm.GetHashCode();
+                if (this.TopicPerms != null) hashCode = hashCode * 59 + this.TopicPerms.GetHashCode();
+                if (this.GroupPerms != null) hashCode = hashCode * 59 + this.GroupPerms.GetHashCode();
                 return hashCode;
             }
         }

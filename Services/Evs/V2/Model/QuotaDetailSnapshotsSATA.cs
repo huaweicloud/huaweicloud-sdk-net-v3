@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(QuotaDetailSnapshotsSATA input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InUse != input.InUse || (this.InUse != null && !this.InUse.Equals(input.InUse))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Reserved != input.Reserved || (this.Reserved != null && !this.Reserved.Equals(input.Reserved))) return false;
 
-            return 
-                (
-                    this.InUse == input.InUse ||
-                    (this.InUse != null &&
-                    this.InUse.Equals(input.InUse))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Reserved == input.Reserved ||
-                    (this.Reserved != null &&
-                    this.Reserved.Equals(input.Reserved))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InUse != null)
-                    hashCode = hashCode * 59 + this.InUse.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Reserved != null)
-                    hashCode = hashCode * 59 + this.Reserved.GetHashCode();
+                var hashCode = 41;
+                if (this.InUse != null) hashCode = hashCode * 59 + this.InUse.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Reserved != null) hashCode = hashCode * 59 + this.Reserved.GetHashCode();
                 return hashCode;
             }
         }

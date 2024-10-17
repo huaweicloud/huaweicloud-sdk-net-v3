@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         /// </summary>
         public bool Equals(HeaderMap input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ContentDisposition != input.ContentDisposition || (this.ContentDisposition != null && !this.ContentDisposition.Equals(input.ContentDisposition))) return false;
+            if (this.ContentLanguage != input.ContentLanguage || (this.ContentLanguage != null && !this.ContentLanguage.Equals(input.ContentLanguage))) return false;
+            if (this.AccessControlAllowOrigin != input.AccessControlAllowOrigin || (this.AccessControlAllowOrigin != null && !this.AccessControlAllowOrigin.Equals(input.AccessControlAllowOrigin))) return false;
+            if (this.AccessControlAllowMethods != input.AccessControlAllowMethods || (this.AccessControlAllowMethods != null && !this.AccessControlAllowMethods.Equals(input.AccessControlAllowMethods))) return false;
+            if (this.AccessControlMaxAge != input.AccessControlMaxAge || (this.AccessControlMaxAge != null && !this.AccessControlMaxAge.Equals(input.AccessControlMaxAge))) return false;
+            if (this.AccessControlExposeHeaders != input.AccessControlExposeHeaders || (this.AccessControlExposeHeaders != null && !this.AccessControlExposeHeaders.Equals(input.AccessControlExposeHeaders))) return false;
 
-            return 
-                (
-                    this.ContentDisposition == input.ContentDisposition ||
-                    (this.ContentDisposition != null &&
-                    this.ContentDisposition.Equals(input.ContentDisposition))
-                ) && 
-                (
-                    this.ContentLanguage == input.ContentLanguage ||
-                    (this.ContentLanguage != null &&
-                    this.ContentLanguage.Equals(input.ContentLanguage))
-                ) && 
-                (
-                    this.AccessControlAllowOrigin == input.AccessControlAllowOrigin ||
-                    (this.AccessControlAllowOrigin != null &&
-                    this.AccessControlAllowOrigin.Equals(input.AccessControlAllowOrigin))
-                ) && 
-                (
-                    this.AccessControlAllowMethods == input.AccessControlAllowMethods ||
-                    (this.AccessControlAllowMethods != null &&
-                    this.AccessControlAllowMethods.Equals(input.AccessControlAllowMethods))
-                ) && 
-                (
-                    this.AccessControlMaxAge == input.AccessControlMaxAge ||
-                    (this.AccessControlMaxAge != null &&
-                    this.AccessControlMaxAge.Equals(input.AccessControlMaxAge))
-                ) && 
-                (
-                    this.AccessControlExposeHeaders == input.AccessControlExposeHeaders ||
-                    (this.AccessControlExposeHeaders != null &&
-                    this.AccessControlExposeHeaders.Equals(input.AccessControlExposeHeaders))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Cdn.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ContentDisposition != null)
-                    hashCode = hashCode * 59 + this.ContentDisposition.GetHashCode();
-                if (this.ContentLanguage != null)
-                    hashCode = hashCode * 59 + this.ContentLanguage.GetHashCode();
-                if (this.AccessControlAllowOrigin != null)
-                    hashCode = hashCode * 59 + this.AccessControlAllowOrigin.GetHashCode();
-                if (this.AccessControlAllowMethods != null)
-                    hashCode = hashCode * 59 + this.AccessControlAllowMethods.GetHashCode();
-                if (this.AccessControlMaxAge != null)
-                    hashCode = hashCode * 59 + this.AccessControlMaxAge.GetHashCode();
-                if (this.AccessControlExposeHeaders != null)
-                    hashCode = hashCode * 59 + this.AccessControlExposeHeaders.GetHashCode();
+                var hashCode = 41;
+                if (this.ContentDisposition != null) hashCode = hashCode * 59 + this.ContentDisposition.GetHashCode();
+                if (this.ContentLanguage != null) hashCode = hashCode * 59 + this.ContentLanguage.GetHashCode();
+                if (this.AccessControlAllowOrigin != null) hashCode = hashCode * 59 + this.AccessControlAllowOrigin.GetHashCode();
+                if (this.AccessControlAllowMethods != null) hashCode = hashCode * 59 + this.AccessControlAllowMethods.GetHashCode();
+                if (this.AccessControlMaxAge != null) hashCode = hashCode * 59 + this.AccessControlMaxAge.GetHashCode();
+                if (this.AccessControlExposeHeaders != null) hashCode = hashCode * 59 + this.AccessControlExposeHeaders.GetHashCode();
                 return hashCode;
             }
         }

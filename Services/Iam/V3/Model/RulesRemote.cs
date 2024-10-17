@@ -63,27 +63,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(RulesRemote input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.AnyOneOf != input.AnyOneOf || (this.AnyOneOf != null && input.AnyOneOf != null && !this.AnyOneOf.SequenceEqual(input.AnyOneOf))) return false;
+            if (this.NotAnyOf != input.NotAnyOf || (this.NotAnyOf != null && input.NotAnyOf != null && !this.NotAnyOf.SequenceEqual(input.NotAnyOf))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.AnyOneOf == input.AnyOneOf ||
-                    this.AnyOneOf != null &&
-                    input.AnyOneOf != null &&
-                    this.AnyOneOf.SequenceEqual(input.AnyOneOf)
-                ) && 
-                (
-                    this.NotAnyOf == input.NotAnyOf ||
-                    this.NotAnyOf != null &&
-                    input.NotAnyOf != null &&
-                    this.NotAnyOf.SequenceEqual(input.NotAnyOf)
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +78,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.AnyOneOf != null)
-                    hashCode = hashCode * 59 + this.AnyOneOf.GetHashCode();
-                if (this.NotAnyOf != null)
-                    hashCode = hashCode * 59 + this.NotAnyOf.GetHashCode();
+                var hashCode = 41;
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.AnyOneOf != null) hashCode = hashCode * 59 + this.AnyOneOf.GetHashCode();
+                if (this.NotAnyOf != null) hashCode = hashCode * 59 + this.NotAnyOf.GetHashCode();
                 return hashCode;
             }
         }

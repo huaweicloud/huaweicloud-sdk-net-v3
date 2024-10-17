@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(TracksInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ChannelLayout != input.ChannelLayout || (this.ChannelLayout != null && !this.ChannelLayout.Equals(input.ChannelLayout))) return false;
+            if (this.Language != input.Language || (this.Language != null && !this.Language.Equals(input.Language))) return false;
 
-            return 
-                (
-                    this.ChannelLayout == input.ChannelLayout ||
-                    (this.ChannelLayout != null &&
-                    this.ChannelLayout.Equals(input.ChannelLayout))
-                ) && 
-                (
-                    this.Language == input.Language ||
-                    (this.Language != null &&
-                    this.Language.Equals(input.Language))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ChannelLayout != null)
-                    hashCode = hashCode * 59 + this.ChannelLayout.GetHashCode();
-                if (this.Language != null)
-                    hashCode = hashCode * 59 + this.Language.GetHashCode();
+                var hashCode = 41;
+                if (this.ChannelLayout != null) hashCode = hashCode * 59 + this.ChannelLayout.GetHashCode();
+                if (this.Language != null) hashCode = hashCode * 59 + this.Language.GetHashCode();
                 return hashCode;
             }
         }

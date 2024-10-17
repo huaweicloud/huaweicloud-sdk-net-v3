@@ -172,20 +172,11 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         /// </summary>
         public bool Equals(DeleteTrackerRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TrackerName != input.TrackerName || (this.TrackerName != null && !this.TrackerName.Equals(input.TrackerName))) return false;
+            if (this.TrackerType != input.TrackerType) return false;
 
-            return 
-                (
-                    this.TrackerName == input.TrackerName ||
-                    (this.TrackerName != null &&
-                    this.TrackerName.Equals(input.TrackerName))
-                ) && 
-                (
-                    this.TrackerType == input.TrackerType ||
-                    (this.TrackerType != null &&
-                    this.TrackerType.Equals(input.TrackerType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -195,11 +186,9 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TrackerName != null)
-                    hashCode = hashCode * 59 + this.TrackerName.GetHashCode();
-                if (this.TrackerType != null)
-                    hashCode = hashCode * 59 + this.TrackerType.GetHashCode();
+                var hashCode = 41;
+                if (this.TrackerName != null) hashCode = hashCode * 59 + this.TrackerName.GetHashCode();
+                hashCode = hashCode * 59 + this.TrackerType.GetHashCode();
                 return hashCode;
             }
         }

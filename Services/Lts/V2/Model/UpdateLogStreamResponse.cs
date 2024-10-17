@@ -178,30 +178,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(UpdateLogStreamResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CreationTime != input.CreationTime || (this.CreationTime != null && !this.CreationTime.Equals(input.CreationTime))) return false;
+            if (this.LogTopicName != input.LogTopicName || (this.LogTopicName != null && !this.LogTopicName.Equals(input.LogTopicName))) return false;
+            if (this.LogTopicId != input.LogTopicId || (this.LogTopicId != null && !this.LogTopicId.Equals(input.LogTopicId))) return false;
+            if (this.TtlInDays != input.TtlInDays) return false;
 
-            return 
-                (
-                    this.CreationTime == input.CreationTime ||
-                    (this.CreationTime != null &&
-                    this.CreationTime.Equals(input.CreationTime))
-                ) && 
-                (
-                    this.LogTopicName == input.LogTopicName ||
-                    (this.LogTopicName != null &&
-                    this.LogTopicName.Equals(input.LogTopicName))
-                ) && 
-                (
-                    this.LogTopicId == input.LogTopicId ||
-                    (this.LogTopicId != null &&
-                    this.LogTopicId.Equals(input.LogTopicId))
-                ) && 
-                (
-                    this.TtlInDays == input.TtlInDays ||
-                    (this.TtlInDays != null &&
-                    this.TtlInDays.Equals(input.TtlInDays))
-                );
+            return true;
         }
 
         /// <summary>
@@ -211,15 +194,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CreationTime != null)
-                    hashCode = hashCode * 59 + this.CreationTime.GetHashCode();
-                if (this.LogTopicName != null)
-                    hashCode = hashCode * 59 + this.LogTopicName.GetHashCode();
-                if (this.LogTopicId != null)
-                    hashCode = hashCode * 59 + this.LogTopicId.GetHashCode();
-                if (this.TtlInDays != null)
-                    hashCode = hashCode * 59 + this.TtlInDays.GetHashCode();
+                var hashCode = 41;
+                if (this.CreationTime != null) hashCode = hashCode * 59 + this.CreationTime.GetHashCode();
+                if (this.LogTopicName != null) hashCode = hashCode * 59 + this.LogTopicName.GetHashCode();
+                if (this.LogTopicId != null) hashCode = hashCode * 59 + this.LogTopicId.GetHashCode();
+                hashCode = hashCode * 59 + this.TtlInDays.GetHashCode();
                 return hashCode;
             }
         }

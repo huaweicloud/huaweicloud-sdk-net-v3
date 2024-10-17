@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(UserPropDTO input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PropKey != input.PropKey || (this.PropKey != null && !this.PropKey.Equals(input.PropKey))) return false;
+            if (this.PropValue != input.PropValue || (this.PropValue != null && !this.PropValue.Equals(input.PropValue))) return false;
 
-            return 
-                (
-                    this.PropKey == input.PropKey ||
-                    (this.PropKey != null &&
-                    this.PropKey.Equals(input.PropKey))
-                ) && 
-                (
-                    this.PropValue == input.PropValue ||
-                    (this.PropValue != null &&
-                    this.PropValue.Equals(input.PropValue))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PropKey != null)
-                    hashCode = hashCode * 59 + this.PropKey.GetHashCode();
-                if (this.PropValue != null)
-                    hashCode = hashCode * 59 + this.PropValue.GetHashCode();
+                var hashCode = 41;
+                if (this.PropKey != null) hashCode = hashCode * 59 + this.PropKey.GetHashCode();
+                if (this.PropValue != null) hashCode = hashCode * 59 + this.PropValue.GetHashCode();
                 return hashCode;
             }
         }

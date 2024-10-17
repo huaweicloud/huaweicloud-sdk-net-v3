@@ -378,70 +378,21 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(ListMetricOrEventAlarmRuleRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.SortBy != input.SortBy || (this.SortBy != null && !this.SortBy.Equals(input.SortBy))) return false;
+            if (this.EventSource != input.EventSource || (this.EventSource != null && !this.EventSource.Equals(input.EventSource))) return false;
+            if (this.EventSeverity != input.EventSeverity || (this.EventSeverity != null && !this.EventSeverity.Equals(input.EventSeverity))) return false;
+            if (this.AlarmRuleStatus != input.AlarmRuleStatus) return false;
+            if (this.AlarmRuleType != input.AlarmRuleType) return false;
+            if (this.PromInstanceId != input.PromInstanceId || (this.PromInstanceId != null && !this.PromInstanceId.Equals(input.PromInstanceId))) return false;
+            if (this.BindNotificationRuleId != input.BindNotificationRuleId || (this.BindNotificationRuleId != null && !this.BindNotificationRuleId.Equals(input.BindNotificationRuleId))) return false;
+            if (this.RelatedCceClusters != input.RelatedCceClusters || (this.RelatedCceClusters != null && !this.RelatedCceClusters.Equals(input.RelatedCceClusters))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.SortBy == input.SortBy ||
-                    (this.SortBy != null &&
-                    this.SortBy.Equals(input.SortBy))
-                ) && 
-                (
-                    this.EventSource == input.EventSource ||
-                    (this.EventSource != null &&
-                    this.EventSource.Equals(input.EventSource))
-                ) && 
-                (
-                    this.EventSeverity == input.EventSeverity ||
-                    (this.EventSeverity != null &&
-                    this.EventSeverity.Equals(input.EventSeverity))
-                ) && 
-                (
-                    this.AlarmRuleStatus == input.AlarmRuleStatus ||
-                    (this.AlarmRuleStatus != null &&
-                    this.AlarmRuleStatus.Equals(input.AlarmRuleStatus))
-                ) && 
-                (
-                    this.AlarmRuleType == input.AlarmRuleType ||
-                    (this.AlarmRuleType != null &&
-                    this.AlarmRuleType.Equals(input.AlarmRuleType))
-                ) && 
-                (
-                    this.PromInstanceId == input.PromInstanceId ||
-                    (this.PromInstanceId != null &&
-                    this.PromInstanceId.Equals(input.PromInstanceId))
-                ) && 
-                (
-                    this.BindNotificationRuleId == input.BindNotificationRuleId ||
-                    (this.BindNotificationRuleId != null &&
-                    this.BindNotificationRuleId.Equals(input.BindNotificationRuleId))
-                ) && 
-                (
-                    this.RelatedCceClusters == input.RelatedCceClusters ||
-                    (this.RelatedCceClusters != null &&
-                    this.RelatedCceClusters.Equals(input.RelatedCceClusters))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -451,31 +402,19 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.SortBy != null)
-                    hashCode = hashCode * 59 + this.SortBy.GetHashCode();
-                if (this.EventSource != null)
-                    hashCode = hashCode * 59 + this.EventSource.GetHashCode();
-                if (this.EventSeverity != null)
-                    hashCode = hashCode * 59 + this.EventSeverity.GetHashCode();
-                if (this.AlarmRuleStatus != null)
-                    hashCode = hashCode * 59 + this.AlarmRuleStatus.GetHashCode();
-                if (this.AlarmRuleType != null)
-                    hashCode = hashCode * 59 + this.AlarmRuleType.GetHashCode();
-                if (this.PromInstanceId != null)
-                    hashCode = hashCode * 59 + this.PromInstanceId.GetHashCode();
-                if (this.BindNotificationRuleId != null)
-                    hashCode = hashCode * 59 + this.BindNotificationRuleId.GetHashCode();
-                if (this.RelatedCceClusters != null)
-                    hashCode = hashCode * 59 + this.RelatedCceClusters.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.SortBy != null) hashCode = hashCode * 59 + this.SortBy.GetHashCode();
+                if (this.EventSource != null) hashCode = hashCode * 59 + this.EventSource.GetHashCode();
+                if (this.EventSeverity != null) hashCode = hashCode * 59 + this.EventSeverity.GetHashCode();
+                hashCode = hashCode * 59 + this.AlarmRuleStatus.GetHashCode();
+                hashCode = hashCode * 59 + this.AlarmRuleType.GetHashCode();
+                if (this.PromInstanceId != null) hashCode = hashCode * 59 + this.PromInstanceId.GetHashCode();
+                if (this.BindNotificationRuleId != null) hashCode = hashCode * 59 + this.BindNotificationRuleId.GetHashCode();
+                if (this.RelatedCceClusters != null) hashCode = hashCode * 59 + this.RelatedCceClusters.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
                 return hashCode;
             }
         }

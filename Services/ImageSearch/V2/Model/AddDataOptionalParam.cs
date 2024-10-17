@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         /// </summary>
         public bool Equals(AddDataOptionalParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DoDet != input.DoDet || (this.DoDet != null && !this.DoDet.Equals(input.DoDet))) return false;
+            if (this.Box != input.Box || (this.Box != null && !this.Box.Equals(input.Box))) return false;
+            if (this.DoCls != input.DoCls || (this.DoCls != null && !this.DoCls.Equals(input.DoCls))) return false;
+            if (this.Category != input.Category || (this.Category != null && !this.Category.Equals(input.Category))) return false;
 
-            return 
-                (
-                    this.DoDet == input.DoDet ||
-                    (this.DoDet != null &&
-                    this.DoDet.Equals(input.DoDet))
-                ) && 
-                (
-                    this.Box == input.Box ||
-                    (this.Box != null &&
-                    this.Box.Equals(input.Box))
-                ) && 
-                (
-                    this.DoCls == input.DoCls ||
-                    (this.DoCls != null &&
-                    this.DoCls.Equals(input.DoCls))
-                ) && 
-                (
-                    this.Category == input.Category ||
-                    (this.Category != null &&
-                    this.Category.Equals(input.Category))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DoDet != null)
-                    hashCode = hashCode * 59 + this.DoDet.GetHashCode();
-                if (this.Box != null)
-                    hashCode = hashCode * 59 + this.Box.GetHashCode();
-                if (this.DoCls != null)
-                    hashCode = hashCode * 59 + this.DoCls.GetHashCode();
-                if (this.Category != null)
-                    hashCode = hashCode * 59 + this.Category.GetHashCode();
+                var hashCode = 41;
+                if (this.DoDet != null) hashCode = hashCode * 59 + this.DoDet.GetHashCode();
+                if (this.Box != null) hashCode = hashCode * 59 + this.Box.GetHashCode();
+                if (this.DoCls != null) hashCode = hashCode * 59 + this.DoCls.GetHashCode();
+                if (this.Category != null) hashCode = hashCode * 59 + this.Category.GetHashCode();
                 return hashCode;
             }
         }

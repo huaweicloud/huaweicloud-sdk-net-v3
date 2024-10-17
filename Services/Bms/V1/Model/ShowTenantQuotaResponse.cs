@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(ShowTenantQuotaResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Absolute != input.Absolute || (this.Absolute != null && !this.Absolute.Equals(input.Absolute))) return false;
 
-            return 
-                (
-                    this.Absolute == input.Absolute ||
-                    (this.Absolute != null &&
-                    this.Absolute.Equals(input.Absolute))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Absolute != null)
-                    hashCode = hashCode * 59 + this.Absolute.GetHashCode();
+                var hashCode = 41;
+                if (this.Absolute != null) hashCode = hashCode * 59 + this.Absolute.GetHashCode();
                 return hashCode;
             }
         }

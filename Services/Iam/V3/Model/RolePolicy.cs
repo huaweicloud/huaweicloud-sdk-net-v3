@@ -63,27 +63,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(RolePolicy input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Depends != input.Depends || (this.Depends != null && input.Depends != null && !this.Depends.SequenceEqual(input.Depends))) return false;
+            if (this.Statement != input.Statement || (this.Statement != null && input.Statement != null && !this.Statement.SequenceEqual(input.Statement))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
 
-            return 
-                (
-                    this.Depends == input.Depends ||
-                    this.Depends != null &&
-                    input.Depends != null &&
-                    this.Depends.SequenceEqual(input.Depends)
-                ) && 
-                (
-                    this.Statement == input.Statement ||
-                    this.Statement != null &&
-                    input.Statement != null &&
-                    this.Statement.SequenceEqual(input.Statement)
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +78,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Depends != null)
-                    hashCode = hashCode * 59 + this.Depends.GetHashCode();
-                if (this.Statement != null)
-                    hashCode = hashCode * 59 + this.Statement.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                var hashCode = 41;
+                if (this.Depends != null) hashCode = hashCode * 59 + this.Depends.GetHashCode();
+                if (this.Statement != null) hashCode = hashCode * 59 + this.Statement.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
                 return hashCode;
             }
         }

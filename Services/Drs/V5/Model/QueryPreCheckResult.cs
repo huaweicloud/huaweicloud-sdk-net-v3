@@ -84,41 +84,15 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(QueryPreCheckResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Result != input.Result || (this.Result != null && !this.Result.Equals(input.Result))) return false;
+            if (this.Process != input.Process || (this.Process != null && !this.Process.Equals(input.Process))) return false;
+            if (this.TotalPassedRate != input.TotalPassedRate || (this.TotalPassedRate != null && !this.TotalPassedRate.Equals(input.TotalPassedRate))) return false;
+            if (this.RdsInstanceId != input.RdsInstanceId || (this.RdsInstanceId != null && !this.RdsInstanceId.Equals(input.RdsInstanceId))) return false;
+            if (this.JobDirection != input.JobDirection || (this.JobDirection != null && !this.JobDirection.Equals(input.JobDirection))) return false;
+            if (this.PrecheckResults != input.PrecheckResults || (this.PrecheckResults != null && input.PrecheckResults != null && !this.PrecheckResults.SequenceEqual(input.PrecheckResults))) return false;
 
-            return 
-                (
-                    this.Result == input.Result ||
-                    (this.Result != null &&
-                    this.Result.Equals(input.Result))
-                ) && 
-                (
-                    this.Process == input.Process ||
-                    (this.Process != null &&
-                    this.Process.Equals(input.Process))
-                ) && 
-                (
-                    this.TotalPassedRate == input.TotalPassedRate ||
-                    (this.TotalPassedRate != null &&
-                    this.TotalPassedRate.Equals(input.TotalPassedRate))
-                ) && 
-                (
-                    this.RdsInstanceId == input.RdsInstanceId ||
-                    (this.RdsInstanceId != null &&
-                    this.RdsInstanceId.Equals(input.RdsInstanceId))
-                ) && 
-                (
-                    this.JobDirection == input.JobDirection ||
-                    (this.JobDirection != null &&
-                    this.JobDirection.Equals(input.JobDirection))
-                ) && 
-                (
-                    this.PrecheckResults == input.PrecheckResults ||
-                    this.PrecheckResults != null &&
-                    input.PrecheckResults != null &&
-                    this.PrecheckResults.SequenceEqual(input.PrecheckResults)
-                );
+            return true;
         }
 
         /// <summary>
@@ -128,19 +102,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Result != null)
-                    hashCode = hashCode * 59 + this.Result.GetHashCode();
-                if (this.Process != null)
-                    hashCode = hashCode * 59 + this.Process.GetHashCode();
-                if (this.TotalPassedRate != null)
-                    hashCode = hashCode * 59 + this.TotalPassedRate.GetHashCode();
-                if (this.RdsInstanceId != null)
-                    hashCode = hashCode * 59 + this.RdsInstanceId.GetHashCode();
-                if (this.JobDirection != null)
-                    hashCode = hashCode * 59 + this.JobDirection.GetHashCode();
-                if (this.PrecheckResults != null)
-                    hashCode = hashCode * 59 + this.PrecheckResults.GetHashCode();
+                var hashCode = 41;
+                if (this.Result != null) hashCode = hashCode * 59 + this.Result.GetHashCode();
+                if (this.Process != null) hashCode = hashCode * 59 + this.Process.GetHashCode();
+                if (this.TotalPassedRate != null) hashCode = hashCode * 59 + this.TotalPassedRate.GetHashCode();
+                if (this.RdsInstanceId != null) hashCode = hashCode * 59 + this.RdsInstanceId.GetHashCode();
+                if (this.JobDirection != null) hashCode = hashCode * 59 + this.JobDirection.GetHashCode();
+                if (this.PrecheckResults != null) hashCode = hashCode * 59 + this.PrecheckResults.GetHashCode();
                 return hashCode;
             }
         }

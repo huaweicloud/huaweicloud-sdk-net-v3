@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// </summary>
         public bool Equals(WafGeoIpRule input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Geoip != input.Geoip || (this.Geoip != null && !this.Geoip.Equals(input.Geoip))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.OverseasType != input.OverseasType || (this.OverseasType != null && !this.OverseasType.Equals(input.OverseasType))) return false;
+            if (this.Timestamp != input.Timestamp || (this.Timestamp != null && !this.Timestamp.Equals(input.Timestamp))) return false;
+            if (this.White != input.White || (this.White != null && !this.White.Equals(input.White))) return false;
 
-            return 
-                (
-                    this.Geoip == input.Geoip ||
-                    (this.Geoip != null &&
-                    this.Geoip.Equals(input.Geoip))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.OverseasType == input.OverseasType ||
-                    (this.OverseasType != null &&
-                    this.OverseasType.Equals(input.OverseasType))
-                ) && 
-                (
-                    this.Timestamp == input.Timestamp ||
-                    (this.Timestamp != null &&
-                    this.Timestamp.Equals(input.Timestamp))
-                ) && 
-                (
-                    this.White == input.White ||
-                    (this.White != null &&
-                    this.White.Equals(input.White))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Geoip != null)
-                    hashCode = hashCode * 59 + this.Geoip.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.OverseasType != null)
-                    hashCode = hashCode * 59 + this.OverseasType.GetHashCode();
-                if (this.Timestamp != null)
-                    hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
-                if (this.White != null)
-                    hashCode = hashCode * 59 + this.White.GetHashCode();
+                var hashCode = 41;
+                if (this.Geoip != null) hashCode = hashCode * 59 + this.Geoip.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.OverseasType != null) hashCode = hashCode * 59 + this.OverseasType.GetHashCode();
+                if (this.Timestamp != null) hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
+                if (this.White != null) hashCode = hashCode * 59 + this.White.GetHashCode();
                 return hashCode;
             }
         }

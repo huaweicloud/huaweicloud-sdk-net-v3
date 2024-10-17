@@ -168,100 +168,27 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(ShowUserResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Enabled != input.Enabled || (this.Enabled != null && !this.Enabled.Equals(input.Enabled))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Links != input.Links || (this.Links != null && !this.Links.Equals(input.Links))) return false;
+            if (this.XuserId != input.XuserId || (this.XuserId != null && !this.XuserId.Equals(input.XuserId))) return false;
+            if (this.XuserType != input.XuserType || (this.XuserType != null && !this.XuserType.Equals(input.XuserType))) return false;
+            if (this.Areacode != input.Areacode || (this.Areacode != null && !this.Areacode.Equals(input.Areacode))) return false;
+            if (this.Email != input.Email || (this.Email != null && !this.Email.Equals(input.Email))) return false;
+            if (this.Phone != input.Phone || (this.Phone != null && !this.Phone.Equals(input.Phone))) return false;
+            if (this.PwdStatus != input.PwdStatus || (this.PwdStatus != null && !this.PwdStatus.Equals(input.PwdStatus))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.LastLoginTime != input.LastLoginTime || (this.LastLoginTime != null && !this.LastLoginTime.Equals(input.LastLoginTime))) return false;
+            if (this.PwdStrength != input.PwdStrength || (this.PwdStrength != null && !this.PwdStrength.Equals(input.PwdStrength))) return false;
+            if (this.IsDomainOwner != input.IsDomainOwner || (this.IsDomainOwner != null && !this.IsDomainOwner.Equals(input.IsDomainOwner))) return false;
+            if (this.AccessMode != input.AccessMode || (this.AccessMode != null && !this.AccessMode.Equals(input.AccessMode))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
 
-            return 
-                (
-                    this.Enabled == input.Enabled ||
-                    (this.Enabled != null &&
-                    this.Enabled.Equals(input.Enabled))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    (this.Links != null &&
-                    this.Links.Equals(input.Links))
-                ) && 
-                (
-                    this.XuserId == input.XuserId ||
-                    (this.XuserId != null &&
-                    this.XuserId.Equals(input.XuserId))
-                ) && 
-                (
-                    this.XuserType == input.XuserType ||
-                    (this.XuserType != null &&
-                    this.XuserType.Equals(input.XuserType))
-                ) && 
-                (
-                    this.Areacode == input.Areacode ||
-                    (this.Areacode != null &&
-                    this.Areacode.Equals(input.Areacode))
-                ) && 
-                (
-                    this.Email == input.Email ||
-                    (this.Email != null &&
-                    this.Email.Equals(input.Email))
-                ) && 
-                (
-                    this.Phone == input.Phone ||
-                    (this.Phone != null &&
-                    this.Phone.Equals(input.Phone))
-                ) && 
-                (
-                    this.PwdStatus == input.PwdStatus ||
-                    (this.PwdStatus != null &&
-                    this.PwdStatus.Equals(input.PwdStatus))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.LastLoginTime == input.LastLoginTime ||
-                    (this.LastLoginTime != null &&
-                    this.LastLoginTime.Equals(input.LastLoginTime))
-                ) && 
-                (
-                    this.PwdStrength == input.PwdStrength ||
-                    (this.PwdStrength != null &&
-                    this.PwdStrength.Equals(input.PwdStrength))
-                ) && 
-                (
-                    this.IsDomainOwner == input.IsDomainOwner ||
-                    (this.IsDomainOwner != null &&
-                    this.IsDomainOwner.Equals(input.IsDomainOwner))
-                ) && 
-                (
-                    this.AccessMode == input.AccessMode ||
-                    (this.AccessMode != null &&
-                    this.AccessMode.Equals(input.AccessMode))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                );
+            return true;
         }
 
         /// <summary>
@@ -271,43 +198,25 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Enabled != null)
-                    hashCode = hashCode * 59 + this.Enabled.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Links != null)
-                    hashCode = hashCode * 59 + this.Links.GetHashCode();
-                if (this.XuserId != null)
-                    hashCode = hashCode * 59 + this.XuserId.GetHashCode();
-                if (this.XuserType != null)
-                    hashCode = hashCode * 59 + this.XuserType.GetHashCode();
-                if (this.Areacode != null)
-                    hashCode = hashCode * 59 + this.Areacode.GetHashCode();
-                if (this.Email != null)
-                    hashCode = hashCode * 59 + this.Email.GetHashCode();
-                if (this.Phone != null)
-                    hashCode = hashCode * 59 + this.Phone.GetHashCode();
-                if (this.PwdStatus != null)
-                    hashCode = hashCode * 59 + this.PwdStatus.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.LastLoginTime != null)
-                    hashCode = hashCode * 59 + this.LastLoginTime.GetHashCode();
-                if (this.PwdStrength != null)
-                    hashCode = hashCode * 59 + this.PwdStrength.GetHashCode();
-                if (this.IsDomainOwner != null)
-                    hashCode = hashCode * 59 + this.IsDomainOwner.GetHashCode();
-                if (this.AccessMode != null)
-                    hashCode = hashCode * 59 + this.AccessMode.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                var hashCode = 41;
+                if (this.Enabled != null) hashCode = hashCode * 59 + this.Enabled.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Links != null) hashCode = hashCode * 59 + this.Links.GetHashCode();
+                if (this.XuserId != null) hashCode = hashCode * 59 + this.XuserId.GetHashCode();
+                if (this.XuserType != null) hashCode = hashCode * 59 + this.XuserType.GetHashCode();
+                if (this.Areacode != null) hashCode = hashCode * 59 + this.Areacode.GetHashCode();
+                if (this.Email != null) hashCode = hashCode * 59 + this.Email.GetHashCode();
+                if (this.Phone != null) hashCode = hashCode * 59 + this.Phone.GetHashCode();
+                if (this.PwdStatus != null) hashCode = hashCode * 59 + this.PwdStatus.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.LastLoginTime != null) hashCode = hashCode * 59 + this.LastLoginTime.GetHashCode();
+                if (this.PwdStrength != null) hashCode = hashCode * 59 + this.PwdStrength.GetHashCode();
+                if (this.IsDomainOwner != null) hashCode = hashCode * 59 + this.IsDomainOwner.GetHashCode();
+                if (this.AccessMode != null) hashCode = hashCode * 59 + this.AccessMode.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

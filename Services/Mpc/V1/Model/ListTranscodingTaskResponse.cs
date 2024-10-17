@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(ListTranscodingTaskResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TaskArray != input.TaskArray || (this.TaskArray != null && input.TaskArray != null && !this.TaskArray.SequenceEqual(input.TaskArray))) return false;
+            if (this.IsTruncated != input.IsTruncated || (this.IsTruncated != null && !this.IsTruncated.Equals(input.IsTruncated))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
-            return 
-                (
-                    this.TaskArray == input.TaskArray ||
-                    this.TaskArray != null &&
-                    input.TaskArray != null &&
-                    this.TaskArray.SequenceEqual(input.TaskArray)
-                ) && 
-                (
-                    this.IsTruncated == input.IsTruncated ||
-                    (this.IsTruncated != null &&
-                    this.IsTruncated.Equals(input.IsTruncated))
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TaskArray != null)
-                    hashCode = hashCode * 59 + this.TaskArray.GetHashCode();
-                if (this.IsTruncated != null)
-                    hashCode = hashCode * 59 + this.IsTruncated.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                var hashCode = 41;
+                if (this.TaskArray != null) hashCode = hashCode * 59 + this.TaskArray.GetHashCode();
+                if (this.IsTruncated != null) hashCode = hashCode * 59 + this.IsTruncated.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

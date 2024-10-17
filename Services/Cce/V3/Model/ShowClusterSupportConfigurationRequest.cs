@@ -74,30 +74,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ShowClusterSupportConfigurationRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClusterId != input.ClusterId || (this.ClusterId != null && !this.ClusterId.Equals(input.ClusterId))) return false;
+            if (this.ClusterType != input.ClusterType || (this.ClusterType != null && !this.ClusterType.Equals(input.ClusterType))) return false;
+            if (this.ClusterVersion != input.ClusterVersion || (this.ClusterVersion != null && !this.ClusterVersion.Equals(input.ClusterVersion))) return false;
+            if (this.NetworkMode != input.NetworkMode || (this.NetworkMode != null && !this.NetworkMode.Equals(input.NetworkMode))) return false;
 
-            return 
-                (
-                    this.ClusterId == input.ClusterId ||
-                    (this.ClusterId != null &&
-                    this.ClusterId.Equals(input.ClusterId))
-                ) && 
-                (
-                    this.ClusterType == input.ClusterType ||
-                    (this.ClusterType != null &&
-                    this.ClusterType.Equals(input.ClusterType))
-                ) && 
-                (
-                    this.ClusterVersion == input.ClusterVersion ||
-                    (this.ClusterVersion != null &&
-                    this.ClusterVersion.Equals(input.ClusterVersion))
-                ) && 
-                (
-                    this.NetworkMode == input.NetworkMode ||
-                    (this.NetworkMode != null &&
-                    this.NetworkMode.Equals(input.NetworkMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -107,15 +90,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClusterId != null)
-                    hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
-                if (this.ClusterType != null)
-                    hashCode = hashCode * 59 + this.ClusterType.GetHashCode();
-                if (this.ClusterVersion != null)
-                    hashCode = hashCode * 59 + this.ClusterVersion.GetHashCode();
-                if (this.NetworkMode != null)
-                    hashCode = hashCode * 59 + this.NetworkMode.GetHashCode();
+                var hashCode = 41;
+                if (this.ClusterId != null) hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
+                if (this.ClusterType != null) hashCode = hashCode * 59 + this.ClusterType.GetHashCode();
+                if (this.ClusterVersion != null) hashCode = hashCode * 59 + this.ClusterVersion.GetHashCode();
+                if (this.NetworkMode != null) hashCode = hashCode * 59 + this.NetworkMode.GetHashCode();
                 return hashCode;
             }
         }

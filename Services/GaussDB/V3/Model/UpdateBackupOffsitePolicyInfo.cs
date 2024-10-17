@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(UpdateBackupOffsitePolicyInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OpenAutoBackup != input.OpenAutoBackup || (this.OpenAutoBackup != null && !this.OpenAutoBackup.Equals(input.OpenAutoBackup))) return false;
+            if (this.OpenIncrementalBackup != input.OpenIncrementalBackup || (this.OpenIncrementalBackup != null && !this.OpenIncrementalBackup.Equals(input.OpenIncrementalBackup))) return false;
+            if (this.DestinationProjectId != input.DestinationProjectId || (this.DestinationProjectId != null && !this.DestinationProjectId.Equals(input.DestinationProjectId))) return false;
+            if (this.DestinationRegion != input.DestinationRegion || (this.DestinationRegion != null && !this.DestinationRegion.Equals(input.DestinationRegion))) return false;
+            if (this.KeepDays != input.KeepDays || (this.KeepDays != null && !this.KeepDays.Equals(input.KeepDays))) return false;
 
-            return 
-                (
-                    this.OpenAutoBackup == input.OpenAutoBackup ||
-                    (this.OpenAutoBackup != null &&
-                    this.OpenAutoBackup.Equals(input.OpenAutoBackup))
-                ) && 
-                (
-                    this.OpenIncrementalBackup == input.OpenIncrementalBackup ||
-                    (this.OpenIncrementalBackup != null &&
-                    this.OpenIncrementalBackup.Equals(input.OpenIncrementalBackup))
-                ) && 
-                (
-                    this.DestinationProjectId == input.DestinationProjectId ||
-                    (this.DestinationProjectId != null &&
-                    this.DestinationProjectId.Equals(input.DestinationProjectId))
-                ) && 
-                (
-                    this.DestinationRegion == input.DestinationRegion ||
-                    (this.DestinationRegion != null &&
-                    this.DestinationRegion.Equals(input.DestinationRegion))
-                ) && 
-                (
-                    this.KeepDays == input.KeepDays ||
-                    (this.KeepDays != null &&
-                    this.KeepDays.Equals(input.KeepDays))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OpenAutoBackup != null)
-                    hashCode = hashCode * 59 + this.OpenAutoBackup.GetHashCode();
-                if (this.OpenIncrementalBackup != null)
-                    hashCode = hashCode * 59 + this.OpenIncrementalBackup.GetHashCode();
-                if (this.DestinationProjectId != null)
-                    hashCode = hashCode * 59 + this.DestinationProjectId.GetHashCode();
-                if (this.DestinationRegion != null)
-                    hashCode = hashCode * 59 + this.DestinationRegion.GetHashCode();
-                if (this.KeepDays != null)
-                    hashCode = hashCode * 59 + this.KeepDays.GetHashCode();
+                var hashCode = 41;
+                if (this.OpenAutoBackup != null) hashCode = hashCode * 59 + this.OpenAutoBackup.GetHashCode();
+                if (this.OpenIncrementalBackup != null) hashCode = hashCode * 59 + this.OpenIncrementalBackup.GetHashCode();
+                if (this.DestinationProjectId != null) hashCode = hashCode * 59 + this.DestinationProjectId.GetHashCode();
+                if (this.DestinationRegion != null) hashCode = hashCode * 59 + this.DestinationRegion.GetHashCode();
+                if (this.KeepDays != null) hashCode = hashCode * 59 + this.KeepDays.GetHashCode();
                 return hashCode;
             }
         }

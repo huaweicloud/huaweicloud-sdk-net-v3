@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(BandwidthInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BeginTime != input.BeginTime || (this.BeginTime != null && !this.BeginTime.Equals(input.BeginTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.CurrentTime != input.CurrentTime || (this.CurrentTime != null && !this.CurrentTime.Equals(input.CurrentTime))) return false;
+            if (this.Bandwidth != input.Bandwidth || (this.Bandwidth != null && !this.Bandwidth.Equals(input.Bandwidth))) return false;
+            if (this.NextExpandTime != input.NextExpandTime || (this.NextExpandTime != null && !this.NextExpandTime.Equals(input.NextExpandTime))) return false;
+            if (this.ExpandCount != input.ExpandCount || (this.ExpandCount != null && !this.ExpandCount.Equals(input.ExpandCount))) return false;
+            if (this.ExpandEffectTime != input.ExpandEffectTime || (this.ExpandEffectTime != null && !this.ExpandEffectTime.Equals(input.ExpandEffectTime))) return false;
+            if (this.ExpandIntervalTime != input.ExpandIntervalTime || (this.ExpandIntervalTime != null && !this.ExpandIntervalTime.Equals(input.ExpandIntervalTime))) return false;
+            if (this.MaxExpandCount != input.MaxExpandCount || (this.MaxExpandCount != null && !this.MaxExpandCount.Equals(input.MaxExpandCount))) return false;
+            if (this.TaskRunning != input.TaskRunning || (this.TaskRunning != null && !this.TaskRunning.Equals(input.TaskRunning))) return false;
 
-            return 
-                (
-                    this.BeginTime == input.BeginTime ||
-                    (this.BeginTime != null &&
-                    this.BeginTime.Equals(input.BeginTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.CurrentTime == input.CurrentTime ||
-                    (this.CurrentTime != null &&
-                    this.CurrentTime.Equals(input.CurrentTime))
-                ) && 
-                (
-                    this.Bandwidth == input.Bandwidth ||
-                    (this.Bandwidth != null &&
-                    this.Bandwidth.Equals(input.Bandwidth))
-                ) && 
-                (
-                    this.NextExpandTime == input.NextExpandTime ||
-                    (this.NextExpandTime != null &&
-                    this.NextExpandTime.Equals(input.NextExpandTime))
-                ) && 
-                (
-                    this.ExpandCount == input.ExpandCount ||
-                    (this.ExpandCount != null &&
-                    this.ExpandCount.Equals(input.ExpandCount))
-                ) && 
-                (
-                    this.ExpandEffectTime == input.ExpandEffectTime ||
-                    (this.ExpandEffectTime != null &&
-                    this.ExpandEffectTime.Equals(input.ExpandEffectTime))
-                ) && 
-                (
-                    this.ExpandIntervalTime == input.ExpandIntervalTime ||
-                    (this.ExpandIntervalTime != null &&
-                    this.ExpandIntervalTime.Equals(input.ExpandIntervalTime))
-                ) && 
-                (
-                    this.MaxExpandCount == input.MaxExpandCount ||
-                    (this.MaxExpandCount != null &&
-                    this.MaxExpandCount.Equals(input.MaxExpandCount))
-                ) && 
-                (
-                    this.TaskRunning == input.TaskRunning ||
-                    (this.TaskRunning != null &&
-                    this.TaskRunning.Equals(input.TaskRunning))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BeginTime != null)
-                    hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.CurrentTime != null)
-                    hashCode = hashCode * 59 + this.CurrentTime.GetHashCode();
-                if (this.Bandwidth != null)
-                    hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
-                if (this.NextExpandTime != null)
-                    hashCode = hashCode * 59 + this.NextExpandTime.GetHashCode();
-                if (this.ExpandCount != null)
-                    hashCode = hashCode * 59 + this.ExpandCount.GetHashCode();
-                if (this.ExpandEffectTime != null)
-                    hashCode = hashCode * 59 + this.ExpandEffectTime.GetHashCode();
-                if (this.ExpandIntervalTime != null)
-                    hashCode = hashCode * 59 + this.ExpandIntervalTime.GetHashCode();
-                if (this.MaxExpandCount != null)
-                    hashCode = hashCode * 59 + this.MaxExpandCount.GetHashCode();
-                if (this.TaskRunning != null)
-                    hashCode = hashCode * 59 + this.TaskRunning.GetHashCode();
+                var hashCode = 41;
+                if (this.BeginTime != null) hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.CurrentTime != null) hashCode = hashCode * 59 + this.CurrentTime.GetHashCode();
+                if (this.Bandwidth != null) hashCode = hashCode * 59 + this.Bandwidth.GetHashCode();
+                if (this.NextExpandTime != null) hashCode = hashCode * 59 + this.NextExpandTime.GetHashCode();
+                if (this.ExpandCount != null) hashCode = hashCode * 59 + this.ExpandCount.GetHashCode();
+                if (this.ExpandEffectTime != null) hashCode = hashCode * 59 + this.ExpandEffectTime.GetHashCode();
+                if (this.ExpandIntervalTime != null) hashCode = hashCode * 59 + this.ExpandIntervalTime.GetHashCode();
+                if (this.MaxExpandCount != null) hashCode = hashCode * 59 + this.MaxExpandCount.GetHashCode();
+                if (this.TaskRunning != null) hashCode = hashCode * 59 + this.TaskRunning.GetHashCode();
                 return hashCode;
             }
         }

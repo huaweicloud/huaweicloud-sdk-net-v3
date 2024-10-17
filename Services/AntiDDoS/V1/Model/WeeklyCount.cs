@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         /// </summary>
         public bool Equals(WeeklyCount input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DdosInterceptTimes != input.DdosInterceptTimes || (this.DdosInterceptTimes != null && !this.DdosInterceptTimes.Equals(input.DdosInterceptTimes))) return false;
+            if (this.DdosBlackholeTimes != input.DdosBlackholeTimes || (this.DdosBlackholeTimes != null && !this.DdosBlackholeTimes.Equals(input.DdosBlackholeTimes))) return false;
+            if (this.MaxAttackBps != input.MaxAttackBps || (this.MaxAttackBps != null && !this.MaxAttackBps.Equals(input.MaxAttackBps))) return false;
+            if (this.MaxAttackConns != input.MaxAttackConns || (this.MaxAttackConns != null && !this.MaxAttackConns.Equals(input.MaxAttackConns))) return false;
+            if (this.PeriodStartDate != input.PeriodStartDate || (this.PeriodStartDate != null && !this.PeriodStartDate.Equals(input.PeriodStartDate))) return false;
 
-            return 
-                (
-                    this.DdosInterceptTimes == input.DdosInterceptTimes ||
-                    (this.DdosInterceptTimes != null &&
-                    this.DdosInterceptTimes.Equals(input.DdosInterceptTimes))
-                ) && 
-                (
-                    this.DdosBlackholeTimes == input.DdosBlackholeTimes ||
-                    (this.DdosBlackholeTimes != null &&
-                    this.DdosBlackholeTimes.Equals(input.DdosBlackholeTimes))
-                ) && 
-                (
-                    this.MaxAttackBps == input.MaxAttackBps ||
-                    (this.MaxAttackBps != null &&
-                    this.MaxAttackBps.Equals(input.MaxAttackBps))
-                ) && 
-                (
-                    this.MaxAttackConns == input.MaxAttackConns ||
-                    (this.MaxAttackConns != null &&
-                    this.MaxAttackConns.Equals(input.MaxAttackConns))
-                ) && 
-                (
-                    this.PeriodStartDate == input.PeriodStartDate ||
-                    (this.PeriodStartDate != null &&
-                    this.PeriodStartDate.Equals(input.PeriodStartDate))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.AntiDDoS.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DdosInterceptTimes != null)
-                    hashCode = hashCode * 59 + this.DdosInterceptTimes.GetHashCode();
-                if (this.DdosBlackholeTimes != null)
-                    hashCode = hashCode * 59 + this.DdosBlackholeTimes.GetHashCode();
-                if (this.MaxAttackBps != null)
-                    hashCode = hashCode * 59 + this.MaxAttackBps.GetHashCode();
-                if (this.MaxAttackConns != null)
-                    hashCode = hashCode * 59 + this.MaxAttackConns.GetHashCode();
-                if (this.PeriodStartDate != null)
-                    hashCode = hashCode * 59 + this.PeriodStartDate.GetHashCode();
+                var hashCode = 41;
+                if (this.DdosInterceptTimes != null) hashCode = hashCode * 59 + this.DdosInterceptTimes.GetHashCode();
+                if (this.DdosBlackholeTimes != null) hashCode = hashCode * 59 + this.DdosBlackholeTimes.GetHashCode();
+                if (this.MaxAttackBps != null) hashCode = hashCode * 59 + this.MaxAttackBps.GetHashCode();
+                if (this.MaxAttackConns != null) hashCode = hashCode * 59 + this.MaxAttackConns.GetHashCode();
+                if (this.PeriodStartDate != null) hashCode = hashCode * 59 + this.PeriodStartDate.GetHashCode();
                 return hashCode;
             }
         }

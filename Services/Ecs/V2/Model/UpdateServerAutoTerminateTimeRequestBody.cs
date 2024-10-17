@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(UpdateServerAutoTerminateTimeRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AutoTerminateTime != input.AutoTerminateTime || (this.AutoTerminateTime != null && !this.AutoTerminateTime.Equals(input.AutoTerminateTime))) return false;
 
-            return 
-                (
-                    this.AutoTerminateTime == input.AutoTerminateTime ||
-                    (this.AutoTerminateTime != null &&
-                    this.AutoTerminateTime.Equals(input.AutoTerminateTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AutoTerminateTime != null)
-                    hashCode = hashCode * 59 + this.AutoTerminateTime.GetHashCode();
+                var hashCode = 41;
+                if (this.AutoTerminateTime != null) hashCode = hashCode * 59 + this.AutoTerminateTime.GetHashCode();
                 return hashCode;
             }
         }

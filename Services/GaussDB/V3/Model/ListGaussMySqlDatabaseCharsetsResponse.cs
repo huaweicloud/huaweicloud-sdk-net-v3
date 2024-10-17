@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ListGaussMySqlDatabaseCharsetsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Charsets != input.Charsets || (this.Charsets != null && input.Charsets != null && !this.Charsets.SequenceEqual(input.Charsets))) return false;
 
-            return 
-                (
-                    this.Charsets == input.Charsets ||
-                    this.Charsets != null &&
-                    input.Charsets != null &&
-                    this.Charsets.SequenceEqual(input.Charsets)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Charsets != null)
-                    hashCode = hashCode * 59 + this.Charsets.GetHashCode();
+                var hashCode = 41;
+                if (this.Charsets != null) hashCode = hashCode * 59 + this.Charsets.GetHashCode();
                 return hashCode;
             }
         }

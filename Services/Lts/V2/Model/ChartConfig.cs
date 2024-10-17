@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(ChartConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CanSort != input.CanSort || (this.CanSort != null && !this.CanSort.Equals(input.CanSort))) return false;
+            if (this.CanSearch != input.CanSearch || (this.CanSearch != null && !this.CanSearch.Equals(input.CanSearch))) return false;
+            if (this.PageSize != input.PageSize || (this.PageSize != null && !this.PageSize.Equals(input.PageSize))) return false;
 
-            return 
-                (
-                    this.CanSort == input.CanSort ||
-                    (this.CanSort != null &&
-                    this.CanSort.Equals(input.CanSort))
-                ) && 
-                (
-                    this.CanSearch == input.CanSearch ||
-                    (this.CanSearch != null &&
-                    this.CanSearch.Equals(input.CanSearch))
-                ) && 
-                (
-                    this.PageSize == input.PageSize ||
-                    (this.PageSize != null &&
-                    this.PageSize.Equals(input.PageSize))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CanSort != null)
-                    hashCode = hashCode * 59 + this.CanSort.GetHashCode();
-                if (this.CanSearch != null)
-                    hashCode = hashCode * 59 + this.CanSearch.GetHashCode();
-                if (this.PageSize != null)
-                    hashCode = hashCode * 59 + this.PageSize.GetHashCode();
+                var hashCode = 41;
+                if (this.CanSort != null) hashCode = hashCode * 59 + this.CanSort.GetHashCode();
+                if (this.CanSearch != null) hashCode = hashCode * 59 + this.CanSearch.GetHashCode();
+                if (this.PageSize != null) hashCode = hashCode * 59 + this.PageSize.GetHashCode();
                 return hashCode;
             }
         }

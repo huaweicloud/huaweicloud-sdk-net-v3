@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(UpdateUserInformationOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Email != input.Email || (this.Email != null && !this.Email.Equals(input.Email))) return false;
+            if (this.Mobile != input.Mobile || (this.Mobile != null && !this.Mobile.Equals(input.Mobile))) return false;
 
-            return 
-                (
-                    this.Email == input.Email ||
-                    (this.Email != null &&
-                    this.Email.Equals(input.Email))
-                ) && 
-                (
-                    this.Mobile == input.Mobile ||
-                    (this.Mobile != null &&
-                    this.Mobile.Equals(input.Mobile))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Email != null)
-                    hashCode = hashCode * 59 + this.Email.GetHashCode();
-                if (this.Mobile != null)
-                    hashCode = hashCode * 59 + this.Mobile.GetHashCode();
+                var hashCode = 41;
+                if (this.Email != null) hashCode = hashCode * 59 + this.Email.GetHashCode();
+                if (this.Mobile != null) hashCode = hashCode * 59 + this.Mobile.GetHashCode();
                 return hashCode;
             }
         }

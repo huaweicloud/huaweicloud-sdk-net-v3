@@ -184,32 +184,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(GetHostGroupListFilter input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HostGroupType != input.HostGroupType) return false;
+            if (this.HostGroupNameList != input.HostGroupNameList || (this.HostGroupNameList != null && input.HostGroupNameList != null && !this.HostGroupNameList.SequenceEqual(input.HostGroupNameList))) return false;
+            if (this.HostNameList != input.HostNameList || (this.HostNameList != null && input.HostNameList != null && !this.HostNameList.SequenceEqual(input.HostNameList))) return false;
+            if (this.HostGroupTag != input.HostGroupTag || (this.HostGroupTag != null && !this.HostGroupTag.Equals(input.HostGroupTag))) return false;
 
-            return 
-                (
-                    this.HostGroupType == input.HostGroupType ||
-                    (this.HostGroupType != null &&
-                    this.HostGroupType.Equals(input.HostGroupType))
-                ) && 
-                (
-                    this.HostGroupNameList == input.HostGroupNameList ||
-                    this.HostGroupNameList != null &&
-                    input.HostGroupNameList != null &&
-                    this.HostGroupNameList.SequenceEqual(input.HostGroupNameList)
-                ) && 
-                (
-                    this.HostNameList == input.HostNameList ||
-                    this.HostNameList != null &&
-                    input.HostNameList != null &&
-                    this.HostNameList.SequenceEqual(input.HostNameList)
-                ) && 
-                (
-                    this.HostGroupTag == input.HostGroupTag ||
-                    (this.HostGroupTag != null &&
-                    this.HostGroupTag.Equals(input.HostGroupTag))
-                );
+            return true;
         }
 
         /// <summary>
@@ -219,15 +200,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HostGroupType != null)
-                    hashCode = hashCode * 59 + this.HostGroupType.GetHashCode();
-                if (this.HostGroupNameList != null)
-                    hashCode = hashCode * 59 + this.HostGroupNameList.GetHashCode();
-                if (this.HostNameList != null)
-                    hashCode = hashCode * 59 + this.HostNameList.GetHashCode();
-                if (this.HostGroupTag != null)
-                    hashCode = hashCode * 59 + this.HostGroupTag.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.HostGroupType.GetHashCode();
+                if (this.HostGroupNameList != null) hashCode = hashCode * 59 + this.HostGroupNameList.GetHashCode();
+                if (this.HostNameList != null) hashCode = hashCode * 59 + this.HostNameList.GetHashCode();
+                if (this.HostGroupTag != null) hashCode = hashCode * 59 + this.HostGroupTag.GetHashCode();
                 return hashCode;
             }
         }

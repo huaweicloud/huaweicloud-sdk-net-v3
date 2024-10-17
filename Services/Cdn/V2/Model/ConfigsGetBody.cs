@@ -294,202 +294,45 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(ConfigsGetBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BusinessType != input.BusinessType || (this.BusinessType != null && !this.BusinessType.Equals(input.BusinessType))) return false;
+            if (this.ServiceArea != input.ServiceArea || (this.ServiceArea != null && !this.ServiceArea.Equals(input.ServiceArea))) return false;
+            if (this.Remark != input.Remark || (this.Remark != null && !this.Remark.Equals(input.Remark))) return false;
+            if (this.OriginRequestHeader != input.OriginRequestHeader || (this.OriginRequestHeader != null && input.OriginRequestHeader != null && !this.OriginRequestHeader.SequenceEqual(input.OriginRequestHeader))) return false;
+            if (this.HttpResponseHeader != input.HttpResponseHeader || (this.HttpResponseHeader != null && input.HttpResponseHeader != null && !this.HttpResponseHeader.SequenceEqual(input.HttpResponseHeader))) return false;
+            if (this.UrlAuth != input.UrlAuth || (this.UrlAuth != null && !this.UrlAuth.Equals(input.UrlAuth))) return false;
+            if (this.Https != input.Https || (this.Https != null && !this.Https.Equals(input.Https))) return false;
+            if (this.Sources != input.Sources || (this.Sources != null && input.Sources != null && !this.Sources.SequenceEqual(input.Sources))) return false;
+            if (this.OriginProtocol != input.OriginProtocol || (this.OriginProtocol != null && !this.OriginProtocol.Equals(input.OriginProtocol))) return false;
+            if (this.OriginFollow302Status != input.OriginFollow302Status || (this.OriginFollow302Status != null && !this.OriginFollow302Status.Equals(input.OriginFollow302Status))) return false;
+            if (this.CacheRules != input.CacheRules || (this.CacheRules != null && input.CacheRules != null && !this.CacheRules.SequenceEqual(input.CacheRules))) return false;
+            if (this.IpFilter != input.IpFilter || (this.IpFilter != null && !this.IpFilter.Equals(input.IpFilter))) return false;
+            if (this.Referer != input.Referer || (this.Referer != null && !this.Referer.Equals(input.Referer))) return false;
+            if (this.ForceRedirect != input.ForceRedirect || (this.ForceRedirect != null && !this.ForceRedirect.Equals(input.ForceRedirect))) return false;
+            if (this.Compress != input.Compress || (this.Compress != null && !this.Compress.Equals(input.Compress))) return false;
+            if (this.CacheUrlParameterFilter != input.CacheUrlParameterFilter || (this.CacheUrlParameterFilter != null && !this.CacheUrlParameterFilter.Equals(input.CacheUrlParameterFilter))) return false;
+            if (this.Ipv6Accelerate != input.Ipv6Accelerate || (this.Ipv6Accelerate != null && !this.Ipv6Accelerate.Equals(input.Ipv6Accelerate))) return false;
+            if (this.ErrorCodeCache != input.ErrorCodeCache || (this.ErrorCodeCache != null && input.ErrorCodeCache != null && !this.ErrorCodeCache.SequenceEqual(input.ErrorCodeCache))) return false;
+            if (this.OriginRangeStatus != input.OriginRangeStatus || (this.OriginRangeStatus != null && !this.OriginRangeStatus.Equals(input.OriginRangeStatus))) return false;
+            if (this.UserAgentFilter != input.UserAgentFilter || (this.UserAgentFilter != null && !this.UserAgentFilter.Equals(input.UserAgentFilter))) return false;
+            if (this.OriginRequestUrlRewrite != input.OriginRequestUrlRewrite || (this.OriginRequestUrlRewrite != null && input.OriginRequestUrlRewrite != null && !this.OriginRequestUrlRewrite.SequenceEqual(input.OriginRequestUrlRewrite))) return false;
+            if (this.FlexibleOrigin != input.FlexibleOrigin || (this.FlexibleOrigin != null && input.FlexibleOrigin != null && !this.FlexibleOrigin.SequenceEqual(input.FlexibleOrigin))) return false;
+            if (this.SliceEtagStatus != input.SliceEtagStatus || (this.SliceEtagStatus != null && !this.SliceEtagStatus.Equals(input.SliceEtagStatus))) return false;
+            if (this.OriginReceiveTimeout != input.OriginReceiveTimeout || (this.OriginReceiveTimeout != null && !this.OriginReceiveTimeout.Equals(input.OriginReceiveTimeout))) return false;
+            if (this.RemoteAuth != input.RemoteAuth || (this.RemoteAuth != null && !this.RemoteAuth.Equals(input.RemoteAuth))) return false;
+            if (this.Websocket != input.Websocket || (this.Websocket != null && !this.Websocket.Equals(input.Websocket))) return false;
+            if (this.VideoSeek != input.VideoSeek || (this.VideoSeek != null && !this.VideoSeek.Equals(input.VideoSeek))) return false;
+            if (this.RequestLimitRules != input.RequestLimitRules || (this.RequestLimitRules != null && input.RequestLimitRules != null && !this.RequestLimitRules.SequenceEqual(input.RequestLimitRules))) return false;
+            if (this.IpFrequencyLimit != input.IpFrequencyLimit || (this.IpFrequencyLimit != null && !this.IpFrequencyLimit.Equals(input.IpFrequencyLimit))) return false;
+            if (this.Hsts != input.Hsts || (this.Hsts != null && !this.Hsts.Equals(input.Hsts))) return false;
+            if (this.Quic != input.Quic || (this.Quic != null && !this.Quic.Equals(input.Quic))) return false;
+            if (this.ErrorCodeRedirectRules != input.ErrorCodeRedirectRules || (this.ErrorCodeRedirectRules != null && input.ErrorCodeRedirectRules != null && !this.ErrorCodeRedirectRules.SequenceEqual(input.ErrorCodeRedirectRules))) return false;
+            if (this.Sni != input.Sni || (this.Sni != null && !this.Sni.Equals(input.Sni))) return false;
+            if (this.RequestUrlRewrite != input.RequestUrlRewrite || (this.RequestUrlRewrite != null && input.RequestUrlRewrite != null && !this.RequestUrlRewrite.SequenceEqual(input.RequestUrlRewrite))) return false;
+            if (this.BrowserCacheRules != input.BrowserCacheRules || (this.BrowserCacheRules != null && input.BrowserCacheRules != null && !this.BrowserCacheRules.SequenceEqual(input.BrowserCacheRules))) return false;
+            if (this.AccessAreaFilter != input.AccessAreaFilter || (this.AccessAreaFilter != null && input.AccessAreaFilter != null && !this.AccessAreaFilter.SequenceEqual(input.AccessAreaFilter))) return false;
 
-            return 
-                (
-                    this.BusinessType == input.BusinessType ||
-                    (this.BusinessType != null &&
-                    this.BusinessType.Equals(input.BusinessType))
-                ) && 
-                (
-                    this.ServiceArea == input.ServiceArea ||
-                    (this.ServiceArea != null &&
-                    this.ServiceArea.Equals(input.ServiceArea))
-                ) && 
-                (
-                    this.Remark == input.Remark ||
-                    (this.Remark != null &&
-                    this.Remark.Equals(input.Remark))
-                ) && 
-                (
-                    this.OriginRequestHeader == input.OriginRequestHeader ||
-                    this.OriginRequestHeader != null &&
-                    input.OriginRequestHeader != null &&
-                    this.OriginRequestHeader.SequenceEqual(input.OriginRequestHeader)
-                ) && 
-                (
-                    this.HttpResponseHeader == input.HttpResponseHeader ||
-                    this.HttpResponseHeader != null &&
-                    input.HttpResponseHeader != null &&
-                    this.HttpResponseHeader.SequenceEqual(input.HttpResponseHeader)
-                ) && 
-                (
-                    this.UrlAuth == input.UrlAuth ||
-                    (this.UrlAuth != null &&
-                    this.UrlAuth.Equals(input.UrlAuth))
-                ) && 
-                (
-                    this.Https == input.Https ||
-                    (this.Https != null &&
-                    this.Https.Equals(input.Https))
-                ) && 
-                (
-                    this.Sources == input.Sources ||
-                    this.Sources != null &&
-                    input.Sources != null &&
-                    this.Sources.SequenceEqual(input.Sources)
-                ) && 
-                (
-                    this.OriginProtocol == input.OriginProtocol ||
-                    (this.OriginProtocol != null &&
-                    this.OriginProtocol.Equals(input.OriginProtocol))
-                ) && 
-                (
-                    this.OriginFollow302Status == input.OriginFollow302Status ||
-                    (this.OriginFollow302Status != null &&
-                    this.OriginFollow302Status.Equals(input.OriginFollow302Status))
-                ) && 
-                (
-                    this.CacheRules == input.CacheRules ||
-                    this.CacheRules != null &&
-                    input.CacheRules != null &&
-                    this.CacheRules.SequenceEqual(input.CacheRules)
-                ) && 
-                (
-                    this.IpFilter == input.IpFilter ||
-                    (this.IpFilter != null &&
-                    this.IpFilter.Equals(input.IpFilter))
-                ) && 
-                (
-                    this.Referer == input.Referer ||
-                    (this.Referer != null &&
-                    this.Referer.Equals(input.Referer))
-                ) && 
-                (
-                    this.ForceRedirect == input.ForceRedirect ||
-                    (this.ForceRedirect != null &&
-                    this.ForceRedirect.Equals(input.ForceRedirect))
-                ) && 
-                (
-                    this.Compress == input.Compress ||
-                    (this.Compress != null &&
-                    this.Compress.Equals(input.Compress))
-                ) && 
-                (
-                    this.CacheUrlParameterFilter == input.CacheUrlParameterFilter ||
-                    (this.CacheUrlParameterFilter != null &&
-                    this.CacheUrlParameterFilter.Equals(input.CacheUrlParameterFilter))
-                ) && 
-                (
-                    this.Ipv6Accelerate == input.Ipv6Accelerate ||
-                    (this.Ipv6Accelerate != null &&
-                    this.Ipv6Accelerate.Equals(input.Ipv6Accelerate))
-                ) && 
-                (
-                    this.ErrorCodeCache == input.ErrorCodeCache ||
-                    this.ErrorCodeCache != null &&
-                    input.ErrorCodeCache != null &&
-                    this.ErrorCodeCache.SequenceEqual(input.ErrorCodeCache)
-                ) && 
-                (
-                    this.OriginRangeStatus == input.OriginRangeStatus ||
-                    (this.OriginRangeStatus != null &&
-                    this.OriginRangeStatus.Equals(input.OriginRangeStatus))
-                ) && 
-                (
-                    this.UserAgentFilter == input.UserAgentFilter ||
-                    (this.UserAgentFilter != null &&
-                    this.UserAgentFilter.Equals(input.UserAgentFilter))
-                ) && 
-                (
-                    this.OriginRequestUrlRewrite == input.OriginRequestUrlRewrite ||
-                    this.OriginRequestUrlRewrite != null &&
-                    input.OriginRequestUrlRewrite != null &&
-                    this.OriginRequestUrlRewrite.SequenceEqual(input.OriginRequestUrlRewrite)
-                ) && 
-                (
-                    this.FlexibleOrigin == input.FlexibleOrigin ||
-                    this.FlexibleOrigin != null &&
-                    input.FlexibleOrigin != null &&
-                    this.FlexibleOrigin.SequenceEqual(input.FlexibleOrigin)
-                ) && 
-                (
-                    this.SliceEtagStatus == input.SliceEtagStatus ||
-                    (this.SliceEtagStatus != null &&
-                    this.SliceEtagStatus.Equals(input.SliceEtagStatus))
-                ) && 
-                (
-                    this.OriginReceiveTimeout == input.OriginReceiveTimeout ||
-                    (this.OriginReceiveTimeout != null &&
-                    this.OriginReceiveTimeout.Equals(input.OriginReceiveTimeout))
-                ) && 
-                (
-                    this.RemoteAuth == input.RemoteAuth ||
-                    (this.RemoteAuth != null &&
-                    this.RemoteAuth.Equals(input.RemoteAuth))
-                ) && 
-                (
-                    this.Websocket == input.Websocket ||
-                    (this.Websocket != null &&
-                    this.Websocket.Equals(input.Websocket))
-                ) && 
-                (
-                    this.VideoSeek == input.VideoSeek ||
-                    (this.VideoSeek != null &&
-                    this.VideoSeek.Equals(input.VideoSeek))
-                ) && 
-                (
-                    this.RequestLimitRules == input.RequestLimitRules ||
-                    this.RequestLimitRules != null &&
-                    input.RequestLimitRules != null &&
-                    this.RequestLimitRules.SequenceEqual(input.RequestLimitRules)
-                ) && 
-                (
-                    this.IpFrequencyLimit == input.IpFrequencyLimit ||
-                    (this.IpFrequencyLimit != null &&
-                    this.IpFrequencyLimit.Equals(input.IpFrequencyLimit))
-                ) && 
-                (
-                    this.Hsts == input.Hsts ||
-                    (this.Hsts != null &&
-                    this.Hsts.Equals(input.Hsts))
-                ) && 
-                (
-                    this.Quic == input.Quic ||
-                    (this.Quic != null &&
-                    this.Quic.Equals(input.Quic))
-                ) && 
-                (
-                    this.ErrorCodeRedirectRules == input.ErrorCodeRedirectRules ||
-                    this.ErrorCodeRedirectRules != null &&
-                    input.ErrorCodeRedirectRules != null &&
-                    this.ErrorCodeRedirectRules.SequenceEqual(input.ErrorCodeRedirectRules)
-                ) && 
-                (
-                    this.Sni == input.Sni ||
-                    (this.Sni != null &&
-                    this.Sni.Equals(input.Sni))
-                ) && 
-                (
-                    this.RequestUrlRewrite == input.RequestUrlRewrite ||
-                    this.RequestUrlRewrite != null &&
-                    input.RequestUrlRewrite != null &&
-                    this.RequestUrlRewrite.SequenceEqual(input.RequestUrlRewrite)
-                ) && 
-                (
-                    this.BrowserCacheRules == input.BrowserCacheRules ||
-                    this.BrowserCacheRules != null &&
-                    input.BrowserCacheRules != null &&
-                    this.BrowserCacheRules.SequenceEqual(input.BrowserCacheRules)
-                ) && 
-                (
-                    this.AccessAreaFilter == input.AccessAreaFilter ||
-                    this.AccessAreaFilter != null &&
-                    input.AccessAreaFilter != null &&
-                    this.AccessAreaFilter.SequenceEqual(input.AccessAreaFilter)
-                );
+            return true;
         }
 
         /// <summary>
@@ -499,79 +342,43 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BusinessType != null)
-                    hashCode = hashCode * 59 + this.BusinessType.GetHashCode();
-                if (this.ServiceArea != null)
-                    hashCode = hashCode * 59 + this.ServiceArea.GetHashCode();
-                if (this.Remark != null)
-                    hashCode = hashCode * 59 + this.Remark.GetHashCode();
-                if (this.OriginRequestHeader != null)
-                    hashCode = hashCode * 59 + this.OriginRequestHeader.GetHashCode();
-                if (this.HttpResponseHeader != null)
-                    hashCode = hashCode * 59 + this.HttpResponseHeader.GetHashCode();
-                if (this.UrlAuth != null)
-                    hashCode = hashCode * 59 + this.UrlAuth.GetHashCode();
-                if (this.Https != null)
-                    hashCode = hashCode * 59 + this.Https.GetHashCode();
-                if (this.Sources != null)
-                    hashCode = hashCode * 59 + this.Sources.GetHashCode();
-                if (this.OriginProtocol != null)
-                    hashCode = hashCode * 59 + this.OriginProtocol.GetHashCode();
-                if (this.OriginFollow302Status != null)
-                    hashCode = hashCode * 59 + this.OriginFollow302Status.GetHashCode();
-                if (this.CacheRules != null)
-                    hashCode = hashCode * 59 + this.CacheRules.GetHashCode();
-                if (this.IpFilter != null)
-                    hashCode = hashCode * 59 + this.IpFilter.GetHashCode();
-                if (this.Referer != null)
-                    hashCode = hashCode * 59 + this.Referer.GetHashCode();
-                if (this.ForceRedirect != null)
-                    hashCode = hashCode * 59 + this.ForceRedirect.GetHashCode();
-                if (this.Compress != null)
-                    hashCode = hashCode * 59 + this.Compress.GetHashCode();
-                if (this.CacheUrlParameterFilter != null)
-                    hashCode = hashCode * 59 + this.CacheUrlParameterFilter.GetHashCode();
-                if (this.Ipv6Accelerate != null)
-                    hashCode = hashCode * 59 + this.Ipv6Accelerate.GetHashCode();
-                if (this.ErrorCodeCache != null)
-                    hashCode = hashCode * 59 + this.ErrorCodeCache.GetHashCode();
-                if (this.OriginRangeStatus != null)
-                    hashCode = hashCode * 59 + this.OriginRangeStatus.GetHashCode();
-                if (this.UserAgentFilter != null)
-                    hashCode = hashCode * 59 + this.UserAgentFilter.GetHashCode();
-                if (this.OriginRequestUrlRewrite != null)
-                    hashCode = hashCode * 59 + this.OriginRequestUrlRewrite.GetHashCode();
-                if (this.FlexibleOrigin != null)
-                    hashCode = hashCode * 59 + this.FlexibleOrigin.GetHashCode();
-                if (this.SliceEtagStatus != null)
-                    hashCode = hashCode * 59 + this.SliceEtagStatus.GetHashCode();
-                if (this.OriginReceiveTimeout != null)
-                    hashCode = hashCode * 59 + this.OriginReceiveTimeout.GetHashCode();
-                if (this.RemoteAuth != null)
-                    hashCode = hashCode * 59 + this.RemoteAuth.GetHashCode();
-                if (this.Websocket != null)
-                    hashCode = hashCode * 59 + this.Websocket.GetHashCode();
-                if (this.VideoSeek != null)
-                    hashCode = hashCode * 59 + this.VideoSeek.GetHashCode();
-                if (this.RequestLimitRules != null)
-                    hashCode = hashCode * 59 + this.RequestLimitRules.GetHashCode();
-                if (this.IpFrequencyLimit != null)
-                    hashCode = hashCode * 59 + this.IpFrequencyLimit.GetHashCode();
-                if (this.Hsts != null)
-                    hashCode = hashCode * 59 + this.Hsts.GetHashCode();
-                if (this.Quic != null)
-                    hashCode = hashCode * 59 + this.Quic.GetHashCode();
-                if (this.ErrorCodeRedirectRules != null)
-                    hashCode = hashCode * 59 + this.ErrorCodeRedirectRules.GetHashCode();
-                if (this.Sni != null)
-                    hashCode = hashCode * 59 + this.Sni.GetHashCode();
-                if (this.RequestUrlRewrite != null)
-                    hashCode = hashCode * 59 + this.RequestUrlRewrite.GetHashCode();
-                if (this.BrowserCacheRules != null)
-                    hashCode = hashCode * 59 + this.BrowserCacheRules.GetHashCode();
-                if (this.AccessAreaFilter != null)
-                    hashCode = hashCode * 59 + this.AccessAreaFilter.GetHashCode();
+                var hashCode = 41;
+                if (this.BusinessType != null) hashCode = hashCode * 59 + this.BusinessType.GetHashCode();
+                if (this.ServiceArea != null) hashCode = hashCode * 59 + this.ServiceArea.GetHashCode();
+                if (this.Remark != null) hashCode = hashCode * 59 + this.Remark.GetHashCode();
+                if (this.OriginRequestHeader != null) hashCode = hashCode * 59 + this.OriginRequestHeader.GetHashCode();
+                if (this.HttpResponseHeader != null) hashCode = hashCode * 59 + this.HttpResponseHeader.GetHashCode();
+                if (this.UrlAuth != null) hashCode = hashCode * 59 + this.UrlAuth.GetHashCode();
+                if (this.Https != null) hashCode = hashCode * 59 + this.Https.GetHashCode();
+                if (this.Sources != null) hashCode = hashCode * 59 + this.Sources.GetHashCode();
+                if (this.OriginProtocol != null) hashCode = hashCode * 59 + this.OriginProtocol.GetHashCode();
+                if (this.OriginFollow302Status != null) hashCode = hashCode * 59 + this.OriginFollow302Status.GetHashCode();
+                if (this.CacheRules != null) hashCode = hashCode * 59 + this.CacheRules.GetHashCode();
+                if (this.IpFilter != null) hashCode = hashCode * 59 + this.IpFilter.GetHashCode();
+                if (this.Referer != null) hashCode = hashCode * 59 + this.Referer.GetHashCode();
+                if (this.ForceRedirect != null) hashCode = hashCode * 59 + this.ForceRedirect.GetHashCode();
+                if (this.Compress != null) hashCode = hashCode * 59 + this.Compress.GetHashCode();
+                if (this.CacheUrlParameterFilter != null) hashCode = hashCode * 59 + this.CacheUrlParameterFilter.GetHashCode();
+                if (this.Ipv6Accelerate != null) hashCode = hashCode * 59 + this.Ipv6Accelerate.GetHashCode();
+                if (this.ErrorCodeCache != null) hashCode = hashCode * 59 + this.ErrorCodeCache.GetHashCode();
+                if (this.OriginRangeStatus != null) hashCode = hashCode * 59 + this.OriginRangeStatus.GetHashCode();
+                if (this.UserAgentFilter != null) hashCode = hashCode * 59 + this.UserAgentFilter.GetHashCode();
+                if (this.OriginRequestUrlRewrite != null) hashCode = hashCode * 59 + this.OriginRequestUrlRewrite.GetHashCode();
+                if (this.FlexibleOrigin != null) hashCode = hashCode * 59 + this.FlexibleOrigin.GetHashCode();
+                if (this.SliceEtagStatus != null) hashCode = hashCode * 59 + this.SliceEtagStatus.GetHashCode();
+                if (this.OriginReceiveTimeout != null) hashCode = hashCode * 59 + this.OriginReceiveTimeout.GetHashCode();
+                if (this.RemoteAuth != null) hashCode = hashCode * 59 + this.RemoteAuth.GetHashCode();
+                if (this.Websocket != null) hashCode = hashCode * 59 + this.Websocket.GetHashCode();
+                if (this.VideoSeek != null) hashCode = hashCode * 59 + this.VideoSeek.GetHashCode();
+                if (this.RequestLimitRules != null) hashCode = hashCode * 59 + this.RequestLimitRules.GetHashCode();
+                if (this.IpFrequencyLimit != null) hashCode = hashCode * 59 + this.IpFrequencyLimit.GetHashCode();
+                if (this.Hsts != null) hashCode = hashCode * 59 + this.Hsts.GetHashCode();
+                if (this.Quic != null) hashCode = hashCode * 59 + this.Quic.GetHashCode();
+                if (this.ErrorCodeRedirectRules != null) hashCode = hashCode * 59 + this.ErrorCodeRedirectRules.GetHashCode();
+                if (this.Sni != null) hashCode = hashCode * 59 + this.Sni.GetHashCode();
+                if (this.RequestUrlRewrite != null) hashCode = hashCode * 59 + this.RequestUrlRewrite.GetHashCode();
+                if (this.BrowserCacheRules != null) hashCode = hashCode * 59 + this.BrowserCacheRules.GetHashCode();
+                if (this.AccessAreaFilter != null) hashCode = hashCode * 59 + this.AccessAreaFilter.GetHashCode();
                 return hashCode;
             }
         }

@@ -212,50 +212,17 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(DiagnosisReportInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ReportId != input.ReportId || (this.ReportId != null && !this.ReportId.Equals(input.ReportId))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.BeginTime != input.BeginTime || (this.BeginTime != null && !this.BeginTime.Equals(input.BeginTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.NodeNum != input.NodeNum || (this.NodeNum != null && !this.NodeNum.Equals(input.NodeNum))) return false;
+            if (this.AbnormalItemSum != input.AbnormalItemSum || (this.AbnormalItemSum != null && !this.AbnormalItemSum.Equals(input.AbnormalItemSum))) return false;
+            if (this.FailedItemSum != input.FailedItemSum || (this.FailedItemSum != null && !this.FailedItemSum.Equals(input.FailedItemSum))) return false;
 
-            return 
-                (
-                    this.ReportId == input.ReportId ||
-                    (this.ReportId != null &&
-                    this.ReportId.Equals(input.ReportId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.BeginTime == input.BeginTime ||
-                    (this.BeginTime != null &&
-                    this.BeginTime.Equals(input.BeginTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.NodeNum == input.NodeNum ||
-                    (this.NodeNum != null &&
-                    this.NodeNum.Equals(input.NodeNum))
-                ) && 
-                (
-                    this.AbnormalItemSum == input.AbnormalItemSum ||
-                    (this.AbnormalItemSum != null &&
-                    this.AbnormalItemSum.Equals(input.AbnormalItemSum))
-                ) && 
-                (
-                    this.FailedItemSum == input.FailedItemSum ||
-                    (this.FailedItemSum != null &&
-                    this.FailedItemSum.Equals(input.FailedItemSum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -265,23 +232,15 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ReportId != null)
-                    hashCode = hashCode * 59 + this.ReportId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.BeginTime != null)
-                    hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.NodeNum != null)
-                    hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
-                if (this.AbnormalItemSum != null)
-                    hashCode = hashCode * 59 + this.AbnormalItemSum.GetHashCode();
-                if (this.FailedItemSum != null)
-                    hashCode = hashCode * 59 + this.FailedItemSum.GetHashCode();
+                var hashCode = 41;
+                if (this.ReportId != null) hashCode = hashCode * 59 + this.ReportId.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.BeginTime != null) hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.NodeNum != null) hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
+                if (this.AbnormalItemSum != null) hashCode = hashCode * 59 + this.AbnormalItemSum.GetHashCode();
+                if (this.FailedItemSum != null) hashCode = hashCode * 59 + this.FailedItemSum.GetHashCode();
                 return hashCode;
             }
         }

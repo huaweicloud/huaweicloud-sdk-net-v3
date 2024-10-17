@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(AllowDbUserPrivilegeResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Resp != input.Resp || (this.Resp != null && !this.Resp.Equals(input.Resp))) return false;
 
-            return 
-                (
-                    this.Resp == input.Resp ||
-                    (this.Resp != null &&
-                    this.Resp.Equals(input.Resp))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Resp != null)
-                    hashCode = hashCode * 59 + this.Resp.GetHashCode();
+                var hashCode = 41;
+                if (this.Resp != null) hashCode = hashCode * 59 + this.Resp.GetHashCode();
                 return hashCode;
             }
         }

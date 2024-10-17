@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(ShowTopDomainNamesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TopDomainNames != input.TopDomainNames || (this.TopDomainNames != null && input.TopDomainNames != null && !this.TopDomainNames.SequenceEqual(input.TopDomainNames))) return false;
 
-            return 
-                (
-                    this.TopDomainNames == input.TopDomainNames ||
-                    this.TopDomainNames != null &&
-                    input.TopDomainNames != null &&
-                    this.TopDomainNames.SequenceEqual(input.TopDomainNames)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TopDomainNames != null)
-                    hashCode = hashCode * 59 + this.TopDomainNames.GetHashCode();
+                var hashCode = 41;
+                if (this.TopDomainNames != null) hashCode = hashCode * 59 + this.TopDomainNames.GetHashCode();
                 return hashCode;
             }
         }

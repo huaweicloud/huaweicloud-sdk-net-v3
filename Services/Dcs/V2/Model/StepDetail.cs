@@ -217,46 +217,16 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(StepDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StepId != input.StepId || (this.StepId != null && !this.StepId.Equals(input.StepId))) return false;
+            if (this.StepName != input.StepName || (this.StepName != null && !this.StepName.Equals(input.StepName))) return false;
+            if (this.StepStatus != input.StepStatus) return false;
+            if (this.BeginTime != input.BeginTime || (this.BeginTime != null && !this.BeginTime.Equals(input.BeginTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
+            if (this.SubStepDetails != input.SubStepDetails || (this.SubStepDetails != null && input.SubStepDetails != null && !this.SubStepDetails.SequenceEqual(input.SubStepDetails))) return false;
 
-            return 
-                (
-                    this.StepId == input.StepId ||
-                    (this.StepId != null &&
-                    this.StepId.Equals(input.StepId))
-                ) && 
-                (
-                    this.StepName == input.StepName ||
-                    (this.StepName != null &&
-                    this.StepName.Equals(input.StepName))
-                ) && 
-                (
-                    this.StepStatus == input.StepStatus ||
-                    (this.StepStatus != null &&
-                    this.StepStatus.Equals(input.StepStatus))
-                ) && 
-                (
-                    this.BeginTime == input.BeginTime ||
-                    (this.BeginTime != null &&
-                    this.BeginTime.Equals(input.BeginTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
-                ) && 
-                (
-                    this.SubStepDetails == input.SubStepDetails ||
-                    this.SubStepDetails != null &&
-                    input.SubStepDetails != null &&
-                    this.SubStepDetails.SequenceEqual(input.SubStepDetails)
-                );
+            return true;
         }
 
         /// <summary>
@@ -266,21 +236,14 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StepId != null)
-                    hashCode = hashCode * 59 + this.StepId.GetHashCode();
-                if (this.StepName != null)
-                    hashCode = hashCode * 59 + this.StepName.GetHashCode();
-                if (this.StepStatus != null)
-                    hashCode = hashCode * 59 + this.StepStatus.GetHashCode();
-                if (this.BeginTime != null)
-                    hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
-                if (this.SubStepDetails != null)
-                    hashCode = hashCode * 59 + this.SubStepDetails.GetHashCode();
+                var hashCode = 41;
+                if (this.StepId != null) hashCode = hashCode * 59 + this.StepId.GetHashCode();
+                if (this.StepName != null) hashCode = hashCode * 59 + this.StepName.GetHashCode();
+                hashCode = hashCode * 59 + this.StepStatus.GetHashCode();
+                if (this.BeginTime != null) hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                if (this.SubStepDetails != null) hashCode = hashCode * 59 + this.SubStepDetails.GetHashCode();
                 return hashCode;
             }
         }

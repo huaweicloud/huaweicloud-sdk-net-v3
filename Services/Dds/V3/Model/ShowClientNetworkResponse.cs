@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(ShowClientNetworkResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.ClientNetworkRanges != input.ClientNetworkRanges || (this.ClientNetworkRanges != null && input.ClientNetworkRanges != null && !this.ClientNetworkRanges.SequenceEqual(input.ClientNetworkRanges))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.ClientNetworkRanges == input.ClientNetworkRanges ||
-                    this.ClientNetworkRanges != null &&
-                    input.ClientNetworkRanges != null &&
-                    this.ClientNetworkRanges.SequenceEqual(input.ClientNetworkRanges)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.ClientNetworkRanges != null)
-                    hashCode = hashCode * 59 + this.ClientNetworkRanges.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.ClientNetworkRanges != null) hashCode = hashCode * 59 + this.ClientNetworkRanges.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(DeleteServersRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DeletePublicip != input.DeletePublicip || (this.DeletePublicip != null && !this.DeletePublicip.Equals(input.DeletePublicip))) return false;
+            if (this.DeleteVolume != input.DeleteVolume || (this.DeleteVolume != null && !this.DeleteVolume.Equals(input.DeleteVolume))) return false;
+            if (this.Servers != input.Servers || (this.Servers != null && input.Servers != null && !this.Servers.SequenceEqual(input.Servers))) return false;
 
-            return 
-                (
-                    this.DeletePublicip == input.DeletePublicip ||
-                    (this.DeletePublicip != null &&
-                    this.DeletePublicip.Equals(input.DeletePublicip))
-                ) && 
-                (
-                    this.DeleteVolume == input.DeleteVolume ||
-                    (this.DeleteVolume != null &&
-                    this.DeleteVolume.Equals(input.DeleteVolume))
-                ) && 
-                (
-                    this.Servers == input.Servers ||
-                    this.Servers != null &&
-                    input.Servers != null &&
-                    this.Servers.SequenceEqual(input.Servers)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DeletePublicip != null)
-                    hashCode = hashCode * 59 + this.DeletePublicip.GetHashCode();
-                if (this.DeleteVolume != null)
-                    hashCode = hashCode * 59 + this.DeleteVolume.GetHashCode();
-                if (this.Servers != null)
-                    hashCode = hashCode * 59 + this.Servers.GetHashCode();
+                var hashCode = 41;
+                if (this.DeletePublicip != null) hashCode = hashCode * 59 + this.DeletePublicip.GetHashCode();
+                if (this.DeleteVolume != null) hashCode = hashCode * 59 + this.DeleteVolume.GetHashCode();
+                if (this.Servers != null) hashCode = hashCode * 59 + this.Servers.GetHashCode();
                 return hashCode;
             }
         }

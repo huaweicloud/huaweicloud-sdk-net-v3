@@ -154,92 +154,25 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(BaseInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Title != input.Title || (this.Title != null && !this.Title.Equals(input.Title))) return false;
+            if (this.VideoName != input.VideoName || (this.VideoName != null && !this.VideoName.Equals(input.VideoName))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.CategoryId != input.CategoryId || (this.CategoryId != null && !this.CategoryId.Equals(input.CategoryId))) return false;
+            if (this.CategoryName != input.CategoryName || (this.CategoryName != null && !this.CategoryName.Equals(input.CategoryName))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.LastModified != input.LastModified || (this.LastModified != null && !this.LastModified.Equals(input.LastModified))) return false;
+            if (this.VideoType != input.VideoType || (this.VideoType != null && !this.VideoType.Equals(input.VideoType))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && !this.Tags.Equals(input.Tags))) return false;
+            if (this.MetaData != input.MetaData || (this.MetaData != null && !this.MetaData.Equals(input.MetaData))) return false;
+            if (this.VideoUrl != input.VideoUrl || (this.VideoUrl != null && !this.VideoUrl.Equals(input.VideoUrl))) return false;
+            if (this.SignUrl != input.SignUrl || (this.SignUrl != null && !this.SignUrl.Equals(input.SignUrl))) return false;
+            if (this.CoverInfoArray != input.CoverInfoArray || (this.CoverInfoArray != null && input.CoverInfoArray != null && !this.CoverInfoArray.SequenceEqual(input.CoverInfoArray))) return false;
+            if (this.SubtitleInfo != input.SubtitleInfo || (this.SubtitleInfo != null && input.SubtitleInfo != null && !this.SubtitleInfo.SequenceEqual(input.SubtitleInfo))) return false;
+            if (this.SourcePath != input.SourcePath || (this.SourcePath != null && !this.SourcePath.Equals(input.SourcePath))) return false;
+            if (this.OutputPath != input.OutputPath || (this.OutputPath != null && !this.OutputPath.Equals(input.OutputPath))) return false;
 
-            return 
-                (
-                    this.Title == input.Title ||
-                    (this.Title != null &&
-                    this.Title.Equals(input.Title))
-                ) && 
-                (
-                    this.VideoName == input.VideoName ||
-                    (this.VideoName != null &&
-                    this.VideoName.Equals(input.VideoName))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.CategoryId == input.CategoryId ||
-                    (this.CategoryId != null &&
-                    this.CategoryId.Equals(input.CategoryId))
-                ) && 
-                (
-                    this.CategoryName == input.CategoryName ||
-                    (this.CategoryName != null &&
-                    this.CategoryName.Equals(input.CategoryName))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.LastModified == input.LastModified ||
-                    (this.LastModified != null &&
-                    this.LastModified.Equals(input.LastModified))
-                ) && 
-                (
-                    this.VideoType == input.VideoType ||
-                    (this.VideoType != null &&
-                    this.VideoType.Equals(input.VideoType))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    (this.Tags != null &&
-                    this.Tags.Equals(input.Tags))
-                ) && 
-                (
-                    this.MetaData == input.MetaData ||
-                    (this.MetaData != null &&
-                    this.MetaData.Equals(input.MetaData))
-                ) && 
-                (
-                    this.VideoUrl == input.VideoUrl ||
-                    (this.VideoUrl != null &&
-                    this.VideoUrl.Equals(input.VideoUrl))
-                ) && 
-                (
-                    this.SignUrl == input.SignUrl ||
-                    (this.SignUrl != null &&
-                    this.SignUrl.Equals(input.SignUrl))
-                ) && 
-                (
-                    this.CoverInfoArray == input.CoverInfoArray ||
-                    this.CoverInfoArray != null &&
-                    input.CoverInfoArray != null &&
-                    this.CoverInfoArray.SequenceEqual(input.CoverInfoArray)
-                ) && 
-                (
-                    this.SubtitleInfo == input.SubtitleInfo ||
-                    this.SubtitleInfo != null &&
-                    input.SubtitleInfo != null &&
-                    this.SubtitleInfo.SequenceEqual(input.SubtitleInfo)
-                ) && 
-                (
-                    this.SourcePath == input.SourcePath ||
-                    (this.SourcePath != null &&
-                    this.SourcePath.Equals(input.SourcePath))
-                ) && 
-                (
-                    this.OutputPath == input.OutputPath ||
-                    (this.OutputPath != null &&
-                    this.OutputPath.Equals(input.OutputPath))
-                );
+            return true;
         }
 
         /// <summary>
@@ -249,39 +182,23 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Title != null)
-                    hashCode = hashCode * 59 + this.Title.GetHashCode();
-                if (this.VideoName != null)
-                    hashCode = hashCode * 59 + this.VideoName.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.CategoryId != null)
-                    hashCode = hashCode * 59 + this.CategoryId.GetHashCode();
-                if (this.CategoryName != null)
-                    hashCode = hashCode * 59 + this.CategoryName.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.LastModified != null)
-                    hashCode = hashCode * 59 + this.LastModified.GetHashCode();
-                if (this.VideoType != null)
-                    hashCode = hashCode * 59 + this.VideoType.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.MetaData != null)
-                    hashCode = hashCode * 59 + this.MetaData.GetHashCode();
-                if (this.VideoUrl != null)
-                    hashCode = hashCode * 59 + this.VideoUrl.GetHashCode();
-                if (this.SignUrl != null)
-                    hashCode = hashCode * 59 + this.SignUrl.GetHashCode();
-                if (this.CoverInfoArray != null)
-                    hashCode = hashCode * 59 + this.CoverInfoArray.GetHashCode();
-                if (this.SubtitleInfo != null)
-                    hashCode = hashCode * 59 + this.SubtitleInfo.GetHashCode();
-                if (this.SourcePath != null)
-                    hashCode = hashCode * 59 + this.SourcePath.GetHashCode();
-                if (this.OutputPath != null)
-                    hashCode = hashCode * 59 + this.OutputPath.GetHashCode();
+                var hashCode = 41;
+                if (this.Title != null) hashCode = hashCode * 59 + this.Title.GetHashCode();
+                if (this.VideoName != null) hashCode = hashCode * 59 + this.VideoName.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.CategoryId != null) hashCode = hashCode * 59 + this.CategoryId.GetHashCode();
+                if (this.CategoryName != null) hashCode = hashCode * 59 + this.CategoryName.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.LastModified != null) hashCode = hashCode * 59 + this.LastModified.GetHashCode();
+                if (this.VideoType != null) hashCode = hashCode * 59 + this.VideoType.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.MetaData != null) hashCode = hashCode * 59 + this.MetaData.GetHashCode();
+                if (this.VideoUrl != null) hashCode = hashCode * 59 + this.VideoUrl.GetHashCode();
+                if (this.SignUrl != null) hashCode = hashCode * 59 + this.SignUrl.GetHashCode();
+                if (this.CoverInfoArray != null) hashCode = hashCode * 59 + this.CoverInfoArray.GetHashCode();
+                if (this.SubtitleInfo != null) hashCode = hashCode * 59 + this.SubtitleInfo.GetHashCode();
+                if (this.SourcePath != null) hashCode = hashCode * 59 + this.SourcePath.GetHashCode();
+                if (this.OutputPath != null) hashCode = hashCode * 59 + this.OutputPath.GetHashCode();
                 return hashCode;
             }
         }

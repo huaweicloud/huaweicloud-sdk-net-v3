@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(VarsStructure input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VarKey != input.VarKey || (this.VarKey != null && !this.VarKey.Equals(input.VarKey))) return false;
+            if (this.VarValue != input.VarValue || (this.VarValue != null && !this.VarValue.Equals(input.VarValue))) return false;
+            if (this.Encryption != input.Encryption || (this.Encryption != null && !this.Encryption.Equals(input.Encryption))) return false;
 
-            return 
-                (
-                    this.VarKey == input.VarKey ||
-                    (this.VarKey != null &&
-                    this.VarKey.Equals(input.VarKey))
-                ) && 
-                (
-                    this.VarValue == input.VarValue ||
-                    (this.VarValue != null &&
-                    this.VarValue.Equals(input.VarValue))
-                ) && 
-                (
-                    this.Encryption == input.Encryption ||
-                    (this.Encryption != null &&
-                    this.Encryption.Equals(input.Encryption))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VarKey != null)
-                    hashCode = hashCode * 59 + this.VarKey.GetHashCode();
-                if (this.VarValue != null)
-                    hashCode = hashCode * 59 + this.VarValue.GetHashCode();
-                if (this.Encryption != null)
-                    hashCode = hashCode * 59 + this.Encryption.GetHashCode();
+                var hashCode = 41;
+                if (this.VarKey != null) hashCode = hashCode * 59 + this.VarKey.GetHashCode();
+                if (this.VarValue != null) hashCode = hashCode * 59 + this.VarValue.GetHashCode();
+                if (this.Encryption != null) hashCode = hashCode * 59 + this.Encryption.GetHashCode();
                 return hashCode;
             }
         }

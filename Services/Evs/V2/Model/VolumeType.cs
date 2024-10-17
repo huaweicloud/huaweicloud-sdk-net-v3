@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(VolumeType input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.ExtraSpecs != input.ExtraSpecs || (this.ExtraSpecs != null && !this.ExtraSpecs.Equals(input.ExtraSpecs))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.QosSpecsId != input.QosSpecsId || (this.QosSpecsId != null && !this.QosSpecsId.Equals(input.QosSpecsId))) return false;
+            if (this.IsPublic != input.IsPublic || (this.IsPublic != null && !this.IsPublic.Equals(input.IsPublic))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ExtraSpecs == input.ExtraSpecs ||
-                    (this.ExtraSpecs != null &&
-                    this.ExtraSpecs.Equals(input.ExtraSpecs))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.QosSpecsId == input.QosSpecsId ||
-                    (this.QosSpecsId != null &&
-                    this.QosSpecsId.Equals(input.QosSpecsId))
-                ) && 
-                (
-                    this.IsPublic == input.IsPublic ||
-                    (this.IsPublic != null &&
-                    this.IsPublic.Equals(input.IsPublic))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.ExtraSpecs != null)
-                    hashCode = hashCode * 59 + this.ExtraSpecs.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.QosSpecsId != null)
-                    hashCode = hashCode * 59 + this.QosSpecsId.GetHashCode();
-                if (this.IsPublic != null)
-                    hashCode = hashCode * 59 + this.IsPublic.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.ExtraSpecs != null) hashCode = hashCode * 59 + this.ExtraSpecs.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.QosSpecsId != null) hashCode = hashCode * 59 + this.QosSpecsId.GetHashCode();
+                if (this.IsPublic != null) hashCode = hashCode * 59 + this.IsPublic.GetHashCode();
                 return hashCode;
             }
         }

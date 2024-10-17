@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// </summary>
         public bool Equals(UpgradeInstanceData input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BasicBandwidth != input.BasicBandwidth || (this.BasicBandwidth != null && !this.BasicBandwidth.Equals(input.BasicBandwidth))) return false;
+            if (this.ElasticBandwidth != input.ElasticBandwidth || (this.ElasticBandwidth != null && !this.ElasticBandwidth.Equals(input.ElasticBandwidth))) return false;
+            if (this.ServiceBandwidth != input.ServiceBandwidth || (this.ServiceBandwidth != null && !this.ServiceBandwidth.Equals(input.ServiceBandwidth))) return false;
+            if (this.PortNum != input.PortNum || (this.PortNum != null && !this.PortNum.Equals(input.PortNum))) return false;
+            if (this.BindDomainNum != input.BindDomainNum || (this.BindDomainNum != null && !this.BindDomainNum.Equals(input.BindDomainNum))) return false;
 
-            return 
-                (
-                    this.BasicBandwidth == input.BasicBandwidth ||
-                    (this.BasicBandwidth != null &&
-                    this.BasicBandwidth.Equals(input.BasicBandwidth))
-                ) && 
-                (
-                    this.ElasticBandwidth == input.ElasticBandwidth ||
-                    (this.ElasticBandwidth != null &&
-                    this.ElasticBandwidth.Equals(input.ElasticBandwidth))
-                ) && 
-                (
-                    this.ServiceBandwidth == input.ServiceBandwidth ||
-                    (this.ServiceBandwidth != null &&
-                    this.ServiceBandwidth.Equals(input.ServiceBandwidth))
-                ) && 
-                (
-                    this.PortNum == input.PortNum ||
-                    (this.PortNum != null &&
-                    this.PortNum.Equals(input.PortNum))
-                ) && 
-                (
-                    this.BindDomainNum == input.BindDomainNum ||
-                    (this.BindDomainNum != null &&
-                    this.BindDomainNum.Equals(input.BindDomainNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BasicBandwidth != null)
-                    hashCode = hashCode * 59 + this.BasicBandwidth.GetHashCode();
-                if (this.ElasticBandwidth != null)
-                    hashCode = hashCode * 59 + this.ElasticBandwidth.GetHashCode();
-                if (this.ServiceBandwidth != null)
-                    hashCode = hashCode * 59 + this.ServiceBandwidth.GetHashCode();
-                if (this.PortNum != null)
-                    hashCode = hashCode * 59 + this.PortNum.GetHashCode();
-                if (this.BindDomainNum != null)
-                    hashCode = hashCode * 59 + this.BindDomainNum.GetHashCode();
+                var hashCode = 41;
+                if (this.BasicBandwidth != null) hashCode = hashCode * 59 + this.BasicBandwidth.GetHashCode();
+                if (this.ElasticBandwidth != null) hashCode = hashCode * 59 + this.ElasticBandwidth.GetHashCode();
+                if (this.ServiceBandwidth != null) hashCode = hashCode * 59 + this.ServiceBandwidth.GetHashCode();
+                if (this.PortNum != null) hashCode = hashCode * 59 + this.PortNum.GetHashCode();
+                if (this.BindDomainNum != null) hashCode = hashCode * 59 + this.BindDomainNum.GetHashCode();
                 return hashCode;
             }
         }

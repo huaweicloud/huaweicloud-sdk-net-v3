@@ -198,40 +198,15 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(ServerAddress input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.Primary != input.Primary || (this.Primary != null && !this.Primary.Equals(input.Primary))) return false;
+            if (this.Addr != input.Addr || (this.Addr != null && !this.Addr.Equals(input.Addr))) return false;
+            if (this.OSEXTIPStype != input.OSEXTIPStype) return false;
+            if (this.OSEXTIPSMACmacAddr != input.OSEXTIPSMACmacAddr || (this.OSEXTIPSMACmacAddr != null && !this.OSEXTIPSMACmacAddr.Equals(input.OSEXTIPSMACmacAddr))) return false;
+            if (this.OSEXTIPSportId != input.OSEXTIPSportId || (this.OSEXTIPSportId != null && !this.OSEXTIPSportId.Equals(input.OSEXTIPSportId))) return false;
 
-            return 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.Primary == input.Primary ||
-                    (this.Primary != null &&
-                    this.Primary.Equals(input.Primary))
-                ) && 
-                (
-                    this.Addr == input.Addr ||
-                    (this.Addr != null &&
-                    this.Addr.Equals(input.Addr))
-                ) && 
-                (
-                    this.OSEXTIPStype == input.OSEXTIPStype ||
-                    (this.OSEXTIPStype != null &&
-                    this.OSEXTIPStype.Equals(input.OSEXTIPStype))
-                ) && 
-                (
-                    this.OSEXTIPSMACmacAddr == input.OSEXTIPSMACmacAddr ||
-                    (this.OSEXTIPSMACmacAddr != null &&
-                    this.OSEXTIPSMACmacAddr.Equals(input.OSEXTIPSMACmacAddr))
-                ) && 
-                (
-                    this.OSEXTIPSportId == input.OSEXTIPSportId ||
-                    (this.OSEXTIPSportId != null &&
-                    this.OSEXTIPSportId.Equals(input.OSEXTIPSportId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -241,19 +216,13 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.Primary != null)
-                    hashCode = hashCode * 59 + this.Primary.GetHashCode();
-                if (this.Addr != null)
-                    hashCode = hashCode * 59 + this.Addr.GetHashCode();
-                if (this.OSEXTIPStype != null)
-                    hashCode = hashCode * 59 + this.OSEXTIPStype.GetHashCode();
-                if (this.OSEXTIPSMACmacAddr != null)
-                    hashCode = hashCode * 59 + this.OSEXTIPSMACmacAddr.GetHashCode();
-                if (this.OSEXTIPSportId != null)
-                    hashCode = hashCode * 59 + this.OSEXTIPSportId.GetHashCode();
+                var hashCode = 41;
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.Primary != null) hashCode = hashCode * 59 + this.Primary.GetHashCode();
+                if (this.Addr != null) hashCode = hashCode * 59 + this.Addr.GetHashCode();
+                hashCode = hashCode * 59 + this.OSEXTIPStype.GetHashCode();
+                if (this.OSEXTIPSMACmacAddr != null) hashCode = hashCode * 59 + this.OSEXTIPSMACmacAddr.GetHashCode();
+                if (this.OSEXTIPSportId != null) hashCode = hashCode * 59 + this.OSEXTIPSportId.GetHashCode();
                 return hashCode;
             }
         }

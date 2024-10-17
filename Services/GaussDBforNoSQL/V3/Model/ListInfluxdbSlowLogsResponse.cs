@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(ListInfluxdbSlowLogsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SlowLogs != input.SlowLogs || (this.SlowLogs != null && input.SlowLogs != null && !this.SlowLogs.SequenceEqual(input.SlowLogs))) return false;
 
-            return 
-                (
-                    this.SlowLogs == input.SlowLogs ||
-                    this.SlowLogs != null &&
-                    input.SlowLogs != null &&
-                    this.SlowLogs.SequenceEqual(input.SlowLogs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SlowLogs != null)
-                    hashCode = hashCode * 59 + this.SlowLogs.GetHashCode();
+                var hashCode = 41;
+                if (this.SlowLogs != null) hashCode = hashCode * 59 + this.SlowLogs.GetHashCode();
                 return hashCode;
             }
         }

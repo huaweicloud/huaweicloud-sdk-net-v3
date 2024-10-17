@@ -133,75 +133,22 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ListWorkTableIssueRequestV4RequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Offset != input.Offset || (this.Offset != null && !this.Offset.Equals(input.Offset))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.Subject != input.Subject || (this.Subject != null && !this.Subject.Equals(input.Subject))) return false;
+            if (this.CreatedOn != input.CreatedOn || (this.CreatedOn != null && !this.CreatedOn.Equals(input.CreatedOn))) return false;
+            if (this.UpdatedOn != input.UpdatedOn || (this.UpdatedOn != null && !this.UpdatedOn.Equals(input.UpdatedOn))) return false;
+            if (this.ClosedOn != input.ClosedOn || (this.ClosedOn != null && !this.ClosedOn.Equals(input.ClosedOn))) return false;
+            if (this.StartDate != input.StartDate || (this.StartDate != null && !this.StartDate.Equals(input.StartDate))) return false;
+            if (this.DueDate != input.DueDate || (this.DueDate != null && !this.DueDate.Equals(input.DueDate))) return false;
+            if (this.TrackerId != input.TrackerId || (this.TrackerId != null && !this.TrackerId.Equals(input.TrackerId))) return false;
+            if (this.StatusId != input.StatusId || (this.StatusId != null && !this.StatusId.Equals(input.StatusId))) return false;
+            if (this.AuthorId != input.AuthorId || (this.AuthorId != null && !this.AuthorId.Equals(input.AuthorId))) return false;
+            if (this.DeveloperId != input.DeveloperId || (this.DeveloperId != null && !this.DeveloperId.Equals(input.DeveloperId))) return false;
+            if (this.PriorityId != input.PriorityId || (this.PriorityId != null && !this.PriorityId.Equals(input.PriorityId))) return false;
 
-            return 
-                (
-                    this.Offset == input.Offset ||
-                    (this.Offset != null &&
-                    this.Offset.Equals(input.Offset))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.Subject == input.Subject ||
-                    (this.Subject != null &&
-                    this.Subject.Equals(input.Subject))
-                ) && 
-                (
-                    this.CreatedOn == input.CreatedOn ||
-                    (this.CreatedOn != null &&
-                    this.CreatedOn.Equals(input.CreatedOn))
-                ) && 
-                (
-                    this.UpdatedOn == input.UpdatedOn ||
-                    (this.UpdatedOn != null &&
-                    this.UpdatedOn.Equals(input.UpdatedOn))
-                ) && 
-                (
-                    this.ClosedOn == input.ClosedOn ||
-                    (this.ClosedOn != null &&
-                    this.ClosedOn.Equals(input.ClosedOn))
-                ) && 
-                (
-                    this.StartDate == input.StartDate ||
-                    (this.StartDate != null &&
-                    this.StartDate.Equals(input.StartDate))
-                ) && 
-                (
-                    this.DueDate == input.DueDate ||
-                    (this.DueDate != null &&
-                    this.DueDate.Equals(input.DueDate))
-                ) && 
-                (
-                    this.TrackerId == input.TrackerId ||
-                    (this.TrackerId != null &&
-                    this.TrackerId.Equals(input.TrackerId))
-                ) && 
-                (
-                    this.StatusId == input.StatusId ||
-                    (this.StatusId != null &&
-                    this.StatusId.Equals(input.StatusId))
-                ) && 
-                (
-                    this.AuthorId == input.AuthorId ||
-                    (this.AuthorId != null &&
-                    this.AuthorId.Equals(input.AuthorId))
-                ) && 
-                (
-                    this.DeveloperId == input.DeveloperId ||
-                    (this.DeveloperId != null &&
-                    this.DeveloperId.Equals(input.DeveloperId))
-                ) && 
-                (
-                    this.PriorityId == input.PriorityId ||
-                    (this.PriorityId != null &&
-                    this.PriorityId.Equals(input.PriorityId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -211,33 +158,20 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Offset != null)
-                    hashCode = hashCode * 59 + this.Offset.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.Subject != null)
-                    hashCode = hashCode * 59 + this.Subject.GetHashCode();
-                if (this.CreatedOn != null)
-                    hashCode = hashCode * 59 + this.CreatedOn.GetHashCode();
-                if (this.UpdatedOn != null)
-                    hashCode = hashCode * 59 + this.UpdatedOn.GetHashCode();
-                if (this.ClosedOn != null)
-                    hashCode = hashCode * 59 + this.ClosedOn.GetHashCode();
-                if (this.StartDate != null)
-                    hashCode = hashCode * 59 + this.StartDate.GetHashCode();
-                if (this.DueDate != null)
-                    hashCode = hashCode * 59 + this.DueDate.GetHashCode();
-                if (this.TrackerId != null)
-                    hashCode = hashCode * 59 + this.TrackerId.GetHashCode();
-                if (this.StatusId != null)
-                    hashCode = hashCode * 59 + this.StatusId.GetHashCode();
-                if (this.AuthorId != null)
-                    hashCode = hashCode * 59 + this.AuthorId.GetHashCode();
-                if (this.DeveloperId != null)
-                    hashCode = hashCode * 59 + this.DeveloperId.GetHashCode();
-                if (this.PriorityId != null)
-                    hashCode = hashCode * 59 + this.PriorityId.GetHashCode();
+                var hashCode = 41;
+                if (this.Offset != null) hashCode = hashCode * 59 + this.Offset.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.Subject != null) hashCode = hashCode * 59 + this.Subject.GetHashCode();
+                if (this.CreatedOn != null) hashCode = hashCode * 59 + this.CreatedOn.GetHashCode();
+                if (this.UpdatedOn != null) hashCode = hashCode * 59 + this.UpdatedOn.GetHashCode();
+                if (this.ClosedOn != null) hashCode = hashCode * 59 + this.ClosedOn.GetHashCode();
+                if (this.StartDate != null) hashCode = hashCode * 59 + this.StartDate.GetHashCode();
+                if (this.DueDate != null) hashCode = hashCode * 59 + this.DueDate.GetHashCode();
+                if (this.TrackerId != null) hashCode = hashCode * 59 + this.TrackerId.GetHashCode();
+                if (this.StatusId != null) hashCode = hashCode * 59 + this.StatusId.GetHashCode();
+                if (this.AuthorId != null) hashCode = hashCode * 59 + this.AuthorId.GetHashCode();
+                if (this.DeveloperId != null) hashCode = hashCode * 59 + this.DeveloperId.GetHashCode();
+                if (this.PriorityId != null) hashCode = hashCode * 59 + this.PriorityId.GetHashCode();
                 return hashCode;
             }
         }

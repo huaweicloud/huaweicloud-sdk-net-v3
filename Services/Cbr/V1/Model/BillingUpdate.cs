@@ -170,20 +170,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(BillingUpdate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ConsistentLevel != input.ConsistentLevel) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
 
-            return 
-                (
-                    this.ConsistentLevel == input.ConsistentLevel ||
-                    (this.ConsistentLevel != null &&
-                    this.ConsistentLevel.Equals(input.ConsistentLevel))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                );
+            return true;
         }
 
         /// <summary>
@@ -193,11 +184,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ConsistentLevel != null)
-                    hashCode = hashCode * 59 + this.ConsistentLevel.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.ConsistentLevel.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
                 return hashCode;
             }
         }

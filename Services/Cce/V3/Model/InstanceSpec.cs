@@ -98,52 +98,17 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(InstanceSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ClusterID != input.ClusterID || (this.ClusterID != null && !this.ClusterID.Equals(input.ClusterID))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.AddonTemplateName != input.AddonTemplateName || (this.AddonTemplateName != null && !this.AddonTemplateName.Equals(input.AddonTemplateName))) return false;
+            if (this.AddonTemplateType != input.AddonTemplateType || (this.AddonTemplateType != null && !this.AddonTemplateType.Equals(input.AddonTemplateType))) return false;
+            if (this.AddonTemplateLogo != input.AddonTemplateLogo || (this.AddonTemplateLogo != null && !this.AddonTemplateLogo.Equals(input.AddonTemplateLogo))) return false;
+            if (this.AddonTemplateLabels != input.AddonTemplateLabels || (this.AddonTemplateLabels != null && input.AddonTemplateLabels != null && !this.AddonTemplateLabels.SequenceEqual(input.AddonTemplateLabels))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Values != input.Values || (this.Values != null && input.Values != null && !this.Values.SequenceEqual(input.Values))) return false;
 
-            return 
-                (
-                    this.ClusterID == input.ClusterID ||
-                    (this.ClusterID != null &&
-                    this.ClusterID.Equals(input.ClusterID))
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.AddonTemplateName == input.AddonTemplateName ||
-                    (this.AddonTemplateName != null &&
-                    this.AddonTemplateName.Equals(input.AddonTemplateName))
-                ) && 
-                (
-                    this.AddonTemplateType == input.AddonTemplateType ||
-                    (this.AddonTemplateType != null &&
-                    this.AddonTemplateType.Equals(input.AddonTemplateType))
-                ) && 
-                (
-                    this.AddonTemplateLogo == input.AddonTemplateLogo ||
-                    (this.AddonTemplateLogo != null &&
-                    this.AddonTemplateLogo.Equals(input.AddonTemplateLogo))
-                ) && 
-                (
-                    this.AddonTemplateLabels == input.AddonTemplateLabels ||
-                    this.AddonTemplateLabels != null &&
-                    input.AddonTemplateLabels != null &&
-                    this.AddonTemplateLabels.SequenceEqual(input.AddonTemplateLabels)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Values == input.Values ||
-                    this.Values != null &&
-                    input.Values != null &&
-                    this.Values.SequenceEqual(input.Values)
-                );
+            return true;
         }
 
         /// <summary>
@@ -153,23 +118,15 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ClusterID != null)
-                    hashCode = hashCode * 59 + this.ClusterID.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.AddonTemplateName != null)
-                    hashCode = hashCode * 59 + this.AddonTemplateName.GetHashCode();
-                if (this.AddonTemplateType != null)
-                    hashCode = hashCode * 59 + this.AddonTemplateType.GetHashCode();
-                if (this.AddonTemplateLogo != null)
-                    hashCode = hashCode * 59 + this.AddonTemplateLogo.GetHashCode();
-                if (this.AddonTemplateLabels != null)
-                    hashCode = hashCode * 59 + this.AddonTemplateLabels.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Values != null)
-                    hashCode = hashCode * 59 + this.Values.GetHashCode();
+                var hashCode = 41;
+                if (this.ClusterID != null) hashCode = hashCode * 59 + this.ClusterID.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.AddonTemplateName != null) hashCode = hashCode * 59 + this.AddonTemplateName.GetHashCode();
+                if (this.AddonTemplateType != null) hashCode = hashCode * 59 + this.AddonTemplateType.GetHashCode();
+                if (this.AddonTemplateLogo != null) hashCode = hashCode * 59 + this.AddonTemplateLogo.GetHashCode();
+                if (this.AddonTemplateLabels != null) hashCode = hashCode * 59 + this.AddonTemplateLabels.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Values != null) hashCode = hashCode * 59 + this.Values.GetHashCode();
                 return hashCode;
             }
         }

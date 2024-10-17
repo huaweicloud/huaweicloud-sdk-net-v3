@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         /// </summary>
         public bool Equals(ObsBucket input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Bucket != input.Bucket || (this.Bucket != null && !this.Bucket.Equals(input.Bucket))) return false;
+            if (this.Location != input.Location || (this.Location != null && !this.Location.Equals(input.Location))) return false;
+            if (this.CreationDate != input.CreationDate || (this.CreationDate != null && !this.CreationDate.Equals(input.CreationDate))) return false;
+            if (this.IsAuthorized != input.IsAuthorized || (this.IsAuthorized != null && !this.IsAuthorized.Equals(input.IsAuthorized))) return false;
 
-            return 
-                (
-                    this.Bucket == input.Bucket ||
-                    (this.Bucket != null &&
-                    this.Bucket.Equals(input.Bucket))
-                ) && 
-                (
-                    this.Location == input.Location ||
-                    (this.Location != null &&
-                    this.Location.Equals(input.Location))
-                ) && 
-                (
-                    this.CreationDate == input.CreationDate ||
-                    (this.CreationDate != null &&
-                    this.CreationDate.Equals(input.CreationDate))
-                ) && 
-                (
-                    this.IsAuthorized == input.IsAuthorized ||
-                    (this.IsAuthorized != null &&
-                    this.IsAuthorized.Equals(input.IsAuthorized))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Bucket != null)
-                    hashCode = hashCode * 59 + this.Bucket.GetHashCode();
-                if (this.Location != null)
-                    hashCode = hashCode * 59 + this.Location.GetHashCode();
-                if (this.CreationDate != null)
-                    hashCode = hashCode * 59 + this.CreationDate.GetHashCode();
-                if (this.IsAuthorized != null)
-                    hashCode = hashCode * 59 + this.IsAuthorized.GetHashCode();
+                var hashCode = 41;
+                if (this.Bucket != null) hashCode = hashCode * 59 + this.Bucket.GetHashCode();
+                if (this.Location != null) hashCode = hashCode * 59 + this.Location.GetHashCode();
+                if (this.CreationDate != null) hashCode = hashCode * 59 + this.CreationDate.GetHashCode();
+                if (this.IsAuthorized != null) hashCode = hashCode * 59 + this.IsAuthorized.GetHashCode();
                 return hashCode;
             }
         }

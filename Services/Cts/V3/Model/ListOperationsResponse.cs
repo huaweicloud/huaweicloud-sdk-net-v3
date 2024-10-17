@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         /// </summary>
         public bool Equals(ListOperationsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Operations != input.Operations || (this.Operations != null && input.Operations != null && !this.Operations.SequenceEqual(input.Operations))) return false;
 
-            return 
-                (
-                    this.Operations == input.Operations ||
-                    this.Operations != null &&
-                    input.Operations != null &&
-                    this.Operations.SequenceEqual(input.Operations)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Operations != null)
-                    hashCode = hashCode * 59 + this.Operations.GetHashCode();
+                var hashCode = 41;
+                if (this.Operations != null) hashCode = hashCode * 59 + this.Operations.GetHashCode();
                 return hashCode;
             }
         }

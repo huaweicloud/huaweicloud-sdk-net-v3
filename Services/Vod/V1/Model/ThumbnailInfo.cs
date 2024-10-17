@@ -77,38 +77,14 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(ThumbnailInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Sample != input.Sample || (this.Sample != null && input.Sample != null && !this.Sample.SequenceEqual(input.Sample))) return false;
+            if (this.Dots != input.Dots || (this.Dots != null && input.Dots != null && !this.Dots.SequenceEqual(input.Dots))) return false;
+            if (this.Quantity != input.Quantity || (this.Quantity != null && input.Quantity != null && !this.Quantity.SequenceEqual(input.Quantity))) return false;
+            if (this.ExecDesc != input.ExecDesc || (this.ExecDesc != null && !this.ExecDesc.Equals(input.ExecDesc))) return false;
+            if (this.ThumbnailStatus != input.ThumbnailStatus || (this.ThumbnailStatus != null && !this.ThumbnailStatus.Equals(input.ThumbnailStatus))) return false;
 
-            return 
-                (
-                    this.Sample == input.Sample ||
-                    this.Sample != null &&
-                    input.Sample != null &&
-                    this.Sample.SequenceEqual(input.Sample)
-                ) && 
-                (
-                    this.Dots == input.Dots ||
-                    this.Dots != null &&
-                    input.Dots != null &&
-                    this.Dots.SequenceEqual(input.Dots)
-                ) && 
-                (
-                    this.Quantity == input.Quantity ||
-                    this.Quantity != null &&
-                    input.Quantity != null &&
-                    this.Quantity.SequenceEqual(input.Quantity)
-                ) && 
-                (
-                    this.ExecDesc == input.ExecDesc ||
-                    (this.ExecDesc != null &&
-                    this.ExecDesc.Equals(input.ExecDesc))
-                ) && 
-                (
-                    this.ThumbnailStatus == input.ThumbnailStatus ||
-                    (this.ThumbnailStatus != null &&
-                    this.ThumbnailStatus.Equals(input.ThumbnailStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -118,17 +94,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Sample != null)
-                    hashCode = hashCode * 59 + this.Sample.GetHashCode();
-                if (this.Dots != null)
-                    hashCode = hashCode * 59 + this.Dots.GetHashCode();
-                if (this.Quantity != null)
-                    hashCode = hashCode * 59 + this.Quantity.GetHashCode();
-                if (this.ExecDesc != null)
-                    hashCode = hashCode * 59 + this.ExecDesc.GetHashCode();
-                if (this.ThumbnailStatus != null)
-                    hashCode = hashCode * 59 + this.ThumbnailStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.Sample != null) hashCode = hashCode * 59 + this.Sample.GetHashCode();
+                if (this.Dots != null) hashCode = hashCode * 59 + this.Dots.GetHashCode();
+                if (this.Quantity != null) hashCode = hashCode * 59 + this.Quantity.GetHashCode();
+                if (this.ExecDesc != null) hashCode = hashCode * 59 + this.ExecDesc.GetHashCode();
+                if (this.ThumbnailStatus != null) hashCode = hashCode * 59 + this.ThumbnailStatus.GetHashCode();
                 return hashCode;
             }
         }

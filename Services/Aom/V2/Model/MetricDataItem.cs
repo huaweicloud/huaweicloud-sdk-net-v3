@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(MetricDataItem input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CollectTime != input.CollectTime || (this.CollectTime != null && !this.CollectTime.Equals(input.CollectTime))) return false;
+            if (this.Metric != input.Metric || (this.Metric != null && !this.Metric.Equals(input.Metric))) return false;
+            if (this.Values != input.Values || (this.Values != null && input.Values != null && !this.Values.SequenceEqual(input.Values))) return false;
 
-            return 
-                (
-                    this.CollectTime == input.CollectTime ||
-                    (this.CollectTime != null &&
-                    this.CollectTime.Equals(input.CollectTime))
-                ) && 
-                (
-                    this.Metric == input.Metric ||
-                    (this.Metric != null &&
-                    this.Metric.Equals(input.Metric))
-                ) && 
-                (
-                    this.Values == input.Values ||
-                    this.Values != null &&
-                    input.Values != null &&
-                    this.Values.SequenceEqual(input.Values)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CollectTime != null)
-                    hashCode = hashCode * 59 + this.CollectTime.GetHashCode();
-                if (this.Metric != null)
-                    hashCode = hashCode * 59 + this.Metric.GetHashCode();
-                if (this.Values != null)
-                    hashCode = hashCode * 59 + this.Values.GetHashCode();
+                var hashCode = 41;
+                if (this.CollectTime != null) hashCode = hashCode * 59 + this.CollectTime.GetHashCode();
+                if (this.Metric != null) hashCode = hashCode * 59 + this.Metric.GetHashCode();
+                if (this.Values != null) hashCode = hashCode * 59 + this.Values.GetHashCode();
                 return hashCode;
             }
         }

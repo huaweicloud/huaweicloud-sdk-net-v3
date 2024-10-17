@@ -233,66 +233,20 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(ShowLogConvergeConfigResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.MemberAccountId != input.MemberAccountId || (this.MemberAccountId != null && !this.MemberAccountId.Equals(input.MemberAccountId))) return false;
+            if (this.MemberProjectId != input.MemberProjectId || (this.MemberProjectId != null && !this.MemberProjectId.Equals(input.MemberProjectId))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.OrganizationId != input.OrganizationId || (this.OrganizationId != null && !this.OrganizationId.Equals(input.OrganizationId))) return false;
+            if (this.ManagementAccountId != input.ManagementAccountId || (this.ManagementAccountId != null && !this.ManagementAccountId.Equals(input.ManagementAccountId))) return false;
+            if (this.ManagementProjectId != input.ManagementProjectId || (this.ManagementProjectId != null && !this.ManagementProjectId.Equals(input.ManagementProjectId))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.LogMappingConfig != input.LogMappingConfig || (this.LogMappingConfig != null && input.LogMappingConfig != null && !this.LogMappingConfig.SequenceEqual(input.LogMappingConfig))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.MemberAccountId == input.MemberAccountId ||
-                    (this.MemberAccountId != null &&
-                    this.MemberAccountId.Equals(input.MemberAccountId))
-                ) && 
-                (
-                    this.MemberProjectId == input.MemberProjectId ||
-                    (this.MemberProjectId != null &&
-                    this.MemberProjectId.Equals(input.MemberProjectId))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.OrganizationId == input.OrganizationId ||
-                    (this.OrganizationId != null &&
-                    this.OrganizationId.Equals(input.OrganizationId))
-                ) && 
-                (
-                    this.ManagementAccountId == input.ManagementAccountId ||
-                    (this.ManagementAccountId != null &&
-                    this.ManagementAccountId.Equals(input.ManagementAccountId))
-                ) && 
-                (
-                    this.ManagementProjectId == input.ManagementProjectId ||
-                    (this.ManagementProjectId != null &&
-                    this.ManagementProjectId.Equals(input.ManagementProjectId))
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.LogMappingConfig == input.LogMappingConfig ||
-                    this.LogMappingConfig != null &&
-                    input.LogMappingConfig != null &&
-                    this.LogMappingConfig.SequenceEqual(input.LogMappingConfig)
-                );
+            return true;
         }
 
         /// <summary>
@@ -302,29 +256,18 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.MemberAccountId != null)
-                    hashCode = hashCode * 59 + this.MemberAccountId.GetHashCode();
-                if (this.MemberProjectId != null)
-                    hashCode = hashCode * 59 + this.MemberProjectId.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.OrganizationId != null)
-                    hashCode = hashCode * 59 + this.OrganizationId.GetHashCode();
-                if (this.ManagementAccountId != null)
-                    hashCode = hashCode * 59 + this.ManagementAccountId.GetHashCode();
-                if (this.ManagementProjectId != null)
-                    hashCode = hashCode * 59 + this.ManagementProjectId.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.LogMappingConfig != null)
-                    hashCode = hashCode * 59 + this.LogMappingConfig.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.MemberAccountId != null) hashCode = hashCode * 59 + this.MemberAccountId.GetHashCode();
+                if (this.MemberProjectId != null) hashCode = hashCode * 59 + this.MemberProjectId.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.OrganizationId != null) hashCode = hashCode * 59 + this.OrganizationId.GetHashCode();
+                if (this.ManagementAccountId != null) hashCode = hashCode * 59 + this.ManagementAccountId.GetHashCode();
+                if (this.ManagementProjectId != null) hashCode = hashCode * 59 + this.ManagementProjectId.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.LogMappingConfig != null) hashCode = hashCode * 59 + this.LogMappingConfig.GetHashCode();
                 return hashCode;
             }
         }

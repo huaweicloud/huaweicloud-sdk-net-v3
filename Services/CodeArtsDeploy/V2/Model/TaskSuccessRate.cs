@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(TaskSuccessRate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TaskId != input.TaskId || (this.TaskId != null && !this.TaskId.Equals(input.TaskId))) return false;
+            if (this.TaskName != input.TaskName || (this.TaskName != null && !this.TaskName.Equals(input.TaskName))) return false;
+            if (this.SuccessRate != input.SuccessRate || (this.SuccessRate != null && !this.SuccessRate.Equals(input.SuccessRate))) return false;
+            if (this.RecordCount != input.RecordCount || (this.RecordCount != null && !this.RecordCount.Equals(input.RecordCount))) return false;
+            if (this.SuccessRecordCount != input.SuccessRecordCount || (this.SuccessRecordCount != null && !this.SuccessRecordCount.Equals(input.SuccessRecordCount))) return false;
 
-            return 
-                (
-                    this.TaskId == input.TaskId ||
-                    (this.TaskId != null &&
-                    this.TaskId.Equals(input.TaskId))
-                ) && 
-                (
-                    this.TaskName == input.TaskName ||
-                    (this.TaskName != null &&
-                    this.TaskName.Equals(input.TaskName))
-                ) && 
-                (
-                    this.SuccessRate == input.SuccessRate ||
-                    (this.SuccessRate != null &&
-                    this.SuccessRate.Equals(input.SuccessRate))
-                ) && 
-                (
-                    this.RecordCount == input.RecordCount ||
-                    (this.RecordCount != null &&
-                    this.RecordCount.Equals(input.RecordCount))
-                ) && 
-                (
-                    this.SuccessRecordCount == input.SuccessRecordCount ||
-                    (this.SuccessRecordCount != null &&
-                    this.SuccessRecordCount.Equals(input.SuccessRecordCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TaskId != null)
-                    hashCode = hashCode * 59 + this.TaskId.GetHashCode();
-                if (this.TaskName != null)
-                    hashCode = hashCode * 59 + this.TaskName.GetHashCode();
-                if (this.SuccessRate != null)
-                    hashCode = hashCode * 59 + this.SuccessRate.GetHashCode();
-                if (this.RecordCount != null)
-                    hashCode = hashCode * 59 + this.RecordCount.GetHashCode();
-                if (this.SuccessRecordCount != null)
-                    hashCode = hashCode * 59 + this.SuccessRecordCount.GetHashCode();
+                var hashCode = 41;
+                if (this.TaskId != null) hashCode = hashCode * 59 + this.TaskId.GetHashCode();
+                if (this.TaskName != null) hashCode = hashCode * 59 + this.TaskName.GetHashCode();
+                if (this.SuccessRate != null) hashCode = hashCode * 59 + this.SuccessRate.GetHashCode();
+                if (this.RecordCount != null) hashCode = hashCode * 59 + this.RecordCount.GetHashCode();
+                if (this.SuccessRecordCount != null) hashCode = hashCode * 59 + this.SuccessRecordCount.GetHashCode();
                 return hashCode;
             }
         }

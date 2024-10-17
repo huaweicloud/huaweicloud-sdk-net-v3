@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(EipCountRespData input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ObjectId != input.ObjectId || (this.ObjectId != null && !this.ObjectId.Equals(input.ObjectId))) return false;
+            if (this.EipTotal != input.EipTotal || (this.EipTotal != null && !this.EipTotal.Equals(input.EipTotal))) return false;
+            if (this.EipProtected != input.EipProtected || (this.EipProtected != null && !this.EipProtected.Equals(input.EipProtected))) return false;
+            if (this.EipProtectedSelf != input.EipProtectedSelf || (this.EipProtectedSelf != null && !this.EipProtectedSelf.Equals(input.EipProtectedSelf))) return false;
 
-            return 
-                (
-                    this.ObjectId == input.ObjectId ||
-                    (this.ObjectId != null &&
-                    this.ObjectId.Equals(input.ObjectId))
-                ) && 
-                (
-                    this.EipTotal == input.EipTotal ||
-                    (this.EipTotal != null &&
-                    this.EipTotal.Equals(input.EipTotal))
-                ) && 
-                (
-                    this.EipProtected == input.EipProtected ||
-                    (this.EipProtected != null &&
-                    this.EipProtected.Equals(input.EipProtected))
-                ) && 
-                (
-                    this.EipProtectedSelf == input.EipProtectedSelf ||
-                    (this.EipProtectedSelf != null &&
-                    this.EipProtectedSelf.Equals(input.EipProtectedSelf))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ObjectId != null)
-                    hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
-                if (this.EipTotal != null)
-                    hashCode = hashCode * 59 + this.EipTotal.GetHashCode();
-                if (this.EipProtected != null)
-                    hashCode = hashCode * 59 + this.EipProtected.GetHashCode();
-                if (this.EipProtectedSelf != null)
-                    hashCode = hashCode * 59 + this.EipProtectedSelf.GetHashCode();
+                var hashCode = 41;
+                if (this.ObjectId != null) hashCode = hashCode * 59 + this.ObjectId.GetHashCode();
+                if (this.EipTotal != null) hashCode = hashCode * 59 + this.EipTotal.GetHashCode();
+                if (this.EipProtected != null) hashCode = hashCode * 59 + this.EipProtected.GetHashCode();
+                if (this.EipProtectedSelf != null) hashCode = hashCode * 59 + this.EipProtectedSelf.GetHashCode();
                 return hashCode;
             }
         }

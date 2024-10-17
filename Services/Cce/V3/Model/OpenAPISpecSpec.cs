@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(OpenAPISpecSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Eip != input.Eip || (this.Eip != null && !this.Eip.Equals(input.Eip))) return false;
+            if (this.IsDynamic != input.IsDynamic || (this.IsDynamic != null && !this.IsDynamic.Equals(input.IsDynamic))) return false;
 
-            return 
-                (
-                    this.Eip == input.Eip ||
-                    (this.Eip != null &&
-                    this.Eip.Equals(input.Eip))
-                ) && 
-                (
-                    this.IsDynamic == input.IsDynamic ||
-                    (this.IsDynamic != null &&
-                    this.IsDynamic.Equals(input.IsDynamic))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Eip != null)
-                    hashCode = hashCode * 59 + this.Eip.GetHashCode();
-                if (this.IsDynamic != null)
-                    hashCode = hashCode * 59 + this.IsDynamic.GetHashCode();
+                var hashCode = 41;
+                if (this.Eip != null) hashCode = hashCode * 59 + this.Eip.GetHashCode();
+                if (this.IsDynamic != null) hashCode = hashCode * 59 + this.IsDynamic.GetHashCode();
                 return hashCode;
             }
         }

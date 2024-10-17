@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(UpdateFunctionReservedInstancesCountRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.IdleMode != input.IdleMode || (this.IdleMode != null && !this.IdleMode.Equals(input.IdleMode))) return false;
+            if (this.TacticsConfig != input.TacticsConfig || (this.TacticsConfig != null && !this.TacticsConfig.Equals(input.TacticsConfig))) return false;
 
-            return 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.IdleMode == input.IdleMode ||
-                    (this.IdleMode != null &&
-                    this.IdleMode.Equals(input.IdleMode))
-                ) && 
-                (
-                    this.TacticsConfig == input.TacticsConfig ||
-                    (this.TacticsConfig != null &&
-                    this.TacticsConfig.Equals(input.TacticsConfig))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.IdleMode != null)
-                    hashCode = hashCode * 59 + this.IdleMode.GetHashCode();
-                if (this.TacticsConfig != null)
-                    hashCode = hashCode * 59 + this.TacticsConfig.GetHashCode();
+                var hashCode = 41;
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.IdleMode != null) hashCode = hashCode * 59 + this.IdleMode.GetHashCode();
+                if (this.TacticsConfig != null) hashCode = hashCode * 59 + this.TacticsConfig.GetHashCode();
                 return hashCode;
             }
         }

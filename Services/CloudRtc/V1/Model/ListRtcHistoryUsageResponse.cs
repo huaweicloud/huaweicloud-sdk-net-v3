@@ -57,21 +57,11 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         /// </summary>
         public bool Equals(ListRtcHistoryUsageResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Usage != input.Usage || (this.Usage != null && input.Usage != null && !this.Usage.SequenceEqual(input.Usage))) return false;
+            if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
-            return 
-                (
-                    this.Usage == input.Usage ||
-                    this.Usage != null &&
-                    input.Usage != null &&
-                    this.Usage.SequenceEqual(input.Usage)
-                ) && 
-                (
-                    this.XRequestId == input.XRequestId ||
-                    (this.XRequestId != null &&
-                    this.XRequestId.Equals(input.XRequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +71,9 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Usage != null)
-                    hashCode = hashCode * 59 + this.Usage.GetHashCode();
-                if (this.XRequestId != null)
-                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.Usage != null) hashCode = hashCode * 59 + this.Usage.GetHashCode();
+                if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

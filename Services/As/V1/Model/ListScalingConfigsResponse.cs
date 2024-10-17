@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(ListScalingConfigsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TotalNumber != input.TotalNumber || (this.TotalNumber != null && !this.TotalNumber.Equals(input.TotalNumber))) return false;
+            if (this.StartNumber != input.StartNumber || (this.StartNumber != null && !this.StartNumber.Equals(input.StartNumber))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.ScalingConfigurations != input.ScalingConfigurations || (this.ScalingConfigurations != null && input.ScalingConfigurations != null && !this.ScalingConfigurations.SequenceEqual(input.ScalingConfigurations))) return false;
 
-            return 
-                (
-                    this.TotalNumber == input.TotalNumber ||
-                    (this.TotalNumber != null &&
-                    this.TotalNumber.Equals(input.TotalNumber))
-                ) && 
-                (
-                    this.StartNumber == input.StartNumber ||
-                    (this.StartNumber != null &&
-                    this.StartNumber.Equals(input.StartNumber))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.ScalingConfigurations == input.ScalingConfigurations ||
-                    this.ScalingConfigurations != null &&
-                    input.ScalingConfigurations != null &&
-                    this.ScalingConfigurations.SequenceEqual(input.ScalingConfigurations)
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TotalNumber != null)
-                    hashCode = hashCode * 59 + this.TotalNumber.GetHashCode();
-                if (this.StartNumber != null)
-                    hashCode = hashCode * 59 + this.StartNumber.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.ScalingConfigurations != null)
-                    hashCode = hashCode * 59 + this.ScalingConfigurations.GetHashCode();
+                var hashCode = 41;
+                if (this.TotalNumber != null) hashCode = hashCode * 59 + this.TotalNumber.GetHashCode();
+                if (this.StartNumber != null) hashCode = hashCode * 59 + this.StartNumber.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                if (this.ScalingConfigurations != null) hashCode = hashCode * 59 + this.ScalingConfigurations.GetHashCode();
                 return hashCode;
             }
         }

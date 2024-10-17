@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(ListProjectGeipBindingsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.GeipBindings != input.GeipBindings || (this.GeipBindings != null && input.GeipBindings != null && !this.GeipBindings.SequenceEqual(input.GeipBindings))) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
 
-            return 
-                (
-                    this.GeipBindings == input.GeipBindings ||
-                    this.GeipBindings != null &&
-                    input.GeipBindings != null &&
-                    this.GeipBindings.SequenceEqual(input.GeipBindings)
-                ) && 
-                (
-                    this.RequestId == input.RequestId ||
-                    (this.RequestId != null &&
-                    this.RequestId.Equals(input.RequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.GeipBindings != null)
-                    hashCode = hashCode * 59 + this.GeipBindings.GetHashCode();
-                if (this.RequestId != null)
-                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.GeipBindings != null) hashCode = hashCode * 59 + this.GeipBindings.GetHashCode();
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
                 return hashCode;
             }
         }

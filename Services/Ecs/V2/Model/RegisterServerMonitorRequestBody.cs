@@ -157,15 +157,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(RegisterServerMonitorRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MonitorMetrics != input.MonitorMetrics) return false;
 
-            return 
-                (
-                    this.MonitorMetrics == input.MonitorMetrics ||
-                    (this.MonitorMetrics != null &&
-                    this.MonitorMetrics.Equals(input.MonitorMetrics))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,9 +170,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MonitorMetrics != null)
-                    hashCode = hashCode * 59 + this.MonitorMetrics.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.MonitorMetrics.GetHashCode();
                 return hashCode;
             }
         }

@@ -305,35 +305,14 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(UpdateLifeCycleHookOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LifecycleHookType != input.LifecycleHookType) return false;
+            if (this.DefaultResult != input.DefaultResult) return false;
+            if (this.DefaultTimeout != input.DefaultTimeout || (this.DefaultTimeout != null && !this.DefaultTimeout.Equals(input.DefaultTimeout))) return false;
+            if (this.NotificationTopicUrn != input.NotificationTopicUrn || (this.NotificationTopicUrn != null && !this.NotificationTopicUrn.Equals(input.NotificationTopicUrn))) return false;
+            if (this.NotificationMetadata != input.NotificationMetadata || (this.NotificationMetadata != null && !this.NotificationMetadata.Equals(input.NotificationMetadata))) return false;
 
-            return 
-                (
-                    this.LifecycleHookType == input.LifecycleHookType ||
-                    (this.LifecycleHookType != null &&
-                    this.LifecycleHookType.Equals(input.LifecycleHookType))
-                ) && 
-                (
-                    this.DefaultResult == input.DefaultResult ||
-                    (this.DefaultResult != null &&
-                    this.DefaultResult.Equals(input.DefaultResult))
-                ) && 
-                (
-                    this.DefaultTimeout == input.DefaultTimeout ||
-                    (this.DefaultTimeout != null &&
-                    this.DefaultTimeout.Equals(input.DefaultTimeout))
-                ) && 
-                (
-                    this.NotificationTopicUrn == input.NotificationTopicUrn ||
-                    (this.NotificationTopicUrn != null &&
-                    this.NotificationTopicUrn.Equals(input.NotificationTopicUrn))
-                ) && 
-                (
-                    this.NotificationMetadata == input.NotificationMetadata ||
-                    (this.NotificationMetadata != null &&
-                    this.NotificationMetadata.Equals(input.NotificationMetadata))
-                );
+            return true;
         }
 
         /// <summary>
@@ -343,17 +322,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LifecycleHookType != null)
-                    hashCode = hashCode * 59 + this.LifecycleHookType.GetHashCode();
-                if (this.DefaultResult != null)
-                    hashCode = hashCode * 59 + this.DefaultResult.GetHashCode();
-                if (this.DefaultTimeout != null)
-                    hashCode = hashCode * 59 + this.DefaultTimeout.GetHashCode();
-                if (this.NotificationTopicUrn != null)
-                    hashCode = hashCode * 59 + this.NotificationTopicUrn.GetHashCode();
-                if (this.NotificationMetadata != null)
-                    hashCode = hashCode * 59 + this.NotificationMetadata.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.LifecycleHookType.GetHashCode();
+                hashCode = hashCode * 59 + this.DefaultResult.GetHashCode();
+                if (this.DefaultTimeout != null) hashCode = hashCode * 59 + this.DefaultTimeout.GetHashCode();
+                if (this.NotificationTopicUrn != null) hashCode = hashCode * 59 + this.NotificationTopicUrn.GetHashCode();
+                if (this.NotificationMetadata != null) hashCode = hashCode * 59 + this.NotificationMetadata.GetHashCode();
                 return hashCode;
             }
         }

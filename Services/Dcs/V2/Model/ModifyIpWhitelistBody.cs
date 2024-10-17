@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ModifyIpWhitelistBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.EnableWhitelist != input.EnableWhitelist || (this.EnableWhitelist != null && !this.EnableWhitelist.Equals(input.EnableWhitelist))) return false;
+            if (this.Whitelist != input.Whitelist || (this.Whitelist != null && input.Whitelist != null && !this.Whitelist.SequenceEqual(input.Whitelist))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.EnableWhitelist == input.EnableWhitelist ||
-                    (this.EnableWhitelist != null &&
-                    this.EnableWhitelist.Equals(input.EnableWhitelist))
-                ) && 
-                (
-                    this.Whitelist == input.Whitelist ||
-                    this.Whitelist != null &&
-                    input.Whitelist != null &&
-                    this.Whitelist.SequenceEqual(input.Whitelist)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.EnableWhitelist != null)
-                    hashCode = hashCode * 59 + this.EnableWhitelist.GetHashCode();
-                if (this.Whitelist != null)
-                    hashCode = hashCode * 59 + this.Whitelist.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.EnableWhitelist != null) hashCode = hashCode * 59 + this.EnableWhitelist.GetHashCode();
+                if (this.Whitelist != null) hashCode = hashCode * 59 + this.Whitelist.GetHashCode();
                 return hashCode;
             }
         }

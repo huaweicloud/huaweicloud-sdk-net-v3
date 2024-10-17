@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ShowInformationAboutDatabaseProxyResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Proxy != input.Proxy || (this.Proxy != null && !this.Proxy.Equals(input.Proxy))) return false;
+            if (this.MasterInstance != input.MasterInstance || (this.MasterInstance != null && !this.MasterInstance.Equals(input.MasterInstance))) return false;
+            if (this.ReadonlyInstances != input.ReadonlyInstances || (this.ReadonlyInstances != null && input.ReadonlyInstances != null && !this.ReadonlyInstances.SequenceEqual(input.ReadonlyInstances))) return false;
 
-            return 
-                (
-                    this.Proxy == input.Proxy ||
-                    (this.Proxy != null &&
-                    this.Proxy.Equals(input.Proxy))
-                ) && 
-                (
-                    this.MasterInstance == input.MasterInstance ||
-                    (this.MasterInstance != null &&
-                    this.MasterInstance.Equals(input.MasterInstance))
-                ) && 
-                (
-                    this.ReadonlyInstances == input.ReadonlyInstances ||
-                    this.ReadonlyInstances != null &&
-                    input.ReadonlyInstances != null &&
-                    this.ReadonlyInstances.SequenceEqual(input.ReadonlyInstances)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Proxy != null)
-                    hashCode = hashCode * 59 + this.Proxy.GetHashCode();
-                if (this.MasterInstance != null)
-                    hashCode = hashCode * 59 + this.MasterInstance.GetHashCode();
-                if (this.ReadonlyInstances != null)
-                    hashCode = hashCode * 59 + this.ReadonlyInstances.GetHashCode();
+                var hashCode = 41;
+                if (this.Proxy != null) hashCode = hashCode * 59 + this.Proxy.GetHashCode();
+                if (this.MasterInstance != null) hashCode = hashCode * 59 + this.MasterInstance.GetHashCode();
+                if (this.ReadonlyInstances != null) hashCode = hashCode * 59 + this.ReadonlyInstances.GetHashCode();
                 return hashCode;
             }
         }

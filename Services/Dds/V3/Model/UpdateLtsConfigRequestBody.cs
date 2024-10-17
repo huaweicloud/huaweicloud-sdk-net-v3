@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(UpdateLtsConfigRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LtsConfigs != input.LtsConfigs || (this.LtsConfigs != null && input.LtsConfigs != null && !this.LtsConfigs.SequenceEqual(input.LtsConfigs))) return false;
 
-            return 
-                (
-                    this.LtsConfigs == input.LtsConfigs ||
-                    this.LtsConfigs != null &&
-                    input.LtsConfigs != null &&
-                    this.LtsConfigs.SequenceEqual(input.LtsConfigs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LtsConfigs != null)
-                    hashCode = hashCode * 59 + this.LtsConfigs.GetHashCode();
+                var hashCode = 41;
+                if (this.LtsConfigs != null) hashCode = hashCode * 59 + this.LtsConfigs.GetHashCode();
                 return hashCode;
             }
         }

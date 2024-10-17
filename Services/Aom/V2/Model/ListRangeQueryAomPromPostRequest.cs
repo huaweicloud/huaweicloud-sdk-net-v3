@@ -74,30 +74,13 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(ListRangeQueryAomPromPostRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Query != input.Query || (this.Query != null && !this.Query.Equals(input.Query))) return false;
+            if (this.Start != input.Start || (this.Start != null && !this.Start.Equals(input.Start))) return false;
+            if (this.End != input.End || (this.End != null && !this.End.Equals(input.End))) return false;
+            if (this.Step != input.Step || (this.Step != null && !this.Step.Equals(input.Step))) return false;
 
-            return 
-                (
-                    this.Query == input.Query ||
-                    (this.Query != null &&
-                    this.Query.Equals(input.Query))
-                ) && 
-                (
-                    this.Start == input.Start ||
-                    (this.Start != null &&
-                    this.Start.Equals(input.Start))
-                ) && 
-                (
-                    this.End == input.End ||
-                    (this.End != null &&
-                    this.End.Equals(input.End))
-                ) && 
-                (
-                    this.Step == input.Step ||
-                    (this.Step != null &&
-                    this.Step.Equals(input.Step))
-                );
+            return true;
         }
 
         /// <summary>
@@ -107,15 +90,11 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Query != null)
-                    hashCode = hashCode * 59 + this.Query.GetHashCode();
-                if (this.Start != null)
-                    hashCode = hashCode * 59 + this.Start.GetHashCode();
-                if (this.End != null)
-                    hashCode = hashCode * 59 + this.End.GetHashCode();
-                if (this.Step != null)
-                    hashCode = hashCode * 59 + this.Step.GetHashCode();
+                var hashCode = 41;
+                if (this.Query != null) hashCode = hashCode * 59 + this.Query.GetHashCode();
+                if (this.Start != null) hashCode = hashCode * 59 + this.Start.GetHashCode();
+                if (this.End != null) hashCode = hashCode * 59 + this.End.GetHashCode();
+                if (this.Step != null) hashCode = hashCode * 59 + this.Step.GetHashCode();
                 return hashCode;
             }
         }

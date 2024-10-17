@@ -196,31 +196,13 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(MuteConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EndsAt != input.EndsAt || (this.EndsAt != null && !this.EndsAt.Equals(input.EndsAt))) return false;
+            if (this.Scope != input.Scope || (this.Scope != null && input.Scope != null && !this.Scope.SequenceEqual(input.Scope))) return false;
+            if (this.StartsAt != input.StartsAt || (this.StartsAt != null && !this.StartsAt.Equals(input.StartsAt))) return false;
+            if (this.Type != input.Type) return false;
 
-            return 
-                (
-                    this.EndsAt == input.EndsAt ||
-                    (this.EndsAt != null &&
-                    this.EndsAt.Equals(input.EndsAt))
-                ) && 
-                (
-                    this.Scope == input.Scope ||
-                    this.Scope != null &&
-                    input.Scope != null &&
-                    this.Scope.SequenceEqual(input.Scope)
-                ) && 
-                (
-                    this.StartsAt == input.StartsAt ||
-                    (this.StartsAt != null &&
-                    this.StartsAt.Equals(input.StartsAt))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                );
+            return true;
         }
 
         /// <summary>
@@ -230,15 +212,11 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EndsAt != null)
-                    hashCode = hashCode * 59 + this.EndsAt.GetHashCode();
-                if (this.Scope != null)
-                    hashCode = hashCode * 59 + this.Scope.GetHashCode();
-                if (this.StartsAt != null)
-                    hashCode = hashCode * 59 + this.StartsAt.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                var hashCode = 41;
+                if (this.EndsAt != null) hashCode = hashCode * 59 + this.EndsAt.GetHashCode();
+                if (this.Scope != null) hashCode = hashCode * 59 + this.Scope.GetHashCode();
+                if (this.StartsAt != null) hashCode = hashCode * 59 + this.StartsAt.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

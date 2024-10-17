@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(ServerGroupMember input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceUuid != input.InstanceUuid || (this.InstanceUuid != null && !this.InstanceUuid.Equals(input.InstanceUuid))) return false;
 
-            return 
-                (
-                    this.InstanceUuid == input.InstanceUuid ||
-                    (this.InstanceUuid != null &&
-                    this.InstanceUuid.Equals(input.InstanceUuid))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceUuid != null)
-                    hashCode = hashCode * 59 + this.InstanceUuid.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceUuid != null) hashCode = hashCode * 59 + this.InstanceUuid.GetHashCode();
                 return hashCode;
             }
         }

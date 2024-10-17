@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(PicInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PicName != input.PicName || (this.PicName != null && !this.PicName.Equals(input.PicName))) return false;
 
-            return 
-                (
-                    this.PicName == input.PicName ||
-                    (this.PicName != null &&
-                    this.PicName.Equals(input.PicName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PicName != null)
-                    hashCode = hashCode * 59 + this.PicName.GetHashCode();
+                var hashCode = 41;
+                if (this.PicName != null) hashCode = hashCode * 59 + this.PicName.GetHashCode();
                 return hashCode;
             }
         }

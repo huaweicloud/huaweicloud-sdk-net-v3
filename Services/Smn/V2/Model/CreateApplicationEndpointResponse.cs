@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public bool Equals(CreateApplicationEndpointResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
+            if (this.EndpointUrn != input.EndpointUrn || (this.EndpointUrn != null && !this.EndpointUrn.Equals(input.EndpointUrn))) return false;
 
-            return 
-                (
-                    this.RequestId == input.RequestId ||
-                    (this.RequestId != null &&
-                    this.RequestId.Equals(input.RequestId))
-                ) && 
-                (
-                    this.EndpointUrn == input.EndpointUrn ||
-                    (this.EndpointUrn != null &&
-                    this.EndpointUrn.Equals(input.EndpointUrn))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RequestId != null)
-                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
-                if (this.EndpointUrn != null)
-                    hashCode = hashCode * 59 + this.EndpointUrn.GetHashCode();
+                var hashCode = 41;
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                if (this.EndpointUrn != null) hashCode = hashCode * 59 + this.EndpointUrn.GetHashCode();
                 return hashCode;
             }
         }

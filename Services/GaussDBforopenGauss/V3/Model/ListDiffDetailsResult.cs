@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ListDiffDetailsResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.SourceValue != input.SourceValue || (this.SourceValue != null && !this.SourceValue.Equals(input.SourceValue))) return false;
+            if (this.TargetValue != input.TargetValue || (this.TargetValue != null && !this.TargetValue.Equals(input.TargetValue))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.SourceValue == input.SourceValue ||
-                    (this.SourceValue != null &&
-                    this.SourceValue.Equals(input.SourceValue))
-                ) && 
-                (
-                    this.TargetValue == input.TargetValue ||
-                    (this.TargetValue != null &&
-                    this.TargetValue.Equals(input.TargetValue))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.SourceValue != null)
-                    hashCode = hashCode * 59 + this.SourceValue.GetHashCode();
-                if (this.TargetValue != null)
-                    hashCode = hashCode * 59 + this.TargetValue.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.SourceValue != null) hashCode = hashCode * 59 + this.SourceValue.GetHashCode();
+                if (this.TargetValue != null) hashCode = hashCode * 59 + this.TargetValue.GetHashCode();
                 return hashCode;
             }
         }

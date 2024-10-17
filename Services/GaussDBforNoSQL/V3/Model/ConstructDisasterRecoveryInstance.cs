@@ -70,32 +70,13 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(ConstructDisasterRecoveryInstance input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.RegionCode != input.RegionCode || (this.RegionCode != null && !this.RegionCode.Equals(input.RegionCode))) return false;
+            if (this.SubnetCidrs != input.SubnetCidrs || (this.SubnetCidrs != null && input.SubnetCidrs != null && !this.SubnetCidrs.SequenceEqual(input.SubnetCidrs))) return false;
+            if (this.NodeIps != input.NodeIps || (this.NodeIps != null && input.NodeIps != null && !this.NodeIps.SequenceEqual(input.NodeIps))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.RegionCode == input.RegionCode ||
-                    (this.RegionCode != null &&
-                    this.RegionCode.Equals(input.RegionCode))
-                ) && 
-                (
-                    this.SubnetCidrs == input.SubnetCidrs ||
-                    this.SubnetCidrs != null &&
-                    input.SubnetCidrs != null &&
-                    this.SubnetCidrs.SequenceEqual(input.SubnetCidrs)
-                ) && 
-                (
-                    this.NodeIps == input.NodeIps ||
-                    this.NodeIps != null &&
-                    input.NodeIps != null &&
-                    this.NodeIps.SequenceEqual(input.NodeIps)
-                );
+            return true;
         }
 
         /// <summary>
@@ -105,15 +86,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.RegionCode != null)
-                    hashCode = hashCode * 59 + this.RegionCode.GetHashCode();
-                if (this.SubnetCidrs != null)
-                    hashCode = hashCode * 59 + this.SubnetCidrs.GetHashCode();
-                if (this.NodeIps != null)
-                    hashCode = hashCode * 59 + this.NodeIps.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.RegionCode != null) hashCode = hashCode * 59 + this.RegionCode.GetHashCode();
+                if (this.SubnetCidrs != null) hashCode = hashCode * 59 + this.SubnetCidrs.GetHashCode();
+                if (this.NodeIps != null) hashCode = hashCode * 59 + this.NodeIps.GetHashCode();
                 return hashCode;
             }
         }

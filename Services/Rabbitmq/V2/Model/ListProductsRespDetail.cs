@@ -98,53 +98,17 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public bool Equals(ListProductsRespDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Storage != input.Storage || (this.Storage != null && !this.Storage.Equals(input.Storage))) return false;
+            if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
+            if (this.SpecCode != input.SpecCode || (this.SpecCode != null && !this.SpecCode.Equals(input.SpecCode))) return false;
+            if (this.Io != input.Io || (this.Io != null && input.Io != null && !this.Io.SequenceEqual(input.Io))) return false;
+            if (this.UnavailableZones != input.UnavailableZones || (this.UnavailableZones != null && input.UnavailableZones != null && !this.UnavailableZones.SequenceEqual(input.UnavailableZones))) return false;
+            if (this.AvailableZones != input.AvailableZones || (this.AvailableZones != null && input.AvailableZones != null && !this.AvailableZones.SequenceEqual(input.AvailableZones))) return false;
+            if (this.EcsFlavorId != input.EcsFlavorId || (this.EcsFlavorId != null && !this.EcsFlavorId.Equals(input.EcsFlavorId))) return false;
+            if (this.ArchType != input.ArchType || (this.ArchType != null && !this.ArchType.Equals(input.ArchType))) return false;
 
-            return 
-                (
-                    this.Storage == input.Storage ||
-                    (this.Storage != null &&
-                    this.Storage.Equals(input.Storage))
-                ) && 
-                (
-                    this.ProductId == input.ProductId ||
-                    (this.ProductId != null &&
-                    this.ProductId.Equals(input.ProductId))
-                ) && 
-                (
-                    this.SpecCode == input.SpecCode ||
-                    (this.SpecCode != null &&
-                    this.SpecCode.Equals(input.SpecCode))
-                ) && 
-                (
-                    this.Io == input.Io ||
-                    this.Io != null &&
-                    input.Io != null &&
-                    this.Io.SequenceEqual(input.Io)
-                ) && 
-                (
-                    this.UnavailableZones == input.UnavailableZones ||
-                    this.UnavailableZones != null &&
-                    input.UnavailableZones != null &&
-                    this.UnavailableZones.SequenceEqual(input.UnavailableZones)
-                ) && 
-                (
-                    this.AvailableZones == input.AvailableZones ||
-                    this.AvailableZones != null &&
-                    input.AvailableZones != null &&
-                    this.AvailableZones.SequenceEqual(input.AvailableZones)
-                ) && 
-                (
-                    this.EcsFlavorId == input.EcsFlavorId ||
-                    (this.EcsFlavorId != null &&
-                    this.EcsFlavorId.Equals(input.EcsFlavorId))
-                ) && 
-                (
-                    this.ArchType == input.ArchType ||
-                    (this.ArchType != null &&
-                    this.ArchType.Equals(input.ArchType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -154,23 +118,15 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Storage != null)
-                    hashCode = hashCode * 59 + this.Storage.GetHashCode();
-                if (this.ProductId != null)
-                    hashCode = hashCode * 59 + this.ProductId.GetHashCode();
-                if (this.SpecCode != null)
-                    hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
-                if (this.Io != null)
-                    hashCode = hashCode * 59 + this.Io.GetHashCode();
-                if (this.UnavailableZones != null)
-                    hashCode = hashCode * 59 + this.UnavailableZones.GetHashCode();
-                if (this.AvailableZones != null)
-                    hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
-                if (this.EcsFlavorId != null)
-                    hashCode = hashCode * 59 + this.EcsFlavorId.GetHashCode();
-                if (this.ArchType != null)
-                    hashCode = hashCode * 59 + this.ArchType.GetHashCode();
+                var hashCode = 41;
+                if (this.Storage != null) hashCode = hashCode * 59 + this.Storage.GetHashCode();
+                if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
+                if (this.SpecCode != null) hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
+                if (this.Io != null) hashCode = hashCode * 59 + this.Io.GetHashCode();
+                if (this.UnavailableZones != null) hashCode = hashCode * 59 + this.UnavailableZones.GetHashCode();
+                if (this.AvailableZones != null) hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
+                if (this.EcsFlavorId != null) hashCode = hashCode * 59 + this.EcsFlavorId.GetHashCode();
+                if (this.ArchType != null) hashCode = hashCode * 59 + this.ArchType.GetHashCode();
                 return hashCode;
             }
         }

@@ -161,95 +161,26 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(CaptureTaskVO input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CaptureSize != input.CaptureSize || (this.CaptureSize != null && !this.CaptureSize.Equals(input.CaptureSize))) return false;
+            if (this.CreatedDate != input.CreatedDate || (this.CreatedDate != null && !this.CreatedDate.Equals(input.CreatedDate))) return false;
+            if (this.DestAddress != input.DestAddress || (this.DestAddress != null && !this.DestAddress.Equals(input.DestAddress))) return false;
+            if (this.DestAddressType != input.DestAddressType || (this.DestAddressType != null && !this.DestAddressType.Equals(input.DestAddressType))) return false;
+            if (this.DestPort != input.DestPort || (this.DestPort != null && !this.DestPort.Equals(input.DestPort))) return false;
+            if (this.Duration != input.Duration || (this.Duration != null && !this.Duration.Equals(input.Duration))) return false;
+            if (this.IsDeleted != input.IsDeleted || (this.IsDeleted != null && !this.IsDeleted.Equals(input.IsDeleted))) return false;
+            if (this.MaxPackets != input.MaxPackets || (this.MaxPackets != null && !this.MaxPackets.Equals(input.MaxPackets))) return false;
+            if (this.ModifiedDate != input.ModifiedDate || (this.ModifiedDate != null && !this.ModifiedDate.Equals(input.ModifiedDate))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Protocol != input.Protocol || (this.Protocol != null && !this.Protocol.Equals(input.Protocol))) return false;
+            if (this.RemainingDays != input.RemainingDays || (this.RemainingDays != null && !this.RemainingDays.Equals(input.RemainingDays))) return false;
+            if (this.SourceAddress != input.SourceAddress || (this.SourceAddress != null && !this.SourceAddress.Equals(input.SourceAddress))) return false;
+            if (this.SourceAddressType != input.SourceAddressType || (this.SourceAddressType != null && !this.SourceAddressType.Equals(input.SourceAddressType))) return false;
+            if (this.SourcePort != input.SourcePort || (this.SourcePort != null && !this.SourcePort.Equals(input.SourcePort))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.TaskId != input.TaskId || (this.TaskId != null && !this.TaskId.Equals(input.TaskId))) return false;
 
-            return 
-                (
-                    this.CaptureSize == input.CaptureSize ||
-                    (this.CaptureSize != null &&
-                    this.CaptureSize.Equals(input.CaptureSize))
-                ) && 
-                (
-                    this.CreatedDate == input.CreatedDate ||
-                    (this.CreatedDate != null &&
-                    this.CreatedDate.Equals(input.CreatedDate))
-                ) && 
-                (
-                    this.DestAddress == input.DestAddress ||
-                    (this.DestAddress != null &&
-                    this.DestAddress.Equals(input.DestAddress))
-                ) && 
-                (
-                    this.DestAddressType == input.DestAddressType ||
-                    (this.DestAddressType != null &&
-                    this.DestAddressType.Equals(input.DestAddressType))
-                ) && 
-                (
-                    this.DestPort == input.DestPort ||
-                    (this.DestPort != null &&
-                    this.DestPort.Equals(input.DestPort))
-                ) && 
-                (
-                    this.Duration == input.Duration ||
-                    (this.Duration != null &&
-                    this.Duration.Equals(input.Duration))
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    (this.IsDeleted != null &&
-                    this.IsDeleted.Equals(input.IsDeleted))
-                ) && 
-                (
-                    this.MaxPackets == input.MaxPackets ||
-                    (this.MaxPackets != null &&
-                    this.MaxPackets.Equals(input.MaxPackets))
-                ) && 
-                (
-                    this.ModifiedDate == input.ModifiedDate ||
-                    (this.ModifiedDate != null &&
-                    this.ModifiedDate.Equals(input.ModifiedDate))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Protocol == input.Protocol ||
-                    (this.Protocol != null &&
-                    this.Protocol.Equals(input.Protocol))
-                ) && 
-                (
-                    this.RemainingDays == input.RemainingDays ||
-                    (this.RemainingDays != null &&
-                    this.RemainingDays.Equals(input.RemainingDays))
-                ) && 
-                (
-                    this.SourceAddress == input.SourceAddress ||
-                    (this.SourceAddress != null &&
-                    this.SourceAddress.Equals(input.SourceAddress))
-                ) && 
-                (
-                    this.SourceAddressType == input.SourceAddressType ||
-                    (this.SourceAddressType != null &&
-                    this.SourceAddressType.Equals(input.SourceAddressType))
-                ) && 
-                (
-                    this.SourcePort == input.SourcePort ||
-                    (this.SourcePort != null &&
-                    this.SourcePort.Equals(input.SourcePort))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.TaskId == input.TaskId ||
-                    (this.TaskId != null &&
-                    this.TaskId.Equals(input.TaskId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -259,41 +190,24 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CaptureSize != null)
-                    hashCode = hashCode * 59 + this.CaptureSize.GetHashCode();
-                if (this.CreatedDate != null)
-                    hashCode = hashCode * 59 + this.CreatedDate.GetHashCode();
-                if (this.DestAddress != null)
-                    hashCode = hashCode * 59 + this.DestAddress.GetHashCode();
-                if (this.DestAddressType != null)
-                    hashCode = hashCode * 59 + this.DestAddressType.GetHashCode();
-                if (this.DestPort != null)
-                    hashCode = hashCode * 59 + this.DestPort.GetHashCode();
-                if (this.Duration != null)
-                    hashCode = hashCode * 59 + this.Duration.GetHashCode();
-                if (this.IsDeleted != null)
-                    hashCode = hashCode * 59 + this.IsDeleted.GetHashCode();
-                if (this.MaxPackets != null)
-                    hashCode = hashCode * 59 + this.MaxPackets.GetHashCode();
-                if (this.ModifiedDate != null)
-                    hashCode = hashCode * 59 + this.ModifiedDate.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
-                if (this.RemainingDays != null)
-                    hashCode = hashCode * 59 + this.RemainingDays.GetHashCode();
-                if (this.SourceAddress != null)
-                    hashCode = hashCode * 59 + this.SourceAddress.GetHashCode();
-                if (this.SourceAddressType != null)
-                    hashCode = hashCode * 59 + this.SourceAddressType.GetHashCode();
-                if (this.SourcePort != null)
-                    hashCode = hashCode * 59 + this.SourcePort.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.TaskId != null)
-                    hashCode = hashCode * 59 + this.TaskId.GetHashCode();
+                var hashCode = 41;
+                if (this.CaptureSize != null) hashCode = hashCode * 59 + this.CaptureSize.GetHashCode();
+                if (this.CreatedDate != null) hashCode = hashCode * 59 + this.CreatedDate.GetHashCode();
+                if (this.DestAddress != null) hashCode = hashCode * 59 + this.DestAddress.GetHashCode();
+                if (this.DestAddressType != null) hashCode = hashCode * 59 + this.DestAddressType.GetHashCode();
+                if (this.DestPort != null) hashCode = hashCode * 59 + this.DestPort.GetHashCode();
+                if (this.Duration != null) hashCode = hashCode * 59 + this.Duration.GetHashCode();
+                if (this.IsDeleted != null) hashCode = hashCode * 59 + this.IsDeleted.GetHashCode();
+                if (this.MaxPackets != null) hashCode = hashCode * 59 + this.MaxPackets.GetHashCode();
+                if (this.ModifiedDate != null) hashCode = hashCode * 59 + this.ModifiedDate.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.RemainingDays != null) hashCode = hashCode * 59 + this.RemainingDays.GetHashCode();
+                if (this.SourceAddress != null) hashCode = hashCode * 59 + this.SourceAddress.GetHashCode();
+                if (this.SourceAddressType != null) hashCode = hashCode * 59 + this.SourceAddressType.GetHashCode();
+                if (this.SourcePort != null) hashCode = hashCode * 59 + this.SourcePort.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.TaskId != null) hashCode = hashCode * 59 + this.TaskId.GetHashCode();
                 return hashCode;
             }
         }

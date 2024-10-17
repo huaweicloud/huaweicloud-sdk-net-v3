@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(CreateChInstanceRequestBodyVolume input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IoType != input.IoType || (this.IoType != null && !this.IoType.Equals(input.IoType))) return false;
+            if (this.CapacityInGb != input.CapacityInGb || (this.CapacityInGb != null && !this.CapacityInGb.Equals(input.CapacityInGb))) return false;
 
-            return 
-                (
-                    this.IoType == input.IoType ||
-                    (this.IoType != null &&
-                    this.IoType.Equals(input.IoType))
-                ) && 
-                (
-                    this.CapacityInGb == input.CapacityInGb ||
-                    (this.CapacityInGb != null &&
-                    this.CapacityInGb.Equals(input.CapacityInGb))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IoType != null)
-                    hashCode = hashCode * 59 + this.IoType.GetHashCode();
-                if (this.CapacityInGb != null)
-                    hashCode = hashCode * 59 + this.CapacityInGb.GetHashCode();
+                var hashCode = 41;
+                if (this.IoType != null) hashCode = hashCode * 59 + this.IoType.GetHashCode();
+                if (this.CapacityInGb != null) hashCode = hashCode * 59 + this.CapacityInGb.GetHashCode();
                 return hashCode;
             }
         }

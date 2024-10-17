@@ -91,46 +91,16 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ShowInstanceTopicDetailRespPartitions input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Partition != input.Partition || (this.Partition != null && !this.Partition.Equals(input.Partition))) return false;
+            if (this.Leader != input.Leader || (this.Leader != null && !this.Leader.Equals(input.Leader))) return false;
+            if (this.Leo != input.Leo || (this.Leo != null && !this.Leo.Equals(input.Leo))) return false;
+            if (this.Hw != input.Hw || (this.Hw != null && !this.Hw.Equals(input.Hw))) return false;
+            if (this.Lso != input.Lso || (this.Lso != null && !this.Lso.Equals(input.Lso))) return false;
+            if (this.LastUpdateTimestamp != input.LastUpdateTimestamp || (this.LastUpdateTimestamp != null && !this.LastUpdateTimestamp.Equals(input.LastUpdateTimestamp))) return false;
+            if (this.Replicas != input.Replicas || (this.Replicas != null && input.Replicas != null && !this.Replicas.SequenceEqual(input.Replicas))) return false;
 
-            return 
-                (
-                    this.Partition == input.Partition ||
-                    (this.Partition != null &&
-                    this.Partition.Equals(input.Partition))
-                ) && 
-                (
-                    this.Leader == input.Leader ||
-                    (this.Leader != null &&
-                    this.Leader.Equals(input.Leader))
-                ) && 
-                (
-                    this.Leo == input.Leo ||
-                    (this.Leo != null &&
-                    this.Leo.Equals(input.Leo))
-                ) && 
-                (
-                    this.Hw == input.Hw ||
-                    (this.Hw != null &&
-                    this.Hw.Equals(input.Hw))
-                ) && 
-                (
-                    this.Lso == input.Lso ||
-                    (this.Lso != null &&
-                    this.Lso.Equals(input.Lso))
-                ) && 
-                (
-                    this.LastUpdateTimestamp == input.LastUpdateTimestamp ||
-                    (this.LastUpdateTimestamp != null &&
-                    this.LastUpdateTimestamp.Equals(input.LastUpdateTimestamp))
-                ) && 
-                (
-                    this.Replicas == input.Replicas ||
-                    this.Replicas != null &&
-                    input.Replicas != null &&
-                    this.Replicas.SequenceEqual(input.Replicas)
-                );
+            return true;
         }
 
         /// <summary>
@@ -140,21 +110,14 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Partition != null)
-                    hashCode = hashCode * 59 + this.Partition.GetHashCode();
-                if (this.Leader != null)
-                    hashCode = hashCode * 59 + this.Leader.GetHashCode();
-                if (this.Leo != null)
-                    hashCode = hashCode * 59 + this.Leo.GetHashCode();
-                if (this.Hw != null)
-                    hashCode = hashCode * 59 + this.Hw.GetHashCode();
-                if (this.Lso != null)
-                    hashCode = hashCode * 59 + this.Lso.GetHashCode();
-                if (this.LastUpdateTimestamp != null)
-                    hashCode = hashCode * 59 + this.LastUpdateTimestamp.GetHashCode();
-                if (this.Replicas != null)
-                    hashCode = hashCode * 59 + this.Replicas.GetHashCode();
+                var hashCode = 41;
+                if (this.Partition != null) hashCode = hashCode * 59 + this.Partition.GetHashCode();
+                if (this.Leader != null) hashCode = hashCode * 59 + this.Leader.GetHashCode();
+                if (this.Leo != null) hashCode = hashCode * 59 + this.Leo.GetHashCode();
+                if (this.Hw != null) hashCode = hashCode * 59 + this.Hw.GetHashCode();
+                if (this.Lso != null) hashCode = hashCode * 59 + this.Lso.GetHashCode();
+                if (this.LastUpdateTimestamp != null) hashCode = hashCode * 59 + this.LastUpdateTimestamp.GetHashCode();
+                if (this.Replicas != null) hashCode = hashCode * 59 + this.Replicas.GetHashCode();
                 return hashCode;
             }
         }

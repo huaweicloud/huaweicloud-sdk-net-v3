@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(DbUserPrivilegeRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.AuthorizationType != input.AuthorizationType || (this.AuthorizationType != null && !this.AuthorizationType.Equals(input.AuthorizationType))) return false;
+            if (this.Privileges != input.Privileges || (this.Privileges != null && input.Privileges != null && !this.Privileges.SequenceEqual(input.Privileges))) return false;
 
-            return 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.AuthorizationType == input.AuthorizationType ||
-                    (this.AuthorizationType != null &&
-                    this.AuthorizationType.Equals(input.AuthorizationType))
-                ) && 
-                (
-                    this.Privileges == input.Privileges ||
-                    this.Privileges != null &&
-                    input.Privileges != null &&
-                    this.Privileges.SequenceEqual(input.Privileges)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UserName != null)
-                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.AuthorizationType != null)
-                    hashCode = hashCode * 59 + this.AuthorizationType.GetHashCode();
-                if (this.Privileges != null)
-                    hashCode = hashCode * 59 + this.Privileges.GetHashCode();
+                var hashCode = 41;
+                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.AuthorizationType != null) hashCode = hashCode * 59 + this.AuthorizationType.GetHashCode();
+                if (this.Privileges != null) hashCode = hashCode * 59 + this.Privileges.GetHashCode();
                 return hashCode;
             }
         }

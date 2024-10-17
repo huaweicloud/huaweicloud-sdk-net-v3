@@ -70,32 +70,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(PartitionReassignEntity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;
+            if (this.Brokers != input.Brokers || (this.Brokers != null && input.Brokers != null && !this.Brokers.SequenceEqual(input.Brokers))) return false;
+            if (this.ReplicationFactor != input.ReplicationFactor || (this.ReplicationFactor != null && !this.ReplicationFactor.Equals(input.ReplicationFactor))) return false;
+            if (this.Assignment != input.Assignment || (this.Assignment != null && input.Assignment != null && !this.Assignment.SequenceEqual(input.Assignment))) return false;
 
-            return 
-                (
-                    this.Topic == input.Topic ||
-                    (this.Topic != null &&
-                    this.Topic.Equals(input.Topic))
-                ) && 
-                (
-                    this.Brokers == input.Brokers ||
-                    this.Brokers != null &&
-                    input.Brokers != null &&
-                    this.Brokers.SequenceEqual(input.Brokers)
-                ) && 
-                (
-                    this.ReplicationFactor == input.ReplicationFactor ||
-                    (this.ReplicationFactor != null &&
-                    this.ReplicationFactor.Equals(input.ReplicationFactor))
-                ) && 
-                (
-                    this.Assignment == input.Assignment ||
-                    this.Assignment != null &&
-                    input.Assignment != null &&
-                    this.Assignment.SequenceEqual(input.Assignment)
-                );
+            return true;
         }
 
         /// <summary>
@@ -105,15 +86,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Topic != null)
-                    hashCode = hashCode * 59 + this.Topic.GetHashCode();
-                if (this.Brokers != null)
-                    hashCode = hashCode * 59 + this.Brokers.GetHashCode();
-                if (this.ReplicationFactor != null)
-                    hashCode = hashCode * 59 + this.ReplicationFactor.GetHashCode();
-                if (this.Assignment != null)
-                    hashCode = hashCode * 59 + this.Assignment.GetHashCode();
+                var hashCode = 41;
+                if (this.Topic != null) hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                if (this.Brokers != null) hashCode = hashCode * 59 + this.Brokers.GetHashCode();
+                if (this.ReplicationFactor != null) hashCode = hashCode * 59 + this.ReplicationFactor.GetHashCode();
+                if (this.Assignment != null) hashCode = hashCode * 59 + this.Assignment.GetHashCode();
                 return hashCode;
             }
         }

@@ -255,85 +255,24 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(StarRocksCreateRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Engine != input.Engine || (this.Engine != null && !this.Engine.Equals(input.Engine))) return false;
+            if (this.Ha != input.Ha || (this.Ha != null && !this.Ha.Equals(input.Ha))) return false;
+            if (this.FeFlavorId != input.FeFlavorId || (this.FeFlavorId != null && !this.FeFlavorId.Equals(input.FeFlavorId))) return false;
+            if (this.BeFlavorId != input.BeFlavorId || (this.BeFlavorId != null && !this.BeFlavorId.Equals(input.BeFlavorId))) return false;
+            if (this.DbRootPwd != input.DbRootPwd || (this.DbRootPwd != null && !this.DbRootPwd.Equals(input.DbRootPwd))) return false;
+            if (this.FeCount != input.FeCount || (this.FeCount != null && !this.FeCount.Equals(input.FeCount))) return false;
+            if (this.BeCount != input.BeCount || (this.BeCount != null && !this.BeCount.Equals(input.BeCount))) return false;
+            if (this.AzMode != input.AzMode) return false;
+            if (this.FeVolume != input.FeVolume || (this.FeVolume != null && !this.FeVolume.Equals(input.FeVolume))) return false;
+            if (this.BeVolume != input.BeVolume || (this.BeVolume != null && !this.BeVolume.Equals(input.BeVolume))) return false;
+            if (this.AzCode != input.AzCode || (this.AzCode != null && !this.AzCode.Equals(input.AzCode))) return false;
+            if (this.TimeZone != input.TimeZone || (this.TimeZone != null && !this.TimeZone.Equals(input.TimeZone))) return false;
+            if (this.TagsInfo != input.TagsInfo || (this.TagsInfo != null && !this.TagsInfo.Equals(input.TagsInfo))) return false;
+            if (this.SecurityGroupId != input.SecurityGroupId || (this.SecurityGroupId != null && !this.SecurityGroupId.Equals(input.SecurityGroupId))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Engine == input.Engine ||
-                    (this.Engine != null &&
-                    this.Engine.Equals(input.Engine))
-                ) && 
-                (
-                    this.Ha == input.Ha ||
-                    (this.Ha != null &&
-                    this.Ha.Equals(input.Ha))
-                ) && 
-                (
-                    this.FeFlavorId == input.FeFlavorId ||
-                    (this.FeFlavorId != null &&
-                    this.FeFlavorId.Equals(input.FeFlavorId))
-                ) && 
-                (
-                    this.BeFlavorId == input.BeFlavorId ||
-                    (this.BeFlavorId != null &&
-                    this.BeFlavorId.Equals(input.BeFlavorId))
-                ) && 
-                (
-                    this.DbRootPwd == input.DbRootPwd ||
-                    (this.DbRootPwd != null &&
-                    this.DbRootPwd.Equals(input.DbRootPwd))
-                ) && 
-                (
-                    this.FeCount == input.FeCount ||
-                    (this.FeCount != null &&
-                    this.FeCount.Equals(input.FeCount))
-                ) && 
-                (
-                    this.BeCount == input.BeCount ||
-                    (this.BeCount != null &&
-                    this.BeCount.Equals(input.BeCount))
-                ) && 
-                (
-                    this.AzMode == input.AzMode ||
-                    (this.AzMode != null &&
-                    this.AzMode.Equals(input.AzMode))
-                ) && 
-                (
-                    this.FeVolume == input.FeVolume ||
-                    (this.FeVolume != null &&
-                    this.FeVolume.Equals(input.FeVolume))
-                ) && 
-                (
-                    this.BeVolume == input.BeVolume ||
-                    (this.BeVolume != null &&
-                    this.BeVolume.Equals(input.BeVolume))
-                ) && 
-                (
-                    this.AzCode == input.AzCode ||
-                    (this.AzCode != null &&
-                    this.AzCode.Equals(input.AzCode))
-                ) && 
-                (
-                    this.TimeZone == input.TimeZone ||
-                    (this.TimeZone != null &&
-                    this.TimeZone.Equals(input.TimeZone))
-                ) && 
-                (
-                    this.TagsInfo == input.TagsInfo ||
-                    (this.TagsInfo != null &&
-                    this.TagsInfo.Equals(input.TagsInfo))
-                ) && 
-                (
-                    this.SecurityGroupId == input.SecurityGroupId ||
-                    (this.SecurityGroupId != null &&
-                    this.SecurityGroupId.Equals(input.SecurityGroupId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -343,37 +282,22 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Engine != null)
-                    hashCode = hashCode * 59 + this.Engine.GetHashCode();
-                if (this.Ha != null)
-                    hashCode = hashCode * 59 + this.Ha.GetHashCode();
-                if (this.FeFlavorId != null)
-                    hashCode = hashCode * 59 + this.FeFlavorId.GetHashCode();
-                if (this.BeFlavorId != null)
-                    hashCode = hashCode * 59 + this.BeFlavorId.GetHashCode();
-                if (this.DbRootPwd != null)
-                    hashCode = hashCode * 59 + this.DbRootPwd.GetHashCode();
-                if (this.FeCount != null)
-                    hashCode = hashCode * 59 + this.FeCount.GetHashCode();
-                if (this.BeCount != null)
-                    hashCode = hashCode * 59 + this.BeCount.GetHashCode();
-                if (this.AzMode != null)
-                    hashCode = hashCode * 59 + this.AzMode.GetHashCode();
-                if (this.FeVolume != null)
-                    hashCode = hashCode * 59 + this.FeVolume.GetHashCode();
-                if (this.BeVolume != null)
-                    hashCode = hashCode * 59 + this.BeVolume.GetHashCode();
-                if (this.AzCode != null)
-                    hashCode = hashCode * 59 + this.AzCode.GetHashCode();
-                if (this.TimeZone != null)
-                    hashCode = hashCode * 59 + this.TimeZone.GetHashCode();
-                if (this.TagsInfo != null)
-                    hashCode = hashCode * 59 + this.TagsInfo.GetHashCode();
-                if (this.SecurityGroupId != null)
-                    hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Engine != null) hashCode = hashCode * 59 + this.Engine.GetHashCode();
+                if (this.Ha != null) hashCode = hashCode * 59 + this.Ha.GetHashCode();
+                if (this.FeFlavorId != null) hashCode = hashCode * 59 + this.FeFlavorId.GetHashCode();
+                if (this.BeFlavorId != null) hashCode = hashCode * 59 + this.BeFlavorId.GetHashCode();
+                if (this.DbRootPwd != null) hashCode = hashCode * 59 + this.DbRootPwd.GetHashCode();
+                if (this.FeCount != null) hashCode = hashCode * 59 + this.FeCount.GetHashCode();
+                if (this.BeCount != null) hashCode = hashCode * 59 + this.BeCount.GetHashCode();
+                hashCode = hashCode * 59 + this.AzMode.GetHashCode();
+                if (this.FeVolume != null) hashCode = hashCode * 59 + this.FeVolume.GetHashCode();
+                if (this.BeVolume != null) hashCode = hashCode * 59 + this.BeVolume.GetHashCode();
+                if (this.AzCode != null) hashCode = hashCode * 59 + this.AzCode.GetHashCode();
+                if (this.TimeZone != null) hashCode = hashCode * 59 + this.TimeZone.GetHashCode();
+                if (this.TagsInfo != null) hashCode = hashCode * 59 + this.TagsInfo.GetHashCode();
+                if (this.SecurityGroupId != null) hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
                 return hashCode;
             }
         }

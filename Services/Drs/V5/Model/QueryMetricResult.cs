@@ -147,85 +147,24 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(QueryMetricResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.NodeId != input.NodeId || (this.NodeId != null && !this.NodeId.Equals(input.NodeId))) return false;
+            if (this.TimeStamp != input.TimeStamp || (this.TimeStamp != null && !this.TimeStamp.Equals(input.TimeStamp))) return false;
+            if (this.CpuUtil != input.CpuUtil || (this.CpuUtil != null && !this.CpuUtil.Equals(input.CpuUtil))) return false;
+            if (this.MemUtil != input.MemUtil || (this.MemUtil != null && !this.MemUtil.Equals(input.MemUtil))) return false;
+            if (this.NetworkIncomingBytesRate != input.NetworkIncomingBytesRate || (this.NetworkIncomingBytesRate != null && !this.NetworkIncomingBytesRate.Equals(input.NetworkIncomingBytesRate))) return false;
+            if (this.NetworkOutgoingBytesRate != input.NetworkOutgoingBytesRate || (this.NetworkOutgoingBytesRate != null && !this.NetworkOutgoingBytesRate.Equals(input.NetworkOutgoingBytesRate))) return false;
+            if (this.DiskReadBytesRate != input.DiskReadBytesRate || (this.DiskReadBytesRate != null && !this.DiskReadBytesRate.Equals(input.DiskReadBytesRate))) return false;
+            if (this.DiskWriteBytesRate != input.DiskWriteBytesRate || (this.DiskWriteBytesRate != null && !this.DiskWriteBytesRate.Equals(input.DiskWriteBytesRate))) return false;
+            if (this.ApplyRowsRate != input.ApplyRowsRate || (this.ApplyRowsRate != null && !this.ApplyRowsRate.Equals(input.ApplyRowsRate))) return false;
+            if (this.ApplyTransactionsRate != input.ApplyTransactionsRate || (this.ApplyTransactionsRate != null && !this.ApplyTransactionsRate.Equals(input.ApplyTransactionsRate))) return false;
+            if (this.ApplyDdlRate != input.ApplyDdlRate || (this.ApplyDdlRate != null && !this.ApplyDdlRate.Equals(input.ApplyDdlRate))) return false;
+            if (this.ApplyAverageExecuteTime != input.ApplyAverageExecuteTime || (this.ApplyAverageExecuteTime != null && !this.ApplyAverageExecuteTime.Equals(input.ApplyAverageExecuteTime))) return false;
+            if (this.ApplyAverageCommitTime != input.ApplyAverageCommitTime || (this.ApplyAverageCommitTime != null && !this.ApplyAverageCommitTime.Equals(input.ApplyAverageCommitTime))) return false;
+            if (this.ApplyCurrentState != input.ApplyCurrentState || (this.ApplyCurrentState != null && !this.ApplyCurrentState.Equals(input.ApplyCurrentState))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.NodeId == input.NodeId ||
-                    (this.NodeId != null &&
-                    this.NodeId.Equals(input.NodeId))
-                ) && 
-                (
-                    this.TimeStamp == input.TimeStamp ||
-                    (this.TimeStamp != null &&
-                    this.TimeStamp.Equals(input.TimeStamp))
-                ) && 
-                (
-                    this.CpuUtil == input.CpuUtil ||
-                    (this.CpuUtil != null &&
-                    this.CpuUtil.Equals(input.CpuUtil))
-                ) && 
-                (
-                    this.MemUtil == input.MemUtil ||
-                    (this.MemUtil != null &&
-                    this.MemUtil.Equals(input.MemUtil))
-                ) && 
-                (
-                    this.NetworkIncomingBytesRate == input.NetworkIncomingBytesRate ||
-                    (this.NetworkIncomingBytesRate != null &&
-                    this.NetworkIncomingBytesRate.Equals(input.NetworkIncomingBytesRate))
-                ) && 
-                (
-                    this.NetworkOutgoingBytesRate == input.NetworkOutgoingBytesRate ||
-                    (this.NetworkOutgoingBytesRate != null &&
-                    this.NetworkOutgoingBytesRate.Equals(input.NetworkOutgoingBytesRate))
-                ) && 
-                (
-                    this.DiskReadBytesRate == input.DiskReadBytesRate ||
-                    (this.DiskReadBytesRate != null &&
-                    this.DiskReadBytesRate.Equals(input.DiskReadBytesRate))
-                ) && 
-                (
-                    this.DiskWriteBytesRate == input.DiskWriteBytesRate ||
-                    (this.DiskWriteBytesRate != null &&
-                    this.DiskWriteBytesRate.Equals(input.DiskWriteBytesRate))
-                ) && 
-                (
-                    this.ApplyRowsRate == input.ApplyRowsRate ||
-                    (this.ApplyRowsRate != null &&
-                    this.ApplyRowsRate.Equals(input.ApplyRowsRate))
-                ) && 
-                (
-                    this.ApplyTransactionsRate == input.ApplyTransactionsRate ||
-                    (this.ApplyTransactionsRate != null &&
-                    this.ApplyTransactionsRate.Equals(input.ApplyTransactionsRate))
-                ) && 
-                (
-                    this.ApplyDdlRate == input.ApplyDdlRate ||
-                    (this.ApplyDdlRate != null &&
-                    this.ApplyDdlRate.Equals(input.ApplyDdlRate))
-                ) && 
-                (
-                    this.ApplyAverageExecuteTime == input.ApplyAverageExecuteTime ||
-                    (this.ApplyAverageExecuteTime != null &&
-                    this.ApplyAverageExecuteTime.Equals(input.ApplyAverageExecuteTime))
-                ) && 
-                (
-                    this.ApplyAverageCommitTime == input.ApplyAverageCommitTime ||
-                    (this.ApplyAverageCommitTime != null &&
-                    this.ApplyAverageCommitTime.Equals(input.ApplyAverageCommitTime))
-                ) && 
-                (
-                    this.ApplyCurrentState == input.ApplyCurrentState ||
-                    (this.ApplyCurrentState != null &&
-                    this.ApplyCurrentState.Equals(input.ApplyCurrentState))
-                );
+            return true;
         }
 
         /// <summary>
@@ -235,37 +174,22 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.NodeId != null)
-                    hashCode = hashCode * 59 + this.NodeId.GetHashCode();
-                if (this.TimeStamp != null)
-                    hashCode = hashCode * 59 + this.TimeStamp.GetHashCode();
-                if (this.CpuUtil != null)
-                    hashCode = hashCode * 59 + this.CpuUtil.GetHashCode();
-                if (this.MemUtil != null)
-                    hashCode = hashCode * 59 + this.MemUtil.GetHashCode();
-                if (this.NetworkIncomingBytesRate != null)
-                    hashCode = hashCode * 59 + this.NetworkIncomingBytesRate.GetHashCode();
-                if (this.NetworkOutgoingBytesRate != null)
-                    hashCode = hashCode * 59 + this.NetworkOutgoingBytesRate.GetHashCode();
-                if (this.DiskReadBytesRate != null)
-                    hashCode = hashCode * 59 + this.DiskReadBytesRate.GetHashCode();
-                if (this.DiskWriteBytesRate != null)
-                    hashCode = hashCode * 59 + this.DiskWriteBytesRate.GetHashCode();
-                if (this.ApplyRowsRate != null)
-                    hashCode = hashCode * 59 + this.ApplyRowsRate.GetHashCode();
-                if (this.ApplyTransactionsRate != null)
-                    hashCode = hashCode * 59 + this.ApplyTransactionsRate.GetHashCode();
-                if (this.ApplyDdlRate != null)
-                    hashCode = hashCode * 59 + this.ApplyDdlRate.GetHashCode();
-                if (this.ApplyAverageExecuteTime != null)
-                    hashCode = hashCode * 59 + this.ApplyAverageExecuteTime.GetHashCode();
-                if (this.ApplyAverageCommitTime != null)
-                    hashCode = hashCode * 59 + this.ApplyAverageCommitTime.GetHashCode();
-                if (this.ApplyCurrentState != null)
-                    hashCode = hashCode * 59 + this.ApplyCurrentState.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.NodeId != null) hashCode = hashCode * 59 + this.NodeId.GetHashCode();
+                if (this.TimeStamp != null) hashCode = hashCode * 59 + this.TimeStamp.GetHashCode();
+                if (this.CpuUtil != null) hashCode = hashCode * 59 + this.CpuUtil.GetHashCode();
+                if (this.MemUtil != null) hashCode = hashCode * 59 + this.MemUtil.GetHashCode();
+                if (this.NetworkIncomingBytesRate != null) hashCode = hashCode * 59 + this.NetworkIncomingBytesRate.GetHashCode();
+                if (this.NetworkOutgoingBytesRate != null) hashCode = hashCode * 59 + this.NetworkOutgoingBytesRate.GetHashCode();
+                if (this.DiskReadBytesRate != null) hashCode = hashCode * 59 + this.DiskReadBytesRate.GetHashCode();
+                if (this.DiskWriteBytesRate != null) hashCode = hashCode * 59 + this.DiskWriteBytesRate.GetHashCode();
+                if (this.ApplyRowsRate != null) hashCode = hashCode * 59 + this.ApplyRowsRate.GetHashCode();
+                if (this.ApplyTransactionsRate != null) hashCode = hashCode * 59 + this.ApplyTransactionsRate.GetHashCode();
+                if (this.ApplyDdlRate != null) hashCode = hashCode * 59 + this.ApplyDdlRate.GetHashCode();
+                if (this.ApplyAverageExecuteTime != null) hashCode = hashCode * 59 + this.ApplyAverageExecuteTime.GetHashCode();
+                if (this.ApplyAverageCommitTime != null) hashCode = hashCode * 59 + this.ApplyAverageCommitTime.GetHashCode();
+                if (this.ApplyCurrentState != null) hashCode = hashCode * 59 + this.ApplyCurrentState.GetHashCode();
                 return hashCode;
             }
         }

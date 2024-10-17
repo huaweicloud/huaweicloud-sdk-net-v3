@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(StrategyConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Concurrency != input.Concurrency || (this.Concurrency != null && !this.Concurrency.Equals(input.Concurrency))) return false;
+            if (this.ConcurrentNum != input.ConcurrentNum || (this.ConcurrentNum != null && !this.ConcurrentNum.Equals(input.ConcurrentNum))) return false;
 
-            return 
-                (
-                    this.Concurrency == input.Concurrency ||
-                    (this.Concurrency != null &&
-                    this.Concurrency.Equals(input.Concurrency))
-                ) && 
-                (
-                    this.ConcurrentNum == input.ConcurrentNum ||
-                    (this.ConcurrentNum != null &&
-                    this.ConcurrentNum.Equals(input.ConcurrentNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Concurrency != null)
-                    hashCode = hashCode * 59 + this.Concurrency.GetHashCode();
-                if (this.ConcurrentNum != null)
-                    hashCode = hashCode * 59 + this.ConcurrentNum.GetHashCode();
+                var hashCode = 41;
+                if (this.Concurrency != null) hashCode = hashCode * 59 + this.Concurrency.GetHashCode();
+                if (this.ConcurrentNum != null) hashCode = hashCode * 59 + this.ConcurrentNum.GetHashCode();
                 return hashCode;
             }
         }

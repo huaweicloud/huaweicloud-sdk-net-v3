@@ -212,51 +212,17 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         /// </summary>
         public bool Equals(RecordRule input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RuleId != input.RuleId || (this.RuleId != null && !this.RuleId.Equals(input.RuleId))) return false;
+            if (this.AppId != input.AppId || (this.AppId != null && !this.AppId.Equals(input.AppId))) return false;
+            if (this.ObsAddr != input.ObsAddr || (this.ObsAddr != null && !this.ObsAddr.Equals(input.ObsAddr))) return false;
+            if (this.RecordFormats != input.RecordFormats || (this.RecordFormats != null && input.RecordFormats != null && !this.RecordFormats.SequenceEqual(input.RecordFormats))) return false;
+            if (this.HlsConfig != input.HlsConfig || (this.HlsConfig != null && !this.HlsConfig.Equals(input.HlsConfig))) return false;
+            if (this.Mp4Config != input.Mp4Config || (this.Mp4Config != null && !this.Mp4Config.Equals(input.Mp4Config))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
 
-            return 
-                (
-                    this.RuleId == input.RuleId ||
-                    (this.RuleId != null &&
-                    this.RuleId.Equals(input.RuleId))
-                ) && 
-                (
-                    this.AppId == input.AppId ||
-                    (this.AppId != null &&
-                    this.AppId.Equals(input.AppId))
-                ) && 
-                (
-                    this.ObsAddr == input.ObsAddr ||
-                    (this.ObsAddr != null &&
-                    this.ObsAddr.Equals(input.ObsAddr))
-                ) && 
-                (
-                    this.RecordFormats == input.RecordFormats ||
-                    this.RecordFormats != null &&
-                    input.RecordFormats != null &&
-                    this.RecordFormats.SequenceEqual(input.RecordFormats)
-                ) && 
-                (
-                    this.HlsConfig == input.HlsConfig ||
-                    (this.HlsConfig != null &&
-                    this.HlsConfig.Equals(input.HlsConfig))
-                ) && 
-                (
-                    this.Mp4Config == input.Mp4Config ||
-                    (this.Mp4Config != null &&
-                    this.Mp4Config.Equals(input.Mp4Config))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -266,23 +232,15 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RuleId != null)
-                    hashCode = hashCode * 59 + this.RuleId.GetHashCode();
-                if (this.AppId != null)
-                    hashCode = hashCode * 59 + this.AppId.GetHashCode();
-                if (this.ObsAddr != null)
-                    hashCode = hashCode * 59 + this.ObsAddr.GetHashCode();
-                if (this.RecordFormats != null)
-                    hashCode = hashCode * 59 + this.RecordFormats.GetHashCode();
-                if (this.HlsConfig != null)
-                    hashCode = hashCode * 59 + this.HlsConfig.GetHashCode();
-                if (this.Mp4Config != null)
-                    hashCode = hashCode * 59 + this.Mp4Config.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                var hashCode = 41;
+                if (this.RuleId != null) hashCode = hashCode * 59 + this.RuleId.GetHashCode();
+                if (this.AppId != null) hashCode = hashCode * 59 + this.AppId.GetHashCode();
+                if (this.ObsAddr != null) hashCode = hashCode * 59 + this.ObsAddr.GetHashCode();
+                hashCode = hashCode * 59 + this.RecordFormats.GetHashCode();
+                if (this.HlsConfig != null) hashCode = hashCode * 59 + this.HlsConfig.GetHashCode();
+                if (this.Mp4Config != null) hashCode = hashCode * 59 + this.Mp4Config.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
                 return hashCode;
             }
         }

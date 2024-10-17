@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(HandwritingResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.WordsBlockCount != input.WordsBlockCount || (this.WordsBlockCount != null && !this.WordsBlockCount.Equals(input.WordsBlockCount))) return false;
+            if (this.WordsBlockList != input.WordsBlockList || (this.WordsBlockList != null && input.WordsBlockList != null && !this.WordsBlockList.SequenceEqual(input.WordsBlockList))) return false;
 
-            return 
-                (
-                    this.WordsBlockCount == input.WordsBlockCount ||
-                    (this.WordsBlockCount != null &&
-                    this.WordsBlockCount.Equals(input.WordsBlockCount))
-                ) && 
-                (
-                    this.WordsBlockList == input.WordsBlockList ||
-                    this.WordsBlockList != null &&
-                    input.WordsBlockList != null &&
-                    this.WordsBlockList.SequenceEqual(input.WordsBlockList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.WordsBlockCount != null)
-                    hashCode = hashCode * 59 + this.WordsBlockCount.GetHashCode();
-                if (this.WordsBlockList != null)
-                    hashCode = hashCode * 59 + this.WordsBlockList.GetHashCode();
+                var hashCode = 41;
+                if (this.WordsBlockCount != null) hashCode = hashCode * 59 + this.WordsBlockCount.GetHashCode();
+                if (this.WordsBlockList != null) hashCode = hashCode * 59 + this.WordsBlockList.GetHashCode();
                 return hashCode;
             }
         }

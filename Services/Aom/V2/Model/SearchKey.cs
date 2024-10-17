@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(SearchKey input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AppName != input.AppName || (this.AppName != null && !this.AppName.Equals(input.AppName))) return false;
+            if (this.ClusterId != input.ClusterId || (this.ClusterId != null && !this.ClusterId.Equals(input.ClusterId))) return false;
+            if (this.HostIP != input.HostIP || (this.HostIP != null && !this.HostIP.Equals(input.HostIP))) return false;
+            if (this.NameSpace != input.NameSpace || (this.NameSpace != null && !this.NameSpace.Equals(input.NameSpace))) return false;
+            if (this.PathFile != input.PathFile || (this.PathFile != null && !this.PathFile.Equals(input.PathFile))) return false;
+            if (this.PodName != input.PodName || (this.PodName != null && !this.PodName.Equals(input.PodName))) return false;
 
-            return 
-                (
-                    this.AppName == input.AppName ||
-                    (this.AppName != null &&
-                    this.AppName.Equals(input.AppName))
-                ) && 
-                (
-                    this.ClusterId == input.ClusterId ||
-                    (this.ClusterId != null &&
-                    this.ClusterId.Equals(input.ClusterId))
-                ) && 
-                (
-                    this.HostIP == input.HostIP ||
-                    (this.HostIP != null &&
-                    this.HostIP.Equals(input.HostIP))
-                ) && 
-                (
-                    this.NameSpace == input.NameSpace ||
-                    (this.NameSpace != null &&
-                    this.NameSpace.Equals(input.NameSpace))
-                ) && 
-                (
-                    this.PathFile == input.PathFile ||
-                    (this.PathFile != null &&
-                    this.PathFile.Equals(input.PathFile))
-                ) && 
-                (
-                    this.PodName == input.PodName ||
-                    (this.PodName != null &&
-                    this.PodName.Equals(input.PodName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AppName != null)
-                    hashCode = hashCode * 59 + this.AppName.GetHashCode();
-                if (this.ClusterId != null)
-                    hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
-                if (this.HostIP != null)
-                    hashCode = hashCode * 59 + this.HostIP.GetHashCode();
-                if (this.NameSpace != null)
-                    hashCode = hashCode * 59 + this.NameSpace.GetHashCode();
-                if (this.PathFile != null)
-                    hashCode = hashCode * 59 + this.PathFile.GetHashCode();
-                if (this.PodName != null)
-                    hashCode = hashCode * 59 + this.PodName.GetHashCode();
+                var hashCode = 41;
+                if (this.AppName != null) hashCode = hashCode * 59 + this.AppName.GetHashCode();
+                if (this.ClusterId != null) hashCode = hashCode * 59 + this.ClusterId.GetHashCode();
+                if (this.HostIP != null) hashCode = hashCode * 59 + this.HostIP.GetHashCode();
+                if (this.NameSpace != null) hashCode = hashCode * 59 + this.NameSpace.GetHashCode();
+                if (this.PathFile != null) hashCode = hashCode * 59 + this.PathFile.GetHashCode();
+                if (this.PodName != null) hashCode = hashCode * 59 + this.PodName.GetHashCode();
                 return hashCode;
             }
         }

@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         /// </summary>
         public bool Equals(ShowBlockStatisticsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TotalUnblockingTimes != input.TotalUnblockingTimes || (this.TotalUnblockingTimes != null && !this.TotalUnblockingTimes.Equals(input.TotalUnblockingTimes))) return false;
+            if (this.ManualUnblockingTimes != input.ManualUnblockingTimes || (this.ManualUnblockingTimes != null && !this.ManualUnblockingTimes.Equals(input.ManualUnblockingTimes))) return false;
+            if (this.AutomaticUnblockingTimes != input.AutomaticUnblockingTimes || (this.AutomaticUnblockingTimes != null && !this.AutomaticUnblockingTimes.Equals(input.AutomaticUnblockingTimes))) return false;
+            if (this.CurrentBlockedIpNumbers != input.CurrentBlockedIpNumbers || (this.CurrentBlockedIpNumbers != null && !this.CurrentBlockedIpNumbers.Equals(input.CurrentBlockedIpNumbers))) return false;
 
-            return 
-                (
-                    this.TotalUnblockingTimes == input.TotalUnblockingTimes ||
-                    (this.TotalUnblockingTimes != null &&
-                    this.TotalUnblockingTimes.Equals(input.TotalUnblockingTimes))
-                ) && 
-                (
-                    this.ManualUnblockingTimes == input.ManualUnblockingTimes ||
-                    (this.ManualUnblockingTimes != null &&
-                    this.ManualUnblockingTimes.Equals(input.ManualUnblockingTimes))
-                ) && 
-                (
-                    this.AutomaticUnblockingTimes == input.AutomaticUnblockingTimes ||
-                    (this.AutomaticUnblockingTimes != null &&
-                    this.AutomaticUnblockingTimes.Equals(input.AutomaticUnblockingTimes))
-                ) && 
-                (
-                    this.CurrentBlockedIpNumbers == input.CurrentBlockedIpNumbers ||
-                    (this.CurrentBlockedIpNumbers != null &&
-                    this.CurrentBlockedIpNumbers.Equals(input.CurrentBlockedIpNumbers))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TotalUnblockingTimes != null)
-                    hashCode = hashCode * 59 + this.TotalUnblockingTimes.GetHashCode();
-                if (this.ManualUnblockingTimes != null)
-                    hashCode = hashCode * 59 + this.ManualUnblockingTimes.GetHashCode();
-                if (this.AutomaticUnblockingTimes != null)
-                    hashCode = hashCode * 59 + this.AutomaticUnblockingTimes.GetHashCode();
-                if (this.CurrentBlockedIpNumbers != null)
-                    hashCode = hashCode * 59 + this.CurrentBlockedIpNumbers.GetHashCode();
+                var hashCode = 41;
+                if (this.TotalUnblockingTimes != null) hashCode = hashCode * 59 + this.TotalUnblockingTimes.GetHashCode();
+                if (this.ManualUnblockingTimes != null) hashCode = hashCode * 59 + this.ManualUnblockingTimes.GetHashCode();
+                if (this.AutomaticUnblockingTimes != null) hashCode = hashCode * 59 + this.AutomaticUnblockingTimes.GetHashCode();
+                if (this.CurrentBlockedIpNumbers != null) hashCode = hashCode * 59 + this.CurrentBlockedIpNumbers.GetHashCode();
                 return hashCode;
             }
         }

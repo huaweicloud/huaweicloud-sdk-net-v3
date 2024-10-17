@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(BackupPlan input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TimezoneOffset != input.TimezoneOffset || (this.TimezoneOffset != null && !this.TimezoneOffset.Equals(input.TimezoneOffset))) return false;
+            if (this.BackupAt != input.BackupAt || (this.BackupAt != null && input.BackupAt != null && !this.BackupAt.SequenceEqual(input.BackupAt))) return false;
+            if (this.PeriodType != input.PeriodType || (this.PeriodType != null && !this.PeriodType.Equals(input.PeriodType))) return false;
+            if (this.BeginAt != input.BeginAt || (this.BeginAt != null && !this.BeginAt.Equals(input.BeginAt))) return false;
 
-            return 
-                (
-                    this.TimezoneOffset == input.TimezoneOffset ||
-                    (this.TimezoneOffset != null &&
-                    this.TimezoneOffset.Equals(input.TimezoneOffset))
-                ) && 
-                (
-                    this.BackupAt == input.BackupAt ||
-                    this.BackupAt != null &&
-                    input.BackupAt != null &&
-                    this.BackupAt.SequenceEqual(input.BackupAt)
-                ) && 
-                (
-                    this.PeriodType == input.PeriodType ||
-                    (this.PeriodType != null &&
-                    this.PeriodType.Equals(input.PeriodType))
-                ) && 
-                (
-                    this.BeginAt == input.BeginAt ||
-                    (this.BeginAt != null &&
-                    this.BeginAt.Equals(input.BeginAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TimezoneOffset != null)
-                    hashCode = hashCode * 59 + this.TimezoneOffset.GetHashCode();
-                if (this.BackupAt != null)
-                    hashCode = hashCode * 59 + this.BackupAt.GetHashCode();
-                if (this.PeriodType != null)
-                    hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
-                if (this.BeginAt != null)
-                    hashCode = hashCode * 59 + this.BeginAt.GetHashCode();
+                var hashCode = 41;
+                if (this.TimezoneOffset != null) hashCode = hashCode * 59 + this.TimezoneOffset.GetHashCode();
+                if (this.BackupAt != null) hashCode = hashCode * 59 + this.BackupAt.GetHashCode();
+                if (this.PeriodType != null) hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
+                if (this.BeginAt != null) hashCode = hashCode * 59 + this.BeginAt.GetHashCode();
                 return hashCode;
             }
         }

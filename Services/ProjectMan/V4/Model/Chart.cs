@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(Chart input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Date != input.Date || (this.Date != null && !this.Date.Equals(input.Date))) return false;
+            if (this.FinishedNum != input.FinishedNum || (this.FinishedNum != null && !this.FinishedNum.Equals(input.FinishedNum))) return false;
+            if (this.IterationId != input.IterationId || (this.IterationId != null && !this.IterationId.Equals(input.IterationId))) return false;
+            if (this.ProjectNumId != input.ProjectNumId || (this.ProjectNumId != null && !this.ProjectNumId.Equals(input.ProjectNumId))) return false;
+            if (this.RemainingNum != input.RemainingNum || (this.RemainingNum != null && !this.RemainingNum.Equals(input.RemainingNum))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
-            return 
-                (
-                    this.Date == input.Date ||
-                    (this.Date != null &&
-                    this.Date.Equals(input.Date))
-                ) && 
-                (
-                    this.FinishedNum == input.FinishedNum ||
-                    (this.FinishedNum != null &&
-                    this.FinishedNum.Equals(input.FinishedNum))
-                ) && 
-                (
-                    this.IterationId == input.IterationId ||
-                    (this.IterationId != null &&
-                    this.IterationId.Equals(input.IterationId))
-                ) && 
-                (
-                    this.ProjectNumId == input.ProjectNumId ||
-                    (this.ProjectNumId != null &&
-                    this.ProjectNumId.Equals(input.ProjectNumId))
-                ) && 
-                (
-                    this.RemainingNum == input.RemainingNum ||
-                    (this.RemainingNum != null &&
-                    this.RemainingNum.Equals(input.RemainingNum))
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Date != null)
-                    hashCode = hashCode * 59 + this.Date.GetHashCode();
-                if (this.FinishedNum != null)
-                    hashCode = hashCode * 59 + this.FinishedNum.GetHashCode();
-                if (this.IterationId != null)
-                    hashCode = hashCode * 59 + this.IterationId.GetHashCode();
-                if (this.ProjectNumId != null)
-                    hashCode = hashCode * 59 + this.ProjectNumId.GetHashCode();
-                if (this.RemainingNum != null)
-                    hashCode = hashCode * 59 + this.RemainingNum.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                var hashCode = 41;
+                if (this.Date != null) hashCode = hashCode * 59 + this.Date.GetHashCode();
+                if (this.FinishedNum != null) hashCode = hashCode * 59 + this.FinishedNum.GetHashCode();
+                if (this.IterationId != null) hashCode = hashCode * 59 + this.IterationId.GetHashCode();
+                if (this.ProjectNumId != null) hashCode = hashCode * 59 + this.ProjectNumId.GetHashCode();
+                if (this.RemainingNum != null) hashCode = hashCode * 59 + this.RemainingNum.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

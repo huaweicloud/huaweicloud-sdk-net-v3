@@ -84,41 +84,15 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(BandWidthRules input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.EgressSize != input.EgressSize || (this.EgressSize != null && !this.EgressSize.Equals(input.EgressSize))) return false;
+            if (this.EgressGuarentedSize != input.EgressGuarentedSize || (this.EgressGuarentedSize != null && !this.EgressGuarentedSize.Equals(input.EgressGuarentedSize))) return false;
+            if (this.PublicipInfo != input.PublicipInfo || (this.PublicipInfo != null && input.PublicipInfo != null && !this.PublicipInfo.SequenceEqual(input.PublicipInfo))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.EgressSize == input.EgressSize ||
-                    (this.EgressSize != null &&
-                    this.EgressSize.Equals(input.EgressSize))
-                ) && 
-                (
-                    this.EgressGuarentedSize == input.EgressGuarentedSize ||
-                    (this.EgressGuarentedSize != null &&
-                    this.EgressGuarentedSize.Equals(input.EgressGuarentedSize))
-                ) && 
-                (
-                    this.PublicipInfo == input.PublicipInfo ||
-                    this.PublicipInfo != null &&
-                    input.PublicipInfo != null &&
-                    this.PublicipInfo.SequenceEqual(input.PublicipInfo)
-                );
+            return true;
         }
 
         /// <summary>
@@ -128,19 +102,13 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.EgressSize != null)
-                    hashCode = hashCode * 59 + this.EgressSize.GetHashCode();
-                if (this.EgressGuarentedSize != null)
-                    hashCode = hashCode * 59 + this.EgressGuarentedSize.GetHashCode();
-                if (this.PublicipInfo != null)
-                    hashCode = hashCode * 59 + this.PublicipInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.EgressSize != null) hashCode = hashCode * 59 + this.EgressSize.GetHashCode();
+                if (this.EgressGuarentedSize != null) hashCode = hashCode * 59 + this.EgressGuarentedSize.GetHashCode();
+                if (this.PublicipInfo != null) hashCode = hashCode * 59 + this.PublicipInfo.GetHashCode();
                 return hashCode;
             }
         }

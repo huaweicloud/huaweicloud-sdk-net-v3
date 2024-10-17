@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         public bool Equals(DeleteEndpointServiceRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VpcEndpointServiceId != input.VpcEndpointServiceId || (this.VpcEndpointServiceId != null && !this.VpcEndpointServiceId.Equals(input.VpcEndpointServiceId))) return false;
 
-            return 
-                (
-                    this.VpcEndpointServiceId == input.VpcEndpointServiceId ||
-                    (this.VpcEndpointServiceId != null &&
-                    this.VpcEndpointServiceId.Equals(input.VpcEndpointServiceId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VpcEndpointServiceId != null)
-                    hashCode = hashCode * 59 + this.VpcEndpointServiceId.GetHashCode();
+                var hashCode = 41;
+                if (this.VpcEndpointServiceId != null) hashCode = hashCode * 59 + this.VpcEndpointServiceId.GetHashCode();
                 return hashCode;
             }
         }

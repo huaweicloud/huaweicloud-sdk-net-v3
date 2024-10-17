@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(ListRecordCallbackConfigsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.CallbackConfig != input.CallbackConfig || (this.CallbackConfig != null && input.CallbackConfig != null && !this.CallbackConfig.SequenceEqual(input.CallbackConfig))) return false;
 
-            return 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.CallbackConfig == input.CallbackConfig ||
-                    this.CallbackConfig != null &&
-                    input.CallbackConfig != null &&
-                    this.CallbackConfig.SequenceEqual(input.CallbackConfig)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.CallbackConfig != null)
-                    hashCode = hashCode * 59 + this.CallbackConfig.GetHashCode();
+                var hashCode = 41;
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.CallbackConfig != null) hashCode = hashCode * 59 + this.CallbackConfig.GetHashCode();
                 return hashCode;
             }
         }

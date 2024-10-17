@@ -63,28 +63,12 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(PackageRequestArgs input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Record != input.Record || (this.Record != null && input.Record != null && !this.Record.SequenceEqual(input.Record))) return false;
+            if (this.Timeshift != input.Timeshift || (this.Timeshift != null && input.Timeshift != null && !this.Timeshift.SequenceEqual(input.Timeshift))) return false;
+            if (this.Live != input.Live || (this.Live != null && input.Live != null && !this.Live.SequenceEqual(input.Live))) return false;
 
-            return 
-                (
-                    this.Record == input.Record ||
-                    this.Record != null &&
-                    input.Record != null &&
-                    this.Record.SequenceEqual(input.Record)
-                ) && 
-                (
-                    this.Timeshift == input.Timeshift ||
-                    this.Timeshift != null &&
-                    input.Timeshift != null &&
-                    this.Timeshift.SequenceEqual(input.Timeshift)
-                ) && 
-                (
-                    this.Live == input.Live ||
-                    this.Live != null &&
-                    input.Live != null &&
-                    this.Live.SequenceEqual(input.Live)
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +78,10 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Record != null)
-                    hashCode = hashCode * 59 + this.Record.GetHashCode();
-                if (this.Timeshift != null)
-                    hashCode = hashCode * 59 + this.Timeshift.GetHashCode();
-                if (this.Live != null)
-                    hashCode = hashCode * 59 + this.Live.GetHashCode();
+                var hashCode = 41;
+                if (this.Record != null) hashCode = hashCode * 59 + this.Record.GetHashCode();
+                if (this.Timeshift != null) hashCode = hashCode * 59 + this.Timeshift.GetHashCode();
+                if (this.Live != null) hashCode = hashCode * 59 + this.Live.GetHashCode();
                 return hashCode;
             }
         }

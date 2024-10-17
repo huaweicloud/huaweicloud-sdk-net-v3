@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(VaultAssociate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DestinationVaultId != input.DestinationVaultId || (this.DestinationVaultId != null && !this.DestinationVaultId.Equals(input.DestinationVaultId))) return false;
+            if (this.PolicyId != input.PolicyId || (this.PolicyId != null && !this.PolicyId.Equals(input.PolicyId))) return false;
+            if (this.AddPolicyIds != input.AddPolicyIds || (this.AddPolicyIds != null && input.AddPolicyIds != null && !this.AddPolicyIds.SequenceEqual(input.AddPolicyIds))) return false;
 
-            return 
-                (
-                    this.DestinationVaultId == input.DestinationVaultId ||
-                    (this.DestinationVaultId != null &&
-                    this.DestinationVaultId.Equals(input.DestinationVaultId))
-                ) && 
-                (
-                    this.PolicyId == input.PolicyId ||
-                    (this.PolicyId != null &&
-                    this.PolicyId.Equals(input.PolicyId))
-                ) && 
-                (
-                    this.AddPolicyIds == input.AddPolicyIds ||
-                    this.AddPolicyIds != null &&
-                    input.AddPolicyIds != null &&
-                    this.AddPolicyIds.SequenceEqual(input.AddPolicyIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DestinationVaultId != null)
-                    hashCode = hashCode * 59 + this.DestinationVaultId.GetHashCode();
-                if (this.PolicyId != null)
-                    hashCode = hashCode * 59 + this.PolicyId.GetHashCode();
-                if (this.AddPolicyIds != null)
-                    hashCode = hashCode * 59 + this.AddPolicyIds.GetHashCode();
+                var hashCode = 41;
+                if (this.DestinationVaultId != null) hashCode = hashCode * 59 + this.DestinationVaultId.GetHashCode();
+                if (this.PolicyId != null) hashCode = hashCode * 59 + this.PolicyId.GetHashCode();
+                if (this.AddPolicyIds != null) hashCode = hashCode * 59 + this.AddPolicyIds.GetHashCode();
                 return hashCode;
             }
         }

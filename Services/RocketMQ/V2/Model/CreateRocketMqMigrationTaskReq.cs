@@ -84,46 +84,15 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(CreateRocketMqMigrationTaskReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TopicConfigTable != input.TopicConfigTable || (this.TopicConfigTable != null && input.TopicConfigTable != null && !this.TopicConfigTable.SequenceEqual(input.TopicConfigTable))) return false;
+            if (this.SubscriptionGroupTable != input.SubscriptionGroupTable || (this.SubscriptionGroupTable != null && input.SubscriptionGroupTable != null && !this.SubscriptionGroupTable.SequenceEqual(input.SubscriptionGroupTable))) return false;
+            if (this.Vhosts != input.Vhosts || (this.Vhosts != null && input.Vhosts != null && !this.Vhosts.SequenceEqual(input.Vhosts))) return false;
+            if (this.Queues != input.Queues || (this.Queues != null && input.Queues != null && !this.Queues.SequenceEqual(input.Queues))) return false;
+            if (this.Exchanges != input.Exchanges || (this.Exchanges != null && input.Exchanges != null && !this.Exchanges.SequenceEqual(input.Exchanges))) return false;
+            if (this.Bindings != input.Bindings || (this.Bindings != null && input.Bindings != null && !this.Bindings.SequenceEqual(input.Bindings))) return false;
 
-            return 
-                (
-                    this.TopicConfigTable == input.TopicConfigTable ||
-                    this.TopicConfigTable != null &&
-                    input.TopicConfigTable != null &&
-                    this.TopicConfigTable.SequenceEqual(input.TopicConfigTable)
-                ) && 
-                (
-                    this.SubscriptionGroupTable == input.SubscriptionGroupTable ||
-                    this.SubscriptionGroupTable != null &&
-                    input.SubscriptionGroupTable != null &&
-                    this.SubscriptionGroupTable.SequenceEqual(input.SubscriptionGroupTable)
-                ) && 
-                (
-                    this.Vhosts == input.Vhosts ||
-                    this.Vhosts != null &&
-                    input.Vhosts != null &&
-                    this.Vhosts.SequenceEqual(input.Vhosts)
-                ) && 
-                (
-                    this.Queues == input.Queues ||
-                    this.Queues != null &&
-                    input.Queues != null &&
-                    this.Queues.SequenceEqual(input.Queues)
-                ) && 
-                (
-                    this.Exchanges == input.Exchanges ||
-                    this.Exchanges != null &&
-                    input.Exchanges != null &&
-                    this.Exchanges.SequenceEqual(input.Exchanges)
-                ) && 
-                (
-                    this.Bindings == input.Bindings ||
-                    this.Bindings != null &&
-                    input.Bindings != null &&
-                    this.Bindings.SequenceEqual(input.Bindings)
-                );
+            return true;
         }
 
         /// <summary>
@@ -133,19 +102,13 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TopicConfigTable != null)
-                    hashCode = hashCode * 59 + this.TopicConfigTable.GetHashCode();
-                if (this.SubscriptionGroupTable != null)
-                    hashCode = hashCode * 59 + this.SubscriptionGroupTable.GetHashCode();
-                if (this.Vhosts != null)
-                    hashCode = hashCode * 59 + this.Vhosts.GetHashCode();
-                if (this.Queues != null)
-                    hashCode = hashCode * 59 + this.Queues.GetHashCode();
-                if (this.Exchanges != null)
-                    hashCode = hashCode * 59 + this.Exchanges.GetHashCode();
-                if (this.Bindings != null)
-                    hashCode = hashCode * 59 + this.Bindings.GetHashCode();
+                var hashCode = 41;
+                if (this.TopicConfigTable != null) hashCode = hashCode * 59 + this.TopicConfigTable.GetHashCode();
+                if (this.SubscriptionGroupTable != null) hashCode = hashCode * 59 + this.SubscriptionGroupTable.GetHashCode();
+                if (this.Vhosts != null) hashCode = hashCode * 59 + this.Vhosts.GetHashCode();
+                if (this.Queues != null) hashCode = hashCode * 59 + this.Queues.GetHashCode();
+                if (this.Exchanges != null) hashCode = hashCode * 59 + this.Exchanges.GetHashCode();
+                if (this.Bindings != null) hashCode = hashCode * 59 + this.Bindings.GetHashCode();
                 return hashCode;
             }
         }

@@ -58,21 +58,11 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         /// </summary>
         public bool Equals(ListPlayDomainStreamInfoRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PlayDomains != input.PlayDomains || (this.PlayDomains != null && input.PlayDomains != null && !this.PlayDomains.SequenceEqual(input.PlayDomains))) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
 
-            return 
-                (
-                    this.PlayDomains == input.PlayDomains ||
-                    this.PlayDomains != null &&
-                    input.PlayDomains != null &&
-                    this.PlayDomains.SequenceEqual(input.PlayDomains)
-                ) && 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                );
+            return true;
         }
 
         /// <summary>
@@ -82,11 +72,9 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PlayDomains != null)
-                    hashCode = hashCode * 59 + this.PlayDomains.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
+                var hashCode = 41;
+                if (this.PlayDomains != null) hashCode = hashCode * 59 + this.PlayDomains.GetHashCode();
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
                 return hashCode;
             }
         }

@@ -212,52 +212,17 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(BackupRestoreOptionInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IsCover != input.IsCover || (this.IsCover != null && !this.IsCover.Equals(input.IsCover))) return false;
+            if (this.IsDefaultRestore != input.IsDefaultRestore || (this.IsDefaultRestore != null && !this.IsDefaultRestore.Equals(input.IsDefaultRestore))) return false;
+            if (this.IsLastBackup != input.IsLastBackup || (this.IsLastBackup != null && !this.IsLastBackup.Equals(input.IsLastBackup))) return false;
+            if (this.IsPrecheck != input.IsPrecheck || (this.IsPrecheck != null && !this.IsPrecheck.Equals(input.IsPrecheck))) return false;
+            if (this.RecoveryMode != input.RecoveryMode) return false;
+            if (this.DbNames != input.DbNames || (this.DbNames != null && input.DbNames != null && !this.DbNames.SequenceEqual(input.DbNames))) return false;
+            if (this.ResetDbNameMap != input.ResetDbNameMap || (this.ResetDbNameMap != null && input.ResetDbNameMap != null && !this.ResetDbNameMap.SequenceEqual(input.ResetDbNameMap))) return false;
+            if (this.IsDeleteBackupFile != input.IsDeleteBackupFile || (this.IsDeleteBackupFile != null && !this.IsDeleteBackupFile.Equals(input.IsDeleteBackupFile))) return false;
 
-            return 
-                (
-                    this.IsCover == input.IsCover ||
-                    (this.IsCover != null &&
-                    this.IsCover.Equals(input.IsCover))
-                ) && 
-                (
-                    this.IsDefaultRestore == input.IsDefaultRestore ||
-                    (this.IsDefaultRestore != null &&
-                    this.IsDefaultRestore.Equals(input.IsDefaultRestore))
-                ) && 
-                (
-                    this.IsLastBackup == input.IsLastBackup ||
-                    (this.IsLastBackup != null &&
-                    this.IsLastBackup.Equals(input.IsLastBackup))
-                ) && 
-                (
-                    this.IsPrecheck == input.IsPrecheck ||
-                    (this.IsPrecheck != null &&
-                    this.IsPrecheck.Equals(input.IsPrecheck))
-                ) && 
-                (
-                    this.RecoveryMode == input.RecoveryMode ||
-                    (this.RecoveryMode != null &&
-                    this.RecoveryMode.Equals(input.RecoveryMode))
-                ) && 
-                (
-                    this.DbNames == input.DbNames ||
-                    this.DbNames != null &&
-                    input.DbNames != null &&
-                    this.DbNames.SequenceEqual(input.DbNames)
-                ) && 
-                (
-                    this.ResetDbNameMap == input.ResetDbNameMap ||
-                    this.ResetDbNameMap != null &&
-                    input.ResetDbNameMap != null &&
-                    this.ResetDbNameMap.SequenceEqual(input.ResetDbNameMap)
-                ) && 
-                (
-                    this.IsDeleteBackupFile == input.IsDeleteBackupFile ||
-                    (this.IsDeleteBackupFile != null &&
-                    this.IsDeleteBackupFile.Equals(input.IsDeleteBackupFile))
-                );
+            return true;
         }
 
         /// <summary>
@@ -267,23 +232,15 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IsCover != null)
-                    hashCode = hashCode * 59 + this.IsCover.GetHashCode();
-                if (this.IsDefaultRestore != null)
-                    hashCode = hashCode * 59 + this.IsDefaultRestore.GetHashCode();
-                if (this.IsLastBackup != null)
-                    hashCode = hashCode * 59 + this.IsLastBackup.GetHashCode();
-                if (this.IsPrecheck != null)
-                    hashCode = hashCode * 59 + this.IsPrecheck.GetHashCode();
-                if (this.RecoveryMode != null)
-                    hashCode = hashCode * 59 + this.RecoveryMode.GetHashCode();
-                if (this.DbNames != null)
-                    hashCode = hashCode * 59 + this.DbNames.GetHashCode();
-                if (this.ResetDbNameMap != null)
-                    hashCode = hashCode * 59 + this.ResetDbNameMap.GetHashCode();
-                if (this.IsDeleteBackupFile != null)
-                    hashCode = hashCode * 59 + this.IsDeleteBackupFile.GetHashCode();
+                var hashCode = 41;
+                if (this.IsCover != null) hashCode = hashCode * 59 + this.IsCover.GetHashCode();
+                if (this.IsDefaultRestore != null) hashCode = hashCode * 59 + this.IsDefaultRestore.GetHashCode();
+                if (this.IsLastBackup != null) hashCode = hashCode * 59 + this.IsLastBackup.GetHashCode();
+                if (this.IsPrecheck != null) hashCode = hashCode * 59 + this.IsPrecheck.GetHashCode();
+                hashCode = hashCode * 59 + this.RecoveryMode.GetHashCode();
+                if (this.DbNames != null) hashCode = hashCode * 59 + this.DbNames.GetHashCode();
+                if (this.ResetDbNameMap != null) hashCode = hashCode * 59 + this.ResetDbNameMap.GetHashCode();
+                if (this.IsDeleteBackupFile != null) hashCode = hashCode * 59 + this.IsDeleteBackupFile.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(BatchDeleteAlarmTemplatesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TemplateIds != input.TemplateIds || (this.TemplateIds != null && input.TemplateIds != null && !this.TemplateIds.SequenceEqual(input.TemplateIds))) return false;
 
-            return 
-                (
-                    this.TemplateIds == input.TemplateIds ||
-                    this.TemplateIds != null &&
-                    input.TemplateIds != null &&
-                    this.TemplateIds.SequenceEqual(input.TemplateIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TemplateIds != null)
-                    hashCode = hashCode * 59 + this.TemplateIds.GetHashCode();
+                var hashCode = 41;
+                if (this.TemplateIds != null) hashCode = hashCode * 59 + this.TemplateIds.GetHashCode();
                 return hashCode;
             }
         }

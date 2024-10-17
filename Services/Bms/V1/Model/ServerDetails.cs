@@ -1004,235 +1004,53 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(ServerDetails input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.UserId != input.UserId || (this.UserId != null && !this.UserId.Equals(input.UserId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Created != input.Created || (this.Created != null && !this.Created.Equals(input.Created))) return false;
+            if (this.Updated != input.Updated || (this.Updated != null && !this.Updated.Equals(input.Updated))) return false;
+            if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
+            if (this.HostId != input.HostId || (this.HostId != null && !this.HostId.Equals(input.HostId))) return false;
+            if (this.Addresses != input.Addresses || (this.Addresses != null && input.Addresses != null && !this.Addresses.SequenceEqual(input.Addresses))) return false;
+            if (this.KeyName != input.KeyName || (this.KeyName != null && !this.KeyName.Equals(input.KeyName))) return false;
+            if (this.Image != input.Image || (this.Image != null && !this.Image.Equals(input.Image))) return false;
+            if (this.Flavor != input.Flavor || (this.Flavor != null && !this.Flavor.Equals(input.Flavor))) return false;
+            if (this.SecurityGroups != input.SecurityGroups || (this.SecurityGroups != null && input.SecurityGroups != null && !this.SecurityGroups.SequenceEqual(input.SecurityGroups))) return false;
+            if (this.AccessIPv4 != input.AccessIPv4 || (this.AccessIPv4 != null && !this.AccessIPv4.Equals(input.AccessIPv4))) return false;
+            if (this.AccessIPv6 != input.AccessIPv6 || (this.AccessIPv6 != null && !this.AccessIPv6.Equals(input.AccessIPv6))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.Progress != input.Progress || (this.Progress != null && !this.Progress.Equals(input.Progress))) return false;
+            if (this.ConfigDrive != input.ConfigDrive || (this.ConfigDrive != null && !this.ConfigDrive.Equals(input.ConfigDrive))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && !this.Metadata.Equals(input.Metadata))) return false;
+            if (this.OSEXTSTStaskState != input.OSEXTSTStaskState) return false;
+            if (this.OSEXTSTSvmState != input.OSEXTSTSvmState) return false;
+            if (this.OSEXTSRVATTRhost != input.OSEXTSRVATTRhost || (this.OSEXTSRVATTRhost != null && !this.OSEXTSRVATTRhost.Equals(input.OSEXTSRVATTRhost))) return false;
+            if (this.OSEXTSRVATTRinstanceName != input.OSEXTSRVATTRinstanceName || (this.OSEXTSRVATTRinstanceName != null && !this.OSEXTSRVATTRinstanceName.Equals(input.OSEXTSRVATTRinstanceName))) return false;
+            if (this.OSEXTSTSpowerState != input.OSEXTSTSpowerState || (this.OSEXTSTSpowerState != null && !this.OSEXTSTSpowerState.Equals(input.OSEXTSTSpowerState))) return false;
+            if (this.OSEXTSRVATTRhypervisorHostname != input.OSEXTSRVATTRhypervisorHostname || (this.OSEXTSRVATTRhypervisorHostname != null && !this.OSEXTSRVATTRhypervisorHostname.Equals(input.OSEXTSRVATTRhypervisorHostname))) return false;
+            if (this.OSEXTAZavailabilityZone != input.OSEXTAZavailabilityZone || (this.OSEXTAZavailabilityZone != null && !this.OSEXTAZavailabilityZone.Equals(input.OSEXTAZavailabilityZone))) return false;
+            if (this.OSDCFdiskConfig != input.OSDCFdiskConfig) return false;
+            if (this.Fault != input.Fault || (this.Fault != null && !this.Fault.Equals(input.Fault))) return false;
+            if (this.OSSRVUSGlaunchedAt != input.OSSRVUSGlaunchedAt || (this.OSSRVUSGlaunchedAt != null && !this.OSSRVUSGlaunchedAt.Equals(input.OSSRVUSGlaunchedAt))) return false;
+            if (this.OSSRVUSGterminatedAt != input.OSSRVUSGterminatedAt || (this.OSSRVUSGterminatedAt != null && !this.OSSRVUSGterminatedAt.Equals(input.OSSRVUSGterminatedAt))) return false;
+            if (this.OsExtendedVolumesvolumesAttached != input.OsExtendedVolumesvolumesAttached || (this.OsExtendedVolumesvolumesAttached != null && input.OsExtendedVolumesvolumesAttached != null && !this.OsExtendedVolumesvolumesAttached.SequenceEqual(input.OsExtendedVolumesvolumesAttached))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.HostStatus != input.HostStatus) return false;
+            if (this.OSEXTSRVATTRhostname != input.OSEXTSRVATTRhostname || (this.OSEXTSRVATTRhostname != null && !this.OSEXTSRVATTRhostname.Equals(input.OSEXTSRVATTRhostname))) return false;
+            if (this.OSEXTSRVATTRreservationId != input.OSEXTSRVATTRreservationId || (this.OSEXTSRVATTRreservationId != null && !this.OSEXTSRVATTRreservationId.Equals(input.OSEXTSRVATTRreservationId))) return false;
+            if (this.OSEXTSRVATTRlaunchIndex != input.OSEXTSRVATTRlaunchIndex || (this.OSEXTSRVATTRlaunchIndex != null && !this.OSEXTSRVATTRlaunchIndex.Equals(input.OSEXTSRVATTRlaunchIndex))) return false;
+            if (this.OSEXTSRVATTRkernelId != input.OSEXTSRVATTRkernelId || (this.OSEXTSRVATTRkernelId != null && !this.OSEXTSRVATTRkernelId.Equals(input.OSEXTSRVATTRkernelId))) return false;
+            if (this.OSEXTSRVATTRramdiskId != input.OSEXTSRVATTRramdiskId || (this.OSEXTSRVATTRramdiskId != null && !this.OSEXTSRVATTRramdiskId.Equals(input.OSEXTSRVATTRramdiskId))) return false;
+            if (this.OSEXTSRVATTRrootDeviceName != input.OSEXTSRVATTRrootDeviceName || (this.OSEXTSRVATTRrootDeviceName != null && !this.OSEXTSRVATTRrootDeviceName.Equals(input.OSEXTSRVATTRrootDeviceName))) return false;
+            if (this.OSEXTSRVATTRuserData != input.OSEXTSRVATTRuserData || (this.OSEXTSRVATTRuserData != null && !this.OSEXTSRVATTRuserData.Equals(input.OSEXTSRVATTRuserData))) return false;
+            if (this.Locked != input.Locked || (this.Locked != null && !this.Locked.Equals(input.Locked))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.OsschedulerHints != input.OsschedulerHints || (this.OsschedulerHints != null && !this.OsschedulerHints.Equals(input.OsschedulerHints))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.SysTags != input.SysTags || (this.SysTags != null && input.SysTags != null && !this.SysTags.SequenceEqual(input.SysTags))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Created == input.Created ||
-                    (this.Created != null &&
-                    this.Created.Equals(input.Created))
-                ) && 
-                (
-                    this.Updated == input.Updated ||
-                    (this.Updated != null &&
-                    this.Updated.Equals(input.Updated))
-                ) && 
-                (
-                    this.TenantId == input.TenantId ||
-                    (this.TenantId != null &&
-                    this.TenantId.Equals(input.TenantId))
-                ) && 
-                (
-                    this.HostId == input.HostId ||
-                    (this.HostId != null &&
-                    this.HostId.Equals(input.HostId))
-                ) && 
-                (
-                    this.Addresses == input.Addresses ||
-                    this.Addresses != null &&
-                    input.Addresses != null &&
-                    this.Addresses.SequenceEqual(input.Addresses)
-                ) && 
-                (
-                    this.KeyName == input.KeyName ||
-                    (this.KeyName != null &&
-                    this.KeyName.Equals(input.KeyName))
-                ) && 
-                (
-                    this.Image == input.Image ||
-                    (this.Image != null &&
-                    this.Image.Equals(input.Image))
-                ) && 
-                (
-                    this.Flavor == input.Flavor ||
-                    (this.Flavor != null &&
-                    this.Flavor.Equals(input.Flavor))
-                ) && 
-                (
-                    this.SecurityGroups == input.SecurityGroups ||
-                    this.SecurityGroups != null &&
-                    input.SecurityGroups != null &&
-                    this.SecurityGroups.SequenceEqual(input.SecurityGroups)
-                ) && 
-                (
-                    this.AccessIPv4 == input.AccessIPv4 ||
-                    (this.AccessIPv4 != null &&
-                    this.AccessIPv4.Equals(input.AccessIPv4))
-                ) && 
-                (
-                    this.AccessIPv6 == input.AccessIPv6 ||
-                    (this.AccessIPv6 != null &&
-                    this.AccessIPv6.Equals(input.AccessIPv6))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Progress == input.Progress ||
-                    (this.Progress != null &&
-                    this.Progress.Equals(input.Progress))
-                ) && 
-                (
-                    this.ConfigDrive == input.ConfigDrive ||
-                    (this.ConfigDrive != null &&
-                    this.ConfigDrive.Equals(input.ConfigDrive))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    (this.Metadata != null &&
-                    this.Metadata.Equals(input.Metadata))
-                ) && 
-                (
-                    this.OSEXTSTStaskState == input.OSEXTSTStaskState ||
-                    (this.OSEXTSTStaskState != null &&
-                    this.OSEXTSTStaskState.Equals(input.OSEXTSTStaskState))
-                ) && 
-                (
-                    this.OSEXTSTSvmState == input.OSEXTSTSvmState ||
-                    (this.OSEXTSTSvmState != null &&
-                    this.OSEXTSTSvmState.Equals(input.OSEXTSTSvmState))
-                ) && 
-                (
-                    this.OSEXTSRVATTRhost == input.OSEXTSRVATTRhost ||
-                    (this.OSEXTSRVATTRhost != null &&
-                    this.OSEXTSRVATTRhost.Equals(input.OSEXTSRVATTRhost))
-                ) && 
-                (
-                    this.OSEXTSRVATTRinstanceName == input.OSEXTSRVATTRinstanceName ||
-                    (this.OSEXTSRVATTRinstanceName != null &&
-                    this.OSEXTSRVATTRinstanceName.Equals(input.OSEXTSRVATTRinstanceName))
-                ) && 
-                (
-                    this.OSEXTSTSpowerState == input.OSEXTSTSpowerState ||
-                    (this.OSEXTSTSpowerState != null &&
-                    this.OSEXTSTSpowerState.Equals(input.OSEXTSTSpowerState))
-                ) && 
-                (
-                    this.OSEXTSRVATTRhypervisorHostname == input.OSEXTSRVATTRhypervisorHostname ||
-                    (this.OSEXTSRVATTRhypervisorHostname != null &&
-                    this.OSEXTSRVATTRhypervisorHostname.Equals(input.OSEXTSRVATTRhypervisorHostname))
-                ) && 
-                (
-                    this.OSEXTAZavailabilityZone == input.OSEXTAZavailabilityZone ||
-                    (this.OSEXTAZavailabilityZone != null &&
-                    this.OSEXTAZavailabilityZone.Equals(input.OSEXTAZavailabilityZone))
-                ) && 
-                (
-                    this.OSDCFdiskConfig == input.OSDCFdiskConfig ||
-                    (this.OSDCFdiskConfig != null &&
-                    this.OSDCFdiskConfig.Equals(input.OSDCFdiskConfig))
-                ) && 
-                (
-                    this.Fault == input.Fault ||
-                    (this.Fault != null &&
-                    this.Fault.Equals(input.Fault))
-                ) && 
-                (
-                    this.OSSRVUSGlaunchedAt == input.OSSRVUSGlaunchedAt ||
-                    (this.OSSRVUSGlaunchedAt != null &&
-                    this.OSSRVUSGlaunchedAt.Equals(input.OSSRVUSGlaunchedAt))
-                ) && 
-                (
-                    this.OSSRVUSGterminatedAt == input.OSSRVUSGterminatedAt ||
-                    (this.OSSRVUSGterminatedAt != null &&
-                    this.OSSRVUSGterminatedAt.Equals(input.OSSRVUSGterminatedAt))
-                ) && 
-                (
-                    this.OsExtendedVolumesvolumesAttached == input.OsExtendedVolumesvolumesAttached ||
-                    this.OsExtendedVolumesvolumesAttached != null &&
-                    input.OsExtendedVolumesvolumesAttached != null &&
-                    this.OsExtendedVolumesvolumesAttached.SequenceEqual(input.OsExtendedVolumesvolumesAttached)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.HostStatus == input.HostStatus ||
-                    (this.HostStatus != null &&
-                    this.HostStatus.Equals(input.HostStatus))
-                ) && 
-                (
-                    this.OSEXTSRVATTRhostname == input.OSEXTSRVATTRhostname ||
-                    (this.OSEXTSRVATTRhostname != null &&
-                    this.OSEXTSRVATTRhostname.Equals(input.OSEXTSRVATTRhostname))
-                ) && 
-                (
-                    this.OSEXTSRVATTRreservationId == input.OSEXTSRVATTRreservationId ||
-                    (this.OSEXTSRVATTRreservationId != null &&
-                    this.OSEXTSRVATTRreservationId.Equals(input.OSEXTSRVATTRreservationId))
-                ) && 
-                (
-                    this.OSEXTSRVATTRlaunchIndex == input.OSEXTSRVATTRlaunchIndex ||
-                    (this.OSEXTSRVATTRlaunchIndex != null &&
-                    this.OSEXTSRVATTRlaunchIndex.Equals(input.OSEXTSRVATTRlaunchIndex))
-                ) && 
-                (
-                    this.OSEXTSRVATTRkernelId == input.OSEXTSRVATTRkernelId ||
-                    (this.OSEXTSRVATTRkernelId != null &&
-                    this.OSEXTSRVATTRkernelId.Equals(input.OSEXTSRVATTRkernelId))
-                ) && 
-                (
-                    this.OSEXTSRVATTRramdiskId == input.OSEXTSRVATTRramdiskId ||
-                    (this.OSEXTSRVATTRramdiskId != null &&
-                    this.OSEXTSRVATTRramdiskId.Equals(input.OSEXTSRVATTRramdiskId))
-                ) && 
-                (
-                    this.OSEXTSRVATTRrootDeviceName == input.OSEXTSRVATTRrootDeviceName ||
-                    (this.OSEXTSRVATTRrootDeviceName != null &&
-                    this.OSEXTSRVATTRrootDeviceName.Equals(input.OSEXTSRVATTRrootDeviceName))
-                ) && 
-                (
-                    this.OSEXTSRVATTRuserData == input.OSEXTSRVATTRuserData ||
-                    (this.OSEXTSRVATTRuserData != null &&
-                    this.OSEXTSRVATTRuserData.Equals(input.OSEXTSRVATTRuserData))
-                ) && 
-                (
-                    this.Locked == input.Locked ||
-                    (this.Locked != null &&
-                    this.Locked.Equals(input.Locked))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.OsschedulerHints == input.OsschedulerHints ||
-                    (this.OsschedulerHints != null &&
-                    this.OsschedulerHints.Equals(input.OsschedulerHints))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.SysTags == input.SysTags ||
-                    this.SysTags != null &&
-                    input.SysTags != null &&
-                    this.SysTags.SequenceEqual(input.SysTags)
-                );
+            return true;
         }
 
         /// <summary>
@@ -1242,95 +1060,51 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Created != null)
-                    hashCode = hashCode * 59 + this.Created.GetHashCode();
-                if (this.Updated != null)
-                    hashCode = hashCode * 59 + this.Updated.GetHashCode();
-                if (this.TenantId != null)
-                    hashCode = hashCode * 59 + this.TenantId.GetHashCode();
-                if (this.HostId != null)
-                    hashCode = hashCode * 59 + this.HostId.GetHashCode();
-                if (this.Addresses != null)
-                    hashCode = hashCode * 59 + this.Addresses.GetHashCode();
-                if (this.KeyName != null)
-                    hashCode = hashCode * 59 + this.KeyName.GetHashCode();
-                if (this.Image != null)
-                    hashCode = hashCode * 59 + this.Image.GetHashCode();
-                if (this.Flavor != null)
-                    hashCode = hashCode * 59 + this.Flavor.GetHashCode();
-                if (this.SecurityGroups != null)
-                    hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
-                if (this.AccessIPv4 != null)
-                    hashCode = hashCode * 59 + this.AccessIPv4.GetHashCode();
-                if (this.AccessIPv6 != null)
-                    hashCode = hashCode * 59 + this.AccessIPv6.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Progress != null)
-                    hashCode = hashCode * 59 + this.Progress.GetHashCode();
-                if (this.ConfigDrive != null)
-                    hashCode = hashCode * 59 + this.ConfigDrive.GetHashCode();
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
-                if (this.OSEXTSTStaskState != null)
-                    hashCode = hashCode * 59 + this.OSEXTSTStaskState.GetHashCode();
-                if (this.OSEXTSTSvmState != null)
-                    hashCode = hashCode * 59 + this.OSEXTSTSvmState.GetHashCode();
-                if (this.OSEXTSRVATTRhost != null)
-                    hashCode = hashCode * 59 + this.OSEXTSRVATTRhost.GetHashCode();
-                if (this.OSEXTSRVATTRinstanceName != null)
-                    hashCode = hashCode * 59 + this.OSEXTSRVATTRinstanceName.GetHashCode();
-                if (this.OSEXTSTSpowerState != null)
-                    hashCode = hashCode * 59 + this.OSEXTSTSpowerState.GetHashCode();
-                if (this.OSEXTSRVATTRhypervisorHostname != null)
-                    hashCode = hashCode * 59 + this.OSEXTSRVATTRhypervisorHostname.GetHashCode();
-                if (this.OSEXTAZavailabilityZone != null)
-                    hashCode = hashCode * 59 + this.OSEXTAZavailabilityZone.GetHashCode();
-                if (this.OSDCFdiskConfig != null)
-                    hashCode = hashCode * 59 + this.OSDCFdiskConfig.GetHashCode();
-                if (this.Fault != null)
-                    hashCode = hashCode * 59 + this.Fault.GetHashCode();
-                if (this.OSSRVUSGlaunchedAt != null)
-                    hashCode = hashCode * 59 + this.OSSRVUSGlaunchedAt.GetHashCode();
-                if (this.OSSRVUSGterminatedAt != null)
-                    hashCode = hashCode * 59 + this.OSSRVUSGterminatedAt.GetHashCode();
-                if (this.OsExtendedVolumesvolumesAttached != null)
-                    hashCode = hashCode * 59 + this.OsExtendedVolumesvolumesAttached.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.HostStatus != null)
-                    hashCode = hashCode * 59 + this.HostStatus.GetHashCode();
-                if (this.OSEXTSRVATTRhostname != null)
-                    hashCode = hashCode * 59 + this.OSEXTSRVATTRhostname.GetHashCode();
-                if (this.OSEXTSRVATTRreservationId != null)
-                    hashCode = hashCode * 59 + this.OSEXTSRVATTRreservationId.GetHashCode();
-                if (this.OSEXTSRVATTRlaunchIndex != null)
-                    hashCode = hashCode * 59 + this.OSEXTSRVATTRlaunchIndex.GetHashCode();
-                if (this.OSEXTSRVATTRkernelId != null)
-                    hashCode = hashCode * 59 + this.OSEXTSRVATTRkernelId.GetHashCode();
-                if (this.OSEXTSRVATTRramdiskId != null)
-                    hashCode = hashCode * 59 + this.OSEXTSRVATTRramdiskId.GetHashCode();
-                if (this.OSEXTSRVATTRrootDeviceName != null)
-                    hashCode = hashCode * 59 + this.OSEXTSRVATTRrootDeviceName.GetHashCode();
-                if (this.OSEXTSRVATTRuserData != null)
-                    hashCode = hashCode * 59 + this.OSEXTSRVATTRuserData.GetHashCode();
-                if (this.Locked != null)
-                    hashCode = hashCode * 59 + this.Locked.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.OsschedulerHints != null)
-                    hashCode = hashCode * 59 + this.OsschedulerHints.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.SysTags != null)
-                    hashCode = hashCode * 59 + this.SysTags.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.UserId != null) hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Created != null) hashCode = hashCode * 59 + this.Created.GetHashCode();
+                if (this.Updated != null) hashCode = hashCode * 59 + this.Updated.GetHashCode();
+                if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
+                if (this.HostId != null) hashCode = hashCode * 59 + this.HostId.GetHashCode();
+                if (this.Addresses != null) hashCode = hashCode * 59 + this.Addresses.GetHashCode();
+                if (this.KeyName != null) hashCode = hashCode * 59 + this.KeyName.GetHashCode();
+                if (this.Image != null) hashCode = hashCode * 59 + this.Image.GetHashCode();
+                if (this.Flavor != null) hashCode = hashCode * 59 + this.Flavor.GetHashCode();
+                if (this.SecurityGroups != null) hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
+                if (this.AccessIPv4 != null) hashCode = hashCode * 59 + this.AccessIPv4.GetHashCode();
+                if (this.AccessIPv6 != null) hashCode = hashCode * 59 + this.AccessIPv6.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Progress != null) hashCode = hashCode * 59 + this.Progress.GetHashCode();
+                if (this.ConfigDrive != null) hashCode = hashCode * 59 + this.ConfigDrive.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                hashCode = hashCode * 59 + this.OSEXTSTStaskState.GetHashCode();
+                hashCode = hashCode * 59 + this.OSEXTSTSvmState.GetHashCode();
+                if (this.OSEXTSRVATTRhost != null) hashCode = hashCode * 59 + this.OSEXTSRVATTRhost.GetHashCode();
+                if (this.OSEXTSRVATTRinstanceName != null) hashCode = hashCode * 59 + this.OSEXTSRVATTRinstanceName.GetHashCode();
+                if (this.OSEXTSTSpowerState != null) hashCode = hashCode * 59 + this.OSEXTSTSpowerState.GetHashCode();
+                if (this.OSEXTSRVATTRhypervisorHostname != null) hashCode = hashCode * 59 + this.OSEXTSRVATTRhypervisorHostname.GetHashCode();
+                if (this.OSEXTAZavailabilityZone != null) hashCode = hashCode * 59 + this.OSEXTAZavailabilityZone.GetHashCode();
+                hashCode = hashCode * 59 + this.OSDCFdiskConfig.GetHashCode();
+                if (this.Fault != null) hashCode = hashCode * 59 + this.Fault.GetHashCode();
+                if (this.OSSRVUSGlaunchedAt != null) hashCode = hashCode * 59 + this.OSSRVUSGlaunchedAt.GetHashCode();
+                if (this.OSSRVUSGterminatedAt != null) hashCode = hashCode * 59 + this.OSSRVUSGterminatedAt.GetHashCode();
+                if (this.OsExtendedVolumesvolumesAttached != null) hashCode = hashCode * 59 + this.OsExtendedVolumesvolumesAttached.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                hashCode = hashCode * 59 + this.HostStatus.GetHashCode();
+                if (this.OSEXTSRVATTRhostname != null) hashCode = hashCode * 59 + this.OSEXTSRVATTRhostname.GetHashCode();
+                if (this.OSEXTSRVATTRreservationId != null) hashCode = hashCode * 59 + this.OSEXTSRVATTRreservationId.GetHashCode();
+                if (this.OSEXTSRVATTRlaunchIndex != null) hashCode = hashCode * 59 + this.OSEXTSRVATTRlaunchIndex.GetHashCode();
+                if (this.OSEXTSRVATTRkernelId != null) hashCode = hashCode * 59 + this.OSEXTSRVATTRkernelId.GetHashCode();
+                if (this.OSEXTSRVATTRramdiskId != null) hashCode = hashCode * 59 + this.OSEXTSRVATTRramdiskId.GetHashCode();
+                if (this.OSEXTSRVATTRrootDeviceName != null) hashCode = hashCode * 59 + this.OSEXTSRVATTRrootDeviceName.GetHashCode();
+                if (this.OSEXTSRVATTRuserData != null) hashCode = hashCode * 59 + this.OSEXTSRVATTRuserData.GetHashCode();
+                if (this.Locked != null) hashCode = hashCode * 59 + this.Locked.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.OsschedulerHints != null) hashCode = hashCode * 59 + this.OsschedulerHints.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.SysTags != null) hashCode = hashCode * 59 + this.SysTags.GetHashCode();
                 return hashCode;
             }
         }

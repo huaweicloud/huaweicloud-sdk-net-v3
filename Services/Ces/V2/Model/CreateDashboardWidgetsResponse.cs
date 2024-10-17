@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(CreateDashboardWidgetsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.WidgetIds != input.WidgetIds || (this.WidgetIds != null && input.WidgetIds != null && !this.WidgetIds.SequenceEqual(input.WidgetIds))) return false;
 
-            return 
-                (
-                    this.WidgetIds == input.WidgetIds ||
-                    this.WidgetIds != null &&
-                    input.WidgetIds != null &&
-                    this.WidgetIds.SequenceEqual(input.WidgetIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.WidgetIds != null)
-                    hashCode = hashCode * 59 + this.WidgetIds.GetHashCode();
+                var hashCode = 41;
+                if (this.WidgetIds != null) hashCode = hashCode * 59 + this.WidgetIds.GetHashCode();
                 return hashCode;
             }
         }

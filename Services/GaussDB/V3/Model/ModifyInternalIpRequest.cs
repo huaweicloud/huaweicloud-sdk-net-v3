@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ModifyInternalIpRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InternalIp != input.InternalIp || (this.InternalIp != null && !this.InternalIp.Equals(input.InternalIp))) return false;
 
-            return 
-                (
-                    this.InternalIp == input.InternalIp ||
-                    (this.InternalIp != null &&
-                    this.InternalIp.Equals(input.InternalIp))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InternalIp != null)
-                    hashCode = hashCode * 59 + this.InternalIp.GetHashCode();
+                var hashCode = 41;
+                if (this.InternalIp != null) hashCode = hashCode * 59 + this.InternalIp.GetHashCode();
                 return hashCode;
             }
         }

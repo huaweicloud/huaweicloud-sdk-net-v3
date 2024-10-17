@@ -171,25 +171,12 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(Notifications input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ActionRule != input.ActionRule || (this.ActionRule != null && !this.ActionRule.Equals(input.ActionRule))) return false;
+            if (this.NotifierChannel != input.NotifierChannel) return false;
+            if (this.SmnChannel != input.SmnChannel || (this.SmnChannel != null && !this.SmnChannel.Equals(input.SmnChannel))) return false;
 
-            return 
-                (
-                    this.ActionRule == input.ActionRule ||
-                    (this.ActionRule != null &&
-                    this.ActionRule.Equals(input.ActionRule))
-                ) && 
-                (
-                    this.NotifierChannel == input.NotifierChannel ||
-                    (this.NotifierChannel != null &&
-                    this.NotifierChannel.Equals(input.NotifierChannel))
-                ) && 
-                (
-                    this.SmnChannel == input.SmnChannel ||
-                    (this.SmnChannel != null &&
-                    this.SmnChannel.Equals(input.SmnChannel))
-                );
+            return true;
         }
 
         /// <summary>
@@ -199,13 +186,10 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ActionRule != null)
-                    hashCode = hashCode * 59 + this.ActionRule.GetHashCode();
-                if (this.NotifierChannel != null)
-                    hashCode = hashCode * 59 + this.NotifierChannel.GetHashCode();
-                if (this.SmnChannel != null)
-                    hashCode = hashCode * 59 + this.SmnChannel.GetHashCode();
+                var hashCode = 41;
+                if (this.ActionRule != null) hashCode = hashCode * 59 + this.ActionRule.GetHashCode();
+                hashCode = hashCode * 59 + this.NotifierChannel.GetHashCode();
+                if (this.SmnChannel != null) hashCode = hashCode * 59 + this.SmnChannel.GetHashCode();
                 return hashCode;
             }
         }

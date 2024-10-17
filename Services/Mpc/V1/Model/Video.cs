@@ -246,70 +246,21 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(Video input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OutputPolicy != input.OutputPolicy) return false;
+            if (this.Codec != input.Codec || (this.Codec != null && !this.Codec.Equals(input.Codec))) return false;
+            if (this.Bitrate != input.Bitrate || (this.Bitrate != null && !this.Bitrate.Equals(input.Bitrate))) return false;
+            if (this.Profile != input.Profile || (this.Profile != null && !this.Profile.Equals(input.Profile))) return false;
+            if (this.Level != input.Level || (this.Level != null && !this.Level.Equals(input.Level))) return false;
+            if (this.Preset != input.Preset || (this.Preset != null && !this.Preset.Equals(input.Preset))) return false;
+            if (this.MaxIframesInterval != input.MaxIframesInterval || (this.MaxIframesInterval != null && !this.MaxIframesInterval.Equals(input.MaxIframesInterval))) return false;
+            if (this.BframesCount != input.BframesCount || (this.BframesCount != null && !this.BframesCount.Equals(input.BframesCount))) return false;
+            if (this.FrameRate != input.FrameRate || (this.FrameRate != null && !this.FrameRate.Equals(input.FrameRate))) return false;
+            if (this.Width != input.Width || (this.Width != null && !this.Width.Equals(input.Width))) return false;
+            if (this.Height != input.Height || (this.Height != null && !this.Height.Equals(input.Height))) return false;
+            if (this.BlackCut != input.BlackCut || (this.BlackCut != null && !this.BlackCut.Equals(input.BlackCut))) return false;
 
-            return 
-                (
-                    this.OutputPolicy == input.OutputPolicy ||
-                    (this.OutputPolicy != null &&
-                    this.OutputPolicy.Equals(input.OutputPolicy))
-                ) && 
-                (
-                    this.Codec == input.Codec ||
-                    (this.Codec != null &&
-                    this.Codec.Equals(input.Codec))
-                ) && 
-                (
-                    this.Bitrate == input.Bitrate ||
-                    (this.Bitrate != null &&
-                    this.Bitrate.Equals(input.Bitrate))
-                ) && 
-                (
-                    this.Profile == input.Profile ||
-                    (this.Profile != null &&
-                    this.Profile.Equals(input.Profile))
-                ) && 
-                (
-                    this.Level == input.Level ||
-                    (this.Level != null &&
-                    this.Level.Equals(input.Level))
-                ) && 
-                (
-                    this.Preset == input.Preset ||
-                    (this.Preset != null &&
-                    this.Preset.Equals(input.Preset))
-                ) && 
-                (
-                    this.MaxIframesInterval == input.MaxIframesInterval ||
-                    (this.MaxIframesInterval != null &&
-                    this.MaxIframesInterval.Equals(input.MaxIframesInterval))
-                ) && 
-                (
-                    this.BframesCount == input.BframesCount ||
-                    (this.BframesCount != null &&
-                    this.BframesCount.Equals(input.BframesCount))
-                ) && 
-                (
-                    this.FrameRate == input.FrameRate ||
-                    (this.FrameRate != null &&
-                    this.FrameRate.Equals(input.FrameRate))
-                ) && 
-                (
-                    this.Width == input.Width ||
-                    (this.Width != null &&
-                    this.Width.Equals(input.Width))
-                ) && 
-                (
-                    this.Height == input.Height ||
-                    (this.Height != null &&
-                    this.Height.Equals(input.Height))
-                ) && 
-                (
-                    this.BlackCut == input.BlackCut ||
-                    (this.BlackCut != null &&
-                    this.BlackCut.Equals(input.BlackCut))
-                );
+            return true;
         }
 
         /// <summary>
@@ -319,31 +270,19 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OutputPolicy != null)
-                    hashCode = hashCode * 59 + this.OutputPolicy.GetHashCode();
-                if (this.Codec != null)
-                    hashCode = hashCode * 59 + this.Codec.GetHashCode();
-                if (this.Bitrate != null)
-                    hashCode = hashCode * 59 + this.Bitrate.GetHashCode();
-                if (this.Profile != null)
-                    hashCode = hashCode * 59 + this.Profile.GetHashCode();
-                if (this.Level != null)
-                    hashCode = hashCode * 59 + this.Level.GetHashCode();
-                if (this.Preset != null)
-                    hashCode = hashCode * 59 + this.Preset.GetHashCode();
-                if (this.MaxIframesInterval != null)
-                    hashCode = hashCode * 59 + this.MaxIframesInterval.GetHashCode();
-                if (this.BframesCount != null)
-                    hashCode = hashCode * 59 + this.BframesCount.GetHashCode();
-                if (this.FrameRate != null)
-                    hashCode = hashCode * 59 + this.FrameRate.GetHashCode();
-                if (this.Width != null)
-                    hashCode = hashCode * 59 + this.Width.GetHashCode();
-                if (this.Height != null)
-                    hashCode = hashCode * 59 + this.Height.GetHashCode();
-                if (this.BlackCut != null)
-                    hashCode = hashCode * 59 + this.BlackCut.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.OutputPolicy.GetHashCode();
+                if (this.Codec != null) hashCode = hashCode * 59 + this.Codec.GetHashCode();
+                if (this.Bitrate != null) hashCode = hashCode * 59 + this.Bitrate.GetHashCode();
+                if (this.Profile != null) hashCode = hashCode * 59 + this.Profile.GetHashCode();
+                if (this.Level != null) hashCode = hashCode * 59 + this.Level.GetHashCode();
+                if (this.Preset != null) hashCode = hashCode * 59 + this.Preset.GetHashCode();
+                if (this.MaxIframesInterval != null) hashCode = hashCode * 59 + this.MaxIframesInterval.GetHashCode();
+                if (this.BframesCount != null) hashCode = hashCode * 59 + this.BframesCount.GetHashCode();
+                if (this.FrameRate != null) hashCode = hashCode * 59 + this.FrameRate.GetHashCode();
+                if (this.Width != null) hashCode = hashCode * 59 + this.Width.GetHashCode();
+                if (this.Height != null) hashCode = hashCode * 59 + this.Height.GetHashCode();
+                if (this.BlackCut != null) hashCode = hashCode * 59 + this.BlackCut.GetHashCode();
                 return hashCode;
             }
         }

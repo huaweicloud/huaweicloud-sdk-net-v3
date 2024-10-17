@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public bool Equals(RabbitMQExtendProductPropertiesEntity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MaxBroker != input.MaxBroker || (this.MaxBroker != null && !this.MaxBroker.Equals(input.MaxBroker))) return false;
+            if (this.MaxStoragePerNode != input.MaxStoragePerNode || (this.MaxStoragePerNode != null && !this.MaxStoragePerNode.Equals(input.MaxStoragePerNode))) return false;
+            if (this.MinBroker != input.MinBroker || (this.MinBroker != null && !this.MinBroker.Equals(input.MinBroker))) return false;
+            if (this.MinStoragePerNode != input.MinStoragePerNode || (this.MinStoragePerNode != null && !this.MinStoragePerNode.Equals(input.MinStoragePerNode))) return false;
+            if (this.MaxConnectionPerBroker != input.MaxConnectionPerBroker || (this.MaxConnectionPerBroker != null && !this.MaxConnectionPerBroker.Equals(input.MaxConnectionPerBroker))) return false;
+            if (this.StepLength != input.StepLength || (this.StepLength != null && !this.StepLength.Equals(input.StepLength))) return false;
+            if (this.ProductAlias != input.ProductAlias || (this.ProductAlias != null && !this.ProductAlias.Equals(input.ProductAlias))) return false;
+            if (this.MaxQueuePerBroker != input.MaxQueuePerBroker || (this.MaxQueuePerBroker != null && !this.MaxQueuePerBroker.Equals(input.MaxQueuePerBroker))) return false;
 
-            return 
-                (
-                    this.MaxBroker == input.MaxBroker ||
-                    (this.MaxBroker != null &&
-                    this.MaxBroker.Equals(input.MaxBroker))
-                ) && 
-                (
-                    this.MaxStoragePerNode == input.MaxStoragePerNode ||
-                    (this.MaxStoragePerNode != null &&
-                    this.MaxStoragePerNode.Equals(input.MaxStoragePerNode))
-                ) && 
-                (
-                    this.MinBroker == input.MinBroker ||
-                    (this.MinBroker != null &&
-                    this.MinBroker.Equals(input.MinBroker))
-                ) && 
-                (
-                    this.MinStoragePerNode == input.MinStoragePerNode ||
-                    (this.MinStoragePerNode != null &&
-                    this.MinStoragePerNode.Equals(input.MinStoragePerNode))
-                ) && 
-                (
-                    this.MaxConnectionPerBroker == input.MaxConnectionPerBroker ||
-                    (this.MaxConnectionPerBroker != null &&
-                    this.MaxConnectionPerBroker.Equals(input.MaxConnectionPerBroker))
-                ) && 
-                (
-                    this.StepLength == input.StepLength ||
-                    (this.StepLength != null &&
-                    this.StepLength.Equals(input.StepLength))
-                ) && 
-                (
-                    this.ProductAlias == input.ProductAlias ||
-                    (this.ProductAlias != null &&
-                    this.ProductAlias.Equals(input.ProductAlias))
-                ) && 
-                (
-                    this.MaxQueuePerBroker == input.MaxQueuePerBroker ||
-                    (this.MaxQueuePerBroker != null &&
-                    this.MaxQueuePerBroker.Equals(input.MaxQueuePerBroker))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MaxBroker != null)
-                    hashCode = hashCode * 59 + this.MaxBroker.GetHashCode();
-                if (this.MaxStoragePerNode != null)
-                    hashCode = hashCode * 59 + this.MaxStoragePerNode.GetHashCode();
-                if (this.MinBroker != null)
-                    hashCode = hashCode * 59 + this.MinBroker.GetHashCode();
-                if (this.MinStoragePerNode != null)
-                    hashCode = hashCode * 59 + this.MinStoragePerNode.GetHashCode();
-                if (this.MaxConnectionPerBroker != null)
-                    hashCode = hashCode * 59 + this.MaxConnectionPerBroker.GetHashCode();
-                if (this.StepLength != null)
-                    hashCode = hashCode * 59 + this.StepLength.GetHashCode();
-                if (this.ProductAlias != null)
-                    hashCode = hashCode * 59 + this.ProductAlias.GetHashCode();
-                if (this.MaxQueuePerBroker != null)
-                    hashCode = hashCode * 59 + this.MaxQueuePerBroker.GetHashCode();
+                var hashCode = 41;
+                if (this.MaxBroker != null) hashCode = hashCode * 59 + this.MaxBroker.GetHashCode();
+                if (this.MaxStoragePerNode != null) hashCode = hashCode * 59 + this.MaxStoragePerNode.GetHashCode();
+                if (this.MinBroker != null) hashCode = hashCode * 59 + this.MinBroker.GetHashCode();
+                if (this.MinStoragePerNode != null) hashCode = hashCode * 59 + this.MinStoragePerNode.GetHashCode();
+                if (this.MaxConnectionPerBroker != null) hashCode = hashCode * 59 + this.MaxConnectionPerBroker.GetHashCode();
+                if (this.StepLength != null) hashCode = hashCode * 59 + this.StepLength.GetHashCode();
+                if (this.ProductAlias != null) hashCode = hashCode * 59 + this.ProductAlias.GetHashCode();
+                if (this.MaxQueuePerBroker != null) hashCode = hashCode * 59 + this.MaxQueuePerBroker.GetHashCode();
                 return hashCode;
             }
         }

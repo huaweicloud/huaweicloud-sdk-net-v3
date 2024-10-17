@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ShowInstanceTopicDetailRespReplicas input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Broker != input.Broker || (this.Broker != null && !this.Broker.Equals(input.Broker))) return false;
+            if (this.Leader != input.Leader || (this.Leader != null && !this.Leader.Equals(input.Leader))) return false;
+            if (this.InSync != input.InSync || (this.InSync != null && !this.InSync.Equals(input.InSync))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
+            if (this.Lag != input.Lag || (this.Lag != null && !this.Lag.Equals(input.Lag))) return false;
 
-            return 
-                (
-                    this.Broker == input.Broker ||
-                    (this.Broker != null &&
-                    this.Broker.Equals(input.Broker))
-                ) && 
-                (
-                    this.Leader == input.Leader ||
-                    (this.Leader != null &&
-                    this.Leader.Equals(input.Leader))
-                ) && 
-                (
-                    this.InSync == input.InSync ||
-                    (this.InSync != null &&
-                    this.InSync.Equals(input.InSync))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                ) && 
-                (
-                    this.Lag == input.Lag ||
-                    (this.Lag != null &&
-                    this.Lag.Equals(input.Lag))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Broker != null)
-                    hashCode = hashCode * 59 + this.Broker.GetHashCode();
-                if (this.Leader != null)
-                    hashCode = hashCode * 59 + this.Leader.GetHashCode();
-                if (this.InSync != null)
-                    hashCode = hashCode * 59 + this.InSync.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.Lag != null)
-                    hashCode = hashCode * 59 + this.Lag.GetHashCode();
+                var hashCode = 41;
+                if (this.Broker != null) hashCode = hashCode * 59 + this.Broker.GetHashCode();
+                if (this.Leader != null) hashCode = hashCode * 59 + this.Leader.GetHashCode();
+                if (this.InSync != null) hashCode = hashCode * 59 + this.InSync.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
+                if (this.Lag != null) hashCode = hashCode * 59 + this.Lag.GetHashCode();
                 return hashCode;
             }
         }

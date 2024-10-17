@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(CreatefavoriteResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.EpsId != input.EpsId || (this.EpsId != null && !this.EpsId.Equals(input.EpsId))) return false;
+            if (this.FavoriteResourceId != input.FavoriteResourceId || (this.FavoriteResourceId != null && !this.FavoriteResourceId.Equals(input.FavoriteResourceId))) return false;
+            if (this.FavoriteResourceType != input.FavoriteResourceType || (this.FavoriteResourceType != null && !this.FavoriteResourceType.Equals(input.FavoriteResourceType))) return false;
+            if (this.LogGroupId != input.LogGroupId || (this.LogGroupId != null && !this.LogGroupId.Equals(input.LogGroupId))) return false;
+            if (this.LogGroupName != input.LogGroupName || (this.LogGroupName != null && !this.LogGroupName.Equals(input.LogGroupName))) return false;
+            if (this.LogStreamId != input.LogStreamId || (this.LogStreamId != null && !this.LogStreamId.Equals(input.LogStreamId))) return false;
+            if (this.LogStreamName != input.LogStreamName || (this.LogStreamName != null && !this.LogStreamName.Equals(input.LogStreamName))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.IsGlobal != input.IsGlobal || (this.IsGlobal != null && !this.IsGlobal.Equals(input.IsGlobal))) return false;
 
-            return 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.EpsId == input.EpsId ||
-                    (this.EpsId != null &&
-                    this.EpsId.Equals(input.EpsId))
-                ) && 
-                (
-                    this.FavoriteResourceId == input.FavoriteResourceId ||
-                    (this.FavoriteResourceId != null &&
-                    this.FavoriteResourceId.Equals(input.FavoriteResourceId))
-                ) && 
-                (
-                    this.FavoriteResourceType == input.FavoriteResourceType ||
-                    (this.FavoriteResourceType != null &&
-                    this.FavoriteResourceType.Equals(input.FavoriteResourceType))
-                ) && 
-                (
-                    this.LogGroupId == input.LogGroupId ||
-                    (this.LogGroupId != null &&
-                    this.LogGroupId.Equals(input.LogGroupId))
-                ) && 
-                (
-                    this.LogGroupName == input.LogGroupName ||
-                    (this.LogGroupName != null &&
-                    this.LogGroupName.Equals(input.LogGroupName))
-                ) && 
-                (
-                    this.LogStreamId == input.LogStreamId ||
-                    (this.LogStreamId != null &&
-                    this.LogStreamId.Equals(input.LogStreamId))
-                ) && 
-                (
-                    this.LogStreamName == input.LogStreamName ||
-                    (this.LogStreamName != null &&
-                    this.LogStreamName.Equals(input.LogStreamName))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.IsGlobal == input.IsGlobal ||
-                    (this.IsGlobal != null &&
-                    this.IsGlobal.Equals(input.IsGlobal))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.EpsId != null)
-                    hashCode = hashCode * 59 + this.EpsId.GetHashCode();
-                if (this.FavoriteResourceId != null)
-                    hashCode = hashCode * 59 + this.FavoriteResourceId.GetHashCode();
-                if (this.FavoriteResourceType != null)
-                    hashCode = hashCode * 59 + this.FavoriteResourceType.GetHashCode();
-                if (this.LogGroupId != null)
-                    hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
-                if (this.LogGroupName != null)
-                    hashCode = hashCode * 59 + this.LogGroupName.GetHashCode();
-                if (this.LogStreamId != null)
-                    hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
-                if (this.LogStreamName != null)
-                    hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.IsGlobal != null)
-                    hashCode = hashCode * 59 + this.IsGlobal.GetHashCode();
+                var hashCode = 41;
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.EpsId != null) hashCode = hashCode * 59 + this.EpsId.GetHashCode();
+                if (this.FavoriteResourceId != null) hashCode = hashCode * 59 + this.FavoriteResourceId.GetHashCode();
+                if (this.FavoriteResourceType != null) hashCode = hashCode * 59 + this.FavoriteResourceType.GetHashCode();
+                if (this.LogGroupId != null) hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
+                if (this.LogGroupName != null) hashCode = hashCode * 59 + this.LogGroupName.GetHashCode();
+                if (this.LogStreamId != null) hashCode = hashCode * 59 + this.LogStreamId.GetHashCode();
+                if (this.LogStreamName != null) hashCode = hashCode * 59 + this.LogStreamName.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.IsGlobal != null) hashCode = hashCode * 59 + this.IsGlobal.GetHashCode();
                 return hashCode;
             }
         }

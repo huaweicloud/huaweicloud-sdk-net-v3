@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(PortRange input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StartPort != input.StartPort || (this.StartPort != null && !this.StartPort.Equals(input.StartPort))) return false;
+            if (this.EndPort != input.EndPort || (this.EndPort != null && !this.EndPort.Equals(input.EndPort))) return false;
 
-            return 
-                (
-                    this.StartPort == input.StartPort ||
-                    (this.StartPort != null &&
-                    this.StartPort.Equals(input.StartPort))
-                ) && 
-                (
-                    this.EndPort == input.EndPort ||
-                    (this.EndPort != null &&
-                    this.EndPort.Equals(input.EndPort))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StartPort != null)
-                    hashCode = hashCode * 59 + this.StartPort.GetHashCode();
-                if (this.EndPort != null)
-                    hashCode = hashCode * 59 + this.EndPort.GetHashCode();
+                var hashCode = 41;
+                if (this.StartPort != null) hashCode = hashCode * 59 + this.StartPort.GetHashCode();
+                if (this.EndPort != null) hashCode = hashCode * 59 + this.EndPort.GetHashCode();
                 return hashCode;
             }
         }

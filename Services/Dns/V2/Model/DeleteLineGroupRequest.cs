@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         /// </summary>
         public bool Equals(DeleteLineGroupRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LinegroupId != input.LinegroupId || (this.LinegroupId != null && !this.LinegroupId.Equals(input.LinegroupId))) return false;
 
-            return 
-                (
-                    this.LinegroupId == input.LinegroupId ||
-                    (this.LinegroupId != null &&
-                    this.LinegroupId.Equals(input.LinegroupId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Dns.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LinegroupId != null)
-                    hashCode = hashCode * 59 + this.LinegroupId.GetHashCode();
+                var hashCode = 41;
+                if (this.LinegroupId != null) hashCode = hashCode * 59 + this.LinegroupId.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(MysqlReadOnlySwitch input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Readonly != input.Readonly || (this.Readonly != null && !this.Readonly.Equals(input.Readonly))) return false;
 
-            return 
-                (
-                    this.Readonly == input.Readonly ||
-                    (this.Readonly != null &&
-                    this.Readonly.Equals(input.Readonly))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Readonly != null)
-                    hashCode = hashCode * 59 + this.Readonly.GetHashCode();
+                var hashCode = 41;
+                if (this.Readonly != null) hashCode = hashCode * 59 + this.Readonly.GetHashCode();
                 return hashCode;
             }
         }

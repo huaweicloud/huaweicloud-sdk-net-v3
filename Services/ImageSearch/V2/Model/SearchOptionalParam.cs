@@ -284,50 +284,17 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         /// </summary>
         public bool Equals(SearchOptionalParam input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DoDet != input.DoDet || (this.DoDet != null && !this.DoDet.Equals(input.DoDet))) return false;
+            if (this.Box != input.Box || (this.Box != null && !this.Box.Equals(input.Box))) return false;
+            if (this.DoCls != input.DoCls || (this.DoCls != null && !this.DoCls.Equals(input.DoCls))) return false;
+            if (this.Category != input.Category || (this.Category != null && !this.Category.Equals(input.Category))) return false;
+            if (this.CollapseKey != input.CollapseKey || (this.CollapseKey != null && !this.CollapseKey.Equals(input.CollapseKey))) return false;
+            if (this.MaxScanNum != input.MaxScanNum || (this.MaxScanNum != null && !this.MaxScanNum.Equals(input.MaxScanNum))) return false;
+            if (this.Nprobe != input.Nprobe || (this.Nprobe != null && !this.Nprobe.Equals(input.Nprobe))) return false;
+            if (this.TextLang != input.TextLang) return false;
 
-            return 
-                (
-                    this.DoDet == input.DoDet ||
-                    (this.DoDet != null &&
-                    this.DoDet.Equals(input.DoDet))
-                ) && 
-                (
-                    this.Box == input.Box ||
-                    (this.Box != null &&
-                    this.Box.Equals(input.Box))
-                ) && 
-                (
-                    this.DoCls == input.DoCls ||
-                    (this.DoCls != null &&
-                    this.DoCls.Equals(input.DoCls))
-                ) && 
-                (
-                    this.Category == input.Category ||
-                    (this.Category != null &&
-                    this.Category.Equals(input.Category))
-                ) && 
-                (
-                    this.CollapseKey == input.CollapseKey ||
-                    (this.CollapseKey != null &&
-                    this.CollapseKey.Equals(input.CollapseKey))
-                ) && 
-                (
-                    this.MaxScanNum == input.MaxScanNum ||
-                    (this.MaxScanNum != null &&
-                    this.MaxScanNum.Equals(input.MaxScanNum))
-                ) && 
-                (
-                    this.Nprobe == input.Nprobe ||
-                    (this.Nprobe != null &&
-                    this.Nprobe.Equals(input.Nprobe))
-                ) && 
-                (
-                    this.TextLang == input.TextLang ||
-                    (this.TextLang != null &&
-                    this.TextLang.Equals(input.TextLang))
-                );
+            return true;
         }
 
         /// <summary>
@@ -337,23 +304,15 @@ namespace HuaweiCloud.SDK.ImageSearch.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DoDet != null)
-                    hashCode = hashCode * 59 + this.DoDet.GetHashCode();
-                if (this.Box != null)
-                    hashCode = hashCode * 59 + this.Box.GetHashCode();
-                if (this.DoCls != null)
-                    hashCode = hashCode * 59 + this.DoCls.GetHashCode();
-                if (this.Category != null)
-                    hashCode = hashCode * 59 + this.Category.GetHashCode();
-                if (this.CollapseKey != null)
-                    hashCode = hashCode * 59 + this.CollapseKey.GetHashCode();
-                if (this.MaxScanNum != null)
-                    hashCode = hashCode * 59 + this.MaxScanNum.GetHashCode();
-                if (this.Nprobe != null)
-                    hashCode = hashCode * 59 + this.Nprobe.GetHashCode();
-                if (this.TextLang != null)
-                    hashCode = hashCode * 59 + this.TextLang.GetHashCode();
+                var hashCode = 41;
+                if (this.DoDet != null) hashCode = hashCode * 59 + this.DoDet.GetHashCode();
+                if (this.Box != null) hashCode = hashCode * 59 + this.Box.GetHashCode();
+                if (this.DoCls != null) hashCode = hashCode * 59 + this.DoCls.GetHashCode();
+                if (this.Category != null) hashCode = hashCode * 59 + this.Category.GetHashCode();
+                if (this.CollapseKey != null) hashCode = hashCode * 59 + this.CollapseKey.GetHashCode();
+                if (this.MaxScanNum != null) hashCode = hashCode * 59 + this.MaxScanNum.GetHashCode();
+                if (this.Nprobe != null) hashCode = hashCode * 59 + this.Nprobe.GetHashCode();
+                hashCode = hashCode * 59 + this.TextLang.GetHashCode();
                 return hashCode;
             }
         }

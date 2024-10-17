@@ -161,95 +161,26 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(ThailandIdcardConfidence input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IdNumber != input.IdNumber || (this.IdNumber != null && !this.IdNumber.Equals(input.IdNumber))) return false;
+            if (this.NameTh != input.NameTh || (this.NameTh != null && !this.NameTh.Equals(input.NameTh))) return false;
+            if (this.NameEn != input.NameEn || (this.NameEn != null && !this.NameEn.Equals(input.NameEn))) return false;
+            if (this.RefNumber != input.RefNumber || (this.RefNumber != null && !this.RefNumber.Equals(input.RefNumber))) return false;
+            if (this.FirstNameEn != input.FirstNameEn || (this.FirstNameEn != null && !this.FirstNameEn.Equals(input.FirstNameEn))) return false;
+            if (this.LastNameEn != input.LastNameEn || (this.LastNameEn != null && !this.LastNameEn.Equals(input.LastNameEn))) return false;
+            if (this.DateOfBirthTh != input.DateOfBirthTh || (this.DateOfBirthTh != null && !this.DateOfBirthTh.Equals(input.DateOfBirthTh))) return false;
+            if (this.DateOfBirthEn != input.DateOfBirthEn || (this.DateOfBirthEn != null && !this.DateOfBirthEn.Equals(input.DateOfBirthEn))) return false;
+            if (this.ReligionTh != input.ReligionTh || (this.ReligionTh != null && !this.ReligionTh.Equals(input.ReligionTh))) return false;
+            if (this.AddressTh != input.AddressTh || (this.AddressTh != null && !this.AddressTh.Equals(input.AddressTh))) return false;
+            if (this.DateOfIssueTh != input.DateOfIssueTh || (this.DateOfIssueTh != null && !this.DateOfIssueTh.Equals(input.DateOfIssueTh))) return false;
+            if (this.DateOfIssueEn != input.DateOfIssueEn || (this.DateOfIssueEn != null && !this.DateOfIssueEn.Equals(input.DateOfIssueEn))) return false;
+            if (this.DateOfExpiryTh != input.DateOfExpiryTh || (this.DateOfExpiryTh != null && !this.DateOfExpiryTh.Equals(input.DateOfExpiryTh))) return false;
+            if (this.DateOfExpiryEn != input.DateOfExpiryEn || (this.DateOfExpiryEn != null && !this.DateOfExpiryEn.Equals(input.DateOfExpiryEn))) return false;
+            if (this.SerialNumber != input.SerialNumber || (this.SerialNumber != null && !this.SerialNumber.Equals(input.SerialNumber))) return false;
+            if (this.CardNumber != input.CardNumber || (this.CardNumber != null && !this.CardNumber.Equals(input.CardNumber))) return false;
+            if (this.LaserNumber != input.LaserNumber || (this.LaserNumber != null && !this.LaserNumber.Equals(input.LaserNumber))) return false;
 
-            return 
-                (
-                    this.IdNumber == input.IdNumber ||
-                    (this.IdNumber != null &&
-                    this.IdNumber.Equals(input.IdNumber))
-                ) && 
-                (
-                    this.NameTh == input.NameTh ||
-                    (this.NameTh != null &&
-                    this.NameTh.Equals(input.NameTh))
-                ) && 
-                (
-                    this.NameEn == input.NameEn ||
-                    (this.NameEn != null &&
-                    this.NameEn.Equals(input.NameEn))
-                ) && 
-                (
-                    this.RefNumber == input.RefNumber ||
-                    (this.RefNumber != null &&
-                    this.RefNumber.Equals(input.RefNumber))
-                ) && 
-                (
-                    this.FirstNameEn == input.FirstNameEn ||
-                    (this.FirstNameEn != null &&
-                    this.FirstNameEn.Equals(input.FirstNameEn))
-                ) && 
-                (
-                    this.LastNameEn == input.LastNameEn ||
-                    (this.LastNameEn != null &&
-                    this.LastNameEn.Equals(input.LastNameEn))
-                ) && 
-                (
-                    this.DateOfBirthTh == input.DateOfBirthTh ||
-                    (this.DateOfBirthTh != null &&
-                    this.DateOfBirthTh.Equals(input.DateOfBirthTh))
-                ) && 
-                (
-                    this.DateOfBirthEn == input.DateOfBirthEn ||
-                    (this.DateOfBirthEn != null &&
-                    this.DateOfBirthEn.Equals(input.DateOfBirthEn))
-                ) && 
-                (
-                    this.ReligionTh == input.ReligionTh ||
-                    (this.ReligionTh != null &&
-                    this.ReligionTh.Equals(input.ReligionTh))
-                ) && 
-                (
-                    this.AddressTh == input.AddressTh ||
-                    (this.AddressTh != null &&
-                    this.AddressTh.Equals(input.AddressTh))
-                ) && 
-                (
-                    this.DateOfIssueTh == input.DateOfIssueTh ||
-                    (this.DateOfIssueTh != null &&
-                    this.DateOfIssueTh.Equals(input.DateOfIssueTh))
-                ) && 
-                (
-                    this.DateOfIssueEn == input.DateOfIssueEn ||
-                    (this.DateOfIssueEn != null &&
-                    this.DateOfIssueEn.Equals(input.DateOfIssueEn))
-                ) && 
-                (
-                    this.DateOfExpiryTh == input.DateOfExpiryTh ||
-                    (this.DateOfExpiryTh != null &&
-                    this.DateOfExpiryTh.Equals(input.DateOfExpiryTh))
-                ) && 
-                (
-                    this.DateOfExpiryEn == input.DateOfExpiryEn ||
-                    (this.DateOfExpiryEn != null &&
-                    this.DateOfExpiryEn.Equals(input.DateOfExpiryEn))
-                ) && 
-                (
-                    this.SerialNumber == input.SerialNumber ||
-                    (this.SerialNumber != null &&
-                    this.SerialNumber.Equals(input.SerialNumber))
-                ) && 
-                (
-                    this.CardNumber == input.CardNumber ||
-                    (this.CardNumber != null &&
-                    this.CardNumber.Equals(input.CardNumber))
-                ) && 
-                (
-                    this.LaserNumber == input.LaserNumber ||
-                    (this.LaserNumber != null &&
-                    this.LaserNumber.Equals(input.LaserNumber))
-                );
+            return true;
         }
 
         /// <summary>
@@ -259,41 +190,24 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IdNumber != null)
-                    hashCode = hashCode * 59 + this.IdNumber.GetHashCode();
-                if (this.NameTh != null)
-                    hashCode = hashCode * 59 + this.NameTh.GetHashCode();
-                if (this.NameEn != null)
-                    hashCode = hashCode * 59 + this.NameEn.GetHashCode();
-                if (this.RefNumber != null)
-                    hashCode = hashCode * 59 + this.RefNumber.GetHashCode();
-                if (this.FirstNameEn != null)
-                    hashCode = hashCode * 59 + this.FirstNameEn.GetHashCode();
-                if (this.LastNameEn != null)
-                    hashCode = hashCode * 59 + this.LastNameEn.GetHashCode();
-                if (this.DateOfBirthTh != null)
-                    hashCode = hashCode * 59 + this.DateOfBirthTh.GetHashCode();
-                if (this.DateOfBirthEn != null)
-                    hashCode = hashCode * 59 + this.DateOfBirthEn.GetHashCode();
-                if (this.ReligionTh != null)
-                    hashCode = hashCode * 59 + this.ReligionTh.GetHashCode();
-                if (this.AddressTh != null)
-                    hashCode = hashCode * 59 + this.AddressTh.GetHashCode();
-                if (this.DateOfIssueTh != null)
-                    hashCode = hashCode * 59 + this.DateOfIssueTh.GetHashCode();
-                if (this.DateOfIssueEn != null)
-                    hashCode = hashCode * 59 + this.DateOfIssueEn.GetHashCode();
-                if (this.DateOfExpiryTh != null)
-                    hashCode = hashCode * 59 + this.DateOfExpiryTh.GetHashCode();
-                if (this.DateOfExpiryEn != null)
-                    hashCode = hashCode * 59 + this.DateOfExpiryEn.GetHashCode();
-                if (this.SerialNumber != null)
-                    hashCode = hashCode * 59 + this.SerialNumber.GetHashCode();
-                if (this.CardNumber != null)
-                    hashCode = hashCode * 59 + this.CardNumber.GetHashCode();
-                if (this.LaserNumber != null)
-                    hashCode = hashCode * 59 + this.LaserNumber.GetHashCode();
+                var hashCode = 41;
+                if (this.IdNumber != null) hashCode = hashCode * 59 + this.IdNumber.GetHashCode();
+                if (this.NameTh != null) hashCode = hashCode * 59 + this.NameTh.GetHashCode();
+                if (this.NameEn != null) hashCode = hashCode * 59 + this.NameEn.GetHashCode();
+                if (this.RefNumber != null) hashCode = hashCode * 59 + this.RefNumber.GetHashCode();
+                if (this.FirstNameEn != null) hashCode = hashCode * 59 + this.FirstNameEn.GetHashCode();
+                if (this.LastNameEn != null) hashCode = hashCode * 59 + this.LastNameEn.GetHashCode();
+                if (this.DateOfBirthTh != null) hashCode = hashCode * 59 + this.DateOfBirthTh.GetHashCode();
+                if (this.DateOfBirthEn != null) hashCode = hashCode * 59 + this.DateOfBirthEn.GetHashCode();
+                if (this.ReligionTh != null) hashCode = hashCode * 59 + this.ReligionTh.GetHashCode();
+                if (this.AddressTh != null) hashCode = hashCode * 59 + this.AddressTh.GetHashCode();
+                if (this.DateOfIssueTh != null) hashCode = hashCode * 59 + this.DateOfIssueTh.GetHashCode();
+                if (this.DateOfIssueEn != null) hashCode = hashCode * 59 + this.DateOfIssueEn.GetHashCode();
+                if (this.DateOfExpiryTh != null) hashCode = hashCode * 59 + this.DateOfExpiryTh.GetHashCode();
+                if (this.DateOfExpiryEn != null) hashCode = hashCode * 59 + this.DateOfExpiryEn.GetHashCode();
+                if (this.SerialNumber != null) hashCode = hashCode * 59 + this.SerialNumber.GetHashCode();
+                if (this.CardNumber != null) hashCode = hashCode * 59 + this.CardNumber.GetHashCode();
+                if (this.LaserNumber != null) hashCode = hashCode * 59 + this.LaserNumber.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(Authentication input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Mode != input.Mode || (this.Mode != null && !this.Mode.Equals(input.Mode))) return false;
+            if (this.AuthenticatingProxy != input.AuthenticatingProxy || (this.AuthenticatingProxy != null && !this.AuthenticatingProxy.Equals(input.AuthenticatingProxy))) return false;
 
-            return 
-                (
-                    this.Mode == input.Mode ||
-                    (this.Mode != null &&
-                    this.Mode.Equals(input.Mode))
-                ) && 
-                (
-                    this.AuthenticatingProxy == input.AuthenticatingProxy ||
-                    (this.AuthenticatingProxy != null &&
-                    this.AuthenticatingProxy.Equals(input.AuthenticatingProxy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Mode != null)
-                    hashCode = hashCode * 59 + this.Mode.GetHashCode();
-                if (this.AuthenticatingProxy != null)
-                    hashCode = hashCode * 59 + this.AuthenticatingProxy.GetHashCode();
+                var hashCode = 41;
+                if (this.Mode != null) hashCode = hashCode * 59 + this.Mode.GetHashCode();
+                if (this.AuthenticatingProxy != null) hashCode = hashCode * 59 + this.AuthenticatingProxy.GetHashCode();
                 return hashCode;
             }
         }

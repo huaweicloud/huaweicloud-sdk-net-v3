@@ -189,120 +189,30 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(NodeSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Flavor != input.Flavor || (this.Flavor != null && !this.Flavor.Equals(input.Flavor))) return false;
+            if (this.Az != input.Az || (this.Az != null && !this.Az.Equals(input.Az))) return false;
+            if (this.Os != input.Os || (this.Os != null && !this.Os.Equals(input.Os))) return false;
+            if (this.Login != input.Login || (this.Login != null && !this.Login.Equals(input.Login))) return false;
+            if (this.RootVolume != input.RootVolume || (this.RootVolume != null && !this.RootVolume.Equals(input.RootVolume))) return false;
+            if (this.DataVolumes != input.DataVolumes || (this.DataVolumes != null && input.DataVolumes != null && !this.DataVolumes.SequenceEqual(input.DataVolumes))) return false;
+            if (this.Storage != input.Storage || (this.Storage != null && !this.Storage.Equals(input.Storage))) return false;
+            if (this.PublicIP != input.PublicIP || (this.PublicIP != null && !this.PublicIP.Equals(input.PublicIP))) return false;
+            if (this.NodeNicSpec != input.NodeNicSpec || (this.NodeNicSpec != null && !this.NodeNicSpec.Equals(input.NodeNicSpec))) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.BillingMode != input.BillingMode || (this.BillingMode != null && !this.BillingMode.Equals(input.BillingMode))) return false;
+            if (this.Taints != input.Taints || (this.Taints != null && input.Taints != null && !this.Taints.SequenceEqual(input.Taints))) return false;
+            if (this.K8sTags != input.K8sTags || (this.K8sTags != null && input.K8sTags != null && !this.K8sTags.SequenceEqual(input.K8sTags))) return false;
+            if (this.EcsGroupId != input.EcsGroupId || (this.EcsGroupId != null && !this.EcsGroupId.Equals(input.EcsGroupId))) return false;
+            if (this.DedicatedHostId != input.DedicatedHostId || (this.DedicatedHostId != null && !this.DedicatedHostId.Equals(input.DedicatedHostId))) return false;
+            if (this.UserTags != input.UserTags || (this.UserTags != null && input.UserTags != null && !this.UserTags.SequenceEqual(input.UserTags))) return false;
+            if (this.Runtime != input.Runtime || (this.Runtime != null && !this.Runtime.Equals(input.Runtime))) return false;
+            if (this.InitializedConditions != input.InitializedConditions || (this.InitializedConditions != null && input.InitializedConditions != null && !this.InitializedConditions.SequenceEqual(input.InitializedConditions))) return false;
+            if (this.ExtendParam != input.ExtendParam || (this.ExtendParam != null && !this.ExtendParam.Equals(input.ExtendParam))) return false;
+            if (this.HostnameConfig != input.HostnameConfig || (this.HostnameConfig != null && !this.HostnameConfig.Equals(input.HostnameConfig))) return false;
+            if (this.ServerEnterpriseProjectID != input.ServerEnterpriseProjectID || (this.ServerEnterpriseProjectID != null && !this.ServerEnterpriseProjectID.Equals(input.ServerEnterpriseProjectID))) return false;
 
-            return 
-                (
-                    this.Flavor == input.Flavor ||
-                    (this.Flavor != null &&
-                    this.Flavor.Equals(input.Flavor))
-                ) && 
-                (
-                    this.Az == input.Az ||
-                    (this.Az != null &&
-                    this.Az.Equals(input.Az))
-                ) && 
-                (
-                    this.Os == input.Os ||
-                    (this.Os != null &&
-                    this.Os.Equals(input.Os))
-                ) && 
-                (
-                    this.Login == input.Login ||
-                    (this.Login != null &&
-                    this.Login.Equals(input.Login))
-                ) && 
-                (
-                    this.RootVolume == input.RootVolume ||
-                    (this.RootVolume != null &&
-                    this.RootVolume.Equals(input.RootVolume))
-                ) && 
-                (
-                    this.DataVolumes == input.DataVolumes ||
-                    this.DataVolumes != null &&
-                    input.DataVolumes != null &&
-                    this.DataVolumes.SequenceEqual(input.DataVolumes)
-                ) && 
-                (
-                    this.Storage == input.Storage ||
-                    (this.Storage != null &&
-                    this.Storage.Equals(input.Storage))
-                ) && 
-                (
-                    this.PublicIP == input.PublicIP ||
-                    (this.PublicIP != null &&
-                    this.PublicIP.Equals(input.PublicIP))
-                ) && 
-                (
-                    this.NodeNicSpec == input.NodeNicSpec ||
-                    (this.NodeNicSpec != null &&
-                    this.NodeNicSpec.Equals(input.NodeNicSpec))
-                ) && 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.BillingMode == input.BillingMode ||
-                    (this.BillingMode != null &&
-                    this.BillingMode.Equals(input.BillingMode))
-                ) && 
-                (
-                    this.Taints == input.Taints ||
-                    this.Taints != null &&
-                    input.Taints != null &&
-                    this.Taints.SequenceEqual(input.Taints)
-                ) && 
-                (
-                    this.K8sTags == input.K8sTags ||
-                    this.K8sTags != null &&
-                    input.K8sTags != null &&
-                    this.K8sTags.SequenceEqual(input.K8sTags)
-                ) && 
-                (
-                    this.EcsGroupId == input.EcsGroupId ||
-                    (this.EcsGroupId != null &&
-                    this.EcsGroupId.Equals(input.EcsGroupId))
-                ) && 
-                (
-                    this.DedicatedHostId == input.DedicatedHostId ||
-                    (this.DedicatedHostId != null &&
-                    this.DedicatedHostId.Equals(input.DedicatedHostId))
-                ) && 
-                (
-                    this.UserTags == input.UserTags ||
-                    this.UserTags != null &&
-                    input.UserTags != null &&
-                    this.UserTags.SequenceEqual(input.UserTags)
-                ) && 
-                (
-                    this.Runtime == input.Runtime ||
-                    (this.Runtime != null &&
-                    this.Runtime.Equals(input.Runtime))
-                ) && 
-                (
-                    this.InitializedConditions == input.InitializedConditions ||
-                    this.InitializedConditions != null &&
-                    input.InitializedConditions != null &&
-                    this.InitializedConditions.SequenceEqual(input.InitializedConditions)
-                ) && 
-                (
-                    this.ExtendParam == input.ExtendParam ||
-                    (this.ExtendParam != null &&
-                    this.ExtendParam.Equals(input.ExtendParam))
-                ) && 
-                (
-                    this.HostnameConfig == input.HostnameConfig ||
-                    (this.HostnameConfig != null &&
-                    this.HostnameConfig.Equals(input.HostnameConfig))
-                ) && 
-                (
-                    this.ServerEnterpriseProjectID == input.ServerEnterpriseProjectID ||
-                    (this.ServerEnterpriseProjectID != null &&
-                    this.ServerEnterpriseProjectID.Equals(input.ServerEnterpriseProjectID))
-                );
+            return true;
         }
 
         /// <summary>
@@ -312,49 +222,28 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Flavor != null)
-                    hashCode = hashCode * 59 + this.Flavor.GetHashCode();
-                if (this.Az != null)
-                    hashCode = hashCode * 59 + this.Az.GetHashCode();
-                if (this.Os != null)
-                    hashCode = hashCode * 59 + this.Os.GetHashCode();
-                if (this.Login != null)
-                    hashCode = hashCode * 59 + this.Login.GetHashCode();
-                if (this.RootVolume != null)
-                    hashCode = hashCode * 59 + this.RootVolume.GetHashCode();
-                if (this.DataVolumes != null)
-                    hashCode = hashCode * 59 + this.DataVolumes.GetHashCode();
-                if (this.Storage != null)
-                    hashCode = hashCode * 59 + this.Storage.GetHashCode();
-                if (this.PublicIP != null)
-                    hashCode = hashCode * 59 + this.PublicIP.GetHashCode();
-                if (this.NodeNicSpec != null)
-                    hashCode = hashCode * 59 + this.NodeNicSpec.GetHashCode();
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.BillingMode != null)
-                    hashCode = hashCode * 59 + this.BillingMode.GetHashCode();
-                if (this.Taints != null)
-                    hashCode = hashCode * 59 + this.Taints.GetHashCode();
-                if (this.K8sTags != null)
-                    hashCode = hashCode * 59 + this.K8sTags.GetHashCode();
-                if (this.EcsGroupId != null)
-                    hashCode = hashCode * 59 + this.EcsGroupId.GetHashCode();
-                if (this.DedicatedHostId != null)
-                    hashCode = hashCode * 59 + this.DedicatedHostId.GetHashCode();
-                if (this.UserTags != null)
-                    hashCode = hashCode * 59 + this.UserTags.GetHashCode();
-                if (this.Runtime != null)
-                    hashCode = hashCode * 59 + this.Runtime.GetHashCode();
-                if (this.InitializedConditions != null)
-                    hashCode = hashCode * 59 + this.InitializedConditions.GetHashCode();
-                if (this.ExtendParam != null)
-                    hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
-                if (this.HostnameConfig != null)
-                    hashCode = hashCode * 59 + this.HostnameConfig.GetHashCode();
-                if (this.ServerEnterpriseProjectID != null)
-                    hashCode = hashCode * 59 + this.ServerEnterpriseProjectID.GetHashCode();
+                var hashCode = 41;
+                if (this.Flavor != null) hashCode = hashCode * 59 + this.Flavor.GetHashCode();
+                if (this.Az != null) hashCode = hashCode * 59 + this.Az.GetHashCode();
+                if (this.Os != null) hashCode = hashCode * 59 + this.Os.GetHashCode();
+                if (this.Login != null) hashCode = hashCode * 59 + this.Login.GetHashCode();
+                if (this.RootVolume != null) hashCode = hashCode * 59 + this.RootVolume.GetHashCode();
+                if (this.DataVolumes != null) hashCode = hashCode * 59 + this.DataVolumes.GetHashCode();
+                if (this.Storage != null) hashCode = hashCode * 59 + this.Storage.GetHashCode();
+                if (this.PublicIP != null) hashCode = hashCode * 59 + this.PublicIP.GetHashCode();
+                if (this.NodeNicSpec != null) hashCode = hashCode * 59 + this.NodeNicSpec.GetHashCode();
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.BillingMode != null) hashCode = hashCode * 59 + this.BillingMode.GetHashCode();
+                if (this.Taints != null) hashCode = hashCode * 59 + this.Taints.GetHashCode();
+                if (this.K8sTags != null) hashCode = hashCode * 59 + this.K8sTags.GetHashCode();
+                if (this.EcsGroupId != null) hashCode = hashCode * 59 + this.EcsGroupId.GetHashCode();
+                if (this.DedicatedHostId != null) hashCode = hashCode * 59 + this.DedicatedHostId.GetHashCode();
+                if (this.UserTags != null) hashCode = hashCode * 59 + this.UserTags.GetHashCode();
+                if (this.Runtime != null) hashCode = hashCode * 59 + this.Runtime.GetHashCode();
+                if (this.InitializedConditions != null) hashCode = hashCode * 59 + this.InitializedConditions.GetHashCode();
+                if (this.ExtendParam != null) hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
+                if (this.HostnameConfig != null) hashCode = hashCode * 59 + this.HostnameConfig.GetHashCode();
+                if (this.ServerEnterpriseProjectID != null) hashCode = hashCode * 59 + this.ServerEnterpriseProjectID.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(BindingVifDetails input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PrimaryInterface != input.PrimaryInterface || (this.PrimaryInterface != null && !this.PrimaryInterface.Equals(input.PrimaryInterface))) return false;
+            if (this.PortFilter != input.PortFilter || (this.PortFilter != null && !this.PortFilter.Equals(input.PortFilter))) return false;
+            if (this.OvsHybridPlug != input.OvsHybridPlug || (this.OvsHybridPlug != null && !this.OvsHybridPlug.Equals(input.OvsHybridPlug))) return false;
 
-            return 
-                (
-                    this.PrimaryInterface == input.PrimaryInterface ||
-                    (this.PrimaryInterface != null &&
-                    this.PrimaryInterface.Equals(input.PrimaryInterface))
-                ) && 
-                (
-                    this.PortFilter == input.PortFilter ||
-                    (this.PortFilter != null &&
-                    this.PortFilter.Equals(input.PortFilter))
-                ) && 
-                (
-                    this.OvsHybridPlug == input.OvsHybridPlug ||
-                    (this.OvsHybridPlug != null &&
-                    this.OvsHybridPlug.Equals(input.OvsHybridPlug))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PrimaryInterface != null)
-                    hashCode = hashCode * 59 + this.PrimaryInterface.GetHashCode();
-                if (this.PortFilter != null)
-                    hashCode = hashCode * 59 + this.PortFilter.GetHashCode();
-                if (this.OvsHybridPlug != null)
-                    hashCode = hashCode * 59 + this.OvsHybridPlug.GetHashCode();
+                var hashCode = 41;
+                if (this.PrimaryInterface != null) hashCode = hashCode * 59 + this.PrimaryInterface.GetHashCode();
+                if (this.PortFilter != null) hashCode = hashCode * 59 + this.PortFilter.GetHashCode();
+                if (this.OvsHybridPlug != null) hashCode = hashCode * 59 + this.OvsHybridPlug.GetHashCode();
                 return hashCode;
             }
         }

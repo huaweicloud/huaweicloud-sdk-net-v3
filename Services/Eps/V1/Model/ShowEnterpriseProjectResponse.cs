@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Eps.V1.Model
         /// </summary>
         public bool Equals(ShowEnterpriseProjectResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EnterpriseProject != input.EnterpriseProject || (this.EnterpriseProject != null && !this.EnterpriseProject.Equals(input.EnterpriseProject))) return false;
 
-            return 
-                (
-                    this.EnterpriseProject == input.EnterpriseProject ||
-                    (this.EnterpriseProject != null &&
-                    this.EnterpriseProject.Equals(input.EnterpriseProject))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Eps.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EnterpriseProject != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProject.GetHashCode();
+                var hashCode = 41;
+                if (this.EnterpriseProject != null) hashCode = hashCode * 59 + this.EnterpriseProject.GetHashCode();
                 return hashCode;
             }
         }

@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ResumePluginExtensionsRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PluginName != input.PluginName || (this.PluginName != null && !this.PluginName.Equals(input.PluginName))) return false;
+            if (this.DbList != input.DbList || (this.DbList != null && input.DbList != null && !this.DbList.SequenceEqual(input.DbList))) return false;
+            if (this.ExtensionName != input.ExtensionName || (this.ExtensionName != null && !this.ExtensionName.Equals(input.ExtensionName))) return false;
+            if (this.ExtensionAction != input.ExtensionAction || (this.ExtensionAction != null && !this.ExtensionAction.Equals(input.ExtensionAction))) return false;
 
-            return 
-                (
-                    this.PluginName == input.PluginName ||
-                    (this.PluginName != null &&
-                    this.PluginName.Equals(input.PluginName))
-                ) && 
-                (
-                    this.DbList == input.DbList ||
-                    this.DbList != null &&
-                    input.DbList != null &&
-                    this.DbList.SequenceEqual(input.DbList)
-                ) && 
-                (
-                    this.ExtensionName == input.ExtensionName ||
-                    (this.ExtensionName != null &&
-                    this.ExtensionName.Equals(input.ExtensionName))
-                ) && 
-                (
-                    this.ExtensionAction == input.ExtensionAction ||
-                    (this.ExtensionAction != null &&
-                    this.ExtensionAction.Equals(input.ExtensionAction))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PluginName != null)
-                    hashCode = hashCode * 59 + this.PluginName.GetHashCode();
-                if (this.DbList != null)
-                    hashCode = hashCode * 59 + this.DbList.GetHashCode();
-                if (this.ExtensionName != null)
-                    hashCode = hashCode * 59 + this.ExtensionName.GetHashCode();
-                if (this.ExtensionAction != null)
-                    hashCode = hashCode * 59 + this.ExtensionAction.GetHashCode();
+                var hashCode = 41;
+                if (this.PluginName != null) hashCode = hashCode * 59 + this.PluginName.GetHashCode();
+                if (this.DbList != null) hashCode = hashCode * 59 + this.DbList.GetHashCode();
+                if (this.ExtensionName != null) hashCode = hashCode * 59 + this.ExtensionName.GetHashCode();
+                if (this.ExtensionAction != null) hashCode = hashCode * 59 + this.ExtensionAction.GetHashCode();
                 return hashCode;
             }
         }

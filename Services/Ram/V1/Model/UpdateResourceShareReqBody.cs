@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         /// </summary>
         public bool Equals(UpdateResourceShareReqBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.AllowExternalPrincipals != input.AllowExternalPrincipals || (this.AllowExternalPrincipals != null && !this.AllowExternalPrincipals.Equals(input.AllowExternalPrincipals))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.AllowExternalPrincipals == input.AllowExternalPrincipals ||
-                    (this.AllowExternalPrincipals != null &&
-                    this.AllowExternalPrincipals.Equals(input.AllowExternalPrincipals))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.AllowExternalPrincipals != null)
-                    hashCode = hashCode * 59 + this.AllowExternalPrincipals.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.AllowExternalPrincipals != null) hashCode = hashCode * 59 + this.AllowExternalPrincipals.GetHashCode();
                 return hashCode;
             }
         }

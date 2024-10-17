@@ -77,38 +77,14 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(NeutronUpdateSubnetOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DnsNameservers != input.DnsNameservers || (this.DnsNameservers != null && input.DnsNameservers != null && !this.DnsNameservers.SequenceEqual(input.DnsNameservers))) return false;
+            if (this.EnableDhcp != input.EnableDhcp || (this.EnableDhcp != null && !this.EnableDhcp.Equals(input.EnableDhcp))) return false;
+            if (this.HostRoutes != input.HostRoutes || (this.HostRoutes != null && input.HostRoutes != null && !this.HostRoutes.SequenceEqual(input.HostRoutes))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.AllocationPools != input.AllocationPools || (this.AllocationPools != null && input.AllocationPools != null && !this.AllocationPools.SequenceEqual(input.AllocationPools))) return false;
 
-            return 
-                (
-                    this.DnsNameservers == input.DnsNameservers ||
-                    this.DnsNameservers != null &&
-                    input.DnsNameservers != null &&
-                    this.DnsNameservers.SequenceEqual(input.DnsNameservers)
-                ) && 
-                (
-                    this.EnableDhcp == input.EnableDhcp ||
-                    (this.EnableDhcp != null &&
-                    this.EnableDhcp.Equals(input.EnableDhcp))
-                ) && 
-                (
-                    this.HostRoutes == input.HostRoutes ||
-                    this.HostRoutes != null &&
-                    input.HostRoutes != null &&
-                    this.HostRoutes.SequenceEqual(input.HostRoutes)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.AllocationPools == input.AllocationPools ||
-                    this.AllocationPools != null &&
-                    input.AllocationPools != null &&
-                    this.AllocationPools.SequenceEqual(input.AllocationPools)
-                );
+            return true;
         }
 
         /// <summary>
@@ -118,17 +94,12 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DnsNameservers != null)
-                    hashCode = hashCode * 59 + this.DnsNameservers.GetHashCode();
-                if (this.EnableDhcp != null)
-                    hashCode = hashCode * 59 + this.EnableDhcp.GetHashCode();
-                if (this.HostRoutes != null)
-                    hashCode = hashCode * 59 + this.HostRoutes.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.AllocationPools != null)
-                    hashCode = hashCode * 59 + this.AllocationPools.GetHashCode();
+                var hashCode = 41;
+                if (this.DnsNameservers != null) hashCode = hashCode * 59 + this.DnsNameservers.GetHashCode();
+                if (this.EnableDhcp != null) hashCode = hashCode * 59 + this.EnableDhcp.GetHashCode();
+                if (this.HostRoutes != null) hashCode = hashCode * 59 + this.HostRoutes.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.AllocationPools != null) hashCode = hashCode * 59 + this.AllocationPools.GetHashCode();
                 return hashCode;
             }
         }

@@ -183,26 +183,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(DbObject input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ObjectScope != input.ObjectScope) return false;
+            if (this.TargetRootDb != input.TargetRootDb || (this.TargetRootDb != null && !this.TargetRootDb.Equals(input.TargetRootDb))) return false;
+            if (this.ObjectInfo != input.ObjectInfo || (this.ObjectInfo != null && input.ObjectInfo != null && !this.ObjectInfo.SequenceEqual(input.ObjectInfo))) return false;
 
-            return 
-                (
-                    this.ObjectScope == input.ObjectScope ||
-                    (this.ObjectScope != null &&
-                    this.ObjectScope.Equals(input.ObjectScope))
-                ) && 
-                (
-                    this.TargetRootDb == input.TargetRootDb ||
-                    (this.TargetRootDb != null &&
-                    this.TargetRootDb.Equals(input.TargetRootDb))
-                ) && 
-                (
-                    this.ObjectInfo == input.ObjectInfo ||
-                    this.ObjectInfo != null &&
-                    input.ObjectInfo != null &&
-                    this.ObjectInfo.SequenceEqual(input.ObjectInfo)
-                );
+            return true;
         }
 
         /// <summary>
@@ -212,13 +198,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ObjectScope != null)
-                    hashCode = hashCode * 59 + this.ObjectScope.GetHashCode();
-                if (this.TargetRootDb != null)
-                    hashCode = hashCode * 59 + this.TargetRootDb.GetHashCode();
-                if (this.ObjectInfo != null)
-                    hashCode = hashCode * 59 + this.ObjectInfo.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.ObjectScope.GetHashCode();
+                if (this.TargetRootDb != null) hashCode = hashCode * 59 + this.TargetRootDb.GetHashCode();
+                if (this.ObjectInfo != null) hashCode = hashCode * 59 + this.ObjectInfo.GetHashCode();
                 return hashCode;
             }
         }

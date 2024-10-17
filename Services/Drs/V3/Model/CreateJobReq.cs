@@ -1099,138 +1099,34 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(CreateJobReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BindEip != input.BindEip || (this.BindEip != null && !this.BindEip.Equals(input.BindEip))) return false;
+            if (this.DbUseType != input.DbUseType) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.EngineType != input.EngineType) return false;
+            if (this.IsTargetReadonly != input.IsTargetReadonly || (this.IsTargetReadonly != null && !this.IsTargetReadonly.Equals(input.IsTargetReadonly))) return false;
+            if (this.JobDirection != input.JobDirection) return false;
+            if (this.MultiWrite != input.MultiWrite || (this.MultiWrite != null && !this.MultiWrite.Equals(input.MultiWrite))) return false;
+            if (this.NetType != input.NetType) return false;
+            if (this.NodeNum != input.NodeNum || (this.NodeNum != null && !this.NodeNum.Equals(input.NodeNum))) return false;
+            if (this.NodeType != input.NodeType) return false;
+            if (this.SourceEndpoint != input.SourceEndpoint || (this.SourceEndpoint != null && !this.SourceEndpoint.Equals(input.SourceEndpoint))) return false;
+            if (this.TargetEndpoint != input.TargetEndpoint || (this.TargetEndpoint != null && !this.TargetEndpoint.Equals(input.TargetEndpoint))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.TaskType != input.TaskType) return false;
+            if (this.CustomizeSutnetId != input.CustomizeSutnetId || (this.CustomizeSutnetId != null && !this.CustomizeSutnetId.Equals(input.CustomizeSutnetId))) return false;
+            if (this.ProductId != input.ProductId || (this.ProductId != null && !this.ProductId.Equals(input.ProductId))) return false;
+            if (this.SysTags != input.SysTags || (this.SysTags != null && input.SysTags != null && !this.SysTags.SequenceEqual(input.SysTags))) return false;
+            if (this.ExpiredDays != input.ExpiredDays || (this.ExpiredDays != null && !this.ExpiredDays.Equals(input.ExpiredDays))) return false;
+            if (this.MasterAz != input.MasterAz || (this.MasterAz != null && !this.MasterAz.Equals(input.MasterAz))) return false;
+            if (this.SlaveAz != input.SlaveAz || (this.SlaveAz != null && !this.SlaveAz.Equals(input.SlaveAz))) return false;
+            if (this.ChargingMode != input.ChargingMode) return false;
+            if (this.PeriodOrder != input.PeriodOrder || (this.PeriodOrder != null && !this.PeriodOrder.Equals(input.PeriodOrder))) return false;
+            if (this.PublicIpList != input.PublicIpList || (this.PublicIpList != null && input.PublicIpList != null && !this.PublicIpList.SequenceEqual(input.PublicIpList))) return false;
+            if (this.IsOpenFastClean != input.IsOpenFastClean || (this.IsOpenFastClean != null && !this.IsOpenFastClean.Equals(input.IsOpenFastClean))) return false;
 
-            return 
-                (
-                    this.BindEip == input.BindEip ||
-                    (this.BindEip != null &&
-                    this.BindEip.Equals(input.BindEip))
-                ) && 
-                (
-                    this.DbUseType == input.DbUseType ||
-                    (this.DbUseType != null &&
-                    this.DbUseType.Equals(input.DbUseType))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.EngineType == input.EngineType ||
-                    (this.EngineType != null &&
-                    this.EngineType.Equals(input.EngineType))
-                ) && 
-                (
-                    this.IsTargetReadonly == input.IsTargetReadonly ||
-                    (this.IsTargetReadonly != null &&
-                    this.IsTargetReadonly.Equals(input.IsTargetReadonly))
-                ) && 
-                (
-                    this.JobDirection == input.JobDirection ||
-                    (this.JobDirection != null &&
-                    this.JobDirection.Equals(input.JobDirection))
-                ) && 
-                (
-                    this.MultiWrite == input.MultiWrite ||
-                    (this.MultiWrite != null &&
-                    this.MultiWrite.Equals(input.MultiWrite))
-                ) && 
-                (
-                    this.NetType == input.NetType ||
-                    (this.NetType != null &&
-                    this.NetType.Equals(input.NetType))
-                ) && 
-                (
-                    this.NodeNum == input.NodeNum ||
-                    (this.NodeNum != null &&
-                    this.NodeNum.Equals(input.NodeNum))
-                ) && 
-                (
-                    this.NodeType == input.NodeType ||
-                    (this.NodeType != null &&
-                    this.NodeType.Equals(input.NodeType))
-                ) && 
-                (
-                    this.SourceEndpoint == input.SourceEndpoint ||
-                    (this.SourceEndpoint != null &&
-                    this.SourceEndpoint.Equals(input.SourceEndpoint))
-                ) && 
-                (
-                    this.TargetEndpoint == input.TargetEndpoint ||
-                    (this.TargetEndpoint != null &&
-                    this.TargetEndpoint.Equals(input.TargetEndpoint))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.TaskType == input.TaskType ||
-                    (this.TaskType != null &&
-                    this.TaskType.Equals(input.TaskType))
-                ) && 
-                (
-                    this.CustomizeSutnetId == input.CustomizeSutnetId ||
-                    (this.CustomizeSutnetId != null &&
-                    this.CustomizeSutnetId.Equals(input.CustomizeSutnetId))
-                ) && 
-                (
-                    this.ProductId == input.ProductId ||
-                    (this.ProductId != null &&
-                    this.ProductId.Equals(input.ProductId))
-                ) && 
-                (
-                    this.SysTags == input.SysTags ||
-                    this.SysTags != null &&
-                    input.SysTags != null &&
-                    this.SysTags.SequenceEqual(input.SysTags)
-                ) && 
-                (
-                    this.ExpiredDays == input.ExpiredDays ||
-                    (this.ExpiredDays != null &&
-                    this.ExpiredDays.Equals(input.ExpiredDays))
-                ) && 
-                (
-                    this.MasterAz == input.MasterAz ||
-                    (this.MasterAz != null &&
-                    this.MasterAz.Equals(input.MasterAz))
-                ) && 
-                (
-                    this.SlaveAz == input.SlaveAz ||
-                    (this.SlaveAz != null &&
-                    this.SlaveAz.Equals(input.SlaveAz))
-                ) && 
-                (
-                    this.ChargingMode == input.ChargingMode ||
-                    (this.ChargingMode != null &&
-                    this.ChargingMode.Equals(input.ChargingMode))
-                ) && 
-                (
-                    this.PeriodOrder == input.PeriodOrder ||
-                    (this.PeriodOrder != null &&
-                    this.PeriodOrder.Equals(input.PeriodOrder))
-                ) && 
-                (
-                    this.PublicIpList == input.PublicIpList ||
-                    this.PublicIpList != null &&
-                    input.PublicIpList != null &&
-                    this.PublicIpList.SequenceEqual(input.PublicIpList)
-                ) && 
-                (
-                    this.IsOpenFastClean == input.IsOpenFastClean ||
-                    (this.IsOpenFastClean != null &&
-                    this.IsOpenFastClean.Equals(input.IsOpenFastClean))
-                );
+            return true;
         }
 
         /// <summary>
@@ -1240,57 +1136,32 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BindEip != null)
-                    hashCode = hashCode * 59 + this.BindEip.GetHashCode();
-                if (this.DbUseType != null)
-                    hashCode = hashCode * 59 + this.DbUseType.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.EngineType != null)
-                    hashCode = hashCode * 59 + this.EngineType.GetHashCode();
-                if (this.IsTargetReadonly != null)
-                    hashCode = hashCode * 59 + this.IsTargetReadonly.GetHashCode();
-                if (this.JobDirection != null)
-                    hashCode = hashCode * 59 + this.JobDirection.GetHashCode();
-                if (this.MultiWrite != null)
-                    hashCode = hashCode * 59 + this.MultiWrite.GetHashCode();
-                if (this.NetType != null)
-                    hashCode = hashCode * 59 + this.NetType.GetHashCode();
-                if (this.NodeNum != null)
-                    hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
-                if (this.NodeType != null)
-                    hashCode = hashCode * 59 + this.NodeType.GetHashCode();
-                if (this.SourceEndpoint != null)
-                    hashCode = hashCode * 59 + this.SourceEndpoint.GetHashCode();
-                if (this.TargetEndpoint != null)
-                    hashCode = hashCode * 59 + this.TargetEndpoint.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.TaskType != null)
-                    hashCode = hashCode * 59 + this.TaskType.GetHashCode();
-                if (this.CustomizeSutnetId != null)
-                    hashCode = hashCode * 59 + this.CustomizeSutnetId.GetHashCode();
-                if (this.ProductId != null)
-                    hashCode = hashCode * 59 + this.ProductId.GetHashCode();
-                if (this.SysTags != null)
-                    hashCode = hashCode * 59 + this.SysTags.GetHashCode();
-                if (this.ExpiredDays != null)
-                    hashCode = hashCode * 59 + this.ExpiredDays.GetHashCode();
-                if (this.MasterAz != null)
-                    hashCode = hashCode * 59 + this.MasterAz.GetHashCode();
-                if (this.SlaveAz != null)
-                    hashCode = hashCode * 59 + this.SlaveAz.GetHashCode();
-                if (this.ChargingMode != null)
-                    hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
-                if (this.PeriodOrder != null)
-                    hashCode = hashCode * 59 + this.PeriodOrder.GetHashCode();
-                if (this.PublicIpList != null)
-                    hashCode = hashCode * 59 + this.PublicIpList.GetHashCode();
-                if (this.IsOpenFastClean != null)
-                    hashCode = hashCode * 59 + this.IsOpenFastClean.GetHashCode();
+                var hashCode = 41;
+                if (this.BindEip != null) hashCode = hashCode * 59 + this.BindEip.GetHashCode();
+                hashCode = hashCode * 59 + this.DbUseType.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                hashCode = hashCode * 59 + this.EngineType.GetHashCode();
+                if (this.IsTargetReadonly != null) hashCode = hashCode * 59 + this.IsTargetReadonly.GetHashCode();
+                hashCode = hashCode * 59 + this.JobDirection.GetHashCode();
+                if (this.MultiWrite != null) hashCode = hashCode * 59 + this.MultiWrite.GetHashCode();
+                hashCode = hashCode * 59 + this.NetType.GetHashCode();
+                if (this.NodeNum != null) hashCode = hashCode * 59 + this.NodeNum.GetHashCode();
+                hashCode = hashCode * 59 + this.NodeType.GetHashCode();
+                if (this.SourceEndpoint != null) hashCode = hashCode * 59 + this.SourceEndpoint.GetHashCode();
+                if (this.TargetEndpoint != null) hashCode = hashCode * 59 + this.TargetEndpoint.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                hashCode = hashCode * 59 + this.TaskType.GetHashCode();
+                if (this.CustomizeSutnetId != null) hashCode = hashCode * 59 + this.CustomizeSutnetId.GetHashCode();
+                if (this.ProductId != null) hashCode = hashCode * 59 + this.ProductId.GetHashCode();
+                if (this.SysTags != null) hashCode = hashCode * 59 + this.SysTags.GetHashCode();
+                if (this.ExpiredDays != null) hashCode = hashCode * 59 + this.ExpiredDays.GetHashCode();
+                if (this.MasterAz != null) hashCode = hashCode * 59 + this.MasterAz.GetHashCode();
+                if (this.SlaveAz != null) hashCode = hashCode * 59 + this.SlaveAz.GetHashCode();
+                hashCode = hashCode * 59 + this.ChargingMode.GetHashCode();
+                if (this.PeriodOrder != null) hashCode = hashCode * 59 + this.PeriodOrder.GetHashCode();
+                if (this.PublicIpList != null) hashCode = hashCode * 59 + this.PublicIpList.GetHashCode();
+                if (this.IsOpenFastClean != null) hashCode = hashCode * 59 + this.IsOpenFastClean.GetHashCode();
                 return hashCode;
             }
         }

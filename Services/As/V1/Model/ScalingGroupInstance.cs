@@ -364,60 +364,19 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(ScalingGroupInstance input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.InstanceName != input.InstanceName || (this.InstanceName != null && !this.InstanceName.Equals(input.InstanceName))) return false;
+            if (this.ScalingGroupId != input.ScalingGroupId || (this.ScalingGroupId != null && !this.ScalingGroupId.Equals(input.ScalingGroupId))) return false;
+            if (this.ScalingGroupName != input.ScalingGroupName || (this.ScalingGroupName != null && !this.ScalingGroupName.Equals(input.ScalingGroupName))) return false;
+            if (this.LifeCycleState != input.LifeCycleState) return false;
+            if (this.HealthStatus != input.HealthStatus) return false;
+            if (this.ScalingConfigurationName != input.ScalingConfigurationName || (this.ScalingConfigurationName != null && !this.ScalingConfigurationName.Equals(input.ScalingConfigurationName))) return false;
+            if (this.ScalingConfigurationId != input.ScalingConfigurationId || (this.ScalingConfigurationId != null && !this.ScalingConfigurationId.Equals(input.ScalingConfigurationId))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.ProtectFromScalingDown != input.ProtectFromScalingDown || (this.ProtectFromScalingDown != null && !this.ProtectFromScalingDown.Equals(input.ProtectFromScalingDown))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.InstanceName == input.InstanceName ||
-                    (this.InstanceName != null &&
-                    this.InstanceName.Equals(input.InstanceName))
-                ) && 
-                (
-                    this.ScalingGroupId == input.ScalingGroupId ||
-                    (this.ScalingGroupId != null &&
-                    this.ScalingGroupId.Equals(input.ScalingGroupId))
-                ) && 
-                (
-                    this.ScalingGroupName == input.ScalingGroupName ||
-                    (this.ScalingGroupName != null &&
-                    this.ScalingGroupName.Equals(input.ScalingGroupName))
-                ) && 
-                (
-                    this.LifeCycleState == input.LifeCycleState ||
-                    (this.LifeCycleState != null &&
-                    this.LifeCycleState.Equals(input.LifeCycleState))
-                ) && 
-                (
-                    this.HealthStatus == input.HealthStatus ||
-                    (this.HealthStatus != null &&
-                    this.HealthStatus.Equals(input.HealthStatus))
-                ) && 
-                (
-                    this.ScalingConfigurationName == input.ScalingConfigurationName ||
-                    (this.ScalingConfigurationName != null &&
-                    this.ScalingConfigurationName.Equals(input.ScalingConfigurationName))
-                ) && 
-                (
-                    this.ScalingConfigurationId == input.ScalingConfigurationId ||
-                    (this.ScalingConfigurationId != null &&
-                    this.ScalingConfigurationId.Equals(input.ScalingConfigurationId))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.ProtectFromScalingDown == input.ProtectFromScalingDown ||
-                    (this.ProtectFromScalingDown != null &&
-                    this.ProtectFromScalingDown.Equals(input.ProtectFromScalingDown))
-                );
+            return true;
         }
 
         /// <summary>
@@ -427,27 +386,17 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.InstanceName != null)
-                    hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
-                if (this.ScalingGroupId != null)
-                    hashCode = hashCode * 59 + this.ScalingGroupId.GetHashCode();
-                if (this.ScalingGroupName != null)
-                    hashCode = hashCode * 59 + this.ScalingGroupName.GetHashCode();
-                if (this.LifeCycleState != null)
-                    hashCode = hashCode * 59 + this.LifeCycleState.GetHashCode();
-                if (this.HealthStatus != null)
-                    hashCode = hashCode * 59 + this.HealthStatus.GetHashCode();
-                if (this.ScalingConfigurationName != null)
-                    hashCode = hashCode * 59 + this.ScalingConfigurationName.GetHashCode();
-                if (this.ScalingConfigurationId != null)
-                    hashCode = hashCode * 59 + this.ScalingConfigurationId.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.ProtectFromScalingDown != null)
-                    hashCode = hashCode * 59 + this.ProtectFromScalingDown.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.InstanceName != null) hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
+                if (this.ScalingGroupId != null) hashCode = hashCode * 59 + this.ScalingGroupId.GetHashCode();
+                if (this.ScalingGroupName != null) hashCode = hashCode * 59 + this.ScalingGroupName.GetHashCode();
+                hashCode = hashCode * 59 + this.LifeCycleState.GetHashCode();
+                hashCode = hashCode * 59 + this.HealthStatus.GetHashCode();
+                if (this.ScalingConfigurationName != null) hashCode = hashCode * 59 + this.ScalingConfigurationName.GetHashCode();
+                if (this.ScalingConfigurationId != null) hashCode = hashCode * 59 + this.ScalingConfigurationId.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.ProtectFromScalingDown != null) hashCode = hashCode * 59 + this.ProtectFromScalingDown.GetHashCode();
                 return hashCode;
             }
         }

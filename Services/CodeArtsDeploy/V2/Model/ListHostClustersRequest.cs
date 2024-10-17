@@ -342,55 +342,18 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         /// </summary>
         public bool Equals(ListHostClustersRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Os != input.Os) return false;
+            if (this.PageIndex != input.PageIndex || (this.PageIndex != null && !this.PageIndex.Equals(input.PageIndex))) return false;
+            if (this.PageSize != input.PageSize || (this.PageSize != null && !this.PageSize.Equals(input.PageSize))) return false;
+            if (this.SortField != input.SortField || (this.SortField != null && !this.SortField.Equals(input.SortField))) return false;
+            if (this.SortType != input.SortType) return false;
+            if (this.IsProxyMode != input.IsProxyMode || (this.IsProxyMode != null && !this.IsProxyMode.Equals(input.IsProxyMode))) return false;
+            if (this.SlaveClusterId != input.SlaveClusterId || (this.SlaveClusterId != null && !this.SlaveClusterId.Equals(input.SlaveClusterId))) return false;
 
-            return 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Os == input.Os ||
-                    (this.Os != null &&
-                    this.Os.Equals(input.Os))
-                ) && 
-                (
-                    this.PageIndex == input.PageIndex ||
-                    (this.PageIndex != null &&
-                    this.PageIndex.Equals(input.PageIndex))
-                ) && 
-                (
-                    this.PageSize == input.PageSize ||
-                    (this.PageSize != null &&
-                    this.PageSize.Equals(input.PageSize))
-                ) && 
-                (
-                    this.SortField == input.SortField ||
-                    (this.SortField != null &&
-                    this.SortField.Equals(input.SortField))
-                ) && 
-                (
-                    this.SortType == input.SortType ||
-                    (this.SortType != null &&
-                    this.SortType.Equals(input.SortType))
-                ) && 
-                (
-                    this.IsProxyMode == input.IsProxyMode ||
-                    (this.IsProxyMode != null &&
-                    this.IsProxyMode.Equals(input.IsProxyMode))
-                ) && 
-                (
-                    this.SlaveClusterId == input.SlaveClusterId ||
-                    (this.SlaveClusterId != null &&
-                    this.SlaveClusterId.Equals(input.SlaveClusterId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -400,25 +363,16 @@ namespace HuaweiCloud.SDK.CodeArtsDeploy.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Os != null)
-                    hashCode = hashCode * 59 + this.Os.GetHashCode();
-                if (this.PageIndex != null)
-                    hashCode = hashCode * 59 + this.PageIndex.GetHashCode();
-                if (this.PageSize != null)
-                    hashCode = hashCode * 59 + this.PageSize.GetHashCode();
-                if (this.SortField != null)
-                    hashCode = hashCode * 59 + this.SortField.GetHashCode();
-                if (this.SortType != null)
-                    hashCode = hashCode * 59 + this.SortType.GetHashCode();
-                if (this.IsProxyMode != null)
-                    hashCode = hashCode * 59 + this.IsProxyMode.GetHashCode();
-                if (this.SlaveClusterId != null)
-                    hashCode = hashCode * 59 + this.SlaveClusterId.GetHashCode();
+                var hashCode = 41;
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = hashCode * 59 + this.Os.GetHashCode();
+                if (this.PageIndex != null) hashCode = hashCode * 59 + this.PageIndex.GetHashCode();
+                if (this.PageSize != null) hashCode = hashCode * 59 + this.PageSize.GetHashCode();
+                if (this.SortField != null) hashCode = hashCode * 59 + this.SortField.GetHashCode();
+                hashCode = hashCode * 59 + this.SortType.GetHashCode();
+                if (this.IsProxyMode != null) hashCode = hashCode * 59 + this.IsProxyMode.GetHashCode();
+                if (this.SlaveClusterId != null) hashCode = hashCode * 59 + this.SlaveClusterId.GetHashCode();
                 return hashCode;
             }
         }

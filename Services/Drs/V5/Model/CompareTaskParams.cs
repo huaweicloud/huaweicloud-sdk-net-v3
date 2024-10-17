@@ -204,43 +204,15 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(CompareTaskParams input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CompareTaskId != input.CompareTaskId || (this.CompareTaskId != null && !this.CompareTaskId.Equals(input.CompareTaskId))) return false;
+            if (this.Type != input.Type) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.Option != input.Option || (this.Option != null && input.Option != null && !this.Option.SequenceEqual(input.Option))) return false;
+            if (this.DbObject != input.DbObject || (this.DbObject != null && input.DbObject != null && !this.DbObject.SequenceEqual(input.DbObject))) return false;
+            if (this.DataProcessInfo != input.DataProcessInfo || (this.DataProcessInfo != null && input.DataProcessInfo != null && !this.DataProcessInfo.SequenceEqual(input.DataProcessInfo))) return false;
 
-            return 
-                (
-                    this.CompareTaskId == input.CompareTaskId ||
-                    (this.CompareTaskId != null &&
-                    this.CompareTaskId.Equals(input.CompareTaskId))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.Option == input.Option ||
-                    this.Option != null &&
-                    input.Option != null &&
-                    this.Option.SequenceEqual(input.Option)
-                ) && 
-                (
-                    this.DbObject == input.DbObject ||
-                    this.DbObject != null &&
-                    input.DbObject != null &&
-                    this.DbObject.SequenceEqual(input.DbObject)
-                ) && 
-                (
-                    this.DataProcessInfo == input.DataProcessInfo ||
-                    this.DataProcessInfo != null &&
-                    input.DataProcessInfo != null &&
-                    this.DataProcessInfo.SequenceEqual(input.DataProcessInfo)
-                );
+            return true;
         }
 
         /// <summary>
@@ -250,19 +222,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CompareTaskId != null)
-                    hashCode = hashCode * 59 + this.CompareTaskId.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.Option != null)
-                    hashCode = hashCode * 59 + this.Option.GetHashCode();
-                if (this.DbObject != null)
-                    hashCode = hashCode * 59 + this.DbObject.GetHashCode();
-                if (this.DataProcessInfo != null)
-                    hashCode = hashCode * 59 + this.DataProcessInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.CompareTaskId != null) hashCode = hashCode * 59 + this.CompareTaskId.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.Option != null) hashCode = hashCode * 59 + this.Option.GetHashCode();
+                if (this.DbObject != null) hashCode = hashCode * 59 + this.DbObject.GetHashCode();
+                if (this.DataProcessInfo != null) hashCode = hashCode * 59 + this.DataProcessInfo.GetHashCode();
                 return hashCode;
             }
         }

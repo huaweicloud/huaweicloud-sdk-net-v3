@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(TlsCertificateInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Source != input.Source || (this.Source != null && !this.Source.Equals(input.Source))) return false;
+            if (this.CertName != input.CertName || (this.CertName != null && !this.CertName.Equals(input.CertName))) return false;
+            if (this.CertId != input.CertId || (this.CertId != null && !this.CertId.Equals(input.CertId))) return false;
+            if (this.Certificate != input.Certificate || (this.Certificate != null && !this.Certificate.Equals(input.Certificate))) return false;
+            if (this.CertificateKey != input.CertificateKey || (this.CertificateKey != null && !this.CertificateKey.Equals(input.CertificateKey))) return false;
 
-            return 
-                (
-                    this.Source == input.Source ||
-                    (this.Source != null &&
-                    this.Source.Equals(input.Source))
-                ) && 
-                (
-                    this.CertName == input.CertName ||
-                    (this.CertName != null &&
-                    this.CertName.Equals(input.CertName))
-                ) && 
-                (
-                    this.CertId == input.CertId ||
-                    (this.CertId != null &&
-                    this.CertId.Equals(input.CertId))
-                ) && 
-                (
-                    this.Certificate == input.Certificate ||
-                    (this.Certificate != null &&
-                    this.Certificate.Equals(input.Certificate))
-                ) && 
-                (
-                    this.CertificateKey == input.CertificateKey ||
-                    (this.CertificateKey != null &&
-                    this.CertificateKey.Equals(input.CertificateKey))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Source != null)
-                    hashCode = hashCode * 59 + this.Source.GetHashCode();
-                if (this.CertName != null)
-                    hashCode = hashCode * 59 + this.CertName.GetHashCode();
-                if (this.CertId != null)
-                    hashCode = hashCode * 59 + this.CertId.GetHashCode();
-                if (this.Certificate != null)
-                    hashCode = hashCode * 59 + this.Certificate.GetHashCode();
-                if (this.CertificateKey != null)
-                    hashCode = hashCode * 59 + this.CertificateKey.GetHashCode();
+                var hashCode = 41;
+                if (this.Source != null) hashCode = hashCode * 59 + this.Source.GetHashCode();
+                if (this.CertName != null) hashCode = hashCode * 59 + this.CertName.GetHashCode();
+                if (this.CertId != null) hashCode = hashCode * 59 + this.CertId.GetHashCode();
+                if (this.Certificate != null) hashCode = hashCode * 59 + this.Certificate.GetHashCode();
+                if (this.CertificateKey != null) hashCode = hashCode * 59 + this.CertificateKey.GetHashCode();
                 return hashCode;
             }
         }

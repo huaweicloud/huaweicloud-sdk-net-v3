@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(PushDomainApplication input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.HlsFragment != input.HlsFragment || (this.HlsFragment != null && !this.HlsFragment.Equals(input.HlsFragment))) return false;
+            if (this.HlsTsCount != input.HlsTsCount || (this.HlsTsCount != null && !this.HlsTsCount.Equals(input.HlsTsCount))) return false;
+            if (this.HlsMinFrags != input.HlsMinFrags || (this.HlsMinFrags != null && !this.HlsMinFrags.Equals(input.HlsMinFrags))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.HlsFragment == input.HlsFragment ||
-                    (this.HlsFragment != null &&
-                    this.HlsFragment.Equals(input.HlsFragment))
-                ) && 
-                (
-                    this.HlsTsCount == input.HlsTsCount ||
-                    (this.HlsTsCount != null &&
-                    this.HlsTsCount.Equals(input.HlsTsCount))
-                ) && 
-                (
-                    this.HlsMinFrags == input.HlsMinFrags ||
-                    (this.HlsMinFrags != null &&
-                    this.HlsMinFrags.Equals(input.HlsMinFrags))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.HlsFragment != null)
-                    hashCode = hashCode * 59 + this.HlsFragment.GetHashCode();
-                if (this.HlsTsCount != null)
-                    hashCode = hashCode * 59 + this.HlsTsCount.GetHashCode();
-                if (this.HlsMinFrags != null)
-                    hashCode = hashCode * 59 + this.HlsMinFrags.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.HlsFragment != null) hashCode = hashCode * 59 + this.HlsFragment.GetHashCode();
+                if (this.HlsTsCount != null) hashCode = hashCode * 59 + this.HlsTsCount.GetHashCode();
+                if (this.HlsMinFrags != null) hashCode = hashCode * 59 + this.HlsMinFrags.GetHashCode();
                 return hashCode;
             }
         }

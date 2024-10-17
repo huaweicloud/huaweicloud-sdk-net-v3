@@ -126,71 +126,21 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(Agent input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.AgentId != input.AgentId || (this.AgentId != null && !this.AgentId.Equals(input.AgentId))) return false;
+            if (this.AgentVersion != input.AgentVersion || (this.AgentVersion != null && !this.AgentVersion.Equals(input.AgentVersion))) return false;
+            if (this.AgentType != input.AgentType || (this.AgentType != null && !this.AgentType.Equals(input.AgentType))) return false;
+            if (this.HostName != input.HostName || (this.HostName != null && !this.HostName.Equals(input.HostName))) return false;
+            if (this.HostNickname != input.HostNickname || (this.HostNickname != null && !this.HostNickname.Equals(input.HostNickname))) return false;
+            if (this.HostIp != input.HostIp || (this.HostIp != null && !this.HostIp.Equals(input.HostIp))) return false;
+            if (this.HostOs != input.HostOs || (this.HostOs != null && !this.HostOs.Equals(input.HostOs))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.LastActiveTime != input.LastActiveTime || (this.LastActiveTime != null && !this.LastActiveTime.Equals(input.LastActiveTime))) return false;
+            if (this.Paths != input.Paths || (this.Paths != null && input.Paths != null && !this.Paths.SequenceEqual(input.Paths))) return false;
 
-            return 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.AgentId == input.AgentId ||
-                    (this.AgentId != null &&
-                    this.AgentId.Equals(input.AgentId))
-                ) && 
-                (
-                    this.AgentVersion == input.AgentVersion ||
-                    (this.AgentVersion != null &&
-                    this.AgentVersion.Equals(input.AgentVersion))
-                ) && 
-                (
-                    this.AgentType == input.AgentType ||
-                    (this.AgentType != null &&
-                    this.AgentType.Equals(input.AgentType))
-                ) && 
-                (
-                    this.HostName == input.HostName ||
-                    (this.HostName != null &&
-                    this.HostName.Equals(input.HostName))
-                ) && 
-                (
-                    this.HostNickname == input.HostNickname ||
-                    (this.HostNickname != null &&
-                    this.HostNickname.Equals(input.HostNickname))
-                ) && 
-                (
-                    this.HostIp == input.HostIp ||
-                    (this.HostIp != null &&
-                    this.HostIp.Equals(input.HostIp))
-                ) && 
-                (
-                    this.HostOs == input.HostOs ||
-                    (this.HostOs != null &&
-                    this.HostOs.Equals(input.HostOs))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.LastActiveTime == input.LastActiveTime ||
-                    (this.LastActiveTime != null &&
-                    this.LastActiveTime.Equals(input.LastActiveTime))
-                ) && 
-                (
-                    this.Paths == input.Paths ||
-                    this.Paths != null &&
-                    input.Paths != null &&
-                    this.Paths.SequenceEqual(input.Paths)
-                );
+            return true;
         }
 
         /// <summary>
@@ -200,31 +150,19 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.AgentId != null)
-                    hashCode = hashCode * 59 + this.AgentId.GetHashCode();
-                if (this.AgentVersion != null)
-                    hashCode = hashCode * 59 + this.AgentVersion.GetHashCode();
-                if (this.AgentType != null)
-                    hashCode = hashCode * 59 + this.AgentType.GetHashCode();
-                if (this.HostName != null)
-                    hashCode = hashCode * 59 + this.HostName.GetHashCode();
-                if (this.HostNickname != null)
-                    hashCode = hashCode * 59 + this.HostNickname.GetHashCode();
-                if (this.HostIp != null)
-                    hashCode = hashCode * 59 + this.HostIp.GetHashCode();
-                if (this.HostOs != null)
-                    hashCode = hashCode * 59 + this.HostOs.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.LastActiveTime != null)
-                    hashCode = hashCode * 59 + this.LastActiveTime.GetHashCode();
-                if (this.Paths != null)
-                    hashCode = hashCode * 59 + this.Paths.GetHashCode();
+                var hashCode = 41;
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.AgentId != null) hashCode = hashCode * 59 + this.AgentId.GetHashCode();
+                if (this.AgentVersion != null) hashCode = hashCode * 59 + this.AgentVersion.GetHashCode();
+                if (this.AgentType != null) hashCode = hashCode * 59 + this.AgentType.GetHashCode();
+                if (this.HostName != null) hashCode = hashCode * 59 + this.HostName.GetHashCode();
+                if (this.HostNickname != null) hashCode = hashCode * 59 + this.HostNickname.GetHashCode();
+                if (this.HostIp != null) hashCode = hashCode * 59 + this.HostIp.GetHashCode();
+                if (this.HostOs != null) hashCode = hashCode * 59 + this.HostOs.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.LastActiveTime != null) hashCode = hashCode * 59 + this.LastActiveTime.GetHashCode();
+                if (this.Paths != null) hashCode = hashCode * 59 + this.Paths.GetHashCode();
                 return hashCode;
             }
         }

@@ -119,66 +119,20 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// </summary>
         public bool Equals(InstanceDomainItem input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
+            if (this.Cname != input.Cname || (this.Cname != null && !this.Cname.Equals(input.Cname))) return false;
+            if (this.DomainStatus != input.DomainStatus || (this.DomainStatus != null && !this.DomainStatus.Equals(input.DomainStatus))) return false;
+            if (this.CcStatus != input.CcStatus || (this.CcStatus != null && !this.CcStatus.Equals(input.CcStatus))) return false;
+            if (this.HttpsCertStatus != input.HttpsCertStatus || (this.HttpsCertStatus != null && !this.HttpsCertStatus.Equals(input.HttpsCertStatus))) return false;
+            if (this.CertName != input.CertName || (this.CertName != null && !this.CertName.Equals(input.CertName))) return false;
+            if (this.ProtocolType != input.ProtocolType || (this.ProtocolType != null && input.ProtocolType != null && !this.ProtocolType.SequenceEqual(input.ProtocolType))) return false;
+            if (this.RealServerType != input.RealServerType || (this.RealServerType != null && !this.RealServerType.Equals(input.RealServerType))) return false;
+            if (this.RealServers != input.RealServers || (this.RealServers != null && !this.RealServers.Equals(input.RealServers))) return false;
+            if (this.WafStatus != input.WafStatus || (this.WafStatus != null && !this.WafStatus.Equals(input.WafStatus))) return false;
 
-            return 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
-                    this.DomainName == input.DomainName ||
-                    (this.DomainName != null &&
-                    this.DomainName.Equals(input.DomainName))
-                ) && 
-                (
-                    this.Cname == input.Cname ||
-                    (this.Cname != null &&
-                    this.Cname.Equals(input.Cname))
-                ) && 
-                (
-                    this.DomainStatus == input.DomainStatus ||
-                    (this.DomainStatus != null &&
-                    this.DomainStatus.Equals(input.DomainStatus))
-                ) && 
-                (
-                    this.CcStatus == input.CcStatus ||
-                    (this.CcStatus != null &&
-                    this.CcStatus.Equals(input.CcStatus))
-                ) && 
-                (
-                    this.HttpsCertStatus == input.HttpsCertStatus ||
-                    (this.HttpsCertStatus != null &&
-                    this.HttpsCertStatus.Equals(input.HttpsCertStatus))
-                ) && 
-                (
-                    this.CertName == input.CertName ||
-                    (this.CertName != null &&
-                    this.CertName.Equals(input.CertName))
-                ) && 
-                (
-                    this.ProtocolType == input.ProtocolType ||
-                    this.ProtocolType != null &&
-                    input.ProtocolType != null &&
-                    this.ProtocolType.SequenceEqual(input.ProtocolType)
-                ) && 
-                (
-                    this.RealServerType == input.RealServerType ||
-                    (this.RealServerType != null &&
-                    this.RealServerType.Equals(input.RealServerType))
-                ) && 
-                (
-                    this.RealServers == input.RealServers ||
-                    (this.RealServers != null &&
-                    this.RealServers.Equals(input.RealServers))
-                ) && 
-                (
-                    this.WafStatus == input.WafStatus ||
-                    (this.WafStatus != null &&
-                    this.WafStatus.Equals(input.WafStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -188,29 +142,18 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.DomainName != null)
-                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.Cname != null)
-                    hashCode = hashCode * 59 + this.Cname.GetHashCode();
-                if (this.DomainStatus != null)
-                    hashCode = hashCode * 59 + this.DomainStatus.GetHashCode();
-                if (this.CcStatus != null)
-                    hashCode = hashCode * 59 + this.CcStatus.GetHashCode();
-                if (this.HttpsCertStatus != null)
-                    hashCode = hashCode * 59 + this.HttpsCertStatus.GetHashCode();
-                if (this.CertName != null)
-                    hashCode = hashCode * 59 + this.CertName.GetHashCode();
-                if (this.ProtocolType != null)
-                    hashCode = hashCode * 59 + this.ProtocolType.GetHashCode();
-                if (this.RealServerType != null)
-                    hashCode = hashCode * 59 + this.RealServerType.GetHashCode();
-                if (this.RealServers != null)
-                    hashCode = hashCode * 59 + this.RealServers.GetHashCode();
-                if (this.WafStatus != null)
-                    hashCode = hashCode * 59 + this.WafStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.Cname != null) hashCode = hashCode * 59 + this.Cname.GetHashCode();
+                if (this.DomainStatus != null) hashCode = hashCode * 59 + this.DomainStatus.GetHashCode();
+                if (this.CcStatus != null) hashCode = hashCode * 59 + this.CcStatus.GetHashCode();
+                if (this.HttpsCertStatus != null) hashCode = hashCode * 59 + this.HttpsCertStatus.GetHashCode();
+                if (this.CertName != null) hashCode = hashCode * 59 + this.CertName.GetHashCode();
+                if (this.ProtocolType != null) hashCode = hashCode * 59 + this.ProtocolType.GetHashCode();
+                if (this.RealServerType != null) hashCode = hashCode * 59 + this.RealServerType.GetHashCode();
+                if (this.RealServers != null) hashCode = hashCode * 59 + this.RealServers.GetHashCode();
+                if (this.WafStatus != null) hashCode = hashCode * 59 + this.WafStatus.GetHashCode();
                 return hashCode;
             }
         }

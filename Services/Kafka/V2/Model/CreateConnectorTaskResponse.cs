@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(CreateConnectorTaskResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TaskName != input.TaskName || (this.TaskName != null && !this.TaskName.Equals(input.TaskName))) return false;
+            if (this.Topics != input.Topics || (this.Topics != null && !this.Topics.Equals(input.Topics))) return false;
+            if (this.TopicsRegex != input.TopicsRegex || (this.TopicsRegex != null && !this.TopicsRegex.Equals(input.TopicsRegex))) return false;
+            if (this.SourceType != input.SourceType || (this.SourceType != null && !this.SourceType.Equals(input.SourceType))) return false;
+            if (this.SourceTask != input.SourceTask || (this.SourceTask != null && !this.SourceTask.Equals(input.SourceTask))) return false;
+            if (this.SinkType != input.SinkType || (this.SinkType != null && !this.SinkType.Equals(input.SinkType))) return false;
+            if (this.SinkTask != input.SinkTask || (this.SinkTask != null && !this.SinkTask.Equals(input.SinkTask))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
 
-            return 
-                (
-                    this.TaskName == input.TaskName ||
-                    (this.TaskName != null &&
-                    this.TaskName.Equals(input.TaskName))
-                ) && 
-                (
-                    this.Topics == input.Topics ||
-                    (this.Topics != null &&
-                    this.Topics.Equals(input.Topics))
-                ) && 
-                (
-                    this.TopicsRegex == input.TopicsRegex ||
-                    (this.TopicsRegex != null &&
-                    this.TopicsRegex.Equals(input.TopicsRegex))
-                ) && 
-                (
-                    this.SourceType == input.SourceType ||
-                    (this.SourceType != null &&
-                    this.SourceType.Equals(input.SourceType))
-                ) && 
-                (
-                    this.SourceTask == input.SourceTask ||
-                    (this.SourceTask != null &&
-                    this.SourceTask.Equals(input.SourceTask))
-                ) && 
-                (
-                    this.SinkType == input.SinkType ||
-                    (this.SinkType != null &&
-                    this.SinkType.Equals(input.SinkType))
-                ) && 
-                (
-                    this.SinkTask == input.SinkTask ||
-                    (this.SinkTask != null &&
-                    this.SinkTask.Equals(input.SinkTask))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TaskName != null)
-                    hashCode = hashCode * 59 + this.TaskName.GetHashCode();
-                if (this.Topics != null)
-                    hashCode = hashCode * 59 + this.Topics.GetHashCode();
-                if (this.TopicsRegex != null)
-                    hashCode = hashCode * 59 + this.TopicsRegex.GetHashCode();
-                if (this.SourceType != null)
-                    hashCode = hashCode * 59 + this.SourceType.GetHashCode();
-                if (this.SourceTask != null)
-                    hashCode = hashCode * 59 + this.SourceTask.GetHashCode();
-                if (this.SinkType != null)
-                    hashCode = hashCode * 59 + this.SinkType.GetHashCode();
-                if (this.SinkTask != null)
-                    hashCode = hashCode * 59 + this.SinkTask.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                var hashCode = 41;
+                if (this.TaskName != null) hashCode = hashCode * 59 + this.TaskName.GetHashCode();
+                if (this.Topics != null) hashCode = hashCode * 59 + this.Topics.GetHashCode();
+                if (this.TopicsRegex != null) hashCode = hashCode * 59 + this.TopicsRegex.GetHashCode();
+                if (this.SourceType != null) hashCode = hashCode * 59 + this.SourceType.GetHashCode();
+                if (this.SourceTask != null) hashCode = hashCode * 59 + this.SourceTask.GetHashCode();
+                if (this.SinkType != null) hashCode = hashCode * 59 + this.SinkType.GetHashCode();
+                if (this.SinkTask != null) hashCode = hashCode * 59 + this.SinkTask.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
                 return hashCode;
             }
         }

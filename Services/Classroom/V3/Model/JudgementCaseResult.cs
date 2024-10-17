@@ -188,20 +188,11 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         /// </summary>
         public bool Equals(JudgementCaseResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Output != input.Output || (this.Output != null && !this.Output.Equals(input.Output))) return false;
+            if (this.CaseStatus != input.CaseStatus) return false;
 
-            return 
-                (
-                    this.Output == input.Output ||
-                    (this.Output != null &&
-                    this.Output.Equals(input.Output))
-                ) && 
-                (
-                    this.CaseStatus == input.CaseStatus ||
-                    (this.CaseStatus != null &&
-                    this.CaseStatus.Equals(input.CaseStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -211,11 +202,9 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Output != null)
-                    hashCode = hashCode * 59 + this.Output.GetHashCode();
-                if (this.CaseStatus != null)
-                    hashCode = hashCode * 59 + this.CaseStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.Output != null) hashCode = hashCode * 59 + this.Output.GetHashCode();
+                hashCode = hashCode * 59 + this.CaseStatus.GetHashCode();
                 return hashCode;
             }
         }

@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(KafkaTopicPartitionResponsePartitions input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Partition != input.Partition || (this.Partition != null && !this.Partition.Equals(input.Partition))) return false;
+            if (this.StartOffset != input.StartOffset || (this.StartOffset != null && !this.StartOffset.Equals(input.StartOffset))) return false;
+            if (this.LastOffset != input.LastOffset || (this.LastOffset != null && !this.LastOffset.Equals(input.LastOffset))) return false;
+            if (this.MessageCount != input.MessageCount || (this.MessageCount != null && !this.MessageCount.Equals(input.MessageCount))) return false;
+            if (this.LastUpdateTime != input.LastUpdateTime || (this.LastUpdateTime != null && !this.LastUpdateTime.Equals(input.LastUpdateTime))) return false;
 
-            return 
-                (
-                    this.Partition == input.Partition ||
-                    (this.Partition != null &&
-                    this.Partition.Equals(input.Partition))
-                ) && 
-                (
-                    this.StartOffset == input.StartOffset ||
-                    (this.StartOffset != null &&
-                    this.StartOffset.Equals(input.StartOffset))
-                ) && 
-                (
-                    this.LastOffset == input.LastOffset ||
-                    (this.LastOffset != null &&
-                    this.LastOffset.Equals(input.LastOffset))
-                ) && 
-                (
-                    this.MessageCount == input.MessageCount ||
-                    (this.MessageCount != null &&
-                    this.MessageCount.Equals(input.MessageCount))
-                ) && 
-                (
-                    this.LastUpdateTime == input.LastUpdateTime ||
-                    (this.LastUpdateTime != null &&
-                    this.LastUpdateTime.Equals(input.LastUpdateTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Partition != null)
-                    hashCode = hashCode * 59 + this.Partition.GetHashCode();
-                if (this.StartOffset != null)
-                    hashCode = hashCode * 59 + this.StartOffset.GetHashCode();
-                if (this.LastOffset != null)
-                    hashCode = hashCode * 59 + this.LastOffset.GetHashCode();
-                if (this.MessageCount != null)
-                    hashCode = hashCode * 59 + this.MessageCount.GetHashCode();
-                if (this.LastUpdateTime != null)
-                    hashCode = hashCode * 59 + this.LastUpdateTime.GetHashCode();
+                var hashCode = 41;
+                if (this.Partition != null) hashCode = hashCode * 59 + this.Partition.GetHashCode();
+                if (this.StartOffset != null) hashCode = hashCode * 59 + this.StartOffset.GetHashCode();
+                if (this.LastOffset != null) hashCode = hashCode * 59 + this.LastOffset.GetHashCode();
+                if (this.MessageCount != null) hashCode = hashCode * 59 + this.MessageCount.GetHashCode();
+                if (this.LastUpdateTime != null) hashCode = hashCode * 59 + this.LastUpdateTime.GetHashCode();
                 return hashCode;
             }
         }

@@ -170,20 +170,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(ExtraDhcpOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OptName != input.OptName) return false;
+            if (this.OptValue != input.OptValue || (this.OptValue != null && !this.OptValue.Equals(input.OptValue))) return false;
 
-            return 
-                (
-                    this.OptName == input.OptName ||
-                    (this.OptName != null &&
-                    this.OptName.Equals(input.OptName))
-                ) && 
-                (
-                    this.OptValue == input.OptValue ||
-                    (this.OptValue != null &&
-                    this.OptValue.Equals(input.OptValue))
-                );
+            return true;
         }
 
         /// <summary>
@@ -193,11 +184,9 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OptName != null)
-                    hashCode = hashCode * 59 + this.OptName.GetHashCode();
-                if (this.OptValue != null)
-                    hashCode = hashCode * 59 + this.OptValue.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.OptName.GetHashCode();
+                if (this.OptValue != null) hashCode = hashCode * 59 + this.OptValue.GetHashCode();
                 return hashCode;
             }
         }

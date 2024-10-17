@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(ModifyVolumeQoSRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.QosModify != input.QosModify || (this.QosModify != null && !this.QosModify.Equals(input.QosModify))) return false;
 
-            return 
-                (
-                    this.QosModify == input.QosModify ||
-                    (this.QosModify != null &&
-                    this.QosModify.Equals(input.QosModify))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.QosModify != null)
-                    hashCode = hashCode * 59 + this.QosModify.GetHashCode();
+                var hashCode = 41;
+                if (this.QosModify != null) hashCode = hashCode * 59 + this.QosModify.GetHashCode();
                 return hashCode;
             }
         }

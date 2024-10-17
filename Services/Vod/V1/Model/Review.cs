@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(Review input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TemplateId != input.TemplateId || (this.TemplateId != null && !this.TemplateId.Equals(input.TemplateId))) return false;
+            if (this.Interval != input.Interval || (this.Interval != null && !this.Interval.Equals(input.Interval))) return false;
+            if (this.Politics != input.Politics || (this.Politics != null && !this.Politics.Equals(input.Politics))) return false;
+            if (this.Terrorism != input.Terrorism || (this.Terrorism != null && !this.Terrorism.Equals(input.Terrorism))) return false;
+            if (this.Porn != input.Porn || (this.Porn != null && !this.Porn.Equals(input.Porn))) return false;
 
-            return 
-                (
-                    this.TemplateId == input.TemplateId ||
-                    (this.TemplateId != null &&
-                    this.TemplateId.Equals(input.TemplateId))
-                ) && 
-                (
-                    this.Interval == input.Interval ||
-                    (this.Interval != null &&
-                    this.Interval.Equals(input.Interval))
-                ) && 
-                (
-                    this.Politics == input.Politics ||
-                    (this.Politics != null &&
-                    this.Politics.Equals(input.Politics))
-                ) && 
-                (
-                    this.Terrorism == input.Terrorism ||
-                    (this.Terrorism != null &&
-                    this.Terrorism.Equals(input.Terrorism))
-                ) && 
-                (
-                    this.Porn == input.Porn ||
-                    (this.Porn != null &&
-                    this.Porn.Equals(input.Porn))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TemplateId != null)
-                    hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
-                if (this.Interval != null)
-                    hashCode = hashCode * 59 + this.Interval.GetHashCode();
-                if (this.Politics != null)
-                    hashCode = hashCode * 59 + this.Politics.GetHashCode();
-                if (this.Terrorism != null)
-                    hashCode = hashCode * 59 + this.Terrorism.GetHashCode();
-                if (this.Porn != null)
-                    hashCode = hashCode * 59 + this.Porn.GetHashCode();
+                var hashCode = 41;
+                if (this.TemplateId != null) hashCode = hashCode * 59 + this.TemplateId.GetHashCode();
+                if (this.Interval != null) hashCode = hashCode * 59 + this.Interval.GetHashCode();
+                if (this.Politics != null) hashCode = hashCode * 59 + this.Politics.GetHashCode();
+                if (this.Terrorism != null) hashCode = hashCode * 59 + this.Terrorism.GetHashCode();
+                if (this.Porn != null) hashCode = hashCode * 59 + this.Porn.GetHashCode();
                 return hashCode;
             }
         }

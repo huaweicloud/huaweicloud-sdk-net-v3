@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(ExternalGatewayInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EnableSnat != input.EnableSnat || (this.EnableSnat != null && !this.EnableSnat.Equals(input.EnableSnat))) return false;
+            if (this.NetworkId != input.NetworkId || (this.NetworkId != null && !this.NetworkId.Equals(input.NetworkId))) return false;
 
-            return 
-                (
-                    this.EnableSnat == input.EnableSnat ||
-                    (this.EnableSnat != null &&
-                    this.EnableSnat.Equals(input.EnableSnat))
-                ) && 
-                (
-                    this.NetworkId == input.NetworkId ||
-                    (this.NetworkId != null &&
-                    this.NetworkId.Equals(input.NetworkId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EnableSnat != null)
-                    hashCode = hashCode * 59 + this.EnableSnat.GetHashCode();
-                if (this.NetworkId != null)
-                    hashCode = hashCode * 59 + this.NetworkId.GetHashCode();
+                var hashCode = 41;
+                if (this.EnableSnat != null) hashCode = hashCode * 59 + this.EnableSnat.GetHashCode();
+                if (this.NetworkId != null) hashCode = hashCode * 59 + this.NetworkId.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(KafkaTopicProducerResponseProducers input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProducerAddress != input.ProducerAddress || (this.ProducerAddress != null && !this.ProducerAddress.Equals(input.ProducerAddress))) return false;
+            if (this.BrokerAddress != input.BrokerAddress || (this.BrokerAddress != null && !this.BrokerAddress.Equals(input.BrokerAddress))) return false;
+            if (this.JoinTime != input.JoinTime || (this.JoinTime != null && !this.JoinTime.Equals(input.JoinTime))) return false;
 
-            return 
-                (
-                    this.ProducerAddress == input.ProducerAddress ||
-                    (this.ProducerAddress != null &&
-                    this.ProducerAddress.Equals(input.ProducerAddress))
-                ) && 
-                (
-                    this.BrokerAddress == input.BrokerAddress ||
-                    (this.BrokerAddress != null &&
-                    this.BrokerAddress.Equals(input.BrokerAddress))
-                ) && 
-                (
-                    this.JoinTime == input.JoinTime ||
-                    (this.JoinTime != null &&
-                    this.JoinTime.Equals(input.JoinTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProducerAddress != null)
-                    hashCode = hashCode * 59 + this.ProducerAddress.GetHashCode();
-                if (this.BrokerAddress != null)
-                    hashCode = hashCode * 59 + this.BrokerAddress.GetHashCode();
-                if (this.JoinTime != null)
-                    hashCode = hashCode * 59 + this.JoinTime.GetHashCode();
+                var hashCode = 41;
+                if (this.ProducerAddress != null) hashCode = hashCode * 59 + this.ProducerAddress.GetHashCode();
+                if (this.BrokerAddress != null) hashCode = hashCode * 59 + this.BrokerAddress.GetHashCode();
+                if (this.JoinTime != null) hashCode = hashCode * 59 + this.JoinTime.GetHashCode();
                 return hashCode;
             }
         }

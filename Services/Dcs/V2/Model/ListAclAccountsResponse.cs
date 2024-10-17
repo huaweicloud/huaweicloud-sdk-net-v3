@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ListAclAccountsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Accounts != input.Accounts || (this.Accounts != null && input.Accounts != null && !this.Accounts.SequenceEqual(input.Accounts))) return false;
 
-            return 
-                (
-                    this.Accounts == input.Accounts ||
-                    this.Accounts != null &&
-                    input.Accounts != null &&
-                    this.Accounts.SequenceEqual(input.Accounts)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Accounts != null)
-                    hashCode = hashCode * 59 + this.Accounts.GetHashCode();
+                var hashCode = 41;
+                if (this.Accounts != null) hashCode = hashCode * 59 + this.Accounts.GetHashCode();
                 return hashCode;
             }
         }

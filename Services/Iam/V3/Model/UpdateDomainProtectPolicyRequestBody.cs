@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(UpdateDomainProtectPolicyRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProtectPolicy != input.ProtectPolicy || (this.ProtectPolicy != null && !this.ProtectPolicy.Equals(input.ProtectPolicy))) return false;
 
-            return 
-                (
-                    this.ProtectPolicy == input.ProtectPolicy ||
-                    (this.ProtectPolicy != null &&
-                    this.ProtectPolicy.Equals(input.ProtectPolicy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProtectPolicy != null)
-                    hashCode = hashCode * 59 + this.ProtectPolicy.GetHashCode();
+                var hashCode = 41;
+                if (this.ProtectPolicy != null) hashCode = hashCode * 59 + this.ProtectPolicy.GetHashCode();
                 return hashCode;
             }
         }

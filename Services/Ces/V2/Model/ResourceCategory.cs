@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(ResourceCategory input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
+            if (this.DimensionNames != input.DimensionNames || (this.DimensionNames != null && input.DimensionNames != null && !this.DimensionNames.SequenceEqual(input.DimensionNames))) return false;
 
-            return 
-                (
-                    this.Namespace == input.Namespace ||
-                    (this.Namespace != null &&
-                    this.Namespace.Equals(input.Namespace))
-                ) && 
-                (
-                    this.DimensionNames == input.DimensionNames ||
-                    this.DimensionNames != null &&
-                    input.DimensionNames != null &&
-                    this.DimensionNames.SequenceEqual(input.DimensionNames)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Namespace != null)
-                    hashCode = hashCode * 59 + this.Namespace.GetHashCode();
-                if (this.DimensionNames != null)
-                    hashCode = hashCode * 59 + this.DimensionNames.GetHashCode();
+                var hashCode = 41;
+                if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.DimensionNames != null) hashCode = hashCode * 59 + this.DimensionNames.GetHashCode();
                 return hashCode;
             }
         }

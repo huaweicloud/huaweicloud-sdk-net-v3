@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(CreateVolumeRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BssParam != input.BssParam || (this.BssParam != null && !this.BssParam.Equals(input.BssParam))) return false;
+            if (this.Volume != input.Volume || (this.Volume != null && !this.Volume.Equals(input.Volume))) return false;
+            if (this.ServerId != input.ServerId || (this.ServerId != null && !this.ServerId.Equals(input.ServerId))) return false;
+            if (this.OSSCHHNTschedulerHints != input.OSSCHHNTschedulerHints || (this.OSSCHHNTschedulerHints != null && !this.OSSCHHNTschedulerHints.Equals(input.OSSCHHNTschedulerHints))) return false;
 
-            return 
-                (
-                    this.BssParam == input.BssParam ||
-                    (this.BssParam != null &&
-                    this.BssParam.Equals(input.BssParam))
-                ) && 
-                (
-                    this.Volume == input.Volume ||
-                    (this.Volume != null &&
-                    this.Volume.Equals(input.Volume))
-                ) && 
-                (
-                    this.ServerId == input.ServerId ||
-                    (this.ServerId != null &&
-                    this.ServerId.Equals(input.ServerId))
-                ) && 
-                (
-                    this.OSSCHHNTschedulerHints == input.OSSCHHNTschedulerHints ||
-                    (this.OSSCHHNTschedulerHints != null &&
-                    this.OSSCHHNTschedulerHints.Equals(input.OSSCHHNTschedulerHints))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BssParam != null)
-                    hashCode = hashCode * 59 + this.BssParam.GetHashCode();
-                if (this.Volume != null)
-                    hashCode = hashCode * 59 + this.Volume.GetHashCode();
-                if (this.ServerId != null)
-                    hashCode = hashCode * 59 + this.ServerId.GetHashCode();
-                if (this.OSSCHHNTschedulerHints != null)
-                    hashCode = hashCode * 59 + this.OSSCHHNTschedulerHints.GetHashCode();
+                var hashCode = 41;
+                if (this.BssParam != null) hashCode = hashCode * 59 + this.BssParam.GetHashCode();
+                if (this.Volume != null) hashCode = hashCode * 59 + this.Volume.GetHashCode();
+                if (this.ServerId != null) hashCode = hashCode * 59 + this.ServerId.GetHashCode();
+                if (this.OSSCHHNTschedulerHints != null) hashCode = hashCode * 59 + this.OSSCHHNTschedulerHints.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,27 +63,12 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(ListSnapshotsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.Snapshots != input.Snapshots || (this.Snapshots != null && input.Snapshots != null && !this.Snapshots.SequenceEqual(input.Snapshots))) return false;
+            if (this.SnapshotsLinks != input.SnapshotsLinks || (this.SnapshotsLinks != null && input.SnapshotsLinks != null && !this.SnapshotsLinks.SequenceEqual(input.SnapshotsLinks))) return false;
 
-            return 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.Snapshots == input.Snapshots ||
-                    this.Snapshots != null &&
-                    input.Snapshots != null &&
-                    this.Snapshots.SequenceEqual(input.Snapshots)
-                ) && 
-                (
-                    this.SnapshotsLinks == input.SnapshotsLinks ||
-                    this.SnapshotsLinks != null &&
-                    input.SnapshotsLinks != null &&
-                    this.SnapshotsLinks.SequenceEqual(input.SnapshotsLinks)
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +78,10 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.Snapshots != null)
-                    hashCode = hashCode * 59 + this.Snapshots.GetHashCode();
-                if (this.SnapshotsLinks != null)
-                    hashCode = hashCode * 59 + this.SnapshotsLinks.GetHashCode();
+                var hashCode = 41;
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.Snapshots != null) hashCode = hashCode * 59 + this.Snapshots.GetHashCode();
+                if (this.SnapshotsLinks != null) hashCode = hashCode * 59 + this.SnapshotsLinks.GetHashCode();
                 return hashCode;
             }
         }

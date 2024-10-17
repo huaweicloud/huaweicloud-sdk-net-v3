@@ -77,37 +77,14 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(UpdateAlarmNotificationsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NotificationEnabled != input.NotificationEnabled || (this.NotificationEnabled != null && !this.NotificationEnabled.Equals(input.NotificationEnabled))) return false;
+            if (this.AlarmNotifications != input.AlarmNotifications || (this.AlarmNotifications != null && input.AlarmNotifications != null && !this.AlarmNotifications.SequenceEqual(input.AlarmNotifications))) return false;
+            if (this.OkNotifications != input.OkNotifications || (this.OkNotifications != null && input.OkNotifications != null && !this.OkNotifications.SequenceEqual(input.OkNotifications))) return false;
+            if (this.NotificationBeginTime != input.NotificationBeginTime || (this.NotificationBeginTime != null && !this.NotificationBeginTime.Equals(input.NotificationBeginTime))) return false;
+            if (this.NotificationEndTime != input.NotificationEndTime || (this.NotificationEndTime != null && !this.NotificationEndTime.Equals(input.NotificationEndTime))) return false;
 
-            return 
-                (
-                    this.NotificationEnabled == input.NotificationEnabled ||
-                    (this.NotificationEnabled != null &&
-                    this.NotificationEnabled.Equals(input.NotificationEnabled))
-                ) && 
-                (
-                    this.AlarmNotifications == input.AlarmNotifications ||
-                    this.AlarmNotifications != null &&
-                    input.AlarmNotifications != null &&
-                    this.AlarmNotifications.SequenceEqual(input.AlarmNotifications)
-                ) && 
-                (
-                    this.OkNotifications == input.OkNotifications ||
-                    this.OkNotifications != null &&
-                    input.OkNotifications != null &&
-                    this.OkNotifications.SequenceEqual(input.OkNotifications)
-                ) && 
-                (
-                    this.NotificationBeginTime == input.NotificationBeginTime ||
-                    (this.NotificationBeginTime != null &&
-                    this.NotificationBeginTime.Equals(input.NotificationBeginTime))
-                ) && 
-                (
-                    this.NotificationEndTime == input.NotificationEndTime ||
-                    (this.NotificationEndTime != null &&
-                    this.NotificationEndTime.Equals(input.NotificationEndTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -117,17 +94,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NotificationEnabled != null)
-                    hashCode = hashCode * 59 + this.NotificationEnabled.GetHashCode();
-                if (this.AlarmNotifications != null)
-                    hashCode = hashCode * 59 + this.AlarmNotifications.GetHashCode();
-                if (this.OkNotifications != null)
-                    hashCode = hashCode * 59 + this.OkNotifications.GetHashCode();
-                if (this.NotificationBeginTime != null)
-                    hashCode = hashCode * 59 + this.NotificationBeginTime.GetHashCode();
-                if (this.NotificationEndTime != null)
-                    hashCode = hashCode * 59 + this.NotificationEndTime.GetHashCode();
+                var hashCode = 41;
+                if (this.NotificationEnabled != null) hashCode = hashCode * 59 + this.NotificationEnabled.GetHashCode();
+                if (this.AlarmNotifications != null) hashCode = hashCode * 59 + this.AlarmNotifications.GetHashCode();
+                if (this.OkNotifications != null) hashCode = hashCode * 59 + this.OkNotifications.GetHashCode();
+                if (this.NotificationBeginTime != null) hashCode = hashCode * 59 + this.NotificationBeginTime.GetHashCode();
+                if (this.NotificationEndTime != null) hashCode = hashCode * 59 + this.NotificationEndTime.GetHashCode();
                 return hashCode;
             }
         }

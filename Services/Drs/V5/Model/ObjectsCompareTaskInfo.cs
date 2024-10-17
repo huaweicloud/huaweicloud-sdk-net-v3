@@ -230,51 +230,17 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ObjectsCompareTaskInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.CompareResults != input.CompareResults || (this.CompareResults != null && input.CompareResults != null && !this.CompareResults.SequenceEqual(input.CompareResults))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.ExportStatus != input.ExportStatus || (this.ExportStatus != null && !this.ExportStatus.Equals(input.ExportStatus))) return false;
+            if (this.ReportRemainSeconds != input.ReportRemainSeconds || (this.ReportRemainSeconds != null && !this.ReportRemainSeconds.Equals(input.ReportRemainSeconds))) return false;
+            if (this.CompareJobId != input.CompareJobId || (this.CompareJobId != null && !this.CompareJobId.Equals(input.CompareJobId))) return false;
+            if (this.ErrorMsg != input.ErrorMsg || (this.ErrorMsg != null && !this.ErrorMsg.Equals(input.ErrorMsg))) return false;
 
-            return 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.CompareResults == input.CompareResults ||
-                    this.CompareResults != null &&
-                    input.CompareResults != null &&
-                    this.CompareResults.SequenceEqual(input.CompareResults)
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.ExportStatus == input.ExportStatus ||
-                    (this.ExportStatus != null &&
-                    this.ExportStatus.Equals(input.ExportStatus))
-                ) && 
-                (
-                    this.ReportRemainSeconds == input.ReportRemainSeconds ||
-                    (this.ReportRemainSeconds != null &&
-                    this.ReportRemainSeconds.Equals(input.ReportRemainSeconds))
-                ) && 
-                (
-                    this.CompareJobId == input.CompareJobId ||
-                    (this.CompareJobId != null &&
-                    this.CompareJobId.Equals(input.CompareJobId))
-                ) && 
-                (
-                    this.ErrorMsg == input.ErrorMsg ||
-                    (this.ErrorMsg != null &&
-                    this.ErrorMsg.Equals(input.ErrorMsg))
-                );
+            return true;
         }
 
         /// <summary>
@@ -284,23 +250,15 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.CompareResults != null)
-                    hashCode = hashCode * 59 + this.CompareResults.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.ExportStatus != null)
-                    hashCode = hashCode * 59 + this.ExportStatus.GetHashCode();
-                if (this.ReportRemainSeconds != null)
-                    hashCode = hashCode * 59 + this.ReportRemainSeconds.GetHashCode();
-                if (this.CompareJobId != null)
-                    hashCode = hashCode * 59 + this.CompareJobId.GetHashCode();
-                if (this.ErrorMsg != null)
-                    hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
+                var hashCode = 41;
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.CompareResults != null) hashCode = hashCode * 59 + this.CompareResults.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.ExportStatus != null) hashCode = hashCode * 59 + this.ExportStatus.GetHashCode();
+                if (this.ReportRemainSeconds != null) hashCode = hashCode * 59 + this.ReportRemainSeconds.GetHashCode();
+                if (this.CompareJobId != null) hashCode = hashCode * 59 + this.CompareJobId.GetHashCode();
+                if (this.ErrorMsg != null) hashCode = hashCode * 59 + this.ErrorMsg.GetHashCode();
                 return hashCode;
             }
         }

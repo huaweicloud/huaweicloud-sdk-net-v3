@@ -238,156 +238,37 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         /// </summary>
         public bool Equals(ListEndpointInfoDetailsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.ServiceType != input.ServiceType || (this.ServiceType != null && !this.ServiceType.Equals(input.ServiceType))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.ActiveStatus != input.ActiveStatus || (this.ActiveStatus != null && input.ActiveStatus != null && !this.ActiveStatus.SequenceEqual(input.ActiveStatus))) return false;
+            if (this.EnableStatus != input.EnableStatus || (this.EnableStatus != null && !this.EnableStatus.Equals(input.EnableStatus))) return false;
+            if (this.SpecificationName != input.SpecificationName || (this.SpecificationName != null && !this.SpecificationName.Equals(input.SpecificationName))) return false;
+            if (this.EndpointServiceName != input.EndpointServiceName || (this.EndpointServiceName != null && !this.EndpointServiceName.Equals(input.EndpointServiceName))) return false;
+            if (this.MarkerId != input.MarkerId || (this.MarkerId != null && !this.MarkerId.Equals(input.MarkerId))) return false;
+            if (this.EndpointServiceId != input.EndpointServiceId || (this.EndpointServiceId != null && !this.EndpointServiceId.Equals(input.EndpointServiceId))) return false;
+            if (this.EnableDns != input.EnableDns || (this.EnableDns != null && !this.EnableDns.Equals(input.EnableDns))) return false;
+            if (this.DnsNames != input.DnsNames || (this.DnsNames != null && input.DnsNames != null && !this.DnsNames.SequenceEqual(input.DnsNames))) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
+            if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.Error != input.Error || (this.Error != null && !this.Error.Equals(input.Error))) return false;
+            if (this.Whitelist != input.Whitelist || (this.Whitelist != null && input.Whitelist != null && !this.Whitelist.SequenceEqual(input.Whitelist))) return false;
+            if (this.EnableWhitelist != input.EnableWhitelist || (this.EnableWhitelist != null && !this.EnableWhitelist.Equals(input.EnableWhitelist))) return false;
+            if (this.Routetables != input.Routetables || (this.Routetables != null && input.Routetables != null && !this.Routetables.SequenceEqual(input.Routetables))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.PolicyStatement != input.PolicyStatement || (this.PolicyStatement != null && input.PolicyStatement != null && !this.PolicyStatement.SequenceEqual(input.PolicyStatement))) return false;
+            if (this.PolicyDocument != input.PolicyDocument || (this.PolicyDocument != null && !this.PolicyDocument.Equals(input.PolicyDocument))) return false;
+            if (this.EndpointPoolId != input.EndpointPoolId || (this.EndpointPoolId != null && !this.EndpointPoolId.Equals(input.EndpointPoolId))) return false;
+            if (this.PublicBorderGroup != input.PublicBorderGroup || (this.PublicBorderGroup != null && !this.PublicBorderGroup.Equals(input.PublicBorderGroup))) return false;
+            if (this.Ipv6Address != input.Ipv6Address || (this.Ipv6Address != null && !this.Ipv6Address.Equals(input.Ipv6Address))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.ServiceType == input.ServiceType ||
-                    (this.ServiceType != null &&
-                    this.ServiceType.Equals(input.ServiceType))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.ActiveStatus == input.ActiveStatus ||
-                    this.ActiveStatus != null &&
-                    input.ActiveStatus != null &&
-                    this.ActiveStatus.SequenceEqual(input.ActiveStatus)
-                ) && 
-                (
-                    this.EnableStatus == input.EnableStatus ||
-                    (this.EnableStatus != null &&
-                    this.EnableStatus.Equals(input.EnableStatus))
-                ) && 
-                (
-                    this.SpecificationName == input.SpecificationName ||
-                    (this.SpecificationName != null &&
-                    this.SpecificationName.Equals(input.SpecificationName))
-                ) && 
-                (
-                    this.EndpointServiceName == input.EndpointServiceName ||
-                    (this.EndpointServiceName != null &&
-                    this.EndpointServiceName.Equals(input.EndpointServiceName))
-                ) && 
-                (
-                    this.MarkerId == input.MarkerId ||
-                    (this.MarkerId != null &&
-                    this.MarkerId.Equals(input.MarkerId))
-                ) && 
-                (
-                    this.EndpointServiceId == input.EndpointServiceId ||
-                    (this.EndpointServiceId != null &&
-                    this.EndpointServiceId.Equals(input.EndpointServiceId))
-                ) && 
-                (
-                    this.EnableDns == input.EnableDns ||
-                    (this.EnableDns != null &&
-                    this.EnableDns.Equals(input.EnableDns))
-                ) && 
-                (
-                    this.DnsNames == input.DnsNames ||
-                    this.DnsNames != null &&
-                    input.DnsNames != null &&
-                    this.DnsNames.SequenceEqual(input.DnsNames)
-                ) && 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                ) && 
-                (
-                    this.VpcId == input.VpcId ||
-                    (this.VpcId != null &&
-                    this.VpcId.Equals(input.VpcId))
-                ) && 
-                (
-                    this.SubnetId == input.SubnetId ||
-                    (this.SubnetId != null &&
-                    this.SubnetId.Equals(input.SubnetId))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.Error == input.Error ||
-                    (this.Error != null &&
-                    this.Error.Equals(input.Error))
-                ) && 
-                (
-                    this.Whitelist == input.Whitelist ||
-                    this.Whitelist != null &&
-                    input.Whitelist != null &&
-                    this.Whitelist.SequenceEqual(input.Whitelist)
-                ) && 
-                (
-                    this.EnableWhitelist == input.EnableWhitelist ||
-                    (this.EnableWhitelist != null &&
-                    this.EnableWhitelist.Equals(input.EnableWhitelist))
-                ) && 
-                (
-                    this.Routetables == input.Routetables ||
-                    this.Routetables != null &&
-                    input.Routetables != null &&
-                    this.Routetables.SequenceEqual(input.Routetables)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.PolicyStatement == input.PolicyStatement ||
-                    this.PolicyStatement != null &&
-                    input.PolicyStatement != null &&
-                    this.PolicyStatement.SequenceEqual(input.PolicyStatement)
-                ) && 
-                (
-                    this.PolicyDocument == input.PolicyDocument ||
-                    (this.PolicyDocument != null &&
-                    this.PolicyDocument.Equals(input.PolicyDocument))
-                ) && 
-                (
-                    this.EndpointPoolId == input.EndpointPoolId ||
-                    (this.EndpointPoolId != null &&
-                    this.EndpointPoolId.Equals(input.EndpointPoolId))
-                ) && 
-                (
-                    this.PublicBorderGroup == input.PublicBorderGroup ||
-                    (this.PublicBorderGroup != null &&
-                    this.PublicBorderGroup.Equals(input.PublicBorderGroup))
-                ) && 
-                (
-                    this.Ipv6Address == input.Ipv6Address ||
-                    (this.Ipv6Address != null &&
-                    this.Ipv6Address.Equals(input.Ipv6Address))
-                );
+            return true;
         }
 
         /// <summary>
@@ -397,63 +278,35 @@ namespace HuaweiCloud.SDK.Vpcep.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.ServiceType != null)
-                    hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.ActiveStatus != null)
-                    hashCode = hashCode * 59 + this.ActiveStatus.GetHashCode();
-                if (this.EnableStatus != null)
-                    hashCode = hashCode * 59 + this.EnableStatus.GetHashCode();
-                if (this.SpecificationName != null)
-                    hashCode = hashCode * 59 + this.SpecificationName.GetHashCode();
-                if (this.EndpointServiceName != null)
-                    hashCode = hashCode * 59 + this.EndpointServiceName.GetHashCode();
-                if (this.MarkerId != null)
-                    hashCode = hashCode * 59 + this.MarkerId.GetHashCode();
-                if (this.EndpointServiceId != null)
-                    hashCode = hashCode * 59 + this.EndpointServiceId.GetHashCode();
-                if (this.EnableDns != null)
-                    hashCode = hashCode * 59 + this.EnableDns.GetHashCode();
-                if (this.DnsNames != null)
-                    hashCode = hashCode * 59 + this.DnsNames.GetHashCode();
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.SubnetId != null)
-                    hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.Error != null)
-                    hashCode = hashCode * 59 + this.Error.GetHashCode();
-                if (this.Whitelist != null)
-                    hashCode = hashCode * 59 + this.Whitelist.GetHashCode();
-                if (this.EnableWhitelist != null)
-                    hashCode = hashCode * 59 + this.EnableWhitelist.GetHashCode();
-                if (this.Routetables != null)
-                    hashCode = hashCode * 59 + this.Routetables.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.PolicyStatement != null)
-                    hashCode = hashCode * 59 + this.PolicyStatement.GetHashCode();
-                if (this.PolicyDocument != null)
-                    hashCode = hashCode * 59 + this.PolicyDocument.GetHashCode();
-                if (this.EndpointPoolId != null)
-                    hashCode = hashCode * 59 + this.EndpointPoolId.GetHashCode();
-                if (this.PublicBorderGroup != null)
-                    hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
-                if (this.Ipv6Address != null)
-                    hashCode = hashCode * 59 + this.Ipv6Address.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.ServiceType != null) hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.ActiveStatus != null) hashCode = hashCode * 59 + this.ActiveStatus.GetHashCode();
+                if (this.EnableStatus != null) hashCode = hashCode * 59 + this.EnableStatus.GetHashCode();
+                if (this.SpecificationName != null) hashCode = hashCode * 59 + this.SpecificationName.GetHashCode();
+                if (this.EndpointServiceName != null) hashCode = hashCode * 59 + this.EndpointServiceName.GetHashCode();
+                if (this.MarkerId != null) hashCode = hashCode * 59 + this.MarkerId.GetHashCode();
+                if (this.EndpointServiceId != null) hashCode = hashCode * 59 + this.EndpointServiceId.GetHashCode();
+                if (this.EnableDns != null) hashCode = hashCode * 59 + this.EnableDns.GetHashCode();
+                if (this.DnsNames != null) hashCode = hashCode * 59 + this.DnsNames.GetHashCode();
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.Error != null) hashCode = hashCode * 59 + this.Error.GetHashCode();
+                if (this.Whitelist != null) hashCode = hashCode * 59 + this.Whitelist.GetHashCode();
+                if (this.EnableWhitelist != null) hashCode = hashCode * 59 + this.EnableWhitelist.GetHashCode();
+                if (this.Routetables != null) hashCode = hashCode * 59 + this.Routetables.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.PolicyStatement != null) hashCode = hashCode * 59 + this.PolicyStatement.GetHashCode();
+                if (this.PolicyDocument != null) hashCode = hashCode * 59 + this.PolicyDocument.GetHashCode();
+                if (this.EndpointPoolId != null) hashCode = hashCode * 59 + this.EndpointPoolId.GetHashCode();
+                if (this.PublicBorderGroup != null) hashCode = hashCode * 59 + this.PublicBorderGroup.GetHashCode();
+                if (this.Ipv6Address != null) hashCode = hashCode * 59 + this.Ipv6Address.GetHashCode();
                 return hashCode;
             }
         }

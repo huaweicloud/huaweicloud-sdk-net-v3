@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(IpsSwitchResponseDTO input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.BasicDefenseStatus != input.BasicDefenseStatus || (this.BasicDefenseStatus != null && !this.BasicDefenseStatus.Equals(input.BasicDefenseStatus))) return false;
+            if (this.VirtualPatchesStatus != input.VirtualPatchesStatus || (this.VirtualPatchesStatus != null && !this.VirtualPatchesStatus.Equals(input.VirtualPatchesStatus))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.BasicDefenseStatus == input.BasicDefenseStatus ||
-                    (this.BasicDefenseStatus != null &&
-                    this.BasicDefenseStatus.Equals(input.BasicDefenseStatus))
-                ) && 
-                (
-                    this.VirtualPatchesStatus == input.VirtualPatchesStatus ||
-                    (this.VirtualPatchesStatus != null &&
-                    this.VirtualPatchesStatus.Equals(input.VirtualPatchesStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.BasicDefenseStatus != null)
-                    hashCode = hashCode * 59 + this.BasicDefenseStatus.GetHashCode();
-                if (this.VirtualPatchesStatus != null)
-                    hashCode = hashCode * 59 + this.VirtualPatchesStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.BasicDefenseStatus != null) hashCode = hashCode * 59 + this.BasicDefenseStatus.GetHashCode();
+                if (this.VirtualPatchesStatus != null) hashCode = hashCode * 59 + this.VirtualPatchesStatus.GetHashCode();
                 return hashCode;
             }
         }

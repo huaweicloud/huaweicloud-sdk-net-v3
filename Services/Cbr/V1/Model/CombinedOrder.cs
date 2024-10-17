@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(CombinedOrder input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CombinedOrderId != input.CombinedOrderId || (this.CombinedOrderId != null && !this.CombinedOrderId.Equals(input.CombinedOrderId))) return false;
+            if (this.CombinedOrderEcsNum != input.CombinedOrderEcsNum || (this.CombinedOrderEcsNum != null && !this.CombinedOrderEcsNum.Equals(input.CombinedOrderEcsNum))) return false;
+            if (this.CombinedOrderNum != input.CombinedOrderNum || (this.CombinedOrderNum != null && !this.CombinedOrderNum.Equals(input.CombinedOrderNum))) return false;
 
-            return 
-                (
-                    this.CombinedOrderId == input.CombinedOrderId ||
-                    (this.CombinedOrderId != null &&
-                    this.CombinedOrderId.Equals(input.CombinedOrderId))
-                ) && 
-                (
-                    this.CombinedOrderEcsNum == input.CombinedOrderEcsNum ||
-                    (this.CombinedOrderEcsNum != null &&
-                    this.CombinedOrderEcsNum.Equals(input.CombinedOrderEcsNum))
-                ) && 
-                (
-                    this.CombinedOrderNum == input.CombinedOrderNum ||
-                    (this.CombinedOrderNum != null &&
-                    this.CombinedOrderNum.Equals(input.CombinedOrderNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CombinedOrderId != null)
-                    hashCode = hashCode * 59 + this.CombinedOrderId.GetHashCode();
-                if (this.CombinedOrderEcsNum != null)
-                    hashCode = hashCode * 59 + this.CombinedOrderEcsNum.GetHashCode();
-                if (this.CombinedOrderNum != null)
-                    hashCode = hashCode * 59 + this.CombinedOrderNum.GetHashCode();
+                var hashCode = 41;
+                if (this.CombinedOrderId != null) hashCode = hashCode * 59 + this.CombinedOrderId.GetHashCode();
+                if (this.CombinedOrderEcsNum != null) hashCode = hashCode * 59 + this.CombinedOrderEcsNum.GetHashCode();
+                if (this.CombinedOrderNum != null) hashCode = hashCode * 59 + this.CombinedOrderNum.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ShowAuditlogPolicyResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KeepDays != input.KeepDays || (this.KeepDays != null && !this.KeepDays.Equals(input.KeepDays))) return false;
+            if (this.AuditTypes != input.AuditTypes || (this.AuditTypes != null && input.AuditTypes != null && !this.AuditTypes.SequenceEqual(input.AuditTypes))) return false;
+            if (this.AllAuditLogAction != input.AllAuditLogAction || (this.AllAuditLogAction != null && !this.AllAuditLogAction.Equals(input.AllAuditLogAction))) return false;
 
-            return 
-                (
-                    this.KeepDays == input.KeepDays ||
-                    (this.KeepDays != null &&
-                    this.KeepDays.Equals(input.KeepDays))
-                ) && 
-                (
-                    this.AuditTypes == input.AuditTypes ||
-                    this.AuditTypes != null &&
-                    input.AuditTypes != null &&
-                    this.AuditTypes.SequenceEqual(input.AuditTypes)
-                ) && 
-                (
-                    this.AllAuditLogAction == input.AllAuditLogAction ||
-                    (this.AllAuditLogAction != null &&
-                    this.AllAuditLogAction.Equals(input.AllAuditLogAction))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KeepDays != null)
-                    hashCode = hashCode * 59 + this.KeepDays.GetHashCode();
-                if (this.AuditTypes != null)
-                    hashCode = hashCode * 59 + this.AuditTypes.GetHashCode();
-                if (this.AllAuditLogAction != null)
-                    hashCode = hashCode * 59 + this.AllAuditLogAction.GetHashCode();
+                var hashCode = 41;
+                if (this.KeepDays != null) hashCode = hashCode * 59 + this.KeepDays.GetHashCode();
+                if (this.AuditTypes != null) hashCode = hashCode * 59 + this.AuditTypes.GetHashCode();
+                if (this.AllAuditLogAction != null) hashCode = hashCode * 59 + this.AllAuditLogAction.GetHashCode();
                 return hashCode;
             }
         }

@@ -74,30 +74,13 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(ShowKafkaTopicPartitionDiskusageRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.MinSize != input.MinSize || (this.MinSize != null && !this.MinSize.Equals(input.MinSize))) return false;
+            if (this.Top != input.Top || (this.Top != null && !this.Top.Equals(input.Top))) return false;
+            if (this.Percentage != input.Percentage || (this.Percentage != null && !this.Percentage.Equals(input.Percentage))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.MinSize == input.MinSize ||
-                    (this.MinSize != null &&
-                    this.MinSize.Equals(input.MinSize))
-                ) && 
-                (
-                    this.Top == input.Top ||
-                    (this.Top != null &&
-                    this.Top.Equals(input.Top))
-                ) && 
-                (
-                    this.Percentage == input.Percentage ||
-                    (this.Percentage != null &&
-                    this.Percentage.Equals(input.Percentage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -107,15 +90,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.MinSize != null)
-                    hashCode = hashCode * 59 + this.MinSize.GetHashCode();
-                if (this.Top != null)
-                    hashCode = hashCode * 59 + this.Top.GetHashCode();
-                if (this.Percentage != null)
-                    hashCode = hashCode * 59 + this.Percentage.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.MinSize != null) hashCode = hashCode * 59 + this.MinSize.GetHashCode();
+                if (this.Top != null) hashCode = hashCode * 59 + this.Top.GetHashCode();
+                if (this.Percentage != null) hashCode = hashCode * 59 + this.Percentage.GetHashCode();
                 return hashCode;
             }
         }

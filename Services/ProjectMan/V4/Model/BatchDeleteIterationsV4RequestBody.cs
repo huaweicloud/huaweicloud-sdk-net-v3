@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(BatchDeleteIterationsV4RequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IterationIds != input.IterationIds || (this.IterationIds != null && input.IterationIds != null && !this.IterationIds.SequenceEqual(input.IterationIds))) return false;
 
-            return 
-                (
-                    this.IterationIds == input.IterationIds ||
-                    this.IterationIds != null &&
-                    input.IterationIds != null &&
-                    this.IterationIds.SequenceEqual(input.IterationIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IterationIds != null)
-                    hashCode = hashCode * 59 + this.IterationIds.GetHashCode();
+                var hashCode = 41;
+                if (this.IterationIds != null) hashCode = hashCode * 59 + this.IterationIds.GetHashCode();
                 return hashCode;
             }
         }

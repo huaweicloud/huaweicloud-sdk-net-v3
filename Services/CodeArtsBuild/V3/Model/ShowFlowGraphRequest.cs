@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         /// </summary>
         public bool Equals(ShowFlowGraphRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BuildFlowRecordId != input.BuildFlowRecordId || (this.BuildFlowRecordId != null && !this.BuildFlowRecordId.Equals(input.BuildFlowRecordId))) return false;
 
-            return 
-                (
-                    this.BuildFlowRecordId == input.BuildFlowRecordId ||
-                    (this.BuildFlowRecordId != null &&
-                    this.BuildFlowRecordId.Equals(input.BuildFlowRecordId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.CodeArtsBuild.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BuildFlowRecordId != null)
-                    hashCode = hashCode * 59 + this.BuildFlowRecordId.GetHashCode();
+                var hashCode = 41;
+                if (this.BuildFlowRecordId != null) hashCode = hashCode * 59 + this.BuildFlowRecordId.GetHashCode();
                 return hashCode;
             }
         }

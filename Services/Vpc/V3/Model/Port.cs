@@ -294,195 +294,45 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(Port input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.BindinghostId != input.BindinghostId || (this.BindinghostId != null && !this.BindinghostId.Equals(input.BindinghostId))) return false;
+            if (this.Bindingprofile != input.Bindingprofile || (this.Bindingprofile != null && !this.Bindingprofile.Equals(input.Bindingprofile))) return false;
+            if (this.BindingvifDetails != input.BindingvifDetails || (this.BindingvifDetails != null && !this.BindingvifDetails.Equals(input.BindingvifDetails))) return false;
+            if (this.BindingvifType != input.BindingvifType || (this.BindingvifType != null && !this.BindingvifType.Equals(input.BindingvifType))) return false;
+            if (this.BindingvnicType != input.BindingvnicType || (this.BindingvnicType != null && !this.BindingvnicType.Equals(input.BindingvnicType))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.DeviceId != input.DeviceId || (this.DeviceId != null && !this.DeviceId.Equals(input.DeviceId))) return false;
+            if (this.DeviceOwner != input.DeviceOwner || (this.DeviceOwner != null && !this.DeviceOwner.Equals(input.DeviceOwner))) return false;
+            if (this.EcsFlavor != input.EcsFlavor || (this.EcsFlavor != null && !this.EcsFlavor.Equals(input.EcsFlavor))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.InstanceType != input.InstanceType || (this.InstanceType != null && !this.InstanceType.Equals(input.InstanceType))) return false;
+            if (this.MacAddress != input.MacAddress || (this.MacAddress != null && !this.MacAddress.Equals(input.MacAddress))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.PortSecurityEnabled != input.PortSecurityEnabled || (this.PortSecurityEnabled != null && !this.PortSecurityEnabled.Equals(input.PortSecurityEnabled))) return false;
+            if (this.PrivateIps != input.PrivateIps || (this.PrivateIps != null && input.PrivateIps != null && !this.PrivateIps.SequenceEqual(input.PrivateIps))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.SecurityGroups != input.SecurityGroups || (this.SecurityGroups != null && input.SecurityGroups != null && !this.SecurityGroups.SequenceEqual(input.SecurityGroups))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
+            if (this.VirsubnetId != input.VirsubnetId || (this.VirsubnetId != null && !this.VirsubnetId.Equals(input.VirsubnetId))) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
+            if (this.VpcTenantId != input.VpcTenantId || (this.VpcTenantId != null && !this.VpcTenantId.Equals(input.VpcTenantId))) return false;
+            if (this.VtepIp != input.VtepIp || (this.VtepIp != null && !this.VtepIp.Equals(input.VtepIp))) return false;
+            if (this.EnableEfi != input.EnableEfi || (this.EnableEfi != null && !this.EnableEfi.Equals(input.EnableEfi))) return false;
+            if (this.Scope != input.Scope || (this.Scope != null && !this.Scope.Equals(input.Scope))) return false;
+            if (this.ZoneId != input.ZoneId || (this.ZoneId != null && !this.ZoneId.Equals(input.ZoneId))) return false;
+            if (this.BindingmigrationInfo != input.BindingmigrationInfo || (this.BindingmigrationInfo != null && !this.BindingmigrationInfo.Equals(input.BindingmigrationInfo))) return false;
+            if (this.ExtraDhcpOpts != input.ExtraDhcpOpts || (this.ExtraDhcpOpts != null && input.ExtraDhcpOpts != null && !this.ExtraDhcpOpts.SequenceEqual(input.ExtraDhcpOpts))) return false;
+            if (this.PositionType != input.PositionType || (this.PositionType != null && !this.PositionType.Equals(input.PositionType))) return false;
+            if (this.InstanceInfo != input.InstanceInfo || (this.InstanceInfo != null && !this.InstanceInfo.Equals(input.InstanceInfo))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.AllowedAddressPairs != input.AllowedAddressPairs || (this.AllowedAddressPairs != null && input.AllowedAddressPairs != null && !this.AllowedAddressPairs.SequenceEqual(input.AllowedAddressPairs))) return false;
 
-            return 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.BindinghostId == input.BindinghostId ||
-                    (this.BindinghostId != null &&
-                    this.BindinghostId.Equals(input.BindinghostId))
-                ) && 
-                (
-                    this.Bindingprofile == input.Bindingprofile ||
-                    (this.Bindingprofile != null &&
-                    this.Bindingprofile.Equals(input.Bindingprofile))
-                ) && 
-                (
-                    this.BindingvifDetails == input.BindingvifDetails ||
-                    (this.BindingvifDetails != null &&
-                    this.BindingvifDetails.Equals(input.BindingvifDetails))
-                ) && 
-                (
-                    this.BindingvifType == input.BindingvifType ||
-                    (this.BindingvifType != null &&
-                    this.BindingvifType.Equals(input.BindingvifType))
-                ) && 
-                (
-                    this.BindingvnicType == input.BindingvnicType ||
-                    (this.BindingvnicType != null &&
-                    this.BindingvnicType.Equals(input.BindingvnicType))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.DeviceId == input.DeviceId ||
-                    (this.DeviceId != null &&
-                    this.DeviceId.Equals(input.DeviceId))
-                ) && 
-                (
-                    this.DeviceOwner == input.DeviceOwner ||
-                    (this.DeviceOwner != null &&
-                    this.DeviceOwner.Equals(input.DeviceOwner))
-                ) && 
-                (
-                    this.EcsFlavor == input.EcsFlavor ||
-                    (this.EcsFlavor != null &&
-                    this.EcsFlavor.Equals(input.EcsFlavor))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.InstanceType == input.InstanceType ||
-                    (this.InstanceType != null &&
-                    this.InstanceType.Equals(input.InstanceType))
-                ) && 
-                (
-                    this.MacAddress == input.MacAddress ||
-                    (this.MacAddress != null &&
-                    this.MacAddress.Equals(input.MacAddress))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.PortSecurityEnabled == input.PortSecurityEnabled ||
-                    (this.PortSecurityEnabled != null &&
-                    this.PortSecurityEnabled.Equals(input.PortSecurityEnabled))
-                ) && 
-                (
-                    this.PrivateIps == input.PrivateIps ||
-                    this.PrivateIps != null &&
-                    input.PrivateIps != null &&
-                    this.PrivateIps.SequenceEqual(input.PrivateIps)
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.SecurityGroups == input.SecurityGroups ||
-                    this.SecurityGroups != null &&
-                    input.SecurityGroups != null &&
-                    this.SecurityGroups.SequenceEqual(input.SecurityGroups)
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.TenantId == input.TenantId ||
-                    (this.TenantId != null &&
-                    this.TenantId.Equals(input.TenantId))
-                ) && 
-                (
-                    this.VirsubnetId == input.VirsubnetId ||
-                    (this.VirsubnetId != null &&
-                    this.VirsubnetId.Equals(input.VirsubnetId))
-                ) && 
-                (
-                    this.VpcId == input.VpcId ||
-                    (this.VpcId != null &&
-                    this.VpcId.Equals(input.VpcId))
-                ) && 
-                (
-                    this.VpcTenantId == input.VpcTenantId ||
-                    (this.VpcTenantId != null &&
-                    this.VpcTenantId.Equals(input.VpcTenantId))
-                ) && 
-                (
-                    this.VtepIp == input.VtepIp ||
-                    (this.VtepIp != null &&
-                    this.VtepIp.Equals(input.VtepIp))
-                ) && 
-                (
-                    this.EnableEfi == input.EnableEfi ||
-                    (this.EnableEfi != null &&
-                    this.EnableEfi.Equals(input.EnableEfi))
-                ) && 
-                (
-                    this.Scope == input.Scope ||
-                    (this.Scope != null &&
-                    this.Scope.Equals(input.Scope))
-                ) && 
-                (
-                    this.ZoneId == input.ZoneId ||
-                    (this.ZoneId != null &&
-                    this.ZoneId.Equals(input.ZoneId))
-                ) && 
-                (
-                    this.BindingmigrationInfo == input.BindingmigrationInfo ||
-                    (this.BindingmigrationInfo != null &&
-                    this.BindingmigrationInfo.Equals(input.BindingmigrationInfo))
-                ) && 
-                (
-                    this.ExtraDhcpOpts == input.ExtraDhcpOpts ||
-                    this.ExtraDhcpOpts != null &&
-                    input.ExtraDhcpOpts != null &&
-                    this.ExtraDhcpOpts.SequenceEqual(input.ExtraDhcpOpts)
-                ) && 
-                (
-                    this.PositionType == input.PositionType ||
-                    (this.PositionType != null &&
-                    this.PositionType.Equals(input.PositionType))
-                ) && 
-                (
-                    this.InstanceInfo == input.InstanceInfo ||
-                    (this.InstanceInfo != null &&
-                    this.InstanceInfo.Equals(input.InstanceInfo))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.AllowedAddressPairs == input.AllowedAddressPairs ||
-                    this.AllowedAddressPairs != null &&
-                    input.AllowedAddressPairs != null &&
-                    this.AllowedAddressPairs.SequenceEqual(input.AllowedAddressPairs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -492,79 +342,43 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.BindinghostId != null)
-                    hashCode = hashCode * 59 + this.BindinghostId.GetHashCode();
-                if (this.Bindingprofile != null)
-                    hashCode = hashCode * 59 + this.Bindingprofile.GetHashCode();
-                if (this.BindingvifDetails != null)
-                    hashCode = hashCode * 59 + this.BindingvifDetails.GetHashCode();
-                if (this.BindingvifType != null)
-                    hashCode = hashCode * 59 + this.BindingvifType.GetHashCode();
-                if (this.BindingvnicType != null)
-                    hashCode = hashCode * 59 + this.BindingvnicType.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.DeviceId != null)
-                    hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
-                if (this.DeviceOwner != null)
-                    hashCode = hashCode * 59 + this.DeviceOwner.GetHashCode();
-                if (this.EcsFlavor != null)
-                    hashCode = hashCode * 59 + this.EcsFlavor.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.InstanceType != null)
-                    hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
-                if (this.MacAddress != null)
-                    hashCode = hashCode * 59 + this.MacAddress.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.PortSecurityEnabled != null)
-                    hashCode = hashCode * 59 + this.PortSecurityEnabled.GetHashCode();
-                if (this.PrivateIps != null)
-                    hashCode = hashCode * 59 + this.PrivateIps.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.SecurityGroups != null)
-                    hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.TenantId != null)
-                    hashCode = hashCode * 59 + this.TenantId.GetHashCode();
-                if (this.VirsubnetId != null)
-                    hashCode = hashCode * 59 + this.VirsubnetId.GetHashCode();
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.VpcTenantId != null)
-                    hashCode = hashCode * 59 + this.VpcTenantId.GetHashCode();
-                if (this.VtepIp != null)
-                    hashCode = hashCode * 59 + this.VtepIp.GetHashCode();
-                if (this.EnableEfi != null)
-                    hashCode = hashCode * 59 + this.EnableEfi.GetHashCode();
-                if (this.Scope != null)
-                    hashCode = hashCode * 59 + this.Scope.GetHashCode();
-                if (this.ZoneId != null)
-                    hashCode = hashCode * 59 + this.ZoneId.GetHashCode();
-                if (this.BindingmigrationInfo != null)
-                    hashCode = hashCode * 59 + this.BindingmigrationInfo.GetHashCode();
-                if (this.ExtraDhcpOpts != null)
-                    hashCode = hashCode * 59 + this.ExtraDhcpOpts.GetHashCode();
-                if (this.PositionType != null)
-                    hashCode = hashCode * 59 + this.PositionType.GetHashCode();
-                if (this.InstanceInfo != null)
-                    hashCode = hashCode * 59 + this.InstanceInfo.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.AllowedAddressPairs != null)
-                    hashCode = hashCode * 59 + this.AllowedAddressPairs.GetHashCode();
+                var hashCode = 41;
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.BindinghostId != null) hashCode = hashCode * 59 + this.BindinghostId.GetHashCode();
+                if (this.Bindingprofile != null) hashCode = hashCode * 59 + this.Bindingprofile.GetHashCode();
+                if (this.BindingvifDetails != null) hashCode = hashCode * 59 + this.BindingvifDetails.GetHashCode();
+                if (this.BindingvifType != null) hashCode = hashCode * 59 + this.BindingvifType.GetHashCode();
+                if (this.BindingvnicType != null) hashCode = hashCode * 59 + this.BindingvnicType.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.DeviceId != null) hashCode = hashCode * 59 + this.DeviceId.GetHashCode();
+                if (this.DeviceOwner != null) hashCode = hashCode * 59 + this.DeviceOwner.GetHashCode();
+                if (this.EcsFlavor != null) hashCode = hashCode * 59 + this.EcsFlavor.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.InstanceType != null) hashCode = hashCode * 59 + this.InstanceType.GetHashCode();
+                if (this.MacAddress != null) hashCode = hashCode * 59 + this.MacAddress.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.PortSecurityEnabled != null) hashCode = hashCode * 59 + this.PortSecurityEnabled.GetHashCode();
+                if (this.PrivateIps != null) hashCode = hashCode * 59 + this.PrivateIps.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.SecurityGroups != null) hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
+                if (this.VirsubnetId != null) hashCode = hashCode * 59 + this.VirsubnetId.GetHashCode();
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.VpcTenantId != null) hashCode = hashCode * 59 + this.VpcTenantId.GetHashCode();
+                if (this.VtepIp != null) hashCode = hashCode * 59 + this.VtepIp.GetHashCode();
+                if (this.EnableEfi != null) hashCode = hashCode * 59 + this.EnableEfi.GetHashCode();
+                if (this.Scope != null) hashCode = hashCode * 59 + this.Scope.GetHashCode();
+                if (this.ZoneId != null) hashCode = hashCode * 59 + this.ZoneId.GetHashCode();
+                if (this.BindingmigrationInfo != null) hashCode = hashCode * 59 + this.BindingmigrationInfo.GetHashCode();
+                if (this.ExtraDhcpOpts != null) hashCode = hashCode * 59 + this.ExtraDhcpOpts.GetHashCode();
+                if (this.PositionType != null) hashCode = hashCode * 59 + this.PositionType.GetHashCode();
+                if (this.InstanceInfo != null) hashCode = hashCode * 59 + this.InstanceInfo.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.AllowedAddressPairs != null) hashCode = hashCode * 59 + this.AllowedAddressPairs.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,22 +56,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(BatchDeleteWorkflowsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Success != input.Success || (this.Success != null && input.Success != null && !this.Success.SequenceEqual(input.Success))) return false;
+            if (this.Fail != input.Fail || (this.Fail != null && input.Fail != null && !this.Fail.SequenceEqual(input.Fail))) return false;
 
-            return 
-                (
-                    this.Success == input.Success ||
-                    this.Success != null &&
-                    input.Success != null &&
-                    this.Success.SequenceEqual(input.Success)
-                ) && 
-                (
-                    this.Fail == input.Fail ||
-                    this.Fail != null &&
-                    input.Fail != null &&
-                    this.Fail.SequenceEqual(input.Fail)
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +70,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Success != null)
-                    hashCode = hashCode * 59 + this.Success.GetHashCode();
-                if (this.Fail != null)
-                    hashCode = hashCode * 59 + this.Fail.GetHashCode();
+                var hashCode = 41;
+                if (this.Success != null) hashCode = hashCode * 59 + this.Success.GetHashCode();
+                if (this.Fail != null) hashCode = hashCode * 59 + this.Fail.GetHashCode();
                 return hashCode;
             }
         }

@@ -17,7 +17,7 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     {
 
         /// <summary>
-        /// 风险级别:(多项查询使用逗号分隔)  HIGH  MEDIUM  LOW  NO_RISK
+        /// 风险级别 - HIGH - MEDIUM - LOW - NO_RISK
         /// </summary>
         [JsonProperty("risk_levels", NullValueHandling = NullValueHandling.Ignore)]
         public string RiskLevels { get; set; }
@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         public bool Equals(SqlRuleRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RiskLevels != input.RiskLevels || (this.RiskLevels != null && !this.RiskLevels.Equals(input.RiskLevels))) return false;
 
-            return 
-                (
-                    this.RiskLevels == input.RiskLevels ||
-                    (this.RiskLevels != null &&
-                    this.RiskLevels.Equals(input.RiskLevels))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RiskLevels != null)
-                    hashCode = hashCode * 59 + this.RiskLevels.GetHashCode();
+                var hashCode = 41;
+                if (this.RiskLevels != null) hashCode = hashCode * 59 + this.RiskLevels.GetHashCode();
                 return hashCode;
             }
         }

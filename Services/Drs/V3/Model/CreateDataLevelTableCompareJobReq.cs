@@ -105,59 +105,18 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(CreateDataLevelTableCompareJobReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.CompareMode != input.CompareMode || (this.CompareMode != null && !this.CompareMode.Equals(input.CompareMode))) return false;
+            if (this.CompareObject != input.CompareObject || (this.CompareObject != null && input.CompareObject != null && !this.CompareObject.SequenceEqual(input.CompareObject))) return false;
+            if (this.Options != input.Options || (this.Options != null && input.Options != null && !this.Options.SequenceEqual(input.Options))) return false;
+            if (this.CompareObjectWithToken != input.CompareObjectWithToken || (this.CompareObjectWithToken != null && input.CompareObjectWithToken != null && !this.CompareObjectWithToken.SequenceEqual(input.CompareObjectWithToken))) return false;
+            if (this.CompareTaskNum != input.CompareTaskNum || (this.CompareTaskNum != null && !this.CompareTaskNum.Equals(input.CompareTaskNum))) return false;
+            if (this.CompareTransformationInfos != input.CompareTransformationInfos || (this.CompareTransformationInfos != null && input.CompareTransformationInfos != null && !this.CompareTransformationInfos.SequenceEqual(input.CompareTransformationInfos))) return false;
+            if (this.ProportionValue != input.ProportionValue || (this.ProportionValue != null && !this.ProportionValue.Equals(input.ProportionValue))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.CompareMode == input.CompareMode ||
-                    (this.CompareMode != null &&
-                    this.CompareMode.Equals(input.CompareMode))
-                ) && 
-                (
-                    this.CompareObject == input.CompareObject ||
-                    this.CompareObject != null &&
-                    input.CompareObject != null &&
-                    this.CompareObject.SequenceEqual(input.CompareObject)
-                ) && 
-                (
-                    this.Options == input.Options ||
-                    this.Options != null &&
-                    input.Options != null &&
-                    this.Options.SequenceEqual(input.Options)
-                ) && 
-                (
-                    this.CompareObjectWithToken == input.CompareObjectWithToken ||
-                    this.CompareObjectWithToken != null &&
-                    input.CompareObjectWithToken != null &&
-                    this.CompareObjectWithToken.SequenceEqual(input.CompareObjectWithToken)
-                ) && 
-                (
-                    this.CompareTaskNum == input.CompareTaskNum ||
-                    (this.CompareTaskNum != null &&
-                    this.CompareTaskNum.Equals(input.CompareTaskNum))
-                ) && 
-                (
-                    this.CompareTransformationInfos == input.CompareTransformationInfos ||
-                    this.CompareTransformationInfos != null &&
-                    input.CompareTransformationInfos != null &&
-                    this.CompareTransformationInfos.SequenceEqual(input.CompareTransformationInfos)
-                ) && 
-                (
-                    this.ProportionValue == input.ProportionValue ||
-                    (this.ProportionValue != null &&
-                    this.ProportionValue.Equals(input.ProportionValue))
-                );
+            return true;
         }
 
         /// <summary>
@@ -167,25 +126,16 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.CompareMode != null)
-                    hashCode = hashCode * 59 + this.CompareMode.GetHashCode();
-                if (this.CompareObject != null)
-                    hashCode = hashCode * 59 + this.CompareObject.GetHashCode();
-                if (this.Options != null)
-                    hashCode = hashCode * 59 + this.Options.GetHashCode();
-                if (this.CompareObjectWithToken != null)
-                    hashCode = hashCode * 59 + this.CompareObjectWithToken.GetHashCode();
-                if (this.CompareTaskNum != null)
-                    hashCode = hashCode * 59 + this.CompareTaskNum.GetHashCode();
-                if (this.CompareTransformationInfos != null)
-                    hashCode = hashCode * 59 + this.CompareTransformationInfos.GetHashCode();
-                if (this.ProportionValue != null)
-                    hashCode = hashCode * 59 + this.ProportionValue.GetHashCode();
+                var hashCode = 41;
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.CompareMode != null) hashCode = hashCode * 59 + this.CompareMode.GetHashCode();
+                if (this.CompareObject != null) hashCode = hashCode * 59 + this.CompareObject.GetHashCode();
+                if (this.Options != null) hashCode = hashCode * 59 + this.Options.GetHashCode();
+                if (this.CompareObjectWithToken != null) hashCode = hashCode * 59 + this.CompareObjectWithToken.GetHashCode();
+                if (this.CompareTaskNum != null) hashCode = hashCode * 59 + this.CompareTaskNum.GetHashCode();
+                if (this.CompareTransformationInfos != null) hashCode = hashCode * 59 + this.CompareTransformationInfos.GetHashCode();
+                if (this.ProportionValue != null) hashCode = hashCode * 59 + this.ProportionValue.GetHashCode();
                 return hashCode;
             }
         }

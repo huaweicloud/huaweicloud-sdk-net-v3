@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(AutopilotHostNetwork input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Vpc != input.Vpc || (this.Vpc != null && !this.Vpc.Equals(input.Vpc))) return false;
+            if (this.Subnet != input.Subnet || (this.Subnet != null && !this.Subnet.Equals(input.Subnet))) return false;
 
-            return 
-                (
-                    this.Vpc == input.Vpc ||
-                    (this.Vpc != null &&
-                    this.Vpc.Equals(input.Vpc))
-                ) && 
-                (
-                    this.Subnet == input.Subnet ||
-                    (this.Subnet != null &&
-                    this.Subnet.Equals(input.Subnet))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Vpc != null)
-                    hashCode = hashCode * 59 + this.Vpc.GetHashCode();
-                if (this.Subnet != null)
-                    hashCode = hashCode * 59 + this.Subnet.GetHashCode();
+                var hashCode = 41;
+                if (this.Vpc != null) hashCode = hashCode * 59 + this.Vpc.GetHashCode();
+                if (this.Subnet != null) hashCode = hashCode * 59 + this.Subnet.GetHashCode();
                 return hashCode;
             }
         }

@@ -169,15 +169,10 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(ExpressConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LogLevel != input.LogLevel) return false;
 
-            return 
-                (
-                    this.LogLevel == input.LogLevel ||
-                    (this.LogLevel != null &&
-                    this.LogLevel.Equals(input.LogLevel))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,9 +182,8 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LogLevel != null)
-                    hashCode = hashCode * 59 + this.LogLevel.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.LogLevel.GetHashCode();
                 return hashCode;
             }
         }

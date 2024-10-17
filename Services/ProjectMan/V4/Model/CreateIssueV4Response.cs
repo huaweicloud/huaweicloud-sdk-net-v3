@@ -189,118 +189,30 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(CreateIssueV4Response input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ActualWorkHours != input.ActualWorkHours || (this.ActualWorkHours != null && !this.ActualWorkHours.Equals(input.ActualWorkHours))) return false;
+            if (this.AssignedCcUser != input.AssignedCcUser || (this.AssignedCcUser != null && input.AssignedCcUser != null && !this.AssignedCcUser.SequenceEqual(input.AssignedCcUser))) return false;
+            if (this.AssignedUser != input.AssignedUser || (this.AssignedUser != null && !this.AssignedUser.Equals(input.AssignedUser))) return false;
+            if (this.BeginTime != input.BeginTime || (this.BeginTime != null && !this.BeginTime.Equals(input.BeginTime))) return false;
+            if (this.Creator != input.Creator || (this.Creator != null && !this.Creator.Equals(input.Creator))) return false;
+            if (this.CustomFields != input.CustomFields || (this.CustomFields != null && input.CustomFields != null && !this.CustomFields.SequenceEqual(input.CustomFields))) return false;
+            if (this.NewCustomFields != input.NewCustomFields || (this.NewCustomFields != null && input.NewCustomFields != null && !this.NewCustomFields.SequenceEqual(input.NewCustomFields))) return false;
+            if (this.Developer != input.Developer || (this.Developer != null && !this.Developer.Equals(input.Developer))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
+            if (this.DoneRatio != input.DoneRatio || (this.DoneRatio != null && !this.DoneRatio.Equals(input.DoneRatio))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.ExpectedWorkHours != input.ExpectedWorkHours || (this.ExpectedWorkHours != null && !this.ExpectedWorkHours.Equals(input.ExpectedWorkHours))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Project != input.Project || (this.Project != null && !this.Project.Equals(input.Project))) return false;
+            if (this.Iteration != input.Iteration || (this.Iteration != null && !this.Iteration.Equals(input.Iteration))) return false;
+            if (this.Module != input.Module || (this.Module != null && !this.Module.Equals(input.Module))) return false;
+            if (this.ParentIssue != input.ParentIssue || (this.ParentIssue != null && !this.ParentIssue.Equals(input.ParentIssue))) return false;
+            if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
+            if (this.Severity != input.Severity || (this.Severity != null && !this.Severity.Equals(input.Severity))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Tracker != input.Tracker || (this.Tracker != null && !this.Tracker.Equals(input.Tracker))) return false;
 
-            return 
-                (
-                    this.ActualWorkHours == input.ActualWorkHours ||
-                    (this.ActualWorkHours != null &&
-                    this.ActualWorkHours.Equals(input.ActualWorkHours))
-                ) && 
-                (
-                    this.AssignedCcUser == input.AssignedCcUser ||
-                    this.AssignedCcUser != null &&
-                    input.AssignedCcUser != null &&
-                    this.AssignedCcUser.SequenceEqual(input.AssignedCcUser)
-                ) && 
-                (
-                    this.AssignedUser == input.AssignedUser ||
-                    (this.AssignedUser != null &&
-                    this.AssignedUser.Equals(input.AssignedUser))
-                ) && 
-                (
-                    this.BeginTime == input.BeginTime ||
-                    (this.BeginTime != null &&
-                    this.BeginTime.Equals(input.BeginTime))
-                ) && 
-                (
-                    this.Creator == input.Creator ||
-                    (this.Creator != null &&
-                    this.Creator.Equals(input.Creator))
-                ) && 
-                (
-                    this.CustomFields == input.CustomFields ||
-                    this.CustomFields != null &&
-                    input.CustomFields != null &&
-                    this.CustomFields.SequenceEqual(input.CustomFields)
-                ) && 
-                (
-                    this.NewCustomFields == input.NewCustomFields ||
-                    this.NewCustomFields != null &&
-                    input.NewCustomFields != null &&
-                    this.NewCustomFields.SequenceEqual(input.NewCustomFields)
-                ) && 
-                (
-                    this.Developer == input.Developer ||
-                    (this.Developer != null &&
-                    this.Developer.Equals(input.Developer))
-                ) && 
-                (
-                    this.Domain == input.Domain ||
-                    (this.Domain != null &&
-                    this.Domain.Equals(input.Domain))
-                ) && 
-                (
-                    this.DoneRatio == input.DoneRatio ||
-                    (this.DoneRatio != null &&
-                    this.DoneRatio.Equals(input.DoneRatio))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.ExpectedWorkHours == input.ExpectedWorkHours ||
-                    (this.ExpectedWorkHours != null &&
-                    this.ExpectedWorkHours.Equals(input.ExpectedWorkHours))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Project == input.Project ||
-                    (this.Project != null &&
-                    this.Project.Equals(input.Project))
-                ) && 
-                (
-                    this.Iteration == input.Iteration ||
-                    (this.Iteration != null &&
-                    this.Iteration.Equals(input.Iteration))
-                ) && 
-                (
-                    this.Module == input.Module ||
-                    (this.Module != null &&
-                    this.Module.Equals(input.Module))
-                ) && 
-                (
-                    this.ParentIssue == input.ParentIssue ||
-                    (this.ParentIssue != null &&
-                    this.ParentIssue.Equals(input.ParentIssue))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    (this.Priority != null &&
-                    this.Priority.Equals(input.Priority))
-                ) && 
-                (
-                    this.Severity == input.Severity ||
-                    (this.Severity != null &&
-                    this.Severity.Equals(input.Severity))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Tracker == input.Tracker ||
-                    (this.Tracker != null &&
-                    this.Tracker.Equals(input.Tracker))
-                );
+            return true;
         }
 
         /// <summary>
@@ -310,49 +222,28 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ActualWorkHours != null)
-                    hashCode = hashCode * 59 + this.ActualWorkHours.GetHashCode();
-                if (this.AssignedCcUser != null)
-                    hashCode = hashCode * 59 + this.AssignedCcUser.GetHashCode();
-                if (this.AssignedUser != null)
-                    hashCode = hashCode * 59 + this.AssignedUser.GetHashCode();
-                if (this.BeginTime != null)
-                    hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
-                if (this.Creator != null)
-                    hashCode = hashCode * 59 + this.Creator.GetHashCode();
-                if (this.CustomFields != null)
-                    hashCode = hashCode * 59 + this.CustomFields.GetHashCode();
-                if (this.NewCustomFields != null)
-                    hashCode = hashCode * 59 + this.NewCustomFields.GetHashCode();
-                if (this.Developer != null)
-                    hashCode = hashCode * 59 + this.Developer.GetHashCode();
-                if (this.Domain != null)
-                    hashCode = hashCode * 59 + this.Domain.GetHashCode();
-                if (this.DoneRatio != null)
-                    hashCode = hashCode * 59 + this.DoneRatio.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.ExpectedWorkHours != null)
-                    hashCode = hashCode * 59 + this.ExpectedWorkHours.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Project != null)
-                    hashCode = hashCode * 59 + this.Project.GetHashCode();
-                if (this.Iteration != null)
-                    hashCode = hashCode * 59 + this.Iteration.GetHashCode();
-                if (this.Module != null)
-                    hashCode = hashCode * 59 + this.Module.GetHashCode();
-                if (this.ParentIssue != null)
-                    hashCode = hashCode * 59 + this.ParentIssue.GetHashCode();
-                if (this.Priority != null)
-                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
-                if (this.Severity != null)
-                    hashCode = hashCode * 59 + this.Severity.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Tracker != null)
-                    hashCode = hashCode * 59 + this.Tracker.GetHashCode();
+                var hashCode = 41;
+                if (this.ActualWorkHours != null) hashCode = hashCode * 59 + this.ActualWorkHours.GetHashCode();
+                if (this.AssignedCcUser != null) hashCode = hashCode * 59 + this.AssignedCcUser.GetHashCode();
+                if (this.AssignedUser != null) hashCode = hashCode * 59 + this.AssignedUser.GetHashCode();
+                if (this.BeginTime != null) hashCode = hashCode * 59 + this.BeginTime.GetHashCode();
+                if (this.Creator != null) hashCode = hashCode * 59 + this.Creator.GetHashCode();
+                if (this.CustomFields != null) hashCode = hashCode * 59 + this.CustomFields.GetHashCode();
+                if (this.NewCustomFields != null) hashCode = hashCode * 59 + this.NewCustomFields.GetHashCode();
+                if (this.Developer != null) hashCode = hashCode * 59 + this.Developer.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                if (this.DoneRatio != null) hashCode = hashCode * 59 + this.DoneRatio.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.ExpectedWorkHours != null) hashCode = hashCode * 59 + this.ExpectedWorkHours.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Project != null) hashCode = hashCode * 59 + this.Project.GetHashCode();
+                if (this.Iteration != null) hashCode = hashCode * 59 + this.Iteration.GetHashCode();
+                if (this.Module != null) hashCode = hashCode * 59 + this.Module.GetHashCode();
+                if (this.ParentIssue != null) hashCode = hashCode * 59 + this.ParentIssue.GetHashCode();
+                if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                if (this.Severity != null) hashCode = hashCode * 59 + this.Severity.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Tracker != null) hashCode = hashCode * 59 + this.Tracker.GetHashCode();
                 return hashCode;
             }
         }

@@ -84,43 +84,15 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(CreateJobReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BaseInfo != input.BaseInfo || (this.BaseInfo != null && !this.BaseInfo.Equals(input.BaseInfo))) return false;
+            if (this.SourceEndpoint != input.SourceEndpoint || (this.SourceEndpoint != null && input.SourceEndpoint != null && !this.SourceEndpoint.SequenceEqual(input.SourceEndpoint))) return false;
+            if (this.TargetEndpoint != input.TargetEndpoint || (this.TargetEndpoint != null && input.TargetEndpoint != null && !this.TargetEndpoint.SequenceEqual(input.TargetEndpoint))) return false;
+            if (this.PeriodOrder != input.PeriodOrder || (this.PeriodOrder != null && !this.PeriodOrder.Equals(input.PeriodOrder))) return false;
+            if (this.NodeInfo != input.NodeInfo || (this.NodeInfo != null && !this.NodeInfo.Equals(input.NodeInfo))) return false;
+            if (this.PublicIpList != input.PublicIpList || (this.PublicIpList != null && input.PublicIpList != null && !this.PublicIpList.SequenceEqual(input.PublicIpList))) return false;
 
-            return 
-                (
-                    this.BaseInfo == input.BaseInfo ||
-                    (this.BaseInfo != null &&
-                    this.BaseInfo.Equals(input.BaseInfo))
-                ) && 
-                (
-                    this.SourceEndpoint == input.SourceEndpoint ||
-                    this.SourceEndpoint != null &&
-                    input.SourceEndpoint != null &&
-                    this.SourceEndpoint.SequenceEqual(input.SourceEndpoint)
-                ) && 
-                (
-                    this.TargetEndpoint == input.TargetEndpoint ||
-                    this.TargetEndpoint != null &&
-                    input.TargetEndpoint != null &&
-                    this.TargetEndpoint.SequenceEqual(input.TargetEndpoint)
-                ) && 
-                (
-                    this.PeriodOrder == input.PeriodOrder ||
-                    (this.PeriodOrder != null &&
-                    this.PeriodOrder.Equals(input.PeriodOrder))
-                ) && 
-                (
-                    this.NodeInfo == input.NodeInfo ||
-                    (this.NodeInfo != null &&
-                    this.NodeInfo.Equals(input.NodeInfo))
-                ) && 
-                (
-                    this.PublicIpList == input.PublicIpList ||
-                    this.PublicIpList != null &&
-                    input.PublicIpList != null &&
-                    this.PublicIpList.SequenceEqual(input.PublicIpList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -130,19 +102,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BaseInfo != null)
-                    hashCode = hashCode * 59 + this.BaseInfo.GetHashCode();
-                if (this.SourceEndpoint != null)
-                    hashCode = hashCode * 59 + this.SourceEndpoint.GetHashCode();
-                if (this.TargetEndpoint != null)
-                    hashCode = hashCode * 59 + this.TargetEndpoint.GetHashCode();
-                if (this.PeriodOrder != null)
-                    hashCode = hashCode * 59 + this.PeriodOrder.GetHashCode();
-                if (this.NodeInfo != null)
-                    hashCode = hashCode * 59 + this.NodeInfo.GetHashCode();
-                if (this.PublicIpList != null)
-                    hashCode = hashCode * 59 + this.PublicIpList.GetHashCode();
+                var hashCode = 41;
+                if (this.BaseInfo != null) hashCode = hashCode * 59 + this.BaseInfo.GetHashCode();
+                if (this.SourceEndpoint != null) hashCode = hashCode * 59 + this.SourceEndpoint.GetHashCode();
+                if (this.TargetEndpoint != null) hashCode = hashCode * 59 + this.TargetEndpoint.GetHashCode();
+                if (this.PeriodOrder != null) hashCode = hashCode * 59 + this.PeriodOrder.GetHashCode();
+                if (this.NodeInfo != null) hashCode = hashCode * 59 + this.NodeInfo.GetHashCode();
+                if (this.PublicIpList != null) hashCode = hashCode * 59 + this.PublicIpList.GetHashCode();
                 return hashCode;
             }
         }

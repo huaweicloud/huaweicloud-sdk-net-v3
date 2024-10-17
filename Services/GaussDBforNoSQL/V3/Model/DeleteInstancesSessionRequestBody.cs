@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(DeleteInstancesSessionRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IsAll != input.IsAll || (this.IsAll != null && !this.IsAll.Equals(input.IsAll))) return false;
+            if (this.SessionIds != input.SessionIds || (this.SessionIds != null && input.SessionIds != null && !this.SessionIds.SequenceEqual(input.SessionIds))) return false;
 
-            return 
-                (
-                    this.IsAll == input.IsAll ||
-                    (this.IsAll != null &&
-                    this.IsAll.Equals(input.IsAll))
-                ) && 
-                (
-                    this.SessionIds == input.SessionIds ||
-                    this.SessionIds != null &&
-                    input.SessionIds != null &&
-                    this.SessionIds.SequenceEqual(input.SessionIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IsAll != null)
-                    hashCode = hashCode * 59 + this.IsAll.GetHashCode();
-                if (this.SessionIds != null)
-                    hashCode = hashCode * 59 + this.SessionIds.GetHashCode();
+                var hashCode = 41;
+                if (this.IsAll != null) hashCode = hashCode * 59 + this.IsAll.GetHashCode();
+                if (this.SessionIds != null) hashCode = hashCode * 59 + this.SessionIds.GetHashCode();
                 return hashCode;
             }
         }

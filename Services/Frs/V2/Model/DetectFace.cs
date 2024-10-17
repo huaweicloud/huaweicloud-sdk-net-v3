@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public bool Equals(DetectFace input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BoundingBox != input.BoundingBox || (this.BoundingBox != null && !this.BoundingBox.Equals(input.BoundingBox))) return false;
+            if (this.Attributes != input.Attributes || (this.Attributes != null && !this.Attributes.Equals(input.Attributes))) return false;
 
-            return 
-                (
-                    this.BoundingBox == input.BoundingBox ||
-                    (this.BoundingBox != null &&
-                    this.BoundingBox.Equals(input.BoundingBox))
-                ) && 
-                (
-                    this.Attributes == input.Attributes ||
-                    (this.Attributes != null &&
-                    this.Attributes.Equals(input.Attributes))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BoundingBox != null)
-                    hashCode = hashCode * 59 + this.BoundingBox.GetHashCode();
-                if (this.Attributes != null)
-                    hashCode = hashCode * 59 + this.Attributes.GetHashCode();
+                var hashCode = 41;
+                if (this.BoundingBox != null) hashCode = hashCode * 59 + this.BoundingBox.GetHashCode();
+                if (this.Attributes != null) hashCode = hashCode * 59 + this.Attributes.GetHashCode();
                 return hashCode;
             }
         }

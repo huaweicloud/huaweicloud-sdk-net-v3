@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(LoginTokenSecurityToken input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Access != input.Access || (this.Access != null && !this.Access.Equals(input.Access))) return false;
+            if (this.Secret != input.Secret || (this.Secret != null && !this.Secret.Equals(input.Secret))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.DurationSeconds != input.DurationSeconds || (this.DurationSeconds != null && !this.DurationSeconds.Equals(input.DurationSeconds))) return false;
 
-            return 
-                (
-                    this.Access == input.Access ||
-                    (this.Access != null &&
-                    this.Access.Equals(input.Access))
-                ) && 
-                (
-                    this.Secret == input.Secret ||
-                    (this.Secret != null &&
-                    this.Secret.Equals(input.Secret))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.DurationSeconds == input.DurationSeconds ||
-                    (this.DurationSeconds != null &&
-                    this.DurationSeconds.Equals(input.DurationSeconds))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Access != null)
-                    hashCode = hashCode * 59 + this.Access.GetHashCode();
-                if (this.Secret != null)
-                    hashCode = hashCode * 59 + this.Secret.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.DurationSeconds != null)
-                    hashCode = hashCode * 59 + this.DurationSeconds.GetHashCode();
+                var hashCode = 41;
+                if (this.Access != null) hashCode = hashCode * 59 + this.Access.GetHashCode();
+                if (this.Secret != null) hashCode = hashCode * 59 + this.Secret.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.DurationSeconds != null) hashCode = hashCode * 59 + this.DurationSeconds.GetHashCode();
                 return hashCode;
             }
         }

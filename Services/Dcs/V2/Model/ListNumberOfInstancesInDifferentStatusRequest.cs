@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ListNumberOfInstancesInDifferentStatusRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IncludeFailure != input.IncludeFailure || (this.IncludeFailure != null && !this.IncludeFailure.Equals(input.IncludeFailure))) return false;
 
-            return 
-                (
-                    this.IncludeFailure == input.IncludeFailure ||
-                    (this.IncludeFailure != null &&
-                    this.IncludeFailure.Equals(input.IncludeFailure))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IncludeFailure != null)
-                    hashCode = hashCode * 59 + this.IncludeFailure.GetHashCode();
+                var hashCode = 41;
+                if (this.IncludeFailure != null) hashCode = hashCode * 59 + this.IncludeFailure.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(IdcardFrontVerificationResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ValidNumber != input.ValidNumber || (this.ValidNumber != null && !this.ValidNumber.Equals(input.ValidNumber))) return false;
+            if (this.ValidBirth != input.ValidBirth || (this.ValidBirth != null && !this.ValidBirth.Equals(input.ValidBirth))) return false;
+            if (this.ValidSex != input.ValidSex || (this.ValidSex != null && !this.ValidSex.Equals(input.ValidSex))) return false;
 
-            return 
-                (
-                    this.ValidNumber == input.ValidNumber ||
-                    (this.ValidNumber != null &&
-                    this.ValidNumber.Equals(input.ValidNumber))
-                ) && 
-                (
-                    this.ValidBirth == input.ValidBirth ||
-                    (this.ValidBirth != null &&
-                    this.ValidBirth.Equals(input.ValidBirth))
-                ) && 
-                (
-                    this.ValidSex == input.ValidSex ||
-                    (this.ValidSex != null &&
-                    this.ValidSex.Equals(input.ValidSex))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ValidNumber != null)
-                    hashCode = hashCode * 59 + this.ValidNumber.GetHashCode();
-                if (this.ValidBirth != null)
-                    hashCode = hashCode * 59 + this.ValidBirth.GetHashCode();
-                if (this.ValidSex != null)
-                    hashCode = hashCode * 59 + this.ValidSex.GetHashCode();
+                var hashCode = 41;
+                if (this.ValidNumber != null) hashCode = hashCode * 59 + this.ValidNumber.GetHashCode();
+                if (this.ValidBirth != null) hashCode = hashCode * 59 + this.ValidBirth.GetHashCode();
+                if (this.ValidSex != null) hashCode = hashCode * 59 + this.ValidSex.GetHashCode();
                 return hashCode;
             }
         }

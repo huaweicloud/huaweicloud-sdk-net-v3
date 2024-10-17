@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(UpdateOrganizationalUnitResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OrganizationalUnit != input.OrganizationalUnit || (this.OrganizationalUnit != null && !this.OrganizationalUnit.Equals(input.OrganizationalUnit))) return false;
 
-            return 
-                (
-                    this.OrganizationalUnit == input.OrganizationalUnit ||
-                    (this.OrganizationalUnit != null &&
-                    this.OrganizationalUnit.Equals(input.OrganizationalUnit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OrganizationalUnit != null)
-                    hashCode = hashCode * 59 + this.OrganizationalUnit.GetHashCode();
+                var hashCode = 41;
+                if (this.OrganizationalUnit != null) hashCode = hashCode * 59 + this.OrganizationalUnit.GetHashCode();
                 return hashCode;
             }
         }

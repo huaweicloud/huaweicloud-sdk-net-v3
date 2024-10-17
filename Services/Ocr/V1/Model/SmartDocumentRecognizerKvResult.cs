@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(SmartDocumentRecognizerKvResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KvBlockCount != input.KvBlockCount || (this.KvBlockCount != null && !this.KvBlockCount.Equals(input.KvBlockCount))) return false;
+            if (this.KvBlockList != input.KvBlockList || (this.KvBlockList != null && input.KvBlockList != null && !this.KvBlockList.SequenceEqual(input.KvBlockList))) return false;
 
-            return 
-                (
-                    this.KvBlockCount == input.KvBlockCount ||
-                    (this.KvBlockCount != null &&
-                    this.KvBlockCount.Equals(input.KvBlockCount))
-                ) && 
-                (
-                    this.KvBlockList == input.KvBlockList ||
-                    this.KvBlockList != null &&
-                    input.KvBlockList != null &&
-                    this.KvBlockList.SequenceEqual(input.KvBlockList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KvBlockCount != null)
-                    hashCode = hashCode * 59 + this.KvBlockCount.GetHashCode();
-                if (this.KvBlockList != null)
-                    hashCode = hashCode * 59 + this.KvBlockList.GetHashCode();
+                var hashCode = 41;
+                if (this.KvBlockCount != null) hashCode = hashCode * 59 + this.KvBlockCount.GetHashCode();
+                if (this.KvBlockList != null) hashCode = hashCode * 59 + this.KvBlockList.GetHashCode();
                 return hashCode;
             }
         }

@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         /// </summary>
         public bool Equals(ExerciseCard input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.ExerciseId != input.ExerciseId || (this.ExerciseId != null && !this.ExerciseId.Equals(input.ExerciseId))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.ResourceSubType != input.ResourceSubType || (this.ResourceSubType != null && !this.ResourceSubType.Equals(input.ResourceSubType))) return false;
+            if (this.TargetScore != input.TargetScore || (this.TargetScore != null && !this.TargetScore.Equals(input.TargetScore))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ExerciseId == input.ExerciseId ||
-                    (this.ExerciseId != null &&
-                    this.ExerciseId.Equals(input.ExerciseId))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.ResourceSubType == input.ResourceSubType ||
-                    (this.ResourceSubType != null &&
-                    this.ResourceSubType.Equals(input.ResourceSubType))
-                ) && 
-                (
-                    this.TargetScore == input.TargetScore ||
-                    (this.TargetScore != null &&
-                    this.TargetScore.Equals(input.TargetScore))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.ExerciseId != null)
-                    hashCode = hashCode * 59 + this.ExerciseId.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.ResourceSubType != null)
-                    hashCode = hashCode * 59 + this.ResourceSubType.GetHashCode();
-                if (this.TargetScore != null)
-                    hashCode = hashCode * 59 + this.TargetScore.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.ExerciseId != null) hashCode = hashCode * 59 + this.ExerciseId.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.ResourceSubType != null) hashCode = hashCode * 59 + this.ResourceSubType.GetHashCode();
+                if (this.TargetScore != null) hashCode = hashCode * 59 + this.TargetScore.GetHashCode();
                 return hashCode;
             }
         }

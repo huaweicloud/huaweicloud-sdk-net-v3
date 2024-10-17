@@ -147,86 +147,24 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(ListResizeFlavorsResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Vcpus != input.Vcpus || (this.Vcpus != null && !this.Vcpus.Equals(input.Vcpus))) return false;
+            if (this.Ram != input.Ram || (this.Ram != null && !this.Ram.Equals(input.Ram))) return false;
+            if (this.Disk != input.Disk || (this.Disk != null && !this.Disk.Equals(input.Disk))) return false;
+            if (this.Swap != input.Swap || (this.Swap != null && !this.Swap.Equals(input.Swap))) return false;
+            if (this.OSFLVEXTDATAephemeral != input.OSFLVEXTDATAephemeral || (this.OSFLVEXTDATAephemeral != null && !this.OSFLVEXTDATAephemeral.Equals(input.OSFLVEXTDATAephemeral))) return false;
+            if (this.OSFLVDISABLEDdisabled != input.OSFLVDISABLEDdisabled || (this.OSFLVDISABLEDdisabled != null && !this.OSFLVDISABLEDdisabled.Equals(input.OSFLVDISABLEDdisabled))) return false;
+            if (this.RxtxFactor != input.RxtxFactor || (this.RxtxFactor != null && !this.RxtxFactor.Equals(input.RxtxFactor))) return false;
+            if (this.RxtxQuota != input.RxtxQuota || (this.RxtxQuota != null && !this.RxtxQuota.Equals(input.RxtxQuota))) return false;
+            if (this.RxtxCap != input.RxtxCap || (this.RxtxCap != null && !this.RxtxCap.Equals(input.RxtxCap))) return false;
+            if (this.OsFlavorAccessisPublic != input.OsFlavorAccessisPublic || (this.OsFlavorAccessisPublic != null && !this.OsFlavorAccessisPublic.Equals(input.OsFlavorAccessisPublic))) return false;
+            if (this.Links != input.Links || (this.Links != null && input.Links != null && !this.Links.SequenceEqual(input.Links))) return false;
+            if (this.ExtraSpecs != input.ExtraSpecs || (this.ExtraSpecs != null && !this.ExtraSpecs.Equals(input.ExtraSpecs))) return false;
+            if (this.InstanceQuota != input.InstanceQuota || (this.InstanceQuota != null && !this.InstanceQuota.Equals(input.InstanceQuota))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Vcpus == input.Vcpus ||
-                    (this.Vcpus != null &&
-                    this.Vcpus.Equals(input.Vcpus))
-                ) && 
-                (
-                    this.Ram == input.Ram ||
-                    (this.Ram != null &&
-                    this.Ram.Equals(input.Ram))
-                ) && 
-                (
-                    this.Disk == input.Disk ||
-                    (this.Disk != null &&
-                    this.Disk.Equals(input.Disk))
-                ) && 
-                (
-                    this.Swap == input.Swap ||
-                    (this.Swap != null &&
-                    this.Swap.Equals(input.Swap))
-                ) && 
-                (
-                    this.OSFLVEXTDATAephemeral == input.OSFLVEXTDATAephemeral ||
-                    (this.OSFLVEXTDATAephemeral != null &&
-                    this.OSFLVEXTDATAephemeral.Equals(input.OSFLVEXTDATAephemeral))
-                ) && 
-                (
-                    this.OSFLVDISABLEDdisabled == input.OSFLVDISABLEDdisabled ||
-                    (this.OSFLVDISABLEDdisabled != null &&
-                    this.OSFLVDISABLEDdisabled.Equals(input.OSFLVDISABLEDdisabled))
-                ) && 
-                (
-                    this.RxtxFactor == input.RxtxFactor ||
-                    (this.RxtxFactor != null &&
-                    this.RxtxFactor.Equals(input.RxtxFactor))
-                ) && 
-                (
-                    this.RxtxQuota == input.RxtxQuota ||
-                    (this.RxtxQuota != null &&
-                    this.RxtxQuota.Equals(input.RxtxQuota))
-                ) && 
-                (
-                    this.RxtxCap == input.RxtxCap ||
-                    (this.RxtxCap != null &&
-                    this.RxtxCap.Equals(input.RxtxCap))
-                ) && 
-                (
-                    this.OsFlavorAccessisPublic == input.OsFlavorAccessisPublic ||
-                    (this.OsFlavorAccessisPublic != null &&
-                    this.OsFlavorAccessisPublic.Equals(input.OsFlavorAccessisPublic))
-                ) && 
-                (
-                    this.Links == input.Links ||
-                    this.Links != null &&
-                    input.Links != null &&
-                    this.Links.SequenceEqual(input.Links)
-                ) && 
-                (
-                    this.ExtraSpecs == input.ExtraSpecs ||
-                    (this.ExtraSpecs != null &&
-                    this.ExtraSpecs.Equals(input.ExtraSpecs))
-                ) && 
-                (
-                    this.InstanceQuota == input.InstanceQuota ||
-                    (this.InstanceQuota != null &&
-                    this.InstanceQuota.Equals(input.InstanceQuota))
-                );
+            return true;
         }
 
         /// <summary>
@@ -236,37 +174,22 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Vcpus != null)
-                    hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
-                if (this.Ram != null)
-                    hashCode = hashCode * 59 + this.Ram.GetHashCode();
-                if (this.Disk != null)
-                    hashCode = hashCode * 59 + this.Disk.GetHashCode();
-                if (this.Swap != null)
-                    hashCode = hashCode * 59 + this.Swap.GetHashCode();
-                if (this.OSFLVEXTDATAephemeral != null)
-                    hashCode = hashCode * 59 + this.OSFLVEXTDATAephemeral.GetHashCode();
-                if (this.OSFLVDISABLEDdisabled != null)
-                    hashCode = hashCode * 59 + this.OSFLVDISABLEDdisabled.GetHashCode();
-                if (this.RxtxFactor != null)
-                    hashCode = hashCode * 59 + this.RxtxFactor.GetHashCode();
-                if (this.RxtxQuota != null)
-                    hashCode = hashCode * 59 + this.RxtxQuota.GetHashCode();
-                if (this.RxtxCap != null)
-                    hashCode = hashCode * 59 + this.RxtxCap.GetHashCode();
-                if (this.OsFlavorAccessisPublic != null)
-                    hashCode = hashCode * 59 + this.OsFlavorAccessisPublic.GetHashCode();
-                if (this.Links != null)
-                    hashCode = hashCode * 59 + this.Links.GetHashCode();
-                if (this.ExtraSpecs != null)
-                    hashCode = hashCode * 59 + this.ExtraSpecs.GetHashCode();
-                if (this.InstanceQuota != null)
-                    hashCode = hashCode * 59 + this.InstanceQuota.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Vcpus != null) hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
+                if (this.Ram != null) hashCode = hashCode * 59 + this.Ram.GetHashCode();
+                if (this.Disk != null) hashCode = hashCode * 59 + this.Disk.GetHashCode();
+                if (this.Swap != null) hashCode = hashCode * 59 + this.Swap.GetHashCode();
+                if (this.OSFLVEXTDATAephemeral != null) hashCode = hashCode * 59 + this.OSFLVEXTDATAephemeral.GetHashCode();
+                if (this.OSFLVDISABLEDdisabled != null) hashCode = hashCode * 59 + this.OSFLVDISABLEDdisabled.GetHashCode();
+                if (this.RxtxFactor != null) hashCode = hashCode * 59 + this.RxtxFactor.GetHashCode();
+                if (this.RxtxQuota != null) hashCode = hashCode * 59 + this.RxtxQuota.GetHashCode();
+                if (this.RxtxCap != null) hashCode = hashCode * 59 + this.RxtxCap.GetHashCode();
+                if (this.OsFlavorAccessisPublic != null) hashCode = hashCode * 59 + this.OsFlavorAccessisPublic.GetHashCode();
+                if (this.Links != null) hashCode = hashCode * 59 + this.Links.GetHashCode();
+                if (this.ExtraSpecs != null) hashCode = hashCode * 59 + this.ExtraSpecs.GetHashCode();
+                if (this.InstanceQuota != null) hashCode = hashCode * 59 + this.InstanceQuota.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         /// </summary>
         public bool Equals(CreateKeyStoreRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KeystoreAlias != input.KeystoreAlias || (this.KeystoreAlias != null && !this.KeystoreAlias.Equals(input.KeystoreAlias))) return false;
+            if (this.HsmClusterId != input.HsmClusterId || (this.HsmClusterId != null && !this.HsmClusterId.Equals(input.HsmClusterId))) return false;
+            if (this.HsmCaCert != input.HsmCaCert || (this.HsmCaCert != null && !this.HsmCaCert.Equals(input.HsmCaCert))) return false;
 
-            return 
-                (
-                    this.KeystoreAlias == input.KeystoreAlias ||
-                    (this.KeystoreAlias != null &&
-                    this.KeystoreAlias.Equals(input.KeystoreAlias))
-                ) && 
-                (
-                    this.HsmClusterId == input.HsmClusterId ||
-                    (this.HsmClusterId != null &&
-                    this.HsmClusterId.Equals(input.HsmClusterId))
-                ) && 
-                (
-                    this.HsmCaCert == input.HsmCaCert ||
-                    (this.HsmCaCert != null &&
-                    this.HsmCaCert.Equals(input.HsmCaCert))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Kms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KeystoreAlias != null)
-                    hashCode = hashCode * 59 + this.KeystoreAlias.GetHashCode();
-                if (this.HsmClusterId != null)
-                    hashCode = hashCode * 59 + this.HsmClusterId.GetHashCode();
-                if (this.HsmCaCert != null)
-                    hashCode = hashCode * 59 + this.HsmCaCert.GetHashCode();
+                var hashCode = 41;
+                if (this.KeystoreAlias != null) hashCode = hashCode * 59 + this.KeystoreAlias.GetHashCode();
+                if (this.HsmClusterId != null) hashCode = hashCode * 59 + this.HsmClusterId.GetHashCode();
+                if (this.HsmCaCert != null) hashCode = hashCode * 59 + this.HsmCaCert.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ShowProjectInfoV4Response input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Project != input.Project || (this.Project != null && !this.Project.Equals(input.Project))) return false;
 
-            return 
-                (
-                    this.Project == input.Project ||
-                    (this.Project != null &&
-                    this.Project.Equals(input.Project))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Project != null)
-                    hashCode = hashCode * 59 + this.Project.GetHashCode();
+                var hashCode = 41;
+                if (this.Project != null) hashCode = hashCode * 59 + this.Project.GetHashCode();
                 return hashCode;
             }
         }

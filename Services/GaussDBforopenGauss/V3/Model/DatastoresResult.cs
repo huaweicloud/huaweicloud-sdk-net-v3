@@ -170,21 +170,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(DatastoresResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SupportedVersions != input.SupportedVersions || (this.SupportedVersions != null && input.SupportedVersions != null && !this.SupportedVersions.SequenceEqual(input.SupportedVersions))) return false;
+            if (this.InstanceMode != input.InstanceMode) return false;
 
-            return 
-                (
-                    this.SupportedVersions == input.SupportedVersions ||
-                    this.SupportedVersions != null &&
-                    input.SupportedVersions != null &&
-                    this.SupportedVersions.SequenceEqual(input.SupportedVersions)
-                ) && 
-                (
-                    this.InstanceMode == input.InstanceMode ||
-                    (this.InstanceMode != null &&
-                    this.InstanceMode.Equals(input.InstanceMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -194,11 +184,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SupportedVersions != null)
-                    hashCode = hashCode * 59 + this.SupportedVersions.GetHashCode();
-                if (this.InstanceMode != null)
-                    hashCode = hashCode * 59 + this.InstanceMode.GetHashCode();
+                var hashCode = 41;
+                if (this.SupportedVersions != null) hashCode = hashCode * 59 + this.SupportedVersions.GetHashCode();
+                hashCode = hashCode * 59 + this.InstanceMode.GetHashCode();
                 return hashCode;
             }
         }

@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(FirewallInstanceResource input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResourceId != input.ResourceId || (this.ResourceId != null && !this.ResourceId.Equals(input.ResourceId))) return false;
+            if (this.CloudServiceType != input.CloudServiceType || (this.CloudServiceType != null && !this.CloudServiceType.Equals(input.CloudServiceType))) return false;
+            if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
+            if (this.ResourceSpecCode != input.ResourceSpecCode || (this.ResourceSpecCode != null && !this.ResourceSpecCode.Equals(input.ResourceSpecCode))) return false;
+            if (this.ResourceSize != input.ResourceSize || (this.ResourceSize != null && !this.ResourceSize.Equals(input.ResourceSize))) return false;
+            if (this.ResourceSizeMeasureId != input.ResourceSizeMeasureId || (this.ResourceSizeMeasureId != null && !this.ResourceSizeMeasureId.Equals(input.ResourceSizeMeasureId))) return false;
 
-            return 
-                (
-                    this.ResourceId == input.ResourceId ||
-                    (this.ResourceId != null &&
-                    this.ResourceId.Equals(input.ResourceId))
-                ) && 
-                (
-                    this.CloudServiceType == input.CloudServiceType ||
-                    (this.CloudServiceType != null &&
-                    this.CloudServiceType.Equals(input.CloudServiceType))
-                ) && 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.ResourceSpecCode == input.ResourceSpecCode ||
-                    (this.ResourceSpecCode != null &&
-                    this.ResourceSpecCode.Equals(input.ResourceSpecCode))
-                ) && 
-                (
-                    this.ResourceSize == input.ResourceSize ||
-                    (this.ResourceSize != null &&
-                    this.ResourceSize.Equals(input.ResourceSize))
-                ) && 
-                (
-                    this.ResourceSizeMeasureId == input.ResourceSizeMeasureId ||
-                    (this.ResourceSizeMeasureId != null &&
-                    this.ResourceSizeMeasureId.Equals(input.ResourceSizeMeasureId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResourceId != null)
-                    hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
-                if (this.CloudServiceType != null)
-                    hashCode = hashCode * 59 + this.CloudServiceType.GetHashCode();
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
-                if (this.ResourceSpecCode != null)
-                    hashCode = hashCode * 59 + this.ResourceSpecCode.GetHashCode();
-                if (this.ResourceSize != null)
-                    hashCode = hashCode * 59 + this.ResourceSize.GetHashCode();
-                if (this.ResourceSizeMeasureId != null)
-                    hashCode = hashCode * 59 + this.ResourceSizeMeasureId.GetHashCode();
+                var hashCode = 41;
+                if (this.ResourceId != null) hashCode = hashCode * 59 + this.ResourceId.GetHashCode();
+                if (this.CloudServiceType != null) hashCode = hashCode * 59 + this.CloudServiceType.GetHashCode();
+                if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.ResourceSpecCode != null) hashCode = hashCode * 59 + this.ResourceSpecCode.GetHashCode();
+                if (this.ResourceSize != null) hashCode = hashCode * 59 + this.ResourceSize.GetHashCode();
+                if (this.ResourceSizeMeasureId != null) hashCode = hashCode * 59 + this.ResourceSizeMeasureId.GetHashCode();
                 return hashCode;
             }
         }

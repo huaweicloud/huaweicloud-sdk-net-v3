@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(DeleteTrafficMirrorFilterRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TrafficMirrorFilterId != input.TrafficMirrorFilterId || (this.TrafficMirrorFilterId != null && !this.TrafficMirrorFilterId.Equals(input.TrafficMirrorFilterId))) return false;
 
-            return 
-                (
-                    this.TrafficMirrorFilterId == input.TrafficMirrorFilterId ||
-                    (this.TrafficMirrorFilterId != null &&
-                    this.TrafficMirrorFilterId.Equals(input.TrafficMirrorFilterId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TrafficMirrorFilterId != null)
-                    hashCode = hashCode * 59 + this.TrafficMirrorFilterId.GetHashCode();
+                var hashCode = 41;
+                if (this.TrafficMirrorFilterId != null) hashCode = hashCode * 59 + this.TrafficMirrorFilterId.GetHashCode();
                 return hashCode;
             }
         }

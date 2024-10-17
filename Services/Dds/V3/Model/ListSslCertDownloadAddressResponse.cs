@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(ListSslCertDownloadAddressResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Certs != input.Certs || (this.Certs != null && input.Certs != null && !this.Certs.SequenceEqual(input.Certs))) return false;
 
-            return 
-                (
-                    this.Certs == input.Certs ||
-                    this.Certs != null &&
-                    input.Certs != null &&
-                    this.Certs.SequenceEqual(input.Certs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Certs != null)
-                    hashCode = hashCode * 59 + this.Certs.GetHashCode();
+                var hashCode = 41;
+                if (this.Certs != null) hashCode = hashCode * 59 + this.Certs.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(NodeSpecUpdateNodeNicSpecUpdate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PrimaryNic != input.PrimaryNic || (this.PrimaryNic != null && !this.PrimaryNic.Equals(input.PrimaryNic))) return false;
 
-            return 
-                (
-                    this.PrimaryNic == input.PrimaryNic ||
-                    (this.PrimaryNic != null &&
-                    this.PrimaryNic.Equals(input.PrimaryNic))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PrimaryNic != null)
-                    hashCode = hashCode * 59 + this.PrimaryNic.GetHashCode();
+                var hashCode = 41;
+                if (this.PrimaryNic != null) hashCode = hashCode * 59 + this.PrimaryNic.GetHashCode();
                 return hashCode;
             }
         }

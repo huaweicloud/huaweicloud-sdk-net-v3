@@ -154,80 +154,23 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(ShowDomainRoleAssignmentsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DomainId != input.DomainId || (this.DomainId != null && !this.DomainId.Equals(input.DomainId))) return false;
+            if (this.RoleId != input.RoleId || (this.RoleId != null && !this.RoleId.Equals(input.RoleId))) return false;
+            if (this.Subject != input.Subject || (this.Subject != null && !this.Subject.Equals(input.Subject))) return false;
+            if (this.SubjectUserId != input.SubjectUserId || (this.SubjectUserId != null && !this.SubjectUserId.Equals(input.SubjectUserId))) return false;
+            if (this.SubjectGroupId != input.SubjectGroupId || (this.SubjectGroupId != null && !this.SubjectGroupId.Equals(input.SubjectGroupId))) return false;
+            if (this.SubjectAgencyId != input.SubjectAgencyId || (this.SubjectAgencyId != null && !this.SubjectAgencyId.Equals(input.SubjectAgencyId))) return false;
+            if (this.Scope != input.Scope || (this.Scope != null && !this.Scope.Equals(input.Scope))) return false;
+            if (this.ScopeProjectId != input.ScopeProjectId || (this.ScopeProjectId != null && !this.ScopeProjectId.Equals(input.ScopeProjectId))) return false;
+            if (this.ScopeDomainId != input.ScopeDomainId || (this.ScopeDomainId != null && !this.ScopeDomainId.Equals(input.ScopeDomainId))) return false;
+            if (this.ScopeEnterpriseProjectsId != input.ScopeEnterpriseProjectsId || (this.ScopeEnterpriseProjectsId != null && !this.ScopeEnterpriseProjectsId.Equals(input.ScopeEnterpriseProjectsId))) return false;
+            if (this.IsInherited != input.IsInherited || (this.IsInherited != null && !this.IsInherited.Equals(input.IsInherited))) return false;
+            if (this.IncludeGroup != input.IncludeGroup || (this.IncludeGroup != null && !this.IncludeGroup.Equals(input.IncludeGroup))) return false;
+            if (this.Page != input.Page || (this.Page != null && !this.Page.Equals(input.Page))) return false;
+            if (this.PerPage != input.PerPage || (this.PerPage != null && !this.PerPage.Equals(input.PerPage))) return false;
 
-            return 
-                (
-                    this.DomainId == input.DomainId ||
-                    (this.DomainId != null &&
-                    this.DomainId.Equals(input.DomainId))
-                ) && 
-                (
-                    this.RoleId == input.RoleId ||
-                    (this.RoleId != null &&
-                    this.RoleId.Equals(input.RoleId))
-                ) && 
-                (
-                    this.Subject == input.Subject ||
-                    (this.Subject != null &&
-                    this.Subject.Equals(input.Subject))
-                ) && 
-                (
-                    this.SubjectUserId == input.SubjectUserId ||
-                    (this.SubjectUserId != null &&
-                    this.SubjectUserId.Equals(input.SubjectUserId))
-                ) && 
-                (
-                    this.SubjectGroupId == input.SubjectGroupId ||
-                    (this.SubjectGroupId != null &&
-                    this.SubjectGroupId.Equals(input.SubjectGroupId))
-                ) && 
-                (
-                    this.SubjectAgencyId == input.SubjectAgencyId ||
-                    (this.SubjectAgencyId != null &&
-                    this.SubjectAgencyId.Equals(input.SubjectAgencyId))
-                ) && 
-                (
-                    this.Scope == input.Scope ||
-                    (this.Scope != null &&
-                    this.Scope.Equals(input.Scope))
-                ) && 
-                (
-                    this.ScopeProjectId == input.ScopeProjectId ||
-                    (this.ScopeProjectId != null &&
-                    this.ScopeProjectId.Equals(input.ScopeProjectId))
-                ) && 
-                (
-                    this.ScopeDomainId == input.ScopeDomainId ||
-                    (this.ScopeDomainId != null &&
-                    this.ScopeDomainId.Equals(input.ScopeDomainId))
-                ) && 
-                (
-                    this.ScopeEnterpriseProjectsId == input.ScopeEnterpriseProjectsId ||
-                    (this.ScopeEnterpriseProjectsId != null &&
-                    this.ScopeEnterpriseProjectsId.Equals(input.ScopeEnterpriseProjectsId))
-                ) && 
-                (
-                    this.IsInherited == input.IsInherited ||
-                    (this.IsInherited != null &&
-                    this.IsInherited.Equals(input.IsInherited))
-                ) && 
-                (
-                    this.IncludeGroup == input.IncludeGroup ||
-                    (this.IncludeGroup != null &&
-                    this.IncludeGroup.Equals(input.IncludeGroup))
-                ) && 
-                (
-                    this.Page == input.Page ||
-                    (this.Page != null &&
-                    this.Page.Equals(input.Page))
-                ) && 
-                (
-                    this.PerPage == input.PerPage ||
-                    (this.PerPage != null &&
-                    this.PerPage.Equals(input.PerPage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -237,35 +180,21 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DomainId != null)
-                    hashCode = hashCode * 59 + this.DomainId.GetHashCode();
-                if (this.RoleId != null)
-                    hashCode = hashCode * 59 + this.RoleId.GetHashCode();
-                if (this.Subject != null)
-                    hashCode = hashCode * 59 + this.Subject.GetHashCode();
-                if (this.SubjectUserId != null)
-                    hashCode = hashCode * 59 + this.SubjectUserId.GetHashCode();
-                if (this.SubjectGroupId != null)
-                    hashCode = hashCode * 59 + this.SubjectGroupId.GetHashCode();
-                if (this.SubjectAgencyId != null)
-                    hashCode = hashCode * 59 + this.SubjectAgencyId.GetHashCode();
-                if (this.Scope != null)
-                    hashCode = hashCode * 59 + this.Scope.GetHashCode();
-                if (this.ScopeProjectId != null)
-                    hashCode = hashCode * 59 + this.ScopeProjectId.GetHashCode();
-                if (this.ScopeDomainId != null)
-                    hashCode = hashCode * 59 + this.ScopeDomainId.GetHashCode();
-                if (this.ScopeEnterpriseProjectsId != null)
-                    hashCode = hashCode * 59 + this.ScopeEnterpriseProjectsId.GetHashCode();
-                if (this.IsInherited != null)
-                    hashCode = hashCode * 59 + this.IsInherited.GetHashCode();
-                if (this.IncludeGroup != null)
-                    hashCode = hashCode * 59 + this.IncludeGroup.GetHashCode();
-                if (this.Page != null)
-                    hashCode = hashCode * 59 + this.Page.GetHashCode();
-                if (this.PerPage != null)
-                    hashCode = hashCode * 59 + this.PerPage.GetHashCode();
+                var hashCode = 41;
+                if (this.DomainId != null) hashCode = hashCode * 59 + this.DomainId.GetHashCode();
+                if (this.RoleId != null) hashCode = hashCode * 59 + this.RoleId.GetHashCode();
+                if (this.Subject != null) hashCode = hashCode * 59 + this.Subject.GetHashCode();
+                if (this.SubjectUserId != null) hashCode = hashCode * 59 + this.SubjectUserId.GetHashCode();
+                if (this.SubjectGroupId != null) hashCode = hashCode * 59 + this.SubjectGroupId.GetHashCode();
+                if (this.SubjectAgencyId != null) hashCode = hashCode * 59 + this.SubjectAgencyId.GetHashCode();
+                if (this.Scope != null) hashCode = hashCode * 59 + this.Scope.GetHashCode();
+                if (this.ScopeProjectId != null) hashCode = hashCode * 59 + this.ScopeProjectId.GetHashCode();
+                if (this.ScopeDomainId != null) hashCode = hashCode * 59 + this.ScopeDomainId.GetHashCode();
+                if (this.ScopeEnterpriseProjectsId != null) hashCode = hashCode * 59 + this.ScopeEnterpriseProjectsId.GetHashCode();
+                if (this.IsInherited != null) hashCode = hashCode * 59 + this.IsInherited.GetHashCode();
+                if (this.IncludeGroup != null) hashCode = hashCode * 59 + this.IncludeGroup.GetHashCode();
+                if (this.Page != null) hashCode = hashCode * 59 + this.Page.GetHashCode();
+                if (this.PerPage != null) hashCode = hashCode * 59 + this.PerPage.GetHashCode();
                 return hashCode;
             }
         }

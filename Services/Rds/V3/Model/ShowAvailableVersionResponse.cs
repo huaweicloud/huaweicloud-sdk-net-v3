@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ShowAvailableVersionResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AvailableVersions != input.AvailableVersions || (this.AvailableVersions != null && input.AvailableVersions != null && !this.AvailableVersions.SequenceEqual(input.AvailableVersions))) return false;
 
-            return 
-                (
-                    this.AvailableVersions == input.AvailableVersions ||
-                    this.AvailableVersions != null &&
-                    input.AvailableVersions != null &&
-                    this.AvailableVersions.SequenceEqual(input.AvailableVersions)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AvailableVersions != null)
-                    hashCode = hashCode * 59 + this.AvailableVersions.GetHashCode();
+                var hashCode = 41;
+                if (this.AvailableVersions != null) hashCode = hashCode * 59 + this.AvailableVersions.GetHashCode();
                 return hashCode;
             }
         }

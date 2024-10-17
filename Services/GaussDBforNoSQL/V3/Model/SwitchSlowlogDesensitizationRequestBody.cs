@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(SwitchSlowlogDesensitizationRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DesensitizationStatus != input.DesensitizationStatus || (this.DesensitizationStatus != null && !this.DesensitizationStatus.Equals(input.DesensitizationStatus))) return false;
 
-            return 
-                (
-                    this.DesensitizationStatus == input.DesensitizationStatus ||
-                    (this.DesensitizationStatus != null &&
-                    this.DesensitizationStatus.Equals(input.DesensitizationStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DesensitizationStatus != null)
-                    hashCode = hashCode * 59 + this.DesensitizationStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.DesensitizationStatus != null) hashCode = hashCode * 59 + this.DesensitizationStatus.GetHashCode();
                 return hashCode;
             }
         }

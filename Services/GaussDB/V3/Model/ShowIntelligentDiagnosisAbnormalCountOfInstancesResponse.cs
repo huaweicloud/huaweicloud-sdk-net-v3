@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ShowIntelligentDiagnosisAbnormalCountOfInstancesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DiagnosisInfo != input.DiagnosisInfo || (this.DiagnosisInfo != null && input.DiagnosisInfo != null && !this.DiagnosisInfo.SequenceEqual(input.DiagnosisInfo))) return false;
 
-            return 
-                (
-                    this.DiagnosisInfo == input.DiagnosisInfo ||
-                    this.DiagnosisInfo != null &&
-                    input.DiagnosisInfo != null &&
-                    this.DiagnosisInfo.SequenceEqual(input.DiagnosisInfo)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DiagnosisInfo != null)
-                    hashCode = hashCode * 59 + this.DiagnosisInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.DiagnosisInfo != null) hashCode = hashCode * 59 + this.DiagnosisInfo.GetHashCode();
                 return hashCode;
             }
         }

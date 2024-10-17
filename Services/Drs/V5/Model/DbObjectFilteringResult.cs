@@ -226,60 +226,19 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(DbObjectFilteringResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DbName != input.DbName || (this.DbName != null && !this.DbName.Equals(input.DbName))) return false;
+            if (this.SchemaName != input.SchemaName || (this.SchemaName != null && !this.SchemaName.Equals(input.SchemaName))) return false;
+            if (this.TableName != input.TableName || (this.TableName != null && !this.TableName.Equals(input.TableName))) return false;
+            if (this.IsSuccess != input.IsSuccess || (this.IsSuccess != null && !this.IsSuccess.Equals(input.IsSuccess))) return false;
+            if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
+            if (this.Source != input.Source) return false;
+            if (this.TargetResult != input.TargetResult || (this.TargetResult != null && !this.TargetResult.Equals(input.TargetResult))) return false;
+            if (this.SourceResult != input.SourceResult || (this.SourceResult != null && !this.SourceResult.Equals(input.SourceResult))) return false;
+            if (this.TargetMessage != input.TargetMessage || (this.TargetMessage != null && !this.TargetMessage.Equals(input.TargetMessage))) return false;
+            if (this.SourceMessage != input.SourceMessage || (this.SourceMessage != null && !this.SourceMessage.Equals(input.SourceMessage))) return false;
 
-            return 
-                (
-                    this.DbName == input.DbName ||
-                    (this.DbName != null &&
-                    this.DbName.Equals(input.DbName))
-                ) && 
-                (
-                    this.SchemaName == input.SchemaName ||
-                    (this.SchemaName != null &&
-                    this.SchemaName.Equals(input.SchemaName))
-                ) && 
-                (
-                    this.TableName == input.TableName ||
-                    (this.TableName != null &&
-                    this.TableName.Equals(input.TableName))
-                ) && 
-                (
-                    this.IsSuccess == input.IsSuccess ||
-                    (this.IsSuccess != null &&
-                    this.IsSuccess.Equals(input.IsSuccess))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.Source == input.Source ||
-                    (this.Source != null &&
-                    this.Source.Equals(input.Source))
-                ) && 
-                (
-                    this.TargetResult == input.TargetResult ||
-                    (this.TargetResult != null &&
-                    this.TargetResult.Equals(input.TargetResult))
-                ) && 
-                (
-                    this.SourceResult == input.SourceResult ||
-                    (this.SourceResult != null &&
-                    this.SourceResult.Equals(input.SourceResult))
-                ) && 
-                (
-                    this.TargetMessage == input.TargetMessage ||
-                    (this.TargetMessage != null &&
-                    this.TargetMessage.Equals(input.TargetMessage))
-                ) && 
-                (
-                    this.SourceMessage == input.SourceMessage ||
-                    (this.SourceMessage != null &&
-                    this.SourceMessage.Equals(input.SourceMessage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -289,27 +248,17 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DbName != null)
-                    hashCode = hashCode * 59 + this.DbName.GetHashCode();
-                if (this.SchemaName != null)
-                    hashCode = hashCode * 59 + this.SchemaName.GetHashCode();
-                if (this.TableName != null)
-                    hashCode = hashCode * 59 + this.TableName.GetHashCode();
-                if (this.IsSuccess != null)
-                    hashCode = hashCode * 59 + this.IsSuccess.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.Source != null)
-                    hashCode = hashCode * 59 + this.Source.GetHashCode();
-                if (this.TargetResult != null)
-                    hashCode = hashCode * 59 + this.TargetResult.GetHashCode();
-                if (this.SourceResult != null)
-                    hashCode = hashCode * 59 + this.SourceResult.GetHashCode();
-                if (this.TargetMessage != null)
-                    hashCode = hashCode * 59 + this.TargetMessage.GetHashCode();
-                if (this.SourceMessage != null)
-                    hashCode = hashCode * 59 + this.SourceMessage.GetHashCode();
+                var hashCode = 41;
+                if (this.DbName != null) hashCode = hashCode * 59 + this.DbName.GetHashCode();
+                if (this.SchemaName != null) hashCode = hashCode * 59 + this.SchemaName.GetHashCode();
+                if (this.TableName != null) hashCode = hashCode * 59 + this.TableName.GetHashCode();
+                if (this.IsSuccess != null) hashCode = hashCode * 59 + this.IsSuccess.GetHashCode();
+                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
+                hashCode = hashCode * 59 + this.Source.GetHashCode();
+                if (this.TargetResult != null) hashCode = hashCode * 59 + this.TargetResult.GetHashCode();
+                if (this.SourceResult != null) hashCode = hashCode * 59 + this.SourceResult.GetHashCode();
+                if (this.TargetMessage != null) hashCode = hashCode * 59 + this.TargetMessage.GetHashCode();
+                if (this.SourceMessage != null) hashCode = hashCode * 59 + this.SourceMessage.GetHashCode();
                 return hashCode;
             }
         }

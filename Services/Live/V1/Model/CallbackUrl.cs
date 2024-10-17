@@ -177,25 +177,12 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(CallbackUrl input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Url != input.Url || (this.Url != null && !this.Url.Equals(input.Url))) return false;
+            if (this.AuthSignKey != input.AuthSignKey || (this.AuthSignKey != null && !this.AuthSignKey.Equals(input.AuthSignKey))) return false;
+            if (this.CallBackArea != input.CallBackArea) return false;
 
-            return 
-                (
-                    this.Url == input.Url ||
-                    (this.Url != null &&
-                    this.Url.Equals(input.Url))
-                ) && 
-                (
-                    this.AuthSignKey == input.AuthSignKey ||
-                    (this.AuthSignKey != null &&
-                    this.AuthSignKey.Equals(input.AuthSignKey))
-                ) && 
-                (
-                    this.CallBackArea == input.CallBackArea ||
-                    (this.CallBackArea != null &&
-                    this.CallBackArea.Equals(input.CallBackArea))
-                );
+            return true;
         }
 
         /// <summary>
@@ -205,13 +192,10 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Url != null)
-                    hashCode = hashCode * 59 + this.Url.GetHashCode();
-                if (this.AuthSignKey != null)
-                    hashCode = hashCode * 59 + this.AuthSignKey.GetHashCode();
-                if (this.CallBackArea != null)
-                    hashCode = hashCode * 59 + this.CallBackArea.GetHashCode();
+                var hashCode = 41;
+                if (this.Url != null) hashCode = hashCode * 59 + this.Url.GetHashCode();
+                if (this.AuthSignKey != null) hashCode = hashCode * 59 + this.AuthSignKey.GetHashCode();
+                hashCode = hashCode * 59 + this.CallBackArea.GetHashCode();
                 return hashCode;
             }
         }

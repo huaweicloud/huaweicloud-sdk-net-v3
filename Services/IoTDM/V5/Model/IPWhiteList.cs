@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
         /// </summary>
         public bool Equals(IPWhiteList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Enable != input.Enable || (this.Enable != null && !this.Enable.Equals(input.Enable))) return false;
+            if (this.AllowList != input.AllowList || (this.AllowList != null && input.AllowList != null && !this.AllowList.SequenceEqual(input.AllowList))) return false;
 
-            return 
-                (
-                    this.Enable == input.Enable ||
-                    (this.Enable != null &&
-                    this.Enable.Equals(input.Enable))
-                ) && 
-                (
-                    this.AllowList == input.AllowList ||
-                    this.AllowList != null &&
-                    input.AllowList != null &&
-                    this.AllowList.SequenceEqual(input.AllowList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Enable != null)
-                    hashCode = hashCode * 59 + this.Enable.GetHashCode();
-                if (this.AllowList != null)
-                    hashCode = hashCode * 59 + this.AllowList.GetHashCode();
+                var hashCode = 41;
+                if (this.Enable != null) hashCode = hashCode * 59 + this.Enable.GetHashCode();
+                if (this.AllowList != null) hashCode = hashCode * 59 + this.AllowList.GetHashCode();
                 return hashCode;
             }
         }

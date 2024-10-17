@@ -77,36 +77,14 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(PropertyFilter input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Path != input.Path || (this.Path != null && !this.Path.Equals(input.Path))) return false;
+            if (this.Operator != input.Operator || (this.Operator != null && !this.Operator.Equals(input.Operator))) return false;
+            if (this.Value != input.Value || (this.Value != null && !this.Value.Equals(input.Value))) return false;
+            if (this.InValues != input.InValues || (this.InValues != null && input.InValues != null && !this.InValues.SequenceEqual(input.InValues))) return false;
+            if (this.Strategy != input.Strategy || (this.Strategy != null && !this.Strategy.Equals(input.Strategy))) return false;
 
-            return 
-                (
-                    this.Path == input.Path ||
-                    (this.Path != null &&
-                    this.Path.Equals(input.Path))
-                ) && 
-                (
-                    this.Operator == input.Operator ||
-                    (this.Operator != null &&
-                    this.Operator.Equals(input.Operator))
-                ) && 
-                (
-                    this.Value == input.Value ||
-                    (this.Value != null &&
-                    this.Value.Equals(input.Value))
-                ) && 
-                (
-                    this.InValues == input.InValues ||
-                    this.InValues != null &&
-                    input.InValues != null &&
-                    this.InValues.SequenceEqual(input.InValues)
-                ) && 
-                (
-                    this.Strategy == input.Strategy ||
-                    (this.Strategy != null &&
-                    this.Strategy.Equals(input.Strategy))
-                );
+            return true;
         }
 
         /// <summary>
@@ -116,17 +94,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Path != null)
-                    hashCode = hashCode * 59 + this.Path.GetHashCode();
-                if (this.Operator != null)
-                    hashCode = hashCode * 59 + this.Operator.GetHashCode();
-                if (this.Value != null)
-                    hashCode = hashCode * 59 + this.Value.GetHashCode();
-                if (this.InValues != null)
-                    hashCode = hashCode * 59 + this.InValues.GetHashCode();
-                if (this.Strategy != null)
-                    hashCode = hashCode * 59 + this.Strategy.GetHashCode();
+                var hashCode = 41;
+                if (this.Path != null) hashCode = hashCode * 59 + this.Path.GetHashCode();
+                if (this.Operator != null) hashCode = hashCode * 59 + this.Operator.GetHashCode();
+                if (this.Value != null) hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.InValues != null) hashCode = hashCode * 59 + this.InValues.GetHashCode();
+                if (this.Strategy != null) hashCode = hashCode * 59 + this.Strategy.GetHashCode();
                 return hashCode;
             }
         }

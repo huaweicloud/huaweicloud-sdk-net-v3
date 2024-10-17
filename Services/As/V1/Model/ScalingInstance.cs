@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(ScalingInstance input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceName != input.InstanceName || (this.InstanceName != null && !this.InstanceName.Equals(input.InstanceName))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.FailedReason != input.FailedReason || (this.FailedReason != null && !this.FailedReason.Equals(input.FailedReason))) return false;
+            if (this.FailedDetails != input.FailedDetails || (this.FailedDetails != null && !this.FailedDetails.Equals(input.FailedDetails))) return false;
+            if (this.InstanceConfig != input.InstanceConfig || (this.InstanceConfig != null && !this.InstanceConfig.Equals(input.InstanceConfig))) return false;
 
-            return 
-                (
-                    this.InstanceName == input.InstanceName ||
-                    (this.InstanceName != null &&
-                    this.InstanceName.Equals(input.InstanceName))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.FailedReason == input.FailedReason ||
-                    (this.FailedReason != null &&
-                    this.FailedReason.Equals(input.FailedReason))
-                ) && 
-                (
-                    this.FailedDetails == input.FailedDetails ||
-                    (this.FailedDetails != null &&
-                    this.FailedDetails.Equals(input.FailedDetails))
-                ) && 
-                (
-                    this.InstanceConfig == input.InstanceConfig ||
-                    (this.InstanceConfig != null &&
-                    this.InstanceConfig.Equals(input.InstanceConfig))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceName != null)
-                    hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.FailedReason != null)
-                    hashCode = hashCode * 59 + this.FailedReason.GetHashCode();
-                if (this.FailedDetails != null)
-                    hashCode = hashCode * 59 + this.FailedDetails.GetHashCode();
-                if (this.InstanceConfig != null)
-                    hashCode = hashCode * 59 + this.InstanceConfig.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceName != null) hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.FailedReason != null) hashCode = hashCode * 59 + this.FailedReason.GetHashCode();
+                if (this.FailedDetails != null) hashCode = hashCode * 59 + this.FailedDetails.GetHashCode();
+                if (this.InstanceConfig != null) hashCode = hashCode * 59 + this.InstanceConfig.GetHashCode();
                 return hashCode;
             }
         }

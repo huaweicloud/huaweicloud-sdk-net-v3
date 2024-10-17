@@ -82,20 +82,11 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public bool Equals(DetectFaceByFileRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ImageFile != input.ImageFile || (this.ImageFile != null && !this.ImageFile.Equals(input.ImageFile))) return false;
+            if (this.Attributes != input.Attributes || (this.Attributes != null && !this.Attributes.Equals(input.Attributes))) return false;
 
-            return 
-                (
-                    this.ImageFile == input.ImageFile ||
-                    (this.ImageFile != null &&
-                    this.ImageFile.Equals(input.ImageFile))
-                ) && 
-                (
-                    this.Attributes == input.Attributes ||
-                    (this.Attributes != null &&
-                    this.Attributes.Equals(input.Attributes))
-                );
+            return true;
         }
 
         /// <summary>
@@ -105,11 +96,9 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ImageFile != null)
-                    hashCode = hashCode * 59 + this.ImageFile.GetHashCode();
-                if (this.Attributes != null)
-                    hashCode = hashCode * 59 + this.Attributes.GetHashCode();
+                var hashCode = 41;
+                if (this.ImageFile != null) hashCode = hashCode * 59 + this.ImageFile.GetHashCode();
+                if (this.Attributes != null) hashCode = hashCode * 59 + this.Attributes.GetHashCode();
                 return hashCode;
             }
         }

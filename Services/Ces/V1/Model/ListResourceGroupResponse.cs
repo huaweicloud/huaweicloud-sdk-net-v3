@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         /// </summary>
         public bool Equals(ListResourceGroupResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResourceGroups != input.ResourceGroups || (this.ResourceGroups != null && input.ResourceGroups != null && !this.ResourceGroups.SequenceEqual(input.ResourceGroups))) return false;
+            if (this.MetaData != input.MetaData || (this.MetaData != null && !this.MetaData.Equals(input.MetaData))) return false;
 
-            return 
-                (
-                    this.ResourceGroups == input.ResourceGroups ||
-                    this.ResourceGroups != null &&
-                    input.ResourceGroups != null &&
-                    this.ResourceGroups.SequenceEqual(input.ResourceGroups)
-                ) && 
-                (
-                    this.MetaData == input.MetaData ||
-                    (this.MetaData != null &&
-                    this.MetaData.Equals(input.MetaData))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Ces.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResourceGroups != null)
-                    hashCode = hashCode * 59 + this.ResourceGroups.GetHashCode();
-                if (this.MetaData != null)
-                    hashCode = hashCode * 59 + this.MetaData.GetHashCode();
+                var hashCode = 41;
+                if (this.ResourceGroups != null) hashCode = hashCode * 59 + this.ResourceGroups.GetHashCode();
+                if (this.MetaData != null) hashCode = hashCode * 59 + this.MetaData.GetHashCode();
                 return hashCode;
             }
         }

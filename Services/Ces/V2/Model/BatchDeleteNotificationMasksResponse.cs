@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(BatchDeleteNotificationMasksResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NotificationMaskIds != input.NotificationMaskIds || (this.NotificationMaskIds != null && input.NotificationMaskIds != null && !this.NotificationMaskIds.SequenceEqual(input.NotificationMaskIds))) return false;
 
-            return 
-                (
-                    this.NotificationMaskIds == input.NotificationMaskIds ||
-                    this.NotificationMaskIds != null &&
-                    input.NotificationMaskIds != null &&
-                    this.NotificationMaskIds.SequenceEqual(input.NotificationMaskIds)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NotificationMaskIds != null)
-                    hashCode = hashCode * 59 + this.NotificationMaskIds.GetHashCode();
+                var hashCode = 41;
+                if (this.NotificationMaskIds != null) hashCode = hashCode * 59 + this.NotificationMaskIds.GetHashCode();
                 return hashCode;
             }
         }

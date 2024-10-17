@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(AllowUserBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ManageAccesskey != input.ManageAccesskey || (this.ManageAccesskey != null && !this.ManageAccesskey.Equals(input.ManageAccesskey))) return false;
+            if (this.ManageEmail != input.ManageEmail || (this.ManageEmail != null && !this.ManageEmail.Equals(input.ManageEmail))) return false;
+            if (this.ManageMobile != input.ManageMobile || (this.ManageMobile != null && !this.ManageMobile.Equals(input.ManageMobile))) return false;
+            if (this.ManagePassword != input.ManagePassword || (this.ManagePassword != null && !this.ManagePassword.Equals(input.ManagePassword))) return false;
 
-            return 
-                (
-                    this.ManageAccesskey == input.ManageAccesskey ||
-                    (this.ManageAccesskey != null &&
-                    this.ManageAccesskey.Equals(input.ManageAccesskey))
-                ) && 
-                (
-                    this.ManageEmail == input.ManageEmail ||
-                    (this.ManageEmail != null &&
-                    this.ManageEmail.Equals(input.ManageEmail))
-                ) && 
-                (
-                    this.ManageMobile == input.ManageMobile ||
-                    (this.ManageMobile != null &&
-                    this.ManageMobile.Equals(input.ManageMobile))
-                ) && 
-                (
-                    this.ManagePassword == input.ManagePassword ||
-                    (this.ManagePassword != null &&
-                    this.ManagePassword.Equals(input.ManagePassword))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ManageAccesskey != null)
-                    hashCode = hashCode * 59 + this.ManageAccesskey.GetHashCode();
-                if (this.ManageEmail != null)
-                    hashCode = hashCode * 59 + this.ManageEmail.GetHashCode();
-                if (this.ManageMobile != null)
-                    hashCode = hashCode * 59 + this.ManageMobile.GetHashCode();
-                if (this.ManagePassword != null)
-                    hashCode = hashCode * 59 + this.ManagePassword.GetHashCode();
+                var hashCode = 41;
+                if (this.ManageAccesskey != null) hashCode = hashCode * 59 + this.ManageAccesskey.GetHashCode();
+                if (this.ManageEmail != null) hashCode = hashCode * 59 + this.ManageEmail.GetHashCode();
+                if (this.ManageMobile != null) hashCode = hashCode * 59 + this.ManageMobile.GetHashCode();
+                if (this.ManagePassword != null) hashCode = hashCode * 59 + this.ManagePassword.GetHashCode();
                 return hashCode;
             }
         }

@@ -189,26 +189,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(ListStatSummaryResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Summary != input.Summary || (this.Summary != null && input.Summary != null && !this.Summary.SequenceEqual(input.Summary))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.StatType != input.StatType) return false;
 
-            return 
-                (
-                    this.Summary == input.Summary ||
-                    this.Summary != null &&
-                    input.Summary != null &&
-                    this.Summary.SequenceEqual(input.Summary)
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.StatType == input.StatType ||
-                    (this.StatType != null &&
-                    this.StatType.Equals(input.StatType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -218,13 +204,10 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Summary != null)
-                    hashCode = hashCode * 59 + this.Summary.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.StatType != null)
-                    hashCode = hashCode * 59 + this.StatType.GetHashCode();
+                var hashCode = 41;
+                if (this.Summary != null) hashCode = hashCode * 59 + this.Summary.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                hashCode = hashCode * 59 + this.StatType.GetHashCode();
                 return hashCode;
             }
         }

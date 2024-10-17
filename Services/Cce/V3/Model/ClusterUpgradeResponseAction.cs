@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ClusterUpgradeResponseAction input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.TargetVersion != input.TargetVersion || (this.TargetVersion != null && !this.TargetVersion.Equals(input.TargetVersion))) return false;
+            if (this.TargetPlatformVersion != input.TargetPlatformVersion || (this.TargetPlatformVersion != null && !this.TargetPlatformVersion.Equals(input.TargetPlatformVersion))) return false;
+            if (this.Strategy != input.Strategy || (this.Strategy != null && !this.Strategy.Equals(input.Strategy))) return false;
+            if (this.Config != input.Config || (this.Config != null && !this.Config.Equals(input.Config))) return false;
 
-            return 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.TargetVersion == input.TargetVersion ||
-                    (this.TargetVersion != null &&
-                    this.TargetVersion.Equals(input.TargetVersion))
-                ) && 
-                (
-                    this.TargetPlatformVersion == input.TargetPlatformVersion ||
-                    (this.TargetPlatformVersion != null &&
-                    this.TargetPlatformVersion.Equals(input.TargetPlatformVersion))
-                ) && 
-                (
-                    this.Strategy == input.Strategy ||
-                    (this.Strategy != null &&
-                    this.Strategy.Equals(input.Strategy))
-                ) && 
-                (
-                    this.Config == input.Config ||
-                    (this.Config != null &&
-                    this.Config.Equals(input.Config))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.TargetVersion != null)
-                    hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
-                if (this.TargetPlatformVersion != null)
-                    hashCode = hashCode * 59 + this.TargetPlatformVersion.GetHashCode();
-                if (this.Strategy != null)
-                    hashCode = hashCode * 59 + this.Strategy.GetHashCode();
-                if (this.Config != null)
-                    hashCode = hashCode * 59 + this.Config.GetHashCode();
+                var hashCode = 41;
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.TargetVersion != null) hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
+                if (this.TargetPlatformVersion != null) hashCode = hashCode * 59 + this.TargetPlatformVersion.GetHashCode();
+                if (this.Strategy != null) hashCode = hashCode * 59 + this.Strategy.GetHashCode();
+                if (this.Config != null) hashCode = hashCode * 59 + this.Config.GetHashCode();
                 return hashCode;
             }
         }

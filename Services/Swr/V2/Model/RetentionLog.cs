@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public bool Equals(RetentionLog input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Namespace != input.Namespace || (this.Namespace != null && !this.Namespace.Equals(input.Namespace))) return false;
+            if (this.Repo != input.Repo || (this.Repo != null && !this.Repo.Equals(input.Repo))) return false;
+            if (this.RetentionId != input.RetentionId || (this.RetentionId != null && !this.RetentionId.Equals(input.RetentionId))) return false;
+            if (this.RuleType != input.RuleType || (this.RuleType != null && !this.RuleType.Equals(input.RuleType))) return false;
+            if (this.Tag != input.Tag || (this.Tag != null && !this.Tag.Equals(input.Tag))) return false;
 
-            return 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Namespace == input.Namespace ||
-                    (this.Namespace != null &&
-                    this.Namespace.Equals(input.Namespace))
-                ) && 
-                (
-                    this.Repo == input.Repo ||
-                    (this.Repo != null &&
-                    this.Repo.Equals(input.Repo))
-                ) && 
-                (
-                    this.RetentionId == input.RetentionId ||
-                    (this.RetentionId != null &&
-                    this.RetentionId.Equals(input.RetentionId))
-                ) && 
-                (
-                    this.RuleType == input.RuleType ||
-                    (this.RuleType != null &&
-                    this.RuleType.Equals(input.RuleType))
-                ) && 
-                (
-                    this.Tag == input.Tag ||
-                    (this.Tag != null &&
-                    this.Tag.Equals(input.Tag))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Namespace != null)
-                    hashCode = hashCode * 59 + this.Namespace.GetHashCode();
-                if (this.Repo != null)
-                    hashCode = hashCode * 59 + this.Repo.GetHashCode();
-                if (this.RetentionId != null)
-                    hashCode = hashCode * 59 + this.RetentionId.GetHashCode();
-                if (this.RuleType != null)
-                    hashCode = hashCode * 59 + this.RuleType.GetHashCode();
-                if (this.Tag != null)
-                    hashCode = hashCode * 59 + this.Tag.GetHashCode();
+                var hashCode = 41;
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Namespace != null) hashCode = hashCode * 59 + this.Namespace.GetHashCode();
+                if (this.Repo != null) hashCode = hashCode * 59 + this.Repo.GetHashCode();
+                if (this.RetentionId != null) hashCode = hashCode * 59 + this.RetentionId.GetHashCode();
+                if (this.RuleType != null) hashCode = hashCode * 59 + this.RuleType.GetHashCode();
+                if (this.Tag != null) hashCode = hashCode * 59 + this.Tag.GetHashCode();
                 return hashCode;
             }
         }

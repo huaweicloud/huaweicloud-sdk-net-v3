@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(RefreshTaskRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RefreshTask != input.RefreshTask || (this.RefreshTask != null && !this.RefreshTask.Equals(input.RefreshTask))) return false;
 
-            return 
-                (
-                    this.RefreshTask == input.RefreshTask ||
-                    (this.RefreshTask != null &&
-                    this.RefreshTask.Equals(input.RefreshTask))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RefreshTask != null)
-                    hashCode = hashCode * 59 + this.RefreshTask.GetHashCode();
+                var hashCode = 41;
+                if (this.RefreshTask != null) hashCode = hashCode * 59 + this.RefreshTask.GetHashCode();
                 return hashCode;
             }
         }

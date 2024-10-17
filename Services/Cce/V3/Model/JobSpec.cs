@@ -84,42 +84,15 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(JobSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.ClusterUID != input.ClusterUID || (this.ClusterUID != null && !this.ClusterUID.Equals(input.ClusterUID))) return false;
+            if (this.ResourceID != input.ResourceID || (this.ResourceID != null && !this.ResourceID.Equals(input.ResourceID))) return false;
+            if (this.ResourceName != input.ResourceName || (this.ResourceName != null && !this.ResourceName.Equals(input.ResourceName))) return false;
+            if (this.ExtendParam != input.ExtendParam || (this.ExtendParam != null && input.ExtendParam != null && !this.ExtendParam.SequenceEqual(input.ExtendParam))) return false;
+            if (this.SubJobs != input.SubJobs || (this.SubJobs != null && input.SubJobs != null && !this.SubJobs.SequenceEqual(input.SubJobs))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.ClusterUID == input.ClusterUID ||
-                    (this.ClusterUID != null &&
-                    this.ClusterUID.Equals(input.ClusterUID))
-                ) && 
-                (
-                    this.ResourceID == input.ResourceID ||
-                    (this.ResourceID != null &&
-                    this.ResourceID.Equals(input.ResourceID))
-                ) && 
-                (
-                    this.ResourceName == input.ResourceName ||
-                    (this.ResourceName != null &&
-                    this.ResourceName.Equals(input.ResourceName))
-                ) && 
-                (
-                    this.ExtendParam == input.ExtendParam ||
-                    this.ExtendParam != null &&
-                    input.ExtendParam != null &&
-                    this.ExtendParam.SequenceEqual(input.ExtendParam)
-                ) && 
-                (
-                    this.SubJobs == input.SubJobs ||
-                    this.SubJobs != null &&
-                    input.SubJobs != null &&
-                    this.SubJobs.SequenceEqual(input.SubJobs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -129,19 +102,13 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.ClusterUID != null)
-                    hashCode = hashCode * 59 + this.ClusterUID.GetHashCode();
-                if (this.ResourceID != null)
-                    hashCode = hashCode * 59 + this.ResourceID.GetHashCode();
-                if (this.ResourceName != null)
-                    hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
-                if (this.ExtendParam != null)
-                    hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
-                if (this.SubJobs != null)
-                    hashCode = hashCode * 59 + this.SubJobs.GetHashCode();
+                var hashCode = 41;
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.ClusterUID != null) hashCode = hashCode * 59 + this.ClusterUID.GetHashCode();
+                if (this.ResourceID != null) hashCode = hashCode * 59 + this.ResourceID.GetHashCode();
+                if (this.ResourceName != null) hashCode = hashCode * 59 + this.ResourceName.GetHashCode();
+                if (this.ExtendParam != null) hashCode = hashCode * 59 + this.ExtendParam.GetHashCode();
+                if (this.SubJobs != null) hashCode = hashCode * 59 + this.SubJobs.GetHashCode();
                 return hashCode;
             }
         }

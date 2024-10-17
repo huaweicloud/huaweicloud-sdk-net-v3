@@ -215,36 +215,14 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(ShowPauseResumeStutusResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MasterInstanceId != input.MasterInstanceId || (this.MasterInstanceId != null && !this.MasterInstanceId.Equals(input.MasterInstanceId))) return false;
+            if (this.SlaveInstanceId != input.SlaveInstanceId || (this.SlaveInstanceId != null && !this.SlaveInstanceId.Equals(input.SlaveInstanceId))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.DataSyncIndicators != input.DataSyncIndicators || (this.DataSyncIndicators != null && !this.DataSyncIndicators.Equals(input.DataSyncIndicators))) return false;
+            if (this.RtoAndRpoIndicators != input.RtoAndRpoIndicators || (this.RtoAndRpoIndicators != null && input.RtoAndRpoIndicators != null && !this.RtoAndRpoIndicators.SequenceEqual(input.RtoAndRpoIndicators))) return false;
 
-            return 
-                (
-                    this.MasterInstanceId == input.MasterInstanceId ||
-                    (this.MasterInstanceId != null &&
-                    this.MasterInstanceId.Equals(input.MasterInstanceId))
-                ) && 
-                (
-                    this.SlaveInstanceId == input.SlaveInstanceId ||
-                    (this.SlaveInstanceId != null &&
-                    this.SlaveInstanceId.Equals(input.SlaveInstanceId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.DataSyncIndicators == input.DataSyncIndicators ||
-                    (this.DataSyncIndicators != null &&
-                    this.DataSyncIndicators.Equals(input.DataSyncIndicators))
-                ) && 
-                (
-                    this.RtoAndRpoIndicators == input.RtoAndRpoIndicators ||
-                    this.RtoAndRpoIndicators != null &&
-                    input.RtoAndRpoIndicators != null &&
-                    this.RtoAndRpoIndicators.SequenceEqual(input.RtoAndRpoIndicators)
-                );
+            return true;
         }
 
         /// <summary>
@@ -254,17 +232,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MasterInstanceId != null)
-                    hashCode = hashCode * 59 + this.MasterInstanceId.GetHashCode();
-                if (this.SlaveInstanceId != null)
-                    hashCode = hashCode * 59 + this.SlaveInstanceId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.DataSyncIndicators != null)
-                    hashCode = hashCode * 59 + this.DataSyncIndicators.GetHashCode();
-                if (this.RtoAndRpoIndicators != null)
-                    hashCode = hashCode * 59 + this.RtoAndRpoIndicators.GetHashCode();
+                var hashCode = 41;
+                if (this.MasterInstanceId != null) hashCode = hashCode * 59 + this.MasterInstanceId.GetHashCode();
+                if (this.SlaveInstanceId != null) hashCode = hashCode * 59 + this.SlaveInstanceId.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.DataSyncIndicators != null) hashCode = hashCode * 59 + this.DataSyncIndicators.GetHashCode();
+                if (this.RtoAndRpoIndicators != null) hashCode = hashCode * 59 + this.RtoAndRpoIndicators.GetHashCode();
                 return hashCode;
             }
         }

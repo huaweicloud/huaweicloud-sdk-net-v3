@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(AddIssueWorkHoursResponseBodyAddedWorkHours input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.WorkHoursId != input.WorkHoursId || (this.WorkHoursId != null && !this.WorkHoursId.Equals(input.WorkHoursId))) return false;
+            if (this.IssueId != input.IssueId || (this.IssueId != null && !this.IssueId.Equals(input.IssueId))) return false;
+            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.UserNickName != input.UserNickName || (this.UserNickName != null && !this.UserNickName.Equals(input.UserNickName))) return false;
+            if (this.WorkDate != input.WorkDate || (this.WorkDate != null && !this.WorkDate.Equals(input.WorkDate))) return false;
+            if (this.WorkHours != input.WorkHours || (this.WorkHours != null && !this.WorkHours.Equals(input.WorkHours))) return false;
+            if (this.WorkHoursTypeName != input.WorkHoursTypeName || (this.WorkHoursTypeName != null && !this.WorkHoursTypeName.Equals(input.WorkHoursTypeName))) return false;
 
-            return 
-                (
-                    this.WorkHoursId == input.WorkHoursId ||
-                    (this.WorkHoursId != null &&
-                    this.WorkHoursId.Equals(input.WorkHoursId))
-                ) && 
-                (
-                    this.IssueId == input.IssueId ||
-                    (this.IssueId != null &&
-                    this.IssueId.Equals(input.IssueId))
-                ) && 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.UserNickName == input.UserNickName ||
-                    (this.UserNickName != null &&
-                    this.UserNickName.Equals(input.UserNickName))
-                ) && 
-                (
-                    this.WorkDate == input.WorkDate ||
-                    (this.WorkDate != null &&
-                    this.WorkDate.Equals(input.WorkDate))
-                ) && 
-                (
-                    this.WorkHours == input.WorkHours ||
-                    (this.WorkHours != null &&
-                    this.WorkHours.Equals(input.WorkHours))
-                ) && 
-                (
-                    this.WorkHoursTypeName == input.WorkHoursTypeName ||
-                    (this.WorkHoursTypeName != null &&
-                    this.WorkHoursTypeName.Equals(input.WorkHoursTypeName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.WorkHoursId != null)
-                    hashCode = hashCode * 59 + this.WorkHoursId.GetHashCode();
-                if (this.IssueId != null)
-                    hashCode = hashCode * 59 + this.IssueId.GetHashCode();
-                if (this.UserName != null)
-                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.UserNickName != null)
-                    hashCode = hashCode * 59 + this.UserNickName.GetHashCode();
-                if (this.WorkDate != null)
-                    hashCode = hashCode * 59 + this.WorkDate.GetHashCode();
-                if (this.WorkHours != null)
-                    hashCode = hashCode * 59 + this.WorkHours.GetHashCode();
-                if (this.WorkHoursTypeName != null)
-                    hashCode = hashCode * 59 + this.WorkHoursTypeName.GetHashCode();
+                var hashCode = 41;
+                if (this.WorkHoursId != null) hashCode = hashCode * 59 + this.WorkHoursId.GetHashCode();
+                if (this.IssueId != null) hashCode = hashCode * 59 + this.IssueId.GetHashCode();
+                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.UserNickName != null) hashCode = hashCode * 59 + this.UserNickName.GetHashCode();
+                if (this.WorkDate != null) hashCode = hashCode * 59 + this.WorkDate.GetHashCode();
+                if (this.WorkHours != null) hashCode = hashCode * 59 + this.WorkHours.GetHashCode();
+                if (this.WorkHoursTypeName != null) hashCode = hashCode * 59 + this.WorkHoursTypeName.GetHashCode();
                 return hashCode;
             }
         }

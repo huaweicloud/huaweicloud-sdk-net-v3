@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         public bool Equals(GlanceListImagesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.First != input.First || (this.First != null && !this.First.Equals(input.First))) return false;
+            if (this.Images != input.Images || (this.Images != null && input.Images != null && !this.Images.SequenceEqual(input.Images))) return false;
+            if (this.Schema != input.Schema || (this.Schema != null && !this.Schema.Equals(input.Schema))) return false;
+            if (this.Next != input.Next || (this.Next != null && !this.Next.Equals(input.Next))) return false;
 
-            return 
-                (
-                    this.First == input.First ||
-                    (this.First != null &&
-                    this.First.Equals(input.First))
-                ) && 
-                (
-                    this.Images == input.Images ||
-                    this.Images != null &&
-                    input.Images != null &&
-                    this.Images.SequenceEqual(input.Images)
-                ) && 
-                (
-                    this.Schema == input.Schema ||
-                    (this.Schema != null &&
-                    this.Schema.Equals(input.Schema))
-                ) && 
-                (
-                    this.Next == input.Next ||
-                    (this.Next != null &&
-                    this.Next.Equals(input.Next))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.First != null)
-                    hashCode = hashCode * 59 + this.First.GetHashCode();
-                if (this.Images != null)
-                    hashCode = hashCode * 59 + this.Images.GetHashCode();
-                if (this.Schema != null)
-                    hashCode = hashCode * 59 + this.Schema.GetHashCode();
-                if (this.Next != null)
-                    hashCode = hashCode * 59 + this.Next.GetHashCode();
+                var hashCode = 41;
+                if (this.First != null) hashCode = hashCode * 59 + this.First.GetHashCode();
+                if (this.Images != null) hashCode = hashCode * 59 + this.Images.GetHashCode();
+                if (this.Schema != null) hashCode = hashCode * 59 + this.Schema.GetHashCode();
+                if (this.Next != null) hashCode = hashCode * 59 + this.Next.GetHashCode();
                 return hashCode;
             }
         }

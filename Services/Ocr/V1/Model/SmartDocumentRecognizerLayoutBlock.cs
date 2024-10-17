@@ -84,42 +84,15 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(SmartDocumentRecognizerLayoutBlock input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Location != input.Location || (this.Location != null && input.Location != null && !this.Location.SequenceEqual(input.Location))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Text != input.Text || (this.Text != null && !this.Text.Equals(input.Text))) return false;
+            if (this.WordsIds != input.WordsIds || (this.WordsIds != null && input.WordsIds != null && !this.WordsIds.SequenceEqual(input.WordsIds))) return false;
+            if (this.TableId != input.TableId || (this.TableId != null && !this.TableId.Equals(input.TableId))) return false;
+            if (this.FormId != input.FormId || (this.FormId != null && !this.FormId.Equals(input.FormId))) return false;
 
-            return 
-                (
-                    this.Location == input.Location ||
-                    this.Location != null &&
-                    input.Location != null &&
-                    this.Location.SequenceEqual(input.Location)
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Text == input.Text ||
-                    (this.Text != null &&
-                    this.Text.Equals(input.Text))
-                ) && 
-                (
-                    this.WordsIds == input.WordsIds ||
-                    this.WordsIds != null &&
-                    input.WordsIds != null &&
-                    this.WordsIds.SequenceEqual(input.WordsIds)
-                ) && 
-                (
-                    this.TableId == input.TableId ||
-                    (this.TableId != null &&
-                    this.TableId.Equals(input.TableId))
-                ) && 
-                (
-                    this.FormId == input.FormId ||
-                    (this.FormId != null &&
-                    this.FormId.Equals(input.FormId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -129,19 +102,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Location != null)
-                    hashCode = hashCode * 59 + this.Location.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Text != null)
-                    hashCode = hashCode * 59 + this.Text.GetHashCode();
-                if (this.WordsIds != null)
-                    hashCode = hashCode * 59 + this.WordsIds.GetHashCode();
-                if (this.TableId != null)
-                    hashCode = hashCode * 59 + this.TableId.GetHashCode();
-                if (this.FormId != null)
-                    hashCode = hashCode * 59 + this.FormId.GetHashCode();
+                var hashCode = 41;
+                if (this.Location != null) hashCode = hashCode * 59 + this.Location.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Text != null) hashCode = hashCode * 59 + this.Text.GetHashCode();
+                if (this.WordsIds != null) hashCode = hashCode * 59 + this.WordsIds.GetHashCode();
+                if (this.TableId != null) hashCode = hashCode * 59 + this.TableId.GetHashCode();
+                if (this.FormId != null) hashCode = hashCode * 59 + this.FormId.GetHashCode();
                 return hashCode;
             }
         }

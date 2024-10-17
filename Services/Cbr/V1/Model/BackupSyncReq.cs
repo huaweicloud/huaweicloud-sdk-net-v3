@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(BackupSyncReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Sync != input.Sync || (this.Sync != null && input.Sync != null && !this.Sync.SequenceEqual(input.Sync))) return false;
 
-            return 
-                (
-                    this.Sync == input.Sync ||
-                    this.Sync != null &&
-                    input.Sync != null &&
-                    this.Sync.SequenceEqual(input.Sync)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Sync != null)
-                    hashCode = hashCode * 59 + this.Sync.GetHashCode();
+                var hashCode = 41;
+                if (this.Sync != null) hashCode = hashCode * 59 + this.Sync.GetHashCode();
                 return hashCode;
             }
         }

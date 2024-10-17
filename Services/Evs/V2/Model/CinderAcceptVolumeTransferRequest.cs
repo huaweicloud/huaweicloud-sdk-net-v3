@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(CinderAcceptVolumeTransferRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TransferId != input.TransferId || (this.TransferId != null && !this.TransferId.Equals(input.TransferId))) return false;
+            if (this.Body != input.Body || (this.Body != null && !this.Body.Equals(input.Body))) return false;
 
-            return 
-                (
-                    this.TransferId == input.TransferId ||
-                    (this.TransferId != null &&
-                    this.TransferId.Equals(input.TransferId))
-                ) && 
-                (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TransferId != null)
-                    hashCode = hashCode * 59 + this.TransferId.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                var hashCode = 41;
+                if (this.TransferId != null) hashCode = hashCode * 59 + this.TransferId.GetHashCode();
+                if (this.Body != null) hashCode = hashCode * 59 + this.Body.GetHashCode();
                 return hashCode;
             }
         }

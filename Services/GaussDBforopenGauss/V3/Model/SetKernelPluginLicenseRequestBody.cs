@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(SetKernelPluginLicenseRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LicenseStr != input.LicenseStr || (this.LicenseStr != null && !this.LicenseStr.Equals(input.LicenseStr))) return false;
 
-            return 
-                (
-                    this.LicenseStr == input.LicenseStr ||
-                    (this.LicenseStr != null &&
-                    this.LicenseStr.Equals(input.LicenseStr))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LicenseStr != null)
-                    hashCode = hashCode * 59 + this.LicenseStr.GetHashCode();
+                var hashCode = 41;
+                if (this.LicenseStr != null) hashCode = hashCode * 59 + this.LicenseStr.GetHashCode();
                 return hashCode;
             }
         }

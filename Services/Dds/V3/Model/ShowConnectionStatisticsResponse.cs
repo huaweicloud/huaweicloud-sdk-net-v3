@@ -77,37 +77,14 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(ShowConnectionStatisticsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TotalConnections != input.TotalConnections || (this.TotalConnections != null && !this.TotalConnections.Equals(input.TotalConnections))) return false;
+            if (this.TotalInnerConnections != input.TotalInnerConnections || (this.TotalInnerConnections != null && !this.TotalInnerConnections.Equals(input.TotalInnerConnections))) return false;
+            if (this.TotalOuterConnections != input.TotalOuterConnections || (this.TotalOuterConnections != null && !this.TotalOuterConnections.Equals(input.TotalOuterConnections))) return false;
+            if (this.InnerConnections != input.InnerConnections || (this.InnerConnections != null && input.InnerConnections != null && !this.InnerConnections.SequenceEqual(input.InnerConnections))) return false;
+            if (this.OuterConnections != input.OuterConnections || (this.OuterConnections != null && input.OuterConnections != null && !this.OuterConnections.SequenceEqual(input.OuterConnections))) return false;
 
-            return 
-                (
-                    this.TotalConnections == input.TotalConnections ||
-                    (this.TotalConnections != null &&
-                    this.TotalConnections.Equals(input.TotalConnections))
-                ) && 
-                (
-                    this.TotalInnerConnections == input.TotalInnerConnections ||
-                    (this.TotalInnerConnections != null &&
-                    this.TotalInnerConnections.Equals(input.TotalInnerConnections))
-                ) && 
-                (
-                    this.TotalOuterConnections == input.TotalOuterConnections ||
-                    (this.TotalOuterConnections != null &&
-                    this.TotalOuterConnections.Equals(input.TotalOuterConnections))
-                ) && 
-                (
-                    this.InnerConnections == input.InnerConnections ||
-                    this.InnerConnections != null &&
-                    input.InnerConnections != null &&
-                    this.InnerConnections.SequenceEqual(input.InnerConnections)
-                ) && 
-                (
-                    this.OuterConnections == input.OuterConnections ||
-                    this.OuterConnections != null &&
-                    input.OuterConnections != null &&
-                    this.OuterConnections.SequenceEqual(input.OuterConnections)
-                );
+            return true;
         }
 
         /// <summary>
@@ -117,17 +94,12 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TotalConnections != null)
-                    hashCode = hashCode * 59 + this.TotalConnections.GetHashCode();
-                if (this.TotalInnerConnections != null)
-                    hashCode = hashCode * 59 + this.TotalInnerConnections.GetHashCode();
-                if (this.TotalOuterConnections != null)
-                    hashCode = hashCode * 59 + this.TotalOuterConnections.GetHashCode();
-                if (this.InnerConnections != null)
-                    hashCode = hashCode * 59 + this.InnerConnections.GetHashCode();
-                if (this.OuterConnections != null)
-                    hashCode = hashCode * 59 + this.OuterConnections.GetHashCode();
+                var hashCode = 41;
+                if (this.TotalConnections != null) hashCode = hashCode * 59 + this.TotalConnections.GetHashCode();
+                if (this.TotalInnerConnections != null) hashCode = hashCode * 59 + this.TotalInnerConnections.GetHashCode();
+                if (this.TotalOuterConnections != null) hashCode = hashCode * 59 + this.TotalOuterConnections.GetHashCode();
+                if (this.InnerConnections != null) hashCode = hashCode * 59 + this.InnerConnections.GetHashCode();
+                if (this.OuterConnections != null) hashCode = hashCode * 59 + this.OuterConnections.GetHashCode();
                 return hashCode;
             }
         }

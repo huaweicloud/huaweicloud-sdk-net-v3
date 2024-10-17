@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(DeleteScalingConfigRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ScalingConfigurationId != input.ScalingConfigurationId || (this.ScalingConfigurationId != null && !this.ScalingConfigurationId.Equals(input.ScalingConfigurationId))) return false;
 
-            return 
-                (
-                    this.ScalingConfigurationId == input.ScalingConfigurationId ||
-                    (this.ScalingConfigurationId != null &&
-                    this.ScalingConfigurationId.Equals(input.ScalingConfigurationId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ScalingConfigurationId != null)
-                    hashCode = hashCode * 59 + this.ScalingConfigurationId.GetHashCode();
+                var hashCode = 41;
+                if (this.ScalingConfigurationId != null) hashCode = hashCode * 59 + this.ScalingConfigurationId.GetHashCode();
                 return hashCode;
             }
         }

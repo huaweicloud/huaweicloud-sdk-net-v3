@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(Links input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Self != input.Self || (this.Self != null && !this.Self.Equals(input.Self))) return false;
+            if (this.Previous != input.Previous || (this.Previous != null && !this.Previous.Equals(input.Previous))) return false;
+            if (this.Next != input.Next || (this.Next != null && !this.Next.Equals(input.Next))) return false;
 
-            return 
-                (
-                    this.Self == input.Self ||
-                    (this.Self != null &&
-                    this.Self.Equals(input.Self))
-                ) && 
-                (
-                    this.Previous == input.Previous ||
-                    (this.Previous != null &&
-                    this.Previous.Equals(input.Previous))
-                ) && 
-                (
-                    this.Next == input.Next ||
-                    (this.Next != null &&
-                    this.Next.Equals(input.Next))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Self != null)
-                    hashCode = hashCode * 59 + this.Self.GetHashCode();
-                if (this.Previous != null)
-                    hashCode = hashCode * 59 + this.Previous.GetHashCode();
-                if (this.Next != null)
-                    hashCode = hashCode * 59 + this.Next.GetHashCode();
+                var hashCode = 41;
+                if (this.Self != null) hashCode = hashCode * 59 + this.Self.GetHashCode();
+                if (this.Previous != null) hashCode = hashCode * 59 + this.Previous.GetHashCode();
+                if (this.Next != null) hashCode = hashCode * 59 + this.Next.GetHashCode();
                 return hashCode;
             }
         }

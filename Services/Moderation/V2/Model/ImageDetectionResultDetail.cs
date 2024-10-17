@@ -70,34 +70,13 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         /// </summary>
         public bool Equals(ImageDetectionResultDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Politics != input.Politics || (this.Politics != null && input.Politics != null && !this.Politics.SequenceEqual(input.Politics))) return false;
+            if (this.Porn != input.Porn || (this.Porn != null && input.Porn != null && !this.Porn.SequenceEqual(input.Porn))) return false;
+            if (this.Terrorism != input.Terrorism || (this.Terrorism != null && input.Terrorism != null && !this.Terrorism.SequenceEqual(input.Terrorism))) return false;
+            if (this.Ad != input.Ad || (this.Ad != null && input.Ad != null && !this.Ad.SequenceEqual(input.Ad))) return false;
 
-            return 
-                (
-                    this.Politics == input.Politics ||
-                    this.Politics != null &&
-                    input.Politics != null &&
-                    this.Politics.SequenceEqual(input.Politics)
-                ) && 
-                (
-                    this.Porn == input.Porn ||
-                    this.Porn != null &&
-                    input.Porn != null &&
-                    this.Porn.SequenceEqual(input.Porn)
-                ) && 
-                (
-                    this.Terrorism == input.Terrorism ||
-                    this.Terrorism != null &&
-                    input.Terrorism != null &&
-                    this.Terrorism.SequenceEqual(input.Terrorism)
-                ) && 
-                (
-                    this.Ad == input.Ad ||
-                    this.Ad != null &&
-                    input.Ad != null &&
-                    this.Ad.SequenceEqual(input.Ad)
-                );
+            return true;
         }
 
         /// <summary>
@@ -107,15 +86,11 @@ namespace HuaweiCloud.SDK.Moderation.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Politics != null)
-                    hashCode = hashCode * 59 + this.Politics.GetHashCode();
-                if (this.Porn != null)
-                    hashCode = hashCode * 59 + this.Porn.GetHashCode();
-                if (this.Terrorism != null)
-                    hashCode = hashCode * 59 + this.Terrorism.GetHashCode();
-                if (this.Ad != null)
-                    hashCode = hashCode * 59 + this.Ad.GetHashCode();
+                var hashCode = 41;
+                if (this.Politics != null) hashCode = hashCode * 59 + this.Politics.GetHashCode();
+                if (this.Porn != null) hashCode = hashCode * 59 + this.Porn.GetHashCode();
+                if (this.Terrorism != null) hashCode = hashCode * 59 + this.Terrorism.GetHashCode();
+                if (this.Ad != null) hashCode = hashCode * 59 + this.Ad.GetHashCode();
                 return hashCode;
             }
         }

@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(RequestUrlRewrite input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Condition != input.Condition || (this.Condition != null && !this.Condition.Equals(input.Condition))) return false;
+            if (this.RedirectStatusCode != input.RedirectStatusCode || (this.RedirectStatusCode != null && !this.RedirectStatusCode.Equals(input.RedirectStatusCode))) return false;
+            if (this.RedirectUrl != input.RedirectUrl || (this.RedirectUrl != null && !this.RedirectUrl.Equals(input.RedirectUrl))) return false;
+            if (this.RedirectHost != input.RedirectHost || (this.RedirectHost != null && !this.RedirectHost.Equals(input.RedirectHost))) return false;
+            if (this.ExecutionMode != input.ExecutionMode || (this.ExecutionMode != null && !this.ExecutionMode.Equals(input.ExecutionMode))) return false;
 
-            return 
-                (
-                    this.Condition == input.Condition ||
-                    (this.Condition != null &&
-                    this.Condition.Equals(input.Condition))
-                ) && 
-                (
-                    this.RedirectStatusCode == input.RedirectStatusCode ||
-                    (this.RedirectStatusCode != null &&
-                    this.RedirectStatusCode.Equals(input.RedirectStatusCode))
-                ) && 
-                (
-                    this.RedirectUrl == input.RedirectUrl ||
-                    (this.RedirectUrl != null &&
-                    this.RedirectUrl.Equals(input.RedirectUrl))
-                ) && 
-                (
-                    this.RedirectHost == input.RedirectHost ||
-                    (this.RedirectHost != null &&
-                    this.RedirectHost.Equals(input.RedirectHost))
-                ) && 
-                (
-                    this.ExecutionMode == input.ExecutionMode ||
-                    (this.ExecutionMode != null &&
-                    this.ExecutionMode.Equals(input.ExecutionMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Condition != null)
-                    hashCode = hashCode * 59 + this.Condition.GetHashCode();
-                if (this.RedirectStatusCode != null)
-                    hashCode = hashCode * 59 + this.RedirectStatusCode.GetHashCode();
-                if (this.RedirectUrl != null)
-                    hashCode = hashCode * 59 + this.RedirectUrl.GetHashCode();
-                if (this.RedirectHost != null)
-                    hashCode = hashCode * 59 + this.RedirectHost.GetHashCode();
-                if (this.ExecutionMode != null)
-                    hashCode = hashCode * 59 + this.ExecutionMode.GetHashCode();
+                var hashCode = 41;
+                if (this.Condition != null) hashCode = hashCode * 59 + this.Condition.GetHashCode();
+                if (this.RedirectStatusCode != null) hashCode = hashCode * 59 + this.RedirectStatusCode.GetHashCode();
+                if (this.RedirectUrl != null) hashCode = hashCode * 59 + this.RedirectUrl.GetHashCode();
+                if (this.RedirectHost != null) hashCode = hashCode * 59 + this.RedirectHost.GetHashCode();
+                if (this.ExecutionMode != null) hashCode = hashCode * 59 + this.ExecutionMode.GetHashCode();
                 return hashCode;
             }
         }

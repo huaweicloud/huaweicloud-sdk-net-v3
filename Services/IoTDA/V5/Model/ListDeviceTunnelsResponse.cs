@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ListDeviceTunnelsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Tunnels != input.Tunnels || (this.Tunnels != null && input.Tunnels != null && !this.Tunnels.SequenceEqual(input.Tunnels))) return false;
 
-            return 
-                (
-                    this.Tunnels == input.Tunnels ||
-                    this.Tunnels != null &&
-                    input.Tunnels != null &&
-                    this.Tunnels.SequenceEqual(input.Tunnels)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Tunnels != null)
-                    hashCode = hashCode * 59 + this.Tunnels.GetHashCode();
+                var hashCode = 41;
+                if (this.Tunnels != null) hashCode = hashCode * 59 + this.Tunnels.GetHashCode();
                 return hashCode;
             }
         }

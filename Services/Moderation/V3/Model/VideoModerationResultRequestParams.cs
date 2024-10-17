@@ -77,37 +77,14 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         /// </summary>
         public bool Equals(VideoModerationResultRequestParams input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Data != input.Data || (this.Data != null && !this.Data.Equals(input.Data))) return false;
+            if (this.EventType != input.EventType || (this.EventType != null && !this.EventType.Equals(input.EventType))) return false;
+            if (this.ImageCategories != input.ImageCategories || (this.ImageCategories != null && input.ImageCategories != null && !this.ImageCategories.SequenceEqual(input.ImageCategories))) return false;
+            if (this.AudioCategories != input.AudioCategories || (this.AudioCategories != null && input.AudioCategories != null && !this.AudioCategories.SequenceEqual(input.AudioCategories))) return false;
+            if (this.Callback != input.Callback || (this.Callback != null && !this.Callback.Equals(input.Callback))) return false;
 
-            return 
-                (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
-                ) && 
-                (
-                    this.EventType == input.EventType ||
-                    (this.EventType != null &&
-                    this.EventType.Equals(input.EventType))
-                ) && 
-                (
-                    this.ImageCategories == input.ImageCategories ||
-                    this.ImageCategories != null &&
-                    input.ImageCategories != null &&
-                    this.ImageCategories.SequenceEqual(input.ImageCategories)
-                ) && 
-                (
-                    this.AudioCategories == input.AudioCategories ||
-                    this.AudioCategories != null &&
-                    input.AudioCategories != null &&
-                    this.AudioCategories.SequenceEqual(input.AudioCategories)
-                ) && 
-                (
-                    this.Callback == input.Callback ||
-                    (this.Callback != null &&
-                    this.Callback.Equals(input.Callback))
-                );
+            return true;
         }
 
         /// <summary>
@@ -117,17 +94,12 @@ namespace HuaweiCloud.SDK.Moderation.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Data != null)
-                    hashCode = hashCode * 59 + this.Data.GetHashCode();
-                if (this.EventType != null)
-                    hashCode = hashCode * 59 + this.EventType.GetHashCode();
-                if (this.ImageCategories != null)
-                    hashCode = hashCode * 59 + this.ImageCategories.GetHashCode();
-                if (this.AudioCategories != null)
-                    hashCode = hashCode * 59 + this.AudioCategories.GetHashCode();
-                if (this.Callback != null)
-                    hashCode = hashCode * 59 + this.Callback.GetHashCode();
+                var hashCode = 41;
+                if (this.Data != null) hashCode = hashCode * 59 + this.Data.GetHashCode();
+                if (this.EventType != null) hashCode = hashCode * 59 + this.EventType.GetHashCode();
+                if (this.ImageCategories != null) hashCode = hashCode * 59 + this.ImageCategories.GetHashCode();
+                if (this.AudioCategories != null) hashCode = hashCode * 59 + this.AudioCategories.GetHashCode();
+                if (this.Callback != null) hashCode = hashCode * 59 + this.Callback.GetHashCode();
                 return hashCode;
             }
         }

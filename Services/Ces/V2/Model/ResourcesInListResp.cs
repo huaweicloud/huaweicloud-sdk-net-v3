@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         /// </summary>
         public bool Equals(ResourcesInListResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResourceGroupId != input.ResourceGroupId || (this.ResourceGroupId != null && !this.ResourceGroupId.Equals(input.ResourceGroupId))) return false;
+            if (this.ResourceGroupName != input.ResourceGroupName || (this.ResourceGroupName != null && !this.ResourceGroupName.Equals(input.ResourceGroupName))) return false;
+            if (this.Dimensions != input.Dimensions || (this.Dimensions != null && input.Dimensions != null && !this.Dimensions.SequenceEqual(input.Dimensions))) return false;
 
-            return 
-                (
-                    this.ResourceGroupId == input.ResourceGroupId ||
-                    (this.ResourceGroupId != null &&
-                    this.ResourceGroupId.Equals(input.ResourceGroupId))
-                ) && 
-                (
-                    this.ResourceGroupName == input.ResourceGroupName ||
-                    (this.ResourceGroupName != null &&
-                    this.ResourceGroupName.Equals(input.ResourceGroupName))
-                ) && 
-                (
-                    this.Dimensions == input.Dimensions ||
-                    this.Dimensions != null &&
-                    input.Dimensions != null &&
-                    this.Dimensions.SequenceEqual(input.Dimensions)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Ces.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResourceGroupId != null)
-                    hashCode = hashCode * 59 + this.ResourceGroupId.GetHashCode();
-                if (this.ResourceGroupName != null)
-                    hashCode = hashCode * 59 + this.ResourceGroupName.GetHashCode();
-                if (this.Dimensions != null)
-                    hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
+                var hashCode = 41;
+                if (this.ResourceGroupId != null) hashCode = hashCode * 59 + this.ResourceGroupId.GetHashCode();
+                if (this.ResourceGroupName != null) hashCode = hashCode * 59 + this.ResourceGroupName.GetHashCode();
+                if (this.Dimensions != null) hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
                 return hashCode;
             }
         }

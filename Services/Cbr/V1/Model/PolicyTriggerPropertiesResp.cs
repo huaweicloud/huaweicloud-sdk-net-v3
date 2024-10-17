@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(PolicyTriggerPropertiesResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Pattern != input.Pattern || (this.Pattern != null && input.Pattern != null && !this.Pattern.SequenceEqual(input.Pattern))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
 
-            return 
-                (
-                    this.Pattern == input.Pattern ||
-                    this.Pattern != null &&
-                    input.Pattern != null &&
-                    this.Pattern.SequenceEqual(input.Pattern)
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Pattern != null)
-                    hashCode = hashCode * 59 + this.Pattern.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                var hashCode = 41;
+                if (this.Pattern != null) hashCode = hashCode * 59 + this.Pattern.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
                 return hashCode;
             }
         }

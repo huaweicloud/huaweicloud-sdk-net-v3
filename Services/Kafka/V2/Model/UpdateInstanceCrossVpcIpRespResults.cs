@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(UpdateInstanceCrossVpcIpRespResults input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AdvertisedIp != input.AdvertisedIp || (this.AdvertisedIp != null && !this.AdvertisedIp.Equals(input.AdvertisedIp))) return false;
+            if (this.Success != input.Success || (this.Success != null && !this.Success.Equals(input.Success))) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
 
-            return 
-                (
-                    this.AdvertisedIp == input.AdvertisedIp ||
-                    (this.AdvertisedIp != null &&
-                    this.AdvertisedIp.Equals(input.AdvertisedIp))
-                ) && 
-                (
-                    this.Success == input.Success ||
-                    (this.Success != null &&
-                    this.Success.Equals(input.Success))
-                ) && 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AdvertisedIp != null)
-                    hashCode = hashCode * 59 + this.AdvertisedIp.GetHashCode();
-                if (this.Success != null)
-                    hashCode = hashCode * 59 + this.Success.GetHashCode();
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                var hashCode = 41;
+                if (this.AdvertisedIp != null) hashCode = hashCode * 59 + this.AdvertisedIp.GetHashCode();
+                if (this.Success != null) hashCode = hashCode * 59 + this.Success.GetHashCode();
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
                 return hashCode;
             }
         }

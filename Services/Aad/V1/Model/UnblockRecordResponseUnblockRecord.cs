@@ -332,50 +332,17 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         /// </summary>
         public bool Equals(UnblockRecordResponseUnblockRecord input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
+            if (this.Executor != input.Executor || (this.Executor != null && !this.Executor.Equals(input.Executor))) return false;
+            if (this.BlockId != input.BlockId || (this.BlockId != null && !this.BlockId.Equals(input.BlockId))) return false;
+            if (this.BlockingTime != input.BlockingTime || (this.BlockingTime != null && !this.BlockingTime.Equals(input.BlockingTime))) return false;
+            if (this.UnblockingTime != input.UnblockingTime || (this.UnblockingTime != null && !this.UnblockingTime.Equals(input.UnblockingTime))) return false;
+            if (this.UnblockType != input.UnblockType) return false;
+            if (this.Status != input.Status) return false;
+            if (this.SortTime != input.SortTime || (this.SortTime != null && !this.SortTime.Equals(input.SortTime))) return false;
 
-            return 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                ) && 
-                (
-                    this.Executor == input.Executor ||
-                    (this.Executor != null &&
-                    this.Executor.Equals(input.Executor))
-                ) && 
-                (
-                    this.BlockId == input.BlockId ||
-                    (this.BlockId != null &&
-                    this.BlockId.Equals(input.BlockId))
-                ) && 
-                (
-                    this.BlockingTime == input.BlockingTime ||
-                    (this.BlockingTime != null &&
-                    this.BlockingTime.Equals(input.BlockingTime))
-                ) && 
-                (
-                    this.UnblockingTime == input.UnblockingTime ||
-                    (this.UnblockingTime != null &&
-                    this.UnblockingTime.Equals(input.UnblockingTime))
-                ) && 
-                (
-                    this.UnblockType == input.UnblockType ||
-                    (this.UnblockType != null &&
-                    this.UnblockType.Equals(input.UnblockType))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.SortTime == input.SortTime ||
-                    (this.SortTime != null &&
-                    this.SortTime.Equals(input.SortTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -385,23 +352,15 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.Executor != null)
-                    hashCode = hashCode * 59 + this.Executor.GetHashCode();
-                if (this.BlockId != null)
-                    hashCode = hashCode * 59 + this.BlockId.GetHashCode();
-                if (this.BlockingTime != null)
-                    hashCode = hashCode * 59 + this.BlockingTime.GetHashCode();
-                if (this.UnblockingTime != null)
-                    hashCode = hashCode * 59 + this.UnblockingTime.GetHashCode();
-                if (this.UnblockType != null)
-                    hashCode = hashCode * 59 + this.UnblockType.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.SortTime != null)
-                    hashCode = hashCode * 59 + this.SortTime.GetHashCode();
+                var hashCode = 41;
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.Executor != null) hashCode = hashCode * 59 + this.Executor.GetHashCode();
+                if (this.BlockId != null) hashCode = hashCode * 59 + this.BlockId.GetHashCode();
+                if (this.BlockingTime != null) hashCode = hashCode * 59 + this.BlockingTime.GetHashCode();
+                if (this.UnblockingTime != null) hashCode = hashCode * 59 + this.UnblockingTime.GetHashCode();
+                hashCode = hashCode * 59 + this.UnblockType.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.SortTime != null) hashCode = hashCode * 59 + this.SortTime.GetHashCode();
                 return hashCode;
             }
         }

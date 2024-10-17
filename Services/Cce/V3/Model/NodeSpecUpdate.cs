@@ -91,49 +91,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(NodeSpecUpdate input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Taints != input.Taints || (this.Taints != null && input.Taints != null && !this.Taints.SequenceEqual(input.Taints))) return false;
+            if (this.K8sTags != input.K8sTags || (this.K8sTags != null && input.K8sTags != null && !this.K8sTags.SequenceEqual(input.K8sTags))) return false;
+            if (this.UserTags != input.UserTags || (this.UserTags != null && input.UserTags != null && !this.UserTags.SequenceEqual(input.UserTags))) return false;
+            if (this.InitializedConditions != input.InitializedConditions || (this.InitializedConditions != null && input.InitializedConditions != null && !this.InitializedConditions.SequenceEqual(input.InitializedConditions))) return false;
+            if (this.Login != input.Login || (this.Login != null && !this.Login.Equals(input.Login))) return false;
+            if (this.ServerEnterpriseProjectID != input.ServerEnterpriseProjectID || (this.ServerEnterpriseProjectID != null && !this.ServerEnterpriseProjectID.Equals(input.ServerEnterpriseProjectID))) return false;
+            if (this.NodeNicSpecUpdate != input.NodeNicSpecUpdate || (this.NodeNicSpecUpdate != null && !this.NodeNicSpecUpdate.Equals(input.NodeNicSpecUpdate))) return false;
 
-            return 
-                (
-                    this.Taints == input.Taints ||
-                    this.Taints != null &&
-                    input.Taints != null &&
-                    this.Taints.SequenceEqual(input.Taints)
-                ) && 
-                (
-                    this.K8sTags == input.K8sTags ||
-                    this.K8sTags != null &&
-                    input.K8sTags != null &&
-                    this.K8sTags.SequenceEqual(input.K8sTags)
-                ) && 
-                (
-                    this.UserTags == input.UserTags ||
-                    this.UserTags != null &&
-                    input.UserTags != null &&
-                    this.UserTags.SequenceEqual(input.UserTags)
-                ) && 
-                (
-                    this.InitializedConditions == input.InitializedConditions ||
-                    this.InitializedConditions != null &&
-                    input.InitializedConditions != null &&
-                    this.InitializedConditions.SequenceEqual(input.InitializedConditions)
-                ) && 
-                (
-                    this.Login == input.Login ||
-                    (this.Login != null &&
-                    this.Login.Equals(input.Login))
-                ) && 
-                (
-                    this.ServerEnterpriseProjectID == input.ServerEnterpriseProjectID ||
-                    (this.ServerEnterpriseProjectID != null &&
-                    this.ServerEnterpriseProjectID.Equals(input.ServerEnterpriseProjectID))
-                ) && 
-                (
-                    this.NodeNicSpecUpdate == input.NodeNicSpecUpdate ||
-                    (this.NodeNicSpecUpdate != null &&
-                    this.NodeNicSpecUpdate.Equals(input.NodeNicSpecUpdate))
-                );
+            return true;
         }
 
         /// <summary>
@@ -143,21 +110,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Taints != null)
-                    hashCode = hashCode * 59 + this.Taints.GetHashCode();
-                if (this.K8sTags != null)
-                    hashCode = hashCode * 59 + this.K8sTags.GetHashCode();
-                if (this.UserTags != null)
-                    hashCode = hashCode * 59 + this.UserTags.GetHashCode();
-                if (this.InitializedConditions != null)
-                    hashCode = hashCode * 59 + this.InitializedConditions.GetHashCode();
-                if (this.Login != null)
-                    hashCode = hashCode * 59 + this.Login.GetHashCode();
-                if (this.ServerEnterpriseProjectID != null)
-                    hashCode = hashCode * 59 + this.ServerEnterpriseProjectID.GetHashCode();
-                if (this.NodeNicSpecUpdate != null)
-                    hashCode = hashCode * 59 + this.NodeNicSpecUpdate.GetHashCode();
+                var hashCode = 41;
+                if (this.Taints != null) hashCode = hashCode * 59 + this.Taints.GetHashCode();
+                if (this.K8sTags != null) hashCode = hashCode * 59 + this.K8sTags.GetHashCode();
+                if (this.UserTags != null) hashCode = hashCode * 59 + this.UserTags.GetHashCode();
+                if (this.InitializedConditions != null) hashCode = hashCode * 59 + this.InitializedConditions.GetHashCode();
+                if (this.Login != null) hashCode = hashCode * 59 + this.Login.GetHashCode();
+                if (this.ServerEnterpriseProjectID != null) hashCode = hashCode * 59 + this.ServerEnterpriseProjectID.GetHashCode();
+                if (this.NodeNicSpecUpdate != null) hashCode = hashCode * 59 + this.NodeNicSpecUpdate.GetHashCode();
                 return hashCode;
             }
         }

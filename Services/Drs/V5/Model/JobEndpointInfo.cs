@@ -477,55 +477,18 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(JobEndpointInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DbType != input.DbType) return false;
+            if (this.EndpointType != input.EndpointType) return false;
+            if (this.EndpointRole != input.EndpointRole) return false;
+            if (this.Endpoint != input.Endpoint || (this.Endpoint != null && !this.Endpoint.Equals(input.Endpoint))) return false;
+            if (this.Cloud != input.Cloud || (this.Cloud != null && !this.Cloud.Equals(input.Cloud))) return false;
+            if (this.Vpc != input.Vpc || (this.Vpc != null && !this.Vpc.Equals(input.Vpc))) return false;
+            if (this.Config != input.Config || (this.Config != null && !this.Config.Equals(input.Config))) return false;
+            if (this.Ssl != input.Ssl || (this.Ssl != null && !this.Ssl.Equals(input.Ssl))) return false;
+            if (this.CustomizedDns != input.CustomizedDns || (this.CustomizedDns != null && !this.CustomizedDns.Equals(input.CustomizedDns))) return false;
 
-            return 
-                (
-                    this.DbType == input.DbType ||
-                    (this.DbType != null &&
-                    this.DbType.Equals(input.DbType))
-                ) && 
-                (
-                    this.EndpointType == input.EndpointType ||
-                    (this.EndpointType != null &&
-                    this.EndpointType.Equals(input.EndpointType))
-                ) && 
-                (
-                    this.EndpointRole == input.EndpointRole ||
-                    (this.EndpointRole != null &&
-                    this.EndpointRole.Equals(input.EndpointRole))
-                ) && 
-                (
-                    this.Endpoint == input.Endpoint ||
-                    (this.Endpoint != null &&
-                    this.Endpoint.Equals(input.Endpoint))
-                ) && 
-                (
-                    this.Cloud == input.Cloud ||
-                    (this.Cloud != null &&
-                    this.Cloud.Equals(input.Cloud))
-                ) && 
-                (
-                    this.Vpc == input.Vpc ||
-                    (this.Vpc != null &&
-                    this.Vpc.Equals(input.Vpc))
-                ) && 
-                (
-                    this.Config == input.Config ||
-                    (this.Config != null &&
-                    this.Config.Equals(input.Config))
-                ) && 
-                (
-                    this.Ssl == input.Ssl ||
-                    (this.Ssl != null &&
-                    this.Ssl.Equals(input.Ssl))
-                ) && 
-                (
-                    this.CustomizedDns == input.CustomizedDns ||
-                    (this.CustomizedDns != null &&
-                    this.CustomizedDns.Equals(input.CustomizedDns))
-                );
+            return true;
         }
 
         /// <summary>
@@ -535,25 +498,16 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DbType != null)
-                    hashCode = hashCode * 59 + this.DbType.GetHashCode();
-                if (this.EndpointType != null)
-                    hashCode = hashCode * 59 + this.EndpointType.GetHashCode();
-                if (this.EndpointRole != null)
-                    hashCode = hashCode * 59 + this.EndpointRole.GetHashCode();
-                if (this.Endpoint != null)
-                    hashCode = hashCode * 59 + this.Endpoint.GetHashCode();
-                if (this.Cloud != null)
-                    hashCode = hashCode * 59 + this.Cloud.GetHashCode();
-                if (this.Vpc != null)
-                    hashCode = hashCode * 59 + this.Vpc.GetHashCode();
-                if (this.Config != null)
-                    hashCode = hashCode * 59 + this.Config.GetHashCode();
-                if (this.Ssl != null)
-                    hashCode = hashCode * 59 + this.Ssl.GetHashCode();
-                if (this.CustomizedDns != null)
-                    hashCode = hashCode * 59 + this.CustomizedDns.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.DbType.GetHashCode();
+                hashCode = hashCode * 59 + this.EndpointType.GetHashCode();
+                hashCode = hashCode * 59 + this.EndpointRole.GetHashCode();
+                if (this.Endpoint != null) hashCode = hashCode * 59 + this.Endpoint.GetHashCode();
+                if (this.Cloud != null) hashCode = hashCode * 59 + this.Cloud.GetHashCode();
+                if (this.Vpc != null) hashCode = hashCode * 59 + this.Vpc.GetHashCode();
+                if (this.Config != null) hashCode = hashCode * 59 + this.Config.GetHashCode();
+                if (this.Ssl != null) hashCode = hashCode * 59 + this.Ssl.GetHashCode();
+                if (this.CustomizedDns != null) hashCode = hashCode * 59 + this.CustomizedDns.GetHashCode();
                 return hashCode;
             }
         }

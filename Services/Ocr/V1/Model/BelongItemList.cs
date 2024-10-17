@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(BelongItemList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.ItemNumber != input.ItemNumber || (this.ItemNumber != null && !this.ItemNumber.Equals(input.ItemNumber))) return false;
+            if (this.Specification != input.Specification || (this.Specification != null && !this.Specification.Equals(input.Specification))) return false;
+            if (this.Unit != input.Unit || (this.Unit != null && !this.Unit.Equals(input.Unit))) return false;
+            if (this.Quantity != input.Quantity || (this.Quantity != null && !this.Quantity.Equals(input.Quantity))) return false;
+            if (this.UnitPrice != input.UnitPrice || (this.UnitPrice != null && !this.UnitPrice.Equals(input.UnitPrice))) return false;
+            if (this.Amount != input.Amount || (this.Amount != null && !this.Amount.Equals(input.Amount))) return false;
+            if (this.TaxRate != input.TaxRate || (this.TaxRate != null && !this.TaxRate.Equals(input.TaxRate))) return false;
+            if (this.Tax != input.Tax || (this.Tax != null && !this.Tax.Equals(input.Tax))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ItemNumber == input.ItemNumber ||
-                    (this.ItemNumber != null &&
-                    this.ItemNumber.Equals(input.ItemNumber))
-                ) && 
-                (
-                    this.Specification == input.Specification ||
-                    (this.Specification != null &&
-                    this.Specification.Equals(input.Specification))
-                ) && 
-                (
-                    this.Unit == input.Unit ||
-                    (this.Unit != null &&
-                    this.Unit.Equals(input.Unit))
-                ) && 
-                (
-                    this.Quantity == input.Quantity ||
-                    (this.Quantity != null &&
-                    this.Quantity.Equals(input.Quantity))
-                ) && 
-                (
-                    this.UnitPrice == input.UnitPrice ||
-                    (this.UnitPrice != null &&
-                    this.UnitPrice.Equals(input.UnitPrice))
-                ) && 
-                (
-                    this.Amount == input.Amount ||
-                    (this.Amount != null &&
-                    this.Amount.Equals(input.Amount))
-                ) && 
-                (
-                    this.TaxRate == input.TaxRate ||
-                    (this.TaxRate != null &&
-                    this.TaxRate.Equals(input.TaxRate))
-                ) && 
-                (
-                    this.Tax == input.Tax ||
-                    (this.Tax != null &&
-                    this.Tax.Equals(input.Tax))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.ItemNumber != null)
-                    hashCode = hashCode * 59 + this.ItemNumber.GetHashCode();
-                if (this.Specification != null)
-                    hashCode = hashCode * 59 + this.Specification.GetHashCode();
-                if (this.Unit != null)
-                    hashCode = hashCode * 59 + this.Unit.GetHashCode();
-                if (this.Quantity != null)
-                    hashCode = hashCode * 59 + this.Quantity.GetHashCode();
-                if (this.UnitPrice != null)
-                    hashCode = hashCode * 59 + this.UnitPrice.GetHashCode();
-                if (this.Amount != null)
-                    hashCode = hashCode * 59 + this.Amount.GetHashCode();
-                if (this.TaxRate != null)
-                    hashCode = hashCode * 59 + this.TaxRate.GetHashCode();
-                if (this.Tax != null)
-                    hashCode = hashCode * 59 + this.Tax.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.ItemNumber != null) hashCode = hashCode * 59 + this.ItemNumber.GetHashCode();
+                if (this.Specification != null) hashCode = hashCode * 59 + this.Specification.GetHashCode();
+                if (this.Unit != null) hashCode = hashCode * 59 + this.Unit.GetHashCode();
+                if (this.Quantity != null) hashCode = hashCode * 59 + this.Quantity.GetHashCode();
+                if (this.UnitPrice != null) hashCode = hashCode * 59 + this.UnitPrice.GetHashCode();
+                if (this.Amount != null) hashCode = hashCode * 59 + this.Amount.GetHashCode();
+                if (this.TaxRate != null) hashCode = hashCode * 59 + this.TaxRate.GetHashCode();
+                if (this.Tax != null) hashCode = hashCode * 59 + this.Tax.GetHashCode();
                 return hashCode;
             }
         }

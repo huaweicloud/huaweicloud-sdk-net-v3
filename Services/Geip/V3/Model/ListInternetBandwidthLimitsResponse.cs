@@ -64,26 +64,12 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         /// </summary>
         public bool Equals(ListInternetBandwidthLimitsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RequestId != input.RequestId || (this.RequestId != null && !this.RequestId.Equals(input.RequestId))) return false;
+            if (this.InternetBandwidthLimits != input.InternetBandwidthLimits || (this.InternetBandwidthLimits != null && input.InternetBandwidthLimits != null && !this.InternetBandwidthLimits.SequenceEqual(input.InternetBandwidthLimits))) return false;
+            if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
-            return 
-                (
-                    this.RequestId == input.RequestId ||
-                    (this.RequestId != null &&
-                    this.RequestId.Equals(input.RequestId))
-                ) && 
-                (
-                    this.InternetBandwidthLimits == input.InternetBandwidthLimits ||
-                    this.InternetBandwidthLimits != null &&
-                    input.InternetBandwidthLimits != null &&
-                    this.InternetBandwidthLimits.SequenceEqual(input.InternetBandwidthLimits)
-                ) && 
-                (
-                    this.XRequestId == input.XRequestId ||
-                    (this.XRequestId != null &&
-                    this.XRequestId.Equals(input.XRequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +79,10 @@ namespace HuaweiCloud.SDK.Geip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RequestId != null)
-                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
-                if (this.InternetBandwidthLimits != null)
-                    hashCode = hashCode * 59 + this.InternetBandwidthLimits.GetHashCode();
-                if (this.XRequestId != null)
-                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.RequestId != null) hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                if (this.InternetBandwidthLimits != null) hashCode = hashCode * 59 + this.InternetBandwidthLimits.GetHashCode();
+                if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

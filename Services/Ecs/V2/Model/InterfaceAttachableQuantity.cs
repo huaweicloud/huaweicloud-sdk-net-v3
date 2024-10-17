@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(InterfaceAttachableQuantity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FreeNic != input.FreeNic || (this.FreeNic != null && !this.FreeNic.Equals(input.FreeNic))) return false;
 
-            return 
-                (
-                    this.FreeNic == input.FreeNic ||
-                    (this.FreeNic != null &&
-                    this.FreeNic.Equals(input.FreeNic))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FreeNic != null)
-                    hashCode = hashCode * 59 + this.FreeNic.GetHashCode();
+                var hashCode = 41;
+                if (this.FreeNic != null) hashCode = hashCode * 59 + this.FreeNic.GetHashCode();
                 return hashCode;
             }
         }

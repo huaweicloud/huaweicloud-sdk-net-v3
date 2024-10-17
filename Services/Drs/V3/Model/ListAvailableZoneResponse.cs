@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(ListAvailableZoneResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AzInfos != input.AzInfos || (this.AzInfos != null && input.AzInfos != null && !this.AzInfos.SequenceEqual(input.AzInfos))) return false;
 
-            return 
-                (
-                    this.AzInfos == input.AzInfos ||
-                    this.AzInfos != null &&
-                    input.AzInfos != null &&
-                    this.AzInfos.SequenceEqual(input.AzInfos)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AzInfos != null)
-                    hashCode = hashCode * 59 + this.AzInfos.GetHashCode();
+                var hashCode = 41;
+                if (this.AzInfos != null) hashCode = hashCode * 59 + this.AzInfos.GetHashCode();
                 return hashCode;
             }
         }

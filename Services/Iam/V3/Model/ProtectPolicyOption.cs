@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(ProtectPolicyOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OperationProtection != input.OperationProtection || (this.OperationProtection != null && !this.OperationProtection.Equals(input.OperationProtection))) return false;
+            if (this.AllowUser != input.AllowUser || (this.AllowUser != null && !this.AllowUser.Equals(input.AllowUser))) return false;
+            if (this.Mobile != input.Mobile || (this.Mobile != null && !this.Mobile.Equals(input.Mobile))) return false;
+            if (this.AdminCheck != input.AdminCheck || (this.AdminCheck != null && !this.AdminCheck.Equals(input.AdminCheck))) return false;
+            if (this.Email != input.Email || (this.Email != null && !this.Email.Equals(input.Email))) return false;
+            if (this.Scene != input.Scene || (this.Scene != null && !this.Scene.Equals(input.Scene))) return false;
 
-            return 
-                (
-                    this.OperationProtection == input.OperationProtection ||
-                    (this.OperationProtection != null &&
-                    this.OperationProtection.Equals(input.OperationProtection))
-                ) && 
-                (
-                    this.AllowUser == input.AllowUser ||
-                    (this.AllowUser != null &&
-                    this.AllowUser.Equals(input.AllowUser))
-                ) && 
-                (
-                    this.Mobile == input.Mobile ||
-                    (this.Mobile != null &&
-                    this.Mobile.Equals(input.Mobile))
-                ) && 
-                (
-                    this.AdminCheck == input.AdminCheck ||
-                    (this.AdminCheck != null &&
-                    this.AdminCheck.Equals(input.AdminCheck))
-                ) && 
-                (
-                    this.Email == input.Email ||
-                    (this.Email != null &&
-                    this.Email.Equals(input.Email))
-                ) && 
-                (
-                    this.Scene == input.Scene ||
-                    (this.Scene != null &&
-                    this.Scene.Equals(input.Scene))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OperationProtection != null)
-                    hashCode = hashCode * 59 + this.OperationProtection.GetHashCode();
-                if (this.AllowUser != null)
-                    hashCode = hashCode * 59 + this.AllowUser.GetHashCode();
-                if (this.Mobile != null)
-                    hashCode = hashCode * 59 + this.Mobile.GetHashCode();
-                if (this.AdminCheck != null)
-                    hashCode = hashCode * 59 + this.AdminCheck.GetHashCode();
-                if (this.Email != null)
-                    hashCode = hashCode * 59 + this.Email.GetHashCode();
-                if (this.Scene != null)
-                    hashCode = hashCode * 59 + this.Scene.GetHashCode();
+                var hashCode = 41;
+                if (this.OperationProtection != null) hashCode = hashCode * 59 + this.OperationProtection.GetHashCode();
+                if (this.AllowUser != null) hashCode = hashCode * 59 + this.AllowUser.GetHashCode();
+                if (this.Mobile != null) hashCode = hashCode * 59 + this.Mobile.GetHashCode();
+                if (this.AdminCheck != null) hashCode = hashCode * 59 + this.AdminCheck.GetHashCode();
+                if (this.Email != null) hashCode = hashCode * 59 + this.Email.GetHashCode();
+                if (this.Scene != null) hashCode = hashCode * 59 + this.Scene.GetHashCode();
                 return hashCode;
             }
         }

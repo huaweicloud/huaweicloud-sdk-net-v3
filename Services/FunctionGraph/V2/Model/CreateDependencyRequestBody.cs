@@ -336,40 +336,15 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(CreateDependencyRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DependFile != input.DependFile || (this.DependFile != null && !this.DependFile.Equals(input.DependFile))) return false;
+            if (this.DependLink != input.DependLink || (this.DependLink != null && !this.DependLink.Equals(input.DependLink))) return false;
+            if (this.DependType != input.DependType || (this.DependType != null && !this.DependType.Equals(input.DependType))) return false;
+            if (this.Runtime != input.Runtime) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
 
-            return 
-                (
-                    this.DependFile == input.DependFile ||
-                    (this.DependFile != null &&
-                    this.DependFile.Equals(input.DependFile))
-                ) && 
-                (
-                    this.DependLink == input.DependLink ||
-                    (this.DependLink != null &&
-                    this.DependLink.Equals(input.DependLink))
-                ) && 
-                (
-                    this.DependType == input.DependType ||
-                    (this.DependType != null &&
-                    this.DependType.Equals(input.DependType))
-                ) && 
-                (
-                    this.Runtime == input.Runtime ||
-                    (this.Runtime != null &&
-                    this.Runtime.Equals(input.Runtime))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                );
+            return true;
         }
 
         /// <summary>
@@ -379,19 +354,13 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DependFile != null)
-                    hashCode = hashCode * 59 + this.DependFile.GetHashCode();
-                if (this.DependLink != null)
-                    hashCode = hashCode * 59 + this.DependLink.GetHashCode();
-                if (this.DependType != null)
-                    hashCode = hashCode * 59 + this.DependType.GetHashCode();
-                if (this.Runtime != null)
-                    hashCode = hashCode * 59 + this.Runtime.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                var hashCode = 41;
+                if (this.DependFile != null) hashCode = hashCode * 59 + this.DependFile.GetHashCode();
+                if (this.DependLink != null) hashCode = hashCode * 59 + this.DependLink.GetHashCode();
+                if (this.DependType != null) hashCode = hashCode * 59 + this.DependType.GetHashCode();
+                hashCode = hashCode * 59 + this.Runtime.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         /// </summary>
         public bool Equals(Attributes input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.MfaAuthenticated != input.MfaAuthenticated || (this.MfaAuthenticated != null && !this.MfaAuthenticated.Equals(input.MfaAuthenticated))) return false;
 
-            return 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.MfaAuthenticated == input.MfaAuthenticated ||
-                    (this.MfaAuthenticated != null &&
-                    this.MfaAuthenticated.Equals(input.MfaAuthenticated))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.MfaAuthenticated != null)
-                    hashCode = hashCode * 59 + this.MfaAuthenticated.GetHashCode();
+                var hashCode = 41;
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.MfaAuthenticated != null) hashCode = hashCode * 59 + this.MfaAuthenticated.GetHashCode();
                 return hashCode;
             }
         }

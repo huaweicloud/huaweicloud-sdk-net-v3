@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(InsurantItem input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InsurantName != input.InsurantName || (this.InsurantName != null && !this.InsurantName.Equals(input.InsurantName))) return false;
+            if (this.InsurantSex != input.InsurantSex || (this.InsurantSex != null && !this.InsurantSex.Equals(input.InsurantSex))) return false;
+            if (this.InsurantBirthday != input.InsurantBirthday || (this.InsurantBirthday != null && !this.InsurantBirthday.Equals(input.InsurantBirthday))) return false;
+            if (this.InsurantIdType != input.InsurantIdType || (this.InsurantIdType != null && !this.InsurantIdType.Equals(input.InsurantIdType))) return false;
+            if (this.InsurantIdNumber != input.InsurantIdNumber || (this.InsurantIdNumber != null && !this.InsurantIdNumber.Equals(input.InsurantIdNumber))) return false;
 
-            return 
-                (
-                    this.InsurantName == input.InsurantName ||
-                    (this.InsurantName != null &&
-                    this.InsurantName.Equals(input.InsurantName))
-                ) && 
-                (
-                    this.InsurantSex == input.InsurantSex ||
-                    (this.InsurantSex != null &&
-                    this.InsurantSex.Equals(input.InsurantSex))
-                ) && 
-                (
-                    this.InsurantBirthday == input.InsurantBirthday ||
-                    (this.InsurantBirthday != null &&
-                    this.InsurantBirthday.Equals(input.InsurantBirthday))
-                ) && 
-                (
-                    this.InsurantIdType == input.InsurantIdType ||
-                    (this.InsurantIdType != null &&
-                    this.InsurantIdType.Equals(input.InsurantIdType))
-                ) && 
-                (
-                    this.InsurantIdNumber == input.InsurantIdNumber ||
-                    (this.InsurantIdNumber != null &&
-                    this.InsurantIdNumber.Equals(input.InsurantIdNumber))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InsurantName != null)
-                    hashCode = hashCode * 59 + this.InsurantName.GetHashCode();
-                if (this.InsurantSex != null)
-                    hashCode = hashCode * 59 + this.InsurantSex.GetHashCode();
-                if (this.InsurantBirthday != null)
-                    hashCode = hashCode * 59 + this.InsurantBirthday.GetHashCode();
-                if (this.InsurantIdType != null)
-                    hashCode = hashCode * 59 + this.InsurantIdType.GetHashCode();
-                if (this.InsurantIdNumber != null)
-                    hashCode = hashCode * 59 + this.InsurantIdNumber.GetHashCode();
+                var hashCode = 41;
+                if (this.InsurantName != null) hashCode = hashCode * 59 + this.InsurantName.GetHashCode();
+                if (this.InsurantSex != null) hashCode = hashCode * 59 + this.InsurantSex.GetHashCode();
+                if (this.InsurantBirthday != null) hashCode = hashCode * 59 + this.InsurantBirthday.GetHashCode();
+                if (this.InsurantIdType != null) hashCode = hashCode * 59 + this.InsurantIdType.GetHashCode();
+                if (this.InsurantIdNumber != null) hashCode = hashCode * 59 + this.InsurantIdNumber.GetHashCode();
                 return hashCode;
             }
         }

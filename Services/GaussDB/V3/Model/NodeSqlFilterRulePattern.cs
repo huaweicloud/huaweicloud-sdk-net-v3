@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(NodeSqlFilterRulePattern input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Pattern != input.Pattern || (this.Pattern != null && !this.Pattern.Equals(input.Pattern))) return false;
+            if (this.MaxConcurrency != input.MaxConcurrency || (this.MaxConcurrency != null && !this.MaxConcurrency.Equals(input.MaxConcurrency))) return false;
 
-            return 
-                (
-                    this.Pattern == input.Pattern ||
-                    (this.Pattern != null &&
-                    this.Pattern.Equals(input.Pattern))
-                ) && 
-                (
-                    this.MaxConcurrency == input.MaxConcurrency ||
-                    (this.MaxConcurrency != null &&
-                    this.MaxConcurrency.Equals(input.MaxConcurrency))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Pattern != null)
-                    hashCode = hashCode * 59 + this.Pattern.GetHashCode();
-                if (this.MaxConcurrency != null)
-                    hashCode = hashCode * 59 + this.MaxConcurrency.GetHashCode();
+                var hashCode = 41;
+                if (this.Pattern != null) hashCode = hashCode * 59 + this.Pattern.GetHashCode();
+                if (this.MaxConcurrency != null) hashCode = hashCode * 59 + this.MaxConcurrency.GetHashCode();
                 return hashCode;
             }
         }

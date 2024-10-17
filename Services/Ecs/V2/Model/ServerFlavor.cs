@@ -91,47 +91,16 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(ServerFlavor input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Disk != input.Disk || (this.Disk != null && !this.Disk.Equals(input.Disk))) return false;
+            if (this.Vcpus != input.Vcpus || (this.Vcpus != null && !this.Vcpus.Equals(input.Vcpus))) return false;
+            if (this.Ram != input.Ram || (this.Ram != null && !this.Ram.Equals(input.Ram))) return false;
+            if (this.Gpus != input.Gpus || (this.Gpus != null && input.Gpus != null && !this.Gpus.SequenceEqual(input.Gpus))) return false;
+            if (this.AsicAccelerators != input.AsicAccelerators || (this.AsicAccelerators != null && input.AsicAccelerators != null && !this.AsicAccelerators.SequenceEqual(input.AsicAccelerators))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Disk == input.Disk ||
-                    (this.Disk != null &&
-                    this.Disk.Equals(input.Disk))
-                ) && 
-                (
-                    this.Vcpus == input.Vcpus ||
-                    (this.Vcpus != null &&
-                    this.Vcpus.Equals(input.Vcpus))
-                ) && 
-                (
-                    this.Ram == input.Ram ||
-                    (this.Ram != null &&
-                    this.Ram.Equals(input.Ram))
-                ) && 
-                (
-                    this.Gpus == input.Gpus ||
-                    this.Gpus != null &&
-                    input.Gpus != null &&
-                    this.Gpus.SequenceEqual(input.Gpus)
-                ) && 
-                (
-                    this.AsicAccelerators == input.AsicAccelerators ||
-                    this.AsicAccelerators != null &&
-                    input.AsicAccelerators != null &&
-                    this.AsicAccelerators.SequenceEqual(input.AsicAccelerators)
-                );
+            return true;
         }
 
         /// <summary>
@@ -141,21 +110,14 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Disk != null)
-                    hashCode = hashCode * 59 + this.Disk.GetHashCode();
-                if (this.Vcpus != null)
-                    hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
-                if (this.Ram != null)
-                    hashCode = hashCode * 59 + this.Ram.GetHashCode();
-                if (this.Gpus != null)
-                    hashCode = hashCode * 59 + this.Gpus.GetHashCode();
-                if (this.AsicAccelerators != null)
-                    hashCode = hashCode * 59 + this.AsicAccelerators.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Disk != null) hashCode = hashCode * 59 + this.Disk.GetHashCode();
+                if (this.Vcpus != null) hashCode = hashCode * 59 + this.Vcpus.GetHashCode();
+                if (this.Ram != null) hashCode = hashCode * 59 + this.Ram.GetHashCode();
+                if (this.Gpus != null) hashCode = hashCode * 59 + this.Gpus.GetHashCode();
+                if (this.AsicAccelerators != null) hashCode = hashCode * 59 + this.AsicAccelerators.GetHashCode();
                 return hashCode;
             }
         }

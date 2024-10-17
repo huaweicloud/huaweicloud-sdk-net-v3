@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(DdlAlarmResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Seqno != input.Seqno || (this.Seqno != null && !this.Seqno.Equals(input.Seqno))) return false;
+            if (this.Checkpoint != input.Checkpoint || (this.Checkpoint != null && !this.Checkpoint.Equals(input.Checkpoint))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.DdlTimestamp != input.DdlTimestamp || (this.DdlTimestamp != null && !this.DdlTimestamp.Equals(input.DdlTimestamp))) return false;
+            if (this.DdlText != input.DdlText || (this.DdlText != null && !this.DdlText.Equals(input.DdlText))) return false;
+            if (this.ExeResult != input.ExeResult || (this.ExeResult != null && !this.ExeResult.Equals(input.ExeResult))) return false;
+            if (this.RecordTime != input.RecordTime || (this.RecordTime != null && !this.RecordTime.Equals(input.RecordTime))) return false;
+            if (this.CleanTime != input.CleanTime || (this.CleanTime != null && !this.CleanTime.Equals(input.CleanTime))) return false;
 
-            return 
-                (
-                    this.Seqno == input.Seqno ||
-                    (this.Seqno != null &&
-                    this.Seqno.Equals(input.Seqno))
-                ) && 
-                (
-                    this.Checkpoint == input.Checkpoint ||
-                    (this.Checkpoint != null &&
-                    this.Checkpoint.Equals(input.Checkpoint))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.DdlTimestamp == input.DdlTimestamp ||
-                    (this.DdlTimestamp != null &&
-                    this.DdlTimestamp.Equals(input.DdlTimestamp))
-                ) && 
-                (
-                    this.DdlText == input.DdlText ||
-                    (this.DdlText != null &&
-                    this.DdlText.Equals(input.DdlText))
-                ) && 
-                (
-                    this.ExeResult == input.ExeResult ||
-                    (this.ExeResult != null &&
-                    this.ExeResult.Equals(input.ExeResult))
-                ) && 
-                (
-                    this.RecordTime == input.RecordTime ||
-                    (this.RecordTime != null &&
-                    this.RecordTime.Equals(input.RecordTime))
-                ) && 
-                (
-                    this.CleanTime == input.CleanTime ||
-                    (this.CleanTime != null &&
-                    this.CleanTime.Equals(input.CleanTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Seqno != null)
-                    hashCode = hashCode * 59 + this.Seqno.GetHashCode();
-                if (this.Checkpoint != null)
-                    hashCode = hashCode * 59 + this.Checkpoint.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.DdlTimestamp != null)
-                    hashCode = hashCode * 59 + this.DdlTimestamp.GetHashCode();
-                if (this.DdlText != null)
-                    hashCode = hashCode * 59 + this.DdlText.GetHashCode();
-                if (this.ExeResult != null)
-                    hashCode = hashCode * 59 + this.ExeResult.GetHashCode();
-                if (this.RecordTime != null)
-                    hashCode = hashCode * 59 + this.RecordTime.GetHashCode();
-                if (this.CleanTime != null)
-                    hashCode = hashCode * 59 + this.CleanTime.GetHashCode();
+                var hashCode = 41;
+                if (this.Seqno != null) hashCode = hashCode * 59 + this.Seqno.GetHashCode();
+                if (this.Checkpoint != null) hashCode = hashCode * 59 + this.Checkpoint.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.DdlTimestamp != null) hashCode = hashCode * 59 + this.DdlTimestamp.GetHashCode();
+                if (this.DdlText != null) hashCode = hashCode * 59 + this.DdlText.GetHashCode();
+                if (this.ExeResult != null) hashCode = hashCode * 59 + this.ExeResult.GetHashCode();
+                if (this.RecordTime != null) hashCode = hashCode * 59 + this.RecordTime.GetHashCode();
+                if (this.CleanTime != null) hashCode = hashCode * 59 + this.CleanTime.GetHashCode();
                 return hashCode;
             }
         }

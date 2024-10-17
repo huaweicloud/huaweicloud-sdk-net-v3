@@ -210,130 +210,33 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         /// </summary>
         public bool Equals(ShowSignatureResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.UpdateTime != input.UpdateTime || (this.UpdateTime != null && !this.UpdateTime.Equals(input.UpdateTime))) return false;
+            if (this.CustomerId != input.CustomerId || (this.CustomerId != null && !this.CustomerId.Equals(input.CustomerId))) return false;
+            if (this.Tenant != input.Tenant || (this.Tenant != null && !this.Tenant.Equals(input.Tenant))) return false;
+            if (this.SignatureName != input.SignatureName || (this.SignatureName != null && !this.SignatureName.Equals(input.SignatureName))) return false;
+            if (this.SignatureId != input.SignatureId || (this.SignatureId != null && !this.SignatureId.Equals(input.SignatureId))) return false;
+            if (this.SignatureType != input.SignatureType || (this.SignatureType != null && !this.SignatureType.Equals(input.SignatureType))) return false;
+            if (this.AppName != input.AppName || (this.AppName != null && !this.AppName.Equals(input.AppName))) return false;
+            if (this.ApplyDesc != input.ApplyDesc || (this.ApplyDesc != null && !this.ApplyDesc.Equals(input.ApplyDesc))) return false;
+            if (this.ChannelNum != input.ChannelNum || (this.ChannelNum != null && !this.ChannelNum.Equals(input.ChannelNum))) return false;
+            if (this.ReviewDesc != input.ReviewDesc || (this.ReviewDesc != null && !this.ReviewDesc.Equals(input.ReviewDesc))) return false;
+            if (this.FileId != input.FileId || (this.FileId != null && !this.FileId.Equals(input.FileId))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Site != input.Site || (this.Site != null && !this.Site.Equals(input.Site))) return false;
+            if (this.SignatureSource != input.SignatureSource || (this.SignatureSource != null && !this.SignatureSource.Equals(input.SignatureSource))) return false;
+            if (this.IsInvolvedThird != input.IsInvolvedThird || (this.IsInvolvedThird != null && !this.IsInvolvedThird.Equals(input.IsInvolvedThird))) return false;
+            if (this.PowerAttorneyFileId != input.PowerAttorneyFileId || (this.PowerAttorneyFileId != null && !this.PowerAttorneyFileId.Equals(input.PowerAttorneyFileId))) return false;
+            if (this.UrgeStatus != input.UrgeStatus || (this.UrgeStatus != null && !this.UrgeStatus.Equals(input.UrgeStatus))) return false;
+            if (this.UrgeTime != input.UrgeTime || (this.UrgeTime != null && !this.UrgeTime.Equals(input.UrgeTime))) return false;
+            if (this.UrgeDesc != input.UrgeDesc || (this.UrgeDesc != null && !this.UrgeDesc.Equals(input.UrgeDesc))) return false;
+            if (this.AppKey != input.AppKey || (this.AppKey != null && !this.AppKey.Equals(input.AppKey))) return false;
+            if (this.SourceTitleContent != input.SourceTitleContent || (this.SourceTitleContent != null && !this.SourceTitleContent.Equals(input.SourceTitleContent))) return false;
+            if (this.SignatureUsage != input.SignatureUsage || (this.SignatureUsage != null && !this.SignatureUsage.Equals(input.SignatureUsage))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.UpdateTime == input.UpdateTime ||
-                    (this.UpdateTime != null &&
-                    this.UpdateTime.Equals(input.UpdateTime))
-                ) && 
-                (
-                    this.CustomerId == input.CustomerId ||
-                    (this.CustomerId != null &&
-                    this.CustomerId.Equals(input.CustomerId))
-                ) && 
-                (
-                    this.Tenant == input.Tenant ||
-                    (this.Tenant != null &&
-                    this.Tenant.Equals(input.Tenant))
-                ) && 
-                (
-                    this.SignatureName == input.SignatureName ||
-                    (this.SignatureName != null &&
-                    this.SignatureName.Equals(input.SignatureName))
-                ) && 
-                (
-                    this.SignatureId == input.SignatureId ||
-                    (this.SignatureId != null &&
-                    this.SignatureId.Equals(input.SignatureId))
-                ) && 
-                (
-                    this.SignatureType == input.SignatureType ||
-                    (this.SignatureType != null &&
-                    this.SignatureType.Equals(input.SignatureType))
-                ) && 
-                (
-                    this.AppName == input.AppName ||
-                    (this.AppName != null &&
-                    this.AppName.Equals(input.AppName))
-                ) && 
-                (
-                    this.ApplyDesc == input.ApplyDesc ||
-                    (this.ApplyDesc != null &&
-                    this.ApplyDesc.Equals(input.ApplyDesc))
-                ) && 
-                (
-                    this.ChannelNum == input.ChannelNum ||
-                    (this.ChannelNum != null &&
-                    this.ChannelNum.Equals(input.ChannelNum))
-                ) && 
-                (
-                    this.ReviewDesc == input.ReviewDesc ||
-                    (this.ReviewDesc != null &&
-                    this.ReviewDesc.Equals(input.ReviewDesc))
-                ) && 
-                (
-                    this.FileId == input.FileId ||
-                    (this.FileId != null &&
-                    this.FileId.Equals(input.FileId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Site == input.Site ||
-                    (this.Site != null &&
-                    this.Site.Equals(input.Site))
-                ) && 
-                (
-                    this.SignatureSource == input.SignatureSource ||
-                    (this.SignatureSource != null &&
-                    this.SignatureSource.Equals(input.SignatureSource))
-                ) && 
-                (
-                    this.IsInvolvedThird == input.IsInvolvedThird ||
-                    (this.IsInvolvedThird != null &&
-                    this.IsInvolvedThird.Equals(input.IsInvolvedThird))
-                ) && 
-                (
-                    this.PowerAttorneyFileId == input.PowerAttorneyFileId ||
-                    (this.PowerAttorneyFileId != null &&
-                    this.PowerAttorneyFileId.Equals(input.PowerAttorneyFileId))
-                ) && 
-                (
-                    this.UrgeStatus == input.UrgeStatus ||
-                    (this.UrgeStatus != null &&
-                    this.UrgeStatus.Equals(input.UrgeStatus))
-                ) && 
-                (
-                    this.UrgeTime == input.UrgeTime ||
-                    (this.UrgeTime != null &&
-                    this.UrgeTime.Equals(input.UrgeTime))
-                ) && 
-                (
-                    this.UrgeDesc == input.UrgeDesc ||
-                    (this.UrgeDesc != null &&
-                    this.UrgeDesc.Equals(input.UrgeDesc))
-                ) && 
-                (
-                    this.AppKey == input.AppKey ||
-                    (this.AppKey != null &&
-                    this.AppKey.Equals(input.AppKey))
-                ) && 
-                (
-                    this.SourceTitleContent == input.SourceTitleContent ||
-                    (this.SourceTitleContent != null &&
-                    this.SourceTitleContent.Equals(input.SourceTitleContent))
-                ) && 
-                (
-                    this.SignatureUsage == input.SignatureUsage ||
-                    (this.SignatureUsage != null &&
-                    this.SignatureUsage.Equals(input.SignatureUsage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -343,55 +246,31 @@ namespace HuaweiCloud.SDK.Msgsms.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.UpdateTime != null)
-                    hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
-                if (this.CustomerId != null)
-                    hashCode = hashCode * 59 + this.CustomerId.GetHashCode();
-                if (this.Tenant != null)
-                    hashCode = hashCode * 59 + this.Tenant.GetHashCode();
-                if (this.SignatureName != null)
-                    hashCode = hashCode * 59 + this.SignatureName.GetHashCode();
-                if (this.SignatureId != null)
-                    hashCode = hashCode * 59 + this.SignatureId.GetHashCode();
-                if (this.SignatureType != null)
-                    hashCode = hashCode * 59 + this.SignatureType.GetHashCode();
-                if (this.AppName != null)
-                    hashCode = hashCode * 59 + this.AppName.GetHashCode();
-                if (this.ApplyDesc != null)
-                    hashCode = hashCode * 59 + this.ApplyDesc.GetHashCode();
-                if (this.ChannelNum != null)
-                    hashCode = hashCode * 59 + this.ChannelNum.GetHashCode();
-                if (this.ReviewDesc != null)
-                    hashCode = hashCode * 59 + this.ReviewDesc.GetHashCode();
-                if (this.FileId != null)
-                    hashCode = hashCode * 59 + this.FileId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Site != null)
-                    hashCode = hashCode * 59 + this.Site.GetHashCode();
-                if (this.SignatureSource != null)
-                    hashCode = hashCode * 59 + this.SignatureSource.GetHashCode();
-                if (this.IsInvolvedThird != null)
-                    hashCode = hashCode * 59 + this.IsInvolvedThird.GetHashCode();
-                if (this.PowerAttorneyFileId != null)
-                    hashCode = hashCode * 59 + this.PowerAttorneyFileId.GetHashCode();
-                if (this.UrgeStatus != null)
-                    hashCode = hashCode * 59 + this.UrgeStatus.GetHashCode();
-                if (this.UrgeTime != null)
-                    hashCode = hashCode * 59 + this.UrgeTime.GetHashCode();
-                if (this.UrgeDesc != null)
-                    hashCode = hashCode * 59 + this.UrgeDesc.GetHashCode();
-                if (this.AppKey != null)
-                    hashCode = hashCode * 59 + this.AppKey.GetHashCode();
-                if (this.SourceTitleContent != null)
-                    hashCode = hashCode * 59 + this.SourceTitleContent.GetHashCode();
-                if (this.SignatureUsage != null)
-                    hashCode = hashCode * 59 + this.SignatureUsage.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.UpdateTime != null) hashCode = hashCode * 59 + this.UpdateTime.GetHashCode();
+                if (this.CustomerId != null) hashCode = hashCode * 59 + this.CustomerId.GetHashCode();
+                if (this.Tenant != null) hashCode = hashCode * 59 + this.Tenant.GetHashCode();
+                if (this.SignatureName != null) hashCode = hashCode * 59 + this.SignatureName.GetHashCode();
+                if (this.SignatureId != null) hashCode = hashCode * 59 + this.SignatureId.GetHashCode();
+                if (this.SignatureType != null) hashCode = hashCode * 59 + this.SignatureType.GetHashCode();
+                if (this.AppName != null) hashCode = hashCode * 59 + this.AppName.GetHashCode();
+                if (this.ApplyDesc != null) hashCode = hashCode * 59 + this.ApplyDesc.GetHashCode();
+                if (this.ChannelNum != null) hashCode = hashCode * 59 + this.ChannelNum.GetHashCode();
+                if (this.ReviewDesc != null) hashCode = hashCode * 59 + this.ReviewDesc.GetHashCode();
+                if (this.FileId != null) hashCode = hashCode * 59 + this.FileId.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Site != null) hashCode = hashCode * 59 + this.Site.GetHashCode();
+                if (this.SignatureSource != null) hashCode = hashCode * 59 + this.SignatureSource.GetHashCode();
+                if (this.IsInvolvedThird != null) hashCode = hashCode * 59 + this.IsInvolvedThird.GetHashCode();
+                if (this.PowerAttorneyFileId != null) hashCode = hashCode * 59 + this.PowerAttorneyFileId.GetHashCode();
+                if (this.UrgeStatus != null) hashCode = hashCode * 59 + this.UrgeStatus.GetHashCode();
+                if (this.UrgeTime != null) hashCode = hashCode * 59 + this.UrgeTime.GetHashCode();
+                if (this.UrgeDesc != null) hashCode = hashCode * 59 + this.UrgeDesc.GetHashCode();
+                if (this.AppKey != null) hashCode = hashCode * 59 + this.AppKey.GetHashCode();
+                if (this.SourceTitleContent != null) hashCode = hashCode * 59 + this.SourceTitleContent.GetHashCode();
+                if (this.SignatureUsage != null) hashCode = hashCode * 59 + this.SignatureUsage.GetHashCode();
                 return hashCode;
             }
         }

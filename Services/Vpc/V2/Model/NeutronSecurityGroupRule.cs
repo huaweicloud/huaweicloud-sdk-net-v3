@@ -261,85 +261,24 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(NeutronSecurityGroupRule input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Direction != input.Direction) return false;
+            if (this.Ethertype != input.Ethertype || (this.Ethertype != null && !this.Ethertype.Equals(input.Ethertype))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.PortRangeMax != input.PortRangeMax || (this.PortRangeMax != null && !this.PortRangeMax.Equals(input.PortRangeMax))) return false;
+            if (this.PortRangeMin != input.PortRangeMin || (this.PortRangeMin != null && !this.PortRangeMin.Equals(input.PortRangeMin))) return false;
+            if (this.Protocol != input.Protocol || (this.Protocol != null && !this.Protocol.Equals(input.Protocol))) return false;
+            if (this.RemoteGroupId != input.RemoteGroupId || (this.RemoteGroupId != null && !this.RemoteGroupId.Equals(input.RemoteGroupId))) return false;
+            if (this.RemoteIpPrefix != input.RemoteIpPrefix || (this.RemoteIpPrefix != null && !this.RemoteIpPrefix.Equals(input.RemoteIpPrefix))) return false;
+            if (this.RemoteAddressGroupId != input.RemoteAddressGroupId || (this.RemoteAddressGroupId != null && !this.RemoteAddressGroupId.Equals(input.RemoteAddressGroupId))) return false;
+            if (this.SecurityGroupId != input.SecurityGroupId || (this.SecurityGroupId != null && !this.SecurityGroupId.Equals(input.SecurityGroupId))) return false;
+            if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
 
-            return 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Direction == input.Direction ||
-                    (this.Direction != null &&
-                    this.Direction.Equals(input.Direction))
-                ) && 
-                (
-                    this.Ethertype == input.Ethertype ||
-                    (this.Ethertype != null &&
-                    this.Ethertype.Equals(input.Ethertype))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.PortRangeMax == input.PortRangeMax ||
-                    (this.PortRangeMax != null &&
-                    this.PortRangeMax.Equals(input.PortRangeMax))
-                ) && 
-                (
-                    this.PortRangeMin == input.PortRangeMin ||
-                    (this.PortRangeMin != null &&
-                    this.PortRangeMin.Equals(input.PortRangeMin))
-                ) && 
-                (
-                    this.Protocol == input.Protocol ||
-                    (this.Protocol != null &&
-                    this.Protocol.Equals(input.Protocol))
-                ) && 
-                (
-                    this.RemoteGroupId == input.RemoteGroupId ||
-                    (this.RemoteGroupId != null &&
-                    this.RemoteGroupId.Equals(input.RemoteGroupId))
-                ) && 
-                (
-                    this.RemoteIpPrefix == input.RemoteIpPrefix ||
-                    (this.RemoteIpPrefix != null &&
-                    this.RemoteIpPrefix.Equals(input.RemoteIpPrefix))
-                ) && 
-                (
-                    this.RemoteAddressGroupId == input.RemoteAddressGroupId ||
-                    (this.RemoteAddressGroupId != null &&
-                    this.RemoteAddressGroupId.Equals(input.RemoteAddressGroupId))
-                ) && 
-                (
-                    this.SecurityGroupId == input.SecurityGroupId ||
-                    (this.SecurityGroupId != null &&
-                    this.SecurityGroupId.Equals(input.SecurityGroupId))
-                ) && 
-                (
-                    this.TenantId == input.TenantId ||
-                    (this.TenantId != null &&
-                    this.TenantId.Equals(input.TenantId))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -349,37 +288,22 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Direction != null)
-                    hashCode = hashCode * 59 + this.Direction.GetHashCode();
-                if (this.Ethertype != null)
-                    hashCode = hashCode * 59 + this.Ethertype.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.PortRangeMax != null)
-                    hashCode = hashCode * 59 + this.PortRangeMax.GetHashCode();
-                if (this.PortRangeMin != null)
-                    hashCode = hashCode * 59 + this.PortRangeMin.GetHashCode();
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
-                if (this.RemoteGroupId != null)
-                    hashCode = hashCode * 59 + this.RemoteGroupId.GetHashCode();
-                if (this.RemoteIpPrefix != null)
-                    hashCode = hashCode * 59 + this.RemoteIpPrefix.GetHashCode();
-                if (this.RemoteAddressGroupId != null)
-                    hashCode = hashCode * 59 + this.RemoteAddressGroupId.GetHashCode();
-                if (this.SecurityGroupId != null)
-                    hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
-                if (this.TenantId != null)
-                    hashCode = hashCode * 59 + this.TenantId.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                var hashCode = 41;
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                hashCode = hashCode * 59 + this.Direction.GetHashCode();
+                if (this.Ethertype != null) hashCode = hashCode * 59 + this.Ethertype.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.PortRangeMax != null) hashCode = hashCode * 59 + this.PortRangeMax.GetHashCode();
+                if (this.PortRangeMin != null) hashCode = hashCode * 59 + this.PortRangeMin.GetHashCode();
+                if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.RemoteGroupId != null) hashCode = hashCode * 59 + this.RemoteGroupId.GetHashCode();
+                if (this.RemoteIpPrefix != null) hashCode = hashCode * 59 + this.RemoteIpPrefix.GetHashCode();
+                if (this.RemoteAddressGroupId != null) hashCode = hashCode * 59 + this.RemoteAddressGroupId.GetHashCode();
+                if (this.SecurityGroupId != null) hashCode = hashCode * 59 + this.SecurityGroupId.GetHashCode();
+                if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 return hashCode;
             }
         }

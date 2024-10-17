@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         /// </summary>
         public bool Equals(PackageExerciseJudgeRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NotifyUrl != input.NotifyUrl || (this.NotifyUrl != null && !this.NotifyUrl.Equals(input.NotifyUrl))) return false;
+            if (this.Timeout != input.Timeout || (this.Timeout != null && !this.Timeout.Equals(input.Timeout))) return false;
+            if (this.OutputType != input.OutputType || (this.OutputType != null && !this.OutputType.Equals(input.OutputType))) return false;
+            if (this.CodeAnswer != input.CodeAnswer || (this.CodeAnswer != null && !this.CodeAnswer.Equals(input.CodeAnswer))) return false;
 
-            return 
-                (
-                    this.NotifyUrl == input.NotifyUrl ||
-                    (this.NotifyUrl != null &&
-                    this.NotifyUrl.Equals(input.NotifyUrl))
-                ) && 
-                (
-                    this.Timeout == input.Timeout ||
-                    (this.Timeout != null &&
-                    this.Timeout.Equals(input.Timeout))
-                ) && 
-                (
-                    this.OutputType == input.OutputType ||
-                    (this.OutputType != null &&
-                    this.OutputType.Equals(input.OutputType))
-                ) && 
-                (
-                    this.CodeAnswer == input.CodeAnswer ||
-                    (this.CodeAnswer != null &&
-                    this.CodeAnswer.Equals(input.CodeAnswer))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NotifyUrl != null)
-                    hashCode = hashCode * 59 + this.NotifyUrl.GetHashCode();
-                if (this.Timeout != null)
-                    hashCode = hashCode * 59 + this.Timeout.GetHashCode();
-                if (this.OutputType != null)
-                    hashCode = hashCode * 59 + this.OutputType.GetHashCode();
-                if (this.CodeAnswer != null)
-                    hashCode = hashCode * 59 + this.CodeAnswer.GetHashCode();
+                var hashCode = 41;
+                if (this.NotifyUrl != null) hashCode = hashCode * 59 + this.NotifyUrl.GetHashCode();
+                if (this.Timeout != null) hashCode = hashCode * 59 + this.Timeout.GetHashCode();
+                if (this.OutputType != null) hashCode = hashCode * 59 + this.OutputType.GetHashCode();
+                if (this.CodeAnswer != null) hashCode = hashCode * 59 + this.CodeAnswer.GetHashCode();
                 return hashCode;
             }
         }

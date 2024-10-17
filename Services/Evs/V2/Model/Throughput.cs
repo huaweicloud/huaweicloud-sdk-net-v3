@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(Throughput input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Frozened != input.Frozened || (this.Frozened != null && !this.Frozened.Equals(input.Frozened))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.TotalVal != input.TotalVal || (this.TotalVal != null && !this.TotalVal.Equals(input.TotalVal))) return false;
 
-            return 
-                (
-                    this.Frozened == input.Frozened ||
-                    (this.Frozened != null &&
-                    this.Frozened.Equals(input.Frozened))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.TotalVal == input.TotalVal ||
-                    (this.TotalVal != null &&
-                    this.TotalVal.Equals(input.TotalVal))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Frozened != null)
-                    hashCode = hashCode * 59 + this.Frozened.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.TotalVal != null)
-                    hashCode = hashCode * 59 + this.TotalVal.GetHashCode();
+                var hashCode = 41;
+                if (this.Frozened != null) hashCode = hashCode * 59 + this.Frozened.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.TotalVal != null) hashCode = hashCode * 59 + this.TotalVal.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(Subtitle input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Input != input.Input || (this.Input != null && !this.Input.Equals(input.Input))) return false;
+            if (this.Inputs != input.Inputs || (this.Inputs != null && input.Inputs != null && !this.Inputs.SequenceEqual(input.Inputs))) return false;
+            if (this.SubtitleType != input.SubtitleType || (this.SubtitleType != null && !this.SubtitleType.Equals(input.SubtitleType))) return false;
 
-            return 
-                (
-                    this.Input == input.Input ||
-                    (this.Input != null &&
-                    this.Input.Equals(input.Input))
-                ) && 
-                (
-                    this.Inputs == input.Inputs ||
-                    this.Inputs != null &&
-                    input.Inputs != null &&
-                    this.Inputs.SequenceEqual(input.Inputs)
-                ) && 
-                (
-                    this.SubtitleType == input.SubtitleType ||
-                    (this.SubtitleType != null &&
-                    this.SubtitleType.Equals(input.SubtitleType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Input != null)
-                    hashCode = hashCode * 59 + this.Input.GetHashCode();
-                if (this.Inputs != null)
-                    hashCode = hashCode * 59 + this.Inputs.GetHashCode();
-                if (this.SubtitleType != null)
-                    hashCode = hashCode * 59 + this.SubtitleType.GetHashCode();
+                var hashCode = 41;
+                if (this.Input != null) hashCode = hashCode * 59 + this.Input.GetHashCode();
+                if (this.Inputs != null) hashCode = hashCode * 59 + this.Inputs.GetHashCode();
+                if (this.SubtitleType != null) hashCode = hashCode * 59 + this.SubtitleType.GetHashCode();
                 return hashCode;
             }
         }

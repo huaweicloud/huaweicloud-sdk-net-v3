@@ -449,35 +449,14 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(Common input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Pvc != input.Pvc) return false;
+            if (this.PvcVersion != input.PvcVersion || (this.PvcVersion != null && !this.PvcVersion.Equals(input.PvcVersion))) return false;
+            if (this.VideoCodec != input.VideoCodec) return false;
+            if (this.AudioCodec != input.AudioCodec) return false;
+            if (this.HlsInterval != input.HlsInterval || (this.HlsInterval != null && !this.HlsInterval.Equals(input.HlsInterval))) return false;
 
-            return 
-                (
-                    this.Pvc == input.Pvc ||
-                    (this.Pvc != null &&
-                    this.Pvc.Equals(input.Pvc))
-                ) && 
-                (
-                    this.PvcVersion == input.PvcVersion ||
-                    (this.PvcVersion != null &&
-                    this.PvcVersion.Equals(input.PvcVersion))
-                ) && 
-                (
-                    this.VideoCodec == input.VideoCodec ||
-                    (this.VideoCodec != null &&
-                    this.VideoCodec.Equals(input.VideoCodec))
-                ) && 
-                (
-                    this.AudioCodec == input.AudioCodec ||
-                    (this.AudioCodec != null &&
-                    this.AudioCodec.Equals(input.AudioCodec))
-                ) && 
-                (
-                    this.HlsInterval == input.HlsInterval ||
-                    (this.HlsInterval != null &&
-                    this.HlsInterval.Equals(input.HlsInterval))
-                );
+            return true;
         }
 
         /// <summary>
@@ -487,17 +466,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Pvc != null)
-                    hashCode = hashCode * 59 + this.Pvc.GetHashCode();
-                if (this.PvcVersion != null)
-                    hashCode = hashCode * 59 + this.PvcVersion.GetHashCode();
-                if (this.VideoCodec != null)
-                    hashCode = hashCode * 59 + this.VideoCodec.GetHashCode();
-                if (this.AudioCodec != null)
-                    hashCode = hashCode * 59 + this.AudioCodec.GetHashCode();
-                if (this.HlsInterval != null)
-                    hashCode = hashCode * 59 + this.HlsInterval.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Pvc.GetHashCode();
+                if (this.PvcVersion != null) hashCode = hashCode * 59 + this.PvcVersion.GetHashCode();
+                hashCode = hashCode * 59 + this.VideoCodec.GetHashCode();
+                hashCode = hashCode * 59 + this.AudioCodec.GetHashCode();
+                if (this.HlsInterval != null) hashCode = hashCode * 59 + this.HlsInterval.GetHashCode();
                 return hashCode;
             }
         }

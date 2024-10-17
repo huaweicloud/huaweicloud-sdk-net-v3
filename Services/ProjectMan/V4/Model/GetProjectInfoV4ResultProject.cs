@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(GetProjectInfoV4ResultProject input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ProjectNumId != input.ProjectNumId || (this.ProjectNumId != null && !this.ProjectNumId.Equals(input.ProjectNumId))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.CreatedOn != input.CreatedOn || (this.CreatedOn != null && !this.CreatedOn.Equals(input.CreatedOn))) return false;
+            if (this.UpdatedOn != input.UpdatedOn || (this.UpdatedOn != null && !this.UpdatedOn.Equals(input.UpdatedOn))) return false;
+            if (this.ProjectType != input.ProjectType || (this.ProjectType != null && !this.ProjectType.Equals(input.ProjectType))) return false;
+            if (this.Archive != input.Archive || (this.Archive != null && !this.Archive.Equals(input.Archive))) return false;
+            if (this.EnterpriseId != input.EnterpriseId || (this.EnterpriseId != null && !this.EnterpriseId.Equals(input.EnterpriseId))) return false;
+            if (this.ProjectCode != input.ProjectCode || (this.ProjectCode != null && !this.ProjectCode.Equals(input.ProjectCode))) return false;
+            if (this.Creator != input.Creator || (this.Creator != null && !this.Creator.Equals(input.Creator))) return false;
 
-            return 
-                (
-                    this.ProjectNumId == input.ProjectNumId ||
-                    (this.ProjectNumId != null &&
-                    this.ProjectNumId.Equals(input.ProjectNumId))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.CreatedOn == input.CreatedOn ||
-                    (this.CreatedOn != null &&
-                    this.CreatedOn.Equals(input.CreatedOn))
-                ) && 
-                (
-                    this.UpdatedOn == input.UpdatedOn ||
-                    (this.UpdatedOn != null &&
-                    this.UpdatedOn.Equals(input.UpdatedOn))
-                ) && 
-                (
-                    this.ProjectType == input.ProjectType ||
-                    (this.ProjectType != null &&
-                    this.ProjectType.Equals(input.ProjectType))
-                ) && 
-                (
-                    this.Archive == input.Archive ||
-                    (this.Archive != null &&
-                    this.Archive.Equals(input.Archive))
-                ) && 
-                (
-                    this.EnterpriseId == input.EnterpriseId ||
-                    (this.EnterpriseId != null &&
-                    this.EnterpriseId.Equals(input.EnterpriseId))
-                ) && 
-                (
-                    this.ProjectCode == input.ProjectCode ||
-                    (this.ProjectCode != null &&
-                    this.ProjectCode.Equals(input.ProjectCode))
-                ) && 
-                (
-                    this.Creator == input.Creator ||
-                    (this.Creator != null &&
-                    this.Creator.Equals(input.Creator))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ProjectNumId != null)
-                    hashCode = hashCode * 59 + this.ProjectNumId.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.CreatedOn != null)
-                    hashCode = hashCode * 59 + this.CreatedOn.GetHashCode();
-                if (this.UpdatedOn != null)
-                    hashCode = hashCode * 59 + this.UpdatedOn.GetHashCode();
-                if (this.ProjectType != null)
-                    hashCode = hashCode * 59 + this.ProjectType.GetHashCode();
-                if (this.Archive != null)
-                    hashCode = hashCode * 59 + this.Archive.GetHashCode();
-                if (this.EnterpriseId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseId.GetHashCode();
-                if (this.ProjectCode != null)
-                    hashCode = hashCode * 59 + this.ProjectCode.GetHashCode();
-                if (this.Creator != null)
-                    hashCode = hashCode * 59 + this.Creator.GetHashCode();
+                var hashCode = 41;
+                if (this.ProjectNumId != null) hashCode = hashCode * 59 + this.ProjectNumId.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.CreatedOn != null) hashCode = hashCode * 59 + this.CreatedOn.GetHashCode();
+                if (this.UpdatedOn != null) hashCode = hashCode * 59 + this.UpdatedOn.GetHashCode();
+                if (this.ProjectType != null) hashCode = hashCode * 59 + this.ProjectType.GetHashCode();
+                if (this.Archive != null) hashCode = hashCode * 59 + this.Archive.GetHashCode();
+                if (this.EnterpriseId != null) hashCode = hashCode * 59 + this.EnterpriseId.GetHashCode();
+                if (this.ProjectCode != null) hashCode = hashCode * 59 + this.ProjectCode.GetHashCode();
+                if (this.Creator != null) hashCode = hashCode * 59 + this.Creator.GetHashCode();
                 return hashCode;
             }
         }

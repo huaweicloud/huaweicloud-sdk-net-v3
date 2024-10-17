@@ -326,50 +326,17 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(JobRecords input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobName != input.JobName || (this.JobName != null && !this.JobName.Equals(input.JobName))) return false;
+            if (this.RecordType != input.RecordType) return false;
+            if (this.RecordTime != input.RecordTime || (this.RecordTime != null && !this.RecordTime.Equals(input.RecordTime))) return false;
+            if (this.Request != input.Request || (this.Request != null && !this.Request.Equals(input.Request))) return false;
+            if (this.Response != input.Response || (this.Response != null && !this.Response.Equals(input.Response))) return false;
+            if (this.Code != input.Code || (this.Code != null && !this.Code.Equals(input.Code))) return false;
+            if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
+            if (this.JobStatus != input.JobStatus) return false;
 
-            return 
-                (
-                    this.JobName == input.JobName ||
-                    (this.JobName != null &&
-                    this.JobName.Equals(input.JobName))
-                ) && 
-                (
-                    this.RecordType == input.RecordType ||
-                    (this.RecordType != null &&
-                    this.RecordType.Equals(input.RecordType))
-                ) && 
-                (
-                    this.RecordTime == input.RecordTime ||
-                    (this.RecordTime != null &&
-                    this.RecordTime.Equals(input.RecordTime))
-                ) && 
-                (
-                    this.Request == input.Request ||
-                    (this.Request != null &&
-                    this.Request.Equals(input.Request))
-                ) && 
-                (
-                    this.Response == input.Response ||
-                    (this.Response != null &&
-                    this.Response.Equals(input.Response))
-                ) && 
-                (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
-                ) && 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.JobStatus == input.JobStatus ||
-                    (this.JobStatus != null &&
-                    this.JobStatus.Equals(input.JobStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -379,23 +346,15 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobName != null)
-                    hashCode = hashCode * 59 + this.JobName.GetHashCode();
-                if (this.RecordType != null)
-                    hashCode = hashCode * 59 + this.RecordType.GetHashCode();
-                if (this.RecordTime != null)
-                    hashCode = hashCode * 59 + this.RecordTime.GetHashCode();
-                if (this.Request != null)
-                    hashCode = hashCode * 59 + this.Request.GetHashCode();
-                if (this.Response != null)
-                    hashCode = hashCode * 59 + this.Response.GetHashCode();
-                if (this.Code != null)
-                    hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.JobStatus != null)
-                    hashCode = hashCode * 59 + this.JobStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.JobName != null) hashCode = hashCode * 59 + this.JobName.GetHashCode();
+                hashCode = hashCode * 59 + this.RecordType.GetHashCode();
+                if (this.RecordTime != null) hashCode = hashCode * 59 + this.RecordTime.GetHashCode();
+                if (this.Request != null) hashCode = hashCode * 59 + this.Request.GetHashCode();
+                if (this.Response != null) hashCode = hashCode * 59 + this.Response.GetHashCode();
+                if (this.Code != null) hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
+                hashCode = hashCode * 59 + this.JobStatus.GetHashCode();
                 return hashCode;
             }
         }

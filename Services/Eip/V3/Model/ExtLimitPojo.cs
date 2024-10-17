@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         /// </summary>
         public bool Equals(ExtLimitPojo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MinIngressSize != input.MinIngressSize || (this.MinIngressSize != null && !this.MinIngressSize.Equals(input.MinIngressSize))) return false;
+            if (this.MaxIngressSize != input.MaxIngressSize || (this.MaxIngressSize != null && !this.MaxIngressSize.Equals(input.MaxIngressSize))) return false;
+            if (this.Ratio95peak != input.Ratio95peak || (this.Ratio95peak != null && !this.Ratio95peak.Equals(input.Ratio95peak))) return false;
 
-            return 
-                (
-                    this.MinIngressSize == input.MinIngressSize ||
-                    (this.MinIngressSize != null &&
-                    this.MinIngressSize.Equals(input.MinIngressSize))
-                ) && 
-                (
-                    this.MaxIngressSize == input.MaxIngressSize ||
-                    (this.MaxIngressSize != null &&
-                    this.MaxIngressSize.Equals(input.MaxIngressSize))
-                ) && 
-                (
-                    this.Ratio95peak == input.Ratio95peak ||
-                    (this.Ratio95peak != null &&
-                    this.Ratio95peak.Equals(input.Ratio95peak))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Eip.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MinIngressSize != null)
-                    hashCode = hashCode * 59 + this.MinIngressSize.GetHashCode();
-                if (this.MaxIngressSize != null)
-                    hashCode = hashCode * 59 + this.MaxIngressSize.GetHashCode();
-                if (this.Ratio95peak != null)
-                    hashCode = hashCode * 59 + this.Ratio95peak.GetHashCode();
+                var hashCode = 41;
+                if (this.MinIngressSize != null) hashCode = hashCode * 59 + this.MinIngressSize.GetHashCode();
+                if (this.MaxIngressSize != null) hashCode = hashCode * 59 + this.MaxIngressSize.GetHashCode();
+                if (this.Ratio95peak != null) hashCode = hashCode * 59 + this.Ratio95peak.GetHashCode();
                 return hashCode;
             }
         }

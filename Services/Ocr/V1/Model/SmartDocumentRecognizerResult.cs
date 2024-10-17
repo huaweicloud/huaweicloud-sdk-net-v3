@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(SmartDocumentRecognizerResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OcrResult != input.OcrResult || (this.OcrResult != null && !this.OcrResult.Equals(input.OcrResult))) return false;
+            if (this.KvResult != input.KvResult || (this.KvResult != null && !this.KvResult.Equals(input.KvResult))) return false;
+            if (this.TableResult != input.TableResult || (this.TableResult != null && !this.TableResult.Equals(input.TableResult))) return false;
+            if (this.LayoutResult != input.LayoutResult || (this.LayoutResult != null && !this.LayoutResult.Equals(input.LayoutResult))) return false;
+            if (this.FormResult != input.FormResult || (this.FormResult != null && !this.FormResult.Equals(input.FormResult))) return false;
+            if (this.FormulaResult != input.FormulaResult || (this.FormulaResult != null && !this.FormulaResult.Equals(input.FormulaResult))) return false;
 
-            return 
-                (
-                    this.OcrResult == input.OcrResult ||
-                    (this.OcrResult != null &&
-                    this.OcrResult.Equals(input.OcrResult))
-                ) && 
-                (
-                    this.KvResult == input.KvResult ||
-                    (this.KvResult != null &&
-                    this.KvResult.Equals(input.KvResult))
-                ) && 
-                (
-                    this.TableResult == input.TableResult ||
-                    (this.TableResult != null &&
-                    this.TableResult.Equals(input.TableResult))
-                ) && 
-                (
-                    this.LayoutResult == input.LayoutResult ||
-                    (this.LayoutResult != null &&
-                    this.LayoutResult.Equals(input.LayoutResult))
-                ) && 
-                (
-                    this.FormResult == input.FormResult ||
-                    (this.FormResult != null &&
-                    this.FormResult.Equals(input.FormResult))
-                ) && 
-                (
-                    this.FormulaResult == input.FormulaResult ||
-                    (this.FormulaResult != null &&
-                    this.FormulaResult.Equals(input.FormulaResult))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OcrResult != null)
-                    hashCode = hashCode * 59 + this.OcrResult.GetHashCode();
-                if (this.KvResult != null)
-                    hashCode = hashCode * 59 + this.KvResult.GetHashCode();
-                if (this.TableResult != null)
-                    hashCode = hashCode * 59 + this.TableResult.GetHashCode();
-                if (this.LayoutResult != null)
-                    hashCode = hashCode * 59 + this.LayoutResult.GetHashCode();
-                if (this.FormResult != null)
-                    hashCode = hashCode * 59 + this.FormResult.GetHashCode();
-                if (this.FormulaResult != null)
-                    hashCode = hashCode * 59 + this.FormulaResult.GetHashCode();
+                var hashCode = 41;
+                if (this.OcrResult != null) hashCode = hashCode * 59 + this.OcrResult.GetHashCode();
+                if (this.KvResult != null) hashCode = hashCode * 59 + this.KvResult.GetHashCode();
+                if (this.TableResult != null) hashCode = hashCode * 59 + this.TableResult.GetHashCode();
+                if (this.LayoutResult != null) hashCode = hashCode * 59 + this.LayoutResult.GetHashCode();
+                if (this.FormResult != null) hashCode = hashCode * 59 + this.FormResult.GetHashCode();
+                if (this.FormulaResult != null) hashCode = hashCode * 59 + this.FormulaResult.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(AddNodesToNodePool input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ServerID != input.ServerID || (this.ServerID != null && !this.ServerID.Equals(input.ServerID))) return false;
 
-            return 
-                (
-                    this.ServerID == input.ServerID ||
-                    (this.ServerID != null &&
-                    this.ServerID.Equals(input.ServerID))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ServerID != null)
-                    hashCode = hashCode * 59 + this.ServerID.GetHashCode();
+                var hashCode = 41;
+                if (this.ServerID != null) hashCode = hashCode * 59 + this.ServerID.GetHashCode();
                 return hashCode;
             }
         }

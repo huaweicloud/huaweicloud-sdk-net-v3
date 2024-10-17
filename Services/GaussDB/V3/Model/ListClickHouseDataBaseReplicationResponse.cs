@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ListClickHouseDataBaseReplicationResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
+            if (this.Replications != input.Replications || (this.Replications != null && input.Replications != null && !this.Replications.SequenceEqual(input.Replications))) return false;
+            if (this.ExtText != input.ExtText || (this.ExtText != null && !this.ExtText.Equals(input.ExtText))) return false;
 
-            return 
-                (
-                    this.TotalCount == input.TotalCount ||
-                    (this.TotalCount != null &&
-                    this.TotalCount.Equals(input.TotalCount))
-                ) && 
-                (
-                    this.Replications == input.Replications ||
-                    this.Replications != null &&
-                    input.Replications != null &&
-                    this.Replications.SequenceEqual(input.Replications)
-                ) && 
-                (
-                    this.ExtText == input.ExtText ||
-                    (this.ExtText != null &&
-                    this.ExtText.Equals(input.ExtText))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TotalCount != null)
-                    hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
-                if (this.Replications != null)
-                    hashCode = hashCode * 59 + this.Replications.GetHashCode();
-                if (this.ExtText != null)
-                    hashCode = hashCode * 59 + this.ExtText.GetHashCode();
+                var hashCode = 41;
+                if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
+                if (this.Replications != null) hashCode = hashCode * 59 + this.Replications.GetHashCode();
+                if (this.ExtText != null) hashCode = hashCode * 59 + this.ExtText.GetHashCode();
                 return hashCode;
             }
         }

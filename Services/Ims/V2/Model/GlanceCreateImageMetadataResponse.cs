@@ -864,161 +864,39 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         public bool Equals(GlanceCreateImageMetadataResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Visibility != input.Visibility || (this.Visibility != null && !this.Visibility.Equals(input.Visibility))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Protected != input.Protected || (this.Protected != null && !this.Protected.Equals(input.Protected))) return false;
+            if (this.ContainerFormat != input.ContainerFormat || (this.ContainerFormat != null && !this.ContainerFormat.Equals(input.ContainerFormat))) return false;
+            if (this.DiskFormat != input.DiskFormat) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.MinRam != input.MinRam || (this.MinRam != null && !this.MinRam.Equals(input.MinRam))) return false;
+            if (this.MinDisk != input.MinDisk || (this.MinDisk != null && !this.MinDisk.Equals(input.MinDisk))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.Self != input.Self || (this.Self != null && !this.Self.Equals(input.Self))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.File != input.File || (this.File != null && !this.File.Equals(input.File))) return false;
+            if (this.Schema != input.Schema || (this.Schema != null && !this.Schema.Equals(input.Schema))) return false;
+            if (this.ImageSourceType != input.ImageSourceType || (this.ImageSourceType != null && !this.ImageSourceType.Equals(input.ImageSourceType))) return false;
+            if (this.ImageSize != input.ImageSize || (this.ImageSize != null && !this.ImageSize.Equals(input.ImageSize))) return false;
+            if (this.Isregistered != input.Isregistered || (this.Isregistered != null && !this.Isregistered.Equals(input.Isregistered))) return false;
+            if (this.OsVersion != input.OsVersion || (this.OsVersion != null && !this.OsVersion.Equals(input.OsVersion))) return false;
+            if (this.OsType != input.OsType) return false;
+            if (this.Platform != input.Platform || (this.Platform != null && !this.Platform.Equals(input.Platform))) return false;
+            if (this.OsBit != input.OsBit) return false;
+            if (this.Imagetype != input.Imagetype || (this.Imagetype != null && !this.Imagetype.Equals(input.Imagetype))) return false;
+            if (this.VirtualEnvType != input.VirtualEnvType) return false;
+            if (this.Owner != input.Owner || (this.Owner != null && !this.Owner.Equals(input.Owner))) return false;
+            if (this.VirtualSize != input.VirtualSize || (this.VirtualSize != null && !this.VirtualSize.Equals(input.VirtualSize))) return false;
+            if (this.Properties != input.Properties || (this.Properties != null && !this.Properties.Equals(input.Properties))) return false;
+            if (this.RootOrigin != input.RootOrigin || (this.RootOrigin != null && !this.RootOrigin.Equals(input.RootOrigin))) return false;
+            if (this.Checksum != input.Checksum || (this.Checksum != null && !this.Checksum.Equals(input.Checksum))) return false;
+            if (this.Size != input.Size || (this.Size != null && !this.Size.Equals(input.Size))) return false;
 
-            return 
-                (
-                    this.Visibility == input.Visibility ||
-                    (this.Visibility != null &&
-                    this.Visibility.Equals(input.Visibility))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Protected == input.Protected ||
-                    (this.Protected != null &&
-                    this.Protected.Equals(input.Protected))
-                ) && 
-                (
-                    this.ContainerFormat == input.ContainerFormat ||
-                    (this.ContainerFormat != null &&
-                    this.ContainerFormat.Equals(input.ContainerFormat))
-                ) && 
-                (
-                    this.DiskFormat == input.DiskFormat ||
-                    (this.DiskFormat != null &&
-                    this.DiskFormat.Equals(input.DiskFormat))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.MinRam == input.MinRam ||
-                    (this.MinRam != null &&
-                    this.MinRam.Equals(input.MinRam))
-                ) && 
-                (
-                    this.MinDisk == input.MinDisk ||
-                    (this.MinDisk != null &&
-                    this.MinDisk.Equals(input.MinDisk))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.Self == input.Self ||
-                    (this.Self != null &&
-                    this.Self.Equals(input.Self))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.File == input.File ||
-                    (this.File != null &&
-                    this.File.Equals(input.File))
-                ) && 
-                (
-                    this.Schema == input.Schema ||
-                    (this.Schema != null &&
-                    this.Schema.Equals(input.Schema))
-                ) && 
-                (
-                    this.ImageSourceType == input.ImageSourceType ||
-                    (this.ImageSourceType != null &&
-                    this.ImageSourceType.Equals(input.ImageSourceType))
-                ) && 
-                (
-                    this.ImageSize == input.ImageSize ||
-                    (this.ImageSize != null &&
-                    this.ImageSize.Equals(input.ImageSize))
-                ) && 
-                (
-                    this.Isregistered == input.Isregistered ||
-                    (this.Isregistered != null &&
-                    this.Isregistered.Equals(input.Isregistered))
-                ) && 
-                (
-                    this.OsVersion == input.OsVersion ||
-                    (this.OsVersion != null &&
-                    this.OsVersion.Equals(input.OsVersion))
-                ) && 
-                (
-                    this.OsType == input.OsType ||
-                    (this.OsType != null &&
-                    this.OsType.Equals(input.OsType))
-                ) && 
-                (
-                    this.Platform == input.Platform ||
-                    (this.Platform != null &&
-                    this.Platform.Equals(input.Platform))
-                ) && 
-                (
-                    this.OsBit == input.OsBit ||
-                    (this.OsBit != null &&
-                    this.OsBit.Equals(input.OsBit))
-                ) && 
-                (
-                    this.Imagetype == input.Imagetype ||
-                    (this.Imagetype != null &&
-                    this.Imagetype.Equals(input.Imagetype))
-                ) && 
-                (
-                    this.VirtualEnvType == input.VirtualEnvType ||
-                    (this.VirtualEnvType != null &&
-                    this.VirtualEnvType.Equals(input.VirtualEnvType))
-                ) && 
-                (
-                    this.Owner == input.Owner ||
-                    (this.Owner != null &&
-                    this.Owner.Equals(input.Owner))
-                ) && 
-                (
-                    this.VirtualSize == input.VirtualSize ||
-                    (this.VirtualSize != null &&
-                    this.VirtualSize.Equals(input.VirtualSize))
-                ) && 
-                (
-                    this.Properties == input.Properties ||
-                    (this.Properties != null &&
-                    this.Properties.Equals(input.Properties))
-                ) && 
-                (
-                    this.RootOrigin == input.RootOrigin ||
-                    (this.RootOrigin != null &&
-                    this.RootOrigin.Equals(input.RootOrigin))
-                ) && 
-                (
-                    this.Checksum == input.Checksum ||
-                    (this.Checksum != null &&
-                    this.Checksum.Equals(input.Checksum))
-                ) && 
-                (
-                    this.Size == input.Size ||
-                    (this.Size != null &&
-                    this.Size.Equals(input.Size))
-                );
+            return true;
         }
 
         /// <summary>
@@ -1028,67 +906,37 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Visibility != null)
-                    hashCode = hashCode * 59 + this.Visibility.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Protected != null)
-                    hashCode = hashCode * 59 + this.Protected.GetHashCode();
-                if (this.ContainerFormat != null)
-                    hashCode = hashCode * 59 + this.ContainerFormat.GetHashCode();
-                if (this.DiskFormat != null)
-                    hashCode = hashCode * 59 + this.DiskFormat.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.MinRam != null)
-                    hashCode = hashCode * 59 + this.MinRam.GetHashCode();
-                if (this.MinDisk != null)
-                    hashCode = hashCode * 59 + this.MinDisk.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.Self != null)
-                    hashCode = hashCode * 59 + this.Self.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.File != null)
-                    hashCode = hashCode * 59 + this.File.GetHashCode();
-                if (this.Schema != null)
-                    hashCode = hashCode * 59 + this.Schema.GetHashCode();
-                if (this.ImageSourceType != null)
-                    hashCode = hashCode * 59 + this.ImageSourceType.GetHashCode();
-                if (this.ImageSize != null)
-                    hashCode = hashCode * 59 + this.ImageSize.GetHashCode();
-                if (this.Isregistered != null)
-                    hashCode = hashCode * 59 + this.Isregistered.GetHashCode();
-                if (this.OsVersion != null)
-                    hashCode = hashCode * 59 + this.OsVersion.GetHashCode();
-                if (this.OsType != null)
-                    hashCode = hashCode * 59 + this.OsType.GetHashCode();
-                if (this.Platform != null)
-                    hashCode = hashCode * 59 + this.Platform.GetHashCode();
-                if (this.OsBit != null)
-                    hashCode = hashCode * 59 + this.OsBit.GetHashCode();
-                if (this.Imagetype != null)
-                    hashCode = hashCode * 59 + this.Imagetype.GetHashCode();
-                if (this.VirtualEnvType != null)
-                    hashCode = hashCode * 59 + this.VirtualEnvType.GetHashCode();
-                if (this.Owner != null)
-                    hashCode = hashCode * 59 + this.Owner.GetHashCode();
-                if (this.VirtualSize != null)
-                    hashCode = hashCode * 59 + this.VirtualSize.GetHashCode();
-                if (this.Properties != null)
-                    hashCode = hashCode * 59 + this.Properties.GetHashCode();
-                if (this.RootOrigin != null)
-                    hashCode = hashCode * 59 + this.RootOrigin.GetHashCode();
-                if (this.Checksum != null)
-                    hashCode = hashCode * 59 + this.Checksum.GetHashCode();
-                if (this.Size != null)
-                    hashCode = hashCode * 59 + this.Size.GetHashCode();
+                var hashCode = 41;
+                if (this.Visibility != null) hashCode = hashCode * 59 + this.Visibility.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Protected != null) hashCode = hashCode * 59 + this.Protected.GetHashCode();
+                if (this.ContainerFormat != null) hashCode = hashCode * 59 + this.ContainerFormat.GetHashCode();
+                hashCode = hashCode * 59 + this.DiskFormat.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.MinRam != null) hashCode = hashCode * 59 + this.MinRam.GetHashCode();
+                if (this.MinDisk != null) hashCode = hashCode * 59 + this.MinDisk.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.Self != null) hashCode = hashCode * 59 + this.Self.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.File != null) hashCode = hashCode * 59 + this.File.GetHashCode();
+                if (this.Schema != null) hashCode = hashCode * 59 + this.Schema.GetHashCode();
+                if (this.ImageSourceType != null) hashCode = hashCode * 59 + this.ImageSourceType.GetHashCode();
+                if (this.ImageSize != null) hashCode = hashCode * 59 + this.ImageSize.GetHashCode();
+                if (this.Isregistered != null) hashCode = hashCode * 59 + this.Isregistered.GetHashCode();
+                if (this.OsVersion != null) hashCode = hashCode * 59 + this.OsVersion.GetHashCode();
+                hashCode = hashCode * 59 + this.OsType.GetHashCode();
+                if (this.Platform != null) hashCode = hashCode * 59 + this.Platform.GetHashCode();
+                hashCode = hashCode * 59 + this.OsBit.GetHashCode();
+                if (this.Imagetype != null) hashCode = hashCode * 59 + this.Imagetype.GetHashCode();
+                hashCode = hashCode * 59 + this.VirtualEnvType.GetHashCode();
+                if (this.Owner != null) hashCode = hashCode * 59 + this.Owner.GetHashCode();
+                if (this.VirtualSize != null) hashCode = hashCode * 59 + this.VirtualSize.GetHashCode();
+                if (this.Properties != null) hashCode = hashCode * 59 + this.Properties.GetHashCode();
+                if (this.RootOrigin != null) hashCode = hashCode * 59 + this.RootOrigin.GetHashCode();
+                if (this.Checksum != null) hashCode = hashCode * 59 + this.Checksum.GetHashCode();
+                if (this.Size != null) hashCode = hashCode * 59 + this.Size.GetHashCode();
                 return hashCode;
             }
         }

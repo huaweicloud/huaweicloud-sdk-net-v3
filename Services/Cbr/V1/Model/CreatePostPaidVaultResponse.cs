@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(CreatePostPaidVaultResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Orders != input.Orders || (this.Orders != null && input.Orders != null && !this.Orders.SequenceEqual(input.Orders))) return false;
+            if (this.RetCode != input.RetCode || (this.RetCode != null && !this.RetCode.Equals(input.RetCode))) return false;
+            if (this.ErrText != input.ErrText || (this.ErrText != null && !this.ErrText.Equals(input.ErrText))) return false;
+            if (this.ErrorCode != input.ErrorCode || (this.ErrorCode != null && !this.ErrorCode.Equals(input.ErrorCode))) return false;
 
-            return 
-                (
-                    this.Orders == input.Orders ||
-                    this.Orders != null &&
-                    input.Orders != null &&
-                    this.Orders.SequenceEqual(input.Orders)
-                ) && 
-                (
-                    this.RetCode == input.RetCode ||
-                    (this.RetCode != null &&
-                    this.RetCode.Equals(input.RetCode))
-                ) && 
-                (
-                    this.ErrText == input.ErrText ||
-                    (this.ErrText != null &&
-                    this.ErrText.Equals(input.ErrText))
-                ) && 
-                (
-                    this.ErrorCode == input.ErrorCode ||
-                    (this.ErrorCode != null &&
-                    this.ErrorCode.Equals(input.ErrorCode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Orders != null)
-                    hashCode = hashCode * 59 + this.Orders.GetHashCode();
-                if (this.RetCode != null)
-                    hashCode = hashCode * 59 + this.RetCode.GetHashCode();
-                if (this.ErrText != null)
-                    hashCode = hashCode * 59 + this.ErrText.GetHashCode();
-                if (this.ErrorCode != null)
-                    hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
+                var hashCode = 41;
+                if (this.Orders != null) hashCode = hashCode * 59 + this.Orders.GetHashCode();
+                if (this.RetCode != null) hashCode = hashCode * 59 + this.RetCode.GetHashCode();
+                if (this.ErrText != null) hashCode = hashCode * 59 + this.ErrText.GetHashCode();
+                if (this.ErrorCode != null) hashCode = hashCode * 59 + this.ErrorCode.GetHashCode();
                 return hashCode;
             }
         }

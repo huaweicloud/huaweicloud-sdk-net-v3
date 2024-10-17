@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         /// </summary>
         public bool Equals(AMQPUser input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AccessKey != input.AccessKey || (this.AccessKey != null && !this.AccessKey.Equals(input.AccessKey))) return false;
+            if (this.SecretKey != input.SecretKey || (this.SecretKey != null && !this.SecretKey.Equals(input.SecretKey))) return false;
+            if (this.Vhosts != input.Vhosts || (this.Vhosts != null && input.Vhosts != null && !this.Vhosts.SequenceEqual(input.Vhosts))) return false;
 
-            return 
-                (
-                    this.AccessKey == input.AccessKey ||
-                    (this.AccessKey != null &&
-                    this.AccessKey.Equals(input.AccessKey))
-                ) && 
-                (
-                    this.SecretKey == input.SecretKey ||
-                    (this.SecretKey != null &&
-                    this.SecretKey.Equals(input.SecretKey))
-                ) && 
-                (
-                    this.Vhosts == input.Vhosts ||
-                    this.Vhosts != null &&
-                    input.Vhosts != null &&
-                    this.Vhosts.SequenceEqual(input.Vhosts)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Rabbitmq.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AccessKey != null)
-                    hashCode = hashCode * 59 + this.AccessKey.GetHashCode();
-                if (this.SecretKey != null)
-                    hashCode = hashCode * 59 + this.SecretKey.GetHashCode();
-                if (this.Vhosts != null)
-                    hashCode = hashCode * 59 + this.Vhosts.GetHashCode();
+                var hashCode = 41;
+                if (this.AccessKey != null) hashCode = hashCode * 59 + this.AccessKey.GetHashCode();
+                if (this.SecretKey != null) hashCode = hashCode * 59 + this.SecretKey.GetHashCode();
+                if (this.Vhosts != null) hashCode = hashCode * 59 + this.Vhosts.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ListInstancesSupportFastRestoreResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SupportFastRestoreList != input.SupportFastRestoreList || (this.SupportFastRestoreList != null && input.SupportFastRestoreList != null && !this.SupportFastRestoreList.SequenceEqual(input.SupportFastRestoreList))) return false;
 
-            return 
-                (
-                    this.SupportFastRestoreList == input.SupportFastRestoreList ||
-                    this.SupportFastRestoreList != null &&
-                    input.SupportFastRestoreList != null &&
-                    this.SupportFastRestoreList.SequenceEqual(input.SupportFastRestoreList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SupportFastRestoreList != null)
-                    hashCode = hashCode * 59 + this.SupportFastRestoreList.GetHashCode();
+                var hashCode = 41;
+                if (this.SupportFastRestoreList != null) hashCode = hashCode * 59 + this.SupportFastRestoreList.GetHashCode();
                 return hashCode;
             }
         }

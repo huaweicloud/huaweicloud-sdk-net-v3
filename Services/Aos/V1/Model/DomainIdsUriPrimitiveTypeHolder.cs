@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(DomainIdsUriPrimitiveTypeHolder input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DomainIdsUri != input.DomainIdsUri || (this.DomainIdsUri != null && !this.DomainIdsUri.Equals(input.DomainIdsUri))) return false;
 
-            return 
-                (
-                    this.DomainIdsUri == input.DomainIdsUri ||
-                    (this.DomainIdsUri != null &&
-                    this.DomainIdsUri.Equals(input.DomainIdsUri))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DomainIdsUri != null)
-                    hashCode = hashCode * 59 + this.DomainIdsUri.GetHashCode();
+                var hashCode = 41;
+                if (this.DomainIdsUri != null) hashCode = hashCode * 59 + this.DomainIdsUri.GetHashCode();
                 return hashCode;
             }
         }

@@ -105,55 +105,18 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(WaybillElectronicResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Code != input.Code || (this.Code != null && !this.Code.Equals(input.Code))) return false;
+            if (this.ReceiverName != input.ReceiverName || (this.ReceiverName != null && !this.ReceiverName.Equals(input.ReceiverName))) return false;
+            if (this.ReceiverPhone != input.ReceiverPhone || (this.ReceiverPhone != null && !this.ReceiverPhone.Equals(input.ReceiverPhone))) return false;
+            if (this.ReceiverAddress != input.ReceiverAddress || (this.ReceiverAddress != null && !this.ReceiverAddress.Equals(input.ReceiverAddress))) return false;
+            if (this.SenderName != input.SenderName || (this.SenderName != null && !this.SenderName.Equals(input.SenderName))) return false;
+            if (this.SenderPhone != input.SenderPhone || (this.SenderPhone != null && !this.SenderPhone.Equals(input.SenderPhone))) return false;
+            if (this.SenderAddress != input.SenderAddress || (this.SenderAddress != null && !this.SenderAddress.Equals(input.SenderAddress))) return false;
+            if (this.WaybillNumber != input.WaybillNumber || (this.WaybillNumber != null && !this.WaybillNumber.Equals(input.WaybillNumber))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
 
-            return 
-                (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
-                ) && 
-                (
-                    this.ReceiverName == input.ReceiverName ||
-                    (this.ReceiverName != null &&
-                    this.ReceiverName.Equals(input.ReceiverName))
-                ) && 
-                (
-                    this.ReceiverPhone == input.ReceiverPhone ||
-                    (this.ReceiverPhone != null &&
-                    this.ReceiverPhone.Equals(input.ReceiverPhone))
-                ) && 
-                (
-                    this.ReceiverAddress == input.ReceiverAddress ||
-                    (this.ReceiverAddress != null &&
-                    this.ReceiverAddress.Equals(input.ReceiverAddress))
-                ) && 
-                (
-                    this.SenderName == input.SenderName ||
-                    (this.SenderName != null &&
-                    this.SenderName.Equals(input.SenderName))
-                ) && 
-                (
-                    this.SenderPhone == input.SenderPhone ||
-                    (this.SenderPhone != null &&
-                    this.SenderPhone.Equals(input.SenderPhone))
-                ) && 
-                (
-                    this.SenderAddress == input.SenderAddress ||
-                    (this.SenderAddress != null &&
-                    this.SenderAddress.Equals(input.SenderAddress))
-                ) && 
-                (
-                    this.WaybillNumber == input.WaybillNumber ||
-                    (this.WaybillNumber != null &&
-                    this.WaybillNumber.Equals(input.WaybillNumber))
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                );
+            return true;
         }
 
         /// <summary>
@@ -163,25 +126,16 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Code != null)
-                    hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.ReceiverName != null)
-                    hashCode = hashCode * 59 + this.ReceiverName.GetHashCode();
-                if (this.ReceiverPhone != null)
-                    hashCode = hashCode * 59 + this.ReceiverPhone.GetHashCode();
-                if (this.ReceiverAddress != null)
-                    hashCode = hashCode * 59 + this.ReceiverAddress.GetHashCode();
-                if (this.SenderName != null)
-                    hashCode = hashCode * 59 + this.SenderName.GetHashCode();
-                if (this.SenderPhone != null)
-                    hashCode = hashCode * 59 + this.SenderPhone.GetHashCode();
-                if (this.SenderAddress != null)
-                    hashCode = hashCode * 59 + this.SenderAddress.GetHashCode();
-                if (this.WaybillNumber != null)
-                    hashCode = hashCode * 59 + this.WaybillNumber.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                var hashCode = 41;
+                if (this.Code != null) hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.ReceiverName != null) hashCode = hashCode * 59 + this.ReceiverName.GetHashCode();
+                if (this.ReceiverPhone != null) hashCode = hashCode * 59 + this.ReceiverPhone.GetHashCode();
+                if (this.ReceiverAddress != null) hashCode = hashCode * 59 + this.ReceiverAddress.GetHashCode();
+                if (this.SenderName != null) hashCode = hashCode * 59 + this.SenderName.GetHashCode();
+                if (this.SenderPhone != null) hashCode = hashCode * 59 + this.SenderPhone.GetHashCode();
+                if (this.SenderAddress != null) hashCode = hashCode * 59 + this.SenderAddress.GetHashCode();
+                if (this.WaybillNumber != null) hashCode = hashCode * 59 + this.WaybillNumber.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
                 return hashCode;
             }
         }

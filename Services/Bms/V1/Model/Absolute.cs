@@ -175,105 +175,28 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(Absolute input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MaxTotalInstances != input.MaxTotalInstances || (this.MaxTotalInstances != null && !this.MaxTotalInstances.Equals(input.MaxTotalInstances))) return false;
+            if (this.MaxTotalCores != input.MaxTotalCores || (this.MaxTotalCores != null && !this.MaxTotalCores.Equals(input.MaxTotalCores))) return false;
+            if (this.MaxTotalRAMSize != input.MaxTotalRAMSize || (this.MaxTotalRAMSize != null && !this.MaxTotalRAMSize.Equals(input.MaxTotalRAMSize))) return false;
+            if (this.MaxTotalKeypairs != input.MaxTotalKeypairs || (this.MaxTotalKeypairs != null && !this.MaxTotalKeypairs.Equals(input.MaxTotalKeypairs))) return false;
+            if (this.MaxServerMeta != input.MaxServerMeta || (this.MaxServerMeta != null && !this.MaxServerMeta.Equals(input.MaxServerMeta))) return false;
+            if (this.MaxPersonality != input.MaxPersonality || (this.MaxPersonality != null && !this.MaxPersonality.Equals(input.MaxPersonality))) return false;
+            if (this.MaxPersonalitySize != input.MaxPersonalitySize || (this.MaxPersonalitySize != null && !this.MaxPersonalitySize.Equals(input.MaxPersonalitySize))) return false;
+            if (this.MaxServerGroups != input.MaxServerGroups || (this.MaxServerGroups != null && !this.MaxServerGroups.Equals(input.MaxServerGroups))) return false;
+            if (this.MaxServerGroupMembers != input.MaxServerGroupMembers || (this.MaxServerGroupMembers != null && !this.MaxServerGroupMembers.Equals(input.MaxServerGroupMembers))) return false;
+            if (this.TotalServerGroupsUsed != input.TotalServerGroupsUsed || (this.TotalServerGroupsUsed != null && !this.TotalServerGroupsUsed.Equals(input.TotalServerGroupsUsed))) return false;
+            if (this.MaxSecurityGroups != input.MaxSecurityGroups || (this.MaxSecurityGroups != null && !this.MaxSecurityGroups.Equals(input.MaxSecurityGroups))) return false;
+            if (this.MaxSecurityGroupRules != input.MaxSecurityGroupRules || (this.MaxSecurityGroupRules != null && !this.MaxSecurityGroupRules.Equals(input.MaxSecurityGroupRules))) return false;
+            if (this.MaxTotalFloatingIps != input.MaxTotalFloatingIps || (this.MaxTotalFloatingIps != null && !this.MaxTotalFloatingIps.Equals(input.MaxTotalFloatingIps))) return false;
+            if (this.MaxImageMeta != input.MaxImageMeta || (this.MaxImageMeta != null && !this.MaxImageMeta.Equals(input.MaxImageMeta))) return false;
+            if (this.TotalInstancesUsed != input.TotalInstancesUsed || (this.TotalInstancesUsed != null && !this.TotalInstancesUsed.Equals(input.TotalInstancesUsed))) return false;
+            if (this.TotalCoresUsed != input.TotalCoresUsed || (this.TotalCoresUsed != null && !this.TotalCoresUsed.Equals(input.TotalCoresUsed))) return false;
+            if (this.TotalRAMUsed != input.TotalRAMUsed || (this.TotalRAMUsed != null && !this.TotalRAMUsed.Equals(input.TotalRAMUsed))) return false;
+            if (this.TotalSecurityGroupsUsed != input.TotalSecurityGroupsUsed || (this.TotalSecurityGroupsUsed != null && !this.TotalSecurityGroupsUsed.Equals(input.TotalSecurityGroupsUsed))) return false;
+            if (this.TotalFloatingIpsUsed != input.TotalFloatingIpsUsed || (this.TotalFloatingIpsUsed != null && !this.TotalFloatingIpsUsed.Equals(input.TotalFloatingIpsUsed))) return false;
 
-            return 
-                (
-                    this.MaxTotalInstances == input.MaxTotalInstances ||
-                    (this.MaxTotalInstances != null &&
-                    this.MaxTotalInstances.Equals(input.MaxTotalInstances))
-                ) && 
-                (
-                    this.MaxTotalCores == input.MaxTotalCores ||
-                    (this.MaxTotalCores != null &&
-                    this.MaxTotalCores.Equals(input.MaxTotalCores))
-                ) && 
-                (
-                    this.MaxTotalRAMSize == input.MaxTotalRAMSize ||
-                    (this.MaxTotalRAMSize != null &&
-                    this.MaxTotalRAMSize.Equals(input.MaxTotalRAMSize))
-                ) && 
-                (
-                    this.MaxTotalKeypairs == input.MaxTotalKeypairs ||
-                    (this.MaxTotalKeypairs != null &&
-                    this.MaxTotalKeypairs.Equals(input.MaxTotalKeypairs))
-                ) && 
-                (
-                    this.MaxServerMeta == input.MaxServerMeta ||
-                    (this.MaxServerMeta != null &&
-                    this.MaxServerMeta.Equals(input.MaxServerMeta))
-                ) && 
-                (
-                    this.MaxPersonality == input.MaxPersonality ||
-                    (this.MaxPersonality != null &&
-                    this.MaxPersonality.Equals(input.MaxPersonality))
-                ) && 
-                (
-                    this.MaxPersonalitySize == input.MaxPersonalitySize ||
-                    (this.MaxPersonalitySize != null &&
-                    this.MaxPersonalitySize.Equals(input.MaxPersonalitySize))
-                ) && 
-                (
-                    this.MaxServerGroups == input.MaxServerGroups ||
-                    (this.MaxServerGroups != null &&
-                    this.MaxServerGroups.Equals(input.MaxServerGroups))
-                ) && 
-                (
-                    this.MaxServerGroupMembers == input.MaxServerGroupMembers ||
-                    (this.MaxServerGroupMembers != null &&
-                    this.MaxServerGroupMembers.Equals(input.MaxServerGroupMembers))
-                ) && 
-                (
-                    this.TotalServerGroupsUsed == input.TotalServerGroupsUsed ||
-                    (this.TotalServerGroupsUsed != null &&
-                    this.TotalServerGroupsUsed.Equals(input.TotalServerGroupsUsed))
-                ) && 
-                (
-                    this.MaxSecurityGroups == input.MaxSecurityGroups ||
-                    (this.MaxSecurityGroups != null &&
-                    this.MaxSecurityGroups.Equals(input.MaxSecurityGroups))
-                ) && 
-                (
-                    this.MaxSecurityGroupRules == input.MaxSecurityGroupRules ||
-                    (this.MaxSecurityGroupRules != null &&
-                    this.MaxSecurityGroupRules.Equals(input.MaxSecurityGroupRules))
-                ) && 
-                (
-                    this.MaxTotalFloatingIps == input.MaxTotalFloatingIps ||
-                    (this.MaxTotalFloatingIps != null &&
-                    this.MaxTotalFloatingIps.Equals(input.MaxTotalFloatingIps))
-                ) && 
-                (
-                    this.MaxImageMeta == input.MaxImageMeta ||
-                    (this.MaxImageMeta != null &&
-                    this.MaxImageMeta.Equals(input.MaxImageMeta))
-                ) && 
-                (
-                    this.TotalInstancesUsed == input.TotalInstancesUsed ||
-                    (this.TotalInstancesUsed != null &&
-                    this.TotalInstancesUsed.Equals(input.TotalInstancesUsed))
-                ) && 
-                (
-                    this.TotalCoresUsed == input.TotalCoresUsed ||
-                    (this.TotalCoresUsed != null &&
-                    this.TotalCoresUsed.Equals(input.TotalCoresUsed))
-                ) && 
-                (
-                    this.TotalRAMUsed == input.TotalRAMUsed ||
-                    (this.TotalRAMUsed != null &&
-                    this.TotalRAMUsed.Equals(input.TotalRAMUsed))
-                ) && 
-                (
-                    this.TotalSecurityGroupsUsed == input.TotalSecurityGroupsUsed ||
-                    (this.TotalSecurityGroupsUsed != null &&
-                    this.TotalSecurityGroupsUsed.Equals(input.TotalSecurityGroupsUsed))
-                ) && 
-                (
-                    this.TotalFloatingIpsUsed == input.TotalFloatingIpsUsed ||
-                    (this.TotalFloatingIpsUsed != null &&
-                    this.TotalFloatingIpsUsed.Equals(input.TotalFloatingIpsUsed))
-                );
+            return true;
         }
 
         /// <summary>
@@ -283,45 +206,26 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MaxTotalInstances != null)
-                    hashCode = hashCode * 59 + this.MaxTotalInstances.GetHashCode();
-                if (this.MaxTotalCores != null)
-                    hashCode = hashCode * 59 + this.MaxTotalCores.GetHashCode();
-                if (this.MaxTotalRAMSize != null)
-                    hashCode = hashCode * 59 + this.MaxTotalRAMSize.GetHashCode();
-                if (this.MaxTotalKeypairs != null)
-                    hashCode = hashCode * 59 + this.MaxTotalKeypairs.GetHashCode();
-                if (this.MaxServerMeta != null)
-                    hashCode = hashCode * 59 + this.MaxServerMeta.GetHashCode();
-                if (this.MaxPersonality != null)
-                    hashCode = hashCode * 59 + this.MaxPersonality.GetHashCode();
-                if (this.MaxPersonalitySize != null)
-                    hashCode = hashCode * 59 + this.MaxPersonalitySize.GetHashCode();
-                if (this.MaxServerGroups != null)
-                    hashCode = hashCode * 59 + this.MaxServerGroups.GetHashCode();
-                if (this.MaxServerGroupMembers != null)
-                    hashCode = hashCode * 59 + this.MaxServerGroupMembers.GetHashCode();
-                if (this.TotalServerGroupsUsed != null)
-                    hashCode = hashCode * 59 + this.TotalServerGroupsUsed.GetHashCode();
-                if (this.MaxSecurityGroups != null)
-                    hashCode = hashCode * 59 + this.MaxSecurityGroups.GetHashCode();
-                if (this.MaxSecurityGroupRules != null)
-                    hashCode = hashCode * 59 + this.MaxSecurityGroupRules.GetHashCode();
-                if (this.MaxTotalFloatingIps != null)
-                    hashCode = hashCode * 59 + this.MaxTotalFloatingIps.GetHashCode();
-                if (this.MaxImageMeta != null)
-                    hashCode = hashCode * 59 + this.MaxImageMeta.GetHashCode();
-                if (this.TotalInstancesUsed != null)
-                    hashCode = hashCode * 59 + this.TotalInstancesUsed.GetHashCode();
-                if (this.TotalCoresUsed != null)
-                    hashCode = hashCode * 59 + this.TotalCoresUsed.GetHashCode();
-                if (this.TotalRAMUsed != null)
-                    hashCode = hashCode * 59 + this.TotalRAMUsed.GetHashCode();
-                if (this.TotalSecurityGroupsUsed != null)
-                    hashCode = hashCode * 59 + this.TotalSecurityGroupsUsed.GetHashCode();
-                if (this.TotalFloatingIpsUsed != null)
-                    hashCode = hashCode * 59 + this.TotalFloatingIpsUsed.GetHashCode();
+                var hashCode = 41;
+                if (this.MaxTotalInstances != null) hashCode = hashCode * 59 + this.MaxTotalInstances.GetHashCode();
+                if (this.MaxTotalCores != null) hashCode = hashCode * 59 + this.MaxTotalCores.GetHashCode();
+                if (this.MaxTotalRAMSize != null) hashCode = hashCode * 59 + this.MaxTotalRAMSize.GetHashCode();
+                if (this.MaxTotalKeypairs != null) hashCode = hashCode * 59 + this.MaxTotalKeypairs.GetHashCode();
+                if (this.MaxServerMeta != null) hashCode = hashCode * 59 + this.MaxServerMeta.GetHashCode();
+                if (this.MaxPersonality != null) hashCode = hashCode * 59 + this.MaxPersonality.GetHashCode();
+                if (this.MaxPersonalitySize != null) hashCode = hashCode * 59 + this.MaxPersonalitySize.GetHashCode();
+                if (this.MaxServerGroups != null) hashCode = hashCode * 59 + this.MaxServerGroups.GetHashCode();
+                if (this.MaxServerGroupMembers != null) hashCode = hashCode * 59 + this.MaxServerGroupMembers.GetHashCode();
+                if (this.TotalServerGroupsUsed != null) hashCode = hashCode * 59 + this.TotalServerGroupsUsed.GetHashCode();
+                if (this.MaxSecurityGroups != null) hashCode = hashCode * 59 + this.MaxSecurityGroups.GetHashCode();
+                if (this.MaxSecurityGroupRules != null) hashCode = hashCode * 59 + this.MaxSecurityGroupRules.GetHashCode();
+                if (this.MaxTotalFloatingIps != null) hashCode = hashCode * 59 + this.MaxTotalFloatingIps.GetHashCode();
+                if (this.MaxImageMeta != null) hashCode = hashCode * 59 + this.MaxImageMeta.GetHashCode();
+                if (this.TotalInstancesUsed != null) hashCode = hashCode * 59 + this.TotalInstancesUsed.GetHashCode();
+                if (this.TotalCoresUsed != null) hashCode = hashCode * 59 + this.TotalCoresUsed.GetHashCode();
+                if (this.TotalRAMUsed != null) hashCode = hashCode * 59 + this.TotalRAMUsed.GetHashCode();
+                if (this.TotalSecurityGroupsUsed != null) hashCode = hashCode * 59 + this.TotalSecurityGroupsUsed.GetHashCode();
+                if (this.TotalFloatingIpsUsed != null) hashCode = hashCode * 59 + this.TotalFloatingIpsUsed.GetHashCode();
                 return hashCode;
             }
         }

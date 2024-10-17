@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ResetInstancePasswordBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NewPassword != input.NewPassword || (this.NewPassword != null && !this.NewPassword.Equals(input.NewPassword))) return false;
+            if (this.NoPasswordAccess != input.NoPasswordAccess || (this.NoPasswordAccess != null && !this.NoPasswordAccess.Equals(input.NoPasswordAccess))) return false;
 
-            return 
-                (
-                    this.NewPassword == input.NewPassword ||
-                    (this.NewPassword != null &&
-                    this.NewPassword.Equals(input.NewPassword))
-                ) && 
-                (
-                    this.NoPasswordAccess == input.NoPasswordAccess ||
-                    (this.NoPasswordAccess != null &&
-                    this.NoPasswordAccess.Equals(input.NoPasswordAccess))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NewPassword != null)
-                    hashCode = hashCode * 59 + this.NewPassword.GetHashCode();
-                if (this.NoPasswordAccess != null)
-                    hashCode = hashCode * 59 + this.NoPasswordAccess.GetHashCode();
+                var hashCode = 41;
+                if (this.NewPassword != null) hashCode = hashCode * 59 + this.NewPassword.GetHashCode();
+                if (this.NoPasswordAccess != null) hashCode = hashCode * 59 + this.NoPasswordAccess.GetHashCode();
                 return hashCode;
             }
         }

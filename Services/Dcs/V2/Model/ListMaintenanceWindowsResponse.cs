@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ListMaintenanceWindowsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MaintainWindows != input.MaintainWindows || (this.MaintainWindows != null && input.MaintainWindows != null && !this.MaintainWindows.SequenceEqual(input.MaintainWindows))) return false;
 
-            return 
-                (
-                    this.MaintainWindows == input.MaintainWindows ||
-                    this.MaintainWindows != null &&
-                    input.MaintainWindows != null &&
-                    this.MaintainWindows.SequenceEqual(input.MaintainWindows)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MaintainWindows != null)
-                    hashCode = hashCode * 59 + this.MaintainWindows.GetHashCode();
+                var hashCode = 41;
+                if (this.MaintainWindows != null) hashCode = hashCode * 59 + this.MaintainWindows.GetHashCode();
                 return hashCode;
             }
         }

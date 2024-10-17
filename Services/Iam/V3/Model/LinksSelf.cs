@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(LinksSelf input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Self != input.Self || (this.Self != null && !this.Self.Equals(input.Self))) return false;
 
-            return 
-                (
-                    this.Self == input.Self ||
-                    (this.Self != null &&
-                    this.Self.Equals(input.Self))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Self != null)
-                    hashCode = hashCode * 59 + this.Self.GetHashCode();
+                var hashCode = 41;
+                if (this.Self != null) hashCode = hashCode * 59 + this.Self.GetHashCode();
                 return hashCode;
             }
         }

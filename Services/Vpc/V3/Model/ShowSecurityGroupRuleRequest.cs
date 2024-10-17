@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(ShowSecurityGroupRuleRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SecurityGroupRuleId != input.SecurityGroupRuleId || (this.SecurityGroupRuleId != null && !this.SecurityGroupRuleId.Equals(input.SecurityGroupRuleId))) return false;
 
-            return 
-                (
-                    this.SecurityGroupRuleId == input.SecurityGroupRuleId ||
-                    (this.SecurityGroupRuleId != null &&
-                    this.SecurityGroupRuleId.Equals(input.SecurityGroupRuleId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SecurityGroupRuleId != null)
-                    hashCode = hashCode * 59 + this.SecurityGroupRuleId.GetHashCode();
+                var hashCode = 41;
+                if (this.SecurityGroupRuleId != null) hashCode = hashCode * 59 + this.SecurityGroupRuleId.GetHashCode();
                 return hashCode;
             }
         }

@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(ApplyHistoryRsp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.InstanceName != input.InstanceName || (this.InstanceName != null && !this.InstanceName.Equals(input.InstanceName))) return false;
+            if (this.AppliedAt != input.AppliedAt || (this.AppliedAt != null && !this.AppliedAt.Equals(input.AppliedAt))) return false;
+            if (this.ApplyResult != input.ApplyResult || (this.ApplyResult != null && !this.ApplyResult.Equals(input.ApplyResult))) return false;
+            if (this.FailureReason != input.FailureReason || (this.FailureReason != null && !this.FailureReason.Equals(input.FailureReason))) return false;
 
-            return 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.InstanceName == input.InstanceName ||
-                    (this.InstanceName != null &&
-                    this.InstanceName.Equals(input.InstanceName))
-                ) && 
-                (
-                    this.AppliedAt == input.AppliedAt ||
-                    (this.AppliedAt != null &&
-                    this.AppliedAt.Equals(input.AppliedAt))
-                ) && 
-                (
-                    this.ApplyResult == input.ApplyResult ||
-                    (this.ApplyResult != null &&
-                    this.ApplyResult.Equals(input.ApplyResult))
-                ) && 
-                (
-                    this.FailureReason == input.FailureReason ||
-                    (this.FailureReason != null &&
-                    this.FailureReason.Equals(input.FailureReason))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.InstanceName != null)
-                    hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
-                if (this.AppliedAt != null)
-                    hashCode = hashCode * 59 + this.AppliedAt.GetHashCode();
-                if (this.ApplyResult != null)
-                    hashCode = hashCode * 59 + this.ApplyResult.GetHashCode();
-                if (this.FailureReason != null)
-                    hashCode = hashCode * 59 + this.FailureReason.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.InstanceName != null) hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
+                if (this.AppliedAt != null) hashCode = hashCode * 59 + this.AppliedAt.GetHashCode();
+                if (this.ApplyResult != null) hashCode = hashCode * 59 + this.ApplyResult.GetHashCode();
+                if (this.FailureReason != null) hashCode = hashCode * 59 + this.FailureReason.GetHashCode();
                 return hashCode;
             }
         }

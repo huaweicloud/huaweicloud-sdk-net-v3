@@ -204,41 +204,15 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ShowDbObjectCollectionStatusResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TargetRootDb != input.TargetRootDb || (this.TargetRootDb != null && !this.TargetRootDb.Equals(input.TargetRootDb))) return false;
+            if (this.ObjectInfo != input.ObjectInfo || (this.ObjectInfo != null && input.ObjectInfo != null && !this.ObjectInfo.SequenceEqual(input.ObjectInfo))) return false;
+            if (this.MaxTableNum != input.MaxTableNum || (this.MaxTableNum != null && !this.MaxTableNum.Equals(input.MaxTableNum))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.ObjectScope != input.ObjectScope || (this.ObjectScope != null && !this.ObjectScope.Equals(input.ObjectScope))) return false;
 
-            return 
-                (
-                    this.TargetRootDb == input.TargetRootDb ||
-                    (this.TargetRootDb != null &&
-                    this.TargetRootDb.Equals(input.TargetRootDb))
-                ) && 
-                (
-                    this.ObjectInfo == input.ObjectInfo ||
-                    this.ObjectInfo != null &&
-                    input.ObjectInfo != null &&
-                    this.ObjectInfo.SequenceEqual(input.ObjectInfo)
-                ) && 
-                (
-                    this.MaxTableNum == input.MaxTableNum ||
-                    (this.MaxTableNum != null &&
-                    this.MaxTableNum.Equals(input.MaxTableNum))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.ObjectScope == input.ObjectScope ||
-                    (this.ObjectScope != null &&
-                    this.ObjectScope.Equals(input.ObjectScope))
-                );
+            return true;
         }
 
         /// <summary>
@@ -248,19 +222,13 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TargetRootDb != null)
-                    hashCode = hashCode * 59 + this.TargetRootDb.GetHashCode();
-                if (this.ObjectInfo != null)
-                    hashCode = hashCode * 59 + this.ObjectInfo.GetHashCode();
-                if (this.MaxTableNum != null)
-                    hashCode = hashCode * 59 + this.MaxTableNum.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.ObjectScope != null)
-                    hashCode = hashCode * 59 + this.ObjectScope.GetHashCode();
+                var hashCode = 41;
+                if (this.TargetRootDb != null) hashCode = hashCode * 59 + this.TargetRootDb.GetHashCode();
+                if (this.ObjectInfo != null) hashCode = hashCode * 59 + this.ObjectInfo.GetHashCode();
+                if (this.MaxTableNum != null) hashCode = hashCode * 59 + this.MaxTableNum.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.ObjectScope != null) hashCode = hashCode * 59 + this.ObjectScope.GetHashCode();
                 return hashCode;
             }
         }

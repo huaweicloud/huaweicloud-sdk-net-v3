@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(CancelHandshakeResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Handshake != input.Handshake || (this.Handshake != null && !this.Handshake.Equals(input.Handshake))) return false;
 
-            return 
-                (
-                    this.Handshake == input.Handshake ||
-                    (this.Handshake != null &&
-                    this.Handshake.Equals(input.Handshake))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Handshake != null)
-                    hashCode = hashCode * 59 + this.Handshake.GetHashCode();
+                var hashCode = 41;
+                if (this.Handshake != null) hashCode = hashCode * 59 + this.Handshake.GetHashCode();
                 return hashCode;
             }
         }

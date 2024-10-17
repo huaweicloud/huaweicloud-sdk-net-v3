@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(StackResource input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PhysicalResourceId != input.PhysicalResourceId || (this.PhysicalResourceId != null && !this.PhysicalResourceId.Equals(input.PhysicalResourceId))) return false;
+            if (this.PhysicalResourceName != input.PhysicalResourceName || (this.PhysicalResourceName != null && !this.PhysicalResourceName.Equals(input.PhysicalResourceName))) return false;
+            if (this.LogicalResourceName != input.LogicalResourceName || (this.LogicalResourceName != null && !this.LogicalResourceName.Equals(input.LogicalResourceName))) return false;
+            if (this.LogicalResourceType != input.LogicalResourceType || (this.LogicalResourceType != null && !this.LogicalResourceType.Equals(input.LogicalResourceType))) return false;
+            if (this.ResourceStatus != input.ResourceStatus || (this.ResourceStatus != null && !this.ResourceStatus.Equals(input.ResourceStatus))) return false;
+            if (this.StatusMessage != input.StatusMessage || (this.StatusMessage != null && !this.StatusMessage.Equals(input.StatusMessage))) return false;
+            if (this.Href != input.Href || (this.Href != null && !this.Href.Equals(input.Href))) return false;
+            if (this.DisplayName != input.DisplayName || (this.DisplayName != null && !this.DisplayName.Equals(input.DisplayName))) return false;
 
-            return 
-                (
-                    this.PhysicalResourceId == input.PhysicalResourceId ||
-                    (this.PhysicalResourceId != null &&
-                    this.PhysicalResourceId.Equals(input.PhysicalResourceId))
-                ) && 
-                (
-                    this.PhysicalResourceName == input.PhysicalResourceName ||
-                    (this.PhysicalResourceName != null &&
-                    this.PhysicalResourceName.Equals(input.PhysicalResourceName))
-                ) && 
-                (
-                    this.LogicalResourceName == input.LogicalResourceName ||
-                    (this.LogicalResourceName != null &&
-                    this.LogicalResourceName.Equals(input.LogicalResourceName))
-                ) && 
-                (
-                    this.LogicalResourceType == input.LogicalResourceType ||
-                    (this.LogicalResourceType != null &&
-                    this.LogicalResourceType.Equals(input.LogicalResourceType))
-                ) && 
-                (
-                    this.ResourceStatus == input.ResourceStatus ||
-                    (this.ResourceStatus != null &&
-                    this.ResourceStatus.Equals(input.ResourceStatus))
-                ) && 
-                (
-                    this.StatusMessage == input.StatusMessage ||
-                    (this.StatusMessage != null &&
-                    this.StatusMessage.Equals(input.StatusMessage))
-                ) && 
-                (
-                    this.Href == input.Href ||
-                    (this.Href != null &&
-                    this.Href.Equals(input.Href))
-                ) && 
-                (
-                    this.DisplayName == input.DisplayName ||
-                    (this.DisplayName != null &&
-                    this.DisplayName.Equals(input.DisplayName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PhysicalResourceId != null)
-                    hashCode = hashCode * 59 + this.PhysicalResourceId.GetHashCode();
-                if (this.PhysicalResourceName != null)
-                    hashCode = hashCode * 59 + this.PhysicalResourceName.GetHashCode();
-                if (this.LogicalResourceName != null)
-                    hashCode = hashCode * 59 + this.LogicalResourceName.GetHashCode();
-                if (this.LogicalResourceType != null)
-                    hashCode = hashCode * 59 + this.LogicalResourceType.GetHashCode();
-                if (this.ResourceStatus != null)
-                    hashCode = hashCode * 59 + this.ResourceStatus.GetHashCode();
-                if (this.StatusMessage != null)
-                    hashCode = hashCode * 59 + this.StatusMessage.GetHashCode();
-                if (this.Href != null)
-                    hashCode = hashCode * 59 + this.Href.GetHashCode();
-                if (this.DisplayName != null)
-                    hashCode = hashCode * 59 + this.DisplayName.GetHashCode();
+                var hashCode = 41;
+                if (this.PhysicalResourceId != null) hashCode = hashCode * 59 + this.PhysicalResourceId.GetHashCode();
+                if (this.PhysicalResourceName != null) hashCode = hashCode * 59 + this.PhysicalResourceName.GetHashCode();
+                if (this.LogicalResourceName != null) hashCode = hashCode * 59 + this.LogicalResourceName.GetHashCode();
+                if (this.LogicalResourceType != null) hashCode = hashCode * 59 + this.LogicalResourceType.GetHashCode();
+                if (this.ResourceStatus != null) hashCode = hashCode * 59 + this.ResourceStatus.GetHashCode();
+                if (this.StatusMessage != null) hashCode = hashCode * 59 + this.StatusMessage.GetHashCode();
+                if (this.Href != null) hashCode = hashCode * 59 + this.Href.GetHashCode();
+                if (this.DisplayName != null) hashCode = hashCode * 59 + this.DisplayName.GetHashCode();
                 return hashCode;
             }
         }

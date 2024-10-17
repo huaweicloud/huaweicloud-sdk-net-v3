@@ -190,30 +190,13 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         /// </summary>
         public bool Equals(ShowNamespace input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.CreatorName != input.CreatorName || (this.CreatorName != null && !this.CreatorName.Equals(input.CreatorName))) return false;
+            if (this.Auth != input.Auth) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.CreatorName == input.CreatorName ||
-                    (this.CreatorName != null &&
-                    this.CreatorName.Equals(input.CreatorName))
-                ) && 
-                (
-                    this.Auth == input.Auth ||
-                    (this.Auth != null &&
-                    this.Auth.Equals(input.Auth))
-                );
+            return true;
         }
 
         /// <summary>
@@ -223,15 +206,11 @@ namespace HuaweiCloud.SDK.Swr.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.CreatorName != null)
-                    hashCode = hashCode * 59 + this.CreatorName.GetHashCode();
-                if (this.Auth != null)
-                    hashCode = hashCode * 59 + this.Auth.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.CreatorName != null) hashCode = hashCode * 59 + this.CreatorName.GetHashCode();
+                hashCode = hashCode * 59 + this.Auth.GetHashCode();
                 return hashCode;
             }
         }

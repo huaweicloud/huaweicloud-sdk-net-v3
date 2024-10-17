@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(KeystoneCreateMappingRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Mapping != input.Mapping || (this.Mapping != null && !this.Mapping.Equals(input.Mapping))) return false;
 
-            return 
-                (
-                    this.Mapping == input.Mapping ||
-                    (this.Mapping != null &&
-                    this.Mapping.Equals(input.Mapping))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Mapping != null)
-                    hashCode = hashCode * 59 + this.Mapping.GetHashCode();
+                var hashCode = 41;
+                if (this.Mapping != null) hashCode = hashCode * 59 + this.Mapping.GetHashCode();
                 return hashCode;
             }
         }

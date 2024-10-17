@@ -70,31 +70,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(PostgreSQLHistoryDatabaseRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.InstanceIds != input.InstanceIds || (this.InstanceIds != null && input.InstanceIds != null && !this.InstanceIds.SequenceEqual(input.InstanceIds))) return false;
+            if (this.RestoreTime != input.RestoreTime || (this.RestoreTime != null && !this.RestoreTime.Equals(input.RestoreTime))) return false;
+            if (this.DatabaseNameLike != input.DatabaseNameLike || (this.DatabaseNameLike != null && !this.DatabaseNameLike.Equals(input.DatabaseNameLike))) return false;
+            if (this.InstanceNameLike != input.InstanceNameLike || (this.InstanceNameLike != null && !this.InstanceNameLike.Equals(input.InstanceNameLike))) return false;
 
-            return 
-                (
-                    this.InstanceIds == input.InstanceIds ||
-                    this.InstanceIds != null &&
-                    input.InstanceIds != null &&
-                    this.InstanceIds.SequenceEqual(input.InstanceIds)
-                ) && 
-                (
-                    this.RestoreTime == input.RestoreTime ||
-                    (this.RestoreTime != null &&
-                    this.RestoreTime.Equals(input.RestoreTime))
-                ) && 
-                (
-                    this.DatabaseNameLike == input.DatabaseNameLike ||
-                    (this.DatabaseNameLike != null &&
-                    this.DatabaseNameLike.Equals(input.DatabaseNameLike))
-                ) && 
-                (
-                    this.InstanceNameLike == input.InstanceNameLike ||
-                    (this.InstanceNameLike != null &&
-                    this.InstanceNameLike.Equals(input.InstanceNameLike))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +86,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.InstanceIds != null)
-                    hashCode = hashCode * 59 + this.InstanceIds.GetHashCode();
-                if (this.RestoreTime != null)
-                    hashCode = hashCode * 59 + this.RestoreTime.GetHashCode();
-                if (this.DatabaseNameLike != null)
-                    hashCode = hashCode * 59 + this.DatabaseNameLike.GetHashCode();
-                if (this.InstanceNameLike != null)
-                    hashCode = hashCode * 59 + this.InstanceNameLike.GetHashCode();
+                var hashCode = 41;
+                if (this.InstanceIds != null) hashCode = hashCode * 59 + this.InstanceIds.GetHashCode();
+                if (this.RestoreTime != null) hashCode = hashCode * 59 + this.RestoreTime.GetHashCode();
+                if (this.DatabaseNameLike != null) hashCode = hashCode * 59 + this.DatabaseNameLike.GetHashCode();
+                if (this.InstanceNameLike != null) hashCode = hashCode * 59 + this.InstanceNameLike.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         /// </summary>
         public bool Equals(HttpCodeSummary input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HttpCodes != input.HttpCodes || (this.HttpCodes != null && input.HttpCodes != null && !this.HttpCodes.SequenceEqual(input.HttpCodes))) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
 
-            return 
-                (
-                    this.HttpCodes == input.HttpCodes ||
-                    this.HttpCodes != null &&
-                    input.HttpCodes != null &&
-                    this.HttpCodes.SequenceEqual(input.HttpCodes)
-                ) && 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HttpCodes != null)
-                    hashCode = hashCode * 59 + this.HttpCodes.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
+                var hashCode = 41;
+                if (this.HttpCodes != null) hashCode = hashCode * 59 + this.HttpCodes.GetHashCode();
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
                 return hashCode;
             }
         }

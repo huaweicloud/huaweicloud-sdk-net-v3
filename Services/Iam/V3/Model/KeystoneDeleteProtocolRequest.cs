@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(KeystoneDeleteProtocolRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IdpId != input.IdpId || (this.IdpId != null && !this.IdpId.Equals(input.IdpId))) return false;
+            if (this.ProtocolId != input.ProtocolId || (this.ProtocolId != null && !this.ProtocolId.Equals(input.ProtocolId))) return false;
 
-            return 
-                (
-                    this.IdpId == input.IdpId ||
-                    (this.IdpId != null &&
-                    this.IdpId.Equals(input.IdpId))
-                ) && 
-                (
-                    this.ProtocolId == input.ProtocolId ||
-                    (this.ProtocolId != null &&
-                    this.ProtocolId.Equals(input.ProtocolId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IdpId != null)
-                    hashCode = hashCode * 59 + this.IdpId.GetHashCode();
-                if (this.ProtocolId != null)
-                    hashCode = hashCode * 59 + this.ProtocolId.GetHashCode();
+                var hashCode = 41;
+                if (this.IdpId != null) hashCode = hashCode * 59 + this.IdpId.GetHashCode();
+                if (this.ProtocolId != null) hashCode = hashCode * 59 + this.ProtocolId.GetHashCode();
                 return hashCode;
             }
         }

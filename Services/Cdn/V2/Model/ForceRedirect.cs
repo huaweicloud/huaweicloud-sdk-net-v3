@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(ForceRedirect input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Switch != input.Switch || (this.Switch != null && !this.Switch.Equals(input.Switch))) return false;
+            if (this.RedirectType != input.RedirectType || (this.RedirectType != null && !this.RedirectType.Equals(input.RedirectType))) return false;
 
-            return 
-                (
-                    this.Switch == input.Switch ||
-                    (this.Switch != null &&
-                    this.Switch.Equals(input.Switch))
-                ) && 
-                (
-                    this.RedirectType == input.RedirectType ||
-                    (this.RedirectType != null &&
-                    this.RedirectType.Equals(input.RedirectType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Switch != null)
-                    hashCode = hashCode * 59 + this.Switch.GetHashCode();
-                if (this.RedirectType != null)
-                    hashCode = hashCode * 59 + this.RedirectType.GetHashCode();
+                var hashCode = 41;
+                if (this.Switch != null) hashCode = hashCode * 59 + this.Switch.GetHashCode();
+                if (this.RedirectType != null) hashCode = hashCode * 59 + this.RedirectType.GetHashCode();
                 return hashCode;
             }
         }

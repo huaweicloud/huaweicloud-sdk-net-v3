@@ -106,56 +106,18 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(ShowVerifyDomainOwnerInfoResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DnsVerifyType != input.DnsVerifyType || (this.DnsVerifyType != null && !this.DnsVerifyType.Equals(input.DnsVerifyType))) return false;
+            if (this.DnsVerifyName != input.DnsVerifyName || (this.DnsVerifyName != null && !this.DnsVerifyName.Equals(input.DnsVerifyName))) return false;
+            if (this.FileVerifyUrl != input.FileVerifyUrl || (this.FileVerifyUrl != null && !this.FileVerifyUrl.Equals(input.FileVerifyUrl))) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
+            if (this.VerifyDomainName != input.VerifyDomainName || (this.VerifyDomainName != null && !this.VerifyDomainName.Equals(input.VerifyDomainName))) return false;
+            if (this.FileVerifyFilename != input.FileVerifyFilename || (this.FileVerifyFilename != null && !this.FileVerifyFilename.Equals(input.FileVerifyFilename))) return false;
+            if (this.VerifyContent != input.VerifyContent || (this.VerifyContent != null && !this.VerifyContent.Equals(input.VerifyContent))) return false;
+            if (this.FileVerifyDomains != input.FileVerifyDomains || (this.FileVerifyDomains != null && input.FileVerifyDomains != null && !this.FileVerifyDomains.SequenceEqual(input.FileVerifyDomains))) return false;
+            if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
-            return 
-                (
-                    this.DnsVerifyType == input.DnsVerifyType ||
-                    (this.DnsVerifyType != null &&
-                    this.DnsVerifyType.Equals(input.DnsVerifyType))
-                ) && 
-                (
-                    this.DnsVerifyName == input.DnsVerifyName ||
-                    (this.DnsVerifyName != null &&
-                    this.DnsVerifyName.Equals(input.DnsVerifyName))
-                ) && 
-                (
-                    this.FileVerifyUrl == input.FileVerifyUrl ||
-                    (this.FileVerifyUrl != null &&
-                    this.FileVerifyUrl.Equals(input.FileVerifyUrl))
-                ) && 
-                (
-                    this.DomainName == input.DomainName ||
-                    (this.DomainName != null &&
-                    this.DomainName.Equals(input.DomainName))
-                ) && 
-                (
-                    this.VerifyDomainName == input.VerifyDomainName ||
-                    (this.VerifyDomainName != null &&
-                    this.VerifyDomainName.Equals(input.VerifyDomainName))
-                ) && 
-                (
-                    this.FileVerifyFilename == input.FileVerifyFilename ||
-                    (this.FileVerifyFilename != null &&
-                    this.FileVerifyFilename.Equals(input.FileVerifyFilename))
-                ) && 
-                (
-                    this.VerifyContent == input.VerifyContent ||
-                    (this.VerifyContent != null &&
-                    this.VerifyContent.Equals(input.VerifyContent))
-                ) && 
-                (
-                    this.FileVerifyDomains == input.FileVerifyDomains ||
-                    this.FileVerifyDomains != null &&
-                    input.FileVerifyDomains != null &&
-                    this.FileVerifyDomains.SequenceEqual(input.FileVerifyDomains)
-                ) && 
-                (
-                    this.XRequestId == input.XRequestId ||
-                    (this.XRequestId != null &&
-                    this.XRequestId.Equals(input.XRequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -165,25 +127,16 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DnsVerifyType != null)
-                    hashCode = hashCode * 59 + this.DnsVerifyType.GetHashCode();
-                if (this.DnsVerifyName != null)
-                    hashCode = hashCode * 59 + this.DnsVerifyName.GetHashCode();
-                if (this.FileVerifyUrl != null)
-                    hashCode = hashCode * 59 + this.FileVerifyUrl.GetHashCode();
-                if (this.DomainName != null)
-                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.VerifyDomainName != null)
-                    hashCode = hashCode * 59 + this.VerifyDomainName.GetHashCode();
-                if (this.FileVerifyFilename != null)
-                    hashCode = hashCode * 59 + this.FileVerifyFilename.GetHashCode();
-                if (this.VerifyContent != null)
-                    hashCode = hashCode * 59 + this.VerifyContent.GetHashCode();
-                if (this.FileVerifyDomains != null)
-                    hashCode = hashCode * 59 + this.FileVerifyDomains.GetHashCode();
-                if (this.XRequestId != null)
-                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.DnsVerifyType != null) hashCode = hashCode * 59 + this.DnsVerifyType.GetHashCode();
+                if (this.DnsVerifyName != null) hashCode = hashCode * 59 + this.DnsVerifyName.GetHashCode();
+                if (this.FileVerifyUrl != null) hashCode = hashCode * 59 + this.FileVerifyUrl.GetHashCode();
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.VerifyDomainName != null) hashCode = hashCode * 59 + this.VerifyDomainName.GetHashCode();
+                if (this.FileVerifyFilename != null) hashCode = hashCode * 59 + this.FileVerifyFilename.GetHashCode();
+                if (this.VerifyContent != null) hashCode = hashCode * 59 + this.VerifyContent.GetHashCode();
+                if (this.FileVerifyDomains != null) hashCode = hashCode * 59 + this.FileVerifyDomains.GetHashCode();
+                if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

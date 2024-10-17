@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(DelegatedAdministratorDto input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DelegationEnabledAt != input.DelegationEnabledAt || (this.DelegationEnabledAt != null && !this.DelegationEnabledAt.Equals(input.DelegationEnabledAt))) return false;
+            if (this.AccountId != input.AccountId || (this.AccountId != null && !this.AccountId.Equals(input.AccountId))) return false;
+            if (this.AccountUrn != input.AccountUrn || (this.AccountUrn != null && !this.AccountUrn.Equals(input.AccountUrn))) return false;
+            if (this.JoinMethod != input.JoinMethod || (this.JoinMethod != null && !this.JoinMethod.Equals(input.JoinMethod))) return false;
+            if (this.JoinedAt != input.JoinedAt || (this.JoinedAt != null && !this.JoinedAt.Equals(input.JoinedAt))) return false;
+            if (this.AccountName != input.AccountName || (this.AccountName != null && !this.AccountName.Equals(input.AccountName))) return false;
 
-            return 
-                (
-                    this.DelegationEnabledAt == input.DelegationEnabledAt ||
-                    (this.DelegationEnabledAt != null &&
-                    this.DelegationEnabledAt.Equals(input.DelegationEnabledAt))
-                ) && 
-                (
-                    this.AccountId == input.AccountId ||
-                    (this.AccountId != null &&
-                    this.AccountId.Equals(input.AccountId))
-                ) && 
-                (
-                    this.AccountUrn == input.AccountUrn ||
-                    (this.AccountUrn != null &&
-                    this.AccountUrn.Equals(input.AccountUrn))
-                ) && 
-                (
-                    this.JoinMethod == input.JoinMethod ||
-                    (this.JoinMethod != null &&
-                    this.JoinMethod.Equals(input.JoinMethod))
-                ) && 
-                (
-                    this.JoinedAt == input.JoinedAt ||
-                    (this.JoinedAt != null &&
-                    this.JoinedAt.Equals(input.JoinedAt))
-                ) && 
-                (
-                    this.AccountName == input.AccountName ||
-                    (this.AccountName != null &&
-                    this.AccountName.Equals(input.AccountName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DelegationEnabledAt != null)
-                    hashCode = hashCode * 59 + this.DelegationEnabledAt.GetHashCode();
-                if (this.AccountId != null)
-                    hashCode = hashCode * 59 + this.AccountId.GetHashCode();
-                if (this.AccountUrn != null)
-                    hashCode = hashCode * 59 + this.AccountUrn.GetHashCode();
-                if (this.JoinMethod != null)
-                    hashCode = hashCode * 59 + this.JoinMethod.GetHashCode();
-                if (this.JoinedAt != null)
-                    hashCode = hashCode * 59 + this.JoinedAt.GetHashCode();
-                if (this.AccountName != null)
-                    hashCode = hashCode * 59 + this.AccountName.GetHashCode();
+                var hashCode = 41;
+                if (this.DelegationEnabledAt != null) hashCode = hashCode * 59 + this.DelegationEnabledAt.GetHashCode();
+                if (this.AccountId != null) hashCode = hashCode * 59 + this.AccountId.GetHashCode();
+                if (this.AccountUrn != null) hashCode = hashCode * 59 + this.AccountUrn.GetHashCode();
+                if (this.JoinMethod != null) hashCode = hashCode * 59 + this.JoinMethod.GetHashCode();
+                if (this.JoinedAt != null) hashCode = hashCode * 59 + this.JoinedAt.GetHashCode();
+                if (this.AccountName != null) hashCode = hashCode * 59 + this.AccountName.GetHashCode();
                 return hashCode;
             }
         }

@@ -163,15 +163,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(DescribeBackupEncryptStatusResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EncryptionStatus != input.EncryptionStatus) return false;
 
-            return 
-                (
-                    this.EncryptionStatus == input.EncryptionStatus ||
-                    (this.EncryptionStatus != null &&
-                    this.EncryptionStatus.Equals(input.EncryptionStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -181,9 +176,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EncryptionStatus != null)
-                    hashCode = hashCode * 59 + this.EncryptionStatus.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.EncryptionStatus.GetHashCode();
                 return hashCode;
             }
         }

@@ -210,40 +210,15 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(DatabaseInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.ParentId != input.ParentId || (this.ParentId != null && !this.ParentId.Equals(input.ParentId))) return false;
+            if (this.ObjectType != input.ObjectType) return false;
+            if (this.ObjectName != input.ObjectName || (this.ObjectName != null && !this.ObjectName.Equals(input.ObjectName))) return false;
+            if (this.ObjectAliasName != input.ObjectAliasName || (this.ObjectAliasName != null && !this.ObjectAliasName.Equals(input.ObjectAliasName))) return false;
+            if (this.Select != input.Select || (this.Select != null && !this.Select.Equals(input.Select))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.ParentId == input.ParentId ||
-                    (this.ParentId != null &&
-                    this.ParentId.Equals(input.ParentId))
-                ) && 
-                (
-                    this.ObjectType == input.ObjectType ||
-                    (this.ObjectType != null &&
-                    this.ObjectType.Equals(input.ObjectType))
-                ) && 
-                (
-                    this.ObjectName == input.ObjectName ||
-                    (this.ObjectName != null &&
-                    this.ObjectName.Equals(input.ObjectName))
-                ) && 
-                (
-                    this.ObjectAliasName == input.ObjectAliasName ||
-                    (this.ObjectAliasName != null &&
-                    this.ObjectAliasName.Equals(input.ObjectAliasName))
-                ) && 
-                (
-                    this.Select == input.Select ||
-                    (this.Select != null &&
-                    this.Select.Equals(input.Select))
-                );
+            return true;
         }
 
         /// <summary>
@@ -253,19 +228,13 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.ParentId != null)
-                    hashCode = hashCode * 59 + this.ParentId.GetHashCode();
-                if (this.ObjectType != null)
-                    hashCode = hashCode * 59 + this.ObjectType.GetHashCode();
-                if (this.ObjectName != null)
-                    hashCode = hashCode * 59 + this.ObjectName.GetHashCode();
-                if (this.ObjectAliasName != null)
-                    hashCode = hashCode * 59 + this.ObjectAliasName.GetHashCode();
-                if (this.Select != null)
-                    hashCode = hashCode * 59 + this.Select.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.ParentId != null) hashCode = hashCode * 59 + this.ParentId.GetHashCode();
+                hashCode = hashCode * 59 + this.ObjectType.GetHashCode();
+                if (this.ObjectName != null) hashCode = hashCode * 59 + this.ObjectName.GetHashCode();
+                if (this.ObjectAliasName != null) hashCode = hashCode * 59 + this.ObjectAliasName.GetHashCode();
+                if (this.Select != null) hashCode = hashCode * 59 + this.Select.GetHashCode();
                 return hashCode;
             }
         }

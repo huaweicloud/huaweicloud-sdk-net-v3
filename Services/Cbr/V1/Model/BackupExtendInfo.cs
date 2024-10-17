@@ -232,61 +232,19 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(BackupExtendInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AutoTrigger != input.AutoTrigger || (this.AutoTrigger != null && !this.AutoTrigger.Equals(input.AutoTrigger))) return false;
+            if (this.Bootable != input.Bootable || (this.Bootable != null && !this.Bootable.Equals(input.Bootable))) return false;
+            if (this.SnapshotId != input.SnapshotId || (this.SnapshotId != null && !this.SnapshotId.Equals(input.SnapshotId))) return false;
+            if (this.SupportLld != input.SupportLld || (this.SupportLld != null && !this.SupportLld.Equals(input.SupportLld))) return false;
+            if (this.SupportedRestoreMode != input.SupportedRestoreMode) return false;
+            if (this.OsImagesData != input.OsImagesData || (this.OsImagesData != null && input.OsImagesData != null && !this.OsImagesData.SequenceEqual(input.OsImagesData))) return false;
+            if (this.ContainSystemDisk != input.ContainSystemDisk || (this.ContainSystemDisk != null && !this.ContainSystemDisk.Equals(input.ContainSystemDisk))) return false;
+            if (this.Encrypted != input.Encrypted || (this.Encrypted != null && !this.Encrypted.Equals(input.Encrypted))) return false;
+            if (this.SystemDisk != input.SystemDisk || (this.SystemDisk != null && !this.SystemDisk.Equals(input.SystemDisk))) return false;
+            if (this.IsMultiAz != input.IsMultiAz || (this.IsMultiAz != null && !this.IsMultiAz.Equals(input.IsMultiAz))) return false;
 
-            return 
-                (
-                    this.AutoTrigger == input.AutoTrigger ||
-                    (this.AutoTrigger != null &&
-                    this.AutoTrigger.Equals(input.AutoTrigger))
-                ) && 
-                (
-                    this.Bootable == input.Bootable ||
-                    (this.Bootable != null &&
-                    this.Bootable.Equals(input.Bootable))
-                ) && 
-                (
-                    this.SnapshotId == input.SnapshotId ||
-                    (this.SnapshotId != null &&
-                    this.SnapshotId.Equals(input.SnapshotId))
-                ) && 
-                (
-                    this.SupportLld == input.SupportLld ||
-                    (this.SupportLld != null &&
-                    this.SupportLld.Equals(input.SupportLld))
-                ) && 
-                (
-                    this.SupportedRestoreMode == input.SupportedRestoreMode ||
-                    (this.SupportedRestoreMode != null &&
-                    this.SupportedRestoreMode.Equals(input.SupportedRestoreMode))
-                ) && 
-                (
-                    this.OsImagesData == input.OsImagesData ||
-                    this.OsImagesData != null &&
-                    input.OsImagesData != null &&
-                    this.OsImagesData.SequenceEqual(input.OsImagesData)
-                ) && 
-                (
-                    this.ContainSystemDisk == input.ContainSystemDisk ||
-                    (this.ContainSystemDisk != null &&
-                    this.ContainSystemDisk.Equals(input.ContainSystemDisk))
-                ) && 
-                (
-                    this.Encrypted == input.Encrypted ||
-                    (this.Encrypted != null &&
-                    this.Encrypted.Equals(input.Encrypted))
-                ) && 
-                (
-                    this.SystemDisk == input.SystemDisk ||
-                    (this.SystemDisk != null &&
-                    this.SystemDisk.Equals(input.SystemDisk))
-                ) && 
-                (
-                    this.IsMultiAz == input.IsMultiAz ||
-                    (this.IsMultiAz != null &&
-                    this.IsMultiAz.Equals(input.IsMultiAz))
-                );
+            return true;
         }
 
         /// <summary>
@@ -296,27 +254,17 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AutoTrigger != null)
-                    hashCode = hashCode * 59 + this.AutoTrigger.GetHashCode();
-                if (this.Bootable != null)
-                    hashCode = hashCode * 59 + this.Bootable.GetHashCode();
-                if (this.SnapshotId != null)
-                    hashCode = hashCode * 59 + this.SnapshotId.GetHashCode();
-                if (this.SupportLld != null)
-                    hashCode = hashCode * 59 + this.SupportLld.GetHashCode();
-                if (this.SupportedRestoreMode != null)
-                    hashCode = hashCode * 59 + this.SupportedRestoreMode.GetHashCode();
-                if (this.OsImagesData != null)
-                    hashCode = hashCode * 59 + this.OsImagesData.GetHashCode();
-                if (this.ContainSystemDisk != null)
-                    hashCode = hashCode * 59 + this.ContainSystemDisk.GetHashCode();
-                if (this.Encrypted != null)
-                    hashCode = hashCode * 59 + this.Encrypted.GetHashCode();
-                if (this.SystemDisk != null)
-                    hashCode = hashCode * 59 + this.SystemDisk.GetHashCode();
-                if (this.IsMultiAz != null)
-                    hashCode = hashCode * 59 + this.IsMultiAz.GetHashCode();
+                var hashCode = 41;
+                if (this.AutoTrigger != null) hashCode = hashCode * 59 + this.AutoTrigger.GetHashCode();
+                if (this.Bootable != null) hashCode = hashCode * 59 + this.Bootable.GetHashCode();
+                if (this.SnapshotId != null) hashCode = hashCode * 59 + this.SnapshotId.GetHashCode();
+                if (this.SupportLld != null) hashCode = hashCode * 59 + this.SupportLld.GetHashCode();
+                hashCode = hashCode * 59 + this.SupportedRestoreMode.GetHashCode();
+                if (this.OsImagesData != null) hashCode = hashCode * 59 + this.OsImagesData.GetHashCode();
+                if (this.ContainSystemDisk != null) hashCode = hashCode * 59 + this.ContainSystemDisk.GetHashCode();
+                if (this.Encrypted != null) hashCode = hashCode * 59 + this.Encrypted.GetHashCode();
+                if (this.SystemDisk != null) hashCode = hashCode * 59 + this.SystemDisk.GetHashCode();
+                if (this.IsMultiAz != null) hashCode = hashCode * 59 + this.IsMultiAz.GetHashCode();
                 return hashCode;
             }
         }

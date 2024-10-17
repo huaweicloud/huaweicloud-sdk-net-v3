@@ -71,30 +71,13 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public bool Equals(CompareFaceByBase64Response input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Image1Face != input.Image1Face || (this.Image1Face != null && !this.Image1Face.Equals(input.Image1Face))) return false;
+            if (this.Image2Face != input.Image2Face || (this.Image2Face != null && !this.Image2Face.Equals(input.Image2Face))) return false;
+            if (this.Similarity != input.Similarity || (this.Similarity != null && !this.Similarity.Equals(input.Similarity))) return false;
+            if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
-            return 
-                (
-                    this.Image1Face == input.Image1Face ||
-                    (this.Image1Face != null &&
-                    this.Image1Face.Equals(input.Image1Face))
-                ) && 
-                (
-                    this.Image2Face == input.Image2Face ||
-                    (this.Image2Face != null &&
-                    this.Image2Face.Equals(input.Image2Face))
-                ) && 
-                (
-                    this.Similarity == input.Similarity ||
-                    (this.Similarity != null &&
-                    this.Similarity.Equals(input.Similarity))
-                ) && 
-                (
-                    this.XRequestId == input.XRequestId ||
-                    (this.XRequestId != null &&
-                    this.XRequestId.Equals(input.XRequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -104,15 +87,11 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Image1Face != null)
-                    hashCode = hashCode * 59 + this.Image1Face.GetHashCode();
-                if (this.Image2Face != null)
-                    hashCode = hashCode * 59 + this.Image2Face.GetHashCode();
-                if (this.Similarity != null)
-                    hashCode = hashCode * 59 + this.Similarity.GetHashCode();
-                if (this.XRequestId != null)
-                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.Image1Face != null) hashCode = hashCode * 59 + this.Image1Face.GetHashCode();
+                if (this.Image2Face != null) hashCode = hashCode * 59 + this.Image2Face.GetHashCode();
+                if (this.Similarity != null) hashCode = hashCode * 59 + this.Similarity.GetHashCode();
+                if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

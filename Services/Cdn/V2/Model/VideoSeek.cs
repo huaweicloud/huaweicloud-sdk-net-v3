@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(VideoSeek input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EnableVideoSeek != input.EnableVideoSeek || (this.EnableVideoSeek != null && !this.EnableVideoSeek.Equals(input.EnableVideoSeek))) return false;
+            if (this.EnableFlvByTimeSeek != input.EnableFlvByTimeSeek || (this.EnableFlvByTimeSeek != null && !this.EnableFlvByTimeSeek.Equals(input.EnableFlvByTimeSeek))) return false;
+            if (this.StartParameter != input.StartParameter || (this.StartParameter != null && !this.StartParameter.Equals(input.StartParameter))) return false;
+            if (this.EndParameter != input.EndParameter || (this.EndParameter != null && !this.EndParameter.Equals(input.EndParameter))) return false;
 
-            return 
-                (
-                    this.EnableVideoSeek == input.EnableVideoSeek ||
-                    (this.EnableVideoSeek != null &&
-                    this.EnableVideoSeek.Equals(input.EnableVideoSeek))
-                ) && 
-                (
-                    this.EnableFlvByTimeSeek == input.EnableFlvByTimeSeek ||
-                    (this.EnableFlvByTimeSeek != null &&
-                    this.EnableFlvByTimeSeek.Equals(input.EnableFlvByTimeSeek))
-                ) && 
-                (
-                    this.StartParameter == input.StartParameter ||
-                    (this.StartParameter != null &&
-                    this.StartParameter.Equals(input.StartParameter))
-                ) && 
-                (
-                    this.EndParameter == input.EndParameter ||
-                    (this.EndParameter != null &&
-                    this.EndParameter.Equals(input.EndParameter))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EnableVideoSeek != null)
-                    hashCode = hashCode * 59 + this.EnableVideoSeek.GetHashCode();
-                if (this.EnableFlvByTimeSeek != null)
-                    hashCode = hashCode * 59 + this.EnableFlvByTimeSeek.GetHashCode();
-                if (this.StartParameter != null)
-                    hashCode = hashCode * 59 + this.StartParameter.GetHashCode();
-                if (this.EndParameter != null)
-                    hashCode = hashCode * 59 + this.EndParameter.GetHashCode();
+                var hashCode = 41;
+                if (this.EnableVideoSeek != null) hashCode = hashCode * 59 + this.EnableVideoSeek.GetHashCode();
+                if (this.EnableFlvByTimeSeek != null) hashCode = hashCode * 59 + this.EnableFlvByTimeSeek.GetHashCode();
+                if (this.StartParameter != null) hashCode = hashCode * 59 + this.StartParameter.GetHashCode();
+                if (this.EndParameter != null) hashCode = hashCode * 59 + this.EndParameter.GetHashCode();
                 return hashCode;
             }
         }

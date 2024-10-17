@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ResizeClusterResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobID != input.JobID || (this.JobID != null && !this.JobID.Equals(input.JobID))) return false;
+            if (this.OrderID != input.OrderID || (this.OrderID != null && !this.OrderID.Equals(input.OrderID))) return false;
 
-            return 
-                (
-                    this.JobID == input.JobID ||
-                    (this.JobID != null &&
-                    this.JobID.Equals(input.JobID))
-                ) && 
-                (
-                    this.OrderID == input.OrderID ||
-                    (this.OrderID != null &&
-                    this.OrderID.Equals(input.OrderID))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobID != null)
-                    hashCode = hashCode * 59 + this.JobID.GetHashCode();
-                if (this.OrderID != null)
-                    hashCode = hashCode * 59 + this.OrderID.GetHashCode();
+                var hashCode = 41;
+                if (this.JobID != null) hashCode = hashCode * 59 + this.JobID.GetHashCode();
+                if (this.OrderID != null) hashCode = hashCode * 59 + this.OrderID.GetHashCode();
                 return hashCode;
             }
         }

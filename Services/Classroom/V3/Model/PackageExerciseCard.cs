@@ -91,46 +91,16 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         /// </summary>
         public bool Equals(PackageExerciseCard input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Difficult != input.Difficult || (this.Difficult != null && !this.Difficult.Equals(input.Difficult))) return false;
+            if (this.ExerciseType != input.ExerciseType || (this.ExerciseType != null && !this.ExerciseType.Equals(input.ExerciseType))) return false;
+            if (this.ExerciseTypeName != input.ExerciseTypeName || (this.ExerciseTypeName != null && !this.ExerciseTypeName.Equals(input.ExerciseTypeName))) return false;
+            if (this.OrderCount != input.OrderCount || (this.OrderCount != null && !this.OrderCount.Equals(input.OrderCount))) return false;
+            if (this.KnowledgePoint != input.KnowledgePoint || (this.KnowledgePoint != null && input.KnowledgePoint != null && !this.KnowledgePoint.SequenceEqual(input.KnowledgePoint))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Difficult == input.Difficult ||
-                    (this.Difficult != null &&
-                    this.Difficult.Equals(input.Difficult))
-                ) && 
-                (
-                    this.ExerciseType == input.ExerciseType ||
-                    (this.ExerciseType != null &&
-                    this.ExerciseType.Equals(input.ExerciseType))
-                ) && 
-                (
-                    this.ExerciseTypeName == input.ExerciseTypeName ||
-                    (this.ExerciseTypeName != null &&
-                    this.ExerciseTypeName.Equals(input.ExerciseTypeName))
-                ) && 
-                (
-                    this.OrderCount == input.OrderCount ||
-                    (this.OrderCount != null &&
-                    this.OrderCount.Equals(input.OrderCount))
-                ) && 
-                (
-                    this.KnowledgePoint == input.KnowledgePoint ||
-                    this.KnowledgePoint != null &&
-                    input.KnowledgePoint != null &&
-                    this.KnowledgePoint.SequenceEqual(input.KnowledgePoint)
-                );
+            return true;
         }
 
         /// <summary>
@@ -140,21 +110,14 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Difficult != null)
-                    hashCode = hashCode * 59 + this.Difficult.GetHashCode();
-                if (this.ExerciseType != null)
-                    hashCode = hashCode * 59 + this.ExerciseType.GetHashCode();
-                if (this.ExerciseTypeName != null)
-                    hashCode = hashCode * 59 + this.ExerciseTypeName.GetHashCode();
-                if (this.OrderCount != null)
-                    hashCode = hashCode * 59 + this.OrderCount.GetHashCode();
-                if (this.KnowledgePoint != null)
-                    hashCode = hashCode * 59 + this.KnowledgePoint.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Difficult != null) hashCode = hashCode * 59 + this.Difficult.GetHashCode();
+                if (this.ExerciseType != null) hashCode = hashCode * 59 + this.ExerciseType.GetHashCode();
+                if (this.ExerciseTypeName != null) hashCode = hashCode * 59 + this.ExerciseTypeName.GetHashCode();
+                if (this.OrderCount != null) hashCode = hashCode * 59 + this.OrderCount.GetHashCode();
+                if (this.KnowledgePoint != null) hashCode = hashCode * 59 + this.KnowledgePoint.GetHashCode();
                 return hashCode;
             }
         }

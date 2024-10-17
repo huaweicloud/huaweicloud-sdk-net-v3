@@ -176,20 +176,11 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(MarketModel input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ChargeMode != input.ChargeMode) return false;
+            if (this.PrepaidInfo != input.PrepaidInfo || (this.PrepaidInfo != null && !this.PrepaidInfo.Equals(input.PrepaidInfo))) return false;
 
-            return 
-                (
-                    this.ChargeMode == input.ChargeMode ||
-                    (this.ChargeMode != null &&
-                    this.ChargeMode.Equals(input.ChargeMode))
-                ) && 
-                (
-                    this.PrepaidInfo == input.PrepaidInfo ||
-                    (this.PrepaidInfo != null &&
-                    this.PrepaidInfo.Equals(input.PrepaidInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -199,11 +190,9 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ChargeMode != null)
-                    hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
-                if (this.PrepaidInfo != null)
-                    hashCode = hashCode * 59 + this.PrepaidInfo.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.ChargeMode.GetHashCode();
+                if (this.PrepaidInfo != null) hashCode = hashCode * 59 + this.PrepaidInfo.GetHashCode();
                 return hashCode;
             }
         }

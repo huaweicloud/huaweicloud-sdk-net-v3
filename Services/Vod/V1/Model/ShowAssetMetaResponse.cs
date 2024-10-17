@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(ShowAssetMetaResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AssetInfoArray != input.AssetInfoArray || (this.AssetInfoArray != null && input.AssetInfoArray != null && !this.AssetInfoArray.SequenceEqual(input.AssetInfoArray))) return false;
+            if (this.IsTruncated != input.IsTruncated || (this.IsTruncated != null && !this.IsTruncated.Equals(input.IsTruncated))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
 
-            return 
-                (
-                    this.AssetInfoArray == input.AssetInfoArray ||
-                    this.AssetInfoArray != null &&
-                    input.AssetInfoArray != null &&
-                    this.AssetInfoArray.SequenceEqual(input.AssetInfoArray)
-                ) && 
-                (
-                    this.IsTruncated == input.IsTruncated ||
-                    (this.IsTruncated != null &&
-                    this.IsTruncated.Equals(input.IsTruncated))
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AssetInfoArray != null)
-                    hashCode = hashCode * 59 + this.AssetInfoArray.GetHashCode();
-                if (this.IsTruncated != null)
-                    hashCode = hashCode * 59 + this.IsTruncated.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
+                var hashCode = 41;
+                if (this.AssetInfoArray != null) hashCode = hashCode * 59 + this.AssetInfoArray.GetHashCode();
+                if (this.IsTruncated != null) hashCode = hashCode * 59 + this.IsTruncated.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
                 return hashCode;
             }
         }

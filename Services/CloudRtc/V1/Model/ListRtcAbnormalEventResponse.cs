@@ -78,36 +78,14 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         /// </summary>
         public bool Equals(ListRtcAbnormalEventResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RoomId != input.RoomId || (this.RoomId != null && !this.RoomId.Equals(input.RoomId))) return false;
+            if (this.Uid != input.Uid || (this.Uid != null && !this.Uid.Equals(input.Uid))) return false;
+            if (this.ExpId != input.ExpId || (this.ExpId != null && !this.ExpId.Equals(input.ExpId))) return false;
+            if (this.AbnormalList != input.AbnormalList || (this.AbnormalList != null && input.AbnormalList != null && !this.AbnormalList.SequenceEqual(input.AbnormalList))) return false;
+            if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
-            return 
-                (
-                    this.RoomId == input.RoomId ||
-                    (this.RoomId != null &&
-                    this.RoomId.Equals(input.RoomId))
-                ) && 
-                (
-                    this.Uid == input.Uid ||
-                    (this.Uid != null &&
-                    this.Uid.Equals(input.Uid))
-                ) && 
-                (
-                    this.ExpId == input.ExpId ||
-                    (this.ExpId != null &&
-                    this.ExpId.Equals(input.ExpId))
-                ) && 
-                (
-                    this.AbnormalList == input.AbnormalList ||
-                    this.AbnormalList != null &&
-                    input.AbnormalList != null &&
-                    this.AbnormalList.SequenceEqual(input.AbnormalList)
-                ) && 
-                (
-                    this.XRequestId == input.XRequestId ||
-                    (this.XRequestId != null &&
-                    this.XRequestId.Equals(input.XRequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -117,17 +95,12 @@ namespace HuaweiCloud.SDK.CloudRtc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RoomId != null)
-                    hashCode = hashCode * 59 + this.RoomId.GetHashCode();
-                if (this.Uid != null)
-                    hashCode = hashCode * 59 + this.Uid.GetHashCode();
-                if (this.ExpId != null)
-                    hashCode = hashCode * 59 + this.ExpId.GetHashCode();
-                if (this.AbnormalList != null)
-                    hashCode = hashCode * 59 + this.AbnormalList.GetHashCode();
-                if (this.XRequestId != null)
-                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.RoomId != null) hashCode = hashCode * 59 + this.RoomId.GetHashCode();
+                if (this.Uid != null) hashCode = hashCode * 59 + this.Uid.GetHashCode();
+                if (this.ExpId != null) hashCode = hashCode * 59 + this.ExpId.GetHashCode();
+                if (this.AbnormalList != null) hashCode = hashCode * 59 + this.AbnormalList.GetHashCode();
+                if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

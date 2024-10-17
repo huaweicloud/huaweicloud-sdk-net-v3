@@ -98,53 +98,17 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(ScopeTokenResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Methods != input.Methods || (this.Methods != null && input.Methods != null && !this.Methods.SequenceEqual(input.Methods))) return false;
+            if (this.ExpiresAt != input.ExpiresAt || (this.ExpiresAt != null && !this.ExpiresAt.Equals(input.ExpiresAt))) return false;
+            if (this.Catalog != input.Catalog || (this.Catalog != null && input.Catalog != null && !this.Catalog.SequenceEqual(input.Catalog))) return false;
+            if (this.Domain != input.Domain || (this.Domain != null && !this.Domain.Equals(input.Domain))) return false;
+            if (this.Project != input.Project || (this.Project != null && !this.Project.Equals(input.Project))) return false;
+            if (this.Roles != input.Roles || (this.Roles != null && input.Roles != null && !this.Roles.SequenceEqual(input.Roles))) return false;
+            if (this.User != input.User || (this.User != null && !this.User.Equals(input.User))) return false;
+            if (this.IssuedAt != input.IssuedAt || (this.IssuedAt != null && !this.IssuedAt.Equals(input.IssuedAt))) return false;
 
-            return 
-                (
-                    this.Methods == input.Methods ||
-                    this.Methods != null &&
-                    input.Methods != null &&
-                    this.Methods.SequenceEqual(input.Methods)
-                ) && 
-                (
-                    this.ExpiresAt == input.ExpiresAt ||
-                    (this.ExpiresAt != null &&
-                    this.ExpiresAt.Equals(input.ExpiresAt))
-                ) && 
-                (
-                    this.Catalog == input.Catalog ||
-                    this.Catalog != null &&
-                    input.Catalog != null &&
-                    this.Catalog.SequenceEqual(input.Catalog)
-                ) && 
-                (
-                    this.Domain == input.Domain ||
-                    (this.Domain != null &&
-                    this.Domain.Equals(input.Domain))
-                ) && 
-                (
-                    this.Project == input.Project ||
-                    (this.Project != null &&
-                    this.Project.Equals(input.Project))
-                ) && 
-                (
-                    this.Roles == input.Roles ||
-                    this.Roles != null &&
-                    input.Roles != null &&
-                    this.Roles.SequenceEqual(input.Roles)
-                ) && 
-                (
-                    this.User == input.User ||
-                    (this.User != null &&
-                    this.User.Equals(input.User))
-                ) && 
-                (
-                    this.IssuedAt == input.IssuedAt ||
-                    (this.IssuedAt != null &&
-                    this.IssuedAt.Equals(input.IssuedAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -154,23 +118,15 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Methods != null)
-                    hashCode = hashCode * 59 + this.Methods.GetHashCode();
-                if (this.ExpiresAt != null)
-                    hashCode = hashCode * 59 + this.ExpiresAt.GetHashCode();
-                if (this.Catalog != null)
-                    hashCode = hashCode * 59 + this.Catalog.GetHashCode();
-                if (this.Domain != null)
-                    hashCode = hashCode * 59 + this.Domain.GetHashCode();
-                if (this.Project != null)
-                    hashCode = hashCode * 59 + this.Project.GetHashCode();
-                if (this.Roles != null)
-                    hashCode = hashCode * 59 + this.Roles.GetHashCode();
-                if (this.User != null)
-                    hashCode = hashCode * 59 + this.User.GetHashCode();
-                if (this.IssuedAt != null)
-                    hashCode = hashCode * 59 + this.IssuedAt.GetHashCode();
+                var hashCode = 41;
+                if (this.Methods != null) hashCode = hashCode * 59 + this.Methods.GetHashCode();
+                if (this.ExpiresAt != null) hashCode = hashCode * 59 + this.ExpiresAt.GetHashCode();
+                if (this.Catalog != null) hashCode = hashCode * 59 + this.Catalog.GetHashCode();
+                if (this.Domain != null) hashCode = hashCode * 59 + this.Domain.GetHashCode();
+                if (this.Project != null) hashCode = hashCode * 59 + this.Project.GetHashCode();
+                if (this.Roles != null) hashCode = hashCode * 59 + this.Roles.GetHashCode();
+                if (this.User != null) hashCode = hashCode * 59 + this.User.GetHashCode();
+                if (this.IssuedAt != null) hashCode = hashCode * 59 + this.IssuedAt.GetHashCode();
                 return hashCode;
             }
         }

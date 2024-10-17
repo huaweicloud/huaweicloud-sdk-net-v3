@@ -66,25 +66,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(RestartStarrocksNodeRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StarrocksNodeId != input.StarrocksNodeId || (this.StarrocksNodeId != null && !this.StarrocksNodeId.Equals(input.StarrocksNodeId))) return false;
+            if (this.StarrocksInstanceId != input.StarrocksInstanceId || (this.StarrocksInstanceId != null && !this.StarrocksInstanceId.Equals(input.StarrocksInstanceId))) return false;
+            if (this.XLanguage != input.XLanguage || (this.XLanguage != null && !this.XLanguage.Equals(input.XLanguage))) return false;
 
-            return 
-                (
-                    this.StarrocksNodeId == input.StarrocksNodeId ||
-                    (this.StarrocksNodeId != null &&
-                    this.StarrocksNodeId.Equals(input.StarrocksNodeId))
-                ) && 
-                (
-                    this.StarrocksInstanceId == input.StarrocksInstanceId ||
-                    (this.StarrocksInstanceId != null &&
-                    this.StarrocksInstanceId.Equals(input.StarrocksInstanceId))
-                ) && 
-                (
-                    this.XLanguage == input.XLanguage ||
-                    (this.XLanguage != null &&
-                    this.XLanguage.Equals(input.XLanguage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -94,13 +81,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StarrocksNodeId != null)
-                    hashCode = hashCode * 59 + this.StarrocksNodeId.GetHashCode();
-                if (this.StarrocksInstanceId != null)
-                    hashCode = hashCode * 59 + this.StarrocksInstanceId.GetHashCode();
-                if (this.XLanguage != null)
-                    hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
+                var hashCode = 41;
+                if (this.StarrocksNodeId != null) hashCode = hashCode * 59 + this.StarrocksNodeId.GetHashCode();
+                if (this.StarrocksInstanceId != null) hashCode = hashCode * 59 + this.StarrocksInstanceId.GetHashCode();
+                if (this.XLanguage != null) hashCode = hashCode * 59 + this.XLanguage.GetHashCode();
                 return hashCode;
             }
         }

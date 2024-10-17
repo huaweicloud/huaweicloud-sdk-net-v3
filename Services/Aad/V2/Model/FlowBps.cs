@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// </summary>
         public bool Equals(FlowBps input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Utime != input.Utime || (this.Utime != null && !this.Utime.Equals(input.Utime))) return false;
+            if (this.AttackBps != input.AttackBps || (this.AttackBps != null && !this.AttackBps.Equals(input.AttackBps))) return false;
+            if (this.NormalBps != input.NormalBps || (this.NormalBps != null && !this.NormalBps.Equals(input.NormalBps))) return false;
 
-            return 
-                (
-                    this.Utime == input.Utime ||
-                    (this.Utime != null &&
-                    this.Utime.Equals(input.Utime))
-                ) && 
-                (
-                    this.AttackBps == input.AttackBps ||
-                    (this.AttackBps != null &&
-                    this.AttackBps.Equals(input.AttackBps))
-                ) && 
-                (
-                    this.NormalBps == input.NormalBps ||
-                    (this.NormalBps != null &&
-                    this.NormalBps.Equals(input.NormalBps))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Utime != null)
-                    hashCode = hashCode * 59 + this.Utime.GetHashCode();
-                if (this.AttackBps != null)
-                    hashCode = hashCode * 59 + this.AttackBps.GetHashCode();
-                if (this.NormalBps != null)
-                    hashCode = hashCode * 59 + this.NormalBps.GetHashCode();
+                var hashCode = 41;
+                if (this.Utime != null) hashCode = hashCode * 59 + this.Utime.GetHashCode();
+                if (this.AttackBps != null) hashCode = hashCode * 59 + this.AttackBps.GetHashCode();
+                if (this.NormalBps != null) hashCode = hashCode * 59 + this.NormalBps.GetHashCode();
                 return hashCode;
             }
         }

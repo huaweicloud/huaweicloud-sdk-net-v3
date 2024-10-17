@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(CreateConnectorResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.ConnectorId != input.ConnectorId || (this.ConnectorId != null && !this.ConnectorId.Equals(input.ConnectorId))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.ConnectorId == input.ConnectorId ||
-                    (this.ConnectorId != null &&
-                    this.ConnectorId.Equals(input.ConnectorId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.ConnectorId != null)
-                    hashCode = hashCode * 59 + this.ConnectorId.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.ConnectorId != null) hashCode = hashCode * 59 + this.ConnectorId.GetHashCode();
                 return hashCode;
             }
         }

@@ -319,46 +319,16 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(OperationPreferences input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RegionConcurrencyType != input.RegionConcurrencyType) return false;
+            if (this.RegionOrder != input.RegionOrder || (this.RegionOrder != null && input.RegionOrder != null && !this.RegionOrder.SequenceEqual(input.RegionOrder))) return false;
+            if (this.FailureToleranceCount != input.FailureToleranceCount || (this.FailureToleranceCount != null && !this.FailureToleranceCount.Equals(input.FailureToleranceCount))) return false;
+            if (this.FailureTolerancePercentage != input.FailureTolerancePercentage || (this.FailureTolerancePercentage != null && !this.FailureTolerancePercentage.Equals(input.FailureTolerancePercentage))) return false;
+            if (this.MaxConcurrentCount != input.MaxConcurrentCount || (this.MaxConcurrentCount != null && !this.MaxConcurrentCount.Equals(input.MaxConcurrentCount))) return false;
+            if (this.MaxConcurrentPercentage != input.MaxConcurrentPercentage || (this.MaxConcurrentPercentage != null && !this.MaxConcurrentPercentage.Equals(input.MaxConcurrentPercentage))) return false;
+            if (this.FailureToleranceMode != input.FailureToleranceMode) return false;
 
-            return 
-                (
-                    this.RegionConcurrencyType == input.RegionConcurrencyType ||
-                    (this.RegionConcurrencyType != null &&
-                    this.RegionConcurrencyType.Equals(input.RegionConcurrencyType))
-                ) && 
-                (
-                    this.RegionOrder == input.RegionOrder ||
-                    this.RegionOrder != null &&
-                    input.RegionOrder != null &&
-                    this.RegionOrder.SequenceEqual(input.RegionOrder)
-                ) && 
-                (
-                    this.FailureToleranceCount == input.FailureToleranceCount ||
-                    (this.FailureToleranceCount != null &&
-                    this.FailureToleranceCount.Equals(input.FailureToleranceCount))
-                ) && 
-                (
-                    this.FailureTolerancePercentage == input.FailureTolerancePercentage ||
-                    (this.FailureTolerancePercentage != null &&
-                    this.FailureTolerancePercentage.Equals(input.FailureTolerancePercentage))
-                ) && 
-                (
-                    this.MaxConcurrentCount == input.MaxConcurrentCount ||
-                    (this.MaxConcurrentCount != null &&
-                    this.MaxConcurrentCount.Equals(input.MaxConcurrentCount))
-                ) && 
-                (
-                    this.MaxConcurrentPercentage == input.MaxConcurrentPercentage ||
-                    (this.MaxConcurrentPercentage != null &&
-                    this.MaxConcurrentPercentage.Equals(input.MaxConcurrentPercentage))
-                ) && 
-                (
-                    this.FailureToleranceMode == input.FailureToleranceMode ||
-                    (this.FailureToleranceMode != null &&
-                    this.FailureToleranceMode.Equals(input.FailureToleranceMode))
-                );
+            return true;
         }
 
         /// <summary>
@@ -368,21 +338,14 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RegionConcurrencyType != null)
-                    hashCode = hashCode * 59 + this.RegionConcurrencyType.GetHashCode();
-                if (this.RegionOrder != null)
-                    hashCode = hashCode * 59 + this.RegionOrder.GetHashCode();
-                if (this.FailureToleranceCount != null)
-                    hashCode = hashCode * 59 + this.FailureToleranceCount.GetHashCode();
-                if (this.FailureTolerancePercentage != null)
-                    hashCode = hashCode * 59 + this.FailureTolerancePercentage.GetHashCode();
-                if (this.MaxConcurrentCount != null)
-                    hashCode = hashCode * 59 + this.MaxConcurrentCount.GetHashCode();
-                if (this.MaxConcurrentPercentage != null)
-                    hashCode = hashCode * 59 + this.MaxConcurrentPercentage.GetHashCode();
-                if (this.FailureToleranceMode != null)
-                    hashCode = hashCode * 59 + this.FailureToleranceMode.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.RegionConcurrencyType.GetHashCode();
+                if (this.RegionOrder != null) hashCode = hashCode * 59 + this.RegionOrder.GetHashCode();
+                if (this.FailureToleranceCount != null) hashCode = hashCode * 59 + this.FailureToleranceCount.GetHashCode();
+                if (this.FailureTolerancePercentage != null) hashCode = hashCode * 59 + this.FailureTolerancePercentage.GetHashCode();
+                if (this.MaxConcurrentCount != null) hashCode = hashCode * 59 + this.MaxConcurrentCount.GetHashCode();
+                if (this.MaxConcurrentPercentage != null) hashCode = hashCode * 59 + this.MaxConcurrentPercentage.GetHashCode();
+                hashCode = hashCode * 59 + this.FailureToleranceMode.GetHashCode();
                 return hashCode;
             }
         }

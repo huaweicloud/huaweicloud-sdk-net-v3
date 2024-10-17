@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(CreateMfaDeviceRespon input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SerialNumber != input.SerialNumber || (this.SerialNumber != null && !this.SerialNumber.Equals(input.SerialNumber))) return false;
+            if (this.Base32StringSeed != input.Base32StringSeed || (this.Base32StringSeed != null && !this.Base32StringSeed.Equals(input.Base32StringSeed))) return false;
 
-            return 
-                (
-                    this.SerialNumber == input.SerialNumber ||
-                    (this.SerialNumber != null &&
-                    this.SerialNumber.Equals(input.SerialNumber))
-                ) && 
-                (
-                    this.Base32StringSeed == input.Base32StringSeed ||
-                    (this.Base32StringSeed != null &&
-                    this.Base32StringSeed.Equals(input.Base32StringSeed))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SerialNumber != null)
-                    hashCode = hashCode * 59 + this.SerialNumber.GetHashCode();
-                if (this.Base32StringSeed != null)
-                    hashCode = hashCode * 59 + this.Base32StringSeed.GetHashCode();
+                var hashCode = 41;
+                if (this.SerialNumber != null) hashCode = hashCode * 59 + this.SerialNumber.GetHashCode();
+                if (this.Base32StringSeed != null) hashCode = hashCode * 59 + this.Base32StringSeed.GetHashCode();
                 return hashCode;
             }
         }

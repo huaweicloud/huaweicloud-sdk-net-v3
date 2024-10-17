@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ListClickHouseDataBaseParameterResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DbParameters != input.DbParameters || (this.DbParameters != null && input.DbParameters != null && !this.DbParameters.SequenceEqual(input.DbParameters))) return false;
 
-            return 
-                (
-                    this.DbParameters == input.DbParameters ||
-                    this.DbParameters != null &&
-                    input.DbParameters != null &&
-                    this.DbParameters.SequenceEqual(input.DbParameters)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DbParameters != null)
-                    hashCode = hashCode * 59 + this.DbParameters.GetHashCode();
+                var hashCode = 41;
+                if (this.DbParameters != null) hashCode = hashCode * 59 + this.DbParameters.GetHashCode();
                 return hashCode;
             }
         }

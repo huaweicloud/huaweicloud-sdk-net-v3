@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ListTemplatesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Templates != input.Templates || (this.Templates != null && input.Templates != null && !this.Templates.SequenceEqual(input.Templates))) return false;
 
-            return 
-                (
-                    this.Templates == input.Templates ||
-                    this.Templates != null &&
-                    input.Templates != null &&
-                    this.Templates.SequenceEqual(input.Templates)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Templates != null)
-                    hashCode = hashCode * 59 + this.Templates.GetHashCode();
+                var hashCode = 41;
+                if (this.Templates != null) hashCode = hashCode * 59 + this.Templates.GetHashCode();
                 return hashCode;
             }
         }

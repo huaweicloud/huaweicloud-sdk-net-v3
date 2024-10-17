@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         /// </summary>
         public bool Equals(DurationStrategies input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Strategy != input.Strategy || (this.Strategy != null && !this.Strategy.Equals(input.Strategy))) return false;
+            if (this.EstimatedUpgradeDuration != input.EstimatedUpgradeDuration || (this.EstimatedUpgradeDuration != null && !this.EstimatedUpgradeDuration.Equals(input.EstimatedUpgradeDuration))) return false;
 
-            return 
-                (
-                    this.Strategy == input.Strategy ||
-                    (this.Strategy != null &&
-                    this.Strategy.Equals(input.Strategy))
-                ) && 
-                (
-                    this.EstimatedUpgradeDuration == input.EstimatedUpgradeDuration ||
-                    (this.EstimatedUpgradeDuration != null &&
-                    this.EstimatedUpgradeDuration.Equals(input.EstimatedUpgradeDuration))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Dds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Strategy != null)
-                    hashCode = hashCode * 59 + this.Strategy.GetHashCode();
-                if (this.EstimatedUpgradeDuration != null)
-                    hashCode = hashCode * 59 + this.EstimatedUpgradeDuration.GetHashCode();
+                var hashCode = 41;
+                if (this.Strategy != null) hashCode = hashCode * 59 + this.Strategy.GetHashCode();
+                if (this.EstimatedUpgradeDuration != null) hashCode = hashCode * 59 + this.EstimatedUpgradeDuration.GetHashCode();
                 return hashCode;
             }
         }

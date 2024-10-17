@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         /// </summary>
         public bool Equals(InstanceIpInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.IpId != input.IpId || (this.IpId != null && !this.IpId.Equals(input.IpId))) return false;
+            if (this.Ip != input.Ip || (this.Ip != null && !this.Ip.Equals(input.Ip))) return false;
+            if (this.BasicBandwidth != input.BasicBandwidth || (this.BasicBandwidth != null && !this.BasicBandwidth.Equals(input.BasicBandwidth))) return false;
+            if (this.ElasticBandwidth != input.ElasticBandwidth || (this.ElasticBandwidth != null && !this.ElasticBandwidth.Equals(input.ElasticBandwidth))) return false;
+            if (this.IpStatus != input.IpStatus || (this.IpStatus != null && !this.IpStatus.Equals(input.IpStatus))) return false;
 
-            return 
-                (
-                    this.IpId == input.IpId ||
-                    (this.IpId != null &&
-                    this.IpId.Equals(input.IpId))
-                ) && 
-                (
-                    this.Ip == input.Ip ||
-                    (this.Ip != null &&
-                    this.Ip.Equals(input.Ip))
-                ) && 
-                (
-                    this.BasicBandwidth == input.BasicBandwidth ||
-                    (this.BasicBandwidth != null &&
-                    this.BasicBandwidth.Equals(input.BasicBandwidth))
-                ) && 
-                (
-                    this.ElasticBandwidth == input.ElasticBandwidth ||
-                    (this.ElasticBandwidth != null &&
-                    this.ElasticBandwidth.Equals(input.ElasticBandwidth))
-                ) && 
-                (
-                    this.IpStatus == input.IpStatus ||
-                    (this.IpStatus != null &&
-                    this.IpStatus.Equals(input.IpStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Aad.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.IpId != null)
-                    hashCode = hashCode * 59 + this.IpId.GetHashCode();
-                if (this.Ip != null)
-                    hashCode = hashCode * 59 + this.Ip.GetHashCode();
-                if (this.BasicBandwidth != null)
-                    hashCode = hashCode * 59 + this.BasicBandwidth.GetHashCode();
-                if (this.ElasticBandwidth != null)
-                    hashCode = hashCode * 59 + this.ElasticBandwidth.GetHashCode();
-                if (this.IpStatus != null)
-                    hashCode = hashCode * 59 + this.IpStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.IpId != null) hashCode = hashCode * 59 + this.IpId.GetHashCode();
+                if (this.Ip != null) hashCode = hashCode * 59 + this.Ip.GetHashCode();
+                if (this.BasicBandwidth != null) hashCode = hashCode * 59 + this.BasicBandwidth.GetHashCode();
+                if (this.ElasticBandwidth != null) hashCode = hashCode * 59 + this.ElasticBandwidth.GetHashCode();
+                if (this.IpStatus != null) hashCode = hashCode * 59 + this.IpStatus.GetHashCode();
                 return hashCode;
             }
         }

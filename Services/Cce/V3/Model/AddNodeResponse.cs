@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(AddNodeResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Jobid != input.Jobid || (this.Jobid != null && !this.Jobid.Equals(input.Jobid))) return false;
 
-            return 
-                (
-                    this.Jobid == input.Jobid ||
-                    (this.Jobid != null &&
-                    this.Jobid.Equals(input.Jobid))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Jobid != null)
-                    hashCode = hashCode * 59 + this.Jobid.GetHashCode();
+                var hashCode = 41;
+                if (this.Jobid != null) hashCode = hashCode * 59 + this.Jobid.GetHashCode();
                 return hashCode;
             }
         }

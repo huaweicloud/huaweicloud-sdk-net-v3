@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(ListDelayConfigResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PlayDomain != input.PlayDomain || (this.PlayDomain != null && !this.PlayDomain.Equals(input.PlayDomain))) return false;
+            if (this.DelayConfig != input.DelayConfig || (this.DelayConfig != null && input.DelayConfig != null && !this.DelayConfig.SequenceEqual(input.DelayConfig))) return false;
 
-            return 
-                (
-                    this.PlayDomain == input.PlayDomain ||
-                    (this.PlayDomain != null &&
-                    this.PlayDomain.Equals(input.PlayDomain))
-                ) && 
-                (
-                    this.DelayConfig == input.DelayConfig ||
-                    this.DelayConfig != null &&
-                    input.DelayConfig != null &&
-                    this.DelayConfig.SequenceEqual(input.DelayConfig)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PlayDomain != null)
-                    hashCode = hashCode * 59 + this.PlayDomain.GetHashCode();
-                if (this.DelayConfig != null)
-                    hashCode = hashCode * 59 + this.DelayConfig.GetHashCode();
+                var hashCode = 41;
+                if (this.PlayDomain != null) hashCode = hashCode * 59 + this.PlayDomain.GetHashCode();
+                if (this.DelayConfig != null) hashCode = hashCode * 59 + this.DelayConfig.GetHashCode();
                 return hashCode;
             }
         }

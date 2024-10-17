@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(Quota input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.EnterpriseProjectName != input.EnterpriseProjectName || (this.EnterpriseProjectName != null && !this.EnterpriseProjectName.Equals(input.EnterpriseProjectName))) return false;
+            if (this.InstanceQuota != input.InstanceQuota || (this.InstanceQuota != null && !this.InstanceQuota.Equals(input.InstanceQuota))) return false;
+            if (this.VcpusQuota != input.VcpusQuota || (this.VcpusQuota != null && !this.VcpusQuota.Equals(input.VcpusQuota))) return false;
+            if (this.RamQuota != input.RamQuota || (this.RamQuota != null && !this.RamQuota.Equals(input.RamQuota))) return false;
+            if (this.AvailabilityInstanceQuota != input.AvailabilityInstanceQuota || (this.AvailabilityInstanceQuota != null && !this.AvailabilityInstanceQuota.Equals(input.AvailabilityInstanceQuota))) return false;
+            if (this.AvailabilityVcpusQuota != input.AvailabilityVcpusQuota || (this.AvailabilityVcpusQuota != null && !this.AvailabilityVcpusQuota.Equals(input.AvailabilityVcpusQuota))) return false;
+            if (this.AvailabilityRamQuota != input.AvailabilityRamQuota || (this.AvailabilityRamQuota != null && !this.AvailabilityRamQuota.Equals(input.AvailabilityRamQuota))) return false;
 
-            return 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.EnterpriseProjectName == input.EnterpriseProjectName ||
-                    (this.EnterpriseProjectName != null &&
-                    this.EnterpriseProjectName.Equals(input.EnterpriseProjectName))
-                ) && 
-                (
-                    this.InstanceQuota == input.InstanceQuota ||
-                    (this.InstanceQuota != null &&
-                    this.InstanceQuota.Equals(input.InstanceQuota))
-                ) && 
-                (
-                    this.VcpusQuota == input.VcpusQuota ||
-                    (this.VcpusQuota != null &&
-                    this.VcpusQuota.Equals(input.VcpusQuota))
-                ) && 
-                (
-                    this.RamQuota == input.RamQuota ||
-                    (this.RamQuota != null &&
-                    this.RamQuota.Equals(input.RamQuota))
-                ) && 
-                (
-                    this.AvailabilityInstanceQuota == input.AvailabilityInstanceQuota ||
-                    (this.AvailabilityInstanceQuota != null &&
-                    this.AvailabilityInstanceQuota.Equals(input.AvailabilityInstanceQuota))
-                ) && 
-                (
-                    this.AvailabilityVcpusQuota == input.AvailabilityVcpusQuota ||
-                    (this.AvailabilityVcpusQuota != null &&
-                    this.AvailabilityVcpusQuota.Equals(input.AvailabilityVcpusQuota))
-                ) && 
-                (
-                    this.AvailabilityRamQuota == input.AvailabilityRamQuota ||
-                    (this.AvailabilityRamQuota != null &&
-                    this.AvailabilityRamQuota.Equals(input.AvailabilityRamQuota))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.EnterpriseProjectName != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectName.GetHashCode();
-                if (this.InstanceQuota != null)
-                    hashCode = hashCode * 59 + this.InstanceQuota.GetHashCode();
-                if (this.VcpusQuota != null)
-                    hashCode = hashCode * 59 + this.VcpusQuota.GetHashCode();
-                if (this.RamQuota != null)
-                    hashCode = hashCode * 59 + this.RamQuota.GetHashCode();
-                if (this.AvailabilityInstanceQuota != null)
-                    hashCode = hashCode * 59 + this.AvailabilityInstanceQuota.GetHashCode();
-                if (this.AvailabilityVcpusQuota != null)
-                    hashCode = hashCode * 59 + this.AvailabilityVcpusQuota.GetHashCode();
-                if (this.AvailabilityRamQuota != null)
-                    hashCode = hashCode * 59 + this.AvailabilityRamQuota.GetHashCode();
+                var hashCode = 41;
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.EnterpriseProjectName != null) hashCode = hashCode * 59 + this.EnterpriseProjectName.GetHashCode();
+                if (this.InstanceQuota != null) hashCode = hashCode * 59 + this.InstanceQuota.GetHashCode();
+                if (this.VcpusQuota != null) hashCode = hashCode * 59 + this.VcpusQuota.GetHashCode();
+                if (this.RamQuota != null) hashCode = hashCode * 59 + this.RamQuota.GetHashCode();
+                if (this.AvailabilityInstanceQuota != null) hashCode = hashCode * 59 + this.AvailabilityInstanceQuota.GetHashCode();
+                if (this.AvailabilityVcpusQuota != null) hashCode = hashCode * 59 + this.AvailabilityVcpusQuota.GetHashCode();
+                if (this.AvailabilityRamQuota != null) hashCode = hashCode * 59 + this.AvailabilityRamQuota.GetHashCode();
                 return hashCode;
             }
         }

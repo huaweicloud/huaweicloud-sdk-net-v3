@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(TaskPolicy input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ScheduleTime != input.ScheduleTime || (this.ScheduleTime != null && !this.ScheduleTime.Equals(input.ScheduleTime))) return false;
+            if (this.RetryCount != input.RetryCount || (this.RetryCount != null && !this.RetryCount.Equals(input.RetryCount))) return false;
+            if (this.RetryInterval != input.RetryInterval || (this.RetryInterval != null && !this.RetryInterval.Equals(input.RetryInterval))) return false;
 
-            return 
-                (
-                    this.ScheduleTime == input.ScheduleTime ||
-                    (this.ScheduleTime != null &&
-                    this.ScheduleTime.Equals(input.ScheduleTime))
-                ) && 
-                (
-                    this.RetryCount == input.RetryCount ||
-                    (this.RetryCount != null &&
-                    this.RetryCount.Equals(input.RetryCount))
-                ) && 
-                (
-                    this.RetryInterval == input.RetryInterval ||
-                    (this.RetryInterval != null &&
-                    this.RetryInterval.Equals(input.RetryInterval))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ScheduleTime != null)
-                    hashCode = hashCode * 59 + this.ScheduleTime.GetHashCode();
-                if (this.RetryCount != null)
-                    hashCode = hashCode * 59 + this.RetryCount.GetHashCode();
-                if (this.RetryInterval != null)
-                    hashCode = hashCode * 59 + this.RetryInterval.GetHashCode();
+                var hashCode = 41;
+                if (this.ScheduleTime != null) hashCode = hashCode * 59 + this.ScheduleTime.GetHashCode();
+                if (this.RetryCount != null) hashCode = hashCode * 59 + this.RetryCount.GetHashCode();
+                if (this.RetryInterval != null) hashCode = hashCode * 59 + this.RetryInterval.GetHashCode();
                 return hashCode;
             }
         }

@@ -105,58 +105,18 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
         /// </summary>
         public bool Equals(AccessInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Port != input.Port || (this.Port != null && !this.Port.Equals(input.Port))) return false;
+            if (this.NonTlsPort != input.NonTlsPort || (this.NonTlsPort != null && !this.NonTlsPort.Equals(input.NonTlsPort))) return false;
+            if (this.WebsocketPort != input.WebsocketPort || (this.WebsocketPort != null && !this.WebsocketPort.Equals(input.WebsocketPort))) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
+            if (this.PrivateAddresses != input.PrivateAddresses || (this.PrivateAddresses != null && input.PrivateAddresses != null && !this.PrivateAddresses.SequenceEqual(input.PrivateAddresses))) return false;
+            if (this.PublicAddress != input.PublicAddress || (this.PublicAddress != null && input.PublicAddress != null && !this.PublicAddress.SequenceEqual(input.PublicAddress))) return false;
+            if (this.Ipv6Address != input.Ipv6Address || (this.Ipv6Address != null && input.Ipv6Address != null && !this.Ipv6Address.SequenceEqual(input.Ipv6Address))) return false;
+            if (this.IpWhitelist != input.IpWhitelist || (this.IpWhitelist != null && !this.IpWhitelist.Equals(input.IpWhitelist))) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Port == input.Port ||
-                    (this.Port != null &&
-                    this.Port.Equals(input.Port))
-                ) && 
-                (
-                    this.NonTlsPort == input.NonTlsPort ||
-                    (this.NonTlsPort != null &&
-                    this.NonTlsPort.Equals(input.NonTlsPort))
-                ) && 
-                (
-                    this.WebsocketPort == input.WebsocketPort ||
-                    (this.WebsocketPort != null &&
-                    this.WebsocketPort.Equals(input.WebsocketPort))
-                ) && 
-                (
-                    this.DomainName == input.DomainName ||
-                    (this.DomainName != null &&
-                    this.DomainName.Equals(input.DomainName))
-                ) && 
-                (
-                    this.PrivateAddresses == input.PrivateAddresses ||
-                    this.PrivateAddresses != null &&
-                    input.PrivateAddresses != null &&
-                    this.PrivateAddresses.SequenceEqual(input.PrivateAddresses)
-                ) && 
-                (
-                    this.PublicAddress == input.PublicAddress ||
-                    this.PublicAddress != null &&
-                    input.PublicAddress != null &&
-                    this.PublicAddress.SequenceEqual(input.PublicAddress)
-                ) && 
-                (
-                    this.Ipv6Address == input.Ipv6Address ||
-                    this.Ipv6Address != null &&
-                    input.Ipv6Address != null &&
-                    this.Ipv6Address.SequenceEqual(input.Ipv6Address)
-                ) && 
-                (
-                    this.IpWhitelist == input.IpWhitelist ||
-                    (this.IpWhitelist != null &&
-                    this.IpWhitelist.Equals(input.IpWhitelist))
-                );
+            return true;
         }
 
         /// <summary>
@@ -166,25 +126,16 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Port != null)
-                    hashCode = hashCode * 59 + this.Port.GetHashCode();
-                if (this.NonTlsPort != null)
-                    hashCode = hashCode * 59 + this.NonTlsPort.GetHashCode();
-                if (this.WebsocketPort != null)
-                    hashCode = hashCode * 59 + this.WebsocketPort.GetHashCode();
-                if (this.DomainName != null)
-                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.PrivateAddresses != null)
-                    hashCode = hashCode * 59 + this.PrivateAddresses.GetHashCode();
-                if (this.PublicAddress != null)
-                    hashCode = hashCode * 59 + this.PublicAddress.GetHashCode();
-                if (this.Ipv6Address != null)
-                    hashCode = hashCode * 59 + this.Ipv6Address.GetHashCode();
-                if (this.IpWhitelist != null)
-                    hashCode = hashCode * 59 + this.IpWhitelist.GetHashCode();
+                var hashCode = 41;
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Port != null) hashCode = hashCode * 59 + this.Port.GetHashCode();
+                if (this.NonTlsPort != null) hashCode = hashCode * 59 + this.NonTlsPort.GetHashCode();
+                if (this.WebsocketPort != null) hashCode = hashCode * 59 + this.WebsocketPort.GetHashCode();
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.PrivateAddresses != null) hashCode = hashCode * 59 + this.PrivateAddresses.GetHashCode();
+                if (this.PublicAddress != null) hashCode = hashCode * 59 + this.PublicAddress.GetHashCode();
+                if (this.Ipv6Address != null) hashCode = hashCode * 59 + this.Ipv6Address.GetHashCode();
+                if (this.IpWhitelist != null) hashCode = hashCode * 59 + this.IpWhitelist.GetHashCode();
                 return hashCode;
             }
         }

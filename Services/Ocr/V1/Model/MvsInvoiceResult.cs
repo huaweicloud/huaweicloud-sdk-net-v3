@@ -427,285 +427,64 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(MvsInvoiceResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Code != input.Code || (this.Code != null && !this.Code.Equals(input.Code))) return false;
+            if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;
+            if (this.MachinePrintedCode != input.MachinePrintedCode || (this.MachinePrintedCode != null && !this.MachinePrintedCode.Equals(input.MachinePrintedCode))) return false;
+            if (this.MachinePrintedNumber != input.MachinePrintedNumber || (this.MachinePrintedNumber != null && !this.MachinePrintedNumber.Equals(input.MachinePrintedNumber))) return false;
+            if (this.IssueDate != input.IssueDate || (this.IssueDate != null && !this.IssueDate.Equals(input.IssueDate))) return false;
+            if (this.MachineNumber != input.MachineNumber || (this.MachineNumber != null && !this.MachineNumber.Equals(input.MachineNumber))) return false;
+            if (this.BuyerName != input.BuyerName || (this.BuyerName != null && !this.BuyerName.Equals(input.BuyerName))) return false;
+            if (this.BuyerOrganizationNumber != input.BuyerOrganizationNumber || (this.BuyerOrganizationNumber != null && !this.BuyerOrganizationNumber.Equals(input.BuyerOrganizationNumber))) return false;
+            if (this.BuyerId != input.BuyerId || (this.BuyerId != null && !this.BuyerId.Equals(input.BuyerId))) return false;
+            if (this.BuyerAddress != input.BuyerAddress || (this.BuyerAddress != null && !this.BuyerAddress.Equals(input.BuyerAddress))) return false;
+            if (this.BuyerPhone != input.BuyerPhone || (this.BuyerPhone != null && !this.BuyerPhone.Equals(input.BuyerPhone))) return false;
+            if (this.SellerName != input.SellerName || (this.SellerName != null && !this.SellerName.Equals(input.SellerName))) return false;
+            if (this.SellerPhone != input.SellerPhone || (this.SellerPhone != null && !this.SellerPhone.Equals(input.SellerPhone))) return false;
+            if (this.SellerId != input.SellerId || (this.SellerId != null && !this.SellerId.Equals(input.SellerId))) return false;
+            if (this.SellerAccount != input.SellerAccount || (this.SellerAccount != null && !this.SellerAccount.Equals(input.SellerAccount))) return false;
+            if (this.SellerAddress != input.SellerAddress || (this.SellerAddress != null && !this.SellerAddress.Equals(input.SellerAddress))) return false;
+            if (this.LicencePlateNumber != input.LicencePlateNumber || (this.LicencePlateNumber != null && !this.LicencePlateNumber.Equals(input.LicencePlateNumber))) return false;
+            if (this.RegistrationNumber != input.RegistrationNumber || (this.RegistrationNumber != null && !this.RegistrationNumber.Equals(input.RegistrationNumber))) return false;
+            if (this.DeptMotorVehicles != input.DeptMotorVehicles || (this.DeptMotorVehicles != null && !this.DeptMotorVehicles.Equals(input.DeptMotorVehicles))) return false;
+            if (this.SellerBank != input.SellerBank || (this.SellerBank != null && !this.SellerBank.Equals(input.SellerBank))) return false;
+            if (this.VehicleType != input.VehicleType || (this.VehicleType != null && !this.VehicleType.Equals(input.VehicleType))) return false;
+            if (this.BrandModel != input.BrandModel || (this.BrandModel != null && !this.BrandModel.Equals(input.BrandModel))) return false;
+            if (this.ManufacturingLocation != input.ManufacturingLocation || (this.ManufacturingLocation != null && !this.ManufacturingLocation.Equals(input.ManufacturingLocation))) return false;
+            if (this.QualityCertificate != input.QualityCertificate || (this.QualityCertificate != null && !this.QualityCertificate.Equals(input.QualityCertificate))) return false;
+            if (this.ImportCertificate != input.ImportCertificate || (this.ImportCertificate != null && !this.ImportCertificate.Equals(input.ImportCertificate))) return false;
+            if (this.InspectionNumber != input.InspectionNumber || (this.InspectionNumber != null && !this.InspectionNumber.Equals(input.InspectionNumber))) return false;
+            if (this.EngineNumber != input.EngineNumber || (this.EngineNumber != null && !this.EngineNumber.Equals(input.EngineNumber))) return false;
+            if (this.VehicleIdentificationNumber != input.VehicleIdentificationNumber || (this.VehicleIdentificationNumber != null && !this.VehicleIdentificationNumber.Equals(input.VehicleIdentificationNumber))) return false;
+            if (this.Tonnage != input.Tonnage || (this.Tonnage != null && !this.Tonnage.Equals(input.Tonnage))) return false;
+            if (this.SeatingCapacity != input.SeatingCapacity || (this.SeatingCapacity != null && !this.SeatingCapacity.Equals(input.SeatingCapacity))) return false;
+            if (this.TaxAuthority != input.TaxAuthority || (this.TaxAuthority != null && !this.TaxAuthority.Equals(input.TaxAuthority))) return false;
+            if (this.TaxAuthorityCode != input.TaxAuthorityCode || (this.TaxAuthorityCode != null && !this.TaxAuthorityCode.Equals(input.TaxAuthorityCode))) return false;
+            if (this.TaxPaymentReceipt != input.TaxPaymentReceipt || (this.TaxPaymentReceipt != null && !this.TaxPaymentReceipt.Equals(input.TaxPaymentReceipt))) return false;
+            if (this.TaxRate != input.TaxRate || (this.TaxRate != null && !this.TaxRate.Equals(input.TaxRate))) return false;
+            if (this.Tax != input.Tax || (this.Tax != null && !this.Tax.Equals(input.Tax))) return false;
+            if (this.TaxExclusivePrice != input.TaxExclusivePrice || (this.TaxExclusivePrice != null && !this.TaxExclusivePrice.Equals(input.TaxExclusivePrice))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.TotalChinese != input.TotalChinese || (this.TotalChinese != null && !this.TotalChinese.Equals(input.TotalChinese))) return false;
+            if (this.FiscalCode != input.FiscalCode || (this.FiscalCode != null && !this.FiscalCode.Equals(input.FiscalCode))) return false;
+            if (this.AuctionOrgName != input.AuctionOrgName || (this.AuctionOrgName != null && !this.AuctionOrgName.Equals(input.AuctionOrgName))) return false;
+            if (this.AuctionOrgAddress != input.AuctionOrgAddress || (this.AuctionOrgAddress != null && !this.AuctionOrgAddress.Equals(input.AuctionOrgAddress))) return false;
+            if (this.AuctionOrgId != input.AuctionOrgId || (this.AuctionOrgId != null && !this.AuctionOrgId.Equals(input.AuctionOrgId))) return false;
+            if (this.AuctionOrgBankAccount != input.AuctionOrgBankAccount || (this.AuctionOrgBankAccount != null && !this.AuctionOrgBankAccount.Equals(input.AuctionOrgBankAccount))) return false;
+            if (this.AuctionOrgPhone != input.AuctionOrgPhone || (this.AuctionOrgPhone != null && !this.AuctionOrgPhone.Equals(input.AuctionOrgPhone))) return false;
+            if (this.UsedVehicleMarketName != input.UsedVehicleMarketName || (this.UsedVehicleMarketName != null && !this.UsedVehicleMarketName.Equals(input.UsedVehicleMarketName))) return false;
+            if (this.UsedVehicleMarketId != input.UsedVehicleMarketId || (this.UsedVehicleMarketId != null && !this.UsedVehicleMarketId.Equals(input.UsedVehicleMarketId))) return false;
+            if (this.UsedVehicleMarketAddress != input.UsedVehicleMarketAddress || (this.UsedVehicleMarketAddress != null && !this.UsedVehicleMarketAddress.Equals(input.UsedVehicleMarketAddress))) return false;
+            if (this.UsedVehicleMarketBankAccount != input.UsedVehicleMarketBankAccount || (this.UsedVehicleMarketBankAccount != null && !this.UsedVehicleMarketBankAccount.Equals(input.UsedVehicleMarketBankAccount))) return false;
+            if (this.UsedVehicleMarketPhone != input.UsedVehicleMarketPhone || (this.UsedVehicleMarketPhone != null && !this.UsedVehicleMarketPhone.Equals(input.UsedVehicleMarketPhone))) return false;
+            if (this.ReverseIssue != input.ReverseIssue || (this.ReverseIssue != null && !this.ReverseIssue.Equals(input.ReverseIssue))) return false;
+            if (this.Remark != input.Remark || (this.Remark != null && !this.Remark.Equals(input.Remark))) return false;
+            if (this.DrawerName != input.DrawerName || (this.DrawerName != null && !this.DrawerName.Equals(input.DrawerName))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.TextLocation != input.TextLocation || (this.TextLocation != null && !this.TextLocation.Equals(input.TextLocation))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
 
-            return 
-                (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
-                ) && 
-                (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                ) && 
-                (
-                    this.MachinePrintedCode == input.MachinePrintedCode ||
-                    (this.MachinePrintedCode != null &&
-                    this.MachinePrintedCode.Equals(input.MachinePrintedCode))
-                ) && 
-                (
-                    this.MachinePrintedNumber == input.MachinePrintedNumber ||
-                    (this.MachinePrintedNumber != null &&
-                    this.MachinePrintedNumber.Equals(input.MachinePrintedNumber))
-                ) && 
-                (
-                    this.IssueDate == input.IssueDate ||
-                    (this.IssueDate != null &&
-                    this.IssueDate.Equals(input.IssueDate))
-                ) && 
-                (
-                    this.MachineNumber == input.MachineNumber ||
-                    (this.MachineNumber != null &&
-                    this.MachineNumber.Equals(input.MachineNumber))
-                ) && 
-                (
-                    this.BuyerName == input.BuyerName ||
-                    (this.BuyerName != null &&
-                    this.BuyerName.Equals(input.BuyerName))
-                ) && 
-                (
-                    this.BuyerOrganizationNumber == input.BuyerOrganizationNumber ||
-                    (this.BuyerOrganizationNumber != null &&
-                    this.BuyerOrganizationNumber.Equals(input.BuyerOrganizationNumber))
-                ) && 
-                (
-                    this.BuyerId == input.BuyerId ||
-                    (this.BuyerId != null &&
-                    this.BuyerId.Equals(input.BuyerId))
-                ) && 
-                (
-                    this.BuyerAddress == input.BuyerAddress ||
-                    (this.BuyerAddress != null &&
-                    this.BuyerAddress.Equals(input.BuyerAddress))
-                ) && 
-                (
-                    this.BuyerPhone == input.BuyerPhone ||
-                    (this.BuyerPhone != null &&
-                    this.BuyerPhone.Equals(input.BuyerPhone))
-                ) && 
-                (
-                    this.SellerName == input.SellerName ||
-                    (this.SellerName != null &&
-                    this.SellerName.Equals(input.SellerName))
-                ) && 
-                (
-                    this.SellerPhone == input.SellerPhone ||
-                    (this.SellerPhone != null &&
-                    this.SellerPhone.Equals(input.SellerPhone))
-                ) && 
-                (
-                    this.SellerId == input.SellerId ||
-                    (this.SellerId != null &&
-                    this.SellerId.Equals(input.SellerId))
-                ) && 
-                (
-                    this.SellerAccount == input.SellerAccount ||
-                    (this.SellerAccount != null &&
-                    this.SellerAccount.Equals(input.SellerAccount))
-                ) && 
-                (
-                    this.SellerAddress == input.SellerAddress ||
-                    (this.SellerAddress != null &&
-                    this.SellerAddress.Equals(input.SellerAddress))
-                ) && 
-                (
-                    this.LicencePlateNumber == input.LicencePlateNumber ||
-                    (this.LicencePlateNumber != null &&
-                    this.LicencePlateNumber.Equals(input.LicencePlateNumber))
-                ) && 
-                (
-                    this.RegistrationNumber == input.RegistrationNumber ||
-                    (this.RegistrationNumber != null &&
-                    this.RegistrationNumber.Equals(input.RegistrationNumber))
-                ) && 
-                (
-                    this.DeptMotorVehicles == input.DeptMotorVehicles ||
-                    (this.DeptMotorVehicles != null &&
-                    this.DeptMotorVehicles.Equals(input.DeptMotorVehicles))
-                ) && 
-                (
-                    this.SellerBank == input.SellerBank ||
-                    (this.SellerBank != null &&
-                    this.SellerBank.Equals(input.SellerBank))
-                ) && 
-                (
-                    this.VehicleType == input.VehicleType ||
-                    (this.VehicleType != null &&
-                    this.VehicleType.Equals(input.VehicleType))
-                ) && 
-                (
-                    this.BrandModel == input.BrandModel ||
-                    (this.BrandModel != null &&
-                    this.BrandModel.Equals(input.BrandModel))
-                ) && 
-                (
-                    this.ManufacturingLocation == input.ManufacturingLocation ||
-                    (this.ManufacturingLocation != null &&
-                    this.ManufacturingLocation.Equals(input.ManufacturingLocation))
-                ) && 
-                (
-                    this.QualityCertificate == input.QualityCertificate ||
-                    (this.QualityCertificate != null &&
-                    this.QualityCertificate.Equals(input.QualityCertificate))
-                ) && 
-                (
-                    this.ImportCertificate == input.ImportCertificate ||
-                    (this.ImportCertificate != null &&
-                    this.ImportCertificate.Equals(input.ImportCertificate))
-                ) && 
-                (
-                    this.InspectionNumber == input.InspectionNumber ||
-                    (this.InspectionNumber != null &&
-                    this.InspectionNumber.Equals(input.InspectionNumber))
-                ) && 
-                (
-                    this.EngineNumber == input.EngineNumber ||
-                    (this.EngineNumber != null &&
-                    this.EngineNumber.Equals(input.EngineNumber))
-                ) && 
-                (
-                    this.VehicleIdentificationNumber == input.VehicleIdentificationNumber ||
-                    (this.VehicleIdentificationNumber != null &&
-                    this.VehicleIdentificationNumber.Equals(input.VehicleIdentificationNumber))
-                ) && 
-                (
-                    this.Tonnage == input.Tonnage ||
-                    (this.Tonnage != null &&
-                    this.Tonnage.Equals(input.Tonnage))
-                ) && 
-                (
-                    this.SeatingCapacity == input.SeatingCapacity ||
-                    (this.SeatingCapacity != null &&
-                    this.SeatingCapacity.Equals(input.SeatingCapacity))
-                ) && 
-                (
-                    this.TaxAuthority == input.TaxAuthority ||
-                    (this.TaxAuthority != null &&
-                    this.TaxAuthority.Equals(input.TaxAuthority))
-                ) && 
-                (
-                    this.TaxAuthorityCode == input.TaxAuthorityCode ||
-                    (this.TaxAuthorityCode != null &&
-                    this.TaxAuthorityCode.Equals(input.TaxAuthorityCode))
-                ) && 
-                (
-                    this.TaxPaymentReceipt == input.TaxPaymentReceipt ||
-                    (this.TaxPaymentReceipt != null &&
-                    this.TaxPaymentReceipt.Equals(input.TaxPaymentReceipt))
-                ) && 
-                (
-                    this.TaxRate == input.TaxRate ||
-                    (this.TaxRate != null &&
-                    this.TaxRate.Equals(input.TaxRate))
-                ) && 
-                (
-                    this.Tax == input.Tax ||
-                    (this.Tax != null &&
-                    this.Tax.Equals(input.Tax))
-                ) && 
-                (
-                    this.TaxExclusivePrice == input.TaxExclusivePrice ||
-                    (this.TaxExclusivePrice != null &&
-                    this.TaxExclusivePrice.Equals(input.TaxExclusivePrice))
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.TotalChinese == input.TotalChinese ||
-                    (this.TotalChinese != null &&
-                    this.TotalChinese.Equals(input.TotalChinese))
-                ) && 
-                (
-                    this.FiscalCode == input.FiscalCode ||
-                    (this.FiscalCode != null &&
-                    this.FiscalCode.Equals(input.FiscalCode))
-                ) && 
-                (
-                    this.AuctionOrgName == input.AuctionOrgName ||
-                    (this.AuctionOrgName != null &&
-                    this.AuctionOrgName.Equals(input.AuctionOrgName))
-                ) && 
-                (
-                    this.AuctionOrgAddress == input.AuctionOrgAddress ||
-                    (this.AuctionOrgAddress != null &&
-                    this.AuctionOrgAddress.Equals(input.AuctionOrgAddress))
-                ) && 
-                (
-                    this.AuctionOrgId == input.AuctionOrgId ||
-                    (this.AuctionOrgId != null &&
-                    this.AuctionOrgId.Equals(input.AuctionOrgId))
-                ) && 
-                (
-                    this.AuctionOrgBankAccount == input.AuctionOrgBankAccount ||
-                    (this.AuctionOrgBankAccount != null &&
-                    this.AuctionOrgBankAccount.Equals(input.AuctionOrgBankAccount))
-                ) && 
-                (
-                    this.AuctionOrgPhone == input.AuctionOrgPhone ||
-                    (this.AuctionOrgPhone != null &&
-                    this.AuctionOrgPhone.Equals(input.AuctionOrgPhone))
-                ) && 
-                (
-                    this.UsedVehicleMarketName == input.UsedVehicleMarketName ||
-                    (this.UsedVehicleMarketName != null &&
-                    this.UsedVehicleMarketName.Equals(input.UsedVehicleMarketName))
-                ) && 
-                (
-                    this.UsedVehicleMarketId == input.UsedVehicleMarketId ||
-                    (this.UsedVehicleMarketId != null &&
-                    this.UsedVehicleMarketId.Equals(input.UsedVehicleMarketId))
-                ) && 
-                (
-                    this.UsedVehicleMarketAddress == input.UsedVehicleMarketAddress ||
-                    (this.UsedVehicleMarketAddress != null &&
-                    this.UsedVehicleMarketAddress.Equals(input.UsedVehicleMarketAddress))
-                ) && 
-                (
-                    this.UsedVehicleMarketBankAccount == input.UsedVehicleMarketBankAccount ||
-                    (this.UsedVehicleMarketBankAccount != null &&
-                    this.UsedVehicleMarketBankAccount.Equals(input.UsedVehicleMarketBankAccount))
-                ) && 
-                (
-                    this.UsedVehicleMarketPhone == input.UsedVehicleMarketPhone ||
-                    (this.UsedVehicleMarketPhone != null &&
-                    this.UsedVehicleMarketPhone.Equals(input.UsedVehicleMarketPhone))
-                ) && 
-                (
-                    this.ReverseIssue == input.ReverseIssue ||
-                    (this.ReverseIssue != null &&
-                    this.ReverseIssue.Equals(input.ReverseIssue))
-                ) && 
-                (
-                    this.Remark == input.Remark ||
-                    (this.Remark != null &&
-                    this.Remark.Equals(input.Remark))
-                ) && 
-                (
-                    this.DrawerName == input.DrawerName ||
-                    (this.DrawerName != null &&
-                    this.DrawerName.Equals(input.DrawerName))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.TextLocation == input.TextLocation ||
-                    (this.TextLocation != null &&
-                    this.TextLocation.Equals(input.TextLocation))
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                );
+            return true;
         }
 
         /// <summary>
@@ -715,117 +494,62 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Code != null)
-                    hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.Number != null)
-                    hashCode = hashCode * 59 + this.Number.GetHashCode();
-                if (this.MachinePrintedCode != null)
-                    hashCode = hashCode * 59 + this.MachinePrintedCode.GetHashCode();
-                if (this.MachinePrintedNumber != null)
-                    hashCode = hashCode * 59 + this.MachinePrintedNumber.GetHashCode();
-                if (this.IssueDate != null)
-                    hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
-                if (this.MachineNumber != null)
-                    hashCode = hashCode * 59 + this.MachineNumber.GetHashCode();
-                if (this.BuyerName != null)
-                    hashCode = hashCode * 59 + this.BuyerName.GetHashCode();
-                if (this.BuyerOrganizationNumber != null)
-                    hashCode = hashCode * 59 + this.BuyerOrganizationNumber.GetHashCode();
-                if (this.BuyerId != null)
-                    hashCode = hashCode * 59 + this.BuyerId.GetHashCode();
-                if (this.BuyerAddress != null)
-                    hashCode = hashCode * 59 + this.BuyerAddress.GetHashCode();
-                if (this.BuyerPhone != null)
-                    hashCode = hashCode * 59 + this.BuyerPhone.GetHashCode();
-                if (this.SellerName != null)
-                    hashCode = hashCode * 59 + this.SellerName.GetHashCode();
-                if (this.SellerPhone != null)
-                    hashCode = hashCode * 59 + this.SellerPhone.GetHashCode();
-                if (this.SellerId != null)
-                    hashCode = hashCode * 59 + this.SellerId.GetHashCode();
-                if (this.SellerAccount != null)
-                    hashCode = hashCode * 59 + this.SellerAccount.GetHashCode();
-                if (this.SellerAddress != null)
-                    hashCode = hashCode * 59 + this.SellerAddress.GetHashCode();
-                if (this.LicencePlateNumber != null)
-                    hashCode = hashCode * 59 + this.LicencePlateNumber.GetHashCode();
-                if (this.RegistrationNumber != null)
-                    hashCode = hashCode * 59 + this.RegistrationNumber.GetHashCode();
-                if (this.DeptMotorVehicles != null)
-                    hashCode = hashCode * 59 + this.DeptMotorVehicles.GetHashCode();
-                if (this.SellerBank != null)
-                    hashCode = hashCode * 59 + this.SellerBank.GetHashCode();
-                if (this.VehicleType != null)
-                    hashCode = hashCode * 59 + this.VehicleType.GetHashCode();
-                if (this.BrandModel != null)
-                    hashCode = hashCode * 59 + this.BrandModel.GetHashCode();
-                if (this.ManufacturingLocation != null)
-                    hashCode = hashCode * 59 + this.ManufacturingLocation.GetHashCode();
-                if (this.QualityCertificate != null)
-                    hashCode = hashCode * 59 + this.QualityCertificate.GetHashCode();
-                if (this.ImportCertificate != null)
-                    hashCode = hashCode * 59 + this.ImportCertificate.GetHashCode();
-                if (this.InspectionNumber != null)
-                    hashCode = hashCode * 59 + this.InspectionNumber.GetHashCode();
-                if (this.EngineNumber != null)
-                    hashCode = hashCode * 59 + this.EngineNumber.GetHashCode();
-                if (this.VehicleIdentificationNumber != null)
-                    hashCode = hashCode * 59 + this.VehicleIdentificationNumber.GetHashCode();
-                if (this.Tonnage != null)
-                    hashCode = hashCode * 59 + this.Tonnage.GetHashCode();
-                if (this.SeatingCapacity != null)
-                    hashCode = hashCode * 59 + this.SeatingCapacity.GetHashCode();
-                if (this.TaxAuthority != null)
-                    hashCode = hashCode * 59 + this.TaxAuthority.GetHashCode();
-                if (this.TaxAuthorityCode != null)
-                    hashCode = hashCode * 59 + this.TaxAuthorityCode.GetHashCode();
-                if (this.TaxPaymentReceipt != null)
-                    hashCode = hashCode * 59 + this.TaxPaymentReceipt.GetHashCode();
-                if (this.TaxRate != null)
-                    hashCode = hashCode * 59 + this.TaxRate.GetHashCode();
-                if (this.Tax != null)
-                    hashCode = hashCode * 59 + this.Tax.GetHashCode();
-                if (this.TaxExclusivePrice != null)
-                    hashCode = hashCode * 59 + this.TaxExclusivePrice.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.TotalChinese != null)
-                    hashCode = hashCode * 59 + this.TotalChinese.GetHashCode();
-                if (this.FiscalCode != null)
-                    hashCode = hashCode * 59 + this.FiscalCode.GetHashCode();
-                if (this.AuctionOrgName != null)
-                    hashCode = hashCode * 59 + this.AuctionOrgName.GetHashCode();
-                if (this.AuctionOrgAddress != null)
-                    hashCode = hashCode * 59 + this.AuctionOrgAddress.GetHashCode();
-                if (this.AuctionOrgId != null)
-                    hashCode = hashCode * 59 + this.AuctionOrgId.GetHashCode();
-                if (this.AuctionOrgBankAccount != null)
-                    hashCode = hashCode * 59 + this.AuctionOrgBankAccount.GetHashCode();
-                if (this.AuctionOrgPhone != null)
-                    hashCode = hashCode * 59 + this.AuctionOrgPhone.GetHashCode();
-                if (this.UsedVehicleMarketName != null)
-                    hashCode = hashCode * 59 + this.UsedVehicleMarketName.GetHashCode();
-                if (this.UsedVehicleMarketId != null)
-                    hashCode = hashCode * 59 + this.UsedVehicleMarketId.GetHashCode();
-                if (this.UsedVehicleMarketAddress != null)
-                    hashCode = hashCode * 59 + this.UsedVehicleMarketAddress.GetHashCode();
-                if (this.UsedVehicleMarketBankAccount != null)
-                    hashCode = hashCode * 59 + this.UsedVehicleMarketBankAccount.GetHashCode();
-                if (this.UsedVehicleMarketPhone != null)
-                    hashCode = hashCode * 59 + this.UsedVehicleMarketPhone.GetHashCode();
-                if (this.ReverseIssue != null)
-                    hashCode = hashCode * 59 + this.ReverseIssue.GetHashCode();
-                if (this.Remark != null)
-                    hashCode = hashCode * 59 + this.Remark.GetHashCode();
-                if (this.DrawerName != null)
-                    hashCode = hashCode * 59 + this.DrawerName.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.TextLocation != null)
-                    hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                var hashCode = 41;
+                if (this.Code != null) hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Number != null) hashCode = hashCode * 59 + this.Number.GetHashCode();
+                if (this.MachinePrintedCode != null) hashCode = hashCode * 59 + this.MachinePrintedCode.GetHashCode();
+                if (this.MachinePrintedNumber != null) hashCode = hashCode * 59 + this.MachinePrintedNumber.GetHashCode();
+                if (this.IssueDate != null) hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
+                if (this.MachineNumber != null) hashCode = hashCode * 59 + this.MachineNumber.GetHashCode();
+                if (this.BuyerName != null) hashCode = hashCode * 59 + this.BuyerName.GetHashCode();
+                if (this.BuyerOrganizationNumber != null) hashCode = hashCode * 59 + this.BuyerOrganizationNumber.GetHashCode();
+                if (this.BuyerId != null) hashCode = hashCode * 59 + this.BuyerId.GetHashCode();
+                if (this.BuyerAddress != null) hashCode = hashCode * 59 + this.BuyerAddress.GetHashCode();
+                if (this.BuyerPhone != null) hashCode = hashCode * 59 + this.BuyerPhone.GetHashCode();
+                if (this.SellerName != null) hashCode = hashCode * 59 + this.SellerName.GetHashCode();
+                if (this.SellerPhone != null) hashCode = hashCode * 59 + this.SellerPhone.GetHashCode();
+                if (this.SellerId != null) hashCode = hashCode * 59 + this.SellerId.GetHashCode();
+                if (this.SellerAccount != null) hashCode = hashCode * 59 + this.SellerAccount.GetHashCode();
+                if (this.SellerAddress != null) hashCode = hashCode * 59 + this.SellerAddress.GetHashCode();
+                if (this.LicencePlateNumber != null) hashCode = hashCode * 59 + this.LicencePlateNumber.GetHashCode();
+                if (this.RegistrationNumber != null) hashCode = hashCode * 59 + this.RegistrationNumber.GetHashCode();
+                if (this.DeptMotorVehicles != null) hashCode = hashCode * 59 + this.DeptMotorVehicles.GetHashCode();
+                if (this.SellerBank != null) hashCode = hashCode * 59 + this.SellerBank.GetHashCode();
+                if (this.VehicleType != null) hashCode = hashCode * 59 + this.VehicleType.GetHashCode();
+                if (this.BrandModel != null) hashCode = hashCode * 59 + this.BrandModel.GetHashCode();
+                if (this.ManufacturingLocation != null) hashCode = hashCode * 59 + this.ManufacturingLocation.GetHashCode();
+                if (this.QualityCertificate != null) hashCode = hashCode * 59 + this.QualityCertificate.GetHashCode();
+                if (this.ImportCertificate != null) hashCode = hashCode * 59 + this.ImportCertificate.GetHashCode();
+                if (this.InspectionNumber != null) hashCode = hashCode * 59 + this.InspectionNumber.GetHashCode();
+                if (this.EngineNumber != null) hashCode = hashCode * 59 + this.EngineNumber.GetHashCode();
+                if (this.VehicleIdentificationNumber != null) hashCode = hashCode * 59 + this.VehicleIdentificationNumber.GetHashCode();
+                if (this.Tonnage != null) hashCode = hashCode * 59 + this.Tonnage.GetHashCode();
+                if (this.SeatingCapacity != null) hashCode = hashCode * 59 + this.SeatingCapacity.GetHashCode();
+                if (this.TaxAuthority != null) hashCode = hashCode * 59 + this.TaxAuthority.GetHashCode();
+                if (this.TaxAuthorityCode != null) hashCode = hashCode * 59 + this.TaxAuthorityCode.GetHashCode();
+                if (this.TaxPaymentReceipt != null) hashCode = hashCode * 59 + this.TaxPaymentReceipt.GetHashCode();
+                if (this.TaxRate != null) hashCode = hashCode * 59 + this.TaxRate.GetHashCode();
+                if (this.Tax != null) hashCode = hashCode * 59 + this.Tax.GetHashCode();
+                if (this.TaxExclusivePrice != null) hashCode = hashCode * 59 + this.TaxExclusivePrice.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.TotalChinese != null) hashCode = hashCode * 59 + this.TotalChinese.GetHashCode();
+                if (this.FiscalCode != null) hashCode = hashCode * 59 + this.FiscalCode.GetHashCode();
+                if (this.AuctionOrgName != null) hashCode = hashCode * 59 + this.AuctionOrgName.GetHashCode();
+                if (this.AuctionOrgAddress != null) hashCode = hashCode * 59 + this.AuctionOrgAddress.GetHashCode();
+                if (this.AuctionOrgId != null) hashCode = hashCode * 59 + this.AuctionOrgId.GetHashCode();
+                if (this.AuctionOrgBankAccount != null) hashCode = hashCode * 59 + this.AuctionOrgBankAccount.GetHashCode();
+                if (this.AuctionOrgPhone != null) hashCode = hashCode * 59 + this.AuctionOrgPhone.GetHashCode();
+                if (this.UsedVehicleMarketName != null) hashCode = hashCode * 59 + this.UsedVehicleMarketName.GetHashCode();
+                if (this.UsedVehicleMarketId != null) hashCode = hashCode * 59 + this.UsedVehicleMarketId.GetHashCode();
+                if (this.UsedVehicleMarketAddress != null) hashCode = hashCode * 59 + this.UsedVehicleMarketAddress.GetHashCode();
+                if (this.UsedVehicleMarketBankAccount != null) hashCode = hashCode * 59 + this.UsedVehicleMarketBankAccount.GetHashCode();
+                if (this.UsedVehicleMarketPhone != null) hashCode = hashCode * 59 + this.UsedVehicleMarketPhone.GetHashCode();
+                if (this.ReverseIssue != null) hashCode = hashCode * 59 + this.ReverseIssue.GetHashCode();
+                if (this.Remark != null) hashCode = hashCode * 59 + this.Remark.GetHashCode();
+                if (this.DrawerName != null) hashCode = hashCode * 59 + this.DrawerName.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.TextLocation != null) hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
                 return hashCode;
             }
         }

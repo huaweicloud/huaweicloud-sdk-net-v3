@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         /// </summary>
         public bool Equals(ResourceShareInvitation input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ReceiverAccountId != input.ReceiverAccountId || (this.ReceiverAccountId != null && !this.ReceiverAccountId.Equals(input.ReceiverAccountId))) return false;
+            if (this.ResourceShareId != input.ResourceShareId || (this.ResourceShareId != null && !this.ResourceShareId.Equals(input.ResourceShareId))) return false;
+            if (this.ResourceShareName != input.ResourceShareName || (this.ResourceShareName != null && !this.ResourceShareName.Equals(input.ResourceShareName))) return false;
+            if (this.ResourceShareInvitationId != input.ResourceShareInvitationId || (this.ResourceShareInvitationId != null && !this.ResourceShareInvitationId.Equals(input.ResourceShareInvitationId))) return false;
+            if (this.SenderAccountId != input.SenderAccountId || (this.SenderAccountId != null && !this.SenderAccountId.Equals(input.SenderAccountId))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
 
-            return 
-                (
-                    this.ReceiverAccountId == input.ReceiverAccountId ||
-                    (this.ReceiverAccountId != null &&
-                    this.ReceiverAccountId.Equals(input.ReceiverAccountId))
-                ) && 
-                (
-                    this.ResourceShareId == input.ResourceShareId ||
-                    (this.ResourceShareId != null &&
-                    this.ResourceShareId.Equals(input.ResourceShareId))
-                ) && 
-                (
-                    this.ResourceShareName == input.ResourceShareName ||
-                    (this.ResourceShareName != null &&
-                    this.ResourceShareName.Equals(input.ResourceShareName))
-                ) && 
-                (
-                    this.ResourceShareInvitationId == input.ResourceShareInvitationId ||
-                    (this.ResourceShareInvitationId != null &&
-                    this.ResourceShareInvitationId.Equals(input.ResourceShareInvitationId))
-                ) && 
-                (
-                    this.SenderAccountId == input.SenderAccountId ||
-                    (this.SenderAccountId != null &&
-                    this.SenderAccountId.Equals(input.SenderAccountId))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.Ram.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ReceiverAccountId != null)
-                    hashCode = hashCode * 59 + this.ReceiverAccountId.GetHashCode();
-                if (this.ResourceShareId != null)
-                    hashCode = hashCode * 59 + this.ResourceShareId.GetHashCode();
-                if (this.ResourceShareName != null)
-                    hashCode = hashCode * 59 + this.ResourceShareName.GetHashCode();
-                if (this.ResourceShareInvitationId != null)
-                    hashCode = hashCode * 59 + this.ResourceShareInvitationId.GetHashCode();
-                if (this.SenderAccountId != null)
-                    hashCode = hashCode * 59 + this.SenderAccountId.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                var hashCode = 41;
+                if (this.ReceiverAccountId != null) hashCode = hashCode * 59 + this.ReceiverAccountId.GetHashCode();
+                if (this.ResourceShareId != null) hashCode = hashCode * 59 + this.ResourceShareId.GetHashCode();
+                if (this.ResourceShareName != null) hashCode = hashCode * 59 + this.ResourceShareName.GetHashCode();
+                if (this.ResourceShareInvitationId != null) hashCode = hashCode * 59 + this.ResourceShareInvitationId.GetHashCode();
+                if (this.SenderAccountId != null) hashCode = hashCode * 59 + this.SenderAccountId.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
                 return hashCode;
             }
         }

@@ -330,40 +330,15 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(FrequencyRespBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Type != input.Type) return false;
+            if (this.CronExpr != input.CronExpr || (this.CronExpr != null && !this.CronExpr.Equals(input.CronExpr))) return false;
+            if (this.HourOfDay != input.HourOfDay || (this.HourOfDay != null && !this.HourOfDay.Equals(input.HourOfDay))) return false;
+            if (this.DayOfWeek != input.DayOfWeek || (this.DayOfWeek != null && !this.DayOfWeek.Equals(input.DayOfWeek))) return false;
+            if (this.FixedRate != input.FixedRate || (this.FixedRate != null && !this.FixedRate.Equals(input.FixedRate))) return false;
+            if (this.FixedRateUnit != input.FixedRateUnit) return false;
 
-            return 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.CronExpr == input.CronExpr ||
-                    (this.CronExpr != null &&
-                    this.CronExpr.Equals(input.CronExpr))
-                ) && 
-                (
-                    this.HourOfDay == input.HourOfDay ||
-                    (this.HourOfDay != null &&
-                    this.HourOfDay.Equals(input.HourOfDay))
-                ) && 
-                (
-                    this.DayOfWeek == input.DayOfWeek ||
-                    (this.DayOfWeek != null &&
-                    this.DayOfWeek.Equals(input.DayOfWeek))
-                ) && 
-                (
-                    this.FixedRate == input.FixedRate ||
-                    (this.FixedRate != null &&
-                    this.FixedRate.Equals(input.FixedRate))
-                ) && 
-                (
-                    this.FixedRateUnit == input.FixedRateUnit ||
-                    (this.FixedRateUnit != null &&
-                    this.FixedRateUnit.Equals(input.FixedRateUnit))
-                );
+            return true;
         }
 
         /// <summary>
@@ -373,19 +348,13 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.CronExpr != null)
-                    hashCode = hashCode * 59 + this.CronExpr.GetHashCode();
-                if (this.HourOfDay != null)
-                    hashCode = hashCode * 59 + this.HourOfDay.GetHashCode();
-                if (this.DayOfWeek != null)
-                    hashCode = hashCode * 59 + this.DayOfWeek.GetHashCode();
-                if (this.FixedRate != null)
-                    hashCode = hashCode * 59 + this.FixedRate.GetHashCode();
-                if (this.FixedRateUnit != null)
-                    hashCode = hashCode * 59 + this.FixedRateUnit.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.CronExpr != null) hashCode = hashCode * 59 + this.CronExpr.GetHashCode();
+                if (this.HourOfDay != null) hashCode = hashCode * 59 + this.HourOfDay.GetHashCode();
+                if (this.DayOfWeek != null) hashCode = hashCode * 59 + this.DayOfWeek.GetHashCode();
+                if (this.FixedRate != null) hashCode = hashCode * 59 + this.FixedRate.GetHashCode();
+                hashCode = hashCode * 59 + this.FixedRateUnit.GetHashCode();
                 return hashCode;
             }
         }

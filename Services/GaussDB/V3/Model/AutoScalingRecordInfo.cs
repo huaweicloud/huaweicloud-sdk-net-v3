@@ -98,50 +98,17 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(AutoScalingRecordInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.InstanceName != input.InstanceName || (this.InstanceName != null && !this.InstanceName.Equals(input.InstanceName))) return false;
+            if (this.ScalingType != input.ScalingType || (this.ScalingType != null && !this.ScalingType.Equals(input.ScalingType))) return false;
+            if (this.OriginalValue != input.OriginalValue || (this.OriginalValue != null && !this.OriginalValue.Equals(input.OriginalValue))) return false;
+            if (this.TargetValue != input.TargetValue || (this.TargetValue != null && !this.TargetValue.Equals(input.TargetValue))) return false;
+            if (this.Result != input.Result || (this.Result != null && !this.Result.Equals(input.Result))) return false;
+            if (this.CreateAt != input.CreateAt || (this.CreateAt != null && !this.CreateAt.Equals(input.CreateAt))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.InstanceName == input.InstanceName ||
-                    (this.InstanceName != null &&
-                    this.InstanceName.Equals(input.InstanceName))
-                ) && 
-                (
-                    this.ScalingType == input.ScalingType ||
-                    (this.ScalingType != null &&
-                    this.ScalingType.Equals(input.ScalingType))
-                ) && 
-                (
-                    this.OriginalValue == input.OriginalValue ||
-                    (this.OriginalValue != null &&
-                    this.OriginalValue.Equals(input.OriginalValue))
-                ) && 
-                (
-                    this.TargetValue == input.TargetValue ||
-                    (this.TargetValue != null &&
-                    this.TargetValue.Equals(input.TargetValue))
-                ) && 
-                (
-                    this.Result == input.Result ||
-                    (this.Result != null &&
-                    this.Result.Equals(input.Result))
-                ) && 
-                (
-                    this.CreateAt == input.CreateAt ||
-                    (this.CreateAt != null &&
-                    this.CreateAt.Equals(input.CreateAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -151,23 +118,15 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.InstanceName != null)
-                    hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
-                if (this.ScalingType != null)
-                    hashCode = hashCode * 59 + this.ScalingType.GetHashCode();
-                if (this.OriginalValue != null)
-                    hashCode = hashCode * 59 + this.OriginalValue.GetHashCode();
-                if (this.TargetValue != null)
-                    hashCode = hashCode * 59 + this.TargetValue.GetHashCode();
-                if (this.Result != null)
-                    hashCode = hashCode * 59 + this.Result.GetHashCode();
-                if (this.CreateAt != null)
-                    hashCode = hashCode * 59 + this.CreateAt.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.InstanceName != null) hashCode = hashCode * 59 + this.InstanceName.GetHashCode();
+                if (this.ScalingType != null) hashCode = hashCode * 59 + this.ScalingType.GetHashCode();
+                if (this.OriginalValue != null) hashCode = hashCode * 59 + this.OriginalValue.GetHashCode();
+                if (this.TargetValue != null) hashCode = hashCode * 59 + this.TargetValue.GetHashCode();
+                if (this.Result != null) hashCode = hashCode * 59 + this.Result.GetHashCode();
+                if (this.CreateAt != null) hashCode = hashCode * 59 + this.CreateAt.GetHashCode();
                 return hashCode;
             }
         }

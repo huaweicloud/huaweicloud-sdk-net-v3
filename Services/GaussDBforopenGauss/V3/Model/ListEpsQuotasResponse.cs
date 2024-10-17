@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ListEpsQuotasResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EpsQuotas != input.EpsQuotas || (this.EpsQuotas != null && input.EpsQuotas != null && !this.EpsQuotas.SequenceEqual(input.EpsQuotas))) return false;
+            if (this.TotalCount != input.TotalCount || (this.TotalCount != null && !this.TotalCount.Equals(input.TotalCount))) return false;
 
-            return 
-                (
-                    this.EpsQuotas == input.EpsQuotas ||
-                    this.EpsQuotas != null &&
-                    input.EpsQuotas != null &&
-                    this.EpsQuotas.SequenceEqual(input.EpsQuotas)
-                ) && 
-                (
-                    this.TotalCount == input.TotalCount ||
-                    (this.TotalCount != null &&
-                    this.TotalCount.Equals(input.TotalCount))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EpsQuotas != null)
-                    hashCode = hashCode * 59 + this.EpsQuotas.GetHashCode();
-                if (this.TotalCount != null)
-                    hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
+                var hashCode = 41;
+                if (this.EpsQuotas != null) hashCode = hashCode * 59 + this.EpsQuotas.GetHashCode();
+                if (this.TotalCount != null) hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
                 return hashCode;
             }
         }

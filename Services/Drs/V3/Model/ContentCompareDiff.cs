@@ -70,32 +70,13 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(ContentCompareDiff input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TargetSelectSql != input.TargetSelectSql || (this.TargetSelectSql != null && !this.TargetSelectSql.Equals(input.TargetSelectSql))) return false;
+            if (this.SourceSelectSql != input.SourceSelectSql || (this.SourceSelectSql != null && !this.SourceSelectSql.Equals(input.SourceSelectSql))) return false;
+            if (this.SourceKeyValue != input.SourceKeyValue || (this.SourceKeyValue != null && input.SourceKeyValue != null && !this.SourceKeyValue.SequenceEqual(input.SourceKeyValue))) return false;
+            if (this.TargetKeyValue != input.TargetKeyValue || (this.TargetKeyValue != null && input.TargetKeyValue != null && !this.TargetKeyValue.SequenceEqual(input.TargetKeyValue))) return false;
 
-            return 
-                (
-                    this.TargetSelectSql == input.TargetSelectSql ||
-                    (this.TargetSelectSql != null &&
-                    this.TargetSelectSql.Equals(input.TargetSelectSql))
-                ) && 
-                (
-                    this.SourceSelectSql == input.SourceSelectSql ||
-                    (this.SourceSelectSql != null &&
-                    this.SourceSelectSql.Equals(input.SourceSelectSql))
-                ) && 
-                (
-                    this.SourceKeyValue == input.SourceKeyValue ||
-                    this.SourceKeyValue != null &&
-                    input.SourceKeyValue != null &&
-                    this.SourceKeyValue.SequenceEqual(input.SourceKeyValue)
-                ) && 
-                (
-                    this.TargetKeyValue == input.TargetKeyValue ||
-                    this.TargetKeyValue != null &&
-                    input.TargetKeyValue != null &&
-                    this.TargetKeyValue.SequenceEqual(input.TargetKeyValue)
-                );
+            return true;
         }
 
         /// <summary>
@@ -105,15 +86,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TargetSelectSql != null)
-                    hashCode = hashCode * 59 + this.TargetSelectSql.GetHashCode();
-                if (this.SourceSelectSql != null)
-                    hashCode = hashCode * 59 + this.SourceSelectSql.GetHashCode();
-                if (this.SourceKeyValue != null)
-                    hashCode = hashCode * 59 + this.SourceKeyValue.GetHashCode();
-                if (this.TargetKeyValue != null)
-                    hashCode = hashCode * 59 + this.TargetKeyValue.GetHashCode();
+                var hashCode = 41;
+                if (this.TargetSelectSql != null) hashCode = hashCode * 59 + this.TargetSelectSql.GetHashCode();
+                if (this.SourceSelectSql != null) hashCode = hashCode * 59 + this.SourceSelectSql.GetHashCode();
+                if (this.SourceKeyValue != null) hashCode = hashCode * 59 + this.SourceKeyValue.GetHashCode();
+                if (this.TargetKeyValue != null) hashCode = hashCode * 59 + this.TargetKeyValue.GetHashCode();
                 return hashCode;
             }
         }

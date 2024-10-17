@@ -84,40 +84,15 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(ObjectsCompareDetailInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SourceDbName != input.SourceDbName || (this.SourceDbName != null && !this.SourceDbName.Equals(input.SourceDbName))) return false;
+            if (this.TargetDbName != input.TargetDbName || (this.TargetDbName != null && !this.TargetDbName.Equals(input.TargetDbName))) return false;
+            if (this.SourceDbValue != input.SourceDbValue || (this.SourceDbValue != null && !this.SourceDbValue.Equals(input.SourceDbValue))) return false;
+            if (this.TargetDbValue != input.TargetDbValue || (this.TargetDbValue != null && !this.TargetDbValue.Equals(input.TargetDbValue))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.ErrorMessage != input.ErrorMessage || (this.ErrorMessage != null && !this.ErrorMessage.Equals(input.ErrorMessage))) return false;
 
-            return 
-                (
-                    this.SourceDbName == input.SourceDbName ||
-                    (this.SourceDbName != null &&
-                    this.SourceDbName.Equals(input.SourceDbName))
-                ) && 
-                (
-                    this.TargetDbName == input.TargetDbName ||
-                    (this.TargetDbName != null &&
-                    this.TargetDbName.Equals(input.TargetDbName))
-                ) && 
-                (
-                    this.SourceDbValue == input.SourceDbValue ||
-                    (this.SourceDbValue != null &&
-                    this.SourceDbValue.Equals(input.SourceDbValue))
-                ) && 
-                (
-                    this.TargetDbValue == input.TargetDbValue ||
-                    (this.TargetDbValue != null &&
-                    this.TargetDbValue.Equals(input.TargetDbValue))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.ErrorMessage == input.ErrorMessage ||
-                    (this.ErrorMessage != null &&
-                    this.ErrorMessage.Equals(input.ErrorMessage))
-                );
+            return true;
         }
 
         /// <summary>
@@ -127,19 +102,13 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SourceDbName != null)
-                    hashCode = hashCode * 59 + this.SourceDbName.GetHashCode();
-                if (this.TargetDbName != null)
-                    hashCode = hashCode * 59 + this.TargetDbName.GetHashCode();
-                if (this.SourceDbValue != null)
-                    hashCode = hashCode * 59 + this.SourceDbValue.GetHashCode();
-                if (this.TargetDbValue != null)
-                    hashCode = hashCode * 59 + this.TargetDbValue.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.ErrorMessage != null)
-                    hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
+                var hashCode = 41;
+                if (this.SourceDbName != null) hashCode = hashCode * 59 + this.SourceDbName.GetHashCode();
+                if (this.TargetDbName != null) hashCode = hashCode * 59 + this.TargetDbName.GetHashCode();
+                if (this.SourceDbValue != null) hashCode = hashCode * 59 + this.SourceDbValue.GetHashCode();
+                if (this.TargetDbValue != null) hashCode = hashCode * 59 + this.TargetDbValue.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.ErrorMessage != null) hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
                 return hashCode;
             }
         }

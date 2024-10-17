@@ -82,35 +82,14 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         /// </summary>
         public bool Equals(ShowWafQpsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Recent != input.Recent || (this.Recent != null && !this.Recent.Equals(input.Recent))) return false;
+            if (this.Domains != input.Domains || (this.Domains != null && !this.Domains.Equals(input.Domains))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.OverseasType != input.OverseasType || (this.OverseasType != null && !this.OverseasType.Equals(input.OverseasType))) return false;
 
-            return 
-                (
-                    this.Recent == input.Recent ||
-                    (this.Recent != null &&
-                    this.Recent.Equals(input.Recent))
-                ) && 
-                (
-                    this.Domains == input.Domains ||
-                    (this.Domains != null &&
-                    this.Domains.Equals(input.Domains))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.OverseasType == input.OverseasType ||
-                    (this.OverseasType != null &&
-                    this.OverseasType.Equals(input.OverseasType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -120,17 +99,12 @@ namespace HuaweiCloud.SDK.Aad.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Recent != null)
-                    hashCode = hashCode * 59 + this.Recent.GetHashCode();
-                if (this.Domains != null)
-                    hashCode = hashCode * 59 + this.Domains.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.OverseasType != null)
-                    hashCode = hashCode * 59 + this.OverseasType.GetHashCode();
+                var hashCode = 41;
+                if (this.Recent != null) hashCode = hashCode * 59 + this.Recent.GetHashCode();
+                if (this.Domains != null) hashCode = hashCode * 59 + this.Domains.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.OverseasType != null) hashCode = hashCode * 59 + this.OverseasType.GetHashCode();
                 return hashCode;
             }
         }

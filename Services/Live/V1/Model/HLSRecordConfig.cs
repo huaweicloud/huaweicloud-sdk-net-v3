@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(HLSRecordConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RecordCycle != input.RecordCycle || (this.RecordCycle != null && !this.RecordCycle.Equals(input.RecordCycle))) return false;
+            if (this.RecordPrefix != input.RecordPrefix || (this.RecordPrefix != null && !this.RecordPrefix.Equals(input.RecordPrefix))) return false;
+            if (this.RecordTsPrefix != input.RecordTsPrefix || (this.RecordTsPrefix != null && !this.RecordTsPrefix.Equals(input.RecordTsPrefix))) return false;
+            if (this.RecordSliceDuration != input.RecordSliceDuration || (this.RecordSliceDuration != null && !this.RecordSliceDuration.Equals(input.RecordSliceDuration))) return false;
+            if (this.RecordMaxDurationToMergeFile != input.RecordMaxDurationToMergeFile || (this.RecordMaxDurationToMergeFile != null && !this.RecordMaxDurationToMergeFile.Equals(input.RecordMaxDurationToMergeFile))) return false;
 
-            return 
-                (
-                    this.RecordCycle == input.RecordCycle ||
-                    (this.RecordCycle != null &&
-                    this.RecordCycle.Equals(input.RecordCycle))
-                ) && 
-                (
-                    this.RecordPrefix == input.RecordPrefix ||
-                    (this.RecordPrefix != null &&
-                    this.RecordPrefix.Equals(input.RecordPrefix))
-                ) && 
-                (
-                    this.RecordTsPrefix == input.RecordTsPrefix ||
-                    (this.RecordTsPrefix != null &&
-                    this.RecordTsPrefix.Equals(input.RecordTsPrefix))
-                ) && 
-                (
-                    this.RecordSliceDuration == input.RecordSliceDuration ||
-                    (this.RecordSliceDuration != null &&
-                    this.RecordSliceDuration.Equals(input.RecordSliceDuration))
-                ) && 
-                (
-                    this.RecordMaxDurationToMergeFile == input.RecordMaxDurationToMergeFile ||
-                    (this.RecordMaxDurationToMergeFile != null &&
-                    this.RecordMaxDurationToMergeFile.Equals(input.RecordMaxDurationToMergeFile))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RecordCycle != null)
-                    hashCode = hashCode * 59 + this.RecordCycle.GetHashCode();
-                if (this.RecordPrefix != null)
-                    hashCode = hashCode * 59 + this.RecordPrefix.GetHashCode();
-                if (this.RecordTsPrefix != null)
-                    hashCode = hashCode * 59 + this.RecordTsPrefix.GetHashCode();
-                if (this.RecordSliceDuration != null)
-                    hashCode = hashCode * 59 + this.RecordSliceDuration.GetHashCode();
-                if (this.RecordMaxDurationToMergeFile != null)
-                    hashCode = hashCode * 59 + this.RecordMaxDurationToMergeFile.GetHashCode();
+                var hashCode = 41;
+                if (this.RecordCycle != null) hashCode = hashCode * 59 + this.RecordCycle.GetHashCode();
+                if (this.RecordPrefix != null) hashCode = hashCode * 59 + this.RecordPrefix.GetHashCode();
+                if (this.RecordTsPrefix != null) hashCode = hashCode * 59 + this.RecordTsPrefix.GetHashCode();
+                if (this.RecordSliceDuration != null) hashCode = hashCode * 59 + this.RecordSliceDuration.GetHashCode();
+                if (this.RecordMaxDurationToMergeFile != null) hashCode = hashCode * 59 + this.RecordMaxDurationToMergeFile.GetHashCode();
                 return hashCode;
             }
         }

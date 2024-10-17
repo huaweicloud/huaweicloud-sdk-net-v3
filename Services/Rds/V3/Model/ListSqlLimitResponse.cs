@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ListSqlLimitResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.SqlLimitObjects != input.SqlLimitObjects || (this.SqlLimitObjects != null && input.SqlLimitObjects != null && !this.SqlLimitObjects.SequenceEqual(input.SqlLimitObjects))) return false;
 
-            return 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.SqlLimitObjects == input.SqlLimitObjects ||
-                    this.SqlLimitObjects != null &&
-                    input.SqlLimitObjects != null &&
-                    this.SqlLimitObjects.SequenceEqual(input.SqlLimitObjects)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.SqlLimitObjects != null)
-                    hashCode = hashCode * 59 + this.SqlLimitObjects.GetHashCode();
+                var hashCode = 41;
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.SqlLimitObjects != null) hashCode = hashCode * 59 + this.SqlLimitObjects.GetHashCode();
                 return hashCode;
             }
         }

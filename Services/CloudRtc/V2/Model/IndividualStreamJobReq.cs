@@ -331,45 +331,16 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         /// </summary>
         public bool Equals(IndividualStreamJobReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RoomId != input.RoomId || (this.RoomId != null && !this.RoomId.Equals(input.RoomId))) return false;
+            if (this.UserId != input.UserId || (this.UserId != null && !this.UserId.Equals(input.UserId))) return false;
+            if (this.IsRecordAudio != input.IsRecordAudio || (this.IsRecordAudio != null && !this.IsRecordAudio.Equals(input.IsRecordAudio))) return false;
+            if (this.VideoType != input.VideoType) return false;
+            if (this.SelectStreamType != input.SelectStreamType) return false;
+            if (this.MaxIdleTime != input.MaxIdleTime || (this.MaxIdleTime != null && !this.MaxIdleTime.Equals(input.MaxIdleTime))) return false;
+            if (this.RecordParam != input.RecordParam || (this.RecordParam != null && !this.RecordParam.Equals(input.RecordParam))) return false;
 
-            return 
-                (
-                    this.RoomId == input.RoomId ||
-                    (this.RoomId != null &&
-                    this.RoomId.Equals(input.RoomId))
-                ) && 
-                (
-                    this.UserId == input.UserId ||
-                    (this.UserId != null &&
-                    this.UserId.Equals(input.UserId))
-                ) && 
-                (
-                    this.IsRecordAudio == input.IsRecordAudio ||
-                    (this.IsRecordAudio != null &&
-                    this.IsRecordAudio.Equals(input.IsRecordAudio))
-                ) && 
-                (
-                    this.VideoType == input.VideoType ||
-                    (this.VideoType != null &&
-                    this.VideoType.Equals(input.VideoType))
-                ) && 
-                (
-                    this.SelectStreamType == input.SelectStreamType ||
-                    (this.SelectStreamType != null &&
-                    this.SelectStreamType.Equals(input.SelectStreamType))
-                ) && 
-                (
-                    this.MaxIdleTime == input.MaxIdleTime ||
-                    (this.MaxIdleTime != null &&
-                    this.MaxIdleTime.Equals(input.MaxIdleTime))
-                ) && 
-                (
-                    this.RecordParam == input.RecordParam ||
-                    (this.RecordParam != null &&
-                    this.RecordParam.Equals(input.RecordParam))
-                );
+            return true;
         }
 
         /// <summary>
@@ -379,21 +350,14 @@ namespace HuaweiCloud.SDK.CloudRtc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RoomId != null)
-                    hashCode = hashCode * 59 + this.RoomId.GetHashCode();
-                if (this.UserId != null)
-                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
-                if (this.IsRecordAudio != null)
-                    hashCode = hashCode * 59 + this.IsRecordAudio.GetHashCode();
-                if (this.VideoType != null)
-                    hashCode = hashCode * 59 + this.VideoType.GetHashCode();
-                if (this.SelectStreamType != null)
-                    hashCode = hashCode * 59 + this.SelectStreamType.GetHashCode();
-                if (this.MaxIdleTime != null)
-                    hashCode = hashCode * 59 + this.MaxIdleTime.GetHashCode();
-                if (this.RecordParam != null)
-                    hashCode = hashCode * 59 + this.RecordParam.GetHashCode();
+                var hashCode = 41;
+                if (this.RoomId != null) hashCode = hashCode * 59 + this.RoomId.GetHashCode();
+                if (this.UserId != null) hashCode = hashCode * 59 + this.UserId.GetHashCode();
+                if (this.IsRecordAudio != null) hashCode = hashCode * 59 + this.IsRecordAudio.GetHashCode();
+                hashCode = hashCode * 59 + this.VideoType.GetHashCode();
+                hashCode = hashCode * 59 + this.SelectStreamType.GetHashCode();
+                if (this.MaxIdleTime != null) hashCode = hashCode * 59 + this.MaxIdleTime.GetHashCode();
+                if (this.RecordParam != null) hashCode = hashCode * 59 + this.RecordParam.GetHashCode();
                 return hashCode;
             }
         }

@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(DeletefavoriteRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FavResId != input.FavResId || (this.FavResId != null && !this.FavResId.Equals(input.FavResId))) return false;
 
-            return 
-                (
-                    this.FavResId == input.FavResId ||
-                    (this.FavResId != null &&
-                    this.FavResId.Equals(input.FavResId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FavResId != null)
-                    hashCode = hashCode * 59 + this.FavResId.GetHashCode();
+                var hashCode = 41;
+                if (this.FavResId != null) hashCode = hashCode * 59 + this.FavResId.GetHashCode();
                 return hashCode;
             }
         }

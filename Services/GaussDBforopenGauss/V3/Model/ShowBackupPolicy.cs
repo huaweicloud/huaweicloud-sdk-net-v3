@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(ShowBackupPolicy input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KeepDays != input.KeepDays || (this.KeepDays != null && !this.KeepDays.Equals(input.KeepDays))) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.Period != input.Period || (this.Period != null && !this.Period.Equals(input.Period))) return false;
+            if (this.DifferentialPriod != input.DifferentialPriod || (this.DifferentialPriod != null && !this.DifferentialPriod.Equals(input.DifferentialPriod))) return false;
+            if (this.DifferentialPeriod != input.DifferentialPeriod || (this.DifferentialPeriod != null && !this.DifferentialPeriod.Equals(input.DifferentialPeriod))) return false;
+            if (this.RateLimit != input.RateLimit || (this.RateLimit != null && !this.RateLimit.Equals(input.RateLimit))) return false;
+            if (this.PrefetchBlock != input.PrefetchBlock || (this.PrefetchBlock != null && !this.PrefetchBlock.Equals(input.PrefetchBlock))) return false;
+            if (this.FilesplitSize != input.FilesplitSize || (this.FilesplitSize != null && !this.FilesplitSize.Equals(input.FilesplitSize))) return false;
+            if (this.FileSplitSize != input.FileSplitSize || (this.FileSplitSize != null && !this.FileSplitSize.Equals(input.FileSplitSize))) return false;
+            if (this.EnableStandbyBackup != input.EnableStandbyBackup || (this.EnableStandbyBackup != null && !this.EnableStandbyBackup.Equals(input.EnableStandbyBackup))) return false;
 
-            return 
-                (
-                    this.KeepDays == input.KeepDays ||
-                    (this.KeepDays != null &&
-                    this.KeepDays.Equals(input.KeepDays))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.Period == input.Period ||
-                    (this.Period != null &&
-                    this.Period.Equals(input.Period))
-                ) && 
-                (
-                    this.DifferentialPriod == input.DifferentialPriod ||
-                    (this.DifferentialPriod != null &&
-                    this.DifferentialPriod.Equals(input.DifferentialPriod))
-                ) && 
-                (
-                    this.DifferentialPeriod == input.DifferentialPeriod ||
-                    (this.DifferentialPeriod != null &&
-                    this.DifferentialPeriod.Equals(input.DifferentialPeriod))
-                ) && 
-                (
-                    this.RateLimit == input.RateLimit ||
-                    (this.RateLimit != null &&
-                    this.RateLimit.Equals(input.RateLimit))
-                ) && 
-                (
-                    this.PrefetchBlock == input.PrefetchBlock ||
-                    (this.PrefetchBlock != null &&
-                    this.PrefetchBlock.Equals(input.PrefetchBlock))
-                ) && 
-                (
-                    this.FilesplitSize == input.FilesplitSize ||
-                    (this.FilesplitSize != null &&
-                    this.FilesplitSize.Equals(input.FilesplitSize))
-                ) && 
-                (
-                    this.FileSplitSize == input.FileSplitSize ||
-                    (this.FileSplitSize != null &&
-                    this.FileSplitSize.Equals(input.FileSplitSize))
-                ) && 
-                (
-                    this.EnableStandbyBackup == input.EnableStandbyBackup ||
-                    (this.EnableStandbyBackup != null &&
-                    this.EnableStandbyBackup.Equals(input.EnableStandbyBackup))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KeepDays != null)
-                    hashCode = hashCode * 59 + this.KeepDays.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.Period != null)
-                    hashCode = hashCode * 59 + this.Period.GetHashCode();
-                if (this.DifferentialPriod != null)
-                    hashCode = hashCode * 59 + this.DifferentialPriod.GetHashCode();
-                if (this.DifferentialPeriod != null)
-                    hashCode = hashCode * 59 + this.DifferentialPeriod.GetHashCode();
-                if (this.RateLimit != null)
-                    hashCode = hashCode * 59 + this.RateLimit.GetHashCode();
-                if (this.PrefetchBlock != null)
-                    hashCode = hashCode * 59 + this.PrefetchBlock.GetHashCode();
-                if (this.FilesplitSize != null)
-                    hashCode = hashCode * 59 + this.FilesplitSize.GetHashCode();
-                if (this.FileSplitSize != null)
-                    hashCode = hashCode * 59 + this.FileSplitSize.GetHashCode();
-                if (this.EnableStandbyBackup != null)
-                    hashCode = hashCode * 59 + this.EnableStandbyBackup.GetHashCode();
+                var hashCode = 41;
+                if (this.KeepDays != null) hashCode = hashCode * 59 + this.KeepDays.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.Period != null) hashCode = hashCode * 59 + this.Period.GetHashCode();
+                if (this.DifferentialPriod != null) hashCode = hashCode * 59 + this.DifferentialPriod.GetHashCode();
+                if (this.DifferentialPeriod != null) hashCode = hashCode * 59 + this.DifferentialPeriod.GetHashCode();
+                if (this.RateLimit != null) hashCode = hashCode * 59 + this.RateLimit.GetHashCode();
+                if (this.PrefetchBlock != null) hashCode = hashCode * 59 + this.PrefetchBlock.GetHashCode();
+                if (this.FilesplitSize != null) hashCode = hashCode * 59 + this.FilesplitSize.GetHashCode();
+                if (this.FileSplitSize != null) hashCode = hashCode * 59 + this.FileSplitSize.GetHashCode();
+                if (this.EnableStandbyBackup != null) hashCode = hashCode * 59 + this.EnableStandbyBackup.GetHashCode();
                 return hashCode;
             }
         }

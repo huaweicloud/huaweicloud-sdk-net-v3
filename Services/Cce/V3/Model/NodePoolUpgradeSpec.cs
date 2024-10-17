@@ -91,47 +91,16 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(NodePoolUpgradeSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NodePoolID != input.NodePoolID || (this.NodePoolID != null && !this.NodePoolID.Equals(input.NodePoolID))) return false;
+            if (this.NodeIDs != input.NodeIDs || (this.NodeIDs != null && input.NodeIDs != null && !this.NodeIDs.SequenceEqual(input.NodeIDs))) return false;
+            if (this.Force != input.Force || (this.Force != null && !this.Force.Equals(input.Force))) return false;
+            if (this.NodeTemplate != input.NodeTemplate || (this.NodeTemplate != null && !this.NodeTemplate.Equals(input.NodeTemplate))) return false;
+            if (this.MaxUnavailable != input.MaxUnavailable || (this.MaxUnavailable != null && !this.MaxUnavailable.Equals(input.MaxUnavailable))) return false;
+            if (this.RetryTimes != input.RetryTimes || (this.RetryTimes != null && !this.RetryTimes.Equals(input.RetryTimes))) return false;
+            if (this.SkippedNodes != input.SkippedNodes || (this.SkippedNodes != null && input.SkippedNodes != null && !this.SkippedNodes.SequenceEqual(input.SkippedNodes))) return false;
 
-            return 
-                (
-                    this.NodePoolID == input.NodePoolID ||
-                    (this.NodePoolID != null &&
-                    this.NodePoolID.Equals(input.NodePoolID))
-                ) && 
-                (
-                    this.NodeIDs == input.NodeIDs ||
-                    this.NodeIDs != null &&
-                    input.NodeIDs != null &&
-                    this.NodeIDs.SequenceEqual(input.NodeIDs)
-                ) && 
-                (
-                    this.Force == input.Force ||
-                    (this.Force != null &&
-                    this.Force.Equals(input.Force))
-                ) && 
-                (
-                    this.NodeTemplate == input.NodeTemplate ||
-                    (this.NodeTemplate != null &&
-                    this.NodeTemplate.Equals(input.NodeTemplate))
-                ) && 
-                (
-                    this.MaxUnavailable == input.MaxUnavailable ||
-                    (this.MaxUnavailable != null &&
-                    this.MaxUnavailable.Equals(input.MaxUnavailable))
-                ) && 
-                (
-                    this.RetryTimes == input.RetryTimes ||
-                    (this.RetryTimes != null &&
-                    this.RetryTimes.Equals(input.RetryTimes))
-                ) && 
-                (
-                    this.SkippedNodes == input.SkippedNodes ||
-                    this.SkippedNodes != null &&
-                    input.SkippedNodes != null &&
-                    this.SkippedNodes.SequenceEqual(input.SkippedNodes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -141,21 +110,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NodePoolID != null)
-                    hashCode = hashCode * 59 + this.NodePoolID.GetHashCode();
-                if (this.NodeIDs != null)
-                    hashCode = hashCode * 59 + this.NodeIDs.GetHashCode();
-                if (this.Force != null)
-                    hashCode = hashCode * 59 + this.Force.GetHashCode();
-                if (this.NodeTemplate != null)
-                    hashCode = hashCode * 59 + this.NodeTemplate.GetHashCode();
-                if (this.MaxUnavailable != null)
-                    hashCode = hashCode * 59 + this.MaxUnavailable.GetHashCode();
-                if (this.RetryTimes != null)
-                    hashCode = hashCode * 59 + this.RetryTimes.GetHashCode();
-                if (this.SkippedNodes != null)
-                    hashCode = hashCode * 59 + this.SkippedNodes.GetHashCode();
+                var hashCode = 41;
+                if (this.NodePoolID != null) hashCode = hashCode * 59 + this.NodePoolID.GetHashCode();
+                if (this.NodeIDs != null) hashCode = hashCode * 59 + this.NodeIDs.GetHashCode();
+                if (this.Force != null) hashCode = hashCode * 59 + this.Force.GetHashCode();
+                if (this.NodeTemplate != null) hashCode = hashCode * 59 + this.NodeTemplate.GetHashCode();
+                if (this.MaxUnavailable != null) hashCode = hashCode * 59 + this.MaxUnavailable.GetHashCode();
+                if (this.RetryTimes != null) hashCode = hashCode * 59 + this.RetryTimes.GetHashCode();
+                if (this.SkippedNodes != null) hashCode = hashCode * 59 + this.SkippedNodes.GetHashCode();
                 return hashCode;
             }
         }

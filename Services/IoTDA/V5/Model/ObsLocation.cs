@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ObsLocation input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RegionName != input.RegionName || (this.RegionName != null && !this.RegionName.Equals(input.RegionName))) return false;
+            if (this.BucketName != input.BucketName || (this.BucketName != null && !this.BucketName.Equals(input.BucketName))) return false;
+            if (this.ObjectKey != input.ObjectKey || (this.ObjectKey != null && !this.ObjectKey.Equals(input.ObjectKey))) return false;
+            if (this.Sign != input.Sign || (this.Sign != null && !this.Sign.Equals(input.Sign))) return false;
 
-            return 
-                (
-                    this.RegionName == input.RegionName ||
-                    (this.RegionName != null &&
-                    this.RegionName.Equals(input.RegionName))
-                ) && 
-                (
-                    this.BucketName == input.BucketName ||
-                    (this.BucketName != null &&
-                    this.BucketName.Equals(input.BucketName))
-                ) && 
-                (
-                    this.ObjectKey == input.ObjectKey ||
-                    (this.ObjectKey != null &&
-                    this.ObjectKey.Equals(input.ObjectKey))
-                ) && 
-                (
-                    this.Sign == input.Sign ||
-                    (this.Sign != null &&
-                    this.Sign.Equals(input.Sign))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RegionName != null)
-                    hashCode = hashCode * 59 + this.RegionName.GetHashCode();
-                if (this.BucketName != null)
-                    hashCode = hashCode * 59 + this.BucketName.GetHashCode();
-                if (this.ObjectKey != null)
-                    hashCode = hashCode * 59 + this.ObjectKey.GetHashCode();
-                if (this.Sign != null)
-                    hashCode = hashCode * 59 + this.Sign.GetHashCode();
+                var hashCode = 41;
+                if (this.RegionName != null) hashCode = hashCode * 59 + this.RegionName.GetHashCode();
+                if (this.BucketName != null) hashCode = hashCode * 59 + this.BucketName.GetHashCode();
+                if (this.ObjectKey != null) hashCode = hashCode * 59 + this.ObjectKey.GetHashCode();
+                if (this.Sign != null) hashCode = hashCode * 59 + this.Sign.GetHashCode();
                 return hashCode;
             }
         }

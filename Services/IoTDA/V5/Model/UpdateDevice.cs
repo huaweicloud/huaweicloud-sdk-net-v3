@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(UpdateDevice input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DeviceName != input.DeviceName || (this.DeviceName != null && !this.DeviceName.Equals(input.DeviceName))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.ExtensionInfo != input.ExtensionInfo || (this.ExtensionInfo != null && !this.ExtensionInfo.Equals(input.ExtensionInfo))) return false;
+            if (this.AuthInfo != input.AuthInfo || (this.AuthInfo != null && !this.AuthInfo.Equals(input.AuthInfo))) return false;
 
-            return 
-                (
-                    this.DeviceName == input.DeviceName ||
-                    (this.DeviceName != null &&
-                    this.DeviceName.Equals(input.DeviceName))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.ExtensionInfo == input.ExtensionInfo ||
-                    (this.ExtensionInfo != null &&
-                    this.ExtensionInfo.Equals(input.ExtensionInfo))
-                ) && 
-                (
-                    this.AuthInfo == input.AuthInfo ||
-                    (this.AuthInfo != null &&
-                    this.AuthInfo.Equals(input.AuthInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DeviceName != null)
-                    hashCode = hashCode * 59 + this.DeviceName.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.ExtensionInfo != null)
-                    hashCode = hashCode * 59 + this.ExtensionInfo.GetHashCode();
-                if (this.AuthInfo != null)
-                    hashCode = hashCode * 59 + this.AuthInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.DeviceName != null) hashCode = hashCode * 59 + this.DeviceName.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.ExtensionInfo != null) hashCode = hashCode * 59 + this.ExtensionInfo.GetHashCode();
+                if (this.AuthInfo != null) hashCode = hashCode * 59 + this.AuthInfo.GetHashCode();
                 return hashCode;
             }
         }

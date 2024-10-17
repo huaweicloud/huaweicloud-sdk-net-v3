@@ -63,27 +63,12 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(ListVolumesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Count != input.Count || (this.Count != null && !this.Count.Equals(input.Count))) return false;
+            if (this.VolumesLinks != input.VolumesLinks || (this.VolumesLinks != null && input.VolumesLinks != null && !this.VolumesLinks.SequenceEqual(input.VolumesLinks))) return false;
+            if (this.Volumes != input.Volumes || (this.Volumes != null && input.Volumes != null && !this.Volumes.SequenceEqual(input.Volumes))) return false;
 
-            return 
-                (
-                    this.Count == input.Count ||
-                    (this.Count != null &&
-                    this.Count.Equals(input.Count))
-                ) && 
-                (
-                    this.VolumesLinks == input.VolumesLinks ||
-                    this.VolumesLinks != null &&
-                    input.VolumesLinks != null &&
-                    this.VolumesLinks.SequenceEqual(input.VolumesLinks)
-                ) && 
-                (
-                    this.Volumes == input.Volumes ||
-                    this.Volumes != null &&
-                    input.Volumes != null &&
-                    this.Volumes.SequenceEqual(input.Volumes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +78,10 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Count != null)
-                    hashCode = hashCode * 59 + this.Count.GetHashCode();
-                if (this.VolumesLinks != null)
-                    hashCode = hashCode * 59 + this.VolumesLinks.GetHashCode();
-                if (this.Volumes != null)
-                    hashCode = hashCode * 59 + this.Volumes.GetHashCode();
+                var hashCode = 41;
+                if (this.Count != null) hashCode = hashCode * 59 + this.Count.GetHashCode();
+                if (this.VolumesLinks != null) hashCode = hashCode * 59 + this.VolumesLinks.GetHashCode();
+                if (this.Volumes != null) hashCode = hashCode * 59 + this.Volumes.GetHashCode();
                 return hashCode;
             }
         }

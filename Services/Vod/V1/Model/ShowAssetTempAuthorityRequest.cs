@@ -106,50 +106,17 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(ShowAssetTempAuthorityRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.XSdkDate != input.XSdkDate || (this.XSdkDate != null && !this.XSdkDate.Equals(input.XSdkDate))) return false;
+            if (this.HttpVerb != input.HttpVerb || (this.HttpVerb != null && !this.HttpVerb.Equals(input.HttpVerb))) return false;
+            if (this.Bucket != input.Bucket || (this.Bucket != null && !this.Bucket.Equals(input.Bucket))) return false;
+            if (this.ObjectKey != input.ObjectKey || (this.ObjectKey != null && !this.ObjectKey.Equals(input.ObjectKey))) return false;
+            if (this.ContentType != input.ContentType || (this.ContentType != null && !this.ContentType.Equals(input.ContentType))) return false;
+            if (this.ContentMd5 != input.ContentMd5 || (this.ContentMd5 != null && !this.ContentMd5.Equals(input.ContentMd5))) return false;
+            if (this.UploadId != input.UploadId || (this.UploadId != null && !this.UploadId.Equals(input.UploadId))) return false;
+            if (this.PartNumber != input.PartNumber || (this.PartNumber != null && !this.PartNumber.Equals(input.PartNumber))) return false;
 
-            return 
-                (
-                    this.XSdkDate == input.XSdkDate ||
-                    (this.XSdkDate != null &&
-                    this.XSdkDate.Equals(input.XSdkDate))
-                ) && 
-                (
-                    this.HttpVerb == input.HttpVerb ||
-                    (this.HttpVerb != null &&
-                    this.HttpVerb.Equals(input.HttpVerb))
-                ) && 
-                (
-                    this.Bucket == input.Bucket ||
-                    (this.Bucket != null &&
-                    this.Bucket.Equals(input.Bucket))
-                ) && 
-                (
-                    this.ObjectKey == input.ObjectKey ||
-                    (this.ObjectKey != null &&
-                    this.ObjectKey.Equals(input.ObjectKey))
-                ) && 
-                (
-                    this.ContentType == input.ContentType ||
-                    (this.ContentType != null &&
-                    this.ContentType.Equals(input.ContentType))
-                ) && 
-                (
-                    this.ContentMd5 == input.ContentMd5 ||
-                    (this.ContentMd5 != null &&
-                    this.ContentMd5.Equals(input.ContentMd5))
-                ) && 
-                (
-                    this.UploadId == input.UploadId ||
-                    (this.UploadId != null &&
-                    this.UploadId.Equals(input.UploadId))
-                ) && 
-                (
-                    this.PartNumber == input.PartNumber ||
-                    (this.PartNumber != null &&
-                    this.PartNumber.Equals(input.PartNumber))
-                );
+            return true;
         }
 
         /// <summary>
@@ -159,23 +126,15 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.XSdkDate != null)
-                    hashCode = hashCode * 59 + this.XSdkDate.GetHashCode();
-                if (this.HttpVerb != null)
-                    hashCode = hashCode * 59 + this.HttpVerb.GetHashCode();
-                if (this.Bucket != null)
-                    hashCode = hashCode * 59 + this.Bucket.GetHashCode();
-                if (this.ObjectKey != null)
-                    hashCode = hashCode * 59 + this.ObjectKey.GetHashCode();
-                if (this.ContentType != null)
-                    hashCode = hashCode * 59 + this.ContentType.GetHashCode();
-                if (this.ContentMd5 != null)
-                    hashCode = hashCode * 59 + this.ContentMd5.GetHashCode();
-                if (this.UploadId != null)
-                    hashCode = hashCode * 59 + this.UploadId.GetHashCode();
-                if (this.PartNumber != null)
-                    hashCode = hashCode * 59 + this.PartNumber.GetHashCode();
+                var hashCode = 41;
+                if (this.XSdkDate != null) hashCode = hashCode * 59 + this.XSdkDate.GetHashCode();
+                if (this.HttpVerb != null) hashCode = hashCode * 59 + this.HttpVerb.GetHashCode();
+                if (this.Bucket != null) hashCode = hashCode * 59 + this.Bucket.GetHashCode();
+                if (this.ObjectKey != null) hashCode = hashCode * 59 + this.ObjectKey.GetHashCode();
+                if (this.ContentType != null) hashCode = hashCode * 59 + this.ContentType.GetHashCode();
+                if (this.ContentMd5 != null) hashCode = hashCode * 59 + this.ContentMd5.GetHashCode();
+                if (this.UploadId != null) hashCode = hashCode * 59 + this.UploadId.GetHashCode();
+                if (this.PartNumber != null) hashCode = hashCode * 59 + this.PartNumber.GetHashCode();
                 return hashCode;
             }
         }

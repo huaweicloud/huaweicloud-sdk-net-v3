@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         /// </summary>
         public bool Equals(UpdateVpcPeeringRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Peering != input.Peering || (this.Peering != null && !this.Peering.Equals(input.Peering))) return false;
 
-            return 
-                (
-                    this.Peering == input.Peering ||
-                    (this.Peering != null &&
-                    this.Peering.Equals(input.Peering))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Vpc.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Peering != null)
-                    hashCode = hashCode * 59 + this.Peering.GetHashCode();
+                var hashCode = 41;
+                if (this.Peering != null) hashCode = hashCode * 59 + this.Peering.GetHashCode();
                 return hashCode;
             }
         }

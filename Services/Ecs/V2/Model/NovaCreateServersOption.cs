@@ -282,104 +282,27 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(NovaCreateServersOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AutoTerminateTime != input.AutoTerminateTime || (this.AutoTerminateTime != null && !this.AutoTerminateTime.Equals(input.AutoTerminateTime))) return false;
+            if (this.ImageRef != input.ImageRef || (this.ImageRef != null && !this.ImageRef.Equals(input.ImageRef))) return false;
+            if (this.FlavorRef != input.FlavorRef || (this.FlavorRef != null && !this.FlavorRef.Equals(input.FlavorRef))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && input.Metadata != null && !this.Metadata.SequenceEqual(input.Metadata))) return false;
+            if (this.AdminPass != input.AdminPass || (this.AdminPass != null && !this.AdminPass.Equals(input.AdminPass))) return false;
+            if (this.BlockDeviceMappingV2 != input.BlockDeviceMappingV2 || (this.BlockDeviceMappingV2 != null && input.BlockDeviceMappingV2 != null && !this.BlockDeviceMappingV2.SequenceEqual(input.BlockDeviceMappingV2))) return false;
+            if (this.ConfigDrive != input.ConfigDrive || (this.ConfigDrive != null && !this.ConfigDrive.Equals(input.ConfigDrive))) return false;
+            if (this.SecurityGroups != input.SecurityGroups || (this.SecurityGroups != null && input.SecurityGroups != null && !this.SecurityGroups.SequenceEqual(input.SecurityGroups))) return false;
+            if (this.Networks != input.Networks || (this.Networks != null && input.Networks != null && !this.Networks.SequenceEqual(input.Networks))) return false;
+            if (this.KeyName != input.KeyName || (this.KeyName != null && !this.KeyName.Equals(input.KeyName))) return false;
+            if (this.UserData != input.UserData || (this.UserData != null && !this.UserData.Equals(input.UserData))) return false;
+            if (this.AvailabilityZone != input.AvailabilityZone || (this.AvailabilityZone != null && !this.AvailabilityZone.Equals(input.AvailabilityZone))) return false;
+            if (this.ReturnReservationId != input.ReturnReservationId || (this.ReturnReservationId != null && !this.ReturnReservationId.Equals(input.ReturnReservationId))) return false;
+            if (this.MinCount != input.MinCount || (this.MinCount != null && !this.MinCount.Equals(input.MinCount))) return false;
+            if (this.MaxCount != input.MaxCount || (this.MaxCount != null && !this.MaxCount.Equals(input.MaxCount))) return false;
+            if (this.OSDCFdiskConfig != input.OSDCFdiskConfig) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
 
-            return 
-                (
-                    this.AutoTerminateTime == input.AutoTerminateTime ||
-                    (this.AutoTerminateTime != null &&
-                    this.AutoTerminateTime.Equals(input.AutoTerminateTime))
-                ) && 
-                (
-                    this.ImageRef == input.ImageRef ||
-                    (this.ImageRef != null &&
-                    this.ImageRef.Equals(input.ImageRef))
-                ) && 
-                (
-                    this.FlavorRef == input.FlavorRef ||
-                    (this.FlavorRef != null &&
-                    this.FlavorRef.Equals(input.FlavorRef))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    this.Metadata != null &&
-                    input.Metadata != null &&
-                    this.Metadata.SequenceEqual(input.Metadata)
-                ) && 
-                (
-                    this.AdminPass == input.AdminPass ||
-                    (this.AdminPass != null &&
-                    this.AdminPass.Equals(input.AdminPass))
-                ) && 
-                (
-                    this.BlockDeviceMappingV2 == input.BlockDeviceMappingV2 ||
-                    this.BlockDeviceMappingV2 != null &&
-                    input.BlockDeviceMappingV2 != null &&
-                    this.BlockDeviceMappingV2.SequenceEqual(input.BlockDeviceMappingV2)
-                ) && 
-                (
-                    this.ConfigDrive == input.ConfigDrive ||
-                    (this.ConfigDrive != null &&
-                    this.ConfigDrive.Equals(input.ConfigDrive))
-                ) && 
-                (
-                    this.SecurityGroups == input.SecurityGroups ||
-                    this.SecurityGroups != null &&
-                    input.SecurityGroups != null &&
-                    this.SecurityGroups.SequenceEqual(input.SecurityGroups)
-                ) && 
-                (
-                    this.Networks == input.Networks ||
-                    this.Networks != null &&
-                    input.Networks != null &&
-                    this.Networks.SequenceEqual(input.Networks)
-                ) && 
-                (
-                    this.KeyName == input.KeyName ||
-                    (this.KeyName != null &&
-                    this.KeyName.Equals(input.KeyName))
-                ) && 
-                (
-                    this.UserData == input.UserData ||
-                    (this.UserData != null &&
-                    this.UserData.Equals(input.UserData))
-                ) && 
-                (
-                    this.AvailabilityZone == input.AvailabilityZone ||
-                    (this.AvailabilityZone != null &&
-                    this.AvailabilityZone.Equals(input.AvailabilityZone))
-                ) && 
-                (
-                    this.ReturnReservationId == input.ReturnReservationId ||
-                    (this.ReturnReservationId != null &&
-                    this.ReturnReservationId.Equals(input.ReturnReservationId))
-                ) && 
-                (
-                    this.MinCount == input.MinCount ||
-                    (this.MinCount != null &&
-                    this.MinCount.Equals(input.MinCount))
-                ) && 
-                (
-                    this.MaxCount == input.MaxCount ||
-                    (this.MaxCount != null &&
-                    this.MaxCount.Equals(input.MaxCount))
-                ) && 
-                (
-                    this.OSDCFdiskConfig == input.OSDCFdiskConfig ||
-                    (this.OSDCFdiskConfig != null &&
-                    this.OSDCFdiskConfig.Equals(input.OSDCFdiskConfig))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                );
+            return true;
         }
 
         /// <summary>
@@ -389,43 +312,25 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AutoTerminateTime != null)
-                    hashCode = hashCode * 59 + this.AutoTerminateTime.GetHashCode();
-                if (this.ImageRef != null)
-                    hashCode = hashCode * 59 + this.ImageRef.GetHashCode();
-                if (this.FlavorRef != null)
-                    hashCode = hashCode * 59 + this.FlavorRef.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
-                if (this.AdminPass != null)
-                    hashCode = hashCode * 59 + this.AdminPass.GetHashCode();
-                if (this.BlockDeviceMappingV2 != null)
-                    hashCode = hashCode * 59 + this.BlockDeviceMappingV2.GetHashCode();
-                if (this.ConfigDrive != null)
-                    hashCode = hashCode * 59 + this.ConfigDrive.GetHashCode();
-                if (this.SecurityGroups != null)
-                    hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
-                if (this.Networks != null)
-                    hashCode = hashCode * 59 + this.Networks.GetHashCode();
-                if (this.KeyName != null)
-                    hashCode = hashCode * 59 + this.KeyName.GetHashCode();
-                if (this.UserData != null)
-                    hashCode = hashCode * 59 + this.UserData.GetHashCode();
-                if (this.AvailabilityZone != null)
-                    hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
-                if (this.ReturnReservationId != null)
-                    hashCode = hashCode * 59 + this.ReturnReservationId.GetHashCode();
-                if (this.MinCount != null)
-                    hashCode = hashCode * 59 + this.MinCount.GetHashCode();
-                if (this.MaxCount != null)
-                    hashCode = hashCode * 59 + this.MaxCount.GetHashCode();
-                if (this.OSDCFdiskConfig != null)
-                    hashCode = hashCode * 59 + this.OSDCFdiskConfig.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
+                var hashCode = 41;
+                if (this.AutoTerminateTime != null) hashCode = hashCode * 59 + this.AutoTerminateTime.GetHashCode();
+                if (this.ImageRef != null) hashCode = hashCode * 59 + this.ImageRef.GetHashCode();
+                if (this.FlavorRef != null) hashCode = hashCode * 59 + this.FlavorRef.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                if (this.AdminPass != null) hashCode = hashCode * 59 + this.AdminPass.GetHashCode();
+                if (this.BlockDeviceMappingV2 != null) hashCode = hashCode * 59 + this.BlockDeviceMappingV2.GetHashCode();
+                if (this.ConfigDrive != null) hashCode = hashCode * 59 + this.ConfigDrive.GetHashCode();
+                if (this.SecurityGroups != null) hashCode = hashCode * 59 + this.SecurityGroups.GetHashCode();
+                if (this.Networks != null) hashCode = hashCode * 59 + this.Networks.GetHashCode();
+                if (this.KeyName != null) hashCode = hashCode * 59 + this.KeyName.GetHashCode();
+                if (this.UserData != null) hashCode = hashCode * 59 + this.UserData.GetHashCode();
+                if (this.AvailabilityZone != null) hashCode = hashCode * 59 + this.AvailabilityZone.GetHashCode();
+                if (this.ReturnReservationId != null) hashCode = hashCode * 59 + this.ReturnReservationId.GetHashCode();
+                if (this.MinCount != null) hashCode = hashCode * 59 + this.MinCount.GetHashCode();
+                if (this.MaxCount != null) hashCode = hashCode * 59 + this.MaxCount.GetHashCode();
+                hashCode = hashCode * 59 + this.OSDCFdiskConfig.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
                 return hashCode;
             }
         }

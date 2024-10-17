@@ -164,21 +164,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(AgencyTokenIdentity input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Methods != input.Methods || (this.Methods != null && input.Methods != null && !this.Methods.SequenceEqual(input.Methods))) return false;
+            if (this.AssumeRole != input.AssumeRole || (this.AssumeRole != null && !this.AssumeRole.Equals(input.AssumeRole))) return false;
 
-            return 
-                (
-                    this.Methods == input.Methods ||
-                    this.Methods != null &&
-                    input.Methods != null &&
-                    this.Methods.SequenceEqual(input.Methods)
-                ) && 
-                (
-                    this.AssumeRole == input.AssumeRole ||
-                    (this.AssumeRole != null &&
-                    this.AssumeRole.Equals(input.AssumeRole))
-                );
+            return true;
         }
 
         /// <summary>
@@ -188,11 +178,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Methods != null)
-                    hashCode = hashCode * 59 + this.Methods.GetHashCode();
-                if (this.AssumeRole != null)
-                    hashCode = hashCode * 59 + this.AssumeRole.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Methods.GetHashCode();
+                if (this.AssumeRole != null) hashCode = hashCode * 59 + this.AssumeRole.GetHashCode();
                 return hashCode;
             }
         }

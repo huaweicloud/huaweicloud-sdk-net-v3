@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         /// </summary>
         public bool Equals(RestoreDetails input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DestinationPath != input.DestinationPath || (this.DestinationPath != null && !this.DestinationPath.Equals(input.DestinationPath))) return false;
 
-            return 
-                (
-                    this.DestinationPath == input.DestinationPath ||
-                    (this.DestinationPath != null &&
-                    this.DestinationPath.Equals(input.DestinationPath))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cbr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DestinationPath != null)
-                    hashCode = hashCode * 59 + this.DestinationPath.GetHashCode();
+                var hashCode = 41;
+                if (this.DestinationPath != null) hashCode = hashCode * 59 + this.DestinationPath.GetHashCode();
                 return hashCode;
             }
         }

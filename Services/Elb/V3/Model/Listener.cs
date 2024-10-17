@@ -401,189 +401,44 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(Listener input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AdminStateUp != input.AdminStateUp || (this.AdminStateUp != null && !this.AdminStateUp.Equals(input.AdminStateUp))) return false;
+            if (this.ClientCaTlsContainerRef != input.ClientCaTlsContainerRef || (this.ClientCaTlsContainerRef != null && !this.ClientCaTlsContainerRef.Equals(input.ClientCaTlsContainerRef))) return false;
+            if (this.ConnectionLimit != input.ConnectionLimit || (this.ConnectionLimit != null && !this.ConnectionLimit.Equals(input.ConnectionLimit))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.DefaultPoolId != input.DefaultPoolId || (this.DefaultPoolId != null && !this.DefaultPoolId.Equals(input.DefaultPoolId))) return false;
+            if (this.DefaultTlsContainerRef != input.DefaultTlsContainerRef || (this.DefaultTlsContainerRef != null && !this.DefaultTlsContainerRef.Equals(input.DefaultTlsContainerRef))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Http2Enable != input.Http2Enable || (this.Http2Enable != null && !this.Http2Enable.Equals(input.Http2Enable))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.InsertHeaders != input.InsertHeaders || (this.InsertHeaders != null && !this.InsertHeaders.Equals(input.InsertHeaders))) return false;
+            if (this.Loadbalancers != input.Loadbalancers || (this.Loadbalancers != null && input.Loadbalancers != null && !this.Loadbalancers.SequenceEqual(input.Loadbalancers))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.ProjectId != input.ProjectId || (this.ProjectId != null && !this.ProjectId.Equals(input.ProjectId))) return false;
+            if (this.Protocol != input.Protocol || (this.Protocol != null && !this.Protocol.Equals(input.Protocol))) return false;
+            if (this.ProtocolPort != input.ProtocolPort || (this.ProtocolPort != null && !this.ProtocolPort.Equals(input.ProtocolPort))) return false;
+            if (this.SniContainerRefs != input.SniContainerRefs || (this.SniContainerRefs != null && input.SniContainerRefs != null && !this.SniContainerRefs.SequenceEqual(input.SniContainerRefs))) return false;
+            if (this.SniMatchAlgo != input.SniMatchAlgo || (this.SniMatchAlgo != null && !this.SniMatchAlgo.Equals(input.SniMatchAlgo))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.UpdatedAt != input.UpdatedAt || (this.UpdatedAt != null && !this.UpdatedAt.Equals(input.UpdatedAt))) return false;
+            if (this.TlsCiphersPolicy != input.TlsCiphersPolicy || (this.TlsCiphersPolicy != null && !this.TlsCiphersPolicy.Equals(input.TlsCiphersPolicy))) return false;
+            if (this.SecurityPolicyId != input.SecurityPolicyId || (this.SecurityPolicyId != null && !this.SecurityPolicyId.Equals(input.SecurityPolicyId))) return false;
+            if (this.EnableMemberRetry != input.EnableMemberRetry || (this.EnableMemberRetry != null && !this.EnableMemberRetry.Equals(input.EnableMemberRetry))) return false;
+            if (this.KeepaliveTimeout != input.KeepaliveTimeout || (this.KeepaliveTimeout != null && !this.KeepaliveTimeout.Equals(input.KeepaliveTimeout))) return false;
+            if (this.ClientTimeout != input.ClientTimeout || (this.ClientTimeout != null && !this.ClientTimeout.Equals(input.ClientTimeout))) return false;
+            if (this.MemberTimeout != input.MemberTimeout || (this.MemberTimeout != null && !this.MemberTimeout.Equals(input.MemberTimeout))) return false;
+            if (this.Ipgroup != input.Ipgroup || (this.Ipgroup != null && !this.Ipgroup.Equals(input.Ipgroup))) return false;
+            if (this.TransparentClientIpEnable != input.TransparentClientIpEnable || (this.TransparentClientIpEnable != null && !this.TransparentClientIpEnable.Equals(input.TransparentClientIpEnable))) return false;
+            if (this.ProxyProtocolEnable != input.ProxyProtocolEnable || (this.ProxyProtocolEnable != null && !this.ProxyProtocolEnable.Equals(input.ProxyProtocolEnable))) return false;
+            if (this.EnhanceL7policyEnable != input.EnhanceL7policyEnable || (this.EnhanceL7policyEnable != null && !this.EnhanceL7policyEnable.Equals(input.EnhanceL7policyEnable))) return false;
+            if (this.QuicConfig != input.QuicConfig || (this.QuicConfig != null && !this.QuicConfig.Equals(input.QuicConfig))) return false;
+            if (this.ProtectionStatus != input.ProtectionStatus) return false;
+            if (this.ProtectionReason != input.ProtectionReason || (this.ProtectionReason != null && !this.ProtectionReason.Equals(input.ProtectionReason))) return false;
+            if (this.GzipEnable != input.GzipEnable || (this.GzipEnable != null && !this.GzipEnable.Equals(input.GzipEnable))) return false;
+            if (this.PortRanges != input.PortRanges || (this.PortRanges != null && input.PortRanges != null && !this.PortRanges.SequenceEqual(input.PortRanges))) return false;
+            if (this.SslEarlyDataEnable != input.SslEarlyDataEnable || (this.SslEarlyDataEnable != null && !this.SslEarlyDataEnable.Equals(input.SslEarlyDataEnable))) return false;
 
-            return 
-                (
-                    this.AdminStateUp == input.AdminStateUp ||
-                    (this.AdminStateUp != null &&
-                    this.AdminStateUp.Equals(input.AdminStateUp))
-                ) && 
-                (
-                    this.ClientCaTlsContainerRef == input.ClientCaTlsContainerRef ||
-                    (this.ClientCaTlsContainerRef != null &&
-                    this.ClientCaTlsContainerRef.Equals(input.ClientCaTlsContainerRef))
-                ) && 
-                (
-                    this.ConnectionLimit == input.ConnectionLimit ||
-                    (this.ConnectionLimit != null &&
-                    this.ConnectionLimit.Equals(input.ConnectionLimit))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.DefaultPoolId == input.DefaultPoolId ||
-                    (this.DefaultPoolId != null &&
-                    this.DefaultPoolId.Equals(input.DefaultPoolId))
-                ) && 
-                (
-                    this.DefaultTlsContainerRef == input.DefaultTlsContainerRef ||
-                    (this.DefaultTlsContainerRef != null &&
-                    this.DefaultTlsContainerRef.Equals(input.DefaultTlsContainerRef))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Http2Enable == input.Http2Enable ||
-                    (this.Http2Enable != null &&
-                    this.Http2Enable.Equals(input.Http2Enable))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.InsertHeaders == input.InsertHeaders ||
-                    (this.InsertHeaders != null &&
-                    this.InsertHeaders.Equals(input.InsertHeaders))
-                ) && 
-                (
-                    this.Loadbalancers == input.Loadbalancers ||
-                    this.Loadbalancers != null &&
-                    input.Loadbalancers != null &&
-                    this.Loadbalancers.SequenceEqual(input.Loadbalancers)
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.ProjectId == input.ProjectId ||
-                    (this.ProjectId != null &&
-                    this.ProjectId.Equals(input.ProjectId))
-                ) && 
-                (
-                    this.Protocol == input.Protocol ||
-                    (this.Protocol != null &&
-                    this.Protocol.Equals(input.Protocol))
-                ) && 
-                (
-                    this.ProtocolPort == input.ProtocolPort ||
-                    (this.ProtocolPort != null &&
-                    this.ProtocolPort.Equals(input.ProtocolPort))
-                ) && 
-                (
-                    this.SniContainerRefs == input.SniContainerRefs ||
-                    this.SniContainerRefs != null &&
-                    input.SniContainerRefs != null &&
-                    this.SniContainerRefs.SequenceEqual(input.SniContainerRefs)
-                ) && 
-                (
-                    this.SniMatchAlgo == input.SniMatchAlgo ||
-                    (this.SniMatchAlgo != null &&
-                    this.SniMatchAlgo.Equals(input.SniMatchAlgo))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.UpdatedAt == input.UpdatedAt ||
-                    (this.UpdatedAt != null &&
-                    this.UpdatedAt.Equals(input.UpdatedAt))
-                ) && 
-                (
-                    this.TlsCiphersPolicy == input.TlsCiphersPolicy ||
-                    (this.TlsCiphersPolicy != null &&
-                    this.TlsCiphersPolicy.Equals(input.TlsCiphersPolicy))
-                ) && 
-                (
-                    this.SecurityPolicyId == input.SecurityPolicyId ||
-                    (this.SecurityPolicyId != null &&
-                    this.SecurityPolicyId.Equals(input.SecurityPolicyId))
-                ) && 
-                (
-                    this.EnableMemberRetry == input.EnableMemberRetry ||
-                    (this.EnableMemberRetry != null &&
-                    this.EnableMemberRetry.Equals(input.EnableMemberRetry))
-                ) && 
-                (
-                    this.KeepaliveTimeout == input.KeepaliveTimeout ||
-                    (this.KeepaliveTimeout != null &&
-                    this.KeepaliveTimeout.Equals(input.KeepaliveTimeout))
-                ) && 
-                (
-                    this.ClientTimeout == input.ClientTimeout ||
-                    (this.ClientTimeout != null &&
-                    this.ClientTimeout.Equals(input.ClientTimeout))
-                ) && 
-                (
-                    this.MemberTimeout == input.MemberTimeout ||
-                    (this.MemberTimeout != null &&
-                    this.MemberTimeout.Equals(input.MemberTimeout))
-                ) && 
-                (
-                    this.Ipgroup == input.Ipgroup ||
-                    (this.Ipgroup != null &&
-                    this.Ipgroup.Equals(input.Ipgroup))
-                ) && 
-                (
-                    this.TransparentClientIpEnable == input.TransparentClientIpEnable ||
-                    (this.TransparentClientIpEnable != null &&
-                    this.TransparentClientIpEnable.Equals(input.TransparentClientIpEnable))
-                ) && 
-                (
-                    this.ProxyProtocolEnable == input.ProxyProtocolEnable ||
-                    (this.ProxyProtocolEnable != null &&
-                    this.ProxyProtocolEnable.Equals(input.ProxyProtocolEnable))
-                ) && 
-                (
-                    this.EnhanceL7policyEnable == input.EnhanceL7policyEnable ||
-                    (this.EnhanceL7policyEnable != null &&
-                    this.EnhanceL7policyEnable.Equals(input.EnhanceL7policyEnable))
-                ) && 
-                (
-                    this.QuicConfig == input.QuicConfig ||
-                    (this.QuicConfig != null &&
-                    this.QuicConfig.Equals(input.QuicConfig))
-                ) && 
-                (
-                    this.ProtectionStatus == input.ProtectionStatus ||
-                    (this.ProtectionStatus != null &&
-                    this.ProtectionStatus.Equals(input.ProtectionStatus))
-                ) && 
-                (
-                    this.ProtectionReason == input.ProtectionReason ||
-                    (this.ProtectionReason != null &&
-                    this.ProtectionReason.Equals(input.ProtectionReason))
-                ) && 
-                (
-                    this.GzipEnable == input.GzipEnable ||
-                    (this.GzipEnable != null &&
-                    this.GzipEnable.Equals(input.GzipEnable))
-                ) && 
-                (
-                    this.PortRanges == input.PortRanges ||
-                    this.PortRanges != null &&
-                    input.PortRanges != null &&
-                    this.PortRanges.SequenceEqual(input.PortRanges)
-                ) && 
-                (
-                    this.SslEarlyDataEnable == input.SslEarlyDataEnable ||
-                    (this.SslEarlyDataEnable != null &&
-                    this.SslEarlyDataEnable.Equals(input.SslEarlyDataEnable))
-                );
+            return true;
         }
 
         /// <summary>
@@ -593,77 +448,42 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AdminStateUp != null)
-                    hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
-                if (this.ClientCaTlsContainerRef != null)
-                    hashCode = hashCode * 59 + this.ClientCaTlsContainerRef.GetHashCode();
-                if (this.ConnectionLimit != null)
-                    hashCode = hashCode * 59 + this.ConnectionLimit.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.DefaultPoolId != null)
-                    hashCode = hashCode * 59 + this.DefaultPoolId.GetHashCode();
-                if (this.DefaultTlsContainerRef != null)
-                    hashCode = hashCode * 59 + this.DefaultTlsContainerRef.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Http2Enable != null)
-                    hashCode = hashCode * 59 + this.Http2Enable.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.InsertHeaders != null)
-                    hashCode = hashCode * 59 + this.InsertHeaders.GetHashCode();
-                if (this.Loadbalancers != null)
-                    hashCode = hashCode * 59 + this.Loadbalancers.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.ProjectId != null)
-                    hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
-                if (this.Protocol != null)
-                    hashCode = hashCode * 59 + this.Protocol.GetHashCode();
-                if (this.ProtocolPort != null)
-                    hashCode = hashCode * 59 + this.ProtocolPort.GetHashCode();
-                if (this.SniContainerRefs != null)
-                    hashCode = hashCode * 59 + this.SniContainerRefs.GetHashCode();
-                if (this.SniMatchAlgo != null)
-                    hashCode = hashCode * 59 + this.SniMatchAlgo.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.UpdatedAt != null)
-                    hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
-                if (this.TlsCiphersPolicy != null)
-                    hashCode = hashCode * 59 + this.TlsCiphersPolicy.GetHashCode();
-                if (this.SecurityPolicyId != null)
-                    hashCode = hashCode * 59 + this.SecurityPolicyId.GetHashCode();
-                if (this.EnableMemberRetry != null)
-                    hashCode = hashCode * 59 + this.EnableMemberRetry.GetHashCode();
-                if (this.KeepaliveTimeout != null)
-                    hashCode = hashCode * 59 + this.KeepaliveTimeout.GetHashCode();
-                if (this.ClientTimeout != null)
-                    hashCode = hashCode * 59 + this.ClientTimeout.GetHashCode();
-                if (this.MemberTimeout != null)
-                    hashCode = hashCode * 59 + this.MemberTimeout.GetHashCode();
-                if (this.Ipgroup != null)
-                    hashCode = hashCode * 59 + this.Ipgroup.GetHashCode();
-                if (this.TransparentClientIpEnable != null)
-                    hashCode = hashCode * 59 + this.TransparentClientIpEnable.GetHashCode();
-                if (this.ProxyProtocolEnable != null)
-                    hashCode = hashCode * 59 + this.ProxyProtocolEnable.GetHashCode();
-                if (this.EnhanceL7policyEnable != null)
-                    hashCode = hashCode * 59 + this.EnhanceL7policyEnable.GetHashCode();
-                if (this.QuicConfig != null)
-                    hashCode = hashCode * 59 + this.QuicConfig.GetHashCode();
-                if (this.ProtectionStatus != null)
-                    hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
-                if (this.ProtectionReason != null)
-                    hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
-                if (this.GzipEnable != null)
-                    hashCode = hashCode * 59 + this.GzipEnable.GetHashCode();
-                if (this.PortRanges != null)
-                    hashCode = hashCode * 59 + this.PortRanges.GetHashCode();
-                if (this.SslEarlyDataEnable != null)
-                    hashCode = hashCode * 59 + this.SslEarlyDataEnable.GetHashCode();
+                var hashCode = 41;
+                if (this.AdminStateUp != null) hashCode = hashCode * 59 + this.AdminStateUp.GetHashCode();
+                if (this.ClientCaTlsContainerRef != null) hashCode = hashCode * 59 + this.ClientCaTlsContainerRef.GetHashCode();
+                if (this.ConnectionLimit != null) hashCode = hashCode * 59 + this.ConnectionLimit.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.DefaultPoolId != null) hashCode = hashCode * 59 + this.DefaultPoolId.GetHashCode();
+                if (this.DefaultTlsContainerRef != null) hashCode = hashCode * 59 + this.DefaultTlsContainerRef.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.Http2Enable != null) hashCode = hashCode * 59 + this.Http2Enable.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.InsertHeaders != null) hashCode = hashCode * 59 + this.InsertHeaders.GetHashCode();
+                if (this.Loadbalancers != null) hashCode = hashCode * 59 + this.Loadbalancers.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.ProjectId != null) hashCode = hashCode * 59 + this.ProjectId.GetHashCode();
+                if (this.Protocol != null) hashCode = hashCode * 59 + this.Protocol.GetHashCode();
+                if (this.ProtocolPort != null) hashCode = hashCode * 59 + this.ProtocolPort.GetHashCode();
+                if (this.SniContainerRefs != null) hashCode = hashCode * 59 + this.SniContainerRefs.GetHashCode();
+                if (this.SniMatchAlgo != null) hashCode = hashCode * 59 + this.SniMatchAlgo.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.UpdatedAt != null) hashCode = hashCode * 59 + this.UpdatedAt.GetHashCode();
+                if (this.TlsCiphersPolicy != null) hashCode = hashCode * 59 + this.TlsCiphersPolicy.GetHashCode();
+                if (this.SecurityPolicyId != null) hashCode = hashCode * 59 + this.SecurityPolicyId.GetHashCode();
+                if (this.EnableMemberRetry != null) hashCode = hashCode * 59 + this.EnableMemberRetry.GetHashCode();
+                if (this.KeepaliveTimeout != null) hashCode = hashCode * 59 + this.KeepaliveTimeout.GetHashCode();
+                if (this.ClientTimeout != null) hashCode = hashCode * 59 + this.ClientTimeout.GetHashCode();
+                if (this.MemberTimeout != null) hashCode = hashCode * 59 + this.MemberTimeout.GetHashCode();
+                if (this.Ipgroup != null) hashCode = hashCode * 59 + this.Ipgroup.GetHashCode();
+                if (this.TransparentClientIpEnable != null) hashCode = hashCode * 59 + this.TransparentClientIpEnable.GetHashCode();
+                if (this.ProxyProtocolEnable != null) hashCode = hashCode * 59 + this.ProxyProtocolEnable.GetHashCode();
+                if (this.EnhanceL7policyEnable != null) hashCode = hashCode * 59 + this.EnhanceL7policyEnable.GetHashCode();
+                if (this.QuicConfig != null) hashCode = hashCode * 59 + this.QuicConfig.GetHashCode();
+                hashCode = hashCode * 59 + this.ProtectionStatus.GetHashCode();
+                if (this.ProtectionReason != null) hashCode = hashCode * 59 + this.ProtectionReason.GetHashCode();
+                if (this.GzipEnable != null) hashCode = hashCode * 59 + this.GzipEnable.GetHashCode();
+                if (this.PortRanges != null) hashCode = hashCode * 59 + this.PortRanges.GetHashCode();
+                if (this.SslEarlyDataEnable != null) hashCode = hashCode * 59 + this.SslEarlyDataEnable.GetHashCode();
                 return hashCode;
             }
         }

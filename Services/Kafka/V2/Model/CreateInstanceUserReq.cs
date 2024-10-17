@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         /// </summary>
         public bool Equals(CreateInstanceUserReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.UserName != input.UserName || (this.UserName != null && !this.UserName.Equals(input.UserName))) return false;
+            if (this.UserDesc != input.UserDesc || (this.UserDesc != null && !this.UserDesc.Equals(input.UserDesc))) return false;
+            if (this.UserPasswd != input.UserPasswd || (this.UserPasswd != null && !this.UserPasswd.Equals(input.UserPasswd))) return false;
 
-            return 
-                (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
-                ) && 
-                (
-                    this.UserDesc == input.UserDesc ||
-                    (this.UserDesc != null &&
-                    this.UserDesc.Equals(input.UserDesc))
-                ) && 
-                (
-                    this.UserPasswd == input.UserPasswd ||
-                    (this.UserPasswd != null &&
-                    this.UserPasswd.Equals(input.UserPasswd))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Kafka.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.UserName != null)
-                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.UserDesc != null)
-                    hashCode = hashCode * 59 + this.UserDesc.GetHashCode();
-                if (this.UserPasswd != null)
-                    hashCode = hashCode * 59 + this.UserPasswd.GetHashCode();
+                var hashCode = 41;
+                if (this.UserName != null) hashCode = hashCode * 59 + this.UserName.GetHashCode();
+                if (this.UserDesc != null) hashCode = hashCode * 59 + this.UserDesc.GetHashCode();
+                if (this.UserPasswd != null) hashCode = hashCode * 59 + this.UserPasswd.GetHashCode();
                 return hashCode;
             }
         }

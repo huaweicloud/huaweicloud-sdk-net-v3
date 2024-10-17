@@ -63,27 +63,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(ListIssueCustomFieldsRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CustomFields != input.CustomFields || (this.CustomFields != null && input.CustomFields != null && !this.CustomFields.SequenceEqual(input.CustomFields))) return false;
+            if (this.Names != input.Names || (this.Names != null && input.Names != null && !this.Names.SequenceEqual(input.Names))) return false;
+            if (this.IncludedNotInUse != input.IncludedNotInUse || (this.IncludedNotInUse != null && !this.IncludedNotInUse.Equals(input.IncludedNotInUse))) return false;
 
-            return 
-                (
-                    this.CustomFields == input.CustomFields ||
-                    this.CustomFields != null &&
-                    input.CustomFields != null &&
-                    this.CustomFields.SequenceEqual(input.CustomFields)
-                ) && 
-                (
-                    this.Names == input.Names ||
-                    this.Names != null &&
-                    input.Names != null &&
-                    this.Names.SequenceEqual(input.Names)
-                ) && 
-                (
-                    this.IncludedNotInUse == input.IncludedNotInUse ||
-                    (this.IncludedNotInUse != null &&
-                    this.IncludedNotInUse.Equals(input.IncludedNotInUse))
-                );
+            return true;
         }
 
         /// <summary>
@@ -93,13 +78,10 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CustomFields != null)
-                    hashCode = hashCode * 59 + this.CustomFields.GetHashCode();
-                if (this.Names != null)
-                    hashCode = hashCode * 59 + this.Names.GetHashCode();
-                if (this.IncludedNotInUse != null)
-                    hashCode = hashCode * 59 + this.IncludedNotInUse.GetHashCode();
+                var hashCode = 41;
+                if (this.CustomFields != null) hashCode = hashCode * 59 + this.CustomFields.GetHashCode();
+                if (this.Names != null) hashCode = hashCode * 59 + this.Names.GetHashCode();
+                if (this.IncludedNotInUse != null) hashCode = hashCode * 59 + this.IncludedNotInUse.GetHashCode();
                 return hashCode;
             }
         }

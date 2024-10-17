@@ -170,21 +170,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(GetHostGroupListTag input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TagType != input.TagType) return false;
+            if (this.TagList != input.TagList || (this.TagList != null && input.TagList != null && !this.TagList.SequenceEqual(input.TagList))) return false;
 
-            return 
-                (
-                    this.TagType == input.TagType ||
-                    (this.TagType != null &&
-                    this.TagType.Equals(input.TagType))
-                ) && 
-                (
-                    this.TagList == input.TagList ||
-                    this.TagList != null &&
-                    input.TagList != null &&
-                    this.TagList.SequenceEqual(input.TagList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -194,11 +184,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TagType != null)
-                    hashCode = hashCode * 59 + this.TagType.GetHashCode();
-                if (this.TagList != null)
-                    hashCode = hashCode * 59 + this.TagList.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.TagType.GetHashCode();
+                if (this.TagList != null) hashCode = hashCode * 59 + this.TagList.GetHashCode();
                 return hashCode;
             }
         }

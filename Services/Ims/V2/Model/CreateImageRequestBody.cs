@@ -414,103 +414,27 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         public bool Equals(CreateImageRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DataImages != input.DataImages || (this.DataImages != null && input.DataImages != null && !this.DataImages.SequenceEqual(input.DataImages))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.ImageTags != input.ImageTags || (this.ImageTags != null && input.ImageTags != null && !this.ImageTags.SequenceEqual(input.ImageTags))) return false;
+            if (this.InstanceId != input.InstanceId || (this.InstanceId != null && !this.InstanceId.Equals(input.InstanceId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.MaxRam != input.MaxRam || (this.MaxRam != null && !this.MaxRam.Equals(input.MaxRam))) return false;
+            if (this.MinRam != input.MinRam || (this.MinRam != null && !this.MinRam.Equals(input.MinRam))) return false;
+            if (this.OsVersion != input.OsVersion || (this.OsVersion != null && !this.OsVersion.Equals(input.OsVersion))) return false;
+            if (this.ImageUrl != input.ImageUrl || (this.ImageUrl != null && !this.ImageUrl.Equals(input.ImageUrl))) return false;
+            if (this.MinDisk != input.MinDisk || (this.MinDisk != null && !this.MinDisk.Equals(input.MinDisk))) return false;
+            if (this.IsConfig != input.IsConfig || (this.IsConfig != null && !this.IsConfig.Equals(input.IsConfig))) return false;
+            if (this.CmkId != input.CmkId || (this.CmkId != null && !this.CmkId.Equals(input.CmkId))) return false;
+            if (this.Type != input.Type) return false;
+            if (this.IsQuickImport != input.IsQuickImport || (this.IsQuickImport != null && !this.IsQuickImport.Equals(input.IsQuickImport))) return false;
+            if (this.Architecture != input.Architecture) return false;
+            if (this.VolumeId != input.VolumeId || (this.VolumeId != null && !this.VolumeId.Equals(input.VolumeId))) return false;
 
-            return 
-                (
-                    this.DataImages == input.DataImages ||
-                    this.DataImages != null &&
-                    input.DataImages != null &&
-                    this.DataImages.SequenceEqual(input.DataImages)
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.ImageTags == input.ImageTags ||
-                    this.ImageTags != null &&
-                    input.ImageTags != null &&
-                    this.ImageTags.SequenceEqual(input.ImageTags)
-                ) && 
-                (
-                    this.InstanceId == input.InstanceId ||
-                    (this.InstanceId != null &&
-                    this.InstanceId.Equals(input.InstanceId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.MaxRam == input.MaxRam ||
-                    (this.MaxRam != null &&
-                    this.MaxRam.Equals(input.MaxRam))
-                ) && 
-                (
-                    this.MinRam == input.MinRam ||
-                    (this.MinRam != null &&
-                    this.MinRam.Equals(input.MinRam))
-                ) && 
-                (
-                    this.OsVersion == input.OsVersion ||
-                    (this.OsVersion != null &&
-                    this.OsVersion.Equals(input.OsVersion))
-                ) && 
-                (
-                    this.ImageUrl == input.ImageUrl ||
-                    (this.ImageUrl != null &&
-                    this.ImageUrl.Equals(input.ImageUrl))
-                ) && 
-                (
-                    this.MinDisk == input.MinDisk ||
-                    (this.MinDisk != null &&
-                    this.MinDisk.Equals(input.MinDisk))
-                ) && 
-                (
-                    this.IsConfig == input.IsConfig ||
-                    (this.IsConfig != null &&
-                    this.IsConfig.Equals(input.IsConfig))
-                ) && 
-                (
-                    this.CmkId == input.CmkId ||
-                    (this.CmkId != null &&
-                    this.CmkId.Equals(input.CmkId))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.IsQuickImport == input.IsQuickImport ||
-                    (this.IsQuickImport != null &&
-                    this.IsQuickImport.Equals(input.IsQuickImport))
-                ) && 
-                (
-                    this.Architecture == input.Architecture ||
-                    (this.Architecture != null &&
-                    this.Architecture.Equals(input.Architecture))
-                ) && 
-                (
-                    this.VolumeId == input.VolumeId ||
-                    (this.VolumeId != null &&
-                    this.VolumeId.Equals(input.VolumeId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -520,43 +444,25 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DataImages != null)
-                    hashCode = hashCode * 59 + this.DataImages.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.ImageTags != null)
-                    hashCode = hashCode * 59 + this.ImageTags.GetHashCode();
-                if (this.InstanceId != null)
-                    hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.MaxRam != null)
-                    hashCode = hashCode * 59 + this.MaxRam.GetHashCode();
-                if (this.MinRam != null)
-                    hashCode = hashCode * 59 + this.MinRam.GetHashCode();
-                if (this.OsVersion != null)
-                    hashCode = hashCode * 59 + this.OsVersion.GetHashCode();
-                if (this.ImageUrl != null)
-                    hashCode = hashCode * 59 + this.ImageUrl.GetHashCode();
-                if (this.MinDisk != null)
-                    hashCode = hashCode * 59 + this.MinDisk.GetHashCode();
-                if (this.IsConfig != null)
-                    hashCode = hashCode * 59 + this.IsConfig.GetHashCode();
-                if (this.CmkId != null)
-                    hashCode = hashCode * 59 + this.CmkId.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.IsQuickImport != null)
-                    hashCode = hashCode * 59 + this.IsQuickImport.GetHashCode();
-                if (this.Architecture != null)
-                    hashCode = hashCode * 59 + this.Architecture.GetHashCode();
-                if (this.VolumeId != null)
-                    hashCode = hashCode * 59 + this.VolumeId.GetHashCode();
+                var hashCode = 41;
+                if (this.DataImages != null) hashCode = hashCode * 59 + this.DataImages.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.ImageTags != null) hashCode = hashCode * 59 + this.ImageTags.GetHashCode();
+                if (this.InstanceId != null) hashCode = hashCode * 59 + this.InstanceId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.MaxRam != null) hashCode = hashCode * 59 + this.MaxRam.GetHashCode();
+                if (this.MinRam != null) hashCode = hashCode * 59 + this.MinRam.GetHashCode();
+                if (this.OsVersion != null) hashCode = hashCode * 59 + this.OsVersion.GetHashCode();
+                if (this.ImageUrl != null) hashCode = hashCode * 59 + this.ImageUrl.GetHashCode();
+                if (this.MinDisk != null) hashCode = hashCode * 59 + this.MinDisk.GetHashCode();
+                if (this.IsConfig != null) hashCode = hashCode * 59 + this.IsConfig.GetHashCode();
+                if (this.CmkId != null) hashCode = hashCode * 59 + this.CmkId.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.IsQuickImport != null) hashCode = hashCode * 59 + this.IsQuickImport.GetHashCode();
+                hashCode = hashCode * 59 + this.Architecture.GetHashCode();
+                if (this.VolumeId != null) hashCode = hashCode * 59 + this.VolumeId.GetHashCode();
                 return hashCode;
             }
         }

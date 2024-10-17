@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         /// </summary>
         public bool Equals(BatchDeleteAclRulesResponseData input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResponseDatas != input.ResponseDatas || (this.ResponseDatas != null && input.ResponseDatas != null && !this.ResponseDatas.SequenceEqual(input.ResponseDatas))) return false;
 
-            return 
-                (
-                    this.ResponseDatas == input.ResponseDatas ||
-                    this.ResponseDatas != null &&
-                    input.ResponseDatas != null &&
-                    this.ResponseDatas.SequenceEqual(input.ResponseDatas)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Cfw.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResponseDatas != null)
-                    hashCode = hashCode * 59 + this.ResponseDatas.GetHashCode();
+                var hashCode = 41;
+                if (this.ResponseDatas != null) hashCode = hashCode * 59 + this.ResponseDatas.GetHashCode();
                 return hashCode;
             }
         }

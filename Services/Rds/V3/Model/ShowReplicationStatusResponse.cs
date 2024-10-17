@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(ShowReplicationStatusResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ReplicationStatus != input.ReplicationStatus || (this.ReplicationStatus != null && !this.ReplicationStatus.Equals(input.ReplicationStatus))) return false;
+            if (this.AbnormalReason != input.AbnormalReason || (this.AbnormalReason != null && !this.AbnormalReason.Equals(input.AbnormalReason))) return false;
 
-            return 
-                (
-                    this.ReplicationStatus == input.ReplicationStatus ||
-                    (this.ReplicationStatus != null &&
-                    this.ReplicationStatus.Equals(input.ReplicationStatus))
-                ) && 
-                (
-                    this.AbnormalReason == input.AbnormalReason ||
-                    (this.AbnormalReason != null &&
-                    this.AbnormalReason.Equals(input.AbnormalReason))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ReplicationStatus != null)
-                    hashCode = hashCode * 59 + this.ReplicationStatus.GetHashCode();
-                if (this.AbnormalReason != null)
-                    hashCode = hashCode * 59 + this.AbnormalReason.GetHashCode();
+                var hashCode = 41;
+                if (this.ReplicationStatus != null) hashCode = hashCode * 59 + this.ReplicationStatus.GetHashCode();
+                if (this.AbnormalReason != null) hashCode = hashCode * 59 + this.AbnormalReason.GetHashCode();
                 return hashCode;
             }
         }

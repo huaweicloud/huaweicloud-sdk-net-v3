@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(Features input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SupportAcl != input.SupportAcl || (this.SupportAcl != null && !this.SupportAcl.Equals(input.SupportAcl))) return false;
+            if (this.SupportTransparentClientIp != input.SupportTransparentClientIp || (this.SupportTransparentClientIp != null && !this.SupportTransparentClientIp.Equals(input.SupportTransparentClientIp))) return false;
+            if (this.SupportSsl != input.SupportSsl || (this.SupportSsl != null && !this.SupportSsl.Equals(input.SupportSsl))) return false;
+            if (this.SupportAuditLog != input.SupportAuditLog || (this.SupportAuditLog != null && !this.SupportAuditLog.Equals(input.SupportAuditLog))) return false;
 
-            return 
-                (
-                    this.SupportAcl == input.SupportAcl ||
-                    (this.SupportAcl != null &&
-                    this.SupportAcl.Equals(input.SupportAcl))
-                ) && 
-                (
-                    this.SupportTransparentClientIp == input.SupportTransparentClientIp ||
-                    (this.SupportTransparentClientIp != null &&
-                    this.SupportTransparentClientIp.Equals(input.SupportTransparentClientIp))
-                ) && 
-                (
-                    this.SupportSsl == input.SupportSsl ||
-                    (this.SupportSsl != null &&
-                    this.SupportSsl.Equals(input.SupportSsl))
-                ) && 
-                (
-                    this.SupportAuditLog == input.SupportAuditLog ||
-                    (this.SupportAuditLog != null &&
-                    this.SupportAuditLog.Equals(input.SupportAuditLog))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SupportAcl != null)
-                    hashCode = hashCode * 59 + this.SupportAcl.GetHashCode();
-                if (this.SupportTransparentClientIp != null)
-                    hashCode = hashCode * 59 + this.SupportTransparentClientIp.GetHashCode();
-                if (this.SupportSsl != null)
-                    hashCode = hashCode * 59 + this.SupportSsl.GetHashCode();
-                if (this.SupportAuditLog != null)
-                    hashCode = hashCode * 59 + this.SupportAuditLog.GetHashCode();
+                var hashCode = 41;
+                if (this.SupportAcl != null) hashCode = hashCode * 59 + this.SupportAcl.GetHashCode();
+                if (this.SupportTransparentClientIp != null) hashCode = hashCode * 59 + this.SupportTransparentClientIp.GetHashCode();
+                if (this.SupportSsl != null) hashCode = hashCode * 59 + this.SupportSsl.GetHashCode();
+                if (this.SupportAuditLog != null) hashCode = hashCode * 59 + this.SupportAuditLog.GetHashCode();
                 return hashCode;
             }
         }

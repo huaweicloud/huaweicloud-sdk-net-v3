@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public bool Equals(LiveDetectUrlReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VideoUrl != input.VideoUrl || (this.VideoUrl != null && !this.VideoUrl.Equals(input.VideoUrl))) return false;
+            if (this.Actions != input.Actions || (this.Actions != null && !this.Actions.Equals(input.Actions))) return false;
+            if (this.ActionTime != input.ActionTime || (this.ActionTime != null && !this.ActionTime.Equals(input.ActionTime))) return false;
+            if (this.NodThreshold != input.NodThreshold || (this.NodThreshold != null && !this.NodThreshold.Equals(input.NodThreshold))) return false;
 
-            return 
-                (
-                    this.VideoUrl == input.VideoUrl ||
-                    (this.VideoUrl != null &&
-                    this.VideoUrl.Equals(input.VideoUrl))
-                ) && 
-                (
-                    this.Actions == input.Actions ||
-                    (this.Actions != null &&
-                    this.Actions.Equals(input.Actions))
-                ) && 
-                (
-                    this.ActionTime == input.ActionTime ||
-                    (this.ActionTime != null &&
-                    this.ActionTime.Equals(input.ActionTime))
-                ) && 
-                (
-                    this.NodThreshold == input.NodThreshold ||
-                    (this.NodThreshold != null &&
-                    this.NodThreshold.Equals(input.NodThreshold))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VideoUrl != null)
-                    hashCode = hashCode * 59 + this.VideoUrl.GetHashCode();
-                if (this.Actions != null)
-                    hashCode = hashCode * 59 + this.Actions.GetHashCode();
-                if (this.ActionTime != null)
-                    hashCode = hashCode * 59 + this.ActionTime.GetHashCode();
-                if (this.NodThreshold != null)
-                    hashCode = hashCode * 59 + this.NodThreshold.GetHashCode();
+                var hashCode = 41;
+                if (this.VideoUrl != null) hashCode = hashCode * 59 + this.VideoUrl.GetHashCode();
+                if (this.Actions != null) hashCode = hashCode * 59 + this.Actions.GetHashCode();
+                if (this.ActionTime != null) hashCode = hashCode * 59 + this.ActionTime.GetHashCode();
+                if (this.NodThreshold != null) hashCode = hashCode * 59 + this.NodThreshold.GetHashCode();
                 return hashCode;
             }
         }

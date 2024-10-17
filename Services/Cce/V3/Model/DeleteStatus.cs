@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(DeleteStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PreviousTotal != input.PreviousTotal || (this.PreviousTotal != null && !this.PreviousTotal.Equals(input.PreviousTotal))) return false;
+            if (this.CurrentTotal != input.CurrentTotal || (this.CurrentTotal != null && !this.CurrentTotal.Equals(input.CurrentTotal))) return false;
+            if (this.Updated != input.Updated || (this.Updated != null && !this.Updated.Equals(input.Updated))) return false;
+            if (this.Added != input.Added || (this.Added != null && !this.Added.Equals(input.Added))) return false;
+            if (this.Deleted != input.Deleted || (this.Deleted != null && !this.Deleted.Equals(input.Deleted))) return false;
 
-            return 
-                (
-                    this.PreviousTotal == input.PreviousTotal ||
-                    (this.PreviousTotal != null &&
-                    this.PreviousTotal.Equals(input.PreviousTotal))
-                ) && 
-                (
-                    this.CurrentTotal == input.CurrentTotal ||
-                    (this.CurrentTotal != null &&
-                    this.CurrentTotal.Equals(input.CurrentTotal))
-                ) && 
-                (
-                    this.Updated == input.Updated ||
-                    (this.Updated != null &&
-                    this.Updated.Equals(input.Updated))
-                ) && 
-                (
-                    this.Added == input.Added ||
-                    (this.Added != null &&
-                    this.Added.Equals(input.Added))
-                ) && 
-                (
-                    this.Deleted == input.Deleted ||
-                    (this.Deleted != null &&
-                    this.Deleted.Equals(input.Deleted))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PreviousTotal != null)
-                    hashCode = hashCode * 59 + this.PreviousTotal.GetHashCode();
-                if (this.CurrentTotal != null)
-                    hashCode = hashCode * 59 + this.CurrentTotal.GetHashCode();
-                if (this.Updated != null)
-                    hashCode = hashCode * 59 + this.Updated.GetHashCode();
-                if (this.Added != null)
-                    hashCode = hashCode * 59 + this.Added.GetHashCode();
-                if (this.Deleted != null)
-                    hashCode = hashCode * 59 + this.Deleted.GetHashCode();
+                var hashCode = 41;
+                if (this.PreviousTotal != null) hashCode = hashCode * 59 + this.PreviousTotal.GetHashCode();
+                if (this.CurrentTotal != null) hashCode = hashCode * 59 + this.CurrentTotal.GetHashCode();
+                if (this.Updated != null) hashCode = hashCode * 59 + this.Updated.GetHashCode();
+                if (this.Added != null) hashCode = hashCode * 59 + this.Added.GetHashCode();
+                if (this.Deleted != null) hashCode = hashCode * 59 + this.Deleted.GetHashCode();
                 return hashCode;
             }
         }

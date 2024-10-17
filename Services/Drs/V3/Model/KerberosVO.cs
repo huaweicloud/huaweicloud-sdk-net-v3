@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(KerberosVO input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Krb5ConfFile != input.Krb5ConfFile || (this.Krb5ConfFile != null && !this.Krb5ConfFile.Equals(input.Krb5ConfFile))) return false;
+            if (this.KeyTabFile != input.KeyTabFile || (this.KeyTabFile != null && !this.KeyTabFile.Equals(input.KeyTabFile))) return false;
+            if (this.DomainName != input.DomainName || (this.DomainName != null && !this.DomainName.Equals(input.DomainName))) return false;
+            if (this.UserPrincipal != input.UserPrincipal || (this.UserPrincipal != null && !this.UserPrincipal.Equals(input.UserPrincipal))) return false;
 
-            return 
-                (
-                    this.Krb5ConfFile == input.Krb5ConfFile ||
-                    (this.Krb5ConfFile != null &&
-                    this.Krb5ConfFile.Equals(input.Krb5ConfFile))
-                ) && 
-                (
-                    this.KeyTabFile == input.KeyTabFile ||
-                    (this.KeyTabFile != null &&
-                    this.KeyTabFile.Equals(input.KeyTabFile))
-                ) && 
-                (
-                    this.DomainName == input.DomainName ||
-                    (this.DomainName != null &&
-                    this.DomainName.Equals(input.DomainName))
-                ) && 
-                (
-                    this.UserPrincipal == input.UserPrincipal ||
-                    (this.UserPrincipal != null &&
-                    this.UserPrincipal.Equals(input.UserPrincipal))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Krb5ConfFile != null)
-                    hashCode = hashCode * 59 + this.Krb5ConfFile.GetHashCode();
-                if (this.KeyTabFile != null)
-                    hashCode = hashCode * 59 + this.KeyTabFile.GetHashCode();
-                if (this.DomainName != null)
-                    hashCode = hashCode * 59 + this.DomainName.GetHashCode();
-                if (this.UserPrincipal != null)
-                    hashCode = hashCode * 59 + this.UserPrincipal.GetHashCode();
+                var hashCode = 41;
+                if (this.Krb5ConfFile != null) hashCode = hashCode * 59 + this.Krb5ConfFile.GetHashCode();
+                if (this.KeyTabFile != null) hashCode = hashCode * 59 + this.KeyTabFile.GetHashCode();
+                if (this.DomainName != null) hashCode = hashCode * 59 + this.DomainName.GetHashCode();
+                if (this.UserPrincipal != null) hashCode = hashCode * 59 + this.UserPrincipal.GetHashCode();
                 return hashCode;
             }
         }

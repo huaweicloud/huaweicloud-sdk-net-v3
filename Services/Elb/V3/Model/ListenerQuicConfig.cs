@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(ListenerQuicConfig input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.QuicListenerId != input.QuicListenerId || (this.QuicListenerId != null && !this.QuicListenerId.Equals(input.QuicListenerId))) return false;
+            if (this.EnableQuicUpgrade != input.EnableQuicUpgrade || (this.EnableQuicUpgrade != null && !this.EnableQuicUpgrade.Equals(input.EnableQuicUpgrade))) return false;
 
-            return 
-                (
-                    this.QuicListenerId == input.QuicListenerId ||
-                    (this.QuicListenerId != null &&
-                    this.QuicListenerId.Equals(input.QuicListenerId))
-                ) && 
-                (
-                    this.EnableQuicUpgrade == input.EnableQuicUpgrade ||
-                    (this.EnableQuicUpgrade != null &&
-                    this.EnableQuicUpgrade.Equals(input.EnableQuicUpgrade))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.QuicListenerId != null)
-                    hashCode = hashCode * 59 + this.QuicListenerId.GetHashCode();
-                if (this.EnableQuicUpgrade != null)
-                    hashCode = hashCode * 59 + this.EnableQuicUpgrade.GetHashCode();
+                var hashCode = 41;
+                if (this.QuicListenerId != null) hashCode = hashCode * 59 + this.QuicListenerId.GetHashCode();
+                if (this.EnableQuicUpgrade != null) hashCode = hashCode * 59 + this.EnableQuicUpgrade.GetHashCode();
                 return hashCode;
             }
         }

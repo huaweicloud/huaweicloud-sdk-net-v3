@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
         /// </summary>
         public bool Equals(ForwardingInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Eip != input.Eip || (this.Eip != null && !this.Eip.Equals(input.Eip))) return false;
+            if (this.EnableSnat != input.EnableSnat || (this.EnableSnat != null && !this.EnableSnat.Equals(input.EnableSnat))) return false;
 
-            return 
-                (
-                    this.Eip == input.Eip ||
-                    (this.Eip != null &&
-                    this.Eip.Equals(input.Eip))
-                ) && 
-                (
-                    this.EnableSnat == input.EnableSnat ||
-                    (this.EnableSnat != null &&
-                    this.EnableSnat.Equals(input.EnableSnat))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.IoTDM.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Eip != null)
-                    hashCode = hashCode * 59 + this.Eip.GetHashCode();
-                if (this.EnableSnat != null)
-                    hashCode = hashCode * 59 + this.EnableSnat.GetHashCode();
+                var hashCode = 41;
+                if (this.Eip != null) hashCode = hashCode * 59 + this.Eip.GetHashCode();
+                if (this.EnableSnat != null) hashCode = hashCode * 59 + this.EnableSnat.GetHashCode();
                 return hashCode;
             }
         }

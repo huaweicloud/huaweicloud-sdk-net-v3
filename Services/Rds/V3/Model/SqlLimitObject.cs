@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(SqlLimitObject input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.QueryId != input.QueryId || (this.QueryId != null && !this.QueryId.Equals(input.QueryId))) return false;
+            if (this.QueryString != input.QueryString || (this.QueryString != null && !this.QueryString.Equals(input.QueryString))) return false;
+            if (this.MaxConcurrency != input.MaxConcurrency || (this.MaxConcurrency != null && !this.MaxConcurrency.Equals(input.MaxConcurrency))) return false;
+            if (this.IsEffective != input.IsEffective || (this.IsEffective != null && !this.IsEffective.Equals(input.IsEffective))) return false;
+            if (this.MaxWaiting != input.MaxWaiting || (this.MaxWaiting != null && !this.MaxWaiting.Equals(input.MaxWaiting))) return false;
+            if (this.SearchPath != input.SearchPath || (this.SearchPath != null && !this.SearchPath.Equals(input.SearchPath))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.QueryId == input.QueryId ||
-                    (this.QueryId != null &&
-                    this.QueryId.Equals(input.QueryId))
-                ) && 
-                (
-                    this.QueryString == input.QueryString ||
-                    (this.QueryString != null &&
-                    this.QueryString.Equals(input.QueryString))
-                ) && 
-                (
-                    this.MaxConcurrency == input.MaxConcurrency ||
-                    (this.MaxConcurrency != null &&
-                    this.MaxConcurrency.Equals(input.MaxConcurrency))
-                ) && 
-                (
-                    this.IsEffective == input.IsEffective ||
-                    (this.IsEffective != null &&
-                    this.IsEffective.Equals(input.IsEffective))
-                ) && 
-                (
-                    this.MaxWaiting == input.MaxWaiting ||
-                    (this.MaxWaiting != null &&
-                    this.MaxWaiting.Equals(input.MaxWaiting))
-                ) && 
-                (
-                    this.SearchPath == input.SearchPath ||
-                    (this.SearchPath != null &&
-                    this.SearchPath.Equals(input.SearchPath))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.QueryId != null)
-                    hashCode = hashCode * 59 + this.QueryId.GetHashCode();
-                if (this.QueryString != null)
-                    hashCode = hashCode * 59 + this.QueryString.GetHashCode();
-                if (this.MaxConcurrency != null)
-                    hashCode = hashCode * 59 + this.MaxConcurrency.GetHashCode();
-                if (this.IsEffective != null)
-                    hashCode = hashCode * 59 + this.IsEffective.GetHashCode();
-                if (this.MaxWaiting != null)
-                    hashCode = hashCode * 59 + this.MaxWaiting.GetHashCode();
-                if (this.SearchPath != null)
-                    hashCode = hashCode * 59 + this.SearchPath.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.QueryId != null) hashCode = hashCode * 59 + this.QueryId.GetHashCode();
+                if (this.QueryString != null) hashCode = hashCode * 59 + this.QueryString.GetHashCode();
+                if (this.MaxConcurrency != null) hashCode = hashCode * 59 + this.MaxConcurrency.GetHashCode();
+                if (this.IsEffective != null) hashCode = hashCode * 59 + this.IsEffective.GetHashCode();
+                if (this.MaxWaiting != null) hashCode = hashCode * 59 + this.MaxWaiting.GetHashCode();
+                if (this.SearchPath != null) hashCode = hashCode * 59 + this.SearchPath.GetHashCode();
                 return hashCode;
             }
         }

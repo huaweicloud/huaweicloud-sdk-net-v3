@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(ShowConfigurationDetailRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ConfigId != input.ConfigId || (this.ConfigId != null && !this.ConfigId.Equals(input.ConfigId))) return false;
 
-            return 
-                (
-                    this.ConfigId == input.ConfigId ||
-                    (this.ConfigId != null &&
-                    this.ConfigId.Equals(input.ConfigId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ConfigId != null)
-                    hashCode = hashCode * 59 + this.ConfigId.GetHashCode();
+                var hashCode = 41;
+                if (this.ConfigId != null) hashCode = hashCode * 59 + this.ConfigId.GetHashCode();
                 return hashCode;
             }
         }

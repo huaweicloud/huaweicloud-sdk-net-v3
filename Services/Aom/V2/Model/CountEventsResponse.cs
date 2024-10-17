@@ -70,33 +70,13 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(CountEventsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Step != input.Step || (this.Step != null && !this.Step.Equals(input.Step))) return false;
+            if (this.Timestamps != input.Timestamps || (this.Timestamps != null && input.Timestamps != null && !this.Timestamps.SequenceEqual(input.Timestamps))) return false;
+            if (this.Series != input.Series || (this.Series != null && input.Series != null && !this.Series.SequenceEqual(input.Series))) return false;
+            if (this.Summary != input.Summary || (this.Summary != null && input.Summary != null && !this.Summary.SequenceEqual(input.Summary))) return false;
 
-            return 
-                (
-                    this.Step == input.Step ||
-                    (this.Step != null &&
-                    this.Step.Equals(input.Step))
-                ) && 
-                (
-                    this.Timestamps == input.Timestamps ||
-                    this.Timestamps != null &&
-                    input.Timestamps != null &&
-                    this.Timestamps.SequenceEqual(input.Timestamps)
-                ) && 
-                (
-                    this.Series == input.Series ||
-                    this.Series != null &&
-                    input.Series != null &&
-                    this.Series.SequenceEqual(input.Series)
-                ) && 
-                (
-                    this.Summary == input.Summary ||
-                    this.Summary != null &&
-                    input.Summary != null &&
-                    this.Summary.SequenceEqual(input.Summary)
-                );
+            return true;
         }
 
         /// <summary>
@@ -106,15 +86,11 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Step != null)
-                    hashCode = hashCode * 59 + this.Step.GetHashCode();
-                if (this.Timestamps != null)
-                    hashCode = hashCode * 59 + this.Timestamps.GetHashCode();
-                if (this.Series != null)
-                    hashCode = hashCode * 59 + this.Series.GetHashCode();
-                if (this.Summary != null)
-                    hashCode = hashCode * 59 + this.Summary.GetHashCode();
+                var hashCode = 41;
+                if (this.Step != null) hashCode = hashCode * 59 + this.Step.GetHashCode();
+                if (this.Timestamps != null) hashCode = hashCode * 59 + this.Timestamps.GetHashCode();
+                if (this.Series != null) hashCode = hashCode * 59 + this.Series.GetHashCode();
+                if (this.Summary != null) hashCode = hashCode * 59 + this.Summary.GetHashCode();
                 return hashCode;
             }
         }

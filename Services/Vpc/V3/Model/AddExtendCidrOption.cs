@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         /// </summary>
         public bool Equals(AddExtendCidrOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ExtendCidrs != input.ExtendCidrs || (this.ExtendCidrs != null && input.ExtendCidrs != null && !this.ExtendCidrs.SequenceEqual(input.ExtendCidrs))) return false;
 
-            return 
-                (
-                    this.ExtendCidrs == input.ExtendCidrs ||
-                    this.ExtendCidrs != null &&
-                    input.ExtendCidrs != null &&
-                    this.ExtendCidrs.SequenceEqual(input.ExtendCidrs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Vpc.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ExtendCidrs != null)
-                    hashCode = hashCode * 59 + this.ExtendCidrs.GetHashCode();
+                var hashCode = 41;
+                if (this.ExtendCidrs != null) hashCode = hashCode * 59 + this.ExtendCidrs.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(SmartDocumentRecognizerFormulaBlock input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Formula != input.Formula || (this.Formula != null && !this.Formula.Equals(input.Formula))) return false;
+            if (this.Location != input.Location || (this.Location != null && input.Location != null && !this.Location.SequenceEqual(input.Location))) return false;
 
-            return 
-                (
-                    this.Formula == input.Formula ||
-                    (this.Formula != null &&
-                    this.Formula.Equals(input.Formula))
-                ) && 
-                (
-                    this.Location == input.Location ||
-                    this.Location != null &&
-                    input.Location != null &&
-                    this.Location.SequenceEqual(input.Location)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Formula != null)
-                    hashCode = hashCode * 59 + this.Formula.GetHashCode();
-                if (this.Location != null)
-                    hashCode = hashCode * 59 + this.Location.GetHashCode();
+                var hashCode = 41;
+                if (this.Formula != null) hashCode = hashCode * 59 + this.Formula.GetHashCode();
+                if (this.Location != null) hashCode = hashCode * 59 + this.Location.GetHashCode();
                 return hashCode;
             }
         }

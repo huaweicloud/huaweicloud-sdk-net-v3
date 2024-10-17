@@ -571,136 +571,34 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(MigrationTaskList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TaskId != input.TaskId || (this.TaskId != null && !this.TaskId.Equals(input.TaskId))) return false;
+            if (this.TaskName != input.TaskName || (this.TaskName != null && !this.TaskName.Equals(input.TaskName))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.MigrationType != input.MigrationType) return false;
+            if (this.MigrationMethod != input.MigrationMethod) return false;
+            if (this.EcsTenantPrivateIp != input.EcsTenantPrivateIp || (this.EcsTenantPrivateIp != null && !this.EcsTenantPrivateIp.Equals(input.EcsTenantPrivateIp))) return false;
+            if (this.DataSource != input.DataSource || (this.DataSource != null && !this.DataSource.Equals(input.DataSource))) return false;
+            if (this.SourceInstanceName != input.SourceInstanceName || (this.SourceInstanceName != null && !this.SourceInstanceName.Equals(input.SourceInstanceName))) return false;
+            if (this.SourceInstanceId != input.SourceInstanceId || (this.SourceInstanceId != null && !this.SourceInstanceId.Equals(input.SourceInstanceId))) return false;
+            if (this.TargetInstanceAddrs != input.TargetInstanceAddrs || (this.TargetInstanceAddrs != null && !this.TargetInstanceAddrs.Equals(input.TargetInstanceAddrs))) return false;
+            if (this.TargetInstanceName != input.TargetInstanceName || (this.TargetInstanceName != null && !this.TargetInstanceName.Equals(input.TargetInstanceName))) return false;
+            if (this.TargetInstanceId != input.TargetInstanceId || (this.TargetInstanceId != null && !this.TargetInstanceId.Equals(input.TargetInstanceId))) return false;
+            if (this.CreatedAt != input.CreatedAt || (this.CreatedAt != null && !this.CreatedAt.Equals(input.CreatedAt))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.SourceInstanceStatus != input.SourceInstanceStatus || (this.SourceInstanceStatus != null && !this.SourceInstanceStatus.Equals(input.SourceInstanceStatus))) return false;
+            if (this.TargetInstanceStatus != input.TargetInstanceStatus || (this.TargetInstanceStatus != null && !this.TargetInstanceStatus.Equals(input.TargetInstanceStatus))) return false;
+            if (this.SourceInstanceSubnetId != input.SourceInstanceSubnetId || (this.SourceInstanceSubnetId != null && !this.SourceInstanceSubnetId.Equals(input.SourceInstanceSubnetId))) return false;
+            if (this.TargetInstanceSubnetId != input.TargetInstanceSubnetId || (this.TargetInstanceSubnetId != null && !this.TargetInstanceSubnetId.Equals(input.TargetInstanceSubnetId))) return false;
+            if (this.SourceInstanceSpecCode != input.SourceInstanceSpecCode || (this.SourceInstanceSpecCode != null && !this.SourceInstanceSpecCode.Equals(input.SourceInstanceSpecCode))) return false;
+            if (this.TargetInstanceSpecCode != input.TargetInstanceSpecCode || (this.TargetInstanceSpecCode != null && !this.TargetInstanceSpecCode.Equals(input.TargetInstanceSpecCode))) return false;
+            if (this.ErrorMessage != input.ErrorMessage || (this.ErrorMessage != null && !this.ErrorMessage.Equals(input.ErrorMessage))) return false;
+            if (this.ReleasedAt != input.ReleasedAt || (this.ReleasedAt != null && !this.ReleasedAt.Equals(input.ReleasedAt))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
+            if (this.ResumeMode != input.ResumeMode || (this.ResumeMode != null && !this.ResumeMode.Equals(input.ResumeMode))) return false;
+            if (this.SupportedFeatures != input.SupportedFeatures || (this.SupportedFeatures != null && input.SupportedFeatures != null && !this.SupportedFeatures.SequenceEqual(input.SupportedFeatures))) return false;
 
-            return 
-                (
-                    this.TaskId == input.TaskId ||
-                    (this.TaskId != null &&
-                    this.TaskId.Equals(input.TaskId))
-                ) && 
-                (
-                    this.TaskName == input.TaskName ||
-                    (this.TaskName != null &&
-                    this.TaskName.Equals(input.TaskName))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.MigrationType == input.MigrationType ||
-                    (this.MigrationType != null &&
-                    this.MigrationType.Equals(input.MigrationType))
-                ) && 
-                (
-                    this.MigrationMethod == input.MigrationMethod ||
-                    (this.MigrationMethod != null &&
-                    this.MigrationMethod.Equals(input.MigrationMethod))
-                ) && 
-                (
-                    this.EcsTenantPrivateIp == input.EcsTenantPrivateIp ||
-                    (this.EcsTenantPrivateIp != null &&
-                    this.EcsTenantPrivateIp.Equals(input.EcsTenantPrivateIp))
-                ) && 
-                (
-                    this.DataSource == input.DataSource ||
-                    (this.DataSource != null &&
-                    this.DataSource.Equals(input.DataSource))
-                ) && 
-                (
-                    this.SourceInstanceName == input.SourceInstanceName ||
-                    (this.SourceInstanceName != null &&
-                    this.SourceInstanceName.Equals(input.SourceInstanceName))
-                ) && 
-                (
-                    this.SourceInstanceId == input.SourceInstanceId ||
-                    (this.SourceInstanceId != null &&
-                    this.SourceInstanceId.Equals(input.SourceInstanceId))
-                ) && 
-                (
-                    this.TargetInstanceAddrs == input.TargetInstanceAddrs ||
-                    (this.TargetInstanceAddrs != null &&
-                    this.TargetInstanceAddrs.Equals(input.TargetInstanceAddrs))
-                ) && 
-                (
-                    this.TargetInstanceName == input.TargetInstanceName ||
-                    (this.TargetInstanceName != null &&
-                    this.TargetInstanceName.Equals(input.TargetInstanceName))
-                ) && 
-                (
-                    this.TargetInstanceId == input.TargetInstanceId ||
-                    (this.TargetInstanceId != null &&
-                    this.TargetInstanceId.Equals(input.TargetInstanceId))
-                ) && 
-                (
-                    this.CreatedAt == input.CreatedAt ||
-                    (this.CreatedAt != null &&
-                    this.CreatedAt.Equals(input.CreatedAt))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.SourceInstanceStatus == input.SourceInstanceStatus ||
-                    (this.SourceInstanceStatus != null &&
-                    this.SourceInstanceStatus.Equals(input.SourceInstanceStatus))
-                ) && 
-                (
-                    this.TargetInstanceStatus == input.TargetInstanceStatus ||
-                    (this.TargetInstanceStatus != null &&
-                    this.TargetInstanceStatus.Equals(input.TargetInstanceStatus))
-                ) && 
-                (
-                    this.SourceInstanceSubnetId == input.SourceInstanceSubnetId ||
-                    (this.SourceInstanceSubnetId != null &&
-                    this.SourceInstanceSubnetId.Equals(input.SourceInstanceSubnetId))
-                ) && 
-                (
-                    this.TargetInstanceSubnetId == input.TargetInstanceSubnetId ||
-                    (this.TargetInstanceSubnetId != null &&
-                    this.TargetInstanceSubnetId.Equals(input.TargetInstanceSubnetId))
-                ) && 
-                (
-                    this.SourceInstanceSpecCode == input.SourceInstanceSpecCode ||
-                    (this.SourceInstanceSpecCode != null &&
-                    this.SourceInstanceSpecCode.Equals(input.SourceInstanceSpecCode))
-                ) && 
-                (
-                    this.TargetInstanceSpecCode == input.TargetInstanceSpecCode ||
-                    (this.TargetInstanceSpecCode != null &&
-                    this.TargetInstanceSpecCode.Equals(input.TargetInstanceSpecCode))
-                ) && 
-                (
-                    this.ErrorMessage == input.ErrorMessage ||
-                    (this.ErrorMessage != null &&
-                    this.ErrorMessage.Equals(input.ErrorMessage))
-                ) && 
-                (
-                    this.ReleasedAt == input.ReleasedAt ||
-                    (this.ReleasedAt != null &&
-                    this.ReleasedAt.Equals(input.ReleasedAt))
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                ) && 
-                (
-                    this.ResumeMode == input.ResumeMode ||
-                    (this.ResumeMode != null &&
-                    this.ResumeMode.Equals(input.ResumeMode))
-                ) && 
-                (
-                    this.SupportedFeatures == input.SupportedFeatures ||
-                    this.SupportedFeatures != null &&
-                    input.SupportedFeatures != null &&
-                    this.SupportedFeatures.SequenceEqual(input.SupportedFeatures)
-                );
+            return true;
         }
 
         /// <summary>
@@ -710,57 +608,32 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TaskId != null)
-                    hashCode = hashCode * 59 + this.TaskId.GetHashCode();
-                if (this.TaskName != null)
-                    hashCode = hashCode * 59 + this.TaskName.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.MigrationType != null)
-                    hashCode = hashCode * 59 + this.MigrationType.GetHashCode();
-                if (this.MigrationMethod != null)
-                    hashCode = hashCode * 59 + this.MigrationMethod.GetHashCode();
-                if (this.EcsTenantPrivateIp != null)
-                    hashCode = hashCode * 59 + this.EcsTenantPrivateIp.GetHashCode();
-                if (this.DataSource != null)
-                    hashCode = hashCode * 59 + this.DataSource.GetHashCode();
-                if (this.SourceInstanceName != null)
-                    hashCode = hashCode * 59 + this.SourceInstanceName.GetHashCode();
-                if (this.SourceInstanceId != null)
-                    hashCode = hashCode * 59 + this.SourceInstanceId.GetHashCode();
-                if (this.TargetInstanceAddrs != null)
-                    hashCode = hashCode * 59 + this.TargetInstanceAddrs.GetHashCode();
-                if (this.TargetInstanceName != null)
-                    hashCode = hashCode * 59 + this.TargetInstanceName.GetHashCode();
-                if (this.TargetInstanceId != null)
-                    hashCode = hashCode * 59 + this.TargetInstanceId.GetHashCode();
-                if (this.CreatedAt != null)
-                    hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.SourceInstanceStatus != null)
-                    hashCode = hashCode * 59 + this.SourceInstanceStatus.GetHashCode();
-                if (this.TargetInstanceStatus != null)
-                    hashCode = hashCode * 59 + this.TargetInstanceStatus.GetHashCode();
-                if (this.SourceInstanceSubnetId != null)
-                    hashCode = hashCode * 59 + this.SourceInstanceSubnetId.GetHashCode();
-                if (this.TargetInstanceSubnetId != null)
-                    hashCode = hashCode * 59 + this.TargetInstanceSubnetId.GetHashCode();
-                if (this.SourceInstanceSpecCode != null)
-                    hashCode = hashCode * 59 + this.SourceInstanceSpecCode.GetHashCode();
-                if (this.TargetInstanceSpecCode != null)
-                    hashCode = hashCode * 59 + this.TargetInstanceSpecCode.GetHashCode();
-                if (this.ErrorMessage != null)
-                    hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
-                if (this.ReleasedAt != null)
-                    hashCode = hashCode * 59 + this.ReleasedAt.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
-                if (this.ResumeMode != null)
-                    hashCode = hashCode * 59 + this.ResumeMode.GetHashCode();
-                if (this.SupportedFeatures != null)
-                    hashCode = hashCode * 59 + this.SupportedFeatures.GetHashCode();
+                var hashCode = 41;
+                if (this.TaskId != null) hashCode = hashCode * 59 + this.TaskId.GetHashCode();
+                if (this.TaskName != null) hashCode = hashCode * 59 + this.TaskName.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                hashCode = hashCode * 59 + this.MigrationType.GetHashCode();
+                hashCode = hashCode * 59 + this.MigrationMethod.GetHashCode();
+                if (this.EcsTenantPrivateIp != null) hashCode = hashCode * 59 + this.EcsTenantPrivateIp.GetHashCode();
+                if (this.DataSource != null) hashCode = hashCode * 59 + this.DataSource.GetHashCode();
+                if (this.SourceInstanceName != null) hashCode = hashCode * 59 + this.SourceInstanceName.GetHashCode();
+                if (this.SourceInstanceId != null) hashCode = hashCode * 59 + this.SourceInstanceId.GetHashCode();
+                if (this.TargetInstanceAddrs != null) hashCode = hashCode * 59 + this.TargetInstanceAddrs.GetHashCode();
+                if (this.TargetInstanceName != null) hashCode = hashCode * 59 + this.TargetInstanceName.GetHashCode();
+                if (this.TargetInstanceId != null) hashCode = hashCode * 59 + this.TargetInstanceId.GetHashCode();
+                if (this.CreatedAt != null) hashCode = hashCode * 59 + this.CreatedAt.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.SourceInstanceStatus != null) hashCode = hashCode * 59 + this.SourceInstanceStatus.GetHashCode();
+                if (this.TargetInstanceStatus != null) hashCode = hashCode * 59 + this.TargetInstanceStatus.GetHashCode();
+                if (this.SourceInstanceSubnetId != null) hashCode = hashCode * 59 + this.SourceInstanceSubnetId.GetHashCode();
+                if (this.TargetInstanceSubnetId != null) hashCode = hashCode * 59 + this.TargetInstanceSubnetId.GetHashCode();
+                if (this.SourceInstanceSpecCode != null) hashCode = hashCode * 59 + this.SourceInstanceSpecCode.GetHashCode();
+                if (this.TargetInstanceSpecCode != null) hashCode = hashCode * 59 + this.TargetInstanceSpecCode.GetHashCode();
+                if (this.ErrorMessage != null) hashCode = hashCode * 59 + this.ErrorMessage.GetHashCode();
+                if (this.ReleasedAt != null) hashCode = hashCode * 59 + this.ReleasedAt.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
+                if (this.ResumeMode != null) hashCode = hashCode * 59 + this.ResumeMode.GetHashCode();
+                if (this.SupportedFeatures != null) hashCode = hashCode * 59 + this.SupportedFeatures.GetHashCode();
                 return hashCode;
             }
         }

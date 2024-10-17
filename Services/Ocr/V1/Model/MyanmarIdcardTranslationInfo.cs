@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(MyanmarIdcardTranslationInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NameTranslation != input.NameTranslation || (this.NameTranslation != null && !this.NameTranslation.Equals(input.NameTranslation))) return false;
+            if (this.FatherNameTranslation != input.FatherNameTranslation || (this.FatherNameTranslation != null && !this.FatherNameTranslation.Equals(input.FatherNameTranslation))) return false;
+            if (this.NrcIdTranslation != input.NrcIdTranslation || (this.NrcIdTranslation != null && !this.NrcIdTranslation.Equals(input.NrcIdTranslation))) return false;
+            if (this.BirthTranslation != input.BirthTranslation || (this.BirthTranslation != null && !this.BirthTranslation.Equals(input.BirthTranslation))) return false;
 
-            return 
-                (
-                    this.NameTranslation == input.NameTranslation ||
-                    (this.NameTranslation != null &&
-                    this.NameTranslation.Equals(input.NameTranslation))
-                ) && 
-                (
-                    this.FatherNameTranslation == input.FatherNameTranslation ||
-                    (this.FatherNameTranslation != null &&
-                    this.FatherNameTranslation.Equals(input.FatherNameTranslation))
-                ) && 
-                (
-                    this.NrcIdTranslation == input.NrcIdTranslation ||
-                    (this.NrcIdTranslation != null &&
-                    this.NrcIdTranslation.Equals(input.NrcIdTranslation))
-                ) && 
-                (
-                    this.BirthTranslation == input.BirthTranslation ||
-                    (this.BirthTranslation != null &&
-                    this.BirthTranslation.Equals(input.BirthTranslation))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NameTranslation != null)
-                    hashCode = hashCode * 59 + this.NameTranslation.GetHashCode();
-                if (this.FatherNameTranslation != null)
-                    hashCode = hashCode * 59 + this.FatherNameTranslation.GetHashCode();
-                if (this.NrcIdTranslation != null)
-                    hashCode = hashCode * 59 + this.NrcIdTranslation.GetHashCode();
-                if (this.BirthTranslation != null)
-                    hashCode = hashCode * 59 + this.BirthTranslation.GetHashCode();
+                var hashCode = 41;
+                if (this.NameTranslation != null) hashCode = hashCode * 59 + this.NameTranslation.GetHashCode();
+                if (this.FatherNameTranslation != null) hashCode = hashCode * 59 + this.FatherNameTranslation.GetHashCode();
+                if (this.NrcIdTranslation != null) hashCode = hashCode * 59 + this.NrcIdTranslation.GetHashCode();
+                if (this.BirthTranslation != null) hashCode = hashCode * 59 + this.BirthTranslation.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(NodeCheckStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Phase != input.Phase || (this.Phase != null && !this.Phase.Equals(input.Phase))) return false;
+            if (this.NodeStageStatus != input.NodeStageStatus || (this.NodeStageStatus != null && input.NodeStageStatus != null && !this.NodeStageStatus.SequenceEqual(input.NodeStageStatus))) return false;
 
-            return 
-                (
-                    this.Phase == input.Phase ||
-                    (this.Phase != null &&
-                    this.Phase.Equals(input.Phase))
-                ) && 
-                (
-                    this.NodeStageStatus == input.NodeStageStatus ||
-                    this.NodeStageStatus != null &&
-                    input.NodeStageStatus != null &&
-                    this.NodeStageStatus.SequenceEqual(input.NodeStageStatus)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Phase != null)
-                    hashCode = hashCode * 59 + this.Phase.GetHashCode();
-                if (this.NodeStageStatus != null)
-                    hashCode = hashCode * 59 + this.NodeStageStatus.GetHashCode();
+                var hashCode = 41;
+                if (this.Phase != null) hashCode = hashCode * 59 + this.Phase.GetHashCode();
+                if (this.NodeStageStatus != null) hashCode = hashCode * 59 + this.NodeStageStatus.GetHashCode();
                 return hashCode;
             }
         }

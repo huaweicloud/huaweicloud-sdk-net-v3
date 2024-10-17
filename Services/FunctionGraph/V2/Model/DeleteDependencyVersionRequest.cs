@@ -58,20 +58,11 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         /// </summary>
         public bool Equals(DeleteDependencyVersionRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DependId != input.DependId || (this.DependId != null && !this.DependId.Equals(input.DependId))) return false;
+            if (this.Version != input.Version || (this.Version != null && !this.Version.Equals(input.Version))) return false;
 
-            return 
-                (
-                    this.DependId == input.DependId ||
-                    (this.DependId != null &&
-                    this.DependId.Equals(input.DependId))
-                ) && 
-                (
-                    this.Version == input.Version ||
-                    (this.Version != null &&
-                    this.Version.Equals(input.Version))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +72,9 @@ namespace HuaweiCloud.SDK.FunctionGraph.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DependId != null)
-                    hashCode = hashCode * 59 + this.DependId.GetHashCode();
-                if (this.Version != null)
-                    hashCode = hashCode * 59 + this.Version.GetHashCode();
+                var hashCode = 41;
+                if (this.DependId != null) hashCode = hashCode * 59 + this.DependId.GetHashCode();
+                if (this.Version != null) hashCode = hashCode * 59 + this.Version.GetHashCode();
                 return hashCode;
             }
         }

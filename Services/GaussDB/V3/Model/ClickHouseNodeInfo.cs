@@ -266,170 +266,41 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ClickHouseNodeInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.Period != input.Period || (this.Period != null && !this.Period.Equals(input.Period))) return false;
+            if (this.Volume != input.Volume || (this.Volume != null && !this.Volume.Equals(input.Volume))) return false;
+            if (this.Cpu != input.Cpu || (this.Cpu != null && !this.Cpu.Equals(input.Cpu))) return false;
+            if (this.Mem != input.Mem || (this.Mem != null && !this.Mem.Equals(input.Mem))) return false;
+            if (this.Datastore != input.Datastore || (this.Datastore != null && !this.Datastore.Equals(input.Datastore))) return false;
+            if (this.Priority != input.Priority || (this.Priority != null && !this.Priority.Equals(input.Priority))) return false;
+            if (this.FrozenFlag != input.FrozenFlag || (this.FrozenFlag != null && !this.FrozenFlag.Equals(input.FrozenFlag))) return false;
+            if (this.DbPort != input.DbPort || (this.DbPort != null && !this.DbPort.Equals(input.DbPort))) return false;
+            if (this.PayModel != input.PayModel || (this.PayModel != null && !this.PayModel.Equals(input.PayModel))) return false;
+            if (this.OrderId != input.OrderId || (this.OrderId != null && !this.OrderId.Equals(input.OrderId))) return false;
+            if (this.TrafficIp != input.TrafficIp || (this.TrafficIp != null && !this.TrafficIp.Equals(input.TrafficIp))) return false;
+            if (this.TrafficIpv6 != input.TrafficIpv6 || (this.TrafficIpv6 != null && !this.TrafficIpv6.Equals(input.TrafficIpv6))) return false;
+            if (this.TrafficVip != input.TrafficVip || (this.TrafficVip != null && !this.TrafficVip.Equals(input.TrafficVip))) return false;
+            if (this.TrafficVipv6 != input.TrafficVipv6 || (this.TrafficVipv6 != null && !this.TrafficVipv6.Equals(input.TrafficVipv6))) return false;
+            if (this.AzCode != input.AzCode || (this.AzCode != null && !this.AzCode.Equals(input.AzCode))) return false;
+            if (this.AzDescription != input.AzDescription || (this.AzDescription != null && !this.AzDescription.Equals(input.AzDescription))) return false;
+            if (this.AzType != input.AzType || (this.AzType != null && !this.AzType.Equals(input.AzType))) return false;
+            if (this.Region != input.Region || (this.Region != null && !this.Region.Equals(input.Region))) return false;
+            if (this.CreateAt != input.CreateAt || (this.CreateAt != null && !this.CreateAt.Equals(input.CreateAt))) return false;
+            if (this.UpdateAt != input.UpdateAt || (this.UpdateAt != null && !this.UpdateAt.Equals(input.UpdateAt))) return false;
+            if (this.FlavorId != input.FlavorId || (this.FlavorId != null && !this.FlavorId.Equals(input.FlavorId))) return false;
+            if (this.FlavorRef != input.FlavorRef || (this.FlavorRef != null && !this.FlavorRef.Equals(input.FlavorRef))) return false;
+            if (this.IassFlavorRef != input.IassFlavorRef || (this.IassFlavorRef != null && !this.IassFlavorRef.Equals(input.IassFlavorRef))) return false;
+            if (this.MaxConnections != input.MaxConnections || (this.MaxConnections != null && !this.MaxConnections.Equals(input.MaxConnections))) return false;
+            if (this.VpcId != input.VpcId || (this.VpcId != null && !this.VpcId.Equals(input.VpcId))) return false;
+            if (this.SubnetId != input.SubnetId || (this.SubnetId != null && !this.SubnetId.Equals(input.SubnetId))) return false;
+            if (this.NeedRestart != input.NeedRestart || (this.NeedRestart != null && !this.NeedRestart.Equals(input.NeedRestart))) return false;
+            if (this.SgId != input.SgId || (this.SgId != null && !this.SgId.Equals(input.SgId))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.Period == input.Period ||
-                    (this.Period != null &&
-                    this.Period.Equals(input.Period))
-                ) && 
-                (
-                    this.Volume == input.Volume ||
-                    (this.Volume != null &&
-                    this.Volume.Equals(input.Volume))
-                ) && 
-                (
-                    this.Cpu == input.Cpu ||
-                    (this.Cpu != null &&
-                    this.Cpu.Equals(input.Cpu))
-                ) && 
-                (
-                    this.Mem == input.Mem ||
-                    (this.Mem != null &&
-                    this.Mem.Equals(input.Mem))
-                ) && 
-                (
-                    this.Datastore == input.Datastore ||
-                    (this.Datastore != null &&
-                    this.Datastore.Equals(input.Datastore))
-                ) && 
-                (
-                    this.Priority == input.Priority ||
-                    (this.Priority != null &&
-                    this.Priority.Equals(input.Priority))
-                ) && 
-                (
-                    this.FrozenFlag == input.FrozenFlag ||
-                    (this.FrozenFlag != null &&
-                    this.FrozenFlag.Equals(input.FrozenFlag))
-                ) && 
-                (
-                    this.DbPort == input.DbPort ||
-                    (this.DbPort != null &&
-                    this.DbPort.Equals(input.DbPort))
-                ) && 
-                (
-                    this.PayModel == input.PayModel ||
-                    (this.PayModel != null &&
-                    this.PayModel.Equals(input.PayModel))
-                ) && 
-                (
-                    this.OrderId == input.OrderId ||
-                    (this.OrderId != null &&
-                    this.OrderId.Equals(input.OrderId))
-                ) && 
-                (
-                    this.TrafficIp == input.TrafficIp ||
-                    (this.TrafficIp != null &&
-                    this.TrafficIp.Equals(input.TrafficIp))
-                ) && 
-                (
-                    this.TrafficIpv6 == input.TrafficIpv6 ||
-                    (this.TrafficIpv6 != null &&
-                    this.TrafficIpv6.Equals(input.TrafficIpv6))
-                ) && 
-                (
-                    this.TrafficVip == input.TrafficVip ||
-                    (this.TrafficVip != null &&
-                    this.TrafficVip.Equals(input.TrafficVip))
-                ) && 
-                (
-                    this.TrafficVipv6 == input.TrafficVipv6 ||
-                    (this.TrafficVipv6 != null &&
-                    this.TrafficVipv6.Equals(input.TrafficVipv6))
-                ) && 
-                (
-                    this.AzCode == input.AzCode ||
-                    (this.AzCode != null &&
-                    this.AzCode.Equals(input.AzCode))
-                ) && 
-                (
-                    this.AzDescription == input.AzDescription ||
-                    (this.AzDescription != null &&
-                    this.AzDescription.Equals(input.AzDescription))
-                ) && 
-                (
-                    this.AzType == input.AzType ||
-                    (this.AzType != null &&
-                    this.AzType.Equals(input.AzType))
-                ) && 
-                (
-                    this.Region == input.Region ||
-                    (this.Region != null &&
-                    this.Region.Equals(input.Region))
-                ) && 
-                (
-                    this.CreateAt == input.CreateAt ||
-                    (this.CreateAt != null &&
-                    this.CreateAt.Equals(input.CreateAt))
-                ) && 
-                (
-                    this.UpdateAt == input.UpdateAt ||
-                    (this.UpdateAt != null &&
-                    this.UpdateAt.Equals(input.UpdateAt))
-                ) && 
-                (
-                    this.FlavorId == input.FlavorId ||
-                    (this.FlavorId != null &&
-                    this.FlavorId.Equals(input.FlavorId))
-                ) && 
-                (
-                    this.FlavorRef == input.FlavorRef ||
-                    (this.FlavorRef != null &&
-                    this.FlavorRef.Equals(input.FlavorRef))
-                ) && 
-                (
-                    this.IassFlavorRef == input.IassFlavorRef ||
-                    (this.IassFlavorRef != null &&
-                    this.IassFlavorRef.Equals(input.IassFlavorRef))
-                ) && 
-                (
-                    this.MaxConnections == input.MaxConnections ||
-                    (this.MaxConnections != null &&
-                    this.MaxConnections.Equals(input.MaxConnections))
-                ) && 
-                (
-                    this.VpcId == input.VpcId ||
-                    (this.VpcId != null &&
-                    this.VpcId.Equals(input.VpcId))
-                ) && 
-                (
-                    this.SubnetId == input.SubnetId ||
-                    (this.SubnetId != null &&
-                    this.SubnetId.Equals(input.SubnetId))
-                ) && 
-                (
-                    this.NeedRestart == input.NeedRestart ||
-                    (this.NeedRestart != null &&
-                    this.NeedRestart.Equals(input.NeedRestart))
-                ) && 
-                (
-                    this.SgId == input.SgId ||
-                    (this.SgId != null &&
-                    this.SgId.Equals(input.SgId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -439,71 +310,39 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.Period != null)
-                    hashCode = hashCode * 59 + this.Period.GetHashCode();
-                if (this.Volume != null)
-                    hashCode = hashCode * 59 + this.Volume.GetHashCode();
-                if (this.Cpu != null)
-                    hashCode = hashCode * 59 + this.Cpu.GetHashCode();
-                if (this.Mem != null)
-                    hashCode = hashCode * 59 + this.Mem.GetHashCode();
-                if (this.Datastore != null)
-                    hashCode = hashCode * 59 + this.Datastore.GetHashCode();
-                if (this.Priority != null)
-                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
-                if (this.FrozenFlag != null)
-                    hashCode = hashCode * 59 + this.FrozenFlag.GetHashCode();
-                if (this.DbPort != null)
-                    hashCode = hashCode * 59 + this.DbPort.GetHashCode();
-                if (this.PayModel != null)
-                    hashCode = hashCode * 59 + this.PayModel.GetHashCode();
-                if (this.OrderId != null)
-                    hashCode = hashCode * 59 + this.OrderId.GetHashCode();
-                if (this.TrafficIp != null)
-                    hashCode = hashCode * 59 + this.TrafficIp.GetHashCode();
-                if (this.TrafficIpv6 != null)
-                    hashCode = hashCode * 59 + this.TrafficIpv6.GetHashCode();
-                if (this.TrafficVip != null)
-                    hashCode = hashCode * 59 + this.TrafficVip.GetHashCode();
-                if (this.TrafficVipv6 != null)
-                    hashCode = hashCode * 59 + this.TrafficVipv6.GetHashCode();
-                if (this.AzCode != null)
-                    hashCode = hashCode * 59 + this.AzCode.GetHashCode();
-                if (this.AzDescription != null)
-                    hashCode = hashCode * 59 + this.AzDescription.GetHashCode();
-                if (this.AzType != null)
-                    hashCode = hashCode * 59 + this.AzType.GetHashCode();
-                if (this.Region != null)
-                    hashCode = hashCode * 59 + this.Region.GetHashCode();
-                if (this.CreateAt != null)
-                    hashCode = hashCode * 59 + this.CreateAt.GetHashCode();
-                if (this.UpdateAt != null)
-                    hashCode = hashCode * 59 + this.UpdateAt.GetHashCode();
-                if (this.FlavorId != null)
-                    hashCode = hashCode * 59 + this.FlavorId.GetHashCode();
-                if (this.FlavorRef != null)
-                    hashCode = hashCode * 59 + this.FlavorRef.GetHashCode();
-                if (this.IassFlavorRef != null)
-                    hashCode = hashCode * 59 + this.IassFlavorRef.GetHashCode();
-                if (this.MaxConnections != null)
-                    hashCode = hashCode * 59 + this.MaxConnections.GetHashCode();
-                if (this.VpcId != null)
-                    hashCode = hashCode * 59 + this.VpcId.GetHashCode();
-                if (this.SubnetId != null)
-                    hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
-                if (this.NeedRestart != null)
-                    hashCode = hashCode * 59 + this.NeedRestart.GetHashCode();
-                if (this.SgId != null)
-                    hashCode = hashCode * 59 + this.SgId.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.Period != null) hashCode = hashCode * 59 + this.Period.GetHashCode();
+                if (this.Volume != null) hashCode = hashCode * 59 + this.Volume.GetHashCode();
+                if (this.Cpu != null) hashCode = hashCode * 59 + this.Cpu.GetHashCode();
+                if (this.Mem != null) hashCode = hashCode * 59 + this.Mem.GetHashCode();
+                if (this.Datastore != null) hashCode = hashCode * 59 + this.Datastore.GetHashCode();
+                if (this.Priority != null) hashCode = hashCode * 59 + this.Priority.GetHashCode();
+                if (this.FrozenFlag != null) hashCode = hashCode * 59 + this.FrozenFlag.GetHashCode();
+                if (this.DbPort != null) hashCode = hashCode * 59 + this.DbPort.GetHashCode();
+                if (this.PayModel != null) hashCode = hashCode * 59 + this.PayModel.GetHashCode();
+                if (this.OrderId != null) hashCode = hashCode * 59 + this.OrderId.GetHashCode();
+                if (this.TrafficIp != null) hashCode = hashCode * 59 + this.TrafficIp.GetHashCode();
+                if (this.TrafficIpv6 != null) hashCode = hashCode * 59 + this.TrafficIpv6.GetHashCode();
+                if (this.TrafficVip != null) hashCode = hashCode * 59 + this.TrafficVip.GetHashCode();
+                if (this.TrafficVipv6 != null) hashCode = hashCode * 59 + this.TrafficVipv6.GetHashCode();
+                if (this.AzCode != null) hashCode = hashCode * 59 + this.AzCode.GetHashCode();
+                if (this.AzDescription != null) hashCode = hashCode * 59 + this.AzDescription.GetHashCode();
+                if (this.AzType != null) hashCode = hashCode * 59 + this.AzType.GetHashCode();
+                if (this.Region != null) hashCode = hashCode * 59 + this.Region.GetHashCode();
+                if (this.CreateAt != null) hashCode = hashCode * 59 + this.CreateAt.GetHashCode();
+                if (this.UpdateAt != null) hashCode = hashCode * 59 + this.UpdateAt.GetHashCode();
+                if (this.FlavorId != null) hashCode = hashCode * 59 + this.FlavorId.GetHashCode();
+                if (this.FlavorRef != null) hashCode = hashCode * 59 + this.FlavorRef.GetHashCode();
+                if (this.IassFlavorRef != null) hashCode = hashCode * 59 + this.IassFlavorRef.GetHashCode();
+                if (this.MaxConnections != null) hashCode = hashCode * 59 + this.MaxConnections.GetHashCode();
+                if (this.VpcId != null) hashCode = hashCode * 59 + this.VpcId.GetHashCode();
+                if (this.SubnetId != null) hashCode = hashCode * 59 + this.SubnetId.GetHashCode();
+                if (this.NeedRestart != null) hashCode = hashCode * 59 + this.NeedRestart.GetHashCode();
+                if (this.SgId != null) hashCode = hashCode * 59 + this.SgId.GetHashCode();
                 return hashCode;
             }
         }

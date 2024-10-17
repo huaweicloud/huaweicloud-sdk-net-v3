@@ -242,50 +242,17 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(NodeStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Phase != input.Phase) return false;
+            if (this.LastProbeTime != input.LastProbeTime || (this.LastProbeTime != null && !this.LastProbeTime.Equals(input.LastProbeTime))) return false;
+            if (this.JobID != input.JobID || (this.JobID != null && !this.JobID.Equals(input.JobID))) return false;
+            if (this.ServerId != input.ServerId || (this.ServerId != null && !this.ServerId.Equals(input.ServerId))) return false;
+            if (this.PrivateIP != input.PrivateIP || (this.PrivateIP != null && !this.PrivateIP.Equals(input.PrivateIP))) return false;
+            if (this.PrivateIPv6IP != input.PrivateIPv6IP || (this.PrivateIPv6IP != null && !this.PrivateIPv6IP.Equals(input.PrivateIPv6IP))) return false;
+            if (this.PublicIP != input.PublicIP || (this.PublicIP != null && !this.PublicIP.Equals(input.PublicIP))) return false;
+            if (this.DeleteStatus != input.DeleteStatus || (this.DeleteStatus != null && !this.DeleteStatus.Equals(input.DeleteStatus))) return false;
 
-            return 
-                (
-                    this.Phase == input.Phase ||
-                    (this.Phase != null &&
-                    this.Phase.Equals(input.Phase))
-                ) && 
-                (
-                    this.LastProbeTime == input.LastProbeTime ||
-                    (this.LastProbeTime != null &&
-                    this.LastProbeTime.Equals(input.LastProbeTime))
-                ) && 
-                (
-                    this.JobID == input.JobID ||
-                    (this.JobID != null &&
-                    this.JobID.Equals(input.JobID))
-                ) && 
-                (
-                    this.ServerId == input.ServerId ||
-                    (this.ServerId != null &&
-                    this.ServerId.Equals(input.ServerId))
-                ) && 
-                (
-                    this.PrivateIP == input.PrivateIP ||
-                    (this.PrivateIP != null &&
-                    this.PrivateIP.Equals(input.PrivateIP))
-                ) && 
-                (
-                    this.PrivateIPv6IP == input.PrivateIPv6IP ||
-                    (this.PrivateIPv6IP != null &&
-                    this.PrivateIPv6IP.Equals(input.PrivateIPv6IP))
-                ) && 
-                (
-                    this.PublicIP == input.PublicIP ||
-                    (this.PublicIP != null &&
-                    this.PublicIP.Equals(input.PublicIP))
-                ) && 
-                (
-                    this.DeleteStatus == input.DeleteStatus ||
-                    (this.DeleteStatus != null &&
-                    this.DeleteStatus.Equals(input.DeleteStatus))
-                );
+            return true;
         }
 
         /// <summary>
@@ -295,23 +262,15 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Phase != null)
-                    hashCode = hashCode * 59 + this.Phase.GetHashCode();
-                if (this.LastProbeTime != null)
-                    hashCode = hashCode * 59 + this.LastProbeTime.GetHashCode();
-                if (this.JobID != null)
-                    hashCode = hashCode * 59 + this.JobID.GetHashCode();
-                if (this.ServerId != null)
-                    hashCode = hashCode * 59 + this.ServerId.GetHashCode();
-                if (this.PrivateIP != null)
-                    hashCode = hashCode * 59 + this.PrivateIP.GetHashCode();
-                if (this.PrivateIPv6IP != null)
-                    hashCode = hashCode * 59 + this.PrivateIPv6IP.GetHashCode();
-                if (this.PublicIP != null)
-                    hashCode = hashCode * 59 + this.PublicIP.GetHashCode();
-                if (this.DeleteStatus != null)
-                    hashCode = hashCode * 59 + this.DeleteStatus.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Phase.GetHashCode();
+                if (this.LastProbeTime != null) hashCode = hashCode * 59 + this.LastProbeTime.GetHashCode();
+                if (this.JobID != null) hashCode = hashCode * 59 + this.JobID.GetHashCode();
+                if (this.ServerId != null) hashCode = hashCode * 59 + this.ServerId.GetHashCode();
+                if (this.PrivateIP != null) hashCode = hashCode * 59 + this.PrivateIP.GetHashCode();
+                if (this.PrivateIPv6IP != null) hashCode = hashCode * 59 + this.PrivateIPv6IP.GetHashCode();
+                if (this.PublicIP != null) hashCode = hashCode * 59 + this.PublicIP.GetHashCode();
+                if (this.DeleteStatus != null) hashCode = hashCode * 59 + this.DeleteStatus.GetHashCode();
                 return hashCode;
             }
         }

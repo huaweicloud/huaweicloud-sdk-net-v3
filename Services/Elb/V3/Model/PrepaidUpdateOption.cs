@@ -298,30 +298,13 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         /// </summary>
         public bool Equals(PrepaidUpdateOption input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AutoPay != input.AutoPay || (this.AutoPay != null && !this.AutoPay.Equals(input.AutoPay))) return false;
+            if (this.ChangeMode != input.ChangeMode) return false;
+            if (this.PeriodNum != input.PeriodNum || (this.PeriodNum != null && !this.PeriodNum.Equals(input.PeriodNum))) return false;
+            if (this.PeriodType != input.PeriodType) return false;
 
-            return 
-                (
-                    this.AutoPay == input.AutoPay ||
-                    (this.AutoPay != null &&
-                    this.AutoPay.Equals(input.AutoPay))
-                ) && 
-                (
-                    this.ChangeMode == input.ChangeMode ||
-                    (this.ChangeMode != null &&
-                    this.ChangeMode.Equals(input.ChangeMode))
-                ) && 
-                (
-                    this.PeriodNum == input.PeriodNum ||
-                    (this.PeriodNum != null &&
-                    this.PeriodNum.Equals(input.PeriodNum))
-                ) && 
-                (
-                    this.PeriodType == input.PeriodType ||
-                    (this.PeriodType != null &&
-                    this.PeriodType.Equals(input.PeriodType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -331,15 +314,11 @@ namespace HuaweiCloud.SDK.Elb.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AutoPay != null)
-                    hashCode = hashCode * 59 + this.AutoPay.GetHashCode();
-                if (this.ChangeMode != null)
-                    hashCode = hashCode * 59 + this.ChangeMode.GetHashCode();
-                if (this.PeriodNum != null)
-                    hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
-                if (this.PeriodType != null)
-                    hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
+                var hashCode = 41;
+                if (this.AutoPay != null) hashCode = hashCode * 59 + this.AutoPay.GetHashCode();
+                hashCode = hashCode * 59 + this.ChangeMode.GetHashCode();
+                if (this.PeriodNum != null) hashCode = hashCode * 59 + this.PeriodNum.GetHashCode();
+                hashCode = hashCode * 59 + this.PeriodType.GetHashCode();
                 return hashCode;
             }
         }

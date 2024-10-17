@@ -119,65 +119,20 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         /// </summary>
         public bool Equals(ListInstancesSessionRespondBodySessions input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Addr != input.Addr || (this.Addr != null && !this.Addr.Equals(input.Addr))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Cmd != input.Cmd || (this.Cmd != null && !this.Cmd.Equals(input.Cmd))) return false;
+            if (this.Age != input.Age || (this.Age != null && !this.Age.Equals(input.Age))) return false;
+            if (this.Idle != input.Idle || (this.Idle != null && !this.Idle.Equals(input.Idle))) return false;
+            if (this.Db != input.Db || (this.Db != null && !this.Db.Equals(input.Db))) return false;
+            if (this.Fd != input.Fd || (this.Fd != null && !this.Fd.Equals(input.Fd))) return false;
+            if (this.Sub != input.Sub || (this.Sub != null && !this.Sub.Equals(input.Sub))) return false;
+            if (this.Psub != input.Psub || (this.Psub != null && !this.Psub.Equals(input.Psub))) return false;
+            if (this.Multi != input.Multi || (this.Multi != null && !this.Multi.Equals(input.Multi))) return false;
 
-            return 
-                (
-                    this.Addr == input.Addr ||
-                    (this.Addr != null &&
-                    this.Addr.Equals(input.Addr))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Cmd == input.Cmd ||
-                    (this.Cmd != null &&
-                    this.Cmd.Equals(input.Cmd))
-                ) && 
-                (
-                    this.Age == input.Age ||
-                    (this.Age != null &&
-                    this.Age.Equals(input.Age))
-                ) && 
-                (
-                    this.Idle == input.Idle ||
-                    (this.Idle != null &&
-                    this.Idle.Equals(input.Idle))
-                ) && 
-                (
-                    this.Db == input.Db ||
-                    (this.Db != null &&
-                    this.Db.Equals(input.Db))
-                ) && 
-                (
-                    this.Fd == input.Fd ||
-                    (this.Fd != null &&
-                    this.Fd.Equals(input.Fd))
-                ) && 
-                (
-                    this.Sub == input.Sub ||
-                    (this.Sub != null &&
-                    this.Sub.Equals(input.Sub))
-                ) && 
-                (
-                    this.Psub == input.Psub ||
-                    (this.Psub != null &&
-                    this.Psub.Equals(input.Psub))
-                ) && 
-                (
-                    this.Multi == input.Multi ||
-                    (this.Multi != null &&
-                    this.Multi.Equals(input.Multi))
-                );
+            return true;
         }
 
         /// <summary>
@@ -187,29 +142,18 @@ namespace HuaweiCloud.SDK.GaussDBforNoSQL.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Addr != null)
-                    hashCode = hashCode * 59 + this.Addr.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Cmd != null)
-                    hashCode = hashCode * 59 + this.Cmd.GetHashCode();
-                if (this.Age != null)
-                    hashCode = hashCode * 59 + this.Age.GetHashCode();
-                if (this.Idle != null)
-                    hashCode = hashCode * 59 + this.Idle.GetHashCode();
-                if (this.Db != null)
-                    hashCode = hashCode * 59 + this.Db.GetHashCode();
-                if (this.Fd != null)
-                    hashCode = hashCode * 59 + this.Fd.GetHashCode();
-                if (this.Sub != null)
-                    hashCode = hashCode * 59 + this.Sub.GetHashCode();
-                if (this.Psub != null)
-                    hashCode = hashCode * 59 + this.Psub.GetHashCode();
-                if (this.Multi != null)
-                    hashCode = hashCode * 59 + this.Multi.GetHashCode();
+                var hashCode = 41;
+                if (this.Addr != null) hashCode = hashCode * 59 + this.Addr.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Cmd != null) hashCode = hashCode * 59 + this.Cmd.GetHashCode();
+                if (this.Age != null) hashCode = hashCode * 59 + this.Age.GetHashCode();
+                if (this.Idle != null) hashCode = hashCode * 59 + this.Idle.GetHashCode();
+                if (this.Db != null) hashCode = hashCode * 59 + this.Db.GetHashCode();
+                if (this.Fd != null) hashCode = hashCode * 59 + this.Fd.GetHashCode();
+                if (this.Sub != null) hashCode = hashCode * 59 + this.Sub.GetHashCode();
+                if (this.Psub != null) hashCode = hashCode * 59 + this.Psub.GetHashCode();
+                if (this.Multi != null) hashCode = hashCode * 59 + this.Multi.GetHashCode();
                 return hashCode;
             }
         }

@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public bool Equals(BatchDeleteSubscriptionsFilterPolicesRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SubscriptionUrns != input.SubscriptionUrns || (this.SubscriptionUrns != null && input.SubscriptionUrns != null && !this.SubscriptionUrns.SequenceEqual(input.SubscriptionUrns))) return false;
 
-            return 
-                (
-                    this.SubscriptionUrns == input.SubscriptionUrns ||
-                    this.SubscriptionUrns != null &&
-                    input.SubscriptionUrns != null &&
-                    this.SubscriptionUrns.SequenceEqual(input.SubscriptionUrns)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SubscriptionUrns != null)
-                    hashCode = hashCode * 59 + this.SubscriptionUrns.GetHashCode();
+                var hashCode = 41;
+                if (this.SubscriptionUrns != null) hashCode = hashCode * 59 + this.SubscriptionUrns.GetHashCode();
                 return hashCode;
             }
         }

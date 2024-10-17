@@ -224,141 +224,35 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(FlightItineraryResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SerialNumber != input.SerialNumber || (this.SerialNumber != null && !this.SerialNumber.Equals(input.SerialNumber))) return false;
+            if (this.PassengerName != input.PassengerName || (this.PassengerName != null && !this.PassengerName.Equals(input.PassengerName))) return false;
+            if (this.IdNumber != input.IdNumber || (this.IdNumber != null && !this.IdNumber.Equals(input.IdNumber))) return false;
+            if (this.EndorsementsRestrictions != input.EndorsementsRestrictions || (this.EndorsementsRestrictions != null && !this.EndorsementsRestrictions.Equals(input.EndorsementsRestrictions))) return false;
+            if (this.OrderNumber != input.OrderNumber || (this.OrderNumber != null && !this.OrderNumber.Equals(input.OrderNumber))) return false;
+            if (this.Fare != input.Fare || (this.Fare != null && !this.Fare.Equals(input.Fare))) return false;
+            if (this.CaacDevelopmentFund != input.CaacDevelopmentFund || (this.CaacDevelopmentFund != null && !this.CaacDevelopmentFund.Equals(input.CaacDevelopmentFund))) return false;
+            if (this.FuelSurcharge != input.FuelSurcharge || (this.FuelSurcharge != null && !this.FuelSurcharge.Equals(input.FuelSurcharge))) return false;
+            if (this.OtherTaxes != input.OtherTaxes || (this.OtherTaxes != null && !this.OtherTaxes.Equals(input.OtherTaxes))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.ETicketNumber != input.ETicketNumber || (this.ETicketNumber != null && !this.ETicketNumber.Equals(input.ETicketNumber))) return false;
+            if (this.CheckCode != input.CheckCode || (this.CheckCode != null && !this.CheckCode.Equals(input.CheckCode))) return false;
+            if (this.ReferenceInformation != input.ReferenceInformation || (this.ReferenceInformation != null && !this.ReferenceInformation.Equals(input.ReferenceInformation))) return false;
+            if (this.Insurance != input.Insurance || (this.Insurance != null && !this.Insurance.Equals(input.Insurance))) return false;
+            if (this.AgentCode != input.AgentCode || (this.AgentCode != null && !this.AgentCode.Equals(input.AgentCode))) return false;
+            if (this.IssueOrganization != input.IssueOrganization || (this.IssueOrganization != null && !this.IssueOrganization.Equals(input.IssueOrganization))) return false;
+            if (this.IssueDate != input.IssueDate || (this.IssueDate != null && !this.IssueDate.Equals(input.IssueDate))) return false;
+            if (this.Tax != input.Tax || (this.Tax != null && !this.Tax.Equals(input.Tax))) return false;
+            if (this.TaxRate != input.TaxRate || (this.TaxRate != null && !this.TaxRate.Equals(input.TaxRate))) return false;
+            if (this.BuyerName != input.BuyerName || (this.BuyerName != null && !this.BuyerName.Equals(input.BuyerName))) return false;
+            if (this.BuyerId != input.BuyerId || (this.BuyerId != null && !this.BuyerId.Equals(input.BuyerId))) return false;
+            if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;
+            if (this.InternationalFlag != input.InternationalFlag || (this.InternationalFlag != null && !this.InternationalFlag.Equals(input.InternationalFlag))) return false;
+            if (this.IssueStatus != input.IssueStatus || (this.IssueStatus != null && !this.IssueStatus.Equals(input.IssueStatus))) return false;
+            if (this.ItineraryList != input.ItineraryList || (this.ItineraryList != null && input.ItineraryList != null && !this.ItineraryList.SequenceEqual(input.ItineraryList))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
 
-            return 
-                (
-                    this.SerialNumber == input.SerialNumber ||
-                    (this.SerialNumber != null &&
-                    this.SerialNumber.Equals(input.SerialNumber))
-                ) && 
-                (
-                    this.PassengerName == input.PassengerName ||
-                    (this.PassengerName != null &&
-                    this.PassengerName.Equals(input.PassengerName))
-                ) && 
-                (
-                    this.IdNumber == input.IdNumber ||
-                    (this.IdNumber != null &&
-                    this.IdNumber.Equals(input.IdNumber))
-                ) && 
-                (
-                    this.EndorsementsRestrictions == input.EndorsementsRestrictions ||
-                    (this.EndorsementsRestrictions != null &&
-                    this.EndorsementsRestrictions.Equals(input.EndorsementsRestrictions))
-                ) && 
-                (
-                    this.OrderNumber == input.OrderNumber ||
-                    (this.OrderNumber != null &&
-                    this.OrderNumber.Equals(input.OrderNumber))
-                ) && 
-                (
-                    this.Fare == input.Fare ||
-                    (this.Fare != null &&
-                    this.Fare.Equals(input.Fare))
-                ) && 
-                (
-                    this.CaacDevelopmentFund == input.CaacDevelopmentFund ||
-                    (this.CaacDevelopmentFund != null &&
-                    this.CaacDevelopmentFund.Equals(input.CaacDevelopmentFund))
-                ) && 
-                (
-                    this.FuelSurcharge == input.FuelSurcharge ||
-                    (this.FuelSurcharge != null &&
-                    this.FuelSurcharge.Equals(input.FuelSurcharge))
-                ) && 
-                (
-                    this.OtherTaxes == input.OtherTaxes ||
-                    (this.OtherTaxes != null &&
-                    this.OtherTaxes.Equals(input.OtherTaxes))
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.ETicketNumber == input.ETicketNumber ||
-                    (this.ETicketNumber != null &&
-                    this.ETicketNumber.Equals(input.ETicketNumber))
-                ) && 
-                (
-                    this.CheckCode == input.CheckCode ||
-                    (this.CheckCode != null &&
-                    this.CheckCode.Equals(input.CheckCode))
-                ) && 
-                (
-                    this.ReferenceInformation == input.ReferenceInformation ||
-                    (this.ReferenceInformation != null &&
-                    this.ReferenceInformation.Equals(input.ReferenceInformation))
-                ) && 
-                (
-                    this.Insurance == input.Insurance ||
-                    (this.Insurance != null &&
-                    this.Insurance.Equals(input.Insurance))
-                ) && 
-                (
-                    this.AgentCode == input.AgentCode ||
-                    (this.AgentCode != null &&
-                    this.AgentCode.Equals(input.AgentCode))
-                ) && 
-                (
-                    this.IssueOrganization == input.IssueOrganization ||
-                    (this.IssueOrganization != null &&
-                    this.IssueOrganization.Equals(input.IssueOrganization))
-                ) && 
-                (
-                    this.IssueDate == input.IssueDate ||
-                    (this.IssueDate != null &&
-                    this.IssueDate.Equals(input.IssueDate))
-                ) && 
-                (
-                    this.Tax == input.Tax ||
-                    (this.Tax != null &&
-                    this.Tax.Equals(input.Tax))
-                ) && 
-                (
-                    this.TaxRate == input.TaxRate ||
-                    (this.TaxRate != null &&
-                    this.TaxRate.Equals(input.TaxRate))
-                ) && 
-                (
-                    this.BuyerName == input.BuyerName ||
-                    (this.BuyerName != null &&
-                    this.BuyerName.Equals(input.BuyerName))
-                ) && 
-                (
-                    this.BuyerId == input.BuyerId ||
-                    (this.BuyerId != null &&
-                    this.BuyerId.Equals(input.BuyerId))
-                ) && 
-                (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                ) && 
-                (
-                    this.InternationalFlag == input.InternationalFlag ||
-                    (this.InternationalFlag != null &&
-                    this.InternationalFlag.Equals(input.InternationalFlag))
-                ) && 
-                (
-                    this.IssueStatus == input.IssueStatus ||
-                    (this.IssueStatus != null &&
-                    this.IssueStatus.Equals(input.IssueStatus))
-                ) && 
-                (
-                    this.ItineraryList == input.ItineraryList ||
-                    this.ItineraryList != null &&
-                    input.ItineraryList != null &&
-                    this.ItineraryList.SequenceEqual(input.ItineraryList)
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                );
+            return true;
         }
 
         /// <summary>
@@ -368,59 +262,33 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SerialNumber != null)
-                    hashCode = hashCode * 59 + this.SerialNumber.GetHashCode();
-                if (this.PassengerName != null)
-                    hashCode = hashCode * 59 + this.PassengerName.GetHashCode();
-                if (this.IdNumber != null)
-                    hashCode = hashCode * 59 + this.IdNumber.GetHashCode();
-                if (this.EndorsementsRestrictions != null)
-                    hashCode = hashCode * 59 + this.EndorsementsRestrictions.GetHashCode();
-                if (this.OrderNumber != null)
-                    hashCode = hashCode * 59 + this.OrderNumber.GetHashCode();
-                if (this.Fare != null)
-                    hashCode = hashCode * 59 + this.Fare.GetHashCode();
-                if (this.CaacDevelopmentFund != null)
-                    hashCode = hashCode * 59 + this.CaacDevelopmentFund.GetHashCode();
-                if (this.FuelSurcharge != null)
-                    hashCode = hashCode * 59 + this.FuelSurcharge.GetHashCode();
-                if (this.OtherTaxes != null)
-                    hashCode = hashCode * 59 + this.OtherTaxes.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.ETicketNumber != null)
-                    hashCode = hashCode * 59 + this.ETicketNumber.GetHashCode();
-                if (this.CheckCode != null)
-                    hashCode = hashCode * 59 + this.CheckCode.GetHashCode();
-                if (this.ReferenceInformation != null)
-                    hashCode = hashCode * 59 + this.ReferenceInformation.GetHashCode();
-                if (this.Insurance != null)
-                    hashCode = hashCode * 59 + this.Insurance.GetHashCode();
-                if (this.AgentCode != null)
-                    hashCode = hashCode * 59 + this.AgentCode.GetHashCode();
-                if (this.IssueOrganization != null)
-                    hashCode = hashCode * 59 + this.IssueOrganization.GetHashCode();
-                if (this.IssueDate != null)
-                    hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
-                if (this.Tax != null)
-                    hashCode = hashCode * 59 + this.Tax.GetHashCode();
-                if (this.TaxRate != null)
-                    hashCode = hashCode * 59 + this.TaxRate.GetHashCode();
-                if (this.BuyerName != null)
-                    hashCode = hashCode * 59 + this.BuyerName.GetHashCode();
-                if (this.BuyerId != null)
-                    hashCode = hashCode * 59 + this.BuyerId.GetHashCode();
-                if (this.Number != null)
-                    hashCode = hashCode * 59 + this.Number.GetHashCode();
-                if (this.InternationalFlag != null)
-                    hashCode = hashCode * 59 + this.InternationalFlag.GetHashCode();
-                if (this.IssueStatus != null)
-                    hashCode = hashCode * 59 + this.IssueStatus.GetHashCode();
-                if (this.ItineraryList != null)
-                    hashCode = hashCode * 59 + this.ItineraryList.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                var hashCode = 41;
+                if (this.SerialNumber != null) hashCode = hashCode * 59 + this.SerialNumber.GetHashCode();
+                if (this.PassengerName != null) hashCode = hashCode * 59 + this.PassengerName.GetHashCode();
+                if (this.IdNumber != null) hashCode = hashCode * 59 + this.IdNumber.GetHashCode();
+                if (this.EndorsementsRestrictions != null) hashCode = hashCode * 59 + this.EndorsementsRestrictions.GetHashCode();
+                if (this.OrderNumber != null) hashCode = hashCode * 59 + this.OrderNumber.GetHashCode();
+                if (this.Fare != null) hashCode = hashCode * 59 + this.Fare.GetHashCode();
+                if (this.CaacDevelopmentFund != null) hashCode = hashCode * 59 + this.CaacDevelopmentFund.GetHashCode();
+                if (this.FuelSurcharge != null) hashCode = hashCode * 59 + this.FuelSurcharge.GetHashCode();
+                if (this.OtherTaxes != null) hashCode = hashCode * 59 + this.OtherTaxes.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.ETicketNumber != null) hashCode = hashCode * 59 + this.ETicketNumber.GetHashCode();
+                if (this.CheckCode != null) hashCode = hashCode * 59 + this.CheckCode.GetHashCode();
+                if (this.ReferenceInformation != null) hashCode = hashCode * 59 + this.ReferenceInformation.GetHashCode();
+                if (this.Insurance != null) hashCode = hashCode * 59 + this.Insurance.GetHashCode();
+                if (this.AgentCode != null) hashCode = hashCode * 59 + this.AgentCode.GetHashCode();
+                if (this.IssueOrganization != null) hashCode = hashCode * 59 + this.IssueOrganization.GetHashCode();
+                if (this.IssueDate != null) hashCode = hashCode * 59 + this.IssueDate.GetHashCode();
+                if (this.Tax != null) hashCode = hashCode * 59 + this.Tax.GetHashCode();
+                if (this.TaxRate != null) hashCode = hashCode * 59 + this.TaxRate.GetHashCode();
+                if (this.BuyerName != null) hashCode = hashCode * 59 + this.BuyerName.GetHashCode();
+                if (this.BuyerId != null) hashCode = hashCode * 59 + this.BuyerId.GetHashCode();
+                if (this.Number != null) hashCode = hashCode * 59 + this.Number.GetHashCode();
+                if (this.InternationalFlag != null) hashCode = hashCode * 59 + this.InternationalFlag.GetHashCode();
+                if (this.IssueStatus != null) hashCode = hashCode * 59 + this.IssueStatus.GetHashCode();
+                if (this.ItineraryList != null) hashCode = hashCode * 59 + this.ItineraryList.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
                 return hashCode;
             }
         }

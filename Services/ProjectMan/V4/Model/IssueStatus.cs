@@ -77,36 +77,14 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         /// </summary>
         public bool Equals(IssueStatus input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.StatusId != input.StatusId || (this.StatusId != null && !this.StatusId.Equals(input.StatusId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.TrackerIds != input.TrackerIds || (this.TrackerIds != null && input.TrackerIds != null && !this.TrackerIds.SequenceEqual(input.TrackerIds))) return false;
+            if (this.StatusAttribute != input.StatusAttribute || (this.StatusAttribute != null && !this.StatusAttribute.Equals(input.StatusAttribute))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.StatusId == input.StatusId ||
-                    (this.StatusId != null &&
-                    this.StatusId.Equals(input.StatusId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.TrackerIds == input.TrackerIds ||
-                    this.TrackerIds != null &&
-                    input.TrackerIds != null &&
-                    this.TrackerIds.SequenceEqual(input.TrackerIds)
-                ) && 
-                (
-                    this.StatusAttribute == input.StatusAttribute ||
-                    (this.StatusAttribute != null &&
-                    this.StatusAttribute.Equals(input.StatusAttribute))
-                );
+            return true;
         }
 
         /// <summary>
@@ -116,17 +94,12 @@ namespace HuaweiCloud.SDK.ProjectMan.V4.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.StatusId != null)
-                    hashCode = hashCode * 59 + this.StatusId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.TrackerIds != null)
-                    hashCode = hashCode * 59 + this.TrackerIds.GetHashCode();
-                if (this.StatusAttribute != null)
-                    hashCode = hashCode * 59 + this.StatusAttribute.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.StatusId != null) hashCode = hashCode * 59 + this.StatusId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.TrackerIds != null) hashCode = hashCode * 59 + this.TrackerIds.GetHashCode();
+                if (this.StatusAttribute != null) hashCode = hashCode * 59 + this.StatusAttribute.GetHashCode();
                 return hashCode;
             }
         }

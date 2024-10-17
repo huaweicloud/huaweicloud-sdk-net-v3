@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         /// </summary>
         public bool Equals(ListTracesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Traces != input.Traces || (this.Traces != null && input.Traces != null && !this.Traces.SequenceEqual(input.Traces))) return false;
+            if (this.MetaData != input.MetaData || (this.MetaData != null && !this.MetaData.Equals(input.MetaData))) return false;
 
-            return 
-                (
-                    this.Traces == input.Traces ||
-                    this.Traces != null &&
-                    input.Traces != null &&
-                    this.Traces.SequenceEqual(input.Traces)
-                ) && 
-                (
-                    this.MetaData == input.MetaData ||
-                    (this.MetaData != null &&
-                    this.MetaData.Equals(input.MetaData))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Traces != null)
-                    hashCode = hashCode * 59 + this.Traces.GetHashCode();
-                if (this.MetaData != null)
-                    hashCode = hashCode * 59 + this.MetaData.GetHashCode();
+                var hashCode = 41;
+                if (this.Traces != null) hashCode = hashCode * 59 + this.Traces.GetHashCode();
+                if (this.MetaData != null) hashCode = hashCode * 59 + this.MetaData.GetHashCode();
                 return hashCode;
             }
         }

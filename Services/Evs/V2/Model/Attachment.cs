@@ -91,45 +91,16 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(Attachment input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AttachedAt != input.AttachedAt || (this.AttachedAt != null && !this.AttachedAt.Equals(input.AttachedAt))) return false;
+            if (this.AttachmentId != input.AttachmentId || (this.AttachmentId != null && !this.AttachmentId.Equals(input.AttachmentId))) return false;
+            if (this.Device != input.Device || (this.Device != null && !this.Device.Equals(input.Device))) return false;
+            if (this.HostName != input.HostName || (this.HostName != null && !this.HostName.Equals(input.HostName))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.ServerId != input.ServerId || (this.ServerId != null && !this.ServerId.Equals(input.ServerId))) return false;
+            if (this.VolumeId != input.VolumeId || (this.VolumeId != null && !this.VolumeId.Equals(input.VolumeId))) return false;
 
-            return 
-                (
-                    this.AttachedAt == input.AttachedAt ||
-                    (this.AttachedAt != null &&
-                    this.AttachedAt.Equals(input.AttachedAt))
-                ) && 
-                (
-                    this.AttachmentId == input.AttachmentId ||
-                    (this.AttachmentId != null &&
-                    this.AttachmentId.Equals(input.AttachmentId))
-                ) && 
-                (
-                    this.Device == input.Device ||
-                    (this.Device != null &&
-                    this.Device.Equals(input.Device))
-                ) && 
-                (
-                    this.HostName == input.HostName ||
-                    (this.HostName != null &&
-                    this.HostName.Equals(input.HostName))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.ServerId == input.ServerId ||
-                    (this.ServerId != null &&
-                    this.ServerId.Equals(input.ServerId))
-                ) && 
-                (
-                    this.VolumeId == input.VolumeId ||
-                    (this.VolumeId != null &&
-                    this.VolumeId.Equals(input.VolumeId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -139,21 +110,14 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AttachedAt != null)
-                    hashCode = hashCode * 59 + this.AttachedAt.GetHashCode();
-                if (this.AttachmentId != null)
-                    hashCode = hashCode * 59 + this.AttachmentId.GetHashCode();
-                if (this.Device != null)
-                    hashCode = hashCode * 59 + this.Device.GetHashCode();
-                if (this.HostName != null)
-                    hashCode = hashCode * 59 + this.HostName.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.ServerId != null)
-                    hashCode = hashCode * 59 + this.ServerId.GetHashCode();
-                if (this.VolumeId != null)
-                    hashCode = hashCode * 59 + this.VolumeId.GetHashCode();
+                var hashCode = 41;
+                if (this.AttachedAt != null) hashCode = hashCode * 59 + this.AttachedAt.GetHashCode();
+                if (this.AttachmentId != null) hashCode = hashCode * 59 + this.AttachmentId.GetHashCode();
+                if (this.Device != null) hashCode = hashCode * 59 + this.Device.GetHashCode();
+                if (this.HostName != null) hashCode = hashCode * 59 + this.HostName.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.ServerId != null) hashCode = hashCode * 59 + this.ServerId.GetHashCode();
+                if (this.VolumeId != null) hashCode = hashCode * 59 + this.VolumeId.GetHashCode();
                 return hashCode;
             }
         }

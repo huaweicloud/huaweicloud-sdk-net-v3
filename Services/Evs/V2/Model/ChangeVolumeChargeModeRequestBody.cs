@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         /// </summary>
         public bool Equals(ChangeVolumeChargeModeRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VolumeIds != input.VolumeIds || (this.VolumeIds != null && input.VolumeIds != null && !this.VolumeIds.SequenceEqual(input.VolumeIds))) return false;
+            if (this.ServerId != input.ServerId || (this.ServerId != null && !this.ServerId.Equals(input.ServerId))) return false;
+            if (this.BssParam != input.BssParam || (this.BssParam != null && !this.BssParam.Equals(input.BssParam))) return false;
 
-            return 
-                (
-                    this.VolumeIds == input.VolumeIds ||
-                    this.VolumeIds != null &&
-                    input.VolumeIds != null &&
-                    this.VolumeIds.SequenceEqual(input.VolumeIds)
-                ) && 
-                (
-                    this.ServerId == input.ServerId ||
-                    (this.ServerId != null &&
-                    this.ServerId.Equals(input.ServerId))
-                ) && 
-                (
-                    this.BssParam == input.BssParam ||
-                    (this.BssParam != null &&
-                    this.BssParam.Equals(input.BssParam))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Evs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VolumeIds != null)
-                    hashCode = hashCode * 59 + this.VolumeIds.GetHashCode();
-                if (this.ServerId != null)
-                    hashCode = hashCode * 59 + this.ServerId.GetHashCode();
-                if (this.BssParam != null)
-                    hashCode = hashCode * 59 + this.BssParam.GetHashCode();
+                var hashCode = 41;
+                if (this.VolumeIds != null) hashCode = hashCode * 59 + this.VolumeIds.GetHashCode();
+                if (this.ServerId != null) hashCode = hashCode * 59 + this.ServerId.GetHashCode();
+                if (this.BssParam != null) hashCode = hashCode * 59 + this.BssParam.GetHashCode();
                 return hashCode;
             }
         }

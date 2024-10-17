@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         /// </summary>
         public bool Equals(TagNameAndIdVo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TagId != input.TagId || (this.TagId != null && !this.TagId.Equals(input.TagId))) return false;
+            if (this.TagName != input.TagName || (this.TagName != null && !this.TagName.Equals(input.TagName))) return false;
 
-            return 
-                (
-                    this.TagId == input.TagId ||
-                    (this.TagId != null &&
-                    this.TagId.Equals(input.TagId))
-                ) && 
-                (
-                    this.TagName == input.TagName ||
-                    (this.TagName != null &&
-                    this.TagName.Equals(input.TagName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Aom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TagId != null)
-                    hashCode = hashCode * 59 + this.TagId.GetHashCode();
-                if (this.TagName != null)
-                    hashCode = hashCode * 59 + this.TagName.GetHashCode();
+                var hashCode = 41;
+                if (this.TagId != null) hashCode = hashCode * 59 + this.TagId.GetHashCode();
+                if (this.TagName != null) hashCode = hashCode * 59 + this.TagName.GetHashCode();
                 return hashCode;
             }
         }

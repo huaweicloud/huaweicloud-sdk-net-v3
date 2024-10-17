@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         /// </summary>
         public bool Equals(ListHlsConfigRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PushDomain != input.PushDomain || (this.PushDomain != null && !this.PushDomain.Equals(input.PushDomain))) return false;
 
-            return 
-                (
-                    this.PushDomain == input.PushDomain ||
-                    (this.PushDomain != null &&
-                    this.PushDomain.Equals(input.PushDomain))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Live.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PushDomain != null)
-                    hashCode = hashCode * 59 + this.PushDomain.GetHashCode();
+                var hashCode = 41;
+                if (this.PushDomain != null) hashCode = hashCode * 59 + this.PushDomain.GetHashCode();
                 return hashCode;
             }
         }

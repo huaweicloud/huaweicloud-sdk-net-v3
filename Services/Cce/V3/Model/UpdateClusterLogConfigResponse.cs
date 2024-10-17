@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(UpdateClusterLogConfigResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TtlInDays != input.TtlInDays || (this.TtlInDays != null && !this.TtlInDays.Equals(input.TtlInDays))) return false;
+            if (this.LogConfigs != input.LogConfigs || (this.LogConfigs != null && input.LogConfigs != null && !this.LogConfigs.SequenceEqual(input.LogConfigs))) return false;
 
-            return 
-                (
-                    this.TtlInDays == input.TtlInDays ||
-                    (this.TtlInDays != null &&
-                    this.TtlInDays.Equals(input.TtlInDays))
-                ) && 
-                (
-                    this.LogConfigs == input.LogConfigs ||
-                    this.LogConfigs != null &&
-                    input.LogConfigs != null &&
-                    this.LogConfigs.SequenceEqual(input.LogConfigs)
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TtlInDays != null)
-                    hashCode = hashCode * 59 + this.TtlInDays.GetHashCode();
-                if (this.LogConfigs != null)
-                    hashCode = hashCode * 59 + this.LogConfigs.GetHashCode();
+                var hashCode = 41;
+                if (this.TtlInDays != null) hashCode = hashCode * 59 + this.TtlInDays.GetHashCode();
+                if (this.LogConfigs != null) hashCode = hashCode * 59 + this.LogConfigs.GetHashCode();
                 return hashCode;
             }
         }

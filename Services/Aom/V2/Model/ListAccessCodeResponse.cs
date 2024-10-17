@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(ListAccessCodeResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AccessCodes != input.AccessCodes || (this.AccessCodes != null && input.AccessCodes != null && !this.AccessCodes.SequenceEqual(input.AccessCodes))) return false;
 
-            return 
-                (
-                    this.AccessCodes == input.AccessCodes ||
-                    this.AccessCodes != null &&
-                    input.AccessCodes != null &&
-                    this.AccessCodes.SequenceEqual(input.AccessCodes)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AccessCodes != null)
-                    hashCode = hashCode * 59 + this.AccessCodes.GetHashCode();
+                var hashCode = 41;
+                if (this.AccessCodes != null) hashCode = hashCode * 59 + this.AccessCodes.GetHashCode();
                 return hashCode;
             }
         }

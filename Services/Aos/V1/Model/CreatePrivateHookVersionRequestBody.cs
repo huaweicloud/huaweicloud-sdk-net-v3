@@ -77,35 +77,14 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         /// </summary>
         public bool Equals(CreatePrivateHookVersionRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.HookId != input.HookId || (this.HookId != null && !this.HookId.Equals(input.HookId))) return false;
+            if (this.HookVersion != input.HookVersion || (this.HookVersion != null && !this.HookVersion.Equals(input.HookVersion))) return false;
+            if (this.HookVersionDescription != input.HookVersionDescription || (this.HookVersionDescription != null && !this.HookVersionDescription.Equals(input.HookVersionDescription))) return false;
+            if (this.PolicyUri != input.PolicyUri || (this.PolicyUri != null && !this.PolicyUri.Equals(input.PolicyUri))) return false;
+            if (this.PolicyBody != input.PolicyBody || (this.PolicyBody != null && !this.PolicyBody.Equals(input.PolicyBody))) return false;
 
-            return 
-                (
-                    this.HookId == input.HookId ||
-                    (this.HookId != null &&
-                    this.HookId.Equals(input.HookId))
-                ) && 
-                (
-                    this.HookVersion == input.HookVersion ||
-                    (this.HookVersion != null &&
-                    this.HookVersion.Equals(input.HookVersion))
-                ) && 
-                (
-                    this.HookVersionDescription == input.HookVersionDescription ||
-                    (this.HookVersionDescription != null &&
-                    this.HookVersionDescription.Equals(input.HookVersionDescription))
-                ) && 
-                (
-                    this.PolicyUri == input.PolicyUri ||
-                    (this.PolicyUri != null &&
-                    this.PolicyUri.Equals(input.PolicyUri))
-                ) && 
-                (
-                    this.PolicyBody == input.PolicyBody ||
-                    (this.PolicyBody != null &&
-                    this.PolicyBody.Equals(input.PolicyBody))
-                );
+            return true;
         }
 
         /// <summary>
@@ -115,17 +94,12 @@ namespace HuaweiCloud.SDK.Aos.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.HookId != null)
-                    hashCode = hashCode * 59 + this.HookId.GetHashCode();
-                if (this.HookVersion != null)
-                    hashCode = hashCode * 59 + this.HookVersion.GetHashCode();
-                if (this.HookVersionDescription != null)
-                    hashCode = hashCode * 59 + this.HookVersionDescription.GetHashCode();
-                if (this.PolicyUri != null)
-                    hashCode = hashCode * 59 + this.PolicyUri.GetHashCode();
-                if (this.PolicyBody != null)
-                    hashCode = hashCode * 59 + this.PolicyBody.GetHashCode();
+                var hashCode = 41;
+                if (this.HookId != null) hashCode = hashCode * 59 + this.HookId.GetHashCode();
+                if (this.HookVersion != null) hashCode = hashCode * 59 + this.HookVersion.GetHashCode();
+                if (this.HookVersionDescription != null) hashCode = hashCode * 59 + this.HookVersionDescription.GetHashCode();
+                if (this.PolicyUri != null) hashCode = hashCode * 59 + this.PolicyUri.GetHashCode();
+                if (this.PolicyBody != null) hashCode = hashCode * 59 + this.PolicyBody.GetHashCode();
                 return hashCode;
             }
         }

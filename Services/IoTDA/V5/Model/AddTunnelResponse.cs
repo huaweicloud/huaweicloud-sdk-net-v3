@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(AddTunnelResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TunnelId != input.TunnelId || (this.TunnelId != null && !this.TunnelId.Equals(input.TunnelId))) return false;
+            if (this.TunnelAccessToken != input.TunnelAccessToken || (this.TunnelAccessToken != null && !this.TunnelAccessToken.Equals(input.TunnelAccessToken))) return false;
+            if (this.ExpiresIn != input.ExpiresIn || (this.ExpiresIn != null && !this.ExpiresIn.Equals(input.ExpiresIn))) return false;
+            if (this.TunnelUri != input.TunnelUri || (this.TunnelUri != null && !this.TunnelUri.Equals(input.TunnelUri))) return false;
 
-            return 
-                (
-                    this.TunnelId == input.TunnelId ||
-                    (this.TunnelId != null &&
-                    this.TunnelId.Equals(input.TunnelId))
-                ) && 
-                (
-                    this.TunnelAccessToken == input.TunnelAccessToken ||
-                    (this.TunnelAccessToken != null &&
-                    this.TunnelAccessToken.Equals(input.TunnelAccessToken))
-                ) && 
-                (
-                    this.ExpiresIn == input.ExpiresIn ||
-                    (this.ExpiresIn != null &&
-                    this.ExpiresIn.Equals(input.ExpiresIn))
-                ) && 
-                (
-                    this.TunnelUri == input.TunnelUri ||
-                    (this.TunnelUri != null &&
-                    this.TunnelUri.Equals(input.TunnelUri))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TunnelId != null)
-                    hashCode = hashCode * 59 + this.TunnelId.GetHashCode();
-                if (this.TunnelAccessToken != null)
-                    hashCode = hashCode * 59 + this.TunnelAccessToken.GetHashCode();
-                if (this.ExpiresIn != null)
-                    hashCode = hashCode * 59 + this.ExpiresIn.GetHashCode();
-                if (this.TunnelUri != null)
-                    hashCode = hashCode * 59 + this.TunnelUri.GetHashCode();
+                var hashCode = 41;
+                if (this.TunnelId != null) hashCode = hashCode * 59 + this.TunnelId.GetHashCode();
+                if (this.TunnelAccessToken != null) hashCode = hashCode * 59 + this.TunnelAccessToken.GetHashCode();
+                if (this.ExpiresIn != null) hashCode = hashCode * 59 + this.ExpiresIn.GetHashCode();
+                if (this.TunnelUri != null) hashCode = hashCode * 59 + this.TunnelUri.GetHashCode();
                 return hashCode;
             }
         }

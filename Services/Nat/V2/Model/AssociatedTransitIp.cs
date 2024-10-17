@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         /// </summary>
         public bool Equals(AssociatedTransitIp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TransitIpId != input.TransitIpId || (this.TransitIpId != null && !this.TransitIpId.Equals(input.TransitIpId))) return false;
+            if (this.TransitIpAddress != input.TransitIpAddress || (this.TransitIpAddress != null && !this.TransitIpAddress.Equals(input.TransitIpAddress))) return false;
 
-            return 
-                (
-                    this.TransitIpId == input.TransitIpId ||
-                    (this.TransitIpId != null &&
-                    this.TransitIpId.Equals(input.TransitIpId))
-                ) && 
-                (
-                    this.TransitIpAddress == input.TransitIpAddress ||
-                    (this.TransitIpAddress != null &&
-                    this.TransitIpAddress.Equals(input.TransitIpAddress))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Nat.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TransitIpId != null)
-                    hashCode = hashCode * 59 + this.TransitIpId.GetHashCode();
-                if (this.TransitIpAddress != null)
-                    hashCode = hashCode * 59 + this.TransitIpAddress.GetHashCode();
+                var hashCode = 41;
+                if (this.TransitIpId != null) hashCode = hashCode * 59 + this.TransitIpId.GetHashCode();
+                if (this.TransitIpAddress != null) hashCode = hashCode * 59 + this.TransitIpAddress.GetHashCode();
                 return hashCode;
             }
         }

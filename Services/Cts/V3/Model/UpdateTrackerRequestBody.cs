@@ -462,70 +462,21 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         /// </summary>
         public bool Equals(UpdateTrackerRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TrackerType != input.TrackerType) return false;
+            if (this.TrackerName != input.TrackerName || (this.TrackerName != null && !this.TrackerName.Equals(input.TrackerName))) return false;
+            if (this.AgencyName != input.AgencyName) return false;
+            if (this.Status != input.Status) return false;
+            if (this.IsOrganizationTracker != input.IsOrganizationTracker || (this.IsOrganizationTracker != null && !this.IsOrganizationTracker.Equals(input.IsOrganizationTracker))) return false;
+            if (this.ManagementEventSelector != input.ManagementEventSelector || (this.ManagementEventSelector != null && !this.ManagementEventSelector.Equals(input.ManagementEventSelector))) return false;
+            if (this.IsLtsEnabled != input.IsLtsEnabled || (this.IsLtsEnabled != null && !this.IsLtsEnabled.Equals(input.IsLtsEnabled))) return false;
+            if (this.ObsInfo != input.ObsInfo || (this.ObsInfo != null && !this.ObsInfo.Equals(input.ObsInfo))) return false;
+            if (this.IsSupportTraceFilesEncryption != input.IsSupportTraceFilesEncryption || (this.IsSupportTraceFilesEncryption != null && !this.IsSupportTraceFilesEncryption.Equals(input.IsSupportTraceFilesEncryption))) return false;
+            if (this.KmsId != input.KmsId || (this.KmsId != null && !this.KmsId.Equals(input.KmsId))) return false;
+            if (this.IsSupportValidate != input.IsSupportValidate || (this.IsSupportValidate != null && !this.IsSupportValidate.Equals(input.IsSupportValidate))) return false;
+            if (this.DataBucket != input.DataBucket || (this.DataBucket != null && !this.DataBucket.Equals(input.DataBucket))) return false;
 
-            return 
-                (
-                    this.TrackerType == input.TrackerType ||
-                    (this.TrackerType != null &&
-                    this.TrackerType.Equals(input.TrackerType))
-                ) && 
-                (
-                    this.TrackerName == input.TrackerName ||
-                    (this.TrackerName != null &&
-                    this.TrackerName.Equals(input.TrackerName))
-                ) && 
-                (
-                    this.AgencyName == input.AgencyName ||
-                    (this.AgencyName != null &&
-                    this.AgencyName.Equals(input.AgencyName))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.IsOrganizationTracker == input.IsOrganizationTracker ||
-                    (this.IsOrganizationTracker != null &&
-                    this.IsOrganizationTracker.Equals(input.IsOrganizationTracker))
-                ) && 
-                (
-                    this.ManagementEventSelector == input.ManagementEventSelector ||
-                    (this.ManagementEventSelector != null &&
-                    this.ManagementEventSelector.Equals(input.ManagementEventSelector))
-                ) && 
-                (
-                    this.IsLtsEnabled == input.IsLtsEnabled ||
-                    (this.IsLtsEnabled != null &&
-                    this.IsLtsEnabled.Equals(input.IsLtsEnabled))
-                ) && 
-                (
-                    this.ObsInfo == input.ObsInfo ||
-                    (this.ObsInfo != null &&
-                    this.ObsInfo.Equals(input.ObsInfo))
-                ) && 
-                (
-                    this.IsSupportTraceFilesEncryption == input.IsSupportTraceFilesEncryption ||
-                    (this.IsSupportTraceFilesEncryption != null &&
-                    this.IsSupportTraceFilesEncryption.Equals(input.IsSupportTraceFilesEncryption))
-                ) && 
-                (
-                    this.KmsId == input.KmsId ||
-                    (this.KmsId != null &&
-                    this.KmsId.Equals(input.KmsId))
-                ) && 
-                (
-                    this.IsSupportValidate == input.IsSupportValidate ||
-                    (this.IsSupportValidate != null &&
-                    this.IsSupportValidate.Equals(input.IsSupportValidate))
-                ) && 
-                (
-                    this.DataBucket == input.DataBucket ||
-                    (this.DataBucket != null &&
-                    this.DataBucket.Equals(input.DataBucket))
-                );
+            return true;
         }
 
         /// <summary>
@@ -535,31 +486,19 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TrackerType != null)
-                    hashCode = hashCode * 59 + this.TrackerType.GetHashCode();
-                if (this.TrackerName != null)
-                    hashCode = hashCode * 59 + this.TrackerName.GetHashCode();
-                if (this.AgencyName != null)
-                    hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.IsOrganizationTracker != null)
-                    hashCode = hashCode * 59 + this.IsOrganizationTracker.GetHashCode();
-                if (this.ManagementEventSelector != null)
-                    hashCode = hashCode * 59 + this.ManagementEventSelector.GetHashCode();
-                if (this.IsLtsEnabled != null)
-                    hashCode = hashCode * 59 + this.IsLtsEnabled.GetHashCode();
-                if (this.ObsInfo != null)
-                    hashCode = hashCode * 59 + this.ObsInfo.GetHashCode();
-                if (this.IsSupportTraceFilesEncryption != null)
-                    hashCode = hashCode * 59 + this.IsSupportTraceFilesEncryption.GetHashCode();
-                if (this.KmsId != null)
-                    hashCode = hashCode * 59 + this.KmsId.GetHashCode();
-                if (this.IsSupportValidate != null)
-                    hashCode = hashCode * 59 + this.IsSupportValidate.GetHashCode();
-                if (this.DataBucket != null)
-                    hashCode = hashCode * 59 + this.DataBucket.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.TrackerType.GetHashCode();
+                if (this.TrackerName != null) hashCode = hashCode * 59 + this.TrackerName.GetHashCode();
+                hashCode = hashCode * 59 + this.AgencyName.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.IsOrganizationTracker != null) hashCode = hashCode * 59 + this.IsOrganizationTracker.GetHashCode();
+                if (this.ManagementEventSelector != null) hashCode = hashCode * 59 + this.ManagementEventSelector.GetHashCode();
+                if (this.IsLtsEnabled != null) hashCode = hashCode * 59 + this.IsLtsEnabled.GetHashCode();
+                if (this.ObsInfo != null) hashCode = hashCode * 59 + this.ObsInfo.GetHashCode();
+                if (this.IsSupportTraceFilesEncryption != null) hashCode = hashCode * 59 + this.IsSupportTraceFilesEncryption.GetHashCode();
+                if (this.KmsId != null) hashCode = hashCode * 59 + this.KmsId.GetHashCode();
+                if (this.IsSupportValidate != null) hashCode = hashCode * 59 + this.IsSupportValidate.GetHashCode();
+                if (this.DataBucket != null) hashCode = hashCode * 59 + this.DataBucket.GetHashCode();
                 return hashCode;
             }
         }

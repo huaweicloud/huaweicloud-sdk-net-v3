@@ -520,91 +520,25 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(NodesInfoResp input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LogicalNodeId != input.LogicalNodeId || (this.LogicalNodeId != null && !this.LogicalNodeId.Equals(input.LogicalNodeId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Status != input.Status) return false;
+            if (this.AzCode != input.AzCode || (this.AzCode != null && !this.AzCode.Equals(input.AzCode))) return false;
+            if (this.NodeRole != input.NodeRole) return false;
+            if (this.NodeType != input.NodeType) return false;
+            if (this.NodeIp != input.NodeIp || (this.NodeIp != null && !this.NodeIp.Equals(input.NodeIp))) return false;
+            if (this.NodePort != input.NodePort || (this.NodePort != null && !this.NodePort.Equals(input.NodePort))) return false;
+            if (this.NodeId != input.NodeId || (this.NodeId != null && !this.NodeId.Equals(input.NodeId))) return false;
+            if (this.PriorityWeight != input.PriorityWeight || (this.PriorityWeight != null && !this.PriorityWeight.Equals(input.PriorityWeight))) return false;
+            if (this.IsAccess != input.IsAccess || (this.IsAccess != null && !this.IsAccess.Equals(input.IsAccess))) return false;
+            if (this.GroupId != input.GroupId || (this.GroupId != null && !this.GroupId.Equals(input.GroupId))) return false;
+            if (this.GroupName != input.GroupName || (this.GroupName != null && !this.GroupName.Equals(input.GroupName))) return false;
+            if (this.IsRemoveIp != input.IsRemoveIp || (this.IsRemoveIp != null && !this.IsRemoveIp.Equals(input.IsRemoveIp))) return false;
+            if (this.ReplicationId != input.ReplicationId || (this.ReplicationId != null && !this.ReplicationId.Equals(input.ReplicationId))) return false;
+            if (this.Dimensions != input.Dimensions || (this.Dimensions != null && input.Dimensions != null && !this.Dimensions.SequenceEqual(input.Dimensions))) return false;
 
-            return 
-                (
-                    this.LogicalNodeId == input.LogicalNodeId ||
-                    (this.LogicalNodeId != null &&
-                    this.LogicalNodeId.Equals(input.LogicalNodeId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.AzCode == input.AzCode ||
-                    (this.AzCode != null &&
-                    this.AzCode.Equals(input.AzCode))
-                ) && 
-                (
-                    this.NodeRole == input.NodeRole ||
-                    (this.NodeRole != null &&
-                    this.NodeRole.Equals(input.NodeRole))
-                ) && 
-                (
-                    this.NodeType == input.NodeType ||
-                    (this.NodeType != null &&
-                    this.NodeType.Equals(input.NodeType))
-                ) && 
-                (
-                    this.NodeIp == input.NodeIp ||
-                    (this.NodeIp != null &&
-                    this.NodeIp.Equals(input.NodeIp))
-                ) && 
-                (
-                    this.NodePort == input.NodePort ||
-                    (this.NodePort != null &&
-                    this.NodePort.Equals(input.NodePort))
-                ) && 
-                (
-                    this.NodeId == input.NodeId ||
-                    (this.NodeId != null &&
-                    this.NodeId.Equals(input.NodeId))
-                ) && 
-                (
-                    this.PriorityWeight == input.PriorityWeight ||
-                    (this.PriorityWeight != null &&
-                    this.PriorityWeight.Equals(input.PriorityWeight))
-                ) && 
-                (
-                    this.IsAccess == input.IsAccess ||
-                    (this.IsAccess != null &&
-                    this.IsAccess.Equals(input.IsAccess))
-                ) && 
-                (
-                    this.GroupId == input.GroupId ||
-                    (this.GroupId != null &&
-                    this.GroupId.Equals(input.GroupId))
-                ) && 
-                (
-                    this.GroupName == input.GroupName ||
-                    (this.GroupName != null &&
-                    this.GroupName.Equals(input.GroupName))
-                ) && 
-                (
-                    this.IsRemoveIp == input.IsRemoveIp ||
-                    (this.IsRemoveIp != null &&
-                    this.IsRemoveIp.Equals(input.IsRemoveIp))
-                ) && 
-                (
-                    this.ReplicationId == input.ReplicationId ||
-                    (this.ReplicationId != null &&
-                    this.ReplicationId.Equals(input.ReplicationId))
-                ) && 
-                (
-                    this.Dimensions == input.Dimensions ||
-                    this.Dimensions != null &&
-                    input.Dimensions != null &&
-                    this.Dimensions.SequenceEqual(input.Dimensions)
-                );
+            return true;
         }
 
         /// <summary>
@@ -614,39 +548,23 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LogicalNodeId != null)
-                    hashCode = hashCode * 59 + this.LogicalNodeId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.AzCode != null)
-                    hashCode = hashCode * 59 + this.AzCode.GetHashCode();
-                if (this.NodeRole != null)
-                    hashCode = hashCode * 59 + this.NodeRole.GetHashCode();
-                if (this.NodeType != null)
-                    hashCode = hashCode * 59 + this.NodeType.GetHashCode();
-                if (this.NodeIp != null)
-                    hashCode = hashCode * 59 + this.NodeIp.GetHashCode();
-                if (this.NodePort != null)
-                    hashCode = hashCode * 59 + this.NodePort.GetHashCode();
-                if (this.NodeId != null)
-                    hashCode = hashCode * 59 + this.NodeId.GetHashCode();
-                if (this.PriorityWeight != null)
-                    hashCode = hashCode * 59 + this.PriorityWeight.GetHashCode();
-                if (this.IsAccess != null)
-                    hashCode = hashCode * 59 + this.IsAccess.GetHashCode();
-                if (this.GroupId != null)
-                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
-                if (this.GroupName != null)
-                    hashCode = hashCode * 59 + this.GroupName.GetHashCode();
-                if (this.IsRemoveIp != null)
-                    hashCode = hashCode * 59 + this.IsRemoveIp.GetHashCode();
-                if (this.ReplicationId != null)
-                    hashCode = hashCode * 59 + this.ReplicationId.GetHashCode();
-                if (this.Dimensions != null)
-                    hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
+                var hashCode = 41;
+                if (this.LogicalNodeId != null) hashCode = hashCode * 59 + this.LogicalNodeId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.AzCode != null) hashCode = hashCode * 59 + this.AzCode.GetHashCode();
+                hashCode = hashCode * 59 + this.NodeRole.GetHashCode();
+                hashCode = hashCode * 59 + this.NodeType.GetHashCode();
+                if (this.NodeIp != null) hashCode = hashCode * 59 + this.NodeIp.GetHashCode();
+                if (this.NodePort != null) hashCode = hashCode * 59 + this.NodePort.GetHashCode();
+                if (this.NodeId != null) hashCode = hashCode * 59 + this.NodeId.GetHashCode();
+                if (this.PriorityWeight != null) hashCode = hashCode * 59 + this.PriorityWeight.GetHashCode();
+                if (this.IsAccess != null) hashCode = hashCode * 59 + this.IsAccess.GetHashCode();
+                if (this.GroupId != null) hashCode = hashCode * 59 + this.GroupId.GetHashCode();
+                if (this.GroupName != null) hashCode = hashCode * 59 + this.GroupName.GetHashCode();
+                if (this.IsRemoveIp != null) hashCode = hashCode * 59 + this.IsRemoveIp.GetHashCode();
+                if (this.ReplicationId != null) hashCode = hashCode * 59 + this.ReplicationId.GetHashCode();
+                if (this.Dimensions != null) hashCode = hashCode * 59 + this.Dimensions.GetHashCode();
                 return hashCode;
             }
         }

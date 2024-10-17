@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         /// </summary>
         public bool Equals(PublishAppMessageRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Message != input.Message || (this.Message != null && !this.Message.Equals(input.Message))) return false;
+            if (this.MessageStructure != input.MessageStructure || (this.MessageStructure != null && !this.MessageStructure.Equals(input.MessageStructure))) return false;
+            if (this.TimeToLive != input.TimeToLive || (this.TimeToLive != null && !this.TimeToLive.Equals(input.TimeToLive))) return false;
 
-            return 
-                (
-                    this.Message == input.Message ||
-                    (this.Message != null &&
-                    this.Message.Equals(input.Message))
-                ) && 
-                (
-                    this.MessageStructure == input.MessageStructure ||
-                    (this.MessageStructure != null &&
-                    this.MessageStructure.Equals(input.MessageStructure))
-                ) && 
-                (
-                    this.TimeToLive == input.TimeToLive ||
-                    (this.TimeToLive != null &&
-                    this.TimeToLive.Equals(input.TimeToLive))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Smn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Message != null)
-                    hashCode = hashCode * 59 + this.Message.GetHashCode();
-                if (this.MessageStructure != null)
-                    hashCode = hashCode * 59 + this.MessageStructure.GetHashCode();
-                if (this.TimeToLive != null)
-                    hashCode = hashCode * 59 + this.TimeToLive.GetHashCode();
+                var hashCode = 41;
+                if (this.Message != null) hashCode = hashCode * 59 + this.Message.GetHashCode();
+                if (this.MessageStructure != null) hashCode = hashCode * 59 + this.MessageStructure.GetHashCode();
+                if (this.TimeToLive != null) hashCode = hashCode * 59 + this.TimeToLive.GetHashCode();
                 return hashCode;
             }
         }

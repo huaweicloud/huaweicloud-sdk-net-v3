@@ -15,14 +15,122 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
     /// </summary>
     public class ListProjectResourceTagsRequest 
     {
+        /// <summary>
+        /// 资源类型。 - auditInstance
+        /// </summary>
+        /// <value>资源类型。 - auditInstance</value>
+        [JsonConverter(typeof(EnumClassConverter<ResourceTypeEnum>))]
+        public class ResourceTypeEnum
+        {
+            /// <summary>
+            /// Enum AUDITINSTANCE for value: auditInstance
+            /// </summary>
+            public static readonly ResourceTypeEnum AUDITINSTANCE = new ResourceTypeEnum("auditInstance");
+
+            private static readonly Dictionary<string, ResourceTypeEnum> StaticFields =
+            new Dictionary<string, ResourceTypeEnum>()
+            {
+                { "auditInstance", AUDITINSTANCE },
+            };
+
+            private string _value;
+
+            public ResourceTypeEnum()
+            {
+
+            }
+
+            public ResourceTypeEnum(string value)
+            {
+                _value = value;
+            }
+
+            public static ResourceTypeEnum FromValue(string value)
+            {
+                if(value == null){
+                    return null;
+                }
+
+                if (StaticFields.ContainsKey(value))
+                {
+                    return StaticFields[value];
+                }
+
+                return null;
+            }
+
+            public string GetValue()
+            {
+                return _value;
+            }
+
+            public override string ToString()
+            {
+                return $"{_value}";
+            }
+
+            public override int GetHashCode()
+            {
+                return this._value.GetHashCode();
+            }
+
+            public override bool Equals(object obj)
+            {
+                if (obj == null)
+                {
+                    return false;
+                }
+
+                if (ReferenceEquals(this, obj))
+                {
+                    return true;
+                }
+
+                if (this.Equals(obj as ResourceTypeEnum))
+                {
+                    return true;
+                }
+
+                return false;
+            }
+
+            public bool Equals(ResourceTypeEnum obj)
+            {
+                if ((object)obj == null)
+                {
+                    return false;
+                }
+                return StringComparer.OrdinalIgnoreCase.Equals(this._value, obj.GetValue());
+            }
+
+            public static bool operator ==(ResourceTypeEnum a, ResourceTypeEnum b)
+            {
+                if (System.Object.ReferenceEquals(a, b))
+                {
+                    return true;
+                }
+
+                if ((object)a == null)
+                {
+                    return false;
+                }
+
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(ResourceTypeEnum a, ResourceTypeEnum b)
+            {
+                return !(a == b);
+            }
+        }
+
 
         /// <summary>
-        /// 资源类型。审计：auditInstance
+        /// 资源类型。 - auditInstance
         /// </summary>
         [SDKProperty("resource_type", IsPath = true)]
         [JsonProperty("resource_type", NullValueHandling = NullValueHandling.Ignore)]
-        public string ResourceType { get; set; }
-
+        public ResourceTypeEnum ResourceType { get; set; }
 
 
         /// <summary>
@@ -50,15 +158,10 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         /// </summary>
         public bool Equals(ListProjectResourceTagsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ResourceType != input.ResourceType) return false;
 
-            return 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +171,8 @@ namespace HuaweiCloud.SDK.Dbss.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
                 return hashCode;
             }
         }

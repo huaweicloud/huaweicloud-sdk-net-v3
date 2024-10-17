@@ -119,69 +119,20 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(ListEventModel input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.StartsAt != input.StartsAt || (this.StartsAt != null && !this.StartsAt.Equals(input.StartsAt))) return false;
+            if (this.EndsAt != input.EndsAt || (this.EndsAt != null && !this.EndsAt.Equals(input.EndsAt))) return false;
+            if (this.Timeout != input.Timeout || (this.Timeout != null && !this.Timeout.Equals(input.Timeout))) return false;
+            if (this.Metadata != input.Metadata || (this.Metadata != null && input.Metadata != null && !this.Metadata.SequenceEqual(input.Metadata))) return false;
+            if (this.Annotations != input.Annotations || (this.Annotations != null && input.Annotations != null && !this.Annotations.SequenceEqual(input.Annotations))) return false;
+            if (this.AttachRule != input.AttachRule || (this.AttachRule != null && input.AttachRule != null && !this.AttachRule.SequenceEqual(input.AttachRule))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.EventSn != input.EventSn || (this.EventSn != null && !this.EventSn.Equals(input.EventSn))) return false;
+            if (this.ArrivesAt != input.ArrivesAt || (this.ArrivesAt != null && !this.ArrivesAt.Equals(input.ArrivesAt))) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.Policy != input.Policy || (this.Policy != null && input.Policy != null && !this.Policy.SequenceEqual(input.Policy))) return false;
 
-            return 
-                (
-                    this.StartsAt == input.StartsAt ||
-                    (this.StartsAt != null &&
-                    this.StartsAt.Equals(input.StartsAt))
-                ) && 
-                (
-                    this.EndsAt == input.EndsAt ||
-                    (this.EndsAt != null &&
-                    this.EndsAt.Equals(input.EndsAt))
-                ) && 
-                (
-                    this.Timeout == input.Timeout ||
-                    (this.Timeout != null &&
-                    this.Timeout.Equals(input.Timeout))
-                ) && 
-                (
-                    this.Metadata == input.Metadata ||
-                    this.Metadata != null &&
-                    input.Metadata != null &&
-                    this.Metadata.SequenceEqual(input.Metadata)
-                ) && 
-                (
-                    this.Annotations == input.Annotations ||
-                    this.Annotations != null &&
-                    input.Annotations != null &&
-                    this.Annotations.SequenceEqual(input.Annotations)
-                ) && 
-                (
-                    this.AttachRule == input.AttachRule ||
-                    this.AttachRule != null &&
-                    input.AttachRule != null &&
-                    this.AttachRule.SequenceEqual(input.AttachRule)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.EventSn == input.EventSn ||
-                    (this.EventSn != null &&
-                    this.EventSn.Equals(input.EventSn))
-                ) && 
-                (
-                    this.ArrivesAt == input.ArrivesAt ||
-                    (this.ArrivesAt != null &&
-                    this.ArrivesAt.Equals(input.ArrivesAt))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.Policy == input.Policy ||
-                    this.Policy != null &&
-                    input.Policy != null &&
-                    this.Policy.SequenceEqual(input.Policy)
-                );
+            return true;
         }
 
         /// <summary>
@@ -191,29 +142,18 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.StartsAt != null)
-                    hashCode = hashCode * 59 + this.StartsAt.GetHashCode();
-                if (this.EndsAt != null)
-                    hashCode = hashCode * 59 + this.EndsAt.GetHashCode();
-                if (this.Timeout != null)
-                    hashCode = hashCode * 59 + this.Timeout.GetHashCode();
-                if (this.Metadata != null)
-                    hashCode = hashCode * 59 + this.Metadata.GetHashCode();
-                if (this.Annotations != null)
-                    hashCode = hashCode * 59 + this.Annotations.GetHashCode();
-                if (this.AttachRule != null)
-                    hashCode = hashCode * 59 + this.AttachRule.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.EventSn != null)
-                    hashCode = hashCode * 59 + this.EventSn.GetHashCode();
-                if (this.ArrivesAt != null)
-                    hashCode = hashCode * 59 + this.ArrivesAt.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.Policy != null)
-                    hashCode = hashCode * 59 + this.Policy.GetHashCode();
+                var hashCode = 41;
+                if (this.StartsAt != null) hashCode = hashCode * 59 + this.StartsAt.GetHashCode();
+                if (this.EndsAt != null) hashCode = hashCode * 59 + this.EndsAt.GetHashCode();
+                if (this.Timeout != null) hashCode = hashCode * 59 + this.Timeout.GetHashCode();
+                if (this.Metadata != null) hashCode = hashCode * 59 + this.Metadata.GetHashCode();
+                if (this.Annotations != null) hashCode = hashCode * 59 + this.Annotations.GetHashCode();
+                if (this.AttachRule != null) hashCode = hashCode * 59 + this.AttachRule.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.EventSn != null) hashCode = hashCode * 59 + this.EventSn.GetHashCode();
+                if (this.ArrivesAt != null) hashCode = hashCode * 59 + this.ArrivesAt.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.Policy != null) hashCode = hashCode * 59 + this.Policy.GetHashCode();
                 return hashCode;
             }
         }

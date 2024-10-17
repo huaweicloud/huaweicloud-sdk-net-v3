@@ -212,53 +212,17 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ResizeInstanceBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SpecCode != input.SpecCode || (this.SpecCode != null && !this.SpecCode.Equals(input.SpecCode))) return false;
+            if (this.NewCapacity != input.NewCapacity || (this.NewCapacity != null && !this.NewCapacity.Equals(input.NewCapacity))) return false;
+            if (this.BssParam != input.BssParam || (this.BssParam != null && !this.BssParam.Equals(input.BssParam))) return false;
+            if (this.ReservedIp != input.ReservedIp || (this.ReservedIp != null && input.ReservedIp != null && !this.ReservedIp.SequenceEqual(input.ReservedIp))) return false;
+            if (this.ChangeType != input.ChangeType) return false;
+            if (this.AvailableZones != input.AvailableZones || (this.AvailableZones != null && input.AvailableZones != null && !this.AvailableZones.SequenceEqual(input.AvailableZones))) return false;
+            if (this.NodeList != input.NodeList || (this.NodeList != null && input.NodeList != null && !this.NodeList.SequenceEqual(input.NodeList))) return false;
+            if (this.ExecuteImmediately != input.ExecuteImmediately || (this.ExecuteImmediately != null && !this.ExecuteImmediately.Equals(input.ExecuteImmediately))) return false;
 
-            return 
-                (
-                    this.SpecCode == input.SpecCode ||
-                    (this.SpecCode != null &&
-                    this.SpecCode.Equals(input.SpecCode))
-                ) && 
-                (
-                    this.NewCapacity == input.NewCapacity ||
-                    (this.NewCapacity != null &&
-                    this.NewCapacity.Equals(input.NewCapacity))
-                ) && 
-                (
-                    this.BssParam == input.BssParam ||
-                    (this.BssParam != null &&
-                    this.BssParam.Equals(input.BssParam))
-                ) && 
-                (
-                    this.ReservedIp == input.ReservedIp ||
-                    this.ReservedIp != null &&
-                    input.ReservedIp != null &&
-                    this.ReservedIp.SequenceEqual(input.ReservedIp)
-                ) && 
-                (
-                    this.ChangeType == input.ChangeType ||
-                    (this.ChangeType != null &&
-                    this.ChangeType.Equals(input.ChangeType))
-                ) && 
-                (
-                    this.AvailableZones == input.AvailableZones ||
-                    this.AvailableZones != null &&
-                    input.AvailableZones != null &&
-                    this.AvailableZones.SequenceEqual(input.AvailableZones)
-                ) && 
-                (
-                    this.NodeList == input.NodeList ||
-                    this.NodeList != null &&
-                    input.NodeList != null &&
-                    this.NodeList.SequenceEqual(input.NodeList)
-                ) && 
-                (
-                    this.ExecuteImmediately == input.ExecuteImmediately ||
-                    (this.ExecuteImmediately != null &&
-                    this.ExecuteImmediately.Equals(input.ExecuteImmediately))
-                );
+            return true;
         }
 
         /// <summary>
@@ -268,23 +232,15 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SpecCode != null)
-                    hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
-                if (this.NewCapacity != null)
-                    hashCode = hashCode * 59 + this.NewCapacity.GetHashCode();
-                if (this.BssParam != null)
-                    hashCode = hashCode * 59 + this.BssParam.GetHashCode();
-                if (this.ReservedIp != null)
-                    hashCode = hashCode * 59 + this.ReservedIp.GetHashCode();
-                if (this.ChangeType != null)
-                    hashCode = hashCode * 59 + this.ChangeType.GetHashCode();
-                if (this.AvailableZones != null)
-                    hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
-                if (this.NodeList != null)
-                    hashCode = hashCode * 59 + this.NodeList.GetHashCode();
-                if (this.ExecuteImmediately != null)
-                    hashCode = hashCode * 59 + this.ExecuteImmediately.GetHashCode();
+                var hashCode = 41;
+                if (this.SpecCode != null) hashCode = hashCode * 59 + this.SpecCode.GetHashCode();
+                if (this.NewCapacity != null) hashCode = hashCode * 59 + this.NewCapacity.GetHashCode();
+                if (this.BssParam != null) hashCode = hashCode * 59 + this.BssParam.GetHashCode();
+                if (this.ReservedIp != null) hashCode = hashCode * 59 + this.ReservedIp.GetHashCode();
+                hashCode = hashCode * 59 + this.ChangeType.GetHashCode();
+                if (this.AvailableZones != null) hashCode = hashCode * 59 + this.AvailableZones.GetHashCode();
+                if (this.NodeList != null) hashCode = hashCode * 59 + this.NodeList.GetHashCode();
+                if (this.ExecuteImmediately != null) hashCode = hashCode * 59 + this.ExecuteImmediately.GetHashCode();
                 return hashCode;
             }
         }

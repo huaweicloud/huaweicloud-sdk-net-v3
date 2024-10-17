@@ -77,37 +77,14 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         /// </summary>
         public bool Equals(MediaDetail input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Features != input.Features || (this.Features != null && input.Features != null && !this.Features.SequenceEqual(input.Features))) return false;
+            if (this.OriginPara != input.OriginPara || (this.OriginPara != null && !this.OriginPara.Equals(input.OriginPara))) return false;
+            if (this.OutputVideoParas != input.OutputVideoParas || (this.OutputVideoParas != null && input.OutputVideoParas != null && !this.OutputVideoParas.SequenceEqual(input.OutputVideoParas))) return false;
+            if (this.OutputThumbnailPara != input.OutputThumbnailPara || (this.OutputThumbnailPara != null && !this.OutputThumbnailPara.Equals(input.OutputThumbnailPara))) return false;
+            if (this.OutputWatermarkParas != input.OutputWatermarkParas || (this.OutputWatermarkParas != null && !this.OutputWatermarkParas.Equals(input.OutputWatermarkParas))) return false;
 
-            return 
-                (
-                    this.Features == input.Features ||
-                    this.Features != null &&
-                    input.Features != null &&
-                    this.Features.SequenceEqual(input.Features)
-                ) && 
-                (
-                    this.OriginPara == input.OriginPara ||
-                    (this.OriginPara != null &&
-                    this.OriginPara.Equals(input.OriginPara))
-                ) && 
-                (
-                    this.OutputVideoParas == input.OutputVideoParas ||
-                    this.OutputVideoParas != null &&
-                    input.OutputVideoParas != null &&
-                    this.OutputVideoParas.SequenceEqual(input.OutputVideoParas)
-                ) && 
-                (
-                    this.OutputThumbnailPara == input.OutputThumbnailPara ||
-                    (this.OutputThumbnailPara != null &&
-                    this.OutputThumbnailPara.Equals(input.OutputThumbnailPara))
-                ) && 
-                (
-                    this.OutputWatermarkParas == input.OutputWatermarkParas ||
-                    (this.OutputWatermarkParas != null &&
-                    this.OutputWatermarkParas.Equals(input.OutputWatermarkParas))
-                );
+            return true;
         }
 
         /// <summary>
@@ -117,17 +94,12 @@ namespace HuaweiCloud.SDK.Mpc.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Features != null)
-                    hashCode = hashCode * 59 + this.Features.GetHashCode();
-                if (this.OriginPara != null)
-                    hashCode = hashCode * 59 + this.OriginPara.GetHashCode();
-                if (this.OutputVideoParas != null)
-                    hashCode = hashCode * 59 + this.OutputVideoParas.GetHashCode();
-                if (this.OutputThumbnailPara != null)
-                    hashCode = hashCode * 59 + this.OutputThumbnailPara.GetHashCode();
-                if (this.OutputWatermarkParas != null)
-                    hashCode = hashCode * 59 + this.OutputWatermarkParas.GetHashCode();
+                var hashCode = 41;
+                if (this.Features != null) hashCode = hashCode * 59 + this.Features.GetHashCode();
+                if (this.OriginPara != null) hashCode = hashCode * 59 + this.OriginPara.GetHashCode();
+                if (this.OutputVideoParas != null) hashCode = hashCode * 59 + this.OutputVideoParas.GetHashCode();
+                if (this.OutputThumbnailPara != null) hashCode = hashCode * 59 + this.OutputThumbnailPara.GetHashCode();
+                if (this.OutputWatermarkParas != null) hashCode = hashCode * 59 + this.OutputWatermarkParas.GetHashCode();
                 return hashCode;
             }
         }

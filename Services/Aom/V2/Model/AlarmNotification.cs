@@ -212,50 +212,17 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         /// </summary>
         public bool Equals(AlarmNotification input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.NotificationType != input.NotificationType) return false;
+            if (this.RouteGroupEnable != input.RouteGroupEnable || (this.RouteGroupEnable != null && !this.RouteGroupEnable.Equals(input.RouteGroupEnable))) return false;
+            if (this.RouteGroupRule != input.RouteGroupRule || (this.RouteGroupRule != null && !this.RouteGroupRule.Equals(input.RouteGroupRule))) return false;
+            if (this.NotificationEnable != input.NotificationEnable || (this.NotificationEnable != null && !this.NotificationEnable.Equals(input.NotificationEnable))) return false;
+            if (this.BindNotificationRuleId != input.BindNotificationRuleId || (this.BindNotificationRuleId != null && !this.BindNotificationRuleId.Equals(input.BindNotificationRuleId))) return false;
+            if (this.NotifyResolved != input.NotifyResolved || (this.NotifyResolved != null && !this.NotifyResolved.Equals(input.NotifyResolved))) return false;
+            if (this.NotifyTriggered != input.NotifyTriggered || (this.NotifyTriggered != null && !this.NotifyTriggered.Equals(input.NotifyTriggered))) return false;
+            if (this.NotifyFrequency != input.NotifyFrequency || (this.NotifyFrequency != null && !this.NotifyFrequency.Equals(input.NotifyFrequency))) return false;
 
-            return 
-                (
-                    this.NotificationType == input.NotificationType ||
-                    (this.NotificationType != null &&
-                    this.NotificationType.Equals(input.NotificationType))
-                ) && 
-                (
-                    this.RouteGroupEnable == input.RouteGroupEnable ||
-                    (this.RouteGroupEnable != null &&
-                    this.RouteGroupEnable.Equals(input.RouteGroupEnable))
-                ) && 
-                (
-                    this.RouteGroupRule == input.RouteGroupRule ||
-                    (this.RouteGroupRule != null &&
-                    this.RouteGroupRule.Equals(input.RouteGroupRule))
-                ) && 
-                (
-                    this.NotificationEnable == input.NotificationEnable ||
-                    (this.NotificationEnable != null &&
-                    this.NotificationEnable.Equals(input.NotificationEnable))
-                ) && 
-                (
-                    this.BindNotificationRuleId == input.BindNotificationRuleId ||
-                    (this.BindNotificationRuleId != null &&
-                    this.BindNotificationRuleId.Equals(input.BindNotificationRuleId))
-                ) && 
-                (
-                    this.NotifyResolved == input.NotifyResolved ||
-                    (this.NotifyResolved != null &&
-                    this.NotifyResolved.Equals(input.NotifyResolved))
-                ) && 
-                (
-                    this.NotifyTriggered == input.NotifyTriggered ||
-                    (this.NotifyTriggered != null &&
-                    this.NotifyTriggered.Equals(input.NotifyTriggered))
-                ) && 
-                (
-                    this.NotifyFrequency == input.NotifyFrequency ||
-                    (this.NotifyFrequency != null &&
-                    this.NotifyFrequency.Equals(input.NotifyFrequency))
-                );
+            return true;
         }
 
         /// <summary>
@@ -265,23 +232,15 @@ namespace HuaweiCloud.SDK.Aom.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.NotificationType != null)
-                    hashCode = hashCode * 59 + this.NotificationType.GetHashCode();
-                if (this.RouteGroupEnable != null)
-                    hashCode = hashCode * 59 + this.RouteGroupEnable.GetHashCode();
-                if (this.RouteGroupRule != null)
-                    hashCode = hashCode * 59 + this.RouteGroupRule.GetHashCode();
-                if (this.NotificationEnable != null)
-                    hashCode = hashCode * 59 + this.NotificationEnable.GetHashCode();
-                if (this.BindNotificationRuleId != null)
-                    hashCode = hashCode * 59 + this.BindNotificationRuleId.GetHashCode();
-                if (this.NotifyResolved != null)
-                    hashCode = hashCode * 59 + this.NotifyResolved.GetHashCode();
-                if (this.NotifyTriggered != null)
-                    hashCode = hashCode * 59 + this.NotifyTriggered.GetHashCode();
-                if (this.NotifyFrequency != null)
-                    hashCode = hashCode * 59 + this.NotifyFrequency.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.NotificationType.GetHashCode();
+                if (this.RouteGroupEnable != null) hashCode = hashCode * 59 + this.RouteGroupEnable.GetHashCode();
+                if (this.RouteGroupRule != null) hashCode = hashCode * 59 + this.RouteGroupRule.GetHashCode();
+                if (this.NotificationEnable != null) hashCode = hashCode * 59 + this.NotificationEnable.GetHashCode();
+                if (this.BindNotificationRuleId != null) hashCode = hashCode * 59 + this.BindNotificationRuleId.GetHashCode();
+                if (this.NotifyResolved != null) hashCode = hashCode * 59 + this.NotifyResolved.GetHashCode();
+                if (this.NotifyTriggered != null) hashCode = hashCode * 59 + this.NotifyTriggered.GetHashCode();
+                if (this.NotifyFrequency != null) hashCode = hashCode * 59 + this.NotifyFrequency.GetHashCode();
                 return hashCode;
             }
         }

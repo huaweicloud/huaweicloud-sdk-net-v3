@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(BatchCopyDRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Configs != input.Configs || (this.Configs != null && !this.Configs.Equals(input.Configs))) return false;
 
-            return 
-                (
-                    this.Configs == input.Configs ||
-                    (this.Configs != null &&
-                    this.Configs.Equals(input.Configs))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Configs != null)
-                    hashCode = hashCode * 59 + this.Configs.GetHashCode();
+                var hashCode = 41;
+                if (this.Configs != null) hashCode = hashCode * 59 + this.Configs.GetHashCode();
                 return hashCode;
             }
         }

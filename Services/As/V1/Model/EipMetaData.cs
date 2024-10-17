@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(EipMetaData input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.MetadataBandwidthShareType != input.MetadataBandwidthShareType || (this.MetadataBandwidthShareType != null && !this.MetadataBandwidthShareType.Equals(input.MetadataBandwidthShareType))) return false;
+            if (this.MetadataEipId != input.MetadataEipId || (this.MetadataEipId != null && !this.MetadataEipId.Equals(input.MetadataEipId))) return false;
+            if (this.MetadataeipAddress != input.MetadataeipAddress || (this.MetadataeipAddress != null && !this.MetadataeipAddress.Equals(input.MetadataeipAddress))) return false;
 
-            return 
-                (
-                    this.MetadataBandwidthShareType == input.MetadataBandwidthShareType ||
-                    (this.MetadataBandwidthShareType != null &&
-                    this.MetadataBandwidthShareType.Equals(input.MetadataBandwidthShareType))
-                ) && 
-                (
-                    this.MetadataEipId == input.MetadataEipId ||
-                    (this.MetadataEipId != null &&
-                    this.MetadataEipId.Equals(input.MetadataEipId))
-                ) && 
-                (
-                    this.MetadataeipAddress == input.MetadataeipAddress ||
-                    (this.MetadataeipAddress != null &&
-                    this.MetadataeipAddress.Equals(input.MetadataeipAddress))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.MetadataBandwidthShareType != null)
-                    hashCode = hashCode * 59 + this.MetadataBandwidthShareType.GetHashCode();
-                if (this.MetadataEipId != null)
-                    hashCode = hashCode * 59 + this.MetadataEipId.GetHashCode();
-                if (this.MetadataeipAddress != null)
-                    hashCode = hashCode * 59 + this.MetadataeipAddress.GetHashCode();
+                var hashCode = 41;
+                if (this.MetadataBandwidthShareType != null) hashCode = hashCode * 59 + this.MetadataBandwidthShareType.GetHashCode();
+                if (this.MetadataEipId != null) hashCode = hashCode * 59 + this.MetadataEipId.GetHashCode();
+                if (this.MetadataeipAddress != null) hashCode = hashCode * 59 + this.MetadataeipAddress.GetHashCode();
                 return hashCode;
             }
         }

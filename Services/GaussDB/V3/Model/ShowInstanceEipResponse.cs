@@ -140,80 +140,23 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ShowInstanceEipResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CanEnablePublicAccess != input.CanEnablePublicAccess || (this.CanEnablePublicAccess != null && !this.CanEnablePublicAccess.Equals(input.CanEnablePublicAccess))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.PortId != input.PortId || (this.PortId != null && !this.PortId.Equals(input.PortId))) return false;
+            if (this.PublicIpAddress != input.PublicIpAddress || (this.PublicIpAddress != null && !this.PublicIpAddress.Equals(input.PublicIpAddress))) return false;
+            if (this.PrivateIpAddress != input.PrivateIpAddress || (this.PrivateIpAddress != null && !this.PrivateIpAddress.Equals(input.PrivateIpAddress))) return false;
+            if (this.Status != input.Status || (this.Status != null && !this.Status.Equals(input.Status))) return false;
+            if (this.TenantId != input.TenantId || (this.TenantId != null && !this.TenantId.Equals(input.TenantId))) return false;
+            if (this.CreateTime != input.CreateTime || (this.CreateTime != null && !this.CreateTime.Equals(input.CreateTime))) return false;
+            if (this.BandwidthId != input.BandwidthId || (this.BandwidthId != null && !this.BandwidthId.Equals(input.BandwidthId))) return false;
+            if (this.BandwidthName != input.BandwidthName || (this.BandwidthName != null && !this.BandwidthName.Equals(input.BandwidthName))) return false;
+            if (this.BandwidthSize != input.BandwidthSize || (this.BandwidthSize != null && !this.BandwidthSize.Equals(input.BandwidthSize))) return false;
+            if (this.BandwidthShareType != input.BandwidthShareType || (this.BandwidthShareType != null && !this.BandwidthShareType.Equals(input.BandwidthShareType))) return false;
+            if (this.Profile != input.Profile || (this.Profile != null && !this.Profile.Equals(input.Profile))) return false;
 
-            return 
-                (
-                    this.CanEnablePublicAccess == input.CanEnablePublicAccess ||
-                    (this.CanEnablePublicAccess != null &&
-                    this.CanEnablePublicAccess.Equals(input.CanEnablePublicAccess))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.PortId == input.PortId ||
-                    (this.PortId != null &&
-                    this.PortId.Equals(input.PortId))
-                ) && 
-                (
-                    this.PublicIpAddress == input.PublicIpAddress ||
-                    (this.PublicIpAddress != null &&
-                    this.PublicIpAddress.Equals(input.PublicIpAddress))
-                ) && 
-                (
-                    this.PrivateIpAddress == input.PrivateIpAddress ||
-                    (this.PrivateIpAddress != null &&
-                    this.PrivateIpAddress.Equals(input.PrivateIpAddress))
-                ) && 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.TenantId == input.TenantId ||
-                    (this.TenantId != null &&
-                    this.TenantId.Equals(input.TenantId))
-                ) && 
-                (
-                    this.CreateTime == input.CreateTime ||
-                    (this.CreateTime != null &&
-                    this.CreateTime.Equals(input.CreateTime))
-                ) && 
-                (
-                    this.BandwidthId == input.BandwidthId ||
-                    (this.BandwidthId != null &&
-                    this.BandwidthId.Equals(input.BandwidthId))
-                ) && 
-                (
-                    this.BandwidthName == input.BandwidthName ||
-                    (this.BandwidthName != null &&
-                    this.BandwidthName.Equals(input.BandwidthName))
-                ) && 
-                (
-                    this.BandwidthSize == input.BandwidthSize ||
-                    (this.BandwidthSize != null &&
-                    this.BandwidthSize.Equals(input.BandwidthSize))
-                ) && 
-                (
-                    this.BandwidthShareType == input.BandwidthShareType ||
-                    (this.BandwidthShareType != null &&
-                    this.BandwidthShareType.Equals(input.BandwidthShareType))
-                ) && 
-                (
-                    this.Profile == input.Profile ||
-                    (this.Profile != null &&
-                    this.Profile.Equals(input.Profile))
-                );
+            return true;
         }
 
         /// <summary>
@@ -223,35 +166,21 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CanEnablePublicAccess != null)
-                    hashCode = hashCode * 59 + this.CanEnablePublicAccess.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.PortId != null)
-                    hashCode = hashCode * 59 + this.PortId.GetHashCode();
-                if (this.PublicIpAddress != null)
-                    hashCode = hashCode * 59 + this.PublicIpAddress.GetHashCode();
-                if (this.PrivateIpAddress != null)
-                    hashCode = hashCode * 59 + this.PrivateIpAddress.GetHashCode();
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.TenantId != null)
-                    hashCode = hashCode * 59 + this.TenantId.GetHashCode();
-                if (this.CreateTime != null)
-                    hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
-                if (this.BandwidthId != null)
-                    hashCode = hashCode * 59 + this.BandwidthId.GetHashCode();
-                if (this.BandwidthName != null)
-                    hashCode = hashCode * 59 + this.BandwidthName.GetHashCode();
-                if (this.BandwidthSize != null)
-                    hashCode = hashCode * 59 + this.BandwidthSize.GetHashCode();
-                if (this.BandwidthShareType != null)
-                    hashCode = hashCode * 59 + this.BandwidthShareType.GetHashCode();
-                if (this.Profile != null)
-                    hashCode = hashCode * 59 + this.Profile.GetHashCode();
+                var hashCode = 41;
+                if (this.CanEnablePublicAccess != null) hashCode = hashCode * 59 + this.CanEnablePublicAccess.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.PortId != null) hashCode = hashCode * 59 + this.PortId.GetHashCode();
+                if (this.PublicIpAddress != null) hashCode = hashCode * 59 + this.PublicIpAddress.GetHashCode();
+                if (this.PrivateIpAddress != null) hashCode = hashCode * 59 + this.PrivateIpAddress.GetHashCode();
+                if (this.Status != null) hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.TenantId != null) hashCode = hashCode * 59 + this.TenantId.GetHashCode();
+                if (this.CreateTime != null) hashCode = hashCode * 59 + this.CreateTime.GetHashCode();
+                if (this.BandwidthId != null) hashCode = hashCode * 59 + this.BandwidthId.GetHashCode();
+                if (this.BandwidthName != null) hashCode = hashCode * 59 + this.BandwidthName.GetHashCode();
+                if (this.BandwidthSize != null) hashCode = hashCode * 59 + this.BandwidthSize.GetHashCode();
+                if (this.BandwidthShareType != null) hashCode = hashCode * 59 + this.BandwidthShareType.GetHashCode();
+                if (this.Profile != null) hashCode = hashCode * 59 + this.Profile.GetHashCode();
                 return hashCode;
             }
         }

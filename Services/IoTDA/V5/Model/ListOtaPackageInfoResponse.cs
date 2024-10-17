@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ListOtaPackageInfoResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Packages != input.Packages || (this.Packages != null && input.Packages != null && !this.Packages.SequenceEqual(input.Packages))) return false;
+            if (this.Page != input.Page || (this.Page != null && !this.Page.Equals(input.Page))) return false;
 
-            return 
-                (
-                    this.Packages == input.Packages ||
-                    this.Packages != null &&
-                    input.Packages != null &&
-                    this.Packages.SequenceEqual(input.Packages)
-                ) && 
-                (
-                    this.Page == input.Page ||
-                    (this.Page != null &&
-                    this.Page.Equals(input.Page))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Packages != null)
-                    hashCode = hashCode * 59 + this.Packages.GetHashCode();
-                if (this.Page != null)
-                    hashCode = hashCode * 59 + this.Page.GetHashCode();
+                var hashCode = 41;
+                if (this.Packages != null) hashCode = hashCode * 59 + this.Packages.GetHashCode();
+                if (this.Page != null) hashCode = hashCode * 59 + this.Page.GetHashCode();
                 return hashCode;
             }
         }

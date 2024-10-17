@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         /// </summary>
         public bool Equals(TranscodeData input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.SpecList != input.SpecList || (this.SpecList != null && input.SpecList != null && !this.SpecList.SequenceEqual(input.SpecList))) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
 
-            return 
-                (
-                    this.SpecList == input.SpecList ||
-                    this.SpecList != null &&
-                    input.SpecList != null &&
-                    this.SpecList.SequenceEqual(input.SpecList)
-                ) && 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.SpecList != null)
-                    hashCode = hashCode * 59 + this.SpecList.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
+                var hashCode = 41;
+                if (this.SpecList != null) hashCode = hashCode * 59 + this.SpecList.GetHashCode();
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
                 return hashCode;
             }
         }

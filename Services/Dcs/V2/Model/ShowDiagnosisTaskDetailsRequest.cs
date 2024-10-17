@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         /// </summary>
         public bool Equals(ShowDiagnosisTaskDetailsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ReportId != input.ReportId || (this.ReportId != null && !this.ReportId.Equals(input.ReportId))) return false;
 
-            return 
-                (
-                    this.ReportId == input.ReportId ||
-                    (this.ReportId != null &&
-                    this.ReportId.Equals(input.ReportId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Dcs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ReportId != null)
-                    hashCode = hashCode * 59 + this.ReportId.GetHashCode();
+                var hashCode = 41;
+                if (this.ReportId != null) hashCode = hashCode * 59 + this.ReportId.GetHashCode();
                 return hashCode;
             }
         }

@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ParameterInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ParameterName != input.ParameterName || (this.ParameterName != null && !this.ParameterName.Equals(input.ParameterName))) return false;
+            if (this.ParameterValue != input.ParameterValue || (this.ParameterValue != null && !this.ParameterValue.Equals(input.ParameterValue))) return false;
 
-            return 
-                (
-                    this.ParameterName == input.ParameterName ||
-                    (this.ParameterName != null &&
-                    this.ParameterName.Equals(input.ParameterName))
-                ) && 
-                (
-                    this.ParameterValue == input.ParameterValue ||
-                    (this.ParameterValue != null &&
-                    this.ParameterValue.Equals(input.ParameterValue))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ParameterName != null)
-                    hashCode = hashCode * 59 + this.ParameterName.GetHashCode();
-                if (this.ParameterValue != null)
-                    hashCode = hashCode * 59 + this.ParameterValue.GetHashCode();
+                var hashCode = 41;
+                if (this.ParameterName != null) hashCode = hashCode * 59 + this.ParameterName.GetHashCode();
+                if (this.ParameterValue != null) hashCode = hashCode * 59 + this.ParameterValue.GetHashCode();
                 return hashCode;
             }
         }

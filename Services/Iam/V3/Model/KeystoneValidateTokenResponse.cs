@@ -57,20 +57,11 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(KeystoneValidateTokenResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Token != input.Token || (this.Token != null && !this.Token.Equals(input.Token))) return false;
+            if (this.XSubjectToken != input.XSubjectToken || (this.XSubjectToken != null && !this.XSubjectToken.Equals(input.XSubjectToken))) return false;
 
-            return 
-                (
-                    this.Token == input.Token ||
-                    (this.Token != null &&
-                    this.Token.Equals(input.Token))
-                ) && 
-                (
-                    this.XSubjectToken == input.XSubjectToken ||
-                    (this.XSubjectToken != null &&
-                    this.XSubjectToken.Equals(input.XSubjectToken))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +71,9 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Token != null)
-                    hashCode = hashCode * 59 + this.Token.GetHashCode();
-                if (this.XSubjectToken != null)
-                    hashCode = hashCode * 59 + this.XSubjectToken.GetHashCode();
+                var hashCode = 41;
+                if (this.Token != null) hashCode = hashCode * 59 + this.Token.GetHashCode();
+                if (this.XSubjectToken != null) hashCode = hashCode * 59 + this.XSubjectToken.GetHashCode();
                 return hashCode;
             }
         }

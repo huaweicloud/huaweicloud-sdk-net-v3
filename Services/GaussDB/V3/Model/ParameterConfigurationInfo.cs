@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ParameterConfigurationInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DatastoreVersionName != input.DatastoreVersionName || (this.DatastoreVersionName != null && !this.DatastoreVersionName.Equals(input.DatastoreVersionName))) return false;
+            if (this.DatastoreName != input.DatastoreName || (this.DatastoreName != null && !this.DatastoreName.Equals(input.DatastoreName))) return false;
+            if (this.Created != input.Created || (this.Created != null && !this.Created.Equals(input.Created))) return false;
+            if (this.Updated != input.Updated || (this.Updated != null && !this.Updated.Equals(input.Updated))) return false;
 
-            return 
-                (
-                    this.DatastoreVersionName == input.DatastoreVersionName ||
-                    (this.DatastoreVersionName != null &&
-                    this.DatastoreVersionName.Equals(input.DatastoreVersionName))
-                ) && 
-                (
-                    this.DatastoreName == input.DatastoreName ||
-                    (this.DatastoreName != null &&
-                    this.DatastoreName.Equals(input.DatastoreName))
-                ) && 
-                (
-                    this.Created == input.Created ||
-                    (this.Created != null &&
-                    this.Created.Equals(input.Created))
-                ) && 
-                (
-                    this.Updated == input.Updated ||
-                    (this.Updated != null &&
-                    this.Updated.Equals(input.Updated))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DatastoreVersionName != null)
-                    hashCode = hashCode * 59 + this.DatastoreVersionName.GetHashCode();
-                if (this.DatastoreName != null)
-                    hashCode = hashCode * 59 + this.DatastoreName.GetHashCode();
-                if (this.Created != null)
-                    hashCode = hashCode * 59 + this.Created.GetHashCode();
-                if (this.Updated != null)
-                    hashCode = hashCode * 59 + this.Updated.GetHashCode();
+                var hashCode = 41;
+                if (this.DatastoreVersionName != null) hashCode = hashCode * 59 + this.DatastoreVersionName.GetHashCode();
+                if (this.DatastoreName != null) hashCode = hashCode * 59 + this.DatastoreName.GetHashCode();
+                if (this.Created != null) hashCode = hashCode * 59 + this.Created.GetHashCode();
+                if (this.Updated != null) hashCode = hashCode * 59 + this.Updated.GetHashCode();
                 return hashCode;
             }
         }

@@ -70,30 +70,13 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(Single2HaObject input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AzCodeNewNode != input.AzCodeNewNode || (this.AzCodeNewNode != null && !this.AzCodeNewNode.Equals(input.AzCodeNewNode))) return false;
+            if (this.DsspoolId != input.DsspoolId || (this.DsspoolId != null && !this.DsspoolId.Equals(input.DsspoolId))) return false;
+            if (this.IsAutoPay != input.IsAutoPay || (this.IsAutoPay != null && !this.IsAutoPay.Equals(input.IsAutoPay))) return false;
+            if (this.AdDomainInfo != input.AdDomainInfo || (this.AdDomainInfo != null && !this.AdDomainInfo.Equals(input.AdDomainInfo))) return false;
 
-            return 
-                (
-                    this.AzCodeNewNode == input.AzCodeNewNode ||
-                    (this.AzCodeNewNode != null &&
-                    this.AzCodeNewNode.Equals(input.AzCodeNewNode))
-                ) && 
-                (
-                    this.DsspoolId == input.DsspoolId ||
-                    (this.DsspoolId != null &&
-                    this.DsspoolId.Equals(input.DsspoolId))
-                ) && 
-                (
-                    this.IsAutoPay == input.IsAutoPay ||
-                    (this.IsAutoPay != null &&
-                    this.IsAutoPay.Equals(input.IsAutoPay))
-                ) && 
-                (
-                    this.AdDomainInfo == input.AdDomainInfo ||
-                    (this.AdDomainInfo != null &&
-                    this.AdDomainInfo.Equals(input.AdDomainInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -103,15 +86,11 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AzCodeNewNode != null)
-                    hashCode = hashCode * 59 + this.AzCodeNewNode.GetHashCode();
-                if (this.DsspoolId != null)
-                    hashCode = hashCode * 59 + this.DsspoolId.GetHashCode();
-                if (this.IsAutoPay != null)
-                    hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
-                if (this.AdDomainInfo != null)
-                    hashCode = hashCode * 59 + this.AdDomainInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.AzCodeNewNode != null) hashCode = hashCode * 59 + this.AzCodeNewNode.GetHashCode();
+                if (this.DsspoolId != null) hashCode = hashCode * 59 + this.DsspoolId.GetHashCode();
+                if (this.IsAutoPay != null) hashCode = hashCode * 59 + this.IsAutoPay.GetHashCode();
+                if (this.AdDomainInfo != null) hashCode = hashCode * 59 + this.AdDomainInfo.GetHashCode();
                 return hashCode;
             }
         }

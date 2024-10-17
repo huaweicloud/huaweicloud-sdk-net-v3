@@ -228,60 +228,18 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         /// </summary>
         public bool Equals(ListPublicipsRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Marker != input.Marker || (this.Marker != null && !this.Marker.Equals(input.Marker))) return false;
+            if (this.Limit != input.Limit || (this.Limit != null && !this.Limit.Equals(input.Limit))) return false;
+            if (this.IpVersion != input.IpVersion) return false;
+            if (this.EnterpriseProjectId != input.EnterpriseProjectId || (this.EnterpriseProjectId != null && !this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))) return false;
+            if (this.PortId != input.PortId || (this.PortId != null && input.PortId != null && !this.PortId.SequenceEqual(input.PortId))) return false;
+            if (this.PublicIpAddress != input.PublicIpAddress || (this.PublicIpAddress != null && input.PublicIpAddress != null && !this.PublicIpAddress.SequenceEqual(input.PublicIpAddress))) return false;
+            if (this.PrivateIpAddress != input.PrivateIpAddress || (this.PrivateIpAddress != null && input.PrivateIpAddress != null && !this.PrivateIpAddress.SequenceEqual(input.PrivateIpAddress))) return false;
+            if (this.Id != input.Id || (this.Id != null && input.Id != null && !this.Id.SequenceEqual(input.Id))) return false;
+            if (this.AllowShareBandwidthTypeAny != input.AllowShareBandwidthTypeAny || (this.AllowShareBandwidthTypeAny != null && input.AllowShareBandwidthTypeAny != null && !this.AllowShareBandwidthTypeAny.SequenceEqual(input.AllowShareBandwidthTypeAny))) return false;
 
-            return 
-                (
-                    this.Marker == input.Marker ||
-                    (this.Marker != null &&
-                    this.Marker.Equals(input.Marker))
-                ) && 
-                (
-                    this.Limit == input.Limit ||
-                    (this.Limit != null &&
-                    this.Limit.Equals(input.Limit))
-                ) && 
-                (
-                    this.IpVersion == input.IpVersion ||
-                    (this.IpVersion != null &&
-                    this.IpVersion.Equals(input.IpVersion))
-                ) && 
-                (
-                    this.EnterpriseProjectId == input.EnterpriseProjectId ||
-                    (this.EnterpriseProjectId != null &&
-                    this.EnterpriseProjectId.Equals(input.EnterpriseProjectId))
-                ) && 
-                (
-                    this.PortId == input.PortId ||
-                    this.PortId != null &&
-                    input.PortId != null &&
-                    this.PortId.SequenceEqual(input.PortId)
-                ) && 
-                (
-                    this.PublicIpAddress == input.PublicIpAddress ||
-                    this.PublicIpAddress != null &&
-                    input.PublicIpAddress != null &&
-                    this.PublicIpAddress.SequenceEqual(input.PublicIpAddress)
-                ) && 
-                (
-                    this.PrivateIpAddress == input.PrivateIpAddress ||
-                    this.PrivateIpAddress != null &&
-                    input.PrivateIpAddress != null &&
-                    this.PrivateIpAddress.SequenceEqual(input.PrivateIpAddress)
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    this.Id != null &&
-                    input.Id != null &&
-                    this.Id.SequenceEqual(input.Id)
-                ) && 
-                (
-                    this.AllowShareBandwidthTypeAny == input.AllowShareBandwidthTypeAny ||
-                    this.AllowShareBandwidthTypeAny != null &&
-                    input.AllowShareBandwidthTypeAny != null &&
-                    this.AllowShareBandwidthTypeAny.SequenceEqual(input.AllowShareBandwidthTypeAny)
-                );
+            return true;
         }
 
         /// <summary>
@@ -291,25 +249,16 @@ namespace HuaweiCloud.SDK.Eip.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Marker != null)
-                    hashCode = hashCode * 59 + this.Marker.GetHashCode();
-                if (this.Limit != null)
-                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
-                if (this.IpVersion != null)
-                    hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
-                if (this.EnterpriseProjectId != null)
-                    hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
-                if (this.PortId != null)
-                    hashCode = hashCode * 59 + this.PortId.GetHashCode();
-                if (this.PublicIpAddress != null)
-                    hashCode = hashCode * 59 + this.PublicIpAddress.GetHashCode();
-                if (this.PrivateIpAddress != null)
-                    hashCode = hashCode * 59 + this.PrivateIpAddress.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.AllowShareBandwidthTypeAny != null)
-                    hashCode = hashCode * 59 + this.AllowShareBandwidthTypeAny.GetHashCode();
+                var hashCode = 41;
+                if (this.Marker != null) hashCode = hashCode * 59 + this.Marker.GetHashCode();
+                if (this.Limit != null) hashCode = hashCode * 59 + this.Limit.GetHashCode();
+                hashCode = hashCode * 59 + this.IpVersion.GetHashCode();
+                if (this.EnterpriseProjectId != null) hashCode = hashCode * 59 + this.EnterpriseProjectId.GetHashCode();
+                if (this.PortId != null) hashCode = hashCode * 59 + this.PortId.GetHashCode();
+                if (this.PublicIpAddress != null) hashCode = hashCode * 59 + this.PublicIpAddress.GetHashCode();
+                if (this.PrivateIpAddress != null) hashCode = hashCode * 59 + this.PrivateIpAddress.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.AllowShareBandwidthTypeAny != null) hashCode = hashCode * 59 + this.AllowShareBandwidthTypeAny.GetHashCode();
                 return hashCode;
             }
         }

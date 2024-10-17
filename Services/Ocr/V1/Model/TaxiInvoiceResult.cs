@@ -189,115 +189,30 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         /// </summary>
         public bool Equals(TaxiInvoiceResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Location != input.Location || (this.Location != null && !this.Location.Equals(input.Location))) return false;
+            if (this.Code != input.Code || (this.Code != null && !this.Code.Equals(input.Code))) return false;
+            if (this.Number != input.Number || (this.Number != null && !this.Number.Equals(input.Number))) return false;
+            if (this.PhoneNumber != input.PhoneNumber || (this.PhoneNumber != null && !this.PhoneNumber.Equals(input.PhoneNumber))) return false;
+            if (this.Company != input.Company || (this.Company != null && !this.Company.Equals(input.Company))) return false;
+            if (this.TaxiNumber != input.TaxiNumber || (this.TaxiNumber != null && !this.TaxiNumber.Equals(input.TaxiNumber))) return false;
+            if (this.CertificateNumber != input.CertificateNumber || (this.CertificateNumber != null && !this.CertificateNumber.Equals(input.CertificateNumber))) return false;
+            if (this.IdentificationNumber != input.IdentificationNumber || (this.IdentificationNumber != null && !this.IdentificationNumber.Equals(input.IdentificationNumber))) return false;
+            if (this.Date != input.Date || (this.Date != null && !this.Date.Equals(input.Date))) return false;
+            if (this.BoardingTime != input.BoardingTime || (this.BoardingTime != null && !this.BoardingTime.Equals(input.BoardingTime))) return false;
+            if (this.AlightingTime != input.AlightingTime || (this.AlightingTime != null && !this.AlightingTime.Equals(input.AlightingTime))) return false;
+            if (this.Time != input.Time || (this.Time != null && !this.Time.Equals(input.Time))) return false;
+            if (this.UnitPrice != input.UnitPrice || (this.UnitPrice != null && !this.UnitPrice.Equals(input.UnitPrice))) return false;
+            if (this.Distance != input.Distance || (this.Distance != null && !this.Distance.Equals(input.Distance))) return false;
+            if (this.WaitingTime != input.WaitingTime || (this.WaitingTime != null && !this.WaitingTime.Equals(input.WaitingTime))) return false;
+            if (this.Fare != input.Fare || (this.Fare != null && !this.Fare.Equals(input.Fare))) return false;
+            if (this.FuelOilSurcharge != input.FuelOilSurcharge || (this.FuelOilSurcharge != null && !this.FuelOilSurcharge.Equals(input.FuelOilSurcharge))) return false;
+            if (this.CallServiceSurcharge != input.CallServiceSurcharge || (this.CallServiceSurcharge != null && !this.CallServiceSurcharge.Equals(input.CallServiceSurcharge))) return false;
+            if (this.Total != input.Total || (this.Total != null && !this.Total.Equals(input.Total))) return false;
+            if (this.Confidence != input.Confidence || (this.Confidence != null && !this.Confidence.Equals(input.Confidence))) return false;
+            if (this.TextLocation != input.TextLocation || (this.TextLocation != null && !this.TextLocation.Equals(input.TextLocation))) return false;
 
-            return 
-                (
-                    this.Location == input.Location ||
-                    (this.Location != null &&
-                    this.Location.Equals(input.Location))
-                ) && 
-                (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
-                ) && 
-                (
-                    this.Number == input.Number ||
-                    (this.Number != null &&
-                    this.Number.Equals(input.Number))
-                ) && 
-                (
-                    this.PhoneNumber == input.PhoneNumber ||
-                    (this.PhoneNumber != null &&
-                    this.PhoneNumber.Equals(input.PhoneNumber))
-                ) && 
-                (
-                    this.Company == input.Company ||
-                    (this.Company != null &&
-                    this.Company.Equals(input.Company))
-                ) && 
-                (
-                    this.TaxiNumber == input.TaxiNumber ||
-                    (this.TaxiNumber != null &&
-                    this.TaxiNumber.Equals(input.TaxiNumber))
-                ) && 
-                (
-                    this.CertificateNumber == input.CertificateNumber ||
-                    (this.CertificateNumber != null &&
-                    this.CertificateNumber.Equals(input.CertificateNumber))
-                ) && 
-                (
-                    this.IdentificationNumber == input.IdentificationNumber ||
-                    (this.IdentificationNumber != null &&
-                    this.IdentificationNumber.Equals(input.IdentificationNumber))
-                ) && 
-                (
-                    this.Date == input.Date ||
-                    (this.Date != null &&
-                    this.Date.Equals(input.Date))
-                ) && 
-                (
-                    this.BoardingTime == input.BoardingTime ||
-                    (this.BoardingTime != null &&
-                    this.BoardingTime.Equals(input.BoardingTime))
-                ) && 
-                (
-                    this.AlightingTime == input.AlightingTime ||
-                    (this.AlightingTime != null &&
-                    this.AlightingTime.Equals(input.AlightingTime))
-                ) && 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                ) && 
-                (
-                    this.UnitPrice == input.UnitPrice ||
-                    (this.UnitPrice != null &&
-                    this.UnitPrice.Equals(input.UnitPrice))
-                ) && 
-                (
-                    this.Distance == input.Distance ||
-                    (this.Distance != null &&
-                    this.Distance.Equals(input.Distance))
-                ) && 
-                (
-                    this.WaitingTime == input.WaitingTime ||
-                    (this.WaitingTime != null &&
-                    this.WaitingTime.Equals(input.WaitingTime))
-                ) && 
-                (
-                    this.Fare == input.Fare ||
-                    (this.Fare != null &&
-                    this.Fare.Equals(input.Fare))
-                ) && 
-                (
-                    this.FuelOilSurcharge == input.FuelOilSurcharge ||
-                    (this.FuelOilSurcharge != null &&
-                    this.FuelOilSurcharge.Equals(input.FuelOilSurcharge))
-                ) && 
-                (
-                    this.CallServiceSurcharge == input.CallServiceSurcharge ||
-                    (this.CallServiceSurcharge != null &&
-                    this.CallServiceSurcharge.Equals(input.CallServiceSurcharge))
-                ) && 
-                (
-                    this.Total == input.Total ||
-                    (this.Total != null &&
-                    this.Total.Equals(input.Total))
-                ) && 
-                (
-                    this.Confidence == input.Confidence ||
-                    (this.Confidence != null &&
-                    this.Confidence.Equals(input.Confidence))
-                ) && 
-                (
-                    this.TextLocation == input.TextLocation ||
-                    (this.TextLocation != null &&
-                    this.TextLocation.Equals(input.TextLocation))
-                );
+            return true;
         }
 
         /// <summary>
@@ -307,49 +222,28 @@ namespace HuaweiCloud.SDK.Ocr.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Location != null)
-                    hashCode = hashCode * 59 + this.Location.GetHashCode();
-                if (this.Code != null)
-                    hashCode = hashCode * 59 + this.Code.GetHashCode();
-                if (this.Number != null)
-                    hashCode = hashCode * 59 + this.Number.GetHashCode();
-                if (this.PhoneNumber != null)
-                    hashCode = hashCode * 59 + this.PhoneNumber.GetHashCode();
-                if (this.Company != null)
-                    hashCode = hashCode * 59 + this.Company.GetHashCode();
-                if (this.TaxiNumber != null)
-                    hashCode = hashCode * 59 + this.TaxiNumber.GetHashCode();
-                if (this.CertificateNumber != null)
-                    hashCode = hashCode * 59 + this.CertificateNumber.GetHashCode();
-                if (this.IdentificationNumber != null)
-                    hashCode = hashCode * 59 + this.IdentificationNumber.GetHashCode();
-                if (this.Date != null)
-                    hashCode = hashCode * 59 + this.Date.GetHashCode();
-                if (this.BoardingTime != null)
-                    hashCode = hashCode * 59 + this.BoardingTime.GetHashCode();
-                if (this.AlightingTime != null)
-                    hashCode = hashCode * 59 + this.AlightingTime.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.UnitPrice != null)
-                    hashCode = hashCode * 59 + this.UnitPrice.GetHashCode();
-                if (this.Distance != null)
-                    hashCode = hashCode * 59 + this.Distance.GetHashCode();
-                if (this.WaitingTime != null)
-                    hashCode = hashCode * 59 + this.WaitingTime.GetHashCode();
-                if (this.Fare != null)
-                    hashCode = hashCode * 59 + this.Fare.GetHashCode();
-                if (this.FuelOilSurcharge != null)
-                    hashCode = hashCode * 59 + this.FuelOilSurcharge.GetHashCode();
-                if (this.CallServiceSurcharge != null)
-                    hashCode = hashCode * 59 + this.CallServiceSurcharge.GetHashCode();
-                if (this.Total != null)
-                    hashCode = hashCode * 59 + this.Total.GetHashCode();
-                if (this.Confidence != null)
-                    hashCode = hashCode * 59 + this.Confidence.GetHashCode();
-                if (this.TextLocation != null)
-                    hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
+                var hashCode = 41;
+                if (this.Location != null) hashCode = hashCode * 59 + this.Location.GetHashCode();
+                if (this.Code != null) hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Number != null) hashCode = hashCode * 59 + this.Number.GetHashCode();
+                if (this.PhoneNumber != null) hashCode = hashCode * 59 + this.PhoneNumber.GetHashCode();
+                if (this.Company != null) hashCode = hashCode * 59 + this.Company.GetHashCode();
+                if (this.TaxiNumber != null) hashCode = hashCode * 59 + this.TaxiNumber.GetHashCode();
+                if (this.CertificateNumber != null) hashCode = hashCode * 59 + this.CertificateNumber.GetHashCode();
+                if (this.IdentificationNumber != null) hashCode = hashCode * 59 + this.IdentificationNumber.GetHashCode();
+                if (this.Date != null) hashCode = hashCode * 59 + this.Date.GetHashCode();
+                if (this.BoardingTime != null) hashCode = hashCode * 59 + this.BoardingTime.GetHashCode();
+                if (this.AlightingTime != null) hashCode = hashCode * 59 + this.AlightingTime.GetHashCode();
+                if (this.Time != null) hashCode = hashCode * 59 + this.Time.GetHashCode();
+                if (this.UnitPrice != null) hashCode = hashCode * 59 + this.UnitPrice.GetHashCode();
+                if (this.Distance != null) hashCode = hashCode * 59 + this.Distance.GetHashCode();
+                if (this.WaitingTime != null) hashCode = hashCode * 59 + this.WaitingTime.GetHashCode();
+                if (this.Fare != null) hashCode = hashCode * 59 + this.Fare.GetHashCode();
+                if (this.FuelOilSurcharge != null) hashCode = hashCode * 59 + this.FuelOilSurcharge.GetHashCode();
+                if (this.CallServiceSurcharge != null) hashCode = hashCode * 59 + this.CallServiceSurcharge.GetHashCode();
+                if (this.Total != null) hashCode = hashCode * 59 + this.Total.GetHashCode();
+                if (this.Confidence != null) hashCode = hashCode * 59 + this.Confidence.GetHashCode();
+                if (this.TextLocation != null) hashCode = hashCode * 59 + this.TextLocation.GetHashCode();
                 return hashCode;
             }
         }

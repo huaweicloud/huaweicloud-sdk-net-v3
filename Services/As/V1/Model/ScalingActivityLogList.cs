@@ -239,65 +239,20 @@ namespace HuaweiCloud.SDK.As.V1.Model
         /// </summary>
         public bool Equals(ScalingActivityLogList input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Status != input.Status) return false;
+            if (this.StartTime != input.StartTime || (this.StartTime != null && !this.StartTime.Equals(input.StartTime))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.InstanceRemovedList != input.InstanceRemovedList || (this.InstanceRemovedList != null && !this.InstanceRemovedList.Equals(input.InstanceRemovedList))) return false;
+            if (this.InstanceDeletedList != input.InstanceDeletedList || (this.InstanceDeletedList != null && !this.InstanceDeletedList.Equals(input.InstanceDeletedList))) return false;
+            if (this.InstanceAddedList != input.InstanceAddedList || (this.InstanceAddedList != null && !this.InstanceAddedList.Equals(input.InstanceAddedList))) return false;
+            if (this.ScalingValue != input.ScalingValue || (this.ScalingValue != null && !this.ScalingValue.Equals(input.ScalingValue))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.InstanceValue != input.InstanceValue || (this.InstanceValue != null && !this.InstanceValue.Equals(input.InstanceValue))) return false;
+            if (this.DesireValue != input.DesireValue || (this.DesireValue != null && !this.DesireValue.Equals(input.DesireValue))) return false;
 
-            return 
-                (
-                    this.Status == input.Status ||
-                    (this.Status != null &&
-                    this.Status.Equals(input.Status))
-                ) && 
-                (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.InstanceRemovedList == input.InstanceRemovedList ||
-                    (this.InstanceRemovedList != null &&
-                    this.InstanceRemovedList.Equals(input.InstanceRemovedList))
-                ) && 
-                (
-                    this.InstanceDeletedList == input.InstanceDeletedList ||
-                    (this.InstanceDeletedList != null &&
-                    this.InstanceDeletedList.Equals(input.InstanceDeletedList))
-                ) && 
-                (
-                    this.InstanceAddedList == input.InstanceAddedList ||
-                    (this.InstanceAddedList != null &&
-                    this.InstanceAddedList.Equals(input.InstanceAddedList))
-                ) && 
-                (
-                    this.ScalingValue == input.ScalingValue ||
-                    (this.ScalingValue != null &&
-                    this.ScalingValue.Equals(input.ScalingValue))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.InstanceValue == input.InstanceValue ||
-                    (this.InstanceValue != null &&
-                    this.InstanceValue.Equals(input.InstanceValue))
-                ) && 
-                (
-                    this.DesireValue == input.DesireValue ||
-                    (this.DesireValue != null &&
-                    this.DesireValue.Equals(input.DesireValue))
-                );
+            return true;
         }
 
         /// <summary>
@@ -307,29 +262,18 @@ namespace HuaweiCloud.SDK.As.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Status != null)
-                    hashCode = hashCode * 59 + this.Status.GetHashCode();
-                if (this.StartTime != null)
-                    hashCode = hashCode * 59 + this.StartTime.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.InstanceRemovedList != null)
-                    hashCode = hashCode * 59 + this.InstanceRemovedList.GetHashCode();
-                if (this.InstanceDeletedList != null)
-                    hashCode = hashCode * 59 + this.InstanceDeletedList.GetHashCode();
-                if (this.InstanceAddedList != null)
-                    hashCode = hashCode * 59 + this.InstanceAddedList.GetHashCode();
-                if (this.ScalingValue != null)
-                    hashCode = hashCode * 59 + this.ScalingValue.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.InstanceValue != null)
-                    hashCode = hashCode * 59 + this.InstanceValue.GetHashCode();
-                if (this.DesireValue != null)
-                    hashCode = hashCode * 59 + this.DesireValue.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.Status.GetHashCode();
+                if (this.StartTime != null) hashCode = hashCode * 59 + this.StartTime.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.InstanceRemovedList != null) hashCode = hashCode * 59 + this.InstanceRemovedList.GetHashCode();
+                if (this.InstanceDeletedList != null) hashCode = hashCode * 59 + this.InstanceDeletedList.GetHashCode();
+                if (this.InstanceAddedList != null) hashCode = hashCode * 59 + this.InstanceAddedList.GetHashCode();
+                if (this.ScalingValue != null) hashCode = hashCode * 59 + this.ScalingValue.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.InstanceValue != null) hashCode = hashCode * 59 + this.InstanceValue.GetHashCode();
+                if (this.DesireValue != null) hashCode = hashCode * 59 + this.DesireValue.GetHashCode();
                 return hashCode;
             }
         }

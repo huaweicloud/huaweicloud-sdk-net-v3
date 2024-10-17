@@ -49,15 +49,10 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         /// </summary>
         public bool Equals(SetOffSiteBackupPolicyRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PolicyPara != input.PolicyPara || (this.PolicyPara != null && !this.PolicyPara.Equals(input.PolicyPara))) return false;
 
-            return 
-                (
-                    this.PolicyPara == input.PolicyPara ||
-                    (this.PolicyPara != null &&
-                    this.PolicyPara.Equals(input.PolicyPara))
-                );
+            return true;
         }
 
         /// <summary>
@@ -67,9 +62,8 @@ namespace HuaweiCloud.SDK.Rds.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PolicyPara != null)
-                    hashCode = hashCode * 59 + this.PolicyPara.GetHashCode();
+                var hashCode = 41;
+                if (this.PolicyPara != null) hashCode = hashCode * 59 + this.PolicyPara.GetHashCode();
                 return hashCode;
             }
         }

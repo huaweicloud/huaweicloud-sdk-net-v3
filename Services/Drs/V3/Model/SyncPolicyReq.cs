@@ -762,100 +762,27 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(SyncPolicyReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.ConflictPolicy != input.ConflictPolicy) return false;
+            if (this.FilterDdlPolicy != input.FilterDdlPolicy) return false;
+            if (this.DdlTrans != input.DdlTrans || (this.DdlTrans != null && !this.DdlTrans.Equals(input.DdlTrans))) return false;
+            if (this.IndexTrans != input.IndexTrans || (this.IndexTrans != null && !this.IndexTrans.Equals(input.IndexTrans))) return false;
+            if (this.TopicPolicy != input.TopicPolicy) return false;
+            if (this.Topic != input.Topic || (this.Topic != null && !this.Topic.Equals(input.Topic))) return false;
+            if (this.PartitionPolicy != input.PartitionPolicy) return false;
+            if (this.KafkaDataFormat != input.KafkaDataFormat) return false;
+            if (this.TopicNameFormat != input.TopicNameFormat || (this.TopicNameFormat != null && !this.TopicNameFormat.Equals(input.TopicNameFormat))) return false;
+            if (this.PartitionsNum != input.PartitionsNum || (this.PartitionsNum != null && !this.PartitionsNum.Equals(input.PartitionsNum))) return false;
+            if (this.ReplicationFactor != input.ReplicationFactor || (this.ReplicationFactor != null && !this.ReplicationFactor.Equals(input.ReplicationFactor))) return false;
+            if (this.IsFillMaterializedView != input.IsFillMaterializedView || (this.IsFillMaterializedView != null && !this.IsFillMaterializedView.Equals(input.IsFillMaterializedView))) return false;
+            if (this.ExportSnapshot != input.ExportSnapshot || (this.ExportSnapshot != null && !this.ExportSnapshot.Equals(input.ExportSnapshot))) return false;
+            if (this.SlotName != input.SlotName || (this.SlotName != null && !this.SlotName.Equals(input.SlotName))) return false;
+            if (this.FileAndPosition != input.FileAndPosition || (this.FileAndPosition != null && !this.FileAndPosition.Equals(input.FileAndPosition))) return false;
+            if (this.GtidSet != input.GtidSet || (this.GtidSet != null && !this.GtidSet.Equals(input.GtidSet))) return false;
+            if (this.DdlTopic != input.DdlTopic || (this.DdlTopic != null && !this.DdlTopic.Equals(input.DdlTopic))) return false;
 
-            return 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.ConflictPolicy == input.ConflictPolicy ||
-                    (this.ConflictPolicy != null &&
-                    this.ConflictPolicy.Equals(input.ConflictPolicy))
-                ) && 
-                (
-                    this.FilterDdlPolicy == input.FilterDdlPolicy ||
-                    (this.FilterDdlPolicy != null &&
-                    this.FilterDdlPolicy.Equals(input.FilterDdlPolicy))
-                ) && 
-                (
-                    this.DdlTrans == input.DdlTrans ||
-                    (this.DdlTrans != null &&
-                    this.DdlTrans.Equals(input.DdlTrans))
-                ) && 
-                (
-                    this.IndexTrans == input.IndexTrans ||
-                    (this.IndexTrans != null &&
-                    this.IndexTrans.Equals(input.IndexTrans))
-                ) && 
-                (
-                    this.TopicPolicy == input.TopicPolicy ||
-                    (this.TopicPolicy != null &&
-                    this.TopicPolicy.Equals(input.TopicPolicy))
-                ) && 
-                (
-                    this.Topic == input.Topic ||
-                    (this.Topic != null &&
-                    this.Topic.Equals(input.Topic))
-                ) && 
-                (
-                    this.PartitionPolicy == input.PartitionPolicy ||
-                    (this.PartitionPolicy != null &&
-                    this.PartitionPolicy.Equals(input.PartitionPolicy))
-                ) && 
-                (
-                    this.KafkaDataFormat == input.KafkaDataFormat ||
-                    (this.KafkaDataFormat != null &&
-                    this.KafkaDataFormat.Equals(input.KafkaDataFormat))
-                ) && 
-                (
-                    this.TopicNameFormat == input.TopicNameFormat ||
-                    (this.TopicNameFormat != null &&
-                    this.TopicNameFormat.Equals(input.TopicNameFormat))
-                ) && 
-                (
-                    this.PartitionsNum == input.PartitionsNum ||
-                    (this.PartitionsNum != null &&
-                    this.PartitionsNum.Equals(input.PartitionsNum))
-                ) && 
-                (
-                    this.ReplicationFactor == input.ReplicationFactor ||
-                    (this.ReplicationFactor != null &&
-                    this.ReplicationFactor.Equals(input.ReplicationFactor))
-                ) && 
-                (
-                    this.IsFillMaterializedView == input.IsFillMaterializedView ||
-                    (this.IsFillMaterializedView != null &&
-                    this.IsFillMaterializedView.Equals(input.IsFillMaterializedView))
-                ) && 
-                (
-                    this.ExportSnapshot == input.ExportSnapshot ||
-                    (this.ExportSnapshot != null &&
-                    this.ExportSnapshot.Equals(input.ExportSnapshot))
-                ) && 
-                (
-                    this.SlotName == input.SlotName ||
-                    (this.SlotName != null &&
-                    this.SlotName.Equals(input.SlotName))
-                ) && 
-                (
-                    this.FileAndPosition == input.FileAndPosition ||
-                    (this.FileAndPosition != null &&
-                    this.FileAndPosition.Equals(input.FileAndPosition))
-                ) && 
-                (
-                    this.GtidSet == input.GtidSet ||
-                    (this.GtidSet != null &&
-                    this.GtidSet.Equals(input.GtidSet))
-                ) && 
-                (
-                    this.DdlTopic == input.DdlTopic ||
-                    (this.DdlTopic != null &&
-                    this.DdlTopic.Equals(input.DdlTopic))
-                );
+            return true;
         }
 
         /// <summary>
@@ -865,43 +792,25 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.ConflictPolicy != null)
-                    hashCode = hashCode * 59 + this.ConflictPolicy.GetHashCode();
-                if (this.FilterDdlPolicy != null)
-                    hashCode = hashCode * 59 + this.FilterDdlPolicy.GetHashCode();
-                if (this.DdlTrans != null)
-                    hashCode = hashCode * 59 + this.DdlTrans.GetHashCode();
-                if (this.IndexTrans != null)
-                    hashCode = hashCode * 59 + this.IndexTrans.GetHashCode();
-                if (this.TopicPolicy != null)
-                    hashCode = hashCode * 59 + this.TopicPolicy.GetHashCode();
-                if (this.Topic != null)
-                    hashCode = hashCode * 59 + this.Topic.GetHashCode();
-                if (this.PartitionPolicy != null)
-                    hashCode = hashCode * 59 + this.PartitionPolicy.GetHashCode();
-                if (this.KafkaDataFormat != null)
-                    hashCode = hashCode * 59 + this.KafkaDataFormat.GetHashCode();
-                if (this.TopicNameFormat != null)
-                    hashCode = hashCode * 59 + this.TopicNameFormat.GetHashCode();
-                if (this.PartitionsNum != null)
-                    hashCode = hashCode * 59 + this.PartitionsNum.GetHashCode();
-                if (this.ReplicationFactor != null)
-                    hashCode = hashCode * 59 + this.ReplicationFactor.GetHashCode();
-                if (this.IsFillMaterializedView != null)
-                    hashCode = hashCode * 59 + this.IsFillMaterializedView.GetHashCode();
-                if (this.ExportSnapshot != null)
-                    hashCode = hashCode * 59 + this.ExportSnapshot.GetHashCode();
-                if (this.SlotName != null)
-                    hashCode = hashCode * 59 + this.SlotName.GetHashCode();
-                if (this.FileAndPosition != null)
-                    hashCode = hashCode * 59 + this.FileAndPosition.GetHashCode();
-                if (this.GtidSet != null)
-                    hashCode = hashCode * 59 + this.GtidSet.GetHashCode();
-                if (this.DdlTopic != null)
-                    hashCode = hashCode * 59 + this.DdlTopic.GetHashCode();
+                var hashCode = 41;
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                hashCode = hashCode * 59 + this.ConflictPolicy.GetHashCode();
+                hashCode = hashCode * 59 + this.FilterDdlPolicy.GetHashCode();
+                if (this.DdlTrans != null) hashCode = hashCode * 59 + this.DdlTrans.GetHashCode();
+                if (this.IndexTrans != null) hashCode = hashCode * 59 + this.IndexTrans.GetHashCode();
+                hashCode = hashCode * 59 + this.TopicPolicy.GetHashCode();
+                if (this.Topic != null) hashCode = hashCode * 59 + this.Topic.GetHashCode();
+                hashCode = hashCode * 59 + this.PartitionPolicy.GetHashCode();
+                hashCode = hashCode * 59 + this.KafkaDataFormat.GetHashCode();
+                if (this.TopicNameFormat != null) hashCode = hashCode * 59 + this.TopicNameFormat.GetHashCode();
+                if (this.PartitionsNum != null) hashCode = hashCode * 59 + this.PartitionsNum.GetHashCode();
+                if (this.ReplicationFactor != null) hashCode = hashCode * 59 + this.ReplicationFactor.GetHashCode();
+                if (this.IsFillMaterializedView != null) hashCode = hashCode * 59 + this.IsFillMaterializedView.GetHashCode();
+                if (this.ExportSnapshot != null) hashCode = hashCode * 59 + this.ExportSnapshot.GetHashCode();
+                if (this.SlotName != null) hashCode = hashCode * 59 + this.SlotName.GetHashCode();
+                if (this.FileAndPosition != null) hashCode = hashCode * 59 + this.FileAndPosition.GetHashCode();
+                if (this.GtidSet != null) hashCode = hashCode * 59 + this.GtidSet.GetHashCode();
+                if (this.DdlTopic != null) hashCode = hashCode * 59 + this.DdlTopic.GetHashCode();
                 return hashCode;
             }
         }

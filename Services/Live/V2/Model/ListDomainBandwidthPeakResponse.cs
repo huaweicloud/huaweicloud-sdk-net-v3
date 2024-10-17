@@ -57,21 +57,11 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         /// </summary>
         public bool Equals(ListDomainBandwidthPeakResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BandwidthList != input.BandwidthList || (this.BandwidthList != null && input.BandwidthList != null && !this.BandwidthList.SequenceEqual(input.BandwidthList))) return false;
+            if (this.XRequestId != input.XRequestId || (this.XRequestId != null && !this.XRequestId.Equals(input.XRequestId))) return false;
 
-            return 
-                (
-                    this.BandwidthList == input.BandwidthList ||
-                    this.BandwidthList != null &&
-                    input.BandwidthList != null &&
-                    this.BandwidthList.SequenceEqual(input.BandwidthList)
-                ) && 
-                (
-                    this.XRequestId == input.XRequestId ||
-                    (this.XRequestId != null &&
-                    this.XRequestId.Equals(input.XRequestId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -81,11 +71,9 @@ namespace HuaweiCloud.SDK.Live.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BandwidthList != null)
-                    hashCode = hashCode * 59 + this.BandwidthList.GetHashCode();
-                if (this.XRequestId != null)
-                    hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
+                var hashCode = 41;
+                if (this.BandwidthList != null) hashCode = hashCode * 59 + this.BandwidthList.GetHashCode();
+                if (this.XRequestId != null) hashCode = hashCode * 59 + this.XRequestId.GetHashCode();
                 return hashCode;
             }
         }

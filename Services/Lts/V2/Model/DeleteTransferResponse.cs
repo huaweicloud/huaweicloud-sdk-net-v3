@@ -77,36 +77,14 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(DeleteTransferResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.LogGroupId != input.LogGroupId || (this.LogGroupId != null && !this.LogGroupId.Equals(input.LogGroupId))) return false;
+            if (this.LogGroupName != input.LogGroupName || (this.LogGroupName != null && !this.LogGroupName.Equals(input.LogGroupName))) return false;
+            if (this.LogStreams != input.LogStreams || (this.LogStreams != null && input.LogStreams != null && !this.LogStreams.SequenceEqual(input.LogStreams))) return false;
+            if (this.LogTransferId != input.LogTransferId || (this.LogTransferId != null && !this.LogTransferId.Equals(input.LogTransferId))) return false;
+            if (this.LogTransferInfo != input.LogTransferInfo || (this.LogTransferInfo != null && !this.LogTransferInfo.Equals(input.LogTransferInfo))) return false;
 
-            return 
-                (
-                    this.LogGroupId == input.LogGroupId ||
-                    (this.LogGroupId != null &&
-                    this.LogGroupId.Equals(input.LogGroupId))
-                ) && 
-                (
-                    this.LogGroupName == input.LogGroupName ||
-                    (this.LogGroupName != null &&
-                    this.LogGroupName.Equals(input.LogGroupName))
-                ) && 
-                (
-                    this.LogStreams == input.LogStreams ||
-                    this.LogStreams != null &&
-                    input.LogStreams != null &&
-                    this.LogStreams.SequenceEqual(input.LogStreams)
-                ) && 
-                (
-                    this.LogTransferId == input.LogTransferId ||
-                    (this.LogTransferId != null &&
-                    this.LogTransferId.Equals(input.LogTransferId))
-                ) && 
-                (
-                    this.LogTransferInfo == input.LogTransferInfo ||
-                    (this.LogTransferInfo != null &&
-                    this.LogTransferInfo.Equals(input.LogTransferInfo))
-                );
+            return true;
         }
 
         /// <summary>
@@ -116,17 +94,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.LogGroupId != null)
-                    hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
-                if (this.LogGroupName != null)
-                    hashCode = hashCode * 59 + this.LogGroupName.GetHashCode();
-                if (this.LogStreams != null)
-                    hashCode = hashCode * 59 + this.LogStreams.GetHashCode();
-                if (this.LogTransferId != null)
-                    hashCode = hashCode * 59 + this.LogTransferId.GetHashCode();
-                if (this.LogTransferInfo != null)
-                    hashCode = hashCode * 59 + this.LogTransferInfo.GetHashCode();
+                var hashCode = 41;
+                if (this.LogGroupId != null) hashCode = hashCode * 59 + this.LogGroupId.GetHashCode();
+                if (this.LogGroupName != null) hashCode = hashCode * 59 + this.LogGroupName.GetHashCode();
+                if (this.LogStreams != null) hashCode = hashCode * 59 + this.LogStreams.GetHashCode();
+                if (this.LogTransferId != null) hashCode = hashCode * 59 + this.LogTransferId.GetHashCode();
+                if (this.LogTransferInfo != null) hashCode = hashCode * 59 + this.LogTransferInfo.GetHashCode();
                 return hashCode;
             }
         }

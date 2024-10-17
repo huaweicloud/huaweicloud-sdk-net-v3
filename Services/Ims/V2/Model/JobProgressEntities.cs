@@ -91,47 +91,16 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         public bool Equals(JobProgressEntities input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ImageId != input.ImageId || (this.ImageId != null && !this.ImageId.Equals(input.ImageId))) return false;
+            if (this.CurrentTask != input.CurrentTask || (this.CurrentTask != null && !this.CurrentTask.Equals(input.CurrentTask))) return false;
+            if (this.ImageName != input.ImageName || (this.ImageName != null && !this.ImageName.Equals(input.ImageName))) return false;
+            if (this.ProcessPercent != input.ProcessPercent || (this.ProcessPercent != null && !this.ProcessPercent.Equals(input.ProcessPercent))) return false;
+            if (this.SubJobId != input.SubJobId || (this.SubJobId != null && !this.SubJobId.Equals(input.SubJobId))) return false;
+            if (this.SubJobsResult != input.SubJobsResult || (this.SubJobsResult != null && input.SubJobsResult != null && !this.SubJobsResult.SequenceEqual(input.SubJobsResult))) return false;
+            if (this.SubJobsList != input.SubJobsList || (this.SubJobsList != null && input.SubJobsList != null && !this.SubJobsList.SequenceEqual(input.SubJobsList))) return false;
 
-            return 
-                (
-                    this.ImageId == input.ImageId ||
-                    (this.ImageId != null &&
-                    this.ImageId.Equals(input.ImageId))
-                ) && 
-                (
-                    this.CurrentTask == input.CurrentTask ||
-                    (this.CurrentTask != null &&
-                    this.CurrentTask.Equals(input.CurrentTask))
-                ) && 
-                (
-                    this.ImageName == input.ImageName ||
-                    (this.ImageName != null &&
-                    this.ImageName.Equals(input.ImageName))
-                ) && 
-                (
-                    this.ProcessPercent == input.ProcessPercent ||
-                    (this.ProcessPercent != null &&
-                    this.ProcessPercent.Equals(input.ProcessPercent))
-                ) && 
-                (
-                    this.SubJobId == input.SubJobId ||
-                    (this.SubJobId != null &&
-                    this.SubJobId.Equals(input.SubJobId))
-                ) && 
-                (
-                    this.SubJobsResult == input.SubJobsResult ||
-                    this.SubJobsResult != null &&
-                    input.SubJobsResult != null &&
-                    this.SubJobsResult.SequenceEqual(input.SubJobsResult)
-                ) && 
-                (
-                    this.SubJobsList == input.SubJobsList ||
-                    this.SubJobsList != null &&
-                    input.SubJobsList != null &&
-                    this.SubJobsList.SequenceEqual(input.SubJobsList)
-                );
+            return true;
         }
 
         /// <summary>
@@ -141,21 +110,14 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ImageId != null)
-                    hashCode = hashCode * 59 + this.ImageId.GetHashCode();
-                if (this.CurrentTask != null)
-                    hashCode = hashCode * 59 + this.CurrentTask.GetHashCode();
-                if (this.ImageName != null)
-                    hashCode = hashCode * 59 + this.ImageName.GetHashCode();
-                if (this.ProcessPercent != null)
-                    hashCode = hashCode * 59 + this.ProcessPercent.GetHashCode();
-                if (this.SubJobId != null)
-                    hashCode = hashCode * 59 + this.SubJobId.GetHashCode();
-                if (this.SubJobsResult != null)
-                    hashCode = hashCode * 59 + this.SubJobsResult.GetHashCode();
-                if (this.SubJobsList != null)
-                    hashCode = hashCode * 59 + this.SubJobsList.GetHashCode();
+                var hashCode = 41;
+                if (this.ImageId != null) hashCode = hashCode * 59 + this.ImageId.GetHashCode();
+                if (this.CurrentTask != null) hashCode = hashCode * 59 + this.CurrentTask.GetHashCode();
+                if (this.ImageName != null) hashCode = hashCode * 59 + this.ImageName.GetHashCode();
+                if (this.ProcessPercent != null) hashCode = hashCode * 59 + this.ProcessPercent.GetHashCode();
+                if (this.SubJobId != null) hashCode = hashCode * 59 + this.SubJobId.GetHashCode();
+                if (this.SubJobsResult != null) hashCode = hashCode * 59 + this.SubJobsResult.GetHashCode();
+                if (this.SubJobsList != null) hashCode = hashCode * 59 + this.SubJobsList.GetHashCode();
                 return hashCode;
             }
         }

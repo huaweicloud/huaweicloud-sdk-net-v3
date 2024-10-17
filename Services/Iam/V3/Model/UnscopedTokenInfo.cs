@@ -84,43 +84,15 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         /// </summary>
         public bool Equals(UnscopedTokenInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ExpiresAt != input.ExpiresAt || (this.ExpiresAt != null && !this.ExpiresAt.Equals(input.ExpiresAt))) return false;
+            if (this.Methods != input.Methods || (this.Methods != null && input.Methods != null && !this.Methods.SequenceEqual(input.Methods))) return false;
+            if (this.IssuedAt != input.IssuedAt || (this.IssuedAt != null && !this.IssuedAt.Equals(input.IssuedAt))) return false;
+            if (this.User != input.User || (this.User != null && !this.User.Equals(input.User))) return false;
+            if (this.Roles != input.Roles || (this.Roles != null && input.Roles != null && !this.Roles.SequenceEqual(input.Roles))) return false;
+            if (this.Catalog != input.Catalog || (this.Catalog != null && input.Catalog != null && !this.Catalog.SequenceEqual(input.Catalog))) return false;
 
-            return 
-                (
-                    this.ExpiresAt == input.ExpiresAt ||
-                    (this.ExpiresAt != null &&
-                    this.ExpiresAt.Equals(input.ExpiresAt))
-                ) && 
-                (
-                    this.Methods == input.Methods ||
-                    this.Methods != null &&
-                    input.Methods != null &&
-                    this.Methods.SequenceEqual(input.Methods)
-                ) && 
-                (
-                    this.IssuedAt == input.IssuedAt ||
-                    (this.IssuedAt != null &&
-                    this.IssuedAt.Equals(input.IssuedAt))
-                ) && 
-                (
-                    this.User == input.User ||
-                    (this.User != null &&
-                    this.User.Equals(input.User))
-                ) && 
-                (
-                    this.Roles == input.Roles ||
-                    this.Roles != null &&
-                    input.Roles != null &&
-                    this.Roles.SequenceEqual(input.Roles)
-                ) && 
-                (
-                    this.Catalog == input.Catalog ||
-                    this.Catalog != null &&
-                    input.Catalog != null &&
-                    this.Catalog.SequenceEqual(input.Catalog)
-                );
+            return true;
         }
 
         /// <summary>
@@ -130,19 +102,13 @@ namespace HuaweiCloud.SDK.Iam.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ExpiresAt != null)
-                    hashCode = hashCode * 59 + this.ExpiresAt.GetHashCode();
-                if (this.Methods != null)
-                    hashCode = hashCode * 59 + this.Methods.GetHashCode();
-                if (this.IssuedAt != null)
-                    hashCode = hashCode * 59 + this.IssuedAt.GetHashCode();
-                if (this.User != null)
-                    hashCode = hashCode * 59 + this.User.GetHashCode();
-                if (this.Roles != null)
-                    hashCode = hashCode * 59 + this.Roles.GetHashCode();
-                if (this.Catalog != null)
-                    hashCode = hashCode * 59 + this.Catalog.GetHashCode();
+                var hashCode = 41;
+                if (this.ExpiresAt != null) hashCode = hashCode * 59 + this.ExpiresAt.GetHashCode();
+                if (this.Methods != null) hashCode = hashCode * 59 + this.Methods.GetHashCode();
+                if (this.IssuedAt != null) hashCode = hashCode * 59 + this.IssuedAt.GetHashCode();
+                if (this.User != null) hashCode = hashCode * 59 + this.User.GetHashCode();
+                if (this.Roles != null) hashCode = hashCode * 59 + this.Roles.GetHashCode();
+                if (this.Catalog != null) hashCode = hashCode * 59 + this.Catalog.GetHashCode();
                 return hashCode;
             }
         }

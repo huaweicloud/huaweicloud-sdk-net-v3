@@ -77,38 +77,14 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(ClusterUpgradeAction input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Addons != input.Addons || (this.Addons != null && input.Addons != null && !this.Addons.SequenceEqual(input.Addons))) return false;
+            if (this.NodeOrder != input.NodeOrder || (this.NodeOrder != null && input.NodeOrder != null && !this.NodeOrder.SequenceEqual(input.NodeOrder))) return false;
+            if (this.NodePoolOrder != input.NodePoolOrder || (this.NodePoolOrder != null && input.NodePoolOrder != null && !this.NodePoolOrder.SequenceEqual(input.NodePoolOrder))) return false;
+            if (this.Strategy != input.Strategy || (this.Strategy != null && !this.Strategy.Equals(input.Strategy))) return false;
+            if (this.TargetVersion != input.TargetVersion || (this.TargetVersion != null && !this.TargetVersion.Equals(input.TargetVersion))) return false;
 
-            return 
-                (
-                    this.Addons == input.Addons ||
-                    this.Addons != null &&
-                    input.Addons != null &&
-                    this.Addons.SequenceEqual(input.Addons)
-                ) && 
-                (
-                    this.NodeOrder == input.NodeOrder ||
-                    this.NodeOrder != null &&
-                    input.NodeOrder != null &&
-                    this.NodeOrder.SequenceEqual(input.NodeOrder)
-                ) && 
-                (
-                    this.NodePoolOrder == input.NodePoolOrder ||
-                    this.NodePoolOrder != null &&
-                    input.NodePoolOrder != null &&
-                    this.NodePoolOrder.SequenceEqual(input.NodePoolOrder)
-                ) && 
-                (
-                    this.Strategy == input.Strategy ||
-                    (this.Strategy != null &&
-                    this.Strategy.Equals(input.Strategy))
-                ) && 
-                (
-                    this.TargetVersion == input.TargetVersion ||
-                    (this.TargetVersion != null &&
-                    this.TargetVersion.Equals(input.TargetVersion))
-                );
+            return true;
         }
 
         /// <summary>
@@ -118,17 +94,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Addons != null)
-                    hashCode = hashCode * 59 + this.Addons.GetHashCode();
-                if (this.NodeOrder != null)
-                    hashCode = hashCode * 59 + this.NodeOrder.GetHashCode();
-                if (this.NodePoolOrder != null)
-                    hashCode = hashCode * 59 + this.NodePoolOrder.GetHashCode();
-                if (this.Strategy != null)
-                    hashCode = hashCode * 59 + this.Strategy.GetHashCode();
-                if (this.TargetVersion != null)
-                    hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
+                var hashCode = 41;
+                if (this.Addons != null) hashCode = hashCode * 59 + this.Addons.GetHashCode();
+                if (this.NodeOrder != null) hashCode = hashCode * 59 + this.NodeOrder.GetHashCode();
+                if (this.NodePoolOrder != null) hashCode = hashCode * 59 + this.NodePoolOrder.GetHashCode();
+                if (this.Strategy != null) hashCode = hashCode * 59 + this.Strategy.GetHashCode();
+                if (this.TargetVersion != null) hashCode = hashCode * 59 + this.TargetVersion.GetHashCode();
                 return hashCode;
             }
         }

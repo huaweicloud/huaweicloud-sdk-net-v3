@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         /// </summary>
         public bool Equals(PostTranscriberJobs input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Config != input.Config || (this.Config != null && !this.Config.Equals(input.Config))) return false;
+            if (this.DataUrl != input.DataUrl || (this.DataUrl != null && !this.DataUrl.Equals(input.DataUrl))) return false;
 
-            return 
-                (
-                    this.Config == input.Config ||
-                    (this.Config != null &&
-                    this.Config.Equals(input.Config))
-                ) && 
-                (
-                    this.DataUrl == input.DataUrl ||
-                    (this.DataUrl != null &&
-                    this.DataUrl.Equals(input.DataUrl))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Config != null)
-                    hashCode = hashCode * 59 + this.Config.GetHashCode();
-                if (this.DataUrl != null)
-                    hashCode = hashCode * 59 + this.DataUrl.GetHashCode();
+                var hashCode = 41;
+                if (this.Config != null) hashCode = hashCode * 59 + this.Config.GetHashCode();
+                if (this.DataUrl != null) hashCode = hashCode * 59 + this.DataUrl.GetHashCode();
                 return hashCode;
             }
         }

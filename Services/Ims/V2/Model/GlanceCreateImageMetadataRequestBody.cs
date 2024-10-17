@@ -237,56 +237,18 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         /// </summary>
         public bool Equals(GlanceCreateImageMetadataRequestBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OsVersion != input.OsVersion || (this.OsVersion != null && !this.OsVersion.Equals(input.OsVersion))) return false;
+            if (this.ContainerFormat != input.ContainerFormat || (this.ContainerFormat != null && !this.ContainerFormat.Equals(input.ContainerFormat))) return false;
+            if (this.DiskFormat != input.DiskFormat) return false;
+            if (this.MinDisk != input.MinDisk || (this.MinDisk != null && !this.MinDisk.Equals(input.MinDisk))) return false;
+            if (this.MinRam != input.MinRam || (this.MinRam != null && !this.MinRam.Equals(input.MinRam))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Protected != input.Protected || (this.Protected != null && !this.Protected.Equals(input.Protected))) return false;
+            if (this.Tags != input.Tags || (this.Tags != null && input.Tags != null && !this.Tags.SequenceEqual(input.Tags))) return false;
+            if (this.Visibility != input.Visibility || (this.Visibility != null && !this.Visibility.Equals(input.Visibility))) return false;
 
-            return 
-                (
-                    this.OsVersion == input.OsVersion ||
-                    (this.OsVersion != null &&
-                    this.OsVersion.Equals(input.OsVersion))
-                ) && 
-                (
-                    this.ContainerFormat == input.ContainerFormat ||
-                    (this.ContainerFormat != null &&
-                    this.ContainerFormat.Equals(input.ContainerFormat))
-                ) && 
-                (
-                    this.DiskFormat == input.DiskFormat ||
-                    (this.DiskFormat != null &&
-                    this.DiskFormat.Equals(input.DiskFormat))
-                ) && 
-                (
-                    this.MinDisk == input.MinDisk ||
-                    (this.MinDisk != null &&
-                    this.MinDisk.Equals(input.MinDisk))
-                ) && 
-                (
-                    this.MinRam == input.MinRam ||
-                    (this.MinRam != null &&
-                    this.MinRam.Equals(input.MinRam))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Protected == input.Protected ||
-                    (this.Protected != null &&
-                    this.Protected.Equals(input.Protected))
-                ) && 
-                (
-                    this.Tags == input.Tags ||
-                    this.Tags != null &&
-                    input.Tags != null &&
-                    this.Tags.SequenceEqual(input.Tags)
-                ) && 
-                (
-                    this.Visibility == input.Visibility ||
-                    (this.Visibility != null &&
-                    this.Visibility.Equals(input.Visibility))
-                );
+            return true;
         }
 
         /// <summary>
@@ -296,25 +258,16 @@ namespace HuaweiCloud.SDK.Ims.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OsVersion != null)
-                    hashCode = hashCode * 59 + this.OsVersion.GetHashCode();
-                if (this.ContainerFormat != null)
-                    hashCode = hashCode * 59 + this.ContainerFormat.GetHashCode();
-                if (this.DiskFormat != null)
-                    hashCode = hashCode * 59 + this.DiskFormat.GetHashCode();
-                if (this.MinDisk != null)
-                    hashCode = hashCode * 59 + this.MinDisk.GetHashCode();
-                if (this.MinRam != null)
-                    hashCode = hashCode * 59 + this.MinRam.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Protected != null)
-                    hashCode = hashCode * 59 + this.Protected.GetHashCode();
-                if (this.Tags != null)
-                    hashCode = hashCode * 59 + this.Tags.GetHashCode();
-                if (this.Visibility != null)
-                    hashCode = hashCode * 59 + this.Visibility.GetHashCode();
+                var hashCode = 41;
+                if (this.OsVersion != null) hashCode = hashCode * 59 + this.OsVersion.GetHashCode();
+                if (this.ContainerFormat != null) hashCode = hashCode * 59 + this.ContainerFormat.GetHashCode();
+                hashCode = hashCode * 59 + this.DiskFormat.GetHashCode();
+                if (this.MinDisk != null) hashCode = hashCode * 59 + this.MinDisk.GetHashCode();
+                if (this.MinRam != null) hashCode = hashCode * 59 + this.MinRam.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Protected != null) hashCode = hashCode * 59 + this.Protected.GetHashCode();
+                if (this.Tags != null) hashCode = hashCode * 59 + this.Tags.GetHashCode();
+                if (this.Visibility != null) hashCode = hashCode * 59 + this.Visibility.GetHashCode();
                 return hashCode;
             }
         }

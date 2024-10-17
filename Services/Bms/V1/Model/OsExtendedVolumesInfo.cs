@@ -184,30 +184,13 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         /// </summary>
         public bool Equals(OsExtendedVolumesInfo input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Id != input.Id || (this.Id != null && !this.Id.Equals(input.Id))) return false;
+            if (this.DeleteOnTermination != input.DeleteOnTermination || (this.DeleteOnTermination != null && !this.DeleteOnTermination.Equals(input.DeleteOnTermination))) return false;
+            if (this.BootIndex != input.BootIndex) return false;
+            if (this.Device != input.Device || (this.Device != null && !this.Device.Equals(input.Device))) return false;
 
-            return 
-                (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.DeleteOnTermination == input.DeleteOnTermination ||
-                    (this.DeleteOnTermination != null &&
-                    this.DeleteOnTermination.Equals(input.DeleteOnTermination))
-                ) && 
-                (
-                    this.BootIndex == input.BootIndex ||
-                    (this.BootIndex != null &&
-                    this.BootIndex.Equals(input.BootIndex))
-                ) && 
-                (
-                    this.Device == input.Device ||
-                    (this.Device != null &&
-                    this.Device.Equals(input.Device))
-                );
+            return true;
         }
 
         /// <summary>
@@ -217,15 +200,11 @@ namespace HuaweiCloud.SDK.Bms.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.DeleteOnTermination != null)
-                    hashCode = hashCode * 59 + this.DeleteOnTermination.GetHashCode();
-                if (this.BootIndex != null)
-                    hashCode = hashCode * 59 + this.BootIndex.GetHashCode();
-                if (this.Device != null)
-                    hashCode = hashCode * 59 + this.Device.GetHashCode();
+                var hashCode = 41;
+                if (this.Id != null) hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.DeleteOnTermination != null) hashCode = hashCode * 59 + this.DeleteOnTermination.GetHashCode();
+                hashCode = hashCode * 59 + this.BootIndex.GetHashCode();
+                if (this.Device != null) hashCode = hashCode * 59 + this.Device.GetHashCode();
                 return hashCode;
             }
         }

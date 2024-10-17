@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         /// </summary>
         public bool Equals(BindedEipResult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PublicIpId != input.PublicIpId || (this.PublicIpId != null && !this.PublicIpId.Equals(input.PublicIpId))) return false;
+            if (this.PublicIpType != input.PublicIpType || (this.PublicIpType != null && !this.PublicIpType.Equals(input.PublicIpType))) return false;
+            if (this.PortId != input.PortId || (this.PortId != null && !this.PortId.Equals(input.PortId))) return false;
+            if (this.PublicIpAddress != input.PublicIpAddress || (this.PublicIpAddress != null && !this.PublicIpAddress.Equals(input.PublicIpAddress))) return false;
+            if (this.PrivateIpAddress != input.PrivateIpAddress || (this.PrivateIpAddress != null && !this.PrivateIpAddress.Equals(input.PrivateIpAddress))) return false;
+            if (this.BandwidthId != input.BandwidthId || (this.BandwidthId != null && !this.BandwidthId.Equals(input.BandwidthId))) return false;
+            if (this.BandwidthName != input.BandwidthName || (this.BandwidthName != null && !this.BandwidthName.Equals(input.BandwidthName))) return false;
+            if (this.BandwidthShareType != input.BandwidthShareType || (this.BandwidthShareType != null && !this.BandwidthShareType.Equals(input.BandwidthShareType))) return false;
+            if (this.BandwidthSize != input.BandwidthSize || (this.BandwidthSize != null && !this.BandwidthSize.Equals(input.BandwidthSize))) return false;
+            if (this.AppliedAt != input.AppliedAt || (this.AppliedAt != null && !this.AppliedAt.Equals(input.AppliedAt))) return false;
 
-            return 
-                (
-                    this.PublicIpId == input.PublicIpId ||
-                    (this.PublicIpId != null &&
-                    this.PublicIpId.Equals(input.PublicIpId))
-                ) && 
-                (
-                    this.PublicIpType == input.PublicIpType ||
-                    (this.PublicIpType != null &&
-                    this.PublicIpType.Equals(input.PublicIpType))
-                ) && 
-                (
-                    this.PortId == input.PortId ||
-                    (this.PortId != null &&
-                    this.PortId.Equals(input.PortId))
-                ) && 
-                (
-                    this.PublicIpAddress == input.PublicIpAddress ||
-                    (this.PublicIpAddress != null &&
-                    this.PublicIpAddress.Equals(input.PublicIpAddress))
-                ) && 
-                (
-                    this.PrivateIpAddress == input.PrivateIpAddress ||
-                    (this.PrivateIpAddress != null &&
-                    this.PrivateIpAddress.Equals(input.PrivateIpAddress))
-                ) && 
-                (
-                    this.BandwidthId == input.BandwidthId ||
-                    (this.BandwidthId != null &&
-                    this.BandwidthId.Equals(input.BandwidthId))
-                ) && 
-                (
-                    this.BandwidthName == input.BandwidthName ||
-                    (this.BandwidthName != null &&
-                    this.BandwidthName.Equals(input.BandwidthName))
-                ) && 
-                (
-                    this.BandwidthShareType == input.BandwidthShareType ||
-                    (this.BandwidthShareType != null &&
-                    this.BandwidthShareType.Equals(input.BandwidthShareType))
-                ) && 
-                (
-                    this.BandwidthSize == input.BandwidthSize ||
-                    (this.BandwidthSize != null &&
-                    this.BandwidthSize.Equals(input.BandwidthSize))
-                ) && 
-                (
-                    this.AppliedAt == input.AppliedAt ||
-                    (this.AppliedAt != null &&
-                    this.AppliedAt.Equals(input.AppliedAt))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.GaussDBforopenGauss.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PublicIpId != null)
-                    hashCode = hashCode * 59 + this.PublicIpId.GetHashCode();
-                if (this.PublicIpType != null)
-                    hashCode = hashCode * 59 + this.PublicIpType.GetHashCode();
-                if (this.PortId != null)
-                    hashCode = hashCode * 59 + this.PortId.GetHashCode();
-                if (this.PublicIpAddress != null)
-                    hashCode = hashCode * 59 + this.PublicIpAddress.GetHashCode();
-                if (this.PrivateIpAddress != null)
-                    hashCode = hashCode * 59 + this.PrivateIpAddress.GetHashCode();
-                if (this.BandwidthId != null)
-                    hashCode = hashCode * 59 + this.BandwidthId.GetHashCode();
-                if (this.BandwidthName != null)
-                    hashCode = hashCode * 59 + this.BandwidthName.GetHashCode();
-                if (this.BandwidthShareType != null)
-                    hashCode = hashCode * 59 + this.BandwidthShareType.GetHashCode();
-                if (this.BandwidthSize != null)
-                    hashCode = hashCode * 59 + this.BandwidthSize.GetHashCode();
-                if (this.AppliedAt != null)
-                    hashCode = hashCode * 59 + this.AppliedAt.GetHashCode();
+                var hashCode = 41;
+                if (this.PublicIpId != null) hashCode = hashCode * 59 + this.PublicIpId.GetHashCode();
+                if (this.PublicIpType != null) hashCode = hashCode * 59 + this.PublicIpType.GetHashCode();
+                if (this.PortId != null) hashCode = hashCode * 59 + this.PortId.GetHashCode();
+                if (this.PublicIpAddress != null) hashCode = hashCode * 59 + this.PublicIpAddress.GetHashCode();
+                if (this.PrivateIpAddress != null) hashCode = hashCode * 59 + this.PrivateIpAddress.GetHashCode();
+                if (this.BandwidthId != null) hashCode = hashCode * 59 + this.BandwidthId.GetHashCode();
+                if (this.BandwidthName != null) hashCode = hashCode * 59 + this.BandwidthName.GetHashCode();
+                if (this.BandwidthShareType != null) hashCode = hashCode * 59 + this.BandwidthShareType.GetHashCode();
+                if (this.BandwidthSize != null) hashCode = hashCode * 59 + this.BandwidthSize.GetHashCode();
+                if (this.AppliedAt != null) hashCode = hashCode * 59 + this.AppliedAt.GetHashCode();
                 return hashCode;
             }
         }

@@ -112,60 +112,19 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         /// </summary>
         public bool Equals(JobCard input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.IsSend != input.IsSend || (this.IsSend != null && !this.IsSend.Equals(input.IsSend))) return false;
+            if (this.EndTime != input.EndTime || (this.EndTime != null && !this.EndTime.Equals(input.EndTime))) return false;
+            if (this.AverageScore != input.AverageScore || (this.AverageScore != null && !this.AverageScore.Equals(input.AverageScore))) return false;
+            if (this.SubmitJobNum != input.SubmitJobNum || (this.SubmitJobNum != null && !this.SubmitJobNum.Equals(input.SubmitJobNum))) return false;
+            if (this.CreateStatus != input.CreateStatus || (this.CreateStatus != null && !this.CreateStatus.Equals(input.CreateStatus))) return false;
+            if (this.SendType != input.SendType || (this.SendType != null && !this.SendType.Equals(input.SendType))) return false;
+            if (this.IsScoreVisibility != input.IsScoreVisibility || (this.IsScoreVisibility != null && !this.IsScoreVisibility.Equals(input.IsScoreVisibility))) return false;
+            if (this.SendTime != input.SendTime || (this.SendTime != null && !this.SendTime.Equals(input.SendTime))) return false;
 
-            return 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.IsSend == input.IsSend ||
-                    (this.IsSend != null &&
-                    this.IsSend.Equals(input.IsSend))
-                ) && 
-                (
-                    this.EndTime == input.EndTime ||
-                    (this.EndTime != null &&
-                    this.EndTime.Equals(input.EndTime))
-                ) && 
-                (
-                    this.AverageScore == input.AverageScore ||
-                    (this.AverageScore != null &&
-                    this.AverageScore.Equals(input.AverageScore))
-                ) && 
-                (
-                    this.SubmitJobNum == input.SubmitJobNum ||
-                    (this.SubmitJobNum != null &&
-                    this.SubmitJobNum.Equals(input.SubmitJobNum))
-                ) && 
-                (
-                    this.CreateStatus == input.CreateStatus ||
-                    (this.CreateStatus != null &&
-                    this.CreateStatus.Equals(input.CreateStatus))
-                ) && 
-                (
-                    this.SendType == input.SendType ||
-                    (this.SendType != null &&
-                    this.SendType.Equals(input.SendType))
-                ) && 
-                (
-                    this.IsScoreVisibility == input.IsScoreVisibility ||
-                    (this.IsScoreVisibility != null &&
-                    this.IsScoreVisibility.Equals(input.IsScoreVisibility))
-                ) && 
-                (
-                    this.SendTime == input.SendTime ||
-                    (this.SendTime != null &&
-                    this.SendTime.Equals(input.SendTime))
-                );
+            return true;
         }
 
         /// <summary>
@@ -175,27 +134,17 @@ namespace HuaweiCloud.SDK.Classroom.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.IsSend != null)
-                    hashCode = hashCode * 59 + this.IsSend.GetHashCode();
-                if (this.EndTime != null)
-                    hashCode = hashCode * 59 + this.EndTime.GetHashCode();
-                if (this.AverageScore != null)
-                    hashCode = hashCode * 59 + this.AverageScore.GetHashCode();
-                if (this.SubmitJobNum != null)
-                    hashCode = hashCode * 59 + this.SubmitJobNum.GetHashCode();
-                if (this.CreateStatus != null)
-                    hashCode = hashCode * 59 + this.CreateStatus.GetHashCode();
-                if (this.SendType != null)
-                    hashCode = hashCode * 59 + this.SendType.GetHashCode();
-                if (this.IsScoreVisibility != null)
-                    hashCode = hashCode * 59 + this.IsScoreVisibility.GetHashCode();
-                if (this.SendTime != null)
-                    hashCode = hashCode * 59 + this.SendTime.GetHashCode();
+                var hashCode = 41;
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.IsSend != null) hashCode = hashCode * 59 + this.IsSend.GetHashCode();
+                if (this.EndTime != null) hashCode = hashCode * 59 + this.EndTime.GetHashCode();
+                if (this.AverageScore != null) hashCode = hashCode * 59 + this.AverageScore.GetHashCode();
+                if (this.SubmitJobNum != null) hashCode = hashCode * 59 + this.SubmitJobNum.GetHashCode();
+                if (this.CreateStatus != null) hashCode = hashCode * 59 + this.CreateStatus.GetHashCode();
+                if (this.SendType != null) hashCode = hashCode * 59 + this.SendType.GetHashCode();
+                if (this.IsScoreVisibility != null) hashCode = hashCode * 59 + this.IsScoreVisibility.GetHashCode();
+                if (this.SendTime != null) hashCode = hashCode * 59 + this.SendTime.GetHashCode();
                 return hashCode;
             }
         }

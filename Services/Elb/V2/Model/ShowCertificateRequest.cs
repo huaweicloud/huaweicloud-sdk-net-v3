@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         /// </summary>
         public bool Equals(ShowCertificateRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.CertificateId != input.CertificateId || (this.CertificateId != null && !this.CertificateId.Equals(input.CertificateId))) return false;
 
-            return 
-                (
-                    this.CertificateId == input.CertificateId ||
-                    (this.CertificateId != null &&
-                    this.CertificateId.Equals(input.CertificateId))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Elb.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.CertificateId != null)
-                    hashCode = hashCode * 59 + this.CertificateId.GetHashCode();
+                var hashCode = 41;
+                if (this.CertificateId != null) hashCode = hashCode * 59 + this.CertificateId.GetHashCode();
                 return hashCode;
             }
         }

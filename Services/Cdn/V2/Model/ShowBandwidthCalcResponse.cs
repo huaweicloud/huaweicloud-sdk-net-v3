@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         /// </summary>
         public bool Equals(ShowBandwidthCalcResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.BandwidthCalc != input.BandwidthCalc || (this.BandwidthCalc != null && input.BandwidthCalc != null && !this.BandwidthCalc.SequenceEqual(input.BandwidthCalc))) return false;
 
-            return 
-                (
-                    this.BandwidthCalc == input.BandwidthCalc ||
-                    this.BandwidthCalc != null &&
-                    input.BandwidthCalc != null &&
-                    this.BandwidthCalc.SequenceEqual(input.BandwidthCalc)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Cdn.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.BandwidthCalc != null)
-                    hashCode = hashCode * 59 + this.BandwidthCalc.GetHashCode();
+                var hashCode = 41;
+                if (this.BandwidthCalc != null) hashCode = hashCode * 59 + this.BandwidthCalc.GetHashCode();
                 return hashCode;
             }
         }

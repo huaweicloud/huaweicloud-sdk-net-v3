@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         /// </summary>
         public bool Equals(LiveDetectRespVideoresult input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Alive != input.Alive || (this.Alive != null && !this.Alive.Equals(input.Alive))) return false;
+            if (this.Actions != input.Actions || (this.Actions != null && input.Actions != null && !this.Actions.SequenceEqual(input.Actions))) return false;
+            if (this.Picture != input.Picture || (this.Picture != null && !this.Picture.Equals(input.Picture))) return false;
 
-            return 
-                (
-                    this.Alive == input.Alive ||
-                    (this.Alive != null &&
-                    this.Alive.Equals(input.Alive))
-                ) && 
-                (
-                    this.Actions == input.Actions ||
-                    this.Actions != null &&
-                    input.Actions != null &&
-                    this.Actions.SequenceEqual(input.Actions)
-                ) && 
-                (
-                    this.Picture == input.Picture ||
-                    (this.Picture != null &&
-                    this.Picture.Equals(input.Picture))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Frs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Alive != null)
-                    hashCode = hashCode * 59 + this.Alive.GetHashCode();
-                if (this.Actions != null)
-                    hashCode = hashCode * 59 + this.Actions.GetHashCode();
-                if (this.Picture != null)
-                    hashCode = hashCode * 59 + this.Picture.GetHashCode();
+                var hashCode = 41;
+                if (this.Alive != null) hashCode = hashCode * 59 + this.Alive.GetHashCode();
+                if (this.Actions != null) hashCode = hashCode * 59 + this.Actions.GetHashCode();
+                if (this.Picture != null) hashCode = hashCode * 59 + this.Picture.GetHashCode();
                 return hashCode;
             }
         }

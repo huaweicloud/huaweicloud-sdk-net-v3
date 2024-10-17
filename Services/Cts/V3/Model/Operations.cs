@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         /// </summary>
         public bool Equals(Operations input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.ServiceType != input.ServiceType || (this.ServiceType != null && !this.ServiceType.Equals(input.ServiceType))) return false;
+            if (this.ResourceType != input.ResourceType || (this.ResourceType != null && !this.ResourceType.Equals(input.ResourceType))) return false;
+            if (this.TraceNames != input.TraceNames || (this.TraceNames != null && input.TraceNames != null && !this.TraceNames.SequenceEqual(input.TraceNames))) return false;
 
-            return 
-                (
-                    this.ServiceType == input.ServiceType ||
-                    (this.ServiceType != null &&
-                    this.ServiceType.Equals(input.ServiceType))
-                ) && 
-                (
-                    this.ResourceType == input.ResourceType ||
-                    (this.ResourceType != null &&
-                    this.ResourceType.Equals(input.ResourceType))
-                ) && 
-                (
-                    this.TraceNames == input.TraceNames ||
-                    this.TraceNames != null &&
-                    input.TraceNames != null &&
-                    this.TraceNames.SequenceEqual(input.TraceNames)
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Cts.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.ServiceType != null)
-                    hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
-                if (this.ResourceType != null)
-                    hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
-                if (this.TraceNames != null)
-                    hashCode = hashCode * 59 + this.TraceNames.GetHashCode();
+                var hashCode = 41;
+                if (this.ServiceType != null) hashCode = hashCode * 59 + this.ServiceType.GetHashCode();
+                if (this.ResourceType != null) hashCode = hashCode * 59 + this.ResourceType.GetHashCode();
+                if (this.TraceNames != null) hashCode = hashCode * 59 + this.TraceNames.GetHashCode();
                 return hashCode;
             }
         }

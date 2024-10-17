@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(AuthenticatingProxy input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Ca != input.Ca || (this.Ca != null && !this.Ca.Equals(input.Ca))) return false;
+            if (this.Cert != input.Cert || (this.Cert != null && !this.Cert.Equals(input.Cert))) return false;
+            if (this.PrivateKey != input.PrivateKey || (this.PrivateKey != null && !this.PrivateKey.Equals(input.PrivateKey))) return false;
 
-            return 
-                (
-                    this.Ca == input.Ca ||
-                    (this.Ca != null &&
-                    this.Ca.Equals(input.Ca))
-                ) && 
-                (
-                    this.Cert == input.Cert ||
-                    (this.Cert != null &&
-                    this.Cert.Equals(input.Cert))
-                ) && 
-                (
-                    this.PrivateKey == input.PrivateKey ||
-                    (this.PrivateKey != null &&
-                    this.PrivateKey.Equals(input.PrivateKey))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Ca != null)
-                    hashCode = hashCode * 59 + this.Ca.GetHashCode();
-                if (this.Cert != null)
-                    hashCode = hashCode * 59 + this.Cert.GetHashCode();
-                if (this.PrivateKey != null)
-                    hashCode = hashCode * 59 + this.PrivateKey.GetHashCode();
+                var hashCode = 41;
+                if (this.Ca != null) hashCode = hashCode * 59 + this.Ca.GetHashCode();
+                if (this.Cert != null) hashCode = hashCode * 59 + this.Cert.GetHashCode();
+                if (this.PrivateKey != null) hashCode = hashCode * 59 + this.PrivateKey.GetHashCode();
                 return hashCode;
             }
         }

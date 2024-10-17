@@ -363,27 +363,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(JobActions input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.AvailableActions != input.AvailableActions || (this.AvailableActions != null && input.AvailableActions != null && !this.AvailableActions.SequenceEqual(input.AvailableActions))) return false;
+            if (this.UnavailableActions != input.UnavailableActions || (this.UnavailableActions != null && input.UnavailableActions != null && !this.UnavailableActions.SequenceEqual(input.UnavailableActions))) return false;
+            if (this.CurrentAction != input.CurrentAction) return false;
 
-            return 
-                (
-                    this.AvailableActions == input.AvailableActions ||
-                    this.AvailableActions != null &&
-                    input.AvailableActions != null &&
-                    this.AvailableActions.SequenceEqual(input.AvailableActions)
-                ) && 
-                (
-                    this.UnavailableActions == input.UnavailableActions ||
-                    this.UnavailableActions != null &&
-                    input.UnavailableActions != null &&
-                    this.UnavailableActions.SequenceEqual(input.UnavailableActions)
-                ) && 
-                (
-                    this.CurrentAction == input.CurrentAction ||
-                    (this.CurrentAction != null &&
-                    this.CurrentAction.Equals(input.CurrentAction))
-                );
+            return true;
         }
 
         /// <summary>
@@ -393,13 +378,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.AvailableActions != null)
-                    hashCode = hashCode * 59 + this.AvailableActions.GetHashCode();
-                if (this.UnavailableActions != null)
-                    hashCode = hashCode * 59 + this.UnavailableActions.GetHashCode();
-                if (this.CurrentAction != null)
-                    hashCode = hashCode * 59 + this.CurrentAction.GetHashCode();
+                var hashCode = 41;
+                if (this.AvailableActions != null) hashCode = hashCode * 59 + this.AvailableActions.GetHashCode();
+                if (this.UnavailableActions != null) hashCode = hashCode * 59 + this.UnavailableActions.GetHashCode();
+                hashCode = hashCode * 59 + this.CurrentAction.GetHashCode();
                 return hashCode;
             }
         }

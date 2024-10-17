@@ -191,36 +191,14 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         /// </summary>
         public bool Equals(ShowVocabularyResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.VocabularyId != input.VocabularyId || (this.VocabularyId != null && !this.VocabularyId.Equals(input.VocabularyId))) return false;
+            if (this.Name != input.Name || (this.Name != null && !this.Name.Equals(input.Name))) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.Language != input.Language) return false;
+            if (this.Contents != input.Contents || (this.Contents != null && input.Contents != null && !this.Contents.SequenceEqual(input.Contents))) return false;
 
-            return 
-                (
-                    this.VocabularyId == input.VocabularyId ||
-                    (this.VocabularyId != null &&
-                    this.VocabularyId.Equals(input.VocabularyId))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Language == input.Language ||
-                    (this.Language != null &&
-                    this.Language.Equals(input.Language))
-                ) && 
-                (
-                    this.Contents == input.Contents ||
-                    this.Contents != null &&
-                    input.Contents != null &&
-                    this.Contents.SequenceEqual(input.Contents)
-                );
+            return true;
         }
 
         /// <summary>
@@ -230,17 +208,12 @@ namespace HuaweiCloud.SDK.Sis.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.VocabularyId != null)
-                    hashCode = hashCode * 59 + this.VocabularyId.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Language != null)
-                    hashCode = hashCode * 59 + this.Language.GetHashCode();
-                if (this.Contents != null)
-                    hashCode = hashCode * 59 + this.Contents.GetHashCode();
+                var hashCode = 41;
+                if (this.VocabularyId != null) hashCode = hashCode * 59 + this.VocabularyId.GetHashCode();
+                if (this.Name != null) hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                hashCode = hashCode * 59 + this.Language.GetHashCode();
+                if (this.Contents != null) hashCode = hashCode * 59 + this.Contents.GetHashCode();
                 return hashCode;
             }
         }

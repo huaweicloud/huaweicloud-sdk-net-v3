@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(ModifyStartPositionReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.FileAndPosition != input.FileAndPosition || (this.FileAndPosition != null && !this.FileAndPosition.Equals(input.FileAndPosition))) return false;
+            if (this.GtidSet != input.GtidSet || (this.GtidSet != null && !this.GtidSet.Equals(input.GtidSet))) return false;
 
-            return 
-                (
-                    this.FileAndPosition == input.FileAndPosition ||
-                    (this.FileAndPosition != null &&
-                    this.FileAndPosition.Equals(input.FileAndPosition))
-                ) && 
-                (
-                    this.GtidSet == input.GtidSet ||
-                    (this.GtidSet != null &&
-                    this.GtidSet.Equals(input.GtidSet))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.FileAndPosition != null)
-                    hashCode = hashCode * 59 + this.FileAndPosition.GetHashCode();
-                if (this.GtidSet != null)
-                    hashCode = hashCode * 59 + this.GtidSet.GetHashCode();
+                var hashCode = 41;
+                if (this.FileAndPosition != null) hashCode = hashCode * 59 + this.FileAndPosition.GetHashCode();
+                if (this.GtidSet != null) hashCode = hashCode * 59 + this.GtidSet.GetHashCode();
                 return hashCode;
             }
         }

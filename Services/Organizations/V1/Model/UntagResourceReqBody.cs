@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         /// </summary>
         public bool Equals(UntagResourceReqBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.TagKeys != input.TagKeys || (this.TagKeys != null && input.TagKeys != null && !this.TagKeys.SequenceEqual(input.TagKeys))) return false;
 
-            return 
-                (
-                    this.TagKeys == input.TagKeys ||
-                    this.TagKeys != null &&
-                    input.TagKeys != null &&
-                    this.TagKeys.SequenceEqual(input.TagKeys)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Organizations.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.TagKeys != null)
-                    hashCode = hashCode * 59 + this.TagKeys.GetHashCode();
+                var hashCode = 41;
+                if (this.TagKeys != null) hashCode = hashCode * 59 + this.TagKeys.GetHashCode();
                 return hashCode;
             }
         }

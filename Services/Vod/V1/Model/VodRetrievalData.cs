@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(VodRetrievalData input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.RetrievalWarm != input.RetrievalWarm || (this.RetrievalWarm != null && !this.RetrievalWarm.Equals(input.RetrievalWarm))) return false;
+            if (this.RetrievalCold != input.RetrievalCold || (this.RetrievalCold != null && !this.RetrievalCold.Equals(input.RetrievalCold))) return false;
+            if (this.RetrievalColdSpeed != input.RetrievalColdSpeed || (this.RetrievalColdSpeed != null && !this.RetrievalColdSpeed.Equals(input.RetrievalColdSpeed))) return false;
 
-            return 
-                (
-                    this.RetrievalWarm == input.RetrievalWarm ||
-                    (this.RetrievalWarm != null &&
-                    this.RetrievalWarm.Equals(input.RetrievalWarm))
-                ) && 
-                (
-                    this.RetrievalCold == input.RetrievalCold ||
-                    (this.RetrievalCold != null &&
-                    this.RetrievalCold.Equals(input.RetrievalCold))
-                ) && 
-                (
-                    this.RetrievalColdSpeed == input.RetrievalColdSpeed ||
-                    (this.RetrievalColdSpeed != null &&
-                    this.RetrievalColdSpeed.Equals(input.RetrievalColdSpeed))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.RetrievalWarm != null)
-                    hashCode = hashCode * 59 + this.RetrievalWarm.GetHashCode();
-                if (this.RetrievalCold != null)
-                    hashCode = hashCode * 59 + this.RetrievalCold.GetHashCode();
-                if (this.RetrievalColdSpeed != null)
-                    hashCode = hashCode * 59 + this.RetrievalColdSpeed.GetHashCode();
+                var hashCode = 41;
+                if (this.RetrievalWarm != null) hashCode = hashCode * 59 + this.RetrievalWarm.GetHashCode();
+                if (this.RetrievalCold != null) hashCode = hashCode * 59 + this.RetrievalCold.GetHashCode();
+                if (this.RetrievalColdSpeed != null) hashCode = hashCode * 59 + this.RetrievalColdSpeed.GetHashCode();
                 return hashCode;
             }
         }

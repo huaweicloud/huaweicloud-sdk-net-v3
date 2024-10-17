@@ -170,21 +170,11 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(Sort input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.OrderBy != input.OrderBy || (this.OrderBy != null && input.OrderBy != null && !this.OrderBy.SequenceEqual(input.OrderBy))) return false;
+            if (this.Order != input.Order) return false;
 
-            return 
-                (
-                    this.OrderBy == input.OrderBy ||
-                    this.OrderBy != null &&
-                    input.OrderBy != null &&
-                    this.OrderBy.SequenceEqual(input.OrderBy)
-                ) && 
-                (
-                    this.Order == input.Order ||
-                    (this.Order != null &&
-                    this.Order.Equals(input.Order))
-                );
+            return true;
         }
 
         /// <summary>
@@ -194,11 +184,9 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.OrderBy != null)
-                    hashCode = hashCode * 59 + this.OrderBy.GetHashCode();
-                if (this.Order != null)
-                    hashCode = hashCode * 59 + this.Order.GetHashCode();
+                var hashCode = 41;
+                if (this.OrderBy != null) hashCode = hashCode * 59 + this.OrderBy.GetHashCode();
+                hashCode = hashCode * 59 + this.Order.GetHashCode();
                 return hashCode;
             }
         }

@@ -177,25 +177,12 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         /// </summary>
         public bool Equals(PreviewTemplateBody input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Templates != input.Templates || (this.Templates != null && !this.Templates.Equals(input.Templates))) return false;
+            if (this.Language != input.Language) return false;
+            if (this.Source != input.Source || (this.Source != null && !this.Source.Equals(input.Source))) return false;
 
-            return 
-                (
-                    this.Templates == input.Templates ||
-                    (this.Templates != null &&
-                    this.Templates.Equals(input.Templates))
-                ) && 
-                (
-                    this.Language == input.Language ||
-                    (this.Language != null &&
-                    this.Language.Equals(input.Language))
-                ) && 
-                (
-                    this.Source == input.Source ||
-                    (this.Source != null &&
-                    this.Source.Equals(input.Source))
-                );
+            return true;
         }
 
         /// <summary>
@@ -205,13 +192,10 @@ namespace HuaweiCloud.SDK.Lts.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Templates != null)
-                    hashCode = hashCode * 59 + this.Templates.GetHashCode();
-                if (this.Language != null)
-                    hashCode = hashCode * 59 + this.Language.GetHashCode();
-                if (this.Source != null)
-                    hashCode = hashCode * 59 + this.Source.GetHashCode();
+                var hashCode = 41;
+                if (this.Templates != null) hashCode = hashCode * 59 + this.Templates.GetHashCode();
+                hashCode = hashCode * 59 + this.Language.GetHashCode();
+                if (this.Source != null) hashCode = hashCode * 59 + this.Source.GetHashCode();
                 return hashCode;
             }
         }

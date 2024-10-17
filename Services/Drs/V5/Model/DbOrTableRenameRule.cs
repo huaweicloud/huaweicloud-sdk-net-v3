@@ -177,25 +177,12 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         /// </summary>
         public bool Equals(DbOrTableRenameRule input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.PrefixName != input.PrefixName || (this.PrefixName != null && !this.PrefixName.Equals(input.PrefixName))) return false;
+            if (this.SuffixName != input.SuffixName || (this.SuffixName != null && !this.SuffixName.Equals(input.SuffixName))) return false;
+            if (this.Type != input.Type) return false;
 
-            return 
-                (
-                    this.PrefixName == input.PrefixName ||
-                    (this.PrefixName != null &&
-                    this.PrefixName.Equals(input.PrefixName))
-                ) && 
-                (
-                    this.SuffixName == input.SuffixName ||
-                    (this.SuffixName != null &&
-                    this.SuffixName.Equals(input.SuffixName))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                );
+            return true;
         }
 
         /// <summary>
@@ -205,13 +192,10 @@ namespace HuaweiCloud.SDK.Drs.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.PrefixName != null)
-                    hashCode = hashCode * 59 + this.PrefixName.GetHashCode();
-                if (this.SuffixName != null)
-                    hashCode = hashCode * 59 + this.SuffixName.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                var hashCode = 41;
+                if (this.PrefixName != null) hashCode = hashCode * 59 + this.PrefixName.GetHashCode();
+                if (this.SuffixName != null) hashCode = hashCode * 59 + this.SuffixName.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;
             }
         }

@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ShowBatchTaskResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Batchtask != input.Batchtask || (this.Batchtask != null && !this.Batchtask.Equals(input.Batchtask))) return false;
+            if (this.TaskDetails != input.TaskDetails || (this.TaskDetails != null && input.TaskDetails != null && !this.TaskDetails.SequenceEqual(input.TaskDetails))) return false;
+            if (this.Page != input.Page || (this.Page != null && !this.Page.Equals(input.Page))) return false;
 
-            return 
-                (
-                    this.Batchtask == input.Batchtask ||
-                    (this.Batchtask != null &&
-                    this.Batchtask.Equals(input.Batchtask))
-                ) && 
-                (
-                    this.TaskDetails == input.TaskDetails ||
-                    this.TaskDetails != null &&
-                    input.TaskDetails != null &&
-                    this.TaskDetails.SequenceEqual(input.TaskDetails)
-                ) && 
-                (
-                    this.Page == input.Page ||
-                    (this.Page != null &&
-                    this.Page.Equals(input.Page))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Batchtask != null)
-                    hashCode = hashCode * 59 + this.Batchtask.GetHashCode();
-                if (this.TaskDetails != null)
-                    hashCode = hashCode * 59 + this.TaskDetails.GetHashCode();
-                if (this.Page != null)
-                    hashCode = hashCode * 59 + this.Page.GetHashCode();
+                var hashCode = 41;
+                if (this.Batchtask != null) hashCode = hashCode * 59 + this.Batchtask.GetHashCode();
+                if (this.TaskDetails != null) hashCode = hashCode * 59 + this.TaskDetails.GetHashCode();
+                if (this.Page != null) hashCode = hashCode * 59 + this.Page.GetHashCode();
                 return hashCode;
             }
         }

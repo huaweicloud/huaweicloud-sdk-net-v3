@@ -63,26 +63,12 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         /// </summary>
         public bool Equals(AutopilotClusterInformationSpec input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Description != input.Description || (this.Description != null && !this.Description.Equals(input.Description))) return false;
+            if (this.CustomSan != input.CustomSan || (this.CustomSan != null && input.CustomSan != null && !this.CustomSan.SequenceEqual(input.CustomSan))) return false;
+            if (this.EniNetwork != input.EniNetwork || (this.EniNetwork != null && !this.EniNetwork.Equals(input.EniNetwork))) return false;
 
-            return 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.CustomSan == input.CustomSan ||
-                    this.CustomSan != null &&
-                    input.CustomSan != null &&
-                    this.CustomSan.SequenceEqual(input.CustomSan)
-                ) && 
-                (
-                    this.EniNetwork == input.EniNetwork ||
-                    (this.EniNetwork != null &&
-                    this.EniNetwork.Equals(input.EniNetwork))
-                );
+            return true;
         }
 
         /// <summary>
@@ -92,13 +78,10 @@ namespace HuaweiCloud.SDK.Cce.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Description != null)
-                    hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.CustomSan != null)
-                    hashCode = hashCode * 59 + this.CustomSan.GetHashCode();
-                if (this.EniNetwork != null)
-                    hashCode = hashCode * 59 + this.EniNetwork.GetHashCode();
+                var hashCode = 41;
+                if (this.Description != null) hashCode = hashCode * 59 + this.Description.GetHashCode();
+                if (this.CustomSan != null) hashCode = hashCode * 59 + this.CustomSan.GetHashCode();
+                if (this.EniNetwork != null) hashCode = hashCode * 59 + this.EniNetwork.GetHashCode();
                 return hashCode;
             }
         }

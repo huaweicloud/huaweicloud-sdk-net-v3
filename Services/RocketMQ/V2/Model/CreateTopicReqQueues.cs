@@ -56,20 +56,11 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         /// </summary>
         public bool Equals(CreateTopicReqQueues input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.Broker != input.Broker || (this.Broker != null && !this.Broker.Equals(input.Broker))) return false;
+            if (this.QueueNum != input.QueueNum || (this.QueueNum != null && !this.QueueNum.Equals(input.QueueNum))) return false;
 
-            return 
-                (
-                    this.Broker == input.Broker ||
-                    (this.Broker != null &&
-                    this.Broker.Equals(input.Broker))
-                ) && 
-                (
-                    this.QueueNum == input.QueueNum ||
-                    (this.QueueNum != null &&
-                    this.QueueNum.Equals(input.QueueNum))
-                );
+            return true;
         }
 
         /// <summary>
@@ -79,11 +70,9 @@ namespace HuaweiCloud.SDK.RocketMQ.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.Broker != null)
-                    hashCode = hashCode * 59 + this.Broker.GetHashCode();
-                if (this.QueueNum != null)
-                    hashCode = hashCode * 59 + this.QueueNum.GetHashCode();
+                var hashCode = 41;
+                if (this.Broker != null) hashCode = hashCode * 59 + this.Broker.GetHashCode();
+                if (this.QueueNum != null) hashCode = hashCode * 59 + this.QueueNum.GetHashCode();
                 return hashCode;
             }
         }

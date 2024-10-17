@@ -50,15 +50,10 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         /// </summary>
         public bool Equals(NovaDeleteKeypairRequest input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.KeypairName != input.KeypairName || (this.KeypairName != null && !this.KeypairName.Equals(input.KeypairName))) return false;
 
-            return 
-                (
-                    this.KeypairName == input.KeypairName ||
-                    (this.KeypairName != null &&
-                    this.KeypairName.Equals(input.KeypairName))
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +63,8 @@ namespace HuaweiCloud.SDK.Ecs.V2.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.KeypairName != null)
-                    hashCode = hashCode * 59 + this.KeypairName.GetHashCode();
+                var hashCode = 41;
+                if (this.KeypairName != null) hashCode = hashCode * 59 + this.KeypairName.GetHashCode();
                 return hashCode;
             }
         }

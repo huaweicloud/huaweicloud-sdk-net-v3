@@ -49,16 +49,10 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         /// </summary>
         public bool Equals(DeleteAssetsResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DeleteResultArray != input.DeleteResultArray || (this.DeleteResultArray != null && input.DeleteResultArray != null && !this.DeleteResultArray.SequenceEqual(input.DeleteResultArray))) return false;
 
-            return 
-                (
-                    this.DeleteResultArray == input.DeleteResultArray ||
-                    this.DeleteResultArray != null &&
-                    input.DeleteResultArray != null &&
-                    this.DeleteResultArray.SequenceEqual(input.DeleteResultArray)
-                );
+            return true;
         }
 
         /// <summary>
@@ -68,9 +62,8 @@ namespace HuaweiCloud.SDK.Vod.V1.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DeleteResultArray != null)
-                    hashCode = hashCode * 59 + this.DeleteResultArray.GetHashCode();
+                var hashCode = 41;
+                if (this.DeleteResultArray != null) hashCode = hashCode * 59 + this.DeleteResultArray.GetHashCode();
                 return hashCode;
             }
         }

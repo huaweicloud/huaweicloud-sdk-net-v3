@@ -63,25 +63,12 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         /// </summary>
         public bool Equals(ShowProxyIpgroupResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.EnableIpGroup != input.EnableIpGroup || (this.EnableIpGroup != null && !this.EnableIpGroup.Equals(input.EnableIpGroup))) return false;
+            if (this.Type != input.Type || (this.Type != null && !this.Type.Equals(input.Type))) return false;
+            if (this.IpGroup != input.IpGroup || (this.IpGroup != null && !this.IpGroup.Equals(input.IpGroup))) return false;
 
-            return 
-                (
-                    this.EnableIpGroup == input.EnableIpGroup ||
-                    (this.EnableIpGroup != null &&
-                    this.EnableIpGroup.Equals(input.EnableIpGroup))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    (this.Type != null &&
-                    this.Type.Equals(input.Type))
-                ) && 
-                (
-                    this.IpGroup == input.IpGroup ||
-                    (this.IpGroup != null &&
-                    this.IpGroup.Equals(input.IpGroup))
-                );
+            return true;
         }
 
         /// <summary>
@@ -91,13 +78,10 @@ namespace HuaweiCloud.SDK.GaussDB.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.EnableIpGroup != null)
-                    hashCode = hashCode * 59 + this.EnableIpGroup.GetHashCode();
-                if (this.Type != null)
-                    hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.IpGroup != null)
-                    hashCode = hashCode * 59 + this.IpGroup.GetHashCode();
+                var hashCode = 41;
+                if (this.EnableIpGroup != null) hashCode = hashCode * 59 + this.EnableIpGroup.GetHashCode();
+                if (this.Type != null) hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.IpGroup != null) hashCode = hashCode * 59 + this.IpGroup.GetHashCode();
                 return hashCode;
             }
         }

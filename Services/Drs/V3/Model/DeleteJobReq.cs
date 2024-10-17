@@ -183,25 +183,12 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         /// </summary>
         public bool Equals(DeleteJobReq input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DeleteType != input.DeleteType) return false;
+            if (this.JobId != input.JobId || (this.JobId != null && !this.JobId.Equals(input.JobId))) return false;
+            if (this.IsShowBreakpointPosition != input.IsShowBreakpointPosition || (this.IsShowBreakpointPosition != null && !this.IsShowBreakpointPosition.Equals(input.IsShowBreakpointPosition))) return false;
 
-            return 
-                (
-                    this.DeleteType == input.DeleteType ||
-                    (this.DeleteType != null &&
-                    this.DeleteType.Equals(input.DeleteType))
-                ) && 
-                (
-                    this.JobId == input.JobId ||
-                    (this.JobId != null &&
-                    this.JobId.Equals(input.JobId))
-                ) && 
-                (
-                    this.IsShowBreakpointPosition == input.IsShowBreakpointPosition ||
-                    (this.IsShowBreakpointPosition != null &&
-                    this.IsShowBreakpointPosition.Equals(input.IsShowBreakpointPosition))
-                );
+            return true;
         }
 
         /// <summary>
@@ -211,13 +198,10 @@ namespace HuaweiCloud.SDK.Drs.V3.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DeleteType != null)
-                    hashCode = hashCode * 59 + this.DeleteType.GetHashCode();
-                if (this.JobId != null)
-                    hashCode = hashCode * 59 + this.JobId.GetHashCode();
-                if (this.IsShowBreakpointPosition != null)
-                    hashCode = hashCode * 59 + this.IsShowBreakpointPosition.GetHashCode();
+                var hashCode = 41;
+                hashCode = hashCode * 59 + this.DeleteType.GetHashCode();
+                if (this.JobId != null) hashCode = hashCode * 59 + this.JobId.GetHashCode();
+                if (this.IsShowBreakpointPosition != null) hashCode = hashCode * 59 + this.IsShowBreakpointPosition.GetHashCode();
                 return hashCode;
             }
         }

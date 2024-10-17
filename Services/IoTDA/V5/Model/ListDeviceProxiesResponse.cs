@@ -56,21 +56,11 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         /// </summary>
         public bool Equals(ListDeviceProxiesResponse input)
         {
-            if (input == null)
-                return false;
+            if (input == null) return false;
+            if (this.DeviceProxies != input.DeviceProxies || (this.DeviceProxies != null && input.DeviceProxies != null && !this.DeviceProxies.SequenceEqual(input.DeviceProxies))) return false;
+            if (this.Page != input.Page || (this.Page != null && !this.Page.Equals(input.Page))) return false;
 
-            return 
-                (
-                    this.DeviceProxies == input.DeviceProxies ||
-                    this.DeviceProxies != null &&
-                    input.DeviceProxies != null &&
-                    this.DeviceProxies.SequenceEqual(input.DeviceProxies)
-                ) && 
-                (
-                    this.Page == input.Page ||
-                    (this.Page != null &&
-                    this.Page.Equals(input.Page))
-                );
+            return true;
         }
 
         /// <summary>
@@ -80,11 +70,9 @@ namespace HuaweiCloud.SDK.IoTDA.V5.Model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = 41;
-                if (this.DeviceProxies != null)
-                    hashCode = hashCode * 59 + this.DeviceProxies.GetHashCode();
-                if (this.Page != null)
-                    hashCode = hashCode * 59 + this.Page.GetHashCode();
+                var hashCode = 41;
+                if (this.DeviceProxies != null) hashCode = hashCode * 59 + this.DeviceProxies.GetHashCode();
+                if (this.Page != null) hashCode = hashCode * 59 + this.Page.GetHashCode();
                 return hashCode;
             }
         }
